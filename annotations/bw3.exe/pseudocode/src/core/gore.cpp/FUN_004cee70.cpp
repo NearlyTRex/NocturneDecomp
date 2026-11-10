@@ -23,7 +23,7 @@ void core_gore_cpp_FUN_004cee70(uint param_1,CVector3f *param_2,UOrientationVect
   if (_DAT_01d4aec8 < 1000) {
     _DAT_01d4aec8 = _DAT_01d4aec8 + 1;
   }
-  core_gore_cpp_FUN_004ce170
+  core_gore_cpp_CFootstep_init_FUN_004ce170
             ((CFootstep *)(iVar1 + 0x1d4aecc),param_2,param_3,(uint)(param_4 == 0xb),param_5,param_6
             );
   return;

@@ -29,17 +29,17 @@ void __cdecl CBat::setup(CBat *this_ptr);
 // Address: 0040ef20
 void __cdecl CBat::archive(CBat *this_ptr);
 
-// Original: core_bat.cpp_FUN_0040f010
+// Original: core_bat.cpp_CBat_process_FUN_0040f010
 // Address: 0040f010
-void FUN_0040f010(CBat *param_1,float param_2);
+void __cdecl CBat::process(CBat *this_ptr,float delta_time);
 
-// Original: core_bat.cpp_FUN_0040f200
+// Original: core_bat.cpp_CBat_renderOpaque_FUN_0040f200
 // Address: 0040f200
-int FUN_0040f200(CDemonActor *param_1);
+int __cdecl CBat::renderOpaque(CBat *this_ptr);
 
-// Original: core_bat.cpp_FUN_0040f290
+// Original: core_bat.cpp_CBat_getBoundingBox_FUN_0040f290
 // Address: 0040f290
-void FUN_0040f290(int param_1);
+CBoundingBox3D * __cdecl CBat::getBoundingBox(CBat *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bat.cpp_CBat_updateCoursePosition_FUN_0040f2f0
 // Address: 0040f2f0

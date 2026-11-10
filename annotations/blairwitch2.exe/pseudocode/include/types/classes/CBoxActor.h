@@ -4,13 +4,43 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBox.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBoxActorPickupType.h"
+#include "types/enums/EGroundType.h"
 
 // Structure: CBoxActor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x7d4 (2004 bytes)
 #pragma pack(push, 1)
 typedef struct CBoxActor {
-    char field_0[2004]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    char loop_wav_name[20]; // 0x430
+    char collision_wav_name[20]; // 0x444
+    uint sfx_handle; // 0x458
+    CVector3f rpm; // 0x45c
+    float fps; // 0x468
+    float anim_frame; // 0x46c
+    EBoxActorPickupType pickup_type; // 0x470
+    struct CDemonActor* carrier_actor; // 0x474
+    int can_be_pushed; // 0x478
+    struct CDemonActor* pushed_by_actor; // 0x47c
+    struct CDemonActor* constrain_extents_actor; // 0x480
+    uint push_sfx_handle; // 0x484
+    char push_sound[100]; // 0x488
+    float weight_in_pounds; // 0x4ec
+    CBox physics_box; // 0x4f0
+    float ground_height; // 0x748
+    EGroundType ground_type; // 0x74c
+    int plot_in_shadow_flag; // 0x750
+    int collision_flag; // 0x754
+    int dont_use_normals; // 0x758
+    char use_event[100]; // 0x75c
+    int allowed_melee_attack_types; // 0x7c0
+    int block_virtual_director_flag; // 0x7c4
+    char field_1992[12]; // 0x7c8
 } CBoxActor;
 #pragma pack(pop)
 

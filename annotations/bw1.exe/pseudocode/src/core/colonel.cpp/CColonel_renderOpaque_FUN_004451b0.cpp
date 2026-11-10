@@ -11,6 +11,6 @@ int __cdecl core_colonel_cpp_CColonel_renderOpaque_FUN_004451b0(CColonel *this_p
 {
   int iVar1;
   
-  iVar1 = core_charactr_cpp_FUN_0042f240((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240((CCharacter *)this_ptr);
   return iVar1;
 }

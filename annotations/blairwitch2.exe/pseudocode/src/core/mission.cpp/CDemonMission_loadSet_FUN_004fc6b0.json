@@ -2,36 +2,36 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 64,
+    "complexity_score": 54,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
       "unresolved_funcptr"
     ],
     "total_lines": 91
   },
   "cross_references": [
     {
-      "addr": "004fcb00",
-      "from_addr": "004fcb5b",
-      "name": "core_mission.cpp_CDemonMission_run_FUN_004fcb00",
+      "addr": "004fca90",
+      "from_addr": "004fcaef",
+      "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004fc940",
       "from_addr": "004fca3d",
-      "name": "core_mission.cpp_FUN_004fc940",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_004fc940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004fca90",
-      "from_addr": "004fcaef",
-      "name": "core_mission.cpp_FUN_004fca90",
+      "addr": "004fcb00",
+      "from_addr": "004fcb5b",
+      "name": "core_mission.cpp_CDemonMission_run_FUN_004fcb00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,7 +67,7 @@
     {
       "addr": "004fc350",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc350"
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350"
     },
     {
       "addr": "0052c0e0",
@@ -102,13 +102,13 @@
     },
     {
       "addr": "01fb331c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb3320",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -130,7 +130,7 @@
       {
         "call_addr": "004fca3d",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fc940",
+        "caller": "core_mission.cpp_CDemonMission_process_FUN_004fc940",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -152,7 +152,7 @@
       {
         "call_addr": "004fcaef",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fca90",
+        "caller": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -223,27 +223,19 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 21,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(&g_CDemonSetPtr->field_0x14d168 + iVar3);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 23,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*piVar1 + 0x2b0) + 0x58))(*piVar1);",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x2b0) + 0x58))(iVar1);",
       "type": "unresolved_funcptr"
     }
   ]

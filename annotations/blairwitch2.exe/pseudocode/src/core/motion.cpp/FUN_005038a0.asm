@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[26]:
-;   core_charactr.cpp_FUN_00429ce0 at 00429d3c
+;   core_charactr.cpp_CCharacter_canLookAt_FUN_00429ce0 at 00429d3c
+;   core_doc.cpp_CDoc_canDoHeroAction_FUN_0045d0c0 at 0045d0f4
 ;   core_doc.cpp_FUN_00450c60 at 00450fc0
 ;   core_doc.cpp_FUN_00453250 at 00453692
 ;   core_doc.cpp_FUN_00453d80 at 00453d9b
 ;   core_doc.cpp_FUN_00455270 at 004552a0
 ;   core_doc.cpp_FUN_004555c0 at 00455665
-;   core_gabriela.cpp_FUN_004ad640 at 004add01
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add01
 ;   core_gabriela.cpp_FUN_004af410 at 004af5bc
-;   core_ghoul.cpp_FUN_004c1bb0 at 004c1c22
-;   core_ghoul.cpp_FUN_004c3ac0 at 004c3adf
+;   core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c3ac0 at 004c3adf
 ;   ... and 16 more
 ;
 ; *****************************************************************************

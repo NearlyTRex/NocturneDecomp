@@ -11,7 +11,7 @@ void core_moloch_cpp_factoryFuncMoloch_FUN_005202c0(void)
 {
   CMoloch *this_ptr;
   
-  this_ptr = (CMoloch *)FUN_005c0f32(0x23060);
+  this_ptr = (CMoloch *)debugAllocTracked1(0x23060);
   if (this_ptr == (CMoloch *)0x0) {
     return;
   }

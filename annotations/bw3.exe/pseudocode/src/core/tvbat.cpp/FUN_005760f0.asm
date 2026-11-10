@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_tvbat.cpp_FUN_005760d0 at 005760e1
-;   core_tvbat.cpp_FUN_00576100 at 00576114
+;   core_tvbat.cpp_CTVBat_getCollisionType_FUN_005760d0 at 005760e1
+;   core_tvbat.cpp_CTVBat_getDeathState_FUN_00576100 at 00576114
 ;
 ; *****************************************************************************
 

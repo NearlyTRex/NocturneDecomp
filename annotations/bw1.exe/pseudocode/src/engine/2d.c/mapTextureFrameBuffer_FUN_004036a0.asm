@@ -9,7 +9,7 @@
 ;   undefined4 DAT_01c50930
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00403480
+;   engine_2d.c_mapFrameBuffer_FUN_00403480
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
     PUSH EDX                            ; 004036ab
     MOV ESI,dword ptr [0x01c50930]      ; 004036ac | DAT_01c50930
     PUSH ESI                            ; 004036b2
-    CALL engine_2d.c_FUN_00403480       ; 004036b3
-        ;   XREF to: 00403480 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00403480()
+    CALL engine_2d.c_mapFrameBuffer_FUN_00403480 ; 004036b3
+        ;   XREF to: 00403480 (UNCONDITIONAL_CALL)  ; int engine_2d.c_mapFrameBuffer_FUN_00403480(void * frame_buffer, int width, int height, int bits_per_pixel, ...)
     ADD ESP,0x14                        ; 004036b8
     POP ESI                             ; 004036bb
     RET                                 ; 004036bc

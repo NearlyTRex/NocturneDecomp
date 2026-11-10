@@ -7,7 +7,7 @@
 ; CDrummer *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_tbplayer.cpp_FUN_00571d80 at 00571d93
+;   core_tbplayer.cpp_factoryFuncDrummer_FUN_00571d80 at 00571d93
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_00510460

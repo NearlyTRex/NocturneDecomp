@@ -8,19 +8,19 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CRobinVTable
+;   CRobin_full_vtable g_CRobinVTable
 ;   WatcomTypeInfo g_CRobinTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_cloth.cpp_FUN_005b1480
+;   core_armour.cpp_FUN_0040f2b0
+;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   unkaddr_0059d350.cpp_FUN_0059df70
 ;   unkaddr_005a7eb0.cpp_FUN_005a8100
-;   unkafter_armour.cpp_FUN_0040f2b0
 ;   unkafter_superopt.cpp_FUN_005a8220
 ;
 ; *****************************************************************************
@@ -58,8 +58,8 @@ section .text
     PUSH 0x0                            ; 005a5f9f
     ADD EBX,0x3a20                      ; 005a5fa1
     PUSH EBX                            ; 005a5fa7
-    CALL unkafter_armour.cpp_FUN_0040f2b0 ; 005a5fa8
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_FUN_0040f2b0   ; 005a5fa8
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
     ADD ESP,0x8                         ; 005a5fad
     PUSH 0x0                            ; 005a5fb0
     SUB EAX,0x9c8                       ; 005a5fb2
@@ -70,8 +70,8 @@ section .text
     PUSH 0x0                            ; 005a5fc0
     SUB EAX,0x34c                       ; 005a5fc2
     PUSH EAX                            ; 005a5fc7
-    CALL core_cloth.cpp_FUN_005b1480    ; 005a5fc8
-        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_005b1480(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_005b1480 ; 005a5fc8
+        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_005b1480(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a5fcd
     PUSH 0x0                            ; 005a5fd0
     SUB EAX,0x2a58                      ; 005a5fd2

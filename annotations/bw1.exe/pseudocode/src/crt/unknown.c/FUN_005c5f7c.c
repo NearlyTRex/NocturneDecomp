@@ -92,7 +92,7 @@ LAB_005c6286:
       if ((*(byte *)(param_1 + 0x10) & 0x40) == 0) {
         do {
           iVar4 = local_24;
-          iVar5 = FUN_005c63e8(local_24);
+          iVar5 = updateClassNameHash(local_24);
           if (param_3 <= iVar5) {
             if ((iVar4 != 0x3a) || ((*(byte *)(param_1 + 0x10) & 0x80) == 0)) goto LAB_005c6286;
             goto LAB_005c6253;
@@ -106,7 +106,7 @@ LAB_005c6286:
         local_28 = 0;
         local_38[3] = param_3;
         do {
-          iVar4 = FUN_005c63e8(local_24);
+          iVar4 = updateClassNameHash(local_24);
           lVar10 = CONCAT44(local_38[0],local_3c);
           if (param_3 <= iVar4) {
             if ((local_24 != 0x3a) || ((*(byte *)(param_1 + 0x10) & 0x80) == 0)) goto LAB_005c6286;
@@ -114,7 +114,7 @@ LAB_005c6286:
           }
           local_38[2] = 0;
           local_38[1] = iVar4;
-          lVar10 = unkafter_zombie_cpp_FUN_005cb7e8();
+          lVar10 = FUN_005cb7e8();
           lVar10 = lVar10 + CONCAT44(local_38[2],local_38[1]);
           local_3c = (uint)lVar10;
           local_38[0] = (uint)((ulonglong)lVar10 >> 0x20);
@@ -199,7 +199,7 @@ LAB_005c6253:
   local_24 = FUN_005c6418(param_1);
   iVar7 = iVar7 + 1;
   if (local_24 == -1) goto LAB_005c6298;
-  iVar4 = FUN_005c63e8(local_24);
+  iVar4 = updateClassNameHash(local_24);
   if (param_3 <= iVar4) goto LAB_005c6286;
   local_18 = local_18 * param_3 + iVar4;
   goto LAB_005c6253;
@@ -209,11 +209,11 @@ LAB_005c619e:
   local_24 = FUN_005c6418(param_1);
   iVar7 = iVar7 + 1;
   if (local_24 == -1) goto LAB_005c6298;
-  iVar4 = FUN_005c63e8(local_24);
+  iVar4 = updateClassNameHash(local_24);
   if (param_3 <= iVar4) goto LAB_005c6286;
   local_38[2] = 0;
   local_38[1] = iVar4;
-  lVar10 = unkafter_zombie_cpp_FUN_005cb7e8();
+  lVar10 = FUN_005cb7e8();
   lVar10 = lVar10 + CONCAT44(local_38[2],local_38[1]);
   goto LAB_005c619e;
 }

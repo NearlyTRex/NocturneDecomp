@@ -7,14 +7,14 @@
 ; XREF[13]:
 ;   core_emitter.cpp_FUN_00487c80 at 00487d63
 ;   core_fire.cpp_FUN_00497290 at 0049737a
-;   core_gore.cpp_FUN_004cd510 at 004cd54f
-;   core_gore.cpp_FUN_004ce9c0 at 004cea9a
+;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004cd510 at 004cd54f
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0 at 004cea9a
 ;   core_prye.cpp_FUN_0051c1c0 at 0051d971
 ;   core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0054fb70 at 0054fc90
-;   core_tvbat.cpp_FUN_00575380 at 005756df
-;   core_vecdir.cpp_FUN_00576250 at 005762af
-;   core_xform.cpp_FUN_00585b20 at 00585c9b
+;   core_tvbat.cpp_CTVBat_process_FUN_00575380 at 005756df
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 at 005762af
 ;   core_xform.cpp_FUN_00585de0 at 00585e6f
+;   core_xform.cpp_FUN_00585f40 at 00585fd1
 ;   ... and 3 more
 ;
 ; Referenced Globals:

@@ -70,7 +70,7 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsDirectOp66_FUN_00407490(int para
           vertex_indices = vertex_indices + 1;
         } while (iVar7 < *(int *)(param_1 + 4));
       }
-      pSVar4 = engine_texture_cpp_FUN_005750e0();
+      pSVar4 = engine_texture_cpp_getCurrentTexture_FUN_005750e0();
       uVar1 = DAT_006141d8;
       puVar6 = (uint *)(&DAT_0070cbc4 + iVar3);
       for (iVar7 = 0x12; iVar7 != 0; iVar7 = iVar7 + -1) {

@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_confzomb_cpp_FUN_005a2240(int param_1,float param_2)
@@ -80,10 +79,10 @@ void core_confzomb_cpp_FUN_005a2240(int param_1,float param_2)
   fStack_20 = fStack_44 * param_2;
   afStack_1c[0] = fStack_40 * param_2;
   afStack_1c[1] = fStack_3c * param_2;
-  CStack_2c._0_4_ = fStack_44 * param_2;
-  *(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4) = afStack_1c[(uint)bVar5 * 0xfffffffe];
+  CStack_2c.x = fStack_44 * param_2;
+  *(float *)((int)&CStack_2c + (uint)bVar5 * -8 + 4) = afStack_1c[(uint)bVar5 * -2];
   *(float *)((int)&CStack_2c + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_1c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  core_cloth_cpp_FUN_005b1890(this_ptr,wind_velocity);
+  core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(this_ptr,wind_velocity);
   return;
 }

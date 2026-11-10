@@ -13,10 +13,10 @@ Current type breakdown:
   undefined8                     19
   undefined2                     4
 
-DAT_ globals with type hints: 1268 / 3226
+DAT_ globals with type hints: 1276 / 3226
 
 --------------------------------------------------------------------------------
-HIGH CONFIDENCE INFERENCES (1018)
+HIGH CONFIDENCE INFERENCES (1027)
 --------------------------------------------------------------------------------
   DAT_005b5849                    addr=005b5849    current=undefined4      likely=float           refs=1
     nearby: s_core_actor_cpp_005b584d (TerminatedCString) at offset -4
@@ -577,7 +577,7 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_005e2c60                    addr=005e2c60    current=undefined4      likely=float           refs=1
     nearby: g_CBoundingBox3DTypeInfo (WatcomTypeInfo) at offset +32
   DAT_005e2fd8                    addr=005e2fd8    current=undefined4      likely=float           refs=1
-    nearby: g_CPassengerVTable (undefined1*) at offset -12
+    nearby: g_CPassengerVTable (CCharacter_full_vtable) at offset -12
   DAT_005e31a8                    addr=005e31a8    current=undefined4      likely=float           refs=1
     nearby: g_CPathMapTypeInfo (WatcomTypeInfo) at offset +40
   DAT_005e32e0                    addr=005e32e0    current=undefined4      likely=float           refs=1
@@ -611,7 +611,7 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_005e352c                    addr=005e352c    current=undefined4      likely=float           refs=1
     nearby: g_CDemonPodTypeInfo (WatcomTypeInfo) at offset +124
   DAT_005e36d8                    addr=005e36d8    current=undefined4      likely=float           refs=1
-    nearby: g_CPryeMorphVTable (undefined1*) at offset -12
+    nearby: g_CPryeMorphVTable (CCharacter_full_vtable) at offset -12
   DAT_005e386c                    addr=005e386c    current=undefined4      likely=float           refs=1
     nearby: g_CPryeMorphTypeInfo (WatcomTypeInfo) at offset +60
   DAT_005e3a0c                    addr=005e3a0c    current=undefined4      likely=float           refs=1
@@ -794,7 +794,7 @@ HIGH CONFIDENCE INFERENCES (1018)
     nearby: g_CZombieDogClassVersion (int) at offset -60
   DAT_005f2af0                    addr=005f2af0    current=undefined4      likely=float           refs=5
     nearby: PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00465600_005f2ad0 (void*) at offset +32
-  DAT_005f2afc                    addr=005f2afc    current=undefined4      likely=int *           refs=227
+  DAT_005f2afc                    addr=005f2afc    current=undefined4      likely=byte            refs=227
     nearby: PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00465600_005f2ad0 (void*) at offset +44
   DAT_005f4a5c                    addr=005f4a5c    current=undefined4      likely=float           refs=2
     nearby: g_CDripClassVersion (int) at offset +24
@@ -908,7 +908,7 @@ HIGH CONFIDENCE INFERENCES (1018)
     nearby: g_CWaterPtr (CWater*) at offset +8
   DAT_00606cac                    addr=00606cac    current=undefined4      likely=SMRGLTextureBasic *  refs=2
   DAT_00606e2c                    addr=00606e2c    current=undefined4      likely=SMRGLTextureBasic *  refs=2
-  DAT_006075c8                    addr=006075c8    current=undefined4      likely=LPVOID          refs=3
+  DAT_006075c8                    addr=006075c8    current=undefined4      likely=int             refs=3
     nearby: PTR_s_Sunday_006075f8 (undefined1*) at offset -48
   DAT_006075d0                    addr=006075d0    current=undefined4      likely=double          refs=1
     nearby: PTR_s_Sunday_006075f8 (undefined1*) at offset -40
@@ -951,7 +951,7 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_00607d44                    addr=00607d44    current=undefined4      likely=longlong        refs=4
     nearby: s_s_0123456789abcdefghijkl_00607d4c (TerminatedCString) at offset -8
   DAT_00607df0                    addr=00607df0    current=undefined4      likely=function_ptr    refs=2
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005ad790_00607dec (void*) at offset +4
+    nearby: PTR_crt_unknown.c_FUN_005ad790_00607dec (void*) at offset +4
   DAT_00607df4                    addr=00607df4    current=undefined4      likely=function_ptr    refs=2
     nearby: s_s_0123456789abcdef_00607df8 (TerminatedCString) at offset -4
   DAT_00609f08                    addr=00609f08    current=undefined4      likely=float           refs=1
@@ -961,29 +961,29 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_00609f10                    addr=00609f10    current=undefined4      likely=float           refs=1
     nearby: PTR_crt_unknown.c_FUN_005aa62d_00609f14 (undefined1*) at offset -4
   DAT_0060a014                    addr=0060a014    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset -16
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset -16
   DAT_0060a044                    addr=0060a044    current=undefined4      likely=double          refs=2
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +32
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +32
   DAT_0060a04e                    addr=0060a04e    current=undefined4      likely=double          refs=4
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +42
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +42
   DAT_0060a058                    addr=0060a058    current=undefined4      likely=float           refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +52
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +52
   DAT_0060a05c                    addr=0060a05c    current=undefined4      likely=float           refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +56
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +56
   DAT_0060a060                    addr=0060a060    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +60
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +60
   DAT_0060a06a                    addr=0060a06a    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +70
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +70
   DAT_0060a074                    addr=0060a074    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +80
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +80
   DAT_0060a07e                    addr=0060a07e    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +90
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +90
   DAT_0060a088                    addr=0060a088    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +100
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +100
   DAT_0060a092                    addr=0060a092    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +110
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +110
   DAT_0060a09c                    addr=0060a09c    current=undefined4      likely=double          refs=1
-    nearby: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at offset +120
+    nearby: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at offset +120
   DAT_0060b010                    addr=0060b010    current=undefined4      likely=int             refs=8
   DAT_0060b014                    addr=0060b014    current=undefined4      likely=double          refs=22
   DAT_0060b018                    addr=0060b018    current=undefined4      likely=double          refs=8
@@ -997,13 +997,13 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_0073040c                    addr=0073040c    current=undefined4      likely=float           refs=2
   DAT_00730410                    addr=00730410    current=undefined4      likely=float           refs=2
   DAT_00730418                    addr=00730418    current=undefined4      likely=int             refs=11
-  DAT_007df974                    addr=007df974    current=undefined4      likely=int *           refs=2
-    nearby: g_CDemonActorClassInfo (CDemonActorType) at offset -4
   DAT_007df9c8                    addr=007df9c8    current=undefined4      likely=int             refs=5
     nearby: g_CDemonActorClassInfo.name_hash (undefined4) at offset +24
   DAT_007dff8c                    addr=007dff8c    current=undefined4      likely=int             refs=4
     nearby: g_CBlunderbusClassInfo (CDemonActorType) at offset +64
-  DAT_007e1a54                    addr=007e1a54    current=undefined4      likely=int             refs=1
+  DAT_007e1624                    addr=007e1624    current=undefined4      likely=byte            refs=1
+    nearby: g_CBodyPartClassInfo.name_hash (undefined4) at offset +8
+  DAT_007e1a54                    addr=007e1a54    current=undefined4      likely=float *         refs=1
   DAT_007e1c94                    addr=007e1c94    current=undefined4      likely=int             refs=1
   DAT_007e1c98                    addr=007e1c98    current=undefined4      likely=int             refs=1
   DAT_007e2ae8                    addr=007e2ae8    current=undefined4      likely=float           refs=1
@@ -1031,7 +1031,7 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_00b9da48                    addr=00b9da48    current=undefined4      likely=byte            refs=1
   DAT_00b9e54c                    addr=00b9e54c    current=undefined4      likely=float           refs=2
   DAT_00b9e550                    addr=00b9e550    current=undefined4      likely=float           refs=2
-  DAT_01340588                    addr=01340588    current=undefined4      likely=uint *          refs=1
+  DAT_01340588                    addr=01340588    current=undefined4      likely=float *         refs=1
   DAT_01340590                    addr=01340590    current=undefined4      likely=float           refs=2
   DAT_0134059c                    addr=0134059c    current=undefined4      likely=float           refs=2
   DAT_013405a8                    addr=013405a8    current=undefined4      likely=float           refs=2
@@ -1175,8 +1175,8 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_01cba2b4                    addr=01cba2b4    current=undefined4      likely=CSpark *        refs=2
     nearby: CFirefly_ARRAY_01cba2b8[0].field36_0x24 (undefined4) at offset -40
   DAT_01cbb9b8                    addr=01cbb9b8    current=undefined4      likely=CFirefly *      refs=1
-  DAT_01cbb9bc                    addr=01cbb9bc    current=undefined4      likely=uint *          refs=4
-  DAT_01cbc0ec                    addr=01cbc0ec    current=undefined4      likely=uint *          refs=2
+  DAT_01cbb9bc                    addr=01cbb9bc    current=undefined4      likely=CMuzzleFlash *  refs=4
+  DAT_01cbc0ec                    addr=01cbc0ec    current=undefined4      likely=CMuzzleFlash *  refs=2
     nearby: CGlassParticle_ARRAY_01cbc0f0[0].field36_0x24 (undefined4) at offset -40
   DAT_01cefd10                    addr=01cefd10    current=undefined4      likely=CGlassParticle *  refs=1
   DAT_01cefe7c                    addr=01cefe7c    current=undefined4      likely=CBulletTrail *  refs=2
@@ -1205,10 +1205,12 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_01d0bb90                    addr=01d0bb90    current=undefined4      likely=CRainDrop *     refs=2
   DAT_01d0ce7c                    addr=01d0ce7c    current=undefined4      likely=CLightningBolt *  refs=2
     nearby: g_CFirestaffClassInfo.name_hash (undefined4) at offset -108
+  DAT_01d0d010                    addr=01d0d010    current=undefined4      likely=char *          refs=7
+    nearby: g_CFlameCanClassInfo.name_hash (undefined4) at offset +176
   DAT_01d0e36c                    addr=01d0e36c    current=undefined4      likely=SNotesSection *  refs=5
     nearby: SNotesMap_ARRAY_01d0e370 (SNotesMap[10]) at offset -4
   DAT_01d19ba8                    addr=01d19ba8    current=undefined4      likely=SNotesMap *     refs=5
-    nearby: CAlphaBitmap_01d19c9c.field12_0xc (undefined4) at offset -256
+    nearby: CAlphaBitmap_01d19c9c.width (undefined4) at offset -256
   DAT_01d19f90                    addr=01d19f90    current=undefined4      likely=char *          refs=7
     nearby: g_CFieldNotesInstance (CFieldNotes) at offset -204
   DAT_01d1a0ac                    addr=01d1a0ac    current=undefined4      likely=float           refs=5
@@ -1239,19 +1241,19 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_01d1bb10                    addr=01d1bb10    current=undefined4      likely=double          refs=1
   DAT_01d1bb18                    addr=01d1bb18    current=undefined4      likely=float           refs=1
   DAT_01d1e328                    addr=01d1e328    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -60
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -60
   DAT_01d1e32c                    addr=01d1e32c    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -56
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -56
   DAT_01d1e330                    addr=01d1e330    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -52
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -52
   DAT_01d1e338                    addr=01d1e338    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -44
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -44
   DAT_01d1e33c                    addr=01d1e33c    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -40
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -40
   DAT_01d1e340                    addr=01d1e340    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -36
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -36
   DAT_01d1e344                    addr=01d1e344    current=undefined4      likely=float           refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -32
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -32
   DAT_01d21fa0                    addr=01d21fa0    current=undefined4      likely=uint *          refs=3
   DAT_01d226cc                    addr=01d226cc    current=undefined4      likely=int *           refs=3
   DAT_01d22af4                    addr=01d22af4    current=undefined4      likely=float           refs=3
@@ -1280,6 +1282,8 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_01d4a974                    addr=01d4a974    current=undefined4      likely=float           refs=1
   DAT_01d4a978                    addr=01d4a978    current=undefined4      likely=float           refs=1
   DAT_01d4a97c                    addr=01d4a97c    current=undefined4      likely=float           refs=1
+  DAT_01d5bc10                    addr=01d5bc10    current=undefined4      likely=SCarryHand      refs=1
+    nearby: g_CImpClassInfo.name_hash (undefined4) at offset -100
   DAT_01d5be80                    addr=01d5be80    current=undefined4      likely=float           refs=2
   DAT_01d72644                    addr=01d72644    current=undefined4      likely=float           refs=11
   DAT_01d72648                    addr=01d72648    current=undefined4      likely=float           refs=11
@@ -1290,6 +1294,10 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_01d7265c                    addr=01d7265c    current=undefined4      likely=float           refs=11
   DAT_01d72660                    addr=01d72660    current=undefined4      likely=float           refs=11
   DAT_01d72664                    addr=01d72664    current=undefined4      likely=float           refs=11
+  DAT_01d73a00                    addr=01d73a00    current=undefined4      likely=char *          refs=1
+  DAT_01d74024                    addr=01d74024    current=undefined4      likely=int *           refs=1
+  DAT_01d74068                    addr=01d74068    current=undefined4      likely=char **         refs=1
+  DAT_01d740a8                    addr=01d740a8    current=undefined4      likely=int *           refs=1
   DAT_01d76c40                    addr=01d76c40    current=undefined4      likely=float           refs=11
   DAT_01d76c4c                    addr=01d76c4c    current=undefined4      likely=float           refs=4
   DAT_01d76c50                    addr=01d76c50    current=undefined4      likely=float           refs=5
@@ -1420,6 +1428,8 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_01d93468                    addr=01d93468    current=undefined4      likely=double          refs=1
   DAT_01dc2694                    addr=01dc2694    current=undefined4      likely=int *           refs=1
   DAT_01dd4488                    addr=01dd4488    current=undefined4      likely=UNetPacket *    refs=2
+  DAT_01dd6a3c                    addr=01dd6a3c    current=undefined4      likely=SCarryHand      refs=1
+    nearby: g_CNPCClassInfo.name_hash (undefined4) at offset -64
   DAT_01ed2c8c                    addr=01ed2c8c    current=undefined4      likely=SSoftwareEdge *  refs=3
     nearby: g_CDemonPodInstance.field404_0x194 (undefined4) at offset +8
   DAT_01ed31a0                    addr=01ed31a0    current=undefined4      likely=int *           refs=2
@@ -1427,6 +1437,7 @@ HIGH CONFIDENCE INFERENCES (1018)
     nearby: g_CPryeClassInfo.name_hash (undefined4) at offset -168
   DAT_01ed3784                    addr=01ed3784    current=undefined4      likely=float           refs=1
     nearby: g_CPryeClassInfo.name_hash (undefined4) at offset +4
+  DAT_01ed6810                    addr=01ed6810    current=undefined4      likely=char *          refs=6
   DAT_01ed7010                    addr=01ed7010    current=undefined4      likely=float           refs=5
   DAT_0207baac                    addr=0207baac    current=undefined4      likely=float           refs=2
   DAT_0207bab0                    addr=0207bab0    current=undefined4      likely=float           refs=2
@@ -1455,7 +1466,7 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_021221d4                    addr=021221d4    current=undefined4      likely=CVector3f *     refs=2
   DAT_021221e0                    addr=021221e0    current=undefined4      likely=CVector3f *     refs=2
   DAT_021221ec                    addr=021221ec    current=undefined4      likely=float           refs=2
-  DAT_02122514                    addr=02122514    current=undefined4      likely=uint *          refs=1
+  DAT_02122514                    addr=02122514    current=undefined4      likely=int *           refs=1
   DAT_0212551c                    addr=0212551c    current=undefined4      likely=uint *          refs=1
   DAT_02701528                    addr=02701528    current=undefined4      likely=float           refs=2
   DAT_0271383c                    addr=0271383c    current=undefined4      likely=float           refs=1
@@ -1526,17 +1537,17 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_02cfd908                    addr=02cfd908    current=undefined4      likely=float           refs=16
     nearby: g_CTVBatClassInfo.name_hash (undefined4) at offset +12
   DAT_02cfd960                    addr=02cfd960    current=undefined4      likely=float           refs=2
-    nearby: g_CWaterInstance.field12_0xc (undefined4) at offset +4
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset +4
   DAT_02cfd964                    addr=02cfd964    current=undefined4      likely=float           refs=2
-    nearby: g_CWaterInstance.field12_0xc (undefined4) at offset +8
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset +8
   DAT_02cfd968                    addr=02cfd968    current=undefined4      likely=float           refs=2
-    nearby: g_CWaterInstance.field12_0xc (undefined4) at offset +12
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset +12
   DAT_02cfd96c                    addr=02cfd96c    current=undefined4      likely=float           refs=2
-    nearby: g_CWaterInstance.field12_0xc (undefined4) at offset +16
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset +16
   DAT_02cfd970                    addr=02cfd970    current=undefined4      likely=float           refs=2
-    nearby: g_CWaterInstance.field12_0xc (undefined4) at offset +20
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset +20
   DAT_02cfd97c                    addr=02cfd97c    current=undefined4      likely=float           refs=2
-    nearby: g_CWaterInstance.field12_0xc (undefined4) at offset +32
+    nearby: g_CWaterInstance.visible_area_sqft (undefined4) at offset +32
   DAT_02d059a8                    addr=02d059a8    current=undefined4      likely=float           refs=2
   DAT_02d059ac                    addr=02d059ac    current=undefined4      likely=float           refs=1
   DAT_02d059b0                    addr=02d059b0    current=undefined4      likely=float           refs=1
@@ -1579,6 +1590,8 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_02d23c38                    addr=02d23c38    current=undefined4      likely=double          refs=1
   DAT_02d24208                    addr=02d24208    current=undefined4      likely=double          refs=2
   DAT_02d2420c                    addr=02d2420c    current=undefined4      likely=double          refs=2
+  DAT_02d24974                    addr=02d24974    current=undefined4      likely=SCarryHand      refs=2
+    nearby: g_CKedwardClassInfo.name_hash (undefined4) at offset -160
   DAT_02d24d84                    addr=02d24d84    current=undefined4      likely=int *           refs=2
     nearby: g_CAsgayaClassInfo.name_hash (undefined4) at offset +8
   DAT_02d252a0                    addr=02d252a0    current=undefined4      likely=uint *          refs=7
@@ -1587,7 +1600,7 @@ HIGH CONFIDENCE INFERENCES (1018)
   DAT_02d26200                    addr=02d26200    current=undefined4      likely=int *           refs=1
 
 --------------------------------------------------------------------------------
-MEDIUM CONFIDENCE INFERENCES (250)
+MEDIUM CONFIDENCE INFERENCES (249)
 --------------------------------------------------------------------------------
   DAT_005c6d3e                    addr=005c6d3e    current=undefined1      likely=byte            refs=1
     nearby: s_If_you_think_you_have_at_005c6d40 (TerminatedCString) at offset -2
@@ -1699,7 +1712,7 @@ MEDIUM CONFIDENCE INFERENCES (250)
   DAT_00607d48                    addr=00607d48    current=undefined1      likely=byte            refs=1
     nearby: s_s_0123456789abcdefghijkl_00607d4c (TerminatedCString) at offset -4
   DAT_00607fad                    addr=00607fad    current=undefined4      likely=byte            refs=1
-    nearby: PTR_unkafter_2d.cpp_FUN_005b0d60_00607f1c (undefined1*) at offset +145
+    nearby: PTR_crt_unknown.c_FUN_005b0d60_00607f1c (undefined1*) at offset +145
   DAT_00609ef8                    addr=00609ef8    current=undefined4      likely=byte            refs=1
     nearby: PTR_crt_unknown.c_FUN_005aa62d_00609f14 (undefined1*) at offset -28
   DAT_0060b024+3                  addr=0060b027    current=undefined4      likely=byte            refs=1
@@ -1720,10 +1733,11 @@ MEDIUM CONFIDENCE INFERENCES (250)
   DAT_01371810                    addr=01371810    current=undefined4      likely=byte            refs=4
   DAT_014a02f2                    addr=014a02f2    current=undefined4      likely=short           refs=1
   DAT_014a02f6                    addr=014a02f6    current=undefined4      likely=short           refs=1
+  DAT_01547204                    addr=01547204    current=undefined4      likely=array           refs=1
   DAT_015484c8                    addr=015484c8    current=undefined4      likely=array           refs=3
   DAT_015485e8                    addr=015485e8    current=undefined4      likely=byte            refs=1
   DAT_015485f8                    addr=015485f8    current=undefined4      likely=byte            refs=1
-  DAT_01bdd7bc                    addr=01bdd7bc    current=undefined4      likely=byte            refs=7
+  DAT_01bdd7bc                    addr=01bdd7bc    current=undefined4      likely=short           refs=7
   DAT_01bdd7cc                    addr=01bdd7cc    current=undefined4      likely=byte            refs=4
   DAT_01c599d8                    addr=01c599d8    current=undefined4      likely=byte            refs=1
   DAT_01c5fae4                    addr=01c5fae4    current=undefined4      likely=byte            refs=18
@@ -1738,6 +1752,7 @@ MEDIUM CONFIDENCE INFERENCES (250)
   DAT_01c6af88                    addr=01c6af88    current=undefined4      likely=byte            refs=7
   DAT_01c6af8c                    addr=01c6af8c    current=undefined4      likely=byte            refs=35
   DAT_01c6af94                    addr=01c6af94    current=undefined4      likely=byte            refs=7
+  DAT_01c6cee8                    addr=01c6cee8    current=undefined4      likely=float           refs=109
   DAT_01c6d0f0                    addr=01c6d0f0    current=undefined4      likely=byte            refs=1
   DAT_01c6d0f1                    addr=01c6d0f1    current=undefined4      likely=byte            refs=1
   DAT_01c6d0fc                    addr=01c6d0fc    current=undefined4      likely=byte            refs=1
@@ -1762,17 +1777,15 @@ MEDIUM CONFIDENCE INFERENCES (250)
     nearby: g_CFlameCanClassInfo.name_hash (undefined4) at offset +104
   DAT_01d0cfc9                    addr=01d0cfc9    current=undefined4      likely=byte            refs=1
     nearby: g_CFlameCanClassInfo.name_hash (undefined4) at offset +105
-  DAT_01d0d010                    addr=01d0d010    current=undefined4      likely=byte            refs=7
-    nearby: g_CFlameCanClassInfo.name_hash (undefined4) at offset +176
   DAT_01d0d011                    addr=01d0d011    current=undefined4      likely=byte            refs=1
     nearby: g_CFlameCanClassInfo.name_hash (undefined4) at offset +177
   DAT_01d19cf0                    addr=01d19cf0    current=undefined4      likely=byte            refs=1
-    nearby: CAlphaBitmap_01d19cd8.field16_0x10 (undefined4) at offset +8
+    nearby: CAlphaBitmap_01d19cd8.height (undefined4) at offset +8
   DAT_01d19f91                    addr=01d19f91    current=undefined4      likely=byte            refs=1
     nearby: g_CFieldNotesInstance (CFieldNotes) at offset -203
   DAT_01d1ad62                    addr=01d1ad62    current=undefined4      likely=short           refs=3
   DAT_01d1e35c                    addr=01d1e35c    current=undefined4      likely=byte            refs=1
-    nearby: g_CDemonLightInstance.field4_0x4 (undefined4) at offset -8
+    nearby: g_CDemonLightInstance.base.base.position (undefined4) at offset -8
   DAT_01d225c8                    addr=01d225c8    current=undefined4      likely=byte            refs=6
   DAT_01d225c9                    addr=01d225c9    current=undefined4      likely=byte            refs=4
   DAT_01d229f0                    addr=01d229f0    current=undefined4      likely=byte            refs=2
@@ -1780,7 +1793,6 @@ MEDIUM CONFIDENCE INFERENCES (250)
     nearby: g_CGasMaskClassInfo.name_hash (undefined4) at offset -198
   DAT_01d22c83                    addr=01d22c83    current=undefined4      likely=byte            refs=1
     nearby: g_CGasMaskClassInfo.name_hash (undefined4) at offset -197
-  DAT_01d73a00                    addr=01d73a00    current=undefined4      likely=byte            refs=1
   DAT_01d73a01                    addr=01d73a01    current=undefined4      likely=byte            refs=1
   DAT_01d73b00                    addr=01d73b00    current=undefined4      likely=byte            refs=1
   DAT_01d73b01                    addr=01d73b01    current=undefined4      likely=byte            refs=1
@@ -1872,7 +1884,6 @@ MEDIUM CONFIDENCE INFERENCES (250)
     nearby: g_CPryeClassInfo.name_hash (undefined4) at offset -196
   DAT_01ed6008                    addr=01ed6008    current=undefined4      likely=byte            refs=1
   DAT_01ed6009                    addr=01ed6009    current=undefined4      likely=byte            refs=1
-  DAT_01ed6810                    addr=01ed6810    current=undefined4      likely=byte            refs=6
   DAT_01ed6811                    addr=01ed6811    current=undefined4      likely=byte            refs=2
   DAT_0270f7f4                    addr=0270f7f4    current=undefined4      likely=byte            refs=1
     nearby: g_CShadowClassInfo.name_hash (undefined4) at offset -92
@@ -1880,7 +1891,7 @@ MEDIUM CONFIDENCE INFERENCES (250)
   DAT_0272af40                    addr=0272af40    current=undefined4      likely=byte            refs=1
   DAT_02cdafb0                    addr=02cdafb0    current=undefined4      likely=byte            refs=1
   DAT_02ce71e8                    addr=02ce71e8    current=undefined4      likely=byte            refs=1
-    nearby: g_CMP3DecoderInstanceOther.field34120_0x8548 (undefined4) at offset +232
+    nearby: g_CMP3DecoderInstanceOther.synthesis_history[1][28][14] (undefined4) at offset +232
   DAT_02ce7384                    addr=02ce7384    current=undefined4      likely=byte            refs=1
   DAT_02ce7450                    addr=02ce7450    current=undefined4      likely=byte            refs=3
   DAT_02ce7453                    addr=02ce7453    current=undefined4      likely=byte            refs=1
@@ -1913,7 +1924,7 @@ LOW CONFIDENCE INFERENCES (0)
 --------------------------------------------------------------------------------
 
 --------------------------------------------------------------------------------
-NO TYPE HINTS (1958)
+NO TYPE HINTS (1950)
 --------------------------------------------------------------------------------
   DAT_004cf860                    addr=004cf860    type=undefined4      refs=1  nearby: switchdataD_004cf960 at -256
   DAT_005c601d                    addr=005c601d    type=undefined1      refs=1  nearby: s_You_ve_received_d_health_005c6021 at -4
@@ -2402,6 +2413,7 @@ NO TYPE HINTS (1958)
   DAT_00730594                    addr=00730594    type=undefined4      refs=2
   DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_007dd9f0                    addr=007dd9f0    type=undefined4      refs=2
+  DAT_007df974                    addr=007df974    type=undefined4      refs=2  nearby: g_CDemonActorClassInfo at -4
   DAT_007df9b4                    addr=007df9b4    type=undefined4      refs=18  nearby: g_CDemonActorClassInfo.name_hash at +4
   DAT_007df9b8                    addr=007df9b8    type=undefined4      refs=26  nearby: g_CDemonActorClassInfo.name_hash at +8
   DAT_007df9bc                    addr=007df9bc    type=undefined4      refs=4  nearby: g_CDemonActorClassInfo.name_hash at +12
@@ -2417,7 +2429,6 @@ NO TYPE HINTS (1958)
   DAT_007dffb8                    addr=007dffb8    type=undefined4      refs=6  nearby: g_CBlunderbusClassInfo at +108
   DAT_007dffbc                    addr=007dffbc    type=undefined4      refs=2  nearby: g_CBlunderbusClassInfo at +112
   DAT_007e1620                    addr=007e1620    type=undefined4      refs=4  nearby: g_CBodyPartClassInfo.name_hash at +4
-  DAT_007e1624                    addr=007e1624    type=undefined4      refs=1  nearby: g_CBodyPartClassInfo.name_hash at +8
   DAT_007e1628                    addr=007e1628    type=undefined4      refs=3  nearby: g_CBodyPartClassInfo.name_hash at +12
   DAT_007e162c                    addr=007e162c    type=undefined4      refs=1  nearby: g_CBodyPartClassInfo.name_hash at +16
   DAT_007e1630                    addr=007e1630    type=undefined4      refs=1  nearby: g_CBodyPartClassInfo.name_hash at +20
@@ -2588,7 +2599,6 @@ NO TYPE HINTS (1958)
   DAT_014eb304                    addr=014eb304    type=undefined4      refs=1
   DAT_014eb305                    addr=014eb305    type=undefined4      refs=1
   DAT_01547200                    addr=01547200    type=undefined4      refs=2
-  DAT_01547204                    addr=01547204    type=undefined4      refs=1
   DAT_015484cc                    addr=015484cc    type=undefined4      refs=3
   DAT_015484d0                    addr=015484d0    type=undefined4      refs=3
   DAT_015484d4                    addr=015484d4    type=undefined4      refs=3
@@ -2811,7 +2821,6 @@ NO TYPE HINTS (1958)
   DAT_01c6ced4                    addr=01c6ced4    type=undefined4      refs=12
   DAT_01c6cee0                    addr=01c6cee0    type=undefined4      refs=2
   DAT_01c6cee4                    addr=01c6cee4    type=undefined4      refs=3
-  DAT_01c6cee8                    addr=01c6cee8    type=undefined4      refs=109
   DAT_01c6cef4                    addr=01c6cef4    type=undefined4      refs=1
   DAT_01c6e24c                    addr=01c6e24c    type=undefined4      refs=29
   DAT_01c6e250                    addr=01c6e250    type=undefined4      refs=3
@@ -2911,15 +2920,15 @@ NO TYPE HINTS (1958)
   DAT_01d1b0fc                    addr=01d1b0fc    type=undefined4      refs=1
   DAT_01d1b100                    addr=01d1b100    type=undefined4      refs=1
   DAT_01d1bb14                    addr=01d1bb14    type=undefined4      refs=1
-  DAT_01d1e320                    addr=01d1e320    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -68
-  DAT_01d1e324                    addr=01d1e324    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -64
-  DAT_01d1e334                    addr=01d1e334    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -48
-  DAT_01d1e348                    addr=01d1e348    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -28
-  DAT_01d1e34c                    addr=01d1e34c    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -24
-  DAT_01d1e350                    addr=01d1e350    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -20
-  DAT_01d1e354                    addr=01d1e354    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -16
-  DAT_01d1e358                    addr=01d1e358    type=undefined4      refs=1  nearby: g_CDemonLightInstance.field4_0x4 at -12
-  DAT_01d21e9c                    addr=01d21e9c    type=undefined4      refs=1  nearby: g_CGameInstance.field2956_0xb8c at +4
+  DAT_01d1e320                    addr=01d1e320    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -68
+  DAT_01d1e324                    addr=01d1e324    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -64
+  DAT_01d1e334                    addr=01d1e334    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -48
+  DAT_01d1e348                    addr=01d1e348    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -28
+  DAT_01d1e34c                    addr=01d1e34c    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -24
+  DAT_01d1e350                    addr=01d1e350    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -20
+  DAT_01d1e354                    addr=01d1e354    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -16
+  DAT_01d1e358                    addr=01d1e358    type=undefined4      refs=1  nearby: g_CDemonLightInstance.base.base.position at -12
+  DAT_01d21e9c                    addr=01d21e9c    type=undefined4      refs=1  nearby: g_CGameInstance.field763_0xb8c at +4
   DAT_01d21fa4                    addr=01d21fa4    type=undefined4      refs=1
   DAT_01d221f8                    addr=01d221f8    type=undefined4      refs=2  nearby: g_CPickList at -12
   DAT_01d221fc                    addr=01d221fc    type=undefined4      refs=3  nearby: g_CPickList at -8
@@ -3045,7 +3054,6 @@ NO TYPE HINTS (1958)
   DAT_01d5bb14                    addr=01d5bb14    type=undefined4      refs=1  nearby: g_CHolycrossClassInfo.name_hash at +44
   DAT_01d5bb18                    addr=01d5bb18    type=undefined4      refs=2  nearby: g_CHolycrossClassInfo.name_hash at +48
   DAT_01d5bc0c                    addr=01d5bc0c    type=undefined4      refs=3  nearby: g_CImpClassInfo.name_hash at -104
-  DAT_01d5bc10                    addr=01d5bc10    type=undefined4      refs=1  nearby: g_CImpClassInfo.name_hash at -100
   DAT_01d5bc14                    addr=01d5bc14    type=undefined4      refs=2  nearby: g_CImpClassInfo.name_hash at -96
   DAT_01d5bc18                    addr=01d5bc18    type=undefined4      refs=1  nearby: g_CImpClassInfo.name_hash at -92
   DAT_01d5bc1c                    addr=01d5bc1c    type=undefined4      refs=1  nearby: g_CImpClassInfo.name_hash at -88
@@ -3104,9 +3112,6 @@ NO TYPE HINTS (1958)
   DAT_01d73f02                    addr=01d73f02    type=undefined4      refs=1
   DAT_01d73f03                    addr=01d73f03    type=undefined4      refs=1
   DAT_01d74020                    addr=01d74020    type=undefined4      refs=4
-  DAT_01d74024                    addr=01d74024    type=undefined4      refs=1
-  DAT_01d74068                    addr=01d74068    type=undefined4      refs=1
-  DAT_01d740a8                    addr=01d740a8    type=undefined4      refs=1
   DAT_01d7588a                    addr=01d7588a    type=undefined4      refs=1
   DAT_01d7588b                    addr=01d7588b    type=undefined4      refs=1
   DAT_01d7598a                    addr=01d7598a    type=undefined4      refs=1
@@ -3305,13 +3310,13 @@ NO TYPE HINTS (1958)
   DAT_01d94b9a                    addr=01d94b9a    type=undefined4      refs=1
   DAT_01d94b9b                    addr=01d94b9b    type=undefined4      refs=1
   DAT_01d954bc                    addr=01d954bc    type=undefined4      refs=2
-  DAT_01da6474                    addr=01da6474    type=undefined4      refs=14  nearby: g_CNetGameInstance.field380_0x17c at +8
-  DAT_01da6478                    addr=01da6478    type=undefined4      refs=20  nearby: g_CNetGameInstance.field380_0x17c at +12
-  DAT_01da647c                    addr=01da647c    type=undefined4      refs=2  nearby: g_CNetGameInstance.field380_0x17c at +16
-  DAT_01da6480                    addr=01da6480    type=undefined4      refs=3  nearby: g_CNetGameInstance.field380_0x17c at +20
-  DAT_01da6484                    addr=01da6484    type=undefined4      refs=6  nearby: g_CNetGameInstance.field380_0x17c at +24
-  DAT_01da6488                    addr=01da6488    type=undefined4      refs=3  nearby: g_CNetGameInstance.field380_0x17c at +28
-  DAT_01da648c                    addr=01da648c    type=undefined4      refs=5  nearby: g_CNetGameInstance.field380_0x17c at +32
+  DAT_01da6474                    addr=01da6474    type=undefined4      refs=14  nearby: g_CNetGameInstance.random_seed at +8
+  DAT_01da6478                    addr=01da6478    type=undefined4      refs=20  nearby: g_CNetGameInstance.random_seed at +12
+  DAT_01da647c                    addr=01da647c    type=undefined4      refs=2  nearby: g_CNetGameInstance.random_seed at +16
+  DAT_01da6480                    addr=01da6480    type=undefined4      refs=3  nearby: g_CNetGameInstance.random_seed at +20
+  DAT_01da6484                    addr=01da6484    type=undefined4      refs=6  nearby: g_CNetGameInstance.random_seed at +24
+  DAT_01da6488                    addr=01da6488    type=undefined4      refs=3  nearby: g_CNetGameInstance.random_seed at +28
+  DAT_01da648c                    addr=01da648c    type=undefined4      refs=5  nearby: g_CNetGameInstance.random_seed at +32
   DAT_01da65b8                    addr=01da65b8    type=undefined4      refs=1
   DAT_01dc2690                    addr=01dc2690    type=undefined4      refs=7
   DAT_01dc2698                    addr=01dc2698    type=undefined4      refs=1
@@ -3333,7 +3338,6 @@ NO TYPE HINTS (1958)
   DAT_01dd48a0                    addr=01dd48a0    type=undefined4      refs=1
   DAT_01dd48a4                    addr=01dd48a4    type=undefined4      refs=1
   DAT_01dd5070                    addr=01dd5070    type=undefined4      refs=1
-  DAT_01dd6a3c                    addr=01dd6a3c    type=undefined4      refs=1  nearby: g_CNPCClassInfo.name_hash at -64
   DAT_01dd6a40                    addr=01dd6a40    type=undefined4      refs=1  nearby: g_CNPCClassInfo.name_hash at -60
   DAT_01ec1514                    addr=01ec1514    type=undefined4      refs=5
   DAT_01ec1518                    addr=01ec1518    type=undefined4      refs=5
@@ -3454,9 +3458,9 @@ NO TYPE HINTS (1958)
   DAT_0203aec4                    addr=0203aec4    type=undefined4      refs=4
   DAT_0203b1e8                    addr=0203b1e8    type=undefined4      refs=2
   DAT_0203b1ec                    addr=0203b1ec    type=undefined4      refs=2
-  DAT_0203b3e8                    addr=0203b3e8    type=undefined4      refs=6  nearby: g_CDemonRaytraceInstance.field60_0x3c at +48
-  DAT_0203b3ec                    addr=0203b3ec    type=undefined4      refs=2  nearby: g_CDemonRaytraceInstance.field60_0x3c at +52
-  DAT_0203b3f0                    addr=0203b3f0    type=undefined4      refs=2  nearby: g_CDemonRaytraceInstance.field60_0x3c at +56
+  DAT_0203b3e8                    addr=0203b3e8    type=undefined4      refs=6  nearby: g_CDemonRaytraceInstance.adjusted_size.z at +48
+  DAT_0203b3ec                    addr=0203b3ec    type=undefined4      refs=2  nearby: g_CDemonRaytraceInstance.adjusted_size.z at +52
+  DAT_0203b3f0                    addr=0203b3f0    type=undefined4      refs=2  nearby: g_CDemonRaytraceInstance.adjusted_size.z at +56
   DAT_0207baa0                    addr=0207baa0    type=undefined4      refs=1
   DAT_0207baa4                    addr=0207baa4    type=undefined4      refs=2
   DAT_0207baa8                    addr=0207baa8    type=undefined4      refs=2
@@ -3531,7 +3535,7 @@ NO TYPE HINTS (1958)
   DAT_0272af58                    addr=0272af58    type=undefined4      refs=2
   DAT_02cdafbc                    addr=02cdafbc    type=undefined4      refs=1
   DAT_02cdafbd                    addr=02cdafbd    type=undefined4      refs=1
-  DAT_02ce71ec                    addr=02ce71ec    type=undefined4      refs=1  nearby: g_CMP3DecoderInstanceOther.field34120_0x8548 at +236
+  DAT_02ce71ec                    addr=02ce71ec    type=undefined4      refs=1  nearby: g_CMP3DecoderInstanceOther.synthesis_history[1][28][14] at +236
   DAT_02ce7214                    addr=02ce7214    type=undefined4      refs=2
   DAT_02ce7218                    addr=02ce7218    type=undefined4      refs=2
   DAT_02ce727c                    addr=02ce727c    type=undefined4      refs=1
@@ -3736,9 +3740,9 @@ NO TYPE HINTS (1958)
   DAT_02cfd8b0                    addr=02cfd8b0    type=undefined4      refs=2  nearby: g_CTriggerClassInfo.name_hash at +28
   DAT_02cfd8b4                    addr=02cfd8b4    type=undefined4      refs=3  nearby: g_CTriggerClassInfo.name_hash at +32
   DAT_02cfd8bc                    addr=02cfd8bc    type=undefined4      refs=3  nearby: g_CTriggerClassInfo.name_hash at +40
-  DAT_02cfd974                    addr=02cfd974    type=undefined4      refs=1  nearby: g_CWaterInstance.field12_0xc at +24
-  DAT_02cfd978                    addr=02cfd978    type=undefined4      refs=1  nearby: g_CWaterInstance.field12_0xc at +28
-  DAT_02cfd980                    addr=02cfd980    type=undefined4      refs=2  nearby: g_CWaterInstance.field12_0xc at +36
+  DAT_02cfd974                    addr=02cfd974    type=undefined4      refs=1  nearby: g_CWaterInstance.visible_area_sqft at +24
+  DAT_02cfd978                    addr=02cfd978    type=undefined4      refs=1  nearby: g_CWaterInstance.visible_area_sqft at +28
+  DAT_02cfd980                    addr=02cfd980    type=undefined4      refs=2  nearby: g_CWaterInstance.visible_area_sqft at +36
   DAT_02d01980                    addr=02d01980    type=undefined4      refs=2
   DAT_02d059a4                    addr=02d059a4    type=undefined4      refs=1
   DAT_02d059af                    addr=02d059af    type=undefined4      refs=1
@@ -3825,7 +3829,6 @@ NO TYPE HINTS (1958)
   DAT_02d2423c                    addr=02d2423c    type=undefined4      refs=1
   DAT_02d24240                    addr=02d24240    type=undefined4      refs=1
   DAT_02d24970                    addr=02d24970    type=undefined4      refs=2  nearby: g_CKedwardClassInfo.name_hash at -164
-  DAT_02d24974                    addr=02d24974    type=undefined4      refs=2  nearby: g_CKedwardClassInfo.name_hash at -160
   DAT_02d24978                    addr=02d24978    type=undefined4      refs=3  nearby: g_CKedwardClassInfo.name_hash at -156
   DAT_02d2497c                    addr=02d2497c    type=undefined4      refs=1  nearby: g_CKedwardClassInfo.name_hash at -152
   DAT_02d24980                    addr=02d24980    type=undefined4      refs=1  nearby: g_CKedwardClassInfo.name_hash at -148
@@ -3879,11 +3882,11 @@ MOST REFERENCED DAT_ GLOBALS (top 50)
 --------------------------------------------------------------------------------
   DAT_01d71de0                    addr=01d71de0    refs=543   type=undefined4    
   DAT_01d71de4                    addr=01d71de4    refs=542   type=undefined4    
-  DAT_005f2afc                    addr=005f2afc    refs=227   type=undefined4      likely=int *  nearby: PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00465600_005f2ad0(+44)
+  DAT_005f2afc                    addr=005f2afc    refs=227   type=undefined4      likely=byte  nearby: PTR_engine_dosio.cpp_getRelativeFilePath_FUN_00465600_005f2ad0(+44)
   DAT_01bdd7e4                    addr=01bdd7e4    refs=181   type=undefined4      likely=CDemonRenderer *
   DAT_005fba20                    addr=005fba20    refs=164   type=undefined4      likely=WORD  nearby: g_CEnemyClassVersion(+32)
   DAT_01c6e2b4                    addr=01c6e2b4    refs=116   type=undefined4      likely=byte  nearby: g_CExorcismClassInfo.name_hash(-164)
-  DAT_01c6cee8                    addr=01c6cee8    refs=109   type=undefined4    
+  DAT_01c6cee8                    addr=01c6cee8    refs=109   type=undefined4      likely=float
   DAT_01c6e2b8                    addr=01c6e2b8    refs=97    type=undefined4      likely=byte  nearby: g_CExorcismClassInfo.name_hash(-160)
   DAT_005fba1c                    addr=005fba1c    refs=95    type=undefined4      likely=float  nearby: g_CEnemyClassVersion(+28)
   DAT_005fba60                    addr=005fba60    refs=95    type=undefined4      nearby: s_spectralFlag_005fba68(-8)
@@ -3944,9 +3947,9 @@ They appear only as inline constant values.
   DAT_005fdaa4                    value=0x5FDAA4        refs=3
   DAT_005fdb34                    value=0x5FDB34        refs=3
   DAT_006084b6                    value=0x6084B6        refs=3
-  DAT_007dfd28                    value=0x7DFD28        refs=2
-  DAT_007dfd64                    value=0x7DFD64        refs=2
   DAT_007dfda0                    value=0x7DFDA0        refs=2
+  DAT_007dfd64                    value=0x7DFD64        refs=2
+  DAT_007dfd28                    value=0x7DFD28        refs=2
   DAT_005f1094                    value=0x5F1094        refs=2
   DAT_005f1124                    value=0x5F1124        refs=2
   DAT_005f11b4                    value=0x5F11B4        refs=2
@@ -3979,17 +3982,17 @@ They appear only as inline constant values.
   DAT_005f0b58                    value=0x5F0B58        refs=1
   DAT_005f0b5c                    value=0x5F0B5C        refs=1
   DAT_005f0b60                    value=0x5F0B60        refs=1
+  DAT_007e173c                    value=0x7E173C        refs=1
+  DAT_007e1700                    value=0x7E1700        refs=1
   DAT_007e1688                    value=0x7E1688        refs=1
   DAT_007e16c4                    value=0x7E16C4        refs=1
-  DAT_007e1700                    value=0x7E1700        refs=1
-  DAT_007e173c                    value=0x7E173C        refs=1
   DAT_005b73e9                    value=0x5B73E9        refs=1
   DAT_007e1a18                    value=0x7E1A18        refs=1
+  DAT_007e2bac                    value=0x7E2BAC        refs=1
+  DAT_005b83d7                    value=0x5B83D7        refs=1
   DAT_007e2ad0                    value=0x7E2AD0        refs=1
   DAT_005f0f5c                    value=0x5F0F5C        refs=1
   DAT_005f0f74                    value=0x5F0F74        refs=1
-  DAT_007e2bac                    value=0x7E2BAC        refs=1
-  DAT_005b83d7                    value=0x5B83D7        refs=1
   DAT_007f8edc                    value=0x7F8EDC        refs=1
   DAT_007f8f18                    value=0x7F8F18        refs=1
   DAT_0060b044                    value=0x60B044        refs=1
@@ -4008,6 +4011,7 @@ They appear only as inline constant values.
   DAT_005fcae4                    value=0x5FCAE4        refs=1
   DAT_005fcafc                    value=0x5FCAFC        refs=1
   DAT_005fdbc4                    value=0x5FDBC4        refs=1
+  DAT_005fdbdc                    value=0x5FDBDC        refs=1
   DAT_005fc9f4                    value=0x5FC9F4        refs=1
   DAT_005fca0c                    value=0x5FCA0C        refs=1
   DAT_005fca24                    value=0x5FCA24        refs=1
@@ -4016,7 +4020,6 @@ They appear only as inline constant values.
   DAT_005fca6c                    value=0x5FCA6C        refs=1
   DAT_005fca84                    value=0x5FCA84        refs=1
   DAT_005fca9c                    value=0x5FCA9C        refs=1
-  DAT_005fdbdc                    value=0x5FDBDC        refs=1
   DAT_005fde70                    value=0x5FDE70        refs=1
   DAT_005c601c                    value=0x5C601C        refs=1
   DAT_005c6b27                    value=0x5C6B27        refs=1
@@ -4044,10 +4047,10 @@ They appear only as inline constant values.
   DAT_00608bc8                    value=0x608BC8        refs=1
   DAT_005dbfa0                    value=0x5DBFA0        refs=1
   DAT_00607390                    value=0x607390        refs=1
+  DAT_02d20340                    value=0x2D20340       refs=1
   DAT_00000065                    value=0x65            refs=1
   DAT_00007f00                    value=0x7F00          refs=1
   DAT_02d22618                    value=0x2D22618       refs=1
-  DAT_02d20340                    value=0x2D20340       refs=1
 
 --------------------------------------------------------------------------------
 FILTERED OUT - INSIDE NAMED DATA (2568)

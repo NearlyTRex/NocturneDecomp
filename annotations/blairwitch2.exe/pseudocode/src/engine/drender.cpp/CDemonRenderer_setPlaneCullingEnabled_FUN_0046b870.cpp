@@ -9,6 +9,6 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(CDemonRenderer *this_ptr,int enabled)
 
 {
-  *(int *)(this_ptr + 0xc) = enabled;
+  this_ptr->plane_culling_enabled = enabled;
   return;
 }

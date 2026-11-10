@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_basicene.cpp_FUN_0059f420 at 0059f550
+;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f550
 ;
 ; Called Functions:
 ;   unkaddr_0059d350.cpp_FUN_0059da70

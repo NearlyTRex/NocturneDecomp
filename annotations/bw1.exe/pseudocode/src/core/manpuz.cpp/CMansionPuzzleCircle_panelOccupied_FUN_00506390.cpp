@@ -18,11 +18,10 @@ int __cdecl core_manpuz_cpp_CMansionPuzzleCircle_panelOccupied_FUN_00506390(CMan
     _DAT_01d1d404 = 0x5e6;
     core_main_c_FUN_005030e0("CMansionPuzzleCircle::panelOccupied - invalid index: %d",panel_index);
   }
-  if (*(int *)(&this_ptr->field_0x5f0 + panel_index * 100) == 0) {
+  if (this_ptr->panels[panel_index].exists == 0) {
     iVar1 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
                       (this_ptr,panel_index);
-    if ((*(int *)(&this_ptr->field_0x5f0 + iVar1 * 100) == 0) ||
-       ((*(uint *)(&this_ptr->field_0x5f8 + iVar1 * 100) & 0x7fffffff) == 0)) {
+    if ((this_ptr->panels[iVar1].exists == 0) || (ABS(this_ptr->panels[iVar1].anim_speed) == 0.0)) {
       return 0;
     }
   }

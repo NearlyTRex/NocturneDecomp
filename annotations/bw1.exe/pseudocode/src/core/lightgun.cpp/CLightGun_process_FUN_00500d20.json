@@ -1,0 +1,425 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 162,
+    "complexity_score": 268,
+    "cross_reference_count": 0,
+    "function_call_count": 17,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 53,
+    "suspect_count": 20,
+    "suspect_types": [
+      "stack_param",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 215
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00500d20",
+    "address_range": [
+      [
+        "00500d20",
+        "00500f13"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_lightgun.cpp_CLightGun_process_FUN_00500d20",
+    "signature": "void __cdecl core_lightgun_cpp_CLightGun_process_FUN_00500d20(CLightGun *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0045d7c0",
+      "is_variadic": false,
+      "name": "core_dfilter.cpp_FUN_0045d7c0"
+    },
+    {
+      "addr": "00463e30",
+      "is_variadic": false,
+      "name": "core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30"
+    },
+    {
+      "addr": "004fa470",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470"
+    },
+    {
+      "addr": "00500090",
+      "is_variadic": false,
+      "name": "core_lightgun.cpp_FUN_00500090"
+    },
+    {
+      "addr": "005518e0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_addDynamicLight_FUN_005518e0"
+    },
+    {
+      "addr": "005ad770",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_005ad770"
+    },
+    {
+      "addr": "005ae580",
+      "is_variadic": false,
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580"
+    },
+    {
+      "addr": "005727e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005727e0"
+    },
+    {
+      "addr": "005728e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005728e0"
+    },
+    {
+      "addr": "00572900",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00572900"
+    },
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005735a0"
+    },
+    {
+      "addr": "00573950",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573950"
+    },
+    {
+      "addr": "00573980",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573980"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    },
+    {
+      "addr": "00572b40",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00572b40"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0"
+    },
+    {
+      "addr": "00572d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_startSfx_FUN_00572d20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603010",
+      "name": "DAT_00603010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603018",
+      "name": "DAT_00603018",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060301c",
+      "name": "DAT_0060301c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603020",
+      "name": "DAT_00603020",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603024",
+      "name": "DAT_00603024",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00611358",
+      "name": "g_CFilterCachePtr",
+      "type": "CFilterCache*",
+      "value": "0152c72c"
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "0062604c",
+      "name": "DAT_0062604c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cce0b4",
+      "name": "g_CDemonLightInstance.antialiasing_enabled",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.924242424242424,
+    "instruction_count": 132,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 17,
+      "CBRANCH": 4,
+      "COPY": 199,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_ADD": 3,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 56,
+      "INT_AND": 51,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 44,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 22,
+      "INT_SUB": 51,
+      "INT_ZEXT": 4,
+      "LOAD": 28,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 58
+    },
+    "pcode_op_count": 650
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLightGun *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 12,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "float in_stack_00000018;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 18,
+      "match": "in_stack_00000018",
+      "severity": "moderate",
+      "text": "fVar1 = (_DAT_00603010 / fVar1) * in_stack_00000018 + *(float *)&this_ptr->field_0x580;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x580",
+      "severity": "mild",
+      "text": "fVar1 = (_DAT_00603010 / fVar1) * in_stack_00000018 + *(float *)&this_ptr->field_0x580;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x580",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x580 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x580",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x580 = _DAT_00603010;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x584",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x584 = *(float *)&this_ptr->field_0x580 / _DAT_00603010;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x580",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x584 = *(float *)&this_ptr->field_0x580 / _DAT_00603010;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2d4",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2d4 == 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x584",
+      "severity": "mild",
+      "text": "fVar1 = (_DAT_0060301c - 0x40000000) * *(float *)&this_ptr->field_0x584 + 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x584",
+      "severity": "mild",
+      "text": "_DAT_00603020 + (_DAT_00603024 - _DAT_00603020) * *(float *)&this_ptr->field_0x584;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x57c",
+      "severity": "mild",
+      "text": "iVar2 = sound_sndmain_cpp_FUN_005735a0(*(uint *)&this_ptr->field_0x57c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_005727e0((CVector3f *)&this_ptr->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x57c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x57c = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x57c",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00573950(*(uint *)&this_ptr->field_0x57c,fVar1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x57c",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_FUN_00573980(*(uint *)&this_ptr->field_0x57c,base_frequency);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x578 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x578 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x57c",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00573a80(*(uint *)&this_ptr->field_0x57c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x578",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x578 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 12,
+        "vtable_addr": "00603034"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

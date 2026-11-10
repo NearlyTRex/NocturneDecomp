@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   void* g_CBodyPartVTable = 00414f60
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_CBodyPartTypeInfo
 ;
 ; Called Functions:

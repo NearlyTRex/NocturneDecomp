@@ -24,12 +24,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[9]:
-;   core_boxactor.cpp_FUN_00422f90 at 00423027
+;   core_boxactor.cpp_CLightActor_process_FUN_00422f90 at 00423027
 ;   core_boxactor.cpp_FUN_004232c0 at 004236e2
 ;   core_dlight.cpp_CDemonLight_init_FUN_00462590 at 0046262e
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0 at 00465de6
-;   core_lightgun.cpp_FUN_00500d20 at 00500e5a
-;   core_lightpis.cpp_FUN_00502480 at 005025ba
+;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500e5a
+;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 005025ba
 ;   core_setutil.cpp_C3DSLight_advanceFilter_FUN_0055d360 at 0055d3b8
 ;   core_setutil.cpp_C3DSLight_process_FUN_0055d1a0 at 0055d2a1
 ;   core_setutil.cpp_C3DSLight_setFilterFrame_FUN_0055d3f0 at 0055d42e

@@ -40,11 +40,11 @@
 ;   core_doc.cpp_FUN_0046caa0 at 0046e621
 ;   core_doc.cpp_FUN_0046ea80 at 0046ee0f
 ;   core_doc.cpp_FUN_0046f200 at 0046f354
-;   core_gabriela.cpp_FUN_004c89c0 at 004c8d42
-;   core_gabriela.cpp_FUN_004cad20 at 004cafb1
+;   core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20 at 004cafb1
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8d42
 ;   core_gabriela.cpp_FUN_004caff0 at 004cb0e0
-;   core_ghoul.cpp_FUN_004de330 at 004de686
-;   core_hostage.cpp_FUN_004ed890 at 004eed9f
+;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004de686
+;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004eed9f
 ;   core_icepick.cpp_FUN_004f1670 at 004f16ef
 ;   ... and 6 more
 ;
@@ -59,11 +59,11 @@
 ;   core_main.c_FUN_005030e0
 ;   core_motion.cpp_FUN_00525240
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
+;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630
 ;   core_skeleton.cpp_FUN_005635a0
-;   core_skeleton.cpp_FUN_00563630
-;   core_xform.cpp_FUN_005b7940
 ;   core_xform.cpp_multiplyQuaternion_FUN_005b77b0
 ;   core_xform.cpp_negateFirstComponent_FUN_005b7750
+;   core_xform.cpp_slerpQuaternion_FUN_005b7940
 ;
 ; *****************************************************************************
 
@@ -132,8 +132,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x968]     ; 0056819b
     PUSH EDI                            ; 005681a2
     PUSH EBX                            ; 005681a3
-    CALL core_skeleton.cpp_FUN_00563630 ; 005681a4
-        ;   XREF to: 00563630 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00563630(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630 ; 005681a4
+        ;   XREF to: 00563630 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 005681a9
     TEST EAX,EAX                        ; 005681ac
     JL 0x0056824a                       ; 005681ae
@@ -174,8 +174,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00568221
     PUSH ECX                            ; 00568222
     LEA ESI,[ESP + 0x7e0]               ; 00568223
-    CALL core_xform.cpp_FUN_005b7940    ; 0056822a
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7940()
+    CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0056822a
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
     ADD ESP,0xc                         ; 0056822f
     MOV EDI,dword ptr [ESP + 0x93c]     ; 00568232
     LEA ESI,[ESP + 0x7d4]               ; 00568239
@@ -362,8 +362,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x964]     ; 00568530
     PUSH EDX                            ; 00568537
     PUSH EBX                            ; 00568538
-    CALL core_skeleton.cpp_FUN_00563630 ; 00568539
-        ;   XREF to: 00563630 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00563630(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630 ; 00568539
+        ;   XREF to: 00563630 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0056853e
     MOV ESI,dword ptr [ESP + 0x958]     ; 00568541
     MOV dword ptr [ESP + ESI*0x1 + 0x644],EAX ; 00568548
@@ -452,8 +452,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x954]     ; 0056867c
     PUSH ESI                            ; 00568683
     LEA ESI,[ESP + 0x890]               ; 00568684
-    CALL core_xform.cpp_FUN_005b7940    ; 0056868b
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7940()
+    CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 0056868b
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
     ADD ESP,0xc                         ; 00568690
     MOV EDI,dword ptr [ESP + 0x948]     ; 00568693
     LEA ESI,[ESP + 0x884]               ; 0056869a

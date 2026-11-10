@@ -10,21 +10,22 @@ void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005a3530(CTurret *th
 
 {
   float fVar1;
-  uint uVar2;
+  CDemonActor *pCVar2;
   float fVar3;
   
-  core_actor_cpp_FUN_00409d20(this_ptr,interaction_info);
-  if (*(int *)&this_ptr->field_0x858 == 0) {
+  core_actor_cpp_CDemonActor_getInteractionInfo_FUN_00409d20
+            ((CDemonActor *)this_ptr,interaction_info);
+  if (this_ptr->can_manual_aim == 0) {
     return;
   }
   *(uint *)interaction_info = 1;
-  uVar2 = *(uint *)&this_ptr->field_0x85c;
+  pCVar2 = this_ptr->user;
   *(uint *)(interaction_info + 0x10) = 0x40c90fdb;
   *(uint *)(interaction_info + 0x14) = 0xc0c90fdb;
-  *(uint *)(interaction_info + 4) = uVar2;
+  *(CDemonActor **)(interaction_info + 4) = pCVar2;
   fVar3 = 0xBF060A92;
-  *(float *)(interaction_info + 0x18) = 0x3F9C61AA - *(float *)&this_ptr->field_0x30;
-  fVar1 = *(float *)&this_ptr->field_0x30;
+  *(float *)(interaction_info + 0x18) = 0x3F9C61AA - (this_ptr->base).base.orient.vec.x;
+  fVar1 = (this_ptr->base).base.orient.vec.x;
   *(uint *)(interaction_info + 8) = 0xc0800000;
   *(float *)(interaction_info + 0x1c) = fVar3 - fVar1;
   *(uint *)(interaction_info + 0xc) = 0;

@@ -54,10 +54,10 @@ uint core_fldnotes_cpp_FUN_004a2cc0(int param_1,char *param_2)
         local_14 = -1;
         sscanf(param_2 + 9," %s%n");
         if (local_14 < 3) {
-          FUN_005b7790(&DAT_01cab7f0,"Error parsing 'twanachar' parms: '%s'",param_2);
+          _sprintf(&DAT_01cab7f0,"Error parsing 'twanachar' parms: '%s'");
           return 0xffffffff;
         }
-        iVar1 = FUN_005b8be2(0x4c);
+        iVar1 = debugAllocTracked1(0x4c);
         pSVar4 = (SPageResourceTwanaEntry *)0x0;
         if (iVar1 != 0) {
           pSVar4 = (SPageResourceTwanaEntry *)core_fldnotes_cpp_FUN_004a2290(iVar1,local_220);
@@ -81,10 +81,10 @@ uint core_fldnotes_cpp_FUN_004a2cc0(int param_1,char *param_2)
       else {
         iVar1 = _stricmp(param_2,"twanaentry");
         if (iVar1 != 0) {
-          FUN_005b7790(&DAT_01cab7f0,"Ignoring unknown markup tag: %s",param_2);
+          _sprintf(&DAT_01cab7f0,"Ignoring unknown markup tag: %s");
           return 0xffffffff;
         }
-        this_ptr = (SPageResourceTwanaEntry *)FUN_005b8be2(0x114);
+        this_ptr = (SPageResourceTwanaEntry *)debugAllocTracked1(0x114);
         pSVar4 = (SPageResourceTwanaEntry *)0x0;
         if (this_ptr != (SPageResourceTwanaEntry *)0x0) {
           pSVar4 = core_fldnotes_cpp_PageResource_TwanaEntry_ctor_FUN_004a23c0(this_ptr);
@@ -111,13 +111,13 @@ uint core_fldnotes_cpp_FUN_004a2cc0(int param_1,char *param_2)
     local_18 = -1;
     sscanf(param_2 + 5,"%s %d %d%n");
     if (local_18 < 3) {
-      FUN_005b7790(&DAT_01cab7f0,"Error parsing 'image' tag parms: '%s'",param_2);
+      _sprintf(&DAT_01cab7f0,"Error parsing 'image' tag parms: '%s'");
       return 0xffffffff;
     }
     iVar1 = core_fldnotes_cpp_FUN_004a30a0(param_1,local_20,local_1c);
     uVar2 = 0;
     if (iVar1 != 0) {
-      iVar1 = FUN_005b8be2(0x2c);
+      iVar1 = debugAllocTracked1(0x2c);
       puVar3 = (uint *)0x0;
       if (iVar1 != 0) {
         puVar3 = (uint *)core_fldnotes_cpp_FUN_004a2170(iVar1,local_120,local_20,local_1c);

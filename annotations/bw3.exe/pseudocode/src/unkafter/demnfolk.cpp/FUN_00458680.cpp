@@ -62,38 +62,40 @@ switchD_004586b6_default:
     if (*(int *)&g_CGamePtr->field_0x14 == 0) {
       local_14 = 0.0;
     }
-    iVar1 = core_actor_cpp_FUN_0040cf40(local_14);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(local_14);
     if (iVar1 != 0) {
-      body_part = core_bodypart_cpp_FUN_00414550
-                            ((CVector3f *)&this_ptr->field_0x20,
-                             (UOrientationVector *)&this_ptr->field_0x30,
-                             (CVector3f *)(damage_info + 0xc),(CDemonActor *)this_ptr,0,0,
-                             BLOOD_TYPE_RED);
-      core_charactr_cpp_FUN_00430590((CCharacter *)this_ptr,body_part,*(int *)damage_info,1);
+      body_part = core_bodypart_cpp_createBodyPart_FUN_00414550
+                            (&(this_ptr->base).base.base.location.position,
+                             &(this_ptr->base).base.base.orient,(CVector3f *)(damage_info + 0xc),
+                             (CDemonActor *)this_ptr,0,0,BLOOD_TYPE_RED);
+      core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590
+                ((CCharacter *)this_ptr,body_part,*(int *)damage_info,1);
       if (*(int *)damage_info == *(int *)&this_ptr->field_0xd114) {
-        core_charactr_cpp_FUN_00430590
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590
                   ((CCharacter *)this_ptr,body_part,*(int *)&this_ptr->field_0xd118,1);
       }
       if (*(int *)&this_ptr->field_0xd11c == *(int *)damage_info) {
-        core_charactr_cpp_FUN_00430590
+        core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00430590
                   ((CCharacter *)this_ptr,body_part,*(int *)&this_ptr->field_0xd120,1);
       }
       if (*(int *)&this_ptr->field_0xd128 == *(int *)damage_info) {
         initial_velocity = (CVector3f *)(damage_info + 0xc);
-        core_charactr_cpp_FUN_00430520
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520
                   ((CCharacter *)this_ptr,*(int *)&this_ptr->field_0xd11c,initial_velocity,1);
-        core_charactr_cpp_FUN_00430520
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520
                   ((CCharacter *)this_ptr,*(int *)&this_ptr->field_0xd120,initial_velocity,1);
-        core_charactr_cpp_FUN_00430520
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520
                   ((CCharacter *)this_ptr,*(int *)&this_ptr->field_0xd114,initial_velocity,1);
-        core_charactr_cpp_FUN_00430520
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520
                   ((CCharacter *)this_ptr,*(int *)&this_ptr->field_0xd118,initial_velocity,1);
-        core_charactr_cpp_FUN_00430520
+        core_charactr_cpp_CCharacter_detachBodyPart_FUN_00430520
                   ((CCharacter *)this_ptr,*(int *)&this_ptr->field_0xd12c,initial_velocity,1);
       }
-      core_charactr_cpp_FUN_00434810((CCharacter *)this_ptr,"limb?.wav");
-      core_bodypart_cpp_FUN_004157c0(body_part);
-      if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd12c * 4) == 0) {
+      core_charactr_cpp_CCharacter_playSoundWithCooldown_FUN_00434810
+                ((CCharacter *)this_ptr,"limb?.wav");
+      core_bodypart_cpp_CBodyPart_finalizeGeometry_FUN_004157c0(body_part);
+      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd12c * 4)
+          == 0) {
         *(uint *)(damage_info + 4) = 0x461c3c00;
       }
       *(float *)(damage_info + 8) = *(float *)(damage_info + 8) * (float)_DAT_005ba8f2;

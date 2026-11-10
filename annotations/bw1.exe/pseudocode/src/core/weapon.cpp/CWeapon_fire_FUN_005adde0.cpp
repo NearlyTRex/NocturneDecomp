@@ -9,8 +9,8 @@
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005adde0(CWeapon *this_ptr)
 
 {
-  if (0 < *(int *)&this_ptr->field_0x568) {
-    *(int *)&this_ptr->field_0x568 = *(int *)&this_ptr->field_0x568 + -1;
+  if (0 < this_ptr->ammo_count) {
+    this_ptr->ammo_count = this_ptr->ammo_count + -1;
     return 1;
   }
   return 0;

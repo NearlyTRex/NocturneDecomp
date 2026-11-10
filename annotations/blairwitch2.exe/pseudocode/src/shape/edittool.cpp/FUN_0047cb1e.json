@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 619,
-    "complexity_score": 553,
+    "complexity_score": 418,
     "cross_reference_count": 0,
     "function_call_count": 24,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 208,
-    "suspect_count": 32,
+    "pseudocode_lines": 213,
+    "suspect_count": 19,
     "suspect_types": [
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 827
+    "total_lines": 832
   },
   "cross_references": [],
   "function": {
@@ -63,19 +61,19 @@
       "name": "crt_time.c__strftime_FUN_005ba3a4"
     },
     {
-      "addr": "005b7790",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
-    },
-    {
       "addr": "005ba2ce",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005ba2ce"
+      "name": "crt_unknown.c__getcwd_FUN_005ba2ce"
     },
     {
       "addr": "005ba2e0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005ba2e0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00460e10",
@@ -98,14 +96,19 @@
       "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00460e50"
     },
     {
-      "addr": "00461070",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00461070"
-    },
-    {
       "addr": "004610a0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004610a0"
+      "name": "engine_dosio.cpp_makePath_FUN_004610a0"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00461070"
+    },
+    {
+      "addr": "0047be40",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
     },
     {
       "addr": "0047dae0",
@@ -116,6 +119,11 @@
       "addr": "00481fc0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_00481fc0"
+    },
+    {
+      "addr": "00482250",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250"
     },
     {
       "addr": "004820b0",
@@ -136,16 +144,6 @@
       "addr": "00481190",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CStrList_sortAll_FUN_00481190"
-    },
-    {
-      "addr": "0047be40",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be40"
-    },
-    {
-      "addr": "00482250",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00482250"
     },
     {
       "addr": "00483d80",
@@ -245,15 +243,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_0047be40(param_1,\"Error getting current directory.\");",
+      "text": "(param_1,\"Error getting current directory.\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 61,
+      "line": 63,
       "match": "param_5",
       "severity": "mild",
       "text": "if ((param_5 & 1) != 0) {",
@@ -261,23 +259,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 64,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00461070(param_4,acStack_c,acStack_bc4,acStack_ec4,acStack_3c4);",
+      "text": "engine_dosio_cpp_splitPath_FUN_00461070(param_4,acStack_c,acStack_bc4,acStack_ec4,acStack_3c4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b7790(acStack_1b20,0x5d2097,param_2,acStack_17dc);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 82,
+      "line": 86,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == (char *)0x0) {",
@@ -285,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 87,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = (char *)0x5d209d;",
@@ -293,159 +283,63 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 89,
       "match": "param_3",
       "severity": "mild",
       "text": "engine_dosio_cpp_CFileFinder_openSearch_FUN_00460e50(&CStack_18f0,param_3);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 86,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "while (CStack_18f0._0_1_ != '\\0') {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 87,
-      "match": "._256_1_",
-      "severity": "mild",
-      "text": "if ((CStack_18f0._256_1_ & 4) == 0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 101,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "uVar4 = _localtime(&CStack_18f0.field_0x108);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 104,
-      "match": "._260_4_",
-      "severity": "mild",
-      "text": "(acStack_fc,0x5d20b7,acStack_dc4,&cStack_4c4,CStack_18f0._260_4_,auStack_34);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 111,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "uVar4 = CStack_1ee0._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 115,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (0 < (int)CStack_1ee0._0_4_) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 126,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "} while (iVar2 < (int)CStack_1ee0._0_4_);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 128,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if ((int)CStack_1ee0._0_4_ <= iVar2) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 134,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "while (CStack_18f0._0_1_ != '\\0') {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 135,
-      "match": "._256_1_",
-      "severity": "mild",
-      "text": "if ((CStack_18f0._256_1_ & 4) != 0) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 165,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_00483d80(&CStack_1ee0,uVar4,CStack_1ee0._0_4_ + -1);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 169,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (CStack_1ee0._0_4_ + -1 <= iVar2) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 178,
+      "line": 182,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,\"Enter new path\",acStack_16d8,0x104,1), iVar2 != 0",
+      "text": "(param_1,\"Enter new path\",acStack_16d8,0x104,1), iVar5 != 0",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 180,
+      "line": 184,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_0047be40(param_1,\"Can't change to %s\",acStack_16d8);",
+      "text": "shape_edittool_cpp_CEditorTools_showError_FUN_0047be40(param_1,\"Can't change to %s\")",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 194,
+      "line": 199,
       "match": "param_4",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_004610a0(param_4,acStack_10,acStack_8c4,acStack_cc4,acStack_2c4);",
+      "text": "engine_dosio_cpp_makePath_FUN_004610a0(param_4,acStack_10,acStack_8c4,acStack_cc4,acStack_2c4)",
       "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 56,
+      "line": 58,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 73,
+      "line": 77,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 172,
+      "line": 176,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar2 = 0x41; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "text": "for (iVar5 = 0x41; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 93,
+      "line": 97,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -453,7 +347,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 148,
+      "line": 151,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 120,
+    "complexity_score": 110,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 20,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
@@ -44,12 +44,12 @@
     {
       "addr": "0040e670",
       "is_variadic": false,
-      "name": "core_ammobox.cpp_FUN_0040e670"
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670"
     },
     {
       "addr": "0047bdf0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047bdf0"
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0"
     }
   ],
   "globals": [
@@ -153,15 +153,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x256a4),0xeeb);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x25608),g_CAmmoBoxClassInfo.name_hash);",
@@ -172,7 +164,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_ammobox_cpp_FUN_0040e670(this_ptr,(CInventory *)(param_1 + 0x2437c));",
+      "text": "(this_ptr,(CInventory *)(param_1 + 0x2437c));",
       "type": "unnamed_param"
     },
     {

@@ -14,8 +14,8 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_ammobox.cpp_FUN_0040e670
-;   shape_edittool.cpp_FUN_0047bdf0
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     LEA EDX,[EBX + 0x2437c]             ; 00458354
     PUSH EDX                            ; 0045835a
     PUSH EAX                            ; 0045835b
-    CALL core_ammobox.cpp_FUN_0040e670  ; 0045835c
-        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_FUN_0040e670(CAmmoBox * this_ptr, CInventory * inventory)
+    CALL core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670 ; 0045835c
+        ;   XREF to: 0040e670 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670(CAmmoBox * this_ptr, CInventory * inventory)
     ADD ESP,0x8                         ; 00458361
     MOV dword ptr [EBX + 0x256a4],0x1   ; 00458364
         ;   Label: LAB_00458364
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5d030f                       ; 00458382 | s_actionPending_d_doc_cpp_005d030e+1
     MOV EDI,dword ptr [0x006138e0]      ; 00458387 | g_CEditorToolsPtr
     PUSH EDI                            ; 0045838d
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 0045838e
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0045838e
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00458393
     POP EDI                             ; 00458396
     JMP 0x0045833a                      ; 00458397

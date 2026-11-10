@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_prye_cpp_FUN_00521880(CDemonActor *param_1)
+; undefined4 core_prye_cpp_FUN_00521880(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x118]:8  local_118
@@ -67,14 +67,14 @@
 ;   undefined4 g_CCrateClassInfo.name_hash
 ;   undefined4 g_CActorDestinationClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408bf0
-;   core_charactr.cpp_FUN_00433a60
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
 ;   core_dest.cpp_CActorDestination_acceptsActor_FUN_004594a0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
 ;   core_motion.cpp_FUN_004fc350
@@ -110,8 +110,8 @@ section .text
         ;   XREF to: 005218dd (CONDITIONAL_JUMP)  ; LAB_005218dd
     PUSH EDX                            ; 005218b6
     PUSH EAX                            ; 005218b7
-    CALL core_charactr.cpp_FUN_00433a60 ; 005218b8
-        ;   XREF to: 00433a60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433a60()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60 ; 005218b8
+        ;   XREF to: 00433a60 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x10c],EAX     ; 005218bd
     FLD float ptr [ESP + 0x10c]         ; 005218c4
     ADD ESP,0x8                         ; 005218cb
@@ -142,14 +142,14 @@ section .text
     MOV EAX,[0x00603b28]                ; 00521917 | g_CDemonSetPtr
         ;   Label: LAB_00521917
     MOV EBX,dword ptr [ESP + 0xfc]      ; 0052191c
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 00521923 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 00521923 | g_CDemonSetInstance.actor_count
     JGE 0x00521c18                      ; 00521929
         ;   XREF to: 00521c18 (CONDITIONAL_JUMP)  ; LAB_00521c18
     MOV ECX,dword ptr [ESP + 0xf4]      ; 0052192f
     MOV EDX,dword ptr [0x01548bfc]      ; 00521936 | g_CActorDestinationClassInfo.name_hash
     ADD EAX,ECX                         ; 0052193c
     PUSH EDX                            ; 0052193e
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0052193f | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0052193f | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 00521945
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00521946
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
@@ -539,7 +539,7 @@ section .text
     MOV dword ptr [ESP + 0xf8],EBX      ; 00521df9
     MOV EAX,[0x00603b28]                ; 00521e00 | g_CDemonSetPtr
         ;   Label: LAB_00521e00
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 00521e05 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 00521e05 | g_CDemonSetInstance.actor_count
     JL 0x00521e75                       ; 00521e0b
         ;   XREF to: 00521e75 (CONDITIONAL_JUMP)  ; LAB_00521e75
     MOV EAX,dword ptr [EBP + 0x14]      ; 00521e0d
@@ -590,7 +590,7 @@ section .text
     MOV EDX,dword ptr [0x007f8fc8]      ; 00521e7c | g_CCrateClassInfo.name_hash
     ADD EAX,ECX                         ; 00521e82
     PUSH EDX                            ; 00521e84
-    MOV ESI,dword ptr [EAX + 0x14d168]  ; 00521e85 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV ESI,dword ptr [EAX + 0x14d168]  ; 00521e85 | g_CDemonSetInstance.actors[0]
     PUSH ESI                            ; 00521e8b
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 00521e8c
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()

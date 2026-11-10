@@ -8,8 +8,8 @@
 ;   CScript* g_CScriptPtr = 01e81c80
 ;
 ; Called Functions:
-;   core_mission.cpp_FUN_0051b2b0
-;   core_mission.cpp_FUN_0051b5a0
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_0051b5a0
 ;   core_mission.cpp_FUN_0051b610
 ;   core_script.cpp_FUN_00543740
 ;
@@ -44,8 +44,8 @@ section .text
         ;   Label: LAB_0051ba8e
     PUSH EBX                            ; 0051ba8f
     MOV dword ptr [EBX],0x0             ; 0051ba90
-    CALL core_mission.cpp_FUN_0051b5a0  ; 0051ba96
-        ;   XREF to: 0051b5a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_0051b5a0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_removeAllActors_FUN_0051b5a0 ; 0051ba96
+        ;   XREF to: 0051b5a0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_removeAllActors_FUN_0051b5a0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0051ba9b
     MOV EDX,dword ptr [0x00622ad0]      ; 0051ba9e | g_CScriptPtr
     PUSH EDX                            ; 0051baa4
@@ -53,8 +53,8 @@ section .text
         ;   XREF to: 00543740 (UNCONDITIONAL_CALL)  ; undefined core_script.cpp_FUN_00543740()
     ADD ESP,0x4                         ; 0051baaa
     PUSH EBX                            ; 0051baad
-    CALL core_mission.cpp_FUN_0051b2b0  ; 0051baae
-        ;   XREF to: 0051b2b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_0051b2b0(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0 ; 0051baae
+        ;   XREF to: 0051b2b0 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 0051bab3
     PUSH 0x0                            ; 0051bab6
     PUSH EBX                            ; 0051bab8

@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CZombie_DemonTypeInfo
+;   WatcomTypeInfo g_CZombieDemonTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 0058cf7d
     SUB EAX,0x954                       ; 0058cf7f
     PUSH EAX                            ; 0058cf84
-    CALL core_cloth.cpp_FUN_0043f900    ; 0058cf85
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 0058cf85
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0058cf8a
     PUSH 0x0                            ; 0058cf8d
     SUB EAX,0x2db0                      ; 0058cf8f
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EBX                         ; 0058cfb9
     POP EBX                             ; 0058cfbb
     RET                                 ; 0058cfbc
-    PUSH 0x5e6f70                       ; 0058cfbd | g_CZombie_DemonTypeInfo
+    PUSH 0x5e6f70                       ; 0058cfbd | g_CZombieDemonTypeInfo
         ;   Label: LAB_0058cfbd
     PUSH EBX                            ; 0058cfc2
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0058cfc3

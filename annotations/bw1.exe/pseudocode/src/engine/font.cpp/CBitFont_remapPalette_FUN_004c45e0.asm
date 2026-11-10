@@ -18,8 +18,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   engine_font.cpp_FUN_004c0cd0 at 004c0f20
-;   unkafter_dfont.cpp_FUN_0045e960 at 0045e967
+;   core_dfont.cpp_remapFonts_FUN_0045e960 at 0045e967
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0f20
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005e0aa1

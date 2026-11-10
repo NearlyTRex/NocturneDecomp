@@ -18,108 +18,109 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_setMode_FUN_0057ae70(CWavInDevice *thi
   HGLOBAL pvVar5;
   LPVOID pvVar6;
   int iVar7;
-  uint uVar8;
-  tagWAVEINCAPSA tStack_58;
-  byte auStack_28 [20];
-  int iStack_14;
+  int iVar8;
+  uint uVar9;
+  int in_stack_00000018;
+  tagWAVEINCAPSA tStack_54;
+  byte auStack_24 [20];
   
-  iVar2 = (*(code *)**(uint **)this_ptr)(this_ptr);
+  iVar2 = (*((this_ptr->base).vtable)->close)(&this_ptr->base);
   if (iVar2 == 0) {
     return 0;
   }
-  MVar3 = waveInGetDevCapsA(DAT_006235d8,&tStack_58,0x30);
+  MVar3 = waveInGetDevCapsA(DAT_006235d8,&tStack_54,0x30);
   if (MVar3 != 0) {
     return 0;
   }
-  _DAT_02c82a3c = sample_rate;
-  _DAT_02c82a40 = (uint)(stereo_flag != 0);
-  auStack_28._16_4_ = tStack_58.dwFormats;
+  _DAT_02c82a3c = stereo_flag;
+  _DAT_02c82a40 = (uint)(in_stack_00000018 != 0);
+  auStack_24._16_4_ = tStack_54.dwFormats;
   do {
-    uVar8 = 99999;
-    iVar2 = 0;
+    uVar9 = 99999;
     iVar7 = 0;
-    iStack_14 = -1;
+    iVar8 = 0;
+    iVar2 = -1;
     do {
-      if ((*(uint *)((int)&DAT_006235dc + iVar7) & auStack_28._16_4_) != 0) {
-        uVar4 = (uint)(bits_per_sample < *(int *)((int)&DAT_006235e0 + iVar7));
-        if (*(int *)((int)&DAT_006235e0 + iVar7) < bits_per_sample) {
+      if ((*(uint *)((int)&DAT_006235dc + iVar8) & auStack_24._16_4_) != 0) {
+        uVar4 = (uint)(channels < *(int *)((int)&DAT_006235e0 + iVar8));
+        if (*(int *)((int)&DAT_006235e0 + iVar8) < channels) {
           uVar4 = uVar4 + 2;
         }
-        if (_DAT_02c82a3c < *(int *)((int)&DAT_006235e8 + iVar7)) {
+        if (_DAT_02c82a3c < *(int *)((int)&DAT_006235e8 + iVar8)) {
           uVar4 = uVar4 + 1;
         }
-        if (*(int *)((int)&DAT_006235e8 + iVar7) < _DAT_02c82a3c) {
+        if (*(int *)((int)&DAT_006235e8 + iVar8) < _DAT_02c82a3c) {
           uVar4 = uVar4 + 2;
         }
-        if (channels < *(int *)((int)&DAT_006235e4 + iVar7)) {
+        if (sample_rate < *(int *)((int)&DAT_006235e4 + iVar8)) {
           uVar4 = uVar4 + 2;
         }
-        if (*(int *)((int)&DAT_006235e4 + iVar7) < channels) {
+        if (*(int *)((int)&DAT_006235e4 + iVar8) < sample_rate) {
           uVar4 = uVar4 + 3;
         }
-        if (uVar4 < uVar8) {
-          uVar8 = uVar4;
-          iStack_14 = iVar2;
+        if (uVar4 < uVar9) {
+          uVar9 = uVar4;
+          iVar2 = iVar7;
         }
       }
-      iVar2 = iVar2 + 1;
-      iVar7 = iVar7 + 0x10;
-    } while (iVar2 < 0xc);
-    _DAT_02c82a34 = bits_per_sample;
-    _DAT_02c82a38 = channels;
-    if (iStack_14 < 0) {
+      iVar7 = iVar7 + 1;
+      iVar8 = iVar8 + 0x10;
+    } while (iVar7 < 0xc);
+    _DAT_02c82a34 = channels;
+    _DAT_02c82a38 = sample_rate;
+    if (iVar2 < 0) {
       sound_sndmain_cpp_FUN_005773f0("WavInDevice::setMode - Can't set any recording modes!");
       return 0;
     }
-    _DAT_02c82a1c = (&DAT_006235e0)[iStack_14 * 4];
-    _DAT_02c82a20 = (&DAT_006235e4)[iStack_14 * 4];
-    _DAT_02c82a24 = (&DAT_006235e8)[iStack_14 * 4];
+    _DAT_02c82a1c = (&DAT_006235e0)[iVar2 * 4];
+    _DAT_02c82a20 = (&DAT_006235e4)[iVar2 * 4];
+    _DAT_02c82a24 = (&DAT_006235e8)[iVar2 * 4];
     _DAT_02c82a28 = (uint)(_DAT_02c82a1c == 8);
     _DAT_02c82a2c = (int)_DAT_02c82a24 / 0x14;
     _DAT_02c82a30 = (int)(_DAT_02c82a24 * 2) / _DAT_02c82a2c;
     if (0x14 < _DAT_02c82a30) {
       _DAT_02c82a30 = 0x14;
     }
-    iVar2 = 0;
+    iVar7 = 0;
     if (0 < _DAT_02c82a30) {
-      iVar7 = 0;
+      iVar8 = 0;
       do {
         pvVar5 = GlobalAlloc(0x2002,((int)((_DAT_02c82a1c + ((int)_DAT_02c82a1c >> 0x1f) * -8) -
                                           (uint)(((int)_DAT_02c82a1c >> 0x1f) << 2 < 0)) >> 3) *
                                     _DAT_02c82a2c * _DAT_02c82a20);
-        *(HGLOBAL *)(iVar7 + 0x2c8297c) = pvVar5;
+        *(HGLOBAL *)(iVar8 + 0x2c8297c) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
         pvVar6 = GlobalLock(pvVar5);
-        *(LPVOID *)(&DAT_02c829cc + iVar7) = pvVar6;
+        *(LPVOID *)(&DAT_02c829cc + iVar8) = pvVar6;
         if (pvVar6 == (LPVOID)0x0) break;
         pvVar5 = GlobalAlloc(0x2002,0x20);
-        *(HGLOBAL *)(iVar7 + 0x2c828dc) = pvVar5;
+        *(HGLOBAL *)(iVar8 + 0x2c828dc) = pvVar5;
         if (pvVar5 == (HGLOBAL)0x0) break;
-        iVar2 = iVar2 + 1;
-        pvVar6 = GlobalLock(*(HGLOBAL *)(iVar7 + 0x2c828dc));
+        iVar7 = iVar7 + 1;
+        pvVar6 = GlobalLock(*(HGLOBAL *)(iVar8 + 0x2c828dc));
         iVar1 = _DAT_02c82a30;
-        *(LPVOID *)(iVar7 + 0x2c8292c) = pvVar6;
-        iVar7 = iVar7 + 4;
-      } while (iVar2 < iVar1);
+        *(LPVOID *)(iVar8 + 0x2c8292c) = pvVar6;
+        iVar8 = iVar8 + 4;
+      } while (iVar7 < iVar1);
     }
-    if (_DAT_02c82a30 <= iVar2) {
-      auStack_28._0_2_ = 1;
-      auStack_28._14_2_ = _DAT_02c82a1c;
-      auStack_28._2_2_ = _DAT_02c82a20;
-      auStack_28._12_2_ = (short)((int)(_DAT_02c82a1c & 0xffff) >> 3) * _DAT_02c82a20;
-      auStack_28._4_4_ = _DAT_02c82a24;
-      auStack_28._8_4_ = _DAT_02c82a24 * (ushort)auStack_28._12_2_;
-      MVar3 = waveInOpen((LPHWAVEIN)&DAT_02c828d8,DAT_006235d4,(LPCWAVEFORMATEX)auStack_28,0,0,0);
+    if (_DAT_02c82a30 <= iVar7) {
+      auStack_24._0_2_ = 1;
+      auStack_24._14_2_ = _DAT_02c82a1c;
+      auStack_24._2_2_ = _DAT_02c82a20;
+      auStack_24._12_2_ = (short)((int)(_DAT_02c82a1c & 0xffff) >> 3) * _DAT_02c82a20;
+      auStack_24._4_4_ = _DAT_02c82a24;
+      auStack_24._8_4_ = _DAT_02c82a24 * (ushort)auStack_24._12_2_;
+      MVar3 = waveInOpen((LPHWAVEIN)&DAT_02c828d8,DAT_006235d4,(LPCWAVEFORMATEX)auStack_24,0,0,0);
       if (MVar3 == 0) {
         return 1;
       }
     }
-    iVar2 = (*(code *)**(uint **)this_ptr)(this_ptr);
-    if (iVar2 == 0) {
+    iVar7 = (*(code *)**(uint **)bits_per_sample)(bits_per_sample);
+    if (iVar7 == 0) {
       return 0;
     }
-    auStack_28._16_4_ = auStack_28._16_4_ & ~(&DAT_006235dc)[iStack_14 * 4];
-    bits_per_sample = _DAT_02c82a34;
-    channels = _DAT_02c82a38;
+    auStack_24._16_4_ = auStack_24._16_4_ & ~(&DAT_006235dc)[iVar2 * 4];
+    channels = _DAT_02c82a34;
+    sample_rate = _DAT_02c82a38;
   } while( true );
 }

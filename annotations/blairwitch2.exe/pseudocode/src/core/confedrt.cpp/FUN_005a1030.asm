@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_confedrt.cpp_FUN_005a0b20 at 005a0b86
+;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 at 005a0b86
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_MeleeAttack_005efc77

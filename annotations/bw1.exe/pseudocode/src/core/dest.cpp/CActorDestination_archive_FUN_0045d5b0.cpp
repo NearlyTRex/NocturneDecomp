@@ -11,22 +11,22 @@ void __cdecl core_dest_cpp_CActorDestination_archive_FUN_0045d5b0(CActorDestinat
 {
   char local_104 [256];
   
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
   if (g_CActorDestinationClassVersion < 2) {
     core_actor_cpp_archiveString_FUN_0040b440(local_104,"?whoGoesHere" + 1);
-    *(uint *)&this_ptr->field_0x158 = 0;
+    this_ptr->dest_actor = (CDemonActor *)0x0;
   }
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x188,"whatEvent");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->what_event,"whatEvent");
   if (1 < g_CActorDestinationClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x158,"destActor");
+    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->dest_actor,"destActor");
   }
   if (2 < g_CActorDestinationClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x15c,"destClass");
+    core_actor_cpp_archiveString_FUN_0040b440(this_ptr->dest_class,"destClass");
   }
   if (g_CActorDestinationClassVersion < 4) {
     return;
   }
   core_actor_cpp_archiveInteger_FUN_0040b670
-            ((int *)&this_ptr->field_0x1ec,"persistantEventFlag");
+            (&this_ptr->persistent_event_flag,"persistantEventFlag");
   return;
 }

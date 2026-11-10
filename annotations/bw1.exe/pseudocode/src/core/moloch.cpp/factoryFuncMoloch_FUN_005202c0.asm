@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_moloch.cpp_CMoloch_ctor_FUN_005202f0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x23060                        ; 005202c0
         ;   Label: core_moloch.cpp_factoryFuncMoloch_FUN_005202c0
-    CALL crt_unknown.c_FUN_005c0f32     ; 005202c5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 005202c5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 005202ca
     TEST EAX,EAX                        ; 005202cd
     JNZ 0x005202d2                      ; 005202cf

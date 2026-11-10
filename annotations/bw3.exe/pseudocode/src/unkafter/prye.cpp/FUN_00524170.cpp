@@ -1,17 +1,17 @@
 // Name: unkafter_prye.cpp_FUN_00524170
 // Address: 00524170
 // Address Range: [[00524170, 005247a7]]
-// Convention: unknown
-// Signature: void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param_3)
+// Convention: __cdecl
+// Signature: void __cdecl unkafter_prye_cpp_FUN_00524170(CStranger *this_ptr,float delta_time,int is_weapon_active)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param_3)
+void __cdecl unkafter_prye_cpp_FUN_00524170(CStranger *this_ptr,float delta_time,int is_weapon_active)
 
 {
-  CDemonActor *pCVar1;
+  CStranger *pCVar1;
   float fVar2;
   int iVar3;
   byte bVar4;
@@ -64,32 +64,31 @@ void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param
   float local_18;
   
   bVar4 = 0;
-  if (*(int *)&param_1[0x186].field_0x14 == 0) {
-    param_3 = 0;
+  if (*(int *)(this_ptr + 0x20c24) == 0) {
+    is_weapon_active = 0;
   }
   else {
-    iVar3 = *(int *)(*(int *)&param_1[0x186].field_0x14 + 0x2e0);
+    iVar3 = *(int *)(*(int *)(this_ptr + 0x20c24) + 0x2e0);
     if ((iVar3 == 0) || (iVar3 == 5)) {
-      param_3 = 1;
+      is_weapon_active = 1;
     }
   }
   local_158 = 0.0;
-  if (param_3 != 0) {
+  if (is_weapon_active != 0) {
     local_1c = 0;
-    for (local_20 = 0; local_20 < *(int *)&g_CDemonSetPtr->field_0x14f0a8; local_20 = local_20 + 1)
-    {
-      pCVar1 = *(CDemonActor **)(&g_CDemonSetPtr->field_0x14f0ac + local_1c);
-      core_actor_cpp_FUN_00408bf0(param_1,&pCVar1->field_0x20);
+    for (local_20 = 0; local_20 < g_CDemonSetPtr->character_count; local_20 = local_20 + 1) {
+      pCVar1 = *(CStranger **)((int)g_CDemonSetPtr->characters + local_1c);
+      core_actor_cpp_FUN_00408bf0(this_ptr,pCVar1 + 0x20);
       local_100 = local_70;
       local_114[(uint)bVar4 * -2 + 6] = afStack_6c[(uint)bVar4 * -2];
       local_114[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
            afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
       if (((ABS(local_100) <= (float)_DAT_005cd767) && (ABS(local_fc) <= (float)_DAT_005cd76f)) &&
          ((0.0 <= local_f8 &&
-          ((((int)local_f8 < 0x40c00001 && (pCVar1 != param_1)) &&
-           (iVar3 = (**(code **)(*(int *)&pCVar1->field_0x154 + 0x10c))(pCVar1), iVar3 == 0)))))) {
+          ((((int)local_f8 < 0x40c00001 && (pCVar1 != this_ptr)) &&
+           (iVar3 = (**(code **)(*(int *)(pCVar1 + 0x154) + 0x10c))(pCVar1), iVar3 == 0)))))) {
         core_setcolid_cpp_SCollisionInfo_ctor_FUN_0053ed80((SCollisionInfo *)auStack_14c);
-        iVar3 = (**(code **)(*(int *)&pCVar1->field_0x154 + 0x3c))(pCVar1,auStack_14c);
+        iVar3 = (**(code **)(*(int *)(pCVar1 + 0x154) + 0x3c))(pCVar1,auStack_14c);
         if ((iVar3 == 2) &&
            (fStack_150 = 1.0 - ((local_f8 - (float)auStack_14c._28_4_) + (float)_DAT_005cd777) *
                                (float)_DAT_005cd75f, local_158 <= fStack_150)) {
@@ -102,13 +101,13 @@ void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param
       local_1c = local_1c + 4;
     }
     core_setcolid_cpp_CDemonSet_init_FUN_0053ebe0(g_CDemonSetPtr);
-    core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,param_1);
+    core_setcolid_cpp_CDemonSet_ignore_FUN_0053ec10(g_CDemonSetPtr,(CDemonActor *)this_ptr);
     local_28 = 1.5;
     local_24 = 3.5;
     local_b8[0] = 0.0;
     local_b8[1] = 0.0;
     local_b8[2] = 3.5;
-    core_actor_cpp_FUN_00408b00(param_1,local_114 + 0x17);
+    core_actor_cpp_FUN_00408b00(this_ptr,local_114 + 0x17);
     local_4c = local_b8[3];
     afStack_6c[(uint)bVar4 * -2 + 9] = afStack_a8[(uint)bVar4 * -2];
     afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
@@ -118,13 +117,13 @@ void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param
       afStack_84[3] = local_48;
       local_74 = local_44;
     }
-    core_skeleton_cpp_FUN_0054dbd0(param_1 + 1,_DAT_01ed36e0);
+    core_skeleton_cpp_FUN_0054dbd0(this_ptr + 0x158,_DAT_01ed36e0);
     pfVar5 = local_114 + 8;
     local_f4[0] = (float)local_d0;
     local_114[(uint)bVar4 * -2 + 9] = local_114[(uint)bVar4 * -2 + 0x12];
     local_114[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10] =
          local_114[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0x13];
-    core_actor_cpp_FUN_00408b80(param_1,pfVar5);
+    core_actor_cpp_FUN_00408b80(this_ptr,pfVar5);
     local_118 = local_40;
     local_114[(uint)bVar4 * -2] = afStack_6c[(uint)bVar4 * -2 + 0xc];
     local_114[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
@@ -152,13 +151,13 @@ void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param
     {
       local_158 = fVar2;
     }
-    core_skeleton_cpp_FUN_0054dbd0(param_1 + 1,_DAT_01ed36e4);
+    core_skeleton_cpp_FUN_0054dbd0(this_ptr + 0x158,_DAT_01ed36e4);
     puVar6 = &local_88;
     local_88 = local_58;
     afStack_84[(uint)bVar4 * -2] = afStack_6c[(uint)bVar4 * -2 + 6];
     afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
          afStack_6c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-    core_actor_cpp_FUN_00408b80(param_1,puVar6);
+    core_actor_cpp_FUN_00408b80(this_ptr,puVar6);
     afStack_a8[2] = local_c4;
     afStack_a8[(uint)bVar4 * -2 + 3] = local_114[(uint)bVar4 * -2 + 0x15];
     afStack_a8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
@@ -191,18 +190,18 @@ void unkafter_prye_cpp_FUN_00524170(CDemonActor *param_1,float param_2,int param
   if (1.0 < local_158) {
     local_158 = 1.0;
   }
-  local_15c = local_158 - *(float *)&param_1[0x186].field_0x70;
+  local_15c = local_158 - *(float *)(this_ptr + 0x20c80);
   if (0.0 <= local_15c) {
-    if ((0.0 < local_15c) && (param_2 / _DAT_005e34fc < local_15c)) {
-      local_15c = param_2 / _DAT_005e34fc;
+    if ((0.0 < local_15c) && (delta_time / _DAT_005e34fc < local_15c)) {
+      local_15c = delta_time / _DAT_005e34fc;
     }
   }
   else {
-    fVar2 = -param_2 * (1.0 / _DAT_005e3500);
+    fVar2 = -delta_time * (1.0 / _DAT_005e3500);
     if (local_15c < fVar2) {
       local_15c = fVar2;
     }
   }
-  *(float *)&param_1[0x186].field_0x70 = *(float *)&param_1[0x186].field_0x70 + local_15c;
+  *(float *)(this_ptr + 0x20c80) = *(float *)(this_ptr + 0x20c80) + local_15c;
   return;
 }

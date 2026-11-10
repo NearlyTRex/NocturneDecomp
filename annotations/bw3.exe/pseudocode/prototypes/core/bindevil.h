@@ -21,17 +21,17 @@ CDemonActorType * CBindEvil::getActorType(CBindEvil *this_ptr);
 // Address: 0040f780
 CBindEvil * CBindEvil::ctor(CBindEvil *this_ptr);
 
-// Original: core_bindevil.cpp_FUN_0040f840
+// Original: core_bindevil.cpp_CBindEvil_fire_FUN_0040f840
 // Address: 0040f840
-undefined4 FUN_0040f840(CDemonActor *param_1);
+int __cdecl CBindEvil::fire(CBindEvil *this_ptr);
 
-// Original: core_bindevil.cpp_FUN_0040f8d0
+// Original: core_bindevil.cpp_CBindEvil_getDamage_FUN_0040f8d0
 // Address: 0040f8d0
-undefined4 FUN_0040f8d0(void);
+float __cdecl CBindEvil::getDamage(CBindEvil *this_ptr);
 
-// Original: core_bindevil.cpp_FUN_0040f900
+// Original: core_bindevil.cpp_CBindEvil_setup_FUN_0040f900
 // Address: 0040f900
-void FUN_0040f900(CWeapon *param_1);
+void __cdecl CBindEvil::setup(CBindEvil *this_ptr);
 
 // Original: core_bindevil.cpp_CBindEvil_dtor_FUN_0040f940
 // Address: 0040f940

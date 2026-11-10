@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_gasmask.cpp_CGasMask_ctor_FUN_004c6640
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2d8                          ; 004c6610
         ;   Label: core_gasmask.cpp_factoryFuncGasMask_FUN_004c6610
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004c6615
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004c6615
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004c661a
     TEST EAX,EAX                        ; 004c661d
     JNZ 0x004c6622                      ; 004c661f

@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005fedb0
 ;
 ; Called Functions:
-;   core_confedrt.cpp_FUN_005a0b20
+;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -79,8 +79,8 @@ section .text
     PUSH 0x0                            ; 005a091d
     PUSH 0x0                            ; 005a091f
     PUSH EBX                            ; 005a0921
-    CALL core_confedrt.cpp_FUN_005a0b20 ; 005a0922
-        ;   XREF to: 005a0b20 (UNCONDITIONAL_CALL)  ; undefined core_confedrt.cpp_FUN_005a0b20()
+    CALL core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 ; 005a0922
+        ;   XREF to: 005a0b20 (UNCONDITIONAL_CALL)  ; void core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20(CConfederate * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a0927
     PUSH 0x5efbb1                       ; 005a092a
     PUSH 0x5efbbd                       ; 005a092f

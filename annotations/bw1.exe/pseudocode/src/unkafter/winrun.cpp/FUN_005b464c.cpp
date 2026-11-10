@@ -12,7 +12,7 @@ void unkafter_winrun_cpp_FUN_005b464c(uint param_1)
   int iVar1;
   int iVar2;
   int iVar3;
-  byte auStack_124 [256];
+  char acStack_124 [256];
   uint uStack_24;
   int iStack_20;
   int iStack_1c;
@@ -23,23 +23,23 @@ void unkafter_winrun_cpp_FUN_005b464c(uint param_1)
   iStack_1c = 0x2c9d1d4;
   do {
     uStack_24 = 0;
-    FUN_005bfb40(auStack_124,"Controller_%d_type",iVar3);
-    engine_ini_cpp_FUN_004f4d10(param_1,auStack_124,&uStack_24);
+    _sprintf(acStack_124,"Controller_%d_type");
+    engine_ini_cpp_FUN_004f4d10(param_1,acStack_124,&uStack_24);
     iStack_20 = iVar3;
-    FUN_005bfb40(auStack_124,"Controller_%d_pc_port",iVar3);
-    engine_ini_cpp_FUN_004f4d10(param_1,auStack_124,&iStack_20);
+    _sprintf(acStack_124,"Controller_%d_pc_port");
+    engine_ini_cpp_FUN_004f4d10(param_1,acStack_124,&iStack_20);
     unkafter_winrun_cpp_FUN_005b41c0(iVar3,uStack_24,iStack_20);
     iVar1 = 0;
     iStack_18 = iStack_1c;
     iStack_14 = iStack_1c + 8;
     iVar2 = iStack_1c + 4;
     do {
-      FUN_005bfb40(auStack_124,"Controller_%d_axis_%d_min",iVar3,iVar1);
-      engine_ini_cpp_FUN_004f4d10(param_1,auStack_124,iVar1 * 0xc + iStack_18);
-      FUN_005bfb40(auStack_124,"Controller_%d_axis_%d_max",iVar3,iVar1);
-      engine_ini_cpp_FUN_004f4d10(param_1,auStack_124,iVar2);
-      FUN_005bfb40(auStack_124,"Controller_%d_axis_%d_center",iVar3,iVar1);
-      engine_ini_cpp_FUN_004f4d10(param_1,auStack_124,iStack_14);
+      _sprintf(acStack_124,"Controller_%d_axis_%d_min");
+      engine_ini_cpp_FUN_004f4d10(param_1,acStack_124,iVar1 * 0xc + iStack_18);
+      _sprintf(acStack_124,"Controller_%d_axis_%d_max");
+      engine_ini_cpp_FUN_004f4d10(param_1,acStack_124,iVar2);
+      _sprintf(acStack_124,"Controller_%d_axis_%d_center");
+      engine_ini_cpp_FUN_004f4d10(param_1,acStack_124,iStack_14);
       iVar2 = iVar2 + 0xc;
       iStack_14 = iStack_14 + 0xc;
       iVar1 = iVar1 + 1;

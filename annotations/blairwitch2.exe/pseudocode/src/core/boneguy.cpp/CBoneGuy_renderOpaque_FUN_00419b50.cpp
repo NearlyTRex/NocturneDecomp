@@ -15,6 +15,6 @@ int __cdecl core_boneguy_cpp_CBoneGuy_renderOpaque_FUN_00419b50(CBoneGuy *this_p
   if (iVar1 == 0) {
     return 0;
   }
-  iVar1 = core_charactr_cpp_FUN_004254b0(this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
   return iVar1;
 }

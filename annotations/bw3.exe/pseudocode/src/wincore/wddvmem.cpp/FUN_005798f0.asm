@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   height
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00401010 at 00401029
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 00401029
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005d73f1
@@ -32,7 +32,7 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_ddraw.c_DirectDrawCreate
 ;   crt_unknown.c_FUN_005a3650
-;   engine_special.cpp_FUN_00564be0
+;   engine_special.cpp_loadExternalRenderer_FUN_00564be0
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     MOV EBX,dword ptr [0x02d21b78]      ; 005799fe | DAT_02d21b78
         ;   Label: LAB_005799fe
     PUSH EBX                            ; 00579a04
-    CALL engine_special.cpp_FUN_00564be0 ; 00579a05
-        ;   XREF to: 00564be0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00564be0(HWND window_handle)
+    CALL engine_special.cpp_loadExternalRenderer_FUN_00564be0 ; 00579a05
+        ;   XREF to: 00564be0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_loadExternalRenderer_FUN_00564be0(HWND window_handle)
     MOV EAX,0x1                         ; 00579a0a
     ADD ESP,0x4                         ; 00579a0f
     POP EBP                             ; 00579a12

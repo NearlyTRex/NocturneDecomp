@@ -19,19 +19,19 @@
     {
       "addr": "00420420",
       "from_addr": "00420531",
-      "name": "core_boxactor.cpp_FUN_00420420",
+      "name": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042f510",
       "from_addr": "0042f611",
-      "name": "core_charactr.cpp_FUN_0042f510",
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00487eb0",
       "from_addr": "0048802d",
-      "name": "core_emitter.cpp_FUN_00487eb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +43,7 @@
     {
       "addr": "00499350",
       "from_addr": "004993ea",
-      "name": "core_fire.cpp_FUN_00499350",
+      "name": "core_fire.cpp_CFireball_process_FUN_00499350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,7 +61,7 @@
     {
       "addr": "004a4dc0",
       "from_addr": "004a5666",
-      "name": "core_firestff.cpp_FUN_004a4dc0",
+      "name": "core_firestff.cpp_CFirestaff_process_FUN_004a4dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,13 +73,19 @@
     {
       "addr": "004de8b0",
       "from_addr": "004de927",
-      "name": "core_keyactor.cpp_FUN_004de8b0",
+      "name": "core_keyactor.cpp_CKeyActor_process_FUN_004de8b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e0f70",
       "from_addr": "004e1058",
       "name": "core_lightsta.cpp_CLightStaff_ctor_FUN_004e0f70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2050",
+      "from_addr": "004e2281",
+      "name": "core_lightsta.cpp_CLightStaff_process_FUN_004e2050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,13 +97,7 @@
     {
       "addr": "0057b5c0",
       "from_addr": "0057b7c1",
-      "name": "core_weapon.cpp_FUN_0057b5c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e2050",
-      "from_addr": "004e2281",
-      "name": "unkafter_lightgun.cpp_FUN_004e2050",
+      "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -140,7 +140,7 @@
       {
         "call_addr": "0048802d",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00487eb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -162,7 +162,7 @@
       {
         "call_addr": "0057b7c1",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_0057b5c0",
+        "caller": "core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "0042f611",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042f510",
+        "caller": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,7 +206,7 @@
       {
         "call_addr": "004993ea",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499350",
+        "caller": "core_fire.cpp_CFireball_process_FUN_00499350",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +217,7 @@
       {
         "call_addr": "00420531",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00420420",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +228,7 @@
       {
         "call_addr": "004207c0",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00420420",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

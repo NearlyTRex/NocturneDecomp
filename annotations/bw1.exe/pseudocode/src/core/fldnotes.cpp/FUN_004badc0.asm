@@ -11,7 +11,7 @@
 ;   core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_string.c__stricmp_FUN_005c04e0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;
@@ -90,8 +90,8 @@ section .text
     PUSH 0x5df8f6                       ; 004bae9f
     LEA EAX,[ESP + 0x8]                 ; 004baea4
     PUSH EAX                            ; 004baea8
-    CALL crt_unknown.c_FUN_005bfb40     ; 004baea9
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004baea9
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 004baeae
     PUSH 0x2f                           ; 004baeb1
     PUSH 0x23                           ; 004baeb3

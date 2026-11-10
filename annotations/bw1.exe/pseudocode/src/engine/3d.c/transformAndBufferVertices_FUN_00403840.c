@@ -31,7 +31,7 @@ int engine_3d_c_transformAndBufferVertices_FUN_00403840(int param_1)
       }
       output = output + 0x30;
       iVar1 = iVar1 + 1;
-      input = input + 0xc;
+      input = input + 1;
     } while (iVar1 < *(int *)(param_1 + 8));
   }
   if (DAT_00713a60 == 0) {

@@ -44,7 +44,7 @@ DWORD FUN_005c871c(uint param_1,LPCVOID param_2,DWORD param_3)
         return 0xffffffff;
       }
       if ((uStack_14 & 0x40) == 0) {
-        DStack_20 = unkafter_zombie_cpp_FUN_005cc370();
+        DStack_20 = FUN_005cc370();
         if (DStack_20 < 0xb0) {
           FUN_005c31b6();
         }

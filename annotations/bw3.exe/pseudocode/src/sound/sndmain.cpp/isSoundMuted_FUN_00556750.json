@@ -1,0 +1,117 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 20,
+    "cross_reference_count": 8,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 8
+  },
+  "cross_references": [
+    {
+      "addr": "004ba540",
+      "from_addr": "004ba681",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004ba540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e94f0",
+      "from_addr": "004e9657",
+      "name": "core_menu.cpp_FUN_004e94f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ea4d0",
+      "from_addr": "004ea7f4",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005607d0",
+      "from_addr": "0056084e",
+      "name": "core_sound.cpp_CSound_configure_FUN_005607d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f020",
+      "from_addr": "0055f02f",
+      "name": "core_sound.cpp_playSfxInternal_FUN_0055f020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559520",
+      "from_addr": "00559643",
+      "name": "sound_sndmain.cpp_FUN_00559520",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558050",
+      "from_addr": "00558062",
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_00558050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559220",
+      "from_addr": "0055940d",
+      "name": "sound_sndmain.cpp_readIni_FUN_00559220",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00556750",
+    "address_range": [
+      [
+        "00556750",
+        "00556755"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_isSoundMuted_FUN_00556750",
+    "signature": "int __cdecl sound_sndmain_cpp_isSoundMuted_FUN_00556750(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "02cf3290",
+      "name": "DAT_02cf3290",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

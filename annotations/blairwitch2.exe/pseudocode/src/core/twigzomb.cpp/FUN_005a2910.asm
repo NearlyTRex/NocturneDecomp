@@ -10,7 +10,7 @@
 ;   undefined4 DAT_005f000f
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_005b1890
+;   core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890
 ;   core_motion.cpp_FUN_005035c0
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;   unkaddr_0059d350.cpp_FUN_0059daa0
@@ -100,8 +100,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005a29f3
     MOVSD ES:EDI,ESI                    ; 005a29f4
     MOVSD ES:EDI,ESI                    ; 005a29f5
-    CALL core_cloth.cpp_FUN_005b1890    ; 005a29f6
-        ;   XREF to: 005b1890 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_FUN_005b1890(CClothList * this_ptr, CVector3f * wind_velocity)
+    CALL core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890 ; 005a29f6
+        ;   XREF to: 005b1890 (UNCONDITIONAL_CALL)  ; void core_cloth.cpp_CClothList_setWindVelocity_FUN_005b1890(CClothList * this_ptr, CVector3f * wind_velocity)
     ADD ESP,0x8                         ; 005a29fb
     ADD ESP,0x30                        ; 005a29fe
     POP EDI                             ; 005a2a01

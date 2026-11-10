@@ -18,7 +18,7 @@ int FUN_005a67bc(short *param_1,uint param_2,int param_3)
   if (param_3 == -1) {
     while (sVar1 = *param_1, sVar1 != 0) {
       param_1 = param_1 + 1;
-      iVar2 = unkafter_asgaya_cpp_FUN_005ad320(local_14,sVar1);
+      iVar2 = FUN_005ad320(local_14,sVar1);
       if (iVar2 != -1) {
         iVar3 = iVar3 + iVar2;
       }
@@ -27,7 +27,7 @@ int FUN_005a67bc(short *param_1,uint param_2,int param_3)
   else {
     while ((sVar1 = *param_1, sVar1 != 0 && (iVar3 <= param_3))) {
       param_1 = param_1 + 1;
-      iVar2 = unkafter_asgaya_cpp_FUN_005ad320(local_14,sVar1);
+      iVar2 = FUN_005ad320(local_14,sVar1);
       if (iVar2 != -1) {
         iVar3 = iVar3 + iVar2;
       }

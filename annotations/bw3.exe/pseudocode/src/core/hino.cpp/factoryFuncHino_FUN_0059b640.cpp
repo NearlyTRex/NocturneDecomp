@@ -11,7 +11,7 @@ void core_hino_cpp_factoryFuncHino_FUN_0059b640(void)
 {
   CHino *this_ptr;
   
-  this_ptr = (CHino *)FUN_005a3cb2(0xd0b0);
+  this_ptr = (CHino *)debugAllocTracked1(0xd0b0);
   if (this_ptr == (CHino *)0x0) {
     return;
   }

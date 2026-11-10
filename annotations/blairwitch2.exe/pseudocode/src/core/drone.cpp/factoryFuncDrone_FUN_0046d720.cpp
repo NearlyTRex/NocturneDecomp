@@ -11,7 +11,7 @@ void core_drone_cpp_factoryFuncDrone_FUN_0046d720(void)
 {
   CDrone *this_ptr;
   
-  this_ptr = (CDrone *)FUN_005b8be2(0x10b10);
+  this_ptr = (CDrone *)debugAllocTracked1(0x10b10);
   if (this_ptr == (CDrone *)0x0) {
     return;
   }

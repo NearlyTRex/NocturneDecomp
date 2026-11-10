@@ -18,7 +18,7 @@ void __cdecl core_dglobe_cpp_CDemonGlobe_precomputeAttenuation_FUN_0045ab30(CDem
   
   fVar1 = (float10)radius * (float10)_DAT_005bafd9;
   fVar2 = (float10)radius * (float10)radius * (float10)_DAT_005bafe1;
-  *(float *)(this_ptr + 0x30) = radius;
+  this_ptr->radius = radius;
   round();
   round();
   *(int *)(extraout_EDX + 0x10) = (int)ROUND(fVar2);

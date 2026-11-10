@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_fldnotes.cpp_FUN_004bb570
 ;   core_fldnotes.cpp_FUN_004bb6c0
-;   engine_font.cpp_FUN_004c4510
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 004bb646
     PUSH EDX                            ; 004bb649
     MOV dword ptr [EBX + 0x14],EAX      ; 004bb64a
-    CALL engine_font.cpp_FUN_004c4510   ; 004bb64d
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 004bb64d
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     MOV ECX,dword ptr [EBX + 0x2c]      ; 004bb652
     LEA EDX,[EBX + 0x18]                ; 004bb655
     MOV ECX,dword ptr [ECX + 0x41f8]    ; 004bb658

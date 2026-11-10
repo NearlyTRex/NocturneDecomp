@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_mp3_cpp_FUN_00509db0(CMP3Decoder *param_1,undefined4 param_2,undefined4 param_3)
+; void sound_mp3_cpp_FUN_00509db0(CMP3Decoder *param_1,_FILE *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x68]:4  local_68
@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   sound_mp3.cpp_FUN_00509cd0 at 00509d2f
+;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_00509cd0 at 00509d2f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dfee2
@@ -31,11 +31,11 @@
 ;   crt_stdio.c_ftell_FUN_005baab0
 ;   crt_unknown.c_FUN_005b8580
 ;   crt_unknown.c_FUN_005b86a0
+;   sound_mp3.cpp_calculateMpegFrame_FUN_00504670
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00505170
 ;   sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00504ca0
 ;   sound_mp3.cpp_CMP3Decoder_free_FUN_00509f30
 ;   sound_mp3.cpp_CMP3Decoder_seek_FUN_0050a0e0
-;   sound_mp3.cpp_FUN_00504670
 ;
 ; *****************************************************************************
 
@@ -128,8 +128,8 @@ section .text
     ADD ESP,0x8                         ; 00509e9f
     LEA EAX,[ESP + 0x30]                ; 00509ea2
     PUSH EAX                            ; 00509ea6
-    CALL sound_mp3.cpp_FUN_00504670     ; 00509ea7
-        ;   XREF to: 00504670 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_00504670(SMpegFrame * frame)
+    CALL sound_mp3.cpp_calculateMpegFrame_FUN_00504670 ; 00509ea7
+        ;   XREF to: 00504670 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_calculateMpegFrame_FUN_00504670(SMpegFrame * frame)
     ADD ESP,0x4                         ; 00509eac
     MOV EBX,dword ptr [ESP]             ; 00509eaf
     MOV EAX,dword ptr [ESP + 0x10]      ; 00509eb2

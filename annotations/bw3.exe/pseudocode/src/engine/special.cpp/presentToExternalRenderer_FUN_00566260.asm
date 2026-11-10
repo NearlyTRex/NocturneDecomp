@@ -9,9 +9,9 @@
 ; undefined        Stack[-0x12c4]:1  local_12c4
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004b7f90 at 004b8c6c
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8c6c
 ;   unkafter_minecar.cpp_FUN_004ec8ce at 004ec8db
-;   wincore_wddvmem.cpp_FUN_0057a8a0 at 0057a987
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 at 0057a987
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18
@@ -27,8 +27,8 @@
 ; Called Functions:
 ;   engine_special.cpp_FUN_00565820
 ;   engine_special.cpp_unlockFrame_FUN_00565870
-;   wincore_wddvmem.cpp_FUN_0057a3c0
-;   wincore_wddvmem.cpp_FUN_0057a4b0
+;   wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0
+;   wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     SBB EAX,EDX                         ; 005662c8
     SAR EAX,0x3                         ; 005662ca
     MOV EBP,EAX                         ; 005662cd
-    CALL wincore_wddvmem.cpp_FUN_0057a3c0 ; 005662cf
-        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_0057a3c0()
+    CALL wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0 ; 005662cf
+        ;   XREF to: 0057a3c0 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_0057a3c0()
     CALL engine_special.cpp_FUN_00565820 ; 005662d4
         ;   XREF to: 00565820 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00565820()
     CMP dword ptr [0x005fba1c],0x0      ; 005662d9 | DAT_005fba1c
@@ -102,8 +102,8 @@ section .text
     CALL engine_special.cpp_unlockFrame_FUN_00565870 ; 00566312
         ;   XREF to: 00565870 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00565870(int clear_lock_flag)
     ADD ESP,0x4                         ; 00566317
-    CALL wincore_wddvmem.cpp_FUN_0057a4b0 ; 0056631a
-        ;   XREF to: 0057a4b0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a4b0()
+    CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0 ; 0056631a
+        ;   XREF to: 0057a4b0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_0057a4b0()
     POP ESI                             ; 0056631f
     POP EDI                             ; 00566320
     XOR EDX,EDX                         ; 00566321

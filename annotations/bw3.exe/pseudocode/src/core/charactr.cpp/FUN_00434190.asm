@@ -20,10 +20,10 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408bf0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_FUN_0045b800
-;   core_hero.cpp_FUN_004d22c0
-;   core_vecdir.cpp_FUN_00576250
+;   core_hero.cpp_closestHeroToPoint_FUN_004d22c0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   engine_console.cpp_FUN_00441ff0
 ;
 ; *****************************************************************************
@@ -112,8 +112,8 @@ section .text
     ADD EAX,0x20                        ; 00434242
     PUSH EAX                            ; 00434245
     MOV dword ptr [ESP + 0x188],EAX     ; 00434246
-    CALL core_hero.cpp_FUN_004d22c0     ; 0043424d
-        ;   XREF to: 004d22c0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004d22c0(CLocation * location)
+    CALL core_hero.cpp_closestHeroToPoint_FUN_004d22c0 ; 0043424d
+        ;   XREF to: 004d22c0 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_closestHeroToPoint_FUN_004d22c0(CLocation * location)
     ADD ESP,0x4                         ; 00434252
     MOV ECX,dword ptr [ESP + 0x184]     ; 00434255
     PUSH ECX                            ; 0043425c
@@ -133,8 +133,8 @@ section .text
     PUSH EAX                            ; 0043428e
     LEA ESI,[ESP + 0x140]               ; 0043428f
     LEA EDI,[ESP + 0x5c]                ; 00434296
-    CALL core_vecdir.cpp_FUN_00576250   ; 0043429a
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0043429a
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     LEA ESI,[ESP + 0x140]               ; 0043429f
     ADD ESP,0x4                         ; 004342a6
     MOVSD ES:EDI,ESI                    ; 004342a9
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 0043430c
     LEA ESI,[ESP + 0x158]               ; 0043430d
     LEA EDI,[ESP + 0xbc]                ; 00434314
-    CALL core_vecdir.cpp_FUN_00576250   ; 0043431b
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 0043431b
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     LEA ESI,[ESP + 0x158]               ; 00434320
     ADD ESP,0x4                         ; 00434327
     MOVSD ES:EDI,ESI                    ; 0043432a
@@ -232,8 +232,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00434410
     MOVSD ES:EDI,ESI                    ; 00434411
     MOVSD ES:EDI,ESI                    ; 00434412
-    CALL core_dirmat.cpp_FUN_0045b550   ; 00434413
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 00434413
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV ECX,0x40d00000                  ; 00434418
     ADD ESP,0x8                         ; 0043441d
     MOV dword ptr [ESP + 0x4],ECX       ; 00434420
@@ -402,8 +402,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0043466c
     MOVSD ES:EDI,ESI                    ; 0043466d
     MOVSD ES:EDI,ESI                    ; 0043466e
-    CALL core_dirmat.cpp_FUN_0045b550   ; 0043466f
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 0043466f
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,0x40900000                  ; 00434674
     ADD ESP,0x8                         ; 00434679
     MOV dword ptr [ESP],EAX             ; 0043467c

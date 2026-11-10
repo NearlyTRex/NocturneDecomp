@@ -11,7 +11,7 @@ void core_battery_cpp_factoryFuncBattery_FUN_0040f470(void)
 {
   CBattery *this_ptr;
   
-  this_ptr = (CBattery *)FUN_005a3cb2(0x2e0);
+  this_ptr = (CBattery *)debugAllocTracked1(0x2e0);
   if (this_ptr == (CBattery *)0x0) {
     return;
   }

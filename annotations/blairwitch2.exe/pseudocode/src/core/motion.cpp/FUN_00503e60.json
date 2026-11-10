@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 103,
-    "complexity_score": 101,
+    "complexity_score": 36,
     "cross_reference_count": 19,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 139
   },
   "cross_references": [
     {
       "addr": "0041dbe0",
       "from_addr": "0041e074",
-      "name": "core_bride.cpp_FUN_0041dbe0",
+      "name": "core_bride.cpp_CBride_process_FUN_0041dbe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,55 +40,55 @@
     {
       "addr": "005ac200",
       "from_addr": "005ac23d",
-      "name": "core_dog1.cpp_FUN_005ac200",
+      "name": "core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ad640",
       "from_addr": "004add1d",
-      "name": "core_gabriela.cpp_FUN_004ad640",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a9580",
       "from_addr": "005a9601",
-      "name": "core_ghostchi.cpp_FUN_005a9580",
+      "name": "core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c1bb0",
       "from_addr": "004c3419",
-      "name": "core_ghoul.cpp_FUN_004c1bb0",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005aab50",
       "from_addr": "005aac51",
-      "name": "core_hag.cpp_FUN_005aab50",
+      "name": "core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a9ed0",
       "from_addr": "005a9f76",
-      "name": "core_hand.cpp_FUN_005a9ed0",
+      "name": "core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005aa4a0",
       "from_addr": "005aa4fb",
-      "name": "core_hand.cpp_FUN_005aa4a0",
+      "name": "core_hand.cpp_CHand_renderTransparent_FUN_005aa4a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f0e10",
       "from_addr": "004f13f8",
-      "name": "core_mimic.cpp_FUN_004f0e10",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a6140",
       "from_addr": "005a61e1",
-      "name": "core_robin.cpp_FUN_005a6140",
+      "name": "core_robin.cpp_CRobin_processMeleeAttackState_FUN_005a6140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -108,7 +106,7 @@
     {
       "addr": "00563060",
       "from_addr": "00563902",
-      "name": "core_stranger.cpp_FUN_00563060",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -126,7 +124,7 @@
     {
       "addr": "00595f30",
       "from_addr": "00597b73",
-      "name": "core_zombie.cpp_FUN_00595f30",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00595f30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -183,7 +181,7 @@
       {
         "call_addr": "004add1d",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004ad640",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,7 +192,7 @@
       {
         "call_addr": "004c3419",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c1bb0",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +203,7 @@
       {
         "call_addr": "004c35af",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c1bb0",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -340,54 +338,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&this_ptr->field_0x4 * 0x118 + *(int *)this_ptr + 0x1c28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x8 <= 0.0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "else if ((float)*(int *)(iVar3 + 100) <= *(float *)&this_ptr->field_0x8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x8 < (float)*(int *)(iVar2 + 0xf0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x8 - (float)iVar4) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x8 - (float)iVar4) /",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

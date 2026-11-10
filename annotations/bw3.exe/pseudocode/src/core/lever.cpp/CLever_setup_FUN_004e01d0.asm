@@ -7,7 +7,7 @@
 ; CLever *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408890
+;   core_actor.cpp_CDemonActor_setup_FUN_00408890
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
@@ -28,8 +28,8 @@ section .text
         ;   XREF to: 00462580 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004e01e5
     PUSH EBX                            ; 004e01e8
-    CALL core_actor.cpp_FUN_00408890    ; 004e01e9
-        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408890(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 004e01e9
+        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
     MOV AH,byte ptr [EBX + 0x3a8]       ; 004e01ee
     ADD ESP,0x4                         ; 004e01f4
     TEST AH,AH                          ; 004e01f7

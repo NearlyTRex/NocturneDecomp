@@ -13,15 +13,14 @@ void __cdecl core_dlight_cpp_CDemonLight_allocMasterZBuffer_FUN_00462770(CDemonL
 {
   void *pvVar1;
   
-  if (*(int *)&this_ptr->field_0x164 != 0) {
+  if ((this_ptr->base).zbuffer_raw != (void *)0x0) {
     _DAT_01d1d400 = "..\\core\\dlight.cpp";
     _DAT_01d1d404 = 0xcd;
     core_main_c_FUN_005030e0("CDemonLight::allocMasterZBuffer - We already have one!");
   }
   pvVar1 = core_dlight_cpp_getRestoreMemory_FUN_004626f0
-                     (*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4);
-  *(void **)&this_ptr->field_0x2f9c = pvVar1;
-  _memcpy
-            (*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);
+                     (this_ptr->shadow_map_width * this_ptr->shadow_map_height);
+  this_ptr->master_zbuffer = pvVar1;
+  _memcpy(this_ptr->shadow_map_width * this_ptr->shadow_map_height * 2);
   return;
 }

@@ -9,6 +9,6 @@
 void __cdecl core_battery_cpp_CBattery_pickup_FUN_0040f550(CBattery *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x2d4 = carrier;
+  this_ptr->carrier = carrier;
   return;
 }

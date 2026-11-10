@@ -7,12 +7,12 @@
 ; CGasMask *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004d27b0 at 004d5225
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d5225
 ;   core_gasmask.cpp_factoryFuncGasMask_FUN_004dda90 at 004ddaa3
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gasmask_kfm_005e3a25
-;   void* g_CGasMaskVTable = 004ddb10
+;   CDemonActor_vtable g_CGasMaskVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0

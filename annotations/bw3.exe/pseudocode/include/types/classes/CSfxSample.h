@@ -4,13 +4,23 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSampleInfo.h"
 
 // Structure: CSfxSample
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1b0 (432 bytes)
 #pragma pack(push, 1)
 typedef struct CSfxSample {
-    char field_0[432]; // 0x0
+    CSampleInfo sample_info; // 0x0
+    short* sample_data; // 0x120
+    int loop_marker_count; // 0x124
+    int loop_endpoints[5]; // 0x128
+    int loop_destinations[5]; // 0x13c
+    int taken; // 0x150
+    int ref_count; // 0x154
+    int buffer_id; // 0x158
+    char field_348[76]; // 0x15c
+    int locked_offset; // 0x1a8
+    int locked_length; // 0x1ac
 } CSfxSample;
 #pragma pack(pop)
 

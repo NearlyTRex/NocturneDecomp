@@ -1,0 +1,150 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 61,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "004af410",
+      "from_addr": "004af8ad",
+      "name": "core_gabriela.cpp_FUN_004af410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0a40",
+    "address_range": [
+      [
+        "004b0a40",
+        "004b0a80"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gabriela.cpp_CGabriella_collectAmmo_FUN_004b0a40",
+    "signature": "void __cdecl core_gabriela_cpp_CGabriella_collectAmmo_FUN_004b0a40(CGabriella *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "0040e670",
+      "is_variadic": false,
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007bc3e0",
+      "name": "g_CAmmoBoxClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004af8ad",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_FUN_004af410",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.909090909090909,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 10,
+      "INT_AND": 10,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 4,
+      "INT_SUB": 7,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 86
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x25608",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x25608 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x25608",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x25608,g_CAmmoBoxClassInfo.name_hash);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2437c",
+      "severity": "mild",
+      "text": "(this_ptr_00,(CInventory *)&this_ptr->field_0x2437c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x25608",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25608 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

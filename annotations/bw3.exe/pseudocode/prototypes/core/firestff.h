@@ -21,29 +21,29 @@ CDemonActorType * CFirestaff::getActorType(CFirestaff *this_ptr);
 // Address: 004a4ad0
 CFirestaff * CFirestaff::ctor(CFirestaff *this_ptr);
 
-// Original: core_firestff.cpp_FUN_004a4cd0
+// Original: core_firestff.cpp_CFirestaff_fillAttackDamageInfo_FUN_004a4cd0
 // Address: 004a4cd0
-void FUN_004a4cd0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void __cdecl CFirestaff::fillAttackDamageInfo(CFirestaff *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_firestff.cpp_FUN_004a4d00
+// Original: core_firestff.cpp_CFirestaff_fire_FUN_004a4d00
 // Address: 004a4d00
-undefined4 FUN_004a4d00(CDemonActor *param_1);
+int __cdecl CFirestaff::fire(CFirestaff *this_ptr);
 
-// Original: core_firestff.cpp_FUN_004a4dc0
+// Original: core_firestff.cpp_CFirestaff_process_FUN_004a4dc0
 // Address: 004a4dc0
-void FUN_004a4dc0(CWeapon *param_1,float param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl CFirestaff::process(CFirestaff *this_ptr,float delta_time);
 
-// Original: core_firestff.cpp_FUN_004a5770
+// Original: core_firestff.cpp_CFirestaff_setWeaponState_FUN_004a5770
 // Address: 004a5770
-void FUN_004a5770(CWeapon *param_1,int param_2);
+void __cdecl CFirestaff::setWeaponState(CFirestaff *this_ptr,int weapon_state);
 
-// Original: core_firestff.cpp_FUN_004a57c0
+// Original: core_firestff.cpp_CFirestaff_renderOpaque_FUN_004a57c0
 // Address: 004a57c0
-int FUN_004a57c0(CWeapon *param_1);
+int __cdecl CFirestaff::renderOpaque(CFirestaff *this_ptr);
 
-// Original: core_firestff.cpp_FUN_004a5870
+// Original: core_firestff.cpp_CFirestaff_setup_FUN_004a5870
 // Address: 004a5870
-void FUN_004a5870(CWeapon *param_1);
+void __cdecl CFirestaff::setup(CFirestaff *this_ptr);
 
 // Original: core_firestff.cpp_CFirestaff_dtor_FUN_004a58c0
 // Address: 004a58c0

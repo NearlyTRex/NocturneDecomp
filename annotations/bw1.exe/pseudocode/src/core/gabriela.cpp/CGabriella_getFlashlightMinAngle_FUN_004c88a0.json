@@ -1,0 +1,156 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 33,
+    "complexity_score": 40,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [
+    {
+      "addr": "004c65f0",
+      "from_addr": "004c6a8e",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c89c0",
+      "from_addr": "004c8ae0",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c88a0",
+    "address_range": [
+      [
+        "004c88a0",
+        "004c88ef"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004c88a0",
+    "signature": "float __cdecl core_gabriela_cpp_CGabriella_getFlashlightMinAngle_FUN_004c88a0(CGabriella *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "007c5330",
+      "name": "DAT_007c5330",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004c8ae0",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004c6a8e",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.346153846153846,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 19,
+      "INT_ADD": 10,
+      "INT_AND": 15,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 14,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 7,
+      "LOAD": 9,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 113
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 12,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 8,
+      "match": "DAT_007c5330",
+      "severity": "mild",
+      "text": "(*(uint *)&this_ptr->field_0x25b0,DAT_007c5330);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x25b0",
+      "severity": "mild",
+      "text": "(*(uint *)&this_ptr->field_0x25b0,DAT_007c5330);",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -21,37 +21,37 @@ CDemonActorType * CGargoyle::getActorType(CGargoyle *this_ptr);
 // Address: 004bfae0
 CGargoyle * __cdecl CGargoyle::ctor(CGargoyle *this_ptr);
 
-// Original: core_gargoyle.cpp_FUN_004bfbe0
+// Original: core_gargoyle.cpp_CGargoyle_setup_FUN_004bfbe0
 // Address: 004bfbe0
-void FUN_004bfbe0(CEnemy *param_1);
+void __cdecl CGargoyle::setup(CGargoyle *this_ptr);
 
 // Original: core_gargoyle.cpp_FUN_004bfea0
 // Address: 004bfea0
 undefined4 FUN_004bfea0(int param_1);
 
-// Original: core_gargoyle.cpp_FUN_004c0050
+// Original: core_gargoyle.cpp_CGargoyle_process_FUN_004c0050
 // Address: 004c0050
-void FUN_004c0050(CEnemy *param_1,float param_2);
+void __cdecl CGargoyle::process(CGargoyle *this_ptr,float delta_time);
 
-// Original: core_gargoyle.cpp_FUN_004c0b30
+// Original: core_gargoyle.cpp_CGargoyle_renderOpaque_FUN_004c0b30
 // Address: 004c0b30
-void FUN_004c0b30(undefined4 param_1);
+int __cdecl CGargoyle::renderOpaque(CGargoyle *this_ptr);
 
-// Original: core_gargoyle.cpp_FUN_004c0b40
+// Original: core_gargoyle.cpp_CGargoyle_archive_FUN_004c0b40
 // Address: 004c0b40
-void FUN_004c0b40(CEnemy *param_1);
+void __cdecl CGargoyle::archive(CGargoyle *this_ptr);
 
-// Original: core_gargoyle.cpp_FUN_004c0c00
+// Original: core_gargoyle.cpp_CGargoyle_processDismemberment_FUN_004c0c00
 // Address: 004c0c00
-void __cdecl FUN_004c0c00(CGargoyle *this_ptr,SDamageInfo *damage_info);
+void __cdecl CGargoyle::processDismemberment(CGargoyle *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_gargoyle.cpp_FUN_004c0ea0
+// Original: core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c0ea0
 // Address: 004c0ea0
-void FUN_004c0ea0(CGargoyle *param_1,SDamageInfo *param_2);
+void __cdecl CGargoyle::processDamage(CGargoyle *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_gargoyle.cpp_FUN_004c1000
+// Original: core_gargoyle.cpp_CGargoyle_getTargetPoints_FUN_004c1000
 // Address: 004c1000
-int FUN_004c1000(int param_1,undefined4 *param_2);
+int __cdecl CGargoyle::getTargetPoints(CGargoyle *this_ptr,CVector3f *out_points_array);
 
 // Original: core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004c1220
 // Address: 004c1220

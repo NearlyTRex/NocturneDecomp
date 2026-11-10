@@ -21,10 +21,10 @@
 ;
 ; XREF[5]:
 ;   core_cloth.cpp_CClothList_load_FUN_005b14a0 at 005b1516
-;   core_gabriela.cpp_FUN_004ad3e0 at 004ad419
-;   core_mimic.cpp_FUN_004f04f0 at 004f06c9
-;   core_svetlana.cpp_FUN_00570250 at 00570443
-;   core_vampboss.cpp_FUN_00581660 at 005816a2
+;   core_gabriela.cpp_CGabriella_setup_FUN_004ad3e0 at 004ad419
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f06c9
+;   core_svetlana.cpp_CSvetlana_setup_FUN_00570250 at 00570443
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_00581660 at 005816a2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f0f71

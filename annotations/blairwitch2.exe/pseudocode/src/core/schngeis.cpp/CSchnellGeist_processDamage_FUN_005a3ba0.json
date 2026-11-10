@@ -1,0 +1,164 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 26,
+    "complexity_score": 51,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 37
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3ba0",
+    "address_range": [
+      [
+        "005a3ba0",
+        "005a3be7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_schngeis.cpp_CSchnellGeist_processDamage_FUN_005a3ba0",
+    "signature": "void __cdecl core_schngeis_cpp_CSchnellGeist_processDamage_FUN_005a3ba0(CSchnellGeist *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0059f800",
+      "is_variadic": false,
+      "name": "core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800"
+    },
+    {
+      "addr": "00490f80",
+      "is_variadic": false,
+      "name": "core_event.cpp_FUN_00490f80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f01ee",
+      "name": "s_schnell_death_005f01ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f01fe",
+      "name": "DAT_005f01fe",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.476190476190476,
+    "instruction_count": 21,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 30,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 9,
+      "INT_AND": 9,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "INT_ZEXT": 4,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 115
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSchnellGeist *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x25a8 - *(float *)(damage_info + 4) <= (float)_DAT_005f01fe) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25a8 = 0x41200000;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 272,
+        "vtable_addr": "005ff374"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

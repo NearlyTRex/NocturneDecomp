@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_menu_cpp_FUN_004eb490(void)
+; int __cdecl core_menu_cpp_FUN_004eb490(void)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x124]:1  local_124
@@ -24,23 +24,23 @@
 ;   undefined4 DAT_01c38af4
 ;   undefined4 DAT_01c38b00
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field184_0xb8
-;   undefined4 g_CGameInstance.field188_0xbc
-;   undefined4 g_CGameInstance.field192_0xc0
-;   undefined4 g_CGameInstance.field196_0xc4
+;   undefined4 g_CGameInstance.x_center
+;   undefined4 g_CGameInstance.y_center
+;   undefined4 g_CGameInstance.x_stick_min
+;   undefined4 g_CGameInstance.x_stick_max
 ;   ... and 7 more
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_resetKeyState_FUN_004b7140
 ;   core_moon.cpp_FUN_00502510
-;   core_set.cpp_FUN_005344c0
-;   crt_unknown.c_FUN_005b7790
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_FUN_004a8df0
 ;   engine_font.cpp_FUN_004aaf00
-;   engine_font.cpp_FUN_004ab560
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
-;   wincore_wddvmem.cpp_FUN_00589560
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;
 ; *****************************************************************************
 
@@ -82,8 +82,8 @@ section .text
     MOV EAX,[0x01511cb8]                ; 004eb4e8 | DAT_01511cb8
     PUSH EAX                            ; 004eb4ed
     MOV dword ptr [ESP + 0x208],EDX     ; 004eb4ee
-    CALL engine_font.cpp_FUN_004ab560   ; 004eb4f5
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004eb4f5
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     MOV EDX,EAX                         ; 004eb4fa
     SAR EDX,0x1f                        ; 004eb4fc
     SUB EAX,EDX                         ; 004eb4ff
@@ -111,8 +111,8 @@ section .text
     PUSH 0x5dcad1                       ; 004eb53e | = "%d,%d,%x"
     LEA EAX,[ESP + 0x110]               ; 004eb543
     PUSH EAX                            ; 004eb54a
-    CALL crt_unknown.c_FUN_005b7790     ; 004eb54b
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004eb54b
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x14                        ; 004eb550
     PUSH 0x0                            ; 004eb553
     PUSH 0x0                            ; 004eb555
@@ -126,8 +126,8 @@ section .text
     CALL core_game.cpp_CGame_resetKeyState_FUN_004b7140 ; 004eb56e
         ;   XREF to: 004b7140 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004b7140(CGame * this_ptr)
     ADD ESP,0x4                         ; 004eb573
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 004eb576
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004eb576
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     PUSH 0x1c                           ; 004eb57b
     MOV EAX,[0x00617dd4]                ; 004eb57d | DAT_00617dd4
     PUSH EAX                            ; 004eb582 | DAT_01d02f84
@@ -143,19 +143,19 @@ section .text
     PUSH 0xc350                         ; 004eb59d
     MOV EAX,[0x0061b5a8]                ; 004eb5a2 | g_CDemonSetPtr
     PUSH EAX                            ; 004eb5a7 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x15ae84],0x1  ; 004eb5a8 | g_CDemonSetInstance.field1420932_0x15ae84
-    CALL core_set.cpp_FUN_005344c0      ; 004eb5b2
-        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    MOV dword ptr [EAX + 0x15ae84],0x1  ; 004eb5a8 | g_CDemonSetInstance.rendering_mode
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0 ; 004eb5b2
+        ;   XREF to: 005344c0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 004eb5b7
     MOV EAX,[0x0061b5a8]                ; 004eb5ba | g_CDemonSetPtr
     PUSH 0x1d05620                      ; 004eb5bf
-    MOV dword ptr [EAX + 0x15ae94],0xdac ; 004eb5c4 | g_CDemonSetInstance.field1420948_0x15ae94
+    MOV dword ptr [EAX + 0x15ae94],0xdac ; 004eb5c4 | g_CDemonSetInstance.ambient_base_quick
     CALL core_moon.cpp_FUN_00502510     ; 004eb5ce
         ;   XREF to: 00502510 (UNCONDITIONAL_CALL)  ; undefined core_moon.cpp_FUN_00502510()
     ADD ESP,0x4                         ; 004eb5d3
     MOV EAX,[0x0061b5a8]                ; 004eb5d6 | g_CDemonSetPtr
     PUSH 0x5dcaf6                       ; 004eb5db | = "Move gamepad in all directions, press..."
-    MOV dword ptr [EAX + 0x15ae84],0x0  ; 004eb5e0 | g_CDemonSetInstance.field1420932_0x15ae84
+    MOV dword ptr [EAX + 0x15ae84],0x0  ; 004eb5e0 | g_CDemonSetInstance.rendering_mode
     CALL support_newmsg.cpp_getLocalizedString_FUN_0050fe80 ; 004eb5ea
         ;   XREF to: 0050fe80 (UNCONDITIONAL_CALL)  ; char * support_newmsg.cpp_getLocalizedString_FUN_0050fe80(char * key)
     ADD ESP,0x4                         ; 004eb5ef
@@ -176,8 +176,8 @@ section .text
     MOV dword ptr [ESP + 0x208],EDX     ; 004eb615
     MOV EDX,dword ptr [0x01511cb8]      ; 004eb61c | DAT_01511cb8
     PUSH EDX                            ; 004eb622
-    CALL engine_font.cpp_FUN_004ab560   ; 004eb623
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004eb623
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     MOV EDX,EAX                         ; 004eb628
     SAR EDX,0x1f                        ; 004eb62a
     SUB EAX,EDX                         ; 004eb62d
@@ -205,8 +205,8 @@ section .text
     PUSH 0x5dcad1                       ; 004eb66c | = "%d,%d,%x"
     LEA EAX,[ESP + 0x10]                ; 004eb671
     PUSH EAX                            ; 004eb675
-    CALL crt_unknown.c_FUN_005b7790     ; 004eb676
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004eb676
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x14                        ; 004eb67b
     PUSH 0x0                            ; 004eb67e
     PUSH 0x0                            ; 004eb680
@@ -220,8 +220,8 @@ section .text
     CALL core_game.cpp_CGame_resetKeyState_FUN_004b7140 ; 004eb696
         ;   XREF to: 004b7140 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004b7140(CGame * this_ptr)
     ADD ESP,0x4                         ; 004eb69b
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 004eb69e
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 004eb69e
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     PUSH 0x1c                           ; 004eb6a3
     MOV EAX,[0x00617dd4]                ; 004eb6a5 | DAT_00617dd4
     PUSH EAX                            ; 004eb6aa | DAT_01d02f84
@@ -284,8 +284,8 @@ section .text
         ;   XREF to: 004eb4aa (UNCONDITIONAL_JUMP)  ; LAB_004eb4aa
     MOV EAX,[0x00616494]                ; 004eb747 | g_CGamePtr
         ;   Label: LAB_004eb747
-    MOV dword ptr [EAX + 0xb8],0x0      ; 004eb74c | g_CGameInstance.field184_0xb8
-    MOV dword ptr [EAX + 0xd0],0x0      ; 004eb756 | g_CGameInstance.field208_0xd0
+    MOV dword ptr [EAX + 0xb8],0x0      ; 004eb74c | g_CGameInstance.x_center
+    MOV dword ptr [EAX + 0xd0],0x0      ; 004eb756 | g_CGameInstance.field160_0xd0
     XOR EAX,EAX                         ; 004eb760
     ADD ESP,0x214                       ; 004eb762
     POP EBP                             ; 004eb768
@@ -296,14 +296,14 @@ section .text
     MOV EAX,[0x00616494]                ; 004eb76d | g_CGamePtr
         ;   Label: LAB_004eb76d
     MOV EDX,dword ptr [ESP + 0x208]     ; 004eb772
-    MOV dword ptr [EAX + 0xb8],EDX      ; 004eb779 | g_CGameInstance.field184_0xb8
-    MOV dword ptr [EAX + 0xc0],EDI      ; 004eb77f | g_CGameInstance.field192_0xc0
-    MOV dword ptr [EAX + 0xc4],EBP      ; 004eb785 | g_CGameInstance.field196_0xc4
-    MOV dword ptr [EAX + 0xc8],ESI      ; 004eb78b | g_CGameInstance.field200_0xc8
+    MOV dword ptr [EAX + 0xb8],EDX      ; 004eb779 | g_CGameInstance.x_center
+    MOV dword ptr [EAX + 0xc0],EDI      ; 004eb77f | g_CGameInstance.x_stick_min
+    MOV dword ptr [EAX + 0xc4],EBP      ; 004eb785 | g_CGameInstance.x_stick_max
+    MOV dword ptr [EAX + 0xc8],ESI      ; 004eb78b | g_CGameInstance.y_stick_min
     MOV EDX,dword ptr [ESP + 0x20c]     ; 004eb791
-    MOV dword ptr [EAX + 0xbc],EDX      ; 004eb798 | g_CGameInstance.field188_0xbc
+    MOV dword ptr [EAX + 0xbc],EDX      ; 004eb798 | g_CGameInstance.y_center
     MOV EDX,dword ptr [ESP + 0x210]     ; 004eb79e
-    MOV dword ptr [EAX + 0xcc],EDX      ; 004eb7a5 | g_CGameInstance.field204_0xcc
+    MOV dword ptr [EAX + 0xcc],EDX      ; 004eb7a5 | g_CGameInstance.y_stick_max
     MOV EAX,0x1                         ; 004eb7ab
     ADD ESP,0x214                       ; 004eb7b0
     POP EBP                             ; 004eb7b6

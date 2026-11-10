@@ -11,7 +11,7 @@ void core_smiley_cpp_factoryFuncSmiley_FUN_0056be20(void)
 {
   CSmiley *this_ptr;
   
-  this_ptr = (CSmiley *)FUN_005c0f32(0xc2ac);
+  this_ptr = (CSmiley *)debugAllocTracked1(0xc2ac);
   if (this_ptr == (CSmiley *)0x0) {
     return;
   }

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CDocVTable
+;   CHero_full_vtable g_CDocVTable
 ;   WatcomTypeInfo g_CDocTypeInfo
 ;
 ; Called Functions:

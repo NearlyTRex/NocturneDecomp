@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_basicene_cpp_FUN_0059ee00(CCharacter *param_1,undefined4 param_2)
+; void unkafter_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)
 ;
 ;
 ; XREF[1]:
@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000
-;   core_mission.cpp_FUN_004fc740
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_patrpoin.cpp_FUN_0059c9c0
 ;   core_waypoint.cpp_FUN_005882d0
@@ -158,8 +158,8 @@ section .text
     PUSH EAX                            ; 0059ef4a
     MOV EDI,dword ptr [0x00618170]      ; 0059ef4b | DAT_00618170
     PUSH EDI                            ; 0059ef51 | DAT_01d182f0
-    CALL core_mission.cpp_FUN_004fc740  ; 0059ef52
-        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004fc740(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 0059ef52
+        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0059ef57
     PUSH EAX                            ; 0059ef5a
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 0059ef5b

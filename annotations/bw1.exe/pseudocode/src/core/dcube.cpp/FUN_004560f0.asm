@@ -21,8 +21,8 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_dcube.cpp_FUN_00456cd0 at 00456f0f
 ;   core_dcube.cpp_FUN_00458210 at 0045824a
+;   core_dcube.cpp_triangleCylinderCollision_FUN_00456cd0 at 00456f0f
 ;
 ; *****************************************************************************
 

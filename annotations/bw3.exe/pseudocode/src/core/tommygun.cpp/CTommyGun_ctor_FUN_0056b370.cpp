@@ -14,20 +14,20 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_ctor_FUN_0056b370(CTommyGun *thi
   uint uVar1;
   CTommyGun *pCVar2;
   
-  pCVar2 = (CTommyGun *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  *(byte **)&pCVar2->field_0x154 = &g_CTommyGunVTable;
+  pCVar2 = (CTommyGun *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70(&this_ptr->base);
+  (pCVar2->base).base.vtable._ub = &g_CTommyGunVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x158,(char *)0x5d6449);
-  *(uint *)&pCVar2->field_0x2d8 = 0;
-  *(uint *)&pCVar2->field_0x2dc = 0;
-  *(uint *)&pCVar2->field_0x2e0 = 4;
-  *(uint *)&pCVar2->field_0x2e4 = 1;
-  *(uint *)&pCVar2->field_0x2e8 = 0x42c80000;
-  *(uint *)&pCVar2->field_0x2ec = 1;
-  *(uint *)&pCVar2->field_0x598 = 0;
+            (&(pCVar2->base).model,(char *)0x5d6449);
+  (pCVar2->base).is_spread_weapon = 0;
+  (pCVar2->base).fire_mode = FIRE_MODE_AUTOMATIC;
+  (pCVar2->base).weapon_type = WEAPON_TYPE_TOMMY_GUN;
+  (pCVar2->base).can_penetrate = 1;
+  (pCVar2->base).bolt_velocity = 100.0;
+  (pCVar2->base).fire_cooldown = 1;
+  pCVar2->sfx_handles[0] = 0;
   uVar1 = _DAT_005e53bc;
-  *(uint *)&pCVar2->field_0x59c = 0;
-  *(uint *)&pCVar2->field_0x594 = 0;
-  *(uint *)&pCVar2->field_0x564 = uVar1;
+  pCVar2->sfx_handles[1] = 0;
+  pCVar2->fire_frames_remaining = 0;
+  *(uint *)&(pCVar2->base).field_0x564 = uVar1;
   return pCVar2;
 }

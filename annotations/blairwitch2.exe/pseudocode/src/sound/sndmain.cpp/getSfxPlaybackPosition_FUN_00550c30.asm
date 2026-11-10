@@ -14,8 +14,8 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00491a90 at 00491ad3
-;   core_tommygun.cpp_FUN_00576130 at 0057620f
-;   core_turret.cpp_FUN_0057e760 at 0057ec0f
+;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 0057620f
+;   core_turret.cpp_CTurret_process_FUN_0057e760 at 0057ec0f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02648e80

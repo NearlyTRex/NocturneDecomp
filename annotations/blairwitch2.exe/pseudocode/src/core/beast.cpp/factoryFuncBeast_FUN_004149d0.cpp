@@ -11,7 +11,7 @@ void core_beast_cpp_factoryFuncBeast_FUN_004149d0(void)
 {
   CBeast *this_ptr;
   
-  this_ptr = (CBeast *)FUN_005b8be2(0x10af8);
+  this_ptr = (CBeast *)debugAllocTracked1(0x10af8);
   if (this_ptr == (CBeast *)0x0) {
     return;
   }

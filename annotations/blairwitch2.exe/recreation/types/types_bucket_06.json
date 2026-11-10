@@ -1,10 +1,158 @@
 [
   {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_vfunc89",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CBodyPart",
     "parent":"CDemonActor",
     "rtti_file":"core/bodypart.cpp",
     "size":4932
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_checkCylinderCollisionWorld",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"world_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"tolerance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damage_info",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_getPartDominantBone",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"part_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_testDamageLine",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"end",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage_info",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_hit",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -30,6 +178,157 @@
     "size":10944
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_handleFootstep",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ground_type",
+        "type":{
+          "kind":"enum",
+          "name":"EGroundType",
+          "ptr":0
+        }
+      },
+      {
+        "name":"volume",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playSoundWithDelay",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sound_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delay",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_processActionButton",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_renderBackground",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"layer_flag",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CDog_vtable",
+    "size":12,
+    "vtable_slots":[
+      {
+        "name":"processMeleeAttackState",
+        "offset":0
+      },
+      {
+        "name":"processChaseFoodState",
+        "offset":4
+      },
+      {
+        "name":"processLeapAttackState",
+        "offset":8
+      }
+    ]
+  },
+  {
     "kind":"class",
     "name":"CGun",
     "parent":"CWeapon",
@@ -43,6 +342,101 @@
     "size":36
   },
   {
+    "kind":"funcdef",
+    "name":"CHero_canDoHeroAction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      },
+      {
+        "name":"action_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_canReachPickup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      },
+      {
+        "name":"item",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"pickup_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"best_distance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_renderOpaque",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CImp",
     "parent":"CEnemy",
@@ -52,6 +446,7 @@
   {
     "kind":"class",
     "name":"CLZWDecompress",
+    "parent":"CCodec",
     "rtti_file":"support/codec.cpp",
     "size":52
   },
@@ -73,10 +468,87 @@
     "size":408
   },
   {
+    "kind":"funcdef",
+    "name":"CRobin_processMeleeAttackState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CRobin",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CSampleInfo",
     "rtti_file":"sound/sndmain.cpp",
-    "size":1
+    "size":288
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_start",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CUnionZombie_full_vtable",
+    "size":392,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":224
+      },
+      {
+        "name":"_ue",
+        "offset":332
+      },
+      {
+        "name":"_ubasicenemy",
+        "offset":340
+      },
+      {
+        "name":"_uunionzombie",
+        "offset":384
+      }
+    ]
   },
   {
     "kind":"class",
@@ -91,6 +563,29 @@
     "parent":"CTrigger",
     "rtti_file":"core/waypoint.cpp",
     "size":1724
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorType",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_TYPE_SWING",
+        "value":0
+      },
+      {
+        "name":"DOOR_TYPE_VERTICAL",
+        "value":1
+      },
+      {
+        "name":"DOOR_TYPE_SLIDE",
+        "value":2
+      },
+      {
+        "name":"DOOR_TYPE_TILT",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"struct",
@@ -139,6 +634,11 @@
   },
   {
     "kind":"struct",
+    "name":"SSurfacePlane",
+    "size":1
+  },
+  {
+    "kind":"struct",
     "name":"STrianglePackedIndices",
     "size":1
   },
@@ -146,5 +646,15 @@
     "kind":"struct",
     "name":"STriangleVertices",
     "size":1
+  },
+  {
+    "kind":"union",
+    "name":"UActorVTable",
+    "size":4
+  },
+  {
+    "kind":"union",
+    "name":"UVector3",
+    "size":12
   }
 ]

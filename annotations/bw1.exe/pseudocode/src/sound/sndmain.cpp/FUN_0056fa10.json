@@ -24,12 +24,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00573620",
-      "from_addr": "00573627",
-      "name": "sound_sndmain.cpp_FUN_00573620",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00573760",
       "from_addr": "00573767",
       "name": "sound_sndmain.cpp_FUN_00573760",
@@ -60,27 +54,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005739e0",
-      "from_addr": "00573a1a",
-      "name": "sound_sndmain.cpp_FUN_005739e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00573ab0",
-      "from_addr": "00573aba",
-      "name": "sound_sndmain.cpp_FUN_00573ab0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00573660",
       "from_addr": "00573672",
       "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00573620",
+      "from_addr": "00573627",
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00573a80",
       "from_addr": "00573a87",
       "name": "sound_sndmain.cpp_killSfx_FUN_00573a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00573ab0",
+      "from_addr": "00573aba",
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00573ab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005739e0",
+      "from_addr": "00573a1a",
+      "name": "sound_sndmain.cpp_setSfxUserData_FUN_005739e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -155,7 +155,7 @@
       {
         "call_addr": "00573627",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00573620",
+        "caller": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "00573aba",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00573ab0",
+        "caller": "sound_sndmain.cpp_setSfxFade_FUN_00573ab0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

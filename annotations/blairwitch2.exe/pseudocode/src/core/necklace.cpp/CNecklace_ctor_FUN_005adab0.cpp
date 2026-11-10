@@ -14,6 +14,6 @@ CNecklace * core_necklace_cpp_CNecklace_ctor_FUN_005adab0(CNecklace *this_ptr)
   CBoxActor *pCVar1;
   
   pCVar1 = core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30((CBoxActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CNecklaceVTable;
+  (pCVar1->base).vtable._ub = &g_CNecklaceVTable;
   return (CNecklace *)pCVar1;
 }

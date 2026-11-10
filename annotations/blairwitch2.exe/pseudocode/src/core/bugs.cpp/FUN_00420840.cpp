@@ -2,14 +2,14 @@
 // Address: 00420840
 // Address Range: [[00420840, 00420e88]]
 // Convention: unknown
-// Signature: undefined4 core_bugs_cpp_FUN_00420840(undefined4 param_1,int *param_2,float param_3,float *param_4)
+// Signature: undefined4 core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *param_4)
+uint core_bugs_cpp_FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4)
 
 {
   float fVar1;
@@ -76,16 +76,18 @@ uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *p
   local_64 = local_dc;
   local_5c[3] = local_e8;
   if (local_e8 < _DAT_005f3e28) {
-    local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[2],param_2[4]);
+    local_18 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_0041feb0
+                         (param_1,(float)param_2[2],(float)param_2[4]);
     param_2[3] = (int)local_18;
     if (param_4 == (float *)0x0) {
       local_5c[2] = _DAT_005f3e28 * _DAT_005cca45 * (float)_DAT_005cca49;
       local_1c = _DAT_005f3e28 * _DAT_005cca51 * (float)_DAT_005cca49;
-      local_18 = (float)core_actor_cpp_FUN_0040cf60(local_1c,local_5c[2]);
+      local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(local_1c,local_5c[2]);
       param_2[8] = (int)local_18;
-      local_18 = (float)core_actor_cpp_FUN_0040cf60(local_1c,local_5c[2]);
+      local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(local_1c,local_5c[2]);
       param_2[10] = (int)local_18;
-      local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,param_2[8],param_2[10]);
+      local_18 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_0041feb0
+                           (param_1,(float)param_2[8],(float)param_2[10]);
       param_2[9] = (int)local_18;
       local_cc = *local_28 - *local_30;
       local_c8 = local_28[1] - local_30[1];
@@ -127,7 +129,7 @@ uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *p
       }
     }
   }
-  core_vecdir_cpp_FUN_005838f0(&stack0xffffff1c);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff1c);
   fVar1 = local_e8;
   local_90 = local_84;
   local_a4[(uint)bVar3 * 0xfffffffe + 6] = local_a4[(uint)bVar3 * 0xfffffffe + 9];
@@ -152,7 +154,7 @@ uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *p
   local_a4[(uint)bVar3 * 0xfffffffe + (uint)bVar3 * 0xfffffffe + 1] =
        local_5c[(uint)bVar3 * 0xfffffffe + (uint)bVar3 * 0xfffffffe + 1];
   local_2c = (float *)(param_2 + 2);
-  local_18 = (float)core_bugs_cpp_FUN_0041feb0(param_1,local_a8,local_a4[1]);
+  local_18 = core_bugs_cpp_CBugs_sampleGroundHeight_FUN_0041feb0(param_1,local_a8,local_a4[1]);
   local_24 = local_18;
   if (local_18 - (float)param_2[3] <= local_e8 * (float)_DAT_005cca59) {
     if (&local_a8 != local_2c) {
@@ -183,9 +185,9 @@ uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *p
        *(uint *)((int)&stack0xffffff50 + (uint)bVar3 * -8);
   *(uint *)(&stack0xffffff48 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        *(uint *)((int)&stack0xffffff54 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  local_44 = (float)core_actor_cpp_FUN_0040d0c0(local_bc);
+  local_44 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_bc);
   local_18 = local_44;
-  local_18 = (float)core_actor_cpp_FUN_0040d0c0(local_c0);
+  local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_c0);
   local_34 = param_3 * _DAT_005cca61 * _DAT_005cca65;
   local_40 = -local_34;
   if (local_44 < local_40) {
@@ -202,10 +204,10 @@ uint core_bugs_cpp_FUN_00420840(uint param_1,int *param_2,float param_3,float *p
   if (local_34 < local_38) {
     local_38 = local_34;
   }
-  local_18 = (float)core_actor_cpp_FUN_0040d0c0((float)param_2[6] + local_44);
+  local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)param_2[6] + local_44);
   param_2[7] = 0;
   param_2[6] = (int)local_18;
-  iVar2 = core_actor_cpp_FUN_0040d0c0((float)param_2[5] + local_38);
+  iVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0((float)param_2[5] + local_38);
   param_2[5] = iVar2;
   return 0;
 }

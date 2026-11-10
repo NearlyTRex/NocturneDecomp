@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_FUN_004cfc80 at 004cfd22
-;   core_inv.cpp_FUN_004df010 at 004df0aa
+;   core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010 at 004df0aa
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CAmmo_005db929
@@ -35,11 +35,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_ammo.cpp_FUN_0040e450
 ;   core_event.cpp_FUN_00490f80
 ;   core_game.cpp_CGame_displayMessage_FUN_004b31a0
-;   core_health.cpp_FUN_004cdf90
+;   core_health.cpp_CHealthItem_useItem_FUN_004cdf90
 ;   core_inv.cpp_FUN_004db8e0
 ;   core_inv.cpp_FUN_004db9d0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9f10
@@ -61,8 +61,8 @@ section .text
     MOV EBX,dword ptr [EBP + 0x18]      ; 004dc8cc
     PUSH 0x5db929                       ; 004dc8cf | = "CAmmo"
     PUSH EBX                            ; 004dc8d4
-    CALL core_actor.cpp_FUN_0040c840    ; 004dc8d5
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dc8d5
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dc8da
     TEST EAX,EAX                        ; 004dc8dd
     JZ 0x004dca7e                       ; 004dc8df
@@ -112,8 +112,8 @@ section .text
     PUSH 0x5db95d                       ; 004dc962 | DAT_005db95d
         ;   Label: LAB_004dc962
     PUSH EAX                            ; 004dc967
-    CALL core_actor.cpp_FUN_0040c840    ; 004dc968
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dc968
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dc96d
     TEST EAX,EAX                        ; 004dc970
     JZ 0x004dc95b                       ; 004dc972
@@ -224,8 +224,8 @@ section .text
     PUSH 0x5db977                       ; 004dca7e | = "CWeapon"
         ;   Label: LAB_004dca7e
     PUSH EBX                            ; 004dca83
-    CALL core_actor.cpp_FUN_0040c840    ; 004dca84
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dca84
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dca89
     TEST EAX,EAX                        ; 004dca8c
     JZ 0x004dcaaa                       ; 004dca8e
@@ -248,8 +248,8 @@ section .text
     PUSH 0x5db97f                       ; 004dcaaa | = "CHealthItem"
         ;   Label: LAB_004dcaaa
     PUSH EBX                            ; 004dcaaf
-    CALL core_actor.cpp_FUN_0040c840    ; 004dcab0
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dcab0
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dcab5
     TEST EAX,EAX                        ; 004dcab8
     JZ 0x004dcc12                       ; 004dcaba
@@ -378,8 +378,8 @@ section .text
     PUSH EDI                            ; 004dcbe2
     MOV EAX,dword ptr [EBP + -0x8]      ; 004dcbe3
     PUSH EAX                            ; 004dcbe6
-    CALL core_health.cpp_FUN_004cdf90   ; 004dcbe7
-        ;   XREF to: 004cdf90 (UNCONDITIONAL_CALL)  ; int core_health.cpp_FUN_004cdf90(CHealthItem * this_ptr, CCharacter * user)
+    CALL core_health.cpp_CHealthItem_useItem_FUN_004cdf90 ; 004dcbe7
+        ;   XREF to: 004cdf90 (UNCONDITIONAL_CALL)  ; int core_health.cpp_CHealthItem_useItem_FUN_004cdf90(CHealthItem * this_ptr, CCharacter * user)
     ADD ESP,0x8                         ; 004dcbec
     TEST EAX,EAX                        ; 004dcbef
     JG 0x004dca5a                       ; 004dcbf1
@@ -401,8 +401,8 @@ section .text
     PUSH 0x5db9cc                       ; 004dcc12 | = "CGasMask"
         ;   Label: LAB_004dcc12
     PUSH EBX                            ; 004dcc17
-    CALL core_actor.cpp_FUN_0040c840    ; 004dcc18
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dcc18
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dcc1d
     TEST EAX,EAX                        ; 004dcc20
     JZ 0x004dcc5e                       ; 004dcc22
@@ -431,8 +431,8 @@ section .text
     PUSH 0x5db9d5                       ; 004dcc5e | = "CBoxActor"
         ;   Label: LAB_004dcc5e
     PUSH EBX                            ; 004dcc63
-    CALL core_actor.cpp_FUN_0040c840    ; 004dcc64
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004dcc64
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dcc69
     TEST EAX,EAX                        ; 004dcc6c
     JZ 0x004dca5a                       ; 004dcc6e

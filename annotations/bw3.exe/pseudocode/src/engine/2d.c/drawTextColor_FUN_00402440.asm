@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[4]:
-;   cockpit_drawsurf.cpp_FUN_00469b40 at 00469d59
-;   engine_2d.c_FUN_00402540 at 00402562
-;   engine_2d.c_FUN_00402600 at 0040262b
-;   engine_2d.c_FUN_004026d0 at 004026ff
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40 at 00469d59
+;   engine_2d.c_drawTextCenteredAtColor_FUN_00402600 at 0040262b
+;   engine_2d.c_drawTextCenteredColor_FUN_004026d0 at 004026ff
+;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 00402562
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f076c

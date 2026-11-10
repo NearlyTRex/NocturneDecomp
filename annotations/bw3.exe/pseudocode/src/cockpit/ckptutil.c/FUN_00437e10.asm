@@ -10,9 +10,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00437f02
     PUSH EAX                            ; 00437f06
     MOV EBX,0x801                       ; 00437f07
-    CALL crt_unknown.c_FUN_005a28c0     ; 00437f0c
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00437f0c
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00437f11
     MOV EAX,ESP                         ; 00437f14
     MOV ECX,0x5b8d2e                    ; 00437f16

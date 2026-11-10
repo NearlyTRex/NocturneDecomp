@@ -14,7 +14,7 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004810d0(CStrList *this_ptr,
   int iVar1;
   int iVar2;
   
-  if (((start_index < 0) || (*(int *)this_ptr <= end_index)) || (end_index < start_index)) {
+  if (((start_index < 0) || (this_ptr->item_count <= end_index)) || (end_index < start_index)) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0xbfb;
     core_main_c_FUN_004e4500("CStrList::remove - invalid range");
@@ -22,17 +22,17 @@ void __cdecl shape_edittool_cpp_CStrList_remove_FUN_004810d0(CStrList *this_ptr,
   if (start_index <= end_index) {
     iVar2 = start_index * 4;
     do {
-      iVar1 = *(int *)(*(int *)&this_ptr->field_0x8 + iVar2);
+      iVar1 = *(int *)((int)this_ptr->data_array + iVar2);
       if (iVar1 != 0) {
         FUN_005b86a0(iVar1);
       }
       iVar2 = iVar2 + 4;
     } while (iVar2 <= end_index * 4);
   }
-  iVar2 = *(int *)this_ptr - ((end_index - start_index) + 1);
-  *(int *)this_ptr = iVar2;
+  iVar2 = this_ptr->item_count - ((end_index - start_index) + 1);
+  this_ptr->item_count = iVar2;
   memmove
-            ((void *)(*(int *)&this_ptr->field_0x8 + start_index * 4),
-             (void *)(end_index * 4 + 4 + *(int *)&this_ptr->field_0x8),(iVar2 - start_index) * 4);
+            (this_ptr->data_array + start_index,this_ptr->data_array + end_index + 1,
+             (iVar2 - start_index) * 4);
   return;
 }

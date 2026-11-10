@@ -51,8 +51,8 @@ void sound_sndmain_cpp_FUN_00551620(char *param_1)
   param_1[0x13d] = -1;
   param_1[0x13e] = -1;
   param_1[0x13f] = -1;
-  engine_dosio_cpp_FUN_00465e50(param_1,(char *)0x0,(char *)0x0,local_158,(char *)0x0);
-  engine_dosio_cpp_FUN_00465e80(local_258,(char *)0x0,(char *)0x0,local_158,&DAT_005d253f);
+  engine_dosio_cpp_splitPath_FUN_00465e50(param_1,(char *)0x0,(char *)0x0,local_158,(char *)0x0);
+  engine_dosio_cpp_makePath_FUN_00465e80(local_258,(char *)0x0,(char *)0x0,local_158,&DAT_005d253f);
   iVar6 = engine_dosio_cpp_getFileSize_FUN_004657f0("sound",local_258);
   if (0 < iVar6) {
     param_1[0x124] = '\x01';
@@ -66,7 +66,7 @@ void sound_sndmain_cpp_FUN_00551620(char *param_1)
     param_1[0x13f] = '\0';
     *(uint *)(param_1 + 0x128) = uVar2;
   }
-  engine_dosio_cpp_FUN_00465e80(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005d2549);
+  engine_dosio_cpp_makePath_FUN_00465e80(local_358,(char *)0x0,(char *)0x0,local_158,&DAT_005d2549);
   unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_58);
   iVar6 = support_trstream_cpp_FUN_00573fc0(&local_58,"sound",local_358,1);
   if (iVar6 != 0) {

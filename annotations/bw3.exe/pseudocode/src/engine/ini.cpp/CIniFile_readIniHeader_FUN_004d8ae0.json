@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 33,
-    "complexity_score": 62,
+    "complexity_score": 37,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 55
@@ -19,13 +18,13 @@
     {
       "addr": "004d8e70",
       "from_addr": "004d8eb2",
-      "name": "core_inivar.cpp_FUN_004d8e70",
+      "name": "core_inivar.cpp_readIniData_FUN_004d8e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d95c0",
       "from_addr": "004d95e8",
-      "name": "core_inivar.cpp_FUN_004d95c0",
+      "name": "core_inivar.cpp_writeIniData_FUN_004d95c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +65,7 @@
       {
         "call_addr": "004d8eb2",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -77,7 +76,7 @@
       {
         "call_addr": "004d9070",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -88,7 +87,7 @@
       {
         "call_addr": "004d908d",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -99,7 +98,7 @@
       {
         "call_addr": "004d954a",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +109,7 @@
       {
         "call_addr": "004d9575",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d8e70",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -121,7 +120,7 @@
       {
         "call_addr": "004d95e8",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +131,7 @@
       {
         "call_addr": "004d9752",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +142,7 @@
       {
         "call_addr": "004d976f",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +153,7 @@
       {
         "call_addr": "004d9c34",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,22 +215,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "this_ptr->field_0x100 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x100;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 13,

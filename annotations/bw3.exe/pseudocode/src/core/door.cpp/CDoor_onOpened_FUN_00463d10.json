@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 15
   },
   "cross_references": [
@@ -24,7 +22,7 @@
     {
       "addr": "004d3250",
       "from_addr": "004d3291",
-      "name": "core_hero.cpp_FUN_004d3250",
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,7 +76,7 @@
       {
         "call_addr": "004d3291",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d3250",
+        "caller": "core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,14 +138,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "core_event_cpp_CEventList_executeCommands_FUN_0048c150(0x01C6E360,&this_ptr->field_0x2e8);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

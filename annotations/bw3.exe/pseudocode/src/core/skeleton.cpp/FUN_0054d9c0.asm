@@ -25,15 +25,15 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[4]:
-;   core_ghoul.cpp_FUN_004c90b0 at 004c90d1
+;   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c90b0 at 004c90d1
+;   core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200 at 00458249
 ;   core_skeleton.cpp_FUN_0054dbd0 at 0054dc88
-;   core_zombie.cpp_FUN_0058beb0 at 0058bef9
-;   unkafter_demnfolk.cpp_FUN_00458200 at 00458249
+;   core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0 at 0058bef9
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_xform.cpp_FUN_00583260
-;   core_xform.cpp_FUN_005855f0
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0
 ;   core_xform.cpp_setRotationScaleIdentity_FUN_00583660
 ;
 ; *****************************************************************************
@@ -105,8 +105,8 @@ section .text
     PUSH EAX                            ; 0054da9f
     LEA EAX,[ESP + 0x34]                ; 0054daa0
     PUSH EAX                            ; 0054daa4
-    CALL core_xform.cpp_FUN_005855f0    ; 0054daa5
-        ;   XREF to: 005855f0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005855f0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0 ; 0054daa5
+        ;   XREF to: 005855f0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 0054daaa
     MOV EAX,dword ptr [ESP + 0xc0]      ; 0054daad
     SHL EAX,0x2                         ; 0054dab4

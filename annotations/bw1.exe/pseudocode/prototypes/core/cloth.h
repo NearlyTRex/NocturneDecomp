@@ -5,9 +5,9 @@
 // Function prototypes for core/cloth.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_cloth.cpp_FUN_0043e5c0
+// Original: core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
 // Address: 0043e5c0
-CCloth * __cdecl FUN_0043e5c0(CCloth *this_ptr);
+CCloth * __cdecl CCloth::ctor(CCloth *this_ptr);
 
 // Original: core_cloth.cpp_FUN_0043e620
 // Address: 0043e620
@@ -37,21 +37,21 @@ void __cdecl FUN_0043eea0(CCloth *this_ptr,CVector3f *position,CVector3f *euler,
 // Address: 0043fa20
 void __cdecl CCloth::orientBoneToChild(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_0043fbd0
+// Original: core_cloth.cpp_CCloth_computeBoneTransform_FUN_0043fbd0
 // Address: 0043fbd0
-void __cdecl FUN_0043fbd0(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
+void __cdecl CCloth::computeBoneTransform(CCloth *this_ptr,int bone_index,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_0043fd50
+// Original: core_cloth.cpp_CCloth_applyConstraints_FUN_0043fd50
 // Address: 0043fd50
-void __cdecl FUN_0043fd50(CCloth *this_ptr,SClothVertex *vertex);
+void __cdecl CCloth::applyConstraints(CCloth *this_ptr,SClothVertex *vertex);
 
 // Original: core_cloth.cpp_CCloth_process_FUN_00440610
 // Address: 00440610
 void __cdecl CCloth::process(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
-// Original: core_cloth.cpp_FUN_00440640
+// Original: core_cloth.cpp_CCloth_step_FUN_00440640
 // Address: 00440640
-void __cdecl FUN_00440640(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
+void __cdecl CCloth::step(CCloth *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y ,CDeformableModelInstance *model_ptr);
 
 // Original: core_cloth.cpp_FUN_004414ac
 // Address: 004414ac
@@ -77,21 +77,21 @@ void __cdecl CCloth::render(CCloth *this_ptr,CDeformableModelInstance *deformabl
 // Address: 00441c60
 CClothList * __cdecl CClothList::ctor(CClothList *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00441ca0
+// Original: core_cloth.cpp_CClothList_dtor_FUN_00441ca0
 // Address: 00441ca0
-CClothList * __cdecl FUN_00441ca0(CClothList *this_ptr,uint flags);
+CClothList * __cdecl CClothList::dtor(CClothList *this_ptr,uint flags);
 
 // Original: core_cloth.cpp_CClothList_load_FUN_00441cc0
 // Address: 00441cc0
 void __cdecl CClothList::load(CClothList *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00441d70
+// Original: core_cloth.cpp_CClothList_reset_FUN_00441d70
 // Address: 00441d70
-void __cdecl FUN_00441d70(CClothList *this_ptr);
+void __cdecl CClothList::reset(CClothList *this_ptr);
 
-// Original: core_cloth.cpp_FUN_00441de0
+// Original: core_cloth.cpp_CClothList_add_FUN_00441de0
 // Address: 00441de0
-void __cdecl FUN_00441de0(CClothList *this_ptr,char *filename);
+void __cdecl CClothList::add(CClothList *this_ptr,char *filename);
 
 // Original: core_cloth.cpp_FUN_00441e5e
 // Address: 00441e5e
@@ -113,9 +113,9 @@ void __cdecl CClothList::render(CClothList *this_ptr,CDeformableModelInstance *m
 // Address: 00442100
 void __cdecl CCloth::grabCloth(CCloth *this_ptr,char *bone_name,int vertex_index);
 
-// Original: core_cloth.cpp_FUN_004421a0
+// Original: core_cloth.cpp_CCloth_resetState_FUN_004421a0
 // Address: 004421a0
-void __cdecl FUN_004421a0(CCloth *this_ptr,int vertex_index);
+void __cdecl CCloth::resetState(CCloth *this_ptr,int vertex_index);
 
 // Original: core_cloth.cpp_FUN_004421d0
 // Address: 004421d0

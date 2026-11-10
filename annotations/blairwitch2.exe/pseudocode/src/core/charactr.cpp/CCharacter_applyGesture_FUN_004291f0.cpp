@@ -20,8 +20,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004291f0(CCharacter *
   int iVar5;
   float local_c;
   
-  if (-1 < *(int *)&this_ptr->field_0x27c4) {
-    if (*(int *)&this_ptr->field_0x27c0 < -1) {
+  if (-1 < this_ptr->gesture_motion_index) {
+    if (this_ptr->gesture_branch_root < -1) {
       _DAT_01d046a0 = "..\\core\\charactr.cpp";
       _DAT_01d046a4 = 0xf08;
       core_main_c_FUN_004e4500("CCharacter::applyGesture - never set gestureBranchRoot for actor %s",this_ptr);
@@ -29,14 +29,15 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004291f0(CCharacter *
     iVar5 = 0;
     bone_name = "Bip01 spine1";
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-                            ((CDeformableModelInstance *)&this_ptr->field_0x2b4);
-    iVar5 = core_skeleton_cpp_FUN_00540e80(this_ptr_00,bone_name,iVar5);
-    iVar4 = *(int *)&this_ptr->field_0x27c4 * 0x118;
-    *(int *)&this_ptr->field_0x27c0 = iVar5;
-    pCVar3 = core_motion_cpp_FUN_00503860((CMotionController *)&this_ptr->field_0x2b4);
+                            (&this_ptr->model);
+    iVar5 = core_skeleton_cpp_CSkeleton_findBone_FUN_00540e80(this_ptr_00,bone_name,iVar5);
+    iVar4 = this_ptr->gesture_motion_index * 0x118;
+    this_ptr->gesture_branch_root = iVar5;
+    pCVar3 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
+                       ((CMotionController *)&this_ptr->model);
     fVar1 = 1.0 / (*(float *)(pCVar3 + iVar4 + 0x1c48) * _DAT_005cd06a);
-    fVar2 = *(float *)&this_ptr->field_0x27c8 * fVar1;
-    fVar1 = ((float)*(int *)(pCVar3 + iVar4 + 0x1c8c) - *(float *)&this_ptr->field_0x27c8) * fVar1;
+    fVar2 = this_ptr->gesture_frame * fVar1;
+    fVar1 = ((float)*(int *)(pCVar3 + iVar4 + 0x1c8c) - this_ptr->gesture_frame) * fVar1;
     local_c = 0.85;
     if (fVar2 < _DAT_005cd06e) {
       local_c = fVar2;
@@ -45,9 +46,8 @@ void __cdecl core_charactr_cpp_CCharacter_applyGesture_FUN_004291f0(CCharacter *
       local_c = fVar1;
     }
     core_skeleton_cpp_FUN_00545a60
-              (&this_ptr->field_0x2b4,*(uint *)&this_ptr->field_0x27c4,
-               *(uint *)&this_ptr->field_0x27c8,local_c,*(uint *)&this_ptr->field_0x27c0
-               ,core_skeleton_cpp_FUN_00544cc0);
+              (&this_ptr->model,this_ptr->gesture_motion_index,this_ptr->gesture_frame,local_c,
+               this_ptr->gesture_branch_root,core_skeleton_cpp_FUN_00544cc0);
   }
   return;
 }

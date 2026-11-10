@@ -30,7 +30,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_createActorByName_FUN_0040c5a0
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
 ;   core_inv.cpp_FUN_004dadb0
@@ -57,8 +57,8 @@ section .text
     PUSH EAX                            ; 004b8e29
     MOV EDI,EAX                         ; 004b8e2a
     MOV EBP,EAX                         ; 004b8e2c
-    CALL core_actor.cpp_FUN_0040c840    ; 004b8e2e
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004b8e2e
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004b8e33
     TEST EAX,EAX                        ; 004b8e36
     JZ 0x004b8ef1                       ; 004b8e38
@@ -132,8 +132,8 @@ section .text
     PUSH 0x5d7a01                       ; 004b8ef1 | = "CBoxActor"
         ;   Label: LAB_004b8ef1
     PUSH EDI                            ; 004b8ef6
-    CALL core_actor.cpp_FUN_0040c840    ; 004b8ef7
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004b8ef7
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004b8efc
     TEST EAX,EAX                        ; 004b8eff
     JZ 0x004b8fb0                       ; 004b8f01

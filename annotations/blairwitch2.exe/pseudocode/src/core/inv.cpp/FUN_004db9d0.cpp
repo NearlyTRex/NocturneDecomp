@@ -20,7 +20,7 @@ void core_inv_cpp_FUN_004db9d0(CInventory *param_1,int param_2,uint param_3,int 
   }
   else {
     iVar3 = 0;
-    core_inv_cpp_FUN_004dd270(param_1,1);
+    core_inv_cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(param_1,1);
     if (0 < *(int *)(param_1 + 0x10)) {
       pCVar5 = param_1;
       do {

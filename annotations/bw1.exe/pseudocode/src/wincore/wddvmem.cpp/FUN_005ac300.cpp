@@ -153,7 +153,7 @@ uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)
     }
     engine_2d_c_setupViewportAndClipping_FUN_00401810(0,0,iStack_28 + -1,iStack_24 + -1);
     iVar1 = 0;
-    wincore_wddvmem_cpp_FUN_005acec0();
+    wincore_wddvmem_cpp_setupColorPalette_FUN_005acec0();
     do {
       memset(auStack_b0,0,0x6c);
       auStack_b0[0] = 0x6c;
@@ -183,7 +183,7 @@ uint wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3)
       }
       _DAT_02c99314 = 1;
       iVar1 = iVar1 + 1;
-      wincore_wddvmem_cpp_FUN_005acff0();
+      wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     } while (iVar1 < 3);
     return 1;
   }

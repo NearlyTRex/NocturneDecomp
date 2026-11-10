@@ -29,6 +29,6 @@ char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004f62e0(uint param_1)
       str2 = str2 + 0x300;
     } while (iVar3 < _DAT_01d08dc8);
   }
-  FUN_005bfb40(0x1d06d70,"Add to dict: %s",(char *)(iVar1 + 0x78));
+  _sprintf((char *)0x1d06d70,"Add to dict: %s");
   return (char *)0x1d06d70;
 }

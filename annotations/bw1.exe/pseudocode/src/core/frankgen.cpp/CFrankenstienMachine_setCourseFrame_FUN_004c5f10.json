@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 94,
+    "complexity_score": 38,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 6,
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 99
+    "total_lines": 98
   },
   "cross_references": [
     {
       "addr": "004c5c60",
       "from_addr": "004c5c8a",
-      "name": "core_frankgen.cpp_FUN_004c5c60",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -40,7 +39,7 @@
     {
       "addr": "00447f00",
       "is_variadic": false,
-      "name": "core_course.cpp_FUN_00447f00"
+      "name": "core_course.cpp_CCourse_evaluate_FUN_00447f00"
     },
     {
       "addr": "005030e0",
@@ -80,7 +79,7 @@
       {
         "call_addr": "004c5c8a",
         "call_type": "direct",
-        "caller": "core_frankgen.cpp_FUN_004c5c60",
+        "caller": "core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,46 +208,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x300;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "local_20 = ((float)iVar1 * (*(float *)&this_ptr->field_0x15c - start_frame)) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "((CCourse *)&this_ptr->field_0x300,local_20,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "((CCourse *)&this_ptr->field_0x300,local_20,(CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(CVector3f *)&this_ptr->field_0x30);",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -12,7 +12,7 @@
 ;   undefined4 DAT_006236b8
 ;
 ; Called Functions:
-;   core_sound.cpp_FUN_0057d940
+;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 00408c72
     MOV EBX,dword ptr [0x006236b8]      ; 00408c73 | DAT_006236b8
     PUSH EBX                            ; 00408c79
-    CALL core_sound.cpp_FUN_0057d940    ; 00408c7a
-        ;   XREF to: 0057d940 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_FUN_0057d940(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
+    CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940 ; 00408c7a
+        ;   XREF to: 0057d940 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0057d940(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
     ADD ESP,0x14                        ; 00408c7f
     POP EBX                             ; 00408c82
     RET                                 ; 00408c83

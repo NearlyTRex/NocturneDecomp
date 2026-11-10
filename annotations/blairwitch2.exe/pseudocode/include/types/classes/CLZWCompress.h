@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
+#include "types/classes/CCodec.h"
+#include "types/classes/CLZWDictionary.h"
 
 // Structure: CLZWCompress
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x40 (64 bytes)
 #pragma pack(push, 1)
 typedef struct CLZWCompress {
-    char field_0[64]; // 0x0
+    CCodec base; // 0x0
+    CLZWDictionary dictionary; // 0x4
+    int buffer_size; // 0x20
+    int num_bits; // 0x24
+    _BIT_INTEGER32 char_mask; // 0x28
+    char field_44[20]; // 0x2c
 } CLZWCompress;
 #pragma pack(pop)
 

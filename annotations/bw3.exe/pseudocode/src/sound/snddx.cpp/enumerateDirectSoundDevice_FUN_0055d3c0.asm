@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(int param_1,int param_2)
+; undefined4 __cdecl sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(int param_1,char *param_2)
 ;
 ;
 ; XREF[2]:
@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundEnumerateA
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
     PUSH 0x5d4eec                       ; 0055d44b | = "DirectSound: %s"
     PUSH EBX                            ; 0055d450
     MOV dword ptr [EBX + 0x110],EDX     ; 0055d451
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055d457
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055d457
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x1                         ; 0055d45c
     ADD ESP,0xc                         ; 0055d461
     POP ESI                             ; 0055d464

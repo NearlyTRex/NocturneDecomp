@@ -9,7 +9,9 @@
 void __cdecl sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_005260b0(CMP3Decoder *this_ptr,int num_bytes)
 
 {
-  *(int *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 + num_bytes * -8;
-  *(int *)&this_ptr->field_0x1318 = *(int *)&this_ptr->field_0x1318 - num_bytes;
+  (this_ptr->memory_bitstream).total_bits_read =
+       (this_ptr->memory_bitstream).total_bits_read + num_bytes * -8;
+  (this_ptr->memory_bitstream).current_dword_index =
+       (this_ptr->memory_bitstream).current_dword_index - num_bytes;
   return;
 }

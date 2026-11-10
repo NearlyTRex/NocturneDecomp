@@ -21,7 +21,7 @@
 ;   ... and 104 more
 ;
 ; Referenced Globals:
-;   void* g_CDemonActorVTable = 00408890
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CDemonActorTypeInfo
 ;
 ; Called Functions:

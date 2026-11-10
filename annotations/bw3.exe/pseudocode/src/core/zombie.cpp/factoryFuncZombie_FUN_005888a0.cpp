@@ -11,7 +11,7 @@ void core_zombie_cpp_factoryFuncZombie_FUN_005888a0(void)
 {
   CZombie *this_ptr;
   
-  this_ptr = (CZombie *)FUN_005a3cb2(0xd14c);
+  this_ptr = (CZombie *)debugAllocTracked1(0xd14c);
   if (this_ptr == (CZombie *)0x0) {
     return;
   }

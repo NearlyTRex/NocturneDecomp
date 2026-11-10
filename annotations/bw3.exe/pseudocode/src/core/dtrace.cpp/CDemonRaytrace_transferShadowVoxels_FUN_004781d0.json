@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 290,
+    "complexity_score": 155,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 110,
-    "suspect_count": 16,
+    "suspect_count": 3,
     "suspect_types": [
       "stack_alignment_array",
-      "unknown_field",
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 331
@@ -21,7 +20,7 @@
     {
       "addr": "0053eea0",
       "from_addr": "0053ef0a",
-      "name": "core_setcolid.cpp_FUN_0053eea0",
+      "name": "core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_0053eea0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +41,7 @@
     {
       "addr": "0045b550",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045b550"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550"
     },
     {
       "addr": "0045b800",
@@ -80,7 +79,7 @@
       {
         "call_addr": "0053ef0a",
         "call_type": "direct",
-        "caller": "core_setcolid.cpp_FUN_0053eea0",
+        "caller": "core_setcolid.cpp_CDemonSet_transferVoxelShadow_FUN_0053eea0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -434,116 +433,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_7c[0] = *(float *)&end->field_0x4 - *(float *)&start->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_7c[0] = *(float *)&end->field_0x4 - *(float *)&start->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_7c[1] = *(float *)&end->field_0x8 - *(float *)&start->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_7c[1] = *(float *)&end->field_0x8 - *(float *)&start->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "fVar4 = (float10)local_58 / (float10)*(float *)&this_ptr->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "fVar5 = (float10)local_54 / (float10)*(float *)&this_ptr->field_0x3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "fVar7 = (float10)1 + ((float10)local_5c / (float10)*(float *)&this_ptr->field_0x34) * fVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_88 = local_bc * fVar1 + (float)local_1c * local_bc + *(float *)&start->field_0x4",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_84 = local_b8 * fVar1 + (float)iVar2 * local_b8 + *(float *)&start->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_4c = local_40 + *(float *)&offset->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_48 = local_3c + *(float *)&offset->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 98,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_38._0_4_ = local_7c[2];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 99,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_38._4_4_ = local_7c[3];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 100,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_38._8_4_ = local_7c[4];",
-      "type": "unknown_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_38.x = local_74.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

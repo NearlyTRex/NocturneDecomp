@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_keyactor.cpp_CKeyActor_ctor_FUN_004fc510
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x31c                          ; 004fc4e0
         ;   Label: core_keyactor.cpp_factoryFuncKeyActor_FUN_004fc4e0
-    CALL crt_unknown.c_FUN_005c0f32     ; 004fc4e5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004fc4e5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004fc4ea
     TEST EAX,EAX                        ; 004fc4ed
     JNZ 0x004fc4f2                      ; 004fc4ef

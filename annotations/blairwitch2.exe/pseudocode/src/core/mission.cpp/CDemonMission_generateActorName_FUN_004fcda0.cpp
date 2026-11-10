@@ -13,7 +13,7 @@ void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemo
   char *pcVar2;
   char local_2c [32];
   
-  *(byte *)actor = 0;
+  actor->actor_name[0] = '\0';
   pcVar2 = (char *)core_actor_cpp_FUN_00408a50(actor);
   if (*pcVar2 == 'C') {
     pcVar2 = pcVar2 + 1;
@@ -22,14 +22,14 @@ void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemo
   pcVar2 = local_2c;
   do {
     cVar1 = *pcVar2;
-    *(char *)actor = cVar1;
+    actor->actor_name[0] = cVar1;
     if (cVar1 == '\0') {
       return;
     }
     cVar1 = pcVar2[1];
     pcVar2 = pcVar2 + 2;
-    actor->field_0x1 = cVar1;
-    actor = (CDemonActor *)&actor->field_0x2;
+    actor->actor_name[1] = cVar1;
+    actor = (CDemonActor *)(actor->actor_name + 2);
   } while (cVar1 != '\0');
   return;
 }

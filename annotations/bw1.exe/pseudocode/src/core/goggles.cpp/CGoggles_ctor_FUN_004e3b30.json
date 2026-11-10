@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 64,
+    "complexity_score": 39,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 38
   },
@@ -19,7 +18,7 @@
     {
       "addr": "004d27b0",
       "from_addr": "004d531f",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,8 +67,8 @@
     {
       "addr": "00601594",
       "name": "g_CGogglesVTable",
-      "type": "void*",
-      "value": "004e3b80"
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -78,7 +77,7 @@
       {
         "call_addr": "004d531f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,32 +145,16 @@
       "line": 13,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00[-1].field_0x178 = &g_CGogglesVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGogglesVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00[-1].field_0x178 = &g_CGogglesVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "return (CGoggles *)&this_ptr_00[-1].field_0x24;",
+      "text": "return (CGoggles *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "return (CGoggles *)&this_ptr_00[-1].field_0x24;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_0041cb40 at 0041cca6
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40 at 0041cca6
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70

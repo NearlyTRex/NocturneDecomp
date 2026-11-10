@@ -1,0 +1,131 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 12,
+    "complexity_score": 25,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "004dbb50",
+      "from_addr": "004dbb59",
+      "name": "core_inv.cpp_CInventory_selectItem_FUN_004dbb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004defa0",
+      "from_addr": "004defed",
+      "name": "core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004dd2c0",
+    "address_range": [
+      [
+        "004dd2c0",
+        "004dd2eb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004dd2c0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_resetItemSwitchTimers_FUN_004dd2c0(CInventory *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01cedef4",
+      "name": "DAT_01cedef4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004dbb59",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_selectItem_FUN_004dbb50",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004defed",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_toggleDetailView_FUN_004defa0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.6666666666666665,
+    "instruction_count": 9,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 6,
+      "INT_ADD": 7,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_MULT": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 5,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 33
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

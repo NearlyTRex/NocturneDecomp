@@ -12,17 +12,17 @@ void __cdecl shape_edittool_cpp_CInputString_deleteSelection_FUN_0047bc10(CInput
   int start_pos;
   int end_pos;
   
-  start_pos = *(int *)(this_ptr + 0x138);
-  end_pos = *(int *)(this_ptr + 0x134);
+  start_pos = this_ptr->selection_start;
+  end_pos = this_ptr->cursor_position;
   if (start_pos < end_pos) {
     shape_edittool_cpp_CInputString_deleteRange_FUN_0047bba0(this_ptr,start_pos,end_pos);
-    *(uint *)(this_ptr + 0x134) = *(uint *)(this_ptr + 0x138);
+    this_ptr->cursor_position = this_ptr->selection_start;
     return;
   }
   if (start_pos <= end_pos) {
     return;
   }
   shape_edittool_cpp_CInputString_deleteRange_FUN_0047bba0(this_ptr,end_pos,start_pos);
-  *(uint *)(this_ptr + 0x138) = *(uint *)(this_ptr + 0x134);
+  this_ptr->selection_start = this_ptr->cursor_position;
   return;
 }

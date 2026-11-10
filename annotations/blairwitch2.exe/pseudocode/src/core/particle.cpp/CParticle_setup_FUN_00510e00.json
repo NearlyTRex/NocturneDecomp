@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 102,
+    "complexity_score": 57,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 42,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 131
@@ -19,7 +18,13 @@
     {
       "addr": "004965f0",
       "from_addr": "00496606",
-      "name": "core_fire.cpp_FUN_004965f0",
+      "name": "core_fire.cpp_CRock_setup_FUN_004965f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b660",
+      "from_addr": "0049b678",
+      "name": "core_fire.cpp_CShell_setup_FUN_0049b660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -35,15 +40,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049b660",
-      "from_addr": "0049b678",
-      "name": "core_fire.cpp_FUN_0049b660",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004c7460",
       "from_addr": "004c7486",
-      "name": "core_gore.cpp_FUN_004c7460",
+      "name": "core_gore.cpp_CBloodParticle_setup_FUN_004c7460",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,7 +62,7 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     }
   ],
   "globals": [
@@ -80,7 +79,7 @@
       {
         "call_addr": "00496606",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004965f0",
+        "caller": "core_fire.cpp_CRock_setup_FUN_004965f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +101,7 @@
       {
         "call_addr": "004c7486",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004c7460",
+        "caller": "core_gore.cpp_CBloodParticle_setup_FUN_004c7460",
         "estimated_params": 3,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -124,7 +123,7 @@
       {
         "call_addr": "0049b678",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049b660",
+        "caller": "core_fire.cpp_CShell_setup_FUN_0049b660",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,38 +218,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 4) = *(uint *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 8) = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x10) = *(uint *)&velocity->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)(this_ptr + 0x14) = *(uint *)&velocity->field_0x8;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

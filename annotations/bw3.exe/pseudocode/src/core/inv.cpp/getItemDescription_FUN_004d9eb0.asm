@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_inv.cpp_FUN_004d9d20
 ;   crt_string.c__stricmp_FUN_005a3260
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_004d9ef4
     PUSH 0x5c5e94                       ; 004d9ef5 | = "Add to dict: %s"
     PUSH 0x1d5bd80                      ; 004d9efa
-    CALL crt_unknown.c_FUN_005a28c0     ; 004d9eff
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d9eff
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x1d5bd80                   ; 004d9f04
     ADD ESP,0xc                         ; 004d9f09
     POP EBP                             ; 004d9f0c

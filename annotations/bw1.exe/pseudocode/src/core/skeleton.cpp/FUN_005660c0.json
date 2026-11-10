@@ -2,30 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 236,
-    "complexity_score": 507,
+    "complexity_score": 465,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 97,
-    "suspect_count": 37,
+    "pseudocode_lines": 95,
+    "suspect_count": 34,
     "suspect_types": [
       "param_count_too_few",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 333
+    "total_lines": 331
   },
   "cross_references": [
     {
       "addr": "0056a870",
       "from_addr": "0056a8b8",
-      "name": "core_skeleton.cpp_FUN_0056a870",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0056a870",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -186,7 +184,7 @@
       {
         "call_addr": "0056a8b8",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0056a870",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0056a870",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -475,7 +473,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 29,
+      "line": 27,
       "match": "DAT_026af5fc",
       "severity": "mild",
       "text": "if ((DAT_026af5fc & 1) == 0) {",
@@ -483,7 +481,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 28,
       "match": "DAT_026af5fc",
       "severity": "mild",
       "text": "DAT_026af5fc = DAT_026af5fc | 1;",
@@ -491,7 +489,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 28,
       "match": "DAT_026af5fc",
       "severity": "mild",
       "text": "DAT_026af5fc = DAT_026af5fc | 1;",
@@ -499,7 +497,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {",
@@ -507,7 +505,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if (5000 < *(int *)(param_2 * 4 + param_1 + 0x2c)) {",
@@ -515,7 +513,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar4 = param_2 * 4 + param_1;",
@@ -523,7 +521,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = param_2 * 4 + param_1;",
@@ -531,7 +529,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 39,
+      "line": 37,
       "match": "DAT_026a0b9c",
       "severity": "mild",
       "text": "pfVar2 = (float *)&DAT_026a0b9c;",
@@ -539,7 +537,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_5",
       "severity": "mild",
       "text": "*pfVar2 = (float)*param_5 * _DAT_00605890;",
@@ -547,7 +545,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_5",
       "severity": "mild",
       "text": "pfVar2[1] = (float)param_5[1] * _DAT_00605890;",
@@ -555,7 +553,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 43,
       "match": "param_5",
       "severity": "mild",
       "text": "pfVar2[2] = (float)param_5[2] * _DAT_00605890;",
@@ -563,7 +561,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 3;",
@@ -571,7 +569,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_5",
       "severity": "mild",
       "text": "param_5 = param_5 + 3;",
@@ -579,7 +577,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 52,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < *(int *)(param_1 + 0xc00)) {",
@@ -587,7 +585,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = param_1 + param_2 * 4;",
@@ -595,7 +593,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
       "text": "local_2c = param_1 + param_2 * 4;",
@@ -603,7 +601,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
       "text": "local_34 = param_2 * 4 + param_1;",
@@ -611,7 +609,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = param_2 * 4 + param_1;",
@@ -619,7 +617,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 55,
       "match": "param_6",
       "severity": "mild",
       "text": "local_30 = param_6;",
@@ -627,15 +625,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 65,
       "match": "DAT_026a0b9c",
       "severity": "mild",
-      "text": "((CDemonTriangle *)local_84,(CVector3f *)(&DAT_026a0b9c + (uint)*puVar1 * 0xc),",
+      "text": "(&local_84,(CVector3f *)(&DAT_026a0b9c + (uint)*puVar1 * 0xc),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 68,
+      "line": 66,
       "match": "DAT_026a0b9c",
       "severity": "mild",
       "text": "(CVector3f *)(&DAT_026a0b9c + (uint)puVar1[1] * 0xc),",
@@ -643,47 +641,23 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 67,
       "match": "DAT_026a0b9c",
       "severity": "mild",
       "text": "(CVector3f *)(&DAT_026a0b9c + (uint)puVar1[2] * 0xc));",
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 72,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "local_4c = -(float)local_84._36_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 76,
-      "match": "._36_4_",
-      "severity": "mild",
-      "text": "local_48[2] = -(float)local_84._36_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 80,
+      "line": 78,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_DeformableModelPool[0].field_0x2c) {",
+      "text": "if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count) {",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "if (&stack0x00000000 != &g_DeformableModelPool[0].field_0x2c) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 84,
       "match": "param_2",
       "severity": "mild",
       "text": "_DAT_026b82b4 = param_2;",
@@ -691,7 +665,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (local_24 < *(int *)(param_1 + 0xc00));",

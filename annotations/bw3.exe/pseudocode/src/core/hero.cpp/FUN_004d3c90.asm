@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_hero.cpp_FUN_004d3b20
 ;   core_inv.cpp_CInventory_select_FUN_004dcb40
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5c4ded                       ; 004d3cae | s_N_CHealthItem_005c4deb+2
         ;   Label: LAB_004d3cae
     PUSH EAX                            ; 004d3cb3
-    CALL core_actor.cpp_FUN_0040c790    ; 004d3cb4
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004d3cb4
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d3cb9
     TEST EAX,EAX                        ; 004d3cbc
     JNZ 0x004d3d86                      ; 004d3cbe

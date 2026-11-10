@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[4]:
-;   core_bodypart.cpp_FUN_00415740 at 00415793
+;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740 at 00415793
 ;   core_boxactor.cpp_CBoxActor_onDropped_FUN_00420100 at 00420149
 ;   core_fire.cpp_CStake_spawn_FUN_00497ac0 at 00497d7c
 ;   core_fire.cpp_FUN_0049cee0 at 0049cfe9

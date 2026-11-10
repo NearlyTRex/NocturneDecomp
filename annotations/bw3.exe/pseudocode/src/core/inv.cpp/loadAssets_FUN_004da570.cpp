@@ -61,7 +61,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da570(void)
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (CAlphaBitmap_ARRAY_01d708e0 + 3,"sps15",0x40,0x40);
   _DAT_01d70a20 = 0xffffffff;
-  if (*(int *)&g_CGamePtr->field_0x4 < 0x180) {
+  if (g_CGamePtr->game_pixy < 0x180) {
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d70890,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d708a4,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(&CAlphaBitmap_01d708b8,2,2);

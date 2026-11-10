@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 200,
-    "complexity_score": 290,
+    "complexity_score": 282,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 75,
+    "pseudocode_lines": 67,
     "suspect_count": 19,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 275
+    "total_lines": 267
   },
   "cross_references": [
     {
@@ -52,7 +52,12 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
+    },
+    {
+      "addr": "00577a90",
+      "is_variadic": false,
+      "name": "sound_snddx.cpp_CDirectSoundDevice_close_FUN_00577a90"
     },
     {
       "addr": "0057a290",
@@ -65,19 +70,14 @@
       "name": "sound_snddx.cpp_FUN_00577500"
     },
     {
-      "addr": "00577a90",
+      "addr": "005773f0",
       "is_variadic": false,
-      "name": "sound_snddx.cpp_FUN_00577a90"
+      "name": "sound_sndmain.cpp_FUN_005773f0"
     },
     {
       "addr": "00575570",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00575570"
-    },
-    {
-      "addr": "005773f0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005773f0"
+      "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00575570"
     }
   ],
   "globals": [
@@ -229,10 +229,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 20,
+      "line": 19,
       "match": "DAT_02c8283c",
       "severity": "mild",
-      "text": "iVar1 = sound_snddx_cpp_FUN_00577a90((CDirectSoundDevice *)&DAT_02c8283c);",
+      "text": "iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_00577a90((CDirectSoundDevice *)&DAT_02c8283c)",
       "type": "undefined_data"
     },
     {
@@ -293,7 +293,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
+      "line": 41,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_30,&DAT_02c81d98,0);",
@@ -301,7 +301,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 41,
       "match": "DAT_02c81d98",
       "severity": "mild",
       "text": "uVar2 = (**(code **)(*_DAT_02c81d94 + 0xc))(_DAT_02c81d94,&uStack_30,&DAT_02c81d98,0);",
@@ -309,7 +309,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((1 < iVar1) && (1 < *(int *)(param_1 * 0x11c + 0x2c8115c))) {",
@@ -317,7 +317,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 55,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
@@ -325,7 +325,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 51,
       "match": "DAT_00627880",
       "severity": "mild",
       "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
@@ -333,7 +333,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 51,
       "match": "DAT_02c81da0",
       "severity": "mild",
       "text": "(**(code **)*_DAT_02c81d98)(_DAT_02c81d98,&DAT_00627880,&DAT_02c81da0);",
@@ -341,7 +341,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 53,
       "match": "DAT_02c8283c",
       "severity": "mild",
       "text": "return &DAT_02c8283c;",
@@ -349,10 +349,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 74,
+      "line": 66,
       "match": "DAT_02c8283c",
       "severity": "mild",
-      "text": "sound_snddx_cpp_FUN_00577a90((CDirectSoundDevice *)&DAT_02c8283c);",
+      "text": "sound_snddx_cpp_CDirectSoundDevice_close_FUN_00577a90((CDirectSoundDevice *)&DAT_02c8283c);",
       "type": "undefined_data"
     },
     {

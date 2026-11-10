@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 122,
-    "complexity_score": 315,
+    "complexity_score": 85,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 9,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 45,
-    "suspect_count": 26,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
     "total_lines": 167
@@ -31,7 +31,7 @@
     {
       "addr": "0052e910",
       "from_addr": "0052e91a",
-      "name": "core_set.cpp_FUN_0052e910",
+      "name": "core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -148,7 +148,7 @@
       {
         "call_addr": "0052e91a",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052e910",
+        "caller": "core_set.cpp_CDemonSet_reinitCamera_FUN_0052e910",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -234,204 +234,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x148 = screen_height;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x144 = (screen_height * 4) / 3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x150 = *(uint *)&this_ptr->field_0x144;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x150 = *(uint *)&this_ptr->field_0x144;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x150;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x154 = *(uint *)&this_ptr->field_0x148;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x154 = *(uint *)&this_ptr->field_0x148;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x150 = *(int *)&this_ptr->field_0x150 / 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x150 = *(int *)&this_ptr->field_0x150 / 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x14c = *(int *)&this_ptr->field_0x14c * 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x14c = *(int *)&this_ptr->field_0x14c * 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x150;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x154 = *(int *)&this_ptr->field_0x154 / 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x154 = *(int *)&this_ptr->field_0x154 / 2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x144 * *(int *)&this_ptr->field_0x148 * 4 + 0x1010);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x144 * *(int *)&this_ptr->field_0x148 * 4 + 0x1010);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x160 = pvVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x144 * *(int *)&this_ptr->field_0x148 * 4 + 0x1010);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x144 * *(int *)&this_ptr->field_0x148 * 4 + 0x1010);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x164 = pvVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 46,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x158 = *(int *)&this_ptr->field_0x160 + 0x10U & 0xfffffff0;",
-      "type": "unnamed_field"
+      "match": "(void *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "this_ptr->framebuffer_aligned = (void *)((int)this_ptr->framebuffer_raw + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x158 = *(int *)&this_ptr->field_0x160 + 0x10U & 0xfffffff0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 47,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15c = *(int *)&this_ptr->field_0x164 + 0x10U & 0xfffffff0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15c = *(int *)&this_ptr->field_0x164 + 0x10U & 0xfffffff0;",
-      "type": "unnamed_field"
+      "match": "(void *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "this_ptr->zbuffer_aligned = (void *)((int)this_ptr->zbuffer_raw + 0x10U & 0xfffffff0);",
+      "type": "pointer_cast"
     }
   ]
 }

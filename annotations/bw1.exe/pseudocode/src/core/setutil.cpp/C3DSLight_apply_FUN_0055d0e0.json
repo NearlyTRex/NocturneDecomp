@@ -2,22 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 439,
+    "complexity_score": 347,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
-    "suspect_count": 37,
+    "pseudocode_lines": 42,
+    "suspect_count": 28,
     "suspect_types": [
       "extra_output",
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 115
+    "total_lines": 118
   },
   "cross_references": [
     {
@@ -47,7 +46,7 @@
     {
       "addr": "0045f3e0",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045f3e0"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0"
     },
     {
       "addr": "00463de0",
@@ -157,7 +156,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 9,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "uint extraout_EAX;",
@@ -165,58 +164,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((uint *)&param_2->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)&param_2->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((uint *)&param_2->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x8 = *(uint *)(param_1 + 0x108);",
+      "text": "pUVar1 = &(param_2->base).base.position;",
       "type": "unnamed_param"
     },
     {
@@ -224,23 +175,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x8 = *(uint *)(param_1 + 0x108);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x8 = *(uint *)(param_1 + 0x108);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*(uint *)&param_2->field_0xc = *(uint *)(param_1 + 0x10c);",
+      "text": "if (pUVar1 != (UVector3 *)(param_1 + 0x104)) {",
       "type": "unnamed_param"
     },
     {
@@ -248,23 +183,31 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_2->field_0xc = *(uint *)(param_1 + 0x10c);",
+      "text": "(pUVar1->f).x = *(float *)(param_1 + 0x104);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc",
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&param_2->field_0xc = *(uint *)(param_1 + 0x10c);",
-      "type": "unnamed_field"
+      "text": "(param_2->base).base.position.f.y = *(float *)(param_1 + 0x108);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2->base).base.position.f.y = *(float *)(param_1 + 0x108);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045f3e0((CMatrix3x3f *)&param_2->field_0x10,(CVector3f *)(param_1 + 0x110));",
+      "text": "(param_2->base).base.position.f.z = *(float *)(param_1 + 0x10c);",
       "type": "unnamed_param"
     },
     {
@@ -272,47 +215,23 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045f3e0((CMatrix3x3f *)&param_2->field_0x10,(CVector3f *)(param_1 + 0x110));",
+      "text": "(param_2->base).base.position.f.z = *(float *)(param_1 + 0x10c);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045f3e0((CMatrix3x3f *)&param_2->field_0x10,(CVector3f *)(param_1 + 0x110));",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x38 = *(uint *)(param_1 + 0x11c);",
+      "text": "(&(param_2->base).base.rotation_matrix,(CVector3f *)(param_1 + 0x110));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x38 = *(uint *)(param_1 + 0x11c);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&param_2->field_0x38 = *(uint *)(param_1 + 0x11c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar4 = (float10)*(float *)(param_1 + 0x120) * (float10)_DAT_005f1309;",
+      "text": "(&(param_2->base).base.rotation_matrix,(CVector3f *)(param_1 + 0x110));",
       "type": "unnamed_param"
     },
     {
@@ -320,23 +239,23 @@
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(int *)&param_2->field_0x2fa4 = (int)ROUND(fVar4);",
+      "text": "(param_2->base).base.focal_length = *(float *)(param_1 + 0x11c);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 22,
-      "match": "field_0x2fa4",
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_2->field_0x2fa4 = (int)ROUND(fVar4);",
-      "type": "unnamed_field"
+      "text": "(param_2->base).base.focal_length = *(float *)(param_1 + 0x11c);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = (char *)(param_1 + 4);",
+      "text": "fVar5 = (float10)*(float *)(param_1 + 0x120) * (float10)_DAT_005f1309;",
       "type": "unnamed_param"
     },
     {
@@ -344,15 +263,7 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2,*(float *)(param_1 + 0x124));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_2,*(float *)(param_1 + 0x124));",
+      "text": "param_2->transform_scale_factor = (int)ROUND(fVar5);",
       "type": "unnamed_param"
     },
     {
@@ -360,28 +271,44 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
+      "text": "pcVar3 = (char *)(param_1 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,*(float *)(param_1 + 0x124));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_2,*(float *)(param_1 + 0x124));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
       "text": "*(uint *)(param_1 + 0x11e8) = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "pcVar3 = &param_2->field_0x40;",
+      "text": "pcVar4 = (param_2->base).camera_name;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "pcVar3 = &param_2->field_0x40;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1894) = 0;",
@@ -389,7 +316,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x17f4) == 0) {",
@@ -397,7 +324,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 44,
       "match": "param_2",
       "severity": "mild",
       "text": "core_dlight_cpp_CDemonLight_allocateFilter_FUN_00463de0(param_2);",
@@ -405,7 +332,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 42,
+      "line": 45,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "return extraout_EAX;",
@@ -413,7 +340,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 29,
+      "line": 32,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

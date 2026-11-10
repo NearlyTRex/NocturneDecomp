@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 6,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 54
   },
   "cross_references": [
@@ -28,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004832b0",
-      "from_addr": "00483304",
-      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004832b0",
+      "addr": "0047d8c0",
+      "from_addr": "0047d95f",
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047d8c0",
-      "from_addr": "0047d95f",
-      "name": "shape_edittool.cpp_FUN_0047d8c0",
+      "addr": "004832b0",
+      "from_addr": "00483304",
+      "name": "shape_edittool.cpp_CPickList_dtor_FUN_004832b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -128,7 +126,7 @@
       {
         "call_addr": "0047d95f",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d8c0",
+        "caller": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,16 +230,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0xc = &g_CStrListVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

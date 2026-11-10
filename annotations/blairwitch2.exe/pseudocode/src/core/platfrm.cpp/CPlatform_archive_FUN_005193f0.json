@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 327,
-    "complexity_score": 559,
+    "complexity_score": 228,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 37,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 109,
-    "suspect_count": 43,
+    "pseudocode_lines": 113,
+    "suspect_count": 9,
     "suspect_types": [
+      "pointer_cast",
       "shadow_pointer_walk",
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 436
+    "total_lines": 440
   },
   "cross_references": [
     {
@@ -407,224 +408,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2b4,\"?modelName\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4b0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x4b0,\"toStartEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x514",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x514,\"toEndEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x578,\"stopEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x5dc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x5dc,\"startSound\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x5f0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x5f0,\"stopSound\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x604",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x604,\"activeSound\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x44c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x44c,\"courseFilename\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x44c",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x44c == '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x478",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x478,\"startPos\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x490",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->field_0x490,\"origOrient\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x484",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b4b0(&this_ptr->field_0x484,\"endPos\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4a0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveQuaternion_FUN_0040b690(&this_ptr->field_0x4a0,\"endOrient\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x430",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x430,\"state\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x438",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x438,\"param\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x448",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x448,\"travelTimeToStart\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x444",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x444 = *(uint *)&this_ptr->field_0x448;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x448",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x444 = *(uint *)&this_ptr->field_0x448;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x444",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x444,\"travelTimeToEnd\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x434",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x434,\"groundType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x61c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x61c,\"oneShot\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x620",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x620,\"blockVirtualDirectorFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x624",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x624,\"renderInBackgroundWhenNotMovingFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x628",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x628,\"cameraWhileMoving\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x668",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x668,\"plotAsBoxInShadow\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x43c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x43c,\"goalParam\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x440",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x440,\"currentMovementRate\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 65,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 == 1) {",
@@ -632,114 +417,58 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 72,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x678 = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar1->field_0x678 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
+      "line": 91,
       "match": "field_0x208",
       "severity": "mild",
-      "text": "} while (pCVar1 != (CPlatform *)&this_ptr->field_0x208);",
+      "text": "} while (pCVar1 != (CPlatform *)&(this_ptr->base).field_0x208);",
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar1->field_0x678 != 0) {",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 79,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 93,
-      "match": "field_0x678",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x678 + iVar2 * 0x34,\"attach actor\");",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 90,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 101,
-      "match": "field_0x66c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x66c,\"pushFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 105,
-      "match": "field_0x670",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x670,\"recomputeFog\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0x674",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x674,\"plotInShadowFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 74,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 79,
+      "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 85,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 90,
+      "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 96,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 101,
+      "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
       "type": "shadow_pointer_walk"
     }
   ],

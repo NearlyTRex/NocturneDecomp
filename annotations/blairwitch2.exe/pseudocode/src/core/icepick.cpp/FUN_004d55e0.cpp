@@ -12,7 +12,8 @@
 int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr)
 
 {
-  int iVar1;
+  CDemonActor *this_ptr_00;
+  CDemonActor *pCVar1;
   int iVar2;
   byte bVar3;
   float afStackY_1048 [1015];
@@ -35,7 +36,7 @@ int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr)
   float fStack_18;
   
   bVar3 = 0;
-  *(uint *)&this_ptr->field_0x25664 = 0;
+  this_ptr->pending_pickup_target = (CDemonActor *)0x0;
   local_24 = 4.0;
   local_48 = 0x3f800000;
   local_40 = 0x40000000;
@@ -48,15 +49,16 @@ int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr)
        *(uint *)((int)&stack0xffffffc8 + (uint)bVar3 * 0xfffffffe * 4);
   *(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  for (; local_20 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_20 = local_20 + 1) {
-    iVar1 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + local_1c);
-    iVar2 = (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x9c))(iVar1);
-    if (iVar2 == 0) {
-      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar1,g_CTommyGunClassInfo.name_hash);
+  for (; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
+    this_ptr_00 = *(CDemonActor **)((int)g_CDemonSetPtr->actors + local_1c);
+    pCVar1 = (*((this_ptr_00->vtable)._ub)->getCarrier)(this_ptr_00);
+    if (pCVar1 == (CDemonActor *)0x0) {
+      iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
+                        (this_ptr_00,g_CTommyGunClassInfo.name_hash);
       if (iVar2 != 0) {
-        fStack_60 = *(float *)(iVar1 + 0x20) - local_30;
-        fStack_5c = *(float *)(iVar1 + 0x24) - fStack_2c;
-        fStack_58 = *(float *)(iVar1 + 0x28) - local_28;
+        fStack_60 = *(float *)&this_ptr_00->field_0x20 - local_30;
+        fStack_5c = *(float *)&this_ptr_00->field_0x24 - fStack_2c;
+        fStack_58 = *(float *)&this_ptr_00->field_0x28 - local_28;
         fStack_54 = fStack_60;
         *(uint *)((int)&stack0xffffffb0 + (uint)bVar3 * -8) =
              *(uint *)((int)&stack0xffffffa4 + (uint)bVar3 * -8);
@@ -64,21 +66,21 @@ int __cdecl core_icepick_cpp_FUN_004d55e0(CIcePick *this_ptr)
              *(uint *)((int)&stack0xffffffa8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
         if ((ABS(fStack_50) <= (float)_DAT_005da866) &&
            (fStack_18 = fStack_54 * fStack_54 + fStack_4c * fStack_4c, fStack_18 <= local_24)) {
-          *(int *)&this_ptr->field_0x25664 = iVar1;
+          this_ptr->pending_pickup_target = this_ptr_00;
           local_24 = fStack_18;
         }
       }
     }
     local_1c = local_1c + 4;
   }
-  if (*(int *)&this_ptr->field_0x25664 == 0) {
+  if (this_ptr->pending_pickup_target == (CDemonActor *)0x0) {
     return 0;
   }
   *(float *)&this_ptr->field_0x20 =
-       (*(float *)(*(int *)&this_ptr->field_0x25664 + 0x20) - local_30) +
+       (*(float *)&this_ptr->pending_pickup_target->field_0x20 - local_30) +
        *(float *)&this_ptr->field_0x20;
   *(float *)&this_ptr->field_0x28 =
-       (*(float *)(*(int *)&this_ptr->field_0x25664 + 0x28) - local_28) +
+       (*(float *)&this_ptr->pending_pickup_target->field_0x28 - local_28) +
        *(float *)&this_ptr->field_0x28;
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
             ((CMotionController *)&this_ptr->field_0x2b4,0x13,1);

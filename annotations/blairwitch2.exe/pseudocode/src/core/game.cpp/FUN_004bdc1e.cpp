@@ -99,7 +99,7 @@ void core_game_cpp_FUN_004bdc1e(int param_1)
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   uVar5 = 0;
-  FUN_005b7790(acStack_148,0x5d896b,iStack_20,iStack_2c,iStack_28,iStack_24);
+  _sprintf(acStack_148,(char *)0x5d896b);
   do {
     uVar3 = 0xffffffff;
     pcVar11 = acStack_148;
@@ -178,7 +178,7 @@ void core_game_cpp_FUN_004bdc1e(int param_1)
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
-  FUN_005b7790(acStack_148,0x5d898b,*(uint *)(param_1 + 0x26c));
+  _sprintf(acStack_148,(char *)0x5d898b);
   this_ptr = _DAT_01511cc0;
   pcVar11 = acStack_148;
   iVar2 = -1;
@@ -205,7 +205,7 @@ void core_game_cpp_FUN_004bdc1e(int param_1)
   iVar2 = engine_font_cpp_FUN_004ab2b0(this_ptr,acStack_548,0x1cb1120,0x14,0x100,0xc0);
   iVar4 = 0;
   iStack_18 = iVar2;
-  iStack_1c = engine_font_cpp_FUN_004ab560(this_ptr,0x58);
+  iStack_1c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr,0x58);
   y = 0xf0;
   if (0 < iVar2) {
     pcVar11 = (char *)0x1cb1120;

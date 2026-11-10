@@ -5,10 +5,112 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CDemonActor_vtable.h"
+#include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CWeapon_full_vtable.h"
+#include "types/classes/CZombiePriest_full_vtable.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5E0000
 // =============================================================================
+
+// CCharacter_full_vtable
+extern CCharacter_full_vtable g_CMooCowVTable;
+extern CCharacter_full_vtable g_CNPCVTable;
+extern CCharacter_full_vtable g_CPassengerVTable;
+extern CCharacter_full_vtable g_CPryeMorphVTable;
+extern CCharacter_full_vtable g_CSpiritEagleVTable;
+extern CCharacter_full_vtable g_CSpiritIndianVTable;
+extern CCharacter_full_vtable g_CSpiritBearVTable;
+extern CCharacter_full_vtable g_CAsgayaVTable;
+
+// CDemonActor_vtable
+extern CDemonActor_vtable g_CFliesVTable;
+extern CDemonActor_vtable g_CGasMaskVTable;
+extern CDemonActor_vtable g_CGlassVTable;
+extern CDemonActor_vtable g_CGogglesVTable;
+extern CDemonActor_vtable g_CGraveVTable;
+extern CDemonActor_vtable g_CHealthItemVTable;
+extern CDemonActor_vtable g_CHealthItemSmallVTable;
+extern CDemonActor_vtable g_CHeroPlaceholderVTable;
+extern CDemonActor_vtable g_CKeyActorVTable;
+extern CDemonActor_vtable g_CLadderVTable;
+extern CDemonActor_vtable g_CLeverVTable;
+extern CDemonActor_vtable g_CLightConeVTable;
+extern CDemonActor_vtable g_CPendulumVTable;
+extern CDemonActor_vtable g_CPlatformVTable;
+extern CDemonActor_vtable g_CSimBoxVTable;
+extern CDemonActor_vtable g_CSpawnerVTable;
+extern CDemonActor_vtable g_CSpikeVTable;
+extern CDemonActor_vtable g_CStairsVTable;
+extern CDemonActor_vtable g_CTempleStoneVTable;
+extern CDemonActor_vtable g_CTeleportDestVTable;
+extern CDemonActor_vtable g_CTeleportVTable;
+extern CDemonActor_vtable g_CTrapVTable;
+extern CDemonActor_vtable g_CTrashVTable;
+extern CDemonActor_vtable g_CTriggerVTable;
+extern CDemonActor_vtable g_CCryptVesselVTable;
+extern CDemonActor_vtable g_CWaterActorVTable;
+extern CDemonActor_vtable g_CLavaVTable;
+extern CDemonActor_vtable g_CWayPointVTable;
+
+// CEnemy_full_vtable
+extern CEnemy_full_vtable g_CGargoyleVTable;
+extern CEnemy_full_vtable g_CGhoulVTable;
+extern CEnemy_full_vtable g_CHotDemonVTable;
+extern CEnemy_full_vtable g_CAngelForestVTable;
+extern CEnemy_full_vtable g_CAngelSpiritVTable;
+extern CEnemy_full_vtable g_CAngelDemonVTable;
+extern CEnemy_full_vtable g_CImpVTable;
+extern CEnemy_full_vtable g_CSentinelVTable;
+extern CEnemy_full_vtable g_CShadowVTable;
+extern CEnemy_full_vtable g_CShadowForestVTable;
+extern CEnemy_full_vtable g_CSpiritShadowVTable;
+extern CEnemy_full_vtable g_CDemonShadowVTable;
+extern CEnemy_full_vtable g_CShadowscVTable;
+extern CEnemy_full_vtable g_CTheHandVTable;
+extern CEnemy_full_vtable g_CTVBatVTable;
+extern CEnemy_full_vtable g_CWerewolfVTable;
+extern CEnemy_full_vtable g_CYowVTable;
+extern CEnemy_full_vtable g_CZombieVTable;
+extern CEnemy_full_vtable g_CZombieCemeteryVTable;
+extern CEnemy_full_vtable g_CZombieForestVTable;
+extern CEnemy_full_vtable g_CZombieSpiritVTable;
+extern CEnemy_full_vtable g_CZombieIndianVTable;
+extern CEnemy_full_vtable g_CZombieDemonVTable;
+extern CEnemy_full_vtable g_CKedwardVTable;
+extern CEnemy_full_vtable g_CMattanntoteVTable;
+extern CEnemy_full_vtable g_CTawiscaraVTable;
+extern CEnemy_full_vtable g_CBaalVTable;
+extern CEnemy_full_vtable g_CHecaitomixVTable;
+extern CEnemy_full_vtable g_CDarkwolfVTable;
+extern CEnemy_full_vtable g_CWhitewolfVTable;
+extern CEnemy_full_vtable g_CHinoVTable;
+extern CEnemy_full_vtable g_CStylerVTable;
+extern CEnemy_full_vtable g_CStylerDemonVTable;
+
+// CHero_full_vtable
+extern CHero_full_vtable g_CPryeVTable;
+
+// CWeapon_full_vtable
+extern CWeapon_full_vtable g_CFlashlightVTable;
+extern CWeapon_full_vtable g_CFlintlockVTable;
+extern CWeapon_full_vtable g_CGunVTable;
+extern CWeapon_full_vtable g_CHealVTable;
+extern CWeapon_full_vtable g_CHolycrossVTable;
+extern CWeapon_full_vtable g_CLightStaffVTable;
+extern CWeapon_full_vtable g_CMeleeVTable;
+extern CWeapon_full_vtable g_CRifleVTable;
+extern CWeapon_full_vtable g_CShovelVTable;
+extern CWeapon_full_vtable g_CSpsVTable;
+extern CWeapon_full_vtable g_CStormVTable;
+extern CWeapon_full_vtable g_CTommyGunVTable;
+extern CWeapon_full_vtable g_CWeaponVTable;
+
+// CZombiePriest_full_vtable
+extern CZombiePriest_full_vtable g_CZombiePriestVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005E01B0;
@@ -110,9 +212,9 @@ extern WatcomTypeInfo g_CHealthItemSmallTypeInfo;
 extern WatcomTypeInfo g_CHealthItemTypeInfo;
 extern WatcomTypeInfo g_CHeroPlaceholderTypeInfo;
 extern WatcomTypeInfo g_CHolycrossTypeInfo;
-extern WatcomTypeInfo g_CAngel_DemonTypeInfo;
-extern WatcomTypeInfo g_CAngel_SpiritTypeInfo;
-extern WatcomTypeInfo g_CAngel_ForestTypeInfo;
+extern WatcomTypeInfo g_CAngelDemonTypeInfo;
+extern WatcomTypeInfo g_CAngelSpiritTypeInfo;
+extern WatcomTypeInfo g_CAngelForestTypeInfo;
 extern WatcomTypeInfo g_CHotDemonTypeInfo;
 extern WatcomTypeInfo g_CImpTypeInfo;
 extern WatcomTypeInfo g_CIniTypeInfo;
@@ -158,7 +260,7 @@ extern WatcomTypeInfo g_SVDBoxTypeInfo;
 extern WatcomTypeInfo g_SRaytraceStateTypeInfo;
 extern WatcomTypeInfo g_CDemonShadowTypeInfo;
 extern WatcomTypeInfo g_CSpiritShadowTypeInfo;
-extern WatcomTypeInfo g_CShadow_ForestTypeInfo;
+extern WatcomTypeInfo g_CShadowForestTypeInfo;
 extern WatcomTypeInfo g_CShadowTypeInfo;
 extern WatcomTypeInfo g_CShadowscTypeInfo;
 extern WatcomTypeInfo g_CShovelTypeInfo;
@@ -199,11 +301,11 @@ extern WatcomTypeInfo g_CWeaponTypeInfo;
 extern WatcomTypeInfo g_CWerewolfTypeInfo;
 extern WatcomTypeInfo g_CWinFontTypeInfo;
 extern WatcomTypeInfo g_CYowTypeInfo;
-extern WatcomTypeInfo g_CZombie_DemonTypeInfo;
-extern WatcomTypeInfo g_CZombie_IndianTypeInfo;
-extern WatcomTypeInfo g_CZombie_SpiritTypeInfo;
-extern WatcomTypeInfo g_CZombie_ForestTypeInfo;
-extern WatcomTypeInfo g_CZombie_CemeteryTypeInfo;
+extern WatcomTypeInfo g_CZombieDemonTypeInfo;
+extern WatcomTypeInfo g_CZombieIndianTypeInfo;
+extern WatcomTypeInfo g_CZombieSpiritTypeInfo;
+extern WatcomTypeInfo g_CZombieForestTypeInfo;
+extern WatcomTypeInfo g_CZombieCemeteryTypeInfo;
 extern WatcomTypeInfo g_CZombieTypeInfo;
 extern WatcomTypeInfo g_CZombiePriestTypeInfo;
 extern WatcomTypeInfo g_CKedwardTypeInfo;
@@ -222,56 +324,13 @@ extern WatcomTypeInfo g_CStylerDemonTypeInfo;
 extern WatcomTypeInfo g_CAsgayaTypeInfo;
 
 // undefined1*
-extern undefined1* g_CGargoyleVTable;
-extern undefined1* g_CGhoulVTable;
 extern undefined1* g_CBloodParticleVTable;
-extern undefined1* g_CHotDemonVTable;
-extern undefined1* g_CAngel_ForestVTable;
-extern undefined1* g_CAngel_SpiritVTable;
-extern undefined1* g_CAngel_DemonVTable;
-extern undefined1* g_CImpVTable;
-extern undefined1* g_CMooCowVTable;
-extern undefined1* g_CNPCVTable;
-extern undefined1* g_CPassengerVTable;
 extern undefined1* g_CDemonPodVTable;
-extern undefined1* g_CPryeVTable;
-extern undefined1* g_CPryeMorphVTable;
-extern undefined1* g_CSentinelVTable;
-extern undefined1* g_CShadowVTable;
-extern undefined1* g_CShadow_ForestVTable;
-extern undefined1* g_CSpiritShadowVTable;
-extern undefined1* g_CDemonShadowVTable;
-extern undefined1* g_CShadowscVTable;
-extern undefined1* g_CTheHandVTable;
 extern undefined1* g_CInStreamFileVTable;
 extern undefined1* g_CInStreamMemoryVTable;
 extern undefined1* g_COutStreamFileVTable;
 extern undefined1* g_COutStreamMemoryVTable;
 extern undefined1* g_COutStreamDebugVTable;
-extern undefined1* g_CTVBatVTable;
-extern undefined1* g_CWerewolfVTable;
-extern undefined1* g_CYowVTable;
-extern undefined1* g_CZombieVTable;
-extern undefined1* g_CZombie_CemeteryVTable;
-extern undefined1* g_CZombie_ForestVTable;
-extern undefined1* g_CZombie_SpiritVTable;
-extern undefined1* g_CZombie_IndianVTable;
-extern undefined1* g_CZombie_DemonVTable;
-extern undefined1* g_CZombiePriestVTable;
-extern undefined1* g_CKedwardVTable;
-extern undefined1* g_CMattanntoteVTable;
-extern undefined1* g_CTawiscaraVTable;
-extern undefined1* g_CBaalVTable;
-extern undefined1* g_CHecaitomixVTable;
-extern undefined1* g_CDarkwolfVTable;
-extern undefined1* g_CWhitewolfVTable;
-extern undefined1* g_CSpiritEagleVTable;
-extern undefined1* g_CSpiritIndianVTable;
-extern undefined1* g_CSpiritBearVTable;
-extern undefined1* g_CHinoVTable;
-extern undefined1* g_CStylerVTable;
-extern undefined1* g_CStylerDemonVTable;
-extern undefined1* g_CAsgayaVTable;
 
 // undefined4
 extern undefined4 DAT_005e8838;
@@ -279,8 +338,5 @@ extern undefined4 DAT_005e8838;
 // void*
 extern void* g_PageResource_BitmapVTable;
 extern void* g_PageResource_TwanaEntryVTable;
-extern void* g_CFliesVTable;
-extern void* g_CHeroPlaceholderVTable;
 extern void* g_CDeformableModelInstanceVTable;
-extern void* g_CWeaponVTable;
 

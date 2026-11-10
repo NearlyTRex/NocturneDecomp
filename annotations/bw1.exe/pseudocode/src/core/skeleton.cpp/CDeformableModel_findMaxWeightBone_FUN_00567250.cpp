@@ -9,17 +9,17 @@
 int __cdecl core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_00567250(CDeformableModel *this_ptr,int lod_level,int triangle_index)
 
 {
-  float *pfVar1;
-  byte *pbVar2;
+  byte *puVar1;
+  byte *puVar2;
   int iVar3;
-  ushort *puVar4;
-  byte *pbVar5;
+  SInputFace *pSVar4;
+  SVert *pSVar5;
   int iVar6;
-  byte *pbVar7;
+  SVert *pSVar7;
   int iVar8;
-  byte *pbVar9;
+  SVert *pSVar9;
   float local_1a4 [100];
-  ushort *local_14;
+  SInputFace *local_14;
   
   iVar6 = 0;
   do {
@@ -27,21 +27,21 @@ int __cdecl core_skeleton_cpp_CDeformableModel_findMaxWeightBone_FUN_00567250(CD
     *(uint *)((int)local_1a4 + iVar6) = 0;
     iVar6 = iVar3;
   } while (iVar3 != 400);
-  puVar4 = (ushort *)(*(int *)(&this_ptr->field_0x7c + lod_level * 4) + triangle_index * 0x12);
-  local_14 = puVar4 + 3;
+  pSVar4 = this_ptr->tri_data_ptr[lod_level] + triangle_index * 0x12;
+  local_14 = pSVar4 + 6;
   do {
-    pbVar9 = (byte *)(*(int *)(&this_ptr->field_0x40 + lod_level * 4) + (uint)*puVar4 * 0x34);
-    pbVar5 = pbVar9;
-    pbVar7 = pbVar9;
-    for (iVar6 = 0; iVar6 < (int)(uint)*pbVar9; iVar6 = iVar6 + 1) {
-      pfVar1 = (float *)(pbVar7 + 4);
-      pbVar2 = pbVar5 + 1;
-      pbVar7 = pbVar7 + 4;
-      pbVar5 = pbVar5 + 1;
-      local_1a4[*pbVar2] = *pfVar1 + local_1a4[*pbVar2];
+    pSVar9 = this_ptr->vertex_data_ptr[lod_level] + *(ushort *)pSVar4;
+    pSVar5 = pSVar9;
+    pSVar7 = pSVar9;
+    for (iVar6 = 0; iVar6 < (int)(uint)*(byte *)pSVar9; iVar6 = iVar6 + 1) {
+      puVar1 = &pSVar7->field_0x4;
+      puVar2 = &pSVar5->field_0x1;
+      pSVar7 = (SVert *)&pSVar7->field_0x4;
+      pSVar5 = (SVert *)&pSVar5->field_0x1;
+      local_1a4[(byte)*puVar2] = *(float *)puVar1 + local_1a4[(byte)*puVar2];
     }
-    puVar4 = puVar4 + 1;
-  } while (puVar4 != local_14);
+    pSVar4 = pSVar4 + 2;
+  } while (pSVar4 != local_14);
   iVar8 = 1;
   iVar3 = 4;
   iVar6 = 0;

@@ -1,0 +1,404 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 213,
+    "complexity_score": 145,
+    "cross_reference_count": 6,
+    "function_call_count": 3,
+    "global_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 303
+  },
+  "cross_references": [
+    {
+      "addr": "0040e670",
+      "from_addr": "0040e702",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b90d0",
+      "from_addr": "004ba0e1",
+      "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8fce",
+      "from_addr": "004b9028",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dd020",
+      "from_addr": "004dd08e",
+      "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dadb0",
+      "from_addr": "004db288",
+      "name": "core_inv.cpp_FUN_004dadb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004db760",
+      "from_addr": "004db7da",
+      "name": "core_inv.cpp_FUN_004db760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e240",
+    "address_range": [
+      [
+        "0040e240",
+        "0040e43d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240",
+    "signature": "void __cdecl core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(CAmmo *this_ptr,char *weapon_class_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "0044fd70",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0040e214",
+      "name": "switchdataD_0040e214",
+      "type": "void*",
+      "value": "0040e282"
+    },
+    {
+      "addr": "005cb10b",
+      "name": "DAT_005cb10b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb110",
+      "name": "s_bullets6_1_kfm_005cb110",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb11f",
+      "name": "s_holybullet_kfm_005cb11f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb12e",
+      "name": "s_woodbullet_kfm_005cb12e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb13d",
+      "name": "s_silverbullet_kfm_005cb13d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb14e",
+      "name": "s_goldbullet_kfm_005cb14e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb15d",
+      "name": "s_lithiumbullet_kfm_005cb15d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb16f",
+      "name": "s_mercurybullet_kfm_005cb16f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb181",
+      "name": "s_CShotgun_005cb181",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb18a",
+      "name": "s_shell_kfm_005cb18a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb194",
+      "name": "s_CCrossbow_005cb194",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb19e",
+      "name": "s_holystake_kfm_005cb19e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1ac",
+      "name": "s_stake_kfm_005cb1ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1b6",
+      "name": "s_CDynamite_005cb1b6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1c0",
+      "name": "s_dynamitebundle_kfm_005cb1c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1d3",
+      "name": "s_CTommyGun_005cb1d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1dd",
+      "name": "s_tommybullet_kfm_005cb1dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1ed",
+      "name": "s_CFlameThrower_005cb1ed",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb1fb",
+      "name": "s_fgunammo_kfm_005cb1fb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb208",
+      "name": "s_CElephantGun_005cb208",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb215",
+      "name": "s_eleshell_kfm_005cb215",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb222",
+      "name": "s_CLightgun_005cb222",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cb22c",
+      "name": "s_batterylarge_kfm_005cb22c",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 7,
+    "call_sites": [
+      {
+        "call_addr": "004ba0e1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004db288",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004dadb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004dd08e",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040e702",
+        "call_type": "direct",
+        "caller": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040e735",
+        "call_type": "direct",
+        "caller": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b9028",
+        "call_type": "direct",
+        "caller": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004db7da",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_FUN_004db760",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.226666666666667,
+    "instruction_count": 150,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 1,
+      "BRANCH": 8,
+      "BRANCHIND": 1,
+      "CALL": 18,
+      "CBRANCH": 13,
+      "COPY": 99,
+      "INT_ADD": 48,
+      "INT_AND": 80,
+      "INT_CARRY": 22,
+      "INT_EQUAL": 72,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 36,
+      "INT_SUB": 70,
+      "LOAD": 17,
+      "POPCOUNT": 36,
+      "RETURN": 2,
+      "STORE": 66
+    },
+    "pcode_op_count": 634
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
+      },
+      {
+        "is_param": true,
+        "name": "weapon_class_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_005cb10b",
+      "severity": "mild",
+      "text": "iVar2 = _strcmp(weapon_class_name,&DAT_005cb10b);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x474",
+      "severity": "mild",
+      "text": "switch(*(uint *)&this_ptr->field_0x474) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x474",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x474 == 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 13,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

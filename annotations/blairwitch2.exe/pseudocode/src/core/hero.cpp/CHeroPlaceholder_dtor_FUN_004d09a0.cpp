@@ -17,9 +17,8 @@ CHeroPlaceholder * __cdecl core_hero_cpp_CHeroPlaceholder_dtor_FUN_004d09a0(CHer
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte **)&this_ptr->field_0x2b0 = &g_CHeroPlaceholderVTable;
-  pCVar1 = (CHeroPlaceholder *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  (this_ptr->base).vtable._ub = &g_CHeroPlaceholderVTable;
+  pCVar1 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

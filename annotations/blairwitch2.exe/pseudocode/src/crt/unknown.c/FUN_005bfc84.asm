@@ -12,7 +12,7 @@
 ;   crt_math.c_atan2_FUN_005b9989 at 005b9998
 ;
 ; Called Functions:
-;   unkafter_morph.cpp_FUN_005c3c70
+;   crt_unknown.c_FUN_005c3c70
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     FNSAVE [ESP]                        ; 005bfc8c
     FLD extended double ptr [ESP + 0x1c] ; 005bfc8f
     FLD extended double ptr [ESP + 0x6c] ; 005bfc93
-    CALL unkafter_morph.cpp_FUN_005c3c70 ; 005bfc97
-        ;   XREF to: 005c3c70 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3c70()
+    CALL crt_unknown.c_FUN_005c3c70     ; 005bfc97
+        ;   XREF to: 005c3c70 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3c70()
     FNSTSW AX                           ; 005bfc9c
     FSTP extended double ptr [ESP + 0x1c] ; 005bfc9e
     AND AX,0xff                         ; 005bfca2

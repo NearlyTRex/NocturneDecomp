@@ -10,9 +10,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_charactr.cpp_FUN_00431000 at 004310a3
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431000 at 004310a3
 ;   core_fldnotes.cpp_FUN_004aa810 at 004aaadb
-;   core_hino.cpp_FUN_0059b960 at 0059c194
+;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059c194
 ;   core_hino.cpp_FUN_0059d000 at 0059d02b
 ;   core_script.cpp_trimLine_FUN_00528790 at 005287d5
 ;   sound_sndmain.cpp_FUN_00551620 at 0055181a

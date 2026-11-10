@@ -46,21 +46,20 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemon
   bVar10 = 0;
   local_38 = 1;
   local_88 = 0;
-  if (1 < *(int *)&this_ptr->field_0x154) {
+  if (1 < this_ptr->display_height) {
     local_40 = 0x500;
     local_44 = 0xf00;
     do {
       local_28 = 1;
-      local_24 = *(uint **)(&DAT_01c4354c + local_38 * *(int *)&this_ptr->field_0x14c * 4);
-      if (1 < *(int *)&this_ptr->field_0x150) {
+      local_24 = *(uint **)(&DAT_01c4354c + local_38 * this_ptr->scale_factor * 4);
+      if (1 < this_ptr->display_width) {
         local_30 = local_44 + 0xc;
         local_2c = local_40 + 4;
         iVar7 = local_30;
         do {
-          local_24 = local_24 + *(int *)&this_ptr->field_0x14c;
+          local_24 = local_24 + this_ptr->scale_factor;
           core_dcamera_cpp_FUN_0044dd70
-                    (this_ptr,local_28 * *(int *)&this_ptr->field_0x14c,
-                     local_38 * *(int *)&this_ptr->field_0x14c);
+                    (this_ptr,local_28 * this_ptr->scale_factor,local_38 * this_ptr->scale_factor);
           local_60 = local_84;
           *(uint *)((int)&stack0xffffffa4 + (uint)bVar10 * 0xfffffffe * 4) =
                *(uint *)(&stack0xffffff80 + (uint)bVar10 * -8);
@@ -106,27 +105,27 @@ void __cdecl core_dcamera_cpp_CDemonCamera_precomputeNormals_FUN_0044ef30(CDemon
           *(float *)(iVar7 + 0xa1badc) = (float)(short)(char)(uVar9 >> 8) * fVar1;
           *(float *)(iVar7 + 0xa1bae0) = (float)(short)(char)uVar3 * fVar1;
           iVar7 = iVar7 + 0xc;
-        } while (local_28 < *(int *)&this_ptr->field_0x150);
+        } while (local_28 < this_ptr->display_width);
       }
       local_44 = local_44 + 0xf00;
       local_40 = local_40 + 0x500;
       local_38 = local_38 + 1;
-    } while (local_38 < *(int *)&this_ptr->field_0x154);
+    } while (local_38 < this_ptr->display_height);
   }
   local_18 = local_88;
-  *(float *)&this_ptr->field_0x140 = (float)local_88 * (float)_DAT_005d7717;
+  this_ptr->max_distance = (float)local_88 * (float)_DAT_005d7717;
   core_dcamera_cpp_CDemonCamera_saveBackdrop_FUN_00453610(this_ptr);
   _DAT_00b81ca4 = 0;
   _DAT_01289ca8 = 0;
   _DAT_01323d04 = 0;
-  if (0x1df < *(int *)&this_ptr->field_0x148) {
-    local_1c = *(uint *)&this_ptr->field_0x14c;
+  if (0x1df < this_ptr->framebuffer_height) {
+    local_1c = this_ptr->scale_factor;
     local_48 = local_1c << 2;
-    for (; (int)local_1c < *(int *)&this_ptr->field_0x148 - *(int *)&this_ptr->field_0x14c;
+    for (; (int)local_1c < this_ptr->framebuffer_height - this_ptr->scale_factor;
         local_1c = local_1c + 1) {
-      uVar9 = *(uint *)&this_ptr->field_0x14c;
+      uVar9 = this_ptr->scale_factor;
       local_34 = uVar9 * 4;
-      for (; (int)uVar9 < *(int *)&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x14c * -2;
+      for (; (int)uVar9 < this_ptr->framebuffer_width + this_ptr->scale_factor * -2;
           uVar9 = uVar9 + 1) {
         if ((_DAT_01323d04 < 10000) && (((uVar9 & 1) != 0 || ((local_1c & 1) != 0)))) {
           iVar7 = 0x7fffffff;

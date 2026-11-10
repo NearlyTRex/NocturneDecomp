@@ -25,21 +25,21 @@ CPatrolPoint * CPatrolPoint::ctor(CPatrolPoint *this_ptr);
 // Address: 0059c610
 CPatrolPoint * CPatrolPoint::dtor(CPatrolPoint *this_ptr,uint flags);
 
-// Original: core_patrpoin.cpp_FUN_0059c670
+// Original: core_patrpoin.cpp_CPatrolPoint_setup_FUN_0059c670
 // Address: 0059c670
-void FUN_0059c670(CWayPoint *param_1);
+void __cdecl CPatrolPoint::setup(CPatrolPoint *this_ptr);
 
-// Original: core_patrpoin.cpp_FUN_0059c680
+// Original: core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680
 // Address: 0059c680
-void FUN_0059c680(int param_1,float param_2);
+void __cdecl CPatrolPoint::process(CPatrolPoint *this_ptr,float delta_time);
 
-// Original: core_patrpoin.cpp_FUN_0059c980
+// Original: core_patrpoin.cpp_CPatrolPoint_renderOpaque_FUN_0059c980
 // Address: 0059c980
-undefined4 FUN_0059c980(void);
+int __cdecl CPatrolPoint::renderOpaque(CPatrolPoint *this_ptr);
 
-// Original: core_patrpoin.cpp_FUN_0059c9a0
+// Original: core_patrpoin.cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0
 // Address: 0059c9a0
-undefined4 FUN_0059c9a0(int param_1);
+int __cdecl CPatrolPoint::renderTransparent(CPatrolPoint *this_ptr);
 
 // Original: core_patrpoin.cpp_FUN_0059c9c0
 // Address: 0059c9c0

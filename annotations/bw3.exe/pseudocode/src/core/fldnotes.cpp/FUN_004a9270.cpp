@@ -17,7 +17,7 @@ void core_fldnotes_cpp_FUN_004a9270(int param_1)
   
   core_fldnotes_cpp_FUN_004a91b0(param_1);
   *(uint *)(param_1 + 0x14) = *(uint *)(param_1 + 0x1c);
-  iVar1 = engine_font_cpp_FUN_004b30f0(*(CBitFont **)(param_1 + 0x2c),0x6a);
+  iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(*(CBitFont **)(param_1 + 0x2c),0x6a);
   *(int *)(param_1 + 0x18) =
        *(int *)(param_1 + 0x18) + iVar1 + *(int *)(*(int *)(param_1 + 0x2c) + 0x41f8);
   iVar4 = 0;

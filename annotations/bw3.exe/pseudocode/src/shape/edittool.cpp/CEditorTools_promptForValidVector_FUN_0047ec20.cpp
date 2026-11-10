@@ -17,9 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_0047ec20(CE
     acStack_40[0] = '\0';
   }
   else {
-    FUN_005a28c0
-              (acStack_40,0x5bd095,(double)*(float *)result_ptr,
-               (double)*(float *)&result_ptr->field_0x4,(double)*(float *)&result_ptr->field_0x8);
+    _sprintf(acStack_40,(char *)0x5bd095);
   }
   while( true ) {
     iVar1 = shape_edittool_cpp_CEditorTools_showTextInputDialog_FUN_0047ecf0
@@ -33,9 +31,9 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidVector_FUN_0047ec20(CE
               (this_ptr,"Please enter a valid vector.");
   }
   if (result_ptr != &CStack_18) {
-    *(uint *)result_ptr = CStack_18._0_4_;
-    *(uint *)&result_ptr->field_0x4 = CStack_18._4_4_;
-    *(uint *)&result_ptr->field_0x8 = CStack_18._8_4_;
+    result_ptr->x = CStack_18.x;
+    result_ptr->y = CStack_18.y;
+    result_ptr->z = CStack_18.z;
   }
   return 1;
 }

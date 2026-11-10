@@ -2,18 +2,18 @@
 // Address: 004893f0
 // Address Range: [[004893f0, 00489489]]
 // Convention: unknown
-// Signature: undefined4 core_enemy_cpp_FUN_004893f0(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+// Signature: undefined4 core_enemy_cpp_FUN_004893f0(int param_1,float *param_2,undefined4 param_3,int param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_enemy_cpp_FUN_004893f0(int param_1,uint *param_2,uint param_3,int param_4)
+uint core_enemy_cpp_FUN_004893f0(int param_1,float *param_2,uint param_3,int param_4)
 
 {
   byte bVar1;
   float10 fVar2;
-  uint auStackY_1008 [1011];
+  float afStackY_1008 [1011];
   CVector3f *direction;
   int iVar3;
   EBloodType blood_type;
@@ -30,12 +30,13 @@ uint core_enemy_cpp_FUN_004893f0(int param_1,uint *param_2,uint param_3,int para
       round();
       iVar3 = (int)ROUND(fVar2);
       direction = (CVector3f *)0x0;
-      CStack_20._0_4_ = *param_2;
+      CStack_20.x = *param_2;
       iStack_14 = iVar3;
-      *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + 4) = param_2[(uint)bVar1 * -2 + 1];
-      *(uint *)((int)&CStack_20 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
+      *(float *)((int)&CStack_20 + (uint)bVar1 * -8 + 4) = param_2[(uint)bVar1 * -2 + 1];
+      *(float *)((int)&CStack_20 + (uint)bVar1 * -8 + (uint)bVar1 * -8 + 8) =
            (param_2 + (uint)bVar1 * -2 + 1)[(uint)bVar1 * -2 + 1];
-      core_gore_cpp_FUN_004ce9c0(g_CGorePtr,&CStack_20,direction,iVar3,blood_type);
+      core_gore_cpp_CGore_spawnBloodBurst_FUN_004ce9c0
+                (g_CGorePtr,&CStack_20,direction,iVar3,blood_type);
       return 1;
     }
   }

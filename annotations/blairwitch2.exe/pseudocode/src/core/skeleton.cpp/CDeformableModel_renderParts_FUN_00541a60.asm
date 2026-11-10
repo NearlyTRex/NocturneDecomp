@@ -87,7 +87,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_set.cpp_FUN_00534040
+;   core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920
@@ -193,8 +193,8 @@ section .text
     PUSH EAX                            ; 00541b8d
     MOV EBX,dword ptr [0x0061b5a8]      ; 00541b8e | g_CDemonSetPtr
     PUSH EBX                            ; 00541b94 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534040      ; 00541b95
-        ;   XREF to: 00534040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534040(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
+    CALL core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040 ; 00541b95
+        ;   XREF to: 00534040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
     ADD ESP,0x10                        ; 00541b9a
     MOV ECX,dword ptr [ESP + 0x6c]      ; 00541b9d
         ;   Label: LAB_00541b9d
@@ -679,8 +679,8 @@ section .text
     PUSH EAX                            ; 0054230f
     MOV ESI,dword ptr [0x0061b5a8]      ; 00542310 | g_CDemonSetPtr
     PUSH ESI                            ; 00542316 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534040      ; 00542317
-        ;   XREF to: 00534040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534040(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
+    CALL core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040 ; 00542317
+        ;   XREF to: 00534040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
     ADD ESP,0x10                        ; 0054231c
     MOV dword ptr [ESP + 0xf0],EBX      ; 0054231f
     CMP EBX,EDI                         ; 00542326
@@ -752,8 +752,8 @@ section .text
     PUSH ECX                            ; 005423f4
     MOV EDI,dword ptr [0x0061b5a8]      ; 005423f5 | g_CDemonSetPtr
     PUSH EDI                            ; 005423fb | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534040      ; 005423fc
-        ;   XREF to: 00534040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534040(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
+    CALL core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040 ; 005423fc
+        ;   XREF to: 00534040 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderFaceListOrEnvMap_FUN_00534040(CDemonSet * this_ptr, SInputFace * faces, int count, int flags)
     ADD ESP,0x10                        ; 00542401
     JMP 0x00541cc7                      ; 00542404
         ;   XREF to: 00541cc7 (UNCONDITIONAL_JUMP)  ; LAB_00541cc7

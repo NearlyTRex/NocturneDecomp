@@ -24,12 +24,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00556780",
-      "from_addr": "00556787",
-      "name": "sound_sndmain.cpp_FUN_00556780",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00556930",
       "from_addr": "00556937",
       "name": "sound_sndmain.cpp_FUN_00556930",
@@ -54,27 +48,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00556b40",
-      "from_addr": "00556b7a",
-      "name": "sound_sndmain.cpp_FUN_00556b40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00556c10",
-      "from_addr": "00556c1a",
-      "name": "sound_sndmain.cpp_FUN_00556c10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005567c0",
       "from_addr": "005567d2",
       "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005567c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00556780",
+      "from_addr": "00556787",
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00556780",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00556be0",
       "from_addr": "00556be7",
       "name": "sound_sndmain.cpp_killSfx_FUN_00556be0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556c10",
+      "from_addr": "00556c1a",
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00556c10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556b40",
+      "from_addr": "00556b7a",
+      "name": "sound_sndmain.cpp_setSfxUserData_FUN_00556b40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -104,7 +104,7 @@
     {
       "addr": "00558e90",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558e90"
+      "name": "sound_sndmain.cpp_lockSound_FUN_00558e90"
     }
   ],
   "globals": [
@@ -149,7 +149,7 @@
       {
         "call_addr": "00556787",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00556780",
+        "caller": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00556780",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +193,7 @@
       {
         "call_addr": "00556c1a",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00556c10",
+        "caller": "sound_sndmain.cpp_setSfxFade_FUN_00556c10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

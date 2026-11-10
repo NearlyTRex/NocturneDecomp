@@ -16,7 +16,7 @@
 ; float            Stack[0x28]:4   halo_spread
 ;
 ; XREF[2]:
-;   core_fire.cpp_FUN_004a2b70 at 004a2dcd
+;   core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70 at 004a2dcd
 ;   core_fire.cpp_FUN_004a2e20 at 004a3301
 ;
 ; Referenced Globals:

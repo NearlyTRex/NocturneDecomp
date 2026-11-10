@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CParticleBoxVTable
+;   CDemonActor_vtable g_CParticleBoxVTable
 ;   WatcomTypeInfo g_CParticleBoxTypeInfo
 ;
 ; Called Functions:

@@ -35,12 +35,12 @@
 ;   undefined4 DAT_005c4d05
 ;   undefined4 DAT_005c4d0d
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
+;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408b80
-;   core_vecdir.cpp_FUN_00576250
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;
 ; *****************************************************************************
 
@@ -78,7 +78,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 004d2ef0 | g_CDemonSetPtr
         ;   Label: LAB_004d2ef0
     MOV ESI,dword ptr [ESP + 0x70]      ; 004d2ef5
-    CMP ESI,dword ptr [EAX + 0x14f0a8]  ; 004d2ef9 | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP ESI,dword ptr [EAX + 0x14f0a8]  ; 004d2ef9 | g_CDemonSetInstance.character_count
     JGE 0x004d3024                      ; 004d2eff
         ;   XREF to: 004d3024 (CONDITIONAL_JUMP)  ; LAB_004d3024
     ADD EAX,dword ptr [ESP + 0x6c]      ; 004d2f05
@@ -158,8 +158,8 @@ section .text
     PUSH EAX                            ; 004d2fc6
     LEA ESI,[ESP + 0x4]                 ; 004d2fc7
     LEA EDI,[ESP + 0x58]                ; 004d2fcb
-    CALL core_vecdir.cpp_FUN_00576250   ; 004d2fcf
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004d2fcf
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     LEA ESI,[ESP + 0x4]                 ; 004d2fd4
     ADD ESP,0x4                         ; 004d2fd8
     MOVSD ES:EDI,ESI                    ; 004d2fdb

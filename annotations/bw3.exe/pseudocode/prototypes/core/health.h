@@ -21,33 +21,33 @@ CDemonActorType * CHealthItem::getActorType(CHealthItem *this_ptr);
 // Address: 004d1d80
 CHealthItem * __cdecl CHealthItem::ctor(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004d1df0
+// Original: core_health.cpp_CHealthItem_setup_FUN_004d1df0
 // Address: 004d1df0
-void FUN_004d1df0(CDemonActor *param_1);
+void __cdecl CHealthItem::setup(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004d1e10
+// Original: core_health.cpp_CHealthItem_process_FUN_004d1e10
 // Address: 004d1e10
-void FUN_004d1e10(int param_1,float param_2);
+void __cdecl CHealthItem::process(CHealthItem *this_ptr,float delta_time);
 
-// Original: core_health.cpp_FUN_004d1f10
+// Original: core_health.cpp_CHealthItem_renderOpaque_FUN_004d1f10
 // Address: 004d1f10
-int FUN_004d1f10(CDemonActor *param_1);
+int __cdecl CHealthItem::renderOpaque(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004d1fa0
+// Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004d1fa0
 // Address: 004d1fa0
-void FUN_004d1fa0(int param_1);
+CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_health.cpp_FUN_004d1fe0
+// Original: core_health.cpp_CHealthItem_archive_FUN_004d1fe0
 // Address: 004d1fe0
-void FUN_004d1fe0(CDemonActor *param_1);
+void __cdecl CHealthItem::archive(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004d2080
+// Original: core_health.cpp_CHealthItem_getCollisionType_FUN_004d2080
 // Address: 004d2080
-bool FUN_004d2080(undefined4 param_1,int *param_2);
+ECollisionType __cdecl CHealthItem::getCollisionType(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_health.cpp_FUN_004d2090
+// Original: core_health.cpp_CHealthItem_canPickup_FUN_004d2090
 // Address: 004d2090
-undefined4 FUN_004d2090(int param_1,CDemonActor *param_2);
+int __cdecl CHealthItem::canPickup(CHealthItem *this_ptr,CDemonActor *picker);
 
 // Original: core_health.cpp_FUN_004d20c0
 // Address: 004d20c0
@@ -61,9 +61,9 @@ void __cdecl CHealthItem::onPickup(CHealthItem *this_ptr,CDemonActor *owner);
 // Address: 004d2150
 void FUN_004d2150(void);
 
-// Original: core_health.cpp_FUN_004d2170
+// Original: core_health.cpp_CHealthItemSmall_getActorType_FUN_004d2170
 // Address: 004d2170
-undefined4 FUN_004d2170(void);
+CDemonActorType * __cdecl CHealthItemSmall::getActorType(CHealthItemSmall *this_ptr);
 
 // Original: core_health.cpp_CHealthItemSmall_ctor_FUN_004d2180
 // Address: 004d2180

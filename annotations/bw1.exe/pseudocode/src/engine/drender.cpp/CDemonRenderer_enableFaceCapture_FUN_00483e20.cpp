@@ -10,6 +10,6 @@ void __cdecl engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(CD
 
 {
   DAT_0061b4c0 = enabled;
-  *(int *)(this_ptr + 0x10) = enabled;
+  this_ptr->face_capture_enabled = enabled;
   return;
 }

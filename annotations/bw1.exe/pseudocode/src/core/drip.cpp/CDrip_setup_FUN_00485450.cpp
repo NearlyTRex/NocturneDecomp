@@ -9,21 +9,20 @@
 void __cdecl core_drip_cpp_CDrip_setup_FUN_00485450(CDrip *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-  *(uint *)&this_ptr->field_0x2ec = 0;
-  *(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x2f8;
-  *(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x2fc;
-  *(uint *)&this_ptr->field_0x28 = *(uint *)&this_ptr->field_0x300;
-  uVar1 = core_actor_cpp_FUN_0040cc00
-                    (*(uint *)&this_ptr->field_0x2e0,*(uint *)&this_ptr->field_0x2e4);
-  *(uint *)&this_ptr->field_0x2dc = uVar1;
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&this_ptr->model);
+  this_ptr->is_ground_cached = 0;
+  (this_ptr->base).location.position.x = (this_ptr->home_pos).x;
+  (this_ptr->base).location.position.y = (this_ptr->home_pos).y;
+  (this_ptr->base).location.position.z = (this_ptr->home_pos).z;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00
+                    (this_ptr->min_auto_drip_time,this_ptr->max_auto_drip_time);
+  this_ptr->drip_timer = fVar1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             ((CKeyFramedModelInstance *)0x1beee04,"stalrock.kfm");
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
             ((CKeyFramedModelInstance *)0x1beee04);
-  *(uint *)&this_ptr->field_0x338 = 0;
+  this_ptr->is_visible = 0;
   return;
 }

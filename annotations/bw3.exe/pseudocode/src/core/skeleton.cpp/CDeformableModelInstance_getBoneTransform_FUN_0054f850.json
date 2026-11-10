@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 283,
+    "complexity_score": 233,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 58,
-    "suspect_count": 20,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -34,7 +34,7 @@
     {
       "addr": "0056c140",
       "from_addr": "0056c52c",
-      "name": "core_thehand.cpp_FUN_0056c140",
+      "name": "core_thehand.cpp_CTheHand_process_FUN_0056c140",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -97,7 +97,7 @@
       {
         "call_addr": "0056c52c",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_FUN_0056c140",
+        "caller": "core_thehand.cpp_CTheHand_process_FUN_0056c140",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -226,14 +226,6 @@
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "pSVar1 = *(SPose **)&pCVar2->field_0x1de78;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
       "line": 35,
       "match": "(uint *)((int)local_14",
@@ -259,34 +251,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "this_ptr = (CDeformableModelInstance *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 46,
       "match": "field_0xe80",
       "severity": "mild",
       "text": "puVar6 = (uint *)&local_10->field_0xe80;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "local_10 = (CDeformableModelInstance *)&local_10->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_14 = (CDeformableModelInstance *)&local_14->field_0x10;",
       "type": "unnamed_field"
     },
     {
@@ -322,27 +290,19 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&this_ptr->owner`). Replace `this_ptr->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `this_ptr` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `this_ptr->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 44,
-      "match": "this_ptr = (T *)&this_ptr->FIELD",
+      "match": "this_ptr = (T *)&(this_ptr->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "this_ptr = (CDeformableModelInstance *)&this_ptr->field_0x4;",
+      "text": "this_ptr = (CDeformableModelInstance *)&(this_ptr->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_10->owner`). Replace `local_10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 54,
-      "match": "local_10 = (T *)&local_10->FIELD",
-      "severity": "moderate",
-      "text": "local_10 = (CDeformableModelInstance *)&local_10->field_0x30;",
-      "type": "shadow_pointer_walk"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_14->owner`). Replace `local_14->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 56,
-      "match": "local_14 = (T *)&local_14->FIELD",
+      "match": "local_14 = (T *)&(local_14->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "local_14 = (CDeformableModelInstance *)&local_14->field_0x10;",
+      "text": "local_14 = (CDeformableModelInstance *)&(local_14->base).tween_speed;",
       "type": "shadow_pointer_walk"
     },
     {

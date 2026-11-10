@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[11]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0d3a
-;   core_boneguy.cpp_FUN_004179b0 at 00417e0f
-;   core_boneguy.cpp_FUN_00419b40 at 00419f7d
-;   core_carved.cpp_FUN_00425da0 at 0042630e
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0d3a
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419f7d
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417e0f
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 0042630e
 ;   core_demnfolk.cpp_FUN_00455080 at 004555fe
 ;   core_event.cpp_FUN_0048c2e0 at 0048cefc
 ;   core_hero.cpp_FUN_004d4160 at 004d4180
-;   core_styldemo.cpp_FUN_0059e600 at 0059e766
-;   core_zombie.cpp_FUN_00588ee0 at 0058943a
-;   core_zombprie.cpp_FUN_0058d960 at 0058dbcb
+;   core_styldemo.cpp_CStylerDemon_process_FUN_0059e600 at 0059e766
+;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058943a
+;   core_zombiepriest.cpp_FUN_0058d960 at 0058dbcb
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -9,9 +9,9 @@
 void __cdecl core_setcolid_cpp_CDemonSet_init_FUN_00537e00(CDemonSet *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x15f6a8 = 0;
-  *(uint *)&this_ptr->field_0x15f6ac = 0;
-  *(uint *)&this_ptr->field_0x15f6f0 = 0;
-  *(uint *)&this_ptr->field_0x15f694 = 0;
+  this_ptr->ignore_list_count = 0;
+  this_ptr->collision_flag = 0;
+  this_ptr->skip_exact_collisions = 0;
+  *(uint *)&this_ptr->ray_query = 0;
   return;
 }

@@ -45,13 +45,13 @@ void FUN_004f6bb0(void);
 // Address: 004f6e90
 bool __cdecl loadItem(int param_1,undefined4 param_2);
 
-// Original: core_inv.cpp_FUN_004f6ed0
+// Original: core_inv.cpp_CInventory_ctor_FUN_004f6ed0
 // Address: 004f6ed0
-CInventory * __cdecl FUN_004f6ed0(CInventory *this_ptr);
+CInventory * __cdecl CInventory::ctor(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004f6f80
+// Original: core_inv.cpp_CInventory_dtor_FUN_004f6f80
 // Address: 004f6f80
-CInventory * __cdecl FUN_004f6f80(CInventory *this_ptr,uint flags);
+CInventory * __cdecl CInventory::dtor(CInventory *this_ptr,uint flags);
 
 // Original: core_inv.cpp_CInventory_clear_FUN_004f6fa0
 // Address: 004f6fa0
@@ -97,25 +97,25 @@ bool FUN_004f8ce0(CInventory *param_1,char *param_2);
 // Address: 004f8d00
 void __cdecl FUN_004f8d00(CInventory *this_ptr,CDemonActor *item_to_remove,int should_delete_actor);
 
-// Original: core_inv.cpp_FUN_004f8dc0
+// Original: core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
 // Address: 004f8dc0
-void __cdecl FUN_004f8dc0(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction);
+void __cdecl CInventory::selectWeapon(CInventory *this_ptr,CDemonActor *specific_weapon,int weapon_category,int direction);
 
-// Original: core_inv.cpp_FUN_004f8ec0
+// Original: core_inv.cpp_CInventory_selectItem_FUN_004f8ec0
 // Address: 004f8ec0
-void __cdecl FUN_004f8ec0(CInventory *this_ptr,int direction);
+void __cdecl CInventory::selectItem(CInventory *this_ptr,int direction);
 
-// Original: core_inv.cpp_FUN_004f8fe0
+// Original: core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0
 // Address: 004f8fe0
-void __cdecl FUN_004f8fe0(CInventory *this_ptr,int direction);
+void __cdecl CInventory::cycleWeaponOfSameClass(CInventory *this_ptr,int direction);
 
-// Original: core_inv.cpp_FUN_004f90d0
+// Original: core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0
 // Address: 004f90d0
-void __cdecl FUN_004f90d0(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);
+void __cdecl CInventory::renderItemModel(CInventory *this_ptr,CDemonActor *item,int viewport_x,int viewport_y,int viewport_size,float rotation_y,int alpha);
 
-// Original: core_inv.cpp_FUN_004f95b0
+// Original: core_inv.cpp_CInventory_save_FUN_004f95b0
 // Address: 004f95b0
-void __cdecl FUN_004f95b0(CInventory *this_ptr,_FILE *file_handle);
+void __cdecl CInventory::save(CInventory *this_ptr,_FILE *file_handle);
 
 // Original: core_inv.cpp_CInventory_saveItems_FUN_004f9750
 // Address: 004f9750
@@ -125,9 +125,9 @@ void __cdecl CInventory::saveItems(CInventory *this_ptr,_FILE *file_handle);
 // Address: 004f97a0
 void __cdecl CInventory::load(CInventory *this_ptr,_FILE *file_handle);
 
-// Original: core_inv.cpp_FUN_004f9ae0
+// Original: core_inv.cpp_CInventory_loadItems_FUN_004f9ae0
 // Address: 004f9ae0
-void __cdecl FUN_004f9ae0(CInventory *this_ptr);
+void __cdecl CInventory::loadItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_FUN_004f9b20
 // Address: 004f9b20
@@ -137,9 +137,9 @@ void FUN_004f9b20(int param_1);
 // Address: 004f9bd0
 int __cdecl CInventory::select(CInventory *this_ptr,CDemonActor *actor_ptr);
 
-// Original: core_inv.cpp_FUN_004f9ed0
+// Original: core_inv.cpp_CInventory_getActiveLightGun_FUN_004f9ed0
 // Address: 004f9ed0
-CLightGun * __cdecl FUN_004f9ed0(CInventory *this_ptr);
+CLightGun * __cdecl CInventory::getActiveLightGun(CInventory *this_ptr);
 
 // Original: core_inv.cpp_FUN_004f9ef0
 // Address: 004f9ef0
@@ -149,29 +149,29 @@ int FUN_004f9ef0(int param_1);
 // Address: 004f9f10
 void FUN_004f9f10(CInventory *param_1);
 
-// Original: core_inv.cpp_FUN_004fa470
+// Original: core_inv.cpp_CInventory_calculateTotalBatteryCharge_FUN_004fa470
 // Address: 004fa470
-float __cdecl FUN_004fa470(CInventory *this_ptr,float max_charge);
+float __cdecl CInventory::calculateTotalBatteryCharge(CInventory *this_ptr,float max_charge);
 
-// Original: core_inv.cpp_FUN_004fa4e0
+// Original: core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
 // Address: 004fa4e0
-void __cdecl FUN_004fa4e0(CInventory *this_ptr,int ammo_type);
+void __cdecl CInventory::updateSelectedWeaponAmmoDisplay(CInventory *this_ptr,int ammo_type);
 
 // Original: core_inv.cpp_FUN_004fa540
 // Address: 004fa540
 undefined4 FUN_004fa540(undefined4 param_1,CDemonActor *param_2,int param_3);
 
-// Original: core_inv.cpp_FUN_004fa6c0
+// Original: core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004fa6c0
 // Address: 004fa6c0
-void __cdecl FUN_004fa6c0(CInventory *this_ptr,int reset_both);
+void __cdecl CInventory::resetWeaponSwitchTimers(CInventory *this_ptr,int reset_both);
 
-// Original: core_inv.cpp_FUN_004fa710
+// Original: core_inv.cpp_CInventory_resetItemSwitchTimers_FUN_004fa710
 // Address: 004fa710
-void __cdecl FUN_004fa710(CInventory *this_ptr);
+void __cdecl CInventory::resetItemSwitchTimers(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004fa740
+// Original: core_inv.cpp_CInventory_resetInventoryDisplayTimer_FUN_004fa740
 // Address: 004fa740
-void __cdecl FUN_004fa740(CInventory *this_ptr);
+void __cdecl CInventory::resetInventoryDisplayTimer(CInventory *this_ptr);
 
 // Original: core_inv.cpp_drawWeaponIconBackground_FUN_004fa770
 // Address: 004fa770
@@ -181,9 +181,9 @@ void drawWeaponIconBackground(int param_1,int param_2,int param_3,int param_4,in
 // Address: 004fa930
 void __cdecl drawItemIconBackground(int x1,int y1,int x2,int y2,int alpha);
 
-// Original: core_inv.cpp_FUN_004faaf0
+// Original: core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0
 // Address: 004faaf0
-void __cdecl FUN_004faaf0(CInventory *this_ptr);
+void __cdecl CInventory::renderSelectedItems(CInventory *this_ptr);
 
 // Original: core_inv.cpp_FUN_004fae10
 // Address: 004fae10
@@ -197,10 +197,10 @@ int __cdecl CInventory::checkHasMatchingKey(CInventory *this_ptr,uint key_mask,i
 // Address: 004fc310
 void __cdecl CInventory::removeMatchingKeys(CInventory *this_ptr,uint key_mask);
 
-// Original: core_inv.cpp_FUN_004fc370
+// Original: core_inv.cpp_CInventory_toggleDetailView_FUN_004fc370
 // Address: 004fc370
-void __cdecl FUN_004fc370(CInventory *this_ptr);
+void __cdecl CInventory::toggleDetailView(CInventory *this_ptr);
 
-// Original: core_inv.cpp_FUN_004fc3e0
+// Original: core_inv.cpp_CInventory_autoUseHealthItem_FUN_004fc3e0
 // Address: 004fc3e0
-void __cdecl FUN_004fc3e0(CInventory *this_ptr);
+void __cdecl CInventory::autoUseHealthItem(CInventory *this_ptr);

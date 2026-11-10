@@ -9,7 +9,7 @@
 ; XREF[4]:
 ;   sound_sndmain.cpp_CSfxOptions_ctor_FUN_00577460 at 00577466
 ;   sound_sndmain.cpp_CSfxSlot_ctor_FUN_00577490 at 00577496
-;   sound_sndmain.cpp_FUN_00572a90 at 00572aa8
+;   sound_sndmain.cpp_resetCurrentSfxOptions_FUN_00572a90 at 00572aa8
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20 at 00572d64
 ;
 ; Referenced Globals:

@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;   unkafter_texlist.cpp_FUN_00569550
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
 
     PUSH 0x1800c                        ; 0056a960
         ;   Label: engine_texture.cpp_FUN_0056a960
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0056a965
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 0056a965
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0056a96a
     TEST EAX,EAX                        ; 0056a96d
     JNZ 0x0056a97b                      ; 0056a96f

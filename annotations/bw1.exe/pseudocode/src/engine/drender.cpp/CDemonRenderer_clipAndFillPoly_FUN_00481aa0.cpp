@@ -11,13 +11,14 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(CDemonRenderer *this_ptr,int vertex_count,int *vertex_indices)
 
 {
-  if (*(int *)(this_ptr + 8) != 0) {
+  if (this_ptr->projection_mode != 0) {
     _DAT_01d1d400 = "..\\engine\\drender.cpp";
     _DAT_01d1d404 = 0xad;
     core_main_c_FUN_005030e0("CDemonRenderer::clipAndFillPoly - Bad projection mode");
   }
-  if (*(int *)(this_ptr + 0x10) == 0) {
-    if (((*(int *)(this_ptr + 4) == 0) || ((DAT_01c51d14 & 1) != 0)) && ((DAT_01c51d14 & 5) != 0)) {
+  if (this_ptr->face_capture_enabled == 0) {
+    if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&
+       ((DAT_01c51d14 & 5) != 0)) {
       core_dpart_cpp_FUN_0047a480(vertex_indices,vertex_count);
     }
     else {
@@ -25,7 +26,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0(CDem
     }
   }
   else {
-    if (((*(int *)(this_ptr + 4) == 0) || ((DAT_01c51d14 & 1) != 0)) && ((DAT_01c51d14 & 5) != 0)) {
+    if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&
+       ((DAT_01c51d14 & 5) != 0)) {
       if ((DAT_01c51d15 & 2) == 0) {
         engine_clipper_c_clipAndRasterize_FUN_0043cbf0(vertex_count,vertex_indices);
         return;

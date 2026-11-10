@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_menu.cpp_FUN_004ee1a0 at 004ee35a
-;   core_menu.cpp_FUN_004ee3f0 at 004ee4a0
+;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee4a0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_blairwitch_00_005df306
@@ -14,7 +14,7 @@
 ;   CGame* g_CGamePtr = 01cb6900
 ;   void* PTR_s_blairwitch_00_00618340 = 005df306
 ;   undefined1* PTR_s_blairwitch_01_00618344 = 005df314
-;   undefined4 g_CGameInstance.field560_0x230
+;   undefined4 g_CGameInstance.head_of_horror_cheat
 ;
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
@@ -31,7 +31,7 @@ section .text
     JNZ 0x0050243a                      ; 005023e9
         ;   XREF to: 0050243a (CONDITIONAL_JUMP)  ; LAB_0050243a
     MOV EBX,dword ptr [0x00616494]      ; 005023eb | g_CGamePtr
-    CMP dword ptr [EBX + 0x230],0x29a   ; 005023f1 | g_CGameInstance.field560_0x230
+    CMP dword ptr [EBX + 0x230],0x29a   ; 005023f1 | g_CGameInstance.head_of_horror_cheat
     JZ 0x0050243c                       ; 005023fb
         ;   XREF to: 0050243c (CONDITIONAL_JUMP)  ; LAB_0050243c
     PUSH EDI                            ; 005023fd
@@ -60,7 +60,7 @@ section .text
     POP EBX                             ; 0050243a
         ;   Label: LAB_0050243a
     RET                                 ; 0050243b
-    MOV dword ptr [EBX + 0x230],EDX     ; 0050243c | g_CGameInstance.field560_0x230
+    MOV dword ptr [EBX + 0x230],EDX     ; 0050243c | g_CGameInstance.head_of_horror_cheat
         ;   Label: LAB_0050243c
     JMP 0x005023fd                      ; 00502442
         ;   XREF to: 005023fd (UNCONDITIONAL_JUMP)  ; LAB_005023fd

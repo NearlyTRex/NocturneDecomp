@@ -17,21 +17,9 @@
   },
   "cross_references": [
     {
-      "addr": "0040b870",
-      "from_addr": "0040b8d5",
-      "name": "core_actor.cpp_FUN_0040b870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040b960",
-      "from_addr": "0040b9ed",
-      "name": "core_actor.cpp_FUN_0040b960",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0040bbf0",
       "from_addr": "0040bc55",
-      "name": "core_actor.cpp_FUN_0040bbf0",
+      "name": "core_actor.cpp_archiveBox_FUN_0040bbf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -65,9 +53,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0040b870",
+      "from_addr": "0040b8d5",
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0040b260",
       "from_addr": "0040b2b1",
       "name": "core_actor.cpp_archiveOrientation_FUN_0040b260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040b960",
+      "from_addr": "0040b9ed",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -111,7 +111,7 @@
     {
       "addr": "00408830",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408830"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830"
     },
     {
       "addr": "005030e0",
@@ -292,7 +292,7 @@
       {
         "call_addr": "0040b8d5",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040b870",
+        "caller": "core_actor.cpp_archiveMotionState_FUN_0040b870",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -385,7 +385,7 @@
       "line": 16,
       "match": "DAT_007c303c",
       "severity": "mild",
-      "text": "pcVar2 = core_actor_cpp_FUN_00408830(DAT_007c303c);",
+      "text": "pcVar2 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(DAT_007c303c);",
       "type": "undefined_data"
     },
     {

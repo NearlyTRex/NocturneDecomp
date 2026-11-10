@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004e56d0 at 004e5775
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0 at 004e5775
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

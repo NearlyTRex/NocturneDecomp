@@ -9,7 +9,7 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004bd8ee at 004bd904
-;   core_inv.cpp_FUN_004dbb40 at 004dbb68
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 at 004dbb68
 ;   core_inv.cpp_FUN_004dbd7e at 004dbd8e
 ;   core_inv.cpp_FUN_004dcdb0 at 004dcf95
 ;

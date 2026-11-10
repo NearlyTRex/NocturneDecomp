@@ -7,7 +7,7 @@
 ; CChain *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_chain.cpp_FUN_005b46f0 at 005b4703
+;   core_chain.cpp_factoryFuncChain_FUN_005b46f0 at 005b4703
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790

@@ -12,7 +12,7 @@
 ;   core_fire.cpp_FUN_004a25f0 at 004a2759
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 00497a7e
     LEA EAX,[EBX + 0x1c]                ; 00497a7f
     PUSH EAX                            ; 00497a82
-    CALL core_dirmat.cpp_FUN_0045b550   ; 00497a83
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 00497a83
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV dword ptr [EBX],0x0             ; 00497a88
     ADD ESP,0x8                         ; 00497a8e
     MOV dword ptr [EBX + 0x258],0x0     ; 00497a91

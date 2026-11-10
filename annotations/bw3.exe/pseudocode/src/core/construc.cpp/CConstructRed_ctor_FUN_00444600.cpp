@@ -16,7 +16,7 @@ CConstructRed * core_construc_cpp_CConstructRed_ctor_FUN_00444600(CConstructRed 
   float10 fVar3;
   
   pCVar1 = core_constrct_cpp_CConstruct_ctor_FUN_00442420((CConstruct *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CConstruct_RedVTable;
+  *(CConstruct_full_vtable **)&pCVar1->field_0x154 = &g_CConstructRedVTable;
   *(uint *)&pCVar1->field_0x2538 = 0x42820000;
   *(uint *)&pCVar1->field_0xce5c = 0x41a00000;
   *(uint *)&pCVar1->field_0xce60 = 0x41200000;

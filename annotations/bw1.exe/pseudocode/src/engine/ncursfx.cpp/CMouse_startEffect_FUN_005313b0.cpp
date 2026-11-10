@@ -11,8 +11,8 @@
 int __cdecl engine_ncursfx_cpp_CMouse_startEffect_FUN_005313b0(CMouse *this_ptr,uint button_mask)
 
 {
-  if (((_DAT_01c43544 & button_mask) != 0) && (*(int *)&this_ptr->field_0x25c == 0)) {
-    *(uint *)&this_ptr->field_0x25c = 1;
+  if (((_DAT_01c43544 & button_mask) != 0) && (this_ptr->effect_mode == 0)) {
+    this_ptr->effect_mode = 1;
     return 0;
   }
   return 0;

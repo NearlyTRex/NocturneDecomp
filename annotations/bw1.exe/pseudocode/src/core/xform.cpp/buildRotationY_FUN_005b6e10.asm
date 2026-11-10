@@ -20,10 +20,10 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
-;   core_charactr.cpp_FUN_00430440 at 004306d5
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 004306d5
 ;   core_doc.cpp_FUN_0046f740 at 0046f861
-;   core_gabriela.cpp_FUN_004c91b0 at 004c92a0
-;   core_gabriela.cpp_FUN_004cb1e0 at 004cb539
+;   core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0 at 004cb539
+;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0 at 004c92a0
 ;   core_stranger.cpp_FUN_0058afe0 at 0058b105
 ;
 ; *****************************************************************************

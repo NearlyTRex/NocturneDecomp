@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   crt_string.c__stricmp_FUN_005b8130
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
 ;
@@ -77,8 +77,8 @@ section .text
     PUSH 0x5d5aab                       ; 004a25b3
     LEA EAX,[ESP + 0x8]                 ; 004a25b8
     PUSH EAX                            ; 004a25bc
-    CALL crt_unknown.c_FUN_005b7790     ; 004a25bd
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a25bd
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a25c2
     PUSH 0x2f                           ; 004a25c5
     PUSH 0x23                           ; 004a25c7

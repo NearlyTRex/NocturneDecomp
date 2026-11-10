@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 87,
-    "complexity_score": 139,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 29,
-    "suspect_count": 10,
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [],
   "function": {
@@ -163,84 +162,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x158,\"model name\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 10,
+      "line": 9,
       "match": "DAT_005c47cc",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2d8,&DAT_005c47cc);",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->fps,&DAT_005c47cc);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2d8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2d8,&DAT_005c47cc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2e0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2e0 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2e0,\"graveState\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2d4,\"curFrame\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x2e4,\"hideOnFirstFrame\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2e8,\"startCondition\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x34c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x34c,\"startSound\");",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

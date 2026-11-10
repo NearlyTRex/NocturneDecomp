@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 113,
+    "complexity_score": 108,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 53,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 172
+    "total_lines": 167
   },
   "cross_references": [
     {
       "addr": "004dd670",
       "from_addr": "004dd7aa",
-      "name": "core_inv.cpp_FUN_004dd670",
+      "name": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -59,9 +59,9 @@
   "globals": [
     {
       "addr": "00600000",
-      "name": "PTR_core_actor.cpp_FUN_00409e40_00600000",
-      "type": "void*",
-      "value": "00409e40"
+      "name": "g_CSimpleCrossVTable._ub.processActionButton",
+      "type": "undefined4",
+      "value": null
     },
     {
       "addr": "0060b280",
@@ -88,7 +88,7 @@
       {
         "call_addr": "004dd7aa",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd670",
+        "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -99,7 +99,7 @@
       {
         "call_addr": "004dd8d4",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dd670",
+        "caller": "core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -286,7 +286,7 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 17,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00617da4);",
@@ -294,7 +294,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 22,
+      "line": 17,
       "match": "DAT_00617da4",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&DAT_00617da4);",
@@ -302,7 +302,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 23,
+      "line": 18,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,alpha);",
@@ -310,7 +310,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 19,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "this_ptr = DAT_0060b280;",
@@ -318,10 +318,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 20,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_0060b280 + 0x10) = x1 << 0x10;",
+      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 0x10) = x1 << 0x10;",
       "type": "undefined_data"
     }
   ]

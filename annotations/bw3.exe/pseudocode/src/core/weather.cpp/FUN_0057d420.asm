@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_storm.cpp_FUN_00568c10 at 00568c41
+;   core_storm.cpp_CStorm_setup_FUN_00568c10 at 00568c41
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

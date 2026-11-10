@@ -6,6 +6,7 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00510a80(CMimic *this_ptr,SCollisionInfo *collision_info)
@@ -14,7 +15,7 @@ ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00510a80(CMimi
   float fVar1;
   SMotion *pSVar2;
   
-  *(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;
+  *(float *)&collision_info->field_0x18 = (this_ptr->base).base.model.bounding_box.max.y;
   *(uint *)&collision_info->field_0x1c = 0x3f800000;
   if (*(int *)collision_info == 1) {
     *(uint *)&collision_info->field_0x14 = 0xbdcccccd;
@@ -26,7 +27,7 @@ ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_00510a80(CMimi
     *(uint *)&collision_info->field_0x14 = 0x40000000;
   }
   pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                     ((CMotionController *)&this_ptr->field_0x158);
+                     (&(this_ptr->base).base.model.base);
   if (*(int *)(pSVar2 + 0x24) == 0xc) {
     return COLLISION_TYPE_NONE;
   }

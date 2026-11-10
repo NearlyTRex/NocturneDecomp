@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047ecf0
 ;
@@ -63,8 +63,8 @@ section .text
     PUSH 0x5bd095                       ; 0047ec76
     LEA EAX,[ESP + 0x1c]                ; 0047ec7b
     PUSH EAX                            ; 0047ec7f
-    CALL crt_unknown.c_FUN_005a28c0     ; 0047ec80
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0047ec80
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x20                        ; 0047ec85
     JMP 0x0047ec3e                      ; 0047ec88
         ;   XREF to: 0047ec3e (UNCONDITIONAL_JUMP)  ; LAB_0047ec3e

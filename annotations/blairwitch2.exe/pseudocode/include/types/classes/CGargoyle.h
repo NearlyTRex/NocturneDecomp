@@ -2,15 +2,28 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CGargoyle
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b54 (68436 bytes)
 #pragma pack(push, 1)
 typedef struct CGargoyle {
-    char field_0[68436]; // 0x0
+    CEnemy base; // 0x0
+    int part_indices[12]; // 0x10af8
+    int stone_red; // 0x10b28
+    int stone_green; // 0x10b2c
+    int stone_blue; // 0x10b30
+    struct CDemonActor* home_base; // 0x10b34
+    uint sfx_handles[2]; // 0x10b38
+    CVector3i target_scale; // 0x10b40
+    int returning_home; // 0x10b4c
+    float petrify_timer; // 0x10b50
 } CGargoyle;
 #pragma pack(pop)
 

@@ -9,10 +9,10 @@
 void cockpit_pkbitmap_cpp_FUN_00516200(CPackedBitmap *param_1)
 
 {
-  if (*(int *)&param_1->field_0x14 != 0) {
-    FUN_005b86a0(*(int *)&param_1->field_0x14);
+  if (param_1->packed_data != (ushort *)0x0) {
+    FUN_005b86a0(param_1->packed_data);
   }
-  FUN_005b7fce(*(void **)&param_1->field_0x20);
+  FUN_005b7fce(param_1->row_offsets);
   cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_005161d0(param_1);
   return;
 }

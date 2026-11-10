@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 109,
+    "complexity_score": 29,
     "cross_reference_count": 39,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 8,
+    "suspect_count": 1,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 50
@@ -20,55 +18,55 @@
     {
       "addr": "00408a40",
       "from_addr": "00408a66",
-      "name": "core_actor.cpp_FUN_00408a40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00409f60",
-      "from_addr": "0040a697",
-      "name": "core_actor.cpp_FUN_00409f60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0040c8e0",
-      "from_addr": "0040c93e",
-      "name": "core_actor.cpp_FUN_0040c8e0",
+      "name": "core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0040c990",
       "from_addr": "0040ca0b",
-      "name": "core_actor.cpp_FUN_0040c990",
+      "name": "core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0040c8e0",
+      "from_addr": "0040c93e",
+      "name": "core_actor.cpp_CDemonActor_processFootstep_FUN_0040c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00409f60",
+      "from_addr": "0040a697",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00410490",
       "from_addr": "00410768",
-      "name": "core_blundrbs.cpp_FUN_00410490",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004179b0",
-      "from_addr": "00417f1f",
-      "name": "core_boneguy.cpp_FUN_004179b0",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00419b40",
       "from_addr": "0041a077",
-      "name": "core_boneguy.cpp_FUN_00419b40",
+      "name": "core_boneguy.cpp_CBaalSkel_process_FUN_00419b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004179b0",
+      "from_addr": "00417f1f",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004179b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00424550",
       "from_addr": "00424790",
-      "name": "core_burncrss.cpp_FUN_00424550",
+      "name": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00425da0",
       "from_addr": "00426a16",
-      "name": "core_carved.cpp_FUN_00425da0",
+      "name": "core_carved.cpp_CCarved_process_FUN_00425da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,7 +84,7 @@
     {
       "addr": "00445130",
       "from_addr": "0044528b",
-      "name": "core_cow.cpp_FUN_00445130",
+      "name": "core_cow.cpp_CZombieCow_process_FUN_00445130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -98,25 +96,25 @@
     {
       "addr": "004628b0",
       "from_addr": "00462a62",
-      "name": "core_dog.cpp_FUN_004628b0",
+      "name": "core_dog.cpp_CZombieDog_process_FUN_004628b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486d40",
       "from_addr": "0048700b",
-      "name": "core_elephant.cpp_FUN_00486d40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004889b0",
       "from_addr": "00488a00",
-      "name": "core_emitter.cpp_FUN_004889b0",
+      "name": "core_emitter.cpp_CEmitter_renderOpaque_FUN_004889b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048b020",
       "from_addr": "0048b22f",
-      "name": "core_exorcism.cpp_FUN_0048b020",
+      "name": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -128,7 +126,7 @@
     {
       "addr": "004ae850",
       "from_addr": "004aea4c",
-      "name": "core_flintlck.cpp_FUN_004ae850",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -140,19 +138,19 @@
     {
       "addr": "004c6eb0",
       "from_addr": "004c7079",
-      "name": "core_ghoul.cpp_FUN_004c6eb0",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d0fc0",
       "from_addr": "004d11aa",
-      "name": "core_gun.cpp_FUN_004d0fc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00590010",
       "from_addr": "005909e4",
-      "name": "core_kedward.cpp_FUN_00590010",
+      "name": "core_kedward.cpp_CKedward_process_FUN_00590010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,15 +160,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00521880",
-      "from_addr": "00521c1d",
-      "name": "core_prye.cpp_FUN_00521880",
+      "addr": "005220d0",
+      "from_addr": "00522176",
+      "name": "core_prye.cpp_CPrye_renderOpaque_FUN_005220d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005220d0",
-      "from_addr": "00522176",
-      "name": "core_prye.cpp_FUN_005220d0",
+      "addr": "00521880",
+      "from_addr": "00521c1d",
+      "name": "core_prye.cpp_FUN_00521880",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -188,7 +186,7 @@
     {
       "addr": "00527d70",
       "from_addr": "00527f5d",
-      "name": "core_rifle.cpp_FUN_00527d70",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -200,31 +198,31 @@
     {
       "addr": "00546400",
       "from_addr": "005465e3",
-      "name": "core_shotgun.cpp_FUN_00546400",
+      "name": "core_shotgun.cpp_CShadowsc_process_FUN_00546400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00594000",
       "from_addr": "0059434d",
-      "name": "core_tawiscar.cpp_FUN_00594000",
+      "name": "core_tawiscara.cpp_FUN_00594000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056b410",
       "from_addr": "0056b640",
-      "name": "core_tommygun.cpp_FUN_0056b410",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057bb60",
       "from_addr": "0057bc50",
-      "name": "core_weapon.cpp_FUN_0057bb60",
+      "name": "core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057d720",
       "from_addr": "0057da6d",
-      "name": "core_werewolf.cpp_FUN_0057d720",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_0057d720",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -236,13 +234,13 @@
     {
       "addr": "00588ee0",
       "from_addr": "0058ae0a",
-      "name": "core_zombie.cpp_FUN_00588ee0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058d960",
       "from_addr": "0058dcc6",
-      "name": "core_zombprie.cpp_FUN_0058d960",
+      "name": "core_zombiepriest.cpp_FUN_0058d960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -391,7 +389,7 @@
       {
         "call_addr": "00417f1f",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004179b0",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004179b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -474,62 +472,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x15f6ac",
-      "severity": "mild",
-      "text": "if ((actor != (CDemonActor *)0x0) && (-1 < *(int *)&this_ptr->field_0x15f6ac)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x15f6ac",
-      "severity": "mild",
-      "text": "if (9 < *(int *)&this_ptr->field_0x15f6ac) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 13,
-      "match": "*(CDemonActor **)(&this_ptr->field_0x15f6b4",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)(&this_ptr->field_0x15f6b4 + *(int *)&this_ptr->field_0x15f6ac * 4) = actor;",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x15f6b4",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(&this_ptr->field_0x15f6b4 + *(int *)&this_ptr->field_0x15f6ac * 4) = actor;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x15f6ac",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(&this_ptr->field_0x15f6b4 + *(int *)&this_ptr->field_0x15f6ac * 4) = actor;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x15f6ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f6ac = *(int *)&this_ptr->field_0x15f6ac + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x15f6ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f6ac = *(int *)&this_ptr->field_0x15f6ac + 1;",
-      "type": "unnamed_field"
     }
   ]
 }

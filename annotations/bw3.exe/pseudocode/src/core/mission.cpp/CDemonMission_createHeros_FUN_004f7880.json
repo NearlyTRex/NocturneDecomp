@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 183,
+    "complexity_score": 153,
     "cross_reference_count": 3,
     "function_call_count": 5,
     "global_count": 15,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 10,
+    "suspect_count": 7,
     "suspect_types": [
       "suspicious_cast",
       "unnamed_field",
@@ -52,7 +52,7 @@
     {
       "addr": "0040c790",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c790"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
     },
     {
       "addr": "004e4330",
@@ -108,13 +108,13 @@
     },
     {
       "addr": "01d213e4",
-      "name": "g_CGameInstance.field216_0xd8",
+      "name": "g_CGameInstance.field168_0xd8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d213e8",
-      "name": "g_CGameInstance.field220_0xdc",
+      "name": "g_CGameInstance.field172_0xdc",
       "type": "undefined4",
       "value": null
     },
@@ -150,19 +150,19 @@
     },
     {
       "addr": "01da630c",
-      "name": "g_CNetGameInstance.field28_0x1c",
+      "name": "g_CNetGameInstance.player_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01da6328",
-      "name": "g_CNetGameInstance.field56_0x38",
+      "name": "g_CNetGameInstance.players+0x18",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01da6414",
-      "name": "g_CNetGameInstance.field292_0x124",
+      "name": "g_CNetGameInstance.local_player_index",
       "type": "undefined4",
       "value": null
     }
@@ -300,42 +300,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "_DAT_01d5ba00 = *(int *)&g_CNetGamePtr->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 43,
-      "match": "field_0x34",
+      "match": "field_0x14",
       "severity": "mild",
-      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),",
+      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->players[0].field_0x14 + iVar3),",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 51,
-      "match": "field_0x38",
+      "match": "field_0x18",
       "severity": "mild",
-      "text": "*(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "_DAT_01d5ba14 = *(int *)&g_CNetGamePtr->field_0x124;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "actor_ptr = *(CDemonActor **)&actor_ptr->field_0x14c;",
+      "text": "*(uint *)(&g_CNetGamePtr->players[0].field_0x18 + iVar3);",
       "type": "unnamed_field"
     },
     {
@@ -343,7 +319,7 @@
       "line": 43,
       "match": "g_CNetGamePtr",
       "severity": "moderate",
-      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),",
+      "text": "(this_ptr,iVar4,*(int *)(&g_CNetGamePtr->players[0].field_0x14 + iVar3),",
       "type": "suspicious_cast"
     },
     {
@@ -351,7 +327,7 @@
       "line": 51,
       "match": "g_CNetGamePtr",
       "severity": "moderate",
-      "text": "*(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);",
+      "text": "*(uint *)(&g_CNetGamePtr->players[0].field_0x18 + iVar3);",
       "type": "suspicious_cast"
     }
   ]

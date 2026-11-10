@@ -20,9 +20,9 @@ CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr
   
   pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00508f40((CNPC *)this_ptr);
   pCVar4 = (CMorph *)0x5cda15;
-  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].field_0x14c);
+  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.next_actor);
   pCVar6 = pCVar3 + -0xe8;
-  *(byte ***)(pCVar3 + -0x206c0) = &g_CPryeMorphVTable;
+  *(CCharacter_full_vtable **)(pCVar3 + -0x206c0) = &g_CPryeMorphVTable;
   do {
     CVar1 = *pCVar4;
     *pCVar6 = CVar1;
@@ -67,7 +67,8 @@ CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr
   } while (CVar1 != (CMorph)0x0);
   pcVar5 = "nameMePlease";
   *(uint *)(pCVar3 + -4) = 0;
-  core_skeleton_cpp_FUN_0054eae0(pCVar3 + -0x206bc,"bwp3_prye_morph.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)(pCVar3 + -0x206bc),"bwp3_prye_morph.dfm");
   pCVar6 = pCVar3 + -200;
   *(uint *)(pCVar3 + 0xc30) = 0x3f800000;
   do {
@@ -80,6 +81,6 @@ CPryeMorph * core_pryemorp_cpp_CPryeMorph_ctor_FUN_005273b0(CPryeMorph *this_ptr
     pCVar6 = pCVar6 + 2;
   } while (CVar1 != (CMorph)0x0);
   pCVar3[-0x68] = (CMorph)0x0;
-  core_cloth_cpp_FUN_0043fa40((CClothList *)(pCVar3 + -0x1d90c),(char *)0x5cda56);
+  core_cloth_cpp_CClothList_add_FUN_0043fa40((CClothList *)(pCVar3 + -0x1d90c),(char *)0x5cda56);
   return (CPryeMorph *)(pCVar3 + -0x20814);
 }

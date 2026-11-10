@@ -12,7 +12,7 @@
 ;   cockpit_pkbitmap.cpp_FUN_00537cb0 at 00537cf1
 ;
 ; Called Functions:
-;   cockpit_pkbitmap.cpp_FUN_00538000
+;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_005380b0
     PUSH EAX                            ; 005380b4
     PUSH EAX                            ; 005380b5
-    CALL cockpit_pkbitmap.cpp_FUN_00538000 ; 005380b6
-        ;   XREF to: 00538000 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_FUN_00538000(CPackedBitmap * this_ptr, char * act_filename)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000 ; 005380b6
+        ;   XREF to: 00538000 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00538000(CPackedBitmap * this_ptr, char * act_filename)
     ADD ESP,0x8                         ; 005380bb
     RET                                 ; 005380be
 

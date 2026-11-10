@@ -7,16 +7,16 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[48]:
-;   core_armour.cpp_FUN_0040eaa0 at 0040eb59
-;   core_baron.cpp_FUN_0040f4d0 at 0040f67a
-;   core_batcreat.cpp_FUN_004115b0 at 0041181b
-;   core_batman.cpp_FUN_00412ba0 at 00412e18
-;   core_beast.cpp_FUN_00414770 at 004147dc
-;   core_biggs.cpp_FUN_00414b30 at 00414d24
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c15b
-;   core_bride.cpp_FUN_00423b70 at 00424754
-;   core_carved.cpp_FUN_00428ae0 at 00429875
-;   core_constrct.cpp_FUN_00445cb0 at 00446737
+;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb59
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f67a
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041181b
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412e18
+;   core_beast.cpp_CBeast_process_FUN_00414770 at 004147dc
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414d24
+;   core_bird.cpp_CBird_process_FUN_00415340 at 004155b1
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c15b
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00424754
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429875
 ;   ... and 38 more
 ;
 ; Referenced Globals:

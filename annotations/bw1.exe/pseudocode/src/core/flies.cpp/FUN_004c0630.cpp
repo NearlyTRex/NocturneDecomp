@@ -62,14 +62,14 @@ float * core_flies_cpp_FUN_004c0630(int param_1,float *param_2)
   float local_2c;
   
   bVar2 = 0;
-  fVar1 = (float)core_actor_cpp_FUN_0040cc00(0,0x3f800000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.0,1.0);
   local_c0 = fVar1 * fVar1 * *(float *)(param_1 + 0x15c);
-  local_c4 = (float)core_actor_cpp_FUN_0040cc00
-                              (*(float *)(param_1 + 0x158) * (float)_DAT_005e0792,
-                               *(float *)(param_1 + 0x158) * (float)_DAT_005e078a);
-  local_bc = (float)core_actor_cpp_FUN_0040cc00
-                              (*(float *)(param_1 + 0x160) * (float)_DAT_005e0792,
-                               *(float *)(param_1 + 0x160) * (float)_DAT_005e078a);
+  local_c4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00
+                       (*(float *)(param_1 + 0x158) * (float)_DAT_005e0792,
+                        *(float *)(param_1 + 0x158) * (float)_DAT_005e078a);
+  local_bc = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00
+                       (*(float *)(param_1 + 0x160) * (float)_DAT_005e0792,
+                        *(float *)(param_1 + 0x160) * (float)_DAT_005e078a);
   if (param_2 != (float *)0x0) {
     local_64 = local_c4 - *param_2;
     local_60 = local_c0 - param_2[1];

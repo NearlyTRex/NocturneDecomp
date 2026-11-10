@@ -21,26 +21,26 @@ CDemonActorType * CConstruct::getActorType(CConstruct *this_ptr);
 // Address: 00445820
 CConstruct * CConstruct::ctor(CConstruct *this_ptr);
 
-// Original: core_constrct.cpp_FUN_004459c0
+// Original: core_constrct.cpp_CConstruct_setup_FUN_004459c0
 // Address: 004459c0
-void FUN_004459c0(CEnemy *param_1);
+void __cdecl CConstruct::setup(CConstruct *this_ptr);
 
-// Original: core_constrct.cpp_FUN_00445cb0
+// Original: core_constrct.cpp_CConstruct_process_FUN_00445cb0
 // Address: 00445cb0
-void FUN_00445cb0(CEnemy *param_1,float param_2);
+void __cdecl CConstruct::process(CConstruct *this_ptr,float delta_time);
 
-// Original: core_constrct.cpp_FUN_00446e20
+// Original: core_constrct.cpp_CConstruct_renderOpaque_FUN_00446e20
 // Address: 00446e20
-void FUN_00446e20(CCharacter *param_1);
+int __cdecl CConstruct::renderOpaque(CConstruct *this_ptr);
 
-// Original: core_constrct.cpp_FUN_00446e30
+// Original: core_constrct.cpp_CConstruct_archive_FUN_00446e30
 // Address: 00446e30
-void FUN_00446e30(CEnemy *param_1);
+void __cdecl CConstruct::archive(CConstruct *this_ptr);
 
-// Original: core_constrct.cpp_FUN_00447090
+// Original: core_constrct.cpp_CConstruct_processDamage_FUN_00447090
 // Address: 00447090
-void FUN_00447090(int param_1,int param_2);
+void __cdecl CConstruct::processDamage(CConstruct *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_constrct.cpp_FUN_004471a0
+// Original: core_constrct.cpp_CConstruct_getTargetPoints_FUN_004471a0
 // Address: 004471a0
-undefined4 FUN_004471a0(int param_1,undefined4 *param_2);
+int __cdecl CConstruct::getTargetPoints(CConstruct *this_ptr,CVector3f *out_points_array);

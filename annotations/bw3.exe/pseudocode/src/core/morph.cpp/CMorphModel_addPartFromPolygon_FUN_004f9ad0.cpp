@@ -11,7 +11,7 @@
 void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004f9ad0(CMorphModel *this_ptr,int vertex_count,CVector3i *vertex_data,int poly_count,SMRGLHeaderPrimitive *poly_data,int poly_stride,SMRGLTextureModel *texture_list,int *texture_index_list)
 
 {
-  SMRGLHeaderPrimitive *pSVar1;
+  SMRGLHeaderBasic *pSVar1;
   int iVar2;
   void *pvVar3;
   int iVar4;
@@ -25,9 +25,9 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_004f9ad0(CMorphMo
   iVar4 = 0;
   pSVar5 = poly_data;
   for (iVar2 = poly_count; 0 < iVar2; iVar2 = iVar2 + -1) {
-    pSVar1 = pSVar5 + 4;
-    pSVar5 = pSVar5 + poly_stride;
-    iVar4 = iVar4 + *(int *)pSVar1 + -2;
+    pSVar1 = &pSVar5->base;
+    pSVar5 = (SMRGLHeaderPrimitive *)((int)&(pSVar5->base).type + poly_stride);
+    iVar4 = iVar4 + pSVar1->count + -2;
   }
   *(uint *)(&this_ptr->field_0xc + *(int *)this_ptr * 0x10) =
        *(uint *)&this_ptr->field_0x54;

@@ -31,7 +31,7 @@
 ;   undefined4 DAT_005ef84f
 ;
 ; Called Functions:
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_math.c_asin_FUN_005b98f6
 ;
 ; *****************************************************************************
@@ -166,8 +166,8 @@ section .text
     PUSH EAX                            ; 0059de4a
     LEA ESI,[ESP + 0x4]                 ; 0059de4b
     LEA EDI,[ESP + 0x4c]                ; 0059de4f
-    CALL core_vecdir.cpp_FUN_005838f0   ; 0059de53
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 0059de53
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x4]                 ; 0059de58
     ADD ESP,0x4                         ; 0059de5c
     MOVSD ES:EDI,ESI                    ; 0059de5f

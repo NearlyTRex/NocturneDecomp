@@ -143,7 +143,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (item_index = item_index + 1, item_index < *(int *)param_1) {",
+      "text": "while (item_index = item_index + 1, item_index < (param_1->base).item_count) {",
       "type": "unnamed_param"
     },
     {
@@ -183,7 +183,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_remove_FUN_00499730((CStrList *)param_1,param_2,param_3);",
+      "text": "shape_edittool_cpp_CStrList_remove_FUN_00499730(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -191,7 +191,7 @@
       "line": 18,
       "match": "param_2",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_remove_FUN_00499730((CStrList *)param_1,param_2,param_3);",
+      "text": "shape_edittool_cpp_CStrList_remove_FUN_00499730(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -199,7 +199,7 @@
       "line": 18,
       "match": "param_3",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_remove_FUN_00499730((CStrList *)param_1,param_2,param_3);",
+      "text": "shape_edittool_cpp_CStrList_remove_FUN_00499730(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     }
   ],

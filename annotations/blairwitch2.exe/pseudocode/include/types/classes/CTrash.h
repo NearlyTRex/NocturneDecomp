@@ -4,13 +4,27 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTrash
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x484 (1156 bytes)
 #pragma pack(push, 1)
 typedef struct CTrash {
-    char field_0[1156]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    CVector3f home_pos; // 0x430
+    float collision_bottom_y; // 0x43c
+    float collision_top_y; // 0x440
+    CVector3f velocity; // 0x444
+    CVector3f acceleration; // 0x450
+    CVector3f drift; // 0x45c
+    float damping_factor; // 0x468
+    float collision_radius; // 0x46c
+    float animation_timer; // 0x470
+    CVector3f drift_target; // 0x474
+    float gravity; // 0x480
 } CTrash;
 #pragma pack(pop)
 

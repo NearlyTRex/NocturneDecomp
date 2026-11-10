@@ -10,12 +10,12 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[6]:
-;   core_boxactor.cpp_FUN_00420420 at 00420669
-;   core_elephant.cpp_FUN_00486c30 at 00486d08
+;   core_boxactor.cpp_CLightActor_process_FUN_00420420 at 00420669
+;   core_elephant.cpp_CElephantGun_process_FUN_00486c30 at 00486d08
 ;   core_set.cpp_FUN_005365c0 at 005366e3
 ;   core_set.cpp_FUN_00536990 at 00536aba
 ;   core_setutil.cpp_C3DSLight_apply_FUN_00542aa0 at 00542b06
-;   core_weapon.cpp_FUN_0057b5c0 at 0057b771
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0 at 0057b771
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005bb5b4

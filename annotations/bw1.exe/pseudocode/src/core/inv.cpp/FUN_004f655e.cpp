@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_inv_cpp_FUN_004f655e(void)
@@ -14,7 +13,7 @@ void core_inv_cpp_FUN_004f655e(void)
 {
   float fVar1;
   uint uVar2;
-  uint uVar3;
+  int iVar3;
   int y;
   int iVar4;
   byte bVar5;
@@ -35,24 +34,23 @@ void core_inv_cpp_FUN_004f655e(void)
   uint uStack_148;
   uint uStack_144;
   uint uStack_140;
-  CMatrix3x3f aCStack_13c [40];
+  CMatrix3x3f CStack_13c;
   float fStack_114;
   float afStack_110 [5];
-  byte auStack_fc [8];
-  float afStack_f4 [4];
-  float fStack_e4;
-  float fStack_e0;
+  CVector3f CStack_fc;
+  int iStack_f0;
+  float afStack_ec [4];
   uint uStack_dc;
   float fStack_d8;
   float afStack_d4 [5];
-  uint uStack_c0;
-  float afStack_bc [4];
+  CVector3i CStack_c0;
+  float fStack_b4;
+  float fStack_b0;
   uint uStack_ac;
-  uint uStack_a8;
+  int iStack_a8;
   float afStack_a4 [5];
-  uint uStack_90;
-  float fStack_84;
-  float fStack_80;
+  int iStack_90;
+  float afStack_8c [4];
   uint uStack_7c;
   float fStack_78;
   float afStack_74 [4];
@@ -66,7 +64,7 @@ void core_inv_cpp_FUN_004f655e(void)
   float fStack_48;
   float fStack_44;
   uint uStack_40;
-  uint uStack_3c;
+  int iStack_3c;
   float afStack_38 [5];
   float fStack_24;
   float fStack_20;
@@ -74,112 +72,112 @@ void core_inv_cpp_FUN_004f655e(void)
   float fStack_18;
   float fStack_14;
   
-  uVar3 = CAlphaBitmap_01d1ba98._12_4_;
+  iVar3 = CAlphaBitmap_01d1ba98.width;
   bVar5 = 0;
   iVar4 = DAT_0061b49c + -2;
-  y = iVar4 - CAlphaBitmap_01d1ba98._16_4_;
+  y = iVar4 - CAlphaBitmap_01d1ba98.height;
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CAlphaBitmap_01d1ba98,2,y,0xffff);
   uVar2 = _DAT_01c50948;
   fVar1 = (float)_DAT_005e5fc0;
   _DAT_01c50948 = 0;
   afStack_38[2] = 0.0;
   afStack_38[3] = 0.0;
-  fStack_24 = (float)(int)uVar3 * fVar1;
-  fStack_1c = (float)(uVar3 + 4) * fVar1;
+  fStack_24 = (float)iVar3 * fVar1;
+  fStack_1c = (float)(iVar3 + 4) * fVar1;
   fStack_14 = *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x34) -
               *(float *)&g_CDemonSetPtr->field_0x15acbc;
   fStack_20 = (float)(iVar4 - y) * fVar1;
   afStack_38[4] = fStack_14;
-  euler_angles = (CVector3f *)auStack_fc;
-  this_ptr = aCStack_13c;
+  euler_angles = &CStack_fc;
+  this_ptr = &CStack_13c;
   fStack_18 = (float)(y + iVar4) * fVar1;
-  auStack_fc._0_4_ = 0;
-  *(float *)(auStack_fc + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2 + 3];
-  *(float *)(auStack_fc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+  CStack_fc.x = 0.0;
+  *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2 + 3];
+  *(float *)((int)&CStack_fc + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  core_dirmat_cpp_FUN_0045f3e0(this_ptr,euler_angles);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(this_ptr,euler_angles);
   engine_matrix_c_invertTransformMatrix_FUN_005073d0();
-  afStack_bc[3] = -fStack_20;
-  afStack_bc[2] = -fStack_24;
+  fStack_b0 = -fStack_20;
+  fStack_b4 = -fStack_24;
   uStack_ac = 0;
-  fStack_14 = afStack_bc[3];
-  core_dirmat_cpp_FUN_0045f690(aCStack_13c,afStack_bc + 2);
+  fStack_14 = fStack_b0;
+  core_dirmat_cpp_FUN_0045f690(&CStack_13c,&fStack_b4);
   afStack_74[2] = afStack_a4[2];
   afStack_74[(uint)bVar5 * -2 + 3] = afStack_a4[(uint)bVar5 * -2 + 3];
   afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
        afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  if (afStack_f4 + 4 != afStack_74 + 2) {
-    fStack_e4 = afStack_74[2];
-    fStack_e0 = afStack_74[3];
+  if (afStack_ec + 2 != afStack_74 + 2) {
+    afStack_ec[2] = afStack_74[2];
+    afStack_ec[3] = afStack_74[3];
     uStack_dc = uStack_64;
   }
-  core_inv_cpp_FUN_004f63c0(fStack_1c + fStack_e4,fStack_18 + fStack_e0);
-  uStack_c0 = uStack_90;
-  afStack_bc[(uint)bVar5 * -2] = afStack_a4[(uint)bVar5 * -2 + 6];
-  afStack_bc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
-  engine_special_cpp_FUN_00580173(*(SProjectedVertex **)DAT_00612560,(CVector3i *)&uStack_c0);
+  core_inv_cpp_FUN_004f63c0(fStack_1c + afStack_ec[2],fStack_18 + afStack_ec[3]);
+  CStack_c0.x = iStack_90;
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_8c[(uint)bVar5 * -2];
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       afStack_8c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+  engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_c0);
   fStack_44 = -fStack_20;
   fStack_48 = fStack_24;
   uStack_40 = 0;
   fStack_14 = fStack_44;
-  core_dirmat_cpp_FUN_0045f690(aCStack_13c,afStack_74 + 0xb);
+  core_dirmat_cpp_FUN_0045f690(&CStack_13c,afStack_74 + 0xb);
   fStack_114 = fStack_78;
   afStack_110[(uint)bVar5 * -2] = afStack_74[(uint)bVar5 * -2];
   afStack_110[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-  if (afStack_f4 + 4 != &fStack_114) {
-    fStack_e4 = fStack_114;
-    fStack_e0 = afStack_110[0];
+  if (afStack_ec + 2 != &fStack_114) {
+    afStack_ec[2] = fStack_114;
+    afStack_ec[3] = afStack_110[0];
     uStack_dc = afStack_110[1];
   }
-  core_inv_cpp_FUN_004f63c0(fStack_1c + fStack_e4,fStack_18 + fStack_e0);
-  uStack_c0 = uStack_3c;
-  afStack_bc[(uint)bVar5 * -2] = afStack_38[(uint)bVar5 * -2];
-  afStack_bc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+  core_inv_cpp_FUN_004f63c0(fStack_1c + afStack_ec[2],fStack_18 + afStack_ec[3]);
+  CStack_c0.x = iStack_3c;
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_38[(uint)bVar5 * -2];
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_38[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&uStack_c0);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_c0);
   fStack_54 = fStack_24;
   fStack_50 = fStack_20;
   uStack_4c = 0;
-  core_dirmat_cpp_FUN_0045f690(aCStack_13c,afStack_74 + 8);
+  core_dirmat_cpp_FUN_0045f690(&CStack_13c,afStack_74 + 8);
   fStack_60 = afStack_110[2];
   afStack_74[(uint)bVar5 * -2 + 6] = afStack_110[(uint)bVar5 * -2 + 3];
   afStack_74[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
        afStack_110[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  if (afStack_f4 + 4 != afStack_74 + 5) {
-    fStack_e4 = fStack_60;
-    fStack_e0 = fStack_5c;
+  if (afStack_ec + 2 != afStack_74 + 5) {
+    afStack_ec[2] = fStack_60;
+    afStack_ec[3] = fStack_5c;
     uStack_dc = uStack_58;
   }
-  core_inv_cpp_FUN_004f63c0(fStack_1c + fStack_e4,fStack_18 + fStack_e0);
-  uStack_c0 = afStack_f4[1];
-  afStack_bc[(uint)bVar5 * -2] = afStack_f4[(uint)bVar5 * -2 + 2];
-  afStack_bc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-       afStack_f4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 3];
+  core_inv_cpp_FUN_004f63c0(fStack_1c + afStack_ec[2],fStack_18 + afStack_ec[3]);
+  CStack_c0.x = iStack_f0;
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_ec[(uint)bVar5 * -2];
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+       afStack_ec[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&uStack_c0);
-  fStack_80 = fStack_20;
-  fStack_84 = -fStack_24;
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_c0);
+  afStack_8c[3] = fStack_20;
+  afStack_8c[2] = -fStack_24;
   uStack_7c = 0;
-  core_dirmat_cpp_FUN_0045f690(aCStack_13c,afStack_a4 + 8);
+  core_dirmat_cpp_FUN_0045f690(&CStack_13c,afStack_8c + 2);
   fStack_d8 = afStack_d4[2];
   afStack_d4[(uint)bVar5 * -2] = afStack_d4[(uint)bVar5 * -2 + 3];
   afStack_d4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
        afStack_d4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-  if (afStack_f4 + 4 != &fStack_d8) {
-    fStack_e4 = fStack_d8;
-    fStack_e0 = afStack_d4[0];
+  if (afStack_ec + 2 != &fStack_d8) {
+    afStack_ec[2] = fStack_d8;
+    afStack_ec[3] = afStack_d4[0];
     uStack_dc = afStack_d4[1];
   }
-  core_inv_cpp_FUN_004f63c0(fStack_1c + fStack_e4,fStack_18 + fStack_e0);
-  uStack_c0 = uStack_a8;
-  afStack_bc[(uint)bVar5 * -2] = afStack_a4[(uint)bVar5 * -2];
-  afStack_bc[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
+  core_inv_cpp_FUN_004f63c0(fStack_1c + afStack_ec[2],fStack_18 + afStack_ec[3]);
+  CStack_c0.x = iStack_a8;
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + 4) = afStack_a4[(uint)bVar5 * -2];
+  *(float *)((int)&CStack_c0 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
        afStack_a4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
   engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x90),(CVector3i *)&uStack_c0);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&CStack_c0);
   uStack_180 = 4;
   uStack_16c = 0;
   uStack_168 = 0;

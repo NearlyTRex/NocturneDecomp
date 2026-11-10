@@ -8,7 +8,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_hino.cpp_FUN_0059d120 at 0059d16e
+;   core_hino.cpp_CHino_renderTransparent_FUN_0059d120 at 0059d16e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9bdc

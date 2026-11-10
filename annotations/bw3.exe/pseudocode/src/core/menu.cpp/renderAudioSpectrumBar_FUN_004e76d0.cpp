@@ -14,12 +14,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int 
   CDemonRenderer *this_ptr;
   int iVar1;
   int iVar2;
-  SMRGLHeaderPrimitive aSStack_2c [4];
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
-  uint uStack_18;
+  SMRGLHeaderPrimitive SStack_2c;
   uint uStack_14;
   uint uStack_10;
   uint uStack_c;
@@ -28,29 +23,29 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int 
   this_ptr = DAT_005f2afc;
   if (0 < height_half * 2) {
     iVar1 = (x_center + -0x10) * 0x10000;
-    *(int *)(*(int *)DAT_005f2afc + 0x10) = iVar1;
-    *(int *)(*(int *)this_ptr + 0x14) = y_top << 0x10;
+    *(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x10) = iVar1;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0x14) = y_top << 0x10;
     iVar2 = (x_center + 0x10) * 0x10000;
-    *(int *)(*(int *)this_ptr + 0x40) = iVar2;
-    *(int *)(*(int *)this_ptr + 0x44) = y_top << 0x10;
-    *(int *)(*(int *)this_ptr + 0x70) = iVar2;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0x40) = iVar2;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0x44) = y_top << 0x10;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0x70) = iVar2;
     iVar2 = (y_top + height_half * -2) * 0x10000;
-    *(int *)(*(int *)this_ptr + 0x74) = iVar2;
-    *(int *)(*(int *)this_ptr + 0xa0) = iVar1;
-    *(int *)(*(int *)this_ptr + 0xa4) = iVar2;
-    *(uint *)(*(int *)this_ptr + 0x18) = 0x80000;
-    *(uint *)(*(int *)this_ptr + 0x1c) = 0xf80000;
-    *(uint *)(*(int *)this_ptr + 0x48) = 0xf80000;
-    *(uint *)(*(int *)this_ptr + 0x4c) = 0xf80000;
-    *(uint *)(*(int *)this_ptr + 0x78) = 0xf80000;
-    *(uint *)(*(int *)this_ptr + 0x7c) = 0x80000;
-    *(uint *)(*(int *)this_ptr + 0xa8) = 0x80000;
-    *(uint *)(*(int *)this_ptr + 0xac) = 0x80000;
-    uStack_28 = 4;
-    uStack_18 = 0;
-    uStack_1c = 0;
-    uStack_20 = 0;
-    uStack_24 = 0;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0x74) = iVar2;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0xa0) = iVar1;
+    *(int *)(this_ptr->vertex_buffer_ptr + 0xa4) = iVar2;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0x18) = 0x80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0x1c) = 0xf80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0x48) = 0xf80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0x4c) = 0xf80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0x78) = 0xf80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0x7c) = 0x80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0xa8) = 0x80000;
+    *(uint *)(this_ptr->vertex_buffer_ptr + 0xac) = 0x80000;
+    SStack_2c.base.count = 4;
+    SStack_2c.surface_normal.D.i = 0;
+    SStack_2c.surface_normal.C.i = 0;
+    SStack_2c.surface_normal.B.i = 0;
+    SStack_2c.surface_normal.A.i = 0;
     uStack_14 = 0;
     uStack_c = 2;
     uStack_8 = 3;
@@ -64,7 +59,7 @@ void __cdecl core_menu_cpp_renderAudioSpectrumBar_FUN_004e76d0(int x_center,int 
                        (uint)((_DAT_01d737e0 >> 0x1f) << 0xf < 0)) >> 0x10) + x_center & 7U) * 0x18
                + 0x6003b8));
     engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_0046b850
-              (DAT_005f2afc,aSStack_2c,0x23);
+              (DAT_005f2afc,&SStack_2c,0x23);
     engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,0xffff);
   }

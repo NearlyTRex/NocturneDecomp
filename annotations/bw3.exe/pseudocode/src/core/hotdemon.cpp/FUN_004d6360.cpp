@@ -11,7 +11,7 @@ void core_hotdemon_cpp_FUN_004d6360(void)
 {
   CAngelSpirit *this_ptr;
   
-  this_ptr = (CAngelSpirit *)FUN_005a3cb2(0xd088);
+  this_ptr = (CAngelSpirit *)debugAllocTracked1(0xd088);
   if (this_ptr == (CAngelSpirit *)0x0) {
     return;
   }

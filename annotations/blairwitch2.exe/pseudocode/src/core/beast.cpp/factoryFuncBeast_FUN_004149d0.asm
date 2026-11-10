@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_beast.cpp_CBeast_ctor_FUN_00414a00
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10af8                        ; 004149d0
         ;   Label: core_beast.cpp_factoryFuncBeast_FUN_004149d0
-    CALL crt_unknown.c_FUN_005b8be2     ; 004149d5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004149d5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004149da
     TEST EAX,EAX                        ; 004149dd
     JNZ 0x004149e2                      ; 004149df

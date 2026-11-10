@@ -24,32 +24,32 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
   int local_18;
   uint local_14;
   
-  if (*(int *)&this_ptr->field_0x15ae84 != 0) {
+  if (this_ptr->rendering_mode != 0) {
     if (surface_normal == (CVector3i *)0x0) {
       _DAT_01d1d400 = "..\\core\\set.cpp";
       _DAT_01d1d404 = 0xca0;
       core_main_c_FUN_005030e0("CDemonSet::lightVertexColor - Quick light mode with no normal");
     }
-    lVar1 = (longlong)*(int *)&this_ptr->field_0x15ae88 * (longlong)*(int *)surface_normal;
-    lVar2 = (longlong)*(int *)&this_ptr->field_0x15ae8c * (longlong)*(int *)(surface_normal + 4);
-    lVar3 = (longlong)*(int *)&this_ptr->field_0x15ae90 * (longlong)*(int *)(surface_normal + 8);
+    lVar1 = (longlong)(this_ptr->light_direction).x * (longlong)surface_normal->x;
+    lVar2 = (longlong)(this_ptr->light_direction).y * (longlong)surface_normal->y;
+    lVar3 = (longlong)(this_ptr->light_direction).z * (longlong)surface_normal->z;
     iVar8 = -(((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10) +
               ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10) +
              ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10));
     if (iVar8 < 0) {
       iVar8 = 0;
     }
-    iVar8 = iVar8 + *(int *)&this_ptr->field_0x15ae94;
+    iVar8 = iVar8 + this_ptr->ambient_base_quick;
     if (0xffff < iVar8) {
       iVar8 = 0xffff;
     }
-    lVar1 = (longlong)*(int *)&this_ptr->field_0x15ae9c * (longlong)iVar8;
+    lVar1 = (longlong)(this_ptr->flat_color).r * (longlong)iVar8;
     (&DAT_00629034)[vertex_index * 0xc] =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)*(int *)&this_ptr->field_0x15aea0 * (longlong)iVar8;
+    lVar1 = (longlong)(this_ptr->flat_color).g * (longlong)iVar8;
     (&DAT_00629038)[vertex_index * 0xc] =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)*(int *)&this_ptr->field_0x15aea4 * (longlong)iVar8;
+    lVar1 = (longlong)(this_ptr->flat_color).b * (longlong)iVar8;
     (&DAT_0062903c)[vertex_index * 0xc] =
          (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     (&DAT_00629040)[vertex_index * 0xc] = _DAT_01c51cac;
@@ -58,36 +58,30 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
   if (skip_lighting_calculation == 0) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490
                       (this_ptr,world_position,surface_normal);
-    local_18 = g_CDemonCameraInstance._4584_4_;
-    if ((0 < (int)g_CDemonCameraInstance._4584_4_) && (surface_normal != (CVector3i *)0x0)) {
-      iVar10 = g_CDemonCameraInstance._4584_4_;
-      if (0x1000 < (int)g_CDemonCameraInstance._4584_4_) {
+    local_18 = g_CDemonCameraInstance.corona_blend_factor;
+    if ((0 < g_CDemonCameraInstance.corona_blend_factor) && (surface_normal != (CVector3i *)0x0)) {
+      iVar10 = g_CDemonCameraInstance.corona_blend_factor;
+      if (0x1000 < g_CDemonCameraInstance.corona_blend_factor) {
         iVar10 = 0x1000;
       }
       if (_DAT_01c51d38 < 0) {
-        uVar4 = -((uint)((longlong)iVar10 * (longlong)*(int *)surface_normal) >> 0x10 |
-                 (int)((ulonglong)((longlong)iVar10 * (longlong)*(int *)surface_normal) >> 0x20) <<
-                 0x10);
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
+        uVar4 = -((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
       }
       else {
-        uVar4 = (uint)((longlong)iVar10 * (longlong)*(int *)surface_normal) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar10 * (longlong)*(int *)surface_normal) >> 0x20) <<
-                0x10;
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->x;
+        uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
       }
       if (_DAT_01c51d40 < 0) {
-        iVar8 = (iVar8 + uVar4) -
-                ((uint)((longlong)iVar10 * (longlong)*(int *)(surface_normal + 8)) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar10 * (longlong)*(int *)(surface_normal + 8)) >> 0x20
-                     ) << 0x10);
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->z;
+        iVar8 = (iVar8 + uVar4) - ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
           iVar8 = 0;
         }
       }
       else {
-        iVar8 = iVar8 + uVar4 +
-                ((uint)((longlong)iVar10 * (longlong)*(int *)(surface_normal + 8)) >> 0x10 |
-                (int)((ulonglong)((longlong)iVar10 * (longlong)*(int *)(surface_normal + 8)) >> 0x20
-                     ) << 0x10);
+        lVar1 = (longlong)iVar10 * (longlong)surface_normal->z;
+        iVar8 = iVar8 + uVar4 + ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         if (iVar8 < 0) {
           iVar8 = 0;
         }
@@ -100,31 +94,31 @@ void __cdecl core_set_cpp_CDemonSet_lightVertexColor_FUN_00552710(CDemonSet *thi
   }
   if (_DAT_0202a51c < 1) {
     iVar8 = iVar8 + local_18;
-    lVar1 = (longlong)iVar8 * (longlong)*(int *)&this_ptr->field_0x15ae9c;
+    lVar1 = (longlong)iVar8 * (longlong)(this_ptr->flat_color).r;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    lVar1 = (longlong)iVar8 * (longlong)*(int *)&this_ptr->field_0x15aea0;
+    lVar1 = (longlong)iVar8 * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar10 = *(int *)&this_ptr->field_0x15aea4;
+    iVar10 = (this_ptr->flat_color).b;
   }
   else {
     lVar1 = (longlong)
             (int)(((uint)((longlong)iVar8 * (longlong)_DAT_0202a89c) >> 0x10 |
                   (int)((ulonglong)((longlong)iVar8 * (longlong)_DAT_0202a89c) >> 0x20) << 0x10) +
-                 local_18) * (longlong)*(int *)&this_ptr->field_0x15ae9c;
+                 local_18) * (longlong)(this_ptr->flat_color).r;
     local_14 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
     lVar1 = (longlong)
             (int)(((uint)((longlong)iVar8 * (longlong)_DAT_0202a8a0) >> 0x10 |
                   (int)((ulonglong)((longlong)iVar8 * (longlong)_DAT_0202a8a0) >> 0x20) << 0x10) +
-                 local_18) * (longlong)*(int *)&this_ptr->field_0x15aea0;
+                 local_18) * (longlong)(this_ptr->flat_color).g;
     uVar4 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-    iVar10 = *(int *)&this_ptr->field_0x15aea4;
+    iVar10 = (this_ptr->flat_color).b;
     iVar8 = ((uint)((longlong)iVar8 * (longlong)_DAT_0202a8a4) >> 0x10 |
             (int)((ulonglong)((longlong)iVar8 * (longlong)_DAT_0202a8a4) >> 0x20) << 0x10) +
             local_18;
   }
   uVar5 = (uint)((longlong)iVar8 * (longlong)iVar10) >> 0x10 |
           (int)((ulonglong)((longlong)iVar8 * (longlong)iVar10) >> 0x20) << 0x10;
-  if ((*(int *)&this_ptr->field_0x15f6f8 != 0) && (skip_lighting_calculation == 0)) {
+  if ((this_ptr->directional_light_ratio_enabled != 0) && (skip_lighting_calculation == 0)) {
     iVar8 = core_set_cpp_CDemonSet_calculateSpatialLighting_FUN_00552490
                       (this_ptr,world_position,(CVector3i *)0x0);
     uVar9 = local_18 + iVar8;

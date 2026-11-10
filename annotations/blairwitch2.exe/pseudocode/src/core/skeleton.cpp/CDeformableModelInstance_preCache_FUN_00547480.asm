@@ -7,16 +7,16 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[36]:
-;   core_armour.cpp_FUN_0040eee0 at 0040eef7
-;   core_batcreat.cpp_FUN_004116f0 at 00411707
-;   core_batman.cpp_FUN_00412be0 at 00412bf7
-;   core_beast.cpp_FUN_00414a60 at 00414a6a
-;   core_biggs.cpp_FUN_00414dd0 at 00414de7
-;   core_boneguy.cpp_FUN_004184c0 at 004184ce
-;   core_bride.cpp_FUN_0041d9c0 at 0041d9d1
-;   core_charactr.cpp_FUN_00422930 at 004229be
-;   core_charactr.cpp_FUN_0042b440 at 0042b479
-;   core_cow.cpp_FUN_00439150 at 0043915e
+;   core_armour.cpp_CArmour_setup_FUN_0040eee0 at 0040eef7
+;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 00411707
+;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412bf7
+;   core_beast.cpp_CBeast_setup_FUN_00414a60 at 00414a6a
+;   core_biggs.cpp_CBiggs_setup_FUN_00414dd0 at 00414de7
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_004184c0 at 004184ce
+;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041d9d1
+;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b479
+;   core_charactr.cpp_CCharacter_setup_FUN_00422930 at 004229be
+;   core_conveyor.cpp_CConstruct_setup_FUN_00436be0 at 00436bf7
 ;   ... and 26 more
 ;
 ; Called Functions:

@@ -17,7 +17,7 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_dtor_FUN_004fc7b0(CKeyActor *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CKeyActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)this_ptr,1);
+  pCVar1 = (CKeyActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

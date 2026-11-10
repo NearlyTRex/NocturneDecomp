@@ -16,7 +16,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidthPrintf_FUN_0046a450 at 0046a4bb
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_00469b40
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EDI                            ; 0046a3fe
     MOV EBP,dword ptr [ESP + 0x2c]      ; 0046a3ff
     PUSH EBP                            ; 0046a403
-    CALL cockpit_drawsurf.cpp_FUN_00469b40 ; 0046a404
-        ;   XREF to: 00469b40 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00469b40(CDrawSurface * this_ptr, char * text, int x, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40 ; 0046a404
+        ;   XREF to: 00469b40 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x1c                        ; 0046a409
     POP EBP                             ; 0046a40c
     POP EDI                             ; 0046a40d

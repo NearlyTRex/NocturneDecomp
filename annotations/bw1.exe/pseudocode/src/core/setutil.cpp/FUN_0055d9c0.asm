@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_setutil_cpp_FUN_0055d9c0(int param_1)
+; int __cdecl core_setutil_cpp_FUN_0055d9c0(C3DSLight *this_ptr)
 ;
+; Parameters:
+; C3DSLight *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_set.cpp_FUN_0054e69e at 0054ebdf

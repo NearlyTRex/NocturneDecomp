@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 367,
-    "complexity_score": 649,
+    "complexity_score": 636,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 204,
+    "pseudocode_lines": 191,
     "suspect_count": 42,
     "suspect_types": [
       "param_count_too_few",
@@ -16,13 +16,13 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 571
+    "total_lines": 558
   },
   "cross_references": [
     {
       "addr": "00595d20",
       "from_addr": "00595e14",
-      "name": "unkafter_tawiscar.cpp_FUN_00595d20",
+      "name": "core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -104,7 +104,7 @@
       {
         "call_addr": "00595e14",
         "call_type": "direct",
-        "caller": "unkafter_tawiscar.cpp_FUN_00595d20",
+        "caller": "core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "00595e22",
         "call_type": "direct",
-        "caller": "unkafter_tawiscar.cpp_FUN_00595d20",
+        "caller": "core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -731,7 +731,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 60,
       "match": "param_2",
       "severity": "mild",
       "text": "local_50 = *param_2 + 0x3E4CCCCD;",
@@ -739,7 +739,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
       "text": "local_48 = param_2[2];",
@@ -747,7 +747,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
       "text": "local_4c = param_2[1] + 0x3E4CCCCD;",
@@ -755,7 +755,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "local_dc[2] = local_50 * *(float *)(param_1 + 0x27b8);",
@@ -763,7 +763,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "local_dc[3] = local_4c * *(float *)(param_1 + 0x27b8);",
@@ -771,7 +771,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "local_cc = local_48 * *(float *)(param_1 + 0x27b8);",
@@ -779,15 +779,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 94,
+      "line": 81,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(*(SProjectedVertex **)DAT_005f2afc,(CVector3i *)&local_110);",
+      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_110);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 96,
+      "line": 83,
       "match": "param_2",
       "severity": "mild",
       "text": "local_11c = -0x3E4CCCCD + *param_2;",
@@ -795,7 +795,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 84,
       "match": "param_2",
       "severity": "mild",
       "text": "local_118[1] = param_2[2];",
@@ -803,7 +803,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 85,
       "match": "param_2",
       "severity": "mild",
       "text": "local_118[0] = param_2[1] + 0x3E4CCCCD;",
@@ -811,7 +811,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 86,
       "match": "param_2",
       "severity": "mild",
       "text": "local_104 = -0x3E4CCCCD + *param_2;",
@@ -819,7 +819,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "local_8c = local_104 * *(float *)(param_1 + 0x27b8);",
@@ -827,7 +827,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "local_88[0] = local_100[0] * *(float *)(param_1 + 0x27b8);",
@@ -835,7 +835,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
       "text": "local_88[1] = local_100[1] * *(float *)(param_1 + 0x27b8);",
@@ -843,15 +843,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 119,
+      "line": 106,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x30),(CVector3i *)&local_2c);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_2c);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 120,
+      "line": 107,
       "match": "param_2",
       "severity": "mild",
       "text": "local_a8 = param_2[2];",
@@ -859,7 +859,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 108,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b8[2] = -0x3E4CCCCD + *param_2;",
@@ -867,7 +867,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 109,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b8[3] = param_2[1] + -0x3E4CCCCD;",
@@ -875,7 +875,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 123,
+      "line": 110,
       "match": "param_2",
       "severity": "mild",
       "text": "local_88[2] = -0x3E4CCCCD + *param_2;",
@@ -883,7 +883,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "local_68 = local_88[2] * *(float *)(param_1 + 0x27b8);",
@@ -891,7 +891,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 128,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
       "text": "local_64 = local_88[3] * *(float *)(param_1 + 0x27b8);",
@@ -899,7 +899,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 129,
+      "line": 116,
       "match": "param_1",
       "severity": "mild",
       "text": "local_60 = local_78 * *(float *)(param_1 + 0x27b8);",
@@ -907,15 +907,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 130,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x60),(CVector3i *)&local_ec);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_ec);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 144,
+      "line": 131,
       "match": "param_2",
       "severity": "mild",
       "text": "local_dc[1] = param_2[2];",
@@ -923,7 +923,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 145,
+      "line": 132,
       "match": "param_2",
       "severity": "mild",
       "text": "local_e0 = 0x3E4CCCCD + *param_2;",
@@ -931,7 +931,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 133,
       "match": "param_2",
       "severity": "mild",
       "text": "local_dc[0] = param_2[1] + -0x3E4CCCCD;",
@@ -939,7 +939,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 147,
+      "line": 134,
       "match": "param_2",
       "severity": "mild",
       "text": "local_bc = 0x3E4CCCCD + *param_2;",
@@ -947,7 +947,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 138,
       "match": "param_1",
       "severity": "mild",
       "text": "local_74 = local_bc * *(float *)(param_1 + 0x27b8);",
@@ -955,7 +955,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 139,
       "match": "param_1",
       "severity": "mild",
       "text": "local_70 = local_b8[0] * *(float *)(param_1 + 0x27b8);",
@@ -963,7 +963,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 153,
+      "line": 140,
       "match": "param_1",
       "severity": "mild",
       "text": "local_6c = local_b8[1] * *(float *)(param_1 + 0x27b8);",
@@ -971,15 +971,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 154,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x90),(CVector3i *)&local_98);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_98);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 155,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "this_ptr = DAT_005f2afc;",
@@ -987,15 +987,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 156,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)DAT_005f2afc + 0x20) = 0xffff;",
+      "text": "*(uint *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = 0xffff;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 190,
       "match": "DAT_00607390",
       "severity": "mild",
       "text": "(this_ptr,(SMRGLTextureBasic *)&DAT_00607390);",
@@ -1003,7 +1003,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 204,
+      "line": 191,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
@@ -1011,15 +1011,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 192,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(DAT_005f2afc,aSStack_144);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_0046c510(DAT_005f2afc,&SStack_144);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 206,
+      "line": 193,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",

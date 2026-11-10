@@ -15,19 +15,17 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemo
   uint uVar2;
   int iVar3;
   int iVar4;
-  uint local_24;
-  uint local_20;
-  uint local_1c;
+  CVector3i local_24;
   int local_18;
   int local_14;
   
   if (render_flags == -1) {
     render_flags = 0x2cd;
   }
-  if (*(int *)(this_ptr + 0x1c) == 0) {
-    if (((*(int *)(this_ptr + 0x10) == 0) && (*(int *)(this_ptr + 0xc) == 0)) && (DAT_007303fc != 0)
-       ) {
-      if (*(int *)(this_ptr + 4) == 0) {
+  if (this_ptr->texture_capture_enabled == 0) {
+    if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
+       (DAT_007303fc != 0)) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (DAT_005fba20 == 0x20) {
           _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
         }
@@ -38,25 +36,25 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemo
         _DAT_01c6e2b8 = 6;
         if (_DAT_01c6cee8 == 0) {
           for (; 0 < face_count; face_count = face_count + -1) {
-            local_24 = (uint)*(ushort *)face_array;
-            local_20 = (uint)*(ushort *)(face_array + 2);
-            local_1c = (uint)*(ushort *)(face_array + 4);
-            if (*(int *)(this_ptr + 0x20) == 0) {
-              *(uint *)(local_24 * 0x30 + 0x18 + *(int *)this_ptr) =
+            local_24.x = (int)*(ushort *)face_array;
+            local_24.y = (int)*(ushort *)(face_array + 2);
+            local_24.z = (int)*(ushort *)(face_array + 4);
+            if (this_ptr->skip_uv_extraction == 0) {
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.x * 0x30 + 0x18) =
                    (uint)*(ushort *)(face_array + 6) << 8;
-              *(uint *)(*(int *)this_ptr + 0x1c + local_24 * 0x30) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.x * 0x30 + 0x1c) =
                    (uint)*(ushort *)(face_array + 0xc) << 8;
-              *(uint *)(local_20 * 0x30 + 0x18 + *(int *)this_ptr) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.y * 0x30 + 0x18) =
                    (uint)*(ushort *)(face_array + 8) << 8;
-              *(uint *)(*(int *)this_ptr + 0x1c + local_20 * 0x30) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.y * 0x30 + 0x1c) =
                    (uint)*(ushort *)(face_array + 0xe) << 8;
-              *(uint *)(local_1c * 0x30 + 0x18 + *(int *)this_ptr) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.z * 0x30 + 0x18) =
                    (uint)*(ushort *)(face_array + 10) << 8;
-              *(uint *)(*(int *)this_ptr + 0x1c + local_1c * 0x30) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_24.z * 0x30 + 0x1c) =
                    (uint)*(ushort *)(face_array + 0x10) << 8;
             }
             face_array = face_array + 0x12;
-            unkafter_dpart_cpp_FUN_00466d50((int *)&local_24,3);
+            unkafter_dpart_cpp_FUN_00466d50(&local_24.x,3);
           }
         }
         else {
@@ -83,7 +81,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemo
           }
           if (0 < iVar4) {
             engine_special_cpp_drawPolyList2_FUN_00565db0
-                      (*(uint *)this_ptr,&DAT_005f2b04,iVar4,_DAT_01c6e2b4);
+                      (this_ptr->vertex_buffer_ptr,&DAT_005f2b04,iVar4,_DAT_01c6e2b4);
             return;
           }
         }
@@ -98,12 +96,12 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFaceList_FUN_0046dbd0(CDemo
           do {
             _DAT_01c6e2b8 = uVar2;
             _DAT_01c6e2b4 = uVar1;
-            local_24 = (uint)*(ushort *)face_array;
-            local_20 = (uint)*(ushort *)(face_array + 2);
-            local_1c = (uint)*(ushort *)(face_array + 4);
+            local_24.x = (int)*(ushort *)face_array;
+            local_24.y = (int)*(ushort *)(face_array + 2);
+            local_24.z = (int)*(ushort *)(face_array + 4);
             face_count = face_count + -1;
             face_array = face_array + 0x12;
-            unkafter_dpart_cpp_FUN_004673d0((CVector3i *)&local_24,3);
+            unkafter_dpart_cpp_FUN_004673d0(&local_24,3);
             uVar1 = _DAT_01c6e2b4;
             uVar2 = _DAT_01c6e2b8;
           } while (0 < face_count);

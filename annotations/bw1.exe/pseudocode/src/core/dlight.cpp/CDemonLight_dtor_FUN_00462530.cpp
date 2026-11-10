@@ -17,11 +17,10 @@ CDemonLight * __cdecl core_dlight_cpp_CDemonLight_dtor_FUN_00462530(CDemonLight 
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x3c =
-       &PTR_core_dlight_cpp_CDemonLight_dtor_FUN_00462530_005febf4;
+  (this_ptr->base).base.vtable =
+       (CCameraView_vtable *)&PTR_core_dlight_cpp_CDemonLight_dtor_FUN_00462530_005febf4;
   core_dlight_cpp_FUN_00462670(this_ptr);
-  pCVar1 = (CDemonLight *)
-           core_dcamera_cpp_CDemonCamera_dtor_FUN_0044cb00((CDemonCamera *)this_ptr,1);
+  pCVar1 = (CDemonLight *)core_dcamera_cpp_CDemonCamera_dtor_FUN_0044cb00(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 73,
+    "complexity_score": 86,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 26,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field"
+    ],
+    "total_lines": 99
+  },
+  "cross_references": [
+    {
+      "addr": "004d15d0",
+      "from_addr": "004d1616",
+      "name": "core_hostage.cpp_CHostage_renderOpaque_FUN_004d15d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00510900",
+    "address_range": [
+      [
+        "00510900",
+        "0051098f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_renderOpaque_FUN_00510900",
+    "signature": "int __cdecl core_npc_cpp_CNPC_renderOpaque_FUN_00510900(CNPC *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cfc0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
+    },
+    {
+      "addr": "004254b0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0"
+    },
+    {
+      "addr": "0048e340",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_0048e340"
+    },
+    {
+      "addr": "0046b960",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1529",
+      "name": "s_heroCanSee_005e1529",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6b5c",
+      "name": "g_CGameInstance.field508_0x25c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d1616",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_renderOpaque_FUN_004d15d0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 0,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CALL": 5,
+      "CBRANCH": 7,
+      "COPY": 49,
+      "INT_ADD": 26,
+      "INT_AND": 28,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 26,
+      "INT_LESS": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 13,
+      "INT_SUB": 20,
+      "INT_XOR": 1,
+      "LOAD": 21,
+      "POPCOUNT": 13,
+      "RETURN": 4,
+      "STORE": 15
+    },
+    "pcode_op_count": 253
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x24340",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x24340 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "if (*(int *)&(this_ptr->base).field_0x2814 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "if ((*(int *)&(this_ptr->base).field_0x2814 != 0) && (*(int *)&g_CGamePtr->field_0x25c != 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x25c",
+      "severity": "mild",
+      "text": "if ((*(int *)&(this_ptr->base).field_0x2814 != 0) && (*(int *)&g_CGamePtr->field_0x25c != 0)) {",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005f8a14"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005f8524"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005fc744"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005fa754"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005fc894"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 5
+  }
+}

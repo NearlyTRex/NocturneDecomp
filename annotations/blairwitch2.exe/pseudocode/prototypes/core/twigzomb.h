@@ -5,6 +5,10 @@
 // Function prototypes for core/twigzomb.cpp
 // Generated from Ghidra function signatures
 
+// Original: core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10
+// Address: 0059fc10
+void __cdecl CTwigZombie::archive(CTwigZombie *this_ptr);
+
 // Original: core_twigzomb.cpp_staticInit_FUN_005a2670
 // Address: 005a2670
 void staticInit(void);
@@ -21,37 +25,37 @@ CDemonActorType * CTwigZombie::getActorType(CTwigZombie *this_ptr);
 // Address: 005a26d0
 CTwigZombie * CTwigZombie::ctor(CTwigZombie *this_ptr);
 
-// Original: core_twigzomb.cpp_FUN_005a2820
+// Original: core_twigzomb.cpp_CTwigZombie_setup_FUN_005a2820
 // Address: 005a2820
-void FUN_005a2820(int param_1);
+void __cdecl CTwigZombie::setup(CTwigZombie *this_ptr);
 
-// Original: core_twigzomb.cpp_FUN_005a28a0
+// Original: core_twigzomb.cpp_CTwigZombie_processStates_FUN_005a28a0
 // Address: 005a28a0
-void FUN_005a28a0(int param_1,undefined4 param_2,int param_3);
+void __cdecl CTwigZombie::processStates(CTwigZombie *this_ptr,float delta_time,int mode);
 
 // Original: core_twigzomb.cpp_FUN_005a2910
 // Address: 005a2910
 void FUN_005a2910(int param_1,float param_2);
 
-// Original: core_twigzomb.cpp_FUN_005a2a90
+// Original: core_twigzomb.cpp_CTwigZombie_processDeathState_FUN_005a2a90
 // Address: 005a2a90
-void FUN_005a2a90(int param_1);
+void __cdecl CTwigZombie::processDeathState(CTwigZombie *this_ptr,float delta_time);
 
 // Original: core_twigzomb.cpp_FUN_005a2ac0
 // Address: 005a2ac0
 void FUN_005a2ac0(CEnemy *param_1);
 
-// Original: core_twigzomb.cpp_FUN_005a2dc0
+// Original: core_twigzomb.cpp_CTwigZombie_getDeathState_FUN_005a2dc0
 // Address: 005a2dc0
-undefined4 FUN_005a2dc0(int param_1);
+EDeathState __cdecl CTwigZombie::getDeathState(CTwigZombie *this_ptr);
 
-// Original: core_twigzomb.cpp_FUN_005a2e30
+// Original: core_twigzomb.cpp_CTwigZombie_processMotionEvent_FUN_005a2e30
 // Address: 005a2e30
-void FUN_005a2e30(CDemonActor *param_1,uint param_2);
+void __cdecl CTwigZombie::processMotionEvent(CTwigZombie *this_ptr,int event_id);
 
-// Original: core_twigzomb.cpp_FUN_005a2e90
+// Original: core_twigzomb.cpp_CTwigZombie_processDamage_FUN_005a2e90
 // Address: 005a2e90
-void FUN_005a2e90(undefined4 param_1,int param_2);
+void __cdecl CTwigZombie::processDamage(CTwigZombie *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_twigzomb.cpp_CTwigZombie_dtor_FUN_005a2eb0
 // Address: 005a2eb0

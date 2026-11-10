@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   y
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_0047f4a0 at 0047f538
-;   cockpit_drawsurf.cpp_FUN_0047fe30 at 0047fe96
+;   cockpit_drawsurf.cpp_CDrawSurface_drawHorizontalLine_FUN_0047f4a0 at 0047f538
+;   cockpit_drawsurf.cpp_CDrawSurface_fillRectangle_FUN_0047fe30 at 0047fe96
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

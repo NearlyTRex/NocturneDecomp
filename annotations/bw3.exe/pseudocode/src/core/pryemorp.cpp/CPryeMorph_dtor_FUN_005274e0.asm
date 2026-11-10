@@ -8,12 +8,12 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CPryeMorphVTable = 005275c0
+;   CCharacter_full_vtable g_CPryeMorphVTable
 ;   WatcomTypeInfo g_CPryeMorphTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_morph.cpp_CMorph_dtor_FUN_004fa8c0
 ;   core_path.cpp_CPathMap_dtor_FUN_0050ad40
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
@@ -67,8 +67,8 @@ section .text
     PUSH 0x0                            ; 0052754b
     SUB EAX,0x954                       ; 0052754d
     PUSH EAX                            ; 00527552
-    CALL core_cloth.cpp_FUN_0043f900    ; 00527553
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 00527553
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 00527558
     PUSH 0x0                            ; 0052755b
     SUB EAX,0x2db0                      ; 0052755d

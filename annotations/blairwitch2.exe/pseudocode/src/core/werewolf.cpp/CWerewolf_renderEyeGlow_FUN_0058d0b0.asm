@@ -84,7 +84,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_werewolf.cpp_FUN_0058d670 at 0058d764
+;   core_werewolf.cpp_CWerewolf_renderTransparent_FUN_0058d670 at 0058d764
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fe0b0

@@ -8,7 +8,7 @@
 ;   core_charactr.cpp_FUN_00422be0 at 00422c02
 ;
 ; Referenced Globals:
-;   undefined4 g_DeformableModelPool[0].field10864_0x2a70
+;   undefined4 g_DeformableModelPool[0].model_filename[0]
 ;   undefined4 DAT_02177ff4
 ;   undefined4 DAT_02628554
 ;
@@ -33,7 +33,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00549229
     PUSH EDX                            ; 0054922c
     MOV EDI,0x20ccff4                   ; 0054922d
-    PUSH ESI                            ; 00549232 | g_DeformableModelPool[0].field10864_0x2a70
+    PUSH ESI                            ; 00549232 | g_DeformableModelPool[0].model_filename[0]
     ADD EDI,EAX                         ; 00549233
     CALL crt_string.c__stricmp_FUN_005b8130 ; 00549235
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)

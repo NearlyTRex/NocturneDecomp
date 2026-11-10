@@ -1,0 +1,308 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 129,
+    "complexity_score": 193,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 53,
+    "suspect_count": 13,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 182
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004693e0",
+    "address_range": [
+      [
+        "004693e0",
+        "00469547"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_doc.cpp_CDoc_process_FUN_004693e0",
+    "signature": "void __cdecl core_doc_cpp_CDoc_process_FUN_004693e0(CDoc *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042e1a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0"
+    },
+    {
+      "addr": "00432f10",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00432f10"
+    },
+    {
+      "addr": "00433d50",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_00433d50"
+    },
+    {
+      "addr": "00469550",
+      "is_variadic": false,
+      "name": "core_doc.cpp_FUN_00469550"
+    },
+    {
+      "addr": "004d7f50",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_slamDT_FUN_004d7f50"
+    },
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "004693a8",
+      "name": "switchdataD_004693a8",
+      "type": "undefined1*",
+      "value": "00469465"
+    },
+    {
+      "addr": "005d9be4",
+      "name": "DAT_005d9be4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9bec",
+      "name": "DAT_005d9bec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fecb4",
+      "name": "DAT_005fecb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "01ccf390",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01ccf5ec",
+      "name": "g_CGameInstance.field556_0x25c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf624",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.404040404040404,
+    "instruction_count": 99,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "BRANCHIND": 1,
+      "CALL": 10,
+      "CBRANCH": 6,
+      "COPY": 152,
+      "FLOAT2FLOAT": 13,
+      "FLOAT_ABS": 1,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 42,
+      "INT_AND": 50,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 42,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 21,
+      "INT_SUB": 41,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 23,
+      "POPCOUNT": 21,
+      "RETURN": 1,
+      "STORE": 40
+    },
+    "pcode_op_count": 535
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoc *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x25c",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)&g_CGamePtr->field_0x25c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x200d8",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x200d8 == 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x200dc",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x200dc = *(float *)&this_ptr->field_0x200dc - _DAT_005fecb4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x200dc",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x200dc = *(float *)&this_ptr->field_0x200dc - _DAT_005fecb4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,0x75,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x200dc",
+      "severity": "mild",
+      "text": "if (ABS(*(float *)&this_ptr->field_0x200dc) <= (float)_DAT_005d9be4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x34 = _DAT_005fecb4 + *(float *)&this_ptr->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x34 = _DAT_005fecb4 + *(float *)&this_ptr->field_0x34;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "core_charactr_cpp_FUN_00433d50(this_ptr,&this_ptr->field_0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x200d8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x200d8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x1ff5c",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x1ff5c == 7) || (bVar1)) {",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDoc",
+        "offset": 12,
+        "vtable_addr": "005fece4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -11,7 +11,7 @@ void core_exorcism_cpp_factoryFuncExorcism_FUN_0048a2e0(void)
 {
   CExorcism *this_ptr;
   
-  this_ptr = (CExorcism *)FUN_005a3cb2(0x62c);
+  this_ptr = (CExorcism *)debugAllocTracked1(0x62c);
   if (this_ptr == (CExorcism *)0x0) {
     return;
   }

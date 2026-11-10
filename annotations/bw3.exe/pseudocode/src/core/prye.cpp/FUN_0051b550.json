@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 923,
-    "complexity_score": 2091,
+    "complexity_score": 1572,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 22,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 376,
-    "suspect_count": 166,
+    "pseudocode_lines": 407,
+    "suspect_count": 111,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "self_copy_guard",
       "stack_alignment_array",
-      "suspicious_cast",
+      "stack_param",
       "unknown_field",
       "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1299
+    "total_lines": 1330
   },
   "cross_references": [
     {
@@ -64,12 +64,12 @@
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "00433fb0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00433fb0"
+      "name": "core_charactr.cpp_CCharacter_processMotion_FUN_00433fb0"
     },
     {
       "addr": "0042abb0",
@@ -79,12 +79,17 @@
     {
       "addr": "004ce9c0",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004ce9c0"
+      "name": "core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0"
+    },
+    {
+      "addr": "004d41a0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0"
     },
     {
       "addr": "004d3250",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d3250"
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250"
     },
     {
       "addr": "004d3460",
@@ -95,11 +100,6 @@
       "addr": "004d4160",
       "is_variadic": false,
       "name": "core_hero.cpp_FUN_004d4160"
-    },
-    {
-      "addr": "004d41a0",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004d41a0"
     },
     {
       "addr": "004fbb70",
@@ -271,7 +271,7 @@
     },
     {
       "addr": "020288b4",
-      "name": "g_CDemonSetInstance.field1380332_0x150fec",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     }
@@ -639,63 +639,47 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 16,
+      "line": 20,
       "match": "afStackY_10d0",
       "severity": "moderate",
-      "text": "float afStackY_10d0 [981];",
+      "text": "float afStackY_10d0 [978];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 23,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "CGore *in_stack_fffffe84;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = (CMotionController *)&param_1->field_0x158;",
+      "text": "local_24 = &(param_1->model).base;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "local_24 = (CMotionController *)&param_1->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_30 = &param_1[2].field_0x7024;",
+      "text": "local_30 = param_1[2].flames[0x15].base.orient_matrix.m + 2;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x7024",
-      "severity": "mild",
-      "text": "local_30 = &param_1[2].field_0x7024;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_34 = &param_1[2].field_0x7018;",
+      "text": "local_34 = param_1[2].flames[0x15].base.orient_matrix.m + 1;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x7018",
-      "severity": "mild",
-      "text": "local_34 = &param_1[2].field_0x7018;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 67,
       "match": "param_2",
       "severity": "mild",
       "text": "bone_index = core_motion_cpp_CMotionController_advance_FUN_004fbb70(local_24,&param_2);",
@@ -703,306 +687,114 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)&param_1[2].field_0x700c;",
+      "text": "fVar1 = param_1[2].flames[0x15].base.orient_matrix.m[0].x;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x700c",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&param_1[2].field_0x700c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x7088 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x7088",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x7088 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2500 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x2500",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2500 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 84,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
       "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
+      "text": "if (*(int *)(param_1[2].flames[0x15].base.create_event + 0x40) == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,&local_ac,0x3fd9999a);",
+      "text": "if (param_1->is_on_ground != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 92,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 92,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
+      "text": "(*((param_1->base).vtable._ub)->processFootstepAtOffset)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,&local_ac,0x3f800000);",
+      "text": "(&param_1->base,&local_ac,1.7);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 98,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed function parameter",
+      "line": 97,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).vtable._ub)->processFootstepAtOffset)",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 99,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_ac,0x3fd9999a);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 115,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 115,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_ac,0x3f800000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 131,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 131,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 131,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 132,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_ac,0x3f800000);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 138,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 138,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 138,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x24))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 139,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,&local_ac,0x3f800000);",
+      "text": "(&param_1->base,&local_ac,1.0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 103,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = *(float *)&param_1->field_0x154;",
+      "text": "(*((param_1->base).vtable._ub)->processFootstepAtOffset)",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 146,
-      "match": "field_0x154",
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = *(float *)&param_1->field_0x154;",
-      "type": "unnamed_field"
+      "text": "(&param_1->base,&local_ac,1.7);",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 147,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*(int *)(*(int *)&param_1[2].field_0x7088 + 0x154) + 0x44))",
-      "type": "unresolved_funcptr"
+      "description": "Unnamed function parameter",
+      "line": 125,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).vtable._ub)->processFootstepAtOffset)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 126,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&param_1->base,&local_ac,1.0);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar2 = (**(code **)(*(int *)(*(int *)&param_1[2].field_0x7088 + 0x154) + 0x44))",
+      "text": "(*((param_1->base).vtable._ub)->processFootstepAtOffset)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 147,
-      "match": "field_0x7088",
-      "severity": "mild",
-      "text": "uVar2 = (**(code **)(*(int *)(*(int *)&param_1[2].field_0x7088 + 0x154) + 0x44))",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 148,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1[2].field_0x7088,0x3f800000);",
+      "text": "(&param_1->base,&local_ac,1.0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 148,
-      "match": "field_0x7088",
-      "severity": "mild",
-      "text": "(*(int *)&param_1[2].field_0x7088,0x3f800000);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 149,
+      "line": 154,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b80(param_1,&local_ac,uVar2);",
+      "text": "(*((param_1->base).vtable._ub)->processFootstepAtOffset)",
       "type": "unnamed_param"
     },
     {
@@ -1010,31 +802,15 @@
       "line": 155,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_14 = *(float *)&param_1->field_0x154;",
+      "text": "(&param_1->base,&local_ac,1.0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 155,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "local_14 = *(float *)&param_1->field_0x154;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 156,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar2 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x44))(iVar3,0x3f800000);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 157,
+      "line": 162,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b80(param_1,&local_ac,uVar2);",
+      "text": "local_14 = (param_1->base).vtable;",
       "type": "unnamed_param"
     },
     {
@@ -1042,244 +818,236 @@
       "line": 163,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar9 = param_1;",
+      "text": "iVar5 = *(int *)(param_1[2].flames[0x15].base.create_event + 0x40);",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 167,
-      "match": "(code **)((int)local_14",
-      "severity": "moderate",
-      "text": "(**(code **)((int)local_14 + 0x28))(pCVar9,pfVar10);",
-      "type": "pointer_cast"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 167,
+      "line": 164,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)((int)local_14 + 0x28))(pCVar9,pfVar10);",
+      "text": "ground_type = (**(code **)(*(int *)(iVar5 + 0x154) + 0x44))(iVar5,0x3f800000);",
       "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 165,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408b80(param_1,auStack_bc);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 171,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00433fb0(param_1,bone_index);",
+      "text": "local_14 = (param_1->base).vtable;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 175,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc == 4) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 175,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc == 4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 176,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 176,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 181,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xa56);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 181,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xa56);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 183,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&param_1[2].field_0x7000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 183,
-      "match": "field_0x7000",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&param_1[2].field_0x7000;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(int *)((int)fVar1",
+      "severity": "moderate",
+      "text": "ground_type = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x44))(fVar1,0x3f800000);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 189,
+      "line": 172,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x84))(iVar3,param_1);",
+      "text": "ground_type = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x44))(fVar1,0x3f800000);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 189,
+      "line": 173,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x84))(iVar3,param_1);",
+      "text": "core_actor_cpp_FUN_00408b80(param_1,auStack_bc);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 178,
+      "match": "(float *)((int)pCVar8",
+      "severity": "moderate",
+      "text": "pfVar9 = (float *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 180,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "this_ptr = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 183,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)local_24->state_index)",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 184,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "(&this_ptr->base,position,ground_type,(float)in_stack_fffffe84);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 188,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(param_1,bone_index);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 191,
+      "line": 192,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x7000 = 0;",
+      "text": "iVar5 = param_1[2].flames[0x14].render_corona;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 191,
-      "match": "field_0x7000",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x7000 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 194,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)&param_1[2].field_0x7000;",
+      "text": "param_1[2].flames[0x14].render_corona = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 194,
-      "match": "field_0x7000",
+      "description": "Unresolved stack parameter",
+      "line": 197,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84 = (CGore *)0x51b782;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 201,
+      "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)&param_1[2].field_0x7000;",
-      "type": "unnamed_field"
+      "text": "fVar1 = param_1[2].flames[0x15].base.orient.vec.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(int *)((int)fVar1",
+      "severity": "moderate",
+      "text": "iVar5 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x84))(fVar1,param_1);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 196,
+      "line": 207,
       "match": "code *",
       "severity": "moderate",
-      "text": "(iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x84))(iVar4,param_1), iVar4 == 4))",
+      "text": "iVar5 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x84))(fVar1,param_1);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 196,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(iVar4 = (**(code **)(*(int *)(iVar4 + 0x154) + 0x84))(iVar4,param_1), iVar4 == 4))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 198,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f04 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 198,
-      "match": "field_0x2f04",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f04 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 199,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f00 = 0x11;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 199,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f00 = 0x11;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 202,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 202,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 205,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xa7a);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 205,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xa7a);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 207,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 1;",
+      "text": "iVar5 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x84))(fVar1,param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 207,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 209,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[0x15].base.orient.vec.x = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 212,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = param_1[2].flames[0x15].base.orient.vec.x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 214,
+      "match": "(int *)((int)fVar1",
+      "severity": "moderate",
+      "text": "(iVar6 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x84))(fVar1,param_1),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 214,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar6 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x84))(fVar1,param_1),",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 214,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(iVar6 = (**(code **)(*(int *)((int)fVar1 + 0x154) + 0x84))(fVar1,param_1),",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 216,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_t = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 217,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->layer_action_index = 0x11;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 220,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = param_1[2].flames[0x14].render_corona;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 222,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84 = (CGore *)0x51b7d5;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 226,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[0x14].render_corona = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 228,
       "match": "param_1",
       "severity": "mild",
       "text": "core_hero_cpp_FUN_004d4160((CHero *)param_1,1);",
@@ -1287,23 +1055,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 215,
+      "line": 234,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)&param_1->field_0x2628;",
+      "text": "iVar5 = *(int *)&param_1->field_0x2628;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 215,
+      "line": 234,
       "match": "field_0x2628",
       "severity": "mild",
-      "text": "iVar3 = *(int *)&param_1->field_0x2628;",
+      "text": "iVar5 = *(int *)&param_1->field_0x2628;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 216,
+      "line": 235,
       "match": "param_1",
       "severity": "mild",
       "text": "core_prye_cpp_FUN_00520da0(param_1);",
@@ -1311,199 +1079,111 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 217,
+      "line": 236,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)&param_1[2].field_0x6fcc;",
+      "text": "iVar6 = param_1[2].flames[0x14].render_corona;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 217,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&param_1[2].field_0x6fcc;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 220,
+      "line": 239,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0x68))(iVar3,local_34,local_30);",
+      "text": "(**(code **)(*(int *)(iVar5 + 0x154) + 0x68))(iVar5,local_34,local_30);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 223,
+      "line": 242,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
+      "text": "param_1[2].flames[0x14].render_corona = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 223,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 246,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84 = (CGore *)0x51b724;",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 230,
+      "line": 250,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)&param_1->field_0x2f00;",
+      "text": "iVar6 = param_1->layer_action_index;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 230,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&param_1->field_0x2f00;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 231,
+      "line": 251,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x7014 = 0;",
+      "text": "param_1[2].flames[0x15].base.orient_matrix.m[0].z = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 231,
-      "match": "field_0x7014",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x7014 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 233,
+      "line": 253,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f04 = 0;",
+      "text": "param_1->layer_action_t = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 233,
-      "match": "field_0x2f04",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f04 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 234,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f00 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 234,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2f00 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 236,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (iVar3 == *(int *)&param_1[2].field_0x708c) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 236,
-      "match": "field_0x708c",
-      "severity": "mild",
-      "text": "if (iVar3 == *(int *)&param_1[2].field_0x708c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 237,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x708c = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 237,
-      "match": "field_0x708c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x708c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 243,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)&param_1->field_0x26fc,g_CEnemyClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 243,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "(*(uint *)&param_1->field_0x26fc,g_CEnemyClassInfo.name_hash);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 252,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b80(param_1,puVar11);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
       "line": 254,
-      "match": "._0_4_",
+      "match": "param_1",
       "severity": "mild",
-      "text": "local_e8._0_4_ = local_94[0]._0_4_;",
-      "type": "unknown_field"
+      "text": "param_1->layer_action_index = 0;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 254,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_e8._0_4_ = local_94[0]._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Complex pointer cast",
+      "description": "Unnamed function parameter",
       "line": 256,
-      "match": "(uint *)((int)local_94",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_94 + (uint)bVar7 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 258,
-      "match": "(uint *)((int)local_94",
-      "severity": "moderate",
-      "text": "*(uint *)((int)local_94 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8);",
-      "type": "pointer_cast"
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iVar5 == *(int *)(param_1[2].flames[0x15].base.create_event + 0x44)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 272,
+      "line": 257,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar2 = param_1[2].flames + 0x15;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 267,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->grabbed_by,g_CEnemyClassInfo.name_hash);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 276,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408b80(param_1,puVar12);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 278,
+      "match": "._0_4_",
+      "severity": "mild",
+      "text": "local_e8._0_4_ = afStack_9c[2];",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 295,
       "match": "param_1",
       "severity": "mild",
       "text": "local_12c = param_1;",
@@ -1511,7 +1191,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 273,
+      "line": 296,
       "match": "param_1",
       "severity": "mild",
       "text": "local_128 = param_1;",
@@ -1519,31 +1199,31 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 274,
+      "line": 297,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(local_2c + 0x154) + 0x108))(local_2c,local_160);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 284,
-      "match": "field_0x150fec",
-      "severity": "mild",
-      "text": "for (local_1c = 0; local_1c < *(int *)&g_CDemonSetPtr->field_0x150fec;",
-      "type": "unnamed_field"
+      "description": "Unresolved stack parameter",
+      "line": 302,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84 = g_CGorePtr;",
+      "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 286,
-      "match": "field_0x150ff0",
-      "severity": "mild",
-      "text": "local_18 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_20);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 310,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "local_18 = *(int *)((int)g_CDemonSetPtr->enemies + local_20);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 300,
+      "line": 324,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(local_18 + 0x154) + 0x108))(local_18,local_124);",
@@ -1551,111 +1231,71 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 304,
+      "line": 328,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x26fc = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 304,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x26fc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 308,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00433fb0(param_1,bone_index);",
+      "text": "param_1->grabbed_by = (CDemonActor *)0x0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 311,
+      "line": 332,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x26fc != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 311,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x26fc != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 312,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,*(int *)&param_1->field_0x26fc + 0x20);",
+      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(param_1,bone_index);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 312,
+      "line": 335,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,*(int *)&param_1->field_0x26fc + 0x20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 312,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408bf0(param_1,*(int *)&param_1->field_0x26fc + 0x20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 316,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x2c))(param_1,\"fall-1.wav\");",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 316,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x2c))(param_1,\"fall-1.wav\");",
+      "text": "if (param_1->grabbed_by != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 316,
+      "line": 336,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x2c))(param_1,\"fall-1.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 316,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x2c))(param_1,\"fall-1.wav\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 319,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_00433fb0(param_1,bone_index);",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1,&param_1->grabbed_by->location);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 326,
+      "line": 336,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408bf0(param_1,&param_1->grabbed_by->location);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 340,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"fall-1.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 340,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(*((param_1->base).vtable._ub)->playSound)(&param_1->base,\"fall-1.wav\");",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 343,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_charactr_cpp_CCharacter_processMotion_FUN_00433fb0(param_1,bone_index);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 350,
       "match": "param_1",
       "severity": "mild",
       "text": "core_prye_cpp_FUN_00520d20(param_1);",
@@ -1663,178 +1303,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 353,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2628 == *(int *)&param_1[2].field_0x708c) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 329,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2628 == *(int *)&param_1[2].field_0x708c) {",
+      "text": "if (*(int *)&param_1->field_0x2628 ==",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 329,
+      "line": 353,
       "match": "field_0x2628",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2628 == *(int *)&param_1[2].field_0x708c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 329,
-      "match": "field_0x708c",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x2628 == *(int *)&param_1[2].field_0x708c) {",
+      "text": "if (*(int *)&param_1->field_0x2628 ==",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 330,
+      "line": 354,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x708c = 0;",
+      "text": "*(int *)(param_1[2].flames[0x15].base.create_event + 0x44)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 330,
-      "match": "field_0x708c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x708c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 332,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_hero_cpp_FUN_004d41a0((CHero *)param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 333,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc == 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 333,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc == 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 334,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 334,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 339,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xa9a);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 339,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xa9a);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 343,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc == 5) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 343,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6fcc == 5) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 344,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 344,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0x6fcc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 349,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xb13);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 349,
-      "match": "field_0x6fcc",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x6fcc,0xb13);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 351,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6ffc == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 351,
-      "match": "field_0x6ffc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x6ffc == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 355,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_hero_cpp_FUN_004d3250((CHero *)param_1);",
+      "text": "pCVar2 = param_1[2].flames + 0x15;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 361,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_hero_cpp_CHero_addCarriedItemToInventory_FUN_004d41a0((CHero *)param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -1842,76 +1346,124 @@
       "line": 362,
       "match": "param_1",
       "severity": "mild",
+      "text": "iVar5 = param_1[2].flames[0x14].render_corona;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 364,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[0x14].render_corona = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 367,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84 = (CGore *)0x51b87a;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 373,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = param_1[2].flames[0x14].render_corona;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 375,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[2].flames[0x14].render_corona = 0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 378,
+      "match": "in_stack_fffffe84",
+      "severity": "moderate",
+      "text": "in_stack_fffffe84 = (CGore *)0x51bf5d;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 382,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1[2].flames[0x15].base.location.area_id == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 386,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250((CHero *)param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 393,
+      "match": "param_1",
+      "severity": "mild",
       "text": "core_hero_cpp_FUN_004d3460(param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 368,
+      "line": 399,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x251c = 0x41200000;",
+      "text": "(param_1->velocity).y = 0x41200000;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 368,
-      "match": "field_0x251c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x251c = 0x41200000;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 372,
+      "line": 403,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x251c = 0x41000000;",
+      "text": "(param_1->velocity).y = 0x41000000;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 372,
-      "match": "field_0x251c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x251c = 0x41000000;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 376,
+      "line": 407,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 <= 0.0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 286,
-      "match": "g_CDemonSetPtr",
+      "description": "Pointer value `&local_ac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 79,
+      "match": "(int)&local_ac",
       "severity": "moderate",
-      "text": "local_18 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_20);",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Pointer value `&local_e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 255,
-      "match": "(int)&local_e8",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_e8 + (uint)bVar7 * -8 + 4) =",
+      "text": "*(float *)((int)&local_ac + (uint)bVar10 * -8 + 4) = afStack_9c[(uint)bVar10 * -2];",
       "type": "pointer_truncation"
     },
     {
-      "description": "Pointer value `&local_e8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 257,
-      "match": "(int)&local_e8",
+      "description": "Pointer value `&local_ac` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 80,
+      "match": "(int)&local_ac",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "text": "*(float *)((int)&local_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 178,
+      "match": "(int)pCVar8",
+      "severity": "moderate",
+      "text": "pfVar9 = (float *)((int)pCVar8 + ((uint)bVar10 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_144 != &local_dc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 267,
+      "line": 290,
       "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
       "severity": "moderate",
       "text": "if (&local_144 != &local_dc) {",
@@ -1919,18 +1471,26 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 255,
+      "line": 79,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_e8 + (uint)bVar7 * -8 + 4) =",
+      "text": "*(float *)((int)&local_ac + (uint)bVar10 * -8 + 4) = afStack_9c[(uint)bVar10 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 257,
+      "line": 80,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_e8 + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =",
+      "text": "*(float *)((int)&local_ac + (uint)bVar10 * -8 + (uint)bVar10 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 305,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(int)((int)&(local_14._ub)->setup + 1),BLOOD_TYPE_RED);",
       "type": "pointer_cast"
     },
     {

@@ -11,11 +11,10 @@ ECollisionType __cdecl core_boxactor_cpp_CBoxActor_getCollisionType_FUN_0041caf0
 {
   CKeyFramedModel *pCVar1;
   
-  if ((*(int *)&this_ptr->field_0x754 != 0) && (*(int *)&this_ptr->field_0x474 == 0)) {
-    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-                       ((CKeyFramedModelInstance *)&this_ptr->field_0x2b4);
-    if (*(int *)&pCVar1->field_0x358 != 0) {
-      *(byte **)&collision_info->field_0x24 = &this_ptr->field_0x2b4;
+  if ((this_ptr->collision_flag != 0) && (this_ptr->carrier_actor == (CDemonActor *)0x0)) {
+    pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20(&this_ptr->model);
+    if (pCVar1->collision_triangle_list != (CDemonTriangle *)0x0) {
+      *(CKeyFramedModelInstance **)&collision_info->field_0x24 = &this_ptr->model;
     }
     return COLLISION_TYPE_MESH;
   }

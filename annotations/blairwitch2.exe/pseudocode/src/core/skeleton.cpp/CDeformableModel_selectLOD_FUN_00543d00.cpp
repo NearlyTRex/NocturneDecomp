@@ -12,32 +12,32 @@ int __cdecl core_skeleton_cpp_CDeformableModel_selectLOD_FUN_00543d00(CDeformabl
   int iVar1;
   float fVar2;
   int extraout_ECX;
-  int iVar3;
+  SLod *pSVar3;
   float10 fVar4;
   
   iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
   if (iVar1 == 0) {
     iVar1 = 0;
-    if (1 < *(int *)this_ptr) {
+    if (1 < this_ptr->num_lods) {
       fVar2 = core_box_cpp_FUN_0041ae50(bounding_box);
       fVar4 = (float10)fVar2;
       round();
       iVar1 = extraout_ECX + -1;
       if (0 < iVar1) {
-        iVar3 = iVar1 * 8 + (int)this_ptr;
+        pSVar3 = this_ptr->lod_info + extraout_ECX * 8 + -0xc;
         do {
-          if ((*(int *)(iVar3 + 8) == 0) && ((int)ROUND(fVar4) < *(int *)(iVar3 + 4))) {
+          if ((*(int *)(pSVar3 + 8) == 0) && ((int)ROUND(fVar4) < *(int *)(pSVar3 + 4))) {
             return iVar1;
           }
           iVar1 = iVar1 + -1;
-          iVar3 = iVar3 + -8;
+          pSVar3 = pSVar3 + -8;
         } while (0 < iVar1);
       }
       return iVar1;
     }
   }
   else {
-    iVar1 = *(int *)this_ptr + -1;
+    iVar1 = this_ptr->num_lods + -1;
   }
   return iVar1;
 }

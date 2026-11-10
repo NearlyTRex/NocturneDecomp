@@ -171,7 +171,7 @@
       "line": 39,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "if (DAT_006141b8 <= *(int *)(this_ptr + 0x18)) {",
+      "text": "if (DAT_006141b8 <= this_ptr->clip_right) {",
       "type": "undefined_data"
     },
     {
@@ -179,7 +179,7 @@
       "line": 40,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "*(int *)(this_ptr + 0x18) = DAT_006141b8 + -1;",
+      "text": "this_ptr->clip_right = DAT_006141b8 + -1;",
       "type": "undefined_data"
     },
     {
@@ -187,7 +187,7 @@
       "line": 42,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "if (*(int *)(this_ptr + 0x1c) < DAT_006141bc) {",
+      "text": "if (this_ptr->clip_bottom < DAT_006141bc) {",
       "type": "undefined_data"
     },
     {
@@ -195,7 +195,7 @@
       "line": 45,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "*(int *)(this_ptr + 0x1c) = DAT_006141bc + -1;",
+      "text": "this_ptr->clip_bottom = DAT_006141bc + -1;",
       "type": "undefined_data"
     }
   ]

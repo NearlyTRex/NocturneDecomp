@@ -23,13 +23,19 @@
     {
       "addr": "004186c0",
       "from_addr": "004188b3",
-      "name": "core_boneguy.cpp_FUN_004186c0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00429b40",
       "from_addr": "00429bf9",
       "name": "core_charactr.cpp_CCharacter_applyLookAt_FUN_00429b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "00437067",
+      "name": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,19 +65,25 @@
     {
       "addr": "004afa20",
       "from_addr": "004afcea",
-      "name": "core_gabriela.cpp_FUN_004afa20",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00518310",
       "from_addr": "00518426",
-      "name": "core_platfrm.cpp_FUN_00518310",
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00520140",
       "from_addr": "005202b9",
       "name": "core_scat.cpp_FUN_00520140",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005466c0",
+      "from_addr": "00546772",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -93,9 +105,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005466c0",
-      "from_addr": "00546772",
-      "name": "core_skeleton.cpp_FUN_005466c0",
+      "addr": "00567fd0",
+      "from_addr": "005681a1",
+      "name": "core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -105,21 +117,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00567fd0",
-      "from_addr": "005681a1",
-      "name": "core_stranger.cpp_FUN_00567fd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00593770",
       "from_addr": "0059383c",
-      "name": "core_xform.cpp_FUN_00593770",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "00437067",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -212,7 +212,7 @@
       {
         "call_addr": "00546772",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_005466c0",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +225,7 @@
       {
         "call_addr": "0059383c",
         "call_type": "direct",
-        "caller": "core_xform.cpp_FUN_00593770",
+        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

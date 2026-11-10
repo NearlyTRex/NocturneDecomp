@@ -25,23 +25,23 @@ uint core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)
   int local_14;
   
   bVar7 = 0;
-  iVar2 = core_actor_cpp_FUN_0040c840(param_2,"CAmmo");
+  iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CAmmo");
   if (iVar2 == 0) {
-    iVar2 = core_actor_cpp_FUN_0040c840(param_2,"CWeapon");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CWeapon");
     if (iVar2 != 0) {
       core_inv_cpp_FUN_004db9d0(param_1,param_2,5,1);
       return 0;
     }
-    iVar2 = core_actor_cpp_FUN_0040c840(param_2,"CHealthItem");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CHealthItem");
     if (iVar2 == 0) {
-      iVar2 = core_actor_cpp_FUN_0040c840(param_2,"CGasMask");
+      iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CGasMask");
       if (iVar2 != 0) {
         iVar2 = (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CGasMaskClassInfo.name_hash);
         *(uint *)(iVar2 + 0x430) = (uint)(*(int *)(iVar2 + 0x430) == 0);
         *(int *)(param_1 + 0x458) = iVar2;
         return 0;
       }
-      iVar2 = core_actor_cpp_FUN_0040c840(param_2,"CBoxActor");
+      iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,"CBoxActor");
       if (iVar2 != 0) {
         iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c8f0(param_2,g_CBoxActorClassInfo.name_hash);
         core_event_cpp_FUN_00490f80(0x01C38BC0,(char *)(iVar2 + 0x75c),1);
@@ -114,8 +114,8 @@ uint core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)
         pcVar6 = pcVar6 + 2;
       } while (cVar1 != '\0');
       core_game_cpp_CGame_displayMessage_FUN_004b31a0(g_CGamePtr,local_118,5.0);
-      iVar2 = core_health_cpp_FUN_004cdf90(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4))
-      ;
+      iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004cdf90
+                        (local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));
       if (iVar2 < 1) {
         core_inv_cpp_FUN_004db8e0(param_1,param_2,1);
         return 1;
@@ -135,7 +135,7 @@ uint core_inv_cpp_FUN_004dc8c0(int param_1,CDemonActor *param_2)
       (iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4),
       actor_ptr = *(CDemonActor **)(iVar2 + 0x2498c + *(int *)(iVar2 + 0x247e4) * 4),
       actor_ptr == (CDemonActor *)0x0)) ||
-     (iVar2 = core_actor_cpp_FUN_0040c840(actor_ptr,&DAT_005db95d), iVar2 == 0)) {
+     (iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,&DAT_005db95d), iVar2 == 0)) {
     return 0;
   }
   iVar2 = *(int *)(_DAT_01cedef4 * 4 + 0x1cedee4);

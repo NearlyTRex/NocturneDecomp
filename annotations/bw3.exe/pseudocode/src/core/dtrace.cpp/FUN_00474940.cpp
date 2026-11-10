@@ -46,15 +46,12 @@ float core_dtrace_cpp_FUN_00474940(CDemonRaytrace *param_1,float *param_2,uint *
   local_60 = param_2[1] + _DAT_005bca11;
   local_58 = *param_2;
   local_50 = param_2[2];
-  fVar3 = ((float10)local_64 - (float10)*(float *)&param_1->field_0x10) /
-          (float10)*(float *)&param_1->field_0x28;
-  fVar4 = (float10)1 / (float10)*(float *)&param_1->field_0x2c;
-  fVar5 = ((float10)local_5c - (float10)*(float *)&param_1->field_0x18) /
-          (float10)*(float *)&param_1->field_0x30;
+  fVar3 = ((float10)local_64 - (float10)(param_1->bbox_min).x) / (float10)(param_1->cell_size).x;
+  fVar4 = (float10)1 / (float10)(param_1->cell_size).y;
+  fVar5 = ((float10)local_5c - (float10)(param_1->bbox_min).z) / (float10)(param_1->cell_size).z;
   local_54 = (float)((float10)param_2[1] + (float10)_DAT_005bca15);
-  fVar6 = ((float10)local_60 - (float10)*(float *)&param_1->field_0x14) * fVar4;
-  fVar4 = (((float10)param_2[1] + (float10)_DAT_005bca15) - (float10)*(float *)&param_1->field_0x14)
-          * fVar4;
+  fVar6 = ((float10)local_60 - (float10)(param_1->bbox_min).y) * fVar4;
+  fVar4 = (((float10)param_2[1] + (float10)_DAT_005bca15) - (float10)(param_1->bbox_min).y) * fVar4;
   local_40 = local_58 - local_64;
   local_38 = local_50 - local_5c;
   local_3c = local_54 - local_60;

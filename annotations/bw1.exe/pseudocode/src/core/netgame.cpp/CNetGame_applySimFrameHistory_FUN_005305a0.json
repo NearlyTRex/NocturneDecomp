@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 145,
+    "complexity_score": 95,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 9,
+    "suspect_count": 4,
     "suspect_types": [
       "unnamed_field",
       "unrolled_memcpy",
@@ -190,50 +190,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11c < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x174 = *(uint *)(sim_frame + 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 42,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) = *(int *)sim_frame + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) = *(int *)sim_frame + 1;",
+      "text": "*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 = *(int *)sim_frame + 1;",
       "type": "unnamed_field"
     },
     {

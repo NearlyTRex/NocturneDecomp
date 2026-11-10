@@ -13,16 +13,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[10]:
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 00464614
 ;   core_dlight.cpp_FUN_00463820 at 00463876
-;   core_dlight.cpp_FUN_00464190 at 00464614
+;   core_fire.cpp_CExplosion_render_FUN_004b1870 at 004b18f2
+;   core_fire.cpp_CGunFlame_render_FUN_004b2ea0 at 004b2f26
 ;   core_fire.cpp_CLaserBeam_render_FUN_004b01a0 at 004b0650
+;   core_fire.cpp_CLightningBolt_render_FUN_004b3570 at 004b36e9
 ;   core_fire.cpp_CTrail_render_FUN_004b3d20 at 004b3dcd
-;   core_fire.cpp_FUN_004b1870 at 004b18f2
-;   core_fire.cpp_FUN_004b2ea0 at 004b2f26
-;   core_fire.cpp_FUN_004b3570 at 004b36e9
 ;   core_flame.cpp_CFlame_renderTransparent_FUN_004b8100 at 004b86c9
-;   core_set.cpp_FUN_00555460 at 005554be
-;   core_weather.cpp_FUN_005ae890 at 005ae8c1
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_00555460 at 005554be
+;   core_weather.cpp_CWeather_renderParticles_FUN_005ae890 at 005ae8c1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005db3cc

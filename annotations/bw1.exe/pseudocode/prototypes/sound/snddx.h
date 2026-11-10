@@ -25,9 +25,9 @@ int FUN_005779b0(float param_1);
 // Address: 00577a50
 int FUN_00577a50(float param_1);
 
-// Original: sound_snddx.cpp_FUN_00577a90
+// Original: sound_snddx.cpp_CDirectSoundDevice_close_FUN_00577a90
 // Address: 00577a90
-int __cdecl FUN_00577a90(CDirectSoundDevice *this_ptr);
+int __cdecl CDirectSoundDevice::close(CDirectSoundDevice *this_ptr);
 
 // Original: sound_snddx.cpp_FUN_00577b60
 // Address: 00577b60
@@ -61,17 +61,17 @@ void FUN_00578680(void);
 // Address: 005786b0
 void FUN_005786b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
 
-// Original: sound_snddx.cpp_FUN_005786e0
+// Original: sound_snddx.cpp_CDirectSoundDevice_set3DListenerDistanceFactor_FUN_005786e0
 // Address: 005786e0
-void FUN_005786e0(undefined4 param_1,float param_2);
+void __cdecl CDirectSoundDevice::set3DListenerDistanceFactor(CDirectSoundDevice *this_ptr,double distance_in_feet);
 
 // Original: sound_snddx.cpp_FUN_00578710
 // Address: 00578710
 int FUN_00578710(undefined4 param_1,int param_2);
 
-// Original: sound_snddx.cpp_FUN_005789e0
+// Original: sound_snddx.cpp_isValidSampleBuffer_FUN_005789e0
 // Address: 005789e0
-undefined4 FUN_005789e0(int param_1);
+undefined4 isValidSampleBuffer(int param_1);
 
 // Original: sound_snddx.cpp_FUN_00578a20
 // Address: 00578a20
@@ -89,9 +89,9 @@ void FUN_00578be0(undefined4 param_1,int param_2);
 // Address: 00578cc0
 int FUN_00578cc0(undefined4 param_1,int param_2);
 
-// Original: sound_snddx.cpp_FUN_00578f4c
+// Original: sound_snddx.cpp_isValidSfxHandle_FUN_00578f4c
 // Address: 00578f4c
-undefined4 FUN_00578f4c(int param_1);
+undefined4 isValidSfxHandle(int param_1);
 
 // Original: sound_snddx.cpp_FUN_00578f80
 // Address: 00578f80
@@ -113,9 +113,9 @@ undefined4 FUN_00579ad0(int *param_1,int param_2);
 // Address: 00579f30
 void FUN_00579f30(undefined4 param_1,int param_2);
 
-// Original: sound_snddx.cpp_FUN_00579f6e
+// Original: sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f6e
 // Address: 00579f6e
-int __cdecl FUN_00579f6e(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
+int __cdecl directSoundEnumerationCallback(LPGUID device_guid,LPCSTR description,LPCSTR module,LPVOID context);
 
 // Original: sound_snddx.cpp_CDirectSoundDevice_commitDeferredSettings_FUN_0057a1e0
 // Address: 0057a1e0
@@ -127,7 +127,7 @@ void FUN_0057a230(void);
 
 // Original: sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0057a290
 // Address: 0057a290
-undefined4 __cdecl enumerateDirectSoundDevice(int param_1,int param_2);
+undefined4 __cdecl enumerateDirectSoundDevice(int param_1,char *param_2);
 
 // Original: sound_snddx.cpp_getDirectSoundDevice_FUN_0057a340
 // Address: 0057a340

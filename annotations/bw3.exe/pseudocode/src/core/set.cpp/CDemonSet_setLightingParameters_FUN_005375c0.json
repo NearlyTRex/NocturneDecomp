@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 89,
-    "complexity_score": 227,
+    "complexity_score": 152,
     "cross_reference_count": 13,
     "function_call_count": 0,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 52,
-    "suspect_count": 15,
+    "suspect_count": 8,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -20,9 +19,21 @@
   },
   "cross_references": [
     {
+      "addr": "004a1ad0",
+      "from_addr": "004a1bf3",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_004a1ad0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a09f0",
+      "from_addr": "004a0a9a",
+      "name": "core_fire.cpp_CShell_render_FUN_004a09f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00497dc0",
       "from_addr": "00497e58",
-      "name": "core_fire.cpp_FUN_00497dc0",
+      "name": "core_fire.cpp_CStake_render_FUN_00497dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,27 +55,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a09f0",
-      "from_addr": "004a0a9a",
-      "name": "core_fire.cpp_FUN_004a09f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a1ad0",
-      "from_addr": "004a1bf3",
-      "name": "core_fire.cpp_FUN_004a1ad0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004ce5b0",
       "from_addr": "004ce5e8",
-      "name": "core_gore.cpp_FUN_004ce5b0",
+      "name": "core_gore.cpp_CGore_renderParticles_FUN_004ce5b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005346b0",
       "from_addr": "00534753",
-      "name": "core_set.cpp_FUN_005346b0",
+      "name": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -251,7 +250,7 @@
       {
         "call_addr": "00497e58",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00497dc0",
+        "caller": "core_fire.cpp_CStake_render_FUN_00497dc0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -262,7 +261,7 @@
       {
         "call_addr": "00534753",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005346b0",
+        "caller": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -273,7 +272,7 @@
       {
         "call_addr": "004a1bf3",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a1ad0",
+        "caller": "core_fire.cpp_CFireEffect_render_FUN_004a1ad0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +283,7 @@
       {
         "call_addr": "004ce5e8",
         "call_type": "direct",
-        "caller": "core_gore.cpp_FUN_004ce5b0",
+        "caller": "core_gore.cpp_CGore_renderParticles_FUN_004ce5b0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -350,7 +349,7 @@
       {
         "call_addr": "004a0a9a",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a09f0",
+        "caller": "core_fire.cpp_CShell_render_FUN_004a09f0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -459,44 +458,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_DAT_0207ffb4 = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_DAT_0207ffb0 = *(uint *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_0207ffb8",
       "severity": "mild",
       "text": "if (orientation != (UOrientationVector *)&DAT_0207ffb8) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 21,
-      "match": "(uint *)((int)orientation",
-      "severity": "moderate",
-      "text": "_DAT_0207ffc0 = *(uint *)((int)orientation + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 22,
-      "match": "(uint *)((int)orientation",
-      "severity": "moderate",
-      "text": "_DAT_0207ffbc = *(uint *)((int)orientation + 4);",
-      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -507,22 +474,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_DAT_0207ffcc = *(uint *)&aabb_min->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_DAT_0207ffc8 = *(uint *)&aabb_min->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_0207ffd0",
@@ -531,28 +482,20 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_DAT_0207ffd8 = *(uint *)&aabb_max->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_DAT_0207ffd4 = *(uint *)&aabb_max->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 47,
       "match": "DAT_0207ffdc",
       "severity": "mild",
       "text": "puVar2 = (uint *)&DAT_0207ffdc;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(CMatrix3x3f *)((int)rotation_matrix",
+      "severity": "moderate",
+      "text": "rotation_matrix = (CMatrix3x3f *)((int)rotation_matrix + 4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0053765b, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

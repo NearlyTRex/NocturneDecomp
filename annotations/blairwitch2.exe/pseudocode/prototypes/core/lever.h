@@ -21,41 +21,41 @@ CDemonActorType * CLever::getActorType(CLever *this_ptr);
 // Address: 004e1c20
 CLever * __cdecl CLever::ctor(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e1cf0
+// Original: core_lever.cpp_CLever_setup_FUN_004e1cf0
 // Address: 004e1cf0
-void FUN_004e1cf0(CDemonActor *param_1);
+void __cdecl CLever::setup(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e1d70
+// Original: core_lever.cpp_CLever_process_FUN_004e1d70
 // Address: 004e1d70
-void FUN_004e1d70(int param_1,float param_2);
+void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
-// Original: core_lever.cpp_FUN_004e1f70
+// Original: core_lever.cpp_CLever_setState_FUN_004e1f70
 // Address: 004e1f70
-void __cdecl FUN_004e1f70(CLever *this_ptr,float new_state);
+void __cdecl CLever::setState(CLever *this_ptr,float new_state);
 
-// Original: core_lever.cpp_FUN_004e20e0
+// Original: core_lever.cpp_CLever_activate_FUN_004e20e0
 // Address: 004e20e0
-void __cdecl FUN_004e20e0(CLever *this_ptr);
+void __cdecl CLever::activate(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e2140
+// Original: core_lever.cpp_CLever_renderOpaque_FUN_004e2140
 // Address: 004e2140
-int FUN_004e2140(CDemonActor *param_1);
+int __cdecl CLever::renderOpaque(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e21e0
+// Original: core_lever.cpp_CLever_getBoundingBox_FUN_004e21e0
 // Address: 004e21e0
-void FUN_004e21e0(int param_1);
+CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_lever.cpp_FUN_004e2220
 // Address: 004e2220
 void FUN_004e2220(int param_1);
 
-// Original: core_lever.cpp_FUN_004e22e0
+// Original: core_lever.cpp_CLever_archive_FUN_004e22e0
 // Address: 004e22e0
-void FUN_004e22e0(CDemonActor *param_1);
+void __cdecl CLever::archive(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004e24c0
+// Original: core_lever.cpp_CLever_getCollisionType_FUN_004e24c0
 // Address: 004e24c0
-bool FUN_004e24c0(int param_1);
+ECollisionType __cdecl CLever::getCollisionType(CLever *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_lever.cpp_FUN_004e24e0
 // Address: 004e24e0

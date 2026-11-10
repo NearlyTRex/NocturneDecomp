@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 129,
+    "complexity_score": 119,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 8,
+    "suspect_count": 7,
     "suspect_types": [
       "negative_offset",
       "unnamed_field",
@@ -38,7 +38,7 @@
     {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "004fa8c0",
@@ -80,8 +80,8 @@
     {
       "addr": "005e36e4",
       "name": "g_CPryeMorphVTable",
-      "type": "undefined1*",
-      "value": "005275c0"
+      "type": "CCharacter_full_vtable",
+      "value": null
     },
     {
       "addr": "005e3830",
@@ -161,7 +161,7 @@
       "line": 21,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CPryeMorphVTable;",
+      "text": "*(CCharacter_full_vtable **)&this_ptr->field_0x154 = &g_CPryeMorphVTable;",
       "type": "unnamed_field"
     },
     {
@@ -185,16 +185,8 @@
       "line": 27,
       "match": "pCVar2[-1].",
       "severity": "mild",
-      "text": "iVar3 = unkafter_armour_cpp_FUN_00410370(&pCVar2[-1].field_0xa36c,0);",
+      "text": "iVar3 = unkafter_armour_cpp_FUN_00410370(pCVar2[-1].height_cache_tags[4] + 0x2f,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xa36c",
-      "severity": "mild",
-      "text": "iVar3 = unkafter_armour_cpp_FUN_00410370(&pCVar2[-1].field_0xa36c,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -221,7 +213,7 @@
         "vtable_addr": "005e3834"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CPryeMorph",
         "offset": 208,
         "vtable_addr": "005e36e4"
       }

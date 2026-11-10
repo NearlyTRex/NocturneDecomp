@@ -29,7 +29,7 @@
 ;   crt_watcom.c__memcpy_FUN_00495f68
 ;   engine_matrix.c_popViewport_FUN_0046d320
 ;   engine_special.cpp_FUN_005658d0
-;   engine_special.cpp_FUN_00566350
+;   engine_special.cpp_masterZBuffer_FUN_00566350
 ;
 ; *****************************************************************************
 
@@ -115,8 +115,8 @@ section .text
         ;   XREF to: 0044976e (UNCONDITIONAL_JUMP)  ; LAB_0044976e
     PUSH EBP                            ; 00449824
         ;   Label: LAB_00449824
-    CALL engine_special.cpp_FUN_00566350 ; 00449825
-        ;   XREF to: 00566350 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00566350(int slot)
+    CALL engine_special.cpp_masterZBuffer_FUN_00566350 ; 00449825
+        ;   XREF to: 00566350 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00566350(int slot)
     ADD ESP,0x4                         ; 0044982a
     JMP 0x0044979a                      ; 0044982d
         ;   XREF to: 0044979a (UNCONDITIONAL_JUMP)  ; LAB_0044979a

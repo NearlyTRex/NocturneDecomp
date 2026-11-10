@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 974,
+    "complexity_score": 959,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "severe",
     "pseudocode_lines": 94,
-    "suspect_count": 83,
+    "suspect_count": 82,
     "suspect_types": [
       "fnstsw_flag_artifact",
       "nonstandard_int",
@@ -17,7 +17,6 @@
       "stack_param",
       "stack_ref",
       "unaffected_reg",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -589,16 +588,8 @@
       "line": 65,
       "match": "in_stack_0000017c",
       "severity": "moderate",
-      "text": "if (*(int *)&g_CDemonSetPtr->field_0x14d164 <= in_stack_0000017c) {",
+      "text": "if (g_CDemonSetPtr->actor_count <= in_stack_0000017c) {",
       "type": "stack_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CDemonSetPtr->field_0x14d164 <= in_stack_0000017c) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",

@@ -17,7 +17,7 @@ int __cdecl core_inv_cpp_FUN_004db9e0(CInventory *this_ptr,char *class_name)
   pCVar2 = this_ptr;
   if (0 < *(int *)(this_ptr + 0x10)) {
     do {
-      iVar1 = core_actor_cpp_FUN_0040c790(*(CDemonActor **)(pCVar2 + 0x14),class_name);
+      iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(*(CDemonActor **)(pCVar2 + 0x14),class_name);
       if (iVar1 != 0) {
         return *(int *)(pCVar2 + 0x14);
       }

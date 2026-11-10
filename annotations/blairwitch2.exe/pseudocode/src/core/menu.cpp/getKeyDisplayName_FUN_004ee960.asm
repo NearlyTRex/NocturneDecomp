@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004b3c50 at 004b40ed
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004b3c50 at 004b40ed
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004b3b90 at 004b3baa
 ;   core_inv.cpp_FUN_004dadb0 at 004dafcd
 ;   core_menu.cpp_FUN_004eed60 at 004efa1c

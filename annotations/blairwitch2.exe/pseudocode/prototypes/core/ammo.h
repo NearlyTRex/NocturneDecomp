@@ -25,33 +25,33 @@ CAmmo * __cdecl CAmmo::ctor(CAmmo *this_ptr);
 // Address: 0040de50
 CAmmo * CAmmo::dtor(CAmmo *this_ptr,uint flags);
 
-// Original: core_ammo.cpp_FUN_0040deb0
+// Original: core_ammo.cpp_CAmmo_setup_FUN_0040deb0
 // Address: 0040deb0
-void FUN_0040deb0(CDemonActor *param_1);
+void __cdecl CAmmo::setup(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040ded0
+// Original: core_ammo.cpp_CAmmo_process_FUN_0040ded0
 // Address: 0040ded0
-void FUN_0040ded0(int param_1,float param_2);
+void __cdecl CAmmo::process(CAmmo *this_ptr,float delta_time);
 
-// Original: core_ammo.cpp_FUN_0040e0f0
+// Original: core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0
 // Address: 0040e0f0
-int FUN_0040e0f0(CDemonActor *param_1);
+int __cdecl CAmmo::renderOpaque(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040e170
+// Original: core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040e170
 // Address: 0040e170
-void FUN_0040e170(int param_1);
+CBoundingBox3D * __cdecl CAmmo::getBoundingBox(CAmmo *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_ammo.cpp_FUN_0040e1b0
+// Original: core_ammo.cpp_CAmmo_archive_FUN_0040e1b0
 // Address: 0040e1b0
-void FUN_0040e1b0(CDemonActor *param_1);
+void __cdecl CAmmo::archive(CAmmo *this_ptr);
 
-// Original: core_ammo.cpp_FUN_0040e210
+// Original: core_ammo.cpp_CAmmo_getCollisionType_FUN_0040e210
 // Address: 0040e210
-undefined4 FUN_0040e210(void);
+ECollisionType __cdecl CAmmo::getCollisionType(CAmmo *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_ammo.cpp_FUN_0040e240
+// Original: core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240
 // Address: 0040e240
-void __cdecl FUN_0040e240(CAmmo *this_ptr,char *weapon_class_name);
+void __cdecl CAmmo::setWeaponClass(CAmmo *this_ptr,char *weapon_class_name);
 
 // Original: core_ammo.cpp_FUN_0040e440
 // Address: 0040e440

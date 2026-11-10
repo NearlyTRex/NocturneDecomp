@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/unions/UStrListVTable.h"
 
 // Structure: CStrList
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10 (16 bytes)
 #pragma pack(push, 1)
 typedef struct CStrList {
-    char field_0[16]; // 0x0
+    int item_count; // 0x0
+    int capacity; // 0x4
+    char** data_array; // 0x8
+    UStrListVTable vtable; // 0xc
 } CStrList;
 #pragma pack(pop)
 

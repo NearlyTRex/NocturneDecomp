@@ -23,7 +23,7 @@ void core_podmain_cpp_FUN_0053d580(int param_1)
   if (iVar1 == 0) {
     engine_dosio_cpp_CFileFinder_ctor_FUN_00479320(&CStack_328);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00479360(&CStack_328,"*.pod");
-    while (CStack_328._0_1_ != '\0') {
+    while (CStack_328.filename[0] != '\0') {
       iVar1 = (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_328,auStack_114);
       if (iVar1 == 0) {
         _DAT_01d1d400 = "..\\core\\podmain.cpp";

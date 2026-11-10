@@ -186,9 +186,9 @@ void core_chain_cpp_FUN_005b4d30(CChain *param_1,float param_2)
     *(float *)pSVar7 = *(float *)pSVar7 + fStack_130;
     *(float *)&pSVar7->field_0x4 = *(float *)&pSVar7->field_0x4 + fStack_12c;
     *(float *)&pSVar7->field_0x8 = *(float *)&pSVar7->field_0x8 + fStack_128;
-    core_chain_cpp_FUN_005b4aa0(param_1,pSStack_34,pSStack_4c);
+    core_chain_cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(param_1,pSStack_34,pSStack_4c);
     in_stack_fffffe9c = pSStack_28;
-    core_chain_cpp_FUN_005b4aa0(param_1,pSStack_28,pSStack_44);
+    core_chain_cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(param_1,pSStack_28,pSStack_44);
     pSStack_34 = pSStack_34 + 1;
     pSStack_24 = pSStack_24 + 1;
     pSStack_38 = (SChainVertex *)((int)pSStack_38 + 0x24);
@@ -229,9 +229,9 @@ void core_chain_cpp_FUN_005b4d30(CChain *param_1,float param_2)
     pSStack_24 = pSStack_2c;
     pSVar7 = pSStack_60;
     for (iVar4 = 1; iVar4 < *(int *)&param_1->field_0x158 + -1; iVar4 = iVar4 + 1) {
-      core_chain_cpp_FUN_005b4aa0(param_1,pSVar7,pSStack_24);
+      core_chain_cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(param_1,pSVar7,pSStack_24);
       in_stack_fffffe9c = pSVar7;
-      core_chain_cpp_FUN_005b4aa0(param_1,pSVar7,pSStack_1c);
+      core_chain_cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(param_1,pSVar7,pSStack_1c);
       pSVar7 = pSVar7 + 1;
     }
     core_chain_cpp_FUN_005b4860(param_1);

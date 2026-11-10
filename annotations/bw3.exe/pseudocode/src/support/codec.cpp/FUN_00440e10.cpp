@@ -28,7 +28,7 @@ uint support_codec_cpp_FUN_00440e10(int param_1,uint param_2,uint param_3)
     uVar5 = (int)uVar2 >> 1;
     uVar4 = uVar5;
     if ((iVar1 - 1U & uVar2) != 0) {
-      uVar3 = support_codec_cpp_FUN_004400f0(param_2,1,param_3);
+      uVar3 = support_codec_cpp_writeBitsToStream_FUN_004400f0(param_2,1,param_3);
       if ((int)uVar3 < 0) {
         support_codec_cpp_FUN_00440210(param_2,iVar6,uVar7);
         return uVar3;
@@ -43,7 +43,7 @@ uint support_codec_cpp_FUN_00440e10(int param_1,uint param_2,uint param_3)
     return local_14;
   }
   do {
-    uVar4 = support_codec_cpp_FUN_004400f0(param_2,1,param_3);
+    uVar4 = support_codec_cpp_writeBitsToStream_FUN_004400f0(param_2,1,param_3);
     if ((int)uVar4 < 0) {
       support_codec_cpp_FUN_00440210(param_2,iVar6,uVar7);
       return 0xffffffff;

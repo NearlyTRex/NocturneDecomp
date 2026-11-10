@@ -11,19 +11,19 @@ void __cdecl core_litecone_cpp_CLightCone_process_FUN_004e4070(CLightCone *this_
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x160 == 0) {
+  if (this_ptr->state == 0) {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,&this_ptr->field_0x164);
+                      (0x01C6E360,this_ptr->on_event);
     if (iVar1 != 0) {
-      *(uint *)&this_ptr->field_0x160 = 1;
+      this_ptr->state = 1;
       return;
     }
   }
   else {
     iVar1 = core_event_cpp_CEventList_evaluateCondition_FUN_00491aa0
-                      (0x01C6E360,&this_ptr->field_0x1c8);
+                      (0x01C6E360,this_ptr->off_event);
     if (iVar1 != 0) {
-      *(uint *)&this_ptr->field_0x160 = 0;
+      this_ptr->state = 0;
       return;
     }
   }

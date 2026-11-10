@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 458,
-    "complexity_score": 762,
+    "complexity_score": 631,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 207,
-    "suspect_count": 54,
+    "pseudocode_lines": 191,
+    "suspect_count": 43,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 665
+    "total_lines": 649
   },
   "cross_references": [
     {
@@ -531,40 +530,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar2 = (float10)*(float *)&this_ptr->field_0x24 * (float10)_DAT_005e403d + (float10)_DAT_005e4045",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 36,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x4);",
+      "text": "(DAT_00612560,&this_ptr->position);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x10 == 1) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 43,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,",
@@ -572,127 +547,95 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 45,
       "match": "DAT_0061dd2c",
       "severity": "mild",
-      "text": "(&DAT_0061dd2c + local_14 * 0x18 + *(int *)&this_ptr->field_0x28 * 0x180));",
+      "text": "(&DAT_0061dd2c + local_14 * 0x18 + this_ptr->texture_variant * 0x180));",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&this_ptr->rotation,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_68);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 62,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "(&DAT_0061dd2c + local_14 * 0x18 + *(int *)&this_ptr->field_0x28 * 0x180));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 64,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x18,(CVector3f *)0x0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(DAT_00612560,(CVector3f *)&this_ptr->field_0x18,(CVector3f *)0x0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 71,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(*(SProjectedVertex **)DAT_00612560,(CVector3i *)&local_68);",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_50);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 70,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&local_50);",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_38);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&local_38);",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061dccc + this_ptr->texture_variant * 0x18))",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 105,
-      "match": "DAT_00612560",
-      "severity": "mild",
-      "text": "(DAT_00612560,",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 106,
+      "line": 88,
       "match": "DAT_0061dccc",
       "severity": "mild",
-      "text": "(SMRGLTextureBasic *)(&DAT_0061dccc + *(int *)&this_ptr->field_0x28 * 0x18));",
+      "text": "(DAT_00612560,(SMRGLTextureBasic *)(&DAT_0061dccc + this_ptr->texture_variant * 0x18))",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "(SMRGLTextureBasic *)(&DAT_0061dccc + *(int *)&this_ptr->field_0x28 * 0x18));",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 96,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173(*(SProjectedVertex **)DAT_00612560,(CVector3i *)&local_20);",
+      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_20);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 104,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&local_8c);",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_8c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 112,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&local_5c);",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_5c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 122,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)(*(int *)DAT_00612560 + 0x90),input);",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),input);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 139,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 126,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "DAT_00629034 = 0x2000;",
@@ -700,7 +643,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 127,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "DAT_00629038 = 0;",
@@ -708,7 +651,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 130,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "DAT_00629038 = 0x7f80;",
@@ -716,7 +659,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 131,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "DAT_00629034 = 0;",
@@ -724,7 +667,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 151,
+      "line": 135,
       "match": "DAT_00629038",
       "severity": "mild",
       "text": "DAT_00629038 = 0;",
@@ -732,7 +675,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 152,
+      "line": 136,
       "match": "DAT_00629034",
       "severity": "mild",
       "text": "DAT_00629034 = 0;",
@@ -740,23 +683,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 138,
       "match": "DAT_0062903c",
       "severity": "mild",
       "text": "DAT_0062903c = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 155,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 142,
       "match": "DAT_00629064",
       "severity": "mild",
       "text": "DAT_00629064 = 0x2000;",
@@ -764,7 +699,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 159,
+      "line": 143,
       "match": "DAT_00629068",
       "severity": "mild",
       "text": "DAT_00629068 = 0;",
@@ -772,7 +707,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 162,
+      "line": 146,
       "match": "DAT_00629068",
       "severity": "mild",
       "text": "DAT_00629068 = 0x7f80;",
@@ -780,7 +715,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 163,
+      "line": 147,
       "match": "DAT_00629064",
       "severity": "mild",
       "text": "DAT_00629064 = 0;",
@@ -788,7 +723,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 151,
       "match": "DAT_00629068",
       "severity": "mild",
       "text": "DAT_00629068 = 0;",
@@ -796,7 +731,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 168,
+      "line": 152,
       "match": "DAT_00629064",
       "severity": "mild",
       "text": "DAT_00629064 = 0;",
@@ -804,23 +739,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 170,
+      "line": 154,
       "match": "DAT_0062906c",
       "severity": "mild",
       "text": "DAT_0062906c = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 171,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 158,
       "match": "DAT_00629094",
       "severity": "mild",
       "text": "DAT_00629094 = 0x2000;",
@@ -828,7 +755,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 175,
+      "line": 159,
       "match": "DAT_00629098",
       "severity": "mild",
       "text": "DAT_00629098 = 0;",
@@ -836,7 +763,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 178,
+      "line": 162,
       "match": "DAT_00629098",
       "severity": "mild",
       "text": "DAT_00629098 = 0x7f80;",
@@ -844,7 +771,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 179,
+      "line": 163,
       "match": "DAT_00629094",
       "severity": "mild",
       "text": "DAT_00629094 = 0;",
@@ -852,7 +779,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 167,
       "match": "DAT_00629098",
       "severity": "mild",
       "text": "DAT_00629098 = 0;",
@@ -860,7 +787,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 184,
+      "line": 168,
       "match": "DAT_00629094",
       "severity": "mild",
       "text": "DAT_00629094 = 0;",
@@ -868,23 +795,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 186,
+      "line": 170,
       "match": "DAT_0062909c",
       "severity": "mild",
       "text": "DAT_0062909c = 0;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 187,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "uVar1 = *(uint *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 190,
+      "line": 174,
       "match": "DAT_006290c8",
       "severity": "mild",
       "text": "DAT_006290c8 = 0x7f80;",
@@ -892,7 +811,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 191,
+      "line": 175,
       "match": "DAT_006290c4",
       "severity": "mild",
       "text": "DAT_006290c4 = 0;",
@@ -900,7 +819,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 195,
+      "line": 179,
       "match": "DAT_006290c8",
       "severity": "mild",
       "text": "DAT_006290c8 = 0;",
@@ -908,7 +827,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 196,
+      "line": 180,
       "match": "DAT_006290c4",
       "severity": "mild",
       "text": "DAT_006290c4 = 0;",
@@ -916,7 +835,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 200,
+      "line": 184,
       "match": "DAT_006290c4",
       "severity": "mild",
       "text": "DAT_006290c4 = 0x2000;",
@@ -924,7 +843,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 201,
+      "line": 185,
       "match": "DAT_006290c8",
       "severity": "mild",
       "text": "DAT_006290c8 = 0;",
@@ -932,7 +851,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 203,
+      "line": 187,
       "match": "DAT_006290cc",
       "severity": "mild",
       "text": "DAT_006290cc = 0;",
@@ -940,19 +859,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 205,
+      "line": 189,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,(SMRGLHeaderPrimitive *)0x1cd0e40);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 206,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x10 == 1) {",
-      "type": "unnamed_field"
     }
   ]
 }

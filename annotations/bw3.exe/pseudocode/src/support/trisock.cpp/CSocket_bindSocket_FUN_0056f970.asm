@@ -10,7 +10,7 @@
 ; undefined2       Stack[-0x10]:2  local_10
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_00504270 at 005042c4
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 at 005042c4
 ;
 ; Called Functions:
 ;   crt_wsock32.c_bind

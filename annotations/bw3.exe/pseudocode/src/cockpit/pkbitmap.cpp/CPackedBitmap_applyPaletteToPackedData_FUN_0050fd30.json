@@ -2,15 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 71,
+    "complexity_score": 76,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 26,
     "suspect_count": 4,
     "suspect_types": [
-      "unnamed_field"
+      "pointer_cast",
+      "pointer_truncation"
     ],
     "total_lines": 75
   },
@@ -18,7 +19,7 @@
     {
       "addr": "0050fce0",
       "from_addr": "0050fd04",
-      "name": "cockpit_pkbitmap.cpp_FUN_0050fce0",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_0050fce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,7 +49,7 @@
       {
         "call_addr": "0050fd04",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_0050fce0",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_0050fce0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,36 +127,36 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "iVar2 = (*(int **)&this_ptr->field_0x20)[*(int *)&this_ptr->field_0x1c];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "iVar2 = (*(int **)&this_ptr->field_0x20)[*(int *)&this_ptr->field_0x1c];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 14,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "pbVar6 = (byte *)(**(int **)&this_ptr->field_0x20 + iVar1);",
-      "type": "unnamed_field"
+      "match": "(byte *)(*this_ptr->row_offsets + (int)puVar1",
+      "severity": "moderate",
+      "text": "pbVar6 = (byte *)(*this_ptr->row_offsets + (int)puVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(byte *)(iVar2 + (int)puVar1",
+      "severity": "moderate",
+      "text": "while (pbVar6 < (byte *)(iVar2 + (int)puVar1)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 14,
+      "match": "(int)puVar1",
+      "severity": "moderate",
+      "text": "pbVar6 = (byte *)(*this_ptr->row_offsets + (int)puVar1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `puVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 15,
+      "match": "(int)puVar1",
+      "severity": "moderate",
+      "text": "while (pbVar6 < (byte *)(iVar2 + (int)puVar1)) {",
+      "type": "pointer_truncation"
     }
   ]
 }

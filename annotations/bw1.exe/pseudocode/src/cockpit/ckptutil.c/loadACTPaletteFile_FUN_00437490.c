@@ -19,7 +19,7 @@ void __cdecl cockpit_ckptutil_c_loadACTPaletteFile_FUN_00437490(char *base_filen
   char *pcVar6;
   byte bVar7;
   char acStack_d8 [80];
-  byte auStack_88 [80];
+  char acStack_88 [80];
   CInStreamFile CStack_38;
   
   bVar7 = 0;
@@ -86,10 +86,10 @@ LAB_00437513:
   else {
     iVar2 = unkaddr_0059f520_cpp_FUN_005a0c10(&CStack_38,output_buffer,0x300);
     if (iVar2 != 0x300) {
-      FUN_005bfb40(auStack_88,"Error reading %s.",acStack_d8);
+      _sprintf(acStack_88,"Error reading %s.");
       _DAT_01d1d400 = "..\\cockpit\\ckptutil.c";
       _DAT_01d1d404 = 0x119;
-      core_main_c_FUN_005030e0(auStack_88);
+      core_main_c_FUN_005030e0(acStack_88);
     }
     unkaddr_0059f520_cpp_FUN_005a0dc0(&CStack_38);
   }

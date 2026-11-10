@@ -42,17 +42,21 @@ void engine_alphabit_cpp_FUN_0040dbe0(CAlphaBitmap *param_1)
         iVar4 = 0;
         iVar3 = 0;
         do {
-          uVar1 = (uint)*(byte *)(*(int *)param_1 +
-                                 (*(int *)&param_1->field_0xc * iVar2) / DAT_005fba18 +
-                                 ((local_14 * *(int *)&param_1->field_0x10) / DAT_005fba1c) *
-                                 *(int *)&param_1->field_0xc);
           if (DAT_005fba20 == 0x20) {
             *(uint *)(*(int *)(&DAT_01c5faec + local_1c) + iVar3) =
-                 *(uint *)(&DAT_01c6a974 + uVar1 * 4);
+                 *(uint *)
+                  (&DAT_01c6a974 +
+                  (uint)(byte)param_1->raw
+                              [(param_1->width * iVar2) / DAT_005fba18 +
+                               ((local_14 * param_1->height) / DAT_005fba1c) * param_1->width] * 4);
           }
           else {
             *(ushort *)(*(int *)(&DAT_01c5faec + local_1c) + iVar4) =
-                 *(ushort *)(uVar1 * 2 + 0x1c6ad74);
+                 *(ushort *)
+                  ((uint)(byte)param_1->raw
+                               [(param_1->width * iVar2) / DAT_005fba18 +
+                                ((local_14 * param_1->height) / DAT_005fba1c) * param_1->width] * 2
+                  + 0x1c6ad74);
           }
           iVar4 = iVar4 + 2;
           iVar2 = iVar2 + 1;

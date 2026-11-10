@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00582990
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;   wincore_winrun.cpp_FUN_005b2cf0
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     MOV EAX,[0x00603c94]                ; 00511118 | DAT_00603c94
     MOV [0x01d25f34],EAX                ; 0051111d | DAT_01d25f34
     RET                                 ; 00511122
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 00511123
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 00511123
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_00511123
     MOV EAX,[0x00603c94]                ; 00511128 | DAT_00603c94
     MOV [0x01d25f34],EAX                ; 0051112d | DAT_01d25f34

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 30,
+    "complexity_score": 19,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 5,
-    "suspect_count": 2,
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 11
+    "total_lines": 10
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     },
     {
       "addr": "01fdd020",
-      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "name": "g_CDemonSetInstance.selected_camera_index",
       "type": "undefined4",
       "value": null
     }
@@ -97,18 +97,10 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x14c",
+      "line": 5,
+      "match": "field_0x148",
       "severity": "mild",
-      "text": "(&g_CDemonSetPtr->field_0x14c + *(int *)&g_CDemonSetPtr->field_0x15aeb8 * 0x1a4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "(&g_CDemonSetPtr->field_0x14c + *(int *)&g_CDemonSetPtr->field_0x15aeb8 * 0x1a4);",
+      "text": "return *(uint *)&g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].field_0x148;",
       "type": "unnamed_field"
     }
   ]

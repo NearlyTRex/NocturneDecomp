@@ -24,7 +24,7 @@ void engine_pod_cpp_FUN_0051b6dc(uint param_1,char *param_2)
   
   shape_edittool_cpp_FUN_0047be90(g_CEditorToolsPtr,"Computing CRC over entire pod: %s...",param_2);
   engine_pod_cpp_CPodFile_ctor_FUN_00519e50(&CStack_44c);
-  iVar1 = engine_pod_cpp_FUN_00519f00(&CStack_44c,param_2);
+  iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(&CStack_44c,param_2);
   if (iVar1 == 0) {
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x4ee;
@@ -32,17 +32,18 @@ void engine_pod_cpp_FUN_0051b6dc(uint param_1,char *param_2)
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_0051a8f0(&CStack_44c);
   iStack_18 = -1;
-  if (CStack_44c._0_4_ == 1) {
+  if (CStack_44c.pod_format_version == 1) {
     iStack_18 = 0x54;
   }
-  else if (CStack_44c._0_4_ == 200) {
+  else if (CStack_44c.pod_format_version == 200) {
     iStack_18 = 8;
   }
   else {
-    if (CStack_44c._0_4_ == 100) goto LAB_0051b862;
+    if (CStack_44c.pod_format_version == 100) goto LAB_0051b862;
     _DAT_01d046a0 = "..\\engine\\pod.cpp";
     _DAT_01d046a4 = 0x4ff;
-    core_main_c_FUN_004e4500("Invalid pod version for %s: %d",param_2,CStack_44c._0_4_);
+    core_main_c_FUN_004e4500
+              ("Invalid pod version for %s: %d",param_2,CStack_44c.pod_format_version);
   }
   iStack_1c = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e2403,param_2);
   iStack_1c = iStack_1c - iStack_18;

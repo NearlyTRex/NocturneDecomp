@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 375,
+    "complexity_score": 308,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 9,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
-    "suspect_count": 30,
+    "pseudocode_lines": 63,
+    "suspect_count": 23,
     "suspect_types": [
       "unknown_field",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 254
+    "total_lines": 257
   },
   "cross_references": [
     {
@@ -266,18 +266,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x68 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 19,
-      "match": "field_0x68",
+      "match": "field_0x164",
       "severity": "mild",
-      "text": "((double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) < hardware_playback_pos)) {",
+      "text": "((double)*(int *)&this_ptr->sample->field_0x164 < hardware_playback_pos)) {",
       "type": "unnamed_field"
     },
     {
@@ -291,17 +283,17 @@
     {
       "description": "Auto-generated struct field name",
       "line": 26,
-      "match": "field_0x68",
+      "match": "field_0x164",
       "severity": "mild",
-      "text": "local_28 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) + local_28;",
+      "text": "local_28 = (double)*(int *)&this_ptr->sample->field_0x164 + local_28;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 29,
-      "match": "field_0x68",
+      "match": "field_0x164",
       "severity": "mild",
-      "text": "((double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) + _DAT_005e89d6 < local_28)) {",
+      "text": "((double)*(int *)&this_ptr->sample->field_0x164 + _DAT_005e89d6 < local_28)) {",
       "type": "unnamed_field"
     },
     {
@@ -309,15 +301,7 @@
       "line": 34,
       "match": "field_0x10c",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c,*(uint *)&this_ptr->field_0x110,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10c,*(uint *)&this_ptr->field_0x110,",
+      "text": "*(uint *)&this_ptr->field_0x10c,this_ptr->fade_time_remaining,",
       "type": "unnamed_field"
     },
     {
@@ -325,15 +309,31 @@
       "line": 35,
       "match": "._4_4_",
       "severity": "mild",
-      "text": "(uint)local_28,local_28._4_4_,",
+      "text": "(uint)local_28,local_28._4_4_,*(uint *)&this_ptr->sample->field_0x164);",
       "type": "unknown_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x68",
+      "line": 35,
+      "match": "field_0x164",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)&this_ptr->field_0x68 + 0x164));",
+      "text": "(uint)local_28,local_28._4_4_,*(uint *)&this_ptr->sample->field_0x164);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "if ((*(double *)&(this_ptr->options).field_0x50 != *(double *)&this_ptr->field_0x10c) ||",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "if ((*(double *)&(this_ptr->options).field_0x50 != *(double *)&this_ptr->field_0x10c) ||",
       "type": "unnamed_field"
     },
     {
@@ -341,15 +341,7 @@
       "line": 38,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "if ((*(double *)&this_ptr->field_0x50 != *(double *)&this_ptr->field_0x10c) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "if ((*(double *)&this_ptr->field_0x50 != *(double *)&this_ptr->field_0x10c) ||",
+      "text": "(hardware_playback_pos < *(double *)&(this_ptr->options).field_0x50)) {",
       "type": "unnamed_field"
     },
     {
@@ -357,7 +349,7 @@
       "line": 39,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "(hardware_playback_pos < *(double *)&this_ptr->field_0x50)) {",
+      "text": "*(double *)&(this_ptr->options).field_0x50 =",
       "type": "unnamed_field"
     },
     {
@@ -365,15 +357,7 @@
       "line": 40,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 + local_28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 + local_28;",
+      "text": "*(double *)&(this_ptr->options).field_0x50 + local_28;",
       "type": "unnamed_field"
     },
     {
@@ -381,7 +365,7 @@
       "line": 43,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = hardware_playback_pos;",
+      "text": "*(double *)&(this_ptr->options).field_0x50 = hardware_playback_pos;",
       "type": "unnamed_field"
     },
     {
@@ -389,7 +373,7 @@
       "line": 45,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "if (*(double *)&this_ptr->field_0x50 < 0.0) {",
+      "text": "if (*(double *)&(this_ptr->options).field_0x50 < 0.0) {",
       "type": "unnamed_field"
     },
     {
@@ -397,7 +381,7 @@
       "line": 46,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x50 = 0;",
+      "text": "*(uint *)&(this_ptr->options).field_0x50 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -405,31 +389,7 @@
       "line": 47,
       "match": "field_0x54",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x54 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "this_ptr_00 = *(CSfxSample **)&this_ptr->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "if ((-1 < *(int *)&this_ptr_00->field_0x110) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "((double)*(int *)&this_ptr_00->field_0x110 <= *(double *)&this_ptr->field_0x50)) {",
+      "text": "*(uint *)&(this_ptr->options).field_0x54 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -437,60 +397,44 @@
       "line": 51,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "((double)*(int *)&this_ptr_00->field_0x110 <= *(double *)&this_ptr->field_0x50)) {",
+      "text": "((double)(this_ptr_00->sample_info).sample_count <= *(double *)&(this_ptr->options).field_0x50)",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 54,
+      "line": 55,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);",
+      "text": "*(double *)&(this_ptr->options).field_0x50 =",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 57,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "dVar1 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
+      "line": 60,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "dVar3 = floor(*(double *)&this_ptr->field_0x50 / dVar1);",
+      "text": "dVar3 = floor(*(double *)&(this_ptr->options).field_0x50 / dVar1);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 59,
+      "line": 61,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 - dVar3 * dVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 - dVar3 * dVar1;",
+      "text": "*(double *)&(this_ptr->options).field_0x50 =",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 62,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "*(double *)&(this_ptr->options).field_0x50 - dVar3 * dVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
       "match": "field_0x10c",
       "severity": "mild",
       "text": "*(double *)&this_ptr->field_0x10c = hardware_playback_pos;",

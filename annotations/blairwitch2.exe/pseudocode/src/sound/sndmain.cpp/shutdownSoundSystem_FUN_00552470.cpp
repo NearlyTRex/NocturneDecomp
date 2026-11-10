@@ -19,7 +19,7 @@ void __cdecl sound_sndmain_cpp_shutdownSoundSystem_FUN_00552470(void)
   sound_sndmain_cpp_closeSoundDevice_FUN_00552c40();
   sound_sndmain_cpp_stopRecordingDevice_FUN_00553140();
   sound_sndmain_cpp_releaseRecordingDevice_FUN_00552f10();
-  sound_sndmain_cpp_FUN_00551c70();
+  sound_sndmain_cpp_freeAllSamples_FUN_00551c70();
   _DAT_0263ceec = _DAT_0263ceec + -1;
   return;
 }

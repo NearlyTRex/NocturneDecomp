@@ -10,13 +10,13 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[7]:
-;   core_actor.cpp_FUN_00409f20 at 0040aa52
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e95e
-;   core_gun.cpp_FUN_004e8630 at 004e8e88
-;   core_rifle.cpp_FUN_00540080 at 00540792
-;   core_shotgun.cpp_FUN_00561760 at 00561f21
-;   core_tommygun.cpp_FUN_00598420 at 00598cbd
-;   core_turret.cpp_FUN_005a3870 at 005a3deb
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040aa52
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e95e
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8e88
+;   core_rifle.cpp_CRifle_fire_FUN_00540080 at 00540792
+;   core_shotgun.cpp_CShotgun_fire_FUN_00561760 at 00561f21
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598cbd
+;   core_turret.cpp_CTurret_fire_FUN_005a3870 at 005a3deb
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_exploding_005d7362+1

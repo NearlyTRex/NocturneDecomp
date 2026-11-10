@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_keyactor.cpp_CKeyActor_canPickup_FUN_004dea90
     MOV EDX,dword ptr [ESP + 0xc]       ; 004dea95
     PUSH EDX                            ; 004dea99
-    CALL core_actor.cpp_FUN_0040c790    ; 004dea9a
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004dea9a
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004dea9f
     TEST EAX,EAX                        ; 004deaa2
     JZ 0x004deaab                       ; 004deaa4

@@ -14,22 +14,265 @@
     "size":1084
   },
   {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_processDeathState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_vfunc90",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_getGrabber",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CDemonActor",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CConsole",
     "rtti_file":"engine/console.cpp",
     "size":4032
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_canPickup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"picker",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playAmbientSoundWithDelay",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sound_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delay",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_playSound",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sound_name",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"uint",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_stopInteraction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"user",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonPart",
     "rtti_file":"core/dpart.cpp",
-    "size":1
+    "size":904
   },
   {
     "kind":"class",
     "name":"CDemonRaytrace",
     "rtti_file":"core/dtrace.cpp",
     "size":108
+  },
+  {
+    "kind":"class",
+    "name":"CGhostChild_full_vtable",
+    "size":392,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":224
+      },
+      {
+        "name":"_ue",
+        "offset":332
+      },
+      {
+        "name":"_ubasicenemy",
+        "offset":340
+      },
+      {
+        "name":"_ughostchild",
+        "offset":384
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHand_vfunc96",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHand",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -42,7 +285,7 @@
     "kind":"class",
     "name":"CInputString",
     "rtti_file":"shape/edittool.cpp",
-    "size":1
+    "size":320
   },
   {
     "kind":"class",
@@ -70,6 +313,109 @@
     "size":1440
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_isSfxPlaying",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_set3DListenerVelocity",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"x_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z_velocity",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_startSfx",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CTeleportDest",
     "parent":"CDemonActor",
@@ -84,7 +430,7 @@
   {
     "kind":"class",
     "name":"CVector3i",
-    "size":1
+    "size":12
   },
   {
     "kind":"class",
@@ -94,8 +440,65 @@
     "size":4564
   },
   {
+    "kind":"enum",
+    "name":"EAmmoType",
+    "size":4,
+    "values":[
+      {
+        "name":"AMMO_TYPE_NONE",
+        "value":-1
+      },
+      {
+        "name":"AMMO_TYPE_GENERIC",
+        "value":0
+      },
+      {
+        "name":"AMMO_TYPE_HOLY",
+        "value":1
+      },
+      {
+        "name":"AMMO_TYPE_WOOD",
+        "value":2
+      },
+      {
+        "name":"AMMO_TYPE_SILVER",
+        "value":3
+      },
+      {
+        "name":"AMMO_TYPE_GOLD",
+        "value":4
+      },
+      {
+        "name":"AMMO_TYPE_FLAMING",
+        "value":5
+      },
+      {
+        "name":"AMMO_TYPE_BLANKS",
+        "value":6
+      },
+      {
+        "name":"AMMO_TYPE_LITHIUM",
+        "value":7
+      },
+      {
+        "name":"AMMO_TYPE_MERCURY",
+        "value":8
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SBitBuffer",
+    "size":8
+  },
+  {
+    "kind":"struct",
+    "name":"SBone",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SFace",
     "size":1
   },
   {

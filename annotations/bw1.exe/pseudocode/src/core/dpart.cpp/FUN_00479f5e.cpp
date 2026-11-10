@@ -10,17 +10,12 @@ void core_dpart_cpp_FUN_00479f5e(int param_1)
 
 {
   int iVar1;
-  uint *puVar2;
+  UIntegerFloat *pUVar2;
   uint uVar3;
-  byte auStack_58 [4];
-  uint uStack_54;
-  uint uStack_50;
-  uint uStack_4c;
-  uint uStack_48;
-  uint uStack_44;
-  uint uStack_40;
-  uint uStack_34;
-  uint uStack_28;
+  SMRGLHeaderPrimitive SStack_58;
+  UIntegerFloat UStack_40;
+  UIntegerFloat UStack_34;
+  UIntegerFloat UStack_28;
   int iStack_1c;
   
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
@@ -29,35 +24,36 @@ void core_dpart_cpp_FUN_00479f5e(int param_1)
   core_set_cpp_CDemonSet_rotateVerticies_FUN_00553140
             (g_CDemonSetPtr,iVar1,
              (CVector3i *)(*(int *)(param_1 + 900) * iVar1 * 0xc + *(int *)(param_1 + 0x2c)));
-  if (*(int *)(DAT_00612560 + 0x18) != 0) {
+  if (DAT_00612560->advanced_culling_enabled != 0) {
     engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
   }
-  puVar2 = *(uint **)(param_1 + 0x34);
+  pUVar2 = *(UIntegerFloat **)(param_1 + 0x34);
   uVar3 = 0;
   if (0 < *(int *)(param_1 + 0x24)) {
     do {
-      iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(puVar2);
+      iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(pUVar2);
       if (iVar1 != 0) {
         engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_00483ce0
                   (DAT_00612560,-((uVar3 & 0x7f) + 0x80));
-        uStack_50 = *puVar2;
-        uStack_4c = puVar2[1];
-        uStack_48 = puVar2[2];
-        uStack_44 = puVar2[3];
-        uStack_40 = puVar2[4];
-        uStack_34 = puVar2[5];
-        uStack_28 = puVar2[6];
-        if (puVar2[7] == -1) {
-          uStack_54 = 3;
+        SStack_58.surface_normal.A = *pUVar2;
+        SStack_58.surface_normal.B = pUVar2[1];
+        SStack_58.surface_normal.C = pUVar2[2];
+        SStack_58.surface_normal.D = pUVar2[3];
+        UStack_40 = pUVar2[4];
+        UStack_34 = pUVar2[5];
+        UStack_28 = pUVar2[6];
+        if (pUVar2[7].i == -1) {
+          SStack_58.base.count = 3;
         }
         else {
-          uStack_54 = 4;
-          iStack_1c = puVar2[7];
+          SStack_58.base.count = 4;
+          iStack_1c = pUVar2[7].i;
         }
-        core_set_cpp_FUN_005553e0(g_CDemonSetPtr,auStack_58,1);
+        core_set_cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_005553e0
+                  (g_CDemonSetPtr,&SStack_58,1);
       }
       uVar3 = uVar3 + 1;
-      puVar2 = puVar2 + 8;
+      pUVar2 = pUVar2 + 8;
     } while ((int)uVar3 < *(int *)(param_1 + 0x24));
   }
   engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_00483d70(DAT_00612560,1);

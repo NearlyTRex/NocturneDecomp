@@ -24,14 +24,14 @@
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006074b8
-;   void* PTR_unkafter_asgaya.cpp_FUN_005ad360_00607d84 = 005ad360
+;   void* PTR_crt_unknown.c_FUN_005ad360_00607d84 = 005ad360
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005a82a0
 ;   crt_unknown.c_FUN_005a82ac
 ;   crt_unknown.c_FUN_005a9288
-;   unkafter_asgaya.cpp_FUN_005ad360
-;   unkafter_asgaya.cpp_FUN_005ae60c
+;   crt_unknown.c_FUN_005ad360
+;   crt_unknown.c_FUN_005ae60c
 ;
 ; *****************************************************************************
 
@@ -308,7 +308,7 @@ section .text
     PUSH EAX                            ; 005a8d4c
     LEA EAX,[ESP + 0x4]                 ; 005a8d4d
     PUSH EAX                            ; 005a8d51
-    CALL dword ptr [0x00607d84]         ; 005a8d52 | PTR_unkafter_asgaya.cpp_FUN_005ad360_00607d84
+    CALL dword ptr [0x00607d84]         ; 005a8d52 | PTR_crt_unknown.c_FUN_005ad360_00607d84
     ADD ESP,0x8                         ; 005a8d58
     MOV CH,byte ptr [EBP + 0x10]        ; 005a8d5b
         ;   Label: LAB_005a8d5b
@@ -368,8 +368,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x50]      ; 005a8dd0
         ;   Label: LAB_005a8dd0
     MOV EDX,dword ptr [ESP + 0x54]      ; 005a8dd4
-    CALL unkafter_asgaya.cpp_FUN_005ae60c ; 005a8dd8
-        ;   XREF to: 005ae60c (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005ae60c()
+    CALL crt_unknown.c_FUN_005ae60c     ; 005a8dd8
+        ;   XREF to: 005ae60c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ae60c()
     MOV dword ptr ES:[EBX],EAX          ; 005a8ddd
         ;   Label: LAB_005a8ddd
     MOV EAX,EDI                         ; 005a8de0

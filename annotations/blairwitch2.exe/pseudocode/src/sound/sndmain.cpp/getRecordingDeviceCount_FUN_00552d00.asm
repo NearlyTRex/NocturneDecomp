@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   sound_sndmain.cpp_FUN_00552e40 at 00552e58
-;   sound_sndmain.cpp_FUN_00553680 at 00553702
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_00552dc0 at 00552dc8
 ;   sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00552d60 at 00552d67
+;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553702
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061bca8

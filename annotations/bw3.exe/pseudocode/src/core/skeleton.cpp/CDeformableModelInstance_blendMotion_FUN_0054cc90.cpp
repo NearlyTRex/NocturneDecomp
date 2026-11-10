@@ -93,17 +93,19 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
   bVar6 = 0;
   if ((float)_DAT_005d1ff4 < blend_weight) {
     core_motion_cpp_FUN_004fcb50
-              ((CMotionController *)this_ptr,target_motion_index,target_frame_number,&local_5c,
-               &local_54,&stack0xfffff680);
+              (&this_ptr->base,target_motion_index,target_frame_number,&local_5c,&local_54,
+               &stack0xfffff680);
     this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
-    local_1c = *(int *)&this_ptr->field_0x2340;
+    local_1c = this_ptr->bone_update_mode;
     if (local_1c == 0) {
-      if (0 < *(int *)&this_ptr_00->field_0x1de78) {
+      if (0 < this_ptr_00->bone_count) {
         local_3c = &this_ptr->field_0x6b0;
         local_44 = this_ptr;
         do {
           iVar2 = local_1c;
-          hierarchy_distance = core_skeleton_cpp_FUN_005481d0(this_ptr_00,local_1c,bone_index);
+          hierarchy_distance =
+               core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
+                         (this_ptr_00,local_1c,bone_index);
           if (-1 < hierarchy_distance) {
             local_18 = (*callback_func)(iVar2,bone_index,blend_weight,hierarchy_distance,this_ptr);
             core_skeleton_cpp_FUN_00548140(this_ptr_00,iVar2,local_5c,local_54,local_980,local_18);
@@ -115,7 +117,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
                  afStack_1a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1d];
             (afStack_1a8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x15)[(uint)bVar6 * -2 + 1] =
                  (afStack_1a8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x1d)[(uint)bVar6 * -2 + 1];
-            core_xform_cpp_FUN_00585b20(puVar3,pfVar4);
+            core_xform_cpp_slerpQuaternion_FUN_00585b20(puVar3,pfVar4);
             pfVar4 = (float *)((int)local_44 + (uint)bVar6 * -8 + 0x6b4);
             *(uint *)&local_44->field_0x6b0 = uStack_1ac;
             pfVar5 = pfVar4 + (uint)bVar6 * -2 + 1;
@@ -125,18 +127,19 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
                  (afStack_1a8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
           }
           local_1c = local_1c + 1;
-          local_44 = (CDeformableModelInstance *)&local_44->field_0x10;
+          local_44 = (CDeformableModelInstance *)&(local_44->base).tween_speed;
           local_3c = local_3c + 0x10;
-        } while (local_1c < *(int *)&this_ptr_00->field_0x1de78);
+        } while (local_1c < this_ptr_00->bone_count);
       }
     }
     else if (local_1c == 1) {
       local_20 = 0;
-      if (0 < *(int *)&this_ptr_00->field_0x1de78) {
+      if (0 < this_ptr_00->bone_count) {
         local_40 = 0;
         local_28 = 0;
         do {
-          iVar2 = core_skeleton_cpp_FUN_005481d0(this_ptr_00,local_20,bone_index);
+          iVar2 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
+                            (this_ptr_00,local_20,bone_index);
           *(int *)((int)aiStack_33c + local_28) = iVar2;
           if (-1 < iVar2) {
             core_skeleton_cpp_FUN_00548140(this_ptr_00,local_20,local_5c,local_54,local_980);
@@ -151,9 +154,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
           local_20 = local_20 + 1;
           local_28 = local_28 + 4;
           local_40 = local_40 + 0x10;
-        } while (local_20 < *(int *)&this_ptr_00->field_0x1de78);
+        } while (local_20 < this_ptr_00->bone_count);
       }
-      iVar2 = *(int *)(&this_ptr_00->field_0x1de9c + bone_index * 0x24);
+      iVar2 = *(int *)(this_ptr_00->bone_list + bone_index * 0x24 + 0x20);
       if (-1 < iVar2) {
         core_skeleton_cpp_FUN_00548140(this_ptr_00,iVar2,local_5c,local_54,local_980);
         pfVar4 = local_97c + iVar2 * 4 + (uint)bVar6 * -2 + 1;
@@ -164,7 +167,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
              (afStack_1a8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x11)[(uint)bVar6 * -2 + 1];
       }
       local_24 = 0;
-      if (0 < *(int *)&this_ptr_00->field_0x1de78) {
+      if (0 < this_ptr_00->bone_count) {
         local_4c = &this_ptr->field_0x6b0;
         local_30 = 0;
         local_38 = this_ptr;
@@ -172,7 +175,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
         local_34 = &this_ptr->field_0x6b0;
         do {
           if (-1 < *(int *)((int)aiStack_33c + local_30)) {
-            iVar2 = *(int *)&local_2c->field_0x1de9c;
+            iVar2 = *(int *)(local_2c->bone_list + 0x20);
             local_48 = local_24 * 0x10;
             if (iVar2 < 0) {
               pfVar4 = local_97c + local_24 * 4;
@@ -205,7 +208,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
             afStack_1a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x19] = pfVar5[(uint)bVar6 * -2 + 1];
             (afStack_1a8 + (uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x19)[(uint)bVar6 * -2 + 1] =
                  (pfVar5 + (uint)bVar6 * -2 + 1)[(uint)bVar6 * -2 + 1];
-            core_xform_cpp_FUN_00585b20(local_34,afStack_1a8 + 0x17,blend_weight);
+            core_xform_cpp_slerpQuaternion_FUN_00585b20(local_34,afStack_1a8 + 0x17,blend_weight);
             pfVar4 = (float *)((int)local_38 + (uint)bVar6 * -8 + 0x6b4);
             *(float *)&local_38->field_0x6b0 = afStack_108[3];
             pfVar5 = pfVar4 + (uint)bVar6 * -2 + 1;
@@ -217,9 +220,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
           local_24 = local_24 + 1;
           local_30 = local_30 + 4;
           local_2c = (CSkeleton *)&local_2c->field_0x24;
-          local_38 = (CDeformableModelInstance *)&local_38->field_0x10;
+          local_38 = (CDeformableModelInstance *)&(local_38->base).tween_speed;
           local_34 = local_34 + 0x10;
-        } while (local_24 < *(int *)&this_ptr_00->field_0x1de78);
+        } while (local_24 < this_ptr_00->bone_count);
       }
     }
     else {
@@ -251,9 +254,9 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
       afStack_108[(uint)bVar6 * -2 + 0x20] = afStack_108[(uint)bVar6 * -2 + 0x23];
       afStack_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x21] =
            afStack_108[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x24];
-      fStack_8c = fStack_8c * *(float *)&this_ptr->field_0x508;
-      fStack_88 = fStack_88 * *(float *)&this_ptr->field_0x50c;
-      fStack_84 = fStack_84 * *(float *)&this_ptr->field_0x510;
+      fStack_8c = fStack_8c * (this_ptr->root_offset_scale).x;
+      fStack_88 = fStack_88 * (this_ptr->root_offset_scale).y;
+      fStack_84 = fStack_84 * (this_ptr->root_offset_scale).z;
       fStack_e0 = fStack_8c * blend_weight;
       fVar1 = 1.0 - blend_weight;
       puVar3 = &this_ptr->field_0x6a4;

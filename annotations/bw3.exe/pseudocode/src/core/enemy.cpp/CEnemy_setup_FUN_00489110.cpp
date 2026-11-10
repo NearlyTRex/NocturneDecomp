@@ -9,6 +9,6 @@
 void __cdecl core_enemy_cpp_CEnemy_setup_FUN_00489110(CEnemy *this_ptr)
 
 {
-  core_charactr_cpp_FUN_0042b0e0(this_ptr);
+  core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(&this_ptr->base);
   return;
 }

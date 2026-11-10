@@ -21,7 +21,7 @@
 ;   ... and 10 more
 ;
 ; Referenced Globals:
-;   void* g_CWeaponVTable = 0057af40
+;   CWeapon_full_vtable g_CWeaponVTable
 ;   WatcomTypeInfo g_CWeaponTypeInfo
 ;
 ; Called Functions:

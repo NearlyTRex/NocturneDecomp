@@ -30,7 +30,7 @@ uint support_trisock_cpp_FUN_0057ad10(int param_1,char *param_2)
   int iStack_30;
   CSocket *pCStack_2c;
   uint uStack_28;
-  int iStack_24;
+  char *pcStack_24;
   uint uStack_20;
   char *pcStack_1c;
   char *pcStack_18;
@@ -65,12 +65,12 @@ uint support_trisock_cpp_FUN_0057ad10(int param_1,char *param_2)
       iVar6 = support_trisock_cpp_FUN_005790f0(this_ptr,param_1 + 0x600);
       if (iVar6 == 0) {
         *(uint *)(param_1 + 0xd28) = 0xfffffffd;
-        FUN_005b7790
-                  (param_1 + 0xa18,"Error connecting socket to %s",param_1 + 0x400);
+        _sprintf((char *)(param_1 + 0xa18),"Error connecting socket to %s");
       }
     }
     else if (iVar6 != 1) {
-      FUN_005b7790(param_1 + 0xa18,"DNS error resolving %s",pcVar8);
+      _sprintf((char *)(param_1 + 0xa18),"DNS error resolving %s")
+      ;
       *(uint *)(param_1 + 0xd28) = 0xfffffffe;
     }
     break;
@@ -82,7 +82,7 @@ uint support_trisock_cpp_FUN_0057ad10(int param_1,char *param_2)
     }
     if ((uStack_28 & 4) != 0) {
       *(uint *)(param_1 + 0xd28) = 0xfffffffd;
-      FUN_005b7790(param_1 + 0xa18,"Error contacting %s",param_1 + 0x400);
+      _sprintf((char *)(param_1 + 0xa18),"Error contacting %s");
       break;
     }
     if ((uStack_28 & 2) == 0) break;
@@ -92,9 +92,7 @@ uint support_trisock_cpp_FUN_0057ad10(int param_1,char *param_2)
     if ((piVar2 == (int *)0x0) || (iVar6 = (**(code **)(*piVar2 + 0x18))(piVar2), iVar6 < 0)) {
 LAB_0057af77:
       if (*(int *)(param_1 + 0xd18) < 1) goto LAB_0057b03d;
-      FUN_005b7790
-                (acStack_808,"POST %s HTTP/1.0\r\nHost: %s:%d\r\nContent-length: %d\r\n\r\n",param_1 + 0x500,param_1 + 0x400,
-                 *(ushort *)(param_1 + 0x604),*(int *)(param_1 + 0xd18));
+      _sprintf(acStack_808,"POST %s HTTP/1.0\r\nHost: %s:%d\r\nContent-length: %d\r\n\r\n");
     }
     else {
       (**(code **)(**(int **)(param_1 + 0xd20) + 0x14))(*(int **)(param_1 + 0xd20),0,2);
@@ -107,9 +105,7 @@ LAB_0057af77:
       }
       *(uint *)(param_1 + 0xd18) = 0;
 LAB_0057b03d:
-      FUN_005b7790
-                (acStack_808,"GET %s HTTP/1.0\r\nHost: %s:%d\r\nConnection: close\r\n\r\n",param_1 + 0x500,param_1 + 0x400,
-                 *(ushort *)(param_1 + 0x604));
+      _sprintf(acStack_808,"GET %s HTTP/1.0\r\nHost: %s:%d\r\nConnection: close\r\n\r\n");
     }
     uVar7 = 0xffffffff;
     pcVar8 = acStack_808;
@@ -123,7 +119,7 @@ LAB_0057b03d:
                       ((CSocket *)(param_1 + 0xd2c),acStack_808,~uVar7 - 1,(SNetworkAddr *)0x0);
     if (iVar6 == 0) {
       *(uint *)(param_1 + 0xd28) = 0xfffffffc;
-      FUN_005b7790(param_1 + 0xa18,"Error requesting %s",param_1 + 0x500);
+      _sprintf((char *)(param_1 + 0xa18),"Error requesting %s");
     }
     break;
   case 3:
@@ -159,19 +155,19 @@ LAB_0057b03d:
         }
         if (iVar6 != iVar5) {
           *(uint *)(param_1 + 0xd28) = 0xfffffffc;
-          FUN_005b7790(param_1 + 0xa18,"Error requesting %s",param_1 + 0x400);
+          _sprintf((char *)(param_1 + 0xa18),"Error requesting %s");
         }
       }
     }
     else {
       *(uint *)(param_1 + 0xd28) = 0xfffffffc;
-      FUN_005b7790(param_1 + 0xa18,"Error requesting %s",param_1 + 0x400);
+      _sprintf((char *)(param_1 + 0xa18),"Error requesting %s");
     }
     break;
   case 4:
     if (*(int *)(param_1 + 0xd28) == 4) {
       pcStack_1c = (char *)(param_1 + 0x610);
-      iStack_24 = param_1 + 0xa18;
+      pcStack_24 = (char *)(param_1 + 0xa18);
       iStack_14 = param_1 + 0x60c;
       pcStack_18 = (char *)(param_1 + 0x81f);
       pCStack_2c = (CSocket *)(param_1 + 0xd2c);
@@ -216,7 +212,7 @@ LAB_0057b03d:
             } while (cVar1 != '\0');
             sscanf(pcStack_1c,"%*[^ ]%d %255[^\n]");
             if (iStack_30 == -1) {
-              FUN_005b7790(iStack_24,"Invalid HTTP header returned by server");
+              _sprintf(pcStack_24,"Invalid HTTP header returned by server");
               *(uint *)(param_1 + 0xd28) = 0xfffffffb;
             }
             else if (iStack_30 < 400) {
@@ -226,12 +222,11 @@ LAB_0057b03d:
                 *(uint *)(param_1 + 0xd1c) = 1;
                 goto LAB_0057b2ca;
               }
-              FUN_005b7790
-                        (iStack_24,"Not implemented: %d: %s",iStack_30,acStack_150);
+              _sprintf(pcStack_24,"Not implemented: %d: %s");
               *(uint *)(param_1 + 0xd28) = 0xfffffffb;
             }
             else {
-              FUN_005b7790(iStack_24,"%d: %s",iStack_30,acStack_150);
+              _sprintf(pcStack_24,"%d: %s");
               *(uint *)(param_1 + 0xd28) = 0xfffffffb;
             }
             goto LAB_0057adfb;
@@ -284,14 +279,14 @@ LAB_0057adfb:
     *param_2 = '\0';
     return *(uint *)(param_1 + 0xd28);
   case 1:
-    FUN_005b7790(param_2,"Looking up %s...",param_1 + 0x400);
+    _sprintf(param_2,"Looking up %s...");
     return *(uint *)(param_1 + 0xd28);
   case 2:
     support_trisock_cpp_formatSocketAddress_FUN_00578f50(param_1 + 0x600,auStack_50);
-    FUN_005b7790(param_2,"Contacting %s...",auStack_50);
+    _sprintf(param_2,"Contacting %s...");
     return *(uint *)(param_1 + 0xd28);
   case 3:
-    FUN_005b7790(param_2,"Requesting %s...",param_1 + 0x500);
+    _sprintf(param_2,"Requesting %s...");
     return *(uint *)(param_1 + 0xd28);
   case 4:
     iVar6 = -1;
@@ -299,10 +294,10 @@ LAB_0057adfb:
       iVar6 = (*(int *)(param_1 + 0x608) * 100) / *(int *)(param_1 + 0x60c);
     }
     if ((0 < iVar6) && (iVar6 < 100)) {
-      FUN_005b7790(param_2,"Received %d%% of %s... ",iVar6,param_1 + 0x500);
+      _sprintf(param_2,"Received %d%% of %s... ");
       return *(uint *)(param_1 + 0xd28);
     }
-    FUN_005b7790(param_2,"Receiving %s...",param_1 + 0x500);
+    _sprintf(param_2,"Receiving %s...");
     return *(uint *)(param_1 + 0xd28);
   case 5:
     pcVar8 = &DAT_005ed519;

@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   dialog_flags
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d27b0 at 004d3fc9
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3fc9
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720

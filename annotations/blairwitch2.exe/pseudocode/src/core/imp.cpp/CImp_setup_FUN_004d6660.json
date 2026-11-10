@@ -1,0 +1,428 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 244,
+    "complexity_score": 186,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 40,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 96,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "undefined_ram",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 340
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d6660",
+    "address_range": [
+      [
+        "004d6660",
+        "004d6957"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_imp.cpp_CImp_setup_FUN_004d6660",
+    "signature": "void __cdecl core_imp_cpp_CImp_setup_FUN_004d6660(CImp *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "00487eb0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00487eb0"
+    },
+    {
+      "addr": "00543100",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00543100"
+    },
+    {
+      "addr": "00547810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00547480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da936",
+      "name": "s_Bip01_Head_005da936",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da941",
+      "name": "s_Bip01_L_ForeArm_005da941",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da951",
+      "name": "s_Bip01_R_ForeArm_005da951",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da961",
+      "name": "s_Bip01_L_UpperArm_005da961",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da972",
+      "name": "s_Bip01_R_UpperArm_005da972",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da983",
+      "name": "s_Bip01_L_Foot_005da983",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da990",
+      "name": "s_Bip01_R_Foot_005da990",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da99d",
+      "name": "s_Bip01_L_Hand_005da99d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9aa",
+      "name": "s_Bip01_R_Hand_005da9aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9b7",
+      "name": "s_Bip01_Spine_005da9b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9c3",
+      "name": "s_Bip01_Spine1_005da9c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9d0",
+      "name": "s_Bip01_Spine2_005da9d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9dd",
+      "name": "s_Bip01_Head_005da9dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9e8",
+      "name": "s_Bip01_L_UpperArm_005da9e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005da9f9",
+      "name": "s_Bip01_R_UpperArm_005da9f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa0a",
+      "name": "s_Bip01_Spine_005daa0a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa16",
+      "name": "s_Bip01_Spine2_005daa16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa23",
+      "name": "s_larm01_005daa23",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa2a",
+      "name": "s_l4arm01_005daa2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa32",
+      "name": "s_rarm01_005daa32",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa39",
+      "name": "s_r4arm01_005daa39",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa41",
+      "name": "s_rthigh01_005daa41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa4a",
+      "name": "s_rshin01_005daa4a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa52",
+      "name": "s_lthigh01_005daa52",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa5b",
+      "name": "s_lshin01_005daa5b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa63",
+      "name": "s_ass01_005daa63",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa69",
+      "name": "s_torso01_005daa69",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005daa71",
+      "name": "s_head01_005daa71",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01cee138",
+      "name": "DAT_01cee138",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee13c",
+      "name": "DAT_01cee13c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee140",
+      "name": "DAT_01cee140",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee144",
+      "name": "DAT_01cee144",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee148",
+      "name": "DAT_01cee148",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee14c",
+      "name": "DAT_01cee14c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee150",
+      "name": "DAT_01cee150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee154",
+      "name": "DAT_01cee154",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee158",
+      "name": "DAT_01cee158",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee15c",
+      "name": "DAT_01cee15c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee160",
+      "name": "DAT_01cee160",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cee164",
+      "name": "DAT_01cee164",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8095238095238093,
+    "instruction_count": 210,
+    "opcode_distribution": {
+      "CALL": 33,
+      "COPY": 144,
+      "INT_ADD": 62,
+      "INT_AND": 70,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 70,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 35,
+      "INT_SUB": 127,
+      "LOAD": 8,
+      "POPCOUNT": 35,
+      "RETURN": 1,
+      "STORE": 145
+    },
+    "pcode_op_count": 800
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CImp *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 90,
+      "match": "uRam01cee13e",
+      "severity": "mild",
+      "text": "uVar2 = uRam01cee13e;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 91,
+      "match": "DAT_01cee13c",
+      "severity": "mild",
+      "text": "(this_ptr->base).base.carry_hands[0] = (SCarryHand)DAT_01cee13c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 93,
+      "match": "field_0x261a",
+      "severity": "mild",
+      "text": "*(ushort *)&(this_ptr->base).base.field_0x261a = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 94,
+      "match": "field_0x261c",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x261c = this_ptr->part_indices[1];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 95,
+      "match": "field_0x2690",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x2690 = _DAT_01cee140;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 96,
+      "match": "field_0x2694",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x2694 = this_ptr->part_indices[3];",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f8d74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

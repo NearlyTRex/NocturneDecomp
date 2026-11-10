@@ -11,6 +11,6 @@ CPathMap * __cdecl core_path_cpp_getPathMap_FUN_0050ced0(CLocation *location)
 {
   CPathMap *pCVar1;
   
-  pCVar1 = core_path_cpp_FUN_0050cd60(location);
+  pCVar1 = core_path_cpp_getOrCreatePathMap_FUN_0050cd60(location);
   return pCVar1;
 }

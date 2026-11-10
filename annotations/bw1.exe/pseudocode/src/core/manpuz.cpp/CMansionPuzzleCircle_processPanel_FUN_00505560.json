@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 154,
-    "complexity_score": 109,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 69,
-    "suspect_count": 3,
+    "suspect_count": 6,
     "suspect_types": [
-      "unnamed_field",
+      "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
     "total_lines": 223
@@ -167,20 +167,44 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x5f0",
-      "severity": "mild",
-      "text": "piVar3 = (int *)(&this_ptr->field_0x5f0 + panel_index * 100);",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 29,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "pSVar4->exists = pSVar3->exists;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x5f0",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(&this_ptr->field_0x5f0 + iVar2 * 100);",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 33,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar4->local_position).x = (pSVar3->local_position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 38,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar4->rotation).x = (pSVar3->rotation).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (13 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 42,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar4->rotation_matrix).m[0].x = (pSVar3->rotation_matrix).m[0].x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 56,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(pSVar4->world_position).x = (pSVar3->world_position).x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

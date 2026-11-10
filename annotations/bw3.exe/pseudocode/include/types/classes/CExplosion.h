@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CExplosion
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x20 (32 bytes)
 #pragma pack(push, 1)
 typedef struct CExplosion {
-    char field_0[32]; // 0x0
+    CVector3f position; // 0x0
+    float lifetime; // 0xc
+    char field_16[16]; // 0x10
 } CExplosion;
 #pragma pack(pop)
 

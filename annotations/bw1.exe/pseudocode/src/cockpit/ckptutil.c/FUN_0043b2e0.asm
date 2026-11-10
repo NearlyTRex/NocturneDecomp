@@ -14,7 +14,7 @@
 ; XREF[3]:
 ;   cockpit_pkbitmap.cpp_FUN_00537c30 at 00537c5e
 ;   cockpit_pkbitmap.cpp_FUN_00537cb0 at 00537cc1
-;   engine_font.cpp_FUN_004c0cd0 at 004c0df9
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0df9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Unable_to_allocate_u_byt_005d6620
@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005bfb40
 ;   crt_unknown.c_FUN_005c08d0
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   support_trstream.cpp_FUN_005a0fd0
 ;   unkaddr_0059f520.cpp_FUN_005a0c10
 ;   unkaddr_0059f520.cpp_FUN_005a0dc0
@@ -74,8 +74,8 @@ section .text
     PUSH 0x5d666c                       ; 0043b32b | = "Unable to open bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 0043b330
     PUSH EAX                            ; 0043b334
-    CALL crt_unknown.c_FUN_005bfb40     ; 0043b335
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0043b335
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x994                       ; 0043b33a
     ADD ESP,0xc                         ; 0043b33f
     MOV [0x01d1d404],EAX                ; 0043b342 | DAT_01d1d404
@@ -130,8 +130,8 @@ section .text
     PUSH 0x5d6620                       ; 0043b3ab | = "Unable to allocate %u bytes for bitma..."
     LEA EAX,[ESP + 0xc]                 ; 0043b3b0
     PUSH EAX                            ; 0043b3b4
-    CALL crt_unknown.c_FUN_005bfb40     ; 0043b3b5
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0043b3b5
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EDX,0x5d6652                    ; 0043b3ba | = "..\\cockpit\\ckptutil.c"
     ADD ESP,0x10                        ; 0043b3bf
     MOV EAX,ESP                         ; 0043b3c2
@@ -149,8 +149,8 @@ section .text
     PUSH 0x5d66a3                       ; 0043b3e4 | = "Unable to read bitmap file (%s)."
     LEA EAX,[ESP + 0x8]                 ; 0043b3e9
     PUSH EAX                            ; 0043b3ed
-    CALL crt_unknown.c_FUN_005bfb40     ; 0043b3ee
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0043b3ee
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0043b3f3
     LEA EAX,[ESP + 0x50]                ; 0043b3f6
     PUSH EAX                            ; 0043b3fa

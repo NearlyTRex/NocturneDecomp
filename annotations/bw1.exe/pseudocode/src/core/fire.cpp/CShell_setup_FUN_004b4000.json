@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 48,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [
+    {
+      "addr": "004b7270",
+      "from_addr": "004b729f",
+      "name": "core_fire.cpp_CFireEffect_createShell_FUN_004b7270",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b4000",
+    "address_range": [
+      [
+        "004b4000",
+        "004b408b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CShell_setup_FUN_004b4000",
+    "signature": "void __cdecl core_fire_cpp_CShell_setup_FUN_004b4000(CShell *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cc00",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
+    },
+    {
+      "addr": "00532160",
+      "is_variadic": false,
+      "name": "core_particle.cpp_CParticle_setup_FUN_00532160"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b729f",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createShell_FUN_004b7270",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.209302325581396,
+    "instruction_count": 43,
+    "opcode_distribution": {
+      "CALL": 3,
+      "CBRANCH": 1,
+      "COPY": 51,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 26,
+      "INT_AND": 12,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 14,
+      "LOAD": 13,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 181
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CShell *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "euler_angles",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "velocity",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "model_ptr",
+        "offset": 20,
+        "size": 4,
+        "type": "CKeyFramedModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x24 = 0x40400000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 9,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->euler_angles).x = euler_angles->x;",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

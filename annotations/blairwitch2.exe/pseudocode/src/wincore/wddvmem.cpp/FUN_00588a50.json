@@ -28,25 +28,19 @@
     {
       "addr": "004b60c0",
       "from_addr": "004b60eb",
-      "name": "core_game.cpp_FUN_004b60c0",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e46c0",
       "from_addr": "004e47c7",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00401010",
       "from_addr": "0040103d",
-      "name": "engine_2d.c_FUN_00401010",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005897e0",
-      "from_addr": "005898b8",
-      "name": "wincore_wddvmem.cpp_FUN_005897e0",
+      "name": "engine_2d.c_initGraphicsSystem_FUN_00401010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,6 +53,12 @@
       "addr": "00588de0",
       "from_addr": "00588f44",
       "name": "wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005897e0",
+      "from_addr": "005898b8",
+      "name": "wincore_wddvmem.cpp_videoRestore_FUN_005897e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -108,12 +108,12 @@
     {
       "addr": "00589430",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589430"
+      "name": "wincore_wddvmem.cpp_setupColorPalette_FUN_00589430"
     },
     {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     }
   ],
   "globals": [

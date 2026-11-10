@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004eada0 at 004eadd9
-;   core_hero.cpp_FUN_004ec950 at 004ec9a0
+;   core_hero.cpp_CHero_canBeGrabbed_FUN_004eada0 at 004eadd9
+;   core_hero.cpp_CHero_canDoHeroAction_FUN_004ec950 at 004ec9a0
 ;
 ; *****************************************************************************
 

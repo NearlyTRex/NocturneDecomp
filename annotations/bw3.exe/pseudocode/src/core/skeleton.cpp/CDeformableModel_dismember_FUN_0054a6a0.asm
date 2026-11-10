@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054f360 at 0054f3e8
+;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360 at 0054f3e8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d1d79

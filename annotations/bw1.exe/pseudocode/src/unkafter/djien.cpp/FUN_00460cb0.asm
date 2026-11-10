@@ -17,16 +17,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   unkafter_djien.cpp_FUN_00460230 at 004603dc
+;   core_djien.cpp_CDjien_process_FUN_00460230 at 004603dc
 ;
 ; Referenced Globals:
 ;   undefined4 s_djien_die_wav_5_005d8d8f+1
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
-;   core_bodypart.cpp_FUN_00418940
-;   core_bodypart.cpp_FUN_00419b90
-;   core_charactr.cpp_FUN_00431210
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
+;   core_bodypart.cpp_createBodyPart_FUN_00418940
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
 ;   core_xform.cpp_FUN_005b7ed0
 ;
@@ -69,24 +69,24 @@ section .text
     PUSH 0x40a00000                     ; 00460d22
         ;   Label: LAB_00460d22
     PUSH 0xc0a00000                     ; 00460d27
-    CALL core_actor.cpp_FUN_0040cc00    ; 00460d2c
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00460d2c
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x3c],EAX      ; 00460d31
     FLD float ptr [ESP + 0x3c]          ; 00460d35
     ADD ESP,0x8                         ; 00460d39
     PUSH 0x41200000                     ; 00460d3c
     PUSH 0x0                            ; 00460d41
     FSTP float ptr [ESP + 0x18]         ; 00460d43
-    CALL core_actor.cpp_FUN_0040cc00    ; 00460d47
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00460d47
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x3c],EAX      ; 00460d4c
     FLD float ptr [ESP + 0x3c]          ; 00460d50
     ADD ESP,0x8                         ; 00460d54
     PUSH 0x40a00000                     ; 00460d57
     PUSH 0xc0a00000                     ; 00460d5c
     FSTP float ptr [ESP + 0x1c]         ; 00460d61
-    CALL core_actor.cpp_FUN_0040cc00    ; 00460d65
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00460d65
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x3c],EAX      ; 00460d6a
     FLD float ptr [ESP + 0x3c]          ; 00460d6e
     ADD ESP,0x8                         ; 00460d72
@@ -102,8 +102,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x3c]      ; 00460d8a
     PUSH ECX                            ; 00460d8e
     FSTP float ptr [ESP + 0x34]         ; 00460d8f
-    CALL core_bodypart.cpp_FUN_00418940 ; 00460d93
-        ;   XREF to: 00418940 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_FUN_00418940(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
+    CALL core_bodypart.cpp_createBodyPart_FUN_00418940 ; 00460d93
+        ;   XREF to: 00418940 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00418940(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 00460d98
     PUSH 0x0                            ; 00460d9b
     MOV EDI,dword ptr [ESP + 0x34]      ; 00460d9d
@@ -113,13 +113,13 @@ section .text
     MOV ESI,EAX                         ; 00460da5
     MOV EAX,dword ptr [ESP + 0x58]      ; 00460da7
     PUSH EAX                            ; 00460dab
-    CALL core_charactr.cpp_FUN_00431210 ; 00460dac
-        ;   XREF to: 00431210 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00431210(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
+    CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210 ; 00460dac
+        ;   XREF to: 00431210 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
     ADD ESP,0x10                        ; 00460db1
     PUSH EBX                            ; 00460db4
     MOV dword ptr [EBX + 0xcc4],0x1     ; 00460db5
-    CALL core_bodypart.cpp_FUN_00419b90 ; 00460dbf
-        ;   XREF to: 00419b90 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_00419b90(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 ; 00460dbf
+        ;   XREF to: 00419b90 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90(CBodyPart * this_ptr)
     IMUL EAX,EDI,0x48                   ; 00460dc4
     ADD ESP,0x4                         ; 00460dc7
     MOV ECX,dword ptr [ESP + 0x28]      ; 00460dca

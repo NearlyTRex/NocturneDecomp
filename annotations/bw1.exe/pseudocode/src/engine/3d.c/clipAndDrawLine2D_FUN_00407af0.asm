@@ -8,7 +8,7 @@
 ;
 ; XREF[6]:
 ;   core_skeleton.cpp_FUN_00564b1c at 00564c4d
-;   engine_3d.c_FUN_00407a70 at 00407ad5
+;   engine_3d.c_drawLine2DFromIndices_FUN_00407a70 at 00407ad5
 ;   engine_3d.c_drawLineStrip2D_FUN_00404440 at 004044c6
 ;   shape_edittool.cpp_FUN_00498360 at 00498458
 ;   shape_edittool.cpp_FUN_00498660 at 00498792

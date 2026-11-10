@@ -20,7 +20,7 @@ void __cdecl core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(CKeyFrame
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(param_1,local_d0);
     return;
   }
-  pcVar2 = &param_1->field_0x78;
+  pcVar2 = param_1->model_name;
   do {
     cVar1 = *pcVar2;
     *pcVar3 = cVar1;

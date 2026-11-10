@@ -19,20 +19,19 @@ void __cdecl core_dlight_cpp_CDemonLight_renderShadowMapDebugView_FUN_00463130(C
   
   if ((-1 < screen_x) && (-1 < screen_y)) {
     if ((screen_x + display_size <= DAT_0061b498) && (screen_y + display_size <= DAT_0061b49c)) {
-      iVar1 = (*(int *)&this_ptr->field_0x1cc0 << 8) / display_size;
+      iVar1 = (this_ptr->shadow_map_width << 8) / display_size;
       local_14 = 0x20000;
       uVar4 = 0;
-      for (local_24 = 0; local_24 < *(int *)&this_ptr->field_0x1cc4 * 0x100;
-          local_24 = local_24 + iVar1) {
+      for (local_24 = 0; local_24 < this_ptr->shadow_map_height * 0x100; local_24 = local_24 + iVar1
+          ) {
         iVar5 = 0;
-        while (iVar5 < *(int *)&this_ptr->field_0x1cc0 * 0x100) {
-          uVar2 = (uint)*(ushort *)
-                         (*(int *)&this_ptr->field_0x2f94 +
-                         (((int)((iVar5 + (iVar5 >> 0x1f) * -0x100) -
-                                (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) +
+        while (iVar5 < this_ptr->shadow_map_width * 0x100) {
+          uVar2 = (uint)this_ptr->shadow_depth_buffer
+                        [((int)((iVar5 + (iVar5 >> 0x1f) * -0x100) -
+                               (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) +
                          ((int)((local_24 + (local_24 >> 0x1f) * -0x100) -
                                (uint)((local_24 >> 0x1f) << 7 < 0)) >> 8) *
-                         *(int *)&this_ptr->field_0x1cc0) * 2);
+                         this_ptr->shadow_map_width];
           if ((uVar2 == 0) || (0xfffe < uVar2)) {
 LAB_00463257:
             iVar5 = iVar5 + iVar1;
@@ -50,14 +49,14 @@ LAB_00463257:
       if (uVar4 == local_14) {
         uVar4 = local_14 + 1;
       }
-      for (iVar5 = 0; iVar5 < *(int *)&this_ptr->field_0x1cc4 * 0x100; iVar5 = iVar5 + iVar1) {
-        for (iVar3 = 0; iVar3 < *(int *)&this_ptr->field_0x1cc0 * 0x100; iVar3 = iVar3 + iVar1) {
-          uVar2 = (uint)*(ushort *)
-                         ((((int)((iVar3 + (iVar3 >> 0x1f) * -0x100) -
-                                 (uint)((iVar3 >> 0x1f) << 7 < 0)) >> 8) +
-                          ((int)((iVar5 + (iVar5 >> 0x1f) * -0x100) -
-                                (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) *
-                          *(int *)&this_ptr->field_0x1cc0) * 2 + *(int *)&this_ptr->field_0x2f94);
+      for (iVar5 = 0; iVar5 < this_ptr->shadow_map_height * 0x100; iVar5 = iVar5 + iVar1) {
+        for (iVar3 = 0; iVar3 < this_ptr->shadow_map_width * 0x100; iVar3 = iVar3 + iVar1) {
+          uVar2 = (uint)this_ptr->shadow_depth_buffer
+                        [((int)((iVar3 + (iVar3 >> 0x1f) * -0x100) -
+                               (uint)((iVar3 >> 0x1f) << 7 < 0)) >> 8) +
+                         ((int)((iVar5 + (iVar5 >> 0x1f) * -0x100) -
+                               (uint)((iVar5 >> 0x1f) << 7 < 0)) >> 8) * this_ptr->shadow_map_width]
+          ;
           if ((uVar2 < 0xffff) && (uVar2 != 0)) {
             *(int *)((screen_x + iVar3 / iVar1) * 4 +
                     *(int *)(&DAT_01c4354c + (screen_y + iVar5 / iVar1) * 4)) =
@@ -66,9 +65,9 @@ LAB_00463257:
         }
       }
       if (*(int *)&g_CGamePtr->field_0x200 != 0) {
-        engine_2d_c_FUN_00402710
+        engine_2d_c_drawTextCenteredXYColor_FUN_00402710
                   (screen_x,screen_x + display_size,screen_y + display_size + -0xb,
-                   &this_ptr->field_0x40);
+                   (this_ptr->base).camera_name);
         return;
       }
     }

@@ -9,5 +9,5 @@
 EGroundType __cdecl core_door_cpp_CDoor_getGroundType_FUN_00465050(CDoor *this_ptr)
 
 {
-  return *(EGroundType *)&this_ptr->field_0x2d4;
+  return this_ptr->ground_type;
 }

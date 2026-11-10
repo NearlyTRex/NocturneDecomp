@@ -2,38 +2,37 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 211,
+    "complexity_score": 96,
     "cross_reference_count": 5,
     "function_call_count": 4,
     "global_count": 9,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 15,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 138
   },
   "cross_references": [
     {
-      "addr": "0052ddf0",
-      "from_addr": "0052e713",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0052d980",
       "from_addr": "0052db08",
-      "name": "core_set.cpp_FUN_0052d980",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052ef80",
       "from_addr": "0052f181",
-      "name": "core_set.cpp_FUN_0052ef80",
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052ddf0",
+      "from_addr": "0052e713",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,7 +145,7 @@
       {
         "call_addr": "0052db08",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d980",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,7 +167,7 @@
       {
         "call_addr": "0052f181",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052ef80",
+        "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +178,7 @@
       {
         "call_addr": "0052f231",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052ef80",
+        "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,54 +307,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11e4 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x168 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "puVar2 = *(ushort **)&this_ptr->field_0x2f94;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "for (iVar3 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4; 0 < iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "for (iVar3 = *(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4; 0 < iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x140 = (float)uVar5 * (float)_DAT_005cf35f;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_0060b280",
@@ -364,59 +315,19 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1cc4) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_01c2a38c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2a38c + iVar3 * 4) = *(uint *)&pCVar4->field_0x1cd4;",
+      "text": "*(void **)(&DAT_01c2a38c + iVar3 * 4) = pCVar4->saved_screen_buffer_rows[0];",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x1cd4",
-      "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2a38c + iVar3 * 4) = *(uint *)&pCVar4->field_0x1cd4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 39,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar4 = (CDemonLight *)&pCVar4->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x1cc4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 39,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "match": "pCVar4 = (T *)&(pCVar4->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CDemonLight *)&pCVar4->field_0x4;",
+      "text": "pCVar4 = (CDemonLight *)&(pCVar4->base).base.position;",
       "type": "shadow_pointer_walk"
     }
   ]

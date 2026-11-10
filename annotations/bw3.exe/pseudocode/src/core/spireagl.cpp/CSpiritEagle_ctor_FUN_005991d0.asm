@@ -10,12 +10,12 @@
 ;   core_spireagl.cpp_factoryFuncSpiritEagle_FUN_005991a0 at 005991b3
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20
 ;   core_cloth.cpp_CClothList_ctor_FUN_0043f8c0
 ;   core_morph.cpp_CMorph_ctor_FUN_004fa8a0
 ;   core_path.cpp_CPathMap_ctor_FUN_0050acc0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     MOV dword ptr [EBX + 0x327c],0x3fcccccd ; 0059923b
     PUSH 0x3f666666                     ; 00599245
     MOV dword ptr [EBX + 0x3280],0xc479c000 ; 0059924a
-    CALL core_actor.cpp_FUN_0040ce40    ; 00599254
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00599254
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBX + 0x214a4],0x0   ; 00599259
     LEA EDI,[EBX + 0x206ac]             ; 00599263
     MOV dword ptr [EBX + 0x214a8],0x0   ; 00599269
@@ -84,8 +84,8 @@ section .text
     PUSH 0x5d98e9                       ; 005992a8
     LEA EAX,[EBX + 0x158]               ; 005992ad
     PUSH EAX                            ; 005992b3
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 005992b4
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 005992b4
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x27c0],0x0    ; 005992b9
     ADD ESP,0x8                         ; 005992c3
     MOV dword ptr [EBX + 0x20864],0x0   ; 005992c6

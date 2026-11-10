@@ -46,12 +46,12 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
   }
   _freopen("stderr.txt","wt");
   unkafter_flattn_cpp_FUN_004bf770();
-  core_inivar_cpp_FUN_004f4f50();
+  core_inivar_cpp_readIniData_FUN_004f4f50();
   _DAT_02c8337c = 2;
   engine_pod_cpp_CPod_init_FUN_0053c8a0((CPod *)g_CDemonPodPtr);
-  engine_dosio_cpp_FUN_00478e40();
-  engine_dosio_cpp_FUN_00478e40();
-  support_newmsg_cpp_FUN_00530bf0();
+  engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40();
+  engine_dosio_cpp_addGetFileInfoHook_FUN_00478e40();
+  support_newmsg_cpp_readMessageFile_FUN_00530bf0("msglist.txt");
   core_mmx_c_detectCPUFeatures_FUN_0051c450();
   if (_DAT_01c51d00 == 0) {
     _DAT_01d1d400 = "..\\core\\main.c";
@@ -62,7 +62,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
   pcVar11 = &stack0xfffff8d8;
   unkafter_marquee_cpp_FUN_005072c0();
   engine_3d_c_initTextureCache_FUN_00403790();
-  engine_2d_c_FUN_00401010();
+  engine_2d_c_initGraphicsSystem_FUN_00401010();
   wincore_winrun_cpp_calibrateCPUSpeed_FUN_005b21e0();
   wincore_winrun_cpp_initJoystick_FUN_005b3aa0();
   iVar5 = wincore_wddvmem_cpp_FUN_005ac300(0x280,0x1e0);
@@ -84,8 +84,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
       pcVar9[1] = cVar2;
       pcVar9 = pcVar9 + 2;
     } while (cVar2 != '\0');
-    FUN_005bfb40
-              (acStack_328,"%.1f",(double)((float)_DAT_02c9be78 * _DAT_005e73d1));
+    _sprintf(acStack_328,"%.1f");
     pcVar9 = acStack_328;
     iVar5 = -1;
     pcVar6 = acStack_528;
@@ -312,8 +311,7 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
       pcVar11[1] = cVar2;
       pcVar11 = pcVar11 + 2;
     } while (cVar2 != '\0');
-    FUN_005bfb40
-              (acStack_128,"%.1f",(double)((float)_DAT_02c9be7c * _DAT_005e73d1));
+    _sprintf(acStack_128,"%.1f");
     pcVar11 = acStack_128;
     iVar5 = -1;
     pcVar9 = &stack0xfffff8d8;
@@ -446,13 +444,13 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
   pCVar4 = g_CGamePtr;
   if (_DAT_01d06d68 != 0) {
     _DAT_01d06d68 = 0;
-    *(uint *)g_CGamePtr = 0x280;
-    *(uint *)&pCVar4->field_0x4 = 0x1e0;
+    g_CGamePtr->game_pixx = 0x280;
+    pCVar4->game_pixy = 0x1e0;
     _DAT_02c83370 = 0;
-    *(uint *)&pCVar4->field_0x8 = 0x20;
+    pCVar4->game_bpp = 0x20;
     core_menu_cpp_showCalibrationTest_FUN_0050a9c0();
   }
-  wincore_winvideo_cpp_FUN_005b4cd0("video","opening.avi");
+  wincore_winvideo_cpp_playMovie_FUN_005b4cd0("video","opening.avi");
   engine_special_cpp_clearScreen_FUN_0057dc40();
   pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading...");
   pcVar11 = acStack_228;
@@ -465,12 +463,12 @@ void __cdecl core_main_c_FUN_005032a0(int argc,char **argv)
     pcVar11[1] = cVar2;
     pcVar11 = pcVar11 + 2;
   } while (cVar2 != '\0');
-  engine_font_cpp_FUN_004c3ea0(_DAT_0152d244,acStack_228);
-  engine_font_cpp_FUN_004c4510(_DAT_0152d244,0x58);
+  engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_0152d244,acStack_228);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_0152d244,0x58);
   engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0(&CStack_28);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d220(&CStack_28,"fangs",0x280,0x1e0);
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d4b0(&CStack_28,0,0,0x8000);
-  wincore_wddvmem_cpp_FUN_005acff0();
+  wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
   engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0(&CStack_28,0);
   core_sound_cpp_FUN_0057cb30(0x02C82A60);
   iVar5 = 0;

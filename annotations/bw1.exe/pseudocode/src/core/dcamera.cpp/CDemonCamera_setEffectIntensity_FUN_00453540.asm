@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   intensity
 ;
 ; XREF[6]:
-;   core_game.cpp_FUN_004d27b0 at 004d49df
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d49df
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054ed29
-;   core_set.cpp_FUN_005558f0 at 0055591d
+;   core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0 at 0055591d
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_0055c5f0 at 0055c665
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580 at 005ae7fd
 ;   core_weather.cpp_FUN_005ae190 at 005ae407

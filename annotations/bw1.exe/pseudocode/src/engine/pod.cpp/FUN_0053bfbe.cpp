@@ -28,7 +28,8 @@ bool engine_pod_cpp_FUN_0053bfbe(int *param_1)
     return false;
   }
   if (*param_1 == 200) {
-    shape_edittool_cpp_FUN_004961b0(g_CEditorToolsPtr,"Checking individual file CRCs");
+    shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0
+              (g_CEditorToolsPtr,"Checking individual file CRCs");
     iVar2 = 0;
     shape_edittool_cpp_CPickList_ctor_FUN_0049a620(&CStack_3e0);
     if (0 < param_1[0x104]) {
@@ -45,15 +46,16 @@ bool engine_pod_cpp_FUN_0053bfbe(int *param_1)
         iVar4 = engine_pod_cpp_FUN_0053c4c0(param_1,iVar2);
         if (iVar4 != *(int *)(iVar1 + iVar5 + 0x10)) {
           shape_edittool_cpp_CStrList_add_FUN_004994d0
-                    ((CStrList *)&CStack_3e0,*(char **)(iVar5 + param_1[0x105]));
+                    (&CStack_3e0.base,*(char **)(iVar5 + param_1[0x105]));
         }
         iVar2 = iVar2 + 1;
         iVar5 = iVar5 + 0x14;
       } while (iVar2 < param_1[0x104]);
     }
     shape_edittool_cpp_FUN_00496dd0(g_CEditorToolsPtr);
-    if (CStack_3e0._0_4_ != 0) {
-      shape_edittool_cpp_FUN_0049a8b0(&CStack_3e0,"!!!CRC CHECK FAILED!! on these files:",-1,0);
+    if (CStack_3e0.base.item_count != 0) {
+      shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
+                (&CStack_3e0,"!!!CRC CHECK FAILED!! on these files:",-1,0);
       shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&CStack_3e0,0);
       return false;
     }

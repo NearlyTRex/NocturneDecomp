@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   vertex_index
 ;
 ; XREF[1]:
-;   core_stranger.cpp_FUN_0056eb60 at 0056edf0
+;   core_stranger.cpp_CStranger_updateClothSimulation_FUN_0056eb60 at 0056edf0
 ;
 ; *****************************************************************************
 

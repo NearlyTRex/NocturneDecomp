@@ -14,18 +14,19 @@ void __cdecl shape_edittool_cpp_CInputString_deleteRange_FUN_0047bba0(CInputStri
   if (start_pos < 0) {
     start_pos = 0;
   }
-  if (*(int *)(this_ptr + 0x130) < end_pos) {
-    end_pos = *(int *)(this_ptr + 0x130);
+  if (this_ptr->current_length < end_pos) {
+    end_pos = this_ptr->current_length;
   }
   if (start_pos < end_pos) {
     memmove
-              (this_ptr + start_pos,this_ptr + end_pos,*(int *)(this_ptr + 0x130) - end_pos);
-    iVar1 = *(int *)(this_ptr + 0x130) - (end_pos - start_pos);
-    *(int *)(this_ptr + 0x130) = iVar1;
-    if (iVar1 < *(int *)(this_ptr + 0x134)) {
-      *(int *)(this_ptr + 0x134) = iVar1;
+              (this_ptr->string_data + start_pos,this_ptr->string_data + end_pos,
+               this_ptr->current_length - end_pos);
+    iVar1 = this_ptr->current_length - (end_pos - start_pos);
+    this_ptr->current_length = iVar1;
+    if (iVar1 < this_ptr->cursor_position) {
+      this_ptr->cursor_position = iVar1;
     }
-    this_ptr[*(int *)(this_ptr + 0x130)] = (CInputString)0x0;
+    this_ptr->string_data[this_ptr->current_length] = '\0';
   }
   return;
 }

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 119,
+    "complexity_score": 69,
     "cross_reference_count": 21,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 8,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_field",
       "unresolved_funcptr",
@@ -20,37 +20,37 @@
     {
       "addr": "00410490",
       "from_addr": "0041103c",
-      "name": "core_blundrbs.cpp_FUN_00410490",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00424550",
       "from_addr": "00424bda",
-      "name": "core_burncrss.cpp_FUN_00424550",
+      "name": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047b270",
       "from_addr": "0047b455",
-      "name": "core_dynamite.cpp_FUN_0047b270",
+      "name": "core_dynamite.cpp_CDynamite_process_FUN_0047b270",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00487eb0",
       "from_addr": "00487fe0",
-      "name": "core_emitter.cpp_FUN_00487eb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00499350",
-      "from_addr": "00499461",
-      "name": "core_fire.cpp_FUN_00499350",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00499eb0",
       "from_addr": "00499f00",
-      "name": "core_fire.cpp_FUN_00499eb0",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_00499eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00499350",
+      "from_addr": "00499461",
+      "name": "core_fire.cpp_CFireball_process_FUN_00499350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -74,7 +74,7 @@
     {
       "addr": "004a5b10",
       "from_addr": "004a5b89",
-      "name": "core_flame.cpp_FUN_004a5b10",
+      "name": "core_flame.cpp_CFlame_process_FUN_004a5b10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -86,31 +86,31 @@
     {
       "addr": "004ae850",
       "from_addr": "004aed0f",
-      "name": "core_flintlck.cpp_FUN_004ae850",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c61b0",
       "from_addr": "004c61fd",
-      "name": "core_gargoyle.cpp_FUN_004c61b0",
+      "name": "core_gargoyle.cpp_CGargoyle_processDamage_FUN_004c61b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1a10",
       "from_addr": "004d1bbb",
-      "name": "core_heal.cpp_FUN_004d1a10",
+      "name": "core_heal.cpp_CHeal_fire_FUN_004d1a10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d5fd0",
       "from_addr": "004d60d3",
-      "name": "core_hotdemon.cpp_FUN_004d5fd0",
+      "name": "core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d5fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d7e70",
       "from_addr": "004d7edf",
-      "name": "core_imp.cpp_FUN_004d7e70",
+      "name": "core_imp.cpp_CImp_processDamage_FUN_004d7e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,27 +120,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e2050",
+      "from_addr": "004e2af6",
+      "name": "core_lightsta.cpp_CLightStaff_process_FUN_004e2050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00595f90",
+      "from_addr": "00596155",
+      "name": "core_tawiscar.cpp_CTawiscara_processDamage_FUN_00595f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0057f6f0",
       "from_addr": "0057f8ab",
-      "name": "core_werewolf.cpp_FUN_0057f6f0",
+      "name": "core_werewolf.cpp_CWerewolf_processDamage_FUN_0057f6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00563970",
       "from_addr": "00563dce",
       "name": "engine_special.cpp_FUN_00563970",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e2050",
-      "from_addr": "004e2af6",
-      "name": "unkafter_lightgun.cpp_FUN_004e2050",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00595f90",
-      "from_addr": "00596155",
-      "name": "unkafter_tawiscar.cpp_FUN_00595f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -216,7 +216,7 @@
       {
         "call_addr": "00487fe0",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00487eb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,7 +227,7 @@
       {
         "call_addr": "0048870f",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00487eb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -249,7 +249,7 @@
       {
         "call_addr": "0041103c",
         "call_type": "direct",
-        "caller": "core_blundrbs.cpp_FUN_00410490",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,7 +260,7 @@
       {
         "call_addr": "004a5b89",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_004a5b10",
+        "caller": "core_flame.cpp_CFlame_process_FUN_004a5b10",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -271,7 +271,7 @@
       {
         "call_addr": "00424bda",
         "call_type": "direct",
-        "caller": "core_burncrss.cpp_FUN_00424550",
+        "caller": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -282,7 +282,7 @@
       {
         "call_addr": "00499461",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499350",
+        "caller": "core_fire.cpp_CFireball_process_FUN_00499350",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -411,46 +411,6 @@
       "match": "field_0x3c",
       "severity": "mild",
       "text": "(*(code *)**(uint **)&g_SparkPool[iVar1].field_0x3c)(pCVar3,position,velocity);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)&g_SparkPool[iVar1].field_0x48 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&g_SparkPool[iVar1].field_0x40 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&g_SparkPool[iVar1].field_0x44 = intensity_target;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(int *)&g_SparkPool[iVar1].field_0x4c = spark_type;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(int *)&g_SparkPool[iVar1].field_0x50 = fade_rate;",
       "type": "unnamed_field"
     }
   ]

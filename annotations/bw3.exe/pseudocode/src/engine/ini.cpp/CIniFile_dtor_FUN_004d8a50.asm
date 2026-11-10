@@ -9,8 +9,8 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_FUN_004be8d0 at 004beb2c
-;   core_inivar.cpp_FUN_004d8e70 at 004d9583
-;   core_inivar.cpp_FUN_004d95c0 at 004d9c6f
+;   core_inivar.cpp_readIniData_FUN_004d8e70 at 004d9583
+;   core_inivar.cpp_writeIniData_FUN_004d95c0 at 004d9c6f
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052ccea
 ;
 ; Referenced Globals:

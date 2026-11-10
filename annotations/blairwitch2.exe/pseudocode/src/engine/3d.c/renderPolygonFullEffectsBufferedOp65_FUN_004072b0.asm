@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_004079f0 at 00407b97
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407b97
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0
@@ -28,7 +28,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
 ;   engine_clipper.c_clipAndRasterize_FUN_00431d90
-;   engine_texture.cpp_FUN_005750e0
+;   engine_texture.cpp_getCurrentTexture_FUN_005750e0
 ;
 ; *****************************************************************************
 
@@ -159,8 +159,8 @@ section .text
     CMP EBX,EDI                         ; 00407421
     JL 0x004073f1                       ; 00407423
         ;   XREF to: 004073f1 (CONDITIONAL_JUMP)  ; LAB_004073f1
-    CALL engine_texture.cpp_FUN_005750e0 ; 00407425
-        ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_FUN_005750e0()
+    CALL engine_texture.cpp_getCurrentTexture_FUN_005750e0 ; 00407425
+        ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_005750e0()
         ;   Label: LAB_00407425
     MOV EDI,dword ptr [ESP]             ; 0040742a
     MOV ECX,0x12                        ; 0040742d

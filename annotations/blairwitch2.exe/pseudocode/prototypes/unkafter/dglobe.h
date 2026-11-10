@@ -7,8 +7,8 @@
 
 // Original: unkafter_dglobe.cpp_FUN_00448f20
 // Address: 00448f20
-undefined4 FUN_00448f20(undefined4 param_1);
+CDemonImage * FUN_00448f20(CDemonImage *param_1);
 
 // Original: unkafter_dglobe.cpp_FUN_00448f3e
 // Address: 00448f3e
-void FUN_00448f3e(int param_1);
+void FUN_00448f3e(CDemonImage *param_1);

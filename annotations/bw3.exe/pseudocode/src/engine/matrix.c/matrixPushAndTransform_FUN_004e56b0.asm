@@ -138,7 +138,7 @@ section .text
     PUSH EDI                            ; 004e580b
         ;   Label: LAB_004e580b
     CALL engine_matrix.c_FUN_004e4d90   ; 004e580c
-        ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004e4d90()
+        ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e4d90(int angle)
     MOV dword ptr [ESP + 0x20],EAX      ; 004e5811
     ADD ESP,0x4                         ; 004e5815
     PUSH EDI                            ; 004e5818
@@ -148,7 +148,7 @@ section .text
     ADD ESP,0x4                         ; 004e5822
     PUSH EBX                            ; 004e5825
     CALL engine_matrix.c_FUN_004e4d90   ; 004e5826
-        ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004e4d90()
+        ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e4d90(int angle)
     ADD ESP,0x4                         ; 004e582b
     PUSH EBX                            ; 004e582e
     MOV EBP,EAX                         ; 004e582f
@@ -158,7 +158,7 @@ section .text
     PUSH ESI                            ; 004e5839
     MOV EBX,EAX                         ; 004e583a
     CALL engine_matrix.c_FUN_004e4d90   ; 004e583c
-        ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004e4d90()
+        ;   XREF to: 004e4d90 (UNCONDITIONAL_CALL)  ; int engine_matrix.c_FUN_004e4d90(int angle)
     MOV dword ptr [ESP + 0x28],EAX      ; 004e5841
     ADD ESP,0x4                         ; 004e5845
     PUSH ESI                            ; 004e5848

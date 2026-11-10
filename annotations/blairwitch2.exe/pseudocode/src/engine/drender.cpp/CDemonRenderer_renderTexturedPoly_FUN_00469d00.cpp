@@ -20,20 +20,22 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(C
   if (render_flags == -1) {
     render_flags = 0x2cd;
   }
-  if (*(int *)(this_ptr + 0x1c) == 0) {
-    if ((*(int *)(this_ptr + 0xc) == 0) ||
+  if (this_ptr->texture_capture_enabled == 0) {
+    if ((this_ptr->plane_culling_enabled == 0) ||
        (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403970(poly + 8), iVar3 != 0)) {
-      if (*(int *)(this_ptr + 4) == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         iVar3 = 0;
         if (0 < *(int *)(poly + 4)) {
           iVar4 = 0;
           pSVar2 = poly;
           do {
             iVar1 = *(int *)(pSVar2 + 0x18);
-            if (*(int *)(this_ptr + 0x20) == 0) {
+            if (this_ptr->skip_uv_extraction == 0) {
               iVar5 = iVar1 * 0x30;
-              *(uint *)(*(int *)this_ptr + 0x18 + iVar5) = *(uint *)(pSVar2 + 0x1c);
-              *(uint *)(*(int *)this_ptr + iVar5 + 0x1c) = *(uint *)(pSVar2 + 0x20);
+              *(uint *)(this_ptr->vertex_buffer_ptr + iVar5 + 0x18) =
+                   *(uint *)(pSVar2 + 0x1c);
+              *(uint *)(this_ptr->vertex_buffer_ptr + iVar5 + 0x1c) =
+                   *(uint *)(pSVar2 + 0x20);
             }
             *(int *)(&DAT_01ba5c84 + iVar4) = iVar1;
             pSVar2 = pSVar2 + 0xc;
@@ -55,7 +57,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00(C
           } while (iVar3 < *(int *)(poly + 4));
         }
       }
-      if (*(int *)(this_ptr + 4) == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (DAT_006141c0 == 0x20) {
           _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
         }

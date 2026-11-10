@@ -18,9 +18,10 @@ CCrossbow * __cdecl core_crossbow_cpp_CCrossbow_dtor_FUN_0044a120(CCrossbow *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&this_ptr->field_0x57c,1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408730(&(this_ptr->bolt_flame).base,1);
   pCVar2 = (CCrossbow *)
-           core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)&pCVar1[-5].field_0x13c,1);
+           core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0
+                     ((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

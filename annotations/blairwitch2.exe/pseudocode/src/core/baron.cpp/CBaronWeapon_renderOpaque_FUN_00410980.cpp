@@ -11,6 +11,6 @@ int __cdecl core_baron_cpp_CBaronWeapon_renderOpaque_FUN_00410980(CBaronWeapon *
 {
   int iVar1;
   
-  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90((CWeapon *)this_ptr);
+  iVar1 = core_weapon_cpp_CWeapon_renderOpaque_FUN_00589b90(&this_ptr->base);
   return iVar1;
 }

@@ -1,0 +1,417 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 8,
+    "cross_reference_count": 36,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 8,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "004a8490",
+      "from_addr": "004a84f9",
+      "name": "core_fldnotes.cpp_FUN_004a8490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8570",
+      "from_addr": "004a85ab",
+      "name": "core_fldnotes.cpp_FUN_004a8570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9270",
+      "from_addr": "004a928d",
+      "name": "core_fldnotes.cpp_FUN_004a9270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfb50",
+      "from_addr": "004bfe55",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004bfb50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bfee0",
+      "from_addr": "004c0206",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bfee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b47d0",
+      "from_addr": "004b49de",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b47d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c02a0",
+      "from_addr": "004c036e",
+      "name": "core_game.cpp_CGame_rollCredits_FUN_004c02a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b51e0",
+      "from_addr": "004b520d",
+      "name": "core_game.cpp_FUN_004b51e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dda90",
+      "from_addr": "004ddc58",
+      "name": "core_inv.cpp_CInventory_renderAllItems_FUN_004dda90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e44e0",
+      "from_addr": "004e4a96",
+      "name": "core_main.c_FUN_004e44e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7860",
+      "from_addr": "004e78e3",
+      "name": "core_menu.cpp_FUN_004e7860",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e7dc0",
+      "from_addr": "004e7e25",
+      "name": "core_menu.cpp_FUN_004e7dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e80f0",
+      "from_addr": "004e82a4",
+      "name": "core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e8380",
+      "from_addr": "004e83e9",
+      "name": "core_menu.cpp_showCalibrationTestPattern_FUN_004e8380",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e84d0",
+      "from_addr": "004e84f5",
+      "name": "core_menu.cpp_showCalibrationTest_FUN_004e84d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00528fc0",
+      "from_addr": "0052912f",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_00528fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b2b30",
+      "from_addr": "004b2bd6",
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047f3e0",
+      "from_addr": "0047f42c",
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047f4c0",
+      "from_addr": "0047f4ec",
+      "name": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047cfa0",
+      "from_addr": "0047cfcb",
+      "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047ed50",
+      "from_addr": "0047ed98",
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047e470",
+      "from_addr": "0047e4cf",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483c00",
+      "from_addr": "00483c2b",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483450",
+      "from_addr": "00483498",
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047b57c",
+      "from_addr": "0047b59d",
+      "name": "shape_edittool.cpp_FUN_0047b57c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d09e",
+      "from_addr": "0047d0cb",
+      "name": "shape_edittool.cpp_FUN_0047d09e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d19e",
+      "from_addr": "0047d1bf",
+      "name": "shape_edittool.cpp_FUN_0047d19e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047fa80",
+      "from_addr": "0047faa8",
+      "name": "shape_edittool.cpp_FUN_0047fa80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00480f00",
+      "from_addr": "00480f2c",
+      "name": "shape_edittool.cpp_FUN_00480f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486120",
+      "from_addr": "00486361",
+      "name": "shape_edittool.cpp_FUN_00486120",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486580",
+      "from_addr": "004865c8",
+      "name": "shape_edittool.cpp_FUN_00486580",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048666e",
+      "from_addr": "004866cd",
+      "name": "shape_edittool.cpp_FUN_0048666e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004864f0",
+      "from_addr": "00486538",
+      "name": "shape_edittool.cpp_calculateButtonWidth_FUN_004864f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c8e0",
+      "from_addr": "0047c912",
+      "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d279",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047c2c0",
+      "from_addr": "0047c300",
+      "name": "shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b30f0",
+    "address_range": [
+      [
+        "004b30f0",
+        "004b3117"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0",
+    "signature": "int __cdecl engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont *this_ptr,int char_code)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 46,
+    "call_sites": [
+      {
+        "call_addr": "0047c912",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047f42c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_0047f3e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047f4ec",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047f4c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0047faa8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_0047fa80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00486361",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00486120",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00486538",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_calculateButtonWidth_FUN_004864f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004865c8",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_FUN_00486580",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b2bd6",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004b2be8",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00483498",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.076923076923077,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 8,
+      "INT_AND": 24,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 13,
+      "INT_LEFT": 2,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 2,
+      "INT_XOR": 2,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 2
+    },
+    "pcode_op_count": 105
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBitFont *"
+      },
+      {
+        "is_param": true,
+        "name": "char_code",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": []
+}

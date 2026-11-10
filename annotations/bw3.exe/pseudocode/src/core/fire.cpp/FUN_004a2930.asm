@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_0040cab0 at 0040cce0
-;   core_emitter.cpp_FUN_00487eb0 at 0048849a
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0 at 0040cce0
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048849a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cf3b84

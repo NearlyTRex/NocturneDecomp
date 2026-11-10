@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   core_bat.cpp_FUN_00410d80 at 00410f20
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c19e
-;   core_constrct.cpp_FUN_00445cb0 at 0044677a
-;   core_drone.cpp_FUN_00485d70 at 00485ebc
-;   core_emitter.cpp_FUN_0049f310 at 0049f39e
-;   core_haystack.cpp_FUN_004e9f20 at 004e9fc7
-;   core_tvbat.cpp_FUN_005a4260 at 005a4e59
+;   core_bat.cpp_CBat_process_FUN_00410d80 at 00410f20
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c19e
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 0044677a
+;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00485ebc
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f39e
+;   core_haystack.cpp_CHaystack_advanceMotion_FUN_004e9f20 at 004e9fc7
+;   core_tvbat.cpp_CTVBat_process_FUN_005a4260 at 005a4e59
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c7fbf8

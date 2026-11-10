@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_crate.cpp_CCrate_canPickup_FUN_00439ea0
     MOV EDX,dword ptr [ESP + 0xc]       ; 00439ea5
     PUSH EDX                            ; 00439ea9
-    CALL core_actor.cpp_FUN_0040c840    ; 00439eaa
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 00439eaa
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00439eaf
     TEST EAX,EAX                        ; 00439eb2
     JZ 0x00439ebb                       ; 00439eb4

@@ -82,14 +82,14 @@ bool core_hero_cpp_FUN_004d2cf0(int param_1)
        *(uint *)(&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
   fStack_18 = 1e+30;
   iVar2 = 0;
-  for (iVar5 = 0; iVar5 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar5 = iVar5 + 1) {
-    iStack_20 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);
+  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->actor_count; iVar5 = iVar5 + 1) {
+    iStack_20 = *(int *)((int)g_CDemonSetPtr->actors + iVar2);
     fStack_a8 = (float)(**(code **)(*(int *)(iStack_20 + 0x154) + 0x60))
                                  (iStack_20,param_1,&stack0xffffffd4,&iStack_20);
     pCVar1 = g_CDemonSetPtr;
     if ((0.0 <= fStack_a8) && (fStack_a8 < fStack_18)) {
       *(uint *)(param_1 + 0x20b68) = 1;
-      *(uint *)(param_1 + 0x20b6c) = *(uint *)(&pCVar1->field_0x14d168 + iVar2);
+      *(uint *)(param_1 + 0x20b6c) = *(uint *)((int)pCVar1->actors + iVar2);
       *(uint *)(param_1 + 0x20b7c) = 0;
       *(int *)(param_1 + 0x20b70) = iStack_20;
       fStack_18 = fStack_a8;

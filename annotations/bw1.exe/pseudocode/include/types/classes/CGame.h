@@ -2,15 +2,65 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CVector3f;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: CGame
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xb04 (2820 bytes)
 #pragma pack(push, 1)
 typedef struct CGame {
-    char field_0[2820]; // 0x0
+    int game_pixx; // 0x0
+    int game_pixy; // 0x4
+    int game_bpp; // 0x8
+    char field_12[24]; // 0xc
+    int quimby_flag; // 0x24
+    int shadow_flag; // 0x28
+    int key_walk; // 0x2c
+    char field_48[120]; // 0x30
+    int invert_mouse_y_axis; // 0xa8
+    int always_run; // 0xac
+    int x_mouse_sensitivity; // 0xb0
+    int y_mouse_sensitivity; // 0xb4
+    int x_center; // 0xb8
+    int y_center; // 0xbc
+    int x_stick_min; // 0xc0
+    int x_stick_max; // 0xc4
+    int y_stick_min; // 0xc8
+    int y_stick_max; // 0xcc
+    char field_208[408]; // 0xd0
+    float total_game_time; // 0x268
+    int damageable_enemy_count; // 0x26c
+    float total_play_time; // 0x270
+    int total_kill_count; // 0x274
+    char field_632[20]; // 0x278
+    int clocktime; // 0x28c
+    int delta_time_int; // 0x290
+    float delta_time_float; // 0x294
+    int timing_related_flag; // 0x298
+    int frame_counter; // 0x29c
+    int camera_view_index; // 0x2a0
+    int is_game_active; // 0x2a4
+    int screen_clear_enabled; // 0x2a8
+    int screen_clear_condition; // 0x2ac
+    int console_enabled; // 0x2b0
+    char message_text[256]; // 0x2b4
+    float message_timer; // 0x3b4
+    char field_952[4]; // 0x3b8
+    int status_display_count; // 0x3bc
+    char status_bar_names[5][256]; // 0x3c0
+    float status_bar_values[5]; // 0x8c0
+    float status_bar_timers[5]; // 0x8d4
+    char bitmap_filename[256]; // 0x8e8
+    int bitmap_width; // 0x9e8
+    int bitmap_height; // 0x9ec
+    struct CVector3f* debug_fudge_target; // 0x9f0
+    float debug_fudge_step; // 0x9f4
+    int need_chapter_reload; // 0x9f8
+    char chapter_reload_filename[256]; // 0x9fc
+    char field_2812[8]; // 0xafc
 } CGame;
 #pragma pack(pop)
 

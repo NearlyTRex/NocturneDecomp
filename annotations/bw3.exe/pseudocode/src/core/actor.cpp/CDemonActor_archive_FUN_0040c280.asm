@@ -14,11 +14,11 @@
 ;   core_barrier.cpp_CBarrier_archive_FUN_0040ebd0 at 0040ebd6
 ;   core_bat.cpp_CBat_archive_FUN_0040ef20 at 0040ef26
 ;   core_battery.cpp_CBattery_archive_FUN_0040f630 at 0040f636
-;   core_bodypart.cpp_FUN_00414fd0 at 00414fdc
+;   core_bird.cpp_CBird_archive_FUN_0040ff80 at 0040ff9b
+;   core_bodypart.cpp_CBodyPart_archive_FUN_00414fd0 at 00414fdc
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fba0
 ;   core_chain.cpp_CChain_archive_FUN_0042a9d0 at 0042a9d6
-;   core_charactr.cpp_FUN_0042b450 at 0042b45c
-;   core_crate.cpp_CCrate_archive_FUN_00446040 at 00446046
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b45c
 ;   ... and 38 more
 ;
 ; Referenced Globals:

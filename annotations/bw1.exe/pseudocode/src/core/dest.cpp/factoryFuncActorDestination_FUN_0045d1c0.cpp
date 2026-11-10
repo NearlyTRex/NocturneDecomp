@@ -11,7 +11,7 @@ void core_dest_cpp_factoryFuncActorDestination_FUN_0045d1c0(void)
 {
   CActorDestination *this_ptr;
   
-  this_ptr = (CActorDestination *)FUN_005c0f32(500);
+  this_ptr = (CActorDestination *)debugAllocTracked1(500);
   if (this_ptr == (CActorDestination *)0x0) {
     return;
   }

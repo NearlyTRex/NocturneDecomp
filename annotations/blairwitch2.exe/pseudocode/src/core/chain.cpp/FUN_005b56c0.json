@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 441,
-    "complexity_score": 635,
+    "complexity_score": 616,
     "cross_reference_count": 0,
     "function_call_count": 11,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 185,
-    "suspect_count": 42,
+    "pseudocode_lines": 171,
+    "suspect_count": 41,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unnamed_field",
       "unnamed_param",
@@ -17,7 +18,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 626
+    "total_lines": 612
   },
   "cross_references": [],
   "function": {
@@ -177,7 +178,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 33,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
@@ -185,7 +186,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(param_1);",
@@ -193,7 +194,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 59,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
@@ -201,7 +202,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
@@ -209,7 +210,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
@@ -217,7 +218,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 59,
+      "line": 36,
       "match": "field_0x154",
       "severity": "mild",
       "text": "(**(code **)(*(int *)&param_1->field_0x154 + 0x1c))(param_1,0);",
@@ -225,23 +226,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0xc = uVar3;",
+      "text": "*(uint *)(param_1[2].actor_name + 0xc) = uVar3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[2].field_0xc = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(param_1);",
@@ -249,23 +242,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0xc != 0) {",
+      "text": "if (*(int *)(param_1[2].actor_name + 0xc) != 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0xc != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&param_1->field_0x16c);",
@@ -273,7 +258,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 72,
+      "line": 49,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&param_1->field_0x16c);",
@@ -281,7 +266,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 72,
+      "line": 49,
       "match": "field_0x16c",
       "severity": "mild",
       "text": "(DAT_0060b280,(SMRGLTextureBasic *)&param_1->field_0x16c);",
@@ -289,7 +274,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 73,
+      "line": 50,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
@@ -297,7 +282,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 60,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
@@ -305,7 +290,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 61,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",
@@ -313,7 +298,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
       "text": "pfVar7 = (float *)&param_1->field_0x28c;",
@@ -321,7 +306,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 85,
+      "line": 62,
       "match": "field_0x28c",
       "severity": "mild",
       "text": "pfVar7 = (float *)&param_1->field_0x28c;",
@@ -329,23 +314,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfVar5 = (float *)&param_1->field_0x2b0;",
+      "text": "pUVar5 = &param_1->vtable;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "pfVar5 = (float *)&param_1->field_0x2b0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 64,
       "match": "param_1",
       "severity": "mild",
       "text": "for (iVar2 = 0; iVar2 < *(int *)&param_1->field_0x158 + -1; iVar2 = iVar2 + 1) {",
@@ -353,7 +330,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 87,
+      "line": 64,
       "match": "field_0x158",
       "severity": "mild",
       "text": "for (iVar2 = 0; iVar2 < *(int *)&param_1->field_0x158 + -1; iVar2 = iVar2 + 1) {",
@@ -361,39 +338,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 91,
+      "line": 69,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d9ec(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&iStack_4c);",
+      "text": "((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_4c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 96,
+      "line": 74,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&iStack_7c);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_7c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 79,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&iStack_58);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_58);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 106,
+      "line": 84,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&iStack_28);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 85,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar1 = DAT_0060b280;",
@@ -401,26 +378,66 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 86,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_0060b280 + 4) = *(int *)(*(int *)DAT_0060b280 + 4) + -0x40;",
+      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 4) =",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 108,
+      "line": 87,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_0060b280 + 4) = *(int *)(*(int *)DAT_0060b280 + 4) + -0x40;",
+      "text": "*(int *)(DAT_0060b280->vertex_buffer_ptr + 4) + -0x40;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 116,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,aSStack_d4);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&SStack_d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_64);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 126,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_34);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 131,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 136,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_40);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 137,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_0060b280;",
       "type": "undefined_data"
     },
     {
@@ -428,72 +445,48 @@
       "line": 138,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d9ec(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&iStack_64);",
+      "text": "*(int *)DAT_0060b280->vertex_buffer_ptr = *(int *)DAT_0060b280->vertex_buffer_ptr + -0x40;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 143,
+      "line": 138,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&iStack_34);",
+      "text": "*(int *)DAT_0060b280->vertex_buffer_ptr = *(int *)DAT_0060b280->vertex_buffer_ptr + -0x40;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 148,
+      "line": 169,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&iStack_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 153,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&iStack_40);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "pCVar1 = DAT_0060b280;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "**(int **)DAT_0060b280 = **(int **)DAT_0060b280 + -0x40;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "**(int **)DAT_0060b280 = **(int **)DAT_0060b280 + -0x40;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 183,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,aSStack_d4);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&SStack_d4);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 62,
+      "line": 39,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 45,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(uint *)(param_1[2].actor_name + 0xc) = uVar3;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 47,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "if (*(int *)(param_1[2].actor_name + 0xc) != 0) {",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

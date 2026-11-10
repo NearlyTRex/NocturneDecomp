@@ -29,9 +29,9 @@ void core_shadow_cpp_FUN_005601bc(CCharacter *param_1)
   float fStack_60;
   float fStack_5c;
   float fStack_58;
-  byte auStack_54 [4];
-  float afStack_50 [4];
-  float fStack_40;
+  CVector3f CStack_54;
+  float fStack_48;
+  float afStack_44 [2];
   CVector3f CStack_3c;
   double dStack_30;
   float fStack_28;
@@ -42,7 +42,8 @@ void core_shadow_cpp_FUN_005601bc(CCharacter *param_1)
   float fStack_14;
   
   bVar2 = 0;
-  if ((*(int *)&param_1[1].field_0xe8 != 0) && (*(int *)&param_1[1].field_0x18 != 0)) {
+  if ((param_1[1].base.platform_position_delta.z != 0.0) &&
+     (*(int *)(param_1[1].base.actor_name + 0x18) != 0)) {
     uStack_78 = 0;
     uStack_74 = 0xbe99999a;
     uStack_70 = 0;
@@ -59,42 +60,43 @@ void core_shadow_cpp_FUN_005601bc(CCharacter *param_1)
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
     if (fStack_98 < (float)_DAT_005f17c5) {
-      CStack_3c._0_4_ = fStack_90;
-      *(uint *)((int)&CStack_3c + ((uint)bVar2 * -2 + 1) * 4) =
+      CStack_3c.x = fStack_90;
+      *(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + 4) =
            *(uint *)(&stack0xffffff74 + (uint)bVar2 * -8);
-      *(uint *)((int)&CStack_3c + ((uint)bVar2 * -2 + (uint)bVar2 * -2 + 2) * 4) =
+      *(uint *)((int)&CStack_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
            *(uint *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-      CStack_3c._4_4_ = 0;
+      CStack_3c.y = 0.0;
       core_charactr_cpp_FUN_0042d750(param_1,&CStack_3c);
       return;
     }
     fStack_6c = fStack_9c - fStack_60;
     fStack_68 = fStack_98 - fStack_5c;
     fStack_64 = fStack_94 - fStack_58;
-    afStack_50[2] = fStack_9c - fStack_60;
-    afStack_50[(uint)bVar2 * -2 + 3] = (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
-    afStack_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
-         afStack_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -5];
-    fStack_20 = afStack_50[3] * afStack_50[3];
-    fStack_28 = SQRT(fStack_40 * fStack_40 + afStack_50[2] * afStack_50[2] + fStack_20);
+    fStack_48 = fStack_9c - fStack_60;
+    afStack_44[(uint)bVar2 * -2] = (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
+    afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+         afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
+    fStack_20 = afStack_44[0] * afStack_44[0];
+    fStack_28 = SQRT(afStack_44[1] * afStack_44[1] + fStack_48 * fStack_48 + fStack_20);
     engine_console_cpp_FUN_00445430(g_CConsolePtr,"Chain stretched to %f\n",(double)fStack_28)
     ;
-    if ((*(float *)&param_1[1].field_0xec < fStack_28) &&
-       (fVar1 = *(float *)&param_1[1].field_0xec * *(float *)&param_1[1].field_0xec - fStack_20,
+    if ((param_1[1].base.platform_orientation_delta.x < fStack_28) &&
+       (fVar1 = param_1[1].base.platform_orientation_delta.x, fVar1 = fVar1 * fVar1 - fStack_20,
        dStack_30 = (double)fVar1, 0.0 <= dStack_30)) {
       fVar1 = SQRT(fVar1);
-      auStack_54 = (byte  [4])fStack_6c;
-      afStack_50[(uint)bVar2 * -2] = (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
-      afStack_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-           afStack_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -5];
-      fStack_1c = SQRT(afStack_50[1] * afStack_50[1] + (float)auStack_54 * (float)auStack_54);
+      CStack_54.x = fStack_6c;
+      *(float *)((int)&CStack_54 + (uint)bVar2 * -8 + 4) =
+           (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
+      *(float *)((int)&CStack_54 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+           afStack_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
+      fStack_1c = SQRT(CStack_54.z * CStack_54.z + CStack_54.x * CStack_54.x);
       if ((0.0 < fStack_1c) && (fStack_24 = fStack_1c - fVar1, 0.0 < fStack_24)) {
         fStack_18 = fStack_24 / fStack_1c;
-        auStack_54 = (byte  [4])((float)auStack_54 * fStack_18);
-        afStack_50[0] = fStack_18 * 0.0;
-        afStack_50[1] = afStack_50[1] * fStack_18;
+        CStack_54.x = CStack_54.x * fStack_18;
+        CStack_54.y = fStack_18 * 0.0;
+        CStack_54.z = CStack_54.z * fStack_18;
         fStack_14 = fVar1;
-        core_charactr_cpp_FUN_0042d750(param_1,(CVector3f *)auStack_54);
+        core_charactr_cpp_FUN_0042d750(param_1,&CStack_54);
         return;
       }
     }

@@ -15,7 +15,7 @@
 ;   support_codec.cpp_CLZWDecompress_dtor_FUN_004354f0 at 00435502
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00434290
+;   support_codec.cpp_CLZWDictionary_free_FUN_00434290
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   Label: support_codec.cpp_CLZWDictionary_dtor_FUN_00434270
     MOV EBX,dword ptr [ESP + 0x8]       ; 00434271
     PUSH EBX                            ; 00434275
-    CALL support_codec.cpp_FUN_00434290 ; 00434276
-        ;   XREF to: 00434290 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_00434290(CLZWDictionary * this_ptr)
+    CALL support_codec.cpp_CLZWDictionary_free_FUN_00434290 ; 00434276
+        ;   XREF to: 00434290 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDictionary_free_FUN_00434290(CLZWDictionary * this_ptr)
     ADD ESP,0x4                         ; 0043427b
     MOV EAX,EBX                         ; 0043427e
     POP EBX                             ; 00434280

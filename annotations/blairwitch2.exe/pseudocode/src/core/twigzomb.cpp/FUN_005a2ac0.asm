@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_twigzomb.cpp_FUN_005a28a0 at 005a28f8
+;   core_twigzomb.cpp_CTwigZombie_processStates_FUN_005a28a0 at 005a28f8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chasing_005f0013
@@ -22,7 +22,7 @@
 ;   core_actor.cpp_FUN_00408d70
 ;   core_charactr.cpp_CCharacter_turnTowardPoint_FUN_00423850
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
-;   core_enemy.cpp_FUN_00488110
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_00503e60
@@ -223,8 +223,8 @@ section .text
     PUSH dword ptr [ESP + 0xa8]         ; 005a2d1a
     PUSH EAX                            ; 005a2d21
     PUSH EBX                            ; 005a2d22
-    CALL core_enemy.cpp_FUN_00488110    ; 005a2d23
-        ;   XREF to: 00488110 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_00488110(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110 ; 005a2d23
+        ;   XREF to: 00488110 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 005a2d28
     PUSH EBX                            ; 005a2d2b
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10 ; 005a2d2c

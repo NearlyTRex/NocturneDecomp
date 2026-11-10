@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   lod_index
 ;
 ; XREF[13]:
-;   core_bugs.cpp_FUN_004203a0 at 004204fc
-;   core_bugs.cpp_FUN_00421b10 at 00421c43
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0 at 004204fc
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10 at 00421c43
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_005b6350 at 005b635b
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510 at 005b6522
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620 at 00547669
 ;   core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_00548130 at 00548193
 ;   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_005481d0 at 0054823c
 ;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_005485c0 at 00548613
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_00547320 at 00547357
 ;   core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_005472d0 at 00547307
-;   core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_00547280 at 005472b7
 ;   ... and 3 more
 ;
 ; Called Functions:

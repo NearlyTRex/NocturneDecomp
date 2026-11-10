@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005341b0 at 0053424a
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 at 0053424a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d15e3

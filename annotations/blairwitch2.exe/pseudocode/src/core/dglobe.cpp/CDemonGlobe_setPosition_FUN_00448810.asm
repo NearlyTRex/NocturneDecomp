@@ -8,16 +8,16 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[11]:
-;   core_boxactor.cpp_FUN_0041d020 at 0041d0f2
-;   core_emitter.cpp_FUN_00486cb0 at 00486df0
-;   core_fire.cpp_FUN_00495960 at 004959c9
+;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d0f2
+;   core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0 at 005a6bf6
+;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486df0
+;   core_fire.cpp_CFireball_process_FUN_00495960 at 004959c9
 ;   core_fire.cpp_FUN_004969a0 at 004969b4
 ;   core_flame.cpp_FUN_004a0590 at 004a05cb
-;   core_keyactor.cpp_FUN_004df1c0 at 004df1ea
+;   core_keyactor.cpp_CKeyActor_process_FUN_004df1c0 at 004df1ea
 ;   core_shadow.cpp_FUN_0053c500 at 0053cfe3
 ;   core_spirmine.cpp_FUN_005ad940 at 005ad99a
-;   core_weapon.cpp_FUN_00589fd0 at 0058a1ad
-;   unkaddr_0059d350.cpp_FUN_0059d360 at 0059d374
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a1ad
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -14,8 +14,8 @@ void core_moon_cpp_FUN_005023e0(int *param_1)
   CAlphaBitmap *this_ptr;
   
   if (*param_1 == 0) {
-    if (*(int *)&g_CGamePtr->field_0x230 == 0x29a) {
-      *(uint *)&g_CGamePtr->field_0x230 = 0;
+    if (g_CGamePtr->head_of_horror_cheat == 0x29a) {
+      g_CGamePtr->head_of_horror_cheat = 0;
     }
     this_ptr = CAlphaBitmap_ARRAY_01d1c7cc;
     iVar2 = 0;

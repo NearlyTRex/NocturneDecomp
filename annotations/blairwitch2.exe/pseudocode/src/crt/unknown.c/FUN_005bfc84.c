@@ -11,6 +11,6 @@ uint FUN_005bfc84(void)
 {
   uint in_EAX;
   
-  unkafter_morph_cpp_FUN_005c3c70();
+  FUN_005c3c70();
   return in_EAX;
 }

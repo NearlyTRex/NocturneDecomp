@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[12]:
-;   core_confedrt.cpp_FUN_005a0b20 at 005a0b65
-;   core_confzomb.cpp_FUN_005a1e10 at 005a1e55
-;   core_dog1.cpp_FUN_005abe90 at 005abef0
-;   core_ghostchi.cpp_FUN_005a94c0 at 005a9505
-;   core_hag.cpp_FUN_005aa970 at 005aa9d0
-;   core_hand.cpp_FUN_005a9e10 at 005a9e55
-;   core_robin.cpp_FUN_005a60d0 at 005a6106
-;   core_schngeis.cpp_FUN_005a31c0 at 005a3205
-;   core_twigzomb.cpp_FUN_005a28a0 at 005a28d6
-;   core_union.cpp_FUN_005a4c50 at 005a4cac
+;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 at 005a0b65
+;   core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10 at 005a1e55
+;   core_dog1.cpp_CDog_processStates_FUN_005abe90 at 005abef0
+;   core_ghostchi.cpp_CGhostChild_processStates_FUN_005a94c0 at 005a9505
+;   core_hag.cpp_CHag_processStates_FUN_005aa970 at 005aa9d0
+;   core_hand.cpp_CHand_processStates_FUN_005a9e10 at 005a9e55
+;   core_robin.cpp_CRobin_processStates_FUN_005a60d0 at 005a6106
+;   core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0 at 005a3205
+;   core_twigzomb.cpp_CTwigZombie_processStates_FUN_005a28a0 at 005a28d6
+;   core_union.cpp_CUnion_processStates_FUN_005a4c50 at 005a4cac
 ;   ... and 2 more
 ;
 ; Called Functions:

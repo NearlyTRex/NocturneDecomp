@@ -14,8 +14,8 @@
 ;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004fc310 at 004fc34c
 ;   core_inv.cpp_CInventory_select_FUN_004f9bd0 at 004f9dcd
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00548a60
-;   core_stranger.cpp_FUN_005907a0 at 0059098d
-;   core_vampboss.cpp_FUN_005a6da0 at 005a6f86
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_005907a0 at 0059098d
+;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_005a6da0 at 005a6f86
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408560

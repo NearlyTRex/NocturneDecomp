@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_disease.cpp_FUN_0045c040 at 0045c06a
+;   core_disease.cpp_CDisease_fire_FUN_0045c040 at 0045c06a
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_004a3a30

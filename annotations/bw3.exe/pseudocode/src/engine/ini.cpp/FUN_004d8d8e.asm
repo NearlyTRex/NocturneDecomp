@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_FUN_004d8d8e(int param_1,undefined4 param_2,undefined4 *param_3)
+; void engine_ini_cpp_FUN_004d8d8e(int param_1,undefined4 param_2)
 ;
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
     PUSH 0x5c58c0                       ; 004d8da1
     LEA EAX,[ESP + 0xc]                 ; 004d8da6
     PUSH EAX                            ; 004d8daa
-    CALL crt_unknown.c_FUN_005a28c0     ; 004d8dab
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d8dab
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004d8db0
     PUSH 0x64                           ; 004d8db3
     LEA EAX,[ESP + 0x4]                 ; 004d8db5

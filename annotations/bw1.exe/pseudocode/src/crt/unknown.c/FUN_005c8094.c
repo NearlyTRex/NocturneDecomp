@@ -29,12 +29,12 @@ int __cdecl FUN_005c8094(char *filename,WatcomStat *file_info)
   
   bVar1 = false;
   if ((*filename == '\0') ||
-     (iVar3 = unkafter_zombie_cpp_FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
+     (iVar3 = FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
     setErrno(1);
     iVar3 = -1;
   }
   else {
-    FUN_005c91d0(local_124,0x104);
+    FUN_005c91d0((char *)local_124,0x104);
     pcVar4 = _fullpath(&local_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
        ((((((&DAT_00626114)[(byte)(local_228 + 1)] & 0xc0) != 0 && (local_227 == ':')) &&
@@ -51,7 +51,7 @@ int __cdecl FUN_005c8094(char *filename,WatcomStat *file_info)
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_005c26c0(local_124);
+      FUN_005c26c0((char *)local_124);
       memset(&local_368,0,0x13e);
       local_368.dwFileAttributes = 0x10;
     }
@@ -75,23 +75,23 @@ int __cdecl FUN_005c8094(char *filename,WatcomStat *file_info)
     *(DWORD *)(file_info + 0x16) = local_368.nFileSizeLow;
     uVar2 = FUN_005c7f80(local_368.dwFileAttributes,local_368.cFileName);
     *(ushort *)(file_info + 8) = uVar2;
-    unkafter_zombie_cpp_FUN_005cc1c0(&local_368.ftLastWriteTime,local_20,local_14);
-    uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(local_20[0],local_14[0]);
+    FUN_005cc1c0(&local_368.ftLastWriteTime,local_20,local_14);
+    uVar6 = FUN_005cc2b0(local_20[0],local_14[0]);
     *(uint *)(file_info + 0x1e) = uVar6;
-    unkafter_zombie_cpp_FUN_005cc1c0(&local_368.ftCreationTime,&local_18,&local_1c);
+    FUN_005cc1c0(&local_368.ftCreationTime,&local_18,&local_1c);
     if (((short)local_18 == local_20[0]) && ((short)local_1c == local_14[0])) {
       uVar6 = *(uint *)(file_info + 0x1e);
     }
     else {
-      uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(local_18 & 0xffff,local_1c & 0xffff);
+      uVar6 = FUN_005cc2b0(local_18 & 0xffff,local_1c & 0xffff);
     }
     *(uint *)(file_info + 0x22) = uVar6;
-    unkafter_zombie_cpp_FUN_005cc1c0(&local_368.ftLastAccessTime,&local_18,&local_1c);
+    FUN_005cc1c0(&local_368.ftLastAccessTime,&local_18,&local_1c);
     if (((short)local_18 == local_20[0]) && ((short)local_1c == local_14[0])) {
       uVar6 = *(uint *)(file_info + 0x1e);
     }
     else {
-      uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(local_18 & 0xffff,local_1c & 0xffff);
+      uVar6 = FUN_005cc2b0(local_18 & 0xffff,local_1c & 0xffff);
     }
     *(uint *)(file_info + 0x1a) = uVar6;
     *(ushort *)(file_info + 0x10) = 0;

@@ -10,7 +10,7 @@
 ; XREF[76]:
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 at 0040ba91
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040ddb0 at 0040ddea
-;   core_ammo.cpp_FUN_0040e240 at 0040e2b4
+;   core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240 at 0040e2b4
 ;   core_ammobox.cpp_CAmmoBox_ctor_FUN_0040e510 at 0040e54a
 ;   core_anvil.cpp_CAnvil_ctor_FUN_0040ea30 at 0040ea6f
 ;   core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040f330 at 0040f368

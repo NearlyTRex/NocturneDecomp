@@ -1,0 +1,418 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 259,
+    "complexity_score": 288,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 23,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 108,
+    "suspect_count": 16,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 367
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00595c00",
+    "address_range": [
+      [
+        "00595c00",
+        "00595f22"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_zombie.cpp_CZombie_setup_FUN_00595c00",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_setup_FUN_00595c00(CZombie *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "00487eb0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00487eb0"
+    },
+    {
+      "addr": "00543100",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00543100"
+    },
+    {
+      "addr": "00547810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00547480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    },
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eee5c",
+      "name": "s_Bip01_Head_005eee5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eee67",
+      "name": "s_Bip01_L_ForeArm_005eee67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eee77",
+      "name": "s_Bip01_R_ForeArm_005eee77",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eee87",
+      "name": "s_Bip01_L_UpperArm_005eee87",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eee98",
+      "name": "s_Bip01_R_UpperArm_005eee98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeea9",
+      "name": "s_Bip01_L_Foot_005eeea9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeeb6",
+      "name": "s_Bip01_R_Foot_005eeeb6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeec3",
+      "name": "s_Bip01_L_Hand_005eeec3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeed0",
+      "name": "s_Bip01_R_Hand_005eeed0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeedd",
+      "name": "s_Bip01_Spine_005eeedd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeee9",
+      "name": "s_Bip01_Spine2_005eeee9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeef6",
+      "name": "s_larm01_005eeef6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeefd",
+      "name": "s_l4arm01_005eeefd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef05",
+      "name": "s_rarm01_005eef05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef0c",
+      "name": "s_r4arm01_005eef0c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef14",
+      "name": "s_waist01_005eef14",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef1c",
+      "name": "s_torso01_005eef1c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef24",
+      "name": "s_head01_005eef24",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef2b",
+      "name": "s_newzomb1_dfm_005eef2b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef38",
+      "name": "s_newzchik_dfm_005eef38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef45",
+      "name": "s_zombho1_dfm_005eef45",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef51",
+      "name": "s_zombho2_dfm_005eef51",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eef62",
+      "name": "DAT_005eef62",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.170506912442396,
+    "instruction_count": 217,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 27,
+      "CBRANCH": 7,
+      "COPY": 212,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 82,
+      "INT_AND": 85,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 73,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 36,
+      "INT_SUB": 100,
+      "INT_ZEXT": 4,
+      "LOAD": 19,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 136
+    },
+    "pcode_op_count": 905
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x21b4",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.model.field_0x21b4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x2260",
+      "severity": "mild",
+      "text": "(&(this_ptr->base).base.model.field_0x2260,\"newzomb1.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 83,
+      "match": "(byte *)((int)piVar1",
+      "severity": "moderate",
+      "text": "uVar2 = *(byte *)((int)piVar1 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 84,
+      "match": "(ushort *)((int)piVar1",
+      "severity": "moderate",
+      "text": "uVar3 = *(ushort *)((int)piVar1 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 87,
+      "match": "field_0x261a",
+      "severity": "mild",
+      "text": "*(ushort *)&(this_ptr->base).base.field_0x261a = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 88,
+      "match": "field_0x261c",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x261c = this_ptr->part_indices[1];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x2690",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x2690 = this_ptr->bone_indices[2];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0x2694",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x2694 = this_ptr->part_indices[3];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 92,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.base.field_0xfc = (uint)(this_ptr->is_miner_zombie != 0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 96,
+      "match": "field_0x3444",
+      "severity": "mild",
+      "text": "if ((-1 < iVar4) && (*(float *)&(this_ptr->base).base.field_0x3444 < 0.0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 97,
+      "match": "field_0x3444",
+      "severity": "mild",
+      "text": "*(float *)&(this_ptr->base).base.field_0x3444 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 98,
+      "match": "field_0x2248",
+      "severity": "mild",
+      "text": "*(float *)&(this_ptr->base).base.model.field_0x2248 + (float)_DAT_005eef62;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 100,
+      "match": "field_0x2260",
+      "severity": "mild",
+      "text": "str1 = &(this_ptr->base).base.model.field_0x2260;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 83,
+      "match": "(int)piVar1",
+      "severity": "moderate",
+      "text": "uVar2 = *(byte *)((int)piVar1 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar1` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 84,
+      "match": "(int)piVar1",
+      "severity": "moderate",
+      "text": "uVar3 = *(ushort *)((int)piVar1 + 2);",
+      "type": "pointer_truncation"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fe334"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

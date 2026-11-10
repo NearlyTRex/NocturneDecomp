@@ -8,7 +8,7 @@
 ;   undefined4 DAT_005dabfd
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_004799e0
+;   core_dpart.cpp_CDemonPart_alloc_FUN_004799e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_stdio.c_fread_FUN_005c0b10
 ;   crt_string.c__strcmp_FUN_005c0f80
@@ -49,8 +49,8 @@ section .text
         ;   XREF to: 005c0b10 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005c0b10()
     ADD ESP,0x10                        ; 00479cac
     PUSH EBX                            ; 00479caf
-    CALL core_dpart.cpp_FUN_004799e0    ; 00479cb0
-        ;   XREF to: 004799e0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_FUN_004799e0(CDemonPart * this_ptr)
+    CALL core_dpart.cpp_CDemonPart_alloc_FUN_004799e0 ; 00479cb0
+        ;   XREF to: 004799e0 (UNCONDITIONAL_CALL)  ; void core_dpart.cpp_CDemonPart_alloc_FUN_004799e0(CDemonPart * this_ptr)
     ADD ESP,0x4                         ; 00479cb5
     PUSH EBP                            ; 00479cb8
     PUSH 0x1                            ; 00479cb9

@@ -9,6 +9,7 @@
 ; int *            Stack[0xc]:4   vertex_indices
 ;
 ; XREF[24]:
+;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470 at 0046b51f
 ;   engine_drender.cpp_CDemonRenderer_renderAlphaBlendedPoly_FUN_0046bc20 at 0046bca0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_0046c730 at 0046c7a4
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800 at 0046c89e
@@ -18,7 +19,6 @@
 ;   engine_drender.cpp_CDemonRenderer_renderFullEffectsDirect_FUN_0046c090 at 0046c109
 ;   engine_drender.cpp_CDemonRenderer_renderOverlayPoly_FUN_0046ca20 at 0046cabe
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240 at 0046b279
-;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0 at 0046b329
 ;   ... and 14 more
 ;
 ; Referenced Globals:

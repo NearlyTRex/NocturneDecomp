@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0047e470 at 0047e6bc
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470 at 0047e6bc
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c4b8
 ;
 ; Referenced Globals:
@@ -41,7 +41,7 @@
 ;   engine_mini3d.cpp_FUN_004f3520
 ;   engine_mini3d.cpp_FUN_004f37e0
 ;   shape_edittool.cpp_CInputString_calcX_FUN_0047bf80
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
 
@@ -112,8 +112,8 @@ section .text
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
         ;   Label: LAB_0047c11a
     ADD ESP,0x18                        ; 0047c11f
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 0047c122
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 0047c122
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
     TEST EAX,0x40000                    ; 0047c127
     JZ 0x0047c16b                       ; 0047c12c
         ;   XREF to: 0047c16b (CONDITIONAL_JUMP)  ; LAB_0047c16b

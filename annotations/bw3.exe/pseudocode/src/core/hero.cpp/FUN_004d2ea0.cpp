@@ -43,8 +43,8 @@ int __cdecl core_hero_cpp_FUN_004d2ea0(CHero *this_ptr)
   local_28 = 5.0;
   local_1c = 0;
   local_20 = this_ptr + 0x20;
-  for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x14f0a8; local_18 = local_18 + 1) {
-    local_14 = *(CHero **)(&g_CDemonSetPtr->field_0x14f0ac + local_1c);
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->character_count; local_18 = local_18 + 1) {
+    local_14 = *(CHero **)((int)g_CDemonSetPtr->characters + local_1c);
     if ((local_14[0x2698] != (CHero)0x0) && (this_ptr != local_14)) {
       local_70 = *(float *)(local_14 + 0x20) - *(float *)local_20;
       local_6c = *(float *)(local_14 + 0x24) - *(float *)(local_20 + 4);
@@ -64,7 +64,7 @@ int __cdecl core_hero_cpp_FUN_004d2ea0(CHero *this_ptr)
                *(uint *)((int)&stack0xffffffac + (uint)bVar1 * 0xfffffffe * 4);
           *(uint *)(&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
                *(uint *)(&stack0xffffffb0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-          core_vecdir_cpp_FUN_00576250(&stack0xffffffb4);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffb4);
           local_34 = local_88;
           (&stack0xffffffd0)[(uint)bVar1 * 0xfffffffe] =
                (float)*(uint *)(&stack0xffffff7c + (uint)bVar1 * -8);

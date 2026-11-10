@@ -25,26 +25,26 @@ CSpiritMine * CSpiritMine::ctor(CSpiritMine *this_ptr);
 // Address: 005ad460
 CSpiritMine * CSpiritMine::dtor(CSpiritMine *this_ptr,uint flags);
 
-// Original: core_spirmine.cpp_FUN_005ad4f0
+// Original: core_spirmine.cpp_CSpiritMine_setup_FUN_005ad4f0
 // Address: 005ad4f0
-void FUN_005ad4f0(CBoxActor *param_1);
+void __cdecl CSpiritMine::setup(CSpiritMine *this_ptr);
 
-// Original: core_spirmine.cpp_FUN_005ad530
+// Original: core_spirmine.cpp_CSpiritMine_process_FUN_005ad530
 // Address: 005ad530
-void FUN_005ad530(CBoxActor *param_1,float param_2);
+void __cdecl CSpiritMine::process(CSpiritMine *this_ptr,float delta_time);
 
-// Original: core_spirmine.cpp_FUN_005ad900
+// Original: core_spirmine.cpp_CSpiritMine_renderOpaque_FUN_005ad900
 // Address: 005ad900
-undefined4 FUN_005ad900(void);
+int __cdecl CSpiritMine::renderOpaque(CSpiritMine *this_ptr);
 
-// Original: core_spirmine.cpp_FUN_005ad910
+// Original: core_spirmine.cpp_CSpiritMine_renderTransparent_FUN_005ad910
 // Address: 005ad910
-int FUN_005ad910(CBoxActor *param_1,int param_2);
+int __cdecl CSpiritMine::renderTransparent(CSpiritMine *this_ptr);
 
 // Original: core_spirmine.cpp_FUN_005ad940
 // Address: 005ad940
 void FUN_005ad940(int param_1);
 
-// Original: core_spirmine.cpp_FUN_005ad9f0
+// Original: core_spirmine.cpp_CSpiritMine_archive_FUN_005ad9f0
 // Address: 005ad9f0
-void FUN_005ad9f0(CBoxActor *param_1);
+void __cdecl CSpiritMine::archive(CSpiritMine *this_ptr);

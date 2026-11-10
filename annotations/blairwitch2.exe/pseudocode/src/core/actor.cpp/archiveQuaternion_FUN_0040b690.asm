@@ -10,9 +10,9 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[3]:
-;   core_boneguy.cpp_FUN_00419c50 at 00419dc7
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419dc7
+;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437d6b
 ;   core_platfrm.cpp_CPlatform_archive_FUN_005193f0 at 005196cf
-;   unkafter_conveyor.cpp_FUN_00437b80 at 00437d6b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_f_005cab0b

@@ -18,17 +18,17 @@ void engine_special_cpp_FUN_00563910(CDemonActor *param_1)
   CDemonActor *pCVar5;
   
   bVar7 = 0;
-  core_actor_cpp_FUN_00408890(param_1);
+  core_actor_cpp_CDemonActor_setup_FUN_00408890(param_1);
   pCVar5 = param_1 + 1;
   pCVar4 = pCVar5;
   do {
-    cVar1 = *(char *)param_1;
-    *(char *)pCVar4 = cVar1;
+    cVar1 = param_1->actor_name[0];
+    pCVar4->actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = param_1->field_0x1;
-    param_1 = (CDemonActor *)&param_1->field_0x2;
-    pCVar4->field_0x1 = cVar1;
-    pCVar4 = (CDemonActor *)&pCVar4->field_0x2;
+    cVar1 = param_1->actor_name[1];
+    param_1 = (CDemonActor *)(param_1->actor_name + 2);
+    pCVar4->actor_name[1] = cVar1;
+    pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5d54a8;
   iVar2 = -1;
@@ -37,10 +37,10 @@ void engine_special_cpp_FUN_00563910(CDemonActor *param_1)
     if (iVar2 == 0) break;
     iVar2 = iVar2 + -1;
     pCVar4 = (CDemonActor *)((int)pCVar5 + (uint)bVar7 * -2 + 1);
-    cVar1 = *(char *)pCVar5;
+    pcVar6 = pCVar5->actor_name;
     pCVar5 = pCVar4;
-  } while (cVar1 != '\0');
-  pcVar6 = &pCVar4[-1].field_0x157;
+  } while (*pcVar6 != '\0');
+  pcVar6 = (char *)((int)&pCVar4[-1].vtable + 3);
   do {
     cVar1 = *pcVar3;
     *pcVar6 = cVar1;

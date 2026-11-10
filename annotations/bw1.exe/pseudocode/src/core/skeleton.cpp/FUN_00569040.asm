@@ -13,16 +13,16 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[49]:
-;   core_batcreat.cpp_FUN_004115b0 at 00411948
-;   core_batman.cpp_FUN_00412ba0 at 00413301
-;   core_bride.cpp_FUN_00423b70 at 00423d5b
-;   core_carved.cpp_FUN_00428ae0 at 00429ac9
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411948
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413301
+;   core_bird.cpp_CBird_process_FUN_00415340 at 004153fb
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423d5b
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429ac9
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80 at 00434ae2
-;   core_cow.cpp_FUN_00448570 at 004488e6
-;   core_demnfolk.cpp_FUN_00459100 at 0045a43d
-;   core_doc.cpp_FUN_00469060 at 004692b9
-;   core_doc.cpp_FUN_0046bde0 at 0046be78
-;   core_doc.cpp_FUN_0046c9e0 at 0046ca02
+;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004488e6
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a43d
+;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 0047547e
+;   core_doc.cpp_CDoc_setup_FUN_00469060 at 004692b9
 ;   ... and 39 more
 ;
 ; Called Functions:

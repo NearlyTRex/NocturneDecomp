@@ -25,11 +25,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0(CDemo
   _DAT_01482658 = _DAT_01482658 + -1;
   if (_DAT_01482658 == 0) {
     engine_matrix_c_popViewport_FUN_00483c40();
-    *(uint *)&this_ptr->field_0x1c0 = _DAT_01c4eff8;
-    *(uint *)&this_ptr->field_0x1c4 = _DAT_01c4effc;
-    *(uint *)&this_ptr->field_0x1c8 = _DAT_01c4f000;
+    (this_ptr->cached_projection).half_width_fixed = _DAT_01c4eff8;
+    (this_ptr->cached_projection).neg_half_height_fixed = _DAT_01c4effc;
+    (this_ptr->cached_projection).center_x_fixed = _DAT_01c4f000;
     uVar2 = DAT_0061b49c;
-    *(uint *)&this_ptr->field_0x1cc = _DAT_01c4f004;
+    (this_ptr->cached_projection).center_y_fixed = _DAT_01c4f004;
     DAT_0061b4a0 = _DAT_0148265c;
     _DAT_01c50948 = _DAT_01482660;
     puVar5 = (uint *)&DAT_01482664;
@@ -49,21 +49,21 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endBackgroundScene_FUN_0044d8c0(CDemo
     _DAT_01c4e9ec = _DAT_0148392c;
     if (restore_zbuffer != 0) {
       iVar3 = 0;
-      if (0 < *(int *)&this_ptr->field_0x148) {
+      if (0 < this_ptr->framebuffer_height) {
         iVar7 = 0;
         do {
-          iVar4 = *(int *)&this_ptr->field_0x144 * iVar3;
+          iVar4 = this_ptr->framebuffer_width * iVar3;
           piVar1 = (int *)(&DAT_01c4480c + iVar7);
-          byte_count = *(int *)&this_ptr->field_0x144 * 4;
+          byte_count = this_ptr->framebuffer_width * 4;
           iVar7 = iVar7 + 4;
           iVar3 = iVar3 + 1;
           core_dstrendr_cpp_memcpyMMX_FUN_004886f1
-                    ((void *)(iVar4 * 4 + *(int *)&this_ptr->field_0x15c),
+                    ((void *)(iVar4 * 4 + (int)this_ptr->zbuffer_aligned),
                      (void *)(*piVar1 + byte_count),byte_count);
-        } while (iVar3 < *(int *)&this_ptr->field_0x148);
+        } while (iVar3 < this_ptr->framebuffer_height);
       }
       if (_DAT_01c50948 != 0) {
-        engine_special_cpp_FUN_00582a80(0);
+        engine_special_cpp_masterZBuffer_FUN_00582a80(0);
         return;
       }
     }

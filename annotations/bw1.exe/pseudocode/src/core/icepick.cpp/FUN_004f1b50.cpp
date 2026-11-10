@@ -23,7 +23,7 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
   float local_dc;
   float local_d8;
   float local_d4;
-  byte auStack_d0 [16];
+  CVector3f CStack_d0;
   float fStack_c0;
   uint uStack_b8;
   float afStack_b4 [5];
@@ -73,7 +73,7 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
     local_80 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar3 + 0x28);
     local_dc = local_88;
     (&stack0xffffff28)[(uint)bVar6 * 0xfffffffe] = afStack_b4[(uint)bVar6 * -2 + 0xc];
-    *(float *)(auStack_d0 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + -4) =
+    afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + -8] =
          afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
     local_1c = SQRT(local_d4 * local_d4 + local_dc * local_dc + local_d8 * local_d8);
     if (*(int *)&this_ptr->field_0x1ffa8 == 3) {
@@ -90,7 +90,7 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
       fStack_4c = 9999.9;
       iVar3 = core_hero_cpp_FUN_004ec350(this_ptr,afStack_b4 + 0x1a);
       if ((iVar3 == 0) || (local_38 <= fStack_4c)) {
-        if (*(int *)&this_ptr->field_0x1ffac != 0) {
+        if (this_ptr->guns_drawn != 0) {
           *(uint *)&this_ptr->field_0xc1f0 = 1;
         }
       }
@@ -139,11 +139,11 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
         this_ptr_00 = core_path_cpp_getPathMap_FUN_005351f0((CLocation *)(local_30 + 0x20));
       }
       iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
-                        (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)auStack_d0,
+                        (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,&CStack_d0,
                          *(int *)&this_ptr->field_0x6c);
       if (iVar3 != 0) {
-        fStack_14 = (float)core_actor_cpp_FUN_0040cd60
-                                     ((float)auStack_d0._4_4_ - *(float *)&this_ptr->field_0x34);
+        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                     (CStack_d0.y - *(float *)&this_ptr->field_0x34);
         fVar2 = fStack_14 * _DAT_005e541f * (float)_DAT_005e5427;
         fStack_3c = -local_24;
         *(float *)&this_ptr->field_0xc200 = fVar2;
@@ -164,7 +164,7 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
     }
     else {
       if (local_28 == 1) {
-        if (*(int *)&this_ptr->field_0x1ffac == 0) {
+        if (this_ptr->guns_drawn == 0) {
           *(uint *)&this_ptr->field_0xc1f0 = 1;
         }
         else {
@@ -179,7 +179,7 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
       else {
         pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
                            ((CMotionController *)&this_ptr->field_0x158);
-        if ((*(int *)(pSVar4 + 0x24) == 10) && (*(int *)&this_ptr->field_0x1ffac != 0)) {
+        if ((*(int *)(pSVar4 + 0x24) == 10) && (this_ptr->guns_drawn != 0)) {
           *(uint *)&this_ptr->field_0xc1f0 = 1;
         }
         iVar3 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
@@ -196,12 +196,13 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
         }
       }
       if (local_28 == 1) {
-        core_vecdir_cpp_FUN_005a7520(&stack0xffffff24);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff24);
         uStack_64 = uStack_b8;
         afStack_b4[(uint)bVar6 * -2 + 0x15] = afStack_b4[(uint)bVar6 * -2];
         afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16] =
              afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-        fStack_14 = (float)core_actor_cpp_FUN_0040cd60(fStack_60 - *(float *)&this_ptr->field_0x34);
+        fStack_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                     (fStack_60 - *(float *)&this_ptr->field_0x34);
         fVar1 = fStack_14 * _DAT_005e541f * (float)_DAT_005e5427;
         fStack_48 = -local_24;
         *(float *)&this_ptr->field_0xc200 = fVar1;
@@ -240,7 +241,7 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
       local_d8 = fStack_90;
       local_d4 = fStack_8c;
     }
-    core_vecdir_cpp_FUN_005a7520(&stack0xffffff24);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff24);
     fStack_70 = afStack_b4[2];
     afStack_b4[(uint)bVar6 * -2 + 0x12] = afStack_b4[(uint)bVar6 * -2 + 3];
     afStack_b4[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13] =
@@ -250,21 +251,22 @@ void __cdecl core_icepick_cpp_FUN_004f1b50(CIcePick *this_ptr,float delta_time)
       local_d8 = fStack_6c;
       local_d4 = fStack_68;
     }
-    fStack_c0 = (float)core_actor_cpp_FUN_0040cd60(local_d8 - *(float *)&this_ptr->field_0x34);
+    fStack_c0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                 (local_d8 - *(float *)&this_ptr->field_0x34);
     if (local_34 < fStack_c0) {
       fStack_c0 = local_34;
     }
     if (fStack_c0 < -local_34) {
       fStack_c0 = -local_34;
     }
-    fStack_2c = fStack_c0 - *(float *)&this_ptr->field_0x1ffc0;
+    fStack_2c = fStack_c0 - (this_ptr->head_look_euler).y;
     if (delta_time * _DAT_005e5447 < fStack_2c) {
       fStack_2c = delta_time * _DAT_005e5447;
     }
     if (fStack_2c < delta_time * _DAT_005e544b) {
       fStack_2c = delta_time * _DAT_005e544b;
     }
-    *(float *)&this_ptr->field_0x1ffc0 = *(float *)&this_ptr->field_0x1ffc0 + fStack_2c;
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + fStack_2c;
   }
   return;
 }

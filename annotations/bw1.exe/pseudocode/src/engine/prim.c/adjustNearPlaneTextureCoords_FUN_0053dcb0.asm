@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[4]:
-;   engine_prim.c_FUN_0053e120 at 0053e356
-;   engine_prim.c_FUN_0053f080 at 0053f3b1
-;   engine_prim.c_FUN_0053f720 at 0053f8fe
-;   unkafter_zombie.cpp_FUN_005bf640 at 005bf8f9
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f8fe
+;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e356
+;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f3b1
+;   engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 at 005bf8f9
 ;
 ; *****************************************************************************
 

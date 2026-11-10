@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_constrct.cpp_FUN_00442a20 at 00442da8
-;   core_constrct.cpp_FUN_00443f00 at 00444003
+;   core_constrct.cpp_CConstruct_processDamage_FUN_00443f00 at 00444003
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442da8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_construc_cpp_005b979d
@@ -26,11 +26,11 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
-;   core_bodypart.cpp_FUN_00414550
-;   core_bodypart.cpp_FUN_004157c0
-;   core_charactr.cpp_FUN_00430590
-;   core_charactr.cpp_FUN_00431ce0
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0
+;   core_bodypart.cpp_createBodyPart_FUN_00414550
+;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590
+;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0
 ;   core_main.c_FUN_004e4330
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_xform.cpp_FUN_005860b0
@@ -47,8 +47,8 @@ section .text
     SUB ESP,0x34                        ; 00444114
     MOV EDX,dword ptr [ESP + 0x48]      ; 00444117
     PUSH EDX                            ; 0044411b
-    CALL core_charactr.cpp_FUN_00431ce0 ; 0044411c
-        ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00431ce0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0 ; 0044411c
+        ;   XREF to: 00431ce0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00444121
     MOV EAX,dword ptr [ESP + 0x48]      ; 00444124
     ADD EAX,0x158                       ; 00444128
@@ -88,24 +88,24 @@ section .text
     PUSH 0x40a00000                     ; 004441ad
         ;   Label: LAB_004441ad
     PUSH 0xc0a00000                     ; 004441b2
-    CALL core_actor.cpp_FUN_0040ce40    ; 004441b7
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004441b7
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 004441bc
     FLD float ptr [ESP + 0x38]          ; 004441c0
     ADD ESP,0x8                         ; 004441c4
     PUSH 0x41200000                     ; 004441c7
     PUSH 0x0                            ; 004441cc
     FSTP float ptr [ESP + 0x18]         ; 004441ce
-    CALL core_actor.cpp_FUN_0040ce40    ; 004441d2
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004441d2
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 004441d7
     FLD float ptr [ESP + 0x38]          ; 004441db
     ADD ESP,0x8                         ; 004441df
     PUSH 0x40a00000                     ; 004441e2
     PUSH 0xc0a00000                     ; 004441e7
     FSTP float ptr [ESP + 0x1c]         ; 004441ec
-    CALL core_actor.cpp_FUN_0040ce40    ; 004441f0
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004441f0
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 004441f5
     FLD float ptr [ESP + 0x38]          ; 004441f9
     ADD ESP,0x8                         ; 004441fd
@@ -121,8 +121,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 00444215
     PUSH EDI                            ; 00444219
     FSTP float ptr [ESP + 0x34]         ; 0044421a
-    CALL core_bodypart.cpp_FUN_00414550 ; 0044421e
-        ;   XREF to: 00414550 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_FUN_00414550(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
+    CALL core_bodypart.cpp_createBodyPart_FUN_00414550 ; 0044421e
+        ;   XREF to: 00414550 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_00414550(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 00444223
     MOV EDX,dword ptr [ESP + 0x48]      ; 00444226
     MOV ECX,dword ptr [EDX + 0xd0b8]    ; 0044422a
@@ -135,13 +135,13 @@ section .text
     PUSH EAX                            ; 0044423d
     PUSH EDX                            ; 0044423e
     MOV dword ptr [EAX + 0xcc4],0x1     ; 0044423f
-    CALL core_charactr.cpp_FUN_00430590 ; 00444249
-        ;   XREF to: 00430590 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00430590(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
+    CALL core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590 ; 00444249
+        ;   XREF to: 00430590 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590(CCharacter * this_ptr, CBodyPart * body_part, int part_index, int render_in_background)
         ;   Label: LAB_00444249
     ADD ESP,0x10                        ; 0044424e
     PUSH ESI                            ; 00444251
-    CALL core_bodypart.cpp_FUN_004157c0 ; 00444252
-        ;   XREF to: 004157c0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_FUN_004157c0(CBodyPart * this_ptr)
+    CALL core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0 ; 00444252
+        ;   XREF to: 004157c0 (UNCONDITIONAL_CALL)  ; void core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0(CBodyPart * this_ptr)
     IMUL EDX,EBX,0x48                   ; 00444257
     ADD ESP,0x4                         ; 0044425a
     MOV EAX,dword ptr [ESP + 0x2c]      ; 0044425d

@@ -12,45 +12,49 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0(CMansi
 
 {
   float fVar1;
-  float *pfVar2;
-  float *pfVar3;
-  int iVar4;
+  float fVar2;
+  float fVar3;
+  CVector3f *pCVar4;
+  SGem *pSVar5;
+  int iVar6;
   
-  core_actor_cpp_FUN_00409680(this_ptr,laser_info);
-  iVar4 = 0;
-  pfVar2 = (float *)&this_ptr->field_0x135c;
+  core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(&this_ptr->base,laser_info);
+  iVar6 = 0;
+  pCVar4 = &this_ptr->reflectors[0].position;
   do {
-    if ((pfVar2[2] - *(float *)(laser_info + 0x34)) * (pfVar2[2] - *(float *)(laser_info + 0x34)) +
-        (pfVar2[1] - *(float *)(laser_info + 0x30)) * (pfVar2[1] - *(float *)(laser_info + 0x30)) +
-        (*pfVar2 - *(float *)(laser_info + 0x2c)) * (*pfVar2 - *(float *)(laser_info + 0x2c)) < 1.0)
-    {
+    fVar1 = pCVar4->x - *(float *)(laser_info + 0x2c);
+    fVar3 = pCVar4->y - *(float *)(laser_info + 0x30);
+    fVar2 = pCVar4->z - *(float *)(laser_info + 0x34);
+    if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < 1.0) {
       *(uint *)(laser_info + 0x50) = 0x3f800000;
       return;
     }
-    iVar4 = iVar4 + 1;
-    pfVar2 = pfVar2 + 0x18;
-  } while (iVar4 < 2);
+    iVar6 = iVar6 + 1;
+    pCVar4 = pCVar4 + 8;
+  } while (iVar6 < 2);
   if (*(int *)(laser_info + 8) == 2) {
-    iVar4 = 0;
-    pfVar2 = (float *)&this_ptr->field_0xac4;
+    iVar6 = 0;
+    pCVar4 = &this_ptr->gems[0].position;
     do {
-      pfVar3 = (float *)(&this_ptr->field_0xaa0 + iVar4 * 0xb8);
-      if ((pfVar2[2] - *(float *)(laser_info + 0x34)) * (pfVar2[2] - *(float *)(laser_info + 0x34))
-          + (pfVar2[1] - *(float *)(laser_info + 0x30)) *
-            (pfVar2[1] - *(float *)(laser_info + 0x30)) +
-            (*pfVar2 - *(float *)(laser_info + 0x2c)) * (*pfVar2 - *(float *)(laser_info + 0x2c)) <
-          (float)_DAT_005e746d) {
+      fVar1 = pCVar4->x - *(float *)(laser_info + 0x2c);
+      fVar3 = pCVar4->y - *(float *)(laser_info + 0x30);
+      fVar2 = pCVar4->z - *(float *)(laser_info + 0x34);
+      pSVar5 = this_ptr->gems + iVar6;
+      if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 < (float)_DAT_005e746d) {
         fVar1 = (float)_DAT_005e7465;
-        pfVar3[6] = (float)*(int *)(laser_info + 0xc) * *(float *)laser_info * *pfVar3 * fVar1 +
-                    pfVar3[6];
-        pfVar3[7] = (float)*(int *)(laser_info + 0x10) * *(float *)laser_info * pfVar3[1] * fVar1 +
-                    pfVar3[7];
-        pfVar3[8] = (float)*(int *)(laser_info + 0x14) * *(float *)laser_info * pfVar3[2] * fVar1 +
-                    pfVar3[8];
+        (pSVar5->light).r =
+             (float)*(int *)(laser_info + 0xc) * *(float *)laser_info * (pSVar5->color).r * fVar1 +
+             (pSVar5->light).r;
+        (pSVar5->light).g =
+             (float)*(int *)(laser_info + 0x10) * *(float *)laser_info * (pSVar5->color).g * fVar1 +
+             (pSVar5->light).g;
+        (pSVar5->light).b =
+             (float)*(int *)(laser_info + 0x14) * *(float *)laser_info * (pSVar5->color).b * fVar1 +
+             (pSVar5->light).b;
       }
-      iVar4 = iVar4 + 1;
-      pfVar2 = pfVar2 + 0x2e;
-    } while (iVar4 < 0xc);
+      iVar6 = iVar6 + 1;
+      pCVar4 = (CVector3f *)((int)(pCVar4 + 0xf) + 4);
+    } while (iVar6 < 0xc);
   }
   return;
 }

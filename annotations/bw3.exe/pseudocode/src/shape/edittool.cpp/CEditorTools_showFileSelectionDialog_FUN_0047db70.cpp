@@ -1,0 +1,64 @@
+// Name: shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
+// Address: 0047db70
+// Address Range: [[0047db70, 0047dd1a]]
+// Convention: __cdecl
+// Signature: int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
+
+#include "nocturne.h"
+
+int __cdecl shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70(CEditorTools *this_ptr,char *dialog_title,char *search_directory,char *file_pattern,char *output_filename,uint flags)
+
+{
+  int iVar1;
+  int iVar2;
+  char *format;
+  int string_index;
+  int iVar3;
+  CPickList local_8d4;
+  char local_514 [512];
+  char local_314 [512];
+  char local_114 [260];
+  
+  shape_edittool_cpp_CPickList_ctor_FUN_004831c0(&local_8d4);
+  shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00482a70
+            (&local_8d4.base,search_directory,file_pattern);
+  if (local_8d4.base.item_count < 1) {
+    format = support_newmsg_cpp_getLocalizedString_FUN_00508960("No files found");
+    shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40(this_ptr,format);
+    iVar2 = 0;
+  }
+  else {
+    shape_edittool_cpp_CStrList_sortAll_FUN_00482390(&local_8d4.base);
+    iVar3 = -1;
+    iVar2 = iVar3;
+    if (((flags & 1) != 0) && (string_index = 0, 0 < local_8d4.base.item_count)) {
+      do {
+        shape_edittool_cpp_CStrList_getFieldAt_FUN_00482450
+                  (&local_8d4.base,local_314,string_index,0);
+        shape_edittool_cpp_CStrList_getFieldAt_FUN_00482450
+                  (&local_8d4.base,local_514,string_index,1);
+        engine_dosio_cpp_makePath_FUN_00465e80
+                  (local_114,(char *)0x0,(char *)0x0,local_314,local_514);
+        iVar1 = _stricmp(local_114,output_filename);
+        iVar2 = string_index;
+        if (iVar1 == 0) break;
+        string_index = string_index + 1;
+        iVar2 = iVar3;
+      } while (string_index < local_8d4.base.item_count);
+    }
+    iVar2 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450
+                      (&local_8d4,dialog_title,iVar2,0);
+    if (iVar2 < 0) {
+      iVar2 = 0;
+    }
+    else {
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_00482450(&local_8d4.base,local_314,iVar2,0);
+      shape_edittool_cpp_CStrList_getFieldAt_FUN_00482450(&local_8d4.base,local_514,iVar2,1);
+      engine_dosio_cpp_makePath_FUN_00465e80
+                (output_filename,(char *)0x0,(char *)0x0,local_314,local_514);
+      iVar2 = 1;
+    }
+  }
+  shape_edittool_cpp_CPickList_dtor_FUN_004832b0(&local_8d4,0);
+  return iVar2;
+}

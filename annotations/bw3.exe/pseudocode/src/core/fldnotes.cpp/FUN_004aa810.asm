@@ -257,8 +257,8 @@ section .text
     PUSH 0x5c11db                       ; 004aaa20 | = "Can't open field notes file %s"
     PUSH 0x1d0d010                      ; 004aaa25 | DAT_01d0d010
         ;   Label: LAB_004aaa25
-    CALL crt_unknown.c_FUN_005a28c0     ; 004aaa2a
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004aaa2a
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004aaa2f
     MOV EBP,dword ptr [ESP + 0x5a8]     ; 004aaa32
         ;   Label: LAB_004aaa32
@@ -480,8 +480,8 @@ section .text
     PUSH ESI                            ; 004aac2f
     PUSH 0x5c123f                       ; 004aac30 | = "Too many field notes sections in %s, ..."
     PUSH 0x1d0d010                      ; 004aac35 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004aac3a
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004aac3a
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004aac3f
     JMP 0x004aaa32                      ; 004aac42
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -658,8 +658,8 @@ section .text
     PUSH EDX                            ; 004aadbc
     PUSH 0x5c1272                       ; 004aadbd | = "Didn't expect '\\title' in %s, line %d"
     PUSH 0x1d0d010                      ; 004aadc2 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004aadc7
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004aadc7
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004aadcc
     JMP 0x004aaa32                      ; 004aadcf
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -792,8 +792,8 @@ section .text
     PUSH ECX                            ; 004aaef4
     PUSH 0x5c12a0                       ; 004aaef5 | = "Didn't expect '\\entry' in %s, line %d"
     PUSH 0x1d0d010                      ; 004aaefa | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004aaeff
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004aaeff
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004aaf04
     JMP 0x004aaa32                      ; 004aaf07
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -813,8 +813,8 @@ section .text
     PUSH EAX                            ; 004aaf2d
     PUSH 0x5c12c6                       ; 004aaf2e | = "Duplicate entry '%s' in %s"
     PUSH 0x1d0d010                      ; 004aaf33 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004aaf38
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004aaf38
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004aaf3d
     JMP 0x004aaa32                      ; 004aaf40
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -948,8 +948,8 @@ section .text
     PUSH EBX                            ; 004ab067
     PUSH 0x5c12e6                       ; 004ab068 | = "Didn't expect '\\task' in %s, line %d"
     PUSH 0x1d0d010                      ; 004ab06d | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab072
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab072
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab077
     JMP 0x004aaa32                      ; 004ab07a
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -969,8 +969,8 @@ section .text
     PUSH EAX                            ; 004ab0a0
     PUSH 0x5c130b                       ; 004ab0a1 | = "Duplicate entry '%s' in %s"
     PUSH 0x1d0d010                      ; 004ab0a6 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab0ab
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab0ab
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab0b0
     JMP 0x004aaa32                      ; 004ab0b3
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -1087,8 +1087,8 @@ section .text
     PUSH EDI                            ; 004ab1d2
     PUSH 0x5c132a                       ; 004ab1d3 | = "Didn't expect '\\map' in %s, line %d"
     PUSH 0x1d0d010                      ; 004ab1d8 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab1dd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab1dd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab1e2
     JMP 0x004aaa32                      ; 004ab1e5
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -1223,8 +1223,8 @@ section .text
     PUSH 0x0                            ; 004ab327
     LEA EAX,[ESP + 0x510]               ; 004ab329
     PUSH EAX                            ; 004ab330
-    CALL engine_dosio.cpp_FUN_00465e50  ; 004ab331
-        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 004ab331
+        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004ab336
     JMP 0x004aa8f9                      ; 004ab339
         ;   XREF to: 004aa8f9 (UNCONDITIONAL_JUMP)  ; LAB_004aa8f9
@@ -1244,8 +1244,8 @@ section .text
     PUSH EDI                            ; 004ab35c
     PUSH 0x5c1412                       ; 004ab35d | = "Multiple \\image tags found in map %s..."
     PUSH 0x1d0d010                      ; 004ab362 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab367
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab367
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab36c
     JMP 0x004aaa32                      ; 004ab36f
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -1402,8 +1402,8 @@ section .text
     PUSH EDI                            ; 004ab4f0
     PUSH 0x5c1495                       ; 004ab4f1 | = "Too many \\sets in map %s at line %d."
     PUSH 0x1d0d010                      ; 004ab4f6 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab4fb
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab4fb
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab500
     JMP 0x004aaa32                      ; 004ab503
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -1560,8 +1560,8 @@ section .text
     PUSH EBX                            ; 004ab68d
     PUSH 0x5c1571                       ; 004ab68e | = "Too many \\annotations in map %s at l..."
     PUSH 0x1d0d010                      ; 004ab693 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab698
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab698
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab69d
     JMP 0x004aaa32                      ; 004ab6a0
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -1658,8 +1658,8 @@ section .text
     PUSH EAX                            ; 004ab75e
     PUSH 0x5c15e7                       ; 004ab75f | = "Unknown tag: '%s' in %s, line %d"
     PUSH 0x1d0d010                      ; 004ab764 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab769
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab769
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x14                        ; 004ab76e
     JMP 0x004aaa32                      ; 004ab771
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32
@@ -1669,8 +1669,8 @@ section .text
     PUSH EDI                            ; 004ab77e
     PUSH 0x5c1608                       ; 004ab77f | = "No entry started in %s, line %d"
     PUSH 0x1d0d010                      ; 004ab784 | DAT_01d0d010
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab789
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab789
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab78e
     JMP 0x004aaa32                      ; 004ab791
         ;   XREF to: 004aaa32 (UNCONDITIONAL_JUMP)  ; LAB_004aaa32

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5)
+; void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,float param_4,int param_5)
 ;
 ;
 ; Referenced Globals:
@@ -13,11 +13,11 @@
 ;   undefined4 DAT_01bc120c
 ;   undefined4 DAT_01c51cac
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1420932_0x15ae84
-;   undefined4 g_CDemonSetInstance.field1420936_0x15ae88
-;   undefined4 g_CDemonSetInstance.field1420940_0x15ae8c
-;   undefined4 g_CDemonSetInstance.field1420944_0x15ae90
-;   undefined4 g_CDemonSetInstance.field1420948_0x15ae94
+;   undefined4 g_CDemonSetInstance.rendering_mode
+;   undefined4 g_CDemonSetInstance.light_direction.x
+;   undefined4 g_CDemonSetInstance.light_direction.y
+;   undefined4 g_CDemonSetInstance.light_direction.z
+;   undefined4 g_CDemonSetInstance.ambient_base_quick
 ;   undefined4 DAT_02c8af28
 ;
 ; Called Functions:
@@ -25,8 +25,8 @@
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004834b0
 ;   engine_matrix.c_FUN_004839b0
 ;   engine_matrix.c_FUN_00483c10
 ;   engine_matrix.c_pop_FUN_004839a0
@@ -74,11 +74,11 @@ section .text
     MOV EBP,EAX                         ; 00417006
     MOV EAX,[0x00622c18]                ; 00417008 | g_CDemonSetPtr
         ;   Label: LAB_00417008
-    MOV dword ptr [EAX + 0x15ae84],0x1  ; 0041700d | g_CDemonSetInstance.field1420932_0x15ae84
-    MOV dword ptr [EAX + 0x15ae88],0xffffb7d5 ; 00417017 | g_CDemonSetInstance.field1420936_0x15ae88
-    MOV dword ptr [EAX + 0x15ae8c],0xffffb7d5 ; 00417021 | g_CDemonSetInstance.field1420940_0x15ae8c
-    MOV dword ptr [EAX + 0x15ae90],0x482b ; 0041702b | g_CDemonSetInstance.field1420944_0x15ae90
-    MOV dword ptr [EAX + 0x15ae94],0x7d00 ; 00417035 | g_CDemonSetInstance.field1420948_0x15ae94
+    MOV dword ptr [EAX + 0x15ae84],0x1  ; 0041700d | g_CDemonSetInstance.rendering_mode
+    MOV dword ptr [EAX + 0x15ae88],0xffffb7d5 ; 00417017 | g_CDemonSetInstance.light_direction.x
+    MOV dword ptr [EAX + 0x15ae8c],0xffffb7d5 ; 00417021 | g_CDemonSetInstance.light_direction.y
+    MOV dword ptr [EAX + 0x15ae90],0x482b ; 0041702b | g_CDemonSetInstance.light_direction.z
+    MOV dword ptr [EAX + 0x15ae94],0x7d00 ; 00417035 | g_CDemonSetInstance.ambient_base_quick
     MOV EAX,dword ptr [ESP + 0x7c]      ; 0041703f
     ADD EAX,EBP                         ; 00417043
     DEC EAX                             ; 00417045
@@ -124,8 +124,8 @@ section .text
     PUSH EDX                            ; 004170c0 | DAT_01bc120c
     MOV dword ptr [ESP + 0x20],EDI      ; 004170c1
     MOV dword ptr [ESP + 0x24],EDI      ; 004170c5
-    CALL engine_drender.cpp_FUN_004834b0 ; 004170c9
-        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 004170c9
+        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 004170ce
     MOV ECX,dword ptr [0x00612560]      ; 004170d1 | DAT_00612560
     PUSH 0x42100000                     ; 004170d7
@@ -232,7 +232,7 @@ section .text
         ;   XREF to: 00483c40 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_popViewport_FUN_00483c40()
     MOV EAX,[0x00622c18]                ; 0041720c | g_CDemonSetPtr | g_CDemonSetInstance
     ADD ESP,0x4                         ; 00417211
-    MOV dword ptr [EAX + 0x15ae84],0x0  ; 00417214 | g_CDemonSetInstance.field1420932_0x15ae84
+    MOV dword ptr [EAX + 0x15ae84],0x0  ; 00417214 | g_CDemonSetInstance.rendering_mode
     ADD ESP,0x60                        ; 0041721e
     POP EBP                             ; 00417221
     POP EDI                             ; 00417222

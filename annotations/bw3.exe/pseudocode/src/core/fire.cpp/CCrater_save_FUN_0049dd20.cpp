@@ -9,39 +9,37 @@
 void __cdecl core_fire_cpp_CCrater_save_FUN_0049dd20(CCrater *this_ptr,_FILE *file_handle)
 
 {
-  byte *puVar1;
-  byte *puVar2;
-  byte *puVar3;
+  CVector3f *pCVar1;
+  CVector3f *pCVar2;
+  CVector3f *pCVar3;
   CCrater *pCVar4;
   
   FUN_005a3140
-            (file_handle,"%d,%d,%f,%f\n",*(uint *)this_ptr,
-             *(uint *)&this_ptr->field_0x4,(double)*(float *)&this_ptr->field_0x8,
-             (double)*(float *)&this_ptr->field_0x18);
+            (file_handle,"%d,%d,%f,%f\n",this_ptr->active,this_ptr->has_smoke,
+             (double)this_ptr->smoke_delay,(double)this_ptr->smoke_spawn_timer);
   FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0xc,
-             (double)*(float *)&this_ptr->field_0x10,(double)*(float *)&this_ptr->field_0x14);
+            (file_handle,"%f,%f,%f\n",(double)(this_ptr->center_position).x,
+             (double)(this_ptr->center_position).y,(double)(this_ptr->center_position).z);
   pCVar4 = this_ptr;
   do {
-    puVar1 = &pCVar4->field_0x24;
-    puVar2 = &pCVar4->field_0x20;
-    puVar3 = &pCVar4->field_0x1c;
-    pCVar4 = (CCrater *)&pCVar4->field_0xc;
+    pCVar2 = pCVar4->smoke_positions;
+    pCVar3 = pCVar4->smoke_positions;
+    pCVar1 = pCVar4->smoke_positions;
+    pCVar4 = (CCrater *)&pCVar4->center_position;
     FUN_005a3140
-              (file_handle,"%f,%f,%f\n",(double)*(float *)puVar3,(double)*(float *)puVar2,
-               (double)*(float *)puVar1);
-  } while (pCVar4 != (CCrater *)&this_ptr->field_0x24);
+              (file_handle,"%f,%f,%f\n",(double)pCVar1->x,(double)pCVar3->y,(double)pCVar2->z);
+  } while (pCVar4 != (CCrater *)&this_ptr->smoke_positions[0].z);
   FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x40,
-             (double)*(float *)&this_ptr->field_0x44,(double)*(float *)&this_ptr->field_0x48);
+            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[0].x,
+             (double)this_ptr->corner_positions[0].y,(double)this_ptr->corner_positions[0].z);
   FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x4c,
-             (double)*(float *)&this_ptr->field_0x50,(double)*(float *)&this_ptr->field_0x54);
+            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[1].x,
+             (double)this_ptr->corner_positions[1].y,(double)this_ptr->corner_positions[1].z);
   FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x58,
-             (double)*(float *)&this_ptr->field_0x5c,(double)*(float *)&this_ptr->field_0x60);
+            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[2].x,
+             (double)this_ptr->corner_positions[2].y,(double)this_ptr->corner_positions[2].z);
   FUN_005a3140
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x64,
-             (double)*(float *)&this_ptr->field_0x68,(double)*(float *)&this_ptr->field_0x6c);
+            (file_handle,"%f,%f,%f\n",(double)this_ptr->corner_positions[3].x,
+             (double)this_ptr->corner_positions[3].y,(double)this_ptr->corner_positions[3].z);
   return;
 }

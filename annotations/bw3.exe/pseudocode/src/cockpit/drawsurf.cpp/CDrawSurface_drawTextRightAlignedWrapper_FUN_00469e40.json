@@ -1,0 +1,199 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 17,
+    "complexity_score": 5,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
+  },
+  "cross_references": [
+    {
+      "addr": "0046a750",
+      "from_addr": "0046a8db",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00469e40",
+    "address_range": [
+      [
+        "00469e40",
+        "00469e60"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00469e40(CDrawSurface *this_ptr,int x,int y,char *text)"
+  },
+  "function_calls": [
+    {
+      "addr": "00469e10",
+      "is_variadic": false,
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_00469e10"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "0046a8db",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a8f1",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a90a",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a961",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a977",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a990",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a9b0",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      },
+      {
+        "call_addr": "0046a9c9",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750",
+        "estimated_params": 4,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 16,
+        "stack_params": 4
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.533333333333333,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 14,
+      "INT_ADD": 8,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 7,
+      "LOAD": 7,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 53
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

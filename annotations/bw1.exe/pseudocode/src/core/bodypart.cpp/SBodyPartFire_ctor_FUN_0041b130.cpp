@@ -12,5 +12,5 @@ SBodyPartFire * __cdecl core_bodypart_cpp_SBodyPartFire_ctor_FUN_0041b130(SBodyP
   CFlame *pCVar1;
   
   pCVar1 = core_flame_cpp_CFlame_ctor_FUN_004b7a30((CFlame *)&this_ptr->field_0xc);
-  return (SBodyPartFire *)&pCVar1[-1].field_0x298;
+  return (SBodyPartFire *)&pCVar1[-1].do_visibility_check;
 }

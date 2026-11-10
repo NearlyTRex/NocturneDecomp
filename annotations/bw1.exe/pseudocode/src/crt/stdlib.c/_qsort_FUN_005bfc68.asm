@@ -25,7 +25,7 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; XREF[5]:
-;   core_set.cpp_FUN_005545a0 at 005546ae
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 at 005546ae
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_00406f10 at 00406f63
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_00484e00 at 00484e5d
 ;   engine_pod.cpp_FUN_0053b250 at 0053b6e2

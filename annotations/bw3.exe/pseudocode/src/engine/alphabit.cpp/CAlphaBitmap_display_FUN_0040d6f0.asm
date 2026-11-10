@@ -23,9 +23,9 @@
 ;   core_fldnotes.cpp_FUN_004a8a00 at 004a8a25
 ;   core_fldnotes.cpp_FUN_004aa490 at 004aa4bb
 ;   core_fldnotes.cpp_FUN_004abe00 at 004abec7
-;   core_game.cpp_FUN_004b7ee0 at 004b7f5b
-;   core_game.cpp_FUN_004bfb50 at 004bfb9f
-;   core_game.cpp_FUN_004bfee0 at 004bff69
+;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfb9f
+;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004bff69
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7f5b
 ;   core_game.cpp_FUN_004c4a10 at 004c4a4c
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004de0e7
 ;   ... and 8 more

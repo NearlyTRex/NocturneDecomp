@@ -88,8 +88,8 @@ void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3)
       local_20 = param_3;
       local_1c = 1e+30;
       iVar6 = 0;
-      for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {
-        iVar1 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + iVar6);
+      for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
+        iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar6);
         local_1a4 = (float)core_scat_cpp_FUN_00542b90
                                      (param_1,iVar1,iVar1 == *(int *)(param_1 + 0x1ffd0));
         if ((0.0 <= local_1a4) && (local_1a4 < local_1c)) {
@@ -168,7 +168,7 @@ void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3)
              *(uint *)((int)&stack0xffffff3c + (uint)bVar8 * -8);
         *(uint *)(&stack0xffffff64 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
              *(uint *)((int)&stack0xffffff40 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-        core_vecdir_cpp_FUN_005a7520(&stack0xffffff5c);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff5c);
         fStack_5c = fStack_74;
         *(uint *)((int)&stack0xffffffa8 + (uint)bVar8 * -8) =
              *(uint *)(&stack0xffffff90 + (uint)bVar8 * -8);
@@ -196,9 +196,11 @@ void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3)
     }
     local_24 = 0.0;
   }
-  local_2c = (float)core_actor_cpp_FUN_0040cd60(local_24 - *(float *)(param_1 + 0x1ffc8),fVar4);
+  local_2c = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                              (local_24 - *(float *)(param_1 + 0x1ffc8),fVar4);
   local_18 = local_2c;
-  local_18 = (float)core_actor_cpp_FUN_0040cd60(fVar4 - *(float *)(param_1 + 0x1ffc4));
+  local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                              (fVar4 - *(float *)(param_1 + 0x1ffc4));
   local_28 = param_2 * _DAT_005edec7 * (float)_DAT_005ededf;
   local_38 = -local_28;
   if (local_2c < local_38) {
@@ -218,9 +220,11 @@ void core_scat_cpp_FUN_005424f0(int param_1,float param_2,int param_3)
   *(float *)(param_1 + 0x1ffc4) = *(float *)(param_1 + 0x1ffc4) + local_30;
   *(float *)(param_1 + 0x1ffc8) = *(float *)(param_1 + 0x1ffc8) + local_2c;
   if ((*(int *)(param_1 + 0x1ffd0) != 0) && (param_3 == 0)) {
-    local_18 = (float)core_actor_cpp_FUN_0040cd60(*(float *)(param_1 + 0x1ffc8) - local_24);
+    local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                (*(float *)(param_1 + 0x1ffc8) - local_24);
     if (((float)_DAT_005edee7 <= ABS(local_18)) &&
-       (fVar4 = (float)core_actor_cpp_FUN_0040cd60(*(float *)(param_1 + 0x1ffc8) - local_24),
+       (fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                 (*(float *)(param_1 + 0x1ffc8) - local_24),
        (float)_DAT_005edee7 <= ABS(fVar4))) {
       return;
     }

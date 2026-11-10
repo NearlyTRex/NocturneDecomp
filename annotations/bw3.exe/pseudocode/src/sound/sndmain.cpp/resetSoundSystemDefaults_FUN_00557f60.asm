@@ -12,13 +12,13 @@
 ;   undefined4 DAT_005e4840
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00556db0
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00556db0
 ;   sound_sndmain.cpp_FUN_00557020
 ;   sound_sndmain.cpp_FUN_00557080
 ;   sound_sndmain.cpp_FUN_00557100
 ;   sound_sndmain.cpp_FUN_00557140
 ;   sound_sndmain.cpp_FUN_00558840
-;   sound_sndmain.cpp_FUN_00558b10
+;   sound_sndmain.cpp_getCurrentRecordingDevice_FUN_00558b10
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_00558640
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90
@@ -38,8 +38,8 @@ section .text
     ADD ESP,0x8                         ; 00557f6e
     PUSH 0x1                            ; 00557f71
     PUSH EBX                            ; 00557f73
-    CALL sound_sndmain.cpp_FUN_00556db0 ; 00557f74
-        ;   XREF to: 00556db0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556db0(int channel_index, int enable_state)
+    CALL sound_sndmain.cpp_enableSfxChannel_FUN_00556db0 ; 00557f74
+        ;   XREF to: 00556db0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_enableSfxChannel_FUN_00556db0(int channel_index, int enable_state)
     INC EBX                             ; 00557f79
     ADD ESP,0x8                         ; 00557f7a
     CMP EBX,0x20                        ; 00557f7d
@@ -90,8 +90,8 @@ section .text
     CALL sound_sndmain.cpp_selectSoundDevice_FUN_00558640 ; 00557ff6
         ;   XREF to: 00558640 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectSoundDevice_FUN_00558640(int device_id)
     ADD ESP,0x4                         ; 00557ffb
-    CALL sound_sndmain.cpp_FUN_00558b10 ; 00557ffe
-        ;   XREF to: 00558b10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00558b10()
+    CALL sound_sndmain.cpp_getCurrentRecordingDevice_FUN_00558b10 ; 00557ffe
+        ;   XREF to: 00558b10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getCurrentRecordingDevice_FUN_00558b10()
     PUSH EAX                            ; 00558003
     CALL sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0 ; 00558004
         ;   XREF to: 005589e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0(int device_id)

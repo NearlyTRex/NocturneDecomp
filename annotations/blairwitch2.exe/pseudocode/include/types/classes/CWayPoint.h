@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CTrigger.h"
+#include "types/structs/SWayPointAdjacency.h"
 
 // Structure: CWayPoint
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6bc (1724 bytes)
 #pragma pack(push, 1)
 typedef struct CWayPoint {
-    char field_0[1724]; // 0x0
+    CTrigger base; // 0x0
+    char field_880[352]; // 0x370
+    int num_adjacent_waypoints; // 0x4d0
+    SWayPointAdjacency adjacency[60]; // 0x4d4
+    char field_1296[428]; // 0x510
 } CWayPoint;
 #pragma pack(pop)
 

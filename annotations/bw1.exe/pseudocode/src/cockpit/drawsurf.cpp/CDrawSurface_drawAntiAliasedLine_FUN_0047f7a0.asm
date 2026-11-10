@@ -19,8 +19,8 @@
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_drawLineAA_FUN_00439640
-;   cockpit_ckptutil.c_FUN_0043a010
 ;   cockpit_ckptutil.c_FUN_0043a030
+;   cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x1c]      ; 0047f7dc
     MOV dword ptr [0x01c4f00c],ESI      ; 0047f7df | DAT_01c4f00c
     MOV [0x01c4f014],EAX                ; 0047f7e5 | DAT_01c4f014
-    CALL cockpit_ckptutil.c_FUN_0043a010 ; 0047f7ea
-        ;   XREF to: 0043a010 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_FUN_0043a010()
+    CALL cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010 ; 0047f7ea
+        ;   XREF to: 0043a010 (UNCONDITIONAL_CALL)  ; undefined cockpit_ckptutil.c_setLineBlendingDisabled_FUN_0043a010()
     PUSH 0x1                            ; 0047f7ef
     MOV ESI,EAX                         ; 0047f7f1
     CALL cockpit_ckptutil.c_FUN_0043a030 ; 0047f7f3

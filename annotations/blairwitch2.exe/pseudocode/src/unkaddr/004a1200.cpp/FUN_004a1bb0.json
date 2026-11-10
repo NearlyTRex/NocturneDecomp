@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 213,
+    "complexity_score": 243,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 16,
+    "suspect_count": 18,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
@@ -222,14 +224,6 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)(&CAlphaBitmap_ARRAY_01caf128[0].field_0xc + iVar2) + iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 20,
       "match": "field_0x140",
       "severity": "mild",
@@ -289,16 +283,8 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2 < *(int *)(&CAlphaBitmap_ARRAY_01caf128[0].field_0x10 + iVar2) +",
+      "text": "(param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + iVar2) +",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "(param_2 < *(int *)(&CAlphaBitmap_ARRAY_01caf128[0].field_0x10 + iVar2) +",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
@@ -307,6 +293,38 @@
       "severity": "mild",
       "text": "*(int *)&SNotesSection_ARRAY_01cab9f4[iVar3].field_0x14c)) {",
       "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `&CAlphaBitmap_ARRAY_01caf128[0].width` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 19,
+      "match": "(int)&CAlphaBitmap_ARRAY_01caf128[0].width",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].width + iVar2) + iVar4;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CAlphaBitmap_ARRAY_01caf128[0].height` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 27,
+      "match": "(int)&CAlphaBitmap_ARRAY_01caf128[0].height",
+      "severity": "moderate",
+      "text": "(param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + iVar2) +",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 19,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar5 = *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].width + iVar2) + iVar4;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 27,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "(param_2 < *(int *)((int)&CAlphaBitmap_ARRAY_01caf128[0].height + iVar2) +",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

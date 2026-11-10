@@ -18,14 +18,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_blundrbs.cpp_FUN_00410490 at 00411444
-;   core_burncrss.cpp_FUN_00424550 at 00424dcd
-;   core_elephant.cpp_FUN_00486d40 at 0048754b
-;   core_flintlck.cpp_FUN_004ae850 at 004aef94
-;   core_gun.cpp_FUN_004d0fc0 at 004d1865
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 00411444
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424dcd
+;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 0048754b
+;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aef94
+;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d1865
 ;   core_lightgun.cpp_FUN_004e1070 at 004e1ffd
-;   core_rifle.cpp_FUN_00527d70 at 005284b7
-;   core_tommygun.cpp_FUN_0056b410 at 0056bcfa
+;   core_rifle.cpp_CRifle_fire_FUN_00527d70 at 005284b7
+;   core_tommygun.cpp_CTommyGun_fire_FUN_0056b410 at 0056bcfa
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004a2034 = 004a21d0
@@ -46,15 +46,15 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf40
+;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0
+;   core_fire.cpp_allocateBulletHole_FUN_004a1420
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_fire.cpp_CSmokeParticle_init_FUN_00496d60
 ;   core_fire.cpp_FUN_00497290
-;   core_fire.cpp_FUN_004a1420
-;   core_ground.cpp_FUN_004cf9a0
-;   core_sound.cpp_FUN_00560a70
-;   crt_unknown.c_FUN_005a28c0
+;   core_ground.cpp_getGroundTypeCode_FUN_004cf9a0
+;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -221,8 +221,8 @@ section .text
         ;   Label: LAB_004a2236
     JZ 0x004a215d                       ; 004a223b
         ;   XREF to: 004a215d (CONDITIONAL_JUMP)  ; LAB_004a215d
-    CALL core_fire.cpp_FUN_004a1420     ; 004a2241
-        ;   XREF to: 004a1420 (UNCONDITIONAL_CALL)  ; CBulletHole * core_fire.cpp_FUN_004a1420()
+    CALL core_fire.cpp_allocateBulletHole_FUN_004a1420 ; 004a2241
+        ;   XREF to: 004a1420 (UNCONDITIONAL_CALL)  ; CBulletHole * core_fire.cpp_allocateBulletHole_FUN_004a1420()
     MOV EDX,dword ptr [EBP + 0x28]      ; 004a2246
     PUSH EDX                            ; 004a2249
     MOV ECX,dword ptr [EBP + 0x24]      ; 004a224a
@@ -258,22 +258,22 @@ section .text
         ;   XREF to: 004a21d0 (UNCONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x3e2aaaab                     ; 004a228e
         ;   Label: caseD_2
-    CALL core_actor.cpp_FUN_0040cf40    ; 004a2293
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 004a2293
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 004a2298
     TEST EAX,EAX                        ; 004a229b
     JZ 0x004a21f1                       ; 004a229d
         ;   XREF to: 004a21f1 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x2                            ; 004a22a3
-    CALL core_ground.cpp_FUN_004cf9a0   ; 004a22a5
-        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_FUN_004cf9a0(EGroundType type)
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004cf9a0 ; 004a22a5
+        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004cf9a0(EGroundType type)
     ADD ESP,0x4                         ; 004a22aa
     PUSH EAX                            ; 004a22ad
     PUSH 0x5c0980                       ; 004a22ae | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x8]                 ; 004a22b3
     PUSH EAX                            ; 004a22b7
-    CALL crt_unknown.c_FUN_005a28c0     ; 004a22b8
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004a22b8
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a22bd
     CMP byte ptr [ESP],0x0              ; 004a22c0
     JNZ 0x004a2392                      ; 004a22c4
@@ -286,22 +286,22 @@ section .text
     RET                                 ; 004a22d0
     PUSH 0x3e2aaaab                     ; 004a22d1
         ;   Label: caseD_5
-    CALL core_actor.cpp_FUN_0040cf40    ; 004a22d6
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 004a22d6
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 004a22db
     TEST EAX,EAX                        ; 004a22de
     JZ 0x004a21f1                       ; 004a22e0
         ;   XREF to: 004a21f1 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x5                            ; 004a22e6
-    CALL core_ground.cpp_FUN_004cf9a0   ; 004a22e8
-        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_FUN_004cf9a0(EGroundType type)
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004cf9a0 ; 004a22e8
+        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004cf9a0(EGroundType type)
     ADD ESP,0x4                         ; 004a22ed
     PUSH EAX                            ; 004a22f0
     PUSH 0x5c098d                       ; 004a22f1 | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x8]                 ; 004a22f6
     PUSH EAX                            ; 004a22fa
-    CALL crt_unknown.c_FUN_005a28c0     ; 004a22fb
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004a22fb
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a2300
     CMP byte ptr [ESP],0x0              ; 004a2303
     JNZ 0x004a2392                      ; 004a2307
@@ -314,22 +314,22 @@ section .text
     RET                                 ; 004a2313
     PUSH 0x3e2aaaab                     ; 004a2314
         ;   Label: caseD_7
-    CALL core_actor.cpp_FUN_0040cf40    ; 004a2319
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 004a2319
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 004a231e
     TEST EAX,EAX                        ; 004a2321
     JZ 0x004a21f1                       ; 004a2323
         ;   XREF to: 004a21f1 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x7                            ; 004a2329
-    CALL core_ground.cpp_FUN_004cf9a0   ; 004a232b
-        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_FUN_004cf9a0(EGroundType type)
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004cf9a0 ; 004a232b
+        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004cf9a0(EGroundType type)
     ADD ESP,0x4                         ; 004a2330
     PUSH EAX                            ; 004a2333
     PUSH 0x5c099a                       ; 004a2334 | = "ric-%s!?.wav"
     LEA EAX,[ESP + 0x8]                 ; 004a2339
     PUSH EAX                            ; 004a233d
-    CALL crt_unknown.c_FUN_005a28c0     ; 004a233e
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004a233e
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a2343
     CMP byte ptr [ESP],0x0              ; 004a2346
     JNZ 0x004a2392                      ; 004a234a
@@ -342,22 +342,22 @@ section .text
     RET                                 ; 004a2352
     PUSH 0x3e2aaaab                     ; 004a2353
         ;   Label: caseD_3
-    CALL core_actor.cpp_FUN_0040cf40    ; 004a2358
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 004a2358
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 004a235d
     TEST EAX,EAX                        ; 004a2360
     JZ 0x004a21f1                       ; 004a2362
         ;   XREF to: 004a21f1 (CONDITIONAL_JUMP)  ; caseD_9
     PUSH 0x3                            ; 004a2368
-    CALL core_ground.cpp_FUN_004cf9a0   ; 004a236a
-        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_FUN_004cf9a0(EGroundType type)
+    CALL core_ground.cpp_getGroundTypeCode_FUN_004cf9a0 ; 004a236a
+        ;   XREF to: 004cf9a0 (UNCONDITIONAL_CALL)  ; char * core_ground.cpp_getGroundTypeCode_FUN_004cf9a0(EGroundType type)
     ADD ESP,0x4                         ; 004a236f
     PUSH EAX                            ; 004a2372
     PUSH 0x5c09a7                       ; 004a2373 | = "ric-%s.wav"
     LEA EAX,[ESP + 0x8]                 ; 004a2378
     PUSH EAX                            ; 004a237c
-    CALL crt_unknown.c_FUN_005a28c0     ; 004a237d
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004a237d
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a2382
     CMP byte ptr [ESP],0x0              ; 004a2385
     JNZ 0x004a2392                      ; 004a2389
@@ -376,8 +376,8 @@ section .text
     PUSH 0x0                            ; 004a239d
     MOV EBX,dword ptr [0x006045f8]      ; 004a239f | DAT_006045f8
     PUSH EBX                            ; 004a23a5
-    CALL core_sound.cpp_FUN_00560a70    ; 004a23a6
-        ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
+    CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004a23a6
+        ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
     ADD ESP,0x14                        ; 004a23ab
     MOV ESP,EBP                         ; 004a23ae
     POP EBP                             ; 004a23b0

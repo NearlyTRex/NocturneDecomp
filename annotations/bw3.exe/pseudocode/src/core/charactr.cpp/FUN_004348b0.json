@@ -2,19 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 225,
+    "complexity_score": 180,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 50,
-    "suspect_count": 14,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "raw_address_pointer_store",
-      "suspicious_cast",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -78,7 +75,7 @@
     },
     {
       "addr": "0202c73c",
-      "name": "g_CDemonSetInstance.field1396340_0x154e74",
+      "name": "g_CDemonSetInstance.waypoint_count",
       "type": "undefined4",
       "value": null
     }
@@ -240,28 +237,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x154e74",
-      "severity": "mild",
-      "text": "for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x154e74; local_18 = local_18 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 23,
-      "match": "*(char **)(&g_CDemonSetPtr->field_0x154e78",
+      "match": "(char **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x154e78",
-      "severity": "mild",
-      "text": "target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);",
-      "type": "unnamed_field"
+      "text": "target_string = *(char **)((int)g_CDemonSetPtr->waypoints + iVar7);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -310,14 +291,6 @@
       "severity": "mild",
       "text": "iVar5 = core_charactr_cpp_FUN_004349d0(param_1,local_1f64[iVar4]);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 23,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "target_string = *(char **)(&g_CDemonSetPtr->field_0x154e78 + iVar7);",
-      "type": "suspicious_cast"
     },
     {
       "call_site_count": 4,

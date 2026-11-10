@@ -22,7 +22,7 @@
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_00459980
 ;   core_main.c_FUN_004e4330
 ;   crt_string.c__strcmp_FUN_005a3d00
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     POP EDI                             ; 00459784
         ;   Label: LAB_00459784
     PUSH 0x4c                           ; 00459785
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00459787
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00459787
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0045978c
     TEST EAX,EAX                        ; 0045978f
     JZ 0x0045979c                       ; 00459791

@@ -18,9 +18,9 @@ CPlatform * __cdecl core_conveyor_cpp_CPlatform_dtor_FUN_00447be0(CPlatform *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00447d30((CCourse *)&this_ptr->field_0x310,0);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00447d30(&this_ptr->course,0);
   pCVar2 = (CPlatform *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x310),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar1[-0x42].loop,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

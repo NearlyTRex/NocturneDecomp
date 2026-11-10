@@ -10,14 +10,14 @@ void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_0053bf40(CPodFile *thi
 
 {
   SFoundFileInfo SVar1;
-  uint uVar2;
-  int iVar3;
+  CPodDirectoryEntry *pCVar2;
+  uint uVar3;
   SFoundFileInfo *pSVar4;
   SFoundFileInfo *pSVar5;
   
-  pSVar4 = (SFoundFileInfo *)&this_ptr->field_0x4;
+  pSVar4 = (SFoundFileInfo *)this_ptr->filename;
+  pCVar2 = this_ptr->directory_entries;
   pSVar5 = output_info + 0x100;
-  iVar3 = *(int *)&this_ptr->field_0x414 + file_index * 0x14;
   do {
     SVar1 = *pSVar4;
     *pSVar5 = SVar1;
@@ -27,11 +27,11 @@ void __cdecl engine_pod_cpp_CPodFile_populateFileInfo_FUN_0053bf40(CPodFile *thi
     pSVar5[1] = SVar1;
     pSVar5 = pSVar5 + 2;
   } while (SVar1 != (SFoundFileInfo)0x0);
-  *(uint *)(output_info + 0x200) = *(uint *)(iVar3 + 8);
-  *(uint *)(output_info + 0x204) = *(uint *)(iVar3 + 4);
-  *(uint *)(output_info + 0x20c) = *(uint *)(iVar3 + 0xc);
-  uVar2 = *(uint *)&this_ptr->field_0x104;
+  *(uint *)(output_info + 0x200) = *(uint *)(pCVar2 + file_index * 0x14 + 8);
+  *(uint *)(output_info + 0x204) = *(uint *)(pCVar2 + file_index * 0x14 + 4);
+  *(uint *)(output_info + 0x20c) = *(uint *)(pCVar2 + file_index * 0x14 + 0xc);
+  uVar3 = this_ptr->timestamp;
   *(uint *)(output_info + 0x208) = 1;
-  *(uint *)(output_info + 0x210) = uVar2;
+  *(uint *)(output_info + 0x210) = uVar3;
   return;
 }

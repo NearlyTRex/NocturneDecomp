@@ -7,8 +7,8 @@
 ; CDemonLight *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_set.cpp_FUN_0052d980 at 0052dae9
-;   core_set.cpp_FUN_0052ef80 at 0052f08f
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052dae9
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80 at 0052f08f
 ;   core_set.cpp_FUN_0052fad0 at 0052fc41
 ;
 ; *****************************************************************************

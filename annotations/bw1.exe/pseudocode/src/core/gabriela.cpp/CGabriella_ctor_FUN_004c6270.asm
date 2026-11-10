@@ -13,10 +13,10 @@
 ;   undefined4 DAT_00600d8c
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043e5c0
+;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
-;   core_hero.cpp_FUN_004ea830
-;   core_skeleton.cpp_FUN_00569f50
+;   core_hero.cpp_CHero_ctor_FUN_004ea830
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -28,13 +28,13 @@ section .text
     MOV EBP,ESP                         ; 004c6272
     MOV EBX,dword ptr [EBP + 0xc]       ; 004c6274
     PUSH EBX                            ; 004c6277
-    CALL core_hero.cpp_FUN_004ea830     ; 004c6278
-        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004ea830(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_ctor_FUN_004ea830 ; 004c6278
+        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ea830(CHero * this_ptr)
     ADD ESP,0x4                         ; 004c627d
     ADD EAX,0x1ffec                     ; 004c6280
     PUSH EAX                            ; 004c6285
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 004c6286
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 004c6286
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     LEA EBX,[EAX + 0xfffe0014]          ; 004c628b
     MOV dword ptr [EBX + 0x154],0x600da4 ; 004c6291
     MOV dword ptr [EBX + 0x1ffac],0x0   ; 004c629b
@@ -62,8 +62,8 @@ section .text
     FXCH                                ; 004c634e
     FSTP float ptr [EBX + 0x1ffe0]      ; 004c6350
     FSTP float ptr [EBX + 0x1ffd8]      ; 004c6356
-    CALL core_skeleton.cpp_FUN_00569f50 ; 004c635c
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004c635c
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1fae8]             ; 004c6361
     ADD ESP,0x8                         ; 004c6367
     MOV EAX,dword ptr [EAX + 0x338]     ; 004c636a

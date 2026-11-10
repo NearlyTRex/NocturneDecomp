@@ -17,6 +17,6 @@ int __cdecl initializeSkyboxTexture(int param_1);
 // Address: 0046f340
 void __cdecl generateSkyDomeVertex(undefined4 *param_1,int param_2,int param_3);
 
-// Original: core_dskybox.cpp_FUN_0046f480
+// Original: core_dskybox.cpp_renderSkyDome_FUN_0046f480
 // Address: 0046f480
-void __cdecl FUN_0046f480(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);
+void __cdecl renderSkyDome(SMRGLSkyTexture *sky_texture,char *texture_name,int brightness_factor);

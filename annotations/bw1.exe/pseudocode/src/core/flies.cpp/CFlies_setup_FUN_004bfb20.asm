@@ -7,8 +7,8 @@
 ; CFlies *         Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
-;   core_flies.cpp_FUN_004c0530
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
+;   core_flies.cpp_CFlies_initFly_FUN_004c0530
 ;
 ; *****************************************************************************
 
@@ -19,8 +19,8 @@ section .text
     PUSH ESI                            ; 004bfb21
     MOV ESI,dword ptr [ESP + 0xc]       ; 004bfb22
     PUSH ESI                            ; 004bfb26
-    CALL core_actor.cpp_FUN_00408850    ; 004bfb27
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 004bfb27
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     XOR EBX,EBX                         ; 004bfb2c
     MOV EDX,dword ptr [ESI + 0x164]     ; 004bfb2e
     ADD ESP,0x4                         ; 004bfb34
@@ -30,8 +30,8 @@ section .text
     PUSH EBX                            ; 004bfb3b
         ;   Label: LAB_004bfb3b
     PUSH ESI                            ; 004bfb3c
-    CALL core_flies.cpp_FUN_004c0530    ; 004bfb3d
-        ;   XREF to: 004c0530 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_FUN_004c0530(CFlies * this_ptr, int fly_index)
+    CALL core_flies.cpp_CFlies_initFly_FUN_004c0530 ; 004bfb3d
+        ;   XREF to: 004c0530 (UNCONDITIONAL_CALL)  ; void core_flies.cpp_CFlies_initFly_FUN_004c0530(CFlies * this_ptr, int fly_index)
     INC EBX                             ; 004bfb42
     MOV ECX,dword ptr [ESI + 0x164]     ; 004bfb43
     ADD ESP,0x8                         ; 004bfb49

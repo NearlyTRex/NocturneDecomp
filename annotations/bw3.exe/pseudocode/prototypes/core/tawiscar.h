@@ -5,26 +5,26 @@
 // Function prototypes for core/tawiscar.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_tawiscar.cpp_staticInit_FUN_00593d40
-// Address: 00593d40
-void staticInit(void);
+// Original: core_tawiscar.cpp_CTawiscara_setWalkTarget_FUN_005956d0
+// Address: 005956d0
+void __cdecl CTawiscara::setWalkTarget(CTawiscara *this_ptr,CDemonActor *target,float min_distance,float max_distance);
 
-// Original: core_tawiscar.cpp_factoryFuncTawiscara_FUN_00593da0
-// Address: 00593da0
-void factoryFuncTawiscara(void);
+// Original: core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20
+// Address: 00595d20
+int __cdecl CTawiscara::renderTransparent(CTawiscara *this_ptr);
 
-// Original: core_tawiscar.cpp_CTawiscara_getActorType_FUN_00593dc0
-// Address: 00593dc0
-CDemonActorType * CTawiscara::getActorType(CTawiscara *this_ptr);
+// Original: core_tawiscar.cpp_CTawiscara_archive_FUN_00595e90
+// Address: 00595e90
+void __cdecl CTawiscara::archive(CTawiscara *this_ptr);
 
-// Original: core_tawiscar.cpp_CTawiscara_ctor_FUN_00593dd0
-// Address: 00593dd0
-CTawiscara * CTawiscara::ctor(CTawiscara *this_ptr);
+// Original: core_tawiscar.cpp_CTawiscara_processDamage_FUN_00595f90
+// Address: 00595f90
+void __cdecl CTawiscara::processDamage(CTawiscara *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_tawiscar.cpp_FUN_00593e80
-// Address: 00593e80
-void FUN_00593e80(CEnemy *param_1);
+// Original: core_tawiscar.cpp_CTawiscara_getDeathState_FUN_005962d0
+// Address: 005962d0
+EDeathState __cdecl CTawiscara::getDeathState(CTawiscara *this_ptr);
 
-// Original: core_tawiscar.cpp_FUN_00594000
-// Address: 00594000
-void FUN_00594000(CEnemy *param_1,float param_2);
+// Original: core_tawiscar.cpp_CTawiscara_getTargetPoints_FUN_00596310
+// Address: 00596310
+int __cdecl CTawiscara::getTargetPoints(CTawiscara *this_ptr,CVector3f *out_points_array);

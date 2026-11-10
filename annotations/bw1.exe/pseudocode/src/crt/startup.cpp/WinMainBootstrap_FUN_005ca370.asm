@@ -20,12 +20,12 @@
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_unknown.c_FUN_005c31c3
 ;   crt_unknown.c_FUN_005c5348
+;   crt_unknown.c_FUN_005ca454
+;   crt_unknown.c_FUN_005cb630
+;   crt_unknown.c_FUN_005cc370
+;   crt_unknown.c_FUN_005ccb40
 ;   GetModuleHandleA
-;   unkafter_zombie.cpp_FUN_005ca454
-;   unkafter_zombie.cpp_FUN_005cb630
-;   unkafter_zombie.cpp_FUN_005cc370
-;   unkafter_zombie.cpp_FUN_005ccb40
-;   wincore_winrun.cpp_FUN_005b2e00
+;   wincore_winrun.cpp_winMain_FUN_005b2e00
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     MOV EBP,ESP                         ; 005ca372
     SUB ESP,0x8                         ; 005ca374
     MOV EAX,0x1                         ; 005ca377
-    CALL unkafter_zombie.cpp_FUN_005cb630 ; 005ca37c
-        ;   XREF to: 005cb630 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb630()
+    CALL crt_unknown.c_FUN_005cb630     ; 005ca37c
+        ;   XREF to: 005cb630 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb630()
     MOV EAX,[0x00626ad4]                ; 005ca381 | DAT_00626ad4
     ADD EAX,0x3                         ; 005ca386
     AND AL,0xfc                         ; 005ca389
@@ -62,8 +62,8 @@ section .text
     ADD EBX,0x3                         ; 005ca3bc
     ADD ESP,0x8                         ; 005ca3bf
     AND BL,0xfc                         ; 005ca3c2
-    CALL unkafter_zombie.cpp_FUN_005cc370 ; 005ca3c5
-        ;   XREF to: 005cc370 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cc370()
+    CALL crt_unknown.c_FUN_005cc370     ; 005ca3c5
+        ;   XREF to: 005cc370 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cc370()
     CMP EBX,EAX                         ; 005ca3ca
     JNC 0x005ca3e4                      ; 005ca3cc
         ;   XREF to: 005ca3e4 (CONDITIONAL_JUMP)  ; LAB_005ca3e4
@@ -83,8 +83,8 @@ section .text
         ;   Label: LAB_005ca3e6
     ADD EAX,EBX                         ; 005ca3ec
     MOV [0x006265c4],EAX                ; 005ca3ee | DAT_006265c4
-    CALL unkafter_zombie.cpp_FUN_005ccb40 ; 005ca3f3
-        ;   XREF to: 005ccb40 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005ccb40()
+    CALL crt_unknown.c_FUN_005ccb40     ; 005ca3f3
+        ;   XREF to: 005ccb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ccb40()
     PUSH 0xa                            ; 005ca3f8
     MOV EBX,dword ptr [0x0062659c]      ; 005ca3fa | DAT_0062659c
     PUSH EBX                            ; 005ca400
@@ -92,11 +92,11 @@ section .text
     PUSH 0x0                            ; 005ca403
     CALL dword ptr CS:[0x5d05c0]        ; 005ca405 | PTR_GetModuleHandleA_005d05c0
     PUSH EAX                            ; 005ca40c
-    CALL wincore_winrun.cpp_FUN_005b2e00 ; 005ca40d
-        ;   XREF to: 005b2e00 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2e00()
+    CALL wincore_winrun.cpp_winMain_FUN_005b2e00 ; 005ca40d
+        ;   XREF to: 005b2e00 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_winMain_FUN_005b2e00()
     PUSH EAX                            ; 005ca412
-    CALL unkafter_zombie.cpp_FUN_005ca454 ; 005ca413
-        ;   XREF to: 005ca454 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005ca454()
+    CALL crt_unknown.c_FUN_005ca454     ; 005ca413
+        ;   XREF to: 005ca454 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ca454()
     ADD ESP,0x4                         ; 005ca418
     MOV ESP,EBP                         ; 005ca41b
     POP EBP                             ; 005ca41d

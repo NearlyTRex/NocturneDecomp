@@ -19,7 +19,7 @@ CKeyFramedModel * __cdecl core_dmodel_cpp_loadModel_FUN_00468780(char *param_1)
   if (0 < _DAT_01b2efdc) {
     pCVar2 = g_CKeyFramedModelPool;
     do {
-      iVar1 = _stricmp((char *)pCVar2,param_1);
+      iVar1 = _stricmp(pCVar2->model_filename,param_1);
       if (iVar1 == 0) {
         return pCVar2;
       }

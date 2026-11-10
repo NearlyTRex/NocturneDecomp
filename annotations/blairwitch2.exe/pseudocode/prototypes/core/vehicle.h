@@ -21,41 +21,41 @@ CDemonActorType * CVehicle::getActorType(CVehicle *this_ptr);
 // Address: 005839f0
 CVehicle * __cdecl CVehicle::ctor(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_00583c40
+// Original: core_vehicle.cpp_CVehicle_setup_FUN_00583c40
 // Address: 00583c40
-void FUN_00583c40(CDemonActor *param_1);
+void __cdecl CVehicle::setup(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_00583f20
+// Original: core_vehicle.cpp_CVehicle_process_FUN_00583f20
 // Address: 00583f20
-uint FUN_00583f20(CVehicle *param_1,float param_2);
+void __cdecl CVehicle::process(CVehicle *this_ptr,float delta_time);
 
-// Original: core_vehicle.cpp_FUN_00584860
+// Original: core_vehicle.cpp_CVehicle_getBoundingBox_FUN_00584860
 // Address: 00584860
-void FUN_00584860(int param_1);
+CBoundingBox3D * __cdecl CVehicle::getBoundingBox(CVehicle *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_vehicle.cpp_FUN_005848a0
+// Original: core_vehicle.cpp_CVehicle_archive_FUN_005848a0
 // Address: 005848a0
-void FUN_005848a0(CDemonActor *param_1);
+void __cdecl CVehicle::archive(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_00584a30
+// Original: core_vehicle.cpp_CVehicle_getCollisionType_FUN_00584a30
 // Address: 00584a30
-undefined4 FUN_00584a30(void);
+ECollisionType __cdecl CVehicle::getCollisionType(CVehicle *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_vehicle.cpp_FUN_00584a40
+// Original: core_vehicle.cpp_CVehicle_renderOpaque_FUN_00584a40
 // Address: 00584a40
-int FUN_00584a40(CDemonActor *param_1);
+int __cdecl CVehicle::renderOpaque(CVehicle *this_ptr);
 
 // Original: core_vehicle.cpp_CVehicle_renderTransparent_FUN_00584d70
 // Address: 00584d70
 int __cdecl CVehicle::renderTransparent(CVehicle *this_ptr);
 
-// Original: core_vehicle.cpp_FUN_00584d80
+// Original: core_vehicle.cpp_CVehicle_renderBackground_FUN_00584d80
 // Address: 00584d80
-void FUN_00584d80(void);
+void __cdecl CVehicle::renderBackground(CVehicle *this_ptr,int layer_flag);
 
-// Original: core_vehicle.cpp_FUN_00584d90
+// Original: core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90
 // Address: 00584d90
-uint __cdecl FUN_00584d90(CVehicle *this_ptr,char *sound_name);
+uint __cdecl CVehicle::playTrackedSound(CVehicle *this_ptr,char *sound_name);
 
 // Original: core_vehicle.cpp_CVehicle_dtor_FUN_00584de0
 // Address: 00584de0

@@ -53,7 +53,7 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
   
   bVar13 = 0;
   local_2c = 0;
-  core_game_cpp_FUN_004b4430(g_CGamePtr);
+  core_game_cpp_CGame_saveClockTime_FUN_004b4430(g_CGamePtr);
   iVar7 = 0x1d74a50;
   iVar3 = 0;
   do {
@@ -64,11 +64,11 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
   do {
     core_game_cpp_FUN_004b4440(g_CGamePtr);
     this_ptr = g_CDemonSetPtr;
-    *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;
-    core_set_cpp_FUN_0053b100(this_ptr,50000,50000,0x10000);
-    *(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;
+    g_CDemonSetPtr->rendering_mode = 1;
+    core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
+    g_CDemonSetPtr->ambient_base_quick = 0xdac;
     core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
-    *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;
+    g_CDemonSetPtr->rendering_mode = 0;
     iVar3 = sound_sndmain_cpp_FUN_00558840();
     if ((iVar3 < 0) ||
        (iVar7 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00558430(), iVar7 <= iVar3)) {
@@ -76,7 +76,7 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
       local_65c[0] = (SSoundDeviceInfo)0x0;
     }
     else {
-      sound_sndmain_cpp_FUN_005584c0(iVar3,local_65c);
+      sound_sndmain_cpp_getSoundDeviceInfo_FUN_005584c0(iVar3,local_65c);
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960(">Device : " + 1);
     pcVar9 = (char *)0x1d74a50;
@@ -122,7 +122,7 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    iVar3 = sound_sndmain_cpp_FUN_00556750();
+    iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_00556750();
     if (iVar3 == 0) {
       pcVar4 = &DAT_005c776f;
     }
@@ -150,22 +150,22 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
       pcVar11[1] = cVar1;
       pcVar11 = pcVar11 + 2;
     } while (cVar1 != '\0');
-    iVar3 = sound_sndmain_cpp_FUN_00556e30(0);
+    iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(0);
     local_1c = (char *)0x1d74c50;
     if (iVar3 == 0) {
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960
                          ("Sound Effects Volume : Off");
-      FUN_005a28c0(local_1c,pcVar4);
+      _sprintf(local_1c,pcVar4);
     }
     else {
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Sound Effects Volume : ");
-      FUN_005a28c0(0x1d74c50,pcVar4);
+      _sprintf((char *)0x1d74c50,pcVar4);
       local_14 = (char *)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(0);
       fVar14 = ((float10)(float)local_14 * (float10)_DAT_005c78b2) / (float10)_DAT_005e2924 +
                (float10)_DAT_005c78b6;
       round();
       local_14 = (char *)(int)ROUND(fVar14);
-      FUN_005a28c0(local_42c,&DAT_005c778a,local_14);
+      _sprintf(local_42c,&DAT_005c778a);
       pcVar9 = local_1c;
       pcVar4 = local_42c;
       iVar3 = -1;
@@ -209,12 +209,12 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
     }
-    iVar3 = sound_sndmain_cpp_FUN_00556e30(2);
+    iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(2);
     pcVar4 = (char *)0x1d74d50;
     local_28 = 4;
     if (iVar3 == 0) {
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Dialog Volume : Off");
-      FUN_005a28c0(0x1d74d50,pcVar4);
+      _sprintf((char *)0x1d74d50,pcVar4);
       iVar3 = 4;
     }
     else {
@@ -233,7 +233,7 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
                (float10)_DAT_005c78b6;
       round();
       local_14 = (char *)(int)ROUND(fVar14);
-      FUN_005a28c0(local_12c,&DAT_005c77bc,local_14);
+      _sprintf(local_12c,&DAT_005c77bc);
       pcVar4 = local_12c;
       iVar3 = -1;
       pcVar9 = (char *)0x1d74d50;
@@ -278,11 +278,11 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
         pcVar11 = pcVar11 + 2;
       } while (cVar1 != '\0');
     }
-    iVar7 = sound_sndmain_cpp_FUN_00556e30(1);
+    iVar7 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(1);
     local_20 = (char *)(iVar3 * 0x100 + 0x1d74a50);
     if (iVar7 == 0) {
       pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Music Volume : Off");
-      FUN_005a28c0(local_20,pcVar4);
+      _sprintf(local_20,pcVar4);
     }
     else {
       pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Music Volume : ");
@@ -301,7 +301,7 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
                (float10)_DAT_005c78b6;
       round();
       local_14 = (char *)(int)ROUND(fVar14);
-      FUN_005a28c0(local_32c,&DAT_005c77e6,local_14);
+      _sprintf(local_32c,&DAT_005c77e6);
       pcVar9 = local_20;
       pcVar4 = local_32c;
       iVar7 = -1;
@@ -358,8 +358,8 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     local_14 = pcVar4;
-    iVar7 = sound_sndmain_cpp_FUN_00558390();
-    FUN_005a28c0(local_22c,&DAT_005c780e,iVar7);
+    sound_sndmain_cpp_FUN_00558390();
+    _sprintf(local_22c,&DAT_005c780e);
     pcVar9 = local_22c;
     iVar7 = -1;
     pcVar11 = pcVar4;
@@ -414,8 +414,8 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
       pcVar9 = pcVar9 + 2;
     } while (cVar1 != '\0');
     local_14 = pcVar4;
-    iVar7 = sound_sndmain_cpp_FUN_00558370();
-    FUN_005a28c0(local_22c,&DAT_005c7826,iVar7);
+    sound_sndmain_cpp_FUN_00558370();
+    _sprintf(local_22c,&DAT_005c7826);
     pcVar9 = local_22c;
     iVar7 = -1;
     pcVar11 = pcVar4;
@@ -466,9 +466,9 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960(pcVar4);
     iVar7 = iVar3 + 4;
-    FUN_005a28c0((iVar3 + 3) * 0x100 + 0x1d74a50,pcVar4);
+    _sprintf((char *)((iVar3 + 3) * 0x100 + 0x1d74a50),pcVar4);
     if (0 < local_554) {
-      iVar6 = sound_sndmain_cpp_FUN_005586e0();
+      iVar6 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0();
       pcVar4 = (char *)(iVar7 * 0x100 + 0x1d74a50);
       if (iVar6 < 1) {
         pcVar9 = "Hardware Mixing: Off";
@@ -494,20 +494,20 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
     }
     pcVar4 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Sound Options");
     iVar3 = core_menu_cpp_FUN_004e7860((char **)0x1d75450,iVar7,&local_2c,200,pcVar4);
-    wincore_wddvmem_cpp_FUN_0057a8a0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     local_18 = 0.2;
     switch(iVar3) {
     case 0:
       shape_edittool_cpp_CPickList_ctor_FUN_004831c0(&local_a1c);
       for (iVar3 = 0; iVar7 = sound_sndmain_cpp_getSoundDeviceCount_FUN_00558430(), iVar3 < iVar7;
           iVar3 = iVar3 + 1) {
-        sound_sndmain_cpp_FUN_005584c0(iVar3,local_544);
-        shape_edittool_cpp_CStrList_add_FUN_00482070((CStrList *)&local_a1c,(char *)local_544);
+        sound_sndmain_cpp_getSoundDeviceInfo_FUN_005584c0(iVar3,local_544);
+        shape_edittool_cpp_CStrList_add_FUN_00482070(&local_a1c.base,(char *)local_544);
       }
       uVar5 = 0;
       iVar3 = sound_sndmain_cpp_FUN_00558840();
-      iVar3 = shape_edittool_cpp_FUN_00483450(&local_a1c,"Select sound device",iVar3,uVar5)
-      ;
+      iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450
+                        (&local_a1c,"Select sound device",iVar3,uVar5);
       if (-1 < iVar3) {
         sound_sndmain_cpp_closeSoundDevice_FUN_005587e0();
         sound_sndmain_cpp_selectSoundDevice_FUN_00558640(iVar3);
@@ -516,25 +516,25 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
         if (0 < extraout_EAX) {
           sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(0x10,2,0xac44);
         }
-        core_sound_cpp_FUN_005607d0(0x02CF5680);
+        core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_004832b0(&local_a1c,0);
       break;
     case 1:
-      iVar3 = sound_sndmain_cpp_FUN_00556750();
+      iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_00556750();
       sound_sndmain_cpp_setSoundMuted_FUN_00556760((uint)(iVar3 == 0));
-      iVar3 = sound_sndmain_cpp_FUN_00556750();
+      iVar3 = sound_sndmain_cpp_isSoundMuted_FUN_00556750();
       if (iVar3 == 0) {
-        core_sound_cpp_FUN_005607d0(0x02CF5680);
+        core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
       }
       break;
     case 2:
       local_14 = (char *)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(0);
       local_a28 = (float)local_14 / _DAT_005e2924;
       if (_DAT_01d737d4 == 1) {
-        iVar3 = sound_sndmain_cpp_FUN_00556e30(0);
+        iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(0);
         if (iVar3 == 0) {
-          sound_sndmain_cpp_FUN_00556db0(0,1);
+          sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(0,1);
           local_a28 = 1.0;
         }
         else {
@@ -542,14 +542,14 @@ void __cdecl core_menu_cpp_FUN_004e94f0(void)
           if (local_a28 < (float)_DAT_005c78de) {
 LAB_004e9e11:
             local_a28 = 0.0;
-            sound_sndmain_cpp_FUN_00556db0(0,0);
+            sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(0,0);
           }
         }
       }
       else {
-        iVar3 = sound_sndmain_cpp_FUN_00556e30(0);
+        iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(0);
         if (iVar3 == 0) {
-          sound_sndmain_cpp_FUN_00556db0(0,1);
+          sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(0,1);
           local_a28 = local_18;
         }
         else {
@@ -561,18 +561,18 @@ LAB_004e9e11:
         }
       }
       sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(0,local_a28 * _DAT_005e2924);
-      sound_sndmain_cpp_FUN_00555fd0();
-      sound_sndmain_cpp_FUN_00555f00(1);
+      sound_sndmain_cpp_pushSfxOptions_FUN_00555fd0();
+      sound_sndmain_cpp_setNextSfxFlags_FUN_00555f00(1);
       sound_sndmain_cpp_FUN_00556240("colt45-0.wav");
-      sound_sndmain_cpp_FUN_00556050();
+      sound_sndmain_cpp_popSfxOptions_FUN_00556050();
       break;
     case 3:
       local_14 = (char *)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(2);
       local_a20 = (float)local_14 / _DAT_005e2928;
       if (_DAT_01d737d4 == 1) {
-        iVar3 = sound_sndmain_cpp_FUN_00556e30(2);
+        iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(2);
         if (iVar3 == 0) {
-          sound_sndmain_cpp_FUN_00556db0(2,1);
+          sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(2,1);
           local_a20 = 1.0;
         }
         else {
@@ -580,14 +580,14 @@ LAB_004e9e11:
           if (local_a20 < (float)_DAT_005c78de) {
 LAB_004e9f3d:
             local_a20 = 0.0;
-            sound_sndmain_cpp_FUN_00556db0(2,0);
+            sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(2,0);
           }
         }
       }
       else {
-        iVar3 = sound_sndmain_cpp_FUN_00556e30(2);
+        iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(2);
         if (iVar3 == 0) {
-          sound_sndmain_cpp_FUN_00556db0(2,1);
+          sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(2,1);
           local_a20 = local_18;
         }
         else {
@@ -604,10 +604,10 @@ LAB_004e9f3d:
       local_14 = (char *)sound_sndmain_cpp_getSfxChannelVol_FUN_00556d20(1);
       local_a24 = (float)local_14 / _DAT_005e2920;
       if (_DAT_01d737d4 == 1) {
-        iVar3 = sound_sndmain_cpp_FUN_00556e30(1);
+        iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(1);
         if (iVar3 == 0) {
-          sound_sndmain_cpp_FUN_00556db0(1,1);
-          core_sound_cpp_FUN_005607d0(0x02CF5680);
+          sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(1,1);
+          core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
           local_a24 = 1.0;
         }
         else {
@@ -615,15 +615,15 @@ LAB_004e9f3d:
           if (local_a24 < (float)_DAT_005c78de) {
 LAB_004ea042:
             local_a24 = 0.0;
-            sound_sndmain_cpp_FUN_00556db0(1,0);
+            sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(1,0);
           }
         }
       }
       else {
-        iVar3 = sound_sndmain_cpp_FUN_00556e30(1);
+        iVar3 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(1);
         if (iVar3 == 0) {
-          sound_sndmain_cpp_FUN_00556db0(1,1);
-          core_sound_cpp_FUN_005607d0(0x02CF5680);
+          sound_sndmain_cpp_enableSfxChannel_FUN_00556db0(1,1);
+          core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
           local_a24 = 0.2;
         }
         else {
@@ -666,7 +666,7 @@ LAB_004ea121:
       if (iVar3 != iVar7) {
         sound_sndmain_cpp_resetSoundDevice_FUN_00558250();
         sound_sndmain_cpp_setAudioSampleRate_FUN_00558410(iVar3);
-        core_sound_cpp_FUN_005607d0(0x02CF5680);
+        core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
       }
       break;
     case 6:
@@ -685,7 +685,7 @@ LAB_004ea121:
       if (iVar3 != iVar7) {
         sound_sndmain_cpp_resetSoundDevice_FUN_00558250();
         sound_sndmain_cpp_setAudioBitDepth_FUN_005583d0(iVar3);
-        core_sound_cpp_FUN_005607d0(0x02CF5680);
+        core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
       }
       break;
     case 7:
@@ -699,12 +699,12 @@ LAB_004ea121:
       if (iVar3 != iVar7) {
         sound_sndmain_cpp_resetSoundDevice_FUN_00558250();
         sound_sndmain_cpp_setAudioChannelCount_FUN_005583f0(iVar3);
-        core_sound_cpp_FUN_005607d0(0x02CF5680);
+        core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
       }
       break;
     case 8:
       sound_sndmain_cpp_closeSoundDevice_FUN_005587e0();
-      iVar3 = sound_sndmain_cpp_FUN_005586e0();
+      iVar3 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0();
       if (iVar3 < 1) {
         uVar15 = 2;
       }
@@ -713,7 +713,7 @@ LAB_004ea121:
       }
       sound_sndmain_cpp_FUN_005586f0(uVar15);
       sound_sndmain_cpp_initializeSoundDevice_FUN_00558730();
-      core_sound_cpp_FUN_005607d0(0x02CF5680);
+      core_sound_cpp_CSound_configure_FUN_005607d0(0x02CF5680);
     }
     iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);
     if (iVar3 != 0) {

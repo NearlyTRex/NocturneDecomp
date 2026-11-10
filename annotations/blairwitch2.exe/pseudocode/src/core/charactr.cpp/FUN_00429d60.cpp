@@ -2,13 +2,13 @@
 // Address: 00429d60
 // Address Range: [[00429d60, 00429e5b]]
 // Convention: unknown
-// Signature: void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,undefined4 *param_2)
+// Signature: void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)
 
 #include "nocturne.h"
 
 /* WARNING: Type propagation algorithm not settling */
 
-void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,uint *param_2)
+void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)
 
 {
   byte bVar1;
@@ -41,10 +41,10 @@ void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,uint *param_2)
        *(uint *)(&stack0xffffffc4 + (uint)bVar1 * -8);
   *(uint *)(&stack0xffffffbc + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffc8 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-  if ((uint *)&param_1->field_0x30 != param_2) {
-    *(uint *)&param_1->field_0x30 = *param_2;
-    *(uint *)&param_1->field_0x34 = param_2[1];
-    *(uint *)&param_1->field_0x38 = param_2[2];
+  if (&param_1->orient != (UOrientationVector *)param_2) {
+    (param_1->orient).vec.x = *param_2;
+    (param_1->orient).vec.y = param_2[1];
+    (param_1->orient).vec.z = param_2[2];
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(param_1);
   core_actor_cpp_FUN_00408d30(param_1,&stack0xffffffa8);

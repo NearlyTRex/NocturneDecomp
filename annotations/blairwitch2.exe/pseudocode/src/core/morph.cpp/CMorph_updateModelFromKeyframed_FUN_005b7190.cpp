@@ -10,6 +10,6 @@ void __cdecl core_morph_cpp_CMorph_updateModelFromKeyframed_FUN_005b7190(CMorph 
 
 {
   core_morph_cpp_CMorphModel_animateFromKeyframedModel_FUN_005b6560
-            ((CMorphModel *)(this_ptr + model_index * 0x608),part_index,model_ptr,frame_index);
+            (this_ptr->models + model_index,part_index,model_ptr,frame_index);
   return;
 }

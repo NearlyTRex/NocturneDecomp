@@ -20,7 +20,7 @@ int sound_sndmain_cpp_FUN_00551800(char *param_1,uint param_2,uint param_3)
     iVar1 = _stricmp((char *)str1,param_1);
     if (iVar1 == 0) {
       if (str1 != (CSfxSample *)0x0) {
-        if (*(int *)&str1->field_0x1a8 == 0) {
+        if (str1->locked_length == 0) {
           iVar2 = sound_sndmain_cpp_FUN_0054daf0(str1,param_2,param_3);
           if (iVar2 != 0) {
             sound_sndmain_cpp_FUN_00551440();

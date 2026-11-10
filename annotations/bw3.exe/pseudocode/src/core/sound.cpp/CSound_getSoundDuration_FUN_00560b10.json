@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 42,
+    "complexity_score": 41,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 26,
     "suspect_count": 1,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 95
+    "total_lines": 94
   },
   "cross_references": [
     {
       "addr": "00530150",
       "from_addr": "005301e0",
-      "name": "core_script.cpp_FUN_00530150",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_00530150",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -65,7 +65,7 @@
       {
         "call_addr": "005301e0",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00530150",
+        "caller": "core_script.cpp_CScript_startDialogLine_FUN_00530150",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,10 +153,10 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_006074b8",
       "severity": "mild",
-      "text": "(CVar1 != (CSampleInfo)0x2a)) && (((&DAT_006074b8)[(byte)((char)CVar1 + 1)] & 2) == 0))) {",
+      "text": "(((&DAT_006074b8)[(byte)(cVar1 + 1)] & 2) == 0))) {",
       "type": "undefined_data"
     }
   ]

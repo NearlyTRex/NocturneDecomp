@@ -21,15 +21,15 @@
   },
   "cross_references": [
     {
-      "addr": "00469550",
-      "from_addr": "0046a2b4",
-      "name": "core_doc.cpp_FUN_00469550",
+      "addr": "00471af0",
+      "from_addr": "00471d5a",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00471af0",
-      "from_addr": "00471d5a",
-      "name": "core_doc.cpp_FUN_00471af0",
+      "addr": "00469550",
+      "from_addr": "0046a2b4",
+      "name": "core_doc.cpp_FUN_00469550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,14 +63,14 @@
       "name": "core_xform.cpp_FUN_005b5760"
     },
     {
-      "addr": "005b5930",
-      "is_variadic": false,
-      "name": "core_xform.cpp_FUN_005b5930"
-    },
-    {
       "addr": "005b6270",
       "is_variadic": false,
       "name": "core_xform.cpp_FUN_005b6270"
+    },
+    {
+      "addr": "005b5930",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005b5930"
     },
     {
       "addr": "005b5200",
@@ -118,7 +118,7 @@
       {
         "call_addr": "00471d5a",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_00471af0",
+        "caller": "core_doc.cpp_CDoc_renderOpaque_FUN_00471af0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,7 +327,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));",
+      "text": "(&local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));",
       "type": "unnamed_param"
     },
     {
@@ -335,7 +335,7 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "(local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));",
+      "text": "(&local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));",
       "type": "unnamed_param"
     },
     {
@@ -343,7 +343,7 @@
       "line": 32,
       "match": "&stack0xffffff38",
       "severity": "moderate",
-      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff38,local_98);",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff38,&local_98);",
       "type": "stack_ref"
     },
     {
@@ -367,7 +367,7 @@
       "line": 42,
       "match": "&stack0xffffff08",
       "severity": "moderate",
-      "text": "core_xform_cpp_FUN_005b5930(&stack0xffffff08);",
+      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff08);",
       "type": "stack_ref"
     },
     {

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050d220 at 0050d45f
+;   core_menu.cpp_getKeyDisplayName_FUN_0050d220 at 0050d45f
 ;
 ; Referenced Globals:
 ;   void* PTR_GetKeyNameTextA_005d04c4 = 001d0b06

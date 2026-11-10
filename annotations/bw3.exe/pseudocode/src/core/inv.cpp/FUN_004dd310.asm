@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddbbd
-;   core_inv.cpp_FUN_004dbb40 at 004dbbdc
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40 at 004dbbdc
 ;
 ; *****************************************************************************
 

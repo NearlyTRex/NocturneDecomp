@@ -11,7 +11,7 @@ void core_disease_cpp_factoryFuncDisease_FUN_0045bf50(void)
 {
   CDisease *this_ptr;
   
-  this_ptr = (CDisease *)FUN_005a3cb2(0x5a4);
+  this_ptr = (CDisease *)debugAllocTracked1(0x5a4);
   if (this_ptr == (CDisease *)0x0) {
     return;
   }

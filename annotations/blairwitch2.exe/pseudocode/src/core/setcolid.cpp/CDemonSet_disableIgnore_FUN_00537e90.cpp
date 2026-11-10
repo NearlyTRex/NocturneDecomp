@@ -9,6 +9,6 @@
 void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_00537e90(CDemonSet *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x15f6a8 = 0xffffffff;
+  this_ptr->ignore_list_count = -1;
   return;
 }

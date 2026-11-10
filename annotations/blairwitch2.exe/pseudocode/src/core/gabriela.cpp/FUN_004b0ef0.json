@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 236,
+    "complexity_score": 206,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 20,
+    "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_field",
@@ -21,7 +21,7 @@
     {
       "addr": "004ad640",
       "from_addr": "004adeb0",
-      "name": "core_gabriela.cpp_FUN_004ad640",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -69,7 +69,7 @@
       {
         "call_addr": "004adeb0",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004ad640",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,23 +164,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1[0xd8].field_0x4 * 4) + 0x2b0) + 0xec))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&param_1[0xd8].field_0x4 * 4) + 0x2b0) + 0xec))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4));",
+      "text": "*(int *)(param_1[0xd8].actor_name + 4) * 4) + 0x2b0) + 0xec)",
       "type": "unnamed_param"
     },
     {
@@ -188,7 +172,15 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4));",
+      "text": ")(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 10,
+      "match": "param_1",
+      "severity": "mild",
+      "text": ")(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4));",
       "type": "unnamed_param"
     },
     {
@@ -196,15 +188,7 @@
       "line": 10,
       "match": "field_0x1ac",
       "severity": "mild",
-      "text": "(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4));",
+      "text": ")(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4));",
       "type": "unnamed_field"
     },
     {
@@ -212,7 +196,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4) + 0x438)",
+      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4) +",
       "type": "unnamed_param"
     },
     {
@@ -220,7 +204,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4) + 0x438)",
+      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4) +",
       "type": "unnamed_param"
     },
     {
@@ -228,15 +212,7 @@
       "line": 12,
       "match": "field_0x1ac",
       "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4) + 0x438)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)&param_1[0xd8].field_0x4 * 4) + 0x438)",
+      "text": "(*(int *)(*(int *)(&param_1[0xd8].field_0x1ac + *(int *)(param_1[0xd8].actor_name + 4) * 4) +",
       "type": "unnamed_field"
     },
     {

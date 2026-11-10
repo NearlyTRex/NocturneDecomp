@@ -5,10 +5,10 @@
 ;
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00503860
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
+;   core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90
 ;   core_skeleton.cpp_FUN_00547b80
-;   core_skeleton.cpp_FUN_00548a90
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     SUB ESP,0x35a0                      ; 00547914
     MOV EDX,dword ptr [ESP + 0x35b4]    ; 0054791a
     PUSH EDX                            ; 00547921
-    CALL core_motion.cpp_FUN_00503860   ; 00547922
-        ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00503860(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00503860 ; 00547922
+        ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00503860(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00547927
     MOV EDX,dword ptr [ESP + 0x35c0]    ; 0054792a
     MOV ECX,EAX                         ; 00547931
@@ -54,8 +54,8 @@ section .text
     MOV EBP,EDI                         ; 00547994
     PUSH EAX                            ; 00547996
     XOR EBP,EDI                         ; 00547997
-    CALL core_skeleton.cpp_FUN_00548a90 ; 00547999
-        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00548a90()
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90 ; 00547999
+        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90()
     MOV EAX,0xffffffff                  ; 0054799e
     ADD ESP,0x8                         ; 005479a3
     MOV EDX,0x7149f2ca                  ; 005479a6
@@ -83,8 +83,8 @@ section .text
     PUSH EDX                            ; 005479fe
     LEA EAX,[ESP + 0x4]                 ; 005479ff
     PUSH EAX                            ; 00547a03
-    CALL core_skeleton.cpp_FUN_00548a90 ; 00547a04
-        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00548a90()
+    CALL core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90 ; 00547a04
+        ;   XREF to: 00548a90 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90()
     ADD ESP,0x8                         ; 00547a09
     XOR ECX,ECX                         ; 00547a0c
     MOV dword ptr [ESP + 0x3590],ECX    ; 00547a0e

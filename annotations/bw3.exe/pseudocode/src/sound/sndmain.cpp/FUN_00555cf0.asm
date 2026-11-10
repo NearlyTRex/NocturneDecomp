@@ -7,7 +7,7 @@
 ; CVector3f *      Stack[0x4]:4   position_source_ptr
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0055f020 at 0055f216
+;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f216
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ceb91c

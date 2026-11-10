@@ -21,7 +21,7 @@
 ;   crt_unknown.c_FUN_005c036c
 ;   crt_unknown.c_FUN_005c0380
 ;   crt_unknown.c_FUN_005c0820
-;   unkafter_morph.cpp_FUN_005c4070
+;   crt_unknown.c_FUN_005c4070
 ;
 ; *****************************************************************************
 
@@ -203,8 +203,8 @@ section .text
     POP ESI                             ; 005c05cd
     POP EBX                             ; 005c05ce
     RET                                 ; 005c05cf
-    CALL unkafter_morph.cpp_FUN_005c4070 ; 005c05d0
-        ;   XREF to: 005c4070 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c4070()
+    CALL crt_unknown.c_FUN_005c4070     ; 005c05d0
+        ;   XREF to: 005c4070 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c4070()
         ;   Label: LAB_005c05d0
     MOV dword ptr [EBP + -0x10],EAX     ; 005c05d5
     CMP EAX,0xb0                        ; 005c05d8

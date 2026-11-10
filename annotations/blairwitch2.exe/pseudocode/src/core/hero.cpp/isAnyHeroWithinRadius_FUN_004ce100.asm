@@ -6,9 +6,9 @@
 ;
 ; XREF[4]:
 ;   core_fire.cpp_initProcess_FUN_00499ee0 at 00499f42
-;   core_manpuz.cpp_FUN_004e57f0 at 004e57fe
-;   core_trash.cpp_FUN_00576ab0 at 00576acb
-;   core_vampboss.cpp_FUN_00581910 at 005829f4
+;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0 at 004e57fe
+;   core_trash.cpp_CTrash_process_FUN_00576ab0 at 00576acb
+;   core_vampboss.cpp_CVampireBoss_process_FUN_00581910 at 005829f4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cedee0

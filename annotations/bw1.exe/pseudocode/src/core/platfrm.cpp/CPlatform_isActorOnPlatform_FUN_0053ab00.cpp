@@ -6,93 +6,93 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 int __cdecl core_platfrm_cpp_CPlatform_isActorOnPlatform_FUN_0053ab00(CPlatform *this_ptr,CDemonActor *actor)
 
 {
-  int iVar1;
-  CKeyFramedModel *pCVar2;
-  float fVar3;
-  float *pfVar4;
-  float *pfVar5;
-  byte bVar6;
-  float afStackY_1038 [989];
-  uint uVar7;
-  uint *puVar8;
-  byte *puVar9;
-  byte local_a8 [24];
-  float fStack_90;
-  float fStack_8c;
-  float afStack_80 [6];
-  float fStack_68;
-  float fStack_64;
-  float fStack_60;
-  float fStack_5c;
+  ECollisionType EVar1;
+  float fVar2;
+  CKeyFramedModel *pCVar3;
+  float fVar4;
+  int iVar5;
+  float unaff_ESI;
+  uint *puVar6;
+  uint *puVar7;
+  byte bVar8;
+  float afStackY_1028 [988];
+  uint uVar9;
+  float *pfVar10;
+  CBoundingBox3D *out_box;
+  float fStack_84;
+  float fStack_80;
+  float fStack_7c;
   float fStack_58;
   float fStack_54;
   float fStack_50;
-  float afStack_4c [2];
-  byte auStack_44 [12];
-  uint uStack_38;
-  uint uStack_34;
-  uint uStack_30;
-  float fStack_2c;
-  float afStack_28 [4];
+  float fStack_4c;
+  float fStack_48;
+  float fStack_44;
+  float fStack_40;
+  uint uStack_28;
+  uint uStack_24;
+  uint uStack_20;
+  float fStack_1c;
   float fStack_18;
-  uint uStack_14;
   
-  bVar6 = 0;
+  bVar8 = 0;
   if (actor != (CDemonActor *)0x0) {
-    core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)local_a8);
-    local_a8._0_4_ = 0;
-    iVar1 = (**(code **)(*(int *)&actor->field_0x154 + 0x3c))(actor,local_a8);
-    if (iVar1 == 2) {
-      uStack_14 = core_actor_cpp_FUN_0040cd60(*(uint *)&this_ptr->field_0x30);
-      *(uint *)&this_ptr->field_0x30 = uStack_14;
-      uStack_14 = core_actor_cpp_FUN_0040cd60(*(uint *)&this_ptr->field_0x38);
-      *(uint *)&this_ptr->field_0x38 = uStack_14;
-      if ((ABS(*(float *)&this_ptr->field_0x30) <= (float)_DAT_005ed61b) &&
-         (ABS(*(float *)&this_ptr->field_0x38) <= (float)_DAT_005ed61b)) {
-        (**(code **)(*(int *)&this_ptr->field_0x154 + 0x1c))(this_ptr);
-        pfVar4 = afStack_80;
-        pfVar5 = &fStack_68;
-        for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-          *pfVar5 = *pfVar4;
-          pfVar4 = pfVar4 + (uint)bVar6 * -2 + 1;
-          pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+    core_setcolid_cpp_SCollisionInfo_ctor_FUN_005593c0((SCollisionInfo *)&stack0xffffff58);
+    out_box = (CBoundingBox3D *)0x0;
+    EVar1 = (*((actor->vtable)._ub)->getCollisionType)(actor,(SCollisionInfo *)&stack0xffffff58);
+    if (EVar1 == COLLISION_TYPE_CYLINDER) {
+      fVar2 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60((this_ptr->base).orient.vec.x);
+      fVar4 = (this_ptr->base).orient.vec.z;
+      (this_ptr->base).orient.vec.x = fVar2;
+      fVar2 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fVar4);
+      fVar4 = (this_ptr->base).orient.vec.x;
+      (this_ptr->base).orient.vec.z = fVar2;
+      if ((ABS(fVar4) <= (float)_DAT_005ed61b) &&
+         (ABS((this_ptr->base).orient.vec.z) <= (float)_DAT_005ed61b)) {
+        (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,out_box);
+        puVar6 = (uint *)&stack0xffffff90;
+        puVar7 = &stack0xffffffa8;
+        for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+          *puVar7 = *puVar6;
+          puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+          puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
         }
-        core_actor_cpp_FUN_00408bb0(this_ptr,&actor->field_0x20);
-        afStack_28[2] = fStack_50;
-        afStack_28[(uint)bVar6 * -2 + 3] = afStack_4c[(uint)bVar6 * -2];
-        afStack_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
-             afStack_4c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
-        if ((((fStack_68 <= afStack_28[2] + fStack_8c) && (afStack_28[2] - fStack_8c <= fStack_5c))
-            && (fStack_60 <= fStack_18 + fStack_8c)) &&
-           (((fStack_18 - fStack_8c <= fStack_54 && (fStack_64 <= afStack_28[3] + fStack_90)) &&
-            (afStack_28[3] + (float)local_a8._20_4_ <= fStack_58)))) {
-          pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                             ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-          if (*(int *)&pCVar2->field_0x358 != 0) {
-            puVar9 = auStack_44;
-            uStack_38 = 0;
-            puVar8 = &uStack_38;
-            uStack_30 = 0;
-            pfVar4 = &fStack_2c;
-            fStack_2c = afStack_28[2];
-            afStack_28[(uint)bVar6 * -2] = afStack_28[(uint)bVar6 * -2 + 3];
-            afStack_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
-                 afStack_28[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-            uVar7 = 0;
-            afStack_28[0] = fStack_90 + _DAT_005ed623 + afStack_28[0];
-            uStack_34 = 0x3f800000;
-            pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                               ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-            fVar3 = (float)core_dmodel_cpp_FUN_00467c00(pCVar2,uVar7,pfVar4,puVar8,puVar9);
-            if (fVar3 < 0.0) {
+        core_actor_cpp_FUN_00408bb0();
+        *(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8) =
+             *(uint *)(&stack0xffffffc4 + (uint)bVar8 * -8);
+        *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+             *(uint *)(&stack0xffffffc8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+        if ((((fStack_58 <= fStack_40 + fStack_7c) && (fStack_40 - fStack_7c <= fStack_4c)) &&
+            (fStack_50 <= unaff_ESI + fStack_7c)) &&
+           (((unaff_ESI - fStack_7c <= fStack_44 && (fStack_54 <= fVar2 + fStack_80)) &&
+            (fVar2 + fStack_84 <= fStack_48)))) {
+          pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+                             (&this_ptr->model);
+          if (pCVar3->collision_triangle_list != (CDemonTriangle *)0x0) {
+            uStack_28 = 0;
+            uStack_20 = 0;
+            pfVar10 = &stack0xffffffe4;
+            fStack_1c = fStack_40;
+            (&stack0xffffffe8)[(uint)bVar8 * 0xfffffffe] =
+                 (float)*(uint *)(&stack0xfffffff4 + (uint)bVar8 * -8);
+            *(uint *)(&stack0xffffffec + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
+                 *(uint *)(&stack0xfffffff8 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
+            uVar9 = 0;
+            fStack_18 = fStack_80 + _DAT_005ed623 + fStack_18;
+            uStack_24 = 0x3f800000;
+            pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
+                               (&this_ptr->model);
+            fVar4 = (float)core_dmodel_cpp_FUN_00467c00(pCVar3,uVar9,pfVar10);
+            if (fVar4 < 0.0) {
               return 0;
             }
-            if (1.0 < fVar3) {
+            if (1.0 < fVar4) {
               return 0;
             }
           }

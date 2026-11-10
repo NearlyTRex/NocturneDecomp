@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004d4c50 at 004d4fd6
+;   core_icepick.cpp_CIcePick_process_FUN_004d4c50 at 004d4fd6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoot_005da84e
@@ -21,8 +21,8 @@
 ;   undefined4 DAT_01cee0f4
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00502f10
-;   core_motion.cpp_FUN_00503860
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
 ;   core_skeleton.cpp_FUN_00545a60
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00593fa0
@@ -60,12 +60,12 @@ section .text
     PUSH 0x5da84e                       ; 004d54bc | = "shoot"
     LEA ESI,[EBX + 0x2b4]               ; 004d54c1
     PUSH ESI                            ; 004d54c7
-    CALL core_motion.cpp_FUN_00503860   ; 004d54c8
-        ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00503860(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00503860 ; 004d54c8
+        ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00503860(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004d54cd
     PUSH EAX                            ; 004d54d0
-    CALL core_motion.cpp_FUN_00502f10   ; 004d54d1
-        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10 ; 004d54d1
+        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004d54d6
     PUSH 0x544cc0                       ; 004d54d9
     MOV EDI,dword ptr [0x01cee0f4]      ; 004d54de | DAT_01cee0f4

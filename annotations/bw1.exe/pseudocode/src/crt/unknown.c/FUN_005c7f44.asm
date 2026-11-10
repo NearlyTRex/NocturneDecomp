@@ -12,7 +12,7 @@
 ;   crt_math.c_atan2_FUN_005c1d69 at 005c1d78
 ;
 ; Called Functions:
-;   unkafter_zombie.cpp_FUN_005cbf70
+;   crt_unknown.c_FUN_005cbf70
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     FNSAVE [ESP]                        ; 005c7f4c
     FLD extended double ptr [ESP + 0x1c] ; 005c7f4f
     FLD extended double ptr [ESP + 0x6c] ; 005c7f53
-    CALL unkafter_zombie.cpp_FUN_005cbf70 ; 005c7f57
-        ;   XREF to: 005cbf70 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cbf70()
+    CALL crt_unknown.c_FUN_005cbf70     ; 005c7f57
+        ;   XREF to: 005cbf70 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cbf70()
     FNSTSW AX                           ; 005c7f5c
     FSTP extended double ptr [ESP + 0x1c] ; 005c7f5e
     AND AX,0xff                         ; 005c7f62

@@ -11,8 +11,8 @@ int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_00576610(CCryptVessel *th
 {
   int iVar1;
   
-  if (((*(int *)&this_ptr->field_0x7f0 == 0) && (*(int *)&this_ptr->field_0x3b8 == 0)) &&
-     (iVar1 = core_actor_cpp_FUN_0040c790(picker,"?CHero" + 1), iVar1 != 0)) {
+  if (((this_ptr->puzzle_complete == 0) && (this_ptr->state == 0)) &&
+     (iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(picker,"?CHero" + 1), iVar1 != 0)) {
     return 4;
   }
   return 0;

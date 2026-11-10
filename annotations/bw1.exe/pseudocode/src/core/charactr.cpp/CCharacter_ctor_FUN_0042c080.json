@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 222,
+    "complexity_score": 214,
     "cross_reference_count": 5,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 142,
-    "suspect_count": 7,
+    "pseudocode_lines": 144,
+    "suspect_count": 6,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 372
+    "total_lines": 374
   },
   "cross_references": [
     {
@@ -25,7 +25,7 @@
     {
       "addr": "004ea830",
       "from_addr": "004ea836",
-      "name": "core_hero.cpp_FUN_004ea830",
+      "name": "core_hero.cpp_CHero_ctor_FUN_004ea830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -113,8 +113,8 @@
     {
       "addr": "005fd624",
       "name": "g_CCharacterVTable",
-      "type": "void*",
-      "value": "0042c510"
+      "type": "CCharacter_full_vtable",
+      "value": null
     },
     {
       "addr": "005fd770",
@@ -142,7 +142,7 @@
       {
         "call_addr": "004ea836",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ea830",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004ea830",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,15 +359,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x25a8",
+      "line": 81,
+      "match": "field_0x25aa",
       "severity": "mild",
-      "text": "*(uint *)&pCVar6->field_0x25a8 = 0xffffffff;",
+      "text": "*(ushort *)&pCVar6->field_0x25aa = 0xffff;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 80,
+      "line": 82,
       "match": "field_0x25ac",
       "severity": "mild",
       "text": "*(uint *)&pCVar6->field_0x25ac = 0xffffffff;",
@@ -375,15 +375,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "puVar7 = &pCVar6->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
+      "line": 85,
       "match": "field_0x25e8",
       "severity": "mild",
       "text": "*(uint *)&pCVar6->field_0x25e8 = 0x3f800000;",

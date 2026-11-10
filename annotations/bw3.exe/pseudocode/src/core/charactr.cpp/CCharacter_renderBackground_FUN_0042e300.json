@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 49,
+    "complexity_score": 43,
+    "cross_reference_count": 4,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unrolled_memcpy"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [
+    {
+      "addr": "0040fe60",
+      "from_addr": "0040fe81",
+      "name": "core_bird.cpp_CBird_renderBackground_FUN_0040fe60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00489fc0",
+      "from_addr": "00489fe1",
+      "name": "core_enemy.cpp_CEnemy_renderBackground_FUN_00489fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00509530",
+      "from_addr": "00509551",
+      "name": "core_npc.cpp_CNPC_renderBackground_FUN_00509530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00599a40",
+      "from_addr": "00599a61",
+      "name": "core_spireagl.cpp_CSpiritEagle_renderBackground_FUN_00599a40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0042e300",
+    "address_range": [
+      [
+        "0042e300",
+        "0042e36c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042e300",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_renderBackground_FUN_0042e300(CCharacter *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830"
+    },
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "0042d8e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042d8e0"
+    }
+  ],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.875,
+    "instruction_count": 40,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 4,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 31,
+      "INT_ADD": 23,
+      "INT_AND": 21,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 21,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 19,
+      "INT_ZEXT": 2,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 2,
+      "STORE": 15
+    },
+    "pcode_op_count": 195
+  },
+  "stack_frame": {
+    "frame_size": 64,
+    "local_size": 56,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 20,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

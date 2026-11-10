@@ -9,12 +9,12 @@
 ;   core_game.cpp_FUN_004bb9b0 at 004bba8a
 ;   core_game.cpp_FUN_004bbf70 at 004bc2ee
 ;   core_game.cpp_FUN_004bc840 at 004bc8c3
-;   core_main.c_FUN_004e46c0 at 004e46f7
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e46f7
 ;   core_podmain.cpp_FUN_0051c000 at 0051c019
 ;   engine_console.cpp_FUN_00436710 at 004367a7
 ;   engine_dosio.cpp_FUN_00460c70 at 00460cca
+;   engine_ini.cpp_CIni_getProfileString_FUN_004d8180 at 004d81a7
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004d8530 at 004d8591
-;   engine_ini.cpp_FUN_004d8180 at 004d81a7
 ;   ... and 13 more
 ;
 ; Called Functions:

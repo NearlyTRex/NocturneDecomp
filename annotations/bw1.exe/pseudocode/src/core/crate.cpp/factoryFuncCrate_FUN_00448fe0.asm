@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_crate.cpp_CCrate_ctor_FUN_00449010
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2fc                          ; 00448fe0
         ;   Label: core_crate.cpp_factoryFuncCrate_FUN_00448fe0
-    CALL crt_unknown.c_FUN_005c0f32     ; 00448fe5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00448fe5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 00448fea
     TEST EAX,EAX                        ; 00448fed
     JNZ 0x00448ff2                      ; 00448fef

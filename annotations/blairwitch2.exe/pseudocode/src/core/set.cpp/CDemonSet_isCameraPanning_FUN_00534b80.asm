@@ -7,8 +7,8 @@
 ; CDemonSet *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0 at 0053360f
 ;   core_set.cpp_FUN_0052f2a0 at 0052f95d
-;   core_set.cpp_FUN_005332f0 at 0053360f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005e5cd5

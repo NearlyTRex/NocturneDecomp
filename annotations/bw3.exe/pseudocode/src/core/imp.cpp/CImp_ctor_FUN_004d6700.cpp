@@ -15,15 +15,16 @@ CImp * __cdecl core_imp_cpp_CImp_ctor_FUN_004d6700(CImp *this_ptr)
   uint uVar2;
   CImp *pCVar3;
   
-  pCVar3 = (CImp *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CImpVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,0x5c5455);
+  pCVar3 = (CImp *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CImpVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            (&(pCVar3->base).base.model,(char *)0x5c5455);
   uVar1 = _DAT_005e1ef0;
-  *(uint *)&pCVar3->field_0x326c = 0x3f19999a;
+  *(uint *)&(pCVar3->base).base.field_0x326c = 0x3f19999a;
   uVar2 = _DAT_005e1ef4;
-  *(uint *)&pCVar3->field_0x3270 = 0x3f000000;
-  *(uint *)&pCVar3->field_0x27c0 = 0;
-  *(uint *)&pCVar3->field_0x3274 = uVar1;
-  *(uint *)&pCVar3->field_0x3278 = uVar2;
+  *(uint *)&(pCVar3->base).base.field_0x3270 = 0x3f000000;
+  (pCVar3->base).base.gun_flame_ignitable = 0;
+  *(uint *)&(pCVar3->base).base.field_0x3274 = uVar1;
+  *(uint *)&(pCVar3->base).base.field_0x3278 = uVar2;
   return pCVar3;
 }

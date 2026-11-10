@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_004ea4d0 at 004ea861
+;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea861
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Blair_Witch_3_Debug_edit_005c6b4a
@@ -22,7 +22,7 @@
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_004819e0
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_0047ce80
-;   wincore_wddvmem.cpp_FUN_0057a8a0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;   wincore_winrun.cpp_getNextKeypress_FUN_00580790
 ;
 ; *****************************************************************************
@@ -56,8 +56,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 004e443a
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 004e443f
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 004e4442
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 004e4442
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 004e4447
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_00580790 ; 004e444c

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 103,
+    "complexity_score": 88,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
-      "unknown_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
@@ -26,7 +25,7 @@
     {
       "addr": "0057bef0",
       "from_addr": "0057c2f2",
-      "name": "core_sound.cpp_FUN_0057bef0",
+      "name": "core_sound.cpp_playSfxInternal_FUN_0057bef0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -79,7 +78,7 @@
       {
         "call_addr": "0057c2f2",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057bef0",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_0057bef0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -90,7 +89,7 @@
       {
         "call_addr": "0057c321",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057bef0",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_0057bef0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,14 +189,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < (int)g_CStrListInstance._0_4_; iVar2 = iVar2 + 1) {",
-      "type": "unknown_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

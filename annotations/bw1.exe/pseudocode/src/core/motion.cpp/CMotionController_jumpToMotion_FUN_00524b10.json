@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 111,
+    "complexity_score": 46,
     "cross_reference_count": 9,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -20,13 +19,19 @@
     {
       "addr": "0041bb40",
       "from_addr": "0041bbab",
-      "name": "core_boneguy.cpp_FUN_0041bb40",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00445cb0",
       "from_addr": "004461d2",
-      "name": "core_constrct.cpp_FUN_00445cb0",
+      "name": "core_constrct.cpp_CConstruct_process_FUN_00445cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00460230",
+      "from_addr": "004603e9",
+      "name": "core_djien.cpp_CDjien_process_FUN_00460230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,13 +67,7 @@
     {
       "addr": "00532930",
       "from_addr": "00532adb",
-      "name": "core_passngr.cpp_FUN_00532930",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00460230",
-      "from_addr": "004603e9",
-      "name": "unkafter_djien.cpp_FUN_00460230",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -149,7 +148,7 @@
       {
         "call_addr": "0041bbab",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_0041bb40",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -160,7 +159,7 @@
       {
         "call_addr": "004461d2",
         "call_type": "direct",
-        "caller": "core_constrct.cpp_FUN_00445cb0",
+        "caller": "core_constrct.cpp_CConstruct_process_FUN_00445cb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +170,7 @@
       {
         "call_addr": "004603e9",
         "call_type": "direct",
-        "caller": "unkafter_djien.cpp_FUN_00460230",
+        "caller": "core_djien.cpp_CDjien_process_FUN_00460230",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +192,7 @@
       {
         "call_addr": "00532adb",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00532930",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,56 +286,8 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x50 + 4))",
+      "text": "iVar1 = (**(code **)(this_ptr->vtable + 4))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x50 + 4))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8,target_motion_index);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4 = target_motion_index;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x8 = target_frame_number;",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 183,
-    "complexity_score": 146,
+    "complexity_score": 131,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 106,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 289
@@ -142,14 +141,6 @@
     "severity": "medium"
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar4 = __arrinit(&this_ptr->field_0x4,0xfa,&g_C3DSCameraTypeInfo);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 46,

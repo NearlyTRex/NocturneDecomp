@@ -9,8 +9,8 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005aca00
-;   unkafter_asgaya.cpp_FUN_005af2a0
-;   unkafter_asgaya.cpp_FUN_005af6a0
+;   crt_unknown.c_FUN_005af2a0
+;   crt_unknown.c_FUN_005af6a0
 ;
 ; *****************************************************************************
 
@@ -30,23 +30,23 @@ section .text
         ;   XREF to: 005acd6b (CONDITIONAL_JUMP)  ; LAB_005acd6b
     PUSH ESI                            ; 005acd26
         ;   Label: LAB_005acd26
-    CALL unkafter_asgaya.cpp_FUN_005af2a0 ; 005acd27
-        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af2a0()
+    CALL crt_unknown.c_FUN_005af2a0     ; 005acd27
+        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af2a0()
     ADD ESP,0x4                         ; 005acd2c
     TEST EAX,EAX                        ; 005acd2f
     JNZ 0x005acd6b                      ; 005acd31
         ;   XREF to: 005acd6b (CONDITIONAL_JUMP)  ; LAB_005acd6b
     PUSH EBX                            ; 005acd33
-    CALL unkafter_asgaya.cpp_FUN_005af2a0 ; 005acd34
-        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af2a0()
+    CALL crt_unknown.c_FUN_005af2a0     ; 005acd34
+        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af2a0()
     ADD ESP,0x4                         ; 005acd39
     TEST EAX,EAX                        ; 005acd3c
     JNZ 0x005acd6b                      ; 005acd3e
         ;   XREF to: 005acd6b (CONDITIONAL_JUMP)  ; LAB_005acd6b
     PUSH EBX                            ; 005acd40
     PUSH ESI                            ; 005acd41
-    CALL unkafter_asgaya.cpp_FUN_005af6a0 ; 005acd42
-        ;   XREF to: 005af6a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af6a0()
+    CALL crt_unknown.c_FUN_005af6a0     ; 005acd42
+        ;   XREF to: 005af6a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af6a0()
     ADD ESP,0x8                         ; 005acd47
     MOV EBP,EAX                         ; 005acd4a
     TEST EAX,EAX                        ; 005acd4c
@@ -71,15 +71,15 @@ section .text
     JBE 0x005acd99                      ; 005acd6d
         ;   XREF to: 005acd99 (CONDITIONAL_JUMP)  ; LAB_005acd99
     PUSH ESI                            ; 005acd6f
-    CALL unkafter_asgaya.cpp_FUN_005af2a0 ; 005acd70
-        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af2a0()
+    CALL crt_unknown.c_FUN_005af2a0     ; 005acd70
+        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af2a0()
     ADD ESP,0x4                         ; 005acd75
     TEST EAX,EAX                        ; 005acd78
     JNZ 0x005acd89                      ; 005acd7a
         ;   XREF to: 005acd89 (CONDITIONAL_JUMP)  ; LAB_005acd89
     PUSH EBX                            ; 005acd7c
-    CALL unkafter_asgaya.cpp_FUN_005af2a0 ; 005acd7d
-        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af2a0()
+    CALL crt_unknown.c_FUN_005af2a0     ; 005acd7d
+        ;   XREF to: 005af2a0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af2a0()
     ADD ESP,0x4                         ; 005acd82
     TEST EAX,EAX                        ; 005acd85
     JZ 0x005acd99                       ; 005acd87

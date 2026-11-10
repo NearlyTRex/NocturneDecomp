@@ -20,10 +20,11 @@ CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_0050f0c0(CMimic *this_ptr)
   char *pcVar7;
   CMorph *pCVar8;
   
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  pCVar5 = core_cloth_cpp_FUN_0043e5c0((CCloth *)&pCVar4[1].field_0xc8);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  pCVar5 = core_cloth_cpp_CCloth_ctor_FUN_0043e5c0
+                     ((CCloth *)(pCVar4[1].base.base.create_event + 0x50));
   pCVar6 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)(pCVar5 + 0x3ab60));
-  *(byte ***)(pCVar6 + -0x46d3c) = &g_CMimicVTable;
+  *(CEnemy_full_vtable **)(pCVar6 + -0x46d3c) = &g_CMimicVTable;
   *(uint *)(pCVar6 + -0x43ea4) = 0x3f000000;
   pcVar7 = "CGhoul";
   *(uint *)(pCVar6 + -0x43ea0) = 0x3f800000;

@@ -12,11 +12,13 @@ CMoon * core_moon_cpp_CMoon_ctor_FUN_00521bc0(CMoon *this_ptr)
 
 {
   CKeyFramedModel *pCVar1;
+  float *pfVar2;
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_004667e0
                      ((CKeyFramedModel *)&this_ptr->field_0x8);
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_004667e0(pCVar1 + 1);
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_ctor_FUN_004667e0(pCVar1 + 1);
-  *(uint *)&pCVar1[-3].field_0x390 = 0;
-  return (CMoon *)&pCVar1[-3].field_0x390;
+  pfVar2 = &pCVar1[-3].rotation_matrix_workspace.m[2].z;
+  *pfVar2 = 0.0;
+  return (CMoon *)pfVar2;
 }

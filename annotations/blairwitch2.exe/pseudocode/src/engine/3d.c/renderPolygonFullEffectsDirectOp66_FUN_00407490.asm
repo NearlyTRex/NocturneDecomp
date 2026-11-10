@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   engine_3d.c_isVisiblePlane_FUN_00403970
 ;   engine_clipper.c_clipAndRasterize_FUN_00431d90
-;   engine_texture.cpp_FUN_005750e0
+;   engine_texture.cpp_getCurrentTexture_FUN_005750e0
 ;
 ; *****************************************************************************
 
@@ -114,8 +114,8 @@ section .text
     CMP EDX,ECX                         ; 0040758e
     JL 0x00407564                       ; 00407590
         ;   XREF to: 00407564 (CONDITIONAL_JUMP)  ; LAB_00407564
-    CALL engine_texture.cpp_FUN_005750e0 ; 00407592
-        ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_FUN_005750e0()
+    CALL engine_texture.cpp_getCurrentTexture_FUN_005750e0 ; 00407592
+        ;   XREF to: 005750e0 (UNCONDITIONAL_CALL)  ; SMRGLTextureBasic * engine_texture.cpp_getCurrentTexture_FUN_005750e0()
         ;   Label: LAB_00407592
     MOV EDI,dword ptr [ESP]             ; 00407597
     MOV ECX,0x12                        ; 0040759a

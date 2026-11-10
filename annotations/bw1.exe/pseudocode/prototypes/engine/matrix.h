@@ -73,9 +73,9 @@ void __cdecl invertTransformMatrix(void);
 // Address: 005076b0
 void __cdecl buildRotationMatrix(int pitch,int yaw,int roll);
 
-// Original: engine_matrix.c_FUN_005079ce
+// Original: engine_matrix.c_transformWorldToView_FUN_005079ce
 // Address: 005079ce
-void FUN_005079ce(int *param_1);
+void transformWorldToView(int *param_1);
 
 // Original: engine_matrix.c_calculateTransformedZ_FUN_00507aa0
 // Address: 00507aa0
@@ -137,9 +137,9 @@ int __cdecl vectorLength3DToInt(CVector3i *vector_ptr);
 // Address: 00509000
 void __cdecl setCameraOrigin(int x,int y,int z);
 
-// Original: engine_matrix.c_FUN_00509050
+// Original: engine_matrix.c_getCameraOrigin_FUN_00509050
 // Address: 00509050
-void FUN_00509050(void);
+void getCameraOrigin(void);
 
 // Original: engine_matrix.c_getCameraRotation_FUN_00509080
 // Address: 00509080

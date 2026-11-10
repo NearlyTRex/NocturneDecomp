@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 73,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
     "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "derived_field_index_pun",
       "warning_overlapping_globals"
     ],
-    "total_lines": 101
+    "total_lines": 102
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "0043e5c0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043e5c0"
+      "name": "core_cloth.cpp_CCloth_ctor_FUN_0043e5c0"
     },
     {
       "addr": "004a0410",
@@ -138,12 +138,11 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "pCVar5 = core_cloth_cpp_FUN_0043e5c0((CCloth *)&pCVar4[1].field_0xc8);",
-      "type": "unnamed_field"
+      "description": "'pCVar4[1].base.base.create_event + 0x50' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.create_event) (0x78) + 0x50 = 0xc330, which is exactly offsetof(CBoneGuy, boxes[1]). Ghidra had no CBoneGuy type here and reached the field by index arithmetic; write it as ((CBoneGuy *)pCVar4)->boxes[1] (\u00a7de-pun/\u00a712). Ambiguous: CBugs::bugs[3], CDraculaBride::part_list[6], CMobster::part_indices[9] also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 18,
+      "severity": "moderate",
+      "text": "((CCloth *)(pCVar4[1].base.base.create_event + 0x50));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

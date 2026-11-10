@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_004301e0 at 00430371
-;   core_shadow.cpp_FUN_0055fc60 at 0055fd9b
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0 at 00430371
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60 at 0055fd9b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01fe55d0

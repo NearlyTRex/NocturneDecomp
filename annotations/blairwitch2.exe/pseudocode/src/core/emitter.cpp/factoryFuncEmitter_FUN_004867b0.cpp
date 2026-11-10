@@ -11,7 +11,7 @@ void core_emitter_cpp_factoryFuncEmitter_FUN_004867b0(void)
 {
   CEmitter *this_ptr;
   
-  this_ptr = (CEmitter *)FUN_005b8be2(0x61c);
+  this_ptr = (CEmitter *)debugAllocTracked1(0x61c);
   if (this_ptr == (CEmitter *)0x0) {
     return;
   }

@@ -44,7 +44,7 @@ void unkaddr_004a1200_cpp_FUN_004a1570(char *param_1)
     return;
   }
   iVar2 = engine_font_cpp_FUN_004aaf00(_DAT_01511cbc,param_1);
-  iVar3 = engine_font_cpp_FUN_004aafb0(_DAT_01511cbc,param_1);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01511cbc,param_1);
   _DAT_01caf48c = _DAT_01c2a380 + 0x40;
   _DAT_01caf490 = _DAT_01c2a37c + iVar2 + 8;
   _DAT_01caf494 = _DAT_01caf48c + iVar3 + 6;

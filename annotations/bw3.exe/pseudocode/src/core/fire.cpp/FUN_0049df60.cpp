@@ -59,7 +59,7 @@ void core_fire_cpp_FUN_0049df60(float *param_1)
                                (local_24,g_CHeroClassInfo.name_hash), iVar5 == 0 &&
             (param_1[8] == 1.4013e-45)))) {
           core_charactr_cpp_SDamageInfo_ctor_FUN_0042abb0(aSStack_90);
-          local_18 = (float)core_actor_cpp_FUN_0040ce40(0x41200000,0x41a00000);
+          local_18 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,20.0);
           iVar5 = local_24;
           local_8c = (local_18 * param_1[3]) / _DAT_005df900;
           if (&local_74 != &local_54) {
@@ -82,9 +82,9 @@ void core_fire_cpp_FUN_0049df60(float *param_1)
     iVar4 = 0;
     do {
       this_ptr = *(CFlameCan **)(&DAT_01c74c38 + iVar4);
-      fVar1 = *(float *)&this_ptr->field_0x20 - *param_1;
-      fVar3 = *(float *)&this_ptr->field_0x24 - param_1[1];
-      fVar2 = *(float *)&this_ptr->field_0x28 - param_1[2];
+      fVar1 = (this_ptr->base).location.position.x - *param_1;
+      fVar3 = (this_ptr->base).location.position.y - param_1[1];
+      fVar2 = (this_ptr->base).location.position.z - param_1[2];
       if (fVar2 * fVar2 + fVar3 * fVar3 + fVar1 * fVar1 <= (float)_DAT_005c0860) {
         core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(this_ptr);
       }

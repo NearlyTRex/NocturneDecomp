@@ -4,13 +4,52 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EDoorOpenSides.h"
+#include "types/enums/EDoorSide.h"
+#include "types/enums/EDoorState.h"
+#include "types/enums/EDoorSwing.h"
+#include "types/enums/EDoorType.h"
+#include "types/enums/EGroundType.h"
+#include "types/enums/EOneShotState.h"
 
 // Structure: CDoor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xba8 (2984 bytes)
 #pragma pack(push, 1)
 typedef struct CDoor {
-    char field_0[2984]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[348]; // 0x158
+    CKeyFramedModelInstance model; // 0x2b4
+    EGroundType ground_type; // 0x430
+    EDoorType door_type; // 0x434
+    EDoorSide door_side; // 0x438
+    EDoorState door_state; // 0x43c
+    EDoorSwing door_swing; // 0x440
+    char open_condition[100]; // 0x444
+    char close_condition[100]; // 0x4a8
+    char on_open_trigger_event[100]; // 0x50c
+    char on_close_trigger_event[100]; // 0x570
+    char field_1492[1004]; // 0x5d4
+    char open_sound[100]; // 0x9c0
+    char close_sound[100]; // 0xa24
+    char locked_sound[100]; // 0xa88
+    int key_mask; // 0xaec
+    CVector3f orig_pos; // 0xaf0
+    CVector3f orig_orient; // 0xafc
+    float param; // 0xb08
+    float max_param; // 0xb0c
+    float open_speed; // 0xb10
+    float close_speed; // 0xb14
+    CVector3f open_position; // 0xb18
+    EOneShotState one_shot; // 0xb24
+    float swing_range; // 0xb28
+    int block_virtual_director_flag; // 0xb2c
+    int plot_as_box_in_shadow; // 0xb30
+    EDoorOpenSides allowed_sides; // 0xb34
+    int allow_bullet_holes; // 0xb38
+    char field_2876[108]; // 0xb3c
 } CDoor;
 #pragma pack(pop)
 

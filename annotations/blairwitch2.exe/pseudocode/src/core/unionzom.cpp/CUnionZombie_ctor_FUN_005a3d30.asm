@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
-;   core_unionzom.cpp_FUN_005a3fc0
+;   core_unionzom.cpp_CUnionZombie_processStates_FUN_005a3fc0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
@@ -76,8 +76,8 @@ section .text
     PUSH 0x0                            ; 005a3df7
     PUSH EBX                            ; 005a3df9
     MOV dword ptr [EBX + 0x11858],0x0   ; 005a3dfa
-    CALL core_unionzom.cpp_FUN_005a3fc0 ; 005a3e04
-        ;   XREF to: 005a3fc0 (UNCONDITIONAL_CALL)  ; undefined core_unionzom.cpp_FUN_005a3fc0()
+    CALL core_unionzom.cpp_CUnionZombie_processStates_FUN_005a3fc0 ; 005a3e04
+        ;   XREF to: 005a3fc0 (UNCONDITIONAL_CALL)  ; void core_unionzom.cpp_CUnionZombie_processStates_FUN_005a3fc0(CUnionZombie * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a3e09
     PUSH 0x5f0239                       ; 005a3e0c
     LEA ESI,[EBX + 0x10af8]             ; 005a3e11

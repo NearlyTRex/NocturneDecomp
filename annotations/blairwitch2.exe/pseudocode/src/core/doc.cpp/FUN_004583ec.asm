@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_doc_cpp_FUN_004583ec(int param_1)
+; undefined4 core_doc_cpp_FUN_004583ec(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -19,9 +19,9 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_FUN_00408de0
-;   core_charactr.cpp_FUN_0042a5a0
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   engine_console.cpp_FUN_00436710
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     MOV EAX,dword ptr [EBP + 0x14]      ; 00458401
     PUSH EAX                            ; 00458404
     MOV dword ptr [EAX + 0x25614],0x0   ; 00458405
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 0045840f
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 0045840f
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x14c],EAX     ; 00458414
     FLD float ptr [ESP + 0x14c]         ; 0045841b
     ADD ESP,0x8                         ; 00458422
@@ -383,8 +383,8 @@ section .text
     PUSH EAX                            ; 004588c9
     LEA ESI,[ESP + 0xc0]                ; 004588ca
     LEA EDI,[ESP + 0x9c]                ; 004588d1
-    CALL core_vecdir.cpp_FUN_005838f0   ; 004588d8
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004588d8
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0xc0]                ; 004588dd
     ADD ESP,0x4                         ; 004588e4
     MOVSD ES:EDI,ESI                    ; 004588e7

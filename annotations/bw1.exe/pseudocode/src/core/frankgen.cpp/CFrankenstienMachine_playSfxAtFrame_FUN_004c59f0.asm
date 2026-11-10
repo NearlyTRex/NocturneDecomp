@@ -13,8 +13,8 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_005727e0
-;   sound_sndmain.cpp_FUN_00572ac0
-;   sound_sndmain.cpp_FUN_00572b40
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
         ;   XREF to: 004c5a13 (CONDITIONAL_JUMP)  ; LAB_004c5a13
     RET                                 ; 004c5a12
         ;   Label: LAB_004c5a12
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 004c5a13
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 004c5a13
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
         ;   Label: LAB_004c5a13
     MOV EAX,dword ptr [ESP + 0x4]       ; 004c5a18
     ADD EAX,0x490                       ; 004c5a1c

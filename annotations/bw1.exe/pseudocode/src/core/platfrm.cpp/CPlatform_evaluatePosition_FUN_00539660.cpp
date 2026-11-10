@@ -11,10 +11,11 @@
 void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00539660(CPlatform *this_ptr)
 
 {
-  byte *out_euler;
-  byte *puVar1;
+  CLocation *out_pos;
+  UOrientationVector *out_euler;
+  float *pfVar1;
   byte bVar2;
-  uint auStackY_1874 [1523];
+  float afStackY_1874 [1523];
   uint local_98;
   uint local_88;
   CVector3f local_78;
@@ -30,9 +31,8 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00539660(CPlatform 
   float local_48;
   float local_44;
   float local_40;
-  CVector3f local_3c;
-  float local_30;
-  float local_2c;
+  float local_3c;
+  float afStack_38 [4];
   float local_28;
   float local_24;
   float local_20;
@@ -41,39 +41,40 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00539660(CPlatform 
   int local_14;
   
   bVar2 = 0;
-  if (*(float *)&this_ptr->field_0x2dc < 0.0) {
-    *(uint *)&this_ptr->field_0x2dc = 0;
+  if (this_ptr->param < 0.0) {
+    this_ptr->param = 0.0;
   }
-  if (1.0 < *(float *)&this_ptr->field_0x2dc) {
-    *(uint *)&this_ptr->field_0x2dc = 0x3f800000;
+  if (1.0 < this_ptr->param) {
+    this_ptr->param = 1.0;
   }
-  out_euler = &this_ptr->field_0x30;
-  if (this_ptr->field_0x2f0 == '\0') {
-    puVar1 = &this_ptr->field_0x2dc;
-    local_6c = *(float *)&this_ptr->field_0x328 * *(float *)puVar1;
-    local_68 = *(float *)&this_ptr->field_0x32c * *(float *)puVar1;
-    local_64 = *(float *)&this_ptr->field_0x330 * *(float *)puVar1;
-    local_18 = 1.0 - *(float *)&this_ptr->field_0x2dc;
-    local_48 = *(float *)&this_ptr->field_0x31c * local_18;
-    local_44 = *(float *)&this_ptr->field_0x320 * local_18;
-    local_40 = *(float *)&this_ptr->field_0x324 * local_18;
+  out_pos = &(this_ptr->base).location;
+  out_euler = &(this_ptr->base).orient;
+  if (this_ptr->course_filename[0] == '\0') {
+    pfVar1 = &this_ptr->param;
+    local_6c = (this_ptr->end_pos).x * *pfVar1;
+    local_68 = (this_ptr->end_pos).y * *pfVar1;
+    local_64 = (this_ptr->end_pos).z * *pfVar1;
+    local_18 = 1.0 - this_ptr->param;
+    local_48 = (this_ptr->start_pos).x * local_18;
+    local_44 = (this_ptr->start_pos).y * local_18;
+    local_40 = (this_ptr->start_pos).z * local_18;
     local_60 = local_48 + local_6c;
     local_5c = local_44 + local_68;
     local_58 = local_40 + local_64;
-    *(float *)&this_ptr->field_0x20 = local_60;
-    *(float *)&this_ptr->field_0x24 = local_5c;
-    *(float *)&this_ptr->field_0x28 = local_58;
+    (out_pos->position).x = local_60;
+    (this_ptr->base).location.position.y = local_5c;
+    (this_ptr->base).location.position.z = local_58;
     local_54 = local_60;
     local_50 = local_5c;
     local_4c = local_58;
-    local_30 = local_6c;
-    local_2c = local_68;
+    afStack_38[2] = local_6c;
+    afStack_38[3] = local_68;
     local_28 = local_64;
     local_24 = local_48;
     local_20 = local_44;
     local_1c = local_40;
-    core_xform_cpp_FUN_005b7940
-              (&this_ptr->field_0x334,&this_ptr->field_0x344,*(uint *)&this_ptr->field_0x2dc);
+    core_xform_cpp_slerpQuaternion_FUN_005b7940
+              (&this_ptr->orig_orient,&this_ptr->end_orient,this_ptr->param);
     local_98 = local_88;
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * 0xfffffffe * 4) =
          *(uint *)(&stack0xffffff7c + (uint)bVar2 * -8);
@@ -85,23 +86,22 @@ void __cdecl core_platfrm_cpp_CPlatform_evaluatePosition_FUN_00539660(CPlatform 
           ((int)(&stack0xffffff80 + (uint)bVar2 * -8 + (uint)bVar2 * -8) +
           ((uint)bVar2 * -2 + 1) * 4);
     core_xform_cpp_FUN_005b7c00(&stack0xffffff68);
-    local_78._0_4_ = local_3c._0_4_;
-    *(uint *)((int)&local_78 + (uint)bVar2 * -8 + 4) =
-         *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4);
-    *(uint *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-         *(uint *)((int)&local_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+    local_78.x = local_3c;
+    *(float *)((int)&local_78 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];
+    *(float *)((int)&local_78 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+         afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
     if ((CVector3f *)out_euler != &local_78) {
-      *(uint *)out_euler = local_78._0_4_;
-      *(uint *)&this_ptr->field_0x34 = local_78._4_4_;
-      *(uint *)&this_ptr->field_0x38 = local_78._8_4_;
+      (out_euler->vec).x = local_78.x;
+      (this_ptr->base).orient.vec.y = local_78.y;
+      (this_ptr->base).orient.vec.z = local_78.z;
       return;
     }
   }
   else {
-    local_14 = *(int *)&this_ptr->field_0x310;
-    core_course_cpp_FUN_00447f00
-              ((CCourse *)&this_ptr->field_0x310,(float)local_14 * *(float *)&this_ptr->field_0x2dc,
-               (CVector3f *)&this_ptr->field_0x20,(CVector3f *)out_euler);
+    local_14 = (this_ptr->course).len;
+    core_course_cpp_CCourse_evaluate_FUN_00447f00
+              (&this_ptr->course,(float)local_14 * this_ptr->param,&out_pos->position,
+               &out_euler->vec);
   }
   return;
 }

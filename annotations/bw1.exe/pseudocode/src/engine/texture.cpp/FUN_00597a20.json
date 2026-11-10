@@ -20,7 +20,7 @@
     {
       "addr": "00430060",
       "from_addr": "004300ff",
-      "name": "core_charactr.cpp_FUN_00430060",
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,7 +38,7 @@
     {
       "addr": "004c0080",
       "from_addr": "004c023c",
-      "name": "core_flies.cpp_FUN_004c0080",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,7 +50,7 @@
     {
       "addr": "00407820",
       "from_addr": "00407922",
-      "name": "engine_3d.c_FUN_00407820",
+      "name": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,12 +72,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00597c60",
-      "from_addr": "00597c66",
-      "name": "engine_texture.cpp_FUN_00597c60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00597c90",
       "from_addr": "00597c96",
       "name": "engine_texture.cpp_FUN_00597c90",
@@ -93,6 +87,12 @@
       "addr": "00597aa0",
       "from_addr": "00597aa5",
       "name": "engine_texture.cpp_loadTextureAndGetData_FUN_00597aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00597c60",
+      "from_addr": "00597c66",
+      "name": "engine_texture.cpp_updateTextureWithPalette_FUN_00597c60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -201,7 +201,7 @@
       {
         "call_addr": "004300ff",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00430060",
+        "caller": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +258,7 @@
       {
         "call_addr": "004c023c",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004c0080",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -273,7 +273,7 @@
       {
         "call_addr": "00407922",
         "call_type": "direct",
-        "caller": "engine_3d.c_FUN_00407820",
+        "caller": "engine_3d.c_dispatchMRGLToRenderer_FUN_00407820",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

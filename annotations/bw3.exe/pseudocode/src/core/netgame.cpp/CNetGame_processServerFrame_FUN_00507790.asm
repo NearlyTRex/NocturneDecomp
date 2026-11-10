@@ -19,8 +19,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b834a
 ;   core_game.cpp_FUN_004b6f30 at 004b6fc5
-;   core_game.cpp_FUN_004b7f90 at 004b834a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005ca43b
@@ -34,7 +34,7 @@
 ;   TerminatedCString s_core_netgame_cpp_005cb064
 ;   TerminatedCString s_CNetGame_processServerFr_005cb078
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;   undefined4 DAT_01da6474
@@ -50,7 +50,7 @@
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   crt_stdlib.c_rand_FUN_005a35cc
 ;   crt_string.c_memmove_FUN_005a54c0
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     PUSH EBP                            ; 00507793
     SUB ESP,0x90                        ; 00507794
     MOV EBX,dword ptr [ESP + 0xa4]      ; 0050779a
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 005077a1
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 005077a1
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 005077a6
     MOV ECX,0x12                        ; 005077a8
     SAR EDX,0x1f                        ; 005077ad
@@ -218,7 +218,7 @@ section .text
     MOV dword ptr [ESI + 0x4],EAX       ; 0050793a
     MOV EAX,[0x005fe9dc]                ; 0050793d | g_CGamePtr
     MOV dword ptr [ESP + 0x7c],ESI      ; 00507942
-    MOV EDX,dword ptr [EAX + 0x314]     ; 00507946 | g_CGameInstance.field788_0x314
+    MOV EDX,dword ptr [EAX + 0x314]     ; 00507946 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESI + 0x8],EDX       ; 0050794c
     MOV ECX,dword ptr [EBX + 0x1c]      ; 0050794f
     XOR EBP,EBP                         ; 00507952

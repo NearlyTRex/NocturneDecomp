@@ -14,12 +14,12 @@
 ;   engine_mini3d.cpp_FUN_004f36e0 at 004f36ec
 ;   engine_mini3d.cpp_FUN_004f3ab0 at 004f3ac0
 ;   engine_mini3d.cpp_FUN_004f3ad0 at 004f3ae4
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 0048477c
 ;   shape_edittool.cpp_FUN_0047b7c0 at 0047b85e
 ;   shape_edittool.cpp_FUN_0047b8e0 at 0047b90a
 ;   shape_edittool.cpp_FUN_0047c050 at 0047c1fe
 ;   shape_edittool.cpp_FUN_0047ee50 at 0047f079
 ;   shape_edittool.cpp_FUN_0047fa80 at 0047fc38
-;   shape_edittool.cpp_FUN_004843d0 at 0048477c
 ;   shape_edittool.cpp_FUN_004850a0 at 00485225
 ;   ... and 1 more
 ;

@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   sound_sndmain.cpp_CSfxOptions_ctor_FUN_00554a30 at 00554a36
 ;   sound_sndmain.cpp_CSfxSlot_ctor_FUN_00554a60 at 00554a66
-;   sound_sndmain.cpp_FUN_00550420 at 00550438
 ;   sound_sndmain.cpp_FUN_005506b0 at 005506e8
+;   sound_sndmain.cpp_resetCurrentSfxOptions_FUN_00550420 at 00550438
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fbc14

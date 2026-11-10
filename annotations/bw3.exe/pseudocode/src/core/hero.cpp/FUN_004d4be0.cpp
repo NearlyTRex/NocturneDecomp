@@ -22,14 +22,14 @@ CDemonActor * core_hero_cpp_FUN_004d4be0(int param_1)
     core_main_c_FUN_004e4330("CHeroPlaceholder::createHero - failed.");
   }
   core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(0x01D81080,actor);
-  *(uint *)&actor->field_0x20 = *(uint *)(param_1 + 0x20);
-  *(uint *)&actor->field_0x24 = *(uint *)(param_1 + 0x24);
-  *(uint *)&actor->field_0x28 = *(uint *)(param_1 + 0x28);
-  *(uint *)&actor->field_0x2c = *(uint *)(param_1 + 0x2c);
-  if ((uint *)&actor->field_0x30 != (uint *)(param_1 + 0x30)) {
-    *(uint *)&actor->field_0x30 = *(uint *)(param_1 + 0x30);
-    *(uint *)&actor->field_0x34 = *(uint *)(param_1 + 0x34);
-    *(uint *)&actor->field_0x38 = *(uint *)(param_1 + 0x38);
+  (actor->location).position.x = *(float *)(param_1 + 0x20);
+  (actor->location).position.y = *(float *)(param_1 + 0x24);
+  (actor->location).position.z = *(float *)(param_1 + 0x28);
+  (actor->location).area_id = *(int *)(param_1 + 0x2c);
+  if (&actor->orient != (UOrientationVector *)(param_1 + 0x30)) {
+    (actor->orient).vec.x = *(float *)(param_1 + 0x30);
+    (actor->orient).vec.y = *(float *)(param_1 + 0x34);
+    (actor->orient).vec.z = *(float *)(param_1 + 0x38);
   }
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0(actor);
   return actor;

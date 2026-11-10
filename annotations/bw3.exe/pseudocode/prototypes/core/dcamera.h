@@ -165,9 +165,9 @@ void __cdecl initializeCoronaBuffers(void);
 // Address: 0044d060
 void __cdecl renderCoronaDepthScanline(int scanline_y,SSoftwareEdge *right,SSoftwareEdge *left);
 
-// Original: core_dcamera.cpp_FUN_0044d17e
+// Original: core_dcamera.cpp_renderVolumetricLightScanline_FUN_0044d17e
 // Address: 0044d17e
-void FUN_0044d17e(int param_1,int param_2,int param_3);
+void renderVolumetricLightScanline(int param_1,int param_2,int param_3);
 
 // Original: core_dcamera.cpp_renderFlatColorScanline_FUN_0044d320
 // Address: 0044d320
@@ -181,9 +181,9 @@ void __cdecl renderCoronaProjectedTextureScanline(int scanline_y,int x_start,int
 // Address: 0044d6f0
 void __cdecl CDemonCamera::blurCoronaBufferAndClearEdges(CDemonCamera *this_ptr);
 
-// Original: core_dcamera.cpp_FUN_0044d7cc
+// Original: core_dcamera.cpp_log2Custom_FUN_0044d7cc
 // Address: 0044d7cc
-double FUN_0044d7cc(double param_1);
+double log2Custom(double param_1);
 
 // Original: core_dcamera.cpp_CDemonCamera_renderLightCoronas_FUN_0044d800
 // Address: 0044d800
@@ -245,9 +245,9 @@ void __cdecl CDemonCamera::setEffectIntensity(CDemonCamera *this_ptr,float inten
 // Address: 0044f6a0
 void FUN_0044f6a0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: core_dcamera.cpp_FUN_0044f740
+// Original: core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_0044f740
 // Address: 0044f740
-void __cdecl FUN_0044f740(CDemonCamera *this_ptr);
+void __cdecl CDemonCamera::generateFogGrid(CDemonCamera *this_ptr);
 
 // Original: core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_0044f750
 // Address: 0044f750
@@ -305,9 +305,9 @@ void __cdecl CDemonCamera::blendLightmapPixel16(CDemonCamera *this_ptr,int scree
 // Address: 00450c00
 void __cdecl loadCameraFog(int param_1,undefined4 param_2,int param_3);
 
-// Original: core_dcamera.cpp_FUN_00450cbe
+// Original: core_dcamera.cpp_saveCameraFog_FUN_00450cbe
 // Address: 00450cbe
-void FUN_00450cbe(int param_1,undefined4 param_2);
+void saveCameraFog(int param_1,undefined4 param_2);
 
 // Original: core_dcamera.cpp_CDemonCamera_initCameraShake_FUN_00450d70
 // Address: 00450d70

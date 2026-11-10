@@ -9,8 +9,8 @@
 CAlphaBitmap * __cdecl engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d2e0(CAlphaBitmap *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)&this_ptr->field_0x8 = 0;
-  *(uint *)this_ptr = 0;
+  this_ptr->opa = (char *)0x0;
+  this_ptr->act = (uint *)0x0;
+  this_ptr->raw = (char *)0x0;
   return this_ptr;
 }

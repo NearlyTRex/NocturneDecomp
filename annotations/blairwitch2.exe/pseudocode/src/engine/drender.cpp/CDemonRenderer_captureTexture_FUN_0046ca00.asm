@@ -8,16 +8,16 @@
 ; SMRGLTextureBasic * Stack[0x8]:4   texture
 ;
 ; XREF[74]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415a7b
-;   core_bodypart.cpp_FUN_00415ee0 at 00415f0c
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415a7b
+;   core_bodypart.cpp_CBodyPart_setup_FUN_00415ee0 at 00415f0c
 ;   core_chain.cpp_FUN_005b56c0 at 005b575e
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_004264d0 at 004264fb
 ;   core_charactr.cpp_FUN_00424c80 at 00424ce8
-;   core_charactr.cpp_FUN_004264d0 at 004264fb
 ;   core_charactr.cpp_FUN_0042b760 at 0042be24
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0043e930 at 0043efb8
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860 at 0043e8d1
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960 at 0044bf9c
 ;   core_dlight.cpp_FUN_0044b020 at 0044b4f9
-;   core_dlight.cpp_FUN_0044b960 at 0044bf9c
 ;   ... and 64 more
 ;
 ; Referenced Globals:

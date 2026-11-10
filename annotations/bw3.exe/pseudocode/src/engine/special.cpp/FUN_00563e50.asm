@@ -19,11 +19,11 @@
 ;   int g_CSpawnerClassVersion = 0x5
 ;
 ; Called Functions:
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30
 ;   core_actor.cpp_archiveFloat_FUN_0040b830
 ;   core_actor.cpp_archiveInteger_FUN_0040b8b0
 ;   core_actor.cpp_archiveString_FUN_0040b680
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280
-;   core_actor.cpp_FUN_0040ba30
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH 0x5d5527                       ; 00563ec2 | = "spawnmodelName"
     LEA EAX,[EBX + 0x1d0]               ; 00563ec7
     PUSH EAX                            ; 00563ecd
-    CALL core_actor.cpp_FUN_0040ba30    ; 00563ece
-        ;   XREF to: 0040ba30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040ba30(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30 ; 00563ece
+        ;   XREF to: 0040ba30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00563ed3
     CMP dword ptr [0x00606710],0x4      ; 00563ed6 | g_CSpawnerClassVersion
         ;   Label: LAB_00563ed6

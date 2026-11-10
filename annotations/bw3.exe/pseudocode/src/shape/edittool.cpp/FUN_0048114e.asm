@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_0048114e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5)
+; void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)
 ;
 ;
 ; Referenced Globals:
@@ -69,7 +69,7 @@ section .text
     PUSH dword ptr [ESP + 0x34]         ; 004811db
     PUSH EDI                            ; 004811df
     CALL shape_edittool.cpp_FUN_00480f00 ; 004811e0
-        ;   XREF to: 00480f00 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00480f00()
+        ;   XREF to: 00480f00 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00480f00(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 004811e5
     CALL engine_matrix.c_pop_FUN_004e5ef0 ; 004811e8
         ;   XREF to: 004e5ef0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_004e5ef0()

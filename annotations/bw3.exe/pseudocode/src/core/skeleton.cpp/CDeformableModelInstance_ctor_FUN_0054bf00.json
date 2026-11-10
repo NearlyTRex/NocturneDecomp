@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 33,
+    "complexity_score": 19,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 46
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 19,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -30,13 +28,13 @@
     {
       "addr": "004a7600",
       "from_addr": "004a760d",
-      "name": "core_flashlit.cpp_FUN_004a7600",
+      "name": "core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004a7600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00527ca0",
       "from_addr": "00527cb4",
-      "name": "core_rifle.cpp_FUN_00527ca0",
+      "name": "core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -124,7 +122,7 @@
       {
         "call_addr": "004a760d",
         "call_type": "direct",
-        "caller": "core_flashlit.cpp_FUN_004a7600",
+        "caller": "core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004a7600",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -135,7 +133,7 @@
       {
         "call_addr": "00527cb4",
         "call_type": "direct",
-        "caller": "core_rifle.cpp_FUN_00527ca0",
+        "caller": "core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,16 +219,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar2 = __arrinit(&pCVar1[1].field_0x4,100,&g_CVectorTypeInfo);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

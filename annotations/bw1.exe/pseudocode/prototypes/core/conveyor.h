@@ -25,29 +25,29 @@ CConveyor * __cdecl CConveyor::ctor(CConveyor *this_ptr);
 // Address: 00447810
 void __cdecl CConveyor::setup(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_004478a0
+// Original: core_conveyor.cpp_CConveyor_process_FUN_004478a0
 // Address: 004478a0
-void FUN_004478a0(int param_1,float param_2);
+void __cdecl CConveyor::process(CConveyor *this_ptr,float delta_time);
 
 // Original: core_conveyor.cpp_CConveyor_renderOpaque_FUN_00447a20
 // Address: 00447a20
 int __cdecl CConveyor::renderOpaque(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00447a30
+// Original: core_conveyor.cpp_CConveyor_renderBackground_FUN_00447a30
 // Address: 00447a30
-void FUN_00447a30(void);
+void __cdecl CConveyor::renderBackground(CConveyor *this_ptr,int layer_flag);
 
 // Original: core_conveyor.cpp_CConveyor_archive_FUN_00447a40
 // Address: 00447a40
 void __cdecl CConveyor::archive(CConveyor *this_ptr);
 
-// Original: core_conveyor.cpp_FUN_00447ae0
+// Original: core_conveyor.cpp_CConveyor_getCollisionType_FUN_00447ae0
 // Address: 00447ae0
-undefined4 FUN_00447ae0(void);
+ECollisionType __cdecl CConveyor::getCollisionType(CConveyor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_conveyor.cpp_FUN_00447af0
+// Original: core_conveyor.cpp_CConveyor_getBoundingBox_FUN_00447af0
 // Address: 00447af0
-void FUN_00447af0(int param_1);
+CBoundingBox3D * __cdecl CConveyor::getBoundingBox(CConveyor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_conveyor.cpp_CConveyor_dtor_FUN_00447b70
 // Address: 00447b70

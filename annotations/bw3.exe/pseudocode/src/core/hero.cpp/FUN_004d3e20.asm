@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; bool core_hero_cpp_FUN_004d3e20(CDemonActor *param_1,char *param_2)
+; bool core_hero_cpp_FUN_004d3e20(CEnemy *param_1,char *param_2)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x28]:4  local_28
@@ -21,15 +21,15 @@
 ;   undefined4 g_CAmmoClassInfo.name_hash
 ;   CGame g_CGameInstance
 ;   undefined4 g_CHealthItemClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_game.cpp_CGame_displayMessage_FUN_004b46b0
 ;   core_inv.cpp_FUN_004da880
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -52,11 +52,11 @@ section .text
         ;   Label: LAB_004d3e47
     MOV EBX,dword ptr [0x00603b28]      ; 004d3e4e | g_CDemonSetPtr
     MOV EAX,dword ptr [ESP + 0x110]     ; 004d3e54
-    CMP EAX,dword ptr [EBX + 0x14d164]  ; 004d3e5b | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EAX,dword ptr [EBX + 0x14d164]  ; 004d3e5b | g_CDemonSetInstance.actor_count
     JGE 0x004d3fd9                      ; 004d3e61
         ;   XREF to: 004d3fd9 (CONDITIONAL_JUMP)  ; LAB_004d3fd9
     ADD EBX,dword ptr [ESP + 0x104]     ; 004d3e67
-    MOV EBX,dword ptr [EBX + 0x14d168]  ; 004d3e6e | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EBX + 0x14d168]  ; 004d3e6e | g_CDemonSetInstance.actors[0]
     FLD float ptr [EBX + 0x20]          ; 004d3e74
     FSUB float ptr [ESI + 0x20]         ; 004d3e77
     FABS                                ; 004d3e7a
@@ -113,8 +113,8 @@ section .text
     MOV EDX,dword ptr [EBP + 0x18]      ; 004d3efe
     PUSH EDX                            ; 004d3f01
     PUSH EBX                            ; 004d3f02
-    CALL core_actor.cpp_FUN_0040c790    ; 004d3f03
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004d3f03
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004d3f08
     TEST EAX,EAX                        ; 004d3f0b
     JZ 0x004d3e9a                       ; 004d3f0d
@@ -164,8 +164,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004d3f97
         ;   Label: LAB_004d3f97
     PUSH EAX                            ; 004d3f9b
-    CALL crt_unknown.c_FUN_005a28c0     ; 004d3f9c
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d3f9c
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004d3fa1
     MOV EAX,ESP                         ; 004d3fa4
         ;   Label: LAB_004d3fa4

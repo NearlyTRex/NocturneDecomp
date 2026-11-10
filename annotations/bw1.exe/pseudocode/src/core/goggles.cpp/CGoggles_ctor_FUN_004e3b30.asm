@@ -7,12 +7,12 @@
 ; CGoggles *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004d27b0 at 004d531f
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d531f
 ;   core_goggles.cpp_factoryFuncGoggles_FUN_004e3b00 at 004e3b13
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_doc_goggles_kfm_005e3ff5
-;   void* g_CGogglesVTable = 004e3b80
+;   CDemonActor_vtable g_CGogglesVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0

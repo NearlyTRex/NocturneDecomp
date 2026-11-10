@@ -17,7 +17,7 @@ CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_dtor_FUN_00410730(CBaronWeapo
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)this_ptr,1);
+  pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

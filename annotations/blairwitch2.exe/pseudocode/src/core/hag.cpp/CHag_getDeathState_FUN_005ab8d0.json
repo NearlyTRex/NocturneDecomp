@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 57,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005ab8d0",
+    "address_range": [
+      [
+        "005ab8d0",
+        "005ab931"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hag.cpp_CHag_getDeathState_FUN_005ab8d0",
+    "signature": "EDeathState __cdecl core_hag_cpp_CHag_getDeathState_FUN_005ab8d0(CHag *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    },
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059daa0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0c9e",
+      "name": "s_Death_005f0c9e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0ca4",
+      "name": "s_Animation_005f0ca4",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.542857142857143,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 25,
+      "INT_ADD": 14,
+      "INT_AND": 22,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 9,
+      "POPCOUNT": 10,
+      "RETURN": 3,
+      "STORE": 9
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHag *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,\"Death\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "(iVar2 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,\"Animation\"),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "iVar2 = core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 276,
+        "vtable_addr": "00600a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

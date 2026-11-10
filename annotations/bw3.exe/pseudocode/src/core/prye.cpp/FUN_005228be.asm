@@ -8,7 +8,7 @@
 ;   undefined4 DAT_005cd697
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfa0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   crt_math.c_acos_FUN_005a4b74
 ;
 ; *****************************************************************************
@@ -67,8 +67,8 @@ section .text
     FSTP float ptr [EBX]                ; 00522928
         ;   Label: LAB_00522928
     PUSH dword ptr [EBX]                ; 0052292a
-    CALL core_actor.cpp_FUN_0040cfa0    ; 0052292c
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 0052292c
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
     MOV dword ptr [ESP + 0x18],EAX      ; 00522931
     MOV EAX,dword ptr [ESP + 0x18]      ; 00522935
     MOV dword ptr [EBX],EAX             ; 00522939

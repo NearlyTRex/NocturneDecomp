@@ -1,0 +1,246 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 116,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [
+    {
+      "addr": "004e9f20",
+      "from_addr": "004e9f5c",
+      "name": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004e9f20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ea060",
+    "address_range": [
+      [
+        "004ea060",
+        "004ea116"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004ea060",
+    "signature": "void __cdecl core_haystack_cpp_CHaystack_checkMeleeHit_FUN_004ea060(CHaystack *this_ptr,int bone_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b40"
+    },
+    {
+      "addr": "0042c010",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010"
+    },
+    {
+      "addr": "00569130",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00569130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01fd1210",
+      "name": "g_CDemonSetInstance.character_count",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004e9f5c",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004e9f20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e9f95",
+        "call_type": "direct",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004e9f20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.890625,
+    "instruction_count": 64,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 66,
+      "INT_ADD": 43,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 25,
+      "INT_LESS": 3,
+      "INT_MULT": 13,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 12,
+      "INT_SUB": 32,
+      "INT_XOR": 2,
+      "INT_ZEXT": 12,
+      "LOAD": 17,
+      "POPCOUNT": 12,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 313
+  },
+  "stack_frame": {
+    "frame_size": 132,
+    "local_size": 124,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHaystack *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 9,
+      "match": "auStackY_1028",
+      "severity": "moderate",
+      "text": "uint auStackY_1028 [999];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,bone_index);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(CHaystack **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CHaystack **)((int)g_CDemonSetPtr->characters + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&pCVar1->field_0x154 + 0x100))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&pCVar1->field_0x154 + 0x100))",
+      "type": "unnamed_field"
+    }
+  ]
+}

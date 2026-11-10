@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[19]:
-;   core_box.cpp_FUN_0041d480 at 0041d4a2
+;   core_box.cpp_CBox_loadFromFile_FUN_0041d480 at 0041d4a2
 ;   core_cloth.cpp_FUN_0043c330 at 0043c37f
 ;   core_dcamera.cpp_loadCameraFog_FUN_00450c00 at 00450c21
 ;   core_event.cpp_CEventList_loadState_FUN_00495490 at 004954bc
@@ -13,7 +13,7 @@
 ;   core_fldnotes.cpp_FUN_004aa810 at 004aa921
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c0635
 ;   core_game.cpp_FUN_004bdfb0 at 004be3dd
-;   core_gore.cpp_FUN_004cf010 at 004cf02c
+;   core_gore.cpp_CGore_load_FUN_004cf010 at 004cf02c
 ;   core_inv.cpp_CInventory_load_FUN_004dc750 at 004dc78c
 ;   ... and 9 more
 ;

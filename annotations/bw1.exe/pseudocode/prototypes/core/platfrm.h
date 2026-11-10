@@ -29,25 +29,25 @@ void __cdecl CPlatform::setup(CPlatform *this_ptr);
 // Address: 00539660
 void __cdecl CPlatform::evaluatePosition(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_00539810
+// Original: core_platfrm.cpp_CPlatform_process_FUN_00539810
 // Address: 00539810
-void __cdecl FUN_00539810(CPlatform *this_ptr,float delta_time);
+void __cdecl CPlatform::process(CPlatform *this_ptr,float delta_time);
 
-// Original: core_platfrm.cpp_FUN_0053a340
+// Original: core_platfrm.cpp_CPlatform_startMovement_FUN_0053a340
 // Address: 0053a340
-void __cdecl FUN_0053a340(CPlatform *this_ptr,float goal_param,float movement_rate);
+void __cdecl CPlatform::startMovement(CPlatform *this_ptr,float goal_param,float movement_rate);
 
-// Original: core_platfrm.cpp_FUN_0053a3d0
+// Original: core_platfrm.cpp_CPlatform_renderOpaque_FUN_0053a3d0
 // Address: 0053a3d0
-int FUN_0053a3d0(CDemonActor *param_1);
+int __cdecl CPlatform::renderOpaque(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_0053a520
+// Original: core_platfrm.cpp_CPlatform_renderBackground_FUN_0053a520
 // Address: 0053a520
-void FUN_0053a520(CDemonActor *param_1,int param_2);
+void __cdecl CPlatform::renderBackground(CPlatform *this_ptr,int layer_flag);
 
-// Original: core_platfrm.cpp_FUN_0053a700
+// Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_0053a700
 // Address: 0053a700
-void FUN_0053a700(int param_1);
+CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_0053a740
 // Address: 0053a740
@@ -57,13 +57,13 @@ void __cdecl CPlatform::archive(CPlatform *this_ptr);
 // Address: 0053ab00
 int __cdecl CPlatform::isActorOnPlatform(CPlatform *this_ptr,CDemonActor *actor);
 
-// Original: core_platfrm.cpp_FUN_0053ad50
+// Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_0053ad50
 // Address: 0053ad50
-undefined4 FUN_0053ad50(int param_1,int param_2);
+ECollisionType __cdecl CPlatform::getCollisionType(CPlatform *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_platfrm.cpp_FUN_0053ad70
+// Original: core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_0053ad70
 // Address: 0053ad70
-undefined4 FUN_0053ad70(void);
+int __cdecl CPlatform::allowBulletHoles(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_getGroundType_FUN_0053ad90
 // Address: 0053ad90

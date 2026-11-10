@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   y2
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00466820 at 004668a7
+;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820 at 004668a7
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360

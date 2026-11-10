@@ -33,7 +33,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
   
   bVar11 = 0;
   local_20 = 0;
-  core_game_cpp_FUN_004b4430(g_CGamePtr);
+  core_game_cpp_CGame_saveClockTime_FUN_004b4430(g_CGamePtr);
   iVar5 = 0x1d73800;
   iVar4 = 0;
   do {
@@ -41,25 +41,27 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
     iVar4 = iVar4 + 4;
     iVar5 = iVar5 + 0x100;
   } while (iVar4 != 0x20);
-  engine_special_cpp_FUN_00566400(&DAT_01d74024,0x1d74028,&DAT_01d74068,&DAT_01d740a8,0x1d740e8);
+  engine_special_cpp_buildCardList_FUN_00566400
+            ((int *)&DAT_01d74024,(char **)0x1d74028,(char **)&DAT_01d74068,(int *)&DAT_01d740a8,
+             (int *)0x1d740e8);
   if ((int)_DAT_01d74024 <= _DAT_01d74020) {
     _DAT_01d74020 = 0;
   }
   local_1c[0] = 0;
   local_1c[1] = 0;
   local_1c[2] = 0;
-  engine_special_cpp_FUN_005663b0(local_1c,local_1c + 1,local_1c + 2);
+  engine_special_cpp_getVideoMemory_FUN_005663b0(local_1c,local_1c + 1,local_1c + 2);
   do {
     pcVar7 = local_140;
     core_game_cpp_FUN_004b4440(g_CGamePtr);
     this_ptr = g_CDemonSetPtr;
-    *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;
-    core_set_cpp_FUN_0053b100(this_ptr,50000,50000,0x10000);
+    g_CDemonSetPtr->rendering_mode = 1;
+    core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
     pcVar6 = &DAT_005c73f6;
-    *(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;
+    g_CDemonSetPtr->ambient_base_quick = 0xdac;
     core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
     pcVar8 = &DAT_00606730;
-    *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;
+    g_CDemonSetPtr->rendering_mode = 0;
     do {
       cVar1 = *pcVar6;
       *pcVar8 = cVar1;
@@ -73,38 +75,38 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
     if ((0 < (int)_DAT_01d74024) && (_DAT_02cf5fcc != 0)) {
       if ((*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x121a) &&
          (*(int *)(_DAT_01d74020 * 4 + 0x1d740e8) < 6)) {
-        *(uint *)&g_CGamePtr->field_0x8 = 0x10;
-        *(uint *)pCVar2 = 0x280;
-        *(uint *)&pCVar2->field_0x4 = 0x1e0;
+        g_CGamePtr->game_bpp = 0x10;
+        pCVar2->game_pixx = 0x280;
+        pCVar2->game_pixy = 0x1e0;
       }
       pCVar2 = g_CGamePtr;
       if ((*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x8086) &&
          (*(int *)(_DAT_01d74020 * 4 + 0x1d740e8) == 0x7800)) {
-        *(uint *)&g_CGamePtr->field_0x8 = 0x10;
-        *(uint *)pCVar2 = 0x280;
-        *(uint *)&pCVar2->field_0x4 = 0x1e0;
+        g_CGamePtr->game_bpp = 0x10;
+        pCVar2->game_pixx = 0x280;
+        pCVar2->game_pixy = 0x1e0;
       }
       pCVar2 = g_CGamePtr;
       if ((*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x12d2) &&
          (*(int *)(_DAT_01d74020 * 4 + 0x1d740e8) == 0x18)) {
-        *(uint *)&g_CGamePtr->field_0x8 = 0x10;
-        *(uint *)pCVar2 = 0x280;
-        *(uint *)&pCVar2->field_0x4 = 0x1e0;
+        g_CGamePtr->game_bpp = 0x10;
+        pCVar2->game_pixx = 0x280;
+        pCVar2->game_pixy = 0x1e0;
       }
       pCVar2 = g_CGamePtr;
       if ((*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x12d2) &&
          (*(int *)(_DAT_01d74020 * 4 + 0x1d740e8) == 0x19)) {
-        *(uint *)&g_CGamePtr->field_0x8 = 0x10;
-        *(uint *)pCVar2 = 0x280;
-        *(uint *)&pCVar2->field_0x4 = 0x1e0;
+        g_CGamePtr->game_bpp = 0x10;
+        pCVar2->game_pixx = 0x280;
+        pCVar2->game_pixy = 0x1e0;
       }
     }
     pCVar2 = g_CGamePtr;
-    if ((_DAT_02cf5fcc == 0) && (0x1e0 < *(int *)&g_CGamePtr->field_0x4)) {
-      *(uint *)&g_CGamePtr->field_0x4 = 0x1e0;
-      *(uint *)pCVar2 = 0x280;
+    if ((_DAT_02cf5fcc == 0) && (0x1e0 < g_CGamePtr->game_pixy)) {
+      g_CGamePtr->game_pixy = 0x1e0;
+      pCVar2->game_pixx = 0x280;
     }
-    iVar4 = *(int *)&g_CGamePtr->field_0x4;
+    iVar4 = g_CGamePtr->game_pixy;
     if (iVar4 == 0xf0) {
       pcVar6 = "Resolution : 320x240";
     }
@@ -130,7 +132,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
       pcVar6 = "Resolution : 320x240";
     }
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00508960(pcVar6);
-    FUN_005a28c0(0x1d73800,pcVar6);
+    _sprintf((char *)0x1d73800,pcVar6);
     *(uint *)&g_CGamePtr->field_0xc = 0;
     if (_DAT_02cf5fcc == 0) {
       pcVar6 = "3D Hardware : Off";
@@ -139,11 +141,11 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
       pcVar6 = "3D Hardware : On";
     }
     pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00508960(pcVar6);
-    FUN_005a28c0(0x1d73900,pcVar6);
+    _sprintf((char *)0x1d73900,pcVar6);
     if (_DAT_01d74024 == 0) {
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00508960
                          ("No 3D Hardware detected");
-      FUN_005a28c0(&DAT_01d73a00,pcVar6);
+      _sprintf(&DAT_01d73a00,pcVar6);
     }
     else {
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00508960("3D Card : ");
@@ -178,7 +180,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
         pcVar9[1] = cVar1;
         pcVar9 = pcVar9 + 2;
       } while (cVar1 != '\0');
-      FUN_005a28c0(local_40," (%d)",_DAT_01d74020);
+      _sprintf(local_40," (%d)");
       pcVar6 = local_40;
       iVar4 = -1;
       pcVar8 = &DAT_01d73a00;
@@ -212,7 +214,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
       pcVar8[1] = cVar1;
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
-    FUN_005a28c0(local_140,&DAT_005c753c,*(uint *)&g_CGamePtr->field_0x8);
+    _sprintf(local_140,&DAT_005c753c);
     iVar4 = -1;
     pcVar6 = &DAT_01d73b00;
     do {
@@ -234,7 +236,7 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
       pcVar8 = pcVar8 + 2;
     } while (cVar1 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Monitor Calibration");
-    FUN_005a28c0(0x1d73c00,pcVar7);
+    _sprintf((char *)0x1d73c00,pcVar7);
     if (*(int *)&g_CGamePtr->field_0x10 == 0) {
       pcVar7 = "Subtitles : Off";
     }
@@ -288,89 +290,87 @@ void __cdecl core_menu_cpp_FUN_004e85a0(void)
     } while (cVar1 != '\0');
     pcVar7 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Graphic Options");
     iVar4 = core_menu_cpp_FUN_004e7860((char **)0x1d74000,8,&local_20,200,pcVar7);
-    wincore_wddvmem_cpp_FUN_0057a8a0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     pCVar2 = g_CGamePtr;
     uVar3 = _DAT_01d74024;
     switch(iVar4) {
     case 0:
       if (_DAT_01d737d4 == 1) {
-        if ((*(int *)&g_CGamePtr->field_0x4 == 0xf0) && (24000000 < local_1c[0])) {
+        if ((g_CGamePtr->game_pixy == 0xf0) && (24000000 < local_1c[0])) {
 LAB_004e8a3b:
-          *(uint *)&g_CGamePtr->field_0x4 = 0x3c0;
-          *(uint *)pCVar2 = 0x500;
+          g_CGamePtr->game_pixy = 0x3c0;
+          pCVar2->game_pixx = 0x500;
           uVar3 = _DAT_01d74024;
         }
-        else if ((*(int *)&g_CGamePtr->field_0x4 == 0xf0) && (12000000 < local_1c[0])) {
+        else if ((g_CGamePtr->game_pixy == 0xf0) && (12000000 < local_1c[0])) {
 LAB_004e8c0d:
-          *(uint *)&g_CGamePtr->field_0x4 = 0x300;
-          *(uint *)pCVar2 = 0x400;
+          g_CGamePtr->game_pixy = 0x300;
+          pCVar2->game_pixx = 0x400;
           uVar3 = _DAT_01d74024;
         }
         else {
-          iVar4 = *(int *)&g_CGamePtr->field_0x4;
+          iVar4 = g_CGamePtr->game_pixy;
           if (iVar4 == 0xf0) {
-            *(uint *)&g_CGamePtr->field_0x4 = 0x1e0;
-            *(uint *)pCVar2 = 0x280;
+            g_CGamePtr->game_pixy = 0x1e0;
+            pCVar2->game_pixx = 0x280;
             uVar3 = _DAT_01d74024;
           }
           else if (iVar4 == 300) {
-            *(uint *)&g_CGamePtr->field_0x4 = 0xf0;
-            *(uint *)pCVar2 = 0x140;
+            g_CGamePtr->game_pixy = 0xf0;
+            pCVar2->game_pixx = 0x140;
             uVar3 = _DAT_01d74024;
           }
           else if (iVar4 == 0x180) {
 LAB_004e8c41:
-            *(uint *)&g_CGamePtr->field_0x4 = 0xf0;
-            *(uint *)pCVar2 = 0x140;
+            g_CGamePtr->game_pixy = 0xf0;
+            pCVar2->game_pixx = 0x140;
             uVar3 = _DAT_01d74024;
           }
           else if (iVar4 == 0x1e0) {
-            *(uint *)&g_CGamePtr->field_0x4 = 0x180;
-            *(uint *)pCVar2 = 0x200;
+            g_CGamePtr->game_pixy = 0x180;
+            pCVar2->game_pixx = 0x200;
             uVar3 = _DAT_01d74024;
           }
           else if (iVar4 == 600) {
-            *(uint *)&g_CGamePtr->field_0x4 = 0x1e0;
-            *(uint *)pCVar2 = 0x280;
+            g_CGamePtr->game_pixy = 0x1e0;
+            pCVar2->game_pixx = 0x280;
             uVar3 = _DAT_01d74024;
           }
           else {
             if (iVar4 != 0x300) goto LAB_004e8c41;
-            *(uint *)&g_CGamePtr->field_0x4 = 600;
-            *(uint *)pCVar2 = 800;
+            g_CGamePtr->game_pixy = 600;
+            pCVar2->game_pixx = 800;
             uVar3 = _DAT_01d74024;
           }
         }
       }
       else {
-        iVar4 = *(int *)&g_CGamePtr->field_0x4;
+        iVar4 = g_CGamePtr->game_pixy;
         if (iVar4 == 0xf0) {
-          *(uint *)&g_CGamePtr->field_0x4 = 0x180;
-          *(uint *)pCVar2 = 0x200;
+          g_CGamePtr->game_pixy = 0x180;
+          pCVar2->game_pixx = 0x200;
           uVar3 = _DAT_01d74024;
         }
         else if (iVar4 == 300) {
-          *(uint *)&g_CGamePtr->field_0x4 = 0x180;
-          *(uint *)pCVar2 = 0x200;
+          g_CGamePtr->game_pixy = 0x180;
+          pCVar2->game_pixx = 0x200;
           uVar3 = _DAT_01d74024;
         }
         else if (iVar4 == 0x180) {
-          *(uint *)&g_CGamePtr->field_0x4 = 0x1e0;
-          *(uint *)pCVar2 = 0x280;
+          g_CGamePtr->game_pixy = 0x1e0;
+          pCVar2->game_pixx = 0x280;
           uVar3 = _DAT_01d74024;
         }
         else if ((local_1c[0] < 0xb71b01) || (iVar4 != 0x1e0)) {
-          if ((12000000 < local_1c[0]) && (*(int *)&g_CGamePtr->field_0x4 == 600))
-          goto LAB_004e8c0d;
-          if ((24000000 < local_1c[0]) && (*(int *)&g_CGamePtr->field_0x4 == 0x300))
-          goto LAB_004e8a3b;
-          *(uint *)g_CGamePtr = 0x140;
-          *(uint *)&pCVar2->field_0x4 = 0xf0;
+          if ((12000000 < local_1c[0]) && (g_CGamePtr->game_pixy == 600)) goto LAB_004e8c0d;
+          if ((24000000 < local_1c[0]) && (g_CGamePtr->game_pixy == 0x300)) goto LAB_004e8a3b;
+          g_CGamePtr->game_pixx = 0x140;
+          pCVar2->game_pixy = 0xf0;
           uVar3 = _DAT_01d74024;
         }
         else {
-          *(uint *)&g_CGamePtr->field_0x4 = 600;
-          *(uint *)pCVar2 = 800;
+          g_CGamePtr->game_pixy = 600;
+          pCVar2->game_pixx = 800;
           uVar3 = _DAT_01d74024;
         }
       }
@@ -381,21 +381,22 @@ LAB_004e8c41:
       uVar3 = _DAT_02cf5fcc;
       if (bVar10) {
         engine_special_cpp_kill_FUN_005657f0();
-        engine_special_cpp_FUN_00564be0((HWND)0x0);
+        engine_special_cpp_loadExternalRenderer_FUN_00564be0((HWND)0x0);
         uVar3 = _DAT_02cf5fcc;
         if (_DAT_02cf5fcc != 0) {
-          engine_special_cpp_FUN_00566400
-                    (&DAT_01d74024,0x1d74028,&DAT_01d74068,&DAT_01d740a8,0x1d740e8);
-          engine_special_cpp_FUN_005663b0(local_1c,local_1c + 1,local_1c + 2);
+          engine_special_cpp_buildCardList_FUN_00566400
+                    ((int *)&DAT_01d74024,(char **)0x1d74028,(char **)&DAT_01d74068,
+                     (int *)&DAT_01d740a8,(int *)0x1d740e8);
+          engine_special_cpp_getVideoMemory_FUN_005663b0(local_1c,local_1c + 1,local_1c + 2);
           uVar3 = _DAT_01d74024;
         }
         _DAT_01d74024 = uVar3;
         pCVar2 = g_CGamePtr;
         uVar3 = _DAT_01d74024;
         if (*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x121a) {
-          *(uint *)&g_CGamePtr->field_0x8 = 0x10;
-          *(uint *)pCVar2 = 0x280;
-          *(uint *)&pCVar2->field_0x4 = 0x1e0;
+          g_CGamePtr->game_bpp = 0x10;
+          pCVar2->game_pixx = 0x280;
+          pCVar2->game_pixy = 0x1e0;
           uVar3 = _DAT_01d74024;
         }
       }
@@ -409,24 +410,24 @@ LAB_004e8c41:
         if ((int)_DAT_01d74024 <= _DAT_01d74020) {
           _DAT_01d74020 = 0;
         }
-        engine_special_cpp_FUN_005663e0(_DAT_01d74020);
+        engine_special_cpp_selectCard_FUN_005663e0(_DAT_01d74020);
         pCVar2 = g_CGamePtr;
         uVar3 = _DAT_01d74024;
         if (*(int *)(&DAT_01d740a8 + _DAT_01d74020 * 4) == 0x121a) {
-          *(uint *)&g_CGamePtr->field_0x8 = 0x10;
-          *(uint *)pCVar2 = 0x280;
-          *(uint *)&pCVar2->field_0x4 = 0x1e0;
+          g_CGamePtr->game_bpp = 0x10;
+          pCVar2->game_pixx = 0x280;
+          pCVar2->game_pixy = 0x1e0;
           uVar3 = _DAT_01d74024;
         }
       }
       break;
     case 3:
-      if (*(int *)&g_CGamePtr->field_0x8 == 0x10) {
-        *(uint *)&g_CGamePtr->field_0x8 = 0x20;
+      if (g_CGamePtr->game_bpp == 0x10) {
+        g_CGamePtr->game_bpp = 0x20;
         uVar3 = _DAT_01d74024;
       }
       else {
-        *(uint *)&g_CGamePtr->field_0x8 = 0x10;
+        g_CGamePtr->game_bpp = 0x10;
         uVar3 = _DAT_01d74024;
       }
       break;

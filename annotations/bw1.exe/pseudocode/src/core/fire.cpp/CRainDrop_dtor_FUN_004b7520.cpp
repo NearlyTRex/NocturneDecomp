@@ -11,6 +11,6 @@ CRainDrop * __cdecl core_fire_cpp_CRainDrop_dtor_FUN_004b7520(CRainDrop *this_pt
 {
   CRainDrop *pCVar1;
   
-  pCVar1 = (CRainDrop *)core_particle_cpp_FUN_00532150((CParticle *)this_ptr,1);
+  pCVar1 = (CRainDrop *)core_particle_cpp_CParticle_dtor_FUN_00532150((CParticle *)this_ptr,1);
   return pCVar1;
 }

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 31,
+    "complexity_score": 16,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 57
   },
   "cross_references": [
@@ -136,18 +134,14 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x194 = &PTR_engine_pod_cpp_CPod_dtor_FUN_00514350_005e3424;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
+      {
+        "class_name": "CPod",
+        "offset": 0,
+        "vtable_addr": "005e3424"
+      },
       {
         "class_name": "CPod",
         "offset": 8,
@@ -155,6 +149,6 @@
       }
     ],
     "in_vtable": true,
-    "vtable_count": 1
+    "vtable_count": 2
   }
 }

@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   engine_font.cpp_FUN_004c4510
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840
 ;
 ; *****************************************************************************
@@ -34,8 +34,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 00494612
     PUSH EAX                            ; 00494618
     MOV dword ptr [0x01c3f538],EDX      ; 00494619 | DAT_01c3f538
-    CALL engine_font.cpp_FUN_004c4510   ; 0049461f
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049461f
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00494624
     MOV ECX,0x5                         ; 00494627
     MOV EDX,dword ptr [0x0061b498]      ; 0049462c | DAT_0061b498

@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_hero.cpp_FUN_004d4520 at 004d460a
-;   unkafter_prye.cpp_FUN_00525a20 at 00525aad
+;   core_prye.cpp_CPrye_doHeroAction_FUN_00525a20 at 00525aad
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba60

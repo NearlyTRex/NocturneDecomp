@@ -13,6 +13,6 @@ CLeaf * core_fire_cpp_CLeaf_dtor_FUN_0049ee40(CLeaf *this_ptr,uint flags)
 {
   CLeaf *pCVar1;
   
-  pCVar1 = (CLeaf *)core_particle_cpp_FUN_00510df0((CParticle *)this_ptr,1);
+  pCVar1 = (CLeaf *)core_particle_cpp_CParticle_dtor_FUN_00510df0((CParticle *)this_ptr,1);
   return pCVar1;
 }

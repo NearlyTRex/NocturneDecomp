@@ -12,59 +12,59 @@ int __cdecl core_motion_cpp_FUN_00524ba0(CMotionController *this_ptr,int *inout_
 
 {
   int iVar1;
-  float fVar2;
-  int iVar3;
-  int iVar4;
+  int iVar2;
+  CMotionList *pCVar3;
+  CMotionList *pCVar4;
   int iVar5;
-  int iVar6;
   float local_1c;
   float fStack_18;
   
-  iVar5 = *(int *)this_ptr + 0x1c28 + *inout_motion_index * 0x120;
-  iVar6 = 0;
-  iVar4 = 0;
-  local_1c = delta_time * *(float *)(iVar5 + 0x20) + *inout_frame_number;
-  iVar3 = iVar5;
-  if (0 < *(int *)(iVar5 + 0x78)) {
+  pCVar4 = this_ptr->motion_list_ptr + *inout_motion_index * 0x120 + 0x1c28;
+  iVar5 = 0;
+  iVar2 = 0;
+  local_1c = delta_time * *(float *)(pCVar4 + 0x20) + *inout_frame_number;
+  pCVar3 = pCVar4;
+  if (0 < *(int *)(pCVar4 + 0x78)) {
     do {
-      iVar1 = *(int *)(iVar3 + 0x7c);
+      iVar1 = *(int *)(pCVar3 + 0x7c);
       if ((*inout_frame_number <= (float)iVar1) && ((float)iVar1 <= local_1c + (float)_DAT_005eaf6b)
          ) {
         local_1c = (float)iVar1 + (float)_DAT_005eaf6b;
-        iVar6 = *(int *)(iVar3 + 0x80);
+        iVar5 = *(int *)(pCVar3 + 0x80);
       }
-      iVar4 = iVar4 + 1;
-      iVar3 = iVar3 + 8;
-    } while (iVar4 < *(int *)(iVar5 + 0x78));
+      iVar2 = iVar2 + 1;
+      pCVar3 = pCVar3 + 8;
+    } while (iVar2 < *(int *)(pCVar4 + 0x78));
   }
-  if ((double)local_1c < (double)*(int *)(iVar5 + 100) + _DAT_005eaf5b) {
-    fVar2 = 1.0 / (float)*(int *)(iVar5 + 0x68);
-    (**(code **)(*(int *)&this_ptr->field_0x50 + 8))
-              (this_ptr,(float)*(int *)(iVar5 + 0x60) + *inout_frame_number * fVar2,
-               local_1c * fVar2 + (float)*(int *)(iVar5 + 0x60),scale_factor);
+  if ((double)local_1c < (double)*(int *)(pCVar4 + 100) + _DAT_005eaf5b) {
+    (**(code **)(this_ptr->vtable + 8))
+              (this_ptr,(float)*(int *)(pCVar4 + 0x60) +
+                        *inout_frame_number * (1.0 / (float)*(int *)(pCVar4 + 0x68)),
+               local_1c * (1.0 / (float)*(int *)(pCVar4 + 0x68)) + (float)*(int *)(pCVar4 + 0x60),
+               scale_factor);
     *inout_frame_number = local_1c;
-    return iVar6;
+    return iVar5;
   }
-  (**(code **)(*(int *)&this_ptr->field_0x50 + 8))
-            (this_ptr,(float)*(int *)(iVar5 + 0x60) +
-                      *inout_frame_number / (float)*(int *)(iVar5 + 0x68),
-             (float)(*(int *)(iVar5 + 0x60) + *(int *)(iVar5 + 0x6c)),scale_factor);
-  switch(*(uint *)(iVar5 + 0x30)) {
+  (**(code **)(this_ptr->vtable + 8))
+            (this_ptr,(float)*(int *)(pCVar4 + 0x60) +
+                      *inout_frame_number / (float)*(int *)(pCVar4 + 0x68),
+             (float)(*(int *)(pCVar4 + 0x60) + *(int *)(pCVar4 + 0x6c)),scale_factor);
+  switch(*(uint *)(pCVar4 + 0x30)) {
   case 3:
   case 4:
   case 5:
   case 6:
-    *inout_frame_number = (float)(*(int *)(iVar5 + 100) + -1);
-    return iVar6;
+    *inout_frame_number = (float)(*(int *)(pCVar4 + 100) + -1);
+    return iVar5;
   }
-  fStack_18 = *(float *)(iVar5 + 0x38);
+  fStack_18 = *(float *)(pCVar4 + 0x38);
   if (fStack_18 == _DAT_005eaf63) {
-    iVar3 = (**(code **)(*(int *)&this_ptr->field_0x50 + 4))
-                      (this_ptr,*inout_motion_index,(float)(*(int *)(iVar5 + 100) + -1),
-                       *(uint *)(iVar5 + 0x34));
-    fStack_18 = (float)iVar3;
+    iVar2 = (**(code **)(this_ptr->vtable + 4))
+                      (this_ptr,*inout_motion_index,(float)(*(int *)(pCVar4 + 100) + -1),
+                       *(uint *)(pCVar4 + 0x34));
+    fStack_18 = (float)iVar2;
   }
-  *inout_motion_index = *(int *)(iVar5 + 0x34);
+  *inout_motion_index = *(int *)(pCVar4 + 0x34);
   *inout_frame_number = fStack_18;
-  return iVar6;
+  return iVar5;
 }

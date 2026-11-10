@@ -11,7 +11,7 @@ void core_crossbow_cpp_factoryFuncCrossbow_FUN_00449740(void)
 {
   CCrossbow *this_ptr;
   
-  this_ptr = (CCrossbow *)FUN_005c0f32(0x820);
+  this_ptr = (CCrossbow *)debugAllocTracked1(0x820);
   if (this_ptr == (CCrossbow *)0x0) {
     return;
   }

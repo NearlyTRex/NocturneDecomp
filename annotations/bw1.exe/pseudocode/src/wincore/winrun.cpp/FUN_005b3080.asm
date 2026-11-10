@@ -21,7 +21,7 @@
 ;   undefined4 DAT_02c9be68
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   ExitProcess
 ;   MessageBoxA
 ;
@@ -41,8 +41,8 @@ section .text
     PUSH EBX                            ; 005b3095
     PUSH 0x5f9c7a                       ; 005b3096 | = "%s\n\nFile: %s\nLine: %d"
     PUSH 0x2c9a630                      ; 005b309b
-    CALL crt_unknown.c_FUN_005bfb40     ; 005b30a0
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005b30a0
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x14                        ; 005b30a5
     PUSH 0x30                           ; 005b30a8
     MOV ESI,dword ptr [0x006260dc]      ; 005b30aa | PTR_s_Nocturne_006260dc

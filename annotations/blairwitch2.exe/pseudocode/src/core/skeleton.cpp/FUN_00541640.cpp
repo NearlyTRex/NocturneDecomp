@@ -45,13 +45,12 @@ void __cdecl core_skeleton_cpp_FUN_00541640(CDeformableModel *this_ptr,int lod_i
   local_28 = output_buffer;
   local_2c = lod_index << 2;
   local_20 = 0;
-  for (local_24 = 0; local_24 < *(int *)(&this_ptr->field_0x2c + local_2c); local_24 = local_24 + 1)
-  {
-    pfVar1 = (float *)(local_20 + *(int *)(&this_ptr->field_0x40 + local_2c));
+  for (local_24 = 0; local_24 < *(int *)((int)this_ptr->vertex_count + local_2c);
+      local_24 = local_24 + 1) {
+    pfVar1 = (float *)(local_20 + *(int *)((int)this_ptr->vertex_data_ptr + local_2c));
     local_1c = pfVar1;
     if (*(char *)pfVar1 == '\x01') {
-      core_xform_cpp_FUN_00591530
-                (pfVar1 + 4,bone_matrices + (uint)*(byte *)((int)pfVar1 + 1) * 0x30);
+      core_xform_cpp_FUN_00591530(pfVar1 + 4,bone_matrices + *(byte *)((int)pfVar1 + 1));
       local_50 = local_5c;
       (&stack0xffffffb4)[(uint)bVar3 * 0xfffffffe] =
            (float)*(uint *)(&stack0xffffffa8 + (uint)bVar3 * -8);
@@ -71,8 +70,7 @@ void __cdecl core_skeleton_cpp_FUN_00541640(CDeformableModel *this_ptr,int lod_i
       local_14 = pfVar1 + 4;
       for (iVar2 = 0; pfVar1 = pfVar1 + 1, iVar2 < (int)(uint)*(byte *)local_1c; iVar2 = iVar2 + 1)
       {
-        core_xform_cpp_FUN_00591530
-                  (local_14,bone_matrices + (uint)*(byte *)((int)local_18 + 1) * 0x30);
+        core_xform_cpp_FUN_00591530(local_14,bone_matrices + *(byte *)((int)local_18 + 1));
         local_80 = local_38;
         *(uint *)((int)&stack0xffffff84 + (uint)bVar3 * -8) =
              *(uint *)((int)&stack0xffffffcc + (uint)bVar3 * 0xfffffffe * 4);

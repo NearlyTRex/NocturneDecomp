@@ -24,10 +24,10 @@
 ;   CEditorTools* g_CEditorToolsPtr = 01c3eb54
 ;
 ; Called Functions:
+;   core_script.cpp_CScript_buildParsedLines_FUN_00543fd0
 ;   core_script.cpp_CScript_dbLoad_FUN_0054af20
+;   core_script.cpp_CScript_initRuntime_FUN_00544190
 ;   core_script.cpp_FUN_00543740
-;   core_script.cpp_FUN_00543fd0
-;   core_script.cpp_FUN_00544190
 ;   crt_stdio.c_fclose_FUN_005c0d10
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_ftell_FUN_005c2e90
@@ -162,12 +162,12 @@ section .text
     ADD ESP,0x4                         ; 00543f22
     MOV ESI,dword ptr [ESP + 0x31c]     ; 00543f25
     PUSH ESI                            ; 00543f2c
-    CALL core_script.cpp_FUN_00543fd0   ; 00543f2d
-        ;   XREF to: 00543fd0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00543fd0(CScript * this_ptr)
+    CALL core_script.cpp_CScript_buildParsedLines_FUN_00543fd0 ; 00543f2d
+        ;   XREF to: 00543fd0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_buildParsedLines_FUN_00543fd0(CScript * this_ptr)
     ADD ESP,0x4                         ; 00543f32
     PUSH ESI                            ; 00543f35
-    CALL core_script.cpp_FUN_00544190   ; 00543f36
-        ;   XREF to: 00544190 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00544190(CScript * this_ptr)
+    CALL core_script.cpp_CScript_initRuntime_FUN_00544190 ; 00543f36
+        ;   XREF to: 00544190 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initRuntime_FUN_00544190(CScript * this_ptr)
     MOV EAX,0x1                         ; 00543f3b
     ADD ESP,0x4                         ; 00543f40
     ADD ESP,0x308                       ; 00543f43

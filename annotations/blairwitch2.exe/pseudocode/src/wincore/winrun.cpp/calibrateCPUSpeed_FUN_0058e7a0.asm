@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e47b1
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e47b1
 ;
 ; Referenced Globals:
 ;   void* PTR_timeBeginPeriod_005c8444 = 001c88fa
@@ -34,7 +34,7 @@
 ;   QueryPerformanceCounter
 ;   QueryPerformanceFrequency
 ;   timeBeginPeriod
-;   wincore_winrun.cpp_FUN_0058e9e0
+;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
         ;   Label: LAB_0058e7ee
     MOV dword ptr [EBP + -0x8],EAX      ; 0058e7f0
     MOV dword ptr [EBP + -0x4],EAX      ; 0058e7f3
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0058e7f6
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0058e7f6
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_0058e7f6
     PUSH EAX                            ; 0058e7fb
     MOV EBX,0x0                         ; 0058e7fc
@@ -175,8 +175,8 @@ section .text
     CMP EBX,0x5f5e100                   ; 0058e92a
     JC 0x0058e801                       ; 0058e930
         ;   XREF to: 0058e801 (CONDITIONAL_JUMP)  ; LAB_0058e801
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0058e936
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0058e936
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     POP EBX                             ; 0058e93b
     SUB EAX,EBX                         ; 0058e93c
     MOV EBX,EAX                         ; 0058e93e

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 64,
+    "complexity_score": 54,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -24,7 +24,7 @@
     {
       "addr": "004e2e70",
       "from_addr": "004e2ffd",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,7 +76,7 @@
       {
         "call_addr": "004e2ffd",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,14 +148,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x15f694",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f694 = 3;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Auto-generated struct field name",
       "line": 6,

@@ -1,0 +1,136 @@
+// Name: core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004c97e0
+// Address: 004c97e0
+// Address Range: [[004c97e0, 004c9aad]]
+// Convention: __cdecl
+// Signature: int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c97e0(CGhoul *this_ptr,CVector3f *out_points_array)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+int __cdecl core_ghoul_cpp_CGhoul_getTargetPoints_FUN_004c97e0(CGhoul *this_ptr,CVector3f *out_points_array)
+
+{
+  float fVar1;
+  CVector3f *pCVar2;
+  int iVar3;
+  byte bVar4;
+  float afStackY_1088 [1016];
+  float fStack_a0;
+  CVector3f CStack_94;
+  float fStack_88;
+  float afStack_84 [2];
+  CVector3f CStack_7c;
+  CVector3f CStack_70;
+  float fStack_64;
+  float afStack_60 [5];
+  CVector3f CStack_4c;
+  CVector3f CStack_40;
+  float fStack_34;
+  float afStack_30 [2];
+  CVector3f CStack_28;
+  int iStack_1c;
+  CDeformableModelInstance *pCStack_18;
+  
+  bVar4 = 0;
+  core_skeleton_cpp_FUN_0054dcc0(&(this_ptr->base).base.model,_DAT_01d22dc4);
+  CStack_7c.x = fStack_88;
+  *(float *)((int)&CStack_7c + (uint)bVar4 * -8 + 4) = afStack_84[(uint)bVar4 * -2];
+  *(float *)((int)&CStack_7c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_84[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  if (&CStack_7c != out_points_array) {
+    out_points_array->x = CStack_7c.x;
+    out_points_array->y = CStack_7c.y;
+    out_points_array->z = CStack_7c.z;
+  }
+  iVar3 = 1;
+  pCStack_18 = &(this_ptr->base).base.model;
+  iStack_1c = 0;
+  do {
+    switch((iStack_1c + (this_ptr->base).base.base.direction_hint) % 4) {
+    case 0:
+      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[0] * 4) != 0)
+      {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,_DAT_01d22db4);
+        CStack_40.x = fStack_64;
+        *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2];
+        *(float *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+             afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+        if (&CStack_70 != &CStack_40) {
+          CStack_70.x = CStack_40.x;
+          CStack_70.y = CStack_40.y;
+          CStack_70.z = CStack_40.z;
+        }
+LAB_004c98d3:
+        CStack_70.y = CStack_7c.y * (float)_DAT_005c4425 + CStack_70.y * (float)_DAT_005c441d;
+        CStack_70.x = CStack_7c.x * (float)_DAT_005c4415 + CStack_70.x * (float)_DAT_005c4415;
+        pCVar2 = out_points_array + iVar3;
+        if (pCVar2 != &CStack_70) {
+          pCVar2->x = CStack_70.x;
+          pCVar2->y = CStack_70.y;
+          fVar1 = CStack_70.z;
+          goto LAB_004c992a;
+        }
+LAB_004c992d:
+        iVar3 = iVar3 + 1;
+      }
+      break;
+    case 1:
+      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[2] * 4) != 0)
+      {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,_DAT_01d22db8);
+        CStack_94.x = fStack_34;
+        *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + 4) = afStack_30[(uint)bVar4 * -2];
+        *(float *)((int)&CStack_94 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+             afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+        if (&CStack_70 != &CStack_94) {
+          CStack_70.x = CStack_94.x;
+          CStack_70.y = CStack_94.y;
+          CStack_70.z = CStack_94.z;
+        }
+        goto LAB_004c98d3;
+      }
+      break;
+    case 2:
+      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) != 0)
+      {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,_DAT_01d22da0);
+        pCVar2 = out_points_array + iVar3;
+        CStack_28.x = fStack_a0;
+        *(uint *)((int)&CStack_28 + (uint)bVar4 * -8 + 4) =
+             *(uint *)(&stack0xffffff64 + (uint)bVar4 * -8);
+        *(uint *)((int)&CStack_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+             *(uint *)(&stack0xffffff68 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+        if (pCVar2 == &CStack_28) goto LAB_004c992d;
+        pCVar2->x = CStack_28.x;
+        pCVar2->y = CStack_28.y;
+        fVar1 = CStack_28.z;
+LAB_004c992a:
+        out_points_array[iVar3].z = fVar1;
+        goto LAB_004c992d;
+      }
+      break;
+    case 3:
+      if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[9] * 4) != 0)
+      {
+        core_skeleton_cpp_FUN_0054dcc0(pCStack_18,_DAT_01d22dc8);
+        pCVar2 = out_points_array + iVar3;
+        CStack_4c.x = afStack_60[2];
+        *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + 4) = afStack_60[(uint)bVar4 * -2 + 3];
+        *(float *)((int)&CStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+             afStack_60[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
+        if (pCVar2 != &CStack_4c) {
+          pCVar2->x = CStack_4c.x;
+          pCVar2->y = CStack_4c.y;
+          fVar1 = CStack_4c.z;
+          goto LAB_004c992a;
+        }
+        goto LAB_004c992d;
+      }
+    }
+    iStack_1c = iStack_1c + 1;
+    if (3 < iStack_1c) {
+      return iVar3;
+    }
+  } while( true );
+}

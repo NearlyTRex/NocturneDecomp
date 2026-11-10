@@ -7,7 +7,7 @@
 ; float            Stack[0x4]:4   base_frequency
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0055f020 at 0055f247
+;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f247
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ceb91c

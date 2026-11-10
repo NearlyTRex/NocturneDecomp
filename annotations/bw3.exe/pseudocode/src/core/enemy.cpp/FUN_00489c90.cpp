@@ -13,7 +13,7 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
 {
   char cVar1;
   int iVar2;
-  CDemonActor *actor;
+  CDemonActor *this_ptr;
   int iVar3;
   char *pcVar4;
   byte bVar5;
@@ -24,8 +24,8 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
   float local_58;
   float local_54;
   float local_50;
-  uint local_4c;
-  uint local_48;
+  float local_4c;
+  float local_48;
   float local_44;
   float local_3c;
   int local_38;
@@ -34,7 +34,7 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
   float local_2c;
   int local_28;
   float *local_24;
-  uint *local_20;
+  float *local_20;
   float local_1c;
   float local_18;
   float local_14;
@@ -43,7 +43,7 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
   if (*(int *)(param_1 + 0xcecc) == 0) {
     if (0 < *(int *)(param_1 + 0xce64)) {
       local_24 = (float *)(param_1 + 0x20);
-      local_20 = (uint *)(param_1 + 0x30);
+      local_20 = (float *)(param_1 + 0x30);
       local_30 = (char *)(param_1 + 0xcf48);
       local_38 = param_1 + 0xce68;
       local_28 = 0;
@@ -69,28 +69,30 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
           if (local_60 < 0.0) {
             local_60 = 0.0;
           }
-          local_14 = (float)core_actor_cpp_FUN_0040ce40(0,local_1c + local_18 + local_60);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40
+                               (0.0,local_1c + local_18 + local_60);
           fVar6 = (float10)local_14;
           round();
           local_34 = (float)(int)ROUND(fVar6);
           local_2c = (float)(int)local_34;
           local_14 = local_34;
           if (local_2c < local_60) {
-            actor = (CDemonActor *)
-                    core_actor_cpp_createActorByName_FUN_0040c4f0("CAmmo_Bullet");
+            this_ptr = (CDemonActor *)
+                       core_actor_cpp_createActorByName_FUN_0040c4f0("CAmmo_Bullet");
           }
           else if (local_60 + local_18 <= local_2c) {
-            actor = (CDemonActor *)
-                    core_actor_cpp_createActorByName_FUN_0040c4f0("CHealthItemSmall");
+            this_ptr = (CDemonActor *)
+                       core_actor_cpp_createActorByName_FUN_0040c4f0("CHealthItemSmall");
           }
           else {
-            actor = (CDemonActor *)
-                    core_actor_cpp_createActorByName_FUN_0040c4f0("CAmmo_Mana");
+            this_ptr = (CDemonActor *)
+                       core_actor_cpp_createActorByName_FUN_0040c4f0("CAmmo_Mana");
           }
         }
         else {
-          actor = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0(local_38);
-          iVar2 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(actor,g_CBoxActorClassInfo.name_hash);
+          this_ptr = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0(local_38);
+          iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
+                            (this_ptr,g_CBoxActorClassInfo.name_hash);
           if (iVar2 != 0) {
             iVar3 = -1;
             pcVar4 = local_30;
@@ -107,9 +109,9 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
             }
           }
         }
-        if (actor != (CDemonActor *)0x0) {
-          local_44 = (float)core_actor_cpp_FUN_0040ce40(0xc0000000,0x40000000);
-          local_14 = (float)core_actor_cpp_FUN_0040ce40(0xc0000000,0x40000000);
+        if (this_ptr != (CDemonActor *)0x0) {
+          local_44 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-2.0,2.0);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-2.0,2.0);
           local_3c = local_44;
           local_58 = local_24[1];
           local_5c = *local_24 + local_14;
@@ -119,17 +121,17 @@ void core_enemy_cpp_FUN_00489c90(int param_1)
                *(uint *)((int)&stack0xffffffa8 + (uint)bVar5 * -8);
           *(uint *)((int)&stack0xffffffb8 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
                *(uint *)((int)&stack0xffffffac + (uint)bVar5 * -8 + (uint)bVar5 * -8);
-          *(float *)&actor->field_0x20 = local_50;
-          *(uint *)&actor->field_0x24 = local_4c;
-          *(uint *)&actor->field_0x28 = local_48;
-          *(uint *)&actor->field_0x2c = *(uint *)(param_1 + 0x2c);
-          if ((uint *)&actor->field_0x30 != local_20) {
-            *(uint *)&actor->field_0x30 = *local_20;
-            *(uint *)&actor->field_0x34 = local_20[1];
-            *(uint *)&actor->field_0x38 = local_20[2];
+          (this_ptr->location).position.x = local_50;
+          (this_ptr->location).position.y = local_4c;
+          (this_ptr->location).position.z = local_48;
+          (this_ptr->location).area_id = *(int *)(param_1 + 0x2c);
+          if (&this_ptr->orient != (UOrientationVector *)local_20) {
+            (this_ptr->orient).vec.x = *local_20;
+            (this_ptr->orient).vec.y = local_20[1];
+            (this_ptr->orient).vec.z = local_20[2];
           }
-          (*(code *)**(uint **)&actor->field_0x154)(actor);
-          core_mission_cpp_FUN_004f6930(0x01D81080,actor);
+          (*((this_ptr->vtable)._ub)->setup)(this_ptr);
+          core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(0x01D81080,this_ptr);
         }
         local_28 = local_28 + 1;
       } while (local_28 < *(int *)(param_1 + 0xce64));

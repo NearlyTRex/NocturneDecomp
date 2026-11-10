@@ -4,13 +4,38 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SGem.h"
+#include "types/structs/SMRGLTextureModel.h"
+#include "types/structs/SPanel.h"
+#include "types/structs/SReflector.h"
+#include "types/unions/UOrientationVector.h"
+#include "types/unions/UVector3.h"
 
 // Structure: CMansionPuzzleCircle
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1670 (5744 bytes)
 #pragma pack(push, 1)
 typedef struct CMansionPuzzleCircle {
-    char field_0[5744]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance panel_model; // 0x2b4
+    CKeyFramedModelInstance gem_model; // 0x430
+    CKeyFramedModelInstance reflector_model; // 0x5ac
+    CVector3f gem_pos; // 0x728
+    UOrientationVector gem_orient; // 0x734
+    UVector3 emitter_pos; // 0x740
+    SPanel panels[12]; // 0x74c
+    SGem gems[12]; // 0xbfc
+    SReflector reflectors[2]; // 0x149c
+    int laser_color_r[12]; // 0x155c
+    int laser_color_g[12]; // 0x158c
+    int laser_color_b[12]; // 0x15bc
+    int laser_intensity[12]; // 0x15ec
+    SMRGLTextureModel light_texture; // 0x161c
+    float bbox_extent; // 0x1664
+    float panel_radius; // 0x1668
+    float bbox_height; // 0x166c
 } CMansionPuzzleCircle;
 #pragma pack(pop)
 

@@ -15,9 +15,9 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004c6270(CGabriella *
   CHero *pCVar2;
   CCloth *pCVar3;
   
-  pCVar2 = core_hero_cpp_FUN_004ea830((CHero *)this_ptr);
-  pCVar3 = core_cloth_cpp_FUN_0043e5c0((CCloth *)(pCVar2 + 0x1ffec));
-  *(byte ***)(pCVar3 + -0x1fe98) = &g_CGabriellaVTable;
+  pCVar2 = core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
+  pCVar3 = core_cloth_cpp_CCloth_ctor_FUN_0043e5c0((CCloth *)(pCVar2 + 0x1ffec));
+  *(CHero_full_vtable **)(pCVar3 + -0x1fe98) = &g_CGabriellaVTable;
   *(uint *)(pCVar3 + -0x40) = 0;
   *(uint *)(pCVar3 + -0x3c) = 0;
   *(uint *)(pCVar3 + -0x38) = 0;
@@ -36,7 +36,8 @@ CGabriella * __cdecl core_gabriela_cpp_CGabriella_ctor_FUN_004c6270(CGabriella *
   *(uint *)(pCVar3 + -0x20) = 0;
   *(uint *)(pCVar3 + -0xc) = *(uint *)(pCVar3 + -0x10);
   *(uint *)(pCVar3 + -0x14) = *(uint *)(pCVar3 + -0x18);
-  core_skeleton_cpp_FUN_00569f50(pCVar3 + -0x1fe94,"?gabriela.dfm" + 1);
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)(pCVar3 + -0x1fe94),"?gabriela.dfm" + 1);
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             ((CKeyFramedModelInstance *)(*(int *)(pCVar3 + -0x1cc) + 0x158),(char *)0x5e0e49);
   return (CGabriella *)(pCVar3 + -0x1ffec);

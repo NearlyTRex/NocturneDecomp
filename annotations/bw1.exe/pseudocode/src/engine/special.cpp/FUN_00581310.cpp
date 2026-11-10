@@ -14,8 +14,8 @@ int __cdecl engine_special_cpp_FUN_00581310(HWND window_handle)
   HWND pHVar1;
   FARPROC pFVar2;
   int iVar3;
-  CExternalRenderer aCStack_3c30 [7624];
-  CExternalRenderer aCStack_1e68 [7624];
+  CExternalRenderer CStack_3c30;
+  CExternalRenderer CStack_1e68;
   byte *puStack_a0;
   byte *puStack_9c;
   byte *puStack_98;
@@ -62,7 +62,7 @@ int __cdecl engine_special_cpp_FUN_00581310(HWND window_handle)
   if (_DAT_02c83370 == (HMODULE)0x0) {
     return 0;
   }
-  _DAT_02c834b0 = wincore_wddvmem_cpp_FUN_005ad460(&DAT_006257d0);
+  _DAT_02c834b0 = wincore_wddvmem_cpp_loadLibrary_FUN_005ad460(&DAT_006257d0);
   if (_DAT_02c834b0 == (HMODULE)0x0) {
     _DAT_02c83370 = _DAT_02c834b0;
     return 0;
@@ -74,9 +74,9 @@ int __cdecl engine_special_cpp_FUN_00581310(HWND window_handle)
     _DAT_02c83370 = (HMODULE)0x0;
     return 0;
   }
-  (*pFVar2)(_DAT_02c834b0,aCStack_3c30);
-  engine_special_cpp_CExternalRenderer_ctor_FUN_00582d10(aCStack_1e68);
-  iVar3 = engine_special_cpp_CExternalRenderer_validate_FUN_00582d60(aCStack_3c30,aCStack_1e68);
+  (*pFVar2)(_DAT_02c834b0,&CStack_3c30);
+  engine_special_cpp_CExternalRenderer_ctor_FUN_00582d10(&CStack_1e68);
+  iVar3 = engine_special_cpp_CExternalRenderer_validate_FUN_00582d60(&CStack_3c30,&CStack_1e68);
   if (iVar3 == 0) {
     engine_special_cpp_FUN_00580740();
     _DAT_02c83370 = (HMODULE)0x0;
@@ -408,7 +408,7 @@ int __cdecl engine_special_cpp_FUN_00581310(HWND window_handle)
     uStack_20 = 0x28;
     iVar3 = (*_DAT_02c83388)(pHVar1,&puStack_a0);
     if (iVar3 != 0) {
-      engine_special_cpp_FUN_00582b10(_DAT_02c83374);
+      engine_special_cpp_selectCard_FUN_00582b10(_DAT_02c83374);
       return 1;
     }
     _DAT_02c83370 = (HMODULE)iVar3;

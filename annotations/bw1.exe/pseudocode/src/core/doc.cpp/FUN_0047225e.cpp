@@ -26,7 +26,7 @@ void core_doc_cpp_FUN_0047225e(float *param_1,float param_2,float param_3)
       fVar1 = *param_1 + (float)fVar2;
     }
     *param_1 = fVar1;
-    fVar1 = (float)core_actor_cpp_FUN_0040cd60(*param_1);
+    fVar1 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(*param_1);
     *param_1 = fVar1;
   }
   return;

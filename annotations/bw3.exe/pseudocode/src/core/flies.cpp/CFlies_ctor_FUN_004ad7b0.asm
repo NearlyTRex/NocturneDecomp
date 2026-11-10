@@ -15,7 +15,7 @@
 ;   core_gore.cpp_FUN_004ced40 at 004cee1b
 ;
 ; Referenced Globals:
-;   void* g_CFliesVTable = 004ad870
+;   CDemonActor_vtable g_CFliesVTable
 ;   WatcomTypeInfo g_SFlyTypeInfo
 ;
 ; Called Functions:

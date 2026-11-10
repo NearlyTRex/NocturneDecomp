@@ -25,15 +25,15 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_00540df0 at 00541254
+;   core_scat.cpp_CScat_process_FUN_00540df0 at 00541254
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01e7e04c
 ;
 ; Called Functions:
 ;   core_xform.cpp_FUN_005b5760
-;   core_xform.cpp_FUN_005b5930
 ;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
 ; *****************************************************************************
@@ -134,8 +134,8 @@ section .text
     PUSH EAX                            ; 00543024
     LEA ESI,[EBP + 0x56]                ; 00543025
     LEA EDI,[EBP + 0x4a]                ; 00543028
-    CALL core_xform.cpp_FUN_005b5930    ; 0054302b
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5930()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 0054302b
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
     ADD ESP,0x4                         ; 00543030
     LEA EAX,[EBP + 0x4a]                ; 00543033
     LEA ESI,[EBP + 0x56]                ; 00543036

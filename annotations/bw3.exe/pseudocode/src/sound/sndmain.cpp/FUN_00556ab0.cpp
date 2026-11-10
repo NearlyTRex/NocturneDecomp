@@ -15,7 +15,7 @@ uint sound_sndmain_cpp_FUN_00556ab0(uint param_1,uint param_2)
   if (pCVar1 == (CSfxSlot *)0x0) {
     return 0;
   }
-  *(uint *)&pCVar1->field_0x38 = param_2;
+  *(uint *)&(pCVar1->options).field_0x38 = param_2;
   pCVar1->field_0x118 = pCVar1->field_0x118 | 8;
   sound_sndmain_cpp_FUN_00556fd0();
   return 1;

@@ -34,14 +34,14 @@ void core_skeleton_cpp_FUN_005469a0(CDeformableModelInstance *param_1,int param_
   else {
     pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(param_1);
     pfVar1 = (float *)(&param_1->field_0x58 + param_2 * 0xc);
-    if (*(int *)(&pCVar2->field_0x1d21c + param_2 * 0x24) < 0) {
+    if (*(int *)(pCVar2->bone_list + param_2 * 0x24 + 0x20) < 0) {
       local_30 = *pfVar1 + *(float *)&param_1->field_0x6a4;
       local_2c = pfVar1[1] + *(float *)&param_1->field_0x6a8;
       puVar4 = &local_30;
       local_28 = pfVar1[2] + *(float *)&param_1->field_0x6ac;
     }
     else {
-      core_skeleton_cpp_FUN_00546790(param_1,*(int *)(&pCVar2->field_0x1d21c + param_2 * 0x24));
+      core_skeleton_cpp_FUN_00546790(param_1,*(int *)(pCVar2->bone_list + param_2 * 0x24 + 0x20));
       puVar4 = (uint *)&stack0xffffff70;
       puVar5 = local_60;
       for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {

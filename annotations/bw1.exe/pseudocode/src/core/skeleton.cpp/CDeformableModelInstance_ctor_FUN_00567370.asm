@@ -8,9 +8,9 @@
 ;
 ; XREF[8]:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080 at 0042c09a
-;   core_flashlit.cpp_FUN_004b99c0 at 004b99cd
+;   core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004b99c0 at 004b99cd
 ;   core_moloch.cpp_CMoloch_ctor_FUN_005202f0 at 00520306
-;   core_rifle.cpp_FUN_0053ffb0 at 0053ffc4
+;   core_rifle.cpp_CRifle_getMuzzlePoint_FUN_0053ffb0 at 0053ffc4
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00565830 at 0056587e
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00566a20 at 00566a9b
 ;   core_succubus.cpp_CSuccubus_ctor_FUN_00591f10 at 00591f26

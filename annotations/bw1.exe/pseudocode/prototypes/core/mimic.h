@@ -25,25 +25,25 @@ CMimic * __cdecl CMimic::ctor(CMimic *this_ptr);
 // Address: 0050f1b0
 CMimic * CMimic::dtor(CMimic *this_ptr,uint flags);
 
-// Original: core_mimic.cpp_FUN_0050f290
+// Original: core_mimic.cpp_CMimic_setup_FUN_0050f290
 // Address: 0050f290
-void FUN_0050f290(CEnemy *param_1);
+void __cdecl CMimic::setup(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_0050f630
+// Original: core_mimic.cpp_CMimic_process_FUN_0050f630
 // Address: 0050f630
-void FUN_0050f630(CMimic *param_1,float param_2);
+void __cdecl CMimic::process(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_FUN_0050f7e0
+// Original: core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0
 // Address: 0050f7e0
-void __cdecl FUN_0050f7e0(CMimic *this_ptr);
+void __cdecl CMimic::updatePose(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_0050fba0
+// Original: core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0
 // Address: 0050fba0
-void __cdecl FUN_0050fba0(CMimic *this_ptr,float delta_time);
+void __cdecl CMimic::processAnimation(CMimic *this_ptr,float delta_time);
 
-// Original: core_mimic.cpp_FUN_00510530
+// Original: core_mimic.cpp_CMimic_setupCloth_FUN_00510530
 // Address: 00510530
-void __cdecl FUN_00510530(CMimic *this_ptr);
+void __cdecl CMimic::setupCloth(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_renderMirrored_FUN_00510620
 // Address: 00510620
@@ -57,17 +57,17 @@ int __cdecl CMimic::renderOpaque(CMimic *this_ptr);
 // Address: 005108f0
 int __cdecl CMimic::renderTransparent(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_00510900
+// Original: core_mimic.cpp_CMimic_getDeathState_FUN_00510900
 // Address: 00510900
-undefined4 FUN_00510900(void);
+EDeathState __cdecl CMimic::getDeathState(CMimic *this_ptr);
 
-// Original: core_mimic.cpp_FUN_00510910
+// Original: core_mimic.cpp_CMimic_renderBackground_FUN_00510910
 // Address: 00510910
-void FUN_00510910(CDemonActor *param_1,int param_2);
+void __cdecl CMimic::renderBackground(CMimic *this_ptr,int layer_flag);
 
-// Original: core_mimic.cpp_FUN_005109b0
+// Original: core_mimic.cpp_CMimic_archive_FUN_005109b0
 // Address: 005109b0
-void FUN_005109b0(CEnemy *param_1);
+void __cdecl CMimic::archive(CMimic *this_ptr);
 
 // Original: core_mimic.cpp_CMimic_getCollisionType_FUN_00510a80
 // Address: 00510a80

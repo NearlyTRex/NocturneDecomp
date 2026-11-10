@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 160,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 45,
-    "suspect_count": 10,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 137
@@ -185,38 +184,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x28) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x2c + iVar5,cylinder);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x28);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar1 = *(uint **)(iVar4 * 0x20 + *(int *)&this_ptr->field_0x2c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 29,
       "match": "DAT_0152c2a8",
@@ -225,28 +192,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar1 = *(uint **)(iVar4 * 0x20 + 4 + *(int *)&this_ptr->field_0x2c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 35,
       "match": "DAT_0152c2b4",
       "severity": "mild",
       "text": "if (puVar1 != (uint *)&DAT_0152c2b4) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "puVar1 = *(uint **)(*(int *)&this_ptr->field_0x2c + 8 + iVar4 * 0x20);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

@@ -9,6 +9,6 @@
 void __cdecl core_colonel_cpp_CColonel_archive_FUN_004451a0(CColonel *this_ptr)
 
 {
-  core_hero_cpp_FUN_004eab00((CHero *)this_ptr);
+  core_hero_cpp_CHero_archive_FUN_004eab00((CHero *)this_ptr);
   return;
 }

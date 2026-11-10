@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 476,
-    "complexity_score": 614,
+    "complexity_score": 536,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 224,
-    "suspect_count": 35,
+    "pseudocode_lines": 211,
+    "suspect_count": 29,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unknown_field",
       "unknown_type",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 700
+    "total_lines": 687
   },
   "cross_references": [],
   "function": {
@@ -260,7 +259,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1cbc) != 0) {",
@@ -268,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)(param_1 + 4));",
@@ -276,7 +275,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 70,
+      "line": 58,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(CVector3f *)(param_1 + 4));",
@@ -284,31 +283,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dirmat_cpp_FUN_0045b9b0(param_1 + 0x10);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 74,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_a8._0_4_ = CStack_b4._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 74,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_a8._0_4_ = CStack_b4._0_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 64,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "pCVar11 = DAT_005f2afc;",
@@ -316,7 +299,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 70,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f2828);",
@@ -324,7 +307,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 70,
       "match": "DAT_005f2828",
       "severity": "mild",
       "text": "(DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f2828);",
@@ -332,7 +315,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 71,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,1);",
@@ -340,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 74,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = (float10)iStack_ec * ((float10)_DAT_005bb53c / (float10)*(float *)(param_1 + 0x38)) *",
@@ -348,7 +331,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_1c = *(int *)(param_1 + 0x1cc0) - (*(int *)(param_1 + 0x1cc0) >> 0x1f) >> 1;",
@@ -356,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 103,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_1c = *(int *)(param_1 + 0x1cc0) - (*(int *)(param_1 + 0x1cc0) >> 0x1f) >> 1;",
@@ -364,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_18 = *(int *)(param_1 + 0x1cc4) - (*(int *)(param_1 + 0x1cc4) >> 0x1f) >> 1;",
@@ -372,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 91,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_18 = *(int *)(param_1 + 0x1cc4) - (*(int *)(param_1 + 0x1cc4) >> 0x1f) >> 1;",
@@ -380,7 +363,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 124,
+      "line": 111,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_4c = *(float *)(param_1 + 0x140);",
@@ -388,39 +371,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 147,
+      "line": 134,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(*(SProjectedVertex **)DAT_005f2afc,(CVector3i *)&iStack_c0);",
+      "text": "((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_c0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 158,
+      "line": 145,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x30),(CVector3i *)&iStack_90);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&CStack_90);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 169,
+      "line": 156,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x60),(CVector3i *)&iStack_84);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&CStack_84);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 180,
+      "line": 167,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x90),(CVector3i *)&iStack_78);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),aCStack_78);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 181,
+      "line": 168,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "pCVar11 = DAT_005f2afc;",
@@ -428,15 +411,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 182,
+      "line": 169,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_005f2afc + 0x2c) = iStack_30;",
+      "text": "*(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x2c) = iStack_30;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 224,
+      "line": 211,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0(DAT_005f2afc,0);",
@@ -444,66 +427,34 @@
     },
     {
       "description": "Pointer value `&CStack_a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 75,
+      "line": 63,
       "match": "(int)&CStack_a8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&CStack_b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 76,
-      "match": "(int)&CStack_b4",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar3 * -8 + 4);",
+      "text": "*(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) = afStack_b0[(uint)bVar3 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&CStack_a8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 78,
+      "line": 65,
       "match": "(int)&CStack_a8",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&CStack_b4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 79,
-      "match": "(int)&CStack_b4",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "text": "*(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
       "type": "pointer_truncation"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 75,
+      "line": 63,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) =",
+      "text": "*(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) = afStack_b0[(uint)bVar3 * -2];",
       "type": "pointer_cast"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 76,
+      "line": 65,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar3 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 78,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 79,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&CStack_b4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);",
+      "text": "*(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
       "type": "pointer_cast"
     }
   ]

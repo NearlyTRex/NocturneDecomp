@@ -10,7 +10,7 @@
     "pseudocode_lines": 6,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 15
   },
@@ -84,12 +84,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 8,
+      "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_ctor_FUN_0041da00((CBox *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
+      "text": "return (CStake *)&pCVar1[-1].is_valid;",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

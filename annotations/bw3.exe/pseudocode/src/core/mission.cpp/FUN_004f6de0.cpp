@@ -9,7 +9,7 @@
 void core_mission_cpp_FUN_004f6de0(CDemonMission *param_1,int param_2)
 
 {
-  int *piVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   
@@ -25,15 +25,15 @@ void core_mission_cpp_FUN_004f6de0(CDemonMission *param_1,int param_2)
     core_mission_cpp_CDemonMission_buildSetActorList_FUN_004f6bf0(param_1);
   }
   if (*(int *)param_1 != *(int *)(param_1 + 0x1454)) {
-    core_mission_cpp_FUN_004f6a80(param_1);
+    core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(param_1);
   }
   iVar2 = 0;
-  for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {
-    piVar1 = (int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);
+  for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar2);
     iVar2 = iVar2 + 4;
-    (**(code **)(*(int *)(*piVar1 + 0x154) + 0x50))(*piVar1);
+    (**(code **)(*(int *)(iVar1 + 0x154) + 0x50))(iVar1);
   }
-  sound_sndmain_cpp_FUN_00556c60();
+  sound_sndmain_cpp_killAllSfx_FUN_00556c60();
   core_game_cpp_FUN_004c4870(g_CGamePtr);
   *(uint *)&g_CGamePtr->field_0x290 = 1;
   return;

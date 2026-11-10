@@ -25,7 +25,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c1690
-;   unkafter_morph.cpp_FUN_005c43e0
+;   crt_unknown.c_FUN_005c43e0
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     PUSH EAX                            ; 005c1740
     MOV dword ptr [ESP + 0x18],EDI      ; 005c1741
     MOV dword ptr [ESP + 0x24],EBP      ; 005c1745
-    CALL unkafter_morph.cpp_FUN_005c43e0 ; 005c1749
-        ;   XREF to: 005c43e0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c43e0()
+    CALL crt_unknown.c_FUN_005c43e0     ; 005c1749
+        ;   XREF to: 005c43e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c43e0()
     ADD ESP,0x4                         ; 005c174e
     MOV EDX,dword ptr [EBX + 0x18]      ; 005c1751
     SUB EDX,dword ptr [ESP + 0x18]      ; 005c1754

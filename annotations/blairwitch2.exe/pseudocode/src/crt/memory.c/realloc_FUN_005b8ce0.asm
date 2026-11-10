@@ -17,7 +17,7 @@
 ;   core_fldnotes.cpp_FUN_004a38e0 at 004a3915
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_005b6090 at 005b6129
 ;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_005b6200 at 005b6270
-;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529e38
+;   core_script.cpp_CScript_buildParsedLines_FUN_00521ec0 at 00521f2a
 ;   ... and 21 more
 ;
 ; Called Functions:

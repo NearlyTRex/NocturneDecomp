@@ -26,10 +26,9 @@ void * cockpit_ckptutil_c_FUN_0042f74e(int param_1,int *param_2,void *param_3,in
   uint *puVar13;
   int iVar14;
   int iVar15;
-  ulong new_size;
   uint *puVar16;
   byte bVar17;
-  byte auStack_1f4 [256];
+  char acStack_1f4 [256];
   int iStack_f4;
   int iStack_f0;
   int iStack_ec;
@@ -114,10 +113,10 @@ void * cockpit_ckptutil_c_FUN_0042f74e(int param_1,int *param_2,void *param_3,in
         iVar14 = *(int *)((int)piVar3 + iStack_e0 + 0x44) + iVar2;
         iVar15 = iVar14 + -1;
         if (0x1ff < (int)uVar10) {
-          FUN_005b7790(auStack_1f4,"Reached max trace edges: edges %d, scanline %d",uVar10,iVar12);
+          _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
           _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
           _DAT_01d046a4 = 0x8ab;
-          core_main_c_FUN_004e4500(auStack_1f4);
+          core_main_c_FUN_004e4500(acStack_1f4);
         }
         uVar7 = (ushort)iVar12;
         if (0 < iVar2) {
@@ -245,10 +244,10 @@ LAB_0042fa56:
           }
         }
         if (0x1ff < (int)uVar10) {
-          FUN_005b7790(auStack_1f4,"Reached max trace edges: edges %d, scanline %d",uVar10,iVar12);
+          _sprintf(acStack_1f4,"Reached max trace edges: edges %d, scanline %d");
           _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
           _DAT_01d046a4 = 0x8e5;
-          core_main_c_FUN_004e4500(auStack_1f4);
+          core_main_c_FUN_004e4500(acStack_1f4);
         }
         if (iVar15 < iStack_48) {
           iStack_30 = iVar14 + -2;
@@ -332,13 +331,12 @@ LAB_0042fa56:
   if (param_3 == (void *)0x0) {
     *param_4 = 0;
   }
-  new_size = *param_4 * 8 + uVar10 * 8;
-  pvVar6 = realloc(param_3,new_size);
+  pvVar6 = realloc(param_3,*param_4 * 8 + uVar10 * 8);
   if (pvVar6 == (void *)0x0) {
-    FUN_005b7790(auStack_1f4,"Unable to allocate %u bytes for edge list.",new_size);
+    _sprintf(acStack_1f4,"Unable to allocate %u bytes for edge list.");
     _DAT_01d046a0 = "..\\cockpit\\ckptutil.c";
     _DAT_01d046a4 = 0x924;
-    core_main_c_FUN_004e4500(auStack_1f4);
+    core_main_c_FUN_004e4500(acStack_1f4);
   }
   puVar13 = (uint *)0x7bde2c;
   puVar16 = (uint *)(*param_4 * 8 + (int)pvVar6);

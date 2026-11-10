@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 604,
-    "complexity_score": 285,
+    "complexity_score": 330,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 45,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 225,
-    "suspect_count": 5,
+    "suspect_count": 9,
     "suspect_types": [
+      "alloc_magic_size",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -19,7 +20,7 @@
     {
       "addr": "004e46c0",
       "from_addr": "004e47f5",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -44,7 +45,12 @@
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8be2"
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005b8be2"
+    },
+    {
+      "addr": "004a7b70",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_ctor_FUN_004a7b70"
     },
     {
       "addr": "004a7cd0",
@@ -52,29 +58,24 @@
       "name": "engine_font.cpp_CBitFont_openFontFile_FUN_004a7cd0"
     },
     {
-      "addr": "004a7b70",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a7b70"
-    },
-    {
-      "addr": "004a88d0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a88d0"
-    },
-    {
       "addr": "004ab5c0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab5c0"
+      "name": "engine_font.cpp_CBitFont_setCharYOffsetRange_FUN_004ab5c0"
     },
     {
       "addr": "004ab620",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab620"
+      "name": "engine_font.cpp_CBitFont_setFontReady_FUN_004ab620"
+    },
+    {
+      "addr": "004a88d0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_setInitializedFlag_FUN_004a88d0"
     },
     {
       "addr": "0058df90",
       "is_variadic": false,
-      "name": "engine_winfont.cpp_FUN_0058df90"
+      "name": "engine_winfont.cpp_CWinFont_ctor_FUN_0058df90"
     }
   ],
   "globals": [
@@ -355,7 +356,7 @@
       {
         "call_addr": "004e47f5",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -415,7 +416,7 @@
       "line": 171,
       "match": "DAT_0061b190",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0058df90(pCVar3,&DAT_0061b190,0xe,2,2);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0058df90(pCVar3,&DAT_0061b190,0xe,2,2);",
       "type": "undefined_data"
     },
     {
@@ -423,7 +424,7 @@
       "line": 186,
       "match": "DAT_0061b190",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0058df90(pCVar3,&DAT_0061b190,0x12,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0058df90(pCVar3,&DAT_0061b190,0x12,0,0);",
       "type": "undefined_data"
     },
     {
@@ -431,7 +432,7 @@
       "line": 201,
       "match": "DAT_0061b190",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0058df90(pCVar3,&DAT_0061b190,0xc,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0058df90(pCVar3,&DAT_0061b190,0xc,0,0);",
       "type": "undefined_data"
     },
     {
@@ -439,8 +440,40 @@
       "line": 216,
       "match": "DAT_0061b190",
       "severity": "mild",
-      "text": "pCVar4 = engine_winfont_cpp_FUN_0058df90(pCVar3,&DAT_0061b190,10,0,0);",
+      "text": "pCVar4 = engine_winfont_cpp_CWinFont_ctor_FUN_0058df90(pCVar3,&DAT_0061b190,10,0,0);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 168,
+      "match": "(CWinFont*) alloc stride 0x6b80",
+      "severity": "moderate",
+      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 183,
+      "match": "(CWinFont*) alloc stride 0x6b80",
+      "severity": "moderate",
+      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 198,
+      "match": "(CWinFont*) alloc stride 0x6b80",
+      "severity": "moderate",
+      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
+      "type": "alloc_magic_size"
+    },
+    {
+      "description": "Allocation size hardcodes 0x6b80 == sizeof(CWinFont). Replace the magic with sizeof(CWinFont) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 213,
+      "match": "(CWinFont*) alloc stride 0x6b80",
+      "severity": "moderate",
+      "text": "(CWinFont *)debugAllocTracked1(0x6b80)",
+      "type": "alloc_magic_size"
     }
   ]
 }

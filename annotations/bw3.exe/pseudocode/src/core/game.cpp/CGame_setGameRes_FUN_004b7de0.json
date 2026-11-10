@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 198,
+    "complexity_score": 100,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
-    "suspect_count": 15,
+    "pseudocode_lines": 30,
+    "suspect_count": 6,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 131
+    "total_lines": 128
   },
   "cross_references": [
     {
       "addr": "004b7f90",
       "from_addr": "004b81b3",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +54,7 @@
     {
       "addr": "005663e0",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005663e0"
+      "name": "engine_special.cpp_selectCard_FUN_005663e0"
     },
     {
       "addr": "00579bb0",
@@ -131,7 +130,7 @@
       {
         "call_addr": "004b81b3",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +141,7 @@
       {
         "call_addr": "004b83d8",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +152,7 @@
       {
         "call_addr": "004b8a24",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -224,92 +223,20 @@
       "line": 12,
       "match": "DAT_005fba1c",
       "severity": "mild",
-      "text": "if (((DAT_005fba1c != *(int *)&this_ptr->field_0x4) ||",
+      "text": "if (((DAT_005fba1c != this_ptr->game_pixy) || (DAT_005fba20 != this_ptr->game_bpp)) &&",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (((DAT_005fba1c != *(int *)&this_ptr->field_0x4) ||",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 12,
       "match": "DAT_005fba20",
       "severity": "mild",
-      "text": "(DAT_005fba20 != *(int *)&this_ptr->field_0x8)) &&",
+      "text": "if (((DAT_005fba1c != this_ptr->game_pixy) || (DAT_005fba20 != this_ptr->game_bpp)) &&",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(DAT_005fba20 != *(int *)&this_ptr->field_0x8)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(uint *)this_ptr,*(uint *)&this_ptr->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8), iVar1 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 0x1e0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(uint *)this_ptr,*(uint *)&this_ptr->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 28,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(&g_CDemonCameraInstance,DAT_005fba1c);",
@@ -317,7 +244,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 29,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "if (DAT_005fba1c < 0x180) {",
@@ -325,7 +252,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 32,
       "match": "DAT_005fba1c",
       "severity": "mild",
       "text": "_DAT_01d22c3c = (uint)(DAT_005fba1c != 0x1e0);",

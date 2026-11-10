@@ -13,5 +13,5 @@ SBodyPartModel * __cdecl core_bodypart_cpp_SBodyPartModel_ctor_FUN_00417cf0(SBod
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)&this_ptr->field_0x18);
-  return (SBodyPartModel *)&pCVar1[-1].field_0x164;
+  return (SBodyPartModel *)(pCVar1[-1].model_name + 0xec);
 }

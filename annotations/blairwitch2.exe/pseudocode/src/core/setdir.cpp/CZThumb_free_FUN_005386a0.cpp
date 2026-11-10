@@ -9,14 +9,14 @@
 void __cdecl core_setdir_cpp_CZThumb_free_FUN_005386a0(CZThumb *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x24 == 0) {
-    *(uint *)&this_ptr->field_0x4 = 0;
-    *(uint *)this_ptr = *(uint *)&this_ptr->field_0x4;
+  if (this_ptr->zbuffer_data == (void *)0x0) {
+    this_ptr->height = 0;
+    this_ptr->width = this_ptr->height;
     return;
   }
-  FUN_005b86a0(*(int *)&this_ptr->field_0x24);
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)this_ptr = *(uint *)&this_ptr->field_0x4;
+  FUN_005b86a0(this_ptr->zbuffer_data);
+  this_ptr->zbuffer_data = (void *)0x0;
+  this_ptr->height = 0;
+  this_ptr->width = this_ptr->height;
   return;
 }

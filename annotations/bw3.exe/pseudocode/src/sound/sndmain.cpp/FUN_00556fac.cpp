@@ -11,7 +11,7 @@
 void sound_sndmain_cpp_FUN_00556fac(int param_1)
 
 {
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   _DAT_02cf28bc = param_1;
   if (param_1 == 0) {
     _DAT_02cf28b8 = param_1;

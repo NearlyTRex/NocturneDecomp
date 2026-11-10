@@ -7,7 +7,7 @@
 ; CMuzzleFlash *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0049c430 at 0049c4c9
+;   core_fire.cpp_CFireEffect_process_FUN_0049c430 at 0049c4c9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00614d30

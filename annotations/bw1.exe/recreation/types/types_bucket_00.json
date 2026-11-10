@@ -7,6 +7,129 @@
     "size":1404
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_attractActorToward",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"target_local_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_getCarryObjToBodyXForm",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_matrix",
+        "type":{
+          "kind":"class",
+          "name":"CMatrix3x4f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CMatrix3x4f",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CCourseFrame",
+    "size":1
+  },
+  {
+    "kind":"class",
+    "name":"CDemnfolk_full_vtable",
+    "size":344,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_ue",
+        "offset":320
+      },
+      {
+        "name":"_udemnfolk",
+        "offset":328
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemnfolk_playDeathSound",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemnfolk",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonActorType",
     "size":60
@@ -23,6 +146,35 @@
     "parent":"CWeapon",
     "rtti_file":"core/dynamite.cpp",
     "size":1420
+  },
+  {
+    "kind":"funcdef",
+    "name":"CEnemy_updateVictim",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CEnemy",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -45,6 +197,27 @@
     "size":49984
   },
   {
+    "kind":"funcdef",
+    "name":"CPickList_handleInput",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CPickList",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CPodFile",
     "rtti_file":"engine/pod.cpp",
@@ -56,10 +229,112 @@
     "size":432
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_hasHardware3D",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_poll",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"output_buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"short",
+          "ptr":1
+        }
+      },
+      {
+        "name":"num_samples",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_isReadyToFire",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CWinFont",
     "rtti_file":"engine/font.cpp",
     "size":27520
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorOpenSides",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_OPEN_SIDES_NEITHER",
+        "value":0
+      },
+      {
+        "name":"DOOR_OPEN_SIDES_POS_Z",
+        "value":1
+      },
+      {
+        "name":"DOOR_OPEN_SIDES_NEG_Z",
+        "value":2
+      },
+      {
+        "name":"DOOR_OPEN_SIDES_BOTH",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"enum",
@@ -565,6 +840,80 @@
     ]
   },
   {
+    "kind":"enum",
+    "name":"EPlatformSlewMode",
+    "size":4,
+    "values":[
+      {
+        "name":"PLATFORM_SLEW_DISABLED",
+        "value":0
+      },
+      {
+        "name":"PLATFORM_SLEW_START",
+        "value":1
+      },
+      {
+        "name":"PLATFORM_SLEW_END",
+        "value":2
+      },
+      {
+        "name":"PLATFORM_SLEW_BOTH",
+        "value":3
+      },
+      {
+        "name":"PLATFORM_SLEW_CONVEYOR",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ETriggerCause",
+    "size":4,
+    "values":[
+      {
+        "name":"TRIGGER_CAUSE_HERO",
+        "value":0
+      },
+      {
+        "name":"TRIGGER_CAUSE_ACTOR",
+        "value":1
+      },
+      {
+        "name":"TRIGGER_CAUSE_LIGHT",
+        "value":2
+      },
+      {
+        "name":"TRIGGER_CAUSE_ACTION_BUTTON",
+        "value":3
+      },
+      {
+        "name":"TRIGGER_CAUSE_BULLET",
+        "value":4
+      },
+      {
+        "name":"TRIGGER_CAUSE_LASER",
+        "value":5
+      },
+      {
+        "name":"TRIGGER_CAUSE_EXPLOSION",
+        "value":6
+      },
+      {
+        "name":"TRIGGER_CAUSE_DAMAGE",
+        "value":7
+      },
+      {
+        "name":"TRIGGER_CAUSE_MOTION",
+        "value":8
+      },
+      {
+        "name":"TRIGGER_CAUSE_MATCHED_ACTORS",
+        "value":9
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SCameraViewportState",
     "size":1
@@ -576,7 +925,27 @@
   },
   {
     "kind":"struct",
+    "name":"SDamageDecal",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SDialogEntry",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLVertex",
+    "size":12
+  },
+  {
+    "kind":"struct",
     "name":"SMorphPoint",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SMovieFrame",
     "size":1
   },
   {
@@ -601,6 +970,11 @@
   },
   {
     "kind":"struct",
+    "name":"SRayQueryState",
+    "size":1
+  },
+  {
+    "kind":"struct",
     "name":"SSoundDeviceInfo",
     "size":1
   },
@@ -608,6 +982,11 @@
     "kind":"struct",
     "name":"SStereoGains",
     "size":1
+  },
+  {
+    "kind":"union",
+    "name":"UIntegerFloat",
+    "size":4
   },
   {
     "kind":"union",

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[13]:
-;   core_dirmat.cpp_FUN_0045b8e0 at 0045b991
 ;   core_dirmat.cpp_FUN_0045b9b0 at 0045bcfc
-;   core_fire.cpp_FUN_00496c0c at 00496c4f
+;   core_dirmat.cpp_angleFromSinCos_FUN_0045b8e0 at 0045b991
 ;   core_fire.cpp_FUN_004a2e20 at 004a36b4
+;   core_fire.cpp_safeAcos_FUN_00496c0c at 00496c4f
 ;   core_prye.cpp_FUN_0051c1c0 at 0051c4f4
 ;   core_prye.cpp_FUN_005228be at 0052290d
 ;   core_prye.cpp_FUN_0052294e at 00522a10
 ;   core_prye.cpp_FUN_00522b00 at 00523463
 ;   core_prye.cpp_FUN_00523800 at 00523d2a
-;   core_xform.cpp_FUN_00583a40 at 00583af2
+;   core_xform.cpp_angleFromSinCos_FUN_00583a40 at 00583af2
 ;   ... and 3 more
 ;
 ; Referenced Globals:

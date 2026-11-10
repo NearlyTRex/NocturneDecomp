@@ -8,6 +8,9 @@
 #include "system/winuser.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CAudioRecPuzzle.h"
+#include "types/classes/CBasicEnemy.h"
+#include "types/classes/CBasicNPC.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CComplexPolygon.h"
 #include "types/classes/CDemonActor.h"
@@ -22,12 +25,14 @@
 #include "types/classes/COptimize.h"
 #include "types/classes/CPatrolPoint.h"
 #include "types/classes/CQuaternion4f.h"
+#include "types/classes/CTwigZombie.h"
 #include "types/classes/CVector3f.h"
-#include "types/classes/CWayPoint.h"
-#include "types/classes/CWeapon.h"
 #include "types/classes/CZombie.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/funcdefs/CustomScanlineFunc.h"
 #include "types/structs/SButtonStruct.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SExpandedEdge.h"
 #include "types/structs/SFollowSlotStruct.h"
@@ -37,7 +42,7 @@
 // FUNCTION PROTOTYPES - Range 0x590000
 // =============================================================================
 
-void __cdecl wincore_winrun_cpp_FUN_00590040(void);
+void __cdecl wincore_winrun_cpp_doNothing2_FUN_00590040(void);
 void __cdecl wincore_winrun_cpp_getJoystickState_FUN_00590060(void);
 float unkafter_winrun_cpp_FUN_005901c0(int param_1,int *param_2,float param_3,float param_4);
 void unkafter_winrun_cpp_FUN_005902a0(int param_1);
@@ -54,34 +59,34 @@ void unkafter_winrun_cpp_FUN_00590d80(void);
 void __cdecl wincore_winvideo_cpp_closeMovie_FUN_00590e40(HWND window_handle);
 void __cdecl wincore_winvideo_cpp_openMovie_FUN_00590e90(HWND parent_window,char *movie_filename);
 void __cdecl wincore_winvideo_cpp_toggleMoviePlayback_FUN_00591120(HWND notify_window,int play_state);
-int __cdecl wincore_winvideo_cpp_FUN_00591190(char *directory_path,char *movie_filename);
+int __cdecl wincore_winvideo_cpp_playMovie_FUN_00591190(char *directory_path,char *movie_filename);
 void core_xform_cpp_FUN_00591530(float *param_1,float *param_2);
 float * __cdecl core_xform_cpp_transformVector3x4InPlace_FUN_005915b0(float *param_1,float *param_2);
 void core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(float *param_1,float *param_2);
 undefined4 * __cdecl core_xform_cpp_multiplyMatrix3x4InPlace_FUN_00591860(undefined4 *param_1,undefined4 param_2);
 void __cdecl core_xform_cpp_setIdentityMatrix3x4_FUN_005918a0(undefined4 *param_1);
-void core_xform_cpp_FUN_005918fe(void);
+void core_xform_cpp_somebodyWriteMe_FUN_005918fe(void);
 void __cdecl core_xform_cpp_setRotationScaleIdentity_FUN_00591930(undefined4 *param_1);
 void core_xform_cpp_FUN_00591980(float *param_1);
 void __cdecl core_xform_cpp_clearTranslation_FUN_00591ab0(int param_1);
 void __cdecl core_xform_cpp_FUN_00591ad0(CMatrix3x4f *output_matrix,CVector3f *position,CVector3f *euler_angles);
 void core_xform_cpp_FUN_00591c10(float *param_1,float *param_2,int param_3);
-float core_xform_cpp_FUN_00591d10(float param_1,float param_2);
-float * core_xform_cpp_FUN_00591de0(float *param_1);
-float * core_xform_cpp_FUN_00592280(float *param_1);
+float core_xform_cpp_angleFromSinCos_FUN_00591d10(float param_1,float param_2);
+float * core_xform_cpp_matrixToEulerAngles_FUN_00591de0(float *param_1);
+float * core_xform_cpp_matrixToEulerAnglesZYX_FUN_00592280(float *param_1);
 void core_xform_cpp_FUN_00592720(int param_1);
 double __cdecl core_xform_cpp_determinant_FUN_005927e0(float *param_1);
-void core_xform_cpp_FUN_00592830(float *param_1);
+void core_xform_cpp_inverse_FUN_00592830(float *param_1);
 void core_xform_cpp_FUN_00592dd0(void);
 void core_xform_cpp_buildRotationX_FUN_00593240(float param_1);
 void core_xform_cpp_buildRotationY_FUN_005932c0(float param_1);
-void core_xform_cpp_FUN_005934e0(float param_1);
+void core_xform_cpp_buildXFlipMatrix_FUN_005934e0(float param_1);
 void core_xform_cpp_FUN_0059353e(float param_1);
-void core_xform_cpp_FUN_005935a0(float param_1);
-void core_xform_cpp_FUN_00593770(undefined4 *param_1,undefined4 *param_2,float param_3);
+void core_xform_cpp_buildZFlipMatrix_FUN_005935a0(float param_1);
+void core_xform_cpp_lerpMatrix3x4_FUN_00593770(undefined4 *param_1,undefined4 *param_2,float param_3);
 CQuaternion4f * __cdecl core_xform_cpp_FUN_005938c0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 void core_xform_cpp_quaternionToMatrix3x4_FUN_00593a10(CQuaternion4f *param_1);
-void core_xform_cpp_FUN_00593a50(float *param_1);
+void core_xform_cpp_matrixToQuaternion_FUN_00593a50(float *param_1);
 void core_xform_cpp_negateFirstComponent_FUN_00593c00(float *param_1);
 void __cdecl core_xform_cpp_setIdentityQuaternion_FUN_00593c40(undefined4 *param_1);
 void core_xform_cpp_multiplyQuaternion_FUN_00593c60(float *param_1,float *param_2);
@@ -101,35 +106,35 @@ void __cdecl core_xform_cpp_clipInterpolateLeftPlane_FUN_00594670(int *param_1,i
 void __cdecl core_xform_cpp_clipInterpolateTopPlane_FUN_00594730(int *param_1,int *param_2,int *param_3);
 void __cdecl core_xform_cpp_clipInterpolateBottomPlane_FUN_005947f0(int *param_1,int *param_2,int *param_3);
 void __cdecl core_xform_cpp_clipPolygonStage3_FUN_00594bb0(void);
-void core_xform_cpp_FUN_00594e90(void);
+void __cdecl core_xform_cpp_clampClippedVertices_FUN_00594e90(void);
 void __cdecl core_xform_cpp_transformAndClipGeometry_FUN_00594f40(int vertex_count,int *vertex_indices);
 void core_zombie_cpp_staticInit_FUN_00595680(void);
 float core_zombie_cpp_FUN_005956b0(int param_1);
 void core_zombie_cpp_FUN_00595750(int param_1);
-void core_zombie_cpp_FUN_00595810(int param_1);
+void core_zombie_cpp_getObjectGrabPointWorld_FUN_00595810(int param_1);
 undefined4 __cdecl core_zombie_cpp_classifyObjectShape_FUN_00595910(float *param_1);
 void core_zombie_cpp_factoryFuncZombie_FUN_00595a60(void);
 CDemonActorType * core_zombie_cpp_CZombie_getActorType_FUN_00595a80(CZombie *this_ptr);
 CZombie * core_zombie_cpp_CZombie_ctor_FUN_00595a90(CZombie *this_ptr);
-void core_zombie_cpp_FUN_00595c00(CEnemy *param_1);
-void core_zombie_cpp_FUN_00595f30(CZombie *param_1,float param_2);
-void core_zombie_cpp_FUN_005980a0(int param_1,int param_2);
-int __cdecl core_zombie_cpp_FUN_005984e0(CZombie *this_ptr,float delta_time);
-int __cdecl core_zombie_cpp_FUN_00598e40(CZombie *this_ptr,int object_shape_type);
-int __cdecl core_zombie_cpp_FUN_00598ee0(CZombie *this_ptr,int object_shape_type);
-void core_zombie_cpp_FUN_00598f20(int param_1);
-undefined4 core_zombie_cpp_FUN_00598f60(int param_1);
-undefined4 core_zombie_cpp_FUN_00598fa0(int param_1);
-void core_zombie_cpp_FUN_00599160(CEnemy *param_1);
-undefined4 core_zombie_cpp_FUN_005992b0(int param_1,undefined4 *param_2);
-void __cdecl core_zombie_cpp_FUN_00599400(CZombie *this_ptr,SDamageInfo *damage_info);
-void core_zombie_cpp_FUN_005996d0(CZombie *param_1,SDamageInfo *param_2);
-int core_zombie_cpp_FUN_00599900(int param_1,float *param_2);
+void __cdecl core_zombie_cpp_CZombie_setup_FUN_00595c00(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_process_FUN_00595f30(CZombie *this_ptr,float delta_time);
+CMatrix3x4f * __stack2_esi core_zombie_cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+int __cdecl core_zombie_cpp_CZombie_processPickup_FUN_005984e0(CZombie *this_ptr,float delta_time);
+int __cdecl core_zombie_cpp_CZombie_getPickupHandIndex_FUN_00598e40(CZombie *this_ptr,int object_shape_type);
+int __cdecl core_zombie_cpp_CZombie_canPickupWithHand_FUN_00598ee0(CZombie *this_ptr,int object_shape_type);
+void __cdecl core_zombie_cpp_CZombie_dropAndClearTarget_FUN_00598f20(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_renderOpaque_FUN_00598f60(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_renderTransparent_FUN_00598fa0(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_archive_FUN_00599160(CZombie *this_ptr);
+int __cdecl core_zombie_cpp_CZombie_canBeAttracted_FUN_005992b0(CZombie *this_ptr,CVector3f *out_attract_position);
+void __cdecl core_zombie_cpp_CZombie_processDismemberment_FUN_00599400(CZombie *this_ptr,SDamageInfo *damage_info);
+void __cdecl core_zombie_cpp_CZombie_processDamage_FUN_005996d0(CZombie *this_ptr,SDamageInfo *damage_info);
+int __cdecl core_zombie_cpp_CZombie_getTargetPoints_FUN_00599900(CZombie *this_ptr,CVector3f *out_points_array);
 int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_00599c10(CZombie *this_ptr,CDemonActor *grabber);
 int __cdecl core_zombie_cpp_CZombie_canBeGrabbed_FUN_00599c50(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_zombie_cpp_CZombie_getGrabbed_FUN_00599c60(CZombie *this_ptr,CDemonActor *grabber,int grab_type);
 int __cdecl core_zombie_cpp_CZombie_shouldIgnoreForTargeting_FUN_00599cd0(CZombie *this_ptr);
-void __cdecl core_zombie_cpp_FUN_00599d00(CZombie *this_ptr);
+void __cdecl core_zombie_cpp_CZombie_resetChaseState_FUN_00599d00(CZombie *this_ptr);
 CZombie * core_zombie_cpp_CZombie_dtor_FUN_00599d70(CZombie *this_ptr,uint flags);
 void unkafter_zombie_cpp_FUN_00599e0e(int param_1,int param_2);
 int * unkafter_zombie_cpp_FUN_0059a06e(int param_1,int *param_2);
@@ -163,7 +168,7 @@ void unkaddr_0059aa80_cpp_FUN_0059b970(int param_1);
 void unkaddr_0059aa80_cpp_FUN_0059ba10(int param_1,int param_2);
 undefined4 unkaddr_0059aa80_cpp_FUN_0059bad0(int param_1,int param_2,int param_3);
 void unkaddr_0059aa80_cpp_FUN_0059bb40(int param_1);
-void unkaddr_0059aa80_cpp_FUN_0059bb60(int param_1,int param_2,int param_3,undefined4 param_4,int param_5);
+void unkaddr_0059aa80_cpp_FUN_0059bb60(int param_1,int param_2,int param_3,float param_4,int param_5);
 int __cdecl shape_superopt_cpp_COptimize_getMaxPolygonSides_FUN_0059bdf0(COptimize *this_ptr);
 undefined4 shape_superopt_cpp_FUN_0059be00(int param_1);
 undefined4 shape_superopt_cpp_FUN_0059be10(int param_1);
@@ -183,44 +188,44 @@ void core_goggles_cpp_staticInit_FUN_0059c000(void);
 void core_goggles_cpp_factoryFuncGoggles_FUN_0059c030(void);
 CDemonActorType * core_goggles_cpp_CGoggles_getActorType_FUN_0059c050(CGoggles *this_ptr);
 CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_0059c060(CGoggles *this_ptr);
-void core_goggles_cpp_FUN_0059c0b0(CDemonActor *param_1);
-undefined4 core_goggles_cpp_FUN_0059c0d0(undefined4 param_1,CDemonActor *param_2);
-void core_goggles_cpp_FUN_0059c0f0(void);
-int core_goggles_cpp_FUN_0059c100(int param_1);
-void core_goggles_cpp_FUN_0059c1a0(CDemonActor *param_1);
-undefined4 core_goggles_cpp_FUN_0059c1d0(void);
-void core_goggles_cpp_FUN_0059c1e0(int param_1);
+void __cdecl core_goggles_cpp_CGoggles_setup_FUN_0059c0b0(CGoggles *this_ptr);
+int __cdecl core_goggles_cpp_CGoggles_canPickup_FUN_0059c0d0(CGoggles *this_ptr,CDemonActor *picker);
+void __cdecl core_goggles_cpp_CGoggles_process_FUN_0059c0f0(CGoggles *this_ptr,float delta_time);
+int __cdecl core_goggles_cpp_CGoggles_renderOpaque_FUN_0059c100(CGoggles *this_ptr);
+void __cdecl core_goggles_cpp_CGoggles_archive_FUN_0059c1a0(CGoggles *this_ptr);
+ECollisionType __cdecl core_goggles_cpp_CGoggles_getCollisionType_FUN_0059c1d0(CGoggles *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_goggles_cpp_CGoggles_getBoundingBox_FUN_0059c1e0(CGoggles *this_ptr,CBoundingBox3D *out_box);
 CGoggles * core_goggles_cpp_CGoggles_dtor_FUN_0059c220(CGoggles *this_ptr,uint flags);
 void unkaddr_0059c270_cpp_FUN_0059c270(void);
 CGameHook * unkclass_gamehook_cpp_CGameHook_ctor_FUN_0059c290(CGameHook *this_ptr);
 CGameHook * unkclass_gamehook_cpp_CGameHook_dtor_FUN_0059c2b0(CGameHook *this_ptr,uint flags);
 void unkaddr_0059c270_cpp_FUN_0059c2c0(void);
-void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,char *param_4);
 void unkaddr_0059c270_cpp_FUN_0059c3d0(uint *param_1);
 void core_patrpoin_cpp_staticInit_FUN_0059c580(void);
 void core_patrpoin_cpp_factoryFuncPatrolPoint_FUN_0059c5b0(void);
 CDemonActorType * core_patrpoin_cpp_CPatrolPoint_getActorType_FUN_0059c5d0(CPatrolPoint *this_ptr);
 CPatrolPoint * core_patrpoin_cpp_CPatrolPoint_ctor_FUN_0059c5e0(CPatrolPoint *this_ptr);
 CPatrolPoint * core_patrpoin_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *this_ptr,uint flags);
-void core_patrpoin_cpp_FUN_0059c670(CWayPoint *param_1);
-void core_patrpoin_cpp_FUN_0059c680(int param_1,float param_2);
-undefined4 core_patrpoin_cpp_FUN_0059c980(void);
-undefined4 core_patrpoin_cpp_FUN_0059c9a0(int param_1);
+void __cdecl core_patrpoin_cpp_CPatrolPoint_setup_FUN_0059c670(CPatrolPoint *this_ptr);
+void __cdecl core_patrpoin_cpp_CPatrolPoint_process_FUN_0059c680(CPatrolPoint *this_ptr,float delta_time);
+int __cdecl core_patrpoin_cpp_CPatrolPoint_renderOpaque_FUN_0059c980(CPatrolPoint *this_ptr);
+int __cdecl core_patrpoin_cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0(CPatrolPoint *this_ptr);
 undefined4 core_patrpoin_cpp_FUN_0059c9c0(char *param_1,uint *param_2);
 void core_lantern_cpp_staticInit_FUN_0059cb70(void);
 void core_lantern_cpp_factoryFuncLantern_FUN_0059cba0(void);
 CDemonActorType * core_lantern_cpp_CLantern_getActorType_FUN_0059cbc0(CLantern *this_ptr);
 CLantern * core_lantern_cpp_CLantern_ctor_FUN_0059cbd0(CLantern *this_ptr);
-void core_lantern_cpp_FUN_0059ccc0(CWeapon *param_1,int param_2);
-undefined4 core_lantern_cpp_FUN_0059cce0(void);
-void core_lantern_cpp_FUN_0059ccf0(int param_1,float param_2);
+void __cdecl core_lantern_cpp_CLantern_setup_FUN_0059ccc0(CLantern *this_ptr);
+int __cdecl core_lantern_cpp_CLantern_fire_FUN_0059cce0(CLantern *this_ptr);
+void __cdecl core_lantern_cpp_CLantern_process_FUN_0059ccf0(CLantern *this_ptr,float delta_time);
 void core_lantern_cpp_FUN_0059ced0(int param_1);
-void core_lantern_cpp_FUN_0059d000(CWeapon *param_1);
-undefined4 core_lantern_cpp_FUN_0059d040(int param_1);
-void core_lantern_cpp_FUN_0059d0a0(void);
-undefined4 core_lantern_cpp_FUN_0059d0b0(void);
-undefined4 core_lantern_cpp_FUN_0059d0c0(void);
-void core_lantern_cpp_FUN_0059d0d0(int param_1);
+int __cdecl core_lantern_cpp_CLantern_renderOpaque_FUN_0059d000(CLantern *this_ptr);
+int __cdecl core_lantern_cpp_CLantern_renderTransparent_FUN_0059d040(CLantern *this_ptr);
+void __cdecl core_lantern_cpp_CLantern_renderAimBeam_FUN_0059d0a0(CLantern *this_ptr);
+float __cdecl core_lantern_cpp_CLantern_getDamage_FUN_0059d0b0(CLantern *this_ptr);
+int __cdecl core_lantern_cpp_CLantern_canPickup_FUN_0059d0c0(CLantern *this_ptr,CDemonActor *picker);
+CVector3f * __cdecl core_lantern_cpp_CLantern_getMuzzlePoint_FUN_0059d0d0(CLantern *this_ptr,CVector3f *out_point);
 CLantern * core_lantern_cpp_CLantern_dtor_FUN_0059d170(CLantern *this_ptr,uint flags);
 void core_meleeaxe_cpp_staticInit_FUN_0059d1c0(void);
 void core_meleeaxe_cpp_factoryFuncMeleeAxe_FUN_0059d1f0(void);
@@ -265,30 +270,30 @@ int unkafter_basicene_cpp_FUN_0059e3b0(CEnemy *param_1);
 void unkafter_basicene_cpp_FUN_0059e6a0(CEnemy *param_1);
 void unkafter_basicene_cpp_FUN_0059e7a0(int param_1,undefined4 param_2);
 void unkafter_basicene_cpp_FUN_0059e7c0(int param_1,undefined4 param_2);
-void unkafter_basicene_cpp_FUN_0059e7d0(CCharacter *param_1,float param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0(CBasicEnemy *this_ptr,float delta_time);
 void unkafter_basicene_cpp_FUN_0059e880(CDemonActor *param_1,int param_2);
 void unkafter_basicene_cpp_FUN_0059e8c0(int param_1,undefined4 param_2,int param_3);
 void unkafter_basicene_cpp_FUN_0059ebc0(int param_1);
-void unkafter_basicene_cpp_FUN_0059ebe0(int param_1);
-void unkafter_basicene_cpp_FUN_0059ec10(CCharacter *param_1,undefined4 param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0(CBasicEnemy *this_ptr,float delta_time);
+void unkafter_basicene_cpp_FUN_0059ec10(CEnemy *param_1,float param_2);
 void unkafter_basicene_cpp_FUN_0059ed50(int param_1,undefined4 param_2);
-void unkafter_basicene_cpp_FUN_0059ee00(CCharacter *param_1,undefined4 param_2);
-void unkafter_basicene_cpp_FUN_0059ef90(CCharacter *param_1,undefined4 param_2);
+void unkafter_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_processChasingState_FUN_0059ef90(CBasicEnemy *this_ptr,float delta_time);
 void unkafter_basicene_cpp_FUN_0059f0e0(CCharacter *param_1,float param_2);
 void unkafter_basicene_cpp_FUN_0059f390(int param_1);
-void unkafter_basicene_cpp_FUN_0059f420(CCharacter *param_1,float param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_process_FUN_0059f420(CBasicEnemy *this_ptr,float delta_time);
 void unkafter_basicene_cpp_FUN_0059f570(int param_1);
 void unkafter_basicene_cpp_FUN_0059f5b0(int param_1,float param_2);
 ushort unkafter_basicene_cpp_FUN_0059f660(int param_1,float param_2);
 void unkafter_basicene_cpp_FUN_0059f6a0(void);
-undefined4 unkafter_basicene_cpp_FUN_0059f6b0(int param_1);
+int __cdecl core_basicene_cpp_CBasicEnemy_checkVictim_FUN_0059f6b0(CBasicEnemy *this_ptr);
 int unkafter_basicene_cpp_FUN_0059f740(CEnemy *param_1,undefined4 param_2,int param_3,float param_4);
-void unkafter_basicene_cpp_FUN_0059f800(CDemonActor *param_1,int param_2);
-bool unkafter_basicene_cpp_FUN_0059f930(int param_1);
-void unkafter_basicene_cpp_FUN_0059f960(undefined4 param_1,undefined4 param_2);
-undefined4 unkafter_basicene_cpp_FUN_0059f980(int param_1);
-undefined4 unkafter_basicene_cpp_FUN_0059fa20(int param_1);
-uint unkafter_basicene_cpp_FUN_0059fa70(uint param_1,uint param_2);
+void __cdecl core_basicene_cpp_CBasicEnemy_processDamage_FUN_0059f800(CBasicEnemy *this_ptr,SDamageInfo *damage_info);
+EDeathState __cdecl core_basicnpc_cpp_CBasicNPC_getDeathState_FUN_0059f930(CBasicNPC *this_ptr);
+ECollisionType __cdecl core_basicene_cpp_CBasicEnemy_getCollisionType_FUN_0059f960(CBasicEnemy *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_basicene_cpp_CBasicEnemy_renderTransparent_FUN_0059f980(CBasicEnemy *this_ptr);
+int __cdecl core_basicene_cpp_CBasicEnemy_renderOpaque_FUN_0059fa20(CBasicEnemy *this_ptr);
+int __cdecl core_basicene_cpp_CBasicEnemy_isGrabbable_FUN_0059fa70(CBasicEnemy *this_ptr,CDemonActor *grabber);
 void unkafter_basicene_cpp_FUN_0059fae0(CDemonActor *param_1);
-void unkafter_basicene_cpp_FUN_0059fc10(CEnemy *param_1);
+void __cdecl core_twigzomb_cpp_CTwigZombie_archive_FUN_0059fc10(CTwigZombie *this_ptr);
 

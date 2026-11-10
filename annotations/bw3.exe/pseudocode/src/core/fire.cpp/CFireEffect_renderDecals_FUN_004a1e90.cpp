@@ -23,7 +23,7 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect *th
       iVar1 = 0;
       do {
         if (((*(int *)(iVar1 + 0x1c8aeb4) != 0) && (*(int *)(iVar1 + 0x1c8aeb8) == 0)) &&
-           (core_fire_cpp_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1)),
+           (core_fire_cpp_CBulletHole_render_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1)),
            render_completeness != 0)) {
           *(uint *)(iVar1 + 0x1c8aeb4) = 0;
         }
@@ -38,7 +38,7 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect *th
       iVar1 = 0;
       do {
         if (*(int *)(iVar1 + 0x1c8aeb8) == 0) {
-          core_fire_cpp_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1));
+          core_fire_cpp_CBulletHole_render_FUN_00497610((CBulletHole *)(&DAT_01c8aea8 + iVar1));
         }
         iVar2 = iVar2 + 1;
         iVar1 = iVar1 + 0x40;
@@ -49,12 +49,14 @@ void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect *th
     pCVar3 = g_StakePool;
     iVar1 = 0;
     do {
-      if (*(int *)&pCVar3->field_0x258 == 0) {
-        *(uint *)(&g_StakePool[0].field_0x0 + iVar1) = 1;
+      if ((pCVar3->physics_box).is_valid == 0) {
+        *(uint *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) = 1;
 LAB_004a1f15:
-        core_fire_cpp_FUN_00497dc0((CStake *)(&g_StakePool[0].field_0x0 + iVar1));
+        core_fire_cpp_CStake_render_FUN_00497dc0
+                  ((CStake *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c));
       }
-      else if (*(int *)(&g_StakePool[0].field_0x0 + iVar1) != 0) goto LAB_004a1f15;
+      else if (*(int *)((int)g_StakePool[0].physics_box.rotation_matrix.m + iVar1 + -0x1c) != 0)
+      goto LAB_004a1f15;
       iVar1 = iVar1 + 0x260;
       iVar2 = iVar2 + 1;
       pCVar3 = pCVar3 + 1;

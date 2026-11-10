@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[3]:
-;   crt_unknown.c_FUN_005b9c98 at 005b9ca0
-;   unkafter_2d.cpp_FUN_005c5f03 at 005c5f0c
-;   unkafter_2d.cpp_FUN_005c5f69 at 005c5f77
+;   crt_unknown.c_FUN_005c5f03 at 005c5f0c
+;   crt_unknown.c_FUN_005c5f69 at 005c5f77
+;   crt_unknown.c_istream_seekg_FUN_005b9c98 at 005b9ca0
 ;
 ; Called Functions:
-;   unkafter_morph.cpp_FUN_005c41d2
+;   crt_unknown.c_FUN_005c41d2
 ;
 ; *****************************************************************************
 
@@ -47,8 +47,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005c0cd8
     PUSH EBX                            ; 005c0cdc
     PUSH EAX                            ; 005c0cdd
-    CALL unkafter_morph.cpp_FUN_005c41d2 ; 005c0cde
-        ;   XREF to: 005c41d2 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c41d2()
+    CALL crt_unknown.c_FUN_005c41d2     ; 005c0cde
+        ;   XREF to: 005c41d2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c41d2()
     ADD ESP,0x8                         ; 005c0ce3
     POP EBX                             ; 005c0ce6
     RET                                 ; 005c0ce7

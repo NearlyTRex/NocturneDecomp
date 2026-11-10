@@ -30,8 +30,8 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a3650
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5c90f5                       ; 004f89df | = "Out of partial model mem : %s"
     LEA EAX,[ESP + 0x8]                 ; 004f89e4
     PUSH EAX                            ; 004f89e8
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f89e9
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f89e9
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x2ef                       ; 004f89ee
     ADD ESP,0xc                         ; 004f89f3
     MOV [0x01d71de4],EAX                ; 004f89f6 | DAT_01d71de4
@@ -128,8 +128,8 @@ section .text
     PUSH 0x5c90ca                       ; 004f8a6e | = "Unable to open model: %s"
     LEA EAX,[ESP + 0x8]                 ; 004f8a73
     PUSH EAX                            ; 004f8a77
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f8a78
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f8a78
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5c90e3                    ; 004f8a7d | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004f8a82
     MOV EAX,ESP                         ; 004f8a85

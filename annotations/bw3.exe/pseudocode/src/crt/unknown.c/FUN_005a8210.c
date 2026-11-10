@@ -14,8 +14,8 @@ void FUN_005a8210(void)
   UINT unaff_retaddr;
   
   if (_DAT_02d252b0 == 0) {
-    unkafter_asgaya_cpp_FUN_005ae464();
-    unkafter_asgaya_cpp_FUN_005ae4f8();
+    FUN_005ae464();
+    FUN_005ae4f8();
     (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079dc)();
   }
   else if (DAT_006079e8 != (code *)0x0) {

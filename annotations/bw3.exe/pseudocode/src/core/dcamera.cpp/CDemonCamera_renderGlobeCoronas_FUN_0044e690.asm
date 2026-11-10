@@ -56,7 +56,7 @@
 ;   undefined4 DAT_015484d8
 ;   undefined4 DAT_01c60dac
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field12_0xc
+;   undefined4 g_CGameInstance.field3_0xc
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_blendCoronaTextureSpan_FUN_0044e590
@@ -75,7 +75,7 @@ section .text
     SUB ESP,0x84                        ; 0044e694
     MOV EBX,dword ptr [ESP + 0xa0]      ; 0044e69a
     MOV EAX,[0x005fe9dc]                ; 0044e6a1 | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0xc],0x0       ; 0044e6a6 | g_CGameInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 0044e6a6 | g_CGameInstance.field3_0xc
     JNZ 0x0044e6c5                      ; 0044e6aa
         ;   XREF to: 0044e6c5 (CONDITIONAL_JUMP)  ; LAB_0044e6c5
     TEST EBX,EBX                        ; 0044e6ac

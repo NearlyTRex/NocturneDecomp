@@ -16,10 +16,10 @@
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431414
 ;   engine_clipper.c_clipPolygonToViewport_FUN_00433000 at 004330cc
 ;   engine_drender.cpp_FUN_0046c28e at 0046c3a5
-;   engine_prim.c_FUN_0051cb20 at 0051cbd3
-;   engine_prim.c_FUN_0051d050 at 0051d09d
 ;   engine_prim.c_FUN_0051da80 at 0051db31
-;   engine_prim.c_FUN_0051e130 at 0051e17d
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 at 0051e17d
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0051d050 at 0051d09d
+;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cbd3
 ;   unkafter_zombie.cpp_FUN_0059a0b0 at 0059a371
 ;   ... and 1 more
 ;

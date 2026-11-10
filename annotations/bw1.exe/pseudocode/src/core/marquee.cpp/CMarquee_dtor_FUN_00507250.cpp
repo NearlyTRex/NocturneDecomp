@@ -18,9 +18,9 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_dtor_FUN_00507250(CMarquee *this_pt
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00447d30((CCourse *)&this_ptr->field_0x1a4,0);
+  pCVar1 = core_course_cpp_CCourse_dtor_FUN_00447d30(&this_ptr->course,0);
   pCVar2 = (CMarquee *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x1a4),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x23),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

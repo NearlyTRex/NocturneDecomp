@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CBatCreature
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b40 (68416 bytes)
 #pragma pack(push, 1)
 typedef struct CBatCreature {
-    char field_0[68416]; // 0x0
+    CEnemy base; // 0x0
+    int part_indices[14]; // 0x10af8
+    uint sfx_handles[3]; // 0x10b30
+    int alert_played; // 0x10b3c
 } CBatCreature;
 #pragma pack(pop)
 

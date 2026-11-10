@@ -9,23 +9,21 @@
 void __cdecl core_ammobox_cpp_CAmmoBox_archive_FUN_0040e400(CAmmoBox *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c040((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770
-            (&this_ptr->field_0x158,"modelName");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x2d4,"weaponClassName");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x314,"ammoCount");
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x318,"ammoType");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x31c,0);
+  core_actor_cpp_CDemonActor_archive_FUN_0040c040(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b770(&this_ptr->model,"modelName");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->weapon_class_name,"weaponClassName");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->ammo_count,"ammoCount");
+  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->ammo_type,"ammoType");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->open_pct,0);
   if (1 < g_CAmmoBoxClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x320,&DAT_005d3235);
+    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->item,&DAT_005d3235);
   }
   if (2 < g_CAmmoBoxClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x324,"hasCollision");
+    core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->has_collision,"hasCollision");
   }
   if (g_CAmmoBoxClassVersion < 4) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x328,"openSound");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->open_sound,"openSound");
   return;
 }

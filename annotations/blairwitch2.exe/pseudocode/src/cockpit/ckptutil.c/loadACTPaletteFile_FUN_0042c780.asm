@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   support_trstream.cpp_FUN_0057d390
 ;   unkaddr_0057b9a0.cpp_FUN_0057cfe0
 ;   unkaddr_0057b9a0.cpp_FUN_0057d180
@@ -149,8 +149,8 @@ section .text
     PUSH 0x5cd409                       ; 0042c862
     LEA EAX,[ESP + 0x58]                ; 0042c867
     PUSH EAX                            ; 0042c86b
-    CALL crt_unknown.c_FUN_005b7790     ; 0042c86c
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0042c86c
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EDX,0x5cd41b                    ; 0042c871
     ADD ESP,0xc                         ; 0042c876
     LEA EAX,[ESP + 0x50]                ; 0042c879

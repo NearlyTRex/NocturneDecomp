@@ -28,7 +28,7 @@
 ;   core_dcube.cpp_CDemonCube_testCylinderCollision_FUN_004583d0 at 004583f3
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00456340
+;   core_dcube.cpp_intersectXZCylinder_FUN_00456340
 ;   core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00456620
 ;
 ; *****************************************************************************
@@ -302,8 +302,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x10]      ; 0045696e
     PUSH EBX                            ; 00456972
     MOV dword ptr [EBX + 0x48],EAX      ; 00456973
-    CALL core_dcube.cpp_FUN_00456340    ; 00456976
-        ;   XREF to: 00456340 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_FUN_00456340(SIntersectXZCylinder * cylinder)
+    CALL core_dcube.cpp_intersectXZCylinder_FUN_00456340 ; 00456976
+        ;   XREF to: 00456340 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCylinder_FUN_00456340(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 0045697b
     TEST EAX,EAX                        ; 0045697e
     JNZ 0x00456a84                      ; 00456980
@@ -396,8 +396,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 00456a6c
     PUSH EBX                            ; 00456a70
     MOV dword ptr [EBX + 0x48],EAX      ; 00456a71
-    CALL core_dcube.cpp_FUN_00456340    ; 00456a74
-        ;   XREF to: 00456340 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_FUN_00456340(SIntersectXZCylinder * cylinder)
+    CALL core_dcube.cpp_intersectXZCylinder_FUN_00456340 ; 00456a74
+        ;   XREF to: 00456340 (UNCONDITIONAL_CALL)  ; int core_dcube.cpp_intersectXZCylinder_FUN_00456340(SIntersectXZCylinder * cylinder)
     ADD ESP,0x4                         ; 00456a79
     TEST EAX,EAX                        ; 00456a7c
     JZ 0x00456b30                       ; 00456a7e

@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b532f
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b532f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df204

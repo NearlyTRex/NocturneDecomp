@@ -1,0 +1,209 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 102,
+    "complexity_score": 150,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 55,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 157
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004f19e0",
+    "address_range": [
+      [
+        "004f19e0",
+        "004f1b48"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_icepick.cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f19e0",
+    "signature": "CMatrix3x4f * __stack2_esi core_icepick_cpp_CIcePick_getCarryObjToBodyXForm_FUN_004f19e0(CIcePick *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005b5760",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_005b5760"
+    },
+    {
+      "addr": "005b5200",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005b5200"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e53cf",
+      "name": "s_core_icepick_cpp_005e53cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e53e3",
+      "name": "s_CIcePick_getCarryObjToBo_005e53e3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.640449438202247,
+    "instruction_count": 89,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BRANCH": 3,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 81,
+      "INT_ADD": 52,
+      "INT_AND": 52,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 33,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 19,
+      "INT_SUB": 29,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 17,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 413
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&this_ptr->field_0x25a8 + hand_index * 0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0xfd8",
+      "severity": "mild",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&CStack_78,&this_ptr->field_0xfd8 + iVar1 * 0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 53,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004f1af8, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 77,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004f1af8: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CIcePick",
+        "offset": 300,
+        "vtable_addr": "00602634"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

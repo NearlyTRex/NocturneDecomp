@@ -8,8 +8,8 @@
 ;   core_dog1.cpp_CDog_ctor_FUN_005aba40 at 005abb0a
 ;   core_ghostchi.cpp_CGhostChild_ctor_FUN_005a9230 at 005a9309
 ;   core_hand.cpp_CHand_ctor_FUN_005a9c00 at 005a9ce3
+;   core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10 at 005a0154
 ;   unkafter_basicene.cpp_FUN_0059e3b0 at 0059e572
-;   unkafter_basicene.cpp_FUN_0059fc10 at 005a0154
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005b8c30

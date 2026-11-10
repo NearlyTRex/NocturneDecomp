@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
-;   core_mobster.cpp_FUN_00500370 at 00500410
-;   core_script.cpp_FUN_00529750 at 005297e0
+;   core_mobster.cpp_CMobster_playTaunt_FUN_00500370 at 00500410
+;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005297e0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061ed94

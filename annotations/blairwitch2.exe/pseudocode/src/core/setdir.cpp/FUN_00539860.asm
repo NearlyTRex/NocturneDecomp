@@ -12,9 +12,9 @@
 ;   undefined4 DAT_005e6020
 ;
 ; Called Functions:
+;   core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50
+;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30
 ;   core_setdir.cpp_FUN_005398d0
-;   core_setdir.cpp_FUN_00539c30
-;   core_setdir.cpp_FUN_00539d50
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   engine_dosio.cpp_FUN_00460c70
 ;
@@ -38,14 +38,14 @@ section .text
     JNZ 0x0053989d                      ; 00539881
         ;   XREF to: 0053989d (CONDITIONAL_JUMP)  ; LAB_0053989d
     PUSH ESI                            ; 00539883
-    CALL core_setdir.cpp_FUN_00539d50   ; 00539884
-        ;   XREF to: 00539d50 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_FUN_00539d50(CDemonSet * this_ptr)
+    CALL core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50 ; 00539884
+        ;   XREF to: 00539d50 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_saveThumbsNoFile_FUN_00539d50(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00539889
     MOV ECX,dword ptr [ESP + 0x10]      ; 0053988c
     PUSH ECX                            ; 00539890
     PUSH ESI                            ; 00539891
-    CALL core_setdir.cpp_FUN_00539c30   ; 00539892
-        ;   XREF to: 00539c30 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_FUN_00539c30(CDemonSet * this_ptr, char * filename)
+    CALL core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30 ; 00539892
+        ;   XREF to: 00539c30 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30(CDemonSet * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00539897
     POP ESI                             ; 0053989a
     POP EBX                             ; 0053989b

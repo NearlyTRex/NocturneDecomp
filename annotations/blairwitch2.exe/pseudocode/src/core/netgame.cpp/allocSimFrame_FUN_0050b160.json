@@ -1,0 +1,144 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 81,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 31,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 101
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050b160",
+    "address_range": [
+      [
+        "0050b160",
+        "0050b20b"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_netgame.cpp_allocSimFrame_FUN_0050b160",
+    "signature": "int * core_netgame_cpp_allocSimFrame_FUN_0050b160(int param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d54640",
+      "name": "DAT_01d54640",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.5,
+    "instruction_count": 58,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 26,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 47,
+      "INT_ADD": 20,
+      "INT_AND": 103,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 51,
+      "INT_LEFT": 10,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 25,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 33,
+      "INT_SUB": 19,
+      "INT_XOR": 7,
+      "LOAD": 10,
+      "POPCOUNT": 23,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 435
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "int * core_netgame_cpp_allocSimFrame_FUN_0050b160(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1 == *(int *)(iVar1 + 0x1d54644)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*dest = param_1;",
+      "type": "unnamed_param"
+    }
+  ]
+}

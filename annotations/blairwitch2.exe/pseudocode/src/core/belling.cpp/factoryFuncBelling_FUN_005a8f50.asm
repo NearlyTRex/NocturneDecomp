@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_belling.cpp_CBelling_ctor_FUN_005a8f80
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x11850                        ; 005a8f50
         ;   Label: core_belling.cpp_factoryFuncBelling_FUN_005a8f50
-    CALL crt_unknown.c_FUN_005b8be2     ; 005a8f55
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005a8f55
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 005a8f5a
     TEST EAX,EAX                        ; 005a8f5d
     JNZ 0x005a8f62                      ; 005a8f5f

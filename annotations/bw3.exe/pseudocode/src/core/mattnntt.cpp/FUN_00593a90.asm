@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_mattnntt.cpp_FUN_00591f30 at 005923dc
+;   core_mattnntt.cpp_CMattanntote_process_FUN_00591f30 at 005923dc
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0

@@ -83,19 +83,19 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   uint uStack_2c;
   float fStack_28;
   float fStack_24;
-  float *pfStack_20;
+  int *piStack_20;
   float fStack_1c;
   float fStack_18;
   
   bVar4 = 0;
-  if (*(int *)&param_1[0x17d].field_0xc == 0) {
+  if (*(int *)(param_1[0x17d].actor_name + 0xc) == 0) {
     _DAT_01d1d400 = "..\\core\\doc.cpp";
     _DAT_01d1d404 = 0x11e0;
     core_main_c_FUN_005030e0("CDoc::aimLeftPistol - no weapon?");
   }
-  (**(code **)(*(int *)(*(int *)&param_1[0x17d].field_0xc + 0x154) + 0xe0))
-            (*(int *)&param_1[0x17d].field_0xc);
-  pfStack_20 = (float *)&param_1[0x17c].field_0x140;
+  (**(code **)(*(int *)(*(int *)(param_1[0x17d].actor_name + 0xc) + 0x154) + 0xe0))
+            (*(int *)(param_1[0x17d].actor_name + 0xc));
+  piStack_20 = &param_1[0x17c].previous_transform_state.dirty_flags;
   uStack_2c = _DAT_01b68820;
   fStack_120 = local_6c;
   (&stack0xfffffee4)[(uint)bVar4 * 0xfffffffe] =
@@ -104,7 +104,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
        *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   fStack_30 = 0.5235988;
   fStack_34 = -1.3089969;
-  core_actor_cpp_FUN_00408b40(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffee0);
+  core_actor_cpp_FUN_00408b40(*(uint *)(param_1[0x17d].actor_name + 0xc),&stack0xfffffee0);
   fStack_f0 = fStack_9c;
   (&stack0xffffff14)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)(&stack0xffffff68 + (uint)bVar4 * -8);
@@ -113,7 +113,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   uStack_12c = 0;
   uStack_128 = 0;
   uStack_124 = 0x447a0000;
-  core_actor_cpp_FUN_00408ac0(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffed4);
+  core_actor_cpp_FUN_00408ac0(*(uint *)(param_1[0x17d].actor_name + 0xc),&stack0xfffffed4);
   fVar3 = fStack_e8;
   fVar1 = fStack_ec;
   fVar2 = fStack_f0;
@@ -138,7 +138,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00559310
             (this_ptr,laser_type,color_r,color_g,color_b);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
-            (g_CDemonSetPtr,*(CDemonActor **)&param_1[0x17d].field_0xc);
+            (g_CDemonSetPtr,*(CDemonActor **)(param_1[0x17d].actor_name + 0xc));
   core_setcolid_cpp_CDemonSet_ignore_FUN_00559250(g_CDemonSetPtr,param_1);
   fStack_150 = (float)core_setcolid_cpp_FUN_00557300
                                 (g_CDemonSetPtr,&stack0xffffff10,&stack0xffffffa0);
@@ -190,7 +190,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
        (float)*(uint *)((int)&stack0xffffff80 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffff3c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffff84 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  core_vecdir_cpp_FUN_005a7520(&stack0xffffff34);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff34);
   fVar2 = SQRT(fStack_c4 * fStack_c4 + fStack_cc * fStack_cc + fStack_c8 * fStack_c8);
   fStack_90 = fStack_fc;
   *(uint *)((int)&stack0xffffff74 + (uint)bVar4 * -8) =
@@ -211,7 +211,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
       else {
         fStack_8c = fStack_8c - fStack_38;
       }
-      fStack_18 = (float)core_actor_cpp_FUN_0040cd60(fStack_8c);
+      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_8c);
       fStack_8c = fStack_18;
     }
     if ((((float)_DAT_005da33c <= fVar2) &&
@@ -226,7 +226,7 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
       else {
         fStack_90 = fStack_90 - fStack_3c;
       }
-      fStack_18 = (float)core_actor_cpp_FUN_0040cd60(fStack_90);
+      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(fStack_90);
       fStack_90 = fStack_18;
     }
   }
@@ -249,10 +249,10 @@ void core_doc_cpp_FUN_00473160(CDemonActor *param_1)
   if (fStack_30 < fStack_1c) {
     fStack_1c = fStack_30;
   }
-  pfStack_20[5] = 1.0;
-  pfStack_20[3] = fStack_1c;
-  pfStack_20[2] = fStack_24;
-  pfStack_20[1] = fStack_1c;
-  *pfStack_20 = fStack_24;
+  piStack_20[5] = 0x3f800000;
+  piStack_20[3] = (int)fStack_1c;
+  piStack_20[2] = (int)fStack_24;
+  piStack_20[1] = (int)fStack_1c;
+  *piStack_20 = (int)fStack_24;
   return;
 }

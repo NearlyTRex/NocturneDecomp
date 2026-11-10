@@ -23,7 +23,8 @@ void core_dtrace_cpp_FUN_0048aaee(int param_1)
   int iStack_18;
   
   bVar9 = 0;
-  shape_edittool_cpp_FUN_004961b0(g_CEditorToolsPtr,"Consolidating raytrace geometry arrays...");
+  shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0
+            (g_CEditorToolsPtr,"Consolidating raytrace geometry arrays...");
   core_dtrace_cpp_FUN_0048ace0(param_1);
   *(uint *)(param_1 + 4) = 0;
   iVar5 = 0;

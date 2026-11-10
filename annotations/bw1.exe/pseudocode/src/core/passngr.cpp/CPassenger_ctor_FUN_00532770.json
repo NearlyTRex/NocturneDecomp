@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 84,
-    "complexity_score": 64,
+    "complexity_score": 65,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 49,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "derived_field_index_pun"
     ],
-    "total_lines": 133
+    "total_lines": 134
   },
   "cross_references": [
     {
@@ -48,7 +48,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [],
@@ -115,12 +115,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
+      "description": "'(CMorph *)&pCVar2[1].base.base.scale.y' walks 1 x sizeof(CNPC) (0x1fab8) + offsetof(base.base.scale.y) (0x10c) + 0x0 = 0x1fbc4, which is exactly offsetof(CHostage, hero_left_me_event[32]). Ghidra had no CHostage type here and reached the field by index arithmetic; write it as ((CHostage *)pCVar2)->hero_left_me_event[32] (\u00a7de-pun/\u00a712).",
       "line": 13,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)&pCVar2[1].field_0x10c);",
-      "type": "unnamed_field"
+      "severity": "moderate",
+      "text": "pCVar3 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)&pCVar2[1].base.base.scale.y);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

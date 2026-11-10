@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   core_door.cpp_FUN_00464cd0 at 00464e97
+;   core_door.cpp_CDoor_archive_FUN_00464cd0 at 00464e97
 ;   core_lever.cpp_CLever_archive_FUN_004e0830 at 004e0995
 ;
 ; Referenced Globals:

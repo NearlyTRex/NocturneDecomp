@@ -18,7 +18,7 @@ void core_main_c_FUN_004e45e0(void)
     engine_2d_c_drawText_FUN_00401fe0("Nocturne(R) Debug/editor Menu",0,0);
     engine_2d_c_drawText_FUN_00401fe0("1. Play a mission",0,0x16);
     engine_2d_c_drawText_FUN_00401fe0("Z. Display memory usage info",0,0xbb);
-    wincore_wddvmem_cpp_FUN_00589560();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     uVar1 = wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
     uVar1 = toupper(uVar1 & 0xff);

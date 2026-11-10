@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_xform_cpp_FUN_005b9170(int param_1,int param_2)
+; void core_xform_cpp_FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -10,11 +10,11 @@
 ;   undefined4 DAT_006236b8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
-;   core_enemy.cpp_FUN_004a0f00
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
+;   core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_sound.cpp_FUN_0057d9d0
+;   core_sound.cpp_CSound_killSound_FUN_0057d9d0
 ;   core_xform.cpp_FUN_005b8eb0
 ;
 ; *****************************************************************************
@@ -70,8 +70,8 @@ section .text
     PUSH 0x1                            ; 005b91dc
     PUSH 0x2                            ; 005b91de
     PUSH 0x0                            ; 005b91e0
-    CALL core_actor.cpp_FUN_0040cc60    ; 005b91e2
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 005b91e2
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 005b91e7
     ADD EAX,0x10                        ; 005b91ea
     PUSH EAX                            ; 005b91ed
@@ -83,8 +83,8 @@ section .text
     PUSH EDX                            ; 005b91fd
     MOV ECX,dword ptr [0x006236b8]      ; 005b91fe | DAT_006236b8
     PUSH ECX                            ; 005b9204
-    CALL core_sound.cpp_FUN_0057d9d0    ; 005b9205
-        ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
+    CALL core_sound.cpp_CSound_killSound_FUN_0057d9d0 ; 005b9205
+        ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 005b920a
     PUSH 0x5fa387                       ; 005b920d | = "dog-damage?.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 005b9212
@@ -97,8 +97,8 @@ section .text
     PUSH ESI                            ; 005b922b
     MOV EBP,dword ptr [0x006236b8]      ; 005b922c | DAT_006236b8
     PUSH EBP                            ; 005b9232
-    CALL core_sound.cpp_FUN_0057d9d0    ; 005b9233
-        ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
+    CALL core_sound.cpp_CSound_killSound_FUN_0057d9d0 ; 005b9233
+        ;   XREF to: 0057d9d0 (UNCONDITIONAL_CALL)  ; void core_sound.cpp_CSound_killSound_FUN_0057d9d0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 005b9238
     PUSH 0x5fa397                       ; 005b923b | = "dog-damage?.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 005b9240
@@ -108,8 +108,8 @@ section .text
     PUSH EDI                            ; 005b924d
     PUSH EBX                            ; 005b924e
     MOV dword ptr [EBX + 0xc2b0],EAX    ; 005b924f
-    CALL core_enemy.cpp_FUN_004a0f00    ; 005b9255
-        ;   XREF to: 004a0f00 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_004a0f00()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00 ; 005b9255
+        ;   XREF to: 004a0f00 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 005b925a
     POP EBP                             ; 005b925d
     POP EDI                             ; 005b925e
@@ -120,8 +120,8 @@ section .text
         ;   Label: LAB_005b9262
     PUSH 0x2                            ; 005b9264
     PUSH 0x0                            ; 005b9266
-    CALL core_actor.cpp_FUN_0040cc60    ; 005b9268
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 005b9268
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 005b926d
     ADD EAX,0xd                         ; 005b9270
     PUSH EAX                            ; 005b9273

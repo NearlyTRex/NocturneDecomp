@@ -13,22 +13,23 @@ CBird * unkafter_bird_cpp_CBird_ctor_FUN_004151f0(CBird *this_ptr)
 {
   CCharacter *pCVar1;
   CPathMap *pCVar2;
-  uint uVar3;
+  float fVar3;
   
   pCVar1 = core_charactr_cpp_CCharacter_ctor_FUN_0042c080((CCharacter *)this_ptr);
   pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00532fe0((CPathMap *)(pCVar1 + 1));
-  *(byte ***)&pCVar2[-1].field_0x7860 = &g_CBirdVTable;
-  *(uint *)&pCVar2[-1].field_0xa6f8 = 0x3f19999a;
-  *(uint *)&pCVar2[-1].field_0xa6fc = 0x3f666666;
-  *(uint *)&pCVar2[-1].field_0xa708 = 0x3fcccccd;
-  *(uint *)&pCVar2[-1].field_0xa70c = 0xc479c000;
-  uVar3 = core_actor_cpp_FUN_0040cc00(0x3f666666,0x3f8ccccd);
-  *(uint *)&pCVar2[1].field_0xc = 0;
-  *(uint *)&pCVar2[1].field_0x10 = 0;
-  *(uint *)&pCVar2[1].field_0x8 = uVar3;
-  core_skeleton_cpp_FUN_00569f50(&pCVar2[-1].field_0x7864,0x5d3c93);
-  *(uint *)&pCVar2[-1].field_0x9ecc = 0;
-  *(uint *)(pCVar2 + 1) = 0;
-  *(uint *)&pCVar2[1].field_0x4 = 0;
-  return (CBird *)&pCVar2[-1].field_0x770c;
+  pCVar2[-1].height_cache[0x4c][0x5c] = (int)&g_CBirdVTable;
+  pCVar2[-1].height_cache_tags[6][0x4a] = 0x3f19999a;
+  pCVar2[-1].height_cache_tags[6][0x4b] = 0x3f666666;
+  pCVar2[-1].height_cache_tags[6][0x4e] = 0x3fcccccd;
+  pCVar2[-1].height_cache_tags[6][0x4f] = -0x3b864000;
+  fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(0.9,1.1);
+  pCVar2[1].voxel_coords.x = 0;
+  pCVar2[1].voxel_coords.y = 0;
+  pCVar2[1].current_position.z = fVar3;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)(pCVar2[-1].height_cache[0x4c] + 0x5d),(char *)0x5d3c93);
+  pCVar2[-1].height_cache_tags[1][0x33] = 0;
+  pCVar2[1].current_position.x = 0.0;
+  pCVar2[1].current_position.y = 0.0;
+  return (CBird *)(pCVar2[-1].height_cache[0x4c] + 7);
 }

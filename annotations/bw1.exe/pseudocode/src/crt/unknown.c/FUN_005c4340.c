@@ -9,7 +9,7 @@
 void FUN_005c4340(void)
 
 {
-  PTR_unkafter_zombie_cpp_FUN_005ca4f0_006269dc = unkafter_zombie_cpp_FUN_005ca6bf;
-  PTR_unkafter_zombie_cpp_FUN_005ca4f0_006269e0 = FUN_005c4359;
+  PTR_crt_unknown_c_FUN_005ca4f0_006269dc = FUN_005ca6bf;
+  PTR_crt_unknown_c_FUN_005ca4f0_006269e0 = FUN_005c4359;
   return;
 }

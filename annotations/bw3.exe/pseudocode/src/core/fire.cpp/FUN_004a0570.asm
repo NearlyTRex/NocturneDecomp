@@ -10,7 +10,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_006071f0
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_02d0c1a0
 ;
 ; Called Functions:
@@ -32,7 +32,7 @@ section .text
     JNC 0x004a05cd                      ; 004a057e
         ;   XREF to: 004a05cd (CONDITIONAL_JUMP)  ; LAB_004a05cd
     MOV EAX,[0x005fe9dc]                ; 004a0580 | g_CGamePtr
-    FLD float ptr [EAX + 0x314]         ; 004a0585 | g_CGameInstance.field788_0x314
+    FLD float ptr [EAX + 0x314]         ; 004a0585 | g_CGameInstance.delta_time_float
     FSUBR float ptr [EBX]               ; 004a058b
     FST float ptr [EBX]                 ; 004a058d
     FLDZ                                ; 004a058f

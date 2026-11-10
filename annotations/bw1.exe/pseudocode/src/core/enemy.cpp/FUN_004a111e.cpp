@@ -11,30 +11,32 @@
 int core_enemy_cpp_FUN_004a111e(CDemonActor *param_1)
 
 {
-  CDemonActor *actor_ptr;
+  CCharacter *this_ptr;
   char *class_name;
   int iVar1;
-  int iVar2;
+  EDeathState EVar2;
   int iVar3;
   int iVar4;
+  int iVar5;
   
+  iVar5 = 0;
   iVar4 = 0;
+  class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(param_1);
   iVar3 = 0;
-  class_name = core_actor_cpp_FUN_00408830(param_1);
-  iVar2 = 0;
   while( true ) {
-    if (*(int *)&g_CDemonSetPtr->field_0x150fec <= iVar4) break;
-    actor_ptr = *(CDemonActor **)(&g_CDemonSetPtr->field_0x150ff0 + iVar3);
-    iVar1 = core_actor_cpp_FUN_0040c550(actor_ptr,class_name);
+    if (g_CDemonSetPtr->enemy_count <= iVar5) break;
+    this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->enemies + iVar4);
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(&this_ptr->base,class_name);
     if (iVar1 != 0) {
-      iVar1 = (**(code **)(*(int *)&actor_ptr->field_0x154 + 0x10c))(actor_ptr);
-      if ((iVar1 == 0) &&
-         (*(int *)&actor_ptr[0x90].field_0x68 == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4))) {
-        iVar2 = iVar2 + 1;
+      EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+      if ((EVar2 == DEATH_STATE_ALIVE) &&
+         (*(int *)(this_ptr[1].base.actor_name + 0x18) == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)))
+      {
+        iVar3 = iVar3 + 1;
       }
     }
-    iVar4 = iVar4 + 1;
-    iVar3 = iVar3 + 4;
+    iVar5 = iVar5 + 1;
+    iVar4 = iVar4 + 4;
   }
-  return iVar2;
+  return iVar3;
 }

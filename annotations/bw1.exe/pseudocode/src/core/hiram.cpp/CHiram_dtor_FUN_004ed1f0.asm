@@ -8,18 +8,18 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CHiramVTable = 004ed290
+;   CCharacter_full_vtable g_CHiramVTable
 ;   WatcomTypeInfo g_CHiramTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408730
-;   core_cloth.cpp_FUN_00441ca0
+;   core_armour.cpp_FUN_0040ee30
+;   core_cloth.cpp_CClothList_dtor_FUN_00441ca0
 ;   core_path.cpp_CPathMap_dtor_FUN_00533060
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_005673f0
 ;   crt_memory.c___vec_delete_FUN_005c030f
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c0344
-;   unkafter_armour.cpp_FUN_0040ee30
 ;
 ; *****************************************************************************
 
@@ -41,14 +41,14 @@ section .text
     PUSH 0x0                            ; 004ed217
     SUB EAX,0x8bf4                      ; 004ed219
     PUSH EAX                            ; 004ed21e
-    CALL unkafter_armour.cpp_FUN_0040ee30 ; 004ed21f
-        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040ee30()
+    CALL core_armour.cpp_FUN_0040ee30   ; 004ed21f
+        ;   XREF to: 0040ee30 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040ee30()
     ADD ESP,0x8                         ; 004ed224
     PUSH 0x0                            ; 004ed227
     SUB EAX,0x93c                       ; 004ed229
     PUSH EAX                            ; 004ed22e
-    CALL core_cloth.cpp_FUN_00441ca0    ; 004ed22f
-        ;   XREF to: 00441ca0 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_00441ca0(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_00441ca0 ; 004ed22f
+        ;   XREF to: 00441ca0 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_00441ca0(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004ed234
     PUSH 0x0                            ; 004ed237
     SUB EAX,0x2b48                      ; 004ed239

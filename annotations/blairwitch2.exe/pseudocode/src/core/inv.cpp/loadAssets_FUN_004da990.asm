@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004bb050 at 004bb07e
-;   core_inv.cpp_FUN_004dd670 at 004dd90d
+;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670 at 004dd90d
 ;   core_inv.cpp_FUN_004dd9b0 at 004de9cd
 ;
 ; Referenced Globals:
@@ -191,7 +191,7 @@ section .text
     CALL engine_texture.cpp_FUN_00574e00 ; 004dab4d
         ;   XREF to: 00574e00 (UNCONDITIONAL_CALL)  ; undefined engine_texture.cpp_FUN_00574e00()
     MOV EAX,[0x00616494]                ; 004dab52 | g_CGamePtr
-    MOV ECX,dword ptr [EAX + 0x4]       ; 004dab57 | g_CGameInstance.field4_0x4
+    MOV ECX,dword ptr [EAX + 0x4]       ; 004dab57 | g_CGameInstance.game_pixy
     ADD ESP,0x4                         ; 004dab5a
     CMP ECX,0x180                       ; 004dab5d
     JGE 0x004dac35                      ; 004dab63

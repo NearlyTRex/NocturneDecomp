@@ -11,7 +11,7 @@
 ;   core_setcolid.cpp_CDemonSet_isActorIgnored_FUN_00536990 at 005369d8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c870
+;   core_actor.cpp_checkNameHash_FUN_0040c870
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     CALL dword ptr [EDX + 0xd4]         ; 0040c8d5
     ADD ESP,0x4                         ; 0040c8db
     PUSH EAX                            ; 0040c8de
-    CALL core_actor.cpp_FUN_0040c870    ; 0040c8df
-        ;   XREF to: 0040c870 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c870(CDemonActorType * type_ptr, uint name_hash)
+    CALL core_actor.cpp_checkNameHash_FUN_0040c870 ; 0040c8df
+        ;   XREF to: 0040c870 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_checkNameHash_FUN_0040c870(CDemonActorType * type_ptr, uint name_hash)
     ADD ESP,0x8                         ; 0040c8e4
     RET                                 ; 0040c8e7
 

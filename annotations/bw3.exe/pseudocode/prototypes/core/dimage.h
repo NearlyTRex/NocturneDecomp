@@ -7,20 +7,20 @@
 
 // Original: core_dimage.cpp_FUN_0045b210
 // Address: 0045b210
-void FUN_0045b210(int param_1);
+void __cdecl FUN_0045b210(CDemonImage *this_ptr);
 
 // Original: core_dimage.cpp_FUN_0045b270
 // Address: 0045b270
-void FUN_0045b270(int param_1);
+void __cdecl FUN_0045b270(CDemonImage *this_ptr);
 
 // Original: core_dimage.cpp_FUN_0045b29c
 // Address: 0045b29c
 uint FUN_0045b29c(undefined4 param_1,uint param_2,uint param_3,uint param_4);
 
-// Original: core_dimage.cpp_FUN_0045b2a0
+// Original: core_dimage.cpp_CDemonImage_packColor_FUN_0045b2a0
 // Address: 0045b2a0
-uint FUN_0045b2a0(undefined4 param_1,uint param_2,uint param_3,uint param_4);
+ushort __cdecl CDemonImage::packColor(CDemonImage *this_ptr,uint red,uint green,uint blue);
 
 // Original: core_dimage.cpp_FUN_0045b2fe
 // Address: 0045b2fe
-void FUN_0045b2fe(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4);
+void FUN_0045b2fe(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);

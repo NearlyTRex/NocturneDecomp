@@ -1,0 +1,54 @@
+// Name: core_vehicle.cpp_CVehicle_archive_FUN_005848a0
+// Address: 005848a0
+// Address Range: [[005848a0, 00584a20]]
+// Convention: __cdecl
+// Signature: void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005848a0(CVehicle *this_ptr)
+
+#include "nocturne.h"
+
+void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005848a0(CVehicle *this_ptr)
+
+{
+  int iVar1;
+  byte *puVar2;
+  byte *puVar3;
+  byte *puVar4;
+  
+  core_actor_cpp_CDemonActor_archive_FUN_0040c330(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60
+            (&this_ptr->model,">@modelName" + 2);
+  core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->tire_count,"tireCount");
+  iVar1 = 0;
+  if (0 < this_ptr->tire_count) {
+    puVar3 = &this_ptr->tires[0].field_0x10;
+    puVar2 = &this_ptr->tires[0].field_0xc;
+    puVar4 = &this_ptr->tires[0].field_0x14;
+    do {
+      core_actor_cpp_archiveKeyframedModelInstance_FUN_0040ba60(puVar4,0);
+      core_actor_cpp_archiveVector_FUN_0040b4b0(this_ptr->tires + iVar1,"static_bpos");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(puVar2,"radius");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(puVar3,"width");
+      puVar4 = puVar4 + 0x1b4;
+      iVar1 = iVar1 + 1;
+      puVar2 = puVar2 + 0x1b4;
+      puVar3 = puVar3 + 0x1b4;
+    } while (iVar1 < this_ptr->tire_count);
+  }
+  if (g_CVehicleClassVersion < 2) {
+    if (g_CVehicleClassVersion < 3) {
+      return;
+    }
+  }
+  else {
+    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->cur_time,"curTime");
+    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->total_time,"totalTime");
+    core_actor_cpp_archiveString_FUN_0040b730(this_ptr->course_name,"courseName");
+    if (g_CVehicleClassVersion < 3) {
+      return;
+    }
+  }
+  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->last_mobster_left,"lastMobsterLeft");
+  core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->last_mobster_left,"lastMobsterRight")
+  ;
+  return;
+}

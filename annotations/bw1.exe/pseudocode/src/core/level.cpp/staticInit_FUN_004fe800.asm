@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_ctor_FUN_004667e0
-;   core_level.cpp_FUN_004fe830
+;   core_level.cpp_CLevelLoader_reset_FUN_004fe830
 ;   crt_stdlib.c__atexit_FUN_005c1093
 ;
 ; *****************************************************************************
@@ -15,8 +15,8 @@ section .text
 
     PUSH 0x1d1bd1c                      ; 004fe800
         ;   Label: core_level.cpp_staticInit_FUN_004fe800
-    CALL core_level.cpp_FUN_004fe830    ; 004fe805
-        ;   XREF to: 004fe830 (UNCONDITIONAL_CALL)  ; undefined core_level.cpp_FUN_004fe830()
+    CALL core_level.cpp_CLevelLoader_reset_FUN_004fe830 ; 004fe805
+        ;   XREF to: 004fe830 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_reset_FUN_004fe830(CLevelLoader * this_ptr)
     ADD ESP,0x4                         ; 004fe80a
     PUSH 0x1d1be4c                      ; 004fe80d
     CALL core_dmodel.cpp_CKeyFramedModel_ctor_FUN_004667e0 ; 004fe812

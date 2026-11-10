@@ -55,7 +55,7 @@ void FUN_005c4558(uint *param_1,int *param_2,byte *param_3)
   param_2[10] = 0;
   iVar9 = 0;
   param_2[6] = 0;
-  uVar2 = unkafter_zombie_cpp_FUN_005ca7dc(&uStack_4c);
+  uVar2 = FUN_005ca7dc(&uStack_4c);
   switch(uVar2) {
   case 0:
   case 4:

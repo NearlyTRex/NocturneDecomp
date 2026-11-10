@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004fc350 at 004fc48a
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350 at 004fc48a
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_free_FUN_00541160

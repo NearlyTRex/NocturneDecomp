@@ -9,5 +9,5 @@
 int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_004319b0(CCharacter *this_ptr)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x2740 == 0);
+  return (uint)(this_ptr->door_target == (CDoor *)0x0);
 }

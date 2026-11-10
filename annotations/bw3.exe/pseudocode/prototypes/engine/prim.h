@@ -13,9 +13,9 @@ void __cdecl FUN_00515500(int culling_mode);
 // Address: 00515510
 void FUN_00515510(int param_1,int param_2);
 
-// Original: engine_prim.c_FUN_005158e0
+// Original: engine_prim.c_findEdgeInBuffer_FUN_005158e0
 // Address: 005158e0
-SSoftwareEdge * __cdecl FUN_005158e0(int y_value,SSoftwareEdge *edge_ptr);
+SSoftwareEdge * __cdecl findEdgeInBuffer(int y_value,SSoftwareEdge *edge_ptr);
 
 // Original: engine_prim.c_prepareDepthBuffer_FUN_00515920
 // Address: 00515920
@@ -45,22 +45,22 @@ int __cdecl FUN_00515b80(SMRGLPrimitiveTriangle *triangle);
 // Address: 00515d60
 bool __cdecl getTriangleWindingFromPackedIndices(ushort *param_1);
 
-// Original: engine_prim.c_FUN_00515e80
+// Original: engine_prim.c_renderPolygonSoftware_FUN_00515e80
 // Address: 00515e80
-void __cdecl FUN_00515e80(SRenderVertex *vertices,int vertex_count);
+void __cdecl renderPolygonSoftware(SRenderVertex *vertices,int vertex_count);
 
-// Original: engine_prim.c_FUN_005163b0
+// Original: engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0
 // Address: 005163b0
-void __cdecl FUN_005163b0(int *vertex_indices,int vertex_count);
+void __cdecl renderIndexedPolygonSoftware(int *vertex_indices,int vertex_count);
 
-// Original: engine_prim.c_FUN_00516b00
+// Original: engine_prim.c_setupColoredSoftwareEdge_FUN_00516b00
 // Address: 00516b00
-void FUN_00516b00(int param_1,int param_2);
+void __cdecl setupColoredSoftwareEdge(SRenderVertex *vertex0,SRenderVertex *vertex1);
 
-// Original: engine_prim.c_FUN_00516de0
+// Original: engine_prim.c_renderScanlinePolygon_FUN_00516de0
 // Address: 00516de0
-void __cdecl FUN_00516de0(SRenderVertex *vertices,int vertex_count);
+void __cdecl renderScanlinePolygon(SRenderVertex *vertices,int vertex_count);
 
-// Original: engine_prim.c_FUN_00517480
+// Original: engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480
 // Address: 00517480
-void __cdecl FUN_00517480(int *vertex_indices,int vertex_count);
+void __cdecl renderIndexedPolygonAdvanced(int *vertex_indices,int vertex_count);

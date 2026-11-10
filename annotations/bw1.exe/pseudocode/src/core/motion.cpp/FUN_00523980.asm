@@ -37,7 +37,7 @@
 ;   crt_stdio.c_fgetc_FUN_005c0530
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_unknown.c_FUN_005c08d0
-;   unkafter_box.cpp_FUN_00523910
+;   unkafter_morph.cpp_FUN_00523910
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x30]      ; 00523987
     MOV EDX,dword ptr [ESP + 0x2c]      ; 0052398b
     PUSH EDX                            ; 0052398f
-    CALL unkafter_box.cpp_FUN_00523910  ; 00523990
-        ;   XREF to: 00523910 (UNCONDITIONAL_CALL)  ; undefined unkafter_box.cpp_FUN_00523910()
+    CALL unkafter_morph.cpp_FUN_00523910 ; 00523990
+        ;   XREF to: 00523910 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_00523910()
     MOV ECX,0xffffffff                  ; 00523995
     ADD ESP,0x4                         ; 0052399a
     MOV EBX,EDI                         ; 0052399d

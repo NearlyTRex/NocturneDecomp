@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 104,
+    "complexity_score": 102,
     "cross_reference_count": 5,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 39,
+    "pseudocode_lines": 37,
     "suspect_count": 6,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 150
+    "total_lines": 148
   },
   "cross_references": [
     {
@@ -42,7 +42,7 @@
     {
       "addr": "00468b80",
       "from_addr": "00468c79",
-      "name": "cockpit_drawsurf.cpp_FUN_00468b80",
+      "name": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +72,7 @@
       {
         "call_addr": "00468c79",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +83,7 @@
       {
         "call_addr": "00468c8c",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -94,7 +94,7 @@
       {
         "call_addr": "00468ed8",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00468b80",
+        "caller": "cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +245,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000018",
       "severity": "moderate",
       "text": "(in_stack_00000018,in_stack_0000001c,in_stack_00000020,width,radius);",
@@ -253,7 +253,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "(in_stack_00000018,in_stack_0000001c,in_stack_00000020,width,radius);",
@@ -261,7 +261,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 36,
+      "line": 34,
       "match": "in_stack_00000020",
       "severity": "moderate",
       "text": "(in_stack_00000018,in_stack_0000001c,in_stack_00000020,width,radius);",

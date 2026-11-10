@@ -7,7 +7,7 @@
 ; CPathMap *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[3]:
-;   core_hero.cpp_FUN_004ea830 at 004ea844
+;   core_hero.cpp_CHero_ctor_FUN_004ea830 at 004ea844
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670 at 00531687
 ;   unkafter_bird.cpp_CBird_ctor_FUN_004151f0 at 00415207
 ;

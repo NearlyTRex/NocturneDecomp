@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[13]:
-;   core_charactr.cpp_FUN_00430060 at 004300ff
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 at 004300ff
 ;   core_cloth.cpp_CCloth_render_FUN_00441800 at 00441897
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_0045ec60 at 0045ed59
-;   core_flies.cpp_FUN_004c0080 at 004c023c
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004c0080 at 004c023c
 ;   core_inv.cpp_FUN_004f70e0 at 004f7413
-;   engine_3d.c_FUN_00407820 at 00407922
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 00407922
 ;   engine_3d.c_updateAnimatedTexture_FUN_00404f10 at 00404f7d
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00 at 00484f07
 ;   engine_mini3d.cpp_FUN_005121b0 at 005121bf
-;   engine_texture.cpp_FUN_00597c60 at 00597c66
+;   engine_texture.cpp_FUN_00597c90 at 00597c96
 ;   ... and 3 more
 ;
 ; Referenced Globals:

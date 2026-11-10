@@ -85,7 +85,7 @@ void unkaddr_0059d350_cpp_FUN_0059dd00(int *param_1,int *param_2)
     local_34 = local_64;
     local_30 = local_60;
     local_2c = local_5c;
-    core_vecdir_cpp_FUN_005838f0(&local_58);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&local_58);
     local_28 = local_70;
     local_24[(uint)bVar5 * -2] = *(int *)(&stack0xffffff94 + (uint)bVar5 * -8);
     local_24[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =

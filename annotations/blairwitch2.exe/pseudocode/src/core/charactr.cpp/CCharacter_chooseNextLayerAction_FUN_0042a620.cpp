@@ -14,53 +14,55 @@ void __cdecl core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(CCh
   float fVar1;
   int iVar2;
   int iVar3;
-  int *piVar4;
+  SLayerAction *pSVar4;
   float local_14;
   
-  if ((*(int *)&this_ptr->field_0x2d04 < 0) ||
-     (*(int *)&this_ptr->field_0x2830 <= *(int *)&this_ptr->field_0x2d04)) {
+  if ((this_ptr->layer_action_index < 0) ||
+     (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     _DAT_01d046a0 = "..\\core\\charactr.cpp";
     _DAT_01d046a4 = 0x11fe;
     core_main_c_FUN_004e4500("CCharacter::chooseNextLayerAction - invalid layerActionIndex");
   }
-  if ((float)_DAT_005cd22e <= *(float *)&this_ptr->field_0x2d08) {
-    if (*(float *)&this_ptr->field_0x2d08 <= (float)_DAT_005cd236) {
+  if ((float)_DAT_005cd22e <= this_ptr->layer_action_t) {
+    if (this_ptr->layer_action_t <= (float)_DAT_005cd236) {
       return;
     }
-    iVar2 = *(int *)(&this_ptr->field_0x2838 + *(int *)&this_ptr->field_0x2d04 * 0x38);
+    iVar2 = *(int *)(this_ptr->layer_actions + this_ptr->layer_action_index * 0x38 + 4);
   }
   else {
-    iVar2 = *(int *)(&this_ptr->field_0x2834 + *(int *)&this_ptr->field_0x2d04 * 0x38);
+    iVar2 = *(int *)(this_ptr->layer_actions + this_ptr->layer_action_index * 0x38);
   }
   if (layer_action_index != iVar2) {
     local_14 = 999.0;
     iVar3 = 0;
-    if (0 < *(int *)&this_ptr->field_0x2830) {
-      piVar4 = (int *)&this_ptr->field_0x2834;
+    if (0 < this_ptr->layer_action_count) {
+      pSVar4 = this_ptr->layer_actions;
       do {
-        if ((piVar4[10] < 0) || (*piVar4 != iVar2)) {
-          if ((piVar4[10] < 1) &&
-             ((piVar4[1] == iVar2 &&
-              (fVar1 = (float)piVar4[0xd] +
-                       *(float *)(&this_ptr->field_0x10230 + layer_action_index * 4 + *piVar4 * 0x58
-                                 ), fVar1 < local_14)))) {
-            *(uint *)&this_ptr->field_0x2d08 = 0x3f800000;
-            *(int *)&this_ptr->field_0x2d04 = iVar3;
+        if ((*(int *)(pSVar4 + 0x28) < 0) || (*(int *)pSVar4 != iVar2)) {
+          if ((*(int *)(pSVar4 + 0x28) < 1) &&
+             ((*(int *)(pSVar4 + 4) == iVar2 &&
+              (fVar1 = *(float *)(pSVar4 + 0x34) +
+                       *(float *)((int)this_ptr->motion_transition_costs +
+                                 layer_action_index * 4 + *(int *)pSVar4 * 0x58), fVar1 < local_14))
+             )) {
+            this_ptr->layer_action_t = 1.0;
+            this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }
         else {
-          fVar1 = (float)piVar4[0xd] +
-                  *(float *)(&this_ptr->field_0x10230 + layer_action_index * 4 + piVar4[1] * 0x58);
+          fVar1 = *(float *)(pSVar4 + 0x34) +
+                  *(float *)((int)this_ptr->motion_transition_costs +
+                            layer_action_index * 4 + *(int *)(pSVar4 + 4) * 0x58);
           if (fVar1 < local_14) {
-            *(uint *)&this_ptr->field_0x2d08 = 0;
-            *(int *)&this_ptr->field_0x2d04 = iVar3;
+            this_ptr->layer_action_t = 0.0;
+            this_ptr->layer_action_index = iVar3;
             local_14 = fVar1;
           }
         }
         iVar3 = iVar3 + 1;
-        piVar4 = piVar4 + 0xe;
-      } while (iVar3 < *(int *)&this_ptr->field_0x2830);
+        pSVar4 = pSVar4 + 0x38;
+      } while (iVar3 < this_ptr->layer_action_count);
     }
   }
   return;

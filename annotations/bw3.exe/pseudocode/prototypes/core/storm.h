@@ -21,17 +21,17 @@ CDemonActorType * CStorm::getActorType(CStorm *this_ptr);
 // Address: 00568ab0
 CStorm * CStorm::ctor(CStorm *this_ptr);
 
-// Original: core_storm.cpp_FUN_00568b50
+// Original: core_storm.cpp_CStorm_fire_FUN_00568b50
 // Address: 00568b50
-undefined4 FUN_00568b50(CDemonActor *param_1);
+int __cdecl CStorm::fire(CStorm *this_ptr);
 
-// Original: core_storm.cpp_FUN_00568c10
+// Original: core_storm.cpp_CStorm_setup_FUN_00568c10
 // Address: 00568c10
-void FUN_00568c10(CWeapon *param_1);
+void __cdecl CStorm::setup(CStorm *this_ptr);
 
-// Original: core_storm.cpp_FUN_00568c60
+// Original: core_storm.cpp_CStorm_renderOpaque_FUN_00568c60
 // Address: 00568c60
-int FUN_00568c60(CWeapon *param_1);
+int __cdecl CStorm::renderOpaque(CStorm *this_ptr);
 
 // Original: core_storm.cpp_CStorm_dtor_FUN_00568c80
 // Address: 00568c80

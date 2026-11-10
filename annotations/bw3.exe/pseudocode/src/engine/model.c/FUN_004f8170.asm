@@ -11,7 +11,7 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_boss.c_FUN_0041acc0
 ;   engine_model.c_FUN_004f80f0
 ;   engine_model.c_loadModelFile_FUN_004f7f20
@@ -59,8 +59,8 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 004f81e5
     PUSH EAX                            ; 004f81e9
     MOV ESI,0x5c9084                    ; 004f81ea
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f81ef
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f81ef
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004f81f4
     MOV EAX,ESP                         ; 004f81f7
     MOV EDI,0x177                       ; 004f81f9

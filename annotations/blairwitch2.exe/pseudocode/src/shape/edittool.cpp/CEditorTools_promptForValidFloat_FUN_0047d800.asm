@@ -31,9 +31,9 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005ba8cc
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0
-;   shape_edittool.cpp_FUN_0047be40
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     PUSH 0x5d218a                       ; 0047d857 | DAT_005d218a
     LEA EAX,[ESP + 0x14]                ; 0047d85c
     PUSH EAX                            ; 0047d860
-    CALL crt_unknown.c_FUN_005b7790     ; 0047d861
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0047d861
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0047d866
     JMP 0x0047d82e                      ; 0047d869
         ;   XREF to: 0047d82e (UNCONDITIONAL_JUMP)  ; LAB_0047d82e
@@ -132,8 +132,8 @@ section .text
     PUSH 0x5d2190                       ; 0047d8b9 | = "Please enter a valid number."
         ;   Label: LAB_0047d8b9
     PUSH EBX                            ; 0047d8be
-    CALL shape_edittool.cpp_FUN_0047be40 ; 0047d8bf
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0047d8bf
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0047d8c4
     JMP 0x0047d82e                      ; 0047d8c7
         ;   XREF to: 0047d82e (UNCONDITIONAL_JUMP)  ; LAB_0047d82e
@@ -146,8 +146,8 @@ section .text
     FSTP double ptr [ESP]               ; 0047d8dd
     PUSH 0x5d21ad                       ; 0047d8e0 | = "Please enter a valid integer between ..."
     PUSH EBX                            ; 0047d8e5
-    CALL shape_edittool.cpp_FUN_0047be40 ; 0047d8e6
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0047d8e6
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x18                        ; 0047d8eb
     JMP 0x0047d82e                      ; 0047d8ee
         ;   XREF to: 0047d82e (UNCONDITIONAL_JUMP)  ; LAB_0047d82e

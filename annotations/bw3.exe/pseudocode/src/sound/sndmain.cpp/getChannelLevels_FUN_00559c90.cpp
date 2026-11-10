@@ -28,7 +28,7 @@ void __cdecl sound_sndmain_cpp_getChannelLevels_FUN_00559c90(int param_1,float *
   pfVar3 = *(float **)(param_1 * 4 + 0x2cf32cc);
   fStack_20 = 0.0;
   fStack_1c = 0.0;
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   iVar2 = 0;
   if (0 < _DAT_02cf329c) {
     do {

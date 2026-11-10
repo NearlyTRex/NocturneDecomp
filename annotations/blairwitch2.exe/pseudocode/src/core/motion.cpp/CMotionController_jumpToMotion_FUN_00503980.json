@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 111,
+    "complexity_score": 46,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 8,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -20,7 +19,13 @@
     {
       "addr": "004186c0",
       "from_addr": "0041872b",
-      "name": "core_boneguy.cpp_FUN_004186c0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "00436eeb",
+      "name": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,13 +61,7 @@
     {
       "addr": "005115e0",
       "from_addr": "0051178c",
-      "name": "core_passngr.cpp_FUN_005115e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "00436eeb",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -143,7 +142,7 @@
       {
         "call_addr": "0041872b",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004186c0",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +153,7 @@
       {
         "call_addr": "00436eeb",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00436e80",
+        "caller": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +175,7 @@
       {
         "call_addr": "0051178c",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_005115e0",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -270,56 +269,8 @@
       "line": 10,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x50 + 4))",
+      "text": "iVar1 = (**(code **)(this_ptr->vtable + 4))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x50 + 4))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8,target_motion_index);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4 = target_motion_index;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x8 = target_frame_number;",
-      "type": "unnamed_field"
     }
   ]
 }

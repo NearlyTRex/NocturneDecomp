@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 760,
-    "complexity_score": 679,
+    "complexity_score": 640,
     "cross_reference_count": 2,
     "function_call_count": 50,
     "global_count": 56,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 304,
-    "suspect_count": 35,
+    "pseudocode_lines": 305,
+    "suspect_count": 31,
     "suspect_types": [
       "undefined_data",
       "unnamed_field",
@@ -16,7 +16,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1064
+    "total_lines": 1065
   },
   "cross_references": [
     {
@@ -28,7 +28,7 @@
     {
       "addr": "004ee3f0",
       "from_addr": "004ee87c",
-      "name": "core_menu.cpp_FUN_004ee3f0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -101,6 +101,11 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
+      "addr": "004fc740",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740"
+    },
+    {
       "addr": "004fb590",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590"
@@ -109,11 +114,6 @@
       "addr": "004fcb00",
       "is_variadic": false,
       "name": "core_mission.cpp_CDemonMission_run_FUN_004fcb00"
-    },
-    {
-      "addr": "004fc740",
-      "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc740"
     },
     {
       "addr": "004fce00",
@@ -128,7 +128,7 @@
     {
       "addr": "00534a90",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_00534a90"
+      "name": "core_set.cpp_CDemonSet_loadStateInfo_FUN_00534a90"
     },
     {
       "addr": "005b89c0",
@@ -181,14 +181,14 @@
       "name": "crt_string.c_splitpath_FUN_005b9e58"
     },
     {
-      "addr": "005b7790",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
-    },
-    {
       "addr": "005ba1e0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005ba1e0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00460c70",
@@ -201,19 +201,19 @@
       "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
     },
     {
-      "addr": "0047bda0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0"
-    },
-    {
       "addr": "0047be40",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be40"
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
     },
     {
       "addr": "0047c970",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047c970"
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970"
+    },
+    {
+      "addr": "0047bda0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showMessage_FUN_0047bda0"
     },
     {
       "addr": "00433e90",
@@ -226,14 +226,14 @@
       "name": "support_codec.cpp_CLZWDecompress_ctor_FUN_00434990"
     },
     {
+      "addr": "004349d0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWDecompress_init_FUN_004349d0"
+    },
+    {
       "addr": "00434270",
       "is_variadic": false,
       "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00434270"
-    },
-    {
-      "addr": "004349d0",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_004349d0"
     },
     {
       "addr": "00434a10",
@@ -651,7 +651,7 @@
       {
         "call_addr": "004ee87c",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -949,14 +949,6 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x9ec",
-      "severity": "mild",
-      "text": "local_28 = &this_ptr->field_0x9ec;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 71,
       "match": "field_0x274",
       "severity": "mild",
@@ -1045,14 +1037,6 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
-      "match": "DAT_005d855e",
-      "severity": "mild",
-      "text": "FUN_005b7790(local_468,\"%s\\\\%s\",&DAT_005d855e,local_56c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 165,
       "match": "DAT_005d8585",
       "severity": "mild",
@@ -1101,7 +1085,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 277,
       "match": "DAT_005d866a",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005d866a,&DAT_01cb7c54);",
@@ -1109,7 +1093,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 276,
+      "line": 277,
       "match": "DAT_01cb7c54",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005d866a,&DAT_01cb7c54);",
@@ -1117,7 +1101,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 278,
+      "line": 279,
       "match": "DAT_01cb7c58",
       "severity": "mild",
       "text": "puVar8 = &DAT_01cb7c58;",
@@ -1125,27 +1109,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 281,
+      "line": 282,
       "match": "DAT_005d866e",
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005d866e,puVar8);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 302,
-      "match": "field_0x9e8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x9e8 == 0) goto LAB_004bc415;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 304,
-      "match": "field_0x9e8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x9e8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",

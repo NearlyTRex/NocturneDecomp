@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00419a35
     PUSH EAX                            ; 00419a3a
     MOV dword ptr [EAX + -0x4],0x5dc574 ; 00419a3b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00419a42
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00419a42
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x42200000 ; 00419a47
     MOV dword ptr [EBX + 0xce5c],0x41a00000 ; 00419a51
     MOV dword ptr [EBX + 0xce60],0x41200000 ; 00419a5b

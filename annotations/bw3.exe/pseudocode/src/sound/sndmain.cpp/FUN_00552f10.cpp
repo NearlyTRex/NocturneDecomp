@@ -21,7 +21,7 @@ CSfxSlot * __cdecl sound_sndmain_cpp_FUN_00552f10(uint sfx_handle,int check_hard
     this_ptr = (CSfxSlot *)(iVar1 + 0x2ce721c);
     if (uVar2 == *(uint *)(&DAT_02ce7280 + iVar1)) {
       if (check_hardware_playback != 0) {
-        sound_sndmain_cpp_FUN_00558e90();
+        sound_sndmain_cpp_lockSound_FUN_00558e90();
         if ((uVar2 != *(uint *)(&DAT_02ce7280 + iVar1)) || (*(int *)(&DAT_02ce7284 + iVar1) == 0)) {
           sound_sndmain_cpp_FUN_00556fd0();
           return (CSfxSlot *)0x0;

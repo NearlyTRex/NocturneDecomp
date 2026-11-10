@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 163,
+    "complexity_score": 83,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 33,
-    "suspect_count": 12,
+    "suspect_count": 4,
     "suspect_types": [
       "shadow_pointer_walk",
       "unnamed_field"
@@ -19,19 +19,19 @@
     {
       "addr": "00412760",
       "from_addr": "004127f8",
-      "name": "core_batcreat.cpp_FUN_00412760",
+      "name": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00414290",
       "from_addr": "00414328",
-      "name": "core_batman.cpp_FUN_00414290",
+      "name": "core_batman.cpp_CBatman_processDamage_FUN_00414290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041ead0",
       "from_addr": "0041eb57",
-      "name": "core_bride.cpp_FUN_0041ead0",
+      "name": "core_bride.cpp_CBride_processDamage_FUN_0041ead0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,19 +43,19 @@
     {
       "addr": "00464f60",
       "from_addr": "00464fe9",
-      "name": "core_dracbrid.cpp_FUN_00464f60",
+      "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486cb0",
       "from_addr": "004873c7",
-      "name": "core_emitter.cpp_FUN_00486cb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00499fe0",
       "from_addr": "0049a135",
-      "name": "core_fire.cpp_FUN_00499fe0",
+      "name": "core_fire.cpp_CGunFlame_init_FUN_00499fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -81,22 +81,22 @@
     {
       "addr": "0040c840",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c840"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
     },
     {
       "addr": "00425bb0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00425bb0"
+      "name": "core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_00425bb0"
+    },
+    {
+      "addr": "00548250",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_findClosestBone_FUN_00548250"
     },
     {
       "addr": "00547890",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
-    },
-    {
-      "addr": "00548250",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00548250"
     }
   ],
   "globals": [
@@ -113,7 +113,7 @@
       {
         "call_addr": "0049a135",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499fe0",
+        "caller": "core_fire.cpp_CGunFlame_init_FUN_00499fe0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +124,7 @@
       {
         "call_addr": "004873c7",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       {
         "call_addr": "004127f8",
         "call_type": "direct",
-        "caller": "core_batcreat.cpp_FUN_00412760",
+        "caller": "core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,7 +157,7 @@
       {
         "call_addr": "00414328",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00414290",
+        "caller": "core_batman.cpp_CBatman_processDamage_FUN_00414290",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +190,7 @@
       {
         "call_addr": "0041eb57",
         "call_type": "direct",
-        "caller": "core_bride.cpp_FUN_0041ead0",
+        "caller": "core_bride.cpp_CBride_processDamage_FUN_0041ead0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +201,7 @@
       {
         "call_addr": "00464fe9",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00464f60",
+        "caller": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,82 +298,18 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x3564",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x3564 < 0x32) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 13,
-      "match": "field_0x2514",
+      "match": "field_0x2260",
       "severity": "mild",
-      "text": "iVar1 == 0)) && (this_ptr->field_0x2514 != '\\0')))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4,position);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x3564",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x3564) {",
+      "text": "iVar1 == 0)) && ((this_ptr->model).field_0x2260 != '\\0')))) {",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 20,
-      "match": "field_0x3574",
+      "match": "field_0x4",
       "severity": "mild",
-      "text": "if (iVar1 == *(int *)&pCVar3->field_0x3574) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "pCVar3 = (CCharacter *)&pCVar3->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x3564",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x3564);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x3568",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x3568 = flame_type;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x356c",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x356c = flame_scale;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x2b4);",
+      "text": "if (iVar1 == *(int *)&pCVar3->fires[0].field_0x4) {",
       "type": "unnamed_field"
     },
     {
@@ -381,15 +317,15 @@
       "line": 32,
       "match": "field_0xfc",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xfc = 1;",
+      "text": "*(uint *)&(this_ptr->base).field_0xfc = 1;",
       "type": "unnamed_field"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 24,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "match": "pCVar3 = (T *)((pCVar3->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar3 = (CCharacter *)&pCVar3->field_0x18;",
+      "text": "pCVar3 = (CCharacter *)((pCVar3->base).actor_name + 0x18);",
       "type": "shadow_pointer_walk"
     }
   ]

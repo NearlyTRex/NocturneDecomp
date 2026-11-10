@@ -13,7 +13,7 @@
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
-;   core_steuben.cpp_FUN_005a5c20
+;   core_steuben.cpp_CSteuben_processStates_FUN_005a5c20
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
 ;
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 005a5bd3
     PUSH 0x0                            ; 005a5bd5
     PUSH EBX                            ; 005a5bd7
-    CALL core_steuben.cpp_FUN_005a5c20  ; 005a5bd8
-        ;   XREF to: 005a5c20 (UNCONDITIONAL_CALL)  ; undefined core_steuben.cpp_FUN_005a5c20()
+    CALL core_steuben.cpp_CSteuben_processStates_FUN_005a5c20 ; 005a5bd8
+        ;   XREF to: 005a5c20 (UNCONDITIONAL_CALL)  ; void core_steuben.cpp_CSteuben_processStates_FUN_005a5c20(CSteuben * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a5bdd
     PUSH 0x5f0608                       ; 005a5be0
     LEA ESI,[EBX + 0x10af8]             ; 005a5be5

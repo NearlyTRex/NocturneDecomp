@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[38]:
-;   core_baron.cpp_FUN_0040f4d0 at 0040f662
-;   core_batcreat.cpp_FUN_004115b0 at 0041171a
-;   core_batman.cpp_FUN_00412ba0 at 00412d13
-;   core_biggs.cpp_FUN_00414b30 at 00414c3a
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c054
-;   core_bride.cpp_FUN_00423b70 at 0042468a
-;   core_carved.cpp_FUN_00428ae0 at 00429765
-;   core_constrct.cpp_FUN_00445cb0 at 0044662d
-;   core_cow.cpp_FUN_00448570 at 004486d9
-;   core_demnfolk.cpp_FUN_00459100 at 0045afb5
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f662
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041171a
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412d13
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414c3a
+;   core_bird.cpp_CBird_process_FUN_00415340 at 004154c7
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c054
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 0042468a
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429765
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 0044662d
+;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004486d9
 ;   ... and 28 more
 ;
 ; Referenced Globals:

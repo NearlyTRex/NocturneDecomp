@@ -7,15 +7,15 @@
 ; CPickList *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_game.cpp_FUN_004b7f90 at 004b88ee
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b88ee
 ;   core_game.cpp_staticInit_FUN_004b3cd0 at 004b3d13
 ;   core_menu.cpp_FUN_004e94f0 at 004e9c02
 ;   core_menu.cpp_FUN_004eae80 at 004ebd0d
 ;   core_mission.cpp_FUN_004f7a20 at 004f7a33
 ;   core_script.cpp_staticInit_FUN_005286b0 at 005286b5
-;   core_sound.cpp_FUN_00560c90 at 00560c9c
+;   core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90 at 00560c9c
 ;   engine_pod.cpp_FUN_00513d1e at 00513e82
-;   shape_edittool.cpp_FUN_0047db70 at 0047db84
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047db84
 ;   shape_edittool.cpp_FUN_0047dd1e at 0047ddcc
 ;
 ; Referenced Globals:

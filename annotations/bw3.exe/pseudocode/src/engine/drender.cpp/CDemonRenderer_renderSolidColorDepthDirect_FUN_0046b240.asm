@@ -8,8 +8,8 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[4]:
+;   core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004f5370 at 004f5399
 ;   core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_004f53f0 at 004f546c
-;   core_mirror.cpp_FUN_004f5370 at 004f5399
 ;   core_set.cpp_CDemonSet_renderPrimitiveList_FUN_0053acf0 at 0053ad56
 ;   core_setdir.cpp_FUN_0053f940 at 005409d3
 ;

@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   enable_flag
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004b6170 at 004b6ad2
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6ad2
 ;   shape_edittool.cpp_FUN_00483c30 at 00483c64
 ;   shape_edittool.cpp_FUN_00483cb0 at 00483cea
 ;   shape_edittool.cpp_FUN_00483e10 at 00483e48

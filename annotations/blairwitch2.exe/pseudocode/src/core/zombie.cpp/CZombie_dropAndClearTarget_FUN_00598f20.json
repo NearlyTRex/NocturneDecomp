@@ -1,0 +1,95 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 10,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 28
+  },
+  "cross_references": [
+    {
+      "addr": "005996d0",
+      "from_addr": "00599762",
+      "name": "core_zombie.cpp_CZombie_processDamage_FUN_005996d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00598f20",
+    "address_range": [
+      [
+        "00598f20",
+        "00598f58"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_zombie.cpp_CZombie_dropAndClearTarget_FUN_00598f20",
+    "signature": "void __cdecl core_zombie_cpp_CZombie_dropAndClearTarget_FUN_00598f20(CZombie *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00599762",
+        "call_type": "direct",
+        "caller": "core_zombie.cpp_CZombie_processDamage_FUN_005996d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.117647058823529,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "CALLIND": 2,
+      "COPY": 15,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 9,
+      "LOAD": 7,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 70
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombie *"
+      }
+    ]
+  },
+  "suspects": []
+}

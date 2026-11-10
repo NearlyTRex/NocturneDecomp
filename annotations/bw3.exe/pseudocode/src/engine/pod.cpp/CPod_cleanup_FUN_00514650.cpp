@@ -15,17 +15,17 @@ void __cdecl engine_pod_cpp_CPod_cleanup_FUN_00514650(CPod *this_ptr)
   
   iVar3 = 0;
   pCVar2 = this_ptr;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->pod_file_count) {
     do {
-      if (*(CPodFile **)&pCVar2->field_0x4 != (CPodFile *)0x0) {
-        pCVar1 = engine_pod_cpp_CPodFile_dtor_FUN_00512f70(*(CPodFile **)&pCVar2->field_0x4,0);
+      if (pCVar2->pod_files[0] != (CPodFile *)0x0) {
+        pCVar1 = engine_pod_cpp_CPodFile_dtor_FUN_00512f70(pCVar2->pod_files[0],0);
         FUN_005a30c4(pCVar1);
       }
-      *(uint *)&pCVar2->field_0x4 = 0;
+      pCVar2->pod_files[0] = (CPodFile *)0x0;
       iVar3 = iVar3 + 1;
-      pCVar2 = (CPod *)&pCVar2->field_0x4;
-    } while (iVar3 < *(int *)this_ptr);
+      pCVar2 = (CPod *)pCVar2->pod_files;
+    } while (iVar3 < this_ptr->pod_file_count);
   }
-  *(uint *)this_ptr = 0;
+  this_ptr->pod_file_count = 0;
   return;
 }

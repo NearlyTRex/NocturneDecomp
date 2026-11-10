@@ -19,7 +19,7 @@ int __cdecl wincore_winrun_cpp_getNextKeypress_FUN_0058ead0(void)
   if (_DAT_02662dd8 == _DAT_02662ddc) {
     do {
       if (_DAT_02664630 != 0) break;
-      wincore_wddvmem_cpp_FUN_00589560();
+      wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     } while (_DAT_02662dd8 == _DAT_02662ddc);
   }
   uVar2 = (undefined3)((uint)_DAT_02662dd8 >> 8);

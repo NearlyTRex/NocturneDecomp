@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01c35e50
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004a90b0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
 ;   engine_font.cpp_FUN_004aaf00
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
     ADD ESP,0x8                         ; 004a94ef
     PUSH EAX                            ; 004a94f2
     PUSH EBP                            ; 004a94f3
-    CALL engine_font.cpp_FUN_004a90b0   ; 004a94f4
-        ;   XREF to: 004a90b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004a90b0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0 ; 004a94f4
+        ;   XREF to: 004a90b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004a94f9
     POP EBP                             ; 004a94fc
     POP EDI                             ; 004a94fd

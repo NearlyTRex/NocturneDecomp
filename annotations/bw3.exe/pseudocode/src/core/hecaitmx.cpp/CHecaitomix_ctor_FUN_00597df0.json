@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 98,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
+    "pseudocode_lines": 19,
     "suspect_count": 7,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 43
+    "total_lines": 44
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [
@@ -133,20 +133,20 @@
       "line": 13,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar3->field_0x154 = &g_CHecaitomixVTable;",
+      "text": "((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CHecaitomixVTable._ub;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 14,
+      "line": 15,
       "match": "field_0x158",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,\"shadowscorp.dfm\");",
+      "text": "((CDeformableModelInstance *)&pCVar3->field_0x158,\"shadowscorp.dfm\");",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
+      "line": 18,
       "match": "field_0x326c",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0x326c = 0x3fe00000;",
@@ -154,7 +154,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 18,
+      "line": 19,
       "match": "field_0x3270",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0x3270 = 0x40600000;",
@@ -162,7 +162,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 19,
+      "line": 20,
       "match": "field_0x3274",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0x3274 = uVar1;",
@@ -170,7 +170,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 20,
+      "line": 21,
       "match": "field_0x3278",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0x3278 = uVar2;",

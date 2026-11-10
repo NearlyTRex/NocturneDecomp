@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_prye.cpp_FUN_005260b0 at 0052627c
+;   core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0 at 0052627c
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004d4800 = 004d4897
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00432060
+;   core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432060
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   Label: switchD
     PUSH EAX                            ; 004d4897
         ;   Label: caseD_0
-    CALL core_charactr.cpp_FUN_00432060 ; 004d4898
-        ;   XREF to: 00432060 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00432060(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432060 ; 004d4898
+        ;   XREF to: 00432060 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d489d
     TEST EAX,EAX                        ; 004d48a0
     JZ 0x004d2ab0                       ; 004d48a2
@@ -58,8 +58,8 @@ section .text
     MOV EDX,EDX                         ; 004d48ae
     PUSH EAX                            ; 004d48b3
         ;   Label: caseD_a
-    CALL core_charactr.cpp_FUN_00432060 ; 004d48b4
-        ;   XREF to: 00432060 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00432060(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432060 ; 004d48b4
+        ;   XREF to: 00432060 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d48b9
     TEST EAX,EAX                        ; 004d48bc
     JNZ 0x004d48b0                      ; 004d48be

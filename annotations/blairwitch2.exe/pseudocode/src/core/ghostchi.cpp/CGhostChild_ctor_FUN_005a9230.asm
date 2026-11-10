@@ -10,7 +10,7 @@
 ;   core_ghostchi.cpp_factoryFuncGhostChild_FUN_005a9200 at 005a9213
 ;
 ; Called Functions:
-;   core_ghostchi.cpp_FUN_005a94c0
+;   core_ghostchi.cpp_CGhostChild_processStates_FUN_005a94c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d6f0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
@@ -55,8 +55,8 @@ section .text
     MOV dword ptr [EBX + 0x11864],0x0   ; 005a92db
     PUSH EBX                            ; 005a92e5
     MOV dword ptr [EBX + 0x11858],0x0   ; 005a92e6
-    CALL core_ghostchi.cpp_FUN_005a94c0 ; 005a92f0
-        ;   XREF to: 005a94c0 (UNCONDITIONAL_CALL)  ; undefined core_ghostchi.cpp_FUN_005a94c0()
+    CALL core_ghostchi.cpp_CGhostChild_processStates_FUN_005a94c0 ; 005a92f0
+        ;   XREF to: 005a94c0 (UNCONDITIONAL_CALL)  ; void core_ghostchi.cpp_CGhostChild_processStates_FUN_005a94c0(CGhostChild * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a92f5
     PUSH 0x5f08c0                       ; 005a92f8
     PUSH 0x5f08c6                       ; 005a92fd

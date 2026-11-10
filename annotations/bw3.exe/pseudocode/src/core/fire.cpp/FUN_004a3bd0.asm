@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
-;   core_emitter.cpp_FUN_00487eb0 at 0048864f
-;   core_hino.cpp_FUN_0059b960 at 0059c354
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 0048864f
+;   core_hino.cpp_CHino_process_FUN_0059b960 at 0059c354
 ;   core_weather.cpp_FUN_0057c2e0 at 0057c57a
 ;
 ; Referenced Globals:

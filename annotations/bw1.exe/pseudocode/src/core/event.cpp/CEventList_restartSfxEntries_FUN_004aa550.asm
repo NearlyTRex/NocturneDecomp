@@ -15,8 +15,8 @@
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_004aa400
 ;   sound_sndmain.cpp_FUN_00572a10
 ;   sound_sndmain.cpp_FUN_00572a50
-;   sound_sndmain.cpp_FUN_00572ac0
-;   sound_sndmain.cpp_FUN_00572b40
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     IMUL ESI,EBX,0x120                  ; 004aa577
         ;   Label: LAB_004aa577
     ADD ESI,dword ptr [ESP + 0x8]       ; 004aa57d
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 004aa581
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 004aa581
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH 0x1                            ; 004aa586
     MOV EAX,dword ptr [ESI + 0x11c]     ; 004aa588
     PUSH EAX                            ; 004aa58e
@@ -61,8 +61,8 @@ section .text
     ADD ESP,0x4                         ; 004aa5ae
     INC EBX                             ; 004aa5b1
     MOV dword ptr [ESI],EAX             ; 004aa5b2
-    CALL sound_sndmain.cpp_FUN_00572b40 ; 004aa5b4
-        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572b40()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00572b40 ; 004aa5b4
+        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     MOV ECX,dword ptr [EBP + 0x3ac8]    ; 004aa5b9
     ADD EDI,0x120                       ; 004aa5bf
     CMP EBX,ECX                         ; 004aa5c5

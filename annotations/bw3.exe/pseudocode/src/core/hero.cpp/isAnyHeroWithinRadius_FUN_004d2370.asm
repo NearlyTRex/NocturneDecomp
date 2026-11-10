@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_initProcess_FUN_0049de60 at 0049dec2
-;   core_trash.cpp_FUN_0056d360 at 0056d37b
+;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056d37b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d5ba00

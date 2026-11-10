@@ -63,16 +63,15 @@ uint core_hero_cpp_FUN_004d3500(CCharacter *param_1)
   float fStack_18;
   
   bVar8 = 0;
-  iVar3 = core_charactr_cpp_FUN_00432060(param_1);
+  iVar3 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00432060(param_1);
   if (iVar3 != 0) {
     return 0;
   }
-  if (*(int *)&param_1[2].field_0x7004 == 0) {
+  if (param_1[2].flames[0x15].base.orient.vec.y == 0.0) {
     local_1c = 0;
-    for (local_20 = 0; local_20 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_20 = local_20 + 1)
-    {
+    for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
       iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
-                        (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),
+                        (*(uint *)((int)g_CDemonSetPtr->actors + local_1c),
                          g_CBoxActorClassInfo.name_hash);
       if (((iVar3 != 0) && (*(int *)(iVar3 + 0x31c) != 0)) && (*(int *)(iVar3 + 800) == 0)) {
         (**(code **)(*(int *)(iVar3 + 0x154) + 0x1c))(iVar3);
@@ -134,26 +133,26 @@ uint core_hero_cpp_FUN_004d3500(CCharacter *param_1)
         if (((fStack_9c - SQRT(fStack_60 * fStack_60 + fStack_68 * fStack_68) <=
               (float)_DAT_005c4d9d) && (1.0 <= (double)fStack_a0)) &&
            ((double)fStack_a0 <= _DAT_005c4da5)) {
-          core_vecdir_cpp_FUN_00576250(&stack0xffffff5c);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffff5c);
           uStack_80 = uStack_8c;
           *(uint *)((int)&stack0xffffff84 + (uint)bVar8 * -8) =
                *(uint *)(&stack0xffffff78 + (uint)bVar8 * -8);
           *(uint *)(&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
                *(uint *)(&stack0xffffff7c + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-          fStack_18 = (float)core_actor_cpp_FUN_0040cfa0(uStack_7c);
+          fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0(uStack_7c);
           if (ABS(fStack_18) <= (float)_DAT_005c4dad) {
-            *(int *)&param_1[2].field_0x7004 = iVar3;
+            *(int *)((int)&param_1[2].flames[0x15].base.orient + 4) = iVar3;
             break;
           }
         }
       }
       local_1c = local_1c + 4;
     }
-    if (*(int *)&param_1[2].field_0x7004 == 0) {
+    fVar1 = param_1[2].flames[0x15].base.orient.vec.y;
+    if (fVar1 == 0.0) {
       return 0;
     }
-    iVar3 = core_actor_cpp_castToClassHash_FUN_0040c840
-                      (*(int *)&param_1[2].field_0x7004,g_CBoxActorClassInfo.name_hash);
+    iVar3 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c840(fVar1,g_CBoxActorClassInfo.name_hash);
     if (iVar3 != 0) {
       *(CCharacter **)(iVar3 + 800) = param_1;
       uVar4 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x30))(iVar3,iVar3 + 0x32c);

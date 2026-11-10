@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004cf5e0 at 004cf92d
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf92d
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005460d2
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
 ;   core_dcamera.cpp_FUN_0044e2a0
-;   core_game.cpp_FUN_004d60b0
+;   core_game.cpp_calculateIrisFadeCenter_FUN_004d60b0
 ;
 ; *****************************************************************************
 

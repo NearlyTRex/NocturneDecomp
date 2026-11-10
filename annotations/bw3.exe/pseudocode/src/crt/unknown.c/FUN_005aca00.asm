@@ -10,11 +10,11 @@
 ;   crt_unknown.c_FUN_005aaed4 at 005aaf86
 ;   crt_unknown.c_FUN_005ac960 at 005ac9ad
 ;   crt_unknown.c_FUN_005acd10 at 005acd51
-;   unkafter_2d.cpp_FUN_005b08a0 at 005b08e6
-;   unkafter_2d.cpp_FUN_005b0c90 at 005b0ce3
-;   unkafter_2d.cpp_FUN_005b1970 at 005b1986
-;   unkafter_2d.cpp_FUN_005b19a0 at 005b19de
-;   unkafter_asgaya.cpp_FUN_005aede0 at 005aee14
+;   crt_unknown.c_FUN_005aede0 at 005aee14
+;   crt_unknown.c_FUN_005b08a0 at 005b08e6
+;   crt_unknown.c_FUN_005b0c90 at 005b0ce3
+;   crt_unknown.c_FUN_005b1970 at 005b1986
+;   crt_unknown.c_FUN_005b19a0 at 005b19de
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02d25930

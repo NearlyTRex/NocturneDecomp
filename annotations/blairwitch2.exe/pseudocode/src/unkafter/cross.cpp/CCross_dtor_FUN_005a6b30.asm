@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   void* PTR_LAB_005ffe84 = 005a6cb0
+;   CWeapon_full_vtable g_CCrossVTable
 ;   WatcomTypeInfo g_CCrossTypeInfo
 ;
 ; Called Functions:
@@ -29,7 +29,7 @@ section .text
         ;   XREF to: 005a6b60 (CONDITIONAL_JUMP)  ; LAB_005a6b60
     PUSH 0x1                            ; 005a6b3c
     PUSH EBX                            ; 005a6b3e
-    MOV dword ptr [EBX + 0x2b0],0x5ffe84 ; 005a6b3f | PTR_LAB_005ffe84
+    MOV dword ptr [EBX + 0x2b0],0x5ffe84 ; 005a6b3f | g_CCrossVTable
     CALL core_weapon.cpp_CWeapon_dtor_FUN_00589ae0 ; 005a6b49
         ;   XREF to: 00589ae0 (UNCONDITIONAL_CALL)  ; CWeapon * core_weapon.cpp_CWeapon_dtor_FUN_00589ae0(CWeapon * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a6b4e

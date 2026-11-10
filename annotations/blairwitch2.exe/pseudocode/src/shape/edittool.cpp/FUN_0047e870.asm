@@ -25,10 +25,10 @@
 ; XREF[8]:
 ;   core_menu.cpp_FUN_004ebf10 at 004ec9f1
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb85f
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270 at 0047d35a
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004831e1
 ;   shape_edittool.cpp_FUN_0047c0f0 at 0047c6b4
-;   shape_edittool.cpp_FUN_0047d270 at 0047d35a
 ;   shape_edittool.cpp_FUN_0047dc40 at 0047dceb
-;   shape_edittool.cpp_FUN_004831d0 at 004831e1
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b9d5
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b3bc
 ;
@@ -57,10 +57,10 @@
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0
 ;   engine_font.cpp_FUN_004a8df0
 ;   engine_font.cpp_FUN_004aaf00
-;   engine_font.cpp_FUN_004aafb0
-;   engine_font.cpp_FUN_004ab560
 ;   engine_matrix.c_popViewport_FUN_004ea570
 ;   engine_matrix.c_pushViewport_FUN_004ea410
 ;   engine_mini3d.cpp_FUN_004f3570
@@ -87,8 +87,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047e88b
     PUSH EAX                            ; 0047e891
     MOV dword ptr [0x01c25f78],EDX      ; 0047e892 | DAT_01c25f78
-    CALL engine_font.cpp_FUN_004ab560   ; 0047e898
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 0047e898
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     MOV ESI,dword ptr [0x01c2559c]      ; 0047e89d | DAT_01c2559c
     ADD ESP,0x8                         ; 0047e8a3
     MOV [0x01c25f7c],EAX                ; 0047e8a6 | DAT_01c25f7c
@@ -112,8 +112,8 @@ section .text
     MOV EAX,EBX                         ; 0047e8e6
     SHL EBX,0x6                         ; 0047e8e8
     SUB EBX,EAX                         ; 0047e8eb
-    CALL shape_edittool.cpp_FUN_0047bca0 ; 0047e8ed
-        ;   XREF to: 0047bca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047bca0()
+    CALL shape_edittool.cpp_paintWindowBackground_FUN_0047bca0 ; 0047e8ed
+        ;   XREF to: 0047bca0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_paintWindowBackground_FUN_0047bca0()
     MOV EAX,[0x01c25f84]                ; 0047e8f2 | DAT_01c25f84
     ADD EBX,0x1c255a0                   ; 0047e8f7
     TEST EAX,EAX                        ; 0047e8fd
@@ -396,16 +396,16 @@ section .text
     PUSH ESI                            ; 0047ec07
     MOV EDX,dword ptr [0x01c25590]      ; 0047ec08 | DAT_01c25590
     PUSH EDX                            ; 0047ec0e
-    CALL engine_font.cpp_FUN_004aafb0   ; 0047ec0f
-        ;   XREF to: 004aafb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004aafb0(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 0047ec0f
+        ;   XREF to: 004aafb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0047ec14
     PUSH 0x5d2432                       ; 0047ec17 | DAT_005d2432
     MOV ECX,dword ptr [0x01c25590]      ; 0047ec1c | DAT_01c25590
     MOV ESI,dword ptr [0x01c25f7c]      ; 0047ec22 | DAT_01c25f7c
     PUSH ECX                            ; 0047ec28
     ADD ESI,EAX                         ; 0047ec29
-    CALL engine_font.cpp_FUN_004aafb0   ; 0047ec2b
-        ;   XREF to: 004aafb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004aafb0(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0 ; 0047ec2b
+        ;   XREF to: 004aafb0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0(CBitFont * this_ptr, char * text_string)
     ADD EAX,dword ptr [0x01c25f7c]      ; 0047ec30 | DAT_01c25f7c
     ADD ESP,0x8                         ; 0047ec36
     CMP ESI,EAX                         ; 0047ec39

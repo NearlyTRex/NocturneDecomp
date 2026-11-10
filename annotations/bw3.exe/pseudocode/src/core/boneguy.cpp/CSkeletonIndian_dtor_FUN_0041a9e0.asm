@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CSkeleton_IndianTypeInfo
+;   WatcomTypeInfo g_CSkeletonIndianTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 0041a9fd
     SUB EAX,0x954                       ; 0041a9ff
     PUSH EAX                            ; 0041aa04
-    CALL core_cloth.cpp_FUN_0043f900    ; 0041aa05
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 0041aa05
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0041aa0a
     PUSH 0x0                            ; 0041aa0d
     SUB EAX,0x2db0                      ; 0041aa0f
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EBX                         ; 0041aa39
     POP EBX                             ; 0041aa3b
     RET                                 ; 0041aa3c
-    PUSH 0x5dc890                       ; 0041aa3d | g_CSkeleton_IndianTypeInfo
+    PUSH 0x5dc890                       ; 0041aa3d | g_CSkeletonIndianTypeInfo
         ;   Label: LAB_0041aa3d
     PUSH EBX                            ; 0041aa42
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0041aa43

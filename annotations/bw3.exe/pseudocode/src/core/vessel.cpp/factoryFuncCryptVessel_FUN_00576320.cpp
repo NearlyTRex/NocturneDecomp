@@ -11,7 +11,7 @@ void core_vessel_cpp_factoryFuncCryptVessel_FUN_00576320(void)
 {
   CCryptVessel *this_ptr;
   
-  this_ptr = (CCryptVessel *)FUN_005a3cb2(0x7f4);
+  this_ptr = (CCryptVessel *)debugAllocTracked1(0x7f4);
   if (this_ptr == (CCryptVessel *)0x0) {
     return;
   }

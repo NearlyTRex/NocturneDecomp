@@ -21,17 +21,17 @@ CDemonActorType * CFlintlock::getActorType(CFlintlock *this_ptr);
 // Address: 004ae7e0
 CFlintlock * CFlintlock::ctor(CFlintlock *this_ptr);
 
-// Original: core_flintlck.cpp_FUN_004ae850
+// Original: core_flintlck.cpp_CFlintlock_fire_FUN_004ae850
 // Address: 004ae850
-undefined4 FUN_004ae850(CDemonActor *param_1);
+int __cdecl CFlintlock::fire(CFlintlock *this_ptr);
 
-// Original: core_flintlck.cpp_FUN_004af580
+// Original: core_flintlck.cpp_CFlintlock_getDamage_FUN_004af580
 // Address: 004af580
-undefined4 FUN_004af580(void);
+float __cdecl CFlintlock::getDamage(CFlintlock *this_ptr);
 
-// Original: core_flintlck.cpp_FUN_004af5b0
+// Original: core_flintlck.cpp_CFlintlock_setup_FUN_004af5b0
 // Address: 004af5b0
-void FUN_004af5b0(CWeapon *param_1);
+void __cdecl CFlintlock::setup(CFlintlock *this_ptr);
 
 // Original: core_flintlck.cpp_CFlintlock_dtor_FUN_004af630
 // Address: 004af630

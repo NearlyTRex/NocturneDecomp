@@ -2,30 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 80,
+    "complexity_score": 72,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 9,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
+    "pseudocode_lines": 42,
     "suspect_count": 2,
     "suspect_types": [
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 151
+    "total_lines": 143
   },
   "cross_references": [
+    {
+      "addr": "004b7f90",
+      "from_addr": "004b8030",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "004b6f30",
       "from_addr": "004b789e",
       "name": "core_game.cpp_FUN_004b6f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b7f90",
-      "from_addr": "004b8030",
-      "name": "core_game.cpp_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,7 +57,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     }
   ],
   "globals": [
@@ -133,7 +133,7 @@
       {
         "call_addr": "004b8030",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -292,7 +292,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 42,
+      "line": 34,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

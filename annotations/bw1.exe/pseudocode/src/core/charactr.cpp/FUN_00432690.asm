@@ -27,7 +27,7 @@
 ;   core_main.c_FUN_005030e0
 ;   core_xform.cpp_FUN_005b5620
 ;   core_xform.cpp_FUN_005b5760
-;   core_xform.cpp_FUN_005b6380
+;   core_xform.cpp_inverse_FUN_005b6380
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005b5200
 ;
 ; *****************************************************************************
@@ -108,8 +108,8 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00432769
     PUSH EAX                            ; 0043276b
     LEA ESI,[ESP + 0x12c]               ; 0043276c
-    CALL core_xform.cpp_FUN_005b6380    ; 00432773
-        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b6380()
+    CALL core_xform.cpp_inverse_FUN_005b6380 ; 00432773
+        ;   XREF to: 005b6380 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_inverse_FUN_005b6380()
     FLDZ                                ; 00432778
     MOV ECX,0xc                         ; 0043277a
     LEA ESI,[ESP + 0x12c]               ; 0043277f

@@ -11,7 +11,7 @@ void core_hpriest_cpp_factoryFuncHighPriestOfGardath_FUN_004f0960(void)
 {
   CHighPriestOfGardath *this_ptr;
   
-  this_ptr = (CHighPriestOfGardath *)FUN_005c0f32(0x1fb1c);
+  this_ptr = (CHighPriestOfGardath *)debugAllocTracked1(0x1fb1c);
   if (this_ptr == (CHighPriestOfGardath *)0x0) {
     return;
   }

@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004d5e40 at 004d5e6e
-;   core_inv.cpp_FUN_004faaf0 at 004fad71
+;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004faaf0 at 004fad71
 ;   core_inv.cpp_FUN_004fae10 at 004fae67
 ;
 ; Referenced Globals:
@@ -312,7 +312,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 004f7418 | g_CGamePtr
     MOV ECX,0xffffffff                  ; 004f741d
     ADD ESP,0x4                         ; 004f7422
-    MOV EBX,dword ptr [EAX + 0x4]       ; 004f7425 | g_CGameInstance.field4_0x4
+    MOV EBX,dword ptr [EAX + 0x4]       ; 004f7425 | g_CGameInstance.game_pixy
     MOV dword ptr [0x01d1bc48],ECX      ; 004f7428 | DAT_01d1bc48
     CMP EBX,0x180                       ; 004f742e
     JGE 0x004f7517                      ; 004f7434

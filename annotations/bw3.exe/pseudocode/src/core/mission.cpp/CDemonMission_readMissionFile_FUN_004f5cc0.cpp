@@ -156,14 +156,14 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonM
     pCVar5 = actor;
     do {
       cVar1 = *pcVar7;
-      *(char *)pCVar5 = cVar1;
+      pCVar5->actor_name[0] = cVar1;
       if (cVar1 == '\0') break;
       cVar1 = pcVar7[1];
       pcVar7 = pcVar7 + 2;
-      pCVar5->field_0x1 = cVar1;
-      pCVar5 = (CDemonActor *)&pCVar5->field_0x2;
+      pCVar5->actor_name[1] = cVar1;
+      pCVar5 = (CDemonActor *)(pCVar5->actor_name + 2);
     } while (cVar1 != '\0');
-    core_mission_cpp_FUN_004f6930(this_ptr,actor);
+    core_mission_cpp_CDemonMission_addActorToList_FUN_004f6930(this_ptr,actor);
     if (local_14 == local_28) {
       *(CDemonActor **)(this_ptr + 0x1458) = actor;
     }
@@ -191,7 +191,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonM
       }
       core_actor_cpp_CDemonActor_load_FUN_0040b110(pCVar5,file_handle);
       iVar2 = iVar2 + 1;
-      pCVar5 = *(CDemonActor **)&pCVar5->field_0x14c;
+      pCVar5 = pCVar5->next_actor;
     } while (iVar2 < local_28);
   }
   if (*(int *)(this_ptr + 0x1010) != 0) {
@@ -206,10 +206,10 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonM
         }
         iVar3 = (CHero *)core_actor_cpp_castToClassHash_FUN_0040c840(pCVar5,g_CHeroClassInfo.name_hash);
         if (iVar3 != 0) {
-          core_inv_cpp_FUN_004dca90((CInventory *)(iVar3 + 0x206e8));
+          core_inv_cpp_CInventory_loadItems_FUN_004dca90((CInventory *)(iVar3 + 0x206e8));
         }
         iVar2 = iVar2 + 1;
-        pCVar5 = *(CDemonActor **)&pCVar5->field_0x14c;
+        pCVar5 = pCVar5->next_actor;
       } while (iVar2 < local_28);
     }
     *(uint *)(this_ptr + 0x1010) = 0;
@@ -239,7 +239,7 @@ void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004f5cc0(CDemonM
   *(uint *)this_ptr = 0xffffffff;
   core_gore_cpp_CGore_reset_FUN_004ce560(this_ptr_00);
   if (6 < *(int *)(this_ptr + 0x100c)) {
-    core_gore_cpp_FUN_004cf010(g_CGorePtr,file_handle);
+    core_gore_cpp_CGore_load_FUN_004cf010(g_CGorePtr,file_handle);
     return;
   }
   return;

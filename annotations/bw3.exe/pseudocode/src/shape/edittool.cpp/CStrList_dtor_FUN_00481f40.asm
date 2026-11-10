@@ -10,8 +10,8 @@
 ; XREF[6]:
 ;   core_fldnotes.cpp_FUN_004a9930 at 004a993c
 ;   core_script.cpp_CScript_dtor_FUN_00528d20 at 00528d34
+;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047d8c0 at 0047d95f
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004832b0 at 00483304
-;   shape_edittool.cpp_FUN_0047d8c0 at 0047d95f
 ;   shape_edittool.cpp_FUN_0047d980 at 0047da1f
 ;   shape_edittool.cpp_FUN_0047da40 at 0047db0f
 ;

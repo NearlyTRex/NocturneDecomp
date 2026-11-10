@@ -40,7 +40,7 @@
 ;   core_dglobe.cpp_FUN_0045b070
 ;   core_mirror.cpp_FUN_004f57c0
 ;   core_mirror.cpp_FUN_004f5870
-;   core_set.cpp_FUN_005376e0
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     PUSH 0x0                            ; 00537e46
     MOV ESI,dword ptr [ESP + 0x60]      ; 00537e48
     PUSH ESI                            ; 00537e4c
-    CALL core_set.cpp_FUN_005376e0      ; 00537e4d
-        ;   XREF to: 005376e0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_FUN_005376e0(CDemonSet * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * aabb_min, ...)
+    CALL core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0 ; 00537e4d
+        ;   XREF to: 005376e0 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0(CDemonSet * this_ptr, CVector3f * position, CVector3f * orientation, CVector3f * aabb_min, ...)
         ;   Label: LAB_00537e4d
     ADD ESP,0x18                        ; 00537e52
     XOR EDI,EDI                         ; 00537e55

@@ -17,7 +17,7 @@
 ;
 ; XREF[2]:
 ;   core_inv.cpp_FUN_004f70e0 at 004f7443
-;   core_menu.cpp_FUN_0050cc90 at 0050ccda
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050ccda
 ;
 ; *****************************************************************************
 

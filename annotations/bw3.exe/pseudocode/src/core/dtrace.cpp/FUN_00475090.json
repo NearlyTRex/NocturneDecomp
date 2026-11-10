@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 664,
+    "complexity_score": 648,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 164,
+    "pseudocode_lines": 148,
     "suspect_count": 48,
     "suspect_types": [
       "param_count_too_few",
@@ -15,7 +15,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 539
+    "total_lines": 523
   },
   "cross_references": [
     {
@@ -184,7 +184,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_58 = *(float *)(param_1 + 0x28) * _DAT_005bca21;",
@@ -192,7 +192,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_54 = *(float *)(param_1 + 0x2c) * _DAT_005bca21;",
@@ -200,7 +200,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "fStack_50 = *(float *)(param_1 + 0x30) * _DAT_005bca21;",
@@ -208,26 +208,90 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
-      "text": "iStack_94 = (int)ROUND(*param_2 * _DAT_005dee30);",
+      "text": "CStack_94.x = (int)ROUND(*param_2 * _DAT_005dee30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 53,
       "match": "param_2",
       "severity": "mild",
-      "text": "iStack_90 = (int)ROUND(param_2[1] * _DAT_005dee30);",
+      "text": "CStack_94.y = (int)ROUND(param_2[1] * _DAT_005dee30);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 54,
       "match": "param_2",
       "severity": "mild",
-      "text": "iStack_8c = (int)ROUND(param_2[2] * _DAT_005dee30);",
+      "text": "CStack_94.z = (int)ROUND(param_2[2] * _DAT_005dee30);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&CStack_94);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 56,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_7c = *param_2 + fStack_a0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_78 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_74 = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&CStack_70);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_7c = *param_2 + fStack_a0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_78 = param_2[1];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fStack_74 = param_2[2] + fStack_98;",
       "type": "unnamed_param"
     },
     {
@@ -235,7 +299,7 @@
       "line": 71,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_005632a3(*(SProjectedVertex **)DAT_005f2afc,(CVector3i *)&iStack_94);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&CStack_40);",
       "type": "undefined_data"
     },
     {
@@ -243,7 +307,7 @@
       "line": 72,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_7c = *param_2 + fStack_a0;",
+      "text": "fStack_7c = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -259,7 +323,7 @@
       "line": 74,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_74 = param_2[2];",
+      "text": "fStack_74 = param_2[2] + fStack_98;",
       "type": "unnamed_param"
     },
     {
@@ -267,7 +331,7 @@
       "line": 79,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x30),(CVector3i *)&iStack_70);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&CStack_64);",
       "type": "undefined_data"
     },
     {
@@ -275,7 +339,7 @@
       "line": 80,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_7c = *param_2 + fStack_a0;",
+      "text": "fStack_7c = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -283,7 +347,7 @@
       "line": 81,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_78 = param_2[1];",
+      "text": "fStack_78 = param_2[1] + fStack_9c;",
       "type": "unnamed_param"
     },
     {
@@ -291,7 +355,7 @@
       "line": 82,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_74 = param_2[2] + fStack_98;",
+      "text": "fStack_74 = param_2[2];",
       "type": "unnamed_param"
     },
     {
@@ -299,7 +363,7 @@
       "line": 87,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x60),(CVector3i *)&iStack_40);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0xc0),&CStack_34);",
       "type": "undefined_data"
     },
     {
@@ -307,7 +371,7 @@
       "line": 88,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_7c = *param_2;",
+      "text": "fStack_7c = *param_2 + fStack_a0;",
       "type": "unnamed_param"
     },
     {
@@ -315,7 +379,7 @@
       "line": 89,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_78 = param_2[1];",
+      "text": "fStack_78 = param_2[1] + fStack_9c;",
       "type": "unnamed_param"
     },
     {
@@ -323,7 +387,7 @@
       "line": 90,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_74 = param_2[2] + fStack_98;",
+      "text": "fStack_74 = param_2[2];",
       "type": "unnamed_param"
     },
     {
@@ -331,7 +395,7 @@
       "line": 95,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x90),(CVector3i *)&iStack_64);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0xf0),&CStack_88);",
       "type": "undefined_data"
     },
     {
@@ -339,7 +403,7 @@
       "line": 96,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_7c = *param_2;",
+      "text": "fStack_7c = *param_2 + fStack_a0;",
       "type": "unnamed_param"
     },
     {
@@ -355,7 +419,7 @@
       "line": 98,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_74 = param_2[2];",
+      "text": "fStack_74 = param_2[2] + fStack_98;",
       "type": "unnamed_param"
     },
     {
@@ -363,7 +427,7 @@
       "line": 103,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0xc0),(CVector3i *)&iStack_34);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x120),&CStack_1c);",
       "type": "undefined_data"
     },
     {
@@ -371,7 +435,7 @@
       "line": 104,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_7c = *param_2 + fStack_a0;",
+      "text": "fStack_7c = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -387,7 +451,7 @@
       "line": 106,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_74 = param_2[2];",
+      "text": "fStack_74 = param_2[2] + fStack_98;",
       "type": "unnamed_param"
     },
     {
@@ -395,76 +459,12 @@
       "line": 111,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0xf0),(CVector3i *)&iStack_88);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x150),&CStack_28);",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 112,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_7c = *param_2 + fStack_a0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Undefined global data reference",
       "line": 113,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_78 = param_2[1] + fStack_9c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 114,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_74 = param_2[2] + fStack_98;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 119,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x120),(CVector3i *)&iStack_1c);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_7c = *param_2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_78 = param_2[1] + fStack_9c;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 122,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "fStack_74 = param_2[2] + fStack_98;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 127,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x150),(CVector3i *)&iStack_28);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 129,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setCurrentPolygonColor_FUN_0046d3c0(DAT_005f2afc,uVar1 & 0xff);",
@@ -472,7 +472,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 135,
+      "line": 119,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,1);",
@@ -480,7 +480,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 124,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
@@ -488,7 +488,39 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 145,
+      "line": 129,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 134,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 144,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 149,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
@@ -497,38 +529,6 @@
     {
       "description": "Undefined global data reference",
       "line": 150,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 155,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 160,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 165,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0(DAT_005f2afc,aSStack_e8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 166,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046d460(DAT_005f2afc,0);",

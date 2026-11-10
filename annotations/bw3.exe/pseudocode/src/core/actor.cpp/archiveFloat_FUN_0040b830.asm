@@ -9,14 +9,14 @@
 ; XREF[69]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280 at 0040c2cd
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e8f0 at 0040e957
-;   core_asgaya.cpp_FUN_005a1aa0 at 005a1b05
-;   core_baal.cpp_FUN_00597c70 at 00597c8b
+;   core_asgaya.cpp_CAsgaya_archive_FUN_005a1aa0 at 005a1b05
+;   core_baal.cpp_CBaal_archive_FUN_00597c70 at 00597c8b
 ;   core_bat.cpp_CBat_archive_FUN_0040ef20 at 0040ef4e
 ;   core_battery.cpp_CBattery_archive_FUN_0040f630 at 0040f65e
+;   core_bird.cpp_CBird_archive_FUN_0040ff80 at 0040ffd1
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419070 at 00419093
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fbc8
-;   core_boxactor.cpp_FUN_004207f0 at 00420863
-;   core_bugs.cpp_FUN_00421960 at 00421a78
+;   core_boxactor.cpp_CLightActor_archive_FUN_004207f0 at 00420863
 ;   ... and 59 more
 ;
 ; Referenced Globals:

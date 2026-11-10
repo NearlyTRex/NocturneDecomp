@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 51,
-    "complexity_score": 47,
+    "complexity_score": 287,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 32,
-    "suspect_count": 1,
+    "suspect_count": 24,
     "suspect_types": [
+      "negative_offset",
+      "suspect_float",
       "unnamed_field"
     ],
     "total_lines": 83
@@ -18,7 +20,7 @@
     {
       "addr": "004154f0",
       "from_addr": "004155f2",
-      "name": "core_bodypart.cpp_FUN_004154f0",
+      "name": "core_bodypart.cpp_createBodyPart_FUN_004154f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,7 +63,7 @@
     {
       "addr": "005f36c4",
       "name": "g_CBodyPartVTable",
-      "type": "undefined4",
+      "type": "CDemonActor_vtable",
       "value": null
     },
     {
@@ -83,7 +85,7 @@
       {
         "call_addr": "004155f2",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_004154f0",
+        "caller": "core_bodypart.cpp_createBodyPart_FUN_004154f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,6 +157,190 @@
       "severity": "mild",
       "text": "iVar2 = __arrinit(&pCVar1[1].field_0x138,3,&g_SBodyPartModelTypeInfo);",
       "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 13,
+      "match": "pCVar3[-7].",
+      "severity": "mild",
+      "text": "pCVar3[-7].scrape_points[7].previous_position.x = (float)&g_CBodyPartVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 15,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].position.x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 16,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].position.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 17,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].position.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].orientation.x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].orientation.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].orientation.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 21,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].rotation_matrix.m[0].x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 22,
+      "match": "pCVar3[-7].",
+      "severity": "mild",
+      "text": "pCVar3[-7].scrape_points[7].previous_position.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 23,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].scrape_points[1].raytrace_normal.y = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].scrape_points[1].raytrace_normal.x = pCVar3[-6].scrape_points[1].raytrace_normal.y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 24,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].scrape_points[1].raytrace_normal.x = pCVar3[-6].scrape_points[1].raytrace_normal.y;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].scrape_points[1].raytrace_intersection = pCVar3[-6].scrape_points[1].raytrace_normal.x;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 25,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].scrape_points[1].raytrace_intersection = pCVar3[-6].scrape_points[1].raytrace_normal.x;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
+      "match": "pCVar3[-4].",
+      "severity": "mild",
+      "text": "pCVar3[-4].scrape_points[2].transformed_position.x = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 27,
+      "match": "pCVar3[-6].",
+      "severity": "mild",
+      "text": "pCVar3[-6].scrape_points[1].raytrace_normal.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 28,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].scrape_points[7].raytrace_normal.x = 5.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 29,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].scrape_points[7].raytrace_intersection = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 30,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].scrape_points[7].raytrace_normal.y = 9.18341e-41;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 30,
+      "match": "9.18341e-41",
+      "severity": "mild",
+      "text": "pCVar3[-1].scrape_points[7].raytrace_normal.y = 9.18341e-41;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 32,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].scrape_points[7].raytrace_normal.z = 0.0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 33,
+      "match": "pCVar3[-1].",
+      "severity": "mild",
+      "text": "pCVar3[-1].is_valid = 0;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 34,
+      "match": "pCVar3[-8].",
+      "severity": "mild",
+      "text": "return (CBodyPart *)&pCVar3[-8].scrape_points[5].raytrace_normal;",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

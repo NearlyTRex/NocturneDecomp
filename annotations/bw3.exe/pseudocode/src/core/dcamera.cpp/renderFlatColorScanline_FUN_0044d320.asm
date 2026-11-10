@@ -9,7 +9,7 @@
 ; SSoftwareEdge *  Stack[0xc]:4   left
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0053ab80 at 0053ac02
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80 at 0053ac02
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_013405b0

@@ -17,15 +17,15 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawHorizontalLine_FUN_00466f90(C
   int *piVar2;
   int iVar3;
   
-  end_x_00 = end_x + *(int *)(this_ptr + 8);
-  start_x_00 = start_x + *(int *)(this_ptr + 8);
-  iVar3 = y + *(int *)(this_ptr + 0xc);
-  if ((*(int *)(this_ptr + 0x14) <= iVar3) && (iVar3 <= *(int *)(this_ptr + 0x1c))) {
-    if (start_x_00 < *(int *)(this_ptr + 0x10)) {
-      start_x_00 = *(int *)(this_ptr + 0x10);
+  end_x_00 = end_x + this_ptr->x;
+  start_x_00 = start_x + this_ptr->x;
+  iVar3 = y + this_ptr->y;
+  if ((this_ptr->clip_top <= iVar3) && (iVar3 <= this_ptr->clip_bottom)) {
+    if (start_x_00 < this_ptr->clip_left) {
+      start_x_00 = this_ptr->clip_left;
     }
-    if (*(int *)(this_ptr + 0x18) < end_x_00) {
-      end_x_00 = *(int *)(this_ptr + 0x18);
+    if (this_ptr->clip_right < end_x_00) {
+      end_x_00 = this_ptr->clip_right;
     }
     if (start_x_00 <= end_x_00) {
       if (_DAT_01ba5c34 != 0) {

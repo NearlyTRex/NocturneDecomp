@@ -21,9 +21,9 @@ CPathMap * __cdecl CPathMap::dtor(CPathMap *this_ptr,uint flags);
 // Address: 0050ae20
 float FUN_0050ae20(float *param_1,int param_2,int param_3,int param_4,float *param_5);
 
-// Original: core_path.cpp_FUN_0050b1d0
+// Original: core_path.cpp_CPathMap_updateIfNeeded_FUN_0050b1d0
 // Address: 0050b1d0
-void __cdecl FUN_0050b1d0(CPathMap *this_ptr,CVector3f *source_position,int force_update);
+void __cdecl CPathMap::updateIfNeeded(CPathMap *this_ptr,CVector3f *source_position,int force_update);
 
 // Original: core_path.cpp_CPathMap_getCachedVoxelHeight_FUN_0050b320
 // Address: 0050b320
@@ -49,17 +49,17 @@ void FUN_0050c57e(void);
 // Address: 0050c680
 int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
-// Original: core_path.cpp_FUN_0050c750
+// Original: core_path.cpp_renderGridQuad_FUN_0050c750
 // Address: 0050c750
-void FUN_0050c750(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
+void renderGridQuad(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
 
-// Original: core_path.cpp_FUN_0050c980
+// Original: core_path.cpp_CPathMap_renderPathMap_FUN_0050c980
 // Address: 0050c980
-void FUN_0050c980(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CPathMap::renderPathMap(CPathMap *this_ptr,int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_0050cd60
+// Original: core_path.cpp_getOrCreatePathMap_FUN_0050cd60
 // Address: 0050cd60
-CPathMap * __cdecl FUN_0050cd60(CLocation *location);
+CPathMap * __cdecl getOrCreatePathMap(CLocation *location);
 
 // Original: core_path.cpp_getPathMap_FUN_0050ced0
 // Address: 0050ced0
@@ -73,13 +73,13 @@ void __cdecl CPathMap::reset(CPathMap *this_ptr);
 // Address: 0050cf60
 void __cdecl resetAllPathMaps(void);
 
-// Original: core_path.cpp_FUN_0050cfc0
+// Original: core_path.cpp_renderAllPathMaps_FUN_0050cfc0
 // Address: 0050cfc0
-void FUN_0050cfc0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void __cdecl renderAllPathMaps(int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_0050d050
+// Original: core_path.cpp_renderPathMapsAtPosition_FUN_0050d050
 // Address: 0050d050
-void FUN_0050d050(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void __cdecl renderPathMapsAtPosition(CVector3f *position,int depth,int red,int green,int fog);
 
 // Original: core_path.cpp_FUN_0050d11e
 // Address: 0050d11e

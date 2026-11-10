@@ -21,29 +21,29 @@ CDemonActorType * CAmmoBox::getActorType(CAmmoBox *this_ptr);
 // Address: 0040e0b0
 CAmmoBox * __cdecl CAmmoBox::ctor(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040e160
+// Original: core_ammobox.cpp_CAmmoBox_setup_FUN_0040e160
 // Address: 0040e160
-void FUN_0040e160(CDemonActor *param_1);
+void __cdecl CAmmoBox::setup(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040e190
+// Original: core_ammobox.cpp_CAmmoBox_process_FUN_0040e190
 // Address: 0040e190
-void FUN_0040e190(void);
+void __cdecl CAmmoBox::process(CAmmoBox *this_ptr,float delta_time);
 
-// Original: core_ammobox.cpp_FUN_0040e1a0
+// Original: core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e1a0
 // Address: 0040e1a0
-void __cdecl FUN_0040e1a0(CAmmoBox *this_ptr,float open_pct);
+void __cdecl CAmmoBox::openBox(CAmmoBox *this_ptr,float open_pct);
 
-// Original: core_ammobox.cpp_FUN_0040e210
+// Original: core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210
 // Address: 0040e210
-void __cdecl FUN_0040e210(CAmmoBox *this_ptr,CInventory *inventory);
+void __cdecl CAmmoBox::addToInventory(CAmmoBox *this_ptr,CInventory *inventory);
 
-// Original: core_ammobox.cpp_FUN_0040e320
+// Original: core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e320
 // Address: 0040e320
-int FUN_0040e320(CDemonActor *param_1);
+int __cdecl CAmmoBox::renderOpaque(CAmmoBox *this_ptr);
 
-// Original: core_ammobox.cpp_FUN_0040e3c0
+// Original: core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0
 // Address: 0040e3c0
-void FUN_0040e3c0(int param_1);
+CBoundingBox3D * __cdecl CAmmoBox::getBoundingBox(CAmmoBox *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ammobox.cpp_CAmmoBox_archive_FUN_0040e400
 // Address: 0040e400

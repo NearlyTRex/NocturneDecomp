@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350 at 0041d746
+;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50 at 00447d8b
 ;   core_dfilter.cpp_FUN_00447660 at 00447731
-;   core_dfilter.cpp_FUN_00447c50 at 00447d8b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ceb69

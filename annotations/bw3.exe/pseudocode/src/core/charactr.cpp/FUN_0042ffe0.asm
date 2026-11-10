@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00430d60 at 00430de6
+;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430de6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b839a

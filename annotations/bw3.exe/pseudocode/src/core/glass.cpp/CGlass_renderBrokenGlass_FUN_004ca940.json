@@ -1,0 +1,326 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 174,
+    "complexity_score": 230,
+    "cross_reference_count": 2,
+    "function_call_count": 9,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 80,
+    "suspect_count": 13,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 254
+  },
+  "cross_references": [
+    {
+      "addr": "004cab40",
+      "from_addr": "004cacea",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004cab40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00533b80",
+      "from_addr": "00533cfe",
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ca940",
+    "address_range": [
+      [
+        "004ca940",
+        "004cab3a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940",
+    "signature": "void __cdecl core_glass_cpp_CGlass_renderBrokenGlass_FUN_004ca940(CGlass *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830"
+    },
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "0046e5e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0"
+    },
+    {
+      "addr": "0046d540",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540"
+    },
+    {
+      "addr": "0046bf90",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderSolidTexturedPoly_FUN_0046bf90"
+    },
+    {
+      "addr": "0046d4c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
+    },
+    {
+      "addr": "0046d520",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520"
+    },
+    {
+      "addr": "005632a3",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_005632a3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e0bc0",
+      "name": "DAT_005e0bc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00533cfe",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00533e11",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cacea",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_CGlass_renderBackground_FUN_004cab40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.537414965986395,
+    "instruction_count": 147,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 12,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 166,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 73,
+      "INT_AND": 68,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 65,
+      "INT_LESS": 3,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 32,
+      "INT_SUB": 44,
+      "INT_XOR": 3,
+      "INT_ZEXT": 2,
+      "LOAD": 35,
+      "POPCOUNT": 32,
+      "RETURN": 2,
+      "ROUND": 3,
+      "STORE": 49,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 667
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 76,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046d540(DAT_005f2afc);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 38,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&this_ptr->broken_texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "(DAT_005f2afc,&this_ptr->broken_texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + iVar4),&CStack_18);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 57,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "*(uint *)(DAT_005f2afc->vertex_buffer_ptr + iVar4 + 0x20) = 0xffff;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0(DAT_005f2afc,this_ptr->opacity);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 73,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 77,
+      "match": "pCVar5 = (T *)((pCVar5->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar5 = (CGlass *)((pCVar5->base).orient_matrix.m + 1);",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

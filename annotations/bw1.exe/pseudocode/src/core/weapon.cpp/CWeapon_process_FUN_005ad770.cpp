@@ -11,36 +11,40 @@
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ad770(CWeapon *this_ptr,float delta_time)
 
 {
-  float fVar1;
+  UOrientationVector *pUVar1;
+  CVector3f *pCVar2;
+  float fVar3;
   
-  if ((0.0 < *(float *)&this_ptr->field_0x300) &&
-     (fVar1 = *(float *)&this_ptr->field_0x300 - delta_time,
-     *(float *)&this_ptr->field_0x300 = fVar1, fVar1 < 0.0)) {
-    *(uint *)&this_ptr->field_0x300 = 0;
+  if ((0.0 < this_ptr->fire_cooldown_timer) &&
+     (fVar3 = this_ptr->fire_cooldown_timer - delta_time, this_ptr->fire_cooldown_timer = fVar3,
+     fVar3 < 0.0)) {
+    this_ptr->fire_cooldown_timer = 0.0;
   }
-  if (((*(int *)&this_ptr->field_0x304 == 0) && (*(int *)&this_ptr->field_0x2d4 == 0)) &&
-     (0.0 < *(float *)&this_ptr->field_0x570)) {
-    fVar1 = *(float *)&this_ptr->field_0x570 - delta_time;
-    *(float *)&this_ptr->field_0x570 = fVar1;
-    if (fVar1 < 0.0) {
-      *(uint *)&this_ptr->field_0x570 = 0;
+  if (((this_ptr->carried_by_actor == (CDemonActor *)0x0) &&
+      (this_ptr->weapon_state == WEAPON_STATE_LYING_AROUND)) && (0.0 < this_ptr->sim_timer)) {
+    fVar3 = this_ptr->sim_timer - delta_time;
+    this_ptr->sim_timer = fVar3;
+    if (fVar3 < 0.0) {
+      this_ptr->sim_timer = 0.0;
     }
-    core_box_cpp_CBox_process_FUN_0041e0d0((CBox *)&this_ptr->field_0x308,delta_time);
-    *(uint *)&this_ptr->field_0x20 = *(uint *)&this_ptr->field_0x308;
-    *(uint *)&this_ptr->field_0x24 = *(uint *)&this_ptr->field_0x30c;
-    *(uint *)&this_ptr->field_0x28 = *(uint *)&this_ptr->field_0x310;
-    if (&this_ptr->field_0x30 != &this_ptr->field_0x314) {
-      *(uint *)&this_ptr->field_0x30 = *(uint *)&this_ptr->field_0x314;
-      *(uint *)&this_ptr->field_0x34 = *(uint *)&this_ptr->field_0x318;
-      *(uint *)&this_ptr->field_0x38 = *(uint *)&this_ptr->field_0x31c;
+    core_box_cpp_CBox_process_FUN_0041e0d0(&this_ptr->physics_box,delta_time);
+    (this_ptr->base).location.position.x = (this_ptr->physics_box).position.x;
+    (this_ptr->base).location.position.y = (this_ptr->physics_box).position.y;
+    (this_ptr->base).location.position.z = (this_ptr->physics_box).position.z;
+    pUVar1 = &(this_ptr->base).orient;
+    pCVar2 = &(this_ptr->physics_box).orientation;
+    if ((CVector3f *)pUVar1 != pCVar2) {
+      (pUVar1->vec).x = pCVar2->x;
+      (this_ptr->base).orient.vec.y = (this_ptr->physics_box).orientation.y;
+      (this_ptr->base).orient.vec.z = (this_ptr->physics_box).orientation.z;
     }
   }
-  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0((CDemonActor *)this_ptr);
-  if (((*(int *)&this_ptr->field_0x304 == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) &&
-      (*(int *)&g_CGamePtr->field_0x264 != 0)) && (*(int *)&this_ptr->field_0x2f0 != 0)) {
-    (**(code **)(*(int *)&this_ptr->field_0x154 + 0xf4))(this_ptr);
-    if (0.0 < (float)g_CDemonLightInstance._12200_4_) {
-      core_set_cpp_FUN_005518e0(g_CDemonSetPtr,&g_CDemonLightInstance);
+  core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0(&this_ptr->base);
+  if (((this_ptr->carried_by_actor == *(CDemonActor **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) &&
+      (*(int *)&g_CGamePtr->field_0x264 != 0)) && (this_ptr->can_attach_light != 0)) {
+    (*(((this_ptr->base).vtable._uc)->_uc).getGrabber)((CCharacter *)this_ptr);
+    if (0.0 < g_CDemonLightInstance.volumetric_intensity) {
+      core_set_cpp_CDemonSet_addDynamicLight_FUN_005518e0(g_CDemonSetPtr,&g_CDemonLightInstance);
       return;
     }
   }

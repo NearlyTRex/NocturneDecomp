@@ -2,15 +2,20 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CPod_vtable;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CPodFile.h"
 
 // Structure: CPod
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x198 (408 bytes)
 #pragma pack(push, 1)
 typedef struct CPod {
-    char field_0[408]; // 0x0
+    int pod_file_count; // 0x0
+    struct CPodFile* pod_files[100]; // 0x4
+    struct CPod_vtable* vtable; // 0x194
 } CPod;
 #pragma pack(pop)
 

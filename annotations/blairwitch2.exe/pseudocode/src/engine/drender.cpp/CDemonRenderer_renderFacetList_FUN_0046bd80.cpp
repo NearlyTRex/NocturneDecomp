@@ -14,16 +14,14 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046bd80(CDem
   SMRGLPrimitiveQuad *pSVar1;
   int iVar2;
   int iVar3;
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3i local_28;
   int local_1c;
   int local_18;
   int local_14;
   
-  if (((*(int *)(this_ptr + 0x10) == 0) && (*(int *)(this_ptr + 0xc) == 0)) && (DAT_0070ca7c != 0))
-  {
-    if (*(int *)(this_ptr + 4) == 0) {
+  if (((this_ptr->face_capture_enabled == 0) && (this_ptr->plane_culling_enabled == 0)) &&
+     (DAT_0070ca7c != 0)) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (DAT_006141c0 == 0x20) {
         _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
       }
@@ -34,33 +32,33 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046bd80(CDem
       _DAT_01c38b58 = 6;
       if (_DAT_01c37788 == 0) {
         for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-          local_28 = *(int *)(primitive_array + 0x18);
-          local_24 = *(int *)(primitive_array + 0x24);
-          local_20 = *(int *)(primitive_array + 0x30);
+          local_28.x = *(int *)(primitive_array + 0x18);
+          local_28.y = *(int *)(primitive_array + 0x24);
+          local_28.z = *(int *)(primitive_array + 0x30);
           if (*(int *)(primitive_array + 4) == 4) {
             local_1c = *(int *)(primitive_array + 0x3c);
           }
-          if (*(int *)(this_ptr + 0x20) == 0) {
-            *(uint *)(local_28 * 0x30 + *(int *)this_ptr + 0x18) =
+          if (this_ptr->skip_uv_extraction == 0) {
+            *(uint *)(this_ptr->vertex_buffer_ptr + local_28.x * 0x30 + 0x18) =
                  *(uint *)(primitive_array + 0x1c);
-            *(uint *)(*(int *)this_ptr + local_28 * 0x30 + 0x1c) =
+            *(uint *)(this_ptr->vertex_buffer_ptr + local_28.x * 0x30 + 0x1c) =
                  *(uint *)(primitive_array + 0x20);
-            *(uint *)(*(int *)this_ptr + local_24 * 0x30 + 0x18) =
+            *(uint *)(this_ptr->vertex_buffer_ptr + local_28.y * 0x30 + 0x18) =
                  *(uint *)(primitive_array + 0x28);
-            *(uint *)(local_24 * 0x30 + *(int *)this_ptr + 0x1c) =
+            *(uint *)(this_ptr->vertex_buffer_ptr + local_28.y * 0x30 + 0x1c) =
                  *(uint *)(primitive_array + 0x2c);
-            *(uint *)(*(int *)this_ptr + local_20 * 0x30 + 0x18) =
+            *(uint *)(this_ptr->vertex_buffer_ptr + local_28.z * 0x30 + 0x18) =
                  *(uint *)(primitive_array + 0x34);
-            *(uint *)(local_20 * 0x30 + *(int *)this_ptr + 0x1c) =
+            *(uint *)(this_ptr->vertex_buffer_ptr + local_28.z * 0x30 + 0x1c) =
                  *(uint *)(primitive_array + 0x38);
             if (*(int *)(primitive_array + 4) == 4) {
-              *(uint *)(*(int *)this_ptr + local_1c * 0x30 + 0x18) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_1c * 0x30 + 0x18) =
                    *(uint *)(primitive_array + 0x40);
-              *(uint *)(local_1c * 0x30 + *(int *)this_ptr + 0x1c) =
+              *(uint *)(this_ptr->vertex_buffer_ptr + local_1c * 0x30 + 0x1c) =
                    *(uint *)(primitive_array + 0x44);
             }
           }
-          core_dpart_cpp_FUN_00461f70(&local_28,*(int *)(primitive_array + 4));
+          core_dpart_cpp_FUN_00461f70(&local_28.x,*(int *)(primitive_array + 4));
           primitive_array = primitive_array + primitive_stride;
         }
       }
@@ -88,7 +86,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046bd80(CDem
         }
         if (0 < iVar3) {
           engine_special_cpp_drawPolyList_FUN_0055f950
-                    (*(uint *)this_ptr,&DAT_0060b288,iVar3,_DAT_01c38b54);
+                    (this_ptr->vertex_buffer_ptr,&DAT_0060b288,iVar3,_DAT_01c38b54);
           return;
         }
       }
@@ -98,15 +96,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_0046bd80(CDem
       _DAT_01c38b54 = 0;
       _DAT_01c38b58 = _DAT_01c38b54;
       for (; 0 < primitive_count; primitive_count = primitive_count + -1) {
-        local_28 = *(int *)(primitive_array + 0x18);
-        local_24 = *(int *)(primitive_array + 0x24);
-        local_20 = *(int *)(primitive_array + 0x30);
+        local_28.x = *(int *)(primitive_array + 0x18);
+        local_28.y = *(int *)(primitive_array + 0x24);
+        local_28.z = *(int *)(primitive_array + 0x30);
         if (*(int *)(primitive_array + 4) == 4) {
           local_1c = *(int *)(primitive_array + 0x3c);
         }
         pSVar1 = primitive_array + 4;
         primitive_array = primitive_array + primitive_stride;
-        core_dpart_cpp_FUN_004625f0((CVector3i *)&local_28,*(int *)pSVar1);
+        core_dpart_cpp_FUN_004625f0(&local_28,*(int *)pSVar1);
       }
     }
   }

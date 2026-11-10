@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_prye_cpp_FUN_005263c0(int param_1)
+; void unkafter_prye_cpp_FUN_005263c0(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x14]:4  local_14
@@ -21,7 +21,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_charactr.cpp_FUN_00433a60
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
 ;   core_prye.cpp_FUN_0051f360
 ;
 ; *****************************************************************************
@@ -78,8 +78,8 @@ section .text
     PUSH EAX                            ; 0052645a
         ;   Label: LAB_0052645a
     PUSH EBX                            ; 0052645b
-    CALL core_charactr.cpp_FUN_00433a60 ; 0052645c
-        ;   XREF to: 00433a60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433a60()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60 ; 0052645c
+        ;   XREF to: 00433a60 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 00526461
     FLD float ptr [ESP + 0x8]           ; 00526465
     ADD ESP,0x8                         ; 00526469

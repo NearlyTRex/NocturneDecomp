@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 521,
+    "complexity_score": 522,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 132,
     "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
@@ -17,25 +17,25 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 463
+    "total_lines": 464
   },
   "cross_references": [
     {
-      "addr": "00494690",
-      "from_addr": "00494cdc",
-      "name": "shape_edittool.cpp_FUN_00494690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049b830",
       "from_addr": "0049ba72",
-      "name": "shape_edittool.cpp_FUN_0049b830",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00493d40",
       "from_addr": "00493fa9",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00494690",
+      "from_addr": "00494cdc",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,34 +69,34 @@
       "name": "engine_2d.c_drawHLine_FUN_00402f30"
     },
     {
-      "addr": "004c1dd0",
+      "addr": "004c4510",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c1dd0"
-    },
-    {
-      "addr": "004c3ea0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c3ea0"
-    },
-    {
-      "addr": "004c3f50",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c3f50"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
     },
     {
       "addr": "004c44e0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c44e0"
-    },
-    {
-      "addr": "004c4510",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c4510"
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004c44e0"
     },
     {
       "addr": "004c4540",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c4540"
+      "name": "engine_font.cpp_CBitFont_getCharYOffset_FUN_004c4540"
+    },
+    {
+      "addr": "004c3f50",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
+    },
+    {
+      "addr": "004c1dd0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004c1dd0"
     },
     {
       "addr": "00517d50",
@@ -188,7 +188,7 @@
       {
         "call_addr": "0049ba72",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +201,7 @@
       {
         "call_addr": "0049baa7",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +214,7 @@
       {
         "call_addr": "00494cdc",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494690",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -609,10 +609,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = engine_font_cpp_FUN_004c44e0(_DAT_01c3eb50,(uint)*(byte *)(param_1 + 4));",
+      "text": "(_DAT_01c3eb50,(uint)*(byte *)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {

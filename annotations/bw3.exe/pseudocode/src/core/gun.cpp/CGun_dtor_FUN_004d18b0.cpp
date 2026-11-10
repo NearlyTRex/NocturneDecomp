@@ -17,7 +17,7 @@ CGun * __cdecl core_gun_cpp_CGun_dtor_FUN_004d18b0(CGun *this_ptr,uint flags)
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return (CGun *)pCVar1;
   }

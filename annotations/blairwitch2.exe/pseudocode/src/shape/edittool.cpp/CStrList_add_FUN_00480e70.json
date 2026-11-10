@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 35,
+    "complexity_score": 5,
     "cross_reference_count": 19,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 18
   },
   "cross_references": [
@@ -25,7 +22,7 @@
     {
       "addr": "004b6170",
       "from_addr": "004b673d",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,6 +44,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00529750",
+      "from_addr": "0052981c",
+      "name": "core_script.cpp_CScript_startDialogLine_FUN_00529750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00521cf0",
       "from_addr": "00521e00",
       "name": "core_script.cpp_FUN_00521cf0",
@@ -59,15 +62,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00529750",
-      "from_addr": "0052981c",
-      "name": "core_script.cpp_FUN_00529750",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0055b110",
       "from_addr": "0055b133",
-      "name": "core_sound.cpp_FUN_0055b110",
+      "name": "core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -162,7 +159,7 @@
       {
         "call_addr": "004b673d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +170,7 @@
       {
         "call_addr": "004b675a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -184,7 +181,7 @@
       {
         "call_addr": "004b6a16",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +192,7 @@
       {
         "call_addr": "004b6a33",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,7 +203,7 @@
       {
         "call_addr": "004b6a50",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +214,7 @@
       {
         "call_addr": "004b6a6d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +225,7 @@
       {
         "call_addr": "004b6a8a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,7 +236,7 @@
       {
         "call_addr": "004b6ab5",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -250,7 +247,7 @@
       {
         "call_addr": "004b6c6e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,22 +305,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 5,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0xc + 0xc))(this_ptr,*(uint *)this_ptr,string_data);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0xc + 0xc))(this_ptr,*(uint *)this_ptr,string_data);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

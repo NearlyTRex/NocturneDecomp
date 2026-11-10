@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x70]:4  local_70
 ;
 ; XREF[1]:
-;   wincore_wddvmem.cpp_FUN_00589430 at 0058954f
+;   wincore_wddvmem.cpp_setupColorPalette_FUN_00589430 at 0058954f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005ee32d

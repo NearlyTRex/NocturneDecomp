@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 83,
+    "complexity_score": 64,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 105
+    "total_lines": 106
   },
   "cross_references": [
     {
@@ -193,7 +193,7 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
+      "line": 16,
       "match": "field_0x54",
       "severity": "mild",
       "text": "if (0 < *(int *)&this_ptr->field_0x54) {",
@@ -201,34 +201,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
+      "line": 17,
       "match": "field_0x58",
       "severity": "mild",
-      "text": "pfVar4 = (float *)(*(int *)&this_ptr->field_0x58 + 4);",
+      "text": "pfVar5 = (float *)(*(int *)&this_ptr->field_0x58 + 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&position->field_0x4 - pfVar4[1];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&position->field_0x8 - pfVar4[2];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
+      "line": 29,
       "match": "field_0x54",
       "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x54);",
+      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x54);",
       "type": "unnamed_field"
     }
   ]

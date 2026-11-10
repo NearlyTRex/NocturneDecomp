@@ -20,7 +20,7 @@
 ;   core_fldnotes.cpp_FUN_004a8490
 ;   core_fldnotes.cpp_FUN_004a9230
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 004a91bd
         ;   Label: LAB_004a91bd
     PUSH 0x120                          ; 004a91be
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004a91c3
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004a91c3
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004a91c8
     TEST EAX,EAX                        ; 004a91cb
     JZ 0x004a91e0                       ; 004a91cd

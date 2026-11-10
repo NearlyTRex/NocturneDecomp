@@ -11,7 +11,7 @@ void core_flame_cpp_factoryFuncFlame_FUN_004b7a00(void)
 {
   CFlame *this_ptr;
   
-  this_ptr = (CFlame *)FUN_005c0f32(0x2a4);
+  this_ptr = (CFlame *)debugAllocTracked1(0x2a4);
   if (this_ptr == (CFlame *)0x0) {
     return;
   }

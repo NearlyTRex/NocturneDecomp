@@ -76,8 +76,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_emitter.cpp_FUN_004889b0 at 00488a90
-;   core_weapon.cpp_FUN_0057bb60 at 0057bcf4
+;   core_emitter.cpp_CEmitter_renderOpaque_FUN_004889b0 at 00488a90
+;   core_weapon.cpp_CWeapon_renderAimBeam_FUN_0057bb60 at 0057bcf4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c09e4
@@ -88,11 +88,11 @@
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 DAT_01d5ba14
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364264_0x14d128
-;   undefined4 g_CDemonSetInstance.field1364268_0x14d12c
-;   undefined4 g_CDemonSetInstance.field1364272_0x14d130
-;   undefined4 g_CDemonSetInstance.field1364280_0x14d138
-;   undefined4 g_CDemonSetInstance.field1364292_0x14d144
+;   undefined4 g_CDemonSetInstance.collision_normal.x
+;   undefined4 g_CDemonSetInstance.collision_normal.y
+;   undefined4 g_CDemonSetInstance.collision_normal.z
+;   undefined4 g_CDemonSetInstance.collision_impact_position.x
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -103,8 +103,8 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_0053ea20
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
+;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0
 ;   core_setcolid.cpp_FUN_0053ccc0
-;   core_setcolid.cpp_FUN_0053ecd0
 ;   crt_math.c_acos_FUN_005a4b74
 ;
 ; *****************************************************************************
@@ -138,8 +138,8 @@ section .text
     MOV EDX,dword ptr [0x00603b28]      ; 004a2e58 | g_CDemonSetPtr
     PUSH EDX                            ; 004a2e5e | g_CDemonSetInstance
     LEA EDI,[ESP + 0xa4]                ; 004a2e5f
-    CALL core_setcolid.cpp_FUN_0053ecd0 ; 004a2e66
-        ;   XREF to: 0053ecd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_0053ecd0(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
+    CALL core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0 ; 004a2e66
+        ;   XREF to: 0053ecd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
     ADD ESP,0x14                        ; 004a2e6b
     LEA EAX,[ESP + 0xb4]                ; 004a2e6e
     MOV ESI,dword ptr [EBP + 0x18]      ; 004a2e75
@@ -244,15 +244,15 @@ section .text
     CMP EAX,ESI                         ; 004a2fdd
     JZ 0x004a2ffe                       ; 004a2fdf
         ;   XREF to: 004a2ffe (CONDITIONAL_JUMP)  ; LAB_004a2ffe
-    MOV EAX,dword ptr [ESI]             ; 004a2fe1 | g_CDemonSetInstance.field1364264_0x14d128
+    MOV EAX,dword ptr [ESI]             ; 004a2fe1 | g_CDemonSetInstance.collision_normal.x
     MOV dword ptr [ESP + 0x84],EAX      ; 004a2fe3
-    MOV EAX,dword ptr [ESI + 0x4]       ; 004a2fea | g_CDemonSetInstance.field1364268_0x14d12c
+    MOV EAX,dword ptr [ESI + 0x4]       ; 004a2fea | g_CDemonSetInstance.collision_normal.y
     MOV dword ptr [ESP + 0x88],EAX      ; 004a2fed
-    MOV EAX,dword ptr [ESI + 0x8]       ; 004a2ff4 | g_CDemonSetInstance.field1364272_0x14d130
+    MOV EAX,dword ptr [ESI + 0x8]       ; 004a2ff4 | g_CDemonSetInstance.collision_normal.z
     MOV dword ptr [ESP + 0x8c],EAX      ; 004a2ff7
     MOV EAX,[0x00603b28]                ; 004a2ffe | g_CDemonSetPtr
         ;   Label: LAB_004a2ffe
-    MOV EAX,dword ptr [EAX + 0x14d144]  ; 004a3003 | g_CDemonSetInstance.field1364292_0x14d144
+    MOV EAX,dword ptr [EAX + 0x14d144]  ; 004a3003 | g_CDemonSetInstance.collision_actor
     MOV dword ptr [ESP + 0x160],EAX     ; 004a3009
     MOV EAX,[0x01d5ba14]                ; 004a3010 | DAT_01d5ba14
     MOV EAX,dword ptr [EAX*0x4 + 0x1d5ba04] ; 004a3015
@@ -582,7 +582,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 004a3464 | g_CDemonSetPtr
         ;   Label: LAB_004a3464
     ADD EAX,0x14d138                    ; 004a3469
-    PUSH EAX                            ; 004a346e | g_CDemonSetInstance.field1364280_0x14d138
+    PUSH EAX                            ; 004a346e | g_CDemonSetInstance.collision_impact_position.x
     MOV ECX,dword ptr [ESP + 0x164]     ; 004a346f
     PUSH ECX                            ; 004a3476
     LEA ESI,[ESP + 0x50]                ; 004a3477
@@ -608,7 +608,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 004a34ae | g_CDemonSetPtr
         ;   Label: LAB_004a34ae
     ADD EAX,0x14d128                    ; 004a34b3
-    PUSH EAX                            ; 004a34b8 | g_CDemonSetInstance.field1364264_0x14d128
+    PUSH EAX                            ; 004a34b8 | g_CDemonSetInstance.collision_normal.x
     MOV ESI,dword ptr [ESP + 0x164]     ; 004a34b9
     PUSH ESI                            ; 004a34c0
     LEA ESI,[ESP + 0x74]                ; 004a34c1

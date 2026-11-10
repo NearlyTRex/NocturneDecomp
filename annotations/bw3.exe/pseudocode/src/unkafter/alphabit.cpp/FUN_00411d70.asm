@@ -13,7 +13,7 @@
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_alphabit.cpp_FUN_0040d400
-;   sound_sndmain.cpp_FUN_00556c60
+;   sound_sndmain.cpp_killAllSfx_FUN_00556c60
 ;
 ; *****************************************************************************
 
@@ -487,8 +487,8 @@ section .text
     MOV EAX,EAX                         ; 004122ce
     MOV dword ptr [EBX + 0x1c],0x0      ; 004122d0
         ;   Label: LAB_004122d0
-    CALL sound_sndmain.cpp_FUN_00556c60 ; 004122d7
-        ;   XREF to: 00556c60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556c60()
+    CALL sound_sndmain.cpp_killAllSfx_FUN_00556c60 ; 004122d7
+        ;   XREF to: 00556c60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_killAllSfx_FUN_00556c60()
     MOV dword ptr [EBX + 0x18],0x0      ; 004122dc
     MOV dword ptr [EBX + 0x30],0x0      ; 004122e3
     MOV dword ptr [EBX + 0x24],0x0      ; 004122ea

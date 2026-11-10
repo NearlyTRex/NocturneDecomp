@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 at 00560a7e
 ;   core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_00560ab0 at 00560aba
-;   core_sound.cpp_FUN_00560a70 at 00560a7e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ceb91c

@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   wincore_winrun.cpp_FUN_00580a50 at 00580e03
-;   wincore_winvideo.cpp_FUN_00582eb0 at 00582f2b
 ;   wincore_winvideo.cpp_openMovie_FUN_00582bb0 at 00582bcb
+;   wincore_winvideo.cpp_playMovie_FUN_00582eb0 at 00582f2b
 ;
 ; Referenced Globals:
 ;   void* PTR_mciSendStringA_005b344c = 001b3900

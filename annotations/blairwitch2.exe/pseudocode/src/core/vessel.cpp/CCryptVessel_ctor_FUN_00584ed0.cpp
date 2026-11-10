@@ -16,20 +16,29 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_00584ed0(CCryptVess
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0049f180((CFlame *)&pCVar3[1].field_0xf0);
+  pCVar4 = core_flame_cpp_CFlame_ctor_FUN_0049f180((CFlame *)(pCVar3[1].model_name + 0x78));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
-                     ((CKeyFramedModelInstance *)&pCVar4[1].field_0x4);
+                     ((CKeyFramedModelInstance *)(pCVar4[1].base.actor_name + 4));
   pcVar5 = (char *)0x5eddbc;
-  *(byte **)&pCVar3[-5].field_0xf8 = &g_CCryptVesselVTable;
+  *(CDemonActor_vtable **)(pCVar3[-5].model_name + 0x80) = &g_CCryptVesselVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar3[-5].field_0xfc,"vsslbase.kfm");
-  *(uint *)&pCVar3[-4].field_0xfc = 0;
-  *(uint *)&pCVar3[-4].field_0x100 = 0;
-  pcVar6 = &pCVar3[-4].field_0x108;
-  *(uint *)&pCVar3[-4].field_0x104 = 0;
+            ((CKeyFramedModelInstance *)(pCVar3[-5].model_name + 0x84),"vsslbase.kfm");
+  pCVar3[-0xffffffff00000004].model_name[0x84] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x85] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x86] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x87] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x88] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x89] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x8a] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x8b] = '\0';
+  pcVar6 = pCVar3[-4].model_name + 0x90;
+  pCVar3[-0xffffffff00000004].model_name[0x8c] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x8d] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x8e] = '\0';
+  pCVar3[-0xffffffff00000004].model_name[0x8f] = '\0';
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -39,12 +48,12 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_00584ed0(CCryptVess
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar3[-3].field_0x54 = 0;
-  *(uint *)&pCVar3[-3].field_0x58 = 0;
+  pCVar3[-3].part_visibility_flags[0x15] = 0;
+  pCVar3[-3].part_visibility_flags[0x16] = 0;
   pcVar5 = (char *)0x5eddc1;
-  *(uint *)&pCVar3[-3].field_0x68 = 0;
-  pcVar6 = &pCVar3[-4].field_0x16c;
-  *(uint *)&pCVar3[-3].field_0x64 = 0;
+  pCVar3[-3].part_visibility_flags[0x1a] = 0;
+  pcVar6 = pCVar3[-4].model_name + 0xf4;
+  pCVar3[-3].part_visibility_flags[0x19] = 0;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -54,14 +63,17 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_00584ed0(CCryptVess
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar3[-3].field_0x5c = 0x41200000;
-  *(uint *)&pCVar3[-3].field_0x6c = 1;
-  *(uint *)&pCVar3[-3].field_0x60 = 0;
-  *(uint *)&pCVar3[-1].field_0x178 = 0;
+  pCVar3[-3].part_visibility_flags[0x17] = 0x41200000;
+  pCVar3[-3].part_visibility_flags[0x1b] = 1;
+  pCVar3[-3].part_visibility_flags[0x18] = 0;
+  pCVar3[-1].model_ptr = (CKeyFramedModel *)0x0;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(pCVar3,(char *)0x5eddc6);
-  *(uint *)(pCVar3 + 1) = 1;
-  *(uint *)&pCVar3[-6].field_0xc0 = 1;
-  *(uint *)&pCVar3[1].field_0x4 = 0;
-  *(uint *)&pCVar3[1].field_0x8 = 0;
-  return (CCryptVessel *)&pCVar3[-7].field_0x140;
+  pCVar3[1].part_visibility_flags[0] = 1;
+  pCVar3[-0xffffffff00000006].model_name[0x48] = '\x01';
+  pCVar3[-0xffffffff00000006].model_name[0x49] = '\0';
+  pCVar3[-0xffffffff00000006].model_name[0x4a] = '\0';
+  pCVar3[-0xffffffff00000006].model_name[0x4b] = '\0';
+  pCVar3[1].part_visibility_flags[1] = 0;
+  pCVar3[1].part_visibility_flags[2] = 0;
+  return (CCryptVessel *)(pCVar3[-7].model_name + 200);
 }

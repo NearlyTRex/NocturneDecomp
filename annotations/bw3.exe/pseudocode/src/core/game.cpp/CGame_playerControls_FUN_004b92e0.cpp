@@ -28,7 +28,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr)
           core_game_cpp_FUN_004b9960(this_ptr,player_control);
           break;
         case 1:
-          core_game_cpp_FUN_004ba2e0(this_ptr,player_control);
+          core_game_cpp_CGame_processMouseControls_FUN_004ba2e0(this_ptr,player_control);
           break;
         case 2:
           core_game_cpp_CGame_processJoystickControls_FUN_004b97b0(this_ptr,player_control);
@@ -54,7 +54,7 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b92e0(CGame *this_ptr)
           puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);
         }
         _DAT_01d221f8 = _DAT_01c5fae4;
-        _DAT_01d221fc = *(uint *)&g_CDemonSetPtr->field_0x15aeb8;
+        _DAT_01d221fc = g_CDemonSetPtr->selected_camera_index;
         return;
       }
       _DAT_01d22b48 = 0xffffffff;

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 169,
+    "complexity_score": 149,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "shadow_pointer_walk",
       "unnamed_field",
@@ -26,13 +26,13 @@
     {
       "addr": "004f04f0",
       "from_addr": "004f0749",
-      "name": "core_mimic.cpp_FUN_004f04f0",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_004f04f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005115e0",
       "from_addr": "0051160a",
-      "name": "core_passngr.cpp_FUN_005115e0",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,13 +50,13 @@
     {
       "addr": "0056f3a0",
       "from_addr": "0056f5ca",
-      "name": "core_succubus.cpp_FUN_0056f3a0",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00581660",
       "from_addr": "0058171d",
-      "name": "core_vampboss.cpp_FUN_00581660",
+      "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_00581660",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -124,7 +124,7 @@
       {
         "call_addr": "004f0749",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_004f04f0",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_004f04f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -135,7 +135,7 @@
       {
         "call_addr": "004f080c",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_004f04f0",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_004f04f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       {
         "call_addr": "0051160a",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_005115e0",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,7 +157,7 @@
       {
         "call_addr": "0051162d",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_005115e0",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,7 +168,7 @@
       {
         "call_addr": "0056f5ca",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_0056f3a0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +179,7 @@
       {
         "call_addr": "0056f5d3",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_0056f3a0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +190,7 @@
       {
         "call_addr": "0058171d",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00581660",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_00581660",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,14 +251,6 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&pCVar1->field_0x1d1f8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 13,
       "match": "field_0x6b0",
       "severity": "mild",
@@ -287,14 +279,6 @@
       "match": "field_0x4",
       "severity": "mild",
       "text": "pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&pCVar1->field_0x1d1f8);",
       "type": "unnamed_field"
     },
     {

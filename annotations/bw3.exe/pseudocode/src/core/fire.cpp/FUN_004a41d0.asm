@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_asgaya.cpp_FUN_005a0b00 at 005a0b9a
-;   core_burncrss.cpp_FUN_004253d0 at 0042540d
-;   core_exorcism.cpp_FUN_0048b690 at 0048b6d2
+;   core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00 at 005a0b9a
+;   core_burncrss.cpp_CBurncross_setup_FUN_004253d0 at 0042540d
+;   core_exorcism.cpp_CExorcism_setup_FUN_0048b690 at 0048b6d2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

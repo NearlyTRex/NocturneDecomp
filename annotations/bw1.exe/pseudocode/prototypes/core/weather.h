@@ -29,9 +29,9 @@ void __cdecl CWeather::createLightningStrike(CWeather *this_ptr,float flash_time
 // Address: 005ae840
 void __cdecl CWeather::createThunder(CWeather *this_ptr);
 
-// Original: core_weather.cpp_FUN_005ae890
+// Original: core_weather.cpp_CWeather_renderParticles_FUN_005ae890
 // Address: 005ae890
-void __cdecl FUN_005ae890(CWeather *this_ptr);
+void __cdecl CWeather::renderParticles(CWeather *this_ptr);
 
 // Original: core_weather.cpp_CWeather_setWeatherType_FUN_005aefc0
 // Address: 005aefc0

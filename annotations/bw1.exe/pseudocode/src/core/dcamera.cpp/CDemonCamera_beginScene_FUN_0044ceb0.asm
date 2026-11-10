@@ -35,8 +35,8 @@
 ;   core_dcamera.cpp_CDemonCamera_updateTransformMatrices_FUN_0044dc90
 ;   core_main.c_FUN_005030e0
 ;   engine_console.cpp_FUN_00445430
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_00483560
-;   engine_drender.cpp_FUN_004834b0
 ;   engine_matrix.c_FUN_004839b0
 ;   engine_matrix.c_FUN_00483c10
 ;   engine_special.cpp_clear_FUN_00582790
@@ -191,8 +191,8 @@ section .text
     PUSH EBX                            ; 0044d08a | DAT_01bc120c
     MOV dword ptr [0x01c4f000],EDX      ; 0044d08b | DAT_01c4f000
     MOV dword ptr [0x01c4f004],ECX      ; 0044d091 | DAT_01c4f004
-    CALL engine_drender.cpp_FUN_004834b0 ; 0044d097
-        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 0044d097
+        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0044d09c
     MOV EBP,dword ptr [0x00612560]      ; 0044d09f | DAT_00612560
     PUSH dword ptr [ESI + 0x38]         ; 0044d0a5

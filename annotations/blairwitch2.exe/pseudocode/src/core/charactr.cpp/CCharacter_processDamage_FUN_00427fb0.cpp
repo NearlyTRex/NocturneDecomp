@@ -15,15 +15,16 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00427fb0(CCharacter 
   CVector3f *impact_point;
   byte bVar2;
   float10 fVar3;
-  uint auStackY_1030 [1012];
+  float afStackY_1030 [6];
+  int aiStackY_1018 [1006];
   float flame_scale;
   int include_hero;
   CVector3f local_48;
-  CVector3f local_3c;
+  float local_3c;
+  float afStack_38 [2];
   CVector3f local_30;
-  CVector3f local_24;
-  int local_18;
-  int local_14;
+  float local_24;
+  int aiStack_20 [4];
   
   bVar2 = 0;
   if (*(int *)&this_ptr->field_0x281c != 0) {
@@ -49,7 +50,7 @@ void __cdecl core_charactr_cpp_CCharacter_processDamage_FUN_00427fb0(CCharacter 
       goto LAB_00428034;
     }
     if (4 < uVar1) {
-      core_charactr_cpp_FUN_00427210(this_ptr);
+      core_charactr_cpp_CCharacter_shatter_FUN_00427210(this_ptr);
       goto LAB_00428034;
     }
 LAB_0042815e:
@@ -63,50 +64,48 @@ LAB_0042815e:
         goto LAB_0042815e;
       }
       if (uVar1 < 0x69) {
-        core_charactr_cpp_FUN_00426a10(this_ptr);
+        core_charactr_cpp_CCharacter_addDamageDecal_FUN_00426a10(this_ptr);
         goto LAB_00428034;
       }
       if (uVar1 != 0x6a) goto LAB_00428034;
     }
-    *(uint *)&this_ptr->field_0x1022c = 0x40000000;
+    this_ptr->stagger_amount = 2.0;
   }
 LAB_00428034:
   if (*(int *)(damage_info + 0x28) == 5) {
     core_actor_cpp_FUN_00408d70(this_ptr,damage_info + 0x1c);
     include_hero = 0;
     flame_scale = 1.0;
-    local_30._0_4_ = local_24._0_4_;
-    *(uint *)((int)&local_30 + (uint)bVar2 * -8 + 4) =
-         *(uint *)((int)&local_24 + (uint)bVar2 * -8 + 4);
-    *(uint *)((int)&local_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-         *(uint *)((int)&local_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+    local_30.x = local_24;
+    *(int *)((int)&local_30 + (uint)bVar2 * -8 + 4) = aiStack_20[(uint)bVar2 * -2];
+    *(int *)((int)&local_30 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+         aiStack_20[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
     core_charactr_cpp_CCharacter_igniteBone_FUN_00426e70
               (this_ptr,&local_30,*(int *)damage_info,0,flame_scale,include_hero);
   }
   if (0.0 < *(float *)(damage_info + 8)) {
     fVar3 = (float10)*(float *)(damage_info + 4) * (float10)*(float *)(damage_info + 8);
     round();
-    local_14 = (int)ROUND(fVar3);
-    local_18 = local_14 + 1;
+    aiStack_20[3] = (int)ROUND(fVar3);
+    aiStack_20[2] = aiStack_20[3] + 1;
     core_actor_cpp_FUN_00408d70(this_ptr,damage_info + 0x1c);
-    local_48._0_4_ = local_3c._0_4_;
-    *(uint *)((int)&local_48 + (uint)bVar2 * -8 + 4) =
-         *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4);
-    *(uint *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-         *(uint *)((int)&local_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-    core_gore_cpp_FUN_004c9850
-              (g_CGorePtr,&local_48,(CVector3f *)(damage_info + 0xc),local_18,
-               *(EBloodType *)&this_ptr->field_0x280c);
+    local_48.x = local_3c;
+    *(float *)((int)&local_48 + (uint)bVar2 * -8 + 4) = afStack_38[(uint)bVar2 * -2];
+    *(float *)((int)&local_48 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+         afStack_38[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+    core_gore_cpp_CGore_spawnBloodBurst_FUN_004c9850
+              (g_CGorePtr,&local_48,(CVector3f *)(damage_info + 0xc),aiStack_20[2],
+               this_ptr->blood_type);
   }
-  if ((*(int *)&this_ptr->field_0x25b0 == 1) &&
+  if ((this_ptr->health_bar_mode == HEALTH_BAR_WHEN_HURT) &&
      (this_ptr != *(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4))) {
     core_game_cpp_CGame_setStatusDisplay_FUN_004bb8d0
-              (g_CGamePtr,&this_ptr->field_0x25b4,
-               *(float *)&this_ptr->field_0x25a8 / *(float *)&this_ptr->field_0x25ac,5.0);
+              (g_CGamePtr,this_ptr->descriptive_name,this_ptr->hit_points / this_ptr->max_hit_points
+               ,5.0);
   }
-  if (0.0 < *(float *)&this_ptr->field_0x25a8) {
+  if (0.0 < this_ptr->hit_points) {
     return;
   }
-  core_charactr_cpp_FUN_00428e00(this_ptr);
+  core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00(this_ptr);
   return;
 }

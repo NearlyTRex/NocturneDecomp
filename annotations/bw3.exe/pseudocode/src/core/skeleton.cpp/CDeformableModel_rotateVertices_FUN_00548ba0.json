@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 19,
-    "complexity_score": 22,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 26
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 6,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 25
   },
   "cross_references": [
     {
       "addr": "0054e4b0",
       "from_addr": "0054e4da",
-      "name": "core_skeleton.cpp_FUN_0054e4b0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,7 +59,7 @@
       {
         "call_addr": "0054e4da",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054e4b0",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -131,14 +129,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)(&this_ptr->field_0x2c + lod_index * 4),",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -1,0 +1,384 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 21,
+    "complexity_score": 5,
+    "cross_reference_count": 27,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 26
+  },
+  "cross_references": [
+    {
+      "addr": "00491f40",
+      "from_addr": "00492f48",
+      "name": "core_event.cpp_CEventList_evaluateAtom_FUN_00491f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a8680",
+      "from_addr": "004a86c1",
+      "name": "core_fldnotes.cpp_FUN_004a8680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004aa810",
+      "from_addr": "004ab331",
+      "name": "core_fldnotes.cpp_FUN_004aa810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004abe00",
+      "from_addr": "004ac378",
+      "name": "core_fldnotes.cpp_FUN_004abe00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b6f30",
+      "from_addr": "004b7400",
+      "name": "core_game.cpp_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00529a70",
+      "from_addr": "0052bb19",
+      "name": "core_script.cpp_CScript_step_FUN_00529a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532b80",
+      "from_addr": "00532fae",
+      "name": "core_set.cpp_FUN_00532b80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465eb0",
+      "from_addr": "00465ee2",
+      "name": "engine_dosio.cpp_FUN_00465eb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00465f80",
+      "from_addr": "00465fa6",
+      "name": "engine_dosio.cpp_changeFileExtension_FUN_00465f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004af920",
+      "from_addr": "004afa66",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004afbf0",
+      "from_addr": "004afd21",
+      "name": "engine_font.cpp_FUN_004afbf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00515150",
+      "from_addr": "00515179",
+      "name": "engine_pod.cpp_CPod_getPodIndexByFilename_FUN_00515150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00512fb0",
+      "from_addr": "00513109",
+      "name": "engine_pod.cpp_FUN_00512fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ad5e",
+      "from_addr": "0056aeaa",
+      "name": "engine_texture.cpp_FUN_0056ad5e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482820",
+      "from_addr": "0048295c",
+      "name": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482a70",
+      "from_addr": "00482afc",
+      "name": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00482c70",
+      "from_addr": "00482cfc",
+      "name": "shape_edittool.cpp_CStrList_populateFromFilesNoDuplicates_FUN_00482c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047dd1e",
+      "from_addr": "0047e05c",
+      "name": "shape_edittool.cpp_FUN_0047dd1e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00483020",
+      "from_addr": "00483056",
+      "name": "shape_edittool.cpp_FUN_00483020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551620",
+      "from_addr": "00551696",
+      "name": "sound_sndmain.cpp_FUN_00551620",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551d20",
+      "from_addr": "00551e20",
+      "name": "sound_sndmain.cpp_FUN_00551d20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00552350",
+      "from_addr": "005523ec",
+      "name": "sound_sndmain.cpp_FUN_00552350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556240",
+      "from_addr": "00556544",
+      "name": "sound_sndmain.cpp_FUN_00556240",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557570",
+      "from_addr": "005575fb",
+      "name": "sound_sndmain.cpp_FUN_00557570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005522ce",
+      "from_addr": "0055230f",
+      "name": "sound_sndmain.cpp_isStreamableFile_FUN_005522ce",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a7d70",
+      "from_addr": "004a7e40",
+      "name": "unkaddr_004a76f0.cpp_FUN_004a7d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00466040",
+      "from_addr": "00466078",
+      "name": "unkafter_dosio.cpp_FUN_00466040",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00465e50",
+    "address_range": [
+      [
+        "00465e50",
+        "00465e77"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_dosio.cpp_splitPath_FUN_00465e50",
+    "signature": "void __cdecl engine_dosio_cpp_splitPath_FUN_00465e50(char *full_path,char *drive,char *directory,char *filename,char *extension)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a5128",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_005a5128"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 37,
+    "call_sites": [
+      {
+        "call_addr": "00482afc",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_populateFromFileSearch_FUN_00482a70",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0048295c",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004829a4",
+        "call_type": "direct",
+        "caller": "shape_edittool.cpp_CStrList_insertSortedFileRecord_FUN_00482820",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00492f48",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_evaluateAtom_FUN_00491f40",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00492f6b",
+        "call_type": "direct",
+        "caller": "core_event.cpp_CEventList_evaluateAtom_FUN_00491f40",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004a86c1",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_FUN_004a8680",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004ab331",
+        "call_type": "direct",
+        "caller": "core_fldnotes.cpp_FUN_004aa810",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00465fa6",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_changeFileExtension_FUN_00465f80",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004afa66",
+        "call_type": "direct",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004af920",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004b7400",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b6f30",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.473684210526316,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 1,
+      "COPY": 19,
+      "INT_ADD": 10,
+      "INT_AND": 2,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 2,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 9,
+      "LOAD": 9,
+      "POPCOUNT": 1,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 66
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "full_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "drive",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "directory",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "extension",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

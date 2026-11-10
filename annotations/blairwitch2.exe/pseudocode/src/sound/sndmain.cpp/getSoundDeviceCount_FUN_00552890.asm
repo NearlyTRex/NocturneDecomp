@@ -6,11 +6,11 @@
 ;
 ; XREF[6]:
 ;   core_menu.cpp_FUN_004ed260 at 004ed866
-;   sound_sndmain.cpp_FUN_00552920 at 00552927
-;   sound_sndmain.cpp_FUN_00552980 at 00552988
-;   sound_sndmain.cpp_FUN_00553680 at 005536ca
-;   sound_sndmain.cpp_FUN_00553980 at 005539ae
+;   sound_sndmain.cpp_findBestSoundDevice_FUN_00552980 at 00552988
+;   sound_sndmain.cpp_getSoundDeviceInfo_FUN_00552920 at 00552927
+;   sound_sndmain.cpp_readIni_FUN_00553680 at 005536ca
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_00552aa0 at 00552ab8
+;   sound_sndmain.cpp_writeIni_FUN_00553980 at 005539ae
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061bca8

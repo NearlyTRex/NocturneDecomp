@@ -27,9 +27,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
   CVector3f *translate_z_00;
   
   if (translation == (CVector3f *)0x0) {
-    fVar1 = (float10)*(float *)&euler_angles->field_0x4 * (float10)_DAT_005d1593 *
-            (float10)_DAT_005d159b;
-    fVar5 = (float10)*(float *)euler_angles * (float10)_DAT_005d1593 * (float10)_DAT_005d159b;
+    fVar1 = (float10)euler_angles->y * (float10)_DAT_005d1593 * (float10)_DAT_005d159b;
+    fVar5 = (float10)euler_angles->x * (float10)_DAT_005d1593 * (float10)_DAT_005d159b;
     translate_y = translation;
     translate_z_00 = translation;
     round();
@@ -40,13 +39,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
               ((int)ROUND(fVar5),rot_y,iVar7,(int)translation,(int)translate_y,(int)translate_z_00);
     return;
   }
-  fVar5 = (float10)*(float *)&translation->field_0x4 * (float10)_DAT_005d158b;
-  fVar6 = (float10)*(float *)translation * (float10)_DAT_005d158b;
+  fVar5 = (float10)translation->y * (float10)_DAT_005d158b;
+  fVar6 = (float10)translation->x * (float10)_DAT_005d158b;
   fVar1 = (float10)_DAT_005d1593;
   fVar2 = (float10)_DAT_005d159b;
-  fVar3 = (float10)*(float *)&euler_angles->field_0x4 * fVar1 * fVar2;
-  fVar4 = (float10)*(float *)&euler_angles->field_0x8 * fVar1 * fVar2;
-  fVar2 = (float10)*(float *)euler_angles * fVar1 * fVar2;
+  fVar3 = (float10)euler_angles->y * fVar1 * fVar2;
+  fVar4 = (float10)euler_angles->z * fVar1 * fVar2;
+  fVar2 = (float10)euler_angles->x * fVar1 * fVar2;
   round();
   round();
   round();

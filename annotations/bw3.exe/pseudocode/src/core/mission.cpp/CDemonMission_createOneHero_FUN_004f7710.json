@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 161,
+    "complexity_score": 82,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
-    "suspect_count": 9,
+    "pseudocode_lines": 52,
+    "suspect_count": 2,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 194
+    "total_lines": 195
   },
   "cross_references": [
     {
@@ -56,7 +54,7 @@
     {
       "addr": "004f6930",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6930"
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930"
     },
     {
       "addr": "004fc420",
@@ -66,7 +64,7 @@
     {
       "addr": "0054e6b0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e6b0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
     },
     {
       "addr": "0047cf40",
@@ -274,62 +272,6 @@
       "severity": "moderate",
       "text": "*(CCharacter **)(index * 4 + 0x1d5ba04) = local_14;",
       "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&existing_actor->field_0x154 + 0x68))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&existing_actor->field_0x154 + 0x68))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&existing_actor->field_0x2c = *(uint *)(iVar2 + 0x2c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054e6b0((CDeformableModelInstance *)&existing_actor->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&existing_actor->field_0x158,0,0.0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 48,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&existing_actor->field_0x154 + 0x130))(existing_actor,0,0,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&existing_actor->field_0x154 + 0x130))(existing_actor,0,0,0);",
-      "type": "unnamed_field"
     }
   ]
 }

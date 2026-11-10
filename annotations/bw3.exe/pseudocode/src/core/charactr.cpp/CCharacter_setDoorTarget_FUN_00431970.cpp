@@ -9,6 +9,6 @@
 void __cdecl core_charactr_cpp_CCharacter_setDoorTarget_FUN_00431970(CCharacter *this_ptr,CDoor *door_target)
 
 {
-  *(CDoor **)&this_ptr->field_0x2740 = door_target;
+  this_ptr->door_target = door_target;
   return;
 }

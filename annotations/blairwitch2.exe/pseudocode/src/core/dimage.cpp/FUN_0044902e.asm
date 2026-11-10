@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dimage_cpp_FUN_0044902e(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4)
+; void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
 ;
 ;
 ; Referenced Globals:
@@ -9,8 +9,8 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
+;   core_dimage.cpp_CDemonImage_packColor_FUN_00448fd0
 ;   core_dimage.cpp_FUN_00448f40
-;   core_dimage.cpp_FUN_00448fd0
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fread_FUN_005b87c0
@@ -65,7 +65,7 @@ section .text
     PUSH ESI                            ; 004490a0
     MOV dword ptr [ESI + 0x308],EAX     ; 004490a1
     CALL core_dimage.cpp_FUN_00448f40   ; 004490a7
-        ;   XREF to: 00448f40 (UNCONDITIONAL_CALL)  ; undefined core_dimage.cpp_FUN_00448f40()
+        ;   XREF to: 00448f40 (UNCONDITIONAL_CALL)  ; void core_dimage.cpp_FUN_00448f40(CDemonImage * this_ptr)
     ADD ESP,0x4                         ; 004490ac
     PUSH EBX                            ; 004490af
     MOV EDI,dword ptr [ESP + 0x130]     ; 004490b0
@@ -176,8 +176,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x12c]     ; 004491bb
     PUSH ECX                            ; 004491c2
     MOV dword ptr [ESP + 0x114],EAX     ; 004491c3
-    CALL core_dimage.cpp_FUN_00448fd0   ; 004491ca
-        ;   XREF to: 00448fd0 (UNCONDITIONAL_CALL)  ; undefined core_dimage.cpp_FUN_00448fd0()
+    CALL core_dimage.cpp_CDemonImage_packColor_FUN_00448fd0 ; 004491ca
+        ;   XREF to: 00448fd0 (UNCONDITIONAL_CALL)  ; ushort core_dimage.cpp_CDemonImage_packColor_FUN_00448fd0(CDemonImage * this_ptr, uint red, uint green, uint blue)
     ADD ESP,0x10                        ; 004491cf
     MOV word ptr [ESI + 0x100],AX       ; 004491d2
     MOV EAX,dword ptr [ESP + 0x100]     ; 004491d9

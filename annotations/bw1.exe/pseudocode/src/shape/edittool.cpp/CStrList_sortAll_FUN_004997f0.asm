@@ -7,7 +7,7 @@
 ; CStrList *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_00494fd0 at 00495016
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 00495016
 ;   shape_edittool.cpp_FUN_0049517e at 004952a8
 ;
 ; *****************************************************************************

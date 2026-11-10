@@ -12,7 +12,7 @@
 ;   undefined4 DAT_005cb23d
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004db880
+;   core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH 0x5cb23d                       ; 0040e466 | DAT_005cb23d
     ADD EAX,0x2437c                     ; 0040e46b
     PUSH EAX                            ; 0040e470
-    CALL core_inv.cpp_FUN_004db880      ; 0040e471
-        ;   XREF to: 004db880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_FUN_004db880(CInventory * this_ptr, char * class_name)
+    CALL core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880 ; 0040e471
+        ;   XREF to: 004db880 (UNCONDITIONAL_CALL)  ; int core_inv.cpp_CInventory_hasItemOfClass_FUN_004db880(CInventory * this_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040e476
     TEST EAX,EAX                        ; 0040e479
     JZ 0x0040e45e                       ; 0040e47b

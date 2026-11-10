@@ -26,25 +26,25 @@
     {
       "addr": "00487560",
       "from_addr": "00487644",
-      "name": "core_elephant.cpp_FUN_00487560",
+      "name": "core_elephant.cpp_CElephantGun_onFired_FUN_00487560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d0fc0",
       "from_addr": "004d13a0",
-      "name": "core_gun.cpp_FUN_004d0fc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005284d0",
       "from_addr": "005285cf",
-      "name": "core_rifle.cpp_FUN_005284d0",
+      "name": "core_rifle.cpp_CRifle_onFired_FUN_005284d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056b410",
       "from_addr": "0056b823",
-      "name": "core_tommygun.cpp_FUN_0056b410",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +132,7 @@
       {
         "call_addr": "00487644",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_00487560",
+        "caller": "core_elephant.cpp_CElephantGun_onFired_FUN_00487560",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "004d13a0",
         "call_type": "direct",
-        "caller": "core_gun.cpp_FUN_004d0fc0",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +154,7 @@
       {
         "call_addr": "005285cf",
         "call_type": "direct",
-        "caller": "core_rifle.cpp_FUN_005284d0",
+        "caller": "core_rifle.cpp_CRifle_onFired_FUN_005284d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +165,7 @@
       {
         "call_addr": "0056b823",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_0056b410",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,7 +239,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = _stricmp((char *)pCVar2,param_1);",
+      "text": "iVar1 = _stricmp(pCVar2->model_filename,param_1);",
       "type": "unnamed_param"
     },
     {

@@ -10,13 +10,13 @@
 ; XREF[13]:
 ;   core_fldnotes.cpp_NotesMap_dtor_FUN_004bc210 at 004bc227
 ;   core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004baad0 at 004baaf2
+;   core_game.cpp_CGame_displayActStats_FUN_004d8700 at 004d8a7b
+;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8e2e
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d911e
-;   core_game.cpp_FUN_004cf530 at 004cf5bf
-;   core_game.cpp_FUN_004d8700 at 004d8a7b
-;   core_game.cpp_FUN_004d8a90 at 004d8e2e
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530 at 004cf5bf
 ;   core_level.cpp_FUN_004fe840 at 004fe975
 ;   core_main.c_FUN_005032a0 at 005038b5
-;   core_mission.cpp_FUN_0051b8d0 at 0051ba49
+;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051ba49
 ;   unkafter_alphabit.cpp_CAudioRecPuzzle_dtor_FUN_00415df0 at 00415e16
 ;   ... and 3 more
 ;

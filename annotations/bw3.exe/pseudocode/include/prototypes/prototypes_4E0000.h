@@ -4,6 +4,8 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CCharacter.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CLever.h"
@@ -13,10 +15,10 @@
 #include "types/classes/CMini3D.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/classes/CWeapon.h"
 #include "types/enums/ECollisionType.h"
 #include "types/enums/EInputCodeType.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 
 // =============================================================================
 // FUNCTION PROTOTYPES - Range 0x4E0000
@@ -28,18 +30,18 @@ void core_lever_cpp_factoryFuncLever_FUN_004e00d0(void);
 CDemonActorType * core_lever_cpp_CLever_getActorType_FUN_004e00f0(CLever *this_ptr);
 CLever * __cdecl core_lever_cpp_CLever_ctor_FUN_004e0100(CLever *this_ptr);
 void __cdecl core_lever_cpp_CLever_setup_FUN_004e01d0(CLever *this_ptr);
-void core_lever_cpp_FUN_004e0250(int param_1,float param_2);
+void __cdecl core_lever_cpp_CLever_process_FUN_004e0250(CLever *this_ptr,float delta_time);
 void core_lever_cpp_FUN_004e04b0(int param_1,float param_2,int param_3);
 void __cdecl core_lever_cpp_CLever_activate_FUN_004e0630(CLever *this_ptr);
-int core_lever_cpp_FUN_004e0690(CDemonActor *param_1);
-void core_lever_cpp_FUN_004e0730(int param_1);
+int __cdecl core_lever_cpp_CLever_renderOpaque_FUN_004e0690(CLever *this_ptr);
+CBoundingBox3D * __cdecl core_lever_cpp_CLever_getBoundingBox_FUN_004e0730(CLever *this_ptr,CBoundingBox3D *out_box);
 void core_lever_cpp_FUN_004e0770(int param_1);
 void __cdecl core_lever_cpp_CLever_archive_FUN_004e0830(CLever *this_ptr);
 ECollisionType __cdecl core_lever_cpp_CLever_getCollisionType_FUN_004e0a10(CLever *this_ptr,SCollisionInfo *collision_info);
 undefined4 core_lever_cpp_FUN_004e0a30(int param_1,undefined4 param_2);
 CLever * __cdecl core_lever_cpp_CLever_dtor_FUN_004e0ab0(CLever *this_ptr,uint flags);
 void __cdecl engine_light_cpp_setAmbientLightLevel_FUN_004e0b10(int light_level);
-undefined4 engine_light_cpp_FUN_004e0b3e(void);
+undefined4 engine_light_cpp_getAmbientLightLevel_FUN_004e0b3e(void);
 void __cdecl engine_light_cpp_setDirectionalLightVector_FUN_004e0b50(int dir_x,int dir_y,int dir_z);
 void engine_light_cpp_FUN_004e0b80(undefined4 param_1);
 int __cdecl engine_light_cpp_calculatePhongLighting_FUN_004e0bb0(int world_x,int world_y,int world_z);
@@ -49,12 +51,12 @@ void core_lightsta_cpp_staticInit_FUN_004e0f10(void);
 void core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void);
 CDemonActorType * core_lightsta_cpp_CLightStaff_getActorType_FUN_004e0f60(CLightStaff *this_ptr);
 CLightStaff * core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_ptr);
-undefined4 core_lightgun_cpp_FUN_004e1070(CDemonActor *param_1);
-void unkafter_lightgun_cpp_FUN_004e2050(CWeapon *param_1,float param_2);
-undefined4 unkafter_lightgun_cpp_FUN_004e3db0(void);
-void unkafter_lightgun_cpp_FUN_004e3de0(undefined4 param_1);
-void unkafter_lightgun_cpp_FUN_004e3e60(CWeapon *param_1,int param_2);
-void unkafter_lightgun_cpp_FUN_004e3eb0(CWeapon *param_1);
+undefined4 core_lightgun_cpp_FUN_004e1070(CCharacter *param_1);
+void __cdecl core_lightsta_cpp_CLightStaff_process_FUN_004e2050(CLightStaff *this_ptr,float delta_time);
+float __cdecl core_lightsta_cpp_CLightStaff_getDamage_FUN_004e3db0(CLightStaff *this_ptr);
+CVector3f * __cdecl core_lightsta_cpp_CLightStaff_getMuzzlePoint_FUN_004e3de0(CLightStaff *this_ptr,CVector3f *out_point);
+void __cdecl core_lightsta_cpp_CLightStaff_setWeaponState_FUN_004e3e60(CLightStaff *this_ptr,int weapon_state);
+void __cdecl core_lightsta_cpp_CLightStaff_setup_FUN_004e3eb0(CLightStaff *this_ptr);
 CLightStaff * unkafter_lightgun_cpp_CLightStaff_dtor_FUN_004e3f10(CLightStaff *this_ptr,uint flags);
 void core_litecone_cpp_staticInit_FUN_004e3f60(void);
 void core_litecone_cpp_factoryFuncLightCone_FUN_004e3f90(void);
@@ -62,10 +64,10 @@ CDemonActorType * core_litecone_cpp_CLightCone_getActorType_FUN_004e3fb0(CLightC
 CLightCone * __cdecl core_litecone_cpp_CLightCone_ctor_FUN_004e3fc0(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_004e4060(CLightCone *this_ptr);
 void __cdecl core_litecone_cpp_CLightCone_process_FUN_004e4070(CLightCone *this_ptr,float delta_time);
-int core_litecone_cpp_FUN_004e40d0(CDemonActor *param_1);
-void core_litecone_cpp_FUN_004e4170(int param_1);
+int __cdecl core_litecone_cpp_CLightCone_renderTransparent_FUN_004e40d0(CLightCone *this_ptr);
+CBoundingBox3D * __cdecl core_litecone_cpp_CLightCone_getBoundingBox_FUN_004e4170(CLightCone *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_litecone_cpp_CLightCone_archive_FUN_004e41d0(CLightCone *this_ptr);
-undefined4 core_litecone_cpp_FUN_004e4260(void);
+ECollisionType __cdecl core_litecone_cpp_CLightCone_getCollisionType_FUN_004e4260(CLightCone *this_ptr,SCollisionInfo *collision_info);
 CLightCone * __cdecl core_litecone_cpp_CLightCone_dtor_FUN_004e4270(CLightCone *this_ptr,uint flags);
 void __cdecl core_script_cpp_staticInit_FUN_004e42c0(void);
 void core_main_c_FUN_004e4330(undefined4 param_1);
@@ -75,7 +77,7 @@ void __cdecl core_main_c_FUN_004e44e0(int argc,char **argv);
 void core_main_c_FUN_004e4c70(void);
 undefined8 unkafter_main_cpp_FUN_004e4d00(void);
 void unkafter_main_cpp_FUN_004e4d80(void);
-int engine_matrix_c_FUN_004e4d90(uint param_1);
+int __cdecl engine_matrix_c_FUN_004e4d90(int angle);
 int engine_matrix_c_FUN_004e4dd0(uint param_1);
 void __cdecl engine_matrix_c_invertTransformMatrix_FUN_004e4e10(void);
 void __cdecl engine_matrix_c_buildRotationMatrix_FUN_004e50f0(int pitch,int yaw,int roll);
@@ -93,7 +95,7 @@ void engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(int *param_1);
 int * engine_matrix_c_normalizeVector3DFloat_FUN_004e61c0(int *param_1);
 int __cdecl engine_matrix_c_vectorLength3DToInt_FUN_004e62a0(CVector3i *vector_ptr);
 void __cdecl engine_matrix_c_setCameraOrigin_FUN_004e6a40(int x,int y,int z);
-void engine_matrix_c_FUN_004e6a90(void);
+void engine_matrix_c_getCameraOrigin_FUN_004e6a90(void);
 void engine_matrix_c_getCameraRotation_FUN_004e6ac0(void);
 void __cdecl engine_matrix_c_pushViewport_FUN_004e6af0(int x,int y,int width,int height);
 void __cdecl engine_matrix_c_popViewport_FUN_004e6c50(void);
@@ -103,17 +105,17 @@ void core_melee_cpp_staticInit_FUN_004e6f30(void);
 void core_melee_cpp_factoryFuncMelee_FUN_004e6f60(void);
 CDemonActorType * core_melee_cpp_CMelee_getActorType_FUN_004e6f80(CMelee *this_ptr);
 CMelee * __cdecl core_melee_cpp_CMelee_ctor_FUN_004e6f90(CMelee *this_ptr);
-void core_melee_cpp_FUN_004e70e0(int param_1);
+void __cdecl core_melee_cpp_CMelee_archive_FUN_004e70e0(CMelee *this_ptr);
 int __cdecl core_melee_cpp_CMelee_fire_FUN_004e7200(CMelee *this_ptr);
-undefined4 core_melee_cpp_FUN_004e7230(int param_1);
-void core_melee_cpp_FUN_004e7260(void);
-undefined4 core_melee_cpp_FUN_004e7270(int param_1,CDemonActor *param_2);
-undefined4 core_melee_cpp_FUN_004e72a0(int param_1);
-void core_melee_cpp_FUN_004e72b0(int param_1,undefined4 param_2,int param_3,undefined4 param_4);
-void core_melee_cpp_FUN_004e7310(CMelee *param_1,int param_2,undefined4 param_3,int param_4);
+float __cdecl core_melee_cpp_CMelee_getDamage_FUN_004e7230(CMelee *this_ptr);
+void __cdecl core_melee_cpp_CMelee_renderAimBeam_FUN_004e7260(CMelee *this_ptr);
+int __cdecl core_melee_cpp_CMelee_canPickup_FUN_004e7270(CMelee *this_ptr,CDemonActor *picker);
+int __cdecl core_melee_cpp_CMelee_getAllowedMeleeAttackTypes_FUN_004e72a0(CMelee *this_ptr);
+void __cdecl core_melee_cpp_CMelee_fillAttackDamageInfo_FUN_004e72b0(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
+void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_004e7310(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type);
-void core_melee_cpp_FUN_004e73e0(CWeapon *param_1,float param_2,undefined4 param_3,float param_4);
-void core_melee_cpp_FUN_004e74b0(CWeapon *param_1,int param_2);
+void __cdecl core_melee_cpp_CMelee_process_FUN_004e73e0(CMelee *this_ptr,float delta_time);
+void __cdecl core_melee_cpp_CMelee_setWeaponState_FUN_004e74b0(CMelee *this_ptr,int weapon_state);
 CMelee * __cdecl core_melee_cpp_CMelee_dtor_FUN_004e74d0(CMelee *this_ptr,uint flags);
 void unkafter_melee_cpp_FUN_004e7540(undefined4 param_1);
 void __cdecl core_menu_cpp_staticInit_FUN_004e7610(void);
@@ -128,10 +130,10 @@ undefined4 core_menu_cpp_FUN_004e8f2e(void);
 void __cdecl core_menu_cpp_FUN_004e8f80(void);
 void __cdecl core_menu_cpp_FUN_004e94f0(void);
 void __cdecl core_menu_cpp_FUN_004ea280(int initialize_systems);
-int __cdecl core_menu_cpp_FUN_004ea4d0(void);
-void core_menu_cpp_FUN_004ea9e0(undefined4 param_1,char *param_2);
-char * __cdecl core_menu_cpp_FUN_004eaa60(EInputCodeType key_code);
-int __cdecl core_menu_cpp_FUN_004eacb0(EInputCodeType *key_code_ptr,char *description);
+int __cdecl core_menu_cpp_showMainGameMenu_FUN_004ea4d0(void);
+void __cdecl core_menu_cpp_addCustomKeyBinding_FUN_004ea9e0(int *key_code_ptr,char *key_name);
+char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_code);
+int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType *key_code_ptr,char *description);
 void core_menu_cpp_FUN_004eae80(void);
 void core_minecar_cpp_staticInit_FUN_004ec6f0(void);
 CMini3D * unkafter_minecar_cpp_CMini3D_ctor_FUN_004ec730(CMini3D *this_ptr);

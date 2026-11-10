@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 261,
+    "complexity_score": 226,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 46,
-    "suspect_count": 18,
+    "suspect_count": 15,
     "suspect_types": [
       "negative_offset",
       "pointer_cast",
       "pointer_truncation",
-      "shadow_pointer_walk",
-      "unnamed_field",
       "unnamed_param",
-      "unrolled_strcpy"
+      "unrolled_strcpy",
+      "unrolled_strlen"
     ],
     "total_lines": 96
   },
@@ -37,7 +36,7 @@
     {
       "addr": "00408890",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408890"
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408890"
     }
   ],
   "globals": [],
@@ -98,7 +97,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408890(param_1);",
+      "text": "core_actor_cpp_CDemonActor_setup_FUN_00408890(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -114,7 +113,7 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "cVar1 = *(char *)param_1;",
+      "text": "cVar1 = param_1->actor_name[0];",
       "type": "unnamed_param"
     },
     {
@@ -122,23 +121,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "cVar1 = param_1->field_0x1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "cVar1 = param_1->field_0x1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "param_1 = (CDemonActor *)&param_1->field_0x2;",
+      "text": "cVar1 = param_1->actor_name[1];",
       "type": "unnamed_param"
     },
     {
@@ -146,32 +129,16 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (CDemonActor *)&param_1->field_0x2;",
+      "text": "param_1 = (CDemonActor *)(param_1->actor_name + 2);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 22,
-      "match": "field_0x2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = (CDemonActor *)&param_1->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar4->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar4 = (CDemonActor *)&pCVar4->field_0x2;",
-      "type": "unnamed_field"
+      "text": "param_1 = (CDemonActor *)(param_1->actor_name + 2);",
+      "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
@@ -186,16 +153,8 @@
       "line": 36,
       "match": "pCVar4[-1].",
       "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-1].field_0x157;",
+      "text": "pcVar6 = (char *)((int)&pCVar4[-1].vtable + 3);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x157",
-      "severity": "mild",
-      "text": "pcVar6 = &pCVar4[-1].field_0x157;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `pCVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -206,6 +165,22 @@
       "type": "pointer_truncation"
     },
     {
+      "description": "Pointer value `&pCVar4[-1].vtable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)&pCVar4[-1].vtable",
+      "severity": "moderate",
+      "text": "pcVar6 = (char *)((int)&pCVar4[-1].vtable + 3);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 17,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 37,
       "match": "do {",
@@ -214,20 +189,20 @@
       "type": "unrolled_strcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `param_1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&param_1->owner`). Replace `param_1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 22,
-      "match": "param_1 = (T *)&param_1->FIELD",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 36,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "param_1 = (CDemonActor *)&param_1->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "pcVar6 = (char *)((int)&pCVar4[-1].vtable + 3);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 24,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 28,
+      "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
-      "text": "pCVar4 = (CDemonActor *)&pCVar4->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "do {",
+      "type": "unrolled_strlen"
     }
   ],
   "vtable_info": {

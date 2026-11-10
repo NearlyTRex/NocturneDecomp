@@ -1,0 +1,238 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 61,
+    "complexity_score": 153,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 89
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00597e50",
+    "address_range": [
+      [
+        "00597e50",
+        "00597f1b"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hecaitmx.cpp_CHecaitomix_setup_FUN_00597e50",
+    "signature": "void __cdecl core_hecaitmx_cpp_CHecaitomix_setup_FUN_00597e50(CHecaitomix *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00489110",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00489110"
+    },
+    {
+      "addr": "0054eac0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
+    },
+    {
+      "addr": "00548090",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00548090"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d970b",
+      "name": "s_Bip01_Spine1_005d970b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9718",
+      "name": "s_Bip01_Head_005d9718",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9723",
+      "name": "s_Bip01_R_Finger0_005d9723",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9733",
+      "name": "s_Bip01_L_Finger0_005d9733",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9743",
+      "name": "s_Dummy05_005d9743",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9038461538461537,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "CALL": 8,
+      "COPY": 37,
+      "INT_ADD": 23,
+      "INT_AND": 16,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 16,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 8,
+      "INT_SUB": 28,
+      "LOAD": 4,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 38
+    },
+    "pcode_op_count": 203
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHecaitomix *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0xd068",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xd068 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xd054",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xd054 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xd058",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xd058 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xd05c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xd05c = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xd060",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xd060 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0xd070",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xd070 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0xd074",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xd074 = 0x10000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xfc = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xf8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xf8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0xd064",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xd064 = iVar1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHecaitomix",
+        "offset": 0,
+        "vtable_addr": "005e7874"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

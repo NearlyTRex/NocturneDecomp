@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004af920 at 004afad6
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004af920 at 004afad6
 ;
 ; Called Functions:
 ;   unkafter_turret.cpp_FUN_00573b90

@@ -9,12 +9,12 @@
 CDemonCube * __cdecl core_dcube_cpp_CDemonCube_ctor_FUN_00457b60(CDemonCube *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(uint *)&this_ptr->field_0x28 = 0;
-  *(uint *)&this_ptr->field_0x2c = 0;
-  *(uint *)&this_ptr->field_0x30 = 0;
-  *(uint *)this_ptr = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)&this_ptr->field_0x20 = 0;
+  this_ptr->vertex_buffer = (CVector3f *)0x0;
+  this_ptr->triangle_count = 0;
+  this_ptr->triangle_buffer = (CDemonCubeTriangle *)0x0;
+  this_ptr->ground_type_memory = (void *)0x0;
+  this_ptr->voxel_buffer1 = (SVoxelGrid *)0x0;
+  this_ptr->voxel_buffer2 = (SVoxelGrid *)0x0;
+  this_ptr->vertex_count = 0;
   return this_ptr;
 }

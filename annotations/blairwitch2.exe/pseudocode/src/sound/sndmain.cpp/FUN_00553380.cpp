@@ -21,11 +21,11 @@ void sound_sndmain_cpp_FUN_00553380(void)
     if (0 < extraout_EAX) {
       this_ptr = (CSfxSlot *)0x263cf1c;
       do {
-        if (*(int *)&this_ptr->field_0x60 != 0) {
+        if (this_ptr->hardware_buffer_handle != 0) {
           if (_DAT_02648e88 == 1) {
             *(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 | _DAT_02649024;
           }
-          if ((this_ptr->field_0x4c & 1) != 0) {
+          if (((this_ptr->options).field_0x4c & 1) != 0) {
             *(uint *)&this_ptr->field_0x118 = *(uint *)&this_ptr->field_0x118 & 0xdffffff9;
           }
           if (*(int *)&this_ptr->field_0x118 != 0) {

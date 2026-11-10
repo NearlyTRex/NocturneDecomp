@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 265,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_stride_bytecount",
       "undefined_data",
@@ -276,66 +276,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (((*(int *)this_ptr == 2) && (*(int *)&this_ptr->field_0x4 == 3)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "(-1 < *(int *)&this_ptr->field_0x120)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x124 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_00506320(this_ptr,*(int *)&this_ptr->field_0x120,10.0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 27,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "uVar5 = *(uint *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "text": "uVar5 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x48;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 38,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80);",
+      "text": "iVar4 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48;",
       "type": "unnamed_field"
     },
     {
@@ -348,34 +300,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 62,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x124 * 0x80) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x178 = 1;",
+      "text": "while (*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 !=",
       "type": "unnamed_field"
     },
     {

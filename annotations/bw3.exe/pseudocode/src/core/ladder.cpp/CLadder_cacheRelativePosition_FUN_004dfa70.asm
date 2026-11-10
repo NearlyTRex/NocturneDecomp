@@ -31,7 +31,7 @@
 ; Called Functions:
 ;   core_xform.cpp_FUN_00583800
 ;   core_xform.cpp_FUN_00583940
-;   core_xform.cpp_FUN_00583b10
+;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
 ; *****************************************************************************
@@ -113,8 +113,8 @@ section .text
     PUSH EAX                            ; 004dfb57
     LEA EDI,[ESP + 0xe8]                ; 004dfb58
     ADD EBX,0x2f0                       ; 004dfb5f
-    CALL core_xform.cpp_FUN_00583b10    ; 004dfb65
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583b10()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 004dfb65
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
     LEA ESI,[ESP + 0xc4]                ; 004dfb6a
     ADD ESP,0x4                         ; 004dfb71
     LEA EAX,[ESP + 0xe4]                ; 004dfb74

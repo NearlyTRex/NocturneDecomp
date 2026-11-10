@@ -17,7 +17,7 @@ CSpike * __cdecl core_spike_cpp_CSpike_dtor_FUN_005612c0(CSpike *this_ptr,uint f
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CSpike *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  pCVar1 = (CSpike *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

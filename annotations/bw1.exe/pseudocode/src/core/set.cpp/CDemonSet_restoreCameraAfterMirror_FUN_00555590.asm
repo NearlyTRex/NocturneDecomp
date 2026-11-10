@@ -8,7 +8,7 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0 at 0054e56a
-;   core_set.cpp_FUN_00550260 at 00550404
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550404
 ;   core_set.cpp_FUN_00550580 at 005506d3
 ;   core_set.cpp_FUN_00551480 at 00551679
 ;   core_set.cpp_FUN_005516c0 at 005518a2
@@ -23,8 +23,8 @@
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_enableAdvancedCulling_FUN_00484190
 ;   engine_drender.cpp_CDemonRenderer_setAlphaMask_FUN_00484170
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004834b0
 ;   engine_matrix.c_FUN_004839b0
 ;
 ; *****************************************************************************
@@ -38,8 +38,8 @@ section .text
     PUSH 0x20af5ac                      ; 00555593 | DAT_020af5ac
     MOV EDX,dword ptr [0x00612560]      ; 00555598 | DAT_00612560
     PUSH EDX                            ; 0055559e | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_004834b0 ; 0055559f
-        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 0055559f
+        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005555a4
     MOV ECX,dword ptr [0x00612560]      ; 005555a7 | DAT_00612560
     PUSH dword ptr [0x020af5c4]         ; 005555ad | DAT_020af5c4

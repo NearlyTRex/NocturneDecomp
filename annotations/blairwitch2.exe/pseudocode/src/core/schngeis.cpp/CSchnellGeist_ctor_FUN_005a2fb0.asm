@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005ff350
 ;
 ; Called Functions:
-;   core_schngeis.cpp_FUN_005a31c0
+;   core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -76,8 +76,8 @@ section .text
     PUSH 0x0                            ; 005a307f
     PUSH 0x0                            ; 005a3081
     PUSH EBX                            ; 005a3083
-    CALL core_schngeis.cpp_FUN_005a31c0 ; 005a3084
-        ;   XREF to: 005a31c0 (UNCONDITIONAL_CALL)  ; undefined core_schngeis.cpp_FUN_005a31c0()
+    CALL core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0 ; 005a3084
+        ;   XREF to: 005a31c0 (UNCONDITIONAL_CALL)  ; void core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnellGeist * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a3089
     FLD float ptr [0x005ff350]          ; 005a308c | DAT_005ff350
     MOV dword ptr [EBX + 0x11398],0x0   ; 005a3092

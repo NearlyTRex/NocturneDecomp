@@ -21,21 +21,21 @@ CDemonActorType * CStairs::getActorType(CStairs *this_ptr);
 // Address: 00584940
 CStairs * __cdecl CStairs::ctor(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_005849b0
+// Original: core_stairs.cpp_CStairs_setup_FUN_005849b0
 // Address: 005849b0
-void FUN_005849b0(CStairs *param_1);
+void __cdecl CStairs::setup(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_005849d0
+// Original: core_stairs.cpp_CStairs_process_FUN_005849d0
 // Address: 005849d0
-void FUN_005849d0(void);
+void __cdecl CStairs::process(CStairs *this_ptr,float delta_time);
 
-// Original: core_stairs.cpp_FUN_005849e0
+// Original: core_stairs.cpp_CStairs_renderOpaque_FUN_005849e0
 // Address: 005849e0
-undefined4 FUN_005849e0(void);
+int __cdecl CStairs::renderOpaque(CStairs *this_ptr);
 
-// Original: core_stairs.cpp_FUN_005849f0
+// Original: core_stairs.cpp_CStairs_getBoundingBox_FUN_005849f0
 // Address: 005849f0
-void FUN_005849f0(int param_1);
+CBoundingBox3D * __cdecl CStairs::getBoundingBox(CStairs *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_stairs.cpp_CStairs_archive_FUN_00584a60
 // Address: 00584a60
@@ -45,9 +45,9 @@ void __cdecl CStairs::archive(CStairs *this_ptr);
 // Address: 00584ae0
 ECollisionType __cdecl CStairs::getCollisionType(CStairs *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_stairs.cpp_FUN_00584b00
+// Original: core_stairs.cpp_CStairs_customRayIntersect_FUN_00584b00
 // Address: 00584b00
-float FUN_00584b00(int param_1,undefined4 param_2,undefined4 param_3,undefined4 *param_4);
+float __cdecl CStairs::customRayIntersect(CStairs *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_stairs.cpp_CStairs_customIntersectCylinderXZ_FUN_00584c20
 // Address: 00584c20

@@ -1,0 +1,208 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 117,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 123
+  },
+  "cross_references": [
+    {
+      "addr": "0050fe10",
+      "from_addr": "0050fe33",
+      "name": "cockpit_pkbitmap.cpp_FUN_0050fe10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050fe90",
+    "address_range": [
+      [
+        "0050fe90",
+        "0050ff5c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_0050fe90",
+    "signature": "void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0050fe90(CPackedBitmap *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a48e0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fwrite_FUN_005a48e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050fe33",
+        "call_type": "direct",
+        "caller": "cockpit_pkbitmap.cpp_FUN_0050fe10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.6075949367088604,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 3,
+      "COPY": 78,
+      "INT_ADD": 42,
+      "INT_AND": 42,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 31,
+      "INT_LESS": 1,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_RIGHT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 15,
+      "INT_SUB": 32,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 26,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 30
+    },
+    "pcode_op_count": 364
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPackedBitmap *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0050fea9",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 22,
+      "match": "(uint *)((int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(uint *)((int)piVar3",
+      "severity": "moderate",
+      "text": "piVar3 = (uint *)((int)piVar3 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 22,
+      "match": "(int)puVar2",
+      "severity": "moderate",
+      "text": "puVar2 = (uint *)((int)puVar2 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 23,
+      "match": "(int)piVar3",
+      "severity": "moderate",
+      "text": "piVar3 = (uint *)((int)piVar3 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 15,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 1; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

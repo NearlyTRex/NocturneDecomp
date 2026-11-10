@@ -14,7 +14,7 @@
 ; float            Stack[0x20]:4   cone_angle
 ;
 ; XREF[1]:
-;   core_elephant.cpp_FUN_004876d0 at 004878ae
+;   core_elephant.cpp_CElephantGun_renderAimBeam_FUN_004876d0 at 004878ae
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df8fc

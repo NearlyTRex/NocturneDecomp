@@ -12,7 +12,7 @@
 ;   undefined4 DAT_006074d0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409d20
+;   core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409d20
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x10]      ; 005a3536
     PUSH EBX                            ; 005a353a
     PUSH ESI                            ; 005a353b
-    CALL core_actor.cpp_FUN_00409d20    ; 005a353c
-        ;   XREF to: 00409d20 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409d20()
+    CALL core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409d20 ; 005a353c
+        ;   XREF to: 00409d20 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409d20(CDemonActor * this_ptr, SInteractionInfo * out_info)
     MOV EDX,dword ptr [ESI + 0x858]     ; 005a3541
     ADD ESP,0x8                         ; 005a3547
     TEST EDX,EDX                        ; 005a354a

@@ -12,7 +12,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_closeSoundDevice_FUN_00575670
-;   sound_sndmain.cpp_FUN_005746a0
+;   sound_sndmain.cpp_freeAllSamples_FUN_005746a0
 ;   sound_sndmain.cpp_releaseRecordingDevice_FUN_00575940
 ;   sound_sndmain.cpp_resetSoundDevice_FUN_005750e0
 ;   sound_sndmain.cpp_stopRecordingDevice_FUN_00575b70
@@ -38,8 +38,8 @@ section .text
         ;   XREF to: 00575b70 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_stopRecordingDevice_FUN_00575b70()
     CALL sound_sndmain.cpp_releaseRecordingDevice_FUN_00575940 ; 00574ec3
         ;   XREF to: 00575940 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_releaseRecordingDevice_FUN_00575940()
-    CALL sound_sndmain.cpp_FUN_005746a0 ; 00574ec8
-        ;   XREF to: 005746a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005746a0()
+    CALL sound_sndmain.cpp_freeAllSamples_FUN_005746a0 ; 00574ec8
+        ;   XREF to: 005746a0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_freeAllSamples_FUN_005746a0()
     DEC dword ptr [0x02c745bc]          ; 00574ecd | DAT_02c745bc
     RET                                 ; 00574ed3
 

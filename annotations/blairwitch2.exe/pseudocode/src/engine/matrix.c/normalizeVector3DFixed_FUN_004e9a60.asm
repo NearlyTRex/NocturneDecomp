@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_00405450 at 0040547a
+;   engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405450 at 0040547a
 ;   engine_3d.c_renderPolygonTexturedUVLit_FUN_00405370 at 0040539a
 ;
 ; Called Functions:

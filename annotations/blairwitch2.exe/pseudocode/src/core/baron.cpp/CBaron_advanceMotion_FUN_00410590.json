@@ -1,0 +1,157 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 52,
+    "complexity_score": 34,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "0040f950",
+      "from_addr": "0040fa69",
+      "name": "core_baron.cpp_CBaron_process_FUN_0040f950",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00410590",
+    "address_range": [
+      [
+        "00410590",
+        "004105f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_baron.cpp_CBaron_advanceMotion_FUN_00410590",
+    "signature": "void __cdecl core_baron_cpp_CBaron_advanceMotion_FUN_00410590(CBaron *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00410170",
+      "is_variadic": false,
+      "name": "core_baron.cpp_CBaron_performLightningAttack_FUN_00410170"
+    },
+    {
+      "addr": "005030c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advance_FUN_005030c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0040fa69",
+        "call_type": "direct",
+        "caller": "core_baron.cpp_CBaron_process_FUN_0040f950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.891891891891892,
+    "instruction_count": 37,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 60,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 13,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "INT_ZEXT": 4,
+      "LOAD": 6,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 181
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBaron *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "00410595",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x2b4,&delta_time);",
+      "type": "unnamed_field"
+    }
+  ]
+}

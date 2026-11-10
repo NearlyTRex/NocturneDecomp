@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 38,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [
+    {
+      "addr": "004763c0",
+      "from_addr": "004763cc",
+      "name": "core_doc.cpp_FUN_004763c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591ce0",
+      "from_addr": "00591cec",
+      "name": "core_stranger.cpp_CStranger_reset_FUN_00591ce0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004ec570",
+    "address_range": [
+      [
+        "004ec570",
+        "004ec602"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_reset_FUN_004ec570",
+    "signature": "void __cdecl core_hero_cpp_CHero_reset_FUN_004ec570(CHero *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_removeMatchingKeys_FUN_004fc310"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004763cc",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_004763c0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00591cec",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_reset_FUN_00591ce0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.857142857142857,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 23,
+      "INT_ADD": 19,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 5,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 108
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 18,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(this_ptr + 0x154) + 0x144))(this_ptr,0);",
+      "type": "unresolved_funcptr"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMoloch",
+        "offset": 332,
+        "vtable_addr": "00603f04"
+      },
+      {
+        "class_name": "CSvetlana",
+        "offset": 332,
+        "vtable_addr": "00606414"
+      },
+      {
+        "class_name": "CHero",
+        "offset": 332,
+        "vtable_addr": "00601d34"
+      },
+      {
+        "class_name": "CIcePick",
+        "offset": 332,
+        "vtable_addr": "00602634"
+      },
+      {
+        "class_name": "CScat",
+        "offset": 332,
+        "vtable_addr": "00604c44"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 9
+  }
+}

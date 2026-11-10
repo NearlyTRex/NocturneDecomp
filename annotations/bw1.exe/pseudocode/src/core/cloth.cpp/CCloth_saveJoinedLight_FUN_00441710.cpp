@@ -23,7 +23,7 @@ int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_00441710(CCloth *this_ptr,
     _DAT_01d1d404 = 0x4f0;
     core_main_c_FUN_005030e0("CCloth::saveJoinedLight - Can't save light with no model!");
   }
-  iVar4 = *(int *)&model_ptr->field_0x2320;
+  iVar4 = model_ptr->cached_skinned_lod_index;
   if (iVar4 < 0) {
     _DAT_01d1d400 = "..\\core\\cloth.cpp";
     _DAT_01d1d404 = 0x4f5;

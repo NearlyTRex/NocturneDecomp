@@ -13,11 +13,11 @@
 ;   core_bat.cpp_CBat_archive_FUN_0040ef20 at 0040ef9e
 ;   core_battery.cpp_CBattery_archive_FUN_0040f630 at 0040f64a
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fbb4
-;   core_bugs.cpp_FUN_00421960 at 004219c1
+;   core_bugs.cpp_CBugs_archive_FUN_00421960 at 004219c1
 ;   core_crate.cpp_CCrate_archive_FUN_00446040 at 0044605a
-;   core_door.cpp_FUN_00464cd0 at 00464ceb
+;   core_door.cpp_CDoor_archive_FUN_00464cd0 at 00464ceb
 ;   core_drip.cpp_CDrip_archive_FUN_0046ebc0 at 0046ebde
-;   core_emitter.cpp_FUN_00488bb0 at 00488cc8
+;   core_emitter.cpp_CEmitter_archive_FUN_00488bb0 at 00488cc8
 ;   ... and 18 more
 ;
 ; Referenced Globals:

@@ -13,7 +13,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047bf80(CInputString *thi
 {
   CBitFont *this_ptr_00;
   int iVar1;
-  CInputString *pCVar2;
+  char *pcVar2;
   char local_40c [1024];
   uint local_c;
   
@@ -22,15 +22,15 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047bf80(CInputString *thi
     iVar1 = 0;
   }
   else {
-    if ((int)*(uint *)(this_ptr + 0x130) < char_index) {
-      char_index = *(uint *)(this_ptr + 0x130);
+    if (this_ptr->current_length < char_index) {
+      char_index = this_ptr->current_length;
     }
-    if (*(int *)(this_ptr + 0x13c) == 0) {
-      pCVar2 = this_ptr + char_index;
-      local_c = (uint)(byte)*pCVar2;
-      *pCVar2 = (CInputString)0x0;
-      iVar1 = engine_font_cpp_FUN_004b2a80(this_ptr_00,(char *)this_ptr);
-      *pCVar2 = local_c._0_1_;
+    if (this_ptr->mask_mode == 0) {
+      pcVar2 = this_ptr->string_data + char_index;
+      local_c = (uint)(byte)*pcVar2;
+      *pcVar2 = 0;
+      iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(this_ptr_00,this_ptr->string_data);
+      *pcVar2 = (byte)local_c;
       return iVar1;
     }
     if (0x3ff < (uint)char_index) {
@@ -40,7 +40,7 @@ int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047bf80(CInputString *thi
     }
     memset(local_40c,0x2a,char_index);
     local_40c[char_index] = '\0';
-    iVar1 = engine_font_cpp_FUN_004b2a80(_DAT_01c5b0e0,local_40c);
+    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01c5b0e0,local_40c);
   }
   return iVar1;
 }

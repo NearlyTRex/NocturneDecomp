@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flamecan.cpp_CFlameCan_ctor_FUN_004a6f00
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x5e8                          ; 004a6ed0
         ;   Label: core_flamecan.cpp_factoryFuncFlameCan_FUN_004a6ed0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004a6ed5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004a6ed5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004a6eda
     TEST EAX,EAX                        ; 004a6edd
     JNZ 0x004a6ee2                      ; 004a6edf

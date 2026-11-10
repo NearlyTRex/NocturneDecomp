@@ -14,7 +14,7 @@
 ;   core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004a2200 at 004a2217
 ;   core_inv.cpp_freeInventory_FUN_004dacc0 at 004dacc5
 ;   core_menu.cpp_showCalibrationTest_FUN_004ebe30 at 004ebed0
-;   core_mission.cpp_FUN_004fc940 at 004fca28
+;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca28
 ;   core_moon.cpp_FUN_00502450 at 00502462
 ;   engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d440 at 0040d446
 ;   ... and 4 more

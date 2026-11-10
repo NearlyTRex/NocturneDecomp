@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[40]:
-;   core_actor.cpp_FUN_0040cc00 at 0040cc4b
-;   core_actor.cpp_FUN_0040cc60 at 0040cc95
-;   core_actor.cpp_FUN_0040cd00 at 0040cd3d
-;   core_baron.cpp_FUN_0040fcf0 at 0040fec2
-;   core_batcreat.cpp_FUN_00412170 at 00412190
-;   core_batman.cpp_FUN_00413c40 at 00413c60
-;   core_boxactor.cpp_FUN_00422f90 at 0042306a
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 at 0040cc4b
+;   core_actor.cpp_getRandomInt_FUN_0040cc60 at 0040cc95
+;   core_actor.cpp_randomChance_FUN_0040cd00 at 0040cd3d
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fec2
+;   core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412170 at 00412190
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40 at 00413c60
+;   core_boxactor.cpp_CLightActor_process_FUN_00422f90 at 0042306a
 ;   core_bride.cpp_CBride_processDismemberment_FUN_004248e0 at 00424903
 ;   core_carved.cpp_FUN_0042b580 at 0042b5a0
-;   core_charactr.cpp_FUN_0042e580 at 0042e6c4
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 at 004300ca
 ;   ... and 30 more
 ;
 ; Called Functions:

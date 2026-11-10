@@ -15,12 +15,12 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_skeletons_d_bytes_d_mo_005f27e7
-;   undefined4 g_DeformableModelPool[0].field13744_0x35b0
+;   undefined4 g_DeformableModelPool[0].model_filename[0]
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_00567310
-;   core_skeleton.cpp_FUN_00563670
-;   crt_unknown.c_FUN_005bfb40
+;   core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00563670
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_0056b792
     PUSH ESI                            ; 0056b798
     MOV dword ptr [ESP + 0x4],EAX       ; 0056b799
-    CALL core_skeleton.cpp_FUN_00563670 ; 0056b79d
-        ;   XREF to: 00563670 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00563670(CSkeleton * this_ptr)
+    CALL core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00563670 ; 0056b79d
+        ;   XREF to: 00563670 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_calculateFrameDataSize_FUN_00563670(CSkeleton * this_ptr)
     ADD ESP,0x4                         ; 0056b7a2
     ADD EBP,EAX                         ; 0056b7a5
     MOV EAX,dword ptr [ESP]             ; 0056b7a7
@@ -69,7 +69,7 @@ section .text
         ;   XREF to: 00567310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_calculateMemorySize_FUN_00567310(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0056b7e8
     ADD dword ptr [ESP + 0x8],EAX       ; 0056b7eb
-    CMP byte ptr [ESI],0x0              ; 0056b7ef | g_DeformableModelPool[0].field13744_0x35b0
+    CMP byte ptr [ESI],0x0              ; 0056b7ef | g_DeformableModelPool[0].model_filename[0]
     JZ 0x0056b7f8                       ; 0056b7f2
         ;   XREF to: 0056b7f8 (CONDITIONAL_JUMP)  ; LAB_0056b7f8
     INC dword ptr [ESP + 0x4]           ; 0056b7f4
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5f27e7                       ; 0056b810 | = "%d skeletons, %d bytes, %d models, %d..."
     MOV EDI,dword ptr [ESP + 0x34]      ; 0056b815
     PUSH EDI                            ; 0056b819
-    CALL crt_unknown.c_FUN_005bfb40     ; 0056b81a
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0056b81a
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x18                        ; 0056b81f
     ADD ESP,0xc                         ; 0056b822
     POP EBP                             ; 0056b825

@@ -7,8 +7,8 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_0040bba0 at 0040bc55
-;   core_skeleton.cpp_FUN_0054eae0 at 0054eb1f
+;   core_actor.cpp_archivePartStatus_FUN_0040bba0 at 0040bc55
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 at 0054eb1f
 ;
 ; *****************************************************************************
 

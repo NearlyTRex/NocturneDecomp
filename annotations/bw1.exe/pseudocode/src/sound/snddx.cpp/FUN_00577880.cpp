@@ -12,26 +12,23 @@ bool sound_snddx_cpp_FUN_00577880(int param_1)
   int *piVar1;
   uint error_code;
   int iVar2;
-  char *pcVar3;
-  int *piVar4;
-  bool bVar5;
+  int *piVar3;
+  bool bVar4;
   int unaff_retaddr;
   int *apiStack_1a4 [101];
   
   param_1 = param_1 * 0x24;
-  piVar4 = (int *)(param_1 + 0x2c823e0);
-  apiStack_1a4[0] = (int *)*piVar4;
-  bVar5 = true;
+  piVar3 = (int *)(param_1 + 0x2c823e0);
+  apiStack_1a4[0] = (int *)*piVar3;
+  bVar4 = true;
   if (apiStack_1a4[0] != (int *)0x0) {
     error_code = (**(code **)(*apiStack_1a4[0] + 0x48))();
     if (error_code != 0) {
-      pcVar3 = sound_snddx_cpp_FUN_00577500(error_code);
-      FUN_005bfb40
-                (apiStack_1a4,"DirectSux: Unable to %s.  (%s)","Stop hardware sfx secondary buffer"
-                 ,pcVar3);
+      sound_snddx_cpp_FUN_00577500(error_code);
+      _sprintf((char *)apiStack_1a4,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_005773f0(apiStack_1a4);
     }
-    bVar5 = error_code == 0;
+    bVar4 = error_code == 0;
     piVar1 = *(int **)(param_1 + 0x2c823e4);
     if (piVar1 != (int *)0x0) {
       (**(code **)(*piVar1 + 8))(piVar1);
@@ -49,15 +46,15 @@ bool sound_snddx_cpp_FUN_00577880(int param_1)
       *(uint *)(*(int *)(param_1 + 0x2c823ec) * 0x24 + 0x2c823f0) =
            *(uint *)(param_1 + 0x2c823f0);
     }
-    piVar1 = (int *)*piVar4;
+    piVar1 = (int *)*piVar3;
     if ((piVar1 != *(int **)(iVar2 + 0x2c81dc4)) && (piVar1 != (int *)0x0)) {
       (**(code **)(*piVar1 + 8))(piVar1);
-      *piVar4 = 0;
+      *piVar3 = 0;
     }
   }
-  *piVar4 = 0;
+  *piVar3 = 0;
   *(uint *)(param_1 + 0x2c823f0) = 0;
   *(uint *)(param_1 + 0x2c823ec) = 0;
   *(uint *)(param_1 + 0x2c823e8) = 0;
-  return bVar5;
+  return bVar4;
 }

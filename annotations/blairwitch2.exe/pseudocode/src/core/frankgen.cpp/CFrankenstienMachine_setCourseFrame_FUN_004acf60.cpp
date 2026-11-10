@@ -20,8 +20,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
     _DAT_01d046a4 = 0x1dc;
     core_main_c_FUN_004e4500("CFrankenstienMachine::setCourseFrame - no course!");
   }
-  local_20 = ((float)iVar1 * (*(float *)&this_ptr->field_0x2b8 - start_frame)) /
-             (end_frame - start_frame);
+  local_20 = ((float)iVar1 * (this_ptr->master_frame - start_frame)) / (end_frame - start_frame);
   if (local_20 < 0.0) {
     local_20 = 0.0;
   }
@@ -29,7 +28,7 @@ void __cdecl core_frankgen_cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60(
     local_20 = (float)(iVar1 + -1);
   }
   core_course_cpp_FUN_00438c40
-            ((CCourse *)&this_ptr->field_0x45c,local_20,(CVector3f *)&this_ptr->field_0x20,
-             (CVector3f *)&this_ptr->field_0x30);
+            ((CCourse *)&this_ptr->field_0x45c,local_20,(CVector3f *)&(this_ptr->base).field_0x20,
+             &(this_ptr->base).orient.vec);
   return;
 }

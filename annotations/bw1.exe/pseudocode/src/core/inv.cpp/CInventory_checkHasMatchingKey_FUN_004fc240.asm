@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_CEventList_evaluateAtom_FUN_004a70d0 at 004a7d31
-;   core_hero.cpp_FUN_004eb5e0 at 004eb609
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0 at 004eb609
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_You_used_a_key_005e6938

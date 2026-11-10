@@ -15,7 +15,7 @@ void core_skeleton_cpp_FUN_0056b8c0(char *param_1)
   char *pcVar4;
   
   iVar3 = 0;
-  pcVar4 = &g_DeformableModelPool[0].field_0x35b0;
+  pcVar4 = g_DeformableModelPool[0].model_filename;
   do {
     iVar1 = _stricmp(pcVar4,param_1);
     if (iVar1 == 0) {
@@ -23,8 +23,7 @@ void core_skeleton_cpp_FUN_0056b8c0(char *param_1)
       *(uint *)(&DAT_027902bc + iVar3 * 4) = 1;
       iVar1 = 0;
       do {
-        iVar2 = _stricmp
-                          (&g_DeformableModelPool[iVar3].field_0x355c,pcVar4);
+        iVar2 = _stricmp(g_DeformableModelPool[iVar3].model_name,pcVar4);
         if (iVar2 == 0) {
           *(uint *)(&DAT_02c5fc1c + iVar1 * 4) = 1;
           return;

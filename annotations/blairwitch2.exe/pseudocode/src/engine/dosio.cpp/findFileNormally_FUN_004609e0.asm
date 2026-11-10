@@ -11,10 +11,10 @@
 ; undefined4       Stack[-0x2e]:4  local_2e
 ;
 ; XREF[4]:
-;   core_main.c_FUN_004e46c0 at 004e474e
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e474e
 ;   engine_dosio.cpp_findFile_FUN_00460980 at 004609c1
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 00519f3d
 ;   engine_pod.cpp_CPod_dismount_FUN_0051b280 at 0051b2b7
-;   engine_pod.cpp_FUN_00519f00 at 00519f3d
 ;
 ; Called Functions:
 ;   crt_io.c_FUN_005b99c8

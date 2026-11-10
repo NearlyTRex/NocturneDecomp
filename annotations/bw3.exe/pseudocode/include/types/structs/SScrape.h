@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: SScrape
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x34 (52 bytes)
 #pragma pack(push, 1)
 typedef struct SScrape {
-    char field_0[52]; // 0x0
+    CVector3f local_position; // 0x0
+    CVector3f transformed_position; // 0xc
+    CVector3f previous_position; // 0x18
+    float raytrace_intersection; // 0x24
+    CVector3f raytrace_normal; // 0x28
 } SScrape;
 #pragma pack(pop)
 

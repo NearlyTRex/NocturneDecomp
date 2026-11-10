@@ -14,7 +14,7 @@ int __cdecl cockpit_drawsurf_cpp_CDrawSurface_getTextWidth_FUN_00481060(CDrawSur
   int iVar1;
   
   if (_DAT_01bc11ec != (CBitFont *)0x0) {
-    iVar1 = engine_font_cpp_FUN_004c3ea0(_DAT_01bc11ec,text);
+    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01bc11ec,text);
     return iVar1;
   }
   iVar1 = engine_2d_c_getStringWidth_FUN_004018b0(text);

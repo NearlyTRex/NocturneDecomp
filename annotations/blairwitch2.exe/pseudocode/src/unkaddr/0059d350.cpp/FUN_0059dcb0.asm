@@ -6,14 +6,14 @@
 ;
 ; XREF[12]:
 ;   core_confedrt.cpp_FUN_005a1180 at 005a126d
-;   core_confzomb.cpp_FUN_005a1f40 at 005a1ffe
-;   core_confzomb.cpp_FUN_005a2130 at 005a21f5
-;   core_ghostchi.cpp_FUN_005a9580 at 005a966d
-;   core_ghostchi.cpp_FUN_005a9770 at 005a985d
-;   core_hag.cpp_FUN_005aaa80 at 005aab11
-;   core_hag.cpp_FUN_005aab50 at 005aac08
-;   core_robin.cpp_FUN_005a6140 at 005a61c5
-;   core_schngeis.cpp_FUN_005a3280 at 005a333b
+;   core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130 at 005a21f5
+;   core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40 at 005a1ffe
+;   core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580 at 005a966d
+;   core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770 at 005a985d
+;   core_hag.cpp_CHag_processHagAlertState_FUN_005aaa80 at 005aab11
+;   core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50 at 005aac08
+;   core_robin.cpp_CRobin_processMeleeAttackState_FUN_005a6140 at 005a61c5
+;   core_schngeis.cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280 at 005a333b
 ;   core_twigzomb.cpp_FUN_005a2ac0 at 005a2d88
 ;   ... and 2 more
 ;

@@ -9,13 +9,13 @@
 void core_script_cpp_FUN_00521630(CScript *param_1)
 
 {
-  shape_edittool_cpp_CStrList_clear_FUN_00480e10((CStrList *)&param_1->field_0x34);
-  core_script_cpp_FUN_00521680(param_1);
-  if (*(int *)&param_1->field_0x24 != 0) {
-    FUN_005b86a0(*(int *)&param_1->field_0x24);
-    *(uint *)&param_1->field_0x24 = 0;
+  shape_edittool_cpp_CStrList_clear_FUN_00480e10(&param_1->script_text);
+  core_script_cpp_CScript_freeParsedLines_FUN_00521680(param_1);
+  if (param_1->dialog_entries != (SDialogEntry *)0x0) {
+    FUN_005b86a0(param_1->dialog_entries);
+    param_1->dialog_entries = (SDialogEntry *)0x0;
   }
-  *(uint *)&param_1->field_0x20 = 0;
-  shape_edittool_cpp_FUN_00483d10(&g_ScriptPickList);
+  param_1->dialog_entry_count = 0;
+  shape_edittool_cpp_CPickList_clear_FUN_00483d10(&g_ScriptPickList);
   return;
 }

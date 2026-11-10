@@ -25,14 +25,14 @@ CParticleBox * CParticleBox::ctor(CParticleBox *this_ptr);
 // Address: 005ac7f0
 CParticleBox * CParticleBox::dtor(CParticleBox *this_ptr,uint flags);
 
-// Original: core_partibox.cpp_FUN_005ac8d0
+// Original: core_partibox.cpp_CParticleBox_setup_FUN_005ac8d0
 // Address: 005ac8d0
-void FUN_005ac8d0(CBoxActor *param_1);
+void __cdecl CParticleBox::setup(CParticleBox *this_ptr);
 
-// Original: core_partibox.cpp_FUN_005ac960
+// Original: core_partibox.cpp_CParticleBox_process_FUN_005ac960
 // Address: 005ac960
-void FUN_005ac960(CBoxActor *param_1,float param_2);
+void __cdecl CParticleBox::process(CParticleBox *this_ptr,float delta_time);
 
-// Original: core_partibox.cpp_FUN_005ad300
+// Original: core_partibox.cpp_CParticleBox_renderTransparent_FUN_005ad300
 // Address: 005ad300
-undefined4 FUN_005ad300(CBoxActor *param_1);
+int __cdecl CParticleBox::renderTransparent(CParticleBox *this_ptr);

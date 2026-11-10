@@ -21,29 +21,29 @@ CDemonActorType * CSentinel::getActorType(CSentinel *this_ptr);
 // Address: 0052a720
 CSentinel * __cdecl CSentinel::ctor(CSentinel *this_ptr);
 
-// Original: core_sentinel.cpp_FUN_0052a790
+// Original: core_sentinel.cpp_CSentinel_setup_FUN_0052a790
 // Address: 0052a790
-void FUN_0052a790(CEnemy *param_1);
+void __cdecl CSentinel::setup(CSentinel *this_ptr);
 
-// Original: core_sentinel.cpp_FUN_0052a9a0
+// Original: core_sentinel.cpp_CSentinel_process_FUN_0052a9a0
 // Address: 0052a9a0
-void FUN_0052a9a0(CEnemy *param_1,float param_2);
+void __cdecl CSentinel::process(CSentinel *this_ptr,float delta_time);
 
-// Original: core_sentinel.cpp_FUN_0052b6d0
+// Original: core_sentinel.cpp_CSentinel_attractActorToward_FUN_0052b6d0
 // Address: 0052b6d0
-undefined4 FUN_0052b6d0(int param_1,int param_2);
+int __cdecl CSentinel::attractActorToward(CSentinel *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
-// Original: core_sentinel.cpp_FUN_0052b830
+// Original: core_sentinel.cpp_CSentinel_archive_FUN_0052b830
 // Address: 0052b830
-void FUN_0052b830(CEnemy *param_1);
+void __cdecl CSentinel::archive(CSentinel *this_ptr);
 
-// Original: core_sentinel.cpp_FUN_0052b890
+// Original: core_sentinel.cpp_CSentinel_processDamage_FUN_0052b890
 // Address: 0052b890
-void FUN_0052b890(int param_1,int param_2);
+void __cdecl CSentinel::processDamage(CSentinel *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_sentinel.cpp_FUN_0052b990
+// Original: core_sentinel.cpp_CSentinel_getTargetPoints_FUN_0052b990
 // Address: 0052b990
-undefined4 FUN_0052b990(int param_1,undefined4 *param_2);
+int __cdecl CSentinel::getTargetPoints(CSentinel *this_ptr,CVector3f *out_points_array);
 
 // Original: core_sentinel.cpp_CSentinel_getCollisionType_FUN_0052bb20
 // Address: 0052bb20

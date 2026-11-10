@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_00496920 at 00496cc0
+;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_00496920 at 00496cc0
 ;   shape_edittool.cpp_FUN_00496ee0 at 00496f89
 ;
 ; Referenced Globals:

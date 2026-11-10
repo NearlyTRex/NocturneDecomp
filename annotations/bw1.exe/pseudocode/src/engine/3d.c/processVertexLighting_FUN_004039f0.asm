@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_3d.c_FUN_00407820 at 004078e2
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407820 at 004078e2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00713a60

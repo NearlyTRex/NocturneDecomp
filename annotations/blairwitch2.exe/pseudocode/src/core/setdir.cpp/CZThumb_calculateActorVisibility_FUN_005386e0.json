@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 256,
-    "complexity_score": 357,
+    "complexity_score": 303,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
-    "suspect_count": 23,
+    "pseudocode_lines": 103,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "undefined_data",
-      "unknown_field",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 358
+    "total_lines": 359
   },
   "cross_references": [
     {
@@ -356,7 +355,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3f *)&actor->field_0x20);",
@@ -364,63 +363,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 26,
       "match": "field_0x20",
       "severity": "mild",
       "text": "(DAT_0060b280,(CVector3f *)&actor->field_0x20);",
       "type": "unnamed_field"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = *(uint *)&actor->field_0x30;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "local_34._0_4_ = *(uint *)&actor->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_34._8_4_ = *(uint *)&actor->field_0x38;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "local_34._8_4_ = *(uint *)&actor->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_34._4_4_ = *(uint *)&this_ptr->field_0x18;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_34._4_4_ = *(uint *)&this_ptr->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 31,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_34,(CVector3f *)0x0);",
@@ -428,10 +379,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 35,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + iVar8),bounding_box_vertices);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iVar7),bounding_box_vertices);",
       "type": "undefined_data"
     },
     {
@@ -439,44 +390,52 @@
       "line": 38,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "uVar3 = *(uint *)(iVar8 + 0x10 + *(int *)DAT_0060b280);",
+      "text": "local_1c = local_1c & *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar2);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "local_24 = local_24 | *(uint *)(DAT_0060b280->vertex_buffer_ptr + iVar2);",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 51,
       "match": "(SMRGLHeaderPrimitive **)((int)aiStack_4c",
       "severity": "moderate",
-      "text": "*(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar8) = primitives;",
+      "text": "*(SMRGLHeaderPrimitive **)((int)aiStack_4c + iVar7) = primitives;",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 59,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "piVar7 = (int *)(*(int *)DAT_0060b280 + iVar8);",
+      "text": "pSVar6 = DAT_0060b280->vertex_buffer_ptr + iVar7;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 75,
+      "line": 76,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "if ((*(byte *)(*(int *)DAT_0060b280 + iVar8 + 0x13) & 0x80) != 0) {",
+      "text": "if (((byte)DAT_0060b280->vertex_buffer_ptr[iVar7 + 0x13] & 0x80) != 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "if (0 < *(int *)(*(int *)DAT_0060b280 + iVar8 + 8)) {",
+      "text": "if (0 < *(int *)(DAT_0060b280->vertex_buffer_ptr + iVar7 + 8)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 86,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",
@@ -484,7 +443,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 88,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,1);",
@@ -492,7 +451,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 90,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,(uint)((local_24 & 0x80000000) != 0));",
@@ -500,23 +459,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 95,
+      "line": 96,
       "match": "(uint *)((int)aiStack_4c",
       "severity": "moderate",
-      "text": "puVar2 = (uint *)((int)aiStack_4c + iVar9);",
+      "text": "puVar3 = (uint *)((int)aiStack_4c + iVar8);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 98,
+      "line": 99,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)*puVar2);",
+      "text": "(DAT_0060b280,(SMRGLPrimitivePoly *)*puVar3);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 102,
+      "line": 103,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
@@ -524,7 +483,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);",

@@ -9,20 +9,20 @@
 void core_dlight_cpp_FUN_00462670(CDemonLight *param_1)
 
 {
-  if (*(int *)&param_1->field_0x2f94 != 0) {
-    FUN_005c09f0(*(uint *)&param_1->field_0x2f98);
-    *(uint *)&param_1->field_0x2f94 = 0;
-    *(uint *)&param_1->field_0x2f98 = 0;
+  if (param_1->shadow_depth_buffer != (ushort *)0x0) {
+    FUN_005c09f0(param_1->shadow_buffer_raw);
+    param_1->shadow_depth_buffer = (ushort *)0x0;
+    param_1->shadow_buffer_raw = (void *)0x0;
   }
   core_dlight_cpp_CDemonLight_freeMasterZBuffer_FUN_004627f0(param_1);
-  if (*(int *)&param_1->field_0x2fa0 != 0) {
-    FUN_005c09f0(*(int *)&param_1->field_0x2fa0);
-    *(uint *)&param_1->field_0x2fa0 = 0;
+  if (param_1->lightmap_visibility_bits != (uchar *)0x0) {
+    FUN_005c09f0(param_1->lightmap_visibility_bits);
+    param_1->lightmap_visibility_bits = (uchar *)0x0;
   }
-  if (*(int *)&param_1->field_0x1c6c == 0) {
+  if (param_1->filter_buffer == (uchar *)0x0) {
     return;
   }
-  FUN_005c09f0(*(int *)&param_1->field_0x1c6c);
-  *(uint *)&param_1->field_0x1c6c = 0;
+  FUN_005c09f0(param_1->filter_buffer);
+  param_1->filter_buffer = (uchar *)0x0;
   return;
 }

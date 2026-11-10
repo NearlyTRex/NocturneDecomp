@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CDynamite
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x5a8 (1448 bytes)
 #pragma pack(push, 1)
 typedef struct CDynamite {
-    char field_0[1448]; // 0x0
+    CWeapon base; // 0x0
+    float fuse_timer; // 0x594
+    CVector3f toss_velocity; // 0x598
+    uint sfx_handle; // 0x5a4
 } CDynamite;
 #pragma pack(pop)
 

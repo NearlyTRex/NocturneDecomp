@@ -1,0 +1,76 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; int __cdecl core_pendulum_cpp_CPendulum_renderOpaque_FUN_00515e40(CPendulum *this_ptr)
+;
+; Parameters:
+; CPendulum *      Stack[0x4]:4   this_ptr
+;
+; Called Functions:
+;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
+;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
+;   core_box.cpp_FUN_0041a840
+;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
+;
+; *****************************************************************************
+
+section .text
+
+    PUSH EBX                            ; 00515e40
+        ;   Label: core_pendulum.cpp_CPendulum_renderOpaque_FUN_00515e40
+    PUSH ESI                            ; 00515e41
+    PUSH EDI                            ; 00515e42
+    SUB ESP,0x30                        ; 00515e43
+    MOV EBX,dword ptr [ESP + 0x40]      ; 00515e46
+    PUSH EBX                            ; 00515e4a
+    CALL core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0 ; 00515e4b
+        ;   XREF to: 004089d0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 00515e50
+    PUSH 0x0                            ; 00515e53
+    MOV EAX,dword ptr [EBX + 0x2b0]     ; 00515e55
+    PUSH EBX                            ; 00515e5b
+    LEA ESI,[ESP + 0x8]                 ; 00515e5c
+    LEA EDI,[ESP + 0x20]                ; 00515e60
+    CALL dword ptr [EAX + 0x24]         ; 00515e64
+    MOV ECX,0x6                         ; 00515e67
+    ADD ESP,0x4                         ; 00515e6c
+    LEA EAX,[ESP + 0x1c]                ; 00515e6f
+    LEA ESI,[ESP + 0x4]                 ; 00515e73
+    PUSH EAX                            ; 00515e77
+    MOVSD.REP ES:EDI,ESI                ; 00515e78
+    CALL core_box.cpp_FUN_0041a840      ; 00515e7a
+        ;   XREF to: 0041a840 (UNCONDITIONAL_CALL)  ; undefined core_box.cpp_FUN_0041a840()
+    ADD ESP,0x8                         ; 00515e7f
+    MOV ESI,EAX                         ; 00515e82
+    TEST EAX,EAX                        ; 00515e84
+    JNZ 0x00515e9a                      ; 00515e86
+        ;   XREF to: 00515e9a (CONDITIONAL_JUMP)  ; LAB_00515e9a
+    PUSH EBX                            ; 00515e88
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10 ; 00515e89
+        ;   XREF to: 00408a10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 00515e8e
+    MOV EAX,ESI                         ; 00515e91
+    ADD ESP,0x30                        ; 00515e93
+    POP EDI                             ; 00515e96
+    POP ESI                             ; 00515e97
+    POP EBX                             ; 00515e98
+    RET                                 ; 00515e99
+    PUSH -0x1                           ; 00515e9a
+        ;   Label: LAB_00515e9a
+    LEA EAX,[EBX + 0x2b4]               ; 00515e9c
+    PUSH 0x0                            ; 00515ea2
+    PUSH EAX                            ; 00515ea4
+    CALL core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0 ; 00515ea5
+        ;   XREF to: 0044fcc0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0(CKeyFramedModelInstance * this_ptr, float animation_frame, int render_flags)
+    ADD ESP,0xc                         ; 00515eaa
+    PUSH EBX                            ; 00515ead
+    CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10 ; 00515eae
+        ;   XREF to: 00408a10 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10(CDemonActor * this_ptr)
+    ADD ESP,0x4                         ; 00515eb3
+    MOV EAX,ESI                         ; 00515eb6
+    ADD ESP,0x30                        ; 00515eb8
+    POP EDI                             ; 00515ebb
+    POP ESI                             ; 00515ebc
+    POP EBX                             ; 00515ebd
+    RET                                 ; 00515ebe
+

@@ -26,7 +26,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0056a870 at 0056a8b8
+;   core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0056a870 at 0056a8b8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f238d

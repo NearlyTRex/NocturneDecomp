@@ -10,7 +10,7 @@
 ;   unkafter_darkwolf.cpp_FUN_00598fb0 at 00598fc3
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   unkafter_darkwolf.cpp_CDarkwolf_ctor_FUN_00598780
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00598ff5
     PUSH EAX                            ; 00598ffa
     MOV dword ptr [EAX + -0x4],0x5e7b54 ; 00598ffb
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00599002
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00599002
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x41f00000 ; 00599007
     ADD ESP,0x8                         ; 00599011
     MOV dword ptr [EBX + 0xce5c],0x41200000 ; 00599014

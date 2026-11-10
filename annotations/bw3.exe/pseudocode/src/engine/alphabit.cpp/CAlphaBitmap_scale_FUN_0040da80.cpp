@@ -10,7 +10,7 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(CAlphaBitmap *t
 
 {
   int iVar1;
-  byte *puVar2;
+  char *pcVar2;
   int iVar3;
   int iVar4;
   int iVar5;
@@ -18,8 +18,8 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(CAlphaBitmap *t
   int iVar7;
   int local_14;
   
-  iVar3 = *(int *)&this_ptr->field_0xc / scaleFactorX;
-  iVar4 = *(int *)&this_ptr->field_0x10 / scaleFactorY;
+  iVar3 = this_ptr->width / scaleFactorX;
+  iVar4 = this_ptr->height / scaleFactorY;
   local_14 = 0;
   if (0 < iVar4) {
     do {
@@ -28,18 +28,18 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040da80(CAlphaBitmap *t
         iVar5 = 0;
         iVar7 = iVar3 + iVar6;
         do {
-          iVar1 = local_14 * *(int *)&this_ptr->field_0xc * scaleFactorY + iVar5;
-          *(byte *)(*(int *)this_ptr + iVar6) = *(byte *)(*(int *)this_ptr + iVar1);
-          puVar2 = (byte *)(*(int *)&this_ptr->field_0x4 + iVar6);
+          iVar1 = local_14 * this_ptr->width * scaleFactorY + iVar5;
+          this_ptr->raw[iVar6] = this_ptr->raw[iVar1];
+          pcVar2 = this_ptr->opa + iVar6;
           iVar6 = iVar6 + 1;
-          *puVar2 = *(byte *)(*(int *)&this_ptr->field_0x4 + iVar1);
+          *pcVar2 = this_ptr->opa[iVar1];
           iVar5 = iVar5 + scaleFactorX;
         } while (iVar6 < iVar7);
       }
       local_14 = local_14 + 1;
     } while (local_14 < iVar4);
   }
-  *(int *)&this_ptr->field_0xc = iVar3;
-  *(int *)&this_ptr->field_0x10 = iVar4;
+  this_ptr->width = iVar3;
+  this_ptr->height = iVar4;
   return;
 }

@@ -13,7 +13,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNearPlane_FUN_004
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(prim + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) {
@@ -31,7 +31,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedNearPlane_FUN_004
     }
     _DAT_01c6e2b4 = 1;
     _DAT_01c6e2b8 = 3;
-    engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(prim + 4),(int *)(prim + 0x18));
+    engine_clipper_c_clipAndRasterize_FUN_0043a840((prim->base).count,(int *)(prim + 1));
   }
-  return (SMRGLHeaderExtended *)(prim + *(int *)(prim + 4) * 4 + 0x18);
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

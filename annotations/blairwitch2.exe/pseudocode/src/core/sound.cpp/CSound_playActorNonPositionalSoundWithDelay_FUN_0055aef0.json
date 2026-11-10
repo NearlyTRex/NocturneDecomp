@@ -1,0 +1,178 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 10,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 37
+  },
+  "cross_references": [
+    {
+      "addr": "00408e90",
+      "from_addr": "00408eaa",
+      "name": "core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049cd50",
+      "from_addr": "0049d07f",
+      "name": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049d2c0",
+      "from_addr": "0049d3f7",
+      "name": "core_fire.cpp_CFireEffect_createStake_FUN_0049d2c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055aef0",
+    "address_range": [
+      [
+        "0055aef0",
+        "0055af2e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0",
+    "signature": "uint __cdecl core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position,float delay )"
+  },
+  "function_calls": [
+    {
+      "addr": "005594c0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_playSfxInternal_FUN_005594c0"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "00550360",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxDelay_FUN_00550360"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "0049d07f",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "0049d3f7",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_createStake_FUN_0049d2c0",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "00408eaa",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_playSoundWithDelay_FUN_00408e90",
+        "estimated_params": 5,
+        "instructions_analyzed": 10,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.727272727272727,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 13,
+      "LOAD": 9,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 82
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 16,
+        "size": 4,
+        "type": "CVector3f *"
+      },
+      {
+        "is_param": true,
+        "name": "delay",
+        "offset": 20,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": []
+}

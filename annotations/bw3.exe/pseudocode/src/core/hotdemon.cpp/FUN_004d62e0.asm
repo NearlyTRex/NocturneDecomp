@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_hotdemon.cpp_CAngelForest_ctor_FUN_004d6310
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd088                         ; 004d62e0
         ;   Label: core_hotdemon.cpp_FUN_004d62e0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004d62e5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004d62e5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004d62ea
     TEST EAX,EAX                        ; 004d62ed
     JNZ 0x004d62f2                      ; 004d62ef

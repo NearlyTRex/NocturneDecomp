@@ -17,17 +17,9 @@ float FUN_00517ce0(undefined4 param_1,undefined4 param_2,float param_3,int param
 // Address: 00517d50
 undefined4 FUN_00517d50(int param_1);
 
-// Original: unkafter_prye.cpp_FUN_00523e50
-// Address: 00523e50
-void FUN_00523e50(CDemonActor *param_1,int param_2);
-
 // Original: unkafter_prye.cpp_FUN_00524170
 // Address: 00524170
-void FUN_00524170(CDemonActor *param_1,float param_2,int param_3);
-
-// Original: unkafter_prye.cpp_FUN_005247b0
-// Address: 005247b0
-void FUN_005247b0(int param_1,int param_2);
+void __cdecl FUN_00524170(CStranger *this_ptr,float delta_time,int is_weapon_active);
 
 // Original: unkafter_prye.cpp_FUN_00524800
 // Address: 00524800
@@ -41,25 +33,13 @@ void FUN_00524940(CCharacter *param_1,float param_2);
 // Address: 00525930
 void FUN_00525930(int param_1);
 
-// Original: unkafter_prye.cpp_FUN_00525a20
-// Address: 00525a20
-void FUN_00525a20(CHero *param_1);
-
-// Original: unkafter_prye.cpp_FUN_005260b0
-// Address: 005260b0
-undefined4 FUN_005260b0(int param_1,undefined4 param_2);
-
 // Original: unkafter_prye.cpp_FUN_005262f0
 // Address: 005262f0
 undefined4 FUN_005262f0(int param_1);
 
 // Original: unkafter_prye.cpp_FUN_005263c0
 // Address: 005263c0
-void FUN_005263c0(int param_1);
-
-// Original: unkafter_prye.cpp_FUN_005267c0
-// Address: 005267c0
-undefined4 FUN_005267c0(int param_1,int param_2,int param_3,float *param_4);
+void FUN_005263c0(CCharacter *param_1);
 
 // Original: unkafter_prye.cpp_FUN_00526cf0
 // Address: 00526cf0
@@ -68,15 +48,3 @@ void FUN_00526cf0(int param_1);
 // Original: unkafter_prye.cpp_FUN_00526dc0
 // Address: 00526dc0
 void FUN_00526dc0(int param_1,undefined4 param_2);
-
-// Original: unkafter_prye.cpp_FUN_00526df0
-// Address: 00526df0
-undefined4 FUN_00526df0(int param_1);
-
-// Original: unkafter_prye.cpp_FUN_00526e00
-// Address: 00526e00
-void FUN_00526e00(int param_1,int param_2);
-
-// Original: unkafter_prye.cpp_FUN_00526e30
-// Address: 00526e30
-int FUN_00526e30(int param_1,int param_2,undefined4 param_3);

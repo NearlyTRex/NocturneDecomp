@@ -11,9 +11,9 @@ float __cdecl core_shotgun_cpp_CShotgun_getDamage_FUN_005620c0(CShotgun *this_pt
 {
   float fVar1;
   
-  if (*(int *)&this_ptr->field_0x56c == 6) {
+  if ((this_ptr->base).ammo_type == AMMO_TYPE_BLANKS) {
     return 0.0;
   }
-  fVar1 = (float)core_actor_cpp_FUN_0040cc00(0x43160000,0x43480000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(150.0,200.0);
   return fVar1;
 }

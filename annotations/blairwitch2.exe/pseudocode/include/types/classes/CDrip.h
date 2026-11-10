@@ -4,13 +4,33 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EDripType.h"
 
 // Structure: CDrip
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x498 (1176 bytes)
 #pragma pack(push, 1)
 typedef struct CDrip {
-    char field_0[1176]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[348]; // 0x158
+    CKeyFramedModelInstance model; // 0x2b4
+    EDripType type; // 0x430
+    int auto_drop; // 0x434
+    float drip_timer; // 0x438
+    float min_auto_drip_time; // 0x43c
+    float max_auto_drip_time; // 0x440
+    float drip_radius; // 0x444
+    int is_ground_cached; // 0x448
+    float ground_y; // 0x44c
+    int dead; // 0x450
+    CVector3f home_pos; // 0x454
+    CVector3f vel; // 0x460
+    float damage; // 0x46c
+    char hit_sound[32]; // 0x470
+    int no_rock_flag; // 0x490
+    int is_visible; // 0x494
 } CDrip;
 #pragma pack(pop)
 

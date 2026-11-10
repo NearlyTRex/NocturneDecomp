@@ -14,14 +14,12 @@ void shape_edittool_cpp_FUN_004991ce(uint param_1,float *param_2,uint param_3)
   SProjectedVertex aSStack_40 [16];
   uint uStack_30;
   int iStack_2c;
-  int iStack_10;
-  int iStack_c;
-  int iStack_8;
+  CVector3i CStack_10;
   
-  iStack_10 = (int)ROUND(*param_2 * _DAT_005ff7ec);
-  iStack_c = (int)ROUND(param_2[1] * _DAT_005ff7ec);
-  iStack_8 = (int)ROUND(param_2[2] * _DAT_005ff7ec);
-  engine_special_cpp_FUN_00580173(aSStack_40,(CVector3i *)&iStack_10);
+  CStack_10.x = (int)ROUND(*param_2 * _DAT_005ff7ec);
+  CStack_10.y = (int)ROUND(param_2[1] * _DAT_005ff7ec);
+  CStack_10.z = (int)ROUND(param_2[2] * _DAT_005ff7ec);
+  engine_special_cpp_FUN_00580173(aSStack_40,&CStack_10);
   if ((uStack_30 & 0x80000000) != 0) {
     return;
   }

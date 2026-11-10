@@ -44,8 +44,8 @@
 ;   crt_stdio.c_sscanf_FUN_005c2cac
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_string.c__strnicmp_FUN_005c1210
-;   crt_unknown.c_FUN_005bfb40
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -184,8 +184,8 @@ section .text
     JZ 0x004bb738                       ; 004bb83a
         ;   XREF to: 004bb738 (CONDITIONAL_JUMP)  ; LAB_004bb738
     PUSH 0x2c                           ; 004bb840
-    CALL crt_unknown.c_FUN_005c0f32     ; 004bb842
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004bb842
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bb847
     TEST EAX,EAX                        ; 004bb84a
     JZ 0x004bb86f                       ; 004bb84c
@@ -238,8 +238,8 @@ section .text
         ;   Label: LAB_004bb8cb
     PUSH 0x5dfa2a                       ; 004bb8cc | = "Error parsing 'image' tag parms: '%s'"
     PUSH 0x1cc4270                      ; 004bb8d1 | DAT_01cc4270
-    CALL crt_unknown.c_FUN_005bfb40     ; 004bb8d6
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb8d6
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 004bb8db
     MOV EAX,EBP                         ; 004bb8de
     ADD ESP,0x210                       ; 004bb8e0
@@ -274,8 +274,8 @@ section .text
     JL 0x004bb9c2                       ; 004bb935
         ;   XREF to: 004bb9c2 (CONDITIONAL_JUMP)  ; LAB_004bb9c2
     PUSH 0x4c                           ; 004bb93b
-    CALL crt_unknown.c_FUN_005c0f32     ; 004bb93d
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004bb93d
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bb942
     TEST EAX,EAX                        ; 004bb945
     JZ 0x004bb955                       ; 004bb947
@@ -335,8 +335,8 @@ section .text
         ;   Label: LAB_004bb9c2
     PUSH 0x5dfa83                       ; 004bb9c3 | = "Error parsing 'twanachar' parms: '%s'"
     PUSH 0x1cc4270                      ; 004bb9c8 | DAT_01cc4270
-    CALL crt_unknown.c_FUN_005bfb40     ; 004bb9cd
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb9cd
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb9d2
     ADD ESP,0xc                         ; 004bb9d7
     ADD ESP,0x210                       ; 004bb9da
@@ -368,8 +368,8 @@ section .text
     JNZ 0x004bba9f                      ; 004bba0d
         ;   XREF to: 004bba9f (CONDITIONAL_JUMP)  ; LAB_004bba9f
     PUSH 0x118                          ; 004bba13
-    CALL crt_unknown.c_FUN_005c0f32     ; 004bba18
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004bba18
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bba1d
     TEST EAX,EAX                        ; 004bba20
     JZ 0x004bba2d                       ; 004bba22
@@ -427,8 +427,8 @@ section .text
         ;   Label: LAB_004bba9f
     PUSH 0x5dfafa                       ; 004bbaa0 | = "Ignoring unknown markup tag: %s"
     PUSH 0x1cc4270                      ; 004bbaa5 | DAT_01cc4270
-    CALL crt_unknown.c_FUN_005bfb40     ; 004bbaaa
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bbaaa
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bbaaf
     ADD ESP,0xc                         ; 004bbab4
     ADD ESP,0x210                       ; 004bbab7

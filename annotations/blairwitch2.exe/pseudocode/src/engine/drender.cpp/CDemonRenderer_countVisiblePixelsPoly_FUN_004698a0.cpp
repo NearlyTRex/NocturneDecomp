@@ -18,7 +18,7 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_004698a
   uint local_14;
   
   _DAT_01ba5c7c = 0;
-  if ((*(int *)(this_ptr + 0xc) != 0) &&
+  if ((this_ptr->plane_culling_enabled != 0) &&
      (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403970(poly + 8), iVar2 == 0)) {
     return 0;
   }
@@ -33,11 +33,11 @@ int __cdecl engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_004698a
       iVar3 = iVar3 + 4;
       pSVar4 = pSVar4 + 0xc;
       iVar2 = iVar2 + 1;
-      local_14 = local_14 & *(uint *)(iVar1 * 0x30 + 0x10 + *(int *)this_ptr);
+      local_14 = local_14 & *(uint *)(this_ptr->vertex_buffer_ptr + iVar1 * 0x30 + 0x10);
     } while (iVar2 < *(int *)(poly + 4));
   }
   if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-    if (*(int *)(this_ptr + 4) == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       _DAT_01c38b54 = 0xc0;
       _DAT_01c38b58 = 6;
       _DAT_01c35e6c = core_dstrendr_cpp_renderDepthTestStatistics16xUnrolled_FUN_0046ef35;

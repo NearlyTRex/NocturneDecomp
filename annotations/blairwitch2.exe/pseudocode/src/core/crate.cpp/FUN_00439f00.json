@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 196,
-    "complexity_score": 1841,
+    "complexity_score": 1651,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 86,
-    "suspect_count": 173,
+    "suspect_count": 154,
     "suspect_types": [
       "unnamed_field",
       "unnamed_param",
@@ -364,7 +364,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;",
+      "text": "(param_1->orient).vec.x = *(float *)&param_1->field_0xec + (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -372,7 +372,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;",
+      "text": "(param_1->orient).vec.x = *(float *)&param_1->field_0xec + (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -380,31 +380,15 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;",
+      "text": "(param_1->orient).vec.x = *(float *)&param_1->field_0xec + (param_1->orient).vec.x;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 27,
       "match": "field_0xec",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;",
+      "text": "(param_1->orient).vec.x = *(float *)&param_1->field_0xec + (param_1->orient).vec.x;",
       "type": "unnamed_field"
     },
     {
@@ -412,7 +396,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;",
+      "text": "(param_1->orient).vec.y = *(float *)&param_1->field_0xf0 + (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -420,7 +404,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;",
+      "text": "(param_1->orient).vec.y = *(float *)&param_1->field_0xf0 + (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -428,31 +412,15 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;",
+      "text": "(param_1->orient).vec.y = *(float *)&param_1->field_0xf0 + (param_1->orient).vec.y;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 28,
       "match": "field_0xf0",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;",
+      "text": "(param_1->orient).vec.y = *(float *)&param_1->field_0xf0 + (param_1->orient).vec.y;",
       "type": "unnamed_field"
     },
     {
@@ -460,7 +428,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;",
+      "text": "(param_1->orient).vec.z = *(float *)&param_1->field_0xf4 + (param_1->orient).vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -468,7 +436,7 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;",
+      "text": "(param_1->orient).vec.z = *(float *)&param_1->field_0xf4 + (param_1->orient).vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -476,31 +444,15 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;",
+      "text": "(param_1->orient).vec.z = *(float *)&param_1->field_0xf4 + (param_1->orient).vec.z;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 29,
       "match": "field_0xf4",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;",
+      "text": "(param_1->orient).vec.z = *(float *)&param_1->field_0xf4 + (param_1->orient).vec.z;",
       "type": "unnamed_field"
     },
     {
@@ -684,7 +636,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "((*(float *)&param_1[1].field_0x194 == *(float *)&param_1->field_0x30 &&",
+      "text": "((*(float *)&param_1[1].field_0x194 == (param_1->orient).vec.x &&",
       "type": "unnamed_param"
     },
     {
@@ -692,7 +644,7 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "((*(float *)&param_1[1].field_0x194 == *(float *)&param_1->field_0x30 &&",
+      "text": "((*(float *)&param_1[1].field_0x194 == (param_1->orient).vec.x &&",
       "type": "unnamed_param"
     },
     {
@@ -700,15 +652,7 @@
       "line": 36,
       "match": "field_0x194",
       "severity": "mild",
-      "text": "((*(float *)&param_1[1].field_0x194 == *(float *)&param_1->field_0x30 &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "((*(float *)&param_1[1].field_0x194 == *(float *)&param_1->field_0x30 &&",
+      "text": "((*(float *)&param_1[1].field_0x194 == (param_1->orient).vec.x &&",
       "type": "unnamed_field"
     },
     {
@@ -716,7 +660,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x198 == *(float *)&param_1->field_0x34)))) &&",
+      "text": "(*(float *)&param_1[1].field_0x198 == (param_1->orient).vec.y)))) &&",
       "type": "unnamed_param"
     },
     {
@@ -724,7 +668,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x198 == *(float *)&param_1->field_0x34)))) &&",
+      "text": "(*(float *)&param_1[1].field_0x198 == (param_1->orient).vec.y)))) &&",
       "type": "unnamed_param"
     },
     {
@@ -732,15 +676,7 @@
       "line": 37,
       "match": "field_0x198",
       "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x198 == *(float *)&param_1->field_0x34)))) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x198 == *(float *)&param_1->field_0x34)))) &&",
+      "text": "(*(float *)&param_1[1].field_0x198 == (param_1->orient).vec.y)))) &&",
       "type": "unnamed_field"
     },
     {
@@ -748,7 +684,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x19c == *(float *)&param_1->field_0x38)) {",
+      "text": "(*(float *)&param_1[1].field_0x19c == (param_1->orient).vec.z)) {",
       "type": "unnamed_param"
     },
     {
@@ -756,7 +692,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x19c == *(float *)&param_1->field_0x38)) {",
+      "text": "(*(float *)&param_1[1].field_0x19c == (param_1->orient).vec.z)) {",
       "type": "unnamed_param"
     },
     {
@@ -764,15 +700,7 @@
       "line": 38,
       "match": "field_0x19c",
       "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x19c == *(float *)&param_1->field_0x38)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "(*(float *)&param_1[1].field_0x19c == *(float *)&param_1->field_0x38)) {",
+      "text": "(*(float *)&param_1[1].field_0x19c == (param_1->orient).vec.z)) {",
       "type": "unnamed_field"
     },
     {
@@ -780,7 +708,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "uStack_c = *(uint *)&param_1[1].field_0x1a0;",
+      "text": "fStack_c = *(float *)&param_1[1].field_0x1a0;",
       "type": "unnamed_param"
     },
     {
@@ -788,39 +716,15 @@
       "line": 39,
       "match": "field_0x1a0",
       "severity": "mild",
-      "text": "uStack_c = *(uint *)&param_1[1].field_0x1a0;",
+      "text": "fStack_c = *(float *)&param_1[1].field_0x1a0;",
       "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 42,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uStack_c = (**(code **)(*(int *)&param_1->field_0x2b0 + 0x48))",
-      "type": "unresolved_funcptr"
     },
     {
       "description": "Unnamed function parameter",
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "uStack_c = (**(code **)(*(int *)&param_1->field_0x2b0 + 0x48))",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "uStack_c = (**(code **)(*(int *)&param_1->field_0x2b0 + 0x48))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1[1].field_0x180,0);",
+      "text": "fStack_c = (*((param_1->vtable)._ub)->cylinderGroundCheck)",
       "type": "unnamed_param"
     },
     {
@@ -828,7 +732,15 @@
       "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1[1].field_0x180,0);",
+      "text": "(param_1,*(float *)&param_1[1].field_0x180,(CVector3f *)0x0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1,*(float *)&param_1[1].field_0x180,(CVector3f *)0x0);",
       "type": "unnamed_param"
     },
     {
@@ -836,7 +748,7 @@
       "line": 43,
       "match": "field_0x180",
       "severity": "mild",
-      "text": "(param_1,*(uint *)&param_1[1].field_0x180,0);",
+      "text": "(param_1,*(float *)&param_1[1].field_0x180,(CVector3f *)0x0);",
       "type": "unnamed_field"
     },
     {
@@ -972,7 +884,7 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (&param_1[1].field_0x194 != &param_1->field_0x30) {",
+      "text": "if ((UOrientationVector *)&param_1[1].field_0x194 != &param_1->orient) {",
       "type": "unnamed_param"
     },
     {
@@ -980,7 +892,7 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (&param_1[1].field_0x194 != &param_1->field_0x30) {",
+      "text": "if ((UOrientationVector *)&param_1[1].field_0x194 != &param_1->orient) {",
       "type": "unnamed_param"
     },
     {
@@ -988,15 +900,7 @@
       "line": 49,
       "match": "field_0x194",
       "severity": "mild",
-      "text": "if (&param_1[1].field_0x194 != &param_1->field_0x30) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if (&param_1[1].field_0x194 != &param_1->field_0x30) {",
+      "text": "if ((UOrientationVector *)&param_1[1].field_0x194 != &param_1->orient) {",
       "type": "unnamed_field"
     },
     {
@@ -1004,7 +908,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x194 = *(uint *)&param_1->field_0x30;",
+      "text": "*(float *)&param_1[1].field_0x194 = (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -1012,7 +916,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x194 = *(uint *)&param_1->field_0x30;",
+      "text": "*(float *)&param_1[1].field_0x194 = (param_1->orient).vec.x;",
       "type": "unnamed_param"
     },
     {
@@ -1020,15 +924,7 @@
       "line": 50,
       "match": "field_0x194",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x194 = *(uint *)&param_1->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x194 = *(uint *)&param_1->field_0x30;",
+      "text": "*(float *)&param_1[1].field_0x194 = (param_1->orient).vec.x;",
       "type": "unnamed_field"
     },
     {
@@ -1036,7 +932,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x198 = *(uint *)&param_1->field_0x34;",
+      "text": "*(float *)&param_1[1].field_0x198 = (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -1044,7 +940,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x198 = *(uint *)&param_1->field_0x34;",
+      "text": "*(float *)&param_1[1].field_0x198 = (param_1->orient).vec.y;",
       "type": "unnamed_param"
     },
     {
@@ -1052,15 +948,7 @@
       "line": 51,
       "match": "field_0x198",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x198 = *(uint *)&param_1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x198 = *(uint *)&param_1->field_0x34;",
+      "text": "*(float *)&param_1[1].field_0x198 = (param_1->orient).vec.y;",
       "type": "unnamed_field"
     },
     {
@@ -1068,7 +956,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x19c = *(uint *)&param_1->field_0x38;",
+      "text": "*(float *)&param_1[1].field_0x19c = (param_1->orient).vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -1076,7 +964,7 @@
       "line": 52,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x19c = *(uint *)&param_1->field_0x38;",
+      "text": "*(float *)&param_1[1].field_0x19c = (param_1->orient).vec.z;",
       "type": "unnamed_param"
     },
     {
@@ -1084,15 +972,7 @@
       "line": 52,
       "match": "field_0x19c",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x19c = *(uint *)&param_1->field_0x38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x19c = *(uint *)&param_1->field_0x38;",
+      "text": "*(float *)&param_1[1].field_0x19c = (param_1->orient).vec.z;",
       "type": "unnamed_field"
     },
     {
@@ -1100,7 +980,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x1a0 = uStack_c;",
+      "text": "*(float *)&param_1[1].field_0x1a0 = fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -1108,7 +988,7 @@
       "line": 54,
       "match": "field_0x1a0",
       "severity": "mild",
-      "text": "*(uint *)&param_1[1].field_0x1a0 = uStack_c;",
+      "text": "*(float *)&param_1[1].field_0x1a0 = fStack_c;",
       "type": "unnamed_field"
     },
     {
@@ -1292,64 +1172,32 @@
       "line": 68,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)&param_1->field_0x30 != (uint *)(iVar1 + 0x30)) {",
+      "text": "if (&param_1->orient != (UOrientationVector *)(iVar1 + 0x30)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if ((uint *)&param_1->field_0x30 != (uint *)(iVar1 + 0x30)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 69,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x30 = *(uint *)(iVar1 + 0x30);",
+      "text": "(param_1->orient).vec.x = *(float *)(iVar1 + 0x30);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x30 = *(uint *)(iVar1 + 0x30);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x34 = *(uint *)(iVar1 + 0x34);",
+      "text": "(param_1->orient).vec.y = *(float *)(iVar1 + 0x34);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x34 = *(uint *)(iVar1 + 0x34);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x38 = *(uint *)(iVar1 + 0x38);",
+      "text": "(param_1->orient).vec.z = *(float *)(iVar1 + 0x38);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x38 = *(uint *)(iVar1 + 0x38);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -1436,7 +1284,7 @@
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24 = uStack_c;",
+      "text": "*(float *)&param_1->field_0x24 = fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -1444,7 +1292,7 @@
       "line": 86,
       "match": "field_0x24",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24 = uStack_c;",
+      "text": "*(float *)&param_1->field_0x24 = fStack_c;",
       "type": "unnamed_field"
     },
     {

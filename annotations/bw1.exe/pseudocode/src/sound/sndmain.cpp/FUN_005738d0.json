@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 103,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
+    "pseudocode_lines": 15,
     "suspect_count": 8,
     "suspect_types": [
       "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 35
+    "total_lines": 37
   },
   "cross_references": [
     {
       "addr": "004b5e00",
       "from_addr": "004b5e94",
-      "name": "core_fire.cpp_FUN_004b5e00",
+      "name": "core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +54,7 @@
       {
         "call_addr": "004b5e94",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b5e00",
+        "caller": "core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00",
         "estimated_params": 4,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -122,50 +122,50 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 7,
+      "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar1 = sound_sndmain_cpp_FUN_0056fa10(param_1,1);",
+      "text": "pCVar2 = sound_sndmain_cpp_FUN_0056fa10(param_1,1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x30 = param_2;",
+      "text": "*(uint *)&(pCVar2->options).field_0x30 = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 11,
+      "line": 12,
       "match": "field_0x30",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x30 = param_2;",
+      "text": "*(uint *)&(pCVar2->options).field_0x30 = param_2;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 12,
+      "line": 13,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "bVar1 = pCVar2->field_0x118;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
       "match": "field_0x34",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x34 = 1;",
+      "text": "*(uint *)&(pCVar2->options).field_0x34 = 1;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 13,
+      "line": 15,
       "match": "field_0x118",
       "severity": "mild",
-      "text": "pCVar1->field_0x118 = pCVar1->field_0x118 | 4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "pCVar1->field_0x118 = pCVar1->field_0x118 | 4;",
+      "text": "pCVar2->field_0x118 = bVar1 | 4;",
       "type": "unnamed_field"
     }
   ]

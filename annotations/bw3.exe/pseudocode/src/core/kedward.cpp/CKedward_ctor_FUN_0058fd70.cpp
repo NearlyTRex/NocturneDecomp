@@ -16,14 +16,14 @@ CKedward * core_kedward_cpp_CKedward_ctor_FUN_0058fd70(CKedward *this_ptr)
   byte *puVar3;
   
   pCVar1 = (CKedward *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CKedwardVTable;
+  ((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CKedwardVTable._ub;
   *(uint *)&pCVar1->field_0x326c = 0x3f000000;
   *(uint *)&pCVar1->field_0x3270 = 0x3f800000;
   *(uint *)&pCVar1->field_0xd054 = 0;
   *(uint *)&pCVar1->field_0xd050 = 0;
   *(uint *)&pCVar1->field_0x252c = 0x3fc90fdb;
-  *(uint *)&pCVar1->field_0xfc = 1;
-  *(uint *)&pCVar1->field_0xf8 = 0;
+  *(int *)&pCVar1->field_0xfc = 1;
+  *(int *)&pCVar1->field_0xf8 = 0;
   *(uint *)&pCVar1->field_0xd068 = 1;
   *(uint *)&pCVar1->field_0xd06c = 0x40000000;
   *(uint *)&pCVar1->field_0xd070 = 0x4b;

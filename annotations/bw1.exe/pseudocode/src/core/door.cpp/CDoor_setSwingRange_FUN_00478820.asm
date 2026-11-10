@@ -8,9 +8,9 @@
 ; float            Stack[0x8]:4   swing_range
 ;
 ; XREF[3]:
-;   core_carved.cpp_FUN_00428ae0 at 004294f9
-;   core_hostage.cpp_FUN_004ed890 at 004edbad
-;   core_zombie.cpp_FUN_005bafb0 at 005bb9c7
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 004294f9
+;   core_hostage.cpp_CHostage_process_FUN_004ed890 at 004edbad
+;   core_zombie.cpp_CZombie_process_FUN_005bafb0 at 005bb9c7
 ;
 ; *****************************************************************************
 

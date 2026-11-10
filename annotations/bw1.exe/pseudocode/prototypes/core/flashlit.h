@@ -21,21 +21,21 @@ CDemonActorType * CFlashlight::getActorType(CFlashlight *this_ptr);
 // Address: 004b9910
 CFlashlight * __cdecl CFlashlight::ctor(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_FUN_004b9990
+// Original: core_flashlit.cpp_CFlashlight_fire_FUN_004b9990
 // Address: 004b9990
-undefined4 FUN_004b9990(void);
+int __cdecl CFlashlight::fire(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_FUN_004b99a0
+// Original: core_flashlit.cpp_CFlashlight_renderAimBeam_FUN_004b99a0
 // Address: 004b99a0
-void FUN_004b99a0(void);
+void __cdecl CFlashlight::renderAimBeam(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_FUN_004b99b0
+// Original: core_flashlit.cpp_CFlashlight_getDamage_FUN_004b99b0
 // Address: 004b99b0
-undefined4 FUN_004b99b0(void);
+float __cdecl CFlashlight::getDamage(CFlashlight *this_ptr);
 
-// Original: core_flashlit.cpp_FUN_004b99c0
+// Original: core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004b99c0
 // Address: 004b99c0
-void FUN_004b99c0(int param_1);
+CVector3f * __cdecl CFlashlight::getMuzzlePoint(CFlashlight *this_ptr,CVector3f *out_point);
 
 // Original: core_flashlit.cpp_CFlashlight_dtor_FUN_004b9a60
 // Address: 004b9a60

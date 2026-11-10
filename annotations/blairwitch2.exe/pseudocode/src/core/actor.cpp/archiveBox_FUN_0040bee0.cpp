@@ -26,7 +26,7 @@ void __cdecl core_actor_cpp_archiveBox_FUN_0040bee0(CBox *param_1,char *param_2)
                 ("sim box state info opening brace",param_2);
     }
   } while (iVar1 != 10);
-  core_box_cpp_FUN_005b4300(param_1,DAT_007bc034);
+  core_box_cpp_CBox_loadFromFile_FUN_005b4300(param_1,DAT_007bc034);
   do {
     while( true ) {
       iVar1 = _fgetc(DAT_007bc034);

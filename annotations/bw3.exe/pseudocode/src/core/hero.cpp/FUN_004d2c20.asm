@@ -13,10 +13,10 @@
 ;   CConsole g_CConsoleInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_004307c0
+;   core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0
+;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_004fc160
-;   core_motion.cpp_FUN_004fba50
-;   core_motion.cpp_FUN_004fc310
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50
 ;   core_motion.cpp_FUN_004fc350
 ;   engine_console.cpp_FUN_00441ff0
 ;
@@ -45,12 +45,12 @@ section .text
     PUSH 0x5c4cef                       ; 004d2c51 | = "GETGRABBED"
     LEA ESI,[EBX + 0x158]               ; 004d2c56
     PUSH ESI                            ; 004d2c5c
-    CALL core_motion.cpp_FUN_004fc310   ; 004d2c5d
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 004d2c5d
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004d2c62
     PUSH EAX                            ; 004d2c65
-    CALL core_motion.cpp_FUN_004fba50   ; 004d2c66
-        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50 ; 004d2c66
+        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004d2c6b
     TEST EAX,EAX                        ; 004d2c6e
     JL 0x004d2c9d                       ; 004d2c70
@@ -76,8 +76,8 @@ section .text
     ADD ESP,0xc                         ; 004d2c9a
     PUSH EBX                            ; 004d2c9d
         ;   Label: LAB_004d2c9d
-    CALL core_charactr.cpp_FUN_004307c0 ; 004d2c9e
-        ;   XREF to: 004307c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_004307c0(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0 ; 004d2c9e
+        ;   XREF to: 004307c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d2ca3
     ADD ESP,0x4                         ; 004d2ca6
     POP ESI                             ; 004d2ca9

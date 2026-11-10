@@ -9,15 +9,15 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[50]:
-;   core_ammo.cpp_FUN_0040e1b0 at 0040e1b6
-;   core_ammobox.cpp_FUN_0040e860 at 0040e866
-;   core_anvil.cpp_FUN_0040ecc0 at 0040ecc6
-;   core_backgnd.cpp_FUN_0040f4d0 at 0040f4d6
-;   core_barrier.cpp_FUN_00410dc0 at 00410dc6
-;   core_bat.cpp_FUN_00411110 at 00411116
-;   core_battery.cpp_FUN_004148b0 at 004148b6
+;   core_ammo.cpp_CAmmo_archive_FUN_0040e1b0 at 0040e1b6
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e866
+;   core_anvil.cpp_CAnvil_archive_FUN_0040ecc0 at 0040ecc6
+;   core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f4d0 at 0040f4d6
+;   core_barrier.cpp_CBarrier_archive_FUN_00410dc0 at 00410dc6
+;   core_bat.cpp_CBat_archive_FUN_00411110 at 00411116
+;   core_battery.cpp_CBattery_archive_FUN_004148b0 at 004148b6
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 at 00415f5c
-;   core_boxactor.cpp_FUN_0041c7f0 at 0041c800
+;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041c800
 ;   core_chain.cpp_CChain_archive_FUN_005b5e10 at 005b5e16
 ;   ... and 40 more
 ;

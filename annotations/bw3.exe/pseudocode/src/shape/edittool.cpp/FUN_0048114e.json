@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 182,
+    "complexity_score": 198,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 15,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 16,
     "suspect_types": [
+      "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 82
+    "total_lines": 83
   },
   "cross_references": [],
   "function": {
@@ -26,7 +27,7 @@
     ],
     "convention": "unknown",
     "name": "shape_edittool.cpp_FUN_0048114e",
-    "signature": "void shape_edittool_cpp_FUN_0048114e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5)"
+    "signature": "void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)"
   },
   "function_calls": [
     {
@@ -121,7 +122,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)",
+      "text": "void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -129,7 +130,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)",
+      "text": "void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -137,7 +138,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)",
+      "text": "void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -145,7 +146,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)",
+      "text": "void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -153,7 +154,7 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)",
+      "text": "void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)",
       "type": "unnamed_param"
     },
     {
@@ -227,6 +228,14 @@
       "severity": "mild",
       "text": "shape_edittool_cpp_FUN_00480f00(param_1,param_2,param_3);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x4811ed assigned to bare local `iStack_20`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iStack_20` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 24,
+      "match": "0x4811ed",
+      "severity": "moderate",
+      "text": "iStack_20 = 0x4811ed;",
+      "type": "raw_address_constant"
     }
   ]
 }

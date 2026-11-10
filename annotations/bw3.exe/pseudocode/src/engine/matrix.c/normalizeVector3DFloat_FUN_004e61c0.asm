@@ -16,7 +16,7 @@
 ;
 ; XREF[3]:
 ;   core_ground.cpp_FUN_004d0c30 at 004d0d31
-;   core_set.cpp_FUN_0053a6c0 at 0053a8c8
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_0053a6c0 at 0053a8c8
 ;   engine_light.cpp_calculatePhongLighting_FUN_004e0bb0 at 004e0ccf
 ;
 ; Referenced Globals:

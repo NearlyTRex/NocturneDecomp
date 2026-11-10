@@ -20,8 +20,9 @@ void __cdecl engine_dosio_cpp_FUN_00465eb0(char *input_path,char *drive,char *ou
   char acStack_108 [256];
   
   bVar6 = 0;
-  engine_dosio_cpp_FUN_00465e50(input_path,drive,acStack_208,acStack_108,acStack_308);
-  engine_dosio_cpp_FUN_00465e80(output_path,(char *)0x0,acStack_208,acStack_108,acStack_308);
+  engine_dosio_cpp_splitPath_FUN_00465e50(input_path,drive,acStack_208,acStack_108,acStack_308);
+  engine_dosio_cpp_makePath_FUN_00465e80
+            (output_path,(char *)0x0,acStack_208,acStack_108,acStack_308);
   if ((output_path != (char *)0x0) && (*output_path != '\0')) {
     uVar2 = 0xffffffff;
     pcVar4 = output_path;

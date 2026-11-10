@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 support_codec_cpp_FUN_00433f50(void)
+; int __cdecl support_codec_cpp_FUN_00433f50(CCodec *this_ptr,void *ostream)
 ;
+; Parameters:
+; CCodec *         Stack[0x4]:4   this_ptr
+; void *           Stack[0x8]:4   ostream
 ;
 ; *****************************************************************************
 

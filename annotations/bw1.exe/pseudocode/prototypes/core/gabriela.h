@@ -33,13 +33,13 @@ CDemonActorType * CGabriella::getActorType(CGabriella *this_ptr);
 // Address: 004c6270
 CGabriella * __cdecl CGabriella::ctor(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c6390
+// Original: core_gabriela.cpp_CGabriella_setup_FUN_004c6390
 // Address: 004c6390
-void FUN_004c6390(CHero *param_1);
+void __cdecl CGabriella::setup(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c65f0
+// Original: core_gabriela.cpp_CGabriella_process_FUN_004c65f0
 // Address: 004c65f0
-void FUN_004c65f0(CGabriella *param_1,float param_2);
+void __cdecl CGabriella::process(CGabriella *this_ptr,float delta_time);
 
 // Original: core_gabriela.cpp_FUN_004c7aa0
 // Address: 004c7aa0
@@ -49,49 +49,49 @@ void FUN_004c7aa0(CDemonActor *param_1);
 // Address: 004c83b0
 void FUN_004c83b0(CGabriella *param_1,float param_2);
 
-// Original: core_gabriela.cpp_FUN_004c88a0
+// Original: core_gabriela.cpp_CGabriella_getFlashlightMinAngle_FUN_004c88a0
 // Address: 004c88a0
-undefined4 FUN_004c88a0(int param_1);
+float __cdecl CGabriella::getFlashlightMinAngle(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c88f0
+// Original: core_gabriela.cpp_CGabriella_getFlashlightMaxAngle_FUN_004c88f0
 // Address: 004c88f0
-undefined4 FUN_004c88f0(void);
+float __cdecl CGabriella::getFlashlightMaxAngle(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_FUN_004c8900
 // Address: 004c8900
 void FUN_004c8900(int param_1);
 
-// Original: core_gabriela.cpp_FUN_004c89c0
+// Original: core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0
 // Address: 004c89c0
-void __cdecl FUN_004c89c0(CGabriella *this_ptr);
+void __cdecl CGabriella::updateWeaponAndAimAnimation(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c91b0
+// Original: core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0
 // Address: 004c91b0
-void __cdecl FUN_004c91b0(CGabriella *this_ptr,float delta_time);
+void __cdecl CGabriella::updateWeaponPosition(CGabriella *this_ptr,float delta_time);
 
-// Original: core_gabriela.cpp_FUN_004c9500
+// Original: core_gabriela.cpp_CGabriella_findAndPickupNearbyObject_FUN_004c9500
 // Address: 004c9500
-int __cdecl FUN_004c9500(CGabriella *this_ptr);
+int __cdecl CGabriella::findAndPickupNearbyObject(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c9990
+// Original: core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990
 // Address: 004c9990
-void __cdecl FUN_004c9990(CGabriella *this_ptr);
+void __cdecl CGabriella::collectAmmo(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c99e0
+// Original: core_gabriela.cpp_CGabriella_tryClimbLadder_FUN_004c99e0
 // Address: 004c99e0
-int __cdecl FUN_004c99e0(CGabriella *this_ptr);
+int __cdecl CGabriella::tryClimbLadder(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c9dd0
+// Original: core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004c9dd0
 // Address: 004c9dd0
-int __cdecl FUN_004c9dd0(CGabriella *this_ptr);
+int __cdecl CGabriella::canFireWeapon(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c9e40
+// Original: core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004c9e40
 // Address: 004c9e40
-void FUN_004c9e40(CDemonActor *param_1);
+void __cdecl CGabriella::tryFireWeapon(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004c9eb0
+// Original: core_gabriela.cpp_CGabriella_tryThrowObject_FUN_004c9eb0
 // Address: 004c9eb0
-int __cdecl FUN_004c9eb0(CGabriella *this_ptr);
+int __cdecl CGabriella::tryThrowObject(CGabriella *this_ptr);
 
 // Original: core_gabriela.cpp_CGabriella_archive_FUN_004c9ef0
 // Address: 004c9ef0
@@ -105,37 +105,37 @@ int __cdecl CGabriella::renderOpaque(CGabriella *this_ptr);
 // Address: 004ca090
 int __cdecl CGabriella::renderTransparent(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004ca0c0
+// Original: core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0
 // Address: 004ca0c0
-float __cdecl FUN_004ca0c0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
+float __cdecl CGabriella::scoreTargetVisibility(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov);
 
-// Original: core_gabriela.cpp_FUN_004ca450
+// Original: core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004ca450
 // Address: 004ca450
-void __cdecl FUN_004ca450(CGabriella *this_ptr,float delta_time,int is_holstering);
+void __cdecl CGabriella::updateAimTracking(CGabriella *this_ptr,float delta_time,int is_holstering);
 
-// Original: core_gabriela.cpp_FUN_004cab10
+// Original: core_gabriela.cpp_CGabriella_processDamage_FUN_004cab10
 // Address: 004cab10
-void FUN_004cab10(CDemonActor *param_1,int param_2);
+void __cdecl CGabriella::processDamage(CGabriella *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_gabriela.cpp_FUN_004cad20
+// Original: core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20
 // Address: 004cad20
-void __cdecl FUN_004cad20(CGabriella *this_ptr,float delta_time,int has_carried_objects);
+void __cdecl CGabriella::updateClavicleCollisionAvoidance(CGabriella *this_ptr,float delta_time,int has_carried_objects);
 
 // Original: core_gabriela.cpp_FUN_004caff0
 // Address: 004caff0
 void FUN_004caff0(int param_1,float param_2,float *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
 
-// Original: core_gabriela.cpp_FUN_004cb1e0
+// Original: core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004cb1e0
 // Address: 004cb1e0
-void FUN_004cb1e0(int param_1,float param_2);
+CMatrix3x4f * __stack2_esi CGabriella::getCarryObjToBodyXForm(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_gabriela.cpp_FUN_004cb710
+// Original: core_gabriela.cpp_CGabriella_isWeaponDrawn_FUN_004cb710
 // Address: 004cb710
-bool FUN_004cb710(int param_1);
+int __cdecl CGabriella::isWeaponDrawn(CGabriella *this_ptr);
 
-// Original: core_gabriela.cpp_FUN_004cb730
+// Original: core_gabriela.cpp_CGabriella_drawWeapon_FUN_004cb730
 // Address: 004cb730
-void FUN_004cb730(int param_1,int param_2);
+void __cdecl CGabriella::drawWeapon(CGabriella *this_ptr,int drawn);
 
 // Original: core_gabriela.cpp_CGabriella_dtor_FUN_004cb760
 // Address: 004cb760

@@ -100,7 +100,7 @@ void core_inv_cpp_FUN_004f70e0(void)
   } while (cVar1 != '\0');
   engine_texture_cpp_FUN_00597a20(0x1d1baac);
   _DAT_01d1bc48 = 0xffffffff;
-  if (*(int *)&g_CGamePtr->field_0x4 < 0x180) {
+  if (g_CGamePtr->game_pixy < 0x180) {
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d08d8c,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d08db4,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040d840(&CAlphaBitmap_01d1b9e4,2,2);

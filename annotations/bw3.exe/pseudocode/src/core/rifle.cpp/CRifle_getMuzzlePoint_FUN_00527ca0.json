@@ -1,0 +1,263 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 206,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 46,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unaffected_reg",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 114
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00527ca0",
+    "address_range": [
+      [
+        "00527ca0",
+        "00527d4d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0",
+    "signature": "CVector3f * __cdecl core_rifle_cpp_CRifle_getMuzzlePoint_FUN_00527ca0(CRifle *this_ptr,CVector3f *out_point)"
+  },
+  "function_calls": [
+    {
+      "addr": "004625a0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0"
+    },
+    {
+      "addr": "0054bf00",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0054bf00"
+    },
+    {
+      "addr": "0054bf80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80"
+    },
+    {
+      "addr": "005a3d00",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005a3d00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cdaf4",
+      "name": "s_LITEDESLILE_kfm_005cdaf4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cdb09",
+      "name": "DAT_005cdb09",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cdb11",
+      "name": "DAT_005cdb11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cdb19",
+      "name": "DAT_005cdb19",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.220338983050848,
+    "instruction_count": 59,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 111,
+      "FLOAT2FLOAT": 9,
+      "FLOAT_ADD": 2,
+      "FLOAT_MULT": 1,
+      "INT_ADD": 35,
+      "INT_AND": 17,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 17,
+      "INT_LESS": 1,
+      "INT_MULT": 8,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 23,
+      "INT_ZEXT": 8,
+      "LOAD": 15,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 308
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CRifle *"
+      },
+      {
+        "is_param": true,
+        "name": "out_point",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "CVector3f *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(CBoundingBox3D *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x1d0",
+      "severity": "mild",
+      "text": "iVar2 = _strcmp(&this_ptr->field_0x1d0,\"LITEDESLILE.kfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 45,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 45,
+      "match": "(float *)((int)unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI->x = fStack_18;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 49,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "return unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 30,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CBoundingBox3D *)((int)pCVar3 + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `unaff_ESI` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 45,
+      "match": "(int)unaff_ESI",
+      "severity": "moderate",
+      "text": "pfVar4 = (float *)((int)unaff_ESI + (uint)bVar5 * -8 + 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 28,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00527ce9, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 26,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00527ce9: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWeapon",
+        "offset": 224,
+        "vtable_addr": "005e3874"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

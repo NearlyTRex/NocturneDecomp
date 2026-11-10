@@ -2,13 +2,13 @@
 // Address: 0045f09e
 // Address Range: [[0045f09e, 0045f09f]]
 // Convention: unknown
-// Signature: void unkafter_dglobe_cpp_FUN_0045f09e(int param_1)
+// Signature: void unkafter_dglobe_cpp_FUN_0045f09e(CDemonImage *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void unkafter_dglobe_cpp_FUN_0045f09e(int param_1)
+void unkafter_dglobe_cpp_FUN_0045f09e(CDemonImage *param_1)
 
 {
   void *pvVar1;

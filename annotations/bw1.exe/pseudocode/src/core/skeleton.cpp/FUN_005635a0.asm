@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00563580
-;   core_xform.cpp_FUN_005b7940
+;   core_xform.cpp_slerpQuaternion_FUN_005b7940
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 0056361c
     LEA ESI,[ESP + 0x24]                ; 0056361d
     LEA EDI,[ESP + 0x14]                ; 00563621
-    CALL core_xform.cpp_FUN_005b7940    ; 00563625
-        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7940()
+    CALL core_xform.cpp_slerpQuaternion_FUN_005b7940 ; 00563625
+        ;   XREF to: 005b7940 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_005b7940()
     LEA ESI,[ESP + 0x24]                ; 0056362a
     JMP 0x005635e0                      ; 0056362e
         ;   XREF to: 005635e0 (UNCONDITIONAL_JUMP)  ; LAB_005635e0

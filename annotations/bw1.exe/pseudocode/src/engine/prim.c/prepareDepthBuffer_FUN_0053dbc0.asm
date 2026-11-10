@@ -7,11 +7,11 @@
 ; XREF[7]:
 ;   core_dpart.cpp_FUN_0047ab00 at 0047ac1a
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407df0 at 00408051
-;   engine_prim.c_FUN_0053e120 at 0053e328
-;   engine_prim.c_FUN_0053f080 at 0053f383
-;   engine_prim.c_FUN_0053f720 at 0053f892
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f892
+;   engine_prim.c_renderPolygonSoftware_FUN_0053e120 at 0053e328
+;   engine_prim.c_renderScanlinePolygon_FUN_0053f080 at 0053f383
+;   engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 at 005bf8cb
 ;   unkafter_zombie.cpp_FUN_005bf120 at 005bf430
-;   unkafter_zombie.cpp_FUN_005bf640 at 005bf8cb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c51d10

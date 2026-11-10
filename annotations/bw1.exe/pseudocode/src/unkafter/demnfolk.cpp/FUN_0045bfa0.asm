@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_demnfolk.cpp_FUN_0045c7b0 at 0045c853
+;   core_demnfolk.cpp_CDemnfolk_processDamage_FUN_0045c7b0 at 0045c853
 ;
 ; *****************************************************************************
 

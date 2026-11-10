@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xa8]:4  local_a8
 ;
 ; XREF[1]:
-;   core_platfrm.cpp_FUN_005114f0 at 00511e07
+;   core_platfrm.cpp_CPlatform_process_FUN_005114f0 at 00511e07
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cc483
@@ -18,7 +18,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408bf0
-;   core_actor.cpp_FUN_0040cfa0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dmodel.cpp_FUN_004618a0
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80
@@ -67,15 +67,15 @@ section .text
     JNZ 0x00512808                      ; 0051283f
         ;   XREF to: 00512808 (CONDITIONAL_JUMP)  ; LAB_00512808
     PUSH dword ptr [EBX + 0x30]         ; 00512841
-    CALL core_actor.cpp_FUN_0040cfa0    ; 00512844
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 00512844
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
     MOV dword ptr [ESP + 0xa0],EAX      ; 00512849
     FLD float ptr [ESP + 0xa0]          ; 00512850
     ADD ESP,0x4                         ; 00512857
     PUSH dword ptr [EBX + 0x38]         ; 0051285a
     FSTP float ptr [EBX + 0x30]         ; 0051285d
-    CALL core_actor.cpp_FUN_0040cfa0    ; 00512860
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 00512860
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
     FLD float ptr [EBX + 0x30]          ; 00512865
     MOV dword ptr [ESP + 0xa0],EAX      ; 00512868
     FABS                                ; 0051286f

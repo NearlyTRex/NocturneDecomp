@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 69,
+    "complexity_score": 41,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 5,
+    "pseudocode_lines": 16,
+    "suspect_count": 2,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 66
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -109,42 +109,18 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x25a8",
-      "severity": "mild",
-      "text": "core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(out_crc,*(int *)&this_ptr->field_0x25a8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 9,
-      "match": "field_0x2514",
+      "match": "field_0x2260",
       "severity": "mild",
-      "text": "if (this_ptr->field_0x2514 == '\\0') {",
+      "text": "string_00 = &(this_ptr->model).field_0x2260;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2514",
+      "line": 17,
+      "match": "field_0x8",
       "severity": "mild",
-      "text": "core_actor_cpp_crc32ProcessString_FUN_0040d2e0(out_crc,&this_ptr->field_0x2514);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "string = (char *)core_motion_cpp_FUN_005035c0(&this_ptr->field_0x2b4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2bc",
-      "severity": "mild",
-      "text": "core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(out_crc,*(int *)&this_ptr->field_0x2bc);",
+      "text": "core_actor_cpp_crc32ProcessInt_FUN_0040d2a0(out_crc,*(int *)&(this_ptr->model).field_0x8);",
       "type": "unnamed_field"
     }
   ],

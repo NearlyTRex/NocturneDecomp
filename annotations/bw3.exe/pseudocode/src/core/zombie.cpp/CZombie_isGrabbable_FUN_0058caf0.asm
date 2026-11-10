@@ -11,8 +11,8 @@
 ;   undefined4 s_CTentacle_005d896e+1
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c790
-;   unkafter_enemy.cpp_FUN_0048a200
+;   core_actor.cpp_isOfClass_FUN_0040c790
+;   core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
         ;   Label: core_zombie.cpp_CZombie_isGrabbable_FUN_0058caf0
     MOV EDX,dword ptr [ESP + 0xc]       ; 0058caf5
     PUSH EDX                            ; 0058caf9
-    CALL core_actor.cpp_FUN_0040c790    ; 0058cafa
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 0058cafa
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0058caff
     TEST EAX,EAX                        ; 0058cb02
     JZ 0x0058cb0c                       ; 0058cb04
@@ -36,8 +36,8 @@ section .text
     PUSH ECX                            ; 0058cb11
     MOV EBX,dword ptr [ESP + 0xc]       ; 0058cb12
     PUSH EBX                            ; 0058cb16
-    CALL unkafter_enemy.cpp_FUN_0048a200 ; 0058cb17
-        ;   XREF to: 0048a200 (UNCONDITIONAL_CALL)  ; undefined unkafter_enemy.cpp_FUN_0048a200()
+    CALL core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200 ; 0058cb17
+        ;   XREF to: 0048a200 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_isGrabbable_FUN_0048a200(CEnemy * this_ptr, CDemonActor * grabber)
     ADD ESP,0x8                         ; 0058cb1c
     POP EBX                             ; 0058cb1f
     RET                                 ; 0058cb20

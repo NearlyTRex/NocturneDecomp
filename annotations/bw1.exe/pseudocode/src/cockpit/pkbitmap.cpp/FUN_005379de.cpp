@@ -15,10 +15,10 @@ void cockpit_pkbitmap_cpp_FUN_005379de(CPackedBitmap *param_1,int param_2,int pa
   int iStack_18;
   int iStack_14;
   
-  if ((((*(int *)&param_1->field_0x20 != 0) && (*(int *)&param_1->field_0x14 != 0)) &&
+  if ((((param_1->row_offsets != (int *)0x0) && (param_1->packed_data != (ushort *)0x0)) &&
       (param_2 <= param_6)) && (param_3 <= param_7)) {
-    iVar2 = *(int *)&param_1->field_0x18 + param_2 + -1;
-    iVar1 = *(int *)&param_1->field_0x1c + param_3 + -1;
+    iVar2 = param_1->width + param_2 + -1;
+    iVar1 = param_1->height + param_3 + -1;
     if ((param_4 <= iVar2) && (param_5 <= iVar1)) {
       iStack_18 = 0;
       if (param_2 < param_4) {
@@ -30,11 +30,11 @@ void cockpit_pkbitmap_cpp_FUN_005379de(CPackedBitmap *param_1,int param_2,int pa
         iStack_14 = param_5 - param_3;
         param_3 = param_5;
       }
-      width = *(int *)&param_1->field_0x18 + -1;
+      width = param_1->width + -1;
       if (param_6 < iVar2) {
         width = width - (iVar2 - param_6);
       }
-      iVar2 = *(int *)&param_1->field_0x1c + -1;
+      iVar2 = param_1->height + -1;
       if (param_7 < iVar1) {
         iVar2 = iVar2 - (iVar1 - param_7);
       }

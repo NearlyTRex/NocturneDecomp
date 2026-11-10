@@ -11,7 +11,7 @@ void core_batcreat_cpp_factoryFuncBatCreature_FUN_004111e0(void)
 {
   CBatCreature *this_ptr;
   
-  this_ptr = (CBatCreature *)FUN_005c0f32(0xc2b4);
+  this_ptr = (CBatCreature *)debugAllocTracked1(0xc2b4);
   if (this_ptr == (CBatCreature *)0x0) {
     return;
   }

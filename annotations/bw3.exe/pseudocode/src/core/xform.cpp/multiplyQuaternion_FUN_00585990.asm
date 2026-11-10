@@ -14,11 +14,11 @@
 ;   core_charactr.cpp_FUN_0042cd70 at 0042cf7e
 ;   core_prye.cpp_FUN_0051c1c0 at 0051dee5
 ;   core_prye.cpp_FUN_0051ee10 at 0051efbd
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 at 0054e2a9
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90 at 0054d33b
+;   core_skeleton.cpp_CDeformableModelInstance_blendWithQuaternions_FUN_0054d3f0 at 0054d808
 ;   core_skeleton.cpp_FUN_0054c1b0 at 0054c720
-;   core_skeleton.cpp_FUN_0054d3f0 at 0054d808
 ;   core_skeleton.cpp_FUN_0054dfd0 at 0054e105
-;   core_skeleton.cpp_FUN_0054e170 at 0054e2a9
 ;
 ; *****************************************************************************
 

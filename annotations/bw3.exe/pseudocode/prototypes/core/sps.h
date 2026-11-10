@@ -21,13 +21,13 @@ CDemonActorType * CSps::getActorType(CSps *this_ptr);
 // Address: 00568210
 CSps * CSps::ctor(CSps *this_ptr);
 
-// Original: core_sps.cpp_FUN_00568290
+// Original: core_sps.cpp_CSps_renderAimBeam_FUN_00568290
 // Address: 00568290
-void FUN_00568290(void);
+void __cdecl CSps::renderAimBeam(CSps *this_ptr);
 
-// Original: core_sps.cpp_FUN_005682f0
+// Original: core_sps.cpp_CSps_fire_FUN_005682f0
 // Address: 005682f0
-undefined4 FUN_005682f0(void);
+int __cdecl CSps::fire(CSps *this_ptr);
 
 // Original: core_sps.cpp_CSps_dtor_FUN_00568300
 // Address: 00568300

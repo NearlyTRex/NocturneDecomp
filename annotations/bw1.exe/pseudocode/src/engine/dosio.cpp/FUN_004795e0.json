@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 91,
+    "complexity_score": 92,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 52,
     "suspect_count": 3,
     "suspect_types": [
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 136
+    "total_lines": 137
   },
   "cross_references": [
     {
@@ -37,14 +37,14 @@
   },
   "function_calls": [
     {
-      "addr": "00479580",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479580"
-    },
-    {
       "addr": "004795b0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004795b0"
+      "name": "engine_dosio.cpp_makePath_FUN_004795b0"
+    },
+    {
+      "addr": "00479580",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
     }
   ],
   "globals": [],
@@ -130,7 +130,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 39,
+      "line": 40,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -138,7 +138,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 21,
+      "line": 22,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -146,7 +146,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 30,
+      "line": 31,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -81,7 +81,7 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004072b0(int pa
           iVar2 = iVar2 + 4;
         } while (iVar8 < *(int *)(param_1 + 4));
       }
-      pSVar4 = engine_texture_cpp_FUN_005750e0();
+      pSVar4 = engine_texture_cpp_getCurrentTexture_FUN_005750e0();
       uVar1 = DAT_006141d8;
       puVar10 = (uint *)(&DAT_0070cbc4 + iVar3);
       for (iVar2 = 0x12; iVar2 != 0; iVar2 = iVar2 + -1) {

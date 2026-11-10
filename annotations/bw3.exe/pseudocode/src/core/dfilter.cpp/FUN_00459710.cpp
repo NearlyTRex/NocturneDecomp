@@ -48,7 +48,7 @@ int core_dfilter_cpp_FUN_00459710(int *param_1,char *param_2,int param_3)
     *(char *)((int)piVar6 + 1) = cVar1;
     piVar6 = (int *)((int)piVar6 + 2);
   } while (cVar1 != '\0');
-  this_ptr = (CDemonFilter *)FUN_005a3cb2(0x4c);
+  this_ptr = (CDemonFilter *)debugAllocTracked1(0x4c);
   pCVar3 = (CDemonFilter *)0x0;
   if (this_ptr != (CDemonFilter *)0x0) {
     pCVar3 = core_dfilter_cpp_CDemonFilter_ctor_FUN_004598a0(this_ptr);

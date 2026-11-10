@@ -8,8 +8,8 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_FUN_004b90d0 at 004b9188
+;   shape_edittool.cpp_CPickList_handleInput_FUN_00482350 at 00482474
 ;   shape_edittool.cpp_FUN_0047c0f0 at 0047c546
-;   shape_edittool.cpp_FUN_00482350 at 00482474
 ;
 ; Called Functions:
 ;   crt_ctype.c_toupper_FUN_005b8e40

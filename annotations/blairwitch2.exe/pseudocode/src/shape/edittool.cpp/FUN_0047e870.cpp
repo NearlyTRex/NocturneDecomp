@@ -39,7 +39,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
   _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
-  _DAT_01c25f7c = engine_font_cpp_FUN_004ab560(_DAT_01c25590,0x6a);
+  _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
   if (_DAT_01c2559c < 1) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0x8ea;
@@ -47,7 +47,7 @@ void shape_edittool_cpp_FUN_0047e870(void)
   }
   local_28 = _DAT_01c35e60;
   iVar4 = (_DAT_01c2559c + -1) * 0x1f8;
-  shape_edittool_cpp_FUN_0047bca0();
+  shape_edittool_cpp_paintWindowBackground_FUN_0047bca0();
   piVar5 = (int *)(iVar4 + 0x1c255a0);
   if (_DAT_01c25f84 == 0) {
     engine_matrix_c_pushViewport_FUN_004ea410
@@ -198,9 +198,9 @@ void shape_edittool_cpp_FUN_0047e870(void)
                       (_DAT_01c25590,text_string,_DAT_01c25f7c / 2 + *(int *)(iVar4 + 0x1c255a4),
                        _DAT_01c26394,0xffffffff);
     engine_font_cpp_FUN_004a8df0(_DAT_01c25590,text_string,((iVar3 + iVar6) - iVar2) / 2);
-    iVar3 = engine_font_cpp_FUN_004aafb0(_DAT_01c25590,text_string);
+    iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01c25590,text_string);
     iVar3 = _DAT_01c25f7c + iVar3;
-    iVar6 = engine_font_cpp_FUN_004aafb0(_DAT_01c25590,&DAT_005d2432);
+    iVar6 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01c25590,&DAT_005d2432);
     if (iVar3 < iVar6 + _DAT_01c25f7c) {
       iVar3 = iVar6 + _DAT_01c25f7c;
     }

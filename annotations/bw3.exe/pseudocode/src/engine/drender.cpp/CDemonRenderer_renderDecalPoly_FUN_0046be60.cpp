@@ -17,19 +17,21 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60(CDem
   int iVar4;
   int iVar5;
   
-  if ((*(int *)(this_ptr + 0xc) == 0) ||
+  if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(poly + 8), iVar2 != 0)) {
-    if (*(int *)(this_ptr + 4) == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (0 < *(int *)(poly + 4)) {
         iVar4 = 0;
         iVar2 = 0;
         pSVar3 = poly;
         do {
           iVar1 = *(int *)(pSVar3 + 0x18);
-          if (*(int *)(this_ptr + 0x20) == 0) {
+          if (this_ptr->skip_uv_extraction == 0) {
             iVar5 = iVar1 * 0x30;
-            *(uint *)(iVar5 + *(int *)this_ptr + 0x18) = *(uint *)(pSVar3 + 0x1c);
-            *(uint *)(*(int *)this_ptr + iVar5 + 0x1c) = *(uint *)(pSVar3 + 0x20);
+            *(uint *)(this_ptr->vertex_buffer_ptr + iVar5 + 0x18) =
+                 *(uint *)(pSVar3 + 0x1c);
+            *(uint *)(this_ptr->vertex_buffer_ptr + iVar5 + 0x1c) =
+                 *(uint *)(pSVar3 + 0x20);
           }
           *(int *)(&DAT_01bdd818 + iVar4) = iVar1;
           pSVar3 = pSVar3 + 0xc;
@@ -51,7 +53,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDecalPoly_FUN_0046be60(CDem
         } while (iVar2 < *(int *)(poly + 4));
       }
     }
-    if (*(int *)(this_ptr + 4) == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       _DAT_01c6e2b4 = 0x41;
       _DAT_01c6e2b8 = 6;
       _DAT_01c6b5cc = core_dstrendr_cpp_renderTexturedDecalMMXScanline_FUN_0047090d;

@@ -7,7 +7,7 @@
 ; CGlassParticle * Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_particle.cpp_FUN_00509e10
+;   core_particle.cpp_CParticle_ctor_FUN_00509e10
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;
 ; *****************************************************************************
@@ -17,8 +17,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 004a4730
         ;   Label: core_fire.cpp_CGlassParticle_ctor_FUN_004a4730
     PUSH EAX                            ; 004a4734
-    CALL core_particle.cpp_FUN_00509e10 ; 004a4735
-        ;   XREF to: 00509e10 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_FUN_00509e10(CParticle * this_ptr)
+    CALL core_particle.cpp_CParticle_ctor_FUN_00509e10 ; 004a4735
+        ;   XREF to: 00509e10 (UNCONDITIONAL_CALL)  ; CParticle * core_particle.cpp_CParticle_ctor_FUN_00509e10(CParticle * this_ptr)
     ADD ESP,0x4                         ; 004a473a
     PUSH 0x5db0f0                       ; 004a473d
     PUSH 0x3                            ; 004a4742

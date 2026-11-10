@@ -11,8 +11,8 @@
 ; int              Stack[0x14]:4   bottom
 ;
 ; XREF[3]:
-;   core_inv.cpp_FUN_004dd320 at 004dd4c7
 ;   core_inv.cpp_drawItemIconBackground_FUN_004dd4e0 at 004dd655
+;   core_inv.cpp_drawWeaponIconBackground_FUN_004dd320 at 004dd4c7
 ;   core_set.cpp_CDemonSet_pushScreenBoundsToCamera_FUN_00531ca0 at 00531e3a
 ;
 ; *****************************************************************************

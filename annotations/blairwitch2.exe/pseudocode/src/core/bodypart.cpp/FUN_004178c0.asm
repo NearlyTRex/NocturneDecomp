@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 00416c6f
-;   core_bodypart.cpp_FUN_00416680 at 00416693
+;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00416680 at 00416693
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cbfb6

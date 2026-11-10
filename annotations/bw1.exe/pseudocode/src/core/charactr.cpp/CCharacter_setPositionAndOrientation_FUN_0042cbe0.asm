@@ -9,14 +9,14 @@
 ; CVector3f *      Stack[0xc]:4   new_orientation
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_0046ea40 at 0046ea66
-;   core_stranger.cpp_FUN_0058a320 at 0058a346
+;   core_doc.cpp_CDoc_setPositionAndOrientation_FUN_0046ea40 at 0046ea66
+;   core_stranger.cpp_CStranger_setPositionAndOrientation_FUN_0058a320 at 0058a346
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fd614
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409cc0
+;   core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409cc0
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x10]      ; 0042cbfa
     PUSH ECX                            ; 0042cbfe
     PUSH EBX                            ; 0042cbff
-    CALL core_actor.cpp_FUN_00409cc0    ; 0042cc00
-        ;   XREF to: 00409cc0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409cc0()
+    CALL core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409cc0 ; 0042cc00
+        ;   XREF to: 00409cc0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409cc0(CDemonActor * this_ptr, CVector3f * new_position, CVector3f * new_orientation)
     LEA EAX,[EBX + 0x2518]              ; 0042cc05
     FLD float ptr [0x005fd614]          ; 0042cc0b | DAT_005fd614
     MOV dword ptr [EAX + 0x8],0x0       ; 0042cc11

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_0052c970 at 0052c9ae
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 at 0052c9ae
 ;
 ; Called Functions:
 ;   crt_wsock32.c_ioctlsocket

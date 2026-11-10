@@ -19,7 +19,7 @@
 ;   undefined4 DAT_005ff71c
 ;
 ; Called Functions:
-;   core_basicnpc.cpp_FUN_005a4880
+;   core_basicnpc.cpp_CBasicNPC_processStates_FUN_005a4880
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
@@ -58,8 +58,8 @@ section .text
     MOV dword ptr [EBX + 0x11344],0x2   ; 005a482f
     PUSH EBX                            ; 005a4839
     FSTP float ptr [EBX + 0x11370]      ; 005a483a
-    CALL core_basicnpc.cpp_FUN_005a4880 ; 005a4840
-        ;   XREF to: 005a4880 (UNCONDITIONAL_CALL)  ; undefined core_basicnpc.cpp_FUN_005a4880()
+    CALL core_basicnpc.cpp_CBasicNPC_processStates_FUN_005a4880 ; 005a4840
+        ;   XREF to: 005a4880 (UNCONDITIONAL_CALL)  ; void core_basicnpc.cpp_CBasicNPC_processStates_FUN_005a4880(CBasicNPC * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a4845
     PUSH 0x5f0400                       ; 005a4848
     LEA ESI,[EBX + 0x10af8]             ; 005a484d

@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 35,
+    "complexity_score": 20,
     "cross_reference_count": 66,
     "function_call_count": 5,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 20,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 65
   },
   "cross_references": [
@@ -132,7 +130,7 @@
     {
       "addr": "004a7600",
       "from_addr": "004a7686",
-      "name": "core_flashlit.cpp_FUN_004a7600",
+      "name": "core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004a7600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -234,7 +232,7 @@
     {
       "addr": "00527ca0",
       "from_addr": "00527d2d",
-      "name": "core_rifle.cpp_FUN_00527ca0",
+      "name": "core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -630,16 +628,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x50 = &g_CDeformableModelInstanceVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

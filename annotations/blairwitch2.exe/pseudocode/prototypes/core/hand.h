@@ -25,54 +25,54 @@ CHand * CHand::ctor(CHand *this_ptr);
 // Address: 005a9d30
 CHand * CHand::dtor(CHand *this_ptr,uint flags);
 
-// Original: core_hand.cpp_FUN_005a9dd0
+// Original: core_hand.cpp_CHand_setup_FUN_005a9dd0
 // Address: 005a9dd0
-void FUN_005a9dd0(int param_1);
+void __cdecl CHand::setup(CHand *this_ptr);
 
-// Original: core_hand.cpp_FUN_005a9e10
+// Original: core_hand.cpp_CHand_processStates_FUN_005a9e10
 // Address: 005a9e10
-void FUN_005a9e10(int param_1,undefined4 param_2,int param_3);
+void __cdecl CHand::processStates(CHand *this_ptr,float delta_time,int mode);
 
-// Original: core_hand.cpp_FUN_005a9ed0
+// Original: core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0
 // Address: 005a9ed0
-void FUN_005a9ed0(CCharacter *param_1);
+void __cdecl CHand::processMeleeAttackState(CHand *this_ptr,float delta_time);
 
-// Original: core_hand.cpp_FUN_005a9ff0
+// Original: core_hand.cpp_CHand_processSleepingState_FUN_005a9ff0
 // Address: 005a9ff0
-void FUN_005a9ff0(CCharacter *param_1,float param_2);
+void __cdecl CHand::processSleepingState(CHand *this_ptr,float delta_time);
 
 // Original: core_hand.cpp_FUN_005aa1a0
 // Address: 005aa1a0
 void FUN_005aa1a0(int param_1);
 
-// Original: core_hand.cpp_FUN_005aa1f0
+// Original: core_hand.cpp_CHand_processDamage_FUN_005aa1f0
 // Address: 005aa1f0
-void FUN_005aa1f0(int param_1);
+void __cdecl CHand::processDamage(CHand *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hand.cpp_FUN_005aa230
+// Original: core_hand.cpp_CHand_processDeathState_FUN_005aa230
 // Address: 005aa230
-void FUN_005aa230(int param_1);
+void __cdecl CHand::processDeathState(CHand *this_ptr,float delta_time);
 
-// Original: core_hand.cpp_FUN_005aa260
+// Original: core_hand.cpp_CHand_getDeathState_FUN_005aa260
 // Address: 005aa260
-undefined4 FUN_005aa260(int param_1);
+EDeathState __cdecl CHand::getDeathState(CHand *this_ptr);
 
-// Original: core_hand.cpp_FUN_005aa2e0
+// Original: core_hand.cpp_CHand_getTargetPoints_FUN_005aa2e0
 // Address: 005aa2e0
-undefined4 FUN_005aa2e0(int param_1,undefined4 *param_2);
+int __cdecl CHand::getTargetPoints(CHand *this_ptr,CVector3f *out_points_array);
 
-// Original: core_hand.cpp_FUN_005aa380
+// Original: core_hand.cpp_CHand_processMotionEvent_FUN_005aa380
 // Address: 005aa380
-void FUN_005aa380(CDemonActor *param_1,undefined4 param_2);
+void __cdecl CHand::processMotionEvent(CHand *this_ptr,int event_id);
 
-// Original: core_hand.cpp_FUN_005aa450
+// Original: core_hand.cpp_CHand_renderOpaque_FUN_005aa450
 // Address: 005aa450
-void FUN_005aa450(undefined4 param_1);
+int __cdecl CHand::renderOpaque(CHand *this_ptr);
 
-// Original: core_hand.cpp_FUN_005aa460
+// Original: core_hand.cpp_CHand_archive_FUN_005aa460
 // Address: 005aa460
-void FUN_005aa460(int param_1);
+void __cdecl CHand::archive(CHand *this_ptr);
 
-// Original: core_hand.cpp_FUN_005aa4a0
+// Original: core_hand.cpp_CHand_renderTransparent_FUN_005aa4a0
 // Address: 005aa4a0
-bool FUN_005aa4a0(int param_1);
+int __cdecl CHand::renderTransparent(CHand *this_ptr);

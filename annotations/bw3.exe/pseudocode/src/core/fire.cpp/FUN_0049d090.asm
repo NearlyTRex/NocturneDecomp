@@ -43,7 +43,7 @@
 ;   undefined4 DAT_005fc5a0
 ;   CGame* g_CGamePtr = 01d2130c
 ;   undefined4 DAT_006045f8
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_02cfd900
 ;   undefined4 DAT_02cfd904
 ;   undefined4 DAT_02cfd908
@@ -82,7 +82,7 @@ section .text
     JNC 0x0049d140                      ; 0049d0ac
         ;   XREF to: 0049d140 (CONDITIONAL_JUMP)  ; default
     MOV EAX,[0x005fe9dc]                ; 0049d0b2 | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x314]     ; 0049d0b7 | g_CGameInstance.field788_0x314
+    MOV EAX,dword ptr [EAX + 0x314]     ; 0049d0b7 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x6c],EAX      ; 0049d0bd
     MOV dword ptr [ESP + 0x70],EAX      ; 0049d0c1
     MOV EAX,dword ptr [EBP + 0x14]      ; 0049d0c5

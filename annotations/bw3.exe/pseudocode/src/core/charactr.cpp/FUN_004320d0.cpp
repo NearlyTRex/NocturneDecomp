@@ -30,10 +30,11 @@ void core_charactr_cpp_FUN_004320d0(int param_1)
     bone_name = "Bip01 spine1";
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
                          ((CDeformableModelInstance *)(param_1 + 0x158));
-    iVar3 = core_skeleton_cpp_FUN_00548090(this_ptr,bone_name,iVar5);
+    iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr,bone_name,iVar5);
     iVar5 = *(int *)(param_1 + 0x2754);
     *(int *)(param_1 + 0x2750) = iVar3;
-    pCVar4 = core_motion_cpp_FUN_004fc310((CMotionController *)(param_1 + 0x158));
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310
+                       ((CMotionController *)(param_1 + 0x158));
     iVar5 = iVar5 * 0x120;
     local_c = 0.85;
     if (*(int *)(param_1 + 0x275c) == 1) {

@@ -11,6 +11,6 @@ CPopcorn * __cdecl core_fire_cpp_CPopcorn_dtor_FUN_004b7550(CPopcorn *this_ptr,u
 {
   CPopcorn *pCVar1;
   
-  pCVar1 = (CPopcorn *)core_particle_cpp_FUN_00532150((CParticle *)this_ptr,1);
+  pCVar1 = (CPopcorn *)core_particle_cpp_CParticle_dtor_FUN_00532150((CParticle *)this_ptr,1);
   return pCVar1;
 }

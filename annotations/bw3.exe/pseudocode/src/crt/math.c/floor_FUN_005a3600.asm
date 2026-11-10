@@ -11,11 +11,11 @@
 ; undefined        Stack[-0x8]:1  local_8
 ;
 ; XREF[25]:
-;   core_actor.cpp_FUN_0040cfa0 at 0040cfe7
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 at 0040cfe7
 ;   core_bat.cpp_CBat_updateCoursePosition_FUN_0040f2f0 at 0040f33c
-;   core_boneguy.cpp_FUN_00417240 at 00417368
-;   core_boxactor.cpp_FUN_0041f360 at 0041f3ac
-;   core_bugs.cpp_FUN_00421c90 at 00421d72
+;   core_boneguy.cpp_hsvToRgb_FUN_00417240 at 00417368
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f3ac
+;   core_bugs.cpp_CBugs_updateGroundHeightGrid_FUN_00421c90 at 00421d72
 ;   core_course.cpp_FUN_00444b70 at 00444d68
 ;   core_dtrace.cpp_FUN_00473cd0 at 00473d29
 ;   core_dtrace.cpp_FUN_00474400 at 00474484

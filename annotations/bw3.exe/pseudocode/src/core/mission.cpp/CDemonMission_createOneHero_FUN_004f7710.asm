@@ -33,9 +33,9 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_hero.cpp_FUN_004d4be0
 ;   core_main.c_FUN_004e4330
-;   core_mission.cpp_FUN_004f6930
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_004fc420
-;   core_skeleton.cpp_FUN_0054e6b0
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;
 ; *****************************************************************************
@@ -133,8 +133,8 @@ section .text
     LEA EBX,[EBP + 0x158]               ; 004f77f9
     PUSH EBX                            ; 004f77ff
     MOV dword ptr [EBP + 0x2c],EAX      ; 004f7800
-    CALL core_skeleton.cpp_FUN_0054e6b0 ; 004f7803
-        ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0 ; 004f7803
+        ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004f7808
     PUSH 0x0                            ; 004f780b
     PUSH 0x0                            ; 004f780d
@@ -154,8 +154,8 @@ section .text
     PUSH ECX                            ; 004f7831
     MOV EBX,dword ptr [0x00600530]      ; 004f7832 | DAT_00600530
     PUSH EBX                            ; 004f7838 | DAT_01d81080
-    CALL core_mission.cpp_FUN_004f6930  ; 004f7839
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 004f7839
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f783e
     JMP 0x004f778a                      ; 004f7841
         ;   XREF to: 004f778a (UNCONDITIONAL_JUMP)  ; LAB_004f778a

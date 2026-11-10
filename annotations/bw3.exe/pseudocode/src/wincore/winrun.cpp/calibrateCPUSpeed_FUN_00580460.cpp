@@ -38,12 +38,12 @@ void __cdecl wincore_winrun_cpp_calibrateCPUSpeed_FUN_00580460(void)
   local_18 = 0;
   local_14 = 0;
   do {
-    iVar2 = wincore_winrun_cpp_FUN_005806a0();
+    iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
     uVar5 = 0;
     do {
       uVar5 = uVar5 + 99;
     } while (uVar5 < 100000000);
-    iVar3 = wincore_winrun_cpp_FUN_005806a0();
+    iVar3 = wincore_winrun_cpp_getTime_FUN_005806a0();
     local_18 = local_18 + 0x7080000U / (uint)(iVar3 - iVar2);
     local_14 = local_14 + 1;
   } while (local_14 < 5);

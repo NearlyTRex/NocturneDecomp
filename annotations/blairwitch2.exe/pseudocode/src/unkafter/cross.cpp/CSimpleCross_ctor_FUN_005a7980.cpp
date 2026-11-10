@@ -17,16 +17,16 @@ CSimpleCross * unkafter_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *t
   char *pcVar4;
   
   pCVar2 = core_melee_cpp_CMelee_ctor_FUN_004ea8b0((CMelee *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CSimpleCrossVTable;
+  (pCVar2->base).base.vtable._ub = &g_CSimpleCrossVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-            ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,(char *)0x5f07ad);
-  *(uint *)&pCVar2->field_0x43c = 0xd;
-  *(uint *)&pCVar2->field_0x6d8 = 0x40a00000;
+            (&(pCVar2->base).model,(char *)0x5f07ad);
+  (pCVar2->base).weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_FLASHLIGHT;
+  pCVar2->strength_lo = 5.0;
   pcVar3 = "shovel?.wav";
-  *(uint *)&pCVar2->field_0x6dc = 0x41200000;
-  *(uint *)&pCVar2->field_0x6e0 = 0;
-  pcVar4 = &pCVar2->field_0x6fc;
-  *(uint *)&pCVar2->field_0x6e4 = 1;
+  pCVar2->strength_hi = 10.0;
+  pCVar2->dismember_prob = 0.0;
+  pcVar4 = pCVar2->thrust_hit_character_sound;
+  pCVar2->can_go_in_inventory = 1;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,7 +37,7 @@ CSimpleCross * unkafter_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *t
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5f07c4;
-  pcVar4 = &pCVar2->field_0x760;
+  pcVar4 = pCVar2->swing_hit_character_sound;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -48,7 +48,7 @@ CSimpleCross * unkafter_cross_cpp_CSimpleCross_ctor_FUN_005a7980(CSimpleCross *t
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = (char *)0x5f07d0;
-  pcVar4 = &pCVar2->field_0x7c4;
+  pcVar4 = pCVar2->hit_other_sound;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

@@ -2,30 +2,30 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 243,
-    "complexity_score": 386,
+    "complexity_score": 125,
     "cross_reference_count": 2,
     "function_call_count": 9,
     "global_count": 25,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 86,
-    "suspect_count": 29,
+    "pseudocode_lines": 85,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unnamed_field"
     ],
-    "total_lines": 329
+    "total_lines": 328
   },
   "cross_references": [
     {
       "addr": "004231e0",
       "from_addr": "004231ea",
-      "name": "core_boxactor.cpp_FUN_004231e0",
+      "name": "core_boxactor.cpp_CLightActor_archive_FUN_004231e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00584ee0",
       "from_addr": "00584ee5",
-      "name": "core_stone.cpp_FUN_00584ee0",
+      "name": "core_stone.cpp_CTempleStone_archive_FUN_00584ee0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,6 +46,11 @@
       "addr": "0040b6f0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
+    },
+    {
+      "addr": "0040bbf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveBox_FUN_0040bbf0"
     },
     {
       "addr": "0040b5f0",
@@ -81,11 +86,6 @@
       "addr": "0040c040",
       "is_variadic": false,
       "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c040"
-    },
-    {
-      "addr": "0040bbf0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040bbf0"
     }
   ],
   "globals": [
@@ -246,7 +246,7 @@
       {
         "call_addr": "004231ea",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_004231e0",
+        "caller": "core_boxactor.cpp_CLightActor_archive_FUN_004231e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +257,7 @@
       {
         "call_addr": "00584ee5",
         "call_type": "direct",
-        "caller": "core_stone.cpp_FUN_00584ee0",
+        "caller": "core_stone.cpp_CTempleStone_archive_FUN_00584ee0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -330,232 +330,24 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x158,\"L>modelName\" + 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x390",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x390,\"weightInPounds\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 12,
       "match": "DAT_005d4c35",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x30c,&DAT_005d4c35);",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->fps,&DAT_005d4c35);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x30c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x30c,&DAT_005d4c35);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 13,
       "match": "DAT_005d4c39",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x300,&DAT_005d4c39);",
+      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->rpm,&DAT_005d4c39);",
       "type": "undefined_data"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x300",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b1c0(&this_ptr->field_0x300,&DAT_005d4c39);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x2d4,\"loopWavName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x2e8,\"collisionWavName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x314 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x314 = 3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x314,\"pickupType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x318,\"carriedByActor\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x31c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x31c,\"canBePushed\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x320",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x320,\"pushedByActor\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x5f0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x5f0,\"groundType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x5e8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5e8 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x394",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bbf0((CBox *)&this_ptr->field_0x394,\"simBox\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x5f4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5f4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x5f4",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x5f4,\"plotInShadowFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x5f8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x5f8 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x5f8",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x5f8,\"collisionFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0xfc,\"isTransparent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x5fc",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x5fc,\"dontUseNormals\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x324",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x324,\"constrainExtentsActor\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x600",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x600,\"useEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x664",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x664,\"allowedMeleeAttackTypes\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x32c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x32c,\"pushSound\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x668",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x668,\"blockVirtualDirectorFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
+      "line": 86,
       "match": "field_0x66c",
       "severity": "mild",
       "text": "core_actor_cpp_archiveOrientation_FUN_0040b260(&this_ptr->field_0x66c,\"camOrient\");",

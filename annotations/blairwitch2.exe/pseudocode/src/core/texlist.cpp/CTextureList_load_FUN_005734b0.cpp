@@ -14,7 +14,7 @@ void __cdecl core_texlist_cpp_CTextureList_load_FUN_005734b0(CTextureList *this_
   char cVar1;
   int iVar2;
   int iVar3;
-  byte *puVar4;
+  int *piVar4;
   uint uVar5;
   uint uVar6;
   char *pcVar7;
@@ -75,15 +75,15 @@ LAB_00573500:
   }
   _fscanf(local_2c,&DAT_005ec5c7,this_ptr);
   local_1c = 0;
-  if (*(int *)this_ptr < 1) {
+  if (this_ptr->texture_count < 1) {
 LAB_0057370c:
-    iVar2 = *(int *)this_ptr;
+    iVar2 = this_ptr->texture_count;
     if (iVar2 < 1000) {
-      puVar4 = &this_ptr->field_0x0 + iVar2 * 4;
+      piVar4 = &this_ptr->texture_count + iVar2;
       do {
         iVar2 = iVar2 + 1;
-        *(uint *)(puVar4 + 0x5dc4) = 0;
-        puVar4 = puVar4 + 4;
+        piVar4[0x1771] = 0;
+        piVar4 = piVar4 + 1;
       } while (iVar2 < 1000);
     }
     _fclose(local_2c);
@@ -151,6 +151,6 @@ LAB_005735f7:
   local_24 = (CTextureList *)&local_24->field_0x18;
   local_20 = local_20 + 0x18;
   local_1c = local_1c + 1;
-  if (*(int *)this_ptr <= local_1c) goto LAB_0057370c;
+  if (this_ptr->texture_count <= local_1c) goto LAB_0057370c;
   goto LAB_005735c3;
 }

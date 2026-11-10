@@ -21,29 +21,29 @@ CDemonActorType * CDynamite::getActorType(CDynamite *this_ptr);
 // Address: 0047b080
 CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0047b130
+// Original: core_dynamite.cpp_CDynamite_fire_FUN_0047b130
 // Address: 0047b130
-undefined4 FUN_0047b130(int param_1);
+int __cdecl CDynamite::fire(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0047b1a0
+// Original: core_dynamite.cpp_CDynamite_getDamage_FUN_0047b1a0
 // Address: 0047b1a0
-undefined4 FUN_0047b1a0(void);
+float __cdecl CDynamite::getDamage(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0047b1d0
+// Original: core_dynamite.cpp_CDynamite_renderAimBeam_FUN_0047b1d0
 // Address: 0047b1d0
-void FUN_0047b1d0(void);
+void __cdecl CDynamite::renderAimBeam(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_0047b1e0
+// Original: core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0
 // Address: 0047b1e0
-void __cdecl FUN_0047b1e0(CDynamite *this_ptr);
+void __cdecl CDynamite::lightFuse(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_FUN_0047b230
 // Address: 0047b230
 undefined4 FUN_0047b230(int param_1);
 
-// Original: core_dynamite.cpp_FUN_0047b270
+// Original: core_dynamite.cpp_CDynamite_process_FUN_0047b270
 // Address: 0047b270
-void FUN_0047b270(CWeapon *param_1,float param_2);
+void __cdecl CDynamite::process(CDynamite *this_ptr,float delta_time);
 
 // Original: core_dynamite.cpp_CDynamite_dtor_FUN_0047b470
 // Address: 0047b470

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_goggles.cpp_CGoggles_ctor_FUN_0059c060
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x434                          ; 0059c030
         ;   Label: core_goggles.cpp_factoryFuncGoggles_FUN_0059c030
-    CALL crt_unknown.c_FUN_005b8be2     ; 0059c035
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0059c035
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0059c03a
     TEST EAX,EAX                        ; 0059c03d
     JNZ 0x0059c042                      ; 0059c03f

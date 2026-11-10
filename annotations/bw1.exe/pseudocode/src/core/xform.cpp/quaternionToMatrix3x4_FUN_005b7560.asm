@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[2]:
-;   core_course.cpp_FUN_00447f00 at 00447f41
-;   core_skeleton.cpp_FUN_005695e0 at 0056977a
+;   core_course.cpp_CCourse_evaluate_FUN_00447f00 at 00447f41
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0 at 0056977a
 ;
 ; Called Functions:
 ;   core_xform.cpp_clearTranslation_FUN_005b5600

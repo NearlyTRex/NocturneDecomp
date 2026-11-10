@@ -22,11 +22,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[5]:
-;   sound_sndmain.cpp_FUN_00552bd0 at 00552cf2
 ;   sound_sndmain.cpp_FUN_00556240 at 00556481
 ;   sound_sndmain.cpp_FUN_00558f20 at 00559085
-;   sound_sndmain.cpp_FUN_00559d90 at 00559f5a
-;   sound_sndmain.cpp_FUN_0055a0b0 at 0055a10f
+;   sound_sndmain.cpp_nextMixingBuffer_FUN_00552bd0 at 00552cf2
+;   sound_sndmain.cpp_pollAllSfxSlots_FUN_0055a0b0 at 0055a10f
+;   sound_sndmain.cpp_pollAndMixSfx_FUN_00559d90 at 00559f5a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d30d1
@@ -50,12 +50,12 @@
 ;   core_main.c_FUN_004e4330
 ;   engine_console.cpp_FUN_00441ff0
 ;   sound_sndmain.cpp_CSfxSlot_autoCalcDelayRemaining_FUN_00554390
+;   sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00554140
+;   sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00554250
+;   sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005540d0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270
 ;   sound_sndmain.cpp_FUN_005526d0
 ;   sound_sndmain.cpp_FUN_00553f40
-;   sound_sndmain.cpp_FUN_005540d0
-;   sound_sndmain.cpp_FUN_00554140
-;   sound_sndmain.cpp_FUN_00554250
 ;   sound_sndmain.cpp_FUN_005571e0
 ;
 ; *****************************************************************************
@@ -209,12 +209,12 @@ section .text
     ADD ESP,0x8                         ; 005545ae
     PUSH EBX                            ; 005545b1
         ;   Label: LAB_005545b1
-    CALL sound_sndmain.cpp_FUN_005540d0 ; 005545b2
-        ;   XREF to: 005540d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005540d0(CSfxSlot * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005540d0 ; 005545b2
+        ;   XREF to: 005540d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeDistancesToSpeakers_FUN_005540d0(CSfxSlot * this_ptr)
     ADD ESP,0x4                         ; 005545b7
     PUSH EBX                            ; 005545ba
-    CALL sound_sndmain.cpp_FUN_00554140 ; 005545bb
-        ;   XREF to: 00554140 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00554140(CSfxSlot * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00554140 ; 005545bb
+        ;   XREF to: 00554140 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeChannelDelays_FUN_00554140(CSfxSlot * this_ptr)
     MOV EDX,dword ptr [EBX + 0x108]     ; 005545c0
     ADD ESP,0x4                         ; 005545c6
     CMP EDX,0x1                         ; 005545c9
@@ -231,8 +231,8 @@ section .text
     ADD ESP,0x10                        ; 005545e8
     PUSH EBX                            ; 005545eb
         ;   Label: LAB_005545eb
-    CALL sound_sndmain.cpp_FUN_00554250 ; 005545ec
-        ;   XREF to: 00554250 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00554250(CSfxSlot * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00554250 ; 005545ec
+        ;   XREF to: 00554250 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSlot_computeChannelVolumes_FUN_00554250(CSfxSlot * this_ptr)
     MOV ESI,dword ptr [EBX + 0x108]     ; 005545f1
     ADD ESP,0x4                         ; 005545f7
     CMP ESI,0x1                         ; 005545fa

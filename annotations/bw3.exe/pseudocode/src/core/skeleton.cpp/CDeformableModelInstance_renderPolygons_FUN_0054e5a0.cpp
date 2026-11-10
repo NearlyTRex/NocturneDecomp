@@ -16,14 +16,14 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_renderPolygons_FUN_0054e
   int *part_visibility_flags;
   int *texture_set_indices;
   
-  if (*(int *)&this_ptr->field_0x2320 < 0) {
+  if (this_ptr->cached_skinned_lod_index < 0) {
     _DAT_01d71de0 = "..\\core\\skeleton.cpp";
     _DAT_01d71de4 = 0xd39;
     core_main_c_FUN_004e4330("CDeformableModelInstance::renderPolygons called but LOD is not set!");
   }
   texture_set_indices = (int *)&this_ptr->field_0x2230;
   part_visibility_flags = (int *)&this_ptr->field_0x2140;
-  lod_index = *(int *)&this_ptr->field_0x2320;
+  lod_index = this_ptr->cached_skinned_lod_index;
   this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr);
   core_skeleton_cpp_CDeformableModel_renderParts_FUN_00548c70
             (this_ptr_00,lod_index,part_visibility_flags,texture_set_indices,render_flags,

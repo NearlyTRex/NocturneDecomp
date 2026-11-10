@@ -21,29 +21,29 @@ CDemonActorType * CBurncross::getActorType(CBurncross *this_ptr);
 // Address: 00424430
 CBurncross * CBurncross::ctor(CBurncross *this_ptr);
 
-// Original: core_burncrss.cpp_FUN_00424550
+// Original: core_burncrss.cpp_CBurncross_fire_FUN_00424550
 // Address: 00424550
-undefined4 FUN_00424550(CDemonActor *param_1);
+int __cdecl CBurncross::fire(CBurncross *this_ptr);
 
-// Original: core_burncrss.cpp_FUN_00424e30
+// Original: core_burncrss.cpp_CBurncross_process_FUN_00424e30
 // Address: 00424e30
-void FUN_00424e30(CWeapon *param_1,float param_2,undefined4 param_3,float param_4);
+void __cdecl CBurncross::process(CBurncross *this_ptr,float delta_time);
 
-// Original: core_burncrss.cpp_FUN_004252f0
+// Original: core_burncrss.cpp_CBurncross_getDamage_FUN_004252f0
 // Address: 004252f0
-undefined4 FUN_004252f0(void);
+float __cdecl CBurncross::getDamage(CBurncross *this_ptr);
 
-// Original: core_burncrss.cpp_FUN_00425300
+// Original: core_burncrss.cpp_CBurncross_setWeaponState_FUN_00425300
 // Address: 00425300
-void FUN_00425300(CWeapon *param_1,int param_2);
+void __cdecl CBurncross::setWeaponState(CBurncross *this_ptr,int weapon_state);
 
-// Original: core_burncrss.cpp_FUN_00425360
+// Original: core_burncrss.cpp_CBurncross_renderOpaque_FUN_00425360
 // Address: 00425360
-int FUN_00425360(CWeapon *param_1);
+int __cdecl CBurncross::renderOpaque(CBurncross *this_ptr);
 
-// Original: core_burncrss.cpp_FUN_004253d0
+// Original: core_burncrss.cpp_CBurncross_setup_FUN_004253d0
 // Address: 004253d0
-void FUN_004253d0(CWeapon *param_1);
+void __cdecl CBurncross::setup(CBurncross *this_ptr);
 
 // Original: core_burncrss.cpp_CBurncross_dtor_FUN_00425420
 // Address: 00425420

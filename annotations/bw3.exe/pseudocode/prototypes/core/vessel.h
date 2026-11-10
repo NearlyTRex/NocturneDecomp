@@ -21,9 +21,9 @@ CDemonActorType * CCryptVessel::getActorType(CCryptVessel *this_ptr);
 // Address: 00576350
 CCryptVessel * __cdecl CCryptVessel::ctor(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_005764b0
+// Original: core_vessel.cpp_CCryptVessel_setup_FUN_005764b0
 // Address: 005764b0
-void FUN_005764b0(CDemonActor *param_1);
+void __cdecl CCryptVessel::setup(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_canPickup_FUN_00576610
 // Address: 00576610
@@ -45,21 +45,21 @@ CDemonActor * __cdecl CCryptVessel::getCarrier(CCryptVessel *this_ptr);
 // Address: 00576690
 undefined4 __cdecl isStartLocTriggered(int param_1);
 
-// Original: core_vessel.cpp_FUN_005766b0
+// Original: core_vessel.cpp_CCryptVessel_process_FUN_005766b0
 // Address: 005766b0
-void FUN_005766b0(int param_1,float param_2);
+void __cdecl CCryptVessel::process(CCryptVessel *this_ptr,float delta_time);
 
-// Original: core_vessel.cpp_FUN_00576c90
+// Original: core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00576c90
 // Address: 00576c90
-undefined4 FUN_00576c90(int param_1);
+int __cdecl CCryptVessel::renderOpaque(CCryptVessel *this_ptr);
 
 // Original: core_vessel.cpp_CCryptVessel_renderTransparent_FUN_00576e10
 // Address: 00576e10
 int __cdecl CCryptVessel::renderTransparent(CCryptVessel *this_ptr);
 
-// Original: core_vessel.cpp_FUN_00576f60
+// Original: core_vessel.cpp_CCryptVessel_renderBackground_FUN_00576f60
 // Address: 00576f60
-void FUN_00576f60(void);
+void __cdecl CCryptVessel::renderBackground(CCryptVessel *this_ptr,int layer_flag);
 
 // Original: core_vessel.cpp_CCryptVessel_archive_FUN_00576fe0
 // Address: 00576fe0
@@ -69,9 +69,9 @@ void __cdecl CCryptVessel::archive(CCryptVessel *this_ptr);
 // Address: 005770f0
 ECollisionType __cdecl CCryptVessel::getCollisionType(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_vessel.cpp_FUN_00577110
+// Original: core_vessel.cpp_CCryptVessel_getBoundingBox_FUN_00577110
 // Address: 00577110
-void FUN_00577110(int param_1);
+CBoundingBox3D * __cdecl CCryptVessel::getBoundingBox(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_vessel.cpp_CCryptVessel_dtor_FUN_00577150
 // Address: 00577150

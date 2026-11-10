@@ -11,7 +11,7 @@ void core_chain_cpp_factoryFuncChain_FUN_00435630(void)
 {
   CChain *this_ptr;
   
-  this_ptr = (CChain *)FUN_005c0f32(0x578);
+  this_ptr = (CChain *)debugAllocTracked1(0x578);
   if (this_ptr == (CChain *)0x0) {
     return;
   }

@@ -13,7 +13,7 @@
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004540c0 at 00454268
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00476070 at 00476611
 ;   core_dtrace.cpp_CDemonRaytrace_renderPVSCubes_FUN_004772f0 at 0047730a
-;   core_flies.cpp_FUN_004addd0 at 004ae0e4
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004addd0 at 004ae0e4
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00548c70 at 005493c7
 ;
 ; Referenced Globals:

@@ -9,17 +9,17 @@
 // Address: 00496930
 void staticInit(void);
 
-// Original: core_fire.cpp_FUN_00496c0c
+// Original: core_fire.cpp_safeAcos_FUN_00496c0c
 // Address: 00496c0c
-float FUN_00496c0c(float param_1);
+float safeAcos(float param_1);
 
-// Original: core_fire.cpp_FUN_00496c60
+// Original: core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00496c60
 // Address: 00496c60
-void __cdecl FUN_00496c60(CSmokeParticle *this_ptr);
+void __cdecl CSmokeParticle::setupRenderState(CSmokeParticle *this_ptr);
 
-// Original: core_fire.cpp_FUN_00496d50
+// Original: core_fire.cpp_CSmokeParticle_reset_FUN_00496d50
 // Address: 00496d50
-void __cdecl FUN_00496d50(CSmokeParticle *this_ptr);
+void __cdecl CSmokeParticle::reset(CSmokeParticle *this_ptr);
 
 // Original: core_fire.cpp_CSmokeParticle_init_FUN_00496d60
 // Address: 00496d60
@@ -45,13 +45,13 @@ void FUN_00497540(undefined4 *param_1);
 // Address: 004975a0
 void FUN_004975a0(void);
 
-// Original: core_fire.cpp_FUN_00497610
+// Original: core_fire.cpp_CBulletHole_render_FUN_00497610
 // Address: 00497610
-void __cdecl FUN_00497610(CBulletHole *this_ptr);
+void __cdecl CBulletHole::render(CBulletHole *this_ptr);
 
-// Original: core_fire.cpp_FUN_00497a30
+// Original: core_fire.cpp_loadStakeAssets_FUN_00497a30
 // Address: 00497a30
-void __cdecl FUN_00497a30(void);
+void __cdecl loadStakeAssets(void);
 
 // Original: core_fire.cpp_CStake_init_FUN_00497a50
 // Address: 00497a50
@@ -61,21 +61,21 @@ void __cdecl CStake::init(CStake *this_ptr,CVector3f *position,CVector3f *orient
 // Address: 00497ac0
 void __cdecl CStake::spawn(CStake *this_ptr,CVector3f *spawn_position,CVector3f *orientation_angles,CVector3f *surface_normal);
 
-// Original: core_fire.cpp_FUN_00497dc0
+// Original: core_fire.cpp_CStake_render_FUN_00497dc0
 // Address: 00497dc0
-void __cdecl FUN_00497dc0(CStake *this_ptr);
+void __cdecl CStake::render(CStake *this_ptr);
 
-// Original: core_fire.cpp_FUN_00497e80
+// Original: core_fire.cpp_CStake_process_FUN_00497e80
 // Address: 00497e80
-void __cdecl FUN_00497e80(CStake *this_ptr);
+void __cdecl CStake::process(CStake *this_ptr);
 
-// Original: core_fire.cpp_FUN_00497eb0
+// Original: core_fire.cpp_CSpark_process_FUN_00497eb0
 // Address: 00497eb0
-void FUN_00497eb0(int param_1);
+void __cdecl CSpark::process(CSpark *this_ptr);
 
-// Original: core_fire.cpp_FUN_00497f70
+// Original: core_fire.cpp_CSpark_setupRenderState_FUN_00497f70
 // Address: 00497f70
-void FUN_00497f70(void);
+void __cdecl CSpark::setupRenderState(CSpark *this_ptr);
 
 // Original: core_fire.cpp_FUN_004980b0
 // Address: 004980b0
@@ -101,29 +101,29 @@ void FUN_00498b40(CVector3f *param_1);
 // Address: 004992f0
 void __cdecl loadFireBallAssets(void);
 
-// Original: core_fire.cpp_FUN_00499350
+// Original: core_fire.cpp_CFireball_process_FUN_00499350
 // Address: 00499350
-void FUN_00499350(CVector3f *param_1);
+void __cdecl CFireball::process(CFireball *this_ptr);
 
-// Original: core_fire.cpp_FUN_004995a0
+// Original: core_fire.cpp_CFireball_setupRenderState_FUN_004995a0
 // Address: 004995a0
-void __cdecl FUN_004995a0(CFireball *this_ptr);
+void __cdecl CFireball::setupRenderState(CFireball *this_ptr);
 
 // Original: core_fire.cpp_FUN_00499690
 // Address: 00499690
 void FUN_00499690(CVector3f *param_1);
 
-// Original: core_fire.cpp_FUN_00499eb0
+// Original: core_fire.cpp_CFireball_onCollision_FUN_00499eb0
 // Address: 00499eb0
-undefined4 FUN_00499eb0(CVector3f *param_1);
+int __cdecl CFireball::onCollision(CFireball *this_ptr,CVector3f *collision_normal);
 
-// Original: core_fire.cpp_FUN_00499fe0
+// Original: core_fire.cpp_CRock_setup_FUN_00499fe0
 // Address: 00499fe0
-void __cdecl FUN_00499fe0(CRock *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void __cdecl CRock::setup(CRock *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 
-// Original: core_fire.cpp_FUN_0049a000
+// Original: core_fire.cpp_loadRockAssets_FUN_0049a000
 // Address: 0049a000
-void FUN_0049a000(void);
+void __cdecl loadRockAssets(void);
 
 // Original: core_fire.cpp_FUN_0049a010
 // Address: 0049a010
@@ -161,25 +161,25 @@ void __cdecl FUN_0049a390(CMuzzleFlash *this_ptr,CVector3f *position,CMatrix3x3f
 // Address: 0049a450
 void __cdecl CMuzzleFlash::process(CMuzzleFlash *this_ptr);
 
-// Original: core_fire.cpp_FUN_0049a480
+// Original: core_fire.cpp_CMuzzleFlash_render_FUN_0049a480
 // Address: 0049a480
-void __cdecl FUN_0049a480(CMuzzleFlash *this_ptr);
+void __cdecl CMuzzleFlash::render(CMuzzleFlash *this_ptr);
 
-// Original: core_fire.cpp_FUN_0049a630
+// Original: core_fire.cpp_loadGunFlashAssets_FUN_0049a630
 // Address: 0049a630
-void __cdecl FUN_0049a630(void);
+void __cdecl loadGunFlashAssets(void);
 
 // Original: core_fire.cpp_FUN_0049a650
 // Address: 0049a650
 void FUN_0049a650(CParticle *param_1,float *param_2,undefined4 *param_3,undefined4 *param_4,undefined4 *param_5,undefined4 param_6);
 
-// Original: core_fire.cpp_FUN_0049a9f0
+// Original: core_fire.cpp_CGlassParticle_render_FUN_0049a9f0
 // Address: 0049a9f0
-void FUN_0049a9f0(CVector3f *param_1);
+void __cdecl CGlassParticle::render(CGlassParticle *this_ptr);
 
-// Original: core_fire.cpp_FUN_0049ac10
+// Original: core_fire.cpp_CGlassParticle_process_FUN_0049ac10
 // Address: 0049ac10
-void FUN_0049ac10(int param_1);
+void __cdecl CGlassParticle::process(CGlassParticle *this_ptr);
 
 // Original: core_fire.cpp_FUN_0049ac90
 // Address: 0049ac90
@@ -193,9 +193,9 @@ void __cdecl CBulletTrail::init(CBulletTrail *this_ptr,CVector3f *start_position
 // Address: 0049ad00
 void __cdecl CBulletTrail::process(CBulletTrail *this_ptr);
 
-// Original: core_fire.cpp_FUN_0049ad20
+// Original: core_fire.cpp_CBulletTrail_render_FUN_0049ad20
 // Address: 0049ad20
-void __cdecl FUN_0049ad20(CBulletTrail *this_ptr);
+void __cdecl CBulletTrail::render(CBulletTrail *this_ptr);
 
 // Original: core_fire.cpp_CLaserBeam_init_FUN_0049b030
 // Address: 0049b030
@@ -217,17 +217,17 @@ void __cdecl updateTextureAnimCounts(void);
 // Address: 0049c670
 CExplosion * __cdecl CExplosion::ctor(CExplosion *this_ptr);
 
-// Original: core_fire.cpp_FUN_0049c680
+// Original: core_fire.cpp_loadDebrisAssets_FUN_0049c680
 // Address: 0049c680
-void __cdecl FUN_0049c680(void);
+void __cdecl loadDebrisAssets(void);
 
 // Original: core_fire.cpp_FUN_0049c730
 // Address: 0049c730
-void FUN_0049c730(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,int param_5);
+void FUN_0049c730(float *param_1,float *param_2,float param_3,float param_4,float param_5);
 
-// Original: core_fire.cpp_FUN_0049c890
+// Original: core_fire.cpp_CExplosion_process_FUN_0049c890
 // Address: 0049c890
-void __cdecl FUN_0049c890(CExplosion *this_ptr);
+void __cdecl CExplosion::process(CExplosion *this_ptr);
 
 // Original: core_fire.cpp_FUN_0049c8e0
 // Address: 0049c8e0
@@ -235,7 +235,7 @@ void FUN_0049c8e0(CVector3f *param_1);
 
 // Original: core_fire.cpp_FUN_0049cca0
 // Address: 0049cca0
-void FUN_0049cca0(undefined4 *param_1);
+void FUN_0049cca0(float *param_1);
 
 // Original: core_fire.cpp_CToss_ctor_FUN_0049ce90
 // Address: 0049ce90
@@ -257,17 +257,17 @@ uint FUN_0049d090(CDemonActor *param_1);
 // Address: 0049d500
 uint FUN_0049d500(int param_1);
 
-// Original: core_fire.cpp_FUN_0049d570
+// Original: core_fire.cpp_CCrater_reset_FUN_0049d570
 // Address: 0049d570
-void FUN_0049d570(undefined4 *param_1);
+void __cdecl CCrater::reset(CCrater *this_ptr);
 
 // Original: core_fire.cpp_FUN_0049d590
 // Address: 0049d590
-void FUN_0049d590(CCrater *param_1,undefined4 *param_2,float param_3);
+void FUN_0049d590(CCrater *param_1,float *param_2,float param_3);
 
-// Original: core_fire.cpp_FUN_0049d8b0
+// Original: core_fire.cpp_CCrater_process_FUN_0049d8b0
 // Address: 0049d8b0
-void __cdecl FUN_0049d8b0(CCrater *this_ptr);
+void __cdecl CCrater::process(CCrater *this_ptr);
 
 // Original: core_fire.cpp_CCrater_render_FUN_0049d980
 // Address: 0049d980
@@ -289,9 +289,9 @@ void __cdecl initProcess(void);
 // Address: 0049df60
 void FUN_0049df60(float *param_1);
 
-// Original: core_fire.cpp_FUN_0049e170
+// Original: core_fire.cpp_loadLightningBoltAssets_FUN_0049e170
 // Address: 0049e170
-void FUN_0049e170(void);
+void __cdecl loadLightningBoltAssets(void);
 
 // Original: core_fire.cpp_FUN_0049e1a0
 // Address: 0049e1a0
@@ -321,9 +321,9 @@ void FUN_0049f420(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,und
 // Address: 0049f470
 void FUN_0049f470(undefined4 *param_1,undefined4 *param_2,undefined4 *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8);
 
-// Original: core_fire.cpp_FUN_0049f4e0
+// Original: core_fire.cpp_CLightningBolt_process_FUN_0049f4e0
 // Address: 0049f4e0
-void __cdecl FUN_0049f4e0(CLightningBolt *this_ptr);
+void __cdecl CLightningBolt::process(CLightningBolt *this_ptr);
 
 // Original: core_fire.cpp_FUN_0049f520
 // Address: 0049f520
@@ -357,29 +357,29 @@ void __cdecl CTrail::reset(CTrail *this_ptr);
 // Address: 004a05e0
 void __cdecl CTrail::activate(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
 
-// Original: core_fire.cpp_FUN_004a0630
+// Original: core_fire.cpp_CTrail_process_FUN_004a0630
 // Address: 004a0630
-void __cdecl FUN_004a0630(CTrail *this_ptr);
+void __cdecl CTrail::process(CTrail *this_ptr);
 
-// Original: core_fire.cpp_FUN_004a0680
+// Original: core_fire.cpp_CTrail_render_FUN_004a0680
 // Address: 004a0680
-void __cdecl FUN_004a0680(CTrail *this_ptr);
+void __cdecl CTrail::render(CTrail *this_ptr);
 
-// Original: core_fire.cpp_FUN_004a0960
+// Original: core_fire.cpp_CShell_setup_FUN_004a0960
 // Address: 004a0960
-void FUN_004a0960(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,undefined4 param_5);
+void __cdecl CShell::setup(CShell *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
 
-// Original: core_fire.cpp_FUN_004a09f0
+// Original: core_fire.cpp_CShell_render_FUN_004a09f0
 // Address: 004a09f0
-void FUN_004a09f0(CVector3f *param_1);
+void __cdecl CShell::render(CShell *this_ptr);
 
 // Original: core_fire.cpp_FUN_004a0af0
 // Address: 004a0af0
 void FUN_004a0af0(int param_1);
 
-// Original: core_fire.cpp_FUN_004a0b90
+// Original: core_fire.cpp_CShell_onCollision_FUN_004a0b90
 // Address: 004a0b90
-undefined4 FUN_004a0b90(CVector3f *param_1);
+int __cdecl CShell::onCollision(CShell *this_ptr,CVector3f *collision_normal);
 
 // Original: core_fire.cpp_FUN_004a0cc0
 // Address: 004a0cc0
@@ -389,21 +389,21 @@ undefined4 FUN_004a0cc0(void);
 // Address: 004a0cd0
 void __cdecl CPopcorn::render(CPopcorn *this_ptr);
 
-// Original: core_fire.cpp_FUN_004a1040
+// Original: core_fire.cpp_CRainDrop_render_FUN_004a1040
 // Address: 004a1040
-void FUN_004a1040(CVector3f *param_1);
+void __cdecl CRainDrop::render(CRainDrop *this_ptr);
 
-// Original: core_fire.cpp_FUN_004a13ee
+// Original: core_fire.cpp_allocateSmokeParticle_FUN_004a13ee
 // Address: 004a13ee
-undefined * FUN_004a13ee(void);
+undefined * allocateSmokeParticle(void);
 
-// Original: core_fire.cpp_FUN_004a1420
+// Original: core_fire.cpp_allocateBulletHole_FUN_004a1420
 // Address: 004a1420
-CBulletHole * __cdecl FUN_004a1420(void);
+CBulletHole * __cdecl allocateBulletHole(void);
 
-// Original: core_fire.cpp_FUN_004a1460
+// Original: core_fire.cpp_CFireEffect_ctor_FUN_004a1460
 // Address: 004a1460
-CFireEffect * __cdecl FUN_004a1460(CFireEffect *this_ptr);
+CFireEffect * __cdecl CFireEffect::ctor(CFireEffect *this_ptr);
 
 // Original: core_fire.cpp_FUN_004a1480
 // Address: 004a1480
@@ -413,9 +413,9 @@ void FUN_004a1480(void);
 // Address: 004a1760
 void FUN_004a1760(void);
 
-// Original: core_fire.cpp_FUN_004a1ad0
+// Original: core_fire.cpp_CFireEffect_render_FUN_004a1ad0
 // Address: 004a1ad0
-void __cdecl FUN_004a1ad0(CFireEffect *this_ptr);
+void __cdecl CFireEffect::render(CFireEffect *this_ptr);
 
 // Original: core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90
 // Address: 004a1e90
@@ -449,21 +449,21 @@ void __cdecl CFireEffect::createSmokeParticle(CFireEffect *this_ptr,CVector3f *p
 // Address: 004a25f0
 void FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *param_3,CVector3f *param_4,undefined4 param_5);
 
-// Original: core_fire.cpp_FUN_004a2780
+// Original: core_fire.cpp_CFireEffect_createGlassParticle_FUN_004a2780
 // Address: 004a2780
-void __cdecl FUN_004a2780(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl CFireEffect::createGlassParticle(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 
 // Original: core_fire.cpp_FUN_004a27de
 // Address: 004a27de
 void FUN_004a27de(undefined4 param_1,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
 
-// Original: core_fire.cpp_FUN_004a2830
+// Original: core_fire.cpp_CFireEffect_createFireball_FUN_004a2830
 // Address: 004a2830
-void __cdecl FUN_004a2830(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
+void __cdecl CFireEffect::createFireball(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
 
-// Original: core_fire.cpp_FUN_004a28e0
+// Original: core_fire.cpp_CFireEffect_createRock_FUN_004a28e0
 // Address: 004a28e0
-void __cdecl FUN_004a28e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void __cdecl CFireEffect::createRock(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 
 // Original: core_fire.cpp_FUN_004a2930
 // Address: 004a2930
@@ -481,9 +481,9 @@ void __cdecl CFireEffect::createLaserSegment(CFireEffect *this_ptr,CVector3f *or
 // Address: 004a2b10
 void __cdecl CFireEffect::createLaserCone(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
 
-// Original: core_fire.cpp_FUN_004a2b70
+// Original: core_fire.cpp_CFireEffect_createLaserPath_FUN_004a2b70
 // Address: 004a2b70
-void __cdecl FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
+void __cdecl CFireEffect::createLaserPath(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
 
 // Original: core_fire.cpp_SLaserInfo_ctor_FUN_004a2de0
 // Address: 004a2de0

@@ -9,7 +9,7 @@
 void __cdecl core_baron_cpp_CBaronWeapon_setup_FUN_00410940(CBaronWeapon *this_ptr)
 
 {
-  core_weapon_cpp_FUN_00589b50((CWeapon *)this_ptr);
+  core_weapon_cpp_CWeapon_setup_FUN_00589b50(&this_ptr->base);
   core_skeleton_cpp_FUN_00548e80();
   return;
 }

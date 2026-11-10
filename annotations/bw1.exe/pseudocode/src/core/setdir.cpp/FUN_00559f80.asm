@@ -11,8 +11,8 @@
 ;
 ; XREF[4]:
 ;   core_game.cpp_CGame_processHotkeys_FUN_004d1a80 at 004d2030
-;   core_game.cpp_FUN_004cf5e0 at 004cf921
-;   core_game.cpp_FUN_004d8060 at 004d8562
+;   core_game.cpp_CGame_process_FUN_004d8060 at 004d8562
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf921
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00547e54
 ;
 ; Referenced Globals:
@@ -394,7 +394,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 0055a476 | g_CDemonSetPtr
         ;   Label: LAB_0055a476
     MOV EDX,dword ptr [ESP + 0x388]     ; 0055a47b
-    CMP EDX,dword ptr [EAX + 0x14d164]  ; 0055a482 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDX,dword ptr [EAX + 0x14d164]  ; 0055a482 | g_CDemonSetInstance.actor_count
     JL 0x0055a75e                       ; 0055a488
         ;   XREF to: 0055a75e (CONDITIONAL_JUMP)  ; LAB_0055a75e
     FLD float ptr [0x0060513c]          ; 0055a48e | DAT_0060513c
@@ -540,7 +540,7 @@ section .text
     MOV EDX,dword ptr [0x0061d95c]      ; 0055a616 | g_CGamePtr
         ;   Label: LAB_0055a616
     MOV EAX,dword ptr [EBP + 0x14]      ; 0055a61c
-    FLD float ptr [EDX + 0x294]         ; 0055a61f | g_CGameInstance.field660_0x294
+    FLD float ptr [EDX + 0x294]         ; 0055a61f | g_CGameInstance.delta_time_float
     FSUBR float ptr [EAX + 0x15aecc]    ; 0055a625
     FST float ptr [EAX + 0x15aecc]      ; 0055a62b
     FLDZ                                ; 0055a631
@@ -594,7 +594,7 @@ section .text
     MOV dword ptr [ESP + 0x394],EAX     ; 0055a695
     MOV EAX,[0x0061d95c]                ; 0055a69c | g_CGamePtr
     FILD dword ptr [ESP + 0x394]        ; 0055a6a1
-    FMUL float ptr [EAX + 0x294]        ; 0055a6a8 | g_CGameInstance.field660_0x294
+    FMUL float ptr [EAX + 0x294]        ; 0055a6a8 | g_CGameInstance.delta_time_float
     CALL crt_math.c_round_FUN_005c03a0  ; 0055a6ae
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
     FISTP dword ptr [ESP + 0x2e0]       ; 0055a6b3
@@ -613,7 +613,7 @@ section .text
     MOV EDX,dword ptr [0x0061d95c]      ; 0055a6e6 | g_CGamePtr
         ;   Label: LAB_0055a6e6
     MOV EAX,dword ptr [EBP + 0x14]      ; 0055a6ec
-    FLD float ptr [EDX + 0x294]         ; 0055a6ef | g_CGameInstance.field660_0x294
+    FLD float ptr [EDX + 0x294]         ; 0055a6ef | g_CGameInstance.delta_time_float
     FSUBR float ptr [EAX + 0x15aec0]    ; 0055a6f5
     FST float ptr [EAX + 0x15aec0]      ; 0055a6fb
     FLDZ                                ; 0055a701
@@ -794,8 +794,8 @@ section .text
     PUSH ESI                            ; 0055a968
     MOV ESI,dword ptr [0x00612560]      ; 0055a969 | DAT_00612560
     PUSH ESI                            ; 0055a96f | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_004834b0 ; 0055a970
-        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 0055a970
+        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0055a975
     MOV EDI,dword ptr [0x00612560]      ; 0055a978 | DAT_00612560
     PUSH dword ptr [EBX + 0x144]        ; 0055a97e
@@ -1133,7 +1133,7 @@ section .text
         ;   XREF to: 0055adf8 (CONDITIONAL_JUMP)  ; LAB_0055adf8
     MOV EAX,[0x0061d95c]                ; 0055ae26 | g_CGamePtr
         ;   Label: LAB_0055ae26
-    CMP dword ptr [EAX + 0x204],0x0     ; 0055ae2b | g_CGameInstance.field516_0x204
+    CMP dword ptr [EAX + 0x204],0x0     ; 0055ae2b | g_CGameInstance.field468_0x204
     JZ 0x0055aeb2                       ; 0055ae32
         ;   XREF to: 0055aeb2 (CONDITIONAL_JUMP)  ; LAB_0055aeb2
     IMUL EDX,dword ptr [ESP + 0x30c],0x3000 ; 0055ae38

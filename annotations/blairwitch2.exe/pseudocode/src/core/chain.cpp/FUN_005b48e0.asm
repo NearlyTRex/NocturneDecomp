@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a80
+;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
 ;   core_chain.cpp_FUN_005b4860
 ;
 ; *****************************************************************************
@@ -20,8 +20,8 @@ section .text
     SUB ESP,0x48                        ; 005b48e4
     MOV EBP,dword ptr [ESP + 0x5c]      ; 005b48e7
     PUSH EBP                            ; 005b48eb
-    CALL core_actor.cpp_FUN_00408a80    ; 005b48ec
-        ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408a80(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408a80 ; 005b48ec
+        ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408a80(CDemonActor * this_ptr)
     MOV EDX,dword ptr [EBP + 0x164]     ; 005b48f1
     ADD ESP,0x4                         ; 005b48f7
     TEST EDX,EDX                        ; 005b48fa

@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005d0fb2
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dlight.cpp_CDemonLight_allocateFilter_FUN_0045daf0
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_0045fab0
 ;   crt_math.c_round_FUN_005a3120
@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 00542acf
     LEA EAX,[EBP + 0x10]                ; 00542ad0
     PUSH EAX                            ; 00542ad3
-    CALL core_dirmat.cpp_FUN_0045b550   ; 00542ad4
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 00542ad4
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV EAX,dword ptr [EBX + 0x11c]     ; 00542ad9
     MOV dword ptr [EBP + 0x38],EAX      ; 00542adf
     FLD float ptr [EBX + 0x120]         ; 00542ae2

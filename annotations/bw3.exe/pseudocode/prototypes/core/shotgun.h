@@ -21,25 +21,25 @@ CDemonActorType * CShadowsc::getActorType(CShadowsc *this_ptr);
 // Address: 005462c0
 CShadowsc * CShadowsc::ctor(CShadowsc *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_00546360
+// Original: core_shotgun.cpp_CShadowsc_setup_FUN_00546360
 // Address: 00546360
-void FUN_00546360(CEnemy *param_1);
+void __cdecl CShadowsc::setup(CShadowsc *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_00546400
+// Original: core_shotgun.cpp_CShadowsc_process_FUN_00546400
 // Address: 00546400
-void FUN_00546400(CEnemy *param_1,float param_2);
+void __cdecl CShadowsc::process(CShadowsc *this_ptr,float delta_time);
 
-// Original: core_shotgun.cpp_FUN_00546d50
+// Original: core_shotgun.cpp_CShadowsc_archive_FUN_00546d50
 // Address: 00546d50
-void FUN_00546d50(int param_1);
+void __cdecl CShadowsc::archive(CShadowsc *this_ptr);
 
-// Original: core_shotgun.cpp_FUN_00546db0
+// Original: core_shotgun.cpp_CShadowsc_processDamage_FUN_00546db0
 // Address: 00546db0
-void FUN_00546db0(int param_1,int param_2);
+void __cdecl CShadowsc::processDamage(CShadowsc *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_shotgun.cpp_FUN_00546ed0
+// Original: core_shotgun.cpp_CShadowsc_getTargetPoints_FUN_00546ed0
 // Address: 00546ed0
-undefined4 FUN_00546ed0(int param_1,undefined4 *param_2);
+int __cdecl CShadowsc::getTargetPoints(CShadowsc *this_ptr,CVector3f *out_points_array);
 
 // Original: core_shotgun.cpp_CShadowsc_dtor_FUN_00546f40
 // Address: 00546f40

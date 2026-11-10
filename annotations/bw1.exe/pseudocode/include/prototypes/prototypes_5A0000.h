@@ -6,20 +6,20 @@
 #include "system/basetypes.h"
 #include "system/windef.h"
 #include "system/winnt.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CCharacter.h"
 #include "types/classes/CCryptVessel.h"
 #include "types/classes/CDemonActor.h"
 #include "types/classes/CDemonActorType.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CInStreamFile.h"
 #include "types/classes/CInStreamMemory.h"
 #include "types/classes/CLocation.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/COutStreamDebug.h"
 #include "types/classes/COutStreamFile.h"
 #include "types/classes/COutStreamMemory.h"
 #include "types/classes/CTVBat.h"
 #include "types/classes/CTire.h"
-#include "types/classes/CTrigger.h"
 #include "types/classes/CTurret.h"
 #include "types/classes/CVampireBoss.h"
 #include "types/classes/CVector3f.h"
@@ -31,8 +31,11 @@
 #include "types/classes/CWeather.h"
 #include "types/classes/CWerewolf.h"
 #include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
+#include "types/enums/EGroundType.h"
 #include "types/enums/EWeatherType.h"
 #include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SInteractionInfo.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SPlayerInput.h"
@@ -119,73 +122,73 @@ void core_turret_cpp_factoryFuncTurret_FUN_005a2010(void);
 CDemonActorType * core_turret_cpp_CTurret_getActorType_FUN_005a2030(CTurret *this_ptr);
 CTurret * core_turret_cpp_CTurret_ctor_FUN_005a2040(CTurret *this_ptr);
 void __cdecl core_turret_cpp_CTurret_setup_FUN_005a21a0(CTurret *this_ptr);
-int core_turret_cpp_FUN_005a2280(CTurret *param_1);
-void core_turret_cpp_FUN_005a23b0(CTurret *param_1,float param_2);
-void core_turret_cpp_FUN_005a28c0(CTurret *param_1);
+int __cdecl core_turret_cpp_CTurret_renderOpaque_FUN_005a2280(CTurret *this_ptr);
+void __cdecl core_turret_cpp_CTurret_process_FUN_005a23b0(CTurret *this_ptr,float delta_time);
+CBoundingBox3D * __cdecl core_turret_cpp_CTurret_getBoundingBox_FUN_005a28c0(CTurret *this_ptr,CBoundingBox3D *out_box);
 float __cdecl core_turret_cpp_CTurret_getCurFrame_FUN_005a2ae0(CTurret *this_ptr,int model_index);
 void __cdecl core_turret_cpp_CTurret_archive_FUN_005a2bf0(CTurret *this_ptr);
-void core_turret_cpp_FUN_005a2d00(CTurret *param_1,float param_2);
-int __cdecl core_turret_cpp_FUN_005a3350(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
+void core_turret_cpp_FUN_005a2d00(CCharacter *param_1,float param_2);
+int __cdecl core_turret_cpp_CTurret_aimAtTarget_FUN_005a3350(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
 void __cdecl core_turret_cpp_CTurret_getInteractionInfo_FUN_005a3530(CTurret *this_ptr,SInteractionInfo *interaction_info);
 int __cdecl core_turret_cpp_CTurret_startInteraction_FUN_005a35a0(CTurret *this_ptr,CDemonActor *user);
 int __cdecl core_turret_cpp_CTurret_updateInteraction_FUN_005a35c0(CTurret *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control);
 void __cdecl core_turret_cpp_CTurret_stopInteraction_FUN_005a3630(CTurret *this_ptr,CDemonActor *user);
 void __cdecl core_turret_cpp_CTurret_updatePatrol_FUN_005a3650(CTurret *this_ptr,float delta_time);
 float __cdecl core_turret_cpp_CTurret_getDamage_FUN_005a3810(CTurret *this_ptr);
-void core_turret_cpp_FUN_005a3840(int param_1);
-undefined4 core_turret_cpp_FUN_005a3870(CDemonActor *param_1);
+CVector3f * __cdecl core_turret_cpp_CTurret_getMuzzlePoint_FUN_005a3840(CTurret *this_ptr,CVector3f *out_point);
+int __cdecl core_turret_cpp_CTurret_fire_FUN_005a3870(CTurret *this_ptr);
 int __cdecl core_turret_cpp_CTurret_canPickup_FUN_005a3e30(CTurret *this_ptr,CDemonActor *picker);
 CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_005a3e60(CTurret *this_ptr,uint flags);
 void core_tvbat_cpp_staticInit_FUN_005a3eb0(void);
 void core_tvbat_cpp_factoryFuncTVBat_FUN_005a3ee0(void);
 CDemonActorType * core_tvbat_cpp_CTVBat_getActorType_FUN_005a3f00(CTVBat *this_ptr);
 CTVBat * __cdecl core_tvbat_cpp_CTVBat_ctor_FUN_005a3f40(CTVBat *this_ptr);
-void core_tvbat_cpp_FUN_005a40a0(CEnemy *param_1);
-void core_tvbat_cpp_FUN_005a4110(CEnemy *param_1);
-void core_tvbat_cpp_FUN_005a4260(int param_1,float param_2);
-void __cdecl core_tvbat_cpp_FUN_005a4eb0(CTVBat *this_ptr);
-int core_tvbat_cpp_FUN_005a4ec0(CDemonActor *param_1);
-void core_tvbat_cpp_FUN_005a4f50(int param_1);
-undefined4 core_tvbat_cpp_FUN_005a4fb0(int param_1);
-undefined4 core_tvbat_cpp_FUN_005a4fd0(void);
-int core_tvbat_cpp_FUN_005a4fe0(int param_1);
-void core_tvbat_cpp_FUN_005a5010(int param_1,int param_2);
+void __cdecl core_tvbat_cpp_CTVBat_setup_FUN_005a40a0(CTVBat *this_ptr);
+void __cdecl core_tvbat_cpp_CTVBat_archive_FUN_005a4110(CTVBat *this_ptr);
+void __cdecl core_tvbat_cpp_CTVBat_process_FUN_005a4260(CTVBat *this_ptr,float delta_time);
+void __cdecl core_tvbat_cpp_CTVBat_orderAttack_FUN_005a4eb0(CTVBat *this_ptr);
+int __cdecl core_tvbat_cpp_CTVBat_renderOpaque_FUN_005a4ec0(CTVBat *this_ptr);
+CBoundingBox3D * __cdecl core_tvbat_cpp_CTVBat_getBoundingBox_FUN_005a4f50(CTVBat *this_ptr,CBoundingBox3D *out_box);
+ECollisionType __cdecl core_tvbat_cpp_CTVBat_getCollisionType_FUN_005a4fb0(CTVBat *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_tvbat_cpp_CTVBat_getTargetPoints_FUN_005a4fd0(CTVBat *this_ptr,CVector3f *out_points_array);
+EDeathState __cdecl core_tvbat_cpp_CTVBat_getDeathState_FUN_005a4fe0(CTVBat *this_ptr);
+void __cdecl core_tvbat_cpp_CTVBat_processDamage_FUN_005a5010(CTVBat *this_ptr,SDamageInfo *damage_info);
 CTVBat * core_tvbat_cpp_CTVBat_dtor_FUN_005a5080(CTVBat *this_ptr,uint flags);
 void core_vampboss_cpp_staticInit_FUN_005a5110(void);
 void core_vampboss_cpp_factoryFuncVampireBoss_FUN_005a5140(void);
 CDemonActorType * core_vampboss_cpp_CVampireBoss_getActorType_FUN_005a5160(CVampireBoss *this_ptr);
 CVampireBoss * __cdecl core_vampboss_cpp_CVampireBoss_ctor_FUN_005a5170(CVampireBoss *this_ptr);
-void core_vampboss_cpp_FUN_005a52a0(CEnemy *param_1);
-void core_vampboss_cpp_FUN_005a5550(CVampireBoss *param_1,float param_2);
-void core_vampboss_cpp_FUN_005a68d0(int param_1,int param_2);
-void __cdecl core_vampboss_cpp_FUN_005a6a00(CVampireBoss *this_ptr,float delta_time);
-int core_vampboss_cpp_FUN_005a6b00(CCharacter *param_1);
-void core_vampboss_cpp_FUN_005a6cc0(CEnemy *param_1);
-void core_vampboss_cpp_FUN_005a6da0(void *param_1,int param_2);
-undefined4 core_vampboss_cpp_FUN_005a7010(void);
-undefined4 core_vampboss_cpp_FUN_005a7020(int param_1,float *param_2);
-void __cdecl core_vampboss_cpp_FUN_005a70f0(CVampireBoss *this_ptr);
-void __cdecl core_vampboss_cpp_FUN_005a7160(CVampireBoss *this_ptr);
-void __cdecl core_vampboss_cpp_FUN_005a71e0(CVampireBoss *this_ptr);
-void __cdecl core_vampboss_cpp_FUN_005a7250(CVampireBoss *this_ptr);
-void __cdecl core_vampboss_cpp_FUN_005a7290(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_005a52a0(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_process_FUN_005a5550(CVampireBoss *this_ptr,float delta_time);
+CMatrix3x4f * __stack2_esi core_vampboss_cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005a68d0(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+void __cdecl core_vampboss_cpp_CVampireBoss_advanceAnimation_FUN_005a6a00(CVampireBoss *this_ptr,float delta_time);
+int __cdecl core_vampboss_cpp_CVampireBoss_renderOpaque_FUN_005a6b00(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_archive_FUN_005a6cc0(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireBoss *this_ptr,SDamageInfo *damage_info);
+EDeathState __cdecl core_vampboss_cpp_CVampireBoss_getDeathState_FUN_005a7010(CVampireBoss *this_ptr);
+int __cdecl core_vampboss_cpp_CVampireBoss_getTargetPoints_FUN_005a7020(CVampireBoss *this_ptr,CVector3f *out_points_array);
+void __cdecl core_vampboss_cpp_CVampireBoss_summonBats_FUN_005a70f0(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_summonStalagmites_FUN_005a7160(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_summonFireEmitters_FUN_005a71e0(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_transformToBat_FUN_005a7250(CVampireBoss *this_ptr);
+void __cdecl core_vampboss_cpp_CVampireBoss_transformToHuman_FUN_005a7290(CVampireBoss *this_ptr);
 void __cdecl core_vampboss_cpp_CVampireBoss_chooseDestWayPoint_FUN_005a72e0(CVampireBoss *this_ptr);
-ECollisionType core_vampboss_cpp_FUN_005a73c0(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl core_vampboss_cpp_CVampireBoss_getCollisionType_FUN_005a73c0(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005a7420(CVampireBoss *this_ptr,uint flags);
 void core_vecdir_cpp_staticInit_FUN_005a7500(void);
-float * core_vecdir_cpp_FUN_005a7520(uint *param_1);
+float * core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(uint *param_1);
 void core_vehicle_cpp_staticInit_FUN_005a75c0(void);
 void core_vehicle_cpp_factoryFuncVehicle_FUN_005a75f0(void);
 CDemonActorType * core_vehicle_cpp_CVehicle_getActorType_FUN_005a7610(CVehicle *this_ptr);
 CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005a7620(CVehicle *this_ptr);
-void core_vehicle_cpp_FUN_005a7870(CDemonActor *param_1);
-uint core_vehicle_cpp_FUN_005a7b50(CVehicle *param_1,float param_2);
-void core_vehicle_cpp_FUN_005a8490(int param_1);
+void __cdecl core_vehicle_cpp_CVehicle_setup_FUN_005a7870(CVehicle *this_ptr);
+void __cdecl core_vehicle_cpp_CVehicle_process_FUN_005a7b50(CVehicle *this_ptr,float delta_time);
+CBoundingBox3D * __cdecl core_vehicle_cpp_CVehicle_getBoundingBox_FUN_005a8490(CVehicle *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005a84d0(CVehicle *this_ptr);
-undefined4 core_vehicle_cpp_FUN_005a8660(void);
-int core_vehicle_cpp_FUN_005a8670(CDemonActor *param_1);
+ECollisionType __cdecl core_vehicle_cpp_CVehicle_getCollisionType_FUN_005a8660(CVehicle *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_vehicle_cpp_CVehicle_renderOpaque_FUN_005a8670(CVehicle *this_ptr);
 int __cdecl core_vehicle_cpp_CVehicle_renderTransparent_FUN_005a89a0(CVehicle *this_ptr);
-void core_vehicle_cpp_FUN_005a89b0(void);
+void __cdecl core_vehicle_cpp_CVehicle_renderBackground_FUN_005a89b0(CVehicle *this_ptr,int layer_flag);
 uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_005a89c0(CVehicle *this_ptr,char *sound_name);
 CVehicle * core_vehicle_cpp_CVehicle_dtor_FUN_005a8a10(CVehicle *this_ptr,uint flags);
 CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_005a8a80(CTire *this_ptr);
@@ -193,41 +196,41 @@ void core_vessel_cpp_staticInit_FUN_005a8aa0(void);
 void core_vessel_cpp_factoryFuncCryptVessel_FUN_005a8ad0(void);
 CDemonActorType * core_vessel_cpp_CCryptVessel_getActorType_FUN_005a8af0(CCryptVessel *this_ptr);
 CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_ctor_FUN_005a8b00(CCryptVessel *this_ptr);
-void core_vessel_cpp_FUN_005a8c60(CDemonActor *param_1);
+void __cdecl core_vessel_cpp_CCryptVessel_setup_FUN_005a8c60(CCryptVessel *this_ptr);
 int __cdecl core_vessel_cpp_CCryptVessel_canPickup_FUN_005a8dc0(CCryptVessel *this_ptr,CDemonActor *picker);
 void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_005a8e00(CCryptVessel *this_ptr,CDemonActor *carrier);
 void __cdecl core_vessel_cpp_CCryptVessel_onDropped_FUN_005a8e10(CCryptVessel *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_vessel_cpp_CCryptVessel_getCarrier_FUN_005a8e30(CCryptVessel *this_ptr);
 undefined4 __cdecl core_vessel_cpp_isStartLocTriggered_FUN_005a8e40(int param_1);
-void core_vessel_cpp_FUN_005a8e60(int param_1,float param_2);
-undefined4 core_vessel_cpp_FUN_005a9440(int param_1);
+void __cdecl core_vessel_cpp_CCryptVessel_process_FUN_005a8e60(CCryptVessel *this_ptr,float delta_time);
+int __cdecl core_vessel_cpp_CCryptVessel_renderOpaque_FUN_005a9440(CCryptVessel *this_ptr);
 int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005a95c0(CCryptVessel *this_ptr);
-void core_vessel_cpp_FUN_005a9710(void);
+void __cdecl core_vessel_cpp_CCryptVessel_renderBackground_FUN_005a9710(CCryptVessel *this_ptr,int layer_flag);
 void __cdecl core_vessel_cpp_CCryptVessel_archive_FUN_005a9790(CCryptVessel *this_ptr);
 ECollisionType __cdecl core_vessel_cpp_CCryptVessel_getCollisionType_FUN_005a98a0(CCryptVessel *this_ptr,SCollisionInfo *collision_info);
-void core_vessel_cpp_FUN_005a98c0(int param_1);
+CBoundingBox3D * __cdecl core_vessel_cpp_CCryptVessel_getBoundingBox_FUN_005a98c0(CCryptVessel *this_ptr,CBoundingBox3D *out_box);
 CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_005a9900(CCryptVessel *this_ptr,uint flags);
 void core_water_cpp_staticInit_FUN_005a9970(void);
-float core_water_cpp_FUN_005a998e(int param_1,int param_2);
+float core_water_cpp_calculateWaveHeight_FUN_005a998e(int param_1,int param_2);
 CWater * __cdecl core_water_cpp_CWater_ctor_FUN_005a99e0(CWater *this_ptr);
 CWater * core_water_cpp_CWater_dtor_FUN_005a9a00(CWater *this_ptr,uint flags);
 void __cdecl core_water_cpp_CWater_captureTextures_FUN_005a9a10(CWater *this_ptr);
 void __cdecl core_water_cpp_CWater_calculateVisibleTiles_FUN_005a9a40(CWater *this_ptr);
-void __cdecl core_water_cpp_FUN_005a9a90(CWater *this_ptr);
-void __cdecl core_water_cpp_FUN_005a9f10(CWater *this_ptr,int render_mode);
+void __cdecl core_water_cpp_CWater_process_FUN_005a9a90(CWater *this_ptr);
+void __cdecl core_water_cpp_CWater_render_FUN_005a9f10(CWater *this_ptr,int render_mode);
 void core_wateract_cpp_staticInit_FUN_005aa550(void);
 void core_wateract_cpp_factoryFuncWaterActor_FUN_005aa5a0(void);
 CDemonActorType * core_wateract_cpp_CWaterActor_getActorType_FUN_005aa5c0(CWaterActor *this_ptr);
 CWaterActor * __cdecl core_wateract_cpp_CWaterActor_ctor_FUN_005aa5d0(CWaterActor *this_ptr);
-void core_wateract_cpp_FUN_005aa720(CDemonActor *param_1);
+void __cdecl core_wateract_cpp_CWaterActor_setup_FUN_005aa720(CWaterActor *this_ptr);
 void core_wateract_cpp_FUN_005aacd0(int param_1);
-void core_wateract_cpp_FUN_005aaeb0(int param_1,float param_2);
-int core_wateract_cpp_FUN_005ab030(CDemonActor *param_1);
-void core_wateract_cpp_FUN_005ab280(int param_1);
+void __cdecl core_wateract_cpp_CWaterActor_process_FUN_005aaeb0(CWaterActor *this_ptr,float delta_time);
+int __cdecl core_wateract_cpp_CWaterActor_renderTransparent_FUN_005ab030(CWaterActor *this_ptr);
+CBoundingBox3D * __cdecl core_wateract_cpp_CWaterActor_getBoundingBox_FUN_005ab280(CWaterActor *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_wateract_cpp_CWaterActor_archive_FUN_005ab300(CWaterActor *this_ptr);
 ECollisionType __cdecl core_wateract_cpp_CWaterActor_getCollisionType_FUN_005ab500(CWaterActor *this_ptr,SCollisionInfo *collision_info);
-undefined4 core_wateract_cpp_FUN_005ab520(void);
-float core_wateract_cpp_FUN_005ab530(int param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+EGroundType __cdecl core_wateract_cpp_CWaterActor_getGroundType_FUN_005ab520(CWaterActor *this_ptr);
+float __cdecl core_wateract_cpp_CWaterActor_customRayIntersect_FUN_005ab530(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 void __cdecl core_wateract_cpp_CWaterActor_onLaserHit_FUN_005ab7c0(CWaterActor *this_ptr,SLaserInfo *laser_info);
 CWaterActor * core_wateract_cpp_CWaterActor_dtor_FUN_005ab7f0(CWaterActor *this_ptr,uint flags);
 SWaterVertex * core_wateract_cpp_SWaterVertex_ctor_FUN_005ab840(SWaterVertex *this_ptr);
@@ -236,9 +239,9 @@ bool core_waypoint_cpp_FUN_005ab880(float *param_1,CLocation *param_2,int param_
 void core_waypoint_cpp_factoryFuncWayPoint_FUN_005ab990(void);
 CDemonActorType * core_waypoint_cpp_CWayPoint_getActorType_FUN_005ab9b0(CWayPoint *this_ptr);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_ctor_FUN_005ab9c0(CWayPoint *this_ptr);
-void core_waypoint_cpp_FUN_005aba00(CTrigger *param_1);
-undefined4 core_waypoint_cpp_FUN_005abad0(void);
-void core_waypoint_cpp_FUN_005abae0(CTrigger *param_1);
+void __cdecl core_waypoint_cpp_CWayPoint_setup_FUN_005aba00(CWayPoint *this_ptr);
+int __cdecl core_waypoint_cpp_CWayPoint_renderOpaque_FUN_005abad0(CWayPoint *this_ptr);
+void __cdecl core_waypoint_cpp_CWayPoint_archive_FUN_005abae0(CWayPoint *this_ptr);
 int core_waypoint_cpp_FUN_005abb80(undefined4 param_1,int param_2,undefined4 param_3);
 CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_005abd30(CWayPoint *this_ptr,uint flags);
 int __cdecl wincore_wddvmem_cpp_reinitializeDirectDraw_FUN_005abde0(void);
@@ -250,53 +253,53 @@ void wincore_wddvmem_cpp_FUN_005ac26e(void);
 undefined4 wincore_wddvmem_cpp_FUN_005ac300(int param_1,int param_2,int param_3);
 void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_005ac830(void);
 void __cdecl wincore_wddvmem_cpp_reinitializeGraphicsSystem_FUN_005aca40(void);
-void wincore_wddvmem_cpp_FUN_005acb10(void);
-void __cdecl wincore_wddvmem_cpp_FUN_005acc00(void);
-void __cdecl wincore_wddvmem_cpp_FUN_005acd00(void);
-void __cdecl wincore_wddvmem_cpp_FUN_005acec0(void);
-void __cdecl wincore_wddvmem_cpp_FUN_005acff0(void);
+void wincore_wddvmem_cpp_openScreenDevice_FUN_005acb10(void);
+void __cdecl wincore_wddvmem_cpp_closeScreenDevice_FUN_005acc00(void);
+void __cdecl wincore_wddvmem_cpp_analyzePixelFormat_FUN_005acd00(void);
+void __cdecl wincore_wddvmem_cpp_setupColorPalette_FUN_005acec0(void);
+void __cdecl wincore_wddvmem_cpp_swapBuffers_FUN_005acff0(void);
 void wincore_wddvmem_cpp_FUN_005ad270(void);
 void __cdecl wincore_wddvmem_cpp_videoRestore_FUN_005ad2c0(void);
-void __cdecl wincore_wddvmem_cpp_FUN_005ad3d0(void);
+void __cdecl wincore_wddvmem_cpp_stubFunction_FUN_005ad3d0(void);
 BOOL __cdecl wincore_wddvmem_cpp_freeLibrary_FUN_005ad450(HMODULE hLibModule);
-HMODULE __cdecl wincore_wddvmem_cpp_FUN_005ad460(LPCSTR lpLibFileName);
+HMODULE __cdecl wincore_wddvmem_cpp_loadLibrary_FUN_005ad460(LPCSTR lpLibFileName);
 FARPROC __cdecl wincore_wddvmem_cpp_getProcAddress_FUN_005ad470(HMODULE hModule,LPCSTR lpProcName);
 void __cdecl core_weapon_cpp_staticInit_FUN_005ad490(void);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_ctor_FUN_005ad4c0(CWeapon *this_ptr);
 CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(CWeapon *this_ptr,uint flags);
 void __cdecl core_weapon_cpp_CWeapon_setup_FUN_005ad640(CWeapon *this_ptr);
-int __cdecl core_weapon_cpp_FUN_005ad680(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_005ad730(int param_1);
+int __cdecl core_weapon_cpp_CWeapon_renderOpaque_FUN_005ad680(CWeapon *this_ptr);
+CBoundingBox3D * __cdecl core_weapon_cpp_CWeapon_getBoundingBox_FUN_005ad730(CWeapon *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_weapon_cpp_CWeapon_process_FUN_005ad770(CWeapon *this_ptr,float delta_time);
 void __cdecl core_weapon_cpp_CWeapon_archive_FUN_005ad8b0(CWeapon *this_ptr);
-bool core_weapon_cpp_FUN_005ad990(undefined4 param_1,int *param_2);
-int __cdecl core_weapon_cpp_FUN_005ad9a0(CWeapon *this_ptr,CDemonActor *picker);
+ECollisionType __cdecl core_weapon_cpp_CWeapon_getCollisionType_FUN_005ad990(CWeapon *this_ptr,SCollisionInfo *collision_info);
+int __cdecl core_weapon_cpp_CWeapon_canPickup_FUN_005ad9a0(CWeapon *this_ptr,CDemonActor *picker);
 void __cdecl core_weapon_cpp_CWeapon_pickup_FUN_005ada50(CWeapon *this_ptr,CDemonActor *carrier);
-void core_weapon_cpp_FUN_005ada60(int param_1,undefined4 *param_2);
+void __cdecl core_weapon_cpp_CWeapon_onDropped_FUN_005ada60(CWeapon *this_ptr,CVector3f *drop_position);
 CDemonActor * __cdecl core_weapon_cpp_CWeapon_getCarrier_FUN_005adb10(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_005adb20(int param_1);
+void __cdecl core_weapon_cpp_CWeapon_updateLighting_FUN_005adb20(CWeapon *this_ptr);
 void __cdecl core_weapon_cpp_CWeapon_setWeaponState_FUN_005add50(CWeapon *this_ptr,int weapon_state);
 void __cdecl core_weapon_cpp_CWeapon_onPickup_FUN_005add60(CWeapon *this_ptr,CDemonActor *owner);
-void core_weapon_cpp_FUN_005add80(int param_1);
+CVector3f * __cdecl core_weapon_cpp_CWeapon_getMuzzlePoint_FUN_005add80(CWeapon *this_ptr,CVector3f *out_point);
 int __cdecl core_weapon_cpp_CWeapon_fire_FUN_005adde0(CWeapon *this_ptr);
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ade10(CWeapon *this_ptr);
-undefined4 core_weapon_cpp_FUN_005ade30(void);
+float __cdecl core_weapon_cpp_CWeapon_getDamage_FUN_005ade30(CWeapon *this_ptr);
 void core_weapon_cpp_FUN_005ade40(int param_1);
-void __cdecl core_weapon_cpp_FUN_005adf90(CWeapon *this_ptr);
-void core_weapon_cpp_FUN_005adfc0(void);
+void __cdecl core_weapon_cpp_CWeapon_renderAimBeam_FUN_005adf90(CWeapon *this_ptr);
+void __cdecl core_weapon_cpp_CWeapon_onFired_FUN_005adfc0(CWeapon *this_ptr);
 void __cdecl core_weather_cpp_staticInit_FUN_005ae140(void);
 CWeather * __cdecl core_weather_cpp_CWeather_ctor_FUN_005ae170(CWeather *this_ptr);
 void __cdecl core_weather_cpp_FUN_005ae190(CWeather *this_ptr);
 undefined4 core_weather_cpp_FUN_005ae560(void);
 void __cdecl core_weather_cpp_CWeather_createLightningStrike_FUN_005ae580(CWeather *this_ptr,float flash_timer,int play_sound);
 void __cdecl core_weather_cpp_CWeather_createThunder_FUN_005ae840(CWeather *this_ptr);
-void __cdecl core_weather_cpp_FUN_005ae890(CWeather *this_ptr);
+void __cdecl core_weather_cpp_CWeather_renderParticles_FUN_005ae890(CWeather *this_ptr);
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_005aefc0(CWeather *this_ptr,EWeatherType type);
 void __cdecl core_weather_cpp_CWeather_setOriginAndRotation_FUN_005af040(CWeather *this_ptr,CVector3f *direction,CVector3f *rotation);
 void __cdecl core_werewolf_cpp_staticInit_FUN_005af240(void);
 void core_werewolf_cpp_factoryFuncWerewolf_FUN_005af2a0(void);
 CDemonActorType * core_werewolf_cpp_CWerewolf_getActorType_FUN_005af2c0(CWerewolf *this_ptr);
 CWerewolf * __cdecl core_werewolf_cpp_CWerewolf_ctor_FUN_005af2d0(CWerewolf *this_ptr);
-void core_werewolf_cpp_FUN_005af380(CEnemy *param_1);
-void core_werewolf_cpp_FUN_005af4a0(CWerewolf *param_1,float param_2);
+void __cdecl core_werewolf_cpp_CWerewolf_setup_FUN_005af380(CWerewolf *this_ptr);
+void __cdecl core_werewolf_cpp_CWerewolf_process_FUN_005af4a0(CWerewolf *this_ptr,float delta_time);
 

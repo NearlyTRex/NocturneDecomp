@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_stranger.cpp_CPrye_ctor_FUN_00517f80
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x20d04                        ; 00517f50
         ;   Label: core_prye.cpp_factoryFuncPrye_FUN_00517f50
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00517f55
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00517f55
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00517f5a
     TEST EAX,EAX                        ; 00517f5d
     JNZ 0x00517f62                      ; 00517f5f

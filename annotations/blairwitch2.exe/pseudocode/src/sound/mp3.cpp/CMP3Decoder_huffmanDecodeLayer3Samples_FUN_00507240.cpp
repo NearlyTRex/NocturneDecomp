@@ -15,6 +15,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
   uint uVar2;
   int iVar3;
   byte *puVar4;
+  SHuffmanTable *huffman_table;
   int iVar5;
   int iVar6;
   int iVar7;
@@ -24,15 +25,15 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
   uint *puVar11;
   byte bVar12;
   char *pcVar13;
-  uint local_48;
-  uint local_44;
-  uint local_40;
-  uint local_3c;
+  int local_48;
+  int local_44;
+  int local_40;
+  int local_3c;
   int local_38;
   int local_34;
   int local_30;
   SMpegLayer3SideInfo *local_2c;
-  int local_28;
+  SHuffmanTable *local_28;
   SMpegLayer3SideInfo *local_24;
   int local_20;
   char *local_1c;
@@ -48,7 +49,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240(C
     local_1c = (char *)0x1d23658;
     do {
       pcVar13 = local_1c;
-      FUN_005b7790(local_1c,&DAT_005e00f7,iVar6);
+      _sprintf(local_1c,&DAT_005e00f7);
       *(uint *)(&DAT_01d23e7c + iVar8) = *(uint *)(&DAT_0061ade0 + local_18);
       *(uint *)(iVar8 + 0x1d2365c) = *(uint *)(&DAT_0061ade4 + local_18);
       *(uint *)(iVar8 + 0x1d23660) = *(uint *)(&DAT_0061ade8 + local_18);
@@ -144,24 +145,24 @@ LAB_005075d4:
   for (uVar9 = 0; pSVar1 = local_24, iVar7 = local_30,
       uVar9 < (uint)(*(int *)(local_24 + local_30 + 0x1c) * 2); uVar9 = uVar9 + 2) {
     if ((int)uVar9 < local_20) {
-      iVar7 = *(int *)(local_24 + local_30 + 0x34) * 0x828 + 0x1d23658;
+      huffman_table = (SHuffmanTable *)(*(int *)(local_24 + local_30 + 0x34) * 0x828 + 0x1d23658);
     }
     else if ((int)uVar9 < iVar8) {
-      iVar7 = *(int *)(local_24 + local_30 + 0x38) * 0x828 + 0x1d23658;
+      huffman_table = (SHuffmanTable *)(*(int *)(local_24 + local_30 + 0x38) * 0x828 + 0x1d23658);
     }
     else {
-      iVar7 = *(int *)(local_24 + local_30 + 0x3c) * 0x828 + 0x1d23658;
+      huffman_table = (SHuffmanTable *)(*(int *)(local_24 + local_30 + 0x3c) * 0x828 + 0x1d23658);
     }
-    sound_mp3_cpp_FUN_00504f10(this_ptr,iVar7,&local_48,&local_44,&local_40,&local_3c);
-    *(uint *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) =
-         local_48;
+    sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10
+              (this_ptr,huffman_table,&local_48,&local_44,&local_40,&local_3c);
+    *(int *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = local_48;
     iVar7 = iVar6 / 0x12;
     iVar3 = iVar6 % 0x12;
     iVar6 = iVar6 + 2;
-    *(uint *)(quantized_dest + iVar3 * 4 + iVar7 * 0x48) = local_44;
+    *(int *)(quantized_dest + iVar3 * 4 + iVar7 * 0x48) = local_44;
   }
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
-  local_28 = (*(int *)(pSVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1d23658;
+  local_28 = (SHuffmanTable *)((*(int *)(pSVar1 + iVar7 + 0x5c) + 0x20) * 0x828 + 0x1d23658);
   iVar8 = uVar9 + 3;
   iVar6 = uVar9 + 2;
   local_2c = side_info + granule * 0x48 + channel * 0xa0;
@@ -170,18 +171,18 @@ LAB_005075d4:
     local_14 = frame_bit_offset + *(int *)(local_2c + 0x18);
     uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);
     if ((local_14 <= uVar2) || (0x23f < (int)uVar9)) break;
-    sound_mp3_cpp_FUN_00504f10(this_ptr,local_28,&local_48,&local_44,&local_40,&local_3c);
-    *(uint *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) =
-         local_40;
-    *(uint *)(quantized_dest + (iVar7 % 0x12) * 4 + (iVar7 / 0x12) * 0x48) = local_3c;
-    *(uint *)(quantized_dest + (iVar6 % 0x12) * 4 + (iVar6 / 0x12) * 0x48) = local_48;
+    sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_00504f10
+              (this_ptr,local_28,&local_48,&local_44,&local_40,&local_3c);
+    *(int *)(quantized_dest + ((int)uVar9 % 0x12) * 4 + ((int)uVar9 / 0x12) * 0x48) = local_40;
+    *(int *)(quantized_dest + (iVar7 % 0x12) * 4 + (iVar7 / 0x12) * 0x48) = local_3c;
+    *(int *)(quantized_dest + (iVar6 % 0x12) * 4 + (iVar6 / 0x12) * 0x48) = local_48;
     iVar3 = iVar8 / 0x12;
     iVar5 = iVar8 % 0x12;
     uVar9 = uVar9 + 4;
     iVar7 = iVar7 + 4;
     iVar6 = iVar6 + 4;
     iVar8 = iVar8 + 4;
-    *(uint *)(quantized_dest + iVar5 * 4 + iVar3 * 0x48) = local_44;
+    *(int *)(quantized_dest + iVar5 * 4 + iVar3 * 0x48) = local_44;
   }
   iVar6 = granule * 0x48 + channel * 0xa0;
   sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_00504d20(this_ptr);

@@ -45,7 +45,7 @@ void core_prye_cpp_FUN_0051f360(int param_1,int param_2)
     }
     iVar2 = *(int *)(param_1 + 0x20c24);
     iVar1 = *(int *)(iVar2 + 0x154);
-    core_xform_cpp_FUN_00583b10(&stack0xffffff08);
+    core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&stack0xffffff08);
     auStack_34[2] = local_38;
     auStack_34[(uint)bVar5 * -2 + 3] = auStack_34[(uint)bVar5 * -2];
     auStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =

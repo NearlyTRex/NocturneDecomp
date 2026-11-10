@@ -18,9 +18,10 @@ CCryptVessel * __cdecl core_vessel_cpp_CCryptVessel_dtor_FUN_00585cd0(CCryptVess
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&this_ptr->field_0x520,1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408930(&(this_ptr->flame).base,1);
   pCVar2 = (CCryptVessel *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar1[-2].field_0x48,1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                     ((CDemonActor *)(pCVar1[-2].orient_matrix.m + 1),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

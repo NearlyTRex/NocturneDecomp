@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 96,
+    "complexity_score": 72,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 26,
-    "suspect_count": 6,
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
-    "total_lines": 91
+    "total_lines": 92
   },
   "cross_references": [],
   "function": {
@@ -112,48 +111,32 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x54 + lod_level * 4) <= iVar3) break;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x7c + lod_level * 4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 16,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(uint)*(ushort *)(iVar4 + iVar2),(uint)*(ushort *)(iVar4 + 2 + iVar2));",
+      "text": "(DAT_005f2afc,(uint)*(ushort *)(pSVar2 + iVar4),(uint)*(ushort *)(pSVar2 + iVar4 + 2))",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 18,
+      "line": 19,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(uint)*(ushort *)(iVar4 + 2 + iVar2),",
+      "text": "(DAT_005f2afc,(uint)*(ushort *)(pSVar2 + iVar4 + 2),",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 25,
+      "line": 26,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(uint)*(ushort *)(iVar1 + iVar2),(int)this_ptr);",
+      "text": "(DAT_005f2afc,(uint)*(ushort *)(pSVar2 + iVar1),(int)this_ptr);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 28,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",

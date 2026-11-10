@@ -11,7 +11,7 @@ void core_health_cpp_FUN_004d2150(void)
 {
   CHealthItemSmall *this_ptr;
   
-  this_ptr = (CHealthItemSmall *)FUN_005a3cb2(0x2e4);
+  this_ptr = (CHealthItemSmall *)debugAllocTracked1(0x2e4);
   if (this_ptr == (CHealthItemSmall *)0x0) {
     return;
   }

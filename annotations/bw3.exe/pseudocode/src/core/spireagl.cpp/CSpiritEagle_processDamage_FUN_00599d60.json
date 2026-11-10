@@ -1,0 +1,233 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 64,
+    "complexity_score": 151,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 26,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 90
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00599d60",
+    "address_range": [
+      [
+        "00599d60",
+        "00599e01"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60",
+    "signature": "void __cdecl core_spireagl_cpp_CSpiritEagle_processDamage_FUN_00599d60(CSpiritEagle *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00431ce0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00431ce0"
+    },
+    {
+      "addr": "00430d60",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60"
+    },
+    {
+      "addr": "00599c80",
+      "is_variadic": false,
+      "name": "core_spireagl.cpp_FUN_00599c80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d9a11",
+      "name": "DAT_005d9a11",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9a15",
+      "name": "DAT_005d9a15",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.0,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 102,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 22,
+      "INT_AND": 24,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 20,
+      "INT_ZEXT": 8,
+      "LOAD": 14,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 312
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSpiritEagle *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 9,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "pCVar2 = (CDemonActorType *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0xcc))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "pCVar2 = (CDemonActorType *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0xcc))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2538 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2538 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 15,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xa8))(this_ptr,0x32,0x41c80000);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_005d9a11",
+      "severity": "mild",
+      "text": "puVar3 = &DAT_005d9a11;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x26fc",
+      "severity": "mild",
+      "text": "if ((*(float *)(damage_info + 4) <= 0.0) || (*(int *)&this_ptr->field_0x26fc != 0))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_005d9a15",
+      "severity": "mild",
+      "text": "puVar3 = &DAT_005d9a15;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "core_spireagl_cpp_FUN_00599c80(&this_ptr->field_0x158,puVar3);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CSpiritEagle",
+        "offset": 264,
+        "vtable_addr": "005e7d04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

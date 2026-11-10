@@ -5,14 +5,6 @@
 // Function prototypes for unkafter/npc.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_npc.cpp_FUN_00510c70
-// Address: 00510c70
-bool FUN_00510c70(int param_1);
-
-// Original: unkafter_npc.cpp_FUN_00510c90
-// Address: 00510c90
-int FUN_00510c90(int param_1);
-
 // Original: unkafter_npc.cpp_FUN_00510ca0
 // Address: 00510ca0
-void FUN_00510ca0(undefined4 *param_1);
+CFont * __cdecl FUN_00510ca0(CFont *this_ptr);

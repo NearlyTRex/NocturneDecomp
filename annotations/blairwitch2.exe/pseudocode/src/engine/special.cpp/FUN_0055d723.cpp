@@ -21,9 +21,9 @@ void __cdecl engine_special_cpp_FUN_0055d723(SProjectedVertex *output,CVector3i 
   int iVar8;
   
   if (_DAT_01c38b40 != 0) {
-    iVar2 = *(int *)input - _DAT_01c38b6c;
-    iVar7 = *(int *)(input + 4) - _DAT_01c38b70;
-    iVar8 = *(int *)(input + 8) - _DAT_01c38b74;
+    iVar2 = input->x - _DAT_01c38b6c;
+    iVar7 = input->y - _DAT_01c38b70;
+    iVar8 = input->z - _DAT_01c38b74;
     lVar1 = (longlong)iVar7 * (longlong)_DAT_01c38ba8 + (longlong)iVar2 * (longlong)_DAT_01c38b9c +
             (longlong)iVar8 * (longlong)_DAT_01c38bb4;
     uVar3 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
@@ -65,9 +65,9 @@ void __cdecl engine_special_cpp_FUN_0055d723(SProjectedVertex *output,CVector3i 
     *(uint *)(output + 0x10) = uVar6;
     return;
   }
-  DAT_0061c7d8 = *(int *)input - _DAT_01c38b6c;
-  DAT_0061c7dc = *(int *)(input + 4) - _DAT_01c38b70;
-  DAT_0061c7e0 = *(int *)(input + 8) - _DAT_01c38b74;
+  DAT_0061c7d8 = input->x - _DAT_01c38b6c;
+  DAT_0061c7dc = input->y - _DAT_01c38b70;
+  DAT_0061c7e0 = input->z - _DAT_01c38b74;
   lVar1 = (longlong)DAT_0061c7dc * (longlong)_DAT_01c38ba8 +
           (longlong)DAT_0061c7d8 * (longlong)_DAT_01c38b9c +
           (longlong)DAT_0061c7e0 * (longlong)_DAT_01c38bb4;

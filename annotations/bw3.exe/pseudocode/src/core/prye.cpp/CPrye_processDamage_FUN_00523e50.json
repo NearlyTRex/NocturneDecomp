@@ -1,0 +1,557 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 298,
+    "complexity_score": 511,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 106,
+    "suspect_count": 39,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 404
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00523e50",
+    "address_range": [
+      [
+        "00523e50",
+        "00524167"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_prye.cpp_CPrye_processDamage_FUN_00523e50",
+    "signature": "void __cdecl core_prye_cpp_CPrye_processDamage_FUN_00523e50(CPrye *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
+    },
+    {
+      "addr": "0040cf40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cf40"
+    },
+    {
+      "addr": "00430d60",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60"
+    },
+    {
+      "addr": "004bd910",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910"
+    },
+    {
+      "addr": "004cee30",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004cee30"
+    },
+    {
+      "addr": "004d3af0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_stopNearbyInteraction_FUN_004d3af0"
+    },
+    {
+      "addr": "004fc070",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
+    },
+    {
+      "addr": "004fc0d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
+    },
+    {
+      "addr": "00556700",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556700"
+    },
+    {
+      "addr": "00556be0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00556be0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cd72f",
+      "name": "s_CBugs_005cd72f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd735",
+      "name": "s_prye_death_wav_005cd735",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd745",
+      "name": "s_prye_pain_wav_005cd745",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd757",
+      "name": "DAT_005cd757",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e34f8",
+      "name": "DAT_005e34f8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "005fed24",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "01d22e44"
+    },
+    {
+      "addr": "01d2130c",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01d21500",
+      "name": "g_CGameInstance.field452_0x1f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2155c",
+      "name": "g_CGameInstance.field544_0x250",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cfd794",
+      "name": "g_CTommyGunClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.3478260869565215,
+    "instruction_count": 230,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BOOL_OR": 7,
+      "BRANCH": 4,
+      "CALL": 14,
+      "CALLIND": 5,
+      "CBRANCH": 29,
+      "COPY": 331,
+      "FLOAT2FLOAT": 10,
+      "FLOAT_EQUAL": 5,
+      "FLOAT_LESS": 5,
+      "FLOAT_NAN": 10,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 87,
+      "INT_AND": 126,
+      "INT_CARRY": 20,
+      "INT_EQUAL": 94,
+      "INT_LEFT": 20,
+      "INT_LESS": 20,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 25,
+      "INT_SBORROW": 20,
+      "INT_SCARRY": 20,
+      "INT_SLESS": 47,
+      "INT_SUB": 86,
+      "INT_ZEXT": 20,
+      "LOAD": 50,
+      "POPCOUNT": 47,
+      "RETURN": 2,
+      "STORE": 80
+    },
+    "pcode_op_count": 1230
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPrye *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x27b0",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x27b0 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x1f4",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x1f4 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x250",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x250 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0xcdcc",
+      "severity": "mild",
+      "text": "if ((((0.0 < *(float *)&this_ptr->field_0xcdcc) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0xcdcc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xcdcc = _DAT_005e34f8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0xcdcc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xcdcc = 0x3e19999a;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&this_ptr->field_0x2538 - *(float *)(damage_info + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "this_ptr_00 = &this_ptr->field_0x158;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x2538 = fVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x20ba4",
+      "severity": "mild",
+      "text": "(((*(int *)&this_ptr->field_0x20ba4 == 0 && (*(int *)&this_ptr->field_0x20c20 == 0)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x20c20",
+      "severity": "mild",
+      "text": "(((*(int *)&this_ptr->field_0x20ba4 == 0 && (*(int *)&this_ptr->field_0x20c20 == 0)) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x20b64",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x20b64 == 0)))))) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x20cf4",
+      "severity": "mild",
+      "text": "iVar1 = sound_sndmain_cpp_FUN_00556700(*(uint *)&this_ptr->field_0x20cf4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 54,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x20cf4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20cf4 = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x2538",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2538 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 62,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xf0))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xf0))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x20ba4",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x20ba4 == 0) && (*(int *)&this_ptr->field_0x20c20 == 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x20c20",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x20ba4 == 0) && (*(int *)&this_ptr->field_0x20c20 == 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0x20ba4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20ba4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 83,
+      "match": "field_0x20c20",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20c20 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,desired_state_index,iVar1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 87,
+      "match": "field_0x20cf4",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&this_ptr->field_0x20cf4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 89,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "uVar3 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 91,
+      "match": "field_0x20cf4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20cf4 = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 96,
+      "match": "field_0x20c24",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x20c24 == *(int *)&this_ptr->field_0x25b0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 96,
+      "match": "field_0x25b0",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x20c24 == *(int *)&this_ptr->field_0x25b0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 97,
+      "match": "field_0x20c24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20c24 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 99,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,0,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 99,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,0,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 100,
+      "match": "field_0x2628",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2628 == *(int *)&this_ptr->field_0x20c24) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 100,
+      "match": "field_0x20c24",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2628 == *(int *)&this_ptr->field_0x20c24) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 101,
+      "match": "field_0x20c24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20c24 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 103,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,1,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 103,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x128))(this_ptr,1,0);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPrye",
+        "offset": 264,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

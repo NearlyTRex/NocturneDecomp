@@ -1,5 +1,5 @@
 mapping: /home/aryie/Repositories/NocturneDecomp/annotations/nocturne.exe/reports/sibling_verified_mapping.json
-  nocedit.exe 7100 functions, nocturne.exe 5709 functions, 5270 pairs
+  nocedit.exe 7100 functions, nocturne.exe 5709 functions, 5268 pairs
 
 ==============================================================================
 A. TRANSLATION-UNIT RESIDUE
@@ -23,6 +23,7 @@ A. TRANSLATION-UNIT RESIDUE
   core_scat.cpp                       3         2         3  PAIRABLE
   core_dcamera.cpp                    2         2         2  PAIRABLE
   core_script.cpp                    56         1        56  PAIRABLE
+  engine_palette.cpp                  7         1         0  PAIRABLE
   engine_drender.cpp                  6         1         4  PAIRABLE
   core_event.cpp                      1         4         0  PAIRABLE
   core_sound.cpp                      1         4         1  PAIRABLE
@@ -62,7 +63,6 @@ A. TRANSLATION-UNIT RESIDUE
   core_camview.cpp                    6         0         0  EDITOR-ONLY
   core_manpuz.cpp                     6         0         6  EDITOR-ONLY
   core_zombie.cpp                     6         0         6  EDITOR-ONLY
-  engine_palette.cpp                  6         0         0  EDITOR-ONLY
   core_door.cpp                       5         0         5  EDITOR-ONLY
   core_drip.cpp                       5         0         5  EDITOR-ONLY
   core_frankgen.cpp                   5         0         5  EDITOR-ONLY
@@ -180,8 +180,8 @@ A. TRANSLATION-UNIT RESIDUE
   support_trisock.cpp                 1         0         1  EDITOR-ONLY
   wincore_wddvmem.cpp                 1         0         0  EDITOR-ONLY
 
-  1586 nocedit / 61 nocturne functions unmatched across 169 units
-  units: 20 pairable, 147 editor-only, 2 game-only
+  1587 nocedit / 62 nocturne functions unmatched across 169 units
+  units: 21 pairable, 146 editor-only, 2 game-only
   (crt_* units excluded; they are archive members, not source-ordered -- --include-crt)
   families absent from the target entirely: 34 class(es), 16 method categor(ies)
 
@@ -241,10 +241,10 @@ core_slew.cpp   between 005a2050->0051f920 and 005a20b0->0051f980
 
   4 pairable brackets covering 14 nocedit / 7 nocturne functions
   225 one-sided brackets (646 editor-only, 24 game-only) -- not pairable by construction
-  926 nocedit functions in 51 regions with no bracket at all:
+  927 nocedit functions in 51 regions with no bracket at all:
         713  fewer than 2 anchors in the unit
         134  before the unit's first anchor
-         79  after the unit's last anchor
+         80  after the unit's last anchor
       (a unit with no anchors is usually absent from the game build entirely)
 
 ==============================================================================
@@ -253,22 +253,23 @@ D. UNMATCHED ON BOTH SIDES UNDER THE SAME NAME
   The mapper matches on bytes and layout only -- it never reads a name, so
   these are invisible to it. Unit and name core both agree on each row.
 
-  candidate pairs   : 0
+  candidate pairs   : 1
   ambiguous cores   : 0   (core repeats on one side -- overloads; excluded)
-  by shape agreement: {}
+  by shape agreement: {'unshaped': 1}
     identical/same_mnemonics -- the body did not change either; the mapper
     missed these on layout alone, so they are as safe as a matched pair.
     size_mismatch -- the body WAS edited between the builds. That is the
     case no automatic signal can reach, and the reason to record it by hand.
 
+    00544f00 -> 004ef000  [unshaped]  engine_palette.cpp_CFont_getLineSpacing
 
 ==============================================================================
 C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
 ==============================================================================
-  pairs compared        : 5270
+  pairs compared        : 5268
   never transferred     : 6   (nocturne side has no signature at all -- transfer work, not drift)
   genuine divergence    : 53   (both sides typed, and they disagree -- investigate)
-  name core differs     : 61   (mapped as the same function under two different names)
+  name core differs     : 59   (mapped as the same function under two different names)
 
   -- genuine divergence, highest confidence first --
   by kind: {'ret': 28, 'param': 13, 'param2': 8, 'param0': 7, 'param3': 5, 'param1': 4, 'param5': 2, 'param6': 1, 'param4': 1, 'conv': 1}
@@ -420,9 +421,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     0050f1b0 -> 0056497c  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugAllocTracked1
         param count 3 -> 1
-    0050f250 -> 005635b0  conf 0.85  shape size_mismatch
-      shape_memdbg.cpp_debugMalloc
-        param count 3 -> 1
     0050f350 -> 00565c50  conf 0.85  shape size_mismatch
       shape_memdbg.cpp_debugCalloc
         param count 4 -> 2
@@ -446,12 +444,15 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     00574910 -> 00513720  conf 0.75  shape size_mismatch
       core_setdir.cpp_CZThumb_saveZBufferTable
         param count 7 -> 1
+    0050f250 -> 005635b0  conf 0.59  shape size_mismatch
+      shape_memdbg.cpp_debugMalloc
+        param count 3 -> 1
     004090a0 -> 0040a130  conf 0.57  shape unshaped
       core_actor.cpp_CDemonActor_getPathMap
         ret CPathMap* -> int
 
   -- same pair, different name core --
-  {'unnamed on one side': 49, 'renamed': 5, 'MAPPING SUSPECT': 4, 'stubbed in nocturne': 3}
+  {'unnamed on one side': 49, 'MAPPING SUSPECT': 4, 'renamed': 3, 'stubbed in nocturne': 3}
     MAPPING SUSPECT     the two names claim different CLASSES, so the
                         pair is probably wrong, not the names
     case-only spelling  same name, different capitalisation -- one build
@@ -475,24 +476,18 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [renamed] 004111b0 -> 0040ef60  conf 1.00  shape same_mnemonics
       nocedit  CAmmo_setAmmoCount
       nocturne CAmmo_setWeaponAmmo
-    [renamed] 0042cd50 -> 00428ee0  conf 1.00  shape same_mnemonics
-      nocedit  CCharacter_setDoorTarget
-      nocturne CCharacter_setWalkTimeout
     [renamed] 005bac80 -> 00534c80  conf 1.00  shape identical
       nocedit  CDemonTriangle_arrdtor40
       nocturne SFly_arrdtor40
-    [renamed] 005e3540 -> 0054a900  conf 1.00  shape same_mnemonics
-      nocedit  CTurret_stopInteraction
-      nocturne CTurret_stopUsing
     [renamed] 0046fb70 -> 0044ba10  conf 0.82  shape unshaped
       nocedit  CActorDestination_renderTransparent
       nocturne CActorDestination_getCollisionType
-    [stubbed in nocturne] 00408ac0 -> 00409f00  conf 0.82  shape similar_size
-      nocedit  CDemonActor_renderTransparent
-      nocturne CDemonActor_returnZero
     [stubbed in nocturne] 00409080 -> 0040a380  conf 0.82  shape unshaped
       nocedit  CDemonActor_drop
       nocturne CDemonActor_doNothing
+    [stubbed in nocturne] 00408ac0 -> 00409f00  conf 0.57  shape similar_size
+      nocedit  CDemonActor_renderTransparent
+      nocturne CDemonActor_returnZero
     [stubbed in nocturne] 004090a0 -> 0040a130  conf 0.57  shape unshaped
       nocedit  CDemonActor_getPathMap
       nocturne CDemonActor_returnZero
@@ -589,9 +584,6 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 0050f210 -> 00564494  conf 0.85  shape size_mismatch
       nocedit  debugFreeChecked
       nocturne operator_delete
-    [unnamed on one side] 0050f250 -> 005635b0  conf 0.85  shape size_mismatch
-      nocedit  debugMalloc
-      nocturne malloc
     [unnamed on one side] 0050f350 -> 00565c50  conf 0.85  shape size_mismatch
       nocedit  debugCalloc
       nocturne calloc
@@ -643,6 +635,9 @@ C. SIGNATURE DIVERGENCE ON MATCHED PAIRS
     [unnamed on one side] 0060128c -> 00566440  conf 0.75  shape unshaped
       nocedit  _getcwd
       nocturne getcwd
+    [unnamed on one side] 0050f250 -> 005635b0  conf 0.59  shape size_mismatch
+      nocedit  debugMalloc
+      nocturne malloc
 
-  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2496, 'unverifiable': 2744, 'conflict': 30}
+  for reference, verify_sibling_signatures.py's byte-measured verdicts: {'agree': 2995, 'unverifiable': 2243, 'conflict': 30}
   those measure ARGUMENT SIZE from nocturne's own bytes and are a different axis

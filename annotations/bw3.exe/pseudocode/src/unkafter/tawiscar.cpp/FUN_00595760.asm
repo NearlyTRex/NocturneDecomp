@@ -81,7 +81,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   unkafter_tawiscar.cpp_FUN_00595d20 at 00595e14
+;   core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20 at 00595e14
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e7500

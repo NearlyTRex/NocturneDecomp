@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_thehand.cpp_FUN_0056c140 at 0056c287
-;   core_thehand.cpp_FUN_0056ca00 at 0056ca8a
+;   core_thehand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056ca8a
+;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c287
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cfd798

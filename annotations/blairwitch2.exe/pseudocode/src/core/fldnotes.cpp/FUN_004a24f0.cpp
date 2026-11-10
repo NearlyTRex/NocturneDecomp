@@ -33,7 +33,7 @@ void core_fldnotes_cpp_FUN_004a24f0(int *param_1)
       str1 = piStack_1c + iVar3 * 8;
       iVar2 = _stricmp((char *)str1,(char *)str2);
       if (iVar2 != 0) {
-        FUN_005b7790(acStack_120,0x5d5aab,str1);
+        _sprintf(acStack_120,(char *)0x5d5aab);
         engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr,acStack_120,0x23,0x2f);
         do {
           iVar2 = *str1;

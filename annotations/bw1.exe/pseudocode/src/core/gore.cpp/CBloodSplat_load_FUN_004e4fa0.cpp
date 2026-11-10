@@ -11,13 +11,14 @@ int __cdecl core_gore_cpp_CBloodSplat_load_FUN_004e4fa0(CBloodSplat *this_ptr,_F
 {
   int iVar1;
   
-  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->field_0x4,&this_ptr->field_0x8,
-             &this_ptr->field_0xc);
-  _fscanf(file_handle,"%d,%d,%d\n",&this_ptr->field_0x10,&this_ptr->field_0x14,this_ptr);
-  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->field_0x18,&this_ptr->field_0x20,
-             &this_ptr->field_0x1c);
-  iVar1 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&this_ptr->field_0x28,
-                     &this_ptr->field_0x2c,&this_ptr->field_0x30,&this_ptr->field_0x34,
-                     &this_ptr->field_0x38,&this_ptr->field_0x3c,&this_ptr->field_0x40);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
+             &(this_ptr->position).z);
+  _fscanf(file_handle,"%d,%d,%d\n",&this_ptr->is_wall_splat,&this_ptr->blood_type,this_ptr);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->rotation,&(this_ptr->rotation).z,
+             &(this_ptr->rotation).y);
+  iVar1 = _fscanf(file_handle,"%d,%d,%d,%d,%d,%d,%d\n",&this_ptr->texture_variant,
+                     &this_ptr->position_fixed,&(this_ptr->position_fixed).y,
+                     &(this_ptr->position_fixed).z,&this_ptr->normal_fixed,
+                     &(this_ptr->normal_fixed).y,&(this_ptr->normal_fixed).z);
   return iVar1;
 }

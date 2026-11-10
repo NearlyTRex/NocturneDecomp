@@ -16,8 +16,8 @@
 ;
 ; XREF[3]:
 ;   sound_sndmain.cpp_CSfxSlot_compute_FUN_00570f30 at 00571021
-;   sound_sndmain.cpp_FUN_00576c20 at 00576c89
-;   sound_sndmain.cpp_FUN_00576f40 at 00576fee
+;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00576f40 at 00576fee
+;   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20 at 00576c89
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f3128

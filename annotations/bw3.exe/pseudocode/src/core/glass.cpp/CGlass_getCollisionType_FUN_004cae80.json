@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 43,
+    "complexity_score": 8,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [],
@@ -82,36 +80,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x1b0",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x1b0 != 0) && (*(int *)&this_ptr->field_0x218 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x1b0 != 0) && (*(int *)&this_ptr->field_0x218 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x100 = 1;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGlass",
         "offset": 60,
         "vtable_addr": "005e0be4"
       }

@@ -14,17 +14,18 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
 {
   float *pfVar1;
   double dVar2;
-  float fVar3;
-  double dVar4;
-  uint uVar5;
-  int iVar6;
+  CSfxSample *pCVar3;
+  float fVar4;
+  double dVar5;
+  uint uVar6;
   int iVar7;
-  CSfxSlot *pCVar8;
-  uint uVar9;
+  int iVar8;
+  CSfxSlot *pCVar9;
+  uint uVar10;
   int extraout_EDX;
   int extraout_EDX_00;
-  int iVar10;
-  float10 fVar11;
+  int iVar11;
+  float10 fVar12;
   int in_stack_00000028;
   int in_stack_0000002c;
   int in_stack_00000030;
@@ -62,77 +63,77 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
     _DAT_01d71de4 = 0xb9f;
     core_main_c_FUN_004e4330();
   }
-  if (*(int *)&param_1->field_0x64 != 0) {
+  if (param_1->playback_state != 0) {
     local_64 = in_stack_00000028;
     local_68 = 1;
-    if ((*(int *)&param_1->field_0x68 != 0) && (iVar7 = 0, pCVar8 = param_1, 0 < in_stack_0000002c))
-    {
+    if ((param_1->sample != (CSfxSample *)0x0) &&
+       (iVar8 = 0, pCVar9 = param_1, 0 < in_stack_0000002c)) {
       do {
-        if (0x3c000000 < *(int *)&pCVar8->field_0x90) {
+        if (0x3c000000 < *(int *)&pCVar9->field_0x90) {
           local_68 = 0;
           break;
         }
-        iVar7 = iVar7 + 1;
-        pCVar8 = (CSfxSlot *)&pCVar8->field_0x4;
-      } while (iVar7 < in_stack_0000002c);
+        iVar8 = iVar8 + 1;
+        pCVar9 = (CSfxSlot *)&(pCVar9->options).field_0x4;
+      } while (iVar8 < in_stack_0000002c);
     }
-    iVar7 = 0;
-    pCVar8 = param_1;
+    iVar8 = 0;
+    pCVar9 = param_1;
     if (0 < in_stack_0000002c) {
       do {
-        if ((local_68 != 0) || (*(int *)&pCVar8->field_0xd0 < 0)) {
-          *(uint *)&pCVar8->field_0xd0 = *(uint *)&pCVar8->field_0xb0;
+        if ((local_68 != 0) || (*(int *)&pCVar9->field_0xd0 < 0)) {
+          *(uint *)&pCVar9->field_0xd0 = *(uint *)&pCVar9->field_0xb0;
         }
-        iVar10 = iVar7 * 4;
-        *(int *)(&stack0x00000008 + iVar10) =
-             *(int *)(&stack0x00000008 + iVar10) + *(int *)&pCVar8->field_0xd0 * 4;
-        uVar5 = *(int *)&pCVar8->field_0xd0 - *(int *)&pCVar8->field_0xb0;
-        uVar9 = (int)uVar5 >> 0x1f;
-        if ((int)((uVar5 ^ uVar9) - uVar9) < 2) {
-          aiStack_c4[iVar7] = 0;
+        iVar11 = iVar8 * 4;
+        *(int *)(&stack0x00000008 + iVar11) =
+             *(int *)(&stack0x00000008 + iVar11) + *(int *)&pCVar9->field_0xd0 * 4;
+        uVar6 = *(int *)&pCVar9->field_0xd0 - *(int *)&pCVar9->field_0xb0;
+        uVar10 = (int)uVar6 >> 0x1f;
+        if ((int)((uVar6 ^ uVar10) - uVar10) < 2) {
+          aiStack_c4[iVar8] = 0;
         }
         else {
-          aiStack_c4[iVar7] = *(int *)(&stack0x00000008 + iVar10);
-          *(uint *)(&stack0x00000008 + iVar10) = *(uint *)(iVar10 + 0x2cf32a8);
+          aiStack_c4[iVar8] = *(int *)(&stack0x00000008 + iVar11);
+          *(uint *)(&stack0x00000008 + iVar11) = *(uint *)(iVar11 + 0x2cf32a8);
           memset
-                    (*(void **)(&stack0x00000008 + iVar10),0,in_stack_00000028 << 2);
+                    (*(void **)(&stack0x00000008 + iVar11),0,in_stack_00000028 << 2);
         }
-        iVar7 = iVar7 + 1;
-        pCVar8 = (CSfxSlot *)&pCVar8->field_0x4;
-      } while (iVar7 < in_stack_0000002c);
+        iVar8 = iVar8 + 1;
+        pCVar9 = (CSfxSlot *)&(pCVar9->options).field_0x4;
+      } while (iVar8 < in_stack_0000002c);
     }
-    local_18 = 1 << ((char)*(uint *)(*(int *)&param_1->field_0x68 + 0x104) - 1U & 0x1f);
-    fVar3 = 1.0 / (float)local_18;
-    iVar7 = 0;
-    local_6c = fVar3;
-    pCVar8 = param_1;
+    local_18 = 1 << ((char)(param_1->sample->sample_info).bit_depth - 1U & 0x1f);
+    fVar4 = 1.0 / (float)local_18;
+    iVar8 = 0;
+    local_6c = fVar4;
+    pCVar9 = param_1;
     if (0 < in_stack_0000002c) {
       do {
-        iVar7 = iVar7 + 1;
-        afStack_a8[iVar7] = *(float *)&pCVar8->field_0x90 * fVar3;
-        pCVar8 = (CSfxSlot *)&pCVar8->field_0x4;
-      } while (iVar7 < in_stack_0000002c);
+        iVar8 = iVar8 + 1;
+        afStack_a8[iVar8] = *(float *)&pCVar9->field_0x90 * fVar4;
+        pCVar9 = (CSfxSlot *)&(pCVar9->options).field_0x4;
+      } while (iVar8 < in_stack_0000002c);
     }
-    while (((iVar7 = in_stack_00000028, *(int *)&param_1->field_0x64 != 0 &&
-            (iVar10 = *(int *)&param_1->field_0x68, iVar10 != 0)) &&
-           (0.0 <= *(double *)&param_1->field_0x50))) {
+    while (((iVar8 = in_stack_00000028, param_1->playback_state != 0 &&
+            (pCVar3 = param_1->sample, pCVar3 != (CSfxSample *)0x0)) &&
+           (0.0 <= *(double *)&(param_1->options).field_0x50))) {
       if ((in_stack_00000028 < 1) ||
-         (dVar2 = (double)(((float)*(int *)(iVar10 + 0x10c) / (float)in_stack_00000030) *
-                          *(float *)&param_1->field_0x6c), dVar2 <= 0.0)) goto LAB_00554a6d;
-      dVar4 = (double)*(int *)(iVar10 + 0x164);
+         (dVar2 = (double)(((float)(pCVar3->sample_info).sample_rate / (float)in_stack_00000030) *
+                          param_1->effective_frequency), dVar2 <= 0.0)) goto LAB_00554a6d;
+      dVar5 = (double)*(int *)&pCVar3->field_0x164;
       local_5c = 0;
       local_c8 = in_stack_00000028;
-      if (0 < *(int *)(iVar10 + 0x110)) {
+      if (0 < (pCVar3->sample_info).sample_count) {
         local_74 = floor
-                             (((double)*(int *)(iVar10 + 0x128 + *(int *)&param_1->field_0x114 * 4)
-                              - *(double *)&param_1->field_0x50) / dVar2);
-        fVar11 = (float10)local_74;
+                             (((double)pCVar3->loop_endpoints[*(int *)&param_1->field_0x114] -
+                              *(double *)&(param_1->options).field_0x50) / dVar2);
+        fVar12 = (float10)local_74;
         round();
-        local_54 = (int)ROUND(fVar11);
+        local_54 = (int)ROUND(fVar12);
         if (local_54 < 0) {
           local_54 = 0;
         }
-        if (local_54 < iVar7) {
+        if (local_54 < iVar8) {
           local_c8 = local_54;
           local_5c = 1;
         }
@@ -142,19 +143,19 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
       }
       local_d0 = *(double *)&param_1->field_0x10c;
       local_58 = 0;
-      local_74 = floor((dVar4 - local_d0) / dVar2);
-      fVar11 = (float10)local_74;
+      local_74 = floor((dVar5 - local_d0) / dVar2);
+      fVar12 = (float10)local_74;
       round();
-      local_4c = (int)ROUND(fVar11);
+      local_4c = (int)ROUND(fVar12);
       if (local_4c < 1) {
-        local_d0 = local_d0 - dVar4;
+        local_d0 = local_d0 - dVar5;
         if (local_d0 < 0.0) {
           local_d0 = 0.0;
         }
-        local_74 = floor((dVar4 - local_d0) / dVar2);
-        fVar11 = (float10)local_74;
+        local_74 = floor((dVar5 - local_d0) / dVar2);
+        fVar12 = (float10)local_74;
         round();
-        local_4c = (int)ROUND(fVar11);
+        local_4c = (int)ROUND(fVar12);
       }
       if (local_4c < local_c8) {
         local_c8 = local_4c;
@@ -168,32 +169,32 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
         local_c8 = 0;
       }
       if (local_68 == 0) {
-        iVar7 = *(int *)&param_1->field_0x68;
-        iVar10 = local_c8 << 2;
-        if (*(int *)(iVar7 + 0x104) == 8) {
-          if (*(int *)(iVar7 + 0x108) == 2) {
+        pCVar3 = param_1->sample;
+        iVar8 = local_c8 << 2;
+        if ((pCVar3->sample_info).bit_depth == 8) {
+          if ((pCVar3->sample_info).num_channels == 2) {
             if (0 < local_c8) {
               local_28 = 0;
-              local_40 = iVar10;
+              local_40 = iVar8;
               do {
-                fVar11 = (float10)local_d0;
+                fVar12 = (float10)local_d0;
                 round();
                 local_84[0] = (float)(int)(*(byte *)(*(int *)(extraout_EDX + 0x120) +
-                                                    (int)ROUND(fVar11) * 2) - 0x80);
-                local_18 = *(byte *)(*(int *)(*(int *)&param_1->field_0x68 + 0x120) + 1 +
-                                    (int)ROUND(fVar11) * 2) - 0x80;
+                                                    (int)ROUND(fVar12) * 2) - 0x80);
+                local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar12) * 2 + 1)
+                           - 0x80;
                 local_84[1] = (float)local_18;
-                uVar5 = 0;
+                uVar6 = 0;
                 if (0 < in_stack_0000002c) {
-                  iVar7 = 0;
+                  iVar8 = 0;
                   do {
-                    uVar9 = uVar5 & 1;
-                    uVar5 = uVar5 + 1;
-                    *(float *)(*(int *)(&stack0x00000008 + iVar7) + local_28) =
-                         local_84[uVar9] * *(float *)((int)afStack_a8 + iVar7 + 4U) +
-                         *(float *)(*(int *)(&stack0x00000008 + iVar7) + local_28);
-                    iVar7 = iVar7 + 4;
-                  } while ((int)uVar5 < in_stack_0000002c);
+                    uVar10 = uVar6 & 1;
+                    uVar6 = uVar6 + 1;
+                    *(float *)(*(int *)(&stack0x00000008 + iVar8) + local_28) =
+                         local_84[uVar10] * *(float *)((int)afStack_a8 + iVar8 + 4U) +
+                         *(float *)(*(int *)(&stack0x00000008 + iVar8) + local_28);
+                    iVar8 = iVar8 + 4;
+                  } while ((int)uVar6 < in_stack_0000002c);
                 }
                 local_d0 = local_d0 + dVar2;
                 local_28 = local_28 + 4;
@@ -201,58 +202,56 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
             }
           }
           else if (0 < local_c8) {
-            iVar7 = 0;
-            local_3c = iVar10;
+            iVar11 = 0;
+            local_3c = iVar8;
             do {
-              fVar11 = (float10)local_d0;
+              fVar12 = (float10)local_d0;
               round();
-              local_18 = *(byte *)(*(int *)(*(int *)&param_1->field_0x68 + 0x120) +
-                                  (int)ROUND(fVar11)) - 0x80;
-              iVar10 = 0;
+              local_18 = *(byte *)((int)param_1->sample->sample_data + (int)ROUND(fVar12)) - 0x80;
+              iVar8 = 0;
               local_20 = (float)local_18;
               if (0 < in_stack_0000002c) {
-                iVar6 = 0;
+                iVar7 = 0;
                 do {
-                  iVar10 = iVar10 + 1;
-                  *(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar7) =
-                       local_20 * *(float *)((int)afStack_a8 + iVar6 + 4U) +
-                       *(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar7);
-                  iVar6 = iVar6 + 4;
-                } while (iVar10 < in_stack_0000002c);
+                  iVar8 = iVar8 + 1;
+                  *(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11) =
+                       local_20 * *(float *)((int)afStack_a8 + iVar7 + 4U) +
+                       *(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11);
+                  iVar7 = iVar7 + 4;
+                } while (iVar8 < in_stack_0000002c);
               }
               local_d0 = local_d0 + dVar2;
-              iVar7 = iVar7 + 4;
-            } while (iVar7 < local_3c);
+              iVar11 = iVar11 + 4;
+            } while (iVar11 < local_3c);
           }
         }
-        else if (*(int *)(iVar7 + 0x108) == 2) {
+        else if ((pCVar3->sample_info).num_channels == 2) {
           if (in_stack_0000002c == 2) {
             local_74 = (double)sound_sndmain_cpp_mixResampleStereoToStereo_FUN_005531d0
-                                         (*(uint *)(iVar7 + 0x120),&stack0x00000008,
-                                          afStack_a8 + 1,(uint)local_d0,local_d0._4_4_,dVar2);
+                                         (pCVar3->sample_data,&stack0x00000008,afStack_a8 + 1,
+                                          (uint)local_d0,local_d0._4_4_,dVar2);
             local_d0 = local_74;
           }
           else if (0 < local_c8) {
             local_24 = 0;
-            local_38 = iVar10;
+            local_38 = iVar8;
             do {
-              fVar11 = (float10)local_d0;
+              fVar12 = (float10)local_d0;
               round();
-              local_18 = (int)ROUND(fVar11);
+              local_18 = (int)ROUND(fVar12);
               local_84[2] = (float)*(short *)(*(int *)(extraout_EDX_00 + 0x120) + local_18 * 4);
-              local_84[3] = (float)*(short *)(*(int *)(*(int *)&param_1->field_0x68 + 0x120) + 2 +
-                                             local_18 * 4);
-              uVar5 = 0;
+              local_84[3] = (float)param_1->sample->sample_data[local_18 * 2 + 1];
+              uVar6 = 0;
               if (0 < in_stack_0000002c) {
-                iVar7 = 0;
+                iVar8 = 0;
                 do {
-                  uVar9 = uVar5 & 1;
-                  uVar5 = uVar5 + 1;
-                  *(float *)(*(int *)(&stack0x00000008 + iVar7) + local_24) =
-                       local_84[uVar9 + 2] * *(float *)((int)afStack_a8 + iVar7 + 4U) +
-                       *(float *)(*(int *)(&stack0x00000008 + iVar7) + local_24);
-                  iVar7 = iVar7 + 4;
-                } while ((int)uVar5 < in_stack_0000002c);
+                  uVar10 = uVar6 & 1;
+                  uVar6 = uVar6 + 1;
+                  *(float *)(*(int *)(&stack0x00000008 + iVar8) + local_24) =
+                       local_84[uVar10 + 2] * *(float *)((int)afStack_a8 + iVar8 + 4U) +
+                       *(float *)(*(int *)(&stack0x00000008 + iVar8) + local_24);
+                  iVar8 = iVar8 + 4;
+                } while ((int)uVar6 < in_stack_0000002c);
               }
               local_d0 = local_d0 + dVar2;
               local_24 = local_24 + 4;
@@ -261,33 +260,32 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
         }
         else if (in_stack_0000002c == 2) {
           local_74 = (double)sound_sndmain_cpp_mixResampleMonoToStereo_FUN_00553090
-                                       (*(uint *)(iVar7 + 0x120),&stack0x00000008,
-                                        afStack_a8 + 1,(uint)local_d0,local_d0._4_4_,dVar2);
+                                       (pCVar3->sample_data,&stack0x00000008,afStack_a8 + 1,
+                                        (uint)local_d0,local_d0._4_4_,dVar2);
           local_d0 = local_74;
         }
         else if (0 < local_c8) {
-          iVar7 = 0;
-          local_44 = iVar10;
+          iVar11 = 0;
+          local_44 = iVar8;
           do {
-            fVar11 = (float10)local_d0;
+            fVar12 = (float10)local_d0;
             round();
-            local_18 = (int)ROUND(fVar11);
-            local_1c = (float)*(short *)(*(int *)(*(int *)&param_1->field_0x68 + 0x120) +
-                                        (int)ROUND(fVar11) * 2);
-            iVar10 = 0;
+            local_18 = (int)ROUND(fVar12);
+            local_1c = (float)param_1->sample->sample_data[(int)ROUND(fVar12)];
+            iVar8 = 0;
             if (0 < in_stack_0000002c) {
-              iVar6 = 0;
+              iVar7 = 0;
               do {
-                iVar10 = iVar10 + 1;
-                *(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar7) =
-                     local_1c * *(float *)((int)afStack_a8 + iVar6 + 4U) +
-                     *(float *)(*(int *)(&stack0x00000008 + iVar6) + iVar7);
-                iVar6 = iVar6 + 4;
-              } while (iVar10 < in_stack_0000002c);
+                iVar8 = iVar8 + 1;
+                *(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11) =
+                     local_1c * *(float *)((int)afStack_a8 + iVar7 + 4U) +
+                     *(float *)(*(int *)(&stack0x00000008 + iVar7) + iVar11);
+                iVar7 = iVar7 + 4;
+              } while (iVar8 < in_stack_0000002c);
             }
             local_d0 = local_d0 + dVar2;
-            iVar7 = iVar7 + 4;
-          } while (iVar7 < local_44);
+            iVar11 = iVar11 + 4;
+          } while (iVar11 < local_44);
         }
       }
       else {
@@ -297,28 +295,29 @@ void sound_sndmain_cpp_FUN_00554920(CSfxSlot *param_1)
       if (local_58 != 0) {
         local_d0 = 0.0;
       }
-      if (dVar4 <= local_d0) {
-        local_d0 = local_d0 - dVar4;
+      if (dVar5 <= local_d0) {
+        local_d0 = local_d0 - dVar5;
       }
       sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(param_1,local_d0);
       if (local_5c != 0) {
-        iVar10 = *(int *)&param_1->field_0x114 + 1;
-        iVar7 = *(int *)(*(int *)&param_1->field_0x68 + 0x13c + *(int *)&param_1->field_0x114 * 4);
-        *(int *)&param_1->field_0x114 = iVar10;
-        *(double *)&param_1->field_0x50 = (double)iVar7;
-        if (*(int *)(*(int *)&param_1->field_0x68 + 0x124) <= iVar10) {
+        iVar11 = *(int *)&param_1->field_0x114 + 1;
+        iVar8 = param_1->sample->loop_destinations[*(int *)&param_1->field_0x114];
+        *(int *)&param_1->field_0x114 = iVar11;
+        pCVar3 = param_1->sample;
+        *(double *)&(param_1->options).field_0x50 = (double)iVar8;
+        if (pCVar3->loop_marker_count <= iVar11) {
           *(uint *)&param_1->field_0x114 = 0;
         }
       }
-      iVar7 = 0;
+      iVar8 = 0;
       in_stack_00000028 = in_stack_00000028 - local_c8;
       if (0 < in_stack_0000002c) {
-        iVar10 = 0;
+        iVar11 = 0;
         do {
-          *(int *)(&stack0x00000008 + iVar10) = *(int *)(&stack0x00000008 + iVar10) + local_c8 * 4;
-          iVar7 = iVar7 + 1;
-          iVar10 = iVar10 + 4;
-        } while (iVar7 < in_stack_0000002c);
+          *(int *)(&stack0x00000008 + iVar11) = *(int *)(&stack0x00000008 + iVar11) + local_c8 * 4;
+          iVar8 = iVar8 + 1;
+          iVar11 = iVar11 + 4;
+        } while (iVar8 < in_stack_0000002c);
       }
     }
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00555270(param_1);
@@ -330,20 +329,20 @@ LAB_00554a6d:
         if (*(int *)((int)aiStack_c4 + local_50) != 0) {
           local_2c = local_50;
           local_48 = local_64;
-          iVar7 = 0;
+          iVar8 = 0;
           local_34 = (local_64 + *(int *)(&param_1->field_0xb0 + local_50)) -
                      *(int *)(&param_1->field_0xd0 + local_50);
           local_30 = local_34 * 4;
-          iVar10 = 0;
+          iVar11 = 0;
           if (0 < local_30) {
             do {
-              local_18 = (iVar7 / local_34) * 4;
-              pfVar1 = (float *)(*(int *)((int)aiStack_c4 + local_50) + iVar10);
-              iVar10 = iVar10 + 4;
-              *(float *)(*(int *)((int)aiStack_c4 + local_50) + -4 + iVar10) =
+              local_18 = (iVar8 / local_34) * 4;
+              pfVar1 = (float *)(*(int *)((int)aiStack_c4 + local_50) + iVar11);
+              iVar11 = iVar11 + 4;
+              *(float *)(*(int *)((int)aiStack_c4 + local_50) + -4 + iVar11) =
                    *(float *)(*(int *)(local_50 + 0x2cf32a8) + local_18) + *pfVar1;
-              iVar7 = iVar7 + local_64;
-            } while (iVar10 < local_30);
+              iVar8 = iVar8 + local_64;
+            } while (iVar11 < local_30);
           }
           *(uint *)(&param_1->field_0xd0 + local_50) =
                *(uint *)(&param_1->field_0xb0 + local_50);

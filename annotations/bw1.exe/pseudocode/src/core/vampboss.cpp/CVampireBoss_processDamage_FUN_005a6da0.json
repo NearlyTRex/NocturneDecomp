@@ -1,0 +1,315 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 246,
+    "complexity_score": 187,
+    "cross_reference_count": 0,
+    "function_call_count": 13,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 92,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "stack_alignment_array",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 338
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a6da0",
+    "address_range": [
+      [
+        "005a6da0",
+        "005a700d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_processDamage_FUN_005a6da0",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_processDamage_FUN_005a6da0(CVampireBoss *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "00408b40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408b40"
+    },
+    {
+      "addr": "0040cc60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
+    },
+    {
+      "addr": "004325b0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_004325b0"
+    },
+    {
+      "addr": "004a1b70",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70"
+    },
+    {
+      "addr": "004b59e0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004b59e0"
+    },
+    {
+      "addr": "004f8c40",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f8c40"
+    },
+    {
+      "addr": "004f8d00",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f8d00"
+    },
+    {
+      "addr": "0051b160",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160"
+    },
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    },
+    {
+      "addr": "0057d880",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playSound_FUN_0057d880"
+    },
+    {
+      "addr": "005735a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005735a0"
+    },
+    {
+      "addr": "00573a80",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00573a80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f8e8c",
+      "name": "s_voicuhurt_wav_005f8e8c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8e9a",
+      "name": "s_VampireBossBitesIt_005f8e9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8ead",
+      "name": "s_voicudeath_wav_2_5_005f8ead",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f8ec8",
+      "name": "DAT_005f8ec8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f8ed0",
+      "name": "DAT_005f8ed0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061c010",
+      "name": "DAT_0061c010",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f650",
+      "name": "DAT_0061f650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006236b8",
+      "name": "DAT_006236b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06b10",
+      "name": "g_CHeroClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1e2dc",
+      "name": "g_CMeleeClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d2c900",
+      "name": "DAT_01d2c900",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.615,
+    "instruction_count": 200,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 3,
+      "BRANCH": 3,
+      "CALL": 15,
+      "CALLIND": 3,
+      "CBRANCH": 14,
+      "COPY": 217,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT_ADD": 85,
+      "INT_AND": 91,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 80,
+      "INT_LEFT": 4,
+      "INT_LESS": 8,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 24,
+      "INT_SLESS": 40,
+      "INT_SUB": 87,
+      "INT_XOR": 2,
+      "INT_ZEXT": 10,
+      "LOAD": 44,
+      "POPCOUNT": 40,
+      "RETURN": 4,
+      "STORE": 82
+    },
+    "pcode_op_count": 923
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_1018",
+      "severity": "moderate",
+      "text": "float afStackY_1018 [1011];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x27b0",
+      "severity": "mild",
+      "text": "if (*(int *)&(this_ptr->base).base.field_0x27b0 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 25,
+      "match": "(int)&CStack_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_30` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 26,
+      "match": "(int)&CStack_30",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + 4) = auStack_20[(uint)bVar5 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 26,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_30 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =",
+      "type": "pointer_cast"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CVampireBoss",
+        "offset": 264,
+        "vtable_addr": "006077c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

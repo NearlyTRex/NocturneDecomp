@@ -42,7 +42,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00431660 at 00431771
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 00431771
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0046508c = 004650e9

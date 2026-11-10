@@ -19,32 +19,32 @@ void __cdecl core_dcube_cpp_CDemonCube_testCylinderCollision_FUN_00454520(CDemon
   
   iVar4 = -1;
   iVar3 = 0;
-  if (0 < *(int *)&this_ptr->field_0x28) {
+  if (0 < this_ptr->triangle_count) {
     iVar5 = 0;
     do {
       iVar2 = core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810
-                        (*(int *)&this_ptr->field_0x2c + iVar5,cylinder);
+                        (this_ptr->triangle_buffer + iVar5,cylinder);
       if (iVar2 != 0) {
         iVar4 = iVar3;
       }
       iVar3 = iVar3 + 1;
       iVar5 = iVar5 + 0x20;
-    } while (iVar3 < *(int *)&this_ptr->field_0x28);
+    } while (iVar3 < this_ptr->triangle_count);
   }
   if (-1 < iVar4) {
-    puVar1 = *(uint **)(iVar4 * 0x20 + *(int *)&this_ptr->field_0x2c);
+    puVar1 = *(uint **)(this_ptr->triangle_buffer + iVar4 * 0x20);
     if (puVar1 != (uint *)&DAT_01548b58) {
       _DAT_01548b58 = *puVar1;
       _DAT_01548b60 = puVar1[2];
       _DAT_01548b5c = puVar1[1];
     }
-    puVar1 = *(uint **)(iVar4 * 0x20 + 4 + *(int *)&this_ptr->field_0x2c);
+    puVar1 = *(uint **)(this_ptr->triangle_buffer + iVar4 * 0x20 + 4);
     if (puVar1 != (uint *)&DAT_01548b64) {
       _DAT_01548b64 = *puVar1;
       _DAT_01548b6c = puVar1[2];
       _DAT_01548b68 = puVar1[1];
     }
-    puVar1 = *(uint **)(*(int *)&this_ptr->field_0x2c + 8 + iVar4 * 0x20);
+    puVar1 = *(uint **)(this_ptr->triangle_buffer + iVar4 * 0x20 + 8);
     if (puVar1 != (uint *)&DAT_01548b70) {
       _DAT_01548b74 = puVar1[1];
       _DAT_01548b78 = puVar1[2];

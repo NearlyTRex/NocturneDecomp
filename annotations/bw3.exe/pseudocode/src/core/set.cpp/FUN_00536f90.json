@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 261,
-    "complexity_score": 549,
+    "complexity_score": 405,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
-    "suspect_count": 38,
+    "pseudocode_lines": 120,
+    "suspect_count": 24,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "undefined_data",
-      "unknown_field",
       "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 380
+    "total_lines": 381
   },
   "cross_references": [
     {
@@ -50,6 +49,11 @@
       "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20"
     },
     {
+      "addr": "0053b100",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100"
+    },
+    {
       "addr": "005375c0",
       "is_variadic": false,
       "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_005375c0"
@@ -57,12 +61,7 @@
     {
       "addr": "0053adf0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053adf0"
-    },
-    {
-      "addr": "0053b100",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b100"
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0"
     },
     {
       "addr": "005a3120",
@@ -108,7 +107,7 @@
     },
     {
       "addr": "01d21558",
-      "name": "g_CGameInstance.field588_0x24c",
+      "name": "g_CGameInstance.field540_0x24c",
       "type": "undefined4",
       "value": null
     },
@@ -273,23 +272,23 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = *(int *)&param_1->field_0x15f6fc + -1;",
+      "text": "local_28 = param_1->sorted_render_actor_count + -1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x15f6fc",
-      "severity": "mild",
-      "text": "local_28 = *(int *)&param_1->field_0x15f6fc + -1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_2c = local_28 * 4 + (int)param_1;",
+      "text": "local_2c = (int)param_1->cameras + param_1->sorted_render_actor_count * 4 + -8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 44,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_2c = (int)param_1->cameras + param_1->sorted_render_actor_count * 4 + -8;",
       "type": "unnamed_param"
     },
     {
@@ -309,102 +308,6 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_5c._0_4_ = local_44._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_5c._0_4_ = local_44._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_5c._4_4_ = local_44._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_5c._4_4_ = local_44._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_5c._8_4_ = local_44._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 62,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_5c._8_4_ = local_44._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_50._0_4_ = CStack_38._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_50._0_4_ = CStack_38._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 66,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_50._4_4_ = CStack_38._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 66,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_50._4_4_ = CStack_38._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 67,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_50._8_4_ = CStack_38._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 67,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_50._8_4_ = CStack_38._8_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 70,
       "match": "param_1",
@@ -414,7 +317,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 95,
+      "line": 96,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1);",
@@ -422,7 +325,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
@@ -430,31 +333,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15acc8) {",
+      "text": "if (0 < param_1->mirror_glass_actor_count) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 104,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15acc8) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_0053adf0(param_1,iVar3,0);",
+      "text": "core_set_cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(param_1,iVar3,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
+      "line": 108,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x14))(iVar1);",
@@ -462,7 +357,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
@@ -470,7 +365,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 113,
+      "line": 114,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20(param_1);",
@@ -478,26 +373,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 115,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&param_1->field_0x15acc8);",
+      "text": "} while (iVar3 < param_1->mirror_glass_actor_count);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&param_1->field_0x15acc8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 116,
+      "line": 117,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_0053b100(param_1,0x10000,0x10000,0x10000);",
+      "text": "core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(param_1,0x10000,0x10000,0x10000);",
       "type": "unnamed_param"
     },
     {
@@ -521,7 +408,7 @@
       "line": 60,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_5c._0_4_ = local_44._0_4_;",
+      "text": "CStack_5c.x = local_44.x;",
       "type": "unrolled_memcpy"
     },
     {
@@ -529,7 +416,7 @@
       "line": 65,
       "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "CStack_50._0_4_ = CStack_38._0_4_;",
+      "text": "CStack_50.x = CStack_38.x;",
       "type": "unrolled_memcpy"
     },
     {

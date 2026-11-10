@@ -1,0 +1,115 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 23,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 71
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004fca90",
+    "address_range": [
+      [
+        "004fca90",
+        "004fcafa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004fca90(CDemonMission *this_ptr,char *set_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "004fc6b0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0"
+    },
+    {
+      "addr": "004fc350",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350"
+    },
+    {
+      "addr": "004fc640",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeAllActors_FUN_004fc640"
+    },
+    {
+      "addr": "00521630",
+      "is_variadic": false,
+      "name": "core_script.cpp_FUN_00521630"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061b460",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01e65cd0"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.076923076923077,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 4,
+      "CBRANCH": 2,
+      "COPY": 28,
+      "INT_ADD": 17,
+      "INT_AND": 16,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 15,
+      "LOAD": 9,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "set_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

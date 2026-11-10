@@ -15,15 +15,16 @@ CZombieDog * __cdecl core_dog_cpp_CZombieDog_ctor_FUN_004767b0(CZombieDog *this_
   uint uVar2;
   CZombieDog *pCVar3;
   
-  pCVar3 = (CZombieDog *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CZombieDogVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,"blackdog.dfm");
+  pCVar3 = (CZombieDog *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CZombieDogVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar3->base).base.model,"blackdog.dfm");
   uVar1 = _DAT_005fee8c;
-  *(uint *)&pCVar3->field_0x2fec = 0x3f400000;
+  *(uint *)&(pCVar3->base).base.field_0x2fec = 0x3f400000;
   uVar2 = _DAT_005fee90;
-  *(uint *)&pCVar3->field_0x2ff0 = 0x3fc00000;
-  *(uint *)&pCVar3->field_0xc270 = 0;
-  *(uint *)&pCVar3->field_0x2ff4 = uVar1;
-  *(uint *)&pCVar3->field_0x2ff8 = uVar2;
+  *(uint *)&(pCVar3->base).base.field_0x2ff0 = 0x3fc00000;
+  pCVar3->sfx_handle = 0;
+  *(uint *)&(pCVar3->base).base.field_0x2ff4 = uVar1;
+  *(uint *)&(pCVar3->base).base.field_0x2ff8 = uVar2;
   return pCVar3;
 }

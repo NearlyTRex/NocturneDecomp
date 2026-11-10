@@ -15,11 +15,11 @@
 ;   undefined4 DAT_005fba60
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00488fd0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_00491aa0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 00454b82
     MOV ESI,0x5ba3c7                    ; 00454b83
     MOV dword ptr [EAX + -0x4],0x5de074 ; 00454b88
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 00454b8f
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 00454b8f
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x326c],0x3f000000 ; 00454b94
     LEA EDI,[EBX + 0xd074]              ; 00454b9e
     MOV dword ptr [EBX + 0x3270],0x3f800000 ; 00454ba4
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_00454bf8
     PUSH 0x3f800000                     ; 00454bf9
     PUSH 0x3e99999a                     ; 00454bfe
-    CALL core_actor.cpp_FUN_0040ce40    ; 00454c03
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00454c03
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00454c08
     FLD float ptr [ESP + 0x8]           ; 00454c0c
     ADD ESP,0x8                         ; 00454c10

@@ -79,11 +79,11 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_bodypart.cpp_FUN_004159e0 at 00415a34
+;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0 at 00415a34
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0 at 005b10bc
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720 at 0044e787
-;   core_glass.cpp_FUN_004c52a0 at 004c53f3
-;   core_glass.cpp_FUN_004c5470 at 004c55bf
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 at 004c53f3
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 at 004c55bf
 ;   core_morph.cpp_CMorphModel_rotatePoints_FUN_005b6a50 at 005b6c5f
 ;   core_skeleton.cpp_CDeformableModel_lightVertices_FUN_005419c0 at 005419ed
 ;

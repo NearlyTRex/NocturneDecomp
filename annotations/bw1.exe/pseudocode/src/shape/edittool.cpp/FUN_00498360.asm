@@ -1,8 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00498360(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void __cdecl shape_edittool_cpp_FUN_00498360(CEditorTools *this_ptr,float scale_factor,int text_color)
 ;
+; Parameters:
+; CEditorTools *   Stack[0x4]:4   this_ptr
+; float            Stack[0x8]:4   scale_factor
+; int              Stack[0xc]:4   text_color
 ;
 ; XREF[3]:
 ;   core_cloth.cpp_FUN_00441500 at 004416fd
@@ -23,11 +27,11 @@
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_FUN_004c1dd0
-;   engine_font.cpp_FUN_004c4510
 ;   engine_matrix.c_transformToCache_FUN_00507b00
 ;   engine_mini3d.cpp_FUN_00512320
 ;   engine_mini3d.cpp_FUN_00517d50
@@ -52,8 +56,8 @@ section .text
     MOV EBX,dword ptr [EAX + 0x41e8]    ; 0049837f
     PUSH EAX                            ; 00498385
     MOV dword ptr [0x01c3f538],EBX      ; 00498386 | DAT_01c3f538
-    CALL engine_font.cpp_FUN_004c4510   ; 0049838c
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049838c
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00498391
     FLD float ptr [ESP + 0x3c]          ; 00498394
     FMUL double ptr [0x005dc278]        ; 00498398 | DAT_005dc278
@@ -207,8 +211,8 @@ section .text
     PUSH EAX                            ; 00498558
     MOV EDI,dword ptr [EBX + 0x10]      ; 00498559
     MOV EBP,dword ptr [EBX + 0x14]      ; 0049855c
-    CALL crt_unknown.c_FUN_005bfb40     ; 0049855f
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0049855f
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00498564
     PUSH 0xffff                         ; 00498567
     CALL engine_3d.c_setRenderAlpha_FUN_00406bd0 ; 0049856c

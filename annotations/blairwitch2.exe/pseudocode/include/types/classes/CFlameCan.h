@@ -4,13 +4,21 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CFlameCan
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x8a0 (2208 bytes)
 #pragma pack(push, 1)
 typedef struct CFlameCan {
-    char field_0[2208]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    int on_fire; // 0x430
+    float time_to_explode; // 0x434
+    char on_fire_condition[100]; // 0x438
+    CFlame flame; // 0x49c
+    int is_visible; // 0x89c
 } CFlameCan;
 #pragma pack(pop)
 

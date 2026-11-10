@@ -14,12 +14,12 @@ void __cdecl core_cloth_cpp_CClothList_setup_FUN_005b1740(CClothList *this_ptr,C
   
   iVar2 = 0;
   pCVar1 = this_ptr;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->count) {
     do {
       iVar2 = iVar2 + 1;
-      core_cloth_cpp_FUN_005ae680(*(CCloth **)(pCVar1 + 0x194),position,euler,model_ptr);
-      pCVar1 = pCVar1 + 4;
-    } while (iVar2 < *(int *)this_ptr);
+      core_cloth_cpp_FUN_005ae680(pCVar1->cloths[0],position,euler,model_ptr);
+      pCVar1 = (CClothList *)pCVar1->filenames;
+    } while (iVar2 < this_ptr->count);
   }
   return;
 }

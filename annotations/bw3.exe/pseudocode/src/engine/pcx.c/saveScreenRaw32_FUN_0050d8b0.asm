@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_pcx.c_FUN_0050da60 at 0050dc15
+;   engine_pcx.c_saveScreenshotGeneral_FUN_0050da60 at 0050dc15
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pcx_c_005cba21

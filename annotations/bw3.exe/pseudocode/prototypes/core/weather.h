@@ -23,7 +23,7 @@ undefined4 FUN_0057c2c0(void);
 
 // Original: core_weather.cpp_FUN_0057c2e0
 // Address: 0057c2e0
-void FUN_0057c2e0(CDemonActor *param_1,undefined4 param_2,int param_3);
+void FUN_0057c2e0(CDemonActor *param_1,float param_2,int param_3);
 
 // Original: core_weather.cpp_CWeather_createThunder_FUN_0057c840
 // Address: 0057c840

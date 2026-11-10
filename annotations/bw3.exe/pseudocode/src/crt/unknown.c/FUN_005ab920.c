@@ -19,7 +19,7 @@ uint FUN_005ab920(uint param_1)
     iVar1 = param_1 * 4;
     if ((PTR_DAT_00607bd8[iVar1 + 1] & 0x40) == 0) {
       PTR_DAT_00607bd8[iVar1 + 1] = PTR_DAT_00607bd8[iVar1 + 1] | 0x40;
-      iVar2 = unkafter_asgaya_cpp_FUN_005aeb30(param_1);
+      iVar2 = FUN_005aeb30(param_1);
       if (iVar2 != 0) {
         PTR_DAT_00607bd8[iVar1 + 1] = PTR_DAT_00607bd8[iVar1 + 1] | 0x20;
       }

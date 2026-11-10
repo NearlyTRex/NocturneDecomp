@@ -10,11 +10,11 @@
 ; XREF[7]:
 ;   core_dtrace.cpp_FUN_00475090 at 004754a4
 ;   core_dtri.cpp_FUN_0047ae9c at 0047afdd
-;   core_set.cpp_FUN_0053ad70 at 0053add6
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0053ad70 at 0053add6
 ;   core_setdir.cpp_FUN_0053f5d0 at 0053f6c6
 ;   core_setdir.cpp_FUN_0053f940 at 0054085b
 ;   core_skeleton.cpp_CDeformableModel_renderParts_FUN_00548c70 at 00549401
-;   core_water.cpp_FUN_00577760 at 00577cce
+;   core_water.cpp_CWater_render_FUN_00577760 at 00577cce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bdd818

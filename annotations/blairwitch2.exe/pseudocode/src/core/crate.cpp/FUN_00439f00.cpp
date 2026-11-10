@@ -17,8 +17,8 @@ void core_crate_cpp_FUN_00439f00(CDemonActor *param_1)
   uint uStack_24;
   float fStack_20;
   float fStack_14;
-  uint uStack_c;
-  uint uStack_8;
+  float fStack_c;
+  float fStack_8;
   
   bVar4 = 0;
   if (*(int *)&param_1[1].field_0x17c != 0) {
@@ -31,35 +31,35 @@ void core_crate_cpp_FUN_00439f00(CDemonActor *param_1)
   *(uint *)&param_1->field_0xe8 = 0;
   *(uint *)&param_1->field_0xe4 = *(uint *)&param_1->field_0xe8;
   *(uint *)&param_1->field_0xe0 = *(uint *)&param_1->field_0xe4;
-  *(float *)&param_1->field_0x30 = *(float *)&param_1->field_0xec + *(float *)&param_1->field_0x30;
-  *(float *)&param_1->field_0x34 = *(float *)&param_1->field_0xf0 + *(float *)&param_1->field_0x34;
-  *(float *)&param_1->field_0x38 = *(float *)&param_1->field_0xf4 + *(float *)&param_1->field_0x38;
+  (param_1->orient).vec.x = *(float *)&param_1->field_0xec + (param_1->orient).vec.x;
+  (param_1->orient).vec.y = *(float *)&param_1->field_0xf0 + (param_1->orient).vec.y;
+  (param_1->orient).vec.z = *(float *)&param_1->field_0xf4 + (param_1->orient).vec.z;
   *(uint *)&param_1->field_0xf4 = 0;
   *(uint *)&param_1->field_0xf0 = *(uint *)&param_1->field_0xf4;
   *(uint *)&param_1->field_0xec = *(uint *)&param_1->field_0xf0;
   if (((((*(float *)&param_1[1].field_0x188 == *(float *)&param_1->field_0x20) &&
         (*(float *)&param_1[1].field_0x18c == *(float *)&param_1->field_0x24)) &&
        (*(float *)&param_1[1].field_0x190 == *(float *)&param_1->field_0x28)) &&
-      ((*(float *)&param_1[1].field_0x194 == *(float *)&param_1->field_0x30 &&
-       (*(float *)&param_1[1].field_0x198 == *(float *)&param_1->field_0x34)))) &&
-     (*(float *)&param_1[1].field_0x19c == *(float *)&param_1->field_0x38)) {
-    uStack_c = *(uint *)&param_1[1].field_0x1a0;
+      ((*(float *)&param_1[1].field_0x194 == (param_1->orient).vec.x &&
+       (*(float *)&param_1[1].field_0x198 == (param_1->orient).vec.y)))) &&
+     (*(float *)&param_1[1].field_0x19c == (param_1->orient).vec.z)) {
+    fStack_c = *(float *)&param_1[1].field_0x1a0;
   }
   else {
-    uStack_c = (**(code **)(*(int *)&param_1->field_0x2b0 + 0x48))
-                         (param_1,*(uint *)&param_1[1].field_0x180,0);
+    fStack_c = (*((param_1->vtable)._ub)->cylinderGroundCheck)
+                         (param_1,*(float *)&param_1[1].field_0x180,(CVector3f *)0x0);
     if (&param_1[1].field_0x188 != &param_1->field_0x20) {
       *(uint *)&param_1[1].field_0x188 = *(uint *)&param_1->field_0x20;
       *(uint *)&param_1[1].field_0x18c = *(uint *)&param_1->field_0x24;
       *(uint *)&param_1[1].field_0x190 = *(uint *)&param_1->field_0x28;
     }
-    if (&param_1[1].field_0x194 != &param_1->field_0x30) {
-      *(uint *)&param_1[1].field_0x194 = *(uint *)&param_1->field_0x30;
-      *(uint *)&param_1[1].field_0x198 = *(uint *)&param_1->field_0x34;
-      *(uint *)&param_1[1].field_0x19c = *(uint *)&param_1->field_0x38;
+    if ((UOrientationVector *)&param_1[1].field_0x194 != &param_1->orient) {
+      *(float *)&param_1[1].field_0x194 = (param_1->orient).vec.x;
+      *(float *)&param_1[1].field_0x198 = (param_1->orient).vec.y;
+      *(float *)&param_1[1].field_0x19c = (param_1->orient).vec.z;
     }
-    *(uint *)&param_1[1].field_0x1a0 = uStack_c;
-    uStack_8 = uStack_c;
+    *(float *)&param_1[1].field_0x1a0 = fStack_c;
+    fStack_8 = fStack_c;
   }
   if ((*(int *)&param_1[1].field_0x184 == 0) && (*(int *)&param_1->field_0xdc != 0)) {
     *(int *)&param_1[1].field_0x184 = *(int *)&param_1->field_0xdc;
@@ -72,10 +72,10 @@ void core_crate_cpp_FUN_00439f00(CDemonActor *param_1)
     *(uint *)&param_1->field_0x28 = *(uint *)(iVar1 + 0x28);
     *(uint *)&param_1->field_0x2c = *(uint *)(iVar1 + 0x2c);
     iVar1 = *(int *)&param_1->field_0xdc;
-    if ((uint *)&param_1->field_0x30 != (uint *)(iVar1 + 0x30)) {
-      *(uint *)&param_1->field_0x30 = *(uint *)(iVar1 + 0x30);
-      *(uint *)&param_1->field_0x34 = *(uint *)(iVar1 + 0x34);
-      *(uint *)&param_1->field_0x38 = *(uint *)(iVar1 + 0x38);
+    if (&param_1->orient != (UOrientationVector *)(iVar1 + 0x30)) {
+      (param_1->orient).vec.x = *(float *)(iVar1 + 0x30);
+      (param_1->orient).vec.y = *(float *)(iVar1 + 0x34);
+      (param_1->orient).vec.z = *(float *)(iVar1 + 0x38);
     }
     (**(code **)(*(int *)(*(int *)&param_1->field_0xdc + 0x2b0) + 0x24))
               (*(int *)&param_1->field_0xdc);
@@ -90,7 +90,7 @@ void core_crate_cpp_FUN_00439f00(CDemonActor *param_1)
     core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(param_1);
     return;
   }
-  *(uint *)&param_1->field_0x24 = uStack_c;
+  *(float *)&param_1->field_0x24 = fStack_c;
   core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(param_1);
   return;
 }

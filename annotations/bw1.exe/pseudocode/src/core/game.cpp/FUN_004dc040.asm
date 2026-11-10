@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004cf5e0 at 004cf83f
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf83f
 ;
 ; Referenced Globals:
 ;   undefined4 s_cursor_005e3653+1

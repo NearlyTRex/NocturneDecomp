@@ -8,7 +8,7 @@
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0 at 0042e1e0
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00524a00
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     LEA ESI,[EDX*0x8 + 0x0]             ; 00432e19
     PUSH EAX                            ; 00432e20
     ADD ESI,EDX                         ; 00432e21
-    CALL core_motion.cpp_FUN_00524a00   ; 00432e23
-        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00524a00(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 00432e23
+        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00432e28
     SHL ESI,0x5                         ; 00432e2b
     FLD float ptr [ESP + 0x10]          ; 00432e2e

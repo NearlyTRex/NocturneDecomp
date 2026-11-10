@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01d2c900
 ;
 ; Called Functions:
-;   core_mission.cpp_FUN_0051b6c0
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
 ;   crt_stdio.c_fscanf_FUN_005c04b0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
@@ -62,8 +62,8 @@ section .text
     PUSH EAX                            ; 0054b37e
     MOV ECX,dword ptr [0x0061f650]      ; 0054b37f | DAT_0061f650
     PUSH ECX                            ; 0054b385 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b6c0  ; 0054b386
-        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0 ; 0054b386
+        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0054b38b
     MOV EDX,dword ptr [ESP + 0xd8]      ; 0054b38e
     MOV dword ptr [EDX],EAX             ; 0054b395

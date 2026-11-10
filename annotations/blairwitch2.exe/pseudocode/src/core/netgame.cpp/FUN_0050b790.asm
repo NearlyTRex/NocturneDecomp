@@ -16,15 +16,15 @@
 ;   undefined4 DAT_01d34e38
 ;
 ; Called Functions:
-;   core_netgame.cpp_FUN_0050c130
-;   shape_edittool.cpp_FUN_0047be40
+;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;   shape_edittool.cpp_FUN_0047be90
 ;   support_trisock.cpp_CSocket_bindSocket_FUN_005790a0
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_00579360
 ;   support_trisock.cpp_CSocket_createUDPSocket_FUN_00579060
 ;   support_trisock.cpp_CSocket_getSocketName_FUN_00579430
 ;   support_trisock.cpp_CSocket_setSocketBlocking_FUN_00579490
-;   wincore_winrun.cpp_FUN_0058e9e0
+;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
@@ -84,12 +84,12 @@ section .text
         ;   XREF to: 0050b8a8 (CONDITIONAL_JUMP)  ; LAB_0050b8a8
     PUSH ESI                            ; 0050b817
     MOV EBP,0x1                         ; 0050b818
-    CALL core_netgame.cpp_FUN_0050c130  ; 0050b81d
-        ;   XREF to: 0050c130 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050c130(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130 ; 0050b81d
+        ;   XREF to: 0050c130 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050b822
     MOV dword ptr [0x01d34e38],EBP      ; 0050b825 | DAT_01d34e38
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0050b82b
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050b82b
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050b830
     MOV EBX,0x12                        ; 0050b832
     SAR EDX,0x1f                        ; 0050b837
@@ -110,8 +110,8 @@ section .text
         ;   Label: LAB_0050b85a
     MOV ECX,dword ptr [0x006138e0]      ; 0050b85f | g_CEditorToolsPtr
     PUSH ECX                            ; 0050b865
-    CALL shape_edittool.cpp_FUN_0047be40 ; 0050b866
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0050b866
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b86b
     XOR EAX,EAX                         ; 0050b86e
     POP EBP                             ; 0050b870
@@ -122,8 +122,8 @@ section .text
         ;   Label: LAB_0050b874
     MOV EBX,dword ptr [0x006138e0]      ; 0050b879 | g_CEditorToolsPtr
     PUSH EBX                            ; 0050b87f
-    CALL shape_edittool.cpp_FUN_0047be40 ; 0050b880
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0050b880
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b885
     XOR EAX,EAX                         ; 0050b888
     POP EBP                             ; 0050b88a
@@ -134,8 +134,8 @@ section .text
         ;   Label: LAB_0050b88e
     MOV ESI,dword ptr [0x006138e0]      ; 0050b893 | g_CEditorToolsPtr
     PUSH ESI                            ; 0050b899
-    CALL shape_edittool.cpp_FUN_0047be40 ; 0050b89a
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0050b89a
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b89f
     XOR EAX,EAX                         ; 0050b8a2
     POP EBP                             ; 0050b8a4
@@ -147,8 +147,8 @@ section .text
     PUSH 0x5e05c0                       ; 0050b8a9
     MOV EDI,dword ptr [0x006138e0]      ; 0050b8ae | g_CEditorToolsPtr
     PUSH EDI                            ; 0050b8b4
-    CALL shape_edittool.cpp_FUN_0047be40 ; 0050b8b5
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 0050b8b5
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0050b8ba
     XOR EAX,EAX                         ; 0050b8bd
     POP EDI                             ; 0050b8bf

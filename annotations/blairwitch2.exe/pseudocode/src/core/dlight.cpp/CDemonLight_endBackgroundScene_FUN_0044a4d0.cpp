@@ -23,7 +23,7 @@ void __cdecl core_dlight_cpp_CDemonLight_endBackgroundScene_FUN_0044a4d0(CDemonL
   _DAT_01b11db4 = 0;
   puVar3 = (uint *)&DAT_01b11db8;
   puVar4 = (uint *)&DAT_01c2a38c;
-  for (uVar1 = *(uint *)&this_ptr->field_0x1cc4 & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
+  for (uVar1 = this_ptr->shadow_map_height & 0x3fffffff; uVar1 != 0; uVar1 = uVar1 - 1) {
     *puVar4 = *puVar3;
     puVar3 = puVar3 + 1;
     puVar4 = puVar4 + 1;

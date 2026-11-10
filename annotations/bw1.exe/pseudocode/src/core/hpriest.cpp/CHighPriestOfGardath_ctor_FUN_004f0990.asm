@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     LEA EDI,[EAX + 0x158]               ; 004f09a7
     PUSH EDI                            ; 004f09ad
     MOV dword ptr [EAX + 0x154],0x6024a4 ; 004f09ae
-    CALL core_skeleton.cpp_FUN_00569f50 ; 004f09b8
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004f09b8
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004f09bd
     MOV ESI,0x5e523a                    ; 004f09c0
     LEA EDI,[EBX + 0x1fab8]             ; 004f09c5

@@ -31,8 +31,8 @@ int __cdecl core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70(CDemonMiss
     if (iVar1 == 0) {
 LAB_004fcfea:
       if (local_14 == (CCharacter *)0x0) {
-        shape_edittool_cpp_FUN_0047be40(g_CEditorToolsPtr,"Can't find hero placeholder for hero %d",index)
-        ;
+        shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
+                  (g_CEditorToolsPtr,"Can't find hero placeholder for hero %d");
         return 0;
       }
       *(CCharacter **)(index * 4 + 0x1cedee4) = local_14;
@@ -46,15 +46,15 @@ LAB_004fcfea:
       }
       else {
         local_14 = existing_actor;
-        (**(code **)(*(int *)&existing_actor->field_0x2b0 + 0x70))
-                  (existing_actor,iVar2 + 0x20,iVar2 + 0x30);
-        *(uint *)&existing_actor->field_0x2c = *(uint *)(iVar2 + 0x2c);
+        (*((existing_actor->base).vtable._ub)->setPositionAndOrientation)
+                  (&existing_actor->base,(CVector3f *)(iVar2 + 0x20),(CVector3f *)(iVar2 + 0x30));
+        *(uint *)&(existing_actor->base).field_0x2c = *(uint *)(iVar2 + 0x2c);
         core_motion_cpp_CMotionController_jumpToMotion_FUN_00503980
-                  ((CMotionController *)&existing_actor->field_0x2b4,0,0.0);
-        (**(code **)(*(int *)&existing_actor->field_0x2b0 + 0x138))(existing_actor,0,0,0);
+                  ((CMotionController *)&existing_actor->model,0,0.0);
+        (*(((existing_actor->base).vtable._uc)->_uc).setWalkTarget)
+                  (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
-      core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200
-                (0x01D182F0,(CDemonActor *)local_14);
+      core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(0x01D182F0,&local_14->base);
       goto LAB_004fcfea;
     }
     iVar1 = *(int *)(iVar1 + 0x14c);

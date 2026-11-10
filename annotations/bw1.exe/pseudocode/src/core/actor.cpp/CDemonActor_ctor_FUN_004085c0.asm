@@ -28,7 +28,7 @@
 ;   undefined4 s_tr_005d239a+1
 ;   undefined4 s_r_005d239a+2
 ;   undefined4 s__005d239a+3
-;   void* g_CDemonActorVTable = 00408850
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:

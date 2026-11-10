@@ -24,57 +24,57 @@ void __cdecl core_setcolid_cpp_CDemonSet_pushRaytraceState_FUN_0053e870(CDemonSe
   }
   iVar2 = _DAT_021221f0 * 0xa0;
   puVar5 = (uint *)(iVar2 + 0x21221f4);
-  *puVar5 = *(uint *)&this_ptr->field_0x15f698;
+  *puVar5 = *(uint *)&this_ptr->ray_query;
   *(uint *)(iVar2 + 0x21221f8) = *(uint *)&this_ptr->field_0x15f69c;
   *(uint *)(iVar2 + 0x21221fc) = *(uint *)&this_ptr->field_0x15f6a0;
   *(uint *)(iVar2 + 0x2122200) = *(uint *)&this_ptr->field_0x15f6a4;
   iVar4 = 0;
   *(uint *)(iVar2 + 0x2122204) = *(uint *)&this_ptr->field_0x15f6a8;
   _DAT_021221f0 = _DAT_021221f0 + 1;
-  iVar1 = *(int *)&this_ptr->field_0x15f6ac;
+  iVar1 = this_ptr->ignore_list_count;
   *(int *)(iVar2 + 0x2122208) = iVar1;
   pCVar3 = this_ptr;
   if (0 < iVar1) {
     do {
-      puVar5[7] = *(uint *)&pCVar3->field_0x15f6b4;
+      puVar5[7] = pCVar3->ignore_list[0];
       iVar4 = iVar4 + 1;
-      pCVar3 = (CDemonSet *)&pCVar3->field_0x4;
+      pCVar3 = (CDemonSet *)pCVar3->cameras;
       puVar5 = puVar5 + 1;
-    } while (iVar4 < *(int *)&this_ptr->field_0x15f6ac);
+    } while (iVar4 < this_ptr->ignore_list_count);
   }
-  *(uint *)(iVar2 + 0x212220c) = *(uint *)&this_ptr->field_0x15f6b0;
-  if ((uint *)(iVar2 + 0x2122238) != (uint *)&this_ptr->field_0x14d110) {
-    *(uint *)(iVar2 + 0x2122238) = *(uint *)&this_ptr->field_0x14d110;
-    *(uint *)(iVar2 + 0x212223c) = *(uint *)&this_ptr->field_0x14d114;
-    *(uint *)(iVar2 + 0x2122240) = *(uint *)&this_ptr->field_0x14d118;
+  *(int *)(iVar2 + 0x212220c) = this_ptr->collision_flag;
+  if ((CVector3f *)(iVar2 + 0x2122238) != &this_ptr->ray_origin) {
+    *(float *)(iVar2 + 0x2122238) = (this_ptr->ray_origin).x;
+    *(float *)(iVar2 + 0x212223c) = (this_ptr->ray_origin).y;
+    *(float *)(iVar2 + 0x2122240) = (this_ptr->ray_origin).z;
   }
-  if ((uint *)(iVar2 + 0x2122244) != (uint *)&this_ptr->field_0x14d11c) {
-    *(uint *)(iVar2 + 0x2122244) = *(uint *)&this_ptr->field_0x14d11c;
-    *(uint *)(iVar2 + 0x2122248) = *(uint *)&this_ptr->field_0x14d120;
-    *(uint *)(iVar2 + 0x212224c) = *(uint *)&this_ptr->field_0x14d124;
+  if ((CVector3f *)(iVar2 + 0x2122244) != &this_ptr->ray_target) {
+    *(float *)(iVar2 + 0x2122244) = (this_ptr->ray_target).x;
+    *(float *)(iVar2 + 0x2122248) = (this_ptr->ray_target).y;
+    *(float *)(iVar2 + 0x212224c) = (this_ptr->ray_target).z;
   }
-  *(uint *)(iVar2 + 0x2122250) = *(uint *)&this_ptr->field_0x15f6dc;
-  *(uint *)(iVar2 + 0x2122254) = *(uint *)&this_ptr->field_0x15f6e0;
-  if ((uint *)(iVar2 + 0x2122258) != (uint *)&this_ptr->field_0x15f6e4) {
-    *(uint *)(iVar2 + 0x2122258) = *(uint *)&this_ptr->field_0x15f6e4;
-    *(uint *)(iVar2 + 0x212225c) = *(uint *)&this_ptr->field_0x15f6e8;
-    *(uint *)(iVar2 + 0x2122260) = *(uint *)&this_ptr->field_0x15f6ec;
+  *(float *)(iVar2 + 0x2122250) = this_ptr->raycast_distance;
+  *(float *)(iVar2 + 0x2122254) = this_ptr->voxel_distance;
+  if ((CVector3f *)(iVar2 + 0x2122258) != &this_ptr->voxel_hit_point) {
+    *(float *)(iVar2 + 0x2122258) = (this_ptr->voxel_hit_point).x;
+    *(float *)(iVar2 + 0x212225c) = (this_ptr->voxel_hit_point).y;
+    *(float *)(iVar2 + 0x2122260) = (this_ptr->voxel_hit_point).z;
   }
-  *(uint *)(iVar2 + 0x2122264) = *(uint *)&this_ptr->field_0x15f6f0;
-  if ((uint *)(iVar2 + 0x212226c) != (uint *)&this_ptr->field_0x14d128) {
-    *(uint *)(iVar2 + 0x212226c) = *(uint *)&this_ptr->field_0x14d128;
-    *(uint *)(iVar2 + 0x2122270) = *(uint *)&this_ptr->field_0x14d12c;
-    *(uint *)(iVar2 + 0x2122274) = *(uint *)&this_ptr->field_0x14d130;
+  *(int *)(iVar2 + 0x2122264) = this_ptr->voxel_surface_type;
+  if ((CVector3f *)(iVar2 + 0x212226c) != &this_ptr->collision_normal) {
+    *(float *)(iVar2 + 0x212226c) = (this_ptr->collision_normal).x;
+    *(float *)(iVar2 + 0x2122270) = (this_ptr->collision_normal).y;
+    *(float *)(iVar2 + 0x2122274) = (this_ptr->collision_normal).z;
   }
-  *(uint *)(iVar2 + 0x2122278) = *(uint *)&this_ptr->field_0x14d134;
-  if ((uint *)(iVar2 + 0x212227c) != (uint *)&this_ptr->field_0x14d138) {
-    *(uint *)(iVar2 + 0x212227c) = *(uint *)&this_ptr->field_0x14d138;
-    *(uint *)(iVar2 + 0x2122280) = *(uint *)&this_ptr->field_0x14d13c;
-    *(uint *)(iVar2 + 0x2122284) = *(uint *)&this_ptr->field_0x14d140;
+  *(int *)(iVar2 + 0x2122278) = this_ptr->ground_type;
+  if ((CVector3f *)(iVar2 + 0x212227c) != &this_ptr->collision_impact_position) {
+    *(float *)(iVar2 + 0x212227c) = (this_ptr->collision_impact_position).x;
+    *(float *)(iVar2 + 0x2122280) = (this_ptr->collision_impact_position).y;
+    *(float *)(iVar2 + 0x2122284) = (this_ptr->collision_impact_position).z;
   }
-  *(uint *)(iVar2 + 0x2122288) = *(uint *)&this_ptr->field_0x14d144;
-  *(uint *)(iVar2 + 0x212228c) = *(uint *)&this_ptr->field_0x14d148;
-  *(uint *)(iVar2 + 0x2122290) = *(uint *)&this_ptr->field_0x14d14c;
-  *(uint *)(iVar2 + 0x2122268) = *(uint *)&this_ptr->field_0x15f6f4;
+  *(CDemonActor **)(iVar2 + 0x2122288) = this_ptr->collision_actor;
+  *(int *)(iVar2 + 0x212228c) = this_ptr->collision_part_index;
+  *(int *)(iVar2 + 0x2122290) = this_ptr->collision_bone_index;
+  *(int *)(iVar2 + 0x2122268) = this_ptr->skip_exact_collisions;
   return;
 }

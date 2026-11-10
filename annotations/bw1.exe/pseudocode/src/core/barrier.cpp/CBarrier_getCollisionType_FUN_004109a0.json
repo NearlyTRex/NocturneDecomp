@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 54,
+    "complexity_score": 29,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "undefined_data"
     ],
     "total_lines": 45
   },
@@ -32,7 +31,7 @@
     {
       "addr": "0040c550",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c550"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
     }
   ],
   "globals": [
@@ -102,34 +101,18 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x168 != '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_007c2ff4",
       "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c550(DAT_007c2ff4,&this_ptr->field_0x168);",
+      "text": "iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(DAT_007c2ff4,this_ptr->effect_class_name_list);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "iVar1 = core_actor_cpp_FUN_0040c550(DAT_007c2ff4,&this_ptr->field_0x168);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBarrier",
         "offset": 60,
         "vtable_addr": "005fbd94"
       }

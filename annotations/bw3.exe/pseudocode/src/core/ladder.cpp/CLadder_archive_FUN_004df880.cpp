@@ -9,15 +9,14 @@
 void __cdecl core_ladder_cpp_CLadder_archive_FUN_004df880(CLadder *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-            (&this_ptr->field_0x158,"?model" + 1);
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x2d4,"ladderSize");
-  core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2e0,"masterActor");
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
+  core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0(&this_ptr->model,"?model" + 1);
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->ladder_size,"ladderSize");
+  core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->master_actor,"masterActor");
   core_ladder_cpp_CLadder_cacheRelativePosition_FUN_004dfa70(this_ptr);
   if (g_CLadderClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2fc,"groundType");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->ground_type,"groundType");
   return;
 }

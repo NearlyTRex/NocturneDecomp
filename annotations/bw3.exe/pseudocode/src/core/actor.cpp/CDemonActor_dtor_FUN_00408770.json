@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 41,
+    "complexity_score": 16,
     "cross_reference_count": 114,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 16,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 54
   },
   "cross_references": [
@@ -737,8 +735,8 @@
     {
       "addr": "005daff4",
       "name": "g_CDemonActorVTable",
-      "type": "void*",
-      "value": "00408890"
+      "type": "CDemonActor_vtable",
+      "value": null
     },
     {
       "addr": "005db0d0",
@@ -912,24 +910,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x68 = 0x495fd67;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CDemonActorVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
@@ -938,7 +919,7 @@
         "vtable_addr": "005db0d4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDemonActor",
         "offset": 208,
         "vtable_addr": "005daff4"
       }

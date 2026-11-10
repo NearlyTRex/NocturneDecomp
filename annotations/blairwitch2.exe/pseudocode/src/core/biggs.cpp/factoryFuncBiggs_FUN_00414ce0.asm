@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_biggs.cpp_CBiggs_ctor_FUN_00414d10
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1190c                        ; 00414ce0
         ;   Label: core_biggs.cpp_factoryFuncBiggs_FUN_00414ce0
-    CALL crt_unknown.c_FUN_005b8be2     ; 00414ce5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00414ce5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 00414cea
     TEST EAX,EAX                        ; 00414ced
     JNZ 0x00414cf2                      ; 00414cef

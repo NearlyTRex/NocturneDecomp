@@ -25,7 +25,7 @@
 ;
 ; XREF[2]:
 ;   crt_io.c_FUN_005b99c8 at 005b99c8
-;   unkafter_morph.cpp_FUN_005c40e0 at 005c4154
+;   crt_unknown.c_FUN_005c40e0 at 005c4154
 ;
 ; Referenced Globals:
 ;   void* PTR_FindClose_005c8544 = 001c8d36
@@ -44,11 +44,11 @@
 ;   crt_unknown.c_FUN_005c036c
 ;   crt_unknown.c_FUN_005c0e00
 ;   crt_unknown.c_FUN_005c0f10
+;   crt_unknown.c_FUN_005c3e70
+;   crt_unknown.c_FUN_005c3ec0
+;   crt_unknown.c_FUN_005c3fb0
 ;   FindClose
 ;   FindFirstFileA
-;   unkafter_morph.cpp_FUN_005c3e70
-;   unkafter_morph.cpp_FUN_005c3ec0
-;   unkafter_morph.cpp_FUN_005c3fb0
 ;
 ; *****************************************************************************
 
@@ -69,8 +69,8 @@ section .text
         ;   XREF to: 005bfe06 (CONDITIONAL_JUMP)  ; LAB_005bfe06
     PUSH 0x5f1a20                       ; 005bfdf4 | DAT_005f1a20
     PUSH ESI                            ; 005bfdf9
-    CALL unkafter_morph.cpp_FUN_005c3e70 ; 005bfdfa
-        ;   XREF to: 005c3e70 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3e70()
+    CALL crt_unknown.c_FUN_005c3e70     ; 005bfdfa
+        ;   XREF to: 005c3e70 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3e70()
     ADD ESP,0x8                         ; 005bfdff
     TEST EAX,EAX                        ; 005bfe02
     JZ 0x005bfe1a                       ; 005bfe04
@@ -88,7 +88,7 @@ section .text
     LEA EAX,[ESP + 0x248]               ; 005bfe1f
     PUSH EAX                            ; 005bfe26
     CALL crt_unknown.c_FUN_005c0f10     ; 005bfe27
-        ;   XREF to: 005c0f10 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f10()
+        ;   XREF to: 005c0f10 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_FUN_005c0f10(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 005bfe2c
     PUSH 0x104                          ; 005bfe2f
     PUSH ESI                            ; 005bfe34
@@ -146,7 +146,7 @@ section .text
     PUSH ESI                            ; 005bfeae
         ;   Label: LAB_005bfeae
     CALL crt_unknown.c_FUN_005ba2e0     ; 005bfeaf
-        ;   XREF to: 005ba2e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ba2e0()
+        ;   XREF to: 005ba2e0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005ba2e0(char * path)
     ADD ESP,0x4                         ; 005bfeb4
     TEST EAX,EAX                        ; 005bfeb7
     JZ 0x005bfecb                       ; 005bfeb9
@@ -162,7 +162,7 @@ section .text
         ;   Label: LAB_005bfecb
     PUSH EAX                            ; 005bfed2
     CALL crt_unknown.c_FUN_005ba2e0     ; 005bfed3
-        ;   XREF to: 005ba2e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ba2e0()
+        ;   XREF to: 005ba2e0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_FUN_005ba2e0(char * path)
     ADD ESP,0x4                         ; 005bfed8
     PUSH 0x13e                          ; 005bfedb
     PUSH 0x0                            ; 005bfee0
@@ -237,8 +237,8 @@ section .text
     PUSH EAX                            ; 005bff82
     LEA EAX,[ESP + 0x1c]                ; 005bff83
     PUSH EAX                            ; 005bff87
-    CALL unkafter_morph.cpp_FUN_005c3ec0 ; 005bff88
-        ;   XREF to: 005c3ec0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3ec0()
+    CALL crt_unknown.c_FUN_005c3ec0     ; 005bff88
+        ;   XREF to: 005c3ec0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3ec0()
     ADD ESP,0xc                         ; 005bff8d
     XOR EAX,EAX                         ; 005bff90
     MOV AX,word ptr [ESP + 0x354]       ; 005bff92
@@ -246,8 +246,8 @@ section .text
     XOR EAX,EAX                         ; 005bff9b
     MOV AX,word ptr [ESP + 0x34c]       ; 005bff9d
     PUSH EAX                            ; 005bffa5
-    CALL unkafter_morph.cpp_FUN_005c3fb0 ; 005bffa6
-        ;   XREF to: 005c3fb0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3fb0()
+    CALL crt_unknown.c_FUN_005c3fb0     ; 005bffa6
+        ;   XREF to: 005c3fb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3fb0()
     ADD ESP,0x8                         ; 005bffab
     MOV dword ptr [EBX + 0x1e],EAX      ; 005bffae
     LEA EAX,[ESP + 0x34c]               ; 005bffb1
@@ -256,8 +256,8 @@ section .text
     PUSH EAX                            ; 005bffc0
     LEA EAX,[ESP + 0xc]                 ; 005bffc1
     PUSH EAX                            ; 005bffc5
-    CALL unkafter_morph.cpp_FUN_005c3ec0 ; 005bffc6
-        ;   XREF to: 005c3ec0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3ec0()
+    CALL crt_unknown.c_FUN_005c3ec0     ; 005bffc6
+        ;   XREF to: 005c3ec0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3ec0()
     ADD ESP,0xc                         ; 005bffcb
     MOV EAX,dword ptr [ESP + 0x350]     ; 005bffce
     CMP AX,word ptr [ESP + 0x348]       ; 005bffd5
@@ -277,8 +277,8 @@ section .text
     XOR EAX,EAX                         ; 005c0000
     MOV AX,word ptr [ESP + 0x354]       ; 005c0002
     PUSH EAX                            ; 005c000a
-    CALL unkafter_morph.cpp_FUN_005c3fb0 ; 005c000b
-        ;   XREF to: 005c3fb0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3fb0()
+    CALL crt_unknown.c_FUN_005c3fb0     ; 005c000b
+        ;   XREF to: 005c3fb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3fb0()
     ADD ESP,0x8                         ; 005c0010
     MOV dword ptr [EBX + 0x22],EAX      ; 005c0013
         ;   Label: LAB_005c0013
@@ -288,8 +288,8 @@ section .text
     PUSH EAX                            ; 005c0025
     LEA EAX,[ESP + 0x14]                ; 005c0026
     PUSH EAX                            ; 005c002a
-    CALL unkafter_morph.cpp_FUN_005c3ec0 ; 005c002b
-        ;   XREF to: 005c3ec0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3ec0()
+    CALL crt_unknown.c_FUN_005c3ec0     ; 005c002b
+        ;   XREF to: 005c3ec0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3ec0()
     ADD ESP,0xc                         ; 005c0030
     MOV EAX,dword ptr [ESP + 0x350]     ; 005c0033
     CMP AX,word ptr [ESP + 0x348]       ; 005c003a
@@ -309,8 +309,8 @@ section .text
     XOR EAX,EAX                         ; 005c0065
     MOV AX,word ptr [ESP + 0x354]       ; 005c0067
     PUSH EAX                            ; 005c006f
-    CALL unkafter_morph.cpp_FUN_005c3fb0 ; 005c0070
-        ;   XREF to: 005c3fb0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3fb0()
+    CALL crt_unknown.c_FUN_005c3fb0     ; 005c0070
+        ;   XREF to: 005c3fb0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3fb0()
     ADD ESP,0x8                         ; 005c0075
     MOV dword ptr [EBX + 0x1a],EAX      ; 005c0078
         ;   Label: LAB_005c0078

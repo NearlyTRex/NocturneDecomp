@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 118,
+    "complexity_score": 172,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 13,
-    "suspect_count": 10,
+    "pseudocode_lines": 37,
+    "suspect_count": 13,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 38
+    "total_lines": 62
   },
   "cross_references": [
     {
       "addr": "00518680",
       "from_addr": "0051868c",
-      "name": "core_prye.cpp_FUN_00518680",
+      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -32,13 +32,13 @@
     ],
     "convention": "unknown",
     "name": "core_hero.cpp_FUN_004d26b0",
-    "signature": "void core_hero_cpp_FUN_004d26b0(int param_1)"
+    "signature": "void core_hero_cpp_FUN_004d26b0(CCharacter *param_1)"
   },
   "function_calls": [
     {
       "addr": "0042b0e0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042b0e0"
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042b0e0"
     },
     {
       "addr": "004dcad0",
@@ -48,7 +48,7 @@
     {
       "addr": "0054e6b0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e6b0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
     }
   ],
   "globals": [],
@@ -58,7 +58,7 @@
       {
         "call_addr": "0051868c",
         "call_type": "direct",
-        "caller": "core_prye.cpp_FUN_00518680",
+        "caller": "core_prye.cpp_CPrye_setup_FUN_00518680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,23 +109,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_hero_cpp_FUN_004d26b0(int param_1)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 5,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054e6b0((CDeformableModelInstance *)(param_1 + 0x158));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_charactr_cpp_FUN_0042b0e0(param_1);",
+      "text": "void core_hero_cpp_FUN_004d26b0(CCharacter *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -133,7 +117,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xcdcc) = 0;",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(&param_1->model);",
       "type": "unnamed_param"
     },
     {
@@ -141,7 +125,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_inv_cpp_FUN_004dcad0(param_1 + 0x206e8);",
+      "text": "core_charactr_cpp_CCharacter_setup_FUN_0042b0e0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -149,7 +133,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b68) = 0;",
+      "text": "param_1[1].base.actor_name[0] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -157,7 +141,7 @@
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b6c) = 0;",
+      "text": "param_1[1].base.actor_name[1] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -165,7 +149,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b70) = 0;",
+      "text": "param_1[1].base.actor_name[2] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -173,7 +157,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b7c) = 0x7149f2ca;",
+      "text": "param_1[1].base.actor_name[3] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -181,7 +165,47 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b78) = 0;",
+      "text": "core_inv_cpp_FUN_004dcad0(param_1[2].flames[0x13].base.create_event + 0x50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = param_1[2].flames;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = param_1[2].flames + 0x15;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = param_1[2].flames + 0x15;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = param_1[2].flames + 0x15;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar1 = param_1[2].flames + 0x15;",
       "type": "unnamed_param"
     }
   ],

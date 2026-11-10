@@ -23,7 +23,7 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440
   int iStack_24;
   int iStack_20;
   
-  if ((*(int *)&this_ptr->field_0x20 != 0) && (*(int *)&this_ptr->field_0x14 != 0)) {
+  if ((this_ptr->row_offsets != (int *)0x0) && (this_ptr->packed_data != (ushort *)0x0)) {
     iVar4 = (dest_x - clip_left) * DAT_005fba20;
     iVar5 = iVar4 >> 0x1f;
     iVar4 = (int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
@@ -31,9 +31,9 @@ void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_renderClippedRegion_FUN_0050f440
     iStack_24 = dest_y << 2;
     iStack_20 = start_row << 2;
     do {
-      piVar6 = (int *)(*(int *)&this_ptr->field_0x20 + iStack_20);
-      puVar9 = (ushort *)(*piVar6 + *(int *)&this_ptr->field_0x14);
-      puVar7 = (ushort *)(piVar6[1] + *(int *)&this_ptr->field_0x14);
+      piVar6 = (int *)((int)this_ptr->row_offsets + iStack_20);
+      puVar9 = (ushort *)(*piVar6 + (int)this_ptr->packed_data);
+      puVar7 = (ushort *)(piVar6[1] + (int)this_ptr->packed_data);
       iVar5 = iVar4 + *(int *)(&DAT_01c5faec + iStack_24);
       do {
         if (puVar7 <= puVar9) goto LAB_0050f4f8;

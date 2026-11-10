@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 24,
-    "complexity_score": 129,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 11,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
@@ -33,13 +33,13 @@
     ],
     "convention": "unknown",
     "name": "unkaddr_0059c270.cpp_FUN_0059c380",
-    "signature": "void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4)"
+    "signature": "void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,char *param_4)"
   },
   "function_calls": [
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -157,7 +157,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,uint param_4)",
+      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -165,7 +165,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,uint param_4)",
+      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -173,7 +173,7 @@
       "line": 2,
       "match": "param_3",
       "severity": "mild",
-      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,uint param_4)",
+      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -181,7 +181,7 @@
       "line": 2,
       "match": "param_4",
       "severity": "mild",
-      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,uint param_4)",
+      "text": "void unkaddr_0059c270_cpp_FUN_0059c380(uint param_1,uint param_2,int param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -197,15 +197,7 @@
       "line": 6,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005b7790(param_4,\"%s:OFF (%i)\",param_2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 6,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b7790(param_4,\"%s:OFF (%i)\",param_2,0);",
+      "text": "_sprintf(param_4,\"%s:OFF (%i)\");",
       "type": "unnamed_param"
     },
     {
@@ -213,23 +205,7 @@
       "line": 9,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005b7790(param_4,\"%s:ON (%i)\",param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005b7790(param_4,\"%s:ON (%i)\",param_2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 9,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "FUN_005b7790(param_4,\"%s:ON (%i)\",param_2,param_3);",
+      "text": "_sprintf(param_4,\"%s:ON (%i)\");",
       "type": "unnamed_param"
     },
     {

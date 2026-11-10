@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined1 * core_fldnotes_cpp_FUN_004a2170(undefined4 param_1,char *param_2,int param_3,int param_4)
+; int * core_fldnotes_cpp_FUN_004a2170(undefined4 param_1,char *param_2,int param_3,int param_4)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x108]:1  local_108
@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d420
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
-;   engine_dosio.cpp_FUN_00461070
+;   engine_dosio.cpp_splitPath_FUN_00461070
 ;   unkaddr_004a1200.cpp_FUN_004a1e60
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x120]     ; 004a21a2
     PUSH EDX                            ; 004a21a9
     MOV dword ptr [EBX + 0x14],0x5f6ee4 ; 004a21aa | g_PageResource_BitmapVTable
-    CALL engine_dosio.cpp_FUN_00461070  ; 004a21b1
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 004a21b1
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a21b6
     MOV ECX,dword ptr [ESP + 0x118]     ; 004a21b9
     PUSH ECX                            ; 004a21c0

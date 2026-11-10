@@ -7,7 +7,7 @@
 ; CLevelLoader *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6170 at 004b653b
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b653b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_gLevelIndicator_Used_d_c_005dbee2

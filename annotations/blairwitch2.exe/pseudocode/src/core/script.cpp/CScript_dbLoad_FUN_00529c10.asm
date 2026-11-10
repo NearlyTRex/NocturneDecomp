@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_script.cpp_FUN_00529f90
+;   core_script.cpp_CScript_findDialogEntry_FUN_00529f90
 ;   core_script.cpp_trimString_FUN_00521110
 ;   crt_memory.c_realloc_FUN_005b8ce0
 ;   crt_stdio.c_fclose_FUN_005b89c0
@@ -49,10 +49,10 @@
 ;   crt_stdio.c_ftell_FUN_005baab0
 ;   crt_stdio.c_ungetc_FUN_005b8350
 ;   crt_string.c_splitpath_FUN_005b9e58
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;   engine_dosio.cpp_getFileSize_FUN_00460aa0
-;   shape_edittool.cpp_FUN_0047be40
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;
 ; *****************************************************************************
 
@@ -213,8 +213,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00529dc2
     PUSH EAX                            ; 00529dc6
     PUSH EBX                            ; 00529dc7
-    CALL core_script.cpp_FUN_00529f90   ; 00529dc8
-        ;   XREF to: 00529f90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_00529f90(CScript * this_ptr, char * path)
+    CALL core_script.cpp_CScript_findDialogEntry_FUN_00529f90 ; 00529dc8
+        ;   XREF to: 00529f90 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_00529f90(CScript * this_ptr, char * path)
     ADD ESP,0x8                         ; 00529dcd
     TEST EAX,EAX                        ; 00529dd0
     JL 0x00529df5                       ; 00529dd2
@@ -226,8 +226,8 @@ section .text
     PUSH 0x5e4fac                       ; 00529de1 | = "Warning! Duplicate wav string %s dete..."
     MOV EDX,dword ptr [0x006138e0]      ; 00529de6 | g_CEditorToolsPtr
     PUSH EDX                            ; 00529dec
-    CALL shape_edittool.cpp_FUN_0047be40 ; 00529ded
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 00529ded
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 00529df2
     LEA EAX,[ESP + 0x8]                 ; 00529df5
         ;   Label: LAB_00529df5
@@ -235,8 +235,8 @@ section .text
     PUSH 0x5e4fdc                       ; 00529dfa | = "%s.wav"
     LEA EAX,[ESP + 0x4c]                ; 00529dff
     PUSH EAX                            ; 00529e03
-    CALL crt_unknown.c_FUN_005b7790     ; 00529e04
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00529e04
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00529e09
     LEA EAX,[ESP + 0x44]                ; 00529e0c
     PUSH EAX                            ; 00529e10
@@ -323,8 +323,8 @@ section .text
     PUSH 0x5e4fe9                       ; 00529efe | = "%s.mp3"
     LEA EAX,[ESP + 0x4c]                ; 00529f03
     PUSH EAX                            ; 00529f07
-    CALL crt_unknown.c_FUN_005b7790     ; 00529f08
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00529f08
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00529f0d
     LEA EAX,[ESP + 0x44]                ; 00529f10
     PUSH EAX                            ; 00529f14

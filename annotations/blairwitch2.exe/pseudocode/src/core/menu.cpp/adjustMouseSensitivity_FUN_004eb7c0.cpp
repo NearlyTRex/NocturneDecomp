@@ -76,11 +76,11 @@ LAB_004eb823:
     iVar5 = 0;
     iVar4 = 0xff;
     iVar2 = _DAT_01c35e54 + _DAT_01c35e4c;
-    iVar1 = engine_font_cpp_FUN_004ab560(_DAT_01c25590,0x41);
+    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x41);
     engine_font_cpp_CBitFont_drawTextCenterInBoundsF_FUN_004a93f0
               (_DAT_01c25590,_DAT_01c35e48,_DAT_01c35e50,(iVar2 - iVar1) / 2,iVar4,iVar5,
                format_string);
-    wincore_wddvmem_cpp_FUN_00589560();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);
     if (iVar1 != 0) goto LAB_004eb9f5;
     iVar1 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84);

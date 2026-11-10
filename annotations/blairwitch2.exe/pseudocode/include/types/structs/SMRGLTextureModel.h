@@ -4,12 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SMRGLHeaderBasic.h"
 
 // Structure: SMRGLTextureModel
-// Stub: no RTTI in this build, size and fields not yet recovered
-// Ghidra size: 0x1 (1 bytes)
+// Ghidra size: 0x48 (72 bytes)
 #pragma pack(push, 1)
 typedef struct SMRGLTextureModel {
+    SMRGLHeaderBasic base; // 0x0
+    char texture_name[64]; // 0x8
 } SMRGLTextureModel;
 #pragma pack(pop)
 

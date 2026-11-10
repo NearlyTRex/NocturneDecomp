@@ -21,29 +21,29 @@ CDemonActorType * CTrash::getActorType(CTrash *this_ptr);
 // Address: 00576930
 CTrash * __cdecl CTrash::ctor(CTrash *this_ptr);
 
-// Original: core_trash.cpp_FUN_00576980
+// Original: core_trash.cpp_CTrash_setup_FUN_00576980
 // Address: 00576980
-void FUN_00576980(CDemonActor *param_1);
+void __cdecl CTrash::setup(CTrash *this_ptr);
 
-// Original: core_trash.cpp_FUN_00576a40
+// Original: core_trash.cpp_CTrash_archive_FUN_00576a40
 // Address: 00576a40
-void FUN_00576a40(CDemonActor *param_1);
+void __cdecl CTrash::archive(CTrash *this_ptr);
 
-// Original: core_trash.cpp_FUN_00576ab0
+// Original: core_trash.cpp_CTrash_process_FUN_00576ab0
 // Address: 00576ab0
-void FUN_00576ab0(CDemonActor *param_1,float param_2);
+void __cdecl CTrash::process(CTrash *this_ptr,float delta_time);
 
-// Original: core_trash.cpp_FUN_00577480
+// Original: core_trash.cpp_CTrash_renderOpaque_FUN_00577480
 // Address: 00577480
-int FUN_00577480(CDemonActor *param_1);
+int __cdecl CTrash::renderOpaque(CTrash *this_ptr);
 
-// Original: core_trash.cpp_FUN_00577560
+// Original: core_trash.cpp_CTrash_getBoundingBox_FUN_00577560
 // Address: 00577560
-void FUN_00577560(int param_1);
+CBoundingBox3D * __cdecl CTrash::getBoundingBox(CTrash *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_trash.cpp_FUN_00577630
+// Original: core_trash.cpp_CTrash_getCollisionType_FUN_00577630
 // Address: 00577630
-undefined4 FUN_00577630(void);
+ECollisionType __cdecl CTrash::getCollisionType(CTrash *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_trash.cpp_CTrash_dtor_FUN_00577640
 // Address: 00577640

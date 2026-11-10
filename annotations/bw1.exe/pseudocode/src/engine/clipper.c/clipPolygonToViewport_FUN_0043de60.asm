@@ -52,8 +52,8 @@
 ;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043cc70
 ;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_0043ced0
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60
-;   engine_prim.c_FUN_0053f080
-;   engine_prim.c_FUN_0053f720
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720
+;   engine_prim.c_renderScanlinePolygon_FUN_0053f080
 ;   engine_special.cpp_drawPolygon2_FUN_00582370
 ;
 ; *****************************************************************************
@@ -169,8 +169,8 @@ section .text
     PUSH EBX                            ; 0043df4c
         ;   Label: LAB_0043df4c
     PUSH EDX                            ; 0043df4d
-    CALL engine_prim.c_FUN_0053f720     ; 0043df4e
-        ;   XREF to: 0053f720 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0053f720(int * vertex_indices, int vertex_count)
+    CALL engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 ; 0043df4e
+        ;   XREF to: 0053f720 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0043df53
     JMP 0x0043df44                      ; 0043df56
         ;   XREF to: 0043df44 (UNCONDITIONAL_JUMP)  ; LAB_0043df44
@@ -251,8 +251,8 @@ section .text
         ;   XREF to: 0043df44 (CONDITIONAL_JUMP)  ; LAB_0043df44
     PUSH EBX                            ; 0043e00f
     PUSH 0x7c7558                       ; 0043e010 | DAT_007c7558
-    CALL engine_prim.c_FUN_0053f080     ; 0043e015
-        ;   XREF to: 0053f080 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0053f080(SRenderVertex * vertices, int vertex_count)
+    CALL engine_prim.c_renderScanlinePolygon_FUN_0053f080 ; 0043e015
+        ;   XREF to: 0053f080 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderScanlinePolygon_FUN_0053f080(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0043e01a
     ADD ESP,0x20                        ; 0043e01d
     POP EBP                             ; 0043e020

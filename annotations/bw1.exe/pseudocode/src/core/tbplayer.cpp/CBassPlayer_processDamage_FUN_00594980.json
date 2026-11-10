@@ -1,0 +1,124 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 28,
+    "complexity_score": 28,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00594980",
+    "address_range": [
+      [
+        "00594980",
+        "005949c4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tbplayer.cpp_CBassPlayer_processDamage_FUN_00594980",
+    "signature": "void __cdecl core_tbplayer_cpp_CBassPlayer_processDamage_FUN_00594980(CBassPlayer *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "005247c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.2727272727272725,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 47,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 11,
+      "INT_AND": 12,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "INT_ZEXT": 4,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 138
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBassPlayer *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x27b0",
+      "severity": "mild",
+      "text": "if ((*(int *)&(this_ptr->base).base.field_0x27b0 == 0) &&",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBassPlayer",
+        "offset": 264,
+        "vtable_addr": "006065c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

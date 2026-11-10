@@ -11,6 +11,7 @@ uint __cdecl core_sound_cpp_CSound_playSound_FUN_0055ae30(CSound *this_ptr,void 
 {
   uint uVar1;
   
-  uVar1 = core_sound_cpp_FUN_005594c0(user_data,sound_name,0.0,0.0,0.0,(CVector3f *)0x0,1);
+  uVar1 = core_sound_cpp_playSfxInternal_FUN_005594c0
+                    (user_data,sound_name,0.0,0.0,0.0,(CVector3f *)0x0,1);
   return uVar1;
 }

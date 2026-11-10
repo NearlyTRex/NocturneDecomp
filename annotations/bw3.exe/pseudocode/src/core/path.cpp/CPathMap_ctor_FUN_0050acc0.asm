@@ -8,7 +8,7 @@
 ;
 ; XREF[7]:
 ;   core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10 at 005a0a27
-;   core_hero.cpp_FUN_004d24b0 at 004d24c4
+;   core_hero.cpp_CHero_ctor_FUN_004d24b0 at 004d24c4
 ;   core_npc.cpp_CNPC_ctor_FUN_00508f40 at 00508f57
 ;   core_spirbear.cpp_CSpiritBear_ctor_FUN_0059aaa0 at 0059aab9
 ;   core_spireagl.cpp_CSpiritEagle_ctor_FUN_005991d0 at 005991e9

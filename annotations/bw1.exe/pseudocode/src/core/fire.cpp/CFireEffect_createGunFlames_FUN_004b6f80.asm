@@ -11,9 +11,9 @@
 ; int              Stack[0x14]:4   flame_type
 ;
 ; XREF[3]:
-;   core_dracbrid.cpp_FUN_0047b510 at 0047bf28
-;   core_emitter.cpp_FUN_0049f310 at 0049f95a
-;   core_flamegun.cpp_FUN_004b9660 at 004b96ca
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047bf28
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f95a
+;   core_flamegun.cpp_CFlameThrower_fire_FUN_004b9660 at 004b96ca
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cb5820

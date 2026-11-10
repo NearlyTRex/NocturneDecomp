@@ -9,10 +9,10 @@
 ; CVector3f *      Stack[0xc]:4   orientation
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0049d2c0 at 0049d429
+;   core_fire.cpp_CFireEffect_createStake_FUN_0049d2c0 at 0049d429
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;
 ; *****************************************************************************
 
@@ -43,8 +43,8 @@ section .text
     PUSH EAX                            ; 0049417e
     LEA EAX,[EBX + 0x1c]                ; 0049417f
     PUSH EAX                            ; 00494182
-    CALL core_dirmat.cpp_FUN_00449280   ; 00494183
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 00494183
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     MOV dword ptr [EBX],0x0             ; 00494188
     ADD ESP,0x8                         ; 0049418e
     MOV dword ptr [EBX + 0x258],0x0     ; 00494191

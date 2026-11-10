@@ -2,15 +2,35 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CGhoul
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd0d0 (53456 bytes)
 #pragma pack(push, 1)
 typedef struct CGhoul {
-    char field_0[53456]; // 0x0
+    CEnemy base; // 0x0
+    char field_53332[8]; // 0xd054
+    int spasm_timer; // 0xd05c
+    int arise_timer; // 0xd060
+    int pending_eat_state; // 0xd064
+    float flinch_blend_weight; // 0xd068
+    int flinch_motion_index; // 0xd06c
+    int lives_left; // 0xd070
+    int spasm_count; // 0xd074
+    int part_indices[11]; // 0xd078
+    uint sfx_handles[3]; // 0xd0a4
+    float stun_timer; // 0xd0b0
+    struct CDemonActor* dark_waypoint; // 0xd0b4
+    float heal_timer; // 0xd0b8
+    int is_berserk; // 0xd0bc
+    float stuck_timer; // 0xd0c0
+    CVector3f prev_position; // 0xd0c4
 } CGhoul;
 #pragma pack(pop)
 

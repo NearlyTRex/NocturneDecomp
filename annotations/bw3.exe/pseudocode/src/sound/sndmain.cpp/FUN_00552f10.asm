@@ -9,15 +9,15 @@
 ;
 ; XREF[10]:
 ;   sound_sndmain.cpp_FUN_00556700 at 00556711
-;   sound_sndmain.cpp_FUN_00556780 at 00556787
 ;   sound_sndmain.cpp_FUN_00556930 at 00556937
 ;   sound_sndmain.cpp_FUN_00556a30 at 00556a37
 ;   sound_sndmain.cpp_FUN_00556ab0 at 00556ab7
 ;   sound_sndmain.cpp_FUN_00556ae0 at 00556ae7
-;   sound_sndmain.cpp_FUN_00556b40 at 00556b7a
-;   sound_sndmain.cpp_FUN_00556c10 at 00556c1a
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_005567c0 at 005567d2
+;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00556780 at 00556787
 ;   sound_sndmain.cpp_killSfx_FUN_00556be0 at 00556be7
+;   sound_sndmain.cpp_setSfxFade_FUN_00556c10 at 00556c1a
+;   sound_sndmain.cpp_setSfxUserData_FUN_00556b40 at 00556b7a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02ce7280
@@ -26,7 +26,7 @@
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     POP ESI                             ; 00552f5f
     POP EBX                             ; 00552f60
     RET                                 ; 00552f61
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00552f62
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00552f62
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
         ;   Label: LAB_00552f62
     CMP ESI,dword ptr [EBX + 0x64]      ; 00552f67 | DAT_02ce7280
     JNZ 0x00552f90                      ; 00552f6a

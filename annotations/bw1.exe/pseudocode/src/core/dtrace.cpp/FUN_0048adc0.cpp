@@ -15,10 +15,13 @@ void core_dtrace_cpp_FUN_0048adc0(CDemonRaytrace *param_1,_FILE *param_2)
   int iVar1;
   int iVar2;
   byte bVar3;
-  int aiStackY_1014 [1014];
-  float local_28 [3];
-  int local_1c;
-  uint local_18;
+  float afStackY_1014 [1014];
+  float local_2c;
+  float local_28;
+  float local_24;
+  float local_20;
+  float local_1c;
+  float local_18;
   int local_14;
   
   bVar3 = 0;
@@ -35,22 +38,24 @@ void core_dtrace_cpp_FUN_0048adc0(CDemonRaytrace *param_1,_FILE *param_2)
     _DAT_01d1d404 = 0x14b;
     core_main_c_FUN_005030e0("CDemonRaytrace::loadBinary - file is newer than .exe!");
   }
-  _fread(&param_1->field_0x40,4,1,param_2);
-  _fread(&param_1->field_0x44,4,1,param_2);
-  _fread(&param_1->field_0x48,4,1,param_2);
-  _fread(&param_1->field_0x10,0xc,1,param_2);
-  _fread(&param_1->field_0x1c,0xc,1,param_2);
-  _fread(&param_1->field_0x28,0xc,1,param_2);
-  local_28[0] = *(float *)&param_1->field_0x2c * _DAT_005db940;
-  local_28[1] = *(float *)&param_1->field_0x30 * _DAT_005db940;
-  local_28[2] = *(float *)&param_1->field_0x28 * _DAT_005db940;
-  local_28[(uint)bVar3 * 0xfffffffe + 3] = local_28[(uint)bVar3 * -2];
-  local_28[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
-       local_28[(uint)bVar3 * 0xfffffffe + (uint)bVar3 * 0xfffffffe + 1];
-  if ((float *)&param_1->field_0x34 != local_28 + 2) {
-    *(float *)&param_1->field_0x34 = local_28[2];
-    *(int *)&param_1->field_0x38 = local_1c;
-    *(uint *)&param_1->field_0x3c = local_18;
+  _fread(&param_1->grid_coord,4,1,param_2);
+  _fread(&(param_1->grid_coord).y,4,1,param_2);
+  _fread(&(param_1->grid_coord).z,4,1,param_2);
+  _fread(&param_1->bbox_min,0xc,1,param_2);
+  _fread(&param_1->bbox_max,0xc,1,param_2);
+  _fread(&param_1->cell_size,0xc,1,param_2);
+  local_2c = (param_1->cell_size).x * _DAT_005db940;
+  local_28 = (param_1->cell_size).y * _DAT_005db940;
+  local_24 = (param_1->cell_size).z * _DAT_005db940;
+  local_20 = local_2c;
+  (&stack0xffffffe4)[(uint)bVar3 * 0xfffffffe] =
+       (float)*(uint *)((int)&stack0xffffffd8 + (uint)bVar3 * -8);
+  *(uint *)((int)&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
+       *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8);
+  if (&param_1->adjusted_size != (CVector3f *)&stack0xffffffe0) {
+    (param_1->adjusted_size).x = local_20;
+    (param_1->adjusted_size).y = local_1c;
+    (param_1->adjusted_size).z = local_18;
   }
   if (local_14 < 4) {
     _DAT_01d1d400 = "..\\core\\dtrace.cpp";
@@ -61,10 +66,10 @@ void core_dtrace_cpp_FUN_0048adc0(CDemonRaytrace *param_1,_FILE *param_2)
     core_dtrace_cpp_CDemonRaytrace_allocNewCubeList_FUN_0048aa40(param_1);
     iVar2 = 0;
     for (iVar1 = 0;
-        iVar1 < *(int *)&param_1->field_0x40 * *(int *)&param_1->field_0x44 *
-                *(int *)&param_1->field_0x48; iVar1 = iVar1 + 1) {
+        iVar1 < (param_1->grid_coord).x * (param_1->grid_coord).y * (param_1->grid_coord).z;
+        iVar1 = iVar1 + 1) {
       core_dcube_cpp_CDemonCube_load_FUN_00457e50
-                ((CDemonCube *)(*(int *)&param_1->field_0x50 + iVar2),param_2);
+                ((CDemonCube *)((int)&param_1->cube_data->voxel_buffer1 + iVar2),param_2);
       iVar2 = iVar2 + 0x34;
     }
   }

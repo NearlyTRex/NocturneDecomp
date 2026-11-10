@@ -29,21 +29,21 @@ void __cdecl CBoxActor::setup(CBoxActor *this_ptr);
 // Address: 00421e80
 void FUN_00421e80(int param_1);
 
-// Original: core_boxactor.cpp_FUN_00422000
+// Original: core_boxactor.cpp_CBoxActor_process_FUN_00422000
 // Address: 00422000
-void __cdecl FUN_00422000(CBoxActor *this_ptr,float delta_time);
+void __cdecl CBoxActor::process(CBoxActor *this_ptr,float delta_time);
 
-// Original: core_boxactor.cpp_FUN_004224f0
+// Original: core_boxactor.cpp_CBoxActor_renderOpaque_FUN_004224f0
 // Address: 004224f0
-int FUN_004224f0(int param_1);
+int __cdecl CBoxActor::renderOpaque(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422600
+// Original: core_boxactor.cpp_CBoxActor_renderTransparent_FUN_00422600
 // Address: 00422600
-int FUN_00422600(int param_1);
+int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422700
+// Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_00422700
 // Address: 00422700
-void FUN_00422700(int param_1);
+CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_boxactor.cpp_CBoxActor_archive_FUN_00422760
 // Address: 00422760
@@ -53,13 +53,13 @@ void __cdecl CBoxActor::archive(CBoxActor *this_ptr);
 // Address: 00422a50
 int __cdecl CBoxActor::getBlockVirtualDirectorFlag(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422a60
+// Original: core_boxactor.cpp_CBoxActor_getCollisionType_FUN_00422a60
 // Address: 00422a60
-undefined4 FUN_00422a60(int param_1,int param_2);
+ECollisionType __cdecl CBoxActor::getCollisionType(CBoxActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_boxactor.cpp_FUN_00422ab0
+// Original: core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_00422ab0
 // Address: 00422ab0
-void __cdecl FUN_00422ab0(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
+void __cdecl CBoxActor::resolveRayPush(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
 // Original: core_boxactor.cpp_CBoxActor_canPickup_FUN_00422c30
 // Address: 00422c30
@@ -97,29 +97,29 @@ void __cdecl CBoxActor::setPositionAndOrientation(CBoxActor *this_ptr,CVector3f 
 // Address: 00422e90
 int __cdecl CBoxActor::getAllowedMeleeAttackTypes(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422ea0
+// Original: core_boxactor.cpp_factoryFuncLightActor_FUN_00422ea0
 // Address: 00422ea0
-void FUN_00422ea0(void);
+void factoryFuncLightActor(void);
 
-// Original: core_boxactor.cpp_FUN_00422ec0
+// Original: core_boxactor.cpp_CLightActor_getActorType_FUN_00422ec0
 // Address: 00422ec0
-undefined * FUN_00422ec0(void);
+CDemonActorType * __cdecl CLightActor::getActorType(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_ctor_FUN_00422ed0
 // Address: 00422ed0
 CLightActor * __cdecl CLightActor::ctor(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422f60
+// Original: core_boxactor.cpp_CLightActor_setup_FUN_00422f60
 // Address: 00422f60
-void FUN_00422f60(CLightActor *param_1);
+void __cdecl CLightActor::setup(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_00422f90
+// Original: core_boxactor.cpp_CLightActor_process_FUN_00422f90
 // Address: 00422f90
-void FUN_00422f90(CBoxActor *param_1,float param_2,undefined4 param_3,float param_4);
+void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 
-// Original: core_boxactor.cpp_FUN_004231e0
+// Original: core_boxactor.cpp_CLightActor_archive_FUN_004231e0
 // Address: 004231e0
-void FUN_004231e0(CBoxActor *param_1);
+void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_FUN_004232c0
 // Address: 004232c0

@@ -11,8 +11,8 @@
 ; float            Stack[0x14]:4   end_width
 ;
 ; XREF[3]:
-;   core_baron.cpp_FUN_0040fcf0 at 0040fdf1
-;   core_emitter.cpp_FUN_0049f310 at 0049faa8
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fdf1
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049faa8
 ;   core_weather.cpp_CWeather_createLightningStrike_FUN_005ae580 at 005ae77c
 ;
 ; Referenced Globals:

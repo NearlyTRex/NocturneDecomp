@@ -14,8 +14,9 @@ CSpiritShadow * core_shadow_cpp_CSpiritShadow_ctor_FUN_00545f30(CSpiritShadow *t
   CShadow *pCVar1;
   
   pCVar1 = core_shadow_cpp_CShadow_ctor_FUN_00543500((CShadow *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CSpiritShadowVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,"shadowbeast.dfm");
+  *(CEnemy_full_vtable **)&pCVar1->field_0x154 = &g_CSpiritShadowVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar1->field_0x158,"shadowbeast.dfm");
   *(uint *)&pCVar1->field_0x2538 = 0x42200000;
   *(uint *)&pCVar1->field_0xce5c = 0x41c80000;
   *(uint *)&pCVar1->field_0xce60 = 0x41a00000;

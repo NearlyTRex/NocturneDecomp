@@ -6,12 +6,12 @@
 ;
 ; XREF[7]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0 at 004688e8
-;   core_elephant.cpp_FUN_0049e9c0 at 0049eaa4
-;   core_fire.cpp_FUN_004b1f80 at 004b1f85
-;   core_gun.cpp_FUN_004e8630 at 004e8a10
-;   core_rifle.cpp_FUN_005407e0 at 005408df
-;   core_shotgun.cpp_FUN_00561f80 at 0056207f
-;   core_tommygun.cpp_FUN_00598420 at 00598833
+;   core_elephant.cpp_CElephantGun_onFired_FUN_0049e9c0 at 0049eaa4
+;   core_fire.cpp_loadDynamiteAssets_FUN_004b1f80 at 004b1f85
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8a10
+;   core_rifle.cpp_CRifle_onFired_FUN_005407e0 at 005408df
+;   core_shotgun.cpp_CShotgun_onFired_FUN_00561f80 at 0056207f
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598833
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d97a7

@@ -7,7 +7,7 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00409db0
+;   core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409db0
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     RET                                 ; 00416b6f
     PUSH EAX                            ; 00416b70
         ;   Label: LAB_00416b70
-    CALL core_actor.cpp_FUN_00409db0    ; 00416b71
-        ;   XREF to: 00409db0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_00409db0()
+    CALL core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409db0 ; 00416b71
+        ;   XREF to: 00409db0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409db0(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00416b76
     RET                                 ; 00416b79
 

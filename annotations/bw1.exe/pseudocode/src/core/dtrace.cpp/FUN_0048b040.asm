@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_drip.cpp_FUN_00485610 at 004856ae
+;   core_drip.cpp_CDrip_process_FUN_00485610 at 004856ae
 ;
 ; Called Functions:
 ;   core_dtrace.cpp_FUN_0048b150

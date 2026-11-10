@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 20,
+    "complexity_score": 22,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 22,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 74
+    "total_lines": 76
   },
   "cross_references": [
+    {
+      "addr": "004958d0",
+      "from_addr": "00495d2b",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00493150",
       "from_addr": "00493193",
       "name": "shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_00493150",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004958d0",
-      "from_addr": "00495d2b",
-      "name": "shape_edittool.cpp_FUN_004958d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -58,7 +58,7 @@
       {
         "call_addr": "00495d2b",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004958d0",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

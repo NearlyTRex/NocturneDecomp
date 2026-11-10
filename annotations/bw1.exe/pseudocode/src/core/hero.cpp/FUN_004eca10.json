@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 151,
-    "complexity_score": 407,
+    "complexity_score": 408,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
+    "pseudocode_lines": 43,
     "suspect_count": 35,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 193
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -44,6 +44,11 @@
   },
   "function_calls": [
     {
+      "addr": "004ebc40",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004ebc40"
+    },
+    {
       "addr": "004eb090",
       "is_variadic": false,
       "name": "core_hero.cpp_CHero_tryInteract_FUN_004eb090"
@@ -72,11 +77,6 @@
       "addr": "004eb890",
       "is_variadic": false,
       "name": "core_hero.cpp_FUN_004eb890"
-    },
-    {
-      "addr": "004ebc40",
-      "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004ebc40"
     },
     {
       "addr": "004ec090",
@@ -421,15 +421,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar2 != 0) && (iVar2 = core_hero_cpp_FUN_004ebc40(param_1), iVar2 != 0)) {",
+      "text": "(iVar2 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004ebc40(param_1), iVar2 != 0)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((iVar1 != 0) && (iVar1 = core_hero_cpp_FUN_004ec090(param_1,\"CBodyPart\"), iVar1 != 0)",

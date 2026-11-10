@@ -53,21 +53,21 @@ void __cdecl FUN_004e94f0(void);
 // Address: 004ea280
 void __cdecl FUN_004ea280(int initialize_systems);
 
-// Original: core_menu.cpp_FUN_004ea4d0
+// Original: core_menu.cpp_showMainGameMenu_FUN_004ea4d0
 // Address: 004ea4d0
-int __cdecl FUN_004ea4d0(void);
+int __cdecl showMainGameMenu(void);
 
-// Original: core_menu.cpp_FUN_004ea9e0
+// Original: core_menu.cpp_addCustomKeyBinding_FUN_004ea9e0
 // Address: 004ea9e0
-void FUN_004ea9e0(undefined4 param_1,char *param_2);
+void __cdecl addCustomKeyBinding(int *key_code_ptr,char *key_name);
 
-// Original: core_menu.cpp_FUN_004eaa60
+// Original: core_menu.cpp_getKeyDisplayName_FUN_004eaa60
 // Address: 004eaa60
-char * __cdecl FUN_004eaa60(EInputCodeType key_code);
+char * __cdecl getKeyDisplayName(EInputCodeType key_code);
 
-// Original: core_menu.cpp_FUN_004eacb0
+// Original: core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0
 // Address: 004eacb0
-int __cdecl FUN_004eacb0(EInputCodeType *key_code_ptr,char *description);
+int __cdecl isKeyCodeValidForMode(EInputCodeType *key_code_ptr,char *description);
 
 // Original: core_menu.cpp_FUN_004eae80
 // Address: 004eae80

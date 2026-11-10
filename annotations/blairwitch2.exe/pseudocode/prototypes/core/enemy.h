@@ -21,53 +21,53 @@ void __cdecl CEnemy::setup(CEnemy *this_ptr);
 // Address: 00487ec0
 void __cdecl CEnemy::archive(CEnemy *this_ptr);
 
-// Original: core_enemy.cpp_FUN_00488020
+// Original: core_enemy.cpp_CEnemy_getTargetPoints_FUN_00488020
 // Address: 00488020
-undefined4 FUN_00488020(int param_1,float *param_2);
+int __cdecl CEnemy::getTargetPoints(CEnemy *this_ptr,CVector3f *out_points_array);
 
-// Original: core_enemy.cpp_FUN_00488110
+// Original: core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110
 // Address: 00488110
-int __cdecl FUN_00488110(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
+int __cdecl CEnemy::testAttackRadius(CEnemy *this_ptr,CVector3f *point,float radius,SDamageInfo *damage_info);
 
-// Original: core_enemy.cpp_FUN_004881b0
+// Original: core_enemy.cpp_CEnemy_testAttackLine_FUN_004881b0
 // Address: 004881b0
-int __cdecl FUN_004881b0(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
+int __cdecl CEnemy::testAttackLine(CEnemy *this_ptr,CVector3f *start,CVector3f *end,SDamageInfo *damage_info);
 
-// Original: core_enemy.cpp_FUN_00488250
+// Original: core_enemy.cpp_CEnemy_getTargetPoint_FUN_00488250
 // Address: 00488250
-void FUN_00488250(int param_1);
+CVector3f * __cdecl CEnemy::getTargetPoint(CEnemy *this_ptr,CVector3f *out_point);
 
 // Original: core_enemy.cpp_FUN_00488320
 // Address: 00488320
 bool FUN_00488320(int param_1,int param_2);
 
-// Original: core_enemy.cpp_FUN_00488450
+// Original: core_enemy.cpp_CEnemy_updateVictim_FUN_00488450
 // Address: 00488450
-void FUN_00488450(int param_1,float param_2);
+void __cdecl CEnemy::updateVictim(CEnemy *this_ptr,float delta_time);
 
 // Original: core_enemy.cpp_FUN_00488850
 // Address: 00488850
 void FUN_00488850(int param_1,int param_2);
 
-// Original: core_enemy.cpp_FUN_00488890
+// Original: core_enemy.cpp_CEnemy_processDamage_FUN_00488890
 // Address: 00488890
-void FUN_00488890(CCharacter *param_1,SDamageInfo *param_2);
+void __cdecl CEnemy::processDamage(CEnemy *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_enemy.cpp_CEnemy_renderBackground_FUN_00488940
 // Address: 00488940
 void __cdecl CEnemy::renderBackground(CEnemy *this_ptr,int layer_flag);
 
-// Original: core_enemy.cpp_FUN_00488970
+// Original: core_enemy.cpp_CEnemy_updatePatrol_FUN_00488970
 // Address: 00488970
-int __cdecl FUN_00488970(CEnemy *this_ptr,float delta_time);
+int __cdecl CEnemy::updatePatrol(CEnemy *this_ptr,float delta_time);
 
-// Original: core_enemy.cpp_FUN_004889d0
+// Original: core_enemy.cpp_CEnemy_releaseVictim_FUN_004889d0
 // Address: 004889d0
-void FUN_004889d0(CCharacter *param_1);
+void __cdecl CEnemy::releaseVictim(CEnemy *this_ptr);
 
-// Original: core_enemy.cpp_FUN_00488a80
+// Original: core_enemy.cpp_CEnemy_onVictimLost_FUN_00488a80
 // Address: 00488a80
-void FUN_00488a80(int param_1,int param_2);
+void __cdecl CEnemy::onVictimLost(CEnemy *this_ptr,CDemonActor *lost_actor);
 
 // Original: core_enemy.cpp_FUN_00488aae
 // Address: 00488aae

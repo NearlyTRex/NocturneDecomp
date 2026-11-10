@@ -43,7 +43,7 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004b4b30(CFireEffect *this_ptr)
   this_ptr_00 = (CSmokeParticle *)&DAT_01c58aa0;
   _DAT_01c58a9c = 0;
   do {
-    core_fire_cpp_FUN_004abea0(this_ptr_00);
+    core_fire_cpp_CSmokeParticle_reset_FUN_004abea0(this_ptr_00);
     this_ptr_00 = this_ptr_00 + 1;
   } while (this_ptr_00 != (CSmokeParticle *)&DAT_01c6eaa0);
   _DAT_01c6eaa4 = 0;
@@ -124,13 +124,13 @@ void __cdecl core_fire_cpp_CFireEffect_init_FUN_004b4b30(CFireEffect *this_ptr)
   this_ptr_03 = (CCrater *)0x1cb4f60;
   _DAT_01cb4f5c = 0;
   do {
-    core_fire_cpp_FUN_004b1f90(this_ptr_03);
+    core_fire_cpp_CCrater_reset_FUN_004b1f90(this_ptr_03);
     this_ptr_03 = this_ptr_03 + 1;
   } while (this_ptr_03 != (CCrater *)&DAT_01cb5820);
   this_ptr_04 = (CGunFlame *)&DAT_01cb5824;
   _DAT_01cb5820 = 0;
   do {
-    core_fire_cpp_FUN_004b2b40(this_ptr_04);
+    core_fire_cpp_CGunFlame_reset_FUN_004b2b40(this_ptr_04);
     this_ptr_04 = this_ptr_04 + 1;
   } while (this_ptr_04 != (CGunFlame *)&DAT_01cb9e74);
   this_ptr_05 = (CLightningBolt *)0x1cb9e78;

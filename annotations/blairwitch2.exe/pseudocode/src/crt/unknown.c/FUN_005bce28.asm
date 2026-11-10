@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   crt_unknown.c_FUN_005bd078 at 005bd0bd
-;   unkafter_2d.cpp_FUN_005c6710 at 005c678f
-;   unkafter_2d.cpp_FUN_005c68a8 at 005c68a8
+;   crt_unknown.c_FUN_005c6710 at 005c678f
+;   crt_unknown.c_FUN_005c68a8 at 005c68a8
 ;
 ; *****************************************************************************
 

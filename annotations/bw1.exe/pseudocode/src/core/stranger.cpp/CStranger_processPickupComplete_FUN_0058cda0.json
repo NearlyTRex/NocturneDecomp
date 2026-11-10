@@ -1,0 +1,194 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 96,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 21,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "005881d0",
+      "from_addr": "0058884a",
+      "name": "core_stranger.cpp_FUN_005881d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0058cda0",
+    "address_range": [
+      [
+        "0058cda0",
+        "0058ce18"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stranger.cpp_CStranger_processPickupComplete_FUN_0058cda0",
+    "signature": "void __cdecl core_stranger_cpp_CStranger_processPickupComplete_FUN_0058cda0(CStranger *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c600",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
+    },
+    {
+      "addr": "0040e210",
+      "is_variadic": false,
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210"
+    },
+    {
+      "addr": "00494340",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_00494340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f6cf1",
+      "name": "s_actionPending_d_stranger_005f6cf0+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061abc0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c3eb54"
+    },
+    {
+      "addr": "007c33e0",
+      "name": "g_CAmmoBoxClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0058884a",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_FUN_005881d0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.861111111111111,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CBRANCH": 3,
+      "COPY": 29,
+      "INT_ADD": 14,
+      "INT_AND": 13,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 16,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 139
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStranger *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x1ff78",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x1ff78 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x1ff5c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x1ff5c != 4) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x1ff5c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x1ff5c,0xdba);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x1ff78",
+      "severity": "mild",
+      "text": "(*(uint *)&this_ptr->field_0x1ff78,g_CAmmoBoxClassInfo.name_hash);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x1fae8",
+      "severity": "mild",
+      "text": "(this_ptr_00,(CInventory *)&this_ptr->field_0x1fae8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x1ff5c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1ff5c = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x1ff78",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x1ff78 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

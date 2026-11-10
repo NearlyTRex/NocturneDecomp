@@ -7,7 +7,7 @@
 ; Called Functions:
 ;   crt_time.c__localtime_FUN_005c2738
 ;   crt_unknown.c_FUN_005c862c
-;   unkafter_zombie.cpp_FUN_005cc330
+;   crt_unknown.c_FUN_005cc330
 ;
 ; *****************************************************************************
 
@@ -63,8 +63,8 @@ section .text
     JNZ 0x005c8410                      ; 005c83f9
         ;   XREF to: 005c8410 (CONDITIONAL_JUMP)  ; LAB_005c8410
     PUSH EDI                            ; 005c83fb
-    CALL unkafter_zombie.cpp_FUN_005cc330 ; 005c83fc
-        ;   XREF to: 005cc330 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cc330()
+    CALL crt_unknown.c_FUN_005cc330     ; 005c83fc
+        ;   XREF to: 005cc330 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cc330()
     ADD ESP,0x4                         ; 005c8401
     LEA EDI,[ESP + 0x38]                ; 005c8404
     MOV dword ptr [ESP + 0x3c],EAX      ; 005c8408

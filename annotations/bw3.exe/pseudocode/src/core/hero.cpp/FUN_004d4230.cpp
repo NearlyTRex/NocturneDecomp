@@ -31,8 +31,8 @@ int core_hero_cpp_FUN_004d4230(int param_1,float *param_2)
   iStack_20 = 0;
   pfStack_18 = (float *)(param_1 + 0x20);
   iStack_28 = 0;
-  for (; iStack_1c < *(int *)&g_CDemonSetPtr->field_0x150fec; iStack_1c = iStack_1c + 1) {
-    iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + iStack_20);
+  for (; iStack_1c < g_CDemonSetPtr->enemy_count; iStack_1c = iStack_1c + 1) {
+    iVar1 = *(int *)((int)g_CDemonSetPtr->enemies + iStack_20);
     iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x10c))(iVar1);
     if (iVar2 == 0) {
       iVar2 = (**(code **)(*(int *)(iVar1 + 0x154) + 0x70))(iVar1);

@@ -7,8 +7,8 @@
 ; CSocket *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[5]:
+;   core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_0050c130 at 0050c13d
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190 at 0050c1d2
-;   core_netgame.cpp_FUN_0050c130 at 0050c13d
 ;   support_trisock.cpp_CSocket_closeSocket_FUN_00579360 at 00579366
 ;   support_trisock.cpp_FUN_00579150 at 0057915f
 ;   support_trisock.cpp_FUN_0057b680 at 0057b6de

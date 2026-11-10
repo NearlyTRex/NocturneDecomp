@@ -95,8 +95,8 @@
 ;   core_motion.cpp_FUN_004fcb50
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
 ;   core_skeleton.cpp_CSkeleton_getBoneAngleAtFrame_FUN_00548120
+;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0
 ;   core_skeleton.cpp_FUN_00548140
-;   core_skeleton.cpp_FUN_005481d0
 ;   core_xform.cpp_multiplyQuaternion_FUN_00585990
 ;   core_xform.cpp_negateFirstComponent_FUN_00585930
 ;
@@ -158,8 +158,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1874]    ; 0054c23b
     PUSH EDI                            ; 0054c242
     PUSH EBX                            ; 0054c243
-    CALL core_skeleton.cpp_FUN_005481d0 ; 0054c244
-        ;   XREF to: 005481d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_005481d0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0 ; 0054c244
+        ;   XREF to: 005481d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0054c249
     TEST EAX,EAX                        ; 0054c24c
     JGE 0x0054cc4c                      ; 0054c24e
@@ -336,8 +336,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x187c]    ; 0054c4f0
     PUSH EDX                            ; 0054c4f7
     PUSH EBX                            ; 0054c4f8
-    CALL core_skeleton.cpp_FUN_005481d0 ; 0054c4f9
-        ;   XREF to: 005481d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_005481d0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0 ; 0054c4f9
+        ;   XREF to: 005481d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0054c4fe
     MOV EDX,dword ptr [ESP + 0x184c]    ; 0054c501
     MOV dword ptr [ESP + EDX*0x1 + 0x1454],EAX ; 0054c508
@@ -530,8 +530,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x1880]    ; 0054c7c9
     PUSH ESI                            ; 0054c7d0
     PUSH EBX                            ; 0054c7d1
-    CALL core_skeleton.cpp_FUN_005481d0 ; 0054c7d2
-        ;   XREF to: 005481d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_005481d0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0 ; 0054c7d2
+        ;   XREF to: 005481d0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_005481d0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 0054c7d7
     MOV EDX,dword ptr [ESP + 0x1858]    ; 0054c7da
     MOV dword ptr [ESP + EDX*0x1 + 0x12c4],EAX ; 0054c7e1

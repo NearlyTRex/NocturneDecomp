@@ -13,9 +13,9 @@
 ; XREF[7]:
 ;   core_menu.cpp_FUN_004eae80 at 004ebf85
 ;   core_netgame.cpp_CNetGame_initializeNetworkToJoin_FUN_00503fb0 at 00504086
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 at 00504283
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00506018
 ;   core_netgame.cpp_FUN_00503efc at 00503f16
-;   core_netgame.cpp_FUN_00504270 at 00504283
 ;   engine_pod.cpp_FUN_00513d1e at 00513d76
 ;   engine_pod.cpp_FUN_005149bc at 005149de
 ;
@@ -36,10 +36,10 @@
 ;   crt_stdio.c_vsprintf_FUN_005a2898
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0
-;   engine_font.cpp_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
 ;   engine_mini3d.cpp_FUN_004edaf0
 ;   engine_special.cpp_clearScreen_FUN_00560d70
-;   wincore_wddvmem.cpp_FUN_0057a8a0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
 ; *****************************************************************************
 
@@ -60,8 +60,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047cfbe
     PUSH EAX                            ; 0047cfc4
     MOV dword ptr [0x01c5bae0],EDX      ; 0047cfc5 | DAT_01c5bae0
-    CALL engine_font.cpp_FUN_004b30f0   ; 0047cfcb
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 0047cfcb
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047cfd0
     MOV [0x01c5bae4],EAX                ; 0047cfd3 | DAT_01c5bae4
     LEA EAX,[ESP + 0x420]               ; 0047cfd8
@@ -109,8 +109,8 @@ section .text
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0 ; 0047d05b
         ;   XREF to: 004b0ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 0047d060
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 0047d063
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 0047d063
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     ADD ESP,0x404                       ; 0047d068
     POP EBP                             ; 0047d06e
     POP EDI                             ; 0047d06f

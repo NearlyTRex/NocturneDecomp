@@ -18,7 +18,7 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_0042ac20(CCharacter *this_ptr
   CClothList *pCVar4;
   int iVar5;
   CCharacter *pCVar6;
-  byte *puVar7;
+  char *pcVar7;
   int iVar8;
   int iVar9;
   uint auStack_40 [3];
@@ -28,15 +28,15 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_0042ac20(CCharacter *this_ptr
   uint uStack_20;
   uint auStack_1c [3];
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_0054bf00
                      ((CDeformableModelInstance *)(pCVar2 + 1));
   pCVar4 = core_cloth_cpp_CClothList_ctor_FUN_0043f8c0((CClothList *)&pCVar3[1].field_0xa0c);
-  iVar5 = __arrinit(pCVar4 + 0x1c8,0xf,&g_CVectorTypeInfo);
+  iVar5 = __arrinit(pCVar4[1].filenames[0] + 8,0xf,&g_CVectorTypeInfo);
   iVar5 = __arrinit(iVar5 + 0xb4,0xf,&g_CVectorTypeInfo);
   iVar5 = __arrinit(iVar5 + 0x228,0x32,&g_SFireTypeInfo);
   iVar5 = __arrinit(iVar5 + 0x4b0,0x32,&g_CFlameTypeInfo);
-  *(byte **)(iVar5 + -0x3708) = &g_CCharacterVTable;
+  *(CCharacter_full_vtable **)(iVar5 + -0x3708) = &g_CCharacterVTable;
   *(uint *)(iVar5 + -0x1360) = 0;
   *(uint *)(iVar5 + -0x133c) = 0;
   *(uint *)(iVar5 + -0x1340) = *(uint *)(iVar5 + -0x133c);
@@ -81,16 +81,18 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_0042ac20(CCharacter *this_ptr
   pCVar6 = (CCharacter *)(iVar5 + -0x385c);
   do {
     *(uint *)&pCVar6->field_0x25b0 = 0;
-    *(uint *)&pCVar6->field_0x25a8 = 0xffffffff;
+    pCVar6->carry_hands[0] = (SCarryHand)0xff;
+    pCVar6->carry_hands[1] = (SCarryHand)0xff;
+    *(ushort *)&pCVar6->field_0x25aa = 0xffff;
     *(uint *)&pCVar6->field_0x25ac = 0xffffffff;
     core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0(iVar9);
-    puVar7 = &pCVar6->field_0x78;
+    pcVar7 = (pCVar6->base).create_event;
     *(uint *)&pCVar6->field_0x25e8 = 0x3f800000;
     core_xform_cpp_setIdentityMatrix3x4_FUN_005835d0(iVar8);
     iVar9 = iVar9 + 0x78;
     iVar8 = iVar8 + 0x78;
-    pCVar6 = (CCharacter *)puVar7;
-  } while (puVar7 != (byte *)(iVar5 + -0x376c));
+    pCVar6 = (CCharacter *)pcVar7;
+  } while (pcVar7 != (byte *)(iVar5 + -0x376c));
   *(uint *)(iVar5 + -0x10f4) = 0;
   *(uint *)(iVar5 + -0x10f0) = 0;
   *(uint *)(iVar5 + -0x10ec) = 0;

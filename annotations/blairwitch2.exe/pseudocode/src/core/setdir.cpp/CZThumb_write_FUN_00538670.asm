@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_00539c30 at 00539c98
+;   core_setdir.cpp_CDemonSet_writeThumbs_FUN_00539c30 at 00539c98
 ;
 ; Called Functions:
 ;   crt_stdio.c_fwrite_FUN_005b9690

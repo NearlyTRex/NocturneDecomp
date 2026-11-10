@@ -20,13 +20,12 @@ void core_cloth_cpp_FUN_005b0cde(int param_1,int param_2,int param_3)
   byte bVar4;
   float10 fVar5;
   float10 fVar6;
-  uint auStackY_1034 [1006];
+  float afStackY_1034 [1006];
   CVector3f *euler_angles;
   CVector3f *translation;
-  int iStack_58;
-  int iStack_54;
-  int iStack_50;
-  CVector3f CStack_4c;
+  CVector3i CStack_58;
+  float fStack_4c;
+  float afStack_48 [2];
   CVector3f aCStack_40 [2];
   int iStack_28;
   int iStack_24;
@@ -40,11 +39,10 @@ void core_cloth_cpp_FUN_005b0cde(int param_1,int param_2,int param_3)
   core_dirmat_cpp_FUN_004496e0(iVar2 + 0x78);
   translation = (CVector3f *)(iVar2 + 0xa0);
   euler_angles = aCStack_40;
-  aCStack_40[0]._0_4_ = CStack_4c._0_4_;
-  *(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + 4) =
-       *(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + -8);
-  *(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-       *(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -4);
+  aCStack_40[0].x = fStack_4c;
+  *(float *)((int)aCStack_40 + (uint)bVar4 * -8 + 4) = afStack_48[(uint)bVar4 * -2];
+  *(float *)((int)aCStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+       afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
   vertex_index1 = 0;
   iVar3 = 0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
@@ -58,15 +56,15 @@ void core_cloth_cpp_FUN_005b0cde(int param_1,int param_2,int param_3)
     fVar5 = (float10)iStack_20 * (float10)_DAT_005f1107 * (float10)_DAT_005f110b;
     fVar6 = (float10)fsin(fVar5);
     fVar5 = (float10)fcos(fVar5);
-    iStack_58 = (int)ROUND((float)(fVar6 * (float10)*(float *)(iVar2 + 0x14)) * _DAT_006011a0);
-    iStack_54 = (int)ROUND((float)(fVar5 * (float10)*(float *)(iVar2 + 0x18)) * _DAT_006011a0);
-    iStack_50 = (int)ROUND(_DAT_006011a0 * 0.0);
+    CStack_58.x = (int)ROUND((float)(fVar6 * (float10)*(float *)(iVar2 + 0x14)) * _DAT_006011a0);
+    CStack_58.y = (int)ROUND((float)(fVar5 * (float10)*(float *)(iVar2 + 0x18)) * _DAT_006011a0);
+    CStack_58.z = (int)ROUND(_DAT_006011a0 * 0.0);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(*(int *)DAT_0060b280 + iVar3),(CVector3i *)&iStack_58);
+              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iVar3),&CStack_58);
     iStack_28 = vertex_index1 + 0xd;
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(*(int *)DAT_0060b280 + iStack_1c),(CVector3i *)&stack0xffffff90)
-    ;
+              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iStack_1c),
+               (CVector3i *)&stack0xffffff90);
     if (0 < vertex_index1) {
       engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
                 (DAT_0060b280,vertex_index1,iStack_28);

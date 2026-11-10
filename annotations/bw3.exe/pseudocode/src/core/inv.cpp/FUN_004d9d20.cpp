@@ -13,24 +13,24 @@ int core_inv_cpp_FUN_004d9d20(CDemonActor *param_1)
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_FUN_0040c790(param_1,"CWeapon");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,"CWeapon");
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CWeaponClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = core_actor_cpp_FUN_0040c790(param_1,"CAmmo");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,"CAmmo");
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CAmmoClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = core_actor_cpp_FUN_0040c790(param_1,"CKeyActor");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,"CKeyActor");
   if (iVar1 != 0) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CKeyActorClassInfo.name_hash);
     return iVar1 + 0x158;
   }
-  iVar1 = core_actor_cpp_FUN_0040c790(param_1,"CBoxActor");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,"CBoxActor");
   if (iVar1 == 0) {
-    iVar1 = core_actor_cpp_FUN_0040c790(param_1,"CHealthItem");
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(param_1,"CHealthItem");
     if (iVar1 != 0) {
       iVar1 = core_actor_cpp_castToClassHash_FUN_0040c840(param_1,g_CHealthItemClassInfo.name_hash);
       return iVar1 + 0x158;

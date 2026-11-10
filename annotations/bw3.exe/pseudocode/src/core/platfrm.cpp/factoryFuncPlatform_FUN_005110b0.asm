@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_ctor_FUN_005110e0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x728                          ; 005110b0
         ;   Label: core_platfrm.cpp_factoryFuncPlatform_FUN_005110b0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 005110b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 005110b5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 005110ba
     TEST EAX,EAX                        ; 005110bd
     JNZ 0x005110c2                      ; 005110bf

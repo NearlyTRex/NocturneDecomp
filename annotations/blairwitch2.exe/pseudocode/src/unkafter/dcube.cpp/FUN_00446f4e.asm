@@ -14,7 +14,7 @@
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_dosio.cpp_FUN_00460c70
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
-;   wincore_wddvmem.cpp_FUN_00589560
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;   wincore_winrun.cpp_getNextKeypress_FUN_0058ead0
 ;
 ; *****************************************************************************
@@ -73,8 +73,8 @@ section .text
     CMP EAX,dword ptr [EBP + -0x4]      ; 00446fc2
     JGE 0x00446fe2                      ; 00446fc5
         ;   XREF to: 00446fe2 (CONDITIONAL_JUMP)  ; LAB_00446fe2
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 00446fc7
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 00446fc7
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_0058ead0 ; 00446fcc
         ;   XREF to: 0058ead0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_0058ead0()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 00446fd1
@@ -91,8 +91,8 @@ section .text
     CALL crt_stdio.c_fclose_FUN_005b89c0 ; 00446fe8
         ;   XREF to: 005b89c0 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005b89c0()
     ADD ESP,0x4                         ; 00446fed
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 00446ff0
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 00446ff0
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_0058ead0 ; 00446ff5
         ;   XREF to: 0058ead0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_0058ead0()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 00446ffa

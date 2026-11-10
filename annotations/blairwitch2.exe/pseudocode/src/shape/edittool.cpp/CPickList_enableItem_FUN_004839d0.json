@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 75,
-    "complexity_score": 139,
+    "complexity_score": 44,
     "cross_reference_count": 4,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 29,
-    "suspect_count": 10,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 104
@@ -19,7 +18,7 @@
     {
       "addr": "004b6170",
       "from_addr": "004b6ad2",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -109,7 +108,7 @@
       {
         "call_addr": "004b6ad2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -247,78 +246,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x1ac <= item_index) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x1b0",
-      "severity": "mild",
-      "text": "(*(void **)&this_ptr->field_0x1b0,*(int *)this_ptr << 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x1b0",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x1b0 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "while (*(int *)&this_ptr->field_0x1ac < *(int *)this_ptr) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x1b0",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&this_ptr->field_0x1b0 + *(int *)&this_ptr->field_0x1ac * 4) = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&this_ptr->field_0x1b0 + *(int *)&this_ptr->field_0x1ac * 4) = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1ac = *(int *)&this_ptr->field_0x1ac + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1ac = *(int *)&this_ptr->field_0x1ac + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1b0",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&this_ptr->field_0x1b0 + item_index * 4) = (uint)(enable_flag != 0);",
-      "type": "unnamed_field"
     }
   ]
 }

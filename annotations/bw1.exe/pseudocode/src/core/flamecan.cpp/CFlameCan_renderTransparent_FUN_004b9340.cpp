@@ -9,9 +9,9 @@
 int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004b9340(CFlameCan *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x5e4 == 0) {
-    return *(int *)&this_ptr->field_0x5e4;
+  if (this_ptr->is_visible == 0) {
+    return this_ptr->is_visible;
   }
-  core_flame_cpp_CFlame_renderTransparent_FUN_004b8100((CFlame *)&this_ptr->field_0x340);
-  return *(int *)&this_ptr->field_0x5e4;
+  core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(&this_ptr->flame);
+  return this_ptr->is_visible;
 }

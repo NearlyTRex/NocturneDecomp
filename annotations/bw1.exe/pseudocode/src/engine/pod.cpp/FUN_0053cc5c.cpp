@@ -33,17 +33,18 @@ void engine_pod_cpp_FUN_0053cc5c(uint param_1,char *param_2)
   }
   engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(&CStack_44c);
   iStack_18 = -1;
-  if (CStack_44c._0_4_ == 1) {
+  if (CStack_44c.pod_format_version == 1) {
     iStack_18 = 0x54;
   }
-  else if (CStack_44c._0_4_ == 200) {
+  else if (CStack_44c.pod_format_version == 200) {
     iStack_18 = 8;
   }
   else {
-    if (CStack_44c._0_4_ == 100) goto LAB_0053cde2;
+    if (CStack_44c.pod_format_version == 100) goto LAB_0053cde2;
     _DAT_01d1d400 = "..\\engine\\pod.cpp";
     _DAT_01d1d404 = 0x56f;
-    core_main_c_FUN_005030e0("Invalid pod version for %s: %d",param_2,CStack_44c._0_4_);
+    core_main_c_FUN_005030e0
+              ("Invalid pod version for %s: %d",param_2,CStack_44c.pod_format_version);
   }
   iStack_1c = engine_dosio_cpp_getFileSize_FUN_00478fb0((char *)0x5ed65e,param_2);
   iStack_1c = iStack_1c - iStack_18;

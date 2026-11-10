@@ -17,10 +17,10 @@ void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00555a20(CDemonSet *this_
   
   iVar3 = 0;
   iVar5 = 0;
-  if (0 < *(int *)&this_ptr->field_0x19a2c) {
+  if (0 < this_ptr->light_count) {
     iVar4 = 0;
     do {
-      pCVar1 = (C3DSLight *)(&this_ptr->field_0x19a30 + iVar4);
+      pCVar1 = (C3DSLight *)(&this_ptr->lights[0].field_0x0 + iVar4);
       *out_light = pCVar1;
       if (*(int *)pCVar1 == 0) {
         iVar2 = _stricmp(&pCVar1->field_0x4,light_name);
@@ -32,7 +32,7 @@ void __cdecl core_set_cpp_CDemonSet_addLightFilter_FUN_00555a20(CDemonSet *this_
       }
       iVar3 = iVar3 + 1;
       iVar4 = iVar4 + 0x1898;
-    } while (iVar3 < *(int *)&this_ptr->field_0x19a2c);
+    } while (iVar3 < this_ptr->light_count);
   }
   *out_light = (C3DSLight *)0x0;
   *out_master_light = (CDemonLight *)0x0;

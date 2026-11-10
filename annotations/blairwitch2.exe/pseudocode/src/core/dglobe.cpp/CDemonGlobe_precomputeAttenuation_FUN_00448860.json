@@ -19,19 +19,25 @@
     {
       "addr": "0041d020",
       "from_addr": "0041d12d",
-      "name": "core_boxactor.cpp_FUN_0041d020",
+      "name": "core_boxactor.cpp_CLightActor_process_FUN_0041d020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6bc0",
+      "from_addr": "005a6c69",
+      "name": "core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486cb0",
       "from_addr": "00486e2d",
-      "name": "core_emitter.cpp_FUN_00486cb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00495960",
       "from_addr": "004959fa",
-      "name": "core_fire.cpp_FUN_00495960",
+      "name": "core_fire.cpp_CFireball_process_FUN_00495960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,7 +55,7 @@
     {
       "addr": "004df1c0",
       "from_addr": "004df237",
-      "name": "core_keyactor.cpp_FUN_004df1c0",
+      "name": "core_keyactor.cpp_CKeyActor_process_FUN_004df1c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,19 +73,13 @@
     {
       "addr": "00589fd0",
       "from_addr": "0058a1d1",
-      "name": "core_weapon.cpp_FUN_00589fd0",
+      "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059d360",
       "from_addr": "0059d38d",
       "name": "unkaddr_0059d350.cpp_FUN_0059d360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a6bc0",
-      "from_addr": "005a6c69",
-      "name": "unkafter_cross.cpp_FUN_005a6bc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -122,7 +122,7 @@
       {
         "call_addr": "00486e2d",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +155,7 @@
       {
         "call_addr": "0058a1d1",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_00589fd0",
+        "caller": "core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +188,7 @@
       {
         "call_addr": "004959fa",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00495960",
+        "caller": "core_fire.cpp_CFireball_process_FUN_00495960",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,7 +199,7 @@
       {
         "call_addr": "0041d12d",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_0041d020",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_0041d020",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +210,7 @@
       {
         "call_addr": "004df237",
         "call_type": "direct",
-        "caller": "core_keyactor.cpp_FUN_004df1c0",
+        "caller": "core_keyactor.cpp_CKeyActor_process_FUN_004df1c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +221,7 @@
       {
         "call_addr": "005a6c69",
         "call_type": "direct",
-        "caller": "unkafter_cross.cpp_FUN_005a6bc0",
+        "caller": "core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

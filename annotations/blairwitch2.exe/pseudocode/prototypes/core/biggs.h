@@ -21,29 +21,29 @@ CDemonActorType * CBiggs::getActorType(CBiggs *this_ptr);
 // Address: 00414d10
 CBiggs * __cdecl CBiggs::ctor(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00414dd0
+// Original: core_biggs.cpp_CBiggs_setup_FUN_00414dd0
 // Address: 00414dd0
-void FUN_00414dd0(CEnemy *param_1);
+void __cdecl CBiggs::setup(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00414e50
+// Original: core_biggs.cpp_CBiggs_process_FUN_00414e50
 // Address: 00414e50
-void FUN_00414e50(CCharacter *param_1,float param_2);
+void __cdecl CBiggs::process(CBiggs *this_ptr,float delta_time);
 
-// Original: core_biggs.cpp_FUN_00415120
+// Original: core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120
 // Address: 00415120
-int FUN_00415120(CCharacter *param_1);
+int __cdecl CBiggs::renderOpaque(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_00415250
+// Original: core_biggs.cpp_CBiggs_archive_FUN_00415250
 // Address: 00415250
-void FUN_00415250(CEnemy *param_1);
+void __cdecl CBiggs::archive(CBiggs *this_ptr);
 
-// Original: core_biggs.cpp_FUN_004152e0
+// Original: core_biggs.cpp_CBiggs_processDamage_FUN_004152e0
 // Address: 004152e0
-void FUN_004152e0(int param_1,int param_2);
+void __cdecl CBiggs::processDamage(CBiggs *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_biggs.cpp_FUN_00415390
+// Original: core_biggs.cpp_CBiggs_getTargetPoints_FUN_00415390
 // Address: 00415390
-undefined4 FUN_00415390(int param_1,undefined4 *param_2);
+int __cdecl CBiggs::getTargetPoints(CBiggs *this_ptr,CVector3f *out_points_array);
 
 // Original: core_biggs.cpp_CBiggs_getCollisionType_FUN_004153f0
 // Address: 004153f0

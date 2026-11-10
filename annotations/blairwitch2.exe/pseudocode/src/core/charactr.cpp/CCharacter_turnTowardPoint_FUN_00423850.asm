@@ -21,20 +21,20 @@
 ; XREF[19]:
 ;   core_confedrt.cpp_FUN_005a1030 at 005a1090
 ;   core_confedrt.cpp_FUN_005a1180 at 005a11d2
-;   core_confzomb.cpp_FUN_005a1f40 at 005a2026
-;   core_confzomb.cpp_FUN_005a2130 at 005a215c
-;   core_dog1.cpp_FUN_005abfa0 at 005abfd0
-;   core_dog1.cpp_FUN_005ac200 at 005ac272
-;   core_ghostchi.cpp_FUN_005a9580 at 005a95d4
-;   core_hag.cpp_FUN_005aab50 at 005aaba3
-;   core_hand.cpp_FUN_005a9ed0 at 005a9f05
-;   core_hand.cpp_FUN_005a9ff0 at 005aa0fa
+;   core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130 at 005a215c
+;   core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40 at 005a2026
+;   core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200 at 005ac272
+;   core_dog1.cpp_CDog_processMeleeAttackState_FUN_005abfa0 at 005abfd0
+;   core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580 at 005a95d4
+;   core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50 at 005aaba3
+;   core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0 at 005a9f05
+;   core_hand.cpp_CHand_processSleepingState_FUN_005a9ff0 at 005aa0fa
 ;   ... and 9 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408de0
-;   core_actor.cpp_FUN_0040d0c0
-;   core_vecdir.cpp_FUN_005838f0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH ESI                            ; 0042387b
     LEA ESI,[ESP + 0x4]                 ; 0042387c
     LEA EDI,[ESP + 0x10]                ; 00423880
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00423884
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00423884
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x4]                 ; 00423889
     ADD ESP,0x4                         ; 0042388d
     MOVSD ES:EDI,ESI                    ; 00423890
@@ -71,8 +71,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00423892
     PUSH dword ptr [ESP + 0x10]         ; 00423893
     MOV ESI,dword ptr [EBX + 0x2598]    ; 00423897
-    CALL core_actor.cpp_FUN_0040d0c0    ; 0042389d
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 0042389d
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
     MOV dword ptr [ESP + 0x44],EAX      ; 004238a2
     MOV dword ptr [ESP + 0x3c],ESI      ; 004238a6
     FLD float ptr [ESP + 0x44]          ; 004238aa

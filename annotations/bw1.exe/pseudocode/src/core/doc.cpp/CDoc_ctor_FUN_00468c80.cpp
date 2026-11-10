@@ -15,8 +15,8 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
   CDoc *this_ptr_00;
   uint uStack000001a8;
   
-  this_ptr_00 = (CDoc *)core_hero_cpp_FUN_004ea830((CHero *)this_ptr);
-  *(byte ***)&this_ptr_00->field_0x154 = &g_CDocVTable;
+  this_ptr_00 = (CDoc *)core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
+  ((UActorVTable *)&this_ptr_00->field_0x154)->_ub = &g_CDocVTable._ub;
   *(uint *)&this_ptr_00->field_0x1ffac = 0;
   *(uint *)&this_ptr_00->field_0x1ffb0 = 0;
   *(uint *)&this_ptr_00->field_0x1ffb4 = 0;
@@ -46,8 +46,9 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
   *(uint *)&this_ptr_00->field_0x1ffe4 = *(uint *)&this_ptr_00->field_0x1ffe0;
   *(uint *)&this_ptr_00->field_0x1ffbc = uVar1;
   *(uint *)&this_ptr_00->field_0x2006c = 0xf149f2ca;
-  core_skeleton_cpp_FUN_00569f50(&this_ptr_00->field_0x158,0x5d98a4);
-  *(uint *)&this_ptr_00->field_0x2c98 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)&this_ptr_00->field_0x158,(char *)0x5d98a4);
+  *(int *)&this_ptr_00->field_0x2c98 = 0;
   *(uint *)&this_ptr_00->field_0x20004 = 0;
   *(uint *)&this_ptr_00->field_0x20024 = 0;
   *(uint *)&this_ptr_00->field_0x20028 = 0;
@@ -64,40 +65,53 @@ CDoc * core_doc_cpp_CDoc_ctor_FUN_00468c80(CDoc *this_ptr)
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
             ((CKeyFramedModelInstance *)(*(int *)&this_ptr_00->field_0x1fe20 + 0x158),
              "liteluger.kfm");
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0,1,"draw_stand2holsters",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0,1,"draw_stand2holsters",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,1,2,"draw_holsters2aimPistols",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0,3,"draw_stand2coatPocket",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0,3,"draw_stand2coatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,3,4,"draw_coatPocket2aimShotgun",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,3,5,"draw_coatPocket2aimFlameThrower",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,1,3,"draw_holsters2CoatPocket",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0,6,"draw_stand2TossAim",1);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,6,0,"draw_tossAim2Stand",1);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0xc,4,"draw_shotGunRecoil",1);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0,6,"draw_stand2TossAim",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,6,0,"draw_tossAim2Stand",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0xc,4,"draw_shotGunRecoil",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,3,7,"draw_coatPocket2aimTommy",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,7,7,"draw_tommyRecoil",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0,8,"draw_stand2spearhold",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0xd,8,"draw_spearStab",1);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,7,7,"draw_tommyRecoil",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0,8,"draw_stand2spearhold",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0xd,8,"draw_spearStab",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,0xd,8,"draw_spearOverheadswing",1);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,9,9,"draw_holdCrate",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,9,9,"draw_holdCrate",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,3,10,"draw_coatPocket2GasMask",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,10,0,"draw_gasMask2Stand",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,10,0,"draw_gasMask2Stand",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,3,0xe,"draw_coatPocket2aimRifle",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0xf,0xe,"draw_cockRifle",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0xf,0xe,"draw_cockRifle",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,1,0x10,"draw_holsters2aimFlashlight",0);
-  core_charactr_cpp_FUN_00434320
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
             ((CCharacter *)this_ptr_00,3,0xb,"draw_coatPocket2Goggles",0);
-  core_charactr_cpp_FUN_00434320((CCharacter *)this_ptr_00,0xb,0,"draw_goggles2Stand",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_00434320
+            ((CCharacter *)this_ptr_00,0xb,0,"draw_goggles2Stand",0);
   uStack000001a8 = 0x469041;
-  core_cloth_cpp_FUN_00441de0((CClothList *)&this_ptr_00->field_0x2ca0,"doc-coat_bw.cth");
+  core_cloth_cpp_CClothList_add_FUN_00441de0
+            ((CClothList *)&this_ptr_00->field_0x2ca0,"doc-coat_bw.cth");
   *(uint *)&this_ptr_00->field_0x200e0 = 0;
   return this_ptr_00;
 }

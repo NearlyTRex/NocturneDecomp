@@ -27,6 +27,95 @@
   },
   {
     "kind":"class",
+    "name":"CCameraTransformState",
+    "size":60
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_hasDoorTarget",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_processDamage",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage_info",
+        "type":{
+          "kind":"struct",
+          "name":"SDamageInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CConstruct_full_vtable",
+    "size":332,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_ue",
+        "offset":320
+      },
+      {
+        "name":"_uconstruct",
+        "offset":328
+      }
+    ]
+  },
+  {
+    "kind":"class",
+    "name":"CConstruct_vtable",
+    "size":4,
+    "vtable_slots":[
+      {
+        "name":"vfunc82",
+        "offset":0
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CCrater",
     "rtti_file":"core/fire.cpp",
     "size":112
@@ -45,16 +134,96 @@
     "size":344
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_onLaserHit",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"laser_info",
+        "type":{
+          "kind":"struct",
+          "name":"SLaserInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_testLineIntersection",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"line_start",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"line_end",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_intersection_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonRenderer",
     "rtti_file":"engine/drender.cpp",
-    "size":1
+    "size":44
   },
   {
     "kind":"class",
     "name":"CDemonSet",
     "rtti_file":"core/set.cpp",
     "size":1447556
+  },
+  {
+    "kind":"class",
+    "name":"CEdCheck",
+    "rtti_file":"shape/edittool.cpp",
+    "size":1
   },
   {
     "kind":"class",
@@ -76,7 +245,13 @@
   },
   {
     "kind":"class",
+    "name":"CKeyFramedModelPart",
+    "size":1
+  },
+  {
+    "kind":"class",
     "name":"CLZWCompress",
+    "parent":"CCodec",
     "rtti_file":"support/codec.cpp",
     "size":64
   },
@@ -108,8 +283,124 @@
   },
   {
     "kind":"class",
+    "name":"CMobster_full_vtable",
+    "size":332,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_ue",
+        "offset":320
+      },
+      {
+        "name":"_um",
+        "offset":328
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CMooCow",
     "size":49652
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_set3DListenerOrient",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"x_front",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_front",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z_front",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x_top",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_top",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z_top",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"x_right",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y_right",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z_right",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -124,6 +415,95 @@
     "size":996
   },
   {
+    "kind":"class",
+    "name":"CVector2d",
+    "size":16
+  },
+  {
+    "kind":"enum",
+    "name":"ELeverOpenSides",
+    "size":4,
+    "values":[
+      {
+        "name":"LEVER_OPEN_SIDES_POS_Z",
+        "value":0
+      },
+      {
+        "name":"LEVER_OPEN_SIDES_NEG_Z",
+        "value":1
+      },
+      {
+        "name":"LEVER_OPEN_SIDES_BOTH",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ETriggerEventType",
+    "size":4,
+    "values":[
+      {
+        "name":"TRIGGER_EVENT_MOMENTARY",
+        "value":0
+      },
+      {
+        "name":"TRIGGER_EVENT_ONE_SHOT",
+        "value":1
+      },
+      {
+        "name":"TRIGGER_EVENT_RISING_EDGE",
+        "value":2
+      },
+      {
+        "name":"TRIGGER_EVENT_FALLING_EDGE",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWeaponState",
+    "size":4,
+    "values":[
+      {
+        "name":"WEAPON_STATE_LYING_AROUND",
+        "value":0
+      },
+      {
+        "name":"WEAPON_STATE_IN_INVENTORY",
+        "value":1
+      },
+      {
+        "name":"WEAPON_STATE_IN_HAND",
+        "value":2
+      },
+      {
+        "name":"WEAPON_STATE_ON_HOOK",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWerewolfType",
+    "size":4,
+    "values":[
+      {
+        "name":"WEREWOLF_TYPE_TRAIN",
+        "value":0
+      },
+      {
+        "name":"WEREWOLF_TYPE_TRAIN_ALPHA",
+        "value":1
+      },
+      {
+        "name":"WEREWOLF_TYPE_FOREST",
+        "value":2
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SBoneGuyBox",
     "size":72
@@ -132,6 +512,11 @@
     "kind":"struct",
     "name":"SCurtainVertex",
     "size":116
+  },
+  {
+    "kind":"struct",
+    "name":"SGroundCell",
+    "size":1
   },
   {
     "kind":"struct",

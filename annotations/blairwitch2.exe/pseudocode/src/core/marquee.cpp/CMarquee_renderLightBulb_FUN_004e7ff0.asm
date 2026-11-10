@@ -8,7 +8,7 @@
 ; CVector3f *      Stack[0x8]:4   position
 ;
 ; XREF[1]:
-;   core_marquee.cpp_FUN_004e8180 at 004e828f
+;   core_marquee.cpp_CMarquee_renderTransparent_FUN_004e8180 at 004e828f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f9b50

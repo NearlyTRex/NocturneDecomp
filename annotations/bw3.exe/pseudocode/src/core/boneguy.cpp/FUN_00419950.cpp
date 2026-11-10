@@ -11,7 +11,7 @@ void core_boneguy_cpp_FUN_00419950(void)
 {
   CSkeletonIndian *this_ptr;
   
-  this_ptr = (CSkeletonIndian *)FUN_005a3cb2(0xd698);
+  this_ptr = (CSkeletonIndian *)debugAllocTracked1(0xd698);
   if (this_ptr == (CSkeletonIndian *)0x0) {
     return;
   }

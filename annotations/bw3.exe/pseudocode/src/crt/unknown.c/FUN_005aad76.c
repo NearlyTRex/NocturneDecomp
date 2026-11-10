@@ -21,7 +21,7 @@ uint FUN_005aad76(void)
     if (in_AL != '\x03') {
       in_ST0 = in_ST1;
     }
-    unkafter_asgaya_cpp_FUN_005aed4b((double)in_ST0);
+    FUN_005aed4b((double)in_ST0);
     uVar1 = 1;
   }
   return uVar1;

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 420,
+    "complexity_score": 395,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 35,
+    "suspect_count": 33,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 116
@@ -249,7 +248,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[1] = *(uint *)param_2;",
+      "text": "((CVector3f *)(param_1 + 1))->x = param_2->x;",
       "type": "unnamed_param"
     },
     {
@@ -257,7 +256,7 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_1[1] = *(uint *)param_2;",
+      "text": "((CVector3f *)(param_1 + 1))->x = param_2->x;",
       "type": "unnamed_param"
     },
     {
@@ -265,7 +264,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[2] = *(uint *)&param_2->field_0x4;",
+      "text": "param_1[2] = param_2->y;",
       "type": "unnamed_param"
     },
     {
@@ -273,23 +272,15 @@
       "line": 25,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_1[2] = *(uint *)&param_2->field_0x4;",
+      "text": "param_1[2] = param_2->y;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "param_1[2] = *(uint *)&param_2->field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[3] = *(uint *)&param_2->field_0x8;",
+      "text": "param_1[3] = param_2->z;",
       "type": "unnamed_param"
     },
     {
@@ -297,16 +288,8 @@
       "line": 26,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_1[3] = *(uint *)&param_2->field_0x8;",
+      "text": "param_1[3] = param_2->z;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "param_1[3] = *(uint *)&param_2->field_0x8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

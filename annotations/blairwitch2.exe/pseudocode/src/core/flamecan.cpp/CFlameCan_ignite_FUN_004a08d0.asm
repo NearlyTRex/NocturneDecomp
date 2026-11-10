@@ -7,21 +7,21 @@
 ; CFlameCan *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_actor.cpp_FUN_0040a050 at 0040ac1c
-;   core_elephant.cpp_FUN_00485b40 at 004862f3
-;   core_fire.cpp_FUN_00499fe0 at 0049a143
-;   core_flamecan.cpp_FUN_004a0920 at 004a0951
-;   core_gun.cpp_FUN_004cbdc0 at 004cc318
-;   core_set.cpp_FUN_0052e940 at 0052edbf
-;   core_shotgun.cpp_FUN_0053f170 at 0053f926
-;   core_tommygun.cpp_FUN_00575800 at 00575d96
-;   core_turret.cpp_FUN_0057fc20 at 0058018d
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040ac1c
+;   core_elephant.cpp_CElephantGun_fire_FUN_00485b40 at 004862f3
+;   core_fire.cpp_CGunFlame_init_FUN_00499fe0 at 0049a143
+;   core_flamecan.cpp_CFlameCan_process_FUN_004a0920 at 004a0951
+;   core_gun.cpp_CGun_fire_FUN_004cbdc0 at 004cc318
+;   core_set.cpp_CDemonSet_processActors_FUN_0052e940 at 0052edbf
+;   core_shotgun.cpp_CShotgun_fire_FUN_0053f170 at 0053f926
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00575800 at 00575d96
+;   core_turret.cpp_CTurret_fire_FUN_0057fc20 at 0058018d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00614d30
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_0049d090
+;   core_fire.cpp_CFireEffect_createSpark_FUN_0049d090
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     MOV EDX,dword ptr [0x00614d30]      ; 004a08fd | DAT_00614d30
     PUSH EDX                            ; 004a0903
     INC EBX                             ; 004a0904
-    CALL core_fire.cpp_FUN_0049d090     ; 004a0905
-        ;   XREF to: 0049d090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049d090(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
+    CALL core_fire.cpp_CFireEffect_createSpark_FUN_0049d090 ; 004a0905
+        ;   XREF to: 0049d090 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createSpark_FUN_0049d090(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, int intensity_target, ...)
     ADD ESP,0x1c                        ; 004a090a
     CMP EBX,0x5                         ; 004a090d
     JL 0x004a08e9                       ; 004a0910

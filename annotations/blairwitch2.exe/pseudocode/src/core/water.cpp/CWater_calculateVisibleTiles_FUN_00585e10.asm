@@ -52,7 +52,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d0e0 at 0052d306
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d306
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_water_cpp_005ede96

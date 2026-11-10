@@ -2,25 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 104,
-    "complexity_score": 96,
+    "complexity_score": 95,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 50,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 155
+    "total_lines": 154
   },
   "cross_references": [
     {
       "addr": "00482350",
       "from_addr": "004823e0",
-      "name": "shape_edittool.cpp_FUN_00482350",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_00482350",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,11 +43,6 @@
       "name": "core_main.c_FUN_004e4500"
     },
     {
-      "addr": "005b7790",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
-    },
-    {
       "addr": "005b7fce",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b7fce"
@@ -56,6 +51,11 @@
       "addr": "005b8df8",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b8df8"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00481240",
@@ -112,7 +112,7 @@
       {
         "call_addr": "004823e0",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00482350",
+        "caller": "shape_edittool.cpp_CPickList_handleInput_FUN_00482350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +123,7 @@
       {
         "call_addr": "004823fd",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00482350",
+        "caller": "shape_edittool.cpp_CPickList_handleInput_FUN_00482350",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,15 +202,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 46,
+      "line": 45,
       "match": "DAT_005d2824",
       "severity": "mild",
-      "text": "iVar6 = FUN_005b7790(pcVar7,&DAT_005d2824,pcVar3);",
+      "text": "iVar5 = _sprintf(buffer,&DAT_005d2824);",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 24,
+      "line": 23,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -31,8 +31,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 00404200
     PUSH EAX                            ; 00404204
     MOV EBX,0xe2                        ; 00404205
-    CALL crt_unknown.c_FUN_005b7790     ; 0040420a
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0040420a
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040420f
     MOV EAX,ESP                         ; 00404212
     MOV ECX,0x5ca323                    ; 00404214 | = "..\\engine\\3d.c"

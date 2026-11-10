@@ -19,7 +19,7 @@ void FUN_0053c500(CEnemy *param_1,float param_2);
 
 // Original: core_shadow.cpp_FUN_0053df10
 // Address: 0053df10
-void FUN_0053df10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void FUN_0053df10(CCharacter *param_1,CDemonActor *param_2,float param_3,float param_4);
 
 // Original: core_shadow.cpp_FUN_0053df40
 // Address: 0053df40
@@ -47,11 +47,11 @@ void FUN_0053e410(void);
 
 // Original: core_shadow.cpp_FUN_0053e640
 // Address: 0053e640
-undefined4 FUN_0053e640(int param_1);
+int FUN_0053e640(CCharacter *param_1);
 
 // Original: core_shadow.cpp_FUN_0053e6c0
 // Address: 0053e6c0
-undefined4 FUN_0053e6c0(CDemonActor *param_1);
+int FUN_0053e6c0(CCharacter *param_1);
 
 // Original: core_shadow.cpp_FUN_0053e860
 // Address: 0053e860
@@ -63,7 +63,7 @@ void FUN_0053e9a0(int param_1,int *param_2);
 
 // Original: core_shadow.cpp_FUN_0053ea00
 // Address: 0053ea00
-void FUN_0053ea00(int param_1,int param_2);
+void FUN_0053ea00(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_shadow.cpp_FUN_0053ec30
 // Address: 0053ec30

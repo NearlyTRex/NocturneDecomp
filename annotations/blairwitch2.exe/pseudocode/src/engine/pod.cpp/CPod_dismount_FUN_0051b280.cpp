@@ -28,18 +28,18 @@ void __cdecl engine_pod_cpp_CPod_dismount_FUN_0051b280(CPod *this_ptr,char *file
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   iVar2 = engine_dosio_cpp_findFileNormally_FUN_004609e0(acStack_224);
-  if ((iVar2 != 0) && (iVar2 = 0, pCVar4 = this_ptr, 0 < *(int *)this_ptr)) {
+  if ((iVar2 != 0) && (iVar2 = 0, pCVar4 = this_ptr, 0 < this_ptr->pod_file_count)) {
     do {
-      while (iVar3 = _stricmp
-                               ((char *)(*(int *)&pCVar4->field_0x4 + 4),acStack_124), iVar3 == 0) {
+      while (iVar3 = _stricmp(pCVar4->pod_files[0]->filename,acStack_124),
+            iVar3 == 0) {
         engine_pod_cpp_CPod_dismountPod_FUN_0051bf10(this_ptr,iVar2);
-        if (*(int *)this_ptr <= iVar2) {
+        if (this_ptr->pod_file_count <= iVar2) {
           return;
         }
       }
       iVar2 = iVar2 + 1;
-      pCVar4 = (CPod *)&pCVar4->field_0x4;
-    } while (iVar2 < *(int *)this_ptr);
+      pCVar4 = (CPod *)pCVar4->pod_files;
+    } while (iVar2 < this_ptr->pod_file_count);
   }
   return;
 }

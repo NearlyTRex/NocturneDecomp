@@ -25,10 +25,10 @@
 ; undefined4       Stack[-0x20]:4  local_20
 ;
 ; XREF[5]:
-;   core_set.cpp_FUN_005332f0 at 005333fe
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0 at 005333fe
 ;   engine_3d.c_flushPremiumRenderBuffer_FUN_004070e0 at 00407133
 ;   engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046c900 at 0046c95d
-;   engine_pod.cpp_FUN_00519f00 at 0051a2dc
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 0051a2dc
 ;   shape_edittool.cpp_CStrList_sort_FUN_004811d0 at 00481229
 ;
 ; Called Functions:

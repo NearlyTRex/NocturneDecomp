@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_0042d500(int param_1)
+; void core_charactr_cpp_FUN_0042d500(CDemonActor *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x18]:4  local_18
@@ -29,10 +29,10 @@
 ;   ... and 4 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_FUN_0042d390
+;   core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-;   core_skeleton.cpp_FUN_0054a310
 ;   crt_stdlib.c_rand_FUN_005a35cc
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;
@@ -120,8 +120,8 @@ section .text
         ;   XREF to: 0042d60c (CONDITIONAL_JUMP)  ; LAB_0042d60c
     PUSH 0x41000000                     ; 0042d5ce
     PUSH 0x40a00000                     ; 0042d5d3
-    CALL core_actor.cpp_FUN_0040ce40    ; 0042d5d8
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0042d5d8
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBX + 0xcd78],0x0    ; 0042d5dd
     MOV dword ptr [EBX + 0xcd7c],0x0    ; 0042d5e7
     MOV dword ptr [ESP + 0xc],EAX       ; 0042d5f1
@@ -141,7 +141,7 @@ section .text
     JC 0x0042d652                       ; 0042d628
         ;   XREF to: 0042d652 (CONDITIONAL_JUMP)  ; LAB_0042d652
     MOV EAX,[0x006039e0]                ; 0042d62a | g_CScriptPtr
-    MOV ESI,dword ptr [EAX + 0x4]       ; 0042d62f | g_CScriptInstance.field4_0x4
+    MOV ESI,dword ptr [EAX + 0x4]       ; 0042d62f | g_CScriptInstance.who_is_speaking
     CMP EBX,ESI                         ; 0042d632
     JNZ 0x0042d847                      ; 0042d634
         ;   XREF to: 0042d847 (CONDITIONAL_JUMP)  ; LAB_0042d847
@@ -200,8 +200,8 @@ section .text
         ;   Label: LAB_0042d6c6
     PUSH 0x5b8276                       ; 0042d6c8 | DAT_005b8276
     PUSH EAX                            ; 0042d6cd
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d6ce
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d6ce
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d6d3
     MOV dword ptr [EBX + 0xcd90],EAX    ; 0042d6d6
     CMP EAX,-0x1                        ; 0042d6dc
@@ -210,8 +210,8 @@ section .text
     PUSH 0x0                            ; 0042d6e5
     PUSH 0x5b827b                       ; 0042d6e7 | DAT_005b827b
     PUSH ESI                            ; 0042d6ec
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d6ed
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d6ed
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d6f2
     MOV dword ptr [EBX + 0xcdb4],EAX    ; 0042d6f5
     CMP EAX,-0x1                        ; 0042d6fb
@@ -220,78 +220,78 @@ section .text
     PUSH 0x1                            ; 0042d704
     PUSH 0x5b827e                       ; 0042d706 | DAT_005b827e
     PUSH ESI                            ; 0042d70b
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d70c
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d70c
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d711
     PUSH 0x1                            ; 0042d714
     PUSH 0x5b8281                       ; 0042d716 | DAT_005b8281
     PUSH ESI                            ; 0042d71b
     MOV dword ptr [EBX + 0xcdb8],EAX    ; 0042d71c
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d722
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d722
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d727
     PUSH 0x1                            ; 0042d72a
     PUSH 0x5b8284                       ; 0042d72c | DAT_005b8284
     PUSH ESI                            ; 0042d731
     MOV dword ptr [EBX + 0xcdbc],EAX    ; 0042d732
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d738
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d738
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d73d
     PUSH 0x0                            ; 0042d740
     PUSH 0x5b8287                       ; 0042d742 | = "e1_left"
     PUSH ESI                            ; 0042d747
     MOV dword ptr [EBX + 0xcdc0],EAX    ; 0042d748
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d74e
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d74e
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d753
     PUSH 0x0                            ; 0042d756
     PUSH 0x5b828f                       ; 0042d758 | = "e2_left"
     PUSH ESI                            ; 0042d75d
     MOV dword ptr [EBX + 0xcd94],EAX    ; 0042d75e
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d764
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d764
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d769
     PUSH 0x0                            ; 0042d76c
     PUSH 0x5b8297                       ; 0042d76e | = "e3_left"
     PUSH ESI                            ; 0042d773
     MOV dword ptr [EBX + 0xcd98],EAX    ; 0042d774
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d77a
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d77a
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d77f
     PUSH 0x0                            ; 0042d782
     PUSH 0x5b829f                       ; 0042d784 | = "e4_left"
     PUSH ESI                            ; 0042d789
     MOV dword ptr [EBX + 0xcd9c],EAX    ; 0042d78a
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d790
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d790
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d795
     PUSH 0x0                            ; 0042d798
     PUSH 0x5b82a7                       ; 0042d79a | = "e1_right"
     PUSH ESI                            ; 0042d79f
     MOV dword ptr [EBX + 0xcda0],EAX    ; 0042d7a0
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d7a6
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d7a6
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d7ab
     PUSH 0x0                            ; 0042d7ae
     PUSH 0x5b82b0                       ; 0042d7b0 | = "e2_right"
     PUSH ESI                            ; 0042d7b5
     MOV dword ptr [EBX + 0xcda4],EAX    ; 0042d7b6
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d7bc
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d7bc
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d7c1
     MOV dword ptr [EBX + 0xcda8],EAX    ; 0042d7c4
     PUSH 0x0                            ; 0042d7ca
     PUSH 0x5b82b9                       ; 0042d7cc | = "e3_right"
     PUSH ESI                            ; 0042d7d1
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d7d2
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d7d2
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d7d7
     PUSH 0x0                            ; 0042d7da
     PUSH 0x5b82c2                       ; 0042d7dc | = "e4_right"
     PUSH ESI                            ; 0042d7e1
     MOV dword ptr [EBX + 0xcdac],EAX    ; 0042d7e2
-    CALL core_skeleton.cpp_FUN_0054a310 ; 0042d7e8
-        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
+    CALL core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310 ; 0042d7e8
+        ;   XREF to: 0054a310 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CDeformableModel_findPartByName_FUN_0054a310(CDeformableModel * this_ptr, char * part_name, int error_if_not_found)
     ADD ESP,0xc                         ; 0042d7ed
     MOV dword ptr [EBX + 0xcdb0],EAX    ; 0042d7f0
     JMP 0x0042d551                      ; 0042d7f6

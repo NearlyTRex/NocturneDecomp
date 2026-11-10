@@ -6,7 +6,7 @@
 ;
 ; XREF[5]:
 ;   core_event.cpp_FUN_004a1d00 at 004a23c3
-;   core_game.cpp_FUN_004cf5e0 at 004cfae8
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cfae8
 ;   unkafter_alphabit.cpp_FUN_00415c80 at 00415cbf
 ;   unkafter_bmppuzzl.cpp_FUN_00416790 at 004167f5
 ;   unkafter_superopt.cpp_FUN_00418220 at 004185a9

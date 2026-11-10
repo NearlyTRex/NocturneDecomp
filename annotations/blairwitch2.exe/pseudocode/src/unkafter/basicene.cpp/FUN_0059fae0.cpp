@@ -15,9 +15,7 @@ void unkafter_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   uint uVar2;
   byte bVar3;
   float afStackY_1010 [1008];
-  int local_34;
-  int local_30;
-  int local_2c;
+  CVector3i local_34;
   float local_28;
   float afStack_24 [4];
   float local_14;
@@ -33,15 +31,16 @@ void unkafter_basicene_cpp_FUN_0059fae0(CDemonActor *param_1)
   afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
        afStack_24[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
   afStack_24[3] = afStack_24[3] + 1.0;
-  local_34 = (int)ROUND(afStack_24[2] * _DAT_005febc0);
-  local_30 = (int)ROUND(afStack_24[3] * _DAT_005febc0);
-  local_2c = (int)ROUND(local_14 * _DAT_005febc0);
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)*DAT_0060b280,(CVector3i *)&local_34);
+  local_34.x = (int)ROUND(afStack_24[2] * _DAT_005febc0);
+  local_34.y = (int)ROUND(afStack_24[3] * _DAT_005febc0);
+  local_34.z = (int)ROUND(local_14 * _DAT_005febc0);
+  engine_special_cpp_FUN_0055d723((SProjectedVertex *)*DAT_0060b280,&local_34);
   iVar1 = *DAT_0060b280;
   if ((*(byte *)(iVar1 + 0x13) & 0x80) == 0) {
-    uVar2 = core_motion_cpp_FUN_005035c0(param_1 + 1,(double)*(float *)&param_1[0x66].field_0xc);
-    uVar2 = unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].field_0x210,uVar2);
-    FUN_005b7790(0x2668360,"@(%s)\n%s:[%s] (%0.2f)" + 1,param_1,uVar2);
+    uVar2 = core_motion_cpp_FUN_005035c0
+                      (param_1 + 1,(double)*(float *)(param_1[0x66].actor_name + 0xc));
+    unkaddr_0059d350_cpp_FUN_0059db70(&param_1[0x62].field_0x210,uVar2);
+    _sprintf((char *)0x2668360,"@(%s)\n%s:[%s] (%0.2f)" + 1);
     engine_2d_c_drawText_FUN_00401fe0
               ((char *)0x2668360,*(int *)(iVar1 + 0x10) >> 0x10,*(int *)(iVar1 + 0x14) >> 0x10);
   }

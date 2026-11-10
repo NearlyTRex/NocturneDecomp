@@ -11,7 +11,7 @@ void core_conveyor_cpp_factoryFuncConstruct_FUN_00436ad0(void)
 {
   CConstruct *this_ptr;
   
-  this_ptr = (CConstruct *)FUN_005b8be2(0x112e4);
+  this_ptr = (CConstruct *)debugAllocTracked1(0x112e4);
   if (this_ptr == (CConstruct *)0x0) {
     return;
   }

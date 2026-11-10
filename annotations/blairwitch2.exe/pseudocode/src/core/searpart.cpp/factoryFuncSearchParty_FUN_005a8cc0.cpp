@@ -11,7 +11,7 @@ void core_searpart_cpp_factoryFuncSearchParty_FUN_005a8cc0(void)
 {
   CSearchParty *this_ptr;
   
-  this_ptr = (CSearchParty *)FUN_005b8be2(0x11850);
+  this_ptr = (CSearchParty *)debugAllocTracked1(0x11850);
   if (this_ptr == (CSearchParty *)0x0) {
     return;
   }

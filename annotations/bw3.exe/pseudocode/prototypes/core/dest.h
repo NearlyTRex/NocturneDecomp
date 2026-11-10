@@ -25,17 +25,17 @@ CActorDestination * __cdecl CActorDestination::ctor(CActorDestination *this_ptr)
 // Address: 004591b0
 void __cdecl CActorDestination::setup(CActorDestination *this_ptr);
 
-// Original: core_dest.cpp_FUN_004591f0
+// Original: core_dest.cpp_CActorDestination_process_FUN_004591f0
 // Address: 004591f0
-void __cdecl FUN_004591f0(CActorDestination *this_ptr,float delta_time);
+void __cdecl CActorDestination::process(CActorDestination *this_ptr,float delta_time);
 
 // Original: core_dest.cpp_FUN_00459400
 // Address: 00459400
 undefined4 FUN_00459400(void);
 
-// Original: core_dest.cpp_FUN_00459410
+// Original: core_dest.cpp_CActorDestination_getBoundingBox_FUN_00459410
 // Address: 00459410
-void FUN_00459410(int param_1);
+CBoundingBox3D * __cdecl CActorDestination::getBoundingBox(CActorDestination *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_dest.cpp_CActorDestination_acceptsActor_FUN_004594a0
 // Address: 004594a0

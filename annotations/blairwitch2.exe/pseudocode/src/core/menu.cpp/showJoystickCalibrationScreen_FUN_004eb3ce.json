@@ -1,0 +1,161 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 68,
+    "complexity_score": 63,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 81
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004eb3ce",
+    "address_range": [
+      [
+        "004eb3ce",
+        "004eb480"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce",
+    "signature": "void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(undefined4 param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "00401fe0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawText_FUN_00401fe0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004a8df0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004a8df0"
+    },
+    {
+      "addr": "004aaf00",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004aaf00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01511cb8",
+      "name": "DAT_01511cb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38af0",
+      "name": "DAT_01c38af0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38af4",
+      "name": "DAT_01c38af4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38b00",
+      "name": "DAT_01c38b00",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.967741935483871,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CALL": 5,
+      "COPY": 49,
+      "INT_ADD": 15,
+      "INT_AND": 54,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 32,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 8,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 15,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 34,
+      "LOAD": 7,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 27
+    },
+    "pcode_op_count": 308
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_menu_cpp_showJoystickCalibrationScreen_FUN_004eb3ce(uint param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 11,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = engine_font_cpp_FUN_004aaf00(_DAT_01511cb8,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "engine_font_cpp_FUN_004a8df0(_DAT_01511cb8,param_1,0x140 - iVar1 / 2,0xf0 - iVar2 / 2,7,0);",
+      "type": "unnamed_param"
+    }
+  ]
+}

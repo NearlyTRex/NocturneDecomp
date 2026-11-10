@@ -84,7 +84,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005376e0 at 0053782a
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_005376e0 at 0053782a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b9f5e

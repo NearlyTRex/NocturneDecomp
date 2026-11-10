@@ -7,8 +7,8 @@
 ; undefined        Stack[-0x44]:1  local_44
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_004162b0 at 00416490
-;   core_boxactor.cpp_FUN_0041c090 at 0041c56e
+;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 00416490
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c56e
 ;
 ; *****************************************************************************
 

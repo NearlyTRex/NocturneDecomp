@@ -38,7 +38,7 @@
 ; XREF[3]:
 ;   core_dmodel.cpp_CKeyFramedModel_getFloorHeight_FUN_0044f670 at 0044f713
 ;   core_setcolid.cpp_FUN_00534ea0 at 0053534a
-;   core_stairs.cpp_FUN_005621e0 at 00562214
+;   core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005621e0 at 00562214
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d1df3

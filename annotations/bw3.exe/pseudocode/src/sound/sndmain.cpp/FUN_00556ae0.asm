@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   base_frequency
 ;
 ; XREF[1]:
-;   core_tommygun.cpp_FUN_0056bd40 at 0056bda4
+;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056bda4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cf3280

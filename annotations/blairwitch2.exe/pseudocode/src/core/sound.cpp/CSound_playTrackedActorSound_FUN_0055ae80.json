@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 23
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -28,7 +28,13 @@
     {
       "addr": "005156d0",
       "from_addr": "00515c01",
-      "name": "core_pendulum.cpp_FUN_005156d0",
+      "name": "core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a3c0",
+      "from_addr": "0055ab7b",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,15 +44,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055a3c0",
-      "from_addr": "0055ab7b",
-      "name": "core_sound.cpp_FUN_0055a3c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00584d90",
       "from_addr": "00584dc4",
-      "name": "core_vehicle.cpp_FUN_00584d90",
+      "name": "core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -66,7 +66,7 @@
     {
       "addr": "005594c0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_005594c0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_005594c0"
     }
   ],
   "globals": [],
@@ -76,7 +76,7 @@
       {
         "call_addr": "0055ab7b",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -109,7 +109,7 @@
       {
         "call_addr": "00584dc4",
         "call_type": "direct",
-        "caller": "core_vehicle.cpp_FUN_00584d90",
+        "caller": "core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +120,7 @@
       {
         "call_addr": "00515c01",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_005156d0",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +131,7 @@
       {
         "call_addr": "00515cb9",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_005156d0",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

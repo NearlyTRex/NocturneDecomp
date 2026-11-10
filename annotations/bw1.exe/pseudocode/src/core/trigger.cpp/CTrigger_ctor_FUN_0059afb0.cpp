@@ -14,19 +14,19 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0059afb0(CTrigger *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_004085c0((CDemonActor *)this_ptr);
-  *(byte **)&pCVar2->field_0x154 = &g_CTriggerVTable;
-  *(uint *)&pCVar2->field_0x160 = 0x40a00000;
-  *(uint *)&pCVar2->field_0x164 = 0x41100000;
-  *(uint *)&pCVar2->field_0x168 = 0x40a00000;
-  *(uint *)&pCVar2->field_0x170 = 0;
-  *(uint *)&pCVar2->field_0x15c = 0;
+  pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_004085c0(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CTriggerVTable;
+  (pCVar2->trigger_size).x = 5.0;
+  (pCVar2->trigger_size).y = 9.0;
+  (pCVar2->trigger_size).z = 5.0;
+  pCVar2->trigger_shape = TRIGGER_SHAPE_BOX;
+  pCVar2->event_type = TRIGGER_EVENT_MOMENTARY;
   pcVar3 = "nobody";
-  pCVar2->field_0x224 = 0;
-  pCVar2->field_0x288 = 0;
-  *(uint *)&pCVar2->field_0x16c = 0;
-  pcVar4 = &pCVar2->field_0x178;
-  *(uint *)&pCVar2->field_0x174 = 0;
+  pCVar2->on_event[0] = '\0';
+  pCVar2->off_event[0] = '\0';
+  pCVar2->trigger_state = 0;
+  pcVar4 = pCVar2->actor_name;
+  pCVar2->trigger_cause = TRIGGER_CAUSE_HERO;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,7 +37,7 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0059afb0(CTrigger *this_pt
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "CDemonActor";
-  pcVar4 = &pCVar2->field_0x1c8;
+  pcVar4 = pCVar2->actor_type;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -47,17 +47,17 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_0059afb0(CTrigger *this_pt
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x218 = 0;
-  *(uint *)&pCVar2->field_0x21c = 0x3e800000;
-  *(uint *)&pCVar2->field_0x220 = 0x3f800000;
-  *(uint *)&pCVar2->field_0x2ec = 0;
-  *(uint *)&pCVar2->field_0x2f0 = 0;
-  *(uint *)&pCVar2->field_0x2f4 = 1;
-  *(uint *)&pCVar2->field_0x2f8 = 0x42c80000;
-  *(uint *)&pCVar2->field_0x64 = 0x96;
+  pCVar2->pressure_plate = 0;
+  pCVar2->light_min = 0.25;
+  pCVar2->light_max = 1.0;
+  pCVar2->prev_triggered = 0;
+  pCVar2->event_flag = 0;
+  pCVar2->laser_type = 1;
+  pCVar2->hit_points = 100.0;
+  (pCVar2->base).health = 0x96;
   *(uint *)&pCVar2->field_0x36c = 0;
   *(uint *)&pCVar2->field_0x300 = 0;
-  *(uint *)&pCVar2->field_0x158 = 0x47c34ff3;
+  pCVar2->test_radius = 99999.9;
   *(uint *)&pCVar2->field_0x304 = 1;
   pCVar2->field_0x308 = 0;
   *(uint *)&pCVar2->field_0x370 = 0;

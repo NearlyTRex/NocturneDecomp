@@ -20,7 +20,7 @@
     {
       "addr": "00425fb0",
       "from_addr": "00426155",
-      "name": "core_charactr.cpp_FUN_00425fb0",
+      "name": "core_charactr.cpp_CCharacter_processFire_FUN_00425fb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,13 +32,13 @@
     {
       "addr": "004e2e70",
       "from_addr": "004e389c",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e38d0",
       "from_addr": "004e39b0",
-      "name": "core_lightgun.cpp_FUN_004e38d0",
+      "name": "core_lightgun.cpp_CLightGun_process_FUN_004e38d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,15 +48,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00559b4e",
-      "from_addr": "00559ee8",
-      "name": "core_sound.cpp_FUN_00559b4e",
+      "addr": "0055a3c0",
+      "from_addr": "0055a4a3",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055a3c0",
-      "from_addr": "0055a4a3",
-      "name": "core_sound.cpp_FUN_0055a3c0",
+      "addr": "00559b4e",
+      "from_addr": "00559ee8",
+      "name": "core_sound.cpp_FUN_00559b4e",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -102,7 +102,7 @@
       {
         "call_addr": "0055a4a3",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "0055a5b4",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +128,7 @@
       {
         "call_addr": "0055aa92",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -141,7 +141,7 @@
       {
         "call_addr": "00426155",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00425fb0",
+        "caller": "core_charactr.cpp_CCharacter_processFire_FUN_00425fb0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +156,7 @@
       {
         "call_addr": "004e389c",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e2e70",
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,7 +182,7 @@
       {
         "call_addr": "004e39b0",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_004e38d0",
+        "caller": "core_lightgun.cpp_CLightGun_process_FUN_004e38d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -271,7 +271,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x38 = param_2;",
+      "text": "*(uint *)&(pCVar1->options).field_0x38 = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -279,7 +279,7 @@
       "line": 11,
       "match": "field_0x38",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x38 = param_2;",
+      "text": "*(uint *)&(pCVar1->options).field_0x38 = param_2;",
       "type": "unnamed_field"
     },
     {

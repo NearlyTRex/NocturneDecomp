@@ -2,17 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 70,
+    "complexity_score": 30,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 30,
-    "suspect_count": 3,
-    "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 99
   },
   "cross_references": [],
@@ -102,30 +99,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "str1 = (CPackedBitmap *)&pCVar2->field_0x1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar2 = (CPackedBitmap *)&pCVar2->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 16,
-      "match": "pCVar2 = (T *)&pCVar2->FIELD",
-      "severity": "moderate",
-      "text": "pCVar2 = (CPackedBitmap *)&pCVar2->field_0x2;",
-      "type": "shadow_pointer_walk"
-    }
-  ]
+  "suspects": []
 }

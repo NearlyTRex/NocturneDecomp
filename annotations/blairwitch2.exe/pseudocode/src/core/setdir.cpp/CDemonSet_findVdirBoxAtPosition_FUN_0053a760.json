@@ -1,0 +1,137 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 17,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 17,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
+  },
+  "cross_references": [
+    {
+      "addr": "0052d980",
+      "from_addr": "0052db76",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00538d10",
+      "from_addr": "00539051",
+      "name": "core_setdir.cpp_FUN_00538d10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053a760",
+    "address_range": [
+      [
+        "0053a760",
+        "0053a7a5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760",
+    "signature": "int __cdecl core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760(CDemonSet *this_ptr,CVector3f *position)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053a720",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_0053a720"
+    },
+    {
+      "addr": "0053a090",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_FUN_0053a090"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0052db76",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00539051",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00538d10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4375,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 31,
+      "INT_ADD": 15,
+      "INT_AND": 16,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 7,
+      "INT_SUB": 11,
+      "INT_XOR": 1,
+      "LOAD": 12,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 142
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "position",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": []
+}

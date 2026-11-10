@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_icepick.cpp_CIcePick_ctor_FUN_004d4990
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x25670                        ; 004d4960
         ;   Label: core_icepick.cpp_factoryFuncIcePick_FUN_004d4960
-    CALL crt_unknown.c_FUN_005b8be2     ; 004d4965
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004d4965
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004d496a
     TEST EAX,EAX                        ; 004d496d
     JNZ 0x004d4972                      ; 004d496f

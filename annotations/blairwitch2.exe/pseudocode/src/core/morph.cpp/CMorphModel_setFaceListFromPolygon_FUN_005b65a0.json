@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 290,
+    "complexity_score": 239,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 7,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 100,
-    "suspect_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 99,
+    "suspect_count": 12,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "warning_overlapping_globals"
     ],
-    "total_lines": 275
+    "total_lines": 274
   },
   "cross_references": [
     {
@@ -263,140 +265,92 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_18 = start_face + *(int *)(&this_ptr->field_0x10 + part_index * 0x10);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 50,
+      "match": "(uint *)((int)poly_data",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)poly_data + (uint)bVar11 * -8 + 0x1c);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x10 + part_index * 0x10) +",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 56,
+      "match": "(UIntegerFloat *)((int)pSVar7",
+      "severity": "moderate",
+      "text": "pUVar9 = (UIntegerFloat *)((int)pSVar7 + (uint)bVar11 * -8 + 0x10);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x8 + part_index * 0x10) < poly_count + local_18) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 65,
+      "match": "(uint *)((int)pSVar7",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)pSVar7 + (uint)bVar11 * -8 + 0x1c);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&this_ptr->field_0x60 + 4 + iVar5) = 3;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(UIntegerFloat *)((int)pSVar7",
+      "severity": "moderate",
+      "text": "pUVar9 = (UIntegerFloat *)((int)pSVar7 + (uint)bVar11 * -8 + 0x10);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)(*(int *)&this_ptr->field_0x60 + 0x18 + iVar5);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 79,
+      "match": "(uint *)((int)pSVar2",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)pSVar2 + (uint)bVar11 * -8 + 0x1c);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)(*(int *)&this_ptr->field_0x60 + 0x24 + iVar5);",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 56,
+      "match": "(int)pSVar7",
+      "severity": "moderate",
+      "text": "pUVar9 = (UIntegerFloat *)((int)pSVar7 + (uint)bVar11 * -8 + 0x10);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x60;",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 65,
+      "match": "(int)pSVar7",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)pSVar7 + (uint)bVar11 * -8 + 0x1c);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)(*(int *)&this_ptr->field_0x60 + 0x18 + iVar5);",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar7` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 71,
+      "match": "(int)pSVar7",
+      "severity": "moderate",
+      "text": "pUVar9 = (UIntegerFloat *)((int)pSVar7 + (uint)bVar11 * -8 + 0x10);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "puVar9 = (uint *)(*(int *)&this_ptr->field_0x60 + 0x24 + iVar5);",
-      "type": "unnamed_field"
+      "description": "Pointer value `pSVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 79,
+      "match": "(int)pSVar2",
+      "severity": "moderate",
+      "text": "puVar8 = (uint *)((int)pSVar2 + (uint)bVar11 * -8 + 0x1c);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&this_ptr->field_0x60;",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 99,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "poly_data = (SMRGLHeaderPrimitive *)((int)&(poly_data->base).type + poly_stride);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&this_ptr->field_0x60 + iVar5) = iVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(*(int *)&this_ptr->field_0x60 + iVar5 + 0x18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*piVar1 = *piVar1 + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(*(int *)&this_ptr->field_0x60 + iVar5 + 0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar7->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 89,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*piVar1 = *piVar1 + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(*(int *)&this_ptr->field_0x60 + iVar5 + 0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 93,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*piVar1 = *piVar1 + *(int *)(&this_ptr->field_0xc + part_index * 0x10);",
-      "type": "unnamed_field"
+      "match": "pSVar7 = (T *)&(pSVar7->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar7 = (SMRGLHeaderPrimitive *)&(pSVar7->surface_normal).B;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

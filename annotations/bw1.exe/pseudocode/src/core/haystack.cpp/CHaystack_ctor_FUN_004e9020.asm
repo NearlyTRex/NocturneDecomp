@@ -10,8 +10,8 @@
 ;   core_haystack.cpp_factoryFuncHaystack_FUN_004e8ff0 at 004e9003
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ea830
-;   core_skeleton.cpp_FUN_00569f50
+;   core_hero.cpp_CHero_ctor_FUN_004ea830
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
         ;   Label: core_haystack.cpp_CHaystack_ctor_FUN_004e9020
     MOV EDX,dword ptr [ESP + 0x8]       ; 004e9021
     PUSH EDX                            ; 004e9025
-    CALL core_hero.cpp_FUN_004ea830     ; 004e9026
-        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004ea830(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_ctor_FUN_004ea830 ; 004e9026
+        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ea830(CHero * this_ptr)
     MOV EBX,EAX                         ; 004e902b
     ADD EAX,0x158                       ; 004e902d
     ADD ESP,0x4                         ; 004e9032
@@ -31,8 +31,8 @@ section .text
     MOV dword ptr [EAX + 0x1fe54],0x0   ; 004e9041
     PUSH EAX                            ; 004e904b
     MOV dword ptr [EAX + 0x1fe58],0x0   ; 004e904c
-    CALL core_skeleton.cpp_FUN_00569f50 ; 004e9056
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 004e9056
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x1ffb4]             ; 004e905b
     MOV dword ptr [EBX + 0x1ffc0],0x3f800000 ; 004e9061
     MOV dword ptr [EAX + 0x8],0x0       ; 004e906b

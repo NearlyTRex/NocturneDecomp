@@ -1,0 +1,160 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 38,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 85
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0048a050",
+    "address_range": [
+      [
+        "0048a050",
+        "0048a0fa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_releaseVictim_FUN_0048a050",
+    "signature": "void __cdecl core_enemy_cpp_CEnemy_releaseVictim_FUN_0048a050(CEnemy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c230",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042c230"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00441ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bdcff",
+      "name": "s_CEnemy_stopGrabbing_s_005bdcff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "0078a123",
+      "name": "DAT_0078a123",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.480769230769231,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 2,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 44,
+      "INT_ADD": 29,
+      "INT_AND": 25,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 24,
+      "INT_LESS": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 12,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 17,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 233
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_0078a123",
+      "severity": "mild",
+      "text": "if (((byte *)(this_ptr->base).base.validation_magic == &DAT_0078a123) &&",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConstruct",
+        "offset": 248,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CHotDemon",
+        "offset": 248,
+        "vtable_addr": "005e1d04"
+      },
+      {
+        "class_name": "CImp",
+        "offset": 248,
+        "vtable_addr": "005e1f04"
+      },
+      {
+        "class_name": "CTheHand",
+        "offset": 248,
+        "vtable_addr": "005e5504"
+      },
+      {
+        "class_name": "CKedward",
+        "offset": 248,
+        "vtable_addr": "005e7204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 51
+  }
+}

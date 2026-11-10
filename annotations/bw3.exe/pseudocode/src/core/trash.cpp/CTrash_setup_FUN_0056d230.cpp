@@ -9,26 +9,25 @@
 void __cdecl core_trash_cpp_CTrash_setup_FUN_0056d230(CTrash *this_ptr)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  core_actor_cpp_FUN_00408890((CDemonActor *)this_ptr);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-  *(uint *)&this_ptr->field_0x308 = 0;
-  *(uint *)&this_ptr->field_0x304 = *(uint *)&this_ptr->field_0x308;
-  *(uint *)&this_ptr->field_0x300 = *(uint *)&this_ptr->field_0x304;
-  *(uint *)&this_ptr->field_0x2f0 = 0;
-  *(uint *)&this_ptr->field_0x2ec = *(uint *)&this_ptr->field_0x2f0;
-  *(uint *)&this_ptr->field_0x2e8 = *(uint *)&this_ptr->field_0x2ec;
-  *(uint *)&this_ptr->field_0x2e0 = 0x3f000000;
-  *(uint *)&this_ptr->field_0x2e4 = 0x40000000;
-  *(uint *)&this_ptr->field_0x30c = 0x3f800000;
-  *(uint *)&this_ptr->field_0x310 = 0x3f800000;
-  uVar1 = core_actor_cpp_FUN_0040ce40(0x40c00000,0x41a00000);
-  *(uint *)&this_ptr->field_0x314 = uVar1;
-  *(uint *)&this_ptr->field_0x320 = 0;
-  *(uint *)&this_ptr->field_0x31c = *(uint *)&this_ptr->field_0x320;
-  *(uint *)&this_ptr->field_0x318 = *(uint *)&this_ptr->field_0x31c;
-  *(uint *)&this_ptr->field_0x324 = 0x41000000;
+  core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&this_ptr->model);
+  (this_ptr->drift).z = 0.0;
+  (this_ptr->drift).y = (this_ptr->drift).z;
+  (this_ptr->drift).x = (this_ptr->drift).y;
+  (this_ptr->velocity).z = 0.0;
+  (this_ptr->velocity).y = (this_ptr->velocity).z;
+  (this_ptr->velocity).x = (this_ptr->velocity).y;
+  this_ptr->collision_bottom_y = 0.5;
+  this_ptr->collision_top_y = 2.0;
+  this_ptr->damping_factor = 1.0;
+  this_ptr->collision_radius = 1.0;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(6.0,20.0);
+  this_ptr->animation_timer = fVar1;
+  (this_ptr->drift_target).z = 0.0;
+  (this_ptr->drift_target).y = (this_ptr->drift_target).z;
+  (this_ptr->drift_target).x = (this_ptr->drift_target).y;
+  this_ptr->gravity = 8.0;
   return;
 }

@@ -6,7 +6,7 @@
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field644_0x284
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
 ;   core_particle.cpp_FUN_00510ef0
@@ -37,7 +37,7 @@ section .text
         ;   XREF to: 00510ef0 (UNCONDITIONAL_CALL)  ; undefined core_particle.cpp_FUN_00510ef0()
     MOV EAX,[0x00616494]                ; 0049b811 | g_CGamePtr
     ADD ESP,0x4                         ; 0049b816
-    MOV EAX,dword ptr [EAX + 0x284]     ; 0049b819 | g_CGameInstance.field644_0x284
+    MOV EAX,dword ptr [EAX + 0x284]     ; 0049b819 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x20],EAX      ; 0049b81f
     LEA EAX,[EBX + 0x4c]                ; 0049b823
     FLD float ptr [EAX]                 ; 0049b826

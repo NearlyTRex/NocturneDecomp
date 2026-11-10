@@ -53,7 +53,7 @@ uint core_fldnotes_cpp_FUN_004bbd10(int param_1,int param_2)
   iVar5 = -1;
   local_14 = 0;
   do {
-    if (*(int *)(param_1 + 0x148) <= local_14) {
+    if (((CStrList *)(param_1 + 0x148))->item_count <= local_14) {
       return 1;
     }
     iVar6 = 0;

@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   value
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_00409c40 at 00409c73
-;   core_charactr.cpp_FUN_00433c60 at 00433c88
+;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c40 at 00409c73
+;   core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433c60 at 00433c88
 ;
 ; Called Functions:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040cf00

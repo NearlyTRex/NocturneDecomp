@@ -15,24 +15,24 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_setPosition_FUN_0049c9f0(CEdScrollB
   int iVar2;
   int iVar3;
   
-  *(int *)(this_ptr + 0x14) = left_pos;
-  *(int *)(this_ptr + 0x18) = top_pos;
-  *(int *)(this_ptr + 0x1c) = right_pos + 1;
-  *(int *)(this_ptr + 0x20) = bottom_pos + 1;
-  iVar1 = *(int *)(this_ptr + 0x1c) - *(int *)(this_ptr + 0x14);
-  iVar2 = *(int *)(this_ptr + 0x20) - *(int *)(this_ptr + 0x18);
+  this_ptr->bounds_left = left_pos;
+  this_ptr->bounds_top = top_pos;
+  this_ptr->bounds_right = right_pos + 1;
+  this_ptr->bounds_bottom = bottom_pos + 1;
+  iVar1 = this_ptr->bounds_right - this_ptr->bounds_left;
+  iVar2 = this_ptr->bounds_bottom - this_ptr->bounds_top;
   if (iVar2 < iVar1) {
-    *(int *)(this_ptr + 0x24) = *(int *)(this_ptr + 0x14) + iVar2 + -1;
-    iVar3 = *(int *)(this_ptr + 0x1c) - iVar2;
-    *(uint *)(this_ptr + 0x10) = 1;
+    this_ptr->track_start = this_ptr->bounds_left + iVar2 + -1;
+    iVar3 = this_ptr->bounds_right - iVar2;
+    this_ptr->orientation = 1;
   }
   else {
-    *(int *)(this_ptr + 0x24) = *(int *)(this_ptr + 0x18) + iVar1 + -1;
-    iVar3 = *(int *)(this_ptr + 0x20) - iVar1;
-    *(uint *)(this_ptr + 0x10) = 0;
+    this_ptr->track_start = this_ptr->bounds_top + iVar1 + -1;
+    iVar3 = this_ptr->bounds_bottom - iVar1;
+    this_ptr->orientation = 0;
   }
-  *(int *)(this_ptr + 0x28) = iVar3 + 1;
-  if (((3 < iVar1) && (3 < iVar2)) && (3 < *(int *)(this_ptr + 0x28) - *(int *)(this_ptr + 0x24))) {
+  this_ptr->track_end = iVar3 + 1;
+  if (((3 < iVar1) && (3 < iVar2)) && (3 < this_ptr->track_end - this_ptr->track_start)) {
     return;
   }
   _DAT_01d1d400 = "..\\shape\\edittool.cpp";

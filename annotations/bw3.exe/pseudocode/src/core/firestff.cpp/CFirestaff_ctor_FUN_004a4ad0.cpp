@@ -24,9 +24,10 @@ CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr
   int iVar10;
   
   pCVar6 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  iVar7 = __arrinit(&pCVar6[1].field_0x80,0xc,&g_CFlameTypeInfo);
+  iVar7 = __arrinit(pCVar6[1].base.create_event + 8,0xc,&g_CFlameTypeInfo)
+  ;
   pCVar1 = (CFirestaff *)(iVar7 + -0x614);
-  *(byte **)(iVar7 + -0x4c0) = &g_CFirestaffVTable;
+  *(CWeapon_full_vtable **)(iVar7 + -0x4c0) = &g_CFirestaffVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)(iVar7 + -0x4bc),(char *)0x5c0af8);
   *(uint *)(iVar7 + -0x33c) = 0;

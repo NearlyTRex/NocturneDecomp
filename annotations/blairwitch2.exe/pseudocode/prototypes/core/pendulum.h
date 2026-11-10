@@ -21,45 +21,45 @@ CDemonActorType * CPendulum::getActorType(CPendulum *this_ptr);
 // Address: 00514cd0
 CPendulum * __cdecl CPendulum::ctor(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_00514de0
+// Original: core_pendulum.cpp_CPendulum_setup_FUN_00514de0
 // Address: 00514de0
-void FUN_00514de0(CDemonActor *param_1);
+void __cdecl CPendulum::setup(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_00514f40
+// Original: core_pendulum.cpp_CPendulum_testCollisionWithActor_FUN_00514f40
 // Address: 00514f40
-void __cdecl FUN_00514f40(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
+void __cdecl CPendulum::testCollisionWithActor(CPendulum *this_ptr,CDemonActor *actor,CDemonActor *left_hand_actor,CDemonActor *right_hand_actor);
 
-// Original: core_pendulum.cpp_FUN_005155de
+// Original: core_pendulum.cpp_didPhaseCross_FUN_005155de
 // Address: 005155de
-bool FUN_005155de(float param_1,float param_2,float param_3);
+bool didPhaseCross(float param_1,float param_2,float param_3);
 
-// Original: core_pendulum.cpp_FUN_005156d0
+// Original: core_pendulum.cpp_CPendulum_updateSwing_FUN_005156d0
 // Address: 005156d0
-void __cdecl FUN_005156d0(CPendulum *this_ptr,float delta_time);
+void __cdecl CPendulum::updateSwing(CPendulum *this_ptr,float delta_time);
 
-// Original: core_pendulum.cpp_FUN_00515cd0
+// Original: core_pendulum.cpp_CPendulum_process_FUN_00515cd0
 // Address: 00515cd0
-void FUN_00515cd0(CPendulum *param_1,float param_2);
+void __cdecl CPendulum::process(CPendulum *this_ptr,float delta_time);
 
-// Original: core_pendulum.cpp_FUN_00515e40
+// Original: core_pendulum.cpp_CPendulum_renderOpaque_FUN_00515e40
 // Address: 00515e40
-int FUN_00515e40(CDemonActor *param_1);
+int __cdecl CPendulum::renderOpaque(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_00515ec0
+// Original: core_pendulum.cpp_CPendulum_getBoundingBox_FUN_00515ec0
 // Address: 00515ec0
-void FUN_00515ec0(int param_1);
+CBoundingBox3D * __cdecl CPendulum::getBoundingBox(CPendulum *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_pendulum.cpp_FUN_00515f00
+// Original: core_pendulum.cpp_CPendulum_archive_FUN_00515f00
 // Address: 00515f00
-void FUN_00515f00(CDemonActor *param_1);
+void __cdecl CPendulum::archive(CPendulum *this_ptr);
 
-// Original: core_pendulum.cpp_FUN_005160a0
+// Original: core_pendulum.cpp_CPendulum_getCollisionType_FUN_005160a0
 // Address: 005160a0
-undefined4 FUN_005160a0(int param_1,int param_2);
+ECollisionType __cdecl CPendulum::getCollisionType(CPendulum *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_pendulum.cpp_FUN_005160e0
+// Original: core_pendulum.cpp_CPendulum_getGroundType_FUN_005160e0
 // Address: 005160e0
-undefined4 FUN_005160e0(int param_1);
+EGroundType __cdecl CPendulum::getGroundType(CPendulum *this_ptr);
 
 // Original: core_pendulum.cpp_CPendulum_dtor_FUN_005160f0
 // Address: 005160f0

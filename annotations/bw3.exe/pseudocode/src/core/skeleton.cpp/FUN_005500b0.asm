@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054e6b0 at 0054e6ba
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0 at 0054e6ba
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005d223c
@@ -16,8 +16,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
+;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_005499d0
-;   core_skeleton.cpp_FUN_00548750
 ;   crt_string.c__stricmp_FUN_005a3260
 ;
 ; *****************************************************************************
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 005499d0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_load_FUN_005499d0(CDeformableModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00550136
     PUSH ESI                            ; 00550139
-    CALL core_skeleton.cpp_FUN_00548750 ; 0055013a
-        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00548750(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750 ; 0055013a
+        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750(CDeformableModel * this_ptr)
     MOV ECX,0x1                         ; 0055013f
     ADD ESP,0x4                         ; 00550144
     MOV EAX,ESI                         ; 00550147
@@ -97,8 +97,8 @@ section .text
     PUSH EDI                            ; 00550154
         ;   Label: LAB_00550154
     MOV ESI,0x1                         ; 00550155
-    CALL core_skeleton.cpp_FUN_00548750 ; 0055015a
-        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00548750(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750 ; 0055015a
+        ;   XREF to: 00548750 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0055015f
     MOV EAX,EDI                         ; 00550162
     MOV dword ptr [EBX*0x4 + 0x2802f5c],ESI ; 00550164 | DAT_02802f5c

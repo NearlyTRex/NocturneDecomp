@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 2477,
+    "complexity_score": 2478,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 417,
+    "pseudocode_lines": 418,
     "suspect_count": 203,
     "suspect_types": [
       "pointer_cast",
@@ -17,7 +17,7 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1152
+    "total_lines": 1153
   },
   "cross_references": [
     {
@@ -120,14 +120,14 @@
       "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_0053dd60"
     },
     {
-      "addr": "0053f080",
-      "is_variadic": false,
-      "name": "engine_prim.c_FUN_0053f080"
-    },
-    {
       "addr": "0053f720",
       "is_variadic": false,
-      "name": "engine_prim.c_FUN_0053f720"
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720"
+    },
+    {
+      "addr": "0053f080",
+      "is_variadic": false,
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0053f080"
     },
     {
       "addr": "00582370",
@@ -1772,18 +1772,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 415,
+      "line": 416,
       "match": "DAT_007c7558",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_0053f080((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",
+      "text": "((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 415,
+      "line": 416,
       "match": "DAT_007c7554",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_0053f080((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",
+      "text": "((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",
       "type": "undefined_data"
     },
     {

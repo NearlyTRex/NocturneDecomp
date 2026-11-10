@@ -1,0 +1,259 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 22,
+    "complexity_score": 26,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 33
+  },
+  "cross_references": [
+    {
+      "addr": "0043eea0",
+      "from_addr": "0043f1d2",
+      "name": "core_cloth.cpp_FUN_0043eea0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00569f30",
+      "from_addr": "00569f3e",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566fd0",
+      "from_addr": "00566fdc",
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00566fd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00567180",
+      "from_addr": "00567190",
+      "name": "core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_00567180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00566a20",
+      "from_addr": "00566a74",
+      "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00566a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564b1c",
+      "from_addr": "00564b2c",
+      "name": "core_skeleton.cpp_FUN_00564b1c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00564d3e",
+      "from_addr": "00564d4c",
+      "name": "core_skeleton.cpp_FUN_00564d3e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056ae70",
+      "from_addr": "0056ae8a",
+      "name": "core_skeleton.cpp_FUN_0056ae70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00563c40",
+    "address_range": [
+      [
+        "00563c40",
+        "00563c87"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40",
+    "signature": "CSkeleton * __cdecl core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(CDeformableModel *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f1faa",
+      "name": "s_core_skeleton_cpp_005f1faa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1fbf",
+      "name": "s_Tried_to_do_something_wi_005f1fbf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00569f3e",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00566a74",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00566a20",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00566fdc",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_00566fd0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00567190",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_computeFarthestChildBones_FUN_00567180",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056ae8a",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_0056ae70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0043f1d2",
+        "call_type": "direct",
+        "caller": "core_cloth.cpp_FUN_0043eea0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00564b2c",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00564b1c",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00564d4c",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_FUN_00564d3e",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.3333333333333335,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 14,
+      "INT_ADD": 10,
+      "INT_AND": 4,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 9,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 60
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDeformableModel *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

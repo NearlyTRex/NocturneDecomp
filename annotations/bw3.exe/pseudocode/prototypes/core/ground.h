@@ -9,17 +9,17 @@
 // Address: 004cf850
 void staticInit(void);
 
-// Original: core_ground.cpp_FUN_004cf87e
+// Original: core_ground.cpp_openFileWithExtension_FUN_004cf87e
 // Address: 004cf87e
-_FILE * FUN_004cf87e(char *param_1,char *param_2,char *param_3,char *param_4);
+_FILE * openFileWithExtension(char *param_1,char *param_2,char *param_3,char *param_4);
 
-// Original: core_ground.cpp_FUN_004cf9a0
+// Original: core_ground.cpp_getGroundTypeCode_FUN_004cf9a0
 // Address: 004cf9a0
-char * __cdecl FUN_004cf9a0(EGroundType type);
+char * __cdecl getGroundTypeCode(EGroundType type);
 
-// Original: core_ground.cpp_FUN_004cfa50
+// Original: core_ground.cpp_getGroundTypeName_FUN_004cfa50
 // Address: 004cfa50
-char * FUN_004cfa50(undefined4 param_1);
+char * getGroundTypeName(undefined4 param_1);
 
 // Original: core_ground.cpp_getGroundTypeColor_FUN_004cfaf0
 // Address: 004cfaf0

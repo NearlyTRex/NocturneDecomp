@@ -21,29 +21,29 @@ CDemonActorType * CMooCow::getActorType(CMooCow *this_ptr);
 // Address: 00521300
 CMooCow * CMooCow::ctor(CMooCow *this_ptr);
 
-// Original: core_moocow.cpp_FUN_00521370
+// Original: core_moocow.cpp_CMooCow_setup_FUN_00521370
 // Address: 00521370
-void FUN_00521370(CCharacter *param_1);
+void __cdecl CMooCow::setup(CMooCow *this_ptr);
 
-// Original: core_moocow.cpp_FUN_00521480
+// Original: core_moocow.cpp_CMooCow_process_FUN_00521480
 // Address: 00521480
-void FUN_00521480(CCharacter *param_1,float param_2);
+void __cdecl CMooCow::process(CMooCow *this_ptr,float delta_time);
 
-// Original: core_moocow.cpp_FUN_005217d0
+// Original: core_moocow.cpp_CMooCow_archive_FUN_005217d0
 // Address: 005217d0
-void FUN_005217d0(int param_1);
+void __cdecl CMooCow::archive(CMooCow *this_ptr);
 
 // Original: core_moocow.cpp_FUN_00521810
 // Address: 00521810
-void FUN_00521810(CCharacter *param_1,int *param_2);
+void FUN_00521810(CCharacter *param_1,float *param_2);
 
-// Original: core_moocow.cpp_FUN_00521990
+// Original: core_moocow.cpp_CMooCow_processDamage_FUN_00521990
 // Address: 00521990
-void FUN_00521990(int param_1,int param_2);
+void __cdecl CMooCow::processDamage(CMooCow *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_moocow.cpp_FUN_00521a60
+// Original: core_moocow.cpp_CMooCow_getTargetPoints_FUN_00521a60
 // Address: 00521a60
-undefined4 FUN_00521a60(int param_1,undefined4 *param_2);
+int __cdecl CMooCow::getTargetPoints(CMooCow *this_ptr,CVector3f *out_points_array);
 
 // Original: core_moocow.cpp_CMooCow_dtor_FUN_00521ad0
 // Address: 00521ad0

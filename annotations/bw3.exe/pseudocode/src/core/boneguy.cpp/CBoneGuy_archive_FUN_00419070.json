@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 251,
+    "complexity_score": 214,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 18,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
-    "suspect_count": 19,
+    "pseudocode_lines": 59,
+    "suspect_count": 15,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 250
+    "total_lines": 253
   },
   "cross_references": [],
   "function": {
@@ -34,6 +34,11 @@
       "name": "core_actor.cpp_archiveActor_FUN_0040b930"
     },
     {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
       "addr": "0040b830",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
@@ -42,6 +47,16 @@
       "addr": "0040b8b0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "0040bba0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040bba0"
     },
     {
       "addr": "0040b5e0",
@@ -59,24 +74,9 @@
       "name": "core_actor.cpp_archiveVector_FUN_0040b400"
     },
     {
-      "addr": "0040ba30",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ba30"
-    },
-    {
-      "addr": "0040bab0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040bab0"
-    },
-    {
-      "addr": "0040bba0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040bba0"
-    },
-    {
       "addr": "00489120",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_00489120"
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
     }
   ],
   "globals": [
@@ -247,39 +247,15 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 14,
+      "line": 15,
       "match": "field_0xcdcc",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcdcc,\"@speed\" + 1);",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xcdcc,\"@speed\" + 1);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"modelName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xcddc",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcddc,\"guardDistance\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040bab0((CMotionController *)&this_ptr->field_0x158,\"motion state\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
+      "line": 25,
       "match": "field_0xd07c",
       "severity": "mild",
       "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0xd07c,\"deathEvent\");",
@@ -287,7 +263,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 23,
+      "line": 26,
       "match": "field_0xd0e0",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xd0e0,\"recombineTime\");",
@@ -295,7 +271,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 24,
+      "line": 27,
       "match": "field_0xd0e4",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0xd0e4,\"blownUp\");",
@@ -303,7 +279,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 28,
       "match": "field_0xd694",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xd694,\"param\");",
@@ -311,7 +287,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 29,
       "match": "field_0xd0e8",
       "severity": "mild",
       "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0xd0e8,\"boxCount\");",
@@ -319,15 +295,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"partStatus\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
+      "line": 32,
       "match": "field_0xd0e8",
       "severity": "mild",
       "text": "if (0 < *(int *)&this_ptr->field_0xd0e8) {",
@@ -335,7 +303,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 31,
+      "line": 33,
       "match": "field_0xd0f0",
       "severity": "mild",
       "text": "puVar7 = &this_ptr->field_0xd0f0;",
@@ -343,7 +311,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 34,
       "match": "field_0xd134",
       "severity": "mild",
       "text": "puVar2 = &this_ptr->field_0xd134;",
@@ -351,7 +319,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 33,
+      "line": 35,
       "match": "field_0xd128",
       "severity": "mild",
       "text": "puVar5 = &this_ptr->field_0xd128;",
@@ -359,7 +327,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 34,
+      "line": 36,
       "match": "field_0xd108",
       "severity": "mild",
       "text": "puVar6 = &this_ptr->field_0xd108;",
@@ -367,7 +335,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
+      "line": 37,
       "match": "field_0xd118",
       "severity": "mild",
       "text": "puVar1 = &this_ptr->field_0xd118;",
@@ -375,7 +343,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 36,
+      "line": 38,
       "match": "field_0xd0fc",
       "severity": "mild",
       "text": "puVar4 = &this_ptr->field_0xd0fc;",
@@ -383,7 +351,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 51,
+      "line": 53,
       "match": "field_0xd0e8",
       "severity": "mild",
       "text": "} while (iVar3 < *(int *)&this_ptr->field_0xd0e8);",
@@ -391,37 +359,37 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 55,
+      "line": 57,
       "match": "field_0xce58",
       "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xce58,\"victimHeight\");",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xce58,\"victimHeight\")",
       "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 212,
         "vtable_addr": "005dc414"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 212,
         "vtable_addr": "005dc154"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 212,
         "vtable_addr": "005dc574"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 212,
         "vtable_addr": "005dc2b4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 212,
         "vtable_addr": "005dc6d4"
       }

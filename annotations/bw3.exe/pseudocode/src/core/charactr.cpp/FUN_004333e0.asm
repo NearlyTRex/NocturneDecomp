@@ -7,14 +7,14 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_enemy.cpp_FUN_00489ff0 at 0048a022
+;   core_enemy.cpp_CEnemy_updatePatrol_FUN_00489ff0 at 0048a022
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b8746
 ;   undefined4 DAT_02cfd900
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
 ;   core_charactr.cpp_FUN_004348b0
 ;   core_charactr.cpp_FUN_004349d0
@@ -85,8 +85,8 @@ section .text
         ;   XREF to: 0043350c (CONDITIONAL_JUMP)  ; LAB_0043350c
     PUSH 0x40000000                     ; 00433493
     PUSH 0x3f800000                     ; 00433498
-    CALL core_actor.cpp_FUN_0040ce40    ; 0043349d
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0043349d
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
         ;   Label: LAB_0043349d
     MOV dword ptr [ESP + 0x14],EAX      ; 004334a2
     MOV EAX,dword ptr [ESP + 0x14]      ; 004334a6

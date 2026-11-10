@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 70,
+    "complexity_score": 85,
     "cross_reference_count": 15,
     "function_call_count": 2,
     "global_count": 4,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 2,
+    "suspect_count": 3,
     "suspect_types": [
+      "shadow_pointer_walk",
       "undefined_data",
       "warning_overlapping_globals"
     ],
@@ -23,15 +24,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00463820",
-      "from_addr": "00463d90",
-      "name": "core_dlight.cpp_FUN_00463820",
+      "addr": "00464190",
+      "from_addr": "00464944",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00464190",
-      "from_addr": "00464944",
-      "name": "core_dlight.cpp_FUN_00464190",
+      "addr": "00463820",
+      "from_addr": "00463d90",
+      "name": "core_dlight.cpp_FUN_00463820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +44,13 @@
     {
       "addr": "00465890",
       "from_addr": "00465d50",
-      "name": "core_dlight.cpp_FUN_00465890",
+      "name": "core_dlight.cpp_renderConeLightGeometry_FUN_00465890",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b2ea0",
+      "from_addr": "004b341b",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004b2ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,6 +63,12 @@
       "addr": "004b4370",
       "from_addr": "004b46a4",
       "name": "core_fire.cpp_CPopcorn_render_FUN_004b4370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b46e0",
+      "from_addr": "004b4a4e",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004b46e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -77,18 +90,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b2ea0",
-      "from_addr": "004b341b",
-      "name": "core_fire.cpp_FUN_004b2ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b46e0",
-      "from_addr": "004b4a4e",
-      "name": "core_fire.cpp_FUN_004b46e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b8100",
       "from_addr": "004b861e",
       "name": "core_flame.cpp_CFlame_renderTransparent_FUN_004b8100",
@@ -103,7 +104,7 @@
     {
       "addr": "005b0c00",
       "from_addr": "005b119b",
-      "name": "core_werewolf.cpp_FUN_005b0c00",
+      "name": "core_werewolf.cpp_CWerewolf_renderEyeGlow_FUN_005b0c00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -174,7 +175,7 @@
       {
         "call_addr": "004b341b",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b2ea0",
+        "caller": "core_fire.cpp_CGunFlame_render_FUN_004b2ea0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -196,7 +197,7 @@
       {
         "call_addr": "00464944",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_00464190",
+        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -262,7 +263,7 @@
       {
         "call_addr": "00465d50",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_00465890",
+        "caller": "core_dlight.cpp_renderConeLightGeometry_FUN_00465890",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -347,6 +348,14 @@
       "severity": "mild",
       "text": "if (DAT_0061b4a0 == 0x20) {",
       "type": "undefined_data"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pSVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 20,
+      "match": "pSVar1 = (T *)&(pSVar1->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "pSVar1 = (SMRGLHeaderPrimitive *)&(pSVar1->base).count;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

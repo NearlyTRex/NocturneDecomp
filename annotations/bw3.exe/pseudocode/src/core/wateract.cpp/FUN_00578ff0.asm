@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_wateract.cpp_CLava_ctor_FUN_00579020
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2b23c                        ; 00578ff0
         ;   Label: core_wateract.cpp_FUN_00578ff0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00578ff5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00578ff5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00578ffa
     TEST EAX,EAX                        ; 00578ffd
     JNZ 0x00579002                      ; 00578fff

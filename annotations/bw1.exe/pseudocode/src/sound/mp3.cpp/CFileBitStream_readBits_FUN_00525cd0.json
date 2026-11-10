@@ -1,0 +1,351 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 179,
+    "complexity_score": 114,
+    "cross_reference_count": 10,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 74,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 253
+  },
+  "cross_references": [
+    {
+      "addr": "00526530",
+      "from_addr": "00526574",
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_00526530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00526400",
+      "from_addr": "00526458",
+      "name": "sound_mp3.cpp_CFileBitStream_readAllocationValues_FUN_00526400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00526340",
+      "from_addr": "0052635a",
+      "name": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005269e0",
+      "from_addr": "00526bd2",
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_005269e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005268e0",
+      "from_addr": "005269b4",
+      "name": "sound_mp3.cpp_CFileBitStream_readQuantizedSamples_FUN_005268e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00526670",
+      "from_addr": "00526837",
+      "name": "sound_mp3.cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_00526670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005265e0",
+      "from_addr": "00526647",
+      "name": "sound_mp3.cpp_CFileBitStream_readScalefactors_FUN_005265e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00525e70",
+      "from_addr": "00525e94",
+      "name": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00525e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052b450",
+      "from_addr": "0052ba35",
+      "name": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527530",
+      "from_addr": "00527554",
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_00527530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00525cd0",
+    "address_range": [
+      [
+        "00525cd0",
+        "00525e42"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0",
+    "signature": "uint __cdecl sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream *this_ptr,int num_bits)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c0b10",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fread_FUN_005c0b10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb167",
+      "name": "s_sound_mp3_cpp_005eb167",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb178",
+      "name": "s_Cannot_read_or_write_mor_005eb178",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006206b0",
+      "name": "DAT_006206b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006206d0",
+      "name": "DAT_006206d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 50,
+    "call_sites": [
+      {
+        "call_addr": "00525e94",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00525e70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00525ec8",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00525e70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00525ed8",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00525e70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052635a",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00526385",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00526393",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005263b9",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005263c7",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005263ed",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00526340",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052ba35",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0052b450",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.185185185185185,
+    "instruction_count": 135,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 2,
+      "BRANCH": 7,
+      "CALL": 2,
+      "CBRANCH": 16,
+      "COPY": 104,
+      "INT_ADD": 48,
+      "INT_AND": 121,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 99,
+      "INT_LEFT": 2,
+      "INT_LESS": 15,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 47,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 37,
+      "INT_XOR": 4,
+      "LOAD": 47,
+      "POPCOUNT": 45,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 700
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFileBitStream *"
+      },
+      {
+        "is_param": true,
+        "name": "num_bits",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_01d404c8",
+      "severity": "mild",
+      "text": "core_main_c_FUN_005030e0(\"Cannot read or write more than %d bits at a time.  File: %s\",0x20,&DAT_01d404c8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 74,
+      "match": "DAT_006206b0",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_006206b0 + this_ptr->bits_available * 4)) >>",
+      "type": "undefined_data"
+    }
+  ]
+}

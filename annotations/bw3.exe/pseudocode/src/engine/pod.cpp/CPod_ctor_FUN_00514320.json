@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 62,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 26
   },
@@ -116,35 +115,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x194 = &PTR_engine_pod_cpp_CPod_dtor_FUN_00514350_005e3424;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar1 = (CPod *)&pCVar1->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x190",
-      "severity": "mild",
-      "text": "} while (pCVar1 != (CPod *)&this_ptr->field_0x190);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 11,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "match": "pCVar1 = (T *)pCVar1->ARRAY",
       "severity": "moderate",
-      "text": "pCVar1 = (CPod *)&pCVar1->field_0x4;",
+      "text": "pCVar1 = (CPod *)pCVar1->pod_files;",
       "type": "shadow_pointer_walk"
     }
   ],

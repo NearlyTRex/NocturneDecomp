@@ -21,9 +21,9 @@ int __cdecl CIni::writeProfileString(CIni *this_ptr,char *section,char *key,char
 // Address: 004d8910
 void __cdecl getProfileString(char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename);
 
-// Original: engine_ini.cpp_FUN_004d8950
+// Original: engine_ini.cpp_getProfileInteger_FUN_004d8950
 // Address: 004d8950
-void FUN_004d8950(char *param_1,char *param_2,undefined4 param_3,char *param_4);
+int __cdecl getProfileInteger(char *section,char *key,int default_value,char *filename);
 
 // Original: engine_ini.cpp_writeProfileString_FUN_004d89f0
 // Address: 004d89f0
@@ -45,37 +45,37 @@ void __cdecl initIniFile(char *dest,char *source);
 // Address: 004d8ae0
 void __cdecl CIniFile::readIniHeader(CIniFile *this_ptr,char *section);
 
-// Original: engine_ini.cpp_FUN_004d8b20
+// Original: engine_ini.cpp_CIniFile_getString_FUN_004d8b20
 // Address: 004d8b20
-void FUN_004d8b20(char *param_1,char *param_2,char *param_3,int param_4);
+void __cdecl CIniFile::getString(CIniFile *this_ptr,char *key,char *output_buffer,int buffer_size);
 
-// Original: engine_ini.cpp_FUN_004d8bb0
+// Original: engine_ini.cpp_CIniFile_setString_FUN_004d8bb0
 // Address: 004d8bb0
-void FUN_004d8bb0(char *param_1,char *param_2,char *param_3);
+void __cdecl CIniFile::setString(CIniFile *this_ptr,char *key,char *value);
 
 // Original: engine_ini.cpp_FUN_004d8c30
 // Address: 004d8c30
-void FUN_004d8c30(int param_1,undefined4 param_2,undefined4 *param_3);
+void FUN_004d8c30(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8c90
 // Address: 004d8c90
-void FUN_004d8c90(int param_1,undefined4 param_2,undefined4 param_3);
+void FUN_004d8c90(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8cd0
 // Address: 004d8cd0
-void FUN_004d8cd0(int param_1,undefined4 param_2,float *param_3);
+void FUN_004d8cd0(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8d40
 // Address: 004d8d40
-void FUN_004d8d40(int param_1,undefined4 param_2,float param_3);
+void FUN_004d8d40(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8d8e
 // Address: 004d8d8e
-void FUN_004d8d8e(int param_1,undefined4 param_2,undefined4 *param_3);
+void FUN_004d8d8e(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_FUN_004d8e00
 // Address: 004d8e00
-void FUN_004d8e00(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+void FUN_004d8e00(int param_1,undefined4 param_2);
 
 // Original: engine_ini.cpp_CIni_ctor_FUN_004d8e50
 // Address: 004d8e50

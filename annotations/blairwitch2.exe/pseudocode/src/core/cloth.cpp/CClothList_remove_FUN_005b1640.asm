@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   index
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_0042b440 at 0042b503
+;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b503
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005f121a

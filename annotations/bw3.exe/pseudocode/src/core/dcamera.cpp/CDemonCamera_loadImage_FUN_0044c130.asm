@@ -79,9 +79,9 @@
 ;   engine_dosio.cpp_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
-;   engine_drender.cpp_FUN_0046e690
+;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0046e690
+;   support_codec.cpp_CLZWDecompress_init_FUN_00441350
 ;   support_codec.cpp_FUN_004409f0
-;   support_codec.cpp_FUN_00441350
 ;
 ; *****************************************************************************
 
@@ -356,8 +356,8 @@ section .text
         ;   XREF to: 005a3890 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fread_FUN_005a3890()
     ADD ESP,0x10                        ; 0044c3de
     PUSH 0x135da78                      ; 0044c3e1
-    CALL support_codec.cpp_FUN_00441350 ; 0044c3e6
-        ;   XREF to: 00441350 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_00441350(CLZWDecompress * this_ptr)
+    CALL support_codec.cpp_CLZWDecompress_init_FUN_00441350 ; 0044c3e6
+        ;   XREF to: 00441350 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDecompress_init_FUN_00441350(CLZWDecompress * this_ptr)
     MOV EDX,dword ptr [0x0149d6d8]      ; 0044c3eb | DAT_0149d6d8
     LEA EAX,[EDX*0x4 + 0x0]             ; 0044c3f1
     ADD EAX,EDX                         ; 0044c3f8
@@ -638,8 +638,8 @@ section .text
     PUSH 0x5f1830                       ; 0044c802 | DAT_005f1830
     MOV EDI,dword ptr [0x005f2afc]      ; 0044c807 | DAT_005f2afc
     PUSH EDI                            ; 0044c80d | DAT_01bdd7e4
-    CALL engine_drender.cpp_FUN_0046e690 ; 0044c80e
-        ;   XREF to: 0046e690 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046e690(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
+    CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0046e690 ; 0044c80e
+        ;   XREF to: 0046e690 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_0046e690(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
     ADD ESP,0xc                         ; 0044c813
     PUSH 0x12d40                        ; 0044c816
     MOV ECX,0xb3fd08                    ; 0044c81b

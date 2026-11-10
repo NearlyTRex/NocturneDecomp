@@ -59,10 +59,10 @@ void engine_font_cpp_FUN_004a7fe2(void)
         _DAT_01d046a4 = 0x17f;
         core_main_c_FUN_004e4500();
       }
-      engine_dosio_cpp_FUN_00461070
+      engine_dosio_cpp_splitPath_FUN_00461070
                 ((char *)(in_stack_00000458 + 4),(char *)0x0,(char *)0x0,&stack0x00000300,
                  (char *)0x0);
-      engine_dosio_cpp_FUN_004610a0
+      engine_dosio_cpp_makePath_FUN_004610a0
                 (&stack0x00000200,(char *)0x0,(char *)0x0,&stack0x00000300,(char *)0x5d684a);
       unkclass_instream_cpp_CInStreamFile_ctor_FUN_0057cd50((CInStreamFile *)&stack0x00000400);
       iVar6 = support_trstream_cpp_FUN_0057d390();

@@ -9,9 +9,9 @@
 ; float            Stack[0xc]:4   frame_number
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00450620 at 0045085f
-;   core_skeleton.cpp_FUN_00547620 at 0054765e
-;   core_stranger.cpp_FUN_00562b90 at 00562dcb
+;   core_doc.cpp_CDoc_setup_FUN_00450620 at 0045085f
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620 at 0054765e
+;   core_stranger.cpp_CStranger_setup_FUN_00562b90 at 00562dcb
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0

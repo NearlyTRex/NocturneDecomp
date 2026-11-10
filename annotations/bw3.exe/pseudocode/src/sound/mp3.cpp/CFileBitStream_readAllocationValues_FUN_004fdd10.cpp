@@ -31,7 +31,8 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004fdd10(CFil
       if (0 < iVar1) {
         pSVar3 = output_allocation + local_14;
         do {
-          uVar2 = sound_mp3_cpp_FUN_004fd5e0(this_ptr,*(int *)(local_18 + 4));
+          uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0
+                            (this_ptr,*(int *)(local_18 + 4));
           iVar5 = iVar5 + 1;
           *(uint *)pSVar3 = uVar2 & 0xff;
           pSVar3 = pSVar3 + 0x80;
@@ -45,7 +46,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004fdd10(CFil
     iVar6 = iVar4 * 0x100 + iVar6;
     pSVar3 = output_allocation + iVar4 * 4;
     do {
-      uVar2 = sound_mp3_cpp_FUN_004fd5e0(this_ptr,*(int *)(iVar6 + 4));
+      uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(this_ptr,*(int *)(iVar6 + 4));
       iVar6 = iVar6 + 0x100;
       *(uint *)(pSVar3 + 0x80) = uVar2 & 0xff;
       iVar4 = iVar4 + 1;

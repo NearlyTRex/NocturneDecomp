@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadowsc.cpp_FUN_00560630 at 00560a4b
+;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560a4b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scorp_emerge_wav_2_005f1926

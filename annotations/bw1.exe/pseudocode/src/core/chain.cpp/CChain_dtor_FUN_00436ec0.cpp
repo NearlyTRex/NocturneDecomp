@@ -19,7 +19,7 @@ CChain * core_chain_cpp_CChain_dtor_FUN_00436ec0(CChain *this_ptr,uint flags)
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CChain *)core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)this_ptr,1);
+  pCVar1 = (CChain *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

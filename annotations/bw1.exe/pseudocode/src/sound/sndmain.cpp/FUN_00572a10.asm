@@ -9,8 +9,8 @@
 ; XREF[4]:
 ;   core_doc.cpp_FUN_00469550 at 0046bcfa
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa5a0
-;   core_sound.cpp_FUN_0057d6a0 at 0057d7a1
-;   core_stranger.cpp_FUN_00585b00 at 0058811a
+;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d7a1
+;   core_stranger.cpp_CStranger_processFrame_FUN_00585b00 at 0058811a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c78cec

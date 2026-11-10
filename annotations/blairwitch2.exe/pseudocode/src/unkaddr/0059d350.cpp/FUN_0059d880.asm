@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   core_dog1.cpp_FUN_005ac0c0 at 005ac175
-;   core_ghostchi.cpp_FUN_005a9770 at 005a986b
-;   core_hag.cpp_FUN_005aae80 at 005ab23e
-;   unkafter_basicene.cpp_FUN_0059ef90 at 0059f0b0
-;   unkafter_basicene.cpp_FUN_005a0380 at 005a0764
+;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a0764
+;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f0b0
+;   core_dog1.cpp_CDog_processChaseFoodState_FUN_005ac0c0 at 005ac175
+;   core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770 at 005a986b
+;   core_hag.cpp_CHag_processBurnState_FUN_005aae80 at 005ab23e
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005b8c30

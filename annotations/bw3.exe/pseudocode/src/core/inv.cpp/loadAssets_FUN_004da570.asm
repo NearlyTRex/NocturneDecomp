@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_game.cpp_CGame_loadAssets_FUN_004bd430 at 004bd45e
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004ddae7
-;   core_inv.cpp_FUN_004dd770 at 004dd9f1
+;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd770 at 004dd9f1
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c5f3f
@@ -196,7 +196,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 004da751 | g_CGamePtr
     MOV EDX,0xffffffff                  ; 004da756
     ADD ESP,0x10                        ; 004da75b
-    MOV ECX,dword ptr [EAX + 0x4]       ; 004da75e | g_CGameInstance.field4_0x4
+    MOV ECX,dword ptr [EAX + 0x4]       ; 004da75e | g_CGameInstance.game_pixy
     MOV dword ptr [0x01d70a20],EDX      ; 004da761 | DAT_01d70a20
     CMP ECX,0x180                       ; 004da767
     JGE 0x004da7b3                      ; 004da76d

@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   core_charactr.cpp_FUN_00425fb0 at 00426155
+;   core_charactr.cpp_CCharacter_processFire_FUN_00425fb0 at 00426155
 ;   core_event.cpp_FUN_00489670 at 0048b34a
-;   core_lightgun.cpp_FUN_004e2e70 at 004e389c
-;   core_lightgun.cpp_FUN_004e38d0 at 004e39b0
+;   core_lightgun.cpp_CLightGun_fire_FUN_004e2e70 at 004e389c
+;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e39b0
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_004e6b20 at 004e6bb9
+;   core_sound.cpp_CSound_process_FUN_0055a3c0 at 0055a4a3
 ;   core_sound.cpp_FUN_00559b4e at 00559ee8
-;   core_sound.cpp_FUN_0055a3c0 at 0055a4a3
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_0054d3a0

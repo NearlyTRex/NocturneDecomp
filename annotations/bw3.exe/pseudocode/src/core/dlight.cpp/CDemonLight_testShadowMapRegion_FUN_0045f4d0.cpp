@@ -11,38 +11,38 @@ int __cdecl core_dlight_cpp_CDemonLight_testShadowMapRegion_FUN_0045f4d0(CDemonL
 {
   int iVar1;
   int iVar2;
-  char *pcVar3;
+  uchar *puVar3;
   int iVar4;
   int iVar5;
-  int iVar6;
+  uchar *puVar6;
   
-  iVar1 = (int)((*(int *)rect + (*(int *)rect >> 0x1f) * -8) -
-               (uint)((*(int *)rect >> 0x1f) << 2 < 0)) >> 3;
-  iVar2 = (int)((*(int *)(rect + 4) + (*(int *)(rect + 4) >> 0x1f) * -8) -
-               (uint)((*(int *)(rect + 4) >> 0x1f) << 2 < 0)) >> 3;
-  iVar4 = *(int *)(rect + 8) * *(int *)&this_ptr->field_0x1cc0;
+  iVar4 = rect->x_min >> 0x1f;
+  iVar1 = (int)((rect->x_min + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+  iVar4 = rect->x_max >> 0x1f;
+  iVar2 = (int)((rect->x_max + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+  iVar4 = rect->y_min * this_ptr->shadow_map_width;
   iVar5 = iVar4 >> 0x1f;
-  iVar5 = *(int *)&this_ptr->field_0x2fa0 +
-          ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3);
-  iVar4 = *(int *)(rect + 8);
-  if (iVar4 <= *(int *)(rect + 0xc)) {
+  puVar6 = this_ptr->lightmap_visibility_bits +
+           ((int)((iVar4 + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3);
+  iVar4 = rect->y_min;
+  if (iVar4 <= rect->y_max) {
     do {
       if (iVar1 <= iVar2) {
-        pcVar3 = (char *)(iVar1 + iVar5);
-        iVar6 = iVar1;
+        puVar3 = puVar6 + iVar1;
+        iVar5 = iVar1;
         do {
-          if (*pcVar3 != '\0') {
+          if (*puVar3 != '\0') {
             return 1;
           }
-          iVar6 = iVar6 + 1;
-          pcVar3 = pcVar3 + 1;
-        } while (iVar6 <= iVar2);
+          iVar5 = iVar5 + 1;
+          puVar3 = puVar3 + 1;
+        } while (iVar5 <= iVar2);
       }
-      iVar6 = *(int *)&this_ptr->field_0x1cc0 >> 0x1f;
-      iVar5 = iVar5 + ((int)((*(int *)&this_ptr->field_0x1cc0 + iVar6 * -8) - (uint)(iVar6 << 2 < 0)
-                            ) >> 3);
+      iVar5 = this_ptr->shadow_map_width >> 0x1f;
+      puVar6 = puVar6 + ((int)((this_ptr->shadow_map_width + iVar5 * -8) - (uint)(iVar5 << 2 < 0))
+                        >> 3);
       iVar4 = iVar4 + 1;
-    } while (iVar4 <= *(int *)(rect + 0xc));
+    } while (iVar4 <= rect->y_max);
   }
   return 0;
 }

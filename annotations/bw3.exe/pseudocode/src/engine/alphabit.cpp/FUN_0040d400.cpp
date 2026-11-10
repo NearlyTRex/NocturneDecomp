@@ -9,18 +9,18 @@
 void __cdecl engine_alphabit_cpp_FUN_0040d400(CAlphaBitmap *this_ptr)
 
 {
-  if (*(int *)this_ptr != 0) {
-    FUN_005a3770(*(int *)this_ptr);
-    *(uint *)this_ptr = 0;
+  if (this_ptr->raw != (char *)0x0) {
+    FUN_005a3770(this_ptr->raw);
+    this_ptr->raw = (char *)0x0;
   }
-  if (*(int *)&this_ptr->field_0x4 != 0) {
-    FUN_005a3770(*(int *)&this_ptr->field_0x4);
-    *(uint *)&this_ptr->field_0x4 = 0;
+  if (this_ptr->opa != (char *)0x0) {
+    FUN_005a3770(this_ptr->opa);
+    this_ptr->opa = (char *)0x0;
   }
-  if (*(int *)&this_ptr->field_0x8 == 0) {
+  if (this_ptr->act == (uint *)0x0) {
     return;
   }
-  FUN_005a3770(*(int *)&this_ptr->field_0x8);
-  *(uint *)&this_ptr->field_0x8 = 0;
+  FUN_005a3770(this_ptr->act);
+  this_ptr->act = (uint *)0x0;
   return;
 }

@@ -5,10 +5,6 @@
 // Function prototypes for unkafter/trisock.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_trisock.cpp_FUN_0059ef20
-// Address: 0059ef20
-int __cdecl FUN_0059ef20(void);
-
 // Original: unkafter_trisock.cpp_FUN_0059efd0
 // Address: 0059efd0
 bool FUN_0059efd0(undefined4 *param_1,char *param_2);

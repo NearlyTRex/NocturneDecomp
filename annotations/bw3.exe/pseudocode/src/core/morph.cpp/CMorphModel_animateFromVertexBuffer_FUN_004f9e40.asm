@@ -12,8 +12,8 @@
 ;
 ; XREF[3]:
 ;   core_morph.cpp_CMorphModel_addPartFromPolygon_FUN_004f9ad0 at 004f9bd5
-;   core_morph.cpp_FUN_004f9c40 at 004f9d1b
-;   core_morph.cpp_FUN_004f9f50 at 004f9f91
+;   core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40 at 004f9d1b
+;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004f9f50 at 004f9f91
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_morph_cpp_005c94d9

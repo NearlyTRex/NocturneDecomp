@@ -25,7 +25,7 @@
 ;   core_doc.cpp_FUN_00453d80 at 00453fe2
 ;   core_doc.cpp_FUN_00455170 at 00455234
 ;   core_doc.cpp_FUN_004555c0 at 00455a50
-;   core_gabriela.cpp_FUN_004afa20 at 004b0143
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004b0143
 ;   core_icepick.cpp_FUN_004d5470 at 004d556e
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff234
 ;   core_stranger.cpp_CStranger_makeDrawDecision_FUN_00567880 at 00567d50
@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_skeleton.cpp_FUN_00540fc0
+;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0
 ;   core_xform.cpp_multiplyQuaternion_FUN_00593c60
 ;   core_xform.cpp_quaternionFromAxisAngle_FUN_00594060
 ;   core_xform.cpp_quaternionToAxisAngle_FUN_00593d50
@@ -88,8 +88,8 @@ section .text
     PUSH EBX                            ; 00546fa9
     MOV EDI,dword ptr [ESP + 0xcc]      ; 00546faa
     PUSH EDI                            ; 00546fb1
-    CALL core_skeleton.cpp_FUN_00540fc0 ; 00546fb2
-        ;   XREF to: 00540fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540fc0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0 ; 00546fb2
+        ;   XREF to: 00540fc0 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 00546fb7
     TEST EAX,EAX                        ; 00546fba
     JGE 0x00547003                      ; 00546fbc

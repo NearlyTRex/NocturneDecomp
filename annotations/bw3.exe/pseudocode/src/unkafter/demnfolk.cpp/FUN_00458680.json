@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 284,
-    "complexity_score": 465,
+    "complexity_score": 447,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 105,
-    "suspect_count": 35,
+    "pseudocode_lines": 107,
+    "suspect_count": 33,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 389
+    "total_lines": 391
   },
   "cross_references": [
     {
       "addr": "00458950",
       "from_addr": "0045896b",
-      "name": "unkafter_demnfolk.cpp_FUN_00458950",
+      "name": "core_hostage.cpp_CDemnfolk_processDamage_FUN_00458950",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -39,32 +39,32 @@
     {
       "addr": "0040cf40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf40"
-    },
-    {
-      "addr": "00414550",
-      "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_00414550"
+      "name": "core_actor.cpp_randomChance_FUN_0040cf40"
     },
     {
       "addr": "004157c0",
       "is_variadic": false,
-      "name": "core_bodypart.cpp_FUN_004157c0"
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0"
+    },
+    {
+      "addr": "00414550",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00414550"
     },
     {
       "addr": "00430520",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00430520"
+      "name": "core_charactr.cpp_CCharacter_detachBodyPart_FUN_00430520"
     },
     {
       "addr": "00430590",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00430590"
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00430590"
     },
     {
       "addr": "00434810",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00434810"
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_00434810"
     },
     {
       "addr": "005a35cc",
@@ -111,13 +111,13 @@
     },
     {
       "addr": "01d21320",
-      "name": "g_CGameInstance.field20_0x14",
+      "name": "g_CGameInstance.field11_0x14",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d21510",
-      "name": "g_CGameInstance.field516_0x204",
+      "name": "g_CGameInstance.field468_0x204",
       "type": "undefined4",
       "value": null
     }
@@ -128,7 +128,7 @@
       {
         "call_addr": "0045896b",
         "call_type": "direct",
-        "caller": "unkafter_demnfolk.cpp_FUN_00458950",
+        "caller": "core_hostage.cpp_CDemnfolk_processDamage_FUN_00458950",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -355,22 +355,6 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "((CVector3f *)&this_ptr->field_0x20,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(UOrientationVector *)&this_ptr->field_0x30,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 66,
       "match": "field_0xd114",
       "severity": "mild",
@@ -451,23 +435,23 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x2298",
+      "line": 90,
+      "match": "field_0x2140",
       "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd12c * 4) == 0) {",
+      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd12c * 4)",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 89,
+      "line": 90,
       "match": "field_0xd12c",
       "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x2298 + *(int *)&this_ptr->field_0xd12c * 4) == 0) {",
+      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + *(int *)&this_ptr->field_0xd12c * 4)",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 93,
+      "line": 95,
       "match": "field_0xd124",
       "severity": "mild",
       "text": "if (*(int *)&this_ptr->field_0xd124 < 0) {",
@@ -475,7 +459,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 99,
+      "line": 101,
       "match": "field_0xd12c",
       "severity": "mild",
       "text": "if (iVar1 == *(int *)&this_ptr->field_0xd12c) {",
@@ -483,7 +467,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 103,
+      "line": 105,
       "match": "field_0xd124",
       "severity": "mild",
       "text": "if ((iVar1 != *(int *)&this_ptr->field_0xd124) && (iVar1 != *(int *)&this_ptr->field_0xd128)) {",
@@ -491,7 +475,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 103,
+      "line": 105,
       "match": "field_0xd128",
       "severity": "mild",
       "text": "if ((iVar1 != *(int *)&this_ptr->field_0xd124) && (iVar1 != *(int *)&this_ptr->field_0xd128)) {",

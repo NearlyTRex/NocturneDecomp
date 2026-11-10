@@ -9,18 +9,18 @@
 CConsole * __cdecl engine_console_cpp_CConsole_ctor_FUN_00441f60(CConsole *this_ptr,int width,int height,int screen_x,int screen_y)
 
 {
-  *(int *)&this_ptr->field_0xfb0 = width;
-  *(int *)&this_ptr->field_0xfb4 = height;
-  *(int *)&this_ptr->field_0xfb8 = screen_x;
-  *(int *)&this_ptr->field_0xfbc = screen_y;
-  if (*(int *)&this_ptr->field_0xfb8 < 1) {
-    *(uint *)&this_ptr->field_0xfb8 = 1;
+  this_ptr->console_width = width;
+  this_ptr->console_height = height;
+  this_ptr->screen_x = screen_x;
+  this_ptr->screen_y = screen_y;
+  if (this_ptr->screen_x < 1) {
+    this_ptr->screen_x = 1;
   }
-  if (*(int *)&this_ptr->field_0xfbc < 1) {
-    *(uint *)&this_ptr->field_0xfbc = 1;
+  if (this_ptr->screen_y < 1) {
+    this_ptr->screen_y = 1;
   }
   engine_console_cpp_CConsole_reset_FUN_00442190(this_ptr);
-  *(uint *)this_ptr = 0;
+  this_ptr->file_logging_enabled = 0;
   *(uint *)&this_ptr->field_0x4 = 0;
   return this_ptr;
 }

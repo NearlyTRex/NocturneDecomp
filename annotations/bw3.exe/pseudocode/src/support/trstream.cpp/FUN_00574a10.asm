@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00402940 at 00402a15
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a15
 ;
 ; Called Functions:
 ;   engine_dosio.cpp_FUN_004659c0

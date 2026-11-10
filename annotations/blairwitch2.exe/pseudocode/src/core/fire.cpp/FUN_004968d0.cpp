@@ -10,7 +10,7 @@ void core_fire_cpp_FUN_004968d0(CVector3f *param_1)
 
 {
   int iVar1;
-  uint *puVar2;
+  float *pfVar2;
   CVector3f *pCVar3;
   byte bVar4;
   CVector3f CStack_28;
@@ -19,12 +19,12 @@ void core_fire_cpp_FUN_004968d0(CVector3f *param_1)
   bVar4 = 0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(DAT_0060b280,param_1);
   engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
-            (DAT_0060b280,(CVector3i *)&param_1[5].field_0x8,(CVector3i *)0x0);
-  puVar2 = *(uint **)(*(int *)&param_1[6].field_0x8 + 0x350);
+            (DAT_0060b280,(CVector3i *)&param_1[5].z,(CVector3i *)0x0);
+  pfVar2 = *(float **)((int)param_1[6].z + 0x350);
   pCVar3 = &CStack_28;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pCVar3 = *puVar2;
-    puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
+    pCVar3->x = *pfVar2;
+    pfVar2 = pfVar2 + (uint)bVar4 * -2 + 1;
     pCVar3 = (CVector3f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);
   }
   iVar1 = core_box_cpp_FUN_0041a840(&CStack_28,0);
@@ -34,7 +34,7 @@ void core_fire_cpp_FUN_004968d0(CVector3f *param_1)
                (CMatrix3x3f *)0x0);
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
     core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_0044e6a0
-              (*(CKeyFramedModel **)&param_1[6].field_0x8,0,(CKeyFramedModelInstance *)0x0,0x2e7);
+              ((CKeyFramedModel *)param_1[6].z,0,(CKeyFramedModelInstance *)0x0,0x2e7);
   }
   engine_matrix_c_pop_FUN_0046b4a0();
   return;

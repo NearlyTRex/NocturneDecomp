@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 828,
+    "complexity_score": 788,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 72,
+    "suspect_count": 68,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -26,7 +26,7 @@
     {
       "addr": "00424470",
       "from_addr": "0042449d",
-      "name": "core_charactr.cpp_FUN_00424470",
+      "name": "core_charactr.cpp_CCharacter_preProcess_FUN_00424470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -38,13 +38,13 @@
     {
       "addr": "00563060",
       "from_addr": "00564154",
-      "name": "core_stranger.cpp_FUN_00563060",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00573110",
       "from_addr": "00573287",
-      "name": "core_tentacle.cpp_FUN_00573110",
+      "name": "core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +58,7 @@
     ],
     "convention": "unknown",
     "name": "core_charactr.cpp_FUN_00429d60",
-    "signature": "void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,undefined4 *param_2)"
+    "signature": "void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)"
   },
   "function_calls": [
     {
@@ -84,7 +84,7 @@
       {
         "call_addr": "0042449d",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00424470",
+        "caller": "core_charactr.cpp_CCharacter_preProcess_FUN_00424470",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -138,7 +138,7 @@
       {
         "call_addr": "00564154",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00563060",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "00564642",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00563060",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +165,7 @@
       {
         "call_addr": "00564b56",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00563060",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -178,7 +178,7 @@
       {
         "call_addr": "00573287",
         "call_type": "direct",
-        "caller": "core_tentacle.cpp_FUN_00573110",
+        "caller": "core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110",
         "estimated_params": 4,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -329,7 +329,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,uint *param_2)",
+      "text": "void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -337,7 +337,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,uint *param_2)",
+      "text": "void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -465,7 +465,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)&param_1->field_0x30 != param_2) {",
+      "text": "if (&param_1->orient != (UOrientationVector *)param_2) {",
       "type": "unnamed_param"
     },
     {
@@ -473,23 +473,15 @@
       "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((uint *)&param_1->field_0x30 != param_2) {",
+      "text": "if (&param_1->orient != (UOrientationVector *)param_2) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if ((uint *)&param_1->field_0x30 != param_2) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x30 = *param_2;",
+      "text": "(param_1->orient).vec.x = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -497,23 +489,15 @@
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x30 = *param_2;",
+      "text": "(param_1->orient).vec.x = *param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x30 = *param_2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x34 = param_2[1];",
+      "text": "(param_1->orient).vec.y = param_2[1];",
       "type": "unnamed_param"
     },
     {
@@ -521,23 +505,15 @@
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x34 = param_2[1];",
+      "text": "(param_1->orient).vec.y = param_2[1];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x34 = param_2[1];",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x38 = param_2[2];",
+      "text": "(param_1->orient).vec.z = param_2[2];",
       "type": "unnamed_param"
     },
     {
@@ -545,16 +521,8 @@
       "line": 40,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x38 = param_2[2];",
+      "text": "(param_1->orient).vec.z = param_2[2];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x38 = param_2[2];",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

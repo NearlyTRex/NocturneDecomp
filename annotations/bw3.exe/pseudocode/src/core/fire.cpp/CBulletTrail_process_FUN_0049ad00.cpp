@@ -11,11 +11,11 @@ void __cdecl core_fire_cpp_CBulletTrail_process_FUN_0049ad00(CBulletTrail *this_
 {
   int iVar1;
   
-  iVar1 = *(int *)&this_ptr->field_0x20 + -1;
-  *(int *)&this_ptr->field_0x20 = iVar1;
+  iVar1 = this_ptr->frames_remaining + -1;
+  this_ptr->frames_remaining = iVar1;
   if (-1 < iVar1) {
     return;
   }
-  *(uint *)&this_ptr->field_0x20 = 0;
+  this_ptr->frames_remaining = 0;
   return;
 }

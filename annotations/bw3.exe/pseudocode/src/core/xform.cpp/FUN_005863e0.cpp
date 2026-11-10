@@ -9,26 +9,27 @@
 void core_xform_cpp_FUN_005863e0(CEnemy *param_1)
 
 {
-  CSkeleton *this_ptr;
+  CDeformableModelInstance *this_ptr;
+  CSkeleton *this_ptr_00;
   int iVar1;
   
-  core_skeleton_cpp_FUN_0054e6b0((CDeformableModelInstance *)&param_1->field_0x158);
-  this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-                       ((CDeformableModelInstance *)&param_1->field_0x158);
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Spine1",1);
-  *(int *)(param_1 + 1) = iVar1;
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Head",1);
-  *(int *)&param_1[1].field_0x4 = iVar1;
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Pelvis",1);
-  *(int *)&param_1[1].field_0x8 = iVar1;
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Spine",1);
-  *(int *)&param_1[1].field_0xc = iVar1;
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Spine1",1);
-  *(int *)&param_1[1].field_0x10 = iVar1;
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Spine2",1);
-  *(int *)&param_1[1].field_0x14 = iVar1;
-  iVar1 = core_skeleton_cpp_FUN_00548090(this_ptr,"Bip01 Head",1);
-  *(int *)&param_1[1].field_0x18 = iVar1;
+  this_ptr = &(param_1->base).model;
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(this_ptr);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Spine1",1);
+  *(int *)param_1[1].base.base.actor_name = iVar1;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Head",1);
+  *(int *)(param_1[1].base.base.actor_name + 4) = iVar1;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Pelvis",1);
+  *(int *)(param_1[1].base.base.actor_name + 8) = iVar1;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Spine",1);
+  *(int *)(param_1[1].base.base.actor_name + 0xc) = iVar1;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Spine1",1);
+  *(int *)(param_1[1].base.base.actor_name + 0x10) = iVar1;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Spine2",1);
+  *(int *)(param_1[1].base.base.actor_name + 0x14) = iVar1;
+  iVar1 = core_skeleton_cpp_CSkeleton_findBone_FUN_00548090(this_ptr_00,"Bip01 Head",1);
+  *(int *)(param_1[1].base.base.actor_name + 0x18) = iVar1;
   core_enemy_cpp_CEnemy_setup_FUN_00489110(param_1);
   return;
 }

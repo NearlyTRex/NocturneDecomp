@@ -7,7 +7,7 @@
 ; XREF[4]:
 ;   core_game.cpp_FUN_004d6420 at 004d67e6
 ;   core_game.cpp_FUN_004d6990 at 004d6cf9
-;   engine_2d.c_FUN_00402940 at 00402a65
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a65
 ;   support_trstream.cpp_COutStreamFile_dtor_FUN_005a1860 at 005a1873
 ;
 ; Called Functions:

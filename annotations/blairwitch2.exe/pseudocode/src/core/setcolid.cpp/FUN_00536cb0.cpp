@@ -57,17 +57,17 @@ int __cdecl core_setcolid_cpp_FUN_00536cb0(CDemonSet *this_ptr,SIntersectXZCylin
     afStack_58[(uint)bVar3 * -2 + 6] = afStack_58[(uint)bVar3 * -2];
     afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 7] =
          afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
-    local_20 = local_44 + *(float *)position;
-    local_1c = local_40 + *(float *)&position->field_0x4;
-    local_18 = local_3c + *(float *)&position->field_0x8;
-    local_50._0_4_ = local_44 + *(float *)position;
+    local_20 = local_44 + position->x;
+    local_1c = local_40 + position->y;
+    local_18 = local_3c + position->z;
+    local_50.x = local_20;
     afStack_58[(uint)bVar3 * -2 + 3] = afStack_58[(uint)bVar3 * -2 + 0xf];
     afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 4] =
          afStack_58[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 0x10];
     if (pCVar1 != (CVector3f *)(afStack_58 + 2)) {
-      *(uint *)pCVar1 = local_50._0_4_;
-      *(uint *)&pCVar1->field_0x4 = local_50._4_4_;
-      *(uint *)&pCVar1->field_0x8 = local_50._8_4_;
+      pCVar1->x = local_50.x;
+      pCVar1->y = local_50.y;
+      pCVar1->z = local_50.z;
     }
     iVar2 = iVar2 + 1;
     pCVar1 = pCVar1 + 1;

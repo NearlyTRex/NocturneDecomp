@@ -53,7 +53,7 @@
 ;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_00432070
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_0051c760
 ;   engine_prim.c_FUN_0051da80
-;   engine_prim.c_FUN_0051e130
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130
 ;   engine_special.cpp_drawPolygon2_FUN_0055f920
 ;
 ; *****************************************************************************
@@ -169,8 +169,8 @@ section .text
     PUSH EBX                            ; 004330ec
         ;   Label: LAB_004330ec
     PUSH EDX                            ; 004330ed
-    CALL engine_prim.c_FUN_0051e130     ; 004330ee
-        ;   XREF to: 0051e130 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_0051e130(int * vertex_indices, int vertex_count)
+    CALL engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130 ; 004330ee
+        ;   XREF to: 0051e130 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 004330f3
     JMP 0x004330e4                      ; 004330f6
         ;   XREF to: 004330e4 (UNCONDITIONAL_JUMP)  ; LAB_004330e4

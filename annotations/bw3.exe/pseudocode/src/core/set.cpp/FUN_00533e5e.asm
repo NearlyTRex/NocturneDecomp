@@ -22,13 +22,13 @@
 ;   core_dcamera.cpp_FUN_0044de30
 ;   core_dcamera.cpp_FUN_00450e10
 ;   core_main.c_FUN_004e4330
+;   core_set.cpp_CDemonSet_clearLights_FUN_00537520
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_00533b80
-;   core_set.cpp_FUN_00537520
 ;   core_setutil.cpp_C3DSCamera_apply_FUN_00541fb0
 ;   core_setutil.cpp_FUN_00543380
 ;   crt_string.c__strcmp_FUN_005a3d00
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -175,8 +175,8 @@ section .text
     PUSH 0x5d03a4                       ; 00534096
     LEA EAX,[ESP + 0x8]                 ; 0053409b
     PUSH EAX                            ; 0053409f
-    CALL crt_unknown.c_FUN_005a28c0     ; 005340a0
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005340a0
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005340a5
     PUSH 0x0                            ; 005340a8
     PUSH 0x0                            ; 005340aa
@@ -186,8 +186,8 @@ section .text
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 005340b6
     LEA EBP,[EBX + 0x1]                 ; 005340b9
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 005340bc
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 005340bc
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     MOV ESI,dword ptr [ESP + 0x150]     ; 005340c1
     MOV EDI,dword ptr [ESP + 0x14c]     ; 005340c8
     MOV EBX,dword ptr [ESP + 0x190]     ; 005340cf
@@ -309,8 +309,8 @@ section .text
     PUSH 0x5d02f3                       ; 00534263
     LEA EAX,[ESP + 0x34]                ; 00534268
     PUSH EAX                            ; 0053426c
-    CALL crt_unknown.c_FUN_005a28c0     ; 0053426d
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0053426d
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x38                        ; 00534272
     PUSH 0x16                           ; 00534275
     PUSH 0x0                            ; 00534277
@@ -373,8 +373,8 @@ section .text
     PUSH 0x5d0388                       ; 0053432a
     LEA EAX,[ESP + 0x18]                ; 0053432f
     PUSH EAX                            ; 00534333
-    CALL crt_unknown.c_FUN_005a28c0     ; 00534334
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00534334
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 00534339
     MOV ESI,dword ptr [ESP + 0x170]     ; 0053433c
     PUSH ESI                            ; 00534343
@@ -408,7 +408,7 @@ section .text
     ADD ESI,dword ptr [ESP + 0x154]     ; 00534397
     PUSH ESI                            ; 0053439e
     CALL core_setutil.cpp_FUN_00543380  ; 0053439f
-        ;   XREF to: 00543380 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_00543380()
+        ;   XREF to: 00543380 (UNCONDITIONAL_CALL)  ; int core_setutil.cpp_FUN_00543380(C3DSLight * this_ptr)
     ADD ESP,0x4                         ; 005343a4
     PUSH 0x0                            ; 005343a7
     PUSH 0x2038f4c                      ; 005343a9
@@ -426,8 +426,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x190]     ; 005343f4
         ;   Label: LAB_005343f4
     PUSH EBX                            ; 005343fb
-    CALL core_set.cpp_FUN_00537520      ; 005343fc
-        ;   XREF to: 00537520 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00537520(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_clearLights_FUN_00537520 ; 005343fc
+        ;   XREF to: 00537520 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_clearLights_FUN_00537520(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 00534401
     XOR EBP,EBP                         ; 00534404
     MOV dword ptr [0x0203b37c],EBP      ; 00534406 | g_CDemonRaytraceInstance

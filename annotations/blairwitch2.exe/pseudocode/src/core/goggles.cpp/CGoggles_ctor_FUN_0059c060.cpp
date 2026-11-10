@@ -17,9 +17,9 @@ CGoggles * core_goggles_cpp_CGoggles_ctor_FUN_0059c060(CGoggles *this_ptr)
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  *(byte **)&this_ptr_00[-1].field_0x178 = &g_CGogglesVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CGogglesVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             (this_ptr_00,"doc-goggles.kfm");
-  *(uint *)(this_ptr_00 + 1) = 0;
-  return (CGoggles *)&this_ptr_00[-2].field_0x44;
+  this_ptr_00[1].part_visibility_flags[0] = 0;
+  return (CGoggles *)(this_ptr_00[-2].part_visibility_flags + 0x11);
 }

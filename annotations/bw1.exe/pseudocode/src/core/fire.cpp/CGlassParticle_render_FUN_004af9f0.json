@@ -1,0 +1,396 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 163,
+    "complexity_score": 300,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 11,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 55,
+    "suspect_count": 23,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 218
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004af9f0",
+    "address_range": [
+      [
+        "004af9f0",
+        "004afbee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CGlassParticle_render_FUN_004af9f0",
+    "signature": "void __cdecl core_fire_cpp_CGlassParticle_render_FUN_004af9f0(CGlassParticle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00552a70",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_computeLighting_FUN_00552a70"
+    },
+    {
+      "addr": "00483850",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850"
+    },
+    {
+      "addr": "00484f00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00"
+    },
+    {
+      "addr": "004837b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0"
+    },
+    {
+      "addr": "00483050",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "004839a0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_004839a0"
+    },
+    {
+      "addr": "00580173",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00580173"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fff94",
+      "name": "DAT_005fff94",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "0062902c",
+      "name": "DAT_0062902c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629030",
+      "name": "DAT_00629030",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062905c",
+      "name": "DAT_0062905c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629060",
+      "name": "DAT_00629060",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0062908c",
+      "name": "DAT_0062908c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00629090",
+      "name": "DAT_00629090",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7218543046357615,
+    "instruction_count": 151,
+    "opcode_distribution": {
+      "CALL": 11,
+      "COPY": 321,
+      "FLOAT2FLOAT": 24,
+      "FLOAT_MULT": 12,
+      "INT_ADD": 64,
+      "INT_AND": 32,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 32,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 16,
+      "INT_SUB": 41,
+      "INT_XOR": 1,
+      "LOAD": 28,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "ROUND": 12,
+      "STORE": 60,
+      "TRUNC": 12
+    },
+    "pcode_op_count": 713
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlassParticle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,(CVector3f *)this_ptr);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&this_ptr->euler_angles,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "CStack_28.x = (int)ROUND(*(float *)&this_ptr->field_0x80 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x84",
+      "severity": "mild",
+      "text": "CStack_28.y = (int)ROUND(*(float *)&this_ptr->field_0x84 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x88",
+      "severity": "mild",
+      "text": "CStack_28.z = (int)ROUND(*(float *)&this_ptr->field_0x88 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x8c",
+      "severity": "mild",
+      "text": "CStack_1c.x = (int)ROUND(*(float *)&this_ptr->field_0x8c * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x90",
+      "severity": "mild",
+      "text": "CStack_1c.y = (int)ROUND(*(float *)&this_ptr->field_0x90 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x94",
+      "severity": "mild",
+      "text": "CStack_1c.z = (int)ROUND(*(float *)&this_ptr->field_0x94 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_1c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x98",
+      "severity": "mild",
+      "text": "CStack_34.x = (int)ROUND(*(float *)&this_ptr->field_0x98 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "CStack_34.y = (int)ROUND(*(float *)&this_ptr->field_0x9c * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0xa0",
+      "severity": "mild",
+      "text": "CStack_34.z = (int)ROUND(*(float *)&this_ptr->field_0xa0 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_34);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,&this_ptr->texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,this_ptr->lifetime);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "CStack_40.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "CStack_40.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005fff94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 49,
+      "match": "DAT_0062902c",
+      "severity": "mild",
+      "text": "DAT_0062902c = (this_ptr->uv_u_per_vertex).x;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_00629090",
+      "severity": "mild",
+      "text": "DAT_00629090 = (this_ptr->uv_v_per_vertex).z;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 55,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050(DAT_00612560,&SStack_68);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 8,
+        "vtable_addr": "00600024"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

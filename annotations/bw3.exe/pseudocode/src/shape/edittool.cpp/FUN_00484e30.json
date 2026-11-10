@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 180,
+    "complexity_score": 181,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 16,
     "suspect_count": 16,
     "suspect_types": [
       "unnamed_param"
     ],
-    "total_lines": 80
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -129,7 +129,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_insert_FUN_004820b0((CStrList *)param_1,param_2,param_3);",
+      "text": "shape_edittool_cpp_CStrList_insert_FUN_004820b0(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -137,7 +137,7 @@
       "line": 8,
       "match": "param_2",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_insert_FUN_004820b0((CStrList *)param_1,param_2,param_3);",
+      "text": "shape_edittool_cpp_CStrList_insert_FUN_004820b0(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -145,7 +145,7 @@
       "line": 8,
       "match": "param_3",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CStrList_insert_FUN_004820b0((CStrList *)param_1,param_2,param_3);",
+      "text": "shape_edittool_cpp_CStrList_insert_FUN_004820b0(&param_1->base,param_2,param_3);",
       "type": "unnamed_param"
     },
     {
@@ -153,7 +153,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "for (item_index = *(int *)param_1 + -2; param_2 < item_index; item_index = item_index + -1) {",
+      "text": "for (item_index = (param_1->base).item_count + -2; param_2 < item_index;",
       "type": "unnamed_param"
     },
     {
@@ -161,15 +161,7 @@
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "for (item_index = *(int *)param_1 + -2; param_2 < item_index; item_index = item_index + -1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 10,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(param_1,item_index + -1);",
+      "text": "for (item_index = (param_1->base).item_count + -2; param_2 < item_index;",
       "type": "unnamed_param"
     },
     {
@@ -177,7 +169,7 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,item_index,iVar1);",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_00484ca0(param_1,item_index + -1);",
       "type": "unnamed_param"
     },
     {
@@ -185,7 +177,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(param_1,item_index + -1);",
+      "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,item_index,iVar1);",
       "type": "unnamed_param"
     },
     {
@@ -193,12 +185,20 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
+      "text": "iVar1 = shape_edittool_cpp_CPickList_getItemHotKey_FUN_00484dd0(param_1,item_index + -1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 14,
+      "match": "param_1",
+      "severity": "mild",
       "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,item_index,iVar1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,param_2,1);",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 16,
       "match": "param_2",
       "severity": "mild",
       "text": "shape_edittool_cpp_CPickList_enableItem_FUN_00484bd0(param_1,param_2,1);",
@@ -214,7 +214,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
       "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,param_2,-1);",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_2",
       "severity": "mild",
       "text": "shape_edittool_cpp_CPickList_setItemHotKey_FUN_00484d00(param_1,param_2,-1);",

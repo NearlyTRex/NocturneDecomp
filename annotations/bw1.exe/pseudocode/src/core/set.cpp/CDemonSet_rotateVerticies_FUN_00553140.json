@@ -53,21 +53,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004e1fb0",
+      "from_addr": "004e20b1",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004e1a10",
       "from_addr": "004e1b0f",
-      "name": "core_glass.cpp_FUN_004e1a10",
+      "name": "core_glass.cpp_CGlass_renderOpaque_FUN_004e1a10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e1be0",
       "from_addr": "004e1cde",
-      "name": "core_glass.cpp_FUN_004e1be0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e1fb0",
-      "from_addr": "004e20b1",
-      "name": "core_glass.cpp_FUN_004e1fb0",
+      "name": "core_glass.cpp_CGlass_renderTransparent_FUN_004e1be0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,7 +79,7 @@
     {
       "addr": "005ab030",
       "from_addr": "005ab155",
-      "name": "core_wateract.cpp_FUN_005ab030",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -216,7 +216,7 @@
       {
         "call_addr": "004e1b0f",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004e1a10",
+        "caller": "core_glass.cpp_CGlass_renderOpaque_FUN_004e1a10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,7 +227,7 @@
       {
         "call_addr": "004e1cde",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004e1be0",
+        "caller": "core_glass.cpp_CGlass_renderTransparent_FUN_004e1be0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,7 +238,7 @@
       {
         "call_addr": "004e20b1",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004e1fb0",
+        "caller": "core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -260,7 +260,7 @@
       {
         "call_addr": "005ab155",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_005ab030",
+        "caller": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_005ab030",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -363,7 +363,7 @@
       "line": 19,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "output = *(SProjectedVertex **)DAT_00612560;",
+      "text": "output = DAT_00612560->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {

@@ -28,11 +28,12 @@ uint core_hero_cpp_FUN_004d4900(CHero *param_1,uint param_2)
           ((((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,3), iVar3 == 0 ||
              (iVar3 = core_hero_cpp_FUN_004d3040(param_1,param_2), iVar3 == 0)) &&
             ((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,8), iVar3 == 0 ||
-             (iVar3 = core_hero_cpp_FUN_004d32d0(param_1), iVar3 == 0)))) &&
+             (iVar3 = core_hero_cpp_CHero_tryPullLever_FUN_004d32d0(param_1), iVar3 == 0)))) &&
            ((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,9), iVar3 == 0 ||
             (iVar3 = core_hero_cpp_FUN_004d3500(param_1), iVar3 == 0)))))) &&
          ((iVar3 = (**(code **)(*(int *)(param_1 + 0x154) + 0x15c))(param_1,10), iVar3 == 0 ||
-          (iVar3 = core_hero_cpp_FUN_004d38b0(param_1), iVar3 == 0)))) {
+          (iVar3 = core_hero_cpp_CHero_tryApproachNearbyActor_FUN_004d38b0(param_1), iVar3 == 0))))
+      {
         if ((iVar1 != 0) &&
            (iVar3 = core_hero_cpp_FUN_004d3e20(param_1,"CBodyPart"), iVar3 != 0)) {
           return 1;

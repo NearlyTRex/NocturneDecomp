@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 146,
+    "complexity_score": 126,
     "cross_reference_count": 12,
     "function_call_count": 7,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 26,
-    "suspect_count": 11,
+    "suspect_count": 9,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
@@ -16,6 +16,12 @@
     "total_lines": 86
   },
   "cross_references": [
+    {
+      "addr": "0054d840",
+      "from_addr": "0054d95b",
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0054d810",
       "from_addr": "0054d816",
@@ -47,18 +53,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0054ccf0",
-      "from_addr": "0054cd7b",
-      "name": "sound_sndmain.cpp_FUN_0054ccf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054d840",
-      "from_addr": "0054d95b",
-      "name": "sound_sndmain.cpp_FUN_0054d840",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0054ddf0",
       "from_addr": "0054e0b1",
       "name": "sound_sndmain.cpp_FUN_0054ddf0",
@@ -71,21 +65,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00551950",
-      "from_addr": "00551984",
-      "name": "sound_sndmain.cpp_FUN_00551950",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00551c70",
-      "from_addr": "00551c88",
-      "name": "sound_sndmain.cpp_FUN_00551c70",
+      "addr": "0054ccf0",
+      "from_addr": "0054cd7b",
+      "name": "sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00552c40",
       "from_addr": "00552c57",
       "name": "sound_sndmain.cpp_closeSoundDevice_FUN_00552c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551c70",
+      "from_addr": "00551c88",
+      "name": "sound_sndmain.cpp_freeAllSamples_FUN_00551c70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00551950",
+      "from_addr": "00551984",
+      "name": "sound_sndmain.cpp_freeSampleByName_FUN_00551950",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -118,19 +118,19 @@
       "name": "sound_mp3.cpp_CMP3Decoder_dtor_FUN_00509cb0"
     },
     {
-      "addr": "0054da70",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054da70"
-    },
-    {
       "addr": "0054dac0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054dac0"
+      "name": "sound_sndmain.cpp_CSfxSample_freeSampleData_FUN_0054dac0"
+    },
+    {
+      "addr": "0054da70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_releaseBufferId_FUN_0054da70"
     },
     {
       "addr": "0054dbf0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_0054dbf0"
+      "name": "sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0"
     },
     {
       "addr": "0057d180",
@@ -203,7 +203,7 @@
       {
         "call_addr": "0054d95b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054d840",
+        "caller": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +258,7 @@
       {
         "call_addr": "00551c88",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00551c70",
+        "caller": "sound_sndmain.cpp_freeAllSamples_FUN_00551c70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +269,7 @@
       {
         "call_addr": "0054cd7b",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0054ccf0",
+        "caller": "sound_sndmain.cpp_allocateHwSample_FUN_0054ccf0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -336,14 +336,6 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x154 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 17,
       "match": "field_0x174",
       "severity": "mild",
@@ -372,14 +364,6 @@
       "match": "field_0x17c",
       "severity": "mild",
       "text": "unkaddr_0057b9a0_cpp_FUN_0057d180(&this_ptr->field_0x17c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x150 = 0;",
       "type": "unnamed_field"
     },
     {

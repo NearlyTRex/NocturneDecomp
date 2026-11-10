@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_FUN_0054d3c0 at 0054e060
-;   core_setutil.cpp_FUN_0055c1b0 at 0055c392
+;   core_setutil.cpp_C3DSCamera_load_FUN_0055c1b0 at 0055c392
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_d_d_d_005d7a27

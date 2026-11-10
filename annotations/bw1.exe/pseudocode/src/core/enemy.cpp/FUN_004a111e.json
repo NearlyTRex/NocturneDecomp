@@ -2,22 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 159,
+    "complexity_score": 101,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 29,
-    "suspect_count": 10,
+    "pseudocode_lines": 31,
+    "suspect_count": 5,
     "suspect_types": [
-      "raw_address_pointer_store",
-      "suspicious_cast",
-      "unnamed_field",
+      "derived_field_index_pun",
+      "pointer_cast",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 86
+    "total_lines": 88
   },
   "cross_references": [],
   "function": {
@@ -36,12 +34,12 @@
     {
       "addr": "00408830",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408830"
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830"
     },
     {
       "addr": "0040c550",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c550"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
     }
   ],
   "globals": [
@@ -123,67 +121,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 16,
+      "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "class_name = core_actor_cpp_FUN_00408830(param_1);",
+      "text": "class_name = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408830(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x150fec",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CDemonSetPtr->field_0x150fec <= iVar4) break;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 20,
-      "match": "*(CDemonActor **)(&g_CDemonSetPtr->field_0x150ff0",
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(CCharacter **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)(&g_CDemonSetPtr->field_0x150ff0 + iVar3);",
-      "type": "raw_address_pointer_store"
+      "text": "this_ptr = *(CCharacter **)((int)g_CDemonSetPtr->enemies + iVar4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x150ff0",
-      "severity": "mild",
-      "text": "actor_ptr = *(CDemonActor **)(&g_CDemonSetPtr->field_0x150ff0 + iVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 23,
-      "match": "code *",
+      "description": "'this_ptr[1].base.actor_name + 0x18' walks 1 x sizeof(CCharacter) (0xc1d0) + offsetof(base.actor_name) (0x0) + 0x18 = 0xc1e8, which is exactly offsetof(CEnemy, victim). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)this_ptr)->victim (\u00a7de-pun/\u00a712).",
+      "line": 26,
       "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&actor_ptr->field_0x154 + 0x10c))(actor_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&actor_ptr->field_0x154 + 0x10c))(actor_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(*(int *)&actor_ptr[0x90].field_0x68 == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 20,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "actor_ptr = *(CDemonActor **)(&g_CDemonSetPtr->field_0x150ff0 + iVar3);",
-      "type": "suspicious_cast"
+      "text": "(*(int *)(this_ptr[1].base.actor_name + 0x18) == *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4)))",
+      "type": "derived_field_index_pun"
     }
   ]
 }

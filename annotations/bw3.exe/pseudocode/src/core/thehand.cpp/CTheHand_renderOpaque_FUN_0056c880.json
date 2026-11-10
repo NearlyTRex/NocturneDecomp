@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 24,
+    "complexity_score": 40,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 34
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056c880",
+    "address_range": [
+      [
+        "0056c880",
+        "0056c8b2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_thehand.cpp_CTheHand_renderOpaque_FUN_0056c880",
+    "signature": "int __cdecl core_thehand_cpp_CTheHand_renderOpaque_FUN_0056c880(CTheHand *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042e220",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042e220"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00600530",
+      "name": "DAT_00600530",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d82088",
+      "name": "DAT_01d82088",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7368421052631575,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 11,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 5,
+      "INT_SUB": 6,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 90
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTheHand *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x70))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x70))(this_ptr);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTheHand",
+        "offset": 16,
+        "vtable_addr": "005e5504"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

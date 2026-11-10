@@ -15,26 +15,29 @@ CAmmo * __cdecl core_ammo_cpp_CAmmo_ctor_FUN_0040ddb0(CAmmo *this_ptr)
   char *pcVar3;
   CKeyFramedModelInstance *pCVar4;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  *(byte **)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             (this_ptr_00,"bullets6_1.kfm");
   pcVar3 = &DAT_005cb0d3;
   pCVar4 = this_ptr_00 + 1;
   do {
     cVar1 = *pcVar3;
-    *(char *)pCVar4 = cVar1;
+    *(char *)pCVar4->part_visibility_flags = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pCVar4->field_0x1 = cVar1;
-    pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;
+    *(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;
+    pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);
   } while (cVar1 != '\0');
-  *(uint *)&this_ptr_00[1].field_0x40 = 1;
-  *(uint *)&this_ptr_00[1].field_0x44 = 0;
-  *(uint *)&this_ptr_00[1].field_0x48 = 0x3e800000;
-  *(uint *)&this_ptr_00[-2].field_0x140 = 0;
-  return (CAmmo *)&this_ptr_00[-2].field_0x44;
+  this_ptr_00[1].part_visibility_flags[0x10] = 1;
+  this_ptr_00[1].part_visibility_flags[0x11] = 0;
+  this_ptr_00[1].part_visibility_flags[0x12] = 0x3e800000;
+  this_ptr_00[-0xffffffff00000002].model_name[200] = '\0';
+  this_ptr_00[-0xffffffff00000002].model_name[0xc9] = '\0';
+  this_ptr_00[-0xffffffff00000002].model_name[0xca] = '\0';
+  this_ptr_00[-0xffffffff00000002].model_name[0xcb] = '\0';
+  return (CAmmo *)(this_ptr_00[-2].part_visibility_flags + 0x11);
 }

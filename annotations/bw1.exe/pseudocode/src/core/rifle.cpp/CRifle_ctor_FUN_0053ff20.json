@@ -127,7 +127,7 @@
       "line": 12,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte **)&pCVar2->field_0x154 = &g_CRifleVTable;",
+      "text": "((UActorVTable *)&pCVar2->field_0x154)->_ub = &g_CRifleVTable._ub;",
       "type": "unnamed_field"
     },
     {
@@ -151,7 +151,7 @@
       "line": 16,
       "match": "field_0x2d8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2d8 = 2;",
+      "text": "*(int *)&pCVar2->field_0x2d8 = 2;",
       "type": "unnamed_field"
     },
     {
@@ -159,7 +159,7 @@
       "line": 17,
       "match": "field_0x2dc",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2dc = 3;",
+      "text": "*(EFireMode *)&pCVar2->field_0x2dc = FIRE_MODE_PUMP|FIRE_MODE_SINGLE;",
       "type": "unnamed_field"
     },
     {
@@ -167,7 +167,7 @@
       "line": 18,
       "match": "field_0x2e0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e0 = 9;",
+      "text": "*(EWeaponType *)&pCVar2->field_0x2e0 = WEAPON_TYPE_BARON|WEAPON_TYPE_SHOTGUN;",
       "type": "unnamed_field"
     },
     {
@@ -175,7 +175,7 @@
       "line": 19,
       "match": "field_0x2e4",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e4 = 1;",
+      "text": "*(int *)&pCVar2->field_0x2e4 = 1;",
       "type": "unnamed_field"
     },
     {
@@ -183,7 +183,7 @@
       "line": 20,
       "match": "field_0x2e8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e8 = 0x420c0000;",
+      "text": "*(float *)&pCVar2->field_0x2e8 = 35.0;",
       "type": "unnamed_field"
     },
     {
@@ -191,7 +191,7 @@
       "line": 22,
       "match": "field_0x2ec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2ec = 0;",
+      "text": "*(int *)&pCVar2->field_0x2ec = 0;",
       "type": "unnamed_field"
     },
     {
@@ -207,7 +207,7 @@
       "line": 24,
       "match": "field_0x564",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x564 = uVar1;",
+      "text": "*(float *)&pCVar2->field_0x564 = fVar1;",
       "type": "unnamed_field"
     }
   ],

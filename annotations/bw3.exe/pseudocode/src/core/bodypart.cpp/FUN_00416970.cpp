@@ -29,17 +29,17 @@ void core_bodypart_cpp_FUN_00416970(int param_1)
   float fStack_70;
   float fStack_6c;
   float fStack_68;
-  CVector3f CStack_64;
+  float fStack_64;
   float fStack_58;
-  float afStack_54 [4];
+  float fStack_4c;
+  float fStack_48;
   float fStack_44;
   CVector3f CStack_40;
   float fStack_34;
   float afStack_30 [2];
-  byte auStack_28 [8];
-  float afStack_20 [4];
-  float fStack_10;
-  float fStack_c;
+  CVector3f CStack_28;
+  float fStack_1c;
+  float afStack_18 [4];
   float fStack_8;
   
   bVar4 = 0;
@@ -55,36 +55,37 @@ void core_bodypart_cpp_FUN_00416970(int param_1)
     fStack_34 = local_7c + fStack_70;
     afStack_30[0] = fStack_78 + fStack_6c;
     afStack_30[1] = fStack_74 + fStack_68;
-    afStack_54[2] = local_7c + fStack_70;
-    afStack_54[(uint)bVar4 * -2 + 3] = afStack_30[(uint)bVar4 * -2];
-    afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+    fStack_4c = local_7c + fStack_70;
+    *(float *)((int)&stack0xffffffb8 + (uint)bVar4 * -8) = afStack_30[(uint)bVar4 * -2];
+    *(float *)((int)&stack0xffffffbc + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
          afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    pfVar5 = &fStack_58;
-    fStack_10 = afStack_54[2] * _DAT_005b6cd6;
-    fStack_c = afStack_54[3] * _DAT_005b6cd6;
+    pfVar5 = &stack0xffffffa8;
+    afStack_18[2] = fStack_4c * _DAT_005b6cd6;
+    afStack_18[3] = fStack_48 * _DAT_005b6cd6;
     fStack_8 = fStack_44 * _DAT_005b6cd6;
-    fStack_58 = afStack_54[2] * _DAT_005b6cd6;
-    afStack_54[(uint)bVar4 * -2] = afStack_20[(uint)bVar4 * -2 + 5];
-    afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
-         afStack_20[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 6];
+    fStack_58 = fStack_4c * _DAT_005b6cd6;
+    *(float *)((int)&stack0xffffffac + (uint)bVar4 * 0xfffffffe * 4) =
+         afStack_18[(uint)bVar4 * -2 + 3];
+    afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8] =
+         afStack_18[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
     core_actor_cpp_FUN_00408b80(param_1,pfVar5);
-    extents = (CVector3f *)auStack_28;
+    extents = &CStack_28;
     volume = 5.0;
-    CStack_40._0_4_ = CStack_64._0_4_;
+    CStack_40.x = fStack_64;
     *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + 4) =
-         *(uint *)((int)&CStack_64 + (uint)bVar4 * -8 + 4);
+         *(uint *)(&stack0xffffffa0 + (uint)bVar4 * -8);
     *(uint *)((int)&CStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         *(uint *)((int)&CStack_64 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
-    afStack_20[1] = fStack_70 - local_7c;
+         *(uint *)(&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
+    fStack_1c = fStack_70 - local_7c;
     orientation = (CVector3f *)(param_1 + 0x30);
-    afStack_20[2] = fStack_6c - fStack_78;
+    afStack_18[0] = fStack_6c - fStack_78;
     position = &CStack_40;
     this_ptr = (CBox *)(param_1 + 0xcd0);
-    afStack_20[3] = fStack_68 - fStack_74;
-    auStack_28._0_4_ = fStack_70 - local_7c;
-    *(float *)((int)auStack_28 + (uint)bVar4 * -8 + 4) = afStack_20[(uint)bVar4 * 0xfffffffe + 2];
-    *(float *)((int)auStack_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
-         afStack_20[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 3];
+    afStack_18[1] = fStack_68 - fStack_74;
+    CStack_28.x = fStack_70 - local_7c;
+    *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + 4) = afStack_18[(uint)bVar4 * -2];
+    *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =
+         afStack_18[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
     core_box_cpp_CBox_setupCorners_FUN_0041ae00(this_ptr,position,orientation,extents,volume);
     return;
   }

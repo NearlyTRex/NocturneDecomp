@@ -16,18 +16,18 @@ void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f
   int iVar3;
   int iVar4;
   int iVar5;
-  float *pfVar6;
-  uint *puVar7;
-  CQuaternion4f *pCVar9;
-  byte bVar10;
-  float10 fVar11;
+  CVector3f *pCVar6;
+  float *pfVar7;
+  uint *puVar9;
+  uint *puVar10;
+  byte bVar11;
   float10 fVar12;
+  float10 fVar13;
   float afStackY_1868 [1513];
   float local_a8;
   float local_a4;
-  uint local_8c;
-  byte local_7c [8];
-  float local_74;
+  float local_8c;
+  CVector3f local_7c;
   float local_70;
   float local_6c [4];
   float local_5c;
@@ -37,9 +37,7 @@ void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f
   float local_4c;
   float local_48;
   float local_44;
-  float local_40;
-  float local_3c;
-  float local_38;
+  CVector3f local_40;
   float local_34;
   float local_30;
   float local_2c;
@@ -48,21 +46,21 @@ void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f
   float local_1c;
   int local_18;
   int local_14;
-  uint *puVar8;
+  float *pfVar8;
   
-  bVar10 = 0;
+  bVar11 = 0;
   if (*(int *)(this_ptr + 8) == 0) {
     if (0.0 < time) {
       iVar5 = *(int *)this_ptr + -1;
       local_14 = iVar5;
       if (time < (float)iVar5) {
-        fVar11 = (float10)time;
-        fVar12 = fVar11;
+        fVar12 = (float10)time;
+        fVar13 = fVar12;
         round();
-        local_18 = (int)ROUND(fVar11);
+        local_18 = (int)ROUND(fVar12);
         local_14 = local_18;
         iVar5 = local_18 + 1;
-        local_a4 = (float)(fVar12 - (float10)local_18);
+        local_a4 = (float)(fVar13 - (float10)local_18);
       }
       else {
         local_18 = iVar5;
@@ -88,13 +86,13 @@ void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f
         local_a8 = local_a8 + fVar2;
       }
     }
-    fVar11 = (float10)local_a8;
-    fVar12 = fVar11;
+    fVar12 = (float10)local_a8;
+    fVar13 = fVar12;
     round();
-    local_18 = (int)ROUND(fVar11);
+    local_18 = (int)ROUND(fVar12);
     local_14 = local_18;
     iVar5 = local_18 + 1;
-    local_a4 = (float)(fVar12 - (float10)local_18);
+    local_a4 = (float)(fVar13 - (float10)local_18);
     if (*(int *)this_ptr <= iVar5) {
       iVar5 = 0;
     }
@@ -102,13 +100,13 @@ void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f
   iVar4 = local_18 * 0x1c;
   local_20 = iVar4;
   if ((double)local_a4 <= _DAT_005ce07a) {
-    pfVar6 = (float *)(*(int *)(this_ptr + 4) + iVar4);
-    if ((float *)local_7c != pfVar6) {
-      local_7c._0_4_ = *pfVar6;
-      local_7c._4_4_ = pfVar6[1];
-      local_74 = pfVar6[2];
+    pCVar6 = (CVector3f *)(*(int *)(this_ptr + 4) + iVar4);
+    if (&local_7c != pCVar6) {
+      local_7c.x = pCVar6->x;
+      local_7c.y = pCVar6->y;
+      local_7c.z = pCVar6->z;
     }
-    puVar7 = (uint *)(*(int *)(this_ptr + 4) + 0xc + local_18 * 0x1c);
+    pfVar7 = (float *)(*(int *)(this_ptr + 4) + 0xc + local_18 * 0x1c);
   }
   else {
     iVar3 = iVar5 * 0x1c;
@@ -118,65 +116,64 @@ void __cdecl core_course_cpp_FUN_00438cf0(CCourse *this_ptr,float time,CVector3f
     local_48 = *(float *)(iVar1 + 4 + iVar3) * local_a4;
     local_44 = *(float *)(iVar1 + 8 + iVar3) * local_a4;
     local_70 = local_4c;
-    local_6c[(uint)bVar10 * -2] = local_6c[(uint)bVar10 * -2 + 9];
-    local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 1] =
-         local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 10];
+    local_6c[(uint)bVar11 * -2] = local_6c[(uint)bVar11 * -2 + 9];
+    local_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 1] =
+         local_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 10];
     local_1c = fVar2;
     local_58 = *(float *)(iVar1 + iVar4) * fVar2;
     local_54 = *(float *)(iVar1 + 4 + iVar4) * fVar2;
     local_50 = *(float *)(iVar1 + 8 + iVar4) * fVar2;
     local_34 = local_58;
-    local_6c[(uint)bVar10 * -2 + 0xf] = local_6c[(uint)bVar10 * -2 + 6];
-    local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0x10] =
-         local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 7];
+    local_6c[(uint)bVar11 * -2 + 0xf] = local_6c[(uint)bVar11 * -2 + 6];
+    local_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0x10] =
+         local_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 7];
     local_6c[2] = local_34 + local_70;
     local_6c[3] = local_30 + local_6c[0];
     local_5c = local_2c + local_6c[1];
-    local_40 = local_34 + local_70;
-    local_6c[(uint)bVar10 * -2 + 0xc] = local_6c[(uint)bVar10 * -2 + 3];
-    local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 0xd] =
-         local_6c[(uint)bVar10 * -2 + (uint)bVar10 * -2 + 4];
-    if ((float *)local_7c != local_6c + 0xb) {
-      local_7c._0_4_ = local_40;
-      local_7c._4_4_ = local_3c;
-      local_74 = local_38;
+    local_40.x = local_34 + local_70;
+    local_6c[(uint)bVar11 * -2 + 0xc] = local_6c[(uint)bVar11 * -2 + 3];
+    local_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 0xd] =
+         local_6c[(uint)bVar11 * -2 + (uint)bVar11 * -2 + 4];
+    if (&local_7c != (CVector3f *)(local_6c + 0xb)) {
+      local_7c.x = local_40.x;
+      local_7c.y = local_40.y;
+      local_7c.z = local_40.z;
     }
     core_xform_cpp_slerpQuaternion_FUN_00593df0
               (local_18 * 0x1c + *(int *)(this_ptr + 4) + 0xc,
                iVar5 * 0x1c + *(int *)(this_ptr + 4) + 0xc,local_a4);
-    puVar7 = (uint *)&stack0xffffff64;
+    pfVar7 = (float *)&stack0xffffff64;
   }
-  puVar8 = puVar7 + (uint)bVar10 * -2 + 1;
-  local_8c = *puVar7;
-  *(uint *)(&stack0xffffff78 + (uint)bVar10 * -8) = *puVar8;
-  *(uint *)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) =
-       puVar8[(uint)bVar10 * -2 + 1];
-  *(uint *)
-   ((int)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) + ((uint)bVar10 * -2 + 1) * 4) =
-       (puVar8 + (uint)bVar10 * -2 + 1)[(uint)bVar10 * -2 + 1];
-  if ((CVector3f *)local_7c != out_pos) {
-    *(uint *)out_pos = local_7c._0_4_;
-    *(uint *)&out_pos->field_0x4 = local_7c._4_4_;
-    *(float *)&out_pos->field_0x8 = local_74;
-    pCVar9 = out_orient + (uint)bVar10 * -8 + 4;
-    *(uint *)out_orient = local_8c;
-    *(uint *)pCVar9 = *(uint *)(&stack0xffffff78 + (uint)bVar10 * -8);
-    *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4) =
-         *(uint *)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-    *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4 + (uint)bVar10 * -8 + 4) =
+  pfVar8 = pfVar7 + (uint)bVar11 * -2 + 1;
+  local_8c = *pfVar7;
+  *(float *)(&stack0xffffff78 + (uint)bVar11 * -8) = *pfVar8;
+  *(float *)(&stack0xffffff7c + (uint)bVar11 * -8 + (uint)bVar11 * -8) =
+       pfVar8[(uint)bVar11 * -2 + 1];
+  *(float *)((int)(&stack0xffffff7c + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
+            ((uint)bVar11 * -2 + 1) * 4) = (pfVar8 + (uint)bVar11 * -2 + 1)[(uint)bVar11 * -2 + 1];
+  if (&local_7c != out_pos) {
+    out_pos->x = local_7c.x;
+    out_pos->y = local_7c.y;
+    out_pos->z = local_7c.z;
+    puVar9 = (uint *)((int)out_orient + (uint)bVar11 * -8 + 4);
+    out_orient->w = local_8c;
+    puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
+    *puVar9 = *(uint *)(&stack0xffffff78 + (uint)bVar11 * -8);
+    *puVar10 = *(uint *)(&stack0xffffff7c + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+    puVar10[(uint)bVar11 * -2 + 1] =
          *(uint *)
-          ((int)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
-          ((uint)bVar10 * -2 + 1) * 4);
+          ((int)(&stack0xffffff7c + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
+          ((uint)bVar11 * -2 + 1) * 4);
     return;
   }
-  pCVar9 = out_orient + (uint)bVar10 * -8 + 4;
-  *(uint *)out_orient = local_8c;
-  *(uint *)pCVar9 = *(uint *)(&stack0xffffff78 + (uint)bVar10 * -8);
-  *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4) =
-       *(uint *)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8);
-  *(uint *)(pCVar9 + (uint)bVar10 * -8 + 4 + (uint)bVar10 * -8 + 4) =
+  puVar9 = (uint *)((int)out_orient + (uint)bVar11 * -8 + 4);
+  out_orient->w = local_8c;
+  puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
+  *puVar9 = *(uint *)(&stack0xffffff78 + (uint)bVar11 * -8);
+  *puVar10 = *(uint *)(&stack0xffffff7c + (uint)bVar11 * -8 + (uint)bVar11 * -8);
+  puVar10[(uint)bVar11 * -2 + 1] =
        *(uint *)
-        ((int)(&stack0xffffff7c + (uint)bVar10 * -8 + (uint)bVar10 * -8) +
-        ((uint)bVar10 * -2 + 1) * 4);
+        ((int)(&stack0xffffff7c + (uint)bVar11 * -8 + (uint)bVar11 * -8) +
+        ((uint)bVar11 * -2 + 1) * 4);
   return;
 }

@@ -18,7 +18,7 @@ int * __cdecl engine_model_c_loadModelFile_FUN_00500720(char *param_1)
   int iVar4;
   char *pcVar5;
   char *pcVar6;
-  byte local_5c [80];
+  char local_5c [80];
   
   pcVar6 = param_1;
   do {
@@ -40,35 +40,35 @@ LAB_00500746:
   }
   size = engine_dosio_cpp_getFileSize_FUN_00460aa0("models",param_1);
   if (size == 0) {
-    FUN_005b7790(local_5c,"Unable to get file size: %s",param_1);
+    _sprintf(local_5c,"Unable to get file size: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0xf0;
     core_main_c_FUN_004e4500(local_5c);
   }
   p_Var1 = engine_dosio_cpp_FUN_00460c70("models",param_1,&DAT_005def95);
   if (p_Var1 == (_FILE *)0x0) {
-    FUN_005b7790(local_5c,"Unable to open model: %s",param_1);
+    _sprintf(local_5c,"Unable to open model: %s");
     _DAT_01d046a4 = 0xf5;
     _DAT_01d046a0 = "..\\engine\\model.c";
     core_main_c_FUN_004e4500(local_5c);
   }
   piVar2 = FUN_005b8580(size);
   if (piVar2 == (int *)0x0) {
-    FUN_005b7790(local_5c,"Out of model memory: %s",param_1);
+    _sprintf(local_5c,"Out of model memory: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x100;
     core_main_c_FUN_004e4500(local_5c);
   }
   uVar3 = _fread(piVar2,1,size,p_Var1);
   if (uVar3 != size) {
-    FUN_005b7790(local_5c,"Model file read error: %s",param_1);
+    _sprintf(local_5c,"Model file read error: %s");
     _DAT_01d046a4 = 0x107;
     _DAT_01d046a0 = "..\\engine\\model.c";
     core_main_c_FUN_004e4500(local_5c);
   }
   _fclose(p_Var1);
   if ((*piVar2 != 0x14) && (*piVar2 != 0x20)) {
-    FUN_005b7790(local_5c,"Invalid model: %s",param_1);
+    _sprintf(local_5c,"Invalid model: %s");
     _DAT_01d046a0 = "..\\engine\\model.c";
     _DAT_01d046a4 = 0x10e;
     core_main_c_FUN_004e4500(local_5c);

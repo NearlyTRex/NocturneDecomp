@@ -15,23 +15,23 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_0049ce40(CEdScroll
   int iVar2;
   int iVar3;
   
-  if ((*(int *)(this_ptr + 4) <= *(int *)(this_ptr + 8)) || (*(int *)(this_ptr + 4) < 1)) {
-    *(uint *)(this_ptr + 0x2c) = *(uint *)(this_ptr + 0x24);
-    *(uint *)(this_ptr + 0x30) = *(uint *)(this_ptr + 0x28);
+  if ((this_ptr->item_count <= this_ptr->page_size) || (this_ptr->item_count < 1)) {
+    this_ptr->thumb_start = this_ptr->track_start;
+    this_ptr->thumb_end = this_ptr->track_end;
     return;
   }
-  iVar3 = *(int *)(this_ptr + 0x28) - *(int *)(this_ptr + 0x24);
+  iVar3 = this_ptr->track_end - this_ptr->track_start;
   if (iVar3 < 1) {
     _DAT_01d1d400 = "..\\shape\\edittool.cpp";
     _DAT_01d1d404 = 0x12cb;
     core_main_c_FUN_005030e0("CEdScrollBar::computeThumb - invalid dimensions");
   }
-  iVar1 = (*(int *)(this_ptr + 8) * iVar3) / *(int *)(this_ptr + 4);
-  if (*(int *)(this_ptr + 0x10) == 0) {
-    iVar2 = *(int *)(this_ptr + 0x1c) - *(int *)(this_ptr + 0x14);
+  iVar1 = (this_ptr->page_size * iVar3) / this_ptr->item_count;
+  if (this_ptr->orientation == 0) {
+    iVar2 = this_ptr->bounds_right - this_ptr->bounds_left;
   }
   else {
-    iVar2 = *(int *)(this_ptr + 0x20) - *(int *)(this_ptr + 0x18);
+    iVar2 = this_ptr->bounds_bottom - this_ptr->bounds_top;
   }
   if (iVar1 < iVar2) {
     iVar1 = iVar2;
@@ -39,21 +39,22 @@ void __cdecl shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_0049ce40(CEdScroll
   if (iVar3 < iVar1) {
     iVar1 = iVar3;
   }
-  iVar3 = *(int *)(this_ptr + 0x24) +
-          ((iVar3 - iVar1) * *(int *)this_ptr) / (*(int *)(this_ptr + 4) - *(int *)(this_ptr + 8));
-  *(int *)(this_ptr + 0x2c) = iVar3;
-  if (iVar3 < *(int *)(this_ptr + 0x24)) {
-    *(int *)(this_ptr + 0x2c) = *(int *)(this_ptr + 0x24);
+  iVar3 = this_ptr->track_start +
+          ((iVar3 - iVar1) * this_ptr->scroll_position) /
+          (this_ptr->item_count - this_ptr->page_size);
+  this_ptr->thumb_start = iVar3;
+  if (iVar3 < this_ptr->track_start) {
+    this_ptr->thumb_start = this_ptr->track_start;
   }
-  iVar1 = *(int *)(this_ptr + 0x2c) + iVar1;
-  *(int *)(this_ptr + 0x30) = iVar1;
-  if (*(int *)(this_ptr + 0x28) < iVar1) {
-    *(uint *)(this_ptr + 0x30) = *(uint *)(this_ptr + 0x28);
-    *(int *)(this_ptr + 0x2c) = *(int *)(this_ptr + 0x2c) - (iVar1 - *(int *)(this_ptr + 0x28));
+  iVar1 = this_ptr->thumb_start + iVar1;
+  this_ptr->thumb_end = iVar1;
+  if (this_ptr->track_end < iVar1) {
+    this_ptr->thumb_end = this_ptr->track_end;
+    this_ptr->thumb_start = this_ptr->thumb_start - (iVar1 - this_ptr->track_end);
   }
-  if (*(int *)(this_ptr + 0x24) <= *(int *)(this_ptr + 0x2c)) {
+  if (this_ptr->track_start <= this_ptr->thumb_start) {
     return;
   }
-  *(int *)(this_ptr + 0x2c) = *(int *)(this_ptr + 0x24);
+  this_ptr->thumb_start = this_ptr->track_start;
   return;
 }

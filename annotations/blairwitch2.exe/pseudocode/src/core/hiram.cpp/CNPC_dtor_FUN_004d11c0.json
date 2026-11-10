@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 88,
+    "complexity_score": 78,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 28,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
@@ -35,9 +35,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408930"
     },
     {
+      "addr": "0040f2b0",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_0040f2b0"
+    },
+    {
       "addr": "005b1480",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005b1480"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_005b1480"
     },
     {
       "addr": "00511d10",
@@ -68,11 +73,6 @@
       "addr": "0059df70",
       "is_variadic": false,
       "name": "unkaddr_0059d350.cpp_FUN_0059df70"
-    },
-    {
-      "addr": "0040f2b0",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_0040f2b0"
     }
   ],
   "globals": [
@@ -153,16 +153,8 @@
       "line": 20,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_0040f2b0(&pCVar1[-1].field_0x689c,0);",
+      "text": "iVar2 = core_armour_cpp_FUN_0040f2b0(pCVar1[-1].height_cache[0x42] + 0x53,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x689c",
-      "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_0040f2b0(&pCVar1[-1].field_0x689c,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",

@@ -1,0 +1,237 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 122,
+    "complexity_score": 138,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 43,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 165
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004364a0",
+    "address_range": [
+      [
+        "004364a0",
+        "004365b8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_colonel.cpp_CColonel_processDamage_FUN_004364a0",
+    "signature": "void __cdecl core_colonel_cpp_CColonel_processDamage_FUN_004364a0(CColonel *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427fb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0"
+    },
+    {
+      "addr": "004c9cc0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0"
+    },
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f44a8",
+      "name": "DAT_005f44a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "006167e0",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "01cb8284"
+    },
+    {
+      "addr": "01cb6aec",
+      "name": "g_CGameInstance.field444_0x1ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb6b48",
+      "name": "g_CGameInstance.field488_0x248",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.885416666666667,
+    "instruction_count": 96,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 8,
+      "CBRANCH": 7,
+      "COPY": 144,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 41,
+      "INT_AND": 38,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 13,
+      "INT_SUB": 34,
+      "INT_ZEXT": 8,
+      "LOAD": 25,
+      "POPCOUNT": 13,
+      "RETURN": 3,
+      "STORE": 38
+    },
+    "pcode_op_count": 469
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CColonel *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x10a60",
+      "severity": "mild",
+      "text": "if ((*(uint *)&this_ptr->field_0x10a60 & 0x7fffffff) != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x1ec",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x1ec != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x248",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CGamePtr->field_0x248 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x10a60",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x10a60 = 0x3F000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x25a8 - *(float *)(damage_info + 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "this_ptr_00 = &this_ptr->field_0x2b4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x25a8 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25a8 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x276c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x276c = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 272,
+        "vtable_addr": "005f44b4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

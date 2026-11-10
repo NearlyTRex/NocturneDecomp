@@ -16,6 +16,6 @@ void core_path_cpp_FUN_005140ee(CPathMap *param_1)
   _DAT_01e501fc = 0x32;
   _DAT_01e50200 = 0x32;
   _DAT_01e4fed4 = 2;
-  core_path_cpp_CPathMap_searchGrid_FUN_00514140(param_1,*(int *)&param_1->field_0x10);
+  core_path_cpp_CPathMap_searchGrid_FUN_00514140(param_1,(param_1->voxel_coords).y);
   return;
 }

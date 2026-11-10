@@ -14,9 +14,10 @@ CHiram * __cdecl core_hiram_cpp_CHiram_ctor_FUN_004ed190(CHiram *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CHiram *)core_npc_cpp_CNPC_ctor_FUN_00531670((CNPC *)this_ptr);
-  *(byte ***)&pCVar2->field_0x154 = &g_CHiramVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar2->field_0x158,"hiram.dfm");
+  pCVar2 = (CHiram *)core_npc_cpp_CNPC_ctor_FUN_00531670(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CHiramVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar2->base).base.model,"hiram.dfm");
   pcVar3 = "killHiram";
   pcVar4 = &pCVar2->field_0x1fab8;
   do {

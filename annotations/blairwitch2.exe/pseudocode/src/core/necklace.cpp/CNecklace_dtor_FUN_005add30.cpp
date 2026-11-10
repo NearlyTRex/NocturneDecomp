@@ -22,7 +22,8 @@ CNecklace * core_necklace_cpp_CNecklace_dtor_FUN_005add30(CNecklace *this_ptr,ui
   }
   pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x4f0,0);
   pCVar2 = (CNecklace *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x4f0),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                     ((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

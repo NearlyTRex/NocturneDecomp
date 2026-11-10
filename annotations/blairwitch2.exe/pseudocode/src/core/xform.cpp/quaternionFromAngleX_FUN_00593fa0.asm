@@ -17,7 +17,7 @@
 ;   core_doc.cpp_FUN_004555c0 at 00455a27
 ;   core_doc.cpp_FUN_00455d10 at 00455e26
 ;   core_doc.cpp_FUN_004562a0 at 00456324
-;   core_gabriela.cpp_FUN_004afa20 at 004afbb5
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004afa20 at 004afbb5
 ;   core_icepick.cpp_FUN_004d5470 at 004d553d
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_004fef30 at 004ff1ff
 ;   ... and 7 more

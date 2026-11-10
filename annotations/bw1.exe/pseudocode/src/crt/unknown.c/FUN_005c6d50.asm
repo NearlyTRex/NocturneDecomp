@@ -12,7 +12,7 @@
 ;   crt_unknown.c_FUN_005c4fe0 at 005c508f
 ;   crt_unknown.c_FUN_005c654c at 005c6577
 ;   crt_unknown.c_FUN_005c9e80 at 005c9e91
-;   unkafter_2d.cpp_FUN_005ce150 at 005ce1d7
+;   crt_unknown.c_FUN_005ce150 at 005ce1d7
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005c50d4_00626600 = 005c50d4
@@ -23,7 +23,7 @@
 ;   crt_unknown.c_FUN_005c50d4
 ;   crt_unknown.c_FUN_005c6e80
 ;   crt_unknown.c_FUN_005c7dc0
-;   unkafter_zombie.cpp_FUN_005cbb70
+;   crt_unknown.c_FUN_005cbb70
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
         ;   XREF to: 005c6e60 (CONDITIONAL_JUMP)  ; LAB_005c6e60
     MOV EDX,dword ptr [EBX + 0x10]      ; 005c6e4d
     PUSH EDX                            ; 005c6e50
-    CALL unkafter_zombie.cpp_FUN_005cbb70 ; 005c6e51
-        ;   XREF to: 005cbb70 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cbb70()
+    CALL crt_unknown.c_FUN_005cbb70     ; 005c6e51
+        ;   XREF to: 005cbb70 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cbb70()
     ADD ESP,0x4                         ; 005c6e56
     CMP EAX,-0x1                        ; 005c6e59
     JNZ 0x005c6e60                      ; 005c6e5c

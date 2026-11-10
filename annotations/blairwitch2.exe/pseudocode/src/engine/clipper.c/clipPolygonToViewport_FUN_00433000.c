@@ -36,7 +36,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_00433000(int vertex_coun
   
   bVar16 = 0;
   if (DAT_006141e0 == 0) {
-    engine_prim_c_FUN_0051e130(vertex_indices,vertex_count);
+    engine_prim_c_renderIndexedPolygonAdvanced_FUN_0051e130(vertex_indices,vertex_count);
   }
   else {
     uVar5 = 0xffffffff;

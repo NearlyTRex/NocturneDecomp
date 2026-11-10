@@ -21,45 +21,45 @@ CDemonActorType * CGhoul::getActorType(CGhoul *this_ptr);
 // Address: 004c68e0
 CGhoul * CGhoul::ctor(CGhoul *this_ptr);
 
-// Original: core_ghoul.cpp_FUN_004c6a10
+// Original: core_ghoul.cpp_CGhoul_setup_FUN_004c6a10
 // Address: 004c6a10
-void FUN_004c6a10(CEnemy *param_1);
+void __cdecl CGhoul::setup(CGhoul *this_ptr);
 
 // Original: core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004c6c80
 // Address: 004c6c80
 void __cdecl CGhoul::findDarkWayPoint(CGhoul *this_ptr,float delta_time);
 
-// Original: core_ghoul.cpp_FUN_004c6eb0
+// Original: core_ghoul.cpp_CGhoul_process_FUN_004c6eb0
 // Address: 004c6eb0
-void FUN_004c6eb0(CGhoul *param_1,float param_2);
+void __cdecl CGhoul::process(CGhoul *this_ptr,float delta_time);
 
 // Original: core_ghoul.cpp_CGhoul_renderBackground_FUN_004c8c90
 // Address: 004c8c90
 void __cdecl CGhoul::renderBackground(CGhoul *this_ptr,int layer_flag);
 
-// Original: core_ghoul.cpp_FUN_004c8cc0
+// Original: core_ghoul.cpp_CGhoul_archive_FUN_004c8cc0
 // Address: 004c8cc0
-void FUN_004c8cc0(int param_1);
+void __cdecl CGhoul::archive(CGhoul *this_ptr);
 
-// Original: core_ghoul.cpp_FUN_004c8dd0
+// Original: core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c8dd0
 // Address: 004c8dd0
-undefined4 FUN_004c8dd0(int param_1,undefined4 *param_2);
+int __cdecl CGhoul::canBeAttracted(CGhoul *this_ptr,CVector3f *out_attract_position);
 
-// Original: core_ghoul.cpp_FUN_004c90b0
+// Original: core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c90b0
 // Address: 004c90b0
-void FUN_004c90b0(int param_1);
+CVector3f * __cdecl CGhoul::getTargetPoint(CGhoul *this_ptr,CVector3f *out_point);
 
 // Original: core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140
 // Address: 004c9140
 void __cdecl CGhoul::processDismemberment(CGhoul *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_ghoul.cpp_FUN_004c9400
+// Original: core_ghoul.cpp_CGhoul_processDamage_FUN_004c9400
 // Address: 004c9400
-void FUN_004c9400(CGhoul *param_1,SDamageInfo *param_2);
+void __cdecl CGhoul::processDamage(CGhoul *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_ghoul.cpp_FUN_004c97e0
+// Original: core_ghoul.cpp_CGhoul_getTargetPoints_FUN_004c97e0
 // Address: 004c97e0
-int FUN_004c97e0(int param_1,float *param_2);
+int __cdecl CGhoul::getTargetPoints(CGhoul *this_ptr,CVector3f *out_points_array);
 
 // Original: core_ghoul.cpp_CGhoul_dtor_FUN_004c9ab0
 // Address: 004c9ab0

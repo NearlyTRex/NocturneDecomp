@@ -29,7 +29,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_sndmain.cpp_FUN_005549c0
 ;
 ; *****************************************************************************
@@ -330,8 +330,8 @@ section .text
     PUSH 0x5e795a                       ; 0054b7ac | = "Invalid \"fmt\" chunk tag: %04X"
     LEA EAX,[ESP + 0x8]                 ; 0054b7b1
     PUSH EAX                            ; 0054b7b5
-    CALL crt_unknown.c_FUN_005b7790     ; 0054b7b6
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0054b7b6
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     LEA EAX,[ESP + 0xc]                 ; 0054b7bb
     ADD ESP,0xc                         ; 0054b7bf
     JMP 0x0054b4f2                      ; 0054b7c2
@@ -343,8 +343,8 @@ section .text
     PUSH 0x5e7978                       ; 0054b7cf | = "Invalid number of channels: %u  (must..."
     LEA EAX,[ESP + 0x8]                 ; 0054b7d4
     PUSH EAX                            ; 0054b7d8
-    CALL crt_unknown.c_FUN_005b7790     ; 0054b7d9
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0054b7d9
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     LEA EAX,[ESP + 0xc]                 ; 0054b7de
     ADD ESP,0xc                         ; 0054b7e2
     JMP 0x0054b4f2                      ; 0054b7e5
@@ -377,8 +377,8 @@ section .text
     PUSH 0x5e79a9                       ; 0054b836 | = "Invalid bytes/sec value: %u (%04Xh)"
     LEA EAX,[ESP + 0xc]                 ; 0054b83b
     PUSH EAX                            ; 0054b83f
-    CALL crt_unknown.c_FUN_005b7790     ; 0054b840
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0054b840
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     LEA EAX,[ESP + 0x10]                ; 0054b845
     ADD ESP,0x10                        ; 0054b849
     JMP 0x0054b4f2                      ; 0054b84c

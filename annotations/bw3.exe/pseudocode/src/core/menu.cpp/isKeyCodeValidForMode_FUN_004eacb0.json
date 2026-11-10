@@ -1,0 +1,227 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 135,
+    "complexity_score": 93,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 78,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 213
+  },
+  "cross_references": [
+    {
+      "addr": "004eae80",
+      "from_addr": "004ec30a",
+      "name": "core_menu.cpp_FUN_004eae80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004eacb0",
+    "address_range": [
+      [
+        "004eacb0",
+        "004eaded"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_isKeyCodeValidForMode_FUN_004eacb0",
+    "signature": "int __cdecl core_menu_cpp_isKeyCodeValidForMode_FUN_004eacb0(EInputCodeType *key_code_ptr,char *description)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d213e0",
+      "name": "g_CGameInstance.field164_0xd4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 28,
+    "call_sites": [
+      {
+        "call_addr": "004ec30a",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec32b",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec34c",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec36d",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec38e",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec3af",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec3d0",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec3f1",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec412",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004ec433",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004eae80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.528735632183908,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 13,
+      "BOOL_OR": 13,
+      "CBRANCH": 38,
+      "COPY": 23,
+      "INT_ADD": 10,
+      "INT_AND": 65,
+      "INT_EQUAL": 64,
+      "INT_LESS": 26,
+      "INT_SBORROW": 26,
+      "INT_SLESS": 32,
+      "INT_SUB": 26,
+      "INT_XOR": 5,
+      "LOAD": 13,
+      "POPCOUNT": 32,
+      "RETURN": 8
+    },
+    "pcode_op_count": 394
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "key_code_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "EInputCodeType *"
+      },
+      {
+        "is_param": true,
+        "name": "description",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)&g_CGamePtr->field_0xd4;",
+      "type": "unnamed_field"
+    }
+  ]
+}

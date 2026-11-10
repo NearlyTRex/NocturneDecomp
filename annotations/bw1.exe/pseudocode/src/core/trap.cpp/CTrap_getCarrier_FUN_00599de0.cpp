@@ -9,5 +9,5 @@
 CDemonActor * __cdecl core_trap_cpp_CTrap_getCarrier_FUN_00599de0(CTrap *this_ptr)
 
 {
-  return *(CDemonActor **)&this_ptr->field_0x2d4;
+  return this_ptr->carrier;
 }

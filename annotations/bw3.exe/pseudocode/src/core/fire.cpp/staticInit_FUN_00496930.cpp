@@ -9,7 +9,7 @@
 void core_fire_cpp_staticInit_FUN_00496930(void)
 
 {
-  core_fire_cpp_FUN_004a1460((CFireEffect *)0x1c73654);
+  core_fire_cpp_CFireEffect_ctor_FUN_004a1460((CFireEffect *)0x1c73654);
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500((CKeyFramedModelInstance *)0x1c73698);
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500((CKeyFramedModelInstance *)0x1c73814);
   core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500((CKeyFramedModelInstance *)0x1c73990);

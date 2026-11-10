@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shadow_cpp_FUN_0053df10(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; void core_shadow_cpp_FUN_0053df10(CCharacter *param_1,CDemonActor *param_2,float param_3,float param_4)
 ;
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_004285f0
+;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0
 ;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
@@ -25,8 +25,8 @@ section .text
     PUSH EDX                            ; 0053df2e
     MOV ECX,dword ptr [ESP + 0x10]      ; 0053df2f
     PUSH ECX                            ; 0053df33
-    CALL core_charactr.cpp_FUN_004285f0 ; 0053df34
-        ;   XREF to: 004285f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004285f0()
+    CALL core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0 ; 0053df34
+        ;   XREF to: 004285f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0(CCharacter * this_ptr, CDemonActor * target, float min_distance, float max_distance)
     ADD ESP,0x10                        ; 0053df39
     RET                                 ; 0053df3c
 

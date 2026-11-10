@@ -2,15 +2,25 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CSfxSample;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CSfxOptions.h"
 
 // Structure: CSfxSlot
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x11c (284 bytes)
 #pragma pack(push, 1)
 typedef struct CSfxSlot {
-    char field_0[284]; // 0x0
+    CSfxOptions options; // 0x0
+    int hardware_buffer_handle; // 0x60
+    int playback_state; // 0x64
+    struct CSfxSample* sample; // 0x68
+    float effective_frequency; // 0x6c
+    char field_112[160]; // 0x70
+    float fade_time_remaining; // 0x110
+    char field_276[8]; // 0x114
 } CSfxSlot;
 #pragma pack(pop)
 

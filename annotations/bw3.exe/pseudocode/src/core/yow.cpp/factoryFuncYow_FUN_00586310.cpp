@@ -11,7 +11,7 @@ void core_yow_cpp_factoryFuncYow_FUN_00586310(void)
 {
   CYow *this_ptr;
   
-  this_ptr = (CYow *)FUN_005a3cb2(0xd078);
+  this_ptr = (CYow *)debugAllocTracked1(0xd078);
   if (this_ptr == (CYow *)0x0) {
     return;
   }

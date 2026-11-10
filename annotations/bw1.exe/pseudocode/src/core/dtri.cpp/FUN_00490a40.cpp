@@ -42,16 +42,16 @@ int __cdecl core_dtri_cpp_FUN_00490a40(CDemonTriangle *triangle,CVector3f *posit
   float local_30;
   float local_2c;
   
-  if (*(float *)&triangle->field_0x28 <= (float)_DAT_005dbbec) {
-    fVar1 = *(float *)triangle - *(float *)position;
-    fVar9 = *(float *)&triangle->field_0x4;
-    fVar2 = *(float *)&triangle->field_0x8 - *(float *)&position->field_0x8;
-    local_4c = *(float *)&triangle->field_0xc - *(float *)position;
-    local_48 = *(float *)&triangle->field_0x10;
-    local_44 = *(float *)&triangle->field_0x14 - *(float *)&position->field_0x8;
-    local_7c = *(float *)&triangle->field_0x18 - *(float *)position;
-    local_78 = *(float *)&triangle->field_0x1c;
-    local_74 = *(float *)&triangle->field_0x20 - *(float *)&position->field_0x8;
+  if ((triangle->normal).y <= (float)_DAT_005dbbec) {
+    fVar1 = (triangle->vertex1).x - position->x;
+    fVar9 = (triangle->vertex1).y;
+    fVar2 = (triangle->vertex1).z - position->z;
+    local_4c = (triangle->vertex2).x - position->x;
+    local_48 = (triangle->vertex2).y;
+    local_44 = (triangle->vertex2).z - position->z;
+    local_7c = (triangle->vertex3).x - position->x;
+    local_78 = (triangle->vertex3).y;
+    local_74 = (triangle->vertex3).z - position->z;
     local_40 = fVar1;
     local_3c = fVar9;
     local_38 = fVar2;
@@ -91,7 +91,7 @@ int __cdecl core_dtri_cpp_FUN_00490a40(CDemonTriangle *triangle,CVector3f *posit
         local_74 = fVar2;
       }
     }
-    if (local_78 <= *(float *)&position->field_0x4) {
+    if (local_78 <= position->y) {
       if (local_3c < local_48) {
         local_58 = local_40;
         local_54 = local_3c;
@@ -118,9 +118,10 @@ int __cdecl core_dtri_cpp_FUN_00490a40(CDemonTriangle *triangle,CVector3f *posit
                           (&local_4c,&local_7c,search_radius,out_height);
         uVar8 = core_dtri_cpp_rayEdgeHeightTest_FUN_004908d0
                           (&local_7c,&local_40,search_radius,out_height);
+        fVar9 = (triangle->normal).x;
+        fVar1 = (triangle->normal).z;
         uVar8 = uVar6 | uVar7 | uVar8;
-        fVar9 = SQRT(*(float *)&triangle->field_0x2c * *(float *)&triangle->field_0x2c +
-                     *(float *)&triangle->field_0x24 * *(float *)&triangle->field_0x24);
+        fVar9 = SQRT(fVar1 * fVar1 + fVar9 * fVar9);
         if ((DAT_01c3d43c & 1) == 0) {
           DAT_01c3d43c = DAT_01c3d43c | 1;
           _DAT_01c3d430 = 0;
@@ -129,9 +130,9 @@ int __cdecl core_dtri_cpp_FUN_00490a40(CDemonTriangle *triangle,CVector3f *posit
         }
         if (_DAT_005dbbf4 <= (double)fVar9) {
           fVar9 = search_radius / fVar9;
-          local_34 = *(float *)&triangle->field_0x24 * fVar9 + *(float *)position;
-          local_2c = fVar9 * *(float *)&triangle->field_0x2c + *(float *)&position->field_0x8;
-          local_30 = *(float *)&position->field_0x4;
+          local_34 = (triangle->normal).x * fVar9 + position->x;
+          local_2c = fVar9 * (triangle->normal).z + position->z;
+          local_30 = position->y;
           fVar9 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40
                                    (triangle,&local_34,&DAT_01c3d430);
           if ((0.0 <= fVar9) &&

@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 243,
+    "complexity_score": 118,
     "cross_reference_count": 35,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 19,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
-      "unnamed_field",
-      "unrolled_strcpy"
+      "unnamed_field"
     ],
     "total_lines": 96
   },
@@ -244,7 +245,7 @@
     {
       "addr": "0040cc00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc00"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
     },
     {
       "addr": "0042c080",
@@ -280,8 +281,8 @@
     {
       "addr": "005ffb54",
       "name": "g_CEnemyVTable",
-      "type": "void*",
-      "value": "004a0510"
+      "type": "CEnemy_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -454,94 +455,6 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar2->field_0x154 = &g_CEnemyVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xc1d4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1d4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xc258",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc258 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0xc1e8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1e8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc1ec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1ec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc1f0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1f0 = 0x42480000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xc1d8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1d8 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xc260",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc260 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xc1dc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1dc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc1f4",
-      "severity": "mild",
-      "text": "pCVar2->field_0xc1f4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xc1e0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1e0 = 0x42c80000;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 24,
       "match": "DAT_005dcac1",
@@ -550,60 +463,44 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xc1e4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1e4 = 0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 36,
+      "match": "(char *)((int)piVar5",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "pcVar5 = &pCVar2->field_0x120;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc25c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc25c = 0x40c00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xc264",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc264 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xc1d0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xc1d0 = uVar3;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 37,
+      "match": "(int *)((int)piVar5",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 39,
       "match": "field_0x252c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x252c = 0x3fc90fdb;",
+      "text": "*(uint *)&(pCVar2->base).field_0x252c = 0x3fc90fdb;",
       "type": "unnamed_field"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 30,
-      "match": "do {",
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 36,
+      "match": "(int)piVar5",
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 37,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_truncation"
     }
   ],
   "vtable_info": {

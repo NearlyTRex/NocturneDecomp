@@ -2,36 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 90,
+    "complexity_score": 35,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 55
   },
   "cross_references": [
     {
-      "addr": "0047d230",
-      "from_addr": "0047d575",
-      "name": "shape_edittool.cpp_FUN_0047d230",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00483c00",
       "from_addr": "00484202",
-      "name": "shape_edittool.cpp_FUN_00483c00",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047c8e0",
       "from_addr": "0047ca81",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d575",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,7 +71,7 @@
       {
         "call_addr": "00484202",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00483c00",
+        "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -83,7 +82,7 @@
       {
         "call_addr": "0048425d",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00483c00",
+        "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_00483c00",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -94,7 +93,7 @@
       {
         "call_addr": "0047d575",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,46 +205,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x8 = left;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xc = top;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x10 = right + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x14 = bottom + 1;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 9,

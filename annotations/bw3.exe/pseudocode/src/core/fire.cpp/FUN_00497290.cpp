@@ -19,7 +19,7 @@ void core_fire_cpp_FUN_00497290(float *param_1,float *param_2,float *param_3,flo
   float10 fVar6;
   float afStackY_1070 [967];
   byte local_e8 [48];
-  CMatrix3x4f local_b8 [48];
+  CMatrix3x4f local_b8;
   float local_88;
   float local_84 [4];
   float local_74;
@@ -77,9 +77,9 @@ void core_fire_cpp_FUN_00497290(float *param_1,float *param_2,float *param_3,flo
   if (param_4 != 0.0) {
     core_xform_cpp_FUN_00583940(local_e8,param_1,param_1 + 5);
     core_xform_cpp_FUN_00583800
-              (local_b8,(CVector3f *)((int)param_1[4] + 0x20),(CVector3f *)((int)param_1[4] + 0x30))
-    ;
-    core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(local_e8,local_b8);
+              (&local_b8,(CVector3f *)((int)param_1[4] + 0x20),(CVector3f *)((int)param_1[4] + 0x30)
+              );
+    core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(local_e8,&local_b8);
     puVar3 = (uint *)&stack0xfffffeb8;
     puVar4 = (uint *)&stack0xfffffee8;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -97,7 +97,7 @@ void core_fire_cpp_FUN_00497290(float *param_1,float *param_2,float *param_3,flo
       param_1[10] = local_6c[3];
       param_1[0xb] = local_5c;
     }
-    core_xform_cpp_FUN_00583b10(&stack0xfffffee8);
+    core_xform_cpp_matrixToEulerAngles_FUN_00583b10(&stack0xfffffee8);
     local_70 = local_1c;
     local_6c[(uint)bVar5 * -2] = afStack_30[(uint)bVar5 * -2 + 6];
     local_6c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =

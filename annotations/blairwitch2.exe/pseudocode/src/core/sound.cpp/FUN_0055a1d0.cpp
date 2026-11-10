@@ -33,27 +33,27 @@ void __cdecl core_sound_cpp_FUN_0055a1d0(CSound *this_ptr)
   core_sound_cpp_updateListeners_FUN_00558d50();
   _DAT_0264b2ac = 0;
   sound_sndmain_cpp_set3DListenerOrientRight_FUN_00552cc0();
-  sound_sndmain_cpp_FUN_005524b0();
-  iVar1 = sound_sndmain_cpp_FUN_00552b20();
+  sound_sndmain_cpp_enableSoundSystem_FUN_005524b0();
+  iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00552b20();
   if (iVar1 == 0) {
     return;
   }
   _DAT_0264bad8 = 0x3f800000;
   _DAT_0264badc = 0x3f800000;
   _DAT_0264bae0 = 0;
-  iVar1 = sound_sndmain_cpp_FUN_005512a0(0);
+  iVar1 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(0);
   if (iVar1 == 0) {
-    sound_sndmain_cpp_FUN_00551220(3,0);
+    sound_sndmain_cpp_enableSfxChannel_FUN_00551220(3,0);
   }
   else {
-    sound_sndmain_cpp_FUN_00551220(3,1);
+    sound_sndmain_cpp_enableSfxChannel_FUN_00551220(3,1);
     local_c = sound_sndmain_cpp_getSfxChannelVol_FUN_00551190();
     sound_sndmain_cpp_setSfxChannelVol_FUN_00551100();
   }
-  sound_sndmain_cpp_FUN_00550450();
+  sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
   sound_sndmain_cpp_setNextSfxChannel_FUN_00550310(3);
-  sound_sndmain_cpp_FUN_005504d0();
-  if (*(int *)&g_CDemonSetPtr->field_0x15acb8 != 0) {
+  sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
+  if (g_CDemonSetPtr->player_on_train != 0) {
     local_18 = -*(float *)&g_CDemonSetPtr->field_0x15ac70;
     local_14 = -*(float *)&g_CDemonSetPtr->field_0x15ac74;
     local_10 = -*(float *)&g_CDemonSetPtr->field_0x15ac78;

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_drender.cpp_FUN_0046b470 at 0046b558
+;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470 at 0046b558
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bdd810

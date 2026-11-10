@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004ad640 at 004adeb0
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004adeb0
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8

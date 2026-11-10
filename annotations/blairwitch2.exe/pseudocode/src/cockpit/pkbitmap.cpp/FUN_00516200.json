@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 114,
+    "complexity_score": 79,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 37
@@ -36,15 +35,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005168e0",
-      "from_addr": "005168ed",
-      "name": "cockpit_pkbitmap.cpp_FUN_005168e0",
+      "addr": "00516f30",
+      "from_addr": "00516f40",
+      "name": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00516f30",
-      "from_addr": "00516f40",
-      "name": "cockpit_pkbitmap.cpp_FUN_00516f30",
+      "addr": "005168e0",
+      "from_addr": "005168ed",
+      "name": "cockpit_pkbitmap.cpp_FUN_005168e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -124,7 +123,7 @@
       {
         "call_addr": "00516f40",
         "call_type": "direct",
-        "caller": "cockpit_pkbitmap.cpp_FUN_00516f30",
+        "caller": "cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -199,48 +198,24 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x14 != 0) {",
+      "text": "if (param_1->packed_data != (ushort *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x14 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005b86a0(*(int *)&param_1->field_0x14);",
+      "text": "FUN_005b86a0(param_1->packed_data);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "FUN_005b86a0(*(int *)&param_1->field_0x14);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005b7fce(*(void **)&param_1->field_0x20);",
+      "text": "FUN_005b7fce(param_1->row_offsets);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "FUN_005b7fce(*(void **)&param_1->field_0x20);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

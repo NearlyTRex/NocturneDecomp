@@ -19,7 +19,7 @@ void core_mission_cpp_FUN_0051a490(CDemonMission *param_1,char *param_2)
     _DAT_01d1d404 = 0xbd;
     core_main_c_FUN_005030e0("CDemonMission::save - Unable to open file");
   }
-  core_mission_cpp_FUN_0051ac40(param_1,file_handle);
+  core_mission_cpp_CDemonMission_writeFile_FUN_0051ac40(param_1,file_handle);
   _fclose(file_handle);
   return;
 }

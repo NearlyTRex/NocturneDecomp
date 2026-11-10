@@ -49,17 +49,17 @@ void __cdecl buildHardwarePalettes(SRGBColorPalette *rgb_palette_data);
 // Address: 0042c9f0
 void __cdecl blitSpanBasedSprite(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height);
 
-// Original: cockpit_ckptutil.c_FUN_0042cc2e
+// Original: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0042cc2e
 // Address: 0042cc2e
-void FUN_0042cc2e(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+void blitSpanBasedSpriteClipped(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 
-// Original: cockpit_ckptutil.c_FUN_0042ce7c
+// Original: cockpit_ckptutil.c_blitRectangleClipped_FUN_0042ce7c
 // Address: 0042ce7c
-int FUN_0042ce7c(int param_1,int param_2,int param_3,int param_4,int param_5);
+int blitRectangleClipped(int param_1,int param_2,int param_3,int param_4,int param_5);
 
-// Original: cockpit_ckptutil.c_FUN_0042cfec
+// Original: cockpit_ckptutil.c_blitUnifiedSprite_FUN_0042cfec
 // Address: 0042cfec
-void FUN_0042cfec(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+void blitUnifiedSprite(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
 
 // Original: cockpit_ckptutil.c_blitSimpleSprite_FUN_0042d230
 // Address: 0042d230
@@ -81,9 +81,9 @@ void FUN_0042d600(void);
 // Address: 0042d72c
 void FUN_0042d72c(void);
 
-// Original: cockpit_ckptutil.c_FUN_0042d81c
+// Original: cockpit_ckptutil.c_blitFullScreen_FUN_0042d81c
 // Address: 0042d81c
-void FUN_0042d81c(void *param_1,void *param_2);
+void blitFullScreen(void *param_1,void *param_2);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_0042d850
 // Address: 0042d850
@@ -155,7 +155,7 @@ undefined4 FUN_0042f2fc(void);
 
 // Original: cockpit_ckptutil.c_FUN_0042f300
 // Address: 0042f300
-undefined4 FUN_0042f300(void);
+int __cdecl FUN_0042f300(void);
 
 // Original: cockpit_ckptutil.c_FUN_0042f30c
 // Address: 0042f30c

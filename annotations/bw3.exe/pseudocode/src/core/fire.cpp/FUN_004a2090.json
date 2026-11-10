@@ -2,56 +2,55 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 325,
-    "complexity_score": 558,
+    "complexity_score": 524,
     "cross_reference_count": 8,
     "function_call_count": 9,
     "global_count": 19,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 138,
-    "suspect_count": 37,
+    "pseudocode_lines": 139,
+    "suspect_count": 34,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 463
+    "total_lines": 464
   },
   "cross_references": [
     {
       "addr": "00410490",
       "from_addr": "00411444",
-      "name": "core_blundrbs.cpp_FUN_00410490",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00424550",
       "from_addr": "00424dcd",
-      "name": "core_burncrss.cpp_FUN_00424550",
+      "name": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00486d40",
       "from_addr": "0048754b",
-      "name": "core_elephant.cpp_FUN_00486d40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ae850",
       "from_addr": "004aef94",
-      "name": "core_flintlck.cpp_FUN_004ae850",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d0fc0",
       "from_addr": "004d1865",
-      "name": "core_gun.cpp_FUN_004d0fc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,13 +62,13 @@
     {
       "addr": "00527d70",
       "from_addr": "005284b7",
-      "name": "core_rifle.cpp_FUN_00527d70",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056b410",
       "from_addr": "0056bcfa",
-      "name": "core_tommygun.cpp_FUN_0056b410",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -94,12 +93,17 @@
     {
       "addr": "0040cf40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf40"
+      "name": "core_actor.cpp_randomChance_FUN_0040cf40"
     },
     {
       "addr": "0044f4d0",
       "is_variadic": false,
       "name": "core_dcamera.cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0"
+    },
+    {
+      "addr": "004a1420",
+      "is_variadic": false,
+      "name": "core_fire.cpp_allocateBulletHole_FUN_004a1420"
     },
     {
       "addr": "004a23c0",
@@ -117,24 +121,19 @@
       "name": "core_fire.cpp_FUN_00497290"
     },
     {
-      "addr": "004a1420",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004a1420"
-    },
-    {
       "addr": "004cf9a0",
       "is_variadic": false,
-      "name": "core_ground.cpp_FUN_004cf9a0"
+      "name": "core_ground.cpp_getGroundTypeCode_FUN_004cf9a0"
     },
     {
       "addr": "00560a70",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_00560a70"
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70"
     },
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     }
   ],
   "globals": [
@@ -259,7 +258,7 @@
       {
         "call_addr": "00411444",
         "call_type": "direct",
-        "caller": "core_blundrbs.cpp_FUN_00410490",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
         "estimated_params": 10,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,7 +274,7 @@
       {
         "call_addr": "00424dcd",
         "call_type": "direct",
-        "caller": "core_burncrss.cpp_FUN_00424550",
+        "caller": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,7 +289,7 @@
       {
         "call_addr": "0048754b",
         "call_type": "direct",
-        "caller": "core_elephant.cpp_FUN_00486d40",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,7 +304,7 @@
       {
         "call_addr": "004aef94",
         "call_type": "direct",
-        "caller": "core_flintlck.cpp_FUN_004ae850",
+        "caller": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -320,7 +319,7 @@
       {
         "call_addr": "004d1865",
         "call_type": "direct",
-        "caller": "core_gun.cpp_FUN_004d0fc0",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -351,7 +350,7 @@
       {
         "call_addr": "005284b7",
         "call_type": "direct",
-        "caller": "core_rifle.cpp_FUN_00527d70",
+        "caller": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -366,7 +365,7 @@
       {
         "call_addr": "0056bcfa",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_0056b410",
+        "caller": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -664,47 +663,23 @@
       "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_38[0] = *(float *)&param_2->field_0x4 - local_14[1];",
+      "text": "local_3c = param_2->x - *local_14;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_38[0] = *(float *)&param_2->field_0x4 - local_14[1];",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_38[1] = *(float *)&param_2->field_0x8 - local_14[2];",
+      "text": "local_38[0] = param_2->y - local_14[1];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_38[1] = *(float *)&param_2->field_0x8 - local_14[2];",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 33,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_3c = *(float *)param_2 - *local_14;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "local_38[2] = *(float *)param_2 - *local_14;",
+      "text": "local_38[1] = param_2->z - local_14[2];",
       "type": "unnamed_param"
     },
     {
@@ -792,15 +767,15 @@
       "line": 81,
       "match": "DAT_005fdbf8",
       "severity": "mild",
-      "text": "puVar5 = &DAT_005fdbf8;",
+      "text": "puVar4 = &DAT_005fdbf8;",
       "type": "undefined_data"
     },
     {
       "description": "Complex pointer cast",
       "line": 86,
-      "match": "(char *)((int)pcVar4",
+      "match": "(char *)((int)pcVar5",
       "severity": "moderate",
-      "text": "pcVar4 = (char *)((int)pcVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pcVar5 = (char *)((int)pcVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_cast"
     },
     {
@@ -813,18 +788,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 140,
+      "line": 141,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_sound_cpp_FUN_00560a70(0x02CF5680,(CDemonActor *)0x0,local_70,param_2,0.17);",
+      "text": "(0x02CF5680,(CDemonActor *)0x0,local_70,param_2,0.17);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `pcVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "description": "Pointer value `pcVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
       "line": 86,
-      "match": "(int)pcVar4",
+      "match": "(int)pcVar5",
       "severity": "moderate",
-      "text": "pcVar4 = (char *)((int)pcVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "text": "pcVar5 = (char *)((int)pcVar5 + ((uint)bVar6 * -2 + 1) * 4);",
       "type": "pointer_truncation"
     },
     {

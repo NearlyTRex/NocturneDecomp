@@ -26,8 +26,8 @@
 ;   WatcomStaticDestructorNode g_CMP3DecoderDestructorNode2
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 g_CMP3DecoderInstanceOther.field256_0x100
-;   undefined4 g_CMP3DecoderInstanceOther.field260_0x104
+;   undefined4 g_CMP3DecoderInstanceOther.sample_rate
+;   undefined4 g_CMP3DecoderInstanceOther.num_channels
 ;   undefined4 DAT_02c745b8
 ;
 ; Called Functions:
@@ -35,13 +35,13 @@
 ;   crt_stdlib.c__atexit_FUN_005c1093
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;   crt_string.c_memmove_FUN_005c25d0
-;   engine_dosio.cpp_FUN_00479580
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
+;   engine_dosio.cpp_splitPath_FUN_00479580
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_0052ae40
 ;   sound_mp3.cpp_CMP3Decoder_free_FUN_0052b100
-;   sound_mp3.cpp_FUN_0052aea0
+;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_0052aea0
+;   sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130
 ;   sound_sndmain.cpp_FUN_0056db10
-;   sound_sndmain.cpp_FUN_0056e130
 ;   sound_sndmain.cpp_FUN_00573e70
 ;   sound_sndmain.cpp_lockSound_FUN_00575d20
 ;   support_trstream.cpp_FUN_005a0fd0
@@ -117,8 +117,8 @@ section .text
     PUSH 0x0                            ; 00574496
     PUSH 0x0                            ; 00574498
     PUSH EBP                            ; 0057449a
-    CALL engine_dosio.cpp_FUN_00479580  ; 0057449b
-        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 0057449b
+        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005744a0
     CMP byte ptr [ESP],0x2e             ; 005744a3
     JNZ 0x005744c8                      ; 005744a7
@@ -195,8 +195,8 @@ section .text
         ;   Label: LAB_00574565
     PUSH EBP                            ; 00574568
         ;   Label: LAB_00574568
-    CALL sound_sndmain.cpp_FUN_0056e130 ; 00574569
-        ;   XREF to: 0056e130 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0056e130()
+    CALL sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130 ; 00574569
+        ;   XREF to: 0056e130 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_parseConfigFile_FUN_0056e130(CSfxSample * this_ptr)
     MOV ESI,dword ptr [EBP + 0x110]     ; 0057456e
     ADD ESP,0x4                         ; 00574574
     TEST ESI,ESI                        ; 00574577
@@ -253,13 +253,13 @@ section .text
     PUSH EBP                            ; 005745fb
         ;   Label: LAB_005745fb
     PUSH 0x2c6bf88                      ; 005745fc
-    CALL sound_mp3.cpp_FUN_0052aea0     ; 00574601
-        ;   XREF to: 0052aea0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_0052aea0(CMP3Decoder * this_ptr, char * filename)
+    CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_0052aea0 ; 00574601
+        ;   XREF to: 0052aea0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_0052aea0(CMP3Decoder * this_ptr, char * filename)
     MOV dword ptr [EBP + 0x104],0x10    ; 00574606
-    MOV EAX,[0x02c6c08c]                ; 00574610 | g_CMP3DecoderInstanceOther.field260_0x104
+    MOV EAX,[0x02c6c08c]                ; 00574610 | g_CMP3DecoderInstanceOther.num_channels
     MOV dword ptr [EBP + 0x108],EAX     ; 00574615
     ADD ESP,0x8                         ; 0057461b
-    MOV EAX,[0x02c6c088]                ; 0057461e | g_CMP3DecoderInstanceOther.field256_0x100
+    MOV EAX,[0x02c6c088]                ; 0057461e | g_CMP3DecoderInstanceOther.sample_rate
     MOV dword ptr [EBP + 0x110],0xffffffff ; 00574623
     PUSH 0x2c6bf88                      ; 0057462d
     MOV dword ptr [EBP + 0x10c],EAX     ; 00574632

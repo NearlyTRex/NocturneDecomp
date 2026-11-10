@@ -11,16 +11,16 @@
 ; int              Stack[0x14]:4   alpha_value
 ;
 ; XREF[12]:
-;   core_baron.cpp_FUN_0040f4d0 at 0040f765
-;   core_batman.cpp_FUN_00412ba0 at 00412ff4
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f765
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412ff4
 ;   core_charactr.cpp_FUN_00434790 at 00434a73
-;   core_constrct.cpp_FUN_00445cb0 at 00446395
-;   core_dracbrid.cpp_FUN_0047b510 at 0047bb9e
-;   core_drip.cpp_FUN_00485610 at 004858be
-;   core_emitter.cpp_FUN_0049f310 at 0049f758
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00446395
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_0047b510 at 0047bb9e
+;   core_drip.cpp_CDrip_process_FUN_00485610 at 004858be
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f758
+;   core_fire.cpp_CCrater_process_FUN_004b22d0 at 004b2351
 ;   core_fire.cpp_CFireEffect_createDefaultSmoke_FUN_004b5620 at 004b5638
-;   core_fire.cpp_FUN_004ae300 at 004ae3ef
-;   core_fire.cpp_FUN_004b22d0 at 004b2351
+;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae3ef
 ;   ... and 2 more
 ;
 ; Referenced Globals:

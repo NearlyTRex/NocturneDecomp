@@ -2,24 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 102,
+    "complexity_score": 12,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 12,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
     {
       "addr": "00459100",
       "from_addr": "0045a3f4",
-      "name": "core_demnfolk.cpp_FUN_00459100",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,13 +28,13 @@
     {
       "addr": "005952f0",
       "from_addr": "005953fd",
-      "name": "core_tentacle.cpp_FUN_005952f0",
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005952f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bafb0",
       "from_addr": "005bc314",
-      "name": "core_zombie.cpp_FUN_005bafb0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -57,7 +54,7 @@
     {
       "addr": "0054f060",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0054f060"
+      "name": "core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060"
     }
   ],
   "globals": [
@@ -80,7 +77,7 @@
       {
         "call_addr": "0045a3f4",
         "call_type": "direct",
-        "caller": "core_demnfolk.cpp_FUN_00459100",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +99,7 @@
       {
         "call_addr": "005953fd",
         "call_type": "direct",
-        "caller": "core_tentacle.cpp_FUN_005952f0",
+        "caller": "core_tentacle.cpp_CTentacle_process_FUN_005952f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,7 +110,7 @@
       {
         "call_addr": "005bc314",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005bafb0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,70 +166,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x2dc",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2dc == 0) && (*(int *)&this_ptr->field_0x2e0 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2dc == 0) && (*(int *)&this_ptr->field_0x2e0 == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2e0 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2d4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x34c",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x34c != '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,&this_ptr->field_0x34c);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,&this_ptr->field_0x34c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x34c",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,&this_ptr->field_0x34c);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

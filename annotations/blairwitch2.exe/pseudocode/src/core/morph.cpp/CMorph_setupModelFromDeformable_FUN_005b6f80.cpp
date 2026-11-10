@@ -9,8 +9,8 @@
 void __cdecl core_morph_cpp_CMorph_setupModelFromDeformable_FUN_005b6f80(CMorph *this_ptr,int model_index,CDeformableModelInstance *model_ptr)
 
 {
-  core_morph_cpp_CMorphModel_free_FUN_005b6030((CMorphModel *)(this_ptr + model_index * 0x608));
+  core_morph_cpp_CMorphModel_free_FUN_005b6030(this_ptr->models + model_index);
   core_morph_cpp_CMorphModel_addPartFromDeformableModel_FUN_005b6350
-            ((CMorphModel *)(this_ptr + model_index * 0x608),model_ptr);
+            (this_ptr->models + model_index,model_ptr);
   return;
 }

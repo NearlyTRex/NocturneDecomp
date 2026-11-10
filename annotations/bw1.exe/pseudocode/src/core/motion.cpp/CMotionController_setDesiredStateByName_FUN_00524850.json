@@ -2,45 +2,45 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 8,
+    "complexity_score": 10,
     "cross_reference_count": 5,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 31
+    "total_lines": 33
   },
   "cross_references": [
     {
+      "addr": "00415340",
+      "from_addr": "0041549d",
+      "name": "core_bird.cpp_CBird_process_FUN_00415340",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00432050",
       "from_addr": "004320ad",
-      "name": "core_charactr.cpp_FUN_00432050",
+      "name": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eadf0",
       "from_addr": "004eaec6",
-      "name": "core_hero.cpp_FUN_004eadf0",
+      "name": "core_hero.cpp_CHero_getGrabbed_FUN_004eadf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004eaf20",
       "from_addr": "004eaf95",
-      "name": "core_hero.cpp_FUN_004eaf20",
+      "name": "core_hero.cpp_CHero_releaseFromGrab_FUN_004eaf20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005317c0",
       "from_addr": "00531930",
       "name": "core_npc.cpp_CNPC_process_FUN_005317c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00415340",
-      "from_addr": "0041549d",
-      "name": "unkafter_bird.cpp_FUN_00415340",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -65,7 +65,7 @@
     {
       "addr": "00524150",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00524150"
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_00524150"
     }
   ],
   "globals": [],
@@ -75,7 +75,7 @@
       {
         "call_addr": "004320ad",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00432050",
+        "caller": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +86,7 @@
       {
         "call_addr": "004eaec6",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004eadf0",
+        "caller": "core_hero.cpp_CHero_getGrabbed_FUN_004eadf0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +97,7 @@
       {
         "call_addr": "004eaf95",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004eaf20",
+        "caller": "core_hero.cpp_CHero_releaseFromGrab_FUN_004eaf20",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -108,7 +108,7 @@
       {
         "call_addr": "0041549d",
         "call_type": "direct",
-        "caller": "unkafter_bird.cpp_FUN_00415340",
+        "caller": "core_bird.cpp_CBird_process_FUN_00415340",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +119,7 @@
       {
         "call_addr": "004155e5",
         "call_type": "direct",
-        "caller": "unkafter_bird.cpp_FUN_00415340",
+        "caller": "core_bird.cpp_CBird_process_FUN_00415340",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

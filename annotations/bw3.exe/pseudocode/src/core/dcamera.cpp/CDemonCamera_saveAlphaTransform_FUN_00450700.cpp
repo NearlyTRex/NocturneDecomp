@@ -11,33 +11,33 @@
 void __cdecl core_dcamera_cpp_CDemonCamera_saveAlphaTransform_FUN_00450700(CDemonCamera *this_ptr,int alpha_index)
 
 {
-  uint *puVar1;
+  int *piVar1;
   byte bVar2;
-  uint auStack_ffc [1021];
+  int aiStack_ffc [1021];
   
   bVar2 = 0;
-  engine_matrix_c_FUN_004e6a90();
-  puVar1 = (uint *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);
-  *(uint *)(&this_ptr->field_0x11ec + alpha_index * 0xc) = auStack_ffc[0x3fa];
-  *puVar1 = auStack_ffc[(uint)bVar2 * -2 + 0x3fb];
-  puVar1[(uint)bVar2 * -2 + 1] = auStack_ffc[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fc];
-  *(uint *)(&this_ptr->field_0x124c + alpha_index * 4) = _DAT_01c6e2fc;
-  *(uint *)(&this_ptr->field_0x126c + alpha_index * 4) = _DAT_01c6e300;
-  *(uint *)(&this_ptr->field_0x128c + alpha_index * 4) = _DAT_01c6e304;
-  *(uint *)(&this_ptr->field_0x12ac + alpha_index * 4) = _DAT_01c6e308;
-  *(uint *)(&this_ptr->field_0x12cc + alpha_index * 4) = _DAT_01c6e30c;
-  *(uint *)(&this_ptr->field_0x12ec + alpha_index * 4) = _DAT_01c6e310;
-  *(uint *)(&this_ptr->field_0x130c + alpha_index * 4) = _DAT_01c6e314;
-  *(uint *)(&this_ptr->field_0x132c + alpha_index * 4) = _DAT_01c6e318;
-  *(uint *)(&this_ptr->field_0x134c + alpha_index * 4) = _DAT_01c6e31c;
-  *(uint *)(&this_ptr->field_0x136c + alpha_index * 4) = _DAT_01d72644;
-  *(uint *)(&this_ptr->field_0x138c + alpha_index * 4) = _DAT_01d72648;
-  *(uint *)(&this_ptr->field_0x13ac + alpha_index * 4) = _DAT_01d7264c;
-  *(uint *)(&this_ptr->field_0x13cc + alpha_index * 4) = _DAT_01d72650;
-  *(uint *)(&this_ptr->field_0x13ec + alpha_index * 4) = _DAT_01d72654;
-  *(uint *)(&this_ptr->field_0x140c + alpha_index * 4) = _DAT_01d72658;
-  *(uint *)(&this_ptr->field_0x142c + alpha_index * 4) = _DAT_01d7265c;
-  *(uint *)(&this_ptr->field_0x144c + alpha_index * 4) = _DAT_01d72660;
-  *(uint *)(&this_ptr->field_0x146c + alpha_index * 4) = _DAT_01d72664;
+  engine_matrix_c_getCameraOrigin_FUN_004e6a90();
+  piVar1 = (int *)((int)this_ptr + (uint)bVar2 * -8 + alpha_index * 0xc + 0x11f0);
+  this_ptr->alpha_translations[alpha_index].x = aiStack_ffc[0x3fa];
+  *piVar1 = aiStack_ffc[(uint)bVar2 * -2 + 0x3fb];
+  piVar1[(uint)bVar2 * -2 + 1] = aiStack_ffc[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 0x3fc];
+  this_ptr->alpha_transform_matrices[0][alpha_index] = _DAT_01c6e2fc;
+  this_ptr->alpha_transform_matrices[1][alpha_index] = _DAT_01c6e300;
+  this_ptr->alpha_transform_matrices[2][alpha_index] = _DAT_01c6e304;
+  this_ptr->alpha_transform_matrices[3][alpha_index] = _DAT_01c6e308;
+  this_ptr->alpha_transform_matrices[4][alpha_index] = _DAT_01c6e30c;
+  this_ptr->alpha_transform_matrices[5][alpha_index] = _DAT_01c6e310;
+  this_ptr->alpha_transform_matrices[6][alpha_index] = _DAT_01c6e314;
+  this_ptr->alpha_transform_matrices[7][alpha_index] = _DAT_01c6e318;
+  this_ptr->alpha_transform_matrices[8][alpha_index] = _DAT_01c6e31c;
+  this_ptr->alpha_transform_matrices[9][alpha_index] = _DAT_01d72644;
+  this_ptr->alpha_transform_matrices[10][alpha_index] = _DAT_01d72648;
+  this_ptr->alpha_transform_matrices[0xb][alpha_index] = _DAT_01d7264c;
+  this_ptr->alpha_transform_matrices[0xc][alpha_index] = _DAT_01d72650;
+  this_ptr->alpha_transform_matrices[0xd][alpha_index] = _DAT_01d72654;
+  this_ptr->alpha_transform_matrices[0xe][alpha_index] = _DAT_01d72658;
+  this_ptr->alpha_transform_matrices[0xf][alpha_index] = _DAT_01d7265c;
+  this_ptr->alpha_transform_matrices[0x10][alpha_index] = _DAT_01d72660;
+  this_ptr->alpha_transform_matrices[0x11][alpha_index] = _DAT_01d72664;
   return;
 }

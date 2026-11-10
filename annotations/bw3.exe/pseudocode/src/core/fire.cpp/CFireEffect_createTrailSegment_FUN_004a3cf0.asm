@@ -12,7 +12,7 @@
 ; SMRGLTextureBasic * Stack[0x18]:4   texture_ptr
 ;
 ; XREF[2]:
-;   core_constrct.cpp_FUN_00442a20 at 00442bee
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442bee
 ;   core_fire.cpp_FUN_004a3d50 at 004a3e19
 ;
 ; Referenced Globals:

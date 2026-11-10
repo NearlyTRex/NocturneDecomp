@@ -2,15 +2,19 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CBaron;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CBaronWeapon
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x57c (1404 bytes)
 #pragma pack(push, 1)
 typedef struct CBaronWeapon {
-    char field_0[1404]; // 0x0
+    CWeapon base; // 0x0
+    struct CBaron* baron; // 0x578
 } CBaronWeapon;
 #pragma pack(pop)
 

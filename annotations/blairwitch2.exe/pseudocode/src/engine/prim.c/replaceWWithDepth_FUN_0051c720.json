@@ -25,7 +25,7 @@
     {
       "addr": "004a70b0",
       "from_addr": "004a749b",
-      "name": "core_flies.cpp_FUN_004a70b0",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,12 +41,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051cb20",
-      "from_addr": "0051cd84",
-      "name": "engine_prim.c_FUN_0051cb20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0051da80",
       "from_addr": "0051ddf5",
       "name": "engine_prim.c_FUN_0051da80",
@@ -55,7 +49,13 @@
     {
       "addr": "0051e130",
       "from_addr": "0051e36f",
-      "name": "engine_prim.c_FUN_0051e130",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051cb20",
+      "from_addr": "0051cd84",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -135,7 +135,7 @@
       {
         "call_addr": "0051cd84",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051cb20",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       {
         "call_addr": "0051e36f",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051e130",
+        "caller": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +179,7 @@
       {
         "call_addr": "004a749b",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004a70b0",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

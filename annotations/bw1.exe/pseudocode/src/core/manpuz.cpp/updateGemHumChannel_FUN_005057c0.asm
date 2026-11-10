@@ -13,12 +13,12 @@
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00572780
 ;   sound_sndmain.cpp_FUN_005728e0
-;   sound_sndmain.cpp_FUN_00572ac0
-;   sound_sndmain.cpp_FUN_00572b40
 ;   sound_sndmain.cpp_FUN_005735a0
 ;   sound_sndmain.cpp_FUN_00573760
 ;   sound_sndmain.cpp_FUN_00573950
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -114,8 +114,8 @@ section .text
     MOV dword ptr [EDX],EAX             ; 00505879
     JMP 0x00505807                      ; 0050587b
         ;   XREF to: 00505807 (UNCONDITIONAL_JUMP)  ; LAB_00505807
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 0050587d
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 0050587d
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
         ;   Label: LAB_0050587d
     PUSH dword ptr [ESP]                ; 00505882
     CALL sound_sndmain.cpp_FUN_005728e0 ; 00505885
@@ -139,8 +139,8 @@ section .text
         ;   XREF to: 00572d20 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00572d20(char * filename)
     ADD ESP,0x4                         ; 005058b8
     MOV dword ptr [ESI],EAX             ; 005058bb
-    CALL sound_sndmain.cpp_FUN_00572b40 ; 005058bd
-        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572b40()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00572b40 ; 005058bd
+        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     MOV EAX,EDI                         ; 005058c2
     MOV ESP,EBP                         ; 005058c4
     POP EBP                             ; 005058c6

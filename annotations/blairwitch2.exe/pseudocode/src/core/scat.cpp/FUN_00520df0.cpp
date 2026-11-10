@@ -66,7 +66,7 @@ void core_scat_cpp_FUN_00520df0(int param_1)
     }
     iVar2 = *(int *)(param_1 + 0x25654);
     local_14 = *(int *)(iVar2 + 0x2b0);
-    core_xform_cpp_FUN_00591de0(local_c8);
+    core_xform_cpp_matrixToEulerAngles_FUN_00591de0(local_c8);
     puVar3 = auStack_58 + 5;
     auStack_58[5] = auStack_40[2];
     auStack_40[(uint)bVar5 * -2] = auStack_40[(uint)bVar5 * -2 + 3];

@@ -29,17 +29,17 @@ CDemonActor * __cdecl CDemonActor::ctor(CDemonActor *this_ptr);
 // Address: 00408930
 CDemonActor * CDemonActor::dtor(CDemonActor *this_ptr,uint flags);
 
-// Original: core_actor.cpp_FUN_00408980
+// Original: core_actor.cpp_CDemonActor_process_FUN_00408980
 // Address: 00408980
-void FUN_00408980(void);
+void __cdecl CDemonActor::process(CDemonActor *this_ptr,float delta_time);
 
 // Original: core_actor.cpp_FUN_004089b0
 // Address: 004089b0
 undefined4 FUN_004089b0(void);
 
-// Original: core_actor.cpp_FUN_004089c0
+// Original: core_actor.cpp_CDemonActor_renderBackground_FUN_004089c0
 // Address: 004089c0
-void FUN_004089c0(void);
+void __cdecl CDemonActor::renderBackground(CDemonActor *this_ptr,int layer_flag);
 
 // Original: core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 // Address: 004089d0
@@ -49,17 +49,17 @@ void __cdecl CDemonActor::setupRenderState(CDemonActor *this_ptr);
 // Address: 00408a10
 void __cdecl CDemonActor::restoreRenderState(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408a20
+// Original: core_actor.cpp_CDemonActor_getActorType_FUN_00408a20
 // Address: 00408a20
-undefined4 FUN_00408a20(void);
+CDemonActorType * __cdecl CDemonActor::getActorType(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_FUN_00408a50
 // Address: 00408a50
 void FUN_00408a50(int param_1);
 
-// Original: core_actor.cpp_FUN_00408a80
+// Original: core_actor.cpp_CDemonActor_setup_FUN_00408a80
 // Address: 00408a80
-void __cdecl FUN_00408a80(CDemonActor *this_ptr);
+void __cdecl CDemonActor::setup(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_FUN_00408ac0
 // Address: 00408ac0
@@ -69,33 +69,33 @@ void FUN_00408ac0(void);
 // Address: 00408ae0
 void __cdecl CDemonActor::updateOrientationMatrix(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00408b40
+// Original: core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408b40
 // Address: 00408b40
-void FUN_00408b40(void);
+CBoundingBox3D * __cdecl CDemonActor::getBoundingBox(CDemonActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_actor.cpp_FUN_00408b80
+// Original: core_actor.cpp_CDemonActor_getCollisionType_FUN_00408b80
 // Address: 00408b80
-undefined4 FUN_00408b80(void);
+ECollisionType __cdecl CDemonActor::getCollisionType(CDemonActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_actor.cpp_FUN_00408b90
+// Original: core_actor.cpp_CDemonActor_customRayIntersect_FUN_00408b90
 // Address: 00408b90
-undefined4 FUN_00408b90(void);
+float __cdecl CDemonActor::customRayIntersect(CDemonActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
-// Original: core_actor.cpp_FUN_00408bc0
+// Original: core_actor.cpp_CDemonActor_customIntersectCylinderXZ_FUN_00408bc0
 // Address: 00408bc0
-void FUN_00408bc0(void);
+void __cdecl CDemonActor::customIntersectCylinderXZ(CDemonActor *this_ptr,SIntersectXZCylinder *cylinder);
 
-// Original: core_actor.cpp_FUN_00408bf0
+// Original: core_actor.cpp_CDemonActor_customGetFloorHeight_FUN_00408bf0
 // Address: 00408bf0
-undefined4 FUN_00408bf0(void);
+int __cdecl CDemonActor::customGetFloorHeight(CDemonActor *this_ptr,CVector3f *position,float search_radius,float *out_floor_height);
 
 // Original: core_actor.cpp_FUN_00408c20
 // Address: 00408c20
 undefined4 FUN_00408c20(void);
 
-// Original: core_actor.cpp_FUN_00408c30
+// Original: core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30
 // Address: 00408c30
-undefined4 FUN_00408c30(CDemonActor *param_1,undefined4 param_2,undefined4 *param_3);
+float __cdecl CDemonActor::cylinderGroundCheck(CDemonActor *this_ptr,float radius,CVector3f *out_normal);
 
 // Original: core_actor.cpp_FUN_00408cf0
 // Address: 00408cf0
@@ -125,9 +125,9 @@ uint __cdecl CDemonActor::playAmbientSound(CDemonActor *this_ptr,char *sound_nam
 // Address: 00408e90
 uint __cdecl CDemonActor::playSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
-// Original: core_actor.cpp_FUN_00408ec0
+// Original: core_actor.cpp_CDemonActor_playAmbientSoundWithDelay_FUN_00408ec0
 // Address: 00408ec0
-uint FUN_00408ec0(CDemonActor *param_1,char *param_2,float param_3);
+uint __cdecl CDemonActor::playAmbientSoundWithDelay(CDemonActor *this_ptr,char *sound_name,float delay);
 
 // Original: core_actor.cpp_FUN_00408ef0
 // Address: 00408ef0
@@ -137,9 +137,9 @@ void FUN_00408ef0(void);
 // Address: 00408f00
 int __cdecl CDemonActor::testCylinderCollision(CDemonActor *this_ptr,SCollisionReturnInfo *collision_info,float tolerance);
 
-// Original: core_actor.cpp_FUN_00408f90
+// Original: core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408f90
 // Address: 00408f90
-int __cdecl FUN_00408f90(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
+int __cdecl CDemonActor::testLineIntersection(CDemonActor *this_ptr,CVector3f *line_start,CVector3f *line_end,CVector3f *out_intersection_point);
 
 // Original: core_actor.cpp_FUN_004090f0
 // Address: 004090f0
@@ -147,79 +147,79 @@ undefined4 * FUN_004090f0(int param_1,int param_2,uint param_3);
 
 // Original: core_actor.cpp_FUN_004093a0
 // Address: 004093a0
-float FUN_004093a0(int param_1,float *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
+float FUN_004093a0(int param_1,CBoundingBox3D *param_2,float *param_3,undefined4 *param_4,int param_5,uint param_6,CBoundingBox3D *param_7);
 
-// Original: core_actor.cpp_FUN_00409830
+// Original: core_actor.cpp_CDemonActor_onLaserHit_FUN_00409830
 // Address: 00409830
-undefined8 FUN_00409830(undefined4 param_1,int param_2);
+void __cdecl CDemonActor::onLaserHit(CDemonActor *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_actor.cpp_FUN_00409850
+// Original: core_actor.cpp_CDemonActor_updateCollisionData_FUN_00409850
 // Address: 00409850
-void FUN_00409850(void);
+void __cdecl CDemonActor::updateCollisionData(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_plotPixelWithBoundsCheck_FUN_00409860
 // Address: 00409860
 void __cdecl plotPixelWithBoundsCheck(int x,int y);
 
-// Original: core_actor.cpp_FUN_00409af0
+// Original: core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0
 // Address: 00409af0
-void FUN_00409af0(int param_1);
+void __cdecl CDemonActor::renderTargetPoints(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00409db0
+// Original: core_actor.cpp_CDemonActor_spawnFlies_FUN_00409db0
 // Address: 00409db0
-void __cdecl FUN_00409db0(CDemonActor *this_ptr,int fly_count,float spawn_radius);
+void __cdecl CDemonActor::spawnFlies(CDemonActor *this_ptr,int fly_count,float spawn_radius);
 
 // Original: core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409df0
 // Address: 00409df0
 void __cdecl CDemonActor::calculateChecksum(CDemonActor *this_ptr,uint *out_crc);
 
-// Original: core_actor.cpp_FUN_00409e30
+// Original: core_actor.cpp_CDemonActor_evaluateTriggerCondition_FUN_00409e30
 // Address: 00409e30
-undefined4 FUN_00409e30(void);
+float __cdecl CDemonActor::evaluateTriggerCondition(CDemonActor *this_ptr,CDemonActor *querying_actor,CVector3f *query_position);
 
-// Original: core_actor.cpp_FUN_00409e40
+// Original: core_actor.cpp_CDemonActor_processActionButton_FUN_00409e40
 // Address: 00409e40
-undefined4 FUN_00409e40(void);
+int __cdecl CDemonActor::processActionButton(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_00409e70
+// Original: core_actor.cpp_CDemonActor_setPositionAndOrientation_FUN_00409e70
 // Address: 00409e70
-void FUN_00409e70(CDemonActor *param_1,undefined4 *param_2,undefined4 *param_3);
+void __cdecl CDemonActor::setPositionAndOrientation(CDemonActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
 // Original: core_actor.cpp_CDemonActor_onPickup_FUN_00409ec0
 // Address: 00409ec0
 void __cdecl CDemonActor::onPickup(CDemonActor *this_ptr,CDemonActor *owner);
 
-// Original: core_actor.cpp_FUN_00409ed0
+// Original: core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409ed0
 // Address: 00409ed0
-undefined4 * FUN_00409ed0(undefined4 param_1,undefined4 *param_2);
+void __cdecl CDemonActor::getInteractionInfo(CDemonActor *this_ptr,SInteractionInfo *out_info);
 
-// Original: core_actor.cpp_FUN_00409f10
+// Original: core_actor.cpp_CDemonActor_stopInteraction_FUN_00409f10
 // Address: 00409f10
-void FUN_00409f10(void);
+void __cdecl CDemonActor::stopInteraction(CDemonActor *this_ptr,CDemonActor *user);
 
 // Original: core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409f20
 // Address: 00409f20
 int __cdecl CDemonActor::getAllowedMeleeAttackTypes(CDemonActor *this_ptr);
 
-// Original: core_actor.cpp_FUN_0040a050
+// Original: core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050
 // Address: 0040a050
-undefined4 FUN_0040a050(CDemonActor *param_1,undefined4 param_2);
+int __cdecl CDemonActor::processMeleeHit(CDemonActor *this_ptr,int hit_type);
 
-// Original: core_actor.cpp_FUN_0040ad50
+// Original: core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040ad50
 // Address: 0040ad50
-undefined4 FUN_0040ad50(int param_1,undefined4 param_2,int param_3);
+void __cdecl CDemonActor::fillAttackDamageInfo(CDemonActor *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_actor.cpp_FUN_0040ad90
+// Original: core_actor.cpp_CDemonActor_playAttackHitEffects_FUN_0040ad90
 // Address: 0040ad90
-void FUN_0040ad90(void);
+void __cdecl CDemonActor::playAttackHitEffects(CDemonActor *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 
 // Original: core_actor.cpp_copyToActorDebugBuffer_FUN_0040ada0
 // Address: 0040ada0
 char * __cdecl copyToActorDebugBuffer(char *source_string);
 
-// Original: core_actor.cpp_FUN_0040adf0
+// Original: core_actor.cpp_CDemonActor_doCheckForInvalidPointers_FUN_0040adf0
 // Address: 0040adf0
-void FUN_0040adf0(char *param_1,undefined4 param_2,undefined4 param_3);
+void __cdecl CDemonActor::doCheckForInvalidPointers(CDemonActor *this_ptr,char *context_file,int context_line);
 
 // Original: core_actor.cpp_adjustIndentationLevel_FUN_0040b050
 // Address: 0040b050
@@ -333,17 +333,17 @@ uint __cdecl matchClassTerm(CDemonActorType *param_1,int *param_2);
 // Address: 0040c780
 undefined4 __cdecl matchClassExpression(undefined4 param_1,undefined4 *param_2);
 
-// Original: core_actor.cpp_FUN_0040c840
+// Original: core_actor.cpp_isOfClass_FUN_0040c840
 // Address: 0040c840
-int __cdecl FUN_0040c840(CDemonActor *actor_ptr,char *class_name);
+int __cdecl isOfClass(CDemonActor *actor_ptr,char *class_name);
 
-// Original: core_actor.cpp_FUN_0040c870
+// Original: core_actor.cpp_checkNameHash_FUN_0040c870
 // Address: 0040c870
-int __cdecl FUN_0040c870(CDemonActorType *type_ptr,uint name_hash);
+int __cdecl checkNameHash(CDemonActorType *type_ptr,uint name_hash);
 
-// Original: core_actor.cpp_FUN_0040c890
+// Original: core_actor.cpp_CDemonActor_shouldIgnoreForTargeting_FUN_0040c890
 // Address: 0040c890
-int __cdecl FUN_0040c890(CDemonActor *this_ptr);
+int __cdecl CDemonActor::shouldIgnoreForTargeting(CDemonActor *this_ptr);
 
 // Original: core_actor.cpp_matchesClassName_FUN_0040c8a0
 // Address: 0040c8a0
@@ -365,17 +365,17 @@ void __cdecl syncActorTypeIDs(void);
 // Address: 0040c950
 void __cdecl resetActorTypeInfo(void);
 
-// Original: core_actor.cpp_FUN_0040c990
+// Original: core_actor.cpp_CDemonActor_processFootstep_FUN_0040c990
 // Address: 0040c990
-undefined4 FUN_0040c990(CDemonActor *param_1,undefined4 param_2);
+uint __cdecl CDemonActor::processFootstep(CDemonActor *this_ptr,float volume);
 
-// Original: core_actor.cpp_FUN_0040ca40
+// Original: core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040ca40
 // Address: 0040ca40
-undefined4 FUN_0040ca40(CDemonActor *param_1,undefined4 param_2,undefined4 param_3);
+uint __cdecl CDemonActor::processFootstepAtOffset(CDemonActor *this_ptr,CVector3f *location,float volume);
 
-// Original: core_actor.cpp_FUN_0040cb60
+// Original: core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60
 // Address: 0040cb60
-uint FUN_0040cb60(CDemonActor *param_1,CVector3f *param_2,int param_3,float param_4);
+uint __cdecl CDemonActor::handleFootstep(CDemonActor *this_ptr,CVector3f *position,EGroundType ground_type,float volume);
 
 // Original: core_actor.cpp_FUN_0040ce40
 // Address: 0040ce40
@@ -393,33 +393,33 @@ void FUN_0040cea0(int param_1,int param_2,undefined4 param_3,undefined4 param_4,
 // Address: 0040ced0
 void FUN_0040ced0(void);
 
-// Original: core_actor.cpp_FUN_0040cee0
+// Original: core_actor.cpp_setRandomSeed_FUN_0040cee0
 // Address: 0040cee0
-void __cdecl FUN_0040cee0(uint seed_value);
+void __cdecl setRandomSeed(uint seed_value);
 
 // Original: core_actor.cpp_generateRandomValue_FUN_0040cef0
 // Address: 0040cef0
 uint __cdecl generateRandomValue(void);
 
-// Original: core_actor.cpp_FUN_0040cf60
+// Original: core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 // Address: 0040cf60
-float FUN_0040cf60(float param_1,float param_2);
+float __cdecl getRandomFloatFromRange(float min_value,float max_value);
 
-// Original: core_actor.cpp_FUN_0040cfc0
+// Original: core_actor.cpp_getRandomInt_FUN_0040cfc0
 // Address: 0040cfc0
-int __cdecl FUN_0040cfc0(int min_value,int max_value);
+int __cdecl getRandomInt(int min_value,int max_value);
 
-// Original: core_actor.cpp_FUN_0040d060
+// Original: core_actor.cpp_randomChance_FUN_0040d060
 // Address: 0040d060
-int __cdecl FUN_0040d060(float probability_threshold);
+int __cdecl randomChance(float probability_threshold);
 
-// Original: core_actor.cpp_FUN_0040d0c0
+// Original: core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 // Address: 0040d0c0
-float FUN_0040d0c0(float param_1);
+float normalizeAngleToPi(float param_1);
 
-// Original: core_actor.cpp_FUN_0040d180
+// Original: core_actor.cpp_crc32ProcessByte_FUN_0040d180
 // Address: 0040d180
-void FUN_0040d180(uint *param_1,byte param_2);
+void __cdecl crc32ProcessByte(uint *crc_state,byte input_byte);
 
 // Original: core_actor.cpp_crc32ProcessBuffer_FUN_0040d260
 // Address: 0040d260

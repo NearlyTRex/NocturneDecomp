@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_game.cpp_FUN_004bda10 at 004bdcf7
 ;   core_game.cpp_FUN_004bdfb0 at 004be24b
-;   engine_2d.c_FUN_00402940 at 004029f6
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 004029f6
 ;
 ; Referenced Globals:
 ;   undefined1* g_COutStreamFileVTable = 00574850

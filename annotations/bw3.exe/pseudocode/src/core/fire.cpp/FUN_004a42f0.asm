@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_fire.cpp_FUN_0049c680 at 0049c724
 ;   core_fire.cpp_FUN_004a4340 at 004a446d
+;   core_fire.cpp_loadDebrisAssets_FUN_0049c680 at 0049c724
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

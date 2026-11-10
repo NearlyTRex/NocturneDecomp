@@ -19,49 +19,49 @@
     {
       "addr": "00597af0",
       "from_addr": "00597b23",
-      "name": "core_baal.cpp_FUN_00597af0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004192d0",
-      "from_addr": "0041939f",
-      "name": "core_boneguy.cpp_FUN_004192d0",
+      "name": "core_baal.cpp_CBaal_processDamage_FUN_00597af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041a810",
       "from_addr": "0041a84d",
-      "name": "core_boneguy.cpp_FUN_0041a810",
+      "name": "core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004192d0",
+      "from_addr": "0041939f",
+      "name": "core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004634d0",
       "from_addr": "004634fd",
-      "name": "core_dog.cpp_FUN_004634d0",
+      "name": "core_dog.cpp_CZombieDog_processDamage_FUN_004634d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059d360",
       "from_addr": "0059d3ea",
-      "name": "core_hino.cpp_FUN_0059d360",
+      "name": "core_hino.cpp_CHino_processDamage_FUN_0059d360",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d5fd0",
       "from_addr": "004d6024",
-      "name": "core_hotdemon.cpp_FUN_004d5fd0",
+      "name": "core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d5fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005918e0",
       "from_addr": "00591973",
-      "name": "core_kedward.cpp_FUN_005918e0",
+      "name": "core_kedward.cpp_CKedward_processDamage_FUN_005918e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005939b0",
       "from_addr": "005939f3",
-      "name": "core_mattnntt.cpp_FUN_005939b0",
+      "name": "core_mattnntt.cpp_CMattanntote_processDamage_FUN_005939b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,13 +73,13 @@
     {
       "addr": "005a0330",
       "from_addr": "005a042a",
-      "name": "core_styldemo.cpp_FUN_005a0330",
+      "name": "core_styldemo.cpp_CStylerDemon_processDamage_FUN_005a0330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058c5a0",
       "from_addr": "0058c609",
-      "name": "core_zombie.cpp_FUN_0058c5a0",
+      "name": "core_zombie.cpp_CZombie_processDamage_FUN_0058c5a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -114,7 +114,7 @@
       {
         "call_addr": "0041939f",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004192d0",
+        "caller": "core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +125,7 @@
       {
         "call_addr": "0041a84d",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_0041a810",
+        "caller": "core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -138,7 +138,7 @@
       {
         "call_addr": "004634fd",
         "call_type": "direct",
-        "caller": "core_dog.cpp_FUN_004634d0",
+        "caller": "core_dog.cpp_CZombieDog_processDamage_FUN_004634d0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -152,7 +152,7 @@
       {
         "call_addr": "004d6024",
         "call_type": "direct",
-        "caller": "core_hotdemon.cpp_FUN_004d5fd0",
+        "caller": "core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d5fd0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +180,7 @@
       {
         "call_addr": "0058c609",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058c5a0",
+        "caller": "core_zombie.cpp_CZombie_processDamage_FUN_0058c5a0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,7 +194,7 @@
       {
         "call_addr": "00591973",
         "call_type": "direct",
-        "caller": "core_kedward.cpp_FUN_005918e0",
+        "caller": "core_kedward.cpp_CKedward_processDamage_FUN_005918e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +205,7 @@
       {
         "call_addr": "005939f3",
         "call_type": "direct",
-        "caller": "core_mattnntt.cpp_FUN_005939b0",
+        "caller": "core_mattnntt.cpp_CMattanntote_processDamage_FUN_005939b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,7 +216,7 @@
       {
         "call_addr": "00597b23",
         "call_type": "direct",
-        "caller": "core_baal.cpp_FUN_00597af0",
+        "caller": "core_baal.cpp_CBaal_processDamage_FUN_00597af0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,7 +230,7 @@
       {
         "call_addr": "0059d3ea",
         "call_type": "direct",
-        "caller": "core_hino.cpp_FUN_0059d360",
+        "caller": "core_hino.cpp_CHino_processDamage_FUN_0059d360",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

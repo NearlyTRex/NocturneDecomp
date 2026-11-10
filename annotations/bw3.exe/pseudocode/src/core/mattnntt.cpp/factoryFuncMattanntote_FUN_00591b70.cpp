@@ -11,7 +11,7 @@ void core_mattnntt_cpp_factoryFuncMattanntote_FUN_00591b70(void)
 {
   CMattanntote *this_ptr;
   
-  this_ptr = (CMattanntote *)FUN_005a3cb2(0xf09c);
+  this_ptr = (CMattanntote *)debugAllocTracked1(0xf09c);
   if (this_ptr == (CMattanntote *)0x0) {
     return;
   }

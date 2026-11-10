@@ -21,10 +21,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00468530(CD
   int iStack_20;
   
   iStack_20 = 1;
-  x = x1 - *(int *)(this_ptr + 8);
-  iVar1 = y1 - *(int *)(this_ptr + 0xc);
-  iVar4 = y2 - *(int *)(this_ptr + 0xc);
-  iVar2 = x2 - *(int *)(this_ptr + 8);
+  x = x1 - this_ptr->x;
+  iVar1 = y1 - this_ptr->y;
+  iVar4 = y2 - this_ptr->y;
+  iVar2 = x2 - this_ptr->x;
   y = iVar1;
   iVar3 = iVar2;
   if (iVar4 < iVar1) {
@@ -43,7 +43,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00468530(CD
     iVar4 = iVar4 * 2 - iVar3;
     if (-1 < iVar3) {
       do {
-        cockpit_drawsurf_cpp_FUN_00467f30(this_ptr,x,y);
+        cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(this_ptr,x,y);
         if (0 < iVar4) {
           y = y + 1;
           iVar4 = iVar4 - iVar3;
@@ -58,7 +58,7 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawLineBresenham_FUN_00468530(CD
     iVar1 = iVar3 * 2 - iVar4;
     if (-1 < iVar4) {
       do {
-        cockpit_drawsurf_cpp_FUN_00467f30(this_ptr,x,y);
+        cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00467f30(this_ptr,x,y);
         if (0 < iVar1) {
           iVar1 = iVar1 - unaff_ESI;
           x = x + iStack_20;

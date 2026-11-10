@@ -17,7 +17,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_close_FUN_0057ac70(CWavInDevice *this_
   int iVar3;
   uint uVar4;
   
-  iVar1 = (**(code **)(*(int *)this_ptr + 8))(this_ptr);
+  iVar1 = (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   uVar4 = (uint)(iVar1 != 0);
   iVar1 = 0;
   do {

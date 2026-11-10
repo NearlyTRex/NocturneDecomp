@@ -26,14 +26,14 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b6f0
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
+;   core_actor.cpp_archiveMotionState_FUN_0040b870
+;   core_actor.cpp_archivePartStatus_FUN_0040b960
 ;   core_actor.cpp_archiveQuaternion_FUN_0040b3a0
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_archiveVector_FUN_0040b1c0
-;   core_actor.cpp_FUN_0040b7f0
-;   core_actor.cpp_FUN_0040b870
-;   core_actor.cpp_FUN_0040b960
 ;   core_enemy.cpp_CEnemy_archive_FUN_004a0520
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
     PUSH 0x5d4847                       ; 0041d0ff | = "modelName"
     ADD EAX,0x158                       ; 0041d104
     PUSH EAX                            ; 0041d109
-    CALL core_actor.cpp_FUN_0040b7f0    ; 0041d10a
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 ; 0041d10a
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
     MOV ECX,dword ptr [0x00610b14]      ; 0041d10f | g_CBoneGuyClassVersion
     ADD ESP,0x8                         ; 0041d115
     CMP ECX,0x4                         ; 0041d118
@@ -74,8 +74,8 @@ section .text
     PUSH 0x5d485f                       ; 0041d125 | = "motion state"
     ADD EBX,0x158                       ; 0041d12a
     PUSH EBX                            ; 0041d130
-    CALL core_actor.cpp_FUN_0040b870    ; 0041d131
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b870(CMotionController * motion_controller, char * property_name)
+    CALL core_actor.cpp_archiveMotionState_FUN_0040b870 ; 0041d131
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040b870(CMotionController * motion_controller, char * property_name)
     MOV ESI,dword ptr [0x00610b14]      ; 0041d136 | g_CBoneGuyClassVersion
     ADD ESP,0x8                         ; 0041d13c
     CMP ESI,0x2                         ; 0041d13f
@@ -118,8 +118,8 @@ section .text
     ADD ESP,0x8                         ; 0041d1b8
     PUSH 0x5d489c                       ; 0041d1bb | = "partStatus"
     PUSH EBX                            ; 0041d1c0
-    CALL core_actor.cpp_FUN_0040b960    ; 0041d1c1
-        ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b960(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archivePartStatus_FUN_0040b960 ; 0041d1c1
+        ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040b960(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041d1c6
     MOV EAX,dword ptr [ESP + 0x20]      ; 0041d1c9
     MOV EDI,dword ptr [EAX + 0xc2e4]    ; 0041d1cd

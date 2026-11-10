@@ -22,7 +22,7 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b110(CDemonActor *this_ptr,
   char local_78 [100];
   uint local_14;
   
-  str1 = core_actor_cpp_FUN_00408870(this_ptr);
+  str1 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(this_ptr);
   local_dc[0] = '\0';
   local_78[0] = '\0';
   _fscanf(file_handle," { %s \"%[^\"]\"\n",local_dc,local_78);
@@ -36,12 +36,12 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b110(CDemonActor *this_ptr,
   pCVar6 = this_ptr;
   do {
     cVar1 = *pcVar5;
-    *(char *)pCVar6 = cVar1;
+    pCVar6->actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pCVar6->field_0x1 = cVar1;
-    pCVar6 = (CDemonActor *)&pCVar6->field_0x2;
+    pCVar6->actor_name[1] = cVar1;
+    pCVar6 = (CDemonActor *)(pCVar6->actor_name + 2);
   } while (cVar1 != '\0');
   uVar3 = DAT_007df9bc;
   uVar2 = DAT_007df9b8;
@@ -49,13 +49,13 @@ void __cdecl core_actor_cpp_CDemonActor_load_FUN_0040b110(CDemonActor *this_ptr,
   DAT_007df9b4 = file_handle;
   DAT_007df9b8 = 1;
   DAT_007df9bc = this_ptr;
-  (**(code **)(*(int *)&this_ptr->field_0x154 + 0xd4))(this_ptr);
+  (*((this_ptr->vtable)._ub)->archive)(this_ptr);
   local_dc[0] = '\0';
   local_78[0] = '\0';
   _fscanf(file_handle," } %s \"%[^\"]\"\n",local_dc,local_78);
   iVar4 = _stricmp(str1,local_dc);
   if ((iVar4 != 0) ||
-     (iVar4 = _stricmp((char *)this_ptr,local_78), iVar4 != 0)) {
+     (iVar4 = _stricmp(this_ptr->actor_name,local_78), iVar4 != 0)) {
     _DAT_01d71de0 = "..\\core\\actor.cpp";
     _DAT_01d71de4 = 0x845;
     core_main_c_FUN_004e4330("End of actor file tag mismatch for class %s name \"%s\"",str1,this_ptr);

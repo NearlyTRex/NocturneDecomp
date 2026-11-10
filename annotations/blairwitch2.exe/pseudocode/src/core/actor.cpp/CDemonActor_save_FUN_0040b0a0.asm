@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_inv.cpp_FUN_004dc2c0 at 004dc40a
-;   core_mission.cpp_FUN_004fbce0 at 004fbfc1
+;   core_inv.cpp_CInventory_save_FUN_004dc2c0 at 004dc40a
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0 at 004fbfc1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_actor_cpp_005ca89e

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 518,
-    "complexity_score": 410,
+    "complexity_score": 360,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 43,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 160,
-    "suspect_count": 23,
+    "suspect_count": 18,
     "suspect_types": [
       "undefined_data",
       "unnamed_field",
@@ -27,7 +27,7 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b8a9a",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,12 +62,12 @@
     {
       "addr": "004f6410",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6410"
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004f6410"
     },
     {
       "addr": "00530e00",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_00530e00"
+      "name": "core_script.cpp_CScript_saveState_FUN_00530e00"
     },
     {
       "addr": "0053b6a0",
@@ -100,11 +100,6 @@
       "name": "crt_string.c_splitpath_FUN_005a5128"
     },
     {
-      "addr": "005a28c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
-    },
-    {
       "addr": "005a3140",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a3140"
@@ -113,6 +108,11 @@
       "addr": "005a54b0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a54b0"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "005a4e10",
@@ -127,7 +127,7 @@
     {
       "addr": "0047e470",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047e470"
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470"
     },
     {
       "addr": "00440810",
@@ -140,14 +140,14 @@
       "name": "support_codec.cpp_CLZWCompress_ctor_FUN_004410f0"
     },
     {
+      "addr": "00441140",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_00441140"
+    },
+    {
       "addr": "00440bf0",
       "is_variadic": false,
       "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00440bf0"
-    },
-    {
-      "addr": "00441140",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_00441140"
     },
     {
       "addr": "00441190",
@@ -476,7 +476,7 @@
       {
         "call_addr": "004b8a9a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -808,42 +808,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x278",
-      "severity": "mild",
-      "text": "(file_handle,\"%f,%f,%f,%d,%d\\n\",(double)*(float *)&this_ptr->field_0x278,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x270",
-      "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x270,(double)*(float *)&this_ptr->field_0x294,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 111,
       "match": "field_0x294",
       "severity": "mild",
-      "text": "(double)*(float *)&this_ptr->field_0x270,(double)*(float *)&this_ptr->field_0x294,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x274",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x274,*(uint *)&this_ptr->field_0x27c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x27c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x274,*(uint *)&this_ptr->field_0x27c);",
+      "text": "(double)this_ptr->total_game_time,(double)*(float *)&this_ptr->field_0x294,",
       "type": "unnamed_field"
     },
     {
@@ -852,14 +820,6 @@
       "match": "DAT_007df9c0",
       "severity": "mild",
       "text": "DAT_007df9c0 = (_FILE *)0x0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 130,
-      "match": "DAT_005c3654",
-      "severity": "mild",
-      "text": "FUN_005a28c0(local_28c,\"%s\\\\%s\",&DAT_005c3654,local_494);",
       "type": "undefined_data"
     },
     {

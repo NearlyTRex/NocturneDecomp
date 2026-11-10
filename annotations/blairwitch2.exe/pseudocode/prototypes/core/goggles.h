@@ -21,33 +21,33 @@ CDemonActorType * CGoggles::getActorType(CGoggles *this_ptr);
 // Address: 0059c060
 CGoggles * CGoggles::ctor(CGoggles *this_ptr);
 
-// Original: core_goggles.cpp_FUN_0059c0b0
+// Original: core_goggles.cpp_CGoggles_setup_FUN_0059c0b0
 // Address: 0059c0b0
-void FUN_0059c0b0(CDemonActor *param_1);
+void __cdecl CGoggles::setup(CGoggles *this_ptr);
 
-// Original: core_goggles.cpp_FUN_0059c0d0
+// Original: core_goggles.cpp_CGoggles_canPickup_FUN_0059c0d0
 // Address: 0059c0d0
-undefined4 FUN_0059c0d0(undefined4 param_1,CDemonActor *param_2);
+int __cdecl CGoggles::canPickup(CGoggles *this_ptr,CDemonActor *picker);
 
-// Original: core_goggles.cpp_FUN_0059c0f0
+// Original: core_goggles.cpp_CGoggles_process_FUN_0059c0f0
 // Address: 0059c0f0
-void FUN_0059c0f0(void);
+void __cdecl CGoggles::process(CGoggles *this_ptr,float delta_time);
 
-// Original: core_goggles.cpp_FUN_0059c100
+// Original: core_goggles.cpp_CGoggles_renderOpaque_FUN_0059c100
 // Address: 0059c100
-int FUN_0059c100(int param_1);
+int __cdecl CGoggles::renderOpaque(CGoggles *this_ptr);
 
-// Original: core_goggles.cpp_FUN_0059c1a0
+// Original: core_goggles.cpp_CGoggles_archive_FUN_0059c1a0
 // Address: 0059c1a0
-void FUN_0059c1a0(CDemonActor *param_1);
+void __cdecl CGoggles::archive(CGoggles *this_ptr);
 
-// Original: core_goggles.cpp_FUN_0059c1d0
+// Original: core_goggles.cpp_CGoggles_getCollisionType_FUN_0059c1d0
 // Address: 0059c1d0
-undefined4 FUN_0059c1d0(void);
+ECollisionType __cdecl CGoggles::getCollisionType(CGoggles *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_goggles.cpp_FUN_0059c1e0
+// Original: core_goggles.cpp_CGoggles_getBoundingBox_FUN_0059c1e0
 // Address: 0059c1e0
-void FUN_0059c1e0(int param_1);
+CBoundingBox3D * __cdecl CGoggles::getBoundingBox(CGoggles *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_goggles.cpp_CGoggles_dtor_FUN_0059c220
 // Address: 0059c220

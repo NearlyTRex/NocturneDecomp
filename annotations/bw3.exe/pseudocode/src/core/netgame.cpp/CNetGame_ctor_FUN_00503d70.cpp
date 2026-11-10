@@ -15,9 +15,9 @@ CNetGame * __cdecl core_netgame_cpp_CNetGame_ctor_FUN_00503d70(CNetGame *this_pt
   char *pcVar4;
   CSocket *pCVar5;
   
-  iVar2 = __arrinit(&this_ptr->field_0x20,2,&g_SNetPlayerTypeInfo);
+  iVar2 = __arrinit(this_ptr->players,2,&g_SNetPlayerTypeInfo);
   pCVar3 = support_trisock_cpp_CSocket_ctor_FUN_0056f8d0((CSocket *)(iVar2 + 0x160));
-  *(uint *)(pCVar3 + -0x180) = 0;
+  ((CNetGame *)(pCVar3 + -0x180))->connection_type = CONNECTION_NONE;
   *(uint *)(pCVar3 + -0x17c) = 0;
   pcVar4 = "MyComputer";
   *(uint *)(pCVar3 + -0x164) = 0;

@@ -6,11 +6,11 @@
 ;
 ; XREF[7]:
 ;   core_menu.cpp_FUN_0050ba70 at 0050c49f
-;   core_sound.cpp_FUN_0057cb9e at 0057cbdd
+;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d6e9
+;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d09f
 ;   core_sound.cpp_FUN_0057cc00 at 0057cccd
-;   core_sound.cpp_FUN_0057ce10 at 0057d09f
-;   core_sound.cpp_FUN_0057d6a0 at 0057d6e9
-;   sound_sndmain.cpp_FUN_005760b0 at 00576383
+;   core_sound.cpp_syncChannel3WithChannel0_FUN_0057cb9e at 0057cbdd
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576383
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e09
 ;
 ; Referenced Globals:

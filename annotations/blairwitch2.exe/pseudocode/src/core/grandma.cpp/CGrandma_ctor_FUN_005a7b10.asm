@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
-;   core_grandma.cpp_FUN_005a7c20
+;   core_grandma.cpp_CGrandma_processStates_FUN_005a7c20
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 005a7ba3
     PUSH 0x0                            ; 005a7ba5
     PUSH EBX                            ; 005a7ba7
-    CALL core_grandma.cpp_FUN_005a7c20  ; 005a7ba8
-        ;   XREF to: 005a7c20 (UNCONDITIONAL_CALL)  ; undefined core_grandma.cpp_FUN_005a7c20()
+    CALL core_grandma.cpp_CGrandma_processStates_FUN_005a7c20 ; 005a7ba8
+        ;   XREF to: 005a7c20 (UNCONDITIONAL_CALL)  ; void core_grandma.cpp_CGrandma_processStates_FUN_005a7c20(CGrandma * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a7bad
     PUSH 0x5f0802                       ; 005a7bb0
     LEA ESI,[EBX + 0x10af8]             ; 005a7bb5

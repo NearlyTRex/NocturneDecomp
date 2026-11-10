@@ -5,9 +5,9 @@
 // Function prototypes for support/newmsg.cpp
 // Generated from Ghidra function signatures
 
-// Original: support_newmsg.cpp_FUN_0050f9e0
+// Original: support_newmsg.cpp_readMessageFile_FUN_0050f9e0
 // Address: 0050f9e0
-void FUN_0050f9e0(char *param_1);
+void __cdecl readMessageFile(char *message_file);
 
 // Original: support_newmsg.cpp_findLocalizedString_FUN_0050fe00
 // Address: 0050fe00
@@ -17,6 +17,6 @@ char * __cdecl findLocalizedString(char *key,int lower_bound,int upper_bound);
 // Address: 0050fe80
 char * __cdecl getLocalizedString(char *key);
 
-// Original: support_newmsg.cpp_FUN_0050ff00
+// Original: support_newmsg.cpp_decryptMessage_FUN_0050ff00
 // Address: 0050ff00
-char * __cdecl FUN_0050ff00(char *encrypted_msg);
+char * __cdecl decryptMessage(char *encrypted_msg);

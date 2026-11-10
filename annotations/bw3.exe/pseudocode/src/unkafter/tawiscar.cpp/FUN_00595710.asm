@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_tawiscar.cpp_FUN_00594000 at 00594d7f
-;   unkafter_tawiscar.cpp_FUN_00595f90 at 005960d8
+;   core_tawiscar.cpp_CTawiscara_processDamage_FUN_00595f90 at 005960d8
+;   core_tawiscara.cpp_FUN_00594000 at 00594d7f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_were_wav_005d93a1

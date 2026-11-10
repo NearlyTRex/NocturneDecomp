@@ -11,7 +11,7 @@ void core_bugs_cpp_factoryFuncBugs_FUN_00424f50(void)
 {
   CBugs *this_ptr;
   
-  this_ptr = (CBugs *)FUN_005c0f32(0x19da4);
+  this_ptr = (CBugs *)debugAllocTracked1(0x19da4);
   if (this_ptr == (CBugs *)0x0) {
     return;
   }

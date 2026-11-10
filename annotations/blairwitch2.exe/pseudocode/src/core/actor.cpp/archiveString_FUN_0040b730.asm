@@ -12,12 +12,12 @@
 ;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040bae0 at 0040bb05
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60 at 0040ba85
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040b850 at 0040b8a5
-;   core_ammo.cpp_FUN_0040e1b0 at 0040e1de
-;   core_ammobox.cpp_FUN_0040e860 at 0040e88e
-;   core_anvil.cpp_FUN_0040ecc0 at 0040ecee
-;   core_armour.cpp_FUN_0040f040 at 0040f091
-;   core_baron.cpp_FUN_00410600 at 00410627
-;   core_barrier.cpp_FUN_00410dc0 at 00410dfb
+;   core_ammo.cpp_CAmmo_archive_FUN_0040e1b0 at 0040e1de
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e88e
+;   core_anvil.cpp_CAnvil_archive_FUN_0040ecc0 at 0040ecee
+;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f091
+;   core_baron.cpp_CBaron_archive_FUN_00410600 at 00410627
+;   core_barrier.cpp_CBarrier_archive_FUN_00410dc0 at 00410dfb
 ;   ... and 47 more
 ;
 ; Referenced Globals:

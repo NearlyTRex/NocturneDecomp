@@ -9,5 +9,5 @@
 int __cdecl engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(CDemonRenderer *this_ptr)
 
 {
-  return *(int *)(this_ptr + 4);
+  return this_ptr->shadow_pass_active;
 }

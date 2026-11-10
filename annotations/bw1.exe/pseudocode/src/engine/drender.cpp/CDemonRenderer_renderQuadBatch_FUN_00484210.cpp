@@ -14,7 +14,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00484210(CDem
   if (render_flags == -1) {
     render_flags = 0x2cd;
   }
-  if (*(int *)(this_ptr + 0x1c) == 0) {
+  if (this_ptr->texture_capture_enabled == 0) {
     engine_drender_cpp_CDemonRenderer_renderFacetList_FUN_00484280
               (this_ptr,primitive_array,primitive_count,0x48,render_flags);
     return;
@@ -24,8 +24,8 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00484210(CDem
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_processQuadPrimitive_FUN_00484b20
-                (this_ptr,(SMRGLHeaderPrimitive *)primitive_array,render_flags);
-      primitive_array = primitive_array + 0x48;
+                (this_ptr,&primitive_array->base,render_flags);
+      primitive_array = primitive_array + 1;
     } while (iVar1 < primitive_count);
   }
   return;

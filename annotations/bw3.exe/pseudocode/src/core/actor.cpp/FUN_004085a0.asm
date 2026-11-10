@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
+;   core_inv.cpp_CInventory_removeItem_FUN_004dbaa0 at 004dbb2a
 ;   core_inv.cpp_FUN_004da880 at 004db88a
-;   core_inv.cpp_FUN_004dbaa0 at 004dbb2a
 ;   core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0 at 004f6cc1
 ;
 ; *****************************************************************************

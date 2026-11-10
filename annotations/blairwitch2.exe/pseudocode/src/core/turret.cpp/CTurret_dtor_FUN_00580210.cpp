@@ -17,7 +17,7 @@ CTurret * __cdecl core_turret_cpp_CTurret_dtor_FUN_00580210(CTurret *this_ptr,ui
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CTurret *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
+  pCVar1 = (CTurret *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -12,9 +12,9 @@
 ;
 ; XREF[5]:
 ;   core_charactr.cpp_CCharacter_archive_FUN_00422c30 at 00422d8c
-;   core_health.cpp_FUN_004cdee0 at 004cdf50
+;   core_health.cpp_CHealthItem_archive_FUN_004cdee0 at 004cdf50
 ;   core_hostage.cpp_CHostage_archive_FUN_004d2df0 at 004d2f8a
-;   core_keyactor.cpp_FUN_004df320 at 004df37c
+;   core_keyactor.cpp_CKeyActor_archive_FUN_004df320 at 004df37c
 ;   core_weapon.cpp_CWeapon_archive_FUN_00589d60 at 00589dee
 ;
 ; Referenced Globals:

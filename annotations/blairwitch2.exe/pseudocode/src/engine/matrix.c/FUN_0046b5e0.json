@@ -38,7 +38,13 @@
     {
       "addr": "0044b960",
       "from_addr": "0044b9a2",
-      "name": "core_dlight.cpp_FUN_0044b960",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a500",
+      "from_addr": "0049a5ff",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_0049a500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,21 +54,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049a500",
-      "from_addr": "0049a5ff",
-      "name": "core_fire.cpp_FUN_0049a500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005332f0",
       "from_addr": "00533336",
-      "name": "core_set.cpp_FUN_005332f0",
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005341b0",
       "from_addr": "005341ca",
-      "name": "core_set.cpp_FUN_005341b0",
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -89,7 +89,7 @@
     {
       "addr": "004ea3b0",
       "is_variadic": false,
-      "name": "engine_matrix.c_FUN_004ea3b0"
+      "name": "engine_matrix.c_getCameraOrigin_FUN_004ea3b0"
     }
   ],
   "globals": [
@@ -135,7 +135,7 @@
       {
         "call_addr": "0049a5ff",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a500",
+        "caller": "core_fire.cpp_CGunFlame_render_FUN_0049a500",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "0044b9a2",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_0044b960",
+        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +204,7 @@
       {
         "call_addr": "00533336",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005332f0",
+        "caller": "core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +217,7 @@
       {
         "call_addr": "005341ca",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005341b0",
+        "caller": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

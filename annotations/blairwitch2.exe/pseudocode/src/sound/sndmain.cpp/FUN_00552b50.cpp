@@ -13,7 +13,7 @@ void sound_sndmain_cpp_FUN_00552b50(uint param_1)
 {
   uint uVar1;
   
-  uVar1 = sound_sndmain_cpp_FUN_00552b10();
+  uVar1 = sound_sndmain_cpp_isSoundSystemActive_FUN_00552b10();
   if (uVar1 == 0) {
     DAT_0061bcb0 = param_1;
     return;

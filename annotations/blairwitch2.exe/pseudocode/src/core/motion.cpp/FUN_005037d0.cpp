@@ -15,7 +15,8 @@ void core_motion_cpp_FUN_005037d0(uint *param_1,uint param_2)
   if (*(char *)(param_1 + 0xc) == '\0') {
     return;
   }
-  iVar1 = core_motion_cpp_FUN_00502f10((CMotionList *)*param_1,(char *)(param_1 + 0xc),0);
+  iVar1 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10
+                    ((CMotionList *)*param_1,(char *)(param_1 + 0xc),0);
   param_1[1] = iVar1;
   if (-1 < iVar1) {
     *(byte *)(param_1 + 0xc) = 0;

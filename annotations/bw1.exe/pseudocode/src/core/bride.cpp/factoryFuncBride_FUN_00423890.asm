@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_bride.cpp_CBride_ctor_FUN_004238c0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xc29c                         ; 00423890
         ;   Label: core_bride.cpp_factoryFuncBride_FUN_00423890
-    CALL crt_unknown.c_FUN_005c0f32     ; 00423895
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00423895
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 0042389a
     TEST EAX,EAX                        ; 0042389d
     JNZ 0x004238a2                      ; 0042389f

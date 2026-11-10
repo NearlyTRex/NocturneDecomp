@@ -22,26 +22,25 @@ void __cdecl core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0(CDemonP
   uint uStack_18;
   
   iVar2 = 0;
-  if (0 < *(int *)(this_ptr + 0x24)) {
+  if (0 < this_ptr->face_count) {
     iVar1 = 0;
     do {
       uStack_44 = 3;
-      uStack_40 = *(uint *)(iVar1 + *(int *)(this_ptr + 0x34));
-      uStack_3c = *(uint *)(iVar1 + 4 + *(int *)(this_ptr + 0x34));
-      uStack_38 = *(uint *)(iVar1 + 8 + *(int *)(this_ptr + 0x34));
-      uStack_34 = *(uint *)(iVar1 + 0xc + *(int *)(this_ptr + 0x34));
-      uStack_30 = *(uint *)(iVar1 + 0x10 + *(int *)(this_ptr + 0x34));
-      uStack_24 = *(uint *)(iVar1 + 0x14 + *(int *)(this_ptr + 0x34));
-      uStack_18 = *(uint *)(iVar1 + 0x18 + *(int *)(this_ptr + 0x34));
-      engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0
-                (*(uint *)(this_ptr + 0x2c),auStack_48);
-      *(uint *)(*(int *)(this_ptr + 0x34) + iVar1) = uStack_40;
-      *(uint *)(*(int *)(this_ptr + 0x34) + iVar1 + 4) = uStack_3c;
-      *(uint *)(*(int *)(this_ptr + 0x34) + iVar1 + 8) = uStack_38;
-      *(uint *)(*(int *)(this_ptr + 0x34) + iVar1 + 0xc) = uStack_34;
+      uStack_40 = *(uint *)(this_ptr->face_data + iVar1);
+      uStack_3c = *(uint *)(this_ptr->face_data + iVar1 + 4);
+      uStack_38 = *(uint *)(this_ptr->face_data + iVar1 + 8);
+      uStack_34 = *(uint *)(this_ptr->face_data + iVar1 + 0xc);
+      uStack_30 = *(uint *)(this_ptr->face_data + iVar1 + 0x10);
+      uStack_24 = *(uint *)(this_ptr->face_data + iVar1 + 0x14);
+      uStack_18 = *(uint *)(this_ptr->face_data + iVar1 + 0x18);
+      engine_keyframe_c_calculateSurfaceNormal_FUN_004fc9c0(this_ptr->vertex_positions,auStack_48);
+      *(uint *)(this_ptr->face_data + iVar1) = uStack_40;
+      *(uint *)(this_ptr->face_data + iVar1 + 4) = uStack_3c;
+      *(uint *)(this_ptr->face_data + iVar1 + 8) = uStack_38;
+      *(uint *)(this_ptr->face_data + iVar1 + 0xc) = uStack_34;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x20;
-    } while (iVar2 < *(int *)(this_ptr + 0x24));
+    } while (iVar2 < this_ptr->face_count);
   }
   return;
 }

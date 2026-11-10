@@ -39,8 +39,9 @@ void shape_edittool_cpp_FUN_0048546e(CEdCheck *param_1,uint param_2,uint param_3
     core_main_c_FUN_004e4500("gEdFont must be set by the application.");
   }
   _DAT_01c25f78 = *(uint *)(_DAT_01c25590 + 0x41e8);
-  _DAT_01c25f7c = engine_font_cpp_FUN_004ab560(_DAT_01c25590,0x6a);
-  iVar2 = engine_font_cpp_FUN_004aafb0(_DAT_01c25590,(char *)(param_1 + 0x24));
+  _DAT_01c25f7c = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01c25590,0x6a);
+  iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0
+                    (_DAT_01c25590,(char *)(param_1 + 0x24));
   *(int *)(param_1 + 0x1c) = *(int *)(param_1 + 0x14) + iVar2;
   iVar3 = shape_edittool_cpp_CEdCheck_calculateScaledWidth_FUN_00485580(param_1);
   iVar2 = *(int *)(param_1 + 0x10);

@@ -9,5 +9,5 @@
 int __cdecl engine_drender_cpp_CDemonRenderer_getAlphaMask_FUN_00484180(CDemonRenderer *this_ptr)
 
 {
-  return *(int *)(this_ptr + 0x14) >> 0x18;
+  return this_ptr->alpha_mask >> 0x18;
 }

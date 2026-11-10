@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_pendulum.cpp_CPendulum_ctor_FUN_00514cd0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x5a0                          ; 00514ca0
         ;   Label: core_pendulum.cpp_factoryFuncPendulum_FUN_00514ca0
-    CALL crt_unknown.c_FUN_005b8be2     ; 00514ca5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00514ca5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 00514caa
     TEST EAX,EAX                        ; 00514cad
     JNZ 0x00514cb2                      ; 00514caf

@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408600
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV dword ptr [EAX + 0x15c],0x40000000 ; 004a59dc
     PUSH 0x0                            ; 004a59e6
     MOV dword ptr [EAX + 0x160],0x3f800000 ; 004a59e8
-    CALL core_actor.cpp_FUN_0040ce40    ; 004a59f2
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004a59f2
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBX + 0x1a8],0x0     ; 004a59f7
     MOV dword ptr [EBX + 0x1ac],0x3f800000 ; 004a5a01
     MOV dword ptr [EBX + 0x290],0x1     ; 004a5a0b

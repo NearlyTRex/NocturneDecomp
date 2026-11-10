@@ -9,7 +9,7 @@
 ;   core_menu.cpp_FUN_004ecc70 at 004ecd08
 ;   core_menu.cpp_FUN_004ed260 at 004ed2fd
 ;   core_menu.cpp_FUN_004ee1a0 at 004ee239
-;   core_menu.cpp_FUN_004ee3f0 at 004ee51d
+;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee51d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df2dd

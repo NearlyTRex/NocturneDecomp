@@ -11,25 +11,25 @@
 void __cdecl core_cloth_cpp_CClothList_add_FUN_005b15c0(CClothList *this_ptr,char *filename)
 
 {
-  CClothList CVar1;
-  CClothList *pCVar2;
+  char cVar1;
+  char (*pacVar2) [40];
   
-  if (9 < *(int *)this_ptr) {
+  if (9 < this_ptr->count) {
     _DAT_01d046a0 = "..\\core\\cloth.cpp";
     _DAT_01d046a4 = 0x5de;
     core_main_c_FUN_004e4500("CClothList::add - list is full");
   }
-  pCVar2 = this_ptr + *(int *)this_ptr * 0x28 + 4;
+  pacVar2 = this_ptr->filenames + this_ptr->count;
   do {
-    CVar1 = (CClothList)*filename;
-    *pCVar2 = CVar1;
-    if (CVar1 == (CClothList)0x0) break;
-    CVar1 = *(CClothList *)(filename + 1);
+    cVar1 = *filename;
+    (*pacVar2)[0] = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = filename[1];
     filename = filename + 2;
-    pCVar2[1] = CVar1;
-    pCVar2 = pCVar2 + 2;
-  } while (CVar1 != (CClothList)0x0);
-  *(uint *)(this_ptr + *(int *)this_ptr * 4 + 0x194) = 0;
-  *(int *)this_ptr = *(int *)this_ptr + 1;
+    (*pacVar2)[1] = cVar1;
+    pacVar2 = (char (*) [40])(*pacVar2 + 2);
+  } while (cVar1 != '\0');
+  this_ptr->cloths[this_ptr->count] = (CCloth *)0x0;
+  this_ptr->count = this_ptr->count + 1;
   return;
 }

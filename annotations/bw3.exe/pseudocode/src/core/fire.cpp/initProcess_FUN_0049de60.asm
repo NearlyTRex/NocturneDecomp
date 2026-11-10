@@ -19,9 +19,9 @@
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
-;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
+;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
@@ -43,7 +43,7 @@ section .text
     MOV dword ptr [0x01c74b68],EDX      ; 0049de6a | DAT_01c74b68
     MOV EBX,dword ptr [0x00603b28]      ; 0049de70 | g_CDemonSetPtr
         ;   Label: LAB_0049de70
-    CMP EDI,dword ptr [EBX + 0x14f0a8]  ; 0049de76 | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP EDI,dword ptr [EBX + 0x14f0a8]  ; 0049de76 | g_CDemonSetInstance.character_count
     JL 0x0049de9e                       ; 0049de7c
         ;   XREF to: 0049de9e (CONDITIONAL_JUMP)  ; LAB_0049de9e
     XOR EBX,EBX                         ; 0049de7e
@@ -51,7 +51,7 @@ section .text
     MOV dword ptr [0x01c74c34],EBX      ; 0049de82 | DAT_01c74c34
     MOV EAX,[0x00603b28]                ; 0049de88 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_0049de88
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0049de8d | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0049de8d | g_CDemonSetInstance.actor_count
     JL 0x0049df19                       ; 0049de93
         ;   XREF to: 0049df19 (CONDITIONAL_JUMP)  ; LAB_0049df19
     POP EBP                             ; 0049de99
@@ -104,7 +104,7 @@ section .text
     MOV EBP,dword ptr [0x01d0cf60]      ; 0049df19 | g_CFlameCanClassInfo.name_hash
         ;   Label: LAB_0049df19
     PUSH EBP                            ; 0049df1f
-    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 0049df20 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EDX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 0049df20 | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 0049df27
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0049df28
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()

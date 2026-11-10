@@ -9,7 +9,7 @@
 ; char *           Stack[0xc]:4   wildcard_pattern
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0055f020 at 0055f422
+;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f422
 ;
 ; Referenced Globals:
 ;   CStrList g_CStrListInstance

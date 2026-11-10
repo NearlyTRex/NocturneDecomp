@@ -20,16 +20,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[15]:
-;   core_baron.cpp_FUN_0040f4d0 at 0040f69e
-;   core_boneguy.cpp_FUN_0041d540 at 0041d6d5
-;   core_boneguy.cpp_FUN_0041d760 at 0041d795
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f69e
+;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d760 at 0041d795
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540 at 0041d6d5
 ;   core_construc.cpp_FUN_004472a0 at 0044743a
 ;   core_construc.cpp_FUN_00447560 at 00447595
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00447810 at 0044784b
 ;   core_doc.cpp_FUN_0046caa0 at 0046d42e
-;   core_gabriela.cpp_FUN_004c89c0 at 004c8a0b
-;   core_haystack.cpp_FUN_004e9250 at 004e9537
-;   core_icepick.cpp_FUN_004f0e50 at 004f11ac
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8a0b
+;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9537
+;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f11ac
 ;   ... and 5 more
 ;
 ; Referenced Globals:

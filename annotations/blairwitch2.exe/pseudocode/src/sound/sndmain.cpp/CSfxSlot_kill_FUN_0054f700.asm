@@ -13,10 +13,10 @@
 ;   sound_sndmain.cpp_FUN_0054edb0 at 0054eef5
 ;   sound_sndmain.cpp_FUN_0054f8a0 at 0054f919
 ;   sound_sndmain.cpp_FUN_005506b0 at 0055092b
-;   sound_sndmain.cpp_FUN_005510d0 at 005510e3
-;   sound_sndmain.cpp_FUN_00551220 at 00551277
-;   sound_sndmain.cpp_FUN_005518e0 at 00551923
 ;   sound_sndmain.cpp_FUN_00553380 at 00553534
+;   sound_sndmain.cpp_enableSfxChannel_FUN_00551220 at 00551277
+;   sound_sndmain.cpp_killAllSfx_FUN_005510d0 at 005510e3
+;   sound_sndmain.cpp_killSfxByName_FUN_005518e0 at 00551923
 ;   ... and 1 more
 ;
 ; Referenced Globals:

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 64,
-    "complexity_score": 167,
+    "complexity_score": 80,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 13,
+    "pseudocode_lines": 30,
+    "suspect_count": 4,
     "suspect_types": [
-      "shadow_pointer_walk",
-      "unnamed_field"
+      "pointer_cast",
+      "shadow_pointer_walk"
     ],
-    "total_lines": 91
+    "total_lines": 94
   },
   "cross_references": [
     {
@@ -25,7 +25,7 @@
     {
       "addr": "00510e00",
       "from_addr": "00510e05",
-      "name": "core_minecar.cpp_FUN_00510e00",
+      "name": "core_minecar.cpp_CMineCar_setup_FUN_00510e00",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,7 +45,7 @@
     {
       "addr": "00408850",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408850"
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408850"
     },
     {
       "addr": "00447db0",
@@ -86,7 +86,7 @@
       {
         "call_addr": "00510e05",
         "call_type": "direct",
-        "caller": "core_minecar.cpp_FUN_00510e00",
+        "caller": "core_minecar.cpp_CMineCar_setup_FUN_00510e00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,107 +144,35 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2f0",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x2f0 != '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x310",
-      "severity": "mild",
-      "text": "((CCourse *)&this_ptr->field_0x310,&this_ptr->field_0x2f0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2f0",
-      "severity": "mild",
-      "text": "((CCourse *)&this_ptr->field_0x310,&this_ptr->field_0x2f0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x318 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x51c",
-      "severity": "mild",
-      "text": "while (actor = *(CDemonActor **)&pCVar1->field_0x51c, actor != (CDemonActor *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x51c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x51c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x208",
-      "severity": "mild",
-      "text": "if (pCVar1 == (CPlatform *)&this_ptr->field_0x208) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x208",
-      "severity": "mild",
-      "text": "} while (pCVar1 != (CPlatform *)&this_ptr->field_0x208);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 22,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 25,
+      "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 30,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 25,
+      "match": "pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "shadow_pointer_walk"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 27,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 30,
+      "match": "pCVar2 = (T *)((int)&(pCVar2->FIELD).SUBFIELD + CONST)",
       "severity": "moderate",
-      "text": "pCVar1 = (CPlatform *)&pCVar1->field_0x34;",
+      "text": "pCVar2 = (CPlatform *)((int)&(pCVar2->base).orient + 4);",
       "type": "shadow_pointer_walk"
     }
   ],

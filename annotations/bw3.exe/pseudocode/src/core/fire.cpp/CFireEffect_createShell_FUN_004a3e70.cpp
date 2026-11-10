@@ -11,7 +11,8 @@
 void __cdecl core_fire_cpp_CFireEffect_createShell_FUN_004a3e70(CFireEffect *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr)
 
 {
-  core_fire_cpp_FUN_004a0960(g_ShellPool + _DAT_01d028c4,position,euler_angles,velocity,model_ptr);
+  core_fire_cpp_CShell_setup_FUN_004a0960
+            (g_ShellPool + _DAT_01d028c4,position,euler_angles,velocity,model_ptr);
   _DAT_01d028c4 = _DAT_01d028c4 + 1;
   if (_DAT_01d028c4 < 0x32) {
     return;

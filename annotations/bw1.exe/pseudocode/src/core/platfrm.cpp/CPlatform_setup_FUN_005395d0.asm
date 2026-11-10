@@ -8,10 +8,10 @@
 ;
 ; XREF[2]:
 ;   core_conveyor.cpp_CConveyor_setup_FUN_00447810 at 00447872
-;   core_minecar.cpp_FUN_00510e00 at 00510e05
+;   core_minecar.cpp_CMineCar_setup_FUN_00510e00 at 00510e05
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_course.cpp_CCourse_load_FUN_00447db0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_0053adb0
@@ -27,8 +27,8 @@ section .text
     PUSH EDI                            ; 005395d2
     MOV ESI,dword ptr [ESP + 0x10]      ; 005395d3
     PUSH ESI                            ; 005395d7
-    CALL core_actor.cpp_FUN_00408850    ; 005395d8
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 005395d8
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     MOV AH,byte ptr [ESI + 0x2f0]       ; 005395dd
     ADD ESP,0x4                         ; 005395e3
     TEST AH,AH                          ; 005395e6

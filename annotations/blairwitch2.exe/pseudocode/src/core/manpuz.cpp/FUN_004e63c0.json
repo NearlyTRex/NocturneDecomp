@@ -2,26 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 323,
-    "complexity_score": 342,
+    "complexity_score": 407,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 142,
-    "suspect_count": 18,
+    "pseudocode_lines": 137,
+    "suspect_count": 25,
     "suspect_types": [
       "extra_output",
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 465
+    "total_lines": 460
   },
   "cross_references": [
     {
       "addr": "004e56d0",
       "from_addr": "004e577f",
-      "name": "core_manpuz.cpp_FUN_004e56d0",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +46,7 @@
     {
       "addr": "005344c0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_005344c0"
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_005344c0"
     },
     {
       "addr": "005b7ff0",
@@ -132,7 +132,7 @@
       {
         "call_addr": "004e577f",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_004e56d0",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,103 +220,159 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 8,
+      "line": 9,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int *extraout_EDX;",
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0xbfc",
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "pfVar2 = (float *)(&this_ptr->field_0xbfc + gem_index * 0xb8);",
+      "text": "(DAT_0060b280,(CVector3f *)&pSVar3->field_0x30,(CVector3f *)&pSVar3->field_0x24);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(CVector3f *)&pSVar3->field_0x30,(CVector3f *)&pSVar3->field_0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "(DAT_0060b280,(CVector3f *)&pSVar3->field_0x30,(CVector3f *)&pSVar3->field_0x24);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(float *)&pSVar3->field_0x8 * fVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "fVar6 = (float10)*(float *)&pSVar3->field_0x4 * fVar4;",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 61,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)(pfVar2 + 0xc),(CVector3f *)(pfVar2 + 9));",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "((((float)_DAT_005dc52d < *(float *)&pSVar3->field_0xc ||",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "((float)_DAT_005dc52d < *(float *)&pSVar3->field_0x10)) ||",
+      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 65,
-      "match": "field_0x430",
+      "match": "field_0x14",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x430,0.0,-1);",
+      "text": "((float)_DAT_005dc52d < *(float *)&pSVar3->field_0x14)))) {",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 72,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
+      "text": "engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_48);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 77,
+      "line": 78,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_special_cpp_FUN_0055d723(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&iStack_48);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_60);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 84,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&iStack_60);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_54);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 90,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&iStack_54);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_3c);",
       "type": "undefined_data"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 95,
-      "match": "DAT_0060b280",
+      "description": "Auto-generated struct field name",
+      "line": 105,
+      "match": "field_0xc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&iStack_3c);",
-      "type": "undefined_data"
+      "text": "fVar5 = (float10)*(float *)&pSVar3->field_0xc * fVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 106,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "fVar6 = (float10)*(float *)&pSVar3->field_0x10 * fVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 107,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "fVar4 = (float10)*(float *)&pSVar3->field_0x14 * fVar4;",
+      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 108,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "iVar1 = *(int *)DAT_0060b280;",
+      "text": "pSVar1 = DAT_0060b280->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 119,
+      "line": 114,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(int *)(*extraout_EDX + 0x24) = iStack_1c;",
       "type": "extra_output"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 137,
-      "match": "field_0x161c",
-      "severity": "mild",
-      "text": "(this_ptr_00,(SMRGLTextureBasic *)&this_ptr->field_0x161c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 133,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,0);",
@@ -324,7 +380,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 134,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,1);",
@@ -332,7 +388,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 140,
+      "line": 135,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046aa00(DAT_0060b280,aSStack_a8);",
@@ -340,7 +396,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 136,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046b870(DAT_0060b280,1);",
@@ -348,7 +404,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 137,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);",

@@ -16,16 +16,17 @@ CZombieCow * core_cow_cpp_CZombieCow_ctor_FUN_00444f60(CZombieCow *this_ptr)
   uint uVar2;
   CZombieCow *pCVar3;
   
-  pCVar3 = (CZombieCow *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CZombieCowVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,0x5b98b0);
-  *(uint *)&pCVar3->field_0x326c = 0x3fe00000;
+  pCVar3 = (CZombieCow *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0(&this_ptr->base);
+  (pCVar3->base).base.base.vtable._ub = &g_CZombieCowVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            (&(pCVar3->base).base.model,(char *)0x5b98b0);
+  *(uint *)&(pCVar3->base).base.field_0x326c = 0x3fe00000;
   uVar1 = _DAT_005ddbac;
-  *(uint *)&pCVar3->field_0x3270 = 0x40600000;
+  *(uint *)&(pCVar3->base).base.field_0x3270 = 0x40600000;
   uVar2 = _DAT_005ddbb0;
-  *(uint *)&pCVar3->field_0xd05c = 0;
-  *(uint *)&pCVar3->field_0x252c = 0x3f490fdb;
-  *(uint *)&pCVar3->field_0x3274 = uVar1;
-  *(uint *)&pCVar3->field_0x3278 = uVar2;
+  pCVar3->sfx_handle = 0;
+  *(uint *)&(pCVar3->base).base.field_0x252c = 0x3f490fdb;
+  *(uint *)&(pCVar3->base).base.field_0x3274 = uVar1;
+  *(uint *)&(pCVar3->base).base.field_0x3278 = uVar2;
   return pCVar3;
 }

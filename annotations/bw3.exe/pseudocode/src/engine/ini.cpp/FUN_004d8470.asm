@@ -27,7 +27,7 @@
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fopen_FUN_005a43ec
 ;   crt_string.c__strcmp_FUN_005a3d00
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5c56fb                       ; 004d84b2 | = "[%s]\n"
     LEA EAX,[ESP + 0x108]               ; 004d84b7
     PUSH EAX                            ; 004d84be
-    CALL crt_unknown.c_FUN_005a28c0     ; 004d84bf
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d84bf
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d84c4
     TEST EBP,EBP                        ; 004d84c7
         ;   Label: LAB_004d84c7

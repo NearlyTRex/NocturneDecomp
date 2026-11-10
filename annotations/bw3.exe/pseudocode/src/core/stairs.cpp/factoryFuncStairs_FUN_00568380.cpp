@@ -11,7 +11,7 @@ void core_stairs_cpp_factoryFuncStairs_FUN_00568380(void)
 {
   CStairs *this_ptr;
   
-  this_ptr = (CStairs *)FUN_005a3cb2(0xa34);
+  this_ptr = (CStairs *)debugAllocTracked1(0xa34);
   if (this_ptr == (CStairs *)0x0) {
     return;
   }

@@ -11,7 +11,7 @@ void core_spirbear_cpp_factoryFuncSpiritBear_FUN_0059aa70(void)
 {
   CSpiritBear *this_ptr;
   
-  this_ptr = (CSpiritBear *)FUN_005a3cb2(0x34da4);
+  this_ptr = (CSpiritBear *)debugAllocTracked1(0x34da4);
   if (this_ptr == (CSpiritBear *)0x0) {
     return;
   }

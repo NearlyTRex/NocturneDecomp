@@ -11,7 +11,7 @@ void core_spirindi_cpp_factoryFuncSpiritIndian_FUN_00599f30(void)
 {
   CSpiritIndian *this_ptr;
   
-  this_ptr = (CSpiritIndian *)FUN_005a3cb2(0x34da4);
+  this_ptr = (CSpiritIndian *)debugAllocTracked1(0x34da4);
   if (this_ptr == (CSpiritIndian *)0x0) {
     return;
   }

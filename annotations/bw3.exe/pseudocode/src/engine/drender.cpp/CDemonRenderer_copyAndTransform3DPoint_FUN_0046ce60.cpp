@@ -10,13 +10,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_0046c
 
 {
   byte auStack_10 [4];
-  uint local_c;
-  uint local_8;
-  uint local_4;
+  int local_c;
+  int local_8;
+  int local_4;
   
-  local_c = *(uint *)input_point;
-  local_8 = *(uint *)(input_point + 4);
-  local_4 = *(uint *)(input_point + 8);
+  local_c = input_point->x;
+  local_8 = input_point->y;
+  local_4 = input_point->z;
   engine_3d_c_processCameraRelativePoint_FUN_004037e0(auStack_10);
   return;
 }

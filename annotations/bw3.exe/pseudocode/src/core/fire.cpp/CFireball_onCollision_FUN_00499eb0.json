@@ -1,0 +1,238 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 128,
+    "complexity_score": 114,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 39,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00499eb0",
+    "address_range": [
+      [
+        "00499eb0",
+        "00499fdb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_fire.cpp_CFireball_onCollision_FUN_00499eb0",
+    "signature": "int __cdecl core_fire_cpp_CFireball_onCollision_FUN_00499eb0(CFireball *this_ptr,CVector3f *collision_normal)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a2830",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createFireball_FUN_004a2830"
+    },
+    {
+      "addr": "004a23c0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0"
+    },
+    {
+      "addr": "0053b440",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initCameraShake_FUN_0053b440"
+    },
+    {
+      "addr": "00555c90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00555c90"
+    },
+    {
+      "addr": "00555df0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00555df0"
+    },
+    {
+      "addr": "00556240",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556240"
+    },
+    {
+      "addr": "00556be0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00556be0"
+    },
+    {
+      "addr": "00556050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00556050"
+    },
+    {
+      "addr": "00555fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c0588",
+      "name": "s_rock_x_wav_005c0588",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c0593",
+      "name": "s_rock_x_wav_005c0593",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fc5a0",
+      "name": "DAT_005fc5a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.295238095238095,
+    "instruction_count": 105,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CALL": 12,
+      "CBRANCH": 4,
+      "COPY": 178,
+      "FLOAT2FLOAT": 12,
+      "INT_ADD": 28,
+      "INT_AND": 51,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 50,
+      "INT_LESS": 9,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 25,
+      "INT_SUB": 53,
+      "INT_XOR": 4,
+      "LOAD": 19,
+      "POPCOUNT": 25,
+      "RETURN": 2,
+      "STORE": 50
+    },
+    "pcode_op_count": 556
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFireball *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_normal",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00556be0(*(uint *)&this_ptr->field_0x60);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x4c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "((double)*(float *)this_ptr,(double)*(float *)&this_ptr->field_0x4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(double)*(float *)&this_ptr->field_0x8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x4c != 2) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "((double)*(float *)this_ptr,(double)*(float *)&this_ptr->field_0x4,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "(double)*(float *)&this_ptr->field_0x8);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CParticle",
+        "offset": 12,
+        "vtable_addr": "005df9d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

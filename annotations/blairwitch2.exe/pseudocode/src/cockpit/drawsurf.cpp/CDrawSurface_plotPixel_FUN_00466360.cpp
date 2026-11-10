@@ -16,10 +16,10 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_plotPixel_FUN_00466360(CDrawSurfa
   int iVar3;
   int iVar4;
   
-  iVar3 = x + *(int *)(this_ptr + 8);
-  iVar4 = y + *(int *)(this_ptr + 0xc);
-  if ((((iVar3 < *(int *)(this_ptr + 0x10)) || (*(int *)(this_ptr + 0x18) < iVar3)) ||
-      (iVar4 < *(int *)(this_ptr + 0x14))) || (*(int *)(this_ptr + 0x1c) < iVar4)) {
+  iVar3 = x + this_ptr->x;
+  iVar4 = y + this_ptr->y;
+  if ((((iVar3 < this_ptr->clip_left) || (this_ptr->clip_right < iVar3)) ||
+      (iVar4 < this_ptr->clip_top)) || (this_ptr->clip_bottom < iVar4)) {
     return;
   }
   iVar2 = iVar3 * 2;

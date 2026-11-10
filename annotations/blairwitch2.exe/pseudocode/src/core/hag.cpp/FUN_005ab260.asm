@@ -17,17 +17,17 @@
 ;   undefined4 DAT_005f0c86
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_motion.cpp_FUN_005035c0
 ;   core_xform.cpp_FUN_00591530
 ;   core_xform.cpp_FUN_00594380
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;   shape_superopt.cpp_CComplexPolygon_getMaterialId_FUN_005a8130
-;   sound_sndmain.cpp_FUN_005503e0
-;   sound_sndmain.cpp_FUN_00550450
-;   sound_sndmain.cpp_FUN_005504d0
 ;   sound_sndmain.cpp_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
+;   sound_sndmain.cpp_popSfxOptions_FUN_005504d0
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00550450
+;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0
 ;   unkaddr_0059d350.cpp_FUN_0059daa0
 ;   unkaddr_005a7eb0.cpp_FUN_005a7ed0
 ;   unkafter_superopt.cpp_FUN_005a8180
@@ -197,20 +197,20 @@ section .text
     TEST EAX,EAX                        ; 005ab445
     JNZ 0x005ab4a2                      ; 005ab447
         ;   XREF to: 005ab4a2 (CONDITIONAL_JUMP)  ; LAB_005ab4a2
-    CALL sound_sndmain.cpp_FUN_00550450 ; 005ab449
-        ;   XREF to: 00550450 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00550450()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00550450 ; 005ab449
+        ;   XREF to: 00550450 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00550450()
     PUSH 0x2                            ; 005ab44e
     PUSH 0x3f800000                     ; 005ab450
     PUSH 0x0                            ; 005ab455
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab457
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab457
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     ADD ESP,0x8                         ; 005ab45c
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab45f
     SUB ESP,0x8                         ; 005ab462
     FLD float ptr [EBP + 0x76]          ; 005ab465
     FSTP double ptr [ESP]               ; 005ab468
-    CALL sound_sndmain.cpp_FUN_005503e0 ; 005ab46b
-        ;   XREF to: 005503e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005503e0(double trigger_time, int trigger_id)
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0 ; 005ab46b
+        ;   XREF to: 005503e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 005ab470
     MOV EAX,dword ptr [EBP + 0x8e]      ; 005ab473
     PUSH 0x5f0c62                       ; 005ab479 | = "hagheal01L.wav"
@@ -221,8 +221,8 @@ section .text
     CALL dword ptr [EAX + 0x38]         ; 005ab491
     ADD ESP,0x8                         ; 005ab494
     MOV dword ptr [EBX + 0x1185c],EAX   ; 005ab497
-    CALL sound_sndmain.cpp_FUN_005504d0 ; 005ab49d
-        ;   XREF to: 005504d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005504d0()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_005504d0 ; 005ab49d
+        ;   XREF to: 005504d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_005504d0()
     MOV ESI,dword ptr [EBP + 0x8e]      ; 005ab4a2
         ;   Label: LAB_005ab4a2
     ADD ESI,0x154                       ; 005ab4a8
@@ -253,8 +253,8 @@ section .text
         ;   XREF to: 005ab373 (CONDITIONAL_JUMP)  ; LAB_005ab373
     PUSH 0x40c90fdb                     ; 005ab4e4
     PUSH 0x0                            ; 005ab4e9
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab4eb
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab4eb
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab4f0
     FLD float ptr [EBP + 0x76]          ; 005ab4f3
     FLD ST0                             ; 005ab4f6
@@ -267,8 +267,8 @@ section .text
     PUSH 0x40c00000                     ; 005ab50a
     PUSH 0x3f800000                     ; 005ab50f
     FSTP float ptr [EBP + 0x5e]         ; 005ab514
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab517
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab517
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab51c
     FLD float ptr [EBP + 0x76]          ; 005ab51f
     FLD double ptr [EBP + 0x56]         ; 005ab522
@@ -321,24 +321,24 @@ section .text
     PUSH 0x40c90fdb                     ; 005ab5ac
         ;   Label: LAB_005ab5ac
     PUSH 0x40490fdb                     ; 005ab5b1
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab5b6
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab5b6
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     ADD ESP,0x8                         ; 005ab5bb
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab5be
     PUSH 0x40c90fdb                     ; 005ab5c1
     FLD float ptr [EBP + 0x76]          ; 005ab5c6
     PUSH 0x40490fdb                     ; 005ab5c9
     FSTP float ptr [EBP + 0x6a]         ; 005ab5ce
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab5d1
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab5d1
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     ADD ESP,0x8                         ; 005ab5d6
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab5d9
     PUSH 0x40c90fdb                     ; 005ab5dc
     FLD float ptr [EBP + 0x76]          ; 005ab5e1
     PUSH 0x40490fdb                     ; 005ab5e4
     FSTP float ptr [EBP + 0x6e]         ; 005ab5e9
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab5ec
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab5ec
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab5f1
     MOV EAX,dword ptr [EBP + 0x6a]      ; 005ab5f4
     FLD float ptr [EBP + 0x76]          ; 005ab5f7
@@ -449,8 +449,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 005ab70e
     MOVSD ES:EDI,ESI                    ; 005ab70f
     MOVSD ES:EDI,ESI                    ; 005ab710
-    CALL core_actor.cpp_FUN_0040cf60    ; 005ab711
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005ab711
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     ADD ESP,0x8                         ; 005ab716
     MOV dword ptr [EBP + 0x76],EAX      ; 005ab719
     SUB ESP,0x4                         ; 005ab71c

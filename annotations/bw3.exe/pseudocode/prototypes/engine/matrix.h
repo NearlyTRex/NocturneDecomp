@@ -59,7 +59,7 @@ void __cdecl popViewport(void);
 
 // Original: engine_matrix.c_FUN_004e4d90
 // Address: 004e4d90
-int FUN_004e4d90(uint param_1);
+int __cdecl FUN_004e4d90(int angle);
 
 // Original: engine_matrix.c_FUN_004e4dd0
 // Address: 004e4dd0
@@ -129,9 +129,9 @@ int __cdecl vectorLength3DToInt(CVector3i *vector_ptr);
 // Address: 004e6a40
 void __cdecl setCameraOrigin(int x,int y,int z);
 
-// Original: engine_matrix.c_FUN_004e6a90
+// Original: engine_matrix.c_getCameraOrigin_FUN_004e6a90
 // Address: 004e6a90
-void FUN_004e6a90(void);
+void getCameraOrigin(void);
 
 // Original: engine_matrix.c_getCameraRotation_FUN_004e6ac0
 // Address: 004e6ac0

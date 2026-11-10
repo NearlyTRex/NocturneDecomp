@@ -67,7 +67,7 @@ int FUN_005c5854(int param_1,int *param_2)
         if ((_DAT_02c9f6e0 != 0) && ((*(byte *)(bVar4 + 0x2c9f6f1) & 1) != 0)) {
           local_17 = FUN_005c5430(param_1);
         }
-        iVar5 = unkafter_zombie_cpp_FUN_005cb6f0(local_1c,&local_18,2);
+        iVar5 = FUN_005cb6f0(local_1c,&local_18,2);
         if (iVar5 == -1) {
           return 0;
         }

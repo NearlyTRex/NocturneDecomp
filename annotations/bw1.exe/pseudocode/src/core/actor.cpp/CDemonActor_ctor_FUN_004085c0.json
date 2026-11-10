@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 121,
+    "complexity_score": 107,
     "cross_reference_count": 49,
     "function_call_count": 2,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 66,
-    "suspect_count": 4,
+    "pseudocode_lines": 67,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 164
+    "total_lines": 165
   },
   "cross_references": [
     {
@@ -388,8 +387,8 @@
     {
       "addr": "005fb334",
       "name": "g_CDemonActorVTable",
-      "type": "void*",
-      "value": "00408850"
+      "type": "CDemonActor_vtable",
+      "value": null
     },
     {
       "addr": "0078a123",
@@ -560,16 +559,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x12c",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_initTransformCache_FUN_00408580(&this_ptr->field_0x12c);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 57,
       "match": "DAT_0078a123",
       "severity": "mild",
       "text": "*(byte **)(iVar2 + -0xc4) = &DAT_0078a123;",
@@ -577,7 +568,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 28,
+      "line": 29,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -585,7 +576,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
+      "line": 58,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

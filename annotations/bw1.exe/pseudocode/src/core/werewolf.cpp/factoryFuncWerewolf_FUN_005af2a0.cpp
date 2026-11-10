@@ -11,7 +11,7 @@ void core_werewolf_cpp_factoryFuncWerewolf_FUN_005af2a0(void)
 {
   CWerewolf *this_ptr;
   
-  this_ptr = (CWerewolf *)FUN_005c0f32(0xc2b0);
+  this_ptr = (CWerewolf *)debugAllocTracked1(0xc2b0);
   if (this_ptr == (CWerewolf *)0x0) {
     return;
   }

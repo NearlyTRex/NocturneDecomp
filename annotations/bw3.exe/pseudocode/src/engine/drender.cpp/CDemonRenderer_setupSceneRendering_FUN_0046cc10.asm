@@ -19,7 +19,7 @@
 ;   unkafter_bmppuzzl.cpp_FUN_00412c50 at 00412da1
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
 ;
 ; *****************************************************************************
@@ -32,8 +32,8 @@ section .text
     PUSH EDX                            ; 0046cc17
     LEA EAX,[ESP + 0x4]                 ; 0046cc18
     PUSH EAX                            ; 0046cc1c
-    CALL core_dirmat.cpp_FUN_0045b550   ; 0046cc1d
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 0046cc1d
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0046cc22
     MOV EAX,ESP                         ; 0046cc25
     PUSH EAX                            ; 0046cc27

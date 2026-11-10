@@ -24,14 +24,14 @@ void __cdecl core_platfrm_cpp_FUN_00519ba0(CPlatform *this_ptr)
   uint local_28 [3];
   int local_1c;
   int local_18;
-  byte *local_14;
+  SPlatformAttachment *local_14;
   
   bVar5 = 0;
-  core_xform_cpp_FUN_00591c10(local_dc,&this_ptr->field_0x20,&this_ptr->field_0x30);
-  local_14 = &this_ptr->field_0x678;
+  core_xform_cpp_FUN_00591c10(local_dc,&(this_ptr->base).field_0x20,&(this_ptr->base).orient);
+  local_14 = this_ptr->attach_actors;
   iVar2 = 0;
   do {
-    if (*(int *)&this_ptr->field_0x678 != 0) {
+    if (*(int *)this_ptr->attach_actors != 0) {
       core_xform_cpp_multiplyMatrix3x4_FUN_005916b0(local_14 + iVar2 * 0x34 + 4,local_dc);
       puVar3 = local_ac;
       puVar4 = local_7c;
@@ -40,9 +40,9 @@ void __cdecl core_platfrm_cpp_FUN_00519ba0(CPlatform *this_ptr)
         puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
-      local_1c = *(int *)&this_ptr->field_0x678;
+      local_1c = *(int *)this_ptr->attach_actors;
       local_18 = *(int *)(local_1c + 0x2b0);
-      core_xform_cpp_FUN_00591de0(local_7c);
+      core_xform_cpp_matrixToEulerAngles_FUN_00591de0(local_7c);
       local_34[0] = auStack_48[2];
       auStack_48[(uint)bVar5 * -2 + 6] = auStack_48[(uint)bVar5 * -2 + 3];
       auStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
@@ -55,7 +55,7 @@ void __cdecl core_platfrm_cpp_FUN_00519ba0(CPlatform *this_ptr)
       (**(code **)(local_18 + 0x70))(local_1c,auStack_48 + 8);
     }
     iVar2 = iVar2 + 1;
-    this_ptr = (CPlatform *)&this_ptr->field_0x34;
+    this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
   } while (iVar2 < 10);
   return;
 }

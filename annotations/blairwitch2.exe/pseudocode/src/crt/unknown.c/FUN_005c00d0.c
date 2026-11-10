@@ -34,7 +34,7 @@ uint FUN_005c00d0(LPCSTR param_1,uint *param_2)
       return uVar1;
     }
     if (param_2 == (uint *)0x0) {
-      uStack_1c = unkafter_morph_cpp_FUN_005c4030(0);
+      uStack_1c = FUN_005c4030(0);
       param_2 = &uStack_1c;
       uStack_18 = uStack_1c;
     }

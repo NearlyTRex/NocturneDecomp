@@ -9,16 +9,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[39]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a11ab
-;   core_boneguy.cpp_FUN_004193c0 at 004193fc
-;   core_carved.cpp_FUN_00425da0 at 00425efc
-;   core_carved.cpp_FUN_004286c0 at 0042870e
-;   core_carved.cpp_FUN_00428cb0 at 00428d69
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a11ab
+;   core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_004193c0 at 004193fc
+;   core_carved.cpp_CCarved_canBeAttracted_FUN_004286c0 at 0042870e
+;   core_carved.cpp_CCarved_getTargetPoints_FUN_00428cb0 at 00428d69
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00425efc
+;   core_charactr.cpp_CCharacter_spawnBloodAtBone_FUN_0042fe90 at 0042fed1
 ;   core_charactr.cpp_FUN_0042fdc0 at 0042fe01
-;   core_charactr.cpp_FUN_0042fe90 at 0042fed1
 ;   core_charactr.cpp_FUN_00432330 at 00432480
-;   core_constrct.cpp_FUN_00442a20 at 00442ad5
-;   core_constrct.cpp_FUN_00444010 at 00444035
+;   core_constrct.cpp_CConstruct_getTargetPoints_FUN_00444010 at 00444035
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442ad5
 ;   ... and 29 more
 ;
 ; *****************************************************************************

@@ -13,13 +13,13 @@
 ;   TerminatedCString s_Can_t_load_s_because_def_005e7554
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
-;   undefined4 g_DeformableModelPool[0].field10864_0x2a70
+;   undefined4 g_DeformableModelPool[0].model_filename[0]
 ;   undefined4 DAT_02177ff4
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_005427c0
-;   core_skeleton.cpp_FUN_00541540
 ;   crt_string.c__stricmp_FUN_005b8130
 ;
 ; *****************************************************************************
@@ -40,7 +40,7 @@ section .text
     MOV EDX,dword ptr [EBP + 0x14]      ; 00548e99
     PUSH EDX                            ; 00548e9c
     MOV EDI,0x20ccff4                   ; 00548e9d
-    PUSH ESI                            ; 00548ea2 | g_DeformableModelPool[0].field10864_0x2a70
+    PUSH ESI                            ; 00548ea2 | g_DeformableModelPool[0].model_filename[0]
     ADD EDI,EAX                         ; 00548ea3
     CALL crt_string.c__stricmp_FUN_005b8130 ; 00548ea5
         ;   XREF to: 005b8130 (UNCONDITIONAL_CALL)  ; int crt_string.c__stricmp_FUN_005b8130(char * str1, char * str2)
@@ -87,8 +87,8 @@ section .text
         ;   XREF to: 005427c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_load_FUN_005427c0(CDeformableModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00548f0b
     PUSH ESI                            ; 00548f0e
-    CALL core_skeleton.cpp_FUN_00541540 ; 00548f0f
-        ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00541540(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540 ; 00548f0f
+        ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540(CDeformableModel * this_ptr)
     MOV ECX,0x1                         ; 00548f14
     ADD ESP,0x4                         ; 00548f19
     MOV EAX,ESI                         ; 00548f1c
@@ -101,8 +101,8 @@ section .text
     PUSH EDI                            ; 00548f29
         ;   Label: LAB_00548f29
     MOV ESI,0x1                         ; 00548f2a
-    CALL core_skeleton.cpp_FUN_00541540 ; 00548f2f
-        ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00541540(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540 ; 00548f2f
+        ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00548f34
     MOV EAX,EDI                         ; 00548f37
     MOV dword ptr [EBX*0x4 + 0x2177ff4],ESI ; 00548f39 | DAT_02177ff4

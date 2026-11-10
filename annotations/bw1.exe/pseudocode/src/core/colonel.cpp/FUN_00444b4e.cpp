@@ -19,7 +19,7 @@ void core_colonel_cpp_FUN_00444b4e(int param_1,float param_2)
   float afStackY_10b4 [1007];
   float fStack_e0;
   float fStack_dc;
-  byte auStack_d8 [12];
+  CVector3f CStack_d8;
   float fStack_cc;
   float afStack_c8 [6];
   float fStack_b0;
@@ -99,11 +99,11 @@ void core_colonel_cpp_FUN_00444b4e(int param_1,float param_2)
         this_ptr = core_path_cpp_getPathMap_FUN_005351f0((CLocation *)(iStack_28 + 0x20));
       }
       iVar2 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
-                        (this_ptr,(CVector3f *)(param_1 + 0x20),(CVector3f *)auStack_d8,
-                         *(int *)(param_1 + 0x6c));
+                        (this_ptr,(CVector3f *)(param_1 + 0x20),&CStack_d8,*(int *)(param_1 + 0x6c))
+      ;
       if (iVar2 != 0) {
-        fStack_18 = (float)core_actor_cpp_FUN_0040cd60
-                                     ((float)auStack_d8._4_4_ - *(float *)(param_1 + 0x34));
+        fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                     (CStack_d8.y - *(float *)(param_1 + 0x34));
         fVar1 = fStack_18 * _DAT_005d6cc7 * (float)_DAT_005d6ccf;
         fStack_38 = -fStack_1c;
         *(float *)(param_1 + 0xc200) = fVar1;
@@ -140,12 +140,13 @@ void core_colonel_cpp_FUN_00444b4e(int param_1,float param_2)
                   ((CMotionController *)(param_1 + 0x158));
       }
       if (iStack_24 == 1) {
-        core_vecdir_cpp_FUN_005a7520(afStack_a4 + 8);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_a4 + 8);
         afStack_a4[2] = afStack_c8[2];
         afStack_a4[(uint)bVar4 * -2 + 3] = afStack_c8[(uint)bVar4 * -2 + 3];
         afStack_a4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
              afStack_c8[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-        fStack_18 = (float)core_actor_cpp_FUN_0040cd60(afStack_a4[3] - *(float *)(param_1 + 0x34));
+        fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                     (afStack_a4[3] - *(float *)(param_1 + 0x34));
         fVar1 = fStack_18 * _DAT_005d6cc7 * (float)_DAT_005d6ccf;
         fStack_40 = -fStack_1c;
         *(float *)(param_1 + 0xc200) = fVar1;
@@ -174,7 +175,7 @@ void core_colonel_cpp_FUN_00444b4e(int param_1,float param_2)
       fStack_80 = fStack_8c;
       fStack_7c = fStack_88;
     }
-    core_vecdir_cpp_FUN_005a7520(afStack_a4 + 8);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_a4 + 8);
     fStack_78 = fStack_54;
     afStack_a4[(uint)bVar4 * -2 + 0xc] = afStack_a4[(uint)bVar4 * -2 + 0x15];
     afStack_a4[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 0xd] =
@@ -184,7 +185,8 @@ void core_colonel_cpp_FUN_00444b4e(int param_1,float param_2)
       fStack_80 = fStack_74;
       fStack_7c = fStack_70;
     }
-    fStack_b0 = (float)core_actor_cpp_FUN_0040cd60(fStack_80 - *(float *)(param_1 + 0x34));
+    fStack_b0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                 (fStack_80 - *(float *)(param_1 + 0x34));
     if (fStack_2c < fStack_b0) {
       fStack_b0 = fStack_2c;
     }

@@ -19,7 +19,7 @@ void __cdecl core_sound_cpp_FUN_005593d0(CSound *this_ptr,char *out_result,char 
   
   _DAT_0264b460 = 0;
   *out_result = '\0';
-  for (iVar2 = 0; iVar2 < (int)g_CStrListInstance._0_4_; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < g_CStrListInstance.item_count; iVar2 = iVar2 + 1) {
     iVar5 = 0;
     pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(&g_CStrListInstance,iVar2);
     iVar5 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840(wildcard_pattern,pcVar3,iVar5);

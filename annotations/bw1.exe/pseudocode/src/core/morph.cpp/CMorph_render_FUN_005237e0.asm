@@ -10,12 +10,12 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_biggs.cpp_FUN_00414e00 at 00414ec2
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00 at 00414ec2
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_00510620 at 0051069f
-;   core_moloch.cpp_FUN_00521070 at 00521139
-;   core_passngr.cpp_FUN_00532cd0 at 00532d98
-;   core_succubus.cpp_FUN_00592aa0 at 00592c1f
-;   core_vampboss.cpp_FUN_005a6b00 at 005a6cb4
+;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00521070 at 00521139
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_00532cd0 at 00532d98
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0 at 00592c1f
+;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005a6b00 at 005a6cb4
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_render_FUN_00522b50

@@ -45,7 +45,7 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   local_18 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Coffin Rock");
   local_14 = 0xffffffff;
   if (param_2 == 1 || iVar4 != 0) {
-    iVar4 = shape_edittool_cpp_FUN_0047c970
+    iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_120,0);
     if (iVar4 == 0) goto LAB_004bca85;
@@ -106,9 +106,9 @@ void core_game_cpp_FUN_004bc840(CGame *param_1,int param_2)
   if (iVar4 != 0) {
     core_mission_cpp_FUN_004fce00(0x01D182F0);
     core_mission_cpp_CDemonMission_run_FUN_004fcb00(0x01D182F0);
-    if (*(int *)&param_1->field_0x9e8 != 0) {
-      *(uint *)&param_1->field_0x9e8 = 0;
-      core_game_cpp_FUN_004bbf70(param_1,&param_1->field_0x9ec,1);
+    if (param_1->need_chapter_reload != 0) {
+      param_1->need_chapter_reload = 0;
+      core_game_cpp_FUN_004bbf70(param_1,param_1->chapter_reload_filename,1);
     }
   }
 LAB_004bca85:

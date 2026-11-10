@@ -11,7 +11,7 @@
 ; int              Stack[0x14]:4   dialog_flags
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004d27b0 at 004d3f56
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3f56
 ;   core_game.cpp_joinNetworkGame_FUN_004d7e90 at 004d7ebb
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e9df
 ;   shape_edittool.cpp_CEditorTools_promptForValidDouble_FUN_00495f70 at 00495fb8

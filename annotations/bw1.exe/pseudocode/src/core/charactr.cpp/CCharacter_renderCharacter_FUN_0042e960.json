@@ -2,78 +2,78 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 117,
+    "complexity_score": 65,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 27,
-    "suspect_count": 8,
+    "pseudocode_lines": 25,
+    "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unnamed_field"
     ],
-    "total_lines": 106
+    "total_lines": 104
   },
   "cross_references": [
     {
       "addr": "00413970",
       "from_addr": "00413a29",
-      "name": "core_batman.cpp_FUN_00413970",
+      "name": "core_batman.cpp_CBatman_renderOpaque_FUN_00413970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00414e00",
       "from_addr": "00414f17",
-      "name": "core_biggs.cpp_FUN_00414e00",
+      "name": "core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041d000",
       "from_addr": "0041d08f",
-      "name": "core_boneguy.cpp_FUN_0041d000",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0042f240",
-      "from_addr": "0042f2b8",
-      "name": "core_charactr.cpp_FUN_0042f240",
+      "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042f320",
       "from_addr": "0042f375",
-      "name": "core_charactr.cpp_FUN_0042f320",
+      "name": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042f320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0042f240",
+      "from_addr": "0042f2b8",
+      "name": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004301e0",
       "from_addr": "00430350",
-      "name": "core_charactr.cpp_FUN_004301e0",
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0047cfe0",
       "from_addr": "0047d0ed",
-      "name": "core_dracbrid.cpp_FUN_0047cfe0",
+      "name": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00521070",
       "from_addr": "0052119e",
-      "name": "core_moloch.cpp_FUN_00521070",
+      "name": "core_moloch.cpp_CMoloch_renderOpaque_FUN_00521070",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00532cd0",
       "from_addr": "00532d44",
-      "name": "core_passngr.cpp_FUN_00532cd0",
+      "name": "core_passngr.cpp_CPassenger_renderOpaque_FUN_00532cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00592aa0",
       "from_addr": "00592c2a",
-      "name": "core_succubus.cpp_FUN_00592aa0",
+      "name": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -96,24 +96,24 @@
       "name": "core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0"
     },
     {
-      "addr": "0042e580",
+      "addr": "0042fe00",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042e580"
+      "name": "core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00"
     },
     {
       "addr": "0042ea10",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042ea10"
-    },
-    {
-      "addr": "0042fe00",
-      "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042fe00"
+      "name": "core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10"
     },
     {
       "addr": "00430060",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00430060"
+      "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060"
+    },
+    {
+      "addr": "0042e580",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042e580"
     },
     {
       "addr": "00441ff0",
@@ -158,7 +158,7 @@
     },
     {
       "addr": "01ccf5c8",
-      "name": "g_CGameInstance.field568_0x238",
+      "name": "g_CGameInstance.field520_0x238",
       "type": "undefined4",
       "value": null
     }
@@ -169,7 +169,7 @@
       {
         "call_addr": "0042f2b8",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042f240",
+        "caller": "core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +180,7 @@
       {
         "call_addr": "00430350",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_004301e0",
+        "caller": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -191,7 +191,7 @@
       {
         "call_addr": "0042f375",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042f320",
+        "caller": "core_charactr.cpp_CCharacter_renderBackground_FUN_0042f320",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -202,7 +202,7 @@
       {
         "call_addr": "00413a29",
         "call_type": "direct",
-        "caller": "core_batman.cpp_FUN_00413970",
+        "caller": "core_batman.cpp_CBatman_renderOpaque_FUN_00413970",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +213,7 @@
       {
         "call_addr": "00414f17",
         "call_type": "direct",
-        "caller": "core_biggs.cpp_FUN_00414e00",
+        "caller": "core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -224,7 +224,7 @@
       {
         "call_addr": "0041d08f",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_0041d000",
+        "caller": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -235,7 +235,7 @@
       {
         "call_addr": "0047d0ed",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_0047cfe0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -246,7 +246,7 @@
       {
         "call_addr": "0052119e",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_00521070",
+        "caller": "core_moloch.cpp_CMoloch_renderOpaque_FUN_00521070",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,7 +257,7 @@
       {
         "call_addr": "00532d44",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00532cd0",
+        "caller": "core_passngr.cpp_CPassenger_renderOpaque_FUN_00532cd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,7 +268,7 @@
       {
         "call_addr": "00592c2a",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00592aa0",
+        "caller": "core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -336,40 +336,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0xb9e8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0xb9e8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,-1,0xffffffff,1,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2ca0",
-      "severity": "mild",
-      "text": "((CClothList *)&this_ptr->field_0x2ca0,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "(CDeformableModelInstance *)&this_ptr->field_0x158);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
@@ -377,7 +345,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
+      "line": 15,
       "match": "field_0x27a4",
       "severity": "mild",
       "text": "if (*(int *)&this_ptr->field_0x27a4 == 0) {",
@@ -385,15 +353,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xb9f0",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&this_ptr->field_0xb9f0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 23,
       "match": "field_0x238",
       "severity": "mild",
       "text": "if (*(int *)&g_CGamePtr->field_0x238 == 0) {",

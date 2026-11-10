@@ -1,0 +1,165 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 62,
+    "complexity_score": 69,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 29,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 91
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004493e0",
+    "address_range": [
+      [
+        "004493e0",
+        "0044945f"
+      ],
+      [
+        "00449461",
+        "00449475"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_crate.cpp_CCrate_renderOpaque_FUN_004493e0",
+    "signature": "int __cdecl core_crate_cpp_CCrate_renderOpaque_FUN_004493e0(CCrate *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004207b0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_004207b0"
+    },
+    {
+      "addr": "004688a0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0"
+    },
+    {
+      "addr": "00483850",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850"
+    },
+    {
+      "addr": "004837b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0"
+    },
+    {
+      "addr": "004839a0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_004839a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.096153846153846,
+    "instruction_count": 52,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 22,
+      "INT_AND": 21,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 21,
+      "INT_LESS": 1,
+      "INT_MULT": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 10,
+      "INT_SUB": 25,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 10,
+      "STORE": 22
+    },
+    "pcode_op_count": 213
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCrate *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&(this_ptr->base).location.position);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "(DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 20,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCrate",
+        "offset": 16,
+        "vtable_addr": "005fe254"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

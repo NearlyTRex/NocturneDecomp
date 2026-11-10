@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 315,
+    "complexity_score": 126,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 50,
-    "suspect_count": 25,
+    "pseudocode_lines": 51,
+    "suspect_count": 6,
     "suspect_types": [
       "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 123
+    "total_lines": 124
   },
   "cross_references": [
     {
@@ -26,7 +26,7 @@
     {
       "addr": "005a7b50",
       "from_addr": "005a81f2",
-      "name": "core_vehicle.cpp_FUN_005a7b50",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_005a7b50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +46,7 @@
     {
       "addr": "0040cc60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc60"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
     },
     {
       "addr": "004a0410",
@@ -56,7 +56,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -105,8 +105,8 @@
     {
       "addr": "00603d74",
       "name": "g_CMobsterVTable",
-      "type": "undefined1*",
-      "value": "0051c910"
+      "type": "CMobster_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -115,7 +115,7 @@
       {
         "call_addr": "005a81f2",
         "call_type": "direct",
-        "caller": "core_vehicle.cpp_FUN_005a7b50",
+        "caller": "core_vehicle.cpp_CVehicle_process_FUN_005a7b50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,191 +193,39 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar4->field_0x154 = &g_CMobsterVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar4->field_0x158,\"mobster1.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
+      "line": 20,
       "match": "field_0x2fec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff0 = 0x3f666666;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2fec = 0x3f19999a;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 22,
-      "match": "field_0x2ff4",
+      "match": "field_0x2ff0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff4 = uVar2;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff0 = 0x3f666666;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 23,
+      "match": "field_0x2ff4",
+      "severity": "mild",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff4 = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
       "match": "field_0x2ff8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff8 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xc26c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc26c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0xc270",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc270 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc274",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc274 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xc338",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc338 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0xc33c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc33c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xc25c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc25c = 0x42200000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xc268",
-      "severity": "mild",
-      "text": "*(int *)&pCVar4->field_0xc268 = iVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xc280",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc280 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xc278",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc278 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0xc284",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc284 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0xc288",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc288 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0xc28c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc28c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc290",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc290 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xc294",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc294 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0xc298",
-      "severity": "mild",
-      "text": "pcVar7 = &pCVar4->field_0xc298;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0xc27c",
-      "severity": "mild",
-      "text": "pCVar4->field_0xc27c = (char)iVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0xc264",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0xc264 = 0;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff8 = uVar3;",
       "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 43,
+      "line": 44,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

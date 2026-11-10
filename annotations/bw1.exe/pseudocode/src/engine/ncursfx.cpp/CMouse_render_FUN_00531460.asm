@@ -12,7 +12,7 @@
 ;   undefined4 DAT_01c43540
 ;
 ; Called Functions:
-;   engine_3d.c_FUN_00406c20
+;   engine_3d.c_setBlendMode_FUN_00406c20
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0
 ;
 ; *****************************************************************************
@@ -109,8 +109,8 @@ section .text
         ;   XREF to: 005314bc (UNCONDITIONAL_JUMP)  ; LAB_005314bc
     PUSH 0x1                            ; 00531551
         ;   Label: LAB_00531551
-    CALL engine_3d.c_FUN_00406c20       ; 00531553
-        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_00406c20(int blend_mode)
+    CALL engine_3d.c_setBlendMode_FUN_00406c20 ; 00531553
+        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406c20(int blend_mode)
     ADD ESP,0x4                         ; 00531558
     MOV EAX,[0x01c43540]                ; 0053155b | DAT_01c43540
     PUSH 0x8000                         ; 00531560
@@ -136,8 +136,8 @@ section .text
         ;   XREF to: 0040d4b0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d4b0(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 0053159d
     PUSH 0x0                            ; 005315a0
-    CALL engine_3d.c_FUN_00406c20       ; 005315a2
-        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_00406c20(int blend_mode)
+    CALL engine_3d.c_setBlendMode_FUN_00406c20 ; 005315a2
+        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406c20(int blend_mode)
     ADD ESP,0x4                         ; 005315a7
     JMP 0x005314d7                      ; 005315aa
         ;   XREF to: 005314d7 (UNCONDITIONAL_JUMP)  ; LAB_005314d7

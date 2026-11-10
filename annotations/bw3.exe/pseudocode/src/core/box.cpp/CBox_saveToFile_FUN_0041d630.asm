@@ -13,7 +13,7 @@
 ; undefined8       Stack[-0x14]:8  local_14
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040be30 at 0040beec
+;   core_actor.cpp_archiveBox_FUN_0040be30 at 0040beec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sboxVersion_005b742f

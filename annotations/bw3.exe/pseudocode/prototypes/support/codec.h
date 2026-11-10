@@ -5,13 +5,13 @@
 // Function prototypes for support/codec.cpp
 // Generated from Ghidra function signatures
 
-// Original: support_codec.cpp_FUN_004400d0
+// Original: support_codec.cpp_resetBitBuffer_FUN_004400d0
 // Address: 004400d0
-void __cdecl FUN_004400d0(SBitBuffer *bit_buffer);
+void __cdecl resetBitBuffer(SBitBuffer *bit_buffer);
 
-// Original: support_codec.cpp_FUN_004400f0
+// Original: support_codec.cpp_writeBitsToStream_FUN_004400f0
 // Address: 004400f0
-uint FUN_004400f0(byte *param_1,int param_2,int *param_3);
+uint writeBitsToStream(byte *param_1,int param_2,int *param_3);
 
 // Original: support_codec.cpp_FUN_00440210
 // Address: 00440210
@@ -85,9 +85,9 @@ CLZWDictionary * __cdecl CLZWDictionary::ctor(CLZWDictionary *this_ptr);
 // Address: 00440bf0
 CLZWDictionary * __cdecl CLZWDictionary::dtor(CLZWDictionary *this_ptr,uint flags);
 
-// Original: support_codec.cpp_FUN_00440c10
+// Original: support_codec.cpp_CLZWDictionary_free_FUN_00440c10
 // Address: 00440c10
-void __cdecl FUN_00440c10(CLZWDictionary *this_ptr);
+void __cdecl CLZWDictionary::free(CLZWDictionary *this_ptr);
 
 // Original: support_codec.cpp_CLZWDictionary_init_FUN_00440c50
 // Address: 00440c50
@@ -125,9 +125,9 @@ int __cdecl FUN_00441050(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istrea
 // Address: 004410f0
 CLZWCompress * __cdecl CLZWCompress::ctor(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 
-// Original: support_codec.cpp_FUN_00441140
+// Original: support_codec.cpp_CLZWCompress_init_FUN_00441140
 // Address: 00441140
-void __cdecl FUN_00441140(CLZWCompress *this_ptr);
+void __cdecl CLZWCompress::init(CLZWCompress *this_ptr);
 
 // Original: support_codec.cpp_FUN_00441190
 // Address: 00441190
@@ -141,9 +141,9 @@ undefined4 FUN_00441290(int param_1,undefined4 param_2);
 // Address: 00441310
 CLZWDecompress * __cdecl CLZWDecompress::ctor(CLZWDecompress *this_ptr,int buffer_size,int initial_bits);
 
-// Original: support_codec.cpp_FUN_00441350
+// Original: support_codec.cpp_CLZWDecompress_init_FUN_00441350
 // Address: 00441350
-void __cdecl FUN_00441350(CLZWDecompress *this_ptr);
+void __cdecl CLZWDecompress::init(CLZWDecompress *this_ptr);
 
 // Original: support_codec.cpp_FUN_00441390
 // Address: 00441390

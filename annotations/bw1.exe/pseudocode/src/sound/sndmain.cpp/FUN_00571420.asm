@@ -39,8 +39,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_0056f6d0 at 0056f820
-;   sound_sndmain.cpp_FUN_00576c20 at 00576e12
+;   sound_sndmain.cpp_nextMixingBuffer_FUN_0056f6d0 at 0056f820
+;   sound_sndmain.cpp_pollAndMixSfx_FUN_00576c20 at 00576e12
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3928

@@ -20,8 +20,8 @@ CDemonActor * core_actor_cpp_CDemonActor_dtor_FUN_00408930(CDemonActor *this_ptr
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte **)&this_ptr->field_0x2b0 = &g_CDemonActorVTable;
-  *(uint *)&this_ptr->field_0x68 = 0x495fd67;
+  (this_ptr->vtable)._ub = &g_CDemonActorVTable;
+  this_ptr->validation_magic = 0x495fd67;
   iVar2 = unkafter_actor_cpp_FUN_0040d400(&this_ptr->field_0x154,0);
   pCVar1 = (CDemonActor *)(iVar2 + -0x154);
   if ((flags & 2) == 0) {

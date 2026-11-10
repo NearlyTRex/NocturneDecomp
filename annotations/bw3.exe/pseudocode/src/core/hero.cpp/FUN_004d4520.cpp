@@ -51,8 +51,7 @@ void core_hero_cpp_FUN_004d4520(CHero *param_1)
       core_hero_cpp_FUN_004d3210(param_1);
       return;
     }
-    iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0
-                      ((CRuleList *)&this_ptr->field_0x478);
+    iVar3 = core_event_cpp_CRuleList_evaluateAndRun_FUN_00495db0(&this_ptr->open_rule);
     if (iVar3 == 0) {
       if (*(int *)(param_1 + 0x20b74) == 1) {
         core_door_cpp_CDoor_onOpened_FUN_00463d10(this_ptr);
@@ -60,7 +59,7 @@ void core_hero_cpp_FUN_004d4520(CHero *param_1)
         return;
       }
       *(CDoor **)(param_1 + 0x20b94) = this_ptr;
-      core_hero_cpp_FUN_004d3250(param_1);
+      core_hero_cpp_CHero_tryOpenDoor_FUN_004d3250(param_1);
       core_hero_cpp_FUN_004d3210(param_1);
       return;
     }

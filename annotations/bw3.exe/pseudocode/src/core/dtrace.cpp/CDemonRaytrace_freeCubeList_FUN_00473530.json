@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 102,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 27,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 89
   },
   "cross_references": [
@@ -38,7 +36,7 @@
     {
       "addr": "00466290",
       "is_variadic": false,
-      "name": "core_dpart.cpp_FUN_00466290"
+      "name": "core_dpart.cpp_CDemonPart_dtor_FUN_00466290"
     },
     {
       "addr": "005a30c4",
@@ -119,62 +117,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x4c != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar3 < *(int *)&this_ptr->field_0x48 *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x40 * *(int *)&this_ptr->field_0x44; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "puVar2 = (uint *)(*(int *)&this_ptr->field_0x4c + iVar4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "FUN_005a3770(*(uint *)&this_ptr->field_0x4c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4c = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

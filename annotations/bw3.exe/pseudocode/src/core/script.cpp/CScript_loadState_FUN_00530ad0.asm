@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   core_script.cpp_FUN_00531030
+;   core_script.cpp_CScript_computeChecksum_FUN_00531030
 ;   core_script.cpp_readActorReference_FUN_00530a10
 ;   crt_stdio.c_fgets_FUN_005a3f00
 ;   crt_stdio.c_fscanf_FUN_005a3230
@@ -79,7 +79,7 @@ section .text
     MOV EAX,[0x005fe9dc]                ; 00530b2f | g_CGamePtr
     ADD ESP,0xc                         ; 00530b34
     ADD EAX,0x24c                       ; 00530b37
-    PUSH EAX                            ; 00530b3c | g_CGameInstance.field588_0x24c
+    PUSH EAX                            ; 00530b3c | g_CGameInstance.field540_0x24c
     PUSH 0x5cfd3f                       ; 00530b3d | DAT_005cfd3f
     PUSH EDI                            ; 00530b42
     CALL crt_stdio.c_fscanf_FUN_005a3230 ; 00530b43
@@ -319,8 +319,8 @@ section .text
         ;   XREF to: 005a3230 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005a3230()
     ADD ESP,0xc                         ; 00530dc3
     PUSH EBP                            ; 00530dc6
-    CALL core_script.cpp_FUN_00531030   ; 00530dc7
-        ;   XREF to: 00531030 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_FUN_00531030(CScript * this_ptr)
+    CALL core_script.cpp_CScript_computeChecksum_FUN_00531030 ; 00530dc7
+        ;   XREF to: 00531030 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_computeChecksum_FUN_00531030(CScript * this_ptr)
     ADD ESP,0x4                         ; 00530dcc
     CMP EAX,dword ptr [ESP + 0x104]     ; 00530dcf
     JZ 0x00530d6a                       ; 00530dd6

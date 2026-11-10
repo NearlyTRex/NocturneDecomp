@@ -1,0 +1,477 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 340,
+    "complexity_score": 140,
+    "cross_reference_count": 1,
+    "function_call_count": 19,
+    "global_count": 23,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 110,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 450
+  },
+  "cross_references": [
+    {
+      "addr": "004e46c0",
+      "from_addr": "004e4c19",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00591190",
+    "address_range": [
+      [
+        "00591190",
+        "0059152f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "wincore_winvideo.cpp_playMovie_FUN_00591190",
+    "signature": "int __cdecl wincore_winvideo_cpp_playMovie_FUN_00591190(char *directory_path,char *movie_filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005bad20",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_atoi_FUN_005bad20"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "004032b0",
+      "is_variadic": false,
+      "name": "engine_2d.c_clearInputAndWait_FUN_004032b0"
+    },
+    {
+      "addr": "0055b1f0",
+      "is_variadic": false,
+      "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
+    },
+    {
+      "addr": "EXTERNAL:00000033",
+      "is_variadic": false,
+      "name": "GetClientRect"
+    },
+    {
+      "addr": "EXTERNAL:00000065",
+      "is_variadic": false,
+      "name": "GetCurrentProcess"
+    },
+    {
+      "addr": "EXTERNAL:00000017",
+      "is_variadic": false,
+      "name": "mciGetErrorStringA"
+    },
+    {
+      "addr": "EXTERNAL:00000019",
+      "is_variadic": false,
+      "name": "mciSendStringA"
+    },
+    {
+      "addr": "EXTERNAL:0000003b",
+      "is_variadic": false,
+      "name": "MessageBoxA"
+    },
+    {
+      "addr": "EXTERNAL:0000003c",
+      "is_variadic": false,
+      "name": "MoveWindow"
+    },
+    {
+      "addr": "EXTERNAL:00000046",
+      "is_variadic": false,
+      "name": "SetRectEmpty"
+    },
+    {
+      "addr": "EXTERNAL:00000096",
+      "is_variadic": false,
+      "name": "SetThreadPriority"
+    },
+    {
+      "addr": "EXTERNAL:00000098",
+      "is_variadic": false,
+      "name": "Sleep"
+    },
+    {
+      "addr": "00589560",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
+    },
+    {
+      "addr": "0058f270",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_processWindowMessages_FUN_0058f270"
+    },
+    {
+      "addr": "0058eb40",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_wasKeyPressed_FUN_0058eb40"
+    },
+    {
+      "addr": "00590e40",
+      "is_variadic": false,
+      "name": "wincore_winvideo.cpp_closeMovie_FUN_00590e40"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c8438",
+      "name": "PTR_mciGetErrorStringA_005c8438",
+      "type": "void*",
+      "value": "001c88c0"
+    },
+    {
+      "addr": "005c8440",
+      "name": "PTR_mciSendStringA_005c8440",
+      "type": "void*",
+      "value": "001c88e8"
+    },
+    {
+      "addr": "005c84ac",
+      "name": "PTR_GetClientRect_005c84ac",
+      "type": "void*",
+      "value": "001c8aba"
+    },
+    {
+      "addr": "005c84cc",
+      "name": "PTR_MessageBoxA_005c84cc",
+      "type": "void*",
+      "value": "001c8b3e"
+    },
+    {
+      "addr": "005c84d0",
+      "name": "PTR_MoveWindow_005c84d0",
+      "type": "void*",
+      "value": "001c8b4c"
+    },
+    {
+      "addr": "005c84f8",
+      "name": "PTR_SetRectEmpty_005c84f8",
+      "type": "void*",
+      "value": "001c8bf0"
+    },
+    {
+      "addr": "005c8578",
+      "name": "PTR_GetCurrentProcess_005c8578",
+      "type": "void*",
+      "value": "001c8e18"
+    },
+    {
+      "addr": "005c863c",
+      "name": "PTR_SetThreadPriority_005c863c",
+      "type": "void*",
+      "value": "001c91c2"
+    },
+    {
+      "addr": "005c8644",
+      "name": "PTR_Sleep_005c8644",
+      "type": "void*",
+      "value": "001c91f4"
+    },
+    {
+      "addr": "005eebfe",
+      "name": "s_where_mov_source_005eebfe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eec19",
+      "name": "s_open_s_alias_mov_style_c_005eec19",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eec43",
+      "name": "s_status_mov_window_handle_005eec43",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eec5c",
+      "name": "s_Unable_to_open_AVI_005eec5c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eec71",
+      "name": "s_play_mov_fullscreen_noti_005eec71",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eec8c",
+      "name": "s_play_mov_window_notify_005eec8c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eeca3",
+      "name": "s_pause_mov_005eeca3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eecad",
+      "name": "s_s_s_005eecad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eecb3",
+      "name": "DAT_005eecb3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02664628",
+      "name": "DAT_02664628",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02665a48",
+      "name": "DAT_02665a48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02665a4c",
+      "name": "DAT_02665a4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02665a50",
+      "name": "DAT_02665a50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02665a58",
+      "name": "DAT_02665a58",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e4c19",
+        "call_type": "direct",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.695817490494297,
+    "instruction_count": 263,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 3,
+      "BRANCH": 12,
+      "CALL": 14,
+      "CALLIND": 14,
+      "CBRANCH": 24,
+      "COPY": 199,
+      "INT_ADD": 61,
+      "INT_AND": 193,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 141,
+      "INT_LESS": 26,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 19,
+      "INT_OR": 16,
+      "INT_SBORROW": 26,
+      "INT_SCARRY": 21,
+      "INT_SEXT": 6,
+      "INT_SLESS": 68,
+      "INT_SRIGHT": 12,
+      "INT_SUB": 125,
+      "INT_XOR": 4,
+      "LOAD": 31,
+      "POPCOUNT": 68,
+      "RETURN": 2,
+      "STORE": 99,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 1235
+  },
+  "stack_frame": {
+    "frame_size": 516,
+    "local_size": 508,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1f8",
+        "offset": -504,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_f3",
+        "offset": -243,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f2",
+        "offset": -242,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f1",
+        "offset": -241,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ef",
+        "offset": -239,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_ee",
+        "offset": -238,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "directory_path",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "movie_filename",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005eecb3",
+      "severity": "mild",
+      "text": "iVar3 = _fopen(local_74,&DAT_005eecb3);",
+      "type": "undefined_data"
+    }
+  ]
+}

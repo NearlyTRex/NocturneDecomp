@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 43
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00510990",
+    "address_range": [
+      [
+        "00510990",
+        "005109d3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_renderTransparent_FUN_00510990",
+    "signature": "int __cdecl core_npc_cpp_CNPC_renderTransparent_FUN_00510990(CNPC *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004268b0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0"
+    },
+    {
+      "addr": "0048e340",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_0048e340"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1534",
+      "name": "s_heroCanSee_005e1534",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7272727272727275,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 17,
+      "INT_ADD": 10,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 104
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "if (((*(int *)&(this_ptr->base).field_0x2814 != 0) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x24340",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x24340 == 0)) {",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005f8a14"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005f8524"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005fa924"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005fc744"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005fa754"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 7
+  }
+}

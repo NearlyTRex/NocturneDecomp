@@ -7,7 +7,7 @@
 ; XREF[5]:
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0 at 00407d9c
 ;   engine_3d.c_clipAndDrawLine3D_FUN_00407fc0 at 0040809c
-;   engine_clipper.c_FUN_00430f2e at 00430ff9
+;   engine_clipper.c_clipPolygonBottomPlane_FUN_00430f2e at 00430ff9
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00431330 at 00431afa
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970 at 0046ba9b
 ;

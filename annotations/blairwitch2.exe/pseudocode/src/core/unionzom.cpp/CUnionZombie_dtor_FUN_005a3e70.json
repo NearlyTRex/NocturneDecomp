@@ -35,9 +35,14 @@
       "name": "core_actor.cpp_CDemonActor_dtor_FUN_00408930"
     },
     {
+      "addr": "0040f2b0",
+      "is_variadic": false,
+      "name": "core_armour.cpp_FUN_0040f2b0"
+    },
+    {
       "addr": "005b1480",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_005b1480"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_005b1480"
     },
     {
       "addr": "00544d50",
@@ -70,11 +75,6 @@
       "name": "unkaddr_005a7eb0.cpp_FUN_005a8100"
     },
     {
-      "addr": "0040f2b0",
-      "is_variadic": false,
-      "name": "unkafter_armour.cpp_FUN_0040f2b0"
-    },
-    {
       "addr": "005a8220",
       "is_variadic": false,
       "name": "unkafter_superopt.cpp_FUN_005a8220"
@@ -84,7 +84,7 @@
     {
       "addr": "005ff554",
       "name": "g_CUnionZombieVTable",
-      "type": "undefined4",
+      "type": "CUnionZombie_full_vtable",
       "value": null
     },
     {
@@ -156,7 +156,7 @@
       "line": 18,
       "match": "field_0x2b0",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CUnionZombieVTable;",
+      "text": "*(CUnionZombie_full_vtable **)&this_ptr->field_0x2b0 = &g_CUnionZombieVTable;",
       "type": "unnamed_field"
     },
     {
@@ -180,7 +180,7 @@
       "line": 21,
       "match": "field_0x3a20",
       "severity": "mild",
-      "text": "iVar1 = unkafter_armour_cpp_FUN_0040f2b0(&this_ptr->field_0x3a20,0);",
+      "text": "iVar1 = core_armour_cpp_FUN_0040f2b0(&this_ptr->field_0x3a20,0);",
       "type": "unnamed_field"
     },
     {

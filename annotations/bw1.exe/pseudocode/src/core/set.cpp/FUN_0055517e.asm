@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_set_cpp_FUN_0055517e(CDemonSet *param_1,SMRGLPrimitiveTriangle *param_2,int param_3,int param_4)
+; void core_set_cpp_FUN_0055517e(CDemonSet *param_1,SMRGLHeaderPrimitive *param_2,int param_3,int param_4)
 ;
 ;
 ; Referenced Globals:

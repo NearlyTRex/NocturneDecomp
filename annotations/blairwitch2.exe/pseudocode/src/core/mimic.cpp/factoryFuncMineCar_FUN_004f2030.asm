@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_platfrm.cpp_CPlatform_ctor_FUN_005180b0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x888                          ; 004f2030
         ;   Label: core_mimic.cpp_factoryFuncMineCar_FUN_004f2030
-    CALL crt_unknown.c_FUN_005b8be2     ; 004f2035
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004f2035
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004f203a
     TEST EAX,EAX                        ; 004f203d
     JNZ 0x004f2042                      ; 004f203f

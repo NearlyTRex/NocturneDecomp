@@ -69,7 +69,7 @@
 ;   undefined4 DAT_01c6e24c
 ;
 ; Called Functions:
-;   core_dlight.cpp_FUN_0045dea0
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0
 ;   crt_math.c_round_FUN_005a3120
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
@@ -464,8 +464,8 @@ section .text
     ADD ESP,0x4                         ; 0045dac4
     MOV ECX,dword ptr [EBP + 0x14]      ; 0045dac7
     PUSH ECX                            ; 0045daca
-    CALL core_dlight.cpp_FUN_0045dea0   ; 0045dacb
-        ;   XREF to: 0045dea0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_FUN_0045dea0(CDemonLight * this_ptr)
+    CALL core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0 ; 0045dacb
+        ;   XREF to: 0045dea0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0045dea0(CDemonLight * this_ptr)
     ADD ESP,0x4                         ; 0045dad0
     MOV ESP,EBP                         ; 0045dad3
     POP EBP                             ; 0045dad5

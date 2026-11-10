@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[9]:
-;   core_boneguy.cpp_FUN_0041bb40 at 0041be6c
-;   core_constrct.cpp_FUN_00445cb0 at 00446460
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041be6c
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00446460
 ;   core_crate.cpp_FUN_00449600 at 004496a6
-;   core_flamecan.cpp_FUN_004b91d0 at 004b924f
-;   core_hiram.cpp_FUN_004ed2b0 at 004ed342
+;   core_flamecan.cpp_CFlameCan_process_FUN_004b91d0 at 004b924f
+;   core_hiram.cpp_CHiram_process_FUN_004ed2b0 at 004ed342
 ;   core_inv.cpp_FUN_004f7690 at 004f85a2
 ;   core_mimic.cpp_CMimic_processMorph_FUN_00510c20 at 00510ce4
-;   core_passngr.cpp_FUN_00532af0 at 00532c31
-;   core_werewolf.cpp_FUN_005af4a0 at 005af619
+;   core_passngr.cpp_CPassenger_process_FUN_00532af0 at 00532c31
+;   core_werewolf.cpp_CWerewolf_process_FUN_005af4a0 at 005af619
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005e980c

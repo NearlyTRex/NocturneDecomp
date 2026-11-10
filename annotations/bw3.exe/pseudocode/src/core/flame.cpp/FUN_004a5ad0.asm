@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_burncrss.cpp_FUN_004253d0 at 00425417
-;   core_firestff.cpp_FUN_004a5870 at 004a58b7
-;   core_flame.cpp_FUN_004a5aa0 at 004a5ab5
+;   core_burncrss.cpp_CBurncross_setup_FUN_004253d0 at 00425417
+;   core_firestff.cpp_CFirestaff_setup_FUN_004a5870 at 004a58b7
+;   core_flame.cpp_CFlame_setup_FUN_004a5aa0 at 004a5ab5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

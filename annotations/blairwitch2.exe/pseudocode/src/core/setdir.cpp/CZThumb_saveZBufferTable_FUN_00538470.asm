@@ -34,7 +34,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_set.cpp_FUN_0052d0e0
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0
 ;   core_setdir.cpp_CZThumb_free_FUN_005386a0
 ;   core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0
@@ -170,8 +170,8 @@ section .text
     MOV EBP,dword ptr [0x0061b5a8]      ; 005385ad | g_CDemonSetPtr
     PUSH 0x461c3f9a                     ; 005385b3
     PUSH EBP                            ; 005385b8 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0052d0e0      ; 005385b9
-        ;   XREF to: 0052d0e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0052d0e0(CDemonSet * this_ptr, float frustum_param, int render_mode)
+    CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 ; 005385b9
+        ;   XREF to: 0052d0e0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(CDemonSet * this_ptr, float frustum_param, int render_mode)
     ADD ESP,0xc                         ; 005385be
     PUSH ESI                            ; 005385c1
     CALL core_setdir.cpp_CZThumb_popRenderingContext_FUN_00538a30 ; 005385c2

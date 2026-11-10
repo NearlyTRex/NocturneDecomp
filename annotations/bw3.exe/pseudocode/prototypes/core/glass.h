@@ -21,37 +21,37 @@ CDemonActorType * CGlass::getActorType(CGlass *this_ptr);
 // Address: 004c9ba0
 CGlass * __cdecl CGlass::ctor(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004c9ce0
+// Original: core_glass.cpp_CGlass_setup_FUN_004c9ce0
 // Address: 004c9ce0
-void FUN_004c9ce0(CDemonActor *param_1);
+void __cdecl CGlass::setup(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004ca550
+// Original: core_glass.cpp_CGlass_process_FUN_004ca550
 // Address: 004ca550
-void FUN_004ca550(int param_1);
+void __cdecl CGlass::process(CGlass *this_ptr,float delta_time);
 
-// Original: core_glass.cpp_FUN_004ca5a0
+// Original: core_glass.cpp_CGlass_renderOpaque_FUN_004ca5a0
 // Address: 004ca5a0
-undefined4 FUN_004ca5a0(CDemonActor *param_1);
+int __cdecl CGlass::renderOpaque(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004ca770
+// Original: core_glass.cpp_CGlass_renderTransparent_FUN_004ca770
 // Address: 004ca770
-undefined4 FUN_004ca770(CDemonActor *param_1);
+int __cdecl CGlass::renderTransparent(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004ca940
+// Original: core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940
 // Address: 004ca940
-void __cdecl FUN_004ca940(CGlass *this_ptr);
+void __cdecl CGlass::renderBrokenGlass(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004cab40
+// Original: core_glass.cpp_CGlass_renderBackground_FUN_004cab40
 // Address: 004cab40
-void FUN_004cab40(CGlass *param_1,int param_2);
+void __cdecl CGlass::renderBackground(CGlass *this_ptr,int layer_flag);
 
-// Original: core_glass.cpp_FUN_004cad00
+// Original: core_glass.cpp_CGlass_getBoundingBox_FUN_004cad00
 // Address: 004cad00
-void FUN_004cad00(int param_1);
+CBoundingBox3D * __cdecl CGlass::getBoundingBox(CGlass *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_glass.cpp_FUN_004cad80
+// Original: core_glass.cpp_CGlass_archive_FUN_004cad80
 // Address: 004cad80
-void FUN_004cad80(CDemonActor *param_1);
+void __cdecl CGlass::archive(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_getCollisionType_FUN_004cae80
 // Address: 004cae80
@@ -69,13 +69,13 @@ void FUN_004cc040(CDemonActor *param_1);
 // Address: 004cc480
 void __cdecl CGlass::onLaserHit(CGlass *this_ptr,SLaserInfo *laser_info);
 
-// Original: core_glass.cpp_FUN_004cc5c0
+// Original: core_glass.cpp_CGlass_getGroundType_FUN_004cc5c0
 // Address: 004cc5c0
-undefined4 FUN_004cc5c0(void);
+EGroundType __cdecl CGlass::getGroundType(CGlass *this_ptr);
 
-// Original: core_glass.cpp_FUN_004cc5d0
+// Original: core_glass.cpp_CGlass_checkBreakableCondition_FUN_004cc5d0
 // Address: 004cc5d0
-int __cdecl FUN_004cc5d0(CGlass *this_ptr);
+int __cdecl CGlass::checkBreakableCondition(CGlass *this_ptr);
 
 // Original: core_glass.cpp_CGlass_dtor_FUN_004cc5f0
 // Address: 004cc5f0

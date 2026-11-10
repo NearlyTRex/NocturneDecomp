@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_menu.cpp_FUN_0050c990 at 0050cb86
-;   core_menu.cpp_FUN_0050cc90 at 0050cd40
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cd40
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_taylor_head_kfm_005ea40b
@@ -21,7 +21,7 @@
 ;   void* PTR_s_titlescreen_bw_0061f830 = 005ea473
 ;   void* PTR_s_blair_00000_0061f834 = 005ea482
 ;   undefined1* PTR_s_blair_00001_0061f838 = 005ea48e
-;   undefined4 g_CGameInstance.field560_0x230
+;   undefined4 g_CGameInstance.field512_0x230
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0
@@ -41,7 +41,7 @@ section .text
     PUSH ESI                            ; 00521c5f
     PUSH EBX                            ; 00521c60
     MOV EBX,dword ptr [0x0061d95c]      ; 00521c61 | g_CGamePtr
-    MOV ECX,dword ptr [EBX + 0x230]     ; 00521c67 | g_CGameInstance.field560_0x230
+    MOV ECX,dword ptr [EBX + 0x230]     ; 00521c67 | g_CGameInstance.field512_0x230
     LEA EAX,[EDI + 0x8]                 ; 00521c6d
     CMP ECX,0x29a                       ; 00521c70
     JZ 0x00521d23                       ; 00521c76
@@ -109,7 +109,7 @@ section .text
         ;   XREF to: 004668a0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel * this_ptr, char * filename)
     MOV EAX,[0x0061d95c]                ; 00521d2e | g_CGamePtr
     ADD ESP,0x8                         ; 00521d33
-    MOV dword ptr [EAX + 0x230],0x0     ; 00521d36 | g_CGameInstance.field560_0x230
+    MOV dword ptr [EAX + 0x230],0x0     ; 00521d36 | g_CGameInstance.field512_0x230
     JMP 0x00521cb2                      ; 00521d40
         ;   XREF to: 00521cb2 (UNCONDITIONAL_JUMP)  ; LAB_00521cb2
 

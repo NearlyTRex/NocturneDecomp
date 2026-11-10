@@ -11,17 +11,18 @@ CIcePick * __cdecl core_icepick_cpp_CIcePick_ctor_FUN_004f0b90(CIcePick *this_pt
 {
   CIcePick *pCVar1;
   
-  pCVar1 = (CIcePick *)core_hero_cpp_FUN_004ea830((CHero *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CIcePickVTable;
-  *(uint *)&pCVar1->field_0x1ffac = 0;
-  *(uint *)&pCVar1->field_0x1ffb0 = 0;
-  core_skeleton_cpp_FUN_00569f50(&pCVar1->field_0x158,"icepick.dfm");
-  *(uint *)&pCVar1->field_0x1ffc8 = 0x3f800000;
-  *(uint *)&pCVar1->field_0x1ffc4 = 0;
-  *(uint *)&pCVar1->field_0x1ffc0 = *(uint *)&pCVar1->field_0x1ffc4;
-  *(uint *)&pCVar1->field_0x1ffbc = *(uint *)&pCVar1->field_0x1ffc0;
-  *(uint *)&pCVar1->field_0x1ffcc = 0;
-  *(uint *)&pCVar1->field_0x1ffd0 = 0;
+  pCVar1 = (CIcePick *)core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
+  *(CHero_full_vtable **)&pCVar1->field_0x154 = &g_CIcePickVTable;
+  pCVar1->guns_drawn = 0;
+  pCVar1->attack_count = 0;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)&pCVar1->field_0x158,"icepick.dfm");
+  pCVar1->head_look_blend_weight = 1.0;
+  (pCVar1->head_look_euler).z = 0.0;
+  (pCVar1->head_look_euler).y = (pCVar1->head_look_euler).z;
+  (pCVar1->head_look_euler).x = (pCVar1->head_look_euler).y;
+  pCVar1->is_armed = 0;
+  pCVar1->pending_pickup_target = (CDemonActor *)0x0;
   *(uint *)&pCVar1->field_0x2538 = 0x43960000;
   return pCVar1;
 }

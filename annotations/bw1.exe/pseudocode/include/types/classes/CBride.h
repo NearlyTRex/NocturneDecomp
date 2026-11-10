@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CBride
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc29c (49820 bytes)
 #pragma pack(push, 1)
 typedef struct CBride {
-    char field_0[49820]; // 0x0
+    CEnemy base; // 0x0
+    int part_indices[9]; // 0xc268
+    char field_49804[16]; // 0xc28c
 } CBride;
 #pragma pack(pop)
 

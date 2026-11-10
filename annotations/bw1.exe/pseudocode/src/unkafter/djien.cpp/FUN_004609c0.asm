@@ -11,11 +11,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
-;   core_enemy.cpp_FUN_004a0770
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770
 ;   core_skeleton.cpp_FUN_00569130
-;   core_sound.cpp_FUN_0057d9c0
+;   core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0
 ;
 ; *****************************************************************************
 
@@ -183,8 +183,8 @@ section .text
     ADD ESP,0x4                         ; 00460c04
     PUSH 0x41400000                     ; 00460c07
     PUSH 0x41000000                     ; 00460c0c
-    CALL core_actor.cpp_FUN_0040cc00    ; 00460c11
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00460c11
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x14c],EAX     ; 00460c16
     FLD float ptr [ESP + 0x14c]         ; 00460c1d
     ADD ESP,0x8                         ; 00460c24
@@ -197,8 +197,8 @@ section .text
     PUSH EBX                            ; 00460c38
     MOV dword ptr [ESP + 0x44],EBX      ; 00460c39
     MOV dword ptr [ESP + 0x48],EBX      ; 00460c3d
-    CALL core_enemy.cpp_FUN_004a0770    ; 00460c41
-        ;   XREF to: 004a0770 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a0770(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770 ; 00460c41
+        ;   XREF to: 004a0770 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00460c46
     MOV EAX,ESP                         ; 00460c49
     PUSH EAX                            ; 00460c4b
@@ -206,15 +206,15 @@ section .text
     PUSH 0x40400000                     ; 00460c50
     PUSH EAX                            ; 00460c55
     PUSH EBX                            ; 00460c56
-    CALL core_enemy.cpp_FUN_004a0770    ; 00460c57
-        ;   XREF to: 004a0770 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_004a0770(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770 ; 00460c57
+        ;   XREF to: 004a0770 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_004a0770(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 00460c5c
     MOV EBP,dword ptr [EBX + 0xc2c8]    ; 00460c5f
     PUSH EBP                            ; 00460c65
     MOV EAX,[0x006236b8]                ; 00460c66 | DAT_006236b8
     PUSH EAX                            ; 00460c6b
-    CALL core_sound.cpp_FUN_0057d9c0    ; 00460c6c
-        ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
+    CALL core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0 ; 00460c6c
+        ;   XREF to: 0057d9c0 (UNCONDITIONAL_CALL)  ; int core_sound.cpp_CSound_isSoundPlaying_FUN_0057d9c0(CSound * this_ptr, uint sfx_handle)
     ADD ESP,0x8                         ; 00460c71
     TEST EAX,EAX                        ; 00460c74
     JZ 0x00460c83                       ; 00460c76

@@ -56,8 +56,8 @@ void core_fldnotes_cpp_FUN_004be970(int param_1)
     iVar2 = unkaddr_004b9ab0_cpp_FUN_004ba540(_DAT_01c4353c,_DAT_01c43540);
     _DAT_01cc7b90 = _DAT_01cc7b90 + iVar2;
     if ((((0x00000262 <= _DAT_01c4353c) && (0x000001C0 <= _DAT_01c43540)) &&
-        (_DAT_01c4353c < 0x00000262 + CAlphaBitmap_01cc7cac._12_4_)) &&
-       (_DAT_01c43540 < CAlphaBitmap_01cc7cac._16_4_ + 0x000001C0)) {
+        (_DAT_01c4353c < 0x00000262 + CAlphaBitmap_01cc7cac.width)) &&
+       (_DAT_01c43540 < CAlphaBitmap_01cc7cac.height + 0x000001C0)) {
       *(uint *)(param_1 + 0x40) = 0;
     }
     piVar1 = (int *)core_fldnotes_cpp_FUN_004bb110

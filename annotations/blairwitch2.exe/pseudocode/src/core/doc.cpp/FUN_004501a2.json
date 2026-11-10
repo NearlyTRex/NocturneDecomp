@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 296,
-    "complexity_score": 1727,
+    "complexity_score": 1691,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 117,
-    "suspect_count": 156,
+    "pseudocode_lines": 131,
+    "suspect_count": 151,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
@@ -21,7 +21,7 @@
       "unrolled_memset",
       "unrolled_strcpy"
     ],
-    "total_lines": 413
+    "total_lines": 427
   },
   "cross_references": [],
   "function": {
@@ -40,7 +40,7 @@
     {
       "addr": "0042a330",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042a330"
+      "name": "core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330"
     },
     {
       "addr": "005b15c0",
@@ -129,7 +129,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 11,
+      "line": 12,
       "match": "in_stack_00000140",
       "severity": "moderate",
       "text": "uint in_stack_00000140;",
@@ -137,7 +137,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 12,
+      "line": 13,
       "match": "in_stack_00000144",
       "severity": "moderate",
       "text": "uint in_stack_00000144;",
@@ -145,7 +145,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 13,
+      "line": 14,
       "match": "in_stack_00000148",
       "severity": "moderate",
       "text": "uint in_stack_00000148;",
@@ -153,7 +153,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 14,
+      "line": 15,
       "match": "in_stack_0000014c",
       "severity": "moderate",
       "text": "uint in_stack_0000014c;",
@@ -161,7 +161,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 15,
+      "line": 16,
       "match": "in_stack_00000150",
       "severity": "moderate",
       "text": "uint in_stack_00000150;",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 17,
       "match": "in_stack_00000154",
       "severity": "moderate",
       "text": "uint in_stack_00000154;",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_00000158",
       "severity": "moderate",
       "text": "uint in_stack_00000158;",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 18,
+      "line": 19,
       "match": "in_stack_0000015c",
       "severity": "moderate",
       "text": "uint in_stack_0000015c;",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 19,
+      "line": 20,
       "match": "in_stack_00000160",
       "severity": "moderate",
       "text": "uint in_stack_00000160;",
@@ -201,15 +201,7 @@
     },
     {
       "description": "Inferred register parameter",
-      "line": 21,
-      "match": "in_EAX",
-      "severity": "mild",
-      "text": "cVar2 = (char)in_EAX + *in_EAX;",
-      "type": "register_param"
-    },
-    {
-      "description": "Inferred register parameter",
-      "line": 21,
+      "line": 22,
       "match": "in_EAX",
       "severity": "mild",
       "text": "cVar2 = (char)in_EAX + *in_EAX;",
@@ -218,6 +210,14 @@
     {
       "description": "Inferred register parameter",
       "line": 22,
+      "match": "in_EAX",
+      "severity": "mild",
+      "text": "cVar2 = (char)in_EAX + *in_EAX;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 23,
       "match": "in_EAX",
       "severity": "mild",
       "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Non-standard integer size (decompiler artifact)",
-      "line": 22,
+      "line": 23,
       "match": "int3",
       "severity": "mild",
       "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 25,
+      "line": 26,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4234 = 0;",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0x4234",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4234 = 0;",
@@ -249,7 +249,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 26,
+      "line": 27,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41d4 = 0;",
@@ -257,7 +257,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 27,
       "match": "field_0x41d4",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41d4 = 0;",
@@ -265,7 +265,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 27,
+      "line": 28,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41dc = 0;",
@@ -273,7 +273,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 28,
       "match": "field_0x41dc",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41dc = 0;",
@@ -281,7 +281,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 28,
+      "line": 29,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41e8 = 0;",
@@ -289,7 +289,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 28,
+      "line": 29,
       "match": "field_0x41e8",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41e8 = 0;",
@@ -297,7 +297,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 29,
+      "line": 30,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41ec = 0;",
@@ -305,7 +305,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
+      "line": 30,
       "match": "field_0x41ec",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41ec = 0;",
@@ -313,7 +313,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 31,
+      "line": 32,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4258 = 0xf149f2ca;",
@@ -321,7 +321,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 31,
+      "line": 32,
       "match": "field_0x4258",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4258 = 0xf149f2ca;",
@@ -329,7 +329,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 32,
+      "line": 33,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4190 = uVar1;",
@@ -337,7 +337,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 33,
       "match": "field_0x4190",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4190 = uVar1;",
@@ -345,7 +345,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 33,
+      "line": 34,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4240 = 0xf149f2ca;",
@@ -353,7 +353,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 33,
+      "line": 34,
       "match": "field_0x4240",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4240 = 0xf149f2ca;",
@@ -361,7 +361,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 34,
+      "line": 35,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x44f0 = 0;",
@@ -369,7 +369,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 34,
+      "line": 35,
       "match": "field_0x44f0",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x44f0 = 0;",
@@ -377,7 +377,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 36,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
@@ -385,7 +385,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 35,
+      "line": 36,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
@@ -393,7 +393,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
+      "line": 36,
       "match": "field_0x41a0",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
@@ -401,7 +401,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
+      "line": 36,
       "match": "field_0x419c",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41a0 = *(uint *)&unaff_EBX[2].field_0x419c;",
@@ -409,7 +409,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 37,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
@@ -417,7 +417,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 36,
+      "line": 37,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
@@ -425,7 +425,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 36,
+      "line": 37,
       "match": "field_0x4198",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
@@ -433,7 +433,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 36,
+      "line": 37,
       "match": "field_0x4194",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;",
@@ -441,7 +441,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 38,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
@@ -449,7 +449,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 37,
+      "line": 38,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
@@ -457,7 +457,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 37,
+      "line": 38,
       "match": "field_0x41c0",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
@@ -465,7 +465,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 37,
+      "line": 38,
       "match": "field_0x41bc",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;",
@@ -473,7 +473,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 39,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
@@ -481,7 +481,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 38,
+      "line": 39,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
@@ -489,7 +489,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 38,
+      "line": 39,
       "match": "field_0x41b8",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
@@ -497,7 +497,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 38,
+      "line": 39,
       "match": "field_0x41b4",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;",
@@ -508,52 +508,28 @@
       "line": 40,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "((CDeformableModelInstance *)&unaff_EBX->field_0x2b4,(char *)0x5cfb87);",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(&unaff_EBX->model,(char *)0x5cfb87);",
       "type": "unaffected_reg"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&unaff_EBX->field_0x2b4,(char *)0x5cfb87);",
-      "type": "unnamed_field"
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(&unaff_EBX->model);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
       "line": 42,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "((CDeformableModelInstance *)&unaff_EBX->field_0x2b4);",
+      "text": "unaff_EBX->layer_action_index = 0;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&unaff_EBX->field_0x2b4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 43,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX->field_0x2d04 = 0;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x2d04",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX->field_0x2d04 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 44,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41d8 = 0;",
@@ -561,7 +537,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 44,
+      "line": 43,
       "match": "field_0x41d8",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41d8 = 0;",
@@ -569,7 +545,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 45,
+      "line": 44,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41f8 = 0;",
@@ -577,7 +553,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 45,
+      "line": 44,
       "match": "field_0x41f8",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41f8 = 0;",
@@ -585,7 +561,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 46,
+      "line": 45,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41fc = 0;",
@@ -593,7 +569,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 46,
+      "line": 45,
       "match": "field_0x41fc",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41fc = 0;",
@@ -601,7 +577,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 47,
+      "line": 46,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4228 = 0;",
@@ -609,7 +585,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 47,
+      "line": 46,
       "match": "field_0x4228",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4228 = 0;",
@@ -617,7 +593,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 47,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
@@ -625,7 +601,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 48,
+      "line": 47,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
@@ -633,7 +609,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 48,
+      "line": 47,
       "match": "field_0x4224",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
@@ -641,7 +617,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 48,
+      "line": 47,
       "match": "field_0x4228",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4224 = *(uint *)&unaff_EBX[2].field_0x4228;",
@@ -649,7 +625,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4220 = *(uint *)&unaff_EBX[2].field_0x4224;",
@@ -657,7 +633,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
+      "line": 48,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4220 = *(uint *)&unaff_EBX[2].field_0x4224;",
@@ -665,7 +641,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 49,
+      "line": 48,
       "match": "field_0x4220",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4220 = *(uint *)&unaff_EBX[2].field_0x4224;",
@@ -673,7 +649,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 49,
+      "line": 48,
       "match": "field_0x4224",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4220 = *(uint *)&unaff_EBX[2].field_0x4224;",
@@ -681,7 +657,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 50,
+      "line": 49,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x422c = 0xffffffff;",
@@ -689,7 +665,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 50,
+      "line": 49,
       "match": "field_0x422c",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x422c = 0xffffffff;",
@@ -697,7 +673,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 51,
+      "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41e0 = 0;",
@@ -705,7 +681,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 51,
+      "line": 50,
       "match": "field_0x41e0",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41e0 = 0;",
@@ -713,7 +689,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 52,
+      "line": 51,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4200 = 0;",
@@ -721,7 +697,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 52,
+      "line": 51,
       "match": "field_0x4200",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4200 = 0;",
@@ -729,7 +705,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 53,
+      "line": 52,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4204 = 0;",
@@ -737,7 +713,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 53,
+      "line": 52,
       "match": "field_0x4204",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4204 = 0;",
@@ -745,7 +721,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 54,
+      "line": 53,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x41e4 = 0;",
@@ -753,7 +729,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 54,
+      "line": 53,
       "match": "field_0x41e4",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x41e4 = 0;",
@@ -761,7 +737,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 55,
+      "line": 54,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4230 = 0;",
@@ -769,7 +745,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 55,
+      "line": 54,
       "match": "field_0x4230",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4230 = 0;",
@@ -777,7 +753,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 56,
+      "line": 55,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4238 = 0;",
@@ -785,7 +761,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 56,
+      "line": 55,
       "match": "field_0x4238",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4238 = 0;",
@@ -796,15 +772,7 @@
       "line": 57,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,1,\"draw_L_standholster\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 58,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,1,2,\"draw_L_holsterAim\",0);",
+      "text": "(unaff_EBX,0,1,\"draw_L_standholster\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -812,15 +780,7 @@
       "line": 59,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,5,\"draw_R_standScabbard\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 60,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,5,6,\"draw_R_scabbardMelee\",0);",
+      "text": "(unaff_EBX,1,2,\"draw_L_holsterAim\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -828,15 +788,7 @@
       "line": 61,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,\"draw_R_meleeAttack1\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 62,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,\"draw_R_meleeAttack2\",1);",
+      "text": "(unaff_EBX,0,5,\"draw_R_standScabbard\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -844,15 +796,7 @@
       "line": 63,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,\"draw_R_meleeAttack4\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 64,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,\"draw_LR_meleeAttack3\",1);",
+      "text": "(unaff_EBX,5,6,\"draw_R_scabbardMelee\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -860,15 +804,7 @@
       "line": 65,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,\"draw_R_crossAttack1\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 66,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,7,7,\"draw_holdCrate\",0);",
+      "text": "(unaff_EBX,0xd,6,\"draw_R_meleeAttack1\",1);",
       "type": "unaffected_reg"
     },
     {
@@ -876,15 +812,7 @@
       "line": 67,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,3,\"draw_stand2coatPocket\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 68,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,1,3,\"draw_holsters2CoatPocket\",0);",
+      "text": "(unaff_EBX,0xd,6,\"draw_R_meleeAttack2\",1);",
       "type": "unaffected_reg"
     },
     {
@@ -892,15 +820,7 @@
       "line": 69,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,4,\"draw_stand2TossAim\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 70,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,4,0,\"draw_tossAim2Stand\",1);",
+      "text": "(unaff_EBX,0xd,6,\"draw_R_meleeAttack4\",1);",
       "type": "unaffected_reg"
     },
     {
@@ -908,36 +828,84 @@
       "line": 71,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,1,0x10,\"draw_holsters2aimFlashlight\",0);",
+      "text": "(unaff_EBX,0xd,6,\"draw_LR_meleeAttack3\",1);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 72,
+      "line": 73,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0x12,2,\"draw_L_reload\",1);",
+      "text": "(unaff_EBX,0xd,6,\"draw_R_crossAttack1\",1);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 74,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((CClothList *)&unaff_EBX->field_0x2d0c,\"LAZ86CLOTH.cth\");",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x2d0c",
-      "severity": "mild",
-      "text": "((CClothList *)&unaff_EBX->field_0x2d0c,\"LAZ86CLOTH.cth\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 75,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,7,7,\"draw_holdCrate\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 77,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,3,\"draw_stand2coatPocket\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 79,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,1,3,\"draw_holsters2CoatPocket\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 81,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,4,\"draw_stand2TossAim\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,4,0,\"draw_tossAim2Stand\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 85,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,1,0x10,\"draw_holsters2aimFlashlight\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 87,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0x12,2,\"draw_L_reload\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 88,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_cloth_cpp_CClothList_add_FUN_005b15c0(&unaff_EBX->cloth_list,\"LAZ86CLOTH.cth\");",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 89,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x42e8 = 0;",
@@ -945,7 +913,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 75,
+      "line": 89,
       "match": "field_0x42e8",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x42e8 = 0;",
@@ -953,7 +921,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 76,
+      "line": 90,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4298 = 0;",
@@ -961,7 +929,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 76,
+      "line": 90,
       "match": "field_0x4298",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4298 = 0;",
@@ -969,7 +937,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 77,
+      "line": 91,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x42cc = 0;",
@@ -977,7 +945,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 77,
+      "line": 91,
       "match": "field_0x42cc",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x42cc = 0;",
@@ -985,7 +953,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 78,
+      "line": 92,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x44f0 = 0;",
@@ -993,7 +961,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 78,
+      "line": 92,
       "match": "field_0x44f0",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x44f0 = 0;",
@@ -1001,87 +969,79 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 79,
+      "line": 93,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "pcVar3 = &unaff_EBX->field_0x2514;",
+      "text": "pcVar3 = &(unaff_EBX->model).field_0x2260;",
       "type": "unaffected_reg"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x2514",
+      "line": 93,
+      "match": "field_0x2260",
       "severity": "mild",
-      "text": "pcVar3 = &unaff_EBX->field_0x2514;",
+      "text": "pcVar3 = &(unaff_EBX->model).field_0x2260;",
       "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 80,
+      "line": 94,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "pcVar4 = &unaff_EBX[2].field_0x42f0;",
+      "text": "pcVar5 = &unaff_EBX[2].field_0x42f0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 80,
+      "line": 94,
       "match": "field_0x42f0",
       "severity": "mild",
-      "text": "pcVar4 = &unaff_EBX[2].field_0x42f0;",
+      "text": "pcVar5 = &unaff_EBX[2].field_0x42f0;",
       "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 90,
+      "line": 104,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "pcVar3 = &unaff_EBX->field_0x2d10;",
+      "text": "pacVar4 = (unaff_EBX->cloth_list).filenames;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x2d10",
-      "severity": "mild",
-      "text": "pcVar3 = &unaff_EBX->field_0x2d10;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 91,
+      "line": 105,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "pcVar4 = &unaff_EBX[2].field_0x43f0;",
+      "text": "pcVar3 = &unaff_EBX[2].field_0x43f0;",
       "type": "unaffected_reg"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 91,
+      "line": 105,
       "match": "field_0x43f0",
       "severity": "mild",
-      "text": "pcVar4 = &unaff_EBX[2].field_0x43f0;",
+      "text": "pcVar3 = &unaff_EBX[2].field_0x43f0;",
       "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 101,
+      "line": 115,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX->field_0xfc = 1;",
+      "text": "*(uint *)&(unaff_EBX->base).field_0xfc = 1;",
       "type": "unaffected_reg"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 101,
+      "line": 115,
       "match": "field_0xfc",
       "severity": "mild",
-      "text": "*(uint *)&unaff_EBX->field_0xfc = 1;",
+      "text": "*(uint *)&(unaff_EBX->base).field_0xfc = 1;",
       "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 102,
+      "line": 116,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a28 = 0;",
@@ -1089,7 +1049,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 102,
+      "line": 116,
       "match": "field_0x10a28",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a28 = 0;",
@@ -1097,7 +1057,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 117,
       "match": "&stack0x00000140",
       "severity": "moderate",
       "text": "if ((uint *)&unaff_EBX->field_0x10a0c != &stack0x00000140) {",
@@ -1105,7 +1065,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 103,
+      "line": 117,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((uint *)&unaff_EBX->field_0x10a0c != &stack0x00000140) {",
@@ -1113,7 +1073,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 103,
+      "line": 117,
       "match": "field_0x10a0c",
       "severity": "mild",
       "text": "if ((uint *)&unaff_EBX->field_0x10a0c != &stack0x00000140) {",
@@ -1121,7 +1081,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 104,
+      "line": 118,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a0c = 0xbde76c8b;",
@@ -1129,7 +1089,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 104,
+      "line": 118,
       "match": "field_0x10a0c",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a0c = 0xbde76c8b;",
@@ -1137,7 +1097,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 105,
+      "line": 119,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a10 = 0x3ec3126f;",
@@ -1145,7 +1105,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 105,
+      "line": 119,
       "match": "field_0x10a10",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a10 = 0x3ec3126f;",
@@ -1153,7 +1113,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 106,
+      "line": 120,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a14 = 0x3e79db23;",
@@ -1161,7 +1121,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 106,
+      "line": 120,
       "match": "field_0x10a14",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a14 = 0x3e79db23;",
@@ -1169,7 +1129,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 108,
+      "line": 122,
       "match": "&stack0x00000158",
       "severity": "moderate",
       "text": "if ((uint *)&unaff_EBX->field_0x10a18 != &stack0x00000158) {",
@@ -1177,7 +1137,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 108,
+      "line": 122,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((uint *)&unaff_EBX->field_0x10a18 != &stack0x00000158) {",
@@ -1185,7 +1145,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 108,
+      "line": 122,
       "match": "field_0x10a18",
       "severity": "mild",
       "text": "if ((uint *)&unaff_EBX->field_0x10a18 != &stack0x00000158) {",
@@ -1193,7 +1153,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 109,
+      "line": 123,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a18 = 0x3de76c8b;",
@@ -1201,7 +1161,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 109,
+      "line": 123,
       "match": "field_0x10a18",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a18 = 0x3de76c8b;",
@@ -1209,7 +1169,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 110,
+      "line": 124,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a1c = 0x3ec3126f;",
@@ -1217,7 +1177,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 110,
+      "line": 124,
       "match": "field_0x10a1c",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a1c = 0x3ec3126f;",
@@ -1225,7 +1185,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 111,
+      "line": 125,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a20 = 0x3e79db23;",
@@ -1233,7 +1193,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 111,
+      "line": 125,
       "match": "field_0x10a20",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a20 = 0x3e79db23;",
@@ -1241,7 +1201,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 113,
+      "line": 127,
       "match": "&stack0x0000014c",
       "severity": "moderate",
       "text": "if ((uint *)&unaff_EBX->field_0x10a3c == &stack0x0000014c) {",
@@ -1249,7 +1209,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 113,
+      "line": 127,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "if ((uint *)&unaff_EBX->field_0x10a3c == &stack0x0000014c) {",
@@ -1257,7 +1217,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 113,
+      "line": 127,
       "match": "field_0x10a3c",
       "severity": "mild",
       "text": "if ((uint *)&unaff_EBX->field_0x10a3c == &stack0x0000014c) {",
@@ -1265,7 +1225,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 116,
+      "line": 130,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a3c = 0x3f000000;",
@@ -1273,7 +1233,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 116,
+      "line": 130,
       "match": "field_0x10a3c",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a3c = 0x3f000000;",
@@ -1281,7 +1241,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 117,
+      "line": 131,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a40 = 0;",
@@ -1289,7 +1249,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 117,
+      "line": 131,
       "match": "field_0x10a40",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a40 = 0;",
@@ -1297,7 +1257,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 118,
+      "line": 132,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX->field_0x10a44 = 0;",
@@ -1305,7 +1265,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 118,
+      "line": 132,
       "match": "field_0x10a44",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX->field_0x10a44 = 0;",
@@ -1313,7 +1273,7 @@
     },
     {
       "description": "Pointer value `in_EAX` truncated by cast to `char` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 21,
+      "line": 22,
       "match": "(char)in_EAX",
       "severity": "moderate",
       "text": "cVar2 = (char)in_EAX + *in_EAX;",
@@ -1321,7 +1281,7 @@
     },
     {
       "description": "Pointer value `in_EAX` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "(uint)in_EAX",
       "severity": "moderate",
       "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",
@@ -1329,7 +1289,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 81,
+      "line": 95,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1337,7 +1297,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 92,
+      "line": 106,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1345,7 +1305,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 47,
+      "line": 46,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4228 = 0;",
@@ -1353,7 +1313,7 @@
     },
     {
       "description": "Ghidra CONCAT31 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "CONCAT31",
       "severity": "moderate",
       "text": "pcVar3 = (char *)CONCAT31((int3)((uint)in_EAX >> 8),cVar2);",

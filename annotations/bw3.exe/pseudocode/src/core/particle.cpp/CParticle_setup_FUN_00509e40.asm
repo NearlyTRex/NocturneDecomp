@@ -12,17 +12,17 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
-;   core_fire.cpp_FUN_00499fe0 at 00499ff6
+;   core_fire.cpp_CRock_setup_FUN_00499fe0 at 00499ff6
+;   core_fire.cpp_CShell_setup_FUN_004a0960 at 004a0978
 ;   core_fire.cpp_FUN_0049a140 at 0049a157
 ;   core_fire.cpp_FUN_0049a650 at 0049a9c5
-;   core_fire.cpp_FUN_004a0960 at 004a0978
 ;   core_gore.cpp_CBloodParticle_setup_FUN_004ccac0 at 004ccae6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cb659
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;
 ; *****************************************************************************
 
@@ -75,16 +75,16 @@ section .text
     PUSH 0x3fc90fdb                     ; 00509eab
         ;   Label: LAB_00509eab
     PUSH 0x3f490fdb                     ; 00509eb0
-    CALL core_actor.cpp_FUN_0040ce40    ; 00509eb5
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00509eb5
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00509eba
     FLD float ptr [ESP + 0x2c]          ; 00509ebe
     ADD ESP,0x8                         ; 00509ec2
     PUSH 0x40c90fdb                     ; 00509ec5
     PUSH 0x0                            ; 00509eca
     FSTP float ptr [ESP + 0x18]         ; 00509ecc
-    CALL core_actor.cpp_FUN_0040ce40    ; 00509ed0
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00509ed0
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2c],EAX      ; 00509ed5
     FLD float ptr [ESP + 0x2c]          ; 00509ed9
     ADD ESP,0x8                         ; 00509edd

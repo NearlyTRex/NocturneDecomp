@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 157,
-    "complexity_score": 319,
+    "complexity_score": 298,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 23,
+    "pseudocode_lines": 58,
+    "suspect_count": 21,
     "suspect_types": [
       "param_count_too_few",
       "raw_address_pointer_store",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 216
+    "total_lines": 215
   },
   "cross_references": [
     {
@@ -70,7 +70,7 @@
     {
       "addr": "004fc740",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc740"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740"
     },
     {
       "addr": "005b8130",
@@ -80,7 +80,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -382,7 +382,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
@@ -390,7 +390,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((param_1 == (char *)0x0) || (*param_1 == '\\0')) {",
@@ -398,15 +398,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 16,
+      "line": 15,
       "match": "DAT_01c3dd10",
       "severity": "mild",
-      "text": "pcVar6 = &DAT_01c3dd10;",
+      "text": "pcVar5 = &DAT_01c3dd10;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == '@') {",
@@ -414,7 +414,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar2 = core_event_cpp_CEventList_getActorByVarName_FUN_00491860(0x01C38BC0,param_1);",
@@ -422,7 +422,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = _stricmp(param_1,&DAT_005d2e56);",
@@ -430,7 +430,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_005d2e56",
       "severity": "mild",
       "text": "iVar3 = _stricmp(param_1,&DAT_005d2e56);",
@@ -438,39 +438,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = core_mission_cpp_FUN_004fc740(0x01D182F0,param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005b7790(&DAT_01c3dd10,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "text": "pCVar2 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(0x01D182F0,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 38,
+      "line": 37,
       "match": "DAT_01c3dd10",
       "severity": "mild",
-      "text": "FUN_005b7790(&DAT_01c3dd10,\"Actor \\\"%s\\\" does not exist.\",param_1);",
+      "text": "_sprintf(&DAT_01c3dd10,\"Actor \\\"%s\\\" does not exist.\");",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_01c3dd10",
       "severity": "mild",
-      "text": "FUN_005b7790(&DAT_01c3dd10,\"Can't use '$' actor specifier in multi-player\");",
+      "text": "_sprintf(&DAT_01c3dd10,\"Can't use '$' actor specifier in multi-player\");",
       "type": "undefined_data"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 47,
+      "line": 46,
       "match": "*(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
       "text": "pCVar2 = *(CDemonActor **)(_DAT_01cedef4 * 4 + 0x1cedee4);",
@@ -478,7 +470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar3 = core_actor_cpp_isOfClassHash_FUN_0040c8c0(pCVar2,param_2);",
@@ -486,7 +478,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*param_1 == '@') {",
@@ -494,31 +486,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 59,
       "match": "param_3",
       "severity": "mild",
-      "text": "uVar4 = core_actor_cpp_FUN_00408a50(pCVar2,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 61,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "FUN_005b7790(&DAT_01c3dd10,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,uVar4);",
+      "text": "core_actor_cpp_FUN_00408a50(pCVar2,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 60,
       "match": "DAT_01c3dd10",
       "severity": "mild",
-      "text": "FUN_005b7790(&DAT_01c3dd10,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\",param_1,uVar4);",
+      "text": "_sprintf(&DAT_01c3dd10,\"Actor \\\"%s\\\" is of type %s, this command requires an actor of type %s.\");",
       "type": "undefined_data"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 17,
+      "line": 16,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

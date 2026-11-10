@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 88,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 30,
     "suspect_count": 4,
     "suspect_types": [
       "stack_ref",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 100
+    "total_lines": 97
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "0055a670",
@@ -133,7 +133,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*_DAT_02cf49c4 + 0x10))();",
@@ -141,15 +141,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 23,
+      "line": 21,
       "match": "&stack0xfffffe04",
       "severity": "moderate",
-      "text": "(&stack0xfffffe04,\"DirectSux: Unable to %s.  (%s)\",",
+      "text": "_sprintf(&stack0xfffffe04,\"DirectSux: Unable to %s.  (%s)\");",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 25,
+      "line": 22,
       "match": "&stack0xfffffe04",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_0055a560(&stack0xfffffe04);",
@@ -159,7 +159,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDirectSoundDevice",
         "offset": 20,
         "vtable_addr": "005e48dc"
       }

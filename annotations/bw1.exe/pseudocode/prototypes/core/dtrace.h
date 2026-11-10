@@ -95,11 +95,11 @@ void FUN_0048c50c(int param_1,float *param_2);
 
 // Original: core_dtrace.cpp_FUN_0048c510
 // Address: 0048c510
-void FUN_0048c510(int param_1,float *param_2);
+void __cdecl FUN_0048c510(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 
 // Original: core_dtrace.cpp_FUN_0048ca40
 // Address: 0048ca40
-void FUN_0048ca40(int param_1,int *param_2,int param_3,int param_4,int param_5);
+void FUN_0048ca40(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_0048cba0
 // Address: 0048cba0

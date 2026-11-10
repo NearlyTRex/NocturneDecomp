@@ -33,7 +33,7 @@
 ;   undefined4 DAT_01548b78
 ;
 ; Called Functions:
-;   core_dcube.cpp_FUN_00452e20
+;   core_dcube.cpp_triangleCylinderCollision_FUN_00452e20
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     PUSH EDX                            ; 0045461b
     ADD EAX,EDI                         ; 0045461c
     PUSH EAX                            ; 0045461e
-    CALL core_dcube.cpp_FUN_00452e20    ; 0045461f
-        ;   XREF to: 00452e20 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_FUN_00452e20(CDemonCubeTriangle * triangle, CVector3f * cylinder_center, float cylinder_radius, float * out_height)
+    CALL core_dcube.cpp_triangleCylinderCollision_FUN_00452e20 ; 0045461f
+        ;   XREF to: 00452e20 (UNCONDITIONAL_CALL)  ; uint core_dcube.cpp_triangleCylinderCollision_FUN_00452e20(CDemonCubeTriangle * triangle, CVector3f * cylinder_center, float cylinder_radius, float * out_height)
     ADD ESP,0x10                        ; 00454624
     TEST EAX,EAX                        ; 00454627
     JZ 0x0045462d                       ; 00454629

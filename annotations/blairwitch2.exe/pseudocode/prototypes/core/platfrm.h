@@ -21,33 +21,33 @@ CDemonActorType * CPlatform::getActorType(CPlatform *this_ptr);
 // Address: 005180b0
 CPlatform * __cdecl CPlatform::ctor(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_00518280
+// Original: core_platfrm.cpp_CPlatform_setup_FUN_00518280
 // Address: 00518280
-void __cdecl FUN_00518280(CPlatform *this_ptr);
+void __cdecl CPlatform::setup(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_00518310
+// Original: core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310
 // Address: 00518310
-void __cdecl FUN_00518310(CPlatform *this_ptr);
+void __cdecl CPlatform::evaluatePosition(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_005184c0
+// Original: core_platfrm.cpp_CPlatform_process_FUN_005184c0
 // Address: 005184c0
-void __cdecl FUN_005184c0(CPlatform *this_ptr,float delta_time);
+void __cdecl CPlatform::process(CPlatform *this_ptr,float delta_time);
 
-// Original: core_platfrm.cpp_FUN_00518ff0
+// Original: core_platfrm.cpp_CPlatform_startMovement_FUN_00518ff0
 // Address: 00518ff0
-void __cdecl FUN_00518ff0(CPlatform *this_ptr,float goal_param,float movement_rate);
+void __cdecl CPlatform::startMovement(CPlatform *this_ptr,float goal_param,float movement_rate);
 
-// Original: core_platfrm.cpp_FUN_00519080
+// Original: core_platfrm.cpp_CPlatform_renderOpaque_FUN_00519080
 // Address: 00519080
-int FUN_00519080(CDemonActor *param_1);
+int __cdecl CPlatform::renderOpaque(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_005191d0
+// Original: core_platfrm.cpp_CPlatform_renderBackground_FUN_005191d0
 // Address: 005191d0
-void FUN_005191d0(CDemonActor *param_1,int param_2);
+void __cdecl CPlatform::renderBackground(CPlatform *this_ptr,int layer_flag);
 
-// Original: core_platfrm.cpp_FUN_005193b0
+// Original: core_platfrm.cpp_CPlatform_getBoundingBox_FUN_005193b0
 // Address: 005193b0
-void FUN_005193b0(int param_1);
+CBoundingBox3D * __cdecl CPlatform::getBoundingBox(CPlatform *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_platfrm.cpp_CPlatform_archive_FUN_005193f0
 // Address: 005193f0
@@ -57,21 +57,21 @@ void __cdecl CPlatform::archive(CPlatform *this_ptr);
 // Address: 005197b0
 int __cdecl CPlatform::isActorOnPlatform(CPlatform *this_ptr,CDemonActor *actor);
 
-// Original: core_platfrm.cpp_FUN_00519a00
+// Original: core_platfrm.cpp_CPlatform_getCollisionType_FUN_00519a00
 // Address: 00519a00
-undefined4 FUN_00519a00(int param_1,int param_2);
+ECollisionType __cdecl CPlatform::getCollisionType(CPlatform *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_platfrm.cpp_FUN_00519a20
+// Original: core_platfrm.cpp_CPlatform_allowBulletHoles_FUN_00519a20
 // Address: 00519a20
-undefined4 FUN_00519a20(void);
+int __cdecl CPlatform::allowBulletHoles(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_00519a40
+// Original: core_platfrm.cpp_CPlatform_getGroundType_FUN_00519a40
 // Address: 00519a40
-undefined4 FUN_00519a40(int param_1);
+EGroundType __cdecl CPlatform::getGroundType(CPlatform *this_ptr);
 
-// Original: core_platfrm.cpp_FUN_00519a50
+// Original: core_platfrm.cpp_CPlatform_getBlockVirtualDirectorFlag_FUN_00519a50
 // Address: 00519a50
-undefined4 FUN_00519a50(int param_1);
+int __cdecl CPlatform::getBlockVirtualDirectorFlag(CPlatform *this_ptr);
 
 // Original: core_platfrm.cpp_CPlatform_attachActor_FUN_00519a60
 // Address: 00519a60

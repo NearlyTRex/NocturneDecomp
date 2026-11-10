@@ -18,16 +18,14 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawCircle_FUN_004665c0(CDrawSurf
   int in_stack_00000020;
   
   if (0 < radius) {
-    iVar2 = center_x + *(int *)(this_ptr + 8);
-    iVar1 = center_y + *(int *)(this_ptr + 0xc);
-    if (((*(int *)(this_ptr + 0x10) <= iVar2 + radius) ||
-        (*(int *)(this_ptr + 0x14) <= iVar1 + radius)) &&
-       ((iVar2 - radius <= *(int *)(this_ptr + 0x18) ||
-        (iVar1 - radius <= *(int *)(this_ptr + 0x1c))))) {
+    iVar2 = center_x + this_ptr->x;
+    iVar1 = center_y + this_ptr->y;
+    if (((this_ptr->clip_left <= iVar2 + radius) || (this_ptr->clip_top <= iVar1 + radius)) &&
+       ((iVar2 - radius <= this_ptr->clip_right || (iVar1 - radius <= this_ptr->clip_bottom)))) {
       width = 0;
       iVar3 = 1 - radius;
       cockpit_drawsurf_cpp_CDrawSurface_drawRectangleCornerPoints_FUN_00466770
-                (this_ptr,iVar2 - *(int *)(this_ptr + 8),iVar1 - *(int *)(this_ptr + 0xc),0,radius);
+                (this_ptr,iVar2 - this_ptr->x,iVar1 - this_ptr->y,0,radius);
       if (0 < radius) {
         iVar1 = 1;
         do {

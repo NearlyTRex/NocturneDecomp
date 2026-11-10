@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0
-;   core_setutil.cpp_FUN_0053ae20
+;   core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
     PUSH EBX                            ; 00538c59
     MOV EBX,EDI                         ; 00538c5a
     PUSH EBX                            ; 00538c5c
-    CALL core_setutil.cpp_FUN_0053ae20  ; 00538c5d
-        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_FUN_0053ae20()
+    CALL core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20 ; 00538c5d
+        ;   XREF to: 0053ae20 (UNCONDITIONAL_CALL)  ; undefined core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20()
     ADD ESP,0xc                         ; 00538c62
     TEST EAX,EAX                        ; 00538c65
     JZ 0x00538cc7                       ; 00538c67

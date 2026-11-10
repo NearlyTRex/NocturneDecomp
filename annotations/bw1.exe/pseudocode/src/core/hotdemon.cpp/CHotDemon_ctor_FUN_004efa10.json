@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 97,
+    "complexity_score": 78,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 7,
+    "pseudocode_lines": 18,
+    "suspect_count": 5,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 42
+    "total_lines": 43
   },
   "cross_references": [
     {
@@ -25,7 +25,7 @@
     {
       "addr": "00592320",
       "from_addr": "00592619",
-      "name": "core_succubus.cpp_FUN_00592320",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_00592320",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,7 +50,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -75,8 +75,8 @@
     {
       "addr": "00602314",
       "name": "g_CHotDemonVTable",
-      "type": "undefined1*",
-      "value": "004efa70"
+      "type": "CEnemy_full_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -85,7 +85,7 @@
       {
         "call_addr": "00592619",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00592320",
+        "caller": "core_succubus.cpp_CSuccubus_process_FUN_00592320",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,50 +159,34 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar3->field_0x154 = &g_CHotDemonVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,\"hotdemon.dfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
+      "line": 17,
       "match": "field_0x2fec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff0 = 0x3f666666;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x2fec = 0x3f19999a;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 18,
-      "match": "field_0x2ff4",
+      "match": "field_0x2ff0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff4 = uVar1;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x2ff0 = 0x3f666666;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 19,
+      "match": "field_0x2ff4",
+      "severity": "mild",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x2ff4 = uVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
       "match": "field_0x2ff8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ff8 = uVar2;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x2ff8 = uVar2;",
       "type": "unnamed_field"
     }
   ],

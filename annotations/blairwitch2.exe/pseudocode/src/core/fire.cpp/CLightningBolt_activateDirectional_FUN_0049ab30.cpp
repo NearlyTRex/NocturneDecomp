@@ -9,19 +9,19 @@
 void __cdecl core_fire_cpp_CLightningBolt_activateDirectional_FUN_0049ab30(CLightningBolt *this_ptr,CVector3f *start_position,CVector3f *end_position,float end_width,float end_spread)
 
 {
-  if ((CVector3f *)&this_ptr->field_0x4 != start_position) {
-    *(uint *)&this_ptr->field_0x4 = *(uint *)start_position;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&start_position->field_0x4;
-    *(uint *)&this_ptr->field_0xc = *(uint *)&start_position->field_0x8;
+  if (&this_ptr->start_position != start_position) {
+    (this_ptr->start_position).x = start_position->x;
+    (this_ptr->start_position).y = start_position->y;
+    (this_ptr->start_position).z = start_position->z;
   }
-  if ((CVector3f *)&this_ptr->field_0x1c != end_position) {
-    *(uint *)&this_ptr->field_0x1c = *(uint *)end_position;
-    *(uint *)&this_ptr->field_0x20 = *(uint *)&end_position->field_0x4;
-    *(uint *)&this_ptr->field_0x24 = *(uint *)&end_position->field_0x8;
+  if (&this_ptr->end_position != end_position) {
+    (this_ptr->end_position).x = end_position->x;
+    (this_ptr->end_position).y = end_position->y;
+    (this_ptr->end_position).z = end_position->z;
   }
-  *(uint *)this_ptr = 1;
-  *(uint *)&this_ptr->field_0x14 = 0x3e800000;
-  *(float *)&this_ptr->field_0x18 = end_width;
-  *(float *)&this_ptr->field_0x28 = end_spread;
+  this_ptr->mode = 1;
+  this_ptr->lifetime = 0.25;
+  this_ptr->end_width = end_width;
+  this_ptr->end_spread = end_spread;
   return;
 }

@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c0336
-;   unkafter_box.cpp_FUN_00523910
+;   unkafter_morph.cpp_FUN_00523910
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     RET                                 ; 00562fe7
     PUSH EBX                            ; 00562fe8
         ;   Label: LAB_00562fe8
-    CALL unkafter_box.cpp_FUN_00523910  ; 00562fe9
-        ;   XREF to: 00523910 (UNCONDITIONAL_CALL)  ; undefined unkafter_box.cpp_FUN_00523910()
+    CALL unkafter_morph.cpp_FUN_00523910 ; 00562fe9
+        ;   XREF to: 00523910 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_00523910()
     ADD ESP,0x4                         ; 00562fee
     JMP 0x00562f7e                      ; 00562ff1
         ;   XREF to: 00562f7e (UNCONDITIONAL_JUMP)  ; LAB_00562f7e

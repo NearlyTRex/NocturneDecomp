@@ -2,61 +2,64 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 281,
+    "complexity_score": 315,
     "cross_reference_count": 7,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
-    "suspect_count": 8,
+    "pseudocode_lines": 185,
+    "suspect_count": 10,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
       "stack_alignment_array",
-      "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 510
+    "total_lines": 509
   },
   "cross_references": [
     {
       "addr": "00414dd0",
       "from_addr": "00414e28",
-      "name": "core_biggs.cpp_FUN_00414dd0",
+      "name": "core_biggs.cpp_CBiggs_setup_FUN_00414dd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f04f0",
       "from_addr": "004f085a",
-      "name": "core_mimic.cpp_FUN_004f04f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00501480",
-      "from_addr": "00501500",
-      "name": "core_moloch.cpp_FUN_00501480",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_004f04f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00501530",
       "from_addr": "00501bf9",
-      "name": "core_moloch.cpp_FUN_00501530",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_00501530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00501480",
+      "from_addr": "00501500",
+      "name": "core_moloch.cpp_CMoloch_setup_FUN_00501480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005115e0",
       "from_addr": "00511671",
-      "name": "core_passngr.cpp_FUN_005115e0",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056f3a0",
       "from_addr": "0056f664",
-      "name": "core_succubus.cpp_FUN_0056f3a0",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00581660",
       "from_addr": "00581805",
-      "name": "core_vampboss.cpp_FUN_00581660",
+      "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_00581660",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +135,7 @@
       {
         "call_addr": "00414e28",
         "call_type": "direct",
-        "caller": "core_biggs.cpp_FUN_00414dd0",
+        "caller": "core_biggs.cpp_CBiggs_setup_FUN_00414dd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +146,7 @@
       {
         "call_addr": "004f085a",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_004f04f0",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_004f04f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -154,7 +157,7 @@
       {
         "call_addr": "00501500",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_00501480",
+        "caller": "core_moloch.cpp_CMoloch_setup_FUN_00501480",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +168,7 @@
       {
         "call_addr": "00501bf9",
         "call_type": "direct",
-        "caller": "core_moloch.cpp_FUN_00501530",
+        "caller": "core_moloch.cpp_CMoloch_process_FUN_00501530",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +179,7 @@
       {
         "call_addr": "00511671",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_005115e0",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +190,7 @@
       {
         "call_addr": "0056f664",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_0056f3a0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,7 +201,7 @@
       {
         "call_addr": "00581805",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00581660",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_00581660",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -653,8 +656,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -669,52 +680,60 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x4 = *(uint *)(iVar10 + 8);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 184,
+      "match": "(CMorph *)((int)(local_3c + 0xffffffff) +",
+      "severity": "moderate",
+      "text": "local_3c = (CMorph *)((int)(local_3c + 0xffffffff) + 0x624);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x8 = *(uint *)(iVar10 + 0xc);",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 166,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar12 * -8 + 4) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((CBoundingBox3D *)&pCVar5->field_0xc != pCVar7) {",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 168,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xc = *(uint *)pCVar7;",
-      "type": "unnamed_field"
+      "description": "Pointer value `(local_3c + 0xffffffff)` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 184,
+      "match": "(int)(local_3c + 0xffffffff)",
+      "severity": "moderate",
+      "text": "local_3c = (CMorph *)((int)(local_3c + 0xffffffff) + 0x624);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x10 = *(uint *)(iVar10 + 8);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 166,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar12 * -8 + 4) =",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x14 = *(uint *)(iVar10 + 0xc);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 168,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&local_64 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_3c` self-updates via element-arithmetic `(int)(local_3c + N) + M`, where `N*sizeof(*local_3c) + M` equals the larger struct stride being walked (the pointer is typed to a sub-element). Replace `local_3c->field` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 184,
+      "match": "local_3c = (T *)((int)(local_3c + N) + M)",
+      "severity": "moderate",
+      "text": "local_3c = (CMorph *)((int)(local_3c + 0xffffffff) + 0x624);",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

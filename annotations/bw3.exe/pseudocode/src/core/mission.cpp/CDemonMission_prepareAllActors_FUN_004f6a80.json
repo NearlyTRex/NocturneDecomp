@@ -1,0 +1,222 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 145,
+    "complexity_score": 73,
+    "cross_reference_count": 3,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 48,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [
+    {
+      "addr": "004f6de0",
+      "from_addr": "004f6e5d",
+      "name": "core_mission.cpp_FUN_004f6de0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f722c",
+      "from_addr": "004f727e",
+      "name": "core_mission.cpp_FUN_004f722c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7590",
+      "from_addr": "004f75d9",
+      "name": "core_mission.cpp_FUN_004f7590",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f6a80",
+    "address_range": [
+      [
+        "004f6a80",
+        "004f6be5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004f6a80(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e0000",
+      "is_variadic": false,
+      "name": "core_level.cpp_FUN_004e0000"
+    },
+    {
+      "addr": "005503c0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_005503c0"
+    },
+    {
+      "addr": "005503f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_005503f0"
+    },
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c89b1",
+      "name": "s_Setting_up_actors_005c89b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c89c3",
+      "name": "s_Setting_up_actors_005c89c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c89d5",
+      "name": "s_Setting_up_actors_005c89d5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c89e7",
+      "name": "s_Setting_up_actors_005c89e7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006002ac",
+      "name": "DAT_006002ac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004f6e5d",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f6de0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f75d9",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f7590",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004f727e",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f722c",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.307017543859649,
+    "instruction_count": 114,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 39,
+      "BOOL_OR": 2,
+      "BOOL_XOR": 2,
+      "BRANCH": 2,
+      "CALL": 10,
+      "CALLIND": 2,
+      "CBRANCH": 8,
+      "COPY": 84,
+      "INT_ADD": 33,
+      "INT_AND": 154,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 79,
+      "INT_LEFT": 4,
+      "INT_LESS": 11,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 20,
+      "INT_OR": 30,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 40,
+      "INT_SRIGHT": 11,
+      "INT_SUB": 52,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 21,
+      "POPCOUNT": 36,
+      "RETURN": 1,
+      "STORE": 36
+    },
+    "pcode_op_count": 719
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 19,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 4))(iVar3);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 30,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(*(code *)**(uint **)(iVar3 + 0x154))(iVar3);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

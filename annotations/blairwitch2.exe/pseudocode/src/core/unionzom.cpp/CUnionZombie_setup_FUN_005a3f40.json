@@ -1,0 +1,169 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 43,
+    "complexity_score": 72,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3f40",
+    "address_range": [
+      [
+        "005a3f40",
+        "005a3fb2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40",
+    "signature": "void __cdecl core_unionzom_cpp_CUnionZombie_setup_FUN_005a3f40(CUnionZombie *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    },
+    {
+      "addr": "005a8030",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_FUN_005a8030"
+    },
+    {
+      "addr": "005a8050",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_FUN_005a8050"
+    },
+    {
+      "addr": "005a80d0",
+      "is_variadic": false,
+      "name": "unkaddr_005a7eb0.cpp_FUN_005a80d0"
+    },
+    {
+      "addr": "0059e6a0",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059e6a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0263",
+      "name": "s_Bip01_L_Finger1_005f0263",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f0273",
+      "name": "s_Bip01_R_Finger1_005f0273",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.027777777777778,
+    "instruction_count": 36,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 25,
+      "INT_ADD": 15,
+      "INT_AND": 12,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 6,
+      "INT_SUB": 21,
+      "LOAD": 6,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 23
+    },
+    "pcode_op_count": 145
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CUnionZombie *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x113b0",
+      "severity": "mild",
+      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 L Finger1\",1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x11850",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x11850 = iVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x113b0",
+      "severity": "mild",
+      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 R Finger1\",1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x264",
+      "severity": "mild",
+      "text": "puVar1 = &this_ptr->field_0x264;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x11854",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x11854 = iVar2;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005ff554"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

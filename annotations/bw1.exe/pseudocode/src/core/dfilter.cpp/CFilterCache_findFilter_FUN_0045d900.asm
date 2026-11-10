@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0 at 0045dedd
-;   core_dfilter.cpp_FUN_0045df40 at 0045df55
+;   core_dfilter.cpp_CFilterFX_process_FUN_0045df40 at 0045df55
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005c0f80

@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 129,
-    "complexity_score": 328,
+    "complexity_score": 285,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
-    "suspect_count": 24,
+    "pseudocode_lines": 55,
+    "suspect_count": 20,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 182
+    "total_lines": 184
   },
   "cross_references": [
     {
@@ -284,30 +283,6 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "(((local_34 < *(int *)&this_ptr->field_0x40 && (local_30 < *(int *)&this_ptr->field_0x44)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "(((local_34 < *(int *)&this_ptr->field_0x40 && (local_30 < *(int *)&this_ptr->field_0x44)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "(local_2c < *(int *)&this_ptr->field_0x48)))) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 31,
       "match": "&stack0xffffffc4",
@@ -341,27 +316,19 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 51,
       "match": "DAT_00613888",
       "severity": "mild",
-      "text": "*(byte *)(*(int *)this_ptr_00 + local_3c) & ((&DAT_00613888)[local_40] ^ 0xff);",
+      "text": "((byte)this_ptr_00->voxel_buffer1[local_3c] & ((&DAT_00613888)[local_40] ^ 0xff));",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 53,
+      "line": 55,
       "match": "DAT_00613888",
       "severity": "mild",
-      "text": "*(byte *)(*(int *)&this_ptr_00->field_0x4 + local_3c) & (&DAT_00613888)[local_40];",
+      "text": "(byte)this_ptr_00->voxel_buffer2[local_3c] & (&DAT_00613888)[local_40]);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)&this_ptr_00->field_0x4 + local_3c) & (&DAT_00613888)[local_40];",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `&stack0xffffffd0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

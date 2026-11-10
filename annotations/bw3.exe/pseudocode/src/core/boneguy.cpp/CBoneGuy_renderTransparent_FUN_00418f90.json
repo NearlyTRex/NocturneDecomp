@@ -1,0 +1,236 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 105,
+    "cross_reference_count": 0,
+    "function_call_count": 8,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 127
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00418f90",
+    "address_range": [
+      [
+        "00418f90",
+        "0041906f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90",
+    "signature": "int __cdecl core_boneguy_cpp_CBoneGuy_renderTransparent_FUN_00418f90(CBoneGuy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830"
+    },
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "0042d8e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042d8e0"
+    },
+    {
+      "addr": "0042f310",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042f310"
+    },
+    {
+      "addr": "0046e4e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCapturedFaces_FUN_0046e4e0"
+    },
+    {
+      "addr": "0046d4c0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046d4c0"
+    },
+    {
+      "addr": "0046e120",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01bdd7e4",
+      "name": "DAT_01bdd7e4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032560",
+      "name": "g_CDemonSetInstance.disable_directional_lighting",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.972602739726027,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 4,
+      "COPY": 89,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 32,
+      "INT_AND": 36,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 15,
+      "INT_SUB": 30,
+      "INT_XOR": 1,
+      "INT_ZEXT": 6,
+      "LOAD": 14,
+      "POPCOUNT": 15,
+      "RETURN": 2,
+      "STORE": 28
+    },
+    "pcode_op_count": 363
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoneGuy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setTextureCaptureMode_FUN_0046e120(DAT_005f2afc,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x3254",
+      "severity": "mild",
+      "text": "if (0.0 < *(float *)&(this_ptr->base).base.field_0x3254) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 22,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBoneGuy",
+        "offset": 20,
+        "vtable_addr": "005dc414"
+      },
+      {
+        "class_name": "CBoneGuy",
+        "offset": 20,
+        "vtable_addr": "005dc154"
+      },
+      {
+        "class_name": "CBoneGuy",
+        "offset": 20,
+        "vtable_addr": "005dc574"
+      },
+      {
+        "class_name": "CBoneGuy",
+        "offset": 20,
+        "vtable_addr": "005dc2b4"
+      },
+      {
+        "class_name": "CBoneGuy",
+        "offset": 20,
+        "vtable_addr": "005dc6d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 5
+  }
+}

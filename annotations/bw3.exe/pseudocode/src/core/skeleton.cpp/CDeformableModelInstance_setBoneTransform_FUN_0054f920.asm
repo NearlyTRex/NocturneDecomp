@@ -15,7 +15,7 @@
 ; XREF[3]:
 ;   core_charactr.cpp_FUN_0042f310 at 0042f471
 ;   core_prye.cpp_FUN_0051e280 at 0051e361
-;   core_thehand.cpp_FUN_0056c140 at 0056c586
+;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c586
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0

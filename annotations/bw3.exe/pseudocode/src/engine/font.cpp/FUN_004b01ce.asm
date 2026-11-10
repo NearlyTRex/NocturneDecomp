@@ -6,8 +6,8 @@
 ;
 ; Called Functions:
 ;   crt_string.c_strupr_FUN_005a5b10
+;   engine_font.cpp_CBitFont_loadNewBitmap_FUN_004b0190
 ;   engine_font.cpp_CBitFont_openFontFile_FUN_004af8f0
-;   engine_font.cpp_FUN_004b0190
 ;   support_trstream.cpp_FUN_00573fc0
 ;   unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0
 ;   unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40
@@ -205,8 +205,8 @@ section .text
     LEA EAX,[ESP + 0x14]                ; 004b040f
     PUSH EAX                            ; 004b0413
     PUSH EBX                            ; 004b0414
-    CALL engine_font.cpp_FUN_004b0190   ; 004b0415
-        ;   XREF to: 004b0190 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_FUN_004b0190(CBitFont * this_ptr, char * filename, int width, int height, ...)
+    CALL engine_font.cpp_CBitFont_loadNewBitmap_FUN_004b0190 ; 004b0415
+        ;   XREF to: 004b0190 (UNCONDITIONAL_CALL)  ; void engine_font.cpp_CBitFont_loadNewBitmap_FUN_004b0190(CBitFont * this_ptr, char * filename, int width, int height, ...)
     ADD ESP,0x1c                        ; 004b041a
     MOV EAX,dword ptr [ESP + 0x240]     ; 004b041d
         ;   Label: LAB_004b041d

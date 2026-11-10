@@ -5,17 +5,17 @@
 ;
 ;
 ; XREF[8]:
-;   crt_unknown.c_FUN_005a4dac at 005a4dd1
-;   crt_unknown.c_FUN_005a4de7 at 005a4dfc
-;   crt_unknown.c_FUN_005a4e29 at 005a4e65
-;   crt_unknown.c_FUN_005a4e88 at 005a4ecb
-;   unkafter_2d.cpp_FUN_005b0a2c at 005b0a63
-;   unkafter_2d.cpp_FUN_005b0f93 at 005b0fe2
-;   unkafter_2d.cpp_FUN_005b0ff9 at 005b1066
-;   unkafter_asgaya.cpp_FUN_005af142 at 005af193
+;   crt_unknown.c_FUN_005af142 at 005af193
+;   crt_unknown.c_FUN_005b0a2c at 005b0a63
+;   crt_unknown.c_FUN_005b0f93 at 005b0fe2
+;   crt_unknown.c_FUN_005b0ff9 at 005b1066
+;   crt_unknown.c_fflush_FUN_005a4dac at 005a4dd1
+;   crt_unknown.c_ios_clear_FUN_005a4de7 at 005a4dfc
+;   crt_unknown.c_istream_seekg_FUN_005a4e88 at 005a4ecb
+;   crt_unknown.c_openFile_FUN_005a4e29 at 005a4e65
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005af042
+;   crt_unknown.c_FUN_005af042
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_005abca7
     LEA EAX,[ESP + 0x4]                 ; 005abca8
     PUSH EAX                            ; 005abcac
-    CALL unkafter_asgaya.cpp_FUN_005af042 ; 005abcad
-        ;   XREF to: 005af042 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af042()
+    CALL crt_unknown.c_FUN_005af042     ; 005abcad
+        ;   XREF to: 005af042 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af042()
     ADD ESP,0x8                         ; 005abcb2
     ADD ESP,0x4                         ; 005abcb5
     POP EBX                             ; 005abcb8

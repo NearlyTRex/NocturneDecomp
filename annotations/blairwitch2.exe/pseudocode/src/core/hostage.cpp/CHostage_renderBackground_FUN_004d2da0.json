@@ -1,0 +1,127 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 32,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 52
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d2da0",
+    "address_range": [
+      [
+        "004d2da0",
+        "004d2dee"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hostage.cpp_CHostage_renderBackground_FUN_004d2da0",
+    "signature": "void __cdecl core_hostage_cpp_CHostage_renderBackground_FUN_004d2da0(CHostage *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "005108d0",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_renderBackground_FUN_005108d0"
+    },
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da3ae",
+      "name": "s_ScatDazzle_005da3ad+1",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.538461538461538,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 19,
+      "INT_ADD": 13,
+      "INT_AND": 13,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 13,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 11,
+      "LOAD": 9,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 118
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2568",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.field_0x2568 = 1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 32,
+        "vtable_addr": "005f86d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

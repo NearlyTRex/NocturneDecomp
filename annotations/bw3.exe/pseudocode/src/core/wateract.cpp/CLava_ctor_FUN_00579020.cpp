@@ -14,7 +14,7 @@ CLava * core_wateract_cpp_CLava_ctor_FUN_00579020(CLava *this_ptr)
   CWaterActor *pCVar1;
   
   pCVar1 = core_wateract_cpp_CWaterActor_ctor_FUN_00577d90((CWaterActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CLavaVTable;
+  (pCVar1->base).vtable._ub = &g_CLavaVTable;
   *(uint *)&pCVar1->field_0x298 = 1;
   return (CLava *)pCVar1;
 }

@@ -11,7 +11,7 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[1]:
-;   core_zombie.cpp_FUN_005984e0 at 00598c80
+;   core_zombie.cpp_CZombie_processPickup_FUN_005984e0 at 00598c80
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eee2a

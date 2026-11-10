@@ -6,9 +6,9 @@
 ;
 ; XREF[5]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048f4ba
+;   core_fire.cpp_CFireEffect_ctor_FUN_004a1460 at 004a1466
 ;   core_fire.cpp_CFireEffect_load_FUN_004a4030 at 004a4051
-;   core_fire.cpp_FUN_004a1460 at 004a1466
-;   core_game.cpp_FUN_004b7f90 at 004b866b
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b866b
 ;   core_game.cpp_FUN_004bdfb0 at 004be6dd
 ;
 ; Referenced Globals:
@@ -30,12 +30,12 @@
 ;   ... and 31 more
 ;
 ; Called Functions:
+;   core_fire.cpp_CCrater_reset_FUN_0049d570
 ;   core_fire.cpp_CExplosion_ctor_FUN_0049c670
 ;   core_fire.cpp_CLightningBolt_reset_FUN_0049f410
+;   core_fire.cpp_CSmokeParticle_reset_FUN_00496d50
 ;   core_fire.cpp_CToss_reset_FUN_0049cec0
 ;   core_fire.cpp_CTrail_reset_FUN_004a05d0
-;   core_fire.cpp_FUN_00496d50
-;   core_fire.cpp_FUN_0049d570
 ;   core_fire.cpp_FUN_004a0470
 ;
 ; *****************************************************************************
@@ -52,8 +52,8 @@ section .text
     MOV dword ptr [0x01c74e9c],EDX      ; 004a1490 | DAT_01c74e9c
     PUSH EBX                            ; 004a1496 | DAT_01c74ea0 | DAT_01c74ecc
         ;   Label: LAB_004a1496
-    CALL core_fire.cpp_FUN_00496d50     ; 004a1497
-        ;   XREF to: 00496d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_00496d50(CSmokeParticle * this_ptr)
+    CALL core_fire.cpp_CSmokeParticle_reset_FUN_00496d50 ; 004a1497
+        ;   XREF to: 00496d50 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CSmokeParticle_reset_FUN_00496d50(CSmokeParticle * this_ptr)
     ADD EBX,0x2c                        ; 004a149c
     ADD ESP,0x4                         ; 004a149f
     CMP EBX,ESI                         ; 004a14a2
@@ -181,8 +181,8 @@ section .text
     MOV [0x01cfaff4],EAX                ; 004a1630 | DAT_01cfaff4
     PUSH EBX                            ; 004a1635
         ;   Label: LAB_004a1635
-    CALL core_fire.cpp_FUN_0049d570     ; 004a1636
-        ;   XREF to: 0049d570 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049d570()
+    CALL core_fire.cpp_CCrater_reset_FUN_0049d570 ; 004a1636
+        ;   XREF to: 0049d570 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_reset_FUN_0049d570(CCrater * this_ptr)
     ADD EBX,0x70                        ; 004a163b
     ADD ESP,0x4                         ; 004a163e
     CMP EBX,ESI                         ; 004a1641

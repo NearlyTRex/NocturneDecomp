@@ -15,15 +15,15 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[3]:
+;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 0052237a
 ;   core_prye.cpp_FUN_00518cd0 at 00519c68
-;   core_prye.cpp_FUN_005220d0 at 0052237a
 ;   unkafter_prye.cpp_FUN_005263c0 at 00526746
 ;
 ; Called Functions:
 ;   core_prye.cpp_FUN_0051f490
 ;   core_xform.cpp_FUN_00583940
-;   core_xform.cpp_FUN_00583b10
 ;   core_xform.cpp_FUN_00584450
+;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;
 ; *****************************************************************************
@@ -93,8 +93,8 @@ section .text
     PUSH ESI                            ; 0051f424
     LEA ESI,[ESP + 0xfc]                ; 0051f425
     MOV EBP,dword ptr [EBX + 0x154]     ; 0051f42c
-    CALL core_xform.cpp_FUN_00583b10    ; 0051f432
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583b10()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 0051f432
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
     LEA ESI,[ESP + 0xfc]                ; 0051f437
     ADD ESP,0x4                         ; 0051f43e
     MOVSD ES:EDI,ESI                    ; 0051f441

@@ -26,8 +26,8 @@
 ;   undefined4 DAT_005df904
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
-;   core_dirmat.cpp_FUN_0045b550
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;
 ; *****************************************************************************
 
@@ -65,8 +65,8 @@ section .text
     SUB ESP,0x4                         ; 0049e1e8
     FSTP float ptr [ESP]                ; 0049e1eb
     PUSH 0x0                            ; 0049e1ee
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049e1f0
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e1f0
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x58],EAX      ; 0049e1f5
     LEA EDI,[ESP + 0x30]                ; 0049e1f9
     FLD float ptr [ESP + 0x58]          ; 0049e1fd
@@ -78,8 +78,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0049e215
     MOVSD ES:EDI,ESI                    ; 0049e216
     MOVSD ES:EDI,ESI                    ; 0049e217
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049e218
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e218
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x58],EAX      ; 0049e21d
     FLD float ptr [ESP + 0x58]          ; 0049e221
     ADD ESP,0x8                         ; 0049e225
@@ -87,8 +87,8 @@ section .text
     FADD float ptr [ESP + 0x30]         ; 0049e22d
     PUSH 0xbd567750                     ; 0049e231
     FSTP float ptr [ESP + 0x34]         ; 0049e236
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049e23a
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e23a
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x58],EAX      ; 0049e23f
     FLD float ptr [ESP + 0x58]          ; 0049e243
     ADD ESP,0x8                         ; 0049e247
@@ -98,8 +98,8 @@ section .text
     FADD float ptr [ESP + 0x2c]         ; 0049e253
     PUSH EAX                            ; 0049e257
     FSTP float ptr [ESP + 0x30]         ; 0049e258
-    CALL core_dirmat.cpp_FUN_0045b550   ; 0049e25c
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 0049e25c
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     LEA EAX,[ESP + 0x30]                ; 0049e261
     LEA EDX,[EBX + 0x10]                ; 0049e265
     ADD ESP,0x8                         ; 0049e268
@@ -115,8 +115,8 @@ section .text
     PUSH 0x3dcccccd                     ; 0049e283
         ;   Label: LAB_0049e283
     PUSH 0x0                            ; 0049e288
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049e28a
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e28a
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x58],EAX      ; 0049e28f
     LEA EAX,[EBX + 0x10]                ; 0049e293
     FLD float ptr [ESP + 0x58]          ; 0049e296
@@ -173,8 +173,8 @@ section .text
     PUSH 0x3f800000                     ; 0049e31d
         ;   Label: LAB_0049e31d
     PUSH 0x3f666666                     ; 0049e322
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049e327
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e327
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x58],EAX      ; 0049e32c
     FLD float ptr [ESP + 0x58]          ; 0049e330
     FMUL float ptr [0x005df900]         ; 0049e334 | DAT_005df900

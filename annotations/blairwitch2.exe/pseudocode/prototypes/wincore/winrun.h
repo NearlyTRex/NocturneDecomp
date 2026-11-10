@@ -13,9 +13,9 @@ void __cdecl calibrateCPUSpeed(void);
 // Address: 0058e9d0
 void __watcallRegister endPeriod(void);
 
-// Original: wincore_winrun.cpp_FUN_0058e9e0
+// Original: wincore_winrun.cpp_getTime_FUN_0058e9e0
 // Address: 0058e9e0
-int FUN_0058e9e0(void);
+int getTime(void);
 
 // Original: wincore_winrun.cpp_clearKeypresses_FUN_0058eab0
 // Address: 0058eab0
@@ -29,9 +29,9 @@ int __cdecl getNextKeypress(void);
 // Address: 0058eb40
 int __cdecl wasKeyPressed(void);
 
-// Original: wincore_winrun.cpp_FUN_0058eb5c
+// Original: wincore_winrun.cpp_getValue_FUN_0058eb5c
 // Address: 0058eb5c
-undefined1 FUN_0058eb5c(void);
+undefined1 getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_0058eb70
 // Address: 0058eb70
@@ -65,13 +65,13 @@ LRESULT __stdcall FUN_0058ed90(HWND hWnd,UINT message,WPARAM wParam,LPARAM lPara
 // Address: 0058f270
 void __cdecl processWindowMessages(void);
 
-// Original: wincore_winrun.cpp_FUN_0058f310
+// Original: wincore_winrun.cpp_winMain_FUN_0058f310
 // Address: 0058f310
-void FUN_0058f310(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+void winMain(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
 
-// Original: wincore_winrun.cpp_FUN_0058f5d0
+// Original: wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0
 // Address: 0058f5d0
-void __cdecl FUN_0058f5d0(char *message);
+void __cdecl displayMessageBoxAndQuit(char *message);
 
 // Original: wincore_winrun.cpp_getKeyName_FUN_0058f630
 // Address: 0058f630
@@ -105,9 +105,9 @@ int __cdecl setThreadPriority(HANDLE hThread,int priority_level);
 // Address: 0058fd90
 void __cdecl sleep(double seconds);
 
-// Original: wincore_winrun.cpp_FUN_0058fdec
+// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_0058fdec
 // Address: 0058fdec
-void FUN_0058fdec(char *param_1);
+void getComputerAndUserName(char *param_1);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_0058fec0
 // Address: 0058fec0
@@ -125,9 +125,9 @@ void FUN_0058ffc0(LPCSTR param_1);
 // Address: 0058ffd0
 void __cdecl initJoystick(void);
 
-// Original: wincore_winrun.cpp_FUN_00590040
+// Original: wincore_winrun.cpp_doNothing2_FUN_00590040
 // Address: 00590040
-void __cdecl FUN_00590040(void);
+void __cdecl doNothing2(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_00590060
 // Address: 00590060

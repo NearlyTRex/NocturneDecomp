@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[12]:
-;   core_baron.cpp_FUN_00410640 at 0041069c
-;   core_game.cpp_FUN_004d2540 at 004d2549
-;   core_game.cpp_FUN_004d27b0 at 004d322f
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640 at 0041069c
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d322f
+;   core_game.cpp_giveHeroWeapon_FUN_004d2540 at 004d2549
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eaff1
 ;   core_hero.cpp_FUN_004ecca0 at 004eccb5
 ;   core_inv.cpp_CInventory_initialize_FUN_004f7050 at 004f70aa
 ;   core_inv.cpp_CInventory_load_FUN_004f97a0 at 004f9a4f
 ;   core_inv.cpp_FUN_004f7690 at 004f7fda
-;   core_mimic.cpp_FUN_0050f290 at 0050f491
+;   core_mimic.cpp_CMimic_setup_FUN_0050f290 at 0050f491
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0 at 0051aa87
 ;   ... and 2 more
 ;

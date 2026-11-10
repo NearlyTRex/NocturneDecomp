@@ -12,20 +12,20 @@ void __cdecl support_codec_cpp_CLZWDictionary_initTable_FUN_00443070(CLZWDiction
   int iVar1;
   int iVar2;
   
-  iVar1 = 1 << ((byte)*(uint *)(this_ptr + 4) & 0x1f);
+  iVar1 = 1 << ((byte)this_ptr->num_bits & 0x1f);
   iVar2 = 0;
-  *(int *)(this_ptr + 0xc) = iVar1;
+  this_ptr->entry_count = iVar1;
   if (0 < iVar1) {
     iVar1 = 0;
     do {
-      *(int *)(*(int *)(this_ptr + 0x10) + iVar1) = iVar2;
-      *(uint *)(*(int *)(this_ptr + 0x10) + 4 + iVar1) = 0xffffffff;
-      *(uint *)(*(int *)(this_ptr + 0x10) + 8 + iVar1) = 0xffffffff;
-      *(uint *)(*(int *)(this_ptr + 0x10) + 0xc + iVar1) = 0xffffffff;
+      *(int *)(this_ptr->node_table + iVar1) = iVar2;
+      *(uint *)(this_ptr->node_table + iVar1 + 4) = 0xffffffff;
+      *(uint *)(this_ptr->node_table + iVar1 + 8) = 0xffffffff;
+      *(uint *)(this_ptr->node_table + iVar1 + 0xc) = 0xffffffff;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x10;
-    } while (iVar2 < *(int *)(this_ptr + 0xc));
+    } while (iVar2 < this_ptr->entry_count);
   }
-  *(uint *)(this_ptr + 8) = *(uint *)(this_ptr + 4);
+  this_ptr->current_num_bits = this_ptr->num_bits;
   return;
 }

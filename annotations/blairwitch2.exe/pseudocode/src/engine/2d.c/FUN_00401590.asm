@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00401010 at 0040104a
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040104a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ca05c

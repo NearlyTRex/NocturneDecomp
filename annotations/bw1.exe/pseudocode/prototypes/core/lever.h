@@ -25,9 +25,9 @@ CLever * __cdecl CLever::ctor(CLever *this_ptr);
 // Address: 004ff110
 void __cdecl CLever::setup(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004ff190
+// Original: core_lever.cpp_CLever_process_FUN_004ff190
 // Address: 004ff190
-void FUN_004ff190(int param_1,float param_2);
+void __cdecl CLever::process(CLever *this_ptr,float delta_time);
 
 // Original: core_lever.cpp_FUN_004ff3f0
 // Address: 004ff3f0
@@ -37,13 +37,13 @@ void FUN_004ff3f0(int param_1,float param_2,int param_3);
 // Address: 004ff570
 void __cdecl CLever::activate(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004ff5d0
+// Original: core_lever.cpp_CLever_renderOpaque_FUN_004ff5d0
 // Address: 004ff5d0
-int FUN_004ff5d0(CDemonActor *param_1);
+int __cdecl CLever::renderOpaque(CLever *this_ptr);
 
-// Original: core_lever.cpp_FUN_004ff670
+// Original: core_lever.cpp_CLever_getBoundingBox_FUN_004ff670
 // Address: 004ff670
-void FUN_004ff670(int param_1);
+CBoundingBox3D * __cdecl CLever::getBoundingBox(CLever *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_lever.cpp_FUN_004ff6b0
 // Address: 004ff6b0

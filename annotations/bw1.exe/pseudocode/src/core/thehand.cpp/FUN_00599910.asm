@@ -9,7 +9,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_0059996a
     PUSH EDX                            ; 0059996d
     PUSH EBX                            ; 0059996e
-    CALL core_actor.cpp_FUN_0040c550    ; 0059996f
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 0059996f
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00599974
     TEST EAX,EAX                        ; 00599977
     JZ 0x00599954                       ; 00599979

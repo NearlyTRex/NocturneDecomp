@@ -1,0 +1,1057 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 1073,
+    "complexity_score": 1016,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 28,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 421,
+    "suspect_count": 54,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "undefined_ptr_cast",
+      "undefined_type",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "unrolled_strcpy",
+      "warning_overlapping_globals",
+      "warning_unreachable"
+    ],
+    "total_lines": 1494
+  },
+  "cross_references": [
+    {
+      "addr": "0052d360",
+      "from_addr": "0052d3ea",
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0052d450",
+    "address_range": [
+      [
+        "0052d450",
+        "0052df45"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_processPacket_FUN_0052d450(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0052f100",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_addChatHistory_FUN_0052f100"
+    },
+    {
+      "addr": "0052e040",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040"
+    },
+    {
+      "addr": "0052f200",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_applyNewGameSettings_FUN_0052f200"
+    },
+    {
+      "addr": "0052cab0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0"
+    },
+    {
+      "addr": "0052dff0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_0052dff0"
+    },
+    {
+      "addr": "0052fa80",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_gameSettingsChanged_FUN_0052fa80"
+    },
+    {
+      "addr": "0052f890",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_removePlayer_FUN_0052f890"
+    },
+    {
+      "addr": "0052df50",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_send_FUN_0052df50"
+    },
+    {
+      "addr": "005306d0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendDisconnectNotify_FUN_005306d0"
+    },
+    {
+      "addr": "0052dfc0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_0052dfc0"
+    },
+    {
+      "addr": "005bfb70",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005bfb70"
+    },
+    {
+      "addr": "005c0f80",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005c0f80"
+    },
+    {
+      "addr": "0059c740",
+      "is_variadic": false,
+      "name": "support_trisock.cpp_createNetworkAddr_FUN_0059c740"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0052d1fc",
+      "name": "caseD_0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0052d404",
+      "name": "switchdataD_0052d404",
+      "type": "void*",
+      "value": "0052d1fc"
+    },
+    {
+      "addr": "005eb62a",
+      "name": "s_core_netgame_cpp_005eb62a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb63e",
+      "name": "s_allocSimFrame_sim_histor_005eb63e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebc06",
+      "name": "s_You_have_been_disconnect_005ebc06",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebc2f",
+      "name": "DAT_005ebc2f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ebc30",
+      "name": "s_core_netgame_cpp_005ebc30",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebc44",
+      "name": "s_Player_list_mismatch_pro_005ebc44",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebc7c",
+      "name": "s_core_netgame_cpp_005ebc7c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebc90",
+      "name": "s_Player_list_mismatch_005ebc90",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ebca8",
+      "name": "DAT_005ebca8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ebcb0",
+      "name": "DAT_005ebcb0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ebcb8",
+      "name": "DAT_005ebcb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51da0",
+      "name": "DAT_01d51da0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51da4",
+      "name": "DAT_01d51da4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51da8",
+      "name": "DAT_01d51da8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51dac",
+      "name": "DAT_01d51dac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51db4",
+      "name": "DAT_01d51db4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51ee0",
+      "name": "DAT_01d51ee0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d6dfb8",
+      "name": "DAT_01d6dfb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d6dfc0",
+      "name": "DAT_01d6dfc0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d715a8",
+      "name": "DAT_01d715a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71618",
+      "name": "DAT_01d71618",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d7161c",
+      "name": "DAT_01d7161c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71620",
+      "name": "DAT_01d71620",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8ae4c",
+      "name": "DAT_02c8ae4c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0052d3ea",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.3486766398158805,
+    "instruction_count": 869,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 141,
+      "BOOL_OR": 19,
+      "BRANCH": 13,
+      "BRANCHIND": 1,
+      "CALL": 28,
+      "CBRANCH": 98,
+      "COPY": 958,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_EQUAL": 9,
+      "FLOAT_LESS": 9,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 18,
+      "INT2FLOAT": 7,
+      "INT_ADD": 418,
+      "INT_AND": 662,
+      "INT_CARRY": 60,
+      "INT_EQUAL": 409,
+      "INT_LEFT": 74,
+      "INT_LESS": 73,
+      "INT_MULT": 23,
+      "INT_NOTEQUAL": 112,
+      "INT_OR": 140,
+      "INT_SBORROW": 73,
+      "INT_SCARRY": 66,
+      "INT_SEXT": 6,
+      "INT_SLESS": 229,
+      "INT_SUB": 220,
+      "INT_XOR": 26,
+      "INT_ZEXT": 52,
+      "LOAD": 293,
+      "POPCOUNT": 191,
+      "RETURN": 18,
+      "STORE": 178,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 4648
+  },
+  "stack_frame": {
+    "frame_size": 256,
+    "local_size": 244,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e8",
+        "offset": -232,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e4",
+        "offset": -228,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_df",
+        "offset": -223,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_de",
+        "offset": -222,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_cb",
+        "offset": -203,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_ca",
+        "offset": -202,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_7b",
+        "offset": -123,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_70",
+        "offset": -112,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_6c",
+        "offset": -108,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_6b",
+        "offset": -107,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_64",
+        "offset": -100,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_60",
+        "offset": -96,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_5f",
+        "offset": -95,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_54",
+        "offset": -84,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_47",
+        "offset": -71,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_3b",
+        "offset": -59,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      },
+      {
+        "is_param": true,
+        "name": "source_addr",
+        "offset": 8,
+        "size": 4,
+        "type": "SNetworkAddr *"
+      },
+      {
+        "is_param": true,
+        "name": "packet",
+        "offset": 12,
+        "size": 4,
+        "type": "UNetPacket *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0052d45c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x0052ddd0) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved type",
+      "line": 9,
+      "match": "undefined3 uVar2",
+      "severity": "moderate",
+      "text": "undefined3 uVar2;",
+      "type": "undefined_type"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x24 = _DAT_01d51da0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "((local_28->player_announce).hero_number != *(EHeroType *)&local_1c->field_0x14)) ||",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "((local_28->player_announce).aim_mode != *(int *)&local_1c->field_0x18)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pSVar7->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 87,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pSVar7 = (SNetPlayer *)&pSVar7->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(EHeroType *)&local_1c->field_0x14 = (local_28->player_announce).hero_number;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x18 = (local_28->player_announce).aim_mode;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 122,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->players[iVar6].field_0x1c = (local_28->simple).value;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 123,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar9 * -8 + iVar6 * 0x7c + 0x40) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 124,
+      "match": "(uint *)((int)local_28",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_28 + (uint)bVar9 * -8 + 9);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 142,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "local_1c->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 143,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "local_1c = (SNetPlayer *)&local_1c->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast to undefined pointer type",
+      "line": 146,
+      "match": "(undefined3 *)",
+      "severity": "moderate",
+      "text": "uVar2 = *(undefined3 *)((int)packet + 0x6a);",
+      "type": "undefined_ptr_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 146,
+      "match": "(undefined3 *)((int)packet",
+      "severity": "moderate",
+      "text": "uVar2 = *(undefined3 *)((int)packet + 0x6a);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 147,
+      "match": "(SNetworkAddr *)((int)packet",
+      "severity": "moderate",
+      "text": "this_ptr->players[iVar6].field_0x1c = *(SNetworkAddr *)((int)packet + 0x69);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 147,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "this_ptr->players[iVar6].field_0x1c = *(SNetworkAddr *)((int)packet + 0x69);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Cast to undefined pointer type",
+      "line": 148,
+      "match": "(undefined3 *)",
+      "severity": "moderate",
+      "text": "*(undefined3 *)&this_ptr->players[iVar6].field_0x1d = uVar2;",
+      "type": "undefined_ptr_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 148,
+      "match": "field_0x1d",
+      "severity": "mild",
+      "text": "*(undefined3 *)&this_ptr->players[iVar6].field_0x1d = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(uint *)((int)this_ptr + (uint)bVar9 * -8 + iVar6 * 0x7c + 0x40) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)packet",
+      "severity": "moderate",
+      "text": "*(uint *)((int)packet + (uint)bVar9 * -8 + 0x6d);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 178,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "if (0.0 <= *(float *)&local_1c->field_0x28) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 179,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "local_ec = (float)((packet->simple).value - *(int *)&local_1c->field_0x30) *",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 198,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "*(float *)&local_1c->field_0x28 = local_f0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 199,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x30 = _DAT_01d51da0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 232,
+      "match": "DAT_01d6dfc0",
+      "severity": "mild",
+      "text": "while (*(int *)(&DAT_01d6dfc0 + iVar6) == (packet->simple).value) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 233,
+      "match": "DAT_01d6dfc4",
+      "severity": "mild",
+      "text": "(&DAT_01d6dfc4)[iVar6 + uVar3] = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 251,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "local_5f = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x3c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 266,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "(*(int *)&local_1c->field_0x3c <= (packet->simple).value)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 267,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x3c = (packet->simple).value;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 274,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "if (*(int *)&local_1c->field_0x40 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 275,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "local_14 = *(int *)&local_1c->field_0x40 - (packet->simple).value;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 288,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x44 = (packet->player_state).ready_flag;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 296,
+      "match": "field_0x1",
+      "severity": "mild",
+      "text": "pSVar7->field_0x1 = cVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 297,
+      "match": "field_0x2",
+      "severity": "mild",
+      "text": "pSVar7 = (SNetPlayer *)&pSVar7->field_0x2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 325,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "(*(int *)&local_1c->field_0x34 <= (packet->simple).value)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 326,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x34 = (packet->simple).value;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 344,
+      "match": "DAT_005ebc2f",
+      "severity": "mild",
+      "text": "pcVar10 = &DAT_005ebc2f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 412,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "(*(int *)&local_1c->field_0x48 < (packet->simple).value)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 413,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "*(int *)&local_1c->field_0x48 = (packet->simple).value;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 415,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "piVar8 = (int *)&local_1c->field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Pointer value `local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 124,
+      "match": "(int)local_28",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_28 + (uint)bVar9 * -8 + 9);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 98,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 109,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 399,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar5 = 0xc; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 416,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar7->owner`). Replace `pSVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 87,
+      "match": "pSVar7 = (T *)&pSVar7->FIELD",
+      "severity": "moderate",
+      "text": "pSVar7 = (SNetPlayer *)&pSVar7->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_1c` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_1c->owner`). Replace `local_1c->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 143,
+      "match": "local_1c = (T *)&local_1c->FIELD",
+      "severity": "moderate",
+      "text": "local_1c = (SNetPlayer *)&local_1c->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pSVar7` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pSVar7->owner`). Replace `pSVar7->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 297,
+      "match": "pSVar7 = (T *)&pSVar7->FIELD",
+      "severity": "moderate",
+      "text": "pSVar7 = (SNetPlayer *)&pSVar7->field_0x2;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 405,
+      "match": "local_18 = (T *)((local_18->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "local_18 = (UNetPacket *)((local_18->server_accept).mission_name + 0x17);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0052de22, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 970,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0052de22: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 0052df3d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 1067,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 0052df3d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 139,
+    "complexity_score": 97,
+    "cross_reference_count": 1,
+    "function_call_count": 13,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 52,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 191
+  },
+  "cross_references": [
+    {
+      "addr": "004bf4b0",
+      "from_addr": "004bf8d1",
+      "name": "core_game.cpp_CGame_process_FUN_004bf4b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f70a0",
+    "address_range": [
+      [
+        "004f70a0",
+        "004f7225"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_process_FUN_004f70a0",
+    "signature": "void __cdecl core_mission_cpp_CDemonMission_process_FUN_004f70a0(CDemonMission *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004f6ca0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_removeActor_FUN_004f6ca0"
+    },
+    {
+      "addr": "004f6de0",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f6de0"
+    },
+    {
+      "addr": "004f6f80",
+      "is_variadic": false,
+      "name": "core_mission.cpp_FUN_004f6f80"
+    },
+    {
+      "addr": "00537520",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_00537520"
+    },
+    {
+      "addr": "00534420",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_00534420"
+    },
+    {
+      "addr": "0040d2e0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_ctor_FUN_0040d2e0"
+    },
+    {
+      "addr": "0040d300",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_dtor_FUN_0040d300"
+    },
+    {
+      "addr": "0040d460",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460"
+    },
+    {
+      "addr": "0040d400",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040d400"
+    },
+    {
+      "addr": "0040dbe0",
+      "is_variadic": false,
+      "name": "engine_alphabit.cpp_FUN_0040dbe0"
+    },
+    {
+      "addr": "00565820",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_00565820"
+    },
+    {
+      "addr": "00565870",
+      "is_variadic": false,
+      "name": "engine_special.cpp_unlockFrame_FUN_00565870"
+    },
+    {
+      "addr": "0057a8a0",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "006039e0",
+      "name": "g_CScriptPtr",
+      "type": "CScript*",
+      "value": "01ed73e0"
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d5ba14",
+      "name": "DAT_01d5ba14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d88308",
+      "name": "DAT_01d88308",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed73f0",
+      "name": "g_CScriptInstance.focus_actor_changed",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004bf8d1",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_process_FUN_004bf4b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.054054054054054,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 6,
+      "COPY": 83,
+      "INT_ADD": 48,
+      "INT_AND": 51,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 48,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 24,
+      "INT_SUB": 39,
+      "INT_XOR": 2,
+      "LOAD": 21,
+      "POPCOUNT": 24,
+      "RETURN": 1,
+      "STORE": 46
+    },
+    "pcode_op_count": 450
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 40,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004f71b3",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 34,
+      "match": "DAT_01d88308",
+      "severity": "mild",
+      "text": "engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&local_24,&DAT_01d88308,0x280,0x1e0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom raw-offset struct copy (4 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
+      "line": 27,
+      "match": "raw-offset struct copy",
+      "severity": "moderate",
+      "text": "*(uint *)(iVar2 + 0x20) = *(uint *)(this_ptr + 0x1444);",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

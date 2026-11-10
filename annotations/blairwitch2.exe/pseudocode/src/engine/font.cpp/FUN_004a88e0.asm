@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_font_cpp_FUN_004a88e0(int param_1,int param_2,int param_3,int param_4,int param_5)
+; void engine_font_cpp_FUN_004a88e0(CBitFont *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x16c]:1  local_16c
@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004a7d00 at 004a7f40
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7f40
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_font_cpp_005d6940
@@ -33,10 +33,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b7790
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b8df8
-;   engine_font.cpp_FUN_004a8d90
+;   crt_unknown.c_sprintf_FUN_005b7790
+;   engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90
 ;
 ; *****************************************************************************
 
@@ -94,8 +94,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 004a8988
     PUSH EAX                            ; 004a898c
     MOV EBX,0x2db                       ; 004a898d
-    CALL crt_unknown.c_FUN_005b7790     ; 004a8992
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a8992
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004a8997
     MOV EAX,ESP                         ; 004a899a
     MOV ECX,0x5d698f                    ; 004a899c | = "..\\engine\\font.cpp"
@@ -253,8 +253,8 @@ section .text
     PUSH 0x5d69a2                       ; 004a8bc2 | = "Too many chars: fontfile %s, chars %d"
     LEA EAX,[ESP + 0xc]                 ; 004a8bc7
     PUSH EAX                            ; 004a8bcb
-    CALL crt_unknown.c_FUN_005b7790     ; 004a8bcc
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a8bcc
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x30f                       ; 004a8bd1
     ADD ESP,0x10                        ; 004a8bd6
     MOV [0x01d046a4],EAX                ; 004a8bd9 | DAT_01d046a4
@@ -301,8 +301,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1de8]    ; 004a8c65
     PUSH ECX                            ; 004a8c6b
     PUSH ESI                            ; 004a8c6c
-    CALL engine_font.cpp_FUN_004a8d90   ; 004a8c6d
-        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8d90()
+    CALL engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90 ; 004a8c6d
+        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, ...)
     MOV dword ptr [EBX + 0x39e8],EAX    ; 004a8c72
     MOV EDX,dword ptr [ESI + 0x41ec]    ; 004a8c78
     ADD ESP,0x14                        ; 004a8c7e
@@ -341,8 +341,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1de8]    ; 004a8ce1
     PUSH ECX                            ; 004a8ce7
     PUSH ESI                            ; 004a8ce8
-    CALL engine_font.cpp_FUN_004a8d90   ; 004a8ce9
-        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004a8d90()
+    CALL engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90 ; 004a8ce9
+        ;   XREF to: 004a8d90 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_calculateCharacterHeight_FUN_004a8d90(CBitFont * this_ptr, uchar * char_bitmap, int char_width, int char_height, ...)
     MOV dword ptr [EBX + 0x39e8],EAX    ; 004a8cee
     MOV EDI,dword ptr [ESI + 0x41ec]    ; 004a8cf4
     ADD ESP,0x14                        ; 004a8cfa

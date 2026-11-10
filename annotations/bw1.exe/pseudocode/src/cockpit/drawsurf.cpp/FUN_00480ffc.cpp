@@ -15,7 +15,7 @@ int cockpit_drawsurf_cpp_FUN_00480ffc(uint param_1,int param_2)
   char acStack_4 [4];
   
   if (_DAT_01bc11ec != (CBitFont *)0x0) {
-    iVar1 = engine_font_cpp_FUN_004c44e0(_DAT_01bc11ec,param_2);
+    iVar1 = engine_font_cpp_CBitFont_getCharWidth_FUN_004c44e0(_DAT_01bc11ec,param_2);
     return iVar1;
   }
   acStack_4[0] = (char)param_2;

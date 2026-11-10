@@ -11,7 +11,7 @@ void core_gun_cpp_factoryFuncGun_FUN_004e85a0(void)
 {
   CGun *this_ptr;
   
-  this_ptr = (CGun *)FUN_005c0f32(0x578);
+  this_ptr = (CGun *)debugAllocTracked1(0x578);
   if (this_ptr == (CGun *)0x0) {
     return;
   }

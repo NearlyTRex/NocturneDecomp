@@ -2,67 +2,68 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 281,
+    "complexity_score": 263,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 186,
-    "suspect_count": 8,
+    "pseudocode_lines": 183,
+    "suspect_count": 6,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 510
+    "total_lines": 507
   },
   "cross_references": [
     {
+      "addr": "00598800",
+      "from_addr": "00598997",
+      "name": "core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050a610",
       "from_addr": "0050a6a1",
-      "name": "core_passngr.cpp_FUN_0050a610",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_0050a610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005275c0",
       "from_addr": "0052774a",
-      "name": "core_pryemorp.cpp_FUN_005275c0",
+      "name": "core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059aba0",
       "from_addr": "0059adb0",
-      "name": "core_spirbear.cpp_FUN_0059aba0",
+      "name": "core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005992f0",
       "from_addr": "005994ec",
-      "name": "core_spireagl.cpp_FUN_005992f0",
+      "name": "core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059a060",
       "from_addr": "0059a270",
-      "name": "core_spirindi.cpp_FUN_0059a060",
+      "name": "core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059e130",
       "from_addr": "0059e3b2",
-      "name": "core_styldemo.cpp_FUN_0059e130",
+      "name": "core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059d7f0",
       "from_addr": "0059d9bb",
-      "name": "core_styler.cpp_FUN_0059d7f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00598800",
-      "from_addr": "00598997",
-      "name": "unkafter_darkwolf.cpp_FUN_00598800",
+      "name": "core_styler.cpp_CStyler_setup_FUN_0059d7f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -138,7 +139,7 @@
       {
         "call_addr": "0050a6a1",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_0050a610",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_0050a610",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -149,7 +150,7 @@
       {
         "call_addr": "0052774a",
         "call_type": "direct",
-        "caller": "core_pryemorp.cpp_FUN_005275c0",
+        "caller": "core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -160,7 +161,7 @@
       {
         "call_addr": "00598997",
         "call_type": "direct",
-        "caller": "unkafter_darkwolf.cpp_FUN_00598800",
+        "caller": "core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +172,7 @@
       {
         "call_addr": "005994ec",
         "call_type": "direct",
-        "caller": "core_spireagl.cpp_FUN_005992f0",
+        "caller": "core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -182,7 +183,7 @@
       {
         "call_addr": "0059a270",
         "call_type": "direct",
-        "caller": "core_spirindi.cpp_FUN_0059a060",
+        "caller": "core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -193,7 +194,7 @@
       {
         "call_addr": "0059adb0",
         "call_type": "direct",
-        "caller": "core_spirbear.cpp_FUN_0059aba0",
+        "caller": "core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -204,7 +205,7 @@
       {
         "call_addr": "0059d9bb",
         "call_type": "direct",
-        "caller": "core_styler.cpp_FUN_0059d7f0",
+        "caller": "core_styler.cpp_CStyler_setup_FUN_0059d7f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +216,7 @@
       {
         "call_addr": "0059e3b2",
         "call_type": "direct",
-        "caller": "core_styldemo.cpp_FUN_0059e130",
+        "caller": "core_styldemo.cpp_CStylerDemon_setup_FUN_0059e130",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -686,52 +687,36 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x4 = *(uint *)(iVar10 + 8);",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 166,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + (uint)bVar13 * -8 + 4) = *pfVar12;",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x8 = *(uint *)(iVar10 + 0xc);",
-      "type": "unnamed_field"
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 167,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((CBoundingBox3D *)&pCVar5->field_0xc != pCVar7) {",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 166,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + (uint)bVar13 * -8 + 4) = *pfVar12;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0xc = *(uint *)pCVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x10 = *(uint *)(iVar10 + 8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 86,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar5->field_0x14 = *(uint *)(iVar10 + 0xc);",
-      "type": "unnamed_field"
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 167,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + (uint)bVar13 * -8 + (uint)bVar13 * -8 + 8) =",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00480efe(undefined4 param_1,undefined4 param_2,undefined4 param_3)
+; void shape_edittool_cpp_FUN_00480efe(undefined4 param_1,float param_2,undefined4 param_3)
 ;
 ;
 ; *****************************************************************************

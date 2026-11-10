@@ -12,7 +12,7 @@
 ;   crt_math.c_atan2_FUN_005a5cc1 at 005a5cd0
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005af350
+;   crt_unknown.c_FUN_005af350
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     FNSAVE [ESP]                        ; 005accc0
     FLD extended double ptr [ESP + 0x1c] ; 005accc3
     FLD extended double ptr [ESP + 0x6c] ; 005accc7
-    CALL unkafter_asgaya.cpp_FUN_005af350 ; 005acccb
-        ;   XREF to: 005af350 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af350()
+    CALL crt_unknown.c_FUN_005af350     ; 005acccb
+        ;   XREF to: 005af350 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af350()
     FNSTSW AX                           ; 005accd0
     FSTP extended double ptr [ESP + 0x1c] ; 005accd2
     AND AX,0xff                         ; 005accd6

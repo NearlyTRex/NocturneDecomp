@@ -21,29 +21,29 @@ CDemonActorType * CRifle::getActorType(CRifle *this_ptr);
 // Address: 00527c10
 CRifle * CRifle::ctor(CRifle *this_ptr);
 
-// Original: core_rifle.cpp_FUN_00527ca0
+// Original: core_rifle.cpp_CRifle_getMuzzlePoint_FUN_00527ca0
 // Address: 00527ca0
-void FUN_00527ca0(int param_1);
+CVector3f * __cdecl CRifle::getMuzzlePoint(CRifle *this_ptr,CVector3f *out_point);
 
-// Original: core_rifle.cpp_FUN_00527d50
+// Original: core_rifle.cpp_CRifle_process_FUN_00527d50
 // Address: 00527d50
-void FUN_00527d50(CWeapon *param_1,float param_2);
+void __cdecl CRifle::process(CRifle *this_ptr,float delta_time);
 
-// Original: core_rifle.cpp_FUN_00527d70
+// Original: core_rifle.cpp_CRifle_fire_FUN_00527d70
 // Address: 00527d70
-undefined4 FUN_00527d70(CDemonActor *param_1);
+int __cdecl CRifle::fire(CRifle *this_ptr);
 
-// Original: core_rifle.cpp_FUN_005284d0
+// Original: core_rifle.cpp_CRifle_onFired_FUN_005284d0
 // Address: 005284d0
-void FUN_005284d0(int param_1);
+void __cdecl CRifle::onFired(CRifle *this_ptr);
 
-// Original: core_rifle.cpp_FUN_00528610
+// Original: core_rifle.cpp_CRifle_getDamage_FUN_00528610
 // Address: 00528610
-undefined4 FUN_00528610(int param_1);
+float __cdecl CRifle::getDamage(CRifle *this_ptr);
 
-// Original: core_rifle.cpp_FUN_00528650
+// Original: core_rifle.cpp_CRifle_renderAimBeam_FUN_00528650
 // Address: 00528650
-void FUN_00528650(CWeapon *param_1);
+void __cdecl CRifle::renderAimBeam(CRifle *this_ptr);
 
 // Original: core_rifle.cpp_CRifle_dtor_FUN_00528660
 // Address: 00528660

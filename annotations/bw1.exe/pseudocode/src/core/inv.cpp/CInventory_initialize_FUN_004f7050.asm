@@ -11,7 +11,7 @@
 ; XREF[4]:
 ;   core_hero.cpp_CHero_createDefaultWeapon_FUN_004eafd0 at 004eafdd
 ;   core_inv.cpp_CInventory_load_FUN_004f97a0 at 004f97c2
-;   core_scat.cpp_FUN_00540d50 at 00540d5e
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50 at 00540d5e
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00548908
 ;
 ; Referenced Globals:

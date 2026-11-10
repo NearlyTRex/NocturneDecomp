@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_scat_cpp_FUN_00542b90(CDemonActor *param_1,int param_2,int param_3)
+; undefined4 core_scat_cpp_FUN_00542b90(CDemonActor *param_1,CDemonActor *param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x15c]:1  local_15c
@@ -20,7 +20,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364292_0x14d144
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -30,7 +30,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00559220
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_005592d0
 ;   core_setcolid.cpp_FUN_00557300
-;   core_vecdir.cpp_FUN_005a7520
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;
 ; *****************************************************************************
@@ -128,8 +128,8 @@ section .text
     PUSH EAX                            ; 00542c87
     LEA ESI,[ESP + 0x100]               ; 00542c88
     LEA EDI,[ESP + 0x10c]               ; 00542c8f
-    CALL core_vecdir.cpp_FUN_005a7520   ; 00542c96
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 00542c96
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     ADD ESP,0x4                         ; 00542c9b
     LEA ESI,[ESP + 0xfc]                ; 00542c9e
     MOV EDX,dword ptr [EBP + 0x1c]      ; 00542ca5
@@ -296,7 +296,7 @@ section .text
         ;   XREF to: 00542bfc (CONDITIONAL_JUMP)  ; LAB_00542bfc
     MOV EAX,[0x00622c18]                ; 00542ee9 | g_CDemonSetPtr
     MOV ECX,dword ptr [EBP + 0x18]      ; 00542eee
-    CMP ECX,dword ptr [EAX + 0x14d144]  ; 00542ef1 | g_CDemonSetInstance.field1364292_0x14d144
+    CMP ECX,dword ptr [EAX + 0x14d144]  ; 00542ef1 | g_CDemonSetInstance.collision_actor
     JNZ 0x00542bfc                      ; 00542ef7
         ;   XREF to: 00542bfc (CONDITIONAL_JUMP)  ; LAB_00542bfc
     MOV EAX,dword ptr [ESP + 0x148]     ; 00542efd

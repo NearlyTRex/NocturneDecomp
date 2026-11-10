@@ -73,13 +73,13 @@ void __cdecl blur3x3MMXStride128(undefined8 *param_1,undefined8 *param_2,int par
 // Address: 00488aef
 void __cdecl spatialFilter9TapMMX(uint *output_buffer,uint *input_buffer,int pixel_count);
 
-// Original: core_dstrendr.cpp_FUN_00488b99
+// Original: core_dstrendr.cpp_blendLightmapShared4U64toU64pBB12Px4MMX_FUN_00488b99
 // Address: 00488b99
-void FUN_00488b99(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapShared4U64toU64pBB12Px4MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
-// Original: core_dstrendr.cpp_FUN_00488cb5
+// Original: core_dstrendr.cpp_blendLightmapShared4U64toU64pAmbientPx4MMX_FUN_00488cb5
 // Address: 00488cb5
-void FUN_00488cb5(undefined8 *param_1,undefined8 *param_2,byte *param_3,byte *param_4,int param_5);
+void __cdecl blendLightmapShared4U64toU64pAmbientPx4MMX(ulonglong *output_buffer,ulonglong *texture_buffer,byte *texture_indices,byte *lightmap_indices,int pixel_count);
 
 // Original: core_dstrendr.cpp_blendLightmapPerPxU32toU32BB12Px2MMX_FUN_00488dd1
 // Address: 00488dd1

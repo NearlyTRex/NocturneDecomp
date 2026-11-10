@@ -1,0 +1,189 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 123,
+    "complexity_score": 78,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 53,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 176
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004634d0",
+    "address_range": [
+      [
+        "004634d0",
+        "004635d6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dog.cpp_CZombieDog_processDamage_FUN_004634d0",
+    "signature": "void __cdecl core_dog_cpp_CZombieDog_processDamage_FUN_004634d0(CZombieDog *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cea0"
+    },
+    {
+      "addr": "00489b80",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_00489b80"
+    },
+    {
+      "addr": "004fc070",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
+    },
+    {
+      "addr": "004fc0d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
+    },
+    {
+      "addr": "00560af0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0"
+    },
+    {
+      "addr": "0048a1b0",
+      "is_variadic": false,
+      "name": "unkafter_enemy.cpp_FUN_0048a1b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bbc8f",
+      "name": "s_dog2_wav_005bbc8f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006045f8",
+      "name": "DAT_006045f8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.559139784946237,
+    "instruction_count": 93,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 5,
+      "CALL": 8,
+      "CALLIND": 1,
+      "CBRANCH": 8,
+      "COPY": 100,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 30,
+      "INT_AND": 39,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 36,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 16,
+      "INT_SUB": 45,
+      "INT_ZEXT": 4,
+      "LOAD": 17,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 43
+    },
+    "pcode_op_count": 424
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieDog *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0xd05c",
+      "severity": "mild",
+      "text": "(0x02CF5680,*(uint *)&this_ptr->field_0xd05c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0xd05c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xd05c = uVar4;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombieDog",
+        "offset": 264,
+        "vtable_addr": "005de724"
+      },
+      {
+        "class_name": "CZombieDog",
+        "offset": 264,
+        "vtable_addr": "005de874"
+      },
+      {
+        "class_name": "CZombieDog",
+        "offset": 264,
+        "vtable_addr": "005de9c4"
+      },
+      {
+        "class_name": "CZombieDog",
+        "offset": 264,
+        "vtable_addr": "005de5d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

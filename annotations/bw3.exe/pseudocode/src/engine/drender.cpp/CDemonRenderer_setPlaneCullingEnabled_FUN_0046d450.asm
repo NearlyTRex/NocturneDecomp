@@ -8,11 +8,11 @@
 ; int              Stack[0x8]:4   enabled
 ;
 ; XREF[6]:
+;   core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0 at 0041ea54
 ;   core_box.cpp_FUN_0041dcd0 at 0041ddb1
-;   core_box.cpp_FUN_0041e9b0 at 0041ea54
 ;   core_dmodel.cpp_CKeyFramedModel_submitToRenderer_FUN_00461050 at 00461172
 ;   core_dpart.cpp_FUN_0046682e at 00466855
-;   core_path.cpp_FUN_0050c980 at 0050ca7e
+;   core_path.cpp_CPathMap_renderPathMap_FUN_0050c980 at 0050ca7e
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460 at 0046d490
 ;
 ; *****************************************************************************

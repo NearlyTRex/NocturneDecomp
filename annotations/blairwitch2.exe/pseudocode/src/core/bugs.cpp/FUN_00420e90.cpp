@@ -18,11 +18,11 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
   int *piVar4;
   CDeformableModel *pCVar5;
   int *piVar6;
-  ushort *puVar7;
+  SInputFace *pSVar7;
   int iVar8;
   byte bVar9;
   float afStackY_1154 [1001];
-  byte *puVar10;
+  CMatrix3x4f *pCVar10;
   float local_1a0;
   float local_19c;
   float local_198;
@@ -115,22 +115,23 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
   bVar9 = 0;
   local_1a0 = param_3;
   if (*(int *)&param_2->field_0x2c < 0) {
-    piVar4 = (int *)(*(int *)(*(int *)&param_1->field_0x17738 + 0x2234) +
+    piVar4 = (int *)(*(int *)&param_1->deformable_model_ptr->field_0x2234 +
                     *(int *)&param_2->field_0x30 * 0xc);
     local_160 = (float)*piVar4 * _DAT_005f3e18;
     local_15c = (float)piVar4[1] * _DAT_005f3e18;
     local_158 = (float)piVar4[2] * _DAT_005f3e18;
-    core_xform_cpp_transformVector3x4InPlace_FUN_005915b0(&stack0xfffffea0,&param_1->field_0x1773c);
+    core_xform_cpp_transformVector3x4InPlace_FUN_005915b0
+              (&stack0xfffffea0,&param_1->model_world_matrix);
     iVar8 = core_bugs_cpp_FUN_00420840(param_1,param_2,local_1a0,&stack0xfffffea0);
     if (iVar8 != 0) {
-      core_bugs_cpp_FUN_00421800(param_1,param_2);
+      core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00421800(param_1,param_2);
       *(uint *)&param_2->field_0x34 = 0;
       return;
     }
   }
   else {
     if (*(float *)&param_2->field_0x38 <= 0.0) {
-      core_bugs_cpp_FUN_00421800(param_1,param_2);
+      core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00421800(param_1,param_2);
       *(uint *)&param_2->field_0x34 = 0;
     }
     else {
@@ -141,7 +142,7 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
         fVar2 = local_1a0 * local_198 + *(float *)&param_2->field_0x34;
         *(float *)&param_2->field_0x34 = fVar2;
         if (fVar2 < 1.0) break;
-        core_bugs_cpp_FUN_00421800(param_1,param_2);
+        core_bugs_cpp_CBugs_findNextSwarmVertex_FUN_00421800(param_1,param_2);
         local_1a0 = local_1a0 - (1.0 - local_19c) / local_198;
         *(float *)&param_2->field_0x34 = *(float *)&param_2->field_0x34 + _DAT_005cca69;
         if ((local_1a0 < (float)_DAT_005cca71) || (iVar8 = iVar8 + 1, 2 < iVar8)) break;
@@ -153,12 +154,12 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
         *(uint *)&param_2->field_0x34 = 0x3f800000;
       }
     }
-    piVar4 = (int *)(*(int *)(*(int *)&param_1->field_0x17738 + 0x2234) +
+    piVar4 = (int *)(*(int *)&param_1->deformable_model_ptr->field_0x2234 +
                     *(int *)&param_2->field_0x2c * 0xc);
     local_13c = (float)*piVar4 * _DAT_005f3e18;
     local_138 = (float)piVar4[1] * _DAT_005f3e18;
     local_134 = (float)piVar4[2] * _DAT_005f3e18;
-    piVar4 = (int *)(*(int *)(*(int *)&param_1->field_0x17738 + 0x2234) +
+    piVar4 = (int *)(*(int *)&param_1->deformable_model_ptr->field_0x2234 +
                     *(int *)&param_2->field_0x30 * 0xc);
     local_e8 = (float)*piVar4 * _DAT_005f3e18;
     local_e4 = (float)piVar4[1] * _DAT_005f3e18;
@@ -171,7 +172,7 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
     *(uint *)((int)&stack0xffffff2c + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
          *(uint *)((int)&stack0xfffffeb4 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
     local_18 = 1.0 - *(float *)&param_2->field_0x34;
-    puVar10 = &param_1->field_0x1773c;
+    pCVar10 = &param_1->model_world_matrix;
     local_100 = local_13c * local_18;
     local_fc = local_138 * local_18;
     local_f8 = local_134 * local_18;
@@ -188,7 +189,7 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
          *(uint *)((int)&stack0xffffffb8 + (uint)bVar9 * -8);
     *(uint *)(&stack0xffffff68 + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
          *(uint *)((int)&stack0xffffffbc + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-    core_xform_cpp_FUN_00591530(&stack0xffffff60,puVar10);
+    core_xform_cpp_FUN_00591530(&stack0xffffff60,pCVar10);
     local_10c = local_40;
     (&stack0xfffffef8)[(uint)bVar9 * 0xfffffffe] =
          (float)*(uint *)(&stack0xffffffc4 + (uint)bVar9 * -8);
@@ -207,22 +208,25 @@ void core_bugs_cpp_FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3)
          (float)*(uint *)((int)&stack0xffffffac + (uint)bVar9 * -8);
     *(uint *)((int)&stack0xfffffe9c + (uint)bVar9 * -8 + (uint)bVar9 * -8) =
          *(uint *)((int)&stack0xffffffb0 + (uint)bVar9 * -8 + (uint)bVar9 * -8);
-    iVar8 = *(int *)(&param_1->field_0x17778 + *(int *)&param_2->field_0x2c * 0x28);
-    iVar1 = *(int *)&param_1->field_0x1776c;
+    iVar8 = *(int *)(param_1->swarm_vertices + *(int *)&param_2->field_0x2c * 0x28 + 4);
+    iVar1 = param_1->lod_index;
     pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-                       (*(CDeformableModelInstance **)&param_1->field_0x17738);
-    puVar7 = (ushort *)(*(int *)(&pCVar5->field_0x7c + iVar1 * 4) + iVar8 * 0x12);
-    piVar4 = (int *)(*(int *)(*(int *)&param_1->field_0x17738 + 0x2234) + (uint)*puVar7 * 0xc);
+                       (param_1->deformable_model_ptr);
+    pSVar7 = pCVar5->tri_data_ptr[iVar1] + iVar8 * 0x12;
+    piVar4 = (int *)(*(int *)&param_1->deformable_model_ptr->field_0x2234 +
+                    (uint)*(ushort *)pSVar7 * 0xc);
     local_13c = (float)*piVar4 * _DAT_005f3e18;
     local_138 = (float)piVar4[1] * _DAT_005f3e18;
     local_134 = (float)piVar4[2] * _DAT_005f3e18;
-    piVar6 = (int *)((uint)puVar7[1] * 0xc + *(int *)(*(int *)&param_1->field_0x17738 + 0x2234));
+    piVar6 = (int *)((uint)*(ushort *)(pSVar7 + 2) * 0xc +
+                    *(int *)&param_1->deformable_model_ptr->field_0x2234);
     local_e8 = (float)*piVar6 * _DAT_005f3e18;
     fVar2 = (float)piVar6[1] * _DAT_005f3e18;
     local_e4 = fVar2;
     fVar3 = (float)piVar6[2] * _DAT_005f3e18;
     local_e0 = fVar3;
-    piVar6 = (int *)((uint)puVar7[2] * 0xc + *(int *)(*(int *)&param_1->field_0x17738 + 0x2234));
+    piVar6 = (int *)((uint)*(ushort *)(pSVar7 + 4) * 0xc +
+                    *(int *)&param_1->deformable_model_ptr->field_0x2234);
     local_c4 = (float)*piVar6 * _DAT_005f3e18;
     iVar8 = piVar6[1];
     local_c0 = (float)iVar8 * _DAT_005f3e18;

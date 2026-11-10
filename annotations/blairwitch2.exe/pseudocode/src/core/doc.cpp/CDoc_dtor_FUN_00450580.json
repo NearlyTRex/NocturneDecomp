@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 79,
+    "complexity_score": 95,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 24,
-    "suspect_count": 5,
+    "pseudocode_lines": 25,
+    "suspect_count": 6,
     "suspect_types": [
+      "negative_offset",
       "unnamed_field"
     ],
-    "total_lines": 92
+    "total_lines": 93
   },
   "cross_references": [],
   "function": {
@@ -73,7 +74,7 @@
     {
       "addr": "005f5174",
       "name": "g_CDocVTable",
-      "type": "undefined4",
+      "type": "CHero_full_vtable",
       "value": null
     },
     {
@@ -145,7 +146,7 @@
       "line": 17,
       "match": "field_0x2b0",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr->field_0x2b0 = &g_CDocVTable;",
+      "text": "*(CHero_full_vtable **)&this_ptr->field_0x2b0 = &g_CDocVTable;",
       "type": "unnamed_field"
     },
     {
@@ -173,8 +174,16 @@
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Negative struct offset (wrong base type)",
       "line": 22,
+      "match": "pCVar1[-3].",
+      "severity": "mild",
+      "text": "((CDemonActor *)&pCVar1[-3].scrape_points[6].raytrace_normal.y,1);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
       "match": "field_0x118",
       "severity": "mild",
       "text": "pCVar3 = (CDoc *)core_hero_cpp_CHero_dtor_FUN_004ce3d0((CHero *)&pCVar2[-0xdf].field_0x118,1);",

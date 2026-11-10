@@ -13,20 +13,21 @@ void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004f53f0(CMirro
 {
   uint uVar1;
   
-  _DAT_01d8105c = *(uint *)(prim + 4);
-  _DAT_01d81060 = *(uint *)(prim + 8);
-  _DAT_01d81064 = *(uint *)(prim + 0xc);
-  _DAT_01d81068 = *(uint *)(prim + 0x10);
-  _DAT_01d8106c = *(uint *)(prim + 0x14);
-  _DAT_01d81070 = *(uint *)(prim + 0x18);
-  _DAT_01d81074 = *(uint *)(prim + 0x24);
-  _DAT_01d81078 = *(uint *)(prim + 0x30);
-  _DAT_01d8107c = *(uint *)(prim + 0x3c);
-  uVar1 = core_mirror_cpp_FUN_004f5130(this_ptr,(SMRGLHeaderPrimitive *)0x1d81058);
+  _DAT_01d8105c = (prim->base).count;
+  _DAT_01d81060 = (prim->surface_normal).A;
+  _DAT_01d81064 = (prim->surface_normal).B;
+  _DAT_01d81068 = (prim->surface_normal).C;
+  _DAT_01d8106c = (prim->surface_normal).D;
+  _DAT_01d81070 = prim[1].base.type;
+  _DAT_01d81074 = prim[1].surface_normal.B;
+  _DAT_01d81078 = prim[2].base.type;
+  _DAT_01d8107c = prim[2].surface_normal.B;
+  uVar1 = core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130
+                    (this_ptr,(SMRGLHeaderPrimitive *)0x1d81058);
   if (uVar1 == 0) {
     return;
   }
   engine_drender_cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
-            (DAT_005f2afc,(SMRGLHeaderPrimitive *)(this_ptr + 0xe8));
+            (DAT_005f2afc,&(this_ptr->clip_primitive).base);
   return;
 }

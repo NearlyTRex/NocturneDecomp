@@ -7,8 +7,8 @@
 ; CSocket *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[6]:
-;   core_netgame.cpp_FUN_0052c5d0 at 0052c5e9
-;   core_netgame.cpp_FUN_0052c970 at 0052c992
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 at 0052c992
+;   core_netgame.cpp_CNetGame_shutdown_FUN_0052c5d0 at 0052c5e9
 ;   support_trisock.cpp_CSocket_createSocket_FUN_0059c910 at 0059c916
 ;   support_trisock.cpp_CSocket_createUDPSocket_FUN_0059c940 at 0059c946
 ;   support_trisock.cpp_CSocket_dtor_FUN_0059c8f0 at 0059c8f6

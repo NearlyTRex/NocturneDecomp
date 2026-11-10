@@ -23,7 +23,7 @@ void __cdecl core_motion_cpp_FUN_004fb280(CMotionList *this_ptr,_FILE *file_hand
   CMotionList *local_18;
   int local_14;
   
-  unkafter_box_cpp_FUN_004fb210(this_ptr);
+  unkafter_morph_cpp_FUN_004fb210(this_ptr);
   local_24 = -1;
   do {
     iVar1 = _fgetc(file_handle);

@@ -1,0 +1,250 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 194,
+    "complexity_score": 158,
+    "cross_reference_count": 0,
+    "function_call_count": 12,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 68,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 262
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00581660",
+    "address_range": [
+      [
+        "00581660",
+        "00581863"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_00581660",
+    "signature": "void __cdecl core_vampboss_cpp_CVampireBoss_setup_FUN_00581660(CVampireBoss *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005adeb0",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_CCloth_load_FUN_005adeb0"
+    },
+    {
+      "addr": "005ae680",
+      "is_variadic": false,
+      "name": "core_cloth.cpp_FUN_005ae680"
+    },
+    {
+      "addr": "00487eb0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00487eb0"
+    },
+    {
+      "addr": "005b70d0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_addPartFromKeyframedModel_FUN_005b70d0"
+    },
+    {
+      "addr": "005b71d0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_getReady_FUN_005b71d0"
+    },
+    {
+      "addr": "005b6f80",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_005b6f80"
+    },
+    {
+      "addr": "00546ae0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00547480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480"
+    },
+    {
+      "addr": "00544e60",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60"
+    },
+    {
+      "addr": "00544ee0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ed9a8",
+      "name": "s_batwing_cth_005ed9a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed9b4",
+      "name": "s_noscape_cth_005ed9b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed9c0",
+      "name": "s_nosskirt_cth_005ed9c0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ed9cd",
+      "name": "s_Bip01_Spine2_005ed9cd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0268014c",
+      "name": "DAT_0268014c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.005988023952096,
+    "instruction_count": 167,
+    "opcode_distribution": {
+      "CALL": 26,
+      "COPY": 120,
+      "INT_ADD": 60,
+      "INT_AND": 64,
+      "INT_CARRY": 27,
+      "INT_EQUAL": 64,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 27,
+      "INT_SLESS": 32,
+      "INT_SUB": 93,
+      "INT_XOR": 4,
+      "LOAD": 17,
+      "POPCOUNT": 32,
+      "RETURN": 1,
+      "STORE": 100
+    },
+    "pcode_op_count": 669
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVampireBoss *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x12dac",
+      "severity": "mild",
+      "text": "model_ptr = &this_ptr->field_0x12dac;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "position = &(this_ptr->base).base.base.field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x4d8dc",
+      "severity": "mild",
+      "text": "model_ptr_00 = &this_ptr->field_0x4d8dc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x8840c",
+      "severity": "mild",
+      "text": "model_ptr_01 = &this_ptr->field_0x8840c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.base.field_0xfc = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x261c",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.field_0x261c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x261a",
+      "severity": "mild",
+      "text": "*(short *)&(this_ptr->base).base.field_0x261a = (short)((uint)iVar1 >> 0x10);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fd844"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -11,6 +11,6 @@ bool unkaddr_005a7eb0_cpp_FUN_005a7ed0(void)
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_FUN_0040cfc0(0,0xffff);
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cfc0(0,0xffff);
   return iVar1 < DAT_0061ec60;
 }

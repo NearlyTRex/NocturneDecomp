@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_vessel.cpp_FUN_005a8e60 at 005a8f06
+;   core_vessel.cpp_CCryptVessel_process_FUN_005a8e60 at 005a8f06
 ;
 ; *****************************************************************************
 

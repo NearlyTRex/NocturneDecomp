@@ -42,13 +42,13 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00567370
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_00569b50
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500
+;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890
 ;   core_skeleton.cpp_FUN_00569040
-;   core_skeleton.cpp_FUN_00569180
-;   core_skeleton.cpp_FUN_00569890
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -79,8 +79,8 @@ section .text
     RET                                 ; 0056586b
     PUSH 0x23a4                         ; 0056586c
         ;   Label: LAB_0056586c
-    CALL crt_unknown.c_FUN_005c0f32     ; 00565871
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00565871
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 00565876
     TEST EAX,EAX                        ; 00565879
     JZ 0x00565886                       ; 0056587b
@@ -116,13 +116,13 @@ section .text
         ;   XREF to: 00567500 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005658cc
     PUSH EBX                            ; 005658cf
-    CALL core_skeleton.cpp_FUN_00569180 ; 005658d0
-        ;   XREF to: 00569180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569180(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180 ; 005658d0
+        ;   XREF to: 00569180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 005658d5
     PUSH 0x0                            ; 005658d8
     PUSH EBX                            ; 005658da
-    CALL core_skeleton.cpp_FUN_00569890 ; 005658db
-        ;   XREF to: 00569890 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569890(CDeformableModelInstance * this_ptr, int lod_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890 ; 005658db
+        ;   XREF to: 00569890 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 005658e0
     PUSH EBP                            ; 005658e3
     PUSH EBX                            ; 005658e4

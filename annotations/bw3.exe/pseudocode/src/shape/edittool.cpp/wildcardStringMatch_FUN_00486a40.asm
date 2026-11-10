@@ -14,7 +14,7 @@
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052e932
 ;   core_sound.cpp_FUN_0055ef30 at 0055ef76
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0055e810 at 0055e842
-;   core_trigger.cpp_FUN_0056ede0 at 0056ee15
+;   core_trigger.cpp_CTrigger_acceptsDamageFrom_FUN_0056ede0 at 0056ee15
 ;   engine_pod.cpp_CPod_getNextSearchResult_FUN_005148b0 at 00514958
 ;   shape_edittool.cpp_FUN_00482ea0 at 00482fbd
 ;

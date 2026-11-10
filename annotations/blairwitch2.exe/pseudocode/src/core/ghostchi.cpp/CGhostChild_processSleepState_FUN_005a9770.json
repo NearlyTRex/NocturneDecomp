@@ -1,0 +1,299 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 94,
+    "complexity_score": 240,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 19,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 134
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a9770",
+    "address_range": [
+      [
+        "005a9770",
+        "005a988c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ghostchi.cpp_CGhostChild_processSleepState_FUN_005a9770",
+    "signature": "void __cdecl core_ghostchi_cpp_CGhostChild_processSleepState_FUN_005a9770(CGhostChild *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    },
+    {
+      "addr": "0059d880",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059d880"
+    },
+    {
+      "addr": "0059dcb0",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059dcb0"
+    },
+    {
+      "addr": "0059f570",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059f570"
+    },
+    {
+      "addr": "005a01a0",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_005a01a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0956",
+      "name": "s_SleepComplete_005f0956",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.907894736842105,
+    "instruction_count": 76,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 105,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 39,
+      "INT_AND": 28,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 22,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 11,
+      "INT_SUB": 30,
+      "INT_ZEXT": 4,
+      "LOAD": 20,
+      "POPCOUNT": 11,
+      "RETURN": 5,
+      "STORE": 37
+    },
+    "pcode_op_count": 373
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGhostChild *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x17c))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x17c))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x2b4,4,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x11858",
+      "severity": "mild",
+      "text": "uVar1 = *(uint *)&this_ptr->field_0x11858;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2814 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x113c4",
+      "severity": "mild",
+      "text": "(this_ptr,*(uint *)&this_ptr->field_0x113c4,0,0x3f000000);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x11858",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11858 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x11864",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11864 = *(uint *)&this_ptr->field_0x11860;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x11860",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11864 = *(uint *)&this_ptr->field_0x11860;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x11864",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&this_ptr->field_0x11864 - delta_time;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2814 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x11864",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x11864 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x11864",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11864 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x113c4",
+      "severity": "mild",
+      "text": "(this_ptr,*(uint *)&this_ptr->field_0x113c4,0x3f800000,0x3f800000);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x11858",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11858 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2814 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "unkaddr_0059d350_cpp_FUN_0059dcb0(&this_ptr->field_0x10af8,0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "unkaddr_0059d350_cpp_FUN_0059d880(&this_ptr->field_0x10af8,\"SleepComplete\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x11858",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x11858 = 3;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 388,
+        "vtable_addr": "006006c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

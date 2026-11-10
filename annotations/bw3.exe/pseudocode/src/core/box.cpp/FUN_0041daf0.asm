@@ -28,16 +28,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[75]:
-;   core_ammo.cpp_FUN_0040df20 at 0040df5a
-;   core_ammobox.cpp_FUN_0040e810 at 0040e848
-;   core_asgaya.cpp_FUN_005a1760 at 005a17aa
-;   core_asgaya.cpp_FUN_005a17e0 at 005a18ab
-;   core_baal.cpp_FUN_00597970 at 00597a1b
-;   core_bat.cpp_FUN_0040f200 at 0040f23a
-;   core_battery.cpp_FUN_0040f590 at 0040f5e9
-;   core_bodypart.cpp_FUN_00414bd0 at 00414c48
-;   core_bodypart.cpp_FUN_00414d40 at 00414dec
-;   core_boneguy.cpp_FUN_00418f90 at 00418fdc
+;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20 at 0040df5a
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e810 at 0040e848
+;   core_asgaya.cpp_CAsgaya_renderOpaque_FUN_005a1760 at 005a17aa
+;   core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0 at 005a18ab
+;   core_baal.cpp_CBaal_renderTransparent_FUN_00597970 at 00597a1b
+;   core_bat.cpp_CBat_renderOpaque_FUN_0040f200 at 0040f23a
+;   core_battery.cpp_CBattery_renderOpaque_FUN_0040f590 at 0040f5e9
+;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40 at 00414dec
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0 at 00414c48
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90 at 00418fdc
 ;   ... and 65 more
 ;
 ; Referenced Globals:

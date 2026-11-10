@@ -27,14 +27,14 @@
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b6f0
 ;   core_actor.cpp_archiveClothList_FUN_0040bce0
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040b560
+;   core_actor.cpp_archiveMotionState_FUN_0040b870
+;   core_actor.cpp_archivePartStatus_FUN_0040b960
 ;   core_actor.cpp_archiveString_FUN_0040b440
-;   core_actor.cpp_FUN_0040b7f0
-;   core_actor.cpp_FUN_0040b870
-;   core_actor.cpp_FUN_0040b960
-;   core_npc.cpp_FUN_00531bf0
+;   core_npc.cpp_CNPC_archive_FUN_00531bf0
 ;
 ; *****************************************************************************
 
@@ -45,8 +45,8 @@ section .text
     PUSH ESI                            ; 004ef021
     MOV EBX,dword ptr [ESP + 0xc]       ; 004ef022
     PUSH EBX                            ; 004ef026
-    CALL core_npc.cpp_FUN_00531bf0      ; 004ef027
-        ;   XREF to: 00531bf0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_FUN_00531bf0(CNPC * this_ptr)
+    CALL core_npc.cpp_CNPC_archive_FUN_00531bf0 ; 004ef027
+        ;   XREF to: 00531bf0 (UNCONDITIONAL_CALL)  ; void core_npc.cpp_CNPC_archive_FUN_00531bf0(CNPC * this_ptr)
     ADD ESP,0x4                         ; 004ef02c
     PUSH 0x5e4f1a                       ; 004ef02f | = "followState"
     LEA ESI,[EBX + 0x1fe64]             ; 004ef034
@@ -74,8 +74,8 @@ section .text
         ;   Label: LAB_004ef07a
     LEA ESI,[EBX + 0x158]               ; 004ef07f
     PUSH ESI                            ; 004ef085
-    CALL core_actor.cpp_FUN_0040b960    ; 004ef086
-        ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b960(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archivePartStatus_FUN_0040b960 ; 004ef086
+        ;   XREF to: 0040b960 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archivePartStatus_FUN_0040b960(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ef08b
     PUSH 0x5e4f62                       ; 004ef08e | = "rescueDistance"
     LEA ESI,[EBX + 0x1fab8]             ; 004ef093
@@ -201,13 +201,13 @@ section .text
         ;   Label: LAB_004ef1eb
     LEA ESI,[EBX + 0x158]               ; 004ef1f0
     PUSH ESI                            ; 004ef1f6
-    CALL core_actor.cpp_FUN_0040b7f0    ; 004ef1f7
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 ; 004ef1f7
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 004ef1fc
     PUSH 0x5e4f4a                       ; 004ef1ff | = "motion state"
     PUSH ESI                            ; 004ef204
-    CALL core_actor.cpp_FUN_0040b870    ; 004ef205
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b870(CMotionController * motion_controller, char * property_name)
+    CALL core_actor.cpp_archiveMotionState_FUN_0040b870 ; 004ef205
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040b870(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 004ef20a
     JMP 0x004ef07a                      ; 004ef20d
         ;   XREF to: 004ef07a (UNCONDITIONAL_JUMP)  ; LAB_004ef07a

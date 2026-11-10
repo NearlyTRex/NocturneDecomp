@@ -11,13 +11,13 @@ CBaronWeapon * __cdecl core_baron_cpp_CBaronWeapon_ctor_FUN_004108e0(CBaronWeapo
 {
   CBaronWeapon *pCVar1;
   
-  pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0((CWeapon *)this_ptr);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CBaronWeaponVTable;
-  *(uint *)&pCVar1->field_0x43c = 9;
-  *(uint *)&pCVar1->field_0x440 = 0;
-  *(uint *)&pCVar1->field_0x444 = 0x43480000;
-  *(uint *)&pCVar1->field_0x448 = 0;
-  *(uint *)&pCVar1->field_0x44c = 0;
-  *(uint *)&pCVar1->field_0x6d4 = 0;
+  pCVar1 = (CBaronWeapon *)core_weapon_cpp_CWeapon_ctor_FUN_005899d0(&this_ptr->base);
+  (pCVar1->base).base.vtable._ub = &g_CBaronWeaponVTable._ub;
+  (pCVar1->base).weapon_type = WEAPON_TYPE_BARON|WEAPON_TYPE_SHOTGUN;
+  (pCVar1->base).can_penetrate = 0;
+  (pCVar1->base).bolt_velocity = 200.0;
+  (pCVar1->base).fire_cooldown = 0;
+  (pCVar1->base).can_attach_light = 0;
+  pCVar1->baron = (CBaron *)0x0;
   return pCVar1;
 }

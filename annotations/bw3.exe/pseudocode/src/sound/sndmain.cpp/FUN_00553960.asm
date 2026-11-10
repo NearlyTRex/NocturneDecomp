@@ -43,11 +43,11 @@
 ;   crt_memory.c_memset_FUN_005a28f0
 ;   sound_mp3.cpp_CMP3Decoder_read_FUN_00502a80
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520
+;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005537c0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00555270
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_005554a0
 ;   sound_sndmain.cpp_FUN_00553660
-;   sound_sndmain.cpp_FUN_00553760
 ;   sound_sndmain.cpp_FUN_005558e0
 ;   sound_sndmain.cpp_FUN_00555900
 ;   sound_sndmain.cpp_FUN_00555b80
@@ -438,8 +438,8 @@ section .text
     POP EDI                             ; 00553d8c
     PUSH EBP                            ; 00553d8d
         ;   Label: LAB_00553d8d
-    CALL sound_sndmain.cpp_FUN_00553760 ; 00553d8e
-        ;   XREF to: 00553760 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00553760(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760 ; 00553d8e
+        ;   XREF to: 00553760 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00553d93
     MOV ECX,dword ptr [ESP + 0x20]      ; 00553d96
         ;   Label: LAB_00553d96
@@ -581,8 +581,8 @@ section .text
         ;   XREF to: 00553e81 (UNCONDITIONAL_JUMP)  ; LAB_00553e81
     PUSH EBP                            ; 00553efb
         ;   Label: LAB_00553efb
-    CALL sound_sndmain.cpp_FUN_00553760 ; 00553efc
-        ;   XREF to: 00553760 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00553760(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760 ; 00553efc
+        ;   XREF to: 00553760 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00553f01
     PUSH EBP                            ; 00553f04
     PUSH 0x5d2f90                       ; 00553f05 | = "Error reading %s while streaming\n"

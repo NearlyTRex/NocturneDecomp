@@ -33,7 +33,7 @@ uint sound_sndmain_cpp_FUN_00556240(char *param_1)
   
   bVar13 = 0;
   if (((param_1 == (char *)0x0) || (*param_1 == '\0')) ||
-     (iVar2 = sound_sndmain_cpp_FUN_005586c0(), iVar2 == 0)) {
+     (iVar2 = sound_sndmain_cpp_isSoundBusy_FUN_005586c0(), iVar2 == 0)) {
     return 0;
   }
   sound_sndmain_cpp_FUN_00555bf0(&local_74);
@@ -55,11 +55,11 @@ uint sound_sndmain_cpp_FUN_00556240(char *param_1)
     puVar10 = puVar10 + (uint)bVar13 * -2 + 1;
     pCVar11 = (CSfxOptions *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);
   }
-  iVar2 = sound_sndmain_cpp_FUN_00556e30(local_74._0_4_);
+  iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(local_74._0_4_);
   if (iVar2 == 0) {
     return 0;
   }
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   if (_DAT_02cf341c < 1) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x24b;
@@ -83,7 +83,7 @@ uint sound_sndmain_cpp_FUN_00556240(char *param_1)
   pCVar11 = &local_74;
   pCVar4 = this_ptr;
   for (iVar6 = 0x18; iVar6 != 0; iVar6 = iVar6 + -1) {
-    *(uint *)pCVar4 = *(uint *)pCVar11;
+    *(uint *)&pCVar4->options = *(uint *)pCVar11;
     pCVar11 = (CSfxOptions *)((int)pCVar11 + ((uint)bVar13 * -2 + 1) * 4);
     pCVar4 = (CSfxSlot *)((int)pCVar4 + (uint)bVar13 * -8 + 4);
   }
@@ -104,7 +104,8 @@ uint sound_sndmain_cpp_FUN_00556240(char *param_1)
   } while (iVar6 < 0x40);
   iVar6 = engine_dosio_cpp_getFileSize_FUN_004657f0("sound",local_174);
   if (iVar6 < 0x200001) {
-    engine_dosio_cpp_FUN_00465e50(local_174,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffd8c);
+    engine_dosio_cpp_splitPath_FUN_00465e50
+              (local_174,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffd8c);
     iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005d29cd);
     if ((iVar6 == 0) ||
        (iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005d29d1), iVar6 == 0))
@@ -130,7 +131,7 @@ LAB_005563a7:
     *(uint *)(iVar2 + 0x2ce7318) = *(uint *)(iVar2 + 0x2ce7254);
     pCVar4 = this_ptr;
     do {
-      puVar5 = &pCVar4->field_0x4;
+      puVar5 = &(pCVar4->options).field_0x4;
       *(uint *)&pCVar4->field_0xd0 = 0xffffffff;
       pCVar4 = (CSfxSlot *)puVar5;
     } while (puVar5 != (byte *)(iVar2 + 0x2ce723c));

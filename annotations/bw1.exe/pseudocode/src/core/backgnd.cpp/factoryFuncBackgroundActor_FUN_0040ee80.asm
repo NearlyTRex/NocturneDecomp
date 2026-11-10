@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_backgnd.cpp_CBackgroundActor_ctor_FUN_0040eeb0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2e0                          ; 0040ee80
         ;   Label: core_backgnd.cpp_factoryFuncBackgroundActor_FUN_0040ee80
-    CALL crt_unknown.c_FUN_005c0f32     ; 0040ee85
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 0040ee85
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 0040ee8a
     TEST EAX,EAX                        ; 0040ee8d
     JNZ 0x0040ee92                      ; 0040ee8f

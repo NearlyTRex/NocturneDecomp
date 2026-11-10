@@ -26,7 +26,7 @@
 ;   ... and 3 more
 ;
 ; Called Functions:
-;   engine_matrix.c_FUN_004ea3b0
+;   engine_matrix.c_getCameraOrigin_FUN_004ea3b0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH EDI                            ; 00442f01
     SUB ESP,0xc                         ; 00442f02
     MOV ESI,ESP                         ; 00442f05
-    CALL engine_matrix.c_FUN_004ea3b0   ; 00442f07
-        ;   XREF to: 004ea3b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_004ea3b0()
+    CALL engine_matrix.c_getCameraOrigin_FUN_004ea3b0 ; 00442f07
+        ;   XREF to: 004ea3b0 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_004ea3b0()
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00442f0c
     LEA EAX,[EDX*0x4 + 0x0]             ; 00442f10
     SUB EAX,EDX                         ; 00442f17

@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 17,
-    "complexity_score": 6,
+    "complexity_score": 7,
     "cross_reference_count": 6,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 6,
+    "pseudocode_lines": 7,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 23
+    "total_lines": 24
   },
   "cross_references": [
     {
@@ -22,25 +22,25 @@
     {
       "addr": "00435c70",
       "from_addr": "00436554",
-      "name": "core_chain.cpp_FUN_00435c70",
+      "name": "core_chain.cpp_CChain_process_FUN_00435c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00536a20",
       "from_addr": "00536f51",
-      "name": "core_pendulum.cpp_FUN_00536a20",
+      "name": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ce10",
+      "from_addr": "0057d3fa",
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057c57e",
       "from_addr": "0057ca01",
       "name": "core_sound.cpp_FUN_0057c57e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0057ce10",
-      "from_addr": "0057d3fa",
-      "name": "core_sound.cpp_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -66,7 +66,7 @@
     {
       "addr": "0057bef0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0057bef0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_0057bef0"
     }
   ],
   "globals": [],
@@ -76,7 +76,7 @@
       {
         "call_addr": "0057d3fa",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -120,7 +120,7 @@
       {
         "call_addr": "00536f51",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_00536a20",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +131,7 @@
       {
         "call_addr": "00537009",
         "call_type": "direct",
-        "caller": "core_pendulum.cpp_FUN_00536a20",
+        "caller": "core_pendulum.cpp_CPendulum_updateSwing_FUN_00536a20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +142,7 @@
       {
         "call_addr": "00436554",
         "call_type": "direct",
-        "caller": "core_chain.cpp_FUN_00435c70",
+        "caller": "core_chain.cpp_CChain_process_FUN_00435c70",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "004365b5",
         "call_type": "direct",
-        "caller": "core_chain.cpp_FUN_00435c70",
+        "caller": "core_chain.cpp_CChain_process_FUN_00435c70",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

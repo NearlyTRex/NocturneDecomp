@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[12]:
-;   core_charactr.cpp_FUN_0042b450 at 0042b847
-;   core_charactr.cpp_FUN_00431d10 at 00431e6c
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b847
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_00431d10 at 00431e6c
 ;   core_fire.cpp_FUN_00497290 at 0049744f
 ;   core_platfrm.cpp_FUN_00512be0 at 00512cba
+;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 005224aa
 ;   core_prye.cpp_FUN_0051f360 at 0051f45f
-;   core_prye.cpp_FUN_005220d0 at 005224aa
 ;   core_skeleton.cpp_FUN_005496bc at 00549717
 ;   core_skeleton.cpp_FUN_005498ce at 00549917
-;   core_thehand.cpp_FUN_0056c140 at 0056c2ac
-;   core_thehand.cpp_FUN_0056ca00 at 0056cb0a
+;   core_tawiscar.cpp_CTawiscara_renderTransparent_FUN_00595d20 at 00595dd0
+;   core_thehand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056cb0a
 ;   ... and 2 more
 ;
 ; *****************************************************************************

@@ -10,6 +10,27 @@
     "size":12
   },
   {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_vfunc91",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CBulletHole",
     "rtti_file":"core/emitter.cpp",
@@ -32,10 +53,102 @@
     "size":70372
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_canLookAt",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getBlockVirtualDirectorFlag",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getInteractionInfo",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_info",
+        "type":{
+          "kind":"struct",
+          "name":"SInteractionInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_renderOpaque",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDrawSurface",
     "rtti_file":"cockpit/drawsurf.cpp",
-    "size":1
+    "size":32
   },
   {
     "kind":"class",
@@ -58,6 +171,105 @@
   },
   {
     "kind":"class",
+    "name":"CGhostChild_vtable",
+    "size":8,
+    "vtable_slots":[
+      {
+        "name":"processMeleeAttackState",
+        "offset":0
+      },
+      {
+        "name":"processSleepState",
+        "offset":4
+      }
+    ]
+  },
+  {
+    "kind":"class",
+    "name":"CHand_full_vtable",
+    "size":392,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":224
+      },
+      {
+        "name":"_ue",
+        "offset":332
+      },
+      {
+        "name":"_ubasicenemy",
+        "offset":340
+      },
+      {
+        "name":"_uhand",
+        "offset":384
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHand_vfunc97",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHand",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CHand_vtable",
+    "size":8,
+    "vtable_slots":[
+      {
+        "name":"processMeleeAttackState",
+        "offset":0
+      },
+      {
+        "name":"processSleepingState",
+        "offset":4
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_createDefaultWeapon",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
     "name":"CIni",
     "size":4
   },
@@ -71,7 +283,28 @@
   {
     "kind":"class",
     "name":"CMirror",
-    "size":1
+    "size":288
+  },
+  {
+    "kind":"funcdef",
+    "name":"CMobster_reset",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CMobster",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -103,6 +336,88 @@
     "name":"CShell",
     "rtti_file":"core/emitter.cpp",
     "size":96
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_allocateSample",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bits_per_sample",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"channel_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sample_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sample_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_allocateSfx",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sample_buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -139,6 +454,119 @@
     "size":1156
   },
   {
+    "kind":"funcdef",
+    "name":"CUnionZombie_processVanishAttackState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CUnionZombie",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_renderAimBeam",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"enum",
+    "name":"EDripType",
+    "size":4,
+    "values":[
+      {
+        "name":"DRIP_TYPE_WATER",
+        "value":0
+      },
+      {
+        "name":"DRIP_TYPE_LAVA",
+        "value":1
+      },
+      {
+        "name":"DRIP_TYPE_STALAG",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EOneShotState",
+    "size":4,
+    "values":[
+      {
+        "name":"ONE_SHOT_NO",
+        "value":0
+      },
+      {
+        "name":"ONE_SHOT_YES",
+        "value":1
+      },
+      {
+        "name":"ONE_SHOT_DONE",
+        "value":2
+      },
+      {
+        "name":"ONE_SHOT_DONE_IN_BACKGROUND",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"FileSearchHandlerFunc",
+    "params":[
+      {
+        "name":"param0",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"struct",
     "name":"SClipPlane",
     "size":16
@@ -152,6 +580,22 @@
     "kind":"struct",
     "name":"SDamageInfo",
     "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SHuffmanTable",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SInteractionInfo",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLPrimitivePolyIndex",
+    "parent":"SMRGLHeaderPrimitive",
+    "size":56
   },
   {
     "kind":"struct",

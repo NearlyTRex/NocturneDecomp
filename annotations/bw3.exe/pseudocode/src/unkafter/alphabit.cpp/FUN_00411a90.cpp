@@ -29,7 +29,7 @@ void unkafter_alphabit_cpp_FUN_00411a90(void)
       uVar2 = _DAT_01c5fae4;
       uVar1 = DAT_007dffbc;
       if (2 < iVar3) {
-        (**(code **)(*DAT_007dffb4 + 0x20))(DAT_007dffb4,*(uint *)&g_CGamePtr->field_0x314);
+        (**(code **)(*DAT_007dffb4 + 0x20))(DAT_007dffb4,g_CGamePtr->delta_time_float);
         return;
       }
     }

@@ -51,8 +51,8 @@ void core_game_cpp_FUN_004b2a50(void)
       return;
     }
     if (_DAT_01cb80d4 != 0) {
-      FUN_005b7790(acStack_98,"noc%05d.raw",_DAT_01cb80dc);
-      FUN_005b7790(acStack_160,"Movie recording active: movie\\%s",acStack_98);
+      _sprintf(acStack_98,"noc%05d.raw");
+      _sprintf(acStack_160,"Movie recording active: movie\\%s");
       p_Stack_2c = engine_dosio_cpp_FUN_00460c70("movie",acStack_98,&DAT_005d72e4);
       if (p_Stack_2c != (_FILE *)0x0) {
         iStack_30 = 0;

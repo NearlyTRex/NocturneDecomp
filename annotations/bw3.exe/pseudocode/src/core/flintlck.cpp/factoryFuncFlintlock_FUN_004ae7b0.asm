@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flintlck.cpp_CFlintlock_ctor_FUN_004ae7e0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x594                          ; 004ae7b0
         ;   Label: core_flintlck.cpp_factoryFuncFlintlock_FUN_004ae7b0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004ae7b5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004ae7b5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004ae7ba
     TEST EAX,EAX                        ; 004ae7bd
     JNZ 0x004ae7c2                      ; 004ae7bf

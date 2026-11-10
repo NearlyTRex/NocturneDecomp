@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_0042f770 at 0042fa5b
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_0042f770 at 0042fa5b
 ;   core_prye.cpp_FUN_0051f490 at 00520382
 ;
 ; *****************************************************************************

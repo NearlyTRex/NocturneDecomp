@@ -1,0 +1,364 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 130,
+    "complexity_score": 194,
+    "cross_reference_count": 1,
+    "function_call_count": 14,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 13,
+    "suspect_types": [
+      "raw_address_pointer_store",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 179
+  },
+  "cross_references": [
+    {
+      "addr": "0042e960",
+      "from_addr": "0042e9a2",
+      "name": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00430060",
+    "address_range": [
+      [
+        "00430060",
+        "004301df"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060",
+    "signature": "void __cdecl core_charactr_cpp_CCharacter_renderEthereal_FUN_00430060(CCharacter *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00566380",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_selectLOD_FUN_00566380"
+    },
+    {
+      "addr": "00569180",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180"
+    },
+    {
+      "addr": "0056afe0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeCylindricalUVs_FUN_0056afe0"
+    },
+    {
+      "addr": "0056acc0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0056acc0"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569a10",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderPolygons_FUN_00569a10"
+    },
+    {
+      "addr": "005697b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_scalePoseDataForHierarchy_FUN_005697b0"
+    },
+    {
+      "addr": "0056ad90",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0056ad90"
+    },
+    {
+      "addr": "00569920",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_00569920"
+    },
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "005c084c",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005c084c"
+    },
+    {
+      "addr": "00483dd0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0"
+    },
+    {
+      "addr": "00483de0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0"
+    },
+    {
+      "addr": "00597a20",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_FUN_00597a20"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d5a2f",
+      "name": "DAT_005d5a2f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00610c20",
+      "name": "DAT_00610c20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "007c6178",
+      "name": "DAT_007c6178",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007c617c",
+      "name": "DAT_007c617c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc122c",
+      "name": "DAT_01bc122c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf624",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0042e9a2",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_renderCharacter_FUN_0042e960",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.845454545454546,
+    "instruction_count": 110,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "CALL": 15,
+      "CBRANCH": 2,
+      "COPY": 109,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 37,
+      "INT_AND": 68,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 48,
+      "INT_LEFT": 3,
+      "INT_LESS": 4,
+      "INT_MULT": 5,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 16,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 25,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 51,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 11,
+      "POPCOUNT": 23,
+      "RETURN": 1,
+      "ROUND": 1,
+      "STORE": 50,
+      "SUBPIECE": 2,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 533
+  },
+  "stack_frame": {
+    "frame_size": 6836,
+    "local_size": 6832,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_1aac",
+        "offset": -6828,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xc000);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "line": 18,
+      "match": "*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4",
+      "severity": "moderate",
+      "text": "if (this_ptr == *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4)) {",
+      "type": "raw_address_pointer_store"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_007c6178",
+      "severity": "mild",
+      "text": "fVar4 = (float10)DAT_007c6178 + (float10)g_CGamePtr->delta_time_float * (float10)_DAT_005d5a2f;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_007c6178",
+      "severity": "mild",
+      "text": "DAT_007c6178 = (int)ROUND(fVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 25,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "DAT_00612560->skip_uv_extraction = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_00610c20",
+      "severity": "mild",
+      "text": "engine_texture_cpp_FUN_00597a20(&DAT_00610c20 + (iVar2 % 6) * 0x18);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_007c6178",
+      "severity": "mild",
+      "text": "(this_ptr_00,DAT_007c6178,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_00612560;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "*(uint *)(DAT_00612560->vertex_buffer_ptr + iVar2 + 0x20) = 0xb332;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "DAT_00612560->skip_uv_extraction = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -9,7 +9,7 @@
 ;   undefined4 DAT_02cf28bc
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     LEA EDX,[EDX]                       ; 00556fac
         ;   Label: sound_sndmain.cpp_FUN_00556fac
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00556fb0
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00556fb0
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
     MOV EAX,dword ptr [ESP + 0x4]       ; 00556fb5
     MOV [0x02cf28bc],EAX                ; 00556fb9 | DAT_02cf28bc
     TEST EAX,EAX                        ; 00556fbe

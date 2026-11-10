@@ -41,11 +41,11 @@ LAB_004e6b67:
     sound_sndmain_cpp_FUN_00550f20(*param_4,volume);
     return uVar3;
   }
-  sound_sndmain_cpp_FUN_00550450();
-  sound_sndmain_cpp_FUN_00550270(volume);
+  sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
+  sound_sndmain_cpp_setNextSfxVolume_FUN_00550270(volume);
   sound_sndmain_cpp_FUN_00550110((double)*param_6,(double)param_6[1],(double)param_6[2]);
   uVar2 = sound_sndmain_cpp_FUN_005506b0();
   *param_4 = uVar2;
-  sound_sndmain_cpp_FUN_005504d0();
+  sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
   return uVar3;
 }

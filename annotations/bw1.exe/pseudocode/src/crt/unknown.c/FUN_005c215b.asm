@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005c2106 at 005c210e
-;   unkafter_zombie.cpp_FUN_005ca500 at 005ca54f
+;   crt_unknown.c_FUN_005ca500 at 005ca54f
 ;
 ; *****************************************************************************
 

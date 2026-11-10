@@ -18,11 +18,11 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0
+;   core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0
 ;   core_box.cpp_FUN_0041daf0
-;   core_box.cpp_FUN_0041e9b0
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00538dd0
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00538ad0
-;   core_set.cpp_FUN_0053ab80
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_0046c800
@@ -203,8 +203,8 @@ section .text
     LEA ESI,[ESP + 0x30]                ; 0044824d
     PUSH EAX                            ; 00448251
     MOVSD.REP ES:EDI,ESI                ; 00448252
-    CALL core_box.cpp_FUN_0041e9b0      ; 00448254
-        ;   XREF to: 0041e9b0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_FUN_0041e9b0(CBoundingBox3D * this_ptr)
+    CALL core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0 ; 00448254
+        ;   XREF to: 0041e9b0 (UNCONDITIONAL_CALL)  ; void core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0(CBoundingBox3D * this_ptr)
     ADD ESP,0x4                         ; 00448259
     PUSH EBP                            ; 0044825c
     CALL core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 ; 0044825d
@@ -229,8 +229,8 @@ section .text
     PUSH EBX                            ; 0044828d
     MOV EBX,dword ptr [0x00603b28]      ; 0044828e | g_CDemonSetPtr
     PUSH EBX                            ; 00448294
-    CALL core_set.cpp_FUN_0053ab80      ; 00448295
-        ;   XREF to: 0053ab80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0053ab80(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80 ; 00448295
+        ;   XREF to: 0053ab80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0044829a
     TEST EDI,EDI                        ; 0044829d
         ;   Label: LAB_0044829d
@@ -285,8 +285,8 @@ section .text
     PUSH EBX                            ; 00448328
     MOV EBX,dword ptr [0x00603b28]      ; 00448329 | g_CDemonSetPtr
     PUSH EBX                            ; 0044832f
-    CALL core_set.cpp_FUN_0053ab80      ; 00448330
-        ;   XREF to: 0053ab80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0053ab80(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80 ; 00448330
+        ;   XREF to: 0053ab80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_0053ab80(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 00448335
     PUSH 0x0                            ; 00448338
         ;   Label: LAB_00448338

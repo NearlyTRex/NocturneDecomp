@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 174,
+    "complexity_score": 154,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 12,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
@@ -20,7 +20,7 @@
     {
       "addr": "00410110",
       "from_addr": "0041016b",
-      "name": "unkafter_bird.cpp_FUN_00410110",
+      "name": "core_bird.cpp_CBird_processDamage_FUN_00410110",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,6 +43,11 @@
       "name": "core_actor.cpp_getRandomInt_FUN_0040cea0"
     },
     {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
+    },
+    {
       "addr": "004fc0d0",
       "is_variadic": false,
       "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
@@ -50,17 +55,12 @@
     {
       "addr": "004fba50",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fba50"
-    },
-    {
-      "addr": "004fc310",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fc310"
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50"
     },
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     }
   ],
   "globals": [
@@ -83,7 +83,7 @@
       {
         "call_addr": "0041016b",
         "call_type": "direct",
-        "caller": "unkafter_bird.cpp_FUN_00410110",
+        "caller": "core_bird.cpp_CBird_processDamage_FUN_00410110",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,15 +187,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = core_motion_cpp_FUN_004fc310(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 16,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005a28c0(local_d8,\"%s_%d\",param_2,iVar3 + 1);",
+      "text": "this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -228,14 +220,6 @@
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005a28c0(local_d8,\"%s_%d\",param_2,iVar3);",
       "type": "unnamed_param"
     },
     {

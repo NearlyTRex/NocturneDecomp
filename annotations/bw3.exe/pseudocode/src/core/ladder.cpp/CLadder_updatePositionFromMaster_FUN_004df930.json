@@ -1,0 +1,143 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 94,
+    "complexity_score": 92,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 62,
+    "suspect_count": 2,
+    "suspect_types": [
+      "stack_alignment_array",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 156
+  },
+  "cross_references": [
+    {
+      "addr": "004df720",
+      "from_addr": "004df725",
+      "name": "core_ladder.cpp_CLadder_process_FUN_004df720",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004df930",
+    "address_range": [
+      [
+        "004df930",
+        "004dfa66"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004df930",
+    "signature": "void __cdecl core_ladder_cpp_CLadder_updatePositionFromMaster_FUN_004df930(CLadder *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004088f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0"
+    },
+    {
+      "addr": "00583940",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00583940"
+    },
+    {
+      "addr": "00583b10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00583b10"
+    },
+    {
+      "addr": "005833e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005833e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004df725",
+        "call_type": "direct",
+        "caller": "core_ladder.cpp_CLadder_process_FUN_004df720",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.4523809523809526,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 3,
+      "COPY": 84,
+      "INT_ADD": 66,
+      "INT_AND": 22,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 23,
+      "INT_LESS": 3,
+      "INT_MULT": 14,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 11,
+      "INT_SUB": 36,
+      "INT_ZEXT": 14,
+      "LOAD": 25,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 374
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CLadder *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "afStackY_101c",
+      "severity": "moderate",
+      "text": "float afStackY_101c [965];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 37,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ]
+}

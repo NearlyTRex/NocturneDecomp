@@ -10,10 +10,10 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529c76
 ;   core_script.cpp_FUN_00521cf0 at 00521dbe
 ;   crt_stdio.c_fclose_FUN_005b8af0 at 005b8b34
-;   engine_pod.cpp_FUN_00519f00 at 0051a6a3
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 at 0051a6a3
 ;   sound_mp3.cpp_FUN_005048e0 at 00504912
 ;   sound_mp3.cpp_FUN_00509db0 at 00509e0f
-;   support_newmsg.cpp_FUN_0050f9e0 at 0050fa35
+;   support_newmsg.cpp_readMessageFile_FUN_0050f9e0 at 0050fa35
 ;   support_trstream.cpp_FUN_0057dd20 at 0057dd32
 ;
 ; Referenced Globals:

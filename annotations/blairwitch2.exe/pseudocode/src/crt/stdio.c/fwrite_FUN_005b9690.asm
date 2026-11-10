@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[6]:
-;   cockpit_pkbitmap.cpp_FUN_00516e60 at 00516ebd
-;   cockpit_pkbitmap.cpp_FUN_00517200 at 00517237
+;   cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_00516e60 at 00516ebd
+;   cockpit_pkbitmap.cpp_writePBGHeader_FUN_00517200 at 00517237
 ;   core_setdir.cpp_CZThumb_write_FUN_00538670 at 00538687
-;   engine_pcx.c_FUN_00514a30 at 00514b44
+;   engine_pcx.c_saveScreenshotGeneral_FUN_00514a30 at 00514b44
 ;   engine_pod.cpp_FUN_0051b6dc at 0051b851
 ;   support_trstream.cpp_FUN_0057dca0 at 0057dcc4
 ;

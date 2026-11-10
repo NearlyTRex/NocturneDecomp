@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 59,
+    "complexity_score": 65,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 20,
     "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
-      "unnamed_field"
+      "pointer_cast",
+      "pointer_truncation"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -119,28 +120,28 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&this_ptr->field_0x57c,1);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 17,
       "match": "pCVar1[-5].",
       "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)&pCVar1[-5].field_0x13c,1);",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x13c",
-      "severity": "mild",
-      "text": "core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)&pCVar1[-5].field_0x13c,1);",
-      "type": "unnamed_field"
+      "description": "Pointer value `&pCVar1[-5].previous_transform_state.orientation` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 17,
+      "match": "(int)&pCVar1[-5].previous_transform_state.orientation",
+      "severity": "moderate",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 17,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "((CWeapon *)((int)&pCVar1[-5].previous_transform_state.orientation + 8),1);",
+      "type": "pointer_cast"
     }
   ],
   "vtable_info": {

@@ -9,18 +9,17 @@
 int __cdecl support_codec_cpp_CLZWDictionary_addNode_FUN_00443110(CLZWDictionary *this_ptr,int code,int parent_index)
 
 {
-  if (*(int *)(this_ptr + 0xc) < *(int *)this_ptr) {
-    if ((*(uint *)(this_ptr + 0xc) & *(int *)(this_ptr + 0xc) - 1U) == 0) {
-      *(int *)(this_ptr + 8) = *(int *)(this_ptr + 8) + 1;
+  if (this_ptr->entry_count < this_ptr->table_capacity) {
+    if ((this_ptr->entry_count & this_ptr->entry_count - 1U) == 0) {
+      this_ptr->current_num_bits = this_ptr->current_num_bits + 1;
     }
-    *(int *)(*(int *)(this_ptr + 0xc) * 0x10 + *(int *)(this_ptr + 0x10)) = code;
-    *(int *)(*(int *)(this_ptr + 0x10) + 4 + *(int *)(this_ptr + 0xc) * 0x10) = parent_index;
-    *(uint *)(*(int *)(this_ptr + 0xc) * 0x10 + 8 + *(int *)(this_ptr + 0x10)) = 0xffffffff;
-    *(uint *)(*(int *)(this_ptr + 0xc) * 0x10 + *(int *)(this_ptr + 0x10) + 0xc) =
-         *(uint *)(*(int *)(this_ptr + 0x10) + parent_index * 0x10 + 8);
-    *(uint *)(parent_index * 0x10 + *(int *)(this_ptr + 0x10) + 8) =
-         *(uint *)(this_ptr + 0xc);
-    *(int *)(this_ptr + 0xc) = *(int *)(this_ptr + 0xc) + 1;
+    *(int *)(this_ptr->node_table + this_ptr->entry_count * 0x10) = code;
+    *(int *)(this_ptr->node_table + this_ptr->entry_count * 0x10 + 4) = parent_index;
+    *(uint *)(this_ptr->node_table + this_ptr->entry_count * 0x10 + 8) = 0xffffffff;
+    *(uint *)(this_ptr->node_table + this_ptr->entry_count * 0x10 + 0xc) =
+         *(uint *)(this_ptr->node_table + parent_index * 0x10 + 8);
+    *(int *)(this_ptr->node_table + parent_index * 0x10 + 8) = this_ptr->entry_count;
+    this_ptr->entry_count = this_ptr->entry_count + 1;
     return 0;
   }
   support_codec_cpp_CLZWDictionary_initTable_FUN_00443070(this_ptr);

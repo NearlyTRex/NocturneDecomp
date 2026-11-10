@@ -11,11 +11,11 @@
 void __cdecl core_dlight_cpp_CDemonLight_allocateFilter_FUN_00463de0(CDemonLight *this_ptr)
 
 {
-  void *pvVar1;
+  uchar *puVar1;
   
-  pvVar1 = FUN_005c08d0(0x10000);
-  *(void **)&this_ptr->field_0x1c6c = pvVar1;
-  if (pvVar1 != (void *)0x0) {
+  puVar1 = FUN_005c08d0(0x10000);
+  this_ptr->filter_buffer = puVar1;
+  if (puVar1 != (uchar *)0x0) {
     return;
   }
   _DAT_01d1d400 = "..\\core\\dlight.cpp";

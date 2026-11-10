@@ -73,24 +73,30 @@ int __cdecl core_inv_cpp_FUN_004da880(CInventory *this_ptr,CDemonActor *item_act
                          (*(uint *)(this_ptr + 4),g_CHeroClassInfo.name_hash),
      pCVar8 != (CDemonActor *)0x0)) {
     if (*(int *)(iVar5 + 0x318) == 10) {
-      iVar5 = *(int *)&pCVar8[0x185].field_0xc8 + *(int *)(iVar5 + 0x314);
-      *(int *)&pCVar8[0x185].field_0xc8 = iVar5;
+      iVar5 = *(int *)(pCVar8[0x185].create_event + 0x50) + *(int *)(iVar5 + 0x314);
+      *(int *)(pCVar8[0x185].create_event + 0x50) = iVar5;
       if (100 < iVar5) {
-        *(uint *)&pCVar8[0x185].field_0xc8 = 100;
+        pCVar8[0x185].create_event[0x50] = 'd';
+        pCVar8[0x185].create_event[0x51] = '\0';
+        pCVar8[0x185].create_event[0x52] = '\0';
+        pCVar8[0x185].create_event[0x53] = '\0';
       }
       core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                (0x02CF5680,pCVar8,"wp_getmana.wav",(CVector3f *)&pCVar8->field_0x20);
+                (0x02CF5680,pCVar8,"wp_getmana.wav",&(pCVar8->location).position);
       bVar3 = false;
     }
     else {
       if (*(int *)(iVar5 + 0x318) == 0xb) {
-        iVar5 = *(int *)&pCVar8[0x185].field_0xcc + *(int *)(iVar5 + 0x314);
-        *(int *)&pCVar8[0x185].field_0xcc = iVar5;
+        iVar5 = *(int *)(pCVar8[0x185].create_event + 0x54) + *(int *)(iVar5 + 0x314);
+        *(int *)(pCVar8[0x185].create_event + 0x54) = iVar5;
         if (0x32 < iVar5) {
-          *(uint *)&pCVar8[0x185].field_0xcc = 0x32;
+          pCVar8[0x185].create_event[0x54] = '2';
+          pCVar8[0x185].create_event[0x55] = '\0';
+          pCVar8[0x185].create_event[0x56] = '\0';
+          pCVar8[0x185].create_event[0x57] = '\0';
         }
         core_sound_cpp_CSound_playActorSound_FUN_005609d0
-                  (0x02CF5680,pCVar8,"wp_getammo.wav",(CVector3f *)&pCVar8->field_0x20);
+                  (0x02CF5680,pCVar8,"wp_getammo.wav",&(pCVar8->location).position);
       }
       bVar3 = false;
     }
@@ -102,11 +108,11 @@ int __cdecl core_inv_cpp_FUN_004da880(CInventory *this_ptr,CDemonActor *item_act
       if (99 < *(int *)(this_ptr + 0x10)) {
         return 0;
       }
-      iVar5 = (**(code **)(*(int *)&item_actor->field_0x154 + 0x94))(item_actor);
-      if (iVar5 != *(int *)(this_ptr + 4)) {
-        (**(code **)(*(int *)&item_actor->field_0x154 + 0x8c))(item_actor,0);
-        if (*(int *)(this_ptr + 4) != 0) {
-          (**(code **)(*(int *)&item_actor->field_0x154 + 0x88))(item_actor,*(int *)(this_ptr + 4));
+      pCVar8 = (*((item_actor->vtable)._ub)->getCarrier)(item_actor);
+      if (pCVar8 != *(CDemonActor **)(this_ptr + 4)) {
+        (*((item_actor->vtable)._ub)->onDropped)(item_actor,(CVector3f *)0x0);
+        if (*(CDemonActor **)(this_ptr + 4) != (CDemonActor *)0x0) {
+          (*((item_actor->vtable)._ub)->pickup)(item_actor,*(CDemonActor **)(this_ptr + 4));
         }
       }
     }
@@ -148,10 +154,10 @@ int __cdecl core_inv_cpp_FUN_004da880(CInventory *this_ptr,CDemonActor *item_act
     fVar19 = (float10)*(float *)(iVar5 + 0x2d8);
     round();
     local_14 = (int)ROUND(fVar19);
-    FUN_005a28c0(local_23c,"You've received : %d health",local_14);
+    _sprintf(local_23c,"You've received : %d health");
   }
   else {
-    FUN_005a28c0(local_13c,&DAT_005c6010,*(uint *)(local_30 + 0x314));
+    _sprintf(local_13c,&DAT_005c6010);
     pcVar11 = local_13c;
     iVar5 = -1;
     pcVar7 = local_23c;
@@ -204,7 +210,7 @@ LAB_004daa3e:
   }
 LAB_004daa67:
   local_33c[0] = (CInventory)0x0;
-  iVar5 = core_actor_cpp_FUN_0040c790(item_actor,"CHealthItem");
+  iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(item_actor,"CHealthItem");
   if ((iVar5 != 0) && (bVar3)) {
     pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Press ");
     do {
@@ -216,7 +222,8 @@ LAB_004daa67:
       pCVar13[1] = (CInventory)cVar1;
       pCVar13 = pCVar13 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x9c);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x9c);
     iVar5 = -1;
     pCVar13 = local_33c;
     do {
@@ -258,7 +265,8 @@ LAB_004daa67:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0xa0);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0xa0);
     iVar5 = -1;
     pCVar13 = local_33c;
     do {
@@ -301,7 +309,8 @@ LAB_004daa67:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x50);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x50);
     iVar5 = -1;
     pCVar13 = local_33c;
     do {
@@ -345,7 +354,7 @@ LAB_004daa67:
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
   }
-  iVar5 = core_actor_cpp_FUN_0040c790(item_actor,"CKeyActor");
+  iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(item_actor,"CKeyActor");
   if (iVar5 != 0) {
     pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_00508960("With your guns put away, press ")
     ;
@@ -358,7 +367,8 @@ LAB_004daa67:
       pCVar14[1] = (CInventory)cVar1;
       pCVar14 = pCVar14 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x48);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x48);
     iVar5 = -1;
     pCVar14 = local_33c;
     do {
@@ -402,7 +412,7 @@ LAB_004daa67:
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
   }
-  iVar5 = core_actor_cpp_FUN_0040c790(item_actor,"CBoxActor");
+  iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(item_actor,"CBoxActor");
   if (iVar5 != 0) {
     pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Press ");
     do {
@@ -414,7 +424,8 @@ LAB_004daa67:
       pCVar15[1] = (CInventory)cVar1;
       pCVar15 = pCVar15 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x9c);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x9c);
     iVar5 = -1;
     pCVar15 = local_33c;
     do {
@@ -456,7 +467,8 @@ LAB_004daa67:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0xa0);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0xa0);
     iVar5 = -1;
     pCVar15 = local_33c;
     do {
@@ -499,7 +511,8 @@ LAB_004daa67:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x50);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x50);
     iVar5 = -1;
     pCVar15 = local_33c;
     do {
@@ -542,7 +555,7 @@ LAB_004daa67:
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
   }
-  iVar5 = core_actor_cpp_FUN_0040c790(item_actor,"CLightActor");
+  iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(item_actor,"CLightActor");
   if (iVar5 != 0) {
     pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Press ");
     do {
@@ -554,7 +567,8 @@ LAB_004daa67:
       pCVar16[1] = (CInventory)cVar1;
       pCVar16 = pCVar16 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x54);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x54);
     iVar5 = -1;
     pCVar16 = local_33c;
     do {
@@ -597,7 +611,7 @@ LAB_004daa67:
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
   }
-  iVar5 = core_actor_cpp_FUN_0040c790(item_actor,"CWeapon");
+  iVar5 = core_actor_cpp_isOfClass_FUN_0040c790(item_actor,"CWeapon");
   if (iVar5 != 0) {
     local_14 = (CWeapon *)core_actor_cpp_castToClassHash_FUN_0040c840(item_actor,g_CWeaponClassInfo.name_hash);
     pcVar11 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Select your ");
@@ -652,7 +666,8 @@ LAB_004daa67:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x94);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x94);
     iVar5 = -1;
     pCVar17 = local_33c;
     do {
@@ -694,7 +709,8 @@ LAB_004daa67:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    pcVar11 = core_menu_cpp_FUN_004eaa60(*(EInputCodeType *)&g_CGamePtr->field_0x98);
+    pcVar11 = core_menu_cpp_getKeyDisplayName_FUN_004eaa60
+                        (*(EInputCodeType *)&g_CGamePtr->field_0x98);
     iVar5 = -1;
     pCVar17 = local_33c;
     do {
@@ -748,7 +764,8 @@ LAB_004daa67:
     pCVar17[1] = CVar2;
     pCVar17 = pCVar17 + 2;
   } while (CVar2 != (CInventory)0x0);
-  local_14 = engine_font_cpp_FUN_004b2a80(_DAT_01549ab4,(char *)(this_ptr + 0x354));
+  local_14 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80
+                       (_DAT_01549ab4,(char *)(this_ptr + 0x354));
   *(float *)(this_ptr + 0x34c) = (float)local_14 * (float)_DAT_005c627f;
 LAB_004db104:
   if ((local_38 != 0) && (!bVar3)) {
@@ -769,7 +786,7 @@ LAB_004db104:
       pCVar4 = 0x01D81080;
       *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 0x10) + 1;
       core_mission_cpp_FUN_004f6f10(pCVar4,item_actor,0);
-      (**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);
+      (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
       return 1;
     }
     local_1c = 0;
@@ -781,12 +798,13 @@ LAB_004db104:
                  core_actor_cpp_castToClassHash_FUN_0040c840
                            (*(uint *)(pCVar17 + 0x14),g_CWeaponClassInfo.name_hash);
         if (pCVar9 != (CDemonActor *)0x0) {
-          pcVar11 = core_actor_cpp_FUN_00408870(pCVar9);
-          pcVar7 = core_actor_cpp_FUN_00408870(pCVar8);
+          pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar9);
+          pcVar7 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar8);
           iVar5 = _strcmp(pcVar7,pcVar11);
-          if ((iVar5 == 0) && (*(int *)&pCVar9[4].field_0xc == *(int *)&pCVar8[4].field_0xc)) {
-            *(int *)&pCVar9[4].field_0x8 =
-                 *(int *)&pCVar9[4].field_0x8 + *(int *)&pCVar8[4].field_0x8;
+          if ((iVar5 == 0) &&
+             (*(int *)(pCVar9[4].actor_name + 0xc) == *(int *)(pCVar8[4].actor_name + 0xc))) {
+            *(int *)(pCVar9[4].actor_name + 8) =
+                 *(int *)(pCVar9[4].actor_name + 8) + *(int *)(pCVar8[4].actor_name + 8);
             engine_console_cpp_FUN_00441ff0(g_CConsolePtr,"Found same weapon, increasing ammoCount\n");
             core_mission_cpp_FUN_004f6f10(0x01D81080,item_actor,1);
             return 1;
@@ -804,21 +822,20 @@ LAB_004db104:
         iVar5 = core_actor_cpp_castToClassHash_FUN_0040c840
                           (*(uint *)(local_18 + 0x14),g_CAmmoClassInfo.name_hash);
         if (iVar5 != 0) {
-          pcVar11 = core_actor_cpp_FUN_00408870(pCVar8);
+          pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar8);
           iVar6 = _strcmp((char *)(iVar5 + 0x2d4),pcVar11);
           if (iVar6 == 0) {
-            pcVar11 = core_actor_cpp_FUN_00408870(pCVar8);
+            pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar8);
             pCVar9 = (CDemonActor *)core_actor_cpp_createActorByName_FUN_0040c4f0(pcVar11);
             core_mission_cpp_CDemonMission_generateActorName_FUN_004f7530(0x01D81080,pCVar9);
-            (*(code *)**(uint **)&pCVar9->field_0x154)(pCVar9);
-            *(uint *)&pCVar9[4].field_0x8 = *(uint *)(iVar5 + 0x314);
-            *(uint *)&pCVar9[4].field_0xc = *(uint *)(iVar5 + 0x318);
-            (**(code **)(*(int *)&pCVar9->field_0x154 + 0x88))(pCVar9,*(uint *)(this_ptr + 4))
-            ;
-            (**(code **)(*(int *)&pCVar9->field_0x154 + 0x6c))(pCVar9,this_ptr);
+            (*((pCVar9->vtable)._ub)->setup)(pCVar9);
+            *(uint *)(pCVar9[4].actor_name + 8) = *(uint *)(iVar5 + 0x314);
+            *(uint *)(pCVar9[4].actor_name + 0xc) = *(uint *)(iVar5 + 0x318);
+            (*((pCVar9->vtable)._ub)->pickup)(pCVar9,*(CDemonActor **)(this_ptr + 4));
+            (*((pCVar9->vtable)._ub)->onPickup)(pCVar9,(CDemonActor *)this_ptr);
             core_actor_cpp_FUN_004085a0(*(uint *)(local_18 + 0x14));
             *(CDemonActor **)(local_18 + 0x14) = pCVar9;
-            pcVar11 = core_actor_cpp_FUN_00408870(pCVar8);
+            pcVar11 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(pCVar8);
             bVar3 = true;
             engine_console_cpp_FUN_00441ff0
                       (g_CConsolePtr,"Converting existing ammo for %s to weapon\n",pcVar11);
@@ -837,9 +854,9 @@ LAB_004db104:
   pCVar4 = 0x01D81080;
   *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 0x10) + 1;
   core_mission_cpp_FUN_004f69a0(pCVar4,item_actor);
-  (**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);
+  (*((item_actor->vtable)._ub)->onPickup)(item_actor,(CDemonActor *)this_ptr);
   if ((pCVar8 != (CDemonActor *)0x0) && (*(int *)(this_ptr + 0x338) == 0)) {
-    core_inv_cpp_FUN_004dbb40(this_ptr,pCVar8,5,1);
+    core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40(this_ptr,pCVar8,5,1);
   }
   return 1;
 }

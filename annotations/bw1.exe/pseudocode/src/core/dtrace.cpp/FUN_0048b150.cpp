@@ -65,9 +65,9 @@ float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,float *param_2,float 
   float local_18;
   
   bVar6 = 0;
-  local_b4 = (*param_2 - *(float *)&param_1->field_0x10) / *(float *)&param_1->field_0x28;
-  local_b0 = (param_2[1] - *(float *)&param_1->field_0x14) / *(float *)&param_1->field_0x2c;
-  local_b8 = (param_2[2] - *(float *)&param_1->field_0x18) / *(float *)&param_1->field_0x30;
+  local_b4 = (*param_2 - (param_1->bbox_min).x) / (param_1->cell_size).x;
+  local_b0 = (param_2[1] - (param_1->bbox_min).y) / (param_1->cell_size).y;
+  local_b8 = (param_2[2] - (param_1->bbox_min).z) / (param_1->cell_size).z;
   local_7c = floor((double)local_b4);
   fVar7 = (float10)local_7c;
   round();
@@ -78,12 +78,9 @@ float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,float *param_2,float 
   local_3c = (int)ROUND(fVar7);
   local_7c = floor((double)local_b8);
   fVar8 = (float10)local_7c;
-  fVar7 = ((float10)*param_3 - (float10)*(float *)&param_1->field_0x10) /
-          (float10)*(float *)&param_1->field_0x28;
-  fVar9 = ((float10)param_3[1] - (float10)*(float *)&param_1->field_0x14) /
-          (float10)*(float *)&param_1->field_0x2c;
-  fVar10 = ((float10)param_3[2] - (float10)*(float *)&param_1->field_0x18) /
-           (float10)*(float *)&param_1->field_0x30;
+  fVar7 = ((float10)*param_3 - (float10)(param_1->bbox_min).x) / (float10)(param_1->cell_size).x;
+  fVar9 = ((float10)param_3[1] - (float10)(param_1->bbox_min).y) / (float10)(param_1->cell_size).y;
+  fVar10 = ((float10)param_3[2] - (float10)(param_1->bbox_min).z) / (float10)(param_1->cell_size).z;
   round();
   local_34 = (int)ROUND(fVar8);
   local_bc = (float)fVar7;
@@ -108,9 +105,10 @@ float core_dtrace_cpp_FUN_0048b150(CDemonRaytrace *param_1,float *param_2,float 
     if ((local_34 < 0) && (local_60 < 0)) {
       return -1.0;
     }
-    if ((((local_38 < *(int *)&param_1->field_0x40) || (local_5c < *(int *)&param_1->field_0x40)) &&
-        ((local_3c < *(int *)&param_1->field_0x44 || (local_24 < *(int *)&param_1->field_0x44)))) &&
-       ((local_34 < *(int *)&param_1->field_0x48 || (local_60 < *(int *)&param_1->field_0x48)))) {
+    iVar5 = (param_1->grid_coord).x;
+    if ((((local_38 < iVar5) || (local_5c < iVar5)) &&
+        ((iVar5 = (param_1->grid_coord).y, local_3c < iVar5 || (local_24 < iVar5)))) &&
+       ((iVar5 = (param_1->grid_coord).z, local_34 < iVar5 || (local_60 < iVar5)))) {
       local_90 = param_3[1] - param_2[1];
       local_8c = param_3[2] - param_2[2];
       local_94 = *param_3 - *param_2;

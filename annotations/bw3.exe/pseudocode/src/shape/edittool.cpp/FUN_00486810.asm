@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void shape_edittool_cpp_FUN_00486810(int param_1)
+; void shape_edittool_cpp_FUN_00486810(CEdCheck *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -14,13 +14,13 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_clipLineGlobal_FUN_00402ca0
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
 ;   engine_font.cpp_FUN_004b0a20
-;   engine_font.cpp_FUN_004b2b30
 ;   engine_mini3d.cpp_FUN_004f3520
+;   shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0
+;   shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780
+;   shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004867f0
 ;   shape_edittool.cpp_FUN_004850a0
-;   shape_edittool.cpp_FUN_00486780
-;   shape_edittool.cpp_FUN_004867c0
-;   shape_edittool.cpp_FUN_004867f0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV ECX,dword ptr [EBX + 0x1c]      ; 0048681f
     MOV EDI,dword ptr [EBX + 0x10]      ; 00486822
     ADD ESI,ECX                         ; 00486825
-    CALL shape_edittool.cpp_FUN_004867c0 ; 00486827
-        ;   XREF to: 004867c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004867c0()
+    CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0 ; 00486827
+        ;   XREF to: 004867c0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0(CEdCheck * this_ptr)
     MOV EDX,ESI                         ; 0048682c
     SUB EDX,EAX                         ; 0048682e
     MOV EAX,EDX                         ; 00486830
@@ -49,13 +49,13 @@ section .text
     ADD ESP,0x4                         ; 00486839
     PUSH EBX                            ; 0048683c
     MOV ESI,EAX                         ; 0048683d
-    CALL shape_edittool.cpp_FUN_00486780 ; 0048683f
-        ;   XREF to: 00486780 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00486780()
+    CALL shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780 ; 0048683f
+        ;   XREF to: 00486780 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateScaledWidth_FUN_00486780(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 00486844
     PUSH EBX                            ; 00486847
     LEA EBP,[EDI + EAX*0x1]             ; 00486848
-    CALL shape_edittool.cpp_FUN_004867c0 ; 0048684b
-        ;   XREF to: 004867c0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004867c0()
+    CALL shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0 ; 0048684b
+        ;   XREF to: 004867c0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateBaseWidth_FUN_004867c0(CEdCheck * this_ptr)
     MOV EDX,ESI                         ; 00486850
     ADD ESP,0x4                         ; 00486852
     ADD EDX,EAX                         ; 00486855
@@ -65,8 +65,8 @@ section .text
     MOV EDX,dword ptr [0x01c5b0e0]      ; 0048685f | DAT_01c5b0e0
     PUSH EDX                            ; 00486865
     MOV dword ptr [ESP + 0x8],EAX       ; 00486866
-    CALL engine_font.cpp_FUN_004b2b30   ; 0048686a
-        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30 ; 0048686a
+        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0048686f
     PUSH -0x1                           ; 00486872
     MOV ECX,dword ptr [EBX + 0xc]       ; 00486874
@@ -80,8 +80,8 @@ section .text
     SAR EAX,0x1                         ; 00486887
     PUSH EAX                            ; 00486889
     PUSH EBX                            ; 0048688a
-    CALL shape_edittool.cpp_FUN_004867f0 ; 0048688b
-        ;   XREF to: 004867f0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_004867f0()
+    CALL shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004867f0 ; 0048688b
+        ;   XREF to: 004867f0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEdCheck_calculateSpacing_FUN_004867f0(CEdCheck * this_ptr)
     ADD ESP,0x4                         ; 00486890
     ADD EAX,EBP                         ; 00486893
     PUSH EAX                            ; 00486895

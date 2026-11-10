@@ -733,7 +733,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_zombprie_cpp_staticInit_FUN_0058d2c0
+        .func = (RUNTIME_HANDLER_FUNC *)core_zombiepriest_cpp_staticInit_FUN_0058d2c0
     },
     {
         .status = 0x00,
@@ -748,7 +748,7 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x40,
-        .func = (RUNTIME_HANDLER_FUNC *)core_tawiscar_cpp_staticInit_FUN_00593d40
+        .func = (RUNTIME_HANDLER_FUNC *)core_tawiscara_cpp_staticInit_FUN_00593d40
     },
     {
         .status = 0x00,
@@ -838,22 +838,22 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005af560
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005af560
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005ad524
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005ad524
     },
     {
         .status = 0x00,
         .priority = 0x03,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005aeba0
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005aeba0
     },
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_2d_cpp_FUN_005b0234
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005b0234
     },
     {
         .status = 0x00,
@@ -883,12 +883,12 @@ RuntimeHandlerEntry g_InitHandlers[172] = {
     {
         .status = 0x00,
         .priority = 0x20,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005af64c
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005af64c
     },
     {
         .status = 0x00,
         .priority = 0x0A,
-        .func = (RUNTIME_HANDLER_FUNC *)unkafter_asgaya_cpp_FUN_005add3c
+        .func = (RUNTIME_HANDLER_FUNC *)crt_unknown_c_FUN_005add3c
     }
 };
 

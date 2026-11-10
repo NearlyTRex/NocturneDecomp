@@ -1,0 +1,433 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 278,
+    "complexity_score": 215,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 11,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 368
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0045ff80",
+    "address_range": [
+      [
+        "0045ff80",
+        "004602bc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_door.cpp_CDoor_archive_FUN_0045ff80",
+    "signature": "void __cdecl core_door_cpp_CDoor_archive_FUN_0045ff80(CDoor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040c170",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveRules_FUN_0040c170"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040b4b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b4b0"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0a20",
+      "name": "s_modelName_005d0a1f+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0a2a",
+      "name": "s_doorType_005d0a2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a33",
+      "name": "s_doorSide_005d0a33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a3c",
+      "name": "s_doorState_005d0a3c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a46",
+      "name": "s_doorSwing_005d0a46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a50",
+      "name": "s_openEvent_005d0a50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a5a",
+      "name": "s_closeEvent_005d0a5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a65",
+      "name": "s_openSound_005d0a65",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a6f",
+      "name": "s_closeSound_005d0a6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a7a",
+      "name": "s_keyMask_005d0a7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a82",
+      "name": "s_origPos_005d0a82",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a8a",
+      "name": "s_origOrient_005d0a8a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a95",
+      "name": "s_param_005d0a95",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0a9b",
+      "name": "s_maxParam_005d0a9b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0aa4",
+      "name": "s_openSpeed_005d0aa4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0aae",
+      "name": "s_closeSpeed_005d0aae",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0ab9",
+      "name": "s_groundType_005d0ab9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0ac4",
+      "name": "s_eventToTriggerWhenOpen_005d0ac4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0adb",
+      "name": "s_eventToTriggerWhenClosed_005d0adb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0af4",
+      "name": "s_oneShot_005d0af4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0afc",
+      "name": "s_openRules_005d0afc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b06",
+      "name": "s_scriptOpenEvent_005d0b06",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b16",
+      "name": "DAT_005d0b16",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d0b17",
+      "name": "DAT_005d0b17",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d0b18",
+      "name": "DAT_005d0b18",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d0b19",
+      "name": "DAT_005d0b19",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005d0b1b",
+      "name": "s_blockVirtualDirectorFlag_005d0b1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b34",
+      "name": "s_plotAsBoxInShadow_005d0b34",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b46",
+      "name": "s_allowedSides_005d0b46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b53",
+      "name": "s_allowBulletHoles_005d0b53",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b64",
+      "name": "s_lockedSound_005d0b64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b70",
+      "name": "s_shakeMeEvent_005d0b70",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b7d",
+      "name": "s_shakeMeStrength_005d0b7d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0b8d",
+      "name": "s_handleVertexIndex_005d0b8d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0060b214",
+      "name": "g_CDoorClassVersion",
+      "type": "int",
+      "value": "0xd"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.188679245283019,
+    "instruction_count": 212,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 31,
+      "CBRANCH": 15,
+      "COPY": 132,
+      "INT_ADD": 78,
+      "INT_AND": 99,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 100,
+      "INT_LESS": 14,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 49,
+      "INT_SUB": 110,
+      "LOAD": 12,
+      "POPCOUNT": 49,
+      "RETURN": 2,
+      "STORE": 100
+    },
+    "pcode_op_count": 888
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x7cc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0x7cc,\"scriptOpenEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x7cc",
+      "severity": "mild",
+      "text": "if (this_ptr->field_0x7cc == '\\0') {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x5d4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x5d4 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005d0b16",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_005d0b16;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x5d8",
+      "severity": "mild",
+      "text": "pcVar3 = &this_ptr->field_0x5d8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x5d4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x5d4 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x5d4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveRules_FUN_0040c170(&this_ptr->field_0x5d4,\"openRules\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0xb40",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b730(&this_ptr->field_0xb40,\"shakeMeEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0xb3c",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0xb3c,\"shakeMeStrength\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 91,
+      "match": "field_0xba4",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0xba4,\"handleVertexIndex\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 48,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f54e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

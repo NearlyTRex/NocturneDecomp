@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 293,
-    "complexity_score": 395,
+    "complexity_score": 256,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 23,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 70,
-    "suspect_count": 31,
+    "pseudocode_lines": 71,
+    "suspect_count": 17,
     "suspect_types": [
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 363
+    "total_lines": 364
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     {
       "addr": "0052a630",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_0052a630"
+      "name": "core_script.cpp_CScript_computeChecksum_FUN_0052a630"
     },
     {
       "addr": "0052a010",
@@ -65,7 +65,7 @@
     {
       "addr": "0047bdf0",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047bdf0"
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0"
     }
   ],
   "globals": [
@@ -185,7 +185,7 @@
     },
     {
       "addr": "01cb6b44",
-      "name": "g_CGameInstance.field580_0x244",
+      "name": "g_CGameInstance.letterbox_mode",
       "type": "undefined4",
       "value": null
     },
@@ -324,16 +324,8 @@
       "line": 22,
       "match": "DAT_005e508a",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e508a,&g_CGamePtr->field_0x244);",
+      "text": "_fscanf(file_handle,&DAT_005e508a,&g_CGamePtr->letterbox_mode);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e508a,&g_CGamePtr->field_0x244);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -388,160 +380,56 @@
       "line": 34,
       "match": "DAT_005e509a",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e509a,&this_ptr->field_0x44);",
+      "text": "_fscanf(file_handle,&DAT_005e509a,&this_ptr->next_cmd);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e509a,&this_ptr->field_0x44);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "this_ptr->field_0x50 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"\\\"%[^\\\"]\",&this_ptr->field_0x50);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 38,
       "match": "DAT_005e50a5",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50a5,&this_ptr->field_0x50);",
+      "text": "_fscanf(file_handle,&DAT_005e50a5,this_ptr->current_message);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50a5,&this_ptr->field_0x50);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 40,
       "match": "DAT_005e50a8",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50a8,&this_ptr->field_0x48);",
+      "text": "_fscanf(file_handle,&DAT_005e50a8,&this_ptr->cmd_timer);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50a8,&this_ptr->field_0x48);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 42,
       "match": "DAT_005e50ac",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50ac,&this_ptr->field_0x4c);",
+      "text": "_fscanf(file_handle,&DAT_005e50ac,&this_ptr->dialog_wav_time);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50ac,&this_ptr->field_0x4c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "core_script_cpp_readActorReference_FUN_0052a010(file_handle,&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "core_script_cpp_readActorReference_FUN_0052a010(file_handle,&this_ptr->field_0xc);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 49,
       "match": "DAT_005e50b0",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50b0,&this_ptr->field_0x14);",
+      "text": "_fscanf(file_handle,&DAT_005e50b0,&this_ptr->focus_actor_locked);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50b0,&this_ptr->field_0x14);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 54,
       "match": "DAT_005e50b4",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50b4,&this_ptr->field_0x458);",
+      "text": "_fscanf(file_handle,&DAT_005e50b4,&this_ptr->call_stack_count);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x458",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50b4,&this_ptr->field_0x458);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x458",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x458) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x45c",
-      "severity": "mild",
-      "text": "puVar2 = &this_ptr->field_0x45c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 59,
       "match": "DAT_005e50b8",
       "severity": "mild",
-      "text": "_fscanf(file_handle,&DAT_005e50b8,puVar2);",
+      "text": "_fscanf(file_handle,&DAT_005e50b8,piVar2);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x458",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x458);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

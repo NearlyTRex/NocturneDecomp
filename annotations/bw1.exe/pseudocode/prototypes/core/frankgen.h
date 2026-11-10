@@ -21,17 +21,17 @@ CDemonActorType * CFrankenstienMachine::getActorType(CFrankenstienMachine *this_
 // Address: 004c5150
 CFrankenstienMachine * __cdecl CFrankenstienMachine::ctor(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004c51e0
+// Original: core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004c51e0
 // Address: 004c51e0
-void FUN_004c51e0(CFrankenstienMachine *param_1);
+void __cdecl CFrankenstienMachine::setup(CFrankenstienMachine *this_ptr);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_archive_FUN_004c5410
 // Address: 004c5410
 void __cdecl CFrankenstienMachine::archive(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004c5470
+// Original: core_frankgen.cpp_CFrankenstienMachine_process_FUN_004c5470
 // Address: 004c5470
-void FUN_004c5470(CFrankenstienMachine *param_1,float param_2);
+void __cdecl CFrankenstienMachine::process(CFrankenstienMachine *this_ptr,float delta_time);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_accumulateParticles_FUN_004c5990
 // Address: 004c5990
@@ -41,21 +41,21 @@ int __cdecl CFrankenstienMachine::accumulateParticles(CFrankenstienMachine *this
 // Address: 004c59f0
 void __cdecl CFrankenstienMachine::playSfxAtFrame(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename);
 
-// Original: core_frankgen.cpp_FUN_004c5a40
+// Original: core_frankgen.cpp_CFrankenstienMachine_renderOpaque_FUN_004c5a40
 // Address: 004c5a40
-int FUN_004c5a40(CFrankenstienMachine *param_1);
+int __cdecl CFrankenstienMachine::renderOpaque(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004c5bd0
+// Original: core_frankgen.cpp_CFrankenstienMachine_getBoundingBox_FUN_004c5bd0
 // Address: 004c5bd0
-void FUN_004c5bd0(int param_1);
+CBoundingBox3D * __cdecl CFrankenstienMachine::getBoundingBox(CFrankenstienMachine *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_frankgen.cpp_FUN_004c5c60
+// Original: core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60
 // Address: 004c5c60
-CVector3f * __cdecl FUN_004c5c60(CFrankenstienMachine *this_ptr);
+CVector3f * __cdecl CFrankenstienMachine::updateAnchorPosition(CFrankenstienMachine *this_ptr);
 
-// Original: core_frankgen.cpp_FUN_004c5e10
+// Original: core_frankgen.cpp_findLeader_FUN_004c5e10
 // Address: 004c5e10
-CDemonActor * __cdecl FUN_004c5e10(void);
+CDemonActor * __cdecl findLeader(void);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_setPartFrame_FUN_004c5e80
 // Address: 004c5e80
@@ -65,9 +65,9 @@ void __cdecl CFrankenstienMachine::setPartFrame(CFrankenstienMachine *this_ptr,f
 // Address: 004c5f10
 void __cdecl CFrankenstienMachine::setCourseFrame(CFrankenstienMachine *this_ptr,float start_frame,float end_frame);
 
-// Original: core_frankgen.cpp_FUN_004c5fd0
+// Original: core_frankgen.cpp_CFrankenstienMachine_getCollisionType_FUN_004c5fd0
 // Address: 004c5fd0
-undefined4 FUN_004c5fd0(void);
+ECollisionType __cdecl CFrankenstienMachine::getCollisionType(CFrankenstienMachine *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_frankgen.cpp_CFrankenstienMachine_dtor_FUN_004c6000
 // Address: 004c6000

@@ -36,7 +36,8 @@ void core_manpuz_cpp_FUN_00504ee0(int param_1,int param_2)
   *(uint *)(iVar2 + 0x18) = 0;
   *(uint *)(iVar2 + 0x20) = 0;
   *(float *)(iVar2 + 0x1c) = fVar1;
-  core_dirmat_cpp_FUN_0045f3e0((CMatrix3x3f *)(iVar2 + 0x24),(CVector3f *)(iVar2 + 0x18));
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
+            ((CMatrix3x3f *)(iVar2 + 0x24),(CVector3f *)(iVar2 + 0x18));
   uStack_24 = *(uint *)(param_1 + 0x150c);
   uStack_2c = 0;
   uStack_28 = 0;

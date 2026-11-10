@@ -18,9 +18,9 @@ CSimBox * __cdecl core_simbox_cpp_CSimBox_dtor_FUN_00540510(CSimBox *this_ptr,ui
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x4b4,0);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&this_ptr->physics_box,0);
   pCVar2 = (CSimBox *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x4b4),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar1[-3].is_valid,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

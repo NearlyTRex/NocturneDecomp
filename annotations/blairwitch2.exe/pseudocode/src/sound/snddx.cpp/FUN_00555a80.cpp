@@ -14,8 +14,7 @@ uint sound_snddx_cpp_FUN_00555a80(void)
   int extraout_EAX;
   uint uVar1;
   uint uVar2;
-  char *pcVar3;
-  int iVar4;
+  int iVar3;
   int *piStack_1a8;
   byte *puStack_1a4;
   byte *puStack_1a0;
@@ -33,10 +32,8 @@ uint sound_snddx_cpp_FUN_00555a80(void)
       piStack_1a8 = _DAT_0264a5cc;
       uVar2 = (**(code **)(*_DAT_0264a5cc + 0x10))();
       if (uVar2 != 0) {
-        pcVar3 = sound_snddx_cpp_FUN_00554ad0(uVar2);
-        FUN_005b7790
-                  (&piStack_1a8,"DirectSux: Unable to %s.  (%s)",
-                   "Get position of secondary buffer",pcVar3);
+        sound_snddx_cpp_FUN_00554ad0(uVar2);
+        _sprintf((char *)&piStack_1a8,"DirectSux: Unable to %s.  (%s)");
         sound_sndmain_cpp_FUN_005549c0(&piStack_1a8);
         return 0;
       }
@@ -51,15 +48,15 @@ uint sound_snddx_cpp_FUN_00555a80(void)
         if (uVar2 == _DAT_0264a5f0) {
           return 1;
         }
-        iVar4 = sound_snddx_cpp_fillStreamBuffer_FUN_00554c80();
-      } while (iVar4 != 0);
+        iVar3 = sound_snddx_cpp_fillStreamBuffer_FUN_00554c80();
+      } while (iVar3 != 0);
       return 0;
     }
     uVar1 = 0;
   }
   else {
     puStack_1a0 = (byte *)0x555aaa;
-    sound_sndmain_cpp_FUN_00554510();
+    sound_sndmain_cpp_pollAllSfxSlots_FUN_00554510();
     uVar1 = 1;
   }
   return uVar1;

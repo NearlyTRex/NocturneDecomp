@@ -14,44 +14,46 @@ void core_union_cpp_FUN_005a4e90(CCharacter *param_1)
   byte *puVar1;
   uint uVar2;
   uint uVar3;
-  int iVar4;
+  CDemonActor *pCVar4;
+  int iVar5;
   
-  iVar4 = (**(code **)(*(int *)&param_1->field_0x2b0 + 0x17c))(param_1);
-  if (iVar4 != 0) {
-    puVar1 = &param_1[1].field_0x98;
-    if (*(int *)&param_1[1].field_0xdf4 == 0) {
-      *(uint *)&param_1[1].field_0x934 = _DAT_005ff8f4;
-      *(uint *)&param_1[1].field_0x938 = 0;
+  pCVar4 = (*(param_1->base).vtable._ub[1].getCarrier)(&param_1->base);
+  if (pCVar4 != (CDemonActor *)0x0) {
+    puVar1 = &param_1[1].base.field_0x98;
+    if (*(int *)&param_1[1].model.field_0xb40 == 0) {
+      *(uint *)&param_1[1].model.field_0x680 = _DAT_005ff8f4;
+      *(uint *)&param_1[1].model.field_0x684 = 0;
       unkaddr_0059d350_cpp_FUN_0059d7f0(puVar1,"ChaseComplete","MeleeAttack");
       unkaddr_0059d350_cpp_FUN_0059d8e0(puVar1,"Chasing");
       return;
     }
-    iVar4 = core_motion_cpp_FUN_005035c0(&param_1->field_0x2b4);
+    iVar5 = core_motion_cpp_FUN_005035c0(&param_1->model);
     uVar3 = _DAT_005ff8f4;
-    uVar2 = *(uint *)(iVar4 + 0x24);
+    uVar2 = *(uint *)(iVar5 + 0x24);
     if (uVar2 < 2) {
 LAB_005a4fbb:
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)&param_1->field_0x2b4,2,1);
+                ((CMotionController *)&param_1->model,2,1);
       return;
     }
     if (uVar2 < 3) {
       core_charactr_cpp_CCharacter_turnTowardPoint_FUN_00423850
-                (param_1,(CVector3f *)(*(int *)&param_1[1].field_0x18 + 0x20));
-      if (_DAT_005f0556 < *(float *)&param_1->field_0x2bc) {
+                (param_1,(CVector3f *)(*(int *)(param_1[1].base.actor_name + 0x18) + 0x20));
+      if (_DAT_005f0556 < *(float *)&(param_1->model).field_0x8) {
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                  ((CMotionController *)&param_1->field_0x2b4,3,1);
+                  ((CMotionController *)&param_1->model,3,1);
         core_union_cpp_FUN_005a5460(param_1);
-        *(uint *)&param_1[1].field_0xdf0 = 0;
-        *(int *)&param_1[1].field_0xdf4 = *(int *)&param_1[1].field_0xdf4 + -1;
+        iVar5 = *(int *)&param_1[1].model.field_0xb40;
+        *(uint *)&param_1[1].model.field_0xb3c = 0;
+        *(int *)&param_1[1].model.field_0xb40 = iVar5 + -1;
         return;
       }
     }
     else {
       if (uVar2 != 3) goto LAB_005a4fbb;
-      if (_DAT_005f0552 < *(float *)&param_1->field_0x2bc) {
-        *(uint *)&param_1[1].field_0x938 = 0;
-        *(uint *)&param_1[1].field_0x934 = uVar3;
+      if (_DAT_005f0552 < *(float *)&(param_1->model).field_0x8) {
+        *(uint *)&param_1[1].model.field_0x684 = 0;
+        *(uint *)&param_1[1].model.field_0x680 = uVar3;
         unkaddr_0059d350_cpp_FUN_0059d7f0(puVar1,"ChaseComplete","MeleeAttack");
         unkaddr_0059d350_cpp_FUN_0059d8e0(puVar1,"Chasing");
         return;

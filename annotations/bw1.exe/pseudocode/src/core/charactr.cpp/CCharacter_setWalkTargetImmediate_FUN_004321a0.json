@@ -2,18 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 79,
+    "complexity_score": 11,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 9,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
-    ],
-    "total_lines": 22
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 24
   },
   "cross_references": [],
   "function": {
@@ -82,80 +79,31 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x273c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x273c = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x2708",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2708 = 0xbf800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x2704",
-      "severity": "mild",
-      "text": "*(CDemonActor **)&this_ptr->field_0x2704 = target;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x270c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x270c = 0x7149f2ca;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 9,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x138))(this_ptr,0xbf800000);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x138))(this_ptr,0xbf800000);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMoloch",
         "offset": 308,
         "vtable_addr": "00603f04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CTheHand",
         "offset": 308,
         "vtable_addr": "00606e04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CGargoyle",
         "offset": 308,
         "vtable_addr": "00601014"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHotDemon",
         "offset": 308,
         "vtable_addr": "00602314"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CPassenger",
         "offset": 308,
         "vtable_addr": "00604614"
       }

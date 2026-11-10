@@ -9,15 +9,15 @@
 ; float            Stack[0xc]:4   target_frame_number
 ;
 ; XREF[9]:
-;   core_boneguy.cpp_FUN_0041bb40 at 0041bbab
-;   core_constrct.cpp_FUN_00445cb0 at 004461d2
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bbab
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 004461d2
+;   core_djien.cpp_CDjien_process_FUN_00460230 at 004603e9
 ;   core_event.cpp_FUN_004a1d00 at 004a6339
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_0051bf30 at 0051c030
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00524620 at 0052469a
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_00524ae0 at 00524b01
 ;   core_motion.cpp_CMotionController_startTransition_FUN_00524880 at 00524911
-;   core_passngr.cpp_FUN_00532930 at 00532adb
-;   unkafter_djien.cpp_FUN_00460230 at 004603e9
+;   core_passngr.cpp_CPassenger_setup_FUN_00532930 at 00532adb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eaf57

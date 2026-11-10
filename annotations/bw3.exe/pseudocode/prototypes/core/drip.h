@@ -29,21 +29,21 @@ void __cdecl CDrip::setup(CDrip *this_ptr);
 // Address: 0046ebc0
 void __cdecl CDrip::archive(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046ecf0
+// Original: core_drip.cpp_CDrip_process_FUN_0046ecf0
 // Address: 0046ecf0
-void FUN_0046ecf0(int param_1,float param_2);
+void __cdecl CDrip::process(CDrip *this_ptr,float delta_time);
 
-// Original: core_drip.cpp_FUN_0046f150
+// Original: core_drip.cpp_CDrip_renderOpaque_FUN_0046f150
 // Address: 0046f150
-int FUN_0046f150(CDemonActor *param_1);
+int __cdecl CDrip::renderOpaque(CDrip *this_ptr);
 
-// Original: core_drip.cpp_FUN_0046f1f0
+// Original: core_drip.cpp_CDrip_getBoundingBox_FUN_0046f1f0
 // Address: 0046f1f0
-void FUN_0046f1f0(int param_1);
+CBoundingBox3D * __cdecl CDrip::getBoundingBox(CDrip *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_drip.cpp_FUN_0046f270
+// Original: core_drip.cpp_CDrip_getCollisionType_FUN_0046f270
 // Address: 0046f270
-undefined4 FUN_0046f270(void);
+ECollisionType __cdecl CDrip::getCollisionType(CDrip *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_drip.cpp_CDrip_dtor_FUN_0046f280
 // Address: 0046f280

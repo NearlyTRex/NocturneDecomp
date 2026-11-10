@@ -93,15 +93,15 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
     local_20 = local_20 + 1;
   }
   _fclose(p_Var5);
-  sound_sndmain_cpp_FUN_00558050();
+  sound_sndmain_cpp_enableSoundSystem_FUN_00558050();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   pCVar3 = _DAT_01549aa8;
   local_10 = _DAT_01549aa8;
   *(uint *)(_DAT_01549aa8 + 0x4210) = 0;
-  iVar11 = engine_font_cpp_FUN_004b30f0(pCVar3,0x58);
+  iVar11 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(pCVar3,0x58);
   local_24 = -1;
   local_34 = iVar11;
-  core_game_cpp_FUN_004b4430(this_ptr);
+  core_game_cpp_CGame_saveClockTime_FUN_004b4430(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00406bf0(0xffff);
   local_1c = 0x1df - iVar11;
   do {
@@ -157,8 +157,10 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
                 iVar4 = local_c;
                 pCVar3 = local_10;
                 iVar11 = local_2c;
-                engine_font_cpp_FUN_004b0cb0(local_10,100,local_c,local_2c,0,local_54c);
-                engine_font_cpp_FUN_004b0cb0(pCVar3,300,iVar4,iVar11,0,pcVar12 + iVar7);
+                engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
+                          (local_10,100,local_c,local_2c,0,local_54c);
+                engine_font_cpp_CBitFont_drawTextWrapper_FUN_004b0cb0
+                          (pCVar3,300,iVar4,iVar11,0,pcVar12 + iVar7);
               }
             }
             else {
@@ -173,7 +175,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
       engine_2d_c_fillRectColor_FUN_004031c0(0,0,0x27f,0x1e,0);
       engine_2d_c_fillRectColor_FUN_004031c0(0,0x1b7,0x27f,0x1df,0);
     }
-    wincore_wddvmem_cpp_FUN_0057a8a0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar11 = (**(code **)*0x01D70A78)(0x01D70A78,1);
     if (iVar11 != 0) {
       if (_DAT_01dd4890 != 0) {
@@ -193,7 +195,7 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004c02a0(CGame *this_ptr)
       return;
     }
     core_game_cpp_FUN_004b4440(this_ptr);
-    local_38 = local_38 - *(float *)&this_ptr->field_0x314 * _DAT_005c3bdc;
+    local_38 = local_38 - this_ptr->delta_time_float * _DAT_005c3bdc;
     if ((local_18 == 0) && (local_38 < 0.0)) {
       local_38 = 480.0;
       local_24 = -1;

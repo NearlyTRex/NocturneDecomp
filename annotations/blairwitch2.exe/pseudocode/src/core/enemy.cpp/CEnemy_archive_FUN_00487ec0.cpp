@@ -12,37 +12,36 @@ void __cdecl core_enemy_cpp_CEnemy_archive_FUN_00487ec0(CEnemy *this_ptr)
   if (g_CEnemyClassVersion < 4) {
     core_actor_cpp_CDemonActor_archive_FUN_0040c330((CDemonActor *)this_ptr);
     if (1 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x10a60,"speed");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->speed,"speed");
     }
     if (2 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x25a8,"hitPoints");
-      core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x10a64,"poolMe");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(&(this_ptr->base).hit_points,"hitPoints");
+      core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->pool_me,"poolMe");
       return;
     }
   }
   else {
-    core_charactr_cpp_CCharacter_archive_FUN_00422c30((CCharacter *)this_ptr);
-    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x10a60,"speed");
-    core_actor_cpp_archiveInteger_FUN_0040b960((int *)&this_ptr->field_0x10a64,"poolMe");
+    core_charactr_cpp_CCharacter_archive_FUN_00422c30(&this_ptr->base);
+    core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->speed,"speed");
+    core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->pool_me,"poolMe");
     if (4 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveInteger_FUN_0040b960
-                ((int *)&this_ptr->field_0x10a68,"randomizeMe");
+      core_actor_cpp_archiveInteger_FUN_0040b960(&this_ptr->randomize_me,"randomizeMe");
     }
     if (5 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x10af0,"scriptVictim");
+      core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->script_victim,"scriptVictim");
     }
     if (6 < g_CEnemyClassVersion) {
       core_actor_cpp_archiveString_FUN_0040b730
-                (&this_ptr->field_0x10a84,"patrolNamePattern");
+                (this_ptr->patrol_name_pattern,"patrolNamePattern");
     }
     if (7 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x10a70,"guardDistance");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->guard_distance,"guardDistance");
     }
     if (8 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x10aec,"victimHeight");
+      core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->victim_height,"victimHeight");
     }
     if (9 < g_CEnemyClassVersion) {
-      core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x10a78,"victim");
+      core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->victim,"victim");
       return;
     }
   }

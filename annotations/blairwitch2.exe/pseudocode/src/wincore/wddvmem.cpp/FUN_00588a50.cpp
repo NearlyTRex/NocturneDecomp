@@ -136,11 +136,11 @@ int __cdecl wincore_wddvmem_cpp_FUN_00588a50(int width,int height,int bits_per_p
     }
     engine_2d_c_setupViewportAndClipping_FUN_00401810(0,0,iStack_28 + -1,iStack_24 + -1);
     iVar3 = 0;
-    wincore_wddvmem_cpp_FUN_00589430();
+    wincore_wddvmem_cpp_setupColorPalette_FUN_00589430();
     do {
       engine_special_cpp_clearScreen_FUN_0055b1f0();
       iVar3 = iVar3 + 1;
-      wincore_wddvmem_cpp_FUN_00589560();
+      wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     } while (iVar3 < 3);
     return 1;
   }

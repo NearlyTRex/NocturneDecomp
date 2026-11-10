@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 77,
-    "complexity_score": 146,
+    "complexity_score": 61,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 36,
-    "suspect_count": 10,
+    "suspect_count": 2,
     "suspect_types": [
-      "raw_address_constant",
-      "unnamed_field"
+      "raw_address_constant"
     ],
     "total_lines": 113
   },
@@ -118,70 +117,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x154 + -1 <= iVar3) break;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "(iVar1,iVar2,*(uint *)&this_ptr->field_0x150);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "*(byte *)(*(int *)&this_ptr->field_0x150 + 0xb3fd07 + iVar2) = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x150) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte *)((*(int *)&this_ptr->field_0x154 + -1) * 0x140 + 0xb3fd08 + iVar1) = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x150);",
-      "type": "unnamed_field"
-    },
     {
       "description": "Raw hex address 0xb3fd08 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
       "line": 9,

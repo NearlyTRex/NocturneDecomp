@@ -15,17 +15,17 @@
 ;
 ; XREF[6]:
 ;   core_event.cpp_CEventList_getSfxHandle_FUN_004aa290 at 004aa296
+;   core_event.cpp_CEventList_process_FUN_004a1a40 at 004a1b46
 ;   core_event.cpp_CEventList_render_FUN_004a6d80 at 004a6ff1
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa5cc
 ;   core_event.cpp_CEventList_setSfxHandle_FUN_004aa2d0 at 004aa2dd
-;   core_event.cpp_FUN_004a1a40 at 004a1b46
 ;   core_event.cpp_FUN_004a1d00 at 004a46eb
 ;
 ; Called Functions:
 ;   crt_string.c_memmove_FUN_005c25d0
 ;   sound_sndmain.cpp_CSfxSample_init_FUN_00572340
-;   sound_sndmain.cpp_FUN_00573620
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660
+;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620
 ;
 ; *****************************************************************************
 
@@ -105,8 +105,8 @@ section .text
     PUSH EAX                            ; 004aa4da
     MOV EDX,dword ptr [EBX]             ; 004aa4db
     PUSH EDX                            ; 004aa4dd
-    CALL sound_sndmain.cpp_FUN_00573620 ; 004aa4de
-        ;   XREF to: 00573620 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573620(uint sfx_handle, CSfxSample * output_buffer)
+    CALL sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620 ; 004aa4de
+        ;   XREF to: 00573620 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620(uint sfx_handle, CSfxSample * output_buffer)
     ADD ESP,0x8                         ; 004aa4e3
     TEST EAX,EAX                        ; 004aa4e6
     JZ 0x004aa480                       ; 004aa4e8

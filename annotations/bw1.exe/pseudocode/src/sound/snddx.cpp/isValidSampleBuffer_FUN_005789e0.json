@@ -1,0 +1,117 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 63,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 8,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_param"
+    ],
+    "total_lines": 31
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005789e0",
+    "address_range": [
+      [
+        "005789e0",
+        "00578a13"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "sound_snddx.cpp_isValidSampleBuffer_FUN_005789e0",
+    "signature": "undefined4 sound_snddx_cpp_isValidSampleBuffer_FUN_005789e0(int param_1)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.4375,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 11,
+      "INT_ADD": 6,
+      "INT_AND": 26,
+      "INT_EQUAL": 17,
+      "INT_LEFT": 2,
+      "INT_LESS": 4,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_OR": 5,
+      "INT_SBORROW": 4,
+      "INT_SLESS": 9,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 5,
+      "POPCOUNT": 7,
+      "RETURN": 2
+    },
+    "pcode_op_count": 119
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint sound_snddx_cpp_isValidSampleBuffer_FUN_005789e0(int param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((0 < param_1) && (param_1 < 0x41)) && (*(int *)(param_1 * 0x18 + 0x2c81dc4) != 0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((0 < param_1) && (param_1 < 0x41)) && (*(int *)(param_1 * 0x18 + 0x2c81dc4) != 0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((((0 < param_1) && (param_1 < 0x41)) && (*(int *)(param_1 * 0x18 + 0x2c81dc4) != 0)) &&",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 6,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(0 < *(int *)(param_1 * 0x18 + 0x2c81dcc))) {",
+      "type": "unnamed_param"
+    }
+  ]
+}

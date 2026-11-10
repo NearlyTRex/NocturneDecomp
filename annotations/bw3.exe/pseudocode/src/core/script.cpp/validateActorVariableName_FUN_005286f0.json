@@ -45,7 +45,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     }
   ],
   "globals": [
@@ -175,7 +175,7 @@
       "line": 22,
       "match": "DAT_006074b8",
       "severity": "mild",
-      "text": "while ((pcVar2 = pcVar2 + 1, ((&DAT_006074b8)[(byte)(*pcVar2 + 1)] & 0xe0) != 0 ||",
+      "text": "((&DAT_006074b8)[(byte)(*variable_name + 1)] & 0xe0) != 0 || (*variable_name == '_')))",
       "type": "undefined_data"
     },
     {
@@ -183,7 +183,7 @@
       "line": 29,
       "match": "DAT_01ed6810",
       "severity": "mild",
-      "text": "FUN_005a28c0(&DAT_01ed6810,\"Actor variable name \\\"%s\\\" is not valid\",variable_name);",
+      "text": "_sprintf(&DAT_01ed6810,\"Actor variable name \\\"%s\\\" is not valid\");",
       "type": "undefined_data"
     },
     {
@@ -191,7 +191,7 @@
       "line": 32,
       "match": "DAT_01ed6810",
       "severity": "mild",
-      "text": "FUN_005a28c0(&DAT_01ed6810,\"Actor variable name \\\"%s\\\" is too long\",variable_name);",
+      "text": "_sprintf(&DAT_01ed6810,\"Actor variable name \\\"%s\\\" is too long\");",
       "type": "undefined_data"
     },
     {
@@ -199,7 +199,7 @@
       "line": 35,
       "match": "DAT_01ed6810",
       "severity": "mild",
-      "text": "FUN_005a28c0(&DAT_01ed6810,\"Actor variable name must begin with '@'\");",
+      "text": "_sprintf(&DAT_01ed6810,\"Actor variable name must begin with '@'\");",
       "type": "undefined_data"
     },
     {

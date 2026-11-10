@@ -4,13 +4,35 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EFlameType.h"
 
 // Structure: CFlame
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x400 (1024 bytes)
 #pragma pack(push, 1)
 typedef struct CFlame {
-    char field_0[1024]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[348]; // 0x158
+    CVector3f flame_size; // 0x2b4
+    float animation_time; // 0x2c0
+    CDemonGlobe globe; // 0x2c4
+    EFlameType which_flame; // 0x304
+    float globe_scalar; // 0x308
+    uint sfx_handle; // 0x30c
+    int flame_state; // 0x310
+    char on_event[100]; // 0x314
+    char off_event[100]; // 0x378
+    float intensity; // 0x3dc
+    float randomness; // 0x3e0
+    int burn_hero; // 0x3e4
+    int burn_enemy; // 0x3e8
+    int is_visible; // 0x3ec
+    int texture_flip; // 0x3f0
+    int do_visibility_check; // 0x3f4
+    int enemy_burn_index; // 0x3f8
+    int render_corona; // 0x3fc
 } CFlame;
 #pragma pack(pop)
 

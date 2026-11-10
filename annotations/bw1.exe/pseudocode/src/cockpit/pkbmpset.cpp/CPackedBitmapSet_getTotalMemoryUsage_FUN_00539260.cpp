@@ -15,16 +15,16 @@ int __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_getTotalMemoryUsage_FUN_005392
   int iVar4;
   
   iVar2 = 0;
-  iVar4 = *(int *)this_ptr * 0x24;
-  if (0 < *(int *)this_ptr) {
+  iVar4 = this_ptr->bitmap_count * 0x24;
+  if (0 < this_ptr->bitmap_count) {
     iVar3 = 0;
     do {
       iVar2 = iVar2 + 1;
       iVar1 = cockpit_pkbitmap_cpp_CPackedBitmap_getTotalMemoryUsage_FUN_005375a0
-                        ((CPackedBitmap *)(*(int *)(this_ptr + 4) + iVar3));
+                        ((CPackedBitmap *)(this_ptr->bitmap_array->filename + iVar3));
       iVar3 = iVar3 + 0x24;
       iVar4 = iVar4 + iVar1;
-    } while (iVar2 < *(int *)this_ptr);
+    } while (iVar2 < this_ptr->bitmap_count);
   }
   return iVar4;
 }

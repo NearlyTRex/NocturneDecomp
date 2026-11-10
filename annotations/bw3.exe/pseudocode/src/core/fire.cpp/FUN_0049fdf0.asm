@@ -79,15 +79,15 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 g_CCharacterClassInfo.name_hash
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 g_CHeroClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   ... and 5 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
@@ -120,7 +120,7 @@ section .text
     JNC 0x004a0061                      ; 0049fe1e
         ;   XREF to: 004a0061 (CONDITIONAL_JUMP)  ; LAB_004a0061
     MOV EAX,[0x005fe9dc]                ; 0049fe24 | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x314]     ; 0049fe29 | g_CGameInstance.field788_0x314
+    MOV EAX,dword ptr [EAX + 0x314]     ; 0049fe29 | g_CGameInstance.delta_time_float
     MOV dword ptr [EBP + 0x4a],EAX      ; 0049fe2f
     MOV dword ptr [EBP + 0x62],EAX      ; 0049fe32
     MOV EAX,dword ptr [EBP + 0x92]      ; 0049fe35
@@ -294,14 +294,14 @@ section .text
     MOV EAX,[0x00603b28]                ; 004a0006 | g_CDemonSetPtr
         ;   Label: LAB_004a0006
     MOV EDX,dword ptr [EBP + 0x56]      ; 004a000b
-    CMP EDX,dword ptr [EAX + 0x14d164]  ; 004a000e | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDX,dword ptr [EAX + 0x14d164]  ; 004a000e | g_CDemonSetInstance.actor_count
     JGE 0x004a0451                      ; 004a0014
         ;   XREF to: 004a0451 (CONDITIONAL_JUMP)  ; LAB_004a0451
     MOV EDI,dword ptr [EBP + 0x5e]      ; 004a001a
     MOV ESI,dword ptr [0x007e2cec]      ; 004a001d | g_CCharacterClassInfo.name_hash
     ADD EAX,EDI                         ; 004a0023
     PUSH ESI                            ; 004a0025
-    MOV EDX,dword ptr [EAX + 0x14d168]  ; 004a0026 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EDX,dword ptr [EAX + 0x14d168]  ; 004a0026 | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 004a002c
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004a002d
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
@@ -537,20 +537,20 @@ section .text
     PUSH 0x40f00000                     ; 004a02c4
         ;   Label: LAB_004a02c4
     PUSH 0xc0f00000                     ; 004a02c9
-    CALL core_actor.cpp_FUN_0040ce40    ; 004a02ce
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004a02ce
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     ADD ESP,0x8                         ; 004a02d3
     PUSH 0x41700000                     ; 004a02d6
     PUSH 0x41200000                     ; 004a02db
     MOV dword ptr [EBP + 0x4e],EAX      ; 004a02e0
-    CALL core_actor.cpp_FUN_0040ce40    ; 004a02e3
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004a02e3
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     ADD ESP,0x8                         ; 004a02e8
     PUSH 0x40f00000                     ; 004a02eb
     PUSH 0xc0f00000                     ; 004a02f0
     MOV dword ptr [EBP + 0x52],EAX      ; 004a02f5
-    CALL core_actor.cpp_FUN_0040ce40    ; 004a02f8
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004a02f8
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [EBP + 0x7a],EAX      ; 004a02fd
     MOV EAX,dword ptr [EBP + 0x52]      ; 004a0300
     FLD float ptr [EBP + 0x7a]          ; 004a0303

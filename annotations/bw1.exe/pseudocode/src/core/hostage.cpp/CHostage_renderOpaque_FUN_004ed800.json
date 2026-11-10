@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 32,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 53
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ed800",
+    "address_range": [
+      [
+        "004ed800",
+        "004ed84f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hostage.cpp_CHostage_renderOpaque_FUN_004ed800",
+    "signature": "int __cdecl core_hostage_cpp_CHostage_renderOpaque_FUN_004ed800(CHostage *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    },
+    {
+      "addr": "00531b10",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_renderOpaque_FUN_00531b10"
+    },
+    {
+      "addr": "00483e60",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00612560",
+      "name": "DAT_00612560",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bc120c",
+      "name": "DAT_01bc120c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.777777777777778,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 3,
+      "CBRANCH": 4,
+      "COPY": 19,
+      "INT_ADD": 12,
+      "INT_AND": 17,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 8,
+      "INT_SUB": 10,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 129
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHostage *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_00612560",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CHostage",
+        "offset": 16,
+        "vtable_addr": "00602174"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

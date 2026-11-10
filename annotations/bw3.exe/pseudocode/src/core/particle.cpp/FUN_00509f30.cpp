@@ -19,19 +19,17 @@ void core_particle_cpp_FUN_00509f30(float *param_1)
   float afStackY_110c [1010];
   CDemonRaytrace *this_ptr;
   CVector3i *voxel_coords;
-  uint local_124;
-  float afStack_120 [4];
-  float fStack_110;
-  float local_10c;
-  float local_108;
+  CVector3i local_124;
+  float fStack_118;
+  float afStack_114 [4];
   float local_104;
   float local_100;
   float local_fc;
   float local_f8;
   float local_f4;
-  float local_f0 [5];
-  float fStack_dc;
-  float fStack_d8;
+  float local_f0 [2];
+  int local_e8;
+  float afStack_e4 [4];
   float fStack_d4;
   float fStack_d0;
   float fStack_cc;
@@ -83,43 +81,43 @@ void core_particle_cpp_FUN_00509f30(float *param_1)
       param_1[0xd] = param_1[2];
     }
     param_1[0xe] = param_1[10];
-    local_28 = *(float *)&g_CGamePtr->field_0x314;
+    local_28 = g_CGamePtr->delta_time_float;
     local_100 = param_1[6] * local_28;
     local_fc = param_1[7] * local_28;
     local_f8 = param_1[8] * local_28;
-    local_10c = param_1[3] + local_100;
-    param_1[3] = local_10c;
-    local_10c = local_10c * local_28;
+    afStack_114[2] = param_1[3] + local_100;
+    param_1[3] = afStack_114[2];
+    afStack_114[2] = afStack_114[2] * local_28;
     fVar3 = param_1[5];
     fVar2 = param_1[4];
     param_1[4] = fVar2 + local_fc;
-    local_108 = (fVar2 + local_fc) * local_28;
+    afStack_114[3] = (fVar2 + local_fc) * local_28;
     param_1[5] = fVar3 + local_f8;
     local_104 = (fVar3 + local_f8) * local_28;
-    *param_1 = *param_1 + local_10c;
-    param_1[1] = param_1[1] + local_108;
+    *param_1 = *param_1 + afStack_114[2];
+    param_1[1] = param_1[1] + afStack_114[3];
     param_1[2] = param_1[2] + local_104;
-    local_9c[2] = local_10c;
-    local_9c[3] = local_108;
+    local_9c[2] = afStack_114[2];
+    local_9c[3] = afStack_114[3];
     local_8c = local_104;
     local_34 = local_100;
     local_30 = local_fc;
     local_2c = local_f8;
     local_1c = local_28;
     core_dtrace_cpp_FUN_00477ac0(&g_CDemonRaytraceInstance,param_1);
-    voxel_coords = (CVector3i *)&local_124;
+    voxel_coords = &local_124;
     this_ptr = &g_CDemonRaytraceInstance;
-    local_124 = local_f0[2];
-    afStack_120[(uint)bVar5 * -2] = local_f0[(uint)bVar5 * -2 + 3];
-    afStack_120[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-         local_f0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+    local_124.x = local_e8;
+    *(float *)((int)&local_124 + (uint)bVar5 * -8 + 4) = afStack_e4[(uint)bVar5 * -2];
+    *(float *)((int)&local_124 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+         afStack_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
     fVar3 = (float)core_dtrace_cpp_CDemonRaytrace_testVoxelAtCoords_FUN_00477bc0
                              (this_ptr,voxel_coords);
     param_1[10] = fVar3;
     if ((fVar3 != 0.0) || (param_1[0xe] != 0.0)) {
       local_20 = param_1 + 0xb;
       fVar3 = (float)core_dtrace_cpp_FUN_00473cd0
-                               (&g_CDemonRaytraceInstance,local_20,param_1,local_f0 + 0x11,0);
+                               (&g_CDemonRaytraceInstance,local_20,param_1,afStack_e4 + 0xe,0);
       pfVar1 = local_20;
       local_18 = fVar3;
       if ((0.0 <= fVar3) && (fVar3 < 1.0)) {
@@ -127,15 +125,15 @@ void core_particle_cpp_FUN_00509f30(float *param_1)
         local_b4 = param_1[1] - local_20[1];
         local_b0 = param_1[2] - local_20[2];
         local_4c = *param_1 - *local_20;
-        local_84[(uint)bVar5 * -2 + 0xf] = local_f0[(uint)bVar5 * -2 + 0xf];
+        local_84[(uint)bVar5 * -2 + 0xf] = afStack_e4[(uint)bVar5 * -2 + 0xc];
         local_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
-             local_f0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10];
+             afStack_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
         local_a0 = local_4c * fVar3;
         local_9c[0] = local_48 * fVar3;
         local_9c[1] = local_44 * fVar3;
         local_c4 = local_4c * fVar3;
-        local_f0[(uint)bVar5 * -2 + 0xc] = local_9c[(uint)bVar5 * -2];
-        local_f0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
+        afStack_e4[(uint)bVar5 * -2 + 9] = local_9c[(uint)bVar5 * -2];
+        afStack_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
              local_9c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
         local_84[2] = local_c4 * _DAT_005cb65d;
         local_84[3] = local_c0 * _DAT_005cb65d;
@@ -156,7 +154,7 @@ void core_particle_cpp_FUN_00509f30(float *param_1)
           param_1[1] = local_84[0];
           param_1[2] = local_84[1];
         }
-        iVar4 = (**(code **)((int)param_1[0xf] + 0xc))(param_1,local_f0 + 0x11);
+        iVar4 = (**(code **)((int)param_1[0xf] + 0xc))(param_1,afStack_e4 + 0xe);
         if (iVar4 == 0) {
           pfVar1 = param_1 + 3;
           fStack_24 = (fStack_a4 * param_1[5] + local_ac * *pfVar1 + fStack_a8 * param_1[4]) *
@@ -164,14 +162,14 @@ void core_particle_cpp_FUN_00509f30(float *param_1)
           fStack_64 = local_ac * fStack_24;
           fStack_60 = fStack_a8 * fStack_24;
           fStack_5c = fStack_a4 * fStack_24;
-          fStack_dc = local_ac * fStack_24;
-          local_f0[(uint)bVar5 * -2 + 6] = local_84[(uint)bVar5 * -2 + 9];
-          local_f0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
+          afStack_e4[2] = local_ac * fStack_24;
+          afStack_e4[(uint)bVar5 * -2 + 3] = local_84[(uint)bVar5 * -2 + 9];
+          afStack_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                local_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
-          fStack_40 = fStack_dc - *pfVar1;
-          fStack_3c = fStack_d8 - param_1[4];
+          fStack_40 = afStack_e4[2] - *pfVar1;
+          fStack_3c = afStack_e4[3] - param_1[4];
           fStack_38 = fStack_d4 - param_1[5];
-          fStack_70 = fStack_dc - *pfVar1;
+          fStack_70 = afStack_e4[2] - *pfVar1;
           local_84[(uint)bVar5 * -2 + 6] = local_84[(uint)bVar5 * -2 + 0x12];
           local_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
                local_84[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13];
@@ -181,14 +179,14 @@ void core_particle_cpp_FUN_00509f30(float *param_1)
             param_1[5] = fStack_68;
           }
           pfVar1 = param_1 + 3;
-          afStack_120[2] = *pfVar1 * _DAT_005cb665;
-          afStack_120[3] = param_1[4] * _DAT_005cb665;
-          fStack_110 = param_1[5] * _DAT_005cb665;
+          fStack_118 = *pfVar1 * _DAT_005cb665;
+          afStack_114[0] = param_1[4] * _DAT_005cb665;
+          afStack_114[1] = param_1[5] * _DAT_005cb665;
           fStack_d0 = *pfVar1 * _DAT_005cb665;
-          local_f0[(uint)bVar5 * -2 + 9] = afStack_120[(uint)bVar5 * -2 + 3];
-          local_f0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
-               afStack_120[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
-          if (pfVar1 != local_f0 + 8) {
+          afStack_e4[(uint)bVar5 * -2 + 6] = afStack_114[(uint)bVar5 * -2];
+          afStack_e4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
+               afStack_114[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+          if (pfVar1 != afStack_e4 + 5) {
             *pfVar1 = fStack_d0;
             param_1[4] = fStack_cc;
             param_1[5] = fStack_c8;

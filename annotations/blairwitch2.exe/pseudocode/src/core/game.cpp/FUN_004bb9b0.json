@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 529,
-    "complexity_score": 415,
+    "complexity_score": 395,
     "cross_reference_count": 2,
     "function_call_count": 33,
     "global_count": 43,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 165,
-    "suspect_count": 23,
+    "suspect_count": 21,
     "suspect_types": [
       "undefined_data",
       "unnamed_field",
@@ -21,7 +21,7 @@
     {
       "addr": "004b6170",
       "from_addr": "004b6ba3",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,12 +62,12 @@
     {
       "addr": "004fbce0",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fbce0"
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0"
     },
     {
       "addr": "0052a400",
       "is_variadic": false,
-      "name": "core_script.cpp_FUN_0052a400"
+      "name": "core_script.cpp_CScript_saveState_FUN_0052a400"
     },
     {
       "addr": "005349d0",
@@ -100,11 +100,6 @@
       "name": "crt_string.c_splitpath_FUN_005b9e58"
     },
     {
-      "addr": "005b7790",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
-    },
-    {
       "addr": "005b8010",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005b8010"
@@ -115,6 +110,11 @@
       "name": "crt_unknown.c_FUN_005ba1e0"
     },
     {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
       "addr": "005b9c20",
       "is_variadic": false,
       "name": "crt_watcom.c__mkdir_FUN_005b9c20"
@@ -122,12 +122,12 @@
     {
       "addr": "0047be40",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047be40"
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40"
     },
     {
       "addr": "0047d270",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047d270"
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047d270"
     },
     {
       "addr": "00433e90",
@@ -140,14 +140,14 @@
       "name": "support_codec.cpp_CLZWCompress_ctor_FUN_00434770"
     },
     {
+      "addr": "004347c0",
+      "is_variadic": false,
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_004347c0"
+    },
+    {
       "addr": "00434270",
       "is_variadic": false,
       "name": "support_codec.cpp_CLZWDictionary_dtor_FUN_00434270"
-    },
-    {
-      "addr": "004347c0",
-      "is_variadic": false,
-      "name": "support_codec.cpp_FUN_004347c0"
     },
     {
       "addr": "00434810",
@@ -476,7 +476,7 @@
       {
         "call_addr": "004b6ba3",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -701,14 +701,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x244",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x244 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_01cb7b50",
@@ -834,14 +826,6 @@
       "match": "DAT_007bc040",
       "severity": "mild",
       "text": "DAT_007bc040 = 0;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 135,
-      "match": "DAT_005d851c",
-      "severity": "mild",
-      "text": "FUN_005b7790(local_288,\"%s\\\\%s\",&DAT_005d851c,local_490);",
       "type": "undefined_data"
     },
     {

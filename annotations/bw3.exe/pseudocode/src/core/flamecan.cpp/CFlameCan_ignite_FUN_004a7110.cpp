@@ -11,14 +11,14 @@ void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(CFlameCan *this_ptr
 {
   int iVar1;
   
-  *(uint *)&this_ptr->field_0x2d4 = 1;
+  this_ptr->on_fire = 1;
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
     core_fire_cpp_CFireEffect_createSpark_FUN_004a23c0
-              (0x01C73654,(CVector3f *)&this_ptr->field_0x360,(CVector3f *)0x0,0x4000,0x4000,0,
-               0xffff);
+              (0x01C73654,&(this_ptr->flame).base.location.position,(CVector3f *)0x0,0x4000,0x4000
+               ,0,0xffff);
   } while (iVar1 < 5);
-  *(uint *)&this_ptr->field_0x4f4 = 1;
+  (this_ptr->flame).flame_state = 1;
   return;
 }

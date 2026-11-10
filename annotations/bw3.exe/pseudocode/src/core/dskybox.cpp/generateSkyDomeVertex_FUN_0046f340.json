@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 109,
-    "complexity_score": 247,
+    "complexity_score": 245,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 57,
+    "pseudocode_lines": 55,
     "suspect_count": 17,
     "suspect_types": [
       "param_count_too_few",
@@ -15,13 +15,13 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 166
+    "total_lines": 164
   },
   "cross_references": [
     {
       "addr": "0046f480",
       "from_addr": "0046f7c9",
-      "name": "core_dskybox.cpp_FUN_0046f480",
+      "name": "core_dskybox.cpp_renderSkyDome_FUN_0046f480",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -130,7 +130,7 @@
       {
         "call_addr": "0046f7c9",
         "call_type": "direct",
-        "caller": "core_dskybox.cpp_FUN_0046f480",
+        "caller": "core_dskybox.cpp_renderSkyDome_FUN_0046f480",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -299,7 +299,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "local_18 = param_2;",
@@ -307,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "local_1c = (float)param_2 * _DAT_005bc7b5 * _DAT_005bc7b9 * (float)_DAT_005bc7c1;",
@@ -315,7 +315,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 25,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -323,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 29,
       "match": "param_3",
       "severity": "mild",
       "text": "local_48 = (float)param_3 * _DAT_005bc7c9 * _DAT_005bc7b9 * (float)_DAT_005bc7d1;",
@@ -331,7 +331,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 30,
       "match": "param_3",
       "severity": "mild",
       "text": "local_18 = param_3;",
@@ -339,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar4 = (float10)fsin((float10)local_1c + (float10)(float)param_1[7]);",
@@ -347,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = (float10)fcos((float10)local_1c + (float10)(float)param_1[7]);",
@@ -355,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar1 = *param_1;",
@@ -363,7 +363,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 54,
       "match": "DAT_0060b034",
       "severity": "mild",
       "text": "(&DAT_0060b034)[iVar2 * 4] = uVar1;",
@@ -371,7 +371,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 55,
       "match": "DAT_0060b038",
       "severity": "mild",
       "text": "(&DAT_0060b038)[iVar2 * 4] = uVar1;",
@@ -379,7 +379,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_0060b03c",
       "severity": "mild",
       "text": "(&DAT_0060b03c)[iVar2 * 4] = uVar1;",
@@ -387,7 +387,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 59,
+      "line": 57,
       "match": "DAT_0060b040",
       "severity": "mild",
       "text": "(&DAT_0060b040)[iVar2 * 4] = 0;",

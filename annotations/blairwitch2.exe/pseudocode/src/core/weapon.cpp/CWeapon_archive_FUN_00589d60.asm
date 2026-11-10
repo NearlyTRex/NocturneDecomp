@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x104]:1  local_104
 ;
 ; XREF[2]:
-;   core_melee.cpp_FUN_004eaa00 at 004eaa06
+;   core_melee.cpp_CMelee_archive_FUN_004eaa00 at 004eaa06
 ;   core_turret.cpp_CTurret_archive_FUN_0057efa0 at 0057efa6
 ;
 ; Referenced Globals:

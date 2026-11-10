@@ -9,16 +9,16 @@
 ; EBloodType       Stack[0xc]:4   blood_type
 ;
 ; XREF[18]:
-;   core_batcreat.cpp_FUN_00411a10 at 00411d32
-;   core_batman.cpp_FUN_00412f40 at 00413646
-;   core_bride.cpp_FUN_0041dbe0 at 0041dde4
-;   core_cow.cpp_FUN_004392b0 at 0043965a
-;   core_dog.cpp_FUN_0045e360 at 0045e7a4
-;   core_dracbrid.cpp_FUN_00462ff0 at 00463db9
-;   core_drone.cpp_FUN_0046d870 at 0046dd46
-;   core_ghoul.cpp_FUN_004c1bb0 at 004c2703
-;   core_hotdemon.cpp_FUN_004d3a70 at 004d3d67
-;   core_imp.cpp_FUN_004d6980 at 004d6fdb
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411d32
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413646
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dde4
+;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 0043965a
+;   core_dog.cpp_CZombieDog_process_FUN_0045e360 at 0045e7a4
+;   core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0 at 00463db9
+;   core_drone.cpp_CDrone_process_FUN_0046d870 at 0046dd46
+;   core_ghoul.cpp_CGhoul_process_FUN_004c1bb0 at 004c2703
+;   core_hotdemon.cpp_CHotDemon_process_FUN_004d3a70 at 004d3d67
+;   core_imp.cpp_CImp_process_FUN_004d6980 at 004d6fdb
 ;   ... and 8 more
 ;
 ; Called Functions:

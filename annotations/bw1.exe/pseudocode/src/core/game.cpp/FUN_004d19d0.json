@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 155,
+    "complexity_score": 145,
     "cross_reference_count": 7,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 11,
+    "suspect_count": 10,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
@@ -27,7 +27,7 @@
     {
       "addr": "004cf5e0",
       "from_addr": "004cf98c",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,21 +37,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00544460",
-      "from_addr": "0054861f",
-      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "addr": "00544310",
+      "from_addr": "005443ad",
+      "name": "core_script.cpp_CScript_executeInitSection_FUN_00544310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005437f0",
       "from_addr": "00543873",
-      "name": "core_script.cpp_FUN_005437f0",
+      "name": "core_script.cpp_CScript_process_FUN_005437f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00544310",
-      "from_addr": "005443ad",
-      "name": "core_script.cpp_FUN_00544310",
+      "addr": "00544460",
+      "from_addr": "0054861f",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -159,7 +159,7 @@
     },
     {
       "addr": "01fdd020",
-      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "name": "g_CDemonSetInstance.selected_camera_index",
       "type": "undefined4",
       "value": null
     }
@@ -170,7 +170,7 @@
       {
         "call_addr": "004cf98c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,7 +227,7 @@
       {
         "call_addr": "00543873",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_005437f0",
+        "caller": "core_script.cpp_CScript_process_FUN_005437f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -240,7 +240,7 @@
       {
         "call_addr": "005443ad",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00544310",
+        "caller": "core_script.cpp_CScript_executeInitSection_FUN_00544310",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -335,14 +335,6 @@
       "severity": "mild",
       "text": "memset(&DAT_01ccff98,0,600);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "_DAT_01cd01f4 = *(uint *)&g_CDemonSetPtr->field_0x15aeb8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

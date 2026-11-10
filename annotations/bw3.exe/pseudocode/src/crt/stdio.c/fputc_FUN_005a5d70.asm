@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[11]:
-;   core_game.cpp_FUN_004b3e50 at 004b40be
 ;   core_game.cpp_FUN_004b6f30 at 004b7d29
+;   core_game.cpp_captureDebugMovieFrame_FUN_004b3e50 at 004b40be
 ;   crt_stdio.c_fwrite_FUN_005a48e0 at 005a4a9e
 ;   crt_unknown.c_FUN_005a7e30 at 005a7e3e
-;   engine_pcx.c_FUN_0050da60 at 0050dbc6
+;   crt_unknown.c_FUN_005b07f0 at 005b0832
+;   crt_unknown.c_FUN_005b0ee0 at 005b0f3e
 ;   engine_pcx.c_saveScreenRaw16_FUN_0050d6f0 at 0050d81c
 ;   engine_pcx.c_saveScreenRaw32_FUN_0050d8b0 at 0050d9ca
+;   engine_pcx.c_saveScreenshotGeneral_FUN_0050da60 at 0050dbc6
 ;   engine_pcx.c_writePCXScanline_FUN_0050d620 at 0050d656
-;   support_trstream.cpp_FUN_005748b0 at 005748cb
-;   unkafter_2d.cpp_FUN_005b07f0 at 005b0832
 ;   ... and 1 more
 ;
 ; Referenced Globals:

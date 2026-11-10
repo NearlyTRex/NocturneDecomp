@@ -4,13 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CFlashlight
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6d4 (1748 bytes)
 #pragma pack(push, 1)
 typedef struct CFlashlight {
-    char field_0[1748]; // 0x0
+    CWeapon base; // 0x0
 } CFlashlight;
 #pragma pack(pop)
 

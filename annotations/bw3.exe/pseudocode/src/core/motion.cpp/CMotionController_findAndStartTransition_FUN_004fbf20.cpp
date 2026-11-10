@@ -15,28 +15,27 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004fbf2
   SMotionTransition *transition;
   
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(this_ptr);
-  iVar3 = *(int *)&this_ptr->field_0x28;
+  iVar3 = this_ptr->state_index;
   if ((iVar3 < 0) || (iVar3 == *(int *)(pSVar1 + 0x24))) {
-    *(uint *)&this_ptr->field_0x2c = 0;
+    this_ptr->in_transition = (SMotionTransition *)0x0;
     return 0;
   }
-  if ((*(int **)&this_ptr->field_0x2c == (int *)0x0) || (iVar3 != **(int **)&this_ptr->field_0x2c))
-  {
+  if ((this_ptr->in_transition == (SMotionTransition *)0x0) ||
+     (iVar3 != *(int *)this_ptr->in_transition)) {
     iVar3 = 0;
     transition = (SMotionTransition *)0x0;
     if (0 < *(int *)(pSVar1 + 0x70)) {
       pSVar2 = *(SMotionTransition **)(pSVar1 + 0x74);
       do {
         transition = pSVar2;
-        if (*(int *)&this_ptr->field_0x28 == *(int *)pSVar2) break;
+        if (this_ptr->state_index == *(int *)pSVar2) break;
         iVar3 = iVar3 + 1;
         pSVar2 = pSVar2 + 0x18;
         transition = (SMotionTransition *)0x0;
       } while (iVar3 < *(int *)(pSVar1 + 0x70));
     }
-    if ((transition != (SMotionTransition *)0x0) &&
-       (transition != *(SMotionTransition **)&this_ptr->field_0x2c)) {
-      *(uint *)&this_ptr->field_0x2c = 0;
+    if ((transition != (SMotionTransition *)0x0) && (transition != this_ptr->in_transition)) {
+      this_ptr->in_transition = (SMotionTransition *)0x0;
       core_motion_cpp_CMotionController_clearTweenState_FUN_004fc480(this_ptr);
       switch(*(uint *)(transition + 4)) {
       case 1:
@@ -44,17 +43,17 @@ int __cdecl core_motion_cpp_CMotionController_findAndStartTransition_FUN_004fbf2
                   (this_ptr,*(int *)(transition + 8),*(float *)(transition + 0xc));
         if (*(int *)(transition + 0x14) != 0) {
           pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_004fc070(this_ptr);
-          *(uint *)&this_ptr->field_0x28 = *(uint *)(pSVar1 + 0x24);
+          this_ptr->state_index = *(int *)(pSVar1 + 0x24);
         }
         return 1;
       case 2:
-        *(SMotionTransition **)&this_ptr->field_0x2c = transition;
+        this_ptr->in_transition = transition;
         return 0;
       case 3:
       case 4:
       case 5:
       case 6:
-        *(SMotionTransition **)&this_ptr->field_0x2c = transition;
+        this_ptr->in_transition = transition;
         core_motion_cpp_CMotionController_startTransition_FUN_004fc190(this_ptr,transition);
         return 0;
       }

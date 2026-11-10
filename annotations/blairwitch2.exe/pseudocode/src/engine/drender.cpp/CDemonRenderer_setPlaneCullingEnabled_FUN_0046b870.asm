@@ -15,7 +15,7 @@
 ;   core_inv.cpp_FUN_004da130 at 004da69d
 ;   core_inv.cpp_FUN_004dd9b0 at 004de961
 ;   core_manpuz.cpp_FUN_004e63c0 at 004e6788
-;   core_path.cpp_FUN_00513950 at 00513a4e
+;   core_path.cpp_CPathMap_renderPathMap_FUN_00513950 at 00513a4e
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046b880 at 0046b8b0
 ;
 ; *****************************************************************************

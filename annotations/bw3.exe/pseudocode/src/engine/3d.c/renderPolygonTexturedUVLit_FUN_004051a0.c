@@ -14,23 +14,23 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLit_FUN_004051a
 {
   int iVar1;
   byte bVar2;
-  uint auStackY_1010 [1016];
-  uint uStack_28;
-  uint uStack_24;
-  uint uStack_20;
-  uint uStack_1c;
+  UIntegerFloat aUStackY_1010 [1016];
+  UIntegerFloat UStack_28;
+  UIntegerFloat UStack_24;
+  UIntegerFloat UStack_20;
+  UIntegerFloat UStack_1c;
   
   bVar2 = 0;
-  uStack_28 = *(uint *)(prim + 8);
-  uStack_24 = *(uint *)(prim + 0xc);
-  uStack_20 = *(uint *)(prim + 0x10);
+  UStack_28 = (prim->surface_normal).A;
+  UStack_24 = (prim->surface_normal).B;
+  UStack_20 = (prim->surface_normal).C;
   engine_matrix_c_normalizeVector3DFixed_FUN_004e6140(&stack0xffffffd8);
-  uStack_28 = uStack_1c;
+  UStack_28 = UStack_1c;
   (&stack0xffffffdc)[(uint)bVar2 * 0xfffffffe] =
-       *(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
+       (UIntegerFloat)*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);
   *(uint *)((int)&stack0xffffffe0 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffffec + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(prim + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c6e2a0 == 0) {
       if (DAT_005fba20 == 0x20) {
@@ -49,7 +49,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonTexturedUVLit_FUN_004051a
     _DAT_01c6e2b4 = 1;
     _DAT_01c6e2b8 = 0;
     engine_3d_c_calculatePolygonLighting_FUN_004039d0(prim);
-    engine_clipper_c_clipAndRasterize_FUN_0043a840(*(int *)(prim + 4),(int *)(prim + 0x18));
+    engine_clipper_c_clipAndRasterize_FUN_0043a840((prim->base).count,(int *)(prim + 1));
   }
-  return (SMRGLHeaderExtended *)(prim + *(int *)(prim + 4) * 4 + 0x18);
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

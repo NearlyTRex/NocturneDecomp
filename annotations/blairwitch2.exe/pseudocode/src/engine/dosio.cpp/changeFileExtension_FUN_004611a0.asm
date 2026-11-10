@@ -16,8 +16,8 @@
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573cbd
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00461070
-;   engine_dosio.cpp_FUN_004610a0
+;   engine_dosio.cpp_makePath_FUN_004610a0
+;   engine_dosio.cpp_splitPath_FUN_00461070
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EAX                            ; 004611bd
     MOV EDX,dword ptr [ESP + 0x21c]     ; 004611be
     PUSH EDX                            ; 004611c5
-    CALL engine_dosio.cpp_FUN_00461070  ; 004611c6
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 004611c6
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004611cb
     MOV ECX,dword ptr [ESP + 0x210]     ; 004611ce
     PUSH ECX                            ; 004611d5
@@ -48,8 +48,8 @@ section .text
     PUSH EAX                            ; 004611ea
     MOV EBX,dword ptr [ESP + 0x21c]     ; 004611eb
     PUSH EBX                            ; 004611f2
-    CALL engine_dosio.cpp_FUN_004610a0  ; 004611f3
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004610a0(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_004610a0 ; 004611f3
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_004610a0(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004611f8
     ADD ESP,0x204                       ; 004611fb
     POP EBX                             ; 00461201

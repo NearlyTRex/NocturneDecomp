@@ -17,7 +17,7 @@ CAnvil * __cdecl core_anvil_cpp_CAnvil_dtor_FUN_0040ed90(CAnvil *this_ptr,uint f
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CAnvil *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  pCVar1 = (CAnvil *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

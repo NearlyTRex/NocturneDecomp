@@ -2,25 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 175,
+    "complexity_score": 141,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
-    "suspect_count": 12,
+    "pseudocode_lines": 41,
+    "suspect_count": 8,
     "suspect_types": [
       "negative_offset",
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unrolled_strcpy"
     ],
-    "total_lines": 107
+    "total_lines": 108
   },
   "cross_references": [
     {
       "addr": "004ab590",
       "from_addr": "004ab5a3",
-      "name": "core_filmreel.cpp_FUN_004ab590",
+      "name": "core_filmreel.cpp_factoryFuncFilmProjector_FUN_004ab590",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,7 +61,7 @@
       {
         "call_addr": "004ab5a3",
         "call_type": "direct",
-        "caller": "core_filmreel.cpp_FUN_004ab590",
+        "caller": "core_filmreel.cpp_factoryFuncFilmProjector_FUN_004ab590",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -118,95 +119,63 @@
   "suspects": [
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 15,
+      "line": 16,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0xdc = &g_CFilmProjectorVTable;",
+      "text": "*(CDemonActor_vtable **)(this_ptr_00[-1].model_name + 100) = &g_CFilmProjectorVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0xdc",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0xdc = &g_CFilmProjectorVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "this_ptr_00[-1].",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr_00[-1].field_0xe4;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xe4",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr_00[-1].field_0xe4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 18,
-      "match": "field_0x68",
+      "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x68 = 0;",
-      "type": "unnamed_field"
+      "text": "pcVar4 = this_ptr_00[-1].model_name + 0x6c;",
+      "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x6c = 0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 39,
+      "match": "(char *)((int)piVar5",
+      "severity": "moderate",
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr_00[1].field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x70",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x70 = 0;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 40,
+      "match": "(int *)((int)piVar5",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 42,
+      "line": 43,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "return (CFilmProjector *)&this_ptr_00[-2].field_0x104;",
+      "text": "return (CFilmProjector *)(this_ptr_00[-2].model_name + 0x8c);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "return (CFilmProjector *)&this_ptr_00[-2].field_0x104;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 19,
-      "match": "do {",
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 39,
+      "match": "(int)piVar5",
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "*(char *)((int)piVar5 + 1) = cVar1;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar5` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 40,
+      "match": "(int)piVar5",
+      "severity": "moderate",
+      "text": "piVar5 = (int *)((int)piVar5 + 2);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 32,
+      "line": 20,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

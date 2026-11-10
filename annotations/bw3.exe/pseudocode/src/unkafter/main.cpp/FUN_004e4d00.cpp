@@ -32,7 +32,7 @@ ulonglong unkafter_main_cpp_FUN_004e4d00(void)
     fVar5 = fVar5 * fVar2;
     round();
     round();
-    *(int *)(&CAlphaBitmap_01d71e28.field_0x10 + extraout_ECX) = (int)ROUND(fVar6);
+    *(int *)((int)&CAlphaBitmap_01d71e28.height + extraout_ECX) = (int)ROUND(fVar6);
     iVar1 = extraout_EDX + 1;
     *(int *)(extraout_ECX + 0x1d7223c) = (int)ROUND(fVar5);
   } while (iVar1 < 0x101);

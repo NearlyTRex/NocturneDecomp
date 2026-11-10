@@ -1,0 +1,230 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 95,
+    "complexity_score": 152,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 37,
+    "suspect_count": 9,
+    "suspect_types": [
+      "param_count_too_few",
+      "undefined_data",
+      "unnamed_field",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 132
+  },
+  "cross_references": [
+    {
+      "addr": "00548750",
+      "from_addr": "00548762",
+      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005501e0",
+    "address_range": [
+      [
+        "005501e0",
+        "005502c1"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_skeleton.cpp_loadSkeleton_FUN_005501e0",
+    "signature": "CSkeleton * core_skeleton_cpp_loadSkeleton_FUN_005501e0(char *param_1)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00547c20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_load_FUN_00547c20"
+    },
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d2297",
+      "name": "s_core_skeleton_cpp_005d2297",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d22ac",
+      "name": "s_Can_t_load_s_because_ske_005d22ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cd28bc",
+      "name": "DAT_02cd28bc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00548762",
+        "call_type": "direct",
+        "caller": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [
+          "EAX",
+          "EDX"
+        ],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "low",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 3,
+    "matches_declared": false
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.604938271604938,
+    "instruction_count": 81,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 26,
+      "CALL": 3,
+      "CBRANCH": 5,
+      "COPY": 74,
+      "INT_ADD": 31,
+      "INT_AND": 113,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 62,
+      "INT_LEFT": 10,
+      "INT_LESS": 5,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 12,
+      "INT_OR": 25,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SEXT": 3,
+      "INT_SLESS": 38,
+      "INT_SUB": 24,
+      "INT_XOR": 9,
+      "LOAD": 17,
+      "POPCOUNT": 28,
+      "RETURN": 3,
+      "STORE": 16,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 535
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CSkeleton * core_skeleton_cpp_loadSkeleton_FUN_005501e0(char *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x1de28",
+      "severity": "mild",
+      "text": "str1 = &g_SkeletonPool[0].field_0x1de28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 15,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar1 = _stricmp(str1,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_02cd28bc",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02cd28bc + iVar3 * 4) = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_CSkeleton_load_FUN_00547c20(g_SkeletonPool + iVar2,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_02cd28bc",
+      "severity": "mild",
+      "text": "*(uint *)(&DAT_02cd28bc + iVar1) = 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_main_c_FUN_004e4330(\"Can't load %s because skeleton manager is full.  (Size is %d)\",param_1,0x28);",
+      "type": "unnamed_param"
+    },
+    {
+      "call_site_count": 1,
+      "declared_params": 0,
+      "description": "Signature has too few params - likely missing this ptr or other params",
+      "estimated_params": 3,
+      "fix_type": "add_params",
+      "match": "declared:0 vs estimated:3",
+      "param_delta": 3,
+      "text": "Function declares 0 params but call sites push 3 (3 missing)",
+      "type": "param_count_too_few"
+    }
+  ]
+}

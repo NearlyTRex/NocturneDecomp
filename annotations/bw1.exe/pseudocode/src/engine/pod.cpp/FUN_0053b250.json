@@ -2,26 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1011,
-    "complexity_score": 2469,
+    "complexity_score": 1700,
     "cross_reference_count": 3,
     "function_call_count": 19,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 479,
-    "suspect_count": 194,
+    "pseudocode_lines": 475,
+    "suspect_count": 118,
     "suspect_types": [
       "param_count_too_few",
       "pointer_stride_bytecount",
       "sign_compare_idiom",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_memcpy",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1490
+    "total_lines": 1486
   },
   "cross_references": [
     {
@@ -77,14 +76,14 @@
       "name": "crt_string.c__stricmp_FUN_005c04e0"
     },
     {
-      "addr": "005bfb40",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
       "addr": "005c08d0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c08d0"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "00478ef0",
@@ -99,7 +98,7 @@
     {
       "addr": "00479580",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479580"
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
     },
     {
       "addr": "0053be30",
@@ -743,7 +742,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(param_1);",
@@ -751,7 +750,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_2",
       "severity": "mild",
       "text": "engine_dosio_cpp_FUN_00478e20(local_8cc,0,param_2);",
@@ -759,818 +758,466 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 85,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "puVar15 = &param_1->field_0x4;",
+      "text": "pcVar11 = param_1->filename;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar15 = &param_1->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x104 = local_6c0;",
+      "text": "param_1->timestamp = local_6c0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x104",
+      "description": "Unnamed function parameter",
+      "line": 95,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x104 = local_6c0;",
-      "type": "unnamed_field"
+      "text": "iVar5 = support_trstream_cpp_FUN_005a0f60(&local_84,param_1->filename,1);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 101,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00479580(param_2,(char *)0x0,(char *)0x0,(char *)0x0,local_288);",
+      "text": "engine_dosio_cpp_splitPath_FUN_00479580(param_2,(char *)0x0,(char *)0x0,(char *)0x0,local_288)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 103,
+      "match": "DAT_005ed68a",
+      "severity": "mild",
+      "text": "iVar5 = _stricmp(local_288,&DAT_005ed68a);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 105,
-      "match": "DAT_005ed68a",
-      "severity": "mild",
-      "text": "iVar6 = _stricmp(local_288,&DAT_005ed68a);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 107,
       "match": "DAT_005ed68e",
       "severity": "mild",
-      "text": "(iVar6 = _stricmp(local_288,&DAT_005ed68e), iVar6 == 0)) {",
+      "text": "(iVar5 = _stricmp(local_288,&DAT_005ed68e), iVar5 == 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
+      "text": "pcVar2 = param_1->description;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_294;",
+      "text": "param_1->file_count = local_294;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_294;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 122,
+      "line": 120,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
+      "text": "iVar5 = param_1->file_count;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 122,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 125,
+      "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
+      "text": "param_1->directory_entries = pCVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
+      "text": "if (0 < param_1->file_count) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(ulong *)(*(int *)&param_1->field_0x414 + local_2c) = uVar9;",
+      "text": "*(ulong *)(param_1->directory_entries + local_2c) = uVar8;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(ulong *)(*(int *)&param_1->field_0x414 + local_2c) = uVar9;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 146,
+      "line": 144,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = (*(int *)&param_1->field_0x410 - local_20) * 0x30 + uVar9;",
+      "text": "local_28 = (param_1->file_count - local_20) * 0x30 + uVar8;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 146,
-      "match": "field_0x410",
+      "description": "Unnamed function parameter",
+      "line": 145,
+      "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = (*(int *)&param_1->field_0x410 - local_20) * 0x30 + uVar9;",
-      "type": "unnamed_field"
+      "text": "pcVar2 = (char *)realloc(param_1->file_data_buffer,local_28);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 147,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvVar3 = realloc(*(void **)&param_1->field_0x418,local_28)",
+      "text": "param_1->file_data_buffer = pcVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 147,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "pvVar3 = realloc(*(void **)&param_1->field_0x418,local_28)",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 150,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
+      "text": "pcVar11 = param_1->file_data_buffer + *(int *)(param_1->directory_entries + local_2c);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 150,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 153,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar12 = (char *)(*(int *)&param_1->field_0x418 +",
+      "text": "pcVar11 = param_1->file_data_buffer + *(int *)(param_1->directory_entries + local_2c);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)(*(int *)&param_1->field_0x418 +",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 154,
+      "line": 160,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(*(int *)&param_1->field_0x414 + local_2c));",
+      "text": "*(uint *)(param_1->directory_entries + local_2c + 4) = local_94;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 154,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&param_1->field_0x414 + local_2c));",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 164,
+      "line": 161,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 4) = local_94;",
+      "text": "*(uint *)(param_1->directory_entries + local_2c + 8) = local_90;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 164,
-      "match": "field_0x414",
+      "description": "Unnamed function parameter",
+      "line": 162,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 4) = local_94;",
-      "type": "unnamed_field"
+      "text": "*(uint *)(param_1->directory_entries + local_2c + 0x10) = local_88;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 165,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 8) = local_90;",
+      "text": "*(uint *)(param_1->directory_entries + local_2c + 0xc) = param_1->timestamp;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 165,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 8) = local_90;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 166,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 0x10) = local_88;",
+      "text": "*(uint *)(param_1->directory_entries + local_2c + 0xc) = param_1->timestamp;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 166,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 0x10) = local_88;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 169,
+      "line": 167,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 0xc) =",
+      "text": "} while (local_20 < param_1->file_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 169,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(uint *)(local_2c + *(int *)&param_1->field_0x414 + 0xc) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 170,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x104;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 170,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x104;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 172,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_20 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 172,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "} while (local_20 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_field"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 174,
+      "line": 169,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar14 = SBORROW4(uVar9,local_28);",
+      "text": "bVar13 = SBORROW4(uVar8,local_28);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 185,
+      "line": 180,
       "match": "param_1",
       "severity": "mild",
-      "text": "pvVar3 = realloc(*(void **)&param_1->field_0x418,uVar9);",
+      "text": "pcVar2 = (char *)realloc(param_1->file_data_buffer,uVar8);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 185,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "pvVar3 = realloc(*(void **)&param_1->field_0x418,uVar9);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 186,
+      "line": 181,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
+      "text": "param_1->file_data_buffer = pcVar2;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 186,
-      "match": "field_0x418",
+      "description": "Unnamed function parameter",
+      "line": 189,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
-      "type": "unnamed_field"
+      "text": "if (0 < param_1->file_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 192,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pCVar3 = param_1->directory_entries + iVar7;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 194,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
+      "text": "*(char **)pCVar3 = param_1->file_data_buffer + *(int *)pCVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 194,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 197,
       "match": "param_1",
       "severity": "mild",
-      "text": "piVar4 = (int *)(*(int *)&param_1->field_0x414 + iVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 197,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(*(int *)&param_1->field_0x414 + iVar8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 199,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*piVar4 = *(int *)&param_1->field_0x418 + *piVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 199,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "*piVar4 = *(int *)&param_1->field_0x418 + *piVar4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 202,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar6 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 202,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "} while (iVar6 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 205,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(uint *)&param_1->field_0x414,*(uint *)&param_1->field_0x410,",
+      "text": "} while (iVar5 < param_1->file_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 205,
+      "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(uint *)&param_1->field_0x414,*(uint *)&param_1->field_0x410,",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 205,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "(*(uint *)&param_1->field_0x414,*(uint *)&param_1->field_0x410,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 205,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "(*(uint *)&param_1->field_0x414,*(uint *)&param_1->field_0x410,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 221,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 221,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 222,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)param_1 = 300;",
+      "text": "(param_1->directory_entries,param_1->file_count,0x14,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 233,
+      "line": 200,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x208;",
+      "text": "(param_1->directory_entries,param_1->file_count,0x14,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 233,
-      "match": "field_0x208",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x208;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 244,
+      "line": 216,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x308;",
+      "text": "pcVar2 = param_1->description;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 244,
-      "match": "field_0x308",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x308;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 217,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_460;",
+      "text": "param_1->pod_format_version = 300;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 254,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_460;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 228,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x41c = local_45c;",
+      "text": "pcVar2 = param_1->author_info;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 255,
-      "match": "field_0x41c",
+      "description": "Unnamed function parameter",
+      "line": 239,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x41c = local_45c;",
-      "type": "unnamed_field"
+      "text": "pcVar2 = param_1->copyright_info;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 249,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->file_count = local_460;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 250,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->audit_count = local_45c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 251,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->dependency_count = local_3a4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 252,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = param_1->file_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 253,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->mount_priority = local_454;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 256,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x424 = local_3a4;",
+      "text": "param_1->directory_entries = pCVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 256,
-      "match": "field_0x424",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x424 = local_3a4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 257,
+      "line": 274,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
+      "text": "uVar10 = param_1->file_count * 0x14;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 257,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 258,
+      "line": 275,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x408 = local_454;",
+      "text": "uVar6 = unkaddr_0059f520_cpp_FUN_005a0c10(&local_84,param_1->directory_entries,uVar10)",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 258,
-      "match": "field_0x408",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x408 = local_454;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 261,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 261,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 279,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar11 = *(int *)&param_1->field_0x410 * 0x14;",
+      "text": "if (0 < param_1->file_count) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 279,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "uVar11 = *(int *)&param_1->field_0x410 * 0x14;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 281,
+      "line": 282,
       "match": "param_1",
       "severity": "mild",
-      "text": "(&local_84,*(uint *)&param_1->field_0x414,uVar11);",
+      "text": "} while ((int)uVar6 < param_1->file_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 281,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "(&local_84,*(uint *)&param_1->field_0x414,uVar11);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 284,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
+      "text": "if (((int)local_3a8 < param_1->file_count) ||",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 284,
-      "match": "field_0x410",
+      "description": "Unnamed function parameter",
+      "line": 285,
+      "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
-      "type": "unnamed_field"
+      "text": "(param_1->file_count * 0x100 < (int)local_3a8)) goto LAB_0053b6fe;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 287,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while ((int)uVar7 < *(int *)&param_1->field_0x410);",
+      "text": "param_1->file_data_buffer = pcVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 287,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "} while ((int)uVar7 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 289,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((int)local_3a8 < *(int *)&param_1->field_0x410) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 289,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "if (((int)local_3a8 < *(int *)&param_1->field_0x410) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 290,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x410 * 0x100 < (int)local_3a8)) goto LAB_0053b6fe;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 290,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x410 * 0x100 < (int)local_3a8)) goto LAB_0053b6fe;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 292,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 292,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 297,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x428 = uVar10;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 297,
-      "match": "field_0x428",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x428 = uVar10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 298,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x420 =",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 298,
-      "match": "field_0x420",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x420 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 299,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x428 + *(int *)&param_1->field_0x424 * 0x108;",
+      "text": "param_1->dependency_records_offset = uVar6;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 299,
+      "line": 293,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x428 + *(int *)&param_1->field_0x424 * 0x108;",
+      "text": "param_1->total_file_size =",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 299,
-      "match": "field_0x428",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x428 + *(int *)&param_1->field_0x424 * 0x108;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 299,
-      "match": "field_0x424",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x428 + *(int *)&param_1->field_0x424 * 0x108;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 311,
+      "line": 294,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
+      "text": "param_1->dependency_records_offset + param_1->dependency_count * 0x108;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 311,
-      "match": "field_0x108",
+      "description": "Unnamed function parameter",
+      "line": 294,
+      "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
-      "type": "unnamed_field"
+      "text": "param_1->dependency_records_offset + param_1->dependency_count * 0x108;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 312,
+      "line": 306,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)param_1 = 200;",
+      "text": "pcVar2 = param_1->description;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 307,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->pod_format_version = 200;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 317,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->file_count = local_130;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 318,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar5 = param_1->file_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 319,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->audit_count = local_12c;",
       "type": "unnamed_param"
     },
     {
@@ -1578,500 +1225,244 @@
       "line": 322,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_130;",
+      "text": "param_1->directory_entries = pCVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 322,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_130;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 323,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 323,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 324,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x41c = local_12c;",
+      "text": "uVar10 = param_1->file_count * 0x14;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 324,
-      "match": "field_0x41c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x41c = local_12c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 327,
+      "line": 328,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
+      "text": "if (0 < param_1->file_count) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 327,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 329,
+      "line": 331,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar11 = *(int *)&param_1->field_0x410 * 0x14;",
+      "text": "} while ((int)uVar6 < param_1->file_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 329,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "uVar11 = *(int *)&param_1->field_0x410 * 0x14;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 333,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
+      "text": "iVar5 = param_1->file_count;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 333,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 336,
+      "line": 334,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while ((int)uVar7 < *(int *)&param_1->field_0x410);",
+      "text": "uVar8 = *(int *)(param_1->directory_entries + 8) + -0x60 + iVar5 * -0x14;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 336,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "} while ((int)uVar7 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 338,
+      "line": 337,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
+      "text": "param_1->file_data_buffer = pcVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 338,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 339,
+      "line": 341,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar9 = *(int *)(*(int *)&param_1->field_0x414 + 8) + -0x60 + iVar6 * -0x14;",
+      "text": "iVar5 = param_1->file_count + -1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 339,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "uVar9 = *(int *)(*(int *)&param_1->field_0x414 + 8) + -0x60 + iVar6 * -0x14;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 342,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
+      "text": "param_1->total_file_size =",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 342,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 346,
+      "line": 343,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x414 +",
+      "text": "*(int *)(param_1->directory_entries + iVar5 * 0x14 + 8) +",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 346,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x414 +",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 347,
+      "line": 344,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x410 + -1) * 0x14;",
+      "text": "*(int *)(param_1->directory_entries + iVar5 * 0x14 + 4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 347,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x410 + -1) * 0x14;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 348,
+      "line": 351,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x420 = *(int *)(iVar6 + 8) + *(int *)(iVar6 + 4);",
+      "text": "param_1->pod_format_version = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 348,
-      "match": "field_0x420",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x420 = *(int *)(iVar6 + 8) + *(int *)(iVar6 + 4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 355,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)param_1 = 1;",
+      "text": "pcVar2 = param_1->description;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 359,
+      "line": 356,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
+      "text": "param_1->file_count = local_128;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 359,
-      "match": "field_0x108",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x108;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 360,
+      "line": 366,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_128;",
+      "text": "iVar5 = param_1->file_count;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 360,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x410 = local_128;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 370,
+      "line": 369,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
+      "text": "param_1->directory_entries = pCVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 370,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&param_1->field_0x410;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 373,
+      "line": 374,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
+      "text": "if (0 < param_1->file_count) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 373,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x414 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 378,
+      "line": 379,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
+      "text": "*(ulong *)(param_1->directory_entries + local_14) = uVar8;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 378,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x410) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 383,
+      "line": 390,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(ulong *)(*(int *)&param_1->field_0x414 + local_14) = uVar9;",
+      "text": "local_24 = (param_1->file_count - local_18) * 0x30 + uVar8;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 383,
-      "match": "field_0x414",
+      "description": "Unnamed function parameter",
+      "line": 392,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(ulong *)(*(int *)&param_1->field_0x414 + local_14) = uVar9;",
-      "type": "unnamed_field"
+      "text": "(param_1->file_data_buffer,local_24);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 394,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_24 = (*(int *)&param_1->field_0x410 - local_18) * 0x30 + uVar9;",
+      "text": "param_1->file_data_buffer = pcVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 394,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "local_24 = (*(int *)&param_1->field_0x410 - local_18) * 0x30 + uVar9;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 396,
+      "line": 401,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(void **)&param_1->field_0x418,local_24);",
+      "text": "pcVar11 = param_1->file_data_buffer +",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 396,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "(*(void **)&param_1->field_0x418,local_24);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 398,
+      "line": 402,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
+      "text": "*(int *)(param_1->directory_entries + local_14);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 398,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "*(void **)&param_1->field_0x418 = pvVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 405,
+      "line": 412,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar12 = (char *)(*(int *)&param_1->field_0x418 +",
+      "text": "*(int *)(param_1->directory_entries + local_14 + 4) = local_38;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 405,
-      "match": "field_0x418",
-      "severity": "mild",
-      "text": "pcVar12 = (char *)(*(int *)&param_1->field_0x418 +",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 406,
+      "line": 413,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(*(int *)&param_1->field_0x414 + local_14));",
+      "text": "*(uint *)(param_1->directory_entries + local_14 + 8) = local_34;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 406,
-      "match": "field_0x414",
+      "description": "Unnamed function parameter",
+      "line": 414,
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(*(int *)&param_1->field_0x414 + local_14));",
-      "type": "unnamed_field"
+      "text": "*(uint *)(param_1->directory_entries + local_14 + 0x10) = 0;",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 416,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(local_14 + *(int *)&param_1->field_0x414 + 4) = local_38;",
+      "text": "*(uint *)(param_1->directory_entries + local_14 + 0xc) = param_1->timestamp;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 416,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(int *)(local_14 + *(int *)&param_1->field_0x414 + 4) = local_38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 417,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)&param_1->field_0x414 + local_14 + 8) = local_34;",
+      "text": "*(uint *)(param_1->directory_entries + local_14 + 0xc) = param_1->timestamp;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 417,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&param_1->field_0x414 + local_14 + 8) = local_34;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 418,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&param_1->field_0x414 + local_14 + 0x10) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 418,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "*(uint *)(*(int *)&param_1->field_0x414 + local_14 + 0x10) = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 419,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = local_14 + *(int *)&param_1->field_0x414;",
+      "text": "} while (local_18 < param_1->file_count);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 419,
-      "match": "field_0x414",
-      "severity": "mild",
-      "text": "iVar6 = local_14 + *(int *)&param_1->field_0x414;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 421,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)(iVar6 + 0xc) = *(uint *)&param_1->field_0x104;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 421,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "*(uint *)(iVar6 + 0xc) = *(uint *)&param_1->field_0x104;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 423,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (local_18 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 423,
-      "match": "field_0x410",
-      "severity": "mild",
-      "text": "} while (local_18 < *(int *)&param_1->field_0x410);",
-      "type": "unnamed_field"
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 425,
+      "line": 421,
       "match": "SBORROW4",
       "severity": "moderate",
-      "text": "bVar14 = SBORROW4(uVar9,local_24);",
+      "text": "bVar13 = SBORROW4(uVar8,local_24);",
       "type": "sign_compare_idiom"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 466,
+      "line": 462,
       "match": "param_1",
       "severity": "mild",
       "text": "engine_pod_cpp_CPodFile_cleanup_FUN_0053be30(param_1);",
@@ -2079,7 +1470,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 467,
+      "line": 463,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != (char *)0x0) {",
@@ -2087,7 +1478,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 471,
+      "line": 467,
       "match": "param_3",
       "severity": "mild",
       "text": "*param_3 = cVar1;",
@@ -2095,7 +1486,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 475,
+      "line": 471,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3[1] = cVar1;",
@@ -2103,7 +1494,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 476,
+      "line": 472,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = param_3 + 2;",
@@ -2111,7 +1502,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 476,
+      "line": 472,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = param_3 + 2;",
@@ -2119,7 +1510,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 88,
+      "line": 85,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2127,7 +1518,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 113,
+      "line": 111,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2135,7 +1526,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 155,
+      "line": 151,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2143,7 +1534,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 223,
+      "line": 218,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2151,7 +1542,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 234,
+      "line": 229,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2159,7 +1550,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 245,
+      "line": 240,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2167,7 +1558,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 267,
+      "line": 262,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2175,7 +1566,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 313,
+      "line": 308,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2183,7 +1574,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 361,
+      "line": 357,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2191,7 +1582,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 407,
+      "line": 403,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2199,7 +1590,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 435,
+      "line": 431,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2207,7 +1598,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 453,
+      "line": 449,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2215,7 +1606,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 469,
+      "line": 465,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -2223,15 +1614,15 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (constant-count countdown loop with a cast-dword store `*(uint *)dst = *(uint *)src;` and both pointers stepped by +4 \u2014 REP MOVSD lowering with a baked-in dword count). Replace the loop with memcpy(dst, src, count * 4) in a .keep.",
-      "line": 71,
+      "line": 69,
       "match": "for (X = N; ...) { *(uint *)d = *(uint *)s; d/s += 4; }",
       "severity": "moderate",
-      "text": "for (iVar6 = 0x80; iVar6 != 0; iVar6 = iVar6 + -1) {",
+      "text": "for (iVar5 = 0x80; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 138,
+      "line": 136,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2239,7 +1630,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 386,
+      "line": 382,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -2247,7 +1638,7 @@
     },
     {
       "description": "_qsort element width is the literal 0x14 instead of sizeof(*base). If the elements are pointers or hold one, the sort walks misaligned elements on the 64-bit build.",
-      "line": 204,
+      "line": 199,
       "match": "_qsort",
       "severity": "moderate",
       "text": "_qsort",

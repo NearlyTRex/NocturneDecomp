@@ -69,16 +69,16 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bb0
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_doc.cpp_FUN_00470750
 ;   core_doc.cpp_FUN_004707d0
-;   core_gore.cpp_FUN_004e6060
-;   core_hero.cpp_FUN_004eb5e0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
 ;   core_hero.cpp_FUN_004eb7f0
 ;   core_hero.cpp_FUN_004ec280
-;   core_hero.cpp_FUN_004ec2c0
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   ... and 4 more
@@ -340,8 +340,8 @@ section .text
     PUSH 0x1                            ; 0046c0ce
         ;   Label: LAB_0046c0ce
     PUSH EBX                            ; 0046c0d0
-    CALL core_hero.cpp_FUN_004ec2c0     ; 0046c0d1
-        ;   XREF to: 004ec2c0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004ec2c0(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0 ; 0046c0d1
+        ;   XREF to: 004ec2c0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(CHero * this_ptr, int hand_index)
     MOV EDI,dword ptr [EBX + 0x1ff5c]   ; 0046c0d6
     ADD ESP,0x8                         ; 0046c0dc
     CMP EDI,0x1                         ; 0046c0df
@@ -668,7 +668,7 @@ section .text
         ;   Label: LAB_0046c501
     MOV EAX,[0x00622c18]                ; 0046c508 | g_CDemonSetPtr
     MOV EDX,dword ptr [ESP + 0x158]     ; 0046c50d
-    CMP EDX,dword ptr [EAX + 0x150fec]  ; 0046c514 | g_CDemonSetInstance.field1380332_0x150fec
+    CMP EDX,dword ptr [EAX + 0x150fec]  ; 0046c514 | g_CDemonSetInstance.enemy_count
     JGE 0x0046c78f                      ; 0046c51a
         ;   XREF to: 0046c78f (CONDITIONAL_JUMP)  ; LAB_0046c78f
     MOV EDX,dword ptr [0x01d06ab4]      ; 0046c520 | DAT_01d06ab4
@@ -751,8 +751,8 @@ section .text
     ADD ESP,0x4                         ; 0046c635
     PUSH 0x41700000                     ; 0046c638
     PUSH 0x41200000                     ; 0046c63d
-    CALL core_actor.cpp_FUN_0040cc00    ; 0046c642
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 0046c642
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x168],EAX     ; 0046c647
     FLD float ptr [ESP + 0x168]         ; 0046c64e
     ADD ESP,0x8                         ; 0046c655
@@ -816,8 +816,8 @@ section .text
     PUSH EAX                            ; 0046c721
     MOV EDX,dword ptr [0x0061dca4]      ; 0046c722 | g_CGorePtr
     PUSH EDX                            ; 0046c728
-    CALL core_gore.cpp_FUN_004e6060     ; 0046c729
-        ;   XREF to: 004e6060 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004e6060(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060 ; 0046c729
+        ;   XREF to: 004e6060 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 0046c72e
     PUSH 0x5d9ec2                       ; 0046c731 | = "kick1.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 0046c736
@@ -977,8 +977,8 @@ section .text
     ADD ESP,0xc                         ; 0046c8e9
     PUSH EBX                            ; 0046c8ec
         ;   Label: LAB_0046c8ec
-    CALL core_hero.cpp_FUN_004eb5e0     ; 0046c8ed
-        ;   XREF to: 004eb5e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004eb5e0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0 ; 0046c8ed
+        ;   XREF to: 004eb5e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero * this_ptr)
     ADD ESP,0x4                         ; 0046c8f2
     TEST EAX,EAX                        ; 0046c8f5
     JNZ 0x0046bef7                      ; 0046c8f7

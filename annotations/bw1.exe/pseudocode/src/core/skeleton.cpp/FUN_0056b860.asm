@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_0051b2b0 at 0051b3e9
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_0051b2b0 at 0051b3e9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_027902bc

@@ -12,8 +12,8 @@
 ;   sound_sndmain.cpp_FUN_00575200 at 00575209
 ;   sound_sndmain.cpp_FUN_00575220 at 00575229
 ;   sound_sndmain.cpp_FUN_00575240 at 00575249
-;   sound_sndmain.cpp_FUN_005760b0 at 00576233
-;   sound_sndmain.cpp_FUN_005763b0 at 0057644e
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576233
+;   sound_sndmain.cpp_writeIni_FUN_005763b0 at 0057644e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006232e8

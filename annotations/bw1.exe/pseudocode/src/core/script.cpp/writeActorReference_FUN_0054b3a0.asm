@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_0054b710 at 0054b877
+;   core_script.cpp_CScript_saveState_FUN_0054b710 at 0054b877
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_005f0056

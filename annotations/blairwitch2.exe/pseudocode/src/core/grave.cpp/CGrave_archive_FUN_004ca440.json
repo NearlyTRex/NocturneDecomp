@@ -1,0 +1,184 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 87,
+    "complexity_score": 43,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 115
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004ca440",
+    "address_range": [
+      [
+        "004ca440",
+        "004ca539"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_grave.cpp_CGrave_archive_FUN_004ca440",
+    "signature": "void __cdecl core_grave_cpp_CGrave_archive_FUN_004ca440(CGrave *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d95ba",
+      "name": "s_model_name_005d95ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d95c5",
+      "name": "DAT_005d95c5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d95c9",
+      "name": "s_active_005d95c9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d95d0",
+      "name": "s_graveState_005d95d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d95db",
+      "name": "s_curFrame_005d95db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d95e4",
+      "name": "s_hideOnFirstFrame_005d95e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d95f5",
+      "name": "s_startCondition_005d95f5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d9604",
+      "name": "s_startSound_005d9604",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006179e4",
+      "name": "g_CGraveClassVersion",
+      "type": "int",
+      "value": "0x4"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.367647058823529,
+    "instruction_count": 68,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 9,
+      "CBRANCH": 4,
+      "COPY": 43,
+      "INT_ADD": 28,
+      "INT_AND": 34,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 35,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 17,
+      "INT_SUB": 33,
+      "LOAD": 8,
+      "POPCOUNT": 17,
+      "RETURN": 2,
+      "STORE": 30
+    },
+    "pcode_op_count": 297
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrave *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_005d95c5",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->fps,&DAT_005d95c5);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f7cb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

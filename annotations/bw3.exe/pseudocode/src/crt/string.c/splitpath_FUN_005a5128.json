@@ -16,6 +16,12 @@
   },
   "cross_references": [
     {
+      "addr": "004bfa40",
+      "from_addr": "004bfa74",
+      "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bfa40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004bda10",
       "from_addr": "004bda41",
       "name": "core_game.cpp_FUN_004bda10",
@@ -34,15 +40,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004bfa40",
-      "from_addr": "004bfa74",
-      "name": "core_game.cpp_FUN_004bfa40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00530610",
       "from_addr": "00530795",
       "name": "core_script.cpp_CScript_dbLoad_FUN_00530610",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00530990",
+      "from_addr": "005309b6",
+      "name": "core_script.cpp_CScript_findDialogEntry_FUN_00530990",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005297a0",
+      "from_addr": "0052984a",
+      "name": "core_script.cpp_CScript_initRuntime_FUN_005297a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,21 +64,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005297a0",
-      "from_addr": "0052984a",
-      "name": "core_script.cpp_FUN_005297a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00530990",
-      "from_addr": "005309b6",
-      "name": "core_script.cpp_FUN_00530990",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00465e50",
       "from_addr": "00465e6c",
-      "name": "engine_dosio.cpp_FUN_00465e50",
+      "name": "engine_dosio.cpp_splitPath_FUN_00465e50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -106,7 +106,7 @@
       {
         "call_addr": "00465e6c",
         "call_type": "direct",
-        "caller": "engine_dosio.cpp_FUN_00465e50",
+        "caller": "engine_dosio.cpp_splitPath_FUN_00465e50",
         "estimated_params": 5,
         "instructions_analyzed": 13,
         "method": "push_count",
@@ -161,7 +161,7 @@
       {
         "call_addr": "004bfa74",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bfa40",
+        "caller": "core_game.cpp_CGame_promptLoadGame_FUN_004bfa40",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "0052984a",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_005297a0",
+        "caller": "core_script.cpp_CScript_initRuntime_FUN_005297a0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +205,7 @@
       {
         "call_addr": "005309b6",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00530990",
+        "caller": "core_script.cpp_CScript_findDialogEntry_FUN_00530990",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",

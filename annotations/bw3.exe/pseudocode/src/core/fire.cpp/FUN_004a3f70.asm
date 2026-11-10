@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_FUN_0049d090 at 0049d310
-;   core_firestff.cpp_FUN_004a4d00 at 004a4d52
+;   core_firestff.cpp_CFirestaff_fire_FUN_004a4d00 at 004a4d52
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d0bb90

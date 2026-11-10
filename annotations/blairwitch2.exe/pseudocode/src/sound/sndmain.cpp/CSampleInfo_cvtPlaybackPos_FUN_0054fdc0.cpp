@@ -14,17 +14,17 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_0054fdc0(CSample
   if (input_type != output_type) {
     if (input_type != 0) {
       if (input_type < 2) {
-        position = (double)*(int *)(this_ptr + 0x10c) * position;
+        position = (double)this_ptr->sample_rate * position;
       }
       else if (input_type == 2) {
-        if (*(int *)(this_ptr + 0x110) < 1) {
+        if (this_ptr->sample_count < 1) {
           _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
           _DAT_01d046a4 = 0xdbc;
           core_main_c_FUN_004e4500("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr);
-          position = (double)*(int *)(this_ptr + 0x110) * position;
+          position = (double)this_ptr->sample_count * position;
         }
         else {
-          position = (double)*(int *)(this_ptr + 0x110) * position;
+          position = (double)this_ptr->sample_count * position;
         }
       }
       else {
@@ -35,17 +35,17 @@ double __cdecl sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_0054fdc0(CSample
     }
     if (output_type != 0) {
       if (output_type < 2) {
-        position = position / (double)*(int *)(this_ptr + 0x10c);
+        position = position / (double)this_ptr->sample_rate;
       }
       else if (output_type == 2) {
-        if (*(int *)(this_ptr + 0x110) < 1) {
+        if (this_ptr->sample_count < 1) {
           _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
           _DAT_01d046a4 = 0xdcf;
           core_main_c_FUN_004e4500("SampleInfo::cvtPlaybackPos - can't use relative sample position when length of %s is not known.",this_ptr);
-          position = position / (double)*(int *)(this_ptr + 0x110);
+          position = position / (double)this_ptr->sample_count;
         }
         else {
-          position = position / (double)*(int *)(this_ptr + 0x110);
+          position = position / (double)this_ptr->sample_count;
         }
       }
       else {

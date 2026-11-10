@@ -14,7 +14,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004c9fa0(CGabriella *t
   int iVar1;
   int iVar2;
   
-  iVar1 = core_charactr_cpp_FUN_0042f240((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240((CCharacter *)this_ptr);
   if (iVar1 != 0) {
     core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0((CDemonActor *)this_ptr);
     core_cloth_cpp_CCloth_render_FUN_00441800
@@ -23,7 +23,7 @@ int __cdecl core_gabriela_cpp_CGabriella_renderOpaque_FUN_004c9fa0(CGabriella *t
     iVar2 = *(int *)&this_ptr->field_0x1fe20;
     if (((iVar2 != 0) &&
         ((**(code **)(*(int *)(iVar2 + 0x154) + 0x10))(iVar2),
-        (float)_DAT_005e11b4 < *(float *)&this_ptr->field_0x1ffb4)) &&
+        (float)_DAT_005e11b4 < this_ptr->draw_blend)) &&
        ((iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
                            (*(uint *)&this_ptr->field_0x1fe20,g_CDynamiteClassInfo.name_hash),
         iVar2 == 0 ||

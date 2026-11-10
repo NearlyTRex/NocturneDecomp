@@ -2,25 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 118,
+    "complexity_score": 54,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 7,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 8,
+    "pseudocode_lines": 24,
+    "suspect_count": 2,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 88
+    "total_lines": 89
   },
   "cross_references": [
     {
       "addr": "0040b870",
       "from_addr": "0040b8a9",
-      "name": "core_actor.cpp_FUN_0040b870",
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -103,7 +102,7 @@
       {
         "call_addr": "0040b8a9",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040b870",
+        "caller": "core_actor.cpp_archiveMotionState_FUN_0040b870",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,54 +182,6 @@
       "severity": "mild",
       "text": "_fscanf(file_handle,&DAT_005eaf8b);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "this_ptr->field_0x30 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,\"%d,%f\",&this_ptr->field_0x4,&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "iVar1 = _fscanf(file_handle,\"%d,%f\",&this_ptr->field_0x4,&this_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(iVar1 = _fscanf(file_handle,\"\\\"%[^\\\"]\\\" , %f\",&this_ptr->field_0x30,&this_ptr->field_0x8),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(iVar1 = _fscanf(file_handle,\"\\\"%[^\\\"]\\\" , %f\",&this_ptr->field_0x30,&this_ptr->field_0x8),",
-      "type": "unnamed_field"
     }
   ]
 }

@@ -14,7 +14,7 @@ void engine_texture_cpp_FUN_0056a960(void)
 {
   int iVar1;
   
-  iVar1 = FUN_005a3cb2(0x1800c);
+  iVar1 = debugAllocTracked1(0x1800c);
   if (iVar1 == 0) {
     _DAT_02cfd0d0 = 0;
   }

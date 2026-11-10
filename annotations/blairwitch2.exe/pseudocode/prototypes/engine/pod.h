@@ -21,13 +21,13 @@ CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 // Address: 00519ec0
 CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 
-// Original: engine_pod.cpp_FUN_00519ee0
+// Original: engine_pod.cpp_qsortByFilename_FUN_00519ee0
 // Address: 00519ee0
-void FUN_00519ee0(undefined4 *param_1,undefined4 *param_2);
+int __cdecl qsortByFilename(char **filename1_ptr,char **filename2_ptr);
 
-// Original: engine_pod.cpp_FUN_00519f00
+// Original: engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00
 // Address: 00519f00
-int __cdecl FUN_00519f00(CPodFile *this_ptr,char *pod_filename);
+int __cdecl CPodFile::mountFromFile(CPodFile *this_ptr,char *pod_filename);
 
 // Original: engine_pod.cpp_CPodFile_cleanup_FUN_0051a8f0
 // Address: 0051a8f0
@@ -69,9 +69,9 @@ CPod * __cdecl CPod::dtor(CPod *this_ptr,uint flags);
 // Address: 0051b110
 void FUN_0051b110(int *param_1,char *param_2);
 
-// Original: engine_pod.cpp_FUN_0051b1e0
+// Original: engine_pod.cpp_CPod_remount_FUN_0051b1e0
 // Address: 0051b1e0
-void FUN_0051b1e0(int *param_1);
+void __cdecl CPod::remount(CPod *this_ptr);
 
 // Original: engine_pod.cpp_CPod_dismount_FUN_0051b280
 // Address: 0051b280

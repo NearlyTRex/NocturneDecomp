@@ -27,13 +27,9 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
   float local_33c;
   float local_338;
   float local_334;
-  int local_330;
-  int local_32c;
-  int local_328;
+  CVector3i local_330;
   int local_324;
-  int local_320;
-  int local_31c;
-  int local_318;
+  CVector3i local_320;
   int local_314;
   float local_310;
   float local_30c [4];
@@ -227,7 +223,8 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
   
   bVar3 = 0;
   __arrinit(&local_360,4,&g_CVectorTypeInfo);
-  if (((param_5 < 3) || (iVar1 = core_actor_cpp_FUN_0040cf40(0.5), iVar1 == 0)) && (param_5 < 4)) {
+  if (((param_5 < 3) || (iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(0.5), iVar1 == 0)) &&
+     (param_5 < 4)) {
     if (&local_360 != param_2) {
       local_360 = *param_2;
       local_35c = param_2[1];
@@ -304,17 +301,17 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
       local_338 = local_12c;
       local_334 = local_128;
     }
-    local_330 = *param_3;
-    local_32c = (*param_3 + param_3[1]) / 2;
+    local_330.x = *param_3;
+    local_330.y = (*param_3 + param_3[1]) / 2;
     iVar1 = param_3[3] + *param_3 + param_3[1] + param_3[2];
     iVar2 = iVar1 >> 0x1f;
-    local_328 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_330.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
     local_324 = (*param_3 + param_3[3]) / 2;
-    local_320 = *param_4;
-    local_31c = (local_320 + param_4[1]) / 2;
+    local_320.x = *param_4;
+    local_320.y = (local_320.x + param_4[1]) / 2;
     iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
     iVar2 = iVar1 >> 0x1f;
-    local_318 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_320.z = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
     local_314 = (*param_4 + param_4[3]) / 2;
     core_glass_cpp_FUN_004caeb0(param_1,&local_360,&local_330,&local_320,param_5 + 1);
     local_7c = *param_2 + param_2[3];
@@ -393,15 +390,15 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
       local_338 = local_2a0;
       local_334 = local_29c;
     }
-    local_330 = (*param_3 + param_3[1]) / 2;
-    local_32c = param_3[1];
-    local_328 = (param_3[1] + param_3[2]) / 2;
+    local_330.x = (*param_3 + param_3[1]) / 2;
+    local_330.y = param_3[1];
+    local_330.z = (param_3[1] + param_3[2]) / 2;
     iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
     iVar2 = iVar1 >> 0x1f;
     local_324 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_320 = (*param_4 + param_4[1]) / 2;
-    local_31c = param_4[1];
-    local_318 = (local_31c + param_4[2]) / 2;
+    local_320.x = (*param_4 + param_4[1]) / 2;
+    local_320.y = param_4[1];
+    local_320.z = (local_320.y + param_4[2]) / 2;
     iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
     iVar2 = iVar1 >> 0x1f;
     local_314 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
@@ -484,16 +481,16 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
     }
     iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
     iVar2 = iVar1 >> 0x1f;
-    local_330 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_32c = (param_3[1] + param_3[2]) / 2;
-    local_328 = param_3[2];
+    local_330.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_330.y = (param_3[1] + param_3[2]) / 2;
+    local_330.z = param_3[2];
     local_324 = (param_3[2] + param_3[3]) / 2;
     iVar1 = param_4[3] + *param_4 + param_4[1] + param_4[2];
     iVar2 = iVar1 >> 0x1f;
-    local_320 = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_31c = (param_4[1] + param_4[2]) / 2;
-    local_318 = param_4[2];
-    local_314 = (local_318 + param_4[3]) / 2;
+    local_320.x = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_320.y = (param_4[1] + param_4[2]) / 2;
+    local_320.z = param_4[2];
+    local_314 = (local_320.z + param_4[3]) / 2;
     core_glass_cpp_FUN_004caeb0(param_1,&local_360,&local_330,&local_320,param_5 + 1);
     local_1fc = *param_2 + param_2[9];
     local_1f8 = param_2[1] + param_2[10];
@@ -571,17 +568,17 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
       local_338 = param_2[10];
       local_334 = param_2[0xb];
     }
-    local_330 = (*param_3 + param_3[3]) / 2;
+    local_330.x = (*param_3 + param_3[3]) / 2;
     iVar1 = param_3[2] + *param_3 + param_3[1] + param_3[3];
     iVar2 = iVar1 >> 0x1f;
-    local_32c = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_328 = (param_3[2] + param_3[3]) / 2;
+    local_330.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_330.z = (param_3[2] + param_3[3]) / 2;
     local_324 = param_3[3];
-    local_320 = (*param_4 + param_4[3]) / 2;
+    local_320.x = (*param_4 + param_4[3]) / 2;
     iVar1 = param_4[2] + *param_4 + param_4[1] + param_4[3];
     iVar2 = iVar1 >> 0x1f;
-    local_31c = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
-    local_318 = (param_4[2] + param_4[3]) / 2;
+    local_320.y = (int)((iVar1 + iVar2 * -4) - (uint)(iVar2 << 1 < 0)) >> 2;
+    local_320.z = (param_4[2] + param_4[3]) / 2;
     local_314 = param_4[3];
     core_glass_cpp_FUN_004caeb0(param_1,&local_360,&local_330,&local_320,param_5 + 1);
     return;
@@ -601,16 +598,15 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
     local_344 = param_2[7];
     local_340 = param_2[8];
   }
-  local_330 = *param_3;
-  local_32c = param_3[1];
-  local_328 = param_3[2];
-  local_320 = *param_4;
-  local_31c = param_4[1];
-  local_318 = param_4[2];
-  core_fire_cpp_FUN_004a2780
-            (0x01C73654,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
-             (CVector3i *)&local_320,(SMRGLTextureBasic *)(param_1 + 0x164),
-             *(int *)(param_1 + 0x1ac));
+  local_330.x = *param_3;
+  local_330.y = param_3[1];
+  local_330.z = param_3[2];
+  local_320.x = *param_4;
+  local_320.y = param_4[1];
+  local_320.z = param_4[2];
+  core_fire_cpp_CFireEffect_createGlassParticle_FUN_004a2780
+            (0x01C73654,(STriangleVertices *)&local_360,&local_330,&local_320,
+             (SMRGLTextureBasic *)(param_1 + 0x164),*(int *)(param_1 + 0x1ac));
   if (&local_354 != param_2 + 6) {
     local_354 = param_2[6];
     local_350 = param_2[7];
@@ -621,13 +617,12 @@ void core_glass_cpp_FUN_004caeb0(int param_1,float *param_2,int *param_3,int *pa
     local_344 = param_2[10];
     local_340 = param_2[0xb];
   }
-  local_32c = param_3[2];
-  local_328 = param_3[3];
-  local_31c = param_4[2];
-  local_318 = param_4[3];
-  core_fire_cpp_FUN_004a2780
-            (0x01C73654,(STriangleVertices *)&local_360,(CVector3i *)&local_330,
-             (CVector3i *)&local_320,(SMRGLTextureBasic *)(param_1 + 0x164),
-             *(int *)(param_1 + 0x1ac));
+  local_330.y = param_3[2];
+  local_330.z = param_3[3];
+  local_320.y = param_4[2];
+  local_320.z = param_4[3];
+  core_fire_cpp_CFireEffect_createGlassParticle_FUN_004a2780
+            (0x01C73654,(STriangleVertices *)&local_360,&local_330,&local_320,
+             (SMRGLTextureBasic *)(param_1 + 0x164),*(int *)(param_1 + 0x1ac));
   return;
 }

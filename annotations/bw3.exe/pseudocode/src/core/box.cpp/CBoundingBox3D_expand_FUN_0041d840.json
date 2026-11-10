@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 208,
+    "complexity_score": 23,
     "cross_reference_count": 10,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 23,
-    "suspect_count": 18,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 85
   },
   "cross_references": [
@@ -30,7 +28,7 @@
     {
       "addr": "00423bc0",
       "from_addr": "00423c14",
-      "name": "core_bugs.cpp_FUN_00423bc0",
+      "name": "core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423bc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,7 +40,7 @@
     {
       "addr": "004616e0",
       "from_addr": "004617b1",
-      "name": "core_dmodel.cpp_FUN_004616e0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +58,7 @@
     {
       "addr": "0054bb60",
       "from_addr": "0054bc60",
-      "name": "core_skeleton.cpp_FUN_0054bb60",
+      "name": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0054bb60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,7 +94,7 @@
       {
         "call_addr": "004617b1",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_004616e0",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -107,7 +105,7 @@
       {
         "call_addr": "00461801",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_004616e0",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -118,7 +116,7 @@
       {
         "call_addr": "0046180e",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_004616e0",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,7 +138,7 @@
       {
         "call_addr": "0054bc60",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054bb60",
+        "caller": "core_skeleton.cpp_CDeformableModel_computeBoneBoundsAndFlags_FUN_0054bb60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -195,7 +193,7 @@
       {
         "call_addr": "00423c14",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00423bc0",
+        "caller": "core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00423bc0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,150 +256,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0xc < *(float *)point) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)point;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(float *)&point->field_0x4 < *(float *)&this_ptr->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(float *)&point->field_0x4 < *(float *)&this_ptr->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&point->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&point->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x10 < *(float *)&point->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x10 < *(float *)&point->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&point->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&point->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&point->field_0x8 < *(float *)&this_ptr->field_0x8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&point->field_0x8 < *(float *)&this_ptr->field_0x8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&point->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&point->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&point->field_0x8 <= *(float *)&this_ptr->field_0x14) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(float *)&point->field_0x8 <= *(float *)&this_ptr->field_0x14) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&point->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&point->field_0x8;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

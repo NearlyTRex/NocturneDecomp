@@ -1,0 +1,292 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 115,
+    "complexity_score": 161,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 12,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 151
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00521f40",
+    "address_range": [
+      [
+        "00521f40",
+        "00522087"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_prye.cpp_CPrye_archive_FUN_00521f40",
+    "signature": "void __cdecl core_prye_cpp_CPrye_archive_FUN_00521f40(CPrye *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "004d27b0",
+      "is_variadic": false,
+      "name": "core_hero.cpp_CHero_archive_FUN_004d27b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cd5d7",
+      "name": "s_objectToPickUp_005cd5d6+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cd5e6",
+      "name": "s_doorToOpen_005cd5e6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd5f1",
+      "name": "s_leverToPull_005cd5f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd5fd",
+      "name": "s_ladderToClimb_005cd5fd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd60b",
+      "name": "s_lhCarryObject_005cd60b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd619",
+      "name": "s_rhCarryObject_005cd619",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd627",
+      "name": "s_ladderToDescend_005cd627",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd637",
+      "name": "s_gunsDrawn_005cd637",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd641",
+      "name": "s_weapon_005cd641",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd648",
+      "name": "s_actionPending_005cd648",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd656",
+      "name": "s_layerActionIndex_005cd656",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cd667",
+      "name": "s_layerActionT_005cd667",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603978",
+      "name": "g_CPryeClassVersion",
+      "type": "int",
+      "value": "0x1"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.430232558139535,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 2,
+      "CALL": 13,
+      "CBRANCH": 8,
+      "COPY": 51,
+      "INT_ADD": 30,
+      "INT_AND": 44,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 46,
+      "INT_LESS": 8,
+      "INT_NOTEQUAL": 5,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 22,
+      "INT_SUB": 47,
+      "LOAD": 5,
+      "POPCOUNT": 22,
+      "RETURN": 2,
+      "STORE": 39
+    },
+    "pcode_op_count": 381
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPrye *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x20b98",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20b98,\"@objectToPickUp\" + 1)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x20b94",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20b94,\"doorToOpen\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x20ba0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20ba0,\"leverToPull\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x20ba4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20ba4,\"ladderToClimb\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x25b0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x25b0,\"lhCarryObject\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0x2628",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2628,\"rhCarryObject\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x20c20",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20c20,\"ladderToDescend\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x20bcc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x20bcc,\"gunsDrawn\")",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x20c24",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x20c24,\"weapon\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x20b64",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x20b64,\"actionPending\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x2f00",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x2f00,\"layerActionIndex\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x2f04",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2f04,\"layerActionT\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPrye",
+        "offset": 212,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

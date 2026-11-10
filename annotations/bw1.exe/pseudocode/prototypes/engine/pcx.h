@@ -17,6 +17,6 @@ void __cdecl saveScreenRaw16(char *filename);
 // Address: 00535bd0
 void __cdecl saveScreenRaw32(char *filename);
 
-// Original: engine_pcx.c_FUN_00535d80
+// Original: engine_pcx.c_saveScreenshotGeneral_FUN_00535d80
 // Address: 00535d80
-void __cdecl FUN_00535d80(char *filename);
+void __cdecl saveScreenshotGeneral(char *filename);

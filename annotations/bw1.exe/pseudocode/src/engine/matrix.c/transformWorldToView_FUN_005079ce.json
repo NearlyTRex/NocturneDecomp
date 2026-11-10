@@ -1,0 +1,246 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 145,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 40,
+    "suspect_count": 9,
+    "suspect_types": [
+      "unaffected_reg",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 116
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005079ce",
+    "address_range": [
+      [
+        "005079ce",
+        "00507a9c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "engine_matrix.c_transformWorldToView_FUN_005079ce",
+    "signature": "void engine_matrix_c_transformWorldToView_FUN_005079ce(int *param_1)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01c51d2c",
+      "name": "DAT_01c51d2c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d30",
+      "name": "DAT_01c51d30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d34",
+      "name": "DAT_01c51d34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d5c",
+      "name": "DAT_01c51d5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d60",
+      "name": "DAT_01c51d60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d64",
+      "name": "DAT_01c51d64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d68",
+      "name": "DAT_01c51d68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d6c",
+      "name": "DAT_01c51d6c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d70",
+      "name": "DAT_01c51d70",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d74",
+      "name": "DAT_01c51d74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d78",
+      "name": "DAT_01c51d78",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c51d7c",
+      "name": "DAT_01c51d7c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.8,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 45,
+      "COPY": 72,
+      "INT_ADD": 22,
+      "INT_AND": 148,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 49,
+      "INT_LEFT": 9,
+      "INT_LESS": 4,
+      "INT_MULT": 15,
+      "INT_NOTEQUAL": 36,
+      "INT_OR": 54,
+      "INT_RIGHT": 18,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 7,
+      "INT_SEXT": 27,
+      "INT_SLESS": 38,
+      "INT_SUB": 31,
+      "INT_XOR": 9,
+      "INT_ZEXT": 6,
+      "LOAD": 11,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 9,
+      "SUBPIECE": 18
+    },
+    "pcode_op_count": 660
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "00507a8f",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void engine_matrix_c_transformWorldToView_FUN_005079ce(int *param_1)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 15,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "int *unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar9 = *param_1 - _DAT_01c51d2c;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar8 = param_1[2] - _DAT_01c51d34;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 20,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar7 = param_1[1] - _DAT_01c51d30;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "*unaff_ESI = ((uint)((longlong)_DAT_01c51d5c * (longlong)iVar9) >> 0x10 |",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 33,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[1] = ((uint)(lVar1 * iVar9) >> 0x10 | (int)((ulonglong)(lVar1 * iVar9) >> 0x20) << 0x10)",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "unaff_ESI[2] = ((uint)(lVar4 * iVar9) >> 0x10 | (int)((ulonglong)(lVar4 * iVar9) >> 0x20) << 0x10)",
+      "type": "unaffected_reg"
+    }
+  ]
+}

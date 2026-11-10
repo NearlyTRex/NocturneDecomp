@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_FUN_00447660 at 0044774e
-;   core_main.c_FUN_004e46c0 at 004e4cfc
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4cfc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ceca8

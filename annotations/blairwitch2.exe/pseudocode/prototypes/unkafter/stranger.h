@@ -9,17 +9,9 @@
 // Address: 00459ff0
 void FUN_00459ff0(CDemonActor *param_1,int param_2,float param_3);
 
-// Original: unkafter_stranger.cpp_FUN_0045b190
-// Address: 0045b190
-void FUN_0045b190(CCharacter *param_1,SDamageInfo *param_2);
-
 // Original: unkafter_stranger.cpp_FUN_0045b510
 // Address: 0045b510
-void FUN_0045b510(CDemonActor *param_1,float param_2,int param_3);
-
-// Original: unkafter_stranger.cpp_FUN_0045bb50
-// Address: 0045bb50
-void FUN_0045bb50(int param_1,int param_2);
+void FUN_0045b510(CCharacter *param_1,float param_2,int param_3);
 
 // Original: unkafter_stranger.cpp_FUN_0045bba0
 // Address: 0045bba0
@@ -33,14 +25,6 @@ void FUN_0045bdc0(CCharacter *param_1,float param_2);
 // Address: 0045c960
 void FUN_0045c960(int param_1);
 
-// Original: unkafter_stranger.cpp_FUN_0045ca30
-// Address: 0045ca30
-void FUN_0045ca30(CHero *param_1);
-
-// Original: unkafter_stranger.cpp_FUN_0045d0c0
-// Address: 0045d0c0
-undefined4 FUN_0045d0c0(int param_1,undefined4 param_2);
-
 // Original: unkafter_stranger.cpp_FUN_0045d1f0
 // Address: 0045d1f0
 undefined4 FUN_0045d1f0(int param_1);
@@ -51,11 +35,7 @@ void FUN_0045d260(int param_1);
 
 // Original: unkafter_stranger.cpp_FUN_0045d2c0
 // Address: 0045d2c0
-void FUN_0045d2c0(CDemonActor *param_1);
-
-// Original: unkafter_stranger.cpp_FUN_0045d6d0
-// Address: 0045d6d0
-undefined4 FUN_0045d6d0(int param_1,int param_2,undefined4 param_3,float *param_4);
+void FUN_0045d2c0(CCharacter *param_1);
 
 // Original: unkafter_stranger.cpp_FUN_0045db40
 // Address: 0045db40
@@ -73,37 +53,13 @@ undefined4 FUN_0045dc20(int param_1);
 // Address: 0045dc30
 void FUN_0045dc30(int param_1,undefined4 param_2);
 
-// Original: unkafter_stranger.cpp_FUN_0045dc40
-// Address: 0045dc40
-int FUN_0045dc40(int param_1,int param_2,undefined4 param_3);
-
 // Original: unkafter_stranger.cpp_FUN_0045dd30
 // Address: 0045dd30
-void FUN_0045dd30(int param_1);
-
-// Original: unkafter_stranger.cpp_FUN_0045dda0
-// Address: 0045dda0
-undefined4 FUN_0045dda0(undefined4 param_1);
-
-// Original: unkafter_stranger.cpp_FUN_0045ddd0
-// Address: 0045ddd0
-void FUN_0045ddd0(CCharacter *param_1,int param_2,CVector3f *param_3);
-
-// Original: unkafter_stranger.cpp_FUN_0045de30
-// Address: 0045de30
-void FUN_0045de30(CCharacter *param_1,CDemonActor *param_2,CVector3f *param_3);
-
-// Original: unkafter_stranger.cpp_FUN_0045de80
-// Address: 0045de80
-undefined4 FUN_0045de80(int param_1,undefined4 *param_2);
-
-// Original: unkafter_stranger.cpp_FUN_0045def0
-// Address: 0045def0
-void FUN_0045def0(int param_1,undefined4 param_2);
+void FUN_0045dd30(CHero *param_1);
 
 // Original: unkafter_stranger.cpp_FUN_0045df30
 // Address: 0045df30
-undefined4 FUN_0045df30(int param_1);
+undefined4 FUN_0045df30(CCharacter *param_1);
 
 // Original: unkafter_stranger.cpp_FUN_0045e040
 // Address: 0045e040

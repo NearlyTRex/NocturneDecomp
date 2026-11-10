@@ -46,10 +46,9 @@ LAB_0054c1f8:
     if (0x3f < _DAT_02641920) {
       _DAT_02641920 = 0;
     }
-    if ((((*(int *)&g_SfxSamples[_DAT_02641920].field_0x150 == 0) &&
-         (*(int *)&g_SfxSamples[_DAT_02641920].field_0x154 == 0)) &&
-        (*(int *)&g_SfxSamples[_DAT_02641920].field_0x15c == 0)) &&
-       (*(int *)&g_SfxSamples[_DAT_02641920].field_0x1a8 == 0)) {
+    if ((((g_SfxSamples[_DAT_02641920].taken == 0) && (g_SfxSamples[_DAT_02641920].ref_count == 0))
+        && (*(int *)&g_SfxSamples[_DAT_02641920].field_0x15c == 0)) &&
+       (g_SfxSamples[_DAT_02641920].locked_length == 0)) {
       pCVar5 = g_SfxSamples + _DAT_02641920;
       bVar8 = pCVar5 == (CSfxSample *)0x0;
       goto LAB_0054c228;
@@ -72,14 +71,15 @@ LAB_0054c228:
     if (0 < iVar6) {
       do {
         cVar1 = *pcVar10;
-        *(char *)pCVar7 = cVar1;
+        (pCVar7->sample_info).name[0] = cVar1;
         if (cVar1 == '\0') break;
         cVar1 = pcVar10[1];
-        pCVar7->field_0x1 = cVar1;
+        (pCVar7->sample_info).name[1] = cVar1;
         pcVar10 = pcVar10 + 2;
-        pCVar7 = (CSfxSample *)&pCVar7->field_0x2;
+        pCVar7 = (CSfxSample *)((pCVar7->sample_info).name + 2);
       } while (cVar1 != '\0');
-      engine_dosio_cpp_FUN_00461070(filename,(char *)0x0,(char *)0x0,(char *)0x0,&local_238);
+      engine_dosio_cpp_splitPath_FUN_00461070
+                (filename,(char *)0x0,(char *)0x0,(char *)0x0,&local_238);
       if (local_238 == '.') {
         uVar4 = 0xffffffff;
         pcVar10 = &local_238;
@@ -104,36 +104,36 @@ LAB_0054c228:
         iVar6 = sound_sndmain_cpp_FUN_0054b4a0(&local_38,&pCVar5->field_0x178,pCVar5);
         if (iVar6 != 0) {
           sound_sndmain_cpp_FUN_0054bac0(pCVar5);
-          *(uint *)&pCVar5->field_0x150 = 0;
-          *(uint *)&pCVar5->field_0x154 = 0;
-          *(uint *)&pCVar5->field_0x158 = 0;
+          pCVar5->taken = 0;
+          pCVar5->ref_count = 0;
+          pCVar5->buffer_id = 0;
           *(uint *)&pCVar5->field_0x15c = 0;
           *(uint *)&pCVar5->field_0x160 = 0xffffffff;
-          uVar3 = *(uint *)&pCVar5->field_0x110;
-          *(uint *)&pCVar5->field_0x164 = uVar3;
-          *(uint *)&pCVar5->field_0x16c = uVar3;
-          *(uint *)&pCVar5->field_0x170 = uVar3;
-          uVar3 = sound_sndmain_cpp_FUN_0054fd90(pCVar5,uVar3);
+          iVar6 = (pCVar5->sample_info).sample_count;
+          *(int *)&pCVar5->field_0x164 = iVar6;
+          *(int *)&pCVar5->field_0x16c = iVar6;
+          *(int *)&pCVar5->field_0x170 = iVar6;
+          uVar3 = sound_sndmain_cpp_FUN_0054fd90(pCVar5,iVar6);
           *(uint *)&pCVar5->field_0x168 = uVar3;
-          iVar6 = sound_sndmain_cpp_FUN_0054d840(pCVar5);
+          iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0054d840(pCVar5);
           if (iVar6 != 0) {
             unkaddr_0057b9a0_cpp_FUN_0057d0c0(&local_38,*(uint *)&pCVar5->field_0x178,0);
-            iVar6 = sound_sndmain_cpp_FUN_0054daf0(pCVar5,0,*(uint *)&pCVar5->field_0x110);
+            iVar6 = sound_sndmain_cpp_FUN_0054daf0(pCVar5,0,(pCVar5->sample_info).sample_count);
             if (iVar6 == 0) {
               pcVar10 = "Failed to lock sample %s\n";
             }
             else {
-              iVar2 = sound_sndmain_cpp_FUN_0054fd90(pCVar5,*(uint *)&pCVar5->field_0x110);
+              iVar2 = sound_sndmain_cpp_FUN_0054fd90(pCVar5,(pCVar5->sample_info).sample_count);
               iVar6 = unkaddr_0057b9a0_cpp_FUN_0057cfe0(&local_38,iVar6,iVar2);
               if (iVar6 == iVar2) {
                 unkaddr_0057b9a0_cpp_FUN_0057d180(&local_38);
-                if ((*(int *)&pCVar5->field_0x104 == 0x10) &&
-                   (iVar6 = 0, 0 < *(int *)&pCVar5->field_0x110)) {
+                if (((pCVar5->sample_info).bit_depth == 0x10) &&
+                   (iVar6 = 0, 0 < (pCVar5->sample_info).sample_count)) {
                   do {
                     iVar6 = iVar6 + 1;
-                  } while (iVar6 < *(int *)&pCVar5->field_0x110);
+                  } while (iVar6 < (pCVar5->sample_info).sample_count);
                 }
-                sound_sndmain_cpp_FUN_0054dbf0(pCVar5);
+                sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0(pCVar5);
                 unkclass_instream_cpp_CInStreamFile_dtor_FUN_0057cec0(&local_38,0);
                 goto LAB_0054c57b;
               }
@@ -151,46 +151,46 @@ LAB_0054c228:
           _DAT_01d046a4 = 0x40d;
           core_main_c_FUN_004e4500("Unknown sample file format extension: %s",filename);
 LAB_0054c57b:
-          FUN_005b7790(&local_238,"SOUND: Loaded sample %s\n",filename);
+          _sprintf(&local_238,"SOUND: Loaded sample %s\n");
           wincore_winrun_cpp_FUN_0058ffc0(&local_238);
           return pCVar5;
         }
-        sound_mp3_cpp_FUN_00509cd0(&g_CMP3DecoderInstance,filename);
-        *(uint *)&pCVar5->field_0x104 = 0x10;
-        *(uint *)&pCVar5->field_0x108 = g_CMP3DecoderInstance._260_4_;
-        uVar3 = g_CMP3DecoderInstance._256_4_;
-        *(uint *)&pCVar5->field_0x110 = 0xffffffff;
-        *(uint *)&pCVar5->field_0x10c = uVar3;
+        sound_mp3_cpp_CMP3Decoder_openFile_FUN_00509cd0(&g_CMP3DecoderInstance,filename);
+        (pCVar5->sample_info).bit_depth = 0x10;
+        (pCVar5->sample_info).num_channels = g_CMP3DecoderInstance.num_channels;
+        iVar6 = g_CMP3DecoderInstance.sample_rate;
+        (pCVar5->sample_info).sample_count = -1;
+        (pCVar5->sample_info).sample_rate = iVar6;
         sound_sndmain_cpp_FUN_0054bac0(pCVar5);
-        if (*(int *)&pCVar5->field_0x110 < 0) {
+        if ((pCVar5->sample_info).sample_count < 0) {
           _DAT_01d046a0 = "..\\sound\\sndmain.cpp";
           _DAT_01d046a4 = 0x3dd;
           core_main_c_FUN_004e4500("Don't know length of sample %s",filename);
         }
-        *(uint *)&pCVar5->field_0x150 = 0;
-        *(uint *)&pCVar5->field_0x154 = 0;
-        *(uint *)&pCVar5->field_0x158 = 0;
+        pCVar5->taken = 0;
+        pCVar5->ref_count = 0;
+        pCVar5->buffer_id = 0;
         *(uint *)&pCVar5->field_0x15c = 0;
         *(uint *)&pCVar5->field_0x160 = 0xffffffff;
-        uVar3 = *(uint *)&pCVar5->field_0x110;
-        *(uint *)&pCVar5->field_0x164 = uVar3;
-        *(uint *)&pCVar5->field_0x16c = uVar3;
-        *(uint *)&pCVar5->field_0x170 = uVar3;
-        uVar3 = sound_sndmain_cpp_FUN_0054fd90(pCVar5,uVar3);
+        iVar6 = (pCVar5->sample_info).sample_count;
+        *(int *)&pCVar5->field_0x164 = iVar6;
+        *(int *)&pCVar5->field_0x16c = iVar6;
+        *(int *)&pCVar5->field_0x170 = iVar6;
+        uVar3 = sound_sndmain_cpp_FUN_0054fd90(pCVar5,iVar6);
         *(uint *)&pCVar5->field_0x168 = uVar3;
-        iVar6 = sound_sndmain_cpp_FUN_0054d840(pCVar5);
+        iVar6 = sound_sndmain_cpp_CSfxSample_allocateHwSample_FUN_0054d840(pCVar5);
         if (iVar6 != 0) {
           output_buffer =
-               (short *)sound_sndmain_cpp_FUN_0054daf0(pCVar5,0,*(uint *)&pCVar5->field_0x110)
-          ;
+               (short *)sound_sndmain_cpp_FUN_0054daf0(pCVar5,0,(pCVar5->sample_info).sample_count);
           if (output_buffer == (short *)0x0) {
             sound_sndmain_cpp_FUN_005549c0("Failed to lock sample %s\n",filename);
           }
           else {
             iVar6 = sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0
-                              (&g_CMP3DecoderInstance,output_buffer,*(int *)&pCVar5->field_0x110);
-            if (iVar6 == *(int *)&pCVar5->field_0x110) {
-              sound_sndmain_cpp_FUN_0054dbf0(pCVar5);
+                              (&g_CMP3DecoderInstance,output_buffer,
+                               (pCVar5->sample_info).sample_count);
+            if (iVar6 == (pCVar5->sample_info).sample_count) {
+              sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_0054dbf0(pCVar5);
               goto LAB_0054c57b;
             }
             sound_sndmain_cpp_FUN_005549c0("Error decoding file data from %s\n",filename);

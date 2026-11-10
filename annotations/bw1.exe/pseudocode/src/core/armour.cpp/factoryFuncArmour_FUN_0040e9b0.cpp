@@ -11,7 +11,7 @@ void core_armour_cpp_factoryFuncArmour_FUN_0040e9b0(void)
 {
   CArmour *this_ptr;
   
-  this_ptr = (CArmour *)FUN_005c0f32(0xc2cc);
+  this_ptr = (CArmour *)debugAllocTracked1(0xc2cc);
   if (this_ptr == (CArmour *)0x0) {
     return;
   }

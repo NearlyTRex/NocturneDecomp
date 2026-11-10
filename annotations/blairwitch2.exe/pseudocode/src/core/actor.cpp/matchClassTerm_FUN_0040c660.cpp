@@ -51,6 +51,6 @@ uint __cdecl core_actor_cpp_matchClassTerm_FUN_0040c660(CDemonActorType *param_1
     iVar4 = *param_2;
     *param_2 = iVar4 + 1;
   } while (((&DAT_0061ed94)[(byte)(*(char *)(iVar4 + 1) + 1)] & 0xe0) != 0);
-  uVar3 = core_actor_cpp_FUN_0040c870(param_1,uVar3);
+  uVar3 = core_actor_cpp_checkNameHash_FUN_0040c870(param_1,uVar3);
   return uVar3;
 }

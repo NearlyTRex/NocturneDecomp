@@ -1,0 +1,384 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 203,
+    "complexity_score": 255,
+    "cross_reference_count": 2,
+    "function_call_count": 7,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 90,
+    "suspect_count": 14,
+    "suspect_types": [
+      "unaffected_reg",
+      "undefined_data",
+      "unrolled_strchr",
+      "unrolled_strcpy",
+      "unrolled_strlen"
+    ],
+    "total_lines": 293
+  },
+  "cross_references": [
+    {
+      "addr": "004d8840",
+      "from_addr": "004d8895",
+      "name": "engine_ini.cpp_getProfileInteger_FUN_004d8840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8800",
+      "from_addr": "004d8827",
+      "name": "engine_ini.cpp_getProfileString_FUN_004d8800",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d8180",
+    "address_range": [
+      [
+        "004d8180",
+        "004d835e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
+    "signature": "int __cdecl engine_ini_cpp_CIni_getProfileString_FUN_004d8180(CIni *this_ptr,char *section,char *key,char *default_value,char *output_buffer,int buffer_size,char *filename)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b77c0",
+      "is_variadic": false,
+      "name": "crt_memory.c_memset_FUN_005b77c0"
+    },
+    {
+      "addr": "005b89c0",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fclose_FUN_005b89c0"
+    },
+    {
+      "addr": "005b9600",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgets_FUN_005b9600"
+    },
+    {
+      "addr": "005b910c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fopen_FUN_005b910c"
+    },
+    {
+      "addr": "005b8c30",
+      "is_variadic": false,
+      "name": "crt_string.c__strcmp_FUN_005b8c30"
+    },
+    {
+      "addr": "005b9cf0",
+      "is_variadic": false,
+      "name": "crt_string.c__strncpy_FUN_005b9cf0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dab81",
+      "name": "DAT_005dab81",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005dab84",
+      "name": "s_s_005dab84",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004d8827",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_getProfileString_FUN_004d8800",
+        "estimated_params": 7,
+        "instructions_analyzed": 17,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "004d8895",
+        "call_type": "direct",
+        "caller": "engine_ini.cpp_getProfileInteger_FUN_004d8840",
+        "estimated_params": 7,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.765822784810126,
+    "instruction_count": 158,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CBRANCH": 21,
+      "COPY": 122,
+      "INT_ADD": 63,
+      "INT_AND": 106,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 100,
+      "INT_LESS": 15,
+      "INT_MULT": 3,
+      "INT_NEGATE": 2,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 19,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 49,
+      "INT_SUB": 59,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 40,
+      "POPCOUNT": 49,
+      "RETURN": 3,
+      "STORE": 43
+    },
+    "pcode_op_count": 753
+  },
+  "stack_frame": {
+    "frame_size": 564,
+    "local_size": 536,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_214",
+        "offset": -532,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_213",
+        "offset": -531,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_211",
+        "offset": -529,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIni *"
+      },
+      {
+        "is_param": true,
+        "name": "section",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "default_value",
+        "offset": 16,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "output_buffer",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "buffer_size",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "filename",
+        "offset": 28,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004d8249",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Unaffected register variable",
+      "line": 9,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "char *unaff_EBP;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005dab81",
+      "severity": "mild",
+      "text": "iVar2 = _fopen(filename,&DAT_005dab81);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 37,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = pcVar5;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 40,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = pcVar5 + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 41,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (*unaff_EBP == '=') goto LAB_004d8263;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 43,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "} while (*unaff_EBP != '\\0');",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 44,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "unaff_EBP = (char *)0x0;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 46,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "if (unaff_EBP != (char *)0x0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 47,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "*unaff_EBP = '\\0';",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 56,
+      "match": "unaff_EBP",
+      "severity": "moderate",
+      "text": "src = unaff_EBP + 1;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 81,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 59,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
+      "line": 72,
+      "match": "do { if (v==0) break; v=v-1; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strlen"
+    },
+    {
+      "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '=' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '=') in a .keep.",
+      "line": 36,
+      "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strchr"
+    }
+  ]
+}

@@ -12,3 +12,7 @@ void FUN_00459f50(void);
 // Original: core_dfont.cpp_FUN_0045a8d0
 // Address: 0045a8d0
 void __cdecl FUN_0045a8d0(void);
+
+// Original: core_dfont.cpp_remapFonts_FUN_0045aad0
+// Address: 0045aad0
+void __cdecl remapFonts(void);

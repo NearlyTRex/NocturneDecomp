@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 7,
-    "complexity_score": 43,
+    "complexity_score": 8,
     "cross_reference_count": 7,
     "function_call_count": 0,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 15
   },
   "cross_references": [
@@ -34,15 +32,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049a620",
-      "from_addr": "0049a628",
-      "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620",
+      "addr": "00494d20",
+      "from_addr": "00494d63",
+      "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00494d20",
-      "from_addr": "00494d63",
-      "name": "shape_edittool.cpp_FUN_00494d20",
+      "addr": "0049a620",
+      "from_addr": "0049a628",
+      "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,7 +105,7 @@
       {
         "call_addr": "00494d63",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494d20",
+        "caller": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -194,32 +192,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0xc = &g_CStrListVTable;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

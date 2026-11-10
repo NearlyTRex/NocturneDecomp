@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b7ee0 at 004b7ee4
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b7ee0 at 004b7ee4
 ;
 ; Called Functions:
 ;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_0057a2f0

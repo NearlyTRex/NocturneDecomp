@@ -18,19 +18,19 @@
     {
       "addr": "00558d20",
       "from_addr": "00558d5e",
-      "name": "sound_sndmain.cpp_FUN_00558d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00558d70",
-      "from_addr": "00558ded",
-      "name": "sound_sndmain.cpp_FUN_00558d70",
+      "name": "sound_sndmain.cpp_audioThreadProc_FUN_00558d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00558e10",
       "from_addr": "00558e39",
       "name": "sound_sndmain.cpp_killSoundThread_FUN_00558e10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00558d70",
+      "from_addr": "00558ded",
+      "name": "sound_sndmain.cpp_startSoundThread_FUN_00558d70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -54,7 +54,7 @@
     {
       "addr": "00571f10",
       "from_addr": "00571f94",
-      "name": "unkafter_trisock.cpp_FUN_00571f10",
+      "name": "support_trisock.cpp_FUN_00571f10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -107,7 +107,7 @@
       {
         "call_addr": "00571f94",
         "call_type": "direct",
-        "caller": "unkafter_trisock.cpp_FUN_00571f10",
+        "caller": "support_trisock.cpp_FUN_00571f10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +129,7 @@
       {
         "call_addr": "00558ded",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00558d70",
+        "caller": "sound_sndmain.cpp_startSoundThread_FUN_00558d70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -151,7 +151,7 @@
       {
         "call_addr": "00558d5e",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00558d20",
+        "caller": "sound_sndmain.cpp_audioThreadProc_FUN_00558d20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

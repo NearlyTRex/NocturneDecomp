@@ -33,7 +33,8 @@ void __cdecl core_event_cpp_CEventList_updateSfxEntries_FUN_00495280(CEventList 
       local_20 = dVar5;
       if (0.0 <= *(double *)(dest + 0x118)) {
         sound_sndmain_cpp_CSfxSample_init_FUN_00555840((CSfxSample *)local_170);
-        iVar2 = sound_sndmain_cpp_FUN_00556780(*(uint *)dest,(CSfxSample *)local_170);
+        iVar2 = sound_sndmain_cpp_getSfxSampleInfo_FUN_00556780
+                          (*(uint *)dest,(CSfxSample *)local_170);
         if (iVar2 == 0) goto LAB_00495300;
         pCVar4 = dest + 0x18;
         pCVar3 = local_170;

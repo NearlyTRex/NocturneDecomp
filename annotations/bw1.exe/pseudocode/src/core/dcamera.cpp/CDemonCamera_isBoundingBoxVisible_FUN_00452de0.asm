@@ -84,9 +84,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_lightgun.cpp_FUN_00500310 at 0050085d
-;   core_lightpis.cpp_FUN_00501a70 at 00501fbd
-;   core_set.cpp_FUN_00551d50 at 00551e9a
+;   core_lightgun.cpp_CLightGun_fire_FUN_00500310 at 0050085d
+;   core_lightpis.cpp_CLightPis_fire_FUN_00501a70 at 00501fbd
+;   core_set.cpp_CDemonSet_gatherVisibleLights_FUN_00551d50 at 00551e9a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d78f7

@@ -30,7 +30,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeCylindricalUVs_FU
     core_main_c_FUN_004e4500("CDeformableModelInstance::computeCylindricalUVs - points not generated");
   }
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
-  iVar1 = *(int *)(&pCVar2->field_0x2c + *(int *)&this_ptr->field_0x2230 * 4);
+  iVar1 = pCVar2->vertex_count[*(int *)&this_ptr->field_0x2230];
   iVar4 = *(int *)&this_ptr->field_0x2234;
   iVar8 = 1;
   iVar6 = *(int *)(iVar4 + 4);

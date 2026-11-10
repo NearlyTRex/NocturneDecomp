@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005c036c at 005c0374
-;   unkafter_2d.cpp_FUN_005c6210 at 005c638c
+;   crt_unknown.c_FUN_005c6210 at 005c638c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061f469

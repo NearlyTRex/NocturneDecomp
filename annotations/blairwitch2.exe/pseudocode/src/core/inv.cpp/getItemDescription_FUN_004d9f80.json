@@ -41,13 +41,13 @@
     "convention": "__cdecl",
     "is_ebp_frame": true,
     "name": "core_inv.cpp_getItemDescription_FUN_004d9f80",
-    "signature": "char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(undefined4 param_1)"
+    "signature": "char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *param_1)"
   },
   "function_calls": [
     {
       "addr": "004d9db0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004d9db0"
+      "name": "core_inv.cpp_getItemModel_FUN_004d9db0"
     },
     {
       "addr": "005b8130",
@@ -57,7 +57,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -187,7 +187,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(uint param_1)",
+      "text": "char * __cdecl core_inv_cpp_getItemDescription_FUN_004d9f80(CDemonActor *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -195,7 +195,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_inv_cpp_FUN_004d9db0(param_1);",
+      "text": "pCVar1 = core_inv_cpp_getItemModel_FUN_004d9db0(param_1);",
       "type": "unnamed_param"
     },
     {

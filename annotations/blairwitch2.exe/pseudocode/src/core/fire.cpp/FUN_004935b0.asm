@@ -20,19 +20,19 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0049c430 at 0049c771
+;   core_fire.cpp_CFireEffect_process_FUN_0049c430 at 0049c771
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5342
 ;   CGame* g_CGamePtr = 01cb6900
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CGameInstance.field644_0x284
-;   undefined4 g_CDemonSetInstance.field1420400_0x15ac70
-;   undefined4 g_CDemonSetInstance.field1420404_0x15ac74
-;   undefined4 g_CDemonSetInstance.field1420408_0x15ac78
+;   undefined4 g_CGameInstance.delta_time_float
+;   undefined4 g_CDemonSetInstance.field95_0x15ac70
+;   undefined4 g_CDemonSetInstance.field99_0x15ac74
+;   undefined4 g_CDemonSetInstance.field103_0x15ac78
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;
 ; *****************************************************************************
 
@@ -43,7 +43,7 @@ section .text
     SUB ESP,0x38                        ; 004935b1
     MOV EBX,dword ptr [ESP + 0x40]      ; 004935b4
     MOV EAX,[0x00616494]                ; 004935b8 | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x284]     ; 004935bd | g_CGameInstance.field644_0x284
+    MOV EAX,dword ptr [EAX + 0x284]     ; 004935bd | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x30],EAX      ; 004935c3
     FLD float ptr [ESP + 0x30]          ; 004935c7
     FMUL float ptr [0x005d5342]         ; 004935cb | DAT_005d5342
@@ -66,8 +66,8 @@ section .text
     FADD float ptr [EBX + 0x8]          ; 004935fc
     PUSH 0xbf800000                     ; 004935ff
     FSTP float ptr [EBX + 0x8]          ; 00493604
-    CALL core_actor.cpp_FUN_0040cf60    ; 00493607
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00493607
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 0049360c
     FLD float ptr [ESP + 0x44]          ; 00493610
     ADD ESP,0x8                         ; 00493614
@@ -76,8 +76,8 @@ section .text
     FADD float ptr [EBX + 0x4]          ; 00493620
     PUSH 0xbf800000                     ; 00493623
     FSTP float ptr [EBX + 0x4]          ; 00493628
-    CALL core_actor.cpp_FUN_0040cf60    ; 0049362b
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0049362b
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00493630
     FLD float ptr [ESP + 0x44]          ; 00493634
     ADD ESP,0x8                         ; 00493638
@@ -116,11 +116,11 @@ section .text
     FXCH                                ; 0049369c
     FSTP float ptr [EAX + 0x4]          ; 0049369e
     FSTP float ptr [EAX + 0x8]          ; 004936a1
-    FLD float ptr [EBX + 0x15ac70]      ; 004936a4 | g_CDemonSetInstance.field1420400_0x15ac70
+    FLD float ptr [EBX + 0x15ac70]      ; 004936a4 | g_CDemonSetInstance.field95_0x15ac70
     FMUL float ptr [ESP + 0x38]         ; 004936aa
-    FLD float ptr [EBX + 0x15ac74]      ; 004936ae | g_CDemonSetInstance.field1420404_0x15ac74
+    FLD float ptr [EBX + 0x15ac74]      ; 004936ae | g_CDemonSetInstance.field99_0x15ac74
     FMUL float ptr [ESP + 0x38]         ; 004936b4
-    FLD float ptr [EBX + 0x15ac78]      ; 004936b8 | g_CDemonSetInstance.field1420408_0x15ac78
+    FLD float ptr [EBX + 0x15ac78]      ; 004936b8 | g_CDemonSetInstance.field103_0x15ac78
     FMUL float ptr [ESP + 0x38]         ; 004936be
     LEA EDI,[ESP + 0x8]                 ; 004936c2
     LEA ESI,[ESP + 0x2c]                ; 004936c6

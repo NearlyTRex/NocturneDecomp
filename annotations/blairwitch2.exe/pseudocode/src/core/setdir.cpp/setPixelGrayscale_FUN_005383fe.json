@@ -1,0 +1,133 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 85,
+    "cross_reference_count": 0,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 5,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param"
+    ],
+    "total_lines": 23
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005383fe",
+    "address_range": [
+      [
+        "005383fe",
+        "0053842c"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_setdir.cpp_setPixelGrayscale_FUN_005383fe",
+    "signature": "void core_setdir_cpp_setPixelGrayscale_FUN_005383fe(int param_1,int param_2,int param_3)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 9.058823529411764,
+    "instruction_count": 17,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "COPY": 16,
+      "INT_ADD": 9,
+      "INT_AND": 41,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 11,
+      "INT_LEFT": 6,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 15,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 10,
+      "INT_SUB": 4,
+      "INT_XOR": 3,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 154
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_setdir_cpp_setPixelGrayscale_FUN_005383fe(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_setdir_cpp_setPixelGrayscale_FUN_005383fe(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 2,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void core_setdir_cpp_setPixelGrayscale_FUN_005383fe(int param_1,int param_2,int param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)(&DAT_01c2a38c + param_2 * 4) + param_1 * 4) = param_3 * 0x10101;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)(&DAT_01c2a38c + param_2 * 4) + param_1 * 4) = param_3 * 0x10101;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 5,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)(&DAT_01c2a38c + param_2 * 4) + param_1 * 4) = param_3 * 0x10101;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_01c2a38c",
+      "severity": "mild",
+      "text": "*(int *)(*(int *)(&DAT_01c2a38c + param_2 * 4) + param_1 * 4) = param_3 * 0x10101;",
+      "type": "undefined_data"
+    }
+  ]
+}

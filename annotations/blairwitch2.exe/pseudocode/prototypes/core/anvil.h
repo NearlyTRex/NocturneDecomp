@@ -21,29 +21,29 @@ CDemonActorType * CAnvil::getActorType(CAnvil *this_ptr);
 // Address: 0040ea30
 CAnvil * __cdecl CAnvil::ctor(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_FUN_0040eac0
+// Original: core_anvil.cpp_CAnvil_setup_FUN_0040eac0
 // Address: 0040eac0
-void FUN_0040eac0(CDemonActor *param_1);
+void __cdecl CAnvil::setup(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_FUN_0040eae0
+// Original: core_anvil.cpp_CAnvil_process_FUN_0040eae0
 // Address: 0040eae0
-void FUN_0040eae0(int param_1,float param_2);
+void __cdecl CAnvil::process(CAnvil *this_ptr,float delta_time);
 
-// Original: core_anvil.cpp_FUN_0040ec10
+// Original: core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10
 // Address: 0040ec10
-int FUN_0040ec10(int param_1);
+int __cdecl CAnvil::renderOpaque(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_FUN_0040ecc0
+// Original: core_anvil.cpp_CAnvil_archive_FUN_0040ecc0
 // Address: 0040ecc0
-void FUN_0040ecc0(CDemonActor *param_1);
+void __cdecl CAnvil::archive(CAnvil *this_ptr);
 
-// Original: core_anvil.cpp_FUN_0040ed40
+// Original: core_anvil.cpp_CAnvil_getCollisionType_FUN_0040ed40
 // Address: 0040ed40
-undefined4 FUN_0040ed40(void);
+ECollisionType __cdecl CAnvil::getCollisionType(CAnvil *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_anvil.cpp_FUN_0040ed50
+// Original: core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040ed50
 // Address: 0040ed50
-void FUN_0040ed50(int param_1);
+CBoundingBox3D * __cdecl CAnvil::getBoundingBox(CAnvil *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_anvil.cpp_CAnvil_dtor_FUN_0040ed90
 // Address: 0040ed90

@@ -97,12 +97,13 @@ void core_skeleton_cpp_FUN_00545a60(CDeformableModelInstance *param_1,int param_
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(param_1);
     local_1c = *(int *)&param_1->field_0x2250;
     if (local_1c == 0) {
-      if (0 < *(int *)&this_ptr->field_0x1d1f8) {
+      if (0 < this_ptr->bone_count) {
         local_3c = &param_1->field_0x6b0;
         local_44 = param_1;
         do {
           iVar3 = local_1c;
-          iVar2 = core_skeleton_cpp_FUN_00540fc0(this_ptr,local_1c,param_5);
+          iVar2 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0
+                            (this_ptr,local_1c,param_5);
           if (-1 < iVar2) {
             local_18 = (*param_6)(iVar3,param_5,param_4,iVar2,param_1);
             core_skeleton_cpp_FUN_00540f30(this_ptr,iVar3,local_5c,local_54,local_980,local_18);
@@ -126,16 +127,17 @@ void core_skeleton_cpp_FUN_00545a60(CDeformableModelInstance *param_1,int param_
           local_1c = local_1c + 1;
           local_44 = (CDeformableModelInstance *)&local_44->field_0x10;
           local_3c = local_3c + 0x10;
-        } while (local_1c < *(int *)&this_ptr->field_0x1d1f8);
+        } while (local_1c < this_ptr->bone_count);
       }
     }
     else if (local_1c == 1) {
       local_20 = 0;
-      if (0 < *(int *)&this_ptr->field_0x1d1f8) {
+      if (0 < this_ptr->bone_count) {
         local_40 = 0;
         local_28 = 0;
         do {
-          iVar3 = core_skeleton_cpp_FUN_00540fc0(this_ptr,local_20,param_5);
+          iVar3 = core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0
+                            (this_ptr,local_20,param_5);
           *(int *)((int)aiStack_33c + local_28) = iVar3;
           if (-1 < iVar3) {
             core_skeleton_cpp_FUN_00540f30(this_ptr,local_20,local_5c,local_54,local_980);
@@ -150,9 +152,9 @@ void core_skeleton_cpp_FUN_00545a60(CDeformableModelInstance *param_1,int param_
           local_20 = local_20 + 1;
           local_28 = local_28 + 4;
           local_40 = local_40 + 0x10;
-        } while (local_20 < *(int *)&this_ptr->field_0x1d1f8);
+        } while (local_20 < this_ptr->bone_count);
       }
-      iVar3 = *(int *)(&this_ptr->field_0x1d21c + param_5 * 0x24);
+      iVar3 = *(int *)(this_ptr->bone_list + param_5 * 0x24 + 0x20);
       if (-1 < iVar3) {
         core_skeleton_cpp_FUN_00540f30(this_ptr,iVar3,local_5c,local_54,local_980);
         pfVar5 = local_97c + iVar3 * 4 + (uint)bVar7 * -2 + 1;
@@ -163,7 +165,7 @@ void core_skeleton_cpp_FUN_00545a60(CDeformableModelInstance *param_1,int param_
              (afStack_1a8 + (uint)bVar7 * -2 + (uint)bVar7 * -2 + 0x11)[(uint)bVar7 * -2 + 1];
       }
       local_24 = 0;
-      if (0 < *(int *)&this_ptr->field_0x1d1f8) {
+      if (0 < this_ptr->bone_count) {
         local_4c = &param_1->field_0x6b0;
         local_30 = 0;
         local_38 = param_1;
@@ -171,7 +173,7 @@ void core_skeleton_cpp_FUN_00545a60(CDeformableModelInstance *param_1,int param_
         local_34 = &param_1->field_0x6b0;
         do {
           if (-1 < *(int *)((int)aiStack_33c + local_30)) {
-            iVar3 = *(int *)&local_2c->field_0x1d21c;
+            iVar3 = *(int *)(local_2c->bone_list + 0x20);
             local_48 = local_24 * 0x10;
             if (iVar3 < 0) {
               pfVar5 = local_97c + local_24 * 4;
@@ -218,7 +220,7 @@ void core_skeleton_cpp_FUN_00545a60(CDeformableModelInstance *param_1,int param_
           local_2c = (CSkeleton *)&local_2c->field_0x24;
           local_38 = (CDeformableModelInstance *)&local_38->field_0x10;
           local_34 = local_34 + 0x10;
-        } while (local_24 < *(int *)&this_ptr->field_0x1d1f8);
+        } while (local_24 < this_ptr->bone_count);
       }
     }
     else {

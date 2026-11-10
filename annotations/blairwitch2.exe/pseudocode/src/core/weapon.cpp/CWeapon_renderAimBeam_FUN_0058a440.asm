@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[1]:
-;   core_lightgun.cpp_FUN_004e3b10 at 004e4048
+;   core_lightgun.cpp_CLightGun_renderAimBeam_FUN_004e3b10 at 004e4048
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

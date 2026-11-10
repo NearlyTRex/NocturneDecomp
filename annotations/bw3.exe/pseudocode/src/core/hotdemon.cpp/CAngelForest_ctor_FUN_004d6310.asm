@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_hotdemon.cpp_CHotDemon_ctor_FUN_004d5430
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 004d6325
     PUSH EAX                            ; 004d632a
     MOV dword ptr [EAX + -0x4],0x5e1a64 ; 004d632b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 004d6332
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 004d6332
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x42200000 ; 004d6337
     ADD ESP,0x8                         ; 004d6341
     MOV dword ptr [EBX + 0xce5c],0x41700000 ; 004d6344

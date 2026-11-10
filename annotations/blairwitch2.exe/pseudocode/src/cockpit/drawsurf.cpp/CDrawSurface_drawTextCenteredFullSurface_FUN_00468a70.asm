@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurfacePrintf_FUN_00468a90 at 00468ad6
-;   core_script.cpp_FUN_00521af0 at 00521cdd
+;   core_script.cpp_CScript_renderEditor_FUN_00521af0 at 00521cdd
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_00468810

@@ -23,7 +23,7 @@ ECollisionType FUN_004444c0(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_construc.cpp_FUN_004444f0
 // Address: 004444f0
-int FUN_004444f0(int param_1);
+EDeathState FUN_004444f0(CCharacter *param_1);
 
 // Original: core_construc.cpp_FUN_00444520
 // Address: 00444520

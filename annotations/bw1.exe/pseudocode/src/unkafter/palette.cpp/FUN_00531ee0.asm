@@ -27,7 +27,7 @@
 ;
 ; Called Functions:
 ;   crt_math.c_round_FUN_005c03a0
-;   engine_font.cpp_FUN_004c2690
+;   engine_font.cpp_getDefaultTextColor_FUN_004c2690
 ;
 ; *****************************************************************************
 
@@ -154,8 +154,8 @@ section .text
     POP ESI                             ; 00532038
     POP EBX                             ; 00532039
     RET                                 ; 0053203a
-    CALL engine_font.cpp_FUN_004c2690   ; 0053203b
-        ;   XREF to: 004c2690 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c2690()
+    CALL engine_font.cpp_getDefaultTextColor_FUN_004c2690 ; 0053203b
+        ;   XREF to: 004c2690 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_getDefaultTextColor_FUN_004c2690()
         ;   Label: LAB_0053203b
     MOV ECX,dword ptr [EBX]             ; 00532040
     JMP 0x0053201b                      ; 00532042

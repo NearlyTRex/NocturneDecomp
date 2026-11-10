@@ -16,7 +16,7 @@
 ;   TerminatedCString s_d_d_d_d_005ecffc
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -39,8 +39,8 @@ section .text
     PUSH 0x5ecffc                       ; 00578cce | = "%d.%d.%d.%d"
     MOV EDX,dword ptr [ESP + 0x1c]      ; 00578cd3
     PUSH EDX                            ; 00578cd7
-    CALL crt_unknown.c_FUN_005b7790     ; 00578cd8
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00578cd8
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x18                        ; 00578cdd
     RET                                 ; 00578ce0
 

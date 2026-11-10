@@ -2,19 +2,25 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 185,
+    "complexity_score": 55,
     "cross_reference_count": 8,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 20,
-    "suspect_count": 16,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
     "total_lines": 69
   },
   "cross_references": [
+    {
+      "addr": "00468420",
+      "from_addr": "004686c0",
+      "name": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00467c00",
       "from_addr": "00467de0",
@@ -22,15 +28,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00468420",
-      "from_addr": "004686c0",
-      "name": "core_dmodel.cpp_FUN_00468420",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00503c90",
       "from_addr": "005040b1",
-      "name": "core_manpuz.cpp_FUN_00503c90",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +60,7 @@
     {
       "addr": "005ab530",
       "from_addr": "005ab60e",
-      "name": "core_wateract.cpp_FUN_005ab530",
+      "name": "core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -90,7 +90,7 @@
       {
         "call_addr": "004686c0",
         "call_type": "direct",
-        "caller": "core_dmodel.cpp_FUN_00468420",
+        "caller": "core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,132 +268,28 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&vertex1->field_0x4;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 6,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->vertex1).x = vertex1->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)&vertex1->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&vertex1->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&vertex1->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0xc != vertex2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 11,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)vertex2;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->vertex2).x = vertex2->x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&vertex2->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x10 = *(uint *)&vertex2->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&vertex2->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x14 = *(uint *)&vertex2->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if ((CVector3f *)&this_ptr->field_0x18 != vertex3) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
       "line": 16,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x18 = *(uint *)vertex3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&vertex3->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = *(uint *)&vertex3->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&vertex3->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x20 = *(uint *)&vertex3->field_0x8;",
-      "type": "unnamed_field"
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->vertex3).x = vertex3->x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

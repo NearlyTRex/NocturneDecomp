@@ -7,7 +7,7 @@
 ; COutStreamDebug * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   unkaddr_0059f520.cpp_FUN_0059f520 at 0059f525
+;   shape_memdbg.cpp_staticInit_FUN_0059f520 at 0059f525
 ;
 ; Called Functions:
 ;   support_trstream.cpp_FUN_005a14b0

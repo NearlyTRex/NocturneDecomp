@@ -55,7 +55,7 @@ int FUN_005a9bc0(uint *param_1)
   param_1[1] = 0;
   *param_1 = uVar1;
   if (((iVar5 == 0) && ((*(byte *)(param_1[2] + 0x10) & 1) != 0)) &&
-     (iVar3 = unkafter_asgaya_cpp_FUN_005ae9e0(param_1[4]), iVar3 == -1)) {
+     (iVar3 = FUN_005ae9e0(param_1[4]), iVar3 == -1)) {
     iVar5 = -1;
   }
   (*(code *)PTR_crt_unknown_c_FUN_005a7f44_006079a8)(param_1[4]);

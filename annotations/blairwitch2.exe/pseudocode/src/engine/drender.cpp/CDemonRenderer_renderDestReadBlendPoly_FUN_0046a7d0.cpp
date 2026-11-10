@@ -17,7 +17,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046a
   int iVar4;
   uint local_14;
   
-  if ((*(int *)(this_ptr + 0xc) == 0) ||
+  if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar4 = engine_3d_c_isVisiblePlane_FUN_00403970(poly + 8), iVar4 != 0)) {
     iVar4 = 0;
     local_14 = 0xffffffff;
@@ -28,13 +28,13 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046a
         iVar1 = *(int *)(pSVar2 + 0x18);
         *(int *)(&DAT_01ba5c84 + iVar3) = iVar1;
         iVar3 = iVar3 + 4;
-        local_14 = local_14 & *(uint *)(*(int *)this_ptr + 0x10 + iVar1 * 0x30);
+        local_14 = local_14 & *(uint *)(this_ptr->vertex_buffer_ptr + iVar1 * 0x30 + 0x10);
         pSVar2 = pSVar2 + 0xc;
         iVar4 = iVar4 + 1;
       } while (iVar4 < *(int *)(poly + 4));
     }
     if (((local_14 & 0x80000000) == 0) || ((local_14 & 0x1f) == 0)) {
-      if (*(int *)(this_ptr + 4) == 0) {
+      if (this_ptr->shadow_pass_active == 0) {
         if (DAT_006141c0 == 0x20) {
           _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
         }
@@ -43,15 +43,15 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderDestReadBlendPoly_FUN_0046a
         }
         _DAT_01c38b58 = 6;
         _DAT_01c38b54 = 0x2e7;
-        if ((*(int *)(this_ptr + 0x20) == 0) && (iVar4 = 0, 0 < *(int *)(poly + 4))) {
+        if ((this_ptr->skip_uv_extraction == 0) && (iVar4 = 0, 0 < *(int *)(poly + 4))) {
           iVar3 = 0;
           pSVar2 = poly;
           do {
             iVar1 = *(int *)(&DAT_01ba5c84 + iVar3);
-            *(uint *)(*(int *)this_ptr + 0x18 + iVar1 * 0x30) = *(uint *)(pSVar2 + 0x1c)
-            ;
-            *(uint *)(*(int *)this_ptr + iVar1 * 0x30 + 0x1c) = *(uint *)(pSVar2 + 0x20)
-            ;
+            *(uint *)(this_ptr->vertex_buffer_ptr + iVar1 * 0x30 + 0x18) =
+                 *(uint *)(pSVar2 + 0x1c);
+            *(uint *)(this_ptr->vertex_buffer_ptr + iVar1 * 0x30 + 0x1c) =
+                 *(uint *)(pSVar2 + 0x20);
             pSVar2 = pSVar2 + 0xc;
             iVar4 = iVar4 + 1;
             iVar3 = iVar3 + 4;

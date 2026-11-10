@@ -21,9 +21,9 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
+;   core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620
+;   core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0
 ;   core_skeleton.cpp_FUN_00544f80
-;   core_skeleton.cpp_FUN_00548620
-;   core_skeleton.cpp_FUN_005486f0
 ;   core_xform.cpp_FUN_005940b0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00593fe0
 ;
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 00455182
     LEA EBX,[ESI + 0x2b4]               ; 00455183
     PUSH EBX                            ; 00455189
-    CALL core_skeleton.cpp_FUN_00548620 ; 0045518a
-        ;   XREF to: 00548620 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_FUN_00548620(CDeformableModelInstance * this_ptr, SPose * bone_transform)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620 ; 0045518a
+        ;   XREF to: 00548620 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 0045518f
     FLD float ptr [ESI + 0x256bc]       ; 00455192
     PUSH -0x1                           ; 00455198
@@ -95,14 +95,14 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1aec]    ; 0045523c
     PUSH ECX                            ; 00455243
     PUSH EBX                            ; 00455244
-    CALL core_skeleton.cpp_FUN_00548620 ; 00455245
-        ;   XREF to: 00548620 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_FUN_00548620(CDeformableModelInstance * this_ptr, SPose * bone_transform)
+    CALL core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620 ; 00455245
+        ;   XREF to: 00548620 (UNCONDITIONAL_CALL)  ; SPose * core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_00548620(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 0045524a
     MOV EAX,ESP                         ; 0045524d
     PUSH EAX                            ; 0045524f
     PUSH EBX                            ; 00455250
-    CALL core_skeleton.cpp_FUN_005486f0 ; 00455251
-        ;   XREF to: 005486f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_005486f0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
+    CALL core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0 ; 00455251
+        ;   XREF to: 005486f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_005486f0(CDeformableModelInstance * this_ptr, SPose * bone_transform)
     ADD ESP,0x8                         ; 00455256
     ADD ESP,0x1ad8                      ; 00455259
     POP EDI                             ; 0045525f

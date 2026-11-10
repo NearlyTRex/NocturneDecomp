@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 24,
+    "complexity_score": 9,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 9,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unrolled_memcpy"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 25
   },
   "cross_references": [
@@ -24,7 +22,7 @@
     {
       "addr": "00568e40",
       "from_addr": "00568f0d",
-      "name": "core_teleport.cpp_FUN_00568e40",
+      "name": "core_teleport.cpp_CTeleport_process_FUN_00568e40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -59,7 +57,7 @@
       {
         "call_addr": "00568f0d",
         "call_type": "direct",
-        "caller": "core_teleport.cpp_FUN_00568e40",
+        "caller": "core_teleport.cpp_CTeleport_process_FUN_00568e40",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,14 +108,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Watcom raw-offset struct copy (3 consecutive `*(T *)(base + 0xNN) = *(T *)(base + 0xNN);` lines copying a contiguous block). Ghidra lost the struct type; replace the run with a struct assignment or `memcpy(...)` in a .keep (find/create the matching struct type for the block).",
-      "line": 6,
-      "match": "raw-offset struct copy",
-      "severity": "moderate",
-      "text": "*(uint *)(this_ptr + 0x1448) = *(uint *)(teleport_target + 4);",
-      "type": "unrolled_memcpy"
-    }
-  ]
+  "suspects": []
 }

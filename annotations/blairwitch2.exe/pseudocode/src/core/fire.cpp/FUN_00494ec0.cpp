@@ -36,18 +36,21 @@ void core_fire_cpp_FUN_00494ec0(int param_1)
       *(uint *)(param_1 + 0x40) = 0;
     }
   }
-  delta_time = *(float *)&g_CGamePtr->field_0x284;
+  delta_time = g_CGamePtr->delta_time_float;
   lVar3 = (longlong)*(int *)(param_1 + 0x58) * (longlong)_DAT_01c2a370;
   core_game_cpp_CGame_slamDT_FUN_004bd460
             (g_CGamePtr,
              (float)(int)((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) *
              (float)_DAT_005d53b2);
   core_particle_cpp_FUN_00510ef0(param_1);
-  fVar4 = (float)core_actor_cpp_FUN_0040cf60(0,*(float *)(param_1 + 0x48) * _DAT_005d53ba);
+  fVar4 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                    (0.0,*(float *)(param_1 + 0x48) * _DAT_005d53ba);
   fVar1 = *(float *)(param_1 + 0x48);
-  fVar5 = (float)core_actor_cpp_FUN_0040cf60(0,*(float *)(param_1 + 0x48) * _DAT_005d53ba);
+  fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                    (0.0,*(float *)(param_1 + 0x48) * _DAT_005d53ba);
   fVar2 = *(float *)(param_1 + 0x48);
-  fVar6 = (float)core_actor_cpp_FUN_0040cf60(0,*(float *)(param_1 + 0x48) * _DAT_005d53ba);
+  fVar6 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60
+                    (0.0,*(float *)(param_1 + 0x48) * _DAT_005d53ba);
   this_ptr = g_CGamePtr;
   *(float *)(param_1 + 0xc) = *(float *)(param_1 + 0xc) + (fVar4 - fVar1);
   *(float *)(param_1 + 0x10) = *(float *)(param_1 + 0x10) + (fVar5 - fVar2);

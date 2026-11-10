@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_005c08e0 at 005c09af
+;   crt_unknown.c_InternalHeapAlloc_FUN_005c08e0 at 005c09af
 ;
 ; *****************************************************************************
 

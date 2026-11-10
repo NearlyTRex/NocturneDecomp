@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_PageResource_Bitmap_ctor_FUN_004a2140
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     PUSH 0x5d5a62                       ; 004a22d9 | DAT_005d5a62
     LEA EDX,[ESP + 0x8]                 ; 004a22de
     PUSH EDX                            ; 004a22e2
-    CALL crt_unknown.c_FUN_005b7790     ; 004a22e3
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a22e3
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV dword ptr [EBX + 0xc],0x4b      ; 004a22e8
     ADD ESP,0xc                         ; 004a22ef
     MOV ECX,dword ptr [EBX + 0xc]       ; 004a22f2

@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hpriest.cpp_FUN_004f0a20 at 004f0a2a
+;   core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004f0a20 at 004f0a2a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_STAND_005ec745
@@ -25,20 +25,20 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80
+;   core_charactr.cpp_CCharacter_preProcess_FUN_0042e160
 ;   core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240
 ;   core_charactr.cpp_FUN_0042d700
 ;   core_charactr.cpp_FUN_0042d750
-;   core_charactr.cpp_FUN_0042e160
-;   core_charactr.cpp_FUN_00432240
 ;   core_charactr.cpp_FUN_00432f10
-;   core_charactr.cpp_FUN_00433e80
 ;   core_charactr.cpp_FUN_00434790
 ;   core_charactr.cpp_FUN_00435320
 ;   core_gore.cpp_CGore_createBloodPool_FUN_004e62e0
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_motion.cpp_CMotionController_setDesiredStateByName_FUN_00524850
 ;   ... and 5 more
 ;
 ; *****************************************************************************
@@ -172,8 +172,8 @@ section .text
     ADD ESP,0x8                         ; 005318f7
     PUSH dword ptr [EBP + 0x18]         ; 005318fa
     PUSH EBX                            ; 005318fd
-    CALL core_charactr.cpp_FUN_00432240 ; 005318fe
-        ;   XREF to: 00432240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_00432240(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processWalking_FUN_00432240 ; 005318fe
+        ;   XREF to: 00432240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_processWalking_FUN_00432240(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00531903
     TEST EAX,EAX                        ; 00531906
     JZ 0x00531950                       ; 00531908
@@ -279,8 +279,8 @@ section .text
         ;   XREF to: 0042d750 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042d750(CCharacter * this_ptr, CVector3f * velocity)
     ADD ESP,0x8                         ; 00531a2e
     PUSH EBX                            ; 00531a31
-    CALL core_charactr.cpp_FUN_0042e160 ; 00531a32
-        ;   XREF to: 0042e160 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042e160(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_preProcess_FUN_0042e160 ; 00531a32
+        ;   XREF to: 0042e160 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_preProcess_FUN_0042e160(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00531a37
     LEA EAX,[EBX + 0x158]               ; 00531a3a
     PUSH EAX                            ; 00531a40
@@ -296,8 +296,8 @@ section .text
     ADD ESP,0xc                         ; 00531a57
     PUSH dword ptr [EBP + 0x18]         ; 00531a5a
     PUSH EBX                            ; 00531a5d
-    CALL core_charactr.cpp_FUN_00433e80 ; 00531a5e
-        ;   XREF to: 00433e80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00433e80(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80 ; 00531a5e
+        ;   XREF to: 00433e80 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 00531a63
     MOV ESP,EBP                         ; 00531a66
     POP EBP                             ; 00531a68
@@ -324,12 +324,12 @@ section .text
         ;   Label: LAB_00531a94
     PUSH 0x5ec775                       ; 00531a96 | DAT_005ec775
     PUSH ESI                            ; 00531a9b
-    CALL core_motion.cpp_FUN_00524a00   ; 00531a9c
-        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00524a00(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 00531a9c
+        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00531aa1
     PUSH EAX                            ; 00531aa4
-    CALL core_motion.cpp_FUN_00524150   ; 00531aa5
-        ;   XREF to: 00524150 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00524150(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_00524150 ; 00531aa5
+        ;   XREF to: 00524150 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_00524150(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00531aaa
     TEST EAX,EAX                        ; 00531aad
     JL 0x00531922                       ; 00531aaf

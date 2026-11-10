@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004d0d30 at 004d0d36
 ;   core_game.cpp_FUN_004d77d0 at 004d7b9a
-;   core_menu.cpp_FUN_0050a2b0 at 0050a38e
 ;   core_menu.cpp_FUN_0050d640 at 0050e86a
+;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0 at 0050a38e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061f2a4

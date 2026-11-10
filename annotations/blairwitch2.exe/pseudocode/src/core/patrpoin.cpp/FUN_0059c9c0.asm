@@ -22,11 +22,11 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
-;   core_mission.cpp_FUN_004fc740
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   crt_stdio.c_IntegerToString_FUN_005bafd8
 ;   crt_stdlib.c_atoi_FUN_005bad20
 ;   crt_string.c__strncpy_FUN_005b9cf0
-;   crt_unknown.c_FUN_005baf20
+;   crt_unknown.c_strtok_FUN_005baf20
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     XOR EDX,EDX                         ; 0059c9d2
     PUSH ECX                            ; 0059c9d4
     MOV dword ptr [ESP + 0x30],EDX      ; 0059c9d5
-    CALL crt_unknown.c_FUN_005baf20     ; 0059c9d9
-        ;   XREF to: 005baf20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005baf20()
+    CALL crt_unknown.c_strtok_FUN_005baf20 ; 0059c9d9
+        ;   XREF to: 005baf20 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_strtok_FUN_005baf20()
     ADD ESP,0x8                         ; 0059c9de
     MOV EDI,EAX                         ; 0059c9e1
     MOV dword ptr [ESP + 0x24],EAX      ; 0059c9e3
@@ -186,8 +186,8 @@ section .text
     PUSH EAX                            ; 0059caf9
     MOV EDI,dword ptr [0x00618170]      ; 0059cafa | DAT_00618170
     PUSH EDI                            ; 0059cb00 | DAT_01d182f0
-    CALL core_mission.cpp_FUN_004fc740  ; 0059cb01
-        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004fc740(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 0059cb01
+        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 0059cb06
     MOV dword ptr [ESP + 0x30],EAX      ; 0059cb09
     TEST EAX,EAX                        ; 0059cb0d

@@ -12,7 +12,7 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004bd910
+;   core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     DEC EDI                             ; 004d2108
     PUSH ESI                            ; 004d2109
     MOV dword ptr [EBX + 0x2d4],EDI     ; 004d210a
-    CALL core_game.cpp_FUN_004bd910     ; 004d2110
-        ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004bd910(CGame * this_ptr)
+    CALL core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910 ; 004d2110
+        ;   XREF to: 004bd910 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d2115
     POP ESI                             ; 004d2118
     POP EDI                             ; 004d2119

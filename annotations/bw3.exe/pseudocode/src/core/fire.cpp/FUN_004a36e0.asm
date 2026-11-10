@@ -9,9 +9,9 @@
 ;   core_crate.cpp_FUN_004461c0 at 00446256
 ;   core_event.cpp_FUN_0048c2e0 at 0048d2bf
 ;   core_fire.cpp_FUN_0049d090 at 0049d4c5
-;   core_flamecan.cpp_FUN_004a7160 at 004a7217
-;   core_styldemo.cpp_FUN_0059e600 at 0059e978
-;   core_vessel.cpp_FUN_005766b0 at 00576ba2
+;   core_flamecan.cpp_CFlameCan_process_FUN_004a7160 at 004a7217
+;   core_styldemo.cpp_CStylerDemon_process_FUN_0059e600 at 0059e978
+;   core_vessel.cpp_CCryptVessel_process_FUN_005766b0 at 00576ba2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_xplode_wav_6_0_005c09f8

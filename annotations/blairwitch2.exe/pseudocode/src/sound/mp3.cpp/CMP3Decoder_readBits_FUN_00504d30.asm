@@ -13,9 +13,9 @@
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280 at 0050a8b0
 ;   sound_mp3.cpp_CMP3Decoder_decodeScalefacCompress_FUN_00506cb0 at 0050701f
 ;   sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00507240 at 005078fc
+;   sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10 at 0050510b
+;   sound_mp3.cpp_CMP3Decoder_readBit_FUN_00504e10 at 00504e17
 ;   sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_005068e0 at 005069bc
-;   sound_mp3.cpp_FUN_00504e10 at 00504e17
-;   sound_mp3.cpp_FUN_00504f10 at 0050510b
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_mp3_cpp_005dff59

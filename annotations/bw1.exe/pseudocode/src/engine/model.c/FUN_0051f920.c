@@ -29,7 +29,7 @@ uint * engine_model_c_FUN_0051f920(int *param_1)
   float10 fVar14;
   float10 fVar15;
   float10 fVar16;
-  byte auStack_160 [80];
+  char acStack_160 [80];
   uint auStack_110 [13];
   uint auStack_dc [13];
   uint uStack_a8;
@@ -84,10 +84,10 @@ uint * engine_model_c_FUN_0051f920(int *param_1)
     }
     iVar6 = (int)(0x7fffffff / (longlong)param_1[1]) * 2;
     if (param_1[2] != 2) {
-      FUN_005bfb40(auStack_160,"Unable to read verticies in model!");
+      _sprintf(acStack_160,"Unable to read verticies in model!");
       _DAT_01d1d400 = "..\\engine\\model.c";
       _DAT_01d1d404 = 0x177;
-      core_main_c_FUN_005030e0(auStack_160);
+      core_main_c_FUN_005030e0(acStack_160);
     }
     iVar7 = 0;
     iVar12 = -0x80000000;

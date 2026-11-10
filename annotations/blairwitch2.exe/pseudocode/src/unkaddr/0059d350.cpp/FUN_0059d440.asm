@@ -17,16 +17,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_0049c780 at 0049c941
+;   core_fire.cpp_CFireEffect_render_FUN_0049c780 at 0049c941
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01ba5c50
-;   undefined4 g_CDemonSetInstance.field1420432_0x15ac90
+;   undefined4 g_CDemonSetInstance.lighting_quality_mode
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
 ;   crt_stdlib.c_rand_FUN_005b849c
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
@@ -71,8 +71,8 @@ section .text
     ADD ESP,0xc                         ; 0059d47b
     PUSH 0x40c90fdb                     ; 0059d47e
     PUSH 0x0                            ; 0059d483
-    CALL core_actor.cpp_FUN_0040cf60    ; 0059d485
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0059d485
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 0059d48a
     FLD float ptr [ESP + 0x38]          ; 0059d48e
     ADD ESP,0x8                         ; 0059d492
@@ -92,7 +92,7 @@ section .text
     ADD ESP,0xc                         ; 0059d4bd
     MOV EAX,[0x0061b5a8]                ; 0059d4c0 | g_CDemonSetPtr
     PUSH 0x1                            ; 0059d4c5
-    MOV dword ptr [EAX + 0x15ac90],0x1  ; 0059d4c7 | g_CDemonSetInstance.field1420432_0x15ac90
+    MOV dword ptr [EAX + 0x15ac90],0x1  ; 0059d4c7 | g_CDemonSetInstance.lighting_quality_mode
     MOV EAX,[0x0060b280]                ; 0059d4d1 | DAT_0060b280
     PUSH EAX                            ; 0059d4d6 | DAT_01ba5c50
     CALL engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0 ; 0059d4d7
@@ -163,7 +163,7 @@ section .text
     MOV EDI,dword ptr [0x0060b280]      ; 0059d59d | DAT_0060b280
     MOV EAX,[0x0061b5a8]                ; 0059d5a3 | g_CDemonSetPtr
     PUSH EDI                            ; 0059d5a8 | DAT_01ba5c50
-    MOV dword ptr [EAX + 0x15ac90],0x0  ; 0059d5a9 | g_CDemonSetInstance.field1420432_0x15ac90
+    MOV dword ptr [EAX + 0x15ac90],0x0  ; 0059d5a9 | g_CDemonSetInstance.lighting_quality_mode
     CALL engine_matrix.c_pop_FUN_0046b4a0 ; 0059d5b3
         ;   XREF to: 0046b4a0 (UNCONDITIONAL_CALL)  ; void engine_matrix.c_pop_FUN_0046b4a0()
     ADD ESP,0x4                         ; 0059d5b8

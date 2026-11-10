@@ -14,10 +14,10 @@ CAmmoManaLarge * core_ammo_cpp_CAmmoManaLarge_ctor_FUN_0040e260(CAmmoManaLarge *
   CAmmo *pCVar1;
   
   pCVar1 = core_ammo_cpp_CAmmo_ctor_FUN_0040de60((CAmmo *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CAmmo_ManaLargeVTable;
+  (pCVar1->base).vtable._ub = &g_CAmmoManaLargeVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-            ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"mana_lg.kfm");
+            (&pCVar1->model,"mana_lg.kfm");
   *(uint *)&pCVar1->field_0x318 = 10;
-  *(uint *)&pCVar1->field_0x314 = 0x32;
+  pCVar1->ammo_count = 0x32;
   return (CAmmoManaLarge *)pCVar1;
 }

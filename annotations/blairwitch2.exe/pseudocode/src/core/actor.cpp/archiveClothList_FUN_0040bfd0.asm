@@ -7,8 +7,8 @@
 ; XREF[4]:
 ;   core_charactr.cpp_CCharacter_archive_FUN_00422c30 at 00422d3a
 ;   core_hostage.cpp_CHostage_archive_FUN_004d2df0 at 004d2ea2
-;   core_mobster.cpp_FUN_004ffb70 at 004ffbe0
-;   core_zombie.cpp_FUN_00599160 at 00599261
+;   core_mobster.cpp_CMobster_archive_FUN_004ffb70 at 004ffbe0
+;   core_zombie.cpp_CZombie_archive_FUN_00599160 at 00599261
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Cloth_list_opening_brace_005cac9e

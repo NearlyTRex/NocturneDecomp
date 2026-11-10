@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   force_immediate
 ;
 ; XREF[89]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a10d7
-;   core_baal.cpp_FUN_005968a0 at 00596f9e
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10d7
+;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b34
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596f9e
 ;   core_baal.cpp_FUN_00597700 at 005977d4
-;   core_baal.cpp_FUN_00597af0 at 00597b34
 ;   core_baal.cpp_FUN_00597be0 at 00597c1f
-;   core_boneguy.cpp_FUN_004179b0 at 004183e3
-;   core_boneguy.cpp_FUN_00418930 at 00418c8d
-;   core_boneguy.cpp_FUN_004192d0 at 00419342
-;   core_boneguy.cpp_FUN_00419b40 at 0041a523
-;   core_boneguy.cpp_FUN_0041a810 at 0041a886
+;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a886
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a523
+;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 00419342
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 004183e3
+;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930 at 00418c8d
 ;   ... and 79 more
 ;
 ; Referenced Globals:

@@ -39,8 +39,8 @@ void FUN_00416f80(int param_1);
 
 // Original: unkafter_bmppuzzl.cpp_FUN_00416fa0
 // Address: 00416fa0
-void FUN_00416fa0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5);
+void FUN_00416fa0(int param_1,int param_2,int param_3,float param_4,int param_5);
 
 // Original: unkafter_bmppuzzl.cpp_FUN_00417230
 // Address: 00417230
-void FUN_00417230(void *param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+void FUN_00417230(void *param_1,int param_2,int param_3);

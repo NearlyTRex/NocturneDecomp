@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dirmat.cpp_FUN_004495a0
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH EAX                            ; 005b1a13
     LEA EAX,[ESP + 0x4]                 ; 005b1a14
     PUSH EAX                            ; 005b1a18
-    CALL core_dirmat.cpp_FUN_00449280   ; 005b1a19
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 005b1a19
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005b1a1e
     MOV EAX,dword ptr [ESP + 0x8c]      ; 005b1a21
     XOR EDX,EDX                         ; 005b1a28

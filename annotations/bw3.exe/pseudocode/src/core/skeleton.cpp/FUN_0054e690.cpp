@@ -10,13 +10,13 @@ void __cdecl core_skeleton_cpp_FUN_0054e690(CDeformableModelInstance *this_ptr)
 
 {
   CDeformableModelInstance *pCVar1;
-  byte *puVar2;
+  int *piVar2;
   
   pCVar1 = this_ptr;
   do {
-    puVar2 = &pCVar1->field_0x4;
+    piVar2 = &(pCVar1->base).current_motion_index;
     *(uint *)&pCVar1->field_0x2230 = 0;
-    pCVar1 = (CDeformableModelInstance *)puVar2;
-  } while (puVar2 != &this_ptr->field_0xf0);
+    pCVar1 = (CDeformableModelInstance *)piVar2;
+  } while ((float *)piVar2 != &this_ptr->bone_origins[0xc].z);
   return;
 }

@@ -6,8 +6,8 @@
 ;
 ; XREF[3]:
 ;   crt_unknown.c_FUN_005ad0f2 at 005ad132
-;   unkafter_2d.cpp_FUN_005b0611 at 005b0e5c
-;   unkafter_2d.cpp_FUN_005b083d at 005b0873
+;   crt_unknown.c_FUN_005b083d at 005b0873
+;   crt_unknown.c_ldexp_FUN_005b0611 at 005b0e5c
 ;
 ; Called Functions:
 ;   crt_errno.c_setErrno_FUN_005a92c0

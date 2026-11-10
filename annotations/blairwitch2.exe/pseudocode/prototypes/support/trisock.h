@@ -9,9 +9,9 @@
 // Address: 00578b90
 void __cdecl staticInit(void);
 
-// Original: support_trisock.cpp_FUN_00578be0
+// Original: support_trisock.cpp_copyIPAddress_FUN_00578be0
 // Address: 00578be0
-undefined4 * FUN_00578be0(undefined4 *param_1,undefined4 *param_2);
+uint * __cdecl copyIPAddress(uint *dest_ip,uint *src_ip);
 
 // Original: support_trisock.cpp_parseIPAddress_FUN_00578bf0
 // Address: 00578bf0
@@ -47,7 +47,7 @@ void __cdecl createNetworkAddr(undefined4 *param_1,undefined4 param_2,undefined2
 
 // Original: support_trisock.cpp_convertSockAddr_FUN_00578e80
 // Address: 00578e80
-undefined4 * __cdecl convertSockAddr(undefined4 *param_1,short *param_2);
+uint * __cdecl convertSockAddr(uint *param_1,short *param_2);
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_00578ef0
 // Address: 00578ef0
@@ -93,9 +93,9 @@ undefined4 FUN_005790f0(SOCKET *param_1,undefined4 param_2);
 // Address: 00579150
 byte FUN_00579150(CSocket *param_1);
 
-// Original: support_trisock.cpp_FUN_00579240
+// Original: support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240
 // Address: 00579240
-int __cdecl FUN_00579240(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl CSocket::receiveSocketData(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
 
 // Original: support_trisock.cpp_CSocket_sendSocketData_FUN_005792e0
 // Address: 005792e0
@@ -139,11 +139,11 @@ undefined4 FUN_00579e40(undefined4 param_1,int *param_2,undefined4 param_3,code 
 
 // Original: support_trisock.cpp_FUN_0057a0ec
 // Address: 0057a0ec
-void FUN_0057a0ec(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,undefined4 param_5,code *param_6);
+void FUN_0057a0ec(CSocket *param_1);
 
 // Original: support_trisock.cpp_FUN_0057a1e0
 // Address: 0057a1e0
-undefined4 FUN_0057a1e0(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,int *param_5,undefined4 param_6,code *param_7);
+undefined4 FUN_0057a1e0(CSocket *param_1);
 
 // Original: support_trisock.cpp_FUN_0057a35c
 // Address: 0057a35c

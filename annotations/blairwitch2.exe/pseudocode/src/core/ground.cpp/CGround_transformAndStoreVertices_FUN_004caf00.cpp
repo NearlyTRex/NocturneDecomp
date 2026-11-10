@@ -35,7 +35,7 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004caf00(CGro
   int local_18;
   int local_14;
   
-  local_30 = *(int *)&this_ptr->field_0x14 * *(int *)&this_ptr->field_0x1c;
+  local_30 = this_ptr->grid_height * this_ptr->vertical_scale;
   local_28 = local_30 * 0x100;
   local_6c[0] = ((uint)((longlong)_DAT_01d04fb8 * (longlong)local_28) >> 0x10 |
                 (int)((ulonglong)((longlong)_DAT_01d04fb8 * (longlong)local_28) >> 0x20) << 0x10) +
@@ -119,7 +119,7 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004caf00(CGro
   local_18 = 999;
   iVar3 = -999;
   iVar4 = 0;
-  local_20 = *(int *)&this_ptr->field_0x1c << 8;
+  local_20 = this_ptr->vertical_scale << 8;
   iVar5 = -999;
   do {
     iVar1 = *(int *)((int)local_6c + iVar4) / local_20;
@@ -140,33 +140,32 @@ void __cdecl core_ground_cpp_CGround_transformAndStoreVertices_FUN_004caf00(CGro
   } while (iVar4 != 0x3c);
   local_18 = local_18 + -2;
   local_14 = local_14 + -2;
-  *(int *)&this_ptr->field_0x40 = iVar3 + 2;
-  *(int *)&this_ptr->field_0x48 = iVar5 + 2;
-  *(int *)&this_ptr->field_0x3c = local_14;
-  *(int *)&this_ptr->field_0x44 = local_18;
-  local_1c = -*(int *)&this_ptr->field_0x10;
-  if (-*(int *)&this_ptr->field_0x10 < *(int *)&this_ptr->field_0x3c) {
-    local_1c = *(int *)&this_ptr->field_0x3c;
+  this_ptr->visible_max_x = iVar3 + 2;
+  this_ptr->visible_max_y = iVar5 + 2;
+  this_ptr->visible_min_x = local_14;
+  this_ptr->visible_min_y = local_18;
+  local_1c = -this_ptr->grid_width;
+  if (-this_ptr->grid_width < this_ptr->visible_min_x) {
+    local_1c = this_ptr->visible_min_x;
   }
-  iVar3 = *(int *)&this_ptr->field_0x10;
-  if (*(int *)&this_ptr->field_0x40 < *(int *)&this_ptr->field_0x10) {
-    iVar3 = *(int *)&this_ptr->field_0x40;
+  iVar3 = this_ptr->grid_width;
+  if (this_ptr->visible_max_x < this_ptr->grid_width) {
+    iVar3 = this_ptr->visible_max_x;
   }
-  iVar5 = -*(int *)&this_ptr->field_0x14;
-  if (-*(int *)&this_ptr->field_0x14 < *(int *)&this_ptr->field_0x44) {
-    iVar5 = *(int *)&this_ptr->field_0x44;
+  iVar5 = -this_ptr->grid_height;
+  if (-this_ptr->grid_height < this_ptr->visible_min_y) {
+    iVar5 = this_ptr->visible_min_y;
   }
-  local_24 = *(int *)&this_ptr->field_0x14;
-  if (*(int *)&this_ptr->field_0x48 < *(int *)&this_ptr->field_0x14) {
-    local_24 = *(int *)&this_ptr->field_0x48;
+  local_24 = this_ptr->grid_height;
+  if (this_ptr->visible_max_y < this_ptr->grid_height) {
+    local_24 = this_ptr->visible_max_y;
   }
   iVar4 = local_1c;
   if (iVar5 <= local_24) {
     do {
       for (; iVar4 <= iVar3; iVar4 = iVar4 + 1) {
         core_ground_cpp_CGround_transformAndStoreVertex_FUN_004cae10
-                  (this_ptr,*(int *)&this_ptr->field_0x2c + iVar4,
-                   *(int *)&this_ptr->field_0x30 + iVar5);
+                  (this_ptr,this_ptr->camera_x + iVar4,this_ptr->camera_y + iVar5);
       }
       iVar5 = iVar5 + 1;
       iVar4 = local_1c;

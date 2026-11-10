@@ -32,7 +32,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_scat.cpp_FUN_0051ff60 at 00520126
+;   core_scat.cpp_CScat_blendLayerAction_FUN_0051ff60 at 00520126
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fe2f0
@@ -42,7 +42,7 @@
 ;   undefined4 DAT_01e62080
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_005466c0
+;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
 ;   core_xform.cpp_multiplyQuaternion_FUN_00593c60
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00593fa0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00593fe0
@@ -250,8 +250,8 @@ section .text
     PUSH ESI                            ; 005203a2
     ADD EBX,0x2b4                       ; 005203a3
     PUSH EBX                            ; 005203a9
-    CALL core_skeleton.cpp_FUN_005466c0 ; 005203aa
-        ;   XREF to: 005466c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_005466c0(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0 ; 005203aa
+        ;   XREF to: 005466c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
     ADD ESP,0x14                        ; 005203af
     MOV ESP,EBP                         ; 005203b2
     POP EBP                             ; 005203b4

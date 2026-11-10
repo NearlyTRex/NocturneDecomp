@@ -11,7 +11,5 @@
 float __cdecl core_cloth_cpp_vectorLengthFast_FUN_005b1b10(CVector3f *v)
 
 {
-  return (float)(((int)(*(float *)&v->field_0x8 * *(float *)&v->field_0x8 +
-                       *(float *)v * *(float *)v + *(float *)&v->field_0x4 * *(float *)&v->field_0x4
-                       ) >> 1) + _DAT_01caf5b4);
+  return (float)(((int)(v->z * v->z + v->x * v->x + v->y * v->y) >> 1) + _DAT_01caf5b4);
 }

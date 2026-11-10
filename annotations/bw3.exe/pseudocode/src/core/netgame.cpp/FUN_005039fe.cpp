@@ -14,7 +14,7 @@ void core_netgame_cpp_FUN_005039fe(void)
   int iVar1;
   
   _DAT_01da6478 = 1;
-  iVar1 = wincore_winrun_cpp_FUN_005806a0();
+  iVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
   _DAT_01da6474 = iVar1 / 0x12;
   return;
 }

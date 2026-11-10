@@ -9,53 +9,55 @@
 CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_00511410(CPassenger *this_ptr)
 
 {
-  CMorph CVar1;
+  char cVar1;
   CNPC *pCVar2;
   CMorph *pCVar3;
-  CMorph *pCVar4;
+  char *pcVar4;
   char *pcVar5;
-  CMorph *pCVar6;
+  int *piVar6;
   
-  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00510460((CNPC *)this_ptr);
-  pCVar4 = (CMorph *)0x5e15e2;
-  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar2[1].field_0x10c);
-  pCVar6 = pCVar3 + -0xa8;
-  *(byte **)(pCVar3 + -0x241a4) = &g_CPassengerVTable;
+  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00510460(&this_ptr->base);
+  pcVar4 = (char *)0x5e15e2;
+  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar2[1].base.base.field_0x10c);
+  piVar6 = &pCVar3[-1].models[1].textures[0x12].base.count;
+  *(CCharacter_full_vtable **)(pCVar3[-0x30].models[1].textures[0].texture_name + 0x24) =
+       &g_CPassengerVTable;
   do {
-    CVar1 = *pCVar4;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = pCVar4[1];
-    pCVar4 = pCVar4 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
+    cVar1 = *pcVar4;
+    *(char *)piVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar4[1];
+    pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar6 + 1) = cVar1;
+    piVar6 = (int *)((int)piVar6 + 2);
+  } while (cVar1 != '\0');
   pcVar5 = "false";
-  pCVar6 = pCVar3 + -0x10c;
+  pcVar4 = pCVar3[-1].models[1].textures[0x10].texture_name + 0x28;
   do {
-    CVar1 = (CMorph)*pcVar5;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = *(CMorph *)(pcVar5 + 1);
+    cVar1 = *pcVar5;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
   pcVar5 = "nameMePlease";
-  *(uint *)(pCVar3 + -4) = 0;
+  pCVar3[-1].rescale_enabled = 0;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)(pCVar3 + -0x241a0),"trainman.dfm");
-  pCVar6 = pCVar3 + -0x88;
-  *(uint *)(pCVar3 + 0xc30) = 0x3f800000;
+            ((CDeformableModelInstance *)(pCVar3[-0x30].models[1].textures[0].texture_name + 0x28),
+             "trainman.dfm");
+  pcVar4 = pCVar3[-1].models[1].textures[0x12].texture_name + 0x1c;
+  pCVar3[1].models[0].parts[0].vertex_count = 0x3f800000;
   do {
-    CVar1 = (CMorph)*pcVar5;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = *(CMorph *)(pcVar5 + 1);
+    cVar1 = *pcVar5;
+    *pcVar4 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
-  pCVar3[-0x68] = (CMorph)0x0;
-  return (CPassenger *)(pCVar3 + -0x24454);
+    pcVar4[1] = cVar1;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar1 != '\0');
+  pCVar3[-1].models[1].textures[0x12].texture_name[0x3c] = '\0';
+  return (CPassenger *)(pCVar3[-0x30].models[0].textures[0xc].texture_name + 0x1c);
 }

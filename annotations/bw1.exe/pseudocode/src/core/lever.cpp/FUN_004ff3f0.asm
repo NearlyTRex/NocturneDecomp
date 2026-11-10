@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_event.cpp_FUN_004a1d00 at 004a5988
-;   core_lever.cpp_FUN_004ff190 at 004ff39c
+;   core_lever.cpp_CLever_process_FUN_004ff190 at 004ff39c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4d0
@@ -15,7 +15,7 @@
 ;   undefined4 g_CLeverClassInfo.name_hash
 ;   undefined4 DAT_01d2d908
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
+;   undefined4 g_CDemonSetInstance.actor_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
@@ -58,7 +58,7 @@ section .text
     XOR EBX,EBX                         ; 004ff43b
     MOV EAX,[0x00622c18]                ; 004ff43d | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004ff43d
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004ff442 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004ff442 | g_CDemonSetInstance.actor_count
     JL 0x004ff527                       ; 004ff448
         ;   XREF to: 004ff527 (CONDITIONAL_JUMP)  ; LAB_004ff527
     POP EBP                             ; 004ff44e

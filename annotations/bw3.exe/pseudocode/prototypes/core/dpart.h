@@ -5,13 +5,13 @@
 // Function prototypes for core/dpart.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dpart.cpp_FUN_00466290
+// Original: core_dpart.cpp_CDemonPart_dtor_FUN_00466290
 // Address: 00466290
-CDemonPart * __cdecl FUN_00466290(CDemonPart *this_ptr,uint flags);
+CDemonPart * __cdecl CDemonPart::dtor(CDemonPart *this_ptr,uint flags);
 
-// Original: core_dpart.cpp_FUN_004662b0
+// Original: core_dpart.cpp_CDemonPart_alloc_FUN_004662b0
 // Address: 004662b0
-void __cdecl FUN_004662b0(CDemonPart *this_ptr);
+void __cdecl CDemonPart::alloc(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_FUN_004663b0
 // Address: 004663b0
@@ -45,10 +45,10 @@ void FUN_00466790(void);
 // Address: 0046682e
 void FUN_0046682e(int param_1);
 
-// Original: core_dpart.cpp_FUN_00466bf0
+// Original: core_dpart.cpp_setupDepthOnlyEdgeInterpolation_FUN_00466bf0
 // Address: 00466bf0
-void FUN_00466bf0(int param_1,int param_2);
+void __cdecl setupDepthOnlyEdgeInterpolation(SSoftwareEdge *vertex_a,SSoftwareEdge *vertex_b);
 
-// Original: core_dpart.cpp_FUN_00466d0e
+// Original: core_dpart.cpp_findEdgeByYStart_FUN_00466d0e
 // Address: 00466d0e
-int * FUN_00466d0e(int param_1,int *param_2);
+int * findEdgeByYStart(int param_1,int *param_2);

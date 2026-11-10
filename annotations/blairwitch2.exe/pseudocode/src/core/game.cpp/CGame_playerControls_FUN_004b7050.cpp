@@ -20,14 +20,14 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b7050(CGame *this_ptr)
   bVar4 = 0;
   if (((_DAT_01cb7788 == 0) && (*(int *)&g_CFieldNotesPtr->field_0x40 == 0)) && (_DAT_026677e0 == 0)
      ) {
-    if ((*(int *)&this_ptr->field_0x218 == 0) && (*(int *)&this_ptr->field_0x254 == 0)) {
+    if ((this_ptr->is_paused == 0) && (*(int *)&this_ptr->field_0x254 == 0)) {
       player_control = core_netgame_cpp_CNetGame_getMyControls_FUN_0050f430(g_CNetGamePtr);
       switch(*(uint *)&this_ptr->field_0xd0) {
       case 0:
         core_game_cpp_FUN_004b76c0(this_ptr,player_control);
         break;
       case 1:
-        core_game_cpp_FUN_004b80a0(this_ptr,player_control);
+        core_game_cpp_CGame_processMouseControls_FUN_004b80a0(this_ptr,player_control);
         break;
       case 2:
         core_game_cpp_CGame_processJoystickControls_FUN_004b7510(this_ptr,player_control);
@@ -53,11 +53,11 @@ void __cdecl core_game_cpp_CGame_playerControls_FUN_004b7050(CGame *this_ptr)
         puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);
       }
       _DAT_01cb7780 = _DAT_01c2a384;
-      _DAT_01cb7784 = *(uint *)&g_CDemonSetPtr->field_0x15aeb8;
+      _DAT_01cb7784 = g_CDemonSetPtr->selected_camera_index;
       return;
     }
     return;
   }
-  core_game_cpp_FUN_004b8250(this_ptr);
+  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(this_ptr);
   return;
 }

@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CHeroPlaceholder
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x17c (380 bytes)
 #pragma pack(push, 1)
 typedef struct CHeroPlaceholder {
-    char field_0[380]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[36]; // 0x158
 } CHeroPlaceholder;
 #pragma pack(pop)
 

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 161,
+    "complexity_score": 157,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 57,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 186
+    "total_lines": 182
   },
   "cross_references": [
     {
@@ -248,7 +248,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 16,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "this_ptr = DAT_00612560;",
@@ -256,15 +256,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 24,
+      "line": 19,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "*(int *)(*(int *)DAT_00612560 + 0x10) = iVar1;",
+      "text": "*(int *)(DAT_00612560->vertex_buffer_ptr + 0x10) = iVar1;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 47,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);",
@@ -272,7 +272,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 54,
+      "line": 49,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "(DAT_00612560,",
@@ -280,7 +280,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 51,
       "match": "DAT_0061f4b0",
       "severity": "mild",
       "text": "(&DAT_0061f4b0 +",
@@ -288,15 +288,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 55,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(DAT_00612560,local_2c,0x23);",
+      "text": "engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00482170(DAT_00612560,&local_2c,0x23)",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 57,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);",
@@ -304,7 +304,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 62,
+      "line": 58,
       "match": "DAT_00612560",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);",

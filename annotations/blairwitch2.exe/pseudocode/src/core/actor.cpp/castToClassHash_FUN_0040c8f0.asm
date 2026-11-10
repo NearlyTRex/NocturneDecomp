@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[148]:
-;   core_actor.cpp_FUN_00408c30 at 00408ca2
-;   core_actor.cpp_FUN_0040a050 at 0040a3dc
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408c30 at 00408ca2
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a3dc
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0 at 00410aff
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040ff21
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410080 at 00410125
-;   core_baron.cpp_FUN_00410ac0 at 00410aff
-;   core_basicnpc.cpp_FUN_005a4950 at 005a4967
-;   core_batman.cpp_FUN_00412f40 at 00413960
-;   core_bugs.cpp_FUN_004203a0 at 00420436
-;   core_bugs.cpp_FUN_00421b10 at 00421b3b
-;   core_charactr.cpp_FUN_004285f0 at 004286fa
+;   core_basicene.cpp_CBasicEnemy_isGrabbable_FUN_0059fa70 at 0059fa8b
+;   core_basicnpc.cpp_CBasicNPC_isGrabbable_FUN_005a4950 at 005a4967
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413960
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0 at 00420436
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10 at 00421b3b
 ;   ... and 138 more
 ;
 ; Called Functions:

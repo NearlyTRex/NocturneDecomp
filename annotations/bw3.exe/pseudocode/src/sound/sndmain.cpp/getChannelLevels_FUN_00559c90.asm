@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV EBX,dword ptr [EBX*0x4 + 0x2cf32cc] ; 00559cc9
     MOV dword ptr [ESP],EAX             ; 00559cd0
     MOV dword ptr [ESP + 0x4],EAX       ; 00559cd3
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00559cd7
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00559cd7
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
     MOV ECX,dword ptr [0x02cf329c]      ; 00559cdc | DAT_02cf329c
     XOR EDX,EDX                         ; 00559ce2
     TEST ECX,ECX                        ; 00559ce4

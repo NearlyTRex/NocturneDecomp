@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_baron.cpp_CBaronWeapon_setup_FUN_004104c0 at 004104d2
-;   core_skeleton.cpp_FUN_00569b20 at 00569b2a
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20 at 00569b2a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_skeleton_cpp_005f2739
@@ -17,8 +17,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0
 ;   core_skeleton.cpp_CDeformableModel_load_FUN_00564e40
-;   core_skeleton.cpp_FUN_00563bb0
 ;   crt_string.c__stricmp_FUN_005c04e0
 ;
 ; *****************************************************************************
@@ -84,8 +84,8 @@ section .text
         ;   XREF to: 00564e40 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_load_FUN_00564e40(CDeformableModel * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0056b5a6
     PUSH ESI                            ; 0056b5a9
-    CALL core_skeleton.cpp_FUN_00563bb0 ; 0056b5aa
-        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00563bb0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0 ; 0056b5aa
+        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0(CDeformableModel * this_ptr)
     MOV ECX,0x1                         ; 0056b5af
     ADD ESP,0x4                         ; 0056b5b4
     MOV EAX,ESI                         ; 0056b5b7
@@ -98,8 +98,8 @@ section .text
     PUSH EDI                            ; 0056b5c4
         ;   Label: LAB_0056b5c4
     MOV ESI,0x1                         ; 0056b5c5
-    CALL core_skeleton.cpp_FUN_00563bb0 ; 0056b5ca
-        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00563bb0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0 ; 0056b5ca
+        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0056b5cf
     MOV EAX,EDI                         ; 0056b5d2
     MOV dword ptr [EBX*0x4 + 0x27902bc],ESI ; 0056b5d4 | DAT_027902bc

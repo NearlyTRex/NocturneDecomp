@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[84]:
-;   core_actor.cpp_FUN_00409f60 at 0040a50f
-;   core_ammobox.cpp_FUN_0040e6b0 at 0040e6d5
-;   core_asgaya.cpp_FUN_005a0be0 at 005a10a8
-;   core_baal.cpp_FUN_005968a0 at 00596f7e
-;   core_bodypart.cpp_FUN_00414d40 at 00414e64
-;   core_boneguy.cpp_FUN_004179b0 at 0041866e
-;   core_boneguy.cpp_FUN_00418930 at 00418c64
-;   core_boneguy.cpp_FUN_00419b40 at 0041a7c9
-;   core_bugs.cpp_FUN_00423cd0 at 00423dd1
-;   core_carved.cpp_FUN_00425da0 at 00426ea6
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a50f
+;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e6b0 at 0040e6d5
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10a8
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596f7e
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fdfa
+;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40 at 00414e64
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a7c9
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 0041866e
+;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930 at 00418c64
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0 at 00423dd1
 ;   ... and 74 more
 ;
 ; Referenced Globals:

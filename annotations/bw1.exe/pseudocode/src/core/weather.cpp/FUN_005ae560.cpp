@@ -9,6 +9,5 @@
 uint core_weather_cpp_FUN_005ae560(void)
 
 {
-  return *(uint *)
-          (&g_CDemonSetPtr->field_0x14c + *(int *)&g_CDemonSetPtr->field_0x15aeb8 * 0x1a4);
+  return *(uint *)&g_CDemonSetPtr->cameras[g_CDemonSetPtr->selected_camera_index].field_0x148;
 }

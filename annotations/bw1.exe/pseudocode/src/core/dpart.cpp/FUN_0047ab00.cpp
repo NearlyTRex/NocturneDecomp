@@ -13,14 +13,15 @@ void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_co
 
 {
   longlong lVar1;
-  int iVar2;
+  int *piVar2;
   int iVar3;
   int iVar4;
   int iVar5;
-  uint uVar6;
-  CVector3i *pCVar7;
-  int iVar8;
-  uint *puVar9;
+  int iVar6;
+  uint uVar7;
+  CVector3i *pCVar8;
+  int iVar9;
+  uint *puVar10;
   uint *apuStack_78 [17];
   uint local_34;
   CVector3i *local_30;
@@ -33,11 +34,11 @@ void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_co
   int *local_14;
   
   if (DAT_00713a7c != 0) {
-    apuStack_78[0] = &DAT_00629014 + *(int *)(vertex_indices + 8) * 0xc;
-    iVar8 = engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60
-                      (&DAT_00629014 + *(int *)vertex_indices * 0xc,
-                       &DAT_00629014 + *(int *)(vertex_indices + 4) * 0xc);
-    if (iVar8 == 0) {
+    apuStack_78[0] = &DAT_00629014 + vertex_indices->z * 0xc;
+    iVar9 = engine_prim_c_calculateTriangleWindingOrder_FUN_0053dd60
+                      (&DAT_00629014 + vertex_indices->x * 0xc,
+                       &DAT_00629014 + vertex_indices->y * 0xc);
+    if (iVar9 == 0) {
       return;
     }
   }
@@ -45,24 +46,24 @@ void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_co
   if ((_DAT_01c50948 == 0) || (DAT_00713a74 != 0)) {
     if (_DAT_01c51d18 != 0) {
       if (_DAT_01c51d18 < 2) {
-        iVar8 = 0;
-        pCVar7 = vertex_indices;
+        iVar9 = 0;
+        pCVar8 = vertex_indices;
         if (0 < vertex_count) {
           do {
             apuStack_78[0] = (uint *)0x1;
-            iVar8 = iVar8 + 1;
-            engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(&DAT_00629014 + *(int *)pCVar7 * 0xc);
-            pCVar7 = pCVar7 + 4;
-          } while (iVar8 < vertex_count);
+            iVar9 = iVar9 + 1;
+            engine_prim_c_prepareDepthBuffer_FUN_0053dbc0(&DAT_00629014 + pCVar8->x * 0xc);
+            pCVar8 = (CVector3i *)&pCVar8->y;
+          } while (iVar9 < vertex_count);
         }
       }
-      else if ((_DAT_01c51d18 == 6) && (iVar8 = 0, pCVar7 = vertex_indices, 0 < vertex_count)) {
+      else if ((_DAT_01c51d18 == 6) && (iVar9 = 0, pCVar8 = vertex_indices, 0 < vertex_count)) {
         do {
           apuStack_78[0] = (uint *)0x1;
-          iVar8 = iVar8 + 1;
-          engine_prim_c_replaceWWithDepth_FUN_0053dd20(&DAT_00629014 + *(int *)pCVar7 * 0xc);
-          pCVar7 = pCVar7 + 4;
-        } while (iVar8 < vertex_count);
+          iVar9 = iVar9 + 1;
+          engine_prim_c_replaceWWithDepth_FUN_0053dd20(&DAT_00629014 + pCVar8->x * 0xc);
+          pCVar8 = (CVector3i *)&pCVar8->y;
+        } while (iVar9 < vertex_count);
       }
     }
     _DAT_01bc0784 = 0;
@@ -72,83 +73,83 @@ void __cdecl core_dpart_cpp_FUN_0047ab00(CVector3i *vertex_indices,int vertex_co
     if (0 < vertex_count) {
       local_30 = vertex_indices;
       do {
-        iVar8 = local_2c + 1;
-        if (vertex_count <= iVar8) {
-          iVar8 = 0;
+        iVar9 = local_2c + 1;
+        if (vertex_count <= iVar9) {
+          iVar9 = 0;
         }
-        iVar2 = *(int *)(vertex_indices + iVar8 * 4) * 0x30;
-        local_20 = &DAT_00629014 + *(int *)(vertex_indices + iVar8 * 4) * 0xc;
-        iVar3 = *(int *)local_30 * 0x30;
-        local_24 = &DAT_00629014 + *(int *)local_30 * 0xc;
-        iVar4 = *(int *)(&DAT_00629028 + iVar3) >> 0x10;
-        iVar8 = *(int *)(&DAT_00629028 + iVar2) >> 0x10;
+        iVar3 = (&vertex_indices->x)[iVar9] * 0x30;
+        local_20 = &DAT_00629014 + (&vertex_indices->x)[iVar9] * 0xc;
+        iVar4 = local_30->x * 0x30;
+        local_24 = &DAT_00629014 + local_30->x * 0xc;
+        iVar5 = *(int *)(&DAT_00629028 + iVar4) >> 0x10;
+        iVar9 = *(int *)(&DAT_00629028 + iVar3) >> 0x10;
         local_28 = local_20;
-        if (iVar4 != iVar8) {
-          iVar5 = iVar4;
-          puVar9 = local_24;
-          if (*(int *)(&DAT_00629028 + iVar2) < *(int *)(&DAT_00629028 + iVar3)) {
-            iVar5 = iVar8;
-            iVar8 = iVar4;
-            puVar9 = local_20;
+        if (iVar5 != iVar9) {
+          iVar6 = iVar5;
+          puVar10 = local_24;
+          if (*(int *)(&DAT_00629028 + iVar3) < *(int *)(&DAT_00629028 + iVar4)) {
+            iVar6 = iVar9;
+            iVar9 = iVar5;
+            puVar10 = local_20;
             local_28 = local_24;
           }
-          iVar3 = _DAT_01bc0784 * 0x50;
-          *(int *)(&DAT_01bc0788 + iVar3) = iVar5;
-          iVar2 = _DAT_01bc0c88;
-          *(int *)(iVar3 + 0x1bc078c) = iVar8;
-          if (iVar5 < iVar2) {
-            _DAT_01bc0c88 = iVar5;
+          iVar4 = _DAT_01bc0784 * 0x50;
+          *(int *)(&DAT_01bc0788 + iVar4) = iVar6;
+          iVar3 = _DAT_01bc0c88;
+          *(int *)(iVar4 + 0x1bc078c) = iVar9;
+          if (iVar6 < iVar3) {
+            _DAT_01bc0c88 = iVar6;
           }
-          if (_DAT_01bc0c8c < iVar8) {
-            _DAT_01bc0c8c = iVar8;
+          if (_DAT_01bc0c8c < iVar9) {
+            _DAT_01bc0c8c = iVar9;
           }
-          if ((uint)(local_28[5] - puVar9[5]) < 0x10000) {
-            iVar8 = 0;
+          if ((uint)(local_28[5] - puVar10[5]) < 0x10000) {
+            iVar9 = 0;
           }
           else {
-            iVar8 = (int)(0xffffffff / (ulonglong)(uint)(local_28[5] - puVar9[5]));
+            iVar9 = (int)(0xffffffff / (ulonglong)(uint)(local_28[5] - puVar10[5]));
           }
-          lVar1 = (longlong)iVar8 * (longlong)(int)(local_28[4] - puVar9[4]);
-          *(uint *)(iVar3 + 0x1bc0794) =
+          lVar1 = (longlong)iVar9 * (longlong)(int)(local_28[4] - puVar10[4]);
+          *(uint *)(iVar4 + 0x1bc0794) =
                (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-          lVar1 = (longlong)iVar8 * (longlong)((local_28[2] - puVar9[2]) * 0x100);
-          *(uint *)(iVar3 + 0x1bc07b4) =
+          lVar1 = (longlong)iVar9 * (longlong)((local_28[2] - puVar10[2]) * 0x100);
+          *(uint *)(iVar4 + 0x1bc07b4) =
                (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-          uVar6 = (uint)(ushort)((ushort)puVar9[5] ^ 0xffff);
-          lVar1 = (longlong)(int)uVar6 * (longlong)*(int *)(iVar3 + 0x1bc0794);
+          uVar7 = (uint)(ushort)((ushort)puVar10[5] ^ 0xffff);
+          lVar1 = (longlong)(int)uVar7 * (longlong)*(int *)(iVar4 + 0x1bc0794);
           local_34 = (uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10;
-          *(uint *)(iVar3 + 0x1bc0790) = puVar9[4] + local_34;
-          lVar1 = (longlong)(int)uVar6 * (longlong)*(int *)(iVar3 + 0x1bc07b4);
+          *(uint *)(iVar4 + 0x1bc0790) = puVar10[4] + local_34;
+          lVar1 = (longlong)(int)uVar7 * (longlong)*(int *)(iVar4 + 0x1bc07b4);
           _DAT_01bc0784 = _DAT_01bc0784 + 1;
-          *(uint *)(iVar3 + 0x1bc07b0) =
-               (puVar9[2] * 0x100 - _DAT_01bc0cd0) +
+          *(uint *)(iVar4 + 0x1bc07b0) =
+               (puVar10[2] * 0x100 - _DAT_01bc0cd0) +
                ((uint)lVar1 >> 0x10 | (int)((ulonglong)lVar1 >> 0x20) << 0x10);
         }
-        local_30 = local_30 + 4;
+        local_30 = (CVector3i *)&local_30->y;
         local_2c = local_2c + 1;
       } while (local_2c < vertex_count);
     }
-    iVar8 = 0;
+    iVar9 = 0;
     _DAT_01bc123c = 0;
     local_14 = (int *)&DAT_01bc0788;
     if (0 < _DAT_01bc0784) {
       do {
         if ((_DAT_01bc0c88 == *local_14) && (local_14 != (int *)0x0)) goto LAB_0047acf4;
-        iVar8 = iVar8 + 1;
+        iVar9 = iVar9 + 1;
         local_14 = local_14 + 0x14;
-      } while (iVar8 < _DAT_01bc0784);
+      } while (iVar9 < _DAT_01bc0784);
     }
     local_14 = (int *)0x0;
 LAB_0047acf4:
     if (local_14 != (int *)0x0) {
       local_18 = (int *)&DAT_01bc0788;
-      iVar8 = 0;
+      iVar9 = 0;
       if (0 < _DAT_01bc0784) {
         do {
           if ((_DAT_01bc0c88 == *local_18) && (local_18 != local_14)) goto LAB_0047ad2d;
-          iVar8 = iVar8 + 1;
+          iVar9 = iVar9 + 1;
           local_18 = local_18 + 0x14;
-        } while (iVar8 < _DAT_01bc0784);
+        } while (iVar9 < _DAT_01bc0784);
       }
       local_18 = (int *)0x0;
 LAB_0047ad2d:
@@ -158,13 +159,13 @@ LAB_0047ad2d:
           if (local_14[1] <= local_1c) {
             *local_14 = -1;
             local_14 = (int *)&DAT_01bc0788;
-            iVar8 = 0;
+            iVar9 = 0;
             if (0 < _DAT_01bc0784) {
               do {
                 if ((local_1c == *local_14) && (local_14 != local_18)) goto LAB_0047ad88;
-                iVar8 = iVar8 + 1;
+                iVar9 = iVar9 + 1;
                 local_14 = local_14 + 0x14;
-              } while (iVar8 < _DAT_01bc0784);
+              } while (iVar9 < _DAT_01bc0784);
             }
             local_14 = (int *)0x0;
 LAB_0047ad88:
@@ -175,13 +176,13 @@ LAB_0047ad88:
           if (local_18[1] <= local_1c) {
             *local_18 = -1;
             local_18 = (int *)&DAT_01bc0788;
-            iVar8 = 0;
+            iVar9 = 0;
             if (0 < _DAT_01bc0784) {
               do {
                 if ((local_1c == *local_18) && (local_18 != local_14)) goto LAB_0047add8;
-                iVar8 = iVar8 + 1;
+                iVar9 = iVar9 + 1;
                 local_18 = local_18 + 0x14;
-              } while (iVar8 < _DAT_01bc0784);
+              } while (iVar9 < _DAT_01bc0784);
             }
             local_18 = (int *)0x0;
 LAB_0047add8:
@@ -205,13 +206,13 @@ LAB_0047add8:
   }
   else {
     if (0 < vertex_count) {
-      iVar8 = 0;
+      iVar9 = 0;
       do {
-        iVar2 = *(int *)vertex_indices;
-        iVar8 = iVar8 + 1;
-        vertex_indices = vertex_indices + 4;
-        apuStack_78[iVar8] = &DAT_00629014 + iVar2 * 0xc;
-      } while (iVar8 < vertex_count);
+        piVar2 = &vertex_indices->x;
+        iVar9 = iVar9 + 1;
+        vertex_indices = (CVector3i *)&vertex_indices->y;
+        apuStack_78[iVar9] = &DAT_00629014 + *piVar2 * 0xc;
+      } while (iVar9 < vertex_count);
     }
     apuStack_78[0] = _DAT_01c51d14;
     engine_special_cpp_drawPolygon2_FUN_00582370(apuStack_78 + 1,vertex_count);

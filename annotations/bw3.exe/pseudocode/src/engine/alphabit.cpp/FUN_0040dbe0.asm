@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004f70a0 at 004f71bb
+;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f71bb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba18

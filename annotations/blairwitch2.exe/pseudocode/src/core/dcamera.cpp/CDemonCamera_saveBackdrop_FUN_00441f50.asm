@@ -61,13 +61,13 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;   support_codec.cpp_CCodec_dtor_FUN_00433e90
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00434770
+;   support_codec.cpp_CLZWCompress_init_FUN_004347c0
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00434270
 ;   support_codec.cpp_FUN_00433ff0
-;   support_codec.cpp_FUN_004347c0
 ;   support_codec.cpp_FUN_00434910
 ;   ... and 4 more
 ;
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5ce646                       ; 00441fb7 | = "%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 00441fbc
     PUSH EAX                            ; 00441fc0
-    CALL crt_unknown.c_FUN_005b7790     ; 00441fc1
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00441fc1
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00441fc6
     PUSH 0x5ce64d                       ; 00441fc9 | DAT_005ce64d
     LEA EAX,[ESP + 0x4]                 ; 00441fce
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5ce659                       ; 00441feb | = "backdrop\\%s"
     LEA EAX,[ESP + 0x108]               ; 00441ff0
     PUSH EAX                            ; 00441ff7
-    CALL crt_unknown.c_FUN_005b7790     ; 00441ff8
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00441ff8
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00441ffd
     PUSH 0x5ce665                       ; 00442000 | DAT_005ce665
     LEA EAX,[ESP + 0x104]               ; 00442005
@@ -202,8 +202,8 @@ section .text
     LEA EAX,[ESP + 0x164]               ; 004420ff
     PUSH EAX                            ; 00442106
     XOR ESI,ESI                         ; 00442107
-    CALL support_codec.cpp_FUN_004347c0 ; 00442109
-        ;   XREF to: 004347c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_004347c0(CLZWCompress * this_ptr)
+    CALL support_codec.cpp_CLZWCompress_init_FUN_004347c0 ; 00442109
+        ;   XREF to: 004347c0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_004347c0(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 0044210e
     MOV EDI,dword ptr [0x01465928]      ; 00442111 | DAT_01465928
     MOV dword ptr [ESP + 0x1f4],ESI     ; 00442117

@@ -13,12 +13,12 @@
 ;   undefined4 DAT_0264a5f0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_00554c80
 ;   sound_snddx.cpp_FUN_00554ad0
 ;   sound_sndmain.cpp_FUN_00552b30
-;   sound_sndmain.cpp_FUN_00554510
 ;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00554510
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
         ;   Label: LAB_00555a9d
     POP EBX                             ; 00555aa3
     RET                                 ; 00555aa4
-    CALL sound_sndmain.cpp_FUN_00554510 ; 00555aa5
-        ;   XREF to: 00554510 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00554510()
+    CALL sound_sndmain.cpp_pollAllSfxSlots_FUN_00554510 ; 00555aa5
+        ;   XREF to: 00554510 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAllSfxSlots_FUN_00554510()
         ;   Label: LAB_00555aa5
     MOV EAX,0x1                         ; 00555aaa
     JMP 0x00555a9d                      ; 00555aaf
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5e9a3b                       ; 00555b17 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00555b1c
     PUSH EAX                            ; 00555b20
-    CALL crt_unknown.c_FUN_005b7790     ; 00555b21
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00555b21
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 00555b26
     MOV EAX,ESP                         ; 00555b29
     PUSH EAX                            ; 00555b2b

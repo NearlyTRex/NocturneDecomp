@@ -11,28 +11,30 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419070(CBoneGuy *this_ptr)
 {
   byte *puVar1;
   byte *puVar2;
+  CDeformableModelInstance *model_ptr;
   int iVar3;
   byte *puVar4;
   byte *puVar5;
   byte *puVar6;
   byte *puVar7;
   
-  core_enemy_cpp_FUN_00489120(this_ptr);
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcdcc,"@speed" + 1);
-  core_actor_cpp_FUN_0040ba30
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
+  core_enemy_cpp_CEnemy_archive_FUN_00489120(&this_ptr->base);
+  core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xcdcc,"@speed" + 1);
+  core_actor_cpp_archiveDeformableModelInstance_FUN_0040ba30
+            (&(this_ptr->base).base.model,"modelName");
   if (g_CBoneGuyClassVersion < 4) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcddc,"guardDistance");
+    core_actor_cpp_archiveFloat_FUN_0040b830
+              (&(this_ptr->base).guard_distance,"guardDistance");
   }
-  core_actor_cpp_FUN_0040bab0((CMotionController *)&this_ptr->field_0x158,"motion state");
+  model_ptr = &(this_ptr->base).base.model;
+  core_actor_cpp_archiveMotionState_FUN_0040bab0(&model_ptr->base,"motion state");
   if (1 < g_CBoneGuyClassVersion) {
     core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0xd07c,"deathEvent");
     core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xd0e0,"recombineTime");
     core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0xd0e4,"blownUp");
     core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xd694,"param");
     core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0xd0e8,"boxCount");
-    core_actor_cpp_FUN_0040bba0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,"partStatus");
+    core_actor_cpp_archivePartStatus_FUN_0040bba0(model_ptr,"partStatus");
     iVar3 = 0;
     if (0 < *(int *)&this_ptr->field_0xd0e8) {
       puVar7 = &this_ptr->field_0xd0f0;
@@ -59,7 +61,8 @@ void __cdecl core_boneguy_cpp_CBoneGuy_archive_FUN_00419070(CBoneGuy *this_ptr)
     }
   }
   if ((2 < g_CBoneGuyClassVersion) && (g_CBoneGuyClassVersion < 5)) {
-    core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xce58,"victimHeight");
+    core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xce58,"victimHeight")
+    ;
     return;
   }
   return;

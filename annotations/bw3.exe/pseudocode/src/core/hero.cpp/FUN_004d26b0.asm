@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_hero_cpp_FUN_004d26b0(int param_1)
+; void core_hero_cpp_FUN_004d26b0(CCharacter *param_1)
 ;
 ;
 ; XREF[1]:
-;   core_prye.cpp_FUN_00518680 at 0051868c
+;   core_prye.cpp_CPrye_setup_FUN_00518680 at 0051868c
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042b0e0
+;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0
 ;   core_inv.cpp_FUN_004dcad0
-;   core_skeleton.cpp_FUN_0054e6b0
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;
 ; *****************************************************************************
 
@@ -21,12 +21,12 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 004d26b1
     LEA EAX,[EBX + 0x158]               ; 004d26b5
     PUSH EAX                            ; 004d26bb
-    CALL core_skeleton.cpp_FUN_0054e6b0 ; 004d26bc
-        ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0 ; 004d26bc
+        ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004d26c1
     PUSH EBX                            ; 004d26c4
-    CALL core_charactr.cpp_FUN_0042b0e0 ; 004d26c5
-        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042b0e0()
+    CALL core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 ; 004d26c5
+        ;   XREF to: 0042b0e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setup_FUN_0042b0e0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004d26ca
     LEA EAX,[EBX + 0x206e8]             ; 004d26cd
     PUSH EAX                            ; 004d26d3

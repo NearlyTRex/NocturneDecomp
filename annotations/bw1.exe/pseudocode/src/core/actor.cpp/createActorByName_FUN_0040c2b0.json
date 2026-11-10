@@ -21,19 +21,19 @@
     {
       "addr": "00410640",
       "from_addr": "0041069c",
-      "name": "core_baron.cpp_FUN_00410640",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d2540",
-      "from_addr": "004d2549",
-      "name": "core_game.cpp_FUN_004d2540",
+      "name": "core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d27b0",
       "from_addr": "004d322f",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2540",
+      "from_addr": "004d2549",
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004d2540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,7 +69,7 @@
     {
       "addr": "0050f290",
       "from_addr": "0050f491",
-      "name": "core_mimic.cpp_FUN_0050f290",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -81,13 +81,13 @@
     {
       "addr": "00532930",
       "from_addr": "005329f9",
-      "name": "core_passngr.cpp_FUN_00532930",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00540d50",
       "from_addr": "00540d70",
-      "name": "core_scat.cpp_FUN_00540d50",
+      "name": "core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -182,7 +182,7 @@
       {
         "call_addr": "004d322f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +193,7 @@
       {
         "call_addr": "004d2549",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d2540",
+        "caller": "core_game.cpp_giveHeroWeapon_FUN_004d2540",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

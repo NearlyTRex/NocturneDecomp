@@ -21,33 +21,33 @@ CDemonActorType * CTeleportDest::getActorType(CTeleportDest *this_ptr);
 // Address: 00568d50
 CTeleportDest * __cdecl CTeleportDest::ctor(CTeleportDest *this_ptr);
 
-// Original: core_teleport.cpp_FUN_00568d70
+// Original: core_teleport.cpp_CTeleportDest_getBoundingBox_FUN_00568d70
 // Address: 00568d70
-void FUN_00568d70(void);
+CBoundingBox3D * __cdecl CTeleportDest::getBoundingBox(CTeleportDest *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_teleport.cpp_FUN_00568dc0
+// Original: core_teleport.cpp_CTeleportDest_getCollisionType_FUN_00568dc0
 // Address: 00568dc0
-undefined4 FUN_00568dc0(void);
+ECollisionType __cdecl CTeleportDest::getCollisionType(CTeleportDest *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_teleport.cpp_FUN_00568dd0
+// Original: core_teleport.cpp_factoryFuncTeleport_FUN_00568dd0
 // Address: 00568dd0
-void FUN_00568dd0(void);
+void factoryFuncTeleport(void);
 
-// Original: core_teleport.cpp_FUN_00568df0
+// Original: core_teleport.cpp_CTeleport_getActorType_FUN_00568df0
 // Address: 00568df0
-undefined4 FUN_00568df0(void);
+CDemonActorType * __cdecl CTeleport::getActorType(CTeleport *this_ptr);
 
 // Original: core_teleport.cpp_CTeleport_ctor_FUN_00568e00
 // Address: 00568e00
 CTeleport * __cdecl CTeleport::ctor(CTeleport *this_ptr);
 
-// Original: core_teleport.cpp_FUN_00568e40
+// Original: core_teleport.cpp_CTeleport_process_FUN_00568e40
 // Address: 00568e40
-void FUN_00568e40(int param_1);
+void __cdecl CTeleport::process(CTeleport *this_ptr,float delta_time);
 
-// Original: core_teleport.cpp_FUN_00568f20
+// Original: core_teleport.cpp_CTeleport_getBoundingBox_FUN_00568f20
 // Address: 00568f20
-void FUN_00568f20(int param_1);
+CBoundingBox3D * __cdecl CTeleport::getBoundingBox(CTeleport *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_teleport.cpp_CTeleport_archive_FUN_00568fa0
 // Address: 00568fa0

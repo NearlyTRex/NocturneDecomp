@@ -14,7 +14,7 @@
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c90c0
 ;   crt_unknown.c_FUN_005c9110
-;   unkafter_zombie.cpp_FUN_005cc560
+;   crt_unknown.c_FUN_005cc560
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     XOR ESI,ESI                         ; 005c902b
     PUSH EBX                            ; 005c902d
         ;   Label: LAB_005c902d
-    CALL unkafter_zombie.cpp_FUN_005cc560 ; 005c902e
-        ;   XREF to: 005cc560 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cc560()
+    CALL crt_unknown.c_FUN_005cc560     ; 005c902e
+        ;   XREF to: 005cc560 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cc560()
     ADD ESP,0x4                         ; 005c9033
     TEST EAX,EAX                        ; 005c9036
     JNZ 0x005c907a                      ; 005c9038

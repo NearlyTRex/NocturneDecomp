@@ -14,7 +14,7 @@ void core_fire_cpp_FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *p
   bool bVar1;
   byte bVar2;
   float afStackY_1034 [1003];
-  CMatrix3x3f aCStack_74 [40];
+  CMatrix3x3f CStack_74;
   float fStack_4c;
   float afStack_48 [4];
   float fStack_38;
@@ -22,8 +22,7 @@ void core_fire_cpp_FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *p
   float fStack_30;
   float fStack_2c;
   float afStack_28 [3];
-  byte auStack_1c [8];
-  float fStack_14;
+  CVector3f CStack_1c;
   
   bVar2 = 0;
   bVar1 = false;
@@ -45,11 +44,11 @@ void core_fire_cpp_FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *p
   case 6:
     goto LAB_004a26fb;
   }
-  core_dirmat_cpp_FUN_0045b550(aCStack_74,param_3);
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&CStack_74,param_3);
   afStack_28[0] = 0.0;
   afStack_28[1] = 0.0;
   afStack_28[2] = 0.7;
-  core_dirmat_cpp_FUN_0045b800(aCStack_74,afStack_48 + 8);
+  core_dirmat_cpp_FUN_0045b800(&CStack_74,afStack_48 + 8);
   fStack_34 = fStack_4c;
   afStack_48[(uint)bVar2 * -2 + 6] = afStack_48[(uint)bVar2 * -2];
   afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7] =
@@ -57,19 +56,17 @@ void core_fire_cpp_FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *p
   afStack_48[2] = *param_2 - fStack_34;
   afStack_48[3] = param_2[1] - fStack_30;
   fStack_38 = param_2[2] - fStack_2c;
-  auStack_1c._0_4_ = *param_2 - fStack_34;
-  *(float *)(auStack_1c + (uint)bVar2 * -8 + 4) = afStack_48[(uint)bVar2 * -2 + 3];
-  *(float *)(auStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+  CStack_1c.x = *param_2 - fStack_34;
+  *(float *)((int)&CStack_1c + (uint)bVar2 * -8 + 4) = afStack_48[(uint)bVar2 * -2 + 3];
+  *(float *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        afStack_48[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
   if (bVar1) {
-    core_fire_cpp_CStake_spawn_FUN_00497ac0
-              (g_StakePool + _DAT_01c8eeac,(CVector3f *)auStack_1c,param_3,param_4);
+    core_fire_cpp_CStake_spawn_FUN_00497ac0(g_StakePool + _DAT_01c8eeac,&CStack_1c,param_3,param_4);
   }
   else {
-    core_sound_cpp_FUN_00560a70
-              (0x02CF5680,param_1,"a-wood?.wav",(CVector3f *)auStack_1c,0.23);
-    core_fire_cpp_CStake_init_FUN_00497a50
-              (g_StakePool + _DAT_01c8eeac,(CVector3f *)auStack_1c,param_3);
+    core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
+              (0x02CF5680,param_1,"a-wood?.wav",&CStack_1c,0.23);
+    core_fire_cpp_CStake_init_FUN_00497a50(g_StakePool + _DAT_01c8eeac,&CStack_1c,param_3);
   }
   _DAT_01c8eeac = _DAT_01c8eeac + 1;
   if (0xff < _DAT_01c8eeac) {

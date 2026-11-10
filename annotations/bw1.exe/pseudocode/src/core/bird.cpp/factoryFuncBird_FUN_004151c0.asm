@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;   unkafter_bird.cpp_CBird_ctor_FUN_004151f0
 ;
 ; *****************************************************************************
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1fac0                        ; 004151c0
         ;   Label: core_bird.cpp_factoryFuncBird_FUN_004151c0
-    CALL crt_unknown.c_FUN_005c0f32     ; 004151c5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004151c5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004151ca
     TEST EAX,EAX                        ; 004151cd
     JNZ 0x004151d2                      ; 004151cf

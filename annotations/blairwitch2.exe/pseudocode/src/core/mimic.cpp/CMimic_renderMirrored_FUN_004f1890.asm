@@ -57,8 +57,8 @@
 ;   core_motion.cpp_FUN_005042e0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170
 ;   core_xform.cpp_FUN_00591c10
-;   core_xform.cpp_FUN_00591de0
 ;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   ... and 5 more
 ;
@@ -248,8 +248,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004f1a84
     PUSH EAX                            ; 004f1a85
     LEA ESI,[EBP + 0x1e]                ; 004f1a86
-    CALL core_xform.cpp_FUN_00591de0    ; 004f1a89
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 004f1a89
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     ADD ESP,0x4                         ; 004f1a8e
     LEA EAX,[EBP + 0x5a]                ; 004f1a91
     PUSH EAX                            ; 004f1a94

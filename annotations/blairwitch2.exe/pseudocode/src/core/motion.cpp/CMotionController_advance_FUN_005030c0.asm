@@ -26,16 +26,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[44]:
-;   core_armour.cpp_FUN_0040ef00 at 0040eff2
-;   core_baron.cpp_FUN_00410590 at 004105a6
-;   core_batcreat.cpp_FUN_00411a10 at 00411c76
-;   core_batman.cpp_FUN_00412f40 at 004131c7
-;   core_beast.cpp_FUN_00414a80 at 00414ad8
-;   core_biggs.cpp_FUN_00414e50 at 004150b4
-;   core_boneguy.cpp_FUN_004186c0 at 00418a83
-;   core_bride.cpp_FUN_0041dbe0 at 0041dd79
-;   core_colonel.cpp_FUN_00436420 at 00436436
-;   core_cow.cpp_FUN_004392b0 at 0043951a
+;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040eff2
+;   core_baron.cpp_CBaron_advanceMotion_FUN_00410590 at 004105a6
+;   core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0 at 0059e84a
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411c76
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004131c7
+;   core_beast.cpp_CBeast_process_FUN_00414a80 at 00414ad8
+;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 004150b4
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418a83
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dd79
+;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420 at 00436436
 ;   ... and 34 more
 ;
 ; Referenced Globals:
@@ -57,15 +57,15 @@
 ; Called Functions:
 ;   core_event.cpp_CEventList_executeCommands_FUN_004894f0
 ;   core_main.c_FUN_004e4500
+;   core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0
 ;   core_motion.cpp_CMotionController_clearTweenState_FUN_005039e0
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_00503470
 ;   core_motion.cpp_CMotionController_reverseTransition_FUN_00503560
 ;   core_motion.cpp_CMotionController_startTransition_FUN_005036e0
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_00503a10
-;   core_motion.cpp_FUN_00503bd0
 ;   core_motion.cpp_FUN_00503d80
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -254,8 +254,8 @@ section .text
     PUSH 0x5dfc1e                       ; 00503288 | = "signal%d"
     LEA EAX,[ESP + 0x18]                ; 0050328d
     PUSH EAX                            ; 00503291
-    CALL crt_unknown.c_FUN_005b7790     ; 00503292
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00503292
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00503297
     LEA EAX,[ESP + 0x10]                ; 0050329a
     PUSH EAX                            ; 0050329e
@@ -411,8 +411,8 @@ section .text
     PUSH dword ptr [EBX + 0x8]          ; 0050342e
     PUSH ECX                            ; 00503431
     PUSH EBX                            ; 00503432
-    CALL core_motion.cpp_FUN_00503bd0   ; 00503433
-        ;   XREF to: 00503bd0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00503bd0(CMotionController * this_ptr, int motion_index, float current_frame, float * inout_delta_time, ...)
+    CALL core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0 ; 00503433
+        ;   XREF to: 00503bd0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0(CMotionController * this_ptr, int * inout_motion_index, float * inout_frame_number, float delta_time, ...)
     ADD ESP,0x14                        ; 00503438
     MOV ESI,EAX                         ; 0050343b
     MOV EAX,dword ptr [ESP + 0x78]      ; 0050343d

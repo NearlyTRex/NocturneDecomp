@@ -1,0 +1,312 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 150,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data",
+      "undefined_ram",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [
+    {
+      "addr": "004ed290",
+      "from_addr": "004ed295",
+      "name": "core_hiram.cpp_CHiram_setup_FUN_004ed290",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ed630",
+      "from_addr": "004ed7cc",
+      "name": "core_hostage.cpp_CHostage_setup_FUN_004ed630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532930",
+      "from_addr": "00532938",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005947b0",
+      "from_addr": "005947b7",
+      "name": "core_tbplayer.cpp_CBassPlayer_setup_FUN_005947b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00594a30",
+      "from_addr": "00594a37",
+      "name": "core_tbplayer.cpp_CDrummer_setup_FUN_00594a30",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00531720",
+    "address_range": [
+      [
+        "00531720",
+        "005317bb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_npc.cpp_CNPC_setup_FUN_00531720",
+    "signature": "void __cdecl core_npc_cpp_CNPC_setup_FUN_00531720(CNPC *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042c510",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042c510"
+    },
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "005634f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
+    },
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ec720",
+      "name": "s_priest_dfm_005ec720",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec72b",
+      "name": "s_Bip01_L_Hand_005ec72b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec738",
+      "name": "s_Bip01_R_Hand_005ec738",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d81364",
+      "name": "DAT_01d81364",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d81368",
+      "name": "DAT_01d81368",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004ed295",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CHiram_setup_FUN_004ed290",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ed7cc",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_setup_FUN_004ed630",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00532938",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005947b7",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CBassPlayer_setup_FUN_005947b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00594a37",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CDrummer_setup_FUN_00594a30",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7083333333333335,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 10,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 178
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x27a0",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).field_0x27a0 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x2620",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).field_0x2620 = _DAT_01d81368;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x27a8",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)&(this_ptr->base).field_0x27a8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01d81364",
+      "severity": "mild",
+      "text": "DAT_01d81364 = (byte)iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 33,
+      "match": "uRam01d81366",
+      "severity": "mild",
+      "text": "uRam01d81366 = SUB42(iVar1,2);",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 34,
+      "match": "uRam01d81366",
+      "severity": "mild",
+      "text": "uVar3 = uRam01d81366;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01d81364",
+      "severity": "mild",
+      "text": "(this_ptr->base).carry_hands[0] = (SCarryHand)DAT_01d81364;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x25aa",
+      "severity": "mild",
+      "text": "*(ushort *)&(this_ptr->base).field_0x25aa = uVar3;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CNPC",
+        "offset": 0,
+        "vtable_addr": "00604454"
+      },
+      {
+        "class_name": "CNPC",
+        "offset": 0,
+        "vtable_addr": "006024a4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

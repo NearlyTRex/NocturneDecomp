@@ -15,7 +15,7 @@ void __cdecl core_flame_cpp_CFlame_setup_FUN_0049f270(CFlame *this_ptr)
   int iVar3;
   
   iVar3 = 0;
-  core_actor_cpp_FUN_00408a80((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
   pSVar2 = (SMRGLTextureBasic *)&DAT_00615bc0;
   do {
     texture = (SMRGLTextureBasic *)(&DAT_00615b00 + iVar3 * 0xc0);
@@ -27,6 +27,6 @@ void __cdecl core_flame_cpp_CFlame_setup_FUN_0049f270(CFlame *this_ptr)
     pSVar2 = pSVar2 + 0xc0;
   } while (iVar3 < 5);
   uVar1 = rand();
-  *(uint *)&this_ptr->field_0x3f0 = uVar1 & 1;
+  this_ptr->texture_flip = uVar1 & 1;
   return;
 }

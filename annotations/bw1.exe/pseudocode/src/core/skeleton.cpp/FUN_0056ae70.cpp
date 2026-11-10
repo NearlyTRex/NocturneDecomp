@@ -21,7 +21,7 @@ uint * core_skeleton_cpp_FUN_0056ae70(CDeformableModelInstance *param_1)
   CVector3f local_58;
   uint local_4c;
   uint auStack_48 [5];
-  CVector3f local_34;
+  float local_34;
   CDeformableModel *local_20;
   byte *local_1c;
   byte *local_18;
@@ -29,8 +29,8 @@ uint * core_skeleton_cpp_FUN_0056ae70(CDeformableModelInstance *param_1)
   
   bVar6 = 0;
   local_20 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0(param_1);
-  pCVar1 = core_skeleton_cpp_FUN_00563c40(local_20);
-  iVar2 = *(int *)&pCVar1->field_0x1de78;
+  pCVar1 = core_skeleton_cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(local_20);
+  iVar2 = pCVar1->bone_count;
   core_box_cpp_CBoundingBox3D_reset_FUN_00421570(&local_70);
   local_14 = 0;
   if (0 < iVar2) {
@@ -46,16 +46,15 @@ uint * core_skeleton_cpp_FUN_0056ae70(CDeformableModelInstance *param_1)
           auStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
                auStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
           core_xform_cpp_FUN_005b5080(auStack_48 + 2);
-          local_58._0_4_ = local_34._0_4_;
-          *(uint *)((int)&local_58 + (uint)bVar6 * -8 + 4) =
-               *(uint *)((int)&local_34 + (uint)bVar6 * -8 + 4);
+          local_58.x = local_34;
+          *(uint *)((int)&local_58 + (uint)bVar6 * -8 + 4) = auStack_48[(uint)bVar6 * -2 + 6];
           *(uint *)((int)&local_58 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
-               *(uint *)((int)&local_34 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8);
+               auStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];
           iVar3 = iVar3 + 1;
           core_box_cpp_CBoundingBox3D_expand_FUN_00420500(&local_70,&local_58);
         } while (iVar3 < 8);
       }
-      local_20 = (CDeformableModel *)&local_20->field_0x4;
+      local_20 = (CDeformableModel *)local_20->lod_info;
       local_18 = local_18 + 0x18;
       local_1c = local_1c + 0x30;
       local_14 = local_14 + 1;

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 220,
-    "complexity_score": 332,
+    "complexity_score": 302,
     "cross_reference_count": 2,
     "function_call_count": 8,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 82,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "pointer_truncation",
@@ -77,7 +77,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "004b9c50",
@@ -271,35 +271,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Incomplete markup tag beginning with '%s'\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 32,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Incomplete markup tag beginning with '%s'\",param_2);",
+      "text": "_sprintf(&DAT_01cc4270,\"Incomplete markup tag beginning with '%s'\");",
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Markup tag beginning with '%s' - tag text too long\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 36,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Markup tag beginning with '%s' - tag text too long\",param_2);",
+      "text": "_sprintf(&DAT_01cc4270,\"Markup tag beginning with '%s' - tag text too long\");",
       "type": "undefined_data"
     },
     {
@@ -319,19 +303,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 59,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Unexpected '>' found near '%s'\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 59,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Unexpected '>' found near '%s'\",param_2);",
+      "text": "_sprintf(&DAT_01cc4270,\"Unexpected '>' found near '%s'\");",
       "type": "undefined_data"
     },
     {

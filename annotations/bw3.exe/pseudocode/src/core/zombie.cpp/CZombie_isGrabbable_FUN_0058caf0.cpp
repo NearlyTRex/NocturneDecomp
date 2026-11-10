@@ -11,10 +11,10 @@ int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_0058caf0(CZombie *this_ptr,C
 {
   int iVar1;
   
-  iVar1 = core_actor_cpp_FUN_0040c790(grabber,"?CTentacle" + 1);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(grabber,"?CTentacle" + 1);
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = unkafter_enemy_cpp_FUN_0048a200(this_ptr,grabber);
+  iVar1 = core_enemy_cpp_CEnemy_isGrabbable_FUN_0048a200(&this_ptr->base,grabber);
   return iVar1;
 }

@@ -7,11 +7,11 @@
 ; CBodyPart *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_004154f0 at 004155f2
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0 at 004155f2
 ;   core_bodypart.cpp_factoryFuncBodyPart_FUN_004156b0 at 004156c3
 ;
 ; Referenced Globals:
-;   undefined4 g_CBodyPartVTable
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_SBodyPartModelTypeInfo
 ;   WatcomTypeInfo g_SBodyPartFireTypeInfo
 ;

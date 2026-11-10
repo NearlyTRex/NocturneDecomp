@@ -16,11 +16,11 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_0050a450(CPassenger *t
   char *pcVar5;
   CMorph *pCVar6;
   
-  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00508f40((CNPC *)this_ptr);
+  pCVar2 = core_npc_cpp_CNPC_ctor_FUN_00508f40(&this_ptr->base);
   pCVar4 = (CMorph *)0x5cb6a5;
-  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].field_0x10c);
+  pCVar3 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar2[1].base.base.scale.y);
   pCVar6 = pCVar3 + -0xa8;
-  *(byte ***)(pCVar3 + -0x20680) = &g_CPassengerVTable;
+  *(CCharacter_full_vtable **)(pCVar3 + -0x20680) = &g_CPassengerVTable;
   do {
     CVar1 = *pCVar4;
     *pCVar6 = CVar1;
@@ -43,7 +43,8 @@ CPassenger * __cdecl core_passngr_cpp_CPassenger_ctor_FUN_0050a450(CPassenger *t
   } while (CVar1 != (CMorph)0x0);
   pcVar5 = "nameMePlease";
   *(uint *)(pCVar3 + -4) = 0;
-  core_skeleton_cpp_FUN_0054eae0(pCVar3 + -0x2067c,"trainman.dfm");
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)(pCVar3 + -0x2067c),"trainman.dfm");
   pCVar6 = pCVar3 + -0x88;
   *(uint *)(pCVar3 + 0xc30) = 0x3f800000;
   do {

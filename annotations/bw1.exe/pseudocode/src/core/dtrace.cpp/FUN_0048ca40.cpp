@@ -2,13 +2,13 @@
 // Address: 0048ca40
 // Address Range: [[0048ca40, 0048cb91]]
 // Convention: unknown
-// Signature: void core_dtrace_cpp_FUN_0048ca40(int param_1,int *param_2,int param_3,int param_4,int param_5)
+// Signature: void core_dtrace_cpp_FUN_0048ca40(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_dtrace_cpp_FUN_0048ca40(int param_1,int *param_2,int param_3,int param_4,int param_5)
+void core_dtrace_cpp_FUN_0048ca40(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)
 
 {
   float fVar1;
@@ -19,9 +19,7 @@ void core_dtrace_cpp_FUN_0048ca40(int param_1,int *param_2,int param_3,int param
   float fVar6;
   int iVar7;
   int iVar8;
-  float fStack_34;
-  float fStack_30;
-  float fStack_2c;
+  CVector3f CStack_34;
   int iStack_28;
   int iStack_24;
   int iStack_20;
@@ -29,14 +27,14 @@ void core_dtrace_cpp_FUN_0048ca40(int param_1,int *param_2,int param_3,int param
   int iStack_18;
   int iStack_14;
   
-  fVar1 = *(float *)(param_1 + 0x28);
-  fVar2 = *(float *)(param_1 + 0x2c);
-  fVar3 = *(float *)(param_1 + 0x30);
+  fVar1 = (param_1->cell_size).x;
+  fVar2 = (param_1->cell_size).y;
+  fVar3 = (param_1->cell_size).z;
   iStack_1c = 0;
-  fVar4 = *(float *)(param_1 + 0x10);
+  fVar4 = (param_1->bbox_min).x;
   iStack_28 = 0;
-  fVar5 = *(float *)(param_1 + 0x14);
-  fVar6 = *(float *)(param_1 + 0x18);
+  fVar5 = (param_1->bbox_min).y;
+  fVar6 = (param_1->bbox_min).z;
   do {
     iVar8 = 0;
     iStack_24 = iStack_28;
@@ -47,14 +45,14 @@ void core_dtrace_cpp_FUN_0048ca40(int param_1,int *param_2,int param_3,int param
         iStack_18 = iStack_20;
         do {
           if ((*(byte *)(*param_2 + iStack_18) & (&DAT_0061ab68)[iVar7]) != 0) {
-            fStack_34 = (float)iVar7 * *(float *)(param_1 + 0x28) * _DAT_005db968 +
-                        (float)param_3 * fVar1 + fVar4;
+            CStack_34.x = (float)iVar7 * (param_1->cell_size).x * _DAT_005db968 +
+                          (float)param_3 * fVar1 + fVar4;
             iStack_14 = iStack_1c;
-            fStack_30 = (float)iVar8 * *(float *)(param_1 + 0x2c) * _DAT_005db968 +
-                        (float)param_4 * fVar2 + fVar5;
-            fStack_2c = (float)iStack_1c * *(float *)(param_1 + 0x30) * _DAT_005db968 +
-                        (float)param_5 * fVar3 + fVar6;
-            core_dtrace_cpp_FUN_0048c510(param_1,&fStack_34);
+            CStack_34.y = (float)iVar8 * (param_1->cell_size).y * _DAT_005db968 +
+                          (float)param_4 * fVar2 + fVar5;
+            CStack_34.z = (float)iStack_1c * (param_1->cell_size).z * _DAT_005db968 +
+                          (float)param_5 * fVar3 + fVar6;
+            core_dtrace_cpp_FUN_0048c510(param_1,&CStack_34);
           }
           iVar7 = iVar7 + 1;
         } while (iVar7 < 8);

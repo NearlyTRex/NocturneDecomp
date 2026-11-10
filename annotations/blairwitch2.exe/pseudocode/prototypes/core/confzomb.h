@@ -25,46 +25,46 @@ CConfederateZombie * CConfederateZombie::ctor(CConfederateZombie *this_ptr);
 // Address: 005a1cc0
 CConfederateZombie * CConfederateZombie::dtor(CConfederateZombie *this_ptr,uint flags);
 
-// Original: core_confzomb.cpp_FUN_005a1d90
+// Original: core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90
 // Address: 005a1d90
-void FUN_005a1d90(int param_1);
+void __cdecl CConfederateZombie::setup(CConfederateZombie *this_ptr);
 
-// Original: core_confzomb.cpp_FUN_005a1e10
+// Original: core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10
 // Address: 005a1e10
-void FUN_005a1e10(int param_1,undefined4 param_2,int param_3);
+void __cdecl CConfederateZombie::processStates(CConfederateZombie *this_ptr,float delta_time,int mode);
 
-// Original: core_confzomb.cpp_FUN_005a1ed0
+// Original: core_confzomb.cpp_CConfederateZombie_processDeathState_FUN_005a1ed0
 // Address: 005a1ed0
-void FUN_005a1ed0(int param_1);
+void __cdecl CConfederateZombie::processDeathState(CConfederateZombie *this_ptr,float delta_time);
 
-// Original: core_confzomb.cpp_FUN_005a1f40
+// Original: core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40
 // Address: 005a1f40
-void FUN_005a1f40(CCharacter *param_1);
+void __cdecl CConfederateZombie::processRangeAttackState(CConfederateZombie *this_ptr,float delta_time);
 
-// Original: core_confzomb.cpp_FUN_005a2130
+// Original: core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130
 // Address: 005a2130
-void FUN_005a2130(CCharacter *param_1);
+void __cdecl CConfederateZombie::processMeleeAttackState(CConfederateZombie *this_ptr,float delta_time);
 
 // Original: core_confzomb.cpp_FUN_005a2240
 // Address: 005a2240
 void FUN_005a2240(int param_1,float param_2);
 
-// Original: core_confzomb.cpp_FUN_005a24a0
+// Original: core_confzomb.cpp_CConfederateZombie_getDeathState_FUN_005a24a0
 // Address: 005a24a0
-undefined4 FUN_005a24a0(int param_1);
+EDeathState __cdecl CConfederateZombie::getDeathState(CConfederateZombie *this_ptr);
 
-// Original: core_confzomb.cpp_FUN_005a2520
+// Original: core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520
 // Address: 005a2520
-void FUN_005a2520(CDemonActor *param_1,undefined4 param_2);
+void __cdecl CConfederateZombie::processMotionEvent(CConfederateZombie *this_ptr,int event_id);
 
-// Original: core_confzomb.cpp_FUN_005a2600
+// Original: core_confzomb.cpp_CConfederateZombie_getTargetPoints_FUN_005a2600
 // Address: 005a2600
-undefined4 FUN_005a2600(int param_1,undefined4 param_2);
+int __cdecl CConfederateZombie::getTargetPoints(CConfederateZombie *this_ptr,CVector3f *out_points_array);
 
-// Original: core_confzomb.cpp_FUN_005a2630
+// Original: core_confzomb.cpp_CConfederateZombie_renderTransparent_FUN_005a2630
 // Address: 005a2630
-undefined4 FUN_005a2630(int param_1);
+int __cdecl CConfederateZombie::renderTransparent(CConfederateZombie *this_ptr);
 
-// Original: core_confzomb.cpp_FUN_005a2660
+// Original: core_confzomb.cpp_CConfederateZombie_archive_FUN_005a2660
 // Address: 005a2660
-void FUN_005a2660(undefined4 param_1);
+void __cdecl CConfederateZombie::archive(CConfederateZombie *this_ptr);

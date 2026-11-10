@@ -12,8 +12,8 @@
 ;
 ; XREF[3]:
 ;   core_barrier.cpp_CBarrier_updateCollisionData_FUN_004109e0 at 004109f6
-;   core_door.cpp_FUN_00477ab0 at 00477db6
-;   core_door.cpp_FUN_00478af0 at 00478b1f
+;   core_door.cpp_CDoor_process_FUN_00477ab0 at 00477db6
+;   core_door.cpp_CDoor_updateCollisionData_FUN_00478af0 at 00478b1f
 ;
 ; Referenced Globals:
 ;   CDemonRaytrace g_CDemonRaytraceInstance

@@ -7,13 +7,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[7]:
-;   core_boneguy.cpp_FUN_00419c50 at 00419d41
-;   core_ghoul.cpp_FUN_004c39b0 at 004c3a6f
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419d41
+;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437cdd
+;   core_ghoul.cpp_CGhoul_archive_FUN_004c39b0 at 004c3a6f
 ;   core_hero.cpp_FUN_004ce590 at 004ce5f8
 ;   core_hostage.cpp_CHostage_archive_FUN_004d2df0 at 004d2e56
-;   core_tentacle.cpp_FUN_00572f90 at 00572fd8
-;   core_zombie.cpp_FUN_00599160 at 005991e4
-;   unkafter_conveyor.cpp_FUN_00437b80 at 00437cdd
+;   core_tentacle.cpp_CTentacle_archive_FUN_00572f90 at 00572fd8
+;   core_zombie.cpp_CZombie_archive_FUN_00599160 at 005991e4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_part_status_opening_brac_005caba1

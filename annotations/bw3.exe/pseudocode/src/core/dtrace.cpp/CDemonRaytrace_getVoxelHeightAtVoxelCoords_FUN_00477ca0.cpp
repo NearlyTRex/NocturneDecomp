@@ -17,27 +17,27 @@ int __cdecl core_dtrace_cpp_CDemonRaytrace_getVoxelHeightAtVoxelCoords_FUN_00477
   int iVar6;
   uint uVar7;
   
-  iVar4 = *(int *)voxel_coords >> 0x1f;
-  iVar4 = (int)((*(int *)voxel_coords + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
-  iVar5 = *(int *)(voxel_coords + 4) >> 0x1f;
-  iVar5 = (int)((*(int *)(voxel_coords + 4) + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
-  iVar6 = *(int *)(voxel_coords + 8) >> 0x1f;
-  iVar6 = (int)((*(int *)(voxel_coords + 8) + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3;
+  iVar4 = voxel_coords->x >> 0x1f;
+  iVar4 = (int)((voxel_coords->x + iVar4 * -8) - (uint)(iVar4 << 2 < 0)) >> 3;
+  iVar5 = voxel_coords->y >> 0x1f;
+  iVar5 = (int)((voxel_coords->y + iVar5 * -8) - (uint)(iVar5 << 2 < 0)) >> 3;
+  iVar6 = voxel_coords->z >> 0x1f;
+  iVar6 = (int)((voxel_coords->z + iVar6 * -8) - (uint)(iVar6 << 2 < 0)) >> 3;
   if (((((-1 < iVar4) && (-1 < iVar5)) && (-1 < iVar6)) &&
-      ((iVar4 < *(int *)&this_ptr->field_0x40 && (iVar5 < *(int *)&this_ptr->field_0x44)))) &&
-     (iVar6 < *(int *)&this_ptr->field_0x48)) {
-    uVar1 = *(uint *)voxel_coords;
-    uVar2 = *(uint *)(voxel_coords + 8);
-    uVar7 = *(uint *)(voxel_coords + 4) & 7;
+      ((iVar4 < (this_ptr->grid_coord).x && (iVar5 < (this_ptr->grid_coord).y)))) &&
+     (iVar6 < (this_ptr->grid_coord).z)) {
+    uVar1 = voxel_coords->x;
+    uVar2 = voxel_coords->z;
+    uVar7 = voxel_coords->y & 7;
     do {
       do {
         pCVar3 = core_dtrace_cpp_CDemonRaytrace_getCubeAt_FUN_00473b60(this_ptr,iVar4,iVar5,iVar6);
         if (pCVar3 == (CDemonCube *)0x0) {
           return -999;
         }
-        if ((*(int *)pCVar3 != 0) &&
-           ((*(byte *)(*(int *)pCVar3 + (uVar2 & 7) * 8 + uVar7) & (&DAT_005fb0e8)[uVar1 & 7]) != 0)
-           ) {
+        if ((pCVar3->voxel_buffer1 != (SVoxelGrid *)0x0) &&
+           (((byte)pCVar3->voxel_buffer1[(uVar2 & 7) * 8 + uVar7] & (&DAT_005fb0e8)[uVar1 & 7]) != 0
+           )) {
           return uVar7 + iVar5 * 8;
         }
         uVar7 = uVar7 - 1;

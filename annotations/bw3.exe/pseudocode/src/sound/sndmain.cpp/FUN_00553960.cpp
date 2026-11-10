@@ -53,7 +53,7 @@ uint sound_sndmain_cpp_FUN_00553960(CSfxSample *param_1,float param_2,float para
       sound_sndmain_cpp_FUN_0055a560("SfxSample::pollStream - no sound device?\n");
       goto LAB_00553c13;
     }
-    if (*(int *)&param_1->field_0x124 != 1) {
+    if (param_1->loop_marker_count != 1) {
       _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
       _DAT_01d71de4 = 0x92b;
       core_main_c_FUN_004e4330("SfxSample::pollStream - cannot stream sample with exotic loop points: %s",param_1);
@@ -69,11 +69,11 @@ LAB_00553c13:
         return 0;
       }
       iVar5 = sound_sndmain_cpp_FUN_00555b80(param_1);
-      if (((iVar5 == 0) && (-1 < *(int *)&param_1->field_0x110)) &&
-         ((double)*(int *)&param_1->field_0x110 <= *(double *)(iVar1 + 0x2ce726c)))
+      if (((iVar5 == 0) && (-1 < (param_1->sample_info).sample_count)) &&
+         ((double)(param_1->sample_info).sample_count <= *(double *)(iVar1 + 0x2ce726c)))
       goto LAB_00553c13;
     }
-    fVar13 = (float10)*(int *)&param_1->field_0x10c * (float10)param_2;
+    fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_2;
     iVar5 = *(int *)&param_1->field_0x164;
     round();
     local_38 = (int)ROUND(fVar13);
@@ -88,10 +88,10 @@ LAB_00553c13:
     }
     if (local_30 < local_38) {
       local_2c = 99999999;
-      if (*(int *)&param_1->field_0x158 != 0) {
+      if (param_1->buffer_id != 0) {
         local_2c = sound_sndmain_cpp_FUN_005558e0(param_1,0x3c00);
       }
-      fVar13 = (float10)*(int *)&param_1->field_0x10c * (float10)param_3;
+      fVar13 = (float10)(param_1->sample_info).sample_rate * (float10)param_3;
       iVar5 = round();
       local_34 = (int)ROUND(fVar13);
       if (iVar5 < (int)ROUND(fVar13)) {
@@ -115,7 +115,7 @@ LAB_00553c13:
           if (local_2c < iVar5) {
             iVar5 = local_2c;
           }
-          iVar6 = *(int *)&param_1->field_0x110;
+          iVar6 = (param_1->sample_info).sample_count;
           bVar2 = false;
           if (-1 < iVar6) {
             if (*(int *)&param_1->field_0x16c < iVar6) {
@@ -128,8 +128,8 @@ LAB_00553c13:
               iVar6 = sound_sndmain_cpp_FUN_00555b80(*(CSfxSample **)(&DAT_02ce7284 + iVar1));
               if ((iVar6 == 0) ||
                  (this_ptr = *(CSfxSample **)(&DAT_02ce7284 + iVar1),
-                 *(int *)&this_ptr->field_0x110 == *(int *)&this_ptr->field_0x164)) {
-                if (*(int *)&param_1->field_0x158 == 0) {
+                 (this_ptr->sample_info).sample_count == *(int *)&this_ptr->field_0x164)) {
+                if (param_1->buffer_id == 0) {
                   return 1;
                 }
                 bVar2 = true;
@@ -143,7 +143,7 @@ LAB_00553c13:
           output_buffer = (short *)&DAT_02cdafb8;
           bVar3 = false;
           bVar4 = true;
-          if (*(int *)&param_1->field_0x158 == 0) {
+          if (param_1->buffer_id == 0) {
             output_buffer =
                  (short *)sound_sndmain_cpp_FUN_00553660
                                     (param_1,*(uint *)&param_1->field_0x170,iVar5);
@@ -186,7 +186,7 @@ LAB_00553d10:
             iVar6 = sound_sndmain_cpp_FUN_00555900(param_1,iVar5);
             iVar9 = unkafter_turret_cpp_FUN_00573c00(&param_1->field_0x17c,output_buffer,iVar6);
             if (iVar9 != iVar6) {
-              sound_sndmain_cpp_FUN_00553760(param_1);
+              sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(param_1);
               pcVar14 = "Error reading %s while streaming\n";
               goto LAB_00553c0b;
             }
@@ -221,7 +221,7 @@ LAB_00553d10:
               puVar7 = (uint *)((int)puVar7 + (uint)bVar12 * -2 + 1);
             }
 LAB_00553d8d:
-            sound_sndmain_cpp_FUN_00553760(param_1);
+            sound_sndmain_cpp_CSfxSample_releaseSoundBuffer_FUN_00553760(param_1);
           }
           else if (bVar3) goto LAB_00553d8d;
           if (iVar5 < local_18) {
@@ -230,7 +230,7 @@ LAB_00553d8d:
             core_main_c_FUN_004e4330("MP3 decoded more than batch: r = %d, batch = %d",local_18,iVar5);
           }
           if (iVar5 != local_18) {
-            *(int *)&param_1->field_0x110 = *(int *)&param_1->field_0x16c + local_18;
+            (param_1->sample_info).sample_count = *(int *)&param_1->field_0x16c + local_18;
           }
           local_1c = local_1c - local_18;
           iVar5 = *(int *)&param_1->field_0x170 + local_18;

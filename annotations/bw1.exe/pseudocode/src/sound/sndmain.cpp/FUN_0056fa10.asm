@@ -9,15 +9,15 @@
 ;
 ; XREF[11]:
 ;   sound_sndmain.cpp_FUN_005735a0 at 005735b1
-;   sound_sndmain.cpp_FUN_00573620 at 00573627
 ;   sound_sndmain.cpp_FUN_00573760 at 00573767
 ;   sound_sndmain.cpp_FUN_005737d0 at 005737d7
 ;   sound_sndmain.cpp_FUN_005738d0 at 005738d7
 ;   sound_sndmain.cpp_FUN_00573950 at 00573957
 ;   sound_sndmain.cpp_FUN_00573980 at 00573987
-;   sound_sndmain.cpp_FUN_005739e0 at 00573a1a
-;   sound_sndmain.cpp_FUN_00573ab0 at 00573aba
 ;   sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00573660 at 00573672
+;   sound_sndmain.cpp_getSfxSampleInfo_FUN_00573620 at 00573627
+;   sound_sndmain.cpp_killSfx_FUN_00573a80 at 00573a87
+;   sound_sndmain.cpp_setSfxFade_FUN_00573ab0 at 00573aba
 ;   ... and 1 more
 ;
 ; Referenced Globals:

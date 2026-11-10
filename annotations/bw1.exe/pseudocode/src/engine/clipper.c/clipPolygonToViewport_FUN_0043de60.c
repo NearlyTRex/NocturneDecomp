@@ -36,7 +36,7 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_0043de60(int vertex_coun
   
   bVar16 = 0;
   if (DAT_0061b4c0 == 0) {
-    engine_prim_c_FUN_0053f720(vertex_indices,vertex_count);
+    engine_prim_c_renderIndexedPolygonAdvanced_FUN_0053f720(vertex_indices,vertex_count);
   }
   else {
     uVar5 = 0xffffffff;
@@ -419,7 +419,8 @@ void __cdecl engine_clipper_c_clipPolygonToViewport_FUN_0043de60(int vertex_coun
         }
       }
       if (2 < (int)DAT_007c7554) {
-        engine_prim_c_FUN_0053f080((SRenderVertex *)&DAT_007c7558,DAT_007c7554);
+        engine_prim_c_renderScanlinePolygon_FUN_0053f080
+                  ((SRenderVertex *)&DAT_007c7558,DAT_007c7554);
         return;
       }
     }

@@ -17,9 +17,9 @@ void FUN_00478e10(undefined *param_1);
 // Address: 00478e20
 void FUN_00478e20(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 
-// Original: engine_dosio.cpp_FUN_00478e40
+// Original: engine_dosio.cpp_addGetFileInfoHook_FUN_00478e40
 // Address: 00478e40
-void FUN_00478e40(undefined4 param_1);
+void __cdecl addGetFileInfoHook(undefined4 param_1);
 
 // Original: engine_dosio.cpp_findFile_FUN_00478e90
 // Address: 00478e90
@@ -39,7 +39,7 @@ _FILE * __cdecl FUN_00479180(char *directory,char *filename,char *mode);
 
 // Original: engine_dosio.cpp_reopenFileStream_FUN_00479240
 // Address: 00479240
-void __cdecl reopenFileStream(char *param_1,undefined4 param_2,uint param_3,int *param_4);
+void __cdecl reopenFileStream(char *param_1,undefined4 param_2,undefined4 param_3,_FILE *param_4,undefined4 param_5,uint param_6);
 
 // Original: engine_dosio.cpp_CFileFinder_ctor_FUN_00479320
 // Address: 00479320
@@ -69,13 +69,13 @@ void __cdecl CFileFinder::reset(CFileFinder *this_ptr);
 // Address: 004794b0
 void FUN_004794b0(char *param_1,byte *param_2);
 
-// Original: engine_dosio.cpp_FUN_00479580
+// Original: engine_dosio.cpp_splitPath_FUN_00479580
 // Address: 00479580
-void __cdecl FUN_00479580(char *full_path,char *drive,char *directory,char *filename,char *extension);
+void __cdecl splitPath(char *full_path,char *drive,char *directory,char *filename,char *extension);
 
-// Original: engine_dosio.cpp_FUN_004795b0
+// Original: engine_dosio.cpp_makePath_FUN_004795b0
 // Address: 004795b0
-void __cdecl FUN_004795b0(char *full_path,char *drive,char *directory,char *filename,char *extension);
+void __cdecl makePath(char *full_path,char *drive,char *directory,char *filename,char *extension);
 
 // Original: engine_dosio.cpp_FUN_004795e0
 // Address: 004795e0

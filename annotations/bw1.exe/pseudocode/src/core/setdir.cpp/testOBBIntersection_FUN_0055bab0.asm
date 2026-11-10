@@ -68,7 +68,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_setdir.cpp_FUN_0055bf10 at 0055c000
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10 at 0055c000
 ;
 ; Referenced Globals:
 ;   WatcomTypeInfo g_CVectorTypeInfo

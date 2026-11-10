@@ -22,8 +22,7 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(int param_1,CDemonL
   }
   if (*(int *)(param_1 + 0x11ec) != 0) {
     if (0.0 < *(float *)(param_1 + 0x16f4 + *(int *)(param_1 + 0x1890) * 4)) {
-      *(float *)(param_1 + 0x1894) =
-           *(float *)&g_CGamePtr->field_0x314 + *(float *)(param_1 + 0x1894);
+      *(float *)(param_1 + 0x1894) = g_CGamePtr->delta_time_float + *(float *)(param_1 + 0x1894);
       iVar2 = *(int *)(param_1 + 0x1890) * 4 + param_1;
       if (*(float *)(iVar2 + 0x16f4) < *(float *)(param_1 + 0x1894)) {
         iVar3 = *(int *)(param_1 + 0x1890) + 1;
@@ -51,21 +50,20 @@ void __cdecl core_setutil_cpp_C3DSLight_process_FUN_00542b60(int param_1,CDemonL
     }
   }
   if (*(float *)(param_1 + 0x11e0) < 1.0) {
-    *(float *)(param_1 + 0x11e8) = *(float *)&g_CGamePtr->field_0x314 + *(float *)(param_1 + 0x11e8)
-    ;
+    *(float *)(param_1 + 0x11e8) = g_CGamePtr->delta_time_float + *(float *)(param_1 + 0x11e8);
     if (*(float *)(param_1 + 0x11e4) < *(float *)(param_1 + 0x11e8)) {
       *(float *)(param_1 + 0x11e8) = *(float *)(param_1 + 0x11e8) - *(float *)(param_1 + 0x11e4);
     }
     if (*(float *)(param_1 + 0x11e8) <= *(float *)(param_1 + 0x11e0)) {
-      *(uint *)&param_2->field_0x1cb4 = 1;
+      param_2->light_enabled_flag = 1;
     }
     else {
-      *(uint *)&param_2->field_0x1cb4 = 0;
+      param_2->light_enabled_flag = 0;
     }
   }
-  if (*(int *)&g_CDemonSetPtr->field_0x15aeb4 != 0) {
+  if (g_CDemonSetPtr->camera_enabled_flag != 0) {
     return;
   }
-  *(uint *)&param_2->field_0x1cb4 = 0;
+  param_2->light_enabled_flag = 0;
   return;
 }

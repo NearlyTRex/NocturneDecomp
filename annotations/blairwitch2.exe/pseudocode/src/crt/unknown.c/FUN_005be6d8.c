@@ -9,7 +9,7 @@
 void FUN_005be6d8(uint param_1)
 
 {
-  unkafter_morph_cpp_FUN_005c3750();
+  FUN_005c3750();
   FUN_005be628(param_1);
   return;
 }

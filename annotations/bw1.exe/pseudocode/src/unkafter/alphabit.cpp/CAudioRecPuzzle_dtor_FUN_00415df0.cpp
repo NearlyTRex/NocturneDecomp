@@ -24,7 +24,7 @@ CAudioRecPuzzle * unkafter_alphabit_cpp_CAudioRecPuzzle_dtor_FUN_00415df0(CAudio
   *(byte ***)this_ptr = &g_CAudioRecPuzzleVTable;
   iVar1 = unkafter_superopt_cpp_FUN_004188b0(&this_ptr->field_0x60,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)(iVar1 + -0x5c),0);
-  pCVar3 = (CAudioRecPuzzle *)unkafter_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].field_0x10,1);
+  pCVar3 = (CAudioRecPuzzle *)unkafter_alphabit_cpp_FUN_00415bc0(&pCVar2[-1].height,1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

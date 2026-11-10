@@ -60,20 +60,20 @@
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_loadCameraFog_FUN_00443400
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dmodel.cpp_CKeyFramedModel_load_FUN_0044dcd0
 ;   core_dtrace.cpp_FUN_00472ab0
-;   core_level.cpp_FUN_004e1600
+;   core_level.cpp_CLevelLoader_update_FUN_004e1600
 ;   core_main.c_FUN_004e4500
 ;   core_path.cpp_resetAllPathMaps_FUN_00513f30
 ;   core_set.cpp_CDemonSet_clear_FUN_0052c090
 ;   core_setcolid.cpp_CDemonSet_commitVoxelBuffer_FUN_00538160
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610
 ;   core_setdir.cpp_CDemonSet_skipDeprecatedVirtualDirectorData_FUN_00539ff0
 ;   core_setdir.cpp_FUN_00539860
-;   core_setdir.cpp_FUN_0053a610
-;   core_setutil.cpp_FUN_0053a8e0
-;   core_setutil.cpp_FUN_0053ac70
-;   core_setutil.cpp_FUN_0053af30
+;   core_setutil.cpp_C3DSCamera_load_FUN_0053a8e0
+;   core_setutil.cpp_C3DSCamera_loadPVS_FUN_0053ac70
+;   core_setutil.cpp_C3DSLight_load_FUN_0053af30
 ;   ... and 15 more
 ;
 ; *****************************************************************************
@@ -97,8 +97,8 @@ section .text
     PUSH EAX                            ; 0052c101
     MOV EDX,dword ptr [0x00617e10]      ; 0052c102 | DAT_00617e10
     PUSH EDX                            ; 0052c108
-    CALL core_level.cpp_FUN_004e1600    ; 0052c109
-        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052c109
+        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 0052c10e
     MOV ECX,dword ptr [EBP + 0x14]      ; 0052c111
     PUSH ECX                            ; 0052c114
@@ -450,8 +450,8 @@ section .text
     PUSH 0x0                            ; 0052c504
     LEA EAX,[ESP + 0x210]               ; 0052c506
     PUSH EAX                            ; 0052c50d
-    CALL engine_dosio.cpp_FUN_00461070  ; 0052c50e
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 0052c50e
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0052c513
     PUSH 0x5e5537                       ; 0052c516 | = "train"
     LEA EAX,[ESP + 0x104]               ; 0052c51b
@@ -503,8 +503,8 @@ section .text
     PUSH EBX                            ; 0052c5a1
         ;   Label: LAB_0052c5a1
     PUSH ESI                            ; 0052c5a2
-    CALL core_setutil.cpp_FUN_0053af30  ; 0052c5a3
-        ;   XREF to: 0053af30 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_FUN_0053af30(C3DSLight * this_ptr, _FILE * file_handle)
+    CALL core_setutil.cpp_C3DSLight_load_FUN_0053af30 ; 0052c5a3
+        ;   XREF to: 0053af30 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSLight_load_FUN_0053af30(C3DSLight * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0052c5a8
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052c5ab
     INC EDI                             ; 0052c5ae
@@ -544,8 +544,8 @@ section .text
     PUSH EBX                            ; 0052c5ff
         ;   Label: LAB_0052c5ff
     PUSH ESI                            ; 0052c600
-    CALL core_setutil.cpp_FUN_0053a8e0  ; 0052c601
-        ;   XREF to: 0053a8e0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_FUN_0053a8e0(C3DSCamera * this_ptr, _FILE * file_handle)
+    CALL core_setutil.cpp_C3DSCamera_load_FUN_0053a8e0 ; 0052c601
+        ;   XREF to: 0053a8e0 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_load_FUN_0053a8e0(C3DSCamera * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0052c606
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052c609
     INC EDI                             ; 0052c60c
@@ -651,8 +651,8 @@ section .text
     PUSH EAX                            ; 0052c76a
     MOV EAX,dword ptr [ESP + 0x300]     ; 0052c76b
     PUSH EAX                            ; 0052c772
-    CALL core_dirmat.cpp_FUN_00449280   ; 0052c773
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 0052c773
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0052c778
     MOV EDX,dword ptr [ESP + 0x31c]     ; 0052c77b
     PUSH EDX                            ; 0052c782
@@ -826,8 +826,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x314]     ; 0052c9c6
     PUSH ECX                            ; 0052c9cd
     INC ESI                             ; 0052c9ce
-    CALL core_dirmat.cpp_FUN_00449280   ; 0052c9cf
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 0052c9cf
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0052c9d4
     ADD EDI,0x44                        ; 0052c9d7
     MOV EAX,dword ptr [ESP + 0x310]     ; 0052c9da
@@ -853,8 +853,8 @@ section .text
     MOV ESI,dword ptr [EBP + 0x14]      ; 0052ca40
         ;   Label: LAB_0052ca40
     PUSH ESI                            ; 0052ca43
-    CALL core_setdir.cpp_FUN_0053a610   ; 0052ca44
-        ;   XREF to: 0053a610 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0053a610()
+    CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610 ; 0052ca44
+        ;   XREF to: 0053a610 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0052ca49
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052ca4c
         ;   Label: LAB_0052ca4c
@@ -897,8 +897,8 @@ section .text
     PUSH EBX                            ; 0052caab
         ;   Label: LAB_0052caab
     PUSH EDI                            ; 0052caac
-    CALL core_setutil.cpp_FUN_0053ac70  ; 0052caad
-        ;   XREF to: 0053ac70 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_FUN_0053ac70(C3DSCamera * this_ptr, _FILE * file_handle)
+    CALL core_setutil.cpp_C3DSCamera_loadPVS_FUN_0053ac70 ; 0052caad
+        ;   XREF to: 0053ac70 (UNCONDITIONAL_CALL)  ; void core_setutil.cpp_C3DSCamera_loadPVS_FUN_0053ac70(C3DSCamera * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 0052cab2
     MOV EAX,dword ptr [EBP + 0x14]      ; 0052cab5
     INC ESI                             ; 0052cab8
@@ -923,8 +923,8 @@ section .text
     PUSH EAX                            ; 0052cae8
     MOV ECX,dword ptr [0x00617e10]      ; 0052cae9 | DAT_00617e10
     PUSH ECX                            ; 0052caef
-    CALL core_level.cpp_FUN_004e1600    ; 0052caf0
-        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052caf0
+        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 0052caf5
     LEA EAX,[ESP + 0x200]               ; 0052caf8
     MOV EBX,dword ptr [EBP + 0x14]      ; 0052caff
@@ -985,8 +985,8 @@ section .text
     PUSH EAX                            ; 0052cb83
     MOV ESI,dword ptr [0x00617e10]      ; 0052cb84 | DAT_00617e10
     PUSH ESI                            ; 0052cb8a
-    CALL core_level.cpp_FUN_004e1600    ; 0052cb8b
-        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
+    CALL core_level.cpp_CLevelLoader_update_FUN_004e1600 ; 0052cb8b
+        ;   XREF to: 004e1600 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004e1600(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 0052cb90
     MOV ESI,dword ptr [EBP + 0x14]      ; 0052cb93
     LEA EDI,[ESP + 0x264]               ; 0052cb96
@@ -1456,8 +1456,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 0052d0ae
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 0052d0b3
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 0052d0b6
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 0052d0b6
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0052d0bb
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_0058ead0 ; 0052d0c0

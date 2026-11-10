@@ -23,13 +23,13 @@ void __cdecl core_fire_cpp_CFireEffect_createSpark_FUN_004b59e0(CFireEffect *thi
     _DAT_01c986b0 = 0;
   }
   (*(code *)**(uint **)&g_SparkPool[iVar1].field_0x3c)(pCVar3,position,velocity);
-  iVar2 = core_actor_cpp_FUN_0040cc60(0xc000,0xffff);
-  *(uint *)&g_SparkPool[iVar1].field_0x48 = 0;
-  *(uint *)&g_SparkPool[iVar1].field_0x40 =
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0xc000,0xffff);
+  g_SparkPool[iVar1].first_update_flag = 0;
+  g_SparkPool[iVar1].intensity_current =
        (uint)((longlong)intensity_scale * (longlong)iVar2) >> 0x10 |
        (int)((ulonglong)((longlong)intensity_scale * (longlong)iVar2) >> 0x20) << 0x10;
-  *(int *)&g_SparkPool[iVar1].field_0x44 = intensity_target;
-  *(int *)&g_SparkPool[iVar1].field_0x4c = spark_type;
-  *(int *)&g_SparkPool[iVar1].field_0x50 = fade_rate;
+  g_SparkPool[iVar1].intensity_target = intensity_target;
+  g_SparkPool[iVar1].spark_type = spark_type;
+  g_SparkPool[iVar1].fade_rate = fade_rate;
   return;
 }

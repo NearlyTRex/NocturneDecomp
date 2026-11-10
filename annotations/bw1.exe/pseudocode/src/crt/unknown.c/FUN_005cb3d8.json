@@ -1,0 +1,346 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 195,
+    "complexity_score": 358,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 93,
+    "suspect_count": 24,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_param",
+      "unresolved_funcptr",
+      "warning_noreturn",
+      "warning_unreachable"
+    ],
+    "total_lines": 288
+  },
+  "cross_references": [
+    {
+      "addr": "005cb5a8",
+      "from_addr": "005cb5d1",
+      "name": "crt_unknown.c_FUN_005cb5a8",
+      "type": "DATA"
+    }
+  ],
+  "function": {
+    "address": "005cb3d8",
+    "address_range": [
+      [
+        "005cb3d8",
+        "005cb5a5"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005cb3d8",
+    "signature": "undefined4 crt_unknown_c_FUN_005cb3d8(PEXCEPTION_RECORD param_1,undefined4 param_2,PCONTEXT param_3)"
+  },
+  "function_calls": [
+    {
+      "addr": "005cd0e0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005cd0e0"
+    },
+    {
+      "addr": "005cd2b8",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005cd2b8"
+    },
+    {
+      "addr": "EXTERNAL:00000055",
+      "is_variadic": false,
+      "name": "ExitProcess"
+    },
+    {
+      "addr": "EXTERNAL:000000a0",
+      "is_variadic": false,
+      "name": "UnhandledExceptionFilter"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb3bc",
+      "name": "switchdataD_005cb3bc",
+      "type": "void*",
+      "value": "005cb422"
+    },
+    {
+      "addr": "005d0544",
+      "name": "PTR_ExitProcess_005d0544",
+      "type": "void*",
+      "value": "001d0d10"
+    },
+    {
+      "addr": "005d0670",
+      "name": "PTR_UnhandledExceptionFilter_005d0670",
+      "type": "void*",
+      "value": "001d1282"
+    },
+    {
+      "addr": "00626a4c",
+      "name": "DAT_00626a4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00626a50",
+      "name": "DAT_00626a50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c9ff74",
+      "name": "DAT_02c9ff74",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0661764705882355,
+    "instruction_count": 136,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 25,
+      "BOOL_OR": 2,
+      "BRANCH": 11,
+      "BRANCHIND": 1,
+      "CALL": 2,
+      "CALLIND": 4,
+      "CBRANCH": 23,
+      "COPY": 109,
+      "INT_ADD": 30,
+      "INT_AND": 136,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 91,
+      "INT_LEFT": 2,
+      "INT_LESS": 17,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 9,
+      "INT_OR": 15,
+      "INT_RIGHT": 4,
+      "INT_SBORROW": 17,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 48,
+      "INT_SUB": 35,
+      "INT_XOR": 4,
+      "LOAD": 24,
+      "POPCOUNT": 44,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 689
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Unreachable code block removed",
+      "line": 2,
+      "match": "WARNING: Removing unreachable block",
+      "severity": "mild",
+      "text": "/* WARNING: Removing unreachable block (ram,0x005cb479) */",
+      "type": "warning_unreachable"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "uint FUN_005cb3d8(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uint FUN_005cb3d8(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "uint FUN_005cb3d8(PEXCEPTION_RECORD param_1,uint param_2,PCONTEXT param_3)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->ExceptionFlags & 6) != 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "switch(param_1->ExceptionCode) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "pbVar1 = (byte *)(param_3->FloatSave).ErrorOffset;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 41,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((((param_3->FloatSave).TagWord & 0xffff) >>",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 42,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((byte)(((param_3->FloatSave).StatusWord & 0xffff) >> 0xb) & 7) * '\\x02' & 1) == 1))",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 51,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "if (((param_3->FloatSave).StatusWord & 0x200) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 63,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "if (DAT_00626a50 != (code *)0x0) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_00626a50",
+      "severity": "mild",
+      "text": "if (DAT_00626a50 != (code *)0x0) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = (*DAT_00626a4c)(iVar4,param_1->ExceptionCode);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_00626a4c",
+      "severity": "mild",
+      "text": "iVar2 = (*DAT_00626a4c)(iVar4,param_1->ExceptionCode);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 69,
+      "match": "DAT_02c9ff74",
+      "severity": "mild",
+      "text": "DAT_02c9ff74 = '\\x01';",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 70,
+      "match": "DAT_00626a50",
+      "severity": "mild",
+      "text": "(*DAT_00626a50)(iVar4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 71,
+      "match": "DAT_02c9ff74",
+      "severity": "mild",
+      "text": "if (DAT_02c9ff74 != '\\0') {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_02c9ff74",
+      "severity": "mild",
+      "text": "DAT_02c9ff74 = '\\x01';",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 83,
+      "match": "DAT_02c9ff74",
+      "severity": "mild",
+      "text": "if ((iVar4 != -1) && (DAT_02c9ff74 != '\\0')) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "*(ushort *)&(param_3->FloatSave).StatusWord =",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 85,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "((ushort)(param_3->FloatSave).StatusWord >> 8 & 0x7f) << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 89,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "_Stack_14.ExceptionRecord = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 90,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "_Stack_14.ContextRecord = param_3;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Subroutine marked as non-returning",
+      "line": 95,
+      "match": "WARNING: Subroutine does not return",
+      "severity": "mild",
+      "text": "/* WARNING: Subroutine does not return */",
+      "type": "warning_noreturn"
+    }
+  ]
+}

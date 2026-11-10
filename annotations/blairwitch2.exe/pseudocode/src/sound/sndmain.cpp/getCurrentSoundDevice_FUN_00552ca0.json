@@ -1,0 +1,124 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 19,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 7
+  },
+  "cross_references": [
+    {
+      "addr": "004ed260",
+      "from_addr": "004ed85b",
+      "name": "core_menu.cpp_FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005523d0",
+      "from_addr": "00552444",
+      "name": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00552ca0",
+    "address_range": [
+      [
+        "00552ca0",
+        "00552ca5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_getCurrentSoundDevice_FUN_00552ca0",
+    "signature": "int __cdecl sound_sndmain_cpp_getCurrentSoundDevice_FUN_00552ca0(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061bcac",
+      "name": "DAT_0061bcac",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004ed85b",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "004ee0dd",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00552444",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_resetSoundSystemDefaults_FUN_005523d0",
+        "estimated_params": 0,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_0061bcac",
+      "severity": "mild",
+      "text": "return DAT_0061bcac;",
+      "type": "undefined_data"
+    }
+  ]
+}

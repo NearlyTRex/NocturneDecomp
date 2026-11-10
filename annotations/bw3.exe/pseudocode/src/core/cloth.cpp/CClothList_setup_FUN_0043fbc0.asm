@@ -10,10 +10,10 @@
 ; CDeformableModelInstance * Stack[0x10]:4   model_ptr
 ;
 ; XREF[4]:
-;   core_charactr.cpp_FUN_0042b0e0 at 0042b28d
-;   core_spirbear.cpp_FUN_0059aba0 at 0059ac23
-;   core_spireagl.cpp_FUN_005992f0 at 0059935f
-;   core_spirindi.cpp_FUN_0059a060 at 0059a0e3
+;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b28d
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059ac23
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 0059935f
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a0e3
 ;
 ; Called Functions:
 ;   core_cloth.cpp_FUN_0043cb00

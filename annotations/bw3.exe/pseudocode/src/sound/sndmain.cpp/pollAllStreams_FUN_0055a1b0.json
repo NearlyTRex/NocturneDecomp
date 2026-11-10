@@ -18,13 +18,13 @@
     {
       "addr": "0055ff40",
       "from_addr": "00560543",
-      "name": "core_sound.cpp_FUN_0055ff40",
+      "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00559120",
       "from_addr": "0055916f",
-      "name": "sound_sndmain.cpp_FUN_00559120",
+      "name": "sound_sndmain.cpp_processAudio_FUN_00559120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -55,7 +55,7 @@
     {
       "addr": "00558e90",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558e90"
+      "name": "sound_sndmain.cpp_lockSound_FUN_00558e90"
     }
   ],
   "globals": [
@@ -90,7 +90,7 @@
       {
         "call_addr": "0055916f",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00559120",
+        "caller": "sound_sndmain.cpp_processAudio_FUN_00559120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -101,7 +101,7 @@
       {
         "call_addr": "00560543",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ff40",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004eaa10 at 004eaa3e
+;   core_hero.cpp_CHero_setup_FUN_004eaa10 at 004eaa3e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_inv_cpp_005e66f7

@@ -10,29 +10,29 @@ CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_0049f180(CFlame *this_ptr)
 
 {
   CFlame *pCVar1;
-  uint uVar2;
+  float fVar2;
   
-  pCVar1 = (CFlame *)core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CFlameVTable;
-  *(uint *)&pCVar1->field_0x2b4 = 0x3f800000;
-  *(uint *)&pCVar1->field_0x2b8 = 0x40000000;
-  *(uint *)&pCVar1->field_0x2bc = 0x3f800000;
-  uVar2 = core_actor_cpp_FUN_0040cf60(0,0x41000000);
-  *(uint *)&pCVar1->field_0x304 = 0;
-  *(uint *)&pCVar1->field_0x308 = 0x3f800000;
-  *(uint *)&pCVar1->field_0x3ec = 1;
-  *(uint *)&pCVar1->field_0x30c = 0;
-  pCVar1->field_0x314 = 0;
-  pCVar1->field_0x378 = 0;
-  *(uint *)&pCVar1->field_0x310 = 1;
-  *(uint *)&pCVar1->field_0xfc = 1;
-  *(uint *)&pCVar1->field_0x3e0 = 0x3d4ccccd;
-  *(uint *)&pCVar1->field_0x3dc = 0x3f000000;
-  *(uint *)&pCVar1->field_0x3f4 = 1;
-  *(uint *)&pCVar1->field_0x3e4 = 0;
-  *(uint *)&pCVar1->field_0x3e8 = 0;
-  *(uint *)&pCVar1->field_0x3f8 = 0;
-  *(uint *)&pCVar1->field_0x3fc = 0;
-  *(uint *)&pCVar1->field_0x2c0 = uVar2;
+  pCVar1 = (CFlame *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  (pCVar1->base).vtable._ub = &g_CFlameVTable;
+  (pCVar1->flame_size).x = 1.0;
+  (pCVar1->flame_size).y = 2.0;
+  (pCVar1->flame_size).z = 1.0;
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,8.0);
+  pCVar1->which_flame = FLAME_TYPE_TORCH;
+  pCVar1->globe_scalar = 1.0;
+  pCVar1->is_visible = 1;
+  pCVar1->sfx_handle = 0;
+  pCVar1->on_event[0] = '\0';
+  pCVar1->off_event[0] = '\0';
+  pCVar1->flame_state = 1;
+  *(uint *)&(pCVar1->base).field_0xfc = 1;
+  pCVar1->randomness = 0.05;
+  pCVar1->intensity = 0.5;
+  pCVar1->do_visibility_check = 1;
+  pCVar1->burn_hero = 0;
+  pCVar1->burn_enemy = 0;
+  pCVar1->enemy_burn_index = 0;
+  pCVar1->render_corona = 0;
+  pCVar1->animation_time = fVar2;
   return pCVar1;
 }

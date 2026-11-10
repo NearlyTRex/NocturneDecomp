@@ -31,8 +31,8 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00478
   *(uint *)((int)&stack0xffffffd4 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
        *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
   if ((((-1 < local_34) && (-1 < local_30)) && (-1 < local_2c)) &&
-     (((local_34 < *(int *)&this_ptr->field_0x40 && (local_30 < *(int *)&this_ptr->field_0x44)) &&
-      (local_2c < *(int *)&this_ptr->field_0x48)))) {
+     (((local_34 < (this_ptr->grid_coord).x && (local_30 < (this_ptr->grid_coord).y)) &&
+      (local_2c < (this_ptr->grid_coord).z)))) {
     core_dtrace_cpp_FUN_00477ac0(this_ptr,world_position);
     local_40 = local_1c;
     *(uint *)((int)&stack0xffffffc4 + (uint)bVar1 * -8) =
@@ -49,15 +49,17 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_restoreShadowBitFromBuffer_FUN_00478
       _DAT_01d71de4 = 0xb55;
       core_main_c_FUN_004e4330("Parity Check 999");
     }
-    if (*(int *)this_ptr_00 == 0) {
+    if (this_ptr_00->voxel_buffer1 == (SVoxelGrid *)0x0) {
       core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00453d10(this_ptr_00);
     }
     local_3c = local_38 * 8 + local_3c;
-    *(byte *)(*(int *)this_ptr_00 + local_3c) =
-         *(byte *)(*(int *)this_ptr_00 + local_3c) & ((&DAT_005fb0e8)[local_40] ^ 0xff);
-    *(byte *)(*(int *)this_ptr_00 + local_3c) =
-         *(byte *)(*(int *)this_ptr_00 + local_3c) |
-         *(byte *)(*(int *)&this_ptr_00->field_0x4 + local_3c) & (&DAT_005fb0e8)[local_40];
+    this_ptr_00->voxel_buffer1[local_3c] =
+         (SVoxelGrid)
+         ((byte)this_ptr_00->voxel_buffer1[local_3c] & ((&DAT_005fb0e8)[local_40] ^ 0xff));
+    this_ptr_00->voxel_buffer1[local_3c] =
+         (SVoxelGrid)
+         ((byte)this_ptr_00->voxel_buffer1[local_3c] |
+         (byte)this_ptr_00->voxel_buffer2[local_3c] & (&DAT_005fb0e8)[local_40]);
     return;
   }
   return;

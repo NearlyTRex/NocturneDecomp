@@ -8,3 +8,43 @@
 // Original: core_hostage.cpp_staticInit_FUN_00454750
 // Address: 00454750
 void __cdecl staticInit(void);
+
+// Original: core_hostage.cpp_CDemnfolk_renderOpaque_FUN_004581c0
+// Address: 004581c0
+int __cdecl CDemnfolk::renderOpaque(CDemnfolk *this_ptr);
+
+// Original: core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200
+// Address: 00458200
+int __cdecl CDemnfolk::renderTransparent(CDemnfolk *this_ptr);
+
+// Original: core_hostage.cpp_CDemnfolk_archive_FUN_004583c0
+// Address: 004583c0
+void __cdecl CDemnfolk::archive(CDemnfolk *this_ptr);
+
+// Original: core_hostage.cpp_CDemnfolk_canBeAttracted_FUN_00458530
+// Address: 00458530
+int __cdecl CDemnfolk::canBeAttracted(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_hostage.cpp_CDemnfolk_processDamage_FUN_00458950
+// Address: 00458950
+void __cdecl CDemnfolk::processDamage(CDemnfolk *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_hostage.cpp_CDemnfolk_getTargetPoints_FUN_00458bb0
+// Address: 00458bb0
+int __cdecl CDemnfolk::getTargetPoints(CDemnfolk *this_ptr,CVector3f *out_points_array);
+
+// Original: core_hostage.cpp_CDemnfolk_isGrabbable_FUN_00458ec0
+// Address: 00458ec0
+int __cdecl CDemnfolk::isGrabbable(CDemnfolk *this_ptr,CDemonActor *grabber);
+
+// Original: core_hostage.cpp_CDemnfolk_canBeGrabbed_FUN_00458f00
+// Address: 00458f00
+int __cdecl CDemnfolk::canBeGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_hostage.cpp_CDemnfolk_getGrabbed_FUN_00458f10
+// Address: 00458f10
+int __cdecl CDemnfolk::getGrabbed(CDemnfolk *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_hostage.cpp_CDemnfolk_shouldIgnoreForTargeting_FUN_00458f80
+// Address: 00458f80
+int __cdecl CDemnfolk::shouldIgnoreForTargeting(CDemnfolk *this_ptr);

@@ -10,16 +10,16 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[65]:
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a463
 ;   core_actor.cpp_FUN_004091b0 at 004092df
-;   core_actor.cpp_FUN_00409f60 at 0040a463
-;   core_blundrbs.cpp_FUN_00410490 at 0041130e
-;   core_boxactor.cpp_FUN_0041ff20 at 0041ff3b
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 0041130e
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041ff20 at 0041ff3b
 ;   core_boxactor.cpp_FUN_004201a0 at 004201c9
-;   core_burncrss.cpp_FUN_00424550 at 00424a2d
-;   core_carved.cpp_FUN_00425da0 at 00427417
-;   core_chain.cpp_FUN_0042a860 at 0042a930
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0 at 0042ba59
-;   core_charactr.cpp_FUN_0042d9f0 at 0042db60
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424a2d
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00427417
+;   core_chain.cpp_CChain_getBoundingBox_FUN_0042a860 at 0042a930
+;   core_charactr.cpp_CCharacter_checkCylinderCollisionWorld_FUN_004309a0 at 004309ca
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 004317d5
 ;   ... and 55 more
 ;
 ; Called Functions:

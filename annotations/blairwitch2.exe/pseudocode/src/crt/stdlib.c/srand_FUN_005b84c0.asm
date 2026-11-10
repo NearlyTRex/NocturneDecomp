@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d547
-;   wincore_winrun.cpp_FUN_0058f310 at 0058f34e
+;   wincore_winrun.cpp_winMain_FUN_0058f310 at 0058f34e
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b8490

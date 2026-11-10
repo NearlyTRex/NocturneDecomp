@@ -11,7 +11,7 @@
 void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this_ptr)
 
 {
-  CDemonActor *this_ptr_00;
+  CGlass *this_ptr_00;
   int iVar1;
   uint *puVar2;
   uint *puVar3;
@@ -22,18 +22,18 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this
   int local_14;
   
   bVar4 = 0;
-  *(uint *)&this_ptr->field_0x15acc8 = 0;
+  this_ptr->mirror_glass_actor_count = 0;
   local_14 = 0;
-  if (0 < *(int *)&this_ptr->field_0x14d164) {
+  if (0 < this_ptr->actor_count) {
     local_18 = this_ptr;
     do {
-      this_ptr_00 = (CDemonActor *)
+      this_ptr_00 = (CGlass *)
                     core_actor_cpp_castToClassHash_FUN_0040c8f0
-                              (*(uint *)&local_18->field_0x14d168,g_CGlassClassInfo.name_hash)
-      ;
-      if ((this_ptr_00 != (CDemonActor *)0x0) && (*(int *)&this_ptr_00[1].field_0x90 != 0)) {
-        core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(this_ptr_00);
-        (**(code **)(*(int *)&this_ptr_00->field_0x2b0 + 0x24))(this_ptr_00,0);
+                              (local_18->actors[0],g_CGlassClassInfo.name_hash);
+      if ((this_ptr_00 != (CGlass *)0x0) && (this_ptr_00->mirror_flag != 0)) {
+        core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0((CDemonActor *)this_ptr_00);
+        (*((this_ptr_00->base).vtable._ub)->getBoundingBox)
+                  ((CDemonActor *)this_ptr_00,(CBoundingBox3D *)0x0);
         puVar2 = local_30;
         puVar3 = local_48;
         for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -43,10 +43,9 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this
         }
         iVar1 = core_box_cpp_FUN_0041a840(local_48);
         if (iVar1 != 0) {
-          *(CDemonActor **)(&this_ptr->field_0x15accc + *(int *)&this_ptr->field_0x15acc8 * 4) =
-               this_ptr_00;
-          iVar1 = *(int *)&this_ptr->field_0x15acc8 + 1;
-          *(int *)&this_ptr->field_0x15acc8 = iVar1;
+          this_ptr->mirror_glass_actors[this_ptr->mirror_glass_actor_count] = this_ptr_00;
+          iVar1 = this_ptr->mirror_glass_actor_count + 1;
+          this_ptr->mirror_glass_actor_count = iVar1;
           if (99 < iVar1) {
             _DAT_01d046a0 = "..\\core\\set.cpp";
             _DAT_01d046a4 = 0x12d6;
@@ -55,9 +54,9 @@ void __cdecl core_set_cpp_CDemonSet_buildMirrorList_FUN_00534360(CDemonSet *this
         }
         engine_matrix_c_pop_FUN_0046b4a0();
       }
-      local_18 = (CDemonSet *)&local_18->field_0x4;
+      local_18 = (CDemonSet *)local_18->cameras;
       local_14 = local_14 + 1;
-    } while (local_14 < *(int *)&this_ptr->field_0x14d164);
+    } while (local_14 < this_ptr->actor_count);
   }
   return;
 }

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004fc350 at 004fc37a
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350 at 004fc37a
 ;
 ; Called Functions:
 ;   crt_memory.c_memset_FUN_005b77c0

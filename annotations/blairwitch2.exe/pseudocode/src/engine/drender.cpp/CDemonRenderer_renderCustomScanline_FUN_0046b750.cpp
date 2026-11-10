@@ -13,23 +13,23 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_0046b750
 {
   int iVar1;
   
-  if (*(int *)(this_ptr + 0xc) == 0) {
-    if (*(int *)(this_ptr + 4) != 0) {
+  if (this_ptr->plane_culling_enabled == 0) {
+    if (this_ptr->shadow_pass_active != 0) {
       return;
     }
   }
   else {
-    iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(prim + 8);
+    iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal);
     if (iVar1 == 0) {
       return;
     }
-    if (*(int *)(this_ptr + 4) != 0) {
+    if (this_ptr->shadow_pass_active != 0) {
       return;
     }
   }
   _DAT_01c38b54 = 0xc4;
   _DAT_01c38b58 = 6;
-  core_xform_cpp_transformAndClipGeometry_FUN_00594f40(*(int *)(prim + 4),(int *)(prim + 0x18));
+  core_xform_cpp_transformAndClipGeometry_FUN_00594f40((prim->base).count,(int *)(prim + 1));
   if (DAT_007bee30 < 3) {
     return;
   }

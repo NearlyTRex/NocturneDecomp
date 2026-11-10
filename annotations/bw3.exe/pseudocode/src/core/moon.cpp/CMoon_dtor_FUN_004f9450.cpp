@@ -18,5 +18,5 @@ CMoon * core_moon_cpp_CMoon_dtor_FUN_004f9450(CMoon *this_ptr,uint flags)
                      ((CKeyFramedModel *)&this_ptr->field_0x738,0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00460530(pCVar1 + -1,0);
   pCVar1 = core_dmodel_cpp_CKeyFramedModel_dtor_FUN_00460530(pCVar1 + -1,0);
-  return (CMoon *)&pCVar1[-1].field_0x390;
+  return (CMoon *)&pCVar1[-1].rotation_matrix_workspace.m[2].z;
 }

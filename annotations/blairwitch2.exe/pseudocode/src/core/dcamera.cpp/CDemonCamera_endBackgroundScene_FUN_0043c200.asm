@@ -32,7 +32,7 @@
 ; Called Functions:
 ;   core_dstrendr.cpp_memcpyMMX_FUN_00470201
 ;   engine_matrix.c_popViewport_FUN_0046b740
-;   engine_special.cpp_FUN_00560030
+;   engine_special.cpp_masterZBuffer_FUN_00560030
 ;
 ; *****************************************************************************
 
@@ -130,8 +130,8 @@ section .text
     JZ 0x0043c217                       ; 0043c317
         ;   XREF to: 0043c217 (CONDITIONAL_JUMP)  ; LAB_0043c217
     PUSH 0x0                            ; 0043c31d
-    CALL engine_special.cpp_FUN_00560030 ; 0043c31f
-        ;   XREF to: 00560030 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_00560030(int slot)
+    CALL engine_special.cpp_masterZBuffer_FUN_00560030 ; 0043c31f
+        ;   XREF to: 00560030 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_masterZBuffer_FUN_00560030(int slot)
     ADD ESP,0x4                         ; 0043c324
     POP EBP                             ; 0043c327
     POP EDI                             ; 0043c328

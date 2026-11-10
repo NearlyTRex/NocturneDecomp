@@ -17,7 +17,7 @@ CLadder * __cdecl core_ladder_cpp_CLadder_dtor_FUN_004dfbc0(CLadder *this_ptr,ui
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CLadder *)core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)this_ptr,1);
+  pCVar1 = (CLadder *)core_actor_cpp_CDemonActor_dtor_FUN_00408770(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

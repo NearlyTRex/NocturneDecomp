@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x48]:1  local_48
 ;
 ; XREF[1]:
-;   core_trigger.cpp_FUN_005780e0 at 00578388
+;   core_trigger.cpp_CTrigger_archive_FUN_005780e0 at 00578388
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_00578628 = 00578675

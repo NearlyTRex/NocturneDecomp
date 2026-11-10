@@ -7,7 +7,7 @@
 ; CMarquee *       Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_course.cpp_CCourse_load_FUN_00447db0
 ;   core_marquee.cpp_CMarquee_computeBoundingBox_FUN_005069f0
 ;
@@ -19,8 +19,8 @@ section .text
         ;   Label: core_marquee.cpp_CMarquee_setup_FUN_00506b20
     MOV EBX,dword ptr [ESP + 0x8]       ; 00506b21
     PUSH EBX                            ; 00506b25
-    CALL core_actor.cpp_FUN_00408850    ; 00506b26
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 00506b26
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00506b2b
     LEA EAX,[EBX + 0x158]               ; 00506b2e
     PUSH EAX                            ; 00506b34

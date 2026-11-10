@@ -29,9 +29,9 @@ void __cdecl removeChatOut(int index);
 // Address: 00503bee
 int FUN_00503bee(int param_1);
 
-// Original: core_netgame.cpp_FUN_00503c40
+// Original: core_netgame.cpp_allocSimFrame_FUN_00503c40
 // Address: 00503c40
-int * FUN_00503c40(int param_1);
+int * allocSimFrame(int param_1);
 
 // Original: core_netgame.cpp_CNetGame_ctor_FUN_00503d70
 // Address: 00503d70
@@ -45,9 +45,9 @@ CNetGame * __cdecl CNetGame::dtor(CNetGame *this_ptr,uint flags);
 // Address: 00503e20
 void __cdecl CNetGame::init(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_00503ed0
+// Original: core_netgame.cpp_CNetGame_shutdown_FUN_00503ed0
 // Address: 00503ed0
-void __cdecl FUN_00503ed0(CNetGame *this_ptr);
+void __cdecl CNetGame::shutdown(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_FUN_00503efc
 // Address: 00503efc
@@ -57,9 +57,9 @@ undefined4 FUN_00503efc(CNetGame *param_1);
 // Address: 00503fb0
 int __cdecl CNetGame::initializeNetworkToJoin(CNetGame *this_ptr,uint32_t *server_ip);
 
-// Original: core_netgame.cpp_FUN_00504270
+// Original: core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270
 // Address: 00504270
-int __cdecl FUN_00504270(CNetGame *this_ptr);
+int __cdecl CNetGame::initializeNetwork(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_disconnect_FUN_005043b0
 // Address: 005043b0
@@ -69,17 +69,17 @@ void __cdecl CNetGame::disconnect(CNetGame *this_ptr,int perform_handshake);
 // Address: 00504890
 int __cdecl CNetGame::syncPlayers(CNetGame *this_ptr,int sync_stage);
 
-// Original: core_netgame.cpp_FUN_00504c10
+// Original: core_netgame.cpp_CNetGame_flushIncomingPackets_FUN_00504c10
 // Address: 00504c10
-void __cdecl FUN_00504c10(CNetGame *this_ptr);
+void __cdecl CNetGame::flushIncomingPackets(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 // Address: 00504c70
 void __cdecl CNetGame::receivePackets(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_00504d60
+// Original: core_netgame.cpp_CNetGame_processPacket_FUN_00504d60
 // Address: 00504d60
-void __cdecl FUN_00504d60(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet);
+void __cdecl CNetGame::processPacket(CNetGame *this_ptr,SNetworkAddr *source_addr,UNetPacket *packet);
 
 // Original: core_netgame.cpp_CNetGame_send_FUN_00505870
 // Address: 00505870
@@ -89,13 +89,13 @@ void __cdecl CNetGame::send(CNetGame *this_ptr,int player_index,SNetPacketHeader
 // Address: 005058d0
 void __cdecl CNetGame::sendPacket(CNetGame *this_ptr,SNetworkAddr *dest_addr,SNetPacketHeader *packet);
 
-// Original: core_netgame.cpp_FUN_00505900
+// Original: core_netgame.cpp_CNetGame_findPlayerByAddr_FUN_00505900
 // Address: 00505900
-int __cdecl FUN_00505900(CNetGame *this_ptr,SNetworkAddr *addr);
+int __cdecl CNetGame::findPlayerByAddr(CNetGame *this_ptr,SNetworkAddr *addr);
 
-// Original: core_netgame.cpp_FUN_00505950
+// Original: core_netgame.cpp_CNetGame_addPlayer_FUN_00505950
 // Address: 00505950
-int FUN_00505950(int param_1,undefined4 *param_2,char *param_3,undefined4 param_4,undefined4 param_5);
+int __cdecl CNetGame::addPlayer(CNetGame *this_ptr,SNetworkAddr *addr,char *name,int hero_number,int aim_mode);
 
 // Original: core_netgame.cpp_CNetGame_runLobby_FUN_00505a30
 // Address: 00505a30
@@ -105,13 +105,13 @@ int __cdecl CNetGame::runLobby(CNetGame *this_ptr);
 // Address: 00506320
 void __cdecl CNetGame::updatePing(CNetGame *this_ptr,int player_index,float max_ping);
 
-// Original: core_netgame.cpp_FUN_005064d0
+// Original: core_netgame.cpp_CNetGame_processChatOut_FUN_005064d0
 // Address: 005064d0
-void __cdecl FUN_005064d0(CNetGame *this_ptr,char *message,int target_player);
+void __cdecl CNetGame::processChatOut(CNetGame *this_ptr,char *message,int target_player);
 
-// Original: core_netgame.cpp_FUN_00506670
+// Original: core_netgame.cpp_CNetGame_removeChatOut_FUN_00506670
 // Address: 00506670
-void __cdecl FUN_00506670(CNetGame *this_ptr);
+void __cdecl CNetGame::removeChatOut(CNetGame *this_ptr);
 
 // Original: core_netgame.cpp_CNetGame_addChatHistory_FUN_00506a00
 // Address: 00506a00
@@ -129,9 +129,9 @@ void __cdecl CNetGame::removePlayer(CNetGame *this_ptr,int player_index);
 // Address: 00507370
 void __cdecl CNetGame::gameSettingsChanged(CNetGame *this_ptr);
 
-// Original: core_netgame.cpp_FUN_00507450
+// Original: core_netgame.cpp_CNetGame_sendGameSetting_FUN_00507450
 // Address: 00507450
-void __cdecl FUN_00507450(CNetGame *this_ptr,int player_index);
+void __cdecl CNetGame::sendGameSetting(CNetGame *this_ptr,int player_index);
 
 // Original: core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_00507660
 // Address: 00507660

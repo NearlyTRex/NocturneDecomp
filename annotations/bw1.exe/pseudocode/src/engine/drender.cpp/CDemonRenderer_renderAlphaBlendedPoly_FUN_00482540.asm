@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0 at 00554c9f
-;   core_set.cpp_FUN_00554d30 at 005550c0
-;   core_water.cpp_FUN_005a9f10 at 005aa4fc
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30 at 005550c0
+;   core_water.cpp_CWater_render_FUN_005a9f10 at 005aa4fc
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

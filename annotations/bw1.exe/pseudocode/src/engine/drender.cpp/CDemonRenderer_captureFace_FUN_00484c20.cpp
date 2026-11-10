@@ -11,31 +11,32 @@
 void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00484c20(CDemonRenderer *this_ptr,STrianglePackedIndices *triangle_indices,int render_flags)
 
 {
-  int iVar1;
+  SRenderVertex *pSVar1;
   int iVar2;
-  uint uVar3;
+  int iVar3;
   uint uVar4;
-  int iVar5;
+  uint uVar5;
   int iVar6;
-  STrianglePackedIndices *pSVar7;
+  int iVar7;
   STrianglePackedIndices *pSVar8;
-  uint *puVar9;
+  STrianglePackedIndices *pSVar9;
   uint *puVar10;
-  byte bVar11;
+  uint *puVar11;
+  byte bVar12;
   
-  bVar11 = 0;
-  if (*(int *)(this_ptr + 0x10) == 0) {
-    iVar5 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(triangle_indices);
-    if (iVar5 == 0) {
+  bVar12 = 0;
+  if (this_ptr->face_capture_enabled == 0) {
+    iVar6 = engine_prim_c_getTriangleWindingFromPackedIndices_FUN_0053e000(triangle_indices);
+    if (iVar6 == 0) {
       return;
     }
   }
   else {
-    iVar5 = *(int *)this_ptr;
-    uVar4 = *(uint *)(iVar5 + 0x10 + (uint)*(ushort *)(triangle_indices + 4) * 0x30) &
-            *(uint *)(iVar5 + 0x10 + (uint)*(ushort *)triangle_indices * 0x30) &
-            *(uint *)(iVar5 + (uint)*(ushort *)(triangle_indices + 2) * 0x30 + 0x10);
-    if (((uVar4 & 0x80000000) != 0) && ((char)uVar4 != '\0')) {
+    pSVar1 = this_ptr->vertex_buffer_ptr;
+    uVar5 = *(uint *)(pSVar1 + (uint)*(ushort *)(triangle_indices + 4) * 0x30 + 0x10) &
+            *(uint *)(pSVar1 + (uint)*(ushort *)triangle_indices * 0x30 + 0x10) &
+            *(uint *)(pSVar1 + (uint)*(ushort *)(triangle_indices + 2) * 0x30 + 0x10);
+    if (((uVar5 & 0x80000000) != 0) && ((char)uVar5 != '\0')) {
       return;
     }
   }
@@ -44,31 +45,31 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureFace_FUN_00484c20(CDemonRe
     _DAT_01d1d404 = 0xb78;
     core_main_c_FUN_005030e0("CDR::captureFace - too many faces captured");
   }
-  uVar3 = _DAT_01bc1284;
-  iVar6 = _DAT_01bc1280 * 0x20;
-  puVar9 = (uint *)(iVar6 + 0x1bc1298 + (uint)bVar11 * -8);
-  pSVar7 = triangle_indices + (uint)bVar11 * -8 + 4;
-  *(uint *)(iVar6 + 0x1bc1294) = *(uint *)triangle_indices;
-  puVar10 = puVar9 + (uint)bVar11 * -2 + 1;
-  pSVar8 = pSVar7 + (uint)bVar11 * -8 + 4;
-  *puVar9 = *(uint *)pSVar7;
+  uVar4 = _DAT_01bc1284;
+  iVar7 = _DAT_01bc1280 * 0x20;
+  puVar10 = (uint *)(iVar7 + 0x1bc1298 + (uint)bVar12 * -8);
+  pSVar8 = triangle_indices + (uint)bVar12 * -8 + 4;
+  *(uint *)(iVar7 + 0x1bc1294) = *(uint *)triangle_indices;
+  puVar11 = puVar10 + (uint)bVar12 * -2 + 1;
+  pSVar9 = pSVar8 + (uint)bVar12 * -8 + 4;
   *puVar10 = *(uint *)pSVar8;
-  puVar10[(uint)bVar11 * -2 + 1] = *(uint *)(pSVar8 + (uint)bVar11 * -8 + 4);
-  *(ushort *)(puVar10 + (uint)bVar11 * -2 + 1 + (uint)bVar11 * -2 + 1) =
-       *(ushort *)(pSVar8 + (uint)bVar11 * -8 + 4 + (uint)bVar11 * -8 + 4);
-  *(uint *)(&DAT_01bc1288 + iVar6) = uVar3;
-  *(int *)(&DAT_01bc128c + iVar6) = render_flags;
-  iVar5 = *(int *)this_ptr;
-  iVar1 = *(int *)(iVar5 + 8 + (uint)*(ushort *)triangle_indices * 0x30);
-  iVar2 = *(int *)(iVar5 + (uint)*(ushort *)(triangle_indices + 2) * 0x30 + 8);
-  iVar5 = *(int *)(iVar5 + 8 + (uint)*(ushort *)(triangle_indices + 4) * 0x30);
-  if ((iVar1 < iVar2) && (iVar1 < iVar5)) {
-    *(int *)(iVar6 + 0x1bc1290) = iVar1;
+  *puVar11 = *(uint *)pSVar9;
+  puVar11[(uint)bVar12 * -2 + 1] = *(uint *)(pSVar9 + (uint)bVar12 * -8 + 4);
+  *(ushort *)(puVar11 + (uint)bVar12 * -2 + 1 + (uint)bVar12 * -2 + 1) =
+       *(ushort *)(pSVar9 + (uint)bVar12 * -8 + 4 + (uint)bVar12 * -8 + 4);
+  *(uint *)(&DAT_01bc1288 + iVar7) = uVar4;
+  *(int *)(&DAT_01bc128c + iVar7) = render_flags;
+  pSVar1 = this_ptr->vertex_buffer_ptr;
+  iVar6 = *(int *)(pSVar1 + (uint)*(ushort *)triangle_indices * 0x30 + 8);
+  iVar2 = *(int *)(pSVar1 + (uint)*(ushort *)(triangle_indices + 2) * 0x30 + 8);
+  iVar3 = *(int *)(pSVar1 + (uint)*(ushort *)(triangle_indices + 4) * 0x30 + 8);
+  if ((iVar6 < iVar2) && (iVar6 < iVar3)) {
+    *(int *)(iVar7 + 0x1bc1290) = iVar6;
     _DAT_01bc1280 = _DAT_01bc1280 + 1;
     return;
   }
-  if (iVar5 <= iVar2) {
-    *(int *)(_DAT_01bc1280 * 0x20 + 0x1bc1290) = iVar5;
+  if (iVar3 <= iVar2) {
+    *(int *)(_DAT_01bc1280 * 0x20 + 0x1bc1290) = iVar3;
     _DAT_01bc1280 = _DAT_01bc1280 + 1;
     return;
   }

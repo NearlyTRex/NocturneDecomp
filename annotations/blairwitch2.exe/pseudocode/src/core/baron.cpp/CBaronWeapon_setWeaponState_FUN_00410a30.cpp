@@ -13,19 +13,19 @@ void __cdecl core_baron_cpp_CBaronWeapon_setWeaponState_FUN_00410a30(CBaronWeapo
 {
   CDemonActor *target;
   
-  core_weapon_cpp_FUN_0058a200((CWeapon *)this_ptr,weapon_state);
-  target = (CDemonActor *)(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x9c))(this_ptr);
-  if (*(int *)&this_ptr->field_0x430 == 2) {
+  core_weapon_cpp_CWeapon_setWeaponState_FUN_0058a200(&this_ptr->base,weapon_state);
+  target = (*((this_ptr->base).base.vtable._ub)->getCarrier)((CDemonActor *)this_ptr);
+  if ((this_ptr->base).weapon_state == WEAPON_STATE_IN_HAND) {
     if (target == (CDemonActor *)0x0) {
       _DAT_01d046a0 = "..\\core\\baron.cpp";
       _DAT_01d046a4 = 800;
       core_main_c_FUN_004e4500("CBaronWeapon::setWeaponState - I'm drawn, but nobody's carrying me??");
     }
-    core_baron_cpp_FUN_00410ac0(this_ptr);
-    core_baron_cpp_CBaron_attachToOwner_FUN_0040fef0(*(CBaron **)&this_ptr->field_0x6d4,target);
+    core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410ac0(this_ptr);
+    core_baron_cpp_CBaron_attachToOwner_FUN_0040fef0(this_ptr->baron,target);
   }
-  else if (*(CBaron **)&this_ptr->field_0x6d4 != (CBaron *)0x0) {
-    core_baron_cpp_CBaron_detachFromOwner_FUN_00410040(*(CBaron **)&this_ptr->field_0x6d4,target);
+  else if (this_ptr->baron != (CBaron *)0x0) {
+    core_baron_cpp_CBaron_detachFromOwner_FUN_00410040(this_ptr->baron,target);
     return;
   }
   return;

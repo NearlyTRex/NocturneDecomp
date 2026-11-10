@@ -23,14 +23,13 @@ void core_demnfolk_cpp_FUN_00458790(int param_1)
   float fStack_64;
   float fStack_60;
   float fStack_5c;
-  byte auStack_58 [4];
-  float afStack_54 [4];
-  float fStack_44;
-  float afStack_40 [3];
+  CVector3f CStack_58;
+  float fStack_4c;
+  float afStack_48 [5];
   uint uStack_34;
-  float fStack_28;
-  float afStack_24 [4];
-  float fStack_14;
+  CVector3f CStack_28;
+  float fStack_1c;
+  float afStack_18 [3];
   
   bVar4 = 0;
   (**(code **)(*(int *)(param_1 + 0x154) + 0x1c))(param_1);
@@ -41,31 +40,31 @@ void core_demnfolk_cpp_FUN_00458790(int param_1)
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0((CVector3f *)&fStack_28);
-  fStack_28 = fStack_70 + fStack_64;
-  afStack_24[0] = fStack_6c + fStack_60;
-  afStack_24[1] = fStack_68 + fStack_5c;
-  afStack_24[2] = fStack_70 + fStack_64;
-  afStack_24[(uint)bVar4 * -2 + 3] = afStack_24[(uint)bVar4 * -2];
-  afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-       afStack_24[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0((CVector3f *)auStack_58);
-  auStack_58 = (byte  [4])(afStack_24[2] * _DAT_005d7d2b);
-  afStack_54[0] = afStack_24[3] * _DAT_005d7d2b;
-  afStack_54[1] = fStack_14 * _DAT_005d7d2b;
-  afStack_54[2] = afStack_24[2] * _DAT_005d7d2b;
-  afStack_54[(uint)bVar4 * -2 + 3] = afStack_54[(uint)bVar4 * -2];
-  afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
-       afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-  fStack_44 = fStack_68 + (float)_DAT_005d7d33;
-  afStack_40[0] = afStack_54[2];
-  afStack_54[(uint)bVar4 * -2 + 6] = afStack_54[(uint)bVar4 * -2 + 3];
-  afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7] =
-       afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4];
-  core_actor_cpp_FUN_00408b40(param_1,afStack_54 + 5);
+  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_28);
+  CStack_28.x = fStack_70 + fStack_64;
+  CStack_28.y = fStack_6c + fStack_60;
+  CStack_28.z = fStack_68 + fStack_5c;
+  fStack_1c = fStack_70 + fStack_64;
+  afStack_18[(uint)bVar4 * -2] = *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + 4);
+  afStack_18[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+       *(float *)((int)&CStack_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  core_actor_cpp_CVector3f_ctor_FUN_0040cfe0(&CStack_58);
+  CStack_58.x = fStack_1c * _DAT_005d7d2b;
+  CStack_58.y = afStack_18[0] * _DAT_005d7d2b;
+  CStack_58.z = afStack_18[1] * _DAT_005d7d2b;
+  fStack_4c = fStack_1c * _DAT_005d7d2b;
+  afStack_48[(uint)bVar4 * -2] = *(float *)((int)&CStack_58 + (uint)bVar4 * -8 + 4);
+  afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+       *(float *)((int)&CStack_58 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8);
+  afStack_48[1] = fStack_68 + (float)_DAT_005d7d33;
+  afStack_48[2] = fStack_4c;
+  afStack_48[(uint)bVar4 * -2 + 3] = afStack_48[(uint)bVar4 * -2];
+  afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 4] =
+       afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
+  core_actor_cpp_FUN_00408b40(param_1,afStack_48 + 2);
   *unaff_ESI = uStack_34;
-  unaff_ESI[(uint)bVar4 * -2 + 1] = afStack_54[(uint)bVar4 * -2 + 9];
+  unaff_ESI[(uint)bVar4 * -2 + 1] = afStack_48[(uint)bVar4 * -2 + 6];
   (unaff_ESI + (uint)bVar4 * -2 + 1)[(uint)bVar4 * -2 + 1] =
-       afStack_54[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 10];
+       afStack_48[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
   return;
 }

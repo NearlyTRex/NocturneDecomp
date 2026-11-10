@@ -16,10 +16,10 @@
 ;   core_tbplayer.cpp_CDrummer_ctor_FUN_00594a00 at 00594a06
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080
 ;   core_path.cpp_CPathMap_ctor_FUN_00532fe0
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     MOV dword ptr [EBX + 0x2ffc],0x3fcccccd ; 005316b8
     PUSH 0x3f666666                     ; 005316c2
     MOV dword ptr [EBX + 0x3000],0xc479c000 ; 005316c7
-    CALL core_actor.cpp_FUN_0040cc00    ; 005316d1
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005316d1
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 005316d6
     FLD float ptr [ESP + 0x8]           ; 005316da
     ADD ESP,0x8                         ; 005316de
@@ -55,8 +55,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 005316e6
     PUSH EAX                            ; 005316ec
     FSTP float ptr [EBX + 0x1fab4]      ; 005316ed
-    CALL core_skeleton.cpp_FUN_00569f50 ; 005316f3
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 005316f3
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x27c0],0x0    ; 005316f8
     ADD ESP,0x8                         ; 00531702
     MOV dword ptr [EBX + 0x1faac],0x0   ; 00531705

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 235,
-    "complexity_score": 225,
+    "complexity_score": 217,
     "cross_reference_count": 6,
     "function_call_count": 6,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 145,
-    "suspect_count": 7,
+    "pseudocode_lines": 147,
+    "suspect_count": 6,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 380
+    "total_lines": 382
   },
   "cross_references": [
     {
@@ -25,7 +25,7 @@
     {
       "addr": "004d24b0",
       "from_addr": "004d24b6",
-      "name": "core_hero.cpp_FUN_004d24b0",
+      "name": "core_hero.cpp_CHero_ctor_FUN_004d24b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -163,7 +163,7 @@
       {
         "call_addr": "004d24b6",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d24b0",
+        "caller": "core_hero.cpp_CHero_ctor_FUN_004d24b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -263,15 +263,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x25a8",
+      "line": 79,
+      "match": "field_0x25aa",
       "severity": "mild",
-      "text": "*(uint *)&pCVar6->field_0x25a8 = 0xffffffff;",
+      "text": "*(ushort *)&pCVar6->field_0x25aa = 0xffff;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 78,
+      "line": 80,
       "match": "field_0x25ac",
       "severity": "mild",
       "text": "*(uint *)&pCVar6->field_0x25ac = 0xffffffff;",
@@ -279,15 +279,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "puVar7 = &pCVar6->field_0x78;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
+      "line": 83,
       "match": "field_0x25e8",
       "severity": "mild",
       "text": "*(uint *)&pCVar6->field_0x25e8 = 0x3f800000;",

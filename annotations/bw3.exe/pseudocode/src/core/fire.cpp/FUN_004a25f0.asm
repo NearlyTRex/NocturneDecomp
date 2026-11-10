@@ -11,11 +11,11 @@
 ;   undefined4 DAT_01c8eeac
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_FUN_0045b800
 ;   core_fire.cpp_CStake_init_FUN_00497a50
 ;   core_fire.cpp_CStake_spawn_FUN_00497ac0
-;   core_sound.cpp_FUN_00560a70
+;   core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EAX                            ; 004a2621
     MOV EDI,0x3f333333                  ; 004a2622
     LEA ESI,[ESP + 0x30]                ; 004a2627
-    CALL core_dirmat.cpp_FUN_0045b550   ; 004a262b
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 004a262b
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004a2630
     XOR ECX,ECX                         ; 004a2633
     LEA EAX,[ESP + 0x4c]                ; 004a2635
@@ -129,8 +129,8 @@ section .text
     PUSH EBP                            ; 004a2720
     MOV EAX,[0x006045f8]                ; 004a2721 | DAT_006045f8
     PUSH EAX                            ; 004a2726
-    CALL core_sound.cpp_FUN_00560a70    ; 004a2727
-        ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
+    CALL core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70 ; 004a2727
+        ;   XREF to: 00560a70 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70(CSound * this_ptr, CDemonActor * actor, char * sound_name, CVector3f * position, ...)
     ADD ESP,0x14                        ; 004a272c
     MOV EDX,dword ptr [ESP + 0x80]      ; 004a272f
     PUSH EDX                            ; 004a2736

@@ -11,10 +11,10 @@
 ;
 ; XREF[5]:
 ;   core_bat.cpp_CBat_setup_FUN_00410c20 at 00410c45
-;   core_frankgen.cpp_FUN_004c51e0 at 004c53f0
+;   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004c51e0 at 004c53f0
 ;   core_marquee.cpp_CMarquee_setup_FUN_00506b20 at 00506b3c
 ;   core_platfrm.cpp_CPlatform_setup_FUN_005395d0 at 0053962d
-;   core_vehicle.cpp_FUN_005a7870 at 005a7b12
+;   core_vehicle.cpp_CVehicle_setup_FUN_005a7870 at 005a7b12
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d7185

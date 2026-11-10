@@ -9,7 +9,7 @@
 ;
 ; XREF[45]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280 at 0040c30e
-;   core_actor.cpp_FUN_0040ba30 at 0040ba55
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30 at 0040ba55
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0 at 0040b9d5
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040b7a0 at 0040b7f5
 ;   core_ammo.cpp_CAmmo_archive_FUN_0040e000 at 0040e02e

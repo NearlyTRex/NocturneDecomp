@@ -25,17 +25,17 @@ CDynamite * __cdecl CDynamite::ctor(CDynamite *this_ptr);
 // Address: 00492590
 int __cdecl CDynamite::fire(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_00492600
+// Original: core_dynamite.cpp_CDynamite_getDamage_FUN_00492600
 // Address: 00492600
-undefined4 FUN_00492600(void);
+float __cdecl CDynamite::getDamage(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_00492630
+// Original: core_dynamite.cpp_CDynamite_renderAimBeam_FUN_00492630
 // Address: 00492630
-void FUN_00492630(void);
+void __cdecl CDynamite::renderAimBeam(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_00492640
+// Original: core_dynamite.cpp_CDynamite_lightFuse_FUN_00492640
 // Address: 00492640
-void __cdecl FUN_00492640(CDynamite *this_ptr);
+void __cdecl CDynamite::lightFuse(CDynamite *this_ptr);
 
 // Original: core_dynamite.cpp_CDynamite_isFuseLit_FUN_00492690
 // Address: 00492690
@@ -45,9 +45,9 @@ int __cdecl CDynamite::isFuseLit(CDynamite *this_ptr);
 // Address: 004926b0
 int __cdecl CDynamite::isFuseBurnedOut(CDynamite *this_ptr);
 
-// Original: core_dynamite.cpp_FUN_004926d0
+// Original: core_dynamite.cpp_CDynamite_process_FUN_004926d0
 // Address: 004926d0
-void FUN_004926d0(CWeapon *param_1,float param_2);
+void __cdecl CDynamite::process(CDynamite *this_ptr,float delta_time);
 
 // Original: core_dynamite.cpp_CDynamite_dtor_FUN_004928d0
 // Address: 004928d0

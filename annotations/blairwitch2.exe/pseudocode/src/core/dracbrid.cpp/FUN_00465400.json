@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 346,
-    "complexity_score": 308,
+    "complexity_score": 268,
     "cross_reference_count": 2,
     "function_call_count": 15,
     "global_count": 27,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 178,
-    "suspect_count": 9,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
@@ -23,15 +21,15 @@
   },
   "cross_references": [
     {
-      "addr": "00462ff0",
-      "from_addr": "0046357d",
-      "name": "core_dracbrid.cpp_FUN_00462ff0",
+      "addr": "00464f60",
+      "from_addr": "00465124",
+      "name": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00464f60",
-      "from_addr": "00465124",
-      "name": "core_dracbrid.cpp_FUN_00464f60",
+      "addr": "00462ff0",
+      "from_addr": "0046357d",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -56,7 +54,7 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "00546a90",
@@ -84,21 +82,6 @@
       "name": "core_spline.cpp_FUN_00561780"
     },
     {
-      "addr": "00550270",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550270"
-    },
-    {
-      "addr": "00550450",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550450"
-    },
-    {
-      "addr": "005504d0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005504d0"
-    },
-    {
       "addr": "005506b0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_005506b0"
@@ -111,7 +94,17 @@
     {
       "addr": "00552b20",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00552b20"
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00552b20"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
     },
     {
       "addr": "00550170",
@@ -122,6 +115,11 @@
       "addr": "00550210",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00550210"
+    },
+    {
+      "addr": "00550270",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxVolume_FUN_00550270"
     }
   ],
   "globals": [
@@ -271,19 +269,19 @@
     },
     {
       "addr": "01fc783c",
-      "name": "g_CDemonCameraInstance.field4_0x4",
+      "name": "g_CDemonCameraInstance.base.position",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc7840",
-      "name": "g_CDemonCameraInstance.field8_0x8",
+      "name": "g_CDemonCameraInstance.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc7844",
-      "name": "g_CDemonCameraInstance.field12_0xc",
+      "name": "g_CDemonCameraInstance.base.position+8",
       "type": "undefined4",
       "value": null
     }
@@ -294,7 +292,7 @@
       {
         "call_addr": "0046357d",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,7 +303,7 @@
       {
         "call_addr": "004635a3",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -316,7 +314,7 @@
       {
         "call_addr": "00464009",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,7 +325,7 @@
       {
         "call_addr": "0046402f",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,7 +336,7 @@
       {
         "call_addr": "00464484",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -349,7 +347,7 @@
       {
         "call_addr": "00464524",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -360,7 +358,7 @@
       {
         "call_addr": "0046454a",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00462ff0",
+        "caller": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -371,7 +369,7 @@
       {
         "call_addr": "00465124",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00464f60",
+        "caller": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -382,7 +380,7 @@
       {
         "call_addr": "00465175",
         "call_type": "direct",
-        "caller": "core_dracbrid.cpp_FUN_00464f60",
+        "caller": "core_dracbrid.cpp_CDraculaBride_processDamage_FUN_00464f60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -734,36 +732,12 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x10b8c",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x10b8c = local_10;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 54,
       "match": "DAT_01ba5798",
       "severity": "mild",
       "text": "puVar5 = (uint *)&DAT_01ba5798;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,uVar7);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 120,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_3c[2] = (float)g_CDemonCameraInstance._4_4_;",
-      "type": "unknown_field"
     },
     {
       "description": "Pointer value `&g_CDemonCameraInstance` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

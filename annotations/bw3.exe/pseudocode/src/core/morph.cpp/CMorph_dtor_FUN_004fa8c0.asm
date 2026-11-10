@@ -20,7 +20,7 @@
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorph_free_FUN_004fa8e0
-;   unkafter_box.cpp_FUN_004fb180
+;   core_morph.cpp_FUN_004fb180
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH 0x0                            ; 004fa8cd
     MOV ECX,dword ptr [ESP + 0x8]       ; 004fa8cf
     PUSH ECX                            ; 004fa8d3
-    CALL unkafter_box.cpp_FUN_004fb180  ; 004fa8d4
-        ;   XREF to: 004fb180 (UNCONDITIONAL_CALL)  ; CMorphModel * unkafter_box.cpp_FUN_004fb180(CMorphModel * this_ptr, uint flags)
+    CALL core_morph.cpp_FUN_004fb180    ; 004fa8d4
+        ;   XREF to: 004fb180 (UNCONDITIONAL_CALL)  ; CMorphModel * core_morph.cpp_FUN_004fb180(CMorphModel * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004fa8d9
     RET                                 ; 004fa8dc
 

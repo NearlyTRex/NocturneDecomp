@@ -14,30 +14,22 @@ uint * core_dcamera_cpp_FUN_00454cc0(int param_1)
   int iVar1;
   uint uVar2;
   uint *unaff_ESI;
-  uint *puVar3;
+  CBoundingBox3D *pCVar3;
   uint *puVar4;
   byte bVar5;
-  int aiStackY_10ec [6];
-  float afStackY_10d4 [12];
-  int aiStackY_10a4 [9];
-  float afStackY_1080 [3];
-  int aiStackY_1074 [3];
-  float afStackY_1068 [15];
-  int aiStackY_102c [961];
-  CBoundingBox3D *this_ptr;
+  float afStackY_10ec [1009];
   float *pfVar6;
   CVector3f *point;
-  byte auStack_11c [24];
+  CBoundingBox3D CStack_11c;
   uint uStack_104;
-  int aiStack_100 [2];
+  float afStack_100 [2];
   CVector3f CStack_f8;
   float fStack_ec;
   float afStack_e8 [5];
   uint uStack_d4;
   int iStack_cc;
-  CVector3f CStack_c8;
-  uint uStack_bc;
-  float fStack_b8;
+  float fStack_c8;
+  float afStack_c4 [4];
   int iStack_b4;
   uint uStack_b0;
   int iStack_a4;
@@ -64,25 +56,25 @@ uint * core_dcamera_cpp_FUN_00454cc0(int param_1)
   
   bVar5 = 0;
   if (&stack0x00000000 != (byte *)0x2c8b038) {
-    auStack_11c._12_4_ = _DAT_02c8af28;
-    auStack_11c._16_4_ = _DAT_02c8af2c;
-    auStack_11c._20_4_ = _DAT_02c8af30;
+    CStack_11c.max.x = _DAT_02c8af28;
+    CStack_11c.max.y = _DAT_02c8af2c;
+    CStack_11c.max.z = _DAT_02c8af30;
   }
-  if (auStack_11c != auStack_11c + 0xc) {
-    auStack_11c._0_4_ = auStack_11c._12_4_;
-    auStack_11c._4_4_ = auStack_11c._16_4_;
-    auStack_11c._8_4_ = auStack_11c._20_4_;
+  if (&CStack_11c != (CBoundingBox3D *)&CStack_11c.max) {
+    CStack_11c.min.x = CStack_11c.max.x;
+    CStack_11c.min.y = CStack_11c.max.y;
+    CStack_11c.min.z = CStack_11c.max.z;
   }
   iStack_38 = 0;
   iStack_14 = 1;
   do {
     iVar1 = iStack_38;
     if (*(int *)(param_1 + 0x148) + -1 <= iStack_14) {
-      puVar3 = (uint *)auStack_11c;
+      pCVar3 = &CStack_11c;
       puVar4 = unaff_ESI;
       for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
-        *puVar4 = *puVar3;
-        puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
+        *puVar4 = *(uint *)pCVar3;
+        pCVar3 = (CBoundingBox3D *)((int)pCVar3 + ((uint)bVar5 * -2 + 1) * 4);
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
       return unaff_ESI;
@@ -98,9 +90,9 @@ uint * core_dcamera_cpp_FUN_00454cc0(int param_1)
 LAB_00454e8a:
         core_dcamera_cpp_FUN_0044de40(param_1,&uStack_50);
         iStack_44 = iStack_a4;
-        (&fStack_4c)[(uint)bVar5 * -2 + 3] = (&fStack_b8)[(uint)bVar5 * -2 + 6];
+        (&fStack_4c)[(uint)bVar5 * -2 + 3] = afStack_c4[(uint)bVar5 * -2 + 9];
         (&fStack_4c)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
-             (&fStack_b8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
+             afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
         fStack_5c = (float)iStack_44 * _DAT_005fe604;
         fStack_58 = (float)iStack_40 * _DAT_005fe604;
         fStack_54 = (float)iStack_3c * _DAT_005fe604;
@@ -114,13 +106,12 @@ LAB_00454e8a:
              afStack_7c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
         core_dirmat_cpp_FUN_0045f700(param_1 + 0x10,pfVar6);
         point = &CStack_f8;
-        CStack_f8._0_4_ = CStack_c8._0_4_;
-        *(uint *)((int)&CStack_f8 + (uint)bVar5 * -8 + 4) =
-             *(uint *)((int)&CStack_c8 + (uint)bVar5 * -8 + 4);
-        this_ptr = (CBoundingBox3D *)auStack_11c;
-        *(uint *)((int)&CStack_f8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
-             *(uint *)((int)&CStack_c8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8);
-        core_box_cpp_CBoundingBox3D_expand_FUN_00420500(this_ptr,point);
+        CStack_f8.x = fStack_c8;
+        *(float *)((int)&CStack_f8 + (uint)bVar5 * -8 + 4) = afStack_c4[(uint)bVar5 * -2];
+        pCVar3 = &CStack_11c;
+        *(float *)((int)&CStack_f8 + (uint)bVar5 * -8 + (uint)bVar5 * -8 + 8) =
+             afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+        core_box_cpp_CBoundingBox3D_expand_FUN_00420500(pCVar3,point);
       }
       else {
         uVar2 = 0;
@@ -142,17 +133,17 @@ LAB_00454e43:
         }
         else {
           core_dcamera_cpp_FUN_0044dd70(param_1,iStack_18,iStack_14 + 1);
-          uStack_bc = uStack_104;
-          (&fStack_b8)[(uint)bVar5 * -2] = (float)aiStack_100[(uint)bVar5 * -2];
-          (&fStack_b8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1] =
-               (float)aiStack_100[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+          afStack_c4[2] = (float)uStack_104;
+          afStack_c4[(uint)bVar5 * -2 + 3] = afStack_100[(uint)bVar5 * -2];
+          afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
+               afStack_100[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
           if (0x1f400 < iStack_b4) goto LAB_00454e43;
         }
         if ((iStack_10 < *(int *)(param_1 + 0x144) + -2) && (1 < iStack_14)) {
           core_dcamera_cpp_FUN_0044dd70(param_1,iStack_10 + 1,iVar1);
           uStack_98 = uStack_68;
-          (&fStack_b8)[(uint)bVar5 * -2 + 9] = afStack_7c[(uint)bVar5 * -2 + 6];
-          (&fStack_b8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10] =
+          afStack_c4[(uint)bVar5 * -2 + 0xc] = afStack_7c[(uint)bVar5 * -2 + 6];
+          afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
                afStack_7c[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
           if (0x1f400 < iStack_90) goto LAB_00454e5c;
         }
@@ -164,9 +155,9 @@ LAB_00454e5c:
            (iStack_14 < *(int *)(param_1 + 0x148) + -2)) {
           core_dcamera_cpp_FUN_0044dd70(param_1,iStack_10 + 1,iStack_14 + 1);
           uStack_8c = uStack_b0;
-          (&fStack_b8)[(uint)bVar5 * -2 + 0xc] = (&fStack_b8)[(uint)bVar5 * -2 + 3];
-          (&fStack_b8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd] =
-               (&fStack_b8)[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4];
+          afStack_c4[(uint)bVar5 * -2 + 0xf] = afStack_c4[(uint)bVar5 * -2 + 6];
+          afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
+               afStack_c4[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7];
           if (0x1f400 < iStack_84) goto LAB_00454e75;
         }
         else {

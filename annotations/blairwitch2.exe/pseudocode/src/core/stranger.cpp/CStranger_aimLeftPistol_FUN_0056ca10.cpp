@@ -83,19 +83,19 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
   uint uStack_2c;
   float fStack_28;
   float fStack_24;
-  float *pfStack_20;
+  SArmAimData *pSStack_20;
   float fStack_1c;
   float fStack_18;
   
   bVar4 = 0;
-  if (*(int *)&this_ptr->field_0x25698 == 0) {
+  if (this_ptr->weapon == (CWeapon *)0x0) {
     _DAT_01d046a0 = "..\\core\\stranger.cpp";
     _DAT_01d046a4 = 0x10b0;
     core_main_c_FUN_004e4500("CStranger::aimLeftPistol - no weapon?");
   }
-  (**(code **)(*(int *)(*(int *)&this_ptr->field_0x25698 + 0x2b0) + 0xe8))
-            (*(int *)&this_ptr->field_0x25698);
-  pfStack_20 = (float *)&this_ptr->field_0x25674;
+  (*(((((CCharacter *)this_ptr->weapon)->base).vtable._uc)->_uc).isInvulnerable)
+            ((CCharacter *)this_ptr->weapon);
+  pSStack_20 = &this_ptr->left_arm_aim;
   uStack_2c = _DAT_0264be3c;
   fStack_120 = local_6c;
   (&stack0xfffffee4)[(uint)bVar4 * 0xfffffffe] =
@@ -104,7 +104,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
        *(uint *)(&stack0xffffff9c + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   fStack_30 = 0.5235988;
   fStack_34 = -1.3089969;
-  core_actor_cpp_FUN_00408d70(*(uint *)&this_ptr->field_0x25698,&stack0xfffffee0);
+  core_actor_cpp_FUN_00408d70(this_ptr->weapon,&stack0xfffffee0);
   fStack_f0 = fStack_9c;
   (&stack0xffffff14)[(uint)bVar4 * 0xfffffffe] =
        (float)*(uint *)(&stack0xffffff68 + (uint)bVar4 * -8);
@@ -113,7 +113,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
   uStack_12c = 0;
   uStack_128 = 0;
   uStack_124 = 0x447a0000;
-  core_actor_cpp_FUN_00408cf0(*(uint *)&this_ptr->field_0x25698,&stack0xfffffed4);
+  core_actor_cpp_FUN_00408cf0(this_ptr->weapon,&stack0xfffffed4);
   fVar3 = fStack_e8;
   fVar1 = fStack_ec;
   fVar2 = fStack_f0;
@@ -137,8 +137,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
        *(uint *)((int)&stack0xffffffc0 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00537ef0
             (this_ptr_00,laser_type,color_r,color_g,color_b);
-  core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30
-            (g_CDemonSetPtr,*(CDemonActor **)&this_ptr->field_0x25698);
+  core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,&this_ptr->weapon->base);
   core_setcolid_cpp_CDemonSet_ignore_FUN_00537e30(g_CDemonSetPtr,(CDemonActor *)this_ptr);
   fStack_150 = (float)core_setcolid_cpp_FUN_00535ee0
                                 (g_CDemonSetPtr,&stack0xffffff10,&stack0xffffffa0);
@@ -190,7 +189,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
        (float)*(uint *)((int)&stack0xffffff80 + (uint)bVar4 * -8);
   *(uint *)((int)&stack0xffffff3c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
        *(uint *)((int)&stack0xffffff84 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  core_vecdir_cpp_FUN_005838f0(&stack0xffffff34);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffff34);
   fVar2 = SQRT(fStack_c4 * fStack_c4 + fStack_cc * fStack_cc + fStack_c8 * fStack_c8);
   fStack_90 = fStack_fc;
   *(uint *)((int)&stack0xffffff74 + (uint)bVar4 * -8) =
@@ -211,7 +210,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
       else {
         fStack_8c = fStack_8c - fStack_38;
       }
-      fStack_18 = (float)core_actor_cpp_FUN_0040d0c0(fStack_8c);
+      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_8c);
       fStack_8c = fStack_18;
     }
     if ((((float)_DAT_005ebce5 <= fVar2) &&
@@ -226,7 +225,7 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
       else {
         fStack_90 = fStack_90 - fStack_3c;
       }
-      fStack_18 = (float)core_actor_cpp_FUN_0040d0c0(fStack_90);
+      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_90);
       fStack_90 = fStack_18;
     }
   }
@@ -249,10 +248,10 @@ void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_0056ca10(CStranger *t
   if (fStack_30 < fStack_1c) {
     fStack_1c = fStack_30;
   }
-  pfStack_20[5] = 1.0;
-  pfStack_20[3] = fStack_1c;
-  pfStack_20[2] = fStack_24;
-  pfStack_20[1] = fStack_1c;
-  *pfStack_20 = fStack_24;
+  *(float *)(pSStack_20 + 0x14) = 1.0;
+  *(float *)(pSStack_20 + 0xc) = fStack_1c;
+  *(float *)(pSStack_20 + 8) = fStack_24;
+  *(float *)(pSStack_20 + 4) = fStack_1c;
+  *(float *)pSStack_20 = fStack_24;
   return;
 }

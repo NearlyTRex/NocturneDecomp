@@ -9,7 +9,7 @@
 void __cdecl cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00510f90(CPackedBitmapSet *this_ptr,char *filename)
 
 {
-  _strncpy((char *)(this_ptr + 8),filename,0x13);
-  this_ptr[0x1b] = (CPackedBitmapSet)0x0;
+  _strncpy(this_ptr->filename,filename,0x13);
+  this_ptr->filename[0x13] = '\0';
   return;
 }

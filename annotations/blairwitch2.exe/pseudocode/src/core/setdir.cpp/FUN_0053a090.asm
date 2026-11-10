@@ -14,8 +14,8 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[2]:
-;   core_setdir.cpp_FUN_0053a150 at 0053a199
-;   core_setdir.cpp_FUN_0053a760 at 0053a77a
+;   core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760 at 0053a77a
+;   core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_0053a150 at 0053a199
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_004495a0

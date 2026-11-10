@@ -8,7 +8,7 @@
 ;   undefined4 DAT_005ce1cb
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408a80
+;   core_actor.cpp_CDemonActor_setup_FUN_00408a80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
 ;
 ; *****************************************************************************
@@ -22,8 +22,8 @@ section .text
     SUB ESP,0x38                        ; 00439dc3
     MOV EBX,dword ptr [ESP + 0x48]      ; 00439dc6
     PUSH EBX                            ; 00439dca
-    CALL core_actor.cpp_FUN_00408a80    ; 00439dcb
-        ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408a80(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408a80 ; 00439dcb
+        ;   XREF to: 00408a80 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408a80(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00439dd0
     LEA ESI,[EBX + 0x2b4]               ; 00439dd3
     PUSH ESI                            ; 00439dd9

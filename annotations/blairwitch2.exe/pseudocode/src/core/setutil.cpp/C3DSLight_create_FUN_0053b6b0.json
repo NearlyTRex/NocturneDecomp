@@ -2,28 +2,28 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 397,
+    "complexity_score": 319,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 30,
+    "pseudocode_lines": 69,
+    "suspect_count": 22,
     "suspect_types": [
+      "alloc_magic_size",
       "concat_reconstruction",
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 199
+    "total_lines": 201
   },
   "cross_references": [
     {
       "addr": "0052d980",
       "from_addr": "0052dbb2",
-      "name": "core_set.cpp_FUN_0052d980",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +48,7 @@
     {
       "addr": "00449280",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_00449280"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
     },
     {
       "addr": "00449c70",
@@ -68,7 +68,7 @@
     {
       "addr": "005b8be2",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b8be2"
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005b8be2"
     }
   ],
   "globals": [
@@ -109,7 +109,7 @@
       {
         "call_addr": "0052dbb2",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_0052d980",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_0052d980",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +187,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr,*(int *)(param_1 + 0x1808),*(int *)(param_1 + 0x180c));",
@@ -195,7 +195,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "(this_ptr,*(int *)(param_1 + 0x1808),*(int *)(param_1 + 0x180c));",
@@ -203,167 +203,71 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x11ec) < 1) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1cb8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1cb8 = 1;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1cb8 = *(uint *)(param_1 + 0x11f0);",
+      "text": "this_ptr_00->shadow_bounds_mode = *(int *)(param_1 + 0x11f0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x1cb8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x1cb8 = *(uint *)(param_1 + 0x11f0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr_00->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr_00->field_0x4 != (uint *)(param_1 + 0x104)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x4 = *(uint *)(param_1 + 0x104);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x8 = *(uint *)(param_1 + 0x108);",
+      "text": "if (pUVar4 != (UVector3 *)(param_1 + 0x104)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x8 = *(uint *)(param_1 + 0x108);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0xc = *(uint *)(param_1 + 0x10c);",
+      "text": "(pUVar4->f).x = *(float *)(param_1 + 0x104);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0xc = *(uint *)(param_1 + 0x10c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr_00->field_0x10,(CVector3f *)(param_1 + 0x110));",
+      "text": "(this_ptr_00->base).base.position.f.y = *(float *)(param_1 + 0x108);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "((CMatrix3x3f *)&this_ptr_00->field_0x10,(CVector3f *)(param_1 + 0x110));",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x38 = *(uint *)(param_1 + 0x11c);",
+      "text": "(this_ptr_00->base).base.position.f.z = *(float *)(param_1 + 0x10c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x38 = *(uint *)(param_1 + 0x11c);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x11ec);",
+      "text": "(&(this_ptr_00->base).base.rotation_matrix,(CVector3f *)(param_1 + 0x110));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = param_1 + 0x11f4;",
+      "text": "(this_ptr_00->base).base.focal_length = *(float *)(param_1 + 0x11c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar4 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 52,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(g_CFilterCachePtr,iVar7,*(uint *)(param_1 + 0x11f0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar3 = *(int *)(param_1 + 0x11ec);",
@@ -371,23 +275,47 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar6 = (char *)(param_1 + 4);",
+      "text": "iVar8 = param_1 + 0x11f4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x40",
+      "description": "Unnamed function parameter",
+      "line": 50,
+      "match": "param_1",
       "severity": "mild",
-      "text": "pcVar8 = &this_ptr_00->field_0x40;",
-      "type": "unnamed_field"
+      "text": "iVar5 = param_1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(g_CFilterCachePtr,iVar8,*(uint *)(param_1 + 0x11f0));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 57,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar3 = *(int *)(param_1 + 0x11ec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 61,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "pcVar7 = (char *)(param_1 + 4);",
+      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 61,
+      "line": 63,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -395,11 +323,19 @@
     },
     {
       "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 70,
+      "line": 72,
       "match": "CONCAT44",
       "severity": "moderate",
       "text": "return CONCAT44(iVar3,this_ptr_00);",
       "type": "concat_reconstruction"
+    },
+    {
+      "description": "Allocation size hardcodes 0x2fb0 == sizeof(CDemonLight). Replace the magic with sizeof(CDemonLight) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 19,
+      "match": "(CDemonLight*) alloc stride 0x2fb0",
+      "severity": "moderate",
+      "text": "(CDemonLight *)debugAllocTracked1(0x2fb0)",
+      "type": "alloc_magic_size"
     },
     {
       "call_site_count": 1,

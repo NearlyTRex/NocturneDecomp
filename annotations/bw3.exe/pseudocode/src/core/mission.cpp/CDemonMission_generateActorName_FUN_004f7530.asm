@@ -11,17 +11,17 @@
 ; undefined1       Stack[-0x2b]:1  local_2b
 ;
 ; XREF[8]:
-;   core_bodypart.cpp_FUN_00414550 at 00414611
+;   core_bodypart.cpp_createBodyPart_FUN_00414550 at 00414611
 ;   core_fire.cpp_FUN_0049cca0 at 0049cccd
-;   core_game.cpp_FUN_004bafd0 at 004bafed
+;   core_game.cpp_giveHeroWeapon_FUN_004bafd0 at 004bafed
 ;   core_gore.cpp_FUN_004ced40 at 004cedfc
 ;   core_hero.cpp_FUN_004d4be0 at 004d4c39
 ;   core_inv.cpp_FUN_004da880 at 004db234
-;   core_mission.cpp_FUN_004f6930 at 004f696a
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 at 004f696a
 ;   core_mission.cpp_FUN_004f7a20 at 004f7b4f
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004f7490
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x34]      ; 004f7536
     PUSH EDI                            ; 004f753a
     MOV byte ptr [EDI],0x0              ; 004f753b
-    CALL core_actor.cpp_FUN_00408870    ; 004f753e
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 004f753e
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004f7543
     MOV BL,byte ptr [EAX]               ; 004f7546
     MOV EDX,EAX                         ; 004f7548

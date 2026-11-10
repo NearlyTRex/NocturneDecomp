@@ -24,7 +24,7 @@ void __cdecl wincore_wddvmem_cpp_resetGraphicsSystem_FUN_00588de0(void)
       engine_2d_c_drawText_FUN_00401fe0("the appropriate bit depth first.",0,0x21);
       engine_2d_c_drawText_FUN_00401fe0("I am forcing the screen to switch to 16bpp mode.",0,0x2c);
       engine_2d_c_drawText_FUN_00401fe0("Press any key to continue.",0,0x42);
-      wincore_wddvmem_cpp_FUN_00589560();
+      wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
       wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
     }
     engine_special_cpp_clearScreen_FUN_0055b1f0();

@@ -45,7 +45,7 @@ void __cdecl core_skeleton_cpp_FUN_00547b80(CDeformableModelInstance *this_ptr,i
             ((CMotionController *)this_ptr,motion_index,animation_time,&iStack_2c,&iStack_28,
              &stack0xffffff78);
   iVar2 = 0;
-  if (0 < *(int *)&pCVar1->field_0x1d1f8) {
+  if (0 < pCVar1->bone_count) {
     pSStack_18 = output_bone_data;
     pSStack_1c = output_bone_data;
     do {
@@ -63,7 +63,7 @@ void __cdecl core_skeleton_cpp_FUN_00547b80(CDeformableModelInstance *this_ptr,i
       *(uint *)(pSStack_18 + 0x64c) = 0x3f800000;
       pSStack_18 = pSStack_18 + 4;
       pSStack_1c = pSStack_1c + 0x10;
-    } while (iVar2 < *(int *)&pCStack_20->field_0x1d1f8);
+    } while (iVar2 < pCStack_20->bone_count);
   }
   iVar2 = *(int *)&pCStack_20->field_0x1e014;
   fStack_74 = *(float *)(iVar2 + iStack_28 * 0xc) * fStack_88;

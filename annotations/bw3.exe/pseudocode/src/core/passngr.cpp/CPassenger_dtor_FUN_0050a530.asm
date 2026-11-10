@@ -8,12 +8,12 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined1* g_CPassengerVTable = 0050a610
+;   CCharacter_full_vtable g_CPassengerVTable
 ;   WatcomTypeInfo g_CPassengerTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_morph.cpp_CMorph_dtor_FUN_004fa8c0
 ;   core_path.cpp_CPathMap_dtor_FUN_0050ad40
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
@@ -67,8 +67,8 @@ section .text
     PUSH 0x0                            ; 0050a59b
     SUB EAX,0x954                       ; 0050a59d
     PUSH EAX                            ; 0050a5a2
-    CALL core_cloth.cpp_FUN_0043f900    ; 0050a5a3
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 0050a5a3
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0050a5a8
     PUSH 0x0                            ; 0050a5ab
     SUB EAX,0x2db0                      ; 0050a5ad

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 195,
+    "complexity_score": 130,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 15,
+    "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 103
@@ -33,7 +32,12 @@
     {
       "addr": "004307c0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004307c0"
+      "name": "core_charactr.cpp_CCharacter_releaseFromGrab_FUN_004307c0"
+    },
+    {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
     },
     {
       "addr": "004fc160",
@@ -43,12 +47,7 @@
     {
       "addr": "004fba50",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fba50"
-    },
-    {
-      "addr": "004fc310",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fc310"
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50"
     },
     {
       "addr": "004fc350",
@@ -165,55 +164,31 @@
       "line": 11,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x26fc != 0) {",
+      "text": "if (param_1->grabbed_by != (CDemonActor *)0x0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x26fc != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "(g_CConsolePtr,\"CHero::stopGettingGrabbed by %s, type %d\\n\",*(int *)&param_1->field_0x26fc,",
+      "text": "(g_CConsolePtr,\"CHero::stopGettingGrabbed by %s, type %d\\n\",param_1->grabbed_by,",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x26fc",
-      "severity": "mild",
-      "text": "(g_CConsolePtr,\"CHero::stopGettingGrabbed by %s, type %d\\n\",*(int *)&param_1->field_0x26fc,",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2700);",
+      "text": "param_1->grabbed_type);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2700",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2700);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(byte **)&param_1->field_0x68 == &DAT_0078a123) &&",
+      "text": "if (((byte *)(param_1->base).validation_magic == &DAT_0078a123) &&",
       "type": "unnamed_param"
     },
     {
@@ -221,55 +196,31 @@
       "line": 16,
       "match": "DAT_0078a123",
       "severity": "mild",
-      "text": "if ((*(byte **)&param_1->field_0x68 == &DAT_0078a123) &&",
+      "text": "if (((byte *)(param_1->base).validation_magic == &DAT_0078a123) &&",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if ((*(byte **)&param_1->field_0x68 == &DAT_0078a123) &&",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x24f8 != 0)) {",
+      "text": "((param_1->model).model_ptr != (CDeformableModel *)0x0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x24f8",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x24f8 != 0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = &param_1->field_0x158;",
+      "text": "this_ptr = &param_1->model;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "this_ptr = &param_1->field_0x158;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004307c0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004307c0(param_1);",
       "type": "unnamed_param"
     }
   ],
@@ -281,7 +232,7 @@
         "vtable_addr": "005e1534"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CPrye",
         "offset": 240,
         "vtable_addr": "005e3534"
       }

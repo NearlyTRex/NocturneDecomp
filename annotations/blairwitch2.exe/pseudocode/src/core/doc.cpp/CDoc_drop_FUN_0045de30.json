@@ -1,0 +1,148 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 59,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 9,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 38
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0045de30",
+    "address_range": [
+      [
+        "0045de30",
+        "0045de75"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_doc.cpp_CDoc_drop_FUN_0045de30",
+    "signature": "void __cdecl core_doc_cpp_CDoc_drop_FUN_0045de30(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_position)"
+  },
+  "function_calls": [
+    {
+      "addr": "00427a60",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_drop_FUN_00427a60"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9565217391304346,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 19,
+      "INT_ADD": 13,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 10,
+      "LOAD": 10,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 91
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoc *"
+      },
+      {
+        "is_param": true,
+        "name": "carrier",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "drop_position",
+        "offset": 12,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x25698",
+      "severity": "mild",
+      "text": "if (carrier == *(CDemonActor **)&this_ptr->field_0x25698) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x25698",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25698 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 7,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x150))(this_ptr,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x150))(this_ptr,0);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 152,
+        "vtable_addr": "005f5174"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

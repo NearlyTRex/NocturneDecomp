@@ -8,7 +8,7 @@
 ;   core_fldnotes.cpp_FUN_004a8f30 at 004a8fce
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004b2a80
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     PUSH EDX                            ; 004a9814
     MOV EDX,dword ptr [EBX + 0x2c]      ; 004a9815
     PUSH EDX                            ; 004a9818
-    CALL engine_font.cpp_FUN_004b2a80   ; 004a9819
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004a9819
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004a981e
     MOV EAX,dword ptr [EBX + 0x40]      ; 004a9820
     ADD EAX,EDX                         ; 004a9823

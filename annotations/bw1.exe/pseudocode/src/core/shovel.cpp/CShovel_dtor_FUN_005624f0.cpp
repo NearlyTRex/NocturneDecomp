@@ -17,7 +17,7 @@ CShovel * __cdecl core_shovel_cpp_CShovel_dtor_FUN_005624f0(CShovel *this_ptr,ui
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)this_ptr,1);
+  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return (CShovel *)pCVar1;
   }

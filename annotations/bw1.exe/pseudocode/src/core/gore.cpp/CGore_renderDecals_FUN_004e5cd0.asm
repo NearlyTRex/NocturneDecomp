@@ -17,7 +17,7 @@
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field20_0x14
+;   undefined4 g_CGameInstance.field11_0x14
 ;   undefined4 DAT_01cd56b0
 ;   undefined4 DAT_01cf69f8
 ;   undefined4 DAT_01cf6f00
@@ -41,7 +41,7 @@ section .text
     MOV EBP,dword ptr [ESP + 0x18]      ; 004e5cd4
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004e5cd8
     MOV EAX,[0x0061d95c]                ; 004e5cdc | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x14],0x0      ; 004e5ce1 | g_CGameInstance.field20_0x14
+    CMP dword ptr [EAX + 0x14],0x0      ; 004e5ce1 | g_CGameInstance.field11_0x14
     JNZ 0x004e5cf5                      ; 004e5ce5
         ;   XREF to: 004e5cf5 (CONDITIONAL_JUMP)  ; LAB_004e5cf5
     LEA EAX,[EAX]                       ; 004e5ce7

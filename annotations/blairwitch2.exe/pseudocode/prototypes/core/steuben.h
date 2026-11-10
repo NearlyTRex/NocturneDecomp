@@ -21,37 +21,37 @@ CDemonActorType * CSteuben::getActorType(CSteuben *this_ptr);
 // Address: 005a5b40
 CSteuben * CSteuben::ctor(CSteuben *this_ptr);
 
-// Original: core_steuben.cpp_FUN_005a5c10
+// Original: core_steuben.cpp_CSteuben_setup_FUN_005a5c10
 // Address: 005a5c10
-void FUN_005a5c10(undefined4 param_1);
+void __cdecl CSteuben::setup(CSteuben *this_ptr);
 
-// Original: core_steuben.cpp_FUN_005a5c20
+// Original: core_steuben.cpp_CSteuben_processStates_FUN_005a5c20
 // Address: 005a5c20
-void FUN_005a5c20(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CSteuben::processStates(CSteuben *this_ptr,float delta_time,int mode);
 
 // Original: core_steuben.cpp_FUN_005a5c40
 // Address: 005a5c40
 void FUN_005a5c40(int param_1,float param_2);
 
-// Original: core_steuben.cpp_FUN_005a5d10
+// Original: core_steuben.cpp_CSteuben_processDeathState_FUN_005a5d10
 // Address: 005a5d10
-void FUN_005a5d10(int param_1);
+void __cdecl CSteuben::processDeathState(CSteuben *this_ptr,float delta_time);
 
-// Original: core_steuben.cpp_FUN_005a5d30
+// Original: core_steuben.cpp_CSteuben_getDeathState_FUN_005a5d30
 // Address: 005a5d30
-undefined4 FUN_005a5d30(void);
+EDeathState __cdecl CSteuben::getDeathState(CSteuben *this_ptr);
 
-// Original: core_steuben.cpp_FUN_005a5d40
+// Original: core_steuben.cpp_CSteuben_processMotionEvent_FUN_005a5d40
 // Address: 005a5d40
-void FUN_005a5d40(void);
+void __cdecl CSteuben::processMotionEvent(CSteuben *this_ptr,int event_id);
 
-// Original: core_steuben.cpp_FUN_005a5d50
+// Original: core_steuben.cpp_CSteuben_renderOpaque_FUN_005a5d50
 // Address: 005a5d50
-void FUN_005a5d50(undefined4 param_1);
+int __cdecl CSteuben::renderOpaque(CSteuben *this_ptr);
 
-// Original: core_steuben.cpp_FUN_005a5d60
+// Original: core_steuben.cpp_CSteuben_archive_FUN_005a5d60
 // Address: 005a5d60
-void FUN_005a5d60(undefined4 param_1);
+void __cdecl CSteuben::archive(CSteuben *this_ptr);
 
 // Original: core_steuben.cpp_CSteuben_dtor_FUN_005a5d70
 // Address: 005a5d70

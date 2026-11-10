@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 50,
-    "complexity_score": 158,
+    "complexity_score": 138,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 23,
-    "suspect_count": 13,
+    "suspect_count": 11,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -43,7 +43,7 @@
     {
       "addr": "005a9060",
       "is_variadic": false,
-      "name": "core_belling.cpp_FUN_005a9060"
+      "name": "core_belling.cpp_CBelling_processStates_FUN_005a9060"
     },
     {
       "addr": "005b15c0",
@@ -130,7 +130,7 @@
       "line": 10,
       "match": "field_0x2b0",
       "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CBellingVTable;",
+      "text": "*(CBasicEnemy_full_vtable **)&this_ptr_00->field_0x2b0 = &g_CBellingVTable;",
       "type": "unnamed_field"
     },
     {
@@ -138,7 +138,7 @@
       "line": 12,
       "match": "field_0x2b4",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)&pCVar1->field_0x2b4,\"Belling.dfm\");",
+      "text": "((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,\"Belling.dfm\");",
       "type": "unnamed_field"
     },
     {
@@ -146,7 +146,7 @@
       "line": 13,
       "match": "field_0x3434",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x3434 = 0x3f800000;",
+      "text": "*(uint *)&this_ptr_00->field_0x3434 = 0x3f800000;",
       "type": "unnamed_field"
     },
     {
@@ -154,7 +154,7 @@
       "line": 14,
       "match": "field_0x1134c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x1134c = 0x3fc00000;",
+      "text": "*(uint *)&this_ptr_00->field_0x1134c = 0x3fc00000;",
       "type": "unnamed_field"
     },
     {
@@ -162,7 +162,7 @@
       "line": 15,
       "match": "field_0x11380",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x11380 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11380 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -170,7 +170,7 @@
       "line": 16,
       "match": "field_0x11384",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x11384 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11384 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -178,7 +178,7 @@
       "line": 17,
       "match": "field_0x11388",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x11388 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11388 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -186,7 +186,7 @@
       "line": 18,
       "match": "field_0x1138c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x1138c = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x1138c = 0;",
       "type": "unnamed_field"
     },
     {
@@ -194,7 +194,7 @@
       "line": 19,
       "match": "field_0x11390",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x11390 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11390 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -202,7 +202,7 @@
       "line": 20,
       "match": "field_0x11394",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x11394 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11394 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -210,23 +210,7 @@
       "line": 22,
       "match": "field_0x2d0c",
       "severity": "mild",
-      "text": "((CClothList *)&pCVar1->field_0x2d0c,\"Bellingcloth.cth\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059d990(&pCVar1->field_0x10af8,\"Animation\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059dc80(&pCVar1->field_0x10af8);",
+      "text": "((CClothList *)&this_ptr_00->field_0x2d0c,\"Bellingcloth.cth\");",
       "type": "unnamed_field"
     }
   ],

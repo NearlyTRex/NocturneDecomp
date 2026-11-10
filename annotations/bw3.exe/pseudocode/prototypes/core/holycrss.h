@@ -21,29 +21,29 @@ CDemonActorType * CHolycross::getActorType(CHolycross *this_ptr);
 // Address: 004d50d0
 CHolycross * CHolycross::ctor(CHolycross *this_ptr);
 
-// Original: core_holycrss.cpp_FUN_004d5170
+// Original: core_holycrss.cpp_CHolycross_fire_FUN_004d5170
 // Address: 004d5170
-undefined4 FUN_004d5170(undefined4 param_1);
+int __cdecl CHolycross::fire(CHolycross *this_ptr);
 
-// Original: core_holycrss.cpp_FUN_004d5190
+// Original: core_holycrss.cpp_CHolycross_getDamage_FUN_004d5190
 // Address: 004d5190
-undefined4 FUN_004d5190(void);
+float __cdecl CHolycross::getDamage(CHolycross *this_ptr);
 
-// Original: core_holycrss.cpp_FUN_004d51c0
+// Original: core_holycrss.cpp_CHolycross_getAllowedMeleeAttackTypes_FUN_004d51c0
 // Address: 004d51c0
-undefined4 FUN_004d51c0(void);
+int __cdecl CHolycross::getAllowedMeleeAttackTypes(CHolycross *this_ptr);
 
-// Original: core_holycrss.cpp_FUN_004d51d0
+// Original: core_holycrss.cpp_CHolycross_fillAttackDamageInfo_FUN_004d51d0
 // Address: 004d51d0
-void FUN_004d51d0(int param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void __cdecl CHolycross::fillAttackDamageInfo(CHolycross *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_holycrss.cpp_FUN_004d5260
+// Original: core_holycrss.cpp_CHolycross_playAttackHitEffects_FUN_004d5260
 // Address: 004d5260
-void FUN_004d5260(int param_1,undefined4 param_2,undefined4 param_3,int param_4);
+void __cdecl CHolycross::playAttackHitEffects(CHolycross *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 
-// Original: core_holycrss.cpp_FUN_004d52e0
+// Original: core_holycrss.cpp_CHolycross_setup_FUN_004d52e0
 // Address: 004d52e0
-void FUN_004d52e0(CWeapon *param_1);
+void __cdecl CHolycross::setup(CHolycross *this_ptr);
 
 // Original: core_holycrss.cpp_CHolycross_dtor_FUN_004d5320
 // Address: 004d5320

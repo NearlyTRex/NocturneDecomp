@@ -24,7 +24,7 @@ SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004a8710(SP
   engine_alphabit_cpp_FUN_0040d400((CAlphaBitmap *)&this_ptr->field_0x18);
   pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300
                      ((CAlphaBitmap *)&this_ptr->field_0x18,0);
-  pSVar2 = (SPageResourceBitmap *)unkaddr_004a76f0_cpp_FUN_004a83a0(&pCVar1[-2].field_0x10,1);
+  pSVar2 = (SPageResourceBitmap *)unkaddr_004a76f0_cpp_FUN_004a83a0(&pCVar1[-2].height,1);
   if ((flags & 2) == 0) {
     return pSVar2;
   }

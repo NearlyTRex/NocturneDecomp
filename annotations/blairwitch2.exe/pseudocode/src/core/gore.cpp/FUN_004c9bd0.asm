@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CFlies * core_gore_cpp_FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5)
+; CFlies * core_gore_cpp_FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,int param_3,float param_4,float *param_5)
 ;
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004c9cc0 at 004c9cdd
+;   core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0 at 004c9cdd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_gore_cpp_005d954a
@@ -21,7 +21,7 @@
 ;   core_main.c_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x14]      ; 004c9bd3
     MOV ESI,dword ptr [ESP + 0x20]      ; 004c9bd7
     PUSH 0x2b7c                         ; 004c9bdb
-    CALL crt_unknown.c_FUN_005b8be2     ; 004c9be0
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004c9be0
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004c9be5
     TEST EAX,EAX                        ; 004c9be8
     JNZ 0x004c9cab                      ; 004c9bea

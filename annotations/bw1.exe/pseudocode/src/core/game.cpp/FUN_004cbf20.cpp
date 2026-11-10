@@ -40,7 +40,7 @@ void core_game_cpp_FUN_004cbf20(int param_1)
     *(uint *)(param_1 + 0x280) = 0;
     *(uint *)(param_1 + 0x208) = 0x3f800000;
   }
-  iVar2 = wincore_winrun_cpp_FUN_005b2420();
+  iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
   iVar3 = (iVar2 - *(int *)(param_1 + 0x28c)) / 0x12;
   *(int *)(param_1 + 0x290) = iVar3;
   if (iVar3 < 0) {

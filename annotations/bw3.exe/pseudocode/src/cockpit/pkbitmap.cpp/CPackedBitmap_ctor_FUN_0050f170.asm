@@ -7,7 +7,7 @@
 ; CPackedBitmap *  Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_005102b0 at 005103dd
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005102b0 at 005103dd
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0050f200

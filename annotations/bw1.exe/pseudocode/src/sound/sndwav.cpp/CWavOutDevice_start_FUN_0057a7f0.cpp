@@ -32,7 +32,7 @@ int __cdecl sound_sndwav_cpp_CWavOutDevice_start_FUN_0057a7f0(CWavOutDevice *thi
       iVar2 = iVar2 + 4;
     } while (iVar3 < _DAT_02c828d4);
   }
-  iVar3 = sound_sndmain_cpp_FUN_00575c00
+  iVar3 = sound_sndmain_cpp_startSoundThread_FUN_00575c00
                     (((float)_DAT_02c828d0 / (float)_DAT_02c828cc) * (float)_DAT_005f576f);
   if (iVar3 != 0) {
     return 1;

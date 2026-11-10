@@ -43,8 +43,8 @@ void unkaddr_004a76f0_cpp_FUN_004a7a70(char *param_1)
   if (_DAT_01d19f78 < 0x10000) {
     return;
   }
-  iVar2 = engine_font_cpp_FUN_004b2a80(_DAT_01549aa4,param_1);
-  iVar3 = engine_font_cpp_FUN_004b2b30(_DAT_01549aa4,param_1);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549aa4,param_1);
+  iVar3 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01549aa4,param_1);
   _DAT_01d19f7c = _DAT_01c5fae0 + 0x40;
   _DAT_01d19f80 = _DAT_01c5fadc + iVar2 + 8;
   _DAT_01d19f84 = _DAT_01d19f7c + iVar3 + 6;

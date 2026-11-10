@@ -11,7 +11,7 @@ void core_shovel_cpp_factoryFuncShovel_FUN_005623e0(void)
 {
   CShovel *this_ptr;
   
-  this_ptr = (CShovel *)FUN_005c0f32(0x578);
+  this_ptr = (CShovel *)debugAllocTracked1(0x578);
   if (this_ptr == (CShovel *)0x0) {
     return;
   }

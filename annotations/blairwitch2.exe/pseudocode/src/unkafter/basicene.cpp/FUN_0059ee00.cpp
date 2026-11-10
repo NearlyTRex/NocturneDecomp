@@ -2,64 +2,72 @@
 // Address: 0059ee00
 // Address Range: [[0059ee00, 0059ef8d]]
 // Convention: unknown
-// Signature: void unkafter_basicene_cpp_FUN_0059ee00(CCharacter *param_1,undefined4 param_2)
+// Signature: void unkafter_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)
 
 #include "nocturne.h"
 
-void unkafter_basicene_cpp_FUN_0059ee00(CCharacter *param_1,uint param_2)
+void unkafter_basicene_cpp_FUN_0059ee00(CEnemy *param_1,float param_2)
 
 {
-  int iVar1;
-  uint uVar2;
-  CDemonActor *pCVar3;
-  uint uVar4;
+  CDeformableModelInstance *this_ptr;
+  CEnemy_full_vtable *pCVar1;
+  int iVar2;
+  uint uVar3;
+  CDemonActor *pCVar4;
+  uint uVar5;
   
-  *(uint *)&param_1->field_0x342c = 0;
-  (**(code **)(*(int *)&param_1->field_0x2b0 + 0x150))(param_1,param_2);
-  if (*(int *)&param_1[1].field_0x18 != 0) {
-    unkaddr_0059d350_cpp_FUN_0059d8e0(&param_1[1].field_0x98,"Chasing");
+  pCVar1 = (param_1->base).base.vtable._ue;
+  *(uint *)&(param_1->base).field_0x342c = 0;
+  (*(pCVar1->_ue).updateVictim)(param_1,param_2);
+  if (param_1->victim != (CCharacter *)0x0) {
+    unkaddr_0059d350_cpp_FUN_0059d8e0(param_1 + 1,"Chasing");
     return;
   }
-  if (*(int *)&param_1[1].field_0x944 == 0) {
-    uVar4 = g_CPatrolPointClassInfo.name_hash;
-    pCVar3 = core_mission_cpp_FUN_004fc740(0x01D182F0,&param_1[1].field_0x24);
-    iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar3,uVar4);
-    *(int *)&param_1[1].field_0x944 = iVar1;
-    if (iVar1 == 0) {
+  iVar2 = *(int *)&param_1[1].base.model.field_0x5f8;
+  if (iVar2 == 0) {
+    uVar5 = g_CPatrolPointClassInfo.name_hash;
+    pCVar4 = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740
+                       (0x01D182F0,param_1->patrol_name_pattern);
+    iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0(pCVar4,uVar5);
+    *(int *)&param_1[1].base.model.field_0x5f8 = iVar2;
+    if (iVar2 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)&param_1->field_0x2b4,*(int *)&param_1[1].field_0x920,1);
+                ((CMotionController *)&(param_1->base).model,
+                 *(int *)&param_1[1].base.model.field_0x5d4,1);
       return;
     }
   }
   else {
-    if (*(int *)&param_1[1].field_0x948 == 0) {
-      uVar2 = core_waypoint_cpp_FUN_005882d0(&param_1->field_0x20,*(int *)&param_1[1].field_0x944,0)
-      ;
-      uVar2 = (CPatrolPoint *)core_actor_cpp_castToClassHash_FUN_0040c8f0(uVar2,g_CPatrolPointClassInfo.name_hash);
-      *(uint *)&param_1[1].field_0x948 = uVar2;
+    if (*(int *)&param_1[1].base.model.field_0x5fc == 0) {
+      uVar3 = core_waypoint_cpp_FUN_005882d0(&(param_1->base).base.field_0x20,iVar2,0);
+      uVar3 = (CPatrolPoint *)core_actor_cpp_castToClassHash_FUN_0040c8f0(uVar3,g_CPatrolPointClassInfo.name_hash);
+      *(uint *)&param_1[1].base.model.field_0x5fc = uVar3;
     }
-    if (*(int *)&param_1[1].field_0x948 == 0) {
+    iVar2 = *(int *)&param_1[1].base.model.field_0x5fc;
+    this_ptr = &(param_1->base).model;
+    if (iVar2 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)&param_1->field_0x2b4,*(int *)&param_1[1].field_0x920,1);
+                ((CMotionController *)this_ptr,*(int *)&param_1[1].base.model.field_0x5d4,1);
       return;
     }
-    iVar1 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
-                      (param_1,(CVector3f *)(*(int *)&param_1[1].field_0x948 + 0x20),(CPathMap *)0x0
-                       ,(CVector3f *)&param_1[1].field_0x9c4,*(float *)&param_1[1].field_0x9cc,
-                       0.7853982);
-    if (iVar1 == 0) {
+    iVar2 = core_charactr_cpp_CCharacter_walkToPoint_FUN_00423000
+                      (&param_1->base,(CVector3f *)(iVar2 + 0x20),(CPathMap *)0x0,
+                       (CVector3f *)&param_1[1].base.model.field_0x678,
+                       *(float *)&param_1[1].base.model.field_0x680,0.7853982);
+    if (iVar2 == 0) {
       core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
-                ((CMotionController *)&param_1->field_0x2b4,*(int *)&param_1[1].field_0x928,1);
+                ((CMotionController *)this_ptr,*(int *)&param_1[1].base.model.field_0x5dc,1);
       return;
     }
-    if (*(int *)&param_1[1].field_0x944 == *(int *)&param_1[1].field_0x948) {
-      uVar2 = core_patrpoin_cpp_FUN_0059c9c0
-                        (*(uint *)&param_1[1].field_0x948,&param_1[1].field_0x94c);
-      *(uint *)&param_1[1].field_0x948 = 0;
-      *(uint *)&param_1[1].field_0x944 = uVar2;
+    if (*(int *)&param_1[1].base.model.field_0x5f8 == *(int *)&param_1[1].base.model.field_0x5fc) {
+      uVar3 = core_patrpoin_cpp_FUN_0059c9c0
+                        (*(uint *)&param_1[1].base.model.field_0x5fc,
+                         &param_1[1].base.model.field_0x600);
+      *(uint *)&param_1[1].base.model.field_0x5fc = 0;
+      *(uint *)&param_1[1].base.model.field_0x5f8 = uVar3;
       return;
     }
-    *(uint *)&param_1[1].field_0x948 = 0;
+    *(uint *)&param_1[1].base.model.field_0x5fc = 0;
   }
   return;
 }

@@ -1,0 +1,16 @@
+// Name: core_conveyor.cpp_CConstruct_renderOpaque_FUN_00437b70
+// Address: 00437b70
+// Address Range: [[00437b70, 00437b7d]]
+// Convention: __cdecl
+// Signature: int __cdecl core_conveyor_cpp_CConstruct_renderOpaque_FUN_00437b70(CConstruct *this_ptr)
+
+#include "nocturne.h"
+
+int __cdecl core_conveyor_cpp_CConstruct_renderOpaque_FUN_00437b70(CConstruct *this_ptr)
+
+{
+  int iVar1;
+  
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_004254b0((CCharacter *)this_ptr);
+  return iVar1;
+}

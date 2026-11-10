@@ -9,9 +9,9 @@
 // Address: 004f5aa0
 void FUN_004f5aa0(int param_1);
 
-// Original: core_mission.cpp_FUN_004f5b70
+// Original: core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70
 // Address: 004f5b70
-void FUN_004f5b70(undefined4 param_1);
+void __cdecl CDemonMission::clearMission(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_FUN_004f5b80
 // Address: 004f5b80
@@ -37,9 +37,9 @@ CDemonActor * __cdecl CDemonMission::getNextLoadedInventoryActor(CDemonMission *
 // Address: 004f63c0
 void FUN_004f63c0(int param_1);
 
-// Original: core_mission.cpp_FUN_004f6410
+// Original: core_mission.cpp_CDemonMission_writeFile_FUN_004f6410
 // Address: 004f6410
-void __cdecl FUN_004f6410(CDemonMission *this_ptr,_FILE *file_handle);
+void __cdecl CDemonMission::writeFile(CDemonMission *this_ptr,_FILE *file_handle);
 
 // Original: core_mission.cpp_CDemonMission_loadActor_FUN_004f6770
 // Address: 004f6770
@@ -49,21 +49,21 @@ CDemonActor * __cdecl CDemonMission::loadActor(CDemonMission *this_ptr,_FILE *fi
 // Address: 004f68d0
 void __cdecl CDemonMission::saveActor(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
 
-// Original: core_mission.cpp_FUN_004f6930
+// Original: core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 // Address: 004f6930
-void __cdecl FUN_004f6930(CDemonMission *this_ptr,CDemonActor *actor);
+void __cdecl CDemonMission::addActorToList(CDemonMission *this_ptr,CDemonActor *actor);
 
 // Original: core_mission.cpp_FUN_004f69a0
 // Address: 004f69a0
 void FUN_004f69a0(int param_1,int param_2);
 
-// Original: core_mission.cpp_FUN_004f6a50
+// Original: core_mission.cpp_CDemonMission_countActors_FUN_004f6a50
 // Address: 004f6a50
-int __cdecl FUN_004f6a50(CDemonMission *this_ptr);
+int __cdecl CDemonMission::countActors(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004f6a80
+// Original: core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80
 // Address: 004f6a80
-void __cdecl FUN_004f6a80(CDemonMission *this_ptr);
+void __cdecl CDemonMission::prepareAllActors(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_CDemonMission_buildSetActorList_FUN_004f6bf0
 // Address: 004f6bf0
@@ -77,17 +77,17 @@ void __cdecl CDemonMission::removeActor(CDemonMission *this_ptr,CDemonActor *act
 // Address: 004f6cd0
 void FUN_004f6cd0(int *param_1,int param_2,char *param_3);
 
-// Original: core_mission.cpp_FUN_004f6d70
+// Original: core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70
 // Address: 004f6d70
-void __cdecl FUN_004f6d70(CDemonMission *this_ptr);
+void __cdecl CDemonMission::removeAllActors(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_FUN_004f6de0
 // Address: 004f6de0
 void FUN_004f6de0(CDemonMission *param_1,int param_2);
 
-// Original: core_mission.cpp_FUN_004f6e90
+// Original: core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 // Address: 004f6e90
-CDemonActor * __cdecl FUN_004f6e90(CDemonMission *this_ptr,char *name);
+CDemonActor * __cdecl CDemonMission::findActorByName(CDemonMission *this_ptr,char *name);
 
 // Original: core_mission.cpp_CDemonMission_setTeleportTarget_FUN_004f6ed0
 // Address: 004f6ed0
@@ -101,9 +101,9 @@ void FUN_004f6f10(int param_1,undefined4 param_2,undefined4 param_3);
 // Address: 004f6f80
 void FUN_004f6f80(int *param_1);
 
-// Original: core_mission.cpp_FUN_004f70a0
+// Original: core_mission.cpp_CDemonMission_process_FUN_004f70a0
 // Address: 004f70a0
-void __cdecl FUN_004f70a0(CDemonMission *this_ptr);
+void __cdecl CDemonMission::process(CDemonMission *this_ptr);
 
 // Original: core_mission.cpp_FUN_004f722c
 // Address: 004f722c
@@ -113,9 +113,9 @@ void FUN_004f722c(CDemonMission *param_1,CDemonMission *param_2);
 // Address: 004f72a0
 void __cdecl CDemonMission::run(CDemonMission *this_ptr);
 
-// Original: core_mission.cpp_FUN_004f7460
+// Original: core_mission.cpp_CDemonMission_setMissionName_FUN_004f7460
 // Address: 004f7460
-void __cdecl FUN_004f7460(CDemonMission *this_ptr,char *name);
+void __cdecl CDemonMission::setMissionName(CDemonMission *this_ptr,char *name);
 
 // Original: core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004f7490
 // Address: 004f7490

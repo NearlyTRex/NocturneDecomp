@@ -7,7 +7,7 @@
 ; CHero *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004ea830 at 004ea942
+;   core_hero.cpp_CHero_ctor_FUN_004ea830 at 004ea942
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e4800
@@ -25,8 +25,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_createActorByName_FUN_0040c2b0
 ;   core_inv.cpp_CInventory_initialize_FUN_004f7050
+;   core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0
 ;   core_inv.cpp_FUN_004f7690
-;   core_inv.cpp_FUN_004f8dc0
 ;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
@@ -88,8 +88,8 @@ section .text
     PUSH 0x5                            ; 004eb041
     PUSH 0x0                            ; 004eb043
     PUSH ESI                            ; 004eb045
-    CALL core_inv.cpp_FUN_004f8dc0      ; 004eb046
-        ;   XREF to: 004f8dc0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004f8dc0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
+    CALL core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0 ; 004eb046
+        ;   XREF to: 004f8dc0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0(CInventory * this_ptr, CDemonActor * specific_weapon, int weapon_category, int direction)
     ADD ESP,0x10                        ; 004eb04b
     MOV dword ptr [EBX + 0x568],0x64    ; 004eb04e
     POP EDI                             ; 004eb058

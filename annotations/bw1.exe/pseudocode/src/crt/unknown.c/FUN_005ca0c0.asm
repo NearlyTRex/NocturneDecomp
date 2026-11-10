@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c44f0
-;   unkafter_zombie.cpp_FUN_005cca6c
+;   crt_unknown.c_FUN_005cca6c
 ;
 ; *****************************************************************************
 
@@ -225,8 +225,8 @@ section .text
     LEA EDX,[EBP + -0x28]               ; 005ca216
     MOV byte ptr [EBX + EBP*0x1 + -0x3c],AL ; 005ca219
     LEA EAX,[EBP + -0x3c]               ; 005ca21d
-    CALL unkafter_zombie.cpp_FUN_005cca6c ; 005ca220
-        ;   XREF to: 005cca6c (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cca6c()
+    CALL crt_unknown.c_FUN_005cca6c     ; 005ca220
+        ;   XREF to: 005cca6c (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cca6c()
     TEST ESI,ESI                        ; 005ca225
     JZ 0x005ca236                       ; 005ca227
         ;   XREF to: 005ca236 (CONDITIONAL_JUMP)  ; LAB_005ca236

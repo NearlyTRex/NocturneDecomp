@@ -9,7 +9,7 @@
 ;   crt_unknown.c_FUN_005bec40 at 005becd2
 ;   crt_unknown.c_FUN_005befc0 at 005bf1ef
 ;   crt_unknown.c_FUN_005c0380 at 005c03d2
-;   unkafter_2d.cpp_FUN_005c59e0 at 005c5afa
+;   crt_unknown.c_FUN_005c59e0 at 005c5afa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061f484

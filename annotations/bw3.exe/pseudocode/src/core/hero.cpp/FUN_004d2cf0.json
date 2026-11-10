@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 700,
+    "complexity_score": 680,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 90,
-    "suspect_count": 55,
+    "suspect_count": 54,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "suspicious_cast",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -74,13 +72,13 @@
     },
     {
       "addr": "02024a2c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02024a30",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -386,20 +384,12 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iVar5 = 0; iVar5 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar5 = iVar5 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 79,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "iStack_20 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iStack_20 = *(int *)((int)g_CDemonSetPtr->actors + iVar2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -434,20 +424,20 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 85,
+      "match": "(uint *)((int)pCVar1",
+      "severity": "moderate",
+      "text": "*(uint *)(param_1 + 0x20b6c) = *(uint *)((int)pCVar1->actors + iVar2);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b6c) = *(uint *)(&pCVar1->field_0x14d168 + iVar2);",
+      "text": "*(uint *)(param_1 + 0x20b6c) = *(uint *)((int)pCVar1->actors + iVar2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x20b6c) = *(uint *)(&pCVar1->field_0x14d168 + iVar2);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -472,14 +462,6 @@
       "severity": "mild",
       "text": "return *(int *)(param_1 + 0x20b68) == 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 79,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iStack_20 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);",
-      "type": "suspicious_cast"
     },
     {
       "description": "Pointer value `&stack0xffffff9c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -551,6 +533,14 @@
       "match": "(int)&stack0xffffffcc",
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffcc + (uint)bVar6 * 0xfffffffe * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar1->actors` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 85,
+      "match": "(int)pCVar1->actors",
+      "severity": "moderate",
+      "text": "*(uint *)(param_1 + 0x20b6c) = *(uint *)((int)pCVar1->actors + iVar2);",
       "type": "pointer_truncation"
     },
     {

@@ -11,7 +11,7 @@ void core_boxactor_cpp_factoryFuncBoxActor_FUN_00421c70(void)
 {
   CBoxActor *this_ptr;
   
-  this_ptr = (CBoxActor *)FUN_005c0f32(0x678);
+  this_ptr = (CBoxActor *)debugAllocTracked1(0x678);
   if (this_ptr == (CBoxActor *)0x0) {
     return;
   }

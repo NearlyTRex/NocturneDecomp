@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_zombie.cpp_CZombie_ctor_FUN_005888d0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd14c                         ; 005888a0
         ;   Label: core_zombie.cpp_factoryFuncZombie_FUN_005888a0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 005888a5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 005888a5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 005888aa
     TEST EAX,EAX                        ; 005888ad
     JNZ 0x005888b2                      ; 005888af

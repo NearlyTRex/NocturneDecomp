@@ -20,7 +20,7 @@
     {
       "addr": "0042f8e0",
       "from_addr": "0042fa85",
-      "name": "core_charactr.cpp_FUN_0042f8e0",
+      "name": "core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,25 +32,25 @@
     {
       "addr": "00500310",
       "from_addr": "00500ce8",
-      "name": "core_lightgun.cpp_FUN_00500310",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_00500310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00500d20",
       "from_addr": "00500e00",
-      "name": "core_lightgun.cpp_FUN_00500d20",
+      "name": "core_lightgun.cpp_CLightGun_process_FUN_00500d20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00501a70",
       "from_addr": "00502448",
-      "name": "core_lightpis.cpp_FUN_00501a70",
+      "name": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00502480",
       "from_addr": "00502560",
-      "name": "core_lightpis.cpp_FUN_00502480",
+      "name": "core_lightpis.cpp_CLightPis_process_FUN_00502480",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,15 +60,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057c57e",
-      "from_addr": "0057c918",
-      "name": "core_sound.cpp_FUN_0057c57e",
+      "addr": "0057ce10",
+      "from_addr": "0057cef3",
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057ce10",
-      "from_addr": "0057cef3",
-      "name": "core_sound.cpp_FUN_0057ce10",
+      "addr": "0057c57e",
+      "from_addr": "0057c918",
+      "name": "core_sound.cpp_FUN_0057c57e",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -114,7 +114,7 @@
       {
         "call_addr": "0057cef3",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -127,7 +127,7 @@
       {
         "call_addr": "0057d004",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,7 +140,7 @@
       {
         "call_addr": "0057d637",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "0042fa85",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042f8e0",
+        "caller": "core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,7 +168,7 @@
       {
         "call_addr": "00500ce8",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_00500310",
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_00500310",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,7 +181,7 @@
       {
         "call_addr": "00502448",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_00501a70",
+        "caller": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -207,7 +207,7 @@
       {
         "call_addr": "00500e00",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_00500d20",
+        "caller": "core_lightgun.cpp_CLightGun_process_FUN_00500d20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,7 +218,7 @@
       {
         "call_addr": "00502560",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_00502480",
+        "caller": "core_lightpis.cpp_CLightPis_process_FUN_00502480",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -294,7 +294,7 @@
       "line": 11,
       "match": "param_2",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x38 = param_2;",
+      "text": "*(uint *)&(pCVar1->options).field_0x38 = param_2;",
       "type": "unnamed_param"
     },
     {
@@ -302,7 +302,7 @@
       "line": 11,
       "match": "field_0x38",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x38 = param_2;",
+      "text": "*(uint *)&(pCVar1->options).field_0x38 = param_2;",
       "type": "unnamed_field"
     },
     {

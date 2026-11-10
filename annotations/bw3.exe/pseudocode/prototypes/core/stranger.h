@@ -16,19 +16,3 @@ CDemonActorType * CPrye::getActorType(CPrye *this_ptr);
 // Original: core_stranger.cpp_CPrye_ctor_FUN_00517f80
 // Address: 00517f80
 CPrye * CPrye::ctor(CPrye *this_ptr);
-
-// Original: core_stranger.cpp_FUN_00526f50
-// Address: 00526f50
-void FUN_00526f50(int param_1);
-
-// Original: core_stranger.cpp_CStranger_getDeathState_FUN_00526fc0
-// Address: 00526fc0
-EDeathState __cdecl CStranger::getDeathState(CStranger *this_ptr);
-
-// Original: core_stranger.cpp_FUN_00526ff0
-// Address: 00526ff0
-void FUN_00526ff0(CCharacter *param_1,int param_2,CVector3f *param_3);
-
-// Original: core_stranger.cpp_FUN_00527050
-// Address: 00527050
-void FUN_00527050(CCharacter *param_1,CDemonActor *param_2,CVector3f *param_3);

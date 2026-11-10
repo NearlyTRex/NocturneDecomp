@@ -12,7 +12,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(C
   char cVar1;
   char *pcVar2;
   
-  pcVar2 = &this_ptr->field_0x78;
+  pcVar2 = this_ptr->model_name;
   do {
     cVar1 = *filename;
     *pcVar2 = cVar1;
@@ -22,7 +22,7 @@ void __cdecl core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(C
     pcVar2[1] = cVar1;
     pcVar2 = pcVar2 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&this_ptr->field_0x178 = 0;
+  this_ptr->model_ptr = (CKeyFramedModel *)0x0;
   core_dmodel_cpp_CKeyFramedModelInstance_init_FUN_0044fca0(this_ptr);
   return;
 }

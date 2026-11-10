@@ -8,9 +8,9 @@
 ;   shape_edittool.cpp_FUN_00481ca0 at 00481cd4
 ;
 ; Called Functions:
-;   engine_dosio.cpp_FUN_00461070
-;   engine_dosio.cpp_FUN_004610a0
 ;   engine_dosio.cpp_FUN_004610d0
+;   engine_dosio.cpp_makePath_FUN_004610a0
+;   engine_dosio.cpp_splitPath_FUN_00461070
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     LEA ESI,[ESP + 0x50c]               ; 0046128f
     PUSH ESI                            ; 00461296
     PUSH EDI                            ; 00461297
-    CALL engine_dosio.cpp_FUN_00461070  ; 00461298
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 00461298
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0046129d
     CMP byte ptr [ESP + 0x500],0x0      ; 004612a0
     JNZ 0x0046136f                      ; 004612a8
@@ -100,8 +100,8 @@ section .text
     LEA ESI,[ESP + 0x510]               ; 00461346
     PUSH ESI                            ; 0046134d
     PUSH EBX                            ; 0046134e
-    CALL engine_dosio.cpp_FUN_004610a0  ; 0046134f
-        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004610a0(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_004610a0 ; 0046134f
+        ;   XREF to: 004610a0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_004610a0(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00461354
     ADD ESP,0x508                       ; 00461357
     POP EDI                             ; 0046135d

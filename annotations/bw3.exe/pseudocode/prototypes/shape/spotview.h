@@ -21,9 +21,9 @@ void __cdecl CSpotView::reset(CSpotView *this_ptr,uint control_flags);
 // Address: 00567d0e
 void FUN_00567d0e(CSpotView *param_1,uint param_2);
 
-// Original: shape_spotview.cpp_FUN_00567ff0
+// Original: shape_spotview.cpp_CSpotView_clampValues_FUN_00567ff0
 // Address: 00567ff0
-void FUN_00567ff0(int param_1);
+void __cdecl CSpotView::clampValues(CSpotView *this_ptr);
 
 // Original: shape_spotview.cpp_FUN_005680b0
 // Address: 005680b0

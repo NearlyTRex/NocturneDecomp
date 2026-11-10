@@ -5,38 +5,22 @@
 // Function prototypes for core/zombprie.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_zombprie.cpp_staticInit_FUN_0058d2c0
-// Address: 0058d2c0
-void staticInit(void);
+// Original: core_zombprie.cpp_CZombiePriest_getCarryObjToBodyXForm_FUN_0058ecd0
+// Address: 0058ecd0
+CMatrix3x4f * __stack2_esi CZombiePriest::getCarryObjToBodyXForm(CZombiePriest *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_zombprie.cpp_FUN_0058d2f0
-// Address: 0058d2f0
-void FUN_0058d2f0(int param_1);
+// Original: core_zombprie.cpp_CZombiePriest_archive_FUN_0058f510
+// Address: 0058f510
+void __cdecl CZombiePriest::archive(CZombiePriest *this_ptr);
 
-// Original: core_zombprie.cpp_FUN_0058d3b0
-// Address: 0058d3b0
-void FUN_0058d3b0(int param_1);
+// Original: core_zombprie.cpp_CZombiePriest_processDamage_FUN_0058f990
+// Address: 0058f990
+void __cdecl CZombiePriest::processDamage(CZombiePriest *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_zombprie.cpp_factoryFuncZombiePriest_FUN_0058d4b0
-// Address: 0058d4b0
-void factoryFuncZombiePriest(void);
+// Original: core_zombprie.cpp_CZombiePriest_getTargetPoints_FUN_0058fb20
+// Address: 0058fb20
+int __cdecl CZombiePriest::getTargetPoints(CZombiePriest *this_ptr,CVector3f *out_points_array);
 
-// Original: core_zombprie.cpp_CZombiePriest_getActorType_FUN_0058d4d0
-// Address: 0058d4d0
-CDemonActorType * CZombiePriest::getActorType(CZombiePriest *this_ptr);
-
-// Original: core_zombprie.cpp_CZombiePriest_ctor_FUN_0058d4e0
-// Address: 0058d4e0
-CZombiePriest * CZombiePriest::ctor(CZombiePriest *this_ptr);
-
-// Original: core_zombprie.cpp_FUN_0058d5e0
-// Address: 0058d5e0
-void FUN_0058d5e0(CEnemy *param_1);
-
-// Original: core_zombprie.cpp_FUN_0058d960
-// Address: 0058d960
-void FUN_0058d960(CEnemy *param_1,float param_2);
-
-// Original: core_zombprie.cpp_FUN_0058e8d0
-// Address: 0058e8d0
-void FUN_0058e8d0(int param_1,float param_2);
+// Original: core_zombprie.cpp_CZombiePriest_getCollisionType_FUN_0058fc60
+// Address: 0058fc60
+ECollisionType __cdecl CZombiePriest::getCollisionType(CZombiePriest *this_ptr,SCollisionInfo *collision_info);

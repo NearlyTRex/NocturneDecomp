@@ -9,5 +9,5 @@
 int __cdecl core_curtain_cpp_CCurtain_getBlockVirtualDirectorFlag_FUN_00448640(CCurtain *this_ptr)
 
 {
-  return *(int *)&this_ptr->field_0x200;
+  return this_ptr->block_virtual_director_flag;
 }

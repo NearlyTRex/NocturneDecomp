@@ -40,7 +40,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   core_script.cpp_FUN_0054b2a0
+;   core_script.cpp_CScript_findDialogEntry_FUN_0054b2a0
 ;   core_script.cpp_trimString_FUN_00543240
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   crt_stdio.c_fclose_FUN_005c0d10
@@ -49,7 +49,7 @@
 ;   crt_stdio.c_ftell_FUN_005c2e90
 ;   crt_stdio.c_ungetc_FUN_005c0700
 ;   crt_string.c_splitpath_FUN_005c2238
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_FUN_00479180
 ;   engine_dosio.cpp_getFileSize_FUN_00478fb0
 ;   shape_edittool.cpp_FUN_004943a0
@@ -213,8 +213,8 @@ section .text
     LEA EAX,[ESP + 0x8]                 ; 0054b0d2
     PUSH EAX                            ; 0054b0d6
     PUSH EBX                            ; 0054b0d7
-    CALL core_script.cpp_FUN_0054b2a0   ; 0054b0d8
-        ;   XREF to: 0054b2a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_FUN_0054b2a0(CScript * this_ptr, char * path)
+    CALL core_script.cpp_CScript_findDialogEntry_FUN_0054b2a0 ; 0054b0d8
+        ;   XREF to: 0054b2a0 (UNCONDITIONAL_CALL)  ; int core_script.cpp_CScript_findDialogEntry_FUN_0054b2a0(CScript * this_ptr, char * path)
     ADD ESP,0x8                         ; 0054b0dd
     TEST EAX,EAX                        ; 0054b0e0
     JL 0x0054b105                       ; 0054b0e2
@@ -235,8 +235,8 @@ section .text
     PUSH 0x5f0000                       ; 0054b10a | = "%s.wav"
     LEA EAX,[ESP + 0x4c]                ; 0054b10f
     PUSH EAX                            ; 0054b113
-    CALL crt_unknown.c_FUN_005bfb40     ; 0054b114
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0054b114
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054b119
     LEA EAX,[ESP + 0x44]                ; 0054b11c
     PUSH EAX                            ; 0054b120
@@ -323,8 +323,8 @@ section .text
     PUSH 0x5f000d                       ; 0054b20e | = "%s.mp3"
     LEA EAX,[ESP + 0x4c]                ; 0054b213
     PUSH EAX                            ; 0054b217
-    CALL crt_unknown.c_FUN_005bfb40     ; 0054b218
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0054b218
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054b21d
     LEA EAX,[ESP + 0x44]                ; 0054b220
     PUSH EAX                            ; 0054b224

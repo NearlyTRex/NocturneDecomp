@@ -2,13 +2,13 @@
 // Address: 00416fa0
 // Address Range: [[00416fa0, 0041722c]]
 // Convention: unknown
-// Signature: void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,undefined4 param_4,int param_5)
+// Signature: void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,float param_4,int param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,uint param_4,int param_5)
+void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,float param_4,int param_5)
 
 {
   CDemonSet *pCVar1;
@@ -16,8 +16,8 @@ void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,uint
   int iVar3;
   CKeyFramedModelInstance *this_ptr;
   int iVar4;
-  uint *puVar5;
-  uint *puVar6;
+  CBoundingBox3D *pCVar5;
+  float *pfVar6;
   byte bVar7;
   float afStackY_1028 [1001];
   CDemonRenderer *this_ptr_00;
@@ -37,8 +37,7 @@ void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,uint
   float fStack_28;
   float fStack_24;
   float fStack_20;
-  float fStack_1c;
-  float afStack_18 [2];
+  CVector3f CStack_1c;
   
   pCVar1 = g_CDemonSetPtr;
   bVar7 = 0;
@@ -48,27 +47,28 @@ void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,uint
     param_3 = (param_3 * 0x1e0) / DAT_0061b49c;
     iVar4 = (int)(0x27600 / (longlong)DAT_0061b498);
   }
-  *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;
-  *(uint *)&pCVar1->field_0x15ae88 = 0xffffb7d5;
-  *(uint *)&pCVar1->field_0x15ae8c = 0xffffb7d5;
-  *(uint *)&pCVar1->field_0x15ae90 = 0x482b;
-  *(uint *)&pCVar1->field_0x15ae94 = 32000;
+  g_CDemonSetPtr->rendering_mode = 1;
+  (pCVar1->light_direction).x = -0x482b;
+  (pCVar1->light_direction).y = -0x482b;
+  (pCVar1->light_direction).z = 0x482b;
+  pCVar1->ambient_base_quick = 32000;
   engine_special_cpp_fillDepthRegion_FUN_0057dd92
             (param_2,param_2 + iVar4 + -1,param_3,param_3 + iVar4 + -1);
   this_ptr = (CKeyFramedModelInstance *)(param_1 + 0x8f8);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(this_ptr);
-  puVar5 = *(uint **)&pCVar2->field_0x350;
-  puVar6 = &stack0xffffff90;
+  pCVar5 = pCVar2->frame_bounds;
+  pfVar6 = &stack0xffffff90;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *puVar6 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
-    puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    *pfVar6 = (pCVar5->min).x;
+    pCVar5 = (CBoundingBox3D *)((int)pCVar5 + (uint)bVar7 * -8 + 4);
+    pfVar6 = pfVar6 + (uint)bVar7 * -2 + 1;
   }
   engine_matrix_c_FUN_00483c10(DAT_00612560,param_2,param_3,iVar4,iVar4);
-  CStack_58._8_4_ = 0xc0000000;
-  CStack_58._0_4_ = 0;
-  CStack_58._4_4_ = 0;
-  engine_drender_cpp_FUN_004834b0(DAT_00612560,&CStack_58);
+  CStack_58.z = -2.0;
+  CStack_58.x = 0.0;
+  CStack_58.y = 0.0;
+  engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
+            (DAT_00612560,&CStack_58);
   engine_matrix_c_FUN_004839b0(DAT_00612560,0x42100000);
   engine_drender_cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
             (DAT_00612560,(CVector3f *)&DAT_02c8af28);
@@ -82,23 +82,23 @@ void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,uint
   afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];
   _DAT_01c51cac = 0;
-  CStack_4c._0_4_ = 0;
-  CStack_4c._4_4_ = 0;
+  CStack_4c.x = 0.0;
+  CStack_4c.y = 0.0;
   translation = (CVector3f *)0x0;
-  CStack_4c._8_4_ = param_4;
+  CStack_4c.z = param_4;
   euler_angles = &CStack_4c;
   fStack_28 = afStack_3c[2] * _DAT_005d3ffe;
   fStack_24 = afStack_3c[3] * _DAT_005d3ffe;
   fStack_20 = fStack_2c * _DAT_005d3ffe;
-  fStack_1c = afStack_3c[2] * _DAT_005d3ffe;
-  afStack_18[(uint)bVar7 * -2] = afStack_3c[(uint)bVar7 * -2 + 6];
+  CStack_1c.x = afStack_3c[2] * _DAT_005d3ffe;
+  *(float *)((int)&CStack_1c + (uint)bVar7 * -8 + 4) = afStack_3c[(uint)bVar7 * -2 + 6];
   this_ptr_00 = DAT_00612560;
-  afStack_18[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1] =
+  *(float *)((int)&CStack_1c + (uint)bVar7 * -8 + (uint)bVar7 * -8 + 8) =
        afStack_3c[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 7];
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (this_ptr_00,euler_angles,translation);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,(CVector3f *)&DAT_02c8af28,(CVector3f *)&fStack_1c);
+            (DAT_00612560,(CVector3f *)&DAT_02c8af28,&CStack_1c);
   if (param_5 == 0) {
     this_ptr = (CKeyFramedModelInstance *)(param_1 + 0xa74);
   }
@@ -106,6 +106,6 @@ void unkafter_bmppuzzl_cpp_FUN_00416fa0(int param_1,int param_2,int param_3,uint
   engine_matrix_c_pop_FUN_004839a0();
   engine_matrix_c_pop_FUN_004839a0();
   engine_matrix_c_popViewport_FUN_00483c40();
-  *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;
+  g_CDemonSetPtr->rendering_mode = 0;
   return;
 }

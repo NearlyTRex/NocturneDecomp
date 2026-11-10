@@ -10,12 +10,12 @@
 ; int              Stack[0x10]:4   part_index
 ;
 ; XREF[6]:
-;   core_biggs.cpp_FUN_00415120 at 004151a8
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 at 004151a8
 ;   core_mimic.cpp_CMimic_processMorph_FUN_004f1e90 at 004f1fa4
-;   core_moloch.cpp_FUN_005020c0 at 0050215a
-;   core_passngr.cpp_FUN_00511980 at 00511a20
-;   core_succubus.cpp_FUN_0056fe50 at 0056ff7a
-;   core_vampboss.cpp_FUN_00582ec0 at 00582feb
+;   core_moloch.cpp_CMoloch_renderOpaque_FUN_005020c0 at 0050215a
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_00511980 at 00511a20
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_0056fe50 at 0056ff7a
+;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 at 00582feb
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510

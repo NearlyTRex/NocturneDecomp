@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 846,
+    "complexity_score": 845,
     "cross_reference_count": 4,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
+    "pseudocode_lines": 70,
     "suspect_count": 73,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
@@ -18,13 +20,19 @@
       "unnamed_param",
       "unrolled_memcpy"
     ],
-    "total_lines": 230
+    "total_lines": 219
   },
   "cross_references": [
     {
       "addr": "004c90b0",
       "from_addr": "004c90d1",
-      "name": "core_ghoul.cpp_FUN_004c90b0",
+      "name": "core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c90b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458200",
+      "from_addr": "00458249",
+      "name": "core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,13 +44,7 @@
     {
       "addr": "0058beb0",
       "from_addr": "0058bef9",
-      "name": "core_zombie.cpp_FUN_0058beb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00458200",
-      "from_addr": "00458249",
-      "name": "unkafter_demnfolk.cpp_FUN_00458200",
+      "name": "core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +74,7 @@
     {
       "addr": "005855f0",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_005855f0"
+      "name": "core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0"
     },
     {
       "addr": "00583660",
@@ -100,7 +102,7 @@
       {
         "call_addr": "00458249",
         "call_type": "direct",
-        "caller": "unkafter_demnfolk.cpp_FUN_00458200",
+        "caller": "core_hostage.cpp_CDemnfolk_renderTransparent_FUN_00458200",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +117,7 @@
       {
         "call_addr": "004c90d1",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c90b0",
+        "caller": "core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c90b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -129,7 +131,7 @@
       {
         "call_addr": "0058bef9",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_0058beb0",
+        "caller": "core_zombie.cpp_CZombie_renderTransparent_FUN_0058beb0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,7 +361,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 < 0) {",
@@ -367,55 +369,55 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_7c = (float)*(uint *)&param_1->field_0x6a4;",
+      "text": "local_88.m[0].z = *(float *)&param_1->field_0x6a4;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 33,
+      "line": 22,
       "match": "field_0x6a4",
       "severity": "mild",
-      "text": "local_7c = (float)*(uint *)&param_1->field_0x6a4;",
+      "text": "local_88.m[0].z = *(float *)&param_1->field_0x6a4;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = (float)*(uint *)&param_1->field_0x6a8;",
+      "text": "local_88.m[1].z = *(float *)&param_1->field_0x6a8;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 34,
+      "line": 23,
       "match": "field_0x6a8",
       "severity": "mild",
-      "text": "local_6c = (float)*(uint *)&param_1->field_0x6a8;",
+      "text": "local_88.m[1].z = *(float *)&param_1->field_0x6a8;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_5c = (float)*(uint *)&param_1->field_0x6ac;",
+      "text": "local_88.m[2].z = *(float *)&param_1->field_0x6ac;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
+      "line": 24,
       "match": "field_0x6ac",
       "severity": "mild",
-      "text": "local_5c = (float)*(uint *)&param_1->field_0x6ac;",
+      "text": "local_88.m[2].z = *(float *)&param_1->field_0x6ac;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(param_1);",
@@ -423,7 +425,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 28,
       "match": "param_2",
       "severity": "mild",
       "text": "local_10 = param_2 * 0xc;",
@@ -431,143 +433,127 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 29,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (*(int *)(&pCVar1->field_0x1de9c + param_2 * 0x24) < 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x1de9c",
-      "severity": "mild",
-      "text": "if (*(int *)(&pCVar1->field_0x1de9c + param_2 * 0x24) < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_7c = *(float *)&param_1->field_0x6a4 + *(float *)(&param_1->field_0x58 + local_10);",
+      "text": "if (*(int *)(pCVar1->bone_list + param_2 * 0x24 + 0x20) < 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_7c = *(float *)&param_1->field_0x6a4 + *(float *)(&param_1->field_0x58 + local_10);",
+      "text": "local_88.m[0].z = *(float *)&param_1->field_0x6a4 + param_1->bone_origins[param_2].x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_88.m[0].z = *(float *)&param_1->field_0x6a4 + param_1->bone_origins[param_2].x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_88.m[0].z = *(float *)&param_1->field_0x6a4 + param_1->bone_origins[param_2].x;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 41,
+      "line": 30,
       "match": "field_0x6a4",
       "severity": "mild",
-      "text": "local_7c = *(float *)&param_1->field_0x6a4 + *(float *)(&param_1->field_0x58 + local_10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "local_7c = *(float *)&param_1->field_0x6a4 + *(float *)(&param_1->field_0x58 + local_10);",
+      "text": "local_88.m[0].z = *(float *)&param_1->field_0x6a4 + param_1->bone_origins[param_2].x;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = *(float *)&param_1->field_0x6a8 + *(float *)(&param_1->field_0x5c + local_10);",
+      "text": "local_88.m[1].z = *(float *)&param_1->field_0x6a8 + param_1->bone_origins[param_2].y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = *(float *)&param_1->field_0x6a8 + *(float *)(&param_1->field_0x5c + local_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x6a8",
-      "severity": "mild",
-      "text": "local_6c = *(float *)&param_1->field_0x6a8 + *(float *)(&param_1->field_0x5c + local_10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "local_6c = *(float *)&param_1->field_0x6a8 + *(float *)(&param_1->field_0x5c + local_10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_5c = *(float *)&param_1->field_0x6ac + *(float *)(&param_1->field_0x60 + local_10);",
+      "text": "local_88.m[1].z = *(float *)&param_1->field_0x6a8 + param_1->bone_origins[param_2].y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_5c = *(float *)&param_1->field_0x6ac + *(float *)(&param_1->field_0x60 + local_10);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x6ac",
-      "severity": "mild",
-      "text": "local_5c = *(float *)&param_1->field_0x6ac + *(float *)(&param_1->field_0x60 + local_10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "local_5c = *(float *)&param_1->field_0x6ac + *(float *)(&param_1->field_0x60 + local_10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(&pCVar1->field_0x1de9c + param_2 * 0x24));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(&pCVar1->field_0x1de9c + param_2 * 0x24));",
+      "text": "local_88.m[1].z = *(float *)&param_1->field_0x6a8 + param_1->bone_origins[param_2].y;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x1de9c",
+      "line": 31,
+      "match": "field_0x6a8",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(&pCVar1->field_0x1de9c + param_2 * 0x24));",
+      "text": "local_88.m[1].z = *(float *)&param_1->field_0x6a8 + param_1->bone_origins[param_2].y;",
       "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_88.m[2].z = *(float *)&param_1->field_0x6ac + param_1->bone_origins[param_2].z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "local_88.m[2].z = *(float *)&param_1->field_0x6ac + param_1->bone_origins[param_2].z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 32,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "local_88.m[2].z = *(float *)&param_1->field_0x6ac + param_1->bone_origins[param_2].z;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x6ac",
+      "severity": "mild",
+      "text": "local_88.m[2].z = *(float *)&param_1->field_0x6ac + param_1->bone_origins[param_2].z;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(pCVar1->bone_list + param_2 * 0x24 + 0x20));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 35,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(pCVar1->bone_list + param_2 * 0x24 + 0x20));",
+      "type": "unnamed_param"
     },
     {
       "description": "Direct stack address reference",
-      "line": 47,
+      "line": 36,
       "match": "&stack0xffffff48",
       "severity": "moderate",
       "text": "puVar3 = (uint *)&stack0xffffff48;",
@@ -575,63 +561,47 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_xform_cpp_FUN_00583260((int)&param_1->bone_origins[0].x + local_10,local_58);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&local_88,(CQuaternion4f *)(param_1->rest_bone_scales + param_2 * 4 + 0x67));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 53,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(&local_88,(CQuaternion4f *)(param_1->rest_bone_scales + param_2 * 4 + 0x67));",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00583260(&param_1->field_0x58 + local_10,local_58);",
+      "text": "if (*(int *)(&param_1->field_0xcf0 + param_2 * 4) != 0x3f800000) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 54,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if (*(int *)(&param_1->field_0xcf0 + param_2 * 4) != 0x3f800000) {",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 54,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "core_xform_cpp_FUN_00583260(&param_1->field_0x58 + local_10,local_58);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "((CMatrix3x4f *)&local_88,(CQuaternion4f *)(&param_1->field_0x6b0 + param_2 * 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "((CMatrix3x4f *)&local_88,(CQuaternion4f *)(&param_1->field_0x6b0 + param_2 * 0x10));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x6b0",
-      "severity": "mild",
-      "text": "((CMatrix3x4f *)&local_88,(CQuaternion4f *)(&param_1->field_0x6b0 + param_2 * 0x10));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (*(int *)(&param_1->field_0xcf0 + param_2 * 4) != 0x3f800000) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 65,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (*(int *)(&param_1->field_0xcf0 + param_2 * 4) != 0x3f800000) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
       "match": "field_0xcf0",
       "severity": "mild",
       "text": "if (*(int *)(&param_1->field_0xcf0 + param_2 * 4) != 0x3f800000) {",
@@ -639,231 +609,239 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_88 = local_88 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].w = local_88.m[0].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 55,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_88 = local_88 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].w = local_88.m[0].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 66,
+      "line": 55,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_88 = local_88 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].w = local_88.m[0].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_84 = local_84 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].x = local_88.m[0].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
+      "line": 56,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_84 = local_84 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].x = local_88.m[0].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 67,
+      "line": 56,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_84 = local_84 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].x = local_88.m[0].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_80 = local_80 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].y = local_88.m[0].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 57,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_80 = local_80 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].y = local_88.m[0].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 68,
+      "line": 57,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_80 = local_80 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[0].y = local_88.m[0].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_78 = local_78 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].w = local_88.m[1].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 58,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_78 = local_78 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].w = local_88.m[1].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 69,
+      "line": 58,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_78 = local_78 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].w = local_88.m[1].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_74 = local_74 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].x = local_88.m[1].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 70,
+      "line": 59,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_74 = local_74 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].x = local_88.m[1].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 70,
+      "line": 59,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_74 = local_74 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].x = local_88.m[1].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_70 = local_70 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].y = local_88.m[1].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 60,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_70 = local_70 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].y = local_88.m[1].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 71,
+      "line": 60,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_70 = local_70 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[1].y = local_88.m[1].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_68 = local_68 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].w = local_88.m[2].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 61,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_68 = local_68 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].w = local_88.m[2].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 72,
+      "line": 61,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_68 = local_68 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].w = local_88.m[2].w * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = local_64 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].x = local_88.m[2].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 62,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_64 = local_64 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].x = local_88.m[2].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 73,
+      "line": 62,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_64 = local_64 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].x = local_88.m[2].x * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_60 = local_60 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].y = local_88.m[2].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 63,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_60 = local_60 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].y = local_88.m[2].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 74,
+      "line": 63,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "local_60 = local_60 * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
+      "text": "local_88.m[2].y = local_88.m[2].y * *(float *)(&param_1->field_0xcf0 + param_2 * 4);",
       "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
-      "line": 79,
+      "line": 68,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "*unaff_ESI = *pfVar4;",
+      "text": "*unaff_ESI = pCVar4->m[0].w;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 70,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
@@ -871,15 +849,31 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 81,
+      "line": 70,
       "match": "unaff_ESI",
       "severity": "moderate",
       "text": "unaff_ESI = unaff_ESI + (uint)bVar6 * -2 + 1;",
       "type": "unaffected_reg"
     },
     {
+      "description": "Pointer value `&param_1->bone_origins[0].x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 43,
+      "match": "(int)&param_1->bone_origins[0].x",
+      "severity": "moderate",
+      "text": "core_xform_cpp_FUN_00583260((int)&param_1->bone_origins[0].x + local_10,local_58);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 69,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 49,
+      "line": 38,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
@@ -887,11 +881,19 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 78,
+      "line": 67,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 43,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "core_xform_cpp_FUN_00583260((int)&param_1->bone_origins[0].x + local_10,local_58);",
+      "type": "pointer_cast"
     },
     {
       "description": "Watcom inline memcpy (REP MOVSD at 0054dad0, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",

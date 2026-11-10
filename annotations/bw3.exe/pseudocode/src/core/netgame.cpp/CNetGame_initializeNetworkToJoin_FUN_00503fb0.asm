@@ -23,15 +23,15 @@
 ;   undefined4 DAT_02cfd89c
 ;
 ; Called Functions:
+;   core_netgame.cpp_CNetGame_addPlayer_FUN_00505950
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
-;   core_netgame.cpp_FUN_00504270
-;   core_netgame.cpp_FUN_00505950
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
 ;   support_trisock.cpp_createNetworkAddr_FUN_0056f730
-;   wincore_wddvmem.cpp_FUN_0057a8a0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
 ; *****************************************************************************
 
@@ -69,13 +69,13 @@ section .text
     ADD ESP,0xc                         ; 00503ffe
     PUSH EAX                            ; 00504001
     PUSH EBX                            ; 00504002
-    CALL core_netgame.cpp_FUN_00505950  ; 00504003
-        ;   XREF to: 00505950 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00505950()
+    CALL core_netgame.cpp_CNetGame_addPlayer_FUN_00505950 ; 00504003
+        ;   XREF to: 00505950 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_00505950(CNetGame * this_ptr, SNetworkAddr * addr, char * name, int hero_number, ...)
     ADD ESP,0x14                        ; 00504008
     PUSH EBX                            ; 0050400b
     MOV dword ptr [EBX + 0x124],EAX     ; 0050400c
-    CALL core_netgame.cpp_FUN_00504270  ; 00504012
-        ;   XREF to: 00504270 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_00504270(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 ; 00504012
+        ;   XREF to: 00504270 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 00504017
     TEST EAX,EAX                        ; 0050401a
     JNZ 0x00504025                      ; 0050401c
@@ -102,8 +102,8 @@ section .text
     LEA EAX,[ESP + 0x3c]                ; 00504046
     PUSH EAX                            ; 0050404a
     PUSH EBX                            ; 0050404b
-    CALL core_netgame.cpp_FUN_00505950  ; 0050404c
-        ;   XREF to: 00505950 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_00505950()
+    CALL core_netgame.cpp_CNetGame_addPlayer_FUN_00505950 ; 0050404c
+        ;   XREF to: 00505950 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_00505950(CNetGame * this_ptr, SNetworkAddr * addr, char * name, int hero_number, ...)
     MOV dword ptr [EBX],0x2             ; 00504051
     ADD ESP,0x14                        ; 00504057
     MOV dword ptr [EBX + 0x4],0x1       ; 0050405a
@@ -200,8 +200,8 @@ section .text
         ;   XREF to: 00505870 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_00505870(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EDI,dword ptr [0x01da6478]      ; 00504169 | DAT_01da6478
     ADD ESP,0xc                         ; 0050416f
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 00504172
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 00504172
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
         ;   Label: LAB_00504172
     PUSH EBX                            ; 00504177
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 ; 00504178

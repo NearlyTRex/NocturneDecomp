@@ -5,13 +5,13 @@
 // Function prototypes for core/dpart.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_dpart.cpp_FUN_004614b0
+// Original: core_dpart.cpp_CDemonPart_dtor_FUN_004614b0
 // Address: 004614b0
-CDemonPart * __cdecl FUN_004614b0(CDemonPart *this_ptr,uint flags);
+CDemonPart * __cdecl CDemonPart::dtor(CDemonPart *this_ptr,uint flags);
 
-// Original: core_dpart.cpp_FUN_004614d0
+// Original: core_dpart.cpp_CDemonPart_alloc_FUN_004614d0
 // Address: 004614d0
-void __cdecl FUN_004614d0(CDemonPart *this_ptr);
+void __cdecl CDemonPart::alloc(CDemonPart *this_ptr);
 
 // Original: core_dpart.cpp_FUN_004615d0
 // Address: 004615d0

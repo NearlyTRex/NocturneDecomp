@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadowsc.cpp_FUN_00560630 at 00560c75
+;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560c75
 ;
 ; Referenced Globals:
 ;   undefined4 s_Gscorp_attack_wav_4_005f18d0+1

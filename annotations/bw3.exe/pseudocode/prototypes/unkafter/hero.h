@@ -5,10 +5,6 @@
 // Function prototypes for unkafter/hero.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_hero.cpp_FUN_004d4c90
-// Address: 004d4c90
-void FUN_004d4c90(CDemonActor *param_1);
-
 // Original: unkafter_hero.cpp_FUN_004d4cde
 // Address: 004d4cde
 undefined8 FUN_004d4cde(void);

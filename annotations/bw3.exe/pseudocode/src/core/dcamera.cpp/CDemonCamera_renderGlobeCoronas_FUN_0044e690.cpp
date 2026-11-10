@@ -55,8 +55,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemo
   byte local_14;
   
   bVar1 = 0;
-  if ((*(int *)&g_CGamePtr->field_0xc != 0) ||
-     ((force_render == 0 && (*(int *)(globe + 0x20) != 0)))) {
+  if ((*(int *)&g_CGamePtr->field_0xc != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {
     _DAT_015484c8 = globe;
     core_dcamera_cpp_FUN_0044a3e0(this_ptr,globe);
     _DAT_015484d0 = local_94;
@@ -64,7 +63,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemo
          *(uint *)(&stack0xffffff70 + (uint)bVar1 * -8);
     *(uint *)(&DAT_015484d8 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
          *(uint *)(&stack0xffffff74 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-    if (*(int *)(globe + 0x20) == 0) {
+    if (globe->corona_mode == 0) {
       _DAT_015484cc = 0;
     }
     else {
@@ -77,36 +76,36 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemo
       }
     }
     iVar4 = 0;
-    if (0 < *(int *)&this_ptr->field_0x154) {
+    if (0 < this_ptr->display_height) {
       iVar2 = 0;
       do {
-        *(uint *)(iVar2 + 0x14fb300) = *(uint *)&this_ptr->field_0x144;
+        *(int *)(iVar2 + 0x14fb300) = this_ptr->framebuffer_width;
         *(uint *)(iVar2 + 0x14fb6c0) = 0;
         iVar4 = iVar4 + 1;
         iVar2 = iVar2 + 4;
-      } while (iVar4 < *(int *)&this_ptr->field_0x154);
+      } while (iVar4 < this_ptr->display_height);
     }
-    if (((force_render == 0) && (*(int *)(globe + 0x20) != 0)) &&
-       (_DAT_005f1848 = 0xffffffff, *(int *)(globe + 0x20) == 2)) {
+    if (((force_render == 0) && (globe->corona_mode != 0)) &&
+       (_DAT_005f1848 = 0xffffffff, globe->corona_mode == 2)) {
       if (_DAT_012a6558 != 0) {
         iVar4 = 0;
         do {
           if (globe == *(CDemonGlobe **)(iVar4 + 0x12a655c)) {
             iVar10 = 0;
             iVar2 = iVar4 + 0x12a655c;
-            if (*(int *)&this_ptr->field_0x154 < 1) {
+            if (this_ptr->display_height < 1) {
               _DAT_005f1848 = 0xffffffff;
               return;
             }
             do {
-              if (*(int *)(iVar2 + 4) != *(int *)&this_ptr->field_0x144) {
+              if (*(int *)(iVar2 + 4) != this_ptr->framebuffer_width) {
                 core_dcamera_cpp_blendCoronaTextureSpan_FUN_0044e590
                           (iVar10,*(int *)(iVar2 + 4),*(uint *)(iVar2 + 0x3c4),
                            iVar4 + 0x12a655c);
               }
               iVar10 = iVar10 + 1;
               iVar2 = iVar2 + 4;
-            } while (iVar10 < *(int *)&this_ptr->field_0x154);
+            } while (iVar10 < this_ptr->display_height);
             return;
           }
           iVar4 = iVar4 + 0x13384;
@@ -118,14 +117,14 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemo
         local_80 = (uint *)(iVar4 + 0x12a655c);
         core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(globe);
         local_54 = 0;
-        if (0 < *(int *)&this_ptr->field_0x154) {
+        if (0 < this_ptr->display_height) {
           local_6c = local_80 + 0x1e1;
           local_68 = 0x874588;
           local_70 = 0x14fba80;
           local_60 = local_80;
           do {
             iVar4 = local_54 * 4;
-            if (*(int *)&this_ptr->field_0x144 != *(int *)(iVar4 + 0x14fb300)) {
+            if (this_ptr->framebuffer_width != *(int *)(iVar4 + 0x14fb300)) {
               local_48 = local_54;
               local_88 = *(int *)(iVar4 + 0x14fb300);
               local_50 = *(int *)(iVar4 + 0x14fb6c0);
@@ -138,17 +137,17 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemo
               for (; local_88 < local_50; local_88 = local_88 + 1) {
                 local_14 = 0;
                 if (((*local_24 < *local_2c) &&
-                    (uVar3 = *local_20 - *(int *)_DAT_015484c8 >> 0x1f,
-                    iVar4 = (*local_20 - *(int *)_DAT_015484c8 ^ uVar3) - uVar3,
-                    iVar4 < *(int *)(_DAT_015484c8 + 0xc))) &&
-                   ((uVar3 = local_20[1] - *(int *)(_DAT_015484c8 + 4) >> 0x1f,
-                    iVar2 = (local_20[1] - *(int *)(_DAT_015484c8 + 4) ^ uVar3) - uVar3,
-                    iVar2 < *(int *)(_DAT_015484c8 + 0xc) &&
-                    ((uVar3 = local_20[2] - *(int *)(_DAT_015484c8 + 8) >> 0x1f,
-                     iVar10 = (local_20[2] - *(int *)(_DAT_015484c8 + 8) ^ uVar3) - uVar3,
-                     iVar10 < *(int *)(_DAT_015484c8 + 0xc) &&
+                    (uVar3 = *local_20 - (_DAT_015484c8->position_scaled).x,
+                    uVar11 = (int)uVar3 >> 0x1f, iVar4 = (uVar3 ^ uVar11) - uVar11,
+                    iVar4 < _DAT_015484c8->linear_radius_scaled)) &&
+                   ((uVar3 = local_20[1] - (_DAT_015484c8->position_scaled).y,
+                    uVar11 = (int)uVar3 >> 0x1f, iVar2 = (uVar3 ^ uVar11) - uVar11,
+                    iVar2 < _DAT_015484c8->linear_radius_scaled &&
+                    ((uVar3 = local_20[2] - (_DAT_015484c8->position_scaled).z,
+                     uVar11 = (int)uVar3 >> 0x1f, iVar10 = (uVar3 ^ uVar11) - uVar11,
+                     iVar10 < _DAT_015484c8->linear_radius_scaled &&
                      (local_3c = iVar2 * iVar2 + iVar4 * iVar4 + iVar10 * iVar10,
-                     local_3c < *(int *)(_DAT_015484c8 + 0x10))))))) {
+                     local_3c < _DAT_015484c8->quadratic_radius_scaled)))))) {
                   if (_DAT_015484cc != 0) {
                     local_40 = 0;
                     if (*local_24 == 0) {
@@ -177,8 +176,8 @@ void __cdecl core_dcamera_cpp_CDemonCamera_renderGlobeCoronas_FUN_0044e690(CDemo
                     if (iVar2 != 0) goto LAB_0044eb2b;
                   }
                   local_14 = (byte)
-                             (((*(int *)(_DAT_015484c8 + 0x10) - local_3c >> 0x10) * 0x3f) /
-                             (*(int *)(_DAT_015484c8 + 0x10) >> 0x10));
+                             (((_DAT_015484c8->quadratic_radius_scaled - local_3c >> 0x10) * 0x3f) /
+                             (_DAT_015484c8->quadratic_radius_scaled >> 0x10));
                 }
 LAB_0044eb2b:
                 bVar1 = DAT_013405b0;
@@ -212,7 +211,7 @@ LAB_0044eb2b:
             local_54 = local_54 + 1;
             local_60[0xf1] = *(uint *)(iVar4 + 0x14fb6c0);
             local_60 = local_60 + 1;
-          } while (local_54 < *(int *)&this_ptr->field_0x154);
+          } while (local_54 < this_ptr->display_height);
         }
         *local_80 = globe;
         return;
@@ -221,13 +220,13 @@ LAB_0044eb2b:
     }
     core_dglobe_cpp_CDemonGlobe_renderCorona_FUN_0045abd0(globe);
     local_64 = 0;
-    if (0 < *(int *)&this_ptr->field_0x154) {
+    if (0 < this_ptr->display_height) {
       local_58 = 0;
       local_78 = 0x14fba80;
       local_7c = 0xb2cfc8;
       local_74 = 0x874588;
       do {
-        if (*(int *)&this_ptr->field_0x144 != *(int *)(local_58 + 0x14fb300)) {
+        if (this_ptr->framebuffer_width != *(int *)(local_58 + 0x14fb300)) {
           local_28 = *(int *)(local_58 + 0x14fb300);
           iVar4 = *(int *)(local_58 + 0x14fb6c0);
           pcVar9 = (char *)(local_7c + local_28);
@@ -238,21 +237,21 @@ LAB_0044eb2b:
           iVar2 = local_28 - iVar4;
           while (SBORROW4(local_28,iVar4) != iVar2 < 0) {
             if ((((*local_38 < *local_34) &&
-                 (uVar3 = *piVar8 - *(int *)_DAT_015484c8,
+                 (uVar3 = *piVar8 - (_DAT_015484c8->position_scaled).x,
                  (int)((uVar3 ^ (int)uVar3 >> 0x1f) - ((int)uVar3 >> 0x1f)) <
-                 *(int *)(_DAT_015484c8 + 0xc))) &&
-                (uVar11 = piVar8[1] - *(int *)(_DAT_015484c8 + 4),
+                 _DAT_015484c8->linear_radius_scaled)) &&
+                (uVar11 = piVar8[1] - (_DAT_015484c8->position_scaled).y,
                 (int)((uVar11 ^ (int)uVar11 >> 0x1f) - ((int)uVar11 >> 0x1f)) <
-                *(int *)(_DAT_015484c8 + 0xc))) &&
-               (uVar12 = piVar8[2] - *(int *)(_DAT_015484c8 + 8),
+                _DAT_015484c8->linear_radius_scaled)) &&
+               (uVar12 = piVar8[2] - (_DAT_015484c8->position_scaled).z,
                (int)((uVar12 ^ (int)uVar12 >> 0x1f) - ((int)uVar12 >> 0x1f)) <
-               *(int *)(_DAT_015484c8 + 0xc))) {
+               _DAT_015484c8->linear_radius_scaled)) {
               iVar2 = uVar12 * uVar12 + uVar3 * uVar3 + uVar11 * uVar11;
-              if (iVar2 < *(int *)(_DAT_015484c8 + 0x10)) {
+              if (iVar2 < _DAT_015484c8->quadratic_radius_scaled) {
                 *pcVar9 = *pcVar9 + (char)((ulonglong)
                                            ((longlong)
-                                            (*(int *)(_DAT_015484c8 + 0x10) - iVar2 >> 0x10) *
-                                           (longlong)*(int *)(_DAT_015484c8 + 0x14)) >> 0x10);
+                                            (_DAT_015484c8->quadratic_radius_scaled - iVar2 >> 0x10)
+                                           * (longlong)_DAT_015484c8->falloff_value) >> 0x10);
               }
             }
             piVar8 = piVar8 + 3;
@@ -268,7 +267,7 @@ LAB_0044eb2b:
         local_7c = local_7c + 0x140;
         local_74 = local_74 + 0xf00;
         local_64 = local_64 + 1;
-      } while (local_64 < *(int *)&this_ptr->field_0x154);
+      } while (local_64 < this_ptr->display_height);
     }
   }
   return;

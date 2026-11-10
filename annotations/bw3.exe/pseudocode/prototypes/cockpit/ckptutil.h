@@ -37,25 +37,25 @@ void __cdecl loadACTToIndexedPalette(char *filename,uchar *output_palette);
 // Address: 004350a0
 void __cdecl loadACTPaletteFile(char *base_filename,uchar *output_buffer);
 
-// Original: cockpit_ckptutil.c_FUN_0043520e
+// Original: cockpit_ckptutil.c_buildHardwarePalettes_FUN_0043520e
 // Address: 0043520e
-void FUN_0043520e(byte *param_1);
+void buildHardwarePalettes(byte *param_1);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00435310
 // Address: 00435310
 void __cdecl blitSpanBasedSprite(void *sprite_data,void *span_data,int screen_x,int screen_y,int src_x,int src_y,int width,int height);
 
-// Original: cockpit_ckptutil.c_FUN_0043554e
+// Original: cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0043554e
 // Address: 0043554e
-void FUN_0043554e(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
+void blitSpanBasedSpriteClipped(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6,int param_7,int param_8);
 
-// Original: cockpit_ckptutil.c_FUN_0043579c
+// Original: cockpit_ckptutil.c_blitRectangleClipped_FUN_0043579c
 // Address: 0043579c
-int FUN_0043579c(int param_1,int param_2,int param_3,int param_4,int param_5);
+int blitRectangleClipped(int param_1,int param_2,int param_3,int param_4,int param_5);
 
-// Original: cockpit_ckptutil.c_FUN_0043590c
+// Original: cockpit_ckptutil.c_blitUnifiedSprite_FUN_0043590c
 // Address: 0043590c
-void FUN_0043590c(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
+void blitUnifiedSprite(int param_1,int param_2,int param_3,int param_4,int param_5,int param_6);
 
 // Original: cockpit_ckptutil.c_blitSimpleSprite_FUN_00435b50
 // Address: 00435b50
@@ -77,9 +77,9 @@ void FUN_00435f20(void);
 // Address: 0043604c
 void FUN_0043604c(void);
 
-// Original: cockpit_ckptutil.c_FUN_0043613c
+// Original: cockpit_ckptutil.c_blitFullScreen_FUN_0043613c
 // Address: 0043613c
-void FUN_0043613c(void *param_1,void *param_2);
+void blitFullScreen(void *param_1,void *param_2);
 
 // Original: cockpit_ckptutil.c_blitSpanBasedSpriteVerticallyClipped_FUN_00436170
 // Address: 00436170
@@ -141,37 +141,37 @@ void __cdecl blendPixelWithSourcePalette(int param_1,int param_2,float param_3,i
 // Address: 00437b80
 void __cdecl putPixel(int x,int y,int color);
 
-// Original: cockpit_ckptutil.c_FUN_00437c0e
+// Original: cockpit_ckptutil.c_isLineBlendingDisabled_FUN_00437c0e
 // Address: 00437c0e
-undefined4 FUN_00437c0e(void);
+undefined4 isLineBlendingDisabled(void);
 
 // Original: cockpit_ckptutil.c_FUN_00437c1c
 // Address: 00437c1c
 undefined4 FUN_00437c1c(void);
 
-// Original: cockpit_ckptutil.c_FUN_00437c20
+// Original: cockpit_ckptutil.c_setLineBlendingDisabled_FUN_00437c20
 // Address: 00437c20
-undefined4 FUN_00437c20(void);
+undefined4 setLineBlendingDisabled(void);
 
-// Original: cockpit_ckptutil.c_FUN_00437c2c
+// Original: cockpit_ckptutil.c_setLineClippingDisabled_FUN_00437c2c
 // Address: 00437c2c
-void FUN_00437c2c(undefined4 param_1);
+void setLineClippingDisabled(undefined4 param_1);
 
 // Original: cockpit_ckptutil.c_FUN_00437c40
 // Address: 00437c40
 void FUN_00437c40(undefined4 param_1);
 
-// Original: cockpit_ckptutil.c_FUN_00437c50
+// Original: cockpit_ckptutil.c_rotateBitmap_FUN_00437c50
 // Address: 00437c50
-void * FUN_00437c50(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
+void * rotateBitmap(char *param_1,void *param_2,uint param_3,uint param_4,int param_5,void *param_6);
 
 // Original: cockpit_ckptutil.c_FUN_00437e10
 // Address: 00437e10
 void FUN_00437e10(undefined4 *param_1,int param_2,uint param_3,uint param_4);
 
-// Original: cockpit_ckptutil.c_FUN_0043806e
+// Original: cockpit_ckptutil.c_traceConnectedEdges_FUN_0043806e
 // Address: 0043806e
-void * FUN_0043806e(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
+void * traceConnectedEdges(int param_1,int *param_2,void *param_3,int *param_4,int param_5,int param_6,int param_7,int param_8,int param_9);
 
 // Original: cockpit_ckptutil.c_FUN_00438ca0
 // Address: 00438ca0

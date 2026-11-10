@@ -22,13 +22,25 @@
     {
       "addr": "0040ded0",
       "from_addr": "0040e0db",
-      "name": "core_ammo.cpp_FUN_0040ded0",
+      "name": "core_ammo.cpp_CAmmo_process_FUN_0040ded0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a0380",
+      "from_addr": "005a066c",
+      "name": "core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a0bd0",
       "from_addr": "005a0eef",
       "name": "core_confedrt.cpp_FUN_005a0bd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6ed0",
+      "from_addr": "005a7343",
+      "name": "core_cross.cpp_CCross_process_FUN_005a6ed0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -40,7 +52,7 @@
     {
       "addr": "005aae80",
       "from_addr": "005ab14c",
-      "name": "core_hag.cpp_FUN_005aae80",
+      "name": "core_hag.cpp_CHag_processBurnState_FUN_005aae80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,25 +64,25 @@
     {
       "addr": "004cdb60",
       "from_addr": "004cdd8d",
-      "name": "core_health.cpp_FUN_004cdb60",
+      "name": "core_health.cpp_CHealthItem_process_FUN_004cdb60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005adad0",
       "from_addr": "005add16",
-      "name": "core_necklace.cpp_FUN_005adad0",
+      "name": "core_necklace.cpp_CNecklace_process_FUN_005adad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ac960",
       "from_addr": "005acb38",
-      "name": "core_partibox.cpp_FUN_005ac960",
+      "name": "core_partibox.cpp_CParticleBox_process_FUN_005ac960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059c680",
       "from_addr": "0059c960",
-      "name": "core_patrpoin.cpp_FUN_0059c680",
+      "name": "core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -82,19 +94,7 @@
     {
       "addr": "005ad530",
       "from_addr": "005ad735",
-      "name": "core_spirmine.cpp_FUN_005ad530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a0380",
-      "from_addr": "005a066c",
-      "name": "unkafter_basicene.cpp_FUN_005a0380",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a6ed0",
-      "from_addr": "005a7343",
-      "name": "unkafter_cross.cpp_FUN_005a6ed0",
+      "name": "core_spirmine.cpp_CSpiritMine_process_FUN_005ad530",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -151,7 +151,7 @@
       {
         "call_addr": "005a066c",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_005a0380",
+        "caller": "core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380",
         "estimated_params": 14,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +204,7 @@
       {
         "call_addr": "005ab14c",
         "call_type": "direct",
-        "caller": "core_hag.cpp_FUN_005aae80",
+        "caller": "core_hag.cpp_CHag_processBurnState_FUN_005aae80",
         "estimated_params": 14,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +245,7 @@
       {
         "call_addr": "0040e0db",
         "call_type": "direct",
-        "caller": "core_ammo.cpp_FUN_0040ded0",
+        "caller": "core_ammo.cpp_CAmmo_process_FUN_0040ded0",
         "estimated_params": 15,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -259,7 +259,7 @@
       {
         "call_addr": "004cdd8d",
         "call_type": "direct",
-        "caller": "core_health.cpp_FUN_004cdb60",
+        "caller": "core_health.cpp_CHealthItem_process_FUN_004cdb60",
         "estimated_params": 15,
         "instructions_analyzed": 0,
         "method": "add_esp",

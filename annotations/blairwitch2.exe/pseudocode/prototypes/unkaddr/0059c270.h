@@ -15,7 +15,7 @@ void FUN_0059c2c0(void);
 
 // Original: unkaddr_0059c270.cpp_FUN_0059c380
 // Address: 0059c380
-void FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
+void FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,char *param_4);
 
 // Original: unkaddr_0059c270.cpp_FUN_0059c3d0
 // Address: 0059c3d0

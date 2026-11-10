@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 87,
+    "complexity_score": 66,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "pseudocode_lines": 26,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 61
+    "total_lines": 60
   },
   "cross_references": [
     {
       "addr": "004ecb70",
       "from_addr": "004ecb83",
-      "name": "core_hero.cpp_FUN_004ecb70",
+      "name": "core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004ecb70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,8 +76,8 @@
     {
       "addr": "00601ea4",
       "name": "g_CHeroPlaceholderVTable",
-      "type": "void*",
-      "value": "00408850"
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -97,7 +97,7 @@
       {
         "call_addr": "004ecb83",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004ecb70",
+        "caller": "core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004ecb70",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -155,23 +155,7 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar2->field_0x154 = &g_CHeroPlaceholderVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 16,
-      "match": "field_0xfc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xfc = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
       "match": "field_0x15c",
       "severity": "mild",
       "text": "pcVar4 = &pCVar2->field_0x15c;",
@@ -179,7 +163,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 18,
+      "line": 17,
       "match": "field_0x158",
       "severity": "mild",
       "text": "*(uint *)&pCVar2->field_0x158 = 0;",
@@ -187,7 +171,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 19,
+      "line": 18,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_emitter.cpp_FUN_00487eb0 at 004885e8
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 004885e8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d03b88

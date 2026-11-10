@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 45,
+    "complexity_score": 36,
     "cross_reference_count": 15,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 2,
+    "pseudocode_lines": 21,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 68
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -149,8 +149,8 @@
     {
       "addr": "00607e74",
       "name": "g_CWeaponVTable",
-      "type": "void*",
-      "value": "005ad640"
+      "type": "CWeapon_full_vtable",
+      "value": null
     },
     {
       "addr": "00607f70",
@@ -326,20 +326,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x154",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 18,
+      "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CWeaponVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x308",
-      "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0((CBox *)&this_ptr->field_0x308,0);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)&pCVar1[-2].scrape_points[4].raytrace_intersection,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

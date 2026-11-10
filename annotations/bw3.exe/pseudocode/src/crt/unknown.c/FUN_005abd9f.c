@@ -16,6 +16,6 @@ uint FUN_005abd9f(int *param_1,int param_2)
      (*(int *)(*(int *)(*param_1 + 4) + 8 + (int)param_1) == 0)) {
     return 1;
   }
-  uVar1 = unkafter_asgaya_cpp_FUN_005af142(param_1,param_2);
+  uVar1 = FUN_005af142(param_1,param_2);
   return uVar1;
 }

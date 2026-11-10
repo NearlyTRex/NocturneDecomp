@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_00430d60 at 00430fd9
-;   core_enemy.cpp_FUN_00489b80 at 00489c79
-;   core_ghoul.cpp_FUN_004c9400 at 004c965a
+;   core_charactr.cpp_CCharacter_processDamage_FUN_00430d60 at 00430fd9
+;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80 at 00489c79
+;   core_ghoul.cpp_CGhoul_processDamage_FUN_004c9400 at 004c965a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_glass_1_wav_2_0_005b8388
@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_enemy.cpp_FUN_00489c90
-;   core_skeleton.cpp_FUN_0054f7f0
+;   core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     LEA EAX,[EBX + 0x20]                ; 0042ff9f
     PUSH EAX                            ; 0042ffa2
     PUSH EDX                            ; 0042ffa3
-    CALL core_skeleton.cpp_FUN_0054f7f0 ; 0042ffa4
-        ;   XREF to: 0054f7f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054f7f0(CDeformableModelInstance * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int desired_lod_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0 ; 0042ffa4
+        ;   XREF to: 0054f7f0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0(CDeformableModelInstance * this_ptr, CVector3f * center_position, CVector3f * orientation_vector, int desired_lod_index)
     ADD ESP,0x10                        ; 0042ffa9
     MOV EDX,dword ptr [0x01c5bc48]      ; 0042ffac | g_CEnemyClassInfo.name_hash
         ;   Label: LAB_0042ffac

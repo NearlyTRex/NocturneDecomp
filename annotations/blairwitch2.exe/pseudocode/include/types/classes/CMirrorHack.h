@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CMirrorHack
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x434 (1076 bytes)
 #pragma pack(push, 1)
 typedef struct CMirrorHack {
-    char field_0[1076]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance mirror_model; // 0x2b4
+    struct CDemonActor* interacting_actor; // 0x430
 } CMirrorHack;
 #pragma pack(pop)
 

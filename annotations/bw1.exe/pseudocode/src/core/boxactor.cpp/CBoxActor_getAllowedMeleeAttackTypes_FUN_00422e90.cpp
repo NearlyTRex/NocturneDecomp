@@ -9,5 +9,5 @@
 int __cdecl core_boxactor_cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_00422e90(CBoxActor *this_ptr)
 
 {
-  return *(int *)&this_ptr->field_0x664;
+  return this_ptr->allowed_melee_attack_types;
 }

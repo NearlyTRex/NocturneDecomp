@@ -31,45 +31,45 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_testCylinderCollision_FUN_00474e80(C
   _DAT_01548b58 = _DAT_02cfd900;
   if (*(float *)(cylinder + 0x18) <= 0.0) {
     fVar1 = (((float10)*(float *)(cylinder + 0x10) + (float10)*(float *)(cylinder + 0x18)) -
-            (float10)*(float *)&this_ptr->field_0x10) - (float10)*(float *)(cylinder + 0x20);
-    fVar2 = (float10)1 / (float10)*(float *)&this_ptr->field_0x28;
+            (float10)(this_ptr->bbox_min).x) - (float10)*(float *)(cylinder + 0x20);
+    fVar2 = (float10)1 / (float10)(this_ptr->cell_size).x;
     fVar3 = (float10)*(float *)(cylinder + 0x10);
   }
   else {
-    fVar1 = ((float10)*(float *)(cylinder + 0x10) - (float10)*(float *)&this_ptr->field_0x10) -
+    fVar1 = ((float10)*(float *)(cylinder + 0x10) - (float10)(this_ptr->bbox_min).x) -
             (float10)*(float *)(cylinder + 0x20);
-    fVar2 = (float10)1 / (float10)*(float *)&this_ptr->field_0x28;
+    fVar2 = (float10)1 / (float10)(this_ptr->cell_size).x;
     fVar3 = (float10)*(float *)(cylinder + 0x10) + (float10)*(float *)(cylinder + 0x18);
   }
   fVar1 = fVar1 * fVar2;
-  fVar2 = ((fVar3 - (float10)*(float *)&this_ptr->field_0x10) + (float10)*(float *)(cylinder + 0x20)
-          ) * fVar2;
+  fVar2 = ((fVar3 - (float10)(this_ptr->bbox_min).x) + (float10)*(float *)(cylinder + 0x20)) * fVar2
+  ;
   _DAT_01548b68 = _DAT_01548b5c;
   _DAT_01548b74 = _DAT_01548b5c;
   round();
   round();
   grid_x = (int)ROUND(fVar1);
-  fVar4 = (float10)1 / (float10)*(float *)&this_ptr->field_0x2c;
-  fVar1 = ((float10)*(float *)(cylinder + 0x28) - (float10)*(float *)&this_ptr->field_0x14) * fVar4;
-  fVar4 = ((float10)*(float *)(cylinder + 0x24) - (float10)*(float *)&this_ptr->field_0x14) * fVar4;
+  fVar4 = (float10)1 / (float10)(this_ptr->cell_size).y;
+  fVar1 = ((float10)*(float *)(cylinder + 0x28) - (float10)(this_ptr->bbox_min).y) * fVar4;
+  fVar4 = ((float10)*(float *)(cylinder + 0x24) - (float10)(this_ptr->bbox_min).y) * fVar4;
   fVar3 = (float10)0;
   round();
   round();
   if ((float10)*(float *)(cylinder + 0x1c) <= fVar3) {
     fVar5 = (((float10)*(float *)(cylinder + 0x14) + (float10)*(float *)(cylinder + 0x1c)) -
-            (float10)*(float *)&this_ptr->field_0x18) - (float10)*(float *)(cylinder + 0x20);
-    fVar6 = (float10)1 / (float10)*(float *)&this_ptr->field_0x30;
+            (float10)(this_ptr->bbox_min).z) - (float10)*(float *)(cylinder + 0x20);
+    fVar6 = (float10)1 / (float10)(this_ptr->cell_size).z;
     fVar3 = (float10)*(float *)(cylinder + 0x14);
   }
   else {
-    fVar5 = ((float10)*(float *)(cylinder + 0x14) - (float10)*(float *)&this_ptr->field_0x18) -
+    fVar5 = ((float10)*(float *)(cylinder + 0x14) - (float10)(this_ptr->bbox_min).z) -
             (float10)*(float *)(cylinder + 0x20);
-    fVar6 = (float10)1 / (float10)*(float *)&this_ptr->field_0x30;
+    fVar6 = (float10)1 / (float10)(this_ptr->cell_size).z;
     fVar3 = (float10)*(float *)(cylinder + 0x14) + (float10)*(float *)(cylinder + 0x1c);
   }
   fVar5 = fVar5 * fVar6;
-  fVar6 = ((fVar3 - (float10)*(float *)&this_ptr->field_0x18) + (float10)*(float *)(cylinder + 0x20)
-          ) * fVar6;
+  fVar6 = ((fVar3 - (float10)(this_ptr->bbox_min).z) + (float10)*(float *)(cylinder + 0x20)) * fVar6
+  ;
   round();
   round();
   for (; grid_y = (int)ROUND(fVar1), grid_x <= (int)ROUND(fVar2); grid_x = grid_x + 1) {

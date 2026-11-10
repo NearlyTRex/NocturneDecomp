@@ -11,7 +11,7 @@
 ; XREF[3]:
 ;   core_bugs.cpp_FUN_00423050 at 004238a1
 ;   core_prye.cpp_FUN_0051f490 at 00520a80
-;   core_skeleton.cpp_FUN_0054e170 at 0054e32f
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 at 0054e32f
 ;
 ; *****************************************************************************
 

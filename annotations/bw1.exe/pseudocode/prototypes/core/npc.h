@@ -21,34 +21,42 @@ CDemonActorType * CNPC::getActorType(CNPC *this_ptr);
 // Address: 00531670
 CNPC * CNPC::ctor(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_00531720
+// Original: core_npc.cpp_CNPC_setup_FUN_00531720
 // Address: 00531720
-void FUN_00531720(CCharacter *param_1);
+void __cdecl CNPC::setup(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_process_FUN_005317c0
 // Address: 005317c0
 void __cdecl CNPC::process(CNPC *this_ptr,float delta_time);
 
-// Original: core_npc.cpp_FUN_00531ae0
+// Original: core_npc.cpp_CNPC_renderBackground_FUN_00531ae0
 // Address: 00531ae0
-void __cdecl FUN_00531ae0(CNPC *this_ptr,int layer_flag);
+void __cdecl CNPC::renderBackground(CNPC *this_ptr,int layer_flag);
 
-// Original: core_npc.cpp_FUN_00531b10
+// Original: core_npc.cpp_CNPC_renderOpaque_FUN_00531b10
 // Address: 00531b10
-int FUN_00531b10(CCharacter *param_1);
+int __cdecl CNPC::renderOpaque(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_00531ba0
+// Original: core_npc.cpp_CNPC_renderTransparent_FUN_00531ba0
 // Address: 00531ba0
-undefined4 FUN_00531ba0(int param_1);
+int __cdecl CNPC::renderTransparent(CNPC *this_ptr);
 
-// Original: core_npc.cpp_FUN_00531bf0
+// Original: core_npc.cpp_CNPC_archive_FUN_00531bf0
 // Address: 00531bf0
-void __cdecl FUN_00531bf0(CNPC *this_ptr);
+void __cdecl CNPC::archive(CNPC *this_ptr);
 
 // Original: core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00531cc0
 // Address: 00531cc0
 int __cdecl CNPC::setRandomMotionVariant(CNPC *this_ptr,char *motion_name);
 
-// Original: core_npc.cpp_FUN_00531da0
+// Original: core_npc.cpp_CNPC_processDamage_FUN_00531da0
 // Address: 00531da0
-void __cdecl FUN_00531da0(CNPC *this_ptr,SDamageInfo *damage_info);
+void __cdecl CNPC::processDamage(CNPC *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_npc.cpp_CNPC_isInvulnerable_FUN_00531e80
+// Address: 00531e80
+int __cdecl CNPC::isInvulnerable(CNPC *this_ptr);
+
+// Original: core_npc.cpp_CNPC_getPathMap_FUN_00531ea0
+// Address: 00531ea0
+CPathMap * __cdecl CNPC::getPathMap(CNPC *this_ptr);

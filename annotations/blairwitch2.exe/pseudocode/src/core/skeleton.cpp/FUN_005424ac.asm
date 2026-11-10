@@ -11,9 +11,9 @@
 ;   undefined4 DAT_01c35e60
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_005415d0
-;   core_xform.cpp_FUN_00591de0
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0
 ;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407cc0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_matrix.c_pop_FUN_0046b4a0
@@ -33,8 +33,8 @@ section .text
     SUB ESP,0x64                        ; 005424b4
     MOV EDX,dword ptr [ESP + 0x78]      ; 005424b7
     PUSH EDX                            ; 005424bb
-    CALL core_skeleton.cpp_FUN_005415d0 ; 005424bc
-        ;   XREF to: 005415d0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_005415d0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0 ; 005424bc
+        ;   XREF to: 005415d0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 005424c1
     MOV DL,byte ptr [ESP + 0x84]        ; 005424c4
     MOV dword ptr [ESP + 0x60],EAX      ; 005424cb
@@ -152,8 +152,8 @@ section .text
         ;   Label: LAB_00542624
     LEA ESI,[ESP + 0x10]                ; 00542625
     LEA EDI,[ESP + 0x4c]                ; 00542629
-    CALL core_xform.cpp_FUN_00591de0    ; 0054262d
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 0054262d
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     LEA ESI,[ESP + 0x10]                ; 00542632
     ADD ESP,0x4                         ; 00542636
     MOVSD ES:EDI,ESI                    ; 00542639

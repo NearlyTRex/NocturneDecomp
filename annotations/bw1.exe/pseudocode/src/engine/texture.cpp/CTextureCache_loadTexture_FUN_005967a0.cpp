@@ -31,7 +31,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005967a0(CTextureCa
   float10 fVar16;
   char local_1dc [128];
   char local_15c [128];
-  byte local_dc [128];
+  char local_dc [128];
   CInStreamFile local_5c;
   int local_30;
   int local_20;
@@ -111,7 +111,7 @@ int __cdecl engine_texture_cpp_CTextureCache_loadTexture_FUN_005967a0(CTextureCa
     if (uVar6 < 0x10000) {
       if (uVar6 < 0x1000) {
 LAB_00596e18:
-        FUN_005bfb40(local_dc,"CTextureCache::load - Bad texture length : %s,%d",texture_name,uVar6);
+        _sprintf(local_dc,"CTextureCache::load - Bad texture length : %s,%d");
         _DAT_01d1d400 = "..\\engine\\texture.cpp";
         _DAT_01d1d404 = 0x194;
         core_main_c_FUN_005030e0(local_dc);
@@ -161,7 +161,7 @@ LAB_00596e18:
   if (uVar6 < 0x4000) {
     if (uVar6 < 0x400) {
 LAB_005969d1:
-      FUN_005bfb40(local_dc,"CTextureCache::load - Bad texture length : %s,%d",texture_name,uVar6);
+      _sprintf(local_dc,"CTextureCache::load - Bad texture length : %s,%d");
       _DAT_01d1d400 = "..\\engine\\texture.cpp";
       _DAT_01d1d404 = 0x14a;
       core_main_c_FUN_005030e0(local_dc);

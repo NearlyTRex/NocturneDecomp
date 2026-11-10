@@ -14,14 +14,14 @@ CExorcism * core_exorcism_cpp_CExorcism_ctor_FUN_0048a310(CExorcism *this_ptr)
   CExorcism *pCVar1;
   
   pCVar1 = (CExorcism *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CExorcismVTable;
+  ((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CExorcismVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"exo_bible.kfm");
-  *(uint *)&pCVar1->field_0x2d8 = 0;
-  *(uint *)&pCVar1->field_0x2dc = 0;
-  *(uint *)&pCVar1->field_0x2e4 = 1;
-  *(uint *)&pCVar1->field_0x2e8 = 0x42480000;
-  *(uint *)&pCVar1->field_0x2ec = 0;
+  *(int *)&pCVar1->field_0x2d8 = 0;
+  *(EFireMode *)&pCVar1->field_0x2dc = FIRE_MODE_AUTOMATIC;
+  *(int *)&pCVar1->field_0x2e4 = 1;
+  *(float *)&pCVar1->field_0x2e8 = 50.0;
+  *(int *)&pCVar1->field_0x2ec = 0;
   *(uint *)&pCVar1->field_0x56c = 10;
   *(uint *)&pCVar1->field_0x58c = 1;
   *(uint *)&pCVar1->field_0x574 = 2;

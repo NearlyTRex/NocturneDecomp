@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 218,
-    "complexity_score": 505,
+    "complexity_score": 415,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 38,
+    "suspect_count": 29,
     "suspect_types": [
       "param_count_too_few",
       "pointer_stride_bytecount",
@@ -295,63 +295,31 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (((*(int *)param_1 == 2) && (*(int *)&param_1->field_0x4 == 3)) &&",
+      "text": "if (((param_1->connection_type == CONNECTION_CLIENT) &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (((*(int *)param_1 == 2) && (*(int *)&param_1->field_0x4 == 3)) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (((*(int *)param_1 == 2) && (*(int *)&param_1->field_0x4 == 3)) &&",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "(-1 < *(int *)&param_1->field_0x120)) {",
+      "text": "(param_1->network_mode == NET_MODE_PLAYING)) && (-1 < param_1->server_player_index)) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 16,
-      "match": "field_0x120",
+      "match": "param_1",
       "severity": "mild",
-      "text": "(-1 < *(int *)&param_1->field_0x120)) {",
-      "type": "unnamed_field"
+      "text": "(param_1->network_mode == NET_MODE_PLAYING)) && (-1 < param_1->server_player_index)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x124 < 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x124 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 22,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,*(int *)&param_1->field_0x120,10.0);",
+      "text": "if (param_1->local_player_index < 0) {",
       "type": "unnamed_param"
     },
     {
@@ -359,16 +327,16 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,*(int *)&param_1->field_0x120,10.0);",
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,param_1->server_player_index,10.0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 22,
-      "match": "field_0x120",
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,*(int *)&param_1->field_0x120,10.0);",
-      "type": "unnamed_field"
+      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0050d840(param_1,param_1->server_player_index,10.0);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -383,7 +351,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 == 2) {",
+      "text": "if (param_1->connection_type == CONNECTION_CLIENT) {",
       "type": "unnamed_param"
     },
     {
@@ -391,7 +359,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "text": "uVar5 = *(uint *)&param_1->players[param_1->local_player_index].field_0x48;",
       "type": "unnamed_param"
     },
     {
@@ -399,23 +367,15 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "text": "uVar5 = *(uint *)&param_1->players[param_1->local_player_index].field_0x48;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 27,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "uVar5 = *(uint *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "text": "uVar5 = *(uint *)&param_1->players[param_1->local_player_index].field_0x48;",
       "type": "unnamed_field"
     },
     {
@@ -439,7 +399,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "text": "iVar4 = *(int *)&param_1->players[param_1->local_player_index].field_0x48;",
       "type": "unnamed_param"
     },
     {
@@ -447,23 +407,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "text": "iVar4 = *(int *)&param_1->players[param_1->local_player_index].field_0x48;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 38,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80);",
+      "text": "iVar4 = *(int *)&param_1->players[param_1->local_player_index].field_0x48;",
       "type": "unnamed_field"
     },
     {
@@ -479,23 +431,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x178 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
+      "text": "param_1->has_pending_sim_frame = 0;",
       "type": "unnamed_param"
     },
     {
@@ -503,23 +439,23 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
+      "text": "while (*(int *)&param_1->players[param_1->local_player_index].field_0x48 !=",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "while (*(int *)&param_1->players[param_1->local_player_index].field_0x48 !=",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 62,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "while (*(int *)(&param_1->field_0x68 + *(int *)&param_1->field_0x124 * 0x80) !=",
+      "text": "while (*(int *)&param_1->players[param_1->local_player_index].field_0x48 !=",
       "type": "unnamed_field"
     },
     {
@@ -527,16 +463,8 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x178 = 1;",
+      "text": "param_1->has_pending_sim_frame = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x178 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -551,7 +479,7 @@
       "line": 83,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 == 2) {",
+      "text": "if (param_1->connection_type == CONNECTION_CLIENT) {",
       "type": "unnamed_param"
     },
     {

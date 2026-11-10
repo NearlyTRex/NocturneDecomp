@@ -1,0 +1,160 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 34,
+    "complexity_score": 63,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "004c65f0",
+      "from_addr": "004c6e5f",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004c9e40",
+    "address_range": [
+      [
+        "004c9e40",
+        "004c9eaa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gabriela.cpp_CGabriella_tryFireWeapon_FUN_004c9e40",
+    "signature": "void __cdecl core_gabriela_cpp_CGabriella_tryFireWeapon_FUN_004c9e40(CGabriella *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00559250",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00559250"
+    },
+    {
+      "addr": "00559220",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00559220"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00622c18",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e82168"
+    },
+    {
+      "addr": "01e82168",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004c6e5f",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.071428571428571,
+    "instruction_count": 28,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 23,
+      "INT_ADD": 15,
+      "INT_AND": 11,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 10,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 5,
+      "INT_SUB": 10,
+      "LOAD": 9,
+      "POPCOUNT": 5,
+      "RETURN": 1,
+      "STORE": 11
+    },
+    "pcode_op_count": 114
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 8,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar1 = (**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0xe4))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x1fe20",
+      "severity": "mild",
+      "text": "iVar1 = (**(code **)(*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x154) + 0xe4))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x1fe20",
+      "severity": "mild",
+      "text": "(*(int *)&this_ptr->field_0x1fe20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x1fe20",
+      "severity": "mild",
+      "text": "if ((iVar1 != 0) && (*(int *)(*(int *)&this_ptr->field_0x1fe20 + 0x2dc) == 1)) {",
+      "type": "unnamed_field"
+    }
+  ]
+}

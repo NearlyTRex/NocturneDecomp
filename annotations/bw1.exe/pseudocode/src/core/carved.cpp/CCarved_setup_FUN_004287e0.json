@@ -1,0 +1,604 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 207,
+    "complexity_score": 515,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 21,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 85,
+    "suspect_count": 42,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 292
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004287e0",
+    "address_range": [
+      [
+        "004287e0",
+        "00428a7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_carved.cpp_CCarved_setup_FUN_004287e0",
+    "signature": "void __cdecl core_carved_cpp_CCarved_setup_FUN_004287e0(CCarved *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004a0510",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_004a0510"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "00565780",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00565780"
+    },
+    {
+      "addr": "00569eb0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0"
+    },
+    {
+      "addr": "00569f30",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30"
+    },
+    {
+      "addr": "00569b20",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20"
+    },
+    {
+      "addr": "005634f0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d51f4",
+      "name": "s_COMBATMODEHARD_005d51f4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5203",
+      "name": "s_Bip01_Head_005d5203",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d520e",
+      "name": "s_Bip01_L_Forearm_005d520e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d521e",
+      "name": "s_Bip01_R_ForeArm_005d521e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d522e",
+      "name": "s_Bip01_L_UpperArm_005d522e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d523f",
+      "name": "s_Bip01_R_UpperArm_005d523f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5250",
+      "name": "s_Bip01_L_Foot_005d5250",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d525d",
+      "name": "s_Bip01_R_Foot_005d525d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d526a",
+      "name": "s_Bip01_L_Hand_005d526a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5277",
+      "name": "s_Bip01_R_Hand_005d5277",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5284",
+      "name": "s_Bip01_Spine_005d5284",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5290",
+      "name": "s_Bip01_Spine2_005d5290",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d529d",
+      "name": "s_larm01_005d529d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52a4",
+      "name": "s_l4arm01_005d52a4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52ac",
+      "name": "s_rarm01_005d52ac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52b3",
+      "name": "s_r4arm01_005d52b3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52bb",
+      "name": "s_waist01_005d52bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52c3",
+      "name": "s_torso01_005d52c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52cb",
+      "name": "s_head01_005d52cb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d52d5",
+      "name": "DAT_005d52d5",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.238372093023256,
+    "instruction_count": 172,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 23,
+      "CBRANCH": 4,
+      "COPY": 172,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 68,
+      "INT_AND": 60,
+      "INT_CARRY": 23,
+      "INT_EQUAL": 53,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SCARRY": 23,
+      "INT_SLESS": 26,
+      "INT_SUB": 86,
+      "INT_ZEXT": 4,
+      "LOAD": 12,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 117
+    },
+    "pcode_op_count": 729
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCarved *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0xc2f0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc2f0 = 0x3f400000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xc2f0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc2f0 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0xc28c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc28c = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xc298",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc298 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0xc29c",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc29c = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0xc2a0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2a0 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0xc2a4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2a4 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0xc2a8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2a8 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0xc2ac",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2ac = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0xc290",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc290 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0xc294",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc294 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0xc2b0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2b0 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0xc2b4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2b4 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0xc2b8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2b8 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0xc2bc",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2bc = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0xc2c0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2c0 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0xc2c4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2c4 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0xc2c4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc2c4 = 0x3b;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0xc2c8",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2c8 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0xc2cc",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2cc = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x2384",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2384 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0xc2d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2d0 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25a8 = *(uint *)&this_ptr->field_0xc290;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0xc290",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25a8 = *(uint *)&this_ptr->field_0xc290;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0x25ac",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25ac = *(uint *)&this_ptr->field_0xc2bc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0xc2bc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x25ac = *(uint *)&this_ptr->field_0xc2bc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0x2620",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2620 = *(uint *)&this_ptr->field_0xc294;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0xc294",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2620 = *(uint *)&this_ptr->field_0xc294;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0x2624",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2624 = *(uint *)&this_ptr->field_0xc2c4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0xc2c4",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2624 = *(uint *)&this_ptr->field_0xc2c4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0xc2c8",
+      "severity": "mild",
+      "text": "if ((-1 < *(int *)&this_ptr->field_0xc2c8) && (*(float *)&this_ptr->field_0x3000 < 0.0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0x3000",
+      "severity": "mild",
+      "text": "if ((-1 < *(int *)&this_ptr->field_0xc2c8) && (*(float *)&this_ptr->field_0x3000 < 0.0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0x3000",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3000 = *(float *)&this_ptr->field_0x2490 + (float)_DAT_005d52d5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0x2490",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3000 = *(float *)&this_ptr->field_0x2490 + (float)_DAT_005d52d5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0xc288",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc288 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0xc2dc",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc2dc = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0xc2e0",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc2e0 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 87,
+      "match": "field_0xc2d8",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0xc2d8 = 0;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CCarved",
+        "offset": 0,
+        "vtable_addr": "005fd484"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

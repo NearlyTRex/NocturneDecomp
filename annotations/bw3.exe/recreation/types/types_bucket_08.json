@@ -11,9 +11,217 @@
     "size":72
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_isGrabbable",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grabber",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemnfolk",
     "size":53580
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_calculateChecksum",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_crc",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getBoundingBox",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_box",
+        "type":{
+          "kind":"class",
+          "name":"CBoundingBox3D",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CBoundingBox3D",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_onDropped",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"drop_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_process",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_setup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_updateCollisionData",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_vfunc2",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -46,6 +254,48 @@
     "size":1436
   },
   {
+    "kind":"funcdef",
+    "name":"CHero_isWeaponDrawn",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_vfunc81",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CLava",
     "size":176700
@@ -60,12 +310,27 @@
   {
     "kind":"class",
     "name":"CLocation",
-    "size":1
+    "size":16
   },
   {
     "kind":"class",
     "name":"COutStreamDebug",
     "size":4
+  },
+  {
+    "kind":"class",
+    "name":"CPickList_full_vtable",
+    "size":28,
+    "vtable_slots":[
+      {
+        "name":"_us",
+        "offset":0
+      },
+      {
+        "name":"_up",
+        "offset":24
+      }
+    ]
   },
   {
     "kind":"class",
@@ -87,9 +352,125 @@
     "size":44
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_set3DListenerDistanceFactor",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"distance_in_feet",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_setSfxPos",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"slot",
+        "type":{
+          "kind":"class",
+          "name":"CSfxSlot",
+          "ptr":1
+        }
+      },
+      {
+        "name":"update_flags",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_unlockSample",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CSpiritBear",
     "size":216484
+  },
+  {
+    "kind":"funcdef",
+    "name":"CStrList_clear",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -125,6 +506,79 @@
     ]
   },
   {
+    "kind":"enum",
+    "name":"EFlameType",
+    "size":4,
+    "values":[
+      {
+        "name":"FLAME_TYPE_TORCH",
+        "value":0
+      },
+      {
+        "name":"FLAME_TYPE_CANDLE",
+        "value":1
+      },
+      {
+        "name":"FLAME_TYPE_BLUE",
+        "value":2
+      },
+      {
+        "name":"FLAME_TYPE_NONE",
+        "value":3
+      },
+      {
+        "name":"FLAME_TYPE_BODY",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EPlatformStateType",
+    "size":4,
+    "values":[
+      {
+        "name":"PLATFORM_STATE_TYPE_AT_START",
+        "value":0
+      },
+      {
+        "name":"PLATFORM_STATE_TYPE_AT_END",
+        "value":1
+      },
+      {
+        "name":"PLATFORM_STATE_TYPE_STOPPED",
+        "value":2
+      },
+      {
+        "name":"PLATFORM_STATE_TYPE_MOVING_TO_END",
+        "value":3
+      },
+      {
+        "name":"PLATFORM_STATE_TYPE_MOVING_TO_START",
+        "value":4
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ESpikeType",
+    "size":4,
+    "values":[
+      {
+        "name":"SPIKE_TYPE_PERIODIC",
+        "value":0
+      },
+      {
+        "name":"SPIKE_TYPE_RANDOM",
+        "value":1
+      },
+      {
+        "name":"SPIKE_TYPE_ONE_SHOT",
+        "value":2
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SFogGrid",
     "size":1
@@ -137,7 +591,8 @@
   {
     "kind":"struct",
     "name":"SMRGLTextureBasic",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":24
   },
   {
     "kind":"struct",
@@ -152,6 +607,16 @@
   {
     "kind":"struct",
     "name":"SPlayerActionState",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SSwarmVertex",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SWayPointAdjacency",
     "size":1
   }
 ]

@@ -8,8 +8,8 @@
 ;   undefined4 DAT_005da2bc
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cd60
-;   core_vecdir.cpp_FUN_005a7520
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cd60
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_math.c_acos_FUN_005c1d04
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     PUSH EBX                            ; 00472302
     LEA ESI,[ESP + 0x2c]                ; 00472303
     LEA EDI,[ESP + 0x38]                ; 00472307
-    CALL core_vecdir.cpp_FUN_005a7520   ; 0047230b
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 0047230b
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0x2c]                ; 00472310
     ADD ESP,0x4                         ; 00472314
     MOVSD ES:EDI,ESI                    ; 00472317
@@ -109,8 +109,8 @@ section .text
     FSTP float ptr [ESP + 0x34]         ; 004723d2
         ;   Label: LAB_004723d2
     PUSH dword ptr [ESP + 0x34]         ; 004723d6
-    CALL core_actor.cpp_FUN_0040cd60    ; 004723da
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cd60()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 004723da
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
     MOV dword ptr [ESP + 0x58],EAX      ; 004723df
     FLD float ptr [ESP + 0x58]          ; 004723e3
     ADD ESP,0x4                         ; 004723e7
@@ -165,8 +165,8 @@ section .text
     FSTP float ptr [ESP + 0x38]         ; 0047245d
         ;   Label: LAB_0047245d
     PUSH dword ptr [ESP + 0x38]         ; 00472461
-    CALL core_actor.cpp_FUN_0040cd60    ; 00472465
-        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cd60()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cd60 ; 00472465
+        ;   XREF to: 0040cd60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cd60()
     MOV dword ptr [ESP + 0x58],EAX      ; 0047246a
     FLD float ptr [ESP + 0x58]          ; 0047246e
     ADD ESP,0x4                         ; 00472472

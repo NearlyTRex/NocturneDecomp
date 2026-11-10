@@ -7,7 +7,7 @@
 ; CToss *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b53ce
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b53ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560

@@ -16,16 +16,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[43]:
-;   core_bodypart.cpp_FUN_0041a200 at 0041a64f
-;   core_boneguy.cpp_FUN_0041c720 at 0041c77c
-;   core_boxactor.cpp_FUN_00422f90 at 0042312e
-;   core_bugs.cpp_FUN_004263d0 at 004264cc
-;   core_carved.cpp_FUN_0042a4f0 at 0042a587
-;   core_charactr.cpp_FUN_0042c7f0 at 0042ca93
-;   core_charactr.cpp_FUN_00430440 at 0043069e
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200 at 0041a64f
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_0041c720 at 0041c77c
+;   core_boxactor.cpp_CLightActor_process_FUN_00422f90 at 0042312e
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 004264cc
+;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_0042a4f0 at 0042a587
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 0043069e
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042ca93
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 004329fa
 ;   core_charactr.cpp_FUN_00432690 at 004326f4
-;   core_charactr.cpp_FUN_004328f0 at 004329fa
-;   core_demnfolk.cpp_FUN_0045b120 at 0045b1b7
+;   core_demnfolk.cpp_CDemnfolk_getCarryObjToBodyXForm_FUN_0045b120 at 0045b1b7
 ;   ... and 33 more
 ;
 ; Called Functions:

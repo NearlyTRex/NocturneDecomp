@@ -4,13 +4,20 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTire
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1b4 (436 bytes)
 #pragma pack(push, 1)
 typedef struct CTire {
-    char field_0[436]; // 0x0
+    CVector3f static_bpos; // 0x0
+    float radius; // 0xc
+    float width; // 0x10
+    CKeyFramedModelInstance model; // 0x14
+    CVector3f spin_angle; // 0x190
+    CVector3f runtime_position; // 0x19c
+    CVector3f runtime_rotation; // 0x1a8
 } CTire;
 #pragma pack(pop)
 

@@ -14,7 +14,6 @@ void unkaddr_004a76f0_cpp_FUN_004a7d70(void)
   CAlphaBitmap *pCVar1;
   int iVar2;
   int iVar3;
-  SNotesSection *pSVar4;
   char acStack_518 [256];
   char acStack_418 [256];
   char acStack_318 [256];
@@ -42,29 +41,29 @@ void unkaddr_004a76f0_cpp_FUN_004a7d70(void)
   DAT_005fe370 = 1;
   _DAT_01d19f78 = 0;
   _DAT_01d1a058 = 0;
-  engine_dosio_cpp_FUN_00465e50(&DAT_01d0cfc8,(char *)0x0,(char *)0x0,acStack_518,(char *)0x0);
-  FUN_005a28c0(acStack_418,&DAT_005c0d12,acStack_518,&DAT_01d0cfa8);
+  engine_dosio_cpp_splitPath_FUN_00465e50
+            (&DAT_01d0cfc8,(char *)0x0,(char *)0x0,acStack_518,(char *)0x0);
+  _sprintf(acStack_418,&DAT_005c0d12);
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&CAlphaBitmap_01d19bac,acStack_418,0x280,0x1e0)
   ;
   iVar3 = 9;
   iVar2 = 0;
   engine_alphabit_cpp_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
   if (0 < _DAT_01d0d210) {
-    pSVar4 = SNotesSection_ARRAY_01d0d214;
     pCVar1 = CAlphaBitmap_ARRAY_01d19bc0;
     do {
       iStack_18 = iVar2 * 0x2e4;
-      FUN_005a28c0(acStack_318,"tab_%s",pSVar4);
+      _sprintf(acStack_318,"tab_%s");
       iStack_14 = iVar2 * 0x14;
-      engine_dosio_cpp_FUN_00465e50(acStack_318,(char *)0x0,(char *)0x0,acStack_118,(char *)0x0);
-      FUN_005a28c0(acStack_218,&DAT_005c0d12,acStack_118,&DAT_01d0cfa8);
+      engine_dosio_cpp_splitPath_FUN_00465e50
+                (acStack_318,(char *)0x0,(char *)0x0,acStack_118,(char *)0x0);
+      _sprintf(acStack_218,&DAT_005c0d12);
       engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(pCVar1,acStack_218,0x5a,0x36);
       *(uint *)(&SNotesSection_ARRAY_01d0d214[0].field_0x148 + iStack_18) = 0x215;
       *(int *)(&SNotesSection_ARRAY_01d0d214[0].field_0x14c + iStack_18) = iVar3;
-      pSVar4 = pSVar4 + 1;
       iVar2 = iVar2 + 1;
       pCVar1 = pCVar1 + 1;
-      iVar3 = iVar3 + *(int *)(&CAlphaBitmap_ARRAY_01d19bc0[0].field_0x10 + iStack_14) + 10;
+      iVar3 = iVar3 + *(int *)((int)&CAlphaBitmap_ARRAY_01d19bc0[0].height + iStack_14) + 10;
     } while (iVar2 < _DAT_01d0d210);
   }
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460

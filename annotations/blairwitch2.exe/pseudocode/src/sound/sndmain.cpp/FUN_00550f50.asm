@@ -8,10 +8,10 @@
 ; float            Stack[0x8]:4   base_frequency
 ;
 ; XREF[4]:
-;   core_lightgun.cpp_FUN_004e38d0 at 004e39c3
-;   core_tommygun.cpp_FUN_00576130 at 00576194
-;   core_turret.cpp_FUN_0057e760 at 0057e89f
-;   core_vehicle.cpp_FUN_00583f20 at 005844a9
+;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e39c3
+;   core_tommygun.cpp_CTommyGun_process_FUN_00576130 at 00576194
+;   core_turret.cpp_CTurret_process_FUN_0057e760 at 0057e89f
+;   core_vehicle.cpp_CVehicle_process_FUN_00583f20 at 005844a9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02648e80

@@ -9,14 +9,14 @@
 void __cdecl core_charactr_cpp_FUN_0042cd30(CCharacter *this_ptr)
 
 {
-  uint uStack_14;
+  float fStack_14;
   float local_10;
-  uint uStack_c;
+  float fStack_c;
   
-  uStack_14 = *(uint *)&this_ptr->field_0x30;
-  uStack_c = *(uint *)&this_ptr->field_0x38;
-  local_10 = *(float *)&this_ptr->field_0x34 + *(float *)&this_ptr->field_0x2508;
-  *(uint *)&this_ptr->field_0x2508 = 0;
-  core_charactr_cpp_FUN_00433220(this_ptr,&uStack_14);
+  fStack_14 = (this_ptr->base).orient.vec.x;
+  fStack_c = (this_ptr->base).orient.vec.z;
+  local_10 = (this_ptr->base).orient.vec.y + this_ptr->turn_angle_accumulator;
+  this_ptr->turn_angle_accumulator = 0.0;
+  core_charactr_cpp_FUN_00433220(this_ptr,&fStack_14);
   return;
 }

@@ -28,20 +28,19 @@ void __cdecl core_dcamera_cpp_CDemonCamera_blendFogPlanes_FUN_0044ff10(CDemonCam
     blend_alpha = 0xffff;
   }
   iVar2 = 0;
-  if (0 < *(int *)&this_ptr->field_0x154) {
+  if (0 < this_ptr->display_height) {
     source1_buffer = (uint *)(plane_index * 0x12c00 + 0x13716d0);
     output_buffer = (uint *)&DAT_0135ead0;
     source2_buffer = (uint *)(iVar1 * 0x12c00 + 0x13716d0);
     do {
       core_dstrendr_cpp_alphaBlendPixelsMMX_FUN_004720fa
                 (output_buffer,source1_buffer,source2_buffer,blend_alpha | blend_alpha << 0x10,
-                 0xffff - blend_alpha | (0xffff - blend_alpha) * 0x10000,
-                 *(int *)&this_ptr->field_0x150);
+                 0xffff - blend_alpha | (0xffff - blend_alpha) * 0x10000,this_ptr->display_width);
       iVar2 = iVar2 + 1;
       source2_buffer = source2_buffer + 0x50;
       source1_buffer = source1_buffer + 0x50;
       output_buffer = output_buffer + 0x50;
-    } while (iVar2 < *(int *)&this_ptr->field_0x154);
+    } while (iVar2 < this_ptr->display_height);
   }
   return;
 }

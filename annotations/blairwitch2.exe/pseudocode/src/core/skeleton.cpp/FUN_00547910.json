@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 162,
-    "complexity_score": 316,
+    "complexity_score": 302,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 91,
-    "suspect_count": 21,
+    "pseudocode_lines": 92,
+    "suspect_count": 20,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 253
+    "total_lines": 254
   },
   "cross_references": [],
   "function": {
@@ -33,7 +32,7 @@
     {
       "addr": "00503860",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503860"
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_00503860"
     },
     {
       "addr": "00547890",
@@ -41,14 +40,14 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
     },
     {
+      "addr": "00548a90",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90"
+    },
+    {
       "addr": "00547b80",
       "is_variadic": false,
       "name": "core_skeleton.cpp_FUN_00547b80"
-    },
-    {
-      "addr": "00548a90",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00548a90"
     }
   ],
   "globals": [],
@@ -184,15 +183,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = core_motion_cpp_FUN_00503860((CMotionController *)param_1);",
+      "text": "((CMotionController *)param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 35,
       "match": "param_4",
       "severity": "mild",
       "text": "uStack_2c = *(uint *)(pCVar2 + param_4 * 0x118 + 0x1c8c);",
@@ -200,23 +199,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(param_1);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x1d1f8",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&pCVar3->field_0x1d1f8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00547b80(param_1,param_2,param_3,aSStack_1b14);",
@@ -224,7 +215,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_2",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00547b80(param_1,param_2,param_3,aSStack_1b14);",
@@ -232,7 +223,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 38,
       "match": "param_3",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00547b80(param_1,param_2,param_3,aSStack_1b14);",
@@ -240,15 +231,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00548a90(auStack_1b04,param_1);",
+      "text": "core_skeleton_cpp_computeBoneModelMatrices_FUN_00548a90(auStack_1b04,param_1);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_5",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00547b80(param_5,param_8,(float)iVar7,aSStack_35a0);",
@@ -256,7 +247,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 45,
       "match": "param_8",
       "severity": "mild",
       "text": "core_skeleton_cpp_FUN_00547b80(param_5,param_8,(float)iVar7,aSStack_35a0);",
@@ -264,7 +255,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 47,
       "match": "param_9",
       "severity": "mild",
       "text": "uStack_3594 = param_9;",
@@ -272,7 +263,7 @@
     },
     {
       "description": "Raw hex address 0x547a09 assigned to bare local `uStack_359c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_359c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 47,
+      "line": 48,
       "match": "0x547a09",
       "severity": "moderate",
       "text": "uStack_359c = 0x547a09;",

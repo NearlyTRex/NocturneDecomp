@@ -4,13 +4,17 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CFlameThrower
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6e4 (1764 bytes)
 #pragma pack(push, 1)
 typedef struct CFlameThrower {
-    char field_0[1764]; // 0x0
+    CWeapon base; // 0x0
+    int is_firing; // 0x6d4
+    uint sfx_handle; // 0x6d8
+    int was_firing_prev_frame; // 0x6dc
+    float fire_rate_timer; // 0x6e0
 } CFlameThrower;
 #pragma pack(pop)
 

@@ -1,0 +1,294 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 172,
+    "complexity_score": 224,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 79,
+    "suspect_count": 12,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 251
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005191d0",
+    "address_range": [
+      [
+        "005191d0",
+        "005193a0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_renderBackground_FUN_005191d0",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_renderBackground_FUN_005191d0(CPlatform *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10"
+    },
+    {
+      "addr": "004089d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0"
+    },
+    {
+      "addr": "0041a840",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041a840"
+    },
+    {
+      "addr": "0044fcc0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0"
+    },
+    {
+      "addr": "0048e340",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_0048e340"
+    },
+    {
+      "addr": "0046b960",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fac30",
+      "name": "DAT_005fac30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141f0",
+      "name": "DAT_006141f0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "007bda74",
+      "name": "DAT_007bda74",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0150f450",
+      "name": "DAT_0150f450",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01fc0e40",
+      "name": "g_CDemonSetInstance.per_pixel_lighting_enabled",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.737226277372263,
+    "instruction_count": 137,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BRANCH": 2,
+      "CALL": 11,
+      "CALLIND": 2,
+      "CBRANCH": 15,
+      "COPY": 157,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 62,
+      "INT_AND": 68,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 64,
+      "INT_LESS": 9,
+      "INT_MULT": 2,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 31,
+      "INT_SUB": 51,
+      "INT_ZEXT": 2,
+      "LOAD": 29,
+      "POPCOUNT": 31,
+      "RETURN": 3,
+      "ROUND": 3,
+      "STORE": 47,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 649
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 44,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x880",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x880 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(iVar1 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280),",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "iStack_14 = (int)ROUND(*(float *)&(this_ptr->base).field_0x20 * _DAT_005fac30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "iStack_10 = (int)ROUND(*(float *)&(this_ptr->base).field_0x24 * _DAT_005fac30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "iStack_c = (int)ROUND(*(float *)&(this_ptr->base).field_0x28 * _DAT_005fac30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 76,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "_DAT_0150f450 = (**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 8))(DAT_007bda74,&iStack_14,0);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_007bda74",
+      "severity": "mild",
+      "text": "_DAT_0150f450 = (**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 8))(DAT_007bda74,&iStack_14,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 76,
+      "match": "DAT_007bda74",
+      "severity": "mild",
+      "text": "_DAT_0150f450 = (**(code **)(*(int *)(DAT_007bda74 + 0x3c) + 8))(DAT_007bda74,&iStack_14,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 57,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 32,
+        "vtable_addr": "005fa034"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 32,
+        "vtable_addr": "005fac54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

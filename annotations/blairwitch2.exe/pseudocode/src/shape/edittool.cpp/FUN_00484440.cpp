@@ -27,10 +27,10 @@ void shape_edittool_cpp_FUN_00484440(CEdScrollBar *param_1)
   
   shape_edittool_cpp_CEdScrollBar_computeThumb_FUN_004847e0(param_1);
   uVar10 = _DAT_01c263ec;
-  iVar4 = *(int *)(param_1 + 0x20);
-  iVar5 = *(int *)(param_1 + 0x1c);
-  iVar9 = *(int *)(param_1 + 0x18);
-  iVar11 = *(int *)(param_1 + 0x14);
+  iVar4 = param_1->bounds_bottom;
+  iVar5 = param_1->bounds_right;
+  iVar9 = param_1->bounds_top;
+  iVar11 = param_1->bounds_left;
   y2 = iVar4 + -2;
   iVar6 = iVar5 + -2;
   iVar3 = iVar11 + 1;
@@ -60,21 +60,21 @@ void shape_edittool_cpp_FUN_00484440(CEdScrollBar *param_1)
     _DAT_01c35e60 = uVar10;
     engine_mini3d_cpp_FUN_004f90d0(iVar3,iVar7,iVar6,y2);
   }
-  iVar4 = *(int *)(param_1 + 0x1c) + -1;
-  iVar5 = *(int *)(param_1 + 0x20) + -1;
-  iVar11 = *(int *)(param_1 + 0x18) + 1;
-  iVar9 = *(int *)(param_1 + 0x14) + 1;
-  if (*(int *)(param_1 + 0x10) == 0) {
-    iVar3 = *(int *)(param_1 + 0x30);
-    iVar6 = *(int *)(param_1 + 0x2c);
+  iVar4 = param_1->bounds_right + -1;
+  iVar5 = param_1->bounds_bottom + -1;
+  iVar11 = param_1->bounds_top + 1;
+  iVar9 = param_1->bounds_left + 1;
+  if (param_1->orientation == 0) {
+    iVar3 = param_1->thumb_end;
+    iVar6 = param_1->thumb_start;
     iVar7 = iVar9;
     local_28 = iVar4;
   }
   else {
-    iVar7 = *(int *)(param_1 + 0x2c);
+    iVar7 = param_1->thumb_start;
     iVar6 = iVar11;
     iVar3 = iVar5;
-    local_28 = *(int *)(param_1 + 0x30);
+    local_28 = param_1->thumb_end;
   }
   if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 0)) {
     uVar8 = 1;
@@ -83,35 +83,35 @@ void shape_edittool_cpp_FUN_00484440(CEdScrollBar *param_1)
     uVar8 = 0;
   }
   shape_edittool_cpp_FUN_00483ea0(iVar7,iVar6,local_28,iVar3,uVar8);
-  if (*(int *)(param_1 + 0x10) == 0) {
+  if (param_1->orientation == 0) {
     if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 1)) {
       uVar8 = 1;
     }
     else {
       uVar8 = 0;
     }
-    shape_edittool_cpp_FUN_00483ea0(iVar9,iVar11,iVar4,*(uint *)(param_1 + 0x24),uVar8);
+    shape_edittool_cpp_FUN_00483ea0(iVar9,iVar11,iVar4,param_1->track_start,uVar8);
     if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 1)) {
       uVar8 = 1;
     }
     else {
       uVar8 = 0;
     }
-    shape_edittool_cpp_FUN_004840f0(iVar9,iVar11,iVar4,*(uint *)(param_1 + 0x24),uVar8,0);
+    shape_edittool_cpp_FUN_004840f0(iVar9,iVar11,iVar4,param_1->track_start,uVar8,0);
     if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 2)) {
       uVar8 = 1;
     }
     else {
       uVar8 = 0;
     }
-    shape_edittool_cpp_FUN_00483ea0(iVar9,*(uint *)(param_1 + 0x28),iVar4,iVar5,uVar8);
+    shape_edittool_cpp_FUN_00483ea0(iVar9,param_1->track_end,iVar4,iVar5,uVar8);
     if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 2)) {
       uVar8 = 1;
     }
     else {
       uVar8 = 0;
     }
-    shape_edittool_cpp_FUN_004840f0(iVar9,*(uint *)(param_1 + 0x28),iVar4,iVar5,uVar8,1);
+    shape_edittool_cpp_FUN_004840f0(iVar9,param_1->track_end,iVar4,iVar5,uVar8,1);
     return;
   }
   if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 1)) {
@@ -120,27 +120,27 @@ void shape_edittool_cpp_FUN_00484440(CEdScrollBar *param_1)
   else {
     uVar8 = 0;
   }
-  shape_edittool_cpp_FUN_00483ea0(iVar9,iVar11,*(uint *)(param_1 + 0x24),iVar5,uVar8);
+  shape_edittool_cpp_FUN_00483ea0(iVar9,iVar11,param_1->track_start,iVar5,uVar8);
   if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 1)) {
     uVar8 = 1;
   }
   else {
     uVar8 = 0;
   }
-  shape_edittool_cpp_FUN_004840f0(iVar9,iVar11,*(uint *)(param_1 + 0x24),iVar5,uVar8,2);
+  shape_edittool_cpp_FUN_004840f0(iVar9,iVar11,param_1->track_start,iVar5,uVar8,2);
   if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 2)) {
     uVar8 = 1;
   }
   else {
     uVar8 = 0;
   }
-  shape_edittool_cpp_FUN_00483ea0(*(uint *)(param_1 + 0x28),iVar11,iVar4,iVar5,uVar8);
+  shape_edittool_cpp_FUN_00483ea0(param_1->track_end,iVar11,iVar4,iVar5,uVar8);
   if ((param_1 == _DAT_01c26410) && (_DAT_01c26414 == 2)) {
     uVar8 = 1;
   }
   else {
     uVar8 = 0;
   }
-  shape_edittool_cpp_FUN_004840f0(*(uint *)(param_1 + 0x28),iVar11,iVar4,iVar5,uVar8,3);
+  shape_edittool_cpp_FUN_004840f0(param_1->track_end,iVar11,iVar4,iVar5,uVar8,3);
   return;
 }

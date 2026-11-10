@@ -9,44 +9,58 @@
 CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_00501340(CMoloch *this_ptr)
 
 {
-  CMorph CVar1;
+  char cVar1;
   int iVar2;
   CDeformableModelInstance *pCVar3;
   CMorph *pCVar4;
   char *pcVar5;
-  CMorph *pCVar6;
+  char *pcVar6;
+  SMRGLTextureModel *pSVar7;
   
   iVar2 = core_hero_cpp_FUN_004ce240(this_ptr);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00544cd0
                      ((CDeformableModelInstance *)(iVar2 + 0x25640));
   pCVar4 = core_morph_cpp_CMorph_ctor_FUN_005b6e60((CMorph *)&pCVar3[1].field_0xd4);
-  *(byte **)(pCVar4 + -0x27718) = &g_CMolochVTable;
+  *(CHero_full_vtable **)pCVar4[-0x34].models[0].textures[5].texture_name = &g_CMolochVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)(pCVar4 + -0x27714),"moloch_h.dfm");
+            ((CDeformableModelInstance *)(pCVar4[-0x34].models[0].textures[5].texture_name + 4),
+             "moloch_h.dfm");
   pcVar5 = "molochToDemon";
-  pCVar6 = pCVar4 + -200;
+  pcVar6 = pCVar4[-1].models[1].textures[0x11].texture_name + 0x24;
   do {
-    CVar1 = (CMorph)*pcVar5;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = *(CMorph *)(pcVar5 + 1);
+    cVar1 = *pcVar5;
+    *pcVar6 = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
-  pcVar5 = "molochToHuman";
-  pCVar6 = pCVar4 + -100;
+    pcVar6[1] = cVar1;
+    pcVar6 = pcVar6 + 2;
+  } while (cVar1 != '\0');
+  pcVar6 = "molochToHuman";
+  pSVar7 = pCVar4[-1].models[1].textures + 0x13;
   do {
-    CVar1 = (CMorph)*pcVar5;
-    *pCVar6 = CVar1;
-    if (CVar1 == (CMorph)0x0) break;
-    CVar1 = *(CMorph *)(pcVar5 + 1);
-    pcVar5 = pcVar5 + 2;
-    pCVar6[1] = CVar1;
-    pCVar6 = pCVar6 + 2;
-  } while (CVar1 != (CMorph)0x0);
-  *(uint *)(pCVar4 + -0xd4) = 1;
-  *(uint *)(pCVar4 + -0xd0) = 0;
-  *(uint *)(pCVar4 + -0xcc) = 0;
-  return (CMoloch *)(pCVar4 + -0x279c8);
+    cVar1 = *pcVar6;
+    *(char *)&(pSVar7->base).type = cVar1;
+    if (cVar1 == '\0') break;
+    cVar1 = pcVar6[1];
+    pcVar6 = pcVar6 + 2;
+    *(char *)((int)&(pSVar7->base).type + 1) = cVar1;
+    pSVar7 = (SMRGLTextureModel *)((int)&(pSVar7->base).type + 2);
+  } while (cVar1 != '\0');
+  pSVar7 = pCVar4[-1].models[1].textures;
+  pSVar7[0x11].texture_name[0x18] = '\x01';
+  pSVar7[0x11].texture_name[0x19] = '\0';
+  pSVar7[0x11].texture_name[0x1a] = '\0';
+  pSVar7[0x11].texture_name[0x1b] = '\0';
+  pSVar7 = pCVar4[-1].models[1].textures;
+  pSVar7[0x11].texture_name[0x1c] = '\0';
+  pSVar7[0x11].texture_name[0x1d] = '\0';
+  pSVar7[0x11].texture_name[0x1e] = '\0';
+  pSVar7[0x11].texture_name[0x1f] = '\0';
+  pSVar7 = pCVar4[-1].models[1].textures;
+  pSVar7[0x11].texture_name[0x20] = '\0';
+  pSVar7[0x11].texture_name[0x21] = '\0';
+  pSVar7[0x11].texture_name[0x22] = '\0';
+  pSVar7[0x11].texture_name[0x23] = '\0';
+  return (CMoloch *)(pCVar4[-0x35].models[1].textures[0x11].texture_name + 0x14);
 }

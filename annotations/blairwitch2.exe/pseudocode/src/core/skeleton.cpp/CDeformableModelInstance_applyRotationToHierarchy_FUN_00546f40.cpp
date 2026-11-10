@@ -40,11 +40,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
   iVar2 = 0;
   local_24 = pCVar1;
   core_xform_cpp_quaternionToAxisAngle_FUN_00593d50(rotation_quat,&local_28,local_34);
-  if (0 < *(int *)&pCVar1->field_0x1d1f8) {
+  if (0 < pCVar1->bone_count) {
     local_1c = &this_ptr->field_0x6b0;
     local_20 = this_ptr;
     do {
-      hierarchy_distance = core_skeleton_cpp_FUN_00540fc0(local_24,iVar2,bone_index);
+      hierarchy_distance =
+           core_skeleton_cpp_CSkeleton_getHierarchyDistance_FUN_00540fc0(local_24,iVar2,bone_index);
       if (-1 < hierarchy_distance) {
         fStack_18 = (*blend_callback)(iVar2,bone_index,blend_weight,hierarchy_distance,this_ptr);
         fStack_e8 = fStack_18 * local_28;
@@ -74,7 +75,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_applyRotationToHierarchy
       local_20 = (CDeformableModelInstance *)&local_20->field_0x10;
       iVar2 = iVar2 + 1;
       local_1c = local_1c + 0x10;
-    } while (iVar2 < *(int *)&local_24->field_0x1d1f8);
+    } while (iVar2 < local_24->bone_count);
   }
   if (-1 < bone_index) {
     return;

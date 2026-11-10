@@ -12,3 +12,31 @@ void staticInit(void);
 // Original: core_darkwolf.cpp_factoryFuncDarkwolf_FUN_00598750
 // Address: 00598750
 void factoryFuncDarkwolf(void);
+
+// Original: core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800
+// Address: 00598800
+void __cdecl CDarkwolf::setup(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0
+// Address: 005989e0
+void __cdecl CDarkwolf::process(CDarkwolf *this_ptr,float delta_time);
+
+// Original: core_darkwolf.cpp_CDarkwolf_renderOpaque_FUN_00598e00
+// Address: 00598e00
+int __cdecl CDarkwolf::renderOpaque(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_isInvulnerable_FUN_00598ef0
+// Address: 00598ef0
+int __cdecl CDarkwolf::isInvulnerable(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_shouldIgnoreForTargeting_FUN_00598f00
+// Address: 00598f00
+int __cdecl CDarkwolf::shouldIgnoreForTargeting(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CDarkwolf_archive_FUN_00598f30
+// Address: 00598f30
+void __cdecl CDarkwolf::archive(CDarkwolf *this_ptr);
+
+// Original: core_darkwolf.cpp_CWhitewolf_getActorType_FUN_00598fd0
+// Address: 00598fd0
+CDemonActorType * __cdecl CWhitewolf::getActorType(CWhitewolf *this_ptr);

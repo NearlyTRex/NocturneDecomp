@@ -12,8 +12,8 @@
 ; SMRGLTextureBasic * Stack[0x18]:4   texture_ptr
 ;
 ; XREF[3]:
-;   core_constrct.cpp_FUN_00445cb0 at 00445e87
-;   core_fire.cpp_FUN_004b7150 at 004b7219
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 00445e87
+;   core_fire.cpp_CFireEffect_createTrailFromPoints_FUN_004b7150 at 004b7219
 ;   unkafter_djien.cpp_FUN_004615b0 at 00462174
 ;
 ; Referenced Globals:

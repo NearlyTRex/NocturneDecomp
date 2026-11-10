@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   radius
 ;
 ; XREF[2]:
-;   core_baron.cpp_FUN_0040fcf0 at 0040fe06
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fe06
 ;   core_fire.cpp_CFireEffect_createExplosion_FUN_004b6c60 at 004b6cc9
 ;
 ; Referenced Globals:

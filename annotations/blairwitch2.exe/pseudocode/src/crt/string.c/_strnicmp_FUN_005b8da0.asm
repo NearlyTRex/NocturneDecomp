@@ -9,16 +9,16 @@
 ; int              Stack[0xc]:4   count
 ;
 ; XREF[18]:
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_004281d0 at 004281f8
 ;   core_charactr.cpp_FUN_00423a60 at 00424035
-;   core_charactr.cpp_FUN_004281d0 at 004281f8
 ;   core_charactr.cpp_FUN_0042b2a0 at 0042b2d2
-;   core_emitter.cpp_FUN_00486cb0 at 00486f1e
+;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486f1e
 ;   core_event.cpp_FUN_00489670 at 00489860
 ;   core_fldnotes.cpp_FUN_004a2cc0 at 004a2d94
 ;   core_game.cpp_FUN_004bbf70 at 004bc391
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00 at 004fcd2f
+;   core_script.cpp_CScript_skipCommands_FUN_00529a10 at 00529a8f
 ;   core_script.cpp_FUN_00522350 at 00522576
-;   core_script.cpp_FUN_00529a10 at 00529a8f
 ;   ... and 8 more
 ;
 ; *****************************************************************************

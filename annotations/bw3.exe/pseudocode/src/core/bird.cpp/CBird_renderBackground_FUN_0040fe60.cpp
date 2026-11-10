@@ -1,0 +1,19 @@
+// Name: core_bird.cpp_CBird_renderBackground_FUN_0040fe60
+// Address: 0040fe60
+// Address Range: [[0040fe60, 0040fe89]]
+// Convention: __cdecl
+// Signature: void __cdecl core_bird_cpp_CBird_renderBackground_FUN_0040fe60(CBird *this_ptr,int layer_flag)
+
+#include "nocturne.h"
+
+void __cdecl core_bird_cpp_CBird_renderBackground_FUN_0040fe60(CBird *this_ptr,int layer_flag)
+
+{
+  if (*(int *)&this_ptr->field_0x206ac != 0) {
+    if (layer_flag != 0) {
+      *(uint *)&this_ptr->field_0x24fc = 1;
+    }
+    core_charactr_cpp_CCharacter_renderBackground_FUN_0042e300((CCharacter *)this_ptr,layer_flag);
+  }
+  return;
+}

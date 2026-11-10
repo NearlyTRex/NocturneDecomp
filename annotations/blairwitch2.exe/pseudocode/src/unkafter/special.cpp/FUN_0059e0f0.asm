@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004254b0 at 0042560e
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 at 0042560e
 ;
 ; *****************************************************************************
 

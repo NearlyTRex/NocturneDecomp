@@ -2,21 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 95,
+    "complexity_score": 96,
     "cross_reference_count": 6,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 31,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 106
+    "total_lines": 107
   },
   "cross_references": [
+    {
+      "addr": "0050b8d0",
+      "from_addr": "0050bb41",
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0050ecb0",
       "from_addr": "0050ed81",
@@ -42,12 +48,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050b8d0",
-      "from_addr": "0050bb41",
-      "name": "core_netgame.cpp_FUN_0050b8d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0050f120",
       "from_addr": "0050f172",
       "name": "core_netgame.cpp_FUN_0050f120",
@@ -70,12 +70,12 @@
     {
       "addr": "0050c280",
       "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_0050c280"
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280"
     },
     {
       "addr": "0050db90",
       "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_0050db90"
+      "name": "core_netgame.cpp_CNetGame_removeChatOut_FUN_0050db90"
     },
     {
       "addr": "00579090",
@@ -85,12 +85,12 @@
     {
       "addr": "00579240",
       "is_variadic": false,
-      "name": "support_trisock.cpp_FUN_00579240"
+      "name": "support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240"
     },
     {
       "addr": "0058e9e0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_0058e9e0"
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
     }
   ],
   "globals": [
@@ -119,7 +119,7 @@
       {
         "call_addr": "0050bb41",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050b8d0",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -130,7 +130,7 @@
       {
         "call_addr": "0050bd85",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050b8d0",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -317,10 +317,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 31,
       "match": "DAT_01d62e48",
       "severity": "mild",
-      "text": "core_netgame_cpp_FUN_0050c280(this_ptr,local_10,(UNetPacket *)&DAT_01d62e48);",
+      "text": "(this_ptr,local_10,(UNetPacket *)&DAT_01d62e48);",
       "type": "undefined_data"
     }
   ]

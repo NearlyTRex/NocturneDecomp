@@ -18,9 +18,10 @@ CBoxActor * __cdecl core_boxactor_cpp_CBoxActor_dtor_FUN_004237a0(CBoxActor *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0((CBox *)&this_ptr->field_0x394,0);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0(&this_ptr->physics_box,0);
   pCVar2 = (CBoxActor *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x394),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

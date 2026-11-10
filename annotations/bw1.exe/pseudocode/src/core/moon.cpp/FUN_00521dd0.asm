@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050cc90 at 0050cdbd
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cdbd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ea453

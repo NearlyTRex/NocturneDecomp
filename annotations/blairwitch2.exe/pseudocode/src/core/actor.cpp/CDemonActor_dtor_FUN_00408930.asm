@@ -21,7 +21,7 @@
 ;   ... and 104 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CDemonActorVTable
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CDemonActorTypeInfo
 ;
 ; Called Functions:

@@ -17,8 +17,9 @@ CHecaitomix * core_hecaitmx_cpp_CHecaitomix_ctor_FUN_00597df0(CHecaitomix *this_
   CHecaitomix *pCVar3;
   
   pCVar3 = (CHecaitomix *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CHecaitomixVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,"shadowscorp.dfm");
+  ((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CHecaitomixVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar3->field_0x158,"shadowscorp.dfm");
   uVar2 = _DAT_005e7864;
   uVar1 = _DAT_005e7860;
   *(uint *)&pCVar3->field_0x326c = 0x3fe00000;

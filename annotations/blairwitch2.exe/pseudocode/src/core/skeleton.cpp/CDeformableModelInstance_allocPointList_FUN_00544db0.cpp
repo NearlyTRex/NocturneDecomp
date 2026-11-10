@@ -17,7 +17,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544
   
   core_skeleton_cpp_FUN_00544e30(this_ptr);
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
-  iVar1 = *(int *)&pCVar2->field_0x2c;
+  iVar1 = pCVar2->vertex_count[0];
   iVar3 = FUN_005b8df8(iVar1 * 0xc);
   *(int *)&this_ptr->field_0x2234 = iVar3;
   if (iVar3 != 0) {

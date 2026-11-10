@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 111,
+    "complexity_score": 93,
     "cross_reference_count": 0,
     "function_call_count": 9,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "pseudocode_lines": 33,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
     ],
-    "total_lines": 114
+    "total_lines": 116
   },
   "cross_references": [],
   "function": {
@@ -37,7 +37,7 @@
     {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "004fa8c0",
@@ -150,39 +150,23 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 23,
+      "line": 25,
       "match": "pCVar3[-2].",
       "severity": "mild",
-      "text": "pCVar3 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&pCVar3[-2].field_0x138bc,0);",
+      "text": "((CPathMap *)&pCVar3[-2].last_pathfinding_result,0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x138bc",
-      "severity": "mild",
-      "text": "pCVar3 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&pCVar3[-2].field_0x138bc,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 24,
+      "line": 26,
       "match": "pCVar3[-1].",
       "severity": "mild",
-      "text": "iVar4 = unkafter_armour_cpp_FUN_00410370(&pCVar3[-1].field_0xa36c,0);",
+      "text": "iVar4 = unkafter_armour_cpp_FUN_00410370(pCVar3[-1].height_cache_tags[4] + 0x2f,0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xa36c",
-      "severity": "mild",
-      "text": "iVar4 = unkafter_armour_cpp_FUN_00410370(&pCVar3[-1].field_0xa36c,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 29,
+      "line": 31,
       "match": "pCVar5[-1].",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
@@ -190,7 +174,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
+      "line": 31,
       "match": "field_0x224c",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar5[-1].field_0x224c,1);",
@@ -200,7 +184,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CSpiritIndian",
         "offset": 208,
         "vtable_addr": "005e7e94"
       },

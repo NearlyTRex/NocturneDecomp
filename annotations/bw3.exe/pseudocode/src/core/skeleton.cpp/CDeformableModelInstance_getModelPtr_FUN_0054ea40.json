@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 86,
+    "complexity_score": 31,
     "cross_reference_count": 46,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 6,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 59
@@ -23,15 +22,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00417630",
-      "from_addr": "004177a5",
-      "name": "core_boneguy.cpp_FUN_00417630",
+      "addr": "00419550",
+      "from_addr": "004195a3",
+      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_00419550",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00419550",
-      "from_addr": "004195a3",
-      "name": "core_boneguy.cpp_FUN_00419550",
+      "addr": "00417630",
+      "from_addr": "004177a5",
+      "name": "core_boneguy.cpp_CBoneGuy_setup_FUN_00417630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00423cd0",
+      "from_addr": "00423d87",
+      "name": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,15 +46,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00423cd0",
-      "from_addr": "00423d87",
-      "name": "core_bugs.cpp_FUN_00423cd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00425ab0",
       "from_addr": "00425bc4",
-      "name": "core_carved.cpp_FUN_00425ab0",
+      "name": "core_carved.cpp_CCarved_setup_FUN_00425ab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -103,7 +102,7 @@
     {
       "addr": "004425f0",
       "from_addr": "00442778",
-      "name": "core_constrct.cpp_FUN_004425f0",
+      "name": "core_constrct.cpp_CConstruct_setup_FUN_004425f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,7 +114,7 @@
     {
       "addr": "00444fd0",
       "from_addr": "00445027",
-      "name": "core_cow.cpp_FUN_00444fd0",
+      "name": "core_cow.cpp_CZombieCow_setup_FUN_00444fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -133,37 +132,37 @@
     {
       "addr": "004c4ee0",
       "from_addr": "004c5070",
-      "name": "core_gargoyle.cpp_FUN_004c4ee0",
+      "name": "core_gargoyle.cpp_CGargoyle_setup_FUN_004c4ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c6a10",
       "from_addr": "004c6b19",
-      "name": "core_ghoul.cpp_FUN_004c6a10",
+      "name": "core_ghoul.cpp_CGhoul_setup_FUN_004c6a10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059b770",
       "from_addr": "0059b7f3",
-      "name": "core_hino.cpp_FUN_0059b770",
+      "name": "core_hino.cpp_CHino_setup_FUN_0059b770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d5490",
       "from_addr": "004d5645",
-      "name": "core_hotdemon.cpp_FUN_004d5490",
+      "name": "core_hotdemon.cpp_CHotDemon_setup_FUN_004d5490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d6770",
       "from_addr": "004d6903",
-      "name": "core_imp.cpp_FUN_004d6770",
+      "name": "core_imp.cpp_CImp_setup_FUN_004d6770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f8bb0",
       "from_addr": "004f8c07",
-      "name": "core_moocow.cpp_FUN_004f8bb0",
+      "name": "core_moocow.cpp_CMooCow_setup_FUN_004f8bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -175,25 +174,25 @@
     {
       "addr": "004f9f50",
       "from_addr": "004f9f71",
-      "name": "core_morph.cpp_FUN_004f9f50",
+      "name": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_004f9f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00518680",
       "from_addr": "005189f4",
-      "name": "core_prye.cpp_FUN_00518680",
+      "name": "core_prye.cpp_CPrye_setup_FUN_00518680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00528c20",
       "from_addr": "00528c50",
-      "name": "core_script.cpp_FUN_00528c20",
+      "name": "core_script.cpp_parseBodyPartMask_FUN_00528c20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00531170",
       "from_addr": "00531300",
-      "name": "core_sentinel.cpp_FUN_00531170",
+      "name": "core_sentinel.cpp_CSentinel_setup_FUN_00531170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -215,9 +214,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0054f360",
+      "from_addr": "0054f383",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0054eac0",
       "from_addr": "0054eac5",
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f400",
+      "from_addr": "0054f40c",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -229,49 +240,37 @@
     {
       "addr": "0054e3a0",
       "from_addr": "0054e3ef",
-      "name": "core_skeleton.cpp_FUN_0054e3a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054e420",
-      "from_addr": "0054e440",
-      "name": "core_skeleton.cpp_FUN_0054e420",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054e4b0",
-      "from_addr": "0054e4d1",
-      "name": "core_skeleton.cpp_FUN_0054e4b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054e500",
-      "from_addr": "0054e521",
-      "name": "core_skeleton.cpp_FUN_0054e500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054e550",
-      "from_addr": "0054e571",
-      "name": "core_skeleton.cpp_FUN_0054e550",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054f360",
-      "from_addr": "0054f383",
-      "name": "core_skeleton.cpp_FUN_0054f360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054f400",
-      "from_addr": "0054f40c",
-      "name": "core_skeleton.cpp_FUN_0054f400",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0054f7f0",
       "from_addr": "0054f82b",
-      "name": "core_skeleton.cpp_FUN_0054f7f0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_shatter_FUN_0054f7f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e550",
+      "from_addr": "0054e571",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndInitWRecip_FUN_0054e550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e500",
+      "from_addr": "0054e521",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e4b0",
+      "from_addr": "0054e4d1",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndRotateVertices_FUN_0054e4b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054e420",
+      "from_addr": "0054e440",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -283,13 +282,13 @@
     {
       "addr": "00588a80",
       "from_addr": "00588b99",
-      "name": "core_zombie.cpp_FUN_00588a80",
+      "name": "core_zombie.cpp_CZombie_setup_FUN_00588a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058d5e0",
       "from_addr": "0058d78e",
-      "name": "core_zombprie.cpp_FUN_0058d5e0",
+      "name": "core_zombiepriest.cpp_FUN_0058d5e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -378,7 +377,7 @@
       {
         "call_addr": "00528c50",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00528c20",
+        "caller": "core_script.cpp_parseBodyPartMask_FUN_00528c20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -411,7 +410,7 @@
       {
         "call_addr": "0054e440",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054e420",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -433,7 +432,7 @@
       {
         "call_addr": "0054f383",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054f360",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -455,7 +454,7 @@
       {
         "call_addr": "0054f40c",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054f400",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_rayIntersect_FUN_0054f400",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -518,46 +517,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x23a0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x23a0 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2350",
-      "severity": "mild",
-      "text": "if (this_ptr->field_0x2350 != '\\0') {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2350",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4330(\"Tried to do something with model %s, but modelPtr not set.  (CDeformableModelInstance::preCache not called.\",&this_ptr->field_0x2350);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x23a0",
-      "severity": "mild",
-      "text": "return *(CDeformableModel **)&this_ptr->field_0x23a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x23a0",
-      "severity": "mild",
-      "text": "return *(CDeformableModel **)&this_ptr->field_0x23a0;",
-      "type": "unnamed_field"
     }
   ]
 }

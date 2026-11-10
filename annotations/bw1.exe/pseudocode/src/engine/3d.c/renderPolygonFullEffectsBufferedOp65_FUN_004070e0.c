@@ -20,11 +20,10 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0(int pa
   int *piVar7;
   int iVar8;
   int *piVar9;
-  uint *puVar10;
-  byte bVar11;
+  byte bVar10;
   int iStack_14;
   
-  bVar11 = 0;
+  bVar10 = 0;
   iVar2 = engine_3d_c_isVisiblePlane_FUN_00403920(param_1 + 8);
   if (iVar2 != 0) {
     if (_DAT_01c51d00 == 0) {
@@ -70,8 +69,8 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0(int pa
           piVar9 = piVar7 + 1;
           for (iVar6 = 0xc; iVar6 != 0; iVar6 = iVar6 + -1) {
             *piVar9 = *piVar5;
-            piVar5 = piVar5 + (uint)bVar11 * -2 + 1;
-            piVar9 = piVar9 + (uint)bVar11 * -2 + 1;
+            piVar5 = piVar5 + (uint)bVar10 * -2 + 1;
+            piVar9 = piVar9 + (uint)bVar10 * -2 + 1;
           }
           if (piVar7[3] < iStack_14) {
             iStack_14 = piVar7[3];
@@ -81,13 +80,13 @@ int __cdecl engine_3d_c_renderPolygonFullEffectsBufferedOp65_FUN_004070e0(int pa
           iVar2 = iVar2 + 4;
         } while (iVar8 < *(int *)(param_1 + 4));
       }
-      pSVar4 = engine_texture_cpp_FUN_00597d00();
+      pSVar4 = engine_texture_cpp_getCurrentTexture_FUN_00597d00();
       uVar1 = DAT_0061b4b8;
-      puVar10 = (uint *)(&DAT_00713bc4 + iVar3);
+      piVar7 = (int *)(&DAT_00713bc4 + iVar3);
       for (iVar2 = 0x12; iVar2 != 0; iVar2 = iVar2 + -1) {
-        *puVar10 = *(uint *)pSVar4;
-        pSVar4 = pSVar4 + (uint)bVar11 * -8 + 4;
-        puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+        *piVar7 = (pSVar4->base).type;
+        pSVar4 = (SMRGLTextureBasic *)((int)pSVar4 + (uint)bVar10 * -8 + 4);
+        piVar7 = piVar7 + (uint)bVar10 * -2 + 1;
       }
       *(uint *)(&DAT_00713c0c + iVar3) = uVar1;
       *(uint *)(&DAT_00713c10 + iVar3) = _DAT_01c51d0c;

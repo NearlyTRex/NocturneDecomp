@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[9]:
-;   core_confedrt.cpp_FUN_005a0a90 at 005a0b0e
-;   core_confzomb.cpp_FUN_005a1d90 at 005a1ded
-;   core_doc.cpp_FUN_00450620 at 004509c7
-;   core_ghostchi.cpp_FUN_005a9440 at 005a94a9
-;   core_hag.cpp_FUN_005aa8c0 at 005aa929
-;   core_partibox.cpp_FUN_005ac8d0 at 005ac8f5
-;   core_robin.cpp_FUN_005a6030 at 005a6099
-;   core_spirmine.cpp_FUN_005ad4f0 at 005ad515
-;   core_unionzom.cpp_FUN_005a3f40 at 005a3f9d
+;   core_confedrt.cpp_CConfederate_setup_FUN_005a0a90 at 005a0b0e
+;   core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90 at 005a1ded
+;   core_doc.cpp_CDoc_setup_FUN_00450620 at 004509c7
+;   core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440 at 005a94a9
+;   core_hag.cpp_CHag_setup_FUN_005aa8c0 at 005aa929
+;   core_partibox.cpp_CParticleBox_setup_FUN_005ac8d0 at 005ac8f5
+;   core_robin.cpp_CRobin_setup_FUN_005a6030 at 005a6099
+;   core_spirmine.cpp_CSpiritMine_setup_FUN_005ad4f0 at 005ad515
+;   core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40 at 005a3f9d
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b8580

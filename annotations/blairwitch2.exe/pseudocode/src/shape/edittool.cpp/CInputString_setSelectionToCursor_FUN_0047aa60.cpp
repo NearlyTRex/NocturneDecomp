@@ -9,6 +9,6 @@
 void __cdecl shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0047aa60(CInputString *this_ptr)
 
 {
-  *(uint *)(this_ptr + 0x138) = *(uint *)(this_ptr + 0x134);
+  this_ptr->selection_start = this_ptr->cursor_position;
   return;
 }

@@ -28,7 +28,7 @@
     {
       "addr": "0050d9f0",
       "from_addr": "0050daef",
-      "name": "core_netgame.cpp_FUN_0050d9f0",
+      "name": "core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -44,6 +44,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "005c59e0",
+      "from_addr": "005c5a2e",
+      "name": "crt_unknown.c_FUN_005c59e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00460fa0",
       "from_addr": "00460fc8",
       "name": "engine_dosio.cpp_FUN_00460fa0",
@@ -52,7 +58,7 @@
     {
       "addr": "004d8180",
       "from_addr": "004d8347",
-      "name": "engine_ini.cpp_FUN_004d8180",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,13 +76,7 @@
     {
       "addr": "0055753e",
       "from_addr": "005576fb",
-      "name": "sound_snddx.cpp_FUN_0055753e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005c59e0",
-      "from_addr": "005c5a2e",
-      "name": "unkafter_2d.cpp_FUN_005c59e0",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_0055753e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -117,7 +117,7 @@
       {
         "call_addr": "004d8347",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8180",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -150,7 +150,7 @@
       {
         "call_addr": "005576fb",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_0055753e",
+        "caller": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_0055753e",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "0050daef",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050d9f0",
+        "caller": "core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

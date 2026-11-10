@@ -15,7 +15,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
-;   core_twigzomb.cpp_FUN_005a28a0
+;   core_twigzomb.cpp_CTwigZombie_processStates_FUN_005a28a0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
@@ -75,8 +75,8 @@ section .text
     PUSH 0x0                            ; 005a2785
     PUSH 0x0                            ; 005a2787
     PUSH EBX                            ; 005a2789
-    CALL core_twigzomb.cpp_FUN_005a28a0 ; 005a278a
-        ;   XREF to: 005a28a0 (UNCONDITIONAL_CALL)  ; undefined core_twigzomb.cpp_FUN_005a28a0()
+    CALL core_twigzomb.cpp_CTwigZombie_processStates_FUN_005a28a0 ; 005a278a
+        ;   XREF to: 005a28a0 (UNCONDITIONAL_CALL)  ; void core_twigzomb.cpp_CTwigZombie_processStates_FUN_005a28a0(CTwigZombie * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a278f
     PUSH 0x5eff91                       ; 005a2792
     PUSH 0x5eff9b                       ; 005a2797

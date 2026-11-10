@@ -11,10 +11,10 @@ CBox * __cdecl core_box_cpp_CBox_ctor_FUN_0041da00(CBox *this_ptr)
 {
   int iVar1;
   
-  iVar1 = __arrinit(this_ptr + 0xb4,8,&g_SScrapeTypeInfo);
+  iVar1 = __arrinit(this_ptr->scrape_points,8,&g_SScrapeTypeInfo);
   *(uint *)(iVar1 + -0xac) = 0;
-  *(uint *)(iVar1 + -0xb0) = *(uint *)(iVar1 + -0xac);
-  *(uint *)(iVar1 + -0xb4) = *(uint *)(iVar1 + -0xac);
+  *(float *)(iVar1 + -0xb0) = *(float *)(iVar1 + -0xac);
+  (((CBox *)(iVar1 + -0xb4))->position).x = *(float *)(iVar1 + -0xac);
   *(uint *)(iVar1 + -0xa0) = 0;
   *(uint *)(iVar1 + -0xa4) = *(uint *)(iVar1 + -0xa0);
   *(uint *)(iVar1 + -0xa8) = *(uint *)(iVar1 + -0xa4);

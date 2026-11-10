@@ -17,7 +17,7 @@ void __cdecl core_icepick_cpp_FUN_004f2430(CIcePick *this_ptr,int bone_index)
   uint auStackY_1030 [999];
   uint *puVar6;
   uint local_84;
-  uint local_80;
+  float local_80;
   uint local_58;
   CIcePick *local_50;
   CIcePick *local_4c;
@@ -26,7 +26,7 @@ void __cdecl core_icepick_cpp_FUN_004f2430(CIcePick *this_ptr,int bone_index)
   uint local_30 [3];
   uint local_24;
   int local_18;
-  uint local_14;
+  float local_14;
   
   bVar5 = 0;
   core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,bone_index);
@@ -45,21 +45,21 @@ void __cdecl core_icepick_cpp_FUN_004f2430(CIcePick *this_ptr,int bone_index)
   iVar3 = 0;
   do {
     while( true ) {
-      if (*(int *)&g_CDemonSetPtr->field_0x14f0a8 <= iVar4) {
+      if (g_CDemonSetPtr->character_count <= iVar4) {
         if (local_18 == 0) {
           return;
         }
         (**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,"icepick-punch?.wav");
         return;
       }
-      pCVar1 = *(CIcePick **)(&g_CDemonSetPtr->field_0x14f0ac + iVar3);
+      pCVar1 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar3);
       if (pCVar1 != this_ptr) break;
 LAB_004f24a7:
       iVar4 = iVar4 + 1;
       iVar3 = iVar3 + 4;
     }
     core_charactr_cpp_SDamageInfo_ctor_FUN_0042c010((SDamageInfo *)&local_84);
-    local_80 = core_actor_cpp_FUN_0040cc00(0x42b40000,0x43020000);
+    local_80 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(90.0,130.0);
     local_58 = 0x3f000000;
     local_84 = 0xffffffff;
     local_50 = this_ptr;

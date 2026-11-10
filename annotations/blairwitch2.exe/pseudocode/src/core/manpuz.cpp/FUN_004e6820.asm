@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   reflector_index
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004e56d0 at 004e57a4
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0 at 004e57a4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280

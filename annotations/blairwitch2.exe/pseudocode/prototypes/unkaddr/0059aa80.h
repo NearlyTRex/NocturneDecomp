@@ -103,7 +103,7 @@ void FUN_0059bb40(int param_1);
 
 // Original: unkaddr_0059aa80.cpp_FUN_0059bb60
 // Address: 0059bb60
-void FUN_0059bb60(int param_1,int param_2,int param_3,undefined4 param_4,int param_5);
+void FUN_0059bb60(int param_1,int param_2,int param_3,float param_4,int param_5);
 
 // Original: unkaddr_0059aa80.cpp_CAlphaBitmap_arrdtor4_FUN_0059bfe0
 // Address: 0059bfe0

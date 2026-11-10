@@ -1,0 +1,285 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 96,
+    "complexity_score": 187,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 6,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 13,
+    "suspect_types": [
+      "raw_address_constant",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 133
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00460f90",
+    "address_range": [
+      [
+        "00460f90",
+        "00461089"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_djien.cpp_CDjien_damageSack_FUN_00460f90",
+    "signature": "void __cdecl core_djien_cpp_CDjien_damageSack_FUN_00460f90(CDjien *this_ptr,SDamageInfo *damage)"
+  },
+  "function_calls": [
+    {
+      "addr": "00419b90",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90"
+    },
+    {
+      "addr": "00418940",
+      "is_variadic": false,
+      "name": "core_bodypart.cpp_createBodyPart_FUN_00418940"
+    },
+    {
+      "addr": "00431210",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_00431210"
+    },
+    {
+      "addr": "004352e0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_004352e0"
+    },
+    {
+      "addr": "004a1b70",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_004a1b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d8e2f",
+      "name": "s_limb_wav_005d8e2f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8e38",
+      "name": "s_djien_heart_wav_6_005d8e38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8e4d",
+      "name": "s_DjienSackBlown_005d8e4d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d8e60",
+      "name": "DAT_005d8e60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00612270",
+      "name": "DAT_00612270",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.988095238095238,
+    "instruction_count": 84,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CALLIND": 2,
+      "CBRANCH": 2,
+      "COPY": 137,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 42,
+      "INT_AND": 29,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 24,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 12,
+      "INT_SUB": 33,
+      "INT_ZEXT": 4,
+      "LOAD": 22,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 419
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDjien *"
+      },
+      {
+        "is_param": true,
+        "name": "damage",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 12,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x14c))(this_ptr,*(uint *)damage);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "iVar2 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x14c))(this_ptr,*(uint *)damage);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0xc2d8",
+      "severity": "mild",
+      "text": "*(float *)(&this_ptr->field_0xc2d8 + iVar2 * 4) =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0xc2d8",
+      "severity": "mild",
+      "text": "*(float *)(damage + 4) + *(float *)(&this_ptr->field_0xc2d8 + iVar2 * 4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0xc2d8",
+      "severity": "mild",
+      "text": "if (fVar1 < *(float *)(&this_ptr->field_0xc2d8 + iVar2 * 4)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xc2d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2d0 = *(int *)&this_ptr->field_0xc2d0 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0xc2d0",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0xc2d0 = *(int *)&this_ptr->field_0xc2d0 + 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "((CVector3f *)&this_ptr->field_0x20,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "(UOrientationVector *)&this_ptr->field_0x30,(CVector3f *)(damage + 0xc)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 32,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"djien-heart?.wav @ 6\");",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0x2c))(this_ptr,\"djien-heart?.wav @ 6\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Raw hex address 0x1c51d80 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 34,
+      "match": "0x1c51d80",
+      "severity": "moderate",
+      "text": "this_ptr_00 = 0x01C51D80;",
+      "type": "raw_address_constant"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDjien",
+        "offset": 328,
+        "vtable_addr": "005fea34"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

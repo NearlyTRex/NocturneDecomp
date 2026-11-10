@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_construc.cpp_CConstructBone_ctor_FUN_00444550
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd860                         ; 00444520
         ;   Label: core_construc.cpp_FUN_00444520
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00444525
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00444525
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0044452a
     TEST EAX,EAX                        ; 0044452d
     JNZ 0x00444532                      ; 0044452f

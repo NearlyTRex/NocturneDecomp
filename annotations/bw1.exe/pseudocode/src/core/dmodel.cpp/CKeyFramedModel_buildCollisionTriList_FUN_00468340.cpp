@@ -12,32 +12,35 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_buildCollisionTriList_FUN_00468340(
 
 {
   int iVar1;
-  int iVar2;
+  CDemonTriangle *pCVar2;
+  int iVar3;
   
-  FUN_005c0336(*(void **)&this_ptr->field_0x358);
-  *(uint *)&this_ptr->field_0x358 = 0;
-  *(uint *)&this_ptr->field_0x354 = 0;
-  if ((0 < *(int *)&this_ptr->field_0x110) && (0 < *(int *)&this_ptr->field_0x100)) {
+  FUN_005c0336(this_ptr->collision_triangle_list);
+  this_ptr->collision_triangle_list = (CDemonTriangle *)0x0;
+  this_ptr->collision_triangle_count = 0;
+  if ((0 < this_ptr->poly_count) && (0 < this_ptr->frame_count)) {
     iVar1 = 0;
-    if (0 < *(int *)&this_ptr->field_0x110) {
-      iVar2 = 0;
+    if (0 < this_ptr->poly_count) {
+      iVar3 = 0;
       do {
-        iVar2 = iVar2 + 0x48;
         iVar1 = iVar1 + 1;
-        *(int *)&this_ptr->field_0x354 =
-             *(int *)&this_ptr->field_0x354 +
-             *(int *)(*(int *)&this_ptr->field_0x114 + -0x44 + iVar2) + -2;
-      } while (iVar1 < *(int *)&this_ptr->field_0x110);
+        this_ptr->collision_triangle_count =
+             this_ptr->collision_triangle_count +
+             *(int *)((int)this_ptr->poly_vert_list->vertices + iVar3 + -0x14) + -2;
+        iVar3 = iVar3 + 0x48;
+      } while (iVar1 < this_ptr->poly_count);
     }
-    iVar1 = FUN_005c1268
-                      (*(int *)&this_ptr->field_0x100 * *(int *)&this_ptr->field_0x354 * 0x38);
-    *(int *)&this_ptr->field_0x358 = iVar1;
-    if (iVar1 == 0) {
+    pCVar2 = (CDemonTriangle *)
+             FUN_005c1268
+                       (this_ptr->frame_count * this_ptr->collision_triangle_count * 0x38);
+    this_ptr->collision_triangle_list = pCVar2;
+    if (pCVar2 == (CDemonTriangle *)0x0) {
       _DAT_01d1d400 = "..\\core\\dmodel.cpp";
       _DAT_01d1d404 = 0x470;
       core_main_c_FUN_005030e0("CKeyFramedModel::buildCollisionTriList - out of memory");
     }
-    core_dmodel_cpp_FUN_00468420(this_ptr,&DAT_02c8af28);
+    core_dmodel_cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
+              (this_ptr,(CVector3f *)&DAT_02c8af28);
   }
   return;
 }

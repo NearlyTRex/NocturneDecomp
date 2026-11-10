@@ -27,33 +27,21 @@ void core_dlight_cpp_FUN_0046498e(int param_1)
   CVector3f *translation;
   float fStack_f0;
   int iStack_ec;
-  SMRGLHeaderPrimitive aSStack_e8 [4];
-  uint uStack_e4;
-  uint uStack_e0;
-  uint uStack_dc;
-  uint uStack_d8;
-  uint uStack_d4;
+  SMRGLHeaderPrimitive SStack_e8;
   uint uStack_d0;
   uint uStack_cc;
   uint uStack_c8;
   uint uStack_c4;
-  int iStack_c0;
-  int iStack_bc;
-  int iStack_b8;
-  CVector3f CStack_b4;
+  CVector3i CStack_c0;
+  float fStack_b4;
+  float afStack_b0 [2];
   CVector3f CStack_a8;
   float fStack_9c;
   float fStack_98;
   float fStack_94;
-  int iStack_90;
-  int iStack_8c;
-  int iStack_88;
-  int iStack_84;
-  int iStack_80;
-  int iStack_7c;
-  int iStack_78;
-  int iStack_74;
-  int iStack_70;
+  CVector3i CStack_90;
+  CVector3i CStack_84;
+  CVector3i aCStack_78 [3];
   int iStack_54;
   int iStack_50;
   float fStack_4c;
@@ -78,12 +66,11 @@ void core_dlight_cpp_FUN_0046498e(int param_1)
     core_dirmat_cpp_FUN_0045f840(param_1 + 0x10);
     translation = (CVector3f *)0x0;
     euler_angles = &CStack_a8;
-    CStack_a8._0_4_ = CStack_b4._0_4_;
-    *(uint *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) =
-         *(uint *)((int)&CStack_b4 + (uint)bVar3 * -8 + 4);
+    CStack_a8.x = fStack_b4;
+    *(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + 4) = afStack_b0[(uint)bVar3 * -2];
     pCVar11 = DAT_00612560;
-    *(uint *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
-         *(uint *)((int)&CStack_b4 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8);
+    *(float *)((int)&CStack_a8 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =
+         afStack_b0[(uint)bVar3 * -2 + (uint)bVar3 * -2 + 1];
     engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
               (pCVar11,euler_angles,translation);
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -147,80 +134,80 @@ void core_dlight_cpp_FUN_0046498e(int param_1)
           }
           fStack_9c = fStack_94 * fStack_3c;
           fStack_98 = fStack_94 * fStack_38;
-          iStack_c0 = (int)ROUND(fStack_9c * _DAT_005febd0);
-          iStack_bc = (int)ROUND(fStack_98 * _DAT_005febd0);
-          iStack_b8 = (int)ROUND(fStack_94 * _DAT_005febd0);
+          CStack_c0.x = (int)ROUND(fStack_9c * _DAT_005febd0);
+          CStack_c0.y = (int)ROUND(fStack_98 * _DAT_005febd0);
+          CStack_c0.z = (int)ROUND(fStack_94 * _DAT_005febd0);
           engine_special_cpp_FUN_00580173
-                    (*(SProjectedVertex **)DAT_00612560,(CVector3i *)&iStack_c0);
+                    ((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&CStack_c0);
           fStack_94 = fStack_2c;
           if (fStack_20 < fStack_2c) {
             fStack_94 = fStack_20;
           }
           fStack_9c = fStack_94 * fStack_44;
           fStack_98 = fStack_94 * fStack_40;
-          iStack_90 = (int)ROUND(fStack_9c * _DAT_005febd0);
-          iStack_8c = (int)ROUND(fStack_98 * _DAT_005febd0);
-          iStack_88 = (int)ROUND(fStack_94 * _DAT_005febd0);
+          CStack_90.x = (int)ROUND(fStack_9c * _DAT_005febd0);
+          CStack_90.y = (int)ROUND(fStack_98 * _DAT_005febd0);
+          CStack_90.z = (int)ROUND(fStack_94 * _DAT_005febd0);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&iStack_90);
+                    ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&CStack_90);
           fStack_94 = fStack_2c;
           if (fStack_24 < fStack_2c) {
             fStack_94 = fStack_24;
           }
           fStack_9c = fStack_94 * fStack_44;
           fStack_98 = fStack_94 * fStack_40;
-          iStack_84 = (int)ROUND(fStack_9c * _DAT_005febd0);
-          iStack_80 = (int)ROUND(fStack_98 * _DAT_005febd0);
-          iStack_7c = (int)ROUND(fStack_94 * _DAT_005febd0);
+          CStack_84.x = (int)ROUND(fStack_9c * _DAT_005febd0);
+          CStack_84.y = (int)ROUND(fStack_98 * _DAT_005febd0);
+          CStack_84.z = (int)ROUND(fStack_94 * _DAT_005febd0);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&iStack_84);
+                    ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&CStack_84);
           fStack_94 = fStack_28;
           if (fStack_24 < fStack_28) {
             fStack_94 = fStack_24;
           }
           fStack_9c = fStack_94 * fStack_3c;
           fStack_98 = fStack_94 * fStack_38;
-          iStack_78 = (int)ROUND(fStack_9c * _DAT_005febd0);
-          iStack_74 = (int)ROUND(fStack_98 * _DAT_005febd0);
-          iStack_70 = (int)ROUND(fStack_94 * _DAT_005febd0);
+          aCStack_78[0].x = (int)ROUND(fStack_9c * _DAT_005febd0);
+          aCStack_78[0].y = (int)ROUND(fStack_98 * _DAT_005febd0);
+          aCStack_78[0].z = (int)ROUND(fStack_94 * _DAT_005febd0);
           engine_special_cpp_FUN_00580173
-                    ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x90),(CVector3i *)&iStack_78);
+                    ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),aCStack_78);
           pCVar11 = DAT_00612560;
-          *(int *)(*(int *)DAT_00612560 + 0x2c) = iStack_30;
-          *(uint *)(*(int *)pCVar11 + 0x28) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x24) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x20) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x18) = 0xf80000;
-          *(uint *)(*(int *)pCVar11 + 0x1c) = 0xf80000;
-          *(int *)(*(int *)pCVar11 + 0x5c) = iStack_30;
-          *(uint *)(*(int *)pCVar11 + 0x58) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x54) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x50) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x48) = 0x80000;
-          *(uint *)(*(int *)pCVar11 + 0x4c) = 0xf80000;
-          *(int *)(*(int *)pCVar11 + 0x8c) = iStack_34;
-          *(uint *)(*(int *)pCVar11 + 0x88) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x84) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x80) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0x78) = 0x80000;
-          *(uint *)(*(int *)pCVar11 + 0x7c) = 0x80000;
-          *(int *)(*(int *)pCVar11 + 0xbc) = iStack_34;
-          *(uint *)(*(int *)pCVar11 + 0xb8) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0xb4) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0xb0) = 0xffff;
-          *(uint *)(*(int *)pCVar11 + 0xa8) = 0xf80000;
+          *(int *)(DAT_00612560->vertex_buffer_ptr + 0x2c) = iStack_30;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x28) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x24) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x20) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x18) = 0xf80000;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x1c) = 0xf80000;
+          *(int *)(pCVar11->vertex_buffer_ptr + 0x5c) = iStack_30;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x58) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x54) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x50) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x48) = 0x80000;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x4c) = 0xf80000;
+          *(int *)(pCVar11->vertex_buffer_ptr + 0x8c) = iStack_34;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x88) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x84) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x80) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x78) = 0x80000;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0x7c) = 0x80000;
+          *(int *)(pCVar11->vertex_buffer_ptr + 0xbc) = iStack_34;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0xb8) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0xb4) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0xb0) = 0xffff;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0xa8) = 0xf80000;
           iVar1 = iVar1 + 1;
-          *(uint *)(*(int *)pCVar11 + 0xac) = 0x80000;
-          uStack_d4 = 0;
-          uStack_d8 = 0;
-          uStack_e4 = 4;
-          uStack_dc = 0;
+          *(uint *)(pCVar11->vertex_buffer_ptr + 0xac) = 0x80000;
+          SStack_e8.surface_normal.D.i = 0;
+          SStack_e8.surface_normal.C.i = 0;
+          SStack_e8.base.count = 4;
+          SStack_e8.surface_normal.B.i = 0;
           uStack_cc = 1;
-          uStack_e0 = 0;
+          SStack_e8.surface_normal.A.i = 0;
           uStack_d0 = 0;
           uStack_c4 = 3;
           uStack_c8 = 2;
-          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(pCVar11,aSStack_e8)
+          engine_drender_cpp_CDemonRenderer_renderVertexAlphaDirect_FUN_00482e30(pCVar11,&SStack_e8)
           ;
         } while (iVar1 < 4);
         iVar2 = iVar2 + 1;

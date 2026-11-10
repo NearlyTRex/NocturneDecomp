@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   crt_stdio.c_fclose_FUN_005b8af0 at 005b8b5e
-;   unkafter_morph.cpp_FUN_005c4080 at 005c40af
+;   crt_unknown.c_FUN_005c4080 at 005c40af
 ;
 ; Referenced Globals:
 ;   void* PTR_CloseHandle_005c850c = 001c8c32

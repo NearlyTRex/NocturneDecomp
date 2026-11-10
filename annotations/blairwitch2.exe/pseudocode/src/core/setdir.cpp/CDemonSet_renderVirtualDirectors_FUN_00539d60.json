@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 227,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 97,
-    "suspect_count": 12,
+    "pseudocode_lines": 96,
+    "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "unnamed_field"
     ],
-    "total_lines": 320
+    "total_lines": 319
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00401fe0",
@@ -263,14 +263,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_34 = &this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 57,
       "match": "DAT_006141bc",
@@ -289,38 +281,22 @@
     {
       "description": "Auto-generated struct field name",
       "line": 65,
-      "match": "field_0x144",
+      "match": "field_0x140",
       "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x144 + iVar4 * 0x1a4) == 0) {",
+      "text": "if (*(int *)&this_ptr->cameras[iVar4].field_0x140 == 0) {",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
+      "line": 80,
       "match": "DAT_005e609c",
       "severity": "mild",
-      "text": "(local_98,&DAT_005e609c,(double)*(float *)(&DAT_0209394c + local_14 * 4));",
+      "text": "_sprintf(local_98,&DAT_005e609c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_0209394c",
-      "severity": "mild",
-      "text": "(local_98,&DAT_005e609c,(double)*(float *)(&DAT_0209394c + local_14 * 4));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(local_98,local_2c,*(int *)&g_CZThumbPool[local_14 * 6].field_0x4 + iVar5);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 86,
+      "line": 85,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "if (DAT_006141b8 < iVar4 + 0x42) {",
@@ -328,7 +304,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 90,
+      "line": 89,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "bVar2 = DAT_006141bc < local_24;",

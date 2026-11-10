@@ -30,15 +30,15 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
               (this_ptr,*(uint *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2c));
     DAT_01d33b20 = '\0';
     core_mission_cpp_FUN_0051b7b0(this_ptr);
-    iVar1 = core_game_cpp_FUN_004cf5e0(g_CGamePtr);
+    iVar1 = core_game_cpp_CGame_runGameSession_FUN_004cf5e0(g_CGamePtr);
     existing_hero = *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
     core_mission_cpp_FUN_0051b1d0(this_ptr,existing_hero);
-    (**(code **)(*(int *)&existing_hero->field_0x154 + 0x14c))(existing_hero);
+    (*(((existing_hero->base).vtable._uh)->_uh).reset)((CHero *)existing_hero);
     core_mission_cpp_FUN_0051a3b0(this_ptr);
     if ((iVar1 == 0) || (DAT_01d33b20 == '\0')) break;
-    iVar1 = _stricmp(&g_CDemonSetPtr->field_0x14d0f0,"hq.geo");
+    iVar1 = _stricmp(g_CDemonSetPtr->geometry_filename,"hq.geo");
     if (iVar1 != 0) {
-      core_game_cpp_FUN_004d8700(g_CGamePtr);
+      core_game_cpp_CGame_displayActStats_FUN_004d8700(g_CGamePtr);
       uVar2 = 0xffffffff;
     }
     else {
@@ -50,10 +50,10 @@ void __cdecl core_mission_cpp_CDemonMission_run_FUN_0051bad0(CDemonMission *this
     if ((iVar1 == 0) || (iVar1 = core_mission_cpp_FUN_0051bdc0(this_ptr), iVar1 == 0))
     goto LAB_0051bb9a;
   }
-  core_mission_cpp_CDemonMission_removeActor_FUN_0051b4d0(this_ptr,(CDemonActor *)existing_hero,1);
+  core_mission_cpp_CDemonMission_removeActor_FUN_0051b4d0(this_ptr,&existing_hero->base,1);
 LAB_0051bb9a:
   if (*(int *)&g_CGamePtr->field_0x27c != 0) {
-    core_game_cpp_FUN_004d8a90(g_CGamePtr);
+    core_game_cpp_CGame_finishAct_FUN_004d8a90(g_CGamePtr);
     core_fldnotes_cpp_FUN_004bdaa0(g_CFieldNotesPtr);
     return;
   }

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 143,
-    "complexity_score": 442,
+    "complexity_score": 416,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 42,
-    "suspect_count": 38,
+    "pseudocode_lines": 41,
+    "suspect_count": 36,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 185
+    "total_lines": 184
   },
   "cross_references": [],
   "function": {
@@ -34,7 +33,7 @@
     {
       "addr": "0040d0c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040d0c0"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0"
     },
     {
       "addr": "0040d900",
@@ -207,7 +206,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "(int)((float)(param_1[0x10] + 1) *",
+      "text": "(int)((float)(param_1[0x10] + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005ef584 +",
       "type": "unnamed_param"
     },
     {
@@ -215,16 +214,8 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&g_CGamePtr->field_0x284 * (float)_DAT_005ef584 + (float)param_1[0x12]);",
+      "text": "(float)param_1[0x12]);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "*(float *)&g_CGamePtr->field_0x284 * (float)_DAT_005ef584 + (float)param_1[0x12]);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -255,28 +246,20 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)(param_1[0x10] + 1) * *(float *)&g_CGamePtr->field_0x284 * (float)_DAT_005ef584",
+      "text": "(float)(param_1[0x10] + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005ef584);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x284",
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
       "severity": "mild",
-      "text": "(float)(param_1[0x10] + 1) * *(float *)&g_CGamePtr->field_0x284 * (float)_DAT_005ef584",
-      "type": "unnamed_field"
+      "text": "iVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(param_1[0x12]);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040d0c0(param_1[0x12]);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[0x12] = iVar2;",
@@ -284,7 +267,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 37,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,1,8,param_1[0x12],0);",
@@ -292,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,1,8,param_1[0x12],0);",
@@ -300,7 +283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,1,8,param_1[0x12],0);",
@@ -308,7 +291,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,1,8,param_1[0x12],0);",
@@ -316,7 +299,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 38,
+      "line": 37,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,4,4,param_1[0x12],1);",
@@ -324,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,4,4,param_1[0x12],1);",
@@ -332,7 +315,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,4,4,param_1[0x12],1);",
@@ -340,7 +323,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 37,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,4,4,param_1[0x12],1);",
@@ -348,7 +331,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
+      "line": 38,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x17d,8,param_1[0x12],0);",
@@ -356,7 +339,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x17d,8,param_1[0x12],0);",
@@ -364,7 +347,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x17d,8,param_1[0x12],0);",
@@ -372,7 +355,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x17d,8,param_1[0x12],0);",
@@ -380,7 +363,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x181,4,param_1[0x12],1);",
@@ -388,7 +371,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x181,4,param_1[0x12],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x181,4,param_1[0x12],1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x181,4,param_1[0x12],1);",
@@ -397,22 +396,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x181,4,param_1[0x12],1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*param_1 + 0x3c))(param_1,0x181,4,param_1[0x12],1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = param_1[6];",
@@ -420,7 +403,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "(CAlphaBitmap_ARRAY_026677ec + iVar2,_DAT_01c2a37c - param_1[iVar2 + 0x21b],",
@@ -428,7 +411,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "_DAT_01c2a380 - param_1[iVar2 + 0x21f],0xffff);",

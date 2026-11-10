@@ -14,10 +14,10 @@ CParticleBox * core_partibox_cpp_CParticleBox_ctor_FUN_005ac7a0(CParticleBox *th
   CParticleBox *pCVar1;
   
   pCVar1 = (CParticleBox *)core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30((CBoxActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CParticleBoxVTable;
+  ((UActorVTable *)&pCVar1->field_0x2b0)->_ub = &g_CParticleBoxVTable;
   *(uint *)&pCVar1->field_0xfc = 1;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)&pCVar1->field_0x2b4,(char *)0x5f0e98);
-  *(uint *)&pCVar1->field_0x754 = 0;
+  *(int *)&pCVar1->field_0x754 = 0;
   return pCVar1;
 }

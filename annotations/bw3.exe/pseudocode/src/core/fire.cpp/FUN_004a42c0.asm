@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_fire.cpp_FUN_004a4340 at 004a439c
-;   core_firestff.cpp_FUN_004a5870 at 004a58ad
+;   core_firestff.cpp_CFirestaff_setup_FUN_004a5870 at 004a58ad
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_004a4130

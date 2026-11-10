@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_inv.cpp_FUN_004dd770 at 004dda38
+;   core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd770 at 004dda38
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

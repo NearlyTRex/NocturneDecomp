@@ -8,7 +8,7 @@
 ;   core_bodypart.cpp_CBodyPart_archive_FUN_00415f50 at 00416177
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00415800 at 0041581b
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 00416730
-;   core_bodypart.cpp_FUN_004162b0 at 0041634e
+;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 0041634e
 ;   core_bodypart.cpp_FUN_004178c0 at 004178ec
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_00543490 at 005436ee
 ;

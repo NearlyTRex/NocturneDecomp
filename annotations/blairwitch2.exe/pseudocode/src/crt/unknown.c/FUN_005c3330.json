@@ -1,0 +1,202 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 48,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 23,
+    "suspect_count": 2,
+    "suspect_types": [
+      "register_param"
+    ],
+    "total_lines": 70
+  },
+  "cross_references": [
+    {
+      "addr": "005c2020",
+      "from_addr": "005c202c",
+      "name": "crt_startup.cpp_WinMainBootstrap_FUN_005c2020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005bd078",
+      "from_addr": "005bd0b8",
+      "name": "crt_unknown.c_FUN_005bd078",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005c3330",
+    "address_range": [
+      [
+        "005c3330",
+        "005c3385"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "crt_unknown.c_FUN_005c3330",
+    "signature": "void crt_unknown_c_FUN_005c3330(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c3320",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c3320"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f98a",
+      "name": "g_InitHandlers",
+      "type": "RuntimeHandlerEntry[203]",
+      "value": null
+    },
+    {
+      "addr": "0061f98b",
+      "name": "g_InitHandlers[0].priority",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f990",
+      "name": "g_InitHandlers[1].status",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f991",
+      "name": "g_InitHandlers[1].priority",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061f992",
+      "name": "g_InitHandlers[1].func",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061fe22",
+      "name": "g_InitHandlers[196].status",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061fe24",
+      "name": "g_InitHandlers[196].func",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "005c202c",
+        "call_type": "direct",
+        "caller": "crt_startup.cpp_WinMainBootstrap_FUN_005c2020",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005bd0b8",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bd078",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      },
+      {
+        "call_addr": "005bd0c8",
+        "call_type": "direct",
+        "caller": "crt_unknown.c_FUN_005bd078",
+        "estimated_params": 1,
+        "instructions_analyzed": 2,
+        "method": "push_count",
+        "reg_params": [
+          "EAX"
+        ],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.0,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 5,
+      "COPY": 21,
+      "INT_ADD": 9,
+      "INT_AND": 18,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LESS": 6,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 9,
+      "INT_SUB": 11,
+      "LOAD": 7,
+      "POPCOUNT": 9,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 136
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 20,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined1"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Inferred register parameter",
+      "line": 5,
+      "match": "in_AL",
+      "severity": "mild",
+      "text": "byte in_AL;",
+      "type": "register_param"
+    },
+    {
+      "description": "Inferred register parameter",
+      "line": 13,
+      "match": "in_AL",
+      "severity": "mild",
+      "text": "bVar2 = in_AL;",
+      "type": "register_param"
+    }
+  ]
+}

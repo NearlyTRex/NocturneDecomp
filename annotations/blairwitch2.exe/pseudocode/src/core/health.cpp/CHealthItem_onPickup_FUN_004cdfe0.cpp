@@ -9,6 +9,6 @@
 void __cdecl core_health_cpp_CHealthItem_onPickup_FUN_004cdfe0(CHealthItem *this_ptr,CDemonActor *owner)
 
 {
-  core_actor_cpp_CDemonActor_onPickup_FUN_00409ec0((CDemonActor *)this_ptr,owner);
+  core_actor_cpp_CDemonActor_onPickup_FUN_00409ec0(&this_ptr->base,owner);
   return;
 }

@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CWeapon.h"
 
 // Structure: CTommyGun
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6e0 (1760 bytes)
 #pragma pack(push, 1)
 typedef struct CTommyGun {
-    char field_0[1760]; // 0x0
+    CWeapon base; // 0x0
+    int fire_frames_remaining; // 0x6d4
+    uint sfx_handles[2]; // 0x6d8
 } CTommyGun;
 #pragma pack(pop)
 

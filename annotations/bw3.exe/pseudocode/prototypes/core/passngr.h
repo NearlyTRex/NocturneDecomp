@@ -25,18 +25,18 @@ CPassenger * __cdecl CPassenger::ctor(CPassenger *this_ptr);
 // Address: 0050a530
 CPassenger * CPassenger::dtor(CPassenger *this_ptr,uint flags);
 
-// Original: core_passngr.cpp_FUN_0050a610
+// Original: core_passngr.cpp_CPassenger_setup_FUN_0050a610
 // Address: 0050a610
-void FUN_0050a610(int param_1);
+void __cdecl CPassenger::setup(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_0050a7d0
+// Original: core_passngr.cpp_CPassenger_process_FUN_0050a7d0
 // Address: 0050a7d0
-void FUN_0050a7d0(CCharacter *param_1,float param_2);
+void __cdecl CPassenger::process(CPassenger *this_ptr,float delta_time);
 
-// Original: core_passngr.cpp_FUN_0050a9b0
+// Original: core_passngr.cpp_CPassenger_renderOpaque_FUN_0050a9b0
 // Address: 0050a9b0
-int FUN_0050a9b0(CDemonActor *param_1);
+int __cdecl CPassenger::renderOpaque(CPassenger *this_ptr);
 
-// Original: core_passngr.cpp_FUN_0050aaa0
+// Original: core_passngr.cpp_CPassenger_archive_FUN_0050aaa0
 // Address: 0050aaa0
-void FUN_0050aaa0(int param_1);
+void __cdecl CPassenger::archive(CPassenger *this_ptr);

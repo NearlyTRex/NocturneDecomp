@@ -21,45 +21,45 @@ CDemonActorType * CLantern::getActorType(CLantern *this_ptr);
 // Address: 0059cbd0
 CLantern * CLantern::ctor(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059ccc0
+// Original: core_lantern.cpp_CLantern_setup_FUN_0059ccc0
 // Address: 0059ccc0
-void FUN_0059ccc0(CWeapon *param_1,int param_2);
+void __cdecl CLantern::setup(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059cce0
+// Original: core_lantern.cpp_CLantern_fire_FUN_0059cce0
 // Address: 0059cce0
-undefined4 FUN_0059cce0(void);
+int __cdecl CLantern::fire(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059ccf0
+// Original: core_lantern.cpp_CLantern_process_FUN_0059ccf0
 // Address: 0059ccf0
-void FUN_0059ccf0(int param_1,float param_2);
+void __cdecl CLantern::process(CLantern *this_ptr,float delta_time);
 
 // Original: core_lantern.cpp_FUN_0059ced0
 // Address: 0059ced0
 void FUN_0059ced0(int param_1);
 
-// Original: core_lantern.cpp_FUN_0059d000
+// Original: core_lantern.cpp_CLantern_renderOpaque_FUN_0059d000
 // Address: 0059d000
-void FUN_0059d000(CWeapon *param_1);
+int __cdecl CLantern::renderOpaque(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059d040
+// Original: core_lantern.cpp_CLantern_renderTransparent_FUN_0059d040
 // Address: 0059d040
-undefined4 FUN_0059d040(int param_1);
+int __cdecl CLantern::renderTransparent(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059d0a0
+// Original: core_lantern.cpp_CLantern_renderAimBeam_FUN_0059d0a0
 // Address: 0059d0a0
-void FUN_0059d0a0(void);
+void __cdecl CLantern::renderAimBeam(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059d0b0
+// Original: core_lantern.cpp_CLantern_getDamage_FUN_0059d0b0
 // Address: 0059d0b0
-undefined4 FUN_0059d0b0(void);
+float __cdecl CLantern::getDamage(CLantern *this_ptr);
 
-// Original: core_lantern.cpp_FUN_0059d0c0
+// Original: core_lantern.cpp_CLantern_canPickup_FUN_0059d0c0
 // Address: 0059d0c0
-undefined4 FUN_0059d0c0(void);
+int __cdecl CLantern::canPickup(CLantern *this_ptr,CDemonActor *picker);
 
-// Original: core_lantern.cpp_FUN_0059d0d0
+// Original: core_lantern.cpp_CLantern_getMuzzlePoint_FUN_0059d0d0
 // Address: 0059d0d0
-void FUN_0059d0d0(int param_1);
+CVector3f * __cdecl CLantern::getMuzzlePoint(CLantern *this_ptr,CVector3f *out_point);
 
 // Original: core_lantern.cpp_CLantern_dtor_FUN_0059d170
 // Address: 0059d170

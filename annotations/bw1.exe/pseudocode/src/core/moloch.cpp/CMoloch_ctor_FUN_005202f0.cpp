@@ -16,12 +16,13 @@ CMoloch * __cdecl core_moloch_cpp_CMoloch_ctor_FUN_005202f0(CMoloch *this_ptr)
   char *pcVar5;
   CMorph *pCVar6;
   
-  pCVar2 = core_hero_cpp_FUN_004ea830((CHero *)this_ptr);
+  pCVar2 = core_hero_cpp_CHero_ctor_FUN_004ea830((CHero *)this_ptr);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00567370
                      ((CDeformableModelInstance *)(pCVar2 + 0x1ffac));
-  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)&pCVar3[1].field_0xd4);
-  *(byte ***)(pCVar4 + -0x222d0) = &g_CMolochVTable;
-  core_skeleton_cpp_FUN_00569f50(pCVar4 + -0x222cc,"moloch_h.dfm");
+  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)&pCVar3[1].bone_origins[10].y);
+  *(CHero_full_vtable **)(pCVar4 + -0x222d0) = &g_CMolochVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)(pCVar4 + -0x222cc),"moloch_h.dfm");
   pcVar5 = "molochToDemon";
   pCVar6 = pCVar4 + -200;
   do {

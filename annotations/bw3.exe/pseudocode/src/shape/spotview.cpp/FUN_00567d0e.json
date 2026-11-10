@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 309,
-    "complexity_score": 774,
+    "complexity_score": 759,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 109,
-    "suspect_count": 64,
+    "suspect_count": 63,
     "suspect_types": [
       "raw_address_pointer_store",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -34,14 +33,14 @@
   },
   "function_calls": [
     {
+      "addr": "00567ff0",
+      "is_variadic": false,
+      "name": "shape_spotview.cpp_CSpotView_clampValues_FUN_00567ff0"
+    },
+    {
       "addr": "00567cc0",
       "is_variadic": false,
       "name": "shape_spotview.cpp_CSpotView_reset_FUN_00567cc0"
-    },
-    {
-      "addr": "00567ff0",
-      "is_variadic": false,
-      "name": "shape_spotview.cpp_FUN_00567ff0"
     }
   ],
   "globals": [
@@ -192,19 +191,11 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&g_CGamePtr->field_0x314 * fStack_20;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar5 = *(float *)(param_1 + 0x2c) * (float)_DAT_005d5c1e;",
+      "text": "fVar5 = param_1->distance * (float)_DAT_005d5c1e;",
       "type": "unnamed_param"
     },
     {
@@ -212,7 +203,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_c = *(float *)(param_1 + 0x2c);",
+      "text": "fStack_c = param_1->distance;",
       "type": "unnamed_param"
     },
     {
@@ -220,7 +211,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(float *)(param_1 + 0x2c) < 1.0) {",
+      "text": "if (param_1->distance < 1.0) {",
       "type": "unnamed_param"
     },
     {
@@ -244,7 +235,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + fVar2;",
+      "text": "param_1->yaw = param_1->yaw + fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -252,7 +243,7 @@
       "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + fVar2;",
+      "text": "param_1->yaw = param_1->yaw + fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -268,7 +259,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) - fVar2;",
+      "text": "param_1->yaw = param_1->yaw - fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -276,7 +267,7 @@
       "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) - fVar2;",
+      "text": "param_1->yaw = param_1->yaw - fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -292,7 +283,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + fVar2;",
+      "text": "param_1->yaw = param_1->yaw + fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -300,7 +291,7 @@
       "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) + fVar2;",
+      "text": "param_1->yaw = param_1->yaw + fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -316,7 +307,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) - fVar2;",
+      "text": "param_1->yaw = param_1->yaw - fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -324,7 +315,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x28) = *(float *)(param_1 + 0x28) - fVar2;",
+      "text": "param_1->yaw = param_1->yaw - fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -348,7 +339,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + fVar2;",
+      "text": "param_1->pitch = param_1->pitch + fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -356,7 +347,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) + fVar2;",
+      "text": "param_1->pitch = param_1->pitch + fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -372,7 +363,7 @@
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) - fVar2;",
+      "text": "param_1->pitch = param_1->pitch - fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -380,7 +371,7 @@
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x24) = *(float *)(param_1 + 0x24) - fVar2;",
+      "text": "param_1->pitch = param_1->pitch - fVar2;",
       "type": "unnamed_param"
     },
     {
@@ -404,7 +395,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) - fStack_c;",
+      "text": "param_1->pan_x = param_1->pan_x - fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -412,7 +403,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) - fStack_c;",
+      "text": "param_1->pan_x = param_1->pan_x - fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -428,7 +419,7 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) + fStack_c;",
+      "text": "param_1->pan_x = param_1->pan_x + fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -436,7 +427,7 @@
       "line": 74,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x30) = *(float *)(param_1 + 0x30) + fStack_c;",
+      "text": "param_1->pan_x = param_1->pan_x + fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -452,7 +443,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + fStack_c;",
+      "text": "param_1->pan_y = param_1->pan_y + fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -460,7 +451,7 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) + fStack_c;",
+      "text": "param_1->pan_y = param_1->pan_y + fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +467,7 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) - fStack_c;",
+      "text": "param_1->pan_y = param_1->pan_y - fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -484,7 +475,7 @@
       "line": 82,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x34) = *(float *)(param_1 + 0x34) - fStack_c;",
+      "text": "param_1->pan_y = param_1->pan_y - fStack_c;",
       "type": "unnamed_param"
     },
     {
@@ -508,7 +499,7 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2c) = *(float *)(param_1 + 0x2c) - fVar5;",
+      "text": "param_1->distance = param_1->distance - fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -516,7 +507,7 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2c) = *(float *)(param_1 + 0x2c) - fVar5;",
+      "text": "param_1->distance = param_1->distance - fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -532,7 +523,7 @@
       "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2c) = *(float *)(param_1 + 0x2c) + fVar5;",
+      "text": "param_1->distance = param_1->distance + fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -540,7 +531,7 @@
       "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2c) = *(float *)(param_1 + 0x2c) + fVar5;",
+      "text": "param_1->distance = param_1->distance + fVar5;",
       "type": "unnamed_param"
     },
     {
@@ -572,7 +563,7 @@
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x38) = *(float *)(param_1 + 0x38) / (fStack_20 * fVar3);",
+      "text": "param_1->zoom = param_1->zoom / (fStack_20 * fVar3);",
       "type": "unnamed_param"
     },
     {
@@ -580,7 +571,7 @@
       "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x38) = *(float *)(param_1 + 0x38) / (fStack_20 * fVar3);",
+      "text": "param_1->zoom = param_1->zoom / (fStack_20 * fVar3);",
       "type": "unnamed_param"
     },
     {
@@ -604,7 +595,7 @@
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x38) = *(float *)(param_1 + 0x38) * fStack_20 * fVar3;",
+      "text": "param_1->zoom = param_1->zoom * fStack_20 * fVar3;",
       "type": "unnamed_param"
     },
     {
@@ -612,7 +603,7 @@
       "line": 102,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x38) = *(float *)(param_1 + 0x38) * fStack_20 * fVar3;",
+      "text": "param_1->zoom = param_1->zoom * fStack_20 * fVar3;",
       "type": "unnamed_param"
     },
     {
@@ -636,7 +627,7 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_spotview_cpp_FUN_00567ff0(param_1);",
+      "text": "shape_spotview_cpp_CSpotView_clampValues_FUN_00567ff0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -660,7 +651,7 @@
       "line": 111,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_spotview_cpp_FUN_00567ff0(param_1);",
+      "text": "shape_spotview_cpp_CSpotView_clampValues_FUN_00567ff0(param_1);",
       "type": "unnamed_param"
     }
   ]

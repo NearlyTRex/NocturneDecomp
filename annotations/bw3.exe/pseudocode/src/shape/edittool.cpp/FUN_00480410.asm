@@ -11,9 +11,9 @@
 ;
 ; XREF[5]:
 ;   core_game.cpp_FUN_004b6f30 at 004b796c
-;   shape_edittool.cpp_FUN_0047d230 at 0047d897
-;   shape_edittool.cpp_FUN_004843d0 at 004849d2
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 004849d2
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047cb5a
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230 at 0047d897
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c4ff
 ;
 ; Referenced Globals:

@@ -12,8 +12,8 @@
 ; XREF[4]:
 ;   core_fire.cpp_CLaserBeam_render_FUN_004b01a0 at 004b1080
 ;   core_manpuz.cpp_FUN_00505060 at 0050544b
-;   core_path.cpp_FUN_00534a70 at 00534c86
-;   core_path.cpp_FUN_00534ca0 at 0053506c
+;   core_path.cpp_CPathMap_renderPathMap_FUN_00534ca0 at 0053506c
+;   core_path.cpp_renderGridQuad_FUN_00534a70 at 00534c86
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

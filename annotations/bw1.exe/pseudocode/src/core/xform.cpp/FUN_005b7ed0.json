@@ -25,19 +25,19 @@
     {
       "addr": "0040f4d0",
       "from_addr": "0040f69e",
-      "name": "core_baron.cpp_FUN_0040f4d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0041d540",
-      "from_addr": "0041d6d5",
-      "name": "core_boneguy.cpp_FUN_0041d540",
+      "name": "core_baron.cpp_CBaron_process_FUN_0040f4d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041d760",
       "from_addr": "0041d795",
-      "name": "core_boneguy.cpp_FUN_0041d760",
+      "name": "core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_0041d760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041d540",
+      "from_addr": "0041d6d5",
+      "name": "core_boneguy.cpp_CBoneGuy_explode_FUN_0041d540",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,19 +67,19 @@
     {
       "addr": "004c89c0",
       "from_addr": "004c8a0b",
-      "name": "core_gabriela.cpp_FUN_004c89c0",
+      "name": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e9250",
       "from_addr": "004e9537",
-      "name": "core_haystack.cpp_FUN_004e9250",
+      "name": "core_haystack.cpp_CHaystack_process_FUN_004e9250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f0e50",
       "from_addr": "004f11ac",
-      "name": "core_icepick.cpp_FUN_004f0e50",
+      "name": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -91,19 +91,19 @@
     {
       "addr": "00540df0",
       "from_addr": "00541221",
-      "name": "core_scat.cpp_FUN_00540df0",
+      "name": "core_scat.cpp_CScat_process_FUN_00540df0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00588ad0",
       "from_addr": "00588de6",
-      "name": "core_stranger.cpp_FUN_00588ad0",
+      "name": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00593150",
       "from_addr": "005934b0",
-      "name": "core_svetlana.cpp_FUN_00593150",
+      "name": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,7 +146,7 @@
       {
         "call_addr": "0040f69e",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_0040f4d0",
+        "caller": "core_baron.cpp_CBaron_process_FUN_0040f4d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,7 +173,7 @@
       {
         "call_addr": "004c8a0b",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c89c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +187,7 @@
       {
         "call_addr": "004c8ab4",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c89c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -200,7 +200,7 @@
       {
         "call_addr": "004c9094",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c89c0",
+        "caller": "core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -214,7 +214,7 @@
       {
         "call_addr": "004e9537",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004e9250",
+        "caller": "core_haystack.cpp_CHaystack_process_FUN_004e9250",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,7 +228,7 @@
       {
         "call_addr": "004f11ac",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004f0e50",
+        "caller": "core_icepick.cpp_CIcePick_process_FUN_004f0e50",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -241,7 +241,7 @@
       {
         "call_addr": "00541221",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_00540df0",
+        "caller": "core_scat.cpp_CScat_process_FUN_00540df0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -254,7 +254,7 @@
       {
         "call_addr": "00588de6",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00588ad0",
+        "caller": "core_stranger.cpp_CStranger_updateProceduralAnimation_FUN_00588ad0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -268,7 +268,7 @@
       {
         "call_addr": "005934b0",
         "call_type": "direct",
-        "caller": "core_svetlana.cpp_FUN_00593150",
+        "caller": "core_svetlana.cpp_CSvetlana_process_FUN_00593150",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

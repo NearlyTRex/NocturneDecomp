@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01c6b5b4
 ;
 ; Called Functions:
-;   engine_2d.c_FUN_00402cf0
+;   engine_2d.c_clipAndDrawLine_FUN_00402cf0
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH EAX                            ; 00402cce
     MOV EDX,dword ptr [ESP + 0x30]      ; 00402ccf
     PUSH EDX                            ; 00402cd3
-    CALL engine_2d.c_FUN_00402cf0       ; 00402cd4
-        ;   XREF to: 00402cf0 (UNCONDITIONAL_CALL)  ; undefined engine_2d.c_FUN_00402cf0()
+    CALL engine_2d.c_clipAndDrawLine_FUN_00402cf0 ; 00402cd4
+        ;   XREF to: 00402cf0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clipAndDrawLine_FUN_00402cf0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x20                        ; 00402cd9
     POP EBP                             ; 00402cdc
     POP EDI                             ; 00402cdd

@@ -11,11 +11,13 @@ CLZWDecompress * __cdecl support_codec_cpp_CLZWDecompress_ctor_FUN_004436b0(CLZW
 {
   CCodec *pCVar1;
   CLZWDictionary *pCVar2;
+  uint *puVar3;
   
-  pCVar1 = support_codec_cpp_CCodec_ctor_FUN_00442ba0((CCodec *)this_ptr);
+  pCVar1 = support_codec_cpp_CCodec_ctor_FUN_00442ba0(&this_ptr->base);
   pCVar2 = support_codec_cpp_CLZWDictionary_ctor_FUN_00442f70((CLZWDictionary *)(pCVar1 + 1));
-  *(byte ***)(pCVar2 + -4) = &PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00444210_005fd9b4;
-  *(int *)(pCVar2 + 0x1c) = buffer_size;
-  *(int *)(pCVar2 + 0x20) = initial_bits;
-  return (CLZWDecompress *)(pCVar2 + -4);
+  puVar3 = &pCVar2[-1].bit_state.accumulated_bits;
+  *puVar3 = (uint)&PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00444210_005fd9b4;
+  pCVar2[1].table_capacity = buffer_size;
+  pCVar2[1].num_bits = initial_bits;
+  return (CLZWDecompress *)puVar3;
 }

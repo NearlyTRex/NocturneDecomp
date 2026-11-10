@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 107,
+    "complexity_score": 45,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
-    "suspect_count": 8,
+    "pseudocode_lines": 20,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 44
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -116,64 +115,16 @@
       "line": 13,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CHealthItemVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CHealthItemVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CHealthItemVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0x42480000;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 18,
+      "line": 23,
       "match": "this_ptr_00[-2].",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-2].field_0x140 = 0;",
+      "text": "return (CHealthItem *)(this_ptr_00[-2].part_visibility_flags + 0x11);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-2].field_0x140 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x8 = 0x3e800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 20,
-      "match": "this_ptr_00[-2].",
-      "severity": "mild",
-      "text": "return (CHealthItem *)&this_ptr_00[-2].field_0x44;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "return (CHealthItem *)&this_ptr_00[-2].field_0x44;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

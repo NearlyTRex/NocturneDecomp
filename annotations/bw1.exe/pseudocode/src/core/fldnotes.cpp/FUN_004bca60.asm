@@ -21,7 +21,7 @@
 ;   core_fldnotes.cpp_FUN_004bb510
 ;   core_fldnotes.cpp_FUN_004bcb10
 ;   core_main.c_FUN_005030e0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EBP                            ; 004bca62
     MOV ESI,dword ptr [ESP + 0x14]      ; 004bca63
     PUSH 0x1c                           ; 004bca67
-    CALL crt_unknown.c_FUN_005c0f32     ; 004bca69
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004bca69
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004bca6e
     TEST EAX,EAX                        ; 004bca71
     JNZ 0x004bcab7                      ; 004bca73

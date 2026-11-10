@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 88,
+    "complexity_score": 13,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 13,
-    "suspect_count": 7,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 27
   },
   "cross_references": [
     {
       "addr": "00410430",
       "from_addr": "00410443",
-      "name": "core_baron.cpp_FUN_00410430",
+      "name": "core_baron.cpp_factoryFuncBaronWeapon_FUN_00410430",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +46,7 @@
       {
         "call_addr": "00410443",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_00410430",
+        "caller": "core_baron.cpp_factoryFuncBaronWeapon_FUN_00410430",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -99,64 +97,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x154 = &g_CBaronWeaponVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2e0 = 8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2e8 = 0x43480000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2ec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2ec = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2f0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2f0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x578 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 150,
+    "complexity_score": 135,
     "cross_reference_count": 30,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 10,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy"
     ],
@@ -40,7 +39,7 @@
     {
       "addr": "0040f050",
       "from_addr": "0040f06a",
-      "name": "core_backgnd.cpp_FUN_0040f050",
+      "name": "core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -64,7 +63,7 @@
     {
       "addr": "004257f0",
       "from_addr": "00425879",
-      "name": "core_bugs.cpp_FUN_004257f0",
+      "name": "core_bugs.cpp_CBugs_archive_FUN_004257f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -76,7 +75,7 @@
     {
       "addr": "00478490",
       "from_addr": "004784ab",
-      "name": "core_door.cpp_FUN_00478490",
+      "name": "core_door.cpp_CDoor_archive_FUN_00478490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -88,7 +87,7 @@
     {
       "addr": "0049fff0",
       "from_addr": "004a0108",
-      "name": "core_emitter.cpp_FUN_0049fff0",
+      "name": "core_emitter.cpp_CEmitter_archive_FUN_0049fff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,7 +111,7 @@
     {
       "addr": "004e3c70",
       "from_addr": "004e3c8c",
-      "name": "core_goggles.cpp_FUN_004e3c70",
+      "name": "core_goggles.cpp_CGoggles_archive_FUN_004e3c70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -178,7 +177,7 @@
     {
       "addr": "005a4110",
       "from_addr": "005a414b",
-      "name": "core_tvbat.cpp_FUN_005a4110",
+      "name": "core_tvbat.cpp_CTVBat_archive_FUN_005a4110",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -271,7 +270,7 @@
       {
         "call_addr": "0040f06a",
         "call_type": "direct",
-        "caller": "core_backgnd.cpp_FUN_0040f050",
+        "caller": "core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f050",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -326,7 +325,7 @@
       {
         "call_addr": "00425879",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_004257f0",
+        "caller": "core_bugs.cpp_CBugs_archive_FUN_004257f0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -469,16 +468,8 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x78;",
+      "text": "pcVar2 = param_1->model_name;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x78;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

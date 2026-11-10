@@ -9,7 +9,7 @@
 void __cdecl core_baron_cpp_CBaronWeapon_process_FUN_004104e0(CBaronWeapon *this_ptr,float delta_time)
 
 {
-  core_baron_cpp_FUN_00410640(this_ptr);
-  core_weapon_cpp_CWeapon_process_FUN_005ad770((CWeapon *)this_ptr,delta_time);
+  core_baron_cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640(this_ptr);
+  core_weapon_cpp_CWeapon_process_FUN_005ad770(&this_ptr->base,delta_time);
   return;
 }

@@ -20,10 +20,10 @@
 ;   undefined4 DAT_01ed36dc
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170
 ;   core_skeleton.cpp_CDeformableModelInstance_getBoneTransform_FUN_0054f850
 ;   core_skeleton.cpp_CDeformableModelInstance_setBoneTransform_FUN_0054f920
 ;   core_skeleton.cpp_FUN_0054c1b0
-;   core_skeleton.cpp_FUN_0054e170
 ;   core_xform.cpp_FUN_00585de0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00585d10
 ;
@@ -89,8 +89,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0051e341
     MOVSD ES:EDI,ESI                    ; 0051e342
     MOVSD ES:EDI,ESI                    ; 0051e343
-    CALL core_skeleton.cpp_FUN_0054e170 ; 0051e344
-        ;   XREF to: 0054e170 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e170(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 ; 0051e344
+        ;   XREF to: 0054e170 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
     ADD ESP,0x14                        ; 0051e349
     MOV ECX,dword ptr [ESP + 0x1aec]    ; 0051e34c
     PUSH ECX                            ; 0051e353

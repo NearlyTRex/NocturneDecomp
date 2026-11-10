@@ -21,33 +21,33 @@ CDemonActorType * CKedward::getActorType(CKedward *this_ptr);
 // Address: 0058fd70
 CKedward * CKedward::ctor(CKedward *this_ptr);
 
-// Original: core_kedward.cpp_FUN_0058fe70
+// Original: core_kedward.cpp_CKedward_setup_FUN_0058fe70
 // Address: 0058fe70
-void FUN_0058fe70(CEnemy *param_1);
+void __cdecl CKedward::setup(CKedward *this_ptr);
 
-// Original: core_kedward.cpp_FUN_00590010
+// Original: core_kedward.cpp_CKedward_process_FUN_00590010
 // Address: 00590010
-void FUN_00590010(CEnemy *param_1,float param_2);
+void __cdecl CKedward::process(CKedward *this_ptr,float delta_time);
 
-// Original: core_kedward.cpp_FUN_00591670
+// Original: core_kedward.cpp_CKedward_renderOpaque_FUN_00591670
 // Address: 00591670
-void FUN_00591670(CCharacter *param_1);
+int __cdecl CKedward::renderOpaque(CKedward *this_ptr);
 
-// Original: core_kedward.cpp_FUN_00591680
+// Original: core_kedward.cpp_CKedward_renderTransparent_FUN_00591680
 // Address: 00591680
-undefined4 FUN_00591680(CCharacter *param_1);
+int __cdecl CKedward::renderTransparent(CKedward *this_ptr);
 
-// Original: core_kedward.cpp_FUN_005918e0
+// Original: core_kedward.cpp_CKedward_processDamage_FUN_005918e0
 // Address: 005918e0
-void FUN_005918e0(int param_1,int param_2);
+void __cdecl CKedward::processDamage(CKedward *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_kedward.cpp_FUN_005919a0
 // Address: 005919a0
 void FUN_005919a0(int param_1);
 
-// Original: core_kedward.cpp_FUN_005919f0
+// Original: core_kedward.cpp_CKedward_archive_FUN_005919f0
 // Address: 005919f0
-void FUN_005919f0(int param_1);
+void __cdecl CKedward::archive(CKedward *this_ptr);
 
 // Original: core_kedward.cpp_CKedward_dtor_FUN_00591ab0
 // Address: 00591ab0

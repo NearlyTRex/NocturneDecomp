@@ -18,8 +18,8 @@
 ;   crt_memory.c_memset_FUN_005bfb70
 ;   crt_unknown.c_FUN_005c08d0
 ;   crt_unknown.c_FUN_005c09f0
-;   engine_dosio.cpp_FUN_00479580
-;   engine_dosio.cpp_FUN_004795b0
+;   engine_dosio.cpp_makePath_FUN_004795b0
+;   engine_dosio.cpp_splitPath_FUN_00479580
 ;   engine_font.cpp_FUN_004c1520
 ;   engine_mini3d.cpp_FUN_00512200
 ;   support_trstream.cpp_FUN_005a0fd0
@@ -116,8 +116,8 @@ section .text
     PUSH 0x0                            ; 004c10cb
     ADD EAX,0x4                         ; 004c10cd
     PUSH EAX                            ; 004c10d0
-    CALL engine_dosio.cpp_FUN_00479580  ; 004c10d1
-        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 004c10d1
+        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004c10d6
     PUSH 0x5e08c3                       ; 004c10d9
     LEA EAX,[ESP + 0x30c]               ; 004c10de
@@ -126,8 +126,8 @@ section .text
     PUSH 0x0                            ; 004c10e8
     LEA EAX,[ESP + 0x218]               ; 004c10ea
     PUSH EAX                            ; 004c10f1
-    CALL engine_dosio.cpp_FUN_004795b0  ; 004c10f2
-        ;   XREF to: 004795b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_004795b0(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_004795b0 ; 004c10f2
+        ;   XREF to: 004795b0 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_004795b0(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004c10f7
     LEA EAX,[ESP + 0x408]               ; 004c10fa
     PUSH EAX                            ; 004c1101

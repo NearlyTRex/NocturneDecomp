@@ -16,16 +16,16 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054
   
   iVar3 = 0;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
-  if (0 < *(int *)&pCVar1->field_0x1de78) {
+  if (0 < pCVar1->bone_count) {
     puVar4 = &this_ptr->field_0x6b0;
     pCVar2 = this_ptr;
     do {
       core_xform_cpp_setIdentityQuaternion_FUN_00585970(puVar4);
       iVar3 = iVar3 + 1;
-      *(uint *)&pCVar2->field_0xcf0 = *(uint *)&pCVar2->field_0x514;
+      *(float *)&pCVar2->field_0xcf0 = pCVar2->rest_bone_scales[0];
       puVar4 = puVar4 + 0x10;
-      pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x4;
-    } while (iVar3 < *(int *)&pCVar1->field_0x1de78);
+      pCVar2 = (CDeformableModelInstance *)&(pCVar2->base).current_motion_index;
+    } while (iVar3 < pCVar1->bone_count);
   }
   *(uint *)&this_ptr->field_0x6ac = 0;
   *(uint *)&this_ptr->field_0x6a8 = *(uint *)&this_ptr->field_0x6ac;

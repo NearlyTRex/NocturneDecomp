@@ -17,7 +17,7 @@
 ;   void* PTR_DAT_0061f4d4 = 0061f484
 ;
 ; Called Functions:
-;   unkafter_morph.cpp_FUN_005c39c0
+;   crt_unknown.c_FUN_005c39c0
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     OR DH,0x40                          ; 005c0850
     PUSH EBX                            ; 005c0853
     MOV byte ptr [EAX + 0x1],DH         ; 005c0854 | DAT_0061f485
-    CALL unkafter_morph.cpp_FUN_005c39c0 ; 005c0857
-        ;   XREF to: 005c39c0 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c39c0()
+    CALL crt_unknown.c_FUN_005c39c0     ; 005c0857
+        ;   XREF to: 005c39c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c39c0()
     ADD ESP,0x4                         ; 005c085c
     TEST EAX,EAX                        ; 005c085f
     JZ 0x005c086d                       ; 005c0861

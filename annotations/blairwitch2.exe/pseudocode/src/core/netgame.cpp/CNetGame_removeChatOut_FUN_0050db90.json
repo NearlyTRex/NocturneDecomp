@@ -1,0 +1,552 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 272,
+    "complexity_score": 308,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 22,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 123,
+    "suspect_count": 15,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_stride_bytecount",
+      "pointer_truncation",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 395
+  },
+  "cross_references": [
+    {
+      "addr": "0050c190",
+      "from_addr": "0050c225",
+      "name": "core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0050db90",
+    "address_range": [
+      [
+        "0050db90",
+        "0050df15"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_netgame.cpp_CNetGame_removeChatOut_FUN_0050db90",
+    "signature": "void __cdecl core_netgame_cpp_CNetGame_removeChatOut_FUN_0050db90(CNetGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "0050cdf0",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_sendPacket_FUN_0050cdf0"
+    },
+    {
+      "addr": "005ba1f0",
+      "is_variadic": false,
+      "name": "crt_string.c_memmove_FUN_005ba1f0"
+    },
+    {
+      "addr": "0058e9e0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e039d",
+      "name": "s_core_netgame_cpp_005e039d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e03b1",
+      "name": "s_removeChatOut_invalid_in_005e03b1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e0c75",
+      "name": "DAT_005e0c75",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0c7d",
+      "name": "DAT_005e0c7d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0c85",
+      "name": "DAT_005e0c85",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0c8d",
+      "name": "DAT_005e0c8d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0c95",
+      "name": "DAT_005e0c95",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e0c9d",
+      "name": "DAT_005e0c9d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e34",
+      "name": "DAT_01d34e34",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d34e38",
+      "name": "DAT_01d34e38",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51050",
+      "name": "DAT_01d51050",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51054",
+      "name": "DAT_01d51054",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51058",
+      "name": "DAT_01d51058",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5105c",
+      "name": "DAT_01d5105c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5105d",
+      "name": "DAT_01d5105d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51064",
+      "name": "DAT_01d51064",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51068",
+      "name": "DAT_01d51068",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51069",
+      "name": "DAT_01d51069",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5106a",
+      "name": "DAT_01d5106a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d5106b",
+      "name": "DAT_01d5106b",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0050c225",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_receivePackets_FUN_0050c190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.63963963963964,
+    "instruction_count": 222,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 9,
+      "BOOL_OR": 17,
+      "BRANCH": 4,
+      "CALL": 4,
+      "CBRANCH": 20,
+      "COPY": 338,
+      "FLOAT2FLOAT": 18,
+      "FLOAT_EQUAL": 8,
+      "FLOAT_LESS": 8,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 16,
+      "INT2FLOAT": 4,
+      "INT_ADD": 94,
+      "INT_AND": 143,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 89,
+      "INT_LEFT": 33,
+      "INT_LESS": 14,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 54,
+      "INT_OR": 45,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 18,
+      "INT_SDIV": 1,
+      "INT_SEXT": 10,
+      "INT_SLESS": 44,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 32,
+      "INT_XOR": 6,
+      "INT_ZEXT": 34,
+      "LOAD": 47,
+      "POPCOUNT": 44,
+      "RETURN": 1,
+      "STORE": 50,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 1252
+  },
+  "stack_frame": {
+    "frame_size": 352,
+    "local_size": 348,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_158",
+        "offset": -344,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_154",
+        "offset": -340,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_150",
+        "offset": -336,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14c",
+        "offset": -332,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_148",
+        "offset": -328,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_147",
+        "offset": -327,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_143",
+        "offset": -323,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_142",
+        "offset": -322,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNetGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0050db9c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_01d51054",
+      "severity": "mild",
+      "text": "local_3c = (int *)&DAT_01d51054;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "local_1c = (SNetworkAddr *)&local_40->field_0x1c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "local_150 = *(float *)&local_24->players[0].field_0x28 * (float)_DAT_005e0c7d;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 91,
+      "match": "(char *)((int)piVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)piVar4 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 92,
+      "match": "(int *)((int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 102,
+      "match": "(int *)((int)local_20",
+      "severity": "moderate",
+      "text": "local_20 = (int *)((int)local_20 + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 103,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "local_24 = (CNetGame *)&local_24->players[0].field_0x60;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_01d51054",
+      "severity": "mild",
+      "text": "(&DAT_01d51054 + iVar2 * 0x114,&DAT_01d51054 + (iVar2 + 1) * 0x114,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 121,
+      "match": "DAT_01d51054",
+      "severity": "mild",
+      "text": "(&DAT_01d51054 + iVar2 * 0x114,&DAT_01d51054 + (iVar2 + 1) * 0x114,",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 91,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "cVar1 = *(char *)((int)piVar4 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `piVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)piVar4",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)piVar4 + 2);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `local_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 102,
+      "match": "(int)local_20",
+      "severity": "moderate",
+      "text": "local_20 = (int *)((int)local_20 + 1);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_24` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&local_24->vertices[0].a`). Replace `local_24->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 103,
+      "match": "local_24 = (T *)&local_24->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "local_24 = (CNetGame *)&local_24->players[0].field_0x60;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride ((_DAT_01d51050 - iVar2) * 0x114) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 120,
+      "match": "memmove",
+      "severity": "moderate",
+      "text": "memmove",
+      "type": "pointer_stride_bytecount"
+    }
+  ]
+}

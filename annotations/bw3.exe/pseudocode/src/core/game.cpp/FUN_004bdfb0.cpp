@@ -29,23 +29,23 @@ void __cdecl core_game_cpp_FUN_004bdfb0(CGame *this_ptr,char *save_filename,int 
   char *file_pattern;
   uint uVar14;
   char local_578 [260];
-  byte local_474 [260];
+  char local_474 [260];
   char local_370 [256];
   char local_270 [256];
   char local_170 [200];
   byte local_a8 [52];
   CInStreamFile local_74;
   COutStreamFile local_48;
-  byte *local_40;
+  int *local_40;
   byte local_3c [4];
   int local_38;
   uint local_34;
-  byte *local_30;
+  int *local_30;
   byte *local_2c;
-  byte *local_28;
+  float *local_28;
   char *local_24;
   byte *local_20;
-  byte *local_1c;
+  float *local_1c;
   uint local_18;
   int local_14;
   
@@ -76,13 +76,13 @@ void __cdecl core_game_cpp_FUN_004bdfb0(CGame *this_ptr,char *save_filename,int 
   if (load_mode != 0) {
     _DAT_01c5b0e0 = _DAT_01549aa8;
   }
-  local_24 = &this_ptr->field_0xa7c;
+  local_24 = this_ptr->chapter_reload_filename;
   local_20 = &this_ptr->field_0x298;
-  local_30 = &this_ptr->field_0x27c;
-  local_40 = &this_ptr->field_0x274;
+  local_30 = &this_ptr->total_kill_count;
+  local_40 = &this_ptr->damageable_enemy_count;
   local_2c = &this_ptr->field_0x294;
-  local_28 = &this_ptr->field_0x270;
-  local_1c = &this_ptr->field_0x278;
+  local_28 = &this_ptr->total_game_time;
+  local_1c = &this_ptr->total_play_time;
   do {
     pcVar9 = save_filename;
     pcVar6 = local_578;
@@ -92,7 +92,7 @@ void __cdecl core_game_cpp_FUN_004bdfb0(CGame *this_ptr,char *save_filename,int 
       search_directory = &DAT_005c3671;
       pcVar9 = local_578;
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Select file to load");
-      iVar2 = shape_edittool_cpp_FUN_0047db70
+      iVar2 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
                         (g_CEditorToolsPtr,pcVar6,search_directory,file_pattern,pcVar9,uVar14);
       if (iVar2 == 0) {
 LAB_004be478:
@@ -161,7 +161,7 @@ LAB_004be22a:
       _fclose(file_handle);
       unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_74);
       support_trstream_cpp_COutStreamFile_ctor_FUN_005747c0(&local_48);
-      FUN_005a28c0(local_474,"%s\\%s",&DAT_005c3696,local_578);
+      _sprintf(local_474,"%s\\%s");
       iVar2 = support_trstream_cpp_FUN_00573f50(&local_74,local_474,1);
       if (iVar2 == 0) {
         pcVar9 = support_newmsg_cpp_getLocalizedString_FUN_00508960
@@ -182,7 +182,7 @@ LAB_004be22a:
         return;
       }
       support_codec_cpp_CLZWDecompress_ctor_FUN_00441310((CLZWDecompress *)local_a8,0x8000,8);
-      support_codec_cpp_FUN_00441350((CLZWDecompress *)local_a8);
+      support_codec_cpp_CLZWDecompress_init_FUN_00441350((CLZWDecompress *)local_a8);
       support_codec_cpp_FUN_00441390(local_a8,&local_74,&local_48);
       support_codec_cpp_FUN_004413f0(local_a8,&local_48);
       unkafter_turret_cpp_FUN_00573db0(&local_74);
@@ -249,7 +249,8 @@ LAB_004be22a:
             }
             _fscanf(file_handle,"%[^\n]\n",local_170);
             uVar14 = g_CHeroClassInfo.name_hash;
-            pCVar3 = core_mission_cpp_FUN_004f6e90(0x01D81080,local_170);
+            pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90
+                               (0x01D81080,local_170);
             iVar5 = core_actor_cpp_castToClassHash_FUN_0040c840(pCVar3,uVar14);
             *(int *)(iVar2 + 0x1d5ba04) = iVar5;
             if (iVar5 == 0) {
@@ -269,7 +270,7 @@ LAB_004be22a:
           core_gore_cpp_CGore_reset_FUN_004ce560(g_CGorePtr);
         }
         else if (local_38 == 4) {
-          core_gore_cpp_FUN_004cf010(g_CGorePtr,file_handle);
+          core_gore_cpp_CGore_load_FUN_004cf010(g_CGorePtr,file_handle);
         }
         if (local_38 < 7) {
           core_fire_cpp_FUN_004a1480(0x01C73654);
@@ -312,9 +313,9 @@ LAB_004be22a:
           return;
         }
         core_mission_cpp_CDemonMission_run_FUN_004f72a0(0x01D81080);
-        if (*(int *)&this_ptr->field_0xa78 == 0) goto LAB_004be478;
+        if (this_ptr->need_chapter_reload == 0) goto LAB_004be478;
         save_filename = local_24;
-        *(uint *)&this_ptr->field_0xa78 = 0;
+        this_ptr->need_chapter_reload = 0;
       }
     }
   } while( true );

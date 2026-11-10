@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_menu.cpp_FUN_004ea280 at 004ea48e
-;   core_menu.cpp_FUN_004ea4d0 at 004ea84a
+;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea84a
 ;   core_moon.cpp_CMoon_dtor_FUN_004f9450 at 004f9456
 ;
 ; Called Functions:

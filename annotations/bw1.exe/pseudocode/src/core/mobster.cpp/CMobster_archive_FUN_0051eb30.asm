@@ -23,11 +23,11 @@
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b6f0
 ;   core_actor.cpp_archiveClothList_FUN_0040bce0
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
+;   core_actor.cpp_archiveMotionState_FUN_0040b870
 ;   core_actor.cpp_archiveString_FUN_0040b440
-;   core_actor.cpp_FUN_0040b7f0
-;   core_actor.cpp_FUN_0040b870
 ;   core_enemy.cpp_CEnemy_archive_FUN_004a0520
 ;
 ; *****************************************************************************
@@ -50,8 +50,8 @@ section .text
     PUSH 0x5e9ea0                       ; 0051eb52 | = "modelName"
     LEA EAX,[EBX + 0x158]               ; 0051eb57
     PUSH EAX                            ; 0051eb5d
-    CALL core_actor.cpp_FUN_0040b7f0    ; 0051eb5e
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 ; 0051eb5e
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
     MOV EDX,dword ptr [0x0061f7c4]      ; 0051eb63 | g_CMobsterClassVersion
     ADD ESP,0x8                         ; 0051eb69
     CMP EDX,0x4                         ; 0051eb6c
@@ -61,8 +61,8 @@ section .text
         ;   Label: LAB_0051eb75
     LEA EAX,[EBX + 0x158]               ; 0051eb7a
     PUSH EAX                            ; 0051eb80
-    CALL core_actor.cpp_FUN_0040b870    ; 0051eb81
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b870(CMotionController * motion_controller, char * property_name)
+    CALL core_actor.cpp_archiveMotionState_FUN_0040b870 ; 0051eb81
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040b870(CMotionController * motion_controller, char * property_name)
     MOV ECX,dword ptr [0x0061f7c4]      ; 0051eb86 | g_CMobsterClassVersion
     ADD ESP,0x8                         ; 0051eb8c
     CMP ECX,0x2                         ; 0051eb8f

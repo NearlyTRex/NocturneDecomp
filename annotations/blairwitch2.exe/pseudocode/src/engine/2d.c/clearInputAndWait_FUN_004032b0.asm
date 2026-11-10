@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[26]:
+;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be074
+;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd6ef
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be454
-;   core_game.cpp_FUN_004b6170 at 004b66a5
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b66a5
 ;   core_game.cpp_FUN_004bcbf0 at 004bcfaa
-;   core_game.cpp_FUN_004bd570 at 004bd6ef
-;   core_game.cpp_FUN_004bdfb0 at 004be074
 ;   core_main.c_FUN_004e45e0 at 004e45e9
 ;   core_menu.cpp_FUN_004ebf10 at 004ec9b8
-;   core_menu.cpp_FUN_004ee3f0 at 004ee48d
 ;   core_menu.cpp_FUN_004eed60 at 004efdd9
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb82d
+;   core_menu.cpp_showCalibrationTestPattern_FUN_004ebce0 at 004ebe11
 ;   ... and 16 more
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   wincore_winrun.cpp_clearKeypresses_FUN_0058eab0
 ;   wincore_winrun.cpp_clearMouseClicks_FUN_0058ed00
-;   wincore_winrun.cpp_FUN_0058e9e0
+;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
@@ -43,12 +43,12 @@ section .text
     JL 0x004032bc                       ; 004032ca
         ;   XREF to: 004032bc (CONDITIONAL_JUMP)  ; LAB_004032bc
     PUSH EBX                            ; 004032cc
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 004032cd
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004032cd
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EBX,EAX                         ; 004032d2
     SAR EBX,0x10                        ; 004032d4
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 004032d7
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 004032d7
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_004032d7
     SAR EAX,0x10                        ; 004032dc
     CMP EBX,EAX                         ; 004032df

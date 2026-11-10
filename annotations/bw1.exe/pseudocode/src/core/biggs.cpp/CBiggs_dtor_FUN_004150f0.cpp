@@ -24,10 +24,10 @@ CBiggs * core_biggs_cpp_CBiggs_dtor_FUN_004150f0(CBiggs *this_ptr,uint flags)
     return this_ptr;
   }
   pCVar1 = core_morph_cpp_CMorph_dtor_FUN_00522fc0((CMorph *)&this_ptr->field_0xc3ec,0);
-  iVar2 = unkafter_armour_cpp_FUN_0040ee30(pCVar1 + -0x8e10,0);
-  pCVar3 = core_cloth_cpp_FUN_00441ca0((CClothList *)(iVar2 + -0x93c),0);
+  iVar2 = core_armour_cpp_FUN_0040ee30(pCVar1 + -0x8e10,0);
+  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar2 + -0x93c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
-                     ((CDeformableModelInstance *)(pCVar3 + -0x2b48),0);
+                     ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[0] + 0x10),0);
   pCVar5 = (CBiggs *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar4[-1].field_0x224c,1);
   if ((flags & 2) == 0) {

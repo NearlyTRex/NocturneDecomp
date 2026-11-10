@@ -14,12 +14,12 @@
 ;   cockpit_ckptutil.c_blendPixelWithSourcePalette_FUN_004378b0 at 00437a1f
 ;   cockpit_drawsurf.cpp_FUN_00468620 at 00468658
 ;   cockpit_drawsurf.cpp_FUN_004691e0 at 0046920b
-;   core_actor.cpp_FUN_00409f60 at 0040a3ac
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a3ac
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0 at 0040cefd
-;   core_ammo.cpp_FUN_0040df20 at 0040df80
-;   core_asgaya.cpp_FUN_005a17e0 at 005a182e
-;   core_baal.cpp_FUN_00597970 at 005979d6
-;   core_bat.cpp_FUN_0040f290 at 0040f2a6
+;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20 at 0040df80
+;   core_asgaya.cpp_CAsgaya_renderTransparent_FUN_005a17e0 at 005a182e
+;   core_baal.cpp_CBaal_renderTransparent_FUN_00597970 at 005979d6
+;   core_bat.cpp_CBat_getBoundingBox_FUN_0040f290 at 0040f2a6
 ;   ... and 213 more
 ;
 ; *****************************************************************************

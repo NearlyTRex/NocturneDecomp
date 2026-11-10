@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_dskybox.cpp_FUN_0046e410 at 0046e759
+;   core_dskybox.cpp_renderSkyDome_FUN_0046e410 at 0046e759
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d18ff

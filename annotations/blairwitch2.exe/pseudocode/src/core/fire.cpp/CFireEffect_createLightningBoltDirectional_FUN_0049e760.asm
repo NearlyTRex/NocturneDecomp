@@ -12,8 +12,8 @@
 ; float            Stack[0x18]:4   end_spread
 ;
 ; XREF[2]:
-;   core_baron.cpp_FUN_00410170 at 00410541
-;   core_emitter.cpp_FUN_00486cb0 at 0048769a
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 00410541
+;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 0048769a
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8

@@ -10,7 +10,7 @@ void core_mission_cpp_FUN_0051bf10(void)
 
 {
   engine_texture_cpp_FUN_00597c30();
-  core_dmodel_cpp_FUN_00468830();
+  core_dmodel_cpp_freeAllModels_FUN_00468830();
   core_skeleton_cpp_FUN_0056b610();
   core_skeleton_cpp_FUN_0056b740();
   return;

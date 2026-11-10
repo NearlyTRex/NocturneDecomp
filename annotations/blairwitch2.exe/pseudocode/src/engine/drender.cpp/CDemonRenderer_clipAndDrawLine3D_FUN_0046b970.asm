@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   vertex_index2
 ;
 ; XREF[3]:
-;   core_bugs.cpp_FUN_0041f620 at 0041f74d
+;   core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620 at 0041f74d
 ;   core_cloth.cpp_FUN_005b0ce0 at 005b0e80
 ;   core_skeleton.cpp_CDeformableModel_renderWireframe_FUN_00542410 at 00542459
 ;

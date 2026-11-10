@@ -21,25 +21,25 @@ CDemonActorType * CHaystack::getActorType(CHaystack *this_ptr);
 // Address: 004e9020
 CHaystack * __cdecl CHaystack::ctor(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_FUN_004e9090
+// Original: core_haystack.cpp_CHaystack_setup_FUN_004e9090
 // Address: 004e9090
-void FUN_004e9090(CHero *param_1);
+void __cdecl CHaystack::setup(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_FUN_004e9250
+// Original: core_haystack.cpp_CHaystack_process_FUN_004e9250
 // Address: 004e9250
-void FUN_004e9250(CHaystack *param_1,float param_2);
+void __cdecl CHaystack::process(CHaystack *this_ptr,float delta_time);
 
-// Original: core_haystack.cpp_FUN_004e98b0
+// Original: core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0
 // Address: 004e98b0
-void __cdecl FUN_004e98b0(CHaystack *this_ptr,float delta_time);
+void __cdecl CHaystack::updateAI(CHaystack *this_ptr,float delta_time);
 
-// Original: core_haystack.cpp_FUN_004e9f20
+// Original: core_haystack.cpp_CHaystack_advanceMotion_FUN_004e9f20
 // Address: 004e9f20
-void __cdecl FUN_004e9f20(CHaystack *this_ptr,float delta_time);
+void __cdecl CHaystack::advanceMotion(CHaystack *this_ptr,float delta_time);
 
-// Original: core_haystack.cpp_FUN_004ea060
+// Original: core_haystack.cpp_CHaystack_checkMeleeHit_FUN_004ea060
 // Address: 004ea060
-void __cdecl FUN_004ea060(CHaystack *this_ptr,int bone_index);
+void __cdecl CHaystack::checkMeleeHit(CHaystack *this_ptr,int bone_index);
 
 // Original: core_haystack.cpp_CHaystack_archive_FUN_004ea120
 // Address: 004ea120
@@ -49,17 +49,17 @@ void __cdecl CHaystack::archive(CHaystack *this_ptr);
 // Address: 004ea130
 int __cdecl CHaystack::renderOpaque(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_FUN_004ea140
+// Original: core_haystack.cpp_CHaystack_processDamage_FUN_004ea140
 // Address: 004ea140
-void FUN_004ea140(CDemonActor *param_1,int param_2);
+void __cdecl CHaystack::processDamage(CHaystack *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_haystack.cpp_FUN_004ea260
+// Original: core_haystack.cpp_CHaystack_isWeaponDrawn_FUN_004ea260
 // Address: 004ea260
-undefined4 FUN_004ea260(int param_1);
+int __cdecl CHaystack::isWeaponDrawn(CHaystack *this_ptr);
 
-// Original: core_haystack.cpp_FUN_004ea270
+// Original: core_haystack.cpp_CHaystack_drawWeapon_FUN_004ea270
 // Address: 004ea270
-void FUN_004ea270(int param_1,undefined4 param_2);
+void __cdecl CHaystack::drawWeapon(CHaystack *this_ptr,int drawn);
 
 // Original: core_haystack.cpp_CHaystack_dtor_FUN_004ea280
 // Address: 004ea280

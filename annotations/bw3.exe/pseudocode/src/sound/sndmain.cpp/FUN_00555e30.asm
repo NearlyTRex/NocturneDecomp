@@ -8,7 +8,7 @@
 ; void *           Stack[0x8]:4   userdata
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0055f020 at 0055f230
+;   core_sound.cpp_playSfxInternal_FUN_0055f020 at 0055f230
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005d367d

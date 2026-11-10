@@ -23,9 +23,9 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(CDemonMissio
     *(uint *)(iVar4 + 0x1cedee4) = 0;
     iVar4 = iVar2;
   } while (iVar2 != 0x10);
-  if (*(int *)g_CNetGamePtr == 0) {
+  if (g_CNetGamePtr->connection_type == CONNECTION_NONE) {
     _DAT_01cedee0 = 1;
-    _DAT_01cedef4 = *(int *)g_CNetGamePtr;
+    _DAT_01cedef4 = g_CNetGamePtr->connection_type;
     iVar4 = core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70
                       (this_ptr,0,*(int *)&g_CGamePtr->field_0xd4,existing_hero);
     if (iVar4 == 0) {
@@ -35,7 +35,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(CDemonMissio
          *(uint *)&g_CGamePtr->field_0xd8;
   }
   else {
-    _DAT_01cedee0 = *(int *)&g_CNetGamePtr->field_0x1c;
+    _DAT_01cedee0 = g_CNetGamePtr->player_count;
     if (3 < _DAT_01cedee0) {
       _DAT_01d046a0 = "..\\core\\mission.cpp";
       _DAT_01d046a4 = 0x688;
@@ -47,7 +47,7 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(CDemonMissio
       iVar2 = 0;
       do {
         iVar1 = core_mission_cpp_CDemonMission_createOneHero_FUN_004fcf70
-                          (this_ptr,iVar4,*(int *)(&g_CNetGamePtr->field_0x34 + iVar3),
+                          (this_ptr,iVar4,*(int *)(&g_CNetGamePtr->players[0].field_0x14 + iVar3),
                            (CCharacter *)0x0);
         if (iVar1 == 0) {
           return 0;
@@ -55,17 +55,17 @@ int __cdecl core_mission_cpp_CDemonMission_createHeros_FUN_004fd0e0(CDemonMissio
         *(uint *)(*(int *)(iVar2 + 0x1cedee4) + 0x10a64) = 1;
         iVar4 = iVar4 + 1;
         *(uint *)(*(int *)(iVar2 + 0x1cedee4) + 0x24378) =
-             *(uint *)(&g_CNetGamePtr->field_0x38 + iVar3);
+             *(uint *)(&g_CNetGamePtr->players[0].field_0x18 + iVar3);
         iVar3 = iVar3 + 0x80;
         iVar2 = iVar2 + 4;
       } while (iVar4 < _DAT_01cedee0);
     }
-    _DAT_01cedef4 = *(int *)&g_CNetGamePtr->field_0x124;
+    _DAT_01cedef4 = g_CNetGamePtr->local_player_index;
   }
   *(uint *)(*(int *)(_DAT_01cedef4 * 4 + 0x1cedee4) + 0x10a64) = 0;
   actor_ptr = *(CDemonActor **)(this_ptr + 0x1114);
   while (actor_ptr != (CDemonActor *)0x0) {
-    iVar4 = core_actor_cpp_FUN_0040c840(actor_ptr,"CHeroPlaceholder");
+    iVar4 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,"CHeroPlaceholder");
     if (iVar4 == 0) {
       actor_ptr = *(CDemonActor **)&actor_ptr->field_0x14c;
     }

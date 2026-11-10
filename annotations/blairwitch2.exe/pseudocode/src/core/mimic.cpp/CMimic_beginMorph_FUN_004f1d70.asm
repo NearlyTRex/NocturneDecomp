@@ -7,7 +7,7 @@
 ; CMimic *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mimic.cpp_FUN_004f0e10 at 004f12c1
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f12c1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mimic_cpp_005dda05

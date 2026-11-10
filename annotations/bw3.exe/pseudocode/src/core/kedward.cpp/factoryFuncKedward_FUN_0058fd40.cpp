@@ -11,7 +11,7 @@ void core_kedward_cpp_factoryFuncKedward_FUN_0058fd40(void)
 {
   CKedward *this_ptr;
   
-  this_ptr = (CKedward *)FUN_005a3cb2(0xd0d8);
+  this_ptr = (CKedward *)debugAllocTracked1(0xd0d8);
   if (this_ptr == (CKedward *)0x0) {
     return;
   }

@@ -21,7 +21,13 @@
     {
       "addr": "004186c0",
       "from_addr": "004188d2",
-      "name": "core_boneguy.cpp_FUN_004186c0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "0043708c",
+      "name": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -33,19 +39,13 @@
     {
       "addr": "00518310",
       "from_addr": "0051843f",
-      "name": "core_platfrm.cpp_FUN_00518310",
+      "name": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00567430",
       "from_addr": "00567495",
       "name": "core_stranger.cpp_FUN_00567430",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "0043708c",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +132,7 @@
       {
         "call_addr": "0051843f",
         "call_type": "direct",
-        "caller": "core_platfrm.cpp_FUN_00518310",
+        "caller": "core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -160,7 +160,7 @@
       {
         "call_addr": "004188d2",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004186c0",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
         "estimated_params": 3,
         "instructions_analyzed": 11,
         "method": "push_count",
@@ -174,7 +174,7 @@
       {
         "call_addr": "0043708c",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00436e80",
+        "caller": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
         "estimated_params": 3,
         "instructions_analyzed": 11,
         "method": "push_count",

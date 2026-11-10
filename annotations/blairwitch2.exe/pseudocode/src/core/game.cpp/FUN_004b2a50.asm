@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fputc_FUN_005bab40
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_dosio.cpp_FUN_00460c70
 ;
@@ -84,16 +84,16 @@ section .text
     PUSH 0x5d72b7                       ; 004b2ad1
     LEA EAX,[ESP + 0xd0]                ; 004b2ad6
     PUSH EAX                            ; 004b2add
-    CALL crt_unknown.c_FUN_005b7790     ; 004b2ade
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004b2ade
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b2ae3
     LEA EAX,[ESP + 0xc8]                ; 004b2ae6
     PUSH EAX                            ; 004b2aed
     PUSH 0x5d72c3                       ; 004b2aee
     LEA EAX,[ESP + 0x8]                 ; 004b2af3
     PUSH EAX                            ; 004b2af7
-    CALL crt_unknown.c_FUN_005b7790     ; 004b2af8
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004b2af8
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004b2afd
     PUSH 0x5d72e4                       ; 004b2b00
     LEA EAX,[ESP + 0xcc]                ; 004b2b05

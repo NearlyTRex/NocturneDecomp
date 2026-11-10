@@ -11,8 +11,7 @@
 void __cdecl wincore_winrun_cpp_FUN_005b3080(char *message)
 
 {
-  FUN_005bfb40
-            (&DAT_02c9a630,"%s\n\nFile: %s\nLine: %d",message,_DAT_01d1d400,_DAT_01d1d404);
+  _sprintf(&DAT_02c9a630,"%s\n\nFile: %s\nLine: %d");
   MessageBoxA(_DAT_02c9be68,&DAT_02c9a630,PTR_s_Nocturne_006260dc,0x30);
                     /* WARNING: Subroutine does not return */
   ExitProcess(1);

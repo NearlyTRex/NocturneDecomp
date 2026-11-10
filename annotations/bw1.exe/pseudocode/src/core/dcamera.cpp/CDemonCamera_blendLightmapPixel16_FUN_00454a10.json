@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 53,
-    "complexity_score": 83,
+    "complexity_score": 53,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 13,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
-      "undefined_data",
-      "unnamed_field"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 66
   },
@@ -151,22 +151,6 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "iVar2 = (screen_y / *(int *)&this_ptr->field_0x14c) * 0x140;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "iVar1 = screen_x / *(int *)&this_ptr->field_0x14c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_01c4354c",
@@ -175,27 +159,19 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "(uint *)(*(int *)&this_ptr->field_0x158 + *(int *)&this_ptr->field_0x144 * screen_y * 4",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "(uint *)(*(int *)&this_ptr->field_0x158 + *(int *)&this_ptr->field_0x144 * screen_y * 4",
-      "type": "unnamed_field"
+      "match": "(uint *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "(uint *)((int)this_ptr->framebuffer_aligned +",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_01342220",
       "severity": "mild",
-      "text": "&DAT_01342220 + offset + iVar1 + iVar2);",
+      "text": "(byte *)(iVar2 + 0xb23458 + iVar1 + offset),&DAT_01342220 + offset + iVar1 + iVar2);",
       "type": "undefined_data"
     }
   ]

@@ -11,7 +11,7 @@ void core_biggs_cpp_factoryFuncBiggs_FUN_004149c0(void)
 {
   CBiggs *this_ptr;
   
-  this_ptr = (CBiggs *)FUN_005c0f32(0xd07c);
+  this_ptr = (CBiggs *)debugAllocTracked1(0xd07c);
   if (this_ptr == (CBiggs *)0x0) {
     return;
   }

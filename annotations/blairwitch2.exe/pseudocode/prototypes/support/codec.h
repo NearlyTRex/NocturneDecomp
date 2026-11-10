@@ -5,13 +5,13 @@
 // Function prototypes for support/codec.cpp
 // Generated from Ghidra function signatures
 
-// Original: support_codec.cpp_FUN_00433760
+// Original: support_codec.cpp_resetBitBuffer_FUN_00433760
 // Address: 00433760
-void __cdecl FUN_00433760(SBitBuffer *bit_buffer);
+void __cdecl resetBitBuffer(SBitBuffer *bit_buffer);
 
-// Original: support_codec.cpp_FUN_00433780
+// Original: support_codec.cpp_writeBitsToStream_FUN_00433780
 // Address: 00433780
-uint FUN_00433780(byte *param_1,int param_2,int *param_3);
+uint writeBitsToStream(byte *param_1,int param_2,int *param_3);
 
 // Original: support_codec.cpp_FUN_004338a0
 // Address: 004338a0
@@ -41,9 +41,9 @@ CCodec * __cdecl CCodec::ctor(CCodec *this_ptr);
 // Address: 00433e90
 CCodec * __cdecl CCodec::dtor(CCodec *this_ptr,uint flags);
 
-// Original: support_codec.cpp_FUN_00433eb0
+// Original: support_codec.cpp_CCodec_init_FUN_00433eb0
 // Address: 00433eb0
-void FUN_00433eb0(void);
+void __cdecl CCodec::init(CCodec *this_ptr);
 
 // Original: support_codec.cpp_FUN_00433ee0
 // Address: 00433ee0
@@ -51,7 +51,7 @@ undefined4 FUN_00433ee0(undefined4 param_1,int *param_2,int *param_3);
 
 // Original: support_codec.cpp_FUN_00433f50
 // Address: 00433f50
-undefined4 FUN_00433f50(void);
+int __cdecl FUN_00433f50(CCodec *this_ptr,void *ostream);
 
 // Original: support_codec.cpp_FUN_00433f60
 // Address: 00433f60
@@ -61,9 +61,9 @@ undefined4 FUN_00433f60(int *param_1,undefined4 param_2,undefined4 param_3,int *
 // Address: 00433ff0
 bool FUN_00433ff0(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4);
 
-// Original: support_codec.cpp_FUN_00434070
+// Original: support_codec.cpp_CCodec_processBuffer_FUN_00434070
 // Address: 00434070
-undefined4 FUN_00434070(int *param_1,undefined4 param_2,int *param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6);
+int __cdecl CCodec::processBuffer(CCodec *this_ptr,char *input,int *input_length,char *output,int *output_length,int enable_callback);
 
 // Original: support_codec.cpp_FUN_004340f0
 // Address: 004340f0
@@ -81,9 +81,9 @@ CLZWDictionary * __cdecl CLZWDictionary::ctor(CLZWDictionary *this_ptr);
 // Address: 00434270
 CLZWDictionary * __cdecl CLZWDictionary::dtor(CLZWDictionary *this_ptr,uint flags);
 
-// Original: support_codec.cpp_FUN_00434290
+// Original: support_codec.cpp_CLZWDictionary_free_FUN_00434290
 // Address: 00434290
-void __cdecl FUN_00434290(CLZWDictionary *this_ptr);
+void __cdecl CLZWDictionary::free(CLZWDictionary *this_ptr);
 
 // Original: support_codec.cpp_CLZWDictionary_init_FUN_004342d0
 // Address: 004342d0
@@ -121,9 +121,9 @@ int __cdecl FUN_004346d0(CLZWDictionary *this_ptr,SBitBuffer *bit_buffer,_istrea
 // Address: 00434770
 CLZWCompress * __cdecl CLZWCompress::ctor(CLZWCompress *this_ptr,int buffer_size,int num_bits);
 
-// Original: support_codec.cpp_FUN_004347c0
+// Original: support_codec.cpp_CLZWCompress_init_FUN_004347c0
 // Address: 004347c0
-void __cdecl FUN_004347c0(CLZWCompress *this_ptr);
+void __cdecl CLZWCompress::init(CLZWCompress *this_ptr);
 
 // Original: support_codec.cpp_FUN_00434810
 // Address: 00434810
@@ -137,9 +137,9 @@ undefined4 FUN_00434910(int param_1,undefined4 param_2);
 // Address: 00434990
 CLZWDecompress * __cdecl CLZWDecompress::ctor(CLZWDecompress *this_ptr,int buffer_size,int initial_bits);
 
-// Original: support_codec.cpp_FUN_004349d0
+// Original: support_codec.cpp_CLZWDecompress_init_FUN_004349d0
 // Address: 004349d0
-void __cdecl FUN_004349d0(CLZWDecompress *this_ptr);
+void __cdecl CLZWDecompress::init(CLZWDecompress *this_ptr);
 
 // Original: support_codec.cpp_FUN_00434a10
 // Address: 00434a10

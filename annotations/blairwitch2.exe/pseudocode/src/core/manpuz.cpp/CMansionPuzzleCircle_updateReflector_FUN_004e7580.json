@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 45,
+    "complexity_score": 114,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 24,
+    "suspect_count": 8,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 69
+  },
+  "cross_references": [
+    {
+      "addr": "004e57f0",
+      "from_addr": "004e582d",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e7580",
+    "address_range": [
+      [
+        "004e7580",
+        "004e75fd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateReflector_FUN_004e7580",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateReflector_FUN_004e7580(CMansionPuzzleCircle *this_ptr,int reflector_index,float delta_time)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "005f98cc",
+      "name": "DAT_005f98cc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004e582d",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_004e57f0",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.736842105263158,
+    "instruction_count": 38,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 3,
+      "CBRANCH": 3,
+      "COPY": 89,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_ADD": 1,
+      "FLOAT_DIV": 2,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 22,
+      "INT_AND": 48,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 18,
+      "INT_LEFT": 12,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 14,
+      "INT_OR": 20,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 12,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 12,
+      "POPCOUNT": 8,
+      "RETURN": 3,
+      "STORE": 4
+    },
+    "pcode_op_count": 332
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "reflector_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "if (*(int *)(this_ptr->panels + *(int *)&this_ptr->reflectors[reflector_index].field_0x5c) == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "fVar1 = delta_time / _DAT_005f98cc + *(float *)&this_ptr->reflectors[reflector_index].field_0x18",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->reflectors[reflector_index].field_0x18 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->reflectors[reflector_index].field_0x18 = 0x3f800000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&this_ptr->reflectors[reflector_index].field_0x18 - delta_time / _DAT_005f98cc",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->reflectors[reflector_index].field_0x18 = fVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->reflectors[reflector_index].field_0x18 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

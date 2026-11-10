@@ -2,34 +2,39 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 832,
-    "complexity_score": 1814,
+    "complexity_score": 1601,
     "cross_reference_count": 6,
     "function_call_count": 11,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 414,
-    "suspect_count": 134,
+    "pseudocode_lines": 396,
+    "suspect_count": 115,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
-      "raw_address_pointer_store",
+      "pointer_truncation",
       "stack_alignment_array",
-      "suspicious_cast",
+      "stack_param",
+      "stack_ref",
       "undefined_data",
-      "unknown_field",
       "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1246
+    "total_lines": 1228
   },
   "cross_references": [
     {
+      "addr": "004bd570",
+      "from_addr": "004bda9b",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b6170",
       "from_addr": "004b64b8",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,12 +53,6 @@
       "addr": "004b82e0",
       "from_addr": "004b89b4",
       "name": "core_game.cpp_FUN_004b82e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bd570",
-      "from_addr": "004bda9b",
-      "name": "core_game.cpp_FUN_004bd570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -103,19 +102,19 @@
       "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0"
     },
     {
+      "addr": "0053a760",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760"
+    },
+    {
       "addr": "005386e0",
       "is_variadic": false,
       "name": "core_setdir.cpp_CZThumb_calculateActorVisibility_FUN_005386e0"
     },
     {
-      "addr": "0053a760",
-      "is_variadic": false,
-      "name": "core_setdir.cpp_FUN_0053a760"
-    },
-    {
       "addr": "0053ae20",
       "is_variadic": false,
-      "name": "core_setutil.cpp_FUN_0053ae20"
+      "name": "core_setutil.cpp_C3DSCamera_testSphereInFrustum_FUN_0053ae20"
     },
     {
       "addr": "005b7ff0",
@@ -322,7 +321,7 @@
     },
     {
       "addr": "01cb6b84",
-      "name": "g_CGameInstance.field644_0x284",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -340,13 +339,13 @@
     },
     {
       "addr": "01fb331c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb3320",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
@@ -399,7 +398,7 @@
       {
         "call_addr": "004b64b8",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -413,7 +412,7 @@
       {
         "call_addr": "004b6648",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -443,7 +442,7 @@
       {
         "call_addr": "004bda9b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bd570",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -648,15 +647,39 @@
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 25,
-      "match": "afStackY_1104",
+      "line": 23,
+      "match": "afStackY_10f4",
       "severity": "moderate",
-      "text": "float afStackY_1104 [948];",
+      "text": "float afStackY_10f4 [947];",
       "type": "stack_alignment_array"
     },
     {
+      "description": "Unresolved stack parameter",
+      "line": 24,
+      "match": "in_stack_fffffde0",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_fffffde0;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 25,
+      "match": "in_stack_fffffde8",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_fffffde8;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 28,
+      "match": "in_stack_fffffdf4",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_fffffdf4;",
+      "type": "stack_param"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 105,
+      "line": 88,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_2 == (CDemonActor *)0x0) {",
@@ -664,23 +687,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x15aeb8 < 0) {",
+      "text": "if (param_1->selected_camera_index < 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x15aeb8 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 90,
       "match": "param_1",
       "severity": "mild",
       "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,0);",
@@ -688,23 +703,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x15aeb8 < 0) {",
+      "text": "if (param_1->selected_camera_index < 0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 111,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1->field_0x15aeb8 < 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 112,
+      "line": 95,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = 1;",
@@ -712,7 +719,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 114,
+      "line": 97,
       "match": "param_3",
       "severity": "mild",
       "text": "else if (1 < param_3) goto LAB_00538d7f;",
@@ -720,135 +727,71 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 115,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x15aec8) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x15aec8",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&param_1->field_0x15aec8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 116,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&param_1->field_0x15aec8 - *(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x15aec8",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&param_1->field_0x15aec8 - *(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&param_1->field_0x15aec8 - *(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 117,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x15aec8 = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x15aec8",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x15aec8 = fVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 119,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((-1 < *(int *)&param_1->field_0x15aec4) &&",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0x15aec4",
-      "severity": "mild",
-      "text": "if ((-1 < *(int *)&param_1->field_0x15aec4) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 120,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x15aec4 != *(int *)&param_1->field_0x15aeb8)) {",
+      "text": "if (0.0 < param_1->camera_switch_cooldown) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 120,
+      "line": 99,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x15aec4 != *(int *)&param_1->field_0x15aeb8)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x15aec4",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x15aec4 != *(int *)&param_1->field_0x15aeb8)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "(*(int *)&param_1->field_0x15aec4 != *(int *)&param_1->field_0x15aeb8)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 121,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,*(int *)&param_1->field_0x15aec4);",
+      "text": "fVar4 = param_1->camera_switch_cooldown - g_CGamePtr->delta_time_float;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 121,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,*(int *)&param_1->field_0x15aec4);",
+      "text": "param_1->camera_switch_cooldown = fVar4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 121,
-      "match": "field_0x15aec4",
+      "description": "Unnamed function parameter",
+      "line": 102,
+      "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,*(int *)&param_1->field_0x15aec4);",
-      "type": "unnamed_field"
+      "text": "if ((-1 < param_1->pending_camera_index) &&",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 126,
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->pending_camera_index != param_1->selected_camera_index)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 103,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(param_1->pending_camera_index != param_1->selected_camera_index)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,param_1->pending_camera_index);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 104,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,param_1->pending_camera_index);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 109,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = 1;",
@@ -856,87 +799,79 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 112,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "this_ptr = DAT_0060b280;",
+      "text": "this_ptr_00 = DAT_0060b280;",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 130,
+      "line": 113,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec8 = 0;",
+      "text": "param_1->camera_switch_cooldown = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0x15aec8",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 117,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,0);",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 135,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 118,
+      "match": "in_stack_fffffde0",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
-      "type": "unresolved_funcptr"
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde0);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 118,
       "match": "param_2",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 118,
       "match": "param_2",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 135,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
-      "type": "unnamed_field"
+      "description": "Direct stack address reference",
+      "line": 126,
+      "match": "&stack0xfffffdf0",
+      "severity": "moderate",
+      "text": "piStack_30 = (int *)&stack0xfffffdf0;",
+      "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 174,
+      "line": 157,
       "match": "DAT_0061b97c",
       "severity": "mild",
-      "text": "puVar5 = &DAT_0061b97c;",
+      "text": "puVar2 = &DAT_0061b97c;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 183,
+      "line": 166,
       "match": "DAT_0061bb2c",
       "severity": "mild",
-      "text": "} while (puVar6 != &DAT_0061bb2c);",
+      "text": "} while (puVar3 != &DAT_0061bb2c);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 184,
+      "line": 167,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 == 0) {",
@@ -944,263 +879,167 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 168,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar13 = (float10)(param_1->camera_count * 10) * (float10)g_CGamePtr->delta_time_float;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 174,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->camera_count < iStack_64) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 175,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iStack_64 = param_1->camera_count;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 177,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar4 = param_1->previous_best_camera_timer - g_CGamePtr->delta_time_float;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 178,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->previous_best_camera_timer = fVar4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 180,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->previous_best_camera_index = -1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 181,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->previous_best_camera_timer = 0.0;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 185,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_18 = (float)(*(int *)param_1 * 10);",
+      "text": "iStack_64 = param_1->camera_count;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 186,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "fVar16 = (float10)(int)fStack_18 * (float10)*(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 192,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 < iStack_6c) {",
+      "text": "param_1->previous_best_camera_index = -1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 193,
+      "line": 188,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_6c = *(int *)param_1;",
+      "text": "param_1->previous_best_camera_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 195,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&param_1->field_0x15aec0 - *(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 195,
-      "match": "field_0x15aec0",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&param_1->field_0x15aec0 - *(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 195,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&param_1->field_0x15aec0 - *(float *)&g_CGamePtr->field_0x284;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 196,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x15aec0 = fVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 196,
-      "match": "field_0x15aec0",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x15aec0 = fVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 198,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aebc = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 198,
-      "match": "field_0x15aebc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aebc = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 199,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec0 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 199,
-      "match": "field_0x15aec0",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 203,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_6c = *(int *)param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 204,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aebc = 0xffffffff;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 204,
-      "match": "field_0x15aebc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aebc = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 206,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec0 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 206,
-      "match": "field_0x15aec0",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 208,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 190,
+      "match": "in_stack_fffffde8",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
-      "type": "unresolved_funcptr"
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde8);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 208,
+      "line": 190,
       "match": "param_2",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde8);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 208,
+      "line": 190,
       "match": "param_2",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
+      "text": "(*((param_2->vtable)._ub)->getBoundingBox)(param_2,in_stack_fffffde8);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 208,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_2->field_0x2b0 + 0x24))(param_2);",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 220,
-      "match": "(float *)((int)param_2",
+      "line": 200,
+      "match": "(uint *)((int)param_2",
       "severity": "moderate",
-      "text": "pfVar11 = (float *)((int)param_2 + (uint)bVar15 * -8 + 0x24);",
+      "text": "puVar9 = (uint *)((int)param_2 + (uint)bVar12 * -8 + 0x24);",
       "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 220,
+      "line": 200,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfVar11 = (float *)((int)param_2 + (uint)bVar15 * -8 + 0x24);",
+      "text": "puVar9 = (uint *)((int)param_2 + (uint)bVar12 * -8 + 0x24);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 221,
+      "line": 201,
       "match": "param_2",
       "severity": "mild",
-      "text": "fStack_e0 = *(float *)&param_2->field_0x20;",
+      "text": "CStack_d0.x = *(float *)&param_2->field_0x20;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 221,
+      "line": 201,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "fStack_e0 = *(float *)&param_2->field_0x20;",
+      "text": "CStack_d0.x = *(float *)&param_2->field_0x20;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 226,
+      "line": 207,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar8 = core_setdir_cpp_FUN_0053a760(param_1,pfVar10);",
+      "text": "iVar7 = core_setdir_cpp_CDemonSet_findVdirBoxAtPosition_FUN_0053a760(param_1,position);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 227,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "fStack_8c = (float)auStack_134._0_4_ + fStack_128;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 228,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "fStack_88 = (float)auStack_134._4_4_ + fStack_124;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 230,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "afStack_118[2] = (float)auStack_134._0_4_ + fStack_128;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 243,
+      "line": 224,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408d70(param_2,pfVar10);",
+      "text": "core_actor_cpp_FUN_00408d70(param_2,pfVar14);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 254,
+      "line": 235,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_6c = *(int *)param_1;",
+      "text": "local_5c = param_1->camera_count;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 255,
+      "line": 236,
       "match": "param_3",
       "severity": "mild",
       "text": "param_3 = 1;",
@@ -1208,247 +1047,223 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 256,
+      "line": 237,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aebc = 0xffffffff;",
+      "text": "param_1->previous_best_camera_index = -1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 256,
-      "match": "field_0x15aebc",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aebc = 0xffffffff;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 258,
+      "line": 239,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec0 = 0;",
+      "text": "param_1->previous_best_camera_timer = 0.0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 258,
-      "match": "field_0x15aec0",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15aec0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 260,
+      "line": 241,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "iVar8 = DAT_006141bc;",
+      "text": "iVar7 = DAT_006141bc;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 272,
+      "line": 253,
       "match": "DAT_020b0258",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_020b0258 + iVar12) = *(uint *)(&DAT_01c2b64c + iVar12);",
+      "text": "*(uint *)(&DAT_020b0258 + iVar10) = *(uint *)(&DAT_01c2b64c + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 272,
+      "line": 253,
       "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_020b0258 + iVar12) = *(uint *)(&DAT_01c2b64c + iVar12);",
+      "text": "*(uint *)(&DAT_020b0258 + iVar10) = *(uint *)(&DAT_01c2b64c + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 278,
+      "line": 259,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfStack_34 = (float *)&param_2->field_0x20;",
+      "text": "puStack_24 = &param_2->field_0x20;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 278,
+      "line": 259,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "pfStack_34 = (float *)&param_2->field_0x20;",
+      "text": "puStack_24 = &param_2->field_0x20;",
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 280,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iStack_2c = 0; iStack_2c < *(int *)&g_CDemonSetPtr->field_0x14d164; iStack_2c = iStack_2c + 1",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 282,
-      "match": "*(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168",
+      "description": "Complex pointer cast",
+      "line": 262,
+      "match": "(CDemonActor **)((int)pfStack_20",
       "severity": "moderate",
-      "text": "pCVar1 = *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iStack_30);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 282,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "pCVar1 = *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iStack_30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 283,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar8 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x50))(pCVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 283,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "iVar8 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x50))(pCVar1);",
-      "type": "unnamed_field"
+      "text": "this_ptr = *(CDemonActor **)((int)pfStack_20 + (int)(g_CDemonSetPtr->cameras + 0xcb0) + 0xa4);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 284,
+      "line": 264,
       "match": "param_2",
       "severity": "mild",
-      "text": "if (((iVar8 != 0) && (pCVar1 != param_2)) &&",
+      "text": "if (((iVar7 != 0) && (this_ptr != param_2)) &&",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 285,
+      "line": 265,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "(fVar2 = *(float *)&pCVar1->field_0x20 - *pfStack_34,",
+      "text": "(fVar4 = *(float *)&this_ptr->field_0x20 - *pfStack_20,",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 286,
+      "line": 266,
       "match": "field_0x24",
       "severity": "mild",
-      "text": "fVar4 = *(float *)&pCVar1->field_0x24 - pfStack_34[1],",
+      "text": "fVar1 = *(float *)&this_ptr->field_0x24 - pfStack_20[1],",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 287,
+      "line": 267,
       "match": "field_0x28",
       "severity": "mild",
-      "text": "fVar3 = *(float *)&pCVar1->field_0x28 - pfStack_34[2],",
+      "text": "fVar6 = *(float *)&this_ptr->field_0x28 - pfStack_20[2],",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 289,
+      "line": 269,
       "match": "DAT_020a2798",
       "severity": "mild",
-      "text": "*(CDemonActor **)(&DAT_020a2798 + _DAT_020a2794 * 4) = pCVar1;",
+      "text": "*(CDemonActor **)(&DAT_020a2798 + _DAT_020a2794 * 4) = this_ptr;",
       "type": "undefined_data"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 290,
-      "match": "code *",
+      "description": "Unresolved stack parameter",
+      "line": 270,
+      "match": "in_stack_fffffdf4",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x24))(pCVar1);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 290,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x24))(pCVar1);",
-      "type": "unnamed_field"
+      "text": "(*((this_ptr->vtable)._ub)->getBoundingBox)(this_ptr,in_stack_fffffdf4);",
+      "type": "stack_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 313,
+      "line": 293,
       "match": "param_2",
       "severity": "mild",
-      "text": "pfStack_28 = (float *)&param_2->field_0x20;",
+      "text": "pfStack_18 = (float *)&param_2->field_0x20;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 313,
+      "line": 293,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "pfStack_28 = (float *)&param_2->field_0x20;",
+      "text": "pfStack_18 = (float *)&param_2->field_0x20;",
       "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 315,
+      "line": 295,
       "match": "param_1",
       "severity": "mild",
-      "text": "puStack_44 = &param_1->field_0x4;",
+      "text": "pCStack_34 = param_1->cameras;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 315,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puStack_44 = &param_1->field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 316,
+      "line": 296,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "while ((iVar12 = _DAT_02093938, iVar8 = DAT_006141bc, 0 < iStack_6c &&",
+      "text": "while ((iVar10 = _DAT_02093938, iVar7 = DAT_006141bc, 0 < local_5c &&",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 297,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(_DAT_02093938 < param_1->camera_count))) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 298,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (iStack_2c == *(int *)&param_1->cameras[_DAT_02093938].field_0x19c) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 298,
+      "match": "field_0x19c",
+      "severity": "mild",
+      "text": "if (iStack_2c == *(int *)&param_1->cameras[_DAT_02093938].field_0x19c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 300,
+      "match": "field_0x1a0",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar8->field_0x1a0 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 305,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&pCVar8->field_0x100 - *pfStack_18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 306,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "fVar1 = *(float *)&pCVar8->field_0x104 - pfStack_18[1];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 307,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "fVar6 = *(float *)&pCVar8->field_0x108 - pfStack_18[2];",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 315,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "if (*(int *)&pCVar8->field_0x140 == 0) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 317,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(_DAT_02093938 < *(int *)param_1))) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 318,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if (iStack_3c == *(int *)(&param_1->field_0x1a0 + _DAT_02093938 * 0x1a4)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 318,
-      "match": "field_0x1a0",
-      "severity": "mild",
-      "text": "if (iStack_3c == *(int *)(&param_1->field_0x1a0 + _DAT_02093938 * 0x1a4)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 336,
       "match": "param_2",
       "severity": "mild",
-      "text": "(this_ptr_00,param_2,aCStack_218,",
+      "text": "(this_ptr_01,param_2,aCStack_208,",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 337,
+      "line": 318,
       "match": "DAT_0061b97c",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)&DAT_0061b97c,1);",
@@ -1456,15 +1271,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 345,
+      "line": 325,
       "match": "param_2",
       "severity": "mild",
-      "text": "(this_ptr_00,param_2,pCStack_20,",
+      "text": "(this_ptr_01,param_2,aCStack_208,",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 346,
+      "line": 326,
       "match": "DAT_0061b97c",
       "severity": "mild",
       "text": "(SMRGLHeaderPrimitive *)&DAT_0061b97c,0);",
@@ -1472,211 +1287,243 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 364,
+      "line": 346,
       "match": "param_3",
       "severity": "mild",
-      "text": "if ((param_3 == 0) && (0.0 < fStack_220)) {",
+      "text": "if ((param_3 == 0) && (0.0 < fVar4)) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 365,
+      "line": 347,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_02093938 == *(int *)&param_1->field_0x15aeb8) {",
+      "text": "if (_DAT_02093938 == param_1->selected_camera_index) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 365,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "if (_DAT_02093938 == *(int *)&param_1->field_0x15aeb8) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 368,
+      "line": 350,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (_DAT_02093938 == *(int *)&param_1->field_0x15aebc) {",
+      "text": "if (_DAT_02093938 == param_1->previous_best_camera_index) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 368,
-      "match": "field_0x15aebc",
-      "severity": "mild",
-      "text": "if (_DAT_02093938 == *(int *)&param_1->field_0x15aebc) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 373,
+      "line": 355,
       "match": "DAT_0209394c",
       "severity": "mild",
-      "text": "*(float *)(&DAT_0209394c + _DAT_02093938 * 4) = fStack_220;",
+      "text": "*(float *)(&DAT_0209394c + _DAT_02093938 * 4) = fVar4;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 385,
+      "line": 367,
       "match": "DAT_01c2b64c",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2b64c + iVar12) = *(uint *)(&DAT_020b0258 + iVar12);",
+      "text": "*(uint *)(&DAT_01c2b64c + iVar10) = *(uint *)(&DAT_020b0258 + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 385,
+      "line": 367,
       "match": "DAT_020b0258",
       "severity": "mild",
-      "text": "*(uint *)(&DAT_01c2b64c + iVar12) = *(uint *)(&DAT_020b0258 + iVar12);",
+      "text": "*(uint *)(&DAT_01c2b64c + iVar10) = *(uint *)(&DAT_020b0258 + iVar10);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 390,
+      "line": 372,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,local_58);",
+      "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046b940(DAT_0060b280,iStack_48);",
       "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 374,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (param_1->camera_count <= _DAT_02093938) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 378,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if (0 < param_1->camera_count) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 381,
+      "match": "DAT_0209394c",
+      "severity": "mild",
+      "text": "if (fVar4 < *(float *)(&DAT_0209394c + iVar5)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 382,
+      "match": "DAT_0209394c",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)(&DAT_0209394c + iVar5);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 387,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "} while (iVar10 < param_1->camera_count);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 390,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "if ((param_1->selected_camera_index < 0) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 391,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "(1 < param_3 || iVar7 != param_1->selected_camera_index && 0.0 < fVar4)) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 391,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(1 < param_3 || iVar7 != param_1->selected_camera_index && 0.0 < fVar4)) {",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 392,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)param_1 <= _DAT_02093938) {",
+      "text": "param_1->last_switch_area_invalid = _DAT_020b1520;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 396,
+      "line": 393,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)param_1) {",
+      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,iVar7);",
       "type": "unnamed_param"
     },
     {
-      "description": "Undefined global data reference",
-      "line": 399,
-      "match": "DAT_0209394c",
-      "severity": "mild",
-      "text": "if (fStack_21c < *(float *)(&DAT_0209394c + iVar7)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 400,
-      "match": "DAT_0209394c",
-      "severity": "mild",
-      "text": "fStack_21c = *(float *)(&DAT_0209394c + iVar7);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 405,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar12 < *(int *)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 408,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x15aeb8 < 0) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 408,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "if ((*(int *)&param_1->field_0x15aeb8 < 0) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 409,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "(1 < param_3 || iVar8 != *(int *)&param_1->field_0x15aeb8 && 0.0 < fStack_21c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 409,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(1 < param_3 || iVar8 != *(int *)&param_1->field_0x15aeb8 && 0.0 < fStack_21c)) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 409,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "(1 < param_3 || iVar8 != *(int *)&param_1->field_0x15aeb8 && 0.0 < fStack_21c)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 410,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15ae5c = _DAT_020b1520;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 410,
-      "match": "field_0x15ae5c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x15ae5c = _DAT_020b1520;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 411,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_set_cpp_CDemonSet_setCameraView_FUN_0052ddf0(param_1,iVar8);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_0061b5b8 (at 0x0061b5b8, +16 bytes).",
-      "line": 282,
-      "match": "g_CDemonSetPtr",
+      "description": "Pointer value `&CStack_d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 202,
+      "match": "(int)&CStack_d0",
       "severity": "moderate",
-      "text": "pCVar1 = *(CDemonActor **)(&g_CDemonSetPtr->field_0x14d168 + iStack_30);",
-      "type": "suspicious_cast"
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) = *puVar9;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_d0` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 203,
+      "match": "(int)&CStack_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 226,
+      "match": "(int)&CStack_10c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + 4) = afStack_c0[(uint)bVar12 * -2 + 3];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_10c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 227,
+      "match": "(int)&CStack_10c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `pfStack_20` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 262,
+      "match": "(int)pfStack_20",
+      "severity": "moderate",
+      "text": "this_ptr = *(CDemonActor **)((int)pfStack_20 + (int)(g_CDemonSetPtr->cameras + 0xcb0) + 0xa4);",
+      "type": "pointer_truncation"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 138,
+      "line": 121,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 211,
+      "line": 193,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 293,
+      "line": 273,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "text": "for (iVar7 = 6; iVar7 != 0; iVar7 = iVar7 + -1) {",
       "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 230,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "CStack_d0.x = CStack_10c.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 202,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + 4) = *puVar9;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 203,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(uint *)((int)&CStack_d0 + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 226,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + 4) = afStack_c0[(uint)bVar12 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 227,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_10c + (uint)bVar12 * -8 + (uint)bVar12 * -8 + 8) =",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 7,

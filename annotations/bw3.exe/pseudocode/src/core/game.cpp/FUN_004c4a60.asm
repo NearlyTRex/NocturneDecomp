@@ -15,14 +15,14 @@
 ;   core_sound.cpp_CSound_playSound_FUN_005609b0
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   sound_sndmain.cpp_FUN_00555df0
-;   sound_sndmain.cpp_FUN_00555f20
-;   sound_sndmain.cpp_FUN_00555f60
-;   sound_sndmain.cpp_FUN_00555fd0
-;   sound_sndmain.cpp_FUN_00556050
 ;   sound_sndmain.cpp_FUN_00556700
-;   sound_sndmain.cpp_FUN_00556c10
-;   sound_sndmain.cpp_FUN_00556e30
+;   sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30
+;   sound_sndmain.cpp_popSfxOptions_FUN_00556050
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0
 ;   sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90
+;   sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20
+;   sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60
+;   sound_sndmain.cpp_setSfxFade_FUN_00556c10
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH 0x0                            ; 004c4a9d
     PUSH EDI                            ; 004c4a9f
     MOV EBP,0x1                         ; 004c4aa0
-    CALL sound_sndmain.cpp_FUN_00556c10 ; 004c4aa5
-        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
+    CALL sound_sndmain.cpp_setSfxFade_FUN_00556c10 ; 004c4aa5
+        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxFade_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
     ADD ESP,0x10                        ; 004c4aaa
     MOV dword ptr [EBX + 0x2fc],0x0     ; 004c4aad
     LEA EDI,[EBX + 0x298]               ; 004c4ab7
@@ -102,14 +102,14 @@ section .text
         ;   XREF to: 004c4a8c (UNCONDITIONAL_JUMP)  ; LAB_004c4a8c
     PUSH 0x1                            ; 004c4af4
         ;   Label: LAB_004c4af4
-    CALL sound_sndmain.cpp_FUN_00556e30 ; 004c4af6
-        ;   XREF to: 00556e30 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556e30(int channel_index)
+    CALL sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30 ; 004c4af6
+        ;   XREF to: 00556e30 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30(int channel_index)
     ADD ESP,0x4                         ; 004c4afb
     TEST EAX,EAX                        ; 004c4afe
     JZ 0x004c4ae0                       ; 004c4b00
         ;   XREF to: 004c4ae0 (CONDITIONAL_JUMP)  ; LAB_004c4ae0
-    CALL sound_sndmain.cpp_FUN_00555fd0 ; 004c4b02
-        ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555fd0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0 ; 004c4b02
+        ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0()
     PUSH 0x1                            ; 004c4b07
     CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90 ; 004c4b09
         ;   XREF to: 00555e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90(int channel_index)
@@ -132,8 +132,8 @@ section .text
         ;   Label: LAB_004c4b35
     ADD ESP,0x4                         ; 004c4b3a
     PUSH 0x1                            ; 004c4b3d
-    CALL sound_sndmain.cpp_FUN_00555f20 ; 004c4b3f
-        ;   XREF to: 00555f20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555f20(uint flag_mask)
+    CALL sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20 ; 004c4b3f
+        ;   XREF to: 00555f20 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20(uint flag_mask)
     ADD ESP,0x4                         ; 004c4b44
     LEA EAX,[EBX + 0x298]               ; 004c4b47
     PUSH EAX                            ; 004c4b4d
@@ -151,11 +151,11 @@ section .text
     PUSH 0x40800000                     ; 004c4b6a
     PUSH dword ptr [EBX + 0x308]        ; 004c4b6f
     PUSH EAX                            ; 004c4b75
-    CALL sound_sndmain.cpp_FUN_00556c10 ; 004c4b76
-        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
+    CALL sound_sndmain.cpp_setSfxFade_FUN_00556c10 ; 004c4b76
+        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxFade_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
     ADD ESP,0x10                        ; 004c4b7b
-    CALL sound_sndmain.cpp_FUN_00556050 ; 004c4b7e
-        ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556050()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00556050 ; 004c4b7e
+        ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00556050()
         ;   Label: LAB_004c4b7e
     MOV dword ptr [EBX + 0x300],0x0     ; 004c4b83
     MOV dword ptr [EBX + 0x304],0x0     ; 004c4b8d
@@ -169,8 +169,8 @@ section .text
     PUSH EAX                            ; 004c4b9e
     MOV ESI,dword ptr [ESP + 0x24]      ; 004c4b9f
     PUSH ESI                            ; 004c4ba3
-    CALL sound_sndmain.cpp_FUN_00555f60 ; 004c4ba4
-        ;   XREF to: 00555f60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555f60(double trigger_time, int trigger_id)
+    CALL sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60 ; 004c4ba4
+        ;   XREF to: 00555f60 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60(double trigger_time, int trigger_id)
     ADD ESP,0xc                         ; 004c4ba9
     JMP 0x004c4b28                      ; 004c4bac
         ;   XREF to: 004c4b28 (UNCONDITIONAL_JUMP)  ; LAB_004c4b28

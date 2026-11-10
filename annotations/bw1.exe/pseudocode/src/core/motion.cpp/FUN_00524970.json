@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 147,
+    "complexity_score": 148,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 17,
+    "pseudocode_lines": 18,
     "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 48
+    "total_lines": 49
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "005240c0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_005240c0"
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0"
     }
   ],
   "globals": [],
@@ -143,18 +143,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_FUN_005240c0((CMotionList *)*param_1,(char *)(param_1 + 0xc),0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 11,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_FUN_005240c0((CMotionList *)*param_1,(char *)(param_1 + 0xc),0);",
+      "text": "((CMotionList *)*param_1,(char *)(param_1 + 0xc),0);",
       "type": "unnamed_param"
     },
     {
@@ -162,12 +154,20 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
+      "text": "((CMotionList *)*param_1,(char *)(param_1 + 0xc),0);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
       "text": "param_1[1] = iVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "*(byte *)(param_1 + 0xc) = 0;",
@@ -175,7 +175,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = 0;",
@@ -183,7 +183,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 19,
       "match": "param_1",
       "severity": "mild",
       "text": "*(byte *)(param_1 + 0xc) = 0;",

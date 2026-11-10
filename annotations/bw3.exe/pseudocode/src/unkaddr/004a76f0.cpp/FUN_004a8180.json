@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 206,
+    "complexity_score": 166,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 10,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 16,
-    "suspect_count": 17,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "unknown_field",
@@ -77,25 +77,25 @@
     },
     {
       "addr": "01d19ca8",
-      "name": "CAlphaBitmap_01d19c9c.field12_0xc",
+      "name": "CAlphaBitmap_01d19c9c.width",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d19cac",
-      "name": "CAlphaBitmap_01d19c9c.field16_0x10",
+      "name": "CAlphaBitmap_01d19c9c.height",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d19cbc",
-      "name": "CAlphaBitmap_01d19cb0.field12_0xc",
+      "name": "CAlphaBitmap_01d19cb0.width",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d19cc0",
-      "name": "CAlphaBitmap_01d19cb0.field16_0x10",
+      "name": "CAlphaBitmap_01d19cb0.height",
       "type": "undefined4",
       "value": null
     },
@@ -220,35 +220,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 8,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "((param_1 < 0x0000004A + CAlphaBitmap_01d19c9c._12_4_ &&",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "((param_1 < 0x0000004A + CAlphaBitmap_01d19c9c._12_4_ &&",
+      "text": "((param_1 < 0x0000004A + CAlphaBitmap_01d19c9c.width &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 9,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "(param_2 < 0x000001AE + CAlphaBitmap_01d19c9c._16_4_)))) {",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 9,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2 < 0x000001AE + CAlphaBitmap_01d19c9c._16_4_)))) {",
+      "text": "(param_2 < 0x000001AE + CAlphaBitmap_01d19c9c.height)))) {",
       "type": "unnamed_param"
     },
     {
@@ -276,35 +260,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 14,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "((param_1 < 0x000001F4 + CAlphaBitmap_01d19cb0._12_4_ &&",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "((param_1 < 0x000001F4 + CAlphaBitmap_01d19cb0._12_4_ &&",
+      "text": "((param_1 < 0x000001F4 + CAlphaBitmap_01d19cb0.width &&",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 15,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "(param_2 < CAlphaBitmap_01d19cb0._16_4_ + 0x000001AE)))))) {",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
       "match": "param_2",
       "severity": "mild",
-      "text": "(param_2 < CAlphaBitmap_01d19cb0._16_4_ + 0x000001AE)))))) {",
+      "text": "(param_2 < CAlphaBitmap_01d19cb0.height + 0x000001AE)))))) {",
       "type": "unnamed_param"
     },
     {

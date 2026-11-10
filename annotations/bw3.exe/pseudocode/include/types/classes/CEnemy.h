@@ -4,13 +4,24 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
 
 // Structure: CEnemy
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd054 (53332 bytes)
 #pragma pack(push, 1)
 typedef struct CEnemy {
-    char field_0[53332]; // 0x0
+    CCharacter base; // 0x0
+    char field_52684[4]; // 0xcdcc
+    int pool_me; // 0xcdd0
+    int randomize_me; // 0xcdd4
+    int is_in_combat; // 0xcdd8
+    float guard_distance; // 0xcddc
+    float attack_cooldown; // 0xcde0
+    struct CCharacter* victim; // 0xcde4
+    float victim_search_timer; // 0xcde8
+    float victim_search_radius; // 0xcdec
+    char patrol_name_pattern[100]; // 0xcdf0
+    char field_52820[512]; // 0xce54
 } CEnemy;
 #pragma pack(pop)
 

@@ -11,37 +11,40 @@
 uint __cdecl core_setutil_cpp_C3DSLight_apply_FUN_0053b810(int param_1,CDemonLight *param_2)
 
 {
-  char cVar1;
+  UVector3 *pUVar1;
+  char cVar2;
   uint extraout_EAX;
-  char *pcVar2;
   char *pcVar3;
-  float10 fVar4;
+  char *pcVar4;
+  float10 fVar5;
   
-  if ((uint *)&param_2->field_0x4 != (uint *)(param_1 + 0x104)) {
-    *(uint *)&param_2->field_0x4 = *(uint *)(param_1 + 0x104);
-    *(uint *)&param_2->field_0x8 = *(uint *)(param_1 + 0x108);
-    *(uint *)&param_2->field_0xc = *(uint *)(param_1 + 0x10c);
+  pUVar1 = &(param_2->base).base.position;
+  if (pUVar1 != (UVector3 *)(param_1 + 0x104)) {
+    (pUVar1->f).x = *(float *)(param_1 + 0x104);
+    (param_2->base).base.position.f.y = *(float *)(param_1 + 0x108);
+    (param_2->base).base.position.f.z = *(float *)(param_1 + 0x10c);
   }
-  core_dirmat_cpp_FUN_00449280((CMatrix3x3f *)&param_2->field_0x10,(CVector3f *)(param_1 + 0x110));
-  *(uint *)&param_2->field_0x38 = *(uint *)(param_1 + 0x11c);
-  fVar4 = (float10)*(float *)(param_1 + 0x120) * (float10)_DAT_005e6339;
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
+            (&(param_2->base).base.rotation_matrix,(CVector3f *)(param_1 + 0x110));
+  (param_2->base).base.focal_length = *(float *)(param_1 + 0x11c);
+  fVar5 = (float10)*(float *)(param_1 + 0x120) * (float10)_DAT_005e6339;
   round();
-  *(int *)&param_2->field_0x2fa4 = (int)ROUND(fVar4);
-  pcVar2 = (char *)(param_1 + 4);
+  param_2->transform_scale_factor = (int)ROUND(fVar5);
+  pcVar3 = (char *)(param_1 + 4);
   core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_0044d570
             (param_2,*(float *)(param_1 + 0x124));
   *(uint *)(param_1 + 0x11e8) = 0;
-  pcVar3 = &param_2->field_0x40;
+  pcVar4 = (param_2->base).camera_name;
   *(uint *)(param_1 + 0x1894) = 0;
   do {
-    cVar1 = *pcVar2;
-    *pcVar3 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar2[1];
-    pcVar2 = pcVar2 + 2;
-    pcVar3[1] = cVar1;
+    cVar2 = *pcVar3;
+    *pcVar4 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-  } while (cVar1 != '\0');
+    pcVar4[1] = cVar2;
+    pcVar4 = pcVar4 + 2;
+  } while (cVar2 != '\0');
   if (*(int *)(param_1 + 0x17f4) == 0) {
     return 0;
   }

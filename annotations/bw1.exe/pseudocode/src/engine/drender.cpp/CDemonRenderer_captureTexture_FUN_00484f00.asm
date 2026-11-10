@@ -10,14 +10,14 @@
 ; XREF[74]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00418e50 at 00418eeb
 ;   core_bodypart.cpp_CBodyPart_setup_FUN_00419350 at 0041937c
-;   core_chain.cpp_FUN_00436600 at 0043669e
-;   core_charactr.cpp_FUN_0042ea10 at 0042ea78
-;   core_charactr.cpp_FUN_0042fe00 at 0042fe2b
+;   core_chain.cpp_CChain_renderTransparent_FUN_00436600 at 0043669e
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00 at 0042fe2b
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10 at 0042ea78
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044bf20 at 0044bfc7
-;   core_curtain.cpp_FUN_0044a380 at 0044a3a9
+;   core_curtain.cpp_CCurtain_setup_FUN_0044a380 at 0044a3a9
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0 at 00450678
 ;   core_dcamera.cpp_CDemonCamera_uploadBackdropTexture_FUN_0044ff20 at 0044ff91
-;   core_dlight.cpp_FUN_00463820 at 00463d29
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 004647cc
 ;   ... and 64 more
 ;
 ; Referenced Globals:

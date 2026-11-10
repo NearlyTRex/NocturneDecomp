@@ -8,7 +8,7 @@
 ;   TerminatedCString s_s_0123456789ABCDEFGHJKLM_00610d70
 ;
 ; Called Functions:
-;   support_codec.cpp_FUN_00442490
+;   support_codec.cpp_writeBitsToStream_FUN_00442490
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   Label: LAB_004438e2
     PUSH 0x6                            ; 004438e3
     PUSH ESI                            ; 004438e5
-    CALL support_codec.cpp_FUN_00442490 ; 004438e6
-        ;   XREF to: 00442490 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_FUN_00442490()
+    CALL support_codec.cpp_writeBitsToStream_FUN_00442490 ; 004438e6
+        ;   XREF to: 00442490 (UNCONDITIONAL_CALL)  ; undefined support_codec.cpp_writeBitsToStream_FUN_00442490()
     ADD ESP,0xc                         ; 004438eb
     TEST EAX,EAX                        ; 004438ee
     JGE 0x004438fb                      ; 004438f0

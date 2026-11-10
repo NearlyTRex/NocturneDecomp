@@ -18,11 +18,11 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_stdio.c_vsprintf_FUN_005bfb18
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   engine_font.cpp_FUN_004c1dd0
-;   engine_font.cpp_FUN_004c4510
 ;   engine_mini3d.cpp_FUN_00512320
 ;   shape_edittool.cpp_FUN_00496ee0
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
 
@@ -44,8 +44,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0049451e
     PUSH EAX                            ; 00494524
     MOV dword ptr [0x01c3f538],EDX      ; 00494525 | DAT_01c3f538
-    CALL engine_font.cpp_FUN_004c4510   ; 0049452b
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0049452b
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00494530
     MOV [0x01c3f53c],EAX                ; 00494533 | DAT_01c3f53c
     LEA EAX,[ESP + 0x420]               ; 00494538
@@ -88,8 +88,8 @@ section .text
     CALL engine_font.cpp_FUN_004c1dd0   ; 004945b8
         ;   XREF to: 004c1dd0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004c1dd0()
     ADD ESP,0x18                        ; 004945bd
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004945c0
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004945c0
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     ADD ESP,0x404                       ; 004945c5
     POP EBP                             ; 004945cb
     POP EDI                             ; 004945cc

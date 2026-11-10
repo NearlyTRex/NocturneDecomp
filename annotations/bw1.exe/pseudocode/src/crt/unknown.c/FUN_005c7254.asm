@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   crt_unknown.c_FUN_005c140c at 005c14a1
-;   unkafter_zombie.cpp_FUN_005cc3e0 at 005cc4c4
+;   crt_unknown.c_FUN_005cc3e0 at 005cc4c4
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c7280

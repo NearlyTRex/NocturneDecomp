@@ -12,7 +12,7 @@ int __cdecl core_health_cpp_CHealthItem_canPickup_FUN_004ea510(CHealthItem *this
   int iVar1;
   int iVar2;
   
-  iVar1 = core_actor_cpp_FUN_0040c550(picker,"CHero");
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(picker,"CHero");
   iVar2 = 0;
   if (iVar1 != 0) {
     iVar2 = 2;

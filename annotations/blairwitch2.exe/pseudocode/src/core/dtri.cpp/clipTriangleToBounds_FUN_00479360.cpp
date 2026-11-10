@@ -24,39 +24,39 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
   
   _DAT_01c21e84 = 3;
   if (triangle_vertices != (CVector3f *)&DAT_01c21e88) {
-    _DAT_01c21e88 = *(uint *)triangle_vertices;
-    _DAT_01c21e90 = *(uint *)&triangle_vertices->field_0x8;
-    _DAT_01c21e8c = *(uint *)&triangle_vertices->field_0x4;
+    _DAT_01c21e88 = triangle_vertices->x;
+    _DAT_01c21e90 = triangle_vertices->z;
+    _DAT_01c21e8c = triangle_vertices->y;
   }
   if (triangle_vertices + 1 != (CVector3f *)&DAT_01c21e94) {
-    _DAT_01c21e94 = *(uint *)(triangle_vertices + 1);
-    _DAT_01c21e9c = *(uint *)&triangle_vertices[1].field_0x8;
-    _DAT_01c21e98 = *(uint *)&triangle_vertices[1].field_0x4;
+    _DAT_01c21e94 = triangle_vertices[1].x;
+    _DAT_01c21e9c = triangle_vertices[1].z;
+    _DAT_01c21e98 = triangle_vertices[1].y;
   }
   if (triangle_vertices + 2 != (CVector3f *)&DAT_01c21ea0) {
-    _DAT_01c21ea0 = *(uint *)(triangle_vertices + 2);
-    _DAT_01c21ea8 = *(uint *)&triangle_vertices[2].field_0x8;
-    _DAT_01c21ea4 = *(uint *)&triangle_vertices[2].field_0x4;
+    _DAT_01c21ea0 = triangle_vertices[2].x;
+    _DAT_01c21ea8 = triangle_vertices[2].z;
+    _DAT_01c21ea4 = triangle_vertices[2].y;
   }
   bVar9 = 0;
   iVar7 = 0;
   bVar2 = 0xff;
   pfVar6 = (float *)&DAT_01c21e88;
   do {
-    bVar5 = *(float *)bounds_max < *pfVar6;
-    if (*(float *)&bounds_max->field_0x4 < pfVar6[1]) {
+    bVar5 = bounds_max->x < *pfVar6;
+    if (bounds_max->y < pfVar6[1]) {
       bVar5 = bVar5 | 2;
     }
-    if (*(float *)&bounds_max->field_0x8 < pfVar6[2]) {
+    if (bounds_max->z < pfVar6[2]) {
       bVar5 = bVar5 | 4;
     }
-    if (*pfVar6 < *(float *)bounds_min) {
+    if (*pfVar6 < bounds_min->x) {
       bVar5 = bVar5 | 8;
     }
-    if (pfVar6[1] < *(float *)&bounds_min->field_0x4) {
+    if (pfVar6[1] < bounds_min->y) {
       bVar5 = bVar5 | 0x10;
     }
-    if (pfVar6[2] < *(float *)&bounds_min->field_0x8) {
+    if (pfVar6[2] < bounds_min->z) {
       bVar5 = bVar5 | 0x20;
     }
     pfVar6 = pfVar6 + 3;
@@ -67,24 +67,24 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
   if (bVar9 == 0) {
     _DAT_01c2231c = 3;
     if (triangle_vertices != (CVector3f *)&DAT_01c22320) {
-      _DAT_01c22320 = *(uint *)triangle_vertices;
-      _DAT_01c22328 = *(uint *)&triangle_vertices->field_0x8;
-      _DAT_01c22324 = *(uint *)&triangle_vertices->field_0x4;
+      _DAT_01c22320 = triangle_vertices->x;
+      _DAT_01c22328 = triangle_vertices->z;
+      _DAT_01c22324 = triangle_vertices->y;
     }
     if (triangle_vertices + 1 != (CVector3f *)&DAT_01c2232c) {
-      _DAT_01c2232c = *(uint *)(triangle_vertices + 1);
-      _DAT_01c22334 = *(uint *)&triangle_vertices[1].field_0x8;
-      _DAT_01c22330 = *(uint *)&triangle_vertices[1].field_0x4;
+      _DAT_01c2232c = triangle_vertices[1].x;
+      _DAT_01c22334 = triangle_vertices[1].z;
+      _DAT_01c22330 = triangle_vertices[1].y;
     }
     if (triangle_vertices + 2 != (CVector3f *)&DAT_01c22338) {
-      _DAT_01c22338 = *(uint *)(triangle_vertices + 2);
-      _DAT_01c22340 = *(uint *)&triangle_vertices[2].field_0x8;
-      _DAT_01c2233c = *(uint *)&triangle_vertices[2].field_0x4;
+      _DAT_01c22338 = triangle_vertices[2].x;
+      _DAT_01c22340 = triangle_vertices[2].z;
+      _DAT_01c2233c = triangle_vertices[2].y;
     }
     return 1;
   }
   if (bVar2 == 0) {
-    fVar1 = *(float *)&bounds_max->field_0x4;
+    fVar1 = bounds_max->y;
     iVar7 = 0;
     puVar8 = (uint *)&DAT_01c21e88;
     _DAT_01c21f48 = 0;
@@ -135,7 +135,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
       puVar8 = puVar8 + 3;
     } while (iVar7 < (int)_DAT_01c21e84);
     if (2 < (int)_DAT_01c21f48) {
-      fVar1 = *(float *)&bounds_min->field_0x4;
+      fVar1 = bounds_min->y;
       iVar7 = 0;
       if (0 < (int)_DAT_01c21f48) {
         puVar8 = (uint *)&DAT_01c21f4c;
@@ -182,7 +182,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
         } while (iVar7 < (int)_DAT_01c21f48);
       }
       if (2 < (int)_DAT_01c2200c) {
-        fVar1 = *(float *)bounds_max;
+        fVar1 = bounds_max->x;
         iVar7 = 0;
         if (0 < (int)_DAT_01c2200c) {
           pfVar6 = (float *)&DAT_01c22010;
@@ -230,7 +230,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
           } while (iVar7 < (int)_DAT_01c2200c);
         }
         if (2 < (int)_DAT_01c220d0) {
-          fVar1 = *(float *)bounds_min;
+          fVar1 = bounds_min->x;
           iVar7 = 0;
           if (0 < (int)_DAT_01c220d0) {
             pfVar6 = (float *)&DAT_01c220d4;
@@ -278,7 +278,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
             } while (iVar7 < (int)_DAT_01c220d0);
           }
           if (2 < (int)_DAT_01c22194) {
-            fVar1 = *(float *)&bounds_min->field_0x8;
+            fVar1 = bounds_min->z;
             iVar7 = 0;
             if (0 < (int)_DAT_01c22194) {
               puVar8 = (uint *)&DAT_01c22198;
@@ -325,7 +325,7 @@ int __cdecl core_dtri_cpp_clipTriangleToBounds_FUN_00479360(CVector3f *triangle_
               } while (iVar7 < (int)_DAT_01c22194);
             }
             if (2 < (int)_DAT_01c22258) {
-              fVar1 = *(float *)&bounds_max->field_0x8;
+              fVar1 = bounds_max->z;
               iVar7 = 0;
               if (0 < (int)_DAT_01c22258) {
                 puVar8 = (uint *)&DAT_01c2225c;

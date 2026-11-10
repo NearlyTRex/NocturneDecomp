@@ -7,7 +7,7 @@
 ; CFlame *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_crossbow.cpp_FUN_0043a580 at 0043a64d
+;   core_crossbow.cpp_CCrossbow_process_FUN_0043a580 at 0043a64d
 ;
 ; *****************************************************************************
 

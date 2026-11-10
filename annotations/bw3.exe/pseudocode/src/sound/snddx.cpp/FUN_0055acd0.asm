@@ -19,11 +19,11 @@
 ;   undefined4 DAT_02cf49f0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   sound_snddx.cpp_fillStreamBuffer_FUN_0055a820
 ;   sound_snddx.cpp_FUN_0055a670
-;   sound_sndmain.cpp_FUN_00558d70
 ;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_startSoundThread_FUN_00558d70
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
         ;   XREF to: 0055ad3a (CONDITIONAL_JUMP)  ; LAB_0055ad3a
     PUSH dword ptr [ESP + 0x320]        ; 0055ad52
         ;   Label: LAB_0055ad52
-    CALL sound_sndmain.cpp_FUN_00558d70 ; 0055ad59
-        ;   XREF to: 00558d70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00558d70()
+    CALL sound_sndmain.cpp_startSoundThread_FUN_00558d70 ; 0055ad59
+        ;   XREF to: 00558d70 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_startSoundThread_FUN_00558d70()
     ADD ESP,0x4                         ; 0055ad5e
     TEST EAX,EAX                        ; 0055ad61
     JZ 0x0055adcf                       ; 0055ad63
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5d452f                       ; 0055adaa | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x19c]               ; 0055adaf
     PUSH EAX                            ; 0055adb6
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055adb7
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055adb7
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055adbc
     LEA EAX,[ESP + 0x190]               ; 0055adbf
     PUSH EAX                            ; 0055adc6
@@ -143,8 +143,8 @@ section .text
     PUSH 0x5d452f                       ; 0055ae11 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 0055ae16
     PUSH EAX                            ; 0055ae1a
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055ae1b
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055ae1b
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055ae20
     MOV EAX,ESP                         ; 0055ae23
     JMP 0x0055adc6                      ; 0055ae25

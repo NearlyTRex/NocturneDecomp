@@ -25,7 +25,7 @@
     {
       "addr": "004c0080",
       "from_addr": "004c046b",
-      "name": "core_flies.cpp_FUN_004c0080",
+      "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,33 +41,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0053f720",
+      "from_addr": "0053f95f",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0053e120",
       "from_addr": "0053e384",
-      "name": "engine_prim.c_FUN_0053e120",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_0053e120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053f080",
       "from_addr": "0053f3df",
-      "name": "engine_prim.c_FUN_0053f080",
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_0053f080",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0053f720",
-      "from_addr": "0053f95f",
-      "name": "engine_prim.c_FUN_0053f720",
+      "addr": "005bf640",
+      "from_addr": "005bf927",
+      "name": "engine_zraster.c_rasterizePolygonCustom_FUN_005bf640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bf120",
       "from_addr": "005bf447",
       "name": "unkafter_zombie.cpp_FUN_005bf120",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005bf640",
-      "from_addr": "005bf927",
-      "name": "unkafter_zombie.cpp_FUN_005bf640",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -124,7 +124,7 @@
       {
         "call_addr": "0053f3df",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0053f080",
+        "caller": "engine_prim.c_renderScanlinePolygon_FUN_0053f080",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -135,7 +135,7 @@
       {
         "call_addr": "0053e384",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0053e120",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_0053e120",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       {
         "call_addr": "005bf927",
         "call_type": "direct",
-        "caller": "unkafter_zombie.cpp_FUN_005bf640",
+        "caller": "engine_zraster.c_rasterizePolygonCustom_FUN_005bf640",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,7 +157,7 @@
       {
         "call_addr": "0053f95f",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0053f720",
+        "caller": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +179,7 @@
       {
         "call_addr": "004c046b",
         "call_type": "direct",
-        "caller": "core_flies.cpp_FUN_004c0080",
+        "caller": "core_flies.cpp_CFlies_renderOpaque_FUN_004c0080",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

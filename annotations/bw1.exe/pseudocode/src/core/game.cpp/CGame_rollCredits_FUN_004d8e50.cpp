@@ -90,18 +90,18 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004d8e50(CGame *this_ptr)
   sound_sndmain_cpp_resetSoundDevice_FUN_005750e0();
   sound_sndmain_cpp_enableSoundSystem_FUN_00574ee0();
   local_18 = 0;
-  iVar8 = sound_sndmain_cpp_FUN_00573cd0(1);
+  iVar8 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00573cd0(1);
   if (iVar8 != 0) {
-    sound_sndmain_cpp_FUN_00572ac0();
+    sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
     sound_sndmain_cpp_FUN_00572980(1);
     sound_sndmain_cpp_FUN_005729f0(1);
     local_18 = sound_sndmain_cpp_startSfx_FUN_00572d20("splash-music-44.wav");
-    sound_sndmain_cpp_FUN_00572b40();
+    sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   this_ptr_00 = _DAT_0152d244;
   *(uint *)(_DAT_0152d244 + 0x4210) = 0;
-  iVar8 = engine_font_cpp_FUN_004c4510(this_ptr_00,0x58);
+  iVar8 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr_00,0x58);
   local_20 = -1;
   core_game_cpp_CGame_saveClockTime_FUN_004cbf10(this_ptr);
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
@@ -157,10 +157,10 @@ LAB_004d91eb:
       engine_2d_c_fillRectColor_FUN_004031c0(0x19e,0,0x27f,0x1e,0);
       engine_2d_c_fillRectColor_FUN_004031c0(0x19e,0x1b7,0x27f,0x1df,0);
     }
-    wincore_wddvmem_cpp_FUN_005acff0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_005acff0();
     iVar3 = (**(code **)*0x01D1BCA0)(0x01D1BCA0,1);
     if (iVar3 != 0) goto LAB_004d91eb;
     core_game_cpp_FUN_004cbf20(this_ptr);
-    local_14 = local_14 - *(float *)&this_ptr->field_0x294 * _DAT_005e35ec;
+    local_14 = local_14 - this_ptr->delta_time_float * _DAT_005e35ec;
   } while( true );
 }

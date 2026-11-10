@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d980 at 0052dbb2
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052dbb2
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005e62fd
@@ -18,11 +18,11 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_FUN_00447660
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_00449c70
 ;   core_dlight.cpp_CDemonLight_init_FUN_00449d90
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x4                         ; 0053b6b4
     MOV EBP,dword ptr [ESP + 0x18]      ; 0053b6b7
     PUSH 0x2fb0                         ; 0053b6bb
-    CALL crt_unknown.c_FUN_005b8be2     ; 0053b6c0
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0053b6c0
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0053b6c5
     TEST EAX,EAX                        ; 0053b6c8
     JNZ 0x0053b7de                      ; 0053b6ca
@@ -86,8 +86,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0053b747
     ADD EAX,0x10                        ; 0053b74b
     PUSH EAX                            ; 0053b74e
-    CALL core_dirmat.cpp_FUN_00449280   ; 0053b74f
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 0053b74f
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0053b754
     MOV EAX,dword ptr [ESP]             ; 0053b757
     MOV EDX,dword ptr [EBP + 0x11c]     ; 0053b75a

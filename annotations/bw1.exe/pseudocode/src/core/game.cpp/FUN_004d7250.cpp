@@ -30,10 +30,10 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
   if (p_Var2 != (_FILE *)0x0) {
     _fclose(p_Var2);
   }
-  *(uint *)&param_1->field_0x26c = 0;
-  *(uint *)&param_1->field_0x274 = 0;
-  *(uint *)&param_1->field_0x268 = 0;
-  *(uint *)&param_1->field_0x270 = 0;
+  param_1->damageable_enemy_count = 0;
+  param_1->total_kill_count = 0;
+  param_1->total_game_time = 0.0;
+  param_1->total_play_time = 0.0;
   *(uint *)&param_1->field_0x250 = 0;
   local_18 = _DAT_01c3eb50;
   _DAT_01c3eb50 = _DAT_0152d244;
@@ -49,7 +49,7 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
   iVar4 = -1;
   local_14 = -1;
   if (param_2 == 1 || iVar3 != 0) {
-    iVar3 = shape_edittool_cpp_FUN_00494fd0
+    iVar3 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_134,0);
     if (iVar3 == 0) goto LAB_004d757b;
@@ -62,37 +62,39 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
       shape_edittool_cpp_CPickList_ctor_FUN_0049a620(&local_6f8);
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                          ("The Rustin Parr Investigation");
-      shape_edittool_cpp_CStrList_add_FUN_004994d0((CStrList *)&local_6f8,pcVar6);
+      shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_6f8.base,pcVar6);
       uVar7 = 0;
       iVar3 = -1;
       pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Choose a story to play")
       ;
-      iVar3 = shape_edittool_cpp_FUN_0049a8b0(&local_6f8,pcVar6,iVar3,uVar7);
+      iVar3 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
+                        (&local_6f8,pcVar6,iVar3,uVar7);
       local_14 = iVar3;
       if (iVar3 < 0) {
         _DAT_01c3eb50 = local_18;
         shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_6f8,0);
         goto LAB_004d7589;
       }
-      shape_edittool_cpp_FUN_0049c370(&local_6f8);
+      shape_edittool_cpp_CPickList_clear_FUN_0049c370(&local_6f8);
       if (iVar3 == 0) {
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("Normal Puzzles, Normal Combat");
-        shape_edittool_cpp_CStrList_add_FUN_004994d0((CStrList *)&local_6f8,pcVar6);
+        shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_6f8.base,pcVar6);
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("Normal Puzzles, Hard Combat");
-        shape_edittool_cpp_CStrList_add_FUN_004994d0((CStrList *)&local_6f8,pcVar6);
+        shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_6f8.base,pcVar6);
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("Hard Puzzles, Normal Combat");
-        shape_edittool_cpp_CStrList_add_FUN_004994d0((CStrList *)&local_6f8,pcVar6);
+        shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_6f8.base,pcVar6);
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("Hard Puzzles, Hard Combat");
-        shape_edittool_cpp_CStrList_add_FUN_004994d0((CStrList *)&local_6f8,pcVar6);
+        shape_edittool_cpp_CStrList_add_FUN_004994d0(&local_6f8.base,pcVar6);
         uVar7 = 0;
         iVar3 = -1;
         pcVar6 = support_newmsg_cpp_getLocalizedString_FUN_00531090
                            ("'The Rustin Parr Investigation'");
-        iVar4 = shape_edittool_cpp_FUN_0049a8b0(&local_6f8,pcVar6,iVar3,uVar7);
+        iVar4 = shape_edittool_cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
+                          (&local_6f8,pcVar6,iVar3,uVar7);
       }
       shape_edittool_cpp_CPickList_dtor_FUN_0049a710(&local_6f8,0);
     }
@@ -164,9 +166,9 @@ void core_game_cpp_FUN_004d7250(CGame *param_1,int param_2)
   if (iVar3 != 0) {
     core_mission_cpp_FUN_0051bdc0(0x01D2C900);
     core_mission_cpp_CDemonMission_run_FUN_0051bad0(0x01D2C900);
-    if (*(int *)&param_1->field_0x9f8 != 0) {
-      *(uint *)&param_1->field_0x9f8 = 0;
-      core_game_cpp_FUN_004d6990(param_1,&param_1->field_0x9fc,1);
+    if (param_1->need_chapter_reload != 0) {
+      param_1->need_chapter_reload = 0;
+      core_game_cpp_FUN_004d6990(param_1,param_1->chapter_reload_filename,1);
     }
   }
 LAB_004d757b:

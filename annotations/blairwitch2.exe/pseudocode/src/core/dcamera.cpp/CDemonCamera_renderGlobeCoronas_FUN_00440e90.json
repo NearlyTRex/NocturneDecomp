@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 674,
-    "complexity_score": 714,
+    "complexity_score": 593,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 264,
-    "suspect_count": 40,
+    "pseudocode_lines": 263,
+    "suspect_count": 28,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -21,7 +21,7 @@
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 938
+    "total_lines": 937
   },
   "cross_references": [
     {
@@ -177,7 +177,7 @@
     },
     {
       "addr": "01cb690c",
-      "name": "g_CGameInstance.field12_0xc",
+      "name": "g_CGameInstance.field3_0xc",
       "type": "undefined4",
       "value": null
     }
@@ -545,12 +545,12 @@
       "line": 51,
       "match": "field_0xc",
       "severity": "mild",
-      "text": "if ((*(int *)&g_CGamePtr->field_0xc != 0) ||",
+      "text": "if ((*(int *)&g_CGamePtr->field_0xc != 0) || ((force_render == 0 && (globe->corona_mode != 0)))) {",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_01510724",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01510724 + (uint)bVar1 * -8) =",
@@ -558,7 +558,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 57,
+      "line": 56,
       "match": "&stack0xffffff70",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff70 + (uint)bVar1 * -8);",
@@ -566,7 +566,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 57,
       "match": "DAT_01510728",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01510728 + (uint)bVar1 * -8 + (uint)bVar1 * -8) =",
@@ -574,95 +574,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 59,
+      "line": 58,
       "match": "&stack0xffffff74",
       "severity": "moderate",
       "text": "*(uint *)(&stack0xffffff74 + (uint)bVar1 * -8 + (uint)bVar1 * -8);",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 76,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "*(uint *)(iVar2 + 0x14c3550) = *(uint *)&this_ptr->field_0x144;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (iVar4 < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 87,
+      "line": 86,
       "match": "*(CDemonGlobe **)(iVar4 + 0x126e7ac",
       "severity": "moderate",
       "text": "if (globe == *(CDemonGlobe **)(iVar4 + 0x126e7ac)) {",
       "type": "raw_address_pointer_store"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x154 < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 95,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "if (*(int *)(iVar2 + 4) != *(int *)&this_ptr->field_0x144) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 102,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (iVar10 < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 116,
+      "line": 115,
       "match": "DAT_0083c7d4",
       "severity": "mild",
       "text": "local_68 = &DAT_0083c7d4;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 121,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x144 != *(int *)(iVar4 + 0x14c3550)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 127,
       "match": "DAT_01c2b64c",
       "severity": "mild",
       "text": "local_24 = (uint *)(*(int *)(&DAT_01c2b64c + (local_54 << (DAT_01308800 & 0x1f)) * 4)",
@@ -670,7 +606,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 128,
+      "line": 127,
       "match": "DAT_01308800",
       "severity": "mild",
       "text": "local_24 = (uint *)(*(int *)(&DAT_01c2b64c + (local_54 << (DAT_01308800 & 0x1f)) * 4)",
@@ -678,7 +614,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 128,
       "match": "DAT_01308800",
       "severity": "mild",
       "text": "+ (local_88 << (DAT_01308800 & 0x1f)) * 4);",
@@ -686,7 +622,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 130,
+      "line": 129,
       "match": "(byte *)((int)local_6c",
       "severity": "moderate",
       "text": "local_30 = (byte *)((int)local_6c + local_88);",
@@ -694,7 +630,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 177,
+      "line": 176,
       "match": "DAT_01308800",
       "severity": "mild",
       "text": "bVar1 = DAT_01308800;",
@@ -702,7 +638,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 186,
+      "line": 185,
       "match": "(char *)((int)local_80",
       "severity": "moderate",
       "text": "for (pcVar9 = (char *)((int)local_80 + iVar4 + local_54 * 0x140 + 0x784);",
@@ -710,47 +646,23 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 190,
+      "line": 189,
       "match": "(char *)((int)local_80",
       "severity": "moderate",
       "text": "for (pcVar9 = (char *)((int)local_80 + iVar2 + local_54 * 0x140 + 0x783);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 208,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (local_54 < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 217,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 221,
+      "line": 220,
       "match": "DAT_0083c7d4",
       "severity": "mild",
       "text": "local_74 = &DAT_0083c7d4;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 223,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x144 != *(int *)(local_58 + 0x14c3550)) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 228,
       "match": "DAT_01c2b64c",
       "severity": "mild",
       "text": "local_38 = (uint *)(*(int *)(&DAT_01c2b64c + (local_64 << (DAT_01308800 & 0x1f)) * 4) +",
@@ -758,7 +670,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 229,
+      "line": 228,
       "match": "DAT_01308800",
       "severity": "mild",
       "text": "local_38 = (uint *)(*(int *)(&DAT_01c2b64c + (local_64 << (DAT_01308800 & 0x1f)) * 4) +",
@@ -766,7 +678,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 230,
+      "line": 229,
       "match": "DAT_01308800",
       "severity": "mild",
       "text": "(local_28 << (DAT_01308800 & 0x1f)) * 4);",
@@ -774,7 +686,7 @@
     },
     {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 232,
+      "line": 231,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "while (SBORROW4(local_28,iVar4) != iVar2 < 0) {",
@@ -782,23 +694,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 254,
+      "line": 253,
       "match": "DAT_01308800",
       "severity": "mild",
       "text": "local_38 = local_38 + (1 << (DAT_01308800 & 0x1f));",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 264,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (local_64 < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `local_6c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 130,
+      "line": 129,
       "match": "(int)local_6c",
       "severity": "moderate",
       "text": "local_30 = (byte *)((int)local_6c + local_88);",
@@ -806,7 +710,7 @@
     },
     {
       "description": "Pointer value `local_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 186,
+      "line": 185,
       "match": "(int)local_80",
       "severity": "moderate",
       "text": "for (pcVar9 = (char *)((int)local_80 + iVar4 + local_54 * 0x140 + 0x784);",
@@ -814,7 +718,7 @@
     },
     {
       "description": "Pointer value `local_80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 190,
+      "line": 189,
       "match": "(int)local_80",
       "severity": "moderate",
       "text": "for (pcVar9 = (char *)((int)local_80 + iVar2 + local_54 * 0x140 + 0x783);",
@@ -822,7 +726,7 @@
     },
     {
       "description": "Raw hex address 0x14c3cd0 assigned to bare local `local_70`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_70` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 117,
+      "line": 116,
       "match": "0x14c3cd0",
       "severity": "moderate",
       "text": "local_70 = 0x14c3cd0;",
@@ -830,7 +734,7 @@
     },
     {
       "description": "Raw hex address 0x14c3cd0 assigned to bare local `local_78`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_78` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 219,
+      "line": 218,
       "match": "0x14c3cd0",
       "severity": "moderate",
       "text": "local_78 = 0x14c3cd0;",
@@ -838,7 +742,7 @@
     },
     {
       "description": "Raw hex address 0xaf5218 assigned to bare local `local_7c`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_7c` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 220,
+      "line": 219,
       "match": "0xaf5218",
       "severity": "moderate",
       "text": "local_7c = 0xaf5218;",

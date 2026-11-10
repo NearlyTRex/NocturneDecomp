@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 62,
+    "complexity_score": 47,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 17,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -144,16 +143,8 @@
       "line": 18,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x194 + 4))(this_ptr);",
+      "text": "(**(code **)(this_ptr->vtable + 4))(this_ptr);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x194",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x194 + 4))(this_ptr);",
-      "type": "unnamed_field"
     }
   ]
 }

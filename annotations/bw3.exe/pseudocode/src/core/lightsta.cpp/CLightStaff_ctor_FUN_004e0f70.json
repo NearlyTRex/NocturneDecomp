@@ -132,7 +132,7 @@
       "line": 12,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte **)&pCVar2->field_0x154 = &g_CLightStaffVTable;",
+      "text": "((UActorVTable *)&pCVar2->field_0x154)->_ub = &g_CLightStaffVTable._ub;",
       "type": "unnamed_field"
     },
     {
@@ -148,7 +148,7 @@
       "line": 15,
       "match": "field_0x2d8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2d8 = 0;",
+      "text": "*(int *)&pCVar2->field_0x2d8 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -156,7 +156,7 @@
       "line": 16,
       "match": "field_0x2dc",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2dc = 0;",
+      "text": "*(EFireMode *)&pCVar2->field_0x2dc = FIRE_MODE_AUTOMATIC;",
       "type": "unnamed_field"
     },
     {
@@ -164,7 +164,7 @@
       "line": 17,
       "match": "field_0x2e0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e0 = 0xc;",
+      "text": "*(EWeaponType *)&pCVar2->field_0x2e0 = WEAPON_TYPE_BARON|WEAPON_TYPE_TOMMY_GUN;",
       "type": "unnamed_field"
     },
     {
@@ -172,7 +172,7 @@
       "line": 18,
       "match": "field_0x2e4",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e4 = 0;",
+      "text": "*(int *)&pCVar2->field_0x2e4 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -180,7 +180,7 @@
       "line": 19,
       "match": "field_0x2e8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2e8 = 0x42000000;",
+      "text": "*(float *)&pCVar2->field_0x2e8 = 32.0;",
       "type": "unnamed_field"
     },
     {
@@ -188,7 +188,7 @@
       "line": 20,
       "match": "field_0x2ec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x2ec = 0;",
+      "text": "*(int *)&pCVar2->field_0x2ec = 0;",
       "type": "unnamed_field"
     },
     {

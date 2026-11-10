@@ -23,7 +23,7 @@ void unkafter_dcube_cpp_FUN_00446f4e(char *param_1)
       engine_2d_c_drawText_FUN_00401fe0(acStack_68,0,iStack_14);
       iStack_14 = iStack_14 + 0xb;
       if (DAT_006141bc + -0xb < iStack_14) {
-        wincore_wddvmem_cpp_FUN_00589560();
+        wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
         wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
         engine_2d_c_clearInputAndWait_FUN_004032b0();
         engine_special_cpp_clearScreen_FUN_0055b1f0();
@@ -31,7 +31,7 @@ void unkafter_dcube_cpp_FUN_00446f4e(char *param_1)
       }
     }
     _fclose(p_Stack_18);
-    wincore_wddvmem_cpp_FUN_00589560();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();

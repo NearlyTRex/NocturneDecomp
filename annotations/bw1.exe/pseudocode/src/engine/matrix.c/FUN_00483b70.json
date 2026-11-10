@@ -18,15 +18,27 @@
   },
   "cross_references": [
     {
+      "addr": "00464190",
+      "from_addr": "00464614",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00463820",
       "from_addr": "00463876",
       "name": "core_dlight.cpp_FUN_00463820",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00464190",
-      "from_addr": "00464614",
-      "name": "core_dlight.cpp_FUN_00464190",
+      "addr": "004b1870",
+      "from_addr": "004b18f2",
+      "name": "core_fire.cpp_CExplosion_render_FUN_004b1870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b2ea0",
+      "from_addr": "004b2f26",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_004b2ea0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,27 +48,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004b3570",
+      "from_addr": "004b36e9",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_004b3570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b3d20",
       "from_addr": "004b3dcd",
       "name": "core_fire.cpp_CTrail_render_FUN_004b3d20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b1870",
-      "from_addr": "004b18f2",
-      "name": "core_fire.cpp_FUN_004b1870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b2ea0",
-      "from_addr": "004b2f26",
-      "name": "core_fire.cpp_FUN_004b2ea0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b3570",
-      "from_addr": "004b36e9",
-      "name": "core_fire.cpp_FUN_004b3570",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -68,13 +68,13 @@
     {
       "addr": "00555460",
       "from_addr": "005554be",
-      "name": "core_set.cpp_FUN_00555460",
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_00555460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ae890",
       "from_addr": "005ae8c1",
-      "name": "core_weather.cpp_FUN_005ae890",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_005ae890",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +132,7 @@
       {
         "call_addr": "004b18f2",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b1870",
+        "caller": "core_fire.cpp_CExplosion_render_FUN_004b1870",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +145,7 @@
       {
         "call_addr": "004b2f26",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b2ea0",
+        "caller": "core_fire.cpp_CGunFlame_render_FUN_004b2ea0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "004b36e9",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b3570",
+        "caller": "core_fire.cpp_CLightningBolt_render_FUN_004b3570",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "00464614",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_00464190",
+        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +210,7 @@
       {
         "call_addr": "005554be",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00555460",
+        "caller": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_00555460",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +225,7 @@
       {
         "call_addr": "005ae8c1",
         "call_type": "direct",
-        "caller": "core_weather.cpp_FUN_005ae890",
+        "caller": "core_weather.cpp_CWeather_renderParticles_FUN_005ae890",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

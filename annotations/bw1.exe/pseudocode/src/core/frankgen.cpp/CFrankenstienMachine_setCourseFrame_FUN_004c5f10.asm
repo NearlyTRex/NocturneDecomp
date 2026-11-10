@@ -13,7 +13,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_frankgen.cpp_FUN_004c5c60 at 004c5c8a
+;   core_frankgen.cpp_CFrankenstienMachine_updateAnchorPosition_FUN_004c5c60 at 004c5c8a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_frankgen_cpp_005e0dad
@@ -22,7 +22,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_course.cpp_FUN_00447f00
+;   core_course.cpp_CCourse_evaluate_FUN_00447f00
 ;   core_main.c_FUN_005030e0
 ;
 ; *****************************************************************************
@@ -84,8 +84,8 @@ section .text
     ADD EBX,0x300                       ; 004c5f83
     PUSH dword ptr [ESP + 0x8]          ; 004c5f89
     PUSH EBX                            ; 004c5f8d
-    CALL core_course.cpp_FUN_00447f00   ; 004c5f8e
-        ;   XREF to: 00447f00 (UNCONDITIONAL_CALL)  ; void core_course.cpp_FUN_00447f00(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
+    CALL core_course.cpp_CCourse_evaluate_FUN_00447f00 ; 004c5f8e
+        ;   XREF to: 00447f00 (UNCONDITIONAL_CALL)  ; void core_course.cpp_CCourse_evaluate_FUN_00447f00(CCourse * this_ptr, float time, CVector3f * out_pos, CVector3f * out_euler)
     ADD ESP,0x10                        ; 004c5f93
     MOV ESP,EBP                         ; 004c5f96
     POP EBP                             ; 004c5f98

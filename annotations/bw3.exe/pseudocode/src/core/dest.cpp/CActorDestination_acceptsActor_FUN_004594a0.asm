@@ -8,12 +8,12 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[3]:
-;   core_dest.cpp_FUN_004591f0 at 004592bb
+;   core_dest.cpp_CActorDestination_process_FUN_004591f0 at 004592bb
 ;   core_hero.cpp_FUN_004d3b20 at 004d3ba0
 ;   core_prye.cpp_FUN_00521880 at 00521991
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
         ;   Label: LAB_004594d1
     PUSH EAX                            ; 004594d7
     PUSH ESI                            ; 004594d8
-    CALL core_actor.cpp_FUN_0040c790    ; 004594d9
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004594d9
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004594de
     TEST EAX,EAX                        ; 004594e1
     JZ 0x004594cc                       ; 004594e3

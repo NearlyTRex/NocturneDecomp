@@ -2,15 +2,28 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CBaron
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x25740 (153408 bytes)
 #pragma pack(push, 1)
 typedef struct CBaron {
-    char field_0[153408]; // 0x0
+    char field_0[153152]; // 0x0
+    char summon_event[100]; // 0x25640
+    char go_away_event[100]; // 0x256a4
+    CVector3f head_rotation; // 0x25708
+    float head_blend_weight; // 0x25714
+    struct CDemonActor* target_actor; // 0x25718
+    int new_attack; // 0x2571c
+    CVector3f left_hand_pos; // 0x25720
+    CVector3f right_hand_pos; // 0x2572c
+    int summoned; // 0x25738
+    int shell_visible; // 0x2573c
 } CBaron;
 #pragma pack(pop)
 

@@ -28,9 +28,9 @@ void unkaddr_0059d350_cpp_FUN_0059d360(uint *param_1,CVector3f *param_2,uint par
   param_1[0xf] = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005306b0(this_ptr_00,this_ptr);
   if ((CVector3f *)(param_1 + 1) != param_2) {
-    param_1[1] = *(uint *)param_2;
-    param_1[2] = *(uint *)&param_2->field_0x4;
-    param_1[3] = *(uint *)&param_2->field_0x8;
+    ((CVector3f *)(param_1 + 1))->x = param_2->x;
+    param_1[2] = param_2->y;
+    param_1[3] = param_2->z;
   }
   core_dirmat_cpp_FUN_004496e0(param_3);
   local_1c = local_28;

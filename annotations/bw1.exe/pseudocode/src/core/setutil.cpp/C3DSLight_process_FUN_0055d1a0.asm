@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_005542c0 at 0055435f
+;   core_set.cpp_CDemonSet_process_FUN_005542c0 at 0055435f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setutil_cpp_005f1311
@@ -13,10 +13,10 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   undefined4 DAT_01c43530
-;   undefined4 g_CGameInstance.field660_0x294
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 g_CDemonSetInstance.field1420980_0x15aeb4
+;   undefined4 g_CDemonSetInstance.camera_enabled_flag
 ;
 ; Called Functions:
 ;   core_dlight.cpp_CDemonLight_applyFilter_FUN_00463e30
@@ -50,7 +50,7 @@ section .text
         ;   XREF to: 0055d23c (CONDITIONAL_JUMP)  ; LAB_0055d23c
     MOV EDX,dword ptr [0x0061d95c]      ; 0055d1d7 | g_CGamePtr
     LEA EAX,[EBX + 0x1894]              ; 0055d1dd
-    FLD float ptr [EDX + 0x294]         ; 0055d1e3 | g_CGameInstance.field660_0x294
+    FLD float ptr [EDX + 0x294]         ; 0055d1e3 | g_CGameInstance.delta_time_float
     FADD float ptr [EAX]                ; 0055d1e9
     FSTP float ptr [EAX]                ; 0055d1eb
     MOV EDX,dword ptr [EBX + 0x1890]    ; 0055d1ed
@@ -114,7 +114,7 @@ section .text
         ;   XREF to: 0055d30c (CONDITIONAL_JUMP)  ; LAB_0055d30c
     MOV EDX,dword ptr [0x0061d95c]      ; 0055d2b8 | g_CGamePtr
     LEA EAX,[EBX + 0x11e8]              ; 0055d2be
-    FLD float ptr [EDX + 0x294]         ; 0055d2c4 | g_CGameInstance.field660_0x294
+    FLD float ptr [EDX + 0x294]         ; 0055d2c4 | g_CGameInstance.delta_time_float
     FADD float ptr [EAX]                ; 0055d2ca
     FSTP float ptr [EAX]                ; 0055d2cc
     FLD float ptr [EBX + 0x11e8]        ; 0055d2ce
@@ -136,7 +136,7 @@ section .text
     MOV dword ptr [ESI + 0x1cb4],0x0    ; 0055d302
     MOV EAX,[0x00622c18]                ; 0055d30c | g_CDemonSetPtr
         ;   Label: LAB_0055d30c
-    MOV EAX,dword ptr [EAX + 0x15aeb4]  ; 0055d311 | g_CDemonSetInstance.field1420980_0x15aeb4
+    MOV EAX,dword ptr [EAX + 0x15aeb4]  ; 0055d311 | g_CDemonSetInstance.camera_enabled_flag
     TEST EAX,EAX                        ; 0055d317
     JZ 0x0055d354                       ; 0055d319
         ;   XREF to: 0055d354 (CONDITIONAL_JUMP)  ; LAB_0055d354

@@ -12,7 +12,7 @@
 ;   crt_unknown.c_FUN_005bcd10 at 005bcdbf
 ;   crt_unknown.c_FUN_005be27c at 005be2a7
 ;   crt_unknown.c_FUN_005c1b30 at 005c1b41
-;   unkafter_2d.cpp_FUN_005c5e50 at 005c5ed7
+;   crt_unknown.c_FUN_005c5e50 at 005c5ed7
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04
@@ -23,7 +23,7 @@
 ;   crt_unknown.c_FUN_005bce04
 ;   crt_unknown.c_FUN_005bebb0
 ;   crt_unknown.c_FUN_005bfb00
-;   unkafter_morph.cpp_FUN_005c3870
+;   crt_unknown.c_FUN_005c3870
 ;
 ; *****************************************************************************
 
@@ -146,8 +146,8 @@ section .text
         ;   XREF to: 005beb90 (CONDITIONAL_JUMP)  ; LAB_005beb90
     MOV EDX,dword ptr [EBX + 0x10]      ; 005beb7d
     PUSH EDX                            ; 005beb80
-    CALL unkafter_morph.cpp_FUN_005c3870 ; 005beb81
-        ;   XREF to: 005c3870 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c3870()
+    CALL crt_unknown.c_FUN_005c3870     ; 005beb81
+        ;   XREF to: 005c3870 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c3870()
     ADD ESP,0x4                         ; 005beb86
     CMP EAX,-0x1                        ; 005beb89
     JNZ 0x005beb90                      ; 005beb8c

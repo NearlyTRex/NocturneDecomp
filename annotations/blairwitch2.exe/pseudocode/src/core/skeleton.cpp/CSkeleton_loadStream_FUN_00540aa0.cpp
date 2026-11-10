@@ -13,14 +13,16 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00540aa0(CSkeleton *this
 {
   int iVar1;
   int iVar2;
-  byte *puVar3;
-  int iVar4;
-  int iVar5;
+  CQuaternion4f *pCVar3;
+  float *pfVar4;
+  SBone *pSVar5;
+  float *pfVar6;
+  int iVar7;
   int local_24;
   int local_20;
   int local_1c;
   int local_18;
-  int local_14;
+  float *local_14;
   
   core_skeleton_cpp_FUN_00540980(this_ptr,1);
   local_24 = -1;
@@ -55,67 +57,66 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00540aa0(CSkeleton *this
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x1d1f8) {
-    puVar3 = &this_ptr->field_0x1d21c;
+  if (0 < this_ptr->bone_count) {
+    pSVar5 = this_ptr->bone_list + 0x20;
     do {
-      _fscanf(file_handle,"\"%[^\"]\",%d\n",&this_ptr->field_0x1d1fc + iVar1 * 0x24,puVar3);
+      _fscanf(file_handle,"\"%[^\"]\",%d\n",this_ptr->bone_list + iVar1 * 0x24,pSVar5);
       iVar1 = iVar1 + 1;
-      puVar3 = puVar3 + 0x24;
-    } while (iVar1 < *(int *)&this_ptr->field_0x1d1f8);
+      pSVar5 = pSVar5 + 0x24;
+    } while (iVar1 < this_ptr->bone_count);
   }
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   local_18 = 0;
-  iVar1 = *(int *)&this_ptr->field_0x1e010;
-  if (0 < *(int *)&this_ptr->field_0x1e00c) {
+  pCVar3 = this_ptr->bone_angle_frames;
+  if (0 < this_ptr->frame_count) {
     do {
-      iVar5 = 0;
-      if (0 < *(int *)&this_ptr->field_0x1d1f8) {
-        local_14 = iVar1 + 4;
-        iVar4 = iVar1 + 8;
-        iVar2 = iVar1 + 0xc;
+      iVar1 = 0;
+      if (0 < this_ptr->bone_count) {
+        local_14 = &pCVar3->x;
+        pfVar6 = &pCVar3->y;
+        pfVar4 = &pCVar3->z;
         do {
-          iVar5 = iVar5 + 1;
-          _fscanf(file_handle,"%f,%f,%f,%f\n",iVar1,local_14,iVar4,iVar2)
-          ;
-          iVar4 = iVar4 + 0x10;
-          iVar1 = iVar1 + 0x10;
-          local_14 = local_14 + 0x10;
-          iVar2 = iVar2 + 0x10;
-        } while (iVar5 < *(int *)&this_ptr->field_0x1d1f8);
+          iVar1 = iVar1 + 1;
+          _fscanf(file_handle,"%f,%f,%f,%f\n",pCVar3,local_14,pfVar6,pfVar4);
+          pfVar6 = pfVar6 + 4;
+          pCVar3 = pCVar3 + 1;
+          local_14 = local_14 + 4;
+          pfVar4 = pfVar4 + 4;
+        } while (iVar1 < this_ptr->bone_count);
       }
       local_18 = local_18 + 1;
-    } while (local_18 < *(int *)&this_ptr->field_0x1e00c);
+    } while (local_18 < this_ptr->frame_count);
   }
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x1e00c) {
-    iVar5 = 0;
+  if (0 < this_ptr->frame_count) {
+    iVar7 = 0;
     do {
-      iVar4 = *(int *)&this_ptr->field_0x1e014 + iVar5;
-      _fscanf(file_handle,"%f,%f,%f\n",iVar4,iVar4 + 4,iVar4 + 8);
+      iVar2 = *(int *)&this_ptr->field_0x1e014 + iVar7;
+      _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
-      iVar5 = iVar5 + 0xc;
-    } while (iVar1 < *(int *)&this_ptr->field_0x1e00c);
+      iVar7 = iVar7 + 0xc;
+    } while (iVar1 < this_ptr->frame_count);
   }
   do {
     iVar1 = _fgetc(file_handle);
     if (iVar1 < 0) break;
   } while (iVar1 != 10);
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x1e00c) {
-    iVar5 = 0;
+  if (0 < this_ptr->frame_count) {
+    iVar7 = 0;
     do {
-      iVar4 = *(int *)&this_ptr->field_0x1e018 + iVar5;
-      _fscanf(file_handle,"%f,%f,%f\n",iVar4,iVar4 + 4,iVar4 + 8);
+      iVar2 = *(int *)&this_ptr->field_0x1e018 + iVar7;
+      _fscanf(file_handle,"%f,%f,%f\n",iVar2,iVar2 + 4,iVar2 + 8);
       iVar1 = iVar1 + 1;
-      iVar5 = iVar5 + 0xc;
-    } while (iVar1 < *(int *)&this_ptr->field_0x1e00c);
+      iVar7 = iVar7 + 0xc;
+    } while (iVar1 < this_ptr->frame_count);
   }
   if (((byte)file_handle[0xc] & 0x20) != 0) {
     _DAT_01d046a0 = "..\\core\\skeleton.cpp";
@@ -129,15 +130,15 @@ void __cdecl core_skeleton_cpp_CSkeleton_loadStream_FUN_00540aa0(CSkeleton *this
       if (iVar1 < 0) break;
     } while (iVar1 != 10);
     iVar1 = 0;
-    if (0 < *(int *)&this_ptr->field_0x1d1f8) {
+    if (0 < this_ptr->bone_count) {
 LAB_00540dee:
       do {
-        iVar5 = _fgetc(file_handle);
-        if (-1 < iVar5) {
-          if (iVar5 != 10) goto LAB_00540dee;
+        iVar7 = _fgetc(file_handle);
+        if (-1 < iVar7) {
+          if (iVar7 != 10) goto LAB_00540dee;
         }
         iVar1 = iVar1 + 1;
-      } while (iVar1 < *(int *)&this_ptr->field_0x1d1f8);
+      } while (iVar1 < this_ptr->bone_count);
     }
   }
   if (((byte)file_handle[0xc] & 0x20) != 0) {

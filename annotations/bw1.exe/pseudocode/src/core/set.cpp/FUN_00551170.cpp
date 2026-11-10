@@ -12,14 +12,15 @@
 void core_set_cpp_FUN_00551170(CDemonSet *param_1)
 
 {
+  UVector3 *pUVar1;
   CDemonActor *actor_ptr;
-  int iVar1;
   int iVar2;
+  int iVar3;
   CSkeleton *this_ptr;
-  CDemonSet *pCVar3;
-  byte bVar4;
+  CDemonSet *pCVar4;
+  byte bVar5;
   float afStackY_1070 [1012];
-  uint *puVar5;
+  uint *puVar6;
   float local_88;
   uint local_7c;
   uint local_70;
@@ -36,85 +37,86 @@ void core_set_cpp_FUN_00551170(CDemonSet *param_1)
   int local_38;
   float local_34;
   float afStack_30 [2];
-  byte local_28 [8];
-  uint local_20;
-  byte *local_1c;
+  CVector3f local_28;
+  char *local_1c;
   uint local_18;
   CDemonLight *local_14;
   
-  bVar4 = 0;
+  bVar5 = 0;
   local_14 = &g_CDemonLightInstance;
   actor_ptr = *(CDemonActor **)&g_CScriptPtr->field_0x18;
   local_18 = 0;
   if (actor_ptr != (CDemonActor *)0x0) {
-    iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,&DAT_005f0936);
-    if (iVar2 != 0) {
+    iVar3 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,&DAT_005f0936);
+    if (iVar3 != 0) {
       local_18 = 1;
     }
     this_ptr = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
                          ((CDeformableModelInstance *)(actor_ptr + 1));
-    iVar2 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr,"Bip01 Head",0);
+    iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr,"Bip01 Head",0);
     local_68 = 0x3f400000;
-    local_1c = &actor_ptr[0xb].field_0x110 + iVar2 * 0x30;
+    local_1c = actor_ptr[0xb].footstep_sound_code + iVar3 * 0x30 + -0xc;
     local_70 = 0;
     local_6c = 0x3ead0e56;
     core_xform_cpp_FUN_005b5080(&stack0xffffff90,local_1c);
-    puVar5 = &stack0xffffff84;
+    puVar6 = &stack0xffffff84;
     local_7c = local_58;
-    *(uint *)((int)&stack0xffffff88 + (uint)bVar4 * 0xfffffffe * 4) =
-         *(uint *)(&stack0xffffffac + (uint)bVar4 * -8);
-    *(float *)(&stack0xffffff8c + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + -8];
-    core_actor_cpp_FUN_00408b40(actor_ptr,puVar5);
+    *(uint *)((int)&stack0xffffff88 + (uint)bVar5 * 0xfffffffe * 4) =
+         *(uint *)(&stack0xffffffac + (uint)bVar5 * -8);
+    *(float *)(&stack0xffffff8c + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + -8];
+    core_actor_cpp_FUN_00408b40(actor_ptr,puVar6);
     local_4c = local_88;
-    (&stack0xffffffb8)[(uint)bVar4 * 0xfffffffe] =
-         (float)*(uint *)(&stack0xffffff7c + (uint)bVar4 * -8);
-    *(uint *)(local_28 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -0x1c) =
-         *(uint *)(&stack0xffffff80 + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-    core_xform_cpp_FUN_005b5930(local_1c);
+    (&stack0xffffffb8)[(uint)bVar5 * 0xfffffffe] =
+         (float)*(uint *)(&stack0xffffff7c + (uint)bVar5 * -8);
+    *(uint *)((int)&stack0xffffffbc + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         *(uint *)(&stack0xffffff80 + (uint)bVar5 * -8 + (uint)bVar5 * -8);
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(local_1c);
     local_64 = local_34;
-    (&stack0xffffffa0)[(uint)bVar4 * 0xfffffffe] = afStack_30[(uint)bVar4 * -2];
-    *(float *)(&stack0xffffffa4 + (uint)bVar4 * -8 + (uint)bVar4 * -8) =
-         afStack_30[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1];
-    local_28._0_4_ = local_64 + (float)_DAT_005f0946;
-    local_20 = 0;
-    local_28._4_4_ = local_60 + *(float *)&actor_ptr->field_0x34;
-    *(uint *)&local_14->field_0x1cbc = 0;
-    if ((float *)&local_14->field_0x4 != &stack0xffffffb4) {
-      *(float *)&local_14->field_0x4 = local_4c;
-      *(float *)&local_14->field_0x8 = local_48;
-      *(float *)&local_14->field_0xc = local_44;
+    (&stack0xffffffa0)[(uint)bVar5 * 0xfffffffe] = afStack_30[(uint)bVar5 * -2];
+    *(float *)(&stack0xffffffa4 + (uint)bVar5 * -8 + (uint)bVar5 * -8) =
+         afStack_30[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    local_28.x = local_64 + (float)_DAT_005f0946;
+    local_28.z = 0.0;
+    local_28.y = local_60 + (actor_ptr->orient).vec.y;
+    pUVar1 = &(local_14->base).base.position;
+    local_14->volumetric_enabled = 0;
+    if (pUVar1 != (UVector3 *)&stack0xffffffb4) {
+      (pUVar1->f).x = local_4c;
+      (local_14->base).base.position.f.y = local_48;
+      (local_14->base).base.position.f.z = local_44;
     }
-    core_dirmat_cpp_FUN_0045f3e0((CMatrix3x3f *)&local_14->field_0x10,(CVector3f *)local_28);
-    *(uint *)&local_14->field_0x140 = 0x42280000;
-    *(uint *)&local_14->field_0x38 = 0x41d00000;
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
+              (&(local_14->base).base.rotation_matrix,&local_28);
+    (local_14->base).max_distance = 42.0;
+    (local_14->base).base.focal_length = 26.0;
     core_dlight_cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(local_14,1.0);
-    if (&stack0x00000000 != &g_CDemonCameraInstance.field_0x50) {
-      g_CDemonCameraInstance._4_4_ = local_4c;
-      g_CDemonCameraInstance._8_4_ = local_48;
-      g_CDemonCameraInstance._12_4_ = local_44;
+    if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0x10) {
+      g_CDemonCameraInstance.base.position.f.x = local_4c;
+      g_CDemonCameraInstance.base.position.f.y = local_48;
+      g_CDemonCameraInstance.base.position.f.z = local_44;
     }
     core_dlight_cpp_CDemonLight_beginScene_FUN_00462820(local_14,0);
     DAT_00622c28 = 0;
-    core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0
-              (param_1,*(float *)&local_14->field_0x140,0);
+    core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0(param_1,(local_14->base).max_distance,0)
+    ;
     DAT_00622c28 = 1;
-    core_set_cpp_FUN_005545a0(param_1,0xffffffff);
-    core_set_cpp_FUN_0054eef0(param_1,1);
-    core_set_cpp_FUN_005545a0(param_1,1);
-    iVar2 = 0;
-    pCVar3 = param_1;
-    if (0 < *(int *)&param_1->field_0x15f6fc) {
+    core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(param_1,0xffffffff);
+    core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(param_1,1);
+    core_set_cpp_CDemonSet_buildDisplayList_FUN_005545a0(param_1,1);
+    iVar3 = 0;
+    pCVar4 = param_1;
+    if (0 < param_1->sorted_render_actor_count) {
       do {
-        (**(code **)(*(int *)(*(int *)&pCVar3->field_0x15f700 + 0x154) + 0x10))
-                  (*(int *)&pCVar3->field_0x15f700);
+        (*((pCVar4->sorted_render_actors[0]->vtable)._ub)->renderOpaque)
+                  (pCVar4->sorted_render_actors[0]);
         engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
-        iVar2 = iVar2 + 1;
-        pCVar3 = (CDemonSet *)&pCVar3->field_0x4;
-      } while (iVar2 < *(int *)&param_1->field_0x15f6fc);
+        iVar3 = iVar3 + 1;
+        pCVar4 = (CDemonSet *)pCVar4->cameras;
+      } while (iVar3 < param_1->sorted_render_actor_count);
     }
-    core_gore_cpp_FUN_004e5c50(g_CGorePtr);
-    core_fire_cpp_FUN_004b5100(0x01C57074);
+    core_gore_cpp_CGore_renderParticles_FUN_004e5c50(g_CGorePtr);
+    core_fire_cpp_CFireEffect_render_FUN_004b5100(0x01C57074);
     core_dlight_cpp_CDemonLight_endScene_FUN_00462ad0(local_14,1);
     local_40 = (int)ROUND(local_4c * _DAT_00605000);
     local_3c = (int)ROUND(local_48 * _DAT_00605000);
@@ -123,15 +125,15 @@ void core_set_cpp_FUN_00551170(CDemonSet *param_1)
               (param_1,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,(CVector3f *)0x0,
                (CMatrix3x3f *)0x0);
     if (DAT_0061b49c < 0xf1) {
-      iVar2 = -*(int *)&local_14->field_0x1cc0;
-      iVar1 = -*(int *)&local_14->field_0x1cc4;
+      iVar3 = -local_14->shadow_map_width;
+      iVar2 = -local_14->shadow_map_height;
     }
     else {
-      iVar2 = *(int *)&local_14->field_0x1cc0 * -2;
-      iVar1 = *(int *)&local_14->field_0x1cc4 * -2;
+      iVar3 = local_14->shadow_map_width * -2;
+      iVar2 = local_14->shadow_map_height * -2;
     }
     core_dlight_cpp_FUN_00466220
-              (local_14,(DAT_0061b498 + iVar2) / 2,(DAT_0061b49c + iVar1) / 2,0,local_18);
+              (local_14,(DAT_0061b498 + iVar3) / 2,(DAT_0061b49c + iVar2) / 2,0,local_18);
     return;
   }
   return;

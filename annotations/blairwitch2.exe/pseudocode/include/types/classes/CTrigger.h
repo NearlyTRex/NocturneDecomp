@@ -4,13 +4,30 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/enums/ETriggerCause.h"
 
 // Structure: CTrigger
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x4d0 (1232 bytes)
 #pragma pack(push, 1)
 typedef struct CTrigger {
-    char field_0[1232]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[376]; // 0x158
+    ETriggerCause trigger_cause; // 0x2d0
+    char actor_name[80]; // 0x2d4
+    char actor_type[80]; // 0x324
+    int pressure_plate; // 0x374
+    float light_min; // 0x378
+    float light_max; // 0x37c
+    char on_event[100]; // 0x380
+    char off_event[100]; // 0x3e4
+    int prev_triggered; // 0x448
+    int event_flag; // 0x44c
+    int laser_type; // 0x450
+    float hit_points; // 0x454
+    char field_1112[112]; // 0x458
+    struct CDemonActor* cached_actor; // 0x4c8
+    float damage_cooldown; // 0x4cc
 } CTrigger;
 #pragma pack(pop)
 

@@ -54,7 +54,7 @@ uint core_script_cpp_FUN_00529410(CScript *param_1,char *param_2)
     p_Var4 = engine_dosio_cpp_FUN_004659c0("world",param_2,&DAT_005cde3e);
     if (p_Var4 != (_FILE *)0x0) {
       iVar6 = _ftell(p_Var4);
-      local_14 = (CStrList *)&param_1->field_0x34;
+      local_14 = &param_1->script_text;
       bVar2 = true;
       do {
         iVar7 = 0;
@@ -67,7 +67,7 @@ uint core_script_cpp_FUN_00529410(CScript *param_1,char *param_2)
             if (iVar5 == 10) goto LAB_00529510;
             if (iVar5 == 0) {
               _fclose(p_Var4);
-              shape_edittool_cpp_FUN_00486af0((CStrList *)&param_1->field_0x34);
+              shape_edittool_cpp_FUN_00486af0(&param_1->script_text);
               shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                         (g_CEditorToolsPtr,"Probable non-text file %s detected near line %d.  Cannot use script.");
               core_script_cpp_FUN_00528d50(param_1);
@@ -83,8 +83,8 @@ LAB_00529510:
         shape_edittool_cpp_CStrList_add_FUN_00482070(local_14,local_318);
         if (!bVar2) {
           _fclose(p_Var4);
-          core_script_cpp_FUN_005295e0(param_1);
-          core_script_cpp_FUN_005297a0(param_1);
+          core_script_cpp_CScript_buildParsedLines_FUN_005295e0(param_1);
+          core_script_cpp_CScript_initRuntime_FUN_005297a0(param_1);
           return 1;
         }
       } while( true );

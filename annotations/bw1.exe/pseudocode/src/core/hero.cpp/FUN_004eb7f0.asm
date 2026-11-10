@@ -6,12 +6,12 @@
 ;
 ; XREF[7]:
 ;   core_doc.cpp_FUN_0046bde0 at 0046c83f
-;   core_gabriela.cpp_FUN_004c65f0 at 004c7901
-;   core_haystack.cpp_FUN_004e9250 at 004e9727
-;   core_hero.cpp_FUN_004ec640 at 004ec741
-;   core_icepick.cpp_FUN_004f0e50 at 004f144c
+;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c7901
+;   core_haystack.cpp_CHaystack_process_FUN_004e9250 at 004e9727
+;   core_hero.cpp_CHero_doHeroAction_FUN_004ec640 at 004ec741
+;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f144c
 ;   core_stranger.cpp_FUN_005881d0 at 00588877
-;   core_svetlana.cpp_FUN_00593150 at 00593711
+;   core_svetlana.cpp_CSvetlana_process_FUN_00593150 at 00593711
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CHero_toggleLeverNow_005e486d

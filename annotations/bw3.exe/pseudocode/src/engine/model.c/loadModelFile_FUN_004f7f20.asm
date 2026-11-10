@@ -32,8 +32,8 @@
 ;   crt_ctype.c_toupper_FUN_005a4120
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a3650
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_boss.c_modelStructNotSupported2_FUN_0041ac60
 ;   engine_dosio.cpp_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
@@ -87,8 +87,8 @@ section .text
     PUSH 0x5c8f5a                       ; 004f7f63 | = "Unable to get file size: %s"
     LEA EAX,[ESP + 0x8]                 ; 004f7f68
     PUSH EAX                            ; 004f7f6c
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f7f6d
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f7f6d
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5c8f76                    ; 004f7f72 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004f7f77
     MOV EAX,ESP                         ; 004f7f7a
@@ -115,8 +115,8 @@ section .text
     PUSH 0x5c8f92                       ; 004f7fb1 | = "Unable to open model: %s"
     LEA EAX,[ESP + 0xc]                 ; 004f7fb6
     PUSH EAX                            ; 004f7fba
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f7fbb
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f7fbb
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0xf5                        ; 004f7fc0
     ADD ESP,0xc                         ; 004f7fc5
     MOV [0x01d71de4],EAX                ; 004f7fc8 | DAT_01d71de4
@@ -140,8 +140,8 @@ section .text
     PUSH 0x5c8fbd                       ; 004f7ff5 | = "Out of model memory: %s"
     LEA EAX,[ESP + 0xc]                 ; 004f7ffa
     PUSH EAX                            ; 004f7ffe
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f7fff
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f7fff
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5c8fd5                    ; 004f8004 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004f8009
     LEA EAX,[ESP + 0x4]                 ; 004f800c
@@ -167,8 +167,8 @@ section .text
     PUSH 0x5c8fe7                       ; 004f803c | = "Model file read error: %s"
     LEA EAX,[ESP + 0xc]                 ; 004f8041
     PUSH EAX                            ; 004f8045
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f8046
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f8046
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x107                       ; 004f804b
     ADD ESP,0xc                         ; 004f8050
     MOV [0x01d71de4],EAX                ; 004f8053 | DAT_01d71de4
@@ -195,8 +195,8 @@ section .text
     PUSH 0x5c9013                       ; 004f8086 | = "Invalid model: %s"
     LEA EAX,[ESP + 0xc]                 ; 004f808b
     PUSH EAX                            ; 004f808f
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f8090
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f8090
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5c9025                    ; 004f8095 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004f809a
     LEA EAX,[ESP + 0x4]                 ; 004f809d

@@ -33,11 +33,11 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_004f9e40(CMo
     do {
       iVar2 = *(int *)&this_ptr->field_0x58 + iVar3;
       iVar1 = iVar1 + 1;
-      *(float *)(iVar2 + 4) = (float)*(int *)vertex_buffer * _DAT_005e2c08;
-      *(float *)(iVar2 + 8) = (float)*(int *)(vertex_buffer + 4) * _DAT_005e2c08;
-      *(float *)(iVar2 + 0xc) = (float)*(int *)(vertex_buffer + 8) * _DAT_005e2c08;
+      *(float *)(iVar2 + 4) = (float)vertex_buffer->x * _DAT_005e2c08;
+      *(float *)(iVar2 + 8) = (float)vertex_buffer->y * _DAT_005e2c08;
+      *(float *)(iVar2 + 0xc) = (float)vertex_buffer->z * _DAT_005e2c08;
       iVar3 = iVar3 + 0x10;
-      vertex_buffer = vertex_buffer + 0xc;
+      vertex_buffer = vertex_buffer + 1;
     } while (iVar1 < vertex_count);
   }
   return;

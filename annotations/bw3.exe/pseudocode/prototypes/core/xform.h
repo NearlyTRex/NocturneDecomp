@@ -25,9 +25,9 @@ undefined4 * __cdecl multiplyMatrix3x4InPlace(undefined4 *param_1,undefined4 par
 // Address: 005835d0
 void __cdecl setIdentityMatrix3x4(undefined4 *param_1);
 
-// Original: core_xform.cpp_FUN_0058362e
+// Original: core_xform.cpp_somebodyWriteMe_FUN_0058362e
 // Address: 0058362e
-void FUN_0058362e(void);
+void somebodyWriteMe(void);
 
 // Original: core_xform.cpp_setRotationScaleIdentity_FUN_00583660
 // Address: 00583660
@@ -49,17 +49,17 @@ void __cdecl FUN_00583800(CMatrix3x4f *output_matrix,CVector3f *position,CVector
 // Address: 00583940
 void FUN_00583940(float *param_1,float *param_2,int param_3);
 
-// Original: core_xform.cpp_FUN_00583a40
+// Original: core_xform.cpp_angleFromSinCos_FUN_00583a40
 // Address: 00583a40
-float FUN_00583a40(float param_1,float param_2);
+float angleFromSinCos(float param_1,float param_2);
 
-// Original: core_xform.cpp_FUN_00583b10
+// Original: core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 // Address: 00583b10
-float * FUN_00583b10(float *param_1);
+float * matrixToEulerAngles(float *param_1);
 
-// Original: core_xform.cpp_FUN_00583fb0
+// Original: core_xform.cpp_matrixToEulerAnglesZYX_FUN_00583fb0
 // Address: 00583fb0
-float * FUN_00583fb0(float *param_1);
+float * matrixToEulerAnglesZYX(float *param_1);
 
 // Original: core_xform.cpp_FUN_00584450
 // Address: 00584450
@@ -69,9 +69,9 @@ void FUN_00584450(int param_1);
 // Address: 00584510
 double __cdecl determinant(float *param_1);
 
-// Original: core_xform.cpp_FUN_00584560
+// Original: core_xform.cpp_inverse_FUN_00584560
 // Address: 00584560
-void FUN_00584560(float *param_1);
+void inverse(float *param_1);
 
 // Original: core_xform.cpp_FUN_00584b00
 // Address: 00584b00
@@ -85,33 +85,33 @@ void buildRotationX(float param_1);
 // Address: 00584ff0
 void buildRotationY(float param_1);
 
-// Original: core_xform.cpp_FUN_00585210
+// Original: core_xform.cpp_buildXFlipMatrix_FUN_00585210
 // Address: 00585210
-void FUN_00585210(float param_1);
+void buildXFlipMatrix(float param_1);
 
 // Original: core_xform.cpp_FUN_0058526e
 // Address: 0058526e
 void FUN_0058526e(float param_1);
 
-// Original: core_xform.cpp_FUN_005852d0
+// Original: core_xform.cpp_buildZFlipMatrix_FUN_005852d0
 // Address: 005852d0
-void FUN_005852d0(float param_1);
+void buildZFlipMatrix(float param_1);
 
 // Original: core_xform.cpp_lerpMatrix3x4_FUN_005854a0
 // Address: 005854a0
 void lerpMatrix3x4(undefined4 *param_1,undefined4 *param_2,float param_3);
 
-// Original: core_xform.cpp_FUN_005855f0
+// Original: core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0
 // Address: 005855f0
-CQuaternion4f * __cdecl FUN_005855f0(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
+CQuaternion4f * __cdecl quaternionToMatrix3x3(CMatrix3x4f *matrix_out,CQuaternion4f *quat_in);
 
 // Original: core_xform.cpp_quaternionToMatrix3x4_FUN_00585740
 // Address: 00585740
 void quaternionToMatrix3x4(CQuaternion4f *param_1);
 
-// Original: core_xform.cpp_FUN_00585780
+// Original: core_xform.cpp_matrixToQuaternion_FUN_00585780
 // Address: 00585780
-void FUN_00585780(float *param_1);
+void matrixToQuaternion(float *param_1);
 
 // Original: core_xform.cpp_negateFirstComponent_FUN_00585930
 // Address: 00585930
@@ -125,13 +125,13 @@ void __cdecl setIdentityQuaternion(undefined4 *param_1);
 // Address: 00585990
 void multiplyQuaternion(float *param_1,float *param_2);
 
-// Original: core_xform.cpp_FUN_00585a80
+// Original: core_xform.cpp_quaternionToAxisAngle_FUN_00585a80
 // Address: 00585a80
-void FUN_00585a80(float *param_1,float *param_2,float *param_3);
+void quaternionToAxisAngle(float *param_1,float *param_2,float *param_3);
 
-// Original: core_xform.cpp_FUN_00585b20
+// Original: core_xform.cpp_slerpQuaternion_FUN_00585b20
 // Address: 00585b20
-float * FUN_00585b20(float *param_1,float *param_2,float param_3);
+float * slerpQuaternion(float *param_1,float *param_2,float param_3);
 
 // Original: core_xform.cpp_quaternionFromAngleX_FUN_00585cd0
 // Address: 00585cd0
@@ -141,9 +141,9 @@ void quaternionFromAngleX(float param_1);
 // Address: 00585d10
 void quaternionFromAngleY(float param_1);
 
-// Original: core_xform.cpp_FUN_00585d50
+// Original: core_xform.cpp_quaternionFromAngleZ_FUN_00585d50
 // Address: 00585d50
-void FUN_00585d50(float param_1);
+void quaternionFromAngleZ(float param_1);
 
 // Original: core_xform.cpp_quaternionFromAxisAngle_FUN_00585d90
 // Address: 00585d90
@@ -183,11 +183,11 @@ void FUN_00586500(CEnemy *param_1,float param_2);
 
 // Original: core_xform.cpp_FUN_00586e50
 // Address: 00586e50
-void FUN_00586e50(int param_1);
+void FUN_00586e50(CEnemy *param_1);
 
 // Original: core_xform.cpp_FUN_00586eb0
 // Address: 00586eb0
-void FUN_00586eb0(int param_1,int param_2);
+void FUN_00586eb0(CEnemy *param_1,SDamageInfo *param_2);
 
 // Original: core_xform.cpp_FUN_00586fa0
 // Address: 00586fa0
@@ -217,9 +217,9 @@ void __cdecl clipInterpolateBottomPlane(int *param_1,int *param_2,int *param_3);
 // Address: 00587940
 void __cdecl clipPolygonStage3(void);
 
-// Original: core_xform.cpp_FUN_00587c20
+// Original: core_xform.cpp_clampClippedVertices_FUN_00587c20
 // Address: 00587c20
-void FUN_00587c20(void);
+void __cdecl clampClippedVertices(void);
 
 // Original: core_xform.cpp_transformAndClipGeometry_FUN_00587cd0
 // Address: 00587cd0

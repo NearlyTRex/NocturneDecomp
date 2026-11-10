@@ -9,10 +9,10 @@
 ; XREF[6]:
 ;   cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_0046a720 at 0046a73a
 ;   cockpit_drawsurf.cpp_FUN_0046a6bc at 0046a6eb
-;   engine_2d.c_FUN_00401d8e at 00401dea
-;   engine_2d.c_FUN_00402540 at 0040254b
-;   engine_2d.c_FUN_00402600 at 0040260b
-;   engine_2d.c_FUN_004026d0 at 004026e6
+;   engine_2d.c_drawTextCenteredAtColor_FUN_00402600 at 0040260b
+;   engine_2d.c_drawTextCenteredColor_FUN_004026d0 at 004026e6
+;   engine_2d.c_drawTextRightAlignedColor_FUN_00402540 at 0040254b
+;   engine_2d.c_wrapTextToWidth_FUN_00401d8e at 00401dea
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e8840

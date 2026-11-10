@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_pcx.c_FUN_00514a30 at 00514b58
+;   engine_pcx.c_saveScreenshotGeneral_FUN_00514a30 at 00514b58
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141b8

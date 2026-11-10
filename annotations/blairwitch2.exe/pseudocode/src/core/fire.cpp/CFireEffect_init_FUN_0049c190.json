@@ -24,21 +24,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0049c170",
+      "from_addr": "0049c176",
+      "name": "core_fire.cpp_CFireEffect_ctor_FUN_0049c170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0049ea80",
       "from_addr": "0049eaa1",
       "name": "core_fire.cpp_CFireEffect_load_FUN_0049ea80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049c170",
-      "from_addr": "0049c176",
-      "name": "core_fire.cpp_FUN_0049c170",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b6170",
       "from_addr": "004b683c",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -62,14 +62,29 @@
   },
   "function_calls": [
     {
+      "addr": "004995f0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CCrater_reset_FUN_004995f0"
+    },
+    {
       "addr": "00498c80",
       "is_variadic": false,
       "name": "core_fire.cpp_CExplosion_ctor_FUN_00498c80"
     },
     {
+      "addr": "0049a1a0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CGunFlame_reset_FUN_0049a1a0"
+    },
+    {
       "addr": "0049aae0",
       "is_variadic": false,
       "name": "core_fire.cpp_CLightningBolt_reset_FUN_0049aae0"
+    },
+    {
+      "addr": "00493500",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CSmokeParticle_reset_FUN_00493500"
     },
     {
       "addr": "004992a0",
@@ -80,21 +95,6 @@
       "addr": "0049b2d0",
       "is_variadic": false,
       "name": "core_fire.cpp_CTrail_reset_FUN_0049b2d0"
-    },
-    {
-      "addr": "00493500",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_00493500"
-    },
-    {
-      "addr": "004995f0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_004995f0"
-    },
-    {
-      "addr": "0049a1a0",
-      "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049a1a0"
     }
   ],
   "globals": [
@@ -391,7 +391,7 @@
       {
         "call_addr": "004b683c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -413,7 +413,7 @@
       {
         "call_addr": "0049c176",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c170",
+        "caller": "core_fire.cpp_CFireEffect_ctor_FUN_0049c170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -13,8 +13,8 @@ void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_0040f2f0(CBat *this_ptr)
   double dVar2;
   float fStack_20;
   
-  fStack_20 = *(float *)&this_ptr->field_0x304;
-  fVar1 = (float)*(int *)&this_ptr->field_0x178;
+  fStack_20 = this_ptr->param;
+  fVar1 = (float)(this_ptr->course).len;
   if (0.0 <= fStack_20) {
     dVar2 = floor((double)(fStack_20 / fVar1));
     fStack_20 = fStack_20 - (float)dVar2 * fVar1;
@@ -26,9 +26,9 @@ void __cdecl core_bat_cpp_CBat_updateCoursePosition_FUN_0040f2f0(CBat *this_ptr)
       fStack_20 = fStack_20 + fVar1;
     }
   }
-  *(float *)&this_ptr->field_0x304 = fStack_20;
-  core_course_cpp_FUN_00444ac0
-            ((CCourse *)&this_ptr->field_0x178,*(float *)&this_ptr->field_0x304,
-             (CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);
+  this_ptr->param = fStack_20;
+  core_course_cpp_CCourse_evaluate_FUN_00444ac0
+            (&this_ptr->course,this_ptr->param,&(this_ptr->base).location.position,
+             &(this_ptr->base).orient.vec);
   return;
 }

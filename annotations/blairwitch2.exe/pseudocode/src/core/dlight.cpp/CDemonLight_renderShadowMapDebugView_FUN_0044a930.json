@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 221,
-    "complexity_score": 217,
+    "complexity_score": 116,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 67,
-    "suspect_count": 14,
+    "pseudocode_lines": 66,
+    "suspect_count": 4,
     "suspect_types": [
       "undefined_data",
       "unnamed_field"
     ],
-    "total_lines": 288
+    "total_lines": 287
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "00402710",
       "is_variadic": false,
-      "name": "engine_2d.c_FUN_00402710"
+      "name": "engine_2d.c_drawTextCenteredXYColor_FUN_00402710"
     }
   ],
   "globals": [
@@ -69,7 +69,7 @@
     },
     {
       "addr": "01cb6b00",
-      "name": "g_CGameInstance.field512_0x200",
+      "name": "g_CGameInstance.field464_0x200",
       "type": "undefined4",
       "value": null
     }
@@ -249,80 +249,8 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar1 = (*(int *)&this_ptr->field_0x1cc0 << 8) / display_size;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "for (local_24 = 0; local_24 < *(int *)&this_ptr->field_0x1cc4 * 0x100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "while (iVar5 < *(int *)&this_ptr->field_0x1cc0 * 0x100) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x2f94 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1cc0) * 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "for (iVar5 = 0; iVar5 < *(int *)&this_ptr->field_0x1cc4 * 0x100; iVar5 = iVar5 + iVar1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "for (iVar3 = 0; iVar3 < *(int *)&this_ptr->field_0x1cc0 * 0x100; iVar3 = iVar3 + iVar1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1cc0) * 2 + *(int *)&this_ptr->field_0x2f94);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1cc0) * 2 + *(int *)&this_ptr->field_0x2f94);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_01c2a38c",
       "severity": "mild",
       "text": "*(int *)(&DAT_01c2a38c + (screen_y + iVar5 / iVar1) * 4)) =",
@@ -330,18 +258,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 61,
+      "line": 60,
       "match": "field_0x200",
       "severity": "mild",
       "text": "if (*(int *)&g_CGamePtr->field_0x200 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x40);",
       "type": "unnamed_field"
     }
   ]

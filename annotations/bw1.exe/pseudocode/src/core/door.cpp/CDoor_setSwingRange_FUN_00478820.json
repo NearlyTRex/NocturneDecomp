@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 3,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [
     {
       "addr": "00428ae0",
       "from_addr": "004294f9",
-      "name": "core_carved.cpp_FUN_00428ae0",
+      "name": "core_carved.cpp_CCarved_process_FUN_00428ae0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ed890",
       "from_addr": "004edbad",
-      "name": "core_hostage.cpp_FUN_004ed890",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004ed890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bafb0",
       "from_addr": "005bb9c7",
-      "name": "core_zombie.cpp_FUN_005bafb0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -54,7 +52,7 @@
       {
         "call_addr": "004edbad",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004ed890",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004ed890",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -65,7 +63,7 @@
       {
         "call_addr": "004294f9",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00428ae0",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00428ae0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -76,7 +74,7 @@
       {
         "call_addr": "005bb9c7",
         "call_type": "direct",
-        "caller": "core_zombie.cpp_FUN_005bafb0",
+        "caller": "core_zombie.cpp_CZombie_process_FUN_005bafb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,14 +124,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x9cc",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x9cc = swing_range;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

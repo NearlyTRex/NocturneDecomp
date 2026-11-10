@@ -1,0 +1,50 @@
+// Name: core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
+// Address: 005551f0
+// Address Range: [[005551f0, 005552ec]]
+// Convention: __cdecl
+// Signature: void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
+
+#include "nocturne.h"
+
+void __cdecl core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet *this_ptr,SMRGLPrimitiveQuad *primitive_array,int primitive_count,int render_flags)
+
+{
+  SMRGLPrimitiveQuad *pSVar1;
+  int iVar2;
+  SMRGLHeaderPrimitive local_38;
+  int local_20;
+  int local_1c;
+  int local_18;
+  int local_14;
+  
+  if (*(int *)&g_CGamePtr->field_0x20c == 0) {
+    if ((*(int *)&g_CGamePtr->field_0x210 != 0) &&
+       (iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_00483e60(DAT_00612560),
+       iVar2 == 0)) {
+      core_set_cpp_CDemonSet_renderEnvMapBatchQuad_FUN_00554a90
+                (this_ptr,&primitive_array->base,primitive_count,0xffff);
+      return;
+    }
+    if ((this_ptr->per_pixel_lighting_enabled != 0) &&
+       (iVar2 = 0, pSVar1 = primitive_array, 0 < primitive_count)) {
+      do {
+        local_38.base.count = (pSVar1->base).base.count;
+        local_38.surface_normal.A = (pSVar1->base).surface_normal.A;
+        local_38.surface_normal.B = (pSVar1->base).surface_normal.B;
+        local_38.surface_normal.C = (pSVar1->base).surface_normal.C;
+        local_38.surface_normal.D = (pSVar1->base).surface_normal.D;
+        local_20 = pSVar1->vertices[0].vertex_index;
+        local_1c = pSVar1->vertices[1].vertex_index;
+        local_18 = pSVar1->vertices[2].vertex_index;
+        local_14 = pSVar1->vertices[3].vertex_index;
+        pSVar1 = pSVar1 + 1;
+        iVar2 = iVar2 + 1;
+        engine_drender_cpp_CDemonRenderer_renderCustomScanline_FUN_00483c50
+                  (DAT_00612560,&local_38,core_dcamera_cpp_renderFlatColorScanline_FUN_004511e0);
+      } while (iVar2 < primitive_count);
+    }
+    engine_drender_cpp_CDemonRenderer_renderQuadBatch_FUN_00484210
+              (DAT_00612560,primitive_array,primitive_count,render_flags);
+  }
+  return;
+}

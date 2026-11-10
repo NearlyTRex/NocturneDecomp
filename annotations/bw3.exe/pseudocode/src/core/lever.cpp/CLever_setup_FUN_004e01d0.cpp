@@ -14,14 +14,13 @@ void __cdecl core_lever_cpp_CLever_setup_FUN_004e01d0(CLever *this_ptr)
   char *pcVar3;
   char *pcVar4;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-  core_actor_cpp_FUN_00408890((CDemonActor *)this_ptr);
-  if ((this_ptr->field_0x3a8 == '\0') &&
-     (iVar2 = _stricmp(&this_ptr->field_0x1d0,"elevbutton.kfm"),
-     iVar2 != 0)) {
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_00462580(&this_ptr->model);
+  core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
+  if ((this_ptr->sound[0] == '\0') &&
+     (iVar2 = _stricmp
+                        ((this_ptr->model).model_name,"elevbutton.kfm"), iVar2 != 0)) {
     pcVar3 = "lever-metal.wav";
-    pcVar4 = &this_ptr->field_0x3a8;
+    pcVar4 = this_ptr->sound;
     do {
       cVar1 = *pcVar3;
       *pcVar4 = cVar1;

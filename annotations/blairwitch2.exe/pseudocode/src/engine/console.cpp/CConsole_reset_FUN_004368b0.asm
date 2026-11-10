@@ -7,7 +7,7 @@
 ; CConsole *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b6170 at 004b6190
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b6190
 ;   engine_console.cpp_CConsole_ctor_FUN_00436680 at 004366cc
 ;
 ; Referenced Globals:

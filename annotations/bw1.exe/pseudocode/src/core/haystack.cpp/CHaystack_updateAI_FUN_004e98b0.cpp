@@ -1,0 +1,221 @@
+// Name: core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0
+// Address: 004e98b0
+// Address Range: [[004e98b0, 004e9ef6]]
+// Convention: __cdecl
+// Signature: void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004e98b0(CHaystack *this_ptr,float delta_time)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_haystack_cpp_CHaystack_updateAI_FUN_004e98b0(CHaystack *this_ptr,float delta_time)
+
+{
+  float fVar1;
+  float fVar2;
+  int iVar3;
+  SMotion *pSVar4;
+  CPathMap *this_ptr_00;
+  byte bVar5;
+  float afStackY_10b4 [1007];
+  float local_dc;
+  CVector3f local_d8;
+  float local_cc;
+  float afStack_c8 [5];
+  uint local_b4;
+  float afStack_b0 [4];
+  float local_a0;
+  float local_9c;
+  float local_98;
+  float local_94;
+  float local_90;
+  float local_8c;
+  float local_88;
+  float local_84;
+  float local_80;
+  float local_7c;
+  uint local_78;
+  float local_74;
+  float local_6c;
+  float local_68;
+  float local_64;
+  float local_60;
+  float local_5c;
+  float local_58;
+  float local_54;
+  float local_50;
+  float local_4c;
+  float local_48;
+  float local_40;
+  float local_3c;
+  float local_30;
+  int local_2c;
+  float local_28;
+  int local_24;
+  float local_20;
+  float local_1c;
+  float local_18;
+  
+  bVar5 = 0;
+  local_2c = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+  local_24 = 0;
+  local_20 = 0.25;
+  local_30 = 0.7853982;
+  memset(&this_ptr->field_0xc1d8,0,0x30);
+  if (*(int *)&this_ptr->field_0x1ffa8 != 0) {
+    iVar3 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+    local_60 = *(float *)&this_ptr->field_0x20 - *(float *)(iVar3 + 0x20);
+    local_5c = *(float *)&this_ptr->field_0x24 - *(float *)(iVar3 + 0x24);
+    local_58 = *(float *)&this_ptr->field_0x28 - *(float *)(iVar3 + 0x28);
+    local_9c = local_60;
+    afStack_b0[(uint)bVar5 * -2 + 6] = afStack_b0[(uint)bVar5 * -2 + 0x15];
+    afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
+         afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x16];
+    local_48 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
+    if (((*(int *)&this_ptr->field_0x1ffa8 == 3) || (local_48 < _DAT_005e4543)) &&
+       ((*(int *)&this_ptr->field_0x1ffa8 == 2 || (*(int *)&this_ptr->field_0x1ffa8 == 3)))) {
+      local_dc = 9999.9;
+      iVar3 = core_hero_cpp_FUN_004ec350(this_ptr,&local_dc);
+      if ((iVar3 == 0) || ((float)_DAT_005e4547 <= local_dc)) {
+        if (this_ptr->guns_drawn != 0) {
+          *(uint *)&this_ptr->field_0xc1f0 = 1;
+        }
+      }
+      else {
+        local_2c = iVar3;
+        local_24 = 1;
+      }
+    }
+    local_84 = *(float *)(local_2c + 0x20) - *(float *)&this_ptr->field_0x20;
+    local_80 = *(float *)(local_2c + 0x24) - *(float *)&this_ptr->field_0x24;
+    local_7c = *(float *)(local_2c + 0x28) - *(float *)&this_ptr->field_0x28;
+    local_54 = local_84;
+    afStack_b0[(uint)bVar5 * -2 + 0x18] = afStack_b0[(uint)bVar5 * -2 + 0xc];
+    afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x19] =
+         afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0xd];
+    if (afStack_b0 + 5 != afStack_b0 + 0x17) {
+      local_9c = local_54;
+      local_98 = local_50;
+      local_94 = local_4c;
+    }
+    fVar1 = SQRT(local_94 * local_94 + local_9c * local_9c + local_98 * local_98);
+    local_1c = fVar1;
+    if ((float)_DAT_005e454f <= fVar1) {
+      this_ptr_00 = (CPathMap *)0x0;
+      if (local_24 == 0) {
+        iVar3 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
+        this_ptr_00 = (CPathMap *)(**(code **)(*(int *)(iVar3 + 0x154) + 0xc4))(iVar3);
+      }
+      if (this_ptr_00 == (CPathMap *)0x0) {
+        this_ptr_00 = core_path_cpp_getPathMap_FUN_005351f0((CLocation *)(local_2c + 0x20));
+      }
+      iVar3 = core_path_cpp_CPathMap_findPathWithRetry_FUN_005349a0
+                        (this_ptr_00,(CVector3f *)&this_ptr->field_0x20,&local_d8,
+                         *(int *)&this_ptr->field_0x6c);
+      if (iVar3 != 0) {
+        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                    (local_d8.y - *(float *)&this_ptr->field_0x34);
+        fVar2 = local_18 * _DAT_005e4557 * (float)_DAT_005e455f;
+        local_3c = -local_20;
+        *(float *)&this_ptr->field_0xc200 = fVar2;
+        if (fVar2 < local_3c) {
+          *(float *)&this_ptr->field_0xc200 = local_3c;
+        }
+        if (local_20 < *(float *)&this_ptr->field_0xc200) {
+          *(float *)&this_ptr->field_0xc200 = local_20;
+        }
+        if (((float)_DAT_005e4567 <= fVar1) || (local_24 == 1)) {
+          *(uint *)&this_ptr->field_0xc1e0 = 1;
+          *(uint *)&this_ptr->field_0xc1d8 = 1;
+        }
+        else {
+          *(uint *)&this_ptr->field_0xc1d8 = 1;
+        }
+      }
+    }
+    else {
+      if (local_24 == 1) {
+        if (this_ptr->guns_drawn == 0) {
+          *(uint *)&this_ptr->field_0xc1f0 = 1;
+        }
+        else {
+          pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+                             ((CMotionController *)&this_ptr->field_0x158);
+          if ((*(int *)(pSVar4 + 0x24) != 2) && (*(int *)(pSVar4 + 0x24) != 1)) {
+            *(uint *)&this_ptr->field_0xc1e4 = 1;
+          }
+        }
+      }
+      else {
+        pSVar4 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
+                           ((CMotionController *)&this_ptr->field_0x158);
+        if ((*(int *)(pSVar4 + 0x24) == 10) && (this_ptr->guns_drawn != 0)) {
+          *(uint *)&this_ptr->field_0xc1f0 = 1;
+        }
+      }
+      if (local_24 == 1) {
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_b0 + 5);
+        local_78 = local_b4;
+        afStack_b0[(uint)bVar5 * -2 + 0xf] = afStack_b0[(uint)bVar5 * -2];
+        afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x10] =
+             afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+        local_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                                    (local_74 - *(float *)&this_ptr->field_0x34);
+        fVar1 = local_18 * _DAT_005e4557 * (float)_DAT_005e455f;
+        local_40 = -local_20;
+        *(float *)&this_ptr->field_0xc200 = fVar1;
+        if (fVar1 < local_40) {
+          *(float *)&this_ptr->field_0xc200 = local_40;
+        }
+        if (local_20 < *(float *)&this_ptr->field_0xc200) {
+          *(float *)&this_ptr->field_0xc200 = local_20;
+        }
+        if ((((float)_DAT_005e456f < *(float *)&this_ptr->field_0xc200) &&
+            ((double)*(float *)&this_ptr->field_0xc200 < _DAT_005e4577)) &&
+           (*(int *)&this_ptr->field_0xc1e4 != 0)) {
+          *(uint *)&this_ptr->field_0xc200 = 0;
+        }
+      }
+    }
+    local_90 = *(float *)(local_2c + 0x20) - *(float *)&this_ptr->field_0x20;
+    local_8c = *(float *)(local_2c + 0x24) - *(float *)&this_ptr->field_0x24;
+    local_88 = *(float *)(local_2c + 0x28) - *(float *)&this_ptr->field_0x28;
+    afStack_b0[2] = local_90;
+    afStack_b0[(uint)bVar5 * -2 + 3] = afStack_b0[(uint)bVar5 * -2 + 9];
+    afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
+         afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 10];
+    if (afStack_b0 + 5 != afStack_b0 + 2) {
+      local_9c = afStack_b0[2];
+      local_98 = afStack_b0[3];
+      local_94 = local_a0;
+    }
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(afStack_b0 + 5);
+    local_6c = local_cc;
+    afStack_b0[(uint)bVar5 * -2 + 0x12] = afStack_c8[(uint)bVar5 * -2];
+    afStack_b0[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 0x13] =
+         afStack_c8[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
+    if (afStack_b0 + 5 != afStack_b0 + 0x11) {
+      local_9c = local_6c;
+      local_98 = local_68;
+      local_94 = local_64;
+    }
+    afStack_c8[3] =
+         (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60
+                          (local_98 - *(float *)&this_ptr->field_0x34);
+    if (local_30 < afStack_c8[3]) {
+      afStack_c8[3] = local_30;
+    }
+    if (afStack_c8[3] < -local_30) {
+      afStack_c8[3] = -local_30;
+    }
+    local_28 = afStack_c8[3] - (this_ptr->head_look_euler).y;
+    if (delta_time * _DAT_005e457f < local_28) {
+      local_28 = delta_time * _DAT_005e457f;
+    }
+    if (local_28 < delta_time * _DAT_005e4583) {
+      local_28 = delta_time * _DAT_005e4583;
+    }
+    (this_ptr->head_look_euler).y = (this_ptr->head_look_euler).y + local_28;
+  }
+  return;
+}

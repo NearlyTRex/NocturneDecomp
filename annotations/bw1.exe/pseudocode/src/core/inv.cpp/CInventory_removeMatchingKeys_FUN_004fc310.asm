@@ -8,8 +8,8 @@
 ; uint             Stack[0x8]:4   key_mask
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004ec300 at 004ec30f
-;   core_hero.cpp_FUN_004ec570 at 004ec5ce
+;   core_hero.cpp_CHero_removeMatchingKeys_FUN_004ec300 at 004ec30f
+;   core_hero.cpp_CHero_reset_FUN_004ec570 at 004ec5ce
 ;
 ; Referenced Globals:
 ;   undefined4 g_CKeyActorClassInfo.name_hash

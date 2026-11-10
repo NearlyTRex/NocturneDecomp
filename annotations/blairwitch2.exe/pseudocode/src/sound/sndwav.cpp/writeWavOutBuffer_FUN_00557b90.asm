@@ -27,8 +27,8 @@
 ;   undefined4 DAT_0264b100
 ;
 ; Called Functions:
-;   sound_sndmain.cpp_FUN_005541f0
 ;   sound_sndmain.cpp_FUN_005549c0
+;   sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0
 ;   waveOutPrepareHeader
 ;   waveOutUnprepareHeader
 ;   waveOutWrite
@@ -109,8 +109,8 @@ section .text
     PUSH ECX                            ; 00557c3e
     LEA EAX,[ESP + 0x14]                ; 00557c3f
     PUSH EAX                            ; 00557c43
-    CALL sound_sndmain.cpp_FUN_005541f0 ; 00557c44
-        ;   XREF to: 005541f0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_005541f0()
+    CALL sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0 ; 00557c44
+        ;   XREF to: 005541f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pollAndMixSfx_FUN_005541f0(LPVOID * channel_buffers, int bits_per_sample, int num_channels, int samples_per_sec, ...)
     MOV EAX,[0x0264b0f4]                ; 00557c49 | DAT_0264b0f4
     MOV EDX,EAX                         ; 00557c4e
     SAR EDX,0x1f                        ; 00557c50

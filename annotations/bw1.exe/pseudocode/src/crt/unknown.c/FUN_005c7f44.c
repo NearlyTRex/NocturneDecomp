@@ -11,6 +11,6 @@ uint FUN_005c7f44(void)
 {
   uint in_EAX;
   
-  unkafter_zombie_cpp_FUN_005cbf70();
+  FUN_005cbf70();
   return in_EAX;
 }

@@ -21,37 +21,37 @@ CDemonActorType * CEmitter::getActorType(CEmitter *this_ptr);
 // Address: 0049ee40
 CEmitter * CEmitter::ctor(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_0049f010
+// Original: core_emitter.cpp_CEmitter_setup_FUN_0049f010
 // Address: 0049f010
-void FUN_0049f010(CDemonActor *param_1);
+void __cdecl CEmitter::setup(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_0049f0e0
+// Original: core_emitter.cpp_CEmitter_launchFireballAtHero_FUN_0049f0e0
 // Address: 0049f0e0
-void __cdecl FUN_0049f0e0(CEmitter *this_ptr);
+void __cdecl CEmitter::launchFireballAtHero(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_0049f310
+// Original: core_emitter.cpp_CEmitter_process_FUN_0049f310
 // Address: 0049f310
-void FUN_0049f310(CDemonActor *param_1,float param_2);
+void __cdecl CEmitter::process(CEmitter *this_ptr,float delta_time);
 
-// Original: core_emitter.cpp_FUN_0049fdf0
+// Original: core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0
 // Address: 0049fdf0
-undefined4 FUN_0049fdf0(CDemonActor *param_1);
+int __cdecl CEmitter::renderOpaque(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_0049ff00
+// Original: core_emitter.cpp_CEmitter_renderBackground_FUN_0049ff00
 // Address: 0049ff00
-void FUN_0049ff00(CDemonActor *param_1,int param_2);
+void __cdecl CEmitter::renderBackground(CEmitter *this_ptr,int layer_flag);
 
-// Original: core_emitter.cpp_FUN_0049ff70
+// Original: core_emitter.cpp_CEmitter_getBoundingBox_FUN_0049ff70
 // Address: 0049ff70
-void FUN_0049ff70(int param_1);
+CBoundingBox3D * __cdecl CEmitter::getBoundingBox(CEmitter *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_emitter.cpp_FUN_0049fff0
+// Original: core_emitter.cpp_CEmitter_archive_FUN_0049fff0
 // Address: 0049fff0
-void FUN_0049fff0(CDemonActor *param_1);
+void __cdecl CEmitter::archive(CEmitter *this_ptr);
 
-// Original: core_emitter.cpp_FUN_004a02d0
+// Original: core_emitter.cpp_CEmitter_getCollisionType_FUN_004a02d0
 // Address: 004a02d0
-undefined4 FUN_004a02d0(void);
+ECollisionType __cdecl CEmitter::getCollisionType(CEmitter *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_emitter.cpp_FUN_004a02e0
 // Address: 004a02e0

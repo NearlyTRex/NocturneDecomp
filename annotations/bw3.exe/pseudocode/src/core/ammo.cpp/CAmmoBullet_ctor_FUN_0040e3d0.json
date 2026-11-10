@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 57,
+    "complexity_score": 27,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 4,
+    "suspect_count": 1,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -55,9 +55,9 @@
     },
     {
       "addr": "005db3d4",
-      "name": "g_CAmmo_BulletVTable",
-      "type": "void*",
-      "value": "0040def0"
+      "name": "g_CAmmoBulletVTable",
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -120,34 +120,10 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CAmmo_BulletVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar1->field_0x158,\"?ammopouch.kfm\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 13,
       "match": "field_0x318",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0x318 = 0xb;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x314 = 0x14;",
       "type": "unnamed_field"
     }
   ],

@@ -9,55 +9,57 @@
 void __cdecl core_hostage_cpp_CHostage_archive_FUN_004ef020(CHostage *this_ptr)
 
 {
-  core_npc_cpp_FUN_00531bf0((CNPC *)this_ptr);
-  core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x1fe64,"followState")
-  ;
-  core_actor_cpp_archiveInteger_FUN_0040b670
-            ((int *)&this_ptr->field_0x1fe6c,"hostageState");
-  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1fe70,"goalWayPoint");
+  CDeformableModelInstance *model_ptr;
+  
+  core_npc_cpp_CNPC_archive_FUN_00531bf0(&this_ptr->base);
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->follow_state,"followState");
+  core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->hostage_state,"hostageState");
+  core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->goal_way_point,"goalWayPoint");
   if (g_CHostageClassVersion < 10) {
-    core_actor_cpp_FUN_0040b7f0
-              ((CDeformableModelInstance *)&this_ptr->field_0x158,"modelName");
-    core_actor_cpp_FUN_0040b870((CMotionController *)&this_ptr->field_0x158,"motion state")
-    ;
+    model_ptr = &(this_ptr->base).base.model;
+    core_actor_cpp_archiveDeformableModelInstance_FUN_0040b7f0(model_ptr,"modelName");
+    core_actor_cpp_archiveMotionState_FUN_0040b870(&model_ptr->base,"motion state");
   }
-  core_actor_cpp_FUN_0040b960
-            ((CDeformableModelInstance *)&this_ptr->field_0x158,"partStatus");
-  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x1fab8,"rescueDistance");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fabc,"rescueCondition");
+  core_actor_cpp_archivePartStatus_FUN_0040b960(&(this_ptr->base).base.model,"partStatus");
+  core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->rescue_distance,"rescueDistance");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->rescue_condition,"rescueCondition");
   if ((1 < g_CHostageClassVersion) && (g_CHostageClassVersion < 5)) {
-    core_actor_cpp_archiveClothList_FUN_0040bce0(&this_ptr->field_0x2ca0,"clothList");
+    core_actor_cpp_archiveClothList_FUN_0040bce0
+              (&(this_ptr->base).base.cloth_list,"clothList");
   }
   if (2 < g_CHostageClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fb20,"rescueEvent");
+    core_actor_cpp_archiveString_FUN_0040b440(this_ptr->rescue_event,"rescueEvent");
   }
   if (3 < g_CHostageClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fb40,"heroFoundMeEvent");
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fba4,"heroLeftMeEvent");
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fc08,"heroCameBackEvent")
-    ;
     core_actor_cpp_archiveString_FUN_0040b440
-              (&this_ptr->field_0x1fcd0,"goingToSitDownEvent");
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fd34,"sitDownEvent");
+              (this_ptr->hero_found_me_event,"heroFoundMeEvent");
+    core_actor_cpp_archiveString_FUN_0040b440
+              (this_ptr->hero_left_me_event,"heroLeftMeEvent");
+    core_actor_cpp_archiveString_FUN_0040b440
+              (this_ptr->hero_came_back_event,"heroCameBackEvent");
+    core_actor_cpp_archiveString_FUN_0040b440
+              (this_ptr->going_to_sit_down_event,"goingToSitDownEvent");
+    core_actor_cpp_archiveString_FUN_0040b440(this_ptr->sit_down_event,"sitDownEvent");
   }
   if (5 < g_CHostageClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x1fe8c,"noShadowsWhenSaved");
+              (&this_ptr->no_shadows_when_saved,"noShadowsWhenSaved");
   }
   if (6 < g_CHostageClassVersion) {
-    core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fc6c,"getEatenEvent");
+    core_actor_cpp_archiveString_FUN_0040b440(this_ptr->get_eaten_event,"getEatenEvent");
   }
   if ((7 < g_CHostageClassVersion) && (g_CHostageClassVersion < 0xc)) {
     core_actor_cpp_archiveLocalizedString_FUN_0040b560
-              (&this_ptr->field_0x2544,"descriptiveName");
+              ((this_ptr->base).base.descriptive_name,"descriptiveName");
   }
   if (8 < g_CHostageClassVersion) {
-    core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0x1fe74,"sitDownWayPoint");
+    core_actor_cpp_archiveActor_FUN_0040b6f0
+              (&this_ptr->sit_down_way_point,"sitDownWayPoint");
   }
   if (g_CHostageClassVersion < 0xb) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fd98,"damageSound");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x1fdfc,"dieSound");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->damage_sound,"damageSound");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->die_sound,"dieSound");
   return;
 }

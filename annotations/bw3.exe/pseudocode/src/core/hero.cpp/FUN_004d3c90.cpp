@@ -14,7 +14,7 @@ int core_hero_cpp_FUN_004d3c90(CHero *param_1)
   if (*(CDemonActor **)(param_1 + 0x20a24) == (CDemonActor *)0x0) {
     return 0;
   }
-  iVar1 = core_actor_cpp_FUN_0040c790
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c790
                     (*(CDemonActor **)(param_1 + 0x20a24),"N@CHealthItem" + 2);
   if (iVar1 != 0) {
     iVar1 = core_inv_cpp_CInventory_select_FUN_004dcb40

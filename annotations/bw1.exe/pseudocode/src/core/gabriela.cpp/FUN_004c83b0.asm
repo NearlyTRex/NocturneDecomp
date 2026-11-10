@@ -30,7 +30,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004c65f0 at 004c66b0
+;   core_gabriela.cpp_CGabriella_process_FUN_004c65f0 at 004c66b0
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004c8350 = 004c83f6
@@ -50,14 +50,14 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_FUN_00408b40
 ;   core_actor.cpp_FUN_00408bb0
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_processMotion_FUN_00434a80
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
-;   core_gabriela.cpp_FUN_004c9990
-;   core_gore.cpp_FUN_004e6060
-;   core_hero.cpp_FUN_004eb5e0
+;   core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0
 ;   core_hero.cpp_FUN_004ec280
-;   core_hero.cpp_FUN_004ec2c0
 ;   core_motion.cpp_CMotionController_advance_FUN_00524270
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;   core_motion.cpp_FUN_00524a40
@@ -208,8 +208,8 @@ section .text
     PUSH 0x0                            ; 004c852b
         ;   Label: caseD_15
     PUSH EBX                            ; 004c852d
-    CALL core_hero.cpp_FUN_004ec2c0     ; 004c852e
-        ;   XREF to: 004ec2c0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004ec2c0(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0 ; 004c852e
+        ;   XREF to: 004ec2c0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 004c8533
     JMP 0x004c8496                      ; 004c8536
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12
@@ -339,8 +339,8 @@ section .text
     ADD ESP,0x4                         ; 004c86ca
     PUSH 0x41700000                     ; 004c86cd
     PUSH 0x41200000                     ; 004c86d2
-    CALL core_actor.cpp_FUN_0040cc00    ; 004c86d7
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004c86d7
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0xe8],EAX      ; 004c86dc
     FLD float ptr [ESP + 0xe8]          ; 004c86e3
     ADD ESP,0x8                         ; 004c86ea
@@ -402,8 +402,8 @@ section .text
     PUSH EAX                            ; 004c87ae
     MOV EDX,dword ptr [0x0061dca4]      ; 004c87af | g_CGorePtr
     PUSH EDX                            ; 004c87b5
-    CALL core_gore.cpp_FUN_004e6060     ; 004c87b6
-        ;   XREF to: 004e6060 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004e6060(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060 ; 004c87b6
+        ;   XREF to: 004e6060 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004e6060(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     ADD ESP,0x14                        ; 004c87bb
     PUSH 0x5e1074                       ; 004c87be | = "kick1.wav"
     MOV EAX,dword ptr [EBX + 0x154]     ; 004c87c3
@@ -453,15 +453,15 @@ section .text
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12
     PUSH EBX                            ; 004c884c
         ;   Label: caseD_13
-    CALL core_gabriela.cpp_FUN_004c9990 ; 004c884d
-        ;   XREF to: 004c9990 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_FUN_004c9990(CGabriella * this_ptr)
+    CALL core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990 ; 004c884d
+        ;   XREF to: 004c9990 (UNCONDITIONAL_CALL)  ; void core_gabriela.cpp_CGabriella_collectAmmo_FUN_004c9990(CGabriella * this_ptr)
     ADD ESP,0x4                         ; 004c8852
     JMP 0x004c8496                      ; 004c8855
         ;   XREF to: 004c8496 (UNCONDITIONAL_JUMP)  ; caseD_12
     PUSH EBX                            ; 004c885a
         ;   Label: caseD_16
-    CALL core_hero.cpp_FUN_004eb5e0     ; 004c885b
-        ;   XREF to: 004eb5e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004eb5e0(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0 ; 004c885b
+        ;   XREF to: 004eb5e0 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenDoor_FUN_004eb5e0(CHero * this_ptr)
     ADD ESP,0x4                         ; 004c8860
     TEST EAX,EAX                        ; 004c8863
     JNZ 0x004c8496                      ; 004c8865

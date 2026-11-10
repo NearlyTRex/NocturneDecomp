@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 386,
-    "complexity_score": 747,
+    "complexity_score": 732,
     "cross_reference_count": 1,
     "function_call_count": 13,
     "global_count": 21,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 127,
-    "suspect_count": 59,
+    "suspect_count": 57,
     "suspect_types": [
+      "alloc_magic_size",
       "param_count_too_few",
       "undefined_data",
       "unnamed_field",
@@ -96,14 +97,14 @@
       "name": "crt_string.c__strnicmp_FUN_005c1210"
     },
     {
-      "addr": "005bfb40",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
-    },
-    {
       "addr": "005c0f32",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0f32"
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
+    },
+    {
+      "addr": "005bfb40",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -530,19 +531,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 50,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Error parsing 'twanachar' parms: '%s'\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 50,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Error parsing 'twanachar' parms: '%s'\",param_2);",
+      "text": "_sprintf(&DAT_01cc4270,\"Error parsing 'twanachar' parms: '%s'\");",
       "type": "undefined_data"
     },
     {
@@ -634,19 +627,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 77,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Ignoring unknown markup tag: %s\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 77,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Ignoring unknown markup tag: %s\",param_2);",
+      "text": "_sprintf(&DAT_01cc4270,\"Ignoring unknown markup tag: %s\");",
       "type": "undefined_data"
     },
     {
@@ -754,19 +739,11 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 107,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Error parsing 'image' tag parms: '%s'\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 107,
       "match": "DAT_01cc4270",
       "severity": "mild",
-      "text": "FUN_005bfb40(&DAT_01cc4270,\"Error parsing 'image' tag parms: '%s'\",param_2);",
+      "text": "_sprintf(&DAT_01cc4270,\"Error parsing 'image' tag parms: '%s'\");",
       "type": "undefined_data"
     },
     {
@@ -816,6 +793,14 @@
       "severity": "mild",
       "text": "core_fldnotes_cpp_FUN_004bb5f0(param_1,puVar3);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Allocation size hardcodes 0x118 == sizeof(SPageResourceTwanaEntry). Replace the magic with sizeof(SPageResourceTwanaEntry) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 80,
+      "match": "(SPageResourceTwanaEntry*) alloc stride 0x118",
+      "severity": "moderate",
+      "text": "(SPageResourceTwanaEntry *)debugAllocTracked1(0x118)",
+      "type": "alloc_magic_size"
     },
     {
       "call_site_count": 1,

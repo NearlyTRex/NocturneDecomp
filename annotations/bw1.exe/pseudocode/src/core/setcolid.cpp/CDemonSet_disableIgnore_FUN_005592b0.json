@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 4,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
     {
       "addr": "004cad20",
       "from_addr": "004cade7",
-      "name": "core_gabriela.cpp_FUN_004cad20",
+      "name": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057ce10",
+      "from_addr": "0057d4f0",
+      "name": "core_sound.cpp_CSound_process_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057c57e",
       "from_addr": "0057c5e2",
       "name": "core_sound.cpp_FUN_0057c57e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0057ce10",
-      "from_addr": "0057d4f0",
-      "name": "core_sound.cpp_FUN_0057ce10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +58,7 @@
       {
         "call_addr": "0057d4f0",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0057ce10",
+        "caller": "core_sound.cpp_CSound_process_FUN_0057ce10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -82,7 +80,7 @@
       {
         "call_addr": "004cade7",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004cad20",
+        "caller": "core_gabriela.cpp_CGabriella_updateClavicleCollisionAvoidance_FUN_004cad20",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -136,14 +134,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x15f6ac",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f6ac = 0xffffffff;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

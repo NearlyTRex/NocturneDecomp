@@ -4,13 +4,16 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CBloodPool
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2c (44 bytes)
 #pragma pack(push, 1)
 typedef struct CBloodPool {
-    char field_0[44]; // 0x0
+    int expired; // 0x0
+    char field_4[24]; // 0x4
+    float age; // 0x1c
+    CVector3i position_fixed; // 0x20
 } CBloodPool;
 #pragma pack(pop)
 

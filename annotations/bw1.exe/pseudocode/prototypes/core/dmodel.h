@@ -21,13 +21,13 @@ CKeyFramedModel * __cdecl CKeyFramedModel::dtor(CKeyFramedModel *this_ptr,uint f
 // Address: 004668a0
 void __cdecl CKeyFramedModel::load(CKeyFramedModel *this_ptr,char *filename);
 
-// Original: core_dmodel.cpp_FUN_004669f0
+// Original: core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0
 // Address: 004669f0
-void __cdecl FUN_004669f0(CKeyFramedModel *this_ptr,_FILE *file);
+void __cdecl CKeyFramedModel::readBinaryModel(CKeyFramedModel *this_ptr,_FILE *file);
 
-// Original: core_dmodel.cpp_FUN_00466be0
+// Original: core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0
 // Address: 00466be0
-void __cdecl FUN_00466be0(CKeyFramedModel *this_ptr,_FILE *file);
+void __cdecl CKeyFramedModel::readTextModel(CKeyFramedModel *this_ptr,_FILE *file);
 
 // Original: core_dmodel.cpp_FUN_00467160
 // Address: 00467160
@@ -57,9 +57,9 @@ void FUN_00467650(int param_1,undefined4 param_2,undefined4 param_3,undefined4 p
 // Address: 00467880
 void __cdecl CKeyFramedModel::calcNormals(CKeyFramedModel *this_ptr);
 
-// Original: core_dmodel.cpp_FUN_00467a30
+// Original: core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_00467a30
 // Address: 00467a30
-void __cdecl FUN_00467a30(CKeyFramedModel *this_ptr);
+void __cdecl CKeyFramedModel::calculateFrameBounds(CKeyFramedModel *this_ptr);
 
 // Original: core_dmodel.cpp_CKeyFramedModel_captureTextures_FUN_00467bc0
 // Address: 00467bc0
@@ -81,17 +81,17 @@ int __cdecl CKeyFramedModel::getFloorHeight(CKeyFramedModel *this_ptr,int frame_
 // Address: 00468340
 void __cdecl CKeyFramedModel::buildCollisionTriList(CKeyFramedModel *this_ptr);
 
-// Original: core_dmodel.cpp_FUN_00468420
+// Original: core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
 // Address: 00468420
-void FUN_00468420(int param_1,undefined4 *param_2);
+void __cdecl CKeyFramedModel::populateCollisionList(CKeyFramedModel *this_ptr,CVector3f *transform_vector);
 
 // Original: core_dmodel.cpp_loadModel_FUN_00468780
 // Address: 00468780
 CKeyFramedModel * __cdecl loadModel(char *param_1);
 
-// Original: core_dmodel.cpp_FUN_00468830
+// Original: core_dmodel.cpp_freeAllModels_FUN_00468830
 // Address: 00468830
-void __cdecl FUN_00468830(void);
+void __cdecl freeAllModels(void);
 
 // Original: core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00468860
 // Address: 00468860

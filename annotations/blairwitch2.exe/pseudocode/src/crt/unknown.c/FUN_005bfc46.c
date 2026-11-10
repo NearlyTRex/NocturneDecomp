@@ -21,7 +21,7 @@ uint FUN_005bfc46(void)
     if (in_AL != '\x03') {
       in_ST0 = in_ST1;
     }
-    unkafter_morph_cpp_FUN_005c3bdb((double)in_ST0);
+    FUN_005c3bdb((double)in_ST0);
     uVar1 = 1;
   }
   return uVar1;

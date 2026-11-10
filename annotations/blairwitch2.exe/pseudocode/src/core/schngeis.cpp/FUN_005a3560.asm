@@ -26,13 +26,13 @@
 ;   core_actor.cpp_FUN_00408cf0
 ;   core_actor.cpp_FUN_00408d70
 ;   core_actor.cpp_FUN_00408de0
-;   core_actor.cpp_FUN_0040cf60
-;   core_actor.cpp_FUN_0040d060
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230
-;   core_gore.cpp_FUN_004c9730
+;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730
 ;   core_motion.cpp_FUN_005035c0
 ;   core_skeleton.cpp_FUN_00546a90
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   core_xform.cpp_FUN_00591530
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;   unkaddr_0059d350.cpp_FUN_0059d8e0
@@ -277,8 +277,8 @@ section .text
     FADD double ptr [0x005f01c6]        ; 005a37ec | DAT_005f01c6
     SUB ESP,0x4                         ; 005a37f2
     FSTP float ptr [ESP]                ; 005a37f5
-    CALL core_actor.cpp_FUN_0040d060    ; 005a37f8
-        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d060(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040d060 ; 005a37f8
+        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040d060(float probability_threshold)
     ADD ESP,0x4                         ; 005a37fd
     TEST EAX,EAX                        ; 005a3800
     JZ 0x005a381d                       ; 005a3802
@@ -290,8 +290,8 @@ section .text
     PUSH EAX                            ; 005a380d
     MOV EDI,dword ptr [0x006167e0]      ; 005a380e | g_CGorePtr
     PUSH EDI                            ; 005a3814
-    CALL core_gore.cpp_FUN_004c9730     ; 005a3815
-        ;   XREF to: 004c9730 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9730(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
+    CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730 ; 005a3815
+        ;   XREF to: 004c9730 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 005a381a
     MOV EAX,dword ptr [EBX + 0x11868]   ; 005a381d
         ;   Label: LAB_005a381d
@@ -499,8 +499,8 @@ section .text
         ;   XREF to: 005a38be (CONDITIONAL_JUMP)  ; LAB_005a38be
     PUSH 0x3f800000                     ; 005a3a66
     PUSH 0x0                            ; 005a3a6b
-    CALL core_actor.cpp_FUN_0040cf60    ; 005a3a6d
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 005a3a6d
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [EBP + 0xde],EAX      ; 005a3a72
     ADD ESP,0x8                         ; 005a3a78
     FLD float ptr [EBP + 0xde]          ; 005a3a7b
@@ -528,8 +528,8 @@ section .text
     PUSH EAX                            ; 005a3abd
     LEA ESI,[EBP + 0x4e]                ; 005a3abe
     LEA EDI,[EBP + 0x96]                ; 005a3ac1
-    CALL core_vecdir.cpp_FUN_005838f0   ; 005a3ac7
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 005a3ac7
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[EBP + 0x4e]                ; 005a3acc
     MOVSD ES:EDI,ESI                    ; 005a3acf
     MOVSD ES:EDI,ESI                    ; 005a3ad0

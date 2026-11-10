@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_00407860 at 00407987
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 00407987
 ;   engine_3d.c_flushRenderQueue_FUN_004077f0 at 0040781a
 ;
 ; Referenced Globals:

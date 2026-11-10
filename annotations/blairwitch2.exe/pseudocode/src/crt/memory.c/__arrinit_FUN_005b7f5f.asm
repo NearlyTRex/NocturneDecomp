@@ -10,8 +10,8 @@
 ;
 ; XREF[86]:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790 at 004087b1
-;   core_actor.cpp_FUN_00409af0 at 00409b0d
-;   core_baron.cpp_FUN_00410170 at 0041031f
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409af0 at 00409b0d
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 0041031f
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_004156e0 at 004156fa
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_004182d0 at 004182f0
 ;   core_box.cpp_CBox_ctor_FUN_005b1bc0 at 005b1bd1

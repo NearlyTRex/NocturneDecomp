@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x4c]:4  local_4c
 ;
 ; XREF[47]:
-;   core_armour.cpp_FUN_0040eaa0 at 0040eab3
-;   core_baron.cpp_FUN_0040f4d0 at 0040f57a
-;   core_batcreat.cpp_FUN_004115b0 at 004115cc
-;   core_batman.cpp_FUN_00412ba0 at 00412bbc
-;   core_beast.cpp_FUN_00414770 at 00414782
-;   core_biggs.cpp_FUN_00414b30 at 00414b43
-;   core_boneguy.cpp_FUN_0041bb40 at 0041bbba
-;   core_bride.cpp_FUN_00423b70 at 00423b8c
-;   core_bugs.cpp_FUN_004253c0 at 004253cb
-;   core_carved.cpp_FUN_00428ae0 at 00428afc
+;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eab3
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f57a
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 004115cc
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412bbc
+;   core_beast.cpp_CBeast_process_FUN_00414770 at 00414782
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414b43
+;   core_bird.cpp_CBird_process_FUN_00415340 at 00415356
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bbba
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423b8c
+;   core_bugs.cpp_CBugs_process_FUN_004253c0 at 004253cb
 ;   ... and 37 more
 ;
 ; Referenced Globals:
@@ -32,12 +32,12 @@
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_004207b0
-;   core_charactr.cpp_FUN_0042f8e0
+;   core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0
 ;   core_charactr.cpp_FUN_00432690
 ;   core_charactr.cpp_FUN_00432e00
-;   core_game.cpp_FUN_004d6340
-;   core_hero.cpp_FUN_004ea770
-;   core_script.cpp_FUN_0054aca0
+;   core_game.cpp_CGame_setStatusDisplay_FUN_004d6340
+;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ea770
+;   core_script.cpp_CScript_setSpeaker_FUN_0054aca0
 ;   sound_sndmain.cpp_killSfx_FUN_00573a80
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     PUSH dword ptr [ESP + 0x4c]         ; 0042e1ce
         ;   Label: LAB_0042e1ce
     PUSH EBP                            ; 0042e1d2
-    CALL core_charactr.cpp_FUN_0042f8e0 ; 0042e1d3
-        ;   XREF to: 0042f8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042f8e0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0 ; 0042e1d3
+        ;   XREF to: 0042f8e0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processFire_FUN_0042f8e0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 0042e1d8
     PUSH dword ptr [ESP + 0x4c]         ; 0042e1db
     PUSH EBP                            ; 0042e1df
@@ -103,8 +103,8 @@ section .text
     MOV EDX,dword ptr [0x00622ad0]      ; 0042e234 | g_CScriptPtr
     PUSH EDX                            ; 0042e23a | g_CScriptInstance
     MOV dword ptr [EBP + 0x27b4],0x0    ; 0042e23b
-    CALL core_script.cpp_FUN_0054aca0   ; 0042e245
-        ;   XREF to: 0054aca0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_0054aca0(CScript * this_ptr, CDemonActor * actor)
+    CALL core_script.cpp_CScript_setSpeaker_FUN_0054aca0 ; 0042e245
+        ;   XREF to: 0054aca0 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setSpeaker_FUN_0054aca0(CScript * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0042e24a
     CMP dword ptr [EBP + 0x2540],0x2    ; 0042e24d
         ;   Label: LAB_0042e24d
@@ -119,8 +119,8 @@ section .text
     PUSH EAX                            ; 0042e273
     MOV EBX,dword ptr [0x0061d95c]      ; 0042e274 | g_CGamePtr
     PUSH EBX                            ; 0042e27a | g_CGameInstance
-    CALL core_game.cpp_FUN_004d6340     ; 0042e27b
-        ;   XREF to: 004d6340 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d6340(CGame * this_ptr, char * name, float value, float duration)
+    CALL core_game.cpp_CGame_setStatusDisplay_FUN_004d6340 ; 0042e27b
+        ;   XREF to: 004d6340 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_setStatusDisplay_FUN_004d6340(CGame * this_ptr, char * name, float value, float duration)
     ADD ESP,0x10                        ; 0042e280
     CMP dword ptr [EBP + 0x24fc],0x0    ; 0042e283
         ;   Label: LAB_0042e283
@@ -234,8 +234,8 @@ section .text
     LEA EAX,[EBP + 0x20]                ; 0042e3a7
     PUSH dword ptr [EBP + 0x2ff8]       ; 0042e3aa
     PUSH EAX                            ; 0042e3b0
-    CALL core_hero.cpp_FUN_004ea770     ; 0042e3b1
-        ;   XREF to: 004ea770 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004ea770(CVector3f * point, float horizontal_radius, float vertical_tolerance)
+    CALL core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ea770 ; 0042e3b1
+        ;   XREF to: 004ea770 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ea770(CVector3f * point, float horizontal_radius, float vertical_tolerance)
     ADD ESP,0xc                         ; 0042e3b6
     TEST EAX,EAX                        ; 0042e3b9
     JNZ 0x0042e354                      ; 0042e3bb

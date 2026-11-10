@@ -11,8 +11,8 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_004268b0 at 00426922
-;   core_doc.cpp_FUN_004599a0 at 004599c8
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 at 00426922
+;   core_doc.cpp_CDoc_renderOpaque_FUN_004599a0 at 004599c8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280
@@ -22,8 +22,8 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_charactr.cpp_FUN_0042b760
-;   core_xform.cpp_FUN_00591de0
 ;   core_xform.cpp_FUN_00592720
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_matrix.c_pop_FUN_0046b4a0
 ;
@@ -59,8 +59,8 @@ section .text
     PUSH EAX                            ; 0042b664
     LEA ESI,[ESP + 0x3c]                ; 0042b665
     LEA EDI,[ESP + 0x48]                ; 0042b669
-    CALL core_xform.cpp_FUN_00591de0    ; 0042b66d
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 0042b66d
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     LEA ESI,[ESP + 0x3c]                ; 0042b672
     ADD ESP,0x4                         ; 0042b676
     LEA EAX,[ESP + 0x8]                 ; 0042b679

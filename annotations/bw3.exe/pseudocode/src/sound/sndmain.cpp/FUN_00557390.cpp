@@ -13,14 +13,14 @@ int sound_sndmain_cpp_FUN_00557390(char *param_1,uint param_2,uint param_3)
   CSfxSample *str1;
   int iVar2;
   
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   str1 = g_SfxSamples;
   iVar2 = 0;
   do {
     iVar1 = _stricmp((char *)str1,param_1);
     if (iVar1 == 0) {
       if (str1 != (CSfxSample *)0x0) {
-        if (*(int *)&str1->field_0x1ac == 0) {
+        if (str1->locked_length == 0) {
           iVar2 = sound_sndmain_cpp_FUN_00553660(str1,param_2,param_3);
           if (iVar2 != 0) {
             sound_sndmain_cpp_FUN_00556fd0();

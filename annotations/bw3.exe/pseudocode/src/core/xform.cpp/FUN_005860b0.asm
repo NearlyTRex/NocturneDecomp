@@ -20,8 +20,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[6]:
-;   core_boneguy.cpp_FUN_00419550 at 00419725
-;   core_boneguy.cpp_FUN_00419790 at 004197c5
+;   core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_00419790 at 004197c5
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550 at 00419725
 ;   core_construc.cpp_FUN_00444110 at 004442a4
 ;   core_construc.cpp_FUN_004443d0 at 00444405
 ;   core_platfrm.cpp_CPlatform_ctor_FUN_005110e0 at 005111bf

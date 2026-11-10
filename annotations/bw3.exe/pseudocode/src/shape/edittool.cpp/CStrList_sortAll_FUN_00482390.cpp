@@ -9,6 +9,6 @@
 void __cdecl shape_edittool_cpp_CStrList_sortAll_FUN_00482390(CStrList *this_ptr)
 
 {
-  (**(code **)(*(int *)&this_ptr->field_0xc + 8))(this_ptr,0,*(int *)this_ptr + -1);
+  (*((this_ptr->vtable)._us)->sort)(this_ptr,0,this_ptr->item_count + -1);
   return;
 }

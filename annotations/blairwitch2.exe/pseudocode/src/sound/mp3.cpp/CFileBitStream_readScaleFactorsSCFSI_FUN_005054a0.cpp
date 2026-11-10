@@ -31,7 +31,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_005054a0(CFi
         pSVar7 = allocation_array + local_28;
         do {
           if (*(int *)pSVar7 != 0) {
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,2);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,2);
             *(uint *)(scfsi_array + local_28 + iVar4 * 0x80) = uVar2 & 0xff;
           }
           iVar4 = iVar4 + 1;
@@ -72,29 +72,29 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_005054a0(CFi
           }
           switch(*(uint *)(scfsi_array + local_24 + iVar4 * 0x80)) {
           case 0:
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)pSVar6 = uVar2;
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)(pSVar6 + 0x80) = uVar2;
             goto LAB_005055d8;
           case 1:
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)(pSVar6 + 0x80) = uVar2;
             *(uint *)pSVar6 = uVar2;
 LAB_005055d8:
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)(pSVar6 + 0x100) = uVar2;
             break;
           case 2:
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)(pSVar6 + 0x100) = uVar2;
             *(uint *)(pSVar6 + 0x80) = uVar2;
             *(uint *)pSVar6 = uVar2;
             break;
           case 3:
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)pSVar6 = uVar2;
-            uVar2 = sound_mp3_cpp_FUN_00504b00(this_ptr,6);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00504b00(this_ptr,6);
             *(uint *)(pSVar6 + 0x100) = uVar2;
             *(uint *)(pSVar6 + 0x80) = uVar2;
           }

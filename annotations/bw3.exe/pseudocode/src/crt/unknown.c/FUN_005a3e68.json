@@ -35,14 +35,9 @@
     ],
     "convention": "unknown",
     "name": "crt_unknown.c_FUN_005a3e68",
-    "signature": "undefined4 * crt_unknown_c_FUN_005a3e68(undefined4 *param_1,int param_2)"
+    "signature": "undefined4 * crt_unknown_c_FUN_005a3e68(undefined4 *param_1,ulong param_2)"
   },
   "function_calls": [
-    {
-      "addr": "005a3660",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a3660"
-    },
     {
       "addr": "005a3780",
       "is_variadic": false,
@@ -57,6 +52,11 @@
       "addr": "005aa044",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005aa044"
+    },
+    {
+      "addr": "005a3660",
+      "is_variadic": false,
+      "name": "crt_unknown.c_InternalHeapAlloc_FUN_005a3660"
     }
   ],
   "globals": [],
@@ -127,7 +127,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint * FUN_005a3e68(uint *param_1,int param_2)",
+      "text": "uint * FUN_005a3e68(uint *param_1,ulong param_2)",
       "type": "unnamed_param"
     },
     {
@@ -135,7 +135,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint * FUN_005a3e68(uint *param_1,int param_2)",
+      "text": "uint * FUN_005a3e68(uint *param_1,ulong param_2)",
       "type": "unnamed_param"
     },
     {
@@ -151,7 +151,7 @@
       "line": 14,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1 = (uint *)FUN_005a3660(param_2);",
+      "text": "puVar1 = InternalHeapAlloc(param_2);",
       "type": "unnamed_param"
     },
     {
@@ -199,7 +199,7 @@
       "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "puVar1 = (uint *)FUN_005a3660(param_2);",
+      "text": "puVar1 = InternalHeapAlloc(param_2);",
       "type": "unnamed_param"
     },
     {

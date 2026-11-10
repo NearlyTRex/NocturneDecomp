@@ -6,15 +6,15 @@
 ;
 ; XREF[55]:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830 at 00408837
-;   core_battery.cpp_FUN_0040f590 at 0040f5fe
-;   core_bodypart.cpp_FUN_00414bd0 at 00414cd3
-;   core_bodypart.cpp_FUN_00414d40 at 00414e14
-;   core_boxactor.cpp_FUN_0041f8e0 at 0041f9b0
-;   core_boxactor.cpp_FUN_0041f9f0 at 0041fb07
-;   core_bugs.cpp_FUN_004215f0 at 0042176c
-;   core_charactr.cpp_FUN_0042e3a0 at 0042e49d
+;   core_battery.cpp_CBattery_renderOpaque_FUN_0040f590 at 0040f5fe
+;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40 at 00414e14
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0 at 00414cd3
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041f8e0 at 0041f9b0
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0 at 0041fb07
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 0042176c
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e49d
 ;   core_cloth.cpp_FUN_0043f160 at 0043f2e3
-;   core_crate.cpp_FUN_00445fa0 at 0044600e
+;   core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0 at 0044600e
 ;   ... and 45 more
 ;
 ; Called Functions:

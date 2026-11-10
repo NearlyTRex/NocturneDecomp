@@ -2,30 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 168,
+    "complexity_score": 63,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 5,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 48,
-    "suspect_count": 11,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 156
   },
   "cross_references": [
     {
-      "addr": "0057e630",
-      "from_addr": "0057e67e",
-      "name": "core_turret.cpp_FUN_0057e630",
+      "addr": "0057ec70",
+      "from_addr": "0057ec85",
+      "name": "core_turret.cpp_CTurret_getBoundingBox_FUN_0057ec70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0057ec70",
-      "from_addr": "0057ec85",
-      "name": "core_turret.cpp_FUN_0057ec70",
+      "addr": "0057e630",
+      "from_addr": "0057e67e",
+      "name": "core_turret.cpp_CTurret_renderOpaque_FUN_0057e630",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -92,7 +91,7 @@
       {
         "call_addr": "0057ec85",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_0057ec70",
+        "caller": "core_turret.cpp_CTurret_getBoundingBox_FUN_0057ec70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,7 +102,7 @@
       {
         "call_addr": "0057ed9a",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_0057ec70",
+        "caller": "core_turret.cpp_CTurret_getBoundingBox_FUN_0057ec70",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +113,7 @@
       {
         "call_addr": "0057e67e",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_0057e630",
+        "caller": "core_turret.cpp_CTurret_renderOpaque_FUN_0057e630",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,7 +124,7 @@
       {
         "call_addr": "0057e704",
         "call_type": "direct",
-        "caller": "core_turret.cpp_FUN_0057e630",
+        "caller": "core_turret.cpp_CTurret_renderOpaque_FUN_0057e630",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -257,86 +256,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x85c",
-      "severity": "mild",
-      "text": "switch(*(uint *)&this_ptr->field_0x85c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8c4",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&this_ptr->field_0x8c4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8d8",
-      "severity": "mild",
-      "text": "local_18 = 1.0 - *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8c4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8c4",
-      "severity": "mild",
-      "text": "local_18 = 1.0 - *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8c4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8cc",
-      "severity": "mild",
-      "text": "if (0.0 < *(float *)&this_ptr->field_0x8cc) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x8d8",
-      "severity": "mild",
-      "text": "local_18 = *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x8cc",
-      "severity": "mild",
-      "text": "local_18 = *(float *)&this_ptr->field_0x8d8 / *(float *)&this_ptr->field_0x8cc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->field_0x2b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x6e0",
-      "severity": "mild",
-      "text": "this_ptr_00 = (CKeyFramedModelInstance *)&this_ptr->field_0x6e0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "local_14 = (float)(*(int *)&pCVar1->field_0x100 + -1) * local_18;",
-      "type": "unnamed_field"
     }
   ]
 }

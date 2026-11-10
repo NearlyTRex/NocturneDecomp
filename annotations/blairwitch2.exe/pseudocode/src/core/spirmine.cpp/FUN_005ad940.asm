@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_spirmine.cpp_FUN_005ad530 at 005ad56d
+;   core_spirmine.cpp_CSpiritMine_process_FUN_005ad530 at 005ad56d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f0eef

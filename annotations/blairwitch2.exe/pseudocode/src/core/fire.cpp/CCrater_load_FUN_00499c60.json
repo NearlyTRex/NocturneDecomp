@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 125,
-    "complexity_score": 245,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 21,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field"
+      "shadow_pointer_walk"
     ],
     "total_lines": 155
   },
@@ -166,172 +166,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d,%d,%f,%f\\n\",this_ptr,&this_ptr->field_0x4,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar3` was initialized to the address of an array element's subfield (`pfVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 21,
+      "match": "pfVar3 = pfVar3 + N",
+      "severity": "moderate",
+      "text": "pfVar3 = pfVar3 + 3;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%d,%d,%f,%f\\n\",this_ptr,&this_ptr->field_0x4,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x18);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0xc,&this_ptr->field_0x10,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0xc,&this_ptr->field_0x10,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x14);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "puVar3 = &this_ptr->field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "puVar4 = &this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x1c + iVar1,puVar4,puVar3);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x40,&this_ptr->field_0x44,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x40,&this_ptr->field_0x44,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x48);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x4c,&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x4c,&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x54);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x58,&this_ptr->field_0x5c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x5c",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x58,&this_ptr->field_0x5c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x64,&this_ptr->field_0x68,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x64,&this_ptr->field_0x68,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "&this_ptr->field_0x6c);",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `pfVar4` was initialized to the address of an array element's subfield (`pfVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*pfVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `pfVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 22,
+      "match": "pfVar4 = pfVar4 + N",
+      "severity": "moderate",
+      "text": "pfVar4 = pfVar4 + 3;",
+      "type": "shadow_pointer_walk"
     }
   ]
 }

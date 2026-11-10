@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 106,
+    "complexity_score": 40,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 26,
-    "suspect_count": 7,
+    "pseudocode_lines": 25,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 62
+    "total_lines": 61
   },
   "cross_references": [
     {
@@ -123,56 +122,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "pcVar4 = &pCVar2->field_0x188;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar2->field_0x154 = &g_CActorDestinationVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x158 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "pCVar2->field_0x15c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1f0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x1f0 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x1ec",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x1ec = 1;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 15,
+      "line": 14,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

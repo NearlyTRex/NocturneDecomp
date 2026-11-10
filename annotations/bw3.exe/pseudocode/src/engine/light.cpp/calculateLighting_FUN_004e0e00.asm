@@ -9,13 +9,13 @@
 ; int              Stack[0xc]:4   normal_z
 ;
 ; XREF[8]:
-;   engine_3d.c_FUN_004075b0 at 0040760b
 ;   engine_3d.c_calculatePolygonLighting_FUN_004039d0 at 004039e1
 ;   engine_3d.c_renderPolygonAdaptiveDepthOp25_FUN_00404980 at 004049e9
 ;   engine_3d.c_renderPolygonAdaptiveFogTexturedOp52_FUN_004062a0 at 004064b0
 ;   engine_3d.c_renderPolygonAdaptivePlaneMaskedUVOp34_FUN_004046e0 at 0040485b
 ;   engine_3d.c_renderPolygonGrayscaleLitOp54_FUN_00406540 at 0040659a
 ;   engine_3d.c_renderPolygonGrayscaleLitOp5_FUN_00403aa0 at 00403afa
+;   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0 at 0040760b
 ;   engine_3d.c_renderPolygonWithRenderFlags_FUN_004074b0 at 00407508
 ;
 ; Referenced Globals:

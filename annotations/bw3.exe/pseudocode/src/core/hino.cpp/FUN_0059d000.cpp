@@ -35,9 +35,9 @@ bool core_hino_cpp_FUN_0059d000(void)
   bVar5 = 0;
   iVar4 = 0;
   local_18 = 100.0;
-  for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {
+  for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
     pcVar2 = (char *)core_actor_cpp_castToClassHash_FUN_0040c840
-                               (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar4),
+                               (*(uint *)((int)g_CDemonSetPtr->actors + iVar4),
                                 g_CWayPointClassInfo.name_hash);
     if (pcVar2 != (char *)0x0) {
       iVar1 = *(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04);

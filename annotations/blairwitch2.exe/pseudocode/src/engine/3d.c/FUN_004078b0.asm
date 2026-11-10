@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   engine_3d.c_FUN_004079f0 at 00407a9e
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_004079f0 at 00407a9e
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004df960 at 004dfce1
 ;
 ; Referenced Globals:

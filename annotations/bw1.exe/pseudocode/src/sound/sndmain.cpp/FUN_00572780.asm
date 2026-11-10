@@ -9,9 +9,9 @@
 ; double           Stack[0x14]:8   pos_z
 ;
 ; XREF[3]:
-;   core_fire.cpp_FUN_004aee60 at 004aeef9
+;   core_fire.cpp_CFireball_onCollision_FUN_004aee60 at 004aeef9
 ;   core_manpuz.cpp_updateGemHumChannel_FUN_005057c0 at 005058a7
-;   core_sound.cpp_FUN_0057bef0 at 0057c4c8
+;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057c4c8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c78cec

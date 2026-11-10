@@ -1,0 +1,91 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 2,
+    "complexity_score": 4,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 4,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 6
+  },
+  "cross_references": [
+    {
+      "addr": "004cc730",
+      "from_addr": "004cc744",
+      "name": "core_goggles.cpp_CGoggles_canPickup_FUN_004cc730",
+      "type": "CONDITIONAL_JUMP"
+    }
+  ],
+  "function": {
+    "address": "004cc750",
+    "address_range": [
+      [
+        "004cc750",
+        "004cc750"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_goggles.cpp_CGoggles_process_FUN_004cc750",
+    "signature": "void __cdecl core_goggles_cpp_CGoggles_process_FUN_004cc750(CGoggles *this_ptr,float delta_time)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 1,
+    "opcode_distribution": {
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 3
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGoggles *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGoggles",
+        "offset": 12,
+        "vtable_addr": "005e0d04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

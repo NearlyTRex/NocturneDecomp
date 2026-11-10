@@ -1,0 +1,132 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 45,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a7be0",
+    "address_range": [
+      [
+        "005a7be0",
+        "005a7c11"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_grandma.cpp_CGrandma_setup_FUN_005a7be0",
+    "signature": "void __cdecl core_grandma_cpp_CGrandma_setup_FUN_005a7be0(CGrandma *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a4870",
+      "is_variadic": false,
+      "name": "core_basicnpc.cpp_CBasicNPC_setup_FUN_005a4870"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f080c",
+      "name": "s_Bip01_R_Hand_005f080c",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8666666666666667,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "COPY": 11,
+      "INT_ADD": 8,
+      "INT_AND": 4,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 7,
+      "LOAD": 4,
+      "POPCOUNT": 2,
+      "RETURN": 1,
+      "STORE": 9
+    },
+    "pcode_op_count": 58
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGrandma *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x113b0",
+      "severity": "mild",
+      "text": "(*(CSkeleton **)&this_ptr->field_0x113b0,\"Bip01 R Hand\",1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x11850",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x11850 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x2618",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x2618 = iVar1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "00600104"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

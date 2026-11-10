@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 23,
-    "complexity_score": 31,
+    "complexity_score": 32,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 16,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 17,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "derived_field_index_pun"
     ],
-    "total_lines": 39
+    "total_lines": 40
   },
   "cross_references": [
     {
@@ -108,12 +108,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "iVar2 = __arrinit(&pCVar1[1].field_0x18,0x28,&g_CDemonTriangleTypeInfo);",
-      "type": "unnamed_field"
+      "description": "'pCVar1[1].actor_name + 0x18' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x18 = 0x170, which is exactly offsetof(CActorDestination, dest_class[20]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[20] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list[8], CBat::course_filename[24], CChain::texture_handle also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 10,
+      "severity": "moderate",
+      "text": "(pCVar1[1].actor_name + 0x18,0x28,&g_CDemonTriangleTypeInfo);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

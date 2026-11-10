@@ -17,9 +17,9 @@
 ;   core_fldnotes.cpp_FUN_004a2cc0 at 004a2dd9
 ;   core_fldnotes.cpp_FUN_004a41b0 at 004a4c24
 ;   core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00 at 004fcd84
-;   core_script.cpp_FUN_00521500 at 00521550
+;   core_script.cpp_CScript_startDialogLine_FUN_00529750 at 005297c9
 ;   core_script.cpp_FUN_00522350 at 00523d76
-;   core_script.cpp_FUN_00529750 at 005297c9
+;   core_script.cpp_parseBodyPartMask_FUN_00521500 at 00521550
 ;   ... and 15 more
 ;
 ; Called Functions:

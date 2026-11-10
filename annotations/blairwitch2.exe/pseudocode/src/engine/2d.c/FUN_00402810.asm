@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   enabled
 ;
 ; XREF[2]:
-;   cockpit_drawsurf.cpp_FUN_00467f70 at 004681a3
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 004681a3
 ;   engine_2d.c_FUN_00402830 at 00402832
 ;
 ; Referenced Globals:

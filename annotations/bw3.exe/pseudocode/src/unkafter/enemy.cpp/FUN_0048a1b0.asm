@@ -7,16 +7,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[11]:
-;   core_baal.cpp_FUN_00597af0 at 00597b23
-;   core_boneguy.cpp_FUN_004192d0 at 0041939f
-;   core_boneguy.cpp_FUN_0041a810 at 0041a84d
-;   core_dog.cpp_FUN_004634d0 at 004634fd
-;   core_hino.cpp_FUN_0059d360 at 0059d3ea
-;   core_hotdemon.cpp_FUN_004d5fd0 at 004d6024
-;   core_kedward.cpp_FUN_005918e0 at 00591973
-;   core_mattnntt.cpp_FUN_005939b0 at 005939f3
+;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b23
+;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a84d
+;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 0041939f
+;   core_dog.cpp_CZombieDog_processDamage_FUN_004634d0 at 004634fd
+;   core_hino.cpp_CHino_processDamage_FUN_0059d360 at 0059d3ea
+;   core_hotdemon.cpp_CHotDemon_processDamage_FUN_004d5fd0 at 004d6024
+;   core_kedward.cpp_CKedward_processDamage_FUN_005918e0 at 00591973
+;   core_mattnntt.cpp_CMattanntote_processDamage_FUN_005939b0 at 005939f3
 ;   core_shadow.cpp_FUN_005459b0 at 00545a00
-;   core_styldemo.cpp_FUN_005a0330 at 005a042a
+;   core_styldemo.cpp_CStylerDemon_processDamage_FUN_005a0330 at 005a042a
 ;   ... and 1 more
 ;
 ; Called Functions:

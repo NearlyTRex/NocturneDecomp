@@ -16,7 +16,7 @@
 ;   core_particle.cpp_FUN_00510ef0 at 0051101c
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00512a70 at 00512a9c
 ;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005121a0 at 0051225b
-;   core_path.cpp_FUN_00513d30 at 00513d76
+;   core_path.cpp_getOrCreatePathMap_FUN_00513d30 at 00513d76
 ;   core_path.cpp_renderPathMapsAtPosition_FUN_00514020 at 0051403d
 ;
 ; Called Functions:

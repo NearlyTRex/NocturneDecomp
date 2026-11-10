@@ -8,12 +8,12 @@
 ; char *           Stack[0x8]:4   class_name
 ;
 ; XREF[3]:
-;   core_doc.cpp_FUN_00471af0 at 00471d95
-;   core_doc.cpp_FUN_00476510 at 00476526
+;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471d95
+;   core_doc.cpp_CDoc_toggleGoggles_FUN_00476510 at 00476526
 ;   core_inv.cpp_FUN_004f8ce0 at 004f8cea
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
         ;   Label: LAB_004f8ca7
     MOV EAX,dword ptr [EBX + 0x14]      ; 004f8ca8
     PUSH EAX                            ; 004f8cab
-    CALL core_actor.cpp_FUN_0040c550    ; 004f8cac
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 004f8cac
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004f8cb1
     TEST EAX,EAX                        ; 004f8cb4
     JNZ 0x004f8cca                      ; 004f8cb6

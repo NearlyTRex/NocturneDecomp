@@ -26,10 +26,10 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00461530
-;   core_dmodel.cpp_FUN_004606a0
-;   core_dmodel.cpp_FUN_00460890
+;   core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890
 ;   core_dmodel.cpp_FUN_00460e10
-;   core_dmodel.cpp_FUN_004616e0
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fgetc_FUN_005a32b0
@@ -121,8 +121,8 @@ section .text
     PUSH EBP                            ; 0046060d
         ;   Label: LAB_0046060d
     PUSH EBX                            ; 0046060e
-    CALL core_dmodel.cpp_FUN_00460890   ; 0046060f
-        ;   XREF to: 00460890 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_00460890(CKeyFramedModel * this_ptr, _FILE * file)
+    CALL core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890 ; 0046060f
+        ;   XREF to: 00460890 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00460890(CKeyFramedModel * this_ptr, _FILE * file)
     ADD ESP,0x8                         ; 00460614
         ;   Label: LAB_00460614
     PUSH EBP                            ; 00460617
@@ -130,8 +130,8 @@ section .text
         ;   XREF to: 005a3a90 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fclose_FUN_005a3a90()
     ADD ESP,0x4                         ; 0046061d
     PUSH EBX                            ; 00460620
-    CALL core_dmodel.cpp_FUN_004616e0   ; 00460621
-        ;   XREF to: 004616e0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_004616e0(CKeyFramedModel * this_ptr)
+    CALL core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0 ; 00460621
+        ;   XREF to: 004616e0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_calculateFrameBounds_FUN_004616e0(CKeyFramedModel * this_ptr)
     ADD ESP,0x4                         ; 00460626
     MOV ESI,dword ptr [EBX + 0x120]     ; 00460629
     XOR EDX,EDX                         ; 0046062f
@@ -174,8 +174,8 @@ section .text
     PUSH EBP                            ; 0046068b
         ;   Label: LAB_0046068b
     PUSH EBX                            ; 0046068c
-    CALL core_dmodel.cpp_FUN_004606a0   ; 0046068d
-        ;   XREF to: 004606a0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_FUN_004606a0(CKeyFramedModel * this_ptr, _FILE * file)
+    CALL core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0 ; 0046068d
+        ;   XREF to: 004606a0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004606a0(CKeyFramedModel * this_ptr, _FILE * file)
     JMP 0x00460614                      ; 00460692
         ;   XREF to: 00460614 (UNCONDITIONAL_JUMP)  ; LAB_00460614
 

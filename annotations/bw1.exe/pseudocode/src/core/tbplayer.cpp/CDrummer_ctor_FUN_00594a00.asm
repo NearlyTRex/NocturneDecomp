@@ -7,11 +7,11 @@
 ; CDrummer *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_tbplayer.cpp_FUN_005949d0 at 005949e3
+;   core_tbplayer.cpp_factoryFuncDrummer_FUN_005949d0 at 005949e3
 ;
 ; Called Functions:
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00594a15
     PUSH EAX                            ; 00594a1a
     MOV dword ptr [EAX + -0x4],0x606714 ; 00594a1b
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00594a22
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00594a22
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 00594a27
     MOV EAX,EBX                         ; 00594a2a
     POP EBX                             ; 00594a2c

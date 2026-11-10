@@ -13,7 +13,7 @@ void core_charactr_cpp_FUN_0042ff70(int param_1)
   
   (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,"glass-1.wav@2.0");
   if (*(char *)(param_1 + 0x24a8) != '\0') {
-    core_skeleton_cpp_FUN_0054f7f0
+    core_skeleton_cpp_CDeformableModelInstance_shatter_FUN_0054f7f0
               ((CDeformableModelInstance *)(param_1 + 0x158),(CVector3f *)(param_1 + 0x20),
                (CVector3f *)(param_1 + 0x30),0);
   }

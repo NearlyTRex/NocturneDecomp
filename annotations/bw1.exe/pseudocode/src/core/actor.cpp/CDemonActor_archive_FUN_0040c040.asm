@@ -12,13 +12,13 @@
 ;   core_ammo.cpp_CAmmo_archive_FUN_0040dd40 at 0040dd46
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e400 at 0040e406
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040e860 at 0040e866
-;   core_backgnd.cpp_FUN_0040f050 at 0040f056
+;   core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f050 at 0040f056
 ;   core_barrier.cpp_CBarrier_archive_FUN_00410940 at 00410946
 ;   core_bat.cpp_CBat_archive_FUN_00410c90 at 00410c96
 ;   core_battery.cpp_CBattery_archive_FUN_004145a0 at 004145a6
-;   core_bodypart.cpp_FUN_004193c0 at 004193cc
+;   core_bird.cpp_CBird_archive_FUN_00415780 at 0041579b
+;   core_bodypart.cpp_CBodyPart_archive_FUN_004193c0 at 004193cc
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_00422760 at 00422770
-;   core_chain.cpp_CChain_archive_FUN_00436d50 at 00436d56
 ;   ... and 42 more
 ;
 ; Referenced Globals:

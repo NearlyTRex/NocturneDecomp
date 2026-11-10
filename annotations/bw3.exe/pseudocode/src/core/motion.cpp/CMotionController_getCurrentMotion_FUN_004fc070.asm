@@ -7,16 +7,16 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[108]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a10f8
-;   core_baal.cpp_FUN_00596730 at 005967c4
-;   core_baal.cpp_FUN_005968a0 at 00596b5c
-;   core_baal.cpp_FUN_00597af0 at 00597b8f
-;   core_boneguy.cpp_FUN_004179b0 at 00417e44
-;   core_boneguy.cpp_FUN_004192d0 at 00419328
-;   core_boneguy.cpp_FUN_00419b40 at 00419fb2
-;   core_carved.cpp_FUN_00425da0 at 00426971
-;   core_carved.cpp_FUN_00428a80 at 00428b04
-;   core_charactr.cpp_FUN_0042c230 at 0042c7b8
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a10f8
+;   core_baal.cpp_CBaal_processDamage_FUN_00597af0 at 00597b8f
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00596b5c
+;   core_baal.cpp_CBaal_setup_FUN_00596730 at 005967c4
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419fb2
+;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 00419328
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417e44
+;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428b04
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426971
+;   core_charactr.cpp_CCharacter_calculateChecksum_FUN_00433130 at 00433175
 ;   ... and 98 more
 ;
 ; *****************************************************************************

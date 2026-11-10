@@ -7,16 +7,16 @@
 ; CVector3f *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[13]:
-;   core_boneguy.cpp_FUN_00416f50 at 00416f86
-;   core_boneguy.cpp_FUN_004186b0 at 00418735
+;   core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0 at 00418735
+;   core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00416f50 at 00416f86
+;   core_carved.cpp_CCarved_getCarryObjToBodyXForm_FUN_00427780 at 00427849
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004271ea
 ;   core_carved.cpp_FUN_004256e0 at 00425716
-;   core_carved.cpp_FUN_00425da0 at 004271ea
-;   core_carved.cpp_FUN_00427780 at 00427849
 ;   core_demnfolk.cpp_FUN_00455080 at 004568fe
 ;   core_demnfolk.cpp_FUN_00457300 at 004573c9
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c1fd
-;   core_zombie.cpp_FUN_00588650 at 00588686
-;   core_zombie.cpp_FUN_00588ee0 at 0058a754
+;   core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_0058af90 at 0058b2af
+;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058a754
 ;   ... and 3 more
 ;
 ; *****************************************************************************

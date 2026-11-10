@@ -17,7 +17,7 @@ CElephantGun * __cdecl core_elephant_cpp_CElephantGun_dtor_FUN_00486730(CElephan
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CElephantGun *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0((CWeapon *)this_ptr,1);
+  pCVar1 = (CElephantGun *)core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

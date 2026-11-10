@@ -10,7 +10,7 @@
 ;   core_zombie.cpp_FUN_0058cdb0 at 0058cdc3
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;   core_zombie.cpp_CZombie_ctor_FUN_005888d0
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 0058cdf5
     PUSH EAX                            ; 0058cdfa
     MOV dword ptr [EAX + -0x4],0x5e6b84 ; 0058cdfb
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0058ce02
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0058ce02
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0xd140],0x3    ; 0058ce07
     MOV dword ptr [EBX + 0x2538],0x41f00000 ; 0058ce11
     ADD ESP,0x8                         ; 0058ce1b

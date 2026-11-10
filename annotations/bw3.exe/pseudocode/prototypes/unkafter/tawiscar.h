@@ -5,10 +5,6 @@
 // Function prototypes for unkafter/tawiscar.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_tawiscar.cpp_FUN_005956d0
-// Address: 005956d0
-void FUN_005956d0(int param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-
 // Original: unkafter_tawiscar.cpp_FUN_00595710
 // Address: 00595710
 void FUN_00595710(int param_1);
@@ -16,26 +12,6 @@ void FUN_00595710(int param_1);
 // Original: unkafter_tawiscar.cpp_FUN_00595760
 // Address: 00595760
 void FUN_00595760(int param_1,float *param_2);
-
-// Original: unkafter_tawiscar.cpp_FUN_00595d20
-// Address: 00595d20
-undefined4 FUN_00595d20(CDemonActor *param_1);
-
-// Original: unkafter_tawiscar.cpp_FUN_00595e90
-// Address: 00595e90
-void FUN_00595e90(int param_1);
-
-// Original: unkafter_tawiscar.cpp_FUN_00595f90
-// Address: 00595f90
-void FUN_00595f90(int param_1,int param_2);
-
-// Original: unkafter_tawiscar.cpp_FUN_005962d0
-// Address: 005962d0
-undefined4 FUN_005962d0(int param_1);
-
-// Original: unkafter_tawiscar.cpp_FUN_00596310
-// Address: 00596310
-undefined4 FUN_00596310(int param_1,undefined4 *param_2);
 
 // Original: unkafter_tawiscar.cpp_FUN_00596380
 // Address: 00596380

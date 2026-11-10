@@ -2,15 +2,52 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CVector3i;
+struct SMRGLPrimitiveTriangle;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CBox.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EBloodType.h"
+#include "types/structs/SBodyPartFire.h"
+#include "types/structs/SBodyPartModel.h"
 
 // Structure: CBodyPart
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1344 (4932 bytes)
 #pragma pack(push, 1)
 typedef struct CBodyPart {
-    char field_0[4932]; // 0x0
+    CDemonActor base; // 0x0
+    int render_in_background; // 0x2b4
+    CBoundingBox3D bounding_box; // 0x2b8
+    int vertex_count; // 0x2d0
+    struct CVector3i* vertices; // 0x2d4
+    struct CVector3i* normals; // 0x2d8
+    int tri_count; // 0x2dc
+    struct SMRGLPrimitiveTriangle* faces; // 0x2e0
+    int* face_texture_indices; // 0x2e4
+    int texture_count; // 0x2e8
+    char field_748[240]; // 0x2ec
+    CVector3f initial_velocity; // 0x3dc
+    int attached_model_count; // 0x3e8
+    SBodyPartModel attached_models[3]; // 0x3ec
+    int fire_count; // 0x8a8
+    SBodyPartFire fires[2]; // 0x8ac
+    char field_3596[696]; // 0xe0c
+    int dont_use_normals; // 0x10c4
+    int transparent_geometry_flag; // 0x10c8
+    EBloodType blood_type; // 0x10cc
+    float physics_timer; // 0x10d0
+    int render_alpha; // 0x10d4
+    int dont_pick_me_up; // 0x10d8
+    int fire_time_remaining; // 0x10dc
+    CBox physics_box; // 0x10e0
+    float ground_height; // 0x1338
+    struct CDemonActor* carried_by_actor; // 0x133c
+    int is_visible; // 0x1340
 } CBodyPart;
 #pragma pack(pop)
 

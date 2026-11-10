@@ -18,11 +18,12 @@ CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)
   CDeformableModel *this_ptr;
   
   iVar3 = 0;
-  str1 = &g_DeformableModelPool[0].field_0x35b0;
+  str1 = g_DeformableModelPool[0].model_filename;
   do {
     iVar1 = _stricmp(str1,param_1);
     if (iVar1 == 0) {
-      core_skeleton_cpp_FUN_00563bb0(g_DeformableModelPool + iVar3);
+      core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00563bb0(g_DeformableModelPool + iVar3)
+      ;
       *(uint *)(&DAT_027902bc + iVar3 * 4) = 1;
       return g_DeformableModelPool + iVar3;
     }
@@ -36,7 +37,7 @@ CDeformableModel * core_skeleton_cpp_FUN_0056b520(char *param_1)
     if (iVar3 == 0) {
       this_ptr = g_DeformableModelPool + iVar2;
       core_skeleton_cpp_CDeformableModel_load_FUN_00564e40(this_ptr,param_1);
-      core_skeleton_cpp_FUN_00563bb0(this_ptr);
+      core_skeleton_cpp_CDeformableModel_captureTextures_FUN_00563bb0(this_ptr);
       *(uint *)(&DAT_027902bc + iVar1) = 1;
       return this_ptr;
     }

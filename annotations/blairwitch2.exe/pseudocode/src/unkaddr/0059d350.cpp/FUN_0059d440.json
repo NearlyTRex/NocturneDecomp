@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 145,
-    "complexity_score": 336,
+    "complexity_score": 196,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 51,
-    "suspect_count": 26,
+    "suspect_count": 13,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 196
@@ -22,7 +20,7 @@
     {
       "addr": "0049c780",
       "from_addr": "0049c941",
-      "name": "core_fire.cpp_FUN_0049c780",
+      "name": "core_fire.cpp_CFireEffect_render_FUN_0049c780",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +40,7 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "0044fcc0",
@@ -101,7 +99,7 @@
     },
     {
       "addr": "01fc0e48",
-      "name": "g_CDemonSetInstance.field1420432_0x15ac90",
+      "name": "g_CDemonSetInstance.lighting_quality_mode",
       "type": "undefined4",
       "value": null
     }
@@ -112,7 +110,7 @@
       {
         "call_addr": "0049c941",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049c780",
+        "caller": "core_fire.cpp_CFireEffect_render_FUN_0049c780",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -290,60 +288,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 19,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_28._8_4_ = core_actor_cpp_FUN_0040cf60(0,0x40c90fdb);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 20,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_28._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 21,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_28._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 22,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_10 = local_28._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 23,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_c = local_28._8_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 25,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_28,(CVector3f *)0x0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x15ac90",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ac90 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -362,30 +312,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 33,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_1c._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 34,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_1c._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_1c._8_4_ = 0x3fc90fdb;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 37,
       "match": "DAT_0060b280",
@@ -394,44 +320,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 41,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 42,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_34._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 43,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_34._8_4_ = 0x3f490fdb;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 45,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,&local_34,(CVector3f *)0x0);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x15ac90",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ac90 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

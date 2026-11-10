@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadowsc.cpp_FUN_00560630 at 00560b2a
+;   core_shadowsc.cpp_CShadowsc_process_FUN_00560630 at 00560b2a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scorp_attack_wav_4_005f18e7

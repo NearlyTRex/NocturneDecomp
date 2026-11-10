@@ -29,10 +29,10 @@ CVampireBoss * core_vampboss_cpp_CVampireBoss_dtor_FUN_005a7420(CVampireBoss *th
   iVar2 = core_cloth_cpp_FUN_0043e620(iVar2 + -0x3ab30,0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
                      ((CDeformableModelInstance *)(iVar2 + -0x23a4),0);
-  iVar2 = unkafter_armour_cpp_FUN_0040ee30(&pCVar3[-4].field_0x204,0);
-  pCVar4 = core_cloth_cpp_FUN_00441ca0((CClothList *)(iVar2 + -0x93c),0);
+  iVar2 = core_armour_cpp_FUN_0040ee30(&pCVar3[-4].bone_origins[0x23].z,0);
+  pCVar4 = core_cloth_cpp_CClothList_dtor_FUN_00441ca0((CClothList *)(iVar2 + -0x93c),0);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_005673f0
-                     ((CDeformableModelInstance *)(pCVar4 + -0x2b48),0);
+                     ((CDeformableModelInstance *)(pCVar4[-0x19].filenames[0] + 0x10),0);
   pCVar5 = (CVampireBoss *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)&pCVar3[-1].field_0x224c,1);
   if ((flags & 2) == 0) {

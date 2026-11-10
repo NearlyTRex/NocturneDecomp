@@ -78,10 +78,10 @@ LAB_004cfd3d:
     core_main_c_FUN_004e4330("eopen - Cannot open file");
   }
   local_18 = 0;
-  if (0 < *(int *)&this_ptr->field_0x4) {
+  if (0 < this_ptr->height) {
     do {
       iVar9 = 0;
-      if (0 < *(int *)this_ptr) {
+      if (0 < this_ptr->width) {
         do {
           if ((*(int *)(p_Var4 + 4) < 1) || (**(byte **)p_Var4 - 0xd < 0xfe)) {
             uVar3 = _fgetc(p_Var4);
@@ -92,13 +92,13 @@ LAB_004cfd3d:
             *(byte **)p_Var4 = pbVar2 + 1;
             uVar3 = (ushort)*pbVar2;
           }
-          *(ushort *)(*(int *)&this_ptr->field_0x24 + (local_18 * *(int *)this_ptr + iVar9) * 4) =
+          *(ushort *)(this_ptr->terrain_data + (local_18 * this_ptr->width + iVar9) * 4) =
                uVar3 << 7;
           iVar9 = iVar9 + 1;
-        } while (iVar9 < *(int *)this_ptr);
+        } while (iVar9 < this_ptr->width);
       }
       local_18 = local_18 + 1;
-    } while (local_18 < *(int *)&this_ptr->field_0x4);
+    } while (local_18 < this_ptr->height);
   }
   pcVar6 = local_7c;
   _fclose(p_Var4);
@@ -148,21 +148,20 @@ LAB_004cfe87:
     core_main_c_FUN_004e4330("eopen - Cannot open file");
   }
   local_14 = 0;
-  if (0 < *(int *)&this_ptr->field_0x4) {
+  if (0 < this_ptr->height) {
     do {
       iVar9 = 0;
-      if (0 < *(int *)this_ptr) {
+      if (0 < this_ptr->width) {
         do {
-          iVar5 = local_14 * *(int *)this_ptr + iVar9;
+          iVar5 = local_14 * this_ptr->width + iVar9;
           iVar9 = iVar9 + 1;
-          _fread(iVar5 * 4 + *(int *)&this_ptr->field_0x24 + 2,1,2,local_1c)
-          ;
-        } while (iVar9 < *(int *)this_ptr);
+          _fread(this_ptr->terrain_data + iVar5 * 4 + 2,1,2,local_1c);
+        } while (iVar9 < this_ptr->width);
       }
       local_14 = local_14 + 1;
-    } while (local_14 < *(int *)&this_ptr->field_0x4);
+    } while (local_14 < this_ptr->height);
   }
   _fclose(local_1c);
-  core_texlist_cpp_CTextureList_load_FUN_005690c0(*(CTextureList **)&this_ptr->field_0x28,filename);
+  core_texlist_cpp_CTextureList_load_FUN_005690c0(this_ptr->texture_list,filename);
   return;
 }

@@ -42,10 +42,9 @@ void __cdecl core_skeleton_cpp_FUN_0054edb0(CDeformableModelInstance *this_ptr,i
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
   pCStack_20 = pCVar1;
   core_motion_cpp_FUN_004fcb50
-            ((CMotionController *)this_ptr,motion_index,animation_time,&iStack_2c,&iStack_28,
-             &stack0xffffff78);
+            (&this_ptr->base,motion_index,animation_time,&iStack_2c,&iStack_28,&stack0xffffff78);
   iVar2 = 0;
-  if (0 < *(int *)&pCVar1->field_0x1de78) {
+  if (0 < pCVar1->bone_count) {
     pSStack_18 = output_bone_data;
     pSStack_1c = output_bone_data;
     do {
@@ -63,7 +62,7 @@ void __cdecl core_skeleton_cpp_FUN_0054edb0(CDeformableModelInstance *this_ptr,i
       *(uint *)(pSStack_18 + 0x64c) = 0x3f800000;
       pSStack_18 = pSStack_18 + 4;
       pSStack_1c = pSStack_1c + 0x10;
-    } while (iVar2 < *(int *)&pCStack_20->field_0x1de78);
+    } while (iVar2 < pCStack_20->bone_count);
   }
   iVar2 = *(int *)&pCStack_20->field_0x1ec94;
   fStack_74 = *(float *)(iVar2 + iStack_28 * 0xc) * fStack_88;
@@ -93,10 +92,10 @@ void __cdecl core_skeleton_cpp_FUN_0054edb0(CDeformableModelInstance *this_ptr,i
     *(float *)(output_bone_data + 4) = afStack_64[0];
     *(float *)(output_bone_data + 8) = afStack_64[1];
   }
-  *(float *)output_bone_data = *(float *)&this_ptr->field_0x508 * *(float *)output_bone_data;
+  *(float *)output_bone_data = (this_ptr->root_offset_scale).x * *(float *)output_bone_data;
   *(float *)(output_bone_data + 4) =
-       *(float *)&this_ptr->field_0x50c * *(float *)(output_bone_data + 4);
+       (this_ptr->root_offset_scale).y * *(float *)(output_bone_data + 4);
   *(float *)(output_bone_data + 8) =
-       *(float *)&this_ptr->field_0x510 * *(float *)(output_bone_data + 8);
+       (this_ptr->root_offset_scale).z * *(float *)(output_bone_data + 8);
   return;
 }

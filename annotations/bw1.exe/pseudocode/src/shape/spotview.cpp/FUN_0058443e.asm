@@ -12,8 +12,8 @@
 ;   undefined4 DAT_0061f2a4
 ;
 ; Called Functions:
+;   shape_spotview.cpp_CSpotView_clampValues_FUN_00584720
 ;   shape_spotview.cpp_CSpotView_reset_FUN_005843f0
-;   shape_spotview.cpp_FUN_00584720
 ;
 ; *****************************************************************************
 
@@ -293,8 +293,8 @@ section .text
     JNZ 0x00584702                      ; 005846cf
         ;   XREF to: 00584702 (CONDITIONAL_JUMP)  ; LAB_00584702
     PUSH EBX                            ; 005846d1
-    CALL shape_spotview.cpp_FUN_00584720 ; 005846d2
-        ;   XREF to: 00584720 (UNCONDITIONAL_CALL)  ; undefined shape_spotview.cpp_FUN_00584720()
+    CALL shape_spotview.cpp_CSpotView_clampValues_FUN_00584720 ; 005846d2
+        ;   XREF to: 00584720 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_clampValues_FUN_00584720(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 005846d7
     MOV ESP,EBP                         ; 005846da
     POP EBP                             ; 005846dc
@@ -321,8 +321,8 @@ section .text
         ;   XREF to: 005843f0 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_reset_FUN_005843f0(CSpotView * this_ptr, uint control_flags)
     ADD ESP,0x8                         ; 0058470c
     PUSH EBX                            ; 0058470f
-    CALL shape_spotview.cpp_FUN_00584720 ; 00584710
-        ;   XREF to: 00584720 (UNCONDITIONAL_CALL)  ; undefined shape_spotview.cpp_FUN_00584720()
+    CALL shape_spotview.cpp_CSpotView_clampValues_FUN_00584720 ; 00584710
+        ;   XREF to: 00584720 (UNCONDITIONAL_CALL)  ; void shape_spotview.cpp_CSpotView_clampValues_FUN_00584720(CSpotView * this_ptr)
     ADD ESP,0x4                         ; 00584715
     MOV ESP,EBP                         ; 00584718
     POP EBP                             ; 0058471a

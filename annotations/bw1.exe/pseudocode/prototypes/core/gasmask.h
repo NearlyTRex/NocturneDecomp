@@ -29,25 +29,25 @@ void __cdecl CGasMask::setup(CGasMask *this_ptr);
 // Address: 004ddb30
 int __cdecl CGasMask::canPickup(CGasMask *this_ptr,CDemonActor *picker);
 
-// Original: core_gasmask.cpp_FUN_004ddb50
+// Original: core_gasmask.cpp_CGasMask_process_FUN_004ddb50
 // Address: 004ddb50
-void FUN_004ddb50(void);
+void __cdecl CGasMask::process(CGasMask *this_ptr,float delta_time);
 
-// Original: core_gasmask.cpp_FUN_004ddb60
+// Original: core_gasmask.cpp_CGasMask_renderOpaque_FUN_004ddb60
 // Address: 004ddb60
-int FUN_004ddb60(int param_1);
+int __cdecl CGasMask::renderOpaque(CGasMask *this_ptr);
 
 // Original: core_gasmask.cpp_CGasMask_archive_FUN_004ddc00
 // Address: 004ddc00
 void __cdecl CGasMask::archive(CGasMask *this_ptr);
 
-// Original: core_gasmask.cpp_FUN_004ddc30
+// Original: core_gasmask.cpp_CGasMask_getCollisionType_FUN_004ddc30
 // Address: 004ddc30
-undefined4 FUN_004ddc30(void);
+ECollisionType __cdecl CGasMask::getCollisionType(CGasMask *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_gasmask.cpp_FUN_004ddc40
+// Original: core_gasmask.cpp_CGasMask_getBoundingBox_FUN_004ddc40
 // Address: 004ddc40
-void FUN_004ddc40(int param_1);
+CBoundingBox3D * __cdecl CGasMask::getBoundingBox(CGasMask *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_gasmask.cpp_CGasMask_dtor_FUN_004ddc80
 // Address: 004ddc80

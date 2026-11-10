@@ -6,11 +6,11 @@
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "derived_field_index_pun"
     ],
     "total_lines": 66
   },
@@ -56,8 +56,8 @@
     {
       "addr": "00600ac4",
       "name": "g_CFliesVTable",
-      "type": "void*",
-      "value": "004bfb20"
+      "type": "CDemonActor_vtable",
+      "value": null
     },
     {
       "addr": "00600ba0",
@@ -162,12 +162,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
+      "description": "'pCVar1[1].actor_name + 0x10' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0x10 = 0x168, which is exactly offsetof(CActorDestination, dest_class[12]). Ghidra had no CActorDestination type here and reached the field by index arithmetic; write it as ((CActorDestination *)pCVar1)->dest_class[12] (\u00a7de-pun/\u00a712). Ambiguous: CBarrier::effect_class_name_list, CBat::course_filename[16], CChain::target_bone also has a field there \u2014 confirm the real class from the .asm before rewriting.",
       "line": 10,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "iVar2 = __arrinit(&pCVar1[1].field_0x10,200,&g_SFlyTypeInfo);",
-      "type": "unnamed_field"
+      "severity": "moderate",
+      "text": "iVar2 = __arrinit(pCVar1[1].actor_name + 0x10,200,&g_SFlyTypeInfo);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

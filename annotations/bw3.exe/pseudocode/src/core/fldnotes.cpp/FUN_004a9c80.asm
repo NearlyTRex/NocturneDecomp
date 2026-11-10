@@ -20,7 +20,7 @@
 ; Called Functions:
 ;   core_fldnotes.cpp_FUN_004a98f0
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
         ;   XREF to: 004a9d33 (CONDITIONAL_JUMP)  ; LAB_004a9d33
     PUSH 0x15c                          ; 004a9c99
         ;   Label: LAB_004a9c99
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004a9c9e
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004a9c9e
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004a9ca3
     TEST EAX,EAX                        ; 004a9ca6
     JZ 0x004a9cb3                       ; 004a9ca8

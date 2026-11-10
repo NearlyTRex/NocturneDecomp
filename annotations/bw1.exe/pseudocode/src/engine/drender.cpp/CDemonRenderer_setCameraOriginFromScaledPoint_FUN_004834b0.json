@@ -1,0 +1,328 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 35,
+    "complexity_score": 34,
+    "cross_reference_count": 14,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "0044d700",
+      "from_addr": "0044d85e",
+      "name": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0044ceb0",
+      "from_addr": "0044d097",
+      "name": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00462820",
+      "from_addr": "004628b8",
+      "name": "core_dlight.cpp_CDemonLight_beginScene_FUN_00462820",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f90d0",
+      "from_addr": "004f930a",
+      "name": "core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004fe9c0",
+      "from_addr": "004fea3b",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004fe9c0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005188a0",
+      "from_addr": "005188b0",
+      "name": "core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_005188a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00521e40",
+      "from_addr": "00521ee2",
+      "name": "core_moon.cpp_FUN_00521e40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00555590",
+      "from_addr": "0055559f",
+      "name": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00550da0",
+      "from_addr": "005510ce",
+      "name": "core_set.cpp_FUN_00550da0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00559f80",
+      "from_addr": "0055a970",
+      "name": "core_setdir.cpp_FUN_00559f80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055b330",
+      "from_addr": "0055b3c1",
+      "name": "core_setdir.cpp_FUN_0055b330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059f3e0",
+      "from_addr": "0059f4d5",
+      "name": "core_terrain.cpp_CTerrain_render_FUN_0059f3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005847e0",
+      "from_addr": "005848b5",
+      "name": "shape_spotview.cpp_FUN_005847e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00416fa0",
+      "from_addr": "004170c9",
+      "name": "unkafter_bmppuzzl.cpp_FUN_00416fa0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004834b0",
+    "address_range": [
+      [
+        "004834b0",
+        "00483506"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0",
+    "signature": "void __cdecl engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer *this_ptr,CVector3f *point_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c03a0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005c03a0"
+    },
+    {
+      "addr": "00509000",
+      "is_variadic": false,
+      "name": "engine_matrix.c_setCameraOrigin_FUN_00509000"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005db35c",
+      "name": "DAT_005db35c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 14,
+    "call_sites": [
+      {
+        "call_addr": "004fea3b",
+        "call_type": "direct",
+        "caller": "core_level.cpp_CLevelLoader_update_FUN_004fe9c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00521ee2",
+        "call_type": "direct",
+        "caller": "core_moon.cpp_FUN_00521e40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004628b8",
+        "call_type": "direct",
+        "caller": "core_dlight.cpp_CDemonLight_beginScene_FUN_00462820",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0044d097",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_beginScene_FUN_0044ceb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0044d85e",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0044d700",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f930a",
+        "call_type": "direct",
+        "caller": "core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005510ce",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00550da0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005188b0",
+        "call_type": "direct",
+        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorCamera_FUN_005188a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055559f",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_00555590",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0055a970",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_FUN_00559f80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.933333333333334,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 96,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 11,
+      "INT_AND": 6,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 9,
+      "LOAD": 9,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "ROUND": 3,
+      "STORE": 11,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 178
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 16,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8",
+        "offset": -8,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonRenderer *"
+      },
+      {
+        "is_param": true,
+        "name": "point_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

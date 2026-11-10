@@ -7,9 +7,9 @@
 ; float            Stack[0x4]:4   base_frequency
 ;
 ; XREF[3]:
-;   core_lightgun.cpp_FUN_00500d20 at 00500eef
-;   core_lightpis.cpp_FUN_00502480 at 0050264f
-;   core_sound.cpp_FUN_0057bef0 at 0057c117
+;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500eef
+;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 0050264f
+;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057c117
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c78cec

@@ -14,11 +14,11 @@
 ; Referenced Globals:
 ;   undefined4 DAT_005d9d74
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;
 ; *****************************************************************************
 
@@ -41,11 +41,11 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004cfd81 | g_CDemonSetPtr
         ;   Label: LAB_004cfd81
     MOV EDX,dword ptr [ESP + 0x8]       ; 004cfd86
-    CMP EDX,dword ptr [EAX + 0x14d164]  ; 004cfd8a | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDX,dword ptr [EAX + 0x14d164]  ; 004cfd8a | g_CDemonSetInstance.actor_count
     JGE 0x004cfe67                      ; 004cfd90
         ;   XREF to: 004cfe67 (CONDITIONAL_JUMP)  ; LAB_004cfe67
     ADD EAX,dword ptr [ESP + 0x4]       ; 004cfd96
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 004cfd9a | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 004cfd9a | g_CDemonSetInstance.actors[0]
     FLD float ptr [EBX + 0x20]          ; 004cfda0
     FSUB float ptr [ESI + 0x20]         ; 004cfda3
     FABS                                ; 004cfda6
@@ -102,8 +102,8 @@ section .text
     MOV ECX,dword ptr [EBP + 0x18]      ; 004cfe1e
     PUSH ECX                            ; 004cfe21
     PUSH EBX                            ; 004cfe22
-    CALL core_actor.cpp_FUN_0040c840    ; 004cfe23
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004cfe23
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004cfe28
     TEST EAX,EAX                        ; 004cfe2b
     JZ 0x004cfdb3                       ; 004cfe2d

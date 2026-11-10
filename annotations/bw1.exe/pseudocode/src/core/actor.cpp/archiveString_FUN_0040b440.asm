@@ -9,14 +9,14 @@
 ;
 ; XREF[57]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040 at 0040c0ce
-;   core_actor.cpp_FUN_0040b7f0 at 0040b815
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 at 0040b815
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770 at 0040b795
 ;   core_actor.cpp_archiveLocalizedString_FUN_0040b560 at 0040b5b5
 ;   core_ammo.cpp_CAmmo_archive_FUN_0040dd40 at 0040dd6e
 ;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e400 at 0040e42e
 ;   core_anvil.cpp_CAnvil_archive_FUN_0040e860 at 0040e88e
-;   core_armour.cpp_FUN_0040ebe0 at 0040ec31
-;   core_baron.cpp_FUN_00410180 at 004101a7
+;   core_armour.cpp_CArmour_archive_FUN_0040ebe0 at 0040ec31
+;   core_baron.cpp_CBaron_archive_FUN_00410180 at 004101a7
 ;   core_barrier.cpp_CBarrier_archive_FUN_00410940 at 0041097b
 ;   ... and 47 more
 ;

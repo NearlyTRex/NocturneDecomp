@@ -20,14 +20,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[16]:
-;   core_charactr.cpp_FUN_00426730 at 004267fc
-;   core_charactr.cpp_FUN_00429e90 at 00429eae
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90 at 00429eae
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 004267fc
 ;   core_cloth.cpp_FUN_005ae680 at 005aeac8
 ;   core_doc.cpp_FUN_00450c60 at 00451600
 ;   core_doc.cpp_FUN_00455d10 at 0045605a
-;   core_mimic.cpp_FUN_004f04f0 at 004f0752
-;   core_mimic.cpp_FUN_004f0e10 at 004f172f
-;   core_passngr.cpp_FUN_005115e0 at 0051161e
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f172f
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f0752
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 0051161e
 ;   core_skeleton.cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0 at 00544ef2
 ;   core_skeleton.cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_00544f50 at 00544f6e
 ;   ... and 6 more

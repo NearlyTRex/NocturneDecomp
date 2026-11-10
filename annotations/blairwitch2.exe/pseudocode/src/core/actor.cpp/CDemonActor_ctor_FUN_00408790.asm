@@ -28,7 +28,7 @@
 ;   undefined1 DAT_005ca430
 ;   undefined1 DAT_005ca431
 ;   undefined1 DAT_005ca432
-;   undefined4 g_CDemonActorVTable
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   WatcomTypeInfo g_CSimpleParticleSystemTypeInfo
 ;   undefined4 DAT_0078a123
 ;

@@ -30,19 +30,19 @@
     {
       "addr": "004d8840",
       "from_addr": "004d88a4",
-      "name": "engine_ini.cpp_FUN_004d8840",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00591190",
-      "from_addr": "00591270",
-      "name": "wincore_winvideo.cpp_FUN_00591190",
+      "name": "engine_ini.cpp_getProfileInteger_FUN_004d8840",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00590e90",
       "from_addr": "00590f11",
       "name": "wincore_winvideo.cpp_openMovie_FUN_00590e90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591190",
+      "from_addr": "00591270",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_00591190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -84,7 +84,7 @@
       {
         "call_addr": "00591270",
         "call_type": "direct",
-        "caller": "wincore_winvideo.cpp_FUN_00591190",
+        "caller": "wincore_winvideo.cpp_playMovie_FUN_00591190",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -106,7 +106,7 @@
       {
         "call_addr": "004d88a4",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8840",
+        "caller": "engine_ini.cpp_getProfileInteger_FUN_004d8840",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -10,7 +10,7 @@
 ;   core_hand.cpp_factoryFuncHand_FUN_005a9bd0 at 005a9be3
 ;
 ; Called Functions:
-;   core_hand.cpp_FUN_005a9e10
+;   core_hand.cpp_CHand_processStates_FUN_005a9e10
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d6f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -55,8 +55,8 @@ section .text
     MOV dword ptr [EBX + 0x11864],0x0   ; 005a9cb5
     PUSH EBX                            ; 005a9cbf
     MOV dword ptr [EBX + 0x11854],0x0   ; 005a9cc0
-    CALL core_hand.cpp_FUN_005a9e10     ; 005a9cca
-        ;   XREF to: 005a9e10 (UNCONDITIONAL_CALL)  ; undefined core_hand.cpp_FUN_005a9e10()
+    CALL core_hand.cpp_CHand_processStates_FUN_005a9e10 ; 005a9cca
+        ;   XREF to: 005a9e10 (UNCONDITIONAL_CALL)  ; void core_hand.cpp_CHand_processStates_FUN_005a9e10(CHand * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a9ccf
     PUSH 0x5f09f2                       ; 005a9cd2
     PUSH 0x5f09f8                       ; 005a9cd7

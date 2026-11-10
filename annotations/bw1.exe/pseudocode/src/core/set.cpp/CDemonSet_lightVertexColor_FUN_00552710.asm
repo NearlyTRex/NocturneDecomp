@@ -15,9 +15,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
+;   core_set.cpp_CDemonSet_cacheMirrorLighting_FUN_005557a0 at 005557ee
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_00552a70 at 00552a8d
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00553440 at 00553537
-;   core_set.cpp_FUN_005557a0 at 005557ee
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_set_cpp_005f09a6
@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01c51d40
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 g_CDemonCameraInstance.field4584_0x11e8
+;   undefined4 g_CDemonCameraInstance.corona_blend_factor
 ;   undefined4 DAT_02026340
 ;   undefined4 DAT_0202a51c
 ;   ... and 3 more
@@ -287,7 +287,7 @@ section .text
     PUSH EBX                            ; 005529a2
     CALL core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00552490 ; 005529a3
         ;   XREF to: 00552490 (UNCONDITIONAL_CALL)  ; int core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00552490(CDemonSet * this_ptr, CVector3i * world_position, CVector3i * surface_normal)
-    MOV EBP,dword ptr [0x01fe49d4]      ; 005529a8 | g_CDemonCameraInstance.field4584_0x11e8
+    MOV EBP,dword ptr [0x01fe49d4]      ; 005529a8 | g_CDemonCameraInstance.corona_blend_factor
     ADD ESP,0xc                         ; 005529ae
     MOV ECX,EAX                         ; 005529b1
     MOV dword ptr [ESP + 0x4],EBP       ; 005529b3

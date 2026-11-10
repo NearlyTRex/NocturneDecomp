@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 314,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 39,
-    "suspect_count": 26,
+    "suspect_count": 8,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unnamed_field",
       "unrolled_memset",
       "warning_overlapping_globals"
@@ -135,26 +136,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar3->field_0x2b0 = &g_CDraculaBrideVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&pCVar3->field_0x2b4,(char *)0x5d0e22);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 17,
       "match": "field_0x3430",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x3430 = 0x3f000000;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x3430 = 0x3f000000;",
       "type": "unnamed_field"
     },
     {
@@ -162,39 +147,7 @@
       "line": 18,
       "match": "field_0x3434",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x3434 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x10b1c",
-      "severity": "mild",
-      "text": "pCVar3->field_0x10b1c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x25a8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x25a8 = 0x43070000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x10b84",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x10b88",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b88 = 0;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x3434 = 0x3f800000;",
       "type": "unnamed_field"
     },
     {
@@ -202,7 +155,7 @@
       "line": 25,
       "match": "field_0x3438",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x3438 = uVar1;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x3438 = uVar1;",
       "type": "unnamed_field"
     },
     {
@@ -210,79 +163,7 @@
       "line": 26,
       "match": "field_0x343c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x343c = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10b9c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b9c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x10b98",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b98 = *(uint *)&pCVar3->field_0x10b9c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x10b9c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b98 = *(uint *)&pCVar3->field_0x10b9c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x10b94",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b94 = *(uint *)&pCVar3->field_0x10b98;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x10b98",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b94 = *(uint *)&pCVar3->field_0x10b98;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x10ba0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10ba0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x10b80",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b80 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar5 = &pCVar4->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x10ba8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x10ba8 = 0;",
+      "text": "*(uint *)&(pCVar3->base).base.field_0x343c = uVar2;",
       "type": "unnamed_field"
     },
     {
@@ -290,48 +171,24 @@
       "line": 37,
       "match": "field_0x78",
       "severity": "mild",
-      "text": "} while (puVar5 != &pCVar3->field_0x78);",
+      "text": "} while (pCVar5 != (CDraculaBride *)&(pCVar3->base).base.base.field_0x78);",
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x10ba4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10ba4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x10c24",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10c24 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x10b90",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10b90 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x10c20",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x10c20 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 27,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&pCVar3->field_0x10b9c = 0;",
+      "text": "(pCVar3->new_pos).z = 0.0;",
       "type": "unrolled_memset"
+    },
+    {
+      "description": "Watcom shadow-pointer walk (two-step form) \u2014 `pCVar4` is advanced into scratch `pCVar5`, then rebound via a later `pCVar4 = pCVar5;`. Functionally identical to the single-line self-update; replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer and drop both the advance line and the rebind.",
+      "line": 34,
+      "match": "pCVar5 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST); ...; pCVar4 = pCVar5",
+      "severity": "moderate",
+      "text": "pCVar5 = (CDraculaBride *)((pCVar4->base).base.base.actor_name + 4);",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

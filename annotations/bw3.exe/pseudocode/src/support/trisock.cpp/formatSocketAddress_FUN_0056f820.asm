@@ -11,7 +11,7 @@
 ;   undefined4 DAT_005d68d7
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   support_trisock.cpp_formatIPAddress_FUN_0056f580
 ;
 ; *****************************************************************************
@@ -55,8 +55,8 @@ section .text
         ;   Label: LAB_0056f85e
     PUSH ESI                            ; 0056f860
         ;   Label: LAB_0056f860
-    CALL crt_unknown.c_FUN_005a28c0     ; 0056f861
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0056f861
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0056f866
     POP ESI                             ; 0056f869
     POP EBX                             ; 0056f86a

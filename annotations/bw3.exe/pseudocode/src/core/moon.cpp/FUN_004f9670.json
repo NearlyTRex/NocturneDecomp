@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 223,
-    "complexity_score": 733,
+    "complexity_score": 595,
     "cross_reference_count": 6,
     "function_call_count": 8,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 108,
-    "suspect_count": 60,
+    "pseudocode_lines": 100,
+    "suspect_count": 48,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unknown_field",
-      "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 331
+    "total_lines": 323
   },
   "cross_references": [
     {
@@ -52,7 +50,7 @@
     {
       "addr": "004ea4d0",
       "from_addr": "004ea60a",
-      "name": "core_menu.cpp_FUN_004ea4d0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +70,7 @@
     {
       "addr": "0053b100",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b100"
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100"
     },
     {
       "addr": "0040d6f0",
@@ -85,14 +83,14 @@
       "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90"
     },
     {
+      "addr": "0046cb90",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
+    },
+    {
       "addr": "0046cc40",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40"
-    },
-    {
-      "addr": "0046cb90",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046cb90"
     },
     {
       "addr": "0046d090",
@@ -107,7 +105,7 @@
     {
       "addr": "00559120",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00559120"
+      "name": "sound_sndmain.cpp_processAudio_FUN_00559120"
     }
   ],
   "globals": [
@@ -155,31 +153,31 @@
     },
     {
       "addr": "0203274c",
-      "name": "g_CDemonSetInstance.field1420932_0x15ae84",
+      "name": "g_CDemonSetInstance.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02032750",
-      "name": "g_CDemonSetInstance.field1420936_0x15ae88",
+      "name": "g_CDemonSetInstance.light_direction.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02032754",
-      "name": "g_CDemonSetInstance.field1420940_0x15ae8c",
+      "name": "g_CDemonSetInstance.light_direction.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02032758",
-      "name": "g_CDemonSetInstance.field1420944_0x15ae90",
+      "name": "g_CDemonSetInstance.light_direction.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0203275c",
-      "name": "g_CDemonSetInstance.field1420948_0x15ae94",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
       "type": "undefined4",
       "value": null
     }
@@ -190,7 +188,7 @@
       {
         "call_addr": "004ea60a",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ea4d0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ea4d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -437,40 +435,16 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_28._8_4_ = 0xc0e128b7;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_28._0_4_ = 0x404a54de;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_28._4_4_ = 0x40f41b09;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 26,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046cb90(DAT_005f2afc,&local_28);",
+      "text": "(DAT_005f2afc,&local_28);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 27,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_matrix_c_FUN_0046d090(DAT_005f2afc,0x422c9ce4);",
@@ -478,143 +452,71 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 28,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(CMatrix3x3f *)&local_50);",
+      "text": "engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40(DAT_005f2afc,&local_50);",
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_1c._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_1c._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 39,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_1c._8_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 32,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90(DAT_005f2afc,&local_1c)",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_00600774",
+      "severity": "mild",
+      "text": "DAT_00600774 = DAT_00600774 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_00600774",
+      "severity": "mild",
+      "text": "DAT_00600774 = DAT_00600774 + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 43,
-      "match": "field_0x15ae84",
+      "match": "DAT_00600778",
       "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;",
-      "type": "unnamed_field"
+      "text": "DAT_00600778 = DAT_00600778 + 1;",
+      "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x15ae88",
+      "description": "Undefined global data reference",
+      "line": 43,
+      "match": "DAT_00600778",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x15ae88 = 0xffff6f78;",
-      "type": "unnamed_field"
+      "text": "DAT_00600778 = DAT_00600778 + 1;",
+      "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 45,
-      "match": "field_0x15ae8c",
+      "match": "DAT_0060077c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x15ae8c = 0xffff6f78;",
-      "type": "unnamed_field"
+      "text": "DAT_0060077c = DAT_0060077c + 1;",
+      "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_0060077c",
+      "severity": "mild",
+      "text": "DAT_0060077c = DAT_0060077c + 1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
       "line": 46,
-      "match": "field_0x15ae90",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x15ae90 = 37000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_00600774",
-      "severity": "mild",
-      "text": "DAT_00600774 = DAT_00600774 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_00600774",
-      "severity": "mild",
-      "text": "DAT_00600774 = DAT_00600774 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x15ae94",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0x1964;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_00600778",
-      "severity": "mild",
-      "text": "DAT_00600778 = DAT_00600778 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 51,
-      "match": "DAT_00600778",
-      "severity": "mild",
-      "text": "DAT_00600778 = DAT_00600778 + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x15ae84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_0060077c",
-      "severity": "mild",
-      "text": "DAT_0060077c = DAT_0060077c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_0060077c",
-      "severity": "mild",
-      "text": "DAT_0060077c = DAT_0060077c + 1;",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 54,
       "match": "DAT_00600774",
       "severity": "mild",
       "text": "if (0x3c < DAT_00600774) {",
@@ -622,7 +524,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 47,
       "match": "DAT_00600774",
       "severity": "mild",
       "text": "DAT_00600774 = 0;",
@@ -630,7 +532,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 57,
+      "line": 49,
       "match": "DAT_00600778",
       "severity": "mild",
       "text": "if (0x2d < DAT_00600778) {",
@@ -638,7 +540,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 50,
       "match": "DAT_00600778",
       "severity": "mild",
       "text": "DAT_00600778 = 0;",
@@ -646,7 +548,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 60,
+      "line": 52,
       "match": "DAT_0060077c",
       "severity": "mild",
       "text": "if (0x4b < DAT_0060077c) {",
@@ -654,7 +556,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
+      "line": 53,
       "match": "DAT_0060077c",
       "severity": "mild",
       "text": "DAT_0060077c = 0;",
@@ -662,7 +564,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0xad0) + 2;",
@@ -670,7 +572,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 64,
+      "line": 56,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0xad0) = iVar2;",
@@ -678,7 +580,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 66,
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xad0) = 0xfffffd80;",
@@ -686,7 +588,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0xad4) + 2;",
@@ -694,7 +596,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0xad4) = iVar2;",
@@ -702,7 +604,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xad4) = 0xfffffd80;",
@@ -710,7 +612,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0xad8) + -1;",
@@ -718,7 +620,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0xad8) = iVar2;",
@@ -726,7 +628,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 76,
+      "line": 68,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xad8) = 0x1df;",
@@ -734,7 +636,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0xadc) + -1;",
@@ -742,7 +644,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0xadc) = iVar2;",
@@ -750,7 +652,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0xadc) = 0x1df;",
@@ -758,7 +660,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 75,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0xae4) == 0) {",
@@ -766,10 +668,42 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0xae0) + -500;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(int *)(param_1 + 0xae0) = iVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 79,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xae0) = 5000;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 80,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "*(uint *)(param_1 + 0xae4) = 1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 84,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "iVar2 = *(int *)(param_1 + 0xae0) + 500;",
       "type": "unnamed_param"
     },
     {
@@ -785,7 +719,7 @@
       "line": 87,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xae0) = 5000;",
+      "text": "*(uint *)(param_1 + 0xae0) = 0xffff;",
       "type": "unnamed_param"
     },
     {
@@ -793,7 +727,7 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xae4) = 1;",
+      "text": "*(uint *)(param_1 + 0xae4) = 0;",
       "type": "unnamed_param"
     },
     {
@@ -801,23 +735,31 @@
       "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(param_1 + 0xae0) + 500;",
+      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xad8),0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 93,
+      "line": 92,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0xae0) = iVar2;",
+      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xad8),0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 95,
+      "line": 94,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xae0) = 0xffff;",
+      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad4),*(int *)(param_1 + 0xad8),0xffff);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 94,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad4),*(int *)(param_1 + 0xad8),0xffff);",
       "type": "unnamed_param"
     },
     {
@@ -825,44 +767,12 @@
       "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xae4) = 0;",
+      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xadc),0xffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xad8),0xffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 100,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xad8),0xffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad4),*(int *)(param_1 + 0xad8),0xffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 102,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad4),*(int *)(param_1 + 0xad8),0xffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
       "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xadc),0xffff);",
@@ -870,15 +780,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad0),*(int *)(param_1 + 0xadc),0xffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad4),*(int *)(param_1 + 0xadc),0xffff);",
@@ -886,7 +788,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 106,
+      "line": 98,
       "match": "param_1",
       "severity": "mild",
       "text": "(&CAlphaBitmap_01d883a8,*(int *)(param_1 + 0xad4),*(int *)(param_1 + 0xadc),0xffff);",
@@ -894,7 +796,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 108,
+      "line": 100,
       "match": "param_1",
       "severity": "mild",
       "text": "(&CAlphaBitmap_01d88628,0x40,0x40,*(int *)(param_1 + 0xae0));",

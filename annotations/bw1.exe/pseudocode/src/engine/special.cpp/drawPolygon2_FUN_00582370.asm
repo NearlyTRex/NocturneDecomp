@@ -9,8 +9,8 @@
 ;   core_dpart.cpp_FUN_0047ab00 at 0047ab7d
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_0043c190 at 0043c2f0
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043de60 at 0043dfa4
-;   engine_prim.c_FUN_0053e650 at 0053e726
-;   engine_prim.c_FUN_0053f720 at 0053f7e0
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_0053f720 at 0053f7e0
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_0053e650 at 0053e726
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c50948

@@ -2,21 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 259,
-    "complexity_score": 1123,
+    "complexity_score": 1073,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 153,
-    "suspect_count": 91,
+    "suspect_count": 87,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "suspicious_cast",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -29,7 +27,7 @@
     {
       "addr": "004c65f0",
       "from_addr": "004c78e7",
-      "name": "core_gabriela.cpp_FUN_004c65f0",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -41,7 +39,7 @@
     {
       "addr": "00591120",
       "from_addr": "00591315",
-      "name": "core_stranger.cpp_FUN_00591120",
+      "name": "core_stranger.cpp_CStranger_handleActionButton_FUN_00591120",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -77,17 +75,17 @@
     {
       "addr": "0040cd60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cd60"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd60"
     },
     {
       "addr": "00432c40",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00432c40"
+      "name": "core_charactr.cpp_CCharacter_isCarryingAnything_FUN_00432c40"
     },
     {
       "addr": "005a7520",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_005a7520"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520"
     }
   ],
   "globals": [
@@ -129,13 +127,13 @@
     },
     {
       "addr": "01fcf2cc",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fcf2d0",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     }
@@ -157,7 +155,7 @@
       {
         "call_addr": "004c78e7",
         "call_type": "direct",
-        "caller": "core_gabriela.cpp_FUN_004c65f0",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004c65f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,7 +166,7 @@
       {
         "call_addr": "00591315",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_00591120",
+        "caller": "core_stranger.cpp_CStranger_handleActionButton_FUN_00591120",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -318,7 +316,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = core_charactr_cpp_FUN_00432c40(param_1);",
+      "text": "iVar3 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00432c40(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -326,39 +324,47 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x7bdc == 0) {",
+      "text": "if (param_1[2].flames[0x1a].flame_size.x == 0.0) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x7bdc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x7bdc == 0) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(uint *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_1c),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (local_20 = 0; local_20 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_20 = local_20 + 1)",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 69,
+      "match": "(int *)((int)fVar5",
+      "severity": "moderate",
+      "text": "if (((fVar5 != 0.0) && (*(int *)((int)fVar5 + 0x31c) != 0)) &&",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 70,
+      "match": "(int *)((int)fVar5",
+      "severity": "moderate",
+      "text": "(*(int *)((int)fVar5 + 800) == 0)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 71,
+      "match": "(int *)((int)fVar5",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)((int)fVar5 + 0x154) + 0x1c))(fVar5);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 71,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar3 + 0x154) + 0x1c))(iVar3);",
+      "text": "(**(code **)(*(int *)((int)fVar5 + 0x154) + 0x1c))(fVar5);",
       "type": "unresolved_funcptr"
     },
     {
@@ -446,7 +452,7 @@
       "line": 95,
       "match": "&stack0xffffffd4",
       "severity": "moderate",
-      "text": "core_actor_cpp_FUN_00408b40(iVar3,&stack0xffffffd4);",
+      "text": "core_actor_cpp_FUN_00408b40(fVar5,&stack0xffffffd4);",
       "type": "stack_ref"
     },
     {
@@ -598,7 +604,7 @@
       "line": 130,
       "match": "&stack0xffffff5c",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_005a7520(&stack0xffffff5c);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff5c);",
       "type": "stack_ref"
     },
     {
@@ -638,48 +644,16 @@
       "line": 138,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x7bdc = iVar3;",
+      "text": "param_1[2].flames[0x1a].flame_size.x = fVar5;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 138,
-      "match": "field_0x7bdc",
-      "severity": "mild",
-      "text": "*(int *)&param_1[2].field_0x7bdc = iVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 145,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x7bdc == 0) {",
+      "text": "fVar5 = param_1[2].flames[0x1a].flame_size.x;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 145,
-      "match": "field_0x7bdc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[2].field_0x7bdc == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 149,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(*(int *)&param_1[2].field_0x7bdc,g_CBoxActorClassInfo.name_hash);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x7bdc",
-      "severity": "mild",
-      "text": "(*(int *)&param_1[2].field_0x7bdc,g_CBoxActorClassInfo.name_hash);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -696,14 +670,6 @@
       "severity": "moderate",
       "text": "uVar4 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x30))(iVar3,iVar3 + 0x32c);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 68,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),",
-      "type": "suspicious_cast"
     },
     {
       "description": "Pointer value `&stack0xffffffb4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
@@ -854,7 +820,7 @@
       "line": 74,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
+      "text": "for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

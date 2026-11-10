@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 454,
-    "complexity_score": 1507,
+    "complexity_score": 1432,
     "cross_reference_count": 1,
     "function_call_count": 12,
     "global_count": 10,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 247,
-    "suspect_count": 121,
+    "suspect_count": 114,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals",
@@ -63,7 +62,7 @@
     {
       "addr": "0040cd60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cd60"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cd60"
     },
     {
       "addr": "005030e0",
@@ -98,7 +97,7 @@
     {
       "addr": "005a7520",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_005a7520"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520"
     },
     {
       "addr": "005c1d04",
@@ -304,23 +303,15 @@
       "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[0x17d].field_0xc == 0) {",
+      "text": "if (*(int *)(param_1[0x17d].actor_name + 0xc) == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[0x17d].field_0xc == 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
       "line": 89,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*(int *)&param_1[0x17d].field_0xc + 0x154) + 0xe0))",
+      "text": "(**(code **)(*(int *)(*(int *)(param_1[0x17d].actor_name + 0xc) + 0x154) + 0xe0))",
       "type": "unresolved_funcptr"
     },
     {
@@ -328,48 +319,24 @@
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)(*(int *)&param_1[0x17d].field_0xc + 0x154) + 0xe0))",
+      "text": "(**(code **)(*(int *)(*(int *)(param_1[0x17d].actor_name + 0xc) + 0x154) + 0xe0))",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(*(int *)&param_1[0x17d].field_0xc + 0x154) + 0xe0))",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "(*(int *)&param_1[0x17d].field_0xc);",
+      "text": "(*(int *)(param_1[0x17d].actor_name + 0xc));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(*(int *)&param_1[0x17d].field_0xc);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 91,
       "match": "param_1",
       "severity": "mild",
-      "text": "pfStack_20 = (float *)&param_1[0x17c].field_0x140;",
+      "text": "piStack_20 = &param_1[0x17c].previous_transform_state.dirty_flags;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "pfStack_20 = (float *)&param_1[0x17c].field_0x140;",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -408,7 +375,7 @@
       "line": 100,
       "match": "&stack0xfffffee0",
       "severity": "moderate",
-      "text": "core_actor_cpp_FUN_00408b40(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffee0);",
+      "text": "core_actor_cpp_FUN_00408b40(*(uint *)(param_1[0x17d].actor_name + 0xc),&stack0xfffffee0);",
       "type": "stack_ref"
     },
     {
@@ -416,16 +383,8 @@
       "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b40(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffee0);",
+      "text": "core_actor_cpp_FUN_00408b40(*(uint *)(param_1[0x17d].actor_name + 0xc),&stack0xfffffee0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 100,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408b40(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffee0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -464,7 +423,7 @@
       "line": 109,
       "match": "&stack0xfffffed4",
       "severity": "moderate",
-      "text": "core_actor_cpp_FUN_00408ac0(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffed4);",
+      "text": "core_actor_cpp_FUN_00408ac0(*(uint *)(param_1[0x17d].actor_name + 0xc),&stack0xfffffed4);",
       "type": "stack_ref"
     },
     {
@@ -472,16 +431,8 @@
       "line": 109,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408ac0(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffed4);",
+      "text": "core_actor_cpp_FUN_00408ac0(*(uint *)(param_1[0x17d].actor_name + 0xc),&stack0xfffffed4);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 109,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_00408ac0(*(uint *)&param_1[0x17d].field_0xc,&stack0xfffffed4);",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -552,16 +503,8 @@
       "line": 134,
       "match": "param_1",
       "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(CDemonActor **)&param_1[0x17d].field_0xc);",
+      "text": "(g_CDemonSetPtr,*(CDemonActor **)(param_1[0x17d].actor_name + 0xc));",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(CDemonActor **)&param_1[0x17d].field_0xc);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -792,7 +735,7 @@
       "line": 186,
       "match": "&stack0xffffff34",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_005a7520(&stack0xffffff34);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff34);",
       "type": "stack_ref"
     },
     {

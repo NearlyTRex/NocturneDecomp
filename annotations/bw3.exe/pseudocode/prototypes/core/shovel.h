@@ -25,13 +25,13 @@ CShovel * __cdecl CShovel::ctor(CShovel *this_ptr);
 // Address: 005470b0
 int __cdecl CShovel::fire(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_005470d0
+// Original: core_shovel.cpp_CShovel_getDamage_FUN_005470d0
 // Address: 005470d0
-undefined4 FUN_005470d0(void);
+float __cdecl CShovel::getDamage(CShovel *this_ptr);
 
-// Original: core_shovel.cpp_FUN_00547100
+// Original: core_shovel.cpp_CShovel_renderAimBeam_FUN_00547100
 // Address: 00547100
-void FUN_00547100(void);
+void __cdecl CShovel::renderAimBeam(CShovel *this_ptr);
 
 // Original: core_shovel.cpp_CShovel_dtor_FUN_00547110
 // Address: 00547110

@@ -1,5 +1,47 @@
 [
   {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_checkVictim",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_vfunc94",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CBitFont",
     "rtti_file":"engine/font.cpp",
@@ -18,8 +60,88 @@
     "size":36
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_isInvulnerable",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_setDoorTarget",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"door_target",
+        "type":{
+          "kind":"class",
+          "name":"CDoor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_startInteraction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"user",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonCamera",
+    "parent":"CCameraView",
     "rtti_file":"core/dcamera.cpp",
     "size":5320
   },
@@ -29,6 +151,25 @@
     "parent":"CEnemy",
     "rtti_file":"core/dracbrid.cpp",
     "size":68648
+  },
+  {
+    "kind":"class",
+    "name":"CEnemy_full_vtable",
+    "size":340,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":224
+      },
+      {
+        "name":"_ue",
+        "offset":332
+      }
+    ]
   },
   {
     "kind":"class",
@@ -54,6 +195,75 @@
     "size":71776
   },
   {
+    "kind":"funcdef",
+    "name":"CHag_processMeleeAttackState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHag",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CHag_vtable",
+    "size":12,
+    "vtable_slots":[
+      {
+        "name":"processHagAlertState",
+        "offset":0
+      },
+      {
+        "name":"processMeleeAttackState",
+        "offset":4
+      },
+      {
+        "name":"processHealingState",
+        "offset":8
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_vfunc89",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CInStreamPipe",
     "size":36
@@ -72,8 +282,24 @@
   },
   {
     "kind":"class",
+    "name":"CMatrix3x3i",
+    "size":36
+  },
+  {
+    "kind":"class",
     "name":"CMirrorReflection",
-    "size":1
+    "size":148
+  },
+  {
+    "kind":"class",
+    "name":"CMobster_vtable",
+    "size":4,
+    "vtable_slots":[
+      {
+        "name":"reset",
+        "offset":0
+      }
+    ]
   },
   {
     "kind":"class",
@@ -87,9 +313,91 @@
     "size":8
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_set3DListenerPos",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"x",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"y",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      },
+      {
+        "name":"z",
+        "type":{
+          "kind":"builtin",
+          "name":"double",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CSteuben",
     "size":71760
+  },
+  {
+    "kind":"funcdef",
+    "name":"CStrList_swap",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"index1",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"index2",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -105,9 +413,121 @@
     "size":2584
   },
   {
+    "kind":"funcdef",
+    "name":"CUnionZombie_processMeleeAttackState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CUnionZombie",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorSide",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_SIDE_LEFT",
+        "value":0
+      },
+      {
+        "name":"DOOR_SIDE_RIGHT",
+        "value":1
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDoorState",
+    "size":4,
+    "values":[
+      {
+        "name":"DOOR_STATE_CLOSED",
+        "value":0
+      },
+      {
+        "name":"DOOR_STATE_OPENING",
+        "value":1
+      },
+      {
+        "name":"DOOR_STATE_OPEN",
+        "value":2
+      },
+      {
+        "name":"DOOR_STATE_CLOSING",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EMotionTransitionCmd",
+    "size":4,
+    "values":[
+      {
+        "name":"MOTION_CMD_NONE",
+        "value":0
+      },
+      {
+        "name":"MOTION_CMD_JUMP",
+        "value":1
+      },
+      {
+        "name":"MOTION_CMD_WAIT_EXIT",
+        "value":2
+      },
+      {
+        "name":"MOTION_CMD_TWEEN",
+        "value":3
+      },
+      {
+        "name":"MOTION_CMD_TWEEN_ADVANCE",
+        "value":4
+      },
+      {
+        "name":"MOTION_CMD_TWEEN_ADVANCE_BOTH",
+        "value":5
+      },
+      {
+        "name":"MOTION_CMD_TWEEN_BIDIR",
+        "value":6
+      }
+    ]
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLHeaderBasic",
+    "size":8
+  },
+  {
     "kind":"struct",
     "name":"SNotesSection",
     "size":740
+  },
+  {
+    "kind":"struct",
+    "name":"SScriptXRef",
+    "size":1
   },
   {
     "kind":"struct",
@@ -117,6 +537,11 @@
   {
     "kind":"struct",
     "name":"SSoftwareEdge",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SVoxelGrid",
     "size":1
   }
 ]

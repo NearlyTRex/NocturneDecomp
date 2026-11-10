@@ -28,9 +28,9 @@
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0
 ;   engine_drender.cpp_CDemonRenderer_copyAndTransform3DPoint_FUN_00483780
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 ;   engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_00483e40
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
-;   engine_drender.cpp_FUN_004834b0
 ;   engine_matrix.c_FUN_004839b0
 ;   engine_matrix.c_FUN_00483c10
 ;   engine_matrix.c_popViewport_FUN_00483c40
@@ -90,8 +90,8 @@ section .text
     MOV EAX,[0x0061255c]                ; 0055b3b7 | DAT_0061255c
     PUSH EAX                            ; 0055b3bc | DAT_01bc120c
     MOV ESI,dword ptr [ESP + 0xc]       ; 0055b3bd
-    CALL engine_drender.cpp_FUN_004834b0 ; 0055b3c1
-        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 0055b3c1
+        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0055b3c6
     ADD EBX,ESI                         ; 0055b3c9
     MOV EDX,dword ptr [0x0061255c]      ; 0055b3cb | DAT_0061255c

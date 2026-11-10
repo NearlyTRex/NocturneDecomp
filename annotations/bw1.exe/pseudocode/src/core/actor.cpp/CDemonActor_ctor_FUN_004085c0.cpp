@@ -15,10 +15,11 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_004085c0(CDemonActor *
   char *pcVar3;
   char *pcVar4;
   
-  iVar2 = core_actor_cpp_initTransformCache_FUN_00408580(&this_ptr->field_0x12c);
+  iVar2 = core_actor_cpp_initTransformCache_FUN_00408580
+                    (&(this_ptr->previous_transform_state).position.y);
   this_ptr_00 = (CDemonActor *)(iVar2 + -300);
-  *(byte ***)(iVar2 + 0x28) = &g_CDemonActorVTable;
-  *(byte *)this_ptr_00 = 0;
+  *(CDemonActor_vtable **)(iVar2 + 0x28) = &g_CDemonActorVTable;
+  this_ptr_00->actor_name[0] = '\0';
   *(uint *)(iVar2 + 0x20) = 0;
   *(uint *)(iVar2 + 0x24) = 0;
   *(uint *)(iVar2 + -0x104) = 0;

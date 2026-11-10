@@ -18,9 +18,11 @@ CStylerDemon * core_styldemo_cpp_CStylerDemon_ctor_FUN_0059e070(CStylerDemon *th
   CMorph *pCVar4;
   
   pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0((CMorph *)&pCVar3[1].field_0x10);
-  *(byte ***)(pCVar4 + -0xcf10) = &g_CStylerDemonVTable;
-  core_skeleton_cpp_FUN_0054eae0(pCVar4 + -0xcf0c);
+  pCVar4 = core_morph_cpp_CMorph_ctor_FUN_004fa8a0
+                     ((CMorph *)(pCVar3[1].base.base.actor_name + 0x10));
+  *(CEnemy_full_vtable **)(pCVar4 + -0xcf10) = &g_CStylerDemonVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)(pCVar4 + -0xcf0c),"bwp3_stylerdemon.dfm");
   *(uint *)(pCVar4 + -0x9df8) = 0x3f19999a;
   *(uint *)(pCVar4 + -0x9df4) = 0x3f666666;
   *(uint *)(pCVar4 + -0x204) = 0x41c80000;

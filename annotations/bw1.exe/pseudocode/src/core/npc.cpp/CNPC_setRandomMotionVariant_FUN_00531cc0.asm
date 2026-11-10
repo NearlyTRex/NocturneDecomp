@@ -11,18 +11,18 @@
 ; undefined1       Stack[-0xd7]:1  local_d7
 ;
 ; XREF[1]:
-;   core_npc.cpp_FUN_00531da0 at 00531dfb
+;   core_npc.cpp_CNPC_processDamage_FUN_00531da0 at 00531dfb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_005ec7d0
 ;   TerminatedCString s_s_d_005ec7d6
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
-;   core_motion.cpp_FUN_00524150
-;   core_motion.cpp_FUN_00524a00
-;   crt_unknown.c_FUN_005bfb40
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_00524150
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xdc]      ; 00531cd1
     PUSH EDX                            ; 00531cd8
     XOR EBX,EBX                         ; 00531cd9
-    CALL core_motion.cpp_FUN_00524a00   ; 00531cdb
-        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00524a00(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 00531cdb
+        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00531ce0
     MOV EBP,EAX                         ; 00531ce3
     XOR EDI,EDI                         ; 00531ce5
@@ -50,15 +50,15 @@ section .text
     PUSH 0x5ec7d0                       ; 00531cec | = "%s_%d"
     LEA EAX,[ESP + 0xc]                 ; 00531cf1
     PUSH EAX                            ; 00531cf5
-    CALL crt_unknown.c_FUN_005bfb40     ; 00531cf6
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00531cf6
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00531cfb
     PUSH EDI                            ; 00531cfe
     LEA EAX,[ESP + 0x4]                 ; 00531cff
     PUSH EAX                            ; 00531d03
     PUSH EBP                            ; 00531d04
-    CALL core_motion.cpp_FUN_00524150   ; 00531d05
-        ;   XREF to: 00524150 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00524150(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_00524150 ; 00531d05
+        ;   XREF to: 00524150 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_00524150(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00531d0a
     TEST EAX,EAX                        ; 00531d0d
     JL 0x00531d14                       ; 00531d0f
@@ -72,24 +72,24 @@ section .text
         ;   XREF to: 00531d58 (CONDITIONAL_JUMP)  ; LAB_00531d58
     PUSH EBX                            ; 00531d18
     PUSH 0x1                            ; 00531d19
-    CALL core_actor.cpp_FUN_0040cc60    ; 00531d1b
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 00531d1b
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 00531d20
     PUSH EAX                            ; 00531d23
     PUSH ESI                            ; 00531d24
     PUSH 0x5ec7d6                       ; 00531d25 | = "%s_%d"
     LEA EAX,[ESP + 0xc]                 ; 00531d2a
     PUSH EAX                            ; 00531d2e
-    CALL crt_unknown.c_FUN_005bfb40     ; 00531d2f
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00531d2f
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00531d34
     PUSH 0x0                            ; 00531d37
         ;   Label: LAB_00531d37
     LEA EAX,[ESP + 0x4]                 ; 00531d39
     PUSH EAX                            ; 00531d3d
     PUSH EBP                            ; 00531d3e
-    CALL core_motion.cpp_FUN_00524150   ; 00531d3f
-        ;   XREF to: 00524150 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00524150(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_00524150 ; 00531d3f
+        ;   XREF to: 00524150 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_00524150(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00531d44
     TEST EAX,EAX                        ; 00531d47
     JGE 0x00531d76                      ; 00531d49

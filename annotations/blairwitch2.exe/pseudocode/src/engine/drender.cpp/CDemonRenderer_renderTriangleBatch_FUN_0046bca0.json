@@ -2,21 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 57,
-    "complexity_score": 22,
+    "complexity_score": 39,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 22,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 79
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 81
   },
   "cross_references": [
     {
       "addr": "004159e0",
       "from_addr": "00415a9d",
-      "name": "core_bodypart.cpp_FUN_004159e0",
+      "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -115,5 +117,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 23,
+      "match": "(SMRGLHeaderPrimitive *)((int)primitive_array",
+      "severity": "moderate",
+      "text": "&(((SMRGLHeaderPrimitive *)((int)primitive_array + 0x30))->surface_normal).B;",
+      "type": "pointer_cast"
+    }
+  ]
 }

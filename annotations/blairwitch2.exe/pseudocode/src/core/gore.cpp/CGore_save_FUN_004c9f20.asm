@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_mission.cpp_FUN_004fbce0 at 004fbfec
+;   core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0 at 004fbfec
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Gore_005d9592

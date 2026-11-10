@@ -16,6 +16,6 @@ CSkeleton * core_skeleton_cpp_CSkeleton_dtor_FUN_00547a50(CSkeleton *this_ptr,ui
   
   FUN_005a5ff7(0xc);
   core_skeleton_cpp_FUN_00547b90(unaff_retaddr,1);
-  pCVar1 = (CSkeleton *)unkafter_box_cpp_FUN_004fb1f0(unaff_retaddr,1);
+  pCVar1 = (CSkeleton *)unkafter_morph_cpp_FUN_004fb1f0(unaff_retaddr,1);
   return pCVar1;
 }

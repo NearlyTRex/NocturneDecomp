@@ -6,8 +6,8 @@
 ;
 ; XREF[27]:
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438c40
-;   cockpit_pkbitmap.cpp_FUN_00538280 at 005382a2
-;   cockpit_pkbitmap.cpp_FUN_005385d0 at 005385e9
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280 at 005382a2
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_005385d0 at 005385e9
 ;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538c8e
 ;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538f03
 ;   core_dcamera.cpp_CDemonCamera_loadImage_FUN_0044fff0 at 004500af

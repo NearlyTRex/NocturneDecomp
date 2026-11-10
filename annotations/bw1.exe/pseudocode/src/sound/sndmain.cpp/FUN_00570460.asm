@@ -44,11 +44,11 @@
 ;   sound_mp3.cpp_CMP3Decoder_read_FUN_0052b170
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020
 ;   sound_sndmain.cpp_CSfxSample_getLoopMode_FUN_00572680
+;   sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005702c0
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70
 ;   sound_sndmain.cpp_CSfxSlot_pollHwPlaybackPos_FUN_00571fa0
 ;   sound_sndmain.cpp_FUN_00570160
-;   sound_sndmain.cpp_FUN_00570260
 ;   sound_sndmain.cpp_FUN_005723e0
 ;   sound_sndmain.cpp_FUN_00572400
 ;   sound_sndmain.cpp_FUN_005773f0
@@ -438,8 +438,8 @@ section .text
     POP EDI                             ; 0057088c
     PUSH EBP                            ; 0057088d
         ;   Label: LAB_0057088d
-    CALL sound_sndmain.cpp_FUN_00570260 ; 0057088e
-        ;   XREF to: 00570260 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00570260(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260 ; 0057088e
+        ;   XREF to: 00570260 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00570893
     MOV ECX,dword ptr [ESP + 0x20]      ; 00570896
         ;   Label: LAB_00570896
@@ -581,8 +581,8 @@ section .text
         ;   XREF to: 00570981 (UNCONDITIONAL_JUMP)  ; LAB_00570981
     PUSH EBP                            ; 005709fb
         ;   Label: LAB_005709fb
-    CALL sound_sndmain.cpp_FUN_00570260 ; 005709fc
-        ;   XREF to: 00570260 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00570260(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260 ; 005709fc
+        ;   XREF to: 00570260 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_CSfxSample_releaseSoundBuffer_FUN_00570260(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 00570a01
     PUSH EBP                            ; 00570a04
     PUSH 0x5f36a6                       ; 00570a05 | = "Error reading %s while streaming\n"

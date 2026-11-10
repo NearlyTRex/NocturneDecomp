@@ -14,7 +14,7 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_00558290(int bits_per_sampl
   int iVar1;
   int iStack_10;
   
-  iVar1 = sound_sndmain_cpp_FUN_005586c0();
+  iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_005586c0();
   if (iVar1 != 0) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0x148c;

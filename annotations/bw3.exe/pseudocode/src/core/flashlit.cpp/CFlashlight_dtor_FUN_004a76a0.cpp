@@ -17,7 +17,7 @@ CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004a76a0(CFlashligh
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return (CFlashlight *)pCVar1;
   }

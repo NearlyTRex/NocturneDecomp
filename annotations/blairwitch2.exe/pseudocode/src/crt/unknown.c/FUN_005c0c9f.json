@@ -17,21 +17,21 @@
   },
   "cross_references": [
     {
-      "addr": "005b9c98",
-      "from_addr": "005b9ca0",
-      "name": "crt_unknown.c_FUN_005b9c98",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005c5f03",
       "from_addr": "005c5f0c",
-      "name": "unkafter_2d.cpp_FUN_005c5f03",
+      "name": "crt_unknown.c_FUN_005c5f03",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005c5f69",
       "from_addr": "005c5f77",
-      "name": "unkafter_2d.cpp_FUN_005c5f69",
+      "name": "crt_unknown.c_FUN_005c5f69",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b9c98",
+      "from_addr": "005b9ca0",
+      "name": "crt_unknown.c_istream_seekg_FUN_005b9c98",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "addr": "005c41d2",
       "is_variadic": false,
-      "name": "unkafter_morph.cpp_FUN_005c41d2"
+      "name": "crt_unknown.c_FUN_005c41d2"
     }
   ],
   "globals": [],
@@ -61,7 +61,7 @@
       {
         "call_addr": "005c5f0c",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005c5f03",
+        "caller": "crt_unknown.c_FUN_005c5f03",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -74,7 +74,7 @@
       {
         "call_addr": "005c5f77",
         "call_type": "direct",
-        "caller": "unkafter_2d.cpp_FUN_005c5f69",
+        "caller": "crt_unknown.c_FUN_005c5f69",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -87,7 +87,7 @@
       {
         "call_addr": "005b9ca0",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005b9c98",
+        "caller": "crt_unknown.c_istream_seekg_FUN_005b9c98",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +215,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = unkafter_morph_cpp_FUN_005c41d2(param_1,param_2);",
+      "text": "uVar1 = FUN_005c41d2(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -223,7 +223,7 @@
       "line": 12,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = unkafter_morph_cpp_FUN_005c41d2(param_1,param_2);",
+      "text": "uVar1 = FUN_005c41d2(param_1,param_2);",
       "type": "unnamed_param"
     },
     {

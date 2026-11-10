@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_zombprie.cpp_FUN_0058d960 at 0058e5c0
+;   core_zombiepriest.cpp_FUN_0058d960 at 0058e5c0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_CTommyGun_005d8c28
@@ -20,14 +20,14 @@
 ;   undefined4 DAT_005d8c40
 ;   undefined4 DAT_005d8c48
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
-;   core_actor.cpp_FUN_0040c790
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_bodypart.cpp_FUN_00416bd0
 ;   core_bodypart.cpp_FUN_00416c50
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
@@ -92,11 +92,11 @@ section .text
     MOV EAX,[0x00603b28]                ; 0058f061 | g_CDemonSetPtr
         ;   Label: LAB_0058f061
     MOV EBX,dword ptr [ESP + 0xec]      ; 0058f066
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0058f06d | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0058f06d | g_CDemonSetInstance.actor_count
     JGE 0x0058f437                      ; 0058f073
         ;   XREF to: 0058f437 (CONDITIONAL_JUMP)  ; LAB_0058f437
     ADD EAX,dword ptr [ESP + 0xf0]      ; 0058f079
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0058f080 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0058f080 | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 0058f086
     MOV EAX,dword ptr [EBX + 0x154]     ; 0058f087
     CALL dword ptr [EAX + 0x94]         ; 0058f08d
@@ -120,8 +120,8 @@ section .text
     INC ECX                             ; 0058f0ce
     PUSH 0x40a00000                     ; 0058f0cf
     MOV dword ptr [EAX + 0xd054],ECX    ; 0058f0d4
-    CALL core_actor.cpp_FUN_0040ce40    ; 0058f0da
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0058f0da
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x100],EAX     ; 0058f0df
     FLD float ptr [ESP + 0x100]         ; 0058f0e6
     ADD ESP,0x8                         ; 0058f0ed
@@ -342,8 +342,8 @@ section .text
     PUSH 0x5d8c28                       ; 0058f363 | = "CTommyGun"
         ;   Label: LAB_0058f363
     PUSH EBX                            ; 0058f368
-    CALL core_actor.cpp_FUN_0040c790    ; 0058f369
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 0058f369
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0058f36e
     TEST EAX,EAX                        ; 0058f371
     JZ 0x0058f09e                       ; 0058f373

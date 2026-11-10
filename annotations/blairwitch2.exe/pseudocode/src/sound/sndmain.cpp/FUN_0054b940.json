@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 9,
-    "complexity_score": 83,
+    "complexity_score": 85,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 10,
     "suspect_count": 6,
     "suspect_types": [
       "register_param",
       "unknown_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 17
+    "total_lines": 19
   },
   "cross_references": [],
   "function": {
@@ -108,28 +108,28 @@
       "line": 9,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_SfxSamples[0]._0_4_ = g_SfxSamples[0]._0_4_ << 1 | (uint)((int)g_SfxSamples[0]._0_4_ < 0);",
+      "text": "g_SfxSamples[0].sample_info.name._0_4_ =",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 9,
+      "line": 10,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_SfxSamples[0]._0_4_ = g_SfxSamples[0]._0_4_ << 1 | (uint)((int)g_SfxSamples[0]._0_4_ < 0);",
+      "text": "g_SfxSamples[0].sample_info.name._0_4_ << 1 |",
       "type": "unknown_field"
     },
     {
       "description": "Unknown/mangled field access",
-      "line": 9,
+      "line": 11,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "g_SfxSamples[0]._0_4_ = g_SfxSamples[0]._0_4_ << 1 | (uint)((int)g_SfxSamples[0]._0_4_ < 0);",
+      "text": "(uint)((int)g_SfxSamples[0].sample_info.name._0_4_ < 0);",
       "type": "unknown_field"
     },
     {
       "description": "Inferred register parameter",
-      "line": 10,
+      "line": 12,
       "match": "in_EDX",
       "severity": "mild",
       "text": "_DAT_02641920 = in_EDX;",

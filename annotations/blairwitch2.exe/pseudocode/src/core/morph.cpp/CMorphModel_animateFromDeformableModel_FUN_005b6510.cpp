@@ -18,6 +18,6 @@ void __cdecl core_morph_cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510(
   pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(model_ptr);
   core_morph_cpp_CMorphModel_animateFromVertexBuffer_FUN_005b6400
             (this_ptr,part_index,*(CVector3i **)&model_ptr->field_0x2234,0,
-             *(int *)(&pCVar2->field_0x2c + iVar1 * 4));
+             pCVar2->vertex_count[iVar1]);
   return;
 }

@@ -15,10 +15,10 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[6]:
-;   core_bodypart.cpp_FUN_00419b90 at 00419ff2
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 at 00419ff2
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_00467880 at 004678f5
 ;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0 at 00479c17
-;   core_set.cpp_FUN_00554d30 at 00555136
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30 at 00555136
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004fcd30 at 004fd08b
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004fd120 at 004fd181
 ;

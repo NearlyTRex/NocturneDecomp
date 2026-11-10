@@ -1,0 +1,385 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 278,
+    "complexity_score": 156,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 35,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 91,
+    "suspect_count": 5,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 369
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00464cd0",
+    "address_range": [
+      [
+        "00464cd0",
+        "0046500c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_door.cpp_CDoor_archive_FUN_00464cd0",
+    "signature": "void __cdecl core_door_cpp_CDoor_archive_FUN_00464cd0(CDoor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b9b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0"
+    },
+    {
+      "addr": "0040c0c0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveRules_FUN_0040c0c0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040b400",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b400"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005bbd93",
+      "name": "s_modelName_005bbd92+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005bbd9d",
+      "name": "s_doorType_005bbd9d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbda6",
+      "name": "s_doorSide_005bbda6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdaf",
+      "name": "s_doorState_005bbdaf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdb9",
+      "name": "s_doorSwing_005bbdb9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdc3",
+      "name": "s_openEvent_005bbdc3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdcd",
+      "name": "s_closeEvent_005bbdcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdd8",
+      "name": "s_openSound_005bbdd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbde2",
+      "name": "s_closeSound_005bbde2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbded",
+      "name": "s_keyMask_005bbded",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdf5",
+      "name": "s_origPos_005bbdf5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbdfd",
+      "name": "s_origOrient_005bbdfd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe08",
+      "name": "s_param_005bbe08",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe0e",
+      "name": "s_maxParam_005bbe0e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe17",
+      "name": "s_openSpeed_005bbe17",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe21",
+      "name": "s_closeSpeed_005bbe21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe2c",
+      "name": "s_groundType_005bbe2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe37",
+      "name": "s_eventToTriggerWhenOpen_005bbe37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe4e",
+      "name": "s_eventToTriggerWhenClosed_005bbe4e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe67",
+      "name": "s_oneShot_005bbe67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe6f",
+      "name": "s_openRules_005bbe6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe79",
+      "name": "s_scriptOpenEvent_005bbe79",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbe89",
+      "name": "DAT_005bbe89",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005bbe8a",
+      "name": "DAT_005bbe8a",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005bbe8b",
+      "name": "DAT_005bbe8b",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005bbe8c",
+      "name": "DAT_005bbe8c",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "005bbe8e",
+      "name": "s_blockVirtualDirectorFlag_005bbe8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbea7",
+      "name": "s_plotAsBoxInShadow_005bbea7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbeb9",
+      "name": "s_allowedSides_005bbeb9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbec6",
+      "name": "s_allowBulletHoles_005bbec6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbed7",
+      "name": "s_lockedSound_005bbed7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbee3",
+      "name": "s_shakeMeEvent_005bbee3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbef0",
+      "name": "s_shakeMeStrength_005bbef0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005bbf00",
+      "name": "s_handleVertexIndex_005bbf00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f2abc",
+      "name": "g_CDoorClassVersion",
+      "type": "int",
+      "value": "0xd"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.188679245283019,
+    "instruction_count": 212,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 3,
+      "CALL": 31,
+      "CBRANCH": 15,
+      "COPY": 132,
+      "INT_ADD": 78,
+      "INT_AND": 99,
+      "INT_CARRY": 34,
+      "INT_EQUAL": 100,
+      "INT_LESS": 14,
+      "INT_NOTEQUAL": 10,
+      "INT_SBORROW": 14,
+      "INT_SCARRY": 34,
+      "INT_SLESS": 49,
+      "INT_SUB": 110,
+      "LOAD": 12,
+      "POPCOUNT": 49,
+      "RETURN": 2,
+      "STORE": 100
+    },
+    "pcode_op_count": 888
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_005bbe89",
+      "severity": "mild",
+      "text": "pcVar2 = &DAT_005bbe89;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0x9e4",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x9e4,\"shakeMeEvent\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x9e0",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x9e0,\"shakeMeStrength\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 92,
+      "match": "field_0xa48",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0xa48,\"handleVertexIndex\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDoor",
+        "offset": 212,
+        "vtable_addr": "005debb4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

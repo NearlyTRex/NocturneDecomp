@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 46,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
@@ -104,16 +104,8 @@
       "line": 8,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "return (SBodyPartFire *)&pCVar1[-1].field_0x14c;",
+      "text": "return (SBodyPartFire *)&pCVar1[-1].next_actor;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "return (SBodyPartFire *)&pCVar1[-1].field_0x14c;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

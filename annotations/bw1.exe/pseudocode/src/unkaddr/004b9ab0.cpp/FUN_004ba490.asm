@@ -22,8 +22,8 @@
 ;   undefined4 SNotesSection_ARRAY_01cc4474[1].field328_0x148
 ;   undefined4 SNotesSection_ARRAY_01cc4474[1].field332_0x14c
 ;   undefined4 DAT_01cc7b90
-;   undefined4 CAlphaBitmap_ARRAY_01cc7ba8[1].field12_0xc
-;   undefined4 CAlphaBitmap_ARRAY_01cc7ba8[1].field16_0x10
+;   undefined4 CAlphaBitmap_ARRAY_01cc7ba8[1].width
+;   undefined4 CAlphaBitmap_ARRAY_01cc7ba8[1].height
 ;
 ; *****************************************************************************
 
@@ -46,10 +46,10 @@ section .text
         ;   Label: LAB_004ba4ae
     MOV EBX,dword ptr [ESI + 0x1cc45bc] ; 004ba4b4 | SNotesSection_ARRAY_01cc4474[0].field328_0x148 | SNotesSection_ARRAY_01cc4474[1].field328_0x148
     MOV EBP,dword ptr [ESI + 0x1cc45c0] ; 004ba4ba | SNotesSection_ARRAY_01cc4474[0].field332_0x14c | SNotesSection_ARRAY_01cc4474[1].field332_0x14c
-    MOV ESI,dword ptr [ECX + 0x1cc7bb4] ; 004ba4c0 | CAlphaBitmap_ARRAY_01cc7ba8[1].field12_0xc
+    MOV ESI,dword ptr [ECX + 0x1cc7bb4] ; 004ba4c0 | CAlphaBitmap_ARRAY_01cc7ba8[1].width
     ADD ESI,EBX                         ; 004ba4c6
     MOV dword ptr [ESP + 0x4],ESI       ; 004ba4c8
-    MOV ESI,dword ptr [ECX + 0x1cc7bb8] ; 004ba4cc | CAlphaBitmap_ARRAY_01cc7ba8[1].field16_0x10
+    MOV ESI,dword ptr [ECX + 0x1cc7bb8] ; 004ba4cc | CAlphaBitmap_ARRAY_01cc7ba8[1].height
     ADD ESI,EBP                         ; 004ba4d2
     MOV EDI,dword ptr [0x01cc7b90]      ; 004ba4d4 | DAT_01cc7b90
     MOV dword ptr [ESP],ESI             ; 004ba4da

@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 63,
-    "complexity_score": 78,
+    "complexity_score": 58,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 4,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
     "total_lines": 91
@@ -52,14 +52,14 @@
       "name": "core_texlist.cpp_CTextureList_ctor_FUN_005960b0"
     },
     {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
+    },
+    {
       "addr": "005c08d0",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c08d0"
-    },
-    {
-      "addr": "005c0f32",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0f32"
     }
   ],
   "globals": [
@@ -177,28 +177,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pvVar1 = FUN_005c08d0(*(int *)this_ptr * *(int *)&this_ptr->field_0x4 * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x24 = pvVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(CTextureList **)&this_ptr->field_0x28 = pCVar2;",
-      "type": "unnamed_field"
+      "description": "Allocation size hardcodes 0x6d64 == sizeof(CTextureList). Replace the magic with sizeof(CTextureList) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 19,
+      "match": "(CTextureList*) alloc stride 0x6d64",
+      "severity": "moderate",
+      "text": "(CTextureList *)debugAllocTracked1(0x6d64)",
+      "type": "alloc_magic_size"
     }
   ]
 }

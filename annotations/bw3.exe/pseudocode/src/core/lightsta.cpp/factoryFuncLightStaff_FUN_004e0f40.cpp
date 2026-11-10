@@ -11,7 +11,7 @@ void core_lightsta_cpp_factoryFuncLightStaff_FUN_004e0f40(void)
 {
   CLightStaff *this_ptr;
   
-  this_ptr = (CLightStaff *)FUN_005a3cb2(0x608);
+  this_ptr = (CLightStaff *)debugAllocTracked1(0x608);
   if (this_ptr == (CLightStaff *)0x0) {
     return;
   }

@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[8]:
-;   sound_snddx.cpp_FUN_00579f6e at 0057a1ad
+;   sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f6e at 0057a1ad
 ;   sound_sndmain.cpp_FUN_0056e830 at 0056ec08
 ;   sound_sndmain.cpp_FUN_005773f0 at 0057742f
 ;   support_trisock.cpp_FUN_0059daec at 0059dc80
 ;   support_trisock.cpp_FUN_0059eeb0 at 0059eebb
+;   support_trisock.cpp_FUN_0059ef20 at 0059ef2e
 ;   support_trstream.cpp_FUN_005a1e90 at 005a1ea3
 ;   support_trstream.cpp_FUN_005a1ec0 at 005a1f20
-;   unkafter_trisock.cpp_FUN_0059ef20 at 0059ef2e
 ;
 ; Referenced Globals:
 ;   void* PTR_OutputDebugStringA_005d0608 = 001d109a

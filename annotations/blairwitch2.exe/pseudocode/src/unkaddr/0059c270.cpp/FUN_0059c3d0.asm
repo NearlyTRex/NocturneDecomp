@@ -20,9 +20,9 @@
 ;
 ; Called Functions:
 ;   shape_edittool.cpp_CPickList_ctor_FUN_00481fc0
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004820b0
 ;   shape_edittool.cpp_CStrList_add_FUN_00480e70
-;   shape_edittool.cpp_FUN_00482250
 ;   unkaddr_0059c270.cpp_FUN_0059c380
 ;
 ; *****************************************************************************
@@ -143,8 +143,8 @@ section .text
     PUSH 0x5ef769                       ; 0059c4f1 | = "-- Select Debug Flag --"
     LEA EAX,[ESP + 0xc]                 ; 0059c4f6
     PUSH EAX                            ; 0059c4fa
-    CALL shape_edittool.cpp_FUN_00482250 ; 0059c4fb
-        ;   XREF to: 00482250 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00482250(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250 ; 0059c4fb
+        ;   XREF to: 00482250 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00482250(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     MOV [0x02668128],EAX                ; 0059c500 | DAT_02668128
     INC EAX                             ; 0059c505
     ADD ESP,0x10                        ; 0059c506

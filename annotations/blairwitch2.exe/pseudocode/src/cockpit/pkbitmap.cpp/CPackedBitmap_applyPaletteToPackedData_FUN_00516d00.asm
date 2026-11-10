@@ -8,7 +8,7 @@
 ; uchar *          Stack[0x8]:4   palette_buffer
 ;
 ; XREF[2]:
-;   cockpit_pkbitmap.cpp_FUN_00516cb0 at 00516cd4
+;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00516cb0 at 00516cd4
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00517e90 at 00517eae
 ;
 ; *****************************************************************************

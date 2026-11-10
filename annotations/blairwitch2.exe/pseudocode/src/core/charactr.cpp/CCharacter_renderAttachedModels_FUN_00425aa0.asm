@@ -19,9 +19,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_charactr.cpp_FUN_00424bd0 at 00424c1b
+;   core_charactr.cpp_CCharacter_renderCharacter_FUN_00424bd0 at 00424c1b
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_004f1890 at 004f1ad6
-;   core_vampboss.cpp_FUN_00582ec0 at 00582f6b
+;   core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_00582ec0 at 00582f6b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b280
@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0
-;   core_xform.cpp_FUN_00591de0
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005916b0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350
 ;   engine_matrix.c_pop_FUN_0046b4a0
@@ -95,8 +95,8 @@ section .text
     MOVSD.REP ES:EDI,ESI                ; 00425b3a
     PUSH EAX                            ; 00425b3c
     LEA ESI,[ESP + 0x7c]                ; 00425b3d
-    CALL core_xform.cpp_FUN_00591de0    ; 00425b41
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 00425b41
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     ADD ESP,0x4                         ; 00425b46
     MOV EAX,dword ptr [ESP + 0x3c]      ; 00425b49
     MOV dword ptr [ESP + 0x6c],EAX      ; 00425b4d

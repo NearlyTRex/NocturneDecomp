@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01cb7b50
 ;
 ; Called Functions:
-;   core_game.cpp_FUN_004b6e10
+;   core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10
 ;   core_game.cpp_FUN_004bb500
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     MOV dword ptr [EBX + 0x20],0x0      ; 004b2dd7
     PUSH EBX                            ; 004b2dde
     MOV dword ptr [EBX + 0xd0],0x1      ; 004b2ddf
-    CALL core_game.cpp_FUN_004b6e10     ; 004b2de9
-        ;   XREF to: 004b6e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004b6e10(CGame * this_ptr)
+    CALL core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10 ; 004b2de9
+        ;   XREF to: 004b6e10 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_restoreDefaultControls_FUN_004b6e10(CGame * this_ptr)
     MOV byte ptr [EBX + 0xec],0x0       ; 004b2dee
     MOV dword ptr [EBX + 0x1ec],0x0     ; 004b2df5
     MOV dword ptr [EBX + 0x1f0],0x0     ; 004b2dff

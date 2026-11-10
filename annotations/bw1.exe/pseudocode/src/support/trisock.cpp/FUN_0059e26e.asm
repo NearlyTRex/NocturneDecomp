@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   support_trisock.cpp_FUN_0059d9d0
 ;   support_trisock.cpp_FUN_0059ddc0
 ;
@@ -71,8 +71,8 @@ section .text
     ADD EBX,0xa18                       ; 0059e2e7
     PUSH EBX                            ; 0059e2ed
     MOV dword ptr [EBX + 0x310],0xffffffff ; 0059e2ee
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059e2f8
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059e2f8
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0059e2fd
     POP EBP                             ; 0059e300
     POP EDI                             ; 0059e301

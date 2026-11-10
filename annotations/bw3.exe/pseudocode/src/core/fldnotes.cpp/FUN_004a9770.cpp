@@ -17,7 +17,8 @@ uint core_fldnotes_cpp_FUN_004a9770(int param_1,char *param_2)
   byte bVar6;
   
   bVar6 = 0;
-  iVar2 = engine_font_cpp_FUN_004b2a80(*(CBitFont **)(param_1 + 0x2c),param_2);
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(*(CBitFont **)(param_1 + 0x2c),param_2)
+  ;
   if (iVar2 + *(int *)(param_1 + 0x14) < *(int *)(param_1 + 0x24)) {
     uVar3 = 0xffffffff;
     pcVar5 = (char *)(param_1 + 0x48);

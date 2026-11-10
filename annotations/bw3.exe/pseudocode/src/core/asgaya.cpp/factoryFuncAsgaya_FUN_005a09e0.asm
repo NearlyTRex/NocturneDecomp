@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_asgaya.cpp_CAsgaya_ctor_FUN_005a0a10
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x33fd4                        ; 005a09e0
         ;   Label: core_asgaya.cpp_factoryFuncAsgaya_FUN_005a09e0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 005a09e5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 005a09e5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 005a09ea
     TEST EAX,EAX                        ; 005a09ed
     JNZ 0x005a09f2                      ; 005a09ef

@@ -17,7 +17,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidInteger_FUN_0047e940(C
     local_34[0] = '\0';
   }
   else {
-    FUN_005a28c0(local_34,&DAT_005bcf91,*result_ptr);
+    _sprintf(local_34,&DAT_005bcf91);
   }
   while( true ) {
     while( true ) {

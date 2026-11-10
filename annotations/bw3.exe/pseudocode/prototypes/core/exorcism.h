@@ -21,29 +21,29 @@ CDemonActorType * CExorcism::getActorType(CExorcism *this_ptr);
 // Address: 0048a310
 CExorcism * CExorcism::ctor(CExorcism *this_ptr);
 
-// Original: core_exorcism.cpp_FUN_0048a420
+// Original: core_exorcism.cpp_CExorcism_process_FUN_0048a420
 // Address: 0048a420
-void FUN_0048a420(CWeapon *param_1,float param_2,undefined4 param_3,float param_4);
+void __cdecl CExorcism::process(CExorcism *this_ptr,float delta_time);
 
-// Original: core_exorcism.cpp_FUN_0048b020
+// Original: core_exorcism.cpp_CExorcism_fire_FUN_0048b020
 // Address: 0048b020
-undefined4 FUN_0048b020(CDemonActor *param_1);
+int __cdecl CExorcism::fire(CExorcism *this_ptr);
 
-// Original: core_exorcism.cpp_FUN_0048b5a0
+// Original: core_exorcism.cpp_CExorcism_getDamage_FUN_0048b5a0
 // Address: 0048b5a0
-undefined4 FUN_0048b5a0(void);
+float __cdecl CExorcism::getDamage(CExorcism *this_ptr);
 
-// Original: core_exorcism.cpp_FUN_0048b5d0
+// Original: core_exorcism.cpp_CExorcism_getMuzzlePoint_FUN_0048b5d0
 // Address: 0048b5d0
-void FUN_0048b5d0(undefined4 param_1);
+CVector3f * __cdecl CExorcism::getMuzzlePoint(CExorcism *this_ptr,CVector3f *out_point);
 
-// Original: core_exorcism.cpp_FUN_0048b640
+// Original: core_exorcism.cpp_CExorcism_setWeaponState_FUN_0048b640
 // Address: 0048b640
-void FUN_0048b640(CWeapon *param_1,int param_2);
+void __cdecl CExorcism::setWeaponState(CExorcism *this_ptr,int weapon_state);
 
-// Original: core_exorcism.cpp_FUN_0048b690
+// Original: core_exorcism.cpp_CExorcism_setup_FUN_0048b690
 // Address: 0048b690
-void FUN_0048b690(CWeapon *param_1);
+void __cdecl CExorcism::setup(CExorcism *this_ptr);
 
 // Original: core_exorcism.cpp_CExorcism_dtor_FUN_0048b730
 // Address: 0048b730

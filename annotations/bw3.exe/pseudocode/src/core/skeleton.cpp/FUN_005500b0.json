@@ -2,27 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 156,
+    "complexity_score": 142,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 9,
+    "pseudocode_lines": 42,
+    "suspect_count": 8,
     "suspect_types": [
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 142
+    "total_lines": 143
   },
   "cross_references": [
     {
       "addr": "0054e6b0",
       "from_addr": "0054e6ba",
-      "name": "core_skeleton.cpp_FUN_0054e6b0",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,14 +45,14 @@
       "name": "core_main.c_FUN_004e4330"
     },
     {
+      "addr": "00548750",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00548750"
+    },
+    {
       "addr": "005499d0",
       "is_variadic": false,
       "name": "core_skeleton.cpp_CDeformableModel_load_FUN_005499d0"
-    },
-    {
-      "addr": "00548750",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00548750"
     },
     {
       "addr": "005a3260",
@@ -99,7 +98,7 @@
       {
         "call_addr": "0054e6ba",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054e6b0",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -173,14 +172,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x35b0",
-      "severity": "mild",
-      "text": "str1 = &g_DeformableModelPool[0].field_0x35b0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 16,
       "match": "param_1",
@@ -190,7 +181,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 19,
+      "line": 20,
       "match": "DAT_02802f5c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02802f5c + iVar3 * 4) = 1;",
@@ -198,7 +189,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "core_skeleton_cpp_CDeformableModel_load_FUN_005499d0(this_ptr,param_1);",
@@ -206,7 +197,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 34,
       "match": "DAT_02802f5c",
       "severity": "mild",
       "text": "*(uint *)(&DAT_02802f5c + iVar1) = 1;",
@@ -214,7 +205,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_004e4330(\"Can't load %s because deformable model manager is full.  (Size is %d)\",param_1,0x40);",

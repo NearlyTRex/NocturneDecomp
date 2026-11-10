@@ -11,7 +11,7 @@ void unkafter_cross_cpp_FUN_005a7950(void)
 {
   CSimpleCross *this_ptr;
   
-  this_ptr = (CSimpleCross *)FUN_005b8be2(0x828);
+  this_ptr = (CSimpleCross *)debugAllocTracked1(0x828);
   if (this_ptr == (CSimpleCross *)0x0) {
     return;
   }

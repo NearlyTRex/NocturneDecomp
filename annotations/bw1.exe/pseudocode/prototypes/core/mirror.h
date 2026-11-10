@@ -9,9 +9,9 @@
 // Address: 00518380
 void __cdecl staticInit(void);
 
-// Original: core_mirror.cpp_FUN_005183b0
+// Original: core_mirror.cpp_computePlaneFromTriangle_FUN_005183b0
 // Address: 005183b0
-void __cdecl FUN_005183b0(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
+void __cdecl computePlaneFromTriangle(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
 
 // Original: core_mirror.cpp_computePlaneIntersection_FUN_00518560
 // Address: 00518560
@@ -37,25 +37,25 @@ void __cdecl CMirror::setupCorners(CMirror *this_ptr,CVector3f *corner1,CVector3
 // Address: 005188a0
 void __cdecl CMirrorReflection::setupMirrorCamera(CMirrorReflection *this_ptr);
 
-// Original: core_mirror.cpp_FUN_005188e0
+// Original: core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_005188e0
 // Address: 005188e0
-void __cdecl FUN_005188e0(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
+void __cdecl CMirrorReflection::setupMirrorReflection(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
 
 // Original: core_mirror.cpp_FUN_00519920
 // Address: 00519920
 void FUN_00519920(int param_1,undefined4 param_2);
 
-// Original: core_mirror.cpp_FUN_00519960
+// Original: core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_00519960
 // Address: 00519960
-uint __cdecl FUN_00519960(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
+uint __cdecl CMirror::reflectAndClipPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
 
-// Original: core_mirror.cpp_FUN_00519ba0
+// Original: core_mirror.cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_00519ba0
 // Address: 00519ba0
-void FUN_00519ba0(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
+void __cdecl CMirror::clipAndRenderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
-// Original: core_mirror.cpp_FUN_00519be0
+// Original: core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_00519be0
 // Address: 00519be0
-int __cdecl FUN_00519be0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl CMirror::renderReflectedPrimitive(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 
 // Original: core_mirror.cpp_CMirror_renderMirroredPrimitive_FUN_00519c20
 // Address: 00519c20

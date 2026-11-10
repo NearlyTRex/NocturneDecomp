@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 22,
-    "complexity_score": 71,
+    "complexity_score": 50,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 11,
-    "suspect_count": 5,
+    "pseudocode_lines": 10,
+    "suspect_count": 3,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
     ],
-    "total_lines": 33
+    "total_lines": 32
   },
   "cross_references": [],
   "function": {
@@ -106,35 +106,19 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 13,
+      "line": 12,
       "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "((CAlphaBitmap *)&pCVar1[-2].field_0x10,0);",
+      "text": "pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d0c0((CAlphaBitmap *)&pCVar1[-2].height,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "((CAlphaBitmap *)&pCVar1[-2].field_0x10,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 14,
+      "line": 13,
       "match": "pCVar1[-6].",
       "severity": "mild",
-      "text": "return (SNotesMap *)&pCVar1[-6].field_0x8;",
+      "text": "return (SNotesMap *)&pCVar1[-6].act;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "return (SNotesMap *)&pCVar1[-6].field_0x8;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

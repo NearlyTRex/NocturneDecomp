@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 111,
+    "complexity_score": 46,
     "cross_reference_count": 3,
     "function_call_count": 6,
     "global_count": 9,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 31,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 116
@@ -76,7 +75,7 @@
     {
       "addr": "00560030",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_00560030"
+      "name": "engine_special.cpp_masterZBuffer_FUN_00560030"
     }
   ],
   "globals": [
@@ -264,54 +263,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11e4 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x168 == 0) && (skip_zbuffer_copy == 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x148) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x144",
-      "severity": "mild",
-      "text": "_memcpy(*(int *)&this_ptr->field_0x144 << 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "} while (iVar1 < *(int *)&this_ptr->field_0x148);",
-      "type": "unnamed_field"
     }
   ]
 }

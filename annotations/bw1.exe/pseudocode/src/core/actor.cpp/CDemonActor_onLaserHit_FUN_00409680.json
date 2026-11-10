@@ -1,0 +1,209 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 8,
+    "complexity_score": 7,
+    "cross_reference_count": 6,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 15
+  },
+  "cross_references": [
+    {
+      "addr": "00431160",
+      "from_addr": "0043116b",
+      "name": "core_charactr.cpp_CCharacter_onLaserHit_FUN_00431160",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e38f0",
+      "from_addr": "004e3901",
+      "name": "core_glass.cpp_CGlass_onLaserHit_FUN_004e38f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00504ba0",
+      "from_addr": "00504bb4",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005065f0",
+      "from_addr": "005065fb",
+      "name": "core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_005065f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059bd80",
+      "from_addr": "0059bd8c",
+      "name": "core_trigger.cpp_CTrigger_onLaserHit_FUN_0059bd80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ab7c0",
+      "from_addr": "005ab7cb",
+      "name": "core_wateract.cpp_CWaterActor_onLaserHit_FUN_005ab7c0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00409680",
+    "address_range": [
+      [
+        "00409680",
+        "0040969f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680",
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(CDemonActor *this_ptr,SLaserInfo *laser_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0043116b",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_onLaserHit_FUN_00431160",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e3901",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_CGlass_onLaserHit_FUN_004e38f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00504bb4",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_onLaserHit_FUN_00504ba0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005065fb",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMirrorHack_onLaserHit_FUN_005065f0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0059bd8c",
+        "call_type": "direct",
+        "caller": "core_trigger.cpp_CTrigger_onLaserHit_FUN_0059bd80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005ab7cb",
+        "call_type": "direct",
+        "caller": "core_wateract.cpp_CWaterActor_onLaserHit_FUN_005ab7c0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.4285714285714284,
+    "instruction_count": 7,
+    "opcode_distribution": {
+      "COPY": 7,
+      "INT_ADD": 5,
+      "LOAD": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 17
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "laser_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SLaserInfo *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLadder",
+        "offset": 180,
+        "vtable_addr": "00602c04"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 180,
+        "vtable_addr": "00604b04"
+      },
+      {
+        "class_name": "CBattery",
+        "offset": 180,
+        "vtable_addr": "005fc314"
+      },
+      {
+        "class_name": "CFilmReel",
+        "offset": 180,
+        "vtable_addr": "005ffd14"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 180,
+        "vtable_addr": "00600714"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 64
+  }
+}

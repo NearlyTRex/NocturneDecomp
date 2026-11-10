@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[1]:
-;   cockpit_pkbitmap.cpp_FUN_00517280 at 005173cc
+;   cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280 at 005173cc
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_FUN_00516200

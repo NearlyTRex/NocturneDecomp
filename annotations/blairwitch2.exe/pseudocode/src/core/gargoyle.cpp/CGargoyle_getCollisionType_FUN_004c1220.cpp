@@ -11,6 +11,7 @@ ECollisionType __cdecl core_gargoyle_cpp_CGargoyle_getCollisionType_FUN_004c1220
 {
   ECollisionType EVar1;
   
-  EVar1 = core_charactr_cpp_FUN_00427680(this_ptr,collision_info);
+  EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680
+                    ((CCharacter *)this_ptr,collision_info);
   return EVar1;
 }

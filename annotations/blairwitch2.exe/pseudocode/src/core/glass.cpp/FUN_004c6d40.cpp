@@ -86,7 +86,7 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
     *(uint *)&param_1[1].field_0x28 = 1;
     if (*(int *)&param_1[1].field_0x90 != 0) {
       pcVar2 = ">7YEARS.RAW" + 1;
-      pcVar3 = &param_1[1].field_0x14;
+      pcVar3 = param_1[1].actor_name + 0x14;
       *(uint *)&param_1[1].field_0x24 = 0xffff;
       do {
         cVar1 = *pcVar2;
@@ -97,13 +97,13 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
         pcVar3[1] = cVar1;
         pcVar3 = pcVar3 + 2;
       } while (cVar1 != '\0');
-      core_set_cpp_FUN_00534480(g_CDemonSetPtr);
+      core_set_cpp_CDemonSet_markMirrorCameraDirty_FUN_00534480(g_CDemonSetPtr);
     }
     __arrinit(&stack0xfffffed4,4,&g_CVectorTypeInfo);
-    local_70 = *(float *)(param_1 + 1) * (float)_DAT_005d941a;
+    local_70 = *(float *)param_1[1].actor_name * (float)_DAT_005d941a;
     local_6c = 0.0;
     local_68 = 0;
-    core_dirmat_cpp_FUN_00449530(&param_1->field_0x3c,&stack0xffffff90);
+    core_dirmat_cpp_FUN_00449530(&param_1->orient_matrix,&stack0xffffff90);
     local_c4 = local_94;
     *(uint *)((int)&stack0xffffff40 + (uint)bVar4 * -8) =
          *(uint *)(&stack0xffffff70 + (uint)bVar4 * -8);
@@ -122,8 +122,8 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
       local_128 = local_30;
       local_124 = local_2c;
     }
-    local_6c = local_6c + *(float *)&param_1[1].field_0x4;
-    core_dirmat_cpp_FUN_00449530(&param_1->field_0x3c,&stack0xffffff90);
+    local_6c = local_6c + *(float *)(param_1[1].actor_name + 4);
+    core_dirmat_cpp_FUN_00449530(&param_1->orient_matrix,&stack0xffffff90);
     local_58 = local_88;
     *(uint *)((int)&stack0xffffffac + (uint)bVar4 * -8) =
          *(uint *)(&stack0xffffff7c + (uint)bVar4 * -8);
@@ -142,7 +142,7 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
       local_118 = local_c8;
     }
     local_70 = -local_70;
-    core_dirmat_cpp_FUN_00449530(&param_1->field_0x3c,&stack0xffffff90);
+    core_dirmat_cpp_FUN_00449530(&param_1->orient_matrix,&stack0xffffff90);
     local_dc = local_40;
     (&stack0xffffff28)[(uint)bVar4 * 0xfffffffe] =
          (float)*(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);
@@ -162,7 +162,7 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
       local_10c = local_98;
     }
     local_6c = 0.0;
-    core_dirmat_cpp_FUN_00449530(&param_1->field_0x3c,&stack0xffffff90);
+    core_dirmat_cpp_FUN_00449530(&param_1->orient_matrix,&stack0xffffff90);
     local_4c = local_1c;
     *(uint *)((int)&stack0xffffffb8 + (uint)bVar4 * -8) =
          *(uint *)(&stack0xffffffe8 + (uint)bVar4 * -8);
@@ -182,7 +182,7 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
       local_100 = local_20;
     }
     engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
-              (DAT_0060b280,(SMRGLTextureBasic *)&param_1[1].field_0xc);
+              (DAT_0060b280,(SMRGLTextureBasic *)(param_1[1].actor_name + 0xc));
     if (DAT_006141c8 == 0x40) {
       local_fc = 0xf80000;
       local_e8 = 0x80000;
@@ -204,9 +204,9 @@ void core_glass_cpp_FUN_004c6d40(CDemonActor *param_1)
       local_ec = 0x20000;
     }
     core_glass_cpp_FUN_004c5bb0(param_1,&stack0xfffffed4,&stack0xffffff14,&stack0xffffff04,0);
-    (**(code **)(*(int *)&param_1->field_0x2b0 + 0x34))(param_1,"glass-1.wav@2.0");
+    (*((param_1->vtable)._ub)->playSound)(param_1,"glass-1.wav@2.0");
     if (*(int *)&param_1[1].field_0x218 != 0) {
-      core_set_cpp_FUN_0052dd80(g_CDemonSetPtr,param_1);
+      core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0052dd80(g_CDemonSetPtr,param_1);
       *(uint *)&param_1[4].field_0x1c8 = 1;
       return;
     }

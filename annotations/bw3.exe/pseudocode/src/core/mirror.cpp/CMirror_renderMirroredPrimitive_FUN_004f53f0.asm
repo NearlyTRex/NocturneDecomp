@@ -8,7 +8,7 @@
 ; SMRGLHeaderPrimitive * Stack[0x8]:4   prim
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0053ad70 at 0053adad
+;   core_set.cpp_CDemonSet_renderTexturedPrimitiveListVariant_FUN_0053ad70 at 0053adad
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc
@@ -23,7 +23,7 @@
 ;   undefined4 DAT_01d8107c
 ;
 ; Called Functions:
-;   core_mirror.cpp_FUN_004f5130
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorDepthDirect_FUN_0046b240
 ;
 ; *****************************************************************************
@@ -53,8 +53,8 @@ section .text
     MOV EAX,dword ptr [EAX + 0x3c]      ; 004f5445
     PUSH EDX                            ; 004f5448
     MOV [0x01d8107c],EAX                ; 004f5449 | DAT_01d8107c
-    CALL core_mirror.cpp_FUN_004f5130   ; 004f544e
-        ;   XREF to: 004f5130 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_FUN_004f5130(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
+    CALL core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130 ; 004f544e
+        ;   XREF to: 004f5130 (UNCONDITIONAL_CALL)  ; uint core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130(CMirror * this_ptr, SMRGLHeaderPrimitive * primitive)
     ADD ESP,0x8                         ; 004f5453
     TEST EAX,EAX                        ; 004f5456
     JNZ 0x004f545b                      ; 004f5458

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 245,
+    "complexity_score": 235,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 22,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 55,
-    "suspect_count": 16,
+    "suspect_count": 15,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -23,7 +23,7 @@
     {
       "addr": "004b7f90",
       "from_addr": "004b8445",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,14 +46,14 @@
       "name": "core_game.cpp_CGame_processJoystickControls_FUN_004b97b0"
     },
     {
+      "addr": "004ba2e0",
+      "is_variadic": false,
+      "name": "core_game.cpp_CGame_processMouseControls_FUN_004ba2e0"
+    },
+    {
       "addr": "004b9960",
       "is_variadic": false,
       "name": "core_game.cpp_FUN_004b9960"
-    },
-    {
-      "addr": "004ba2e0",
-      "is_variadic": false,
-      "name": "core_game.cpp_FUN_004ba2e0"
     },
     {
       "addr": "004ba490",
@@ -205,7 +205,7 @@
     },
     {
       "addr": "02032780",
-      "name": "g_CDemonSetInstance.field1420984_0x15aeb8",
+      "name": "g_CDemonSetInstance.selected_camera_index",
       "type": "undefined4",
       "value": null
     }
@@ -216,7 +216,7 @@
       {
         "call_addr": "004b8445",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -359,14 +359,6 @@
       "severity": "moderate",
       "text": "puVar3 = (uint *)((int)puVar3 + (uint)bVar4 * -2 + 1);",
       "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "_DAT_01d221fc = *(uint *)&g_CDemonSetPtr->field_0x15aeb8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Pointer value `puVar2` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

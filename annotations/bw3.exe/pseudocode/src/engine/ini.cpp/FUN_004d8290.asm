@@ -19,7 +19,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   engine_ini.cpp_FUN_004d8950 at 004d89a5
+;   engine_ini.cpp_getProfileInteger_FUN_004d8950 at 004d89a5
 ;   engine_ini.cpp_getProfileString_FUN_004d8910 at 004d8937
 ;
 ; Referenced Globals:
@@ -33,7 +33,7 @@
 ;   crt_stdio.c_fopen_FUN_005a43ec
 ;   crt_string.c__strcmp_FUN_005a3d00
 ;   crt_string.c__strncpy_FUN_005a4ee0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -86,8 +86,8 @@ section .text
     PUSH 0x5c56ab                       ; 004d8308 | = "[%s]\n"
     LEA EAX,[ESP + 0x108]               ; 004d830d
     PUSH EAX                            ; 004d8314
-    CALL crt_unknown.c_FUN_005a28c0     ; 004d8315
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d8315
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004d831a
     TEST byte ptr [EBX + 0xc],0x10      ; 004d831d
         ;   Label: LAB_004d831d

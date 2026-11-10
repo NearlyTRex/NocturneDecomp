@@ -1,0 +1,279 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 154,
+    "complexity_score": 221,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 5,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 76,
+    "suspect_count": 12,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 230
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c5840",
+    "address_range": [
+      [
+        "004c5840",
+        "004c59f8"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_glass.cpp_CGlass_renderBackground_FUN_004c5840",
+    "signature": "void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004c5840(CGlass *this_ptr,int layer_flag)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10"
+    },
+    {
+      "addr": "004089d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0"
+    },
+    {
+      "addr": "0041a840",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041a840"
+    },
+    {
+      "addr": "004c5640",
+      "is_variadic": false,
+      "name": "core_glass.cpp_CGlass_renderBrokenGlass_FUN_004c5640"
+    },
+    {
+      "addr": "00531e90",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_rotateVerticies_FUN_00531e90"
+    },
+    {
+      "addr": "0046ca00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00"
+    },
+    {
+      "addr": "00469d00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f7a60",
+      "name": "DAT_005f7a60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01ba5c50",
+      "name": "DAT_01ba5c50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.752,
+    "instruction_count": 125,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 12,
+      "COPY": 151,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_MULT": 3,
+      "INT_ADD": 59,
+      "INT_AND": 65,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 61,
+      "INT_LESS": 7,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 7,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 30,
+      "INT_SUB": 38,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 27,
+      "POPCOUNT": 30,
+      "RETURN": 2,
+      "ROUND": 3,
+      "STORE": 37,
+      "TRUNC": 3
+    },
+    "pcode_op_count": 594
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGlass *"
+      },
+      {
+        "is_param": true,
+        "name": "layer_flag",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x2c0",
+      "severity": "mild",
+      "text": "texture = (SMRGLTextureBasic *)&this_ptr->field_0x2c0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x4d0",
+      "severity": "mild",
+      "text": "texture = (SMRGLTextureBasic *)&this_ptr->field_0x4d0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x808",
+      "severity": "mild",
+      "text": "poly = (SMRGLPrimitivePoly *)&this_ptr->field_0x808;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x810",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x810 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 67,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "this_ptr_00 = DAT_0060b280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x814",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x814 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x818",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x818 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x81c",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->field_0x81c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 33,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 72,
+      "match": "pCVar4 = (T *)((pCVar4->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 32,
+        "vtable_addr": "005f7a84"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

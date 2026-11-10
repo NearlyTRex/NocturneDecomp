@@ -9,6 +9,6 @@
 void __cdecl core_drip_cpp_CDrip_reset_FUN_00485a60(CDrip *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x2dc = 0;
+  this_ptr->drip_timer = 0.0;
   return;
 }

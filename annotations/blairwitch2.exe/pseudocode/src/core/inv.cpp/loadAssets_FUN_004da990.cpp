@@ -65,7 +65,7 @@ void __cdecl core_inv_cpp_loadAssets_FUN_004da990(void)
     pcVar5 = pcVar5 + 2;
   } while (cVar1 != '\0');
   engine_texture_cpp_FUN_00574e00(0x1d02ee4);
-  if (*(int *)&g_CGamePtr->field_0x4 < 0x180) {
+  if (g_CGamePtr->game_pixy < 0x180) {
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040dbd0(&CAlphaBitmap_01cf01c4,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040dbd0(&CAlphaBitmap_01cf01ec,2,2);
     engine_alphabit_cpp_CAlphaBitmap_scale_FUN_0040dbd0(&CAlphaBitmap_01d02e1c,2,2);

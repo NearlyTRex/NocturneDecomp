@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_basicene_cpp_FUN_0059ec10(CCharacter *param_1,undefined4 param_2)
+; void unkafter_basicene_cpp_FUN_0059ec10(CEnemy *param_1,float param_2)
 ;
 ;
 ; XREF[2]:

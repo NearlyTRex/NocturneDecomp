@@ -11,7 +11,7 @@ void unkafter_darkwolf_cpp_FUN_00598fb0(void)
 {
   CWhitewolf *this_ptr;
   
-  this_ptr = (CWhitewolf *)FUN_005a3cb2(0xdc98);
+  this_ptr = (CWhitewolf *)debugAllocTracked1(0xdc98);
   if (this_ptr == (CWhitewolf *)0x0) {
     return;
   }

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00433350 at 00433356
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350 at 00433356
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b85d7
@@ -22,10 +22,10 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   core_motion.cpp_FUN_004fc310
+;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_skeleton.cpp_CDeformableModelInstance_blendMotion_FUN_0054cc90
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0
-;   core_skeleton.cpp_FUN_00548090
+;   core_skeleton.cpp_CSkeleton_findBone_FUN_00548090
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   XREF to: 0054eac0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00432108
     PUSH EAX                            ; 0043210b
-    CALL core_skeleton.cpp_FUN_00548090 ; 0043210c
-        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 0043210c
+        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 00432111
     MOV EDX,dword ptr [EBX + 0x2754]    ; 00432114
     MOV EBP,0x3f59999a                  ; 0043211a
@@ -62,8 +62,8 @@ section .text
     PUSH ESI                            ; 00432126
     MOV dword ptr [EBX + 0x2750],EAX    ; 00432127
     ADD EDI,EDX                         ; 0043212d
-    CALL core_motion.cpp_FUN_004fc310   ; 0043212f
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 0043212f
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     SHL EDI,0x5                         ; 00432134
     ADD ESP,0x4                         ; 00432137
     ADD EAX,0x1c28                      ; 0043213a

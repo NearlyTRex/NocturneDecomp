@@ -1,0 +1,70 @@
+// Name: core_wateract.cpp_CWaterActor_process_FUN_00587280
+// Address: 00587280
+// Address Range: [[00587280, 0058734d] [005873b6, 005873f6]]
+// Convention: __cdecl
+// Signature: void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00587280(CWaterActor *this_ptr,float delta_time)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_wateract_cpp_CWaterActor_process_FUN_00587280(CWaterActor *this_ptr,float delta_time)
+
+{
+  float fVar1;
+  CEventList *this_ptr_00;
+  int extraout_EDX;
+  int iVar2;
+  int iVar3;
+  float10 fVar4;
+  
+  fVar4 = (float10)delta_time * (float10)_DAT_005edfa6 * (float10)_DAT_005edfae;
+  round();
+  iVar2 = extraout_EDX + (int)ROUND(fVar4);
+  this_ptr->texture_anim_accum = iVar2;
+  if (0x10000 < iVar2) {
+    iVar3 = this_ptr->texture_frame + 1;
+    this_ptr->texture_anim_accum = iVar2 + -0x10000;
+    this_ptr->texture_frame = iVar3;
+    if (0xf < iVar3) {
+      this_ptr->texture_frame = 0;
+    }
+  }
+  this_ptr_00 = 0x01C38BC0;
+  this_ptr->inv_delta_time = 1.0 / delta_time;
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340(this_ptr_00,this_ptr->move_event)
+  ;
+  if (iVar2 != 0) {
+    this_ptr->state = WATER_ACTOR_RISING;
+  }
+  iVar2 = core_event_cpp_CEventList_evaluateCondition_FUN_0048e340
+                    (0x01C38BC0,this_ptr->move_down_event);
+  if (iVar2 != 0) {
+    this_ptr->state = WATER_ACTOR_LOWERING;
+  }
+  switch(this_ptr->state) {
+  case WATER_ACTOR_RISING:
+    fVar1 = delta_time / this_ptr->time_to_move + this_ptr->param;
+    this_ptr->param = fVar1;
+    if (fVar1 <= 1.0) break;
+    this_ptr->state = WATER_ACTOR_RAISED;
+  case WATER_ACTOR_RAISED:
+    this_ptr->param = 1.0;
+    break;
+  case WATER_ACTOR_LOWERING:
+    fVar1 = this_ptr->param - delta_time / this_ptr->time_to_move_down;
+    this_ptr->param = fVar1;
+    if (0.0 <= fVar1) break;
+    this_ptr->state = WATER_ACTOR_LOWERED;
+  case WATER_ACTOR_LOWERED:
+    this_ptr->param = 0.0;
+    break;
+  default:
+    _DAT_01d046a0 = "..\\core\\wateract.cpp";
+    _DAT_01d046a4 = 0x1a5;
+    core_main_c_FUN_004e4500("CWaterActor::process - Bad state");
+  }
+  *(float *)&(this_ptr->base).field_0x24 =
+       this_ptr->height_delta * this_ptr->param + this_ptr->base_y;
+  return;
+}

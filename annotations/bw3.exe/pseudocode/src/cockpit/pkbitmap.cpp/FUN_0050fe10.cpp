@@ -12,18 +12,21 @@ void cockpit_pkbitmap_cpp_FUN_0050fe10(CPackedBitmap *param_1,uint param_2)
 
 {
   _FILE *file_handle;
-  uint uStack_6c;
+  char acStack_6c [4];
   _FILE *p_Stack_68;
   
   file_handle = (_FILE *)_fopen(param_2,0x5cbd0e);
   if (file_handle == (_FILE *)0x0) {
-    FUN_005a28c0(&uStack_6c,"Unable to create PBM file %s",param_2);
+    _sprintf(acStack_6c,"Unable to create PBM file %s");
     _DAT_01d71de0 = "..\\cockpit\\pkbitmap.cpp";
     _DAT_01d71de4 = 0x474;
-    core_main_c_FUN_004e4330(&uStack_6c);
+    core_main_c_FUN_004e4330(acStack_6c);
   }
-  cockpit_pkbitmap_cpp_FUN_0050fe90(param_1,file_handle);
-  uStack_6c = 0x50fe41;
+  cockpit_pkbitmap_cpp_CPackedBitmap_writePBMFile_FUN_0050fe90(param_1,file_handle);
+  acStack_6c[0] = 'A';
+  acStack_6c[1] = -2;
+  acStack_6c[2] = 'P';
+  acStack_6c[3] = '\0';
   p_Stack_68 = file_handle;
   _fclose();
   return;

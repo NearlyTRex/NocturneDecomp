@@ -51,12 +51,12 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_fire.cpp_FUN_004945b0 at 00494608
+;   core_fire.cpp_CFireball_process_FUN_00495960 at 00495981
+;   core_fire.cpp_CGlassParticle_process_FUN_00497250 at 00497281
+;   core_fire.cpp_CSpark_process_FUN_004945b0 at 00494608
 ;   core_fire.cpp_FUN_00494ec0 at 00494f1d
-;   core_fire.cpp_FUN_00495960 at 00495981
 ;   core_fire.cpp_FUN_00496620 at 0049662e
 ;   core_fire.cpp_FUN_004967d0 at 004967df
-;   core_fire.cpp_FUN_00497250 at 00497281
 ;   core_fire.cpp_FUN_0049b7f0 at 0049b80c
 ;
 ; Referenced Globals:
@@ -64,7 +64,7 @@
 ;   undefined4 DAT_005e159e
 ;   undefined4 DAT_005e15a2
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field644_0x284
+;   undefined4 g_CGameInstance.delta_time_float
 ;   CDemonRaytrace g_CDemonRaytraceInstance
 ;
 ; Called Functions:
@@ -106,7 +106,7 @@ section .text
         ;   Label: LAB_00510f29
     MOV dword ptr [EBX + 0x38],EAX      ; 00510f2c
     MOV EAX,[0x00616494]                ; 00510f2f | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x284]     ; 00510f34 | g_CGameInstance.field644_0x284
+    MOV EAX,dword ptr [EAX + 0x284]     ; 00510f34 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x108],EAX     ; 00510f3a
     MOV dword ptr [ESP + 0x114],EAX     ; 00510f41
     LEA EAX,[EBX + 0x18]                ; 00510f48

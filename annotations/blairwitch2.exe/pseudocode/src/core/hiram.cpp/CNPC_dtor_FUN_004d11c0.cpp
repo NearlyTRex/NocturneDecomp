@@ -24,11 +24,11 @@ CNPC * core_hiram_cpp_CNPC_dtor_FUN_004d11c0(CNPC *this_ptr,uint flags)
     return this_ptr;
   }
   pCVar1 = core_path_cpp_CPathMap_dtor_FUN_00511d10((CPathMap *)&this_ptr->field_0x10a60,0);
-  iVar2 = unkafter_armour_cpp_FUN_0040f2b0(&pCVar1[-1].field_0x689c,0);
+  iVar2 = core_armour_cpp_FUN_0040f2b0(pCVar1[-1].height_cache[0x42] + 0x53,0);
   iVar2 = unkaddr_0059d350_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
-  pCVar3 = core_cloth_cpp_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
+  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
-                     ((CDeformableModelInstance *)(pCVar3 + -0x2a58),0);
+                     ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);
   pCVar5 = (CNPC *)core_actor_cpp_CDemonActor_dtor_FUN_00408930
                              ((CDemonActor *)&pCVar4[-1].field_0x2000,1);
   if ((flags & 2) == 0) {

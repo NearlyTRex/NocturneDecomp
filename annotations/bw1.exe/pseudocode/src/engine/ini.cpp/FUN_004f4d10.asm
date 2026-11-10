@@ -1,16 +1,16 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void engine_ini_cpp_FUN_004f4d10(int param_1,undefined4 param_2,undefined4 *param_3)
+; void engine_ini_cpp_FUN_004f4d10(int param_1,undefined4 param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[5]:
 ;   core_game.cpp_FUN_004d7250 at 004d733b
-;   core_inivar.cpp_FUN_004f4f50 at 004f4fab
+;   core_inivar.cpp_readIniData_FUN_004f4f50 at 004f4fab
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005475cc
-;   sound_sndmain.cpp_FUN_005760b0 at 005761c4
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 005761c4
 ;   unkafter_winrun.cpp_FUN_005b464c at 005b4699
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   crt_stdio.c_sscanf_FUN_005c2cac
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH 0x5e58e8                       ; 004f4d1c | DAT_005e58e8
     LEA EAX,[ESP + 0x8]                 ; 004f4d21
     PUSH EAX                            ; 004f4d25
-    CALL crt_unknown.c_FUN_005bfb40     ; 004f4d26
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004f4d26
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 004f4d2b
     PUSH 0x64                           ; 004f4d2e
     LEA EAX,[ESP + 0x4]                 ; 004f4d30

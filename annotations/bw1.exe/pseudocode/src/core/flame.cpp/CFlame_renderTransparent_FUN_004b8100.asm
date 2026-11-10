@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x108]:1  local_108
 ;
 ; XREF[4]:
-;   core_bodypart.cpp_FUN_00419280 at 0041931d
+;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00419280 at 0041931d
 ;   core_crossbow.cpp_CCrossbow_renderTransparent_FUN_004499c0 at 004499d6
 ;   core_flamecan.cpp_CFlameCan_renderTransparent_FUN_004b9340 at 004b935d
 ;   core_vessel.cpp_CCryptVessel_renderTransparent_FUN_005a95c0 at 005a9721
@@ -36,9 +36,9 @@
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_004087f0
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_box.cpp_FUN_004207b0
-;   core_set.cpp_FUN_00551a00
+;   core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00551a00
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_00483800
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
@@ -141,8 +141,8 @@ section .text
     PUSH EAX                            ; 004b81d7
     MOV EBX,dword ptr [0x00622c18]      ; 004b81d8 | g_CDemonSetPtr
     PUSH EBX                            ; 004b81de | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00551a00      ; 004b81df
-        ;   XREF to: 00551a00 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00551a00(CDemonSet * this_ptr, CDemonGlobe * globe)
+    CALL core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00551a00 ; 004b81df
+        ;   XREF to: 00551a00 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addQueuedCoronaGlobe_FUN_00551a00(CDemonSet * this_ptr, CDemonGlobe * globe)
     ADD ESP,0x8                         ; 004b81e4
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b81e7
         ;   Label: LAB_004b81e7
@@ -503,8 +503,8 @@ section .text
     ADD ESP,0xc                         ; 004b872b
     PUSH 0x3f828f5c                     ; 004b872e
     PUSH 0x3f7ae148                     ; 004b8733
-    CALL core_actor.cpp_FUN_0040cc00    ; 004b8738
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004b8738
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x160],EAX     ; 004b873d
     FLD float ptr [ESP + 0x160]         ; 004b8744
     ADD ESP,0x8                         ; 004b874b

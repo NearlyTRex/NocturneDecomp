@@ -70,29 +70,29 @@ void core_fldnotes_cpp_FUN_004abe00(int param_1)
     _DAT_01d19f78 = 0;
     _DAT_01d1a058 = 0;
     DAT_01d19f90 = 0;
-    engine_dosio_cpp_FUN_00465e50(&DAT_01d0cfc8,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
-    FUN_005a28c0(local_520,&DAT_005c0d12,local_120,&DAT_01d0cfa8);
+    engine_dosio_cpp_splitPath_FUN_00465e50
+              (&DAT_01d0cfc8,(char *)0x0,(char *)0x0,local_120,(char *)0x0);
+    _sprintf(local_520,&DAT_005c0d12);
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(&CAlphaBitmap_01d19bac,local_520,0x280,0x1e0)
     ;
     iVar1 = 9;
     iVar5 = 0;
     engine_alphabit_cpp_FUN_0040dbb0(&CAlphaBitmap_01d19bac,0xff);
     if (0 < _DAT_01d0d210) {
-      pSVar4 = SNotesSection_ARRAY_01d0d214;
       pCVar6 = CAlphaBitmap_ARRAY_01d19bc0;
       do {
         local_20 = iVar5 * 0x2e4;
-        FUN_005a28c0(local_420,"tab_%s",pSVar4);
+        _sprintf(local_420,"tab_%s");
         local_1c = iVar5 * 0x14;
-        engine_dosio_cpp_FUN_00465e50(local_420,(char *)0x0,(char *)0x0,local_220,(char *)0x0);
-        FUN_005a28c0(local_320,&DAT_005c0d12,local_220,&DAT_01d0cfa8);
+        engine_dosio_cpp_splitPath_FUN_00465e50
+                  (local_420,(char *)0x0,(char *)0x0,local_220,(char *)0x0);
+        _sprintf(local_320,&DAT_005c0d12);
         engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460(pCVar6,local_320,0x5a,0x36);
         *(uint *)(&SNotesSection_ARRAY_01d0d214[0].field_0x148 + local_20) = 0x215;
         *(int *)(&SNotesSection_ARRAY_01d0d214[0].field_0x14c + local_20) = iVar1;
-        pSVar4 = pSVar4 + 1;
         iVar5 = iVar5 + 1;
         pCVar6 = pCVar6 + 1;
-        iVar1 = iVar1 + *(int *)(&CAlphaBitmap_ARRAY_01d19bc0[0].field_0x10 + local_1c) + 10;
+        iVar1 = iVar1 + *(int *)((int)&CAlphaBitmap_ARRAY_01d19bc0[0].height + local_1c) + 10;
       } while (iVar5 < _DAT_01d0d210);
     }
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
@@ -162,8 +162,8 @@ LAB_004abf0c:
         engine_alphabit_cpp_FUN_0040d8a0
                   (pCVar6,0x246,*(uint *)&pSVar4->field_0x14c,
                    0x246 - *(int *)&pSVar4->field_0x148,0,
-                   *(int *)&CAlphaBitmap_ARRAY_01d19bc0[iVar1].field_0xc + -1,
-                   *(int *)&CAlphaBitmap_ARRAY_01d19bc0[iVar1].field_0x10 + -1,0xffff);
+                   CAlphaBitmap_ARRAY_01d19bc0[iVar1].width + -1,
+                   CAlphaBitmap_ARRAY_01d19bc0[iVar1].height + -1,0xffff);
       }
       pCVar6 = pCVar6 + 1;
       iVar1 = iVar1 + 1;
@@ -211,8 +211,8 @@ LAB_004abf0c:
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d6f0
             (&CAlphaBitmap_01d19cc4,0x00000262,0x000001C0,0xffff);
   if ((((0x00000262 <= _DAT_01c5fadc) && (0x000001C0 <= _DAT_01c5fae0)) &&
-      (_DAT_01c5fadc < 0x00000262 + CAlphaBitmap_01d19cc4._12_4_)) &&
-     (_DAT_01c5fae0 < 0x000001C0 + CAlphaBitmap_01d19cc4._16_4_)) {
+      (_DAT_01c5fadc < 0x00000262 + CAlphaBitmap_01d19cc4.width)) &&
+     (_DAT_01c5fae0 < 0x000001C0 + CAlphaBitmap_01d19cc4.height)) {
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00508960(&DAT_005c17b4);
     unkaddr_004a76f0_cpp_FUN_004a7a70(pcVar3);
     local_18 = 1;

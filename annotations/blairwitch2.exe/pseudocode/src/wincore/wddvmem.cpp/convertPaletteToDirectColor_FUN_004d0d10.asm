@@ -10,8 +10,8 @@
 ; XREF[4]:
 ;   engine_special.cpp_setColorTable16_FUN_0055f890 at 0055f8b6
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770 at 0055f7de
-;   wincore_wddvmem.cpp_FUN_00589430 at 00589533
 ;   wincore_wddvmem.cpp_analyzePixelFormat_FUN_00589270 at 0058940a
+;   wincore_wddvmem.cpp_setupColorPalette_FUN_00589430 at 00589533
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0

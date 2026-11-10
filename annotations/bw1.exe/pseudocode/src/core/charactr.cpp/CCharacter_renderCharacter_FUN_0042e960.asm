@@ -7,30 +7,30 @@
 ; CCharacter *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[10]:
-;   core_batman.cpp_FUN_00413970 at 00413a29
-;   core_biggs.cpp_FUN_00414e00 at 00414f17
-;   core_boneguy.cpp_FUN_0041d000 at 0041d08f
-;   core_charactr.cpp_FUN_0042f240 at 0042f2b8
-;   core_charactr.cpp_FUN_0042f320 at 0042f375
-;   core_charactr.cpp_FUN_004301e0 at 00430350
-;   core_dracbrid.cpp_FUN_0047cfe0 at 0047d0ed
-;   core_moloch.cpp_FUN_00521070 at 0052119e
-;   core_passngr.cpp_FUN_00532cd0 at 00532d44
-;   core_succubus.cpp_FUN_00592aa0 at 00592c2a
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413970 at 00413a29
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00414e00 at 00414f17
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000 at 0041d08f
+;   core_charactr.cpp_CCharacter_renderBackground_FUN_0042f320 at 0042f375
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240 at 0042f2b8
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004301e0 at 00430350
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0 at 0047d0ed
+;   core_moloch.cpp_CMoloch_renderOpaque_FUN_00521070 at 0052119e
+;   core_passngr.cpp_CPassenger_renderOpaque_FUN_00532cd0 at 00532d44
+;   core_succubus.cpp_CSuccubus_renderOpaque_FUN_00592aa0 at 00592c2a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01bc120c
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field568_0x238
+;   undefined4 g_CGameInstance.field520_0x238
 ;
 ; Called Functions:
 ;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0
+;   core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00
+;   core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060
 ;   core_charactr.cpp_FUN_0042e580
-;   core_charactr.cpp_FUN_0042ea10
-;   core_charactr.cpp_FUN_0042fe00
-;   core_charactr.cpp_FUN_00430060
 ;   core_cloth.cpp_CClothList_render_FUN_00441ff0
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00569810
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
@@ -59,8 +59,8 @@ section .text
     JNZ 0x0042e994                      ; 0042e989
         ;   XREF to: 0042e994 (CONDITIONAL_JUMP)  ; LAB_0042e994
     PUSH EBX                            ; 0042e98b
-    CALL core_charactr.cpp_FUN_0042fe00 ; 0042e98c
-        ;   XREF to: 0042fe00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042fe00(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00 ; 0042e98c
+        ;   XREF to: 0042fe00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderBurn_FUN_0042fe00(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042e991
     FLDZ                                ; 0042e994
         ;   Label: LAB_0042e994
@@ -70,15 +70,15 @@ section .text
     JNC 0x0042e9aa                      ; 0042e99f
         ;   XREF to: 0042e9aa (CONDITIONAL_JUMP)  ; LAB_0042e9aa
     PUSH EBX                            ; 0042e9a1
-    CALL core_charactr.cpp_FUN_00430060 ; 0042e9a2
-        ;   XREF to: 00430060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00430060(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 ; 0042e9a2
+        ;   XREF to: 00430060 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042e9a7
     PUSH EBX                            ; 0042e9aa
         ;   Label: LAB_0042e9aa
     CALL core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0 ; 0042e9ab
         ;   XREF to: 0042f3c0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042f3c0(CCharacter * this_ptr)
     MOV EAX,[0x0061d95c]                ; 0042e9b0 | g_CGamePtr | g_CGameInstance
-    MOV EDI,dword ptr [EAX + 0x238]     ; 0042e9b5 | g_CGameInstance.field568_0x238
+    MOV EDI,dword ptr [EAX + 0x238]     ; 0042e9b5 | g_CGameInstance.field520_0x238
     ADD ESP,0x4                         ; 0042e9bb
     TEST EDI,EDI                        ; 0042e9be
     JNZ 0x0042e9fc                      ; 0042e9c0
@@ -112,8 +112,8 @@ section .text
         ;   XREF to: 0042e96f (UNCONDITIONAL_JUMP)  ; LAB_0042e96f
     PUSH EBX                            ; 0042e9fc
         ;   Label: LAB_0042e9fc
-    CALL core_charactr.cpp_FUN_0042ea10 ; 0042e9fd
-        ;   XREF to: 0042ea10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042ea10(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10 ; 0042e9fd
+        ;   XREF to: 0042ea10 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_renderCollision_FUN_0042ea10(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0042ea02
     POP EDI                             ; 0042ea05
     POP EBX                             ; 0042ea06

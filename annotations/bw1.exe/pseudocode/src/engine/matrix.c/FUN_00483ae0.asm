@@ -16,18 +16,18 @@
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045ea60 at 0045ea90
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_00463460 at 004635e4
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060 at 0046518d
-;   core_dlight.cpp_FUN_00464190 at 004641d2
+;   core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_00464190 at 004641d2
+;   core_fire.cpp_CGunFlame_render_FUN_004b2ea0 at 004b2f9f
 ;   core_fire.cpp_CLaserBeam_render_FUN_004b01a0 at 004b029b
-;   core_fire.cpp_FUN_004b2ea0 at 004b2f9f
-;   core_set.cpp_FUN_005545a0 at 005545e6
-;   core_set.cpp_FUN_00555460 at 0055547a
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 at 005545e6
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_00555460 at 0055547a
 ;   core_terrain.cpp_CTerrain_render_FUN_0059f3e0 at 0059f40b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005db3c4
 ;
 ; Called Functions:
-;   engine_matrix.c_FUN_00509050
+;   engine_matrix.c_getCameraOrigin_FUN_00509050
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     AND ESP,0xfffffff8                  ; 00483ae8
     MOV EBX,ESI                         ; 00483aeb
     MOV ESI,ESP                         ; 00483aed
-    CALL engine_matrix.c_FUN_00509050   ; 00483aef
-        ;   XREF to: 00509050 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_FUN_00509050()
+    CALL engine_matrix.c_getCameraOrigin_FUN_00509050 ; 00483aef
+        ;   XREF to: 00509050 (UNCONDITIONAL_CALL)  ; undefined engine_matrix.c_getCameraOrigin_FUN_00509050()
     MOV EAX,dword ptr [ESP]             ; 00483af4
     MOV dword ptr [ESP + 0x18],EAX      ; 00483af7
     FILD dword ptr [ESP + 0x18]         ; 00483afb

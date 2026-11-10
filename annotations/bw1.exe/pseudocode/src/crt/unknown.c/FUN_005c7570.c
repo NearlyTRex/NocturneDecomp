@@ -39,6 +39,6 @@ ulonglong FUN_005c7570(double param_1,double param_2,byte param_3)
       uVar1 = 0x8107;
     }
   }
-  uVar2 = unkafter_zombie_cpp_FUN_005cbddd(uVar1,&param_1,&param_2);
+  uVar2 = FUN_005cbddd(uVar1,&param_1,&param_2);
   return uVar2;
 }

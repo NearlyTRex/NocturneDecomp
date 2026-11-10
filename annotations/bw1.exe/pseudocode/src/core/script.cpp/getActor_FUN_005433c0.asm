@@ -1,12 +1,12 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,undefined4 param_2,undefined4 param_3)
+; CDemonActor * __cdecl core_script_cpp_getActor_FUN_005433c0(char *param_1,undefined4 param_2)
 ;
 ;
 ; XREF[2]:
+;   core_script.cpp_CScript_startDialogLine_FUN_0054aa60 at 0054aa9e
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00545c9b
-;   core_script.cpp_FUN_0054aa60 at 0054aa9e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Must_specify_actor_name_005edfd5
@@ -27,13 +27,13 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408830
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830
 ;   core_actor.cpp_isOfClassHash_FUN_0040c5d0
 ;   core_event.cpp_CEventList_getActorByVarName_FUN_004aa1d0
-;   core_mission.cpp_FUN_0051b6c0
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0
 ;   core_script.cpp_validateActorVariableName_FUN_00543100
 ;   crt_string.c__stricmp_FUN_005c04e0
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
         ;   Label: LAB_0054345d
     PUSH 0x5edfed                       ; 0054345e | = "Actor variable %s not defined, or doe..."
     PUSH 0x1e810b0                      ; 00543463
-    CALL crt_unknown.c_FUN_005bfb40     ; 00543468
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00543468
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054346d
     XOR EAX,EAX                         ; 00543470
     POP EBP                             ; 00543472
@@ -158,8 +158,8 @@ section .text
     MOV EDI,0x1                         ; 005434a9
     PUSH 0x1e810b0                      ; 005434ae
     MOV dword ptr [0x01e818bc],EDI      ; 005434b3 | DAT_01e818bc
-    CALL crt_unknown.c_FUN_005bfb40     ; 005434b9
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005434b9
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 005434be
     XOR EAX,EAX                         ; 005434c1
     POP EBP                             ; 005434c3
@@ -170,8 +170,8 @@ section .text
     PUSH 0x5ee035                       ; 005434c8 | = "Can't use '$' actor specifier in mult..."
         ;   Label: LAB_005434c8
     PUSH 0x1e810b0                      ; 005434cd
-    CALL crt_unknown.c_FUN_005bfb40     ; 005434d2
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005434d2
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 005434d7
     XOR EAX,EAX                         ; 005434da
     POP EBP                             ; 005434dc
@@ -183,8 +183,8 @@ section .text
         ;   Label: LAB_005434e1
     MOV ECX,dword ptr [0x0061f650]      ; 005434e2 | DAT_0061f650
     PUSH ECX                            ; 005434e8 | DAT_01d2c900
-    CALL core_mission.cpp_FUN_0051b6c0  ; 005434e9
-        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0 ; 005434e9
+        ;   XREF to: 0051b6c0 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_0051b6c0(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 005434ee
     MOV ESI,EAX                         ; 005434f1
     TEST EAX,EAX                        ; 005434f3
@@ -193,8 +193,8 @@ section .text
     PUSH EBX                            ; 005434fb
     PUSH 0x5ee07a                       ; 005434fc | = "Actor \"%s\" does not exist."
     PUSH 0x1e810b0                      ; 00543501
-    CALL crt_unknown.c_FUN_005bfb40     ; 00543506
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00543506
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0054350b
     XOR EAX,EAX                         ; 0054350e
     POP EBP                             ; 00543510
@@ -206,15 +206,15 @@ section .text
         ;   Label: LAB_00543515
     PUSH ECX                            ; 00543519
     PUSH ESI                            ; 0054351a
-    CALL core_actor.cpp_FUN_00408830    ; 0054351b
-        ;   XREF to: 00408830 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408830(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830 ; 0054351b
+        ;   XREF to: 00408830 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00543520
     PUSH EAX                            ; 00543523
     PUSH EBX                            ; 00543524
     PUSH 0x5ee095                       ; 00543525 | = "Actor \"%s\" is of type %s, this comm..."
     PUSH 0x1e810b0                      ; 0054352a
-    CALL crt_unknown.c_FUN_005bfb40     ; 0054352f
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0054352f
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x14                        ; 00543534
     XOR EAX,EAX                         ; 00543537
     POP EBP                             ; 00543539

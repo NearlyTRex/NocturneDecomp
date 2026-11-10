@@ -8,9 +8,9 @@
 ;
 ; XREF[5]:
 ;   core_ammo.cpp_factoryFuncAmmo_FUN_0040db90 at 0040dba3
-;   core_ammobox.cpp_FUN_0040e210 at 0040e265
-;   core_game.cpp_FUN_004d25fe at 004d261b
-;   core_game.cpp_FUN_004d27b0 at 004d3c61
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210 at 0040e265
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3c61
+;   core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe at 004d261b
 ;   core_inv.cpp_FUN_004f8b70 at 004f8b94
 ;
 ; Referenced Globals:
@@ -19,7 +19,7 @@
 ;   undefined1 DAT_005d304b
 ;   undefined1 DAT_005d304c
 ;   undefined1 DAT_005d304d
-;   void* g_CAmmoVTable = 0040dc50
+;   CDemonActor_vtable g_CAmmoVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0

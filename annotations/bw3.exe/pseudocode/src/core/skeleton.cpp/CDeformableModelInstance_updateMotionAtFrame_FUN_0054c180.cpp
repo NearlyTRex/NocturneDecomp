@@ -10,6 +10,6 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateMotionAtFrame_FUN_
 
 {
   core_skeleton_cpp_FUN_0054c1b0(this_ptr,motion_index,frame_number,0xffffffff);
-  core_skeleton_cpp_FUN_0054dd10(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(this_ptr);
   return;
 }

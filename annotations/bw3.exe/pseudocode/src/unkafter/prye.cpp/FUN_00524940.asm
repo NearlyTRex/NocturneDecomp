@@ -52,19 +52,19 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_FUN_00408b00
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_00433580
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_00433ae0
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60
 ;   core_charactr.cpp_FUN_004319d0
-;   core_charactr.cpp_FUN_00433a60
-;   core_dynamite.cpp_FUN_0047b1e0
+;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0
 ;   core_dynamite.cpp_FUN_0047b230
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
-;   core_hero.cpp_FUN_004d41a0
+;   core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0
+;   core_inv.cpp_CInventory_removeItem_FUN_004dbaa0
 ;   core_inv.cpp_FUN_004dba80
-;   core_inv.cpp_FUN_004dbaa0
 ;   core_inv.cpp_FUN_004dcda0
-;   core_mission.cpp_FUN_004f6930
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   ... and 4 more
 ;
 ; *****************************************************************************
@@ -148,8 +148,8 @@ section .text
     IMUL ESI,dword ptr [EBX + EAX*0x1 + 0x27f4],0x120 ; 00524a2a
     MOV EAX,dword ptr [ESP + 0x78]      ; 00524a35
     PUSH EAX                            ; 00524a39
-    CALL core_motion.cpp_FUN_004fc310   ; 00524a3a
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 00524a3a
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     ADD EAX,0x1c28                      ; 00524a3f
     ADD ESI,EAX                         ; 00524a44
     MOV EAX,dword ptr [EBX + 0x2f00]    ; 00524a46
@@ -287,8 +287,8 @@ section .text
         ;   XREF to: 005257a0 (CONDITIONAL_JUMP)  ; LAB_005257a0
     PUSH ECX                            ; 00524bd4
     PUSH EBX                            ; 00524bd5
-    CALL core_hero.cpp_FUN_004d41a0     ; 00524bd6
-        ;   XREF to: 004d41a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_FUN_004d41a0(CHero * this_ptr, int hand_index)
+    CALL core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0 ; 00524bd6
+        ;   XREF to: 004d41a0 (UNCONDITIONAL_CALL)  ; void core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004d41a0(CHero * this_ptr, int hand_index)
     ADD ESP,0x8                         ; 00524bdb
     MOV dword ptr [EBX + 0x20b64],0x0   ; 00524bde
         ;   Label: LAB_00524bde
@@ -304,15 +304,15 @@ section .text
     PUSH EDI                            ; 00524c06
     MOV ECX,dword ptr [ESP + 0x5c]      ; 00524c07
     PUSH ECX                            ; 00524c0b
-    CALL core_inv.cpp_FUN_004dbaa0      ; 00524c0c
-        ;   XREF to: 004dbaa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dbaa0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
+    CALL core_inv.cpp_CInventory_removeItem_FUN_004dbaa0 ; 00524c0c
+        ;   XREF to: 004dbaa0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_removeItem_FUN_004dbaa0(CInventory * this_ptr, CDemonActor * item_to_remove, int should_delete_actor)
     ADD ESP,0xc                         ; 00524c11
     MOV ESI,dword ptr [EBX + 0x20bac]   ; 00524c14
     PUSH ESI                            ; 00524c1a
     MOV EDI,dword ptr [0x00600530]      ; 00524c1b | DAT_00600530
     PUSH EDI                            ; 00524c21 | DAT_01d81080
-    CALL core_mission.cpp_FUN_004f6930  ; 00524c22
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 00524c22
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00524c27
     PUSH 0x0                            ; 00524c2a
     MOV EAX,dword ptr [EBX + 0x20bac]   ; 00524c2c
@@ -326,8 +326,8 @@ section .text
     PUSH 0x5cd7a9                       ; 00524c40 | = "CTrap"
     MOV EDX,dword ptr [EBX + 0x20bac]   ; 00524c45
     PUSH EDX                            ; 00524c4b
-    CALL core_actor.cpp_FUN_0040c790    ; 00524c4c
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 00524c4c
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00524c51
     TEST EAX,EAX                        ; 00524c54
     JZ 0x005258da                       ; 00524c56
@@ -457,8 +457,8 @@ section .text
         ;   Label: LAB_00524dc3
     PUSH ESI                            ; 00524dc8
     PUSH EBX                            ; 00524dc9
-    CALL core_charactr.cpp_FUN_00433a60 ; 00524dca
-        ;   XREF to: 00433a60 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00433a60()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60 ; 00524dca
+        ;   XREF to: 00433a60 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_00433a60(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xa4],EAX      ; 00524dcf
     MOV dword ptr [ESP + 0x98],ESI      ; 00524dd6
     FLD float ptr [ESP + 0xa4]          ; 00524ddd
@@ -832,8 +832,8 @@ section .text
     JA 0x00524a9c                       ; 0052522a
         ;   XREF to: 00524a9c (CONDITIONAL_JUMP)  ; LAB_00524a9c
     PUSH EDI                            ; 00525230
-    CALL core_dynamite.cpp_FUN_0047b1e0 ; 00525231
-        ;   XREF to: 0047b1e0 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_FUN_0047b1e0(CDynamite * this_ptr)
+    CALL core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0 ; 00525231
+        ;   XREF to: 0047b1e0 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_CDynamite_lightFuse_FUN_0047b1e0(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 00525236
     JMP 0x00524a9c                      ; 00525239
         ;   XREF to: 00524a9c (UNCONDITIONAL_JUMP)  ; LAB_00524a9c
@@ -998,8 +998,8 @@ section .text
     PUSH EAX                            ; 00525429 | = "CShotgun"
     MOV EDI,dword ptr [EBX + 0x20c24]   ; 0052542a
     PUSH EDI                            ; 00525430
-    CALL core_actor.cpp_FUN_0040c790    ; 00525431
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 00525431
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00525436
     TEST EAX,EAX                        ; 00525439
     JZ 0x00524a9c                       ; 0052543b
@@ -1028,8 +1028,8 @@ section .text
     PUSH EAX                            ; 0052548c | = "CRifle"
     MOV ECX,dword ptr [EBX + 0x20c24]   ; 0052548d
     PUSH ECX                            ; 00525493
-    CALL core_actor.cpp_FUN_0040c790    ; 00525494
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 00525494
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00525499
     TEST EAX,EAX                        ; 0052549c
     JZ 0x00524a9c                       ; 0052549e

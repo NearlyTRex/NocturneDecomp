@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_wateract.cpp_FUN_005787f0 at 00578951
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0 at 00578951
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d06af

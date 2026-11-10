@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 225,
+    "complexity_score": 181,
     "cross_reference_count": 16,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 14,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
+      "unnamed_field"
     ],
-    "total_lines": 108
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -31,7 +30,7 @@
     {
       "addr": "00414300",
       "from_addr": "00414316",
-      "name": "core_batman.cpp_FUN_00414300",
+      "name": "core_batman.cpp_CBatman_getCollisionType_FUN_00414300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +42,7 @@
     {
       "addr": "0041d830",
       "from_addr": "0041d846",
-      "name": "core_boneguy.cpp_FUN_0041d830",
+      "name": "core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_0041d830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,9 +52,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00461090",
+      "from_addr": "004610a5",
+      "name": "core_djien.cpp_CDjien_getCollisionType_FUN_00461090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047cfc0",
       "from_addr": "0047cfd6",
-      "name": "core_dracbrid.cpp_FUN_0047cfc0",
+      "name": "core_dracbrid.cpp_CDraculaBride_getCollisionType_FUN_0047cfc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -103,13 +108,7 @@
     {
       "addr": "005a73c0",
       "from_addr": "005a7411",
-      "name": "core_vampboss.cpp_FUN_005a73c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00461090",
-      "from_addr": "004610a5",
-      "name": "unkafter_djien.cpp_FUN_00461090",
+      "name": "core_vampboss.cpp_CVampireBoss_getCollisionType_FUN_005a73c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -189,31 +188,15 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 11,
+      "line": 12,
       "match": "field_0x27a8",
       "severity": "mild",
       "text": "if (*(int *)&this_ptr->field_0x27a8 == 0) {",
       "type": "unnamed_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
+      "line": 25,
       "match": "field_0x18",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x18 =",
@@ -221,7 +204,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0x3000",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x3000 * *(float *)&this_ptr->field_0x27b8;",
@@ -229,7 +212,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0x27b8",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x3000 * *(float *)&this_ptr->field_0x27b8;",
@@ -237,7 +220,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 27,
       "match": "field_0x14",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x14 =",
@@ -245,7 +228,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 28,
       "match": "field_0x2ffc",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x2ffc * *(float *)&this_ptr->field_0x27b8;",
@@ -253,7 +236,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 28,
       "match": "field_0x27b8",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x2ffc * *(float *)&this_ptr->field_0x27b8;",
@@ -261,7 +244,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 28,
+      "line": 29,
       "match": "field_0x18",
       "severity": "mild",
       "text": "if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {",
@@ -269,7 +252,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 28,
+      "line": 29,
       "match": "field_0x14",
       "severity": "mild",
       "text": "if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {",
@@ -277,23 +260,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
+      "line": 30,
       "match": "field_0x18",
       "severity": "mild",
-      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;",
+      "text": "*(float *)&collision_info->field_0x18 = (this_ptr->model).bounding_box.max.y;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2490",
-      "severity": "mild",
-      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
+      "line": 32,
       "match": "field_0x1c",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x1c =",
@@ -301,7 +276,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 33,
       "match": "field_0x2ff0",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x2ff0 * *(float *)&this_ptr->field_0x27b8;",
@@ -309,7 +284,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 33,
       "match": "field_0x27b8",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x2ff0 * *(float *)&this_ptr->field_0x27b8;",
@@ -317,18 +292,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 36,
+      "line": 37,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "*(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;",
+      "text": "*(CDeformableModelInstance **)&collision_info->field_0x20 = &this_ptr->model;",
       "type": "unnamed_field"
     }
   ]

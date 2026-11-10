@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,undefined4 *param_2)
+; void core_charactr_cpp_FUN_00429d60(CDemonActor *param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70
@@ -18,10 +18,10 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[4]:
-;   core_charactr.cpp_FUN_00424470 at 0042449d
+;   core_charactr.cpp_CCharacter_preProcess_FUN_00424470 at 0042449d
 ;   core_doc.cpp_FUN_00450c60 at 00451dfd
-;   core_stranger.cpp_FUN_00563060 at 00564154
-;   core_tentacle.cpp_FUN_00573110 at 00573287
+;   core_stranger.cpp_CStranger_processFrame_FUN_00563060 at 00564154
+;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110 at 00573287
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0

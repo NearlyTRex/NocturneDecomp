@@ -7,13 +7,13 @@
 ; XREF[12]:
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0c28
 ;   core_confzomb.cpp_FUN_005a2240 at 005a2255
-;   core_doc.cpp_FUN_00450b20 at 00450bb4
-;   core_game.cpp_FUN_004bd570 at 004bd85a
+;   core_doc.cpp_CDoc_process_FUN_00450b20 at 00450bb4
+;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd85a
 ;   core_ghostchi.cpp_FUN_005a9890 at 005a98a1
 ;   core_hag.cpp_FUN_005ab260 at 005ab2b5
-;   core_health.cpp_FUN_004cdb60 at 004cdb82
-;   core_partibox.cpp_FUN_005ac960 at 005ac988
-;   core_patrpoin.cpp_FUN_0059c680 at 0059c6a5
+;   core_health.cpp_CHealthItem_process_FUN_004cdb60 at 004cdb82
+;   core_partibox.cpp_CParticleBox_process_FUN_005ac960 at 005ac988
+;   core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c6a5
 ;   core_robin.cpp_FUN_005a61f0 at 005a6248
 ;   ... and 2 more
 ;

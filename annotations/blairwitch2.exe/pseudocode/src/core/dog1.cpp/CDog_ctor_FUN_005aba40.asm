@@ -13,7 +13,7 @@
 ;   undefined4 DAT_00600c50
 ;
 ; Called Functions:
-;   core_dog1.cpp_FUN_005abe90
+;   core_dog1.cpp_CDog_processStates_FUN_005abe90
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d6f0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
@@ -58,8 +58,8 @@ section .text
     MOV dword ptr [EBX + 0x1138c],0x2   ; 005abac6
     PUSH EBX                            ; 005abad0
     MOV dword ptr [EBX + 0x11390],0x0   ; 005abad1
-    CALL core_dog1.cpp_FUN_005abe90     ; 005abadb
-        ;   XREF to: 005abe90 (UNCONDITIONAL_CALL)  ; undefined core_dog1.cpp_FUN_005abe90()
+    CALL core_dog1.cpp_CDog_processStates_FUN_005abe90 ; 005abadb
+        ;   XREF to: 005abe90 (UNCONDITIONAL_CALL)  ; void core_dog1.cpp_CDog_processStates_FUN_005abe90(CDog * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005abae0
     PUSH 0x5f0cd0                       ; 005abae3
     FLD float ptr [0x00600c50]          ; 005abae8 | DAT_00600c50

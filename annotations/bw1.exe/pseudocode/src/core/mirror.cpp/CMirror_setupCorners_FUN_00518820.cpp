@@ -9,26 +9,31 @@
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_00518820(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4)
 
 {
-  if ((CVector3f *)this_ptr != corner1) {
-    *(uint *)this_ptr = *(uint *)corner1;
-    *(uint *)(this_ptr + 4) = *(uint *)&corner1->field_0x4;
-    *(uint *)(this_ptr + 8) = *(uint *)&corner1->field_0x8;
+  CVector3f *pCVar1;
+  
+  if (this_ptr != (CMirror *)corner1) {
+    (this_ptr->reflection).corner1.x = corner1->x;
+    (this_ptr->reflection).corner1.y = corner1->y;
+    (this_ptr->reflection).corner1.z = corner1->z;
   }
-  if ((CVector3f *)(this_ptr + 0xc) != corner2) {
-    *(uint *)(this_ptr + 0xc) = *(uint *)corner2;
-    *(uint *)(this_ptr + 0x10) = *(uint *)&corner2->field_0x4;
-    *(uint *)(this_ptr + 0x14) = *(uint *)&corner2->field_0x8;
+  pCVar1 = &(this_ptr->reflection).corner2;
+  if (pCVar1 != corner2) {
+    pCVar1->x = corner2->x;
+    (this_ptr->reflection).corner2.y = corner2->y;
+    (this_ptr->reflection).corner2.z = corner2->z;
   }
-  if ((CVector3f *)(this_ptr + 0x18) != corner3) {
-    *(uint *)(this_ptr + 0x18) = *(uint *)corner3;
-    *(uint *)(this_ptr + 0x1c) = *(uint *)&corner3->field_0x4;
-    *(uint *)(this_ptr + 0x20) = *(uint *)&corner3->field_0x8;
+  pCVar1 = &(this_ptr->reflection).corner3;
+  if (pCVar1 != corner3) {
+    pCVar1->x = corner3->x;
+    (this_ptr->reflection).corner3.y = corner3->y;
+    (this_ptr->reflection).corner3.z = corner3->z;
   }
-  if ((CVector3f *)(this_ptr + 0x24) == corner4) {
+  pCVar1 = &(this_ptr->reflection).corner4;
+  if (pCVar1 == corner4) {
     return;
   }
-  *(uint *)(this_ptr + 0x24) = *(uint *)corner4;
-  *(uint *)(this_ptr + 0x28) = *(uint *)&corner4->field_0x4;
-  *(uint *)(this_ptr + 0x2c) = *(uint *)&corner4->field_0x8;
+  pCVar1->x = corner4->x;
+  (this_ptr->reflection).corner4.y = corner4->y;
+  (this_ptr->reflection).corner4.z = corner4->z;
   return;
 }

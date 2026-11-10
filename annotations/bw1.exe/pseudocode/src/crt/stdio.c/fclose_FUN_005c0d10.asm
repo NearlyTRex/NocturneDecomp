@@ -7,7 +7,7 @@
 ; XREF[66]:
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438dba
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438f8f
-;   cockpit_ckptutil.c_FUN_0043a040 at 0043a0d4
+;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0d4
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00538480 at 005384fe
 ;   cockpit_pkbitmap.cpp_FUN_00538130 at 0053815c
 ;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538d23

@@ -13,13 +13,13 @@ void __cdecl staticInit(void);
 // Address: 00443db0
 void __cdecl clipEdgeToPlane(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
 
-// Original: core_dcube.cpp_FUN_00444220
+// Original: core_dcube.cpp_clipPolygonAgainstMaxX_FUN_00444220
 // Address: 00444220
-void FUN_00444220(float param_1);
+void __cdecl clipPolygonAgainstMaxX(float max_x_plane);
 
-// Original: core_dcube.cpp_FUN_00444650
+// Original: core_dcube.cpp_clipPolygonAgainstMaxZ_FUN_00444650
 // Address: 00444650
-void FUN_00444650(float param_1);
+void __cdecl clipPolygonAgainstMaxZ(float max_z_plane);
 
 // Original: core_dcube.cpp_CDemonCubeTriangle_readFromFile_FUN_004447b0
 // Address: 004447b0
@@ -29,9 +29,9 @@ void __cdecl CDemonCubeTriangle::readFromFile(CDemonCubeTriangle *this_ptr,_FILE
 // Address: 00444a40
 float FUN_00444a40(undefined4 *param_1,float *param_2,float *param_3);
 
-// Original: core_dcube.cpp_FUN_00444c90
+// Original: core_dcube.cpp_intersectXZCylinder_FUN_00444c90
 // Address: 00444c90
-int __cdecl FUN_00444c90(SIntersectXZCylinder *cylinder);
+int __cdecl intersectXZCylinder(SIntersectXZCylinder *cylinder);
 
 // Original: core_dcube.cpp_intersectXZCylinderWithHeight_FUN_00444f70
 // Address: 00444f70
@@ -45,9 +45,9 @@ uint __cdecl intersectTriangleWithXZCylinder(int *param_1,SIntersectXZCylinder *
 // Address: 004454b0
 undefined4 __cdecl intersectVerticalCylinderSegment(float *param_1,float *param_2,float param_3,float *param_4);
 
-// Original: core_dcube.cpp_FUN_00445620
+// Original: core_dcube.cpp_triangleCylinderCollision_FUN_00445620
 // Address: 00445620
-uint __cdecl FUN_00445620(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
+uint __cdecl triangleCylinderCollision(CDemonCubeTriangle *triangle,CVector3f *cylinder_center,float cylinder_radius,float *out_height);
 
 // Original: core_dcube.cpp_FUN_00445a2e
 // Address: 00445a2e

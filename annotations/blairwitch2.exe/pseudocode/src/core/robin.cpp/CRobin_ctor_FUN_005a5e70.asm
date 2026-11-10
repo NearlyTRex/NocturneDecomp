@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
-;   core_robin.cpp_FUN_005a60d0
+;   core_robin.cpp_CRobin_processStates_FUN_005a60d0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -50,8 +50,8 @@ section .text
     MOV dword ptr [EBX + 0x1138c],0x2   ; 005a5ef3
     PUSH EBX                            ; 005a5efd
     MOV dword ptr [EBX + 0x11390],0x0   ; 005a5efe
-    CALL core_robin.cpp_FUN_005a60d0    ; 005a5f08
-        ;   XREF to: 005a60d0 (UNCONDITIONAL_CALL)  ; undefined core_robin.cpp_FUN_005a60d0()
+    CALL core_robin.cpp_CRobin_processStates_FUN_005a60d0 ; 005a5f08
+        ;   XREF to: 005a60d0 (UNCONDITIONAL_CALL)  ; void core_robin.cpp_CRobin_processStates_FUN_005a60d0(CRobin * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a5f0d
     PUSH 0x5f0637                       ; 005a5f10
     PUSH 0x5f0643                       ; 005a5f15

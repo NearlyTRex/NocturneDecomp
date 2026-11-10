@@ -13,7 +13,7 @@ void unkafter_djien_cpp_FUN_00460960(int param_1)
   
   *(uint *)(param_1 + 0xc2f0) = 0;
   *(uint *)(param_1 + 0xc1e8) = 0;
-  iVar1 = core_actor_cpp_FUN_0040cd00(0.4);
+  iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(0.4);
   if (iVar1 == 0) {
     *(uint *)(param_1 + 0xc9c4) = 0;
   }

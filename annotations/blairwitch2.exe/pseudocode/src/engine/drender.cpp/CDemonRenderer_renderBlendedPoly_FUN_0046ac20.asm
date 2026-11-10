@@ -11,9 +11,9 @@
 ;
 ; XREF[4]:
 ;   core_fire.cpp_CLaserBeam_render_FUN_00497800 at 004987a0
-;   core_glass.cpp_FUN_004c52a0 at 004c543a
-;   core_glass.cpp_FUN_004c5470 at 004c5609
-;   core_water.cpp_FUN_005862e0 at 00586823
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0 at 004c543a
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004c5470 at 004c5609
+;   core_water.cpp_CWater_render_FUN_005862e0 at 00586823
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0

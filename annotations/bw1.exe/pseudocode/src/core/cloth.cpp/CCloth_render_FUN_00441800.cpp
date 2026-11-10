@@ -51,9 +51,12 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeforma
       do {
         pCVar2 = DAT_00612560;
         iVar6 = *(int *)(pCVar4 + 0x39cec) * 0x30;
-        *(uint *)(*(int *)DAT_00612560 + iVar6 + 0x20) = *(uint *)(pCVar4 + 0x3a64c);
-        *(uint *)(iVar6 + 0x24 + *(int *)pCVar2) = *(uint *)(pCVar4 + 0x3a7dc);
-        *(uint *)(iVar6 + *(int *)pCVar2 + 0x28) = *(uint *)(pCVar4 + 0x3a96c);
+        *(uint *)(DAT_00612560->vertex_buffer_ptr + iVar6 + 0x20) =
+             *(uint *)(pCVar4 + 0x3a64c);
+        *(uint *)(pCVar2->vertex_buffer_ptr + iVar6 + 0x24) =
+             *(uint *)(pCVar4 + 0x3a7dc);
+        *(uint *)(pCVar2->vertex_buffer_ptr + iVar6 + 0x28) =
+             *(uint *)(pCVar4 + 0x3a96c);
         iVar7 = iVar7 + 1;
         pCVar4 = pCVar4 + 4;
       } while (iVar7 < *(int *)(this_ptr + 0x39ce8));
@@ -68,7 +71,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeforma
       iVar6 = -1;
       pSVar3 = *(SMRGLPrimitiveQuad **)(this_ptr + 0x114);
     }
-    core_set_cpp_FUN_005551f0(g_CDemonSetPtr,pSVar3,iVar7 / 2,iVar6);
+    core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(g_CDemonSetPtr,pSVar3,iVar7 / 2,iVar6);
     core_set_cpp_CDemonSet_lightVerticies_FUN_00553440
               (g_CDemonSetPtr,*(int *)(this_ptr + 0x104),*(int *)(this_ptr + 0x110) / 2,
                (void *)(*(int *)(this_ptr + 0x114) + (*(int *)(this_ptr + 0x110) / 2) * 0x48),
@@ -91,9 +94,12 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeforma
       do {
         pCVar2 = DAT_00612560;
         iVar6 = *(int *)(pCVar4 + 0x39cec) * 0x30;
-        *(uint *)(iVar6 + 0x20 + *(int *)DAT_00612560) = *(uint *)(pCVar4 + 0x3a64c);
-        *(uint *)(*(int *)pCVar2 + iVar6 + 0x24) = *(uint *)(pCVar4 + 0x3a7dc);
-        *(uint *)(iVar6 + *(int *)pCVar2 + 0x28) = *(uint *)(pCVar4 + 0x3a96c);
+        *(uint *)(DAT_00612560->vertex_buffer_ptr + iVar6 + 0x20) =
+             *(uint *)(pCVar4 + 0x3a64c);
+        *(uint *)(pCVar2->vertex_buffer_ptr + iVar6 + 0x24) =
+             *(uint *)(pCVar4 + 0x3a7dc);
+        *(uint *)(pCVar2->vertex_buffer_ptr + iVar6 + 0x28) =
+             *(uint *)(pCVar4 + 0x3a96c);
         iVar7 = iVar7 + 1;
         pCVar4 = pCVar4 + 4;
       } while (iVar7 < *(int *)(this_ptr + 0x39ce8));
@@ -108,7 +114,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeforma
       iVar7 = *(int *)(this_ptr + 0x110);
       pSVar3 = *(SMRGLPrimitiveQuad **)(this_ptr + 0x114);
     }
-    core_set_cpp_FUN_005551f0(g_CDemonSetPtr,pSVar3,iVar7,iVar6);
+    core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(g_CDemonSetPtr,pSVar3,iVar7,iVar6);
     local_1c = *(int *)(this_ptr + 0x110);
     if (1000 < local_1c) {
       local_1c = 1000;
@@ -149,7 +155,7 @@ void __cdecl core_cloth_cpp_CCloth_render_FUN_00441800(CCloth *this_ptr,CDeforma
   }
   iVar11 = 0x267;
 LAB_004419fa:
-  core_set_cpp_FUN_005551f0(g_CDemonSetPtr,pSVar3,local_1c,iVar11);
+  core_set_cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(g_CDemonSetPtr,pSVar3,local_1c,iVar11);
   engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_00483d80(DAT_00612560,0);
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20(DAT_00612560,1);
   return;

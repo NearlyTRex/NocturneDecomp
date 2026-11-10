@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
-;   core_belling.cpp_FUN_005a9060
+;   core_belling.cpp_CBelling_processStates_FUN_005a9060
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 005a9013
     PUSH 0x0                            ; 005a9015
     PUSH EBX                            ; 005a9017
-    CALL core_belling.cpp_FUN_005a9060  ; 005a9018
-        ;   XREF to: 005a9060 (UNCONDITIONAL_CALL)  ; undefined core_belling.cpp_FUN_005a9060()
+    CALL core_belling.cpp_CBelling_processStates_FUN_005a9060 ; 005a9018
+        ;   XREF to: 005a9060 (UNCONDITIONAL_CALL)  ; void core_belling.cpp_CBelling_processStates_FUN_005a9060(CBelling * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a901d
     PUSH 0x5f088d                       ; 005a9020
     LEA ESI,[EBX + 0x10af8]             ; 005a9025

@@ -18,7 +18,13 @@
     {
       "addr": "0040ddd0",
       "from_addr": "0040ddef",
-      "name": "core_ammo.cpp_FUN_0040ddd0",
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00415340",
+      "from_addr": "00415647",
+      "name": "core_bird.cpp_CBird_process_FUN_00415340",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -30,7 +36,7 @@
     {
       "addr": "0044b6f0",
       "from_addr": "0044b767",
-      "name": "core_curtain.cpp_FUN_0044b6f0",
+      "name": "core_curtain.cpp_CCurtain_process_FUN_0044b6f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,7 +78,7 @@
     {
       "addr": "0049f310",
       "from_addr": "0049f334",
-      "name": "core_emitter.cpp_FUN_0049f310",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,7 +90,7 @@
     {
       "addr": "004a128e",
       "from_addr": "004a129b",
-      "name": "core_event.cpp_FUN_004a128e",
+      "name": "core_event.cpp_parseComparisonOp_FUN_004a128e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,19 +102,19 @@
     {
       "addr": "004e1150",
       "from_addr": "004e18aa",
-      "name": "core_glass.cpp_FUN_004e1150",
+      "name": "core_glass.cpp_CGlass_setup_FUN_004e1150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f8fe0",
+      "from_addr": "004f9081",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f7690",
       "from_addr": "004f85dc",
       "name": "core_inv.cpp_FUN_004f7690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f8fe0",
-      "from_addr": "004f9081",
-      "name": "core_inv.cpp_FUN_004f8fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,13 +126,13 @@
     {
       "addr": "0052d450",
       "from_addr": "0052d4ea",
-      "name": "core_netgame.cpp_FUN_0052d450",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0052d450",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053ffb0",
       "from_addr": "0053fffb",
-      "name": "core_rifle.cpp_FUN_0053ffb0",
+      "name": "core_rifle.cpp_CRifle_getMuzzlePoint_FUN_0053ffb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -142,15 +148,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f4720",
-      "from_addr": "004f4940",
-      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004f4720",
+      "addr": "004f4370",
+      "from_addr": "004f4462",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004f4370",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f4370",
-      "from_addr": "004f4462",
-      "name": "engine_ini.cpp_FUN_004f4370",
+      "addr": "004f4720",
+      "from_addr": "004f4940",
+      "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004f4720",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -184,12 +190,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00530bf0",
-      "from_addr": "00530d90",
-      "name": "support_newmsg.cpp_FUN_00530bf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00531010",
       "from_addr": "00531047",
       "name": "support_newmsg.cpp_findLocalizedString_FUN_00531010",
@@ -202,15 +202,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b9e30",
-      "from_addr": "004b9e4c",
-      "name": "unkaddr_004b9ab0.cpp_FUN_004b9e30",
+      "addr": "00530bf0",
+      "from_addr": "00530d90",
+      "name": "support_newmsg.cpp_readMessageFile_FUN_00530bf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00415340",
-      "from_addr": "00415647",
-      "name": "unkafter_bird.cpp_FUN_00415340",
+      "addr": "004b9e30",
+      "from_addr": "004b9e4c",
+      "name": "unkaddr_004b9ab0.cpp_FUN_004b9e30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -240,7 +240,7 @@
       {
         "call_addr": "004f4462",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004f4370",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004f4370",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,7 +251,7 @@
       {
         "call_addr": "004f44af",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004f4370",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004f4370",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 169,
+    "complexity_score": 125,
     "cross_reference_count": 2,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 14,
+    "pseudocode_lines": 15,
+    "suspect_count": 10,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 63
+    "total_lines": 64
   },
   "cross_references": [
     {
@@ -44,14 +43,14 @@
   },
   "function_calls": [
     {
+      "addr": "0046afb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0"
+    },
+    {
       "addr": "0046b030",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046b030"
-    },
-    {
-      "addr": "0046afb0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046afb0"
     },
     {
       "addr": "0046b4d0",
@@ -201,7 +200,7 @@
       "line": 9,
       "match": "DAT_006141b8",
       "severity": "mild",
-      "text": "DAT_006141b8 = *(uint *)this_ptr;",
+      "text": "DAT_006141b8 = this_ptr->width;",
       "type": "undefined_data"
     },
     {
@@ -209,23 +208,15 @@
       "line": 10,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "DAT_006141bc = *(int *)&this_ptr->field_0x4;",
+      "text": "DAT_006141bc = this_ptr->height;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "DAT_006141bc = *(int *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 11,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046b710(DAT_0060b280,0,0,*(int *)this_ptr + -1,DAT_006141bc + -1);",
+      "text": "engine_matrix_c_FUN_0046b710(DAT_0060b280,0,0,this_ptr->width + -1,DAT_006141bc + -1);",
       "type": "undefined_data"
     },
     {
@@ -233,56 +224,32 @@
       "line": 11,
       "match": "DAT_006141bc",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046b710(DAT_0060b280,0,0,*(int *)this_ptr + -1,DAT_006141bc + -1);",
+      "text": "engine_matrix_c_FUN_0046b710(DAT_0060b280,0,0,this_ptr->width + -1,DAT_006141bc + -1);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 12,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046afb0(DAT_0060b280,(CVector3f *)&this_ptr->field_0x8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046afb0(DAT_0060b280,(CVector3f *)&this_ptr->field_0x8);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 13,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046b4d0(DAT_0060b280,*(uint *)&this_ptr->field_0x20);",
+      "text": "(DAT_0060b280,&this_ptr->camera_position);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046b4d0(DAT_0060b280,*(uint *)&this_ptr->field_0x20);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 14,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)&this_ptr->field_0x14);",
+      "text": "engine_matrix_c_FUN_0046b4d0(DAT_0060b280,this_ptr->projection_scale);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x14",
+      "description": "Undefined global data reference",
+      "line": 16,
+      "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
+      "text": "(DAT_0060b280,&this_ptr->look_at_position);",
+      "type": "undefined_data"
     }
   ]
 }

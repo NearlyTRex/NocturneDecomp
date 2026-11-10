@@ -33,7 +33,8 @@ void core_charactr_cpp_FUN_00432cb0(int param_1)
     iVar3 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr,bone_name,iVar5);
     iVar5 = *(int *)(param_1 + 0x2754);
     *(int *)(param_1 + 0x2750) = iVar3;
-    pCVar4 = core_motion_cpp_FUN_00524a00((CMotionController *)(param_1 + 0x158));
+    pCVar4 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00
+                       ((CMotionController *)(param_1 + 0x158));
     iVar5 = iVar5 * 0x120;
     local_c = 0.85;
     if (*(int *)(param_1 + 0x275c) == 1) {

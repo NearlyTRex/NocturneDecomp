@@ -11,7 +11,7 @@
 ;   undefined4 DAT_007df974
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 0040ec57
     MOV EBX,dword ptr [0x007df974]      ; 0040ec58 | DAT_007df974
     PUSH EBX                            ; 0040ec5e
-    CALL core_actor.cpp_FUN_0040c790    ; 0040ec5f
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 0040ec5f
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040ec64
     TEST EAX,EAX                        ; 0040ec67
     JNZ 0x0040ec47                      ; 0040ec69

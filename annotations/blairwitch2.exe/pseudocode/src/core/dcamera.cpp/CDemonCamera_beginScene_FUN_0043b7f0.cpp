@@ -74,12 +74,12 @@ switchD_0043b808_caseD_3:
     }
   }
   _DAT_01326d1c = uVar2;
-  if ((*(int *)&this_ptr->field_0x148 < 0x1e0) || (DAT_00609fa0 == 3)) {
+  if ((this_ptr->framebuffer_height < 0x1e0) || (DAT_00609fa0 == 3)) {
     _DAT_01326d18 = 0;
     _DAT_01326d1c = 0;
   }
-  if (*(int *)&this_ptr->field_0x11e4 == 0) {
-    *(uint *)&this_ptr->field_0x11e4 = 1;
+  if (this_ptr->scene_open_flag == 0) {
+    this_ptr->scene_open_flag = 1;
   }
   else {
     _DAT_01d046a0 = "..\\core\\dcamera.cpp";
@@ -88,22 +88,22 @@ switchD_0043b808_caseD_3:
   }
   core_dcamera_cpp_CDemonCamera_setSceneCamera_FUN_0043b7a0(this_ptr,skip_clear_buffers);
   engine_matrix_c_FUN_0046b710
-            (DAT_0060b280,0,0,*(int *)&this_ptr->field_0x144 + -1,
-             *(int *)&this_ptr->field_0x148 + -1);
+            (DAT_0060b280,0,0,this_ptr->framebuffer_width + -1,this_ptr->framebuffer_height + -1);
   uVar2 = _DAT_01326d18;
-  *(uint *)&this_ptr->field_0x11d4 = 0;
-  *(uint *)&this_ptr->field_0x11d8 = 0;
-  *(uint *)&this_ptr->field_0x1d0 = 0;
+  (this_ptr->viewport_rect).x_min = 0;
+  (this_ptr->viewport_rect).x_max = 0;
+  this_ptr->rect_array_count = 0;
   _DAT_01c35e40 = _DAT_01c35e40 + uVar2 * 0x10000;
-  *(int *)&this_ptr->field_0x11dc = *(int *)&this_ptr->field_0x144 + -1;
+  (this_ptr->viewport_rect).y_min = this_ptr->framebuffer_width + -1;
   _DAT_01c35e44 = _DAT_01c35e44 + _DAT_01326d1c * -0x10000;
-  *(int *)&this_ptr->field_0x11e0 = *(int *)&this_ptr->field_0x148 + -1;
+  (this_ptr->viewport_rect).y_max = this_ptr->framebuffer_height + -1;
   this_ptr_00 = DAT_0060b280;
-  *(int *)&this_ptr->field_0x168 = skip_clear_buffers;
-  engine_drender_cpp_FUN_0046afb0(this_ptr_00,(CVector3f *)&this_ptr->field_0x4);
-  engine_matrix_c_FUN_0046b4b0(DAT_0060b280,*(uint *)&this_ptr->field_0x38);
+  this_ptr->skip_clear_buffer_flag = skip_clear_buffers;
+  engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+            (this_ptr_00,&(this_ptr->base).position.f);
+  engine_matrix_c_FUN_0046b4b0(DAT_0060b280,(this_ptr->base).focal_length);
   engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-            (DAT_0060b280,(CMatrix3x3f *)&this_ptr->field_0x10);
+            (DAT_0060b280,&(this_ptr->base).rotation_matrix);
   if (skip_clear_buffers == 0) {
     if (_DAT_0264bba0 != 0) {
       engine_special_cpp_FUN_0055f590();

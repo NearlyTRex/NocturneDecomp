@@ -2,18 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 314,
-    "complexity_score": 650,
+    "complexity_score": 270,
     "cross_reference_count": 5,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 95,
-    "suspect_count": 52,
+    "suspect_count": 15,
     "suspect_types": [
-      "param_count_too_few",
       "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_param",
       "unresolved_funcptr",
       "unrolled_strchr",
       "warning_overlapping_globals"
@@ -48,7 +46,7 @@
     {
       "addr": "004ee3f0",
       "from_addr": "004ee627",
-      "name": "core_menu.cpp_FUN_004ee3f0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -60,15 +58,25 @@
         "004eb3c7"
       ]
     ],
-    "convention": "unknown",
+    "convention": "__cdecl",
     "name": "core_menu.cpp_FUN_004eb0e0",
-    "signature": "int core_menu_cpp_FUN_004eb0e0(undefined4 *param_1,int param_2,int *param_3,int param_4,int param_5)"
+    "signature": "int __cdecl core_menu_cpp_FUN_004eb0e0(char **menu_text_array,int menu_count,int *selected_index_ptr,int y_position,char *title)"
   },
   "function_calls": [
     {
       "addr": "00406da0",
       "is_variadic": false,
       "name": "engine_3d.c_setRenderAlpha_FUN_00406da0"
+    },
+    {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004aafb0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0"
     },
     {
       "addr": "004a8df0",
@@ -79,16 +87,6 @@
       "addr": "004aaf00",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004aaf00"
-    },
-    {
-      "addr": "004aafb0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aafb0"
-    },
-    {
-      "addr": "004ab560",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
     }
   ],
   "globals": [
@@ -141,14 +139,11 @@
       {
         "call_addr": "004ee627",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
-        "estimated_params": 7,
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX",
-          "EDX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -156,12 +151,10 @@
         "call_addr": "004ee2f7",
         "call_type": "direct",
         "caller": "core_menu.cpp_FUN_004ee1a0",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -169,12 +162,10 @@
         "call_addr": "004ec3d8",
         "call_type": "direct",
         "caller": "core_menu.cpp_FUN_004ebf10",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -182,12 +173,10 @@
         "call_addr": "004edafc",
         "call_type": "direct",
         "caller": "core_menu.cpp_FUN_004ed260",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       },
@@ -195,21 +184,19 @@
         "call_addr": "004ecfa8",
         "call_type": "direct",
         "caller": "core_menu.cpp_FUN_004ecc70",
-        "estimated_params": 6,
+        "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
-        "reg_params": [
-          "EAX"
-        ],
+        "reg_params": [],
         "stack_bytes": 20,
         "stack_params": 5
       }
     ],
-    "confidence": "medium",
-    "declared_params": 0,
-    "declared_stack_bytes": 0,
-    "estimated_params": 6,
-    "matches_declared": false
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
   },
   "pcode_summary": {
     "avg_pcode_per_instr": 4.574712643678161,
@@ -244,10 +231,10 @@
     "pcode_op_count": 1194
   },
   "stack_frame": {
-    "frame_size": 36,
+    "frame_size": 56,
     "local_size": 36,
     "param_offset": 4,
-    "param_size": 0,
+    "param_size": 20,
     "return_addr_offset": 0,
     "variables": [
       {
@@ -277,6 +264,41 @@
         "offset": -20,
         "size": 4,
         "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "menu_text_array",
+        "offset": 4,
+        "size": 4,
+        "type": "char * *"
+      },
+      {
+        "is_param": true,
+        "name": "menu_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "selected_index_ptr",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y_position",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "title",
+        "offset": 20,
+        "size": 4,
+        "type": "char *"
       }
     ]
   },
@@ -288,198 +310,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "int core_menu_cpp_FUN_004eb0e0(uint *param_1,int param_2,int *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "int core_menu_cpp_FUN_004eb0e0(uint *param_1,int param_2,int *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "int core_menu_cpp_FUN_004eb0e0(uint *param_1,int param_2,int *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "int core_menu_cpp_FUN_004eb0e0(uint *param_1,int param_2,int *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 4,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "int core_menu_cpp_FUN_004eb0e0(uint *param_1,int param_2,int *param_3,int param_4,int param_5)",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 17,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 != 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "iVar4 = engine_font_cpp_FUN_004aaf00(_DAT_01511cc0,param_5);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_font_cpp_FUN_004a8df0(this_ptr,param_5,iVar4 + 1,param_4 + 1,2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 20,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_font_cpp_FUN_004a8df0(this_ptr,param_5,iVar4 + 1,param_4 + 1,2,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "engine_font_cpp_FUN_004a8df0(this_ptr,param_5,iVar4,param_4,0xfa,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_font_cpp_FUN_004a8df0(this_ptr,param_5,iVar4,param_4,0xfa,0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + iVar4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar3 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (0 < param_2) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_font_cpp_FUN_004a8df0(this_ptr,*puVar3,iVar1,param_4 + 1,4,0xffffffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 34,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "if (iVar4 == *param_3) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "engine_font_cpp_FUN_004a8df0(this_ptr,*puVar3,iVar1,param_4,local_14,0xffffffff);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_5",
-      "severity": "mild",
-      "text": "if (param_5 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 41,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "param_4 = param_4 + iVar2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 45,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "} while (iVar4 < param_2);",
-      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -494,7 +324,7 @@
       "line": 49,
       "match": "DAT_005dcacd",
       "severity": "mild",
-      "text": "engine_font_cpp_FUN_004aafb0(_DAT_01511cc4,&DAT_005dcacd);",
+      "text": "engine_font_cpp_CBitFont_getTextHeight_FUN_004aafb0(_DAT_01511cc4,&DAT_005dcacd);",
       "type": "undefined_data"
     },
     {
@@ -506,22 +336,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "pcVar6 = (char *)param_1[*param_3];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 53,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "pcVar6 = (char *)param_1[*param_3];",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 65,
       "match": "*(code **)(*0x01D02F84",
@@ -536,38 +350,6 @@
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x48);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar4 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 69,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = iVar4 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = param_2 + -1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 71,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "*param_3 = param_2 + -1;",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
@@ -586,38 +368,6 @@
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "iVar4 = *param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = iVar4 + 1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 79,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if (param_2 <= iVar4 + 1) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 80,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*param_3 = 0;",
-      "type": "unnamed_param"
-    },
-    {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 85,
       "match": "*(code **)(*0x01D02F84",
@@ -632,14 +382,6 @@
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x4b);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 88,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "return *param_3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
@@ -672,14 +414,6 @@
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x1c);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 98,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "return *param_3;",
-      "type": "unnamed_param"
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal ':' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, ':') in a .keep.",
@@ -688,17 +422,6 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strchr"
-    },
-    {
-      "call_site_count": 5,
-      "declared_params": 0,
-      "description": "Signature has too few params - likely missing this ptr or other params",
-      "estimated_params": 6,
-      "fix_type": "add_params",
-      "match": "declared:0 vs estimated:6",
-      "param_delta": 6,
-      "text": "Function declares 0 params but call sites push 6 (6 missing)",
-      "type": "param_count_too_few"
     }
   ]
 }

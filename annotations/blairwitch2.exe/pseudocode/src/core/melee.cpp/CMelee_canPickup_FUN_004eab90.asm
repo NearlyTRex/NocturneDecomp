@@ -11,7 +11,7 @@
 ;   TerminatedCString s_CHero_005dca3b
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
         ;   Label: LAB_004eaba3
     MOV ECX,dword ptr [ESP + 0xc]       ; 004eaba8
     PUSH ECX                            ; 004eabac
-    CALL core_actor.cpp_FUN_0040c840    ; 004eabad
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 004eabad
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004eabb2
     TEST EAX,EAX                        ; 004eabb5
     JZ 0x004eab9d                       ; 004eabb7

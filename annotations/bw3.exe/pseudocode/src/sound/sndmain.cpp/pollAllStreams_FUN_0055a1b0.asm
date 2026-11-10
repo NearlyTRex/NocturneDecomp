@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_sound.cpp_FUN_0055ff40 at 00560543
-;   sound_sndmain.cpp_FUN_00559120 at 0055916f
+;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560543
+;   sound_sndmain.cpp_processAudio_FUN_00559120 at 0055916f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d3f1a
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00553960
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     MOV EBP,ESP                         ; 0055a1b3
     SUB ESP,0x10                        ; 0055a1b5
     AND ESP,0xfffffff8                  ; 0055a1b8
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 0055a1bb
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 0055a1bb
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
     FLD float ptr [0x005e485c]          ; 0055a1c0 | DAT_005e485c
     MOV EDX,dword ptr [EBP + 0x10]      ; 0055a1c6
     FST double ptr [ESP]                ; 0055a1c9

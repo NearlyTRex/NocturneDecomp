@@ -11,7 +11,7 @@ void core_prye_cpp_factoryFuncPrye_FUN_00517f50(void)
 {
   CPrye *this_ptr;
   
-  this_ptr = (CPrye *)FUN_005a3cb2(0x20d04);
+  this_ptr = (CPrye *)debugAllocTracked1(0x20d04);
   if (this_ptr == (CPrye *)0x0) {
     return;
   }

@@ -21,29 +21,29 @@ CDemonActorType * CLarva::getActorType(CLarva *this_ptr);
 // Address: 004fd950
 CLarva * CLarva::ctor(CLarva *this_ptr);
 
-// Original: core_larva.cpp_FUN_004fd9e0
+// Original: core_larva.cpp_CLarva_setup_FUN_004fd9e0
 // Address: 004fd9e0
-void FUN_004fd9e0(CEnemy *param_1);
+void __cdecl CLarva::setup(CLarva *this_ptr);
 
-// Original: core_larva.cpp_FUN_004fda40
+// Original: core_larva.cpp_CLarva_process_FUN_004fda40
 // Address: 004fda40
-void FUN_004fda40(CEnemy *param_1,float param_2);
+void __cdecl CLarva::process(CLarva *this_ptr,float delta_time);
 
-// Original: core_larva.cpp_FUN_004fe450
+// Original: core_larva.cpp_CLarva_archive_FUN_004fe450
 // Address: 004fe450
-void FUN_004fe450(CEnemy *param_1);
+void __cdecl CLarva::archive(CLarva *this_ptr);
 
 // Original: core_larva.cpp_getSizeCategory_FUN_004fe4c0
 // Address: 004fe4c0
 char * __cdecl getSizeCategory(float scale);
 
-// Original: core_larva.cpp_FUN_004fe510
+// Original: core_larva.cpp_CLarva_processDamage_FUN_004fe510
 // Address: 004fe510
-void FUN_004fe510(int param_1,int param_2);
+void __cdecl CLarva::processDamage(CLarva *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_larva.cpp_FUN_004fe710
+// Original: core_larva.cpp_CLarva_getTargetPoints_FUN_004fe710
 // Address: 004fe710
-undefined4 FUN_004fe710(int param_1,undefined4 *param_2);
+int __cdecl CLarva::getTargetPoints(CLarva *this_ptr,CVector3f *out_points_array);
 
 // Original: core_larva.cpp_CLarva_dtor_FUN_004fe770
 // Address: 004fe770

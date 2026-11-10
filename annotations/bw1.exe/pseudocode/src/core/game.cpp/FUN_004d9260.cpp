@@ -63,7 +63,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
   float fStack_58c;
   float fStack_588;
   float fStack_584;
-  uint uStack_580;
+  float fStack_580;
   float fStack_574;
   float fStack_570;
   float fStack_56c;
@@ -89,9 +89,8 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
   int iStack_4d8;
   int iStack_4d4;
   int iStack_4d0;
-  uint uStack_4cc;
-  float fStack_4c0;
-  float fStack_4bc;
+  float fStack_4cc;
+  float afStack_4c8 [4];
   float fStack_4b8;
   float fStack_4b4;
   float afStack_4b0 [6];
@@ -210,7 +209,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
   float fStack_1a8;
   float fStack_1a4;
   float fStack_1a0;
-  uint uStack_19c;
+  float fStack_19c;
   uint uStack_190;
   int iStack_184;
   float afStack_180 [5];
@@ -245,7 +244,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
   float fStack_a4;
   float fStack_a0;
   float fStack_98;
-  uint uStack_94;
+  float fStack_94;
   int iStack_78;
   float fStack_74;
   CDemonActor *pCStack_70;
@@ -330,59 +329,63 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                5,1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                5,-1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8ec0((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),1);
+    core_inv_cpp_CInventory_selectItem_FUN_004f8ec0
+              ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8ec0((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),-1);
+    core_inv_cpp_CInventory_selectItem_FUN_004f8ec0
+              ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),-1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8fe0((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),1);
+    core_inv_cpp_CInventory_cycleWeaponOfSameClass_FUN_004f8fe0
+              ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004fc370((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8));
+    core_inv_cpp_CInventory_toggleDetailView_FUN_004fc370
+              ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8));
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                0,1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                1,1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                2,1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                4,1);
   }
   iVar7 = (**(code **)(*0x01D1BCA0 + 4))();
   if (iVar7 != 0) {
-    core_inv_cpp_FUN_004f8dc0
+    core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
               ((CInventory *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x1fae8),(CDemonActor *)0x0,
                3,1);
   }
@@ -397,7 +400,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
     _DAT_01ccc3b4 = 0;
     _DAT_01c43544 = 0;
     _DAT_01ccc3dc = 0;
-    sound_sndmain_cpp_FUN_00573b00();
+    sound_sndmain_cpp_killAllSfx_FUN_00573b00();
     _DAT_01cd0c28 = 1e+30;
   }
   if ((int)_DAT_01cd0b40 < 0) {
@@ -435,7 +438,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
     return;
   }
   if (0.0 <= _DAT_0061d954) {
-    _DAT_0061d954 = _DAT_0061d954 - *(float *)&g_CGamePtr->field_0x294;
+    _DAT_0061d954 = _DAT_0061d954 - g_CGamePtr->delta_time_float;
   }
   else {
     _DAT_0061d954 = 0.25;
@@ -454,12 +457,12 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
     fStack_348 = (float)(int)fStack_288 * _DAT_00600f74;
     fStack_344 = (float)iStack_284 * _DAT_00600f74;
     iVar7 = 4;
-    afStack_180[2] = (float)g_CDemonCameraInstance._4_4_;
+    afStack_180[2] = g_CDemonCameraInstance.base.position.f.x;
     afStack_180[(uint)bVar13 * -2 + 3] =
          *(float *)((int)&g_CDemonCameraInstance + (uint)bVar13 * -8 + 8);
     afStack_180[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
          *(float *)((uint)bVar13 * -8 + 0x1fe37f8 + (uint)bVar13 * -8);
-    uStack_19c = afStack_180[2];
+    fStack_19c = afStack_180[2];
     afStack_24c[(uint)bVar13 * -2 + 0x2d] = afStack_180[(uint)bVar13 * -2 + 3];
     pCVar15 = g_CDemonSetPtr;
     afStack_24c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 0x2e] =
@@ -474,7 +477,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
       fStack_20 = fStack_18;
       pCVar1 = _DAT_01cd0c24;
       if ((fStack_18 < 0.0) || (0x3f800000 < (int)fStack_18)) break;
-      actor = *(CDemonActor **)&g_CDemonSetPtr->field_0x14d144;
+      actor = g_CDemonSetPtr->collision_actor;
       iVar8 = core_actor_cpp_castToClassHash_FUN_0040c600();
       if (iVar8 != 0) {
         iVar7 = core_actor_cpp_castToClassHash_FUN_0040c600();
@@ -542,7 +545,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
     }
   }
   else {
-    iVar7 = core_actor_cpp_FUN_0040c550(_DAT_01cd0c24,"CEnemy");
+    iVar7 = core_actor_cpp_isOfClass_FUN_0040c550(_DAT_01cd0c24,"CEnemy");
     if (iVar7 == 0) {
       _DAT_01cd0b40 = (CDemonActor *)0x5;
     }
@@ -567,15 +570,15 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
     fStack_354 = (float)(int)fStack_4ec * _DAT_00600f74;
     fStack_350 = (float)iStack_4e8 * _DAT_00600f74;
     iVar7 = 4;
-    uStack_580 = g_CDemonCameraInstance._4_4_;
+    fStack_580 = g_CDemonCameraInstance.base.position.f.x;
     *(uint *)(&stack0xfffffa84 + (uint)bVar13 * -8) =
          *(uint *)((int)&g_CDemonCameraInstance + (uint)bVar13 * -8 + 8);
     *(uint *)(&stack0xfffffa88 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
          *(uint *)((uint)bVar13 * -8 + 0x1fe37f8 + (uint)bVar13 * -8);
-    uStack_4cc = uStack_580;
-    (&fStack_4ec)[(uint)bVar13 * -2 + 9] = *(float *)(&stack0xfffffa84 + (uint)bVar13 * -8);
+    fStack_4cc = fStack_580;
+    afStack_4c8[(uint)bVar13 * -2] = *(float *)(&stack0xfffffa84 + (uint)bVar13 * -8);
     pCVar15 = g_CDemonSetPtr;
-    (&fStack_4ec)[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 10] =
+    afStack_4c8[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
          *(float *)(&stack0xfffffa88 + (uint)bVar13 * -8 + (uint)bVar13 * -8);
     core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(pCVar15,iVar7);
     core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
@@ -585,7 +588,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
       fStack_18 = (float)core_setcolid_cpp_FUN_00557300(g_CDemonSetPtr);
       fStack_24 = fStack_18;
       if ((fStack_18 < 0.0) || (0x3f800000 < (int)fStack_18)) break;
-      pCVar1 = *(CDemonActor **)&g_CDemonSetPtr->field_0x14d144;
+      pCVar1 = g_CDemonSetPtr->collision_actor;
       iVar8 = core_actor_cpp_castToClassHash_FUN_0040c600();
       if (iVar8 != 0) {
         pCStack_28 = pCVar1;
@@ -652,12 +655,12 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
     fStack_258 = (float)(int)fStack_408 * _DAT_00600f74;
     fStack_254 = (float)iStack_404 * _DAT_00600f74;
     iVar7 = 4;
-    afStack_fc[2] = (float)g_CDemonCameraInstance._4_4_;
+    afStack_fc[2] = g_CDemonCameraInstance.base.position.f.x;
     afStack_fc[(uint)bVar13 * -2 + 3] =
          *(float *)((int)&g_CDemonCameraInstance + (uint)bVar13 * -8 + 8);
     afStack_fc[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4] =
          *(float *)((uint)bVar13 * -8 + 0x1fe37f8 + (uint)bVar13 * -8);
-    uStack_94 = afStack_fc[2];
+    fStack_94 = afStack_fc[2];
     afStack_c0[(uint)bVar13 * -2 + 0xc] = afStack_fc[(uint)bVar13 * -2 + 3];
     pCVar15 = g_CDemonSetPtr;
     afStack_c0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 0xd] =
@@ -677,7 +680,7 @@ void core_game_cpp_FUN_004d9260(int param_1,uint *param_2)
         break;
       }
       core_setcolid_cpp_CDemonSet_ignore_FUN_00559250
-                (g_CDemonSetPtr,*(CDemonActor **)&g_CDemonSetPtr->field_0x14d144);
+                (g_CDemonSetPtr,g_CDemonSetPtr->collision_actor);
       if ((fStack_698 < 0.0) || (iVar7 = iVar7 + 1, 0x3f800000 < (int)fStack_698)) break;
     }
     if (_DAT_01ccc3dc != 0) {
@@ -766,7 +769,7 @@ LAB_004d9de9:
       afStack_120[(uint)bVar13 * -2] = afStack_27c[(uint)bVar13 * -2 + 6];
       afStack_120[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
            afStack_27c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7];
-      if (&stack0x00000000 != &g_CDemonLightInstance.field_0xf8) {
+      if (&stack0x00000000 != g_CDemonLightInstance.base.camera_name + 0xb8) {
         _DAT_01ccc3b8 = fStack_124;
         _DAT_01ccc3bc = afStack_120[0];
         _DAT_01ccc3c0 = afStack_120[1];
@@ -800,8 +803,8 @@ LAB_004dbaf8:
     if (((_DAT_01c43544 & 2) != 0) && (_DAT_01ccc3dc == 0)) {
       this_ptr = *(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
       _DAT_01ccc3b0 = 1;
-      if (*(int *)&this_ptr[2].field_0x7bbc == 0) {
-        core_charactr_cpp_FUN_004328c0(this_ptr);
+      if (this_ptr[2].flames[0x1a].base.previous_transform_state.orientation.vec.y == 0.0) {
+        core_charactr_cpp_CCharacter_dropAllCarriedObjects_FUN_004328c0(this_ptr);
         local_6a4 = 2.0;
       }
     }
@@ -827,10 +830,11 @@ LAB_004dbaf8:
             if (iStack_4c == 0) {
               if (iStack_6c == 0) {
                 if (iStack_44 == 0) {
-                  if ((_DAT_01c43544 == 1) && (&pCStack_28->field_0x20 != &DAT_01ccc3b8)) {
-                    _DAT_01ccc3b8 = *(float *)&pCStack_28->field_0x20;
-                    _DAT_01ccc3c0 = *(float *)&pCStack_28->field_0x28;
-                    _DAT_01ccc3bc = *(float *)&pCStack_28->field_0x24;
+                  if ((_DAT_01c43544 == 1) && (&pCStack_28->location != (CLocation *)&DAT_01ccc3b8))
+                  {
+                    _DAT_01ccc3b8 = (pCStack_28->location).position.x;
+                    _DAT_01ccc3c0 = (pCStack_28->location).position.z;
+                    _DAT_01ccc3bc = (pCStack_28->location).position.y;
                   }
                 }
                 else {
@@ -862,7 +866,8 @@ LAB_004dbaf8:
                     fStack_450 = afStack_3fc[0];
                     fStack_44c = afStack_3fc[1];
                   }
-                  if (&stack0x00000000 != &g_CDemonLightInstance.field_0x380) {
+                  if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.rect_array[0x1a].y_max)
+                  {
                     _DAT_01ccc3b8 = fStack_3ac;
                     _DAT_01ccc3bc = fStack_3a8;
                     _DAT_01ccc3c0 = fStack_3a4;
@@ -882,7 +887,7 @@ LAB_004dbaf8:
                      pfVar10[(uint)bVar13 * -2 + 1];
                 core_actor_cpp_FUN_00408bb0();
                 afStack_4f8[0] = *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x24);
-                if (&stack0x00000000 != &g_CDemonLightInstance.field_0x4d0) {
+                if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.rect_array[0x2f].y_max) {
                   _DAT_01ccc3b8 = fStack_4fc;
                   _DAT_01ccc3c0 = afStack_4f8[1];
                   _DAT_01ccc3bc = afStack_4f8[0];
@@ -909,28 +914,28 @@ LAB_004dbaf8:
                 puVar12 = puVar12 + (uint)bVar13 * -2 + 1;
               }
               fStack_4b8 = fStack_680;
-              fStack_4c0 = fVar3;
-              fStack_4bc = fVar3;
+              afStack_4c8[2] = fVar3;
+              afStack_4c8[3] = fVar3;
               core_actor_cpp_FUN_00408b40();
               fStack_574 = fStack_2bc;
               *(float *)((int)&stack0xfffffa90 + (uint)bVar13 * -8) =
                    afStack_2dc[(uint)bVar13 * -2 + 9];
               *(float *)((int)&stack0xfffffa94 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
                    afStack_2dc[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 10];
-              if (&fStack_4c0 != &stack0xfffffa8c) {
-                fStack_4c0 = fStack_574;
-                fStack_4bc = fStack_570;
+              if (afStack_4c8 + 2 != &stack0xfffffa8c) {
+                afStack_4c8[2] = fStack_574;
+                afStack_4c8[3] = fStack_570;
                 fStack_4b8 = fStack_56c;
               }
               afStack_2a0[3] = *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x24);
-              if (&stack0x00000000 != &g_CDemonLightInstance.field_0x26c) {
+              if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.rect_array[9].y_min) {
                 _DAT_01ccc3b8 = afStack_2a0[2];
                 _DAT_01ccc3c0 = fStack_290;
                 _DAT_01ccc3bc = afStack_2a0[3];
               }
-              if (&stack0x00000000 != &g_BloodParticles[7].field_0x44) {
-                _DAT_01cd0c28 = fStack_4c0;
-                _DAT_01cd0c2c = fStack_4bc;
+              if ((int *)&stack0x00000000 != &g_BloodParticles[7].texture_index) {
+                _DAT_01cd0c28 = afStack_4c8[2];
+                _DAT_01cd0c2c = afStack_4c8[3];
                 _DAT_01cd0c30 = fStack_4b8;
               }
             }
@@ -943,7 +948,7 @@ LAB_004dbaf8:
                  puVar11[(uint)bVar13 * -2 + 1];
             core_actor_cpp_FUN_00408bb0();
             fStack_564 = *(float *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x24);
-            if (&stack0x00000000 != &g_CDemonLightInstance.field_0x53c) {
+            if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.rect_array[0x36].y_min) {
               _DAT_01ccc3b8 = fStack_568;
               _DAT_01ccc3c0 = fStack_560;
               _DAT_01ccc3bc = fStack_564;
@@ -994,7 +999,7 @@ LAB_004dbaf8:
             fStack_168 = fStack_168 + fStack_594;
             fStack_164 = fStack_164 + fStack_590;
           }
-          if (&stack0x00000000 != &g_CDemonLightInstance.field_0x140) {
+          if ((float *)&stack0x00000000 != &g_CDemonLightInstance.base.max_distance) {
             _DAT_01ccc3b8 = fStack_16c;
             _DAT_01ccc3bc = fStack_168;
             _DAT_01ccc3c0 = fStack_164;
@@ -1027,7 +1032,7 @@ LAB_004dbaf8:
         afStack_c0[1] = fStack_1a0 * _DAT_005e3604;
         fStack_520 = fStack_1a8 * _DAT_005e3604;
         *(float *)(&stack0xfffffae4 + (uint)bVar13 * -8) = afStack_c0[(uint)bVar13 * -2];
-        *(float *)(&stack0xfffffae8 + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
+        afStack_4f8[(uint)bVar13 * -2 + (uint)bVar13 * -2 + -8] =
              afStack_c0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1];
         core_actor_cpp_FUN_00408b40();
         afStack_c0[2] = fStack_1f0;
@@ -1074,7 +1079,7 @@ LAB_004dbaf8:
           afStack_c0[3] = afStack_c0[3] + fStack_1c8;
           fStack_b0 = fStack_b0 + fStack_1c4;
         }
-        if (&stack0x00000000 != &g_CDemonLightInstance.field_0x8c) {
+        if (&stack0x00000000 != g_CDemonLightInstance.base.camera_name + 0x4c) {
           _DAT_01ccc3b8 = afStack_c0[2];
           _DAT_01ccc3bc = afStack_c0[3];
           _DAT_01ccc3c0 = fStack_b0;
@@ -1148,7 +1153,7 @@ LAB_004dbaf8:
           afStack_24c[3] = afStack_24c[3] + fStack_a8;
           fStack_23c = fStack_23c + fStack_a4;
         }
-        if (&stack0x00000000 != &g_CDemonLightInstance.field_0x218) {
+        if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.rect_array[4].x_max) {
           _DAT_01ccc3b8 = afStack_24c[2];
           _DAT_01ccc3bc = afStack_24c[3];
           _DAT_01ccc3c0 = fStack_23c;
@@ -1161,11 +1166,11 @@ LAB_004dbaf8:
       }
     }
     else {
-      iVar7 = core_actor_cpp_FUN_0040c550(pCStack_50,"CEnemy");
+      iVar7 = core_actor_cpp_isOfClass_FUN_0040c550(pCStack_50,"CEnemy");
       if (iVar7 == 0) {
         iVar7 = *(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4);
         pfVar10 = (float *)((int)pCStack_50 + (uint)bVar13 * -8 + 0x24);
-        fStack_4b4 = *(float *)&pCStack_50->field_0x20;
+        fStack_4b4 = (pCStack_50->location).position.x;
         afStack_4b0[(uint)bVar13 * -2] = *pfVar10;
         afStack_4b0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] = pfVar10[(uint)bVar13 * -2 + 1];
         afStack_4b0[0] = *(float *)(iVar7 + 0x24);
@@ -1180,15 +1185,15 @@ LAB_004dbaf8:
         fStack_4b4 = fStack_4b4 + fStack_370;
         afStack_4b0[0] = afStack_4b0[0] + afStack_36c[0];
         afStack_4b0[1] = afStack_4b0[1] + afStack_36c[1];
-        if (&stack0x00000000 != &g_CDemonLightInstance.field_0x488) {
+        if ((int *)&stack0x00000000 != &g_CDemonLightInstance.base.rect_array[0x2b].x_max) {
           _DAT_01ccc3b8 = fStack_4b4;
           _DAT_01ccc3bc = afStack_4b0[0];
           _DAT_01ccc3c0 = afStack_4b0[1];
         }
-        if (&pCStack_70->field_0x20 != &DAT_01cd0c28) {
-          _DAT_01cd0c28 = *(float *)&pCStack_70->field_0x20;
-          _DAT_01cd0c30 = *(float *)&pCStack_70->field_0x28;
-          _DAT_01cd0c2c = *(float *)&pCStack_70->field_0x24;
+        if (&pCStack_70->location != (CLocation *)&DAT_01cd0c28) {
+          _DAT_01cd0c28 = (pCStack_70->location).position.x;
+          _DAT_01cd0c30 = (pCStack_70->location).position.z;
+          _DAT_01cd0c2c = (pCStack_70->location).position.y;
         }
         local_6c0 = 3.0;
       }
@@ -1201,12 +1206,12 @@ LAB_004dbaf8:
           afStack_444[(uint)bVar13 * -2 + 6] = afStack_3fc[(uint)bVar13 * -2 + 3];
           afStack_444[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 7] =
                afStack_3fc[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4];
-          if (&stack0x00000000 != &g_CDemonLightInstance.field_0x404) {
+          if ((CRect *)&stack0x00000000 != g_CDemonLightInstance.base.rect_array + 0x23) {
             _DAT_01ccc3b8 = fStack_430;
             _DAT_01ccc3bc = fStack_42c;
             _DAT_01ccc3c0 = fStack_428;
           }
-          if (&stack0x00000000 != &g_BloodParticles[5].field_0x44) {
+          if ((int *)&stack0x00000000 != &g_BloodParticles[5].texture_index) {
             _DAT_01cd0c28 = fStack_430;
             _DAT_01cd0c2c = fStack_42c;
             _DAT_01cd0c30 = fStack_428;
@@ -1263,7 +1268,7 @@ LAB_004da080:
       _DAT_01ccc3c4 = 0;
     }
     else {
-      fStack_18 = (float)core_actor_cpp_FUN_0040cd60();
+      fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60();
       fStack_69c = fStack_18;
       fVar3 = fStack_18 * _DAT_005e361c * (float)_DAT_005e3624;
       fStack_6a8 = -local_6a0;
@@ -1317,14 +1322,14 @@ LAB_004da080:
         fStack_26c = _DAT_01cd0c30 - *(float *)(iVar7 + 0x28);
         fStack_52c = afStack_27c[2];
         *(float *)(&stack0xfffffad8 + (uint)bVar13 * -8) = afStack_27c[(uint)bVar13 * -2 + 3];
-        *(float *)(&stack0xfffffadc + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
+        afStack_510[(uint)bVar13 * -2 + (uint)bVar13 * -2 + -5] =
              afStack_27c[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4];
-        core_vecdir_cpp_FUN_005a7520();
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
         uStack_55c = uStack_418;
         *(float *)(&stack0xfffffaa8 + (uint)bVar13 * -8) = afStack_444[(uint)bVar13 * -2 + 0xc];
         *(float *)(&stack0xfffffaac + (uint)bVar13 * -8 + (uint)bVar13 * -8) =
              afStack_444[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 0xd];
-        fStack_18 = (float)core_actor_cpp_FUN_0040cd60();
+        fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60();
         fStack_6ac = fStack_18;
         fVar3 = fStack_18 * _DAT_005e361c * (float)_DAT_005e3624;
         fStack_6b8 = -local_6a0;
@@ -1381,12 +1386,12 @@ LAB_004da080:
     afStack_390[(uint)bVar13 * -2] = *(float *)((int)&stack0xfffffa78 + (uint)bVar13 * -8);
     afStack_390[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
          *(float *)((int)&stack0xfffffa7c + (uint)bVar13 * -8 + (uint)bVar13 * -8);
-    core_vecdir_cpp_FUN_005a7520();
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520();
     uStack_2a4 = afStack_120[2];
     afStack_2a0[(uint)bVar13 * -2] = afStack_120[(uint)bVar13 * -2 + 3];
     afStack_2a0[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 1] =
          afStack_120[(uint)bVar13 * -2 + (uint)bVar13 * -2 + 4];
-    fStack_6b0 = (float)core_actor_cpp_FUN_0040cd60();
+    fStack_6b0 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60();
     if ((float)_DAT_005e364c < ABS(fStack_6b0)) {
       _DAT_01ccc3d4 = -1.0;
       param_2[8] = 1;

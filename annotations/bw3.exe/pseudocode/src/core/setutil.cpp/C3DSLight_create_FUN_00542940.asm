@@ -18,11 +18,11 @@
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_FUN_00459710
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dlight.cpp_CDemonLight_ctor_FUN_0045c180
 ;   core_dlight.cpp_CDemonLight_init_FUN_0045c2a0
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     SUB ESP,0x4                         ; 00542944
     MOV EBP,dword ptr [ESP + 0x18]      ; 00542947
     PUSH 0x2fac                         ; 0054294b
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00542950
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00542950
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00542955
     TEST EAX,EAX                        ; 00542958
     JNZ 0x00542a6e                      ; 0054295a
@@ -86,8 +86,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 005429d7
     ADD EAX,0x10                        ; 005429db
     PUSH EAX                            ; 005429de
-    CALL core_dirmat.cpp_FUN_0045b550   ; 005429df
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 005429df
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005429e4
     MOV EAX,dword ptr [ESP]             ; 005429e7
     MOV EDX,dword ptr [EBP + 0x11c]     ; 005429ea

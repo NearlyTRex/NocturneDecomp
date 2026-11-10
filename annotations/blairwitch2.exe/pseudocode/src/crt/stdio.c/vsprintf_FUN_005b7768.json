@@ -85,7 +85,7 @@
     {
       "addr": "005b7790",
       "from_addr": "005b77a8",
-      "name": "crt_unknown.c_FUN_005b7790",
+      "name": "crt_unknown.c_sprintf_FUN_005b7790",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,9 +95,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004a9330",
+      "from_addr": "004a934f",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004a9330",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004a9440",
       "from_addr": "004a945f",
       "name": "engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a9130",
+      "from_addr": "004a914f",
+      "name": "engine_font.cpp_CBitFont_drawTextFV_FUN_004a9130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,21 +119,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004a9130",
-      "from_addr": "004a914f",
-      "name": "engine_font.cpp_FUN_004a9130",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a9330",
-      "from_addr": "004a934f",
-      "name": "engine_font.cpp_FUN_004a9330",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047c760",
       "from_addr": "0047c77b",
       "name": "shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_0047c760",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047be40",
+      "from_addr": "0047be58",
+      "name": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -133,13 +139,7 @@
     {
       "addr": "0047bdf0",
       "from_addr": "0047be08",
-      "name": "shape_edittool.cpp_FUN_0047bdf0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047be40",
-      "from_addr": "0047be58",
-      "name": "shape_edittool.cpp_FUN_0047be40",
+      "name": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -221,7 +221,7 @@
       {
         "call_addr": "0047be58",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047be40",
+        "caller": "shape_edittool.cpp_CEditorTools_showError_FUN_0047be40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "0047be08",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047bdf0",
+        "caller": "shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -298,7 +298,7 @@
       {
         "call_addr": "005b77a8",
         "call_type": "direct",
-        "caller": "crt_unknown.c_FUN_005b7790",
+        "caller": "crt_unknown.c_sprintf_FUN_005b7790",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

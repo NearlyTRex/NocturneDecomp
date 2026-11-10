@@ -16,16 +16,16 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[13]:
-;   core_bodypart.cpp_FUN_0041a200 at 0041a438
-;   core_bugs.cpp_FUN_004263d0 at 004264e1
-;   core_charactr.cpp_FUN_00430440 at 004307a6
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200 at 0041a438
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 004264e1
+;   core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440 at 004307a6
 ;   core_charactr.cpp_FUN_00432690 at 004326d6
 ;   core_cloth.cpp_CCloth_orientBoneToChild_FUN_0043fa20 at 0043fb26
-;   core_fire.cpp_FUN_004ac3e0 at 004ac54f
+;   core_fire.cpp_CBulletHole_init_FUN_004ac3e0 at 004ac54f
 ;   core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004fd750 at 004fd79b
-;   core_mimic.cpp_FUN_0050f7e0 at 0050f979
+;   core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0 at 0050f979
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_0053adb0 at 0053ae38
-;   core_platfrm.cpp_FUN_00539810 at 00539a21
+;   core_platfrm.cpp_CPlatform_process_FUN_00539810 at 00539a21
 ;   ... and 3 more
 ;
 ; Called Functions:

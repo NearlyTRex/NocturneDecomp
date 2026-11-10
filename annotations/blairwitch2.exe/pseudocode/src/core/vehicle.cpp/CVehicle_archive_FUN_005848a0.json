@@ -1,0 +1,251 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 133,
+    "complexity_score": 114,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 6,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 177
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005848a0",
+    "address_range": [
+      [
+        "005848a0",
+        "00584a20"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vehicle.cpp_CVehicle_archive_FUN_005848a0",
+    "signature": "void __cdecl core_vehicle_cpp_CVehicle_archive_FUN_005848a0(CVehicle *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b9e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b9e0"
+    },
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040ba60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040ba60"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "0040b4b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b4b0"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005edd37",
+      "name": "s_modelName_005edd35+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005edd41",
+      "name": "s_tireCount_005edd41",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd4b",
+      "name": "s_static_bpos_005edd4b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd57",
+      "name": "s_radius_005edd57",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd5e",
+      "name": "s_width_005edd5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd64",
+      "name": "s_curTime_005edd64",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd6c",
+      "name": "s_totalTime_005edd6c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd76",
+      "name": "s_courseName_005edd76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd81",
+      "name": "s_lastMobsterLeft_005edd81",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005edd91",
+      "name": "s_lastMobsterRight_005edd91",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061e4d4",
+      "name": "g_CVehicleClassVersion",
+      "type": "int",
+      "value": "0x3"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.108108108108108,
+    "instruction_count": 111,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 12,
+      "CBRANCH": 5,
+      "COPY": 70,
+      "INT_ADD": 59,
+      "INT_AND": 75,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 77,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 30,
+      "INT_SEXT": 3,
+      "INT_SLESS": 37,
+      "INT_SUB": 44,
+      "INT_XOR": 1,
+      "LOAD": 27,
+      "POPCOUNT": 37,
+      "RETURN": 3,
+      "STORE": 41,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 567
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVehicle *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "puVar3 = &this_ptr->tires[0].field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "puVar2 = &this_ptr->tires[0].field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 18,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "puVar4 = &this_ptr->tires[0].field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar4` was initialized to the address of an array element's subfield (`puVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 24,
+      "match": "puVar4 = puVar4 + N",
+      "severity": "moderate",
+      "text": "puVar4 = puVar4 + 0x1b4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar2` was initialized to the address of an array element's subfield (`puVar2 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar2)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar2->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 26,
+      "match": "puVar2 = puVar2 + N",
+      "severity": "moderate",
+      "text": "puVar2 = puVar2 + 0x1b4;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar3` was initialized to the address of an array element's subfield (`puVar3 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar3)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar3->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 27,
+      "match": "puVar3 = puVar3 + N",
+      "severity": "moderate",
+      "text": "puVar3 = puVar3 + 0x1b4;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fd9f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

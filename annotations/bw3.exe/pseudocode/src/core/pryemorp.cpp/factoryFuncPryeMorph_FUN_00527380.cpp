@@ -11,7 +11,7 @@ void core_pryemorp_cpp_factoryFuncPryeMorph_FUN_00527380(void)
 {
   CPryeMorph *this_ptr;
   
-  this_ptr = (CPryeMorph *)FUN_005a3cb2(0x21448);
+  this_ptr = (CPryeMorph *)debugAllocTracked1(0x21448);
   if (this_ptr == (CPryeMorph *)0x0) {
     return;
   }

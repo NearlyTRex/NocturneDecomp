@@ -21,9 +21,9 @@ void __cdecl setColor(int color_value);
 // Address: 004660b0
 void __cdecl setColorRGB(int red,int green,int blue);
 
-// Original: cockpit_drawsurf.cpp_FUN_00466350
+// Original: cockpit_drawsurf.cpp_setCurrentFont_FUN_00466350
 // Address: 00466350
-void __cdecl FUN_00466350(CBitFont *font_ptr);
+void __cdecl setCurrentFont(CBitFont *font_ptr);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00466360
 // Address: 00466360
@@ -57,9 +57,9 @@ void __cdecl CDrawSurface::drawCircleFromBottomRight(CDrawSurface *this_ptr,int 
 // Address: 00466770
 void __cdecl CDrawSurface::drawRectangleCornerPoints(CDrawSurface *this_ptr,int x,int y,int width,int height);
 
-// Original: cockpit_drawsurf.cpp_FUN_00466820
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820
 // Address: 00466820
-void FUN_00466820(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CDrawSurface::drawClippedLine(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawLineBresenham_FUN_00466960
 // Address: 00466960
@@ -89,21 +89,21 @@ void __cdecl CDrawSurface::drawAntiAliasedLine(CDrawSurface *this_ptr,int x1,int
 // Address: 00467350
 void __cdecl CDrawSurface::drawRectangleOutline(CDrawSurface *this_ptr,int x,int y,int width,int height);
 
-// Original: cockpit_drawsurf.cpp_FUN_004673b0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawSurfaceBorder_FUN_004673b0
 // Address: 004673b0
-void __cdecl FUN_004673b0(CDrawSurface *this_ptr);
+void __cdecl CDrawSurface::drawSurfaceBorder(CDrawSurface *this_ptr);
 
 // Original: cockpit_drawsurf.cpp_FUN_004674b0
 // Address: 004674b0
-void FUN_004674b0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+void FUN_004674b0(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
 
 // Original: cockpit_drawsurf.cpp_FUN_00467610
 // Address: 00467610
-void FUN_00467610(CDrawSurface *param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl FUN_00467610(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
 // Original: cockpit_drawsurf.cpp_FUN_004677e0
 // Address: 004677e0
-void FUN_004677e0(int *param_1);
+void __cdecl FUN_004677e0(CDrawSurface *this_ptr);
 
 // Original: cockpit_drawsurf.cpp_FUN_004678e0
 // Address: 004678e0
@@ -125,21 +125,21 @@ void FUN_00467910(undefined4 param_1);
 // Address: 00467920
 void __cdecl CDrawSurface::fillRectangle(CDrawSurface *this_ptr,int x1,int y1,int x2,int y2);
 
-// Original: cockpit_drawsurf.cpp_FUN_00467ac0
+// Original: cockpit_drawsurf.cpp_CDrawSurface_fillFullSurface_FUN_00467ac0
 // Address: 00467ac0
-void __cdecl FUN_00467ac0(CDrawSurface *this_ptr);
+void __cdecl CDrawSurface::fillFullSurface(CDrawSurface *this_ptr);
 
-// Original: cockpit_drawsurf.cpp_FUN_00467f70
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70
 // Address: 00467f70
-void __cdecl FUN_00467f70(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
+void __cdecl CDrawSurface::drawTextWithAlignment(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_00468240
 // Address: 00468240
 void __cdecl CDrawSurface::drawTextRightAligned(CDrawSurface *this_ptr,char *text,int x,int y);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468270
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00468270
 // Address: 00468270
-void FUN_00468270(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl CDrawSurface::drawTextRightAlignedWrapper(CDrawSurface *this_ptr,int x,int y,char *text);
 
 // Original: cockpit_drawsurf.cpp_FUN_004682a0
 // Address: 004682a0
@@ -157,9 +157,9 @@ void FUN_00468370(CDrawSurface *param_1,int param_2,int param_3,undefined4 param
 // Address: 004683e0
 void __cdecl CDrawSurface::drawTextCentered(CDrawSurface *this_ptr,char *text,int x,int y);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468410
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredWrapper_FUN_00468410
 // Address: 00468410
-void FUN_00468410(CDrawSurface *param_1,int param_2,int param_3,char *param_4);
+void __cdecl CDrawSurface::drawTextCenteredWrapper(CDrawSurface *this_ptr,int x,int y,char *text);
 
 // Original: cockpit_drawsurf.cpp_FUN_00468440
 // Address: 00468440
@@ -185,9 +185,9 @@ void FUN_004685e0(CDrawSurface *param_1,int param_2,int param_3,undefined4 param
 // Address: 00468650
 void __cdecl CDrawSurface::drawTextCenteredInBounds(CDrawSurface *this_ptr,char *text,int x,int width,int y);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468680
+// Original: cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBoundsWrapper_FUN_00468680
 // Address: 00468680
-void FUN_00468680(CDrawSurface *param_1,int param_2,int param_3,int param_4,char *param_5);
+void __cdecl CDrawSurface::drawTextCenteredInBoundsWrapper(CDrawSurface *this_ptr,int x,int y,int width,char *text);
 
 // Original: cockpit_drawsurf.cpp_FUN_004686b0
 // Address: 004686b0
@@ -221,14 +221,14 @@ void __cdecl CDrawSurface::drawTextCenteredFullSurfacePrintf(CDrawSurface *this_
 // Address: 00468aec
 int FUN_00468aec(undefined4 param_1,int param_2);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468b30
+// Original: cockpit_drawsurf.cpp_CDrawSurface_getCurrentFontMaxWidth_FUN_00468b30
 // Address: 00468b30
-int __cdecl FUN_00468b30(CDrawSurface *this_ptr);
+int __cdecl CDrawSurface::getCurrentFontMaxWidth(CDrawSurface *this_ptr);
 
 // Original: cockpit_drawsurf.cpp_CDrawSurface_getTextWidth_FUN_00468b50
 // Address: 00468b50
 int __cdecl CDrawSurface::getTextWidth(CDrawSurface *this_ptr,char *text);
 
-// Original: cockpit_drawsurf.cpp_FUN_00468b80
+// Original: cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80
 // Address: 00468b80
-void FUN_00468b80(CBitFont *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5,CDrawSurface *param_6,undefined4 param_7,undefined4 param_8,CDrawSurface *param_9,undefined4 param_10,undefined4 param_11,CDrawSurface *param_12,undefined4 param_13,undefined4 param_14,CDrawSurface *param_15,undefined4 param_16,int param_17,CDrawSurface *param_18,undefined4 param_19,int param_20,CDrawSurface *param_21,undefined4 param_22,int param_23,CDrawSurface *param_24,undefined4 param_25,int param_26,CDrawSurface *param_27,int param_28,CDrawSurface *param_29,undefined4 *param_30,undefined4 *param_31,int param_32,int param_33,undefined4 param_34,CDrawSurface *param_35);
+void __cdecl testDrawingSurface(CBitFont *test_font);

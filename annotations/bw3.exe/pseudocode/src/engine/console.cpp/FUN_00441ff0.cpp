@@ -38,7 +38,7 @@ void engine_console_cpp_FUN_00441ff0(CConsole *param_1,uint param_2)
     } while (iVar3 < (int)(~uVar2 - 1));
   }
   engine_console_cpp_CConsole_writeChar_FUN_004420c0(param_1,'\0');
-  if (*(int *)param_1 != 0) {
+  if (param_1->file_logging_enabled != 0) {
     iVar3 = _fopen("console.txt",&DAT_005b93df);
     if (iVar3 != 0) {
       FUN_005a3140(iVar3,&DAT_005b93e2,local_1014);

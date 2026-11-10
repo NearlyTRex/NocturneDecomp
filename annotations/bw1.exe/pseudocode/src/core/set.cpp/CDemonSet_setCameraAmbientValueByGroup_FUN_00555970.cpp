@@ -14,14 +14,14 @@ void __cdecl core_set_cpp_CDemonSet_setCameraAmbientValueByGroup_FUN_00555970(CD
   
   index = 0;
   pCVar1 = this_ptr;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->camera_count) {
     do {
-      if (group_id == *(int *)&pCVar1->field_0x150) {
-        core_set_cpp_FUN_005558f0(this_ptr,index,value);
+      if (group_id == *(int *)&pCVar1->cameras[0].field_0x14c) {
+        core_set_cpp_CDemonSet_setCameraAmbientValue_FUN_005558f0(this_ptr,index,value);
       }
       index = index + 1;
-      pCVar1 = (CDemonSet *)&pCVar1->field_0x1a4;
-    } while (index < *(int *)this_ptr);
+      pCVar1 = (CDemonSet *)&pCVar1->cameras[0].field_0x1a0;
+    } while (index < this_ptr->camera_count);
   }
   return;
 }

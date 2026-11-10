@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CConstruct_BoneTypeInfo
+;   WatcomTypeInfo g_CConstructBoneTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 0044470d
     SUB EAX,0x954                       ; 0044470f
     PUSH EAX                            ; 00444714
-    CALL core_cloth.cpp_FUN_0043f900    ; 00444715
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 00444715
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0044471a
     PUSH 0x0                            ; 0044471d
     SUB EAX,0x2db0                      ; 0044471f
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EBX                         ; 00444749
     POP EBX                             ; 0044474b
     RET                                 ; 0044474c
-    PUSH 0x5ddb40                       ; 0044474d | g_CConstruct_BoneTypeInfo
+    PUSH 0x5ddb40                       ; 0044474d | g_CConstructBoneTypeInfo
         ;   Label: LAB_0044474d
     PUSH EBX                            ; 00444752
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 00444753

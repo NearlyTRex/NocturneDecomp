@@ -11,8 +11,8 @@ void __cdecl core_gore_cpp_CGore_spawnFliesOnActor_FUN_004e64d0(CGore *this_ptr,
 {
   int iVar1;
   
-  iVar1 = core_gore_cpp_FUN_004e63e0(this_ptr,&actor->field_0x20,gather_count,spawn_rate,box_size);
-  *(uint *)(iVar1 + 0x2c) = *(uint *)&actor->field_0x2c;
+  iVar1 = core_gore_cpp_FUN_004e63e0(this_ptr,&actor->location,gather_count,spawn_rate,box_size);
+  *(int *)(iVar1 + 0x2c) = (actor->location).area_id;
   *(CDemonActor **)(iVar1 + 0x2a08) = actor;
   return;
 }

@@ -7,7 +7,7 @@
 ; CSpike *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_spike.cpp_FUN_005831b0 at 005834ce
+;   core_spike.cpp_CSpike_process_FUN_005831b0 at 005834ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f62cc

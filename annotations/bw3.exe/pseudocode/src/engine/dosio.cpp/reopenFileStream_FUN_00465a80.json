@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 88,
-    "complexity_score": 218,
+    "complexity_score": 290,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 1,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 18,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
+    "suspect_count": 24,
     "suspect_types": [
+      "raw_address_constant",
+      "unaffected_reg",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 116
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -26,28 +28,28 @@
     ],
     "convention": "__cdecl",
     "name": "engine_dosio.cpp_reopenFileStream_FUN_00465a80",
-    "signature": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,undefined4 param_2,uint param_3,int *param_4)"
+    "signature": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,undefined4 param_2,undefined4 param_3,_FILE *param_4,undefined4 param_5,uint param_6)"
   },
   "function_calls": [
     {
       "addr": "005a4dac",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a4dac"
+      "name": "crt_unknown.c_fflush_FUN_005a4dac"
     },
     {
       "addr": "005a4de7",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a4de7"
-    },
-    {
-      "addr": "005a4e29",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a4e29"
+      "name": "crt_unknown.c_ios_clear_FUN_005a4de7"
     },
     {
       "addr": "005a4e88",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a4e88"
+      "name": "crt_unknown.c_istream_seekg_FUN_005a4e88"
+    },
+    {
+      "addr": "005a4e29",
+      "is_variadic": false,
+      "name": "crt_unknown.c_openFile_FUN_005a4e29"
     },
     {
       "addr": "005a4e10",
@@ -127,7 +129,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)",
       "type": "unnamed_param"
     },
     {
@@ -135,7 +137,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)",
       "type": "unnamed_param"
     },
     {
@@ -143,7 +145,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)",
       "type": "unnamed_param"
     },
     {
@@ -151,84 +153,124 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,int *param_4)",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
-      "match": "param_4",
+      "line": 4,
+      "match": "param_5",
       "severity": "mild",
-      "text": "FUN_005a4dac(param_4);",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00465a80(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "int unaff_EBX;",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
       "line": 13,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005a4de7(*(int *)(*param_4 + 4) + (int)param_4,0);",
+      "text": "_fflush(param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 14,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005a4de7(*(int *)(*param_4 + 4) + (int)param_4,0);",
+      "text": "ios_clear((ios *)(param_4 + *(int *)(*(int *)param_4 + 4)),0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 14,
-      "match": "param_1",
+      "match": "param_4",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(auStack_220,param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465660(auStack_220,param_1,param_2);",
+      "text": "ios_clear((ios *)(param_4 + *(int *)(*(int *)param_4 + 4)),0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 15,
-      "match": "param_3",
+      "match": "param_1",
       "severity": "mild",
-      "text": "if ((param_3 & 0x52) == 0) {",
+      "text": "engine_dosio_cpp_FUN_00465660(acStack_214,param_1,param_5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
+      "line": 15,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "engine_dosio_cpp_FUN_00465660(acStack_214,param_1,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 16,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "if ((param_6 & 0x52) == 0) {",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 19,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005a4e29(param_4,auStack_120,param_3,_DAT_005e8800);",
+      "text": "openFile(param_4,acStack_114,param_6,_DAT_005e8800);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 18,
-      "match": "param_3",
+      "line": 19,
+      "match": "param_6",
       "severity": "mild",
-      "text": "FUN_005a4e29(param_4,auStack_120,param_3,_DAT_005e8800);",
+      "text": "openFile(param_4,acStack_114,param_6,_DAT_005e8800);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 20,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "if (unaff_EBX != 0) {",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "istream_seekg(param_4 + 0x44,unaff_EBX);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 22,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005a4e88(param_4 + 0x11,iStack_20);",
+      "text": "istream_seekg(param_4 + 0x44,unaff_EBX);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != (char *)0x0) {",
@@ -236,7 +278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "_mkdir(param_1);",
@@ -244,19 +286,27 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
+      "line": 31,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005a4e29(param_4,auStack_220,param_3,_DAT_005e8800);",
+      "text": "openFile(param_4,acStack_214,param_6,_DAT_005e8800);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_3",
+      "line": 31,
+      "match": "param_6",
       "severity": "mild",
-      "text": "FUN_005a4e29(param_4,auStack_220,param_3,_DAT_005e8800);",
+      "text": "openFile(param_4,acStack_214,param_6,_DAT_005e8800);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Raw hex address 0x465b48 assigned to bare local `uStack_210`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_210` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 21,
+      "match": "0x465b48",
+      "severity": "moderate",
+      "text": "uStack_210 = 0x465b48;",
+      "type": "raw_address_constant"
     }
   ]
 }

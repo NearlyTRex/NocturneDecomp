@@ -6,38 +6,41 @@
 
 #include "nocturne.h"
 
+/* WARNING: Type propagation algorithm not settling */
+
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_00420450(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity)
 
 {
   byte bVar1;
-  uint auStackY_1010 [1016];
-  uint local_28;
-  uint local_1c;
-  uint local_18 [2];
+  float afStackY_1010 [1016];
+  float local_28;
+  float local_1c;
+  float local_18;
+  float local_14;
   
   bVar1 = 0;
   if (linear_velocity != (CVector3f *)0x0) {
-    if ((CVector3f *)(this_ptr + 0x40) != linear_velocity) {
-      *(uint *)(this_ptr + 0x40) = *(uint *)linear_velocity;
-      *(uint *)(this_ptr + 0x44) = *(uint *)&linear_velocity->field_0x4;
-      *(uint *)(this_ptr + 0x48) = *(uint *)&linear_velocity->field_0x8;
+    if (&this_ptr->linear_velocity != linear_velocity) {
+      (this_ptr->linear_velocity).x = linear_velocity->x;
+      (this_ptr->linear_velocity).y = linear_velocity->y;
+      (this_ptr->linear_velocity).z = linear_velocity->z;
     }
-    core_dirmat_cpp_FUN_0045f700(this_ptr + 0x18,this_ptr + 0x40);
+    core_dirmat_cpp_FUN_0045f700(&this_ptr->rotation_matrix,&this_ptr->linear_velocity);
     local_1c = local_28;
-    local_18[(uint)bVar1 * -2] = *(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
-    local_18[(uint)bVar1 * -2 + (uint)bVar1 * -2 + 1] =
+    (&stack0xffffffe8)[(uint)bVar1 * 0xfffffffe] =
+         (float)*(uint *)(&stack0xffffffdc + (uint)bVar1 * -8);
+    *(uint *)((int)&stack0xffffffec + (uint)bVar1 * -8 + (uint)bVar1 * -8) =
          *(uint *)(&stack0xffffffe0 + (uint)bVar1 * -8 + (uint)bVar1 * -8);
-    if (this_ptr + 0x4c != (CBox *)&local_1c) {
-      *(uint *)(this_ptr + 0x4c) = local_1c;
-      *(uint *)(this_ptr + 0x50) = local_18[0];
-      *(uint *)(this_ptr + 0x54) = local_18[1];
+    if (&this_ptr->linear_velocity_local != (CVector3f *)&stack0xffffffe4) {
+      (this_ptr->linear_velocity_local).x = local_1c;
+      (this_ptr->linear_velocity_local).y = local_18;
+      (this_ptr->linear_velocity_local).z = local_14;
     }
   }
-  if ((angular_velocity != (CVector3f *)0x0) && ((CVector3f *)(this_ptr + 0x70) != angular_velocity)
-     ) {
-    *(uint *)(this_ptr + 0x70) = *(uint *)angular_velocity;
-    *(uint *)(this_ptr + 0x74) = *(uint *)&angular_velocity->field_0x4;
-    *(uint *)(this_ptr + 0x78) = *(uint *)&angular_velocity->field_0x8;
+  if ((angular_velocity != (CVector3f *)0x0) && (&this_ptr->angular_velocity != angular_velocity)) {
+    (this_ptr->angular_velocity).x = angular_velocity->x;
+    (this_ptr->angular_velocity).y = angular_velocity->y;
+    (this_ptr->angular_velocity).z = angular_velocity->z;
     return;
   }
   return;

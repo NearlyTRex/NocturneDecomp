@@ -18,9 +18,9 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540
-;   core_flame.cpp_FUN_004a6090
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004a6090
 ;   crt_math.c_round_FUN_005a3120
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046cf30
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_0046d4b0
@@ -165,8 +165,8 @@ section .text
     LEA EAX,[EBX + 0x3c4]               ; 00576f6a
         ;   Label: LAB_00576f6a
     PUSH EAX                            ; 00576f70
-    CALL core_flame.cpp_FUN_004a6090    ; 00576f71
-        ;   XREF to: 004a6090 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_FUN_004a6090(CFlame * this_ptr)
+    CALL core_flame.cpp_CFlame_renderTransparent_FUN_004a6090 ; 00576f71
+        ;   XREF to: 004a6090 (UNCONDITIONAL_CALL)  ; int core_flame.cpp_CFlame_renderTransparent_FUN_004a6090(CFlame * this_ptr)
     ADD ESP,0x4                         ; 00576f76
     JMP 0x00576e36                      ; 00576f79
         ;   XREF to: 00576e36 (UNCONDITIONAL_JUMP)  ; LAB_00576e36
@@ -193,8 +193,8 @@ section .text
     PUSH 0x5d70dc                       ; 00576fb1 | = "BWATER%d.RAW"
     ADD EAX,0x12c                       ; 00576fb6
     PUSH EAX                            ; 00576fbb
-    CALL crt_unknown.c_FUN_005a28c0     ; 00576fbc
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00576fbc
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00576fc1
     PUSH 0xbb80                         ; 00576fc4
     MOV ESI,dword ptr [0x005f2afc]      ; 00576fc9 | DAT_005f2afc

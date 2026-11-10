@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4)
+; void unkaddr_0059c270_cpp_FUN_0059c380(undefined4 param_1,undefined4 param_2,int param_3,char *param_4)
 ;
 ;
 ; XREF[1]:
@@ -12,7 +12,7 @@
 ;   TerminatedCString s_s_ON_i_005ef70c
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     PUSH EDX                            ; 0059c391
     PUSH 0x5ef700                       ; 0059c392 | = "%s:OFF (%i)"
     PUSH ECX                            ; 0059c397
-    CALL crt_unknown.c_FUN_005b7790     ; 0059c398
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0059c398
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0059c39d
     RET                                 ; 0059c3a0
     PUSH EAX                            ; 0059c3a1
@@ -38,8 +38,8 @@ section .text
     PUSH EDX                            ; 0059c3a2
     PUSH 0x5ef70c                       ; 0059c3a3 | = "%s:ON (%i)"
     PUSH ECX                            ; 0059c3a8
-    CALL crt_unknown.c_FUN_005b7790     ; 0059c3a9
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0059c3a9
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0059c3ae
     RET                                 ; 0059c3b1
 

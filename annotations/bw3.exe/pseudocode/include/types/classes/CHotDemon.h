@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CHotDemon
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd088 (53384 bytes)
 #pragma pack(push, 1)
 typedef struct CHotDemon {
-    char field_0[53384]; // 0x0
+    CEnemy base; // 0x0
+    char field_53332[52]; // 0xd054
 } CHotDemon;
 #pragma pack(pop)
 

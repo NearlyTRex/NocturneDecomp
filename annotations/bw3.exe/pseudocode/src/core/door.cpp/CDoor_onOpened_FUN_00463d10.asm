@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_CCharacter_clearDoorTarget_FUN_00431980 at 00431992
-;   core_hero.cpp_FUN_004d3250 at 004d3291
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250 at 004d3291
 ;   core_hero.cpp_FUN_004d4520 at 004d4694
 ;
 ; Referenced Globals:

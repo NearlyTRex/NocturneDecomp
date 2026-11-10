@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 446,
+    "complexity_score": 457,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 71,
-    "suspect_count": 36,
+    "pseudocode_lines": 67,
+    "suspect_count": 37,
     "suspect_types": [
-      "raw_address_constant",
+      "stack_ref",
+      "unaffected_reg",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 287
+    "total_lines": 283
   },
   "cross_references": [],
   "function": {
@@ -27,7 +28,7 @@
     ],
     "convention": "unknown",
     "name": "cockpit_pkbmpset.cpp_FUN_0051080e",
-    "signature": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8)"
+    "signature": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,undefined4 param_6,int param_7,undefined4 param_8,undefined4 param_9,int param_10)"
   },
   "function_calls": [
     {
@@ -66,11 +67,6 @@
       "name": "crt_stdio.c_fread_FUN_005a3890"
     },
     {
-      "addr": "005a28c0",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
-    },
-    {
       "addr": "005a3650",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a3650"
@@ -79,6 +75,11 @@
       "addr": "005a3770",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005a3770"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004659c0",
@@ -178,7 +179,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -186,7 +187,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -194,7 +195,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -202,7 +203,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -210,7 +211,7 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -218,7 +219,7 @@
       "line": 4,
       "match": "param_6",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -226,7 +227,7 @@
       "line": 4,
       "match": "param_7",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
@@ -234,12 +235,36 @@
       "line": 4,
       "match": "param_8",
       "severity": "mild",
-      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,uint param_6,uint param_7,int param_8)",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 4,
+      "match": "param_9",
+      "severity": "mild",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_10",
+      "severity": "mild",
+      "text": "void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,uint param_6,int param_7,uint param_8,uint param_9,int param_10)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "ulong unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
       "text": "unkafter_pkbitmap_cpp_FUN_00510670(param_1);",
@@ -247,66 +272,74 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 19,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cbfe0,param_2);",
+      "text": "iVar1 = engine_dosio_cpp_getFileSize_FUN_004657f0((char *)0x5cbfe0,param_2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 20,
       "match": "param_2",
       "severity": "mild",
       "text": "p_Stack_18 = engine_dosio_cpp_FUN_004659c0((char *)0x5cbfe7,param_2,(char *)0x5cbfe4);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005a28c0(&uStack_1a8,\"Unable to open %s in CPackedBitmapSet::loadJoinedRAW\",param_2);",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 22,
+      "match": "&stack0xfffffe58",
+      "severity": "moderate",
+      "text": "_sprintf(&stack0xfffffe58,\"Unable to open %s in CPackedBitmapSet::loadJoinedRAW\");",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 25,
+      "match": "&stack0xfffffe58",
+      "severity": "moderate",
+      "text": "core_main_c_FUN_004e4330(&stack0xfffffe58);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_3",
       "severity": "mild",
-      "text": "uStack_14 = param_3 * param_4;",
+      "text": "iStack_14 = param_3 * (int)param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 27,
       "match": "param_4",
       "severity": "mild",
-      "text": "uStack_14 = param_3 * param_4;",
+      "text": "iStack_14 = param_3 * (int)param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_2",
+      "line": 35,
+      "match": "param_1",
       "severity": "mild",
-      "text": "(auStack_144,\"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW\",param_2,iVar2,param_3,param_4);",
+      "text": "cockpit_pkbmpset_cpp_FUN_005106a0(param_1,iVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_3",
+      "line": 36,
+      "match": "param_1",
       "severity": "mild",
-      "text": "(auStack_144,\"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW\",param_2,iVar2,param_3,param_4);",
+      "text": "param_1->height = (int)param_4;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 36,
       "match": "param_4",
       "severity": "mild",
-      "text": "(auStack_144,\"Size of %s is %lu, must be a multiple of frame size %ux%u in CPackedBitmapSet::loadJoinedRAW\",param_2,iVar2,param_3,param_4);",
+      "text": "param_1->height = (int)param_4;",
       "type": "unnamed_param"
     },
     {
@@ -314,55 +347,79 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "cockpit_pkbmpset_cpp_FUN_005106a0(param_1,iVar3);",
+      "text": "param_1->width = param_5;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 37,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_1->width = param_5;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 38,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "bitmap_data = FUN_005a3650(unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = param_4;",
+      "text": "if (0 < param_1->bitmap_count) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_4",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x20) = param_4;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c) = param_3;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
+      "description": "Unaffected register variable",
       "line": 49,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "iVar3 = _fread(bitmap_data,unaff_EDI);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)param_1) {",
+      "text": "((CPackedBitmap *)(param_1->bitmap_array->filename + iVar2),bitmap_data,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
-      "match": "param_2",
+      "line": 59,
+      "match": "param_1",
       "severity": "mild",
-      "text": "FUN_005a28c0(auStack_7c,\"Error reading from %s in CPackedBitmapSet::loadJoinedRAW\",param_2);",
+      "text": "param_1->width,param_1->height,param_7,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1->width,param_1->height,param_7,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "param_1->width,param_1->height,param_7,param_5);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "param_1->width,param_1->height,param_7,param_5);",
       "type": "unnamed_param"
     },
     {
@@ -370,88 +427,40 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CPackedBitmap *)(*(int *)(param_1 + 4) + iVar3),bitmap_data,",
+      "text": "} while (iVar1 < param_1->bitmap_count);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c),*(int *)(param_1 + 0x20),param_5,param_3);",
+      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00510f90(param_1,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_1",
+      "line": 65,
+      "match": "param_4",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c),*(int *)(param_1 + 0x20),param_5,param_3);",
+      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00510f90(param_1,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_5",
+      "line": 66,
+      "match": "param_10",
       "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c),*(int *)(param_1 + 0x20),param_5,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 62,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "*(int *)(param_1 + 0x1c),*(int *)(param_1 + 0x20),param_5,param_3);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 64,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00510f90(param_1,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 68,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_setFilename_FUN_00510f90(param_1,param_2);",
+      "text": "if (param_10 == 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 69,
-      "match": "param_8",
-      "severity": "mild",
-      "text": "if (param_8 == 0) {",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "cockpit_pkbmpset_cpp_CPackedBitmapSet_loadStoredACTFile_FUN_00510fb0(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Raw hex address 0x510a76 assigned to bare local `uStack_1a8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack_1a8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 72,
-      "match": "0x510a76",
-      "severity": "moderate",
-      "text": "uStack_1a8 = 0x510a76;",
-      "type": "raw_address_constant"
     }
   ]
 }

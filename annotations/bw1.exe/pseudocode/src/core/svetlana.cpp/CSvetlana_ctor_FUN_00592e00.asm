@@ -10,9 +10,9 @@
 ;   core_svetlana.cpp_factoryFuncSvetlana_FUN_00592dd0 at 00592de3
 ;
 ; Called Functions:
-;   core_cloth.cpp_FUN_0043e5c0
-;   core_hero.cpp_FUN_004ea830
-;   core_skeleton.cpp_FUN_00569f50
+;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
+;   core_hero.cpp_CHero_ctor_FUN_004ea830
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -22,18 +22,18 @@ section .text
         ;   Label: core_svetlana.cpp_CSvetlana_ctor_FUN_00592e00
     MOV EBX,dword ptr [ESP + 0x8]       ; 00592e01
     PUSH EBX                            ; 00592e05
-    CALL core_hero.cpp_FUN_004ea830     ; 00592e06
-        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004ea830(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_ctor_FUN_004ea830 ; 00592e06
+        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ea830(CHero * this_ptr)
     ADD ESP,0x4                         ; 00592e0b
     ADD EAX,0x1ffb4                     ; 00592e0e
     PUSH EAX                            ; 00592e13
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 00592e14
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 00592e14
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00592e19
     ADD EAX,0x3ab30                     ; 00592e1c
     PUSH EAX                            ; 00592e21
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 00592e22
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 00592e22
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00592e27
     LEA EBX,[EAX + 0xfffa551c]          ; 00592e2a
     PUSH 0x5f73e9                       ; 00592e30
@@ -42,8 +42,8 @@ section .text
     MOV dword ptr [EBX + 0x1ffac],0x0   ; 00592e45
     PUSH EAX                            ; 00592e4f
     MOV dword ptr [EBX + 0x1ffb0],0x0   ; 00592e50
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00592e5a
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00592e5a
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     LEA EAX,[EBX + 0x95618]             ; 00592e5f
     MOV dword ptr [EBX + 0x95624],0x3f800000 ; 00592e65
     MOV dword ptr [EAX + 0x8],0x0       ; 00592e6f

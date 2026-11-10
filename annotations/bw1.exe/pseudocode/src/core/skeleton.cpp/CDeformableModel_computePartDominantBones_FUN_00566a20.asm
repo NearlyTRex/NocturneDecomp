@@ -65,15 +65,15 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
+;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_00565830
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00567370
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_00569b50
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00567500
-;   core_skeleton.cpp_FUN_00563bb0
-;   core_skeleton.cpp_FUN_00563c40
-;   core_skeleton.cpp_FUN_00569180
-;   core_skeleton.cpp_FUN_00569890
-;   crt_unknown.c_FUN_005c0f32
+;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -109,19 +109,19 @@ section .text
     RET                                 ; 00566a66
     PUSH EAX                            ; 00566a67
         ;   Label: LAB_00566a67
-    CALL core_skeleton.cpp_FUN_00563bb0 ; 00566a68
-        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00563bb0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0 ; 00566a68
+        ;   XREF to: 00563bb0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00563bb0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00566a6d
     MOV EBX,dword ptr [EBP + 0x14]      ; 00566a70
     PUSH EBX                            ; 00566a73
-    CALL core_skeleton.cpp_FUN_00563c40 ; 00566a74
-        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_00563c40(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40 ; 00566a74
+        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00566a79
     MOV EAX,dword ptr [EAX + 0x1de78]   ; 00566a7c
     PUSH 0x23a4                         ; 00566a82
     MOV dword ptr [ESP + 0x234],EAX     ; 00566a87
-    CALL crt_unknown.c_FUN_005c0f32     ; 00566a8e
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00566a8e
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 00566a93
     TEST EAX,EAX                        ; 00566a96
     JZ 0x00566aa3                       ; 00566a98
@@ -158,13 +158,13 @@ section .text
     ADD ESP,0x4                         ; 00566af2
     MOV EBX,dword ptr [ESP + 0x234]     ; 00566af5
     PUSH EBX                            ; 00566afc
-    CALL core_skeleton.cpp_FUN_00569180 ; 00566afd
-        ;   XREF to: 00569180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569180(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180 ; 00566afd
+        ;   XREF to: 00569180 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00569180(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00566b02
     PUSH 0x0                            ; 00566b05
     PUSH EBX                            ; 00566b07
-    CALL core_skeleton.cpp_FUN_00569890 ; 00566b08
-        ;   XREF to: 00569890 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569890(CDeformableModelInstance * this_ptr, int lod_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890 ; 00566b08
+        ;   XREF to: 00569890 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_00569890(CDeformableModelInstance * this_ptr, int lod_index)
     ADD ESP,0x8                         ; 00566b0d
     MOV EAX,dword ptr [EBP + 0x14]      ; 00566b10
     XOR EBX,EBX                         ; 00566b13

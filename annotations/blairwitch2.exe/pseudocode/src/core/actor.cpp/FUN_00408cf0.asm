@@ -7,16 +7,16 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[62]:
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a25f
 ;   core_actor.cpp_FUN_004090f0 at 00409186
 ;   core_actor.cpp_FUN_004093a0 at 004095ef
-;   core_actor.cpp_FUN_0040a050 at 0040a25f
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040ff5b
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_00410080 at 004100cb
-;   core_batman.cpp_FUN_00413f40 at 00414252
+;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a051d
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00413f40 at 00414252
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 0041699b
-;   core_boxactor.cpp_FUN_0041c090 at 0041c481
-;   core_charactr.cpp_CCharacter_walkToPoint_FUN_00423000 at 0042367d
-;   core_charactr.cpp_FUN_00423a60 at 00423ac8
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c481
+;   core_charactr.cpp_CCharacter_dropCarriedObject_FUN_00428d60 at 00428d98
 ;   ... and 52 more
 ;
 ; Called Functions:

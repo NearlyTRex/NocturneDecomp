@@ -57,7 +57,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_0050c280 at 0050ca1c
+;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050ca1c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_netgame_cpp_005e0ca5
@@ -70,9 +70,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70
 ;   core_netgame.cpp_CNetGame_removePlayer_FUN_0050e6c0
 ;   core_netgame.cpp_CNetGame_sendMyStateChanged_FUN_0050eb80
-;   core_netgame.cpp_FUN_0050ce70
 ;   core_netgame.cpp_IpAddr_copy_FUN_0050f9c0
 ;   crt_string.c__strcmp_FUN_005b8c30
 ;
@@ -537,8 +537,8 @@ section .text
     ADD EAX,0x14                        ; 0050e678
     PUSH EAX                            ; 0050e67b
     PUSH EDI                            ; 0050e67c
-    CALL core_netgame.cpp_FUN_0050ce70  ; 0050e67d
-        ;   XREF to: 0050ce70 (UNCONDITIONAL_CALL)  ; undefined core_netgame.cpp_FUN_0050ce70()
+    CALL core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70 ; 0050e67d
+        ;   XREF to: 0050ce70 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_addPlayer_FUN_0050ce70(CNetGame * this_ptr, SNetworkAddr * addr, char * name, int hero_number, ...)
     MOV EDX,EAX                         ; 0050e682
     SHL EDX,0x7                         ; 0050e684
     ADD ESP,0x14                        ; 0050e687

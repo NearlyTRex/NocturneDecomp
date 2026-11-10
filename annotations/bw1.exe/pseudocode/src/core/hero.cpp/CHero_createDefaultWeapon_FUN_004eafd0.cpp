@@ -29,15 +29,19 @@ void __cdecl core_hero_cpp_CHero_createDefaultWeapon_FUN_004eafd0(CHero *this_pt
   pCVar4 = item_actor;
   do {
     cVar1 = *pcVar3;
-    *(char *)pCVar4 = cVar1;
+    pCVar4->actor_name[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pCVar4->field_0x1 = cVar1;
-    pCVar4 = (CDemonActor *)&pCVar4->field_0x2;
+    pCVar4->actor_name[1] = cVar1;
+    pCVar4 = (CDemonActor *)(pCVar4->actor_name + 2);
   } while (cVar1 != '\0');
   core_inv_cpp_FUN_004f7690((CInventory *)(this_ptr + 0x1fae8),item_actor,1);
-  core_inv_cpp_FUN_004f8dc0((CInventory *)(this_ptr + 0x1fae8),(CDemonActor *)0x0,5,1);
-  *(uint *)&item_actor[4].field_0x8 = 100;
+  core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0
+            ((CInventory *)(this_ptr + 0x1fae8),(CDemonActor *)0x0,5,1);
+  item_actor[4].actor_name[8] = 'd';
+  item_actor[4].actor_name[9] = '\0';
+  item_actor[4].actor_name[10] = '\0';
+  item_actor[4].actor_name[0xb] = '\0';
   return;
 }

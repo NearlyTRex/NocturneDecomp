@@ -31,25 +31,25 @@ bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1)
   bVar2 = 0;
   local_20 = 4.0;
   local_18 = 0;
-  for (local_14 = 0; local_14 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_14 = local_14 + 1) {
+  for (local_14 = 0; local_14 < g_CDemonSetPtr->actor_count; local_14 = local_14 + 1) {
     this_ptr = (CDoor *)core_actor_cpp_castToClassHash_FUN_0040c600
-                                  (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_18),
+                                  (*(uint *)((int)g_CDemonSetPtr->actors + local_18),
                                    g_CDoorClassInfo.name_hash);
     if ((((this_ptr != (CDoor *)0x0) &&
-         (ABS(*(float *)&this_ptr->field_0x20 - *(float *)&param_1->field_0x20) <=
+         (ABS((this_ptr->base).location.position.x - (param_1->location).position.x) <=
           (float)_DAT_005e4845)) &&
-        (ABS(*(float *)&this_ptr->field_0x24 - *(float *)&param_1->field_0x24) <=
+        (ABS((this_ptr->base).location.position.y - (param_1->location).position.y) <=
          (float)_DAT_005e4845)) &&
-       ((ABS(*(float *)&this_ptr->field_0x28 - *(float *)&param_1->field_0x28) <=
-         (float)_DAT_005e4845 && (*(int *)&this_ptr->field_0x2e0 == 0)))) {
-      core_actor_cpp_FUN_00408bb0(param_1,&this_ptr->field_0x9bc);
+       ((ABS((this_ptr->base).location.position.z - (param_1->location).position.z) <=
+         (float)_DAT_005e4845 && (this_ptr->door_state == DOOR_STATE_CLOSED)))) {
+      core_actor_cpp_FUN_00408bb0(param_1,&this_ptr->open_position);
       local_44 = local_50;
       (&stack0xffffffc0)[(uint)bVar2 * 0xfffffffe] =
            (float)*(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
       *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
            *(uint *)(&stack0xffffffb8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
       if (0.0 < local_3c) {
-        core_vecdir_cpp_FUN_005a7520(&stack0xffffffbc);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffbc);
         local_38 = local_2c;
         *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8) =
              *(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
@@ -60,13 +60,19 @@ bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1)
           local_1c = SQRT(local_3c * local_3c + local_44 * local_44);
           if (local_1c < local_20) {
             iVar1 = core_door_cpp_CDoor_getMoveType_FUN_00478b40(this_ptr,param_1);
-            if ((iVar1 != 0) && (*(int *)&this_ptr->field_0x9d8 != 0)) {
+            if ((iVar1 != 0) && (this_ptr->allowed_sides != DOOR_OPEN_SIDES_NEITHER)) {
               local_20 = local_1c;
-              *(uint *)&param_1[0x17c].field_0xc0 = 3;
-              *(uint *)&param_1[0x17c].field_0xd0 = 0;
-              *(CDoor **)&param_1[0x17c].field_0xc4 = this_ptr;
-              *(CDoor **)&param_1[0x17c].field_0xc8 = this_ptr;
-              *(int *)&param_1[0x17c].field_0xcc = iVar1;
+              param_1[0x17c].create_event[0x48] = '\x03';
+              param_1[0x17c].create_event[0x49] = '\0';
+              param_1[0x17c].create_event[0x4a] = '\0';
+              param_1[0x17c].create_event[0x4b] = '\0';
+              param_1[0x17c].create_event[0x58] = '\0';
+              param_1[0x17c].create_event[0x59] = '\0';
+              param_1[0x17c].create_event[0x5a] = '\0';
+              param_1[0x17c].create_event[0x5b] = '\0';
+              *(CDoor **)(param_1[0x17c].create_event + 0x4c) = this_ptr;
+              *(CDoor **)(param_1[0x17c].create_event + 0x50) = this_ptr;
+              *(int *)(param_1[0x17c].create_event + 0x54) = iVar1;
             }
           }
         }
@@ -74,5 +80,5 @@ bool core_hero_cpp_FUN_004eb3e0(CDemonActor *param_1)
     }
     local_18 = local_18 + 4;
   }
-  return *(int *)&param_1[0x17c].field_0xc0 == 3;
+  return *(int *)(param_1[0x17c].create_event + 0x48) == 3;
 }

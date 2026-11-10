@@ -14,29 +14,29 @@ void __cdecl core_gore_cpp_CBloodSplat_initWallSplat_FUN_004e4830(CBloodSplat *t
   int iVar1;
   float10 fVar2;
   
-  *(uint *)&this_ptr->field_0x10 = 1;
-  if ((CVector3f *)&this_ptr->field_0x4 != position) {
-    *(uint *)&this_ptr->field_0x4 = *(uint *)position;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x4;
-    *(uint *)&this_ptr->field_0xc = *(uint *)&position->field_0x8;
+  this_ptr->is_wall_splat = 1;
+  if (&this_ptr->position != position) {
+    (this_ptr->position).x = position->x;
+    (this_ptr->position).y = position->y;
+    (this_ptr->position).z = position->z;
   }
-  fVar2 = (float10)*(float *)&normal->field_0x4;
+  fVar2 = (float10)normal->y;
   atan2();
-  *(uint *)&this_ptr->field_0x20 = 0;
-  *(float *)&this_ptr->field_0x18 = (float)-fVar2;
-  fVar2 = (float10)*(float *)normal;
+  (this_ptr->rotation).z = 0.0;
+  (this_ptr->rotation).x = (float)-fVar2;
+  fVar2 = (float10)normal->x;
   atan2();
-  *(float *)&this_ptr->field_0x1c = (float)fVar2;
-  iVar1 = core_actor_cpp_FUN_0040cc60(0,3);
-  *(int *)&this_ptr->field_0x28 = iVar1;
-  *(uint *)&this_ptr->field_0x24 = 0;
-  *(int *)&this_ptr->field_0x2c = (int)ROUND(*(float *)position * _DAT_006016a8);
-  *(int *)&this_ptr->field_0x30 = (int)ROUND(*(float *)&position->field_0x4 * _DAT_006016a8);
-  *(int *)&this_ptr->field_0x34 = (int)ROUND(*(float *)&position->field_0x8 * _DAT_006016a8);
-  *(int *)&this_ptr->field_0x38 = (int)ROUND(*(float *)normal * _DAT_006016ac);
-  *(int *)&this_ptr->field_0x3c = (int)ROUND(*(float *)&normal->field_0x4 * _DAT_006016ac);
-  *(int *)&this_ptr->field_0x40 = (int)ROUND(*(float *)&normal->field_0x8 * _DAT_006016ac);
-  *(uint *)this_ptr = 0;
-  *(EBloodType *)&this_ptr->field_0x14 = blood_type;
+  (this_ptr->rotation).y = (float)fVar2;
+  iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
+  this_ptr->texture_variant = iVar1;
+  this_ptr->age = 0.0;
+  (this_ptr->position_fixed).x = (int)ROUND(position->x * _DAT_006016a8);
+  (this_ptr->position_fixed).y = (int)ROUND(position->y * _DAT_006016a8);
+  (this_ptr->position_fixed).z = (int)ROUND(position->z * _DAT_006016a8);
+  (this_ptr->normal_fixed).x = (int)ROUND(normal->x * _DAT_006016ac);
+  (this_ptr->normal_fixed).y = (int)ROUND(normal->y * _DAT_006016ac);
+  (this_ptr->normal_fixed).z = (int)ROUND(normal->z * _DAT_006016ac);
+  this_ptr->expired = 0;
+  this_ptr->blood_type = blood_type;
   return;
 }

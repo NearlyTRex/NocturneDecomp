@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 87,
+    "complexity_score": 42,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 70
@@ -23,15 +22,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d1a80",
-      "from_addr": "004d1e0b",
-      "name": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
+      "addr": "004d27b0",
+      "from_addr": "004d2819",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d27b0",
-      "from_addr": "004d2819",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "addr": "004d1a80",
+      "from_addr": "004d1e0b",
+      "name": "core_game.cpp_CGame_processHotkeys_FUN_004d1a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -139,38 +138,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x3b4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3b4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "pcVar2 = &this_ptr->field_0x2b4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x3b4",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x3b4 = duration;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x3b4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3b4 = 0;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 15,

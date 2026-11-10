@@ -19,7 +19,7 @@ void core_podmain_cpp_FUN_0051c000(int param_1)
   if (iVar1 == 0) {
     engine_dosio_cpp_CFileFinder_ctor_FUN_00460e10(&CStack_170);
     engine_dosio_cpp_CFileFinder_openSearch_FUN_00460e50(&CStack_170,"*.pod");
-    while (CStack_170._0_1_ != '\0') {
+    while (CStack_170.filename[0] != '\0') {
       (**(code **)(*(int *)(param_1 + 0x194) + 0xc))(param_1,&CStack_170);
       engine_dosio_cpp_CFileFinder_findNext_FUN_00460ed0(&CStack_170);
     }

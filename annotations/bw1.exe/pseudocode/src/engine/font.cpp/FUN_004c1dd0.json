@@ -39,19 +39,19 @@
     {
       "addr": "004cc2b0",
       "from_addr": "004cc3be",
-      "name": "core_game.cpp_FUN_004cc2b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004ccafe",
-      "from_addr": "004ccb21",
-      "name": "core_game.cpp_FUN_004ccafe",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004cc2b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004ccc40",
       "from_addr": "004ccccd",
-      "name": "core_game.cpp_FUN_004ccc40",
+      "name": "core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ccafe",
+      "from_addr": "004ccb21",
+      "name": "core_game.cpp_drawCreditsLine_FUN_004ccafe",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,13 +69,13 @@
     {
       "addr": "004fe9c0",
       "from_addr": "004fef55",
-      "name": "core_level.cpp_FUN_004fe9c0",
+      "name": "core_level.cpp_CLevelLoader_update_FUN_004fe9c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0050a2b0",
       "from_addr": "0050a342",
-      "name": "core_menu.cpp_FUN_0050a2b0",
+      "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -99,13 +99,25 @@
     {
       "addr": "005439b0",
       "from_addr": "00543ba1",
-      "name": "core_script.cpp_FUN_005439b0",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_005439b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c2060",
       "from_addr": "004c2082",
-      "name": "engine_font.cpp_FUN_004c2060",
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004958d0",
+      "from_addr": "00495a75",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b830",
+      "from_addr": "0049bd22",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -121,12 +133,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004958d0",
-      "from_addr": "00495a75",
-      "name": "shape_edittool.cpp_FUN_004958d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00496ee0",
       "from_addr": "0049726f",
       "name": "shape_edittool.cpp_FUN_00496ee0",
@@ -136,12 +142,6 @@
       "addr": "00498360",
       "from_addr": "0049859e",
       "name": "shape_edittool.cpp_FUN_00498360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049b830",
-      "from_addr": "0049bd22",
-      "name": "shape_edittool.cpp_FUN_0049b830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -339,7 +339,7 @@
       {
         "call_addr": "0049bd22",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",

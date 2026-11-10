@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   blood_gore_type
 ;
 ; XREF[1]:
-;   core_melee.cpp_FUN_004e7310 at 004e7344
+;   core_melee.cpp_CMelee_playAttackHitEffects_FUN_004e7310 at 004e7344
 ;
 ; *****************************************************************************
 

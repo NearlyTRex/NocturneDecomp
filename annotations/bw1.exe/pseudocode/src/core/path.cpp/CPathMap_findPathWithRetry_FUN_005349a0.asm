@@ -10,15 +10,15 @@
 ; int              Stack[0x10]:4   direction_hint
 ;
 ; XREF[14]:
-;   core_bugs.cpp_FUN_00426030 at 004261ae
-;   core_bugs.cpp_FUN_004263d0 at 00426721
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 00426721
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00426030 at 004261ae
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042ccf0 at 0042d14f
 ;   core_colonel.cpp_FUN_00444b4e at 00445068
-;   core_enemy.cpp_FUN_004a0ab0 at 004a0d14
+;   core_enemy.cpp_CEnemy_updateVictim_FUN_004a0ab0 at 004a0d14
 ;   core_gabriela.cpp_FUN_004c7aa0 at 004c81e2
 ;   core_game.cpp_FUN_004d9260 at 004da185
 ;   core_ghoul.cpp_CGhoul_findDarkWayPoint_FUN_004de100 at 004de24c
-;   core_haystack.cpp_FUN_004e98b0 at 004e9e27
+;   core_haystack.cpp_CHaystack_updateAI_FUN_004e98b0 at 004e9e27
 ;   core_icepick.cpp_FUN_004f1b50 at 004f21d4
 ;   ... and 4 more
 ;

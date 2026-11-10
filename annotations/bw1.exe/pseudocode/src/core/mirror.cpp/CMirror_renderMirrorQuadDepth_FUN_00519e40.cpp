@@ -11,9 +11,8 @@
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00519e40(CMirror *this_ptr)
 
 {
-  int *piVar1;
-  uint *puVar2;
-  int iVar3;
+  int iVar1;
+  int iVar2;
   SMRGLPrimitivePoly aSStack_88 [4];
   uint local_84;
   uint local_80;
@@ -24,49 +23,43 @@ void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_00519e40(CMirror 
   uint local_64;
   uint local_58;
   uint local_4c;
-  int local_40;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
-  int local_24;
-  int local_20;
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_40;
+  CVector3i local_34;
+  CVector3i local_28;
+  CVector3i local_1c;
   
-  local_34 = (int)ROUND(*(float *)this_ptr * _DAT_00603ce0);
-  local_30 = (int)ROUND(*(float *)(this_ptr + 4) * _DAT_00603ce0);
-  local_2c = (int)ROUND(*(float *)(this_ptr + 8) * _DAT_00603ce0);
-  engine_special_cpp_FUN_0058043c(*(SProjectedVertex **)DAT_00612560,(CVector3i *)&local_34);
-  local_40 = (int)ROUND(*(float *)(this_ptr + 0xc) * _DAT_00603ce0);
-  local_3c = (int)ROUND(*(float *)(this_ptr + 0x10) * _DAT_00603ce0);
-  local_38 = (int)ROUND(*(float *)(this_ptr + 0x14) * _DAT_00603ce0);
+  local_34.x = (int)ROUND((this_ptr->reflection).corner1.x * _DAT_00603ce0);
+  local_34.y = (int)ROUND((this_ptr->reflection).corner1.y * _DAT_00603ce0);
+  local_34.z = (int)ROUND((this_ptr->reflection).corner1.z * _DAT_00603ce0);
+  engine_special_cpp_FUN_0058043c((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_34);
+  local_40.x = (int)ROUND((this_ptr->reflection).corner2.x * _DAT_00603ce0);
+  local_40.y = (int)ROUND((this_ptr->reflection).corner2.y * _DAT_00603ce0);
+  local_40.z = (int)ROUND((this_ptr->reflection).corner2.z * _DAT_00603ce0);
   engine_special_cpp_FUN_0058043c
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&local_40);
-  local_1c = (int)ROUND(*(float *)(this_ptr + 0x18) * _DAT_00603ce0);
-  local_18 = (int)ROUND(*(float *)(this_ptr + 0x1c) * _DAT_00603ce0);
-  local_14 = (int)ROUND(*(float *)(this_ptr + 0x20) * _DAT_00603ce0);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_40);
+  local_1c.x = (int)ROUND((this_ptr->reflection).corner3.x * _DAT_00603ce0);
+  local_1c.y = (int)ROUND((this_ptr->reflection).corner3.y * _DAT_00603ce0);
+  local_1c.z = (int)ROUND((this_ptr->reflection).corner3.z * _DAT_00603ce0);
   engine_special_cpp_FUN_0058043c
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&local_1c);
-  local_28 = (int)ROUND(*(float *)(this_ptr + 0x24) * _DAT_00603ce0);
-  local_24 = (int)ROUND(*(float *)(this_ptr + 0x28) * _DAT_00603ce0);
-  local_20 = (int)ROUND(*(float *)(this_ptr + 0x2c) * _DAT_00603ce0);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_1c);
+  local_28.x = (int)ROUND((this_ptr->reflection).corner4.x * _DAT_00603ce0);
+  local_28.y = (int)ROUND((this_ptr->reflection).corner4.y * _DAT_00603ce0);
+  local_28.z = (int)ROUND((this_ptr->reflection).corner4.z * _DAT_00603ce0);
   engine_special_cpp_FUN_0058043c
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x90),(CVector3i *)&local_28);
-  iVar3 = 0;
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_28);
+  iVar1 = 0;
   do {
-    *(int *)(*(int *)DAT_00612560 + iVar3) = *(int *)(*(int *)DAT_00612560 + iVar3) << 4;
-    piVar1 = (int *)(*(int *)DAT_00612560 + 4 + iVar3);
-    *piVar1 = *piVar1 << 4;
-    piVar1 = (int *)(*(int *)DAT_00612560 + 8 + iVar3);
-    *piVar1 = *piVar1 << 4;
-    puVar2 = (uint *)(*(int *)DAT_00612560 + 0xc + iVar3);
-    iVar3 = iVar3 + 0x30;
-    *(uint *)(*(int *)DAT_00612560 + -0x24 + iVar3) = *puVar2 >> 4;
-  } while (iVar3 != 0xc0);
+    *(int *)(DAT_00612560->vertex_buffer_ptr + iVar1) =
+         *(int *)(DAT_00612560->vertex_buffer_ptr + iVar1) << 4;
+    *(int *)(DAT_00612560->vertex_buffer_ptr + iVar1 + 4) =
+         *(int *)(DAT_00612560->vertex_buffer_ptr + iVar1 + 4) << 4;
+    *(int *)(DAT_00612560->vertex_buffer_ptr + iVar1 + 8) =
+         *(int *)(DAT_00612560->vertex_buffer_ptr + iVar1 + 8) << 4;
+    iVar2 = iVar1 + 0x30;
+    *(uint *)(DAT_00612560->vertex_buffer_ptr + iVar1 + 0xc) =
+         *(uint *)(DAT_00612560->vertex_buffer_ptr + iVar1 + 0xc) >> 4;
+    iVar1 = iVar2;
+  } while (iVar2 != 0xc0);
   local_84 = 4;
   local_74 = 0;
   local_78 = 0;

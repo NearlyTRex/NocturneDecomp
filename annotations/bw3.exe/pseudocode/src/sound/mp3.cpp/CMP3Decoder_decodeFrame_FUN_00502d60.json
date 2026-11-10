@@ -2,23 +2,22 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 925,
-    "complexity_score": 727,
+    "complexity_score": 610,
     "cross_reference_count": 2,
     "function_call_count": 31,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 402,
-    "suspect_count": 29,
+    "pseudocode_lines": 400,
+    "suspect_count": 18,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_ref",
       "undefined_data",
-      "unnamed_field",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1327
+    "total_lines": 1325
   },
   "cross_references": [
     {
@@ -74,6 +73,11 @@
       "name": "sound_mp3.cpp_calculateMainDataSize_FUN_00502190"
     },
     {
+      "addr": "004fd150",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_calculateMpegFrame_FUN_004fd150"
+    },
+    {
       "addr": "004fde40",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CFileBitStream_readAllocationTable_FUN_004fde40"
@@ -87,6 +91,11 @@
       "addr": "004fd4f0",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CFileBitStream_readBit_FUN_004fd4f0"
+    },
+    {
+      "addr": "004fd5e0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CFileBitStream_readBits_FUN_004fd5e0"
     },
     {
       "addr": "004fdc50",
@@ -129,6 +138,11 @@
       "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_004ffd20"
     },
     {
+      "addr": "004fd900",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_putByte_FUN_004fd900"
+    },
+    {
       "addr": "004fd810",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_004fd810"
@@ -144,6 +158,11 @@
       "name": "sound_mp3.cpp_CMP3Decoder_readLayer3ScalefactorsLSF_FUN_004ffb20"
     },
     {
+      "addr": "004fee40",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40"
+    },
+    {
       "addr": "004fd9c0",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_rewindBytes_FUN_004fd9c0"
@@ -157,26 +176,6 @@
       "addr": "005020e0",
       "is_variadic": false,
       "name": "sound_mp3.cpp_CMP3Decoder_synthesisPoly_FUN_005020e0"
-    },
-    {
-      "addr": "004fd150",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_004fd150"
-    },
-    {
-      "addr": "004fd5e0",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_004fd5e0"
-    },
-    {
-      "addr": "004fd900",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_004fd900"
-    },
-    {
-      "addr": "004fee40",
-      "is_variadic": false,
-      "name": "sound_mp3.cpp_FUN_004fee40"
     },
     {
       "addr": "00500c80",
@@ -870,32 +869,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "this_ptr_01 = &this_ptr->field_0x5320;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 92,
-      "match": "field_0x533c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x533c != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 100,
-      "match": "field_0x532c",
-      "severity": "mild",
-      "text": "local_24 = *(int *)&this_ptr->field_0x532c;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Complex pointer cast",
-      "line": 126,
+      "line": 124,
       "match": "(float *)((int)local_88",
       "severity": "moderate",
       "text": "pfVar5 = (float *)((int)local_88 + local_60);",
@@ -903,7 +878,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 129,
       "match": "DAT_00601360",
       "severity": "mild",
       "text": "*pfVar5 = *pfVar5 * (float)*(double *)(&DAT_00601360 + iVar3 * 8);",
@@ -911,7 +886,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 174,
+      "line": 172,
       "match": "(float *)((int)local_9a8",
       "severity": "moderate",
       "text": "local_14 = (float *)((int)local_9a8 + local_34);",
@@ -919,7 +894,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 175,
+      "line": 173,
       "match": "(short *)((int)local_3ca8",
       "severity": "moderate",
       "text": "psVar7 = (short *)((int)local_3ca8 + local_30);",
@@ -927,79 +902,31 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 199,
+      "line": 197,
       "match": "(short *)((int)local_3ca8",
       "severity": "moderate",
-      "text": "*psVar7 = *(short *)((int)local_3ca8 + iVar9);",
+      "text": "*psVar7 = *(short *)((int)local_3ca8 + iVar10);",
       "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 220,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "local_74 = (CFileBitStream *)&this_ptr->field_0x5320;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 224,
+      "line": 222,
       "match": "&stack0xffff9f34",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)&stack0xffff9f34;",
+      "text": "puVar11 = (uint *)&stack0xffff9f34;",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 244,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "local_78 = (*(int *)&this_ptr->field_0x534c - uVar2) - local_4b8[0];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 246,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + -0x1000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 246,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + -0x1000;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 250,
+      "line": 248,
       "match": "&stack0xffff9f34",
       "severity": "moderate",
-      "text": "puVar10 = (uint *)&stack0xffff9f34;",
+      "text": "puVar11 = (uint *)&stack0xffff9f34;",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 257,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 257,
-      "match": "field_0x534c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + iVar1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 321,
       "match": "(float *)((int)local_21a8",
       "severity": "moderate",
       "text": "*(float *)((int)local_21a8 + iVar1) = -*(float *)((int)local_21a8 + iVar1);",
@@ -1007,39 +934,39 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 323,
+      "line": 321,
       "match": "(float *)((int)local_21a8",
       "severity": "moderate",
       "text": "*(float *)((int)local_21a8 + iVar1) = -*(float *)((int)local_21a8 + iVar1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 337,
+      "match": "(uint *)((int)local_21a8",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)((int)local_21a8 + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 339,
-      "match": "(uint *)((int)local_21a8",
-      "severity": "moderate",
-      "text": "puVar10 = (uint *)((int)local_21a8 + iVar9);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 341,
       "match": "(uint *)((int)local_170",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_170 + iVar3) = *puVar10;",
+      "text": "*(uint *)((int)local_170 + iVar3) = *puVar11;",
       "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
-      "line": 367,
+      "line": 365,
       "match": "(short *)((int)local_3ca8",
       "severity": "moderate",
-      "text": "*psVar7 = *(short *)((int)local_3ca8 + iVar9);",
+      "text": "*psVar7 = *(short *)((int)local_3ca8 + iVar10);",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 386,
+      "line": 384,
       "match": "DAT_006011b8",
       "severity": "mild",
       "text": "(float10)*(double *)(&DAT_006011b8 + local_f0 * 0x20 + local_e0 * 8)) *",
@@ -1047,31 +974,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 387,
+      "line": 385,
       "match": "DAT_006011f8",
       "severity": "mild",
       "text": "(float10)*(int *)(&DAT_006011f8 +",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 395,
-      "match": "field_0x532c",
-      "severity": "mild",
-      "text": "local_68 = local_68 * local_60ac - ((*(int *)&this_ptr->field_0x532c - local_24) + 0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 399,
-      "match": "field_0x5320",
-      "severity": "mild",
-      "text": "sound_mp3_cpp_CFileBitStream_readBit_FUN_004fd4f0((CFileBitStream *)&this_ptr->field_0x5320)",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Pointer value `local_88` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 126,
+      "line": 124,
       "match": "(int)local_88",
       "severity": "moderate",
       "text": "pfVar5 = (float *)((int)local_88 + local_60);",
@@ -1079,7 +990,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 225,
+      "line": 223,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {",
@@ -1087,7 +998,7 @@
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 251,
+      "line": 249,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
       "text": "for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {",

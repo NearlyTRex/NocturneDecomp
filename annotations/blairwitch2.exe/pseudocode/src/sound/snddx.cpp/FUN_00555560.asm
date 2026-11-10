@@ -25,7 +25,7 @@
 ; Called Functions:
 ;   crt_math.c_round_FUN_005b7ff0
 ;   crt_memory.c_memset_FUN_005b77c0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_FUN_00554ad0
 ;   sound_sndmain.cpp_FUN_00552b30
 ;   sound_sndmain.cpp_FUN_005549c0
@@ -320,8 +320,8 @@ section .text
     PUSH 0x5e9a3b                       ; 00555938 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x32c]               ; 0055593d
     PUSH EAX                            ; 00555944
-    CALL crt_unknown.c_FUN_005b7790     ; 00555945
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00555945
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055594a
     LEA EAX,[ESP + 0x320]               ; 0055594d
     PUSH EAX                            ; 00555954
@@ -340,8 +340,8 @@ section .text
     PUSH 0x5e9a3b                       ; 00555971 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x4bc]               ; 00555976
     PUSH EAX                            ; 0055597d
-    CALL crt_unknown.c_FUN_005b7790     ; 0055597e
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0055597e
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 00555983
     LEA EAX,[ESP + 0x4b0]               ; 00555986
     PUSH EAX                            ; 0055598d
@@ -360,8 +360,8 @@ section .text
     PUSH 0x5e9a3b                       ; 005559aa | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x19c]               ; 005559af
     PUSH EAX                            ; 005559b6
-    CALL crt_unknown.c_FUN_005b7790     ; 005559b7
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 005559b7
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 005559bc
     LEA EAX,[ESP + 0x190]               ; 005559bf
     PUSH EAX                            ; 005559c6
@@ -418,8 +418,8 @@ section .text
     PUSH 0x5e9a3b                       ; 00555a53 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00555a58
     PUSH EAX                            ; 00555a5c
-    CALL crt_unknown.c_FUN_005b7790     ; 00555a5d
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00555a5d
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 00555a62
     MOV EAX,ESP                         ; 00555a65
     PUSH EAX                            ; 00555a67

@@ -2,13 +2,13 @@
 // Address: 0048114e
 // Address Range: [[0048114e, 004811f3]]
 // Convention: unknown
-// Signature: void shape_edittool_cpp_FUN_0048114e(undefined4 param_1,undefined4 param_2,undefined4 param_3,float *param_4,float *param_5)
+// Signature: void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,float *param_4,float *param_5)
+void shape_edittool_cpp_FUN_0048114e(CEditorTools *param_1,float param_2,int param_3,float *param_4,float *param_5)
 
 {
   byte auStack_28 [4];
@@ -28,6 +28,7 @@ void shape_edittool_cpp_FUN_0048114e(uint param_1,uint param_2,uint param_3,floa
   iStack_10 = (int)ROUND(param_5[1] * _DAT_005df00c);
   engine_matrix_c_matrixPushAndTransform_FUN_004e56b0(iStack_18,iStack_14,iStack_10,0,0,0);
   shape_edittool_cpp_FUN_00480f00(param_1,param_2,param_3);
+  iStack_20 = 0x4811ed;
   engine_matrix_c_pop_FUN_004e5ef0();
   return;
 }

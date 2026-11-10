@@ -2,15 +2,22 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CWerewolf;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CTrap
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x438 (1080 bytes)
 #pragma pack(push, 1)
 typedef struct CTrap {
-    char field_0[1080]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    struct CDemonActor* carrier; // 0x430
+    struct CWerewolf* wolf_in_trap; // 0x434
 } CTrap;
 #pragma pack(pop)
 

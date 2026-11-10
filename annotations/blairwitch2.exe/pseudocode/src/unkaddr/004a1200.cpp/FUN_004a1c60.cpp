@@ -12,14 +12,14 @@ uint unkaddr_004a1200_cpp_FUN_004a1c60(int param_1,int param_2)
 
 {
   if ((((0 < _DAT_01caf110) && (0x0000004A <= param_1)) && (0x000001AE <= param_2)) &&
-     ((param_1 < 0x0000004A + CAlphaBitmap_01caf1f0._12_4_ &&
-      (param_2 < 0x000001AE + CAlphaBitmap_01caf1f0._16_4_)))) {
+     ((param_1 < 0x0000004A + CAlphaBitmap_01caf1f0.width &&
+      (param_2 < 0x000001AE + CAlphaBitmap_01caf1f0.height)))) {
     return 0xffffffff;
   }
   if (((_DAT_01caf110 < g_STextViewInstance._56_4_ + -2) && (0x000001F4 <= param_1)) &&
      ((0x000001AE <= param_2 &&
-      ((param_1 < 0x000001F4 + CAlphaBitmap_01caf204._12_4_ &&
-       (param_2 < CAlphaBitmap_01caf204._16_4_ + 0x000001AE)))))) {
+      ((param_1 < 0x000001F4 + CAlphaBitmap_01caf204.width &&
+       (param_2 < CAlphaBitmap_01caf204.height + 0x000001AE)))))) {
     return 1;
   }
   return 0;

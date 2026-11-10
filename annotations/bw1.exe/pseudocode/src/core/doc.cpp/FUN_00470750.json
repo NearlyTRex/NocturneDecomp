@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 48,
-    "complexity_score": 120,
+    "complexity_score": 121,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 21,
     "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 68
+    "total_lines": 69
   },
   "cross_references": [
     {
@@ -44,7 +44,7 @@
     {
       "addr": "0040e210",
       "is_variadic": false,
-      "name": "core_ammobox.cpp_FUN_0040e210"
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210"
     },
     {
       "addr": "00494340",
@@ -169,15 +169,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 17,
+      "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_ammobox_cpp_FUN_0040e210(this_ptr,(CInventory *)(param_1 + 0x1fae8));",
+      "text": "(this_ptr,(CInventory *)(param_1 + 0x1fae8));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
+      "line": 20,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1ff5c) = 1;",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 20,
+      "line": 21,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1ff78) = 0;",

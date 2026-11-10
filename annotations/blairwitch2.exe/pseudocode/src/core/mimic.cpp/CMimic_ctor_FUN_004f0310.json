@@ -2,18 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 58,
-    "complexity_score": 73,
+    "complexity_score": 202,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 72,
+    "suspect_count": 11,
     "suspect_types": [
+      "negative_offset",
       "unnamed_field",
+      "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 101
+    "total_lines": 130
   },
   "cross_references": [
     {
@@ -139,11 +141,83 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
+      "line": 18,
       "match": "field_0xc8",
       "severity": "mild",
-      "text": "iVar5 = core_necklace_cpp_FUN_005adda0(&pCVar4[1].field_0xc8);",
+      "text": "iVar6 = core_necklace_cpp_FUN_005adda0(&pCVar5[1].base.base.field_0xc8);",
       "type": "unnamed_field"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar7[-99].",
+      "severity": "mild",
+      "text": "*(CEnemy_full_vtable **)(pCVar7[-99].models[0].textures[0].texture_name + 0x24) = &g_CMimicVTable;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 38,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 43,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "pcVar9 = pCVar7[-1].models[1].textures[0x13].texture_name + 0x34;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 44,
+      "match": "pCVar7[-1].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-1].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 60,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-100].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 65,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-100].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 70,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "pSVar2 = pCVar7[-100].models[1].textures;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 75,
+      "match": "pCVar7[-100].",
+      "severity": "mild",
+      "text": "return (CMimic *)(pCVar7[-100].models[1].textures[0xc].texture_name + 0x38);",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 49,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
     }
   ],
   "vtable_info": {

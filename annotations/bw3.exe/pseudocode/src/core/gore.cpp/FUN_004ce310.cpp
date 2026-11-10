@@ -14,9 +14,7 @@ void core_gore_cpp_FUN_004ce310(uint *param_1,int param_2)
   uint uVar1;
   float *pfVar2;
   SProjectedVertex *output;
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   uVar1 = *(uint *)(*(int *)(_DAT_01d5ba14 * 4 + 0x1d5ba04) + 0x2c);
   if (param_1[2] == uVar1) {
@@ -43,11 +41,11 @@ void core_gore_cpp_FUN_004ce310(uint *param_1,int param_2)
     pfVar2 = (float *)(param_1 + 3);
     output = (SProjectedVertex *)&DAT_0060b014;
     do {
-      local_1c = (int)ROUND(*pfVar2 * _DAT_005e0e18);
-      local_18 = (int)ROUND(pfVar2[1] * _DAT_005e0e18);
-      local_14 = (int)ROUND(pfVar2[2] * _DAT_005e0e18);
+      local_1c.x = (int)ROUND(*pfVar2 * _DAT_005e0e18);
+      local_1c.y = (int)ROUND(pfVar2[1] * _DAT_005e0e18);
+      local_1c.z = (int)ROUND(pfVar2[2] * _DAT_005e0e18);
       pfVar2 = pfVar2 + 3;
-      engine_special_cpp_FUN_0056356c(output,(CVector3i *)&local_1c);
+      engine_special_cpp_FUN_0056356c(output,&local_1c);
       output = output + 0x30;
     } while (pfVar2 != (float *)(param_1 + 0xf));
     if (param_1[0x10] == 0) {

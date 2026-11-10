@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004cf5e0 at 004d033c
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004d033c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_005e32a4
@@ -195,8 +195,8 @@ section .text
     CMP ESI,0x200                       ; 004d7983
     JNZ 0x004d78d7                      ; 004d7989
         ;   XREF to: 004d78d7 (CONDITIONAL_JUMP)  ; LAB_004d78d7
-    CALL wincore_wddvmem.cpp_FUN_005acb10 ; 004d798f
-        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_FUN_005acb10()
+    CALL wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10 ; 004d798f
+        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; undefined wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10()
     CALL engine_special.cpp_FUN_00581f50 ; 004d7994
         ;   XREF to: 00581f50 (UNCONDITIONAL_CALL)  ; undefined engine_special.cpp_FUN_00581f50()
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 004d7999
@@ -205,10 +205,10 @@ section .text
     CALL engine_special.cpp_unlockFrame_FUN_00581fa0 ; 004d79a0
         ;   XREF to: 00581fa0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_unlockFrame_FUN_00581fa0(int clear_lock_flag)
     ADD ESP,0x4                         ; 004d79a5
-    CALL wincore_wddvmem.cpp_FUN_005acc00 ; 004d79a8
-        ;   XREF to: 005acc00 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acc00()
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004d79ad
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00 ; 004d79a8
+        ;   XREF to: 005acc00 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004d79ad
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     MOV EAX,dword ptr [ESP + 0xa30]     ; 004d79b2
     MOV EDX,dword ptr [ESP + 0xa30]     ; 004d79b9
     MOV EAX,dword ptr [EAX + 0x9e8]     ; 004d79c0
@@ -335,8 +335,8 @@ section .text
     ADD ESP,0x4                         ; 004d7b74
     MOV EBX,dword ptr [ESP + 0xa30]     ; 004d7b77
     ADD EBX,0x3b8                       ; 004d7b7e
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004d7b84
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004d7b84
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_004d7b84
     MOV EAX,dword ptr [ESP + 0xa30]     ; 004d7b89
     CMP dword ptr [EAX + 0xd0],0x2      ; 004d7b90
@@ -363,8 +363,8 @@ section .text
     CMP dword ptr [EAX + 0xd0],0x2      ; 004d7bc4
     JZ 0x004d7dc9                       ; 004d7bcb
         ;   XREF to: 004d7dc9 (CONDITIONAL_JUMP)  ; LAB_004d7dc9
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004d7bd1
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004d7bd1
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     JMP 0x004d7bb1                      ; 004d7bd6
         ;   XREF to: 004d7bb1 (UNCONDITIONAL_JUMP)  ; LAB_004d7bb1
     PUSH ESI                            ; 004d7bd8
@@ -486,7 +486,7 @@ section .text
     CALL core_game.cpp_FUN_004cbf20     ; 004d7d33
         ;   XREF to: 004cbf20 (UNCONDITIONAL_CALL)  ; undefined core_game.cpp_FUN_004cbf20()
     MOV EAX,[0x0061d95c]                ; 004d7d38 | g_CGamePtr
-    FLD float ptr [EAX + 0x294]         ; 004d7d3d | g_CGameInstance.field660_0x294
+    FLD float ptr [EAX + 0x294]         ; 004d7d3d | g_CGameInstance.delta_time_float
     FSUBR float ptr [EBX]               ; 004d7d43
     ADD ESP,0x4                         ; 004d7d45
     FSTP float ptr [EBX]                ; 004d7d48
@@ -542,8 +542,8 @@ section .text
     CALL core_game.cpp_CGame_resetKeyState_FUN_004d0960 ; 004d7dca
         ;   XREF to: 004d0960 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_resetKeyState_FUN_004d0960(CGame * this_ptr)
     ADD ESP,0x4                         ; 004d7dcf
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004d7dd2
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004d7dd2
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     JMP 0x004d7bb1                      ; 004d7dd7
         ;   XREF to: 004d7bb1 (UNCONDITIONAL_JUMP)  ; LAB_004d7bb1
 

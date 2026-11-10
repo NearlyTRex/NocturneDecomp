@@ -1,0 +1,230 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 95,
+    "complexity_score": 86,
+    "cross_reference_count": 2,
+    "function_call_count": 7,
+    "global_count": 3,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 41,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 136
+  },
+  "cross_references": [
+    {
+      "addr": "005ad300",
+      "from_addr": "005ad342",
+      "name": "core_partibox.cpp_CParticleBox_renderTransparent_FUN_005ad300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005ad910",
+      "from_addr": "005ad916",
+      "name": "core_spirmine.cpp_CSpiritMine_renderTransparent_FUN_005ad910",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0041c690",
+    "address_range": [
+      [
+        "0041c690",
+        "0041c78e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690",
+    "signature": "int __cdecl core_boxactor_cpp_CBoxActor_renderTransparent_FUN_0041c690(CBoxActor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041a840",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041a840"
+    },
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "0044fcc0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0"
+    },
+    {
+      "addr": "0046b350",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_0046b350"
+    },
+    {
+      "addr": "0046b2b0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0"
+    },
+    {
+      "addr": "0046b8e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0"
+    },
+    {
+      "addr": "0046b4a0",
+      "is_variadic": false,
+      "name": "engine_matrix.c_pop_FUN_0046b4a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0060b27c",
+      "name": "DAT_0060b27c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005ad916",
+        "call_type": "direct",
+        "caller": "core_spirmine.cpp_CSpiritMine_renderTransparent_FUN_005ad910",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005ad342",
+        "call_type": "direct",
+        "caller": "core_partibox.cpp_CParticleBox_renderTransparent_FUN_005ad300",
+        "estimated_params": 1,
+        "instructions_analyzed": 3,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1645569620253164,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 66,
+      "INT_ADD": 37,
+      "INT_AND": 34,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_MULT": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 16,
+      "INT_SUB": 33,
+      "INT_XOR": 1,
+      "INT_ZEXT": 2,
+      "LOAD": 16,
+      "POPCOUNT": 16,
+      "RETURN": 2,
+      "STORE": 30
+    },
+    "pcode_op_count": 329
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBoxActor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "(0x01BA5C50,(CVector3f *)&(this_ptr->base).field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 25,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005f3b14"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005f3a24"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "005fc094"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 28,
+        "vtable_addr": "00601094"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

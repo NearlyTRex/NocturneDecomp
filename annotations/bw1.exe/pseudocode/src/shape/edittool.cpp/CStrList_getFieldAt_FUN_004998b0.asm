@@ -12,7 +12,7 @@
 ; undefined1       Stack[-0x134]:1  local_134
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_00494fd0 at 00495048
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_00494fd0 at 00495048
 ;   shape_edittool.cpp_FUN_0049517e at 004952de
 ;
 ; Called Functions:

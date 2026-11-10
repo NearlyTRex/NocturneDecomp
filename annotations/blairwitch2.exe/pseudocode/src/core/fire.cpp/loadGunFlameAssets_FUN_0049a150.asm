@@ -13,7 +13,7 @@
 ;   undefined4 DAT_01ba5c50
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     MOV EBP,0x1c3f3c8                   ; 0049a16c
     PUSH EDI                            ; 0049a171
     ADD EBP,EAX                         ; 0049a172
-    CALL crt_unknown.c_FUN_005b7790     ; 0049a174
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0049a174
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0049a179
     PUSH EBP                            ; 0049a17c
     MOV EDX,dword ptr [0x0060b280]      ; 0049a17d | DAT_0060b280

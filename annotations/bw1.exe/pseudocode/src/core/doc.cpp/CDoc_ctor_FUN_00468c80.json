@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 263,
-    "complexity_score": 657,
+    "complexity_score": 671,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 92,
+    "pseudocode_lines": 106,
     "suspect_count": 55,
     "suspect_types": [
       "raw_address_constant",
       "unnamed_field",
       "unrolled_memset"
     ],
-    "total_lines": 355
+    "total_lines": 369
   },
   "cross_references": [
     {
@@ -41,12 +41,12 @@
     {
       "addr": "00434320",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00434320"
+      "name": "core_charactr.cpp_CCharacter_addLayerAction_FUN_00434320"
     },
     {
       "addr": "00441de0",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_00441de0"
+      "name": "core_cloth.cpp_CClothList_add_FUN_00441de0"
     },
     {
       "addr": "00468950",
@@ -56,12 +56,12 @@
     {
       "addr": "004ea830",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004ea830"
+      "name": "core_hero.cpp_CHero_ctor_FUN_004ea830"
     },
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -136,7 +136,7 @@
       "line": 12,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00->field_0x154 = &g_CDocVTable;",
+      "text": "((UActorVTable *)&this_ptr_00->field_0x154)->_ub = &g_CDocVTable._ub;",
       "type": "unnamed_field"
     },
     {
@@ -397,23 +397,23 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 42,
+      "line": 43,
       "match": "field_0x158",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&this_ptr_00->field_0x158,0x5d98a4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x2c98",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x2c98 = 0;",
+      "text": "((CDeformableModelInstance *)&this_ptr_00->field_0x158,(char *)0x5d98a4);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 44,
+      "match": "field_0x2c98",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr_00->field_0x2c98 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
       "match": "field_0x20004",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20004 = 0;",
@@ -421,7 +421,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 45,
+      "line": 46,
       "match": "field_0x20024",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20024 = 0;",
@@ -429,7 +429,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 46,
+      "line": 47,
       "match": "field_0x20028",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20028 = 0;",
@@ -437,7 +437,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 47,
+      "line": 48,
       "match": "field_0x20054",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20054 = 0;",
@@ -445,7 +445,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 48,
+      "line": 49,
       "match": "field_0x20050",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20050 = *(uint *)&this_ptr_00->field_0x20054;",
@@ -453,7 +453,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 48,
+      "line": 49,
       "match": "field_0x20054",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20050 = *(uint *)&this_ptr_00->field_0x20054;",
@@ -461,7 +461,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 49,
+      "line": 50,
       "match": "field_0x2004c",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x2004c = *(uint *)&this_ptr_00->field_0x20050;",
@@ -469,7 +469,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 49,
+      "line": 50,
       "match": "field_0x20050",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x2004c = *(uint *)&this_ptr_00->field_0x20050;",
@@ -477,7 +477,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 50,
+      "line": 51,
       "match": "field_0x20058",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20058 = 0xffffffff;",
@@ -485,7 +485,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 51,
+      "line": 52,
       "match": "field_0x2000c",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x2000c = 0;",
@@ -493,7 +493,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 52,
+      "line": 53,
       "match": "field_0x2002c",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x2002c = 0;",
@@ -501,7 +501,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 53,
+      "line": 54,
       "match": "field_0x20030",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20030 = 0;",
@@ -509,7 +509,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 54,
+      "line": 55,
       "match": "field_0x1ff5c",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x1ff5c = 0;",
@@ -517,7 +517,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 55,
+      "line": 56,
       "match": "field_0x2005c",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x2005c = 0;",
@@ -525,7 +525,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 56,
+      "line": 57,
       "match": "field_0x20064",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x20064 = 0;",
@@ -533,7 +533,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 58,
+      "line": 59,
       "match": "field_0x1fe20",
       "severity": "mild",
       "text": "((CKeyFramedModelInstance *)(*(int *)&this_ptr_00->field_0x1fe20 + 0x158),",
@@ -541,15 +541,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 93,
+      "line": 107,
       "match": "field_0x2ca0",
       "severity": "mild",
-      "text": "core_cloth_cpp_FUN_00441de0((CClothList *)&this_ptr_00->field_0x2ca0,\"doc-coat_bw.cth\");",
+      "text": "((CClothList *)&this_ptr_00->field_0x2ca0,\"doc-coat_bw.cth\");",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 94,
+      "line": 108,
       "match": "field_0x200e0",
       "severity": "mild",
       "text": "*(uint *)&this_ptr_00->field_0x200e0 = 0;",
@@ -557,7 +557,7 @@
     },
     {
       "description": "Raw hex address 0x469041 assigned to bare local `uStack000001a8`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `uStack000001a8` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 92,
+      "line": 105,
       "match": "0x469041",
       "severity": "moderate",
       "text": "uStack000001a8 = 0x469041;",
@@ -565,7 +565,7 @@
     },
     {
       "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 47,
+      "line": 48,
       "match": "cascade_constant_fill",
       "severity": "moderate",
       "text": "*(uint *)&this_ptr_00->field_0x20054 = 0;",

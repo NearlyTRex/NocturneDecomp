@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   condition_expression
 ;
 ; XREF[75]:
-;   core_anvil.cpp_FUN_0040e680 at 0040e696
-;   core_armour.cpp_FUN_0040eaa0 at 0040eb7b
-;   core_baron.cpp_FUN_0040f4d0 at 0040f4ff
-;   core_batman.cpp_FUN_00412ba0 at 004133fa
-;   core_biggs.cpp_FUN_00414b30 at 00414d46
-;   core_bodypart.cpp_FUN_00419740 at 004198cc
-;   core_boneguy.cpp_FUN_0041bb40 at 0041bb63
-;   core_bugs.cpp_FUN_004253c0 at 00425419
-;   core_carved.cpp_FUN_004287e0 at 00428802
-;   core_charactr.cpp_FUN_00432f10 at 004330bc
+;   core_anvil.cpp_CAnvil_process_FUN_0040e680 at 0040e696
+;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb7b
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f4ff
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 004133fa
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414d46
+;   core_bird.cpp_CBird_renderOpaque_FUN_00415690 at 004156f5
+;   core_bird.cpp_CBird_renderTransparent_FUN_00415730 at 0041574e
+;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004198cc
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bb63
+;   core_bugs.cpp_CBugs_process_FUN_004253c0 at 00425419
 ;   ... and 65 more
 ;
 ; Referenced Globals:

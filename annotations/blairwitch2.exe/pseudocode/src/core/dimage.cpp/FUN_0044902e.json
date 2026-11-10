@@ -2,21 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 384,
+    "complexity_score": 418,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 89,
-    "suspect_count": 27,
+    "pseudocode_lines": 93,
+    "suspect_count": 29,
     "suspect_types": [
+      "stack_ref",
+      "unaffected_reg",
       "undefined_data",
       "unnamed_param",
       "unrolled_strchr",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 294
+    "total_lines": 298
   },
   "cross_references": [],
   "function": {
@@ -29,18 +31,18 @@
     ],
     "convention": "unknown",
     "name": "core_dimage.cpp_FUN_0044902e",
-    "signature": "void core_dimage_cpp_FUN_0044902e(undefined1 *param_1,char *param_2,undefined4 param_3,undefined4 param_4)"
+    "signature": "void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)"
   },
   "function_calls": [
+    {
+      "addr": "00448fd0",
+      "is_variadic": false,
+      "name": "core_dimage.cpp_CDemonImage_packColor_FUN_00448fd0"
+    },
     {
       "addr": "00448f40",
       "is_variadic": false,
       "name": "core_dimage.cpp_FUN_00448f40"
-    },
-    {
-      "addr": "00448fd0",
-      "is_variadic": false,
-      "name": "core_dimage.cpp_FUN_00448fd0"
     },
     {
       "addr": "004e4500",
@@ -164,7 +166,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0044902e(byte *param_1,char *param_2,uint param_3,uint param_4)",
+      "text": "void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -172,7 +174,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0044902e(byte *param_1,char *param_2,uint param_3,uint param_4)",
+      "text": "void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -180,7 +182,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0044902e(byte *param_1,char *param_2,uint param_3,uint param_4)",
+      "text": "void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
@@ -188,44 +190,60 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_dimage_cpp_FUN_0044902e(byte *param_1,char *param_2,uint param_3,uint param_4)",
+      "text": "void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void core_dimage_cpp_FUN_0044902e(CDemonImage *param_1,CDemonImage *param_2,uint param_3,uint param_4,uint param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 11,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "uint unaff_EBX;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 12,
+      "match": "unaff_ESI",
+      "severity": "moderate",
+      "text": "uint unaff_ESI;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 23,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "cVar1 = *param_2;",
-      "type": "unnamed_param"
+      "match": "&stack0xfffffee4",
+      "severity": "moderate",
+      "text": "pCVar8 = (CDemonImage *)&stack0xfffffee4;",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
-      "text": "cVar1 = param_2[1];",
+      "text": "pCVar5 = param_2;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 34,
+      "match": "&stack0xfffffee4",
+      "severity": "moderate",
+      "text": "p_Var4 = engine_dosio_cpp_FUN_00460c70((char *)0x5cf062,&stack0xfffffee4,(char *)0x5cf05f);",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "param_2 = param_2 + 2;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x304) = param_3;",
@@ -233,7 +251,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 40,
       "match": "param_3",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x304) = param_3;",
@@ -241,7 +259,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x308) = param_4;",
@@ -249,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 41,
       "match": "param_4",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x308) = param_4;",
@@ -257,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
       "text": "core_dimage_cpp_FUN_00448f40(param_1);",
@@ -265,95 +283,95 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
-      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_4,p_Var4);",
+      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 43,
       "match": "param_3",
       "severity": "mild",
-      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_4,p_Var4);",
+      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_4",
+      "line": 43,
+      "match": "param_5",
       "severity": "mild",
-      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_4,p_Var4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 74,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_fread(param_1 + 0x30c,0x100,3,p_Var4);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 76,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puStack_14 = param_1 + 0x200;",
+      "text": "_fread(*(uint *)(param_1 + 0x300),param_3,param_5);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 77,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "puVar5 = param_1;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 78,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "puVar7 = param_1;",
+      "text": "_fread(param_2 + 0x30c,0x100,3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 79,
-      "match": "param_1",
+      "match": "param_2",
       "severity": "mild",
-      "text": "puVar9 = param_1;",
+      "text": "pCVar5 = param_2;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
-      "match": "param_1",
+      "line": 80,
+      "match": "param_2",
       "severity": "mild",
-      "text": "uVar3 = core_dimage_cpp_FUN_00448fd0(param_1,uStack_1c,bVar2,uStack_18);",
+      "text": "pCVar8 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 81,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar9 = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 87,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "(param_2,uStack_18,(uint)(byte)CVar1,uStack_14);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 92,
       "match": "DAT_01c2c910",
       "severity": "mild",
-      "text": "*puVar9 = (&DAT_01c2c910)",
+      "text": "(&DAT_01c2c910 +",
       "type": "undefined_data"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
-      "match": "do {",
+      "description": "Unaffected register variable",
+      "line": 93,
+      "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "(uint)((byte)CVar1 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3));",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 93,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(uint)((byte)CVar1 >> 3) * 0x20 + (unaff_ESI >> 3) * 0x400 + (unaff_EBX >> 3));",
+      "type": "unaffected_reg"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 59,
+      "line": 62,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -361,7 +379,7 @@
     },
     {
       "description": "Watcom loop-unrolled strchr (2-byte-at-a-time scan for literal '.' with null-terminator break). Replace the whole loop + fallback `= NULL` with strchr(ptr, '.') in a .keep.",
-      "line": 43,
+      "line": 46,
       "match": "do { snap; if (*p=='X') goto; if (*p=='\\0') break; ... }",
       "severity": "moderate",
       "text": "do {",

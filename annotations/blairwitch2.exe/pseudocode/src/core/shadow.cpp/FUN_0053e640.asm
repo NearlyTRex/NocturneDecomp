@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_shadow_cpp_FUN_0053e640(int param_1)
+; int core_shadow_cpp_FUN_0053e640(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -10,11 +10,11 @@
 ;   undefined4 DAT_006141f0
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 DAT_01ba5c50
-;   undefined4 g_CGameInstance.field604_0x25c
+;   undefined4 g_CGameInstance.field508_0x25c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
-;   core_charactr.cpp_FUN_004254b0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960
 ;
@@ -58,13 +58,13 @@ section .text
         ;   XREF to: 0053e6af (CONDITIONAL_JUMP)  ; LAB_0053e6af
     MOV EAX,[0x00616494]                ; 0053e68e | g_CGamePtr
         ;   Label: LAB_0053e68e
-    CMP dword ptr [EAX + 0x25c],0x0     ; 0053e693 | g_CGameInstance.field604_0x25c
+    CMP dword ptr [EAX + 0x25c],0x0     ; 0053e693 | g_CGameInstance.field508_0x25c
     JZ 0x0053e6b3                       ; 0053e69a
         ;   XREF to: 0053e6b3 (CONDITIONAL_JUMP)  ; LAB_0053e6b3
     PUSH 0x2                            ; 0053e69c
     PUSH 0x0                            ; 0053e69e
-    CALL core_actor.cpp_FUN_0040cfc0    ; 0053e6a0
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 0053e6a0
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 0053e6a5
     CMP EAX,0x1                         ; 0053e6a8
     JZ 0x0053e6b3                       ; 0053e6ab
@@ -78,8 +78,8 @@ section .text
     RET                                 ; 0053e6b2
     PUSH EBX                            ; 0053e6b3
         ;   Label: LAB_0053e6b3
-    CALL core_charactr.cpp_FUN_004254b0 ; 0053e6b4
-        ;   XREF to: 004254b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004254b0()
+    CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0 ; 0053e6b4
+        ;   XREF to: 004254b0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_004254b0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0053e6b9
     POP EDI                             ; 0053e6bc
     POP ESI                             ; 0053e6bd

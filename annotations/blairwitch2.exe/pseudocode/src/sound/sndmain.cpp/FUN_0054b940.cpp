@@ -13,7 +13,9 @@ void sound_sndmain_cpp_FUN_0054b940(void)
 {
   uint in_EDX;
   
-  g_SfxSamples[0]._0_4_ = g_SfxSamples[0]._0_4_ << 1 | (uint)((int)g_SfxSamples[0]._0_4_ < 0);
+  g_SfxSamples[0].sample_info.name._0_4_ =
+       g_SfxSamples[0].sample_info.name._0_4_ << 1 |
+       (uint)((int)g_SfxSamples[0].sample_info.name._0_4_ < 0);
   _DAT_02641920 = in_EDX;
   return;
 }

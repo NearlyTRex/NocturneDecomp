@@ -12,7 +12,7 @@ void __cdecl engine_dosio_cpp_getRelativeFilePath_FUN_004608b0(char *dest_path,c
   char cVar1;
   
   if ((directory != (char *)0x0) && (*directory != '\0')) {
-    FUN_005b7790(dest_path,"%s\\%s",directory,filename);
+    _sprintf(dest_path,"%s\\%s");
     return;
   }
   do {

@@ -32,10 +32,10 @@
 ;   crt_stdio.c_vsprintf_FUN_005b7768
 ;   engine_3d.c_setRenderAlpha_FUN_00406da0
 ;   engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0
-;   engine_font.cpp_FUN_004ab560
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_mini3d.cpp_FUN_004f3570
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
-;   wincore_wddvmem.cpp_FUN_00589560
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;
 ; *****************************************************************************
 
@@ -56,8 +56,8 @@ section .text
     MOV EDX,dword ptr [EAX + 0x41e8]    ; 0047beab
     PUSH EAX                            ; 0047beb1
     MOV dword ptr [0x01c25f78],EDX      ; 0047beb2 | DAT_01c25f78
-    CALL engine_font.cpp_FUN_004ab560   ; 0047beb8
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 0047beb8
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0047bebd
     MOV [0x01c25f7c],EAX                ; 0047bec0 | DAT_01c25f7c
     LEA EAX,[ESP + 0x20]                ; 0047bec5
@@ -103,8 +103,8 @@ section .text
     CALL engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0 ; 0047bf37
         ;   XREF to: 004a92a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenter_FUN_004a92a0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 0047bf3c
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 0047bf3f
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 0047bf3f
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     ADD ESP,0x4                         ; 0047bf44
     POP EBP                             ; 0047bf47
     POP EDI                             ; 0047bf48

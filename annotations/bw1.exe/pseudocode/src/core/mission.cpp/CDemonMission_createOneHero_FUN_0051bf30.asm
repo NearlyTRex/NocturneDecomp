@@ -35,7 +35,7 @@
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_0051b160
 ;   core_motion.cpp_CMotionController_jumpToMotion_FUN_00524b10
-;   core_skeleton.cpp_FUN_00569b20
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20
 ;   shape_edittool.cpp_FUN_004943a0
 ;
 ; *****************************************************************************
@@ -133,8 +133,8 @@ section .text
     LEA EBX,[EBP + 0x158]               ; 0051c019
     PUSH EBX                            ; 0051c01f
     MOV dword ptr [EBP + 0x2c],EAX      ; 0051c020
-    CALL core_skeleton.cpp_FUN_00569b20 ; 0051c023
-        ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569b20(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20 ; 0051c023
+        ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0051c028
     PUSH 0x0                            ; 0051c02b
     PUSH 0x0                            ; 0051c02d

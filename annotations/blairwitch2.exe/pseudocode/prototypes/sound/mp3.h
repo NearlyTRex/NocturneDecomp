@@ -5,9 +5,9 @@
 // Function prototypes for sound/mp3.cpp
 // Generated from Ghidra function signatures
 
-// Original: sound_mp3.cpp_FUN_00504670
+// Original: sound_mp3.cpp_calculateMpegFrame_FUN_00504670
 // Address: 00504670
-void __cdecl FUN_00504670(SMpegFrame *frame);
+void __cdecl calculateMpegFrame(SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_FUN_005048e0
 // Address: 005048e0
@@ -17,9 +17,9 @@ void FUN_005048e0(int *param_1,int param_2,ulong param_3,int param_4);
 // Address: 00504a10
 uint __cdecl CFileBitStream::readBit(CFileBitStream *this_ptr);
 
-// Original: sound_mp3.cpp_FUN_00504b00
+// Original: sound_mp3.cpp_CFileBitStream_readBits_FUN_00504b00
 // Address: 00504b00
-uint __cdecl FUN_00504b00(CFileBitStream *this_ptr,int num_bits);
+uint __cdecl CFileBitStream::readBits(CFileBitStream *this_ptr,int num_bits);
 
 // Original: sound_mp3.cpp_CFileBitStream_syncToPattern_FUN_00504ca0
 // Address: 00504ca0
@@ -33,13 +33,13 @@ uint __cdecl CMP3Decoder::getTotalBitsRead(CMP3Decoder *this_ptr);
 // Address: 00504d30
 uint __cdecl CMP3Decoder::readBits(CMP3Decoder *this_ptr,uint num_bits);
 
-// Original: sound_mp3.cpp_FUN_00504e10
+// Original: sound_mp3.cpp_CMP3Decoder_readBit_FUN_00504e10
 // Address: 00504e10
-uint __cdecl FUN_00504e10(CMP3Decoder *this_ptr);
+uint __cdecl CMP3Decoder::readBit(CMP3Decoder *this_ptr);
 
-// Original: sound_mp3.cpp_FUN_00504e20
+// Original: sound_mp3.cpp_CMP3Decoder_putByte_FUN_00504e20
 // Address: 00504e20
-void __cdecl FUN_00504e20(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte);
+void __cdecl CMP3Decoder::putByte(CMP3Decoder *this_ptr,uint byte_value,uint bits_per_byte);
 
 // Original: sound_mp3.cpp_CMP3Decoder_unreadBits_FUN_00504e80
 // Address: 00504e80
@@ -49,9 +49,9 @@ void __cdecl CMP3Decoder::unreadBits(CMP3Decoder *this_ptr,int num_bits);
 // Address: 00504ee0
 void __cdecl CMP3Decoder::rewindBytes(CMP3Decoder *this_ptr,int num_bytes);
 
-// Original: sound_mp3.cpp_FUN_00504f10
+// Original: sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_00504f10
 // Address: 00504f10
-undefined4 FUN_00504f10(CMP3Decoder *param_1,char *param_2,uint *param_3,uint *param_4,uint *param_5,uint *param_6);
+int __cdecl CMP3Decoder::huffmanDecode(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out);
 
 // Original: sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00505170
 // Address: 00505170
@@ -93,17 +93,17 @@ void __cdecl requantizeSamples(int param_1,int param_2,int param_3,int param_4);
 // Address: 00505eb0
 void __cdecl applyScalefactorsToSubbands(int param_1,int param_2,int param_3,int param_4);
 
-// Original: sound_mp3.cpp_FUN_00505fbe
+// Original: sound_mp3.cpp_initializeSynthesisDctTable_FUN_00505fbe
 // Address: 00505fbe
-double FUN_00505fbe(float *param_1);
+double initializeSynthesisDctTable(float *param_1);
 
 // Original: sound_mp3.cpp_CMP3Decoder_synthesisFilterbank_FUN_005060b0
 // Address: 005060b0
 void __cdecl CMP3Decoder::synthesisFilterbank(CMP3Decoder *this_ptr,float *subband_samples,int channel_index,short *pcm_output);
 
-// Original: sound_mp3.cpp_FUN_00506360
+// Original: sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360
 // Address: 00506360
-void __cdecl FUN_00506360(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame);
+void __cdecl CMP3Decoder::readLayer3SideInfo(CMP3Decoder *this_ptr,CFileBitStream *bit_stream,SMpegLayer3SideInfo *side_info_array,SMpegFrame *frame);
 
 // Original: sound_mp3.cpp_CMP3Decoder_readLayer3Scalefactors_FUN_005068e0
 // Address: 005068e0
@@ -161,13 +161,13 @@ CMP3Decoder * __cdecl CMP3Decoder::ctor(CMP3Decoder *this_ptr);
 // Address: 00509cb0
 CMP3Decoder * __cdecl CMP3Decoder::dtor(CMP3Decoder *this_ptr,uint flags);
 
-// Original: sound_mp3.cpp_FUN_00509cd0
+// Original: sound_mp3.cpp_CMP3Decoder_openFile_FUN_00509cd0
 // Address: 00509cd0
-void __cdecl FUN_00509cd0(CMP3Decoder *this_ptr,char *filename);
+void __cdecl CMP3Decoder::openFile(CMP3Decoder *this_ptr,char *filename);
 
 // Original: sound_mp3.cpp_FUN_00509db0
 // Address: 00509db0
-void FUN_00509db0(CMP3Decoder *param_1,undefined4 param_2,undefined4 param_3);
+void FUN_00509db0(CMP3Decoder *param_1,_FILE *param_2,int param_3);
 
 // Original: sound_mp3.cpp_CMP3Decoder_free_FUN_00509f30
 // Address: 00509f30

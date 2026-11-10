@@ -10,7 +10,7 @@
 ;   core_dtrace.cpp_CDemonRaytrace_dtor_FUN_0048a930 at 0048a936
 ;
 ; Called Functions:
-;   core_dpart.cpp_FUN_004799c0
+;   core_dpart.cpp_CDemonPart_dtor_FUN_004799c0
 ;   crt_unknown.c_FUN_005c0344
 ;   crt_unknown.c_FUN_005c09f0
 ;
@@ -58,8 +58,8 @@ section .text
         ;   Label: LAB_0048aa06
     PUSH 0x0                            ; 0048aa08
     PUSH EAX                            ; 0048aa0a
-    CALL core_dpart.cpp_FUN_004799c0    ; 0048aa0b
-        ;   XREF to: 004799c0 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_FUN_004799c0(CDemonPart * this_ptr, uint flags)
+    CALL core_dpart.cpp_CDemonPart_dtor_FUN_004799c0 ; 0048aa0b
+        ;   XREF to: 004799c0 (UNCONDITIONAL_CALL)  ; CDemonPart * core_dpart.cpp_CDemonPart_dtor_FUN_004799c0(CDemonPart * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0048aa10
     PUSH EAX                            ; 0048aa13
     CALL crt_unknown.c_FUN_005c0344     ; 0048aa14

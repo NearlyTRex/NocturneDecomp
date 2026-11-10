@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 284,
+    "complexity_score": 205,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 11,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 124,
-    "suspect_count": 14,
+    "pseudocode_lines": 130,
+    "suspect_count": 6,
     "suspect_types": [
-      "suspicious_cast",
+      "pointer_cast",
       "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 422
+    "total_lines": 428
   },
   "cross_references": [],
   "function": {
@@ -38,24 +37,24 @@
       "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
     },
     {
-      "addr": "0040c790",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c790"
-    },
-    {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0040c790",
+      "is_variadic": false,
+      "name": "core_actor.cpp_isOfClass_FUN_0040c790"
+    },
+    {
+      "addr": "00560af0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_isSoundPlaying_FUN_00560af0"
     },
     {
       "addr": "005609b0",
       "is_variadic": false,
       "name": "core_sound.cpp_CSound_playSound_FUN_005609b0"
-    },
-    {
-      "addr": "00560af0",
-      "is_variadic": false,
-      "name": "core_sound.cpp_FUN_00560af0"
     }
   ],
   "globals": [
@@ -211,108 +210,44 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "_DAT_01d5be80 = _DAT_01d5be80 - *(float *)&g_CGamePtr->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x14f0a8",
-      "severity": "mild",
-      "text": "while (iVar9 < *(int *)&g_CDemonSetPtr->field_0x14f0a8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x14f0ac",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14f0ac + iVar8),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 35,
-      "match": "code *",
+      "description": "Complex pointer cast",
+      "line": 28,
+      "match": "(uint *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*(int *)&actor_ptr->field_0x154 + 0x10c))(actor_ptr);",
-      "type": "unresolved_funcptr"
+      "text": "(*(uint *)((int)g_CDemonSetPtr->characters + iVar9),",
+      "type": "pointer_cast"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x154",
+      "line": 66,
+      "match": "field_0x27ac",
       "severity": "mild",
-      "text": "iVar5 = (**(code **)(*(int *)&actor_ptr->field_0x154 + 0x10c))(actor_ptr);",
+      "text": "*(uint *)&this_ptr->field_0x27ac = uVar8;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x20",
+      "line": 85,
+      "match": "field_0x27ac",
       "severity": "mild",
-      "text": "fVar2 = *(float *)(iVar5 + 0x20) - *(float *)&actor_ptr->field_0x20;",
+      "text": "*(uint *)&this_ptr->field_0x27ac = uVar8;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x24",
+      "line": 105,
+      "match": "field_0x27ac",
       "severity": "mild",
-      "text": "fVar4 = *(float *)(iVar5 + 0x24) - *(float *)&actor_ptr->field_0x24;",
+      "text": "*(uint *)&this_ptr->field_0x27ac = uVar8;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x28",
+      "line": 125,
+      "match": "field_0x27ac",
       "severity": "mild",
-      "text": "fVar3 = *(float *)(iVar5 + 0x28) - *(float *)&actor_ptr->field_0x28;",
+      "text": "*(uint *)&this_ptr->field_0x27ac = uVar8;",
       "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "*(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "*(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 100,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "*(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "*(uint *)&actor_ptr[0x1d].field_0xb4 = uVar7;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 27,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14f0ac + iVar8),",
-      "type": "suspicious_cast"
     }
   ]
 }

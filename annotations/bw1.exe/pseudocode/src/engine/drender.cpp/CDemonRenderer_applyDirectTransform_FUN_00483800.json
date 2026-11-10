@@ -2,21 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 12,
+    "complexity_score": 10,
     "cross_reference_count": 10,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 59
+    "total_lines": 57
   },
   "cross_references": [
     {
       "addr": "004b4370",
       "from_addr": "004b4425",
       "name": "core_fire.cpp_CPopcorn_render_FUN_004b4370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b46e0",
+      "from_addr": "004b4798",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_004b46e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,12 +59,6 @@
       "addr": "004af270",
       "from_addr": "004af29c",
       "name": "core_fire.cpp_FUN_004af270",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b46e0",
-      "from_addr": "004b4798",
-      "name": "core_fire.cpp_FUN_004b46e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -155,7 +155,7 @@
       {
         "call_addr": "004b4798",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b46e0",
+        "caller": "core_fire.cpp_CRainDrop_render_FUN_004b46e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -9,6 +9,7 @@
 void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004a7cd0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags)
 
 {
-  engine_font_cpp_FUN_004a8560(this_ptr,filename,width,height,0x21,0xff,load_flags);
+  engine_font_cpp_CBitFont_loadNewBitmap_FUN_004a8560
+            (this_ptr,filename,width,height,0x21,0xff,load_flags);
   return;
 }

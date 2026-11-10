@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_menu.cpp_FUN_0050ba70 at 0050c94a
-;   sound_sndmain.cpp_FUN_005760b0 at 005761d4
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 005761d4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f4276
@@ -17,14 +17,14 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   sound_sndmain.cpp_FUN_00575540
+;   sound_sndmain.cpp_isSoundSystemActive_FUN_00575540
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL sound_sndmain.cpp_FUN_00575540 ; 00575580
-        ;   XREF to: 00575540 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_FUN_00575540()
+    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00575540 ; 00575580
+        ;   XREF to: 00575540 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00575540()
         ;   Label: sound_sndmain.cpp_FUN_00575580
     TEST EAX,EAX                        ; 00575585
     JNZ 0x00575593                      ; 00575587

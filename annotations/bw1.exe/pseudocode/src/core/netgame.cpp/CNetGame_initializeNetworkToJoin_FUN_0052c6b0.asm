@@ -25,13 +25,13 @@
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_addPlayer_FUN_0052e040
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360
 ;   core_netgame.cpp_CNetGame_send_FUN_0052df50
-;   core_netgame.cpp_FUN_0052c970
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400
 ;   shape_edittool.cpp_FUN_004943a0
 ;   support_trisock.cpp_createNetworkAddr_FUN_0059c740
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
 
@@ -74,8 +74,8 @@ section .text
     ADD ESP,0x14                        ; 0052c708
     PUSH EBX                            ; 0052c70b
     MOV dword ptr [EBX + 0x11c],EAX     ; 0052c70c
-    CALL core_netgame.cpp_FUN_0052c970  ; 0052c712
-        ;   XREF to: 0052c970 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_FUN_0052c970(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970 ; 0052c712
+        ;   XREF to: 0052c970 (UNCONDITIONAL_CALL)  ; int core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0052c717
     TEST EAX,EAX                        ; 0052c71a
     JNZ 0x0052c725                      ; 0052c71c
@@ -198,8 +198,8 @@ section .text
         ;   XREF to: 0052df50 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_send_FUN_0052df50(CNetGame * this_ptr, int player_index, SNetPacketHeader * packet)
     MOV EDI,dword ptr [0x01d51da0]      ; 0052c865 | DAT_01d51da0
     ADD ESP,0xc                         ; 0052c86b
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0052c86e
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0052c86e
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_0052c86e
     PUSH EBX                            ; 0052c873
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_0052d360 ; 0052c874

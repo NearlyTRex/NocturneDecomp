@@ -20,7 +20,7 @@
     {
       "addr": "004d27b0",
       "from_addr": "004d545e",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -32,13 +32,13 @@
     {
       "addr": "004f4f50",
       "from_addr": "004f4f80",
-      "name": "core_inivar.cpp_FUN_004f4f50",
+      "name": "core_inivar.cpp_readIniData_FUN_004f4f50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f5760",
       "from_addr": "004f5776",
-      "name": "core_inivar.cpp_FUN_004f5760",
+      "name": "core_inivar.cpp_writeIniData_FUN_004f5760",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,7 +101,7 @@
       {
         "call_addr": "004f4f80",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f4f50",
+        "caller": "core_inivar.cpp_readIniData_FUN_004f4f50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +114,7 @@
       {
         "call_addr": "004f5776",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004f5760",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -127,7 +127,7 @@
       {
         "call_addr": "004d545e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -140,7 +140,7 @@
       {
         "call_addr": "004d55b6",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -153,7 +153,7 @@
       {
         "call_addr": "004d570c",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +166,7 @@
       {
         "call_addr": "004d585d",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -284,7 +284,7 @@
       "line": 6,
       "match": "param_1",
       "severity": "mild",
-      "text": "engine_ini_cpp_initIniFile_FUN_004f4b80((char *)param_1,param_2);",
+      "text": "engine_ini_cpp_initIniFile_FUN_004f4b80(param_1->filename,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -292,7 +292,7 @@
       "line": 6,
       "match": "param_2",
       "severity": "mild",
-      "text": "engine_ini_cpp_initIniFile_FUN_004f4b80((char *)param_1,param_2);",
+      "text": "engine_ini_cpp_initIniFile_FUN_004f4b80(param_1->filename,param_2);",
       "type": "unnamed_param"
     },
     {

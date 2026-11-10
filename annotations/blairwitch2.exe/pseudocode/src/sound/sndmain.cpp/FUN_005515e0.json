@@ -21,43 +21,43 @@
     {
       "addr": "00411200",
       "from_addr": "004113a0",
-      "name": "core_bat.cpp_FUN_00411200",
+      "name": "core_bat.cpp_CBat_process_FUN_00411200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004186c0",
       "from_addr": "00418d1e",
-      "name": "core_boneguy.cpp_FUN_004186c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0046d870",
-      "from_addr": "0046d9bc",
-      "name": "core_drone.cpp_FUN_0046d870",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00486cb0",
-      "from_addr": "00486d3e",
-      "name": "core_emitter.cpp_FUN_00486cb0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004cd660",
-      "from_addr": "004cd707",
-      "name": "core_haystack.cpp_FUN_004cd660",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00580610",
-      "from_addr": "00581209",
-      "name": "core_tvbat.cpp_FUN_00580610",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00436e80",
       "from_addr": "0043754f",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "name": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046d870",
+      "from_addr": "0046d9bc",
+      "name": "core_drone.cpp_CDrone_process_FUN_0046d870",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486cb0",
+      "from_addr": "00486d3e",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cd660",
+      "from_addr": "004cd707",
+      "name": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00580610",
+      "from_addr": "00581209",
+      "name": "core_tvbat.cpp_CTVBat_process_FUN_00580610",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +110,7 @@
       {
         "call_addr": "00418d1e",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_004186c0",
+        "caller": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
         "estimated_params": 8,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -123,7 +123,7 @@
       {
         "call_addr": "0043754f",
         "call_type": "direct",
-        "caller": "unkafter_conveyor.cpp_FUN_00436e80",
+        "caller": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -134,7 +134,7 @@
       {
         "call_addr": "0046d9bc",
         "call_type": "direct",
-        "caller": "core_drone.cpp_FUN_0046d870",
+        "caller": "core_drone.cpp_CDrone_process_FUN_0046d870",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -148,7 +148,7 @@
       {
         "call_addr": "004cd707",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004cd660",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -159,7 +159,7 @@
       {
         "call_addr": "004cd747",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004cd660",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -170,7 +170,7 @@
       {
         "call_addr": "00486d3e",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00486cb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00486cb0",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,7 +181,7 @@
       {
         "call_addr": "00581209",
         "call_type": "direct",
-        "caller": "core_tvbat.cpp_FUN_00580610",
+        "caller": "core_tvbat.cpp_CTVBat_process_FUN_00580610",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -192,7 +192,7 @@
       {
         "call_addr": "004113a0",
         "call_type": "direct",
-        "caller": "core_bat.cpp_FUN_00411200",
+        "caller": "core_bat.cpp_CBat_process_FUN_00411200",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",

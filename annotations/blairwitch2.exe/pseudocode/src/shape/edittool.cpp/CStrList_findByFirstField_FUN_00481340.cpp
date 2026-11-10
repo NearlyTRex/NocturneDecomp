@@ -28,7 +28,7 @@ int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_00481340(CStrList *
   }
   *pcVar2 = '\0';
   index = 0;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->item_count) {
     do {
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,index);
       cVar1 = *pcVar2;
@@ -46,7 +46,7 @@ int __cdecl shape_edittool_cpp_CStrList_findByFirstField_FUN_00481340(CStrList *
         return index;
       }
       index = index + 1;
-    } while (index < *(int *)this_ptr);
+    } while (index < this_ptr->item_count);
   }
   return -1;
 }

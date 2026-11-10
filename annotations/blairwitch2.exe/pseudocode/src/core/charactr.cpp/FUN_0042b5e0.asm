@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_doc.cpp_FUN_00450b20 at 00450bc8
-;   unkafter_basicene.cpp_FUN_0059f420 at 0059f4df
+;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f4df
+;   core_doc.cpp_CDoc_process_FUN_00450b20 at 00450bc8
 ;
 ; *****************************************************************************
 

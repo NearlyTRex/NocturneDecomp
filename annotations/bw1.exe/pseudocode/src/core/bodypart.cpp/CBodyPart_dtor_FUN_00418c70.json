@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 49,
+    "complexity_score": 39,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 24,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 84
   },
@@ -68,8 +68,8 @@
     {
       "addr": "005fcad4",
       "name": "g_CBodyPartVTable",
-      "type": "void*",
-      "value": "00419350"
+      "type": "CDemonActor_vtable",
+      "value": null
     },
     {
       "addr": "005fcbf0",
@@ -136,20 +136,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x154",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 20,
+      "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x154 = &g_CBodyPartVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xcd0",
-      "severity": "mild",
-      "text": "pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0((CBox *)&this_ptr->field_0xcd0,0);",
-      "type": "unnamed_field"
+      "text": "iVar2 = core_bodypart_cpp_FUN_0041b190(&pCVar1[-3].scrape_points[4].local_position.y,0);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

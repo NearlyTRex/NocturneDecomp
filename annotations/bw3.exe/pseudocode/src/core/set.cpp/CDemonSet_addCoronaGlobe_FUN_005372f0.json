@@ -19,31 +19,31 @@
     {
       "addr": "00420420",
       "from_addr": "00420548",
-      "name": "core_boxactor.cpp_FUN_00420420",
+      "name": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0042f510",
       "from_addr": "0042f631",
-      "name": "core_charactr.cpp_FUN_0042f510",
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00487eb0",
       "from_addr": "00488043",
-      "name": "core_emitter.cpp_FUN_00487eb0",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048a420",
       "from_addr": "0048acee",
-      "name": "core_exorcism.cpp_FUN_0048a420",
+      "name": "core_exorcism.cpp_CExorcism_process_FUN_0048a420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00499350",
       "from_addr": "00499401",
-      "name": "core_fire.cpp_FUN_00499350",
+      "name": "core_fire.cpp_CFireball_process_FUN_00499350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -55,13 +55,19 @@
     {
       "addr": "004a4dc0",
       "from_addr": "004a56a5",
-      "name": "core_firestff.cpp_FUN_004a4dc0",
+      "name": "core_firestff.cpp_CFirestaff_process_FUN_004a4dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004de8b0",
       "from_addr": "004de93e",
-      "name": "core_keyactor.cpp_FUN_004de8b0",
+      "name": "core_keyactor.cpp_CKeyActor_process_FUN_004de8b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e2050",
+      "from_addr": "004e22e4",
+      "name": "core_lightsta.cpp_CLightStaff_process_FUN_004e2050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,13 +79,7 @@
     {
       "addr": "0057b5c0",
       "from_addr": "0057b7dd",
-      "name": "core_weapon.cpp_FUN_0057b5c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e2050",
-      "from_addr": "004e22e4",
-      "name": "unkafter_lightgun.cpp_FUN_004e2050",
+      "name": "core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -110,7 +110,7 @@
       {
         "call_addr": "00488043",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_00487eb0",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_00487eb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +132,7 @@
       {
         "call_addr": "0057b7dd",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_0057b5c0",
+        "caller": "core_weapon.cpp_CWeapon_updateLighting_FUN_0057b5c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +143,7 @@
       {
         "call_addr": "0042f631",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042f510",
+        "caller": "core_charactr.cpp_CCharacter_renderTransparent_FUN_0042f510",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -165,7 +165,7 @@
       {
         "call_addr": "00499401",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00499350",
+        "caller": "core_fire.cpp_CFireball_process_FUN_00499350",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "00420548",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00420420",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +187,7 @@
       {
         "call_addr": "004207d6",
         "call_type": "direct",
-        "caller": "core_boxactor.cpp_FUN_00420420",
+        "caller": "core_boxactor.cpp_CLightActor_process_FUN_00420420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -198,7 +198,7 @@
       {
         "call_addr": "0048acee",
         "call_type": "direct",
-        "caller": "core_exorcism.cpp_FUN_0048a420",
+        "caller": "core_exorcism.cpp_CExorcism_process_FUN_0048a420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -209,7 +209,7 @@
       {
         "call_addr": "0048ad04",
         "call_type": "direct",
-        "caller": "core_exorcism.cpp_FUN_0048a420",
+        "caller": "core_exorcism.cpp_CExorcism_process_FUN_0048a420",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

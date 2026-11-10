@@ -17,26 +17,25 @@ void __cdecl core_turret_cpp_CTurret_setup_FUN_005a21a0(CTurret *this_ptr)
   int iVar3;
   float fStack_14;
   
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x584);
-  core_weapon_cpp_CWeapon_setup_FUN_005ad640((CWeapon *)this_ptr);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&this_ptr->model);
+  core_weapon_cpp_CWeapon_setup_FUN_005ad640(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                          ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
+                          (&(this_ptr->base).model);
   pCVar2 = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_004672b0
-                     (this_ptr_00,*(int *)&this_ptr_00->field_0x100 + -1);
+                     (this_ptr_00,this_ptr_00->frame_count + -1);
   fStack_14 = -1e+30;
-  for (iVar3 = 0; iVar3 < *(int *)&this_ptr_00->field_0x104; iVar3 = iVar3 + 1) {
-    fVar1 = (float)*(int *)(pCVar2 + 8) + (float)*(int *)(pCVar2 + 4) * (float)_DAT_005f89e0;
+  for (iVar3 = 0; iVar3 < this_ptr_00->vertex_count; iVar3 = iVar3 + 1) {
+    fVar1 = (float)pCVar2->z + (float)pCVar2->y * (float)_DAT_005f89e0;
     if (fStack_14 < fVar1) {
-      *(float *)&this_ptr->field_0x860 = (float)*(int *)pCVar2 * _DAT_006074b8;
-      *(float *)&this_ptr->field_0x864 = (float)*(int *)(pCVar2 + 4) * _DAT_006074b8;
-      *(float *)&this_ptr->field_0x868 = (float)*(int *)(pCVar2 + 8) * _DAT_006074b8;
+      (this_ptr->barrel_tip_pos).x = (float)pCVar2->x * _DAT_006074b8;
+      (this_ptr->barrel_tip_pos).y = (float)pCVar2->y * _DAT_006074b8;
+      (this_ptr->barrel_tip_pos).z = (float)pCVar2->z * _DAT_006074b8;
       fStack_14 = fVar1;
     }
-    pCVar2 = pCVar2 + 0xc;
+    pCVar2 = pCVar2 + 1;
   }
-  *(uint *)&this_ptr->field_0x8b4 = 0;
-  *(uint *)&this_ptr->field_0x8b8 = 0;
-  *(uint *)&this_ptr->field_0x8b0 = 0;
+  this_ptr->sfx_handles[0] = 0;
+  this_ptr->sfx_handles[1] = 0;
+  this_ptr->fire_sound_frames = 0;
   return;
 }

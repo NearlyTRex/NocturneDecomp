@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00433e80 at 00433e86
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80 at 00433e86
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005d5c90
@@ -22,7 +22,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   core_motion.cpp_FUN_00524a00
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
 ;   core_skeleton.cpp_CSkeleton_findBone_FUN_005634f0
 ;   core_skeleton.cpp_FUN_00568100
@@ -62,8 +62,8 @@ section .text
     PUSH ESI                            ; 00432d06
     MOV dword ptr [EBX + 0x2750],EAX    ; 00432d07
     ADD EDI,EDX                         ; 00432d0d
-    CALL core_motion.cpp_FUN_00524a00   ; 00432d0f
-        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00524a00(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 00432d0f
+        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
     SHL EDI,0x5                         ; 00432d14
     ADD ESP,0x4                         ; 00432d17
     ADD EAX,0x1c28                      ; 00432d1a

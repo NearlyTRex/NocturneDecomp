@@ -8,10 +8,10 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_004d27b0 at 004d54d1
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d54d1
 ;   core_game.cpp_FUN_004d7250 at 004d7591
-;   core_inivar.cpp_FUN_004f4f50 at 004f5726
-;   core_inivar.cpp_FUN_004f5760 at 004f5ed4
+;   core_inivar.cpp_readIniData_FUN_004f4f50 at 004f5726
+;   core_inivar.cpp_writeIniData_FUN_004f5760 at 004f5ed4
 ;   core_script.cpp_CScript_step_FUN_00544460 at 005475fa
 ;
 ; Referenced Globals:

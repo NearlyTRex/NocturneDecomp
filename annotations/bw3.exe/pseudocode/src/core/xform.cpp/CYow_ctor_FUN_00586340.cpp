@@ -19,8 +19,9 @@ CYow * core_xform_cpp_CYow_ctor_FUN_00586340(CYow *this_ptr)
   int iVar4;
   
   pCVar3 = (CYow *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CYowVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,"blackdog.dfm");
+  ((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CYowVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar3->field_0x158,"blackdog.dfm");
   uVar2 = _DAT_005e65e4;
   uVar1 = _DAT_005e65e0;
   *(uint *)&pCVar3->field_0x326c = 0x3f400000;

@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[79]:
-;   core_actor.cpp_FUN_00409980 at 0040999d
+;   core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409980 at 0040999d
 ;   core_bodypart.cpp_CBodyPart_ctor_FUN_00414750 at 0041476a
 ;   core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400 at 00417420
 ;   core_box.cpp_CBox_ctor_FUN_0041ad40 at 0041ad51
@@ -18,7 +18,7 @@
 ;   core_burncrss.cpp_CBurncross_ctor_FUN_00424430 at 0042444b
 ;   core_chain.cpp_CChain_ctor_FUN_004292e0 at 004292fc
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20 at 0042ac5d
-;   core_cloth.cpp_FUN_0043c220 at 0043c23d
+;   core_cloth.cpp_CCloth_ctor_FUN_0043c220 at 0043c23d
 ;   ... and 69 more
 ;
 ; *****************************************************************************

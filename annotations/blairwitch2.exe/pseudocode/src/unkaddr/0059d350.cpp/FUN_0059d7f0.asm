@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[24]:
+;   core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270 at 005a0353
 ;   core_confedrt.cpp_CConfederate_ctor_FUN_005a0840 at 005a093b
 ;   core_confedrt.cpp_FUN_005a1030 at 005a10c7
 ;   core_confzomb.cpp_CConfederateZombie_ctor_FUN_005a1b40 at 005a1c31
-;   core_confzomb.cpp_FUN_005a1f40 at 005a1ff0
-;   core_confzomb.cpp_FUN_005a2130 at 005a21e7
+;   core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130 at 005a21e7
+;   core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40 at 005a1ff0
 ;   core_confzomb.cpp_FUN_005a2240 at 005a2492
 ;   core_dog1.cpp_CDog_ctor_FUN_005aba40 at 005abb1d
-;   core_dog1.cpp_FUN_005ac200 at 005ac2c7
+;   core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200 at 005ac2c7
 ;   core_dog1.cpp_FUN_005ac2f0 at 005ac502
-;   core_ghostchi.cpp_CGhostChild_ctor_FUN_005a9230 at 005a931c
 ;   ... and 14 more
 ;
 ; Called Functions:

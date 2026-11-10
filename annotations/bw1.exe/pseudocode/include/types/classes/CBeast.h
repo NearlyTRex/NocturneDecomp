@@ -4,13 +4,13 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CBeast
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc268 (49768 bytes)
 #pragma pack(push, 1)
 typedef struct CBeast {
-    char field_0[49768]; // 0x0
+    CEnemy base; // 0x0
 } CBeast;
 #pragma pack(pop)
 

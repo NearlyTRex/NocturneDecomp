@@ -44,19 +44,19 @@ void core_fire_cpp_FUN_004b1c50(int *param_1,int param_2,CVector3f *param_3,CVec
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
                      ((CKeyFramedModelInstance *)(param_1 + 1));
   volume = local_14;
-  local_38 = *(float *)&pCVar1->field_0x344 - *(float *)&pCVar1->field_0x338;
-  local_34 = *(float *)&pCVar1->field_0x348 - *(float *)&pCVar1->field_0x33c;
-  local_30 = *(float *)&pCVar1->field_0x34c - *(float *)&pCVar1->field_0x340;
-  local_2c._0_4_ = local_38;
+  local_38 = (pCVar1->bounds).max.x - (pCVar1->bounds).min.x;
+  local_34 = (pCVar1->bounds).max.y - (pCVar1->bounds).min.y;
+  local_30 = (pCVar1->bounds).max.z - (pCVar1->bounds).min.z;
+  local_2c.x = local_38;
   *(uint *)((int)&local_2c + (uint)bVar2 * -8 + 4) =
        *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8);
   *(uint *)((int)&local_2c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
        *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
   core_box_cpp_CBox_setupCorners_FUN_0041dac0
             ((CBox *)(param_1 + 0x60),param_3,param_4,&local_2c,volume);
-  local_20._8_4_ = 0;
-  local_20._4_4_ = 0;
-  local_20._0_4_ = 0x4116cbe4;
+  local_20.z = 0.0;
+  local_20.y = 0.0;
+  local_20.x = 9.424778;
   core_box_cpp_CBox_setupVelocities_FUN_00420450((CBox *)(param_1 + 0x60),param_5,&local_20);
   return;
 }

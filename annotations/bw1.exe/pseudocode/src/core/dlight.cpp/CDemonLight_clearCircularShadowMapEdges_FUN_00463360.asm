@@ -8,7 +8,7 @@
 ;
 ; XREF[3]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054edc4
-;   core_set.cpp_FUN_00550260 at 0055036f
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 0055036f
 ;   core_set.cpp_FUN_00550da0 at 00550f11
 ;
 ; *****************************************************************************

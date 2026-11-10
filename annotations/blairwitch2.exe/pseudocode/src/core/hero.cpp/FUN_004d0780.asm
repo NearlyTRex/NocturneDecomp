@@ -13,13 +13,13 @@
 ;   TerminatedCString s_CBodyPart_005da02d
 ;
 ; Called Functions:
+;   core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890
 ;   core_hero.cpp_CHero_tryTalkToNearbyCharacter_FUN_004cee90
 ;   core_hero.cpp_FUN_004cec50
 ;   core_hero.cpp_FUN_004cf030
 ;   core_hero.cpp_FUN_004cf200
 ;   core_hero.cpp_FUN_004cf2b0
 ;   core_hero.cpp_FUN_004cf4e0
-;   core_hero.cpp_FUN_004cf890
 ;   core_hero.cpp_FUN_004cfd60
 ;
 ; *****************************************************************************
@@ -144,8 +144,8 @@ section .text
     JZ 0x004d08aa                       ; 004d089b
         ;   XREF to: 004d08aa (CONDITIONAL_JUMP)  ; LAB_004d08aa
     PUSH EBX                            ; 004d089d
-    CALL core_hero.cpp_FUN_004cf890     ; 004d089e
-        ;   XREF to: 004cf890 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004cf890(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890 ; 004d089e
+        ;   XREF to: 004cf890 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryApproachNearbyActor_FUN_004cf890(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d08a3
     TEST EAX,EAX                        ; 004d08a6
     JNZ 0x004d08b3                      ; 004d08a8

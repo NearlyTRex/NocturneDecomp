@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd340
 ;   core_inv.cpp_FUN_004dd2d0
 ;   crt_string.c__strcmp_FUN_005a3d00
@@ -100,13 +100,13 @@ section .text
     MOV ECX,dword ptr [ESI + 0x338]     ; 004dbe07
         ;   Label: LAB_004dbe07
     PUSH ECX                            ; 004dbe0d
-    CALL core_actor.cpp_FUN_00408870    ; 004dbe0e
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 004dbe0e
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004dbe13
     PUSH EAX                            ; 004dbe16
     PUSH EDI                            ; 004dbe17
-    CALL core_actor.cpp_FUN_00408870    ; 004dbe18
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 004dbe18
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 004dbe1d
     PUSH EAX                            ; 004dbe20
     CALL crt_string.c__strcmp_FUN_005a3d00 ; 004dbe21

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 113,
-    "complexity_score": 278,
+    "complexity_score": 275,
     "cross_reference_count": 3,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 53,
+    "pseudocode_lines": 50,
     "suspect_count": 21,
     "suspect_types": [
       "raw_address_pointer_store",
       "unnamed_param",
       "unresolved_funcptr"
     ],
-    "total_lines": 166
+    "total_lines": 163
   },
   "cross_references": [
     {
@@ -52,7 +52,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "0055a670",
@@ -129,7 +129,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 13,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1 = param_1 * 0x24;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 13,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 * 0x24;",
@@ -140,20 +148,12 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1 = param_1 * 0x24;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(param_1 + 0x2cf500c);",
+      "text": "piVar3 = (int *)(param_1 + 0x2cf500c);",
       "type": "unnamed_param"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 19,
+      "line": 18,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*apiStack_1a4[0] + 0x48))();",
@@ -161,7 +161,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 28,
+      "line": 25,
       "match": "*(int **)(param_1 + 0x2cf5010",
       "severity": "moderate",
       "text": "piVar1 = *(int **)(param_1 + 0x2cf5010);",
@@ -169,7 +169,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "piVar1 = *(int **)(param_1 + 0x2cf5010);",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 30,
+      "line": 27,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "*(int *)(param_1 + 0x2cf5010) = 0;",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 33,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0x2cf5014) * 0x18;",
@@ -201,7 +201,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x2cf501c) != 0) {",
@@ -209,7 +209,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x2cf501c) * 0x24 + 0x2cf5018) =",
@@ -217,7 +217,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2cf5018);",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 39,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x2cf49f8) = *(uint *)(param_1 + 0x2cf501c);",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(*(int *)(param_1 + 0x2cf5018) * 0x24 + 0x2cf501c) =",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2cf501c);",
@@ -249,7 +249,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 46,
+      "line": 43,
       "match": "*(int **)(iVar2 + 0x2cf49f4",
       "severity": "moderate",
       "text": "if ((piVar1 != *(int **)(iVar2 + 0x2cf49f4)) && (piVar1 != (int *)0x0)) {",
@@ -257,7 +257,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
+      "line": 44,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piVar1 + 8))(piVar1);",
@@ -265,7 +265,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 49,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2cf501c) = 0;",
@@ -273,7 +273,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2cf5018) = 0;",
@@ -281,7 +281,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 54,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2cf5014) = 0;",

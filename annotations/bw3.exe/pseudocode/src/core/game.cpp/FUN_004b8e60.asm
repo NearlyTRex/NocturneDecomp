@@ -6,7 +6,7 @@
 ;
 ; XREF[3]:
 ;   core_game.cpp_CGame_ctor_FUN_004b4180 at 004b41fd
-;   core_inivar.cpp_FUN_004d8e70 at 004d90b9
+;   core_inivar.cpp_readIniData_FUN_004d8e70 at 004d90b9
 ;   core_menu.cpp_FUN_004eae80 at 004ebdfd
 ;
 ; *****************************************************************************

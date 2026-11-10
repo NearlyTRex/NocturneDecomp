@@ -69,9 +69,9 @@ void __cdecl CPackedBitmap::load(CPackedBitmap *this_ptr,uchar *bitmap_data,int 
 // Address: 00516c88
 void FUN_00516c88(void);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516cb0
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00516cb0
 // Address: 00516cb0
-void __cdecl FUN_00516cb0(CPackedBitmap *this_ptr,char *act_filename);
+void __cdecl CPackedBitmap::applyACTPalette(CPackedBitmap *this_ptr,char *act_filename);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_applyPaletteToPackedData_FUN_00516d00
 // Address: 00516d00
@@ -89,13 +89,13 @@ void __cdecl CPackedBitmap::loadByFileExtension(CPackedBitmap *this_ptr,int appl
 // Address: 00516de0
 void FUN_00516de0(CPackedBitmap *param_1,undefined4 param_2);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516e60
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_writePBMFile_FUN_00516e60
 // Address: 00516e60
-void __cdecl FUN_00516e60(CPackedBitmap *this_ptr,_FILE *file_handle);
+void __cdecl CPackedBitmap::writePBMFile(CPackedBitmap *this_ptr,_FILE *file_handle);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00516f30
+// Original: cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00516f30
 // Address: 00516f30
-void __cdecl FUN_00516f30(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
+void __cdecl CPackedBitmap::readPBMFile(CPackedBitmap *this_ptr,_FILE *file_handle,int skip_data_load);
 
 // Original: cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00517130
 // Address: 00517130
@@ -105,10 +105,10 @@ void __cdecl CPackedBitmap::openPBMFile(CPackedBitmap *this_ptr,char *filename,i
 // Address: 005171e0
 void __cdecl CPackedBitmap::loadPBMFile(CPackedBitmap *this_ptr,int apply_palette_flag);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00517200
+// Original: cockpit_pkbitmap.cpp_writePBGHeader_FUN_00517200
 // Address: 00517200
-void FUN_00517200(undefined4 param_1,int param_2);
+void __cdecl writePBGHeader(int total_entries,_FILE *file_header);
 
-// Original: cockpit_pkbitmap.cpp_FUN_00517280
+// Original: cockpit_pkbitmap.cpp_parsePBGFile_FUN_00517280
 // Address: 00517280
-CPackedBitmap * FUN_00517280(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);
+CPackedBitmap * parsePBGFile(uint *param_1,_FILE *param_2,uint param_3,int param_4,int param_5,int param_6);

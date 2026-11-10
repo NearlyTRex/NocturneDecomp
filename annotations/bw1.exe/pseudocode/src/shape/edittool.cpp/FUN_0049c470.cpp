@@ -12,7 +12,7 @@ void shape_edittool_cpp_FUN_0049c470(CPickList *param_1,int param_2,int param_3)
   int iVar1;
   int iVar2;
   
-  shape_edittool_cpp_CStrList_swap_FUN_00499b20((CStrList *)param_1,param_2,param_3);
+  shape_edittool_cpp_CStrList_swap_FUN_00499b20(&param_1->base,param_2,param_3);
   iVar1 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_0049c100(param_1,param_2);
   iVar2 = shape_edittool_cpp_CPickList_isItemEnabled_FUN_0049c100(param_1,param_3);
   if (iVar1 != iVar2) {

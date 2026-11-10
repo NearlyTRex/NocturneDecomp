@@ -10,7 +10,7 @@
 ; char *           Stack[0x10]:4   filename
 ;
 ; XREF[1]:
-;   engine_ini.cpp_FUN_004f4c90 at 004f4cb6
+;   engine_ini.cpp_CIniFile_setString_FUN_004f4c90 at 004f4cb6
 ;
 ; Called Functions:
 ;   engine_ini.cpp_CIni_writeProfileString_FUN_004f4720

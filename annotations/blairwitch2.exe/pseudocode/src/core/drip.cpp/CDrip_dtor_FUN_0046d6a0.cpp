@@ -17,7 +17,7 @@ CDrip * __cdecl core_drip_cpp_CDrip_dtor_FUN_0046d6a0(CDrip *this_ptr,uint flags
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CDrip *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  pCVar1 = (CDrip *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

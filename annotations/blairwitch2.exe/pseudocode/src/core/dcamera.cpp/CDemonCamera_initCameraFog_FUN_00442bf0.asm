@@ -8,8 +8,8 @@
 ; SFog *           Stack[0x8]:4   fog_config
 ;
 ; XREF[2]:
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052d9f0
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0052ddf0 at 0052e443
-;   core_set.cpp_FUN_0052d980 at 0052d9f0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ce72e

@@ -8,14 +8,14 @@
 ;
 ; XREF[10]:
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0 at 0047d023
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470 at 0047e5ea
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 0048489b
 ;   shape_edittool.cpp_FUN_0047b9e0 at 0047ba06
 ;   shape_edittool.cpp_FUN_0047c050 at 0047c096
 ;   shape_edittool.cpp_FUN_0047d09e at 0047d12e
-;   shape_edittool.cpp_FUN_0047e470 at 0047e5ea
 ;   shape_edittool.cpp_FUN_0047ee50 at 0047ef15
 ;   shape_edittool.cpp_FUN_0047fa80 at 0047fdbe
 ;   shape_edittool.cpp_FUN_00480f00 at 00481119
-;   shape_edittool.cpp_FUN_004843d0 at 0048489b
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047caec
 ;
 ; Referenced Globals:

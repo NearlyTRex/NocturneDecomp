@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 43,
-    "complexity_score": 225,
+    "complexity_score": 226,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
+    "pseudocode_lines": 31,
     "suspect_count": 19,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 73
+    "total_lines": 74
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     }
   ],
   "globals": [],
@@ -114,20 +114,20 @@
       "line": 12,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CBaalVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5d948f);",
+      "text": "((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CBaalVTable._ub;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 14,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar1->field_0x158,(char *)0x5d948f);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
       "match": "field_0x326c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0x326c = 0x3f000000;",
@@ -135,7 +135,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
+      "line": 16,
       "match": "field_0x3270",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0x3270 = 0x3f800000;",
@@ -143,7 +143,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
+      "line": 17,
       "match": "field_0xd054",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd054 = 0;",
@@ -151,15 +151,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
+      "line": 18,
       "match": "field_0xcde0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xcde0 = 0xbf800000;",
+      "text": "*(float *)&pCVar1->field_0xcde0 = -1.0;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 18,
+      "line": 19,
       "match": "field_0xd050",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd050 = 0;",
@@ -167,7 +167,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 19,
+      "line": 20,
       "match": "field_0x252c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0x252c = 0x3fc90fdb;",
@@ -175,7 +175,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 20,
+      "line": 21,
       "match": "field_0xd068",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd068 = 1;",
@@ -183,7 +183,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 21,
+      "line": 22,
       "match": "field_0xd06c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd06c = 0x40000000;",
@@ -191,7 +191,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 22,
+      "line": 23,
       "match": "field_0xd070",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd070 = 0x4b;",
@@ -199,7 +199,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 23,
+      "line": 24,
       "match": "field_0xce60",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xce60 = 0x41c80000;",
@@ -207,7 +207,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 24,
+      "line": 25,
       "match": "field_0xd07c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd07c = 0;",
@@ -215,7 +215,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0xd080",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd080 = 0;",
@@ -223,7 +223,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 27,
       "match": "field_0xd064",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd064 = *(uint *)&pCVar1->field_0xd06c;",
@@ -231,7 +231,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 27,
       "match": "field_0xd06c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd064 = *(uint *)&pCVar1->field_0xd06c;",
@@ -239,7 +239,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
+      "line": 30,
       "match": "field_0x4",
       "severity": "mild",
       "text": "puVar3 = &pCVar2->field_0x4;",
@@ -247,7 +247,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 30,
+      "line": 31,
       "match": "field_0xd084",
       "severity": "mild",
       "text": "*(uint *)&pCVar2->field_0xd084 = 0;",
@@ -255,7 +255,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 33,
       "match": "field_0x34",
       "severity": "mild",
       "text": "} while (puVar3 != &pCVar1->field_0x34);",

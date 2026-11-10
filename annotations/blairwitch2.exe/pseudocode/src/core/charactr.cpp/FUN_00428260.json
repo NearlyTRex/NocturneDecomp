@@ -28,13 +28,13 @@
     {
       "addr": "004287f0",
       "from_addr": "00428a43",
-      "name": "core_charactr.cpp_FUN_004287f0",
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_004287f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1660",
       "from_addr": "004d22d0",
-      "name": "core_hostage.cpp_FUN_004d1660",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004d1660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -46,7 +46,7 @@
     {
       "addr": "00581910",
       "from_addr": "00582c11",
-      "name": "core_vampboss.cpp_FUN_00581910",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +72,7 @@
     {
       "addr": "0040d0c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040d0c0"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0"
     },
     {
       "addr": "00423000",
@@ -82,7 +82,7 @@
     {
       "addr": "005838f0",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_005838f0"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0"
     },
     {
       "addr": "00436710",
@@ -170,7 +170,7 @@
       {
         "call_addr": "00428a43",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_004287f0",
+        "caller": "core_charactr.cpp_CCharacter_processWalking_FUN_004287f0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "004d22d0",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004d1660",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004d1660",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "004d23b2",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004d1660",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004d1660",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -211,7 +211,7 @@
       {
         "call_addr": "004d2599",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004d1660",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004d1660",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -252,7 +252,7 @@
       {
         "call_addr": "00582c11",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00581910",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -560,7 +560,7 @@
       "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;",
+      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&(param_1->base).field_0x20;",
       "type": "unnamed_param"
     },
     {
@@ -568,7 +568,7 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;",
+      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&(param_1->base).field_0x20;",
       "type": "unnamed_param"
     },
     {
@@ -576,7 +576,7 @@
       "line": 37,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;",
+      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&(param_1->base).field_0x20;",
       "type": "unnamed_field"
     },
     {
@@ -584,7 +584,7 @@
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;",
+      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&(param_1->base).field_0x24;",
       "type": "unnamed_param"
     },
     {
@@ -592,7 +592,7 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;",
+      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&(param_1->base).field_0x24;",
       "type": "unnamed_param"
     },
     {
@@ -600,7 +600,7 @@
       "line": 38,
       "match": "field_0x24",
       "severity": "mild",
-      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;",
+      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&(param_1->base).field_0x24;",
       "type": "unnamed_field"
     },
     {
@@ -608,7 +608,7 @@
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;",
+      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&(param_1->base).field_0x28;",
       "type": "unnamed_param"
     },
     {
@@ -616,7 +616,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;",
+      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&(param_1->base).field_0x28;",
       "type": "unnamed_param"
     },
     {
@@ -624,7 +624,7 @@
       "line": 39,
       "match": "field_0x28",
       "severity": "mild",
-      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;",
+      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&(param_1->base).field_0x28;",
       "type": "unnamed_field"
     },
     {
@@ -952,7 +952,7 @@
       "line": 102,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_005838f0(&stack0xffffffc4);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffc4);",
       "type": "stack_ref"
     },
     {
@@ -1136,15 +1136,15 @@
       "line": 132,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2510 = 0;",
+      "text": "*(uint *)&(param_1->model).field_0x225c = 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 132,
-      "match": "field_0x2510",
+      "match": "field_0x225c",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2510 = 0;",
+      "text": "*(uint *)&(param_1->model).field_0x225c = 0;",
       "type": "unnamed_field"
     },
     {
@@ -1152,7 +1152,7 @@
       "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250c = *(uint *)&param_1->field_0x2510;",
+      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
       "type": "unnamed_param"
     },
     {
@@ -1160,23 +1160,23 @@
       "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250c = *(uint *)&param_1->field_0x2510;",
+      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 133,
-      "match": "field_0x250c",
+      "match": "field_0x2258",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250c = *(uint *)&param_1->field_0x2510;",
+      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 133,
-      "match": "field_0x2510",
+      "match": "field_0x225c",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x250c = *(uint *)&param_1->field_0x2510;",
+      "text": "*(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;",
       "type": "unnamed_field"
     },
     {
@@ -1184,7 +1184,7 @@
       "line": 134,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = *(uint *)&param_1->field_0x250c;",
+      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
       "type": "unnamed_param"
     },
     {
@@ -1192,23 +1192,23 @@
       "line": 134,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = *(uint *)&param_1->field_0x250c;",
+      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 134,
-      "match": "field_0x2508",
+      "match": "field_0x2254",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = *(uint *)&param_1->field_0x250c;",
+      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 134,
-      "match": "field_0x250c",
+      "match": "field_0x2258",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = *(uint *)&param_1->field_0x250c;",
+      "text": "*(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;",
       "type": "unnamed_field"
     },
     {

@@ -12,8 +12,8 @@
 ;   undefined4 DAT_0061c068
 ;
 ; Called Functions:
+;   core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0
 ;   core_chain.cpp_FUN_005b4860
-;   core_chain.cpp_FUN_005b4aa0
 ;   core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80
 ;   sound_sndmain.cpp_FUN_00550b70
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
@@ -258,16 +258,16 @@ section .text
     PUSH ECX                            ; 005b5083
     PUSH ESI                            ; 005b5084
     PUSH EBX                            ; 005b5085
-    CALL core_chain.cpp_FUN_005b4aa0    ; 005b5086
-        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
+    CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0 ; 005b5086
+        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 005b508b
     MOV EAX,dword ptr [ESP + 0x140]     ; 005b508e
     PUSH EAX                            ; 005b5095
     PUSH ESI                            ; 005b5096
     PUSH EBX                            ; 005b5097
     INC EDI                             ; 005b5098
-    CALL core_chain.cpp_FUN_005b4aa0    ; 005b5099
-        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
+    CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0 ; 005b5099
+        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 005b509e
     ADD ESI,0x24                        ; 005b50a1
     MOV EDX,dword ptr [ESP + 0x140]     ; 005b50a4
@@ -408,16 +408,16 @@ section .text
     MOV EDX,dword ptr [ESP + 0x138]     ; 005b5276
     PUSH EDX                            ; 005b527d
     PUSH EBX                            ; 005b527e
-    CALL core_chain.cpp_FUN_005b4aa0    ; 005b527f
-        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
+    CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0 ; 005b527f
+        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 005b5284
     MOV ECX,dword ptr [ESP + 0x118]     ; 005b5287
     PUSH ECX                            ; 005b528e
     MOV ESI,dword ptr [ESP + 0x138]     ; 005b528f
     PUSH ESI                            ; 005b5296
     PUSH EBX                            ; 005b5297
-    CALL core_chain.cpp_FUN_005b4aa0    ; 005b5298
-        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
+    CALL core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0 ; 005b5298
+        ;   XREF to: 005b4aa0 (UNCONDITIONAL_CALL)  ; void core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(CChain * this_ptr, SChainVertex * vertex_a, SChainVertex * vertex_b)
     ADD ESP,0xc                         ; 005b529d
     MOV EDI,dword ptr [ESP + 0x12c]     ; 005b52a0
     MOV EAX,dword ptr [ESP + 0x118]     ; 005b52a7

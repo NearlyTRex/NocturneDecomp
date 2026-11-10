@@ -17,16 +17,16 @@ CCross * unkafter_cross_cpp_CCross_ctor_FUN_005a69f0(CCross *this_ptr)
   char *pcVar4;
   
   pCVar2 = (CCross *)core_melee_cpp_CMelee_ctor_FUN_004ea8b0((CMelee *)this_ptr);
-  *(byte ***)&pCVar2->field_0x2b0 = &PTR_LAB_005ffe84;
+  ((UActorVTable *)&pCVar2->field_0x2b0)->_ub = &g_CCrossVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)&pCVar2->field_0x2b4,(char *)0x5f06e9);
-  *(uint *)&pCVar2->field_0x43c = 0xd;
-  *(uint *)&pCVar2->field_0x6d8 = 0x41c80000;
+  *(EWeaponType *)&pCVar2->field_0x43c = WEAPON_TYPE_BARON|WEAPON_TYPE_FLASHLIGHT;
+  *(float *)&pCVar2->field_0x6d8 = 25.0;
   pcVar3 = "shovel?.wav";
-  *(uint *)&pCVar2->field_0x6dc = 0x42480000;
-  *(uint *)&pCVar2->field_0x6e0 = 0x3f666666;
+  *(float *)&pCVar2->field_0x6dc = 50.0;
+  *(float *)&pCVar2->field_0x6e0 = 0.9;
   pcVar4 = &pCVar2->field_0x6fc;
-  *(uint *)&pCVar2->field_0x6e4 = 1;
+  *(int *)&pCVar2->field_0x6e4 = 1;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;

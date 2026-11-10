@@ -11,7 +11,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_icepick.cpp_FUN_004f0e50 at 004f11d6
+;   core_icepick.cpp_CIcePick_process_FUN_004f0e50 at 004f11d6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shoot_005e53af
@@ -21,11 +21,11 @@
 ;   undefined4 DAT_01d06cb4
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_005240c0
-;   core_motion.cpp_FUN_00524a00
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00524a00
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0
 ;   core_skeleton.cpp_FUN_00568100
-;   core_skeleton.cpp_FUN_005695e0
-;   core_xform.cpp_FUN_005b7af0
+;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
 ;
 ; *****************************************************************************
 
@@ -60,12 +60,12 @@ section .text
     PUSH 0x5e53af                       ; 004f16bc | = "shoot"
     LEA ESI,[EBX + 0x158]               ; 004f16c1
     PUSH ESI                            ; 004f16c7
-    CALL core_motion.cpp_FUN_00524a00   ; 004f16c8
-        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00524a00(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00524a00 ; 004f16c8
+        ;   XREF to: 00524a00 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00524a00(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 004f16cd
     PUSH EAX                            ; 004f16d0
-    CALL core_motion.cpp_FUN_005240c0   ; 004f16d1
-        ;   XREF to: 005240c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_005240c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0 ; 004f16d1
+        ;   XREF to: 005240c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_005240c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004f16d6
     PUSH 0x567360                       ; 004f16d9
     MOV EDI,dword ptr [0x01d06cb4]      ; 004f16de | DAT_01d06cb4
@@ -90,8 +90,8 @@ section .text
     LEA ESI,[ESP + 0x8]                 ; 004f1733
         ;   Label: LAB_004f1733
     PUSH dword ptr [EBX + 0x1ffd8]      ; 004f1737
-    CALL core_xform.cpp_FUN_005b7af0    ; 004f173d
-        ;   XREF to: 005b7af0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7af0()
+    CALL core_xform.cpp_quaternionFromAngleX_FUN_005b7af0 ; 004f173d
+        ;   XREF to: 005b7af0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_005b7af0()
     ADD ESP,0x4                         ; 004f1742
     LEA EDI,[ESP + 0x18]                ; 004f1745
     PUSH 0x567360                       ; 004f1749
@@ -107,8 +107,8 @@ section .text
     PUSH EAX                            ; 004f1766
     ADD EBX,0x158                       ; 004f1767
     PUSH EBX                            ; 004f176d
-    CALL core_skeleton.cpp_FUN_005695e0 ; 004f176e
-        ;   XREF to: 005695e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_005695e0(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0 ; 004f176e
+        ;   XREF to: 005695e0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_005695e0(CDeformableModelInstance * this_ptr, CQuaternion4f * rotation_quat, float blend_weight, int bone_index, ...)
     ADD ESP,0x14                        ; 004f1773
     POP ESI                             ; 004f1776
     POP EDI                             ; 004f1777

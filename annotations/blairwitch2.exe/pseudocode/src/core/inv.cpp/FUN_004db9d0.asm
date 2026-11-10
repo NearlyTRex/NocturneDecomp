@@ -13,7 +13,7 @@
 ;   core_game.cpp_FUN_004be8a0 at 004bf637
 ;   core_inv.cpp_FUN_004dadb0 at 004db433
 ;   core_inv.cpp_FUN_004dc8c0 at 004dca99
-;   core_scat.cpp_FUN_0051ec20 at 0051ec7b
+;   core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20 at 0051ec7b
 ;   core_script.cpp_FUN_00522350 at 00526fce
 ;
 ; Referenced Globals:
@@ -21,9 +21,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
+;   core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270
 ;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020
 ;   core_inv.cpp_FUN_004dd0a0
-;   core_inv.cpp_FUN_004dd270
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
         ;   Label: LAB_004db9fa
     PUSH ESI                            ; 004db9fc
     XOR EBX,EBX                         ; 004db9fd
-    CALL core_inv.cpp_FUN_004dd270      ; 004db9ff
-        ;   XREF to: 004dd270 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dd270(CInventory * this_ptr, int reset_both)
+    CALL core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270 ; 004db9ff
+        ;   XREF to: 004dd270 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_resetWeaponSwitchTimers_FUN_004dd270(CInventory * this_ptr, int reset_both)
     MOV ECX,dword ptr [ESI + 0x10]      ; 004dba04
     ADD ESP,0x8                         ; 004dba07
     TEST ECX,ECX                        ; 004dba0a

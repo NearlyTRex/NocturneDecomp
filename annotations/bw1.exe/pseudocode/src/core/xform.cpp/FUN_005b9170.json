@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 257,
+    "complexity_score": 237,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 3,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 37,
-    "suspect_count": 21,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 42,
+    "suspect_count": 19,
     "suspect_types": [
-      "unnamed_param",
-      "unresolved_funcptr"
+      "unnamed_param"
     ],
-    "total_lines": 147
+    "total_lines": 152
   },
   "cross_references": [],
   "function": {
@@ -26,18 +25,18 @@
     ],
     "convention": "unknown",
     "name": "core_xform.cpp_FUN_005b9170",
-    "signature": "void core_xform_cpp_FUN_005b9170(int param_1,int param_2)"
+    "signature": "void core_xform_cpp_FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2)"
   },
   "function_calls": [
     {
       "addr": "0040cc60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc60"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cc60"
     },
     {
       "addr": "004a0f00",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_004a0f00"
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_004a0f00"
     },
     {
       "addr": "00524770",
@@ -52,7 +51,7 @@
     {
       "addr": "0057d9d0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_0057d9d0"
+      "name": "core_sound.cpp_CSound_killSound_FUN_0057d9d0"
     },
     {
       "addr": "005b8eb0",
@@ -139,7 +138,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_xform_cpp_FUN_005b9170(int param_1,int param_2)",
+      "text": "void core_xform_cpp_FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -147,12 +146,12 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_xform_cpp_FUN_005b9170(int param_1,int param_2)",
+      "text": "void core_xform_cpp_FUN_005b9170(CEnemy *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 11,
       "match": "param_1",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_005b8eb0(param_1,param_2);",
@@ -160,7 +159,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 12,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "core_xform_cpp_FUN_005b8eb0(param_1,param_2);",
@@ -168,18 +167,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2538) - *(float *)(param_2 + 4);",
+      "text": "fVar3 = (param_1->base).hit_points - *(float *)(param_2 + 4);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar3 = (param_1->base).hit_points - *(float *)(param_2 + 4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 13,
-      "match": "param_2",
+      "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x2538) - *(float *)(param_2 + 4);",
+      "text": "this_ptr = &(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
@@ -187,15 +194,7 @@
       "line": 14,
       "match": "param_1",
       "severity": "mild",
-      "text": "this_ptr = (CMotionController *)(param_1 + 0x158);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 15,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(float *)(param_1 + 0x2538) = fVar1;",
+      "text": "(param_1->base).hit_points = fVar3;",
       "type": "unnamed_param"
     },
     {
@@ -203,39 +202,7 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x2538) = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 30,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "core_sound_cpp_FUN_0057d9d0(0x02C82A60,*(uint *)(param_1 + 0xc2b0));",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 31,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,\"dog-damage?.wav\");",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,\"dog-damage?.wav\");",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,\"dog-damage?.wav\");",
+      "text": "(param_1->base).hit_points = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -243,7 +210,23 @@
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xc2b0) = uVar4;",
+      "text": "(0x02C82A60,(uint)param_1[1].base.base.orient_matrix.m[1].x);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 33,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar3 = (float)(*((param_1->base).base.vtable._ub)->playSound)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 34,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "((CDemonActor *)param_1,\"dog-damage?.wav\");",
       "type": "unnamed_param"
     },
     {
@@ -251,55 +234,55 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_sound_cpp_FUN_0057d9d0(0x02C82A60,*(uint *)(param_1 + 0xc2b0));",
+      "text": "param_1[1].base.base.orient_matrix.m[1].x = fVar3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,\"dog-damage?.wav\");",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,\"dog-damage?.wav\");",
+      "text": "(0x02C82A60,(uint)param_1[1].base.base.orient_matrix.m[1].x);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 40,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar4 = (**(code **)(*(int *)(param_1 + 0x154) + 0x2c))(param_1,\"dog-damage?.wav\");",
+      "text": "fVar3 = (float)(*((param_1->base).base.vtable._ub)->playSound)",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0xc2b0) = uVar4;",
+      "text": "((CDemonActor *)param_1,\"dog-damage?.wav\");",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_FUN_004a0f00(param_1,param_2);",
+      "text": "param_1[1].base.base.orient_matrix.m[1].x = fVar3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 43,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(param_1,param_2);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_enemy_cpp_FUN_004a0f00(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(param_1,param_2);",
       "type": "unnamed_param"
     }
   ],

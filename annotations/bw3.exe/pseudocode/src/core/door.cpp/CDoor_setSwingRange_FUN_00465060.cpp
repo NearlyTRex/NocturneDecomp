@@ -9,6 +9,6 @@
 void __cdecl core_door_cpp_CDoor_setSwingRange_FUN_00465060(CDoor *this_ptr,float swing_range)
 
 {
-  *(float *)&this_ptr->field_0x9cc = swing_range;
+  this_ptr->swing_range = swing_range;
   return;
 }

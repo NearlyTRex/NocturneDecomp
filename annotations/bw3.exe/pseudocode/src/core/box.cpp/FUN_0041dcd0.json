@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 360,
-    "complexity_score": 356,
+    "complexity_score": 348,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 171,
+    "pseudocode_lines": 163,
     "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 531
+    "total_lines": 523
   },
   "cross_references": [
     {
@@ -47,7 +47,7 @@
     {
       "addr": "0053b250",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b250"
+      "name": "core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250"
     },
     {
       "addr": "00403920",
@@ -376,7 +376,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 38,
       "match": "param_1",
       "severity": "mild",
       "text": "core_box_cpp_FUN_0041d8b0(param_1,local_14);",
@@ -384,15 +384,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 55,
+      "line": 47,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "if ((*(byte *)(*(int *)DAT_005f2afc + 0x13 + iVar2) & 0x80) == 0) {",
+      "text": "if (((byte)DAT_005f2afc->vertex_buffer_ptr[iVar2 + 0x13] & 0x80) == 0) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 61,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,local_1c);",
@@ -400,7 +400,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 71,
+      "line": 63,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(DAT_005f2afc,0);",
@@ -408,7 +408,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 73,
+      "line": 65,
       "match": "param_1",
       "severity": "mild",
       "text": "local_34 = (int)ROUND(*param_1 * _DAT_005dc948);",
@@ -416,7 +416,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 66,
       "match": "param_1",
       "severity": "mild",
       "text": "local_30 = (int)ROUND(param_1[1] * _DAT_005dc948);",
@@ -424,7 +424,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 75,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "local_2c = (int)ROUND(param_1[2] * _DAT_005dc948);",
@@ -432,7 +432,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 77,
+      "line": 69,
       "match": "param_1",
       "severity": "mild",
       "text": "local_58 = (int)ROUND(param_1[3] * _DAT_005dc948);",
@@ -440,23 +440,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_54 = (int)ROUND(param_1[4] * _DAT_005dc948);",
+      "text": "local_54.i = (int)ROUND(param_1[4] * _DAT_005dc948);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 79,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_50 = (int)ROUND(param_1[5] * _DAT_005dc948);",
+      "text": "local_50.i = (int)ROUND(param_1[5] * _DAT_005dc948);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 172,
+      "line": 164,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500(DAT_005f2afc,1);",
@@ -464,7 +464,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 173,
+      "line": 165,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setPlaneCullingEnabled_FUN_0046d450(DAT_005f2afc,1);",

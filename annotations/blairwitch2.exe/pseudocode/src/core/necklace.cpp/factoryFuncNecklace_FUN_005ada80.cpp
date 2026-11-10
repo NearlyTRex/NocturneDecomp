@@ -11,7 +11,7 @@ void core_necklace_cpp_factoryFuncNecklace_FUN_005ada80(void)
 {
   CNecklace *this_ptr;
   
-  this_ptr = (CNecklace *)FUN_005b8be2(0x7d4);
+  this_ptr = (CNecklace *)debugAllocTracked1(0x7d4);
   if (this_ptr == (CNecklace *)0x0) {
     return;
   }

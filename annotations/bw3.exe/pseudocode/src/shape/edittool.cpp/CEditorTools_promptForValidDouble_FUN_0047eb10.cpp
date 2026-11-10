@@ -18,8 +18,7 @@ int __cdecl shape_edittool_cpp_CEditorTools_promptForValidDouble_FUN_0047eb10(CE
     acStack_30[0] = '\0';
   }
   else {
-    FUN_005a28c0
-              (acStack_30,0x5bd038,*(uint *)result_ptr,*(uint *)((int)result_ptr + 4));
+    _sprintf(acStack_30,(char *)0x5bd038);
   }
   while( true ) {
     while( true ) {

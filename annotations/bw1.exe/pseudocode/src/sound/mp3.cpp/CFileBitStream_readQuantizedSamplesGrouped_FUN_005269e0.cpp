@@ -57,7 +57,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_005269
             pSVar7 = local_18 + local_48;
             do {
               pSVar8 = pSVar7 + 0x80;
-              uVar5 = sound_mp3_cpp_FUN_00525cd0
+              uVar5 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0
                                 (this_ptr,*(int *)(*(int *)(allocation_array +
                                                            local_48 + local_20 * 0x80) * 0x10 +
                                                    local_4c + 4));
@@ -67,7 +67,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_005269
           }
           else {
             uVar5 = *puVar4;
-            uVar6 = sound_mp3_cpp_FUN_00525cd0(this_ptr,puVar4[1]);
+            uVar6 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(this_ptr,puVar4[1]);
             pSVar7 = local_18 + local_48;
             do {
               *(uint *)pSVar7 = uVar6 % uVar5;

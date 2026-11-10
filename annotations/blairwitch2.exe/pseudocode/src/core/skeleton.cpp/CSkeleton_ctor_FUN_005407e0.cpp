@@ -16,9 +16,9 @@ CSkeleton * core_skeleton_cpp_CSkeleton_ctor_FUN_005407e0(CSkeleton *this_ptr)
   
   FUN_005badc7(8);
   pCVar1 = (CSkeleton *)core_moon_cpp_FUN_00502760(unaff_retaddr);
-  *(uint *)&pCVar1->field_0x1d1f8 = 0;
-  *(uint *)&pCVar1->field_0x1e00c = 0;
-  *(uint *)&pCVar1->field_0x1e010 = 0;
+  pCVar1->bone_count = 0;
+  pCVar1->frame_count = 0;
+  pCVar1->bone_angle_frames = (CQuaternion4f *)0x0;
   *(uint *)&pCVar1->field_0x1e014 = 0;
   *(uint *)&pCVar1->field_0x1e018 = 0;
   pCVar1->field_0x1d1a8 = 0;

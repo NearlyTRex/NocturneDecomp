@@ -11,7 +11,7 @@ void core_twigzomb_cpp_factoryFuncTwigZombie_FUN_005a26a0(void)
 {
   CTwigZombie *this_ptr;
   
-  this_ptr = (CTwigZombie *)FUN_005b8be2(0x11858);
+  this_ptr = (CTwigZombie *)debugAllocTracked1(0x11858);
   if (this_ptr == (CTwigZombie *)0x0) {
     return;
   }

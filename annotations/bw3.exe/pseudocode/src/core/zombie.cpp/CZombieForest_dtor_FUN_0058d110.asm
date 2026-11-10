@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CZombie_ForestTypeInfo
+;   WatcomTypeInfo g_CZombieForestTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 0058d12d
     SUB EAX,0x954                       ; 0058d12f
     PUSH EAX                            ; 0058d134
-    CALL core_cloth.cpp_FUN_0043f900    ; 0058d135
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 0058d135
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0058d13a
     PUSH 0x0                            ; 0058d13d
     SUB EAX,0x2db0                      ; 0058d13f
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EBX                         ; 0058d169
     POP EBX                             ; 0058d16b
     RET                                 ; 0058d16c
-    PUSH 0x5e6fd0                       ; 0058d16d | g_CZombie_ForestTypeInfo
+    PUSH 0x5e6fd0                       ; 0058d16d | g_CZombieForestTypeInfo
         ;   Label: LAB_0058d16d
     PUSH EBX                            ; 0058d172
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0058d173

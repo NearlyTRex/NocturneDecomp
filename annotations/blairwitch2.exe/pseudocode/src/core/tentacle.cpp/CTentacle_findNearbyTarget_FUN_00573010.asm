@@ -18,16 +18,16 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_tentacle.cpp_FUN_005726c0 at 005727a3
+;   core_tentacle.cpp_CTentacle_process_FUN_005726c0 at 005727a3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ec53a
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
-;   undefined4 g_CDemonSetInstance.field1372332_0x14f0ac
+;   undefined4 g_CDemonSetInstance.character_count
+;   undefined4 g_CDemonSetInstance.characters[0]
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c840
+;   core_actor.cpp_isOfClass_FUN_0040c840
 ;
 ; *****************************************************************************
 
@@ -50,11 +50,11 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 00573030 | g_CDemonSetPtr
         ;   Label: LAB_00573030
     MOV EBX,dword ptr [ESP + 0x24]      ; 00573035
-    CMP EBX,dword ptr [EAX + 0x14f0a8]  ; 00573039 | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP EBX,dword ptr [EAX + 0x14f0a8]  ; 00573039 | g_CDemonSetInstance.character_count
     JGE 0x005730ff                      ; 0057303f
         ;   XREF to: 005730ff (CONDITIONAL_JUMP)  ; LAB_005730ff
     ADD EAX,dword ptr [ESP + 0x28]      ; 00573045
-    MOV EBX,dword ptr [EAX + 0x14f0ac]  ; 00573049 | g_CDemonSetInstance.field1372332_0x14f0ac
+    MOV EBX,dword ptr [EAX + 0x14f0ac]  ; 00573049 | g_CDemonSetInstance.characters[0]
     CMP EBX,dword ptr [EBP + 0x14]      ; 0057304f
     JNZ 0x0057306a                      ; 00573052
         ;   XREF to: 0057306a (CONDITIONAL_JUMP)  ; LAB_0057306a
@@ -71,8 +71,8 @@ section .text
         ;   Label: LAB_0057306a
     PUSH EDX                            ; 0057306d
     PUSH EBX                            ; 0057306e
-    CALL core_actor.cpp_FUN_0040c840    ; 0057306f
-        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c840 ; 0057306f
+        ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c840(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00573074
     TEST EAX,EAX                        ; 00573077
     JZ 0x00573054                       ; 00573079

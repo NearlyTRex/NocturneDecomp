@@ -14,12 +14,13 @@ CEtherealDog * core_dog_cpp_CEtherealDog_ctor_FUN_004637b0(CEtherealDog *this_pt
   CZombieDog *pCVar1;
   
   pCVar1 = core_dog_cpp_CZombieDog_ctor_FUN_00462710((CZombieDog *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CEtherealDogVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,"ethereal_dog.dfm");
-  *(uint *)&pCVar1->field_0x2538 = 0x41f00000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41200000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41200000;
-  *(uint *)&pCVar1->field_0xcdc4 = 1;
+  (pCVar1->base).base.base.vtable._ub = &g_CEtherealDogVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            (&(pCVar1->base).base.model,"ethereal_dog.dfm");
+  (pCVar1->base).base.hit_points = 30.0;
+  *(uint *)&(pCVar1->base).field_0xce5c = 0x41200000;
+  *(uint *)&(pCVar1->base).field_0xce60 = 0x41200000;
+  *(uint *)&(pCVar1->base).base.field_0xcdc4 = 1;
   *(uint *)&pCVar1->field_0xd060 = 3;
   return (CEtherealDog *)pCVar1;
 }

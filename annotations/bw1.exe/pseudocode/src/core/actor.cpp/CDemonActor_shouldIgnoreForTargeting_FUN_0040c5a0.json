@@ -16,13 +16,19 @@
     {
       "addr": "0040c580",
       "from_addr": "0040c58c",
-      "name": "core_actor.cpp_FUN_0040c580",
+      "name": "core_actor.cpp_checkNameHash_FUN_0040c580",
       "type": "CONDITIONAL_JUMP"
     },
     {
       "addr": "0042be10",
       "from_addr": "0042be15",
-      "name": "core_carved.cpp_FUN_0042be10",
+      "name": "core_carved.cpp_CCarved_shouldIgnoreForTargeting_FUN_0042be10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0045cdc0",
+      "from_addr": "0045cde5",
+      "name": "core_demnfolk.cpp_CDemnfolk_shouldIgnoreForTargeting_FUN_0045cdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,19 +40,13 @@
     {
       "addr": "00599ba0",
       "from_addr": "00599bd1",
-      "name": "core_thehand.cpp_FUN_00599ba0",
+      "name": "core_thehand.cpp_CTheHand_shouldIgnoreForTargeting_FUN_00599ba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005bed50",
       "from_addr": "005bed75",
       "name": "core_zombie.cpp_CZombie_shouldIgnoreForTargeting_FUN_005bed50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0045cdc0",
-      "from_addr": "0045cde5",
-      "name": "unkafter_demnfolk.cpp_FUN_0045cdc0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -70,7 +70,7 @@
       {
         "call_addr": "0042be15",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_0042be10",
+        "caller": "core_carved.cpp_CCarved_shouldIgnoreForTargeting_FUN_0042be10",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -81,7 +81,7 @@
       {
         "call_addr": "0045cde5",
         "call_type": "direct",
-        "caller": "unkafter_demnfolk.cpp_FUN_0045cdc0",
+        "caller": "core_demnfolk.cpp_CDemnfolk_shouldIgnoreForTargeting_FUN_0045cdc0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -103,7 +103,7 @@
       {
         "call_addr": "00599bd1",
         "call_type": "direct",
-        "caller": "core_thehand.cpp_FUN_00599ba0",
+        "caller": "core_thehand.cpp_CTheHand_shouldIgnoreForTargeting_FUN_00599ba0",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -170,7 +170,7 @@
         "vtable_addr": "00602c04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CMoloch",
         "offset": 112,
         "vtable_addr": "00603f04"
       },
@@ -185,7 +185,7 @@
         "vtable_addr": "005fc314"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CFilmReel",
         "offset": 112,
         "vtable_addr": "005ffd14"
       }

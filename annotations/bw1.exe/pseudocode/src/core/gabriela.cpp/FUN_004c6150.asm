@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004c89c0 at 004c8db0
+;   core_gabriela.cpp_CGabriella_updateWeaponAndAimAnimation_FUN_004c89c0 at 004c8db0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e0e04

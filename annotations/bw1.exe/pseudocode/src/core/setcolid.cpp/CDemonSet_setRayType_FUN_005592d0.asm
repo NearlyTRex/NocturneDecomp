@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   ray_type
 ;
 ; XREF[17]:
-;   core_actor.cpp_FUN_00409f20 at 0040a52b
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a52b
 ;   core_charactr.cpp_FUN_00432f10 at 004334f8
-;   core_crossbow.cpp_FUN_00449a50 at 00449c13
-;   core_doc.cpp_FUN_00471af0 at 00471b86
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 00449c13
+;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471b86
 ;   core_doc.cpp_FUN_004724a0 at 00472cdf
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e45b
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e45b
+;   core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004ca0c0 at 004ca3a8
 ;   core_gabriela.cpp_FUN_004c7aa0 at 004c80f3
-;   core_gabriela.cpp_FUN_004ca0c0 at 004ca3a8
 ;   core_game.cpp_FUN_004d9260 at 004d9a11
-;   core_gun.cpp_FUN_004e8630 at 004e880a
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e880a
 ;   ... and 7 more
 ;
 ; Referenced Globals:

@@ -1,12 +1,12 @@
 // Name: support_codec.cpp_FUN_00433f50
 // Address: 00433f50
 // Address Range: [[00433f50, 00433f55]]
-// Convention: unknown
-// Signature: undefined4 support_codec_cpp_FUN_00433f50(void)
+// Convention: __cdecl
+// Signature: int __cdecl support_codec_cpp_FUN_00433f50(CCodec *this_ptr,void *ostream)
 
 #include "nocturne.h"
 
-uint support_codec_cpp_FUN_00433f50(void)
+int __cdecl support_codec_cpp_FUN_00433f50(CCodec *this_ptr,void *ostream)
 
 {
   return 1;

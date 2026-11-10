@@ -47,7 +47,7 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
   fVar10 = (float10)local_54 * (float10)_DAT_005d2337 + (float10)_DAT_005d233f;
   round();
   iVar2 = (int)ROUND(fVar10);
-  iVar7 = wincore_winrun_cpp_FUN_0058e9e0();
+  iVar7 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   iVar1 = (_DAT_01c2559c + -1) * 0x1f8;
   if ((iVar2 != *(int *)(iVar1 + 0x1c25790)) || (0x47ffff < iVar7 - *(int *)(iVar1 + 0x1c25794))) {
     shape_edittool_cpp_FUN_0047e870(param_1);
@@ -143,7 +143,7 @@ void shape_edittool_cpp_FUN_0047dc40(uint param_1,float param_2,float param_3)
         }
       }
     }
-    wincore_wddvmem_cpp_FUN_00589560();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     iVar1 = (_DAT_01c2559c + -1) * 0x1f8;
     *(int *)(iVar1 + 0x1c25790) = iVar2;
     *(int *)(iVar1 + 0x1c25794) = iVar7;

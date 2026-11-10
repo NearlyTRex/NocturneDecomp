@@ -28,11 +28,11 @@
 ;
 ; XREF[6]:
 ;   core_actor.cpp_FUN_004093a0 at 00409564
-;   core_boxactor.cpp_FUN_0041cb40 at 0041cbea
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40 at 0041cbea
 ;   core_dmodel.cpp_FUN_0044f020 at 0044f06a
-;   core_manpuz.cpp_FUN_004e5970 at 004e5c5e
-;   core_setdir.cpp_FUN_0053a1b0 at 0053a44e
-;   core_wateract.cpp_FUN_00587900 at 00587944
+;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_004e5970 at 004e5c5e
+;   core_setdir.cpp_testOBBIntersection_FUN_0053a1b0 at 0053a44e
+;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00587900 at 00587944
 ;
 ; *****************************************************************************
 

@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
-;   core_ammobox.cpp_FUN_0040e210
+;   core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210
 ;   shape_edittool.cpp_FUN_00494340
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     LEA EDX,[EBX + 0x1fae8]             ; 00470784
     PUSH EDX                            ; 0047078a
     PUSH EAX                            ; 0047078b
-    CALL core_ammobox.cpp_FUN_0040e210  ; 0047078c
-        ;   XREF to: 0040e210 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_FUN_0040e210(CAmmoBox * this_ptr, CInventory * inventory)
+    CALL core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210 ; 0047078c
+        ;   XREF to: 0040e210 (UNCONDITIONAL_CALL)  ; void core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210(CAmmoBox * this_ptr, CInventory * inventory)
     ADD ESP,0x8                         ; 00470791
     MOV dword ptr [EBX + 0x1ff5c],0x1   ; 00470794
         ;   Label: LAB_00470794

@@ -11,8 +11,8 @@
 ; XREF[6]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040 at 0040c062
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_00422760 at 00422a3c
-;   core_boxactor.cpp_FUN_004231e0 at 00423236
-;   core_charactr.cpp_FUN_0042c7f0 at 0042ca74
+;   core_boxactor.cpp_CLightActor_archive_FUN_004231e0 at 00423236
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042ca74
 ;   core_manpuz.cpp_CMansionPuzzleCircle_archive_FUN_00506110 at 005061d2
 ;   core_turret.cpp_CTurret_archive_FUN_005a2bf0 at 005a2c0a
 ;

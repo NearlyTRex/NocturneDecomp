@@ -9,9 +9,9 @@
 CStrList * __cdecl shape_edittool_cpp_CStrList_ctor_FUN_00499380(CStrList *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
-  *(uint *)&this_ptr->field_0x8 = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(byte ***)&this_ptr->field_0xc = &g_CStrListVTable;
+  this_ptr->item_count = 0;
+  this_ptr->data_array = (char **)0x0;
+  this_ptr->capacity = 0;
+  (this_ptr->vtable)._us = (CStrList_vtable *)&g_CStrListVTable;
   return this_ptr;
 }

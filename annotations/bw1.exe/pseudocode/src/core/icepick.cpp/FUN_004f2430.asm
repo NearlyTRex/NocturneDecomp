@@ -26,11 +26,11 @@
 ;   TerminatedCString s_icepick_punch_wav_005e544f
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
+;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042c010
 ;   core_skeleton.cpp_FUN_00569130
 ;
@@ -76,7 +76,7 @@ section .text
     XOR ESI,ESI                         ; 004f2489
     MOV EAX,[0x00622c18]                ; 004f248b | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_004f248b
-    CMP EDI,dword ptr [EAX + 0x14f0a8]  ; 004f2490 | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP EDI,dword ptr [EAX + 0x14f0a8]  ; 004f2490 | g_CDemonSetInstance.character_count
     JGE 0x004f2522                      ; 004f2496
         ;   XREF to: 004f2522 (CONDITIONAL_JUMP)  ; LAB_004f2522
     MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14f0ac] ; 004f249c
@@ -96,8 +96,8 @@ section .text
     ADD ESP,0x4                         ; 004f24b5
     PUSH 0x43020000                     ; 004f24b8
     PUSH 0x42b40000                     ; 004f24bd
-    CALL core_actor.cpp_FUN_0040cc00    ; 004f24c2
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004f24c2
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x78],EAX      ; 004f24c7
     MOV EDX,0x3f000000                  ; 004f24cb
     FLD float ptr [ESP + 0x78]          ; 004f24d0

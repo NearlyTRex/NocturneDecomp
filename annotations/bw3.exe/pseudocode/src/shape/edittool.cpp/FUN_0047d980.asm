@@ -9,7 +9,7 @@
 ;   shape_edittool.cpp_CStrList_add_FUN_00482070
 ;   shape_edittool.cpp_CStrList_ctor_FUN_00481f20
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00481f40
-;   shape_edittool.cpp_FUN_0047d230
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     PUSH EAX                            ; 0047d9fe
     LEA EAX,[ESP + 0x8]                 ; 0047d9ff
     PUSH EAX                            ; 0047da03
-    CALL shape_edittool.cpp_FUN_0047d230 ; 0047da04
-        ;   XREF to: 0047d230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0047d230(CStrList * str_list, char * dialog_title, int dialog_mode)
+    CALL shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230 ; 0047da04
+        ;   XREF to: 0047d230 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230(CStrList * str_list, char * dialog_title, int dialog_mode)
     ADD ESP,0xc                         ; 0047da09
     XOR EBX,EBX                         ; 0047da0c
     TEST EAX,EAX                        ; 0047da0e

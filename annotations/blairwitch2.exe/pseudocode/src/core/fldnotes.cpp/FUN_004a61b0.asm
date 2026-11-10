@@ -39,7 +39,7 @@
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   engine_alphabit.cpp_FUN_0040dd20
-;   shape_edittool.cpp_FUN_0047bdf0
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
 ;
 ; *****************************************************************************
 
@@ -212,8 +212,8 @@ section .text
     PUSH 0x5d64fb                       ; 004a639b | = "Ignoring saved game reference to fiel..."
     MOV ESI,dword ptr [0x006138e0]      ; 004a63a0 | g_CEditorToolsPtr
     PUSH ESI                            ; 004a63a6
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 004a63a7
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 004a63a7
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x10                        ; 004a63ac
     MOV EDI,dword ptr [ESP + 0x204]     ; 004a63af
         ;   Label: LAB_004a63af

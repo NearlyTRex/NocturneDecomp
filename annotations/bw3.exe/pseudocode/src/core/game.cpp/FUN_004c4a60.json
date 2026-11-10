@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 150,
-    "complexity_score": 670,
+    "complexity_score": 671,
     "cross_reference_count": 2,
     "function_call_count": 11,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 56,
     "suspect_count": 59,
     "suspect_types": [
       "bitcast_double_pair",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "unrolled_strcpy"
     ],
-    "total_lines": 205
+    "total_lines": 206
   },
   "cross_references": [
     {
@@ -61,44 +61,44 @@
       "name": "sound_sndmain.cpp_FUN_00555df0"
     },
     {
-      "addr": "00555f20",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555f20"
-    },
-    {
-      "addr": "00555f60",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555f60"
-    },
-    {
-      "addr": "00555fd0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555fd0"
-    },
-    {
-      "addr": "00556050",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556050"
-    },
-    {
       "addr": "00556700",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_00556700"
     },
     {
-      "addr": "00556c10",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556c10"
-    },
-    {
       "addr": "00556e30",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556e30"
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
+    },
+    {
+      "addr": "00556050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00556050"
+    },
+    {
+      "addr": "00555fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0"
     },
     {
       "addr": "00555e90",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90"
+    },
+    {
+      "addr": "00555f20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxFlagBits_FUN_00555f20"
+    },
+    {
+      "addr": "00555f60",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_00555f60"
+    },
+    {
+      "addr": "00556c10",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00556c10"
     }
   ],
   "globals": [
@@ -290,7 +290,7 @@
       "line": 17,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
       "type": "pointer_cast"
     },
     {
@@ -298,7 +298,7 @@
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
       "type": "unnamed_param"
     },
     {
@@ -402,7 +402,7 @@
       "line": 35,
       "match": "param_4",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
+      "text": "sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
       "type": "unnamed_param"
     },
     {
@@ -410,7 +410,7 @@
       "line": 35,
       "match": "param_3",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
+      "text": "sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
       "type": "unnamed_param"
     },
     {
@@ -418,7 +418,7 @@
       "line": 35,
       "match": "__BITCAST_DOUBLE(CONCAT44(",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
+      "text": "sound_sndmain_cpp_setNextSfxTriggerTime_FUN_00555f60(__BITCAST_DOUBLE(CONCAT44(param_4,param_3)),1);",
       "type": "bitcast_double_pair"
     },
     {
@@ -482,7 +482,7 @@
       "line": 49,
       "match": "(float *)((int)param_1",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0)",
       "type": "pointer_cast"
     },
     {
@@ -490,12 +490,12 @@
       "line": 49,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0)",
       "type": "unnamed_param"
     },
     {
       "description": "Complex pointer cast",
-      "line": 52,
+      "line": 53,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x300) = 0;",
@@ -503,7 +503,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 53,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + 0x300) = 0;",
@@ -511,7 +511,7 @@
     },
     {
       "description": "Complex pointer cast",
-      "line": 53,
+      "line": 54,
       "match": "(uint *)((int)param_1",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x304) = 0;",
@@ -519,7 +519,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 54,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)((int)param_1 + 0x304) = 0;",
@@ -570,7 +570,7 @@
       "line": 17,
       "match": "(uint *)((int)param_1 + 0x2fc)",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)((int)param_1 + 0x2fc),0.0,4.0,1);",
       "type": "pointer_cast"
     },
     {
@@ -626,12 +626,12 @@
       "line": 49,
       "match": "(float *)((int)param_1 + 0x308)",
       "severity": "moderate",
-      "text": "sound_sndmain_cpp_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(sfx_handle,*(float *)((int)param_1 + 0x308),4.0,0)",
       "type": "pointer_cast"
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 52,
+      "line": 53,
       "match": "(uint *)((int)param_1 + 0x300)",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x300) = 0;",
@@ -639,7 +639,7 @@
     },
     {
       "description": "Byte-offset struct access via a pointer cast to int (`(int)ptr + 0xNNN`) \u2014 Ghidra lost the struct type for the pointer. Replace with the named struct field / array index in a .keep (search the struct for the member at that offset first).",
-      "line": 53,
+      "line": 54,
       "match": "(uint *)((int)param_1 + 0x304)",
       "severity": "moderate",
       "text": "*(uint *)((int)param_1 + 0x304) = 0;",

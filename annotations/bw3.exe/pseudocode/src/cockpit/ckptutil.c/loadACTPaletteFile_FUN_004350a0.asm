@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   support_trstream.cpp_FUN_00573fc0
 ;   unkafter_turret.cpp_CInStreamFile_ctor_FUN_005738c0
 ;   unkafter_turret.cpp_CInStreamFile_dtor_FUN_00573a40
@@ -150,8 +150,8 @@ section .text
     PUSH 0x5b8937                       ; 00435186
     LEA EAX,[ESP + 0x58]                ; 0043518b
     PUSH EAX                            ; 0043518f
-    CALL crt_unknown.c_FUN_005a28c0     ; 00435190
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00435190
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5b8949                    ; 00435195
     ADD ESP,0xc                         ; 0043519a
     LEA EAX,[ESP + 0x50]                ; 0043519d

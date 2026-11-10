@@ -1,0 +1,316 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 108,
+    "complexity_score": 139,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 59,
+    "suspect_count": 7,
+    "suspect_types": [
+      "undefined_data",
+      "unrolled_strcpy"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [
+    {
+      "addr": "004b6170",
+      "from_addr": "004b6790",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b82e0",
+      "from_addr": "004b8551",
+      "name": "core_game.cpp_FUN_004b82e0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004bdb10",
+    "address_range": [
+      [
+        "004bdb10",
+        "004bdc17"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_game.cpp_CGame_promptLoadGame_FUN_004bdb10",
+    "signature": "void __cdecl core_game_cpp_CGame_promptLoadGame_FUN_004bdb10(CGame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    },
+    {
+      "addr": "005b9e58",
+      "is_variadic": false,
+      "name": "crt_string.c_splitpath_FUN_005b9e58"
+    },
+    {
+      "addr": "0047c970",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970"
+    },
+    {
+      "addr": "0050fe80",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_0050fe80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d892b",
+      "name": "DAT_005d892b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d892f",
+      "name": "DAT_005d892f",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d8934",
+      "name": "s_noc_005d8934",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d893a",
+      "name": "DAT_005d893a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d893f",
+      "name": "s_Select_file_to_load_005d893f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006138e0",
+      "name": "g_CEditorToolsPtr",
+      "type": "CEditorTools*",
+      "value": "01c25594"
+    },
+    {
+      "addr": "01cb7b50",
+      "name": "DAT_01cb7b50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7b51",
+      "name": "DAT_01cb7b51",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7b52",
+      "name": "DAT_01cb7b52",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01cb7b53",
+      "name": "DAT_01cb7b53",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004b6790",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b6b91",
+        "call_type": "direct",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b8551",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b82e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.1395348837209305,
+    "instruction_count": 86,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 7,
+      "COPY": 67,
+      "INT_ADD": 34,
+      "INT_AND": 43,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 40,
+      "INT_LESS": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 11,
+      "INT_SLESS": 20,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "LOAD": 15,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 34
+    },
+    "pcode_op_count": 356
+  },
+  "stack_frame": {
+    "frame_size": 536,
+    "local_size": 532,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_20f",
+        "offset": -527,
+        "size": 1,
+        "type": "undefined1"
+      },
+      {
+        "is_param": false,
+        "name": "local_10c",
+        "offset": -268,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "004bdb83",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "004bdbe2",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_01cb7b50",
+      "severity": "mild",
+      "text": "splitpath(&DAT_01cb7b50,(char *)0x0,(char *)0x0,(char *)0x0,local_10c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_005d892b",
+      "severity": "mild",
+      "text": "iVar2 = _stricmp(local_10c,&DAT_005d892b);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005d892f",
+      "severity": "mild",
+      "text": "(iVar2 = _stricmp(local_10c,&DAT_005d892f), iVar2 == 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_01cb7b50",
+      "severity": "mild",
+      "text": "pcVar3 = &DAT_01cb7b50;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 41,
+      "match": "DAT_005d893a",
+      "severity": "mild",
+      "text": "search_directory = &DAT_005d893a;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 50,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

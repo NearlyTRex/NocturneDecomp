@@ -30,7 +30,8 @@ void core_fldnotes_cpp_FUN_004a5490(uint param_1,uint param_2)
   iVar1 = 0;
 LAB_004a54cc:
   if (iVar1 == 0) {
-    shape_edittool_cpp_FUN_0047be40(g_CEditorToolsPtr,"CFieldNotes::turnToEntry - entry '%s' not found",param_2);
+    shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
+              (g_CEditorToolsPtr,"CFieldNotes::turnToEntry - entry '%s' not found");
     return;
   }
   if (DAT_00616014 != 0) {

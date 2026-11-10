@@ -11,11 +11,11 @@
 ; XREF[25]:
 ;   core_actor.cpp_FUN_00408b00 at 00408b1a
 ;   core_actor.cpp_FUN_00408bb0 at 00408bfa
-;   core_bodypart.cpp_FUN_00419b90 at 0041a13d
-;   core_bodypart.cpp_FUN_0041a200 at 0041a51f
+;   core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200 at 0041a51f
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90 at 0041a13d
 ;   core_box.cpp_CBox_processPhysics_FUN_0041e130 at 0041e2a2
 ;   core_box.cpp_CBox_setupVelocities_FUN_00420450 at 0042048e
-;   core_cloth.cpp_FUN_00440640 at 00440b98
+;   core_cloth.cpp_CCloth_step_FUN_00440640 at 00440b98
 ;   core_cloth.cpp_FUN_004421d0 at 00442282
 ;   core_curtain.cpp_FUN_0044ab20 at 0044abba
 ;   core_dcamera.cpp_FUN_00454cc0 at 00454f42

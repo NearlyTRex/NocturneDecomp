@@ -6,11 +6,11 @@
 ;
 ; XREF[6]:
 ;   core_actor.cpp_FUN_0040ce40 at 0040ce60
-;   core_confzomb.cpp_FUN_005a1d90 at 005a1df8
-;   core_ghostchi.cpp_FUN_005a9440 at 005a94b4
-;   core_hag.cpp_FUN_005aa8c0 at 005aa934
-;   core_spirmine.cpp_FUN_005ad4f0 at 005ad520
-;   core_unionzom.cpp_FUN_005a3f40 at 005a3fa8
+;   core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90 at 005a1df8
+;   core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440 at 005a94b4
+;   core_hag.cpp_CHag_setup_FUN_005aa8c0 at 005aa934
+;   core_spirmine.cpp_CSpiritMine_setup_FUN_005ad4f0 at 005ad520
+;   core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40 at 005a3fa8
 ;
 ; Called Functions:
 ;   unkafter_superopt.cpp_FUN_005a8160

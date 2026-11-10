@@ -1,0 +1,145 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 38,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 1,
+    "suspect_types": [
+      "pointer_cast"
+    ],
+    "total_lines": 71
+  },
+  "cross_references": [
+    {
+      "addr": "005740fe",
+      "from_addr": "00574116",
+      "name": "sound_sndmain.cpp_FUN_005740fe",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00574380",
+    "address_range": [
+      [
+        "00574380",
+        "005743dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_freeSampleByName_FUN_00574380",
+    "signature": "void __cdecl sound_sndmain_cpp_freeSampleByName_FUN_00574380(char *sample_name,int kill_active_slots)"
+  },
+  "function_calls": [
+    {
+      "addr": "005c04e0",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005c04e0"
+    },
+    {
+      "addr": "00570020",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00570020"
+    },
+    {
+      "addr": "00573e70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00573e70"
+    },
+    {
+      "addr": "00574310",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_00574310"
+    },
+    {
+      "addr": "00575d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_00575d20"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00574116",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_FUN_005740fe",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.878787878787879,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 22,
+      "INT_ADD": 12,
+      "INT_AND": 21,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 20,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 10,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 7,
+      "POPCOUNT": 10,
+      "RETURN": 1,
+      "STORE": 12
+    },
+    "pcode_op_count": 161
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "sample_name",
+        "offset": 4,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "kill_active_slots",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Complex pointer cast",
+      "line": 15,
+      "match": "(int *)((int)g_SfxSamples",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_SfxSamples[0].loop_destinations + iVar2 + 0x18) == 0) {",
+      "type": "pointer_cast"
+    }
+  ]
+}

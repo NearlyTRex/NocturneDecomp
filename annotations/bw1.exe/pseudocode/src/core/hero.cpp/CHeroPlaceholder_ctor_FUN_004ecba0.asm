@@ -7,7 +7,7 @@
 ; CHeroPlaceholder * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_hero.cpp_FUN_004ecb70 at 004ecb83
+;   core_hero.cpp_factoryFuncHeroPlaceholder_FUN_004ecb70 at 004ecb83
 ;   core_mission.cpp_FUN_0051c240 at 0051c323
 ;
 ; Referenced Globals:
@@ -15,7 +15,7 @@
 ;   undefined4 s_Doc_005e4b98+1
 ;   undefined4 s_oc_005e4b98+2
 ;   undefined4 s_c_005e4b98+3
-;   void* g_CHeroPlaceholderVTable = 00408850
+;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_004085c0

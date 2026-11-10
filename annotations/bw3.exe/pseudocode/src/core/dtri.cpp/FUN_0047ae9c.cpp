@@ -24,30 +24,24 @@ void core_dtri_cpp_FUN_0047ae9c(float *param_1)
   uint uStack_60;
   uint uStack_54;
   uint uStack_48;
-  int iStack_30;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
-  int iStack_18;
-  int iStack_14;
-  int iStack_10;
+  CVector3i CStack_30;
+  CVector3i CStack_24;
+  CVector3i CStack_18;
   
-  iStack_30 = (int)ROUND(*param_1 * _DAT_005dee70);
-  iStack_2c = (int)ROUND(param_1[1] * _DAT_005dee70);
-  iStack_28 = (int)ROUND(param_1[2] * _DAT_005dee70);
-  engine_special_cpp_FUN_005632a3(*(SProjectedVertex **)0x01BDD7E4,(CVector3i *)&iStack_30);
-  iStack_18 = (int)ROUND(param_1[3] * _DAT_005dee70);
-  iStack_14 = (int)ROUND(param_1[4] * _DAT_005dee70);
-  iStack_10 = (int)ROUND(param_1[5] * _DAT_005dee70);
+  CStack_30.x = (int)ROUND(*param_1 * _DAT_005dee70);
+  CStack_30.y = (int)ROUND(param_1[1] * _DAT_005dee70);
+  CStack_30.z = (int)ROUND(param_1[2] * _DAT_005dee70);
+  engine_special_cpp_FUN_005632a3((SProjectedVertex *)0x01BDD7E4->vertex_buffer_ptr,&CStack_30);
+  CStack_18.x = (int)ROUND(param_1[3] * _DAT_005dee70);
+  CStack_18.y = (int)ROUND(param_1[4] * _DAT_005dee70);
+  CStack_18.z = (int)ROUND(param_1[5] * _DAT_005dee70);
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(*(int *)0x01BDD7E4 + 0x30),(CVector3i *)&iStack_18);
-  iStack_24 = (int)ROUND(param_1[6] * _DAT_005dee70);
-  iStack_20 = (int)ROUND(param_1[7] * _DAT_005dee70);
-  iStack_1c = (int)ROUND(param_1[8] * _DAT_005dee70);
+            ((SProjectedVertex *)(0x01BDD7E4->vertex_buffer_ptr + 0x30),&CStack_18);
+  CStack_24.x = (int)ROUND(param_1[6] * _DAT_005dee70);
+  CStack_24.y = (int)ROUND(param_1[7] * _DAT_005dee70);
+  CStack_24.z = (int)ROUND(param_1[8] * _DAT_005dee70);
   engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(*(int *)0x01BDD7E4 + 0x60),(CVector3i *)&iStack_24);
+            ((SProjectedVertex *)(0x01BDD7E4->vertex_buffer_ptr + 0x60),&CStack_24);
   poly = aSStack_78;
   uStack_74 = 3;
   fVar1 = (float10)_DAT_005bccd9;

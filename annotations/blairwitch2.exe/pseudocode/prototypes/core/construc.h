@@ -15,7 +15,7 @@ void FUN_004382a0(int param_1);
 
 // Original: core_construc.cpp_FUN_00438370
 // Address: 00438370
-undefined4 FUN_00438370(int param_1,undefined4 param_2);
+ECollisionType FUN_00438370(CCharacter *param_1,SCollisionInfo *param_2);
 
 // Original: core_construc.cpp_CConstruct_dtor_FUN_00438390
 // Address: 00438390

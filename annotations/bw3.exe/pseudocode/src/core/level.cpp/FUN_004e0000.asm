@@ -6,7 +6,7 @@
 ;
 ; XREF[5]:
 ;   core_mission.cpp_CDemonMission_load_FUN_004f5bc0 at 004f5bf7
-;   core_mission.cpp_FUN_004f6a80 at 004f6a9e
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004f6a80 at 004f6a9e
 ;   core_mission.cpp_FUN_004f7590 at 004f765b
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 00534442
 ;   core_set.cpp_FUN_00532b80 at 00532ba9
@@ -18,7 +18,7 @@
 ; Called Functions:
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
-;   wincore_wddvmem.cpp_FUN_0057a8a0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;
 ; *****************************************************************************
 
@@ -62,8 +62,8 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0 ; 004e0053
         ;   XREF to: 0040d6f0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     ADD ESP,0x10                        ; 004e0058
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 004e005b
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 004e005b
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     POP EDI                             ; 004e0060
     POP EBP                             ; 004e0061
         ;   Label: LAB_004e0061

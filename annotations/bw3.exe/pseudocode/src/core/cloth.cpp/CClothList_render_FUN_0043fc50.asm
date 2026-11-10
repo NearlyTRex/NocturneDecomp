@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_charactr.cpp_FUN_0042d8e0 at 0042d953
-;   core_npc.cpp_FUN_005095f0 at 00509783
+;   core_npc.cpp_CNPC_renderTransparent_FUN_005095f0 at 00509783
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_render_FUN_0043f460

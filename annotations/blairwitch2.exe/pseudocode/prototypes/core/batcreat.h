@@ -21,29 +21,29 @@ CDemonActorType * CBatCreature::getActorType(CBatCreature *this_ptr);
 // Address: 00411690
 CBatCreature * __cdecl CBatCreature::ctor(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_FUN_004116f0
+// Original: core_batcreat.cpp_CBatCreature_setup_FUN_004116f0
 // Address: 004116f0
-void FUN_004116f0(CEnemy *param_1);
+void __cdecl CBatCreature::setup(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_FUN_00411a10
+// Original: core_batcreat.cpp_CBatCreature_process_FUN_00411a10
 // Address: 00411a10
-void FUN_00411a10(CEnemy *param_1,float param_2);
+void __cdecl CBatCreature::process(CBatCreature *this_ptr,float delta_time);
 
-// Original: core_batcreat.cpp_FUN_004124a0
+// Original: core_batcreat.cpp_CBatCreature_archive_FUN_004124a0
 // Address: 004124a0
-void FUN_004124a0(CEnemy *param_1);
+void __cdecl CBatCreature::archive(CBatCreature *this_ptr);
 
-// Original: core_batcreat.cpp_FUN_00412500
+// Original: core_batcreat.cpp_CBatCreature_processDismemberment_FUN_00412500
 // Address: 00412500
-void __cdecl FUN_00412500(CBatCreature *this_ptr,SDamageInfo *damage_info);
+void __cdecl CBatCreature::processDismemberment(CBatCreature *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batcreat.cpp_FUN_00412760
+// Original: core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760
 // Address: 00412760
-void FUN_00412760(CBatCreature *param_1,SDamageInfo *param_2);
+void __cdecl CBatCreature::processDamage(CBatCreature *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_batcreat.cpp_FUN_00412990
+// Original: core_batcreat.cpp_CBatCreature_getTargetPoints_FUN_00412990
 // Address: 00412990
-undefined4 FUN_00412990(int param_1,undefined4 *param_2);
+int __cdecl CBatCreature::getTargetPoints(CBatCreature *this_ptr,CVector3f *out_points_array);
 
 // Original: core_batcreat.cpp_CBatCreature_getCollisionType_FUN_00412a00
 // Address: 00412a00

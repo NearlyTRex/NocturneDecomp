@@ -1,0 +1,19 @@
+// Name: core_flamegun.cpp_CFlameThrower_getDamage_FUN_004a0f60
+// Address: 004a0f60
+// Address Range: [[004a0f60, 004a0f7f] [004a0f81, 004a0fa4]]
+// Convention: __cdecl
+// Signature: float __cdecl core_flamegun_cpp_CFlameThrower_getDamage_FUN_004a0f60(CFlameThrower *this_ptr)
+
+#include "nocturne.h"
+
+float __cdecl core_flamegun_cpp_CFlameThrower_getDamage_FUN_004a0f60(CFlameThrower *this_ptr)
+
+{
+  float fVar1;
+  
+  if ((this_ptr->base).ammo_type == AMMO_TYPE_BLANKS) {
+    return 0.0;
+  }
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(150.0,200.0);
+  return fVar1;
+}

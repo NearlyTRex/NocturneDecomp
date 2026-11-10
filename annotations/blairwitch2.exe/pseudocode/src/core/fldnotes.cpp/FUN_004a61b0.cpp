@@ -82,8 +82,8 @@ void core_fldnotes_cpp_FUN_004a61b0(uint param_1,uint param_2)
             pSVar6 = pSVar6 + 1;
           } while (iVar3 < _DAT_01cab9f0);
         }
-        shape_edittool_cpp_FUN_0047bdf0
-                  (g_CEditorToolsPtr,"Ignoring saved game reference to field notes entry %s which doesn't exist in %s",local_220,param_1);
+        shape_edittool_cpp_CEditorTools_showWarning_FUN_0047bdf0
+                  (g_CEditorToolsPtr,"Ignoring saved game reference to field notes entry %s which doesn't exist in %s");
 LAB_004a63af:
         iVar2 = iVar2 + 1;
       } while (iVar2 < local_1c);

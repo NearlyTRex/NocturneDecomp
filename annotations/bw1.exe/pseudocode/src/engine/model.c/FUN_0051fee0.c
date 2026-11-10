@@ -11,7 +11,7 @@
 int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header)
 
 {
-  byte local_100 [256];
+  char local_100 [256];
   
   switch(*(uint *)header) {
   case 0:
@@ -67,7 +67,7 @@ int __cdecl engine_model_c_FUN_0051fee0(SMRGLHeaderExtended *header)
   case 0x10:
     return 0x14;
   default:
-    FUN_005bfb40(local_100,"MRGLSize: Bad type : %d",*(uint *)header);
+    _sprintf(local_100,"MRGLSize: Bad type : %d");
     _DAT_01d1d400 = "..\\engine\\model.c";
     _DAT_01d1d404 = 0x25c;
     core_main_c_FUN_005030e0(local_100);

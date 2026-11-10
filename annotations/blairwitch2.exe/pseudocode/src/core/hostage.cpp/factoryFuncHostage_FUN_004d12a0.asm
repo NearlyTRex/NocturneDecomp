@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_hostage.cpp_CHostage_ctor_FUN_004d12d0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x24730                        ; 004d12a0
         ;   Label: core_hostage.cpp_factoryFuncHostage_FUN_004d12a0
-    CALL crt_unknown.c_FUN_005b8be2     ; 004d12a5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004d12a5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004d12aa
     TEST EAX,EAX                        ; 004d12ad
     JNZ 0x004d12b2                      ; 004d12af

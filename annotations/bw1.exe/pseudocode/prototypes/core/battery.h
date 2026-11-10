@@ -41,25 +41,25 @@ void __cdecl CBattery::onDropped(CBattery *this_ptr,CVector3f *drop_position);
 // Address: 004144e0
 CDemonActor * __cdecl CBattery::getCarrier(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_004144f0
+// Original: core_battery.cpp_CBattery_process_FUN_004144f0
 // Address: 004144f0
-void FUN_004144f0(void);
+void __cdecl CBattery::process(CBattery *this_ptr,float delta_time);
 
-// Original: core_battery.cpp_FUN_00414500
+// Original: core_battery.cpp_CBattery_renderOpaque_FUN_00414500
 // Address: 00414500
-int FUN_00414500(int param_1);
+int __cdecl CBattery::renderOpaque(CBattery *this_ptr);
 
 // Original: core_battery.cpp_CBattery_archive_FUN_004145a0
 // Address: 004145a0
 void __cdecl CBattery::archive(CBattery *this_ptr);
 
-// Original: core_battery.cpp_FUN_004145f0
+// Original: core_battery.cpp_CBattery_getCollisionType_FUN_004145f0
 // Address: 004145f0
-undefined4 FUN_004145f0(void);
+ECollisionType __cdecl CBattery::getCollisionType(CBattery *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_battery.cpp_FUN_00414600
+// Original: core_battery.cpp_CBattery_getBoundingBox_FUN_00414600
 // Address: 00414600
-void FUN_00414600(int param_1);
+CBoundingBox3D * __cdecl CBattery::getBoundingBox(CBattery *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_battery.cpp_CBattery_dtor_FUN_00414640
 // Address: 00414640

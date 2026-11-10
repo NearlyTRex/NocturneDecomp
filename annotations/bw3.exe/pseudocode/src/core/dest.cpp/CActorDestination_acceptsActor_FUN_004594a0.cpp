@@ -11,16 +11,16 @@ int __cdecl core_dest_cpp_CActorDestination_acceptsActor_FUN_004594a0(CActorDest
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x184 == 0) {
-    if (this_ptr->field_0x15c == '\0') {
-      if (actor == *(CDemonActor **)&this_ptr->field_0x158) {
+  if (this_ptr->triggered == 0) {
+    if (this_ptr->dest_class[0] == '\0') {
+      if (actor == this_ptr->dest_actor) {
         return 1;
       }
     }
     else {
-      iVar1 = core_actor_cpp_FUN_0040c790(actor,&this_ptr->field_0x15c);
+      iVar1 = core_actor_cpp_isOfClass_FUN_0040c790(actor,this_ptr->dest_class);
       if (iVar1 != 0) {
-        *(CDemonActor **)&this_ptr->field_0x158 = actor;
+        this_ptr->dest_actor = actor;
         return 1;
       }
     }

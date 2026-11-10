@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 76,
-    "complexity_score": 301,
+    "complexity_score": 281,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
-    "suspect_count": 23,
+    "suspect_count": 21,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -238,7 +238,7 @@
       "line": 26,
       "match": "field_0x4",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = *(uint *)position;",
+      "text": "*(float *)&this_ptr->field_0x4 = position->x;",
       "type": "unnamed_field"
     },
     {
@@ -246,15 +246,7 @@
       "line": 27,
       "match": "field_0x8",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x4;",
+      "text": "*(float *)&this_ptr->field_0x8 = position->y;",
       "type": "unnamed_field"
     },
     {
@@ -262,15 +254,7 @@
       "line": 28,
       "match": "field_0xc",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = *(uint *)&position->field_0x8;",
+      "text": "*(float *)&this_ptr->field_0xc = position->z;",
       "type": "unnamed_field"
     },
     {

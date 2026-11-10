@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 27,
-    "complexity_score": 114,
+    "complexity_score": 115,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
+    "pseudocode_lines": 20,
     "suspect_count": 9,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 46
+    "total_lines": 47
   },
   "cross_references": [
     {
@@ -43,7 +43,7 @@
     {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
     },
     {
       "addr": "005a3120",
@@ -118,20 +118,20 @@
       "line": 12,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CConstruct_BoneVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,\"bonestruct.dfm\");",
+      "text": "*(CConstruct_full_vtable **)&pCVar1->field_0x154 = &g_CConstructBoneVTable;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 14,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&pCVar1->field_0x158,\"bonestruct.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
       "match": "field_0x2538",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0x2538 = 0x425c0000;",
@@ -139,7 +139,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
+      "line": 16,
       "match": "field_0xce5c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xce5c = 0x41700000;",
@@ -147,7 +147,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
+      "line": 17,
       "match": "field_0xce60",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xce60 = 0x41200000;",
@@ -155,7 +155,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
+      "line": 18,
       "match": "field_0xd84c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd84c = 1;",
@@ -163,7 +163,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 18,
+      "line": 19,
       "match": "field_0xd85c",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0xd85c = 3;",
@@ -171,7 +171,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 19,
+      "line": 20,
       "match": "field_0x2538",
       "severity": "mild",
       "text": "fVar3 = (float10)*(float *)&pCVar1->field_0x2538;",
@@ -179,7 +179,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 21,
+      "line": 22,
       "match": "field_0xd17c",
       "severity": "mild",
       "text": "*(int *)&pCVar1->field_0xd17c = (int)ROUND(fVar3);",

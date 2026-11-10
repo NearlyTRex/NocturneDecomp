@@ -34,7 +34,7 @@ float core_setdir_cpp_FUN_0053f5d0(void)
   if (0 < in_stack_000000c0) {
     iVar4 = in_stack_000000c0 * 4;
     do {
-      iVar1 = engine_drender_cpp_FUN_0046b470
+      iVar1 = engine_drender_cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470
                         (DAT_005f2afc,*(SMRGLPrimitivePoly **)(&stack0x0000002c + iVar3));
       iVar3 = iVar3 + 4;
       in_stack_000000a4 = in_stack_000000a4 + iVar1;

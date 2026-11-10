@@ -38,20 +38,20 @@ void core_charactr_cpp_FUN_0042f010(int param_1)
             (DAT_005f2afc,(SMRGLTextureBasic *)&DAT_005f0f5c);
   this_ptr = (CDeformableModelInstance *)(param_1 + 0x158);
   if (*(int *)(param_1 + 0xbc68) != 0) {
-    core_skeleton_cpp_FUN_0054e3a0(this_ptr,-1,0xc9,0,1);
+    core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0(this_ptr,-1,0xc9,0,1);
     return;
   }
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(this_ptr);
   pCVar5 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40(this_ptr);
   iVar1 = *(int *)(param_1 + 0x2478);
   iVar6 = 0;
-  if (0 < *(int *)&pCVar4->field_0x1de78) {
+  if (0 < pCVar4->bone_count) {
     iVar9 = 0;
     do {
       *(uint *)((int)&DAT_007e2cf4 + iVar9) = 0;
       iVar6 = iVar6 + 1;
       iVar9 = iVar9 + 4;
-    } while (iVar6 < *(int *)&pCVar4->field_0x1de78);
+    } while (iVar6 < pCVar4->bone_count);
   }
   fVar3 = 0x40400000;
   iVar6 = 0;
@@ -69,25 +69,25 @@ void core_charactr_cpp_FUN_0042f010(int param_1)
   iVar6 = 0;
   iVar9 = 0;
   pCVar12 = pCVar5;
-  if (0 < *(int *)&pCVar4->field_0x1de78) {
+  if (0 < pCVar4->bone_count) {
     do {
       if ((float)_DAT_005b836e <= (float)(&DAT_007e2cf4)[iVar6]) {
         iVar9 = iVar9 + 1;
       }
-      if (*(int *)&pCVar12->field_0x33cc == -1) {
+      if (pCVar12->farthest_child_bone[0] == -1) {
         iVar9 = iVar9 + 1;
       }
       iVar6 = iVar6 + 1;
-      pCVar12 = (CDeformableModel *)&pCVar12->field_0x4;
-    } while (iVar6 < *(int *)&pCVar4->field_0x1de78);
+      pCVar12 = (CDeformableModel *)pCVar12->lod_info;
+    } while (iVar6 < pCVar4->bone_count);
   }
-  if ((iVar9 == *(int *)&pCVar4->field_0x1de78) && (*(int *)(param_1 + 0x2538) < 0x40a00000)) {
+  if ((iVar9 == pCVar4->bone_count) && (*(int *)(param_1 + 0x2538) < 0x40a00000)) {
     *(uint *)(param_1 + 0xbc6c) = 0x3f800000;
     *(uint *)(param_1 + 0xbc68) = 1;
   }
   local_1c = 0;
-  for (iVar6 = 0; iVar6 < *(int *)(&pCVar5->field_0x2c + iVar1 * 4); iVar6 = iVar6 + 1) {
-    pbVar11 = (byte *)(*(int *)(&pCVar5->field_0x40 + iVar1 * 4) + local_1c);
+  for (iVar6 = 0; iVar6 < pCVar5->vertex_count[iVar1]; iVar6 = iVar6 + 1) {
+    pbVar11 = &pCVar5->vertex_data_ptr[iVar1]->field_0x0 + local_1c;
     local_30 = 0.0;
     iVar9 = 0;
     pbVar8 = pbVar11;
@@ -108,6 +108,7 @@ void core_charactr_cpp_FUN_0042f010(int param_1)
     local_1c = local_1c + 0x34;
     *(int *)(*piVar7 + extraout_ECX_00 + 0x2c) = (int)ROUND(fVar13);
   }
-  core_skeleton_cpp_FUN_0054e3a0((CDeformableModelInstance *)(param_1 + 0x158),-1,0x163,0,1);
+  core_skeleton_cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0
+            ((CDeformableModelInstance *)(param_1 + 0x158),-1,0x163,0,1);
   return;
 }

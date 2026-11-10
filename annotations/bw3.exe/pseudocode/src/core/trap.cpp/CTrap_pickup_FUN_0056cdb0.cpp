@@ -9,6 +9,6 @@
 void __cdecl core_trap_cpp_CTrap_pickup_FUN_0056cdb0(CTrap *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x2d4 = carrier;
+  this_ptr->carrier = carrier;
   return;
 }

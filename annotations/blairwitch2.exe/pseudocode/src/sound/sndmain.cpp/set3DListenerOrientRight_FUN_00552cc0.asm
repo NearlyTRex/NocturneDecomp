@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   core_sound.cpp_CSound_configure_FUN_0055ac50 at 0055acee
 ;   core_sound.cpp_CSound_set3DListenerOrientRight_FUN_0055b080 at 0055b0a4
 ;   core_sound.cpp_FUN_0055a1d0 at 0055a22c
-;   core_sound.cpp_FUN_0055ac50 at 0055acee
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02648e80

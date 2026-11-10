@@ -11,7 +11,7 @@ void core_asgaya_cpp_factoryFuncAsgaya_FUN_005a09e0(void)
 {
   CAsgaya *this_ptr;
   
-  this_ptr = (CAsgaya *)FUN_005a3cb2(0x33fd4);
+  this_ptr = (CAsgaya *)debugAllocTracked1(0x33fd4);
   if (this_ptr == (CAsgaya *)0x0) {
     return;
   }

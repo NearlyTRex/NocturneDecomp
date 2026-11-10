@@ -5,10 +5,6 @@
 // Function prototypes for unkaddr/0059f520.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkaddr_0059f520.cpp_FUN_0059f520
-// Address: 0059f520
-void FUN_0059f520(void);
-
 // Original: unkaddr_0059f520.cpp_FUN_0059f540
 // Address: 0059f540
 void FUN_0059f540(undefined4 *param_1);

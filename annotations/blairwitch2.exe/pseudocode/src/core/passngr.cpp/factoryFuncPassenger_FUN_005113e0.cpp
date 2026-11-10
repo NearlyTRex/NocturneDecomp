@@ -11,7 +11,7 @@ void core_passngr_cpp_factoryFuncPassenger_FUN_005113e0(void)
 {
   CPassenger *this_ptr;
   
-  this_ptr = (CPassenger *)FUN_005b8be2(0x25088);
+  this_ptr = (CPassenger *)debugAllocTracked1(0x25088);
   if (this_ptr == (CPassenger *)0x0) {
     return;
   }

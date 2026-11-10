@@ -24,7 +24,7 @@ void unkaddr_0059aa80_cpp_FUN_0059ac60(void)
                           (uVar1 & _DAT_01c2a384) != 0), _DAT_026677e0 != (int *)0x0))))) {
       iVar2 = iVar2 + 1;
       if (2 < iVar2) {
-        (**(code **)(*_DAT_026677e0 + 0x20))(_DAT_026677e0,*(uint *)&g_CGamePtr->field_0x284);
+        (**(code **)(*_DAT_026677e0 + 0x20))(_DAT_026677e0,g_CGamePtr->delta_time_float);
         return;
       }
     }

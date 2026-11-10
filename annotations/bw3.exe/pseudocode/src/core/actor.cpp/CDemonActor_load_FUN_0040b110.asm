@@ -32,7 +32,7 @@
 ;   undefined4 DAT_01d71de4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408870
+;   core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fscanf_FUN_005a3230
 ;   crt_string.c__stricmp_FUN_005a3260
@@ -49,8 +49,8 @@ section .text
     SUB ESP,0xcc                        ; 0040b114
     MOV EBX,dword ptr [ESP + 0xe0]      ; 0040b11a
     PUSH EBX                            ; 0040b121
-    CALL core_actor.cpp_FUN_00408870    ; 0040b122
-        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_FUN_00408870(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870 ; 0040b122
+        ;   XREF to: 00408870 (UNCONDITIONAL_CALL)  ; char * core_actor.cpp_CDemonActor_getActorClassName_FUN_00408870(CDemonActor * this_ptr)
     MOV ESI,EAX                         ; 0040b127
     ADD ESP,0x4                         ; 0040b129
     MOV EBP,EAX                         ; 0040b12c

@@ -8,7 +8,7 @@
 ; undefined        Stack[-0x50]:1  local_50
 ;
 ; XREF[2]:
-;   core_enemy.cpp_FUN_004a0ab0 at 004a0ccd
+;   core_enemy.cpp_CEnemy_updateVictim_FUN_004a0ab0 at 004a0ccd
 ;   core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0 at 0051df2d
 ;
 ; Referenced Globals:

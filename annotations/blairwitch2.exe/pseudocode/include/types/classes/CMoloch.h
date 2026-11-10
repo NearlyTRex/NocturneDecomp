@@ -4,13 +4,25 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CMoloch
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x28604 (165380 bytes)
 #pragma pack(push, 1)
 typedef struct CMoloch {
-    char field_0[165380]; // 0x0
+    char field_0[153152]; // 0x0
+    CDeformableModelInstance model; // 0x25640
+    int in_human_form; // 0x278f4
+    int morphing; // 0x278f8
+    float morph_timer; // 0x278fc
+    char human_to_demon_condition[100]; // 0x27900
+    char demon_to_human_condition[100]; // 0x27964
+    CMorph morph; // 0x279c8
+    int dead1; // 0x285f4
+    float aim_yaw; // 0x285f8
+    int dead2; // 0x285fc
+    int dead3; // 0x28600
 } CMoloch;
 #pragma pack(pop)
 

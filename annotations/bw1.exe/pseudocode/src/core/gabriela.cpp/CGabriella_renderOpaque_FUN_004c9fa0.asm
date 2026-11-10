@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c600
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004087b0
-;   core_charactr.cpp_FUN_0042f240
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240
 ;   core_cloth.cpp_CCloth_render_FUN_00441800
 ;   engine_matrix.c_pop_FUN_004839a0
 ;
@@ -31,8 +31,8 @@ section .text
     MOV EBP,ESP                         ; 004c9fa4
     MOV EBX,dword ptr [EBP + 0x14]      ; 004c9fa6
     PUSH EBX                            ; 004c9fa9
-    CALL core_charactr.cpp_FUN_0042f240 ; 004c9faa
-        ;   XREF to: 0042f240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f240(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240 ; 004c9faa
+        ;   XREF to: 0042f240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004c9faf
     MOV ESI,EAX                         ; 004c9fb2
     TEST EAX,EAX                        ; 004c9fb4

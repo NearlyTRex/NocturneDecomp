@@ -18,7 +18,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004d8a90 at 004d8c87
+;   core_game.cpp_CGame_finishAct_FUN_004d8a90 at 004d8c87
 ;   core_menu.cpp_FUN_0050c990 at 0050cc30
 ;
 ; Referenced Globals:
@@ -140,8 +140,8 @@ section .text
     XOR ECX,ECX                         ; 004d8f34
     PUSH 0x1                            ; 004d8f36
     MOV dword ptr [ESP + 0x1128],ECX    ; 004d8f38
-    CALL sound_sndmain.cpp_FUN_00573cd0 ; 004d8f3f
-        ;   XREF to: 00573cd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00573cd0(int channel_index)
+    CALL sound_sndmain.cpp_isSfxChannelEnabled_FUN_00573cd0 ; 004d8f3f
+        ;   XREF to: 00573cd0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxChannelEnabled_FUN_00573cd0(int channel_index)
     ADD ESP,0x4                         ; 004d8f44
     TEST EAX,EAX                        ; 004d8f47
     JNZ 0x004d91b4                      ; 004d8f49
@@ -153,8 +153,8 @@ section .text
     MOV EDI,dword ptr [0x0152d244]      ; 004d8f56 | DAT_0152d244
     PUSH EDI                            ; 004d8f5c
     MOV dword ptr [EDI + 0x4210],0x0    ; 004d8f5d
-    CALL engine_font.cpp_FUN_004c4510   ; 004d8f67
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 004d8f67
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     MOV EBX,EAX                         ; 004d8f6c
     ADD ESP,0x8                         ; 004d8f6e
     MOV EBP,EAX                         ; 004d8f71
@@ -267,8 +267,8 @@ section .text
     CALL engine_2d.c_fillRectColor_FUN_004031c0 ; 004d90bb
         ;   XREF to: 004031c0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_fillRectColor_FUN_004031c0(int x1, int y1, int x2, int y2, ...)
     ADD ESP,0x14                        ; 004d90c0
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 004d90c3
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 004d90c3
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_004d90c3
     PUSH 0x1                            ; 004d90c8
     MOV EAX,[0x0061f2a4]                ; 004d90ca | DAT_0061f2a4
@@ -355,8 +355,8 @@ section .text
     ADD ESP,0x4                         ; 004d91af
     JMP 0x004d9154                      ; 004d91b2
         ;   XREF to: 004d9154 (UNCONDITIONAL_JUMP)  ; LAB_004d9154
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 004d91b4
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 004d91b4
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
         ;   Label: LAB_004d91b4
     PUSH 0x1                            ; 004d91b9
     CALL sound_sndmain.cpp_FUN_00572980 ; 004d91bb
@@ -371,8 +371,8 @@ section .text
         ;   XREF to: 00572d20 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00572d20(char * filename)
     ADD ESP,0x4                         ; 004d91d7
     MOV dword ptr [ESP + 0x1124],EAX    ; 004d91da
-    CALL sound_sndmain.cpp_FUN_00572b40 ; 004d91e1
-        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572b40()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00572b40 ; 004d91e1
+        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     JMP 0x004d8f4f                      ; 004d91e6
         ;   XREF to: 004d8f4f (UNCONDITIONAL_JUMP)  ; LAB_004d8f4f
     CMP dword ptr [0x01d7f1b8],0x0      ; 004d91eb | DAT_01d7f1b8

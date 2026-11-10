@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 81,
+    "complexity_score": 51,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 6,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
@@ -17,15 +17,15 @@
   },
   "cross_references": [
     {
-      "addr": "00535da0",
-      "from_addr": "0053644d",
-      "name": "core_set.cpp_FUN_00535da0",
+      "addr": "00539f30",
+      "from_addr": "0053a24f",
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00539f30",
-      "from_addr": "0053a24f",
-      "name": "core_set.cpp_FUN_00539f30",
+      "addr": "00535da0",
+      "from_addr": "0053644d",
+      "name": "core_set.cpp_FUN_00535da0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,7 +91,7 @@
       {
         "call_addr": "0053a24f",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00539f30",
+        "caller": "core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -160,42 +160,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "if (-1 < *(int *)&this_ptr->field_0x15aeb8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 8,
-      "match": "field_0x144",
+      "match": "field_0x140",
       "severity": "mild",
-      "text": "return *(int *)(&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x15aeb8 * 0x1a4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "return *(int *)(&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x15aeb8 * 0x1a4);",
+      "text": "return *(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x140;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 13,
-      "match": "field_0x144",
+      "match": "field_0x140",
       "severity": "mild",
-      "text": "return *(int *)(&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x15aeb8 * 0x1a4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x15aeb8",
-      "severity": "mild",
-      "text": "return *(int *)(&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x15aeb8 * 0x1a4);",
+      "text": "return *(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x140;",
       "type": "unnamed_field"
     }
   ]

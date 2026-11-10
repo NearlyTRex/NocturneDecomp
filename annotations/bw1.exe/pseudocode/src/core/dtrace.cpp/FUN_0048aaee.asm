@@ -11,7 +11,7 @@
 ;   core_dtrace.cpp_FUN_0048ac70
 ;   core_dtrace.cpp_FUN_0048ace0
 ;   crt_unknown.c_FUN_005c0336
-;   shape_edittool.cpp_FUN_004961b0
+;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0
 ;   shape_edittool.cpp_FUN_004962b0
 ;   shape_edittool.cpp_FUN_00496dd0
 ;
@@ -30,8 +30,8 @@ section .text
     PUSH 0x5db7cb                       ; 0048aafb
     MOV EDX,dword ptr [0x0061abc0]      ; 0048ab00 | g_CEditorToolsPtr
     PUSH EDX                            ; 0048ab06
-    CALL shape_edittool.cpp_FUN_004961b0 ; 0048ab07
-        ;   XREF to: 004961b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_004961b0(CEditorTools * this_ptr, char * message_text)
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0 ; 0048ab07
+        ;   XREF to: 004961b0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 0048ab0c
     PUSH EBX                            ; 0048ab0f
     CALL core_dtrace.cpp_FUN_0048ace0   ; 0048ab10

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(undefined4 param_1)
+; char * __cdecl core_inv_cpp_getItemDisplayName_FUN_004d9f10(CDemonActor *param_1)
 ;
 ;
 ; XREF[3]:
@@ -14,9 +14,9 @@
 ;   undefined4 DAT_01cf0200
 ;
 ; Called Functions:
-;   core_inv.cpp_FUN_004d9db0
+;   core_inv.cpp_getItemModel_FUN_004d9db0
 ;   crt_string.c__stricmp_FUN_005b8130
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDX                            ; 004d9f19
     MOV EBX,0x1cf0208                   ; 004d9f1a
     XOR ESI,ESI                         ; 004d9f1f
-    CALL core_inv.cpp_FUN_004d9db0      ; 004d9f21
-        ;   XREF to: 004d9db0 (UNCONDITIONAL_CALL)  ; undefined core_inv.cpp_FUN_004d9db0()
+    CALL core_inv.cpp_getItemModel_FUN_004d9db0 ; 004d9f21
+        ;   XREF to: 004d9db0 (UNCONDITIONAL_CALL)  ; CKeyFramedModelInstance * core_inv.cpp_getItemModel_FUN_004d9db0(CDemonActor * actor_ptr)
     MOV ECX,dword ptr [0x01cf0200]      ; 004d9f26 | DAT_01cf0200
     ADD ESP,0x4                         ; 004d9f2c
     LEA EDI,[EAX + 0x78]                ; 004d9f2f
@@ -59,8 +59,8 @@ section .text
         ;   Label: LAB_004d9f54
     PUSH 0x5db3c9                       ; 004d9f55 | = "Add to dict: %s"
     PUSH 0x1cee1b0                      ; 004d9f5a
-    CALL crt_unknown.c_FUN_005b7790     ; 004d9f5f
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004d9f5f
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x1cee1b0                   ; 004d9f64
     ADD ESP,0xc                         ; 004d9f69
     POP EBP                             ; 004d9f6c

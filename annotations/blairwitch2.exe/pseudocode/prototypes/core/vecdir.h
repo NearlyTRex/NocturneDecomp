@@ -9,6 +9,6 @@
 // Address: 005838d0
 void staticInit(void);
 
-// Original: core_vecdir.cpp_FUN_005838f0
+// Original: core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 // Address: 005838f0
-float * FUN_005838f0(uint *param_1);
+float * convertDirectionVectorToEulerAngles(uint *param_1);

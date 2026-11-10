@@ -15,7 +15,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0
   int iVar2;
   int iVar3;
   
-  if ((*(int *)(this_ptr + 0xc) == 0) ||
+  if ((this_ptr->plane_culling_enabled == 0) ||
      (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(poly + 8), iVar3 != 0)) {
     iVar3 = 0;
     if (0 < *(int *)(poly + 4)) {
@@ -28,7 +28,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0
         iVar2 = iVar2 + 4;
       } while (iVar3 < *(int *)(poly + 4));
     }
-    if (*(int *)(this_ptr + 4) == 0) {
+    if (this_ptr->shadow_pass_active == 0) {
       _DAT_01c6e2b4 = 0xc0;
       _DAT_01c6e2b8 = 6;
       _DAT_01c6b5cc = core_dstrendr_cpp_renderSolidColorDepth16xUnrolled_FUN_0046fcc8;

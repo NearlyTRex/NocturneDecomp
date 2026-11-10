@@ -1,0 +1,181 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 26,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 11,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unresolved_funcptr"
+    ],
+    "total_lines": 30
+  },
+  "cross_references": [
+    {
+      "addr": "0045b190",
+      "from_addr": "0045b1d2",
+      "name": "core_doc.cpp_CDoc_processDamage_FUN_0045b190",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00450c60",
+      "from_addr": "0045237d",
+      "name": "core_doc.cpp_FUN_00450c60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056d060",
+      "from_addr": "0056d0a2",
+      "name": "core_stranger.cpp_CStranger_processDamage_FUN_0056d060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563060",
+      "from_addr": "005647b6",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cfad0",
+    "address_range": [
+      [
+        "004cfad0",
+        "004cfaff"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_hero.cpp_CHero_stopNearbyInteraction_FUN_004cfad0",
+    "signature": "void __cdecl core_hero_cpp_CHero_stopNearbyInteraction_FUN_004cfad0(CHero *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0045237d",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00450c60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004523b7",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_FUN_00450c60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005647b6",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005647f1",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0045b1d2",
+        "call_type": "direct",
+        "caller": "core_doc.cpp_CDoc_processDamage_FUN_0045b190",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0056d0a2",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CStranger_processDamage_FUN_0056d060",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.875,
+    "instruction_count": 16,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 15,
+      "INT_ADD": 10,
+      "INT_AND": 5,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 4,
+      "LOAD": 8,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 62
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CHero *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 11,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x2b0) + 0xac))(iVar1,this_ptr);",
+      "type": "unresolved_funcptr"
+    }
+  ]
+}

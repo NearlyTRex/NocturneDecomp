@@ -7,7 +7,7 @@
 ; SFoundFileInfo * Stack[0x4]:4   info
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4741
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4741
 ;
 ; Referenced Globals:
 ;   CDemonPod* g_CDemonPodPtr = 01e614b0

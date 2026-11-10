@@ -16,7 +16,7 @@
 ;   undefined4 DAT_006236b8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0xc]       ; 005ae844
     PUSH 0x41a00000                     ; 005ae848
     PUSH 0x41200000                     ; 005ae84d
-    CALL core_actor.cpp_FUN_0040cc00    ; 005ae852
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005ae852
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 005ae857
     FLD float ptr [ESP + 0x8]           ; 005ae85b
     ADD ESP,0x8                         ; 005ae85f

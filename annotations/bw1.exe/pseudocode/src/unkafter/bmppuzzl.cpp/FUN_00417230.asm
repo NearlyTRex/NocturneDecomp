@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+; void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3)
 ;
 ;
 ; Referenced Globals:
@@ -24,7 +24,7 @@
 ;
 ; Called Functions:
 ;   core_sound.cpp_CSound_playSound_FUN_0057d880
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -44,24 +44,24 @@ section .text
     PUSH 0x5d4002                       ; 00417246 | DAT_005d4002
     LEA EAX,[ESP + 0x624]               ; 0041724b
     PUSH EAX                            ; 00417252
-    CALL crt_unknown.c_FUN_005bfb40     ; 00417253
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417253
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00417258
     MOV ECX,dword ptr [EBP + 0x24]      ; 0041725b
     PUSH ECX                            ; 0041725e
     PUSH 0x5d4005                       ; 0041725f | DAT_005d4005
     LEA EAX,[ESP + 0x618]               ; 00417264
     PUSH EAX                            ; 0041726b
-    CALL crt_unknown.c_FUN_005bfb40     ; 0041726c
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0041726c
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00417271
     MOV ESI,dword ptr [EBP + 0x28]      ; 00417274
     PUSH ESI                            ; 00417277
     PUSH 0x5d4008                       ; 00417278 | DAT_005d4008
     LEA EAX,[ESP + 0x60c]               ; 0041727d
     PUSH EAX                            ; 00417284
-    CALL crt_unknown.c_FUN_005bfb40     ; 00417285
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417285
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0041728a
     MOV EDI,dword ptr [EBX + 0xc20]     ; 0041728d
     MOV EAX,dword ptr [EBP + 0x18]      ; 00417293
@@ -85,8 +85,8 @@ section .text
     PUSH 0x5d400b                       ; 004172e1 | DAT_005d400b
     LEA EAX,[ESP + 0x10]                ; 004172e6
     PUSH EAX                            ; 004172ea
-    CALL crt_unknown.c_FUN_005bfb40     ; 004172eb
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004172eb
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004172f0
     FLD float ptr [ESP + 0x634]         ; 004172f3
     FMUL float ptr [0x005d403a]         ; 004172fa | DAT_005d403a
@@ -95,8 +95,8 @@ section .text
     PUSH 0x5d400e                       ; 00417306 | DAT_005d400e
     LEA EAX,[ESP + 0x210]               ; 0041730b
     PUSH EAX                            ; 00417312
-    CALL crt_unknown.c_FUN_005bfb40     ; 00417313
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00417313
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00417318
     MOV ESI,0x5d4011                    ; 0041731b | DAT_005d4011
     LEA EDI,[ESP + 0x404]               ; 00417320
@@ -197,16 +197,16 @@ section .text
     PUSH 0x5d4029                       ; 004173f2 | DAT_005d4029
     LEA EAX,[ESP + 0x110]               ; 004173f7
     PUSH EAX                            ; 004173fe
-    CALL crt_unknown.c_FUN_005bfb40     ; 004173ff
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004173ff
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 00417404
     MOV ECX,dword ptr [EBX + 0xc10]     ; 00417407
     PUSH ECX                            ; 0041740d
     PUSH 0x5d402c                       ; 0041740e | = "AR%d_"
     LEA EAX,[ESP + 0x630]               ; 00417413
     PUSH EAX                            ; 0041741a
-    CALL crt_unknown.c_FUN_005bfb40     ; 0041741b
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0041741b
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00417420
     LEA ESI,[ESP + 0x628]               ; 00417423
     LEA EDI,[ESP + 0x304]               ; 0041742a

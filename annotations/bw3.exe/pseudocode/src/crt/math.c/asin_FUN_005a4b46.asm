@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[7]:
-;   core_dirmat.cpp_FUN_0045b8e0 at 0045b908
 ;   core_dirmat.cpp_FUN_0045b9b0 at 0045ba54
-;   core_xform.cpp_FUN_00583a40 at 00583a65
-;   core_xform.cpp_FUN_00583b10 at 00583c24
-;   core_xform.cpp_FUN_00583fb0 at 005840c6
+;   core_dirmat.cpp_angleFromSinCos_FUN_0045b8e0 at 0045b908
 ;   core_xform.cpp_FUN_00585de0 at 00585e2a
 ;   core_xform.cpp_FUN_00585f40 at 00585f8c
+;   core_xform.cpp_angleFromSinCos_FUN_00583a40 at 00583a65
+;   core_xform.cpp_matrixToEulerAnglesZYX_FUN_00583fb0 at 005840c6
+;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10 at 00583c24
 ;
 ; Called Functions:
 ;   crt_math.c_atan2_FUN_005a5cc1

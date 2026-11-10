@@ -11,7 +11,7 @@ void core_ghoul_cpp_factoryFuncGhoul_FUN_004c15b0(void)
 {
   CGhoul *this_ptr;
   
-  this_ptr = (CGhoul *)FUN_005b8be2(0x10b74);
+  this_ptr = (CGhoul *)debugAllocTracked1(0x10b74);
   if (this_ptr == (CGhoul *)0x0) {
     return;
   }

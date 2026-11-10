@@ -2,14 +2,14 @@
 // Address: 004ab8f0
 // Address Range: [[004ab8f0, 004ab9ea]]
 // Convention: unknown
-// Signature: undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+// Signature: undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
 
 #include "nocturne.h"
 
 /* WARNING: Removing unreachable block (ram,0x004ab923) */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-uint core_fldnotes_cpp_FUN_004ab8f0(uint param_1,uint param_2,uint param_3,uint param_4)
+uint core_fldnotes_cpp_FUN_004ab8f0(uint param_1,uint param_2,uint param_3,char *param_4)
 
 {
   int iVar1;
@@ -29,11 +29,11 @@ uint core_fldnotes_cpp_FUN_004ab8f0(uint param_1,uint param_2,uint param_3,uint 
   iVar1 = 0;
 LAB_004ab928:
   if (iVar1 == 0) {
-    FUN_005a28c0(param_4,"No such entry '%s'",param_2);
+    _sprintf(param_4,"No such entry '%s'");
     return 0;
   }
   if ((*(int *)(iVar1 + 0x140) != 5) && (*(int *)(iVar1 + 0x140) != 6)) {
-    FUN_005a28c0(param_4,"'%s' is not a map",param_2);
+    _sprintf(param_4,"'%s' is not a map");
     return 0;
   }
   iVar2 = core_fldnotes_cpp_FUN_004aa1a0(SNotesMap_ARRAY_01d0e370 + *(int *)(iVar1 + 0x158),param_3)
@@ -41,6 +41,6 @@ LAB_004ab928:
   if (iVar2 != 0) {
     return 1;
   }
-  FUN_005a28c0(param_4,"No such annotion '%s' found on map '%s'",param_3,param_2);
+  _sprintf(param_4,"No such annotion '%s' found on map '%s'");
   return 0;
 }

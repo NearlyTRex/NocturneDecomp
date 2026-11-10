@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CHealthItem
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x43c (1084 bytes)
 #pragma pack(push, 1)
 typedef struct CHealthItem {
-    char field_0[1084]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    int use_count; // 0x430
+    float hp_restored; // 0x434
+    char field_1080[4]; // 0x438
 } CHealthItem;
 #pragma pack(pop)
 

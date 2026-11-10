@@ -1,0 +1,840 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 305,
+    "complexity_score": 745,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 28,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 80,
+    "suspect_count": 65,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 385
+  },
+  "cross_references": [
+    {
+      "addr": "00532b80",
+      "from_addr": "005330a1",
+      "name": "core_set.cpp_FUN_00532b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00541b70",
+    "address_range": [
+      [
+        "00541b70",
+        "00541ef0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setutil.cpp_C3DSCamera_load_FUN_00541b70",
+    "signature": "void __cdecl core_setutil_cpp_C3DSCamera_load_FUN_00541b70(C3DSCamera *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "00450c00",
+      "is_variadic": false,
+      "name": "core_dcamera.cpp_loadCameraFog_FUN_00450c00"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00541b00",
+      "is_variadic": false,
+      "name": "core_setutil.cpp_C3DSCamera_reset_FUN_00541b00"
+    },
+    {
+      "addr": "005a3f00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgets_FUN_005a3f00"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    },
+    {
+      "addr": "005a5b9c",
+      "is_variadic": false,
+      "name": "crt_stdio.c_sscanf_FUN_005a5b9c"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d0d2a",
+      "name": "DAT_005d0d2a",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d2e",
+      "name": "s_f_f_f_005d0d2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d38",
+      "name": "s_f_f_f_005d0d38",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d42",
+      "name": "DAT_005d0d42",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d46",
+      "name": "s_f_f_f_005d0d46",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d50",
+      "name": "s_f_f_f_005d0d50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d5a",
+      "name": "s_f_f_f_005d0d5a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d64",
+      "name": "DAT_005d0d64",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d68",
+      "name": "s_f_f_f_005d0d68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d72",
+      "name": "s_f_f_f_005d0d72",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d7c",
+      "name": "DAT_005d0d7c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d80",
+      "name": "DAT_005d0d80",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d0d84",
+      "name": "s_core_setutil_cpp_005d0d84",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d0d98",
+      "name": "s_Panning_cameras_not_supp_005d0d98",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "02032508",
+      "name": "g_CDemonSetInstance.field44_0x15ac40",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203250c",
+      "name": "g_CDemonSetInstance.field48_0x15ac44",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032510",
+      "name": "g_CDemonSetInstance.field52_0x15ac48",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032514",
+      "name": "g_CDemonSetInstance.field56_0x15ac4c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032518",
+      "name": "g_CDemonSetInstance.field60_0x15ac50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203251c",
+      "name": "g_CDemonSetInstance.field64_0x15ac54",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032520",
+      "name": "g_CDemonSetInstance.field68_0x15ac58",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032524",
+      "name": "g_CDemonSetInstance.field72_0x15ac5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032528",
+      "name": "g_CDemonSetInstance.field76_0x15ac60",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02032588",
+      "name": "g_CDemonSetInstance.field130_0x15acc0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005330a1",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00532b80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7137254901960786,
+    "instruction_count": 255,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 2,
+      "CALL": 24,
+      "CBRANCH": 11,
+      "COPY": 196,
+      "INT_ADD": 105,
+      "INT_AND": 84,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 83,
+      "INT_LESS": 10,
+      "INT_NOTEQUAL": 6,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 41,
+      "INT_SUB": 120,
+      "LOAD": 32,
+      "POPCOUNT": 41,
+      "RETURN": 2,
+      "STORE": 121
+    },
+    "pcode_op_count": 947
+  },
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 276,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "C3DSCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (10 < *(int *)&g_CDemonSetPtr->field_0x15acc0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_005d0d2a",
+      "severity": "mild",
+      "text": "sscanf(local_110,&DAT_005d0d2a);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (10 < *(int *)&g_CDemonSetPtr->field_0x15acc0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x100",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x100,&this_ptr->field_0x104,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x104",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x100,&this_ptr->field_0x104,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x108",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x108);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (10 < *(int *)&g_CDemonSetPtr->field_0x15acc0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x10c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x10c,&this_ptr->field_0x114,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x114",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x10c,&this_ptr->field_0x114,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x110",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x110);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (10 < *(int *)&g_CDemonSetPtr->field_0x15acc0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 29,
+      "match": "DAT_005d0d42",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d42,&this_ptr->field_0x144);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x144",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d42,&this_ptr->field_0x144);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x118",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x118,&this_ptr->field_0x11c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x11c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x118,&this_ptr->field_0x11c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x120",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x120);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x124",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x124,&this_ptr->field_0x128,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x128",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x124,&this_ptr->field_0x128,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x12c",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x12c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x130",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x130,&this_ptr->field_0x134,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x134",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x130,&this_ptr->field_0x134,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 36,
+      "match": "field_0x138",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x138);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CDemonSetPtr->field_0x15acc0 < 0x12) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 39,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x150 = 1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x154 = *(uint *)&pCVar1->field_0x15ac40;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x15ac40",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x154 = *(uint *)&pCVar1->field_0x15ac40;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x158 = *(uint *)&pCVar1->field_0x15ac44;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 41,
+      "match": "field_0x15ac44",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x158 = *(uint *)&pCVar1->field_0x15ac44;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x15c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x15c = *(uint *)&pCVar1->field_0x15ac48;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x15ac48",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x15c = *(uint *)&pCVar1->field_0x15ac48;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "if (&this_ptr->field_0x160 != &pCVar1->field_0x15ac4c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 43,
+      "match": "field_0x15ac4c",
+      "severity": "mild",
+      "text": "if (&this_ptr->field_0x160 != &pCVar1->field_0x15ac4c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x160",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x160 = *(uint *)&pCVar1->field_0x15ac4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x15ac4c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x160 = *(uint *)&pCVar1->field_0x15ac4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x164",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x164 = *(uint *)&pCVar1->field_0x15ac50;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x15ac50",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x164 = *(uint *)&pCVar1->field_0x15ac50;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x168",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x168 = *(uint *)&pCVar1->field_0x15ac54;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x15ac54",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x168 = *(uint *)&pCVar1->field_0x15ac54;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x16c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x16c = *(uint *)&pCVar1->field_0x15ac58;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x15ac58",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x16c = *(uint *)&pCVar1->field_0x15ac58;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x170",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x170 = *(uint *)&pCVar1->field_0x15ac5c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x15ac5c",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x170 = *(uint *)&pCVar1->field_0x15ac5c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x174",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x174 = *(uint *)&pCVar1->field_0x15ac60;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x15ac60",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x174 = *(uint *)&pCVar1->field_0x15ac60;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 53,
+      "match": "DAT_005d0d64",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d64,&this_ptr->field_0x150);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d64,&this_ptr->field_0x150);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x150",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x150 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x154",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x154,file_handle,*(uint *)&g_CDemonSetPtr->field_0x15acc0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "(&this_ptr->field_0x154,file_handle,*(uint *)&g_CDemonSetPtr->field_0x15acc0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (0x16 < *(int *)&g_CDemonSetPtr->field_0x15acc0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x17c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x17c,&this_ptr->field_0x180,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x180",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x17c,&this_ptr->field_0x180,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x184",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x184);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x188",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x188,&this_ptr->field_0x18c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x18c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,\"%f,%f,%f\\n\",&this_ptr->field_0x188,&this_ptr->field_0x18c,",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x190",
+      "severity": "mild",
+      "text": "&this_ptr->field_0x190);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (0x16 < *(int *)&g_CDemonSetPtr->field_0x15acc0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 68,
+      "match": "DAT_005d0d7c",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d7c,&this_ptr->field_0x178);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x178",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d7c,&this_ptr->field_0x178);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x15acc0",
+      "severity": "mild",
+      "text": "if (*(int *)&g_CDemonSetPtr->field_0x15acc0 == 0x1b) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_005d0d80",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d80,&this_ptr->field_0x140);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005d0d80,&this_ptr->field_0x140);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x140 != 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0x140",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x140 = 0;",
+      "type": "unnamed_field"
+    }
+  ]
+}

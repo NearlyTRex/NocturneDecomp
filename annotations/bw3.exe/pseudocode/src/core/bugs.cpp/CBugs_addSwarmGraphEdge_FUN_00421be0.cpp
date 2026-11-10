@@ -13,42 +13,42 @@ void __cdecl core_bugs_cpp_CBugs_addSwarmGraphEdge_FUN_00421be0(CBugs *this_ptr,
 {
   int iVar1;
   int iVar2;
-  int *piVar3;
-  int *piVar4;
+  SSwarmVertex *pSVar3;
+  SSwarmVertex *pSVar4;
   
-  if (*(int *)&this_ptr->field_0x13858 <= vertex_index) {
-    *(int *)&this_ptr->field_0x13858 = vertex_index + 1;
+  if (this_ptr->swarm_vertex_count <= vertex_index) {
+    this_ptr->swarm_vertex_count = vertex_index + 1;
   }
-  if (0x352 < *(int *)&this_ptr->field_0x13858) {
+  if (0x352 < this_ptr->swarm_vertex_count) {
     _DAT_01d71de0 = "..\\core\\bugs.cpp";
     _DAT_01d71de4 = 0x20d;
     core_main_c_FUN_004e4330("CBugs::addSwarmGraphEdge - Too many verts in swarm graph.");
   }
-  piVar3 = (int *)(&this_ptr->field_0x1385c + vertex_index * 0x28);
-  iVar1 = *piVar3;
+  pSVar3 = this_ptr->swarm_vertices + vertex_index * 0x28;
+  iVar1 = *(int *)pSVar3;
   if (iVar1 == 0) {
-    piVar3[1] = first_edge_data;
+    *(int *)(pSVar3 + 4) = first_edge_data;
   }
   else {
     if (7 < iVar1) {
       return;
     }
     iVar2 = 0;
-    piVar4 = piVar3;
+    pSVar4 = pSVar3;
     if (0 < iVar1) {
       do {
-        if (neighbor_index == piVar4[2]) {
+        if (neighbor_index == *(int *)(pSVar4 + 8)) {
           return;
         }
         iVar2 = iVar2 + 1;
-        piVar4 = piVar4 + 1;
-      } while (iVar2 < *piVar3);
-      piVar3[*piVar3 + 2] = neighbor_index;
-      *piVar3 = *piVar3 + 1;
+        pSVar4 = pSVar4 + 4;
+      } while (iVar2 < *(int *)pSVar3);
+      *(int *)(pSVar3 + *(int *)pSVar3 * 4 + 8) = neighbor_index;
+      *(int *)pSVar3 = *(int *)pSVar3 + 1;
       return;
     }
   }
-  piVar3[*piVar3 + 2] = neighbor_index;
-  *piVar3 = *piVar3 + 1;
+  *(int *)(pSVar3 + *(int *)pSVar3 * 4 + 8) = neighbor_index;
+  *(int *)pSVar3 = *(int *)pSVar3 + 1;
   return;
 }

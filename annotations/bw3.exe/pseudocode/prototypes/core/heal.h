@@ -21,17 +21,17 @@ CDemonActorType * CHeal::getActorType(CHeal *this_ptr);
 // Address: 004d1960
 CHeal * CHeal::ctor(CHeal *this_ptr);
 
-// Original: core_heal.cpp_FUN_004d1a10
+// Original: core_heal.cpp_CHeal_fire_FUN_004d1a10
 // Address: 004d1a10
-undefined4 FUN_004d1a10(CDemonActor *param_1);
+int __cdecl CHeal::fire(CHeal *this_ptr);
 
-// Original: core_heal.cpp_FUN_004d1c50
+// Original: core_heal.cpp_CHeal_process_FUN_004d1c50
 // Address: 004d1c50
-void FUN_004d1c50(CWeapon *param_1,float param_2);
+void __cdecl CHeal::process(CHeal *this_ptr,float delta_time);
 
-// Original: core_heal.cpp_FUN_004d1c80
+// Original: core_heal.cpp_CHeal_setup_FUN_004d1c80
 // Address: 004d1c80
-void FUN_004d1c80(CWeapon *param_1);
+void __cdecl CHeal::setup(CHeal *this_ptr);
 
 // Original: core_heal.cpp_CHeal_dtor_FUN_004d1cb0
 // Address: 004d1cb0

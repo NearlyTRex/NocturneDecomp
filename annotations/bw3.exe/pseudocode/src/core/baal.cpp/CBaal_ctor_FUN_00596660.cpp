@@ -16,12 +16,13 @@ CBaal * core_baal_cpp_CBaal_ctor_FUN_00596660(CBaal *this_ptr)
   byte *puVar3;
   
   pCVar1 = (CBaal *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CBaalVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5d948f);
+  ((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CBaalVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar1->field_0x158,(char *)0x5d948f);
   *(uint *)&pCVar1->field_0x326c = 0x3f000000;
   *(uint *)&pCVar1->field_0x3270 = 0x3f800000;
   *(uint *)&pCVar1->field_0xd054 = 0;
-  *(uint *)&pCVar1->field_0xcde0 = 0xbf800000;
+  *(float *)&pCVar1->field_0xcde0 = -1.0;
   *(uint *)&pCVar1->field_0xd050 = 0;
   *(uint *)&pCVar1->field_0x252c = 0x3fc90fdb;
   *(uint *)&pCVar1->field_0xd068 = 1;

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   gem_index
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_005042e0 at 0050438f
+;   core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_005042e0 at 0050438f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e7475
@@ -19,7 +19,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-;   core_set.cpp_FUN_00555770
+;   core_set.cpp_CDemonSet_setFlatColor_FUN_00555770
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -85,8 +85,8 @@ section .text
     PUSH EBP                            ; 005050fd
     MOV EAX,[0x00622c18]                ; 005050fe | g_CDemonSetPtr
     PUSH EAX                            ; 00505103
-    CALL core_set.cpp_FUN_00555770      ; 00505104
-        ;   XREF to: 00555770 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00555770(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00555770 ; 00505104
+        ;   XREF to: 00555770 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00555770(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 00505109
     PUSH -0x1                           ; 0050510c
     LEA EAX,[EDI + 0x2d4]               ; 0050510e
@@ -100,8 +100,8 @@ section .text
     PUSH 0x10000                        ; 00505129
     MOV EDX,dword ptr [0x00622c18]      ; 0050512e | g_CDemonSetPtr
     PUSH EDX                            ; 00505134
-    CALL core_set.cpp_FUN_00555770      ; 00505135
-        ;   XREF to: 00555770 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00555770(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
+    CALL core_set.cpp_CDemonSet_setFlatColor_FUN_00555770 ; 00505135
+        ;   XREF to: 00555770 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setFlatColor_FUN_00555770(CDemonSet * this_ptr, int light_scale, int color_scale, int fog_scale)
     ADD ESP,0x10                        ; 0050513a
     MOV ECX,dword ptr [0x00612560]      ; 0050513d | DAT_00612560
     PUSH ECX                            ; 00505143

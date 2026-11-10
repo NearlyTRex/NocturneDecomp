@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int core_construc_cpp_FUN_004444f0(int param_1)
+; EDeathState core_construc_cpp_FUN_004444f0(CCharacter *param_1)
 ;
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00431000
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431000
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004444f0
         ;   Label: core_construc.cpp_FUN_004444f0
     PUSH EDX                            ; 004444f4
-    CALL core_charactr.cpp_FUN_00431000 ; 004444f5
-        ;   XREF to: 00431000 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431000()
+    CALL core_charactr.cpp_CCharacter_getDeathState_FUN_00431000 ; 004444f5
+        ;   XREF to: 00431000 (UNCONDITIONAL_CALL)  ; EDeathState core_charactr.cpp_CCharacter_getDeathState_FUN_00431000(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004444fa
     MOV EDX,EAX                         ; 004444fd
     TEST EAX,EAX                        ; 004444ff

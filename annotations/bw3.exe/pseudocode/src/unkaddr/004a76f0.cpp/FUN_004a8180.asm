@@ -14,10 +14,10 @@
 ;   undefined4 DAT_005fe380
 ;   undefined4 DAT_005fe384
 ;   undefined4 DAT_01d19ba8
-;   undefined4 CAlphaBitmap_01d19c9c.field12_0xc
-;   undefined4 CAlphaBitmap_01d19c9c.field16_0x10
-;   undefined4 CAlphaBitmap_01d19cb0.field12_0xc
-;   undefined4 CAlphaBitmap_01d19cb0.field16_0x10
+;   undefined4 CAlphaBitmap_01d19c9c.width
+;   undefined4 CAlphaBitmap_01d19c9c.height
+;   undefined4 CAlphaBitmap_01d19cb0.width
+;   undefined4 CAlphaBitmap_01d19cb0.height
 ;   undefined4 g_STextViewInstance.field56_0x38
 ;
 ; *****************************************************************************
@@ -42,12 +42,12 @@ section .text
     CMP EDX,EDI                         ; 004a81a5
     JL 0x004a81c3                       ; 004a81a7
         ;   XREF to: 004a81c3 (CONDITIONAL_JUMP)  ; LAB_004a81c3
-    MOV EBP,dword ptr [0x01d19ca8]      ; 004a81a9 | CAlphaBitmap_01d19c9c.field12_0xc
+    MOV EBP,dword ptr [0x01d19ca8]      ; 004a81a9 | CAlphaBitmap_01d19c9c.width
     LEA EAX,[ESI + EBP*0x1]             ; 004a81af
     CMP ECX,EAX                         ; 004a81b2
     JGE 0x004a81c3                      ; 004a81b4
         ;   XREF to: 004a81c3 (CONDITIONAL_JUMP)  ; LAB_004a81c3
-    MOV EBX,dword ptr [0x01d19cac]      ; 004a81b6 | CAlphaBitmap_01d19c9c.field16_0x10
+    MOV EBX,dword ptr [0x01d19cac]      ; 004a81b6 | CAlphaBitmap_01d19c9c.height
     LEA EAX,[EDI + EBX*0x1]             ; 004a81bc
     CMP EDX,EAX                         ; 004a81bf
     JL 0x004a820d                       ; 004a81c1
@@ -67,12 +67,12 @@ section .text
     CMP EDX,EBP                         ; 004a81e5
     JL 0x004a8217                       ; 004a81e7
         ;   XREF to: 004a8217 (CONDITIONAL_JUMP)  ; LAB_004a8217
-    MOV EBX,dword ptr [0x01d19cbc]      ; 004a81e9 | CAlphaBitmap_01d19cb0.field12_0xc
+    MOV EBX,dword ptr [0x01d19cbc]      ; 004a81e9 | CAlphaBitmap_01d19cb0.width
     LEA EAX,[EDI + EBX*0x1]             ; 004a81ef
     CMP ECX,EAX                         ; 004a81f2
     JGE 0x004a8217                      ; 004a81f4
         ;   XREF to: 004a8217 (CONDITIONAL_JUMP)  ; LAB_004a8217
-    MOV ESI,dword ptr [0x01d19cc0]      ; 004a81f6 | CAlphaBitmap_01d19cb0.field16_0x10
+    MOV ESI,dword ptr [0x01d19cc0]      ; 004a81f6 | CAlphaBitmap_01d19cb0.height
     LEA EAX,[ESI + EBP*0x1]             ; 004a81fc
     CMP EDX,EAX                         ; 004a81ff
     JGE 0x004a8217                      ; 004a8201

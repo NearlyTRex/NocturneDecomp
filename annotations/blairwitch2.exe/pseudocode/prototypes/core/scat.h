@@ -21,57 +21,57 @@ CDemonActorType * CScat::getActorType(CScat *this_ptr);
 // Address: 0051e9a0
 CScat * __cdecl CScat::ctor(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051ea60
+// Original: core_scat.cpp_CScat_setup_FUN_0051ea60
 // Address: 0051ea60
-void FUN_0051ea60(CHero *param_1);
+void __cdecl CScat::setup(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051ec20
+// Original: core_scat.cpp_CScat_createDefaultWeapon_FUN_0051ec20
 // Address: 0051ec20
-void __cdecl FUN_0051ec20(CScat *this_ptr);
+void __cdecl CScat::createDefaultWeapon(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051ecc0
+// Original: core_scat.cpp_CScat_process_FUN_0051ecc0
 // Address: 0051ecc0
-void FUN_0051ecc0(CScat *param_1,float param_2);
+void __cdecl CScat::process(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_0051f490
+// Original: core_scat.cpp_CScat_updateAI_FUN_0051f490
 // Address: 0051f490
-void __cdecl FUN_0051f490(CScat *this_ptr,float delta_time);
+void __cdecl CScat::updateAI(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_0051f9c0
+// Original: core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_0051f9c0
 // Address: 0051f9c0
-void __cdecl FUN_0051f9c0(CScat *this_ptr,float delta_time);
+void __cdecl CScat::advanceMotionWithGrabDamage(CScat *this_ptr,float delta_time);
 
 // Original: core_scat.cpp_CScat_archive_FUN_0051fa50
 // Address: 0051fa50
 void __cdecl CScat::archive(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051fa90
+// Original: core_scat.cpp_CScat_renderOpaque_FUN_0051fa90
 // Address: 0051fa90
-undefined4 FUN_0051fa90(int param_1);
+int __cdecl CScat::renderOpaque(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051fb40
+// Original: core_scat.cpp_CScat_processDamage_FUN_0051fb40
 // Address: 0051fb40
-void FUN_0051fb40(CScat *param_1,SDamageInfo *param_2);
+void __cdecl CScat::processDamage(CScat *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_scat.cpp_FUN_0051fc90
+// Original: core_scat.cpp_CScat_isWeaponDrawn_FUN_0051fc90
 // Address: 0051fc90
-undefined4 FUN_0051fc90(int param_1);
+int __cdecl CScat::isWeaponDrawn(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051fca0
+// Original: core_scat.cpp_CScat_drawWeapon_FUN_0051fca0
 // Address: 0051fca0
-void FUN_0051fca0(int param_1,undefined4 param_2);
+void __cdecl CScat::drawWeapon(CScat *this_ptr,int drawn);
 
-// Original: core_scat.cpp_FUN_0051fcb0
+// Original: core_scat.cpp_CScat_isWeaponReady_FUN_0051fcb0
 // Address: 0051fcb0
-int __cdecl FUN_0051fcb0(CScat *this_ptr);
+int __cdecl CScat::isWeaponReady(CScat *this_ptr);
 
-// Original: core_scat.cpp_FUN_0051fd00
+// Original: core_scat.cpp_CScat_updateWeaponState_FUN_0051fd00
 // Address: 0051fd00
-void __cdecl FUN_0051fd00(CScat *this_ptr,float delta_time);
+void __cdecl CScat::updateWeaponState(CScat *this_ptr,float delta_time);
 
-// Original: core_scat.cpp_FUN_0051ff60
+// Original: core_scat.cpp_CScat_blendLayerAction_FUN_0051ff60
 // Address: 0051ff60
-void __cdecl FUN_0051ff60(CScat *this_ptr);
+void __cdecl CScat::blendLayerAction(CScat *this_ptr);
 
 // Original: core_scat.cpp_FUN_00520140
 // Address: 00520140
@@ -83,7 +83,7 @@ void FUN_005203c0(int param_1,float param_2,int param_3);
 
 // Original: core_scat.cpp_FUN_00520a60
 // Address: 00520a60
-float FUN_00520a60(CDemonActor *param_1,int param_2,int param_3);
+undefined4 FUN_00520a60(CDemonActor *param_1,CDemonActor *param_2,int param_3);
 
 // Original: core_scat.cpp_FUN_00520df0
 // Address: 00520df0

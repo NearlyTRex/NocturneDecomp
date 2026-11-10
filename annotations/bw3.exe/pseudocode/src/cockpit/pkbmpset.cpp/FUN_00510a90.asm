@@ -15,9 +15,9 @@
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
 ;   crt_stdio.c_fseek_FUN_005a457c
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     PUSH 0x5cc1b6                       ; 00510ae2
     LEA EAX,[ESP + 0x8]                 ; 00510ae7
     PUSH EAX                            ; 00510aeb
-    CALL crt_unknown.c_FUN_005a28c0     ; 00510aec
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00510aec
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x117                       ; 00510af1
     ADD ESP,0xc                         ; 00510af6
     MOV [0x01d71de4],EAX                ; 00510af9 | DAT_01d71de4
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5cc167                       ; 00510b96
     LEA EAX,[ESP + 0x6c]                ; 00510b9b
     PUSH EAX                            ; 00510b9f
-    CALL crt_unknown.c_FUN_005a28c0     ; 00510ba0
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00510ba0
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5cc19e                    ; 00510ba5
     ADD ESP,0xc                         ; 00510baa
     LEA EAX,[ESP + 0x64]                ; 00510bad
@@ -157,8 +157,8 @@ section .text
     PUSH 0x5cc218                       ; 00510bf8
     LEA EAX,[ESP + 0xd0]                ; 00510bfd
     PUSH EAX                            ; 00510c04
-    CALL crt_unknown.c_FUN_005a28c0     ; 00510c05
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00510c05
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x12a                       ; 00510c0a
     ADD ESP,0xc                         ; 00510c0f
     MOV [0x01d71de4],EAX                ; 00510c12 | DAT_01d71de4

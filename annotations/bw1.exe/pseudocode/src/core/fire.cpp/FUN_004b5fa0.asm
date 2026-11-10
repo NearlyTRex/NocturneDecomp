@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[2]:
-;   core_constrct.cpp_FUN_00445cb0 at 004463d4
-;   core_emitter.cpp_FUN_0049f310 at 0049f5fb
+;   core_constrct.cpp_CConstruct_process_FUN_00445cb0 at 004463d4
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f5fb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c9dab4
 ;   undefined4 CFirefly_ARRAY_01c9dab8[0].field60_0x3c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;
 ; *****************************************************************************
 
@@ -52,8 +52,8 @@ section .text
     ADD ESP,0xc                         ; 004b5fed
     PUSH 0xffff                         ; 004b5ff0
     PUSH 0xc000                         ; 004b5ff5
-    CALL core_actor.cpp_FUN_0040cc60    ; 004b5ffa
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 004b5ffa
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 004b5fff
     MOV EDX,EAX                         ; 004b6002
     MOV EAX,dword ptr [ESP + 0x20]      ; 004b6004

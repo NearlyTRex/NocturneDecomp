@@ -11,7 +11,7 @@
 ;   core_turret.cpp_CTurret_setup_FUN_005a21a0 at 005a21bb
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
 ;   core_weapon.cpp_FUN_005ade40
 ;
@@ -23,8 +23,8 @@ section .text
         ;   Label: core_weapon.cpp_CWeapon_setup_FUN_005ad640
     MOV EBX,dword ptr [ESP + 0x8]       ; 005ad641
     PUSH EBX                            ; 005ad645
-    CALL core_actor.cpp_FUN_00408850    ; 005ad646
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 005ad646
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 005ad64b
     LEA EAX,[EBX + 0x158]               ; 005ad64e
     PUSH EAX                            ; 005ad654

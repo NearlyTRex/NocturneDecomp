@@ -8,7 +8,7 @@
 ;   undefined4 DAT_005df27c
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_01c43530
-;   undefined4 g_CGameInstance.field660_0x294
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
 ;   core_particle.cpp_FUN_00532250
@@ -79,7 +79,7 @@ section .text
     FLD ST0                             ; 004af208
     MOV EAX,[0x0061d95c]                ; 004af20a | g_CGamePtr
     FMUL float ptr [EBX + 0x40]         ; 004af20f
-    FMUL float ptr [EAX + 0x294]        ; 004af212 | g_CGameInstance.field660_0x294
+    FMUL float ptr [EAX + 0x294]        ; 004af212 | g_CGameInstance.delta_time_float
     FSUBP                               ; 004af218
     FST float ptr [ESP]                 ; 004af21a
     FLDZ                                ; 004af21d

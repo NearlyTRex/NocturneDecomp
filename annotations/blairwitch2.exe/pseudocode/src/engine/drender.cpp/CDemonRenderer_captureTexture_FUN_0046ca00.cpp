@@ -17,7 +17,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(CDemo
   SMRGLTextureBasic *pSVar4;
   
   engine_texture_cpp_FUN_00574e00(texture);
-  if (*(int *)(this_ptr + 0x1c) != 0) {
+  if (this_ptr->texture_capture_enabled != 0) {
     _DAT_01ba5cc8 = _DAT_01ba5cc8 + 1;
     if (100 < _DAT_01ba5cc8) {
       _DAT_01d046a0 = "..\\engine\\drender.cpp";

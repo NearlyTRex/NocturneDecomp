@@ -21,13 +21,13 @@ CDemonActorType * CDisease::getActorType(CDisease *this_ptr);
 // Address: 0045bf80
 CDisease * CDisease::ctor(CDisease *this_ptr);
 
-// Original: core_disease.cpp_FUN_0045c040
+// Original: core_disease.cpp_CDisease_fire_FUN_0045c040
 // Address: 0045c040
-undefined4 FUN_0045c040(CDemonActor *param_1);
+int __cdecl CDisease::fire(CDisease *this_ptr);
 
-// Original: core_disease.cpp_FUN_0045c0d0
+// Original: core_disease.cpp_CDisease_setup_FUN_0045c0d0
 // Address: 0045c0d0
-void FUN_0045c0d0(CWeapon *param_1);
+void __cdecl CDisease::setup(CDisease *this_ptr);
 
 // Original: core_disease.cpp_CDisease_dtor_FUN_0045c110
 // Address: 0045c110

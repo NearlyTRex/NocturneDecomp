@@ -2,16 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 199,
+    "complexity_score": 99,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 10,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 54,
-    "suspect_count": 13,
+    "suspect_count": 3,
     "suspect_types": [
+      "raw_address_pointer_store",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 168
@@ -258,92 +258,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
       "line": 33,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(int *)(iVar11 * 4 + 0x1bef220) = iVar5 * 0x34 + *(int *)&this_ptr->field_0x50;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&this_ptr->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "uVar8 = (longlong)iVar5 / (longlong)*(int *)&this_ptr->field_0x48;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)&this_ptr->field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "fVar4 = *(float *)&this_ptr->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "(longlong)*(int *)&this_ptr->field_0x44) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x28 + *(float *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x28 + *(float *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
+      "match": "*(CDemonCube **)(iVar11 * 4 + 0x1bef220",
+      "severity": "moderate",
+      "text": "*(CDemonCube **)(iVar11 * 4 + 0x1bef220) = this_ptr->cube_data + iVar5;",
+      "type": "raw_address_pointer_store"
     }
   ]
 }

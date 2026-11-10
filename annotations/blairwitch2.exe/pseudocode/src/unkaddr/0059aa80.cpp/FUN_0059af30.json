@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 424,
-    "complexity_score": 1056,
+    "complexity_score": 1041,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 66,
-    "suspect_count": 97,
+    "suspect_count": 96,
     "suspect_types": [
       "shadow_pointer_walk",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -140,14 +139,6 @@
       "severity": "mild",
       "text": "this_ptr = (CAlphaBitmap *)(param_1 + 0x13);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "this_ptr = (CAlphaBitmap *)&this_ptr[2].field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -866,7 +857,7 @@
       "line": 18,
       "match": "this_ptr = (T *)&this_ptr[N].SUBFIELD",
       "severity": "moderate",
-      "text": "this_ptr = (CAlphaBitmap *)&this_ptr[2].field_0x4;",
+      "text": "this_ptr = (CAlphaBitmap *)&this_ptr[2].opa;",
       "type": "shadow_pointer_walk"
     }
   ],

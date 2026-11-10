@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 124,
-    "complexity_score": 289,
+    "complexity_score": 254,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 3,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
       "fast_inv_sqrt_inline",
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -326,7 +325,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar4 = (float)*(int *)param_2 * _DAT_005ddfc4 - *(float *)&param_3->field_0x4;",
+      "text": "fVar4 = (float)param_2->x * _DAT_005ddfc4 - (param_3->base).base.position.f.x;",
       "type": "unnamed_param"
     },
     {
@@ -334,23 +333,15 @@
       "line": 20,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar4 = (float)*(int *)param_2 * _DAT_005ddfc4 - *(float *)&param_3->field_0x4;",
+      "text": "fVar4 = (float)param_2->x * _DAT_005ddfc4 - (param_3->base).base.position.f.x;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar4 = (float)*(int *)param_2 * _DAT_005ddfc4 - *(float *)&param_3->field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar5 = (float)*(int *)(param_2 + 4) * _DAT_005ddfc4 - *(float *)&param_3->field_0x8;",
+      "text": "fVar5 = (float)param_2->y * _DAT_005ddfc4 - (param_3->base).base.position.f.y;",
       "type": "unnamed_param"
     },
     {
@@ -358,23 +349,15 @@
       "line": 21,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar5 = (float)*(int *)(param_2 + 4) * _DAT_005ddfc4 - *(float *)&param_3->field_0x8;",
+      "text": "fVar5 = (float)param_2->y * _DAT_005ddfc4 - (param_3->base).base.position.f.y;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar5 = (float)*(int *)(param_2 + 4) * _DAT_005ddfc4 - *(float *)&param_3->field_0x8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 22,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar6 = (float)*(int *)(param_2 + 8) * _DAT_005ddfc4 - *(float *)&param_3->field_0xc;",
+      "text": "fVar6 = (float)param_2->z * _DAT_005ddfc4 - (param_3->base).base.position.f.z;",
       "type": "unnamed_param"
     },
     {
@@ -382,16 +365,8 @@
       "line": 22,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar6 = (float)*(int *)(param_2 + 8) * _DAT_005ddfc4 - *(float *)&param_3->field_0xc;",
+      "text": "fVar6 = (float)param_2->z * _DAT_005ddfc4 - (param_3->base).base.position.f.z;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "fVar6 = (float)*(int *)(param_2 + 8) * _DAT_005ddfc4 - *(float *)&param_3->field_0xc;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

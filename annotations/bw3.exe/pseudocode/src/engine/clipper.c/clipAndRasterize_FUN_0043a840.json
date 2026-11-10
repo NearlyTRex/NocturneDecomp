@@ -16,30 +16,6 @@
   },
   "cross_references": [
     {
-      "addr": "00404dd0",
-      "from_addr": "00404e22",
-      "name": "engine_3d.c_FUN_00404dd0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00404e70",
-      "from_addr": "00404ec2",
-      "name": "engine_3d.c_FUN_00404e70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00405280",
-      "from_addr": "0040530c",
-      "name": "engine_3d.c_FUN_00405280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004075b0",
-      "from_addr": "00407682",
-      "name": "engine_3d.c_FUN_004075b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00406f30",
       "from_addr": "00407072",
       "name": "engine_3d.c_flushPremiumRenderBuffer_FUN_00406f30",
@@ -94,9 +70,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00404e70",
+      "from_addr": "00404ec2",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalized2_FUN_00404e70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00405360",
       "from_addr": "004053bb",
       "name": "engine_3d.c_renderPolygonAlphaTexturedNormalizedLit_FUN_00405360",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00404dd0",
+      "from_addr": "00404e22",
+      "name": "engine_3d.c_renderPolygonAlphaTexturedNormalized_FUN_00404dd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -304,6 +292,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00405280",
+      "from_addr": "0040530c",
+      "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLit2_FUN_00405280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00403e70",
       "from_addr": "00403f42",
       "name": "engine_3d.c_renderPolygonTexturedNormalizedUVLitOp14_FUN_00403e70",
@@ -346,6 +340,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004075b0",
+      "from_addr": "00407682",
+      "name": "engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004074b0",
       "from_addr": "00407539",
       "name": "engine_3d.c_renderPolygonWithRenderFlags_FUN_004074b0",
@@ -383,14 +383,14 @@
       "name": "engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0"
     },
     {
-      "addr": "00515e80",
-      "is_variadic": false,
-      "name": "engine_prim.c_FUN_00515e80"
-    },
-    {
       "addr": "005163b0",
       "is_variadic": false,
-      "name": "engine_prim.c_FUN_005163b0"
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0"
+    },
+    {
+      "addr": "00515e80",
+      "is_variadic": false,
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00515e80"
     }
   ],
   "globals": [
@@ -483,7 +483,7 @@
       "line": 13,
       "match": "DAT_007e3e8c",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
+      "text": "engine_prim_c_renderPolygonSoftware_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
       "type": "undefined_data"
     },
     {
@@ -491,7 +491,7 @@
       "line": 13,
       "match": "DAT_007e3e88",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
+      "text": "engine_prim_c_renderPolygonSoftware_FUN_00515e80((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
       "type": "undefined_data"
     }
   ]

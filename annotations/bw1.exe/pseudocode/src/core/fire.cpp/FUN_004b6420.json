@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 640,
-    "complexity_score": 1740,
+    "complexity_score": 1870,
     "cross_reference_count": 3,
     "function_call_count": 11,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 300,
-    "suspect_count": 137,
+    "suspect_count": 151,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "raw_address_constant",
-      "self_copy_guard",
       "stack_alignment_array",
       "stack_ref",
-      "unknown_field",
-      "unnamed_field",
+      "tautological_addr_guard",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memcpy",
@@ -31,7 +29,7 @@
     {
       "addr": "0049fdf0",
       "from_addr": "0049fed0",
-      "name": "core_emitter.cpp_FUN_0049fdf0",
+      "name": "core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,7 +41,7 @@
     {
       "addr": "005adf90",
       "from_addr": "005ae115",
-      "name": "core_weapon.cpp_FUN_005adf90",
+      "name": "core_weapon.cpp_CWeapon_renderAimBeam_FUN_005adf90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +56,7 @@
     "convention": "unknown",
     "is_ebp_frame": true,
     "name": "core_fire.cpp_FUN_004b6420",
-    "signature": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18,undefined4 param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)"
+    "signature": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,float param_21,float param_22,float param_23,float param_24,int param_25)"
   },
   "function_calls": [
     {
@@ -156,31 +154,31 @@
     },
     {
       "addr": "01fcf290",
-      "name": "g_CDemonSetInstance.field1364264_0x14d128",
+      "name": "g_CDemonSetInstance.collision_normal.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fcf294",
-      "name": "g_CDemonSetInstance.field1364268_0x14d12c",
+      "name": "g_CDemonSetInstance.collision_normal.y",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fcf298",
-      "name": "g_CDemonSetInstance.field1364272_0x14d130",
+      "name": "g_CDemonSetInstance.collision_normal.z",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fcf2a0",
-      "name": "g_CDemonSetInstance.field1364280_0x14d138",
+      "name": "g_CDemonSetInstance.collision_impact_position.x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fcf2ac",
-      "name": "g_CDemonSetInstance.field1364292_0x14d144",
+      "name": "g_CDemonSetInstance.collision_actor",
       "type": "undefined4",
       "value": null
     }
@@ -191,7 +189,7 @@
       {
         "call_addr": "005ae115",
         "call_type": "direct",
-        "caller": "core_weapon.cpp_FUN_005adf90",
+        "caller": "core_weapon.cpp_CWeapon_renderAimBeam_FUN_005adf90",
         "estimated_params": 28,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,7 +204,7 @@
       {
         "call_addr": "0049fed0",
         "call_type": "direct",
-        "caller": "core_emitter.cpp_FUN_0049fdf0",
+        "caller": "core_emitter.cpp_CEmitter_renderOpaque_FUN_0049fdf0",
         "estimated_params": 28,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -719,7 +717,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -727,7 +725,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -735,7 +733,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -743,7 +741,7 @@
       "line": 5,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -751,7 +749,7 @@
       "line": 5,
       "match": "param_5",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -759,7 +757,7 @@
       "line": 5,
       "match": "param_6",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -767,7 +765,7 @@
       "line": 5,
       "match": "param_7",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -775,7 +773,7 @@
       "line": 5,
       "match": "param_8",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -783,7 +781,7 @@
       "line": 5,
       "match": "param_9",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -791,7 +789,7 @@
       "line": 5,
       "match": "param_10",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -799,7 +797,7 @@
       "line": 5,
       "match": "param_11",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -807,7 +805,7 @@
       "line": 5,
       "match": "param_12",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -815,7 +813,7 @@
       "line": 5,
       "match": "param_13",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -823,7 +821,7 @@
       "line": 5,
       "match": "param_14",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -831,7 +829,7 @@
       "line": 5,
       "match": "param_15",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -839,7 +837,7 @@
       "line": 5,
       "match": "param_16",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -847,7 +845,7 @@
       "line": 5,
       "match": "param_17",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -855,7 +853,7 @@
       "line": 5,
       "match": "param_18",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -863,7 +861,7 @@
       "line": 5,
       "match": "param_19",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -871,7 +869,7 @@
       "line": 5,
       "match": "param_20",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -879,7 +877,7 @@
       "line": 5,
       "match": "param_21",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -887,7 +885,7 @@
       "line": 5,
       "match": "param_22",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -895,7 +893,7 @@
       "line": 5,
       "match": "param_23",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -903,7 +901,7 @@
       "line": 5,
       "match": "param_24",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -911,7 +909,7 @@
       "line": 5,
       "match": "param_25",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,float param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
+      "text": "void core_fire_cpp_FUN_004b6420(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,float param_12,uint param_13,uint param_14,uint param_15,uint param_16,uint param_17,uint param_18,uint param_19,uint param_20,float param_21,float param_22,float param_23,float param_24,int param_25)",
       "type": "unnamed_param"
     },
     {
@@ -975,7 +973,7 @@
       "line": 84,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_100 = (byte  [4])*param_2;",
+      "text": "local_100.x = *param_2;",
       "type": "unnamed_param"
     },
     {
@@ -983,7 +981,7 @@
       "line": 85,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_fc[(uint)bVar6 * -2] = param_2[(uint)bVar6 * -2 + 1];",
+      "text": "*(float *)((int)&local_100 + (uint)bVar6 * -8 + 4) = param_2[(uint)bVar6 * -2 + 1];",
       "type": "unnamed_param"
     },
     {
@@ -999,7 +997,7 @@
       "line": 88,
       "match": "param_3",
       "severity": "mild",
-      "text": "afStack_120[2] = (float)local_100 + *param_3;",
+      "text": "local_118 = local_100.x + *param_3;",
       "type": "unnamed_param"
     },
     {
@@ -1007,7 +1005,7 @@
       "line": 89,
       "match": "param_3",
       "severity": "mild",
-      "text": "afStack_120[3] = local_fc[0] + param_3[1];",
+      "text": "local_114 = local_100.y + param_3[1];",
       "type": "unnamed_param"
     },
     {
@@ -1015,28 +1013,36 @@
       "line": 90,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_110 = local_fc[1] + param_3[2];",
+      "text": "local_110 = local_100.z + param_3[2];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 91,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_64._0_4_ = (float)local_100 + *param_3;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 91,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_64._0_4_ = (float)local_100 + *param_3;",
+      "text": "local_64.x = local_100.x + *param_3;",
       "type": "unnamed_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 93,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + 0x12];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 95,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13];",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 97,
+      "line": 98,
       "match": "param_3",
       "severity": "mild",
       "text": "local_138 = -param_3[1];",
@@ -1044,7 +1050,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 99,
       "match": "param_3",
       "severity": "mild",
       "text": "local_134 = -param_3[2];",
@@ -1052,7 +1058,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 99,
+      "line": 100,
       "match": "param_3",
       "severity": "mild",
       "text": "local_13c = -*param_3;",
@@ -1060,26 +1066,34 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 100,
+      "line": 101,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_d0 = -*param_3;",
+      "text": "local_d0.x = -*param_3;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
-      "line": 124,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "local_150[2] = *param_3 * local_18;",
-      "type": "unnamed_param"
+      "description": "Direct stack address reference",
+      "line": 102,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "local_f0[(uint)bVar6 * -2 + 9] = (&stack0xfffffea4)[(uint)bVar6 * -2 + 9];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 104,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
       "line": 125,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_150[3] = param_3[1] * local_18;",
+      "text": "local_148 = *param_3 * local_18;",
       "type": "unnamed_param"
     },
     {
@@ -1087,7 +1101,7 @@
       "line": 126,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_140 = param_3[2] * local_18;",
+      "text": "local_144 = param_3[1] * local_18;",
       "type": "unnamed_param"
     },
     {
@@ -1095,12 +1109,36 @@
       "line": 127,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_c4 = *param_3 * local_18;",
+      "text": "local_140 = param_3[2] * local_18;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
+      "line": 128,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "local_c4 = *param_3 * local_18;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 129,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "local_f0[(uint)bVar6 * -2 + 0xc] = (&stack0xfffffea4)[(uint)bVar6 * -2 + 6];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
       "line": 131,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 132,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b8 = *param_2 + local_c4;",
@@ -1108,7 +1146,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 132,
+      "line": 133,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b4 = param_2[1] + local_c0;",
@@ -1116,7 +1154,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 133,
+      "line": 134,
       "match": "param_2",
       "severity": "mild",
       "text": "local_b0 = param_2[2] + local_bc;",
@@ -1124,71 +1162,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 135,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_ac[0] = *param_2 + local_c4;",
+      "text": "local_ac.x = *param_2 + local_c4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 139,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_64._0_4_ = local_ac[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 140,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_64._4_4_ = local_ac[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0x14d128",
-      "severity": "mild",
-      "text": "if (local_58 != &g_CDemonSetPtr->field_0x14d128) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 144,
-      "match": "field_0x14d128",
-      "severity": "mild",
-      "text": "local_58 = (byte  [4])*(float *)&g_CDemonSetPtr->field_0x14d128;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 145,
-      "match": "field_0x14d12c",
-      "severity": "mild",
-      "text": "local_54 = *(float *)&g_CDemonSetPtr->field_0x14d12c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 146,
-      "match": "field_0x14d130",
-      "severity": "mild",
-      "text": "local_50 = *(float *)&g_CDemonSetPtr->field_0x14d130;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x14d144",
-      "severity": "mild",
-      "text": "local_20 = *(CDemonActor **)&g_CDemonSetPtr->field_0x14d144;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 150,
+      "line": 151,
       "match": "param_22",
       "severity": "mild",
       "text": "param_22 = 0.0;",
@@ -1196,7 +1178,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 151,
+      "line": 152,
       "match": "param_23",
       "severity": "mild",
       "text": "param_23 = 0.0;",
@@ -1204,26 +1186,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 152,
+      "line": 153,
       "match": "param_24",
       "severity": "mild",
       "text": "param_24 = 0.0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 153,
-      "match": "field_0x14d144",
-      "severity": "mild",
-      "text": "if (*(CDemonActor **)&g_CDemonSetPtr->field_0x14d144 != (CDemonActor *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 159,
-      "match": "param_12",
-      "severity": "mild",
-      "text": "if (&param_12 != local_fc + 5) {",
       "type": "unnamed_param"
     },
     {
@@ -1231,39 +1197,79 @@
       "line": 160,
       "match": "param_12",
       "severity": "mild",
-      "text": "param_12 = local_fc[5];",
+      "text": "if (&param_12 != local_f0 + 2) {",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 161,
-      "match": "param_13",
+      "match": "param_12",
       "severity": "mild",
-      "text": "param_13 = local_e4;",
+      "text": "param_12 = local_f0[2];",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
       "line": 162,
+      "match": "param_13",
+      "severity": "mild",
+      "text": "param_13 = local_f0[3];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 163,
       "match": "param_14",
       "severity": "mild",
       "text": "param_14 = local_e0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Complex pointer cast",
-      "line": 166,
-      "match": "(uint *)((int)local_150",
+      "description": "Direct stack address reference",
+      "line": 167,
+      "match": "&stack0xfffffea4",
       "severity": "moderate",
-      "text": "*(uint *)((int)local_150 + (uint)bVar6 * -8) =",
-      "type": "pointer_cast"
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + 3] = (&stack0xfffffea4)[(uint)bVar6 * -2 + 0xf];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 167,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + 3] = (&stack0xfffffea4)[(uint)bVar6 * -2 + 0xf];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 168,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 169,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 170,
+      "match": "&stack0xfffffeac",
+      "severity": "moderate",
+      "text": "if (&param_15 != &stack0xfffffeac) {",
+      "type": "stack_ref"
     },
     {
       "description": "Unnamed function parameter",
       "line": 170,
       "match": "param_15",
       "severity": "mild",
-      "text": "if (&param_15 != &local_154) {",
+      "text": "if (&param_15 != &stack0xfffffeac) {",
       "type": "unnamed_param"
     },
     {
@@ -1279,7 +1285,7 @@
       "line": 172,
       "match": "param_16",
       "severity": "mild",
-      "text": "param_16 = local_150[0];",
+      "text": "param_16 = local_150;",
       "type": "unnamed_param"
     },
     {
@@ -1287,7 +1293,7 @@
       "line": 173,
       "match": "param_17",
       "severity": "mild",
-      "text": "param_17 = local_150[1];",
+      "text": "param_17 = local_14c;",
       "type": "unnamed_param"
     },
     {
@@ -1299,11 +1305,51 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Direct stack address reference",
+      "line": 178,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + 0x15] = (&stack0xfffffea4)[(uint)bVar6 * -2 + 0xc];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 178,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + 0x15] = (&stack0xfffffea4)[(uint)bVar6 * -2 + 0xc];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 179,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16] =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 180,
+      "match": "&stack0xfffffea4",
+      "severity": "moderate",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 181,
+      "match": "&stack0xfffffef4",
+      "severity": "moderate",
+      "text": "if (&param_18 != &stack0xfffffef4) {",
+      "type": "stack_ref"
+    },
+    {
       "description": "Unnamed function parameter",
       "line": 181,
       "match": "param_18",
       "severity": "mild",
-      "text": "if (&param_18 != &local_10c) {",
+      "text": "if (&param_18 != &stack0xfffffef4) {",
       "type": "unnamed_param"
     },
     {
@@ -1383,7 +1429,7 @@
       "line": 197,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_fc[2] = *param_3;",
+      "text": "local_f4 = *param_3;",
       "type": "unnamed_param"
     },
     {
@@ -1391,7 +1437,7 @@
       "line": 198,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_fc[(uint)bVar6 * -2 + 3] = param_3[(uint)bVar6 * -2 + 1];",
+      "text": "local_f0[(uint)bVar6 * -2] = param_3[(uint)bVar6 * -2 + 1];",
       "type": "unnamed_param"
     },
     {
@@ -1407,7 +1453,7 @@
       "line": 214,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = local_fc[4] * param_3[2] + local_fc[2] * *param_3 + local_fc[3] * param_3[1];",
+      "text": "fVar1 = local_f0[1] * param_3[2] + local_f4 * *param_3 + local_f0[0] * param_3[1];",
       "type": "unnamed_param"
     },
     {
@@ -1415,7 +1461,7 @@
       "line": 214,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = local_fc[4] * param_3[2] + local_fc[2] * *param_3 + local_fc[3] * param_3[1];",
+      "text": "fVar1 = local_f0[1] * param_3[2] + local_f4 * *param_3 + local_f0[0] * param_3[1];",
       "type": "unnamed_param"
     },
     {
@@ -1423,7 +1469,7 @@
       "line": 214,
       "match": "param_3",
       "severity": "mild",
-      "text": "fVar1 = local_fc[4] * param_3[2] + local_fc[2] * *param_3 + local_fc[3] * param_3[1];",
+      "text": "fVar1 = local_f0[1] * param_3[2] + local_f4 * *param_3 + local_f0[0] * param_3[1];",
       "type": "unnamed_param"
     },
     {
@@ -1435,20 +1481,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
+      "description": "Unnamed function parameter",
       "line": 229,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&local_20->field_0x154 + 0xb4))();",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 229,
-      "match": "field_0x154",
+      "match": "param_4",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&local_20->field_0x154 + 0xb4))();",
-      "type": "unnamed_field"
+      "text": "(*((local_20->vtable)._ub)->onLaserHit)(local_20,(SLaserInfo *)&param_4);",
+      "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
@@ -1479,7 +1517,7 @@
       "line": 236,
       "match": "param_3",
       "severity": "mild",
-      "text": "fStack_28 = (local_50 * param_3[2] + (float)local_58 * *param_3 + local_54 * param_3[1]) *",
+      "text": "fStack_28 = (local_58.z * param_3[2] + local_58.x * *param_3 + local_58.y * param_3[1]) *",
       "type": "unnamed_param"
     },
     {
@@ -1487,7 +1525,7 @@
       "line": 236,
       "match": "param_3",
       "severity": "mild",
-      "text": "fStack_28 = (local_50 * param_3[2] + (float)local_58 * *param_3 + local_54 * param_3[1]) *",
+      "text": "fStack_28 = (local_58.z * param_3[2] + local_58.x * *param_3 + local_58.y * param_3[1]) *",
       "type": "unnamed_param"
     },
     {
@@ -1495,7 +1533,7 @@
       "line": 236,
       "match": "param_3",
       "severity": "mild",
-      "text": "fStack_28 = (local_50 * param_3[2] + (float)local_58 * *param_3 + local_54 * param_3[1]) *",
+      "text": "fStack_28 = (local_58.z * param_3[2] + local_58.x * *param_3 + local_58.y * param_3[1]) *",
       "type": "unnamed_param"
     },
     {
@@ -1511,7 +1549,7 @@
       "line": 246,
       "match": "param_3",
       "severity": "mild",
-      "text": "afStack_48[0] = fStack_84 - param_3[1];",
+      "text": "fStack_48 = fStack_84 - param_3[1];",
       "type": "unnamed_param"
     },
     {
@@ -1519,7 +1557,7 @@
       "line": 247,
       "match": "param_3",
       "severity": "mild",
-      "text": "afStack_48[1] = fStack_80 - param_3[2];",
+      "text": "afStack_44[0] = fStack_80 - param_3[2];",
       "type": "unnamed_param"
     },
     {
@@ -1535,15 +1573,15 @@
       "line": 249,
       "match": "&stack0xfffffea4",
       "severity": "moderate",
-      "text": "(&stack0xfffffea4)[(uint)bVar6 * 0xfffffffe] = afStack_48[(uint)bVar6 * -2];",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * 0xfffffffe] = afStack_44[(uint)bVar6 * -2 + -1];",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
       "line": 250,
-      "match": "&stack0xfffffea8",
+      "match": "&stack0xfffffea4",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xfffffea8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
+      "text": "(&stack0xfffffea4)[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =",
       "type": "stack_ref"
     },
     {
@@ -1551,7 +1589,7 @@
       "line": 259,
       "match": "&stack0xfffffea0",
       "severity": "moderate",
-      "text": "if (&stack0xfffffea0 != local_fc + 0x17) {",
+      "text": "if (&stack0xfffffea0 != local_f0 + 0x14) {",
       "type": "stack_ref"
     },
     {
@@ -1575,7 +1613,7 @@
       "line": 273,
       "match": "&stack0xfffffea0",
       "severity": "moderate",
-      "text": "core_fire_cpp_FUN_004b6420(param_1,local_64,&stack0xfffffea0);",
+      "text": "core_fire_cpp_FUN_004b6420(param_1,&local_64,&stack0xfffffea0);",
       "type": "stack_ref"
     },
     {
@@ -1583,7 +1621,7 @@
       "line": 273,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_004b6420(param_1,local_64,&stack0xfffffea0);",
+      "text": "core_fire_cpp_FUN_004b6420(param_1,&local_64,&stack0xfffffea0);",
       "type": "unnamed_param"
     },
     {
@@ -1639,7 +1677,7 @@
       "line": 282,
       "match": "param_3",
       "severity": "mild",
-      "text": "local_fc[(uint)bVar6 * -2 + 0x1b] = param_3[(uint)bVar6 * -2 + 1];",
+      "text": "local_f0[(uint)bVar6 * -2 + 0x18] = param_3[(uint)bVar6 * -2 + 1];",
       "type": "unnamed_param"
     },
     {
@@ -1671,7 +1709,7 @@
       "line": 295,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_fire_cpp_FUN_004b6420(param_1,local_64,local_fc + 0x1a);",
+      "text": "core_fire_cpp_FUN_004b6420(param_1,&local_64,local_f0 + 0x17);",
       "type": "unnamed_param"
     },
     {
@@ -1687,7 +1725,7 @@
       "line": 300,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,(CVector3f *)local_100,(CVector3f *)local_64,param_4,local_168,",
+      "text": "(param_1,&local_100,&local_64,param_4,local_168,&local_58,param_7,param_8,param_9,",
       "type": "unnamed_param"
     },
     {
@@ -1695,31 +1733,31 @@
       "line": 300,
       "match": "param_4",
       "severity": "mild",
-      "text": "(param_1,(CVector3f *)local_100,(CVector3f *)local_64,param_4,local_168,",
+      "text": "(param_1,&local_100,&local_64,param_4,local_168,&local_58,param_7,param_8,param_9,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 301,
+      "line": 300,
       "match": "param_7",
       "severity": "mild",
-      "text": "(CVector3f *)local_58,param_7,param_8,param_9,param_5);",
+      "text": "(param_1,&local_100,&local_64,param_4,local_168,&local_58,param_7,param_8,param_9,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 301,
+      "line": 300,
       "match": "param_8",
       "severity": "mild",
-      "text": "(CVector3f *)local_58,param_7,param_8,param_9,param_5);",
+      "text": "(param_1,&local_100,&local_64,param_4,local_168,&local_58,param_7,param_8,param_9,",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 301,
+      "line": 300,
       "match": "param_9",
       "severity": "mild",
-      "text": "(CVector3f *)local_58,param_7,param_8,param_9,param_5);",
+      "text": "(param_1,&local_100,&local_64,param_4,local_168,&local_58,param_7,param_8,param_9,",
       "type": "unnamed_param"
     },
     {
@@ -1727,15 +1765,39 @@
       "line": 301,
       "match": "param_5",
       "severity": "mild",
-      "text": "(CVector3f *)local_58,param_7,param_8,param_9,param_5);",
+      "text": "param_5);",
       "type": "unnamed_param"
     },
     {
-      "description": "Pointer value `&stack0xfffffea8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 250,
-      "match": "(int)&stack0xfffffea8",
+      "description": "Pointer value `&local_100` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 85,
+      "match": "(int)&local_100",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xfffffea8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
+      "text": "*(float *)((int)&local_100 + (uint)bVar6 * -8 + 4) = param_2[(uint)bVar6 * -2 + 1];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_100` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 86,
+      "match": "(int)&local_100",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_100 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 92,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&local_64` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 94,
+      "match": "(int)&local_64",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8) =",
       "type": "pointer_truncation"
     },
     {
@@ -1763,27 +1825,75 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&param_15 != &local_154)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 170,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 106,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&param_15 != &local_154) {",
-      "type": "self_copy_guard"
+      "text": "local_58.x = local_d0.x;",
+      "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom dead self-copy guard: `if (&param_18 != &local_10c)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
-      "line": 181,
-      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 140,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "if (&param_18 != &local_10c) {",
-      "type": "self_copy_guard"
+      "text": "local_64.x = local_ac.x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 145,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "local_58.x = (g_CDemonSetPtr->collision_normal).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&param_15` is always TRUE (the address of `param_15` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 170,
+      "match": "if ((T *)0x0 != &param_15)",
+      "severity": "moderate",
+      "text": "if (&param_15 != &stack0xfffffeac) {",
+      "type": "tautological_addr_guard"
+    },
+    {
+      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&param_18` is always TRUE (the address of `param_18` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
+      "line": 181,
+      "match": "if ((T *)0x0 != &param_18)",
+      "severity": "moderate",
+      "text": "if (&param_18 != &stack0xfffffef4) {",
+      "type": "tautological_addr_guard"
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 250,
+      "line": 85,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(float *)((int)&stack0xfffffea8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
+      "text": "*(float *)((int)&local_100 + (uint)bVar6 * -8 + 4) = param_2[(uint)bVar6 * -2 + 1];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 86,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_100 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 92,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + (uint)bVar6 * -8 + 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 94,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&local_64 + ((uint)bVar6 * -2 + (uint)bVar6 * -2) * 4 + 8) =",
       "type": "pointer_cast"
     },
     {

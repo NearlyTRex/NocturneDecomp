@@ -9,9 +9,9 @@
 void __cdecl engine_console_cpp_CConsole_reset_FUN_004455d0(CConsole *this_ptr)
 
 {
-  memset(&this_ptr->field_0x8,0,4000);
-  *(uint *)&this_ptr->field_0xfa8 = 0;
-  *(uint *)&this_ptr->field_0xfac = 0;
+  memset(this_ptr->console_buffer,0,4000);
+  this_ptr->current_column = 0;
+  this_ptr->current_row = 0;
   unkafter_dosio_cpp_FUN_00479950("console.txt");
   return;
 }

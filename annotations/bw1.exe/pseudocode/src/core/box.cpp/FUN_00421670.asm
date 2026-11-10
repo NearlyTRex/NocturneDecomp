@@ -34,9 +34,9 @@
 ;
 ; XREF[4]:
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044bf20 at 0044c114
-;   core_door.cpp_FUN_00478220 at 004782bb
-;   core_platfrm.cpp_FUN_0053a3d0 at 0053a4bf
-;   core_vehicle.cpp_FUN_005a8670 at 005a873b
+;   core_door.cpp_CDoor_renderOpaque_FUN_00478220 at 004782bb
+;   core_platfrm.cpp_CPlatform_renderOpaque_FUN_0053a3d0 at 0053a4bf
+;   core_vehicle.cpp_CVehicle_renderOpaque_FUN_005a8670 at 005a873b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fce08

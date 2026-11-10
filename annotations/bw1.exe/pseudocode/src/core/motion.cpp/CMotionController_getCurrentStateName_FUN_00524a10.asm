@@ -7,7 +7,7 @@
 ; CMotionController * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00431c30 at 00431c4f
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30 at 00431c4f
 ;   core_motion.cpp_FUN_005254b0 at 005255ec
 ;
 ; Called Functions:

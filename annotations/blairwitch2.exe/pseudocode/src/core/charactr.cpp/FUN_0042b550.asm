@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[2]:
-;   core_dog1.cpp_FUN_005ac520 at 005ac58c
+;   core_dog1.cpp_CDog_processDeathState_FUN_005ac520 at 005ac58c
 ;   core_script.cpp_FUN_00522350 at 00527eaf
 ;
 ; *****************************************************************************

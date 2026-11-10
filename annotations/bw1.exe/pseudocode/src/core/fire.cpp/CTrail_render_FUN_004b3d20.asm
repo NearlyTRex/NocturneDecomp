@@ -35,7 +35,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b5422
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b5422
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fff94
@@ -61,7 +61,7 @@
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
 ;   engine_drender.cpp_CDemonRenderer_setBlendMode_FUN_00483dd0
-;   engine_drender.cpp_FUN_00483df0
+;   engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0
 ;   engine_matrix.c_FUN_00483b70
 ;   engine_matrix.c_pop_FUN_004839a0
 ;   engine_special.cpp_FUN_00580173
@@ -113,8 +113,8 @@ section .text
     MOV EAX,[0x00612560]                ; 004b3d8d | DAT_00612560
     PUSH dword ptr [EBX + 0x14]         ; 004b3d92
     PUSH EAX                            ; 004b3d95 | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_00483df0 ; 004b3d96
-        ;   XREF to: 00483df0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_00483df0(CDemonRenderer * this_ptr, float render_alpha)
+    CALL engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0 ; 004b3d96
+        ;   XREF to: 00483df0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0(CDemonRenderer * this_ptr, float render_alpha)
     ADD ESP,0x8                         ; 004b3d9b
     PUSH ESI                            ; 004b3d9e
     MOV EDX,dword ptr [0x00612560]      ; 004b3d9f | DAT_00612560

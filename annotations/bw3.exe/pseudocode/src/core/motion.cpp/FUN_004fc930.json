@@ -2,53 +2,57 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 101,
+    "complexity_score": 36,
     "cross_reference_count": 21,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 36,
-    "suspect_count": 6,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 137
   },
   "cross_references": [
     {
       "addr": "005a0be0",
       "from_addr": "005a1104",
-      "name": "core_asgaya.cpp_FUN_005a0be0",
+      "name": "core_asgaya.cpp_CAsgaya_process_FUN_005a0be0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005968a0",
       "from_addr": "0059752d",
-      "name": "core_baal.cpp_FUN_005968a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004179b0",
-      "from_addr": "004181e4",
-      "name": "core_boneguy.cpp_FUN_004179b0",
+      "name": "core_baal.cpp_CBaal_process_FUN_005968a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00419b40",
       "from_addr": "0041a338",
-      "name": "core_boneguy.cpp_FUN_00419b40",
+      "name": "core_boneguy.cpp_CBaalSkel_process_FUN_00419b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004179b0",
+      "from_addr": "004181e4",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004179b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00425da0",
       "from_addr": "004276db",
-      "name": "core_carved.cpp_FUN_00425da0",
+      "name": "core_carved.cpp_CCarved_process_FUN_00425da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00429090",
       "from_addr": "004290c1",
       "name": "core_carved.cpp_FUN_00429090",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005989e0",
+      "from_addr": "00598d26",
+      "name": "core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,37 +64,37 @@
     {
       "addr": "004c6eb0",
       "from_addr": "004c872a",
-      "name": "core_ghoul.cpp_FUN_004c6eb0",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00597f40",
       "from_addr": "0059827b",
-      "name": "core_hecaitmx.cpp_FUN_00597f40",
+      "name": "core_hecaitmx.cpp_CHecaitomix_process_FUN_00597f40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059b960",
       "from_addr": "0059c84b",
-      "name": "core_hino.cpp_FUN_0059b960",
+      "name": "core_hino.cpp_CHino_process_FUN_0059b960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00590010",
       "from_addr": "00590fd6",
-      "name": "core_kedward.cpp_FUN_00590010",
+      "name": "core_kedward.cpp_CKedward_process_FUN_00590010",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00591f30",
       "from_addr": "00593342",
-      "name": "core_mattnntt.cpp_FUN_00591f30",
+      "name": "core_mattnntt.cpp_CMattanntote_process_FUN_00591f30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004f8cc0",
       "from_addr": "004f8f73",
-      "name": "core_moocow.cpp_FUN_004f8cc0",
+      "name": "core_moocow.cpp_CMooCow_process_FUN_004f8cc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -114,13 +118,13 @@
     {
       "addr": "00546400",
       "from_addr": "0054693f",
-      "name": "core_shotgun.cpp_FUN_00546400",
+      "name": "core_shotgun.cpp_CShadowsc_process_FUN_00546400",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059e600",
       "from_addr": "0059fe0b",
-      "name": "core_styldemo.cpp_FUN_0059e600",
+      "name": "core_styldemo.cpp_CStylerDemon_process_FUN_0059e600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -132,13 +136,7 @@
     {
       "addr": "00588ee0",
       "from_addr": "0058ac66",
-      "name": "core_zombie.cpp_FUN_00588ee0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005989e0",
-      "from_addr": "00598d26",
-      "name": "unkafter_darkwolf.cpp_FUN_005989e0",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00588ee0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -232,54 +230,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar3 = *(int *)&this_ptr->field_0x4 * 0x120 + *(int *)this_ptr + 0x1c28;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x8 <= 0.0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "else if ((float)*(int *)(iVar3 + 100) <= *(float *)&this_ptr->field_0x8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x8 < (float)*(int *)(iVar2 + 0xf8)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x8 - (float)iVar4) /",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(*(float *)&this_ptr->field_0x8 - (float)iVar4) /",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -12,11 +12,11 @@
 ;
 ; XREF[7]:
 ;   core_bodypart.cpp_FUN_004178c0 at 00417a55
-;   core_box.cpp_FUN_005b4300 at 005b43fb
+;   core_box.cpp_CBox_loadFromFile_FUN_005b4300 at 005b43fb
 ;   core_boxactor.cpp_FUN_0041bf10 at 0041c076
 ;   core_fire.cpp_CStake_spawn_FUN_004941c0 at 00494412
 ;   core_fire.cpp_FUN_004992b0 at 0049938c
-;   core_simbox.cpp_FUN_00540070 at 00540132
+;   core_simbox.cpp_CSimBox_setup_FUN_00540070 at 00540132
 ;   core_weapon.cpp_FUN_0058a2f0 at 0058a42d
 ;
 ; Referenced Globals:

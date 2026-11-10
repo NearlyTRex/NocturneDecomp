@@ -11,9 +11,9 @@
 void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(CStrList *this_ptr,int new_capacity)
 
 {
-  void *pvVar1;
+  char **ppcVar1;
   
-  if (new_capacity < *(int *)this_ptr) {
+  if (new_capacity < this_ptr->item_count) {
     _DAT_01d046a0 = "..\\shape\\edittool.cpp";
     _DAT_01d046a4 = 0xbcc;
     core_main_c_FUN_004e4500("CStrList::allocate - Can't shrink list!");
@@ -23,11 +23,11 @@ void __cdecl shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(CStrList *this_pt
     _DAT_01d046a4 = 0xbcd;
     core_main_c_FUN_004e4500("CStrList::allocate - invalid count: %d",new_capacity);
   }
-  if (*(int *)&this_ptr->field_0x4 < new_capacity) {
-    *(int *)&this_ptr->field_0x4 = new_capacity;
-    pvVar1 = realloc(*(void **)&this_ptr->field_0x8,new_capacity * 4);
-    *(void **)&this_ptr->field_0x8 = pvVar1;
-    if (pvVar1 == (void *)0x0) {
+  if (this_ptr->capacity < new_capacity) {
+    this_ptr->capacity = new_capacity;
+    ppcVar1 = (char **)realloc(this_ptr->data_array,new_capacity * 4);
+    this_ptr->data_array = ppcVar1;
+    if (ppcVar1 == (char **)0x0) {
       _DAT_01d046a0 = "..\\shape\\edittool.cpp";
       _DAT_01d046a4 = 0xbd1;
       core_main_c_FUN_004e4500("CStrList::insert - out of memory");

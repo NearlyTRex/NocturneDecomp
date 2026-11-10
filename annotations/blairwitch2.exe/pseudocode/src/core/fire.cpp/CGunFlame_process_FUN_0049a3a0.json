@@ -1,0 +1,438 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 139,
+    "complexity_score": 284,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 54,
+    "suspect_count": 22,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 193
+  },
+  "cross_references": [
+    {
+      "addr": "0049c430",
+      "from_addr": "0049c6b8",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_0049c430",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0049a3a0",
+    "address_range": [
+      [
+        "0049a3a0",
+        "0049a4f9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_fire.cpp_CGunFlame_process_FUN_0049a3a0",
+    "signature": "void __cdecl core_fire_cpp_CGunFlame_process_FUN_0049a3a0(CGunFlame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040d060",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040d060"
+    },
+    {
+      "addr": "0049d230",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230"
+    },
+    {
+      "addr": "00499fe0",
+      "is_variadic": false,
+      "name": "core_fire.cpp_CGunFlame_init_FUN_00499fe0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d56b2",
+      "name": "DAT_005d56b2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d56ba",
+      "name": "DAT_005d56ba",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d56c2",
+      "name": "DAT_005d56c2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d56ca",
+      "name": "DAT_005d56ca",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f6504",
+      "name": "DAT_005f6504",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00614d30",
+      "name": "DAT_00614d30",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00616494",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01cb6900"
+    },
+    {
+      "addr": "01cb6b84",
+      "name": "g_CGameInstance.delta_time_float",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0049c6b8",
+        "call_type": "direct",
+        "caller": "core_fire.cpp_CFireEffect_process_FUN_0049c430",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.463414634146342,
+    "instruction_count": 123,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 4,
+      "CBRANCH": 6,
+      "COPY": 440,
+      "FLOAT2FLOAT": 38,
+      "FLOAT_ADD": 6,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 9,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 54,
+      "INT_AND": 32,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 25,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 12,
+      "INT_SUB": 26,
+      "INT_ZEXT": 10,
+      "LOAD": 38,
+      "POPCOUNT": 12,
+      "RETURN": 2,
+      "STORE": 35
+    },
+    "pcode_op_count": 795
+  },
+  "stack_frame": {
+    "frame_size": 76,
+    "local_size": 72,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_44",
+        "offset": -68,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGunFlame *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0049a3a9",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "puVar1 = &this_ptr->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "position = &this_ptr->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x8 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x8 + *(float *)&this_ptr->field_0x14 * probability_threshold;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x8 + *(float *)&this_ptr->field_0x14 * probability_threshold;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xc =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xc + *(float *)&this_ptr->field_0x18 * probability_threshold;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0xc + *(float *)&this_ptr->field_0x18 * probability_threshold;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&this_ptr->field_0x14 * _DAT_005d56b2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&this_ptr->field_0x18 * _DAT_005d56b2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x14 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x18 = fVar4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x14 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "probability_threshold * fVar3 + *(float *)&this_ptr->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "if ((*(int *)&this_ptr->field_0x20 != 0) &&",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 44,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1c =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "probability_threshold * _DAT_005f6504 + *(float *)&this_ptr->field_0x1c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "if (0x419fffff < *(int *)&this_ptr->field_0x1c) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1c = *(float *)&this_ptr->field_0x1c + fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x1c = *(float *)&this_ptr->field_0x1c + fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "} while (0x419fffff < *(int *)&this_ptr->field_0x1c);",
+      "type": "unnamed_field"
+    }
+  ]
+}

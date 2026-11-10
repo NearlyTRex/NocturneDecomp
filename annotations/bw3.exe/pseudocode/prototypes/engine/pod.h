@@ -21,9 +21,9 @@ CPodFile * __cdecl CPodFile::ctor(CPodFile *this_ptr);
 // Address: 00512f70
 CPodFile * __cdecl CPodFile::dtor(CPodFile *this_ptr,uint flags);
 
-// Original: engine_pod.cpp_FUN_00512f90
+// Original: engine_pod.cpp_qsortByFilename_FUN_00512f90
 // Address: 00512f90
-void FUN_00512f90(undefined4 *param_1,undefined4 *param_2);
+int __cdecl qsortByFilename(char **filename1_ptr,char **filename2_ptr);
 
 // Original: engine_pod.cpp_FUN_00512fb0
 // Address: 00512fb0

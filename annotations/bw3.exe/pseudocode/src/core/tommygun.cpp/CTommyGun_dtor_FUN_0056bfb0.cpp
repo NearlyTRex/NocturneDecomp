@@ -17,7 +17,7 @@ CTommyGun * __cdecl core_tommygun_cpp_CTommyGun_dtor_FUN_0056bfb0(CTommyGun *thi
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = (CTommyGun *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0((CWeapon *)this_ptr,1);
+  pCVar1 = (CTommyGun *)core_weapon_cpp_CWeapon_dtor_FUN_0057aed0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

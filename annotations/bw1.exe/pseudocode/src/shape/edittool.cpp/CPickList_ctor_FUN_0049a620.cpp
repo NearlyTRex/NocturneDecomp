@@ -16,20 +16,34 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_0049a620(CPickList *th
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = shape_edittool_cpp_CStrList_ctor_FUN_00499380((CStrList *)this_ptr);
-  pCVar3 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_0049c970
-                     ((CEdScrollBar *)&pCVar2[0x1b].field_0xc);
-  pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_0049d480((CEdButton *)(pCVar3 + 0x38));
+  pCVar2 = shape_edittool_cpp_CStrList_ctor_FUN_00499380(&this_ptr->base);
+  pCVar3 = shape_edittool_cpp_CEdScrollBar_ctor_FUN_0049c970((CEdScrollBar *)&pCVar2[0x1b].vtable);
+  pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_0049d480((CEdButton *)&pCVar3[1].item_count);
   pCVar4 = shape_edittool_cpp_CEdButton_ctor_FUN_0049d480(pCVar4 + 1);
-  *(byte ***)&pCVar4[-4].field_0xc4 = &g_CPickListVTable;
-  *(uint *)&pCVar4[-2].field_0xe0 = 0;
-  *(uint *)(pCVar4 + 1) = 0xffffffff;
-  *(uint *)&pCVar4[-2].field_0x9c = 0;
-  *(uint *)&pCVar4[-2].field_0xa0 = 0;
-  *(uint *)&pCVar4[-2].field_0xa4 = 0;
-  *(uint *)&pCVar4[-2].field_0xa8 = 0;
+  *(byte ***)(pCVar4[-4].button_text + 0xa8) = &g_CPickListVTable;
+  pCVar4[-0xffffffff00000002].button_text[0xc4] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0xc5] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0xc6] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[199] = '\0';
+  pCVar4[1].enabled = -1;
+  pCVar4[-0xffffffff00000002].button_text[0x80] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x81] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x82] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x83] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x84] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x85] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x86] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x87] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x88] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x89] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x8a] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x8b] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x8c] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x8d] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x8e] = '\0';
+  pCVar4[-0xffffffff00000002].button_text[0x8f] = '\0';
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005dc605);
-  pcVar6 = &pCVar4[-3].field_0x30;
+  pcVar6 = pCVar4[-3].button_text + 0x14;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -40,7 +54,7 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_0049a620(CPickList *th
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Cancel");
-  pcVar6 = &pCVar4[-3].field_0x94;
+  pcVar6 = pCVar4[-3].button_text + 0x78;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -50,7 +64,13 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_ctor_FUN_0049a620(CPickList *th
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar4[-3].field_0x28 = 0xffffffff;
-  *(uint *)&pCVar4[-3].field_0x2c = 0;
-  return (CPickList *)&pCVar4[-4].field_0xb8;
+  pCVar4[-0xffffffff00000003].button_text[0xc] = -1;
+  pCVar4[-0xffffffff00000003].button_text[0xd] = -1;
+  pCVar4[-0xffffffff00000003].button_text[0xe] = -1;
+  pCVar4[-0xffffffff00000003].button_text[0xf] = -1;
+  pCVar4[-0xffffffff00000003].button_text[0x10] = '\0';
+  pCVar4[-0xffffffff00000003].button_text[0x11] = '\0';
+  pCVar4[-0xffffffff00000003].button_text[0x12] = '\0';
+  pCVar4[-0xffffffff00000003].button_text[0x13] = '\0';
+  return (CPickList *)(pCVar4[-4].button_text + 0x9c);
 }

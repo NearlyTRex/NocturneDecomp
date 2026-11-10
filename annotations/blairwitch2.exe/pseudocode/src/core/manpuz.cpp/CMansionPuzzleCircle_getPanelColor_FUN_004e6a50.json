@@ -1,0 +1,202 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 59,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 54
+  },
+  "cross_references": [
+    {
+      "addr": "004e6010",
+      "from_addr": "004e61d6",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e5080",
+      "from_addr": "004e528f",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e6c40",
+      "from_addr": "004e6d39",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004e6a50",
+    "address_range": [
+      [
+        "004e6a50",
+        "004e6abd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_manpuz.cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50",
+    "signature": "void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_004e6a50(CMansionPuzzleCircle *this_ptr,int panel_index,float *out_r,float *out_g,float *out_b)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004e6d39",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_updateGem_FUN_004e6c40",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004e61d6",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010",
+        "estimated_params": 5,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      },
+      {
+        "call_addr": "004e528f",
+        "call_type": "direct",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_004e5080",
+        "estimated_params": 5,
+        "instructions_analyzed": 16,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.257142857142857,
+    "instruction_count": 35,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 10,
+      "CBRANCH": 2,
+      "COPY": 81,
+      "FLOAT2FLOAT": 3,
+      "INT2FLOAT": 3,
+      "INT_ADD": 20,
+      "INT_AND": 37,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 11,
+      "INT_SUB": 6,
+      "INT_XOR": 2,
+      "LOAD": 19,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 254
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMansionPuzzleCircle *"
+      },
+      {
+        "is_param": true,
+        "name": "panel_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "out_r",
+        "offset": 12,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "out_g",
+        "offset": 16,
+        "size": 4,
+        "type": "float *"
+      },
+      {
+        "is_param": true,
+        "name": "out_b",
+        "offset": 20,
+        "size": 4,
+        "type": "float *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "((*(uint *)&this_ptr->panels[panel_index].field_0x8 & 0x7fffffff) == 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "*out_r = (float)*(int *)&this_ptr->panels[panel_index].field_0x4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "*out_g = (float)*(int *)&this_ptr->panels[panel_index].field_0x50;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "*out_b = (float)*(int *)&this_ptr->panels[panel_index].field_0x54;",
+      "type": "unnamed_field"
+    }
+  ]
+}

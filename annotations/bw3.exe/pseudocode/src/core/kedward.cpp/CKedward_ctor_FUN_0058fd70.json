@@ -110,7 +110,7 @@
       "line": 12,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar1->field_0x154 = &g_CKedwardVTable;",
+      "text": "((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CKedwardVTable._ub;",
       "type": "unnamed_field"
     },
     {
@@ -158,7 +158,7 @@
       "line": 18,
       "match": "field_0xfc",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xfc = 1;",
+      "text": "*(int *)&pCVar1->field_0xfc = 1;",
       "type": "unnamed_field"
     },
     {
@@ -166,7 +166,7 @@
       "line": 19,
       "match": "field_0xf8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0xf8 = 0;",
+      "text": "*(int *)&pCVar1->field_0xf8 = 0;",
       "type": "unnamed_field"
     },
     {

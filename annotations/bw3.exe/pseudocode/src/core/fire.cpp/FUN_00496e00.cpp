@@ -31,16 +31,16 @@ void core_fire_cpp_FUN_00496e00(uint *param_1)
   float local_8;
   
   bVar3 = 0;
-  local_c = *(float *)&g_CGamePtr->field_0x314;
+  local_c = g_CGamePtr->delta_time_float;
   param_1[6] = local_c * _DAT_005c04c0 + (float)param_1[6];
   if (0x421fffff < (int)param_1[6]) {
     *param_1 = 0;
     return;
   }
   param_1[2] = local_c * (float)param_1[4] * (float)param_1[5] + (float)param_1[2];
-  local_8 = (float)core_actor_cpp_FUN_0040ce40(0xbf800000,0x3f800000);
+  local_8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
   param_1[1] = local_8 * local_c + (float)param_1[1];
-  local_8 = (float)core_actor_cpp_FUN_0040ce40(0xbf800000,0x3f800000);
+  local_8 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(-1.0,1.0);
   param_1[3] = local_8 * local_c + (float)param_1[3];
   pCVar2 = g_CDemonSetPtr;
   pfVar1 = (float *)(param_1 + 1);

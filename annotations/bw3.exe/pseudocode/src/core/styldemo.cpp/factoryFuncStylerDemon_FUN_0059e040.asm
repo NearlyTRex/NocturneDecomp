@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_styldemo.cpp_CStylerDemon_ctor_FUN_0059e070
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xdd18                         ; 0059e040
         ;   Label: core_styldemo.cpp_factoryFuncStylerDemon_FUN_0059e040
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0059e045
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 0059e045
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0059e04a
     TEST EAX,EAX                        ; 0059e04d
     JNZ 0x0059e052                      ; 0059e04f

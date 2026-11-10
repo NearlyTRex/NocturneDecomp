@@ -18,7 +18,7 @@ void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_
   uint *puVar5;
   byte bVar6;
   float afStackY_1068 [1002];
-  ulonglong uVar7;
+  float max_value;
   float local_80;
   float local_74;
   float local_68;
@@ -42,10 +42,10 @@ void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_
   float local_14;
   
   bVar6 = 0;
-  fVar3 = *(float *)&this_ptr->field_0xc2fc - delta_time;
-  *(float *)&this_ptr->field_0xc2fc = fVar3;
+  fVar3 = this_ptr->freaky_timer - delta_time;
+  this_ptr->freaky_timer = fVar3;
   if (fVar3 < 0.0) {
-    *(uint *)&this_ptr->field_0xc2fc = 0;
+    this_ptr->freaky_timer = 0.0;
   }
   local_28 = (uint *)&DAT_01bc0d54;
   local_2c = (uint *)&DAT_01bc0f4c;
@@ -80,13 +80,14 @@ void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_
             local_1c[1] = local_18[1];
             local_1c[2] = local_18[2];
           }
-          uVar7 = 0x40a00000c0a00000;
-          local_80 = (float)g_CDemonCameraInstance._4_4_;
+          max_value = 5.0;
+          fVar3 = -5.0;
+          local_80 = g_CDemonCameraInstance.base.position.f.x;
           *(uint *)(&stack0xffffff84 + (uint)bVar6 * -8) =
                *(uint *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);
           *(uint *)(&stack0xffffff88 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
                *(uint *)((uint)bVar6 * -8 + 0x1fe37f8 + (uint)bVar6 * -8);
-          fVar3 = (float)core_actor_cpp_FUN_0040cc00(uVar7);
+          fVar3 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(fVar3,max_value);
           local_14 = fVar3;
           local_68 = local_80;
           *(uint *)(&stack0xffffff90 + ((uint)bVar6 * -2 + 3) * 4) =
@@ -94,9 +95,9 @@ void __cdecl core_dracbrid_cpp_FUN_0047de00(CDraculaBride *this_ptr,float delta_
           *(uint *)(&stack0xffffff90 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4) =
                *(uint *)(&stack0xffffff88 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
           local_68 = fVar3 + local_68;
-          local_14 = (float)core_actor_cpp_FUN_0040cc00(0xc0000000);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-2.0,2.0);
           local_64 = local_14 + local_64;
-          local_14 = (float)core_actor_cpp_FUN_0040cc00(0xc0a00000);
+          local_14 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
           local_60 = local_14 + local_60;
           afStack_58[2] = local_68;
           afStack_58[(uint)bVar6 * -2 + 3] =

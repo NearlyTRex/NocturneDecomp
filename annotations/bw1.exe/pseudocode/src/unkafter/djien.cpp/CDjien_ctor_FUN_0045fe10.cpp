@@ -20,9 +20,11 @@ CDjien * unkafter_djien_cpp_CDjien_ctor_FUN_0045fe10(CDjien *this_ptr)
   byte *puVar6;
   
   pCVar3 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  iVar4 = __arrinit(&pCVar3[1].field_0x94,0x18,&g_SDjienBoxTypeInfo);
-  *(byte ***)(iVar4 + -0xc1a8) = &g_CDjienVTable;
-  core_skeleton_cpp_FUN_00569f50(iVar4 + -0xc1a4,0x5d8ac7);
+  iVar4 = __arrinit
+                    (pCVar3[1].base.base.create_event + 0x1c,0x18,&g_SDjienBoxTypeInfo);
+  *(CDjien_full_vtable **)(iVar4 + -0xc1a8) = &g_CDjienVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)(iVar4 + -0xc1a4),(char *)0x5d8ac7);
   *(uint *)(iVar4 + -0x9310) = 0x40800000;
   *(uint *)(iVar4 + -0x930c) = 0x41000000;
   *(uint *)(iVar4 + -0x34) = 0;

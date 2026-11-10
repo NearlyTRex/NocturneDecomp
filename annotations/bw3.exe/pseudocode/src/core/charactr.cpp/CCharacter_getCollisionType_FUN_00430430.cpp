@@ -10,14 +10,15 @@ ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_0043043
 
 {
   int iVar1;
+  EDeathState EVar2;
   
   iVar1 = *(int *)collision_info;
   if (iVar1 == 2) {
     return COLLISION_TYPE_NONE;
   }
   if (*(int *)&this_ptr->field_0x27a8 == 0) {
-    iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);
-    if (1 < iVar1) {
+    EVar2 = (*(((this_ptr->base).vtable._uc)->_uc).getDeathState)(this_ptr);
+    if (1 < (int)EVar2) {
       return COLLISION_TYPE_NONE;
     }
   }
@@ -33,13 +34,13 @@ ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_0043043
     *(float *)&collision_info->field_0x14 =
          *(float *)&this_ptr->field_0x327c * *(float *)&this_ptr->field_0x27b8;
     if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {
-      *(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;
+      *(float *)&collision_info->field_0x18 = (this_ptr->model).bounding_box.max.y;
     }
     *(float *)&collision_info->field_0x1c =
          *(float *)&this_ptr->field_0x3270 * *(float *)&this_ptr->field_0x27b8;
     return COLLISION_TYPE_CYLINDER;
   }
 LAB_0043045b:
-  *(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;
+  *(CDeformableModelInstance **)&collision_info->field_0x20 = &this_ptr->model;
   return COLLISION_TYPE_MESH;
 }

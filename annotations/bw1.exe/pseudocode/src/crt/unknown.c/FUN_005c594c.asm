@@ -20,7 +20,7 @@
 ;   crt_unknown.c_FUN_005c5430
 ;   crt_unknown.c_FUN_005c543c
 ;   crt_unknown.c_FUN_005c6418
-;   unkafter_zombie.cpp_FUN_005cb6f0
+;   crt_unknown.c_FUN_005cb6f0
 ;
 ; *****************************************************************************
 
@@ -144,8 +144,8 @@ section .text
     PUSH EAX                            ; 005c5a34
     LEA EAX,[ESP + 0x8]                 ; 005c5a35
     PUSH EAX                            ; 005c5a39
-    CALL unkafter_zombie.cpp_FUN_005cb6f0 ; 005c5a3a
-        ;   XREF to: 005cb6f0 (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005cb6f0()
+    CALL crt_unknown.c_FUN_005cb6f0     ; 005c5a3a
+        ;   XREF to: 005cb6f0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005cb6f0()
     ADD ESP,0xc                         ; 005c5a3f
     CMP EAX,-0x1                        ; 005c5a42
     JNZ 0x005c5a4b                      ; 005c5a45

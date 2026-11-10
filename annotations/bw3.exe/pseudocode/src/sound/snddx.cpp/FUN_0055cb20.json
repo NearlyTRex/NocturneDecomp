@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 134,
+    "complexity_score": 131,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 31,
     "suspect_count": 8,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 145
+    "total_lines": 142
   },
   "cross_references": [],
   "function": {
@@ -40,7 +40,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "0055a670",
@@ -189,7 +189,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_2 + 0x60);",
@@ -197,7 +197,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "if (*(int *)(param_2 + 0x68) != 0) {",
@@ -205,7 +205,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 24,
+      "line": 23,
       "match": "*(int **)(iVar2 * 0x24 + 0x2cf500c",
       "severity": "moderate",
       "text": "piVar1 = *(int **)(iVar2 * 0x24 + 0x2cf500c);",
@@ -213,7 +213,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*piVar1 + 0x10))(piVar1);",
@@ -221,7 +221,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = sound_sndmain_cpp_FUN_005558e0(*(uint *)(param_2 + 0x68),uStack_28);",
@@ -231,7 +231,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDirectSoundDevice",
         "offset": 72,
         "vtable_addr": "005e48dc"
       }

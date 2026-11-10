@@ -18,15 +18,15 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00432e80 at 00432eab
-;   core_vampboss.cpp_FUN_005a5550 at 005a5b3f
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00432e80 at 00432eab
+;   core_vampboss.cpp_CVampireBoss_process_FUN_005a5550 at 005a5b3f
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_00420500
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_00421570
 ;   core_box.cpp_FUN_00420570
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00569eb0
-;   core_skeleton.cpp_FUN_00563c40
 ;   core_xform.cpp_FUN_005b5080
 ;
 ; *****************************************************************************
@@ -46,8 +46,8 @@ section .text
     ADD ESP,0x4                         ; 0056ae84
     PUSH EAX                            ; 0056ae87
     MOV EBX,EAX                         ; 0056ae88
-    CALL core_skeleton.cpp_FUN_00563c40 ; 0056ae8a
-        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_00563c40(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40 ; 0056ae8a
+        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0056ae8f
     MOV EAX,dword ptr [EAX + 0x1de78]   ; 0056ae92
     MOV dword ptr [ESP + 0x4c],EAX      ; 0056ae98

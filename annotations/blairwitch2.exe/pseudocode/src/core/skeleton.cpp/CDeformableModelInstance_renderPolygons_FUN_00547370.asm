@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   skip_texture_capture
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00426730 at 00426875
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 00426875
 ;   core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_00547170 at 005471ab
 ;
 ; Referenced Globals:

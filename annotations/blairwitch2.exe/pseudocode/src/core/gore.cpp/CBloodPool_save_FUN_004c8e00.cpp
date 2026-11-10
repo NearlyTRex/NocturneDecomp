@@ -12,14 +12,12 @@ int __cdecl core_gore_cpp_CBloodPool_save_FUN_004c8e00(CBloodPool *this_ptr,_FIL
   int iVar1;
   
   FUN_005b8010
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x4,
-             (double)*(float *)&this_ptr->field_0x8,(double)*(float *)&this_ptr->field_0xc);
-  FUN_005b8010
-            (file_handle,"%d,%d\n",*(uint *)this_ptr,*(uint *)&this_ptr->field_0x10
-            );
+            (file_handle,"%f,%f,%f\n",(double)(this_ptr->position).x,
+             (double)(this_ptr->position).y,(double)(this_ptr->position).z);
+  FUN_005b8010(file_handle,"%d,%d\n",this_ptr->expired,this_ptr->blood_type);
   iVar1 = FUN_005b8010
-                    (file_handle,"%d,%f,%d,%d,%d\n",*(uint *)&this_ptr->field_0x14,
-                     (double)*(float *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,
-                     *(uint *)&this_ptr->field_0x20,*(uint *)&this_ptr->field_0x24);
+                    (file_handle,"%d,%f,%d,%d,%d\n",this_ptr->texture_variant,
+                     (double)this_ptr->age,(this_ptr->position_fixed).x,(this_ptr->position_fixed).y
+                     ,(this_ptr->position_fixed).z);
   return iVar1;
 }

@@ -11,15 +11,14 @@ float __cdecl core_box_cpp_CBoundingBox3D_getMaximumBound_FUN_0041e960(CBounding
 {
   float fVar1;
   
-  if ((*(float *)&this_ptr->field_0xc <= *(float *)&this_ptr->field_0x10) ||
-     (*(float *)&this_ptr->field_0xc <= *(float *)&this_ptr->field_0x14)) {
-    if (*(float *)&this_ptr->field_0x10 <= *(float *)&this_ptr->field_0x14) {
-      return *(float *)&this_ptr->field_0x14;
+  if (((this_ptr->max).x <= (this_ptr->max).y) || ((this_ptr->max).x <= (this_ptr->max).z)) {
+    if ((this_ptr->max).y <= (this_ptr->max).z) {
+      return (this_ptr->max).z;
     }
-    fVar1 = *(float *)&this_ptr->field_0x10;
+    fVar1 = (this_ptr->max).y;
   }
   else {
-    fVar1 = *(float *)&this_ptr->field_0xc;
+    fVar1 = (this_ptr->max).x;
   }
   return fVar1;
 }

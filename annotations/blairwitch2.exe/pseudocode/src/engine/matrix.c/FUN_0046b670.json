@@ -18,15 +18,27 @@
   },
   "cross_references": [
     {
+      "addr": "0044b960",
+      "from_addr": "0044bde4",
+      "name": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0044b020",
       "from_addr": "0044b079",
       "name": "core_dlight.cpp_FUN_0044b020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0044b960",
-      "from_addr": "0044bde4",
-      "name": "core_dlight.cpp_FUN_0044b960",
+      "addr": "00498ed0",
+      "from_addr": "00498f52",
+      "name": "core_fire.cpp_CExplosion_render_FUN_00498ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a500",
+      "from_addr": "0049a586",
+      "name": "core_fire.cpp_CGunFlame_render_FUN_0049a500",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,45 +48,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00498ed0",
-      "from_addr": "00498f52",
-      "name": "core_fire.cpp_FUN_00498ed0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049a500",
-      "from_addr": "0049a586",
-      "name": "core_fire.cpp_FUN_0049a500",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049abd0",
       "from_addr": "0049ad49",
-      "name": "core_fire.cpp_FUN_0049abd0",
+      "name": "core_fire.cpp_CLightningBolt_render_FUN_0049abd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049b380",
       "from_addr": "0049b42d",
-      "name": "core_fire.cpp_FUN_0049b380",
+      "name": "core_fire.cpp_CTrail_render_FUN_0049b380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0049f850",
       "from_addr": "0049fe19",
-      "name": "core_flame.cpp_FUN_0049f850",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005341b0",
       "from_addr": "0053420e",
-      "name": "core_set.cpp_FUN_005341b0",
+      "name": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058ad40",
       "from_addr": "0058ad71",
-      "name": "core_weather.cpp_FUN_0058ad40",
+      "name": "core_weather.cpp_CWeather_renderParticles_FUN_0058ad40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -132,7 +132,7 @@
       {
         "call_addr": "00498f52",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_00498ed0",
+        "caller": "core_fire.cpp_CExplosion_render_FUN_00498ed0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +145,7 @@
       {
         "call_addr": "0049a586",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049a500",
+        "caller": "core_fire.cpp_CGunFlame_render_FUN_0049a500",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "0049ad49",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049abd0",
+        "caller": "core_fire.cpp_CLightningBolt_render_FUN_0049abd0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +171,7 @@
       {
         "call_addr": "0049b42d",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049b380",
+        "caller": "core_fire.cpp_CTrail_render_FUN_0049b380",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -197,7 +197,7 @@
       {
         "call_addr": "0044bde4",
         "call_type": "direct",
-        "caller": "core_dlight.cpp_FUN_0044b960",
+        "caller": "core_dlight.cpp_CDemonLight_renderVolumetricLightShaft_FUN_0044b960",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +210,7 @@
       {
         "call_addr": "0053420e",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_005341b0",
+        "caller": "core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -225,7 +225,7 @@
       {
         "call_addr": "0058ad71",
         "call_type": "direct",
-        "caller": "core_weather.cpp_FUN_0058ad40",
+        "caller": "core_weather.cpp_CWeather_renderParticles_FUN_0058ad40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -239,7 +239,7 @@
       {
         "call_addr": "0049fe19",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_0049f850",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

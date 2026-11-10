@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 148,
+    "complexity_score": 93,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 28,
-    "suspect_count": 10,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "unnamed_field"
+      "pointer_cast",
+      "undefined_data"
     ],
     "total_lines": 75
   },
@@ -27,19 +26,19 @@
     {
       "addr": "0040e210",
       "from_addr": "0040e265",
-      "name": "core_ammobox.cpp_FUN_0040e210",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d25fe",
-      "from_addr": "004d261b",
-      "name": "core_game.cpp_FUN_004d25fe",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d27b0",
       "from_addr": "004d3c61",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d25fe",
+      "from_addr": "004d261b",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,8 +111,8 @@
     {
       "addr": "005fb474",
       "name": "g_CAmmoVTable",
-      "type": "void*",
-      "value": "0040dc50"
+      "type": "CDemonActor_vtable",
+      "value": null
     }
   ],
   "param_estimates": {
@@ -122,7 +121,7 @@
       {
         "call_addr": "004d3c61",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -133,7 +132,7 @@
       {
         "call_addr": "004d3c8f",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -144,7 +143,7 @@
       {
         "call_addr": "004d3cbd",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +154,7 @@
       {
         "call_addr": "004d3d12",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -166,7 +165,7 @@
       {
         "call_addr": "004d5b02",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -177,7 +176,7 @@
       {
         "call_addr": "004d5bb2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -188,7 +187,7 @@
       {
         "call_addr": "004d5c62",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d27b0",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +209,7 @@
       {
         "call_addr": "0040e265",
         "call_type": "direct",
-        "caller": "core_ammobox.cpp_FUN_0040e210",
+        "caller": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +220,7 @@
       {
         "call_addr": "004d261b",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d25fe",
+        "caller": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -282,16 +281,8 @@
       "line": 14,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -302,60 +293,28 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 25,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar4->field_0x1 = cVar1;",
-      "type": "unnamed_field"
+      "match": "(char *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 26,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x40 = 0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x44 = 0;",
-      "type": "unnamed_field"
+      "match": "(CKeyFramedModelInstance *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
+      "type": "pointer_cast"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 30,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "return (CAmmo *)&this_ptr_00[-1].field_0x24;",
+      "text": "return (CAmmo *)(this_ptr_00[-1].part_visibility_flags + 9);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "return (CAmmo *)&this_ptr_00[-1].field_0x24;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 26,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
-      "severity": "moderate",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
-      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {

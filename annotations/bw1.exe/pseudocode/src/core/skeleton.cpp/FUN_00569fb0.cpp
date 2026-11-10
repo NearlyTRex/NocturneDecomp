@@ -37,13 +37,13 @@ int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2
   float fVar9;
   
   bVar8 = 0;
-  pCVar2 = core_motion_cpp_FUN_00524a00((CMotionController *)param_1);
+  pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00524a00(&param_1->base);
   uStack_2c = *(uint *)(pCVar2 + param_4 * 0x120 + 0x1c8c);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(param_1);
-  iVar1 = *(int *)&pCVar3->field_0x1de78;
+  iVar1 = pCVar3->bone_count;
   core_skeleton_cpp_FUN_0056a220(param_1,param_2,param_3,aSStack_1b14);
   iVar7 = 0;
-  core_skeleton_cpp_FUN_0056b130(auStack_1b04,param_1);
+  core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130(auStack_1b04,param_1);
   iStack_18 = -1;
   fStack_14 = 1e+30;
   if (0 < iStack_1c) {
@@ -52,7 +52,7 @@ int core_skeleton_cpp_FUN_00569fb0(CDeformableModelInstance *param_1,int param_2
       puStack_3598 = auStack_3590;
       uStack_3594 = param_9;
       uStack_359c = 0x56a0a7;
-      core_skeleton_cpp_FUN_0056b130();
+      core_skeleton_cpp_computeBoneModelMatrices_FUN_0056b130();
       iVar5 = 0;
       fVar9 = 0.0;
       if (0 < iVar1) {

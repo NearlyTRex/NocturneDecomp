@@ -11,7 +11,7 @@ void core_barrier_cpp_factoryFuncBarrier_FUN_0040ea90(void)
 {
   CBarrier *this_ptr;
   
-  this_ptr = (CBarrier *)FUN_005a3cb2(0x230);
+  this_ptr = (CBarrier *)debugAllocTracked1(0x230);
   if (this_ptr == (CBarrier *)0x0) {
     return;
   }

@@ -14,8 +14,9 @@ CTheHand * core_thehand_cpp_CTheHand_ctor_FUN_00599070(CTheHand *this_ptr)
   CTheHand *pCVar1;
   
   pCVar1 = (CTheHand *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CTheHandVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar1->field_0x158,"thehand.dfm");
+  ((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CTheHandVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)&pCVar1->field_0x158,"thehand.dfm");
   *(uint *)&pCVar1->field_0x2ff4 = 0x42480000;
   *(uint *)&pCVar1->field_0x2ff8 = 0x42c80000;
   *(uint *)&pCVar1->field_0xc268 = 0;

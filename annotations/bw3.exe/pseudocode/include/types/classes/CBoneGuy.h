@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CBoneGuy
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd698 (54936 bytes)
 #pragma pack(push, 1)
 typedef struct CBoneGuy {
-    char field_0[54936]; // 0x0
+    CEnemy base; // 0x0
+    char field_53332[1604]; // 0xd054
 } CBoneGuy;
 #pragma pack(pop)
 

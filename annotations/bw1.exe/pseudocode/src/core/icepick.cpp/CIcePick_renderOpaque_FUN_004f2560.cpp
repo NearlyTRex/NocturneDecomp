@@ -11,6 +11,6 @@ int __cdecl core_icepick_cpp_CIcePick_renderOpaque_FUN_004f2560(CIcePick *this_p
 {
   int iVar1;
   
-  iVar1 = core_charactr_cpp_FUN_0042f240((CCharacter *)this_ptr);
+  iVar1 = core_charactr_cpp_CCharacter_renderOpaque_FUN_0042f240((CCharacter *)this_ptr);
   return iVar1;
 }

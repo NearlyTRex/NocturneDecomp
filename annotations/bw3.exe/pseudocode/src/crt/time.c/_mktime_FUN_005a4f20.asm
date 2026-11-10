@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   crt_unknown.c_FUN_005abe28 at 005abea9
+;   crt_unknown.c_FUN_005aef20 at 005aef85
+;   crt_unknown.c_FUN_005aefa0 at 005aefc0
 ;   engine_dosio.cpp_CFileFinder_convertStruct_FUN_00465cf0 at 00465e32
-;   unkafter_asgaya.cpp_FUN_005aef20 at 005aef85
-;   unkafter_asgaya.cpp_FUN_005aefa0 at 005aefc0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e8804

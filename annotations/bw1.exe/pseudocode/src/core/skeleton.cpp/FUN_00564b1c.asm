@@ -11,9 +11,9 @@
 ;   undefined4 DAT_01c4f020
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_00563c40
-;   core_xform.cpp_FUN_005b5930
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40
 ;   core_xform.cpp_FUN_005b6270
+;   core_xform.cpp_matrixToEulerAngles_FUN_005b5930
 ;   engine_3d.c_clipAndDrawLine2D_FUN_00407af0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_matrix.c_pop_FUN_004839a0
@@ -33,8 +33,8 @@ section .text
     SUB ESP,0x64                        ; 00564b24
     MOV EDX,dword ptr [ESP + 0x78]      ; 00564b27
     PUSH EDX                            ; 00564b2b
-    CALL core_skeleton.cpp_FUN_00563c40 ; 00564b2c
-        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_00563c40(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40 ; 00564b2c
+        ;   XREF to: 00563c40 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_00563c40(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 00564b31
     MOV DL,byte ptr [ESP + 0x84]        ; 00564b34
     MOV dword ptr [ESP + 0x60],EAX      ; 00564b3b
@@ -156,8 +156,8 @@ section .text
         ;   Label: LAB_00564c9d
     LEA ESI,[ESP + 0x4]                 ; 00564c9e
     LEA EDI,[ESP + 0x34]                ; 00564ca2
-    CALL core_xform.cpp_FUN_005b5930    ; 00564ca6
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5930()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 00564ca6
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
     LEA ESI,[ESP + 0x4]                 ; 00564cab
     ADD ESP,0x4                         ; 00564caf
     MOVSD ES:EDI,ESI                    ; 00564cb2
@@ -187,7 +187,7 @@ section .text
     PUSH 0x3f000000                     ; 00564cf0
     PUSH EDX                            ; 00564cf5
     CALL shape_edittool.cpp_FUN_00498360 ; 00564cf6
-        ;   XREF to: 00498360 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00498360()
+        ;   XREF to: 00498360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00498360(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00564cfb
     MOV ECX,dword ptr [0x00612560]      ; 00564cfe | DAT_00612560
     PUSH ECX                            ; 00564d04

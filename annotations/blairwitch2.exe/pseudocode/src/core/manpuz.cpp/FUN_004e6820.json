@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 66,
-    "complexity_score": 113,
+    "complexity_score": 81,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 8,
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "unnamed_field"
     ],
-    "total_lines": 89
+    "total_lines": 87
   },
   "cross_references": [
     {
       "addr": "004e56d0",
       "from_addr": "004e57a4",
-      "name": "core_manpuz.cpp_FUN_004e56d0",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -78,7 +78,7 @@
       {
         "call_addr": "004e57a4",
         "call_type": "direct",
-        "caller": "core_manpuz.cpp_FUN_004e56d0",
+        "caller": "core_manpuz.cpp_CMansionPuzzleCircle_renderOpaque_FUN_004e56d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,66 +156,42 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x14b4",
+      "line": 9,
+      "match": "field_0x18",
       "severity": "mild",
-      "text": "if ((*(int *)(0x01D182F0 + 0x1008) == 0) && (*(float *)(&this_ptr->field_0x14b4 + iVar1) <= 0.0)",
+      "text": "(*(float *)&this_ptr->reflectors[reflector_index].field_0x18 <= 0.0)) {",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 15,
+      "line": 13,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)(&this_ptr->field_0x14c4 + iVar1),",
+      "text": "(DAT_0060b280,(CVector3f *)&this_ptr->reflectors[reflector_index].field_0x28,",
       "type": "undefined_data"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x14c4",
+      "line": 13,
+      "match": "field_0x28",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CVector3f *)(&this_ptr->field_0x14c4 + iVar1),",
+      "text": "(DAT_0060b280,(CVector3f *)&this_ptr->reflectors[reflector_index].field_0x28,",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x14b8",
+      "line": 14,
+      "match": "field_0x1c",
       "severity": "mild",
-      "text": "(CVector3f *)(&this_ptr->field_0x14b8 + iVar1));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x5ac",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x5ac);",
+      "text": "(CVector3f *)&this_ptr->reflectors[reflector_index].field_0x1c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 21,
-      "match": "field_0x5ac",
+      "match": "field_0x18",
       "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&this_ptr->field_0x5ac,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x100",
-      "severity": "mild",
-      "text": "(float)(*(int *)&pCVar2->field_0x100 + -1) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x14b4",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x14b4 + iVar1),render_flags);",
+      "text": "*(float *)&this_ptr->reflectors[reflector_index].field_0x18,render_flags);",
       "type": "unnamed_field"
     }
   ]

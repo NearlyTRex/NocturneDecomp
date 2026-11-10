@@ -1,0 +1,309 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 75,
+    "complexity_score": 185,
+    "cross_reference_count": 16,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 15,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 105
+  },
+  "cross_references": [
+    {
+      "addr": "0040f100",
+      "from_addr": "0040f10a",
+      "name": "core_armour.cpp_CArmour_getCollisionType_FUN_0040f100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059f960",
+      "from_addr": "0059f96a",
+      "name": "core_basicene.cpp_CBasicEnemy_getCollisionType_FUN_0059f960",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00412a00",
+      "from_addr": "00412a0a",
+      "name": "core_batcreat.cpp_CBatCreature_getCollisionType_FUN_00412a00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00414600",
+      "from_addr": "00414616",
+      "name": "core_batman.cpp_CBatman_getCollisionType_FUN_00414600",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004153f0",
+      "from_addr": "004153fa",
+      "name": "core_biggs.cpp_CBiggs_getCollisionType_FUN_004153f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0041a3b0",
+      "from_addr": "0041a3c6",
+      "name": "core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_0041a3b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00438370",
+      "from_addr": "00438386",
+      "name": "core_construc.cpp_FUN_00438370",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00464aa0",
+      "from_addr": "00464ab6",
+      "name": "core_dracbrid.cpp_CDraculaBride_getCollisionType_FUN_00464aa0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c1220",
+      "from_addr": "004c122a",
+      "name": "core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004c1220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d4660",
+      "from_addr": "004d466a",
+      "name": "core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004d4660",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d80b0",
+      "from_addr": "004d80ba",
+      "name": "core_imp.cpp_CImp_getCollisionType_FUN_004d80b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00500350",
+      "from_addr": "0050035a",
+      "name": "core_mobster.cpp_CMobster_getCollisionType_FUN_00500350",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052bb20",
+      "from_addr": "0052bb2a",
+      "name": "core_sentinel.cpp_CSentinel_getCollisionType_FUN_0052bb20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ad60",
+      "from_addr": "0054ad6a",
+      "name": "core_smiley.cpp_CSmiley_getCollisionType_FUN_0054ad60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00570070",
+      "from_addr": "0057007a",
+      "name": "core_succubus.cpp_CSuccubus_getCollisionType_FUN_00570070",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00583780",
+      "from_addr": "005837d1",
+      "name": "core_vampboss.cpp_CVampireBoss_getCollisionType_FUN_00583780",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00427680",
+    "address_range": [
+      [
+        "00427680",
+        "0042772e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_charactr.cpp_CCharacter_getCollisionType_FUN_00427680",
+    "signature": "ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680(CCharacter *this_ptr,SCollisionInfo *collision_info)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.741935483870968,
+    "instruction_count": 62,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 2,
+      "CALLIND": 1,
+      "CBRANCH": 7,
+      "COPY": 130,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 37,
+      "INT_AND": 25,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 20,
+      "INT_LEFT": 4,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 10,
+      "INT_SUB": 11,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 32,
+      "POPCOUNT": 10,
+      "RETURN": 4,
+      "STORE": 10
+    },
+    "pcode_op_count": 356
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "collision_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SCollisionInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x2814 == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&collision_info->field_0x18 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x3444",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3444 * *(float *)&this_ptr->field_0x2824;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x2824",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3444 * *(float *)&this_ptr->field_0x2824;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 22,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "*(float *)&collision_info->field_0x14 =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x3440",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x2824",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3440 * *(float *)&this_ptr->field_0x2824;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&(this_ptr->model).field_0x2248;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2248",
+      "severity": "mild",
+      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&(this_ptr->model).field_0x2248;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "*(float *)&collision_info->field_0x1c =",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x3434",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3434 * *(float *)&this_ptr->field_0x2824;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x2824",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x3434 * *(float *)&this_ptr->field_0x2824;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "*(CDeformableModelInstance **)&collision_info->field_0x20 = &this_ptr->model;",
+      "type": "unnamed_field"
+    }
+  ]
+}

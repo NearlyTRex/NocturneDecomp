@@ -8,8 +8,8 @@
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_dtor_FUN_0050f1e0 at 0050f1e6
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_load_FUN_0050fa90 at 0050faa2
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_openPBMFile_FUN_00510160 at 0051016a
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_0050ff60 at 0050ff70
 ;   cockpit_pkbitmap.cpp_FUN_0050f910 at 0050f91d
-;   cockpit_pkbitmap.cpp_FUN_0050ff60 at 0050ff70
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_reset_FUN_0050f200

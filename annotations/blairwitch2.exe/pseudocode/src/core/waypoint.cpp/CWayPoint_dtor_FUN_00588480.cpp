@@ -17,7 +17,7 @@ CWayPoint * __cdecl core_waypoint_cpp_CWayPoint_dtor_FUN_00588480(CWayPoint *thi
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CWayPoint *)core_trigger_cpp_CTrigger_dtor_FUN_00577840((CTrigger *)this_ptr,1);
+  pCVar1 = (CWayPoint *)core_trigger_cpp_CTrigger_dtor_FUN_00577840(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

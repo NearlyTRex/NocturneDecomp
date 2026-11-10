@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 52,
-    "complexity_score": 82,
+    "complexity_score": 72,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 22,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
@@ -179,16 +179,8 @@
       "line": 20,
       "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "pSVar2 = (SPageResourceBitmap *)unkaddr_004a1200_cpp_FUN_004a1e90(&pCVar1[-2].field_0x10,1);",
+      "text": "pSVar2 = (SPageResourceBitmap *)unkaddr_004a1200_cpp_FUN_004a1e90(&pCVar1[-2].height,1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "pSVar2 = (SPageResourceBitmap *)unkaddr_004a1200_cpp_FUN_004a1e90(&pCVar1[-2].field_0x10,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

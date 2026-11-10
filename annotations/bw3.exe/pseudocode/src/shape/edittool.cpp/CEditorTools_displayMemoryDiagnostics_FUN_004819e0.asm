@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[3]:
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8030
 ;   core_game.cpp_FUN_004b6f30 at 004b789e
-;   core_game.cpp_FUN_004b7f90 at 004b8030
 ;   core_main.c_FUN_004e4400 at 004e449b
 ;
 ; Referenced Globals:
@@ -33,7 +33,7 @@
 ;
 ; Called Functions:
 ;   crt_heap.c__heapwalk_FUN_005a5bd0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -127,8 +127,8 @@ section .text
     PUSH 0x5bd351                       ; 00481a88 | s_Blocks_d_Total_1fk_Max_1_005bd350+1
     MOV ECX,dword ptr [EBP + 0x18]      ; 00481a8d
     PUSH ECX                            ; 00481a90
-    CALL crt_unknown.c_FUN_005a28c0     ; 00481a91
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00481a91
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 00481a96
     MOV ESP,EBP                         ; 00481a99
     POP EBP                             ; 00481a9b

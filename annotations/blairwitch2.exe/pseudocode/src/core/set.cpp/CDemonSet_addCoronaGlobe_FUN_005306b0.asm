@@ -8,13 +8,13 @@
 ; CDemonGlobe *    Stack[0x8]:4   globe
 ;
 ; XREF[8]:
-;   core_boxactor.cpp_FUN_0041d020 at 0041d144
-;   core_emitter.cpp_FUN_00486cb0 at 00486e43
-;   core_fire.cpp_FUN_00495960 at 00495a11
+;   core_boxactor.cpp_CLightActor_process_FUN_0041d020 at 0041d144
+;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00486e43
+;   core_fire.cpp_CFireball_process_FUN_00495960 at 00495a11
 ;   core_fire.cpp_FUN_004969a0 at 004969e4
-;   core_keyactor.cpp_FUN_004df1c0 at 004df24e
+;   core_keyactor.cpp_CKeyActor_process_FUN_004df1c0 at 004df24e
 ;   core_shadow.cpp_FUN_0053c500 at 0053d023
-;   core_weapon.cpp_FUN_00589fd0 at 0058a1ed
+;   core_weapon.cpp_CWeapon_updateLighting_FUN_00589fd0 at 0058a1ed
 ;   unkaddr_0059d350.cpp_FUN_0059d360 at 0059d3a4
 ;
 ; Referenced Globals:

@@ -20,7 +20,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_game.cpp_FUN_004b7f90 at 004b82fa
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b82fa
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_00505a30 at 00505ff5
 ;
 ; Referenced Globals:
@@ -46,12 +46,12 @@
 ;   core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70
 ;   core_netgame.cpp_CNetGame_send_FUN_00505870
 ;   core_netgame.cpp_CNetGame_updatePing_FUN_00506320
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_special.cpp_clearScreen_FUN_00560d70
-;   wincore_wddvmem.cpp_FUN_0057a8a0
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
 
@@ -76,8 +76,8 @@ section .text
     JZ 0x00504b35                       ; 005048b4
         ;   XREF to: 00504b35 (CONDITIONAL_JUMP)  ; LAB_00504b35
     MOV dword ptr [ESI + 0x4],0x2       ; 005048ba
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 005048c1
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 005048c1
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 005048c6
     MOV EBX,0x12                        ; 005048c8
     SAR EDX,0x1f                        ; 005048cd
@@ -117,8 +117,8 @@ section .text
     PUSH 0x5ca75d                       ; 0050493f | = "Syncing stage %d."
     LEA EAX,[ESP + 0xc]                 ; 00504944
     PUSH EAX                            ; 00504948
-    CALL crt_unknown.c_FUN_005a28c0     ; 00504949
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00504949
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0050494e
     PUSH 0xb                            ; 00504951
     PUSH 0x0                            ; 00504953
@@ -166,8 +166,8 @@ section .text
     PUSH 0x5ca77b                       ; 005049cf | DAT_005ca77b
     LEA EAX,[ESP + 0xc]                 ; 005049d4
     PUSH EAX                            ; 005049d8
-    CALL crt_unknown.c_FUN_005a28c0     ; 005049d9
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005049d9
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005049de
     PUSH EBX                            ; 005049e1
     PUSH 0xc8                           ; 005049e2
@@ -190,8 +190,8 @@ section .text
         ;   Label: LAB_00504a13
     JNZ 0x00504bf9                      ; 00504a1b
         ;   XREF to: 00504bf9 (CONDITIONAL_JUMP)  ; LAB_00504bf9
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 00504a21
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 00504a21
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     PUSH ESI                            ; 00504a26
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 ; 00504a27
         ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70(CNetGame * this_ptr)
@@ -330,8 +330,8 @@ section .text
     PUSH 0x5ca7bc                       ; 00504b7e | = "Waiting on sync code %d from server..."
     LEA EAX,[ESP + 0x10c]               ; 00504b83
     PUSH EAX                            ; 00504b8a
-    CALL crt_unknown.c_FUN_005a28c0     ; 00504b8b
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00504b8b
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00504b90
     PUSH 0xb                            ; 00504b93
     PUSH EDI                            ; 00504b95
@@ -340,8 +340,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 00504b9e
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00504ba3
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 00504ba6
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 00504ba6
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     PUSH ESI                            ; 00504bab
     CALL core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70 ; 00504bac
         ;   XREF to: 00504c70 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_receivePackets_FUN_00504c70(CNetGame * this_ptr)

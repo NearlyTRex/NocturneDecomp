@@ -11,25 +11,25 @@
 int __cdecl shape_edittool_cpp_CInputString_calcX_FUN_0047aef0(CInputString *this_ptr,int char_index)
 
 {
-  CInputString CVar1;
+  char cVar1;
   uint uVar2;
   int iVar3;
-  CInputString *pCVar4;
+  char *pcVar4;
   
   uVar2 = _DAT_01c25590;
   if (char_index < 0) {
     iVar3 = 0;
   }
   else {
-    if ((int)*(uint *)(this_ptr + 0x130) < char_index) {
-      char_index = *(uint *)(this_ptr + 0x130);
+    if (this_ptr->current_length < char_index) {
+      char_index = this_ptr->current_length;
     }
-    if (*(int *)(this_ptr + 0x13c) == 0) {
-      pCVar4 = this_ptr + char_index;
-      CVar1 = *pCVar4;
-      *pCVar4 = (CInputString)0x0;
+    if (this_ptr->mask_mode == 0) {
+      pcVar4 = this_ptr->string_data + char_index;
+      cVar1 = *pcVar4;
+      *pcVar4 = '\0';
       iVar3 = engine_font_cpp_FUN_004aaf00(uVar2,this_ptr);
-      *pCVar4 = CVar1;
+      *pcVar4 = cVar1;
       return iVar3;
     }
     if (0x3ff < (uint)char_index) {

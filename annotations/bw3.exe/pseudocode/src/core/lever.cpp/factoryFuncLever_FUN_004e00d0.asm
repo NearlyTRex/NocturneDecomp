@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_lever.cpp_CLever_ctor_FUN_004e0100
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x814                          ; 004e00d0
         ;   Label: core_lever.cpp_factoryFuncLever_FUN_004e00d0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004e00d5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004e00d5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004e00da
     TEST EAX,EAX                        ; 004e00dd
     JNZ 0x004e00e2                      ; 004e00df

@@ -11,7 +11,7 @@ void core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void)
 {
   CFirestaff *this_ptr;
   
-  this_ptr = (CFirestaff *)FUN_005a3cb2(0x25c8);
+  this_ptr = (CFirestaff *)debugAllocTracked1(0x25c8);
   if (this_ptr == (CFirestaff *)0x0) {
     return;
   }

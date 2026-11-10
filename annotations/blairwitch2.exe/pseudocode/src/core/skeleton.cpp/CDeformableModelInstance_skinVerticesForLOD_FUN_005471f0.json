@@ -18,13 +18,13 @@
     {
       "addr": "004203a0",
       "from_addr": "004204fc",
-      "name": "core_bugs.cpp_FUN_004203a0",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00421b10",
       "from_addr": "00421c43",
-      "name": "core_bugs.cpp_FUN_00421b10",
+      "name": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,6 +37,12 @@
       "addr": "005b6510",
       "from_addr": "005b6522",
       "name": "core_morph.cpp_CMorphModel_animateFromDeformableModel_FUN_005b6510",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00547620",
+      "from_addr": "00547669",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,12 +91,6 @@
       "addr": "00544380",
       "from_addr": "00544468",
       "name": "core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00547620",
-      "from_addr": "00547669",
-      "name": "core_skeleton.cpp_FUN_00547620",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -147,7 +147,7 @@
       {
         "call_addr": "004204fc",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_004203a0",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,7 +158,7 @@
       {
         "call_addr": "00421c43",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_00421b10",
+        "caller": "core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +169,7 @@
       {
         "call_addr": "00547669",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00547620",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

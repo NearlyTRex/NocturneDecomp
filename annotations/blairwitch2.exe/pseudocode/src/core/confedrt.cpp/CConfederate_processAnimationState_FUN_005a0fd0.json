@@ -1,0 +1,128 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 16,
+    "complexity_score": 44,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 9,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 25
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a0fd0",
+    "address_range": [
+      [
+        "005a0fd0",
+        "005a0ff0"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_confedrt.cpp_CConfederate_processAnimationState_FUN_005a0fd0",
+    "signature": "void __cdecl core_confedrt_cpp_CConfederate_processAnimationState_FUN_005a0fd0(CConfederate *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00503620",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_00503620"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.416666666666667,
+    "instruction_count": 12,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 6,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 7,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 53
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConfederate *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 5,
+      "match": "field_0x11390",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x11390 < 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x2b4,*(int *)&this_ptr->field_0x11390,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x11390",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x2b4,*(int *)&this_ptr->field_0x11390,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 368,
+        "vtable_addr": "005fedc4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 29,
-    "complexity_score": 44,
+    "complexity_score": 7,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 9,
-    "suspect_count": 3,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 38
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 36
   },
   "cross_references": [
     {
       "addr": "0054e500",
       "from_addr": "0054e52a",
-      "name": "core_skeleton.cpp_FUN_0054e500",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -61,7 +59,7 @@
       {
         "call_addr": "0054e52a",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054e500",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_skinAndLightVertices_FUN_0054e500",
         "estimated_params": 1,
         "instructions_analyzed": 3,
         "method": "push_count",
@@ -131,30 +129,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(g_CDemonSetPtr,*(int *)(&this_ptr->field_0x2c + lod_index * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x54 + lod_index * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "*(void **)(&this_ptr->field_0x7c + lod_index * 4),skinned_vertices,-3,(CVector3i *)0x0)",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

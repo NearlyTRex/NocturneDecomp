@@ -10,10 +10,10 @@
 ; int              Stack[0x10]:4   frame_index
 ;
 ; XREF[4]:
-;   core_pryemorp.cpp_FUN_005275c0 at 00527741
-;   core_spirbear.cpp_FUN_0059aba0 at 0059ad84
-;   core_spireagl.cpp_FUN_005992f0 at 005994c0
-;   core_spirindi.cpp_FUN_0059a060 at 0059a244
+;   core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0 at 00527741
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059ad84
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 005994c0
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a244
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_004f9df0

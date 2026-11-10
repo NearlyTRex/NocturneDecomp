@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
-;   core_searpart.cpp_FUN_005a8db0
+;   core_searpart.cpp_CSearchParty_processStates_FUN_005a8db0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
@@ -47,8 +47,8 @@ section .text
     MOV dword ptr [EBX + 0x11390],0x0   ; 005a8d5f
     PUSH EBX                            ; 005a8d69
     MOV dword ptr [EBX + 0x11394],0x0   ; 005a8d6a
-    CALL core_searpart.cpp_FUN_005a8db0 ; 005a8d74
-        ;   XREF to: 005a8db0 (UNCONDITIONAL_CALL)  ; undefined core_searpart.cpp_FUN_005a8db0()
+    CALL core_searpart.cpp_CSearchParty_processStates_FUN_005a8db0 ; 005a8d74
+        ;   XREF to: 005a8db0 (UNCONDITIONAL_CALL)  ; void core_searpart.cpp_CSearchParty_processStates_FUN_005a8db0(CSearchParty * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a8d79
     PUSH 0x5f084d                       ; 005a8d7c
     LEA ESI,[EBX + 0x10af8]             ; 005a8d81

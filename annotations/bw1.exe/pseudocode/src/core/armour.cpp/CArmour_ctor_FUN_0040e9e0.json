@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 159,
+    "complexity_score": 140,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
-    "suspect_count": 11,
+    "pseudocode_lines": 35,
+    "suspect_count": 9,
     "suspect_types": [
       "unnamed_field",
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 83
+    "total_lines": 84
   },
   "cross_references": [
     {
@@ -45,7 +45,7 @@
     {
       "addr": "00569f50",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00569f50"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50"
     }
   ],
   "globals": [
@@ -135,39 +135,23 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar4->field_0x154 = &g_CArmourVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_00569f50(&pCVar4->field_0x158,0x5d32c9);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
+      "line": 22,
       "match": "field_0x2fec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2fec = 0x3f19999a;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x2ff0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff0 = 0x40000000;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2fec = 0x3f19999a;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 23,
+      "match": "field_0x2ff0",
+      "severity": "mild",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff0 = 0x40000000;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
       "match": "field_0xc268",
       "severity": "mild",
       "text": "pcVar6 = &pCVar4->field_0xc268;",
@@ -175,39 +159,39 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 24,
+      "line": 25,
       "match": "field_0x2ff4",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff4 = uVar2;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff4 = uVar2;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0x2ff8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x2ff8 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x27a0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x27a0 = 2;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x2ff8 = uVar3;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 36,
+      "match": "field_0x27a0",
+      "severity": "mild",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x27a0 = 2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
       "match": "field_0x252c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar4->field_0x252c = 0x40490fdb;",
+      "text": "*(uint *)&(pCVar4->base).base.field_0x252c = 0x40490fdb;",
       "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 26,
+      "line": 27,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

@@ -15,9 +15,9 @@
 ;   core_dtrace.cpp_CDemonRaytrace_setVoxelShadowBit_FUN_0048f920 at 0048f984
 ;   core_particle.cpp_FUN_00532250 at 0053237c
 ;   core_path.cpp_CPathMap_findPathToDestination_FUN_00533dc0 at 00533dec
-;   core_path.cpp_FUN_005334f0 at 005335ab
-;   core_path.cpp_FUN_00535080 at 005350c6
-;   core_path.cpp_FUN_00535370 at 0053538d
+;   core_path.cpp_CPathMap_updateIfNeeded_FUN_005334f0 at 005335ab
+;   core_path.cpp_getOrCreatePathMap_FUN_00535080 at 005350c6
+;   core_path.cpp_renderPathMapsAtPosition_FUN_00535370 at 0053538d
 ;
 ; Called Functions:
 ;   crt_math.c_floor_FUN_005c0880

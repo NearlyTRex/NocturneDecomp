@@ -1,0 +1,216 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 170,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 8,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 67,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 237
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050f630",
+    "address_range": [
+      [
+        "0050f630",
+        "0050f7d4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mimic.cpp_CMimic_process_FUN_0050f630",
+    "signature": "void __cdecl core_mimic_cpp_CMimic_process_FUN_0050f630(CMimic *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "00432e80",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_computeBoundingBox_FUN_00432e80"
+    },
+    {
+      "addr": "0042e1a0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0"
+    },
+    {
+      "addr": "004a6c30",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "0050fba0",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_0050fba0"
+    },
+    {
+      "addr": "00510c20",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_processMorph_FUN_00510c20"
+    },
+    {
+      "addr": "00510530",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_setupCloth_FUN_00510530"
+    },
+    {
+      "addr": "0050f7e0",
+      "is_variadic": false,
+      "name": "core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0"
+    },
+    {
+      "addr": "00524770",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e8962",
+      "name": "s_core_mimic_cpp_005e8962",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e8974",
+      "name": "s_CMimic_setup_can_t_use_m_005e8974",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b4d0",
+      "name": "DAT_0061b4d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00622580",
+      "name": "g_CNetGamePtr",
+      "type": "CNetGame*",
+      "value": "01d51c20"
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d51c20",
+      "name": "g_CNetGameInstance",
+      "type": "CNetGame",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.582677165354331,
+    "instruction_count": 127,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 6,
+      "BRANCH": 1,
+      "CALL": 13,
+      "CBRANCH": 18,
+      "COPY": 122,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 51,
+      "INT_AND": 63,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 55,
+      "INT_LEFT": 4,
+      "INT_LESS": 9,
+      "INT_MULT": 4,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 14,
+      "INT_SLESS": 27,
+      "INT_SUB": 43,
+      "INT_ZEXT": 4,
+      "LOAD": 32,
+      "POPCOUNT": 27,
+      "RETURN": 5,
+      "STORE": 38
+    },
+    "pcode_op_count": 582
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMimic *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CMimic",
+        "offset": 12,
+        "vtable_addr": "006039e4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

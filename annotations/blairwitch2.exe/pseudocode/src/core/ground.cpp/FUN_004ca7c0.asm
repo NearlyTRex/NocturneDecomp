@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_actor.cpp_FUN_0040cb60 at 0040cdaa
-;   core_fire.cpp_FUN_0049cd50 at 0049cf7a
+;   core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60 at 0040cdaa
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50 at 0049cf7a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9665

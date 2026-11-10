@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c790
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;
 ; *****************************************************************************
 
@@ -24,8 +24,8 @@ section .text
         ;   Label: LAB_0056cd93
     MOV ECX,dword ptr [ESP + 0xc]       ; 0056cd98
     PUSH ECX                            ; 0056cd9c
-    CALL core_actor.cpp_FUN_0040c790    ; 0056cd9d
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 0056cd9d
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0056cda2
     TEST EAX,EAX                        ; 0056cda5
     JZ 0x0056cd92                       ; 0056cda7

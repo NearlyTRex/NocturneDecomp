@@ -25,25 +25,25 @@
 ;   undefined4 DAT_01d71de0
 ;   undefined4 DAT_01d71de4
 ;   undefined4 DAT_02cebc20
-;   undefined4 g_SfxSamples[1].field336_0x150
-;   undefined4 g_SfxSamples[1].field340_0x154
-;   undefined4 g_SfxSamples[1].field348_0x15c
-;   undefined4 g_SfxSamples[1].field428_0x1ac
+;   undefined4 g_SfxSamples[1].taken
+;   undefined4 g_SfxSamples[1].ref_count
+;   undefined4 g_SfxSamples[1].field8_0x15c
+;   undefined4 g_SfxSamples[1].locked_length
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_math.c_round_FUN_005a3120
 ;   crt_string.c__stricmp_FUN_005a3260
-;   crt_unknown.c_FUN_005a3cb2
-;   engine_dosio.cpp_FUN_00465e50
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
+;   engine_dosio.cpp_splitPath_FUN_00465e50
 ;   sound_mp3.cpp_CMP3Decoder_ctor_FUN_00502750
-;   sound_mp3.cpp_FUN_005027b0
+;   sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0
+;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_00553520
 ;   sound_sndmain.cpp_CSfxSample_seek_FUN_005537c0
 ;   sound_sndmain.cpp_FUN_00551000
 ;   sound_sndmain.cpp_FUN_00551620
-;   sound_sndmain.cpp_FUN_005533b0
 ;   sound_sndmain.cpp_FUN_00555900
 ;   support_trstream.cpp_FUN_00573fc0
 ;   ... and 1 more
@@ -70,7 +70,7 @@ section .text
     MOV EBX,EBP                         ; 00552371
     IMUL EAX,EBX,0x1b0                  ; 00552373
         ;   Label: LAB_00552373
-    MOV ECX,dword ptr [EAX + 0x2cebd74] ; 00552379 | g_SfxSamples[1].field336_0x150
+    MOV ECX,dword ptr [EAX + 0x2cebd74] ; 00552379 | g_SfxSamples[1].taken
     CMP EBP,ECX                         ; 0055237f
     JZ 0x005523b6                       ; 00552381
         ;   XREF to: 005523b6 (CONDITIONAL_JUMP)  ; LAB_005523b6
@@ -95,16 +95,16 @@ section .text
     POP ESI                             ; 005523b3
     POP EBX                             ; 005523b4
     RET                                 ; 005523b5
-    MOV EDI,dword ptr [EAX + 0x2cebd78] ; 005523b6 | g_SfxSamples[1].field340_0x154
+    MOV EDI,dword ptr [EAX + 0x2cebd78] ; 005523b6 | g_SfxSamples[1].ref_count
         ;   Label: LAB_005523b6
     CMP ECX,EDI                         ; 005523bc
     JNZ 0x00552383                      ; 005523be
         ;   XREF to: 00552383 (CONDITIONAL_JUMP)  ; LAB_00552383
-    MOV ECX,dword ptr [EAX + 0x2cebd80] ; 005523c0 | g_SfxSamples[1].field348_0x15c
+    MOV ECX,dword ptr [EAX + 0x2cebd80] ; 005523c0 | g_SfxSamples[1].field8_0x15c
     CMP EDI,ECX                         ; 005523c6
     JNZ 0x00552383                      ; 005523c8
         ;   XREF to: 00552383 (CONDITIONAL_JUMP)  ; LAB_00552383
-    CMP ECX,dword ptr [EAX + 0x2cebdd0] ; 005523ca | g_SfxSamples[1].field428_0x1ac
+    CMP ECX,dword ptr [EAX + 0x2cebdd0] ; 005523ca | g_SfxSamples[1].locked_length
     JNZ 0x00552383                      ; 005523d0
         ;   XREF to: 00552383 (CONDITIONAL_JUMP)  ; LAB_00552383
     MOV EDX,0x2cebc24                   ; 005523d2
@@ -119,8 +119,8 @@ section .text
     PUSH 0x0                            ; 005523e7
     PUSH 0x0                            ; 005523e9
     PUSH ESI                            ; 005523eb
-    CALL engine_dosio.cpp_FUN_00465e50  ; 005523ec
-        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 005523ec
+        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 005523f1
     PUSH 0x5d29d6                       ; 005523f4 | DAT_005d29d6
     LEA EAX,[ESP + 0x4]                 ; 005523f9
@@ -141,8 +141,8 @@ section .text
     JLE 0x005526aa                      ; 0055241e
         ;   XREF to: 005526aa (CONDITIONAL_JUMP)  ; LAB_005526aa
     PUSH 0x8630                         ; 00552424
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00552429
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00552429
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0055242e
     TEST EAX,EAX                        ; 00552431
     JZ 0x0055243e                       ; 00552433
@@ -168,8 +168,8 @@ section .text
         ;   Label: LAB_0055246a
     MOV ECX,dword ptr [EBP + 0x174]     ; 0055246b
     PUSH ECX                            ; 00552471
-    CALL sound_mp3.cpp_FUN_005027b0     ; 00552472
-        ;   XREF to: 005027b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_FUN_005027b0(CMP3Decoder * this_ptr, char * filename)
+    CALL sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0 ; 00552472
+        ;   XREF to: 005027b0 (UNCONDITIONAL_CALL)  ; void sound_mp3.cpp_CMP3Decoder_openFile_FUN_005027b0(CMP3Decoder * this_ptr, char * filename)
     ADD ESP,0x8                         ; 00552477
     MOV EDI,EBP                         ; 0055247a
     PUSH EDI                            ; 0055247c
@@ -222,8 +222,8 @@ section .text
     ADD ESP,0x8                         ; 0055254e
     PUSH EBP                            ; 00552551
     MOV dword ptr [EBP + 0x168],EAX     ; 00552552
-    CALL sound_sndmain.cpp_FUN_005533b0 ; 00552558
-        ;   XREF to: 005533b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005533b0(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0 ; 00552558
+        ;   XREF to: 005533b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0055255d
     TEST EAX,EAX                        ; 00552560
     JZ 0x005526aa                       ; 00552562
@@ -324,8 +324,8 @@ section .text
     ADD ESP,0x8                         ; 00552690
     PUSH EBP                            ; 00552693
     MOV dword ptr [EBP + 0x168],EAX     ; 00552694
-    CALL sound_sndmain.cpp_FUN_005533b0 ; 0055269a
-        ;   XREF to: 005533b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005533b0(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0 ; 0055269a
+        ;   XREF to: 005533b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_005533b0(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 0055269f
     TEST EAX,EAX                        ; 005526a2
     JNZ 0x00552568                      ; 005526a4

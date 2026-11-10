@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 61,
+    "complexity_score": 46,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 6,
-    "suspect_count": 4,
+    "suspect_count": 3,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 16
@@ -34,7 +33,7 @@
     ],
     "convention": "unknown",
     "name": "core_fldnotes.cpp_FUN_004bbcf0",
-    "signature": "undefined1 * core_fldnotes_cpp_FUN_004bbcf0(int param_1)"
+    "signature": "char *** core_fldnotes_cpp_FUN_004bbcf0(int param_1)"
   },
   "function_calls": [
     {
@@ -101,7 +100,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "byte * core_fldnotes_cpp_FUN_004bbcf0(int param_1)",
+      "text": "char *** core_fldnotes_cpp_FUN_004bbcf0(int param_1)",
       "type": "unnamed_param"
     },
     {
@@ -111,14 +110,6 @@
       "severity": "mild",
       "text": "pCVar1 = shape_edittool_cpp_CStrList_dtor_FUN_004993a0((CStrList *)(param_1 + 0x148),0);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "return &pCVar1[-0x15].field_0x8;",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 1,

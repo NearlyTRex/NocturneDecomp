@@ -28,10 +28,10 @@
 ;   undefined4 DAT_005df908
 ;   undefined4 DAT_005fc5a0
 ;   CGame* g_CGamePtr = 01d2130c
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf40
+;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_004a2560
 ;   core_fire.cpp_FUN_0049df60
 ;
@@ -49,7 +49,7 @@ section .text
     AND ESP,0xfffffff8                  ; 0049e399
     MOV EBX,dword ptr [EBP + 0x14]      ; 0049e39c
     MOV EAX,[0x005fe9dc]                ; 0049e39f | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x314]     ; 0049e3a4 | g_CGameInstance.field788_0x314
+    MOV EAX,dword ptr [EAX + 0x314]     ; 0049e3a4 | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP + 0x8],EAX       ; 0049e3aa
     FLD float ptr [EBX + 0xc]           ; 0049e3ae
     FSUB float ptr [ESP + 0x8]          ; 0049e3b1
@@ -148,8 +148,8 @@ section .text
     FMUL double ptr [0x005c0878]        ; 0049e498 | DAT_005c0878
     SUB ESP,0x4                         ; 0049e49e
     FSTP float ptr [ESP]                ; 0049e4a1
-    CALL core_actor.cpp_FUN_0040cf40    ; 0049e4a4
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 0049e4a4
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 0049e4a9
     TEST EAX,EAX                        ; 0049e4ac
     JZ 0x0049e4cc                       ; 0049e4ae
@@ -168,8 +168,8 @@ section .text
     JZ 0x0049e45b                       ; 0049e4d0
         ;   XREF to: 0049e45b (CONDITIONAL_JUMP)  ; LAB_0049e45b
     PUSH dword ptr [ESP + 0x2c]         ; 0049e4d2
-    CALL core_actor.cpp_FUN_0040cf40    ; 0049e4d6
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 0049e4d6
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 0049e4db
     TEST EAX,EAX                        ; 0049e4de
     JZ 0x0049e45b                       ; 0049e4e0

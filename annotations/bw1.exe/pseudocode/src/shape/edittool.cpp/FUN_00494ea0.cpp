@@ -23,7 +23,7 @@ uint shape_edittool_cpp_FUN_00494ea0(uint param_1,uint param_2)
   shape_edittool_cpp_CStrList_add_FUN_004994d0(&CStack_18,"Yes to ^All");
   shape_edittool_cpp_CStrList_add_FUN_004994d0(&CStack_18,(char *)0x5dbdf9);
   shape_edittool_cpp_CStrList_add_FUN_004994d0(&CStack_18,"^Cancel");
-  iVar1 = shape_edittool_cpp_FUN_00494690(aCStack_418,(char *)&CStack_18,0);
+  iVar1 = shape_edittool_cpp_showMultiChoiceDialog_FUN_00494690(aCStack_418,(char *)&CStack_18,0);
   if (iVar1 == 0) {
     uVar2 = 1;
   }

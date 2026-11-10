@@ -19,7 +19,7 @@
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8
 ;   undefined4 DAT_006045f8
 ;   undefined4 DAT_006071f0
-;   undefined4 g_CDemonSetInstance.field1420984_0x15aeb8
+;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;   undefined4 DAT_02d0c1a0
 ;
 ; Called Functions:
@@ -43,7 +43,7 @@ section .text
     JNZ 0x004a0562                      ; 004a0495
         ;   XREF to: 004a0562 (CONDITIONAL_JUMP)  ; LAB_004a0562
     MOV EAX,[0x00603b28]                ; 004a049b | g_CDemonSetPtr
-    MOV EDX,dword ptr [EAX + 0x15aeb8]  ; 004a04a0 | g_CDemonSetInstance.field1420984_0x15aeb8
+    MOV EDX,dword ptr [EAX + 0x15aeb8]  ; 004a04a0 | g_CDemonSetInstance.selected_camera_index
     MOV ECX,EDX                         ; 004a04a6
     IMUL EDX,EDX,0x1a4                  ; 004a04a8
     ADD EAX,0x4                         ; 004a04ae

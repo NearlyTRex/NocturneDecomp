@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 110,
-    "complexity_score": 133,
+    "complexity_score": 60,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 43,
-    "suspect_count": 8,
+    "pseudocode_lines": 45,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 153
+    "total_lines": 155
   },
   "cross_references": [
     {
@@ -201,62 +200,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005a40df(*(int *)&this_ptr->field_0x20 * 0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x24 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "iVar1 = FUN_005a40df(*(int *)&this_ptr->field_0x28 << 5);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2c = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "pvVar2 = FUN_005a3650(*(ulong *)&this_ptr->field_0x28);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x30 = pvVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x4 = pvVar2;",
-      "type": "unnamed_field"
     }
   ]
 }

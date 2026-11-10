@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CShadow_ForestTypeInfo
+;   WatcomTypeInfo g_CShadowForestTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 0054615d
     SUB EAX,0x954                       ; 0054615f
     PUSH EAX                            ; 00546164
-    CALL core_cloth.cpp_FUN_0043f900    ; 00546165
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 00546165
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 0054616a
     PUSH 0x0                            ; 0054616d
     SUB EAX,0x2db0                      ; 0054616f
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EBX                         ; 00546199
     POP EBX                             ; 0054619b
     RET                                 ; 0054619c
-    PUSH 0x5e42f0                       ; 0054619d | g_CShadow_ForestTypeInfo
+    PUSH 0x5e42f0                       ; 0054619d | g_CShadowForestTypeInfo
         ;   Label: LAB_0054619d
     PUSH EBX                            ; 005461a2
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 005461a3

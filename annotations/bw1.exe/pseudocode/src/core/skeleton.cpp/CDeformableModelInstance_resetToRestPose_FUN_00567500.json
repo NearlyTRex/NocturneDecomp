@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 169,
+    "complexity_score": 129,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 24,
-    "suspect_count": 13,
+    "suspect_count": 9,
     "suspect_types": [
       "shadow_pointer_walk",
       "unnamed_field",
@@ -26,13 +26,13 @@
     {
       "addr": "0050f290",
       "from_addr": "0050f4e8",
-      "name": "core_mimic.cpp_FUN_0050f290",
+      "name": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00532930",
       "from_addr": "0053295a",
-      "name": "core_passngr.cpp_FUN_00532930",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,13 +50,13 @@
     {
       "addr": "00591ff0",
       "from_addr": "0059221a",
-      "name": "core_succubus.cpp_FUN_00591ff0",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a52a0",
       "from_addr": "005a535d",
-      "name": "core_vampboss.cpp_FUN_005a52a0",
+      "name": "core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -124,7 +124,7 @@
       {
         "call_addr": "0050f4e8",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_0050f290",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -135,7 +135,7 @@
       {
         "call_addr": "0050f59c",
         "call_type": "direct",
-        "caller": "core_mimic.cpp_FUN_0050f290",
+        "caller": "core_mimic.cpp_CMimic_setup_FUN_0050f290",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       {
         "call_addr": "0053295a",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00532930",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,7 +157,7 @@
       {
         "call_addr": "0053297d",
         "call_type": "direct",
-        "caller": "core_passngr.cpp_FUN_00532930",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_00532930",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -168,7 +168,7 @@
       {
         "call_addr": "0059221a",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00591ff0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -179,7 +179,7 @@
       {
         "call_addr": "00592223",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00591ff0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -190,7 +190,7 @@
       {
         "call_addr": "005a535d",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_005a52a0",
+        "caller": "core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,14 +251,6 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&pCVar1->field_0x1de78) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 13,
       "match": "field_0x6b0",
       "severity": "mild",
@@ -270,31 +262,7 @@
       "line": 18,
       "match": "field_0xcf0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xcf0 = *(uint *)&pCVar2->field_0x514;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x514",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xcf0 = *(uint *)&pCVar2->field_0x514;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&pCVar1->field_0x1de78);",
+      "text": "*(float *)&pCVar2->field_0xcf0 = pCVar2->rest_bone_scales[0];",
       "type": "unnamed_field"
     },
     {
@@ -346,11 +314,11 @@
       "type": "unrolled_memset"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar2->owner`). Replace `pCVar2->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 20,
-      "match": "pCVar2 = (T *)&pCVar2->FIELD",
+      "match": "pCVar2 = (T *)&(pCVar2->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x4;",
+      "text": "pCVar2 = (CDeformableModelInstance *)&(pCVar2->base).current_motion_index;",
       "type": "shadow_pointer_walk"
     }
   ]

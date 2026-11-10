@@ -121,9 +121,9 @@ void __cdecl CDemonRenderer::renderOverlayPoly(CDemonRenderer *this_ptr,SMRGLPri
 // Address: 00483490
 void __cdecl CDemonRenderer::setCameraOrigin(CDemonRenderer *this_ptr,CVector3i *origin);
 
-// Original: engine_drender.cpp_FUN_004834b0
+// Original: engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0
 // Address: 004834b0
-void __cdecl FUN_004834b0(CDemonRenderer *this_ptr,CVector3f *point_ptr);
+void __cdecl CDemonRenderer::setCameraOriginFromScaledPoint(CDemonRenderer *this_ptr,CVector3f *point_ptr);
 
 // Original: engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_00483530
 // Address: 00483530
@@ -177,9 +177,9 @@ void __cdecl CDemonRenderer::setBlendMode(CDemonRenderer *this_ptr,int blend_mod
 // Address: 00483de0
 int __cdecl CDemonRenderer::setRenderAlpha(CDemonRenderer *this_ptr,int render_alpha);
 
-// Original: engine_drender.cpp_FUN_00483df0
+// Original: engine_drender.cpp_CDemonRenderer_setRenderAlphaNormalized_FUN_00483df0
 // Address: 00483df0
-void __cdecl FUN_00483df0(CDemonRenderer *this_ptr,float render_alpha);
+void __cdecl CDemonRenderer::setRenderAlphaNormalized(CDemonRenderer *this_ptr,float render_alpha);
 
 // Original: engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_00483e20
 // Address: 00483e20
@@ -261,9 +261,9 @@ void __cdecl CDemonRenderer::processCapturedFaces(CDemonRenderer *this_ptr);
 // Address: 00484f00
 void __cdecl CDemonRenderer::captureTexture(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture);
 
-// Original: engine_drender.cpp_FUN_00484fb0
+// Original: engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0
 // Address: 00484fb0
-void __cdecl FUN_00484fb0(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
+void __cdecl CDemonRenderer::updateTexture(CDemonRenderer *this_ptr,SMRGLTextureBasic *texture,SRGBColorPalette *palette);
 
 // Original: engine_drender.cpp_CDemonRenderer_depthTest_FUN_00484fd0
 // Address: 00484fd0

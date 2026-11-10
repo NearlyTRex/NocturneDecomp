@@ -2,15 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 18,
-    "complexity_score": 11,
+    "complexity_score": 43,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 1,
-    "max_suspect_severity": "clean",
-    "pseudocode_lines": 11,
-    "suspect_count": 0,
-    "suspect_types": [],
-    "total_lines": 29
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 13,
+    "suspect_count": 2,
+    "suspect_types": [
+      "negative_offset",
+      "pointer_truncation"
+    ],
+    "total_lines": 31
   },
   "cross_references": [
     {
@@ -142,5 +145,22 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 11,
+      "match": "pCVar2[-1].",
+      "severity": "mild",
+      "text": "puVar3 = &pCVar2[-1].bit_state.accumulated_bits;",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Pointer value `&PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00444210_005fd9b4` truncated by cast to `uint` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 12,
+      "match": "(uint)&PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00444210_005fd9b4",
+      "severity": "moderate",
+      "text": "*puVar3 = (uint)&PTR_support_codec_cpp_CLZWDecompress_dtor_FUN_00444210_005fd9b4;",
+      "type": "pointer_truncation"
+    }
+  ]
 }

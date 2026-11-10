@@ -11,7 +11,7 @@ void core_glass_cpp_factoryFuncGlass_FUN_004c4870(void)
 {
   CGlass *this_ptr;
   
-  this_ptr = (CGlass *)FUN_005b8be2(0xc9c);
+  this_ptr = (CGlass *)debugAllocTracked1(0xc9c);
   if (this_ptr == (CGlass *)0x0) {
     return;
   }

@@ -18,7 +18,7 @@ CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004a0c40(CFlameCan *thi
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&this_ptr->field_0x49c,1);
+  pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408930(&(this_ptr->flame).base,1);
   pCVar2 = (CFlameCan *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar1[-2].field_0xcc,1);
   if ((flags & 2) == 0) {

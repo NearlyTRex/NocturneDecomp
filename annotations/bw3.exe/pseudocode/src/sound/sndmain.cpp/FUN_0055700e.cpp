@@ -11,7 +11,7 @@
 void sound_sndmain_cpp_FUN_0055700e(uint param_1)
 
 {
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   _DAT_02cf28b8 = param_1;
   if (_DAT_02cf341c < 1) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";

@@ -9,15 +9,15 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[10]:
-;   core_baron.cpp_FUN_00410600 at 00410606
+;   core_baron.cpp_CBaron_archive_FUN_00410600 at 00410606
 ;   core_colonel.cpp_CColonel_archive_FUN_00436480 at 00436485
-;   core_doc.cpp_FUN_004597a0 at 004597a9
-;   core_gabriela.cpp_FUN_004b0fb0 at 004b0fb6
+;   core_doc.cpp_CDoc_archive_FUN_004597a0 at 004597a9
+;   core_gabriela.cpp_CGabriella_archive_FUN_004b0fb0 at 004b0fb6
 ;   core_haystack.cpp_CHaystack_archive_FUN_004cd860 at 004cd865
 ;   core_icepick.cpp_CIcePick_archive_FUN_004d6350 at 004d6355
-;   core_moloch.cpp_FUN_00502200 at 00502206
+;   core_moloch.cpp_CMoloch_archive_FUN_00502200 at 00502206
 ;   core_scat.cpp_CScat_archive_FUN_0051fa50 at 0051fa55
-;   core_stranger.cpp_FUN_0056b600 at 0056b606
+;   core_stranger.cpp_CStranger_archive_FUN_0056b600 at 0056b606
 ;   core_svetlana.cpp_CSvetlana_archive_FUN_005716f0 at 005716f5
 ;
 ; Referenced Globals:
@@ -48,8 +48,8 @@
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c330
 ;   core_charactr.cpp_CCharacter_archive_FUN_00422c30
 ;   core_inv.cpp_CInventory_load_FUN_004dc4b0
-;   core_inv.cpp_FUN_004dc2c0
-;   crt_unknown.c_FUN_005b7790
+;   core_inv.cpp_CInventory_save_FUN_004dc2c0
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -210,8 +210,8 @@ section .text
     PUSH 0x5d9ae3                       ; 004ce73b | = "keyNameList[%d]"
     LEA EAX,[ESP + 0x8]                 ; 004ce740
     PUSH EAX                            ; 004ce744
-    CALL crt_unknown.c_FUN_005b7790     ; 004ce745
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004ce745
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ce74a
     MOV EAX,ESP                         ; 004ce74d
     PUSH EAX                            ; 004ce74f
@@ -382,22 +382,22 @@ section .text
         ;   Label: LAB_004ce92a
     PUSH EDI                            ; 004ce930
     PUSH EAX                            ; 004ce931
-    CALL core_inv.cpp_FUN_004dc2c0      ; 004ce932
-        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
+    CALL core_inv.cpp_CInventory_save_FUN_004dc2c0 ; 004ce932
+        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_save_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
     JMP 0x004ce7fd                      ; 004ce937
         ;   XREF to: 004ce7fd (UNCONDITIONAL_JUMP)  ; LAB_004ce7fd
     MOV ECX,dword ptr [0x007bc034]      ; 004ce93c | DAT_007bc034
         ;   Label: LAB_004ce93c
     PUSH ECX                            ; 004ce942
     PUSH EAX                            ; 004ce943
-    CALL core_inv.cpp_FUN_004dc2c0      ; 004ce944
-        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
+    CALL core_inv.cpp_CInventory_save_FUN_004dc2c0 ; 004ce944
+        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_save_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004ce949
     MOV EDI,dword ptr [0x007bc034]      ; 004ce94c | DAT_007bc034
     PUSH EDI                            ; 004ce952
     PUSH EBX                            ; 004ce953
-    CALL core_inv.cpp_FUN_004dc2c0      ; 004ce954
-        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
+    CALL core_inv.cpp_CInventory_save_FUN_004dc2c0 ; 004ce954
+        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_save_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
     JMP 0x004ce840                      ; 004ce959
         ;   XREF to: 004ce840 (UNCONDITIONAL_JUMP)  ; LAB_004ce840
     PUSH 0x5d9b4d                       ; 004ce95e | = "HeroInventoryIndex"
@@ -426,8 +426,8 @@ section .text
         ;   Label: LAB_004ce99a
     PUSH ECX                            ; 004ce9a0
     PUSH EAX                            ; 004ce9a1
-    CALL core_inv.cpp_FUN_004dc2c0      ; 004ce9a2
-        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
+    CALL core_inv.cpp_CInventory_save_FUN_004dc2c0 ; 004ce9a2
+        ;   XREF to: 004dc2c0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_save_FUN_004dc2c0(CInventory * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004ce9a7
     ADD ESP,0xcc                        ; 004ce9aa
     POP EBP                             ; 004ce9b0

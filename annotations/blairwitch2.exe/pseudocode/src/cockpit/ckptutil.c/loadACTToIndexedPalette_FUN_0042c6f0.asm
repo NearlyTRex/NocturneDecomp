@@ -9,8 +9,8 @@
 ;
 ; XREF[3]:
 ;   cockpit_ckptutil.c_applyActPalette_FUN_0042c670 at 0042c689
-;   cockpit_pkbitmap.cpp_FUN_00516cb0 at 00516cc1
-;   cockpit_pkbmpset.cpp_FUN_00517e40 at 00517e51
+;   cockpit_pkbitmap.cpp_CPackedBitmap_applyACTPalette_FUN_00516cb0 at 00516cc1
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40 at 00517e51
 ;
 ; Called Functions:
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780

@@ -1,0 +1,183 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 21,
+    "cross_reference_count": 5,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 21,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
+  },
+  "cross_references": [
+    {
+      "addr": "00459100",
+      "from_addr": "0045aec3",
+      "name": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049f310",
+      "from_addr": "0049f563",
+      "name": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e34b0",
+      "from_addr": "004e38c6",
+      "name": "core_glass.cpp_FUN_004e34b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e6bf0",
+      "from_addr": "004e6c3e",
+      "name": "core_grave.cpp_CGrave_startAnimation_FUN_004e6bf0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054f0d0",
+      "from_addr": "0054f238",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054f060",
+    "address_range": [
+      [
+        "0054f060",
+        "0054f0c2"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060",
+    "signature": "void __cdecl core_set_cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(CDemonSet *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 6,
+    "call_sites": [
+      {
+        "call_addr": "0054f238",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054f439",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e38c6",
+        "call_type": "direct",
+        "caller": "core_glass.cpp_FUN_004e34b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004e6c3e",
+        "call_type": "direct",
+        "caller": "core_grave.cpp_CGrave_startAnimation_FUN_004e6bf0",
+        "estimated_params": 2,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0045aec3",
+        "call_type": "direct",
+        "caller": "core_demnfolk.cpp_CDemnfolk_process_FUN_00459100",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0049f563",
+        "call_type": "direct",
+        "caller": "core_emitter.cpp_CEmitter_process_FUN_0049f310",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.1333333333333333,
+    "instruction_count": 30,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 1,
+      "CBRANCH": 2,
+      "COPY": 27,
+      "INT_ADD": 20,
+      "INT_AND": 4,
+      "INT_EQUAL": 4,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "LOAD": 11,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 94
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

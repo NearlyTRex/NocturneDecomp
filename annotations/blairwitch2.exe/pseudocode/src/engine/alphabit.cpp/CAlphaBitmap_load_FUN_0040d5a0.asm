@@ -22,10 +22,10 @@
 ;   core_fldnotes.cpp_FUN_004a24f0 at 004a25cf
 ;   core_fldnotes.cpp_FUN_004a38e0 at 004a38fb
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a5c77
+;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be0d9
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be491
-;   core_game.cpp_FUN_004b60c0 at 004b6125
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b6125
 ;   core_game.cpp_FUN_004bdc1e at 004bdc51
-;   core_game.cpp_FUN_004bdfb0 at 004be0d9
 ;   core_inv.cpp_loadAssets_FUN_004da990 at 004da9d7
 ;   ... and 9 more
 ;
@@ -52,7 +52,7 @@
 ;   crt_stdio.c_fclose_FUN_005b89c0
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fread_FUN_005b87c0
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_alphabit.cpp_FUN_0040d460
 ;   engine_dosio.cpp_FUN_00460c70
 ;
@@ -80,8 +80,8 @@ section .text
     PUSH 0x5cb020                       ; 0040d5d2 | = "%s.raw"
     LEA EAX,[ESP + 0x8]                 ; 0040d5d7
     PUSH EAX                            ; 0040d5db
-    CALL crt_unknown.c_FUN_005b7790     ; 0040d5dc
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0040d5dc
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040d5e1
     PUSH 0x5cb027                       ; 0040d5e4 | DAT_005cb027
     LEA EAX,[ESP + 0x4]                 ; 0040d5e9
@@ -116,8 +116,8 @@ section .text
     PUSH 0x5cb068                       ; 0040d646 | = "%s.act"
     LEA EAX,[ESP + 0x8]                 ; 0040d64b
     PUSH EAX                            ; 0040d64f
-    CALL crt_unknown.c_FUN_005b7790     ; 0040d650
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0040d650
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040d655
     PUSH 0x5cb06f                       ; 0040d658 | DAT_005cb06f
     LEA EAX,[ESP + 0x4]                 ; 0040d65d
@@ -208,8 +208,8 @@ section .text
     PUSH 0x5cb0b0                       ; 0040d791 | = "%s.opa"
     LEA EAX,[ESP + 0x8]                 ; 0040d796
     PUSH EAX                            ; 0040d79a
-    CALL crt_unknown.c_FUN_005b7790     ; 0040d79b
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0040d79b
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 0040d7a0
     PUSH 0x5cb0b7                       ; 0040d7a3 | DAT_005cb0b7
     LEA EAX,[ESP + 0x4]                 ; 0040d7a8

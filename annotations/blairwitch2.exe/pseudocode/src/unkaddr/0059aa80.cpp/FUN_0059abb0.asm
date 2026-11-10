@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_main.c_FUN_004e46c0 at 004e4d7e
 ;   core_main.c_FUN_004e4e20 at 004e4e23
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4d7e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_026677b4

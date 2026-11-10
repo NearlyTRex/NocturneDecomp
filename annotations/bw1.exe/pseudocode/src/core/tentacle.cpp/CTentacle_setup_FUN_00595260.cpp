@@ -12,11 +12,12 @@ void __cdecl core_tentacle_cpp_CTentacle_setup_FUN_00595260(CTentacle *this_ptr)
 
 {
   CSkeleton *this_ptr_00;
+  CDeformableModelInstance *this_ptr_01;
   
-  core_skeleton_cpp_FUN_00569b20((CDeformableModelInstance *)&this_ptr->field_0x158);
-  core_enemy_cpp_CEnemy_setup_FUN_004a0510((CEnemy *)this_ptr);
-  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-                          ((CDeformableModelInstance *)&this_ptr->field_0x158);
+  this_ptr_01 = &(this_ptr->base).base.model;
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(this_ptr_01);
+  core_enemy_cpp_CEnemy_setup_FUN_004a0510(&this_ptr->base);
+  this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30(this_ptr_01);
   _DAT_02c83880 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"bipp02",1)
   ;
   _DAT_02c83884 = core_skeleton_cpp_CSkeleton_findBone_FUN_005634f0(this_ptr_00,"bipp05",1)

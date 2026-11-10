@@ -9,6 +9,6 @@
 CTextureList * __cdecl core_texlist_cpp_CTextureList_ctor_FUN_005690a0(CTextureList *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
+  this_ptr->texture_count = 0;
   return this_ptr;
 }

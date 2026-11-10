@@ -19,22 +19,22 @@ void __cdecl cockpit_drawsurf_cpp_CDrawSurface_fillRectangle_FUN_00467920(CDrawS
   int iVar5;
   int start_x;
   
-  end_x = x2 + *(int *)(this_ptr + 8);
-  start_x = x1 + *(int *)(this_ptr + 8);
-  iVar4 = y1 + *(int *)(this_ptr + 0xc);
-  iVar3 = y2 + *(int *)(this_ptr + 0xc);
-  if (start_x < *(int *)(this_ptr + 0x10)) {
-    start_x = *(int *)(this_ptr + 0x10);
+  end_x = x2 + this_ptr->x;
+  start_x = x1 + this_ptr->x;
+  iVar4 = y1 + this_ptr->y;
+  iVar3 = y2 + this_ptr->y;
+  if (start_x < this_ptr->clip_left) {
+    start_x = this_ptr->clip_left;
   }
-  if (*(int *)(this_ptr + 0x18) < end_x) {
-    end_x = *(int *)(this_ptr + 0x18);
+  if (this_ptr->clip_right < end_x) {
+    end_x = this_ptr->clip_right;
   }
   if (start_x <= end_x) {
-    if (iVar4 < *(int *)(this_ptr + 0x14)) {
-      iVar4 = *(int *)(this_ptr + 0x14);
+    if (iVar4 < this_ptr->clip_top) {
+      iVar4 = this_ptr->clip_top;
     }
-    if (*(int *)(this_ptr + 0x1c) < iVar3) {
-      iVar3 = *(int *)(this_ptr + 0x1c);
+    if (this_ptr->clip_bottom < iVar3) {
+      iVar3 = this_ptr->clip_bottom;
     }
     if (iVar4 <= iVar3) {
       if (_DAT_01ba5c34 == 0) {

@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 58,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 18,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
-      "extra_output",
-      "unknown_field"
+      "extra_output"
     ],
     "total_lines": 52
   },
@@ -19,7 +18,7 @@
     {
       "addr": "004e46c0",
       "from_addr": "004e4cb4",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -95,7 +94,7 @@
       {
         "call_addr": "004e4cb4",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -157,14 +156,6 @@
       "severity": "moderate",
       "text": "int extraout_EAX;",
       "type": "extra_output"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 8,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (g_CStrListInstance._0_4_ == 0) {",
-      "type": "unknown_field"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",

@@ -8,11 +8,3 @@
 // Original: unkafter_enemy.cpp_FUN_0048a1b0
 // Address: 0048a1b0
 undefined4 FUN_0048a1b0(int param_1,float param_2);
-
-// Original: unkafter_enemy.cpp_FUN_0048a200
-// Address: 0048a200
-bool FUN_0048a200(undefined4 param_1,CDemonActor *param_2);
-
-// Original: unkafter_enemy.cpp_FUN_0048a220
-// Address: 0048a220
-void FUN_0048a220(int param_1,undefined4 param_2);

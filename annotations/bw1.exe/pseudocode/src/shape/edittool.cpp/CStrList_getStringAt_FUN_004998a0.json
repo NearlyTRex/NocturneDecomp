@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 19,
+    "complexity_score": 4,
     "cross_reference_count": 17,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 4,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [
@@ -28,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00543c00",
-      "from_addr": "00543d57",
-      "name": "core_script.cpp_FUN_00543c00",
+      "addr": "00543fd0",
+      "from_addr": "0054400f",
+      "name": "core_script.cpp_CScript_buildParsedLines_FUN_00543fd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00543fd0",
-      "from_addr": "0054400f",
-      "name": "core_script.cpp_FUN_00543fd0",
+      "addr": "00543c00",
+      "from_addr": "00543d57",
+      "name": "core_script.cpp_CScript_renderEditor_FUN_00543c00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,6 +47,24 @@
       "addr": "0057b6e0",
       "from_addr": "0057b708",
       "name": "core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b060",
+      "from_addr": "0049b0f3",
+      "name": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_0049b060",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049a9b0",
+      "from_addr": "0049ab38",
+      "name": "shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049b830",
+      "from_addr": "0049bc60",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -96,25 +112,7 @@
     {
       "addr": "00494690",
       "from_addr": "0049475d",
-      "name": "shape_edittool.cpp_FUN_00494690",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049a9b0",
-      "from_addr": "0049ab38",
-      "name": "shape_edittool.cpp_FUN_0049a9b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049b060",
-      "from_addr": "0049b0f3",
-      "name": "shape_edittool.cpp_FUN_0049b060",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049b830",
-      "from_addr": "0049bc60",
-      "name": "shape_edittool.cpp_FUN_0049b830",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -160,7 +158,7 @@
       {
         "call_addr": "0049b0f3",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b060",
+        "caller": "shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_0049b060",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -171,7 +169,7 @@
       {
         "call_addr": "0049bc60",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0049b830",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +191,7 @@
       {
         "call_addr": "0049475d",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494690",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -204,7 +202,7 @@
       {
         "call_addr": "004949b1",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494690",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -215,7 +213,7 @@
       {
         "call_addr": "00494bbb",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_00494690",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -237,7 +235,7 @@
       {
         "call_addr": "00543d57",
         "call_type": "direct",
-        "caller": "core_script.cpp_FUN_00543c00",
+        "caller": "core_script.cpp_CScript_renderEditor_FUN_00543c00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -287,14 +285,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "return *(char **)(*(int *)&this_ptr->field_0x8 + index * 4);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

@@ -7,14 +7,14 @@
 ; int              Stack[0x4]:4   alpha_color_value
 ;
 ; XREF[25]:
+;   core_game.cpp_CGame_displayActStats_FUN_004bfb50 at 004bfe20
+;   core_game.cpp_CGame_finishAct_FUN_004bfee0 at 004c01d1
+;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b4a25
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c03a0
-;   core_game.cpp_FUN_004b47d0 at 004b4a25
 ;   core_game.cpp_FUN_004b51e0 at 004b51fc
-;   core_game.cpp_FUN_004bfb50 at 004bfe20
-;   core_game.cpp_FUN_004bfee0 at 004c01d1
 ;   core_inv.cpp_CInventory_renderAllItems_FUN_004dda90 at 004de21b
 ;   core_menu.cpp_FUN_004e7860 at 004e796c
-;   core_script.cpp_FUN_00528fc0 at 00529169
+;   core_script.cpp_CScript_renderSubtitles_FUN_00528fc0 at 00529169
 ;   engine_3d.c_renderPolygonSolidTexturedClampedOp51_FUN_004060e0 at 0040613b
 ;   engine_3d.c_renderPolygonSolidTexturedHardwareOp53_FUN_004058f0 at 0040592a
 ;   ... and 15 more

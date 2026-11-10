@@ -1,0 +1,412 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 236,
+    "complexity_score": 133,
+    "cross_reference_count": 4,
+    "function_call_count": 2,
+    "global_count": 24,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 88,
+    "suspect_count": 3,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 324
+  },
+  "cross_references": [
+    {
+      "addr": "004b51e0",
+      "from_addr": "004b57b7",
+      "name": "core_game.cpp_FUN_004b51e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b50ee",
+      "from_addr": "004b510a",
+      "name": "core_game.cpp_drawKeyBindingEntry_FUN_004b50ee",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004da880",
+      "from_addr": "004daac9",
+      "name": "core_inv.cpp_FUN_004da880",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004eae80",
+      "from_addr": "004ebd4c",
+      "name": "core_menu.cpp_FUN_004eae80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004eaa60",
+    "address_range": [
+      [
+        "004eaa60",
+        "004eacaa"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_menu.cpp_getKeyDisplayName_FUN_004eaa60",
+    "signature": "char * __cdecl core_menu_cpp_getKeyDisplayName_FUN_004eaa60(EInputCodeType key_code)"
+  },
+  "function_calls": [
+    {
+      "addr": "00508960",
+      "is_variadic": false,
+      "name": "support_newmsg.cpp_getLocalizedString_FUN_00508960"
+    },
+    {
+      "addr": "00581360",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_FUN_00581360"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c797c",
+      "name": "s_none_005c797c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7983",
+      "name": "s_Mouse_X_Axis_005c7983",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7990",
+      "name": "s_Mouse_Y_Axis_005c7990",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c799d",
+      "name": "s_Mouse_B1_005c799d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79a6",
+      "name": "s_Mouse_B2_005c79a6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79af",
+      "name": "s_Mouse_B3_005c79af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79b8",
+      "name": "s_Button_1_005c79b8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79c1",
+      "name": "s_Button_2_005c79c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79ca",
+      "name": "s_Button_3_005c79ca",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79d3",
+      "name": "s_Button_4_005c79d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79dc",
+      "name": "s_Button_5_005c79dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79e5",
+      "name": "s_Button_6_005c79e5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79ee",
+      "name": "s_Button_7_005c79ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c79f7",
+      "name": "s_Button_8_005c79f7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7a00",
+      "name": "s_Button_9_005c7a00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7a09",
+      "name": "s_Button_10_005c7a09",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7a13",
+      "name": "s_Gamepad_left_005c7a13",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7a20",
+      "name": "s_Gamepad_right_005c7a20",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7a2e",
+      "name": "s_Gamepad_forward_005c7a2e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c7a3e",
+      "name": "s_Gamepad_back_005c7a3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fe9dc",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01d2130c"
+    },
+    {
+      "addr": "01d213e0",
+      "name": "g_CGameInstance.field164_0xd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d737d8",
+      "name": "DAT_01d737d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d76220",
+      "name": "DAT_01d76220",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 40,
+    "call_sites": [
+      {
+        "call_addr": "004b57b7",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b588e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5977",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5a4e",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5b23",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5bfa",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5ccf",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5da6",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5e7b",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004b5f52",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004b51e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.804878048780488,
+    "instruction_count": 164,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 30,
+      "BRANCH": 2,
+      "CALL": 21,
+      "CBRANCH": 23,
+      "COPY": 95,
+      "INT_ADD": 34,
+      "INT_AND": 125,
+      "INT_CARRY": 24,
+      "INT_EQUAL": 104,
+      "INT_LEFT": 3,
+      "INT_LESS": 22,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 10,
+      "INT_SBORROW": 22,
+      "INT_SCARRY": 25,
+      "INT_SDIV": 1,
+      "INT_SEXT": 1,
+      "INT_SLESS": 53,
+      "INT_SREM": 1,
+      "INT_SRIGHT": 2,
+      "INT_SUB": 70,
+      "INT_XOR": 2,
+      "INT_ZEXT": 2,
+      "LOAD": 9,
+      "POPCOUNT": 51,
+      "RETURN": 1,
+      "STORE": 48,
+      "SUBPIECE": 2
+    },
+    "pcode_op_count": 788
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "key_code",
+        "offset": 4,
+        "size": 4,
+        "type": "EInputCodeType"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "_DAT_01d737d8 = *(uint *)&g_CGamePtr->field_0xd4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 80,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ]
+}

@@ -16,7 +16,7 @@
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   engine_palette.cpp_FUN_00510cc0
-;   engine_winfont.cpp_FUN_0058e640
+;   engine_winfont.cpp_CWinFont_reset_FUN_0058e640
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
         ;   XREF to: 0058e089 (CONDITIONAL_JUMP)  ; LAB_0058e089
     PUSH EBX                            ; 0058e05c
     MOV dword ptr [EBX + 0x6a44],0x5fe274 ; 0058e05d | PTR_engine_winfont.cpp_CWinFont_dtor_FUN_0058e050_005fe274
-    CALL engine_winfont.cpp_FUN_0058e640 ; 0058e067
-        ;   XREF to: 0058e640 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_FUN_0058e640(CWinFont * this_ptr)
+    CALL engine_winfont.cpp_CWinFont_reset_FUN_0058e640 ; 0058e067
+        ;   XREF to: 0058e640 (UNCONDITIONAL_CALL)  ; void engine_winfont.cpp_CWinFont_reset_FUN_0058e640(CWinFont * this_ptr)
     ADD ESP,0x4                         ; 0058e06c
     PUSH 0x1                            ; 0058e06f
     PUSH EBX                            ; 0058e071

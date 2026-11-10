@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_baron.cpp_FUN_0040f950 at 0040fc1c
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fc1c
 ;
 ; Referenced Globals:
 ;   undefined4 g_CCharacterClassInfo.name_hash

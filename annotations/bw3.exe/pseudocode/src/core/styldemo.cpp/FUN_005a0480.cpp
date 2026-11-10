@@ -55,13 +55,14 @@ uint core_styldemo_cpp_FUN_005a0480(int param_1,int param_2)
          *(uint *)((int)&stack0xffffff90 + (uint)bVar3 * -8);
     *(uint *)(&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)((int)&stack0xffffff94 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    core_vecdir_cpp_FUN_00576250(&stack0xffffffd4);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffd4);
     local_68 = local_38;
     *(uint *)((int)&stack0xffffff9c + (uint)bVar3 * -8) =
          *(uint *)(&stack0xffffffcc + (uint)bVar3 * -8);
     *(uint *)(&stack0xffffffa0 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)(&stack0xffffffd0 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    local_14 = (float)core_actor_cpp_FUN_0040cfa0(local_64 - *(float *)(param_1 + 0x34));
+    local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
+                                (local_64 - *(float *)(param_1 + 0x34));
     if ((float)_DAT_005da556 <= ABS(local_14)) {
       return 0;
     }
@@ -84,13 +85,14 @@ uint core_styldemo_cpp_FUN_005a0480(int param_1,int param_2)
        *(uint *)((int)&stack0xffffffc0 + (uint)bVar3 * -8);
   *(uint *)(&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        *(uint *)((int)&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  core_vecdir_cpp_FUN_00576250(&stack0xffffffb0);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffb0);
   local_5c = local_80;
   *(uint *)((int)&stack0xffffffa8 + (uint)bVar3 * -8) =
        *(uint *)(&stack0xffffff84 + (uint)bVar3 * -8);
   *(uint *)(&stack0xffffffac + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
        *(uint *)(&stack0xffffff88 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-  local_14 = (float)core_actor_cpp_FUN_0040cfa0(local_58 - *(float *)(param_1 + 0x34));
+  local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
+                              (local_58 - *(float *)(param_1 + 0x34));
   if (((float)_DAT_005da556 <= ABS(local_14)) || (4 < local_18)) goto LAB_005a05d1;
   engine_console_cpp_FUN_00441ff0
             (g_CConsolePtr,"?Casting %d\n" + 1,*(uint *)(param_1 + 0xdc90));

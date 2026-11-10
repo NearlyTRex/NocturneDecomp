@@ -18,19 +18,19 @@
     {
       "addr": "0040f900",
       "from_addr": "0040f930",
-      "name": "core_bindevil.cpp_FUN_0040f900",
+      "name": "core_bindevil.cpp_CBindEvil_setup_FUN_0040f900",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0045c0d0",
       "from_addr": "0045c100",
-      "name": "core_disease.cpp_FUN_0045c0d0",
+      "name": "core_disease.cpp_CDisease_setup_FUN_0045c0d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00568c10",
       "from_addr": "00568c52",
-      "name": "core_storm.cpp_FUN_00568c10",
+      "name": "core_storm.cpp_CStorm_setup_FUN_00568c10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -88,14 +88,14 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80"
     },
     {
-      "addr": "0054e6b0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e6b0"
-    },
-    {
       "addr": "0054eae0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054eae0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0"
+    },
+    {
+      "addr": "0054e6b0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0"
     },
     {
       "addr": "00556230",
@@ -110,7 +110,7 @@
       {
         "call_addr": "0040f930",
         "call_type": "direct",
-        "caller": "core_bindevil.cpp_FUN_0040f900",
+        "caller": "core_bindevil.cpp_CBindEvil_setup_FUN_0040f900",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -123,7 +123,7 @@
       {
         "call_addr": "0045c100",
         "call_type": "direct",
-        "caller": "core_disease.cpp_FUN_0045c0d0",
+        "caller": "core_disease.cpp_CDisease_setup_FUN_0045c0d0",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -136,7 +136,7 @@
       {
         "call_addr": "00568c52",
         "call_type": "direct",
-        "caller": "core_storm.cpp_FUN_00568c10",
+        "caller": "core_storm.cpp_CStorm_setup_FUN_00568c10",
         "estimated_params": 3,
         "instructions_analyzed": 5,
         "method": "push_count",

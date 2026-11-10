@@ -13,5 +13,5 @@ CTire * __cdecl core_vehicle_cpp_CTire_ctor_FUN_00584e50(CTire *this_ptr)
   
   pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)&this_ptr->field_0x14);
-  return (CTire *)&pCVar1[-1].field_0x168;
+  return (CTire *)(pCVar1[-1].model_name + 0xf0);
 }

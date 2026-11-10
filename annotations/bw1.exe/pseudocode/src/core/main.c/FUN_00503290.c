@@ -11,6 +11,6 @@ int __cdecl core_main_c_FUN_00503290(void)
 {
   int iVar1;
   
-  iVar1 = core_menu_cpp_FUN_0050cc90();
+  iVar1 = core_menu_cpp_showMainGameMenu_FUN_0050cc90();
   return iVar1;
 }

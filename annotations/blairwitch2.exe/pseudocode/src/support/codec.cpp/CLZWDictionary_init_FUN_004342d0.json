@@ -2,29 +2,29 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 36,
+    "complexity_score": 37,
     "cross_reference_count": 2,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 21,
+    "pseudocode_lines": 22,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 75
+    "total_lines": 76
   },
   "cross_references": [
     {
       "addr": "004347c0",
       "from_addr": "004347d5",
-      "name": "support_codec.cpp_FUN_004347c0",
+      "name": "support_codec.cpp_CLZWCompress_init_FUN_004347c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004349d0",
       "from_addr": "004349e5",
-      "name": "support_codec.cpp_FUN_004349d0",
+      "name": "support_codec.cpp_CLZWDecompress_init_FUN_004349d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -89,7 +89,7 @@
       {
         "call_addr": "004349e5",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_004349d0",
+        "caller": "support_codec.cpp_CLZWDecompress_init_FUN_004349d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,7 +100,7 @@
       {
         "call_addr": "004347d5",
         "call_type": "direct",
-        "caller": "support_codec.cpp_FUN_004347c0",
+        "caller": "support_codec.cpp_CLZWCompress_init_FUN_004347c0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

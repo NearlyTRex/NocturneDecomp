@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_tvbat.cpp_CTVBat_ctor_FUN_005802f0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10d30                        ; 00580290
         ;   Label: core_tvbat.cpp_factoryFuncTVBat_FUN_00580290
-    CALL crt_unknown.c_FUN_005b8be2     ; 00580295
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00580295
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0058029a
     TEST EAX,EAX                        ; 0058029d
     JNZ 0x005802a2                      ; 0058029f

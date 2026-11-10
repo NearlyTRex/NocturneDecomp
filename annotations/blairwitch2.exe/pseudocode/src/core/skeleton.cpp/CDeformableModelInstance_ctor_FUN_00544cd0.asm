@@ -8,8 +8,8 @@
 ;
 ; XREF[8]:
 ;   core_charactr.cpp_CCharacter_ctor_FUN_00422340 at 00422360
-;   core_flashlit.cpp_FUN_004a1110 at 004a111d
-;   core_lantern.cpp_FUN_0059d0d0 at 0059d0dd
+;   core_flashlit.cpp_CFlashlight_getMuzzlePoint_FUN_004a1110 at 004a111d
+;   core_lantern.cpp_CLantern_getMuzzlePoint_FUN_0059d0d0 at 0059d0dd
 ;   core_moloch.cpp_CMoloch_ctor_FUN_00501340 at 00501356
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_005431b0 at 005431fe
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_00544380 at 005443fb

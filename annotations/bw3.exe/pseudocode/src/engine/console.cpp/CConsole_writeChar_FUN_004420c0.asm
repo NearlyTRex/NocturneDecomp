@@ -11,7 +11,7 @@
 ;   engine_console.cpp_FUN_00441ff0 at 00442053
 ;
 ; Called Functions:
-;   engine_console.cpp_FUN_004421d0
+;   engine_console.cpp_CConsole_scrollUp_FUN_004421d0
 ;
 ; *****************************************************************************
 
@@ -70,8 +70,8 @@ section .text
     PUSH EAX                            ; 00442155
         ;   Label: LAB_00442155
     MOV dword ptr [EAX + 0xfac],EDX     ; 00442156
-    CALL engine_console.cpp_FUN_004421d0 ; 0044215c
-        ;   XREF to: 004421d0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_FUN_004421d0(CConsole * this_ptr)
+    CALL engine_console.cpp_CConsole_scrollUp_FUN_004421d0 ; 0044215c
+        ;   XREF to: 004421d0 (UNCONDITIONAL_CALL)  ; void engine_console.cpp_CConsole_scrollUp_FUN_004421d0(CConsole * this_ptr)
     ADD ESP,0x4                         ; 00442161
     POP EDI                             ; 00442164
     POP EBX                             ; 00442165

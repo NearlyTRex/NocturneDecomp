@@ -34,11 +34,11 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_script.cpp_FUN_0052a630
+;   core_script.cpp_CScript_computeChecksum_FUN_0052a630
 ;   core_script.cpp_readActorReference_FUN_0052a010
 ;   crt_stdio.c_fgets_FUN_005b9600
 ;   crt_stdio.c_fscanf_FUN_005b8100
-;   shape_edittool.cpp_FUN_0047bdf0
+;   shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0
 ;
 ; *****************************************************************************
 
@@ -79,7 +79,7 @@ section .text
     MOV EAX,[0x00616494]                ; 0052a12f | g_CGamePtr
     ADD ESP,0xc                         ; 0052a134
     ADD EAX,0x244                       ; 0052a137
-    PUSH EAX                            ; 0052a13c | g_CGameInstance.field580_0x244
+    PUSH EAX                            ; 0052a13c | g_CGameInstance.letterbox_mode
     PUSH 0x5e508a                       ; 0052a13d | DAT_005e508a
     PUSH EDI                            ; 0052a142
     CALL crt_stdio.c_fscanf_FUN_005b8100 ; 0052a143
@@ -319,8 +319,8 @@ section .text
         ;   XREF to: 005b8100 (UNCONDITIONAL_CALL)  ; undefined crt_stdio.c_fscanf_FUN_005b8100()
     ADD ESP,0xc                         ; 0052a3c3
     PUSH EBP                            ; 0052a3c6
-    CALL core_script.cpp_FUN_0052a630   ; 0052a3c7
-        ;   XREF to: 0052a630 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_FUN_0052a630(CScript * this_ptr)
+    CALL core_script.cpp_CScript_computeChecksum_FUN_0052a630 ; 0052a3c7
+        ;   XREF to: 0052a630 (UNCONDITIONAL_CALL)  ; uint core_script.cpp_CScript_computeChecksum_FUN_0052a630(CScript * this_ptr)
     ADD ESP,0x4                         ; 0052a3cc
     CMP EAX,dword ptr [ESP + 0x104]     ; 0052a3cf
     JZ 0x0052a36a                       ; 0052a3d6
@@ -328,8 +328,8 @@ section .text
     PUSH 0x5e50c0                       ; 0052a3d8 | = "The script you were using when this g..."
     MOV EBX,dword ptr [0x006138e0]      ; 0052a3dd | g_CEditorToolsPtr
     PUSH EBX                            ; 0052a3e3
-    CALL shape_edittool.cpp_FUN_0047bdf0 ; 0052a3e4
-        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047bdf0()
+    CALL shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0 ; 0052a3e4
+        ;   XREF to: 0047bdf0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showWarning_FUN_0047bdf0(CEditorTools * this_ptr, char * format)
     ADD ESP,0x8                         ; 0052a3e9
     ADD ESP,0x108                       ; 0052a3ec
     POP EBP                             ; 0052a3f2

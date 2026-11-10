@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 31,
+    "complexity_score": 6,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 6,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 18
   },
   "cross_references": [
     {
       "addr": "004b4dd0",
       "from_addr": "004b4e8f",
-      "name": "core_fire.cpp_FUN_004b4dd0",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004b4dd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,7 +48,7 @@
     },
     {
       "addr": "01ccf624",
-      "name": "g_CGameInstance.field660_0x294",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     }
@@ -61,7 +59,7 @@
       {
         "call_addr": "004b4e8f",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b4dd0",
+        "caller": "core_fire.cpp_CFireEffect_process_FUN_004b4dd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -122,22 +120,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "((CBox *)&this_ptr->field_0x4,*(float *)&g_CGamePtr->field_0x294);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x294",
-      "severity": "mild",
-      "text": "((CBox *)&this_ptr->field_0x4,*(float *)&g_CGamePtr->field_0x294);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

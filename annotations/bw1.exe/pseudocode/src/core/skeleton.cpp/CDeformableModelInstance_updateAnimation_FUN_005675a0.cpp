@@ -12,13 +12,13 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_updateAnimation_FUN_0056
 
 {
   core_skeleton_cpp_FUN_00567620
-            (this_ptr,*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8,
+            (this_ptr,(this_ptr->base).current_motion_index,(this_ptr->base).current_frame_number,
              0xffffffff);
-  if (*(float *)&this_ptr->field_0x14 <= (float)_DAT_005f24c9) {
+  if ((this_ptr->base).tween_progress <= (float)_DAT_005f24c9) {
     return;
   }
   core_skeleton_cpp_FUN_00568100
-            (this_ptr,*(uint *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,
-             *(uint *)&this_ptr->field_0x14,0xffffffff,core_skeleton_cpp_FUN_00567360);
+            (this_ptr,(this_ptr->base).tween_target_motion,(this_ptr->base).tween_target_frame,
+             (this_ptr->base).tween_progress,0xffffffff,core_skeleton_cpp_FUN_00567360);
   return;
 }

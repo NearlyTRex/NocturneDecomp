@@ -12,9 +12,9 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_bodypart.cpp_FUN_00414bd0 at 00414c6e
-;   core_bodypart.cpp_FUN_00414d40 at 00414e06
-;   core_bodypart.cpp_FUN_00414e90 at 00414ef9
+;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40 at 00414e06
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0 at 00414c6e
+;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00414e90 at 00414ef9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc

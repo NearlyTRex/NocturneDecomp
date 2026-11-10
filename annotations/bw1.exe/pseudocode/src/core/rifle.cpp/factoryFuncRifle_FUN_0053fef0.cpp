@@ -11,7 +11,7 @@ void core_rifle_cpp_factoryFuncRifle_FUN_0053fef0(void)
 {
   CRifle *this_ptr;
   
-  this_ptr = (CRifle *)FUN_005c0f32(0x584);
+  this_ptr = (CRifle *)debugAllocTracked1(0x584);
   if (this_ptr == (CRifle *)0x0) {
     return;
   }

@@ -47,7 +47,7 @@
 ; XREF[3]:
 ;   core_dracbrid.cpp_FUN_0047d920 at 0047dce7
 ;   core_dracbrid.cpp_FUN_0047de00 at 0047e072
-;   core_flies.cpp_FUN_004c0080 at 004c02d4
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004c0080 at 004c02d4
 ;
 ; *****************************************************************************
 

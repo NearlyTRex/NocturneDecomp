@@ -11,8 +11,8 @@
 ;
 ; XREF[3]:
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419070 at 004191e7
-;   core_constrct.cpp_FUN_00443ca0 at 00443e8b
-;   core_platfrm.cpp_FUN_00512420 at 0051270f
+;   core_constrct.cpp_CConstruct_archive_FUN_00443ca0 at 00443e8b
+;   core_platfrm.cpp_CPlatform_archive_FUN_00512420 at 0051270f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_f_005b5aba

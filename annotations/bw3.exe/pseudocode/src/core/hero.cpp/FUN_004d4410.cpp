@@ -20,7 +20,8 @@ void core_hero_cpp_FUN_004d4410(int param_1)
   *(uint *)(param_1 + 0x20ba8) = 0;
   *(uint *)(param_1 + 0x20bac) = 0;
   *(uint *)(param_1 + 0x26fc) = 0;
-  core_inv_cpp_FUN_004de6e0((CInventory *)(param_1 + 0x206e8),0xffffffff);
+  core_inv_cpp_CInventory_removeMatchingKeys_FUN_004de6e0
+            ((CInventory *)(param_1 + 0x206e8),0xffffffff);
   (**(code **)(*(int *)(param_1 + 0x154) + 0x144))(param_1,0);
   iVar2 = param_1;
   do {

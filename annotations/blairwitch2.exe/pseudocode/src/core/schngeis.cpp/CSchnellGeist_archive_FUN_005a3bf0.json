@@ -1,0 +1,125 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 20,
+    "complexity_score": 25,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 30
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a3bf0",
+    "address_range": [
+      [
+        "005a3bf0",
+        "005a3c20"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_schngeis.cpp_CSchnellGeist_archive_FUN_005a3bf0",
+    "signature": "void __cdecl core_schngeis_cpp_CSchnellGeist_archive_FUN_005a3bf0(CSchnellGeist *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0059fc10",
+      "is_variadic": false,
+      "name": "core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f0206",
+      "name": "s_BreathState_005f0204+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0061eb24",
+      "name": "g_CSchnellGeistClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.466666666666667,
+    "instruction_count": 15,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 7,
+      "INT_ADD": 7,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 9,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 6,
+      "LOAD": 4,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 67
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSchnellGeist *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x11864",
+      "severity": "mild",
+      "text": "((int *)&this_ptr->field_0x11864,\"$@BreathState\" + 2);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005ff374"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

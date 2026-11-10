@@ -13,7 +13,7 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00507660(CNetGame 
 {
   char cVar1;
   int iVar2;
-  char *pcVar3;
+  SNetPlayer *pSVar3;
   char *pcVar4;
   uint local_3c;
   byte local_38;
@@ -23,12 +23,13 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00507660(CNetGame 
   uint local_1b;
   uint local_17;
   
-  if ((*(int *)this_ptr != 2) || (*(int *)&this_ptr->field_0x4 != 1)) {
+  if ((this_ptr->connection_type != CONNECTION_CLIENT) || (this_ptr->network_mode != NET_MODE_LOBBY)
+     ) {
     _DAT_01d71de0 = "..\\core\\netgame.cpp";
     _DAT_01d71de4 = 0x8d0;
     core_main_c_FUN_004e4330("CNetGame::sendMyStateChanged - should only call this in client lobby mode");
   }
-  iVar2 = wincore_winrun_cpp_FUN_005806a0();
+  iVar2 = wincore_winrun_cpp_getTime_FUN_005806a0();
   _DAT_01da6474 = iVar2 / 0x12 - _DAT_01da6474;
   if (_DAT_01da6474 < 0) {
     _DAT_01da6474 = 0;
@@ -39,25 +40,25 @@ void __cdecl core_netgame_cpp_CNetGame_sendMyStateChanged_FUN_00507660(CNetGame 
   _DAT_01da6478 = _DAT_01da6478 + _DAT_01da6474;
   local_3c = 0x29;
   local_38 = 10;
-  local_1f = *(uint *)(&this_ptr->field_0x64 + *(int *)&this_ptr->field_0x124 * 0x80);
-  local_1b = *(uint *)(&this_ptr->field_0x34 + *(int *)&this_ptr->field_0x124 * 0x80);
-  local_17 = *(uint *)(&this_ptr->field_0x38 + *(int *)&this_ptr->field_0x124 * 0x80);
+  local_1f = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x44;
+  local_1b = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x14;
+  local_17 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x18;
   pcVar4 = local_33;
-  pcVar3 = &this_ptr->field_0x20 + *(int *)&this_ptr->field_0x124 * 0x80;
+  pSVar3 = this_ptr->players + this_ptr->local_player_index;
   do {
-    cVar1 = *pcVar3;
+    cVar1 = *(char *)pSVar3;
     *pcVar4 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pcVar3[1];
-    pcVar3 = pcVar3 + 2;
+    cVar1 = pSVar3->field_0x1;
+    pSVar3 = (SNetPlayer *)&pSVar3->field_0x2;
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   _DAT_01da6474 = iVar2 / 0x12;
   local_37 = _DAT_01da6478;
   core_netgame_cpp_CNetGame_send_FUN_00505870
-            (this_ptr,*(int *)&this_ptr->field_0x120,(SNetPacketHeader *)&local_3c);
+            (this_ptr,this_ptr->server_player_index,(SNetPacketHeader *)&local_3c);
   DAT_00603454 = 1;
-  *(int *)(&this_ptr->field_0x60 + *(int *)&this_ptr->field_0x124 * 0x80) = _DAT_01da6478;
+  *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x40 = _DAT_01da6478;
   return;
 }

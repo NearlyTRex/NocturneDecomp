@@ -36,11 +36,11 @@ int core_fldnotes_cpp_FUN_004a28b0(int param_1,char *param_2)
       cVar1 = *pcVar5;
       while (cVar1 != '>') {
         if (*pcVar5 == '\0') {
-          FUN_005b7790(&DAT_01cab7f0,"Incomplete markup tag beginning with '%s'",param_2);
+          _sprintf(&DAT_01cab7f0,"Incomplete markup tag beginning with '%s'");
           return -1;
         }
         if (0xfe < uVar3) {
-          FUN_005b7790(&DAT_01cab7f0,"Markup tag beginning with '%s' - tag text too long",param_2);
+          _sprintf(&DAT_01cab7f0,"Markup tag beginning with '%s' - tag text too long");
           return -1;
         }
         cVar1 = *pcVar5;
@@ -63,7 +63,7 @@ int core_fldnotes_cpp_FUN_004a28b0(int param_1,char *param_2)
     }
     else {
       if (cVar1 == '>') {
-        FUN_005b7790(&DAT_01cab7f0,"Unexpected '>' found near '%s'",param_2);
+        _sprintf(&DAT_01cab7f0,"Unexpected '>' found near '%s'");
         return -1;
       }
       bVar7 = *(char *)(param_1 + 0x48) != '\0';

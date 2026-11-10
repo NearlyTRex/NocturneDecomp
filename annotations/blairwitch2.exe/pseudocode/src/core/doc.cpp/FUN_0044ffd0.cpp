@@ -35,8 +35,8 @@ float core_doc_cpp_FUN_0044ffd0(uint param_1)
     iVar1 = 0;
     iVar4 = 0;
     local_14 = 0;
-    for (iVar3 = 0; iVar3 < *(int *)&pCVar5->field_0x104; iVar3 = iVar3 + 1) {
-      piVar2 = (int *)(*(int *)&pCVar5->field_0x10c + iVar4);
+    for (iVar3 = 0; iVar3 < pCVar5->vertex_count; iVar3 = iVar3 + 1) {
+      piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);
       if (iVar6 < *piVar2) {
         local_14 = piVar2[1];
         iVar6 = *piVar2;

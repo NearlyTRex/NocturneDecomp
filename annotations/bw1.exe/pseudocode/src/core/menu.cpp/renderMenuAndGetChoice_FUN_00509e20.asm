@@ -19,11 +19,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_menu.cpp_FUN_0050aa90 at 0050ae98
 ;   core_menu.cpp_FUN_0050b470 at 0050b787
 ;   core_menu.cpp_FUN_0050ba70 at 0050c2eb
 ;   core_menu.cpp_FUN_0050c990 at 0050cb23
-;   core_menu.cpp_FUN_0050cc90 at 0050cec4
+;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050ae98
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050cec4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Blair_Witch_Volume_I_Rus_005e7a0a
@@ -41,10 +41,10 @@
 ;   core_moon.cpp_CMoon_isAnimationFirstHalf_FUN_005220b0
 ;   crt_stdlib.c_rand_FUN_005c084c
 ;   engine_3d.c_setRenderAlpha_FUN_00406bd0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;   engine_font.cpp_FUN_004c1dd0
-;   engine_font.cpp_FUN_004c3ea0
-;   engine_font.cpp_FUN_004c3f50
-;   engine_font.cpp_FUN_004c4510
 ;
 ; *****************************************************************************
 
@@ -78,13 +78,13 @@ section .text
     PUSH ECX                            ; 00509e60
     MOV EBX,dword ptr [ESP + 0x1c]      ; 00509e61
     PUSH EBX                            ; 00509e65
-    CALL engine_font.cpp_FUN_004c3ea0   ; 00509e66
-        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3ea0(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00509e66
+        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00509e6b
     PUSH 0x58                           ; 00509e6e
     PUSH EBX                            ; 00509e70
-    CALL engine_font.cpp_FUN_004c4510   ; 00509e71
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 00509e71
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 00509e76
     MOV EDI,0x190                       ; 00509e79
     MOV EDX,dword ptr [ESP + 0x38]      ; 00509e7e
@@ -195,15 +195,15 @@ section .text
     PUSH 0x5e7a0a                       ; 00509f99 | = "Blair Witch Volume I: Rustin Parr (c)..."
     MOV EDX,dword ptr [0x0152d248]      ; 00509f9e | DAT_0152d248
     PUSH EDX                            ; 00509fa4
-    CALL engine_font.cpp_FUN_004c3ea0   ; 00509fa5
-        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3ea0(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 00509fa5
+        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 00509faa
     PUSH 0x5e7a0a                       ; 00509fad | = "Blair Witch Volume I: Rustin Parr (c)..."
     MOV ECX,dword ptr [0x0152d248]      ; 00509fb2 | DAT_0152d248
     PUSH ECX                            ; 00509fb8
     MOV EBX,EAX                         ; 00509fb9
-    CALL engine_font.cpp_FUN_004c3f50   ; 00509fbb
-        ;   XREF to: 004c3f50 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3f50(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50 ; 00509fbb
+        ;   XREF to: 004c3f50 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 00509fc0
     PUSH 0x0                            ; 00509fc3
     MOV EDX,0x1df                       ; 00509fc5
@@ -368,8 +368,8 @@ section .text
     PUSH 0x58                           ; 0050a144
     MOV ESI,EBX                         ; 0050a146
     PUSH ESI                            ; 0050a148
-    CALL engine_font.cpp_FUN_004c4510   ; 0050a149
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0050a149
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD EAX,EAX                         ; 0050a14e
     ADD ESP,0x8                         ; 0050a150
     ADD EBP,EAX                         ; 0050a153
@@ -383,15 +383,15 @@ section .text
         ;   Label: LAB_0050a167
     MOV EDI,dword ptr [0x0152d248]      ; 0050a16c | DAT_0152d248
     PUSH EDI                            ; 0050a172
-    CALL engine_font.cpp_FUN_004c3ea0   ; 0050a173
-        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3ea0(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 0050a173
+        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 0050a178
     PUSH 0x5e7a5c                       ; 0050a17b | = "Blair Witch Volume I: Rustin Parr  20..."
     MOV EBP,dword ptr [0x0152d248]      ; 0050a180 | DAT_0152d248
     PUSH EBP                            ; 0050a186
     MOV EBX,EAX                         ; 0050a187
-    CALL engine_font.cpp_FUN_004c3f50   ; 0050a189
-        ;   XREF to: 004c3f50 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3f50(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50 ; 0050a189
+        ;   XREF to: 004c3f50 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004c3f50(CBitFont * this_ptr, char * text_string)
     ADD ESP,0x8                         ; 0050a18e
     PUSH ESI                            ; 0050a191
     MOV EDX,0x1df                       ; 0050a192

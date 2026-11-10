@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   color
 ;
 ; XREF[1]:
-;   engine_console.cpp_FUN_00442250 at 004422c2
+;   engine_console.cpp_CConsole_render_FUN_00442250 at 004422c2
 ;
 ; Called Functions:
 ;   engine_2d.c_drawCharacterMaskedColor_FUN_00401a20

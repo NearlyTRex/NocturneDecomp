@@ -11,7 +11,7 @@ void core_hecaitmx_cpp_factoryFuncHecaitomix_FUN_00597dc0(void)
 {
   CHecaitomix *this_ptr;
   
-  this_ptr = (CHecaitomix *)FUN_005a3cb2(0xd07c);
+  this_ptr = (CHecaitomix *)debugAllocTracked1(0xd07c);
   if (this_ptr == (CHecaitomix *)0x0) {
     return;
   }

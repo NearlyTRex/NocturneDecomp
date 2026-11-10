@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 156,
-    "complexity_score": 408,
+    "complexity_score": 383,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 38,
-    "suspect_count": 34,
+    "suspect_count": 32,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
-      "suspicious_cast",
-      "unnamed_field",
+      "pointer_cast",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -29,7 +28,7 @@
     {
       "addr": "004ff190",
       "from_addr": "004ff39c",
-      "name": "core_lever.cpp_FUN_004ff190",
+      "name": "core_lever.cpp_CLever_process_FUN_004ff190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -96,7 +95,7 @@
     },
     {
       "addr": "01fcf2cc",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     }
@@ -121,7 +120,7 @@
       {
         "call_addr": "004ff39c",
         "call_type": "direct",
-        "caller": "core_lever.cpp_FUN_004ff190",
+        "caller": "core_lever.cpp_CLever_process_FUN_004ff190",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -132,7 +131,7 @@
       {
         "call_addr": "004ff3c0",
         "call_type": "direct",
-        "caller": "core_lever.cpp_FUN_004ff190",
+        "caller": "core_lever.cpp_CLever_process_FUN_004ff190",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -405,20 +404,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iVar2 = 0; iVar2 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar2 = iVar2 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 32,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
-      "type": "unnamed_field"
+      "match": "(uint *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iVar3),",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
@@ -443,14 +434,6 @@
       "severity": "mild",
       "text": "core_lever_cpp_FUN_004ff3f0(iVar1,param_2,param_3);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 32,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar3),",
-      "type": "suspicious_cast"
     },
     {
       "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3f800000 is the IEEE 754 bit pattern of 1f. Rewrite in a .keep as a plain float compare against 1f.",

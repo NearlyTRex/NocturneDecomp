@@ -19,11 +19,12 @@ CHino * core_hino_cpp_CHino_ctor_FUN_0059b670(CHino *this_ptr)
   byte *puVar5;
   
   pCVar3 = (CHino *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CHinoVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,0x5d9bca);
+  ((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CHinoVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar3->field_0x158,(char *)0x5d9bca);
   *(uint *)&pCVar3->field_0x326c = 0x3f19999a;
   *(uint *)&pCVar3->field_0x3270 = 0x3f666666;
-  *(uint *)&pCVar3->field_0x2538 = 0x42b40000;
+  *(float *)&pCVar3->field_0x2538 = 90.0;
   *(uint *)&pCVar3->field_0xd060 = 0x40000000;
   *(uint *)&pCVar3->field_0xd064 = 0;
   *(uint *)&pCVar3->field_0xd068 = 0;

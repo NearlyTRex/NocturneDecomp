@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_bindevil.cpp_FUN_0040f900 at 0040f930
-;   core_disease.cpp_FUN_0045c0d0 at 0045c100
-;   core_storm.cpp_FUN_00568c10 at 00568c52
+;   core_bindevil.cpp_CBindEvil_setup_FUN_0040f900 at 0040f930
+;   core_disease.cpp_CDisease_setup_FUN_0045c0d0 at 0045c100
+;   core_storm.cpp_CStorm_setup_FUN_00568c10 at 00568c52
 ;
 ; Called Functions:
 ;   core_charactr.cpp_FUN_0042f280
@@ -18,8 +18,8 @@
 ;   core_fire.cpp_FUN_004a42f0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_0054bf00
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
-;   core_skeleton.cpp_FUN_0054e6b0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0
 ;   sound_sndmain.cpp_FUN_00556230
 ;
 ; *****************************************************************************
@@ -113,13 +113,13 @@ section .text
     PUSH 0x5c0a9f                       ; 004a442c
     LEA EAX,[ESP + 0x4]                 ; 004a4431
     PUSH EAX                            ; 004a4435
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 004a4436
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 004a4436
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 004a443b
     MOV EAX,ESP                         ; 004a443e
     PUSH EAX                            ; 004a4440
-    CALL core_skeleton.cpp_FUN_0054e6b0 ; 004a4441
-        ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0 ; 004a4441
+        ;   XREF to: 0054e6b0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_0054e6b0(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 004a4446
     PUSH 0x5c0aa8                       ; 004a4449
     CALL sound_sndmain.cpp_FUN_00556230 ; 004a444e

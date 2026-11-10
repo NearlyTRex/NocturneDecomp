@@ -8,7 +8,7 @@
 ; float            Stack[0x8]:4   delta_time
 ;
 ; Called Functions:
-;   core_ladder.cpp_FUN_004df930
+;   core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004df930
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 004df720
         ;   Label: core_ladder.cpp_CLadder_process_FUN_004df720
     PUSH EDX                            ; 004df724
-    CALL core_ladder.cpp_FUN_004df930   ; 004df725
-        ;   XREF to: 004df930 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_FUN_004df930(CLadder * this_ptr)
+    CALL core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004df930 ; 004df725
+        ;   XREF to: 004df930 (UNCONDITIONAL_CALL)  ; void core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004df930(CLadder * this_ptr)
     ADD ESP,0x4                         ; 004df72a
     RET                                 ; 004df72d
 

@@ -1,0 +1,343 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 171,
+    "complexity_score": 172,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 20,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 67,
+    "suspect_count": 9,
+    "suspect_types": [
+      "pointer_cast",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 238
+  },
+  "cross_references": [
+    {
+      "addr": "004036a0",
+      "from_addr": "004036b3",
+      "name": "engine_2d.c_mapTextureFrameBuffer_FUN_004036a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00403480",
+    "address_range": [
+      [
+        "00403480",
+        "00403699"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_2d.c_mapFrameBuffer_FUN_00403480",
+    "signature": "int __cdecl engine_2d_c_mapFrameBuffer_FUN_00403480(void *frame_buffer,int width,int height,int bits_per_pixel,int stride)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005fba18",
+      "name": "DAT_005fba18",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba1c",
+      "name": "DAT_005fba1c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fba20",
+      "name": "DAT_005fba20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303b8",
+      "name": "DAT_007303b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303bc",
+      "name": "DAT_007303bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303c0",
+      "name": "DAT_007303c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303c4",
+      "name": "DAT_007303c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303c8",
+      "name": "DAT_007303c8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303cc",
+      "name": "DAT_007303cc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303d0",
+      "name": "DAT_007303d0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303d4",
+      "name": "DAT_007303d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007303d8",
+      "name": "DAT_007303d8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5faec",
+      "name": "DAT_01c5faec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c5faf0",
+      "name": "DAT_01c5faf0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a8",
+      "name": "DAT_01c6b5a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "DAT_01c6b5ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b0",
+      "name": "DAT_01c6b5b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b4",
+      "name": "DAT_01c6b5b4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004036b3",
+        "call_type": "direct",
+        "caller": "engine_2d.c_mapTextureFrameBuffer_FUN_004036a0",
+        "estimated_params": 5,
+        "instructions_analyzed": 8,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 20,
+        "stack_params": 5
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 5,
+    "declared_stack_bytes": 20,
+    "estimated_params": 5,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.898550724637682,
+    "instruction_count": 138,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 33,
+      "BOOL_OR": 4,
+      "BOOL_XOR": 2,
+      "BRANCH": 2,
+      "CALL": 6,
+      "CBRANCH": 12,
+      "COPY": 112,
+      "INT_ADD": 22,
+      "INT_AND": 136,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 76,
+      "INT_LEFT": 4,
+      "INT_LESS": 16,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 26,
+      "INT_SBORROW": 17,
+      "INT_SCARRY": 8,
+      "INT_SEXT": 7,
+      "INT_SLESS": 38,
+      "INT_SRIGHT": 8,
+      "INT_SUB": 39,
+      "INT_XOR": 5,
+      "INT_ZEXT": 2,
+      "LOAD": 11,
+      "POPCOUNT": 34,
+      "RETURN": 1,
+      "STORE": 17,
+      "SUBPIECE": 5
+    },
+    "pcode_op_count": 676
+  },
+  "stack_frame": {
+    "frame_size": 24,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 20,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "frame_buffer",
+        "offset": 4,
+        "size": 4,
+        "type": "void *"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "bits_per_pixel",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "stride",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "_DAT_007303b8 = DAT_005fba18;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 46,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "_DAT_007303bc = DAT_005fba1c;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_005fba18",
+      "severity": "mild",
+      "text": "DAT_005fba18 = width;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 51,
+      "match": "DAT_005fba1c",
+      "severity": "mild",
+      "text": "DAT_005fba1c = height;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 54,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "_DAT_007303d0 = DAT_005fba20;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005fba20",
+      "severity": "mild",
+      "text": "DAT_005fba20 = bits_per_pixel;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_01c5faec",
+      "severity": "mild",
+      "text": "*(void **)(&DAT_01c5faec + iVar1) = frame_buffer;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 67,
+      "match": "(void *)((int)frame_buffer",
+      "severity": "moderate",
+      "text": "frame_buffer = (void *)((int)frame_buffer + stride);",
+      "type": "pointer_cast"
+    }
+  ]
+}

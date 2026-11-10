@@ -18,8 +18,8 @@ int __cdecl sound_sndmain_cpp_FUN_0054b960(int requested_bytes)
   iVar1 = 0;
   iVar3 = 0;
   do {
-    if (*(int *)(&g_SfxSamples[0].field_0x120 + iVar1) != 0) {
-      iVar3 = iVar3 + *(int *)(&g_SfxSamples[0].field_0x168 + iVar1);
+    if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar1 + -8) != 0) {
+      iVar3 = iVar3 + *(int *)((int)g_SfxSamples[0].loop_destinations + iVar1 + 0x2c);
     }
     iVar1 = iVar1 + 0x1ac;
   } while (iVar1 != 0x6b00);
@@ -35,12 +35,10 @@ LAB_0054b980:
       if (0x3f < iVar1) {
         iVar1 = 0;
       }
-      if ((((*(int *)&g_SfxSamples[iVar1].field_0x120 != 0) &&
-           (0 < *(int *)&g_SfxSamples[iVar1].field_0x164)) &&
-          (*(int *)&g_SfxSamples[iVar1].field_0x154 == 0)) &&
-         (((*(int *)&g_SfxSamples[iVar1].field_0x150 == 0 &&
-           (*(int *)&g_SfxSamples[iVar1].field_0x15c == 0)) &&
-          (*(int *)&g_SfxSamples[_DAT_02641920].field_0x1a8 == 0)))) {
+      if ((((g_SfxSamples[iVar1].sample_data != (short *)0x0) &&
+           (0 < *(int *)&g_SfxSamples[iVar1].field_0x164)) && (g_SfxSamples[iVar1].ref_count == 0))
+         && (((g_SfxSamples[iVar1].taken == 0 && (*(int *)&g_SfxSamples[iVar1].field_0x15c == 0)) &&
+             (g_SfxSamples[_DAT_02641920].locked_length == 0)))) {
         iVar3 = iVar3 - *(int *)&g_SfxSamples[iVar1].field_0x168;
         sound_sndmain_cpp_CSfxSample_freeMemory_FUN_0054d9b0(g_SfxSamples + iVar1);
         if (0x3f < iVar2) {

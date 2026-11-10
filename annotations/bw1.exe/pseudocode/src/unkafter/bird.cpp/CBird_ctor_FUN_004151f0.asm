@@ -10,10 +10,10 @@
 ;   core_bird.cpp_factoryFuncBird_FUN_004151c0 at 004151d3
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042c080
 ;   core_path.cpp_CPathMap_ctor_FUN_00532fe0
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
     MOV dword ptr [EBX + 0x2ffc],0x3fcccccd ; 00415238
     PUSH 0x3f666666                     ; 00415242
     MOV dword ptr [EBX + 0x3000],0xc479c000 ; 00415247
-    CALL core_actor.cpp_FUN_0040cc00    ; 00415251
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00415251
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00415256
     FLD float ptr [ESP + 0x8]           ; 0041525a
     ADD ESP,0x8                         ; 0041525e
@@ -51,8 +51,8 @@ section .text
     MOV dword ptr [EBX + 0x1fabc],0x0   ; 00415276
     PUSH EAX                            ; 00415280
     FSTP float ptr [EBX + 0x1fab4]      ; 00415281
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00415287
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00415287
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x27c0],0x0    ; 0041528c
     ADD ESP,0x8                         ; 00415296
     MOV dword ptr [EBX + 0x1faac],0x0   ; 00415299

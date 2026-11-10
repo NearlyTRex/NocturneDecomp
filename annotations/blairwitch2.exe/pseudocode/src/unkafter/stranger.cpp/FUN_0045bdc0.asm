@@ -49,16 +49,16 @@
 ;   core_actor.cpp_FUN_00408cf0
 ;   core_charactr.cpp_CCharacter_advanceLayerAction_FUN_0042a0c0
 ;   core_charactr.cpp_CCharacter_chooseNextLayerAction_FUN_0042a620
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_charactr.cpp_FUN_00428b10
-;   core_charactr.cpp_FUN_0042a5a0
-;   core_dynamite.cpp_FUN_0047a150
-;   core_dynamite.cpp_FUN_0047a1a0
+;   core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047a1a0
+;   core_dynamite.cpp_CDynamite_lightFuse_FUN_0047a150
 ;   core_hero.cpp_FUN_004cff90
+;   core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0
 ;   core_inv.cpp_FUN_004db8e0
-;   core_inv.cpp_FUN_004dccb0
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
+;   core_motion.cpp_CMotionController_getMotionList_FUN_00503860
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_00503620
-;   core_motion.cpp_FUN_00503860
 ;   core_motion.cpp_FUN_005038a0
 ;   ... and 3 more
 ;
@@ -147,8 +147,8 @@ section .text
     IMUL EDI,dword ptr [EBX + EAX*0x1 + 0x2860],0x118 ; 0045bea8
     MOV ECX,dword ptr [ESP + 0x48]      ; 0045beb3
     PUSH ECX                            ; 0045beb7
-    CALL core_motion.cpp_FUN_00503860   ; 0045beb8
-        ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_00503860(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_00503860 ; 0045beb8
+        ;   XREF to: 00503860 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_00503860(CMotionController * this_ptr)
     ADD EAX,0x1c28                      ; 0045bebd
     ADD EDI,EAX                         ; 0045bec2
     MOV EAX,dword ptr [EBX + 0x2d04]    ; 0045bec4
@@ -297,8 +297,8 @@ section .text
         ;   XREF to: 0045c90e (CONDITIONAL_JUMP)  ; LAB_0045c90e
     MOV EAX,dword ptr [ESP + 0x54]      ; 0045c072
     PUSH EAX                            ; 0045c076
-    CALL core_inv.cpp_FUN_004dccb0      ; 0045c077
-        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_FUN_004dccb0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0 ; 0045c077
+        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0045c07c
     TEST EAX,EAX                        ; 0045c07f
     JNZ 0x0045c8ff                      ; 0045c081
@@ -462,8 +462,8 @@ section .text
     PUSH EDX                            ; 0045c24d
     PUSH EBX                            ; 0045c24e
     MOV dword ptr [ESP + 0x68],EDX      ; 0045c24f
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 0045c253
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 0045c253
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x6c],EAX      ; 0045c258
     FLD float ptr [ESP + 0x6c]          ; 0045c25c
     ADD ESP,0x8                         ; 0045c260
@@ -497,8 +497,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x54]      ; 0045c2b6
         ;   Label: LAB_0045c2b6
     PUSH EDX                            ; 0045c2ba
-    CALL core_inv.cpp_FUN_004dccb0      ; 0045c2bb
-        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_FUN_004dccb0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0 ; 0045c2bb
+        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0045c2c0
     TEST EAX,EAX                        ; 0045c2c3
     JZ 0x0045c2dd                       ; 0045c2c5
@@ -512,8 +512,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x54]      ; 0045c2dd
         ;   Label: LAB_0045c2dd
     PUSH ESI                            ; 0045c2e1
-    CALL core_inv.cpp_FUN_004dccb0      ; 0045c2e2
-        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_FUN_004dccb0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0 ; 0045c2e2
+        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0045c2e7
     TEST EAX,EAX                        ; 0045c2ea
     JZ 0x0045c304                       ; 0045c2ec
@@ -527,8 +527,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x54]      ; 0045c304
         ;   Label: LAB_0045c304
     PUSH EAX                            ; 0045c308
-    CALL core_inv.cpp_FUN_004dccb0      ; 0045c309
-        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_FUN_004dccb0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0 ; 0045c309
+        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0045c30e
     TEST EAX,EAX                        ; 0045c311
     JNZ 0x0045c32b                      ; 0045c313
@@ -542,8 +542,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x54]      ; 0045c32b
         ;   Label: LAB_0045c32b
     PUSH ECX                            ; 0045c32f
-    CALL core_inv.cpp_FUN_004dccb0      ; 0045c330
-        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_FUN_004dccb0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0 ; 0045c330
+        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0045c335
     TEST EAX,EAX                        ; 0045c338
     JNZ 0x0045c352                      ; 0045c33a
@@ -812,8 +812,8 @@ section .text
     JZ 0x0045bf78                       ; 0045c569
         ;   XREF to: 0045bf78 (CONDITIONAL_JUMP)  ; caseD_b
     PUSH EAX                            ; 0045c56f
-    CALL core_dynamite.cpp_FUN_0047a1a0 ; 0045c570
-        ;   XREF to: 0047a1a0 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_FUN_0047a1a0(CDynamite * this_ptr)
+    CALL core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047a1a0 ; 0045c570
+        ;   XREF to: 0047a1a0 (UNCONDITIONAL_CALL)  ; int core_dynamite.cpp_CDynamite_isFuseLit_FUN_0047a1a0(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 0045c575
     TEST EAX,EAX                        ; 0045c578
     JNZ 0x0045bf78                      ; 0045c57a
@@ -831,8 +831,8 @@ section .text
     JA 0x0045bf78                       ; 0045c5a0
         ;   XREF to: 0045bf78 (CONDITIONAL_JUMP)  ; caseD_b
     PUSH ESI                            ; 0045c5a6
-    CALL core_dynamite.cpp_FUN_0047a150 ; 0045c5a7
-        ;   XREF to: 0047a150 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_FUN_0047a150(CDynamite * this_ptr)
+    CALL core_dynamite.cpp_CDynamite_lightFuse_FUN_0047a150 ; 0045c5a7
+        ;   XREF to: 0047a150 (UNCONDITIONAL_CALL)  ; void core_dynamite.cpp_CDynamite_lightFuse_FUN_0047a150(CDynamite * this_ptr)
     ADD ESP,0x4                         ; 0045c5ac
     JMP 0x0045bf78                      ; 0045c5af
         ;   XREF to: 0045bf78 (UNCONDITIONAL_JUMP)  ; caseD_b
@@ -1131,8 +1131,8 @@ section .text
         ;   XREF to: 0045c091 (CONDITIONAL_JUMP)  ; LAB_0045c091
     MOV EDI,dword ptr [ESP + 0x54]      ; 0045c924
     PUSH EDI                            ; 0045c928
-    CALL core_inv.cpp_FUN_004dccb0      ; 0045c929
-        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_FUN_004dccb0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0 ; 0045c929
+        ;   XREF to: 004dccb0 (UNCONDITIONAL_CALL)  ; CLightGun * core_inv.cpp_CInventory_getActiveLightGun_FUN_004dccb0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0045c92e
     TEST EAX,EAX                        ; 0045c931
     JNZ 0x0045c087                      ; 0045c933

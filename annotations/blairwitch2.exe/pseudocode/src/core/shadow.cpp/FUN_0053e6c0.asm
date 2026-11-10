@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_shadow_cpp_FUN_0053e6c0(CDemonActor *param_1)
+; int core_shadow_cpp_FUN_0053e6c0(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -17,7 +17,7 @@
 ;   core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_box.cpp_FUN_0041a840
-;   core_charactr.cpp_FUN_004268b0
+;   core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_0048e340
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_005042e0
@@ -178,8 +178,8 @@ section .text
     JZ 0x0053e71d                       ; 0053e843
         ;   XREF to: 0053e71d (CONDITIONAL_JUMP)  ; LAB_0053e71d
     PUSH EBX                            ; 0053e849
-    CALL core_charactr.cpp_FUN_004268b0 ; 0053e84a
-        ;   XREF to: 004268b0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_004268b0()
+    CALL core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0 ; 0053e84a
+        ;   XREF to: 004268b0 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0053e84f
     MOV EAX,dword ptr [EBX + 0x2828]    ; 0053e852
     ADD ESP,0x30                        ; 0053e858

@@ -1,0 +1,191 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 112,
+    "complexity_score": 47,
+    "cross_reference_count": 0,
+    "function_call_count": 6,
+    "global_count": 12,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 47,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 159
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00439150",
+    "address_range": [
+      [
+        "00439150",
+        "00439290"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cow.cpp_CZombieCow_setup_FUN_00439150",
+    "signature": "void __cdecl core_cow_cpp_CZombieCow_setup_FUN_00439150(CZombieCow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00487eb0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00487eb0"
+    },
+    {
+      "addr": "00543100",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModel_findPartByName_FUN_00543100"
+    },
+    {
+      "addr": "00547810",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00547480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ce095",
+      "name": "s_Bip01_Spine2_005ce095",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0a2",
+      "name": "s_Bip01_Head_005ce0a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0ad",
+      "name": "s_head01_005ce0ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0b4",
+      "name": "s_neck01_005ce0b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0bb",
+      "name": "s_lfrontleg01_005ce0bb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0c7",
+      "name": "s_rfrontleg01_005ce0c7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0d3",
+      "name": "s_rbackleg01_005ce0d3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0de",
+      "name": "s_lbackleg01_005ce0de",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0e9",
+      "name": "s_torso01_005ce0e9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0f1",
+      "name": "s_utter01_005ce0f1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce0f9",
+      "name": "s_back01_005ce0f9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ce100",
+      "name": "s_tail01_005ce100",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.9894736842105263,
+    "instruction_count": 95,
+    "opcode_distribution": {
+      "CALL": 16,
+      "COPY": 65,
+      "INT_ADD": 34,
+      "INT_AND": 32,
+      "INT_CARRY": 16,
+      "INT_EQUAL": 32,
+      "INT_SCARRY": 16,
+      "INT_SLESS": 16,
+      "INT_SUB": 59,
+      "LOAD": 5,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 71
+    },
+    "pcode_op_count": 379
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieCow *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f49c4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

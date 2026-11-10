@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_crossbow.cpp_CCrossbow_ctor_FUN_0043a4c0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xad8                          ; 0043a490
         ;   Label: core_curtain.cpp_factoryFuncCrossbow_FUN_0043a490
-    CALL crt_unknown.c_FUN_005b8be2     ; 0043a495
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0043a495
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0043a49a
     TEST EAX,EAX                        ; 0043a49d
     JNZ 0x0043a4a2                      ; 0043a49f

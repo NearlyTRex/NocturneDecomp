@@ -37,19 +37,19 @@ void __cdecl core_dtrace_cpp_CDemonRaytrace_setPVS_FUN_0048e4e0(CDemonRaytrace *
       pfVar10 = (float *)&DAT_01c02aa0;
       do {
         iVar5 = *visible_cube_indices;
-        *(int *)(iVar11 * 4 + 0x1bef220) = iVar5 * 0x34 + *(int *)&this_ptr->field_0x50;
-        iVar6 = *(int *)&this_ptr->field_0x48;
-        uVar8 = (longlong)iVar5 / (longlong)*(int *)&this_ptr->field_0x48;
+        *(CDemonCube **)(iVar11 * 4 + 0x1bef220) = this_ptr->cube_data + iVar5;
+        iVar6 = (this_ptr->grid_coord).z;
+        uVar8 = (longlong)iVar5 / (longlong)(this_ptr->grid_coord).z;
         uVar9 = (int)uVar8 >> 0x1f;
-        iVar7 = *(int *)&this_ptr->field_0x44;
-        fVar1 = *(float *)&this_ptr->field_0x2c;
-        fVar2 = *(float *)&this_ptr->field_0x14;
-        fVar3 = *(float *)&this_ptr->field_0x30;
-        fVar4 = *(float *)&this_ptr->field_0x18;
+        iVar7 = (this_ptr->grid_coord).y;
+        fVar1 = (this_ptr->cell_size).y;
+        fVar2 = (this_ptr->bbox_min).y;
+        fVar3 = (this_ptr->cell_size).z;
+        fVar4 = (this_ptr->bbox_min).z;
         if (pfVar10 != local_20) {
           *pfVar10 = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) /
-                                 (longlong)*(int *)&this_ptr->field_0x44) *
-                     *(float *)&this_ptr->field_0x28 + *(float *)&this_ptr->field_0x10;
+                                 (longlong)(this_ptr->grid_coord).y) * (this_ptr->cell_size).x +
+                     (this_ptr->bbox_min).x;
           pfVar10[1] = (float)(int)((longlong)((ulonglong)uVar9 << 0x20 | uVar8 & 0xffffffff) %
                                    (longlong)iVar7) * fVar1 + fVar2;
           pfVar10[2] = (float)(iVar5 % iVar6) * fVar3 + fVar4;

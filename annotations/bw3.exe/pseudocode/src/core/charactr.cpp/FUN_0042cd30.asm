@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[36]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a104b
-;   core_baal.cpp_FUN_005968a0 at 005976c6
-;   core_boneguy.cpp_FUN_004179b0 at 00418005
-;   core_boneguy.cpp_FUN_00419b40 at 0041a157
-;   core_carved.cpp_FUN_00425da0 at 00426b23
-;   core_constrct.cpp_FUN_00442a20 at 00443598
-;   core_cow.cpp_FUN_00445130 at 0044536e
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a104b
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 005976c6
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fda2
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a157
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00418005
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426b23
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00443598
+;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 0044536e
+;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598c06
 ;   core_demnfolk.cpp_FUN_00455080 at 00455d36
-;   core_dog.cpp_FUN_004628b0 at 00462b69
-;   core_gargoyle.cpp_FUN_004c5350 at 004c55ad
 ;   ... and 26 more
 ;
 ; Called Functions:

@@ -2,15 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 711,
-    "complexity_score": 772,
+    "complexity_score": 732,
     "cross_reference_count": 1,
     "function_call_count": 18,
     "global_count": 56,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 232,
-    "suspect_count": 50,
+    "suspect_count": 45,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
+      "pointer_truncation",
       "raw_address_constant",
       "undefined_data",
       "unknown_field",
@@ -70,7 +72,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004031c0",
@@ -105,7 +107,7 @@
     {
       "addr": "00465e50",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465e50"
+      "name": "engine_dosio.cpp_splitPath_FUN_00465e50"
     },
     {
       "addr": "004b0a20",
@@ -388,13 +390,13 @@
     },
     {
       "addr": "01d19cd0",
-      "name": "CAlphaBitmap_01d19cc4.field12_0xc",
+      "name": "CAlphaBitmap_01d19cc4.width",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01d19cd4",
-      "name": "CAlphaBitmap_01d19cc4.field16_0x10",
+      "name": "CAlphaBitmap_01d19cc4.height",
       "type": "undefined4",
       "value": null
     },
@@ -466,7 +468,7 @@
     },
     {
       "addr": "01d21558",
-      "name": "g_CGameInstance.field588_0x24c",
+      "name": "g_CGameInstance.field540_0x24c",
       "type": "undefined4",
       "value": null
     }
@@ -683,47 +685,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 66,
+      "line": 67,
       "match": "DAT_01d0cfc8",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00465e50(&DAT_01d0cfc8,(char *)0x0,(char *)0x0,local_120,(char *)0x0);",
+      "text": "(&DAT_01d0cfc8,(char *)0x0,(char *)0x0,local_120,(char *)0x0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 68,
       "match": "DAT_005c0d12",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_520,&DAT_005c0d12,local_120,&DAT_01d0cfa8);",
+      "text": "_sprintf(local_520,&DAT_005c0d12);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
-      "match": "DAT_01d0cfa8",
-      "severity": "mild",
-      "text": "FUN_005a28c0(local_520,&DAT_005c0d12,local_120,&DAT_01d0cfa8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
+      "line": 82,
       "match": "DAT_005c0d12",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_320,&DAT_005c0d12,local_220,&DAT_01d0cfa8);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 81,
-      "match": "DAT_01d0cfa8",
-      "severity": "mild",
-      "text": "FUN_005a28c0(local_320,&DAT_005c0d12,local_220,&DAT_01d0cfa8);",
+      "text": "_sprintf(local_320,&DAT_005c0d12);",
       "type": "undefined_data"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 83,
+      "line": 84,
       "match": "field_0x148",
       "severity": "mild",
       "text": "*(uint *)(&SNotesSection_ARRAY_01d0d214[0].field_0x148 + local_20) = 0x215;",
@@ -731,18 +717,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 84,
+      "line": 85,
       "match": "field_0x14c",
       "severity": "mild",
       "text": "*(int *)(&SNotesSection_ARRAY_01d0d214[0].field_0x14c + local_20) = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "iVar1 = iVar1 + *(int *)(&CAlphaBitmap_ARRAY_01d19bc0[0].field_0x10 + local_1c) + 10;",
       "type": "unnamed_field"
     },
     {
@@ -843,22 +821,6 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 158,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(int *)&CAlphaBitmap_ARRAY_01d19bc0[iVar1].field_0xc + -1,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 159,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "*(int *)&CAlphaBitmap_ARRAY_01d19bc0[iVar1].field_0x10 + -1,0xffff);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 168,
       "match": "field_0x24c",
       "severity": "mild",
@@ -922,22 +884,6 @@
       "type": "undefined_data"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 207,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "(_DAT_01c5fadc < 0x00000262 + CAlphaBitmap_01d19cc4._12_4_)) &&",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 208,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "(_DAT_01c5fae0 < 0x000001C0 + CAlphaBitmap_01d19cc4._16_4_)) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 209,
       "match": "DAT_005c17b4",
@@ -986,12 +932,28 @@
       "type": "undefined_data"
     },
     {
+      "description": "Pointer value `&CAlphaBitmap_ARRAY_01d19bc0[0].height` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 88,
+      "match": "(int)&CAlphaBitmap_ARRAY_01d19bc0[0].height",
+      "severity": "moderate",
+      "text": "iVar1 = iVar1 + *(int *)((int)&CAlphaBitmap_ARRAY_01d19bc0[0].height + local_1c) + 10;",
+      "type": "pointer_truncation"
+    },
+    {
       "description": "Raw hex literal 0x1d0d254 matches address of SNotesSection_ARRAY_01d0d214 (+64 bytes into) (type SNotesSection[6]). The decompiler dropped the symbolic reference \u2014 this is a pointer bit-pattern baked in as a constant and will SEGV when dereferenced in the relinked binary.",
       "line": 177,
       "match": "0x1d0d254",
       "severity": "moderate",
       "text": "unkaddr_004a76f0_cpp_FUN_004a7a70(iVar5 * 0x2e4 + 0x1d0d254);",
       "type": "raw_address_constant"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 88,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar1 = iVar1 + *(int *)((int)&CAlphaBitmap_ARRAY_01d19bc0[0].height + local_1c) + 10;",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 1,

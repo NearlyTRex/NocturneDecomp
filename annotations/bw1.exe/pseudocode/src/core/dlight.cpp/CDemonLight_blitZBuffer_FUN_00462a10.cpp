@@ -14,24 +14,24 @@ void __cdecl core_dlight_cpp_CDemonLight_blitZBuffer_FUN_00462a10(CDemonLight *t
   int iVar1;
   int iVar2;
   
-  if (*(int *)&this_ptr->field_0x2f9c == 0) {
+  if (this_ptr->master_zbuffer == (void *)0x0) {
     _DAT_01d1d400 = "..\\core\\dlight.cpp";
     _DAT_01d1d404 = 0x147;
     core_main_c_FUN_005030e0("CDemonLight::blitZBuffer - No master Z buffer");
   }
-  if ((((*(int *)&this_ptr->field_0x11d4 < *(int *)(source_rect + 4)) &&
-       (*(int *)&this_ptr->field_0x11d8 < *(int *)(source_rect + 0xc))) &&
-      (*(int *)source_rect < *(int *)&this_ptr->field_0x11dc)) &&
-     ((iVar2 = *(int *)(source_rect + 8), iVar2 < *(int *)&this_ptr->field_0x11e0 &&
-      (iVar2 <= *(int *)(source_rect + 0xc))))) {
+  if (((((this_ptr->base).viewport_rect.x_min < source_rect->x_max) &&
+       ((this_ptr->base).viewport_rect.x_max < source_rect->y_max)) &&
+      (source_rect->x_min < (this_ptr->base).viewport_rect.y_min)) &&
+     ((iVar2 = source_rect->y_min, iVar2 < (this_ptr->base).viewport_rect.y_max &&
+      (iVar2 <= source_rect->y_max)))) {
     do {
-      iVar1 = (*(int *)&this_ptr->field_0x1cc0 * iVar2 + *(int *)source_rect) * 2;
+      iVar1 = this_ptr->shadow_map_width * iVar2 + source_rect->x_min;
       iVar2 = iVar2 + 1;
       core_dstrendr_cpp_memcpyMMX_FUN_004886f1
-                ((void *)(*(int *)&this_ptr->field_0x2f94 + iVar1),
-                 (void *)(*(int *)&this_ptr->field_0x2f9c + iVar1),
-                 (*(int *)(source_rect + 4) - *(int *)source_rect) * 2 + 2);
-    } while (iVar2 <= *(int *)(source_rect + 0xc));
+                (this_ptr->shadow_depth_buffer + iVar1,
+                 (void *)((int)this_ptr->master_zbuffer + iVar1 * 2),
+                 (source_rect->x_max - source_rect->x_min) * 2 + 2);
+    } while (iVar2 <= source_rect->y_max);
   }
   return;
 }

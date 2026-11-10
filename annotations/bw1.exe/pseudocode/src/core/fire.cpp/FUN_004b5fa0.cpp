@@ -23,7 +23,7 @@ void core_fire_cpp_FUN_004b5fa0(uint param_1,uint param_2,uint param_3,uint para
     _DAT_01c9dab4 = 0;
   }
   (*(code *)**(uint **)&CFirefly_ARRAY_01c9dab8[iVar1].field_0x3c)(pCVar3,param_2,param_3);
-  iVar2 = core_actor_cpp_FUN_0040cc60(0xc000,0xffff);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0xc000,0xffff);
   *(uint *)&CFirefly_ARRAY_01c9dab8[iVar1].field_0x40 =
        (uint)((longlong)param_5 * (longlong)iVar2) >> 0x10 |
        (int)((ulonglong)((longlong)param_5 * (longlong)iVar2) >> 0x20) << 0x10;

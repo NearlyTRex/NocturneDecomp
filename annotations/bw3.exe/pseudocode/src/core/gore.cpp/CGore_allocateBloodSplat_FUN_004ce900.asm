@@ -7,8 +7,8 @@
 ; CGore *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_gore.cpp_CGore_createGroundBloodSplat_FUN_004ce950 at 004ce95f
 ;   core_gore.cpp_CGore_createWallBloodSplat_FUN_004ce980 at 004ce990
-;   core_gore.cpp_FUN_004ce950 at 004ce95f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d276b4

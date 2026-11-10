@@ -21,65 +21,65 @@ CDemonActorType * CBoxActor::getActorType(CBoxActor *this_ptr);
 // Address: 0041bd30
 CBoxActor * __cdecl CBoxActor::ctor(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041be70
+// Original: core_boxactor.cpp_CBoxActor_setup_FUN_0041be70
 // Address: 0041be70
-void __cdecl FUN_0041be70(CBoxActor *this_ptr);
+void __cdecl CBoxActor::setup(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_FUN_0041bf10
 // Address: 0041bf10
 void FUN_0041bf10(int param_1);
 
-// Original: core_boxactor.cpp_FUN_0041c090
+// Original: core_boxactor.cpp_CBoxActor_process_FUN_0041c090
 // Address: 0041c090
-void __cdecl FUN_0041c090(CBoxActor *this_ptr,float delta_time);
+void __cdecl CBoxActor::process(CBoxActor *this_ptr,float delta_time);
 
-// Original: core_boxactor.cpp_FUN_0041c580
+// Original: core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580
 // Address: 0041c580
-int __cdecl FUN_0041c580(CBoxActor *this_ptr);
+int __cdecl CBoxActor::renderOpaque(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041c690
+// Original: core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690
 // Address: 0041c690
-int __cdecl FUN_0041c690(CBoxActor *this_ptr);
+int __cdecl CBoxActor::renderTransparent(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041c790
+// Original: core_boxactor.cpp_CBoxActor_getBoundingBox_FUN_0041c790
 // Address: 0041c790
-void FUN_0041c790(int param_1);
+CBoundingBox3D * __cdecl CBoxActor::getBoundingBox(CBoxActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_boxactor.cpp_FUN_0041c7f0
+// Original: core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0
 // Address: 0041c7f0
-void __cdecl FUN_0041c7f0(CBoxActor *this_ptr);
+void __cdecl CBoxActor::archive(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041cae0
+// Original: core_boxactor.cpp_CBoxActor_getBlockVirtualDirectorFlag_FUN_0041cae0
 // Address: 0041cae0
-undefined4 FUN_0041cae0(int param_1);
+int __cdecl CBoxActor::getBlockVirtualDirectorFlag(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_getCollisionType_FUN_0041caf0
 // Address: 0041caf0
 ECollisionType __cdecl CBoxActor::getCollisionType(CBoxActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_boxactor.cpp_FUN_0041cb40
+// Original: core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40
 // Address: 0041cb40
-void __cdecl FUN_0041cb40(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
+void __cdecl CBoxActor::resolveRayPush(CBoxActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction);
 
-// Original: core_boxactor.cpp_FUN_0041ccc0
+// Original: core_boxactor.cpp_CBoxActor_canPickup_FUN_0041ccc0
 // Address: 0041ccc0
-undefined4 FUN_0041ccc0(int param_1,CDemonActor *param_2);
+int __cdecl CBoxActor::canPickup(CBoxActor *this_ptr,CDemonActor *picker);
 
-// Original: core_boxactor.cpp_FUN_0041ccf0
+// Original: core_boxactor.cpp_CBoxActor_pickup_FUN_0041ccf0
 // Address: 0041ccf0
-void FUN_0041ccf0(int param_1,undefined4 param_2);
+void __cdecl CBoxActor::pickup(CBoxActor *this_ptr,CDemonActor *carrier);
 
-// Original: core_boxactor.cpp_FUN_0041cd00
+// Original: core_boxactor.cpp_CBoxActor_onDropped_FUN_0041cd00
 // Address: 0041cd00
-void FUN_0041cd00(int param_1,CVector3f *param_2);
+void __cdecl CBoxActor::onDropped(CBoxActor *this_ptr,CVector3f *drop_position);
 
-// Original: core_boxactor.cpp_FUN_0041cd60
+// Original: core_boxactor.cpp_CBoxActor_getCarrier_FUN_0041cd60
 // Address: 0041cd60
-undefined4 FUN_0041cd60(int param_1);
+CDemonActor * __cdecl CBoxActor::getCarrier(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041cd70
+// Original: core_boxactor.cpp_CBoxActor_getGroundType_FUN_0041cd70
 // Address: 0041cd70
-undefined4 FUN_0041cd70(int param_1);
+EGroundType __cdecl CBoxActor::getGroundType(CBoxActor *this_ptr);
 
 // Original: core_boxactor.cpp_CBoxActor_onPickup_FUN_0041cd80
 // Address: 0041cd80
@@ -89,37 +89,37 @@ void __cdecl CBoxActor::onPickup(CBoxActor *this_ptr,CDemonActor *owner);
 // Address: 0041cda0
 void FUN_0041cda0(int param_1);
 
-// Original: core_boxactor.cpp_FUN_0041ce90
+// Original: core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90
 // Address: 0041ce90
-void __cdecl FUN_0041ce90(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
+void __cdecl CBoxActor::setPositionAndOrientation(CBoxActor *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
-// Original: core_boxactor.cpp_FUN_0041cf20
+// Original: core_boxactor.cpp_CBoxActor_getAllowedMeleeAttackTypes_FUN_0041cf20
 // Address: 0041cf20
-undefined4 FUN_0041cf20(int param_1);
+int __cdecl CBoxActor::getAllowedMeleeAttackTypes(CBoxActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041cf30
+// Original: core_boxactor.cpp_factoryFuncLightActor_FUN_0041cf30
 // Address: 0041cf30
-void FUN_0041cf30(void);
+void factoryFuncLightActor(void);
 
-// Original: core_boxactor.cpp_FUN_0041cf50
+// Original: core_boxactor.cpp_CLightActor_getActorType_FUN_0041cf50
 // Address: 0041cf50
-undefined * FUN_0041cf50(void);
+CDemonActorType * __cdecl CLightActor::getActorType(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_ctor_FUN_0041cf60
 // Address: 0041cf60
 CLightActor * __cdecl CLightActor::ctor(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041cff0
+// Original: core_boxactor.cpp_CLightActor_setup_FUN_0041cff0
 // Address: 0041cff0
-void FUN_0041cff0(CLightActor *param_1);
+void __cdecl CLightActor::setup(CLightActor *this_ptr);
 
-// Original: core_boxactor.cpp_FUN_0041d020
+// Original: core_boxactor.cpp_CLightActor_process_FUN_0041d020
 // Address: 0041d020
-void FUN_0041d020(CBoxActor *param_1,float param_2,undefined4 param_3,float param_4);
+void __cdecl CLightActor::process(CLightActor *this_ptr,float delta_time);
 
-// Original: core_boxactor.cpp_FUN_0041d270
+// Original: core_boxactor.cpp_CLightActor_archive_FUN_0041d270
 // Address: 0041d270
-void FUN_0041d270(CBoxActor *param_1);
+void __cdecl CLightActor::archive(CLightActor *this_ptr);
 
 // Original: core_boxactor.cpp_CLightActor_setupLightModel_FUN_0041d350
 // Address: 0041d350

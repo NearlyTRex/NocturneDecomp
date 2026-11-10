@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 82,
-    "complexity_score": 74,
+    "complexity_score": 73,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 33,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data",
       "unrolled_strlen"
     ],
-    "total_lines": 116
+    "total_lines": 115
   },
   "cross_references": [
     {
@@ -39,7 +39,7 @@
     {
       "addr": "004f6e90",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6e90"
+      "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90"
     },
     {
       "addr": "005a5b9c",
@@ -54,7 +54,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     }
   ],
   "globals": [
@@ -169,10 +169,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_005c8c3d",
       "severity": "mild",
-      "text": "FUN_005a28c0(out_buf,&DAT_005c8c3d,base_name,iVar5);",
+      "text": "_sprintf(out_buf,&DAT_005c8c3d);",
       "type": "undefined_data"
     },
     {

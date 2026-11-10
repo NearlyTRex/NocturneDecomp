@@ -21,16 +21,16 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
   CHealthItem *local_14;
   
   bVar6 = 0;
-  iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,"CAmmo");
+  iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CAmmo");
   if (iVar2 == 0) {
-    iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,"CWeapon");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CWeapon");
     if (iVar2 != 0) {
-      core_inv_cpp_FUN_004f8dc0(this_ptr,actor_ptr,5,1);
+      core_inv_cpp_CInventory_selectWeapon_FUN_004f8dc0(this_ptr,actor_ptr,5,1);
       return 0;
     }
-    iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,"CHealthItem");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CHealthItem");
     if (iVar2 == 0) {
-      iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,"CGasMask");
+      iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CGasMask");
       if (iVar2 != 0) {
         iVar2 = (CGasMask *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CGasMaskClassInfo.name_hash)
         ;
@@ -38,7 +38,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
         *(int *)(this_ptr + 0x45c) = iVar2;
         return 0;
       }
-      iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,"CGoggles");
+      iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CGoggles");
       if (iVar2 != 0) {
         iVar2 = (CGoggles *)core_actor_cpp_castToClassHash_FUN_0040c600(actor_ptr,g_CGogglesClassInfo.name_hash)
         ;
@@ -46,7 +46,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
         *(int *)(this_ptr + 0x460) = iVar2;
         return 0;
       }
-      iVar2 = core_actor_cpp_FUN_0040c550(actor_ptr,"CBoxActor");
+      iVar2 = core_actor_cpp_isOfClass_FUN_0040c550(actor_ptr,"CBoxActor");
       if (iVar2 != 0) {
         iVar2 = core_actor_cpp_castToClassHash_FUN_0040c600
                           (actor_ptr,g_CBoxActorClassInfo.name_hash);
@@ -121,8 +121,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
         pcVar5 = pcVar5 + 2;
       } while (cVar1 != '\0');
       core_game_cpp_CGame_displayMessage_FUN_004cc190(g_CGamePtr,local_114,5.0);
-      iVar2 = core_health_cpp_FUN_004ea530(local_14,*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4))
-      ;
+      iVar2 = core_health_cpp_CHealthItem_useItem_FUN_004ea530
+                        (local_14,*(CCharacter **)(_DAT_01d06ab4 * 4 + 0x1d06aa4));
       if (iVar2 < 1) {
         core_inv_cpp_FUN_004f8d00(this_ptr,actor_ptr,1);
         return 1;
@@ -136,7 +136,8 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004f9bd0(CInventory *this_ptr,CDe
       _DAT_01d1d404 = 0x720;
       core_main_c_FUN_005030e0("CInventory::select - Catch 22");
     }
-    core_inv_cpp_FUN_004fa4e0(this_ptr,*(int *)(iVar2 + 0x318));
+    core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
+              (this_ptr,*(int *)(iVar2 + 0x318));
   }
   return 0;
 }

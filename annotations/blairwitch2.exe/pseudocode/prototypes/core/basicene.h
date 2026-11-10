@@ -8,3 +8,51 @@
 // Original: core_basicene.cpp_staticInit_FUN_0059e380
 // Address: 0059e380
 void staticInit(void);
+
+// Original: core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0
+// Address: 0059e7d0
+void __cdecl CBasicEnemy::advanceMotion(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0
+// Address: 0059ebe0
+void __cdecl CBasicEnemy::processAnimationState(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90
+// Address: 0059ef90
+void __cdecl CBasicEnemy::processChasingState(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_CBasicEnemy_process_FUN_0059f420
+// Address: 0059f420
+void __cdecl CBasicEnemy::process(CBasicEnemy *this_ptr,float delta_time);
+
+// Original: core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0
+// Address: 0059f6b0
+int __cdecl CBasicEnemy::checkVictim(CBasicEnemy *this_ptr);
+
+// Original: core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800
+// Address: 0059f800
+void __cdecl CBasicEnemy::processDamage(CBasicEnemy *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_basicene.cpp_CBasicEnemy_getCollisionType_FUN_0059f960
+// Address: 0059f960
+ECollisionType __cdecl CBasicEnemy::getCollisionType(CBasicEnemy *this_ptr,SCollisionInfo *collision_info);
+
+// Original: core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980
+// Address: 0059f980
+int __cdecl CBasicEnemy::renderTransparent(CBasicEnemy *this_ptr);
+
+// Original: core_basicene.cpp_CBasicEnemy_renderOpaque_FUN_0059fa20
+// Address: 0059fa20
+int __cdecl CBasicEnemy::renderOpaque(CBasicEnemy *this_ptr);
+
+// Original: core_basicene.cpp_CBasicEnemy_isGrabbable_FUN_0059fa70
+// Address: 0059fa70
+int __cdecl CBasicEnemy::isGrabbable(CBasicEnemy *this_ptr,CDemonActor *grabber);
+
+// Original: core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270
+// Address: 005a0270
+void __cdecl CBasicEnemy::startBurn(CBasicEnemy *this_ptr,CVector3f *direction,float strength);
+
+// Original: core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380
+// Address: 005a0380
+void __cdecl CBasicEnemy::processBurnState(CBasicEnemy *this_ptr,float delta_time);

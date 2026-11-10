@@ -20,12 +20,13 @@ CBiggs * __cdecl core_biggs_cpp_CBiggs_ctor_FUN_004149f0(CBiggs *this_ptr)
   char *pcVar7;
   CMorph *pCVar8;
   
-  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
+  pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
   pCVar5 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
                      ((CKeyFramedModelInstance *)(pCVar4 + 1));
-  pCVar6 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)&pCVar5[1].field_0x8);
-  *(byte ***)(pCVar6 + -0xc298) = &g_CBiggsVTable;
-  core_skeleton_cpp_FUN_00569f50(pCVar6 + -0xc294,0x5d3c07);
+  pCVar6 = core_morph_cpp_CMorph_ctor_FUN_00522fa0((CMorph *)(pCVar5[1].part_visibility_flags + 2));
+  *(CEnemy_full_vtable **)(pCVar6 + -0xc298) = &g_CBiggsVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)(pCVar6 + -0xc294),(char *)0x5d3c07);
   pcVar7 = "bigAlien";
   pCVar8 = pCVar6 + 0xc2c;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950

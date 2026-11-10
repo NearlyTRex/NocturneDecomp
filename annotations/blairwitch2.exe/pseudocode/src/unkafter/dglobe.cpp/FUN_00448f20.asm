@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 unkafter_dglobe_cpp_FUN_00448f20(undefined4 param_1)
+; CDemonImage * unkafter_dglobe_cpp_FUN_00448f20(CDemonImage *param_1)
 ;
 ;
 ; Called Functions:
@@ -16,7 +16,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00448f21
     PUSH EBX                            ; 00448f25
     CALL core_dimage.cpp_FUN_00448fa0   ; 00448f26
-        ;   XREF to: 00448fa0 (UNCONDITIONAL_CALL)  ; undefined core_dimage.cpp_FUN_00448fa0()
+        ;   XREF to: 00448fa0 (UNCONDITIONAL_CALL)  ; void core_dimage.cpp_FUN_00448fa0(CDemonImage * this_ptr)
     ADD ESP,0x4                         ; 00448f2b
     MOV EAX,EBX                         ; 00448f2e
     POP EBX                             ; 00448f30

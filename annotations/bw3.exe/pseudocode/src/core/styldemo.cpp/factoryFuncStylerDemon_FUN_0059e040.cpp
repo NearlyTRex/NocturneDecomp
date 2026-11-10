@@ -11,7 +11,7 @@ void core_styldemo_cpp_factoryFuncStylerDemon_FUN_0059e040(void)
 {
   CStylerDemon *this_ptr;
   
-  this_ptr = (CStylerDemon *)FUN_005a3cb2(0xdd18);
+  this_ptr = (CStylerDemon *)debugAllocTracked1(0xdd18);
   if (this_ptr == (CStylerDemon *)0x0) {
     return;
   }

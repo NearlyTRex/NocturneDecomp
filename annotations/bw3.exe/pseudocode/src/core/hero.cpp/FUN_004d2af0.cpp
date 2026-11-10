@@ -32,15 +32,15 @@ uint core_hero_cpp_FUN_004d2af0(int param_1,int param_2,int param_3)
   if (param_3 == 0) {
     pcVar5 = "GETGRABBED";
     iVar3 = param_3;
-    pCVar2 = core_motion_cpp_FUN_004fc310(this_ptr);
-    iVar3 = core_motion_cpp_FUN_004fba50(pCVar2,pcVar5,iVar3);
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(this_ptr);
+    iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(pCVar2,pcVar5,iVar3);
     if (iVar3 < 0) {
       return 0;
     }
     pcVar5 = "GETGRABBED_FRONT";
     iVar3 = param_3;
-    pCVar2 = core_motion_cpp_FUN_004fc310(this_ptr);
-    iVar3 = core_motion_cpp_FUN_004fba50(pCVar2,pcVar5,iVar3);
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(this_ptr);
+    iVar3 = core_motion_cpp_CMotionList_findStateIndex_FUN_004fba50(pCVar2,pcVar5,iVar3);
     if (iVar3 < 0) {
       pcVar5 = "GETGRABBED";
     }

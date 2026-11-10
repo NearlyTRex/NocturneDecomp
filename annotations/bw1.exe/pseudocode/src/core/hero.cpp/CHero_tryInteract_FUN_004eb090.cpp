@@ -82,14 +82,14 @@ int __cdecl core_hero_cpp_CHero_tryInteract_FUN_004eb090(CHero *this_ptr)
        *(uint *)(&stack0xffffffd0 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
   fStack_18 = 1e+30;
   iVar2 = 0;
-  for (iVar5 = 0; iVar5 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar5 = iVar5 + 1) {
-    iStack_20 = *(int *)(&g_CDemonSetPtr->field_0x14d168 + iVar2);
+  for (iVar5 = 0; iVar5 < g_CDemonSetPtr->actor_count; iVar5 = iVar5 + 1) {
+    iStack_20 = *(int *)((int)g_CDemonSetPtr->actors + iVar2);
     fStack_a8 = (float)(**(code **)(*(int *)(iStack_20 + 0x154) + 0x60))
                                  (iStack_20,this_ptr,&stack0xffffffd4,&iStack_20);
     pCVar1 = g_CDemonSetPtr;
     if ((0.0 <= fStack_a8) && (fStack_a8 < fStack_18)) {
       *(uint *)(this_ptr + 0x1ff60) = 1;
-      *(uint *)(this_ptr + 0x1ff64) = *(uint *)(&pCVar1->field_0x14d168 + iVar2);
+      *(uint *)(this_ptr + 0x1ff64) = *(uint *)((int)pCVar1->actors + iVar2);
       *(uint *)(this_ptr + 0x1ff70) = 0;
       *(int *)(this_ptr + 0x1ff68) = iStack_20;
       fStack_18 = fStack_a8;

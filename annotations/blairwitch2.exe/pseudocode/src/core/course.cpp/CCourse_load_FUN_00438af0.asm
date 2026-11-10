@@ -10,11 +10,11 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[5]:
-;   core_bat.cpp_FUN_004110a0 at 004110c5
-;   core_frankgen.cpp_FUN_004ac230 at 004ac440
-;   core_marquee.cpp_FUN_004e7e80 at 004e7e9c
-;   core_platfrm.cpp_FUN_00518280 at 005182dd
-;   core_vehicle.cpp_FUN_00583c40 at 00583ee2
+;   core_bat.cpp_CBat_setup_FUN_004110a0 at 004110c5
+;   core_frankgen.cpp_CFrankenstienMachine_setup_FUN_004ac230 at 004ac440
+;   core_marquee.cpp_CMarquee_setup_FUN_004e7e80 at 004e7e9c
+;   core_platfrm.cpp_CPlatform_setup_FUN_00518280 at 005182dd
+;   core_vehicle.cpp_CVehicle_setup_FUN_00583c40 at 00583ee2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005ce019

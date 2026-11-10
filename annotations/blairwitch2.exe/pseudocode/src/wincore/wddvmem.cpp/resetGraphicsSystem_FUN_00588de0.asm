@@ -31,7 +31,7 @@
 ;   engine_special.cpp_clearScreen_FUN_0055b1f0
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770
 ;   wincore_wddvmem.cpp_FUN_00588a50
-;   wincore_wddvmem.cpp_FUN_00589560
+;   wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 ;   wincore_winrun.cpp_getNextKeypress_FUN_0058ead0
 ;
 ; *****************************************************************************
@@ -225,8 +225,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 00588fbb
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00588fc0
-    CALL wincore_wddvmem.cpp_FUN_00589560 ; 00588fc3
-        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_00589560()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_00589560 ; 00588fc3
+        ;   XREF to: 00589560 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_00589560()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_0058ead0 ; 00588fc8
         ;   XREF to: 0058ead0 (UNCONDITIONAL_CALL)  ; int wincore_winrun.cpp_getNextKeypress_FUN_0058ead0()
     JMP 0x00588e0a                      ; 00588fcd

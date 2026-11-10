@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 304,
+    "complexity_score": 302,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 59,
+    "pseudocode_lines": 57,
     "suspect_count": 23,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 180
+    "total_lines": 178
   },
   "cross_references": [],
   "function": {
@@ -27,7 +27,7 @@
     ],
     "convention": "unknown",
     "name": "core_dtrace.cpp_FUN_00474550",
-    "signature": "void core_dtrace_cpp_FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5)"
+    "signature": "void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)"
   },
   "function_calls": [
     {
@@ -105,7 +105,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_dtrace_cpp_FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5)",
+      "text": "void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -113,7 +113,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_dtrace_cpp_FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5)",
+      "text": "void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -121,7 +121,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_dtrace_cpp_FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5)",
+      "text": "void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -129,7 +129,7 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_dtrace_cpp_FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5)",
+      "text": "void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)",
       "type": "unnamed_param"
     },
     {
@@ -137,7 +137,23 @@
       "line": 4,
       "match": "param_5",
       "severity": "mild",
-      "text": "void core_dtrace_cpp_FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5)",
+      "text": "void core_dtrace_cpp_FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 23,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar1 = (param_1->cell_size).x;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar2 = (param_1->cell_size).y;",
       "type": "unnamed_param"
     },
     {
@@ -145,15 +161,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x28);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 26,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)(param_1 + 0x2c);",
+      "text": "fVar3 = (param_1->cell_size).z;",
       "type": "unnamed_param"
     },
     {
@@ -161,7 +169,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = *(float *)(param_1 + 0x30);",
+      "text": "fVar4 = (param_1->bbox_min).x;",
       "type": "unnamed_param"
     },
     {
@@ -169,28 +177,20 @@
       "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar4 = *(float *)(param_1 + 0x10);",
+      "text": "fVar5 = (param_1->bbox_min).y;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar5 = *(float *)(param_1 + 0x14);",
+      "text": "fVar6 = (param_1->bbox_min).z;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "fVar6 = *(float *)(param_1 + 0x18);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*param_2 != 0) && (*(char *)(*param_2 + iStack_24) != '\\0')) {",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 36,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*param_2 != 0) && (*(char *)(*param_2 + iStack_24) != '\\0')) {",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 40,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((*(byte *)(*param_2 + iStack_18) & (&DAT_00613888)[iVar7]) != 0) {",
@@ -214,7 +214,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 42,
+      "line": 40,
       "match": "DAT_00613888",
       "severity": "mild",
       "text": "if ((*(byte *)(*param_2 + iStack_18) & (&DAT_00613888)[iVar7]) != 0) {",
@@ -222,15 +222,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 43,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_34 = (float)iVar7 * *(float *)(param_1 + 0x28) * _DAT_005d1b6f +",
+      "text": "CStack_34.x = (float)iVar7 * (param_1->cell_size).x * _DAT_005d1b6f +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 44,
+      "line": 42,
       "match": "param_3",
       "severity": "mild",
       "text": "(float)param_3 * fVar1 + fVar4;",
@@ -238,15 +238,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_30 = (float)iVar8 * *(float *)(param_1 + 0x2c) * _DAT_005d1b6f +",
+      "text": "CStack_34.y = (float)iVar8 * (param_1->cell_size).y * _DAT_005d1b6f +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 45,
       "match": "param_4",
       "severity": "mild",
       "text": "(float)param_4 * fVar2 + fVar5;",
@@ -254,15 +254,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_2c = (float)iStack_1c * *(float *)(param_1 + 0x30) * _DAT_005d1b6f +",
+      "text": "CStack_34.z = (float)iStack_1c * (param_1->cell_size).z * _DAT_005d1b6f +",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 47,
       "match": "param_5",
       "severity": "mild",
       "text": "(float)param_5 * fVar3 + fVar6;",
@@ -270,10 +270,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_dtrace_cpp_FUN_00474020(param_1,&fStack_34);",
+      "text": "core_dtrace_cpp_FUN_00474020(param_1,&CStack_34);",
       "type": "unnamed_param"
     }
   ]

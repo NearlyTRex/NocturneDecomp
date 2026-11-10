@@ -2,33 +2,35 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 15,
+    "complexity_score": 30,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 15,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 51
   },
   "cross_references": [
     {
-      "addr": "00422930",
-      "from_addr": "00422add",
-      "name": "core_charactr.cpp_FUN_00422930",
+      "addr": "0042b440",
+      "from_addr": "0042b537",
+      "name": "core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0042b440",
-      "from_addr": "0042b537",
-      "name": "core_charactr.cpp_FUN_0042b440",
+      "addr": "00422930",
+      "from_addr": "00422add",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_00422930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056f3a0",
       "from_addr": "0056f42c",
-      "name": "core_succubus.cpp_FUN_0056f3a0",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +60,7 @@
       {
         "call_addr": "00422add",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00422930",
+        "caller": "core_charactr.cpp_CCharacter_setup_FUN_00422930",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -69,7 +71,7 @@
       {
         "call_addr": "0042b537",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042b440",
+        "caller": "core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440",
         "estimated_params": 4,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -80,7 +82,7 @@
       {
         "call_addr": "0056f42c",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_0056f3a0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -158,5 +160,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 14,
+      "match": "pCVar1 = (T *)pCVar1->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar1 = (CClothList *)pCVar1->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

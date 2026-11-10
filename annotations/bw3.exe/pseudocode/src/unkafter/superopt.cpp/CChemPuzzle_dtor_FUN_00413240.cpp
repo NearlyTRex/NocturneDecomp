@@ -24,7 +24,7 @@ CChemPuzzle * unkafter_superopt_cpp_CChemPuzzle_dtor_FUN_00413240(CChemPuzzle *t
   *(byte ***)this_ptr = &g_CChemPuzzleVTable;
   iVar1 = unkafter_superopt_cpp_FUN_004144a0(&this_ptr->field_0x70,0);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d300((CAlphaBitmap *)(iVar1 + -0x6c),0);
-  pCVar3 = (CChemPuzzle *)unkafter_alphabit_cpp_FUN_00411980(&pCVar2[-1].field_0x10,1);
+  pCVar3 = (CChemPuzzle *)unkafter_alphabit_cpp_FUN_00411980(&pCVar2[-1].height,1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

@@ -11,12 +11,12 @@ void __cdecl shape_edittool_cpp_CInputString_backspace_FUN_0047bc60(CInputString
 {
   int end_pos;
   
-  end_pos = *(int *)(this_ptr + 0x134);
+  end_pos = this_ptr->cursor_position;
   if (end_pos < 1) {
     shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0047baf0(this_ptr);
     return;
   }
-  *(int *)(this_ptr + 0x134) = end_pos + -1;
+  this_ptr->cursor_position = end_pos + -1;
   shape_edittool_cpp_CInputString_deleteRange_FUN_0047bba0(this_ptr,end_pos + -1,end_pos);
   shape_edittool_cpp_CInputString_setSelectionToCursor_FUN_0047baf0(this_ptr);
   return;

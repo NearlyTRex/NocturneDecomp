@@ -6,11 +6,12 @@
 #include "system/basetypes.h"
 
 // Structure: CIniFile
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x204 (516 bytes)
 #pragma pack(push, 1)
 typedef struct CIniFile {
-    char field_0[516]; // 0x0
+    char filename[256]; // 0x0
+    char section[256]; // 0x100
+    char field_512[4]; // 0x200
 } CIniFile;
 #pragma pack(pop)
 

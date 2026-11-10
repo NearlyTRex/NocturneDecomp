@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 68,
-    "complexity_score": 245,
+    "complexity_score": 205,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 6,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 20,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_field",
@@ -252,64 +252,32 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((uint *)&actor->field_0x30 != (uint *)(param_1 + 0x30)) {",
+      "text": "if (&actor->orient != (UOrientationVector *)(param_1 + 0x30)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if ((uint *)&actor->field_0x30 != (uint *)(param_1 + 0x30)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&actor->field_0x30 = *(uint *)(param_1 + 0x30);",
+      "text": "(actor->orient).vec.x = *(float *)(param_1 + 0x30);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&actor->field_0x30 = *(uint *)(param_1 + 0x30);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&actor->field_0x34 = *(uint *)(param_1 + 0x34);",
+      "text": "(actor->orient).vec.y = *(float *)(param_1 + 0x34);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&actor->field_0x34 = *(uint *)(param_1 + 0x34);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&actor->field_0x38 = *(uint *)(param_1 + 0x38);",
+      "text": "(actor->orient).vec.z = *(float *)(param_1 + 0x38);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&actor->field_0x38 = *(uint *)(param_1 + 0x38);",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 1,

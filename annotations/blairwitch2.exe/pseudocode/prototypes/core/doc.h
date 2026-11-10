@@ -41,17 +41,17 @@ void FUN_004501a2(void);
 // Address: 00450580
 CDoc * CDoc::dtor(CDoc *this_ptr,uint flags);
 
-// Original: core_doc.cpp_FUN_00450620
+// Original: core_doc.cpp_CDoc_setup_FUN_00450620
 // Address: 00450620
-void FUN_00450620(CHero *param_1);
+void __cdecl CDoc::setup(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_00450a60
+// Original: core_doc.cpp_CDoc_setCharacterModel_FUN_00450a60
 // Address: 00450a60
-void FUN_00450a60(int param_1,char *param_2,char *param_3);
+void __cdecl CDoc::setCharacterModel(CDoc *this_ptr,char *model_name,char *cloth_name);
 
-// Original: core_doc.cpp_FUN_00450b20
+// Original: core_doc.cpp_CDoc_process_FUN_00450b20
 // Address: 00450b20
-void FUN_00450b20(CCharacter *param_1,float param_2);
+void __cdecl CDoc::process(CDoc *this_ptr,float delta_time);
 
 // Original: core_doc.cpp_FUN_00450c60
 // Address: 00450c60
@@ -81,13 +81,13 @@ void FUN_00455170(int param_1,SPose *param_2);
 // Address: 00455270
 void FUN_00455270(int param_1,float param_2);
 
-// Original: core_doc.cpp_FUN_00455580
+// Original: core_doc.cpp_CDoc_setPositionAndOrientation_FUN_00455580
 // Address: 00455580
-void FUN_00455580(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CDoc::setPositionAndOrientation(CDoc *this_ptr,CVector3f *new_position,CVector3f *new_orientation);
 
 // Original: core_doc.cpp_FUN_004555c0
 // Address: 004555c0
-void FUN_004555c0(int param_1);
+void FUN_004555c0(CCharacter *param_1);
 
 // Original: core_doc.cpp_FUN_00455d10
 // Address: 00455d10
@@ -103,7 +103,7 @@ void FUN_004567c0(int param_1,int param_2);
 
 // Original: core_doc.cpp_FUN_004568e0
 // Address: 004568e0
-float * FUN_004568e0(int param_1,int param_2,float param_3);
+float * FUN_004568e0(CCharacter *param_1,int param_2,float param_3);
 
 // Original: core_doc.cpp_FUN_00458320
 // Address: 00458320
@@ -115,16 +115,64 @@ void FUN_004583a0(int param_1);
 
 // Original: core_doc.cpp_FUN_004583ec
 // Address: 004583ec
-undefined4 FUN_004583ec(int param_1);
+undefined4 FUN_004583ec(CCharacter *param_1);
 
 // Original: core_doc.cpp_FUN_00459555
 // Address: 00459555
 undefined4 FUN_00459555(void);
 
-// Original: core_doc.cpp_FUN_004597a0
+// Original: core_doc.cpp_CDoc_archive_FUN_004597a0
 // Address: 004597a0
-void FUN_004597a0(int param_1);
+void __cdecl CDoc::archive(CDoc *this_ptr);
 
-// Original: core_doc.cpp_FUN_004599a0
+// Original: core_doc.cpp_CDoc_renderOpaque_FUN_004599a0
 // Address: 004599a0
-undefined4 FUN_004599a0(CDemonActor *param_1);
+int __cdecl CDoc::renderOpaque(CDoc *this_ptr);
+
+// Original: core_doc.cpp_CDoc_renderTransparent_FUN_00459d40
+// Address: 00459d40
+int __cdecl CDoc::renderTransparent(CDoc *this_ptr);
+
+// Original: core_doc.cpp_CDoc_processDamage_FUN_0045b190
+// Address: 0045b190
+void __cdecl CDoc::processDamage(CDoc *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_doc.cpp_CDoc_getCarryObjToBodyXForm_FUN_0045bb50
+// Address: 0045bb50
+CMatrix3x4f * __stack2_esi CDoc::getCarryObjToBodyXForm(CDoc *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+
+// Original: core_doc.cpp_CDoc_doHeroAction_FUN_0045ca30
+// Address: 0045ca30
+void __cdecl CDoc::doHeroAction(CDoc *this_ptr);
+
+// Original: core_doc.cpp_CDoc_canDoHeroAction_FUN_0045d0c0
+// Address: 0045d0c0
+int __cdecl CDoc::canDoHeroAction(CDoc *this_ptr,int action_type);
+
+// Original: core_doc.cpp_CDoc_canReachPickup_FUN_0045d6d0
+// Address: 0045d6d0
+int __cdecl CDoc::canReachPickup(CDoc *this_ptr,CDemonActor *item,int pickup_type,float *best_distance);
+
+// Original: core_doc.cpp_CDoc_getGrabbed_FUN_0045dc40
+// Address: 0045dc40
+int __cdecl CDoc::getGrabbed(CDoc *this_ptr,CDemonActor *grabber,int grab_type);
+
+// Original: core_doc.cpp_CDoc_getDeathState_FUN_0045dda0
+// Address: 0045dda0
+EDeathState __cdecl CDoc::getDeathState(CDoc *this_ptr);
+
+// Original: core_doc.cpp_CDoc_dropCarriedObject_FUN_0045ddd0
+// Address: 0045ddd0
+void __cdecl CDoc::dropCarriedObject(CDoc *this_ptr,int hand_index,CVector3f *drop_direction);
+
+// Original: core_doc.cpp_CDoc_drop_FUN_0045de30
+// Address: 0045de30
+void __cdecl CDoc::drop(CDoc *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
+
+// Original: core_doc.cpp_CDoc_getTargetPoints_FUN_0045de80
+// Address: 0045de80
+int __cdecl CDoc::getTargetPoints(CDoc *this_ptr,CVector3f *out_points_array);
+
+// Original: core_doc.cpp_CDoc_setInventoryIndex_FUN_0045def0
+// Address: 0045def0
+void __cdecl CDoc::setInventoryIndex(CDoc *this_ptr,int index);

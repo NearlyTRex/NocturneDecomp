@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 356,
-    "complexity_score": 1187,
+    "complexity_score": 1047,
     "cross_reference_count": 2,
     "function_call_count": 5,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 132,
-    "suspect_count": 100,
+    "suspect_count": 86,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -28,7 +28,7 @@
     {
       "addr": "00431660",
       "from_addr": "0043190a",
-      "name": "core_charactr.cpp_FUN_00431660",
+      "name": "core_charactr.cpp_CCharacter_processWalking_FUN_00431660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +60,7 @@
     {
       "addr": "0040cfa0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cfa0"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0"
     },
     {
       "addr": "0042b9e0",
@@ -70,7 +70,7 @@
     {
       "addr": "00576250",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_00576250"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250"
     },
     {
       "addr": "00441ff0",
@@ -158,7 +158,7 @@
       {
         "call_addr": "0043190a",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00431660",
+        "caller": "core_charactr.cpp_CCharacter_processWalking_FUN_00431660",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -494,7 +494,7 @@
       "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;",
+      "text": "local_6c = *(float *)(param_2 + 0x20) - (param_1->base).location.position.x;",
       "type": "unnamed_param"
     },
     {
@@ -502,23 +502,15 @@
       "line": 37,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;",
+      "text": "local_6c = *(float *)(param_2 + 0x20) - (param_1->base).location.position.x;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 38,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;",
+      "text": "local_44 = *(float *)(param_2 + 0x24) - (param_1->base).location.position.y;",
       "type": "unnamed_param"
     },
     {
@@ -526,23 +518,15 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;",
+      "text": "local_44 = *(float *)(param_2 + 0x24) - (param_1->base).location.position.y;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;",
+      "text": "local_64 = *(float *)(param_2 + 0x28) - (param_1->base).location.position.z;",
       "type": "unnamed_param"
     },
     {
@@ -550,16 +534,8 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;",
+      "text": "local_64 = *(float *)(param_2 + 0x28) - (param_1->base).location.position.z;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -886,7 +862,7 @@
       "line": 102,
       "match": "&stack0xffffffc4",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_00576250(&stack0xffffffc4);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&stack0xffffffc4);",
       "type": "stack_ref"
     },
     {
@@ -926,16 +902,8 @@
       "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = local_50;",
+      "text": "param_1->turn_angle_accumulator = local_50;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 108,
-      "match": "field_0x2508",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = local_50;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -950,16 +918,8 @@
       "line": 110,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((float)_DAT_005b848e < ABS(*(float *)&param_1->field_0x2508)) goto LAB_004312a4;",
+      "text": "if ((float)_DAT_005b848e < ABS(param_1->turn_angle_accumulator)) goto LAB_004312a4;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x2508",
-      "severity": "mild",
-      "text": "if ((float)_DAT_005b848e < ABS(*(float *)&param_1->field_0x2508)) goto LAB_004312a4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -974,16 +934,8 @@
       "line": 114,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (ABS(*(float *)&param_1->field_0x2508) < (float)_DAT_005b8486) {",
+      "text": "if (ABS(param_1->turn_angle_accumulator) < (float)_DAT_005b8486) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x2508",
-      "severity": "mild",
-      "text": "if (ABS(*(float *)&param_1->field_0x2508) < (float)_DAT_005b8486) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -998,16 +950,8 @@
       "line": 117,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = 0;",
+      "text": "param_1->turn_angle_accumulator = 0.0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x2508",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x2508 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1022,16 +966,8 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_1c = *(uint *)&param_1->field_0x2508;",
+      "text": "local_1c = param_1->turn_angle_accumulator;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 123,
-      "match": "field_0x2508",
-      "severity": "mild",
-      "text": "local_1c = *(uint *)&param_1->field_0x2508;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1054,39 +990,15 @@
       "line": 130,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)&param_1->field_0x2508 = fVar3;",
+      "text": "param_1->turn_angle_accumulator = fVar3;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 130,
-      "match": "field_0x2508",
-      "severity": "mild",
-      "text": "*(float *)&param_1->field_0x2508 = fVar3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 132,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24a4 = 0;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 132,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24a4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 133,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24a0 = *(uint *)&param_1->field_0x24a4;",
+      "text": "(param_1->model).accumulated_root_motion.z = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -1094,31 +1006,15 @@
       "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24a0 = *(uint *)&param_1->field_0x24a4;",
+      "text": "(param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24a0 = *(uint *)&param_1->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x24a4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x24a0 = *(uint *)&param_1->field_0x24a4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 134,
+      "line": 133,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x249c = *(uint *)&param_1->field_0x24a0;",
+      "text": "(param_1->model).accumulated_root_motion.y = (param_1->model).accumulated_root_motion.z;",
       "type": "unnamed_param"
     },
     {
@@ -1126,24 +1022,16 @@
       "line": 134,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x249c = *(uint *)&param_1->field_0x24a0;",
+      "text": "(param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 134,
-      "match": "field_0x249c",
+      "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x249c = *(uint *)&param_1->field_0x24a0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 134,
-      "match": "field_0x24a0",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x249c = *(uint *)&param_1->field_0x24a0;",
-      "type": "unnamed_field"
+      "text": "(param_1->model).accumulated_root_motion.x = (param_1->model).accumulated_root_motion.y;",
+      "type": "unnamed_param"
     },
     {
       "description": "Pointer value `&stack0xffffffc8` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

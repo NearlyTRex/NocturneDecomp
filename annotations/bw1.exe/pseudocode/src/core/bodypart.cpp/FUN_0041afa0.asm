@@ -9,11 +9,11 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[5]:
-;   core_boneguy.cpp_FUN_0041c9a0 at 0041cc02
+;   core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_0041c9a0 at 0041cc02
 ;   core_carved.cpp_FUN_0042a930 at 0042ac28
 ;   core_demnfolk.cpp_FUN_0045b560 at 0045b852
 ;   core_mobster.cpp_FUN_0051e5d0 at 0051e860
-;   core_zombie.cpp_FUN_005bd560 at 005bd852
+;   core_zombie.cpp_CZombie_processPickup_FUN_005bd560 at 005bd852
 ;
 ; *****************************************************************************
 

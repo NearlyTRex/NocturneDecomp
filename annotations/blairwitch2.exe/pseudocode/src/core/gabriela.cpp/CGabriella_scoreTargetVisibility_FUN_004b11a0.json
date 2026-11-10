@@ -1,0 +1,363 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 271,
+    "complexity_score": 278,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 138,
+    "suspect_count": 11,
+    "suspect_types": [
+      "bit_int_float_compare",
+      "stack_alignment_array",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 409
+  },
+  "cross_references": [
+    {
+      "addr": "004b1530",
+      "from_addr": "004b175e",
+      "name": "core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004b1530",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b11a0",
+    "address_range": [
+      [
+        "004b11a0",
+        "004b1528"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0",
+    "signature": "float __cdecl core_gabriela_cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0(CGabriella *this_ptr,CDemonActor *target_actor,int use_wider_fov)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "00408d70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408d70"
+    },
+    {
+      "addr": "00408de0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408de0"
+    },
+    {
+      "addr": "00537e30",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_00537e30"
+    },
+    {
+      "addr": "00537e00",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_00537e00"
+    },
+    {
+      "addr": "00537eb0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0"
+    },
+    {
+      "addr": "00535ee0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_00535ee0"
+    },
+    {
+      "addr": "005838f0",
+      "is_variadic": false,
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0"
+    },
+    {
+      "addr": "005b7f5f",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005b7f5f"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d7143",
+      "name": "DAT_005d7143",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d714b",
+      "name": "DAT_005d714b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7153",
+      "name": "DAT_005d7153",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d715b",
+      "name": "DAT_005d715b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7163",
+      "name": "DAT_005d7163",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7167",
+      "name": "DAT_005d7167",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f22b0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01c264e0",
+      "name": "g_CEnemyClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fb32fc",
+      "name": "g_CDemonSetInstance.collision_actor",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004b175e",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_updateAimTracking_FUN_004b1530",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.481481481481482,
+    "instruction_count": 243,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 12,
+      "BRANCH": 2,
+      "CALL": 9,
+      "CALLIND": 3,
+      "CBRANCH": 14,
+      "COPY": 654,
+      "FLOAT2FLOAT": 44,
+      "FLOAT_ADD": 8,
+      "FLOAT_EQUAL": 7,
+      "FLOAT_LESS": 7,
+      "FLOAT_MULT": 6,
+      "FLOAT_NAN": 14,
+      "FLOAT_SQRT": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 150,
+      "INT_AND": 82,
+      "INT_CARRY": 13,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 28,
+      "INT_LESS": 3,
+      "INT_MULT": 38,
+      "INT_NOTEQUAL": 37,
+      "INT_OR": 35,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 21,
+      "INT_SUB": 80,
+      "INT_ZEXT": 66,
+      "LOAD": 79,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 73
+    },
+    "pcode_op_count": 1575
+  },
+  "stack_frame": {
+    "frame_size": 364,
+    "local_size": 352,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_15c",
+        "offset": -348,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      },
+      {
+        "is_param": true,
+        "name": "target_actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "use_wider_fov",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004b11ac",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 13,
+      "match": "afStackY_109c",
+      "severity": "moderate",
+      "text": "float afStackY_109c [970];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 57,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "((iVar2 == 0 || (iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x114))(iVar2), iVar2 < 1)))) {",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "core_actor_cpp_FUN_00408de0(this_ptr,&target_actor->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 94,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 94,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x24))(this_ptr);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 117,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "fStack_9c = *(float *)&this_ptr->field_0x20 + fStack_54;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 118,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "fStack_98 = *(float *)&this_ptr->field_0x24 + fStack_50;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 119,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "fStack_94 = *(float *)&this_ptr->field_0x28 + fStack_4c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 97,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Ghidra mistranslated a Watcom float bit-pattern compare as `(int)x`. Hex 0x3fc90fdb is the IEEE 754 bit pattern of 1.5708f. Rewrite in a .keep as a plain float compare against 1.5708f.",
+      "line": 90,
+      "match": "0x3fc90fdb < (int)fStack_5c)",
+      "severity": "moderate",
+      "text": "if (0x3fc90fdb < (int)fStack_5c) {",
+      "type": "bit_int_float_compare"
+    }
+  ]
+}

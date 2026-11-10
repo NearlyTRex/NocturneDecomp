@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 169,
-    "complexity_score": 185,
+    "complexity_score": 164,
     "cross_reference_count": 4,
     "function_call_count": 3,
     "global_count": 10,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 65,
-    "suspect_count": 11,
+    "pseudocode_lines": 64,
+    "suspect_count": 9,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 234
+    "total_lines": 233
   },
   "cross_references": [
     {
@@ -68,7 +68,7 @@
     {
       "addr": "005b2420",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b2420"
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
     }
   ],
   "globals": [
@@ -337,82 +337,66 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x1c",
+      "line": 33,
+      "match": "field_0x2c",
       "severity": "mild",
-      "text": "if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {",
+      "text": "local_28 = (float)(local_18 - *(int *)&this_ptr->players[player_index].field_0x2c) *",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x11c",
+      "line": 42,
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "if (player_index != *(int *)&this_ptr->field_0x11c) {",
+      "text": "local_18 = local_18 - *(int *)&this_ptr->players[player_index].field_0x30;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x4c",
+      "line": 50,
+      "match": "field_0x28",
       "severity": "mild",
-      "text": "local_28 = (float)(local_18 - *(int *)(&this_ptr->field_0x4c + iVar1)) * (float)_DAT_005ebe58;",
+      "text": "if ((*(float *)&this_ptr->players[player_index].field_0x28 < 0.0) || (max_ping <= local_2c)) {",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x50",
+      "line": 52,
+      "match": "field_0x28",
       "severity": "mild",
-      "text": "local_18 = local_18 - *(int *)(&this_ptr->field_0x50 + iVar1);",
+      "text": "*(uint *)&this_ptr->players[player_index].field_0x28 = 0xbf800000;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x48",
+      "line": 57,
+      "match": "field_0x2c",
       "severity": "mild",
-      "text": "if ((*(float *)(&this_ptr->field_0x48 + iVar1) < 0.0) || (max_ping <= local_2c)) {",
+      "text": "*(int *)&this_ptr->players[player_index].field_0x2c = _DAT_01d51da0;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x48",
+      "line": 64,
+      "match": "field_0x28",
       "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x48 + iVar1) = 0xbf800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x4c",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4c + iVar1) = _DAT_01d51da0;",
+      "text": "*(uint *)&this_ptr->players[player_index].field_0x28 = 0;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 65,
-      "match": "field_0x48",
+      "match": "field_0x2c",
       "severity": "mild",
-      "text": "*(uint *)(&this_ptr->field_0x48 + iVar1) = 0;",
+      "text": "*(int *)&this_ptr->players[player_index].field_0x2c = local_18;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 66,
-      "match": "field_0x4c",
+      "match": "field_0x30",
       "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x4c + iVar1) = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "*(int *)(&this_ptr->field_0x50 + iVar1) = local_18;",
+      "text": "*(int *)&this_ptr->players[player_index].field_0x30 = local_18;",
       "type": "unnamed_field"
     }
   ]

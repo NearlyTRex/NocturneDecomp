@@ -1,0 +1,191 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 86,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 41,
+    "suspect_count": 4,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 144
+  },
+  "cross_references": [
+    {
+      "addr": "00453610",
+      "from_addr": "00453958",
+      "name": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00453c90",
+    "address_range": [
+      [
+        "00453c90",
+        "00453dbe"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90",
+    "signature": "void __cdecl core_dcamera_cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90(CDemonCamera *this_ptr,int plane_index)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01342221",
+      "name": "DAT_01342221",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01342222",
+      "name": "DAT_01342222",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01342360",
+      "name": "DAT_01342360",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01342361",
+      "name": "DAT_01342361",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01342362",
+      "name": "DAT_01342362",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "013424a1",
+      "name": "DAT_013424a1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01354f60",
+      "name": "DAT_01354f60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00453958",
+        "call_type": "direct",
+        "caller": "core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00453610",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.436781609195402,
+    "instruction_count": 87,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 35,
+      "BOOL_OR": 1,
+      "BRANCH": 3,
+      "CBRANCH": 5,
+      "COPY": 59,
+      "INT_ADD": 47,
+      "INT_AND": 148,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 80,
+      "INT_LEFT": 14,
+      "INT_LESS": 7,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 18,
+      "INT_OR": 35,
+      "INT_SBORROW": 11,
+      "INT_SCARRY": 15,
+      "INT_SEXT": 6,
+      "INT_SLESS": 49,
+      "INT_SUB": 22,
+      "INT_XOR": 8,
+      "LOAD": 16,
+      "POPCOUNT": 35,
+      "STORE": 9,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 647
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonCamera *"
+      },
+      {
+        "is_param": true,
+        "name": "plane_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_01342221",
+      "severity": "mild",
+      "text": "*(byte *)(iVar3 + 0x1354e21) = (&DAT_01342221)[iVar1];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_01342220",
+      "severity": "mild",
+      "text": "*(byte *)(iVar5 + 0x1354e20) = (&DAT_01342220)[iVar4 * 0x140];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 37,
+      "match": "DAT_01342220",
+      "severity": "mild",
+      "text": "*(byte *)(iVar4 + 0x1354e21) = (&DAT_01342220)[iVar5];",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 40,
+      "match": "DAT_01342220",
+      "severity": "mild",
+      "text": "(&DAT_01342220)[iVar3 + iVar5];",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -27,10 +27,102 @@
     "size":55392
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_canLookAt",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getBlockVirtualDirectorFlag",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getInteractionInfo",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_info",
+        "type":{
+          "kind":"struct",
+          "name":"SInteractionInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_renderOpaque",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDrawSurface",
     "rtti_file":"cockpit/drawsurf.cpp",
-    "size":1
+    "size":32
   },
   {
     "kind":"class",
@@ -52,6 +144,27 @@
     "size":1512
   },
   {
+    "kind":"funcdef",
+    "name":"CHero_createDefaultWeapon",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CIni",
     "size":4
@@ -66,7 +179,7 @@
   {
     "kind":"class",
     "name":"CMirror",
-    "size":1
+    "size":288
   },
   {
     "kind":"class",
@@ -100,6 +213,88 @@
     "size":96
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_allocateSample",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bits_per_sample",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"channel_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sample_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sample_count",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_allocateSfx",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sample_buffer_id",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CSpark",
     "rtti_file":"core/emitter.cpp",
@@ -127,9 +322,116 @@
     "size":808
   },
   {
+    "kind":"funcdef",
+    "name":"CWeapon_renderAimBeam",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CZombieForest",
     "size":53580
+  },
+  {
+    "kind":"class",
+    "name":"CZombiePriest_full_vtable",
+    "size":336,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_ue",
+        "offset":320
+      },
+      {
+        "name":"_uzombiepriest",
+        "offset":332
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EDripType",
+    "size":4,
+    "values":[
+      {
+        "name":"DRIP_TYPE_WATER",
+        "value":0
+      },
+      {
+        "name":"DRIP_TYPE_LAVA",
+        "value":1
+      },
+      {
+        "name":"DRIP_TYPE_STALAG",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EOneShotState",
+    "size":4,
+    "values":[
+      {
+        "name":"ONE_SHOT_NO",
+        "value":0
+      },
+      {
+        "name":"ONE_SHOT_YES",
+        "value":1
+      },
+      {
+        "name":"ONE_SHOT_DONE",
+        "value":2
+      },
+      {
+        "name":"ONE_SHOT_DONE_IN_BACKGROUND",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"FileSearchHandlerFunc",
+    "params":[
+      {
+        "name":"param0",
+        "type":{
+          "kind":"builtin",
+          "name":"void",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"struct",
@@ -145,6 +447,22 @@
     "kind":"struct",
     "name":"SDamageInfo",
     "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SHuffmanTable",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SInteractionInfo",
+    "size":32
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLPrimitivePolyIndex",
+    "parent":"SMRGLHeaderPrimitive",
+    "size":56
   },
   {
     "kind":"struct",

@@ -6,11 +6,11 @@
 ;
 ; XREF[7]:
 ;   core_menu.cpp_FUN_004e94f0 at 004e9e2b
-;   core_sound.cpp_FUN_0055fcce at 0055fd0d
+;   core_sound.cpp_CSound_configure_FUN_005607d0 at 00560819
+;   core_sound.cpp_CSound_process_FUN_0055ff40 at 005601cf
 ;   core_sound.cpp_FUN_0055fd30 at 0055fdfd
-;   core_sound.cpp_FUN_0055ff40 at 005601cf
-;   core_sound.cpp_FUN_005607d0 at 00560819
-;   sound_sndmain.cpp_FUN_00559220 at 005594f3
+;   core_sound.cpp_syncChannel3WithChannel0_FUN_0055fcce at 0055fd0d
+;   sound_sndmain.cpp_readIni_FUN_00559220 at 005594f3
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00557f60 at 00557f69
 ;
 ; Referenced Globals:
@@ -29,7 +29,7 @@
 ;   core_main.c_FUN_004e4330
 ;   sound_sndmain.cpp_FUN_00556fd0
 ;   sound_sndmain.cpp_FUN_005586d0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
@@ -72,8 +72,8 @@ section .text
     CMP EAX,0x1                         ; 00556ce0
     JL 0x00556cd8                       ; 00556ce3
         ;   XREF to: 00556cd8 (CONDITIONAL_JUMP)  ; LAB_00556cd8
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00556ce5
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00556ce5
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
     MOV EAX,0x2ce721c                   ; 00556cea
     LEA EDX,[EAX + 0x4700]              ; 00556cef
     XOR ECX,ECX                         ; 00556cf5

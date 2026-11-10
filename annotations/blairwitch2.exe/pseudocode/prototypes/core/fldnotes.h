@@ -31,7 +31,7 @@ SPageResourceBitmap * PageResource::Bitmap_ctor(SPageResourceBitmap *this_ptr);
 
 // Original: core_fldnotes.cpp_FUN_004a2170
 // Address: 004a2170
-undefined1 * FUN_004a2170(undefined4 param_1,char *param_2,int param_3,int param_4);
+int * FUN_004a2170(undefined4 param_1,char *param_2,int param_3,int param_4);
 
 // Original: core_fldnotes.cpp_PageResource_Bitmap_dtor_FUN_004a2200
 // Address: 004a2200
@@ -159,7 +159,7 @@ void FUN_004a3280(int param_1);
 
 // Original: core_fldnotes.cpp_FUN_004a32c0
 // Address: 004a32c0
-undefined1 * FUN_004a32c0(int param_1);
+char *** FUN_004a32c0(int param_1);
 
 // Original: core_fldnotes.cpp_FUN_004a32e0
 // Address: 004a32e0
@@ -263,7 +263,7 @@ void FUN_004a50b0(undefined1 *param_1);
 
 // Original: core_fldnotes.cpp_FUN_004a5200
 // Address: 004a5200
-undefined4 FUN_004a5200(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+undefined4 FUN_004a5200(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4);
 
 // Original: core_fldnotes.cpp_FUN_004a5310
 // Address: 004a5310

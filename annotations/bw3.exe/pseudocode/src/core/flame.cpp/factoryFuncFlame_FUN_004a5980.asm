@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_flame.cpp_CFlame_ctor_FUN_004a59b0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x2a4                          ; 004a5980
         ;   Label: core_flame.cpp_factoryFuncFlame_FUN_004a5980
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004a5985
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004a5985
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004a598a
     TEST EAX,EAX                        ; 004a598d
     JNZ 0x004a5992                      ; 004a598f

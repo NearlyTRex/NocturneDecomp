@@ -1,0 +1,485 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 177,
+    "complexity_score": 517,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 77,
+    "suspect_count": 42,
+    "suspect_types": [
+      "extra_output",
+      "undefined_data",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 254
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0050c750",
+    "address_range": [
+      [
+        "0050c750",
+        "0050c972"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_path.cpp_renderGridQuad_FUN_0050c750",
+    "signature": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "0046c5e0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderVertexAlphaPoly_FUN_0046c5e0"
+    },
+    {
+      "addr": "005632a3",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_005632a3"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cb8ec",
+      "name": "DAT_005cb8ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cb8f4",
+      "name": "DAT_005cb8f4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f2afc",
+      "name": "DAT_005f2afc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203b390",
+      "name": "g_CDemonRaytraceInstance.bbox_min.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203b3b0",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.x",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203b3b4",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.y",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0203b3b8",
+      "name": "g_CDemonRaytraceInstance.adjusted_size.z",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.7272727272727275,
+    "instruction_count": 165,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 20,
+      "CALL": 11,
+      "COPY": 414,
+      "FLOAT2FLOAT": 15,
+      "FLOAT_ADD": 4,
+      "FLOAT_MULT": 7,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 6,
+      "INT_ADD": 88,
+      "INT_AND": 72,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 32,
+      "INT_LEFT": 8,
+      "INT_LESS": 1,
+      "INT_MULT": 6,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 22,
+      "INT_SUB": 36,
+      "INT_XOR": 4,
+      "INT_ZEXT": 6,
+      "LOAD": 59,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "ROUND": 6,
+      "STORE": 59,
+      "TRUNC": 6
+    },
+    "pcode_op_count": 945
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_5",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "void core_path_cpp_renderGridQuad_FUN_0050c750(int param_1,int param_2,int param_3,int param_4,uint param_5,int param_6,int param_7)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 11,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "uint extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 12,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "int *extraout_EDX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 13,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "int *extraout_EDX_00;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 14,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "int *extraout_EDX_01;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "fVar6 = (float10)param_1 * (float10)fVar1;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "fVar7 = (float10)param_2 * (float10)(g_CDemonRaytraceInstance.adjusted_size.y * _DAT_005cb8ec);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 30,
+      "match": "param_3",
+      "severity": "mild",
+      "text": "fVar8 = (float10)param_3 * (float10)fVar2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = param_4 << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 31,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "param_4 = param_4 << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "param_6 = param_6 << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 40,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "param_6 = param_6 << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 47,
+      "match": "extraout_EDX",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX + 0x30),pCVar9);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 53,
+      "match": "extraout_EDX_00",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX_00 + 0x60),pCVar9);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "param_7 = param_7 << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 59,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "param_7 = param_7 << 8;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 60,
+      "match": "extraout_EDX_01",
+      "severity": "moderate",
+      "text": "engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*extraout_EDX_01 + 0x90),pCVar9);",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 61,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "this_ptr = DAT_005f2afc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 62,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 62,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "*(int *)(DAT_005f2afc->vertex_buffer_ptr + 0x20) = param_4;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 63,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(uint *)(this_ptr->vertex_buffer_ptr + 0x24) = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 64,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x28) = param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 65,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x2c) = param_7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 66,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x50) = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 67,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(uint *)(this_ptr->vertex_buffer_ptr + 0x54) = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 68,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x58) = param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 69,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x5c) = param_7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 70,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x80) = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 71,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(uint *)(this_ptr->vertex_buffer_ptr + 0x84) = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 72,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x88) = param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 73,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0x8c) = param_7;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 74,
+      "match": "param_4",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0xb0) = param_4;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 75,
+      "match": "extraout_ECX",
+      "severity": "moderate",
+      "text": "*(uint *)(this_ptr->vertex_buffer_ptr + 0xb4) = extraout_ECX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 76,
+      "match": "param_6",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0xb8) = param_6;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 77,
+      "match": "param_7",
+      "severity": "mild",
+      "text": "*(int *)(this_ptr->vertex_buffer_ptr + 0xbc) = param_7;",
+      "type": "unnamed_param"
+    }
+  ]
+}

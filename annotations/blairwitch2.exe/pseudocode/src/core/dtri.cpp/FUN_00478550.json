@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 341,
-    "complexity_score": 465,
+    "complexity_score": 251,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 145,
-    "suspect_count": 30,
+    "pseudocode_lines": 146,
+    "suspect_count": 9,
     "suspect_types": [
       "self_copy_guard",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 486
+    "total_lines": 487
   },
   "cross_references": [
     {
@@ -33,7 +32,7 @@
     {
       "addr": "005621e0",
       "from_addr": "00562214",
-      "name": "core_stairs.cpp_FUN_005621e0",
+      "name": "core_stairs.cpp_CStairs_customGetFloorHeight_FUN_005621e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -501,144 +500,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "if (*(float *)&triangle->field_0x28 <= (float)_DAT_005d1df3) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "fVar9 = *(float *)&triangle->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&triangle->field_0x8 - *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&triangle->field_0x8 - *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "local_4c = *(float *)&triangle->field_0xc - *(float *)position;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_48 = *(float *)&triangle->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_44 = *(float *)&triangle->field_0x14 - *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_44 = *(float *)&triangle->field_0x14 - *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_7c = *(float *)&triangle->field_0x18 - *(float *)position;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "local_78 = *(float *)&triangle->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_74 = *(float *)&triangle->field_0x20 - *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_74 = *(float *)&triangle->field_0x20 - *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 87,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (local_78 <= *(float *)&position->field_0x4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "fVar9 = SQRT(*(float *)&triangle->field_0x2c * *(float *)&triangle->field_0x2c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 115,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "fVar9 = SQRT(*(float *)&triangle->field_0x2c * *(float *)&triangle->field_0x2c +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&triangle->field_0x24 * *(float *)&triangle->field_0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 116,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(float *)&triangle->field_0x24 * *(float *)&triangle->field_0x24);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 117,
+      "line": 118,
       "match": "DAT_01c21e80",
       "severity": "mild",
       "text": "if ((DAT_01c21e80 & 1) == 0) {",
@@ -646,7 +509,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_01c21e80",
       "severity": "mild",
       "text": "DAT_01c21e80 = DAT_01c21e80 | 1;",
@@ -654,47 +517,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 118,
+      "line": 119,
       "match": "DAT_01c21e80",
       "severity": "mild",
       "text": "DAT_01c21e80 = DAT_01c21e80 | 1;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 125,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "local_34 = *(float *)&triangle->field_0x24 * fVar9 + *(float *)position;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "local_2c = fVar9 * *(float *)&triangle->field_0x2c + *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_2c = fVar9 * *(float *)&triangle->field_0x2c + *(float *)&position->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 127,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_30 = *(float *)&position->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 129,
+      "line": 130,
       "match": "DAT_01c21e74",
       "severity": "mild",
       "text": "(triangle,&local_34,&DAT_01c21e74);",
@@ -702,7 +533,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 138,
+      "line": 139,
       "match": "DAT_01c21e74",
       "severity": "mild",
       "text": "(triangle,position,&DAT_01c21e74);",

@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   engine_3d.c_FUN_00407860 at 004078e8
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 004078e8
 ;   engine_3d.c_flushRenderQueue_FUN_004077f0 at 00407848
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046d960 at 0046dbb2
 ;

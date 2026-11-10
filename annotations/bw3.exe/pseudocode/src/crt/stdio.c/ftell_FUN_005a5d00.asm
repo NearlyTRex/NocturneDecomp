@@ -12,7 +12,7 @@
 ;   crt_stdio.c_fclose_FUN_005a3bc0 at 005a3c04
 ;   sound_mp3.cpp_FUN_004fd3c0 at 004fd3f2
 ;   sound_mp3.cpp_FUN_00502890 at 005028ef
-;   support_newmsg.cpp_FUN_005084c0 at 00508515
+;   support_newmsg.cpp_readMessageFile_FUN_005084c0 at 00508515
 ;   support_trstream.cpp_FUN_00574960 at 00574972
 ;
 ; Referenced Globals:

@@ -11,7 +11,7 @@ void core_filmreel_cpp_factoryFuncFilmReel_FUN_004928f0(void)
 {
   CFilmReel *this_ptr;
   
-  this_ptr = (CFilmReel *)FUN_005b8be2(0x478);
+  this_ptr = (CFilmReel *)debugAllocTracked1(0x478);
   if (this_ptr == (CFilmReel *)0x0) {
     return;
   }

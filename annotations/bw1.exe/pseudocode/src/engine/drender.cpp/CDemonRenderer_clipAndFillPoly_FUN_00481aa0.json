@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 111,
-    "complexity_score": 133,
+    "complexity_score": 135,
     "cross_reference_count": 25,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 33,
+    "pseudocode_lines": 35,
     "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 144
+    "total_lines": 146
   },
   "cross_references": [
     {
@@ -337,36 +337,36 @@
       "line": 13,
       "match": "DAT_01c51d14",
       "severity": "mild",
-      "text": "if (((*(int *)(this_ptr + 4) == 0) || ((DAT_01c51d14 & 1) != 0)) && ((DAT_01c51d14 & 5) != 0)) {",
+      "text": "if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 13,
+      "line": 14,
       "match": "DAT_01c51d14",
       "severity": "mild",
-      "text": "if (((*(int *)(this_ptr + 4) == 0) || ((DAT_01c51d14 & 1) != 0)) && ((DAT_01c51d14 & 5) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01c51d14",
-      "severity": "mild",
-      "text": "if (((*(int *)(this_ptr + 4) == 0) || ((DAT_01c51d14 & 1) != 0)) && ((DAT_01c51d14 & 5) != 0)) {",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 21,
-      "match": "DAT_01c51d14",
-      "severity": "mild",
-      "text": "if (((*(int *)(this_ptr + 4) == 0) || ((DAT_01c51d14 & 1) != 0)) && ((DAT_01c51d14 & 5) != 0)) {",
+      "text": "((DAT_01c51d14 & 5) != 0)) {",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 22,
+      "match": "DAT_01c51d14",
+      "severity": "mild",
+      "text": "if (((this_ptr->shadow_pass_active == 0) || ((DAT_01c51d14 & 1) != 0)) &&",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 23,
+      "match": "DAT_01c51d14",
+      "severity": "mild",
+      "text": "((DAT_01c51d14 & 5) != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
       "match": "DAT_01c51d15",
       "severity": "mild",
       "text": "if ((DAT_01c51d15 & 2) == 0) {",
@@ -374,7 +374,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 30,
+      "line": 32,
       "match": "DAT_007c7554",
       "severity": "mild",
       "text": "if (2 < DAT_007c7554) {",
@@ -382,7 +382,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 33,
       "match": "DAT_007c7558",
       "severity": "mild",
       "text": "unkafter_zombie_cpp_FUN_005bf120((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",
@@ -390,7 +390,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 31,
+      "line": 33,
       "match": "DAT_007c7554",
       "severity": "mild",
       "text": "unkafter_zombie_cpp_FUN_005bf120((SRenderVertex *)&DAT_007c7558,DAT_007c7554);",

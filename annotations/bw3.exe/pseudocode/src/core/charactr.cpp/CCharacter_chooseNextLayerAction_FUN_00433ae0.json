@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 136,
-    "complexity_score": 256,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
-    "suspect_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 58,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 192
+    "total_lines": 194
   },
   "cross_references": [
     {
@@ -226,148 +226,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2f00 < 0) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x27c4",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x27c4 <= *(int *)&this_ptr->field_0x2f00)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x27c4 <= *(int *)&this_ptr->field_0x2f00)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x2f04",
-      "severity": "mild",
-      "text": "if ((float)_DAT_005b882e <= *(float *)&this_ptr->field_0x2f04) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x2f04",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x2f04 <= (float)_DAT_005b8836) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x27cc",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x27cc + *(int *)&this_ptr->field_0x2f00 * 0x38);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x27cc + *(int *)&this_ptr->field_0x2f00 * 0x38);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x27c8",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x27c8 + *(int *)&this_ptr->field_0x2f00 * 0x38);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x27c8 + *(int *)&this_ptr->field_0x2f00 * 0x38);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x27c4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x27c4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x27c8",
-      "severity": "mild",
-      "text": "piVar4 = (int *)&this_ptr->field_0x27c8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 38,
-      "match": "field_0xbc74",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0xbc74 + layer_action_index * 4 + *piVar4 * 0x84)",
-      "type": "unnamed_field"
+      "match": "(float *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(float *)((int)this_ptr->motion_transition_costs +",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x2f04",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f04 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2f00 = iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0xbc74",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0xbc74 + layer_action_index * 4 + piVar4[1] * 0x84);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x2f04",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f04 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x2f00",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2f00 = iVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x27c4",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x27c4);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(float *)((int)this_ptr",
+      "severity": "moderate",
+      "text": "*(float *)((int)this_ptr->motion_transition_costs +",
+      "type": "pointer_cast"
     }
   ]
 }

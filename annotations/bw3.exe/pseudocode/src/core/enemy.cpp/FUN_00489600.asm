@@ -8,8 +8,8 @@
 ; undefined        Stack[-0x50]:1  local_50
 ;
 ; XREF[2]:
-;   core_enemy.cpp_FUN_00489730 at 0048994d
-;   core_zombprie.cpp_FUN_0058e8d0 at 0058e90d
+;   core_enemy.cpp_CEnemy_updateVictim_FUN_00489730 at 0048994d
+;   core_zombiepriest.cpp_FUN_0058e8d0 at 0058e90d
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01ed78c8

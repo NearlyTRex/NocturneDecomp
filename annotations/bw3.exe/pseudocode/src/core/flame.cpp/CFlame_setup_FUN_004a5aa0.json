@@ -1,0 +1,139 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 9,
+    "cross_reference_count": 2,
+    "function_call_count": 3,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 27
+  },
+  "cross_references": [
+    {
+      "addr": "00416750",
+      "from_addr": "004167ce",
+      "name": "core_bodypart.cpp_CBodyPart_addFire_FUN_00416750",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005764b0",
+      "from_addr": "005765ec",
+      "name": "core_vessel.cpp_CCryptVessel_setup_FUN_005764b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004a5aa0",
+    "address_range": [
+      [
+        "004a5aa0",
+        "004a5acc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flame.cpp_CFlame_setup_FUN_004a5aa0",
+    "signature": "void __cdecl core_flame_cpp_CFlame_setup_FUN_004a5aa0(CFlame *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408890",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408890"
+    },
+    {
+      "addr": "004a5ad0",
+      "is_variadic": false,
+      "name": "core_flame.cpp_FUN_004a5ad0"
+    },
+    {
+      "addr": "005a35cc",
+      "is_variadic": false,
+      "name": "crt_stdlib.c_rand_FUN_005a35cc"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004167ce",
+        "call_type": "direct",
+        "caller": "core_bodypart.cpp_CBodyPart_addFire_FUN_00416750",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005765ec",
+        "call_type": "direct",
+        "caller": "core_vessel.cpp_CCryptVessel_setup_FUN_005764b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.357142857142857,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 10,
+      "INT_ADD": 7,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 7
+    },
+    "pcode_op_count": 61
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlame *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CFlame",
+        "offset": 0,
+        "vtable_addr": "005dfe74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

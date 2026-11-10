@@ -20,7 +20,7 @@
 ;   engine_drender.cpp_CDemonRenderer_clipAndDrawLine3D_FUN_00483e70
 ;   engine_matrix.c_pop_FUN_004839a0
 ;   engine_special.cpp_FUN_00580173
-;   shape_edittool.cpp_FUN_00497830
+;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830
 ;   shape_edittool.cpp_FUN_00498360
 ;
 ; *****************************************************************************
@@ -195,8 +195,8 @@ section .text
     MOV ECX,dword ptr [0x0061abc0]      ; 004416da | g_CEditorToolsPtr
         ;   Label: LAB_004416da
     PUSH ECX                            ; 004416e0
-    CALL shape_edittool.cpp_FUN_00497830 ; 004416e1
-        ;   XREF to: 00497830 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_FUN_00497830(CEditorTools * this_ptr)
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830 ; 004416e1
+        ;   XREF to: 00497830 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830(CEditorTools * this_ptr)
     ADD ESP,0x4                         ; 004416e6
     FLD float ptr [EBP + 0x14]          ; 004416e9
     PUSH EAX                            ; 004416ec
@@ -206,7 +206,7 @@ section .text
     FSTP float ptr [ESP]                ; 004416f9
     PUSH EBX                            ; 004416fc
     CALL shape_edittool.cpp_FUN_00498360 ; 004416fd
-        ;   XREF to: 00498360 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00498360()
+        ;   XREF to: 00498360 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00498360(CEditorTools * this_ptr, float scale_factor, int text_color)
     ADD ESP,0xc                         ; 00441702
     JMP 0x0044167c                      ; 00441705
         ;   XREF to: 0044167c (UNCONDITIONAL_JUMP)  ; LAB_0044167c

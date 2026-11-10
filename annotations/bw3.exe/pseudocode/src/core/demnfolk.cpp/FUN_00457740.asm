@@ -36,9 +36,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
-;   core_actor.cpp_FUN_0040c790
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_bodypart.cpp_FUN_00416bd0
 ;   core_bodypart.cpp_FUN_00416c50
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
@@ -119,8 +119,8 @@ section .text
     INC ECX                             ; 004577d4
     PUSH 0x40a00000                     ; 004577d5
     MOV dword ptr [EAX + 0xd058],ECX    ; 004577da
-    CALL core_actor.cpp_FUN_0040ce40    ; 004577e0
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004577e0
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x228],EAX     ; 004577e5
     FLD float ptr [ESP + 0x228]         ; 004577ec
     ADD ESP,0x8                         ; 004577f3
@@ -147,11 +147,11 @@ section .text
     MOV EAX,[0x00603b28]                ; 0045784f | g_CDemonSetPtr
         ;   Label: LAB_0045784f
     MOV EBX,dword ptr [ESP + 0x218]     ; 00457854
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0045785b | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0045785b | g_CDemonSetInstance.actor_count
     JGE 0x0045802b                      ; 00457861
         ;   XREF to: 0045802b (CONDITIONAL_JUMP)  ; LAB_0045802b
     ADD EAX,dword ptr [ESP + 0x210]     ; 00457867
-    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0045786e | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [EAX + 0x14d168]  ; 0045786e | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 00457874
     MOV EAX,dword ptr [EBX + 0x154]     ; 00457875
     CALL dword ptr [EAX + 0x94]         ; 0045787b
@@ -658,8 +658,8 @@ section .text
         ;   XREF to: 0045788c (CONDITIONAL_JUMP)  ; LAB_0045788c
     PUSH 0x5ba7ea                       ; 00457f0c | = "CBodyPart"
     PUSH EBX                            ; 00457f11
-    CALL core_actor.cpp_FUN_0040c790    ; 00457f12
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 00457f12
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 00457f17
     TEST EAX,EAX                        ; 00457f1a
     JZ 0x00457f38                       ; 00457f1c

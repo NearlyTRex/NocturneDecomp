@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 85,
-    "complexity_score": 124,
+    "complexity_score": 104,
     "cross_reference_count": 3,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 34,
-    "suspect_count": 7,
+    "suspect_count": 5,
     "suspect_types": [
       "bitcast_double_pair",
       "sub84_truncation",
@@ -33,7 +33,7 @@
     {
       "addr": "0056bd40",
       "from_addr": "0056be1f",
-      "name": "core_tommygun.cpp_FUN_0056bd40",
+      "name": "core_tommygun.cpp_CTommyGun_process_FUN_0056bd40",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -108,7 +108,7 @@
       {
         "call_addr": "0056be1f",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_0056bd40",
+        "caller": "core_tommygun.cpp_CTommyGun_process_FUN_0056bd40",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -228,26 +228,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x60 != 0) && (_DAT_02cf3280 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 29,
       "match": "field_0x50",
       "severity": "mild",
-      "text": "(*(CSampleInfo **)&this_ptr->field_0x68,*(double *)&this_ptr->field_0x50,",
+      "text": "(&this_ptr->sample->sample_info,*(double *)&(this_ptr->options).field_0x50,",
       "type": "unnamed_field"
     },
     {
@@ -255,7 +239,7 @@
       "line": 30,
       "match": "field_0x58",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x58,output_format);",
+      "text": "*(uint *)&(this_ptr->options).field_0x58,output_format);",
       "type": "unnamed_field"
     },
     {

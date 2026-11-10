@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 54,
-    "complexity_score": 135,
+    "complexity_score": 120,
     "cross_reference_count": 28,
     "function_call_count": 2,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 25,
-    "suspect_count": 9,
+    "suspect_count": 8,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unrolled_strcpy"
     ],
@@ -51,7 +50,7 @@
     {
       "addr": "00421960",
       "from_addr": "004219c1",
-      "name": "core_bugs.cpp_FUN_00421960",
+      "name": "core_bugs.cpp_CBugs_archive_FUN_00421960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -63,7 +62,7 @@
     {
       "addr": "00464cd0",
       "from_addr": "00464ceb",
-      "name": "core_door.cpp_FUN_00464cd0",
+      "name": "core_door.cpp_CDoor_archive_FUN_00464cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -75,13 +74,13 @@
     {
       "addr": "00488bb0",
       "from_addr": "00488cc8",
-      "name": "core_emitter.cpp_FUN_00488bb0",
+      "name": "core_emitter.cpp_CEmitter_archive_FUN_00488bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00489120",
       "from_addr": "004892ee",
-      "name": "core_enemy.cpp_FUN_00489120",
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -105,7 +104,7 @@
     {
       "addr": "004cc800",
       "from_addr": "004cc81c",
-      "name": "core_goggles.cpp_FUN_004cc800",
+      "name": "core_goggles.cpp_CGoggles_archive_FUN_004cc800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -117,7 +116,7 @@
     {
       "addr": "004d1fe0",
       "from_addr": "004d2003",
-      "name": "core_health.cpp_FUN_004d1fe0",
+      "name": "core_health.cpp_CHealthItem_archive_FUN_004d1fe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -141,7 +140,7 @@
     {
       "addr": "00512420",
       "from_addr": "00512440",
-      "name": "core_platfrm.cpp_FUN_00512420",
+      "name": "core_platfrm.cpp_CPlatform_archive_FUN_00512420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -171,7 +170,7 @@
     {
       "addr": "00575230",
       "from_addr": "0057526b",
-      "name": "core_tvbat.cpp_FUN_00575230",
+      "name": "core_tvbat.cpp_CTVBat_archive_FUN_00575230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -183,7 +182,7 @@
     {
       "addr": "0057b2a0",
       "from_addr": "0057b2c4",
-      "name": "core_weapon.cpp_FUN_0057b2a0",
+      "name": "core_weapon.cpp_CWeapon_archive_FUN_0057b2a0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -336,16 +335,8 @@
       "line": 16,
       "match": "param_1",
       "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x78;",
+      "text": "pcVar2 = param_1->model_name;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x78",
-      "severity": "mild",
-      "text": "pcVar2 = &param_1->field_0x78;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

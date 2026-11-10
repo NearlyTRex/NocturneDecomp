@@ -2,19 +2,19 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 355,
+    "complexity_score": 334,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 26,
+    "pseudocode_lines": 79,
+    "suspect_count": 24,
     "suspect_types": [
       "pointer_cast",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 246
+    "total_lines": 245
   },
   "cross_references": [],
   "function": {
@@ -38,7 +38,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     }
   ],
   "globals": [
@@ -173,14 +173,6 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
-      "match": "param_6",
-      "severity": "mild",
-      "text": "FUN_005a28c0(auStack_130,\"Invalid transparent color index: %d\",param_6);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_5",
       "severity": "mild",
@@ -301,15 +293,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 67,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "(auStack_130,\"Too many spans: bitmap %s, spans %d, scanline %d\",param_2,iStack_14,iStack_20);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 80,
       "match": "param_5",
       "severity": "mild",
       "text": "} while (iStack_20 < param_5);",

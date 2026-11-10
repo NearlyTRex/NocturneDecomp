@@ -2,39 +2,41 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 38,
-    "complexity_score": 16,
+    "complexity_score": 31,
     "cross_reference_count": 4,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 16,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "shadow_pointer_walk"
+    ],
     "total_lines": 54
   },
   "cross_references": [
     {
-      "addr": "0042c510",
-      "from_addr": "0042c6da",
-      "name": "core_charactr.cpp_FUN_0042c510",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00433e80",
       "from_addr": "00433efd",
-      "name": "core_charactr.cpp_FUN_00433e80",
+      "name": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00591ff0",
-      "from_addr": "005920a1",
-      "name": "core_succubus.cpp_FUN_00591ff0",
+      "addr": "0042c510",
+      "from_addr": "0042c6da",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00592320",
       "from_addr": "00592761",
-      "name": "core_succubus.cpp_FUN_00592320",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_00592320",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00591ff0",
+      "from_addr": "005920a1",
+      "name": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -64,7 +66,7 @@
       {
         "call_addr": "00433efd",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00433e80",
+        "caller": "core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433e80",
         "estimated_params": 6,
         "instructions_analyzed": 11,
         "method": "push_count",
@@ -75,7 +77,7 @@
       {
         "call_addr": "0042c6da",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_0042c510",
+        "caller": "core_charactr.cpp_CCharacter_setup_FUN_0042c510",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +88,7 @@
       {
         "call_addr": "005920a1",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00591ff0",
+        "caller": "core_succubus.cpp_CSuccubus_setup_FUN_00591ff0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -97,7 +99,7 @@
       {
         "call_addr": "00592761",
         "call_type": "direct",
-        "caller": "core_succubus.cpp_FUN_00592320",
+        "caller": "core_succubus.cpp_CSuccubus_process_FUN_00592320",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,5 +191,14 @@
       }
     ]
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 15,
+      "match": "pCVar2 = (T *)pCVar2->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar2 = (CClothList *)pCVar2->filenames;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
 }

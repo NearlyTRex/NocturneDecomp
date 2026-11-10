@@ -1,0 +1,230 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 31,
+    "complexity_score": 48,
+    "cross_reference_count": 2,
+    "function_call_count": 0,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [
+    {
+      "addr": "005163b0",
+      "from_addr": "005165a1",
+      "name": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00515e80",
+      "from_addr": "00516009",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005158e0",
+    "address_range": [
+      [
+        "005158e0",
+        "00515915"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_prim.c_findEdgeInBuffer_FUN_005158e0",
+    "signature": "SSoftwareEdge * __cdecl engine_prim_c_findEdgeInBuffer_FUN_005158e0(int y_value,SSoftwareEdge *edge_ptr)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "01ed2c88",
+      "name": "DAT_01ed2c88",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed2c8c",
+      "name": "DAT_01ed2c8c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ed2cdc",
+      "name": "DAT_01ed2cdc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00516009",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00516270",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005162bd",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0051638a",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_00515e80",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005165a1",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005165bb",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00516608",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "005168bc",
+        "call_type": "direct",
+        "caller": "engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.0,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CBRANCH": 4,
+      "COPY": 20,
+      "INT_ADD": 7,
+      "INT_AND": 17,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 16,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 8,
+      "INT_SUB": 5,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 8,
+      "RETURN": 1,
+      "STORE": 2
+    },
+    "pcode_op_count": 110
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "y_value",
+        "offset": 4,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "edge_ptr",
+        "offset": 8,
+        "size": 4,
+        "type": "SSoftwareEdge *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 10,
+      "match": "DAT_01ed2c8c",
+      "severity": "mild",
+      "text": "pSVar1 = (SSoftwareEdge *)&DAT_01ed2c8c;",
+      "type": "undefined_data"
+    }
+  ]
+}

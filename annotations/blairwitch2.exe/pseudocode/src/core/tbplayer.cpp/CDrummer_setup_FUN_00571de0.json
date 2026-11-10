@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 37,
+    "complexity_score": 93,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 23,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "unnamed_field"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00571de0",
+    "address_range": [
+      [
+        "00571de0",
+        "00571e5a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_tbplayer.cpp_CDrummer_setup_FUN_00571de0",
+    "signature": "void __cdecl core_tbplayer_cpp_CDrummer_setup_FUN_00571de0(CDrummer *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00510510",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_setup_FUN_00510510"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ec418",
+      "name": "s_Bip01_L_Hand_005ec418",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ec425",
+      "name": "s_Bip01_R_Hand_005ec425",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.71875,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "CALL": 4,
+      "COPY": 25,
+      "INT_ADD": 17,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 14,
+      "LOAD": 6,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 20
+    },
+    "pcode_op_count": 119
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrummer *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x261c",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.field_0x261c = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x2694",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.field_0x2694 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 19,
+      "match": "(byte *)((int)(this_ptr->bone_indices + 0) +",
+      "severity": "moderate",
+      "text": "uVar1 = *(byte *)((int)(this_ptr->bone_indices + 0) + 1);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast (int-cast of parenthesized pointer arithmetic)",
+      "line": 20,
+      "match": "(ushort *)((int)(this_ptr->bone_indices + 0) +",
+      "severity": "moderate",
+      "text": "uVar2 = *(ushort *)((int)(this_ptr->bone_indices + 0) + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 23,
+      "match": "field_0x261a",
+      "severity": "mild",
+      "text": "*(ushort *)&(this_ptr->base).base.field_0x261a = uVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x2690",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).base.field_0x2690 = this_ptr->bone_indices[1];",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fc894"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

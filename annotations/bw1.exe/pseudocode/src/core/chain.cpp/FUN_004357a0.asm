@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_chain.cpp_FUN_00435820 at 0043589c
-;   core_chain.cpp_FUN_00435c70 at 00435d8c
+;   core_chain.cpp_CChain_process_FUN_00435c70 at 00435d8c
+;   core_chain.cpp_CChain_setup_FUN_00435820 at 0043589c
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40

@@ -12,7 +12,7 @@
 ;   core_charactr.cpp_CCharacter_calculateChecksum_FUN_00429c70 at 00429cac
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040d180
+;   core_actor.cpp_crc32ProcessByte_FUN_0040d180
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH EAX                            ; 0040d2f4
     PUSH ESI                            ; 0040d2f5
     INC EBX                             ; 0040d2f6
-    CALL core_actor.cpp_FUN_0040d180    ; 0040d2f7
-        ;   XREF to: 0040d180 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d180()
+    CALL core_actor.cpp_crc32ProcessByte_FUN_0040d180 ; 0040d2f7
+        ;   XREF to: 0040d180 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_crc32ProcessByte_FUN_0040d180(uint * crc_state, byte input_byte)
     MOV DL,byte ptr [EBX]               ; 0040d2fc
     ADD ESP,0x8                         ; 0040d2fe
     TEST DL,DL                          ; 0040d301

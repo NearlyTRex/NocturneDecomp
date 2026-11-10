@@ -1,0 +1,219 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 168,
+    "complexity_score": 194,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 84,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unknown_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 252
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056cde0",
+    "address_range": [
+      [
+        "0056cde0",
+        "0056cffb"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trap.cpp_CTrap_process_FUN_0056cde0",
+    "signature": "void __cdecl core_trap_cpp_CTrap_process_FUN_0056cde0(CTrap *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "00408bf0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408bf0"
+    },
+    {
+      "addr": "0042abb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0"
+    },
+    {
+      "addr": "0053ed80",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_SCollisionInfo_ctor_FUN_0053ed80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "02d202ac",
+      "name": "g_CWerewolfClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.055944055944056,
+    "instruction_count": 143,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BOOL_OR": 9,
+      "BRANCH": 3,
+      "CALL": 4,
+      "CALLIND": 4,
+      "CBRANCH": 13,
+      "COPY": 241,
+      "FLOAT2FLOAT": 19,
+      "FLOAT_ADD": 5,
+      "FLOAT_EQUAL": 6,
+      "FLOAT_LESS": 6,
+      "FLOAT_NAN": 12,
+      "FLOAT_SUB": 2,
+      "INT_ADD": 88,
+      "INT_AND": 75,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 43,
+      "INT_LEFT": 24,
+      "INT_LESS": 4,
+      "INT_MULT": 8,
+      "INT_NOTEQUAL": 31,
+      "INT_OR": 30,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 13,
+      "INT_SLESS": 21,
+      "INT_SUB": 37,
+      "INT_XOR": 1,
+      "INT_ZEXT": 32,
+      "LOAD": 52,
+      "POPCOUNT": 21,
+      "RETURN": 2,
+      "STORE": 38
+    },
+    "pcode_op_count": 866
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrap *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 12,
+      "match": "auStackY_1004",
+      "severity": "moderate",
+      "text": "uint auStackY_1004 [975];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 13,
+      "match": "in_stack_ffffff40",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff40;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 42,
+      "match": "in_stack_ffffff40",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff40);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 55,
+      "match": "(uint *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_CDemonSetPtr->enemies + iVar8),",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unknown/mangled field access",
+      "line": 64,
+      "match": "._32_4_",
+      "severity": "mild",
+      "text": "(pCVar3->base).base.base.location.position.y + (float)auStack_7c._32_4_)) {",
+      "type": "unknown_field"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 67,
+      "match": "&stack0xfffffff4",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff4 + (uint)bVar7 * -8) = auStack_18[(uint)bVar7 * -2];",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 68,
+      "match": "&stack0xfffffff8",
+      "severity": "moderate",
+      "text": "*(uint *)(&stack0xfffffff8 + (uint)bVar7 * -8 + (uint)bVar7 * -8) =",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 47,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CTrap",
+        "offset": 12,
+        "vtable_addr": "005e5694"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

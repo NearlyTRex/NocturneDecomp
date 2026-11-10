@@ -15,7 +15,6 @@ void core_path_cpp_FUN_0053489e(void)
   int iVar1;
   int iVar2;
   int iVar3;
-  int iVar4;
   char acStack_11c [256];
   int iStack_1c;
   int iStack_18;
@@ -28,10 +27,8 @@ void core_path_cpp_FUN_0053489e(void)
     iVar3 = 0;
     iVar1 = 0;
     iStack_1c = iStack_14;
-    iVar4 = iStack_18;
     do {
-      FUN_005bfb40
-                (acStack_11c,0x5eca80,(&PTR_DAT_006227d0)[*(byte *)(iVar4 + 0x1e7abe8)]);
+      _sprintf(acStack_11c,(char *)0x5eca80);
       if ((iVar1 == _DAT_01e6c16c) && (iVar2 == _DAT_01e6c170)) {
         acStack_11c[0] = 's';
       }
@@ -39,7 +36,6 @@ void core_path_cpp_FUN_0053489e(void)
         acStack_11c[0] = 'd';
       }
       x = DAT_0061b498 / 2 + iVar3;
-      iVar4 = iVar4 + 1;
       iVar1 = iVar1 + 1;
       iVar3 = iVar3 + 0xe;
       engine_2d_c_drawText_FUN_00401fe0(acStack_11c,x,iStack_1c);

@@ -7,7 +7,7 @@
 ; CGame *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b7f90 at 004b8445
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8445
 ;
 ; Referenced Globals:
 ;   void* switchdataD_004b92d0 = 004b932f
@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_game.cpp_CGame_processJoystickControls_FUN_004b97b0
+;   core_game.cpp_CGame_processMouseControls_FUN_004ba2e0
 ;   core_game.cpp_FUN_004b9960
-;   core_game.cpp_FUN_004ba2e0
 ;   core_game.cpp_FUN_004ba490
 ;   core_game.cpp_FUN_004c07b0
 ;   core_main.c_FUN_004e4330
@@ -93,7 +93,7 @@ section .text
     MOV EAX,[0x01c5fae4]                ; 004b9359 | DAT_01c5fae4
     MOV [0x01d221f8],EAX                ; 004b935e | DAT_01d221f8
     MOV EAX,[0x00603b28]                ; 004b9363 | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b9368 | g_CDemonSetInstance.field1420984_0x15aeb8
+    MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004b9368 | g_CDemonSetInstance.selected_camera_index
     MOV [0x01d221fc],EAX                ; 004b936e | DAT_01d221fc
     POP EDI                             ; 004b9373
     POP ESI                             ; 004b9374
@@ -108,8 +108,8 @@ section .text
     PUSH EAX                            ; 004b937f
         ;   Label: caseD_1
     PUSH ESI                            ; 004b9380
-    CALL core_game.cpp_FUN_004ba2e0     ; 004b9381
-        ;   XREF to: 004ba2e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004ba2e0(CGame * this_ptr, SPlayerInput * player_control)
+    CALL core_game.cpp_CGame_processMouseControls_FUN_004ba2e0 ; 004b9381
+        ;   XREF to: 004ba2e0 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_processMouseControls_FUN_004ba2e0(CGame * this_ptr, SPlayerInput * player_control)
     JMP 0x004b9336                      ; 004b9386
         ;   XREF to: 004b9336 (UNCONDITIONAL_JUMP)  ; LAB_004b9336
     PUSH EAX                            ; 004b9388

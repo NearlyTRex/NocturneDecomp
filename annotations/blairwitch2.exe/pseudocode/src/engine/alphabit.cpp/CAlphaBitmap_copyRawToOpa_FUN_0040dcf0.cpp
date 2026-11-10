@@ -11,21 +11,21 @@ void __cdecl engine_alphabit_cpp_CAlphaBitmap_copyRawToOpa_FUN_0040dcf0(CAlphaBi
 {
   uint uVar1;
   uint uVar2;
-  uint *puVar3;
-  uint *puVar4;
+  char *pcVar3;
+  char *pcVar4;
   
-  uVar1 = *(int *)&this_ptr->field_0xc * *(int *)&this_ptr->field_0x10;
-  puVar3 = *(uint **)this_ptr;
-  puVar4 = *(uint **)&this_ptr->field_0x4;
+  uVar1 = this_ptr->width * this_ptr->height;
+  pcVar3 = this_ptr->raw;
+  pcVar4 = this_ptr->opa;
   for (uVar2 = uVar1 >> 2; uVar2 != 0; uVar2 = uVar2 - 1) {
-    *puVar4 = *puVar3;
-    puVar3 = puVar3 + 1;
-    puVar4 = puVar4 + 1;
+    *(uint *)pcVar4 = *(uint *)pcVar3;
+    pcVar3 = pcVar3 + 4;
+    pcVar4 = pcVar4 + 4;
   }
   for (uVar1 = uVar1 & 3; uVar1 != 0; uVar1 = uVar1 - 1) {
-    *(byte *)puVar4 = *(byte *)puVar3;
-    puVar3 = (uint *)((int)puVar3 + 1);
-    puVar4 = (uint *)((int)puVar4 + 1);
+    *pcVar4 = *pcVar3;
+    pcVar3 = pcVar3 + 1;
+    pcVar4 = pcVar4 + 1;
   }
   return;
 }

@@ -7,16 +7,16 @@
 ; SDamageInfo *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[53]:
-;   core_actor.cpp_FUN_00409f60 at 0040a339
-;   core_baal.cpp_FUN_005968a0 at 0059759a
-;   core_blundrbs.cpp_FUN_00410490 at 004111c8
-;   core_bodypart.cpp_FUN_00415350 at 00415500
-;   core_boneguy.cpp_FUN_004179b0 at 0041810f
-;   core_boneguy.cpp_FUN_00419b40 at 0041a261
-;   core_boxactor.cpp_FUN_0041f360 at 0041f7a5
-;   core_bugs.cpp_FUN_00422570 at 00422623
-;   core_burncrss.cpp_FUN_00424550 at 004248b9
-;   core_carved.cpp_FUN_00425da0 at 004261e7
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a339
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 0059759a
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004111c8
+;   core_bodypart.cpp_CBodyPart_process_FUN_00415350 at 00415500
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a261
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 0041810f
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f7a5
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 00422623
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 004248b9
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 004261e7
 ;   ... and 43 more
 ;
 ; *****************************************************************************

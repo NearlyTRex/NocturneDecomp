@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[3]:
-;   core_boxactor.cpp_FUN_004203f0 at 0042040e
-;   core_game.cpp_FUN_004b7f90 at 004b81de
+;   core_boxactor.cpp_CLightActor_setup_FUN_004203f0 at 0042040e
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b81de
 ;   core_setutil.cpp_C3DSLight_create_FUN_00542940 at 0054298e
 ;
 ; Referenced Globals:

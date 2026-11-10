@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 97,
-    "complexity_score": 253,
+    "complexity_score": 118,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 17,
+    "suspect_count": 4,
     "suspect_types": [
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unrolled_memcpy"
     ],
     "total_lines": 160
@@ -51,7 +50,7 @@
     {
       "addr": "005b5930",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_005b5930"
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_005b5930"
     },
     {
       "addr": "005b5200",
@@ -254,50 +253,10 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 9,
-      "match": "auStackY_1024",
+      "match": "afStackY_1024",
       "severity": "moderate",
-      "text": "uint auStackY_1024 [967];",
+      "text": "float afStackY_1024 [967];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2e0 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(local_cc,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "(local_cc,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "(local_9c,(CVector3f *)(*(int *)&this_ptr->field_0x2e0 + 0x20),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x2e0",
-      "severity": "mild",
-      "text": "(CVector3f *)(*(int *)&this_ptr->field_0x2e0 + 0x30));",
-      "type": "unnamed_field"
     },
     {
       "description": "Direct stack address reference",
@@ -308,76 +267,12 @@
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr->field_0x2e4 != auStack_38 + 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x2e4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2e4 = auStack_38[2];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x2e8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2e8 = auStack_38[3];",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x2ec",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2ec = local_28;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Direct stack address reference",
       "line": 53,
       "match": "&stack0xffffff04",
       "severity": "moderate",
-      "text": "core_xform_cpp_FUN_005b5930(&stack0xffffff04);",
+      "text": "core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff04);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x2f0",
-      "severity": "mild",
-      "text": "if ((uint *)&this_ptr->field_0x2f0 != auStack_38 + 8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 59,
-      "match": "field_0x2f0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f0 = local_18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x2f4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f4 = local_14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x2f8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2f8 = local_10;",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

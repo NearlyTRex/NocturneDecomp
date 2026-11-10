@@ -9,6 +9,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[37]:
+;   core_armour.cpp_FUN_0040ee30 at 0040ee3c
 ;   core_bodypart.cpp_FUN_0041b190 at 0041b19c
 ;   core_boxactor.cpp_CDemonFilter_arrdtor8_FUN_00423810 at 0042381c
 ;   core_dcube.cpp_CVector3f_arrdtor16_FUN_004fc490 at 004fc49c
@@ -18,7 +19,6 @@
 ;   core_fire.cpp_CFirefly_arrdtor64_FUN_004b7970 at 004b797c
 ;   core_fire.cpp_CGlassParticle_arrdtor256_FUN_004b7950 at 004b795f
 ;   core_fire.cpp_CLeaf_arrdtor64_FUN_004b78f0 at 004b78fc
-;   core_fire.cpp_CPopcorn_arrdtor256_FUN_004b7890 at 004b789f
 ;   ... and 27 more
 ;
 ; Called Functions:

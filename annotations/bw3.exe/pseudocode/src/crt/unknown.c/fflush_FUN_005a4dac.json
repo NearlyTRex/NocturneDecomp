@@ -1,0 +1,108 @@
+{
+  "compile_source": "c",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 15,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 51
+  },
+  "cross_references": [
+    {
+      "addr": "00465a80",
+      "from_addr": "00465a98",
+      "name": "engine_dosio.cpp_reopenFileStream_FUN_00465a80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a4dac",
+    "address_range": [
+      [
+        "005a4dac",
+        "005a4de6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "crt_unknown.c_fflush_FUN_005a4dac",
+    "signature": "void __cdecl crt_unknown_c_fflush_FUN_005a4dac(_FILE *stream)"
+  },
+  "function_calls": [
+    {
+      "addr": "005abc3c",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005abc3c"
+    },
+    {
+      "addr": "005abc85",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005abc85"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00465a98",
+        "call_type": "direct",
+        "caller": "engine_dosio.cpp_reopenFileStream_FUN_00465a80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.111111111111111,
+    "instruction_count": 27,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 20,
+      "INT_ADD": 12,
+      "INT_AND": 14,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 2,
+      "STORE": 8
+    },
+    "pcode_op_count": 111
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "stream",
+        "offset": 4,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": []
+}

@@ -1,0 +1,437 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 332,
+    "complexity_score": 213,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 37,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 113,
+    "suspect_count": 8,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 445
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00512420",
+    "address_range": [
+      [
+        "00512420",
+        "005127e5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_platfrm.cpp_CPlatform_archive_FUN_00512420",
+    "signature": "void __cdecl core_platfrm_cpp_CPlatform_archive_FUN_00512420(CPlatform *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b930",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveActor_FUN_0040b930"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040b8b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b8b0"
+    },
+    {
+      "addr": "0040b9b0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0"
+    },
+    {
+      "addr": "0040b5e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveQuaternion_FUN_0040b5e0"
+    },
+    {
+      "addr": "0040b680",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b680"
+    },
+    {
+      "addr": "0040b400",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveVector_FUN_0040b400"
+    },
+    {
+      "addr": "0040c280",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c280"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cc2a3",
+      "name": "s_modelName_005cc2a2+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cc2ad",
+      "name": "s_toStartEvent_005cc2ad",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2ba",
+      "name": "s_toEndEvent_005cc2ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2c5",
+      "name": "s_stopEvent_005cc2c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2cf",
+      "name": "s_startSound_005cc2cf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2da",
+      "name": "s_stopSound_005cc2da",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2e4",
+      "name": "s_activeSound_005cc2e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2f0",
+      "name": "s_courseFilename_005cc2f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc2ff",
+      "name": "s_startPos_005cc2ff",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc308",
+      "name": "s_origOrient_005cc308",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc313",
+      "name": "s_endPos_005cc313",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc31a",
+      "name": "s_endOrient_005cc31a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc324",
+      "name": "s_state_005cc324",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc32a",
+      "name": "s_param_005cc32a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc330",
+      "name": "s_travelTimeToStart_005cc330",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc342",
+      "name": "s_travelTimeToEnd_005cc342",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc352",
+      "name": "s_groundType_005cc352",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc35d",
+      "name": "s_oneShot_005cc35d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc365",
+      "name": "s_blockVirtualDirectorFlag_005cc365",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc37e",
+      "name": "s_renderInBackgroundWhenNo_005cc37e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc3a2",
+      "name": "s_cameraWhileMoving_005cc3a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc3b4",
+      "name": "s_plotAsBoxInShadow_005cc3b4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc3c6",
+      "name": "s_goalParam_005cc3c6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc3d0",
+      "name": "s_currentMovementRate_005cc3d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc3e4",
+      "name": "s_attachCount_005cc3e4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc3f0",
+      "name": "s_core_platfrm_cpp_005cc3f0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc404",
+      "name": "s_CPlatform_archive_too_ma_005cc404",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc433",
+      "name": "s_attach_actor_005cc433",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc440",
+      "name": "s_attachCount_005cc440",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc44c",
+      "name": "s_attach_actor_005cc44c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc459",
+      "name": "s_pushFlag_005cc459",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc462",
+      "name": "s_recomputeFog_005cc462",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cc46f",
+      "name": "s_plotInShadowFlag_005cc46f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00603718",
+      "name": "g_CPlatformClassVersion",
+      "type": "int",
+      "value": "0xb"
+    },
+    {
+      "addr": "007df9b8",
+      "name": "DAT_007df9b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.66015625,
+    "instruction_count": 256,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "CALL": 33,
+      "CBRANCH": 19,
+      "COPY": 167,
+      "INT_ADD": 96,
+      "INT_AND": 165,
+      "INT_CARRY": 41,
+      "INT_EQUAL": 143,
+      "INT_LEFT": 4,
+      "INT_LESS": 18,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 17,
+      "INT_OR": 10,
+      "INT_SBORROW": 18,
+      "INT_SCARRY": 44,
+      "INT_SLESS": 74,
+      "INT_SUB": 121,
+      "INT_XOR": 5,
+      "LOAD": 24,
+      "POPCOUNT": 70,
+      "RETURN": 2,
+      "STORE": 105
+    },
+    "pcode_op_count": 1193
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPlatform *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 65,
+      "match": "DAT_007df9b8",
+      "severity": "mild",
+      "text": "if (DAT_007df9b8 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 79,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 90,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 101,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 79,
+      "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 90,
+      "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 101,
+      "match": "pCVar1 = (T *)((int)&(pCVar1->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar1 = (CPlatform *)((int)&(pCVar1->base).orient + 4);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPlatform",
+        "offset": 212,
+        "vtable_addr": "005e3304"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

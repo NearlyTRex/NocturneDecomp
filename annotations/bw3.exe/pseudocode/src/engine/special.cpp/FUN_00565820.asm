@@ -8,10 +8,10 @@
 ;   core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_0044df60 at 0044df6e
 ;   core_game.cpp_FUN_004b6f30 at 004b729b
 ;   core_game.cpp_FUN_004bec20 at 004bede4
-;   core_mission.cpp_FUN_004f70a0 at 004f71b5
-;   engine_special.cpp_FUN_00565a90 at 00565b32
+;   core_mission.cpp_CDemonMission_process_FUN_004f70a0 at 004f71b5
 ;   engine_special.cpp_presentToExternalRenderer_FUN_00566260 at 005662d4
-;   shape_edittool.cpp_FUN_0047cbd0 at 0047cc20
+;   engine_special.cpp_setResolutionAndColorTable_FUN_00565a90 at 00565b32
+;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047cbd0 at 0047cc20
 ;   shape_edittool.cpp_FUN_0047ccb0 at 0047ccf0
 ;   unkafter_minecar.cpp_FUN_004ec930 at 004ec930
 ;

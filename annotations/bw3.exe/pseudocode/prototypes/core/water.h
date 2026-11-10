@@ -9,9 +9,9 @@
 // Address: 005771c0
 void staticInit(void);
 
-// Original: core_water.cpp_FUN_005771de
+// Original: core_water.cpp_calculateWaveHeight_FUN_005771de
 // Address: 005771de
-float FUN_005771de(int param_1,int param_2);
+float calculateWaveHeight(int param_1,int param_2);
 
 // Original: core_water.cpp_CWater_ctor_FUN_00577230
 // Address: 00577230
@@ -29,10 +29,10 @@ void __cdecl CWater::captureTextures(CWater *this_ptr);
 // Address: 00577290
 void __cdecl CWater::calculateVisibleTiles(CWater *this_ptr);
 
-// Original: core_water.cpp_FUN_005772e0
+// Original: core_water.cpp_CWater_process_FUN_005772e0
 // Address: 005772e0
-void __cdecl FUN_005772e0(CWater *this_ptr);
+void __cdecl CWater::process(CWater *this_ptr);
 
-// Original: core_water.cpp_FUN_00577760
+// Original: core_water.cpp_CWater_render_FUN_00577760
 // Address: 00577760
-void __cdecl FUN_00577760(CWater *this_ptr,int render_mode);
+void __cdecl CWater::render(CWater *this_ptr,int render_mode);

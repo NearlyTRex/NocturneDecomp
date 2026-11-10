@@ -15,7 +15,7 @@ void core_doc_cpp_FUN_0046f610(int param_1,int param_2)
   uint *puVar4;
   byte bVar5;
   uint auStackY_1020 [953];
-  CMatrix3x4f local_98 [48];
+  CMatrix3x4f local_98;
   uint local_68 [12];
   uint local_38;
   uint auStack_34 [5];
@@ -35,8 +35,8 @@ void core_doc_cpp_FUN_0046f610(int param_1,int param_2)
       puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
     }
     core_xform_cpp_FUN_005b5760
-              (local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
-    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff38,local_98);
+              (&local_98,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
+    core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&stack0xffffff38,&local_98);
     puVar3 = local_68;
     puVar4 = (uint *)&stack0xffffff08;
     for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {
@@ -46,7 +46,7 @@ void core_doc_cpp_FUN_0046f610(int param_1,int param_2)
     }
     iVar2 = *(int *)(param_1 + 0x20004);
     iVar1 = *(int *)(iVar2 + 0x154);
-    core_xform_cpp_FUN_005b5930(&stack0xffffff08);
+    core_xform_cpp_matrixToEulerAngles_FUN_005b5930(&stack0xffffff08);
     auStack_34[2] = local_38;
     auStack_34[(uint)bVar5 * -2 + 3] = auStack_34[(uint)bVar5 * -2];
     auStack_34[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =

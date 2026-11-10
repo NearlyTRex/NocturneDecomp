@@ -21,29 +21,29 @@ CDemonActorType * CHecaitomix::getActorType(CHecaitomix *this_ptr);
 // Address: 00597df0
 CHecaitomix * CHecaitomix::ctor(CHecaitomix *this_ptr);
 
-// Original: core_hecaitmx.cpp_FUN_00597e50
+// Original: core_hecaitmx.cpp_CHecaitomix_setup_FUN_00597e50
 // Address: 00597e50
-void FUN_00597e50(CEnemy *param_1);
+void __cdecl CHecaitomix::setup(CHecaitomix *this_ptr);
 
-// Original: core_hecaitmx.cpp_FUN_00597f40
+// Original: core_hecaitmx.cpp_CHecaitomix_process_FUN_00597f40
 // Address: 00597f40
-void FUN_00597f40(CEnemy *param_1,float param_2);
+void __cdecl CHecaitomix::process(CHecaitomix *this_ptr,float delta_time);
 
-// Original: core_hecaitmx.cpp_FUN_00598480
+// Original: core_hecaitmx.cpp_CHecaitomix_renderTransparent_FUN_00598480
 // Address: 00598480
-undefined4 FUN_00598480(CCharacter *param_1);
+int __cdecl CHecaitomix::renderTransparent(CHecaitomix *this_ptr);
 
-// Original: core_hecaitmx.cpp_FUN_00598590
+// Original: core_hecaitmx.cpp_CHecaitomix_archive_FUN_00598590
 // Address: 00598590
-void FUN_00598590(int param_1);
+void __cdecl CHecaitomix::archive(CHecaitomix *this_ptr);
 
-// Original: core_hecaitmx.cpp_FUN_005985f0
+// Original: core_hecaitmx.cpp_CHecaitomix_processDamage_FUN_005985f0
 // Address: 005985f0
-void FUN_005985f0(void);
+void __cdecl CHecaitomix::processDamage(CHecaitomix *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hecaitmx.cpp_FUN_00598600
+// Original: core_hecaitmx.cpp_CHecaitomix_getTargetPoints_FUN_00598600
 // Address: 00598600
-undefined4 FUN_00598600(int param_1,undefined4 *param_2);
+int __cdecl CHecaitomix::getTargetPoints(CHecaitomix *this_ptr,CVector3f *out_points_array);
 
 // Original: core_hecaitmx.cpp_CHecaitomix_dtor_FUN_00598670
 // Address: 00598670

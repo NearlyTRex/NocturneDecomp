@@ -1,0 +1,1077 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 436,
+    "complexity_score": 837,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 1,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 222,
+    "suspect_count": 59,
+    "suspect_types": [
+      "pointer_cast",
+      "self_copy_guard",
+      "stack_alignment_array",
+      "unnamed_field",
+      "warning_type_propagation"
+    ],
+    "total_lines": 658
+  },
+  "cross_references": [
+    {
+      "addr": "0053a610",
+      "from_addr": "0053a700",
+      "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053a1b0",
+    "address_range": [
+      [
+        "0053a1b0",
+        "0053a600"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_setdir.cpp_testOBBIntersection_FUN_0053a1b0",
+    "signature": "int __cdecl core_setdir_cpp_testOBBIntersection_FUN_0053a1b0(SVDBox *obb_a,SVDBox *obb_b)"
+  },
+  "function_calls": [
+    {
+      "addr": "0041af70",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041af70"
+    },
+    {
+      "addr": "00449530",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_00449530"
+    },
+    {
+      "addr": "004495a0",
+      "is_variadic": false,
+      "name": "core_dirmat.cpp_FUN_004495a0"
+    },
+    {
+      "addr": "005b7f5f",
+      "is_variadic": false,
+      "name": "crt_memory.c___arrinit_FUN_005b7f5f"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f22b0",
+      "name": "g_CVectorTypeInfo",
+      "type": "WatcomTypeInfo",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "0053a700",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053a6c4",
+        "call_type": "direct",
+        "caller": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0053a610",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.549738219895288,
+    "instruction_count": 382,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 12,
+      "BOOL_OR": 18,
+      "BRANCH": 5,
+      "CALL": 6,
+      "CBRANCH": 22,
+      "COPY": 1039,
+      "FLOAT2FLOAT": 81,
+      "FLOAT_ADD": 3,
+      "FLOAT_EQUAL": 12,
+      "FLOAT_LESS": 12,
+      "FLOAT_NAN": 24,
+      "FLOAT_NEG": 6,
+      "FLOAT_SUB": 12,
+      "INT2FLOAT": 6,
+      "INT_ADD": 267,
+      "INT_AND": 125,
+      "INT_CARRY": 11,
+      "INT_EQUAL": 62,
+      "INT_LEFT": 48,
+      "INT_LESS": 9,
+      "INT_MULT": 61,
+      "INT_NOTEQUAL": 66,
+      "INT_OR": 60,
+      "INT_SBORROW": 9,
+      "INT_SCARRY": 13,
+      "INT_SEXT": 12,
+      "INT_SLESS": 31,
+      "INT_SUB": 86,
+      "INT_XOR": 6,
+      "INT_ZEXT": 96,
+      "LOAD": 131,
+      "POPCOUNT": 31,
+      "RETURN": 2,
+      "STORE": 110,
+      "SUBPIECE": 8
+    },
+    "pcode_op_count": 2502
+  },
+  "stack_frame": {
+    "frame_size": 416,
+    "local_size": 408,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_190",
+        "offset": -400,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18c",
+        "offset": -396,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_134",
+        "offset": -308,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_130",
+        "offset": -304,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_12c",
+        "offset": -300,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_128",
+        "offset": -296,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_124",
+        "offset": -292,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_120",
+        "offset": -288,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_11c",
+        "offset": -284,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_118",
+        "offset": -280,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_114",
+        "offset": -276,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_104",
+        "offset": -260,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_100",
+        "offset": -256,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_fc",
+        "offset": -252,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f8",
+        "offset": -248,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f4",
+        "offset": -244,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_f0",
+        "offset": -240,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ec",
+        "offset": -236,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_e0",
+        "offset": -224,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_dc",
+        "offset": -220,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d8",
+        "offset": -216,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d4",
+        "offset": -212,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_d0",
+        "offset": -208,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_cc",
+        "offset": -204,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c8",
+        "offset": -200,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c4",
+        "offset": -196,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_c0",
+        "offset": -192,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_bc",
+        "offset": -188,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b8",
+        "offset": -184,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b4",
+        "offset": -180,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_b0",
+        "offset": -176,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_ac",
+        "offset": -172,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a8",
+        "offset": -168,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a4",
+        "offset": -164,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_a0",
+        "offset": -160,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_9c",
+        "offset": -156,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_98",
+        "offset": -152,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_94",
+        "offset": -148,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_90",
+        "offset": -144,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_8c",
+        "offset": -140,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_7c",
+        "offset": -124,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_78",
+        "offset": -120,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_74",
+        "offset": -116,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_68",
+        "offset": -104,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_5c",
+        "offset": -92,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_40",
+        "offset": -64,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_38",
+        "offset": -56,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_34",
+        "offset": -52,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_10",
+        "offset": -16,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "obb_a",
+        "offset": 4,
+        "size": 4,
+        "type": "SVDBox *"
+      },
+      {
+        "is_param": true,
+        "name": "obb_b",
+        "offset": 8,
+        "size": 4,
+        "type": "SVDBox *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "auStackY_1104",
+      "severity": "moderate",
+      "text": "uint auStackY_1104 [984];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "local_bc = -*(float *)&obb_b->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 69,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "local_b8 = -*(float *)&obb_b->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "local_b4 = -*(float *)&obb_b->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "if (&local_128 != (float *)&obb_b->field_0xc) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 77,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "local_128 = *(float *)&obb_b->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 78,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "local_124 = *(float *)&obb_b->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "local_120 = *(float *)&obb_b->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 85,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "local_1c = &obb_b->field_0x18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 86,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "local_34 = &obb_a->field_0x18;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "local_30 = *(float *)&obb_a->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 90,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_24 = (float *)((int)local_194 + local_20 * 0xc);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 94,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "local_2c = *(float *)&obb_a->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 97,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "local_2c = -*(float *)&obb_a->field_0x10;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 101,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "local_28 = *(float *)&obb_a->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 104,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "local_28 = -*(float *)&obb_a->field_0x14;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 109,
+      "match": "(uint *)((int)local_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_d0 + ((uint)bVar3 * -2 + 3) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(uint *)((int)afStack_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + 3) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 111,
+      "match": "(uint *)((int)local_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_d0 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 112,
+      "match": "(uint *)((int)afStack_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 114,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_ac[0] = local_d0[3] + *(float *)&obb_a->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 115,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_ac[1] = local_c0 + *(float *)&obb_a->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 117,
+      "match": "(uint *)((int)local_100",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_100 + (uint)bVar3 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 118,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + (uint)bVar3 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 119,
+      "match": "(uint *)((int)local_100",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_100 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 120,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 127,
+      "match": "field_0x4",
+      "severity": "mild",
+      "text": "local_ac[3] = local_dc - *(float *)&obb_b->field_0x4;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 128,
+      "match": "field_0x8",
+      "severity": "mild",
+      "text": "local_9c = local_d8 - *(float *)&obb_b->field_0x8;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 130,
+      "match": "(uint *)((int)auStack_10c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_10c + (uint)bVar3 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 131,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + 3) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 132,
+      "match": "(uint *)((int)auStack_10c",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_10c + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 133,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 136,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + 6) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 137,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + 9) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 139,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 7) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 140,
+      "match": "(uint *)((int)local_ac",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_ac + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 10) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 164,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_d4 = *(float *)((int)local_194 + uVar1 * 0xc) - *pfVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 168,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_74 = *(float *)((int)local_194 + uVar1 * 0xc) - *pfVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 169,
+      "match": "(uint *)((int)afStack_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_70 + (uint)bVar3 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 170,
+      "match": "(uint *)((int)local_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_d0 + (uint)bVar3 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 172,
+      "match": "(uint *)((int)afStack_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 173,
+      "match": "(uint *)((int)local_d0",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_d0 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 183,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_100[2] = *(float *)((int)local_194 + uVar1 * 0xc) - *pfVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 187,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_5c[0] = *(float *)((int)local_194 + uVar1 * 0xc) - *pfVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 188,
+      "match": "(uint *)((int)afStack_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + 6) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 189,
+      "match": "(uint *)((int)local_100",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_100 + ((uint)bVar3 * -2 + 3) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(uint *)((int)afStack_70",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_70 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 7) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 192,
+      "match": "(uint *)((int)local_100",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_100 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 4) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_11c = *(float *)((int)local_194 + uVar1 * 0xc) - *pfVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 203,
+      "match": "(float *)((int)local_194",
+      "severity": "moderate",
+      "text": "local_ec = *(float *)((int)local_194 + uVar1 * 0xc) - *pfVar2;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 204,
+      "match": "(uint *)((int)auStack_e8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_e8 + (uint)bVar3 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 205,
+      "match": "(uint *)((int)local_118",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_118 + (uint)bVar3 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 207,
+      "match": "(uint *)((int)auStack_e8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_e8 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 208,
+      "match": "(uint *)((int)local_100",
+      "severity": "moderate",
+      "text": "*(uint *)((int)local_100 + ((uint)bVar3 * -2 + (uint)bVar3 * -2 + -5) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 223,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "local_30 = -*(float *)&obb_a->field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_134 != &local_bc)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 71,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_134 != &local_bc) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_e0 != &local_104)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 121,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_e0 != &local_104) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&local_e0 != &local_98)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 141,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&local_e0 != &local_98) {",
+      "type": "self_copy_guard"
+    }
+  ]
+}

@@ -16,8 +16,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   unkafter_conveyor.cpp_FUN_00436e80 at 00436ed8
-;   unkafter_conveyor.cpp_FUN_00437de0 at 00437e3c
+;   core_conveyor.cpp_CConstruct_processDamage_FUN_00437de0 at 00437e3c
+;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00436ed8
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_construc_cpp_005cdf16
@@ -27,11 +27,11 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700
-;   core_bodypart.cpp_FUN_004154f0
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0
-;   core_charactr.cpp_FUN_00428e00
+;   core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00
 ;   core_main.c_FUN_004e4500
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
 ;   core_xform.cpp_FUN_00594380
@@ -48,8 +48,8 @@ section .text
     SUB ESP,0x34                        ; 00438064
     MOV EDX,dword ptr [ESP + 0x48]      ; 00438067
     PUSH EDX                            ; 0043806b
-    CALL core_charactr.cpp_FUN_00428e00 ; 0043806c
-        ;   XREF to: 00428e00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00428e00(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00 ; 0043806c
+        ;   XREF to: 00428e00 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00438071
     MOV EAX,dword ptr [ESP + 0x48]      ; 00438074
     ADD EAX,0x2b4                       ; 00438078
@@ -89,24 +89,24 @@ section .text
     PUSH 0x40a00000                     ; 004380fd
         ;   Label: LAB_004380fd
     PUSH 0xc0a00000                     ; 00438102
-    CALL core_actor.cpp_FUN_0040cf60    ; 00438107
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00438107
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 0043810c
     FLD float ptr [ESP + 0x38]          ; 00438110
     ADD ESP,0x8                         ; 00438114
     PUSH 0x41200000                     ; 00438117
     PUSH 0x0                            ; 0043811c
     FSTP float ptr [ESP + 0x18]         ; 0043811e
-    CALL core_actor.cpp_FUN_0040cf60    ; 00438122
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00438122
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 00438127
     FLD float ptr [ESP + 0x38]          ; 0043812b
     ADD ESP,0x8                         ; 0043812f
     PUSH 0x40a00000                     ; 00438132
     PUSH 0xc0a00000                     ; 00438137
     FSTP float ptr [ESP + 0x1c]         ; 0043813c
-    CALL core_actor.cpp_FUN_0040cf60    ; 00438140
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00438140
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 00438145
     FLD float ptr [ESP + 0x38]          ; 00438149
     ADD ESP,0x8                         ; 0043814d
@@ -122,8 +122,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x38]      ; 00438165
     PUSH EDI                            ; 00438169
     FSTP float ptr [ESP + 0x34]         ; 0043816a
-    CALL core_bodypart.cpp_FUN_004154f0 ; 0043816e
-        ;   XREF to: 004154f0 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_FUN_004154f0(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
+    CALL core_bodypart.cpp_createBodyPart_FUN_004154f0 ; 0043816e
+        ;   XREF to: 004154f0 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_004154f0(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 00438173
     PUSH 0x0                            ; 00438176
     PUSH EBX                            ; 00438178

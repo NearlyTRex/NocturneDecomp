@@ -9,7 +9,7 @@
 ;
 ; XREF[23]:
 ;   core_box.cpp_FUN_00421670 at 00421725
-;   core_chain.cpp_FUN_00436600 at 004366ae
+;   core_chain.cpp_CChain_renderTransparent_FUN_00436600 at 004366ae
 ;   core_cloth.cpp_CCloth_render_FUN_00441800 at 00441835
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_0044bf20 at 0044c040
 ;   core_dcamera.cpp_CDemonCamera_testVisibility_FUN_004551a0 at 0045521c

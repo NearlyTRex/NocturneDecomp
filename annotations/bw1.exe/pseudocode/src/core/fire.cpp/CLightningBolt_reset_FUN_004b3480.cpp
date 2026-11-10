@@ -9,6 +9,6 @@
 void __cdecl core_fire_cpp_CLightningBolt_reset_FUN_004b3480(CLightningBolt *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x14 = 0;
+  this_ptr->lifetime = 0.0;
   return;
 }

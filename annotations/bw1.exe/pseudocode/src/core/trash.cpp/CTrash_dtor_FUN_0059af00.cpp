@@ -17,7 +17,7 @@ CTrash * __cdecl core_trash_cpp_CTrash_dtor_FUN_0059af00(CTrash *this_ptr,uint f
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CTrash *)core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)this_ptr,1);
+  pCVar1 = (CTrash *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

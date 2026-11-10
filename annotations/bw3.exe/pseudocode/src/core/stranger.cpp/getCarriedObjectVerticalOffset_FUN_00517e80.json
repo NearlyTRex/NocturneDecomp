@@ -2,16 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 131,
+    "complexity_score": 136,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 3,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 41,
     "suspect_count": 7,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
+      "pointer_cast",
+      "pointer_truncation",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -201,20 +202,20 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x104",
-      "severity": "mild",
-      "text": "for (iVar3 = 0; iVar3 < *(int *)&pCVar5->field_0x104; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
+      "description": "Pointer value `&pCVar5->vertex_list->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 32,
+      "match": "(int)&pCVar5->vertex_list->x",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
       "line": 32,
-      "match": "field_0x10c",
-      "severity": "mild",
-      "text": "piVar2 = (int *)(*(int *)&pCVar5->field_0x10c + iVar4);",
-      "type": "unnamed_field"
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar2 = (int *)((int)&pCVar5->vertex_list->x + iVar4);",
+      "type": "pointer_cast"
     },
     {
       "call_site_count": 2,

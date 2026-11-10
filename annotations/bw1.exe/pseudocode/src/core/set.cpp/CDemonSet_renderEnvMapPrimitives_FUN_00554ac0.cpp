@@ -52,8 +52,8 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0(CDemonSe
       pSVar7 = prims;
       pSVar9 = aSStack_f4;
       for (iVar5 = 0x12; iVar5 != 0; iVar5 = iVar5 + -1) {
-        *(uint *)pSVar9 = *(uint *)pSVar7;
-        pSVar7 = pSVar7 + (uint)bVar10 * -8 + 4;
+        *(int *)pSVar9 = (pSVar7->base).type;
+        pSVar7 = (SMRGLHeaderPrimitive *)((int)pSVar7 + (uint)bVar10 * -8 + 4);
         pSVar9 = (SMRGLPrimitivePoly *)((int)pSVar9 + ((uint)bVar10 * -2 + 1) * 4);
       }
       iVar5 = 0;
@@ -114,7 +114,7 @@ void __cdecl core_set_cpp_CDemonSet_renderEnvMapPrimitives_FUN_00554ac0(CDemonSe
                   (DAT_00612560,aSStack_f4);
       }
       local_14 = local_14 + 1;
-      prims = prims + stride;
+      prims = (SMRGLHeaderPrimitive *)((int)&(prims->base).type + stride);
     } while (local_14 < count);
   }
   return;

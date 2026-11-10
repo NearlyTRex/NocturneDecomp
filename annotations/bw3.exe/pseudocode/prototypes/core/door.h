@@ -37,29 +37,29 @@ void FUN_00463d30(int param_1,int param_2);
 // Address: 00463d80
 void FUN_00463d80(CDemonActor *param_1);
 
-// Original: core_door.cpp_FUN_004642f0
+// Original: core_door.cpp_CDoor_process_FUN_004642f0
 // Address: 004642f0
-void FUN_004642f0(CDemonActor *param_1,float param_2);
+void __cdecl CDoor::process(CDoor *this_ptr,float delta_time);
 
-// Original: core_door.cpp_FUN_00464a60
+// Original: core_door.cpp_CDoor_renderOpaque_FUN_00464a60
 // Address: 00464a60
-int FUN_00464a60(CDemonActor *param_1);
+int __cdecl CDoor::renderOpaque(CDoor *this_ptr);
 
-// Original: core_door.cpp_FUN_00464b40
+// Original: core_door.cpp_CDoor_renderBackground_FUN_00464b40
 // Address: 00464b40
-void FUN_00464b40(CDemonActor *param_1,int param_2);
+void __cdecl CDoor::renderBackground(CDoor *this_ptr,int layer_flag);
 
-// Original: core_door.cpp_FUN_00464bd0
+// Original: core_door.cpp_CDoor_getBoundingBox_FUN_00464bd0
 // Address: 00464bd0
-void FUN_00464bd0(int param_1);
+CBoundingBox3D * __cdecl CDoor::getBoundingBox(CDoor *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_door.cpp_FUN_00464c10
 // Address: 00464c10
 void FUN_00464c10(int param_1);
 
-// Original: core_door.cpp_FUN_00464cd0
+// Original: core_door.cpp_CDoor_archive_FUN_00464cd0
 // Address: 00464cd0
-void FUN_00464cd0(CDemonActor *param_1);
+void __cdecl CDoor::archive(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getCollisionType_FUN_00465010
 // Address: 00465010
@@ -85,17 +85,17 @@ int __cdecl CDoor::allowBulletHoles(CDoor *this_ptr);
 // Address: 004650a0
 float * FUN_004650a0(int param_1,float *param_2,undefined4 param_3);
 
-// Original: core_door.cpp_FUN_00465330
+// Original: core_door.cpp_CDoor_updateCollisionData_FUN_00465330
 // Address: 00465330
-void FUN_00465330(CDemonActor *param_1);
+void __cdecl CDoor::updateCollisionData(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_getMoveType_FUN_00465380
 // Address: 00465380
 int __cdecl CDoor::getMoveType(CDoor *this_ptr,CDemonActor *opener);
 
-// Original: core_door.cpp_FUN_00465550
+// Original: core_door.cpp_CDoor_onLocked_FUN_00465550
 // Address: 00465550
-uint __cdecl FUN_00465550(CDoor *this_ptr);
+uint __cdecl CDoor::onLocked(CDoor *this_ptr);
 
 // Original: core_door.cpp_CDoor_dtor_FUN_004655b0
 // Address: 004655b0

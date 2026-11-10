@@ -53,13 +53,13 @@ int __cdecl FUN_00490a40(CDemonTriangle *triangle,CVector3f *position,float sear
 // Address: 00490df0
 void __cdecl clipLineToPlane(float *param_1,float *param_2,float *param_3,int param_4,uint param_5,int param_6,uint param_7,int param_8,uint param_9,double param_10);
 
-// Original: core_dtri.cpp_FUN_00491260
+// Original: core_dtri.cpp_clipPolygonToRight_FUN_00491260
 // Address: 00491260
-void FUN_00491260(float param_1);
+void __cdecl clipPolygonToRight(float x_max);
 
-// Original: core_dtri.cpp_FUN_00491690
+// Original: core_dtri.cpp_clipPolygonToFar_FUN_00491690
 // Address: 00491690
-void FUN_00491690(float param_1);
+void __cdecl clipPolygonToFar(float z_far);
 
 // Original: core_dtri.cpp_clipTriangleToBounds_FUN_00491850
 // Address: 00491850

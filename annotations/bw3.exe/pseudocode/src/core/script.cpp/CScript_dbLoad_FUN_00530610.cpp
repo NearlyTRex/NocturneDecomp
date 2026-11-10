@@ -14,11 +14,10 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
   char cVar1;
   _FILE *p_Var2;
   int iVar3;
-  void *pvVar4;
+  SDialogEntry *pSVar4;
   char *pcVar5;
   char *pcVar6;
-  uint *puVar7;
-  byte bVar8;
+  byte bVar7;
   char local_334 [60];
   char local_2f8 [60];
   char local_2bc [30];
@@ -26,8 +25,8 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
   char local_10c [256];
   int local_c;
   
-  bVar8 = 0;
-  *(uint *)&this_ptr->field_0x20 = 0;
+  bVar7 = 0;
+  this_ptr->dialog_entry_count = 0;
   local_c = engine_dosio_cpp_getFileSize_FUN_004657f0("world",filename);
   if (local_c < 1) {
     return;
@@ -52,7 +51,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
       _DAT_01d71de0 = "..\\core\\script.cpp";
       _DAT_01d71de4 = 0x1062;
       core_main_c_FUN_004e4330
-                ("SCScipt::dbLoad - error parsing %s record %d",filename,*(uint *)&this_ptr->field_0x20);
+                ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
     iVar3 = _fgetc(p_Var2);
     if (iVar3 == 0x2c) {
@@ -65,8 +64,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
         _DAT_01d71de0 = "..\\core\\script.cpp";
         _DAT_01d71de4 = 0x106b;
         core_main_c_FUN_004e4330
-                  ("SCScipt::dbLoad - error parsing %s record %d",filename,*(uint *)&this_ptr->field_0x20
-                  );
+                  ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
       }
     }
     iVar3 = _fscanf(p_Var2," %[^\n]\n",local_29e);
@@ -74,7 +72,7 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
       _DAT_01d71de0 = "..\\core\\script.cpp";
       _DAT_01d71de4 = 0x1070;
       core_main_c_FUN_004e4330
-                ("SCScipt::dbLoad - error parsing %s record %d",filename,*(uint *)&this_ptr->field_0x20);
+                ("SCScipt::dbLoad - error parsing %s record %d",filename,this_ptr->dialog_entry_count);
     }
     core_script_cpp_trimString_FUN_00528830(local_334);
     core_script_cpp_trimString_FUN_00528830(local_2bc);
@@ -91,15 +89,15 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
       pcVar6[1] = cVar1;
       pcVar6 = pcVar6 + 2;
     } while (cVar1 != '\0');
-    iVar3 = core_script_cpp_FUN_00530990(this_ptr,local_334);
+    iVar3 = core_script_cpp_CScript_findDialogEntry_FUN_00530990(this_ptr,local_334);
     if (-1 < iVar3) {
       shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                 (g_CEditorToolsPtr,"Warning! Duplicate wav string %s detected in %s");
     }
-    FUN_005a28c0(local_2f8,"%s.wav",local_334);
+    _sprintf(local_2f8,"%s.wav");
     iVar3 = engine_dosio_cpp_getFileSize_FUN_004657f0("sound",local_2f8);
     if (iVar3 < 1) {
-      FUN_005a28c0(local_2f8,"%s.mp3",local_334);
+      _sprintf(local_2f8,"%s.mp3");
       iVar3 = engine_dosio_cpp_getFileSize_FUN_004657f0("sound",local_2f8);
       if (iVar3 < 1) {
         pcVar6 = local_334;
@@ -115,23 +113,22 @@ void __cdecl core_script_cpp_CScript_dbLoad_FUN_00530610(CScript *this_ptr,char 
         } while (cVar1 != '\0');
       }
     }
-    iVar3 = *(int *)&this_ptr->field_0x20 + 1;
-    *(int *)&this_ptr->field_0x20 = iVar3;
-    pvVar4 = realloc(*(void **)&this_ptr->field_0x24,iVar3 * 0x226);
-    *(void **)&this_ptr->field_0x24 = pvVar4;
-    if (pvVar4 == (void *)0x0) {
+    iVar3 = this_ptr->dialog_entry_count + 1;
+    this_ptr->dialog_entry_count = iVar3;
+    pSVar4 = (SDialogEntry *)realloc(this_ptr->dialog_entries,iVar3 * 0x226);
+    this_ptr->dialog_entries = pSVar4;
+    if (pSVar4 == (SDialogEntry *)0x0) {
       _DAT_01d71de0 = "..\\core\\script.cpp";
       _DAT_01d71de4 = 0x1091;
       core_main_c_FUN_004e4330("SCScipt::dbLoad - out of memory");
     }
     pcVar6 = local_334;
-    puVar7 = (uint *)
-             (*(int *)&this_ptr->field_0x24 + (*(int *)&this_ptr->field_0x20 + -1) * 0x226);
+    pSVar4 = this_ptr->dialog_entries + (this_ptr->dialog_entry_count + -1) * 0x226;
     for (iVar3 = 0x89; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar7 = *(uint *)pcVar6;
-      pcVar6 = pcVar6 + ((uint)bVar8 * -2 + 1) * 4;
-      puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
+      *(uint *)pSVar4 = *(uint *)pcVar6;
+      pcVar6 = pcVar6 + ((uint)bVar7 * -2 + 1) * 4;
+      pSVar4 = pSVar4 + (uint)bVar7 * -8 + 4;
     }
-    *(ushort *)puVar7 = *(ushort *)pcVar6;
+    *(ushort *)pSVar4 = *(ushort *)pcVar6;
   } while( true );
 }

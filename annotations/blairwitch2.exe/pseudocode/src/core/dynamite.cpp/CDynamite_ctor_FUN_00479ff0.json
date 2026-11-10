@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 212,
+    "complexity_score": 37,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 22,
-    "suspect_count": 18,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_memset"
     ],
     "total_lines": 56
@@ -107,147 +106,11 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CDynamiteVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar1->field_0x2b4,\"dynamitestick.kfm\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x6c0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6c0 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x6e0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6e0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x6dc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6dc = *(uint *)&pCVar1->field_0x6e0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x6e0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6dc = *(uint *)&pCVar1->field_0x6e0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x6d8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6d8 = *(uint *)&pCVar1->field_0x6dc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x6dc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6d8 = *(uint *)&pCVar1->field_0x6dc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x6d4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6d4 = 0xbf800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x434",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x434 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x438",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x438 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x43c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x43c = 3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x440",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x440 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x444",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x444 = 0x43480000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x448",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x448 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x44c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x44c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x6e4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x6e4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
       "line": 12,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&pCVar1->field_0x6e0 = 0;",
+      "text": "(pCVar1->toss_velocity).z = 0.0;",
       "type": "unrolled_memset"
     }
   ],

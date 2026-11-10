@@ -1,0 +1,414 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 332,
+    "complexity_score": 379,
+    "cross_reference_count": 0,
+    "function_call_count": 13,
+    "global_count": 12,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 179,
+    "suspect_count": 18,
+    "suspect_types": [
+      "stack_alignment_array",
+      "undefined_data",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 511
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a70b0",
+    "address_range": [
+      [
+        "004a70b0",
+        "004a74dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0",
+    "signature": "int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004a70b0(CFlies *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a10",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408a10"
+    },
+    {
+      "addr": "004089d0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0"
+    },
+    {
+      "addr": "0041a840",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041a840"
+    },
+    {
+      "addr": "004a6fe0",
+      "is_variadic": false,
+      "name": "core_flies.cpp_drawFlyPixel_FUN_004a6fe0"
+    },
+    {
+      "addr": "00561310",
+      "is_variadic": false,
+      "name": "core_spline.cpp_FUN_00561310"
+    },
+    {
+      "addr": "00561540",
+      "is_variadic": false,
+      "name": "core_spline.cpp_FUN_00561540"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "0046b960",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046b960"
+    },
+    {
+      "addr": "00469d00",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_renderTexturedPoly_FUN_00469d00"
+    },
+    {
+      "addr": "0046b7f0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0"
+    },
+    {
+      "addr": "0051c720",
+      "is_variadic": false,
+      "name": "engine_prim.c_replaceWWithDepth_FUN_0051c720"
+    },
+    {
+      "addr": "0055d723",
+      "is_variadic": false,
+      "name": "engine_special.cpp_FUN_0055d723"
+    },
+    {
+      "addr": "00574e00",
+      "is_variadic": false,
+      "name": "engine_texture.cpp_FUN_00574e00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d66e9",
+      "name": "DAT_005d66e9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d66f1",
+      "name": "DAT_005d66f1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d66f9",
+      "name": "DAT_005d66f9",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f7060",
+      "name": "DAT_005f7060",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060b280",
+      "name": "DAT_0060b280",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141b8",
+      "name": "DAT_006141b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "006141bc",
+      "name": "DAT_006141bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c37788",
+      "name": "DAT_01c37788",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c38aec",
+      "name": "DAT_01c38aec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf5ec",
+      "name": "DAT_01caf5ec",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf62c",
+      "name": "DAT_01caf62c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01caf630",
+      "name": "DAT_01caf630",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.975438596491228,
+    "instruction_count": 285,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 31,
+      "BOOL_OR": 1,
+      "BRANCH": 7,
+      "CALL": 13,
+      "CALLIND": 1,
+      "CBRANCH": 20,
+      "COPY": 341,
+      "FLOAT2FLOAT": 11,
+      "FLOAT_ADD": 1,
+      "FLOAT_MULT": 5,
+      "INT2FLOAT": 1,
+      "INT_ADD": 127,
+      "INT_AND": 195,
+      "INT_CARRY": 18,
+      "INT_EQUAL": 131,
+      "INT_LEFT": 6,
+      "INT_LESS": 10,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 22,
+      "INT_OR": 29,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 22,
+      "INT_SLESS": 65,
+      "INT_SRIGHT": 6,
+      "INT_SUB": 79,
+      "INT_XOR": 9,
+      "INT_ZEXT": 12,
+      "LOAD": 65,
+      "POPCOUNT": 59,
+      "RETURN": 2,
+      "ROUND": 4,
+      "STORE": 97,
+      "TRUNC": 4
+    },
+    "pcode_op_count": 1418
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004a70bc",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 19,
+      "match": "afStackY_1024",
+      "severity": "moderate",
+      "text": "float afStackY_1024 [980];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 78,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_0060b280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 80,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "engine_drender_cpp_CDemonRenderer_setRGBAColor_FUN_0046b7f0(DAT_0060b280,0,0,0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "*(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x20) = 0;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 139,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_48);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 140,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "pCVar1 = DAT_0060b280;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 141,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "pSVar7 = DAT_0060b280->vertex_buffer_ptr;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar2) && (iVar2 < DAT_006141b8)) && (-1 < iVar4)) && (iVar4 < DAT_006141bc)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 147,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "if ((((-1 < iVar2) && (iVar2 < DAT_006141b8)) && (-1 < iVar4)) && (iVar4 < DAT_006141bc)",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_006141b8",
+      "severity": "mild",
+      "text": "else if ((iVar2 < DAT_006141b8 + -1) && (iVar4 < DAT_006141bc + -1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 152,
+      "match": "DAT_006141bc",
+      "severity": "mild",
+      "text": "else if ((iVar2 < DAT_006141b8 + -1) && (iVar4 < DAT_006141bc + -1)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 56,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 6; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 157,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 163,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar2 = 0xc; iVar2 != 0; iVar2 = iVar2 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004a745f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 285,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004a745f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004a746d, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 290,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004a746d: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 24,
+        "vtable_addr": "005f7084"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

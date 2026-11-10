@@ -39,7 +39,7 @@
     {
       "addr": "004b47d0",
       "from_addr": "004b4a5e",
-      "name": "core_game.cpp_FUN_004b47d0",
+      "name": "core_game.cpp_CGame_renderOverlay_FUN_004b47d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -49,15 +49,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004b50ee",
-      "from_addr": "004b5147",
-      "name": "core_game.cpp_FUN_004b50ee",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b51e0",
       "from_addr": "004b5274",
       "name": "core_game.cpp_FUN_004b51e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b50ee",
+      "from_addr": "004b5147",
+      "name": "core_game.cpp_drawKeyBindingEntry_FUN_004b50ee",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -87,13 +87,25 @@
     {
       "addr": "00528fc0",
       "from_addr": "005291b1",
-      "name": "core_script.cpp_FUN_00528fc0",
+      "name": "core_script.cpp_CScript_renderSubtitles_FUN_00528fc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b0cb0",
       "from_addr": "004b0cd2",
-      "name": "engine_font.cpp_FUN_004b0cb0",
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047e470",
+      "from_addr": "0047e615",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004843d0",
+      "from_addr": "004848c2",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -109,12 +121,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0047e470",
-      "from_addr": "0047e615",
-      "name": "shape_edittool.cpp_FUN_0047e470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047fa80",
       "from_addr": "0047fe0f",
       "name": "shape_edittool.cpp_FUN_0047fa80",
@@ -124,12 +130,6 @@
       "addr": "00480f00",
       "from_addr": "0048113e",
       "name": "shape_edittool.cpp_FUN_00480f00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004843d0",
-      "from_addr": "004848c2",
-      "name": "shape_edittool.cpp_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -327,7 +327,7 @@
       {
         "call_addr": "004848c2",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004843d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
         "estimated_params": 9,
         "instructions_analyzed": 0,
         "method": "add_esp",

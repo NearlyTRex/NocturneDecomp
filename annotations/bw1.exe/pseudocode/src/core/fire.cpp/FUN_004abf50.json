@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 112,
-    "complexity_score": 684,
+    "complexity_score": 674,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 59,
-    "suspect_count": 58,
+    "suspect_count": 57,
     "suspect_types": [
       "bit_int_float_compare",
       "param_count_too_few",
@@ -26,7 +26,7 @@
     {
       "addr": "004b4dd0",
       "from_addr": "004b50f1",
-      "name": "core_fire.cpp_FUN_004b4dd0",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004b4dd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +46,7 @@
     {
       "addr": "0040cc00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc00"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
     }
   ],
   "globals": [
@@ -70,25 +70,25 @@
     },
     {
       "addr": "01ccf624",
-      "name": "g_CGameInstance.field660_0x294",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fdcdd8",
-      "name": "g_CDemonSetInstance.field1420400_0x15ac70",
+      "name": "g_CDemonSetInstance.field92_0x15ac70",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fdcddc",
-      "name": "g_CDemonSetInstance.field1420404_0x15ac74",
+      "name": "g_CDemonSetInstance.field96_0x15ac74",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fdcde0",
-      "name": "g_CDemonSetInstance.field1420408_0x15ac78",
+      "name": "g_CDemonSetInstance.field100_0x15ac78",
       "type": "undefined4",
       "value": null
     }
@@ -99,7 +99,7 @@
       {
         "call_addr": "004b50f1",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004b4dd0",
+        "caller": "core_fire.cpp_CFireEffect_process_FUN_004b4dd0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -274,14 +274,6 @@
       "severity": "moderate",
       "text": "float afStackY_1024 [1014];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x294",
-      "severity": "mild",
-      "text": "local_c = *(float *)&g_CGamePtr->field_0x294;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

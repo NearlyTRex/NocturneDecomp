@@ -21,7 +21,7 @@
     {
       "addr": "004843d0",
       "from_addr": "004845e0",
-      "name": "shape_edittool.cpp_FUN_004843d0",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -137,7 +137,7 @@
       {
         "call_addr": "004845e0",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004843d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,7 +289,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x20);",
+      "text": "iVar4 = param_1->bounds_bottom;",
       "type": "unnamed_param"
     },
     {
@@ -297,7 +297,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1 + 0x1c);",
+      "text": "iVar5 = param_1->bounds_right;",
       "type": "unnamed_param"
     },
     {
@@ -305,7 +305,7 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(param_1 + 0x18);",
+      "text": "iVar9 = param_1->bounds_top;",
       "type": "unnamed_param"
     },
     {
@@ -313,7 +313,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar11 = *(int *)(param_1 + 0x14);",
+      "text": "iVar11 = param_1->bounds_left;",
       "type": "unnamed_param"
     },
     {
@@ -369,7 +369,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = *(int *)(param_1 + 0x1c) + -1;",
+      "text": "iVar4 = param_1->bounds_right + -1;",
       "type": "unnamed_param"
     },
     {
@@ -377,7 +377,7 @@
       "line": 57,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar5 = *(int *)(param_1 + 0x20) + -1;",
+      "text": "iVar5 = param_1->bounds_bottom + -1;",
       "type": "unnamed_param"
     },
     {
@@ -385,7 +385,7 @@
       "line": 58,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar11 = *(int *)(param_1 + 0x18) + 1;",
+      "text": "iVar11 = param_1->bounds_top + 1;",
       "type": "unnamed_param"
     },
     {
@@ -393,7 +393,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar9 = *(int *)(param_1 + 0x14) + 1;",
+      "text": "iVar9 = param_1->bounds_left + 1;",
       "type": "unnamed_param"
     },
     {
@@ -401,7 +401,7 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x10) == 0) {",
+      "text": "if (param_1->orientation == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -409,7 +409,7 @@
       "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = *(int *)(param_1 + 0x30);",
+      "text": "iVar3 = param_1->thumb_end;",
       "type": "unnamed_param"
     },
     {
@@ -417,7 +417,7 @@
       "line": 62,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar6 = *(int *)(param_1 + 0x2c);",
+      "text": "iVar6 = param_1->thumb_start;",
       "type": "unnamed_param"
     },
     {
@@ -425,7 +425,7 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar7 = *(int *)(param_1 + 0x2c);",
+      "text": "iVar7 = param_1->thumb_start;",
       "type": "unnamed_param"
     },
     {
@@ -433,7 +433,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_28 = *(int *)(param_1 + 0x30);",
+      "text": "local_28 = param_1->thumb_end;",
       "type": "unnamed_param"
     },
     {
@@ -449,7 +449,7 @@
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x10) == 0) {",
+      "text": "if (param_1->orientation == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -465,7 +465,7 @@
       "line": 86,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004850a0(iVar9,iVar11,iVar4,*(uint *)(param_1 + 0x24),uVar8);",
+      "text": "shape_edittool_cpp_FUN_004850a0(iVar9,iVar11,iVar4,param_1->track_start,uVar8);",
       "type": "unnamed_param"
     },
     {
@@ -481,7 +481,7 @@
       "line": 93,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004852f0(iVar9,iVar11,iVar4,*(uint *)(param_1 + 0x24),uVar8,0);",
+      "text": "shape_edittool_cpp_FUN_004852f0(iVar9,iVar11,iVar4,param_1->track_start,uVar8,0);",
       "type": "unnamed_param"
     },
     {
@@ -497,7 +497,7 @@
       "line": 100,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004850a0(iVar9,*(uint *)(param_1 + 0x28),iVar4,iVar5,uVar8);",
+      "text": "shape_edittool_cpp_FUN_004850a0(iVar9,param_1->track_end,iVar4,iVar5,uVar8);",
       "type": "unnamed_param"
     },
     {
@@ -513,7 +513,7 @@
       "line": 107,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004852f0(iVar9,*(uint *)(param_1 + 0x28),iVar4,iVar5,uVar8,1);",
+      "text": "shape_edittool_cpp_FUN_004852f0(iVar9,param_1->track_end,iVar4,iVar5,uVar8,1);",
       "type": "unnamed_param"
     },
     {
@@ -529,7 +529,7 @@
       "line": 116,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004850a0(iVar9,iVar11,*(uint *)(param_1 + 0x24),iVar5,uVar8);",
+      "text": "shape_edittool_cpp_FUN_004850a0(iVar9,iVar11,param_1->track_start,iVar5,uVar8);",
       "type": "unnamed_param"
     },
     {
@@ -545,7 +545,7 @@
       "line": 123,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004852f0(iVar9,iVar11,*(uint *)(param_1 + 0x24),iVar5,uVar8,2);",
+      "text": "shape_edittool_cpp_FUN_004852f0(iVar9,iVar11,param_1->track_start,iVar5,uVar8,2);",
       "type": "unnamed_param"
     },
     {
@@ -561,7 +561,7 @@
       "line": 130,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004850a0(*(uint *)(param_1 + 0x28),iVar11,iVar4,iVar5,uVar8);",
+      "text": "shape_edittool_cpp_FUN_004850a0(param_1->track_end,iVar11,iVar4,iVar5,uVar8);",
       "type": "unnamed_param"
     },
     {
@@ -577,7 +577,7 @@
       "line": 137,
       "match": "param_1",
       "severity": "mild",
-      "text": "shape_edittool_cpp_FUN_004852f0(*(uint *)(param_1 + 0x28),iVar11,iVar4,iVar5,uVar8,3);",
+      "text": "shape_edittool_cpp_FUN_004852f0(param_1->track_end,iVar11,iVar4,iVar5,uVar8,3);",
       "type": "unnamed_param"
     },
     {

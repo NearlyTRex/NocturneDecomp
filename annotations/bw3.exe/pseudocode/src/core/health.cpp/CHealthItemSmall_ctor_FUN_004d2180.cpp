@@ -14,7 +14,7 @@ CHealthItemSmall * core_health_cpp_CHealthItemSmall_ctor_FUN_004d2180(CHealthIte
   CHealthItem *pCVar1;
   
   pCVar1 = core_health_cpp_CHealthItem_ctor_FUN_004d1d80((CHealthItem *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CHealthItemSmallVTable;
+  *(CDemonActor_vtable **)&pCVar1->field_0x154 = &g_CHealthItemSmallVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"health_sm.kfm");
   *(uint *)&pCVar1->field_0x2d8 = 0x41200000;

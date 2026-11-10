@@ -16,7 +16,7 @@ uint core_hero_cpp_FUN_004eb890(CCharacter *param_1)
   float fVar2;
   int iVar3;
   uint uVar4;
-  int iVar5;
+  float fVar5;
   uint *puVar6;
   uint *puVar7;
   byte bVar8;
@@ -63,22 +63,22 @@ uint core_hero_cpp_FUN_004eb890(CCharacter *param_1)
   float fStack_18;
   
   bVar8 = 0;
-  iVar3 = core_charactr_cpp_FUN_00432c40(param_1);
+  iVar3 = core_charactr_cpp_CCharacter_isCarryingAnything_FUN_00432c40(param_1);
   if (iVar3 != 0) {
     return 0;
   }
-  if (*(int *)&param_1[2].field_0x7bdc == 0) {
+  if (param_1[2].flames[0x1a].flame_size.x == 0.0) {
     local_1c = 0;
-    for (local_20 = 0; local_20 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_20 = local_20 + 1)
-    {
-      iVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
-                        (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),
-                         g_CBoxActorClassInfo.name_hash);
-      if (((iVar3 != 0) && (*(int *)(iVar3 + 0x31c) != 0)) && (*(int *)(iVar3 + 800) == 0)) {
-        (**(code **)(*(int *)(iVar3 + 0x154) + 0x1c))(iVar3);
+    for (local_20 = 0; local_20 < g_CDemonSetPtr->actor_count; local_20 = local_20 + 1) {
+      fVar5 = (float)core_actor_cpp_castToClassHash_FUN_0040c600
+                               (*(uint *)((int)g_CDemonSetPtr->actors + local_1c),
+                                g_CBoxActorClassInfo.name_hash);
+      if (((fVar5 != 0.0) && (*(int *)((int)fVar5 + 0x31c) != 0)) &&
+         (*(int *)((int)fVar5 + 800) == 0)) {
+        (**(code **)(*(int *)((int)fVar5 + 0x154) + 0x1c))(fVar5);
         puVar6 = (uint *)&stack0xffffff20;
         puVar7 = &stack0xffffff08;
-        for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {
+        for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
           *puVar7 = *puVar6;
           puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
           puVar7 = puVar7 + (uint)bVar8 * -2 + 1;
@@ -99,7 +99,7 @@ uint core_hero_cpp_FUN_004eb890(CCharacter *param_1)
              *(uint *)((int)&stack0xffffffc0 + (uint)bVar8 * -8);
         *(uint *)(&stack0xffffffdc + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
              *(uint *)((int)&stack0xffffffc4 + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-        core_actor_cpp_FUN_00408b40(iVar3,&stack0xffffffd4);
+        core_actor_cpp_FUN_00408b40(fVar5,&stack0xffffffd4);
         puVar6 = &stack0xffffff50;
         uStack_b0 = uStack_98;
         *(uint *)((int)&stack0xffffff54 + (uint)bVar8 * 0xfffffffe * 4) =
@@ -134,26 +134,26 @@ uint core_hero_cpp_FUN_004eb890(CCharacter *param_1)
         if (((fStack_9c - SQRT(fStack_60 * fStack_60 + fStack_68 * fStack_68) <=
               (float)_DAT_005e48cd) && (1.0 <= (double)fStack_a0)) &&
            ((double)fStack_a0 <= _DAT_005e48d5)) {
-          core_vecdir_cpp_FUN_005a7520(&stack0xffffff5c);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffff5c);
           uStack_80 = uStack_8c;
           *(uint *)((int)&stack0xffffff84 + (uint)bVar8 * -8) =
                *(uint *)(&stack0xffffff78 + (uint)bVar8 * -8);
           *(uint *)(&stack0xffffff88 + (uint)bVar8 * -8 + (uint)bVar8 * -8) =
                *(uint *)(&stack0xffffff7c + (uint)bVar8 * -8 + (uint)bVar8 * -8);
-          fStack_18 = (float)core_actor_cpp_FUN_0040cd60(uStack_7c);
+          fStack_18 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cd60(uStack_7c);
           if (ABS(fStack_18) <= (float)_DAT_005e48dd) {
-            *(int *)&param_1[2].field_0x7bdc = iVar3;
+            param_1[2].flames[0x1a].flame_size.x = fVar5;
             break;
           }
         }
       }
       local_1c = local_1c + 4;
     }
-    if (*(int *)&param_1[2].field_0x7bdc == 0) {
+    fVar5 = param_1[2].flames[0x1a].flame_size.x;
+    if (fVar5 == 0.0) {
       return 0;
     }
-    iVar3 = core_actor_cpp_castToClassHash_FUN_0040c600
-                      (*(int *)&param_1[2].field_0x7bdc,g_CBoxActorClassInfo.name_hash);
+    iVar3 = (CBoxActor *)core_actor_cpp_castToClassHash_FUN_0040c600(fVar5,g_CBoxActorClassInfo.name_hash);
     if (iVar3 != 0) {
       *(CCharacter **)(iVar3 + 800) = param_1;
       uVar4 = (**(code **)(*(int *)(iVar3 + 0x154) + 0x30))(iVar3,iVar3 + 0x32c);

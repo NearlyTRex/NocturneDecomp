@@ -15,28 +15,29 @@ void core_crate_cpp_FUN_00439dc0(CDemonActor *param_1)
   float fVar2;
   int iVar3;
   uint *puVar4;
-  float *pfVar5;
+  uint *puVar5;
   byte bVar6;
-  float afStack_44 [2];
+  CBoundingBox3D *in_stack_ffffffbc;
   float fStack_3c;
-  float fStack_38;
+  float fStack_34;
   float fStack_30;
-  uint auStack_2c [8];
+  float fStack_28;
+  uint auStack_24 [6];
   
   bVar6 = 0;
-  core_actor_cpp_FUN_00408a80(param_1);
+  core_actor_cpp_CDemonActor_setup_FUN_00408a80(param_1);
   core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00
             ((CKeyFramedModelInstance *)(param_1 + 1));
-  (**(code **)(*(int *)&param_1->field_0x2b0 + 0x24))(param_1);
-  puVar4 = auStack_2c;
-  pfVar5 = afStack_44;
+  (*((param_1->vtable)._ub)->getBoundingBox)(param_1,in_stack_ffffffbc);
+  puVar4 = auStack_24;
+  puVar5 = (uint *)&stack0xffffffbc;
   for (iVar3 = 6; iVar3 != 0; iVar3 = iVar3 + -1) {
-    *pfVar5 = (float)*puVar4;
+    *puVar5 = *puVar4;
     puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-    pfVar5 = pfVar5 + (uint)bVar6 * -2 + 1;
+    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
   }
-  fVar1 = (fStack_38 - afStack_44[0]) * (float)_DAT_005ce1cb;
-  fVar2 = (fStack_30 - fStack_3c) * (float)_DAT_005ce1cb;
+  fVar1 = (fStack_30 - fStack_3c) * (float)_DAT_005ce1cb;
+  fVar2 = (fStack_28 - fStack_34) * (float)_DAT_005ce1cb;
   if (fVar1 < fVar2) {
     fVar2 = fVar1;
   }

@@ -15,7 +15,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -33,8 +33,8 @@ section .text
     PUSH 0x5c05a8                       ; 0049a17e | = "leaf%d.kfm"
     LEA EAX,[ESP + 0x8]                 ; 0049a183
     PUSH EAX                            ; 0049a187
-    CALL crt_unknown.c_FUN_005a28c0     ; 0049a188
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0049a188
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0049a18d
     MOV EAX,ESP                         ; 0049a190
     PUSH EAX                            ; 0049a192

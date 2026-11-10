@@ -11,10 +11,10 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_00568d60
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
 ;   core_skeleton.cpp_FUN_00569040
-;   core_vecdir.cpp_FUN_005a7520
-;   core_xform.cpp_FUN_005b7af0
-;   core_xform.cpp_FUN_005b7b30
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   core_xform.cpp_multiplyQuaternion_FUN_005b77b0
+;   core_xform.cpp_quaternionFromAngleX_FUN_005b7af0
+;   core_xform.cpp_quaternionFromAngleY_FUN_005b7b30
 ;
 ; *****************************************************************************
 
@@ -78,8 +78,8 @@ section .text
     PUSH ESI                            ; 005694f9
     LEA ESI,[ESP + 0xa4]                ; 005694fa
     LEA EDI,[ESP + 0x8c]                ; 00569501
-    CALL core_vecdir.cpp_FUN_005a7520   ; 00569508
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 00569508
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0xa4]                ; 0056950d
     ADD ESP,0x4                         ; 00569514
     MOVSD ES:EDI,ESI                    ; 00569517
@@ -88,8 +88,8 @@ section .text
     PUSH dword ptr [ESP + 0x88]         ; 0056951a
     LEA ESI,[ESP + 0x5c]                ; 00569521
     LEA EDI,[ESP + 0x1c]                ; 00569525
-    CALL core_xform.cpp_FUN_005b7af0    ; 00569529
-        ;   XREF to: 005b7af0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7af0()
+    CALL core_xform.cpp_quaternionFromAngleX_FUN_005b7af0 ; 00569529
+        ;   XREF to: 005b7af0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleX_FUN_005b7af0()
     LEA ESI,[ESP + 0x5c]                ; 0056952e
     ADD ESP,0x4                         ; 00569532
     MOVSD ES:EDI,ESI                    ; 00569535
@@ -101,8 +101,8 @@ section .text
     PUSH dword ptr [ESP + 0x90]         ; 0056953e
     LEA ESI,[ESP + 0x70]                ; 00569545
     LEA EDI,[ESP + 0x80]                ; 00569549
-    CALL core_xform.cpp_FUN_005b7b30    ; 00569550
-        ;   XREF to: 005b7b30 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b7b30()
+    CALL core_xform.cpp_quaternionFromAngleY_FUN_005b7b30 ; 00569550
+        ;   XREF to: 005b7b30 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_quaternionFromAngleY_FUN_005b7b30()
     LEA ESI,[ESP + 0x70]                ; 00569555
     ADD ESP,0x4                         ; 00569559
     MOVSD ES:EDI,ESI                    ; 0056955c

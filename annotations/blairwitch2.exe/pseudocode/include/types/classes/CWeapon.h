@@ -4,13 +4,40 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBox.h"
+#include "types/classes/CColor3i.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/EAmmoType.h"
+#include "types/enums/EFireMode.h"
+#include "types/enums/EWeaponState.h"
+#include "types/enums/EWeaponType.h"
 
 // Structure: CWeapon
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6d4 (1748 bytes)
 #pragma pack(push, 1)
 typedef struct CWeapon {
-    char field_0[1748]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[348]; // 0x158
+    CKeyFramedModelInstance model; // 0x2b4
+    EWeaponState weapon_state; // 0x430
+    int is_spread_weapon; // 0x434
+    EFireMode fire_mode; // 0x438
+    EWeaponType weapon_type; // 0x43c
+    int can_penetrate; // 0x440
+    float bolt_velocity; // 0x444
+    int fire_cooldown; // 0x448
+    int can_attach_light; // 0x44c
+    CColor3i muzzle_flash_color; // 0x450
+    float fire_cooldown_timer; // 0x45c
+    struct CDemonActor* carried_by_actor; // 0x460
+    CBox physics_box; // 0x464
+    float ground_height; // 0x6bc
+    float weight; // 0x6c0
+    int ammo_count; // 0x6c4
+    EAmmoType ammo_type; // 0x6c8
+    float sim_timer; // 0x6cc
+    int is_rendered; // 0x6d0
 } CWeapon;
 #pragma pack(pop)
 

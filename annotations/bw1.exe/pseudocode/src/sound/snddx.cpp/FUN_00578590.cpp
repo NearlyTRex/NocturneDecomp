@@ -13,7 +13,6 @@ uint sound_snddx_cpp_FUN_00578590(void)
 {
   uint uVar1;
   uint error_code;
-  char *pcVar2;
   uint auStack_64 [4];
   int iStack_54;
   
@@ -25,10 +24,8 @@ uint sound_snddx_cpp_FUN_00578590(void)
     auStack_64[0] = 0x60;
     error_code = (**(code **)(*_DAT_02c81d94 + 0x10))();
     if (error_code != 0) {
-      pcVar2 = sound_snddx_cpp_FUN_00577500(error_code);
-      FUN_005bfb40
-                (&stack0xfffffe04,"DirectSux: Unable to %s.  (%s)",
-                 "Querry DirectSound capabilities",pcVar2);
+      sound_snddx_cpp_FUN_00577500(error_code);
+      _sprintf(&stack0xfffffe04,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_005773f0(&stack0xfffffe04);
       return 0;
     }

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CAmmo_BulletTypeInfo
+;   WatcomTypeInfo g_CAmmoBulletTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
@@ -39,7 +39,7 @@ section .text
     MOV EAX,EBX                         ; 0040e442
     POP EBX                             ; 0040e444
     RET                                 ; 0040e445
-    PUSH 0x5db4b0                       ; 0040e446 | g_CAmmo_BulletTypeInfo
+    PUSH 0x5db4b0                       ; 0040e446 | g_CAmmoBulletTypeInfo
         ;   Label: LAB_0040e446
     PUSH EBX                            ; 0040e44b
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 0040e44c

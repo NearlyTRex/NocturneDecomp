@@ -7,8 +7,8 @@
 ; int              Stack[0x4]:4   device_id
 ;
 ; XREF[3]:
-;   sound_sndmain.cpp_FUN_005760b0 at 005761a2
 ;   sound_sndmain.cpp_initializeRecordingDevice_FUN_005758e0 at 005758f1
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 005761a2
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e88
 ;
 ; Referenced Globals:

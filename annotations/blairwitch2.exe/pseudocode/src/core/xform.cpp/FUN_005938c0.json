@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 56,
+    "complexity_score": 53,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
+    "pseudocode_lines": 38,
     "suspect_count": 1,
     "suspect_types": [
       "warning_overlapping_globals"
     ],
-    "total_lines": 155
+    "total_lines": 152
   },
   "cross_references": [
     {
@@ -30,13 +30,13 @@
     {
       "addr": "00548a90",
       "from_addr": "00548b05",
-      "name": "core_skeleton.cpp_FUN_00548a90",
+      "name": "core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00593770",
       "from_addr": "00593859",
-      "name": "core_xform.cpp_FUN_00593770",
+      "name": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,7 +84,7 @@
       {
         "call_addr": "00593859",
         "call_type": "direct",
-        "caller": "core_xform.cpp_FUN_00593770",
+        "caller": "core_xform.cpp_lerpMatrix3x4_FUN_00593770",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +117,7 @@
       {
         "call_addr": "00548b05",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00548a90",
+        "caller": "core_skeleton.cpp_computeBoneModelMatrices_FUN_00548a90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

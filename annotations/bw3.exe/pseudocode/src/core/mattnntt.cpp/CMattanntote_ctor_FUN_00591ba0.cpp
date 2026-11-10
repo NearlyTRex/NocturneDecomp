@@ -18,10 +18,11 @@ CMattanntote * core_mattnntt_cpp_CMattanntote_ctor_FUN_00591ba0(CMattanntote *th
   CMattanntote *pCVar5;
   
   pCVar2 = core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  iVar3 = __arrinit(&pCVar2[1].field_0x64,0xc,&g_CFlameTypeInfo);
+  iVar3 = __arrinit(&pCVar2[1].base.base.health,0xc,&g_CFlameTypeInfo);
   pCVar1 = (CMattanntote *)(iVar3 + -0xd0b8);
-  *(byte ***)(iVar3 + -0xcf64) = &g_CMattanntoteVTable;
-  core_skeleton_cpp_FUN_0054eae0(iVar3 + -0xcf60,"bwp3_mattanntote.dfm");
+  *(CEnemy_full_vtable **)(iVar3 + -0xcf64) = &g_CMattanntoteVTable;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)(iVar3 + -0xcf60),"bwp3_mattanntote.dfm");
   *(uint *)(iVar3 + -0x9e4c) = 0x3f000000;
   *(uint *)(iVar3 + -0x9e48) = 0x3f800000;
   *(uint *)(iVar3 + -100) = 0;

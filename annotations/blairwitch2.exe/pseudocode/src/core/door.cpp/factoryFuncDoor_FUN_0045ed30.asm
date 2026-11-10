@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_door.cpp_CDoor_ctor_FUN_0045ed60
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xba8                          ; 0045ed30
         ;   Label: core_door.cpp_factoryFuncDoor_FUN_0045ed30
-    CALL crt_unknown.c_FUN_005b8be2     ; 0045ed35
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0045ed35
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0045ed3a
     TEST EAX,EAX                        ; 0045ed3d
     JNZ 0x0045ed42                      ; 0045ed3f

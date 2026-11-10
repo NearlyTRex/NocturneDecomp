@@ -9,8 +9,8 @@
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_005b1440(CClothList *this_ptr)
 
 {
-  *(uint *)this_ptr = 0;
-  memset(this_ptr + 4,0,400);
-  memset(this_ptr + 0x194,0,0x28);
+  this_ptr->count = 0;
+  memset(this_ptr->filenames,0,400);
+  memset(this_ptr->cloths,0,0x28);
   return this_ptr;
 }

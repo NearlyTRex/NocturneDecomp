@@ -13,10 +13,10 @@
 ;   TerminatedCString s_Error_receiving_s_from_s_005f8836
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   support_trisock.cpp_CSocket_isSocketValid_FUN_0059c970
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20
 ;   support_trisock.cpp_FUN_0059ca30
-;   support_trisock.cpp_FUN_0059cb20
 ;
 ; *****************************************************************************
 
@@ -49,8 +49,8 @@ section .text
     PUSH EAX                            ; 0059eddc
     LEA EAX,[EBX + 0xd2c]               ; 0059eddd
     PUSH EAX                            ; 0059ede3
-    CALL support_trisock.cpp_FUN_0059cb20 ; 0059ede4
-        ;   XREF to: 0059cb20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_FUN_0059cb20(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20 ; 0059ede4
+        ;   XREF to: 0059cb20 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 0059ede9
     CMP EAX,-0x2                        ; 0059edec
     JNZ 0x0059ee3f                      ; 0059edef
@@ -79,8 +79,8 @@ section .text
     PUSH 0x5f8836                       ; 0059ee1a | = "Error receiving %s from %s"
     LEA EAX,[EBX + 0xa18]               ; 0059ee1f
     PUSH EAX                            ; 0059ee25
-    CALL crt_unknown.c_FUN_005bfb40     ; 0059ee26
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0059ee26
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xfffffffd                  ; 0059ee2b
     ADD ESP,0x10                        ; 0059ee30
     MOV dword ptr [EBX + 0xd28],0xfffffffb ; 0059ee33

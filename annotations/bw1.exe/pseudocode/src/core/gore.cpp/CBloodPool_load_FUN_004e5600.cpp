@@ -11,10 +11,11 @@ int __cdecl core_gore_cpp_CBloodPool_load_FUN_004e5600(CBloodPool *this_ptr,_FIL
 {
   int iVar1;
   
-  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->field_0x4,&this_ptr->field_0x8,
-             &this_ptr->field_0xc);
-  _fscanf(file_handle,"%d,%d\n",this_ptr,&this_ptr->field_0x10);
-  iVar1 = _fscanf(file_handle,"%d,%f,%d,%d,%d\n",&this_ptr->field_0x14,&this_ptr->field_0x18,
-                     &this_ptr->field_0x1c,&this_ptr->field_0x20,&this_ptr->field_0x24);
+  _fscanf(file_handle,"%f,%f,%f\n",&this_ptr->position,&(this_ptr->position).y,
+             &(this_ptr->position).z);
+  _fscanf(file_handle,"%d,%d\n",this_ptr,&this_ptr->blood_type);
+  iVar1 = _fscanf(file_handle,"%d,%f,%d,%d,%d\n",&this_ptr->texture_variant,&this_ptr->age,
+                     &this_ptr->position_fixed,&(this_ptr->position_fixed).y,
+                     &(this_ptr->position_fixed).z);
   return iVar1;
 }

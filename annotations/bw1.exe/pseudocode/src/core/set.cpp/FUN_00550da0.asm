@@ -45,25 +45,25 @@
 ;   undefined4 DAT_0062604c
 ;   undefined4 DAT_01bc120c
 ;   undefined4 DAT_01c50948
-;   undefined4 g_CDemonLightInstance.field4_0x4
+;   undefined4 g_CDemonLightInstance.base.base.position
 ;   ... and 15 more
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_00462820
 ;   core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360
 ;   core_dlight.cpp_CDemonLight_drawShadowDepthBuffer_FUN_00465e30
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0
 ;   core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0
 ;   core_fire.cpp_CFireEffect_hasActiveMuzzleFlash_FUN_004b7440
-;   core_fire.cpp_FUN_004b5100
-;   core_gore.cpp_FUN_004e5c50
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100
+;   core_gore.cpp_CGore_renderParticles_FUN_004e5c50
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0
 ;   core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_00552490
+;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0
 ;   core_set.cpp_CDemonSet_setLightingParameters_FUN_00551c30
-;   core_set.cpp_FUN_0054eef0
-;   core_set.cpp_FUN_005545a0
 ;   ... and 9 more
 ;
 ; *****************************************************************************
@@ -133,8 +133,8 @@ section .text
     PUSH EDX                            ; 00550e3c
     LEA ESI,[EBP + -0x38]               ; 00550e3d
     LEA EDI,[EBP + -0x50]               ; 00550e40
-    CALL core_xform.cpp_FUN_005b5930    ; 00550e43
-        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_005b5930()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_005b5930 ; 00550e43
+        ;   XREF to: 005b5930 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_005b5930()
     LEA ESI,[EBP + -0x38]               ; 00550e48
     MOV EDX,0x1ccc3e4                   ; 00550e4b
     LEA EAX,[EBP + -0x14]               ; 00550e50
@@ -145,7 +145,7 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00550e5e
     MOVSD ES:EDI,ESI                    ; 00550e5f
     MOVSD ES:EDI,ESI                    ; 00550e60
-    MOV dword ptr [0x01cce0a0],ECX      ; 00550e61 | g_CDemonLightInstance.field7356_0x1cbc
+    MOV dword ptr [0x01cce0a0],ECX      ; 00550e61 | g_CDemonLightInstance.volumetric_enabled
     FLD float ptr [EBP + -0x50]         ; 00550e67
     FADD double ptr [0x005f092e]        ; 00550e6a | DAT_005f092e
     FLD float ptr [EBP + -0x4c]         ; 00550e70
@@ -158,25 +158,25 @@ section .text
     JZ 0x00550e96                       ; 00550e83
         ;   XREF to: 00550e96 (CONDITIONAL_JUMP)  ; LAB_00550e96
     MOV EAX,dword ptr [EBP + -0x14]     ; 00550e85
-    MOV dword ptr [EDX],EAX             ; 00550e88 | g_CDemonLightInstance.field4_0x4
+    MOV dword ptr [EDX],EAX             ; 00550e88 | g_CDemonLightInstance.base.base.position
     MOV EAX,dword ptr [EBP + -0x10]     ; 00550e8a
-    MOV dword ptr [EDX + 0x4],EAX       ; 00550e8d | g_CDemonLightInstance.field8_0x8
+    MOV dword ptr [EDX + 0x4],EAX       ; 00550e8d | g_CDemonLightInstance.base.base.position+4
     MOV EAX,dword ptr [EBP + -0xc]      ; 00550e90
-    MOV dword ptr [EDX + 0x8],EAX       ; 00550e93 | g_CDemonLightInstance.field12_0xc
+    MOV dword ptr [EDX + 0x8],EAX       ; 00550e93 | g_CDemonLightInstance.base.base.position+8
     LEA EAX,[EBP + -0x20]               ; 00550e96
         ;   Label: LAB_00550e96
     PUSH EAX                            ; 00550e99
     MOV EAX,dword ptr [EBP + -0x4]      ; 00550e9a
     ADD EAX,0x10                        ; 00550e9d
     PUSH EAX                            ; 00550ea0
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 00550ea1
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 00550ea1
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00550ea6
     MOV EAX,dword ptr [EBP + -0x4]      ; 00550ea9
     PUSH 0x3f800000                     ; 00550eac
-    MOV dword ptr [EAX + 0x140],0x42000000 ; 00550eb1 | g_CDemonLightInstance.field320_0x140
+    MOV dword ptr [EAX + 0x140],0x42000000 ; 00550eb1 | g_CDemonLightInstance.base.max_distance
     PUSH EAX                            ; 00550ebb
-    MOV dword ptr [EAX + 0x38],0x41800000 ; 00550ebc | g_CDemonLightInstance.field56_0x38
+    MOV dword ptr [EAX + 0x38],0x41800000 ; 00550ebc | g_CDemonLightInstance.base.base.focal_length
     CALL core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0 ; 00550ec3
         ;   XREF to: 00465da0 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_setVolumetricIntensity_FUN_00465da0(CDemonLight * this_ptr, float intensity)
     LEA EAX,[EBP + -0x14]               ; 00550ec8
@@ -185,14 +185,14 @@ section .text
     JZ 0x00550eed                       ; 00550ed3
         ;   XREF to: 00550eed (CONDITIONAL_JUMP)  ; LAB_00550eed
     MOV EAX,dword ptr [EBP + -0x14]     ; 00550ed5
-    MOV [0x01fe37f0],EAX                ; 00550ed8 | g_CDemonCameraInstance.field4_0x4
+    MOV [0x01fe37f0],EAX                ; 00550ed8 | g_CDemonCameraInstance.base.position
     MOV EAX,dword ptr [EBP + -0x10]     ; 00550edd
-    MOV [0x01fe37f4],EAX                ; 00550ee0 | g_CDemonCameraInstance.field8_0x8
+    MOV [0x01fe37f4],EAX                ; 00550ee0 | g_CDemonCameraInstance.base.position+4
     MOV EAX,dword ptr [EBP + -0xc]      ; 00550ee5
-    MOV [0x01fe37f8],EAX                ; 00550ee8 | g_CDemonCameraInstance.field12_0xc
+    MOV [0x01fe37f8],EAX                ; 00550ee8 | g_CDemonCameraInstance.base.position+8
     MOV EAX,[0x0061d95c]                ; 00550eed | g_CGamePtr
         ;   Label: LAB_00550eed
-    MOV EDX,dword ptr [EAX + 0x234]     ; 00550ef2 | g_CGameInstance.field564_0x234
+    MOV EDX,dword ptr [EAX + 0x234]     ; 00550ef2 | g_CGameInstance.field516_0x234
     TEST EDX,EDX                        ; 00550ef8
     JNZ 0x005510b6                      ; 00550efa
         ;   XREF to: 005510b6 (CONDITIONAL_JUMP)  ; LAB_005510b6
@@ -210,7 +210,7 @@ section .text
     XOR ESI,ESI                         ; 00550f19
     PUSH ESI                            ; 00550f1b
     MOV EDI,dword ptr [EBP + 0x14]      ; 00550f1c
-    PUSH dword ptr [EBX + 0x140]        ; 00550f1f | g_CDemonLightInstance.field320_0x140
+    PUSH dword ptr [EBX + 0x140]        ; 00550f1f | g_CDemonLightInstance.base.max_distance
     PUSH EDI                            ; 00550f25
     MOV dword ptr [0x00622c28],ESI      ; 00550f26 | DAT_00622c28
     CALL core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0 ; 00550f2c
@@ -220,18 +220,18 @@ section .text
     MOV EAX,0x1                         ; 00550f36
     PUSH EDI                            ; 00550f3b
     MOV [0x00622c28],EAX                ; 00550f3c | DAT_00622c28
-    CALL core_set.cpp_FUN_005545a0      ; 00550f41
-        ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 ; 00550f41
+        ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 00550f46
     PUSH 0x1                            ; 00550f49
     PUSH EDI                            ; 00550f4b
-    CALL core_set.cpp_FUN_0054eef0      ; 00550f4c
-        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 ; 00550f4c
+        ;   XREF to: 0054eef0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 00550f51
     PUSH 0x1                            ; 00550f54
     PUSH EDI                            ; 00550f56
-    CALL core_set.cpp_FUN_005545a0      ; 00550f57
-        ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0 ; 00550f57
+        ;   XREF to: 005545a0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005545a0(CDemonSet * this_ptr, uint dirty_flags_mask)
     MOV EDI,dword ptr [EDI + 0x15f6fc]  ; 00550f5c
     ADD ESP,0x8                         ; 00550f62
     TEST EDI,EDI                        ; 00550f65
@@ -263,13 +263,13 @@ section .text
     MOV EAX,[0x0061dca4]                ; 00550fb0 | g_CGorePtr
         ;   Label: LAB_00550fb0
     PUSH EAX                            ; 00550fb5
-    CALL core_gore.cpp_FUN_004e5c50     ; 00550fb6
-        ;   XREF to: 004e5c50 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004e5c50(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004e5c50 ; 00550fb6
+        ;   XREF to: 004e5c50 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004e5c50(CGore * this_ptr)
     ADD ESP,0x4                         ; 00550fbb
     MOV EDX,dword ptr [0x0061c010]      ; 00550fbe | DAT_0061c010
     PUSH EDX                            ; 00550fc4
-    CALL core_fire.cpp_FUN_004b5100     ; 00550fc5
-        ;   XREF to: 004b5100 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004b5100(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_render_FUN_004b5100 ; 00550fc5
+        ;   XREF to: 004b5100 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_004b5100(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 00550fca
     PUSH 0x1                            ; 00550fcd
     MOV ECX,dword ptr [EBP + -0x4]      ; 00550fcf
@@ -327,7 +327,7 @@ section .text
     JLE 0x00551137                      ; 00551062
         ;   XREF to: 00551137 (CONDITIONAL_JUMP)  ; LAB_00551137
     MOV EDX,dword ptr [EBP + -0x4]      ; 00551068
-    MOV EDX,dword ptr [EDX + 0x1cc0]    ; 0055106b | g_CDemonLightInstance.field7360_0x1cc0
+    MOV EDX,dword ptr [EDX + 0x1cc0]    ; 0055106b | g_CDemonLightInstance.shadow_map_width
     MOV EAX,[0x0061b498]                ; 00551071 | DAT_0061b498
     ADD EDX,EDX                         ; 00551076
     SUB EAX,EDX                         ; 00551078
@@ -337,7 +337,7 @@ section .text
     SAR EAX,0x1                         ; 00551081
     MOV EDX,dword ptr [EBP + -0x4]      ; 00551083
     MOV EBX,EAX                         ; 00551086
-    MOV EDX,dword ptr [EDX + 0x1cc4]    ; 00551088 | g_CDemonLightInstance.field7364_0x1cc4
+    MOV EDX,dword ptr [EDX + 0x1cc4]    ; 00551088 | g_CDemonLightInstance.shadow_map_height
     MOV EAX,[0x0061b49c]                ; 0055108e | DAT_0061b49c
     ADD EDX,EDX                         ; 00551093
     SUB EAX,EDX                         ; 00551095
@@ -368,8 +368,8 @@ section .text
     PUSH EAX                            ; 005510c6
     MOV EDX,dword ptr [0x00612560]      ; 005510c7 | DAT_00612560
     PUSH EDX                            ; 005510cd | DAT_01bc120c
-    CALL engine_drender.cpp_FUN_004834b0 ; 005510ce
-        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0 ; 005510ce
+        ;   XREF to: 004834b0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_004834b0(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 005510d3
     MOV ECX,dword ptr [0x00612560]      ; 005510d6 | DAT_00612560
     PUSH 0x42000000                     ; 005510dc
@@ -407,7 +407,7 @@ section .text
     MOV EAX,dword ptr [EBP + -0x4]      ; 00551137
         ;   Label: LAB_00551137
     MOV EDX,dword ptr [0x0061b498]      ; 0055113a | DAT_0061b498
-    MOV ECX,dword ptr [EAX + 0x1cc0]    ; 00551140 | g_CDemonLightInstance.field7360_0x1cc0
+    MOV ECX,dword ptr [EAX + 0x1cc0]    ; 00551140 | g_CDemonLightInstance.shadow_map_width
     SUB EDX,ECX                         ; 00551146
     MOV EAX,EDX                         ; 00551148
     SAR EDX,0x1f                        ; 0055114a
@@ -416,7 +416,7 @@ section .text
     MOV EBX,EAX                         ; 00551151
     MOV EAX,dword ptr [EBP + -0x4]      ; 00551153
     MOV EDX,dword ptr [0x0061b49c]      ; 00551156 | DAT_0061b49c
-    MOV EDI,dword ptr [EAX + 0x1cc4]    ; 0055115c | g_CDemonLightInstance.field7364_0x1cc4
+    MOV EDI,dword ptr [EAX + 0x1cc4]    ; 0055115c | g_CDemonLightInstance.shadow_map_height
     SUB EDX,EDI                         ; 00551162
     MOV EAX,EDX                         ; 00551164
     JMP 0x00551099                      ; 00551166

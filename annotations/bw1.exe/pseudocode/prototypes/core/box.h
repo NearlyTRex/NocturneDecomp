@@ -29,9 +29,9 @@ void __cdecl CBox::process(CBox *this_ptr,float delta_time);
 // Address: 0041e130
 void __cdecl CBox::processPhysics(CBox *this_ptr,float delta_time);
 
-// Original: core_box.cpp_FUN_00420140
+// Original: core_box.cpp_CBox_loadFromFile_FUN_00420140
 // Address: 00420140
-void __cdecl FUN_00420140(CBox *this_ptr,_FILE *file_handle);
+void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_004202f0
 // Address: 004202f0

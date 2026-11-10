@@ -28,12 +28,12 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *
   }
   do {
     cVar1 = *pcVar4;
-    *(char *)pCVar3 = cVar1;
+    pCVar3->model_filename[0] = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar4[1];
-    pCVar3->field_0x1 = cVar1;
+    pCVar3->model_filename[1] = cVar1;
     pcVar4 = pcVar4 + 2;
-    pCVar3 = (CKeyFramedModel *)&pCVar3->field_0x2;
+    pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 2);
   } while (cVar1 != '\0');
   iVar2 = _fgetc(file);
   _ungetc(iVar2,file);
@@ -45,21 +45,21 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_load_FUN_004668a0(CKeyFramedModel *
       _DAT_01d1d404 = 0xc5;
       core_main_c_FUN_005030e0("Can't open keyframed model %s",filename);
     }
-    core_dmodel_cpp_FUN_00466be0(this_ptr,file);
+    core_dmodel_cpp_CKeyFramedModel_readTextModel_FUN_00466be0(this_ptr,file);
   }
   else {
-    core_dmodel_cpp_FUN_004669f0(this_ptr,file);
+    core_dmodel_cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0(this_ptr,file);
   }
   _fclose(file);
-  core_dmodel_cpp_FUN_00467a30(this_ptr);
+  core_dmodel_cpp_CKeyFramedModel_calculateFrameBounds_FUN_00467a30(this_ptr);
   iVar2 = 0;
   pCVar3 = this_ptr;
-  if (0 < *(int *)&this_ptr->field_0x120) {
+  if (0 < this_ptr->texture_count) {
     do {
       *(uint *)&pCVar3->field_0x128 = 0;
       iVar2 = iVar2 + 1;
-      pCVar3 = (CKeyFramedModel *)&pCVar3->field_0x48;
-    } while (iVar2 < *(int *)&this_ptr->field_0x120);
+      pCVar3 = (CKeyFramedModel *)(pCVar3->model_filename + 0x48);
+    } while (iVar2 < this_ptr->texture_count);
   }
   core_dmodel_cpp_CKeyFramedModel_calcNormals_FUN_00467880(this_ptr);
   return;

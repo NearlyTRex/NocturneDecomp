@@ -14,17 +14,17 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0055d470(int param_1)
   int iVar1;
   uint uVar2;
   char *pcVar3;
-  byte *puVar4;
   LPGUID lp_guid;
-  byte auStack_788 [400];
-  byte auStack_5f8 [400];
-  byte auStack_468 [400];
-  byte auStack_2d8 [400];
+  char acStack_788 [400];
+  char acStack_5f8 [400];
+  char acStack_468 [400];
+  char acStack_2d8 [400];
   byte local_148 [280];
   uint uStack_30;
   uint uStack_2c;
   
-  iVar1 = sound_snddx_cpp_FUN_0055ac00((CDirectSoundDevice *)&DAT_02cf5468);
+  iVar1 = sound_snddx_cpp_CDirectSoundDevice_close_FUN_0055ac00((CDirectSoundDevice *)&DAT_02cf5468)
+  ;
   if (iVar1 != 0) {
     iVar1 = sound_snddx_cpp_enumerateDirectSoundDevice_FUN_0055d3c0(param_1,local_148);
     if (iVar1 != 0) {
@@ -41,44 +41,36 @@ byte * __cdecl sound_snddx_cpp_getDirectSoundDevice_FUN_0055d470(int param_1)
           uStack_2c = 0x11;
           uVar2 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_30,&DAT_02cf49c8,0);
           if (uVar2 != 0) {
-            pcVar3 = sound_snddx_cpp_FUN_0055a670(uVar2);
-            FUN_005a28c0
-                      (auStack_788,"DirectSux: Unable to %s.  (%s)",
-                       "Create the primary buffer",pcVar3);
-            sound_sndmain_cpp_FUN_0055a560(auStack_788);
+            sound_snddx_cpp_FUN_0055a670(uVar2);
+            _sprintf(acStack_788,"DirectSux: Unable to %s.  (%s)");
+            sound_sndmain_cpp_FUN_0055a560(acStack_788);
             uStack_2c = uStack_2c & 0xffffffef;
             uVar2 = (**(code **)(*_DAT_02cf49c4 + 0xc))(_DAT_02cf49c4,&uStack_30,&DAT_02cf49c8,0);
             if (uVar2 != 0) {
-              pcVar3 = sound_snddx_cpp_FUN_0055a670(uVar2);
-              FUN_005a28c0
-                        (auStack_468,"DirectSux: Unable to %s.  (%s)",
-                         "Create the primary buffer",pcVar3);
-              puVar4 = auStack_468;
+              sound_snddx_cpp_FUN_0055a670(uVar2);
+              _sprintf(acStack_468,"DirectSux: Unable to %s.  (%s)");
+              pcVar3 = acStack_468;
               goto LAB_0055d511;
             }
           }
-          iVar1 = sound_sndmain_cpp_FUN_005586e0();
+          iVar1 = sound_sndmain_cpp_isHardwareMixingEnabled_FUN_005586e0();
           if ((1 < iVar1) && (1 < *(int *)(param_1 * 0x11c + 0x2cf3d8c))) {
             (**(code **)*_DAT_02cf49c8)(_DAT_02cf49c8,&DAT_00608bc8,&DAT_02cf49d0);
           }
           return &DAT_02cf5468;
         }
-        pcVar3 = sound_snddx_cpp_FUN_0055a670(uVar2);
-        FUN_005a28c0
-                  (auStack_2d8,"DirectSux: Unable to %s.  (%s)","Set cooperative level",
-                   pcVar3);
-        puVar4 = auStack_2d8;
+        sound_snddx_cpp_FUN_0055a670(uVar2);
+        _sprintf(acStack_2d8,"DirectSux: Unable to %s.  (%s)");
+        pcVar3 = acStack_2d8;
       }
       else {
-        pcVar3 = sound_snddx_cpp_FUN_0055a670(uVar2);
-        FUN_005a28c0
-                  (auStack_5f8,"DirectSux: Unable to %s.  (%s)",
-                   "create DirectSound object",pcVar3);
-        puVar4 = auStack_5f8;
+        sound_snddx_cpp_FUN_0055a670(uVar2);
+        _sprintf(acStack_5f8,"DirectSux: Unable to %s.  (%s)");
+        pcVar3 = acStack_5f8;
       }
 LAB_0055d511:
-      sound_sndmain_cpp_FUN_0055a560(puVar4);
-      sound_snddx_cpp_FUN_0055ac00((CDirectSoundDevice *)&DAT_02cf5468);
+      sound_sndmain_cpp_FUN_0055a560(pcVar3);
+      sound_snddx_cpp_CDirectSoundDevice_close_FUN_0055ac00((CDirectSoundDevice *)&DAT_02cf5468);
       return (byte *)0x0;
     }
   }

@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 71,
-    "complexity_score": 108,
+    "complexity_score": 89,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 7,
+    "pseudocode_lines": 29,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
     ],
-    "total_lines": 99
+    "total_lines": 100
   },
   "cross_references": [],
   "function": {
@@ -37,7 +37,7 @@
     {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "0050ad40",
@@ -145,39 +145,23 @@
     },
     {
       "description": "Negative struct offset (wrong base type)",
-      "line": 20,
+      "line": 21,
       "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&pCVar1[-2].field_0x138bc,0);",
+      "text": "((CPathMap *)&pCVar1[-2].last_pathfinding_result,0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x138bc",
-      "severity": "mild",
-      "text": "pCVar1 = core_path_cpp_CPathMap_dtor_FUN_0050ad40((CPathMap *)&pCVar1[-2].field_0x138bc,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 21,
+      "line": 22,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);",
+      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(pCVar1[-1].height_cache_tags[4] + 0x2f,0);",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xa36c",
-      "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 26,
+      "line": 27,
       "match": "pCVar4[-1].",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar4[-1].field_0x224c,1);",
@@ -185,7 +169,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 27,
       "match": "field_0x224c",
       "severity": "mild",
       "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar4[-1].field_0x224c,1);",
@@ -195,7 +179,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CAsgaya",
         "offset": 208,
         "vtable_addr": "005e8684"
       },

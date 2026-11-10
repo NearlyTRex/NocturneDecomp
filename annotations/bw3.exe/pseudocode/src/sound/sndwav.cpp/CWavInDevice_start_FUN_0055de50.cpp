@@ -28,7 +28,7 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_0055de50(CWavInDevice *this_
                  (uint)((_DAT_02cf5648 >> 0x1f) << 2 < 0)) >> 3) * _DAT_02cf5658 * _DAT_02cf564c;
       iVar1 = sound_sndwav_cpp_writeWavInBuffer_FUN_0055dcf0(buffer_index);
       if (iVar1 == 0) {
-        (**(code **)(*(int *)this_ptr + 8))(this_ptr);
+        (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
         return 0;
       }
       buffer_index = buffer_index + 1;
@@ -42,6 +42,6 @@ int __cdecl sound_sndwav_cpp_CWavInDevice_start_FUN_0055de50(CWavInDevice *this_
     return 1;
   }
   sound_sndmain_cpp_FUN_0055a560("waveInStart failed!");
-  (**(code **)(*(int *)this_ptr + 8))(this_ptr);
+  (*((this_ptr->base).vtable)->reset)(&this_ptr->base);
   return 0;
 }

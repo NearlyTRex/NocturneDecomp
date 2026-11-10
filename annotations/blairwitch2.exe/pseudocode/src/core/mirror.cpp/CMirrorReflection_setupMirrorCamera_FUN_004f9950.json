@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 25,
-    "complexity_score": 43,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 2,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
+    "pseudocode_lines": 9,
     "suspect_count": 3,
     "suspect_types": [
       "undefined_data"
     ],
-    "total_lines": 33
+    "total_lines": 34
   },
   "cross_references": [
     {
       "addr": "004f9990",
       "from_addr": "004fa4f4",
-      "name": "core_mirror.cpp_FUN_004f9990",
+      "name": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -36,14 +36,14 @@
   },
   "function_calls": [
     {
+      "addr": "0046afb0",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0"
+    },
+    {
       "addr": "0046b060",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060"
-    },
-    {
-      "addr": "0046afb0",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046afb0"
     },
     {
       "addr": "0046b4b0",
@@ -71,7 +71,7 @@
       {
         "call_addr": "004fa4f4",
         "call_type": "direct",
-        "caller": "core_mirror.cpp_FUN_004f9990",
+        "caller": "core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -125,26 +125,26 @@
   "suspects": [
     {
       "description": "Undefined global data reference",
-      "line": 5,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046afb0(DAT_0060b280,(CVector3f *)(this_ptr + 0x60));",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
       "line": 6,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046b4b0(DAT_0060b280,*(uint *)(this_ptr + 0x6c));",
+      "text": "(DAT_0060b280,&this_ptr->camera_origin);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 8,
+      "line": 7,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "(DAT_0060b280,(CMatrix3x3f *)(this_ptr + 0x70));",
+      "text": "engine_matrix_c_FUN_0046b4b0(DAT_0060b280,this_ptr->projection_scale);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 9,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "(DAT_0060b280,&this_ptr->reflection_matrix);",
       "type": "undefined_data"
     }
   ]

@@ -1,0 +1,182 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 70,
+    "complexity_score": 82,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 107
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0051b1e0",
+    "address_range": [
+      [
+        "0051b1e0",
+        "0051b272"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_pod.cpp_CPod_remount_FUN_0051b1e0",
+    "signature": "void __cdecl engine_pod_cpp_CPod_remount_FUN_0051b1e0(CPod *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00519f00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e2805",
+      "name": "s_engine_pod_cpp_005e2805",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e2817",
+      "name": "s_Can_t_re_mount_s_005e2817",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.254545454545455,
+    "instruction_count": 55,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 5,
+      "COPY": 43,
+      "INT_ADD": 20,
+      "INT_AND": 32,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 30,
+      "INT_LESS": 4,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 15,
+      "INT_SUB": 15,
+      "INT_XOR": 1,
+      "LOAD": 14,
+      "POPCOUNT": 15,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 234
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPod *"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0051b1fe",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 21,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 37,
+      "match": "pCVar3 = (T *)pCVar3->ARRAY",
+      "severity": "moderate",
+      "text": "pCVar3 = (CPod *)pCVar3->pod_files;",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPod",
+        "offset": 20,
+        "vtable_addr": "005fad64"
+      },
+      {
+        "class_name": "CDemonPod",
+        "offset": 20,
+        "vtable_addr": "005fadd4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

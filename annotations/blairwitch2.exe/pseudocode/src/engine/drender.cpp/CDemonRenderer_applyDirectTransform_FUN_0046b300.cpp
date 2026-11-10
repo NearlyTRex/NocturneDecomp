@@ -10,12 +10,10 @@ void __cdecl engine_drender_cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
 
 {
   if (rotation == (CVector3i *)0x0) {
-    engine_matrix_c_matrixPushAndTransform_FUN_004e8fd0
-              (*(int *)position,*(int *)(position + 4),*(int *)(position + 8),0,0,0);
+    engine_matrix_c_matrixPushAndTransform_FUN_004e8fd0(position->x,position->y,position->z,0,0,0);
     return;
   }
   engine_matrix_c_matrixPushAndTransform_FUN_004e8fd0
-            (*(int *)position,*(int *)(position + 4),*(int *)(position + 8),*(int *)rotation,
-             *(int *)(rotation + 4),*(int *)(rotation + 8));
+            (position->x,position->y,position->z,rotation->x,rotation->y,rotation->z);
   return;
 }

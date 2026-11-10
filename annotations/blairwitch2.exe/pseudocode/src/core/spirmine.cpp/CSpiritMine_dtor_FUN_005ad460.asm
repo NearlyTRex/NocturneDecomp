@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CSpiritMineVTable
+;   CDemonActor_vtable g_CSpiritMineVTable
 ;   WatcomTypeInfo g_CSpiritMineTypeInfo
 ;
 ; Called Functions:

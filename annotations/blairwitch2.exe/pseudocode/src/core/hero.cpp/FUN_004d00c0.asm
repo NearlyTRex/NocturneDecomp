@@ -10,20 +10,20 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[7]:
-;   core_baron.cpp_FUN_00410170 at 00410188
-;   core_colonel.cpp_FUN_00435e30 at 00435f1a
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 00410188
+;   core_colonel.cpp_CColonel_processAI_FUN_00435e30 at 00435f1a
 ;   core_gabriela.cpp_FUN_004aeb00 at 004aebfd
-;   core_haystack.cpp_FUN_004ccff0 at 004cd0ef
-;   core_icepick.cpp_FUN_004d5950 at 004d5a99
-;   core_scat.cpp_FUN_0051f490 at 0051f580
-;   core_svetlana.cpp_FUN_00570c80 at 00570dc9
+;   core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0 at 004cd0ef
+;   core_icepick.cpp_CIcePick_processAI_FUN_004d5950 at 004d5a99
+;   core_scat.cpp_CScat_updateAI_FUN_0051f490 at 0051f580
+;   core_svetlana.cpp_CSvetlana_processAI_FUN_00570c80 at 00570dc9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d9ddc
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 g_CMobsterClassInfo.name_hash
-;   undefined4 g_CDemonSetInstance.field1380332_0x150fec
+;   undefined4 g_CDemonSetInstance.enemy_count
 ;   undefined4 g_CVehicleClassInfo.name_hash
 ;
 ; Called Functions:
@@ -54,7 +54,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 004d00fc | g_CDemonSetPtr
         ;   Label: LAB_004d00fc
     MOV EDX,dword ptr [ESP + 0xa0]      ; 004d0101
-    CMP EDX,dword ptr [EAX + 0x150fec]  ; 004d0108 | g_CDemonSetInstance.field1380332_0x150fec
+    CMP EDX,dword ptr [EAX + 0x150fec]  ; 004d0108 | g_CDemonSetInstance.enemy_count
     JL 0x004d012c                       ; 004d010e
         ;   XREF to: 004d012c (CONDITIONAL_JUMP)  ; LAB_004d012c
     CMP dword ptr [ESP + 0x98],0x0      ; 004d0110

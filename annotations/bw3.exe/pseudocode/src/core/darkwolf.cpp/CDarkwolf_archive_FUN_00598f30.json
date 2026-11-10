@@ -1,0 +1,198 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 48,
+    "complexity_score": 70,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 15,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 63
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00598f30",
+    "address_range": [
+      [
+        "00598f30",
+        "00598fad"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_darkwolf.cpp_CDarkwolf_archive_FUN_00598f30",
+    "signature": "void __cdecl core_darkwolf_cpp_CDarkwolf_archive_FUN_00598f30(CDarkwolf *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d988a",
+      "name": "s_speed_005d9889+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d9890",
+      "name": "s_modelName_005d9890",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d989a",
+      "name": "s_guardDistance_005d989a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d98a8",
+      "name": "s_motion_state_005d98a8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d98b5",
+      "name": "s_morphTime_005d98b5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006073e8",
+      "name": "g_CDarkwolfClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.256410256410256,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALL": 6,
+      "CBRANCH": 1,
+      "COPY": 27,
+      "INT_ADD": 17,
+      "INT_AND": 16,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 17,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 8,
+      "INT_SUB": 20,
+      "LOAD": 7,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 19
+    },
+    "pcode_op_count": 166
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDarkwolf *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0xcdcc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcdcc,\"?speed\" + 1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"modelName\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0xcddc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xcddc,\"guardDistance\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,\"motion state\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 15,
+      "match": "field_0xdc90",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0xdc90,\"morphTime\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CDarkwolf",
+        "offset": 212,
+        "vtable_addr": "005e7a04"
+      },
+      {
+        "class_name": "CDarkwolf",
+        "offset": 212,
+        "vtable_addr": "005e7b54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

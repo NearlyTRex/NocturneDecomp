@@ -38,9 +38,9 @@ void engine_alphabit_cpp_FUN_0040d660(CAlphaBitmap *param_1,int param_2,int para
       iVar2 = iVar2 - ((param_3 + iVar2) - DAT_0061b49c);
     }
     engine_alphabit_cpp_CAlphaBitmap_initPalette_FUN_0040d910(param_1);
-    param_4 = param_4 + param_5 * *(int *)&param_1->field_0xc;
-    srcIndices = (uchar *)(*(int *)param_1 + param_4);
-    srcAlpha = (uchar *)(param_4 + *(int *)&param_1->field_0x4);
+    param_4 = param_4 + param_5 * param_1->width;
+    srcIndices = (uchar *)(param_1->raw + param_4);
+    srcAlpha = (uchar *)(param_1->opa + param_4);
     local_18 = param_3 * 4;
     iVar1 = iVar2 * 4 + local_18;
     if (DAT_0061b4a0 == 0x20) {
@@ -50,9 +50,9 @@ void engine_alphabit_cpp_FUN_0040d660(CAlphaBitmap *param_1,int param_2,int para
           engine_special_cpp_renderAlphaRow32_FUN_0057ff73
                     ((uint *)(*(int *)(&DAT_01c4354c + local_14) + param_2 * 4),srcIndices,srcAlpha,
                      param_8,local_1c);
-          srcIndices = srcIndices + *(int *)&param_1->field_0xc;
+          srcIndices = srcIndices + param_1->width;
           local_14 = local_14 + 4;
-          srcAlpha = srcAlpha + *(int *)&param_1->field_0xc;
+          srcAlpha = srcAlpha + param_1->width;
         } while (local_14 < iVar1);
       }
     }
@@ -61,9 +61,9 @@ void engine_alphabit_cpp_FUN_0040d660(CAlphaBitmap *param_1,int param_2,int para
         engine_special_cpp_renderAlphaRow16_FUN_0058000e
                   ((ushort *)(*(int *)(&DAT_01c4354c + local_18) + param_2 * 2),srcIndices,srcAlpha,
                    param_8,local_1c);
-        srcIndices = srcIndices + *(int *)&param_1->field_0xc;
+        srcIndices = srcIndices + param_1->width;
         local_18 = local_18 + 4;
-        srcAlpha = srcAlpha + *(int *)&param_1->field_0xc;
+        srcAlpha = srcAlpha + param_1->width;
       } while (local_18 < iVar1);
       return;
     }

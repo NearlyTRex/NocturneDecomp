@@ -13,35 +13,35 @@ CDrip * __cdecl core_drip_cpp_CDrip_ctor_FUN_0046ea50(CDrip *this_ptr)
   CDemonActor *pCVar2;
   CKeyFramedModelInstance *this_ptr_00;
   char *pcVar3;
-  char *pcVar4;
+  int *piVar4;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                           ((CKeyFramedModelInstance *)(pCVar2 + 1));
-  *(byte **)&this_ptr_00[-1].field_0x178 = &g_CDripVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CDripVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(this_ptr_00,(char *)0x5bc703);
-  *(uint *)(this_ptr_00 + 1) = 2;
-  *(uint *)&this_ptr_00[1].field_0x4 = 1;
-  *(uint *)&this_ptr_00[1].field_0x38 = 0;
-  *(uint *)&this_ptr_00[1].field_0x34 = *(uint *)&this_ptr_00[1].field_0x38;
-  *(uint *)&this_ptr_00[1].field_0x30 = *(uint *)&this_ptr_00[1].field_0x34;
-  *(uint *)&this_ptr_00[1].field_0xc = 0x40a00000;
-  *(uint *)&this_ptr_00[1].field_0x10 = 0x41200000;
-  *(uint *)&this_ptr_00[1].field_0x8 = 0;
+  this_ptr_00[1].part_visibility_flags[0] = 2;
+  this_ptr_00[1].part_visibility_flags[1] = 1;
+  this_ptr_00[1].part_visibility_flags[0xe] = 0;
+  this_ptr_00[1].part_visibility_flags[0xd] = this_ptr_00[1].part_visibility_flags[0xe];
+  this_ptr_00[1].part_visibility_flags[0xc] = this_ptr_00[1].part_visibility_flags[0xd];
+  this_ptr_00[1].part_visibility_flags[3] = 0x40a00000;
+  this_ptr_00[1].part_visibility_flags[4] = 0x41200000;
+  this_ptr_00[1].part_visibility_flags[2] = 0;
   pcVar3 = (char *)0x5bc70e;
-  *(uint *)&this_ptr_00[1].field_0x14 = 0;
-  *(uint *)&this_ptr_00[1].field_0x3c = 0x41200000;
-  pcVar4 = &this_ptr_00[1].field_0x40;
-  *(uint *)&this_ptr_00[1].field_0x64 = 0;
+  this_ptr_00[1].part_visibility_flags[5] = 0;
+  this_ptr_00[1].part_visibility_flags[0xf] = 0x41200000;
+  piVar4 = this_ptr_00[1].part_visibility_flags + 0x10;
+  this_ptr_00[1].part_visibility_flags[0x19] = 0;
   do {
     cVar1 = *pcVar3;
-    *pcVar4 = cVar1;
+    *(char *)piVar4 = cVar1;
     if (cVar1 == '\0') break;
     cVar1 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar1;
-    pcVar4 = pcVar4 + 2;
+    *(char *)((int)piVar4 + 1) = cVar1;
+    piVar4 = (int *)((int)piVar4 + 2);
   } while (cVar1 != '\0');
-  *(uint *)&this_ptr_00[1].field_0x60 = 0;
-  return (CDrip *)&this_ptr_00[-1].field_0x24;
+  this_ptr_00[1].part_visibility_flags[0x18] = 0;
+  return (CDrip *)(this_ptr_00[-1].part_visibility_flags + 9);
 }

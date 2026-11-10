@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     ADD EAX,0x158                       ; 0055dae5
     PUSH EAX                            ; 0055daea
     MOV dword ptr [EAX + -0x4],0x6051b4 ; 0055daeb
-    CALL core_skeleton.cpp_FUN_00569f50 ; 0055daf2
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 0055daf2
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2fec],0x3f800000 ; 0055daf7
     MOV dword ptr [EBX + 0x2ff0],0x40000000 ; 0055db01
     MOV dword ptr [EBX + 0xc30c],0x1    ; 0055db0b

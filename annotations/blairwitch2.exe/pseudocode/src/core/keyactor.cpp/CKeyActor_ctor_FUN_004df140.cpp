@@ -12,12 +12,12 @@ CKeyActor * __cdecl core_keyactor_cpp_CKeyActor_ctor_FUN_004df140(CKeyActor *thi
   CDemonActor *pCVar1;
   CKeyFramedModelInstance *this_ptr_00;
   
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  *(byte **)&this_ptr_00[-1].field_0x178 = &g_CKeyActorVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CKeyActorVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr_00,(char *)0x5dbbb0);
-  *(uint *)(this_ptr_00 + 1) = 1;
-  *(uint *)&this_ptr_00[1].field_0x4 = 0;
-  return (CKeyActor *)&this_ptr_00[-2].field_0x44;
+  this_ptr_00[1].part_visibility_flags[0] = 1;
+  this_ptr_00[1].part_visibility_flags[1] = 0;
+  return (CKeyActor *)(this_ptr_00[-2].part_visibility_flags + 0x11);
 }

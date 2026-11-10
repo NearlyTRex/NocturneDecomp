@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   radius
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00481090 at 004811c5
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00481090 at 004811c5
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircle_FUN_0047ead0

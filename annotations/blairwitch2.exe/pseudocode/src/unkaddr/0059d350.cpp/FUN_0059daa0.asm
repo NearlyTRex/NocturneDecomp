@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[42]:
+;   core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0 at 0059f6c2
+;   core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270 at 005a029e
+;   core_basicnpc.cpp_CBasicNPC_getDeathState_FUN_0059f930 at 0059f93f
 ;   core_basicnpc.cpp_FUN_005a48d0 at 005a48e2
 ;   core_belling.cpp_FUN_005a9080 at 005a9092
-;   core_confedrt.cpp_FUN_005a0b20 at 005a0b75
+;   core_confedrt.cpp_CConfederate_getDeathState_FUN_005a12d0 at 005a12e1
+;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 at 005a0b75
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0bf1
-;   core_confedrt.cpp_FUN_005a12d0 at 005a12e1
-;   core_confzomb.cpp_FUN_005a1e10 at 005a1e65
-;   core_confzomb.cpp_FUN_005a2240 at 005a2269
-;   core_confzomb.cpp_FUN_005a24a0 at 005a24b1
-;   core_dog1.cpp_FUN_005abe90 at 005abf00
-;   core_dog1.cpp_FUN_005ac2f0 at 005ac32d
+;   core_confzomb.cpp_CConfederateZombie_getDeathState_FUN_005a24a0 at 005a24b1
+;   core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10 at 005a1e65
 ;   ... and 32 more
 ;
 ; Called Functions:

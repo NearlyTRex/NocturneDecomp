@@ -13,10 +13,10 @@ void core_motion_cpp_FUN_005249b0(CMotionController *param_1)
   SMotion *pSVar2;
   SMotion *pSVar3;
   
-  if (*(int *)param_1 != 0) {
-    if (param_1->field_0x30 == '\0') {
+  if (param_1->motion_list_ptr != (CMotionList *)0x0) {
+    if (param_1->current_motion_name[0] == '\0') {
       pSVar2 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770(param_1);
-      pSVar3 = (SMotion *)&param_1->field_0x30;
+      pSVar3 = (SMotion *)param_1->current_motion_name;
       do {
         SVar1 = *pSVar2;
         *pSVar3 = SVar1;
@@ -26,10 +26,10 @@ void core_motion_cpp_FUN_005249b0(CMotionController *param_1)
         pSVar3[1] = SVar1;
         pSVar3 = pSVar3 + 2;
       } while (SVar1 != (SMotion)0x0);
-      *(uint *)param_1 = 0;
+      param_1->motion_list_ptr = (CMotionList *)0x0;
       return;
     }
-    *(uint *)param_1 = 0;
+    param_1->motion_list_ptr = (CMotionList *)0x0;
   }
   return;
 }

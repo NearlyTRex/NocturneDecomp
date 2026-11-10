@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 110,
+    "complexity_score": 43,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 30,
-    "suspect_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 28,
+    "suspect_count": 1,
     "suspect_types": [
-      "unknown_field",
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
-    "total_lines": 120
+    "total_lines": 118
   },
   "cross_references": [],
   "function": {
@@ -37,7 +36,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "00496150",
@@ -126,60 +125,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(double)*(float *)&result_ptr->field_0x4,(double)*(float *)&result_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(double)*(float *)&result_ptr->field_0x4,(double)*(float *)&result_ptr->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "*(uint *)result_ptr = CStack_18._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "*(uint *)&result_ptr->field_0x4 = CStack_18._4_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&result_ptr->field_0x4 = CStack_18._4_4_;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 30,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "*(uint *)&result_ptr->field_0x8 = CStack_18._8_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&result_ptr->field_0x8 = CStack_18._8_4_;",
-      "type": "unnamed_field"
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 26,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "result_ptr->x = CStack_18.x;",
+      "type": "unrolled_memcpy"
     }
   ]
 }

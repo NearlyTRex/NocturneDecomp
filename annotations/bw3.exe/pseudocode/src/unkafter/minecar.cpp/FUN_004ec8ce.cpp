@@ -17,7 +17,7 @@ void unkafter_minecar_cpp_FUN_004ec8ce(void)
     _DAT_01d7a6b4 = _DAT_005e2974;
     return;
   }
-  wincore_wddvmem_cpp_FUN_0057a8a0();
+  wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
   _DAT_01d7a6b4 = _DAT_005e2974;
   return;
 }

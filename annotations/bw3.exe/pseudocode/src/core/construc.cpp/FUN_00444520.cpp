@@ -11,7 +11,7 @@ void core_construc_cpp_FUN_00444520(void)
 {
   CConstructBone *this_ptr;
   
-  this_ptr = (CConstructBone *)FUN_005a3cb2(0xd860);
+  this_ptr = (CConstructBone *)debugAllocTracked1(0xd860);
   if (this_ptr == (CConstructBone *)0x0) {
     return;
   }

@@ -12,3 +12,39 @@ void staticInit(void);
 // Original: core_bird.cpp_factoryFuncBird_FUN_0040f9c0
 // Address: 0040f9c0
 void factoryFuncBird(void);
+
+// Original: core_bird.cpp_CBird_setup_FUN_0040fac0
+// Address: 0040fac0
+void __cdecl CBird::setup(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_process_FUN_0040fb40
+// Address: 0040fb40
+void __cdecl CBird::process(CBird *this_ptr,float delta_time);
+
+// Original: core_bird.cpp_CBird_renderBackground_FUN_0040fe60
+// Address: 0040fe60
+void __cdecl CBird::renderBackground(CBird *this_ptr,int layer_flag);
+
+// Original: core_bird.cpp_CBird_renderOpaque_FUN_0040fe90
+// Address: 0040fe90
+int __cdecl CBird::renderOpaque(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_renderTransparent_FUN_0040ff30
+// Address: 0040ff30
+int __cdecl CBird::renderTransparent(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_archive_FUN_0040ff80
+// Address: 0040ff80
+void __cdecl CBird::archive(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_processDamage_FUN_00410110
+// Address: 00410110
+void __cdecl CBird::processDamage(CBird *this_ptr,SDamageInfo *damage_info);
+
+// Original: core_bird.cpp_CBird_isInvulnerable_FUN_004101c0
+// Address: 004101c0
+int __cdecl CBird::isInvulnerable(CBird *this_ptr);
+
+// Original: core_bird.cpp_CBird_getPathMap_FUN_004101e0
+// Address: 004101e0
+CPathMap * __cdecl CBird::getPathMap(CBird *this_ptr);

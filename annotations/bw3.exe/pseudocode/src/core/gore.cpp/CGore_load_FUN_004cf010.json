@@ -1,0 +1,239 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 71,
+    "complexity_score": 115,
+    "cross_reference_count": 2,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 30,
+    "suspect_count": 7,
+    "suspect_types": [
+      "raw_address_constant",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 101
+  },
+  "cross_references": [
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be6c0",
+      "name": "core_game.cpp_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f5cc0",
+      "from_addr": "004f6316",
+      "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004cf010",
+    "address_range": [
+      [
+        "004cf010",
+        "004cf0ba"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gore.cpp_CGore_load_FUN_004cf010",
+    "signature": "int __cdecl core_gore_cpp_CGore_load_FUN_004cf010(CGore *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "004cdb50",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004cdb50"
+    },
+    {
+      "addr": "004ce090",
+      "is_variadic": false,
+      "name": "core_gore.cpp_FUN_004ce090"
+    },
+    {
+      "addr": "005a3f00",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fgets_FUN_005a3f00"
+    },
+    {
+      "addr": "005a3230",
+      "is_variadic": false,
+      "name": "crt_stdio.c_fscanf_FUN_005a3230"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c4791",
+      "name": "DAT_005c4791",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c4795",
+      "name": "DAT_005c4795",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d276b8",
+      "name": "DAT_01d276b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d4a940",
+      "name": "DAT_01d4a940",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004be6c0",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bdfb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f6316",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.56140350877193,
+    "instruction_count": 57,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 5,
+      "CBRANCH": 4,
+      "COPY": 44,
+      "INT_ADD": 17,
+      "INT_AND": 36,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 34,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 10,
+      "INT_SLESS": 17,
+      "INT_SUB": 25,
+      "INT_XOR": 2,
+      "LOAD": 6,
+      "POPCOUNT": 17,
+      "RETURN": 1,
+      "STORE": 22
+    },
+    "pcode_op_count": 260
+  },
+  "stack_frame": {
+    "frame_size": 284,
+    "local_size": 276,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_110",
+        "offset": -272,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGore *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005c4791",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c4791,&DAT_01d4a940);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_01d4a940",
+      "severity": "mild",
+      "text": "_fscanf(file_handle,&DAT_005c4791,&DAT_01d4a940);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_005c4795",
+      "severity": "mild",
+      "text": "iVar3 = _fscanf(file_handle,&DAT_005c4795,&DAT_01d276b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_01d276b8",
+      "severity": "mild",
+      "text": "iVar3 = _fscanf(file_handle,&DAT_005c4795,&DAT_01d276b8);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Raw hex address 0x1d4a944 assigned to bare local `iVar1`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar1` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 16,
+      "match": "0x1d4a944",
+      "severity": "moderate",
+      "text": "iVar1 = 0x1d4a944;",
+      "type": "raw_address_constant"
+    },
+    {
+      "description": "Raw hex address 0x1d276bc assigned to bare local `iVar2`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar2` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
+      "line": 26,
+      "match": "0x1d276bc",
+      "severity": "moderate",
+      "text": "iVar2 = 0x1d276bc;",
+      "type": "raw_address_constant"
+    }
+  ]
+}

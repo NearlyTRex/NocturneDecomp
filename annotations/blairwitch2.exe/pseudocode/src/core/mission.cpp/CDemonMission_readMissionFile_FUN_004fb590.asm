@@ -50,7 +50,7 @@
 ;   core_actor.cpp_resetActorTypeInfo_FUN_0040c950
 ;   core_gore.cpp_CGore_load_FUN_004c9e70
 ;   core_gore.cpp_CGore_reset_FUN_004c93f0
-;   core_inv.cpp_FUN_004dc810
+;   core_inv.cpp_CInventory_loadItems_FUN_004dc810
 ;   core_main.c_FUN_004e4500
 ;   core_mission.cpp_CDemonMission_addActorToList_FUN_004fc200
 ;   core_mission.cpp_FUN_004fb450
@@ -434,8 +434,8 @@ section .text
         ;   XREF to: 004fb9b2 (CONDITIONAL_JUMP)  ; LAB_004fb9b2
     ADD EAX,0x2437c                     ; 004fb9a4
     PUSH EAX                            ; 004fb9a9
-    CALL core_inv.cpp_FUN_004dc810      ; 004fb9aa
-        ;   XREF to: 004dc810 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dc810(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_loadItems_FUN_004dc810 ; 004fb9aa
+        ;   XREF to: 004dc810 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_loadItems_FUN_004dc810(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004fb9af
     MOV EDI,dword ptr [ESP + 0x130]     ; 004fb9b2
         ;   Label: LAB_004fb9b2

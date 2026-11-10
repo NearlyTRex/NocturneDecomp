@@ -88,24 +88,24 @@ void __cdecl core_game_cpp_CGame_rollCredits_FUN_004be430(CGame *this_ptr)
     }
     _fclose(local_30);
     sound_sndmain_cpp_resetSoundDevice_FUN_005526b0();
-    sound_sndmain_cpp_FUN_005524b0();
+    sound_sndmain_cpp_enableSoundSystem_FUN_005524b0();
     local_2c = 0;
-    iVar6 = sound_sndmain_cpp_FUN_005512a0(1);
+    iVar6 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(1);
     if (iVar6 != 0) {
-      sound_sndmain_cpp_FUN_00550450();
+      sound_sndmain_cpp_pushSfxOptions_FUN_00550450();
       sound_sndmain_cpp_setNextSfxChannel_FUN_00550310(1);
       sound_sndmain_cpp_setNextSfxFlags_FUN_00550380(1);
       local_2c = sound_sndmain_cpp_FUN_005506b0("XBLAIRMENU.WAV");
-      sound_sndmain_cpp_FUN_005504d0();
+      sound_sndmain_cpp_popSfxOptions_FUN_005504d0();
     }
     engine_2d_c_clearInputAndWait_FUN_004032b0();
     this_ptr_00 = _DAT_01511cc0;
     local_20 = _DAT_01511cc0;
     *(uint *)(_DAT_01511cc0 + 0x4210) = 0;
-    iVar6 = engine_font_cpp_FUN_004ab560(this_ptr_00,0x58);
+    iVar6 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(this_ptr_00,0x58);
     local_38 = -1;
     local_24 = iVar6;
-    core_game_cpp_FUN_004b3000(this_ptr);
+    core_game_cpp_CGame_saveClockTime_FUN_004b3000(this_ptr);
     engine_3d_c_setRenderAlpha_FUN_00406da0(0xffff);
     local_34 = 0x1df - iVar6;
 LAB_004be5a8:
@@ -149,11 +149,11 @@ LAB_004be5a8:
       if ((local_2c != 0) && (iVar6 = sound_sndmain_cpp_FUN_00550b70(local_2c), iVar6 == 0))
       goto LAB_004be71e;
     }
-    wincore_wddvmem_cpp_FUN_00589560();
+    wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
     iVar6 = (**(code **)*0x01D02F84)(0x01D02F84,1);
     if (iVar6 != 0) goto LAB_004be71e;
-    core_game_cpp_FUN_004b3010(this_ptr);
-    local_28 = local_28 - *(float *)&this_ptr->field_0x284 * _DAT_005d8ab3;
+    core_game_cpp_CGame_updateDT_FUN_004b3010(this_ptr);
+    local_28 = local_28 - this_ptr->delta_time_float * _DAT_005d8ab3;
     if (local_28 < _DAT_005d8ac3) {
       local_38 = -1;
       local_28 = 500.0;

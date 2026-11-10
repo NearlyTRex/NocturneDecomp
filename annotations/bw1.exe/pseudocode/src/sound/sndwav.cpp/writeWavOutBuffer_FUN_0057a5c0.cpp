@@ -17,7 +17,7 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0057a5c0(int buffer_index)
   int iVar4;
   int iVar6;
   int iVar7;
-  int local_34 [8];
+  LPVOID local_34 [8];
   int local_14;
   int iVar5;
   
@@ -45,7 +45,7 @@ int __cdecl sound_sndwav_cpp_writeWavOutBuffer_FUN_0057a5c0(int buffer_index)
       iVar5 = iVar4;
     } while (iVar4 < _DAT_02c828c8 * 4);
   }
-  sound_sndmain_cpp_FUN_00576c20
+  sound_sndmain_cpp_pollAndMixSfx_FUN_00576c20
             (local_34,_DAT_02c828c4,_DAT_02c828c8,_DAT_02c828cc,_DAT_02c828d0,iVar3 * _DAT_02c828c8)
   ;
   *(int *)(*(int *)(local_14 + 0x2c82864) + 4) =

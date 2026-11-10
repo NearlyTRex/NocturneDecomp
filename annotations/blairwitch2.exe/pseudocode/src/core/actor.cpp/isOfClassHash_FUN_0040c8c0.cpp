@@ -15,6 +15,6 @@ void __cdecl core_actor_cpp_isOfClassHash_FUN_0040c8c0(int param_1,uint param_2)
     return;
   }
   type_ptr = (CDemonActorType *)(**(code **)(*(int *)(param_1 + 0x2b0) + 0xd4))(param_1);
-  core_actor_cpp_FUN_0040c870(type_ptr,param_2);
+  core_actor_cpp_checkNameHash_FUN_0040c870(type_ptr,param_2);
   return;
 }

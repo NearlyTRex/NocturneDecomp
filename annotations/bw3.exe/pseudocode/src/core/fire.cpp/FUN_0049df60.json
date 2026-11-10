@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 197,
-    "complexity_score": 360,
+    "complexity_score": 325,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 8,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 85,
-    "suspect_count": 23,
+    "suspect_count": 20,
     "suspect_types": [
       "param_count_too_few",
       "self_copy_guard",
       "stack_alignment_array",
       "suspect_float",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -57,7 +56,7 @@
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "0042fbd0",
@@ -442,48 +441,24 @@
       "line": 78,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x20 - *param_1;",
+      "text": "fVar1 = (this_ptr->base).location.position.x - *param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 78,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x20 - *param_1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 79,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar3 = *(float *)&this_ptr->field_0x24 - param_1[1];",
+      "text": "fVar3 = (this_ptr->base).location.position.y - param_1[1];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 79,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "fVar3 = *(float *)&this_ptr->field_0x24 - param_1[1];",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 80,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x28 - param_1[2];",
+      "text": "fVar2 = (this_ptr->base).location.position.z - param_1[2];",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x28 - param_1[2];",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom dead self-copy guard: `if (&local_74 != &local_54)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",

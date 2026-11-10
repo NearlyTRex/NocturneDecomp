@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_lightgun.cpp_FUN_004e38d0 at 004e39f6
+;   core_lightgun.cpp_CLightGun_process_FUN_004e38d0 at 004e39f6
 ;   core_setutil.cpp_C3DSLight_addFilter_FUN_0053bbc0 at 0053bc53
 ;   core_setutil.cpp_C3DSLight_create_FUN_0053b6b0 at 0053b789
 ;
@@ -23,7 +23,7 @@
 ;   core_dfilter.cpp_CDemonFilter_load_FUN_004478d0
 ;   core_main.c_FUN_004e4500
 ;   crt_string.c__strcmp_FUN_005b8c30
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -88,8 +88,8 @@ section .text
     POP EDI                             ; 004476d4
         ;   Label: LAB_004476d4
     PUSH 0x4c                           ; 004476d5
-    CALL crt_unknown.c_FUN_005b8be2     ; 004476d7
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004476d7
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004476dc
     TEST EAX,EAX                        ; 004476df
     JZ 0x004476ec                       ; 004476e1

@@ -11,11 +11,11 @@
 int __cdecl core_set_cpp_CDemonSet_isCameraPanning_FUN_0053b9a0(CDemonSet *this_ptr)
 
 {
-  if (-1 < *(int *)&this_ptr->field_0x15aeb8) {
-    return *(int *)(&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x15aeb8 * 0x1a4);
+  if (-1 < this_ptr->selected_camera_index) {
+    return *(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x140;
   }
   _DAT_01d71de0 = "..\\core\\set.cpp";
   _DAT_01d71de4 = 0x14ef;
   core_main_c_FUN_004e4330("CDemonSet::isCameraPanning - no camera selected");
-  return *(int *)(&this_ptr->field_0x144 + *(int *)&this_ptr->field_0x15aeb8 * 0x1a4);
+  return *(int *)&this_ptr->cameras[this_ptr->selected_camera_index].field_0x140;
 }

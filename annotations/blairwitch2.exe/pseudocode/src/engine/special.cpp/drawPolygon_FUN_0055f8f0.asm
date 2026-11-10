@@ -6,8 +6,8 @@
 ;
 ; XREF[5]:
 ;   engine_mini3d.cpp_FUN_004f7280 at 004f7706
-;   engine_prim.c_FUN_0051cb20 at 0051cd0e
 ;   engine_prim.c_FUN_0051da80 at 0051dd6a
+;   engine_prim.c_renderPolygonSoftware_FUN_0051cb20 at 0051cd0e
 ;   engine_special.cpp_drawFullScreenQuad_FUN_0055fd60 at 0055fdfd
 ;   unkafter_zombie.cpp_FUN_0059a0b0 at 0059a3a0
 ;

@@ -32,9 +32,9 @@ int __cdecl core_hero_cpp_FUN_004eb660(CHero *this_ptr)
   local_24 = 1e+30;
   local_28 = this_ptr + 0x20;
   local_14 = 0;
-  for (local_18 = 0; local_18 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_18 = local_18 + 1) {
+  for (local_18 = 0; local_18 < g_CDemonSetPtr->actor_count; local_18 = local_18 + 1) {
     iVar1 = core_actor_cpp_castToClassHash_FUN_0040c600
-                      (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_14),
+                      (*(uint *)((int)g_CDemonSetPtr->actors + local_14),
                        g_CLeverClassInfo.name_hash);
     if (iVar1 != 0) {
       core_actor_cpp_FUN_00408bb0(this_ptr,iVar1 + 0x20);
@@ -45,7 +45,7 @@ int __cdecl core_hero_cpp_FUN_004eb660(CHero *this_ptr)
            *(uint *)(&stack0xffffffd4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
       if ((((ABS(local_3c) <= (float)_DAT_005e485d) && (0.0 <= (double)local_38)) &&
           ((double)local_38 <= _DAT_005e4865)) && (ABS(local_40) <= (float)_DAT_005e4865)) {
-        core_vecdir_cpp_FUN_005a7520(&stack0xffffffc0);
+        core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffc0);
         *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8) =
              *(uint *)(&stack0xffffffac + (uint)bVar3 * -8);
         *(uint *)(&stack0xffffffbc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =

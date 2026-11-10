@@ -16,9 +16,9 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
   if (render_flags == -1) {
     render_flags = 0x2cd;
   }
-  if ((*(int *)(this_ptr + 0xc) == 0) ||
-     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(prim + 8), iVar1 != 0)) {
-    if (*(int *)(this_ptr + 4) == 0) {
+  if ((this_ptr->plane_culling_enabled == 0) ||
+     (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(&prim->surface_normal), iVar1 != 0)) {
+    if (this_ptr->shadow_pass_active == 0) {
       if (DAT_006141c0 == 0x20) {
         _DAT_01c35e6c = engine_special_cpp_FUN_0055b3b1;
       }
@@ -34,7 +34,7 @@ void __cdecl engine_drender_cpp_CDemonRenderer_renderTexturedDirect_FUN_00469c60
       _DAT_01c35e6c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_0046e936;
     }
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00469590
-              (this_ptr,*(int *)(prim + 4),(int *)(prim + 0x18));
+              (this_ptr,(prim->base).count,(int *)(prim + 1));
   }
   return;
 }

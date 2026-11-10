@@ -11,7 +11,7 @@ void core_scat_cpp_factoryFuncScat_FUN_0051e970(void)
 {
   CScat *this_ptr;
   
-  this_ptr = (CScat *)FUN_005b8be2(0x2566c);
+  this_ptr = (CScat *)debugAllocTracked1(0x2566c);
   if (this_ptr == (CScat *)0x0) {
     return;
   }

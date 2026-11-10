@@ -11,7 +11,7 @@ void core_styler_cpp_factoryFuncStyler_FUN_0059d720(void)
 {
   CStyler *this_ptr;
   
-  this_ptr = (CStyler *)FUN_005a3cb2(0x487c8);
+  this_ptr = (CStyler *)debugAllocTracked1(0x487c8);
   if (this_ptr == (CStyler *)0x0) {
     return;
   }

@@ -92,9 +92,9 @@ void core_skeleton_cpp_FUN_0054f040(CDeformableModelInstance *param_1,float para
     *(uint *)((int)&stack0xffffffb8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
          *(uint *)((int)&stack0xffffffc4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
     puVar3 = &stack0xffffffc8;
-    fStack_38 = (fStack_38 - fStack_50) * *(float *)&param_1->field_0x508;
-    fStack_34 = ((fStack_34 - fStack_70) - fStack_4c) * *(float *)&param_1->field_0x50c;
-    fStack_30 = ((fStack_30 - fStack_6c) - fStack_48) * *(float *)&param_1->field_0x510;
+    fStack_38 = (fStack_38 - fStack_50) * (param_1->root_offset_scale).x;
+    fStack_34 = ((fStack_34 - fStack_70) - fStack_4c) * (param_1->root_offset_scale).y;
+    fStack_30 = ((fStack_30 - fStack_6c) - fStack_48) * (param_1->root_offset_scale).z;
   }
   else {
     puVar3 = (uint *)&DAT_02cfd900;

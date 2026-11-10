@@ -15,7 +15,7 @@
 ; int              Stack[0x24]:4   clip_bottom
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00466820 at 00466881
+;   cockpit_drawsurf.cpp_CDrawSurface_drawClippedLine_FUN_00466820 at 00466881
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01d046a0

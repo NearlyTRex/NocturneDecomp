@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2,
-    "complexity_score": 381,
+    "complexity_score": 334,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 26,
+    "pseudocode_lines": 79,
+    "suspect_count": 22,
     "suspect_types": [
       "pointer_cast",
       "stack_alignment_array",
       "stack_ref",
       "unaffected_reg",
       "undefined_data",
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 83
+    "total_lines": 81
   },
   "cross_references": [],
   "function": {
@@ -113,14 +112,14 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 16,
-      "match": "auStackY_1034",
+      "match": "afStackY_1034",
       "severity": "moderate",
-      "text": "uint auStackY_1034 [1006];",
+      "text": "float afStackY_1034 [1006];",
       "type": "stack_alignment_array"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = param_1 + 0x37b50 + param_2 * 0xac;",
@@ -128,63 +127,31 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 32,
+      "line": 31,
       "match": "param_2",
       "severity": "mild",
       "text": "iVar2 = param_1 + 0x37b50 + param_2 * 0xac;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
+      "description": "Complex pointer cast",
       "line": 36,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "aCStack_40[0]._0_4_ = CStack_4c._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 36,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "aCStack_40[0]._0_4_ = CStack_4c._0_4_;",
-      "type": "unknown_field"
+      "match": "(float *)((int)aCStack_40",
+      "severity": "moderate",
+      "text": "*(float *)((int)aCStack_40 + (uint)bVar4 * -8 + 4) = afStack_48[(uint)bVar4 * -2];",
+      "type": "pointer_cast"
     },
     {
       "description": "Complex pointer cast",
       "line": 37,
-      "match": "(uint *)((int)aCStack_40",
+      "match": "(float *)((int)aCStack_40",
       "severity": "moderate",
-      "text": "*(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + 4) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 38,
-      "match": "(uint *)((int)aCStack_40",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + -8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 39,
-      "match": "(uint *)((int)aCStack_40",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 40,
-      "match": "(uint *)((int)aCStack_40",
-      "severity": "moderate",
-      "text": "*(uint *)((int)aCStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + -4);",
+      "text": "*(float *)((int)aCStack_40 + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 8) =",
       "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 42,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,euler_angles,translation);",
@@ -192,31 +159,31 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 56,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + iVar3),(CVector3i *)&iStack_58);",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iVar3),&CStack_58);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 59,
+      "match": "DAT_0060b280",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + iStack_1c),",
       "type": "undefined_data"
     },
     {
       "description": "Direct stack address reference",
-      "line": 61,
+      "line": 60,
       "match": "&stack0xffffff90",
       "severity": "moderate",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + iStack_1c),(CVector3i *)&stack0xffffff90)",
+      "text": "(CVector3i *)&stack0xffffff90);",
       "type": "stack_ref"
     },
     {
       "description": "Undefined global data reference",
-      "line": 61,
-      "match": "DAT_0060b280",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_0060b280 + iStack_1c),(CVector3i *)&stack0xffffff90)",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 65,
+      "line": 63,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,vertex_index1,iStack_28);",
@@ -224,7 +191,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 67,
+      "line": 65,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(DAT_0060b280,vertex_index1,unaff_EDI);",
@@ -232,7 +199,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 65,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,vertex_index1,unaff_EDI);",
@@ -240,7 +207,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 69,
+      "line": 67,
       "match": "unaff_EBP",
       "severity": "moderate",
       "text": "(DAT_0060b280,unaff_EBP,unaff_EDI);",
@@ -248,7 +215,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 69,
+      "line": 67,
       "match": "unaff_EDI",
       "severity": "moderate",
       "text": "(DAT_0060b280,unaff_EBP,unaff_EDI);",
@@ -256,7 +223,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 69,
+      "line": 67,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "(DAT_0060b280,unaff_EBP,unaff_EDI);",
@@ -264,7 +231,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 76,
       "match": "param_3",
       "severity": "mild",
       "text": "if (param_3 != 0) {",

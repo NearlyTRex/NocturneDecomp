@@ -14,7 +14,8 @@ void core_charactr_cpp_FUN_00432220(int param_1,float param_2)
   
   iVar2 = *(int *)(param_1 + 0x2754);
   if (-1 < iVar2) {
-    pCVar1 = core_motion_cpp_FUN_004fc310((CMotionController *)(param_1 + 0x158));
+    pCVar1 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310
+                       ((CMotionController *)(param_1 + 0x158));
     iVar2 = iVar2 * 0x120;
     *(float *)(param_1 + 0x2758) =
          param_2 * *(float *)(pCVar1 + iVar2 + 0x1c48) + *(float *)(param_1 + 0x2758);

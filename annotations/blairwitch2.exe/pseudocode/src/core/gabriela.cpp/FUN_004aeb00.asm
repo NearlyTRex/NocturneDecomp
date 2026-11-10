@@ -41,7 +41,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004ad640 at 004adf68
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004adf68
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d6fc3
@@ -55,10 +55,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   undefined4 DAT_01cedef4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364292_0x14d144
+;   undefined4 g_CDemonSetInstance.collision_actor
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040d0c0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0
 ;   core_hero.cpp_FUN_004d00c0
 ;   core_motion.cpp_FUN_005035c0
 ;   core_path.cpp_CPathMap_findPathWithRetry_FUN_00513650
@@ -66,7 +66,7 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_00537e00
 ;   core_setcolid.cpp_CDemonSet_setRayType_FUN_00537eb0
 ;   core_setcolid.cpp_FUN_00535ee0
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   crt_memory.c_memset_FUN_005b77c0
 ;
 ; *****************************************************************************
@@ -205,8 +205,8 @@ section .text
     PUSH EAX                            ; 004aeca8
     LEA ESI,[ESP + 0x188]               ; 004aeca9
     LEA EDI,[ESP + 0x80]                ; 004aecb0
-    CALL core_vecdir.cpp_FUN_005838f0   ; 004aecb7
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 004aecb7
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0x188]               ; 004aecbc
     ADD ESP,0x4                         ; 004aecc3
     MOVSD ES:EDI,ESI                    ; 004aecc6
@@ -216,8 +216,8 @@ section .text
     FSUB float ptr [EBX + 0x34]         ; 004aecd0
     SUB ESP,0x4                         ; 004aecd3
     FSTP float ptr [ESP]                ; 004aecd6
-    CALL core_actor.cpp_FUN_0040d0c0    ; 004aecd9
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004aecd9
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
     MOV dword ptr [ESP + 0x1dc],EAX     ; 004aecde
     FLD float ptr [ESP + 0x1dc]         ; 004aece5
     FMUL float ptr [0x005d6fcb]         ; 004aecec | DAT_005d6fcb
@@ -517,7 +517,7 @@ section .text
     PUSH EDX                            ; 004af17a
     MOV EAX,[0x0061b5a8]                ; 004af17b | g_CDemonSetPtr
     PUSH EAX                            ; 004af180 | g_CDemonSetInstance
-    MOV dword ptr [EAX + 0x14d144],0x0  ; 004af181 | g_CDemonSetInstance.field1364292_0x14d144
+    MOV dword ptr [EAX + 0x14d144],0x0  ; 004af181 | g_CDemonSetInstance.collision_actor
     CALL core_setcolid.cpp_FUN_00535ee0 ; 004af18b
         ;   XREF to: 00535ee0 (UNCONDITIONAL_CALL)  ; undefined core_setcolid.cpp_FUN_00535ee0()
     ADD ESP,0xc                         ; 004af190
@@ -528,7 +528,7 @@ section .text
     ADD ESP,0x4                         ; 004af19f
     MOV EAX,[0x0061b5a8]                ; 004af1a2 | g_CDemonSetPtr | g_CDemonSetInstance
     MOV EDX,dword ptr [ESP + 0x1d4]     ; 004af1a7
-    CMP EDX,dword ptr [EAX + 0x14d144]  ; 004af1ae | g_CDemonSetInstance.field1364292_0x14d144
+    CMP EDX,dword ptr [EAX + 0x14d144]  ; 004af1ae | g_CDemonSetInstance.collision_actor
     JNZ 0x004aed6b                      ; 004af1b4
         ;   XREF to: 004aed6b (CONDITIONAL_JUMP)  ; LAB_004aed6b
     MOV dword ptr [EBX + 0x10a74],0x1   ; 004af1ba
@@ -586,8 +586,8 @@ section .text
     FSUB float ptr [EBX + 0x34]         ; 004af259
     SUB ESP,0x4                         ; 004af25c
     FSTP float ptr [ESP]                ; 004af25f
-    CALL core_actor.cpp_FUN_0040d0c0    ; 004af262
-        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040d0c0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0 ; 004af262
+        ;   XREF to: 0040d0c0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0()
     MOV dword ptr [ESP + 0x1dc],EAX     ; 004af267
     FLD float ptr [ESP + 0x1dc]         ; 004af26e
     FMUL float ptr [0x005d6fcb]         ; 004af275 | DAT_005d6fcb

@@ -12,7 +12,7 @@
 ; char *           Stack[0x18]:4   filename
 ;
 ; XREF[1]:
-;   engine_ini.cpp_FUN_004d8b20 at 004d8b4c
+;   engine_ini.cpp_CIniFile_getString_FUN_004d8b20 at 004d8b4c
 ;
 ; Called Functions:
 ;   engine_ini.cpp_FUN_004d8290

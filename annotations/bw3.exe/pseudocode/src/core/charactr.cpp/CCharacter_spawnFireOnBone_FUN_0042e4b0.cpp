@@ -13,39 +13,45 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0(CCharacte
 
 {
   float fVar1;
-  int *piVar2;
+  SFire *pSVar2;
   CDeformableModel *this_ptr_00;
   int iVar3;
   CSkeleton *pCVar4;
-  float *pfVar5;
-  float *pfVar6;
+  CVector3f *pCVar5;
+  CVector3f *pCVar6;
   int iVar7;
   byte bVar8;
   float10 fVar9;
-  float afStackY_10b0 [9];
-  int aiStackY_108c [3];
-  float afStackY_1080 [15];
-  int aiStackY_1044 [989];
+  float afStackY_10b0 [1016];
   uint *puVar10;
-  uint local_c8;
-  float afStack_c4 [7];
+  float local_c8;
+  float local_bc;
+  float local_b8;
+  float local_b4;
+  float local_b0;
+  float local_ac;
   float local_a8;
   uint local_a4;
-  int aiStack_a0 [2];
   float local_98;
-  float local_94 [4];
+  float local_94;
+  float local_90;
+  float local_8c;
+  float local_88;
   float local_84;
   float local_80;
   float local_7c;
   float local_78;
-  uint local_74;
-  float local_70 [4];
-  int local_60;
+  float local_74;
+  float local_70;
+  float local_6c;
+  float local_68;
+  float local_64;
+  uint local_60;
   uint local_5c;
-  byte *local_4c;
+  CVector3f *local_4c;
   CDeformableModelInstance *local_48;
-  byte *local_44;
-  byte *local_40;
+  CFlame *local_44;
+  SFire *local_40;
   byte *local_3c;
   int local_38;
   int local_34;
@@ -54,115 +60,120 @@ void __cdecl core_charactr_cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0(CCharacte
   float local_28;
   float local_24;
   int local_20;
-  int *local_1c;
+  SFire *local_1c;
   int local_18;
   int local_14;
   
   bVar8 = 0;
   if (-1 < target_bone_index) {
     iVar3 = -1;
-    local_4c = &this_ptr->field_0x1b0;
+    local_4c = (this_ptr->model).bone_origins;
     iVar7 = 0;
     local_2c = 0.0;
     pCVar4 = skeleton;
-    pfVar6 = (float *)local_4c;
-    if (0 < *(int *)&skeleton->field_0x1de78) {
+    pCVar6 = local_4c;
+    if (0 < skeleton->bone_count) {
       do {
-        if ((*(int *)&pCVar4->field_0x1de9c == target_bone_index) &&
-           (local_28 = SQRT(pfVar6[2] * pfVar6[2] + *pfVar6 * *pfVar6 + pfVar6[1] * pfVar6[1]),
+        if ((*(int *)(pCVar4->bone_list + 0x20) == target_bone_index) &&
+           (local_28 = SQRT(pCVar6->z * pCVar6->z + pCVar6->x * pCVar6->x + pCVar6->y * pCVar6->y),
            local_2c < local_28)) {
           iVar3 = iVar7;
           local_2c = local_28;
         }
         pCVar4 = (CSkeleton *)&pCVar4->field_0x24;
         iVar7 = iVar7 + 1;
-        pfVar6 = pfVar6 + 3;
-      } while (iVar7 < *(int *)&skeleton->field_0x1de78);
+        pCVar6 = pCVar6 + 1;
+      } while (iVar7 < skeleton->bone_count);
     }
     if (iVar3 != -1) {
-      pfVar5 = (float *)(local_4c + target_bone_index * 0xc);
-      pfVar6 = (float *)(local_4c + iVar3 * 0xc);
-      afStack_c4[5] = *pfVar6 - *pfVar5;
-      afStack_c4[6] = pfVar6[1] - pfVar5[1];
-      local_a8 = pfVar6[2] - pfVar5[2];
+      pCVar5 = local_4c + target_bone_index;
+      pCVar6 = local_4c + iVar3;
+      local_b0 = pCVar6->x - pCVar5->x;
+      local_ac = pCVar6->y - pCVar5->y;
+      local_a8 = pCVar6->z - pCVar5->z;
       fVar9 = SQRT((float10)local_a8 * (float10)local_a8 +
-                   (float10)afStack_c4[5] * (float10)afStack_c4[5] +
-                   (float10)afStack_c4[6] * (float10)afStack_c4[6]) * (float10)_DAT_005b82f6;
-      local_80 = afStack_c4[5];
-      local_7c = afStack_c4[6];
+                   (float10)local_b0 * (float10)local_b0 + (float10)local_ac * (float10)local_ac) *
+              (float10)_DAT_005b82f6;
+      local_80 = local_b0;
+      local_7c = local_ac;
       local_78 = local_a8;
       round();
       local_18 = (int)ROUND(fVar9);
       local_34 = local_18 + 1;
       local_20 = 0;
       if (0 < local_34) {
-        local_3c = &this_ptr->field_0xfd8;
-        local_44 = &this_ptr->field_0x385c;
-        local_40 = &this_ptr->field_0x33ac;
-        local_48 = (CDeformableModelInstance *)&this_ptr->field_0x158;
+        local_3c = &(this_ptr->model).field_0xe80;
+        local_44 = this_ptr->flames;
+        local_40 = this_ptr->fires;
+        local_48 = &this_ptr->model;
         local_38 = local_18 + 2;
-        while (*(int *)&this_ptr->field_0x33a0 < 0x32) {
-          *(uint *)&this_ptr->field_0xfc = 1;
-          local_1c = (int *)(local_40 + *(int *)&this_ptr->field_0x33a0 * 0x18);
-          *(int *)&this_ptr->field_0x33a0 = *(int *)&this_ptr->field_0x33a0 + 1;
+        while (this_ptr->fire_count < 0x32) {
+          iVar3 = this_ptr->fire_count;
+          (this_ptr->base).is_transparent = 1;
+          local_1c = local_40 + iVar3;
+          this_ptr->fire_count = iVar3 + 1;
           this_ptr_00 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
                                   (local_48);
-          iVar3 = core_skeleton_cpp_FUN_0054a3a0(this_ptr_00,target_bone_index);
-          piVar2 = local_1c;
-          *local_1c = iVar3;
-          local_1c[1] = target_bone_index;
+          iVar3 = core_skeleton_cpp_CDeformableModel_getBonePart_FUN_0054a3a0
+                            (this_ptr_00,target_bone_index);
+          pSVar2 = local_1c;
+          *(int *)local_1c = iVar3;
+          *(int *)&local_1c->field_0x4 = target_bone_index;
           local_18 = local_38;
           local_14 = local_20 + 1;
           local_24 = (float)(local_20 + 1);
           fVar1 = (float)local_38;
-          afStack_c4[2] = local_80 * local_24;
-          afStack_c4[3] = local_7c * local_24;
-          afStack_c4[4] = local_78 * local_24;
-          local_94[2] = local_80 * local_24;
-          local_94[(uint)bVar8 * -2 + 3] =
-               *(float *)((int)afStack_c4 + (uint)bVar8 * 0xfffffff8 + 0xc);
-          *(uint *)((int)local_70 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + -8) * 4 + 0xc) =
-               *(uint *)
-                ((int)afStack_c4 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4 + 0xc);
+          local_bc = local_80 * local_24;
+          local_b8 = local_7c * local_24;
+          local_b4 = local_78 * local_24;
+          local_8c = local_80 * local_24;
+          (&stack0xffffff6c)[(uint)bVar8 * -2 + 3] =
+               *(float *)((int)&stack0xffffff3c + ((uint)bVar8 * -2 + 3) * 4);
+          (&stack0xffffff9c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + -8] =
+               *(float *)((int)&stack0xffffff3c + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 4) * 4);
           local_30 = fVar1;
           fVar1 = 1.0 / fVar1;
-          local_98 = local_94[2] * fVar1;
-          local_94[0] = local_94[3] * fVar1;
-          local_94[1] = local_84 * fVar1;
-          local_70[2] = local_94[2] * fVar1;
-          *(float *)((int)local_70 + (uint)bVar8 * 0xfffffff8 + 0xc) = local_94[(uint)bVar8 * -2];
-          *(float *)((int)local_70 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4 + 0xc) =
-               local_94[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
-          if ((float *)(piVar2 + 2) != local_70 + 2) {
-            piVar2[2] = (int)local_70[2];
-            piVar2[3] = (int)local_70[3];
-            piVar2[4] = local_60;
+          local_98 = local_8c * fVar1;
+          local_94 = local_88 * fVar1;
+          local_90 = local_84 * fVar1;
+          local_68 = local_8c * fVar1;
+          (&stack0xffffff9c)[(uint)bVar8 * -2] = (&stack0xffffff6c)[(uint)bVar8 * -2];
+          (&stack0xffffff9c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+               (&stack0xffffff6c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1];
+          if ((float *)&pSVar2->field_0x8 != &stack0xffffff98) {
+            *(float *)&pSVar2->field_0x8 = local_68;
+            *(float *)&pSVar2->field_0xc = local_64;
+            *(uint *)&pSVar2->field_0x10 = local_60;
           }
-          core_xform_cpp_FUN_00583260(local_1c + 2,local_3c + local_1c[1] * 0x30);
-          puVar10 = &local_a4;
+          core_xform_cpp_FUN_00583260
+                    (&local_1c->field_0x8,local_3c + *(int *)&local_1c->field_0x4 * 0x30);
+          puVar10 = &stack0xffffff5c;
           local_a4 = local_5c;
-          aiStack_a0[(uint)bVar8 * -2] = *(int *)((int)local_70 + ((uint)bVar8 * -2 + 3) * 4 + 0xc);
-          aiStack_a0[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               *(int *)((int)local_70 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 4) * 4 + 0xc);
+          *(float *)((int)&stack0xffffff60 + (uint)bVar8 * -2 * 4) =
+               (&stack0xffffff9c)[(uint)bVar8 * -2 + 3];
+          *(float *)((int)&stack0xffffff60 + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4) =
+               (&stack0xffffff9c)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 4];
           core_actor_cpp_FUN_00408b80(this_ptr,puVar10);
           local_74 = local_c8;
-          local_70[(uint)bVar8 * -2] = afStack_c4[(uint)bVar8 * 0xfffffffe];
-          local_70[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
-               *(float *)((int)afStack_c4 + (uint)bVar8 * -8 + (uint)bVar8 * -8 + 4);
-          iVar3 = *(int *)&this_ptr->field_0x33a0 + -1;
-          *(uint *)(local_44 + iVar3 * 0x2a4 + 0x20) = local_74;
-          *(float *)(local_44 + iVar3 * 0x2a4 + 0x24) = local_70[0];
-          *(float *)(local_44 + iVar3 * 0x2a4 + 0x28) = local_70[1];
-          *(uint *)(&this_ptr->field_0x3764 + *(int *)&this_ptr->field_0x33a0 * 0x2a4) = 0;
-          local_1c[5] = 0x3f000000;
+          (&stack0xffffff90)[(uint)bVar8 * -2] =
+               *(float *)((int)&stack0xffffff3c + (uint)bVar8 * -2 * 4);
+          (&stack0xffffff90)[(uint)bVar8 * -2 + (uint)bVar8 * -2 + 1] =
+               *(float *)((int)&stack0xffffff3c + ((uint)bVar8 * -2 + (uint)bVar8 * -2 + 1) * 4);
+          iVar3 = this_ptr->fire_count + -1;
+          local_44[iVar3].base.location.position.x = local_74;
+          local_44[iVar3].base.location.position.y = local_70;
+          local_44[iVar3].base.location.position.z = local_6c;
+          *(uint *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b8) = 0;
+          *(uint *)&local_1c->field_0x14 = 0x3f000000;
           fVar1 = (float)_DAT_005b82f6;
-          *(float *)(&this_ptr->field_0x3710 + *(int *)&this_ptr->field_0x33a0 * 0x2a4) =
-               (float)local_1c[5] * fVar1;
-          *(int *)(&this_ptr->field_0x3714 + *(int *)&this_ptr->field_0x33a0 * 0x2a4) = local_1c[5];
-          *(float *)(&this_ptr->field_0x3718 + *(int *)&this_ptr->field_0x33a0 * 0x2a4) =
-               fVar1 * (float)local_1c[5];
-          *(uint *)(&this_ptr->field_0x3760 + *(int *)&this_ptr->field_0x33a0 * 0x2a4) =
-               *(uint *)&this_ptr->field_0x33a4;
+          *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x364) =
+               *(float *)&local_1c->field_0x14 * fVar1;
+          *(uint *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x368) =
+               *(uint *)&local_1c->field_0x14;
+          *(float *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x36c) =
+               fVar1 * *(float *)&local_1c->field_0x14;
+          *(EFlameType *)((int)this_ptr->fires + this_ptr->fire_count * 0x2a4 + 0x3b4) =
+               this_ptr->pending_flame_type;
           local_20 = local_20 + 1;
           if (local_34 <= local_20) {
             return;

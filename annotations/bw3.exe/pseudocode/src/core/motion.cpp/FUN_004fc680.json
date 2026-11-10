@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 174,
-    "complexity_score": 178,
+    "complexity_score": 133,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 68,
-    "suspect_count": 9,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
@@ -236,58 +235,26 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 39,
+      "line": 36,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x50 + 8))",
+      "text": "(**(code **)(this_ptr->vtable + 8))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x50 + 8))",
-      "type": "unnamed_field"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 53,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x50 + 8))",
+      "text": "(**(code **)(this_ptr->vtable + 8))",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x50",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x50 + 8))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "iVar4 = *(int *)&this_ptr->field_0x2c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 66,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)(out_transition + 0xc) = *(uint *)(*(int *)&this_ptr->field_0x2c + 0xc);",
-      "type": "unnamed_field"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 58,
       "match": "for (...; != 0; ... + -1)",
       "severity": "moderate",
-      "text": "for (iVar4 = 6; iVar4 != 0; iVar4 = iVar4 + -1) {",
+      "text": "for (iVar5 = 6; iVar5 != 0; iVar5 = iVar5 + -1) {",
       "type": "unrolled_memcpy"
     },
     {

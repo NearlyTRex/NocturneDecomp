@@ -4,13 +4,39 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEdButton.h"
+#include "types/classes/CEdScrollBar.h"
+#include "types/classes/CStrList.h"
 
 // Structure: CPickList
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x3c0 (960 bytes)
 #pragma pack(push, 1)
 typedef struct CPickList {
-    char field_0[960]; // 0x0
+    CStrList base; // 0x0
+    char field_16[68]; // 0x10
+    int selected_index; // 0x54
+    int state_flag; // 0x58
+    char ok_button_text[100]; // 0x5c
+    char cancel_button_text[100]; // 0xc0
+    char search_text_buffer[100]; // 0x124
+    int confirmed_flag; // 0x188
+    int row_height; // 0x18c
+    int column_padding; // 0x190
+    int current_index; // 0x194
+    int scroll_top; // 0x198
+    int page_size; // 0x19c
+    int rows_per_column; // 0x1a0
+    int column_width; // 0x1a4
+    int column_count; // 0x1a8
+    int enabled_capacity; // 0x1ac
+    int* enabled_array; // 0x1b0
+    int hotkey_capacity; // 0x1b4
+    int* hotkey_array; // 0x1b8
+    CEdScrollBar scrollbar; // 0x1bc
+    int scroll_mode; // 0x1f0
+    CEdButton ok_button; // 0x1f4
+    CEdButton cancel_button; // 0x2d8
+    int selection_state; // 0x3bc
 } CPickList;
 #pragma pack(pop)
 

@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 267,
+    "complexity_score": 242,
     "cross_reference_count": 7,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 62,
-    "suspect_count": 17,
+    "suspect_count": 15,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_alignment_array",
-      "suspicious_cast",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr",
       "warning_overlapping_globals"
@@ -24,13 +23,13 @@
     {
       "addr": "00410170",
       "from_addr": "00410188",
-      "name": "core_baron.cpp_FUN_00410170",
+      "name": "core_baron.cpp_CBaron_performLightningAttack_FUN_00410170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00435e30",
       "from_addr": "00435f1a",
-      "name": "core_colonel.cpp_FUN_00435e30",
+      "name": "core_colonel.cpp_CColonel_processAI_FUN_00435e30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,25 +41,25 @@
     {
       "addr": "004ccff0",
       "from_addr": "004cd0ef",
-      "name": "core_haystack.cpp_FUN_004ccff0",
+      "name": "core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d5950",
       "from_addr": "004d5a99",
-      "name": "core_icepick.cpp_FUN_004d5950",
+      "name": "core_icepick.cpp_CIcePick_processAI_FUN_004d5950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051f490",
       "from_addr": "0051f580",
-      "name": "core_scat.cpp_FUN_0051f490",
+      "name": "core_scat.cpp_CScat_updateAI_FUN_0051f490",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00570c80",
       "from_addr": "00570dc9",
-      "name": "core_svetlana.cpp_FUN_00570c80",
+      "name": "core_svetlana.cpp_CSvetlana_processAI_FUN_00570c80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -116,7 +115,7 @@
     },
     {
       "addr": "01fb71a4",
-      "name": "g_CDemonSetInstance.field1380332_0x150fec",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -133,7 +132,7 @@
       {
         "call_addr": "00410188",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_00410170",
+        "caller": "core_baron.cpp_CBaron_performLightningAttack_FUN_00410170",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -147,7 +146,7 @@
       {
         "call_addr": "00435f1a",
         "call_type": "direct",
-        "caller": "core_colonel.cpp_FUN_00435e30",
+        "caller": "core_colonel.cpp_CColonel_processAI_FUN_00435e30",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +174,7 @@
       {
         "call_addr": "004cd0ef",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004ccff0",
+        "caller": "core_haystack.cpp_CHaystack_updateAI_FUN_004ccff0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -189,7 +188,7 @@
       {
         "call_addr": "004d5a99",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004d5950",
+        "caller": "core_icepick.cpp_CIcePick_processAI_FUN_004d5950",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -203,7 +202,7 @@
       {
         "call_addr": "0051f580",
         "call_type": "direct",
-        "caller": "core_scat.cpp_FUN_0051f490",
+        "caller": "core_scat.cpp_CScat_updateAI_FUN_0051f490",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +216,7 @@
       {
         "call_addr": "00570dc9",
         "call_type": "direct",
-        "caller": "core_svetlana.cpp_FUN_00570c80",
+        "caller": "core_svetlana.cpp_CSvetlana_processAI_FUN_00570c80",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -380,20 +379,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x150fec",
-      "severity": "mild",
-      "text": "for (; local_20 < *(int *)&g_CDemonSetPtr->field_0x150fec; local_20 = local_20 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 28,
-      "match": "field_0x150ff0",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_18);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar1 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -450,14 +441,6 @@
       "severity": "mild",
       "text": "*param_2 = SQRT(*param_2);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_0061b5b8 (at 0x0061b5b8, +16 bytes).",
-      "line": 28,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_18);",
-      "type": "suspicious_cast"
     },
     {
       "call_site_count": 7,

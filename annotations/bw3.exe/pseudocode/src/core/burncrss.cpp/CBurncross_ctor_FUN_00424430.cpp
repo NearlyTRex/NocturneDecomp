@@ -17,8 +17,8 @@ CBurncross * core_burncrss_cpp_CBurncross_ctor_FUN_00424430(CBurncross *this_ptr
   byte *puVar4;
   
   pCVar1 = core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  iVar2 = __arrinit(&pCVar1[1].field_0x14,8,&g_CFlameTypeInfo);
-  *(byte **)(iVar2 + -0x454) = &g_CBurncrossVTable;
+  iVar2 = __arrinit(pCVar1[1].base.actor_name + 0x14,8,&g_CFlameTypeInfo);
+  *(CWeapon_full_vtable **)(iVar2 + -0x454) = &g_CBurncrossVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)(iVar2 + -0x450),"burncross.kfm");
   *(uint *)(iVar2 + -0x2d0) = 0;

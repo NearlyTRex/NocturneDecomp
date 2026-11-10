@@ -13,9 +13,9 @@ void staticInit(void);
 // Address: 0051c5e0
 void FUN_0051c5e0(int param_1);
 
-// Original: core_mobster.cpp_FUN_0051c6a0
+// Original: core_mobster.cpp_getObjectGrabPointWorld_FUN_0051c6a0
 // Address: 0051c6a0
-void FUN_0051c6a0(int param_1);
+void getObjectGrabPointWorld(int param_1);
 
 // Original: core_mobster.cpp_factoryFuncMobster_FUN_0051c7a0
 // Address: 0051c7a0
@@ -29,65 +29,65 @@ CDemonActorType * CMobster::getActorType(CMobster *this_ptr);
 // Address: 0051c7d0
 CMobster * __cdecl CMobster::ctor(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_0051c910
+// Original: core_mobster.cpp_CMobster_setup_FUN_0051c910
 // Address: 0051c910
-void FUN_0051c910(CEnemy *param_1);
+void __cdecl CMobster::setup(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_0051cc20
+// Original: core_mobster.cpp_CMobster_positionOnVehicle_FUN_0051cc20
 // Address: 0051cc20
-void __cdecl FUN_0051cc20(CMobster *this_ptr);
+void __cdecl CMobster::positionOnVehicle(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_0051cd10
+// Original: core_mobster.cpp_CMobster_dismountVehicle_FUN_0051cd10
 // Address: 0051cd10
-void __cdecl FUN_0051cd10(CMobster *this_ptr);
+void __cdecl CMobster::dismountVehicle(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_0051ce40
+// Original: core_mobster.cpp_CMobster_process_FUN_0051ce40
 // Address: 0051ce40
-void FUN_0051ce40(CMobster *param_1,float param_2);
+void __cdecl CMobster::process(CMobster *this_ptr,float delta_time);
 
 // Original: core_mobster.cpp_CMobster_aimTommyGun_FUN_0051def0
 // Address: 0051def0
 void __cdecl CMobster::aimTommyGun(CMobster *this_ptr,float delta_time);
 
-// Original: core_mobster.cpp_FUN_0051e2f0
+// Original: core_mobster.cpp_CMobster_getCarryObjToBodyXForm_FUN_0051e2f0
 // Address: 0051e2f0
-void FUN_0051e2f0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CMobster::getCarryObjToBodyXForm(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_mobster.cpp_FUN_0051e5d0
 // Address: 0051e5d0
 int __cdecl FUN_0051e5d0(CMobster *this_ptr,float delta_time);
 
-// Original: core_mobster.cpp_FUN_0051eac0
+// Original: core_mobster.cpp_CMobster_startFiringAttack_FUN_0051eac0
 // Address: 0051eac0
-void __cdecl FUN_0051eac0(CMobster *this_ptr);
+void __cdecl CMobster::startFiringAttack(CMobster *this_ptr);
 
 // Original: core_mobster.cpp_CMobster_archive_FUN_0051eb30
 // Address: 0051eb30
 void __cdecl CMobster::archive(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_0051ec60
+// Original: core_mobster.cpp_CMobster_reset_FUN_0051ec60
 // Address: 0051ec60
-undefined4 FUN_0051ec60(void);
+void __cdecl CMobster::reset(CMobster *this_ptr);
 
-// Original: core_mobster.cpp_FUN_0051ec80
+// Original: core_mobster.cpp_CMobster_processDismemberment_FUN_0051ec80
 // Address: 0051ec80
-void __cdecl FUN_0051ec80(CMobster *this_ptr,SDamageInfo *damage_info);
+void __cdecl CMobster::processDismemberment(CMobster *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_mobster.cpp_FUN_0051f040
+// Original: core_mobster.cpp_CMobster_processDamage_FUN_0051f040
 // Address: 0051f040
-void FUN_0051f040(CMobster *param_1,SDamageInfo *param_2);
+void __cdecl CMobster::processDamage(CMobster *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_mobster.cpp_FUN_0051f1d0
+// Original: core_mobster.cpp_CMobster_getTargetPoints_FUN_0051f1d0
 // Address: 0051f1d0
-int FUN_0051f1d0(int param_1,undefined4 *param_2);
+int __cdecl CMobster::getTargetPoints(CMobster *this_ptr,CVector3f *out_points_array);
 
 // Original: core_mobster.cpp_CMobster_getCollisionType_FUN_0051f310
 // Address: 0051f310
 ECollisionType __cdecl CMobster::getCollisionType(CMobster *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_mobster.cpp_FUN_0051f330
+// Original: core_mobster.cpp_CMobster_playTaunt_FUN_0051f330
 // Address: 0051f330
-void __cdecl FUN_0051f330(CMobster *this_ptr,int taunt_category);
+void __cdecl CMobster::playTaunt(CMobster *this_ptr,int taunt_category);
 
 // Original: core_mobster.cpp_CMobster_dtor_FUN_0051f4b0
 // Address: 0051f4b0

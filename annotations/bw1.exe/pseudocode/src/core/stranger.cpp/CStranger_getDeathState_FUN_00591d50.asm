@@ -11,7 +11,7 @@
 ;   undefined4 DAT_0061b4d0
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00431c30
+;   core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;
 ; *****************************************************************************
@@ -33,8 +33,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 00591d6b
         ;   Label: LAB_00591d6b
     PUSH ECX                            ; 00591d6f
-    CALL core_charactr.cpp_FUN_00431c30 ; 00591d70
-        ;   XREF to: 00431c30 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00431c30()
+    CALL core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30 ; 00591d70
+        ;   XREF to: 00431c30 (UNCONDITIONAL_CALL)  ; EDeathState core_charactr.cpp_CCharacter_getDeathState_FUN_00431c30(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 00591d75
     RET                                 ; 00591d78
 

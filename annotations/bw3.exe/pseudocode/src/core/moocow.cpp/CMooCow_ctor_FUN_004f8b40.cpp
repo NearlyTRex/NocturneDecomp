@@ -17,8 +17,9 @@ CMooCow * core_moocow_cpp_CMooCow_ctor_FUN_004f8b40(CMooCow *this_ptr)
   CMooCow *pCVar3;
   
   pCVar3 = (CMooCow *)core_charactr_cpp_CCharacter_ctor_FUN_0042ac20((CCharacter *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CMooCowVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar3->field_0x158,0x5c916c);
+  ((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CMooCowVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar3->field_0x158,(char *)0x5c916c);
   *(uint *)&pCVar3->field_0x326c = 0x3fe00000;
   uVar1 = _DAT_005e2a38;
   *(uint *)&pCVar3->field_0x3270 = 0x40600000;

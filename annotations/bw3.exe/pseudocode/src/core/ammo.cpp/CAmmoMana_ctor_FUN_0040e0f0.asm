@@ -11,7 +11,7 @@
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_mana_sm_kfm_005b60fa
-;   void* g_CAmmo_ManaVTable = 0040def0
+;   CDemonActor_vtable g_CAmmoManaVTable
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmo_ctor_FUN_0040de60
@@ -32,7 +32,7 @@ section .text
     MOV EBX,EAX                         ; 0040e103
     ADD EAX,0x158                       ; 0040e105
     PUSH EAX                            ; 0040e10a
-    MOV dword ptr [EAX + -0x4],0x5db214 ; 0040e10b | g_CAmmo_ManaVTable
+    MOV dword ptr [EAX + -0x4],0x5db214 ; 0040e10b | g_CAmmoManaVTable
     CALL core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0 ; 0040e112
         ;   XREF to: 004625f0 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0(CKeyFramedModelInstance * this_ptr, char * filename)
     ADD ESP,0x8                         ; 0040e117

@@ -12,12 +12,12 @@ CStrList * __cdecl shape_edittool_cpp_CStrList_copyFrom_FUN_00480dc0(CStrList *t
   char *string_data;
   int index;
   
-  (**(code **)(*(int *)&this_ptr->field_0xc + 0x14))(this_ptr);
-  if (*(int *)source_ptr < 1) {
+  (*((this_ptr->vtable)._us)->clear)(this_ptr);
+  if (source_ptr->item_count < 1) {
     return this_ptr;
   }
-  shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(this_ptr,*(int *)source_ptr);
-  for (index = 0; index < *(int *)source_ptr; index = index + 1) {
+  shape_edittool_cpp_CStrList_allocate_FUN_00480fa0(this_ptr,source_ptr->item_count);
+  for (index = 0; index < source_ptr->item_count; index = index + 1) {
     string_data = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(source_ptr,index);
     shape_edittool_cpp_CStrList_add_FUN_00480e70(this_ptr,string_data);
   }

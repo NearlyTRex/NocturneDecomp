@@ -45,7 +45,7 @@ void unkafter_superopt_cpp_FUN_004177b0(int *param_1,int param_2)
       do {
         engine_alphabit_cpp_FUN_0040d1c0(pCVar4);
         iVar3 = iVar3 + 1;
-        pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;
+        pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;
       } while (iVar3 < param_1[8]);
     }
     piVar2 = param_1;
@@ -130,7 +130,7 @@ void unkafter_superopt_cpp_FUN_004177b0(int *param_1,int param_2)
     do {
       engine_alphabit_cpp_FUN_0040d1c0(pCVar4);
       iVar3 = iVar3 + 1;
-      pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;
+      pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;
     } while (iVar3 < param_1[8]);
   }
   (**(code **)(*param_1 + 0x28))(param_1,1,"bullet1",0x7a,0x72,1,0x9d,0x157,0);
@@ -177,13 +177,13 @@ void unkafter_superopt_cpp_FUN_004177b0(int *param_1,int param_2)
   (**(code **)(*param_1 + 0x28))(param_1,0x2a,0x5d4218,0x30,0x19,1,0x156,0xd,1);
   (**(code **)(*param_1 + 0x28))(param_1,0x2b,"chem_exit",0x1e,0x20,1,0x262,0x1b8,1);
   (**(code **)(*param_1 + 0x28))(param_1,0x2c,"chem_reset",0x1e,0x20,1,0x262,10,1);
-  iVar3 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   param_1[0x11] = iVar3;
-  iVar3 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   param_1[0x12] = iVar3;
-  iVar3 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   param_1[0x13] = iVar3;
-  iVar3 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar3 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   param_1[0x14] = iVar3;
   piVar2 = param_1;
   do {

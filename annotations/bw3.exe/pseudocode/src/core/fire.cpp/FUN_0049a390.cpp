@@ -30,9 +30,9 @@ void __cdecl core_fire_cpp_FUN_0049a390(CMuzzleFlash *this_ptr,CVector3f *positi
   *(uint *)&this_ptr->field_0x3c = 0;
   core_set_cpp_CDemonSet_addCoronaGlobe_FUN_005372f0(this_ptr_01,(CDemonGlobe *)this_ptr_00);
   if ((CVector3f *)&this_ptr->field_0x4 != position) {
-    *(uint *)&this_ptr->field_0x4 = *(uint *)position;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&position->field_0x4;
-    *(uint *)&this_ptr->field_0xc = *(uint *)&position->field_0x8;
+    *(float *)&this_ptr->field_0x4 = position->x;
+    *(float *)&this_ptr->field_0x8 = position->y;
+    *(float *)&this_ptr->field_0xc = position->z;
   }
   core_dirmat_cpp_FUN_0045b9b0(rotation_matrix);
   local_1c = local_28;

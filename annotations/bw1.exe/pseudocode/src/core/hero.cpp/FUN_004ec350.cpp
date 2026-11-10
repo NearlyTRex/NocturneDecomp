@@ -31,8 +31,8 @@ int core_hero_cpp_FUN_004ec350(int param_1,float *param_2)
   local_18 = 0;
   local_1c = (float *)(param_1 + 0x20);
   local_28 = 0;
-  for (; local_20 < *(int *)&g_CDemonSetPtr->field_0x150fec; local_20 = local_20 + 1) {
-    iVar1 = *(int *)(&g_CDemonSetPtr->field_0x150ff0 + local_18);
+  for (; local_20 < g_CDemonSetPtr->enemy_count; local_20 = local_20 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSetPtr->enemies + local_18);
     iVar2 = (CVehicle *)core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,g_CVehicleClassInfo.name_hash);
     if (iVar2 == 0) {
       iVar2 = (CMobster *)core_actor_cpp_castToClassHash_FUN_0040c600(iVar1,g_CMobsterClassInfo.name_hash);

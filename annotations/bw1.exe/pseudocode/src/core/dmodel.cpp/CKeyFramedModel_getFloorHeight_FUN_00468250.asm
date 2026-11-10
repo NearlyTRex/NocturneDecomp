@@ -21,7 +21,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_00468420
+;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
 ;   core_dtri.cpp_FUN_00490a40
 ;   core_main.c_FUN_005030e0
 ;
@@ -70,8 +70,8 @@ section .text
     PUSH EBP                            ; 004682b1
         ;   Label: LAB_004682b1
     PUSH EDI                            ; 004682b2
-    CALL core_dmodel.cpp_FUN_00468420   ; 004682b3
-        ;   XREF to: 00468420 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00468420()
+    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420 ; 004682b3
+        ;   XREF to: 00468420 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 004682b8
     MOV EAX,dword ptr [EDI + 0x354]     ; 004682bb
         ;   Label: LAB_004682bb

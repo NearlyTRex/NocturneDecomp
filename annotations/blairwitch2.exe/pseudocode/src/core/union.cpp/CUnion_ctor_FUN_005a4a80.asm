@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_basicnpc.cpp_CBasicNPC_ctor_FUN_005a47b0
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
-;   core_union.cpp_FUN_005a4c50
+;   core_union.cpp_CUnion_processStates_FUN_005a4c50
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
 ;   unkaddr_0059d350.cpp_FUN_0059dc80
@@ -80,8 +80,8 @@ section .text
     PUSH 0x0                            ; 005a4b67
     PUSH 0x0                            ; 005a4b69
     PUSH EBX                            ; 005a4b6b
-    CALL core_union.cpp_FUN_005a4c50    ; 005a4b6c
-        ;   XREF to: 005a4c50 (UNCONDITIONAL_CALL)  ; undefined core_union.cpp_FUN_005a4c50()
+    CALL core_union.cpp_CUnion_processStates_FUN_005a4c50 ; 005a4b6c
+        ;   XREF to: 005a4c50 (UNCONDITIONAL_CALL)  ; void core_union.cpp_CUnion_processStates_FUN_005a4c50(CUnion * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a4b71
     PUSH 0x5f0438                       ; 005a4b74
     PUSH 0x5f0444                       ; 005a4b79

@@ -29,16 +29,15 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
   local_20 = *(CDemonActor **)(this_ptr + 0x1fe24);
   if (local_20 != (CDemonActor *)0x0) {
     local_18 = 0;
-    for (local_1c = 0; local_1c < *(int *)&g_CDemonSetPtr->field_0x14d164; local_1c = local_1c + 1)
-    {
+    for (local_1c = 0; local_1c < g_CDemonSetPtr->actor_count; local_1c = local_1c + 1) {
       this_ptr_00 = (CActorDestination *)
                     core_actor_cpp_castToClassHash_FUN_0040c600
-                              (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_18),
+                              (*(uint *)((int)g_CDemonSetPtr->actors + local_18),
                                g_CActorDestinationClassInfo.name_hash);
       if ((this_ptr_00 != (CActorDestination *)0x0) &&
          (iVar1 = core_dest_cpp_CActorDestination_acceptsActor_FUN_0045d550(this_ptr_00,local_20),
          iVar1 != 0)) {
-        core_actor_cpp_FUN_00408bb0(this_ptr,&this_ptr_00->field_0x20);
+        core_actor_cpp_FUN_00408bb0(this_ptr,&(this_ptr_00->base).location);
         local_38 = local_2c;
         (&stack0xffffffcc)[(uint)bVar2 * 0xfffffffe] =
              (float)*(uint *)(&stack0xffffffd8 + (uint)bVar2 * -8);
@@ -47,7 +46,7 @@ int __cdecl core_hero_cpp_CHero_findItemUseTarget_FUN_004ebeb0(CHero *this_ptr)
         if (((1.0 <= (double)local_34) &&
             ((((double)local_34 <= _DAT_005e48fd && ((float)_DAT_005e4905 <= local_30)) &&
              ((double)local_30 <= _DAT_005e490d)))) && (ABS(local_38) <= (float)_DAT_005e490d)) {
-          core_vecdir_cpp_FUN_005a7520(&stack0xffffffc8);
+          core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005a7520(&stack0xffffffc8);
           *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =
                *(uint *)(&stack0xffffffb4 + (uint)bVar2 * -8);
           *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =

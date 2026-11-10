@@ -41,8 +41,8 @@
     ],
     "conv":"unknown",
     "instructions":99,
-    "method":"FUN_0043971e",
-    "name":"engine_clipper.c_FUN_0043971e",
+    "method":"clipPolygonLeftPlane",
+    "name":"engine_clipper.c_clipPolygonLeftPlane_FUN_0043971e",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -60,8 +60,8 @@
     ],
     "conv":"unknown",
     "instructions":99,
-    "method":"FUN_0043999e",
-    "name":"engine_clipper.c_FUN_0043999e",
+    "method":"clipPolygonBottomPlane",
+    "name":"engine_clipper.c_clipPolygonBottomPlane_FUN_0043999e",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -311,8 +311,8 @@
     ],
     "conv":"unknown",
     "instructions":80,
-    "method":"FUN_004fea9e",
-    "name":"sound_mp3.cpp_FUN_004fea9e",
+    "method":"initializeSynthesisDctTable",
+    "name":"sound_mp3.cpp_initializeSynthesisDctTable_FUN_004fea9e",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -424,15 +424,34 @@
     "callers":[
       "0047dd1e"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1,
-    "method":"FUN_005a559e",
-    "name":"crt_unknown.c_FUN_005a559e",
+    "method":"_getcwd",
+    "name":"crt_unknown.c__getcwd_FUN_005a559e",
+    "params":[
+      {
+        "name":"buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "header":"basetsd",
+          "kind":"system",
+          "name":"SIZE_T",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"crt/unknown.c",
     "variadic":false

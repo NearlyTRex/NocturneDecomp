@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 294,
+    "complexity_score": 284,
     "cross_reference_count": 3,
     "function_call_count": 13,
     "global_count": 23,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 64,
-    "suspect_count": 20,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
@@ -21,21 +21,21 @@
   },
   "cross_references": [
     {
+      "addr": "004bd570",
+      "from_addr": "004bda81",
+      "name": "core_game.cpp_CGame_process_FUN_004bd570",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004b6170",
       "from_addr": "004b6c1e",
-      "name": "core_game.cpp_FUN_004b6170",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b82e0",
       "from_addr": "004b844f",
       "name": "core_game.cpp_FUN_004b82e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bd570",
-      "from_addr": "004bda81",
-      "name": "core_game.cpp_FUN_004bd570",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -63,24 +63,14 @@
       "name": "core_sound.cpp_updateListeners_FUN_00558d50"
     },
     {
-      "addr": "00550450",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550450"
-    },
-    {
-      "addr": "005504d0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005504d0"
-    },
-    {
       "addr": "00551220",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00551220"
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00551220"
     },
     {
-      "addr": "005512a0",
+      "addr": "005524b0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005512a0"
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005524b0"
     },
     {
       "addr": "00551570",
@@ -88,19 +78,29 @@
       "name": "sound_sndmain.cpp_FUN_00551570"
     },
     {
-      "addr": "005524b0",
+      "addr": "00551190",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005524b0"
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00551190"
+    },
+    {
+      "addr": "005512a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
     },
     {
       "addr": "00552b20",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00552b20"
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00552b20"
     },
     {
-      "addr": "00551190",
+      "addr": "005504d0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00551190"
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
     },
     {
       "addr": "00552cc0",
@@ -133,25 +133,25 @@
     },
     {
       "addr": "01fc0e28",
-      "name": "g_CDemonSetInstance.field1420400_0x15ac70",
+      "name": "g_CDemonSetInstance.field95_0x15ac70",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e2c",
-      "name": "g_CDemonSetInstance.field1420404_0x15ac74",
+      "name": "g_CDemonSetInstance.field99_0x15ac74",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e30",
-      "name": "g_CDemonSetInstance.field1420408_0x15ac78",
+      "name": "g_CDemonSetInstance.field103_0x15ac78",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc0e70",
-      "name": "g_CDemonSetInstance.field1420472_0x15acb8",
+      "name": "g_CDemonSetInstance.player_on_train",
       "type": "undefined4",
       "value": null
     },
@@ -264,7 +264,7 @@
       {
         "call_addr": "004b6c1e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -275,7 +275,7 @@
       {
         "call_addr": "004b6df2",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b6170",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b6170",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -308,7 +308,7 @@
       {
         "call_addr": "004bda81",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bd570",
+        "caller": "core_game.cpp_CGame_process_FUN_004bd570",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -442,14 +442,6 @@
       "severity": "moderate",
       "text": "float afStackY_100c [1015];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x15acb8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CDemonSetPtr->field_0x15acb8 != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",

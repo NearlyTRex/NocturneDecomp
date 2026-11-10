@@ -15,10 +15,10 @@ CMarquee * __cdecl core_marquee_cpp_CMarquee_ctor_FUN_004e7c80(CMarquee *this_pt
   CCourse *pCVar4;
   CCourse *pCVar5;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].field_0x4c);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].orient_matrix.m[1].y);
   pCVar4 = (CCourse *)0x5dc74e;
-  *(byte **)(pCVar3 + -0x50) = &g_CMarqueeVTable;
+  *(CDemonActor_vtable **)(pCVar3 + -0x50) = &g_CMarqueeVTable;
   pCVar5 = pCVar3 + -0x4c;
   *(uint *)(pCVar3 + -0x2c) = 0x41200000;
   do {

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_00499610(CCrater *param_1,undefined4 *param_2,float param_3)
+; void core_fire_cpp_FUN_00499610(CCrater *param_1,float *param_2,float param_3)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x78]:4  local_78
@@ -41,7 +41,7 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;   core_fire.cpp_CCrater_render_FUN_00499a00
 ;   core_setcolid.cpp_FUN_00534ea0
 ;
@@ -94,8 +94,8 @@ section .text
     FCHS                                ; 0049968a
     FSTP float ptr [ESP + 0x64]         ; 0049968c
     PUSH dword ptr [ESP + 0x64]         ; 00499690
-    CALL core_actor.cpp_FUN_0040cf60    ; 00499694
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00499694
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x6c],EAX      ; 00499699
     FLD float ptr [ESP + 0x6c]          ; 0049969d
     ADD ESP,0x8                         ; 004996a1
@@ -106,8 +106,8 @@ section .text
     FSTP float ptr [EBX + 0x1c]         ; 004996b8
     MOV EAX,dword ptr [EBP + 0x10]      ; 004996bb
     MOV dword ptr [EBX + 0x20],EAX      ; 004996be
-    CALL core_actor.cpp_FUN_0040cf60    ; 004996c1
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 004996c1
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x6c],EAX      ; 004996c6
     FLD float ptr [ESP + 0x6c]          ; 004996ca
     FMUL double ptr [0x005d55a2]        ; 004996ce | DAT_005d55a2

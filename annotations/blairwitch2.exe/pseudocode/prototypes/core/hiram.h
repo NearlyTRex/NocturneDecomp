@@ -25,13 +25,13 @@ CHiram * __cdecl CHiram::ctor(CHiram *this_ptr);
 // Address: 004d0f90
 CHiram * CHiram::dtor(CHiram *this_ptr,uint flags);
 
-// Original: core_hiram.cpp_FUN_004d1050
+// Original: core_hiram.cpp_CHiram_setup_FUN_004d1050
 // Address: 004d1050
-void FUN_004d1050(int param_1);
+void __cdecl CHiram::setup(CHiram *this_ptr);
 
-// Original: core_hiram.cpp_FUN_004d1070
+// Original: core_hiram.cpp_CHiram_process_FUN_004d1070
 // Address: 004d1070
-void FUN_004d1070(CCharacter *param_1,float param_2);
+void __cdecl CHiram::process(CHiram *this_ptr,float delta_time);
 
 // Original: core_hiram.cpp_CHiram_archive_FUN_004d11b0
 // Address: 004d11b0

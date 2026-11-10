@@ -54,20 +54,20 @@
 ;   ... and 20 more
 ;
 ; Called Functions:
-;   core_dcamera.cpp_FUN_00453c90
+;   core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_0044c5e0
 ;   core_dcamera.cpp_sampleFogAlongRay_FUN_0044c840
 ;   core_dcamera.cpp_updateFogScrollOffset_FUN_0044ca20
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_FUN_00479180
 ;   support_codec.cpp_CCodec_dtor_FUN_00442bb0
 ;   support_codec.cpp_CLZWCompress_ctor_FUN_00443490
+;   support_codec.cpp_CLZWCompress_init_FUN_004434e0
 ;   support_codec.cpp_CLZWDictionary_dtor_FUN_00442f90
 ;   support_codec.cpp_FUN_00442d10
-;   support_codec.cpp_FUN_004434e0
 ;   support_codec.cpp_FUN_00443630
 ;   ... and 4 more
 ;
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5d790f                       ; 00453677 | = "%s.fog"
     LEA EAX,[ESP + 0x8]                 ; 0045367c
     PUSH EAX                            ; 00453680
-    CALL crt_unknown.c_FUN_005bfb40     ; 00453681
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00453681
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00453686
     PUSH 0x5d7916                       ; 00453689 | DAT_005d7916
     LEA EAX,[ESP + 0x4]                 ; 0045368e
@@ -125,8 +125,8 @@ section .text
     PUSH 0x5d7922                       ; 004536ab | = "backdrop\\%s"
     LEA EAX,[ESP + 0x108]               ; 004536b0
     PUSH EAX                            ; 004536b7
-    CALL crt_unknown.c_FUN_005bfb40     ; 004536b8
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004536b8
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 004536bd
     PUSH 0x5d792e                       ; 004536c0 | DAT_005d792e
     LEA EAX,[ESP + 0x104]               ; 004536c5
@@ -202,8 +202,8 @@ section .text
     LEA EAX,[ESP + 0x164]               ; 004537bf
     PUSH EAX                            ; 004537c6
     XOR ESI,ESI                         ; 004537c7
-    CALL support_codec.cpp_FUN_004434e0 ; 004537c9
-        ;   XREF to: 004434e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_004434e0(CLZWCompress * this_ptr)
+    CALL support_codec.cpp_CLZWCompress_init_FUN_004434e0 ; 004537c9
+        ;   XREF to: 004434e0 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWCompress_init_FUN_004434e0(CLZWCompress * this_ptr)
     ADD ESP,0x4                         ; 004537ce
     MOV EDI,dword ptr [0x01480e28]      ; 004537d1 | DAT_01480e28
     MOV dword ptr [ESP + 0x1f4],ESI     ; 004537d7
@@ -303,8 +303,8 @@ section .text
     PUSH EAX                            ; 0045394f
     MOV EDX,dword ptr [ESP + 0x214]     ; 00453950
     PUSH EDX                            ; 00453957
-    CALL core_dcamera.cpp_FUN_00453c90  ; 00453958
-        ;   XREF to: 00453c90 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_FUN_00453c90(CDemonCamera * this_ptr, int plane_index)
+    CALL core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90 ; 00453958
+        ;   XREF to: 00453c90 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_copyFogPlaneToBuffer_FUN_00453c90(CDemonCamera * this_ptr, int plane_index)
     ADD ESP,0x8                         ; 0045395d
     MOV EAX,dword ptr [ESP + 0x210]     ; 00453960
     XOR ECX,ECX                         ; 00453967

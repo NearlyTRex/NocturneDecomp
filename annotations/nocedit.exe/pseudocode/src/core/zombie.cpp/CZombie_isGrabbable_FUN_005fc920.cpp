@@ -15,6 +15,6 @@ int __cdecl core_zombie_cpp_CZombie_isGrabbable_FUN_005fc920(CZombie *this_ptr,C
   if (iVar1 != 0) {
     return 1;
   }
-  iVar1 = core_charactr_cpp_CCharacter_isGrabbable_FUN_0042bf30((CCharacter *)this_ptr,grabber);
+  iVar1 = core_charactr_cpp_CCharacter_returnZero_FUN_0042bf30((CCharacter *)this_ptr,grabber);
   return iVar1;
 }

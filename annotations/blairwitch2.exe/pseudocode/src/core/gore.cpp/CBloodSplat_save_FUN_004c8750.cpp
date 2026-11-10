@@ -12,16 +12,16 @@ int __cdecl core_gore_cpp_CBloodSplat_save_FUN_004c8750(CBloodSplat *this_ptr,_F
   int iVar1;
   
   FUN_005b8010
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x4,
-             (double)*(float *)&this_ptr->field_0x8,(double)*(float *)&this_ptr->field_0xc);
+            (file_handle,"%f,%f,%f\n",(double)(this_ptr->position).x,
+             (double)(this_ptr->position).y,(double)(this_ptr->position).z);
   FUN_005b8010();
   FUN_005b8010
-            (file_handle,"%f,%f,%f\n",(double)*(float *)&this_ptr->field_0x18,
-             (double)*(float *)&this_ptr->field_0x20,(double)*(float *)&this_ptr->field_0x1c);
+            (file_handle,"%f,%f,%f\n",(double)(this_ptr->rotation).x,
+             (double)(this_ptr->rotation).z,(double)(this_ptr->rotation).y);
   iVar1 = FUN_005b8010
-                    (file_handle,"%d,%d,%d,%d,%d,%d,%d\n",*(uint *)&this_ptr->field_0x28,
-                     *(uint *)&this_ptr->field_0x2c,*(uint *)&this_ptr->field_0x30,
-                     *(uint *)&this_ptr->field_0x34,*(uint *)&this_ptr->field_0x38,
-                     *(uint *)&this_ptr->field_0x3c,*(uint *)&this_ptr->field_0x40);
+                    (file_handle,"%d,%d,%d,%d,%d,%d,%d\n",this_ptr->texture_variant,
+                     (this_ptr->position_fixed).x,(this_ptr->position_fixed).y,
+                     (this_ptr->position_fixed).z,(this_ptr->normal_fixed).x,
+                     (this_ptr->normal_fixed).y,(this_ptr->normal_fixed).z);
   return iVar1;
 }

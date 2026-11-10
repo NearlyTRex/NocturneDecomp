@@ -52,11 +52,11 @@ int engine_font_cpp_FUN_004b2eee(CBitFont *param_1,char *param_2,char *param_3,i
         if ((int)uVar8 < param_5 + -1) {
           *(byte *)(uVar8 + 0x1d1a960) = 0;
           if ((iStack_14 < 2) && (param_8 == 0)) {
-            iVar5 = engine_font_cpp_FUN_004b2a80(param_1,(char *)0x1d1a960);
+            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(param_1,(char *)0x1d1a960);
           }
           else {
             iVar2 = *(int *)(param_1 + 0x3668);
-            iVar5 = engine_font_cpp_FUN_004b2a80(param_1,(char *)0x1d1a960);
+            iVar5 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(param_1,(char *)0x1d1a960);
             iVar5 = iVar5 + iVar2 * param_7;
           }
           if (iVar5 <= param_6) {

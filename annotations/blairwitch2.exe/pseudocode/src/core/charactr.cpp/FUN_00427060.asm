@@ -15,9 +15,9 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[3]:
-;   core_bride.cpp_FUN_0041dbe0 at 0041e74e
-;   core_ghoul.cpp_FUN_004c1bb0 at 004c389f
-;   core_zombie.cpp_FUN_00595f30 at 00596c1f
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e74e
+;   core_ghoul.cpp_CGhoul_process_FUN_004c1bb0 at 004c389f
+;   core_zombie.cpp_CZombie_process_FUN_00595f30 at 00596c1f
 ;
 ; Referenced Globals:
 ;   CGore* g_CGorePtr = 01cb8284
@@ -25,8 +25,8 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408cf0
 ;   core_actor.cpp_FUN_00408d70
-;   core_actor.cpp_FUN_0040d060
-;   core_gore.cpp_FUN_004c9730
+;   core_actor.cpp_randomChance_FUN_0040d060
+;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730
 ;   core_skeleton.cpp_FUN_00546a90
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     RET                                 ; 0042707a
     PUSH dword ptr [ESP + 0x68]         ; 0042707b
         ;   Label: LAB_0042707b
-    CALL core_actor.cpp_FUN_0040d060    ; 0042707f
-        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d060(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040d060 ; 0042707f
+        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040d060(float probability_threshold)
     ADD ESP,0x4                         ; 00427084
     TEST EAX,EAX                        ; 00427087
     JZ 0x00427076                       ; 00427089
@@ -105,8 +105,8 @@ section .text
     PUSH EAX                            ; 0042710d
     MOV EDX,dword ptr [0x006167e0]      ; 0042710e | g_CGorePtr
     PUSH EDX                            ; 00427114
-    CALL core_gore.cpp_FUN_004c9730     ; 00427115
-        ;   XREF to: 004c9730 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9730(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
+    CALL core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730 ; 00427115
+        ;   XREF to: 004c9730 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730(CGore * this_ptr, CVector3f * position, CVector3f * velocity, EBloodType blood_type)
     ADD ESP,0x10                        ; 0042711a
     POP ESI                             ; 0042711d
     POP EDI                             ; 0042711e

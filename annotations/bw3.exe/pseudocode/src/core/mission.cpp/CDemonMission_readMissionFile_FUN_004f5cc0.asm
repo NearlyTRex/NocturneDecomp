@@ -48,12 +48,12 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
 ;   core_actor.cpp_getActorClassByName_FUN_0040c480
 ;   core_actor.cpp_resetActorTypeInfo_FUN_0040c8a0
+;   core_gore.cpp_CGore_load_FUN_004cf010
 ;   core_gore.cpp_CGore_reset_FUN_004ce560
-;   core_gore.cpp_FUN_004cf010
-;   core_inv.cpp_FUN_004dca90
+;   core_inv.cpp_CInventory_loadItems_FUN_004dca90
 ;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_FUN_004f5b80
-;   core_mission.cpp_FUN_004f6930
 ;   core_mission.cpp_FUN_004f76f0
 ;   crt_stdio.c_fgetc_FUN_005a32b0
 ;   crt_stdio.c_fscanf_FUN_005a3230
@@ -434,8 +434,8 @@ section .text
         ;   XREF to: 004f60e2 (CONDITIONAL_JUMP)  ; LAB_004f60e2
     ADD EAX,0x206e8                     ; 004f60d4
     PUSH EAX                            ; 004f60d9
-    CALL core_inv.cpp_FUN_004dca90      ; 004f60da
-        ;   XREF to: 004dca90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dca90(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_loadItems_FUN_004dca90 ; 004f60da
+        ;   XREF to: 004dca90 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_loadItems_FUN_004dca90(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004f60df
     MOV EDI,dword ptr [ESP + 0x130]     ; 004f60e2
         ;   Label: LAB_004f60e2
@@ -586,8 +586,8 @@ section .text
         ;   Label: LAB_004f6283
     PUSH EBP                            ; 004f6284
     PUSH EBX                            ; 004f6285
-    CALL core_mission.cpp_FUN_004f6930  ; 004f6286
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 004f6286
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004f628b
     MOV EAX,dword ptr [ESP + 0x144]     ; 004f628e
     CMP EAX,dword ptr [ESP + 0x130]     ; 004f6295
@@ -623,8 +623,8 @@ section .text
     PUSH EBP                            ; 004f630f
     MOV EAX,[0x005fed24]                ; 004f6310 | g_CGorePtr
     PUSH EAX                            ; 004f6315
-    CALL core_gore.cpp_FUN_004cf010     ; 004f6316
-        ;   XREF to: 004cf010 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004cf010(CGore * this_ptr, _FILE * file_handle)
+    CALL core_gore.cpp_CGore_load_FUN_004cf010 ; 004f6316
+        ;   XREF to: 004cf010 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_load_FUN_004cf010(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004f631b
     ADD ESP,0x148                       ; 004f631e
     POP EBP                             ; 004f6324

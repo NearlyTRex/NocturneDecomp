@@ -9,5 +9,5 @@
 EGroundType __cdecl core_pendulum_cpp_CPendulum_getGroundType_FUN_0050f110(CPendulum *this_ptr)
 
 {
-  return *(EGroundType *)&this_ptr->field_0x438;
+  return this_ptr->ground_type;
 }

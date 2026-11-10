@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
+#include "types/enums/EWerewolfType.h"
 
 // Structure: CWerewolf
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b40 (68416 bytes)
 #pragma pack(push, 1)
 typedef struct CWerewolf {
-    char field_0[68416]; // 0x0
+    CEnemy base; // 0x0
+    char field_48828[19516]; // 0xbebc
+    EWerewolfType type; // 0x10af8
+    int bone_indices[5]; // 0x10afc
+    int light_up_eyes; // 0x10b10
+    uint sfx_handle; // 0x10b14
+    float howl_cooldown; // 0x10b18
+    uint sfx_handles[2]; // 0x10b1c
+    struct CDemonActor* chain_anchor; // 0x10b24
+    float chain_length; // 0x10b28
+    struct CDemonActor* alpha1; // 0x10b2c
+    struct CDemonActor* alpha2; // 0x10b30
+    int phase; // 0x10b34
+    float phase_timer; // 0x10b38
+    float eye_glow_phase; // 0x10b3c
 } CWerewolf;
 #pragma pack(pop)
 

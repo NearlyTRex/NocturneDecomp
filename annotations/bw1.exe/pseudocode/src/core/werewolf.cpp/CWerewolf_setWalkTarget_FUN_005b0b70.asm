@@ -10,7 +10,7 @@
 ; float            Stack[0x10]:4   distance
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00432050
+;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_00524770
 ;
 ; *****************************************************************************
@@ -36,8 +36,8 @@ section .text
     PUSH EDX                            ; 005b0b97
     MOV ECX,dword ptr [ESP + 0x10]      ; 005b0b98
     PUSH ECX                            ; 005b0b9c
-    CALL core_charactr.cpp_FUN_00432050 ; 005b0b9d
-        ;   XREF to: 00432050 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_00432050()
+    CALL core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050 ; 005b0b9d
+        ;   XREF to: 00432050 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_setWalkTarget_FUN_00432050(CCharacter * this_ptr, CDemonActor * target, float min_distance, float max_distance)
     ADD ESP,0x10                        ; 005b0ba2
     RET                                 ; 005b0ba5
 

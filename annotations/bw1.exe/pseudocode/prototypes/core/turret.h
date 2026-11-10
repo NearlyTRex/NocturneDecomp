@@ -25,17 +25,17 @@ CTurret * CTurret::ctor(CTurret *this_ptr);
 // Address: 005a21a0
 void __cdecl CTurret::setup(CTurret *this_ptr);
 
-// Original: core_turret.cpp_FUN_005a2280
+// Original: core_turret.cpp_CTurret_renderOpaque_FUN_005a2280
 // Address: 005a2280
-int FUN_005a2280(CTurret *param_1);
+int __cdecl CTurret::renderOpaque(CTurret *this_ptr);
 
-// Original: core_turret.cpp_FUN_005a23b0
+// Original: core_turret.cpp_CTurret_process_FUN_005a23b0
 // Address: 005a23b0
-void FUN_005a23b0(CTurret *param_1,float param_2);
+void __cdecl CTurret::process(CTurret *this_ptr,float delta_time);
 
-// Original: core_turret.cpp_FUN_005a28c0
+// Original: core_turret.cpp_CTurret_getBoundingBox_FUN_005a28c0
 // Address: 005a28c0
-void FUN_005a28c0(CTurret *param_1);
+CBoundingBox3D * __cdecl CTurret::getBoundingBox(CTurret *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_turret.cpp_CTurret_getCurFrame_FUN_005a2ae0
 // Address: 005a2ae0
@@ -47,11 +47,11 @@ void __cdecl CTurret::archive(CTurret *this_ptr);
 
 // Original: core_turret.cpp_FUN_005a2d00
 // Address: 005a2d00
-void FUN_005a2d00(CTurret *param_1,float param_2);
+void FUN_005a2d00(CCharacter *param_1,float param_2);
 
-// Original: core_turret.cpp_FUN_005a3350
+// Original: core_turret.cpp_CTurret_aimAtTarget_FUN_005a3350
 // Address: 005a3350
-int __cdecl FUN_005a3350(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
+int __cdecl CTurret::aimAtTarget(CTurret *this_ptr,CVector3f *target_pos,float delta_time);
 
 // Original: core_turret.cpp_CTurret_getInteractionInfo_FUN_005a3530
 // Address: 005a3530
@@ -77,13 +77,13 @@ void __cdecl CTurret::updatePatrol(CTurret *this_ptr,float delta_time);
 // Address: 005a3810
 float __cdecl CTurret::getDamage(CTurret *this_ptr);
 
-// Original: core_turret.cpp_FUN_005a3840
+// Original: core_turret.cpp_CTurret_getMuzzlePoint_FUN_005a3840
 // Address: 005a3840
-void FUN_005a3840(int param_1);
+CVector3f * __cdecl CTurret::getMuzzlePoint(CTurret *this_ptr,CVector3f *out_point);
 
-// Original: core_turret.cpp_FUN_005a3870
+// Original: core_turret.cpp_CTurret_fire_FUN_005a3870
 // Address: 005a3870
-undefined4 FUN_005a3870(CDemonActor *param_1);
+int __cdecl CTurret::fire(CTurret *this_ptr);
 
 // Original: core_turret.cpp_CTurret_canPickup_FUN_005a3e30
 // Address: 005a3e30

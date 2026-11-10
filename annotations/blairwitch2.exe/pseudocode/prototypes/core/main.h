@@ -17,9 +17,9 @@ void FUN_004e45e0(void);
 // Address: 004e46b0
 int __cdecl FUN_004e46b0(void);
 
-// Original: core_main.c_FUN_004e46c0
+// Original: core_main.c_initializeGameSystems_FUN_004e46c0
 // Address: 004e46c0
-void __cdecl FUN_004e46c0(int argc,char **argv);
+void __cdecl initializeGameSystems(int argc,char **argv);
 
 // Original: core_main.c_FUN_004e4e20
 // Address: 004e4e20

@@ -38,7 +38,8 @@ void core_fldnotes_cpp_FUN_004bbb90(int param_1,char *param_2)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  iVar2 = engine_font_cpp_FUN_004c3ea0(*(CBitFont **)(param_1 + 0x2c),(char *)(param_1 + 0x48));
+  iVar2 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
+                    (*(CBitFont **)(param_1 + 0x2c),(char *)(param_1 + 0x48));
   *(int *)(param_1 + 0x14) = *(int *)(param_1 + 0x40) + iVar2;
   return;
 }

@@ -18,10 +18,11 @@ CWeapon * __cdecl core_weapon_cpp_CWeapon_dtor_FUN_00589ae0(CWeapon *this_ptr,ui
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte **)&this_ptr->field_0x2b0 = &g_CWeaponVTable;
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70((CBox *)&this_ptr->field_0x464,0);
+  (this_ptr->base).vtable._ub = &g_CWeaponVTable._ub;
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_005b1c70(&this_ptr->physics_box,0);
   pCVar2 = (CWeapon *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)(pCVar1 + -0x464),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408930
+                     ((CDemonActor *)&pCVar1[-2].linear_velocity_local,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

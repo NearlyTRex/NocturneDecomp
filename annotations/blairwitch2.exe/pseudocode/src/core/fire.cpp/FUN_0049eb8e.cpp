@@ -11,13 +11,11 @@
 void core_fire_cpp_FUN_0049eb8e(uint param_1,SProjectedVertex *param_2,float *param_3)
 
 {
-  int iStack_10;
-  int iStack_c;
-  int iStack_8;
+  CVector3i CStack_10;
   
-  iStack_10 = (int)ROUND(*param_3 * _DAT_005f64e4);
-  iStack_c = (int)ROUND(param_3[1] * _DAT_005f64e4);
-  iStack_8 = (int)ROUND(param_3[2] * _DAT_005f64e4);
-  engine_special_cpp_FUN_0055d9ec(param_2,(CVector3i *)&iStack_10);
+  CStack_10.x = (int)ROUND(*param_3 * _DAT_005f64e4);
+  CStack_10.y = (int)ROUND(param_3[1] * _DAT_005f64e4);
+  CStack_10.z = (int)ROUND(param_3[2] * _DAT_005f64e4);
+  engine_special_cpp_FUN_0055d9ec(param_2,&CStack_10);
   return;
 }

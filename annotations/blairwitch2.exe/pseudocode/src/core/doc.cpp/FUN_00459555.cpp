@@ -69,7 +69,7 @@ uint core_doc_cpp_FUN_00459555(void)
     in_stack_0000017c = 0;
     in_stack_00000188 = 0;
     do {
-      if (*(int *)&g_CDemonSetPtr->field_0x14d164 <= in_stack_0000017c) {
+      if (g_CDemonSetPtr->actor_count <= in_stack_0000017c) {
         *(uint *)(unaff_EBX + 0x256a4) = 6;
         if ((*(int *)(unaff_EBX + 0x2698) == 0) ||
            (iVar5 = (**(code **)(*(int *)(*(int *)(unaff_EBX + 0x2698) + 0x2b0) + 0x8c))(),

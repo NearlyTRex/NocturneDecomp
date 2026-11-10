@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   crt_math.c_pow_FUN_005c18f4 at 005c19d7
-;   unkafter_zombie.cpp_FUN_005cbf70 at 005cc006
+;   crt_unknown.c_FUN_005cbf70 at 005cc006
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_crt_unknown.c_FUN_005c77bd_00628bcc = 005c77bd

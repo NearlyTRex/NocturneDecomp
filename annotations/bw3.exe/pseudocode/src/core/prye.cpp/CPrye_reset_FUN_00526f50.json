@@ -1,0 +1,169 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 89,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 7,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 41
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00526f50",
+    "address_range": [
+      [
+        "00526f50",
+        "00526fb4"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_prye.cpp_CPrye_reset_FUN_00526f50",
+    "signature": "void __cdecl core_prye_cpp_CPrye_reset_FUN_00526f50(CPrye *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d4410",
+      "is_variadic": false,
+      "name": "core_hero.cpp_FUN_004d4410"
+    },
+    {
+      "addr": "004fc3f0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0"
+    },
+    {
+      "addr": "004fc0d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005cd9ee",
+      "name": "s_stand_005cd9ee",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.086956521739131,
+    "instruction_count": 23,
+    "opcode_distribution": {
+      "CALL": 3,
+      "COPY": 16,
+      "INT_ADD": 12,
+      "INT_AND": 8,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 8,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 4,
+      "INT_SUB": 11,
+      "LOAD": 3,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 16
+    },
+    "pcode_op_count": 94
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPrye *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0x20c20",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20c20 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x20c24",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20c24 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x20b64",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x20b64 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x2f00",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2f00 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2f04",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x2f04 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,\"stand\",0.0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0x158",
+      "severity": "mild",
+      "text": "((CMotionController *)&this_ptr->field_0x158,0,1);",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPrye",
+        "offset": 332,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

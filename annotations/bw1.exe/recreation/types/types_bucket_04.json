@@ -7,6 +7,138 @@
     "size":49820
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_applyDamage",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damage_amount",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_canBeGrabbed",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grabber",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grab_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemnfolk_vfunc82",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemnfolk",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_updateInteraction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"user_orientation",
+        "type":{
+          "kind":"union",
+          "name":"UOrientationVector",
+          "ptr":1
+        }
+      },
+      {
+        "name":"player_control",
+        "type":{
+          "kind":"struct",
+          "name":"SPlayerInput",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonCubeTriangle",
     "size":1
@@ -64,6 +196,25 @@
   },
   {
     "kind":"class",
+    "name":"CHero_full_vtable",
+    "size":352,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_uh",
+        "offset":320
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CInStreamFile",
     "size":44
   },
@@ -103,7 +254,7 @@
     "kind":"class",
     "name":"CPackedBitmapSet",
     "rtti_file":"cockpit/pkbmpset.cpp",
-    "size":1
+    "size":40
   },
   {
     "kind":"class",
@@ -124,6 +275,80 @@
     "size":1
   },
   {
+    "kind":"funcdef",
+    "name":"CSoundDevice_reset",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_setMode",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      },
+      {
+        "name":"bits_per_sample",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"channels",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sample_rate",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_samples_per_block",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CTentacle",
     "parent":"CEnemy",
@@ -139,6 +364,27 @@
     "kind":"class",
     "name":"CTheHand",
     "size":49888
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_fire",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"enum",
@@ -160,6 +406,40 @@
       {
         "name":"COLLISION_TYPE_CUSTOM",
         "value":3
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EFireMode",
+    "size":4,
+    "values":[
+      {
+        "name":"FIRE_MODE_AUTOMATIC",
+        "value":0
+      },
+      {
+        "name":"FIRE_MODE_SINGLE",
+        "value":1
+      },
+      {
+        "name":"FIRE_MODE_PUMP",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EMarqueeDisplayType",
+    "size":4,
+    "values":[
+      {
+        "name":"MARQUEE_DISPLAY_RING",
+        "value":0
+      },
+      {
+        "name":"MARQUEE_DISPLAY_CURSIVE",
+        "value":1
       }
     ]
   },

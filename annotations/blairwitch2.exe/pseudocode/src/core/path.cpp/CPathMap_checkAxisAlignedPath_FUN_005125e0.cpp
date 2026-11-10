@@ -47,7 +47,7 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0(CPathMap *t
     local_40 = 1;
   }
   iVar3 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                    (this_ptr,end_z,end_x,*(int *)&this_ptr->field_0x1c);
+                    (this_ptr,end_z,end_x,(this_ptr->dest_voxel_coords).y);
   iVar5 = end_x;
   if (0 < local_2c) {
     do {
@@ -94,15 +94,15 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0(CPathMap *t
     }
     if ((local_30 == 0) &&
        (iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                          (this_ptr,start_z,start_x,*(int *)&this_ptr->field_0x10),
-       unaff_EDI == iVar5)) {
+                          (this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)
+       ) {
       return 1;
     }
   }
   local_18 = end_x;
   local_34 = (uVar2 ^ uVar7) - uVar7;
   iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                    (this_ptr,end_z,end_x,*(int *)&this_ptr->field_0x1c);
+                    (this_ptr,end_z,end_x,(this_ptr->dest_voxel_coords).y);
   if (0 < local_34) {
     do {
       iVar3 = local_40 + end_z;
@@ -147,8 +147,8 @@ int __cdecl core_path_cpp_CPathMap_checkAxisAlignedPath_FUN_005125e0(CPathMap *t
     }
     if ((local_38 == 0) &&
        (iVar5 = core_path_cpp_CPathMap_getCachedVoxelHeight_FUN_005122f0
-                          (this_ptr,start_z,start_x,*(int *)&this_ptr->field_0x10),
-       unaff_EDI == iVar5)) {
+                          (this_ptr,start_z,start_x,(this_ptr->voxel_coords).y), unaff_EDI == iVar5)
+       ) {
       return 2;
     }
   }

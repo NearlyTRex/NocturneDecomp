@@ -14,12 +14,13 @@ CSkeletonDemon * core_boneguy_cpp_CSkeletonDemon_ctor_FUN_00419a20(CSkeletonDemo
   CBoneGuy *pCVar1;
   
   pCVar1 = core_boneguy_cpp_CBoneGuy_ctor_FUN_00417400((CBoneGuy *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CSkeleton_DemonVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5b719a);
-  *(uint *)&pCVar1->field_0x2538 = 0x42200000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41a00000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41200000;
+  (pCVar1->base).base.base.vtable._ub = &g_CSkeletonDemonVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            (&(pCVar1->base).base.model,(char *)0x5b719a);
+  (pCVar1->base).base.hit_points = 40.0;
+  *(uint *)&(pCVar1->base).field_0xce5c = 0x41a00000;
+  *(uint *)&(pCVar1->base).field_0xce60 = 0x41200000;
   *(uint *)&pCVar1->field_0xd074 = 3;
-  *(uint *)&pCVar1->field_0xd058 = *(uint *)&pCVar1->field_0x2538;
+  *(float *)&pCVar1->field_0xd058 = (pCVar1->base).base.hit_points;
   return (CSkeletonDemon *)pCVar1;
 }

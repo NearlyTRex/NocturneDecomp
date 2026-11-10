@@ -9,12 +9,12 @@
 ; CMatrix3x3f *    Stack[0xc]:4   rotation_matrix
 ;
 ; XREF[6]:
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e520
-;   core_gun.cpp_FUN_004e8630 at 004e88bf
-;   core_rifle.cpp_FUN_00540080 at 005404aa
-;   core_shotgun.cpp_FUN_00561760 at 00561ad0
-;   core_tommygun.cpp_FUN_00598420 at 00598704
-;   core_turret.cpp_FUN_005a3870 at 005a3d1a
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e520
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e88bf
+;   core_rifle.cpp_CRifle_fire_FUN_00540080 at 005404aa
+;   core_shotgun.cpp_CShotgun_fire_FUN_00561760 at 00561ad0
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598704
+;   core_turret.cpp_CTurret_fire_FUN_005a3870 at 005a3d1a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c9f1b8

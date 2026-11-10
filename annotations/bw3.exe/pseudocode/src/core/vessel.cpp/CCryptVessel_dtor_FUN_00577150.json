@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 59,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 19,
-    "suspect_count": 3,
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 66
+    "total_lines": 67
   },
   "cross_references": [],
   "function": {
@@ -114,28 +113,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x3c4",
-      "severity": "mild",
-      "text": "pCVar1 = core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&this_ptr->field_0x3c4,1);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 17,
       "match": "pCVar1[-3].",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar1[-3].field_0x44,1);",
+      "text": "((CDemonActor *)&pCVar1[-3].orient_matrix.m[0].z,1);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)&pCVar1[-3].field_0x44,1);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {
@@ -146,7 +129,7 @@
         "vtable_addr": "005e5e54"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CCryptVessel",
         "offset": 208,
         "vtable_addr": "005e5d74"
       }

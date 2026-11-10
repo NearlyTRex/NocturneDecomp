@@ -9,21 +9,21 @@
 void __cdecl core_weather_cpp_CWeather_setWeatherType_FUN_0058b470(CWeather *this_ptr,EWeatherType type)
 
 {
-  uint uVar1;
+  float fVar1;
   
-  *(EWeatherType *)this_ptr = type;
+  this_ptr->weather_type = type;
   if (type == WEATHER_TYPE_RAIN) {
-    *(uint *)(this_ptr + 4) = 0x42200000;
+    this_ptr->particle_speed = 40.0;
   }
   else {
-    *(uint *)(this_ptr + 4) = 0x40a00000;
+    this_ptr->particle_speed = 5.0;
   }
-  uVar1 = core_actor_cpp_FUN_0040cf60(0x41200000,0x41a00000);
-  *(uint *)(this_ptr + 0x24) = 0;
-  *(uint *)(this_ptr + 0x34) = 0x41200000;
-  *(uint *)(this_ptr + 0x28) = 0;
-  *(uint *)(this_ptr + 0x20) = uVar1;
-  uVar1 = core_actor_cpp_FUN_0040cf60(0x40000000,*(uint *)(this_ptr + 0x34));
-  *(uint *)(this_ptr + 0x2c) = uVar1;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,20.0);
+  this_ptr->lightning_active = 0;
+  this_ptr->max_flash_interval = 10.0;
+  this_ptr->flash_timer = 0.0;
+  this_ptr->lightning_countdown = fVar1;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(2.0,this_ptr->max_flash_interval);
+  this_ptr->sub_flash_interval = fVar1;
   return;
 }

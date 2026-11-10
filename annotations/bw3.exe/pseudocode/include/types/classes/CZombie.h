@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CZombie
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xd14c (53580 bytes)
 #pragma pack(push, 1)
 typedef struct CZombie {
-    char field_0[53580]; // 0x0
+    CEnemy base; // 0x0
+    char field_53332[248]; // 0xd054
 } CZombie;
 #pragma pack(pop)
 

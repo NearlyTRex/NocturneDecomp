@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040c790 at 0040c7af
+;   core_actor.cpp_isOfClass_FUN_0040c790 at 0040c7af
 ;
 ; Called Functions:
 ;   core_actor.cpp_matchClassExpression_FUN_0040c6d0

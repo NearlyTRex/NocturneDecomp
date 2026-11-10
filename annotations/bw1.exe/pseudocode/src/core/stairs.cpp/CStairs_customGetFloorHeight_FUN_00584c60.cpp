@@ -14,9 +14,9 @@ int __cdecl core_stairs_cpp_CStairs_customGetFloorHeight_FUN_00584c60(CStairs *t
   CDemonTriangle *triangle;
   int iVar3;
   
-  triangle = (CDemonTriangle *)&this_ptr->field_0x170;
+  triangle = this_ptr->collision_triangles;
   iVar3 = 0;
-  for (iVar2 = 0; iVar2 < *(int *)&this_ptr->field_0x16c * 2; iVar2 = iVar2 + 1) {
+  for (iVar2 = 0; iVar2 < this_ptr->stair_count * 2; iVar2 = iVar2 + 1) {
     iVar1 = core_dtri_cpp_FUN_00490a40(triangle,position,search_radius,out_floor_height);
     if (iVar1 != 0) {
       iVar3 = 1;

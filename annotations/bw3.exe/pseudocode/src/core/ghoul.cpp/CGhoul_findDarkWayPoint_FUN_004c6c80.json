@@ -2,27 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 166,
-    "complexity_score": 295,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 13,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 70,
-    "suspect_count": 20,
+    "pseudocode_lines": 69,
+    "suspect_count": 3,
     "suspect_types": [
-      "suspicious_cast",
-      "unknown_field",
-      "unnamed_field",
-      "unresolved_funcptr",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 236
+    "total_lines": 235
   },
   "cross_references": [
     {
       "addr": "004c6eb0",
       "from_addr": "004c819f",
-      "name": "core_ghoul.cpp_FUN_004c6eb0",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -47,7 +44,7 @@
     {
       "addr": "0040ce40",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040ce40"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
     },
     {
       "addr": "004e4330",
@@ -127,19 +124,19 @@
     },
     {
       "addr": "02024a2c",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02024a30",
-      "name": "g_CDemonSetInstance.field1364328_0x14d168",
+      "name": "g_CDemonSetInstance.actors[0]",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "020288b4",
-      "name": "g_CDemonSetInstance.field1380332_0x150fec",
+      "name": "g_CDemonSetInstance.enemy_count",
       "type": "undefined4",
       "value": null
     },
@@ -156,7 +153,7 @@
       {
         "call_addr": "004c819f",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -279,156 +276,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xd0bc",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0xd0bc == 0) &&",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 30,
+      "match": "(uint *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + local_1c),",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xd0b8",
-      "severity": "mild",
-      "text": "(fVar1 = *(float *)&this_ptr->field_0xd0b8 - delta_time,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xd0b8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xd0b8 = fVar1, fVar1 <= 0.0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "local_24 = (CVector3f *)&this_ptr->field_0x20;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xd0b8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xd0b8 = local_14 + *(float *)&this_ptr->field_0xd0b8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xd0b8",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xd0b8 = local_14 + *(float *)&this_ptr->field_0xd0b8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (; local_18 < *(int *)&g_CDemonSetPtr->field_0x14d164; local_18 = local_18 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x150fec",
-      "severity": "mild",
-      "text": "for (iVar4 = 0; iVar4 < *(int *)&g_CDemonSetPtr->field_0x150fec; iVar4 = iVar4 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 41,
-      "match": "field_0x150ff0",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x150ff0 + iVar2),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0xd0b4",
-      "severity": "mild",
-      "text": "(target_string == *(char **)&pCVar3->field_0xd0b4)) goto LAB_004c6d1f;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 49,
-      "match": "code *",
+      "match": "(uint *)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(target_string + 0x154) + 0xc4))(target_string);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 59,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "CStack_30._0_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 60,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "CStack_30._4_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 61,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "CStack_30._8_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x6c",
-      "severity": "mild",
-      "text": "(this_ptr_00,local_24,&CStack_30,*(int *)&this_ptr->field_0x6c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0xd0b4",
-      "severity": "mild",
-      "text": "*(char **)&this_ptr->field_0xd0b4 = target_string;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 31,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + local_1c),",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00603b38 (at 0x00603b38, +16 bytes).",
-      "line": 41,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x150ff0 + iVar2),",
-      "type": "suspicious_cast"
+      "text": "(*(uint *)((int)g_CDemonSetPtr->enemies + iVar2),",
+      "type": "pointer_cast"
     }
   ]
 }

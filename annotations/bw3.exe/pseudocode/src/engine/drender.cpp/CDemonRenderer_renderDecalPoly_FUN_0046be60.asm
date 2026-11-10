@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_water.cpp_FUN_00577760 at 00577ce4
+;   core_water.cpp_CWater_render_FUN_00577760 at 00577ce4
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bdd818

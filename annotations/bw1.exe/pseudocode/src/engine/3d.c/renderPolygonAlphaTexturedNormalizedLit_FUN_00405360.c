@@ -13,7 +13,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaTexturedNormalizedLi
 {
   int iVar1;
   
-  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(prim + 8);
+  iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(&prim->surface_normal);
   if (iVar1 != 0) {
     if (_DAT_01c51d00 == 0) {
       if (DAT_0061b4a0 == 0x20) {
@@ -32,7 +32,7 @@ SMRGLHeaderExtended * __cdecl engine_3d_c_renderPolygonAlphaTexturedNormalizedLi
     _DAT_01c51d14 = 9;
     _DAT_01c51d18 = 2;
     engine_3d_c_calculatePolygonLighting_FUN_004039d0(prim);
-    engine_clipper_c_clipAndRasterize_FUN_0043cbf0(*(int *)(prim + 4),(int *)(prim + 0x18));
+    engine_clipper_c_clipAndRasterize_FUN_0043cbf0((prim->base).count,(int *)(prim + 1));
   }
-  return (SMRGLHeaderExtended *)(prim + *(int *)(prim + 4) * 4 + 0x18);
+  return (SMRGLHeaderExtended *)(&prim[1].base.type + (prim->base).count);
 }

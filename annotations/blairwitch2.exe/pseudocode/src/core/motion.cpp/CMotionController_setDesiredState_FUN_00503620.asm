@@ -11,14 +11,14 @@
 ; XREF[162]:
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fef0 at 0040fffb
 ;   core_baron.cpp_CBaron_detachFromOwner_FUN_00410040 at 00410064
-;   core_baron.cpp_FUN_0040f950 at 0040faba
-;   core_basicnpc.cpp_FUN_005a48a0 at 005a48b8
-;   core_batcreat.cpp_FUN_00411a10 at 00412055
-;   core_batcreat.cpp_FUN_00412760 at 0041284b
-;   core_batman.cpp_FUN_00412ec0 at 00412ee0
-;   core_batman.cpp_FUN_00412f40 at 004135b6
-;   core_batman.cpp_FUN_00414290 at 0041437b
-;   core_belling.cpp_FUN_005a90d0 at 005a90de
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040faba
+;   core_basicene.cpp_CBasicEnemy_processAnimationState_FUN_0059ebe0 at 0059ebf8
+;   core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90 at 0059f0c7
+;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f49a
+;   core_basicnpc.cpp_CBasicNPC_processDeathState_FUN_005a48a0 at 005a48b8
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760 at 0041284b
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00412055
+;   core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412ec0 at 00412ee0
 ;   ... and 152 more
 ;
 ; Referenced Globals:

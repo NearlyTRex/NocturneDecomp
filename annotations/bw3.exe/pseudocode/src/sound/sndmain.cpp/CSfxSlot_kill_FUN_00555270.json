@@ -2,20 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 131,
-    "complexity_score": 285,
+    "complexity_score": 174,
     "cross_reference_count": 11,
     "function_call_count": 4,
     "global_count": 16,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 21,
+    "pseudocode_lines": 54,
+    "suspect_count": 10,
     "suspect_types": [
       "pointer_truncation",
       "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 186
+    "total_lines": 185
   },
   "cross_references": [
     {
@@ -55,27 +55,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00556c60",
-      "from_addr": "00556c73",
-      "name": "sound_sndmain.cpp_FUN_00556c60",
+      "addr": "00558f20",
+      "from_addr": "005590d4",
+      "name": "sound_sndmain.cpp_FUN_00558f20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00556db0",
       "from_addr": "00556e07",
-      "name": "sound_sndmain.cpp_FUN_00556db0",
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00556db0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00556c60",
+      "from_addr": "00556c73",
+      "name": "sound_sndmain.cpp_killAllSfx_FUN_00556c60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00557470",
       "from_addr": "005574b3",
-      "name": "sound_sndmain.cpp_FUN_00557470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00558f20",
-      "from_addr": "005590d4",
-      "name": "sound_sndmain.cpp_FUN_00558f20",
+      "name": "sound_sndmain.cpp_killSfxByName_FUN_00557470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -256,7 +256,7 @@
       {
         "call_addr": "00556c73",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00556c60",
+        "caller": "sound_sndmain.cpp_killAllSfx_FUN_00556c60",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -289,7 +289,7 @@
       {
         "call_addr": "00556e07",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_00556db0",
+        "caller": "sound_sndmain.cpp_enableSfxChannel_FUN_00556db0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -400,39 +400,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
+      "line": 15,
       "match": "field_0x108",
       "severity": "mild",
       "text": "if (*(int *)&this_ptr->field_0x108 != 0) {",
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(char **)&this_ptr->field_0x68 != (char *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "pcVar2 = *(char **)&this_ptr->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x60 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 25,
+      "line": 24,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_02cf3280 + 0x50))(_DAT_02cf3280,this_ptr);",
@@ -440,15 +416,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x60 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
+      "line": 28,
       "match": "field_0x108",
       "severity": "mild",
       "text": "*(uint *)&this_ptr->field_0x108 = 0;",
@@ -456,106 +424,50 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x64",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x64 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x68 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "if (*(int *)(*(int *)&this_ptr->field_0x68 + 0x154) < 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "piVar1 = (int *)(*(int *)&this_ptr->field_0x68 + 0x154);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "this_ptr_00 = *(CSfxSample **)&this_ptr->field_0x68;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 40,
-      "match": "field_0x68",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x68 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
       "match": "field_0x160",
       "severity": "mild",
-      "text": "if (-1 < *(int *)&this_ptr_00->field_0x160) {",
+      "text": "if (-1 < *(int *)&pCVar2->field_0x160) {",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr_00->field_0x154 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
+      "line": 46,
       "match": "field_0x10",
       "severity": "mild",
-      "text": "if ((int)&this_ptr[-0x2879d].field_0x10 / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "text": "if ((int)&this_ptr[-0x2879d].options.field_0x10 / 0x11c != *(int *)&pCVar2->field_0x160) {",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 47,
+      "line": 46,
       "match": "field_0x160",
       "severity": "mild",
-      "text": "if ((int)&this_ptr[-0x2879d].field_0x10 / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "text": "if ((int)&this_ptr[-0x2879d].options.field_0x10 / 0x11c != *(int *)&pCVar2->field_0x160) {",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 55,
+      "line": 54,
       "match": "field_0x160",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00->field_0x160 = 0xffffffff;",
+      "text": "*(uint *)&pCVar2->field_0x160 = 0xffffffff;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 57,
+      "line": 56,
       "match": "field_0x118",
       "severity": "mild",
       "text": "*(uint *)&this_ptr->field_0x118 = 0;",
       "type": "unnamed_field"
     },
     {
-      "description": "Pointer value `&this_ptr[-0x2879d].field_0x10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 47,
-      "match": "(int)&this_ptr[-0x2879d].field_0x10",
+      "description": "Pointer value `&this_ptr[-0x2879d].options.field_0x10` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 46,
+      "match": "(int)&this_ptr[-0x2879d].options.field_0x10",
       "severity": "moderate",
-      "text": "if ((int)&this_ptr[-0x2879d].field_0x10 / 0x11c != *(int *)&this_ptr_00->field_0x160) {",
+      "text": "if ((int)&this_ptr[-0x2879d].options.field_0x10 / 0x11c != *(int *)&pCVar2->field_0x160) {",
       "type": "pointer_truncation"
     }
   ]

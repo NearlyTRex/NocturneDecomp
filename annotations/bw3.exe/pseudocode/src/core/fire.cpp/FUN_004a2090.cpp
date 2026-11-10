@@ -14,8 +14,8 @@ void core_fire_cpp_FUN_004a2090(CFireEffect *param_1,CVector3f *param_2,uint par
   int iVar1;
   int iVar2;
   CBulletHole *pCVar3;
-  char *pcVar4;
-  uint *puVar5;
+  uint *puVar4;
+  char *pcVar5;
   byte bVar6;
   float afStackY_1024 [998];
   char local_70 [52];
@@ -35,10 +35,10 @@ void core_fire_cpp_FUN_004a2090(CFireEffect *param_1,CVector3f *param_2,uint par
      (iVar1 = (**(code **)(*(int *)(param_5 + 0x154) + 0x4c))(param_5), iVar1 != 0)) {
     if ((local_18 != 0) && ((param_6 == 0 && (iVar1 = 0, 0 < _DAT_01c8aea0)))) {
       do {
-        local_38[0] = *(float *)&param_2->field_0x4 - local_14[1];
-        local_38[1] = *(float *)&param_2->field_0x8 - local_14[2];
-        local_3c = *(float *)param_2 - *local_14;
-        local_38[2] = *(float *)param_2 - *local_14;
+        local_3c = param_2->x - *local_14;
+        local_38[0] = param_2->y - local_14[1];
+        local_38[1] = param_2->z - local_14[2];
+        local_38[2] = local_3c;
         local_38[(uint)bVar6 * -2 + 3] = local_38[(uint)bVar6 * -2];
         local_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
              local_38[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
@@ -54,7 +54,7 @@ void core_fire_cpp_FUN_004a2090(CFireEffect *param_1,CVector3f *param_2,uint par
       } while (iVar1 < _DAT_01c8aea0);
     }
     if (local_18 != 0) {
-      pCVar3 = core_fire_cpp_FUN_004a1420();
+      pCVar3 = core_fire_cpp_allocateBulletHole_FUN_004a1420();
       core_fire_cpp_FUN_00497290(pCVar3,param_2,param_3,param_5,param_6);
     }
   }
@@ -85,21 +85,21 @@ LAB_004a215d:
       } while (iVar1 < 8);
     }
   }
-  puVar5 = &DAT_005fdbf8;
-  pcVar4 = local_70;
+  puVar4 = &DAT_005fdbf8;
+  pcVar5 = local_70;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
-    *(uint *)pcVar4 = *puVar5;
-    puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
-    pcVar4 = (char *)((int)pcVar4 + ((uint)bVar6 * -2 + 1) * 4);
+    *(uint *)pcVar5 = *puVar4;
+    puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
+    pcVar5 = (char *)((int)pcVar5 + ((uint)bVar6 * -2 + 1) * 4);
   }
-  *(ushort *)pcVar4 = *(ushort *)puVar5;
+  *(ushort *)pcVar5 = *(ushort *)puVar4;
   switch(param_4) {
   case 2:
   case 8:
-    iVar1 = core_actor_cpp_FUN_0040cf40(0.16666667);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(0.16666667);
     if (iVar1 != 0) {
-      pcVar4 = core_ground_cpp_FUN_004cf9a0(GROUND_TYPE_CONCRETE);
-      FUN_005a28c0(local_70,"ric-%s!?.wav",pcVar4);
+      core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(GROUND_TYPE_CONCRETE);
+      _sprintf(local_70,"ric-%s!?.wav");
       if (local_70[0] == '\0') {
         return;
       }
@@ -108,10 +108,10 @@ LAB_004a215d:
     break;
   case 3:
   case 4:
-    iVar1 = core_actor_cpp_FUN_0040cf40(0.16666667);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(0.16666667);
     if (iVar1 != 0) {
-      pcVar4 = core_ground_cpp_FUN_004cf9a0(GROUND_TYPE_DIRT);
-      FUN_005a28c0(local_70,"ric-%s.wav",pcVar4);
+      core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(GROUND_TYPE_DIRT);
+      _sprintf(local_70,"ric-%s.wav");
       if (local_70[0] == '\0') {
         return;
       }
@@ -119,10 +119,10 @@ LAB_004a215d:
     }
     break;
   case 5:
-    iVar1 = core_actor_cpp_FUN_0040cf40(0.16666667);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(0.16666667);
     if (iVar1 != 0) {
-      pcVar4 = core_ground_cpp_FUN_004cf9a0(GROUND_TYPE_METAL);
-      FUN_005a28c0(local_70,"ric-%s!?.wav",pcVar4);
+      core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(GROUND_TYPE_METAL);
+      _sprintf(local_70,"ric-%s!?.wav");
       if (local_70[0] == '\0') {
         return;
       }
@@ -130,10 +130,10 @@ LAB_004a215d:
     }
     break;
   case 7:
-    iVar1 = core_actor_cpp_FUN_0040cf40(0.16666667);
+    iVar1 = core_actor_cpp_randomChance_FUN_0040cf40(0.16666667);
     if (iVar1 != 0) {
-      pcVar4 = core_ground_cpp_FUN_004cf9a0(GROUND_TYPE_WOOD);
-      FUN_005a28c0(local_70,"ric-%s!?.wav",pcVar4);
+      core_ground_cpp_getGroundTypeCode_FUN_004cf9a0(GROUND_TYPE_WOOD);
+      _sprintf(local_70,"ric-%s!?.wav");
       if (local_70[0] == '\0') {
         return;
       }
@@ -144,6 +144,7 @@ LAB_004a215d:
     return;
   }
 LAB_004a2392:
-  core_sound_cpp_FUN_00560a70(0x02CF5680,(CDemonActor *)0x0,local_70,param_2,0.17);
+  core_sound_cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70
+            (0x02CF5680,(CDemonActor *)0x0,local_70,param_2,0.17);
   return;
 }

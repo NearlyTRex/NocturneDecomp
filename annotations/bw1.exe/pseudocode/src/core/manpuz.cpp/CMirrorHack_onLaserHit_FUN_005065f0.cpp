@@ -11,7 +11,7 @@
 void __cdecl core_manpuz_cpp_CMirrorHack_onLaserHit_FUN_005065f0(CMirrorHack *this_ptr,SLaserInfo *laser_info)
 
 {
-  core_actor_cpp_FUN_00409680(this_ptr,laser_info);
+  core_actor_cpp_CDemonActor_onLaserHit_FUN_00409680(&this_ptr->base,laser_info);
   if (*(float *)(laser_info + 0x34) <= (float)_DAT_005e768d) {
     return;
   }

@@ -19,7 +19,7 @@ void core_fldnotes_cpp_FUN_004a2060(int *param_1)
   if (param_1[6] == 0) {
     return;
   }
-  iVar1 = engine_font_cpp_FUN_004ab560((CBitFont *)param_1[0x47],0x78);
+  iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560((CBitFont *)param_1[0x47],0x78);
   iVar1 = param_1[1] + iVar1;
   if (param_1[0x47] != _DAT_01511cd0) {
     _DAT_01c35e60 = 0;
@@ -28,15 +28,15 @@ void core_fldnotes_cpp_FUN_004a2060(int *param_1)
   }
   iVar2 = param_1[2];
   x = *param_1;
-  if ((int)CAlphaBitmap_01caf22c._12_4_ < iVar2) {
+  if (CAlphaBitmap_01caf22c.width < iVar2) {
     do {
       engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&CAlphaBitmap_01caf22c,x,iVar1,0xffff);
-      iVar2 = iVar2 - CAlphaBitmap_01caf22c._12_4_;
-      x = x + CAlphaBitmap_01caf22c._12_4_;
-    } while ((int)CAlphaBitmap_01caf22c._12_4_ < iVar2);
+      iVar2 = iVar2 - CAlphaBitmap_01caf22c.width;
+      x = x + CAlphaBitmap_01caf22c.width;
+    } while (CAlphaBitmap_01caf22c.width < iVar2);
   }
   engine_alphabit_cpp_CAlphaBitmap_render_FUN_0040dab0
-            (&CAlphaBitmap_01caf22c,x,iVar1,0,0,iVar2 + -1,CAlphaBitmap_01caf22c._16_4_ + -1,0xffff)
+            (&CAlphaBitmap_01caf22c,x,iVar1,0,0,iVar2 + -1,CAlphaBitmap_01caf22c.height + -1,0xffff)
   ;
   return;
 }

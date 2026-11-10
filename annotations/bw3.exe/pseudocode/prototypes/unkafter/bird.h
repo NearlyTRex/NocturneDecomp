@@ -13,45 +13,9 @@ CDemonActorType * CBird::getActorType(CBird *this_ptr);
 // Address: 0040f9f0
 CBird * CBird::ctor(CBird *this_ptr);
 
-// Original: unkafter_bird.cpp_FUN_0040fac0
-// Address: 0040fac0
-void FUN_0040fac0(int param_1);
-
-// Original: unkafter_bird.cpp_FUN_0040fb40
-// Address: 0040fb40
-void FUN_0040fb40(CCharacter *param_1,float param_2);
-
-// Original: unkafter_bird.cpp_FUN_0040fe60
-// Address: 0040fe60
-void FUN_0040fe60(int param_1,int param_2);
-
-// Original: unkafter_bird.cpp_FUN_0040fe90
-// Address: 0040fe90
-int FUN_0040fe90(CCharacter *param_1);
-
-// Original: unkafter_bird.cpp_FUN_0040ff30
-// Address: 0040ff30
-undefined4 FUN_0040ff30(int param_1);
-
-// Original: unkafter_bird.cpp_FUN_0040ff80
-// Address: 0040ff80
-void FUN_0040ff80(CDemonActor *param_1);
-
 // Original: unkafter_bird.cpp_FUN_00410030
 // Address: 00410030
 undefined4 FUN_00410030(CMotionController *param_1,char *param_2);
-
-// Original: unkafter_bird.cpp_FUN_00410110
-// Address: 00410110
-void FUN_00410110(CCharacter *param_1,int param_2);
-
-// Original: unkafter_bird.cpp_FUN_004101c0
-// Address: 004101c0
-bool FUN_004101c0(int param_1);
-
-// Original: unkafter_bird.cpp_FUN_004101e0
-// Address: 004101e0
-int FUN_004101e0(int param_1);
 
 // Original: unkafter_bird.cpp_CBird_dtor_FUN_004101f0
 // Address: 004101f0

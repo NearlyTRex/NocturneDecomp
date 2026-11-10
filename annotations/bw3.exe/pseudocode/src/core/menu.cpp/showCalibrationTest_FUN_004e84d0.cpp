@@ -15,7 +15,7 @@ void __cdecl core_menu_cpp_showCalibrationTest_FUN_004e84d0(void)
   
   engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d460
             (&g_CalibrationBitmap,"brightness",0x280,0x1e0);
-  engine_font_cpp_FUN_004b30f0(_DAT_01549ab4,0x58);
+  engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01549ab4,0x58);
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("1. Turn off all the lights in your room.");
   core_menu_cpp_showCalibrationTestPattern_FUN_004e8380(pcVar1);
   pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00508960("2. Turn your brightness up, so that you see 3 bars on the left side of the screen.");

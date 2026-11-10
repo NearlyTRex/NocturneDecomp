@@ -12,13 +12,13 @@
 ; char *           Stack[0x18]:4   text
 ;
 ; XREF[3]:
-;   cockpit_drawsurf.cpp_FUN_00480480 at 004805ae
-;   engine_font.cpp_FUN_004c22e0 at 004c2332
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480 at 004805ae
+;   engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004c22e0 at 004c2332
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400 at 004944bb
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004c2060
-;   engine_font.cpp_FUN_004c3ea0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EAX                            ; 004c2266
     MOV ESI,dword ptr [ESP + 0x20]      ; 004c2267
     PUSH ESI                            ; 004c226b
-    CALL engine_font.cpp_FUN_004c3ea0   ; 004c226c
-        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3ea0(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 004c226c
+        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004c2271
     SAR EDX,0x1f                        ; 004c2273
     SUB EAX,EDX                         ; 004c2276
@@ -49,8 +49,8 @@ section .text
     SUB EDX,EAX                         ; 004c2281
     PUSH EDX                            ; 004c2283
     PUSH ESI                            ; 004c2284
-    CALL engine_font.cpp_FUN_004c2060   ; 004c2285
-        ;   XREF to: 004c2060 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c2060(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060 ; 004c2285
+        ;   XREF to: 004c2060 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004c228a
     POP ESI                             ; 004c228d
     POP EBX                             ; 004c228e

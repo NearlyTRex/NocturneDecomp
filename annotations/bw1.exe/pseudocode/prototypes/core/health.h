@@ -21,37 +21,37 @@ CDemonActorType * CHealthItem::getActorType(CHealthItem *this_ptr);
 // Address: 004ea330
 CHealthItem * __cdecl CHealthItem::ctor(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004ea390
+// Original: core_health.cpp_CHealthItem_setup_FUN_004ea390
 // Address: 004ea390
-void FUN_004ea390(CDemonActor *param_1);
+void __cdecl CHealthItem::setup(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004ea3b0
+// Original: core_health.cpp_CHealthItem_process_FUN_004ea3b0
 // Address: 004ea3b0
-void FUN_004ea3b0(void);
+void __cdecl CHealthItem::process(CHealthItem *this_ptr,float delta_time);
 
-// Original: core_health.cpp_FUN_004ea3c0
+// Original: core_health.cpp_CHealthItem_renderOpaque_FUN_004ea3c0
 // Address: 004ea3c0
-int FUN_004ea3c0(CDemonActor *param_1);
+int __cdecl CHealthItem::renderOpaque(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004ea440
+// Original: core_health.cpp_CHealthItem_getBoundingBox_FUN_004ea440
 // Address: 004ea440
-void FUN_004ea440(int param_1);
+CBoundingBox3D * __cdecl CHealthItem::getBoundingBox(CHealthItem *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_health.cpp_CHealthItem_archive_FUN_004ea480
 // Address: 004ea480
 void __cdecl CHealthItem::archive(CHealthItem *this_ptr);
 
-// Original: core_health.cpp_FUN_004ea500
+// Original: core_health.cpp_CHealthItem_getCollisionType_FUN_004ea500
 // Address: 004ea500
-undefined4 FUN_004ea500(void);
+ECollisionType __cdecl CHealthItem::getCollisionType(CHealthItem *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_health.cpp_CHealthItem_canPickup_FUN_004ea510
 // Address: 004ea510
 int __cdecl CHealthItem::canPickup(CHealthItem *this_ptr,CDemonActor *picker);
 
-// Original: core_health.cpp_FUN_004ea530
+// Original: core_health.cpp_CHealthItem_useItem_FUN_004ea530
 // Address: 004ea530
-int __cdecl FUN_004ea530(CHealthItem *this_ptr,CCharacter *user);
+int __cdecl CHealthItem::useItem(CHealthItem *this_ptr,CCharacter *user);
 
 // Original: core_health.cpp_CHealthItem_onPickup_FUN_004ea580
 // Address: 004ea580

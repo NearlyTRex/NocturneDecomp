@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0 at 004fd1de
 ;   core_mission.cpp_CDemonMission_loadSet_FUN_004fc6b0 at 004fc6df
-;   core_mission.cpp_FUN_004fc640 at 004fc66f
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004fc640 at 004fc66f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_mission_cpp_005de6b4
@@ -18,13 +18,13 @@
 ;   undefined4 DAT_01d046a0
 ;   undefined4 DAT_01d046a4
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_set.cpp_FUN_00534820
-;   core_setcolid.cpp_FUN_00537fc0
+;   core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00534820
+;   core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_00537fc0
 ;
 ; *****************************************************************************
 
@@ -37,7 +37,7 @@ section .text
     PUSH EBP                            ; 004fc4c3
     MOV ESI,dword ptr [ESP + 0x14]      ; 004fc4c4
     MOV EAX,[0x0061b5a8]                ; 004fc4c8 | g_CDemonSetPtr
-    MOV dword ptr [EAX + 0x14d164],0x0  ; 004fc4cd | g_CDemonSetInstance.field1364324_0x14d164
+    MOV dword ptr [EAX + 0x14d164],0x0  ; 004fc4cd | g_CDemonSetInstance.actor_count
     MOV EBX,dword ptr [ESI + 0x1114]    ; 004fc4d7
     TEST EBX,EBX                        ; 004fc4dd
     JZ 0x004fc4fc                       ; 004fc4df
@@ -57,13 +57,13 @@ section .text
     MOV ECX,dword ptr [0x0061b5a8]      ; 004fc4fc | g_CDemonSetPtr
         ;   Label: LAB_004fc4fc
     PUSH ECX                            ; 004fc502 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_00537fc0 ; 004fc503
-        ;   XREF to: 00537fc0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_00537fc0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_00537fc0 ; 004fc503
+        ;   XREF to: 00537fc0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_buildCollidableActorList_FUN_00537fc0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004fc508
     MOV EBX,dword ptr [0x0061b5a8]      ; 004fc50b | g_CDemonSetPtr
     PUSH EBX                            ; 004fc511 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00534820      ; 004fc512
-        ;   XREF to: 00534820 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534820(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00534820 ; 004fc512
+        ;   XREF to: 00534820 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildActorTypeLists_FUN_00534820(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004fc517
     POP EBP                             ; 004fc51a
     POP EDI                             ; 004fc51b
@@ -72,7 +72,7 @@ section .text
     RET                                 ; 004fc51e
     MOV EAX,[0x0061b5a8]                ; 004fc51f | g_CDemonSetPtr
         ;   Label: LAB_004fc51f
-    CMP dword ptr [EAX + 0x14d164],0x7d0 ; 004fc524 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP dword ptr [EAX + 0x14d164],0x7d0 ; 004fc524 | g_CDemonSetInstance.actor_count
     JL 0x004fc549                       ; 004fc52e
         ;   XREF to: 004fc549 (CONDITIONAL_JUMP)  ; LAB_004fc549
     PUSH 0x5de6c8                       ; 004fc530 | = "CDemonMission::buildSetActorList - To..."
@@ -83,9 +83,9 @@ section .text
     ADD ESP,0x4                         ; 004fc546
     MOV EAX,[0x0061b5a8]                ; 004fc549 | g_CDemonSetPtr
         ;   Label: LAB_004fc549
-    MOV EDX,dword ptr [EAX + 0x14d164]  ; 004fc54e | g_CDemonSetInstance.field1364324_0x14d164
-    MOV dword ptr [EAX + EDX*0x4 + 0x14d168],EBX ; 004fc554 | g_CDemonSetInstance.field1364328_0x14d168
-    INC dword ptr [EAX + 0x14d164]      ; 004fc55b | g_CDemonSetInstance.field1364324_0x14d164
+    MOV EDX,dword ptr [EAX + 0x14d164]  ; 004fc54e | g_CDemonSetInstance.actor_count
+    MOV dword ptr [EAX + EDX*0x4 + 0x14d168],EBX ; 004fc554 | g_CDemonSetInstance.actors[0]
+    INC dword ptr [EAX + 0x14d164]      ; 004fc55b | g_CDemonSetInstance.actor_count
     JMP 0x004fc4f2                      ; 004fc561
         ;   XREF to: 004fc4f2 (UNCONDITIONAL_JUMP)  ; LAB_004fc4f2
 

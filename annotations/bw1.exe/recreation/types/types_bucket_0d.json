@@ -33,6 +33,198 @@
   },
   {
     "kind":"class",
+    "name":"CBoneGuy_full_vtable",
+    "size":332,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":216
+      },
+      {
+        "name":"_ue",
+        "offset":320
+      },
+      {
+        "name":"_ug",
+        "offset":328
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_kill",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"damage_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"damage_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"impact_force",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_onVictimLost",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"lost_actor",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_releaseFromGrab",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_setWalkTarget",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"target",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"min_distance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"max_distance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_setWalkTargetImmediate",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"target",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
     "name":"CChemPuzzle",
     "size":2372
   },
@@ -51,6 +243,56 @@
     "size":764
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_processMeleeHit",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"hit_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_renderTargetPoints",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonCube",
     "rtti_file":"core/dcube.cpp",
@@ -65,6 +307,56 @@
     "kind":"class",
     "name":"CFieldNotes",
     "size":68
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_drawWeapon",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      },
+      {
+        "name":"drawn",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_vfunc87",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -101,7 +393,28 @@
     "kind":"class",
     "name":"CRuleList",
     "rtti_file":"core/event.cpp",
-    "size":1
+    "size":1004
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSoundDevice_close",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSoundDevice",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -111,9 +424,61 @@
   },
   {
     "kind":"class",
+    "name":"CStrList_vtable",
+    "size":24,
+    "vtable_slots":[
+      {
+        "name":"dtor",
+        "offset":0
+      },
+      {
+        "name":"remove",
+        "offset":4
+      },
+      {
+        "name":"sort",
+        "offset":8
+      },
+      {
+        "name":"insert",
+        "offset":12
+      },
+      {
+        "name":"swap",
+        "offset":16
+      },
+      {
+        "name":"clear",
+        "offset":20
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CTire",
     "rtti_file":"core/vehicle.cpp",
     "size":436
+  },
+  {
+    "kind":"funcdef",
+    "name":"CWeapon_onFired",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -123,9 +488,114 @@
     "size":49820
   },
   {
+    "kind":"enum",
+    "name":"EActorLifecycleState",
+    "size":4,
+    "values":[
+      {
+        "name":"ACTOR_NOT_CREATED",
+        "value":0
+      },
+      {
+        "name":"ACTOR_CREATED",
+        "value":1
+      },
+      {
+        "name":"ACTOR_DESTROYED",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"ECryptVesselVisual",
+    "size":4,
+    "values":[
+      {
+        "name":"CRYPT_VESSEL_AIR",
+        "value":0
+      },
+      {
+        "name":"CRYPT_VESSEL_FIRE",
+        "value":1
+      },
+      {
+        "name":"CRYPT_VESSEL_WATER",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EHealthBarMode",
+    "size":4,
+    "values":[
+      {
+        "name":"HEALTH_BAR_NONE",
+        "value":0
+      },
+      {
+        "name":"HEALTH_BAR_WHEN_HURT",
+        "value":1
+      },
+      {
+        "name":"HEALTH_BAR_ALWAYS",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWeaponType",
+    "size":4,
+    "values":[
+      {
+        "name":"WEAPON_TYPE_GUN",
+        "value":0
+      },
+      {
+        "name":"WEAPON_TYPE_SHOTGUN",
+        "value":1
+      },
+      {
+        "name":"WEAPON_TYPE_LIGHT_GUN",
+        "value":2
+      },
+      {
+        "name":"WEAPON_TYPE_DYNAMITE",
+        "value":3
+      },
+      {
+        "name":"WEAPON_TYPE_TOMMY_GUN",
+        "value":4
+      },
+      {
+        "name":"WEAPON_TYPE_FLASHLIGHT",
+        "value":5
+      },
+      {
+        "name":"WEAPON_TYPE_UNUSED",
+        "value":6
+      },
+      {
+        "name":"WEAPON_TYPE_MELEE",
+        "value":7
+      },
+      {
+        "name":"WEAPON_TYPE_BARON",
+        "value":8
+      }
+    ]
+  },
+  {
     "kind":"struct",
     "name":"SChatHistory",
     "size":288
+  },
+  {
+    "kind":"struct",
+    "name":"SLod",
+    "size":1
   },
   {
     "kind":"struct",
@@ -141,5 +611,10 @@
     "kind":"struct",
     "name":"SRaytraceState",
     "size":160
+  },
+  {
+    "kind":"struct",
+    "name":"SVoxelCubeMetadata",
+    "size":1
   }
 ]

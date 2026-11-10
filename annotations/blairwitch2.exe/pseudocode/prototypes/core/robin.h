@@ -25,38 +25,38 @@ CRobin * CRobin::ctor(CRobin *this_ptr);
 // Address: 005a5f50
 CRobin * CRobin::dtor(CRobin *this_ptr,uint flags);
 
-// Original: core_robin.cpp_FUN_005a6030
+// Original: core_robin.cpp_CRobin_setup_FUN_005a6030
 // Address: 005a6030
-void FUN_005a6030(int param_1);
+void __cdecl CRobin::setup(CRobin *this_ptr);
 
-// Original: core_robin.cpp_FUN_005a60d0
+// Original: core_robin.cpp_CRobin_processStates_FUN_005a60d0
 // Address: 005a60d0
-void FUN_005a60d0(int param_1,undefined4 param_2,int param_3);
+void __cdecl CRobin::processStates(CRobin *this_ptr,float delta_time,int mode);
 
-// Original: core_robin.cpp_FUN_005a6140
+// Original: core_robin.cpp_CRobin_processMeleeAttackState_FUN_005a6140
 // Address: 005a6140
-void FUN_005a6140(CCharacter *param_1);
+void __cdecl CRobin::processMeleeAttackState(CRobin *this_ptr,float delta_time);
 
 // Original: core_robin.cpp_FUN_005a61f0
 // Address: 005a61f0
 void FUN_005a61f0(int param_1,float param_2);
 
-// Original: core_robin.cpp_FUN_005a6720
+// Original: core_robin.cpp_CRobin_processDeathState_FUN_005a6720
 // Address: 005a6720
-void FUN_005a6720(int param_1);
+void __cdecl CRobin::processDeathState(CRobin *this_ptr,float delta_time);
 
-// Original: core_robin.cpp_FUN_005a6740
+// Original: core_robin.cpp_CRobin_processMotionEvent_FUN_005a6740
 // Address: 005a6740
-void FUN_005a6740(void);
+void __cdecl CRobin::processMotionEvent(CRobin *this_ptr,int event_id);
 
-// Original: core_robin.cpp_FUN_005a6750
+// Original: core_robin.cpp_CRobin_archive_FUN_005a6750
 // Address: 005a6750
-void FUN_005a6750(undefined4 param_1);
+void __cdecl CRobin::archive(CRobin *this_ptr);
 
-// Original: core_robin.cpp_FUN_005a6760
+// Original: core_robin.cpp_CRobin_renderTransparent_FUN_005a6760
 // Address: 005a6760
-undefined4 FUN_005a6760(int param_1);
+int __cdecl CRobin::renderTransparent(CRobin *this_ptr);
 
-// Original: core_robin.cpp_FUN_005a67a0
+// Original: core_robin.cpp_CRobin_getCarryObjToBodyXForm_FUN_005a67a0
 // Address: 005a67a0
-void FUN_005a67a0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CRobin::getCarryObjToBodyXForm(CRobin *this_ptr,int hand_index,CMatrix3x4f *out_matrix);

@@ -13,13 +13,13 @@ void __cdecl core_dmodel_cpp_CKeyFramedModel_captureTextures_FUN_0044efe0(CKeyFr
   SMRGLTextureBasic *texture;
   
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x120) {
+  if (0 < this_ptr->texture_count) {
     texture = (SMRGLTextureBasic *)&this_ptr->field_0x124;
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);
       texture = texture + 0x48;
-    } while (iVar1 < *(int *)&this_ptr->field_0x120);
+    } while (iVar1 < this_ptr->texture_count);
   }
   return;
 }

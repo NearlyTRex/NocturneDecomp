@@ -19,12 +19,12 @@ CDemonSet * core_set_cpp_CDemonSet_ctor_FUN_0054d000(CDemonSet *this_ptr)
   char *pcVar5;
   char *pcVar6;
   
-  iVar4 = __arrinit(&this_ptr->field_0x4,0xfa,&g_C3DSCameraTypeInfo);
+  iVar4 = __arrinit(this_ptr->cameras,0xfa,&g_C3DSCameraTypeInfo);
   iVar4 = __arrinit(iVar4 + 0x19a2c,200,&g_C3DSLightTypeInfo);
   iVar4 = __arrinit(iVar4 + 0x1414a8,0x14,&g_SRoomTypeInfo);
   iVar4 = __arrinit(iVar4 + 0x554,0xfa,&g_SVDBoxTypeInfo);
   this_ptr_00 = (CDemonSet *)(iVar4 + -0x15b42c);
-  *(uint *)this_ptr_00 = 0;
+  this_ptr_00->camera_count = 0;
   *(uint *)(iVar4 + -0x141a00) = 0;
   *(uint *)(iVar4 + -0x580) = 0xffffffff;
   *(uint *)(iVar4 + -0x57c) = 0xffffffff;

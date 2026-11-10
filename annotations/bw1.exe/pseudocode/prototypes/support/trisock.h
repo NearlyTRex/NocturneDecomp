@@ -9,9 +9,9 @@
 // Address: 0059c470
 void __cdecl staticInit(void);
 
-// Original: support_trisock.cpp_FUN_0059c4c0
+// Original: support_trisock.cpp_copyIPAddress_FUN_0059c4c0
 // Address: 0059c4c0
-undefined4 * FUN_0059c4c0(undefined4 *param_1,undefined4 *param_2);
+uint * __cdecl copyIPAddress(uint *dest_ip,uint *src_ip);
 
 // Original: support_trisock.cpp_parseIPAddress_FUN_0059c4d0
 // Address: 0059c4d0
@@ -47,7 +47,7 @@ void __cdecl createNetworkAddr(undefined4 *param_1,undefined4 param_2,undefined2
 
 // Original: support_trisock.cpp_convertSockAddr_FUN_0059c760
 // Address: 0059c760
-undefined4 * __cdecl convertSockAddr(undefined4 *param_1,short *param_2);
+uint * __cdecl convertSockAddr(uint *param_1,short *param_2);
 
 // Original: support_trisock.cpp_buildSockaddrIn_FUN_0059c7d0
 // Address: 0059c7d0
@@ -93,9 +93,9 @@ undefined4 FUN_0059c9d0(SOCKET *param_1,undefined4 param_2);
 // Address: 0059ca30
 byte FUN_0059ca30(CSocket *param_1);
 
-// Original: support_trisock.cpp_FUN_0059cb20
+// Original: support_trisock.cpp_CSocket_receiveSocketData_FUN_0059cb20
 // Address: 0059cb20
-int __cdecl FUN_0059cb20(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
+int __cdecl CSocket::receiveSocketData(CSocket *this_ptr,char *buffer,int length,SNetworkAddr *source_addr);
 
 // Original: support_trisock.cpp_CSocket_sendSocketData_FUN_0059cbc0
 // Address: 0059cbc0
@@ -135,11 +135,11 @@ undefined4 FUN_0059d4b0(undefined4 param_1,int *param_2,undefined4 param_3,code 
 
 // Original: support_trisock.cpp_FUN_0059d75c
 // Address: 0059d75c
-void FUN_0059d75c(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,undefined4 param_5,code *param_6);
+void FUN_0059d75c(CSocket *param_1);
 
 // Original: support_trisock.cpp_FUN_0059d850
 // Address: 0059d850
-undefined4 FUN_0059d850(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,int *param_5,undefined4 param_6,code *param_7);
+undefined4 FUN_0059d850(CSocket *param_1);
 
 // Original: support_trisock.cpp_FUN_0059d9cc
 // Address: 0059d9cc
@@ -204,3 +204,7 @@ uint FUN_0059ee60(int param_1,undefined4 param_2);
 // Original: support_trisock.cpp_FUN_0059eeb0
 // Address: 0059eeb0
 void FUN_0059eeb0(void);
+
+// Original: support_trisock.cpp_FUN_0059ef20
+// Address: 0059ef20
+int __cdecl FUN_0059ef20(void);

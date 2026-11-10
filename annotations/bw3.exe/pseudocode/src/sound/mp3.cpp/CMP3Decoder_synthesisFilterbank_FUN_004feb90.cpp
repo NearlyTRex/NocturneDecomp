@@ -20,10 +20,9 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004feb90(CMP3Deco
   uint uVar7;
   uint uVar8;
   int iVar9;
-  int iVar10;
+  float *pfVar10;
   float *pfVar11;
-  float *pfVar12;
-  float10 fVar13;
+  float10 fVar12;
   int aiStack_e4 [32];
   double local_64;
   double local_5c [2];
@@ -43,38 +42,38 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004feb90(CMP3Deco
     local_24 = (float *)&DAT_01d8e410;
     do {
       iVar9 = 1;
+      pfVar10 = local_24;
       pfVar11 = local_24;
-      pfVar12 = local_24;
       do {
-        fVar13 = (float10)fcos((float10)iVar9 *
+        fVar12 = (float10)fcos((float10)iVar9 *
                                ((float10)local_1c * (float10)_DAT_005ca097 + (float10)_DAT_005ca0af)
                               );
-        *pfVar11 = (float)(fVar13 * (float10)_DAT_005ca09f);
+        *pfVar10 = (float)(fVar12 * (float10)_DAT_005ca09f);
         local_14 = iVar9;
-        if (*pfVar11 < 0.0) {
-          local_5c[0] = (double)*pfVar11;
-          modf((double)(*pfVar11 + (float)_DAT_005ca0b7),local_5c);
+        if (*pfVar10 < 0.0) {
+          local_5c[0] = (double)*pfVar10;
+          modf((double)(*pfVar10 + (float)_DAT_005ca0b7),local_5c);
           dVar3 = local_5c[0];
         }
         else {
-          local_64 = (double)*pfVar11;
-          modf((double)(*pfVar11 + (float)_DAT_005ca0bf),&local_64);
+          local_64 = (double)*pfVar10;
+          modf((double)(*pfVar10 + (float)_DAT_005ca0bf),&local_64);
           dVar3 = local_64;
         }
-        *pfVar11 = (float)dVar3;
-        pfVar11 = pfVar11 + 1;
+        *pfVar10 = (float)dVar3;
+        pfVar10 = pfVar10 + 1;
         iVar9 = iVar9 + 2;
-        *pfVar12 = *pfVar12 * (float)_DAT_005ca0a7;
-        pfVar12 = pfVar12 + 1;
+        *pfVar11 = *pfVar11 * (float)_DAT_005ca0a7;
+        pfVar11 = pfVar11 + 1;
       } while (iVar9 != 0x41);
       local_1c = local_1c + 1;
       local_24 = local_24 + 0x20;
     } while (local_1c < 0x40);
     DAT_00601110 = 0;
   }
-  uVar8 = *(int *)(&this_ptr->field_0x7350 + channel_index * 4) - 0x40U & 0x3ff;
-  *(uint *)(&this_ptr->field_0x7350 + channel_index * 4) = uVar8;
-  local_44 = (float *)(&this_ptr->field_0x5350 + uVar8 * 4 + channel_index * 0x1000);
+  uVar8 = this_ptr->synthesis_buffer_index[channel_index] - 0x40U & 0x3ff;
+  this_ptr->synthesis_buffer_index[channel_index] = uVar8;
+  local_44 = this_ptr->synthesis_v_buffer[channel_index] + uVar8;
   iVar9 = 0;
   local_4c = 0;
   do {
@@ -100,23 +99,21 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004feb90(CMP3Deco
     local_20 = local_20 + 1;
   } while (local_20 < 0x40);
   local_48 = 0;
-  iVar9 = channel_index * 0x1000 + 0x5350;
   do {
-    uVar8 = local_48 + *(int *)(&this_ptr->field_0x7350 + channel_index * 4);
+    uVar8 = local_48 + this_ptr->synthesis_buffer_index[channel_index];
     fVar4 = 0.0;
     iVar5 = 8;
-    iVar10 = local_48;
+    iVar9 = local_48;
     do {
-      iVar1 = iVar10 * 4;
+      iVar1 = iVar9 * 4;
       uVar6 = uVar8 & 0x3ff;
-      iVar2 = iVar10 * 4;
+      iVar2 = iVar9 * 4;
       uVar7 = uVar6 + 0x60 & 0x3ff;
-      iVar10 = iVar10 + 0x40;
+      iVar9 = iVar9 + 0x40;
       uVar8 = uVar7 + 0x20;
-      fVar4 = *(float *)(&DAT_00600990 + iVar2) *
-              *(float *)(&this_ptr->field_0x5350 + uVar7 * 4 + iVar9 + -0x5350) +
-              *(float *)(&DAT_00600910 + iVar1) *
-              *(float *)(&this_ptr->field_0x5350 + uVar6 * 4 + iVar9 + -0x5350) + fVar4;
+      fVar4 = *(float *)(&DAT_00600990 + iVar2) * this_ptr->synthesis_v_buffer[channel_index][uVar7]
+              + *(float *)(&DAT_00600910 + iVar1) *
+                this_ptr->synthesis_v_buffer[channel_index][uVar6] + fVar4;
       iVar5 = iVar5 + -1;
     } while (iVar5 != 0);
     local_30 = (int)ROUND(fVar4 * 32768.0);

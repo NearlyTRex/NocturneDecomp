@@ -9,13 +9,13 @@
 // Address: 004f2060
 CDemonActorType * CMineCar::getActorType(CMineCar *this_ptr);
 
-// Original: core_minecar.cpp_FUN_004f2070
+// Original: core_minecar.cpp_CMineCar_setup_FUN_004f2070
 // Address: 004f2070
-void FUN_004f2070(CPlatform *param_1,int param_2);
+void __cdecl CMineCar::setup(CMineCar *this_ptr);
 
-// Original: core_minecar.cpp_FUN_004f2090
+// Original: core_minecar.cpp_CMineCar_process_FUN_004f2090
 // Address: 004f2090
-void FUN_004f2090(CPlatform *param_1,float param_2);
+void __cdecl CMineCar::process(CMineCar *this_ptr,float delta_time);
 
 // Original: core_minecar.cpp_CMineCar_ctor_FUN_004f2100
 // Address: 004f2100

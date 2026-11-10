@@ -11,12 +11,12 @@
 ; int              Stack[0x14]:4   vertex_count
 ;
 ; XREF[8]:
-;   core_chain.cpp_FUN_0042a280 at 0042a5a3
+;   core_chain.cpp_CChain_renderTransparent_FUN_0042a280 at 0042a5a3
+;   core_fire.cpp_CBulletHole_render_FUN_00497610 at 004979fe
+;   core_fire.cpp_CGlassParticle_render_FUN_0049a9f0 at 0049ab80
 ;   core_fire.cpp_CPopcorn_render_FUN_004a0cd0 at 004a0fa5
+;   core_fire.cpp_CRainDrop_render_FUN_004a1040 at 004a134f
 ;   core_fire.cpp_CSmokeParticle_render_FUN_00496f60 at 00497224
-;   core_fire.cpp_FUN_00497610 at 004979fe
-;   core_fire.cpp_FUN_0049a9f0 at 0049ab80
-;   core_fire.cpp_FUN_004a1040 at 004a134f
 ;   core_gore.cpp_FUN_004ccbe0 at 004cceab
 ;   core_weather.cpp_FUN_0057c890 at 0057caf1
 ;

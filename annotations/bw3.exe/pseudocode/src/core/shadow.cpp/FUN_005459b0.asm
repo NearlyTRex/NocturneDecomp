@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_shadow_cpp_FUN_005459b0(int param_1,int param_2)
+; void core_shadow_cpp_FUN_005459b0(CEnemy *param_1,SDamageInfo *param_2)
 ;
 ;
 ; Referenced Globals:
@@ -13,9 +13,9 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_FUN_00408bf0
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
-;   core_enemy.cpp_FUN_00489b80
+;   core_enemy.cpp_CEnemy_processDamage_FUN_00489b80
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
@@ -118,8 +118,8 @@ section .text
     PUSH EBP                            ; 00545a81
         ;   Label: LAB_00545a81
     PUSH EBX                            ; 00545a82
-    CALL core_enemy.cpp_FUN_00489b80    ; 00545a83
-        ;   XREF to: 00489b80 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00489b80()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_00489b80 ; 00545a83
+        ;   XREF to: 00489b80 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00489b80(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00545a88
     ADD ESP,0x34                        ; 00545a8b
     POP EBP                             ; 00545a8e
@@ -134,8 +134,8 @@ section .text
     ADD ESP,0x4                         ; 00545a99
     PUSH 0x41f00000                     ; 00545a9c
     PUSH 0x41700000                     ; 00545aa1
-    CALL core_actor.cpp_FUN_0040ce40    ; 00545aa6
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00545aa6
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x38],EAX      ; 00545aab
     FLD float ptr [ESP + 0x38]          ; 00545aaf
     FMUL double ptr [0x005d13be]        ; 00545ab3 | DAT_005d13be
@@ -214,8 +214,8 @@ section .text
     ADD ESP,0x8                         ; 00545b76
     PUSH EBP                            ; 00545b79
     PUSH EBX                            ; 00545b7a
-    CALL core_enemy.cpp_FUN_00489b80    ; 00545b7b
-        ;   XREF to: 00489b80 (UNCONDITIONAL_CALL)  ; undefined core_enemy.cpp_FUN_00489b80()
+    CALL core_enemy.cpp_CEnemy_processDamage_FUN_00489b80 ; 00545b7b
+        ;   XREF to: 00489b80 (UNCONDITIONAL_CALL)  ; void core_enemy.cpp_CEnemy_processDamage_FUN_00489b80(CEnemy * this_ptr, SDamageInfo * damage_info)
     ADD ESP,0x8                         ; 00545b80
     ADD ESP,0x34                        ; 00545b83
     POP EBP                             ; 00545b86

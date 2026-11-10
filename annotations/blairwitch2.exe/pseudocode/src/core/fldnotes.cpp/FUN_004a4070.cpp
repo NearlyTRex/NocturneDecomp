@@ -14,7 +14,7 @@ uint core_fldnotes_cpp_FUN_004a4070(uint param_1,uint param_2)
   int iVar1;
   int iVar2;
   
-  iVar1 = FUN_005b8be2(0x1c);
+  iVar1 = debugAllocTracked1(0x1c);
   iVar2 = 0;
   if (iVar1 != 0) {
     iVar2 = core_fldnotes_cpp_FUN_004a4120(iVar1,param_1);

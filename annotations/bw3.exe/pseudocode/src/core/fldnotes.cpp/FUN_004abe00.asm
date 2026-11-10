@@ -41,14 +41,14 @@
 ;   core_fldnotes.cpp_FUN_004a8eb0
 ;   core_fldnotes.cpp_FUN_004a98b0
 ;   core_fldnotes.cpp_FUN_004a9d90
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d460
 ;   engine_alphabit.cpp_FUN_0040d400
 ;   engine_alphabit.cpp_FUN_0040d8a0
 ;   engine_alphabit.cpp_FUN_0040dbb0
-;   engine_dosio.cpp_FUN_00465e50
+;   engine_dosio.cpp_splitPath_FUN_00465e50
 ;   engine_font.cpp_FUN_004b0a20
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
 ;   ... and 3 more
@@ -190,7 +190,7 @@ section .text
     CALL core_fldnotes.cpp_FUN_004a98b0 ; 004abf8d
         ;   XREF to: 004a98b0 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a98b0()
     MOV EAX,[0x005fe9dc]                ; 004abf92 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x24c]     ; 004abf97 | g_CGameInstance.field588_0x24c
+    MOV ESI,dword ptr [EAX + 0x24c]     ; 004abf97 | g_CGameInstance.field540_0x24c
     ADD ESP,0x8                         ; 004abf9d
     TEST ESI,ESI                        ; 004abfa0
     JNZ 0x004ac683                      ; 004abfa2
@@ -514,8 +514,8 @@ section .text
     PUSH 0x1d0cfc8                      ; 004ac367
     MOV dword ptr [0x01d1a058],ECX      ; 004ac36c | DAT_01d1a058
     MOV byte ptr [0x01d19f90],DL        ; 004ac372 | DAT_01d19f90
-    CALL engine_dosio.cpp_FUN_00465e50  ; 004ac378
-        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 004ac378
+        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004ac37d
     PUSH 0x1d0cfa8                      ; 004ac380 | DAT_01d0cfa8
     LEA EAX,[ESP + 0x404]               ; 004ac385
@@ -523,8 +523,8 @@ section .text
     PUSH 0x5c0d12                       ; 004ac38d | DAT_005c0d12
     LEA EAX,[ESP + 0xc]                 ; 004ac392
     PUSH EAX                            ; 004ac396
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ac397
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ac397
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ac39c
     PUSH 0x1e0                          ; 004ac39f
     PUSH 0x280                          ; 004ac3a4
@@ -554,8 +554,8 @@ section .text
     MOV dword ptr [ESP + 0x508],EAX     ; 004ac3f8
     LEA EAX,[ESP + 0x108]               ; 004ac3ff
     PUSH EAX                            ; 004ac406
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ac407
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ac407
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     IMUL EAX,EBX,0x14                   ; 004ac40c
     ADD ESP,0xc                         ; 004ac40f
     PUSH 0x0                            ; 004ac412
@@ -566,8 +566,8 @@ section .text
     PUSH 0x0                            ; 004ac425
     LEA EAX,[ESP + 0x110]               ; 004ac427
     PUSH EAX                            ; 004ac42e
-    CALL engine_dosio.cpp_FUN_00465e50  ; 004ac42f
-        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 004ac42f
+        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004ac434
     PUSH 0x1d0cfa8                      ; 004ac437 | DAT_01d0cfa8
     LEA EAX,[ESP + 0x304]               ; 004ac43c
@@ -575,8 +575,8 @@ section .text
     PUSH 0x5c0d12                       ; 004ac444 | DAT_005c0d12
     LEA EAX,[ESP + 0x20c]               ; 004ac449
     PUSH EAX                            ; 004ac450
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ac451
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ac451
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ac456
     PUSH 0x36                           ; 004ac459
     PUSH 0x5a                           ; 004ac45b
@@ -711,11 +711,11 @@ section .text
     CMP ESI,EDX                         ; 004ac5f8
     JL 0x004ac148                       ; 004ac5fa
         ;   XREF to: 004ac148 (CONDITIONAL_JUMP)  ; LAB_004ac148
-    ADD EAX,dword ptr [0x01d19cd0]      ; 004ac600 | CAlphaBitmap_01d19cc4.field12_0xc
+    ADD EAX,dword ptr [0x01d19cd0]      ; 004ac600 | CAlphaBitmap_01d19cc4.width
     CMP EBX,EAX                         ; 004ac606
     JGE 0x004ac148                      ; 004ac608
         ;   XREF to: 004ac148 (CONDITIONAL_JUMP)  ; LAB_004ac148
-    MOV EBX,dword ptr [0x01d19cd4]      ; 004ac60e | CAlphaBitmap_01d19cc4.field16_0x10
+    MOV EBX,dword ptr [0x01d19cd4]      ; 004ac60e | CAlphaBitmap_01d19cc4.height
     LEA EAX,[EDX + EBX*0x1]             ; 004ac614
     CMP ESI,EAX                         ; 004ac617
     JGE 0x004ac148                      ; 004ac619

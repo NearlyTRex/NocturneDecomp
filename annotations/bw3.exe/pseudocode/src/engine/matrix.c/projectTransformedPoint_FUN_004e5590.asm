@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_flame.cpp_FUN_004a6090 at 004a68ae
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004a6090 at 004a68ae
 ;   core_setdir.cpp_FUN_0053f940 at 005404af
 ;   engine_matrix.c_projectCachedPoint_FUN_004e5570 at 004e5586
 ;

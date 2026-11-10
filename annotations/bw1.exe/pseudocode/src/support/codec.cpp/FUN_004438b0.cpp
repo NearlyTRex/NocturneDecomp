@@ -9,6 +9,6 @@
 void support_codec_cpp_FUN_004438b0(int param_1)
 
 {
-  support_codec_cpp_FUN_00442470((SBitBuffer *)(param_1 + 4));
+  support_codec_cpp_resetBitBuffer_FUN_00442470((SBitBuffer *)(param_1 + 4));
   return;
 }

@@ -2,27 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 7,
+    "complexity_score": 8,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 7,
+    "pseudocode_lines": 8,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 38
+    "total_lines": 39
   },
   "cross_references": [
     {
       "addr": "00467f70",
       "from_addr": "0046809e",
-      "name": "cockpit_drawsurf.cpp_FUN_00467f70",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a9330",
       "from_addr": "004a9382",
-      "name": "engine_font.cpp_FUN_004a9330",
+      "name": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004a9330",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,7 +48,7 @@
     {
       "addr": "004a90b0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004a90b0"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0"
     },
     {
       "addr": "004aaf00",
@@ -63,7 +63,7 @@
       {
         "call_addr": "0046809e",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00467f70",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70",
         "estimated_params": 5,
         "instructions_analyzed": 8,
         "method": "push_count",
@@ -74,7 +74,7 @@
       {
         "call_addr": "004680e7",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00467f70",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70",
         "estimated_params": 6,
         "instructions_analyzed": 14,
         "method": "push_count",
@@ -96,7 +96,7 @@
       {
         "call_addr": "004a9382",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a9330",
+        "caller": "engine_font.cpp_CBitFont_drawTextCenterFV_FUN_004a9330",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",

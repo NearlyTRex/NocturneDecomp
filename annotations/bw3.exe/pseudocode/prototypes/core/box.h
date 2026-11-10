@@ -29,9 +29,9 @@ void __cdecl CBox::process(CBox *this_ptr,float delta_time);
 // Address: 0041b470
 void __cdecl CBox::processPhysics(CBox *this_ptr,float delta_time);
 
-// Original: core_box.cpp_FUN_0041d480
+// Original: core_box.cpp_CBox_loadFromFile_FUN_0041d480
 // Address: 0041d480
-void __cdecl FUN_0041d480(CBox *this_ptr,_FILE *file_handle);
+void __cdecl CBox::loadFromFile(CBox *this_ptr,_FILE *file_handle);
 
 // Original: core_box.cpp_CBox_saveToFile_FUN_0041d630
 // Address: 0041d630
@@ -85,9 +85,9 @@ int __cdecl FUN_0041e910(CBoundingBox3D *this_ptr,CBoundingBox3D *other);
 // Address: 0041e960
 float __cdecl CBoundingBox3D::getMaximumBound(CBoundingBox3D *this_ptr);
 
-// Original: core_box.cpp_FUN_0041e9b0
+// Original: core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0
 // Address: 0041e9b0
-void __cdecl FUN_0041e9b0(CBoundingBox3D *this_ptr);
+void __cdecl CBoundingBox3D::render(CBoundingBox3D *this_ptr);
 
 // Original: core_box.cpp_FUN_0041ee30
 // Address: 0041ee30

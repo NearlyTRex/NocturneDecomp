@@ -14,19 +14,19 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005776f0(CTrigger *this_pt
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
-  *(byte **)&pCVar2->field_0x2b0 = &g_CTriggerVTable;
+  pCVar2 = (CTrigger *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CTriggerVTable;
   *(uint *)&pCVar2->field_0x2bc = 0x40a00000;
   *(uint *)&pCVar2->field_0x2c0 = 0x41100000;
   *(uint *)&pCVar2->field_0x2c4 = 0x40a00000;
   *(uint *)&pCVar2->field_0x2cc = 0;
   *(uint *)&pCVar2->field_0x2b8 = 0;
   pcVar3 = "nobody";
-  pCVar2->field_0x380 = 0;
-  pCVar2->field_0x3e4 = 0;
+  pCVar2->on_event[0] = '\0';
+  pCVar2->off_event[0] = '\0';
   *(uint *)&pCVar2->field_0x2c8 = 0;
-  pcVar4 = &pCVar2->field_0x2d4;
-  *(uint *)&pCVar2->field_0x2d0 = 0;
+  pcVar4 = pCVar2->actor_name;
+  pCVar2->trigger_cause = TRIGGER_CAUSE_HERO;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -37,7 +37,7 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005776f0(CTrigger *this_pt
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   pcVar3 = "CDemonActor";
-  pcVar4 = &pCVar2->field_0x324;
+  pcVar4 = pCVar2->actor_type;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -47,20 +47,20 @@ CTrigger * __cdecl core_trigger_cpp_CTrigger_ctor_FUN_005776f0(CTrigger *this_pt
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x374 = 0;
-  *(uint *)&pCVar2->field_0x378 = 0x3e800000;
-  *(uint *)&pCVar2->field_0x37c = 0x3f800000;
-  *(uint *)&pCVar2->field_0x448 = 0;
-  *(uint *)&pCVar2->field_0x44c = 0;
-  *(uint *)&pCVar2->field_0x450 = 1;
-  *(uint *)&pCVar2->field_0x454 = 0x42c80000;
-  *(uint *)&pCVar2->field_0x64 = 0x96;
-  *(uint *)&pCVar2->field_0x4c8 = 0;
+  pCVar2->pressure_plate = 0;
+  pCVar2->light_min = 0.25;
+  pCVar2->light_max = 1.0;
+  pCVar2->prev_triggered = 0;
+  pCVar2->event_flag = 0;
+  pCVar2->laser_type = 1;
+  pCVar2->hit_points = 100.0;
+  (pCVar2->base).health = 0x96;
+  pCVar2->cached_actor = (CDemonActor *)0x0;
   *(uint *)&pCVar2->field_0x45c = 0;
   *(uint *)&pCVar2->field_0x2b4 = 0x47c34ff3;
   *(uint *)&pCVar2->field_0x460 = 1;
   pCVar2->field_0x464 = 0;
-  *(uint *)&pCVar2->field_0x4cc = 0;
+  pCVar2->damage_cooldown = 0.0;
   *(CTrigger **)&pCVar2->field_0x458 = pCVar2;
   return pCVar2;
 }

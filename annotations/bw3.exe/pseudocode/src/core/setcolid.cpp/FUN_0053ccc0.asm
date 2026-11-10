@@ -25,15 +25,15 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[16]:
-;   core_actor.cpp_FUN_00409f60 at 0040a6e7
-;   core_blundrbs.cpp_FUN_00410490 at 004107ad
-;   core_burncrss.cpp_FUN_00424550 at 004247cb
-;   core_elephant.cpp_FUN_00486d40 at 0048703e
-;   core_exorcism.cpp_FUN_0048b020 at 0048b274
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60 at 0040a6e7
+;   core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490 at 004107ad
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 004247cb
+;   core_elephant.cpp_CElephantGun_fire_FUN_00486d40 at 0048703e
+;   core_exorcism.cpp_CExorcism_fire_FUN_0048b020 at 0048b274
 ;   core_fire.cpp_FUN_004a2e20 at 004a2ed8
-;   core_flintlck.cpp_FUN_004ae850 at 004aea91
+;   core_flintlck.cpp_CFlintlock_fire_FUN_004ae850 at 004aea91
 ;   core_game.cpp_FUN_004c07b0 at 004c11fa
-;   core_gun.cpp_FUN_004d0fc0 at 004d11e0
+;   core_gun.cpp_CGun_fire_FUN_004d0fc0 at 004d11e0
 ;   core_lightgun.cpp_FUN_004e1070 at 004e1f92
 ;   ... and 6 more
 ;

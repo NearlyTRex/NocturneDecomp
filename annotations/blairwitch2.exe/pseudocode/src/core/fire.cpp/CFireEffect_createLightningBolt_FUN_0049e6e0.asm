@@ -11,9 +11,9 @@
 ; float            Stack[0x14]:4   end_width
 ;
 ; XREF[3]:
-;   core_baron.cpp_FUN_00410170 at 00410271
-;   core_emitter.cpp_FUN_00486cb0 at 00487448
-;   core_weather.cpp_FUN_0058aa30 at 0058ac26
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 00410271
+;   core_emitter.cpp_CEmitter_process_FUN_00486cb0 at 00487448
+;   core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30 at 0058ac26
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8

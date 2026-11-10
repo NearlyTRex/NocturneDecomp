@@ -7,7 +7,7 @@
 ; CMirrorHack *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_manpuz.cpp_FUN_004e7780 at 004e7793
+;   core_manpuz.cpp_factoryFuncMirrorHack_FUN_004e7780 at 004e7793
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790

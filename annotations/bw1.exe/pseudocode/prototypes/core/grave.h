@@ -29,13 +29,13 @@ void __cdecl CGrave::setup(CGrave *this_ptr);
 // Address: 004e69e0
 void __cdecl CGrave::process(CGrave *this_ptr,float delta_time);
 
-// Original: core_grave.cpp_FUN_004e6aa0
+// Original: core_grave.cpp_CGrave_renderOpaque_FUN_004e6aa0
 // Address: 004e6aa0
-int FUN_004e6aa0(CDemonActor *param_1);
+int __cdecl CGrave::renderOpaque(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004e6b50
+// Original: core_grave.cpp_CGrave_renderBackground_FUN_004e6b50
 // Address: 004e6b50
-void FUN_004e6b50(CDemonActor *param_1,int param_2);
+void __cdecl CGrave::renderBackground(CGrave *this_ptr,int layer_flag);
 
 // Original: core_grave.cpp_CGrave_startAnimation_FUN_004e6bf0
 // Address: 004e6bf0
@@ -45,13 +45,13 @@ void __cdecl CGrave::startAnimation(CGrave *this_ptr);
 // Address: 004e6c50
 void __cdecl CGrave::archive(CGrave *this_ptr);
 
-// Original: core_grave.cpp_FUN_004e6d50
+// Original: core_grave.cpp_CGrave_getBoundingBox_FUN_004e6d50
 // Address: 004e6d50
-void FUN_004e6d50(int param_1);
+CBoundingBox3D * __cdecl CGrave::getBoundingBox(CGrave *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_grave.cpp_FUN_004e6e60
+// Original: core_grave.cpp_CGrave_getCollisionType_FUN_004e6e60
 // Address: 004e6e60
-undefined4 FUN_004e6e60(void);
+ECollisionType __cdecl CGrave::getCollisionType(CGrave *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_grave.cpp_CGrave_dtor_FUN_004e6e70
 // Address: 004e6e70

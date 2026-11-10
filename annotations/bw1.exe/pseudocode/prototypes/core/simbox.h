@@ -21,29 +21,29 @@ CDemonActorType * CSimBox::getActorType(CSimBox *this_ptr);
 // Address: 005625a0
 CSimBox * __cdecl CSimBox::ctor(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00562660
+// Original: core_simbox.cpp_CSimBox_setup_FUN_00562660
 // Address: 00562660
-void FUN_00562660(CDemonActor *param_1);
+void __cdecl CSimBox::setup(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_005627a0
+// Original: core_simbox.cpp_CSimBox_process_FUN_005627a0
 // Address: 005627a0
-void FUN_005627a0(int param_1,float param_2);
+void __cdecl CSimBox::process(CSimBox *this_ptr,float delta_time);
 
-// Original: core_simbox.cpp_FUN_00562980
+// Original: core_simbox.cpp_CSimBox_renderOpaque_FUN_00562980
 // Address: 00562980
-int FUN_00562980(CDemonActor *param_1);
+int __cdecl CSimBox::renderOpaque(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00562a00
+// Original: core_simbox.cpp_CSimBox_getBoundingBox_FUN_00562a00
 // Address: 00562a00
-void FUN_00562a00(int param_1);
+CBoundingBox3D * __cdecl CSimBox::getBoundingBox(CSimBox *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_simbox.cpp_CSimBox_archive_FUN_00562a40
 // Address: 00562a40
 void __cdecl CSimBox::archive(CSimBox *this_ptr);
 
-// Original: core_simbox.cpp_FUN_00562af0
+// Original: core_simbox.cpp_CSimBox_getCollisionType_FUN_00562af0
 // Address: 00562af0
-undefined4 FUN_00562af0(void);
+ECollisionType __cdecl CSimBox::getCollisionType(CSimBox *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_simbox.cpp_CSimBox_dtor_FUN_00562b00
 // Address: 00562b00

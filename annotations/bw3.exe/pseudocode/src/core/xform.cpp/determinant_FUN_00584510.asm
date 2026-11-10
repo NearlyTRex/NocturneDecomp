@@ -7,7 +7,7 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[1]:
-;   core_xform.cpp_FUN_00584560 at 0058456d
+;   core_xform.cpp_inverse_FUN_00584560 at 0058456d
 ;
 ; *****************************************************************************
 

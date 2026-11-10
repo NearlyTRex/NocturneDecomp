@@ -2,19 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 33,
+    "complexity_score": 7,
     "cross_reference_count": 28,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 8,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 23
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 7,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 22
   },
   "cross_references": [
+    {
+      "addr": "0040cb60",
+      "from_addr": "0040cdd3",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cb60",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00408e50",
       "from_addr": "00408e66",
@@ -22,15 +26,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0040cb60",
-      "from_addr": "0040cdd3",
-      "name": "core_actor.cpp_FUN_0040cb60",
+      "addr": "0059f800",
+      "from_addr": "0059f855",
+      "name": "core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a1350",
       "from_addr": "005a13b8",
-      "name": "core_confedrt.cpp_FUN_005a1350",
+      "name": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -42,25 +46,25 @@
     {
       "addr": "005a2520",
       "from_addr": "005a25f4",
-      "name": "core_confzomb.cpp_FUN_005a2520",
+      "name": "core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0043a7a0",
       "from_addr": "0043a9fb",
-      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ac610",
       "from_addr": "005ac65e",
-      "name": "core_dog1.cpp_FUN_005ac610",
+      "name": "core_dog1.cpp_CDog_processMotionEvent_FUN_005ac610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485b40",
       "from_addr": "00485edd",
-      "name": "core_elephant.cpp_FUN_00485b40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,67 +76,67 @@
     {
       "addr": "0049b890",
       "from_addr": "0049b964",
-      "name": "core_fire.cpp_FUN_0049b890",
+      "name": "core_fire.cpp_CShell_onCollision_FUN_0049b890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a9af0",
       "from_addr": "005a9b1b",
-      "name": "core_ghostchi.cpp_FUN_005a9af0",
+      "name": "core_ghostchi.cpp_CGhostChild_processMotionEvent_FUN_005a9af0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cbdc0",
       "from_addr": "004cc07b",
-      "name": "core_gun.cpp_FUN_004cbdc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ab7d0",
       "from_addr": "005ab820",
-      "name": "core_hag.cpp_FUN_005ab7d0",
+      "name": "core_hag.cpp_CHag_processDamage_FUN_005ab7d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ab940",
       "from_addr": "005ab9ba",
-      "name": "core_hag.cpp_FUN_005ab940",
+      "name": "core_hag.cpp_CHag_processMotionEvent_FUN_005ab940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005aa380",
       "from_addr": "005aa43d",
-      "name": "core_hand.cpp_FUN_005aa380",
+      "name": "core_hand.cpp_CHand_processMotionEvent_FUN_005aa380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e2e70",
       "from_addr": "004e3887",
-      "name": "core_lightgun.cpp_FUN_004e2e70",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_004e2e70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a3420",
       "from_addr": "005a3486",
-      "name": "core_schngeis.cpp_FUN_005a3420",
+      "name": "core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0053f170",
       "from_addr": "0053f4fd",
-      "name": "core_shotgun.cpp_FUN_0053f170",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a2e30",
       "from_addr": "005a2e5d",
-      "name": "core_twigzomb.cpp_FUN_005a2e30",
+      "name": "core_twigzomb.cpp_CTwigZombie_processMotionEvent_FUN_005a2e30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a5300",
       "from_addr": "005a5368",
-      "name": "core_union.cpp_FUN_005a5300",
+      "name": "core_union.cpp_CUnion_processMotionEvent_FUN_005a5300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -144,25 +148,19 @@
     {
       "addr": "005a4600",
       "from_addr": "005a46d4",
-      "name": "core_unionzom.cpp_FUN_005a4600",
+      "name": "core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058aa30",
       "from_addr": "0058acd5",
-      "name": "core_weather.cpp_FUN_0058aa30",
+      "name": "core_weather.cpp_CWeather_createLightningStrike_FUN_0058aa30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059e880",
       "from_addr": "0059e8ab",
       "name": "unkafter_basicene.cpp_FUN_0059e880",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059f800",
-      "from_addr": "0059f855",
-      "name": "unkafter_basicene.cpp_FUN_0059f800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -200,7 +198,7 @@
     {
       "addr": "005594c0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_005594c0"
+      "name": "core_sound.cpp_playSfxInternal_FUN_005594c0"
     }
   ],
   "globals": [],
@@ -261,22 +259,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(actor,sound_name,*(float *)position,*(float *)&position->field_0x4,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(float *)&position->field_0x8,(CVector3f *)0x0,0);",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

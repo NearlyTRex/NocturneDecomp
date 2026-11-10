@@ -41,9 +41,9 @@ void core_charactr_cpp_FUN_00428260(CCharacter *param_1,int param_2,float param_
     *param_5 = 3;
     return;
   }
-  local_6c = *(float *)(param_2 + 0x20) - *(float *)&param_1->field_0x20;
-  local_44 = *(float *)(param_2 + 0x24) - *(float *)&param_1->field_0x24;
-  local_64 = *(float *)(param_2 + 0x28) - *(float *)&param_1->field_0x28;
+  local_6c = *(float *)(param_2 + 0x20) - *(float *)&(param_1->base).field_0x20;
+  local_44 = *(float *)(param_2 + 0x24) - *(float *)&(param_1->base).field_0x24;
+  local_64 = *(float *)(param_2 + 0x28) - *(float *)&(param_1->base).field_0x28;
   local_48 = local_6c;
   local_40 = local_64;
   if (0.0 <= param_3) {
@@ -106,7 +106,7 @@ void core_charactr_cpp_FUN_00428260(CCharacter *param_1,int param_2,float param_
        *(uint *)(&stack0xffffff8c + (uint)bVar2 * -8);
   *(uint *)(&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)(&stack0xffffff90 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  core_vecdir_cpp_FUN_005838f0(&stack0xffffffc4);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffc4);
   local_54 = local_60;
   *(uint *)((int)&stack0xffffffb0 + (uint)bVar2 * -8) =
        *(uint *)((int)&stack0xffffffa4 + (uint)bVar2 * 0xfffffffe * 4);
@@ -129,15 +129,15 @@ LAB_00428424:
   }
   local_1c = *(uint *)&param_1->field_0x2578;
   local_28 = *(float *)&param_1->field_0x2598;
-  fVar4 = (float)core_actor_cpp_FUN_0040d0c0(local_1c);
+  fVar4 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(local_1c);
   fVar3 = -local_28;
   if ((fVar3 <= fVar4) && (fVar3 = fVar4, local_28 < fVar4)) {
     fVar3 = local_28;
   }
   *(float *)&param_1->field_0x2578 = fVar3;
 LAB_00428482:
-  *(uint *)&param_1->field_0x2510 = 0;
-  *(uint *)&param_1->field_0x250c = *(uint *)&param_1->field_0x2510;
-  *(uint *)&param_1->field_0x2508 = *(uint *)&param_1->field_0x250c;
+  *(uint *)&(param_1->model).field_0x225c = 0;
+  *(uint *)&(param_1->model).field_0x2258 = *(uint *)&(param_1->model).field_0x225c;
+  *(uint *)&(param_1->model).field_0x2254 = *(uint *)&(param_1->model).field_0x2258;
   return;
 }

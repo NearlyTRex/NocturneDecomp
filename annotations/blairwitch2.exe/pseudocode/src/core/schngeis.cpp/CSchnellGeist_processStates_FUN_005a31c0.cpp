@@ -1,0 +1,37 @@
+// Name: core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0
+// Address: 005a31c0
+// Address Range: [[005a31c0, 005a3271]]
+// Convention: __cdecl
+// Signature: void __cdecl core_schngeis_cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnellGeist *this_ptr,float delta_time,int mode)
+
+#include "nocturne.h"
+
+void __cdecl core_schngeis_cpp_CSchnellGeist_processStates_FUN_005a31c0(CSchnellGeist *this_ptr,float delta_time,int mode)
+
+{
+  int iVar1;
+  
+  if (mode == 0) {
+    unkaddr_0059d350_cpp_FUN_0059d650(&this_ptr->field_0x10af8,"MeleeAttack");
+  }
+  else {
+    unkafter_basicene_cpp_FUN_0059e8c0(this_ptr,delta_time,mode);
+    if ((mode == 1) &&
+       (iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,"MeleeAttack"),
+       iVar1 != 0)) {
+      (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x184))(this_ptr,delta_time);
+      return;
+    }
+  }
+  if (mode == 0) {
+    unkaddr_0059d350_cpp_FUN_0059d650(&this_ptr->field_0x10af8,"LeapAttack");
+    return;
+  }
+  if ((mode == 1) &&
+     (iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,"LeapAttack"),
+     iVar1 != 0)) {
+    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x180))(this_ptr,delta_time);
+    return;
+  }
+  return;
+}

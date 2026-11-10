@@ -21,9 +21,7 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046e2d0(uint *param_1,i
   ulonglong uVar8;
   CVector3i *input;
   float local_48;
-  int local_44;
-  int local_40;
-  int local_3c;
+  CVector3i local_44;
   double local_38;
   double local_30;
   float local_1c;
@@ -48,15 +46,15 @@ void __cdecl core_dskybox_cpp_generateSkyDomeVertex_FUN_0046e2d0(uint *param_1,i
   fVar3 = fVar3 * fVar7 * fVar5;
   fVar4 = fVar4 * fVar7 * (float10)local_30 * fVar5;
   fVar5 = fVar6 * fVar7 * (float10)local_30 * fVar5;
-  input = (CVector3i *)&local_44;
+  input = &local_44;
   local_38 = local_30;
   round();
-  local_40 = (int)ROUND(fVar3);
+  local_44.y = (int)ROUND(fVar3);
   round();
   uVar8 = round();
   iVar2 = (int)uVar8;
-  local_44 = (int)ROUND(fVar4);
-  local_3c = (int)ROUND(fVar5);
+  local_44.x = (int)ROUND(fVar4);
+  local_44.z = (int)ROUND(fVar5);
   engine_special_cpp_FUN_0055d723
             ((SProjectedVertex *)(*(int *)((ulonglong)uVar8 >> 0x20) + iVar2 * 0x10),input);
   uVar1 = *param_1;

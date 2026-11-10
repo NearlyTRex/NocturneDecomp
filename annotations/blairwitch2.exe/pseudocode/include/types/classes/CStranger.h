@@ -2,15 +2,62 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CLadder;
+struct CWeapon;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SArmAimData.h"
 
 // Structure: CStranger
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x258dc (153820 bytes)
 #pragma pack(push, 1)
 typedef struct CStranger {
-    char field_0[153820]; // 0x0
+    char field_0[153152]; // 0x0
+    int guns_drawn; // 0x25640
+    float guns_drawn_blend; // 0x25644
+    float frame_cleared; // 0x25648
+    float aim_pitch; // 0x2564c
+    float aim_speed_factor; // 0x25650
+    SArmAimData right_arm_aim; // 0x25654
+    char field_153173[31]; // 0x25655
+    SArmAimData left_arm_aim; // 0x25674
+    char field_153205[31]; // 0x25675
+    struct CLadder* ladder_to_descend; // 0x25694
+    struct CWeapon* weapon; // 0x25698
+    int dual_wield_side; // 0x2569c
+    int can_grab_weapon; // 0x256a0
+    int action_pending; // 0x256a4
+    int melee_attack_index; // 0x256a8
+    float action_timer; // 0x256ac
+    float interact_blend; // 0x256b0
+    uint goggle_sfx_handles[2]; // 0x256b4
+    float turn_angle; // 0x256bc
+    float turn_blend_weight; // 0x256c0
+    float turn_blend_timer; // 0x256c4
+    float turn_elapsed; // 0x256c8
+    char dead[24]; // 0x256cc
+    CVector3f pending_velocity; // 0x256e4
+    int turn_motion_index; // 0x256f0
+    int pickup_facing_reversed; // 0x256f4
+    float arm_recoil_blend; // 0x256f8
+    float airborne_timer; // 0x256fc
+    float jump_speed; // 0x25700
+    CVector3f carry_object_world_center; // 0x25704
+    CBoundingBox3D carry_object_bbox; // 0x25710
+    CVector3f ref_r_hand_bone_pos; // 0x25728
+    CVector3f ref_r_upperarm_bone_pos; // 0x25734
+    float grab_timer; // 0x25740
+    CKeyFramedModelInstance model; // 0x25744
+    CVector3f ladder_offset; // 0x258c0
+    float ladder_facing_angle; // 0x258cc
+    float ladder_blend_time; // 0x258d0
+    uint sfx_handle; // 0x258d4
+    float fall_velocity_snapshot; // 0x258d8
 } CStranger;
 #pragma pack(pop)
 

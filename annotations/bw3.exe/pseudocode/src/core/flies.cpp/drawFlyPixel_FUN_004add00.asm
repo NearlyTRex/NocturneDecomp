@@ -9,7 +9,7 @@
 ; int              Stack[0xc]:4   z_depth
 ;
 ; XREF[2]:
-;   core_flies.cpp_FUN_004addd0 at 004ae1f1
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004addd0 at 004ae1f1
 ;   core_flies.cpp_drawFlyPixelClipped_FUN_004add90 at 004addb9
 ;
 ; Referenced Globals:

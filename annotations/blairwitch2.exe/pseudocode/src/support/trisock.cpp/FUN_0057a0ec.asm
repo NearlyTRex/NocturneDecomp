@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void support_trisock_cpp_FUN_0057a0ec(CSocket *param_1,undefined4 param_2,undefined2 param_3,undefined4 param_4,undefined4 param_5,code *param_6)
+; void support_trisock_cpp_FUN_0057a0ec(CSocket *param_1)
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   support_trisock.cpp_CSocket_sendSocketData_FUN_005792e0
 ;   support_trisock.cpp_FUN_00579e40
 ;
@@ -70,8 +70,8 @@ section .text
     PUSH 0x5ed1ef                       ; 0057a15f
     LEA EAX,[ESP + 0x10]                ; 0057a164
     PUSH EAX                            ; 0057a168
-    CALL crt_unknown.c_FUN_005b7790     ; 0057a169
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0057a169
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x14                        ; 0057a16e
     PUSH 0x0                            ; 0057a171
     LEA EDI,[ESP + 0x4]                 ; 0057a173

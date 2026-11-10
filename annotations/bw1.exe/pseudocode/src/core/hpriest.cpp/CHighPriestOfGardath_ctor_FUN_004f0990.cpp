@@ -14,9 +14,10 @@ CHighPriestOfGardath * __cdecl core_hpriest_cpp_CHighPriestOfGardath_ctor_FUN_00
   char *pcVar3;
   char *pcVar4;
   
-  pCVar2 = (CHighPriestOfGardath *)core_npc_cpp_CNPC_ctor_FUN_00531670((CNPC *)this_ptr);
-  *(byte ***)&pCVar2->field_0x154 = &g_CHighPriestOfGardathVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar2->field_0x158,"priest.dfm");
+  pCVar2 = (CHighPriestOfGardath *)core_npc_cpp_CNPC_ctor_FUN_00531670(&this_ptr->base);
+  (pCVar2->base).base.base.vtable._ub = &g_CHighPriestOfGardathVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar2->base).base.model,"priest.dfm");
   pcVar3 = "killPriest";
   pcVar4 = &pCVar2->field_0x1fab8;
   do {

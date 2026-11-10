@@ -18,10 +18,10 @@
 ;   undefined4 DAT_005c8c3d
 ;
 ; Called Functions:
-;   core_mission.cpp_FUN_004f6e90
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 ;   crt_stdio.c_sscanf_FUN_005a5b9c
 ;   crt_string.c__strnicmp_FUN_005a3f90
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -73,13 +73,13 @@ section .text
     PUSH 0x5c8c3d                       ; 004f74e0 | DAT_005c8c3d
     MOV ECX,dword ptr [ESP + 0x28]      ; 004f74e5
     PUSH ECX                            ; 004f74e9
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f74ea
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f74ea
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004f74ef
     PUSH EBX                            ; 004f74f2
     PUSH EDI                            ; 004f74f3
-    CALL core_mission.cpp_FUN_004f6e90  ; 004f74f4
-        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004f6e90(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90 ; 004f74f4
+        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004f74f9
     TEST EAX,EAX                        ; 004f74fc
     JNZ 0x004f74dd                      ; 004f74fe

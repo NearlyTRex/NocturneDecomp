@@ -11,7 +11,7 @@ void core_trash_cpp_factoryFuncTrash_FUN_00576900(void)
 {
   CTrash *this_ptr;
   
-  this_ptr = (CTrash *)FUN_005b8be2(0x484);
+  this_ptr = (CTrash *)debugAllocTracked1(0x484);
   if (this_ptr == (CTrash *)0x0) {
     return;
   }

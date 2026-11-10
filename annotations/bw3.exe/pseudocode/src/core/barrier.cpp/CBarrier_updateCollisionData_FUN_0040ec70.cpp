@@ -9,9 +9,9 @@
 void __cdecl core_barrier_cpp_CBarrier_updateCollisionData_FUN_0040ec70(CBarrier *this_ptr)
 
 {
-  if (*(int *)&this_ptr->field_0x164 == 0) {
+  if (this_ptr->add_to_path_grid == 0) {
     return;
   }
-  core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_0053ee00(g_CDemonSetPtr,(CDemonActor *)this_ptr);
+  core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_0053ee00(g_CDemonSetPtr,&this_ptr->base);
   return;
 }

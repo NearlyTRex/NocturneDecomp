@@ -18,8 +18,7 @@ void __cdecl core_fire_cpp_CFireEffect_createToss_FUN_0049e560(CFireEffect *this
   }
   iVar1 = core_fire_cpp_CFireEffect_allocateToss_FUN_0049e5d0
                     (this_ptr,0,position,orientation,velocity,fuse_time);
-  *(uint *)&g_TossPool[iVar1].field_0x3e0 = sfx_handle;
-  sound_sndmain_cpp_FUN_00550da0
-            (*(uint *)&g_TossPool[iVar1].field_0x3e0,iVar1 * 0x3e4 + 0x1c97880);
+  g_TossPool[iVar1].sfx_handle = sfx_handle;
+  sound_sndmain_cpp_FUN_00550da0(g_TossPool[iVar1].sfx_handle,iVar1 * 0x3e4 + 0x1c97880);
   return;
 }

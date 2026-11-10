@@ -20,7 +20,7 @@ void FUN_005ace10(void)
   puVar4 = &DAT_00607678;
   iVar2 = _DAT_00607684;
   while (iVar2 != 0) {
-    puVar3 = (uint *)FUN_005a3660(0x1d);
+    puVar3 = InternalHeapAlloc(0x1d);
     if ((puVar3 == (uint *)0x0) &&
        (puVar3 = FUN_005a3650(0x1d), puVar3 == (uint *)0x0)) {
       FUN_005acde0("Not enough memory to allocate file structures\r\n",1);

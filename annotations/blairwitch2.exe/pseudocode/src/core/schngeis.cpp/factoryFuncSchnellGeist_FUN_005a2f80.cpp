@@ -11,7 +11,7 @@ void core_schngeis_cpp_factoryFuncSchnellGeist_FUN_005a2f80(void)
 {
   CSchnellGeist *this_ptr;
   
-  this_ptr = (CSchnellGeist *)FUN_005b8be2(0x11870);
+  this_ptr = (CSchnellGeist *)debugAllocTracked1(0x11870);
   if (this_ptr == (CSchnellGeist *)0x0) {
     return;
   }

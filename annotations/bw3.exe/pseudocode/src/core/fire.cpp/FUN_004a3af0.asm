@@ -5,14 +5,14 @@
 ;
 ;
 ; XREF[8]:
-;   core_ammo.cpp_FUN_0040e140 at 0040e20f
-;   core_ammo.cpp_FUN_0040e2b0 at 0040e37f
-;   core_asgaya.cpp_FUN_005a0be0 at 005a1230
-;   core_burncrss.cpp_FUN_00424550 at 00424df3
-;   core_emitter.cpp_FUN_00487eb0 at 004884fc
-;   core_exorcism.cpp_FUN_0048a420 at 0048a5cf
-;   core_health.cpp_FUN_004d1e10 at 004d1e76
-;   core_styldemo.cpp_FUN_0059e600 at 0059fa2a
+;   core_ammo.cpp_CAmmoManaLarge_process_FUN_0040e2b0 at 0040e37f
+;   core_ammo.cpp_CAmmoMana_process_FUN_0040e140 at 0040e20f
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a1230
+;   core_burncrss.cpp_CBurncross_fire_FUN_00424550 at 00424df3
+;   core_emitter.cpp_CEmitter_process_FUN_00487eb0 at 004884fc
+;   core_exorcism.cpp_CExorcism_process_FUN_0048a420 at 0048a5cf
+;   core_health.cpp_CHealthItem_process_FUN_004d1e10 at 004d1e76
+;   core_styldemo.cpp_CStylerDemon_process_FUN_0059e600 at 0059fa2a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01cfb8b8

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 60,
-    "complexity_score": 320,
+    "complexity_score": 305,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 30,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 90
@@ -48,7 +47,7 @@
     },
     {
       "addr": "01d21620",
-      "name": "g_CGameInstance.field788_0x314",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     }
@@ -138,14 +137,6 @@
       "severity": "mild",
       "text": "core_particle_cpp_FUN_00509f30(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "fStack_8 = *(float *)&g_CGamePtr->field_0x314;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

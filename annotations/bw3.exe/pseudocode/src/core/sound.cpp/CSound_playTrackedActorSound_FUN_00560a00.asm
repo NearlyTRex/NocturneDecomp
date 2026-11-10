@@ -11,13 +11,13 @@
 ;
 ; XREF[5]:
 ;   core_actor.cpp_CDemonActor_playAmbientSound_FUN_00408c80 at 00408c96
-;   core_chain.cpp_FUN_004298f0 at 0042a1d4
-;   core_pendulum.cpp_FUN_0050e700 at 0050ec31
+;   core_chain.cpp_CChain_process_FUN_004298f0 at 0042a1d4
+;   core_pendulum.cpp_CPendulum_updateSwing_FUN_0050e700 at 0050ec31
+;   core_sound.cpp_CSound_process_FUN_0055ff40 at 0056052a
 ;   core_sound.cpp_FUN_0055f6ae at 0055fb31
-;   core_sound.cpp_FUN_0055ff40 at 0056052a
 ;
 ; Called Functions:
-;   core_sound.cpp_FUN_0055f020
+;   core_sound.cpp_playSfxInternal_FUN_0055f020
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH ECX                            ; 00560a12
     MOV EBX,dword ptr [ESP + 0x24]      ; 00560a13
     PUSH EBX                            ; 00560a17
-    CALL core_sound.cpp_FUN_0055f020    ; 00560a18
-        ;   XREF to: 0055f020 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_FUN_0055f020(void * user_data, char * sound_name, float x, float y, ...)
+    CALL core_sound.cpp_playSfxInternal_FUN_0055f020 ; 00560a18
+        ;   XREF to: 0055f020 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_playSfxInternal_FUN_0055f020(void * user_data, char * sound_name, float x, float y, ...)
     ADD ESP,0x1c                        ; 00560a1d
     POP EBX                             ; 00560a20
     RET                                 ; 00560a21

@@ -11,9 +11,9 @@
 ;
 ; XREF[5]:
 ;   core_game.cpp_FUN_004ce580 at 004cefbc
-;   shape_edittool.cpp_FUN_00494690 at 00494cf7
-;   shape_edittool.cpp_FUN_0049b830 at 0049be32
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049be32
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40 at 00493fba
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690 at 00494cf7
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 0049395f
 ;
 ; Referenced Globals:
@@ -39,7 +39,7 @@
 ;   engine_2d.c_plotPixel_FUN_00401130
 ;   engine_mini3d.cpp_FUN_00517d50
 ;   engine_mini3d.cpp_FUN_00517f10
-;   shape_edittool.cpp_FUN_00497830
+;   shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV EBX,dword ptr [ESP + 0x28]      ; 00497877
     MOV EDX,dword ptr [ESP + 0x24]      ; 0049787b
     PUSH EDX                            ; 0049787f
-    CALL shape_edittool.cpp_FUN_00497830 ; 00497880
-        ;   XREF to: 00497830 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_FUN_00497830(CEditorTools * this_ptr)
+    CALL shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830 ; 00497880
+        ;   XREF to: 00497830 (UNCONDITIONAL_CALL)  ; uint shape_edittool.cpp_CEditorTools_getTimeCycledColorByte_FUN_00497830(CEditorTools * this_ptr)
     MOV ECX,dword ptr [0x01c3f544]      ; 00497885 | DAT_01c3f544
     ADD ESP,0x4                         ; 0049788b
     TEST ECX,ECX                        ; 0049788e

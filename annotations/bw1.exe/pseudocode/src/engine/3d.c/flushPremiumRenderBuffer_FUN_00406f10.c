@@ -87,7 +87,7 @@ void __cdecl engine_3d_c_flushPremiumRenderBuffer_FUN_00406f10(void)
     }
     DAT_00713afc = 0;
     DAT_00713af8 = 0;
-    engine_3d_c_FUN_00406c20(0);
+    engine_3d_c_setBlendMode_FUN_00406c20(0);
   }
   return;
 }

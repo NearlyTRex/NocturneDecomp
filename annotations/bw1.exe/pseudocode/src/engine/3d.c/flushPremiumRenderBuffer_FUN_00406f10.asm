@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   crt_stdlib.c__qsort_FUN_005bfc68
-;   engine_3d.c_FUN_00406c20
+;   engine_3d.c_setBlendMode_FUN_00406c20
 ;   engine_clipper.c_clipAndRasterize_FUN_0043cbf0
 ;   engine_texture.cpp_loadTextureAndGetData_FUN_00597aa0
 ;
@@ -143,8 +143,8 @@ section .text
     PUSH EDI                            ; 0040707e
     MOV dword ptr [0x00713afc],EDI      ; 0040707f | DAT_00713afc
     MOV dword ptr [0x00713af8],EDI      ; 00407085 | DAT_00713af8
-    CALL engine_3d.c_FUN_00406c20       ; 0040708b
-        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_FUN_00406c20(int blend_mode)
+    CALL engine_3d.c_setBlendMode_FUN_00406c20 ; 0040708b
+        ;   XREF to: 00406c20 (UNCONDITIONAL_CALL)  ; void engine_3d.c_setBlendMode_FUN_00406c20(int blend_mode)
     ADD ESP,0x4                         ; 00407090
     POP EBX                             ; 00407093
     POP ESI                             ; 00407094

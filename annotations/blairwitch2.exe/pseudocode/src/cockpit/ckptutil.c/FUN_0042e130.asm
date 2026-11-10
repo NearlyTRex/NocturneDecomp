@@ -11,8 +11,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
 ;   crt_stdio.c_fclose_FUN_005b89c0
-;   crt_unknown.c_FUN_005b7790
 ;   crt_unknown.c_FUN_005b8010
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_dosio.cpp_FUN_00460c70
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     PUSH 0x5cd64a                       ; 0042e164
     LEA EAX,[ESP + 0x8]                 ; 0042e169
     PUSH EAX                            ; 0042e16d
-    CALL crt_unknown.c_FUN_005b7790     ; 0042e16e
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0042e16e
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,0x52c                       ; 0042e173
     ADD ESP,0xc                         ; 0042e178
     MOV [0x01d046a4],EAX                ; 0042e17b | DAT_01d046a4

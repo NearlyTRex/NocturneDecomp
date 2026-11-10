@@ -10,26 +10,27 @@ void __cdecl core_skeleton_cpp_CDeformableModel_renderWireframe_FUN_00542410(CDe
 
 {
   int iVar1;
-  int iVar2;
+  SInputFace *pSVar2;
   int iVar3;
   int iVar4;
   
   iVar4 = 0;
   iVar3 = 0;
   while( true ) {
-    if (*(int *)(&this_ptr->field_0x54 + lod_level * 4) <= iVar3) break;
-    iVar2 = *(int *)(&this_ptr->field_0x7c + lod_level * 4);
+    if (this_ptr->tri_count[lod_level] <= iVar3) break;
+    pSVar2 = this_ptr->tri_data_ptr[lod_level];
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
-              (DAT_0060b280,(uint)*(ushort *)(iVar4 + iVar2),(uint)*(ushort *)(iVar4 + 2 + iVar2));
+              (DAT_0060b280,(uint)*(ushort *)(pSVar2 + iVar4),(uint)*(ushort *)(pSVar2 + iVar4 + 2))
+    ;
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
-              (DAT_0060b280,(uint)*(ushort *)(iVar4 + 2 + iVar2),
-               (uint)*(ushort *)(iVar4 + 4 + iVar2));
-    this_ptr = (CDeformableModel *)(uint)*(ushort *)(iVar4 + iVar2);
+              (DAT_0060b280,(uint)*(ushort *)(pSVar2 + iVar4 + 2),
+               (uint)*(ushort *)(pSVar2 + iVar4 + 4));
+    this_ptr = (CDeformableModel *)(uint)*(ushort *)(pSVar2 + iVar4);
     iVar1 = iVar4 + 4;
     iVar4 = iVar4 + 0x12;
     iVar3 = iVar3 + 1;
     engine_drender_cpp_CDemonRenderer_clipAndDrawLine3D_FUN_0046b970
-              (DAT_0060b280,(uint)*(ushort *)(iVar1 + iVar2),(int)this_ptr);
+              (DAT_0060b280,(uint)*(ushort *)(pSVar2 + iVar1),(int)this_ptr);
   }
   engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);
   return;

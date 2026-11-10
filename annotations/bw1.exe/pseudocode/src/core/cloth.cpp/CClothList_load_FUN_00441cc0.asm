@@ -7,8 +7,8 @@
 ; CClothList *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_0042c510 at 0042c69a
-;   core_succubus.cpp_FUN_00591ff0 at 00592062
+;   core_charactr.cpp_CCharacter_setup_FUN_0042c510 at 0042c69a
+;   core_succubus.cpp_CSuccubus_setup_FUN_00591ff0 at 00592062
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_cloth_cpp_005d6970
@@ -17,12 +17,12 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
+;   core_cloth.cpp_CCloth_ctor_FUN_0043e5c0
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0
-;   core_cloth.cpp_FUN_0043e5c0
 ;   core_cloth.cpp_FUN_0043e620
 ;   core_main.c_FUN_005030e0
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;   crt_unknown.c_FUN_005c0344
-;   crt_unknown.c_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -48,15 +48,15 @@ section .text
         ;   XREF to: 00441d4d (CONDITIONAL_JUMP)  ; LAB_00441d4d
     PUSH 0x3ab30                        ; 00441ce4
         ;   Label: LAB_00441ce4
-    CALL crt_unknown.c_FUN_005c0f32     ; 00441ce9
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00441ce9
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 00441cee
     TEST EAX,EAX                        ; 00441cf1
     JZ 0x00441cfe                       ; 00441cf3
         ;   XREF to: 00441cfe (CONDITIONAL_JUMP)  ; LAB_00441cfe
     PUSH EAX                            ; 00441cf5
-    CALL core_cloth.cpp_FUN_0043e5c0    ; 00441cf6
-        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_FUN_0043e5c0(CCloth * this_ptr)
+    CALL core_cloth.cpp_CCloth_ctor_FUN_0043e5c0 ; 00441cf6
+        ;   XREF to: 0043e5c0 (UNCONDITIONAL_CALL)  ; CCloth * core_cloth.cpp_CCloth_ctor_FUN_0043e5c0(CCloth * this_ptr)
     ADD ESP,0x4                         ; 00441cfb
     MOV dword ptr [EBX + 0x194],EAX     ; 00441cfe
         ;   Label: LAB_00441cfe

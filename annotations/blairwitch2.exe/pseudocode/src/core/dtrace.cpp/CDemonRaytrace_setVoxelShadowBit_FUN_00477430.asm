@@ -17,7 +17,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[1]:
-;   core_dtrace.cpp_FUN_00476df0 at 00477062
+;   core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00476df0 at 00477062
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dtrace_cpp_005d1d53

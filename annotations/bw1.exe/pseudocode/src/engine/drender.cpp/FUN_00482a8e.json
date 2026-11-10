@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 133,
-    "complexity_score": 293,
+    "complexity_score": 295,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 58,
+    "pseudocode_lines": 60,
     "suspect_count": 22,
     "suspect_types": [
       "undefined_data",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 191
+    "total_lines": 193
   },
   "cross_references": [],
   "function": {
@@ -145,7 +145,7 @@
       "line": 13,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xc) == 0) ||",
+      "text": "if ((param_1->plane_culling_enabled == 0) ||",
       "type": "unnamed_param"
     },
     {
@@ -185,7 +185,7 @@
       "line": 24,
       "match": "param_1",
       "severity": "mild",
-      "text": "uStack_14 = uStack_14 & *(uint *)(*(int *)param_1 + 0x10 + iVar1 * 0x30);",
+      "text": "uStack_14 = uStack_14 & *(uint *)(param_1->vertex_buffer_ptr + iVar1 * 0x30 + 0x10);",
       "type": "unnamed_param"
     },
     {
@@ -201,7 +201,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) == 0) {",
+      "text": "if (param_1->shadow_pass_active == 0) {",
       "type": "unnamed_param"
     },
     {
@@ -217,7 +217,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x20) == 0) && (iVar4 = 0, 0 < *(int *)(param_2 + 4))) {",
+      "text": "if ((param_1->skip_uv_extraction == 0) && (iVar4 = 0, 0 < *(int *)(param_2 + 4))) {",
       "type": "unnamed_param"
     },
     {
@@ -225,7 +225,7 @@
       "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0x20) == 0) && (iVar4 = 0, 0 < *(int *)(param_2 + 4))) {",
+      "text": "if ((param_1->skip_uv_extraction == 0) && (iVar4 = 0, 0 < *(int *)(param_2 + 4))) {",
       "type": "unnamed_param"
     },
     {
@@ -249,20 +249,20 @@
       "line": 44,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)param_1 + 0x18 + iVar1 * 0x30) = *(uint *)(iVar2 + 0x1c);",
+      "text": "*(uint *)(param_1->vertex_buffer_ptr + iVar1 * 0x30 + 0x18) =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)param_1 + iVar1 * 0x30 + 0x1c) = *(uint *)(iVar2 + 0x20);",
+      "text": "*(uint *)(param_1->vertex_buffer_ptr + iVar1 * 0x30 + 0x1c) =",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "} while (iVar4 < *(int *)(param_2 + 4));",
@@ -270,7 +270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 60,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01bc1240);",
@@ -278,7 +278,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 58,
+      "line": 60,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01bc1240);",
@@ -286,7 +286,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 58,
+      "line": 60,
       "match": "DAT_01bc1240",
       "severity": "mild",
       "text": "(param_1,*(int *)(param_2 + 4),(int *)&DAT_01bc1240);",

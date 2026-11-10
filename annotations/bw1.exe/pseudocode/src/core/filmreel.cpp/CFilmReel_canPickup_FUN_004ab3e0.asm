@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_filmreel.cpp_CFilmReel_canPickup_FUN_004ab3e0
     MOV EDX,dword ptr [ESP + 0xc]       ; 004ab3e5
     PUSH EDX                            ; 004ab3e9
-    CALL core_actor.cpp_FUN_0040c550    ; 004ab3ea
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 004ab3ea
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004ab3ef
     TEST EAX,EAX                        ; 004ab3f2
     JZ 0x004ab3fb                       ; 004ab3f4

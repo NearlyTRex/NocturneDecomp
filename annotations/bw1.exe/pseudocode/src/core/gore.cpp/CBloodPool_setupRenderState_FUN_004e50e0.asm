@@ -7,8 +7,8 @@
 ; CBloodPool *     Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
+;   core_gore.cpp_CGore_process_FUN_004e5e80 at 004e5ee5
 ;   core_gore.cpp_CGore_renderDecals_FUN_004e5cd0 at 004e5d45
-;   core_gore.cpp_FUN_004e5e80 at 004e5ee5
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560

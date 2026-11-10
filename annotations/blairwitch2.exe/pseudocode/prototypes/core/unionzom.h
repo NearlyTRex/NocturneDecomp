@@ -25,46 +25,46 @@ CUnionZombie * CUnionZombie::ctor(CUnionZombie *this_ptr);
 // Address: 005a3e70
 CUnionZombie * CUnionZombie::dtor(CUnionZombie *this_ptr,uint flags);
 
-// Original: core_unionzom.cpp_FUN_005a3f40
+// Original: core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40
 // Address: 005a3f40
-void FUN_005a3f40(int param_1);
+void __cdecl CUnionZombie::setup(CUnionZombie *this_ptr);
 
-// Original: core_unionzom.cpp_FUN_005a3fc0
+// Original: core_unionzom.cpp_CUnionZombie_processStates_FUN_005a3fc0
 // Address: 005a3fc0
-void FUN_005a3fc0(int param_1,undefined4 param_2,int param_3);
+void __cdecl CUnionZombie::processStates(CUnionZombie *this_ptr,float delta_time,int mode);
 
-// Original: core_unionzom.cpp_FUN_005a4080
+// Original: core_unionzom.cpp_CUnionZombie_processDeathState_FUN_005a4080
 // Address: 005a4080
-void FUN_005a4080(int param_1);
+void __cdecl CUnionZombie::processDeathState(CUnionZombie *this_ptr,float delta_time);
 
-// Original: core_unionzom.cpp_FUN_005a40f0
+// Original: core_unionzom.cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0
 // Address: 005a40f0
-void FUN_005a40f0(CCharacter *param_1);
+void __cdecl CUnionZombie::processVanishAttackState(CUnionZombie *this_ptr,float delta_time);
 
-// Original: core_unionzom.cpp_FUN_005a4220
+// Original: core_unionzom.cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220
 // Address: 005a4220
-void FUN_005a4220(CCharacter *param_1);
+void __cdecl CUnionZombie::processMeleeAttackState(CUnionZombie *this_ptr,float delta_time);
 
 // Original: core_unionzom.cpp_FUN_005a4330
 // Address: 005a4330
 void FUN_005a4330(int param_1,float param_2);
 
-// Original: core_unionzom.cpp_FUN_005a4580
+// Original: core_unionzom.cpp_CUnionZombie_getDeathState_FUN_005a4580
 // Address: 005a4580
-undefined4 FUN_005a4580(int param_1);
+EDeathState __cdecl CUnionZombie::getDeathState(CUnionZombie *this_ptr);
 
-// Original: core_unionzom.cpp_FUN_005a4600
+// Original: core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600
 // Address: 005a4600
-void FUN_005a4600(CDemonActor *param_1,undefined4 param_2);
+void __cdecl CUnionZombie::processMotionEvent(CUnionZombie *this_ptr,int event_id);
 
-// Original: core_unionzom.cpp_FUN_005a46e0
+// Original: core_unionzom.cpp_CUnionZombie_getTargetPoints_FUN_005a46e0
 // Address: 005a46e0
-undefined4 FUN_005a46e0(int param_1,undefined4 param_2);
+int __cdecl CUnionZombie::getTargetPoints(CUnionZombie *this_ptr,CVector3f *out_points_array);
 
-// Original: core_unionzom.cpp_FUN_005a4710
+// Original: core_unionzom.cpp_CUnionZombie_renderTransparent_FUN_005a4710
 // Address: 005a4710
-undefined4 FUN_005a4710(int param_1);
+int __cdecl CUnionZombie::renderTransparent(CUnionZombie *this_ptr);
 
-// Original: core_unionzom.cpp_FUN_005a4740
+// Original: core_unionzom.cpp_CUnionZombie_archive_FUN_005a4740
 // Address: 005a4740
-void FUN_005a4740(undefined4 param_1);
+void __cdecl CUnionZombie::archive(CUnionZombie *this_ptr);

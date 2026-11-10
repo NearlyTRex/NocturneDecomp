@@ -19,8 +19,8 @@ CHealthItem * core_health_cpp_CHealthItem_dtor_FUN_004cdb00(CHealthItem *this_pt
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte **)&this_ptr->field_0x2b0 = &g_CHealthItemVTable;
-  pCVar1 = (CHealthItem *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  (this_ptr->base).vtable._ub = &g_CHealthItemVTable;
+  pCVar1 = (CHealthItem *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

@@ -1,0 +1,264 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 59,
+    "cross_reference_count": 3,
+    "function_call_count": 6,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 29,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 122
+  },
+  "cross_references": [
+    {
+      "addr": "0048aaee",
+      "from_addr": "0048ab07",
+      "name": "core_dtrace.cpp_FUN_0048aaee",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0052cab0",
+      "from_addr": "0052cb31",
+      "name": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0053bfbe",
+      "from_addr": "0053c115",
+      "name": "engine_pod.cpp_FUN_0053bfbe",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004961b0",
+    "address_range": [
+      [
+        "004961b0",
+        "004962a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0",
+    "signature": "void __cdecl shape_edittool_cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0(CEditorTools *this_ptr,char *message_text)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "004c4510",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510"
+    },
+    {
+      "addr": "004c3ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
+    },
+    {
+      "addr": "00496840",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_createCenteredModal_FUN_00496840"
+    },
+    {
+      "addr": "004962b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_FUN_004962b0"
+    },
+    {
+      "addr": "005b2420",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dbc68",
+      "name": "s_shape_edittool_cpp_005dbc68",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dbc7e",
+      "name": "s_gEdFont_must_be_set_by_t_005dbc7e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b498",
+      "name": "DAT_0061b498",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3eb50",
+      "name": "DAT_01c3eb50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3eb5c",
+      "name": "DAT_01c3eb5c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3f538",
+      "name": "DAT_01c3f538",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c3f53c",
+      "name": "DAT_01c3f53c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "0052cb31",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052cd50",
+        "call_type": "direct",
+        "caller": "core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048ab07",
+        "call_type": "direct",
+        "caller": "core_dtrace.cpp_FUN_0048aaee",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0053c115",
+        "call_type": "direct",
+        "caller": "engine_pod.cpp_FUN_0053bfbe",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9743589743589745,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 17,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CBRANCH": 3,
+      "COPY": 60,
+      "INT_ADD": 19,
+      "INT_AND": 71,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 14,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 22,
+      "INT_SRIGHT": 3,
+      "INT_SUB": 35,
+      "INT_XOR": 2,
+      "LOAD": 9,
+      "POPCOUNT": 18,
+      "RETURN": 1,
+      "STORE": 28
+    },
+    "pcode_op_count": 388
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEditorTools *"
+      },
+      {
+        "is_param": true,
+        "name": "message_text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 18,
+      "match": "DAT_0061b498",
+      "severity": "mild",
+      "text": "iVar1 = DAT_0061b498 / 2;",
+      "type": "undefined_data"
+    }
+  ]
+}

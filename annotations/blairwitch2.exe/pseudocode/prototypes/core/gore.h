@@ -9,21 +9,21 @@
 // Address: 004c7360
 void staticInit(void);
 
-// Original: core_gore.cpp_FUN_004c7460
+// Original: core_gore.cpp_CBloodParticle_setup_FUN_004c7460
 // Address: 004c7460
-void __cdecl FUN_004c7460(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
+void __cdecl CBloodParticle::setup(CBloodParticle *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 
-// Original: core_gore.cpp_FUN_004c7490
+// Original: core_gore.cpp_CBloodParticle_setupRenderState_FUN_004c7490
 // Address: 004c7490
-void FUN_004c7490(void);
+void __cdecl CBloodParticle::setupRenderState(CBloodParticle *this_ptr);
 
 // Original: core_gore.cpp_FUN_004c7580
 // Address: 004c7580
 void FUN_004c7580(CVector3f *param_1);
 
-// Original: core_gore.cpp_FUN_004c7da0
+// Original: core_gore.cpp_CBloodParticle_onCollision_FUN_004c7da0
 // Address: 004c7da0
-undefined4 FUN_004c7da0(CVector3f *param_1,CVector3f *param_2);
+int __cdecl CBloodParticle::onCollision(CBloodParticle *this_ptr,CVector3f *collision_normal);
 
 // Original: core_gore.cpp_CBloodSplat_initGroundSplat_FUN_004c7e00
 // Address: 004c7e00
@@ -41,9 +41,9 @@ void __cdecl CBloodSplat::setupRenderState(CBloodSplat *this_ptr);
 // Address: 004c8010
 void FUN_004c8010(undefined4 *param_1,int param_2);
 
-// Original: core_gore.cpp_FUN_004c8690
+// Original: core_gore.cpp_CBloodSplat_processAge_FUN_004c8690
 // Address: 004c8690
-void __cdecl FUN_004c8690(CBloodSplat *this_ptr);
+void __cdecl CBloodSplat::processAge(CBloodSplat *this_ptr);
 
 // Original: core_gore.cpp_CBloodSplat_load_FUN_004c86c0
 // Address: 004c86c0
@@ -61,9 +61,9 @@ int __cdecl CBloodPool::setupRenderState(CBloodPool *this_ptr);
 // Address: 004c88a0
 void FUN_004c88a0(undefined4 *param_1,int param_2);
 
-// Original: core_gore.cpp_FUN_004c8ce0
+// Original: core_gore.cpp_CBloodPool_processAge_FUN_004c8ce0
 // Address: 004c8ce0
-void __cdecl FUN_004c8ce0(CBloodPool *this_ptr);
+void __cdecl CBloodPool::processAge(CBloodPool *this_ptr);
 
 // Original: core_gore.cpp_CBloodPool_init_FUN_004c8d10
 // Address: 004c8d10
@@ -97,21 +97,21 @@ CGore * CGore::dtor(CGore *this_ptr,uint flags);
 // Address: 004c93f0
 void __cdecl CGore::reset(CGore *this_ptr);
 
-// Original: core_gore.cpp_FUN_004c9440
+// Original: core_gore.cpp_CGore_renderParticles_FUN_004c9440
 // Address: 004c9440
-void __cdecl FUN_004c9440(CGore *this_ptr);
+void __cdecl CGore::renderParticles(CGore *this_ptr);
 
 // Original: core_gore.cpp_CGore_renderDecals_FUN_004c94c0
 // Address: 004c94c0
 void __cdecl CGore::renderDecals(CGore *this_ptr,int render_all,int expire_flag);
 
-// Original: core_gore.cpp_FUN_004c9670
+// Original: core_gore.cpp_CGore_process_FUN_004c9670
 // Address: 004c9670
-void __cdecl FUN_004c9670(CGore *this_ptr);
+void __cdecl CGore::process(CGore *this_ptr);
 
-// Original: core_gore.cpp_FUN_004c9730
+// Original: core_gore.cpp_CGore_spawnBloodParticles_FUN_004c9730
 // Address: 004c9730
-void __cdecl FUN_004c9730(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
+void __cdecl CGore::spawnBloodParticles(CGore *this_ptr,CVector3f *position,CVector3f *velocity,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_allocateBloodSplat_FUN_004c9790
 // Address: 004c9790
@@ -125,9 +125,9 @@ void __cdecl CGore::createGroundBloodSplat(CGore *this_ptr,CVector3f *position,E
 // Address: 004c9810
 void __cdecl CGore::createWallBloodSplat(CGore *this_ptr,CVector3f *position,CVector3f *normal,EBloodType blood_type);
 
-// Original: core_gore.cpp_FUN_004c9850
+// Original: core_gore.cpp_CGore_spawnBloodBurst_FUN_004c9850
 // Address: 004c9850
-void __cdecl FUN_004c9850(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type);
+void __cdecl CGore::spawnBloodBurst(CGore *this_ptr,CVector3f *position,CVector3f *direction,int count,EBloodType blood_type);
 
 // Original: core_gore.cpp_CGore_allocateBloodPool_FUN_004c9a80
 // Address: 004c9a80
@@ -143,11 +143,11 @@ void __cdecl CGore::loadAssets(CGore *this_ptr);
 
 // Original: core_gore.cpp_FUN_004c9bd0
 // Address: 004c9bd0
-CFlies * FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,undefined4 param_3,float param_4,undefined4 *param_5);
+CFlies * FUN_004c9bd0(undefined4 param_1,undefined4 *param_2,int param_3,float param_4,float *param_5);
 
-// Original: core_gore.cpp_FUN_004c9cc0
+// Original: core_gore.cpp_CGore_spawnFliesOnActor_FUN_004c9cc0
 // Address: 004c9cc0
-void __cdecl FUN_004c9cc0(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
+void __cdecl CGore::spawnFliesOnActor(CGore *this_ptr,CDemonActor *actor,int gather_count,float spawn_rate,CVector3f *box_size);
 
 // Original: core_gore.cpp_CGore_createFootstep_FUN_004c9d00
 // Address: 004c9d00
@@ -165,9 +165,9 @@ int __cdecl CGore::load(CGore *this_ptr,_FILE *file_handle);
 // Address: 004c9f20
 int __cdecl CGore::save(CGore *this_ptr,_FILE *file_handle);
 
-// Original: core_gore.cpp_FUN_004c9fce
+// Original: core_gore.cpp_convertVecFloatToFixed_FUN_004c9fce
 // Address: 004c9fce
-void FUN_004c9fce(float *param_1,int *param_2);
+void convertVecFloatToFixed(float *param_1,int *param_2);
 
 // Original: core_gore.cpp_CFootstep_ctor_FUN_004ca000
 // Address: 004ca000

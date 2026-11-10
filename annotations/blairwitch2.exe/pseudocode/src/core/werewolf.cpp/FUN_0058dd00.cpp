@@ -29,9 +29,9 @@ void core_werewolf_cpp_FUN_0058dd00(CCharacter *param_1)
   float local_60;
   float local_5c;
   float local_58;
-  byte local_54 [4];
-  float local_50 [4];
-  float local_40;
+  CVector3f local_54;
+  float local_48;
+  float local_44 [2];
   CVector3f local_3c;
   double local_30;
   float local_28;
@@ -42,7 +42,8 @@ void core_werewolf_cpp_FUN_0058dd00(CCharacter *param_1)
   float local_14;
   
   bVar2 = 0;
-  if ((*(int *)&param_1[1].field_0xc4 != 0) && (*(int *)&param_1[1].field_0x18 != 0)) {
+  if ((*(int *)&param_1[1].base.field_0xc4 != 0) &&
+     (*(int *)(param_1[1].base.actor_name + 0x18) != 0)) {
     local_78 = 0;
     local_74 = 0xbe99999a;
     local_70 = 0;
@@ -59,41 +60,42 @@ void core_werewolf_cpp_FUN_0058dd00(CCharacter *param_1)
     *(uint *)((int)&stack0xffffff6c + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
     if (local_98 < (float)_DAT_005ee82a) {
-      local_3c._0_4_ = local_90;
-      *(uint *)((int)&local_3c + ((uint)bVar2 * -2 + 1) * 4) =
+      local_3c.x = local_90;
+      *(uint *)((int)&local_3c + (uint)bVar2 * -8 + 4) =
            *(uint *)(&stack0xffffff74 + (uint)bVar2 * -8);
-      *(uint *)((int)&local_3c + ((uint)bVar2 * -2 + (uint)bVar2 * -2 + 2) * 4) =
+      *(uint *)((int)&local_3c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
            *(uint *)(&stack0xffffff78 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-      local_3c._4_4_ = 0;
+      local_3c.y = 0.0;
       core_charactr_cpp_FUN_00423a60(param_1,&local_3c);
       return;
     }
     local_6c = local_9c - local_60;
     local_68 = local_98 - local_5c;
     local_64 = local_94 - local_58;
-    local_50[2] = local_9c - local_60;
-    local_50[(uint)bVar2 * -2 + 3] = (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
-    local_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
-         local_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -5];
-    local_20 = local_50[3] * local_50[3];
-    local_28 = SQRT(local_40 * local_40 + local_50[2] * local_50[2] + local_20);
+    local_48 = local_9c - local_60;
+    local_44[(uint)bVar2 * -2] = (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
+    local_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
+         local_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
+    local_20 = local_44[0] * local_44[0];
+    local_28 = SQRT(local_44[1] * local_44[1] + local_48 * local_48 + local_20);
     engine_console_cpp_FUN_00436710(g_CConsolePtr,"Chain stretched to %f\n",(double)local_28);
-    if ((*(float *)&param_1[1].field_0xc8 < local_28) &&
-       (fVar1 = *(float *)&param_1[1].field_0xc8 * *(float *)&param_1[1].field_0xc8 - local_20,
+    if ((*(float *)&param_1[1].base.field_0xc8 < local_28) &&
+       (fVar1 = *(float *)&param_1[1].base.field_0xc8, fVar1 = fVar1 * fVar1 - local_20,
        local_30 = (double)fVar1, 0.0 <= local_30)) {
       fVar1 = SQRT(fVar1);
-      local_54 = (byte  [4])local_6c;
-      local_50[(uint)bVar2 * -2] = (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
-      local_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
-           local_50[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -5];
-      local_1c = SQRT(local_50[1] * local_50[1] + (float)local_54 * (float)local_54);
+      local_54.x = local_6c;
+      *(float *)((int)&local_54 + (uint)bVar2 * -8 + 4) =
+           (&stack0xffffff98)[(uint)bVar2 * 0xfffffffe];
+      *(float *)((int)&local_54 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+           local_44[(uint)bVar2 * -2 + (uint)bVar2 * -2 + -8];
+      local_1c = SQRT(local_54.z * local_54.z + local_54.x * local_54.x);
       if ((0.0 < local_1c) && (local_24 = local_1c - fVar1, 0.0 < local_24)) {
         local_18 = local_24 / local_1c;
-        local_54 = (byte  [4])((float)local_54 * local_18);
-        local_50[0] = local_18 * 0.0;
-        local_50[1] = local_50[1] * local_18;
+        local_54.x = local_54.x * local_18;
+        local_54.y = local_18 * 0.0;
+        local_54.z = local_54.z * local_18;
         local_14 = fVar1;
-        core_charactr_cpp_FUN_00423a60(param_1,(CVector3f *)local_54);
+        core_charactr_cpp_FUN_00423a60(param_1,&local_54);
         return;
       }
     }

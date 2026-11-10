@@ -8,8 +8,8 @@
 ;   core_dcamera.cpp_CDemonCamera_beginBackgroundScene_FUN_0043c040 at 0043c14b
 ;   core_dcamera.cpp_CDemonCamera_beginScene_FUN_0043b7f0 at 0043b95a
 ;   core_dlight.cpp_CDemonLight_beginScene_FUN_0044a020 at 0044a068
-;   core_inv.cpp_FUN_004dbd80 at 004dbec4
-;   core_level.cpp_FUN_004e1600 at 004e16b8
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80 at 004dbec4
+;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e16b8
 ;   core_setdir.cpp_CZThumb_pushRenderingContext_FUN_005389b0 at 005389eb
 ;   unkaddr_0059aa80.cpp_FUN_0059bb60 at 0059bc62
 ;

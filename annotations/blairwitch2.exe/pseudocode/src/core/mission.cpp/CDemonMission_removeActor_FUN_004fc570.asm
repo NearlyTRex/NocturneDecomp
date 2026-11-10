@@ -10,9 +10,9 @@
 ;
 ; XREF[5]:
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_004fd0e0 at 004fd1cb
+;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fc970
+;   core_mission.cpp_CDemonMission_removeAllActors_FUN_004fc640 at 004fc65b
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcbc6
-;   core_mission.cpp_FUN_004fc640 at 004fc65b
-;   core_mission.cpp_FUN_004fc940 at 004fc970
 ;   core_mission.cpp_FUN_004fd280 at 004fd3bb
 ;
 ; Called Functions:

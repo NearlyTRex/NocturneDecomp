@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CBodyPartVTable
+;   CDemonActor_vtable g_CBodyPartVTable
 ;   WatcomTypeInfo g_CBodyPartTypeInfo
 ;
 ; Called Functions:

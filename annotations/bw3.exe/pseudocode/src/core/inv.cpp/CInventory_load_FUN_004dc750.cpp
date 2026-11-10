@@ -29,8 +29,8 @@ void __cdecl core_inv_cpp_CInventory_load_FUN_004dc750(CInventory *this_ptr,_FIL
   int local_14;
   
   bVar12 = 0;
-  core_inv_cpp_FUN_004da440(this_ptr);
-  core_inv_cpp_FUN_004da4e0(this_ptr);
+  core_inv_cpp_CInventory_clear_FUN_004da440(this_ptr);
+  core_inv_cpp_CInventory_initialize_FUN_004da4e0(this_ptr);
   _fgets(local_1dc,0xff,file_handle);
   _fgets(local_1dc,0xff,file_handle);
   _fscanf(file_handle,&DAT_005c6497,this_ptr + 0x334);

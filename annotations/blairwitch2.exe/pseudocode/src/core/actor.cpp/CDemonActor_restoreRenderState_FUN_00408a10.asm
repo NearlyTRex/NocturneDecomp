@@ -7,16 +7,16 @@
 ; CDemonActor *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[70]:
-;   core_ammo.cpp_FUN_0040e0f0 at 0040e139
-;   core_ammobox.cpp_FUN_0040e780 at 0040e7c7
-;   core_backgnd.cpp_FUN_0040f3f0 at 0040f45a
-;   core_baron.cpp_FUN_00410670 at 0041082c
-;   core_bat.cpp_FUN_004113f0 at 00411439
-;   core_batman.cpp_FUN_00413c70 at 00413d6b
-;   core_biggs.cpp_FUN_00415120 at 00415224
-;   core_bodypart.cpp_FUN_00415e10 at 00415e82
-;   core_boneguy.cpp_FUN_00419b80 at 00419c36
-;   core_bugs.cpp_FUN_0041f450 at 0041f60b
+;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040e0f0 at 0040e139
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e780 at 0040e7c7
+;   core_backgnd.cpp_CBackgroundActor_renderBackground_FUN_0040f3f0 at 0040f45a
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 0041082c
+;   core_bat.cpp_CBat_renderOpaque_FUN_004113f0 at 00411439
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413d6b
+;   core_biggs.cpp_CBiggs_renderOpaque_FUN_00415120 at 00415224
+;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00415e10 at 00415e82
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 at 00419c36
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_0041f450 at 0041f60b
 ;   ... and 60 more
 ;
 ; Referenced Globals:

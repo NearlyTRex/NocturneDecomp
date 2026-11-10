@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 16,
-    "complexity_score": 22,
+    "complexity_score": 7,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 1,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 23
   },
   "cross_references": [],
@@ -31,7 +29,7 @@
     {
       "addr": "00560a70",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_00560a70"
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70"
     }
   ],
   "globals": [
@@ -101,20 +99,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "(0x02CF5680,this_ptr,sound_name,(CVector3f *)&this_ptr->field_0x20,delay);",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CConstruct",
         "offset": 52,
         "vtable_addr": "005dd704"
       },
@@ -124,17 +113,17 @@
         "vtable_addr": "005de204"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CWeapon",
         "offset": 52,
         "vtable_addr": "005df104"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CGoggles",
         "offset": 52,
         "vtable_addr": "005e0d04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHotDemon",
         "offset": 52,
         "vtable_addr": "005e1d04"
       }

@@ -10,7 +10,7 @@
 ;   undefined4 DAT_005deffc
 ;
 ; Called Functions:
-;   engine_3d.c_FUN_00407b30
+;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30
 ;   engine_matrix.c_transformToCache_FUN_004e5540
 ;
 ; *****************************************************************************
@@ -120,8 +120,8 @@ section .text
     MOV ESI,0x60b014                    ; 00481329
     MOV EDI,ESP                         ; 0048132e
     MOVSD.REP ES:EDI,ESI                ; 00481330
-    CALL engine_3d.c_FUN_00407b30       ; 00481332
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 00481332
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407b30()
     ADD ESP,0x60                        ; 00481337
     ADD ESP,0x54                        ; 0048133a
     POP EBP                             ; 0048133d

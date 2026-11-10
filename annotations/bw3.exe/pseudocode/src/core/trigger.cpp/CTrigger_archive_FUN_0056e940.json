@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 237,
-    "complexity_score": 368,
+    "complexity_score": 105,
     "cross_reference_count": 1,
     "function_call_count": 7,
     "global_count": 27,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 73,
-    "suspect_count": 29,
+    "pseudocode_lines": 70,
+    "suspect_count": 3,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 310
+    "total_lines": 307
   },
   "cross_references": [
     {
       "addr": "00579390",
       "from_addr": "0057939c",
-      "name": "core_waypoint.cpp_FUN_00579390",
+      "name": "core_waypoint.cpp_CWayPoint_archive_FUN_00579390",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -241,7 +241,7 @@
       {
         "call_addr": "0057939c",
         "call_type": "direct",
-        "caller": "core_waypoint.cpp_FUN_00579390",
+        "caller": "core_waypoint.cpp_CWayPoint_archive_FUN_00579390",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -301,207 +301,7 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x16c,\"?triggerState\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x160,\"triggerSize\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x15c,\"triggerType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x224",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x224,\"onName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x288",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x288,\"offName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x174,\"whoTriggers\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x178,\"actorTriggerName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x21c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x21c,\"lightMin\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x220",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x220,\"lightMax\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if ((3 < g_CTriggerClassVersion) && (*(int *)&this_ptr->field_0x174 == 5)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x2f4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2f4,\"laserType\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x174 == 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x1c8",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x1c8,\"actorTriggerTypes\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x174 == 7) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x2f8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2f8,\"hitPoints\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x218,\"pressurePlate\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x174,\"whoTriggers\")",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x178,\"actorTriggerName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x1c8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x1c8,\"actorTriggerTypes\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x21c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x21c,\"lightMin\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x220",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x220,\"lightMax\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x2f4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2f4,\"laserType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 49,
-      "match": "field_0x2f8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2f8,\"hitPoints\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x218",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x218,\"pressurePlate\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 56,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x158,\"testRadius\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 60,
+      "line": 57,
       "match": "field_0x304",
       "severity": "mild",
       "text": "((int *)&this_ptr->field_0x304,\"autoAimAtMe\");",
@@ -509,15 +309,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 63,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x170,\"shape\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
+      "line": 64,
       "match": "field_0x308",
       "severity": "mild",
       "text": "(&this_ptr->field_0x308,\"damageActorWildcard\");",
@@ -525,7 +317,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 70,
+      "line": 67,
       "match": "field_0x2fc",
       "severity": "mild",
       "text": "core_actor_cpp_archiveActor_FUN_0040b930(&this_ptr->field_0x2fc,\"hiliteActor\");",
@@ -535,7 +327,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CTrigger",
         "offset": 212,
         "vtable_addr": "005e58d4"
       }

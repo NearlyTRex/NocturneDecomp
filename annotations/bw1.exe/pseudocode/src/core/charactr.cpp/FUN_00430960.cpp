@@ -11,16 +11,13 @@ void core_charactr_cpp_FUN_00430960(int param_1)
 {
   int iVar1;
   byte bVar2;
-  uint auStackY_107c [1014];
+  float afStackY_107c [1014];
   uint *puVar3;
   uint local_94;
   CVector3f local_88;
-  CVector3f local_7c;
-  CVector3f local_70;
-  uint local_64;
-  uint local_60;
-  uint local_5c;
-  uint local_58;
+  float local_7c;
+  float afStack_78 [5];
+  float local_64 [4];
   uint auStack_54 [5];
   uint local_40 [3];
   uint local_34;
@@ -38,13 +35,13 @@ void core_charactr_cpp_FUN_00430960(int param_1)
     local_14 = (int *)(param_1 + 0x3008);
     do {
       if (*(int *)(param_1 + 0x2298 + *local_14 * 4) != 0) {
-        iVar1 = core_actor_cpp_FUN_0040cd00(0.1);
+        iVar1 = core_actor_cpp_randomChance_FUN_0040cd00(0.1);
         if (iVar1 != 0) {
           local_34 = 0;
           local_30 = 0;
           local_2c = 0xbe4ccccd;
           core_xform_cpp_FUN_005b5080(auStack_54 + 8,local_14 + 2,local_14[1] * 0x30 + local_1c);
-          auStack_54[2] = local_58;
+          auStack_54[2] = local_64[3];
           auStack_54[(uint)bVar2 * -2 + 3] = auStack_54[(uint)bVar2 * -2];
           auStack_54[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4] =
                auStack_54[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
@@ -55,20 +52,18 @@ void core_charactr_cpp_FUN_00430960(int param_1)
           auStack_54[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 7] =
                *(uint *)(&stack0xffffff74 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
           core_actor_cpp_FUN_00408b40(param_1,puVar3);
-          local_28._0_4_ = local_7c._0_4_;
-          *(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4) =
-               *(uint *)((int)&local_7c + (uint)bVar2 * -8 + 4);
-          *(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-               *(uint *)((int)&local_7c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
-          local_64 = 0x40400000;
-          local_60 = 0;
-          local_5c = 0;
-          core_actor_cpp_FUN_00408ac0(param_1,&local_64);
-          local_88._0_4_ = local_70._0_4_;
-          *(uint *)((int)&local_88 + (uint)bVar2 * -8 + 4) =
-               *(uint *)((int)&local_70 + (uint)bVar2 * -8 + 4);
-          *(uint *)((int)&local_88 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-               *(uint *)((int)&local_70 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);
+          local_28.x = local_7c;
+          *(float *)((int)&local_28 + (uint)bVar2 * -8 + 4) = afStack_78[(uint)bVar2 * -2];
+          *(float *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+               afStack_78[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+          local_64[0] = 3.0;
+          local_64[1] = 0.0;
+          local_64[2] = 0.0;
+          core_actor_cpp_FUN_00408ac0(param_1,afStack_78 + 5);
+          local_88.x = afStack_78[2];
+          *(float *)((int)&local_88 + (uint)bVar2 * -8 + 4) = afStack_78[(uint)bVar2 * -2 + 3];
+          *(float *)((int)&local_88 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+               afStack_78[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 4];
           core_gore_cpp_CGore_spawnBloodParticles_FUN_004e5f40
                     (g_CGorePtr,&local_28,&local_88,*(EBloodType *)(param_1 + 0x27a0));
         }

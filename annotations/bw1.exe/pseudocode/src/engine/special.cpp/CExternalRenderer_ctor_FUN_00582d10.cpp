@@ -10,9 +10,9 @@ void __cdecl engine_special_cpp_CExternalRenderer_ctor_FUN_00582d10(CExternalRen
 
 {
   memset(this_ptr,0,0x1dc8);
-  *(ushort *)(this_ptr + 0x200) = 0x100;
-  *(uint *)(this_ptr + 0x208) = 0;
-  *(ushort *)(this_ptr + 0x204) = 1;
-  this_ptr[0x208] = (CExternalRenderer)((byte)this_ptr[0x208] | 1);
+  this_ptr->interface_version = 0x100;
+  (this_ptr->feature_flags).dword = 0;
+  this_ptr->api_version = 1;
+  (this_ptr->feature_flags).bytes[0] = (this_ptr->feature_flags).bytes[0] | 1;
   return;
 }

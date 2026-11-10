@@ -16,7 +16,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_carved.cpp_FUN_00425da0 at 00426eaf
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426eaf
 ;   core_carved.cpp_FUN_00427bc0 at 00428075
 ;
 ; Referenced Globals:

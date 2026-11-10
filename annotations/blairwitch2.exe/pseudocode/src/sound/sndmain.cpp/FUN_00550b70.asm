@@ -7,16 +7,16 @@
 ; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[65]:
-;   core_bat.cpp_FUN_00411200 at 00411374
-;   core_batcreat.cpp_FUN_00411a10 at 00412064
-;   core_batcreat.cpp_FUN_00412760 at 00412889
-;   core_batman.cpp_FUN_00412f40 at 00413697
-;   core_batman.cpp_FUN_00414290 at 004143b9
-;   core_boneguy.cpp_FUN_004186c0 at 00418d35
-;   core_bride.cpp_FUN_0041dbe0 at 0041dca2
-;   core_bride.cpp_FUN_0041ead0 at 0041ecdf
+;   core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800 at 0059f8fe
+;   core_bat.cpp_CBat_process_FUN_00411200 at 00411374
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_00412760 at 00412889
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00412064
+;   core_batman.cpp_CBatman_processDamage_FUN_00414290 at 004143b9
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413697
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418d35
+;   core_bride.cpp_CBride_processDamage_FUN_0041ead0 at 0041ecdf
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dca2
 ;   core_chain.cpp_FUN_005b4d30 at 005b55a9
-;   core_doc.cpp_FUN_00450c60 at 00451b3f
 ;   ... and 55 more
 ;
 ; Called Functions:

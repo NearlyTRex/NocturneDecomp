@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 13,
-    "complexity_score": 77,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 6,
+    "suspect_count": 4,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -119,18 +119,10 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x2b0",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CWayPointVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 9,
       "match": "field_0x2bc",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2bc = 0x3f000000;",
+      "text": "*(uint *)&(pCVar1->base).field_0x2bc = 0x3f000000;",
       "type": "unnamed_field"
     },
     {
@@ -138,7 +130,7 @@
       "line": 10,
       "match": "field_0x2c0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2c0 = 0x3f800000;",
+      "text": "*(uint *)&(pCVar1->base).field_0x2c0 = 0x3f800000;",
       "type": "unnamed_field"
     },
     {
@@ -146,15 +138,7 @@
       "line": 11,
       "match": "field_0x2c4",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2c4 = 0x3f000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4d0",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x4d0 = 0;",
+      "text": "*(uint *)&(pCVar1->base).field_0x2c4 = 0x3f000000;",
       "type": "unnamed_field"
     },
     {

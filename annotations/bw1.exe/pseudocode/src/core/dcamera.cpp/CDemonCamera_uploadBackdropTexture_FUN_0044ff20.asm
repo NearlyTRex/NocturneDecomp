@@ -13,7 +13,7 @@
 ;
 ; Called Functions:
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
-;   engine_drender.cpp_FUN_00484fb0
+;   engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     PUSH 0x61127c                       ; 0044ffd6
     MOV ECX,dword ptr [0x00612560]      ; 0044ffdb | DAT_00612560
     PUSH ECX                            ; 0044ffe1
-    CALL engine_drender.cpp_FUN_00484fb0 ; 0044ffe2
-        ;   XREF to: 00484fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_00484fb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
+    CALL engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0 ; 0044ffe2
+        ;   XREF to: 00484fb0 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_updateTexture_FUN_00484fb0(CDemonRenderer * this_ptr, SMRGLTextureBasic * texture, SRGBColorPalette * palette)
     ADD ESP,0xc                         ; 0044ffe7
     POP EBP                             ; 0044ffea
     POP EDI                             ; 0044ffeb

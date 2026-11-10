@@ -31,7 +31,7 @@ int engine_ini_cpp_FUN_004d8470(uint *param_1,uint param_2,char *param_3,uint pa
     _DAT_01d71de4 = 0xfd;
     core_main_c_FUN_004e4330("cIni::FindLineNumberOfVariable: Unable to open input");
   }
-  FUN_005a28c0(local_114,"[%s]\n",param_2);
+  _sprintf(local_114,"[%s]\n");
   while (((*(byte *)(iVar3 + 0xc) & 0x10) == 0 &&
          (iVar4 = _fgets(local_214,0xff,iVar3), iVar4 != 0))) {
     iVar4 = _strcmp(local_214,local_114);

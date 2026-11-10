@@ -17,9 +17,9 @@
 ; undefined        Stack[-0x20]:1  local_20
 ;
 ; XREF[3]:
-;   core_actor.cpp_FUN_00408a80 at 00408ac8
-;   core_path.cpp_FUN_00513d30 at 00513e0d
-;   core_set.cpp_FUN_0052e940 at 0052eb7c
+;   core_actor.cpp_CDemonActor_setup_FUN_00408a80 at 00408ac8
+;   core_path.cpp_getOrCreatePathMap_FUN_00513d30 at 00513e0d
+;   core_set.cpp_CDemonSet_processActors_FUN_0052e940 at 0052eb7c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e1799

@@ -11,7 +11,7 @@
 ;
 ; Called Functions:
 ;   core_dog.cpp_CZombieDog_ctor_FUN_00462710
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     ADD EAX,0x158                       ; 00463695
     PUSH EAX                            ; 0046369a
     MOV dword ptr [EAX + -0x4],0x5de724 ; 0046369b
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 004636a2
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 004636a2
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x2538],0x41a00000 ; 004636a7
     MOV dword ptr [EBX + 0xce5c],0x40a00000 ; 004636b1
     ADD ESP,0x8                         ; 004636bb

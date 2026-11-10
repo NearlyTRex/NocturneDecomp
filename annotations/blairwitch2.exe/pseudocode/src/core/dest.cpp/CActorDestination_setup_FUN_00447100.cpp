@@ -12,12 +12,12 @@ void __cdecl core_dest_cpp_CActorDestination_setup_FUN_00447100(CActorDestinatio
   uint uVar1;
   int iVar2;
   
-  core_actor_cpp_FUN_00408a80((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_setup_FUN_00408a80(&this_ptr->base);
   iVar2 = 0x01D182F0;
-  *(uint *)&this_ptr->field_0xf8 = 0;
+  *(uint *)&(this_ptr->base).field_0xf8 = 0;
   uVar1 = *(uint *)(iVar2 + 0x1008);
-  *(uint *)&this_ptr->field_0x2e0 = 0;
-  *(uint *)&this_ptr->field_0x34c = 1;
-  *(uint *)&this_ptr->field_0xfc = uVar1;
+  this_ptr->triggered = 0;
+  this_ptr->needs_actor_search = 1;
+  *(uint *)&(this_ptr->base).field_0xfc = uVar1;
   return;
 }

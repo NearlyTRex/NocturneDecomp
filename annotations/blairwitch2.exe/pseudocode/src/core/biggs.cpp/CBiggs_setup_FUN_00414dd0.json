@@ -1,0 +1,123 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 47,
+    "complexity_score": 20,
+    "cross_reference_count": 0,
+    "function_call_count": 7,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 20,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 67
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00414dd0",
+    "address_range": [
+      [
+        "00414dd0",
+        "00414e47"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_biggs.cpp_CBiggs_setup_FUN_00414dd0",
+    "signature": "void __cdecl core_biggs_cpp_CBiggs_setup_FUN_00414dd0(CBiggs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0044fd20",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20"
+    },
+    {
+      "addr": "0044fd00",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00"
+    },
+    {
+      "addr": "00487eb0",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_setup_FUN_00487eb0"
+    },
+    {
+      "addr": "005b71d0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_getReady_FUN_005b71d0"
+    },
+    {
+      "addr": "005b6f80",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromDeformable_FUN_005b6f80"
+    },
+    {
+      "addr": "005b6fc0",
+      "is_variadic": false,
+      "name": "core_morph.cpp_CMorph_setupModelFromKeyframed_FUN_005b6fc0"
+    },
+    {
+      "addr": "00547480",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.076923076923077,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "CALL": 7,
+      "COPY": 27,
+      "INT_ADD": 17,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 22,
+      "LOAD": 5,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 24
+    },
+    "pcode_op_count": 159
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBiggs *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f3524"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

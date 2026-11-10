@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00425ee0 at 00425f7d
+;   core_bugs.cpp_CBugs_sampleGroundHeight_FUN_00425ee0 at 00425f7d
 ;
 ; *****************************************************************************
 

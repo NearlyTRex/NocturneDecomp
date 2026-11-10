@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_004831d0 at 004831f2
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0 at 004831f2
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047b800 at 0047b9e6
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047b1f0 at 0047b3cd
 ;
@@ -32,7 +32,7 @@
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_mini3d.cpp_FUN_004f8e20
 ;   engine_mini3d.cpp_FUN_004f9390
-;   shape_edittool.cpp_FUN_00485380
+;   shape_edittool.cpp_calculateButtonHeight_FUN_00485380
 ;
 ; *****************************************************************************
 
@@ -68,8 +68,8 @@ section .text
     PUSH 0x0                            ; 0047f03c
     MOV EDI,dword ptr [0x01c35e60]      ; 0047f03e | DAT_01c35e60
     MOV ESI,EAX                         ; 0047f044
-    CALL shape_edittool.cpp_FUN_00485380 ; 0047f046
-        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_00485380()
+    CALL shape_edittool.cpp_calculateButtonHeight_FUN_00485380 ; 0047f046
+        ;   XREF to: 00485380 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_calculateButtonHeight_FUN_00485380()
     ADD ESP,0x4                         ; 0047f04b
     MOV EDX,dword ptr [ESP + 0x1c]      ; 0047f04e
     IMUL EDX,EAX                        ; 0047f052

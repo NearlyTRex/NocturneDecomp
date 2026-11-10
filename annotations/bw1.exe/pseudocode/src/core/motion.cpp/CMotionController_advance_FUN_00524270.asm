@@ -26,16 +26,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[49]:
-;   core_armour.cpp_FUN_0040eaa0 at 0040eb92
-;   core_baron.cpp_FUN_00410110 at 00410126
-;   core_batcreat.cpp_FUN_004115b0 at 0041183f
-;   core_batman.cpp_FUN_00412ba0 at 00412e3c
-;   core_beast.cpp_FUN_00414770 at 004147c8
-;   core_biggs.cpp_FUN_00414b30 at 00414d94
-;   core_boneguy.cpp_FUN_0041bb40 at 0041bf03
-;   core_bride.cpp_FUN_00423b70 at 00423d30
-;   core_carved.cpp_FUN_00428ae0 at 00428b8f
-;   core_constrct.cpp_FUN_00445cb0 at 004464de
+;   core_armour.cpp_CArmour_process_FUN_0040eaa0 at 0040eb92
+;   core_baron.cpp_CBaron_advanceMotion_FUN_00410110 at 00410126
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 0041183f
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412e3c
+;   core_beast.cpp_CBeast_process_FUN_00414770 at 004147c8
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414d94
+;   core_bird.cpp_CBird_process_FUN_00415340 at 004153ab
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041bf03
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423d30
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00428b8f
 ;   ... and 39 more
 ;
 ; Referenced Globals:
@@ -65,7 +65,7 @@
 ;   core_motion.cpp_FUN_00524ba0
 ;   core_motion.cpp_FUN_00524d70
 ;   core_motion.cpp_FUN_00524f40
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -254,8 +254,8 @@ section .text
     PUSH 0x5eae79                       ; 00524438 | = "signal%d"
     LEA EAX,[ESP + 0x18]                ; 0052443d
     PUSH EAX                            ; 00524441
-    CALL crt_unknown.c_FUN_005bfb40     ; 00524442
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00524442
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 00524447
     LEA EAX,[ESP + 0x10]                ; 0052444a
     PUSH EAX                            ; 0052444e

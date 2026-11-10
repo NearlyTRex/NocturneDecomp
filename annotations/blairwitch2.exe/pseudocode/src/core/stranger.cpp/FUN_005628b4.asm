@@ -8,7 +8,7 @@
 ;   undefined4 DAT_005fc1d4
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042a330
+;   core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
@@ -80,136 +80,136 @@ section .text
     PUSH 0x1                            ; 00562a15
     PUSH 0x0                            ; 00562a17
     PUSH EBX                            ; 00562a19
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a1a
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a1a
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a1f
     PUSH 0x0                            ; 00562a22
     PUSH 0x5eb1e6                       ; 00562a24
     PUSH 0x2                            ; 00562a29
     PUSH 0x1                            ; 00562a2b
     PUSH EBX                            ; 00562a2d
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a2e
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a2e
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a33
     PUSH 0x0                            ; 00562a36
     PUSH 0x5eb1ff                       ; 00562a38
     PUSH 0x3                            ; 00562a3d
     PUSH 0x0                            ; 00562a3f
     PUSH EBX                            ; 00562a41
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a42
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a42
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a47
     PUSH 0x0                            ; 00562a4a
     PUSH 0x5eb215                       ; 00562a4c
     PUSH 0x4                            ; 00562a51
     PUSH 0x3                            ; 00562a53
     PUSH EBX                            ; 00562a55
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a56
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a56
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a5b
     PUSH 0x0                            ; 00562a5e
     PUSH 0x5eb230                       ; 00562a60
     PUSH 0x5                            ; 00562a65
     PUSH 0x3                            ; 00562a67
     PUSH EBX                            ; 00562a69
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a6a
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a6a
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a6f
     PUSH 0x0                            ; 00562a72
     PUSH 0x5eb250                       ; 00562a74
     PUSH 0x3                            ; 00562a79
     PUSH 0x1                            ; 00562a7b
     PUSH EBX                            ; 00562a7d
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a7e
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a7e
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a83
     PUSH 0x1                            ; 00562a86
     PUSH 0x5eb269                       ; 00562a88
     PUSH 0x6                            ; 00562a8d
     PUSH 0x0                            ; 00562a8f
     PUSH EBX                            ; 00562a91
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562a92
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562a92
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562a97
     PUSH 0x1                            ; 00562a9a
     PUSH 0x5eb27c                       ; 00562a9c
     PUSH 0x0                            ; 00562aa1
     PUSH 0x6                            ; 00562aa3
     PUSH EBX                            ; 00562aa5
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562aa6
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562aa6
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562aab
     PUSH 0x1                            ; 00562aae
     PUSH 0x5eb28f                       ; 00562ab0
     PUSH 0x4                            ; 00562ab5
     PUSH 0xb                            ; 00562ab7
     PUSH EBX                            ; 00562ab9
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562aba
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562aba
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562abf
     PUSH 0x0                            ; 00562ac2
     PUSH 0x5eb2a2                       ; 00562ac4
     PUSH 0x7                            ; 00562ac9
     PUSH 0x3                            ; 00562acb
     PUSH EBX                            ; 00562acd
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562ace
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562ace
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562ad3
     PUSH 0x0                            ; 00562ad6
     PUSH 0x5eb2bb                       ; 00562ad8
     PUSH 0x7                            ; 00562add
     PUSH 0x7                            ; 00562adf
     PUSH EBX                            ; 00562ae1
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562ae2
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562ae2
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562ae7
     PUSH 0x0                            ; 00562aea
     PUSH 0x5eb2cc                       ; 00562aec
     PUSH 0x8                            ; 00562af1
     PUSH 0x0                            ; 00562af3
     PUSH EBX                            ; 00562af5
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562af6
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562af6
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562afb
     PUSH 0x1                            ; 00562afe
     PUSH 0x5eb2e1                       ; 00562b00
     PUSH 0x8                            ; 00562b05
     PUSH 0xc                            ; 00562b07
     PUSH EBX                            ; 00562b09
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562b0a
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562b0a
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562b0f
     PUSH 0x1                            ; 00562b12
     PUSH 0x5eb2f0                       ; 00562b14
     PUSH 0x8                            ; 00562b19
     PUSH 0xc                            ; 00562b1b
     PUSH EBX                            ; 00562b1d
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562b1e
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562b1e
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562b23
     PUSH 0x0                            ; 00562b26
     PUSH 0x5eb308                       ; 00562b28
     PUSH 0x9                            ; 00562b2d
     PUSH 0x9                            ; 00562b2f
     PUSH EBX                            ; 00562b31
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562b32
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562b32
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562b37
     PUSH 0x0                            ; 00562b3a
     PUSH 0x5eb317                       ; 00562b3c
     PUSH 0xa                            ; 00562b41
     PUSH 0x3                            ; 00562b43
     PUSH EBX                            ; 00562b45
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562b46
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562b46
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562b4b
     PUSH 0x0                            ; 00562b4e
     PUSH 0x5eb32f                       ; 00562b50
     PUSH 0x0                            ; 00562b55
     PUSH 0xa                            ; 00562b57
     PUSH EBX                            ; 00562b59
-    CALL core_charactr.cpp_FUN_0042a330 ; 00562b5a
-        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
+    CALL core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330 ; 00562b5a
+        ;   XREF to: 0042a330 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330(CCharacter * this_ptr, int from_bone_index, int to_bone_index, char * motion_name, ...)
     ADD ESP,0x14                        ; 00562b5f
     PUSH 0x5eb342                       ; 00562b62
     LEA EAX,[EBX + 0x2d0c]              ; 00562b67

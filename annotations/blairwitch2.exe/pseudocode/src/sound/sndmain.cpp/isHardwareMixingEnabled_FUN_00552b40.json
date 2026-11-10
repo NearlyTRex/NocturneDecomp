@@ -1,0 +1,93 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 3,
+    "complexity_score": 19,
+    "cross_reference_count": 4,
+    "function_call_count": 0,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 4,
+    "suspect_count": 1,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 7
+  },
+  "cross_references": [
+    {
+      "addr": "004ed260",
+      "from_addr": "004ed906",
+      "name": "core_menu.cpp_FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00557910",
+      "from_addr": "00557a38",
+      "name": "sound_snddx.cpp_getDirectSoundDevice_FUN_00557910",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553680",
+      "from_addr": "0055377a",
+      "name": "sound_sndmain.cpp_readIni_FUN_00553680",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00553980",
+      "from_addr": "00553a68",
+      "name": "sound_sndmain.cpp_writeIni_FUN_00553980",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00552b40",
+    "address_range": [
+      [
+        "00552b40",
+        "00552b45"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_00552b40",
+    "signature": "int __cdecl sound_sndmain_cpp_isHardwareMixingEnabled_FUN_00552b40(void)"
+  },
+  "function_calls": [],
+  "globals": [
+    {
+      "addr": "0061bcb0",
+      "name": "DAT_0061bcb0",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 2.0,
+    "instruction_count": 2,
+    "opcode_distribution": {
+      "COPY": 1,
+      "INT_ADD": 1,
+      "LOAD": 1,
+      "RETURN": 1
+    },
+    "pcode_op_count": 4
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 5,
+      "match": "DAT_0061bcb0",
+      "severity": "mild",
+      "text": "return DAT_0061bcb0;",
+      "type": "undefined_data"
+    }
+  ]
+}

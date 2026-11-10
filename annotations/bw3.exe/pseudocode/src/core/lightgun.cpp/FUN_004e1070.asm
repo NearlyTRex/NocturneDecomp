@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_lightgun_cpp_FUN_004e1070(CDemonActor *param_1)
+; undefined4 core_lightgun_cpp_FUN_004e1070(CCharacter *param_1)
 ;
 ;
 ; Referenced Globals:
@@ -27,7 +27,7 @@
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_FUN_00408bf0
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_fire.cpp_CFireEffect_createSpark_FUN_004a23c0
 ;   core_fire.cpp_FUN_004a2090
@@ -36,8 +36,8 @@
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
 ;   core_setcolid.cpp_CDemonSet_popRaytraceState_FUN_0053ea20
 ;   core_setcolid.cpp_CDemonSet_pushRaytraceState_FUN_0053e870
-;   core_setcolid.cpp_FUN_0053ccc0
-;   core_setcolid.cpp_FUN_0053ebd0
+;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0
+;   core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0
 ;   ... and 8 more
 ;
 ; *****************************************************************************
@@ -79,8 +79,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e10da
     MOVSD ES:EDI,ESI                    ; 004e10db
     MOVSD ES:EDI,ESI                    ; 004e10dc
-    CALL core_weapon.cpp_FUN_0057b880   ; 004e10dd
-        ;   XREF to: 0057b880 (UNCONDITIONAL_CALL)  ; undefined core_weapon.cpp_FUN_0057b880()
+    CALL core_weapon.cpp_CWeapon_fire_FUN_0057b880 ; 004e10dd
+        ;   XREF to: 0057b880 (UNCONDITIONAL_CALL)  ; int core_weapon.cpp_CWeapon_fire_FUN_0057b880(CWeapon * this_ptr)
     ADD ESP,0x4                         ; 004e10e2
     TEST EAX,EAX                        ; 004e10e5
     JZ 0x004e1b15                       ; 004e10e7
@@ -106,7 +106,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 004e1137 | g_CDemonSetPtr
         ;   Label: LAB_004e1137
     MOV EBX,dword ptr [ESP + 0x300]     ; 004e113c
-    CMP EBX,dword ptr [EAX + 0x152f30]  ; 004e1143 | g_CDemonSetInstance.field1388336_0x152f30
+    CMP EBX,dword ptr [EAX + 0x152f30]  ; 004e1143 | g_CDemonSetInstance.threat_count
     JL 0x004e1b47                       ; 004e1149
         ;   XREF to: 004e1b47 (CONDITIONAL_JUMP)  ; LAB_004e1b47
     MOV ECX,dword ptr [ESP + 0x2e4]     ; 004e114f
@@ -304,20 +304,20 @@ section .text
     PUSH 0x40a00000                     ; 004e1488
         ;   Label: LAB_004e1488
     PUSH 0xc0a00000                     ; 004e148d
-    CALL core_actor.cpp_FUN_0040ce40    ; 004e1492
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004e1492
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2e0],EAX     ; 004e1497
     ADD ESP,0x8                         ; 004e149e
     PUSH 0x41200000                     ; 004e14a1
     PUSH 0x0                            ; 004e14a6
-    CALL core_actor.cpp_FUN_0040ce40    ; 004e14a8
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004e14a8
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x2e4],EAX     ; 004e14ad
     ADD ESP,0x8                         ; 004e14b4
     PUSH 0x40a00000                     ; 004e14b7
     PUSH 0xc0a00000                     ; 004e14bc
-    CALL core_actor.cpp_FUN_0040ce40    ; 004e14c1
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004e14c1
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x30c],EAX     ; 004e14c6
     FLD float ptr [ESP + 0x30c]         ; 004e14cd
     ADD ESP,0x8                         ; 004e14d4
@@ -779,8 +779,8 @@ section .text
     PUSH EAX                            ; 004e1bf6
     LEA ESI,[ESP + 0x138]               ; 004e1bf7
     LEA EDI,[ESP + 0x1ec]               ; 004e1bfe
-    CALL core_vecdir.cpp_FUN_00576250   ; 004e1c05
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 004e1c05
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     LEA ESI,[ESP + 0x138]               ; 004e1c0a
     ADD ESP,0x4                         ; 004e1c11
     MOVSD ES:EDI,ESI                    ; 004e1c14
@@ -833,8 +833,8 @@ section .text
     PUSH 0x1                            ; 004e1cb5
     PUSH 0x5c69e0                       ; 004e1cb7 | = "Bip01 Head"
     PUSH EAX                            ; 004e1cbc
-    CALL core_skeleton.cpp_FUN_00548090 ; 004e1cbd
-        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00548090 ; 004e1cbd
+        ;   XREF to: 00548090 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00548090(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 004e1cc2
     TEST EAX,EAX                        ; 004e1cc5
     JL 0x004e1316                       ; 004e1cc7
@@ -906,8 +906,8 @@ section .text
     PUSH 0x3f866666                     ; 004e1de6
         ;   Label: LAB_004e1de6
     PUSH 0x3f733333                     ; 004e1deb
-    CALL core_actor.cpp_FUN_0040ce40    ; 004e1df0
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004e1df0
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x30c],EAX     ; 004e1df5
     FLD float ptr [ESP + 0x30c]         ; 004e1dfc
     ADD ESP,0x8                         ; 004e1e03
@@ -934,8 +934,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004e1e67
     MOVSD ES:EDI,ESI                    ; 004e1e68
     MOVSD ES:EDI,ESI                    ; 004e1e69
-    CALL core_actor.cpp_FUN_0040ce40    ; 004e1e6a
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 004e1e6a
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x30c],EAX     ; 004e1e6f
     FLD float ptr [ESP + 0x30c]         ; 004e1e76
     ADD ESP,0x8                         ; 004e1e7d
@@ -978,13 +978,13 @@ section .text
     PUSH 0x1                            ; 004e1f1f
     MOV EDX,dword ptr [0x00603b28]      ; 004e1f21 | g_CDemonSetPtr
     PUSH EDX                            ; 004e1f27 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ecd0 ; 004e1f28
-        ;   XREF to: 0053ecd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_0053ecd0(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
+    CALL core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0 ; 004e1f28
+        ;   XREF to: 0053ecd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
     ADD ESP,0x14                        ; 004e1f2d
     MOV ECX,dword ptr [0x00603b28]      ; 004e1f30 | g_CDemonSetPtr
     PUSH ECX                            ; 004e1f36 | g_CDemonSetInstance
-    CALL core_setcolid.cpp_FUN_0053ebd0 ; 004e1f37
-        ;   XREF to: 0053ebd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_0053ebd0(CDemonSet * this_ptr)
+    CALL core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0 ; 004e1f37
+        ;   XREF to: 0053ebd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_skipExactCollisions_FUN_0053ebd0(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004e1f3c
     MOV EBX,dword ptr [EBP + 0x14]      ; 004e1f3f
     PUSH EBX                            ; 004e1f42
@@ -1026,7 +1026,7 @@ section .text
     MOV EAX,[0x00603b28]                ; 004e1fb0 | g_CDemonSetPtr
     PUSH 0x0                            ; 004e1fb5
     ADD EAX,0x14d138                    ; 004e1fb7
-    PUSH EAX                            ; 004e1fbc | g_CDemonSetInstance.field1364280_0x14d138
+    PUSH EAX                            ; 004e1fbc | g_CDemonSetInstance.collision_impact_position.x
     LEA EAX,[ESP + 0x1ec]               ; 004e1fbd
     PUSH EAX                            ; 004e1fc4
     MOV EDI,dword ptr [0x005fc5a0]      ; 004e1fc5 | DAT_005fc5a0
@@ -1036,14 +1036,14 @@ section .text
     ADD ESP,0x24                        ; 004e1fd1
     MOV EAX,[0x00603b28]                ; 004e1fd4 | g_CDemonSetPtr
     PUSH 0x2                            ; 004e1fd9
-    MOV EDX,dword ptr [EAX + 0x14d144]  ; 004e1fdb | g_CDemonSetInstance.field1364292_0x14d144
+    MOV EDX,dword ptr [EAX + 0x14d144]  ; 004e1fdb | g_CDemonSetInstance.collision_actor
     PUSH EDX                            ; 004e1fe1
-    MOV ECX,dword ptr [EAX + 0x14d134]  ; 004e1fe2 | g_CDemonSetInstance.field1364276_0x14d134
+    MOV ECX,dword ptr [EAX + 0x14d134]  ; 004e1fe2 | g_CDemonSetInstance.ground_type
     PUSH ECX                            ; 004e1fe8
     LEA EBX,[EAX + 0x14d128]            ; 004e1fe9
-    PUSH EBX                            ; 004e1fef | g_CDemonSetInstance.field1364264_0x14d128
+    PUSH EBX                            ; 004e1fef | g_CDemonSetInstance.collision_normal.x
     ADD EAX,0x14d138                    ; 004e1ff0
-    PUSH EAX                            ; 004e1ff5 | g_CDemonSetInstance.field1364280_0x14d138
+    PUSH EAX                            ; 004e1ff5 | g_CDemonSetInstance.collision_impact_position.x
     MOV EBX,dword ptr [0x005fc5a0]      ; 004e1ff6 | DAT_005fc5a0
     PUSH EBX                            ; 004e1ffc
     CALL core_fire.cpp_FUN_004a2090     ; 004e1ffd

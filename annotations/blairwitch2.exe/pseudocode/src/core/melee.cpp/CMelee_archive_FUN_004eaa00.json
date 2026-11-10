@@ -1,0 +1,195 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 99,
+    "complexity_score": 33,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 11,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 33,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 132
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004eaa00",
+    "address_range": [
+      [
+        "004eaa00",
+        "004eab1a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_melee.cpp_CMelee_archive_FUN_004eaa00",
+    "signature": "void __cdecl core_melee_cpp_CMelee_archive_FUN_004eaa00(CMelee *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040b730",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b730"
+    },
+    {
+      "addr": "00589d60",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_archive_FUN_00589d60"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005dc963",
+      "name": "s_allowedAttackTypes_005dc963",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc976",
+      "name": "s_strengthLo_005dc976",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc981",
+      "name": "s_strengthHi_005dc981",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc98c",
+      "name": "s_canAttachLight_005dc98c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc99b",
+      "name": "s_dismemberProb_005dc99b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc9a9",
+      "name": "s_canGoInInventory_005dc9a9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc9ba",
+      "name": "s_ammoType_005dc9ba",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc9c3",
+      "name": "s_thrustHitCharacterSound_005dc9c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc9db",
+      "name": "s_swingHitCharacterSound_005dc9db",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005dc9f2",
+      "name": "s_hitOtherSound_005dc9f2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00617f54",
+      "name": "g_CMeleeClassVersion",
+      "type": "int",
+      "value": "0x7"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.328767123287672,
+    "instruction_count": 73,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 11,
+      "CBRANCH": 6,
+      "COPY": 43,
+      "INT_ADD": 26,
+      "INT_AND": 36,
+      "INT_CARRY": 12,
+      "INT_EQUAL": 38,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 18,
+      "INT_SUB": 39,
+      "LOAD": 5,
+      "POPCOUNT": 18,
+      "RETURN": 2,
+      "STORE": 33
+    },
+    "pcode_op_count": 316
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMelee *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fea34"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005ffe84"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fff94"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005f9ca4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

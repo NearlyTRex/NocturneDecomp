@@ -35,7 +35,7 @@ void core_fire_cpp_FUN_004967d0(int param_1)
   *(uint *)(param_1 + 0x48) =
        *(int *)(param_1 + 0x48) + ((uint)lVar2 >> 0x10 | (int)((ulonglong)lVar2 >> 0x20) << 0x10);
   if (0.0 < (double)fVar6) {
-    fVar3 = fVar1 - fVar1 * *(float *)(param_1 + 0x40) * *(float *)&g_CGamePtr->field_0x284;
+    fVar3 = fVar1 - fVar1 * *(float *)(param_1 + 0x40) * g_CGamePtr->delta_time_float;
     if (0.0 < fVar3) {
       fVar3 = fVar3 / fVar1;
       *extraout_ECX = *extraout_ECX * fVar3;

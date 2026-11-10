@@ -27,7 +27,7 @@
 ;   core_dtrace.cpp_FUN_0048aaee at 0048ac37
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_0052cab0 at 0052cc69
 ;   engine_pod.cpp_FUN_0053bfbe at 0053c18f
-;   shape_edittool.cpp_FUN_004961b0 at 00496270
+;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0 at 00496270
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00480000
@@ -118,8 +118,8 @@ section .text
     CALL crt_math.c_round_FUN_005c03a0  ; 00496315
         ;   XREF to: 005c03a0 (UNCONDITIONAL_CALL)  ; undefined crt_math.c_round_FUN_005c03a0()
     FISTP dword ptr [ESP + 0x3c]        ; 0049631a
-    CALL wincore_winrun.cpp_FUN_005b2420 ; 0049631e
-        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005b2420()
+    CALL wincore_winrun.cpp_getTime_FUN_005b2420 ; 0049631e
+        ;   XREF to: 005b2420 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005b2420()
     MOV EBX,EAX                         ; 00496323
     MOV dword ptr [ESP + 0x30],EAX      ; 00496325
     MOV EAX,[0x01c3eb5c]                ; 00496329 | DAT_01c3eb5c
@@ -475,8 +475,8 @@ section .text
     CALL engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0 ; 00496755
         ;   XREF to: 004c23a0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextCenterInBoundsF_FUN_004c23a0(CBitFont * this_ptr, int left_x, int right_x, int y, ...)
     ADD ESP,0x2c                        ; 0049675a
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0049675d
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0049675d
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_0049675d
     MOV EAX,[0x01c3eb5c]                ; 00496762 | DAT_01c3eb5c
     DEC EAX                             ; 00496767

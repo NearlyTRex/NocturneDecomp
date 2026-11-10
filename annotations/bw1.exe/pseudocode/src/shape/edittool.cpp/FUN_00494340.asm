@@ -16,8 +16,8 @@
 ;   core_main.c_FUN_005032a0 at 00503650
 ;   core_script.cpp_CScript_loadState_FUN_0054b3e0 at 0054b6f4
 ;   core_set.cpp_FUN_00555e30 at 00555ec8
-;   core_stranger.cpp_FUN_005881d0 at 0058891c
-;   core_stranger.cpp_FUN_0058cda0 at 0058ce0e
+;   core_stranger.cpp_CStranger_processPickupComplete_FUN_0058cda0 at 0058ce0e
+;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910 at 0058dc9b
 ;   ... and 2 more
 ;
 ; Referenced Globals:

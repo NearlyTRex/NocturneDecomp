@@ -18,8 +18,8 @@ CDemonActor * __cdecl core_actor_cpp_CDemonActor_ctor_FUN_00408790(CDemonActor *
   iVar2 = core_actor_cpp_initTransformCache_FUN_00408750(&this_ptr->field_0x12c);
   iVar2 = __arrinit(iVar2 + 0x28,5,&g_CSimpleParticleSystemTypeInfo);
   this_ptr_00 = (CDemonActor *)(iVar2 + -0x154);
-  *(byte **)(iVar2 + 0x15c) = &g_CDemonActorVTable;
-  *(byte *)this_ptr_00 = 0;
+  *(CDemonActor_vtable **)(iVar2 + 0x15c) = &g_CDemonActorVTable;
+  this_ptr_00->actor_name[0] = '\0';
   *(uint *)(iVar2 + -8) = 0;
   *(uint *)(iVar2 + -4) = 0;
   *(uint *)(iVar2 + -300) = 0;

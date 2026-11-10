@@ -7,16 +7,16 @@
 ; CEnemy *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[35]:
-;   core_armour.cpp_FUN_0040ebe0 at 0040ebe7
-;   core_batcreat.cpp_FUN_00412110 at 00412117
+;   core_armour.cpp_CArmour_archive_FUN_0040ebe0 at 0040ebe7
+;   core_batcreat.cpp_CBatCreature_archive_FUN_00412110 at 00412117
 ;   core_batman.cpp_CBatman_archive_FUN_00413b60 at 00413b67
-;   core_beast.cpp_FUN_00414800 at 00414807
-;   core_biggs.cpp_FUN_00414f30 at 00414f37
+;   core_beast.cpp_CBeast_archive_FUN_00414800 at 00414807
+;   core_biggs.cpp_CBiggs_archive_FUN_00414f30 at 00414f37
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_0041d0d0 at 0041d0dc
-;   core_bride.cpp_FUN_00424840 at 00424846
-;   core_bugs.cpp_FUN_004257f0 at 004257f9
-;   core_carved.cpp_FUN_0042b3c0 at 0042b3c7
-;   core_constrct.cpp_FUN_00446e30 at 00446e3a
+;   core_bride.cpp_CBride_archive_FUN_00424840 at 00424846
+;   core_bugs.cpp_CBugs_archive_FUN_004257f0 at 004257f9
+;   core_carved.cpp_CCarved_archive_FUN_0042b3c0 at 0042b3c7
+;   core_constrct.cpp_CConstruct_archive_FUN_00446e30 at 00446e3a
 ;   ... and 25 more
 ;
 ; Referenced Globals:
@@ -39,7 +39,7 @@
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c040
-;   core_charactr.cpp_FUN_0042c7f0
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0
 ;
 ; *****************************************************************************
 
@@ -93,8 +93,8 @@ section .text
     RET                                 ; 004a058f
     PUSH EBX                            ; 004a0590
         ;   Label: LAB_004a0590
-    CALL core_charactr.cpp_FUN_0042c7f0 ; 004a0591
-        ;   XREF to: 0042c7f0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042c7f0()
+    CALL core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 ; 004a0591
+        ;   XREF to: 0042c7f0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_archive_FUN_0042c7f0(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 004a0596
     PUSH 0x5dcadc                       ; 004a0599 | = "speed"
     PUSH ESI                            ; 004a059e

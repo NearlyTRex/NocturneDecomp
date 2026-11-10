@@ -10,7 +10,7 @@
 ;
 ; XREF[2]:
 ;   core_dracbrid.cpp_FUN_00465400 at 004658a3
-;   core_sound.cpp_FUN_005594c0 at 005598c2
+;   core_sound.cpp_playSfxInternal_FUN_005594c0 at 005598c2
 ;
 ; Referenced Globals:
 ;   CStrList g_CStrListInstance

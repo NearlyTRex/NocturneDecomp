@@ -25,14 +25,14 @@
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408b80
 ;   core_actor.cpp_FUN_00408bf0
-;   core_actor.cpp_FUN_0040cfa0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_main.c_FUN_004e4330
 ;   core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10
 ;   core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0
+;   core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0
 ;   core_setcolid.cpp_FUN_0053ccc0
-;   core_setcolid.cpp_FUN_0053ecd0
 ;   core_skeleton.cpp_FUN_0054dbd0
-;   core_vecdir.cpp_FUN_00576250
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   crt_math.c_acos_FUN_005a4b74
 ;
 ; *****************************************************************************
@@ -127,8 +127,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00523949
     MOVSD ES:EDI,ESI                    ; 0052394a
     MOVSD ES:EDI,ESI                    ; 0052394b
-    CALL core_setcolid.cpp_FUN_0053ecd0 ; 0052394c
-        ;   XREF to: 0053ecd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_FUN_0053ecd0(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
+    CALL core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0 ; 0052394c
+        ;   XREF to: 0053ecd0 (UNCONDITIONAL_CALL)  ; void core_setcolid.cpp_CDemonSet_setRayTypeLaser_FUN_0053ecd0(CDemonSet * this_ptr, int laser_type, int color_r, int color_g, ...)
     ADD ESP,0x14                        ; 00523951
     MOV ECX,dword ptr [EBX + 0x20c24]   ; 00523954
     PUSH ECX                            ; 0052395a
@@ -267,8 +267,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00523b59
     PUSH EAX                            ; 00523b5a
     LEA ESI,[ESP + 0x80]                ; 00523b5b
-    CALL core_vecdir.cpp_FUN_00576250   ; 00523b62
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00523b62
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     ADD ESP,0x4                         ; 00523b67
     FLD float ptr [ESP + 0xb0]          ; 00523b6a
     FMUL ST0                            ; 00523b71
@@ -424,8 +424,8 @@ section .text
     FSTP float ptr [ESP + 0xec]         ; 00523d54
         ;   Label: LAB_00523d54
     PUSH dword ptr [ESP + 0xec]         ; 00523d5b
-    CALL core_actor.cpp_FUN_0040cfa0    ; 00523d62
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 00523d62
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
     MOV dword ptr [ESP + 0x164],EAX     ; 00523d67
     FLD float ptr [ESP + 0x164]         ; 00523d6e
     ADD ESP,0x4                         ; 00523d75
@@ -475,8 +475,8 @@ section .text
     FSTP float ptr [ESP + 0xe8]         ; 00523df3
         ;   Label: LAB_00523df3
     PUSH dword ptr [ESP + 0xe8]         ; 00523dfa
-    CALL core_actor.cpp_FUN_0040cfa0    ; 00523e01
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 00523e01
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
     MOV dword ptr [ESP + 0x164],EAX     ; 00523e06
     FLD float ptr [ESP + 0x164]         ; 00523e0d
     ADD ESP,0x4                         ; 00523e14

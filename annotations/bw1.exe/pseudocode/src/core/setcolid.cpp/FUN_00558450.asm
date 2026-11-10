@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_FUN_00558450(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
+; float core_setcolid_cpp_FUN_00558450(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1a8]:4  local_1a8
@@ -34,12 +34,12 @@
 ;
 ; XREF[7]:
 ;   core_charactr.cpp_FUN_0042d750 at 0042d9f1
-;   core_demnfolk.cpp_FUN_00459100 at 0045a255
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 0045a255
 ;   core_doc.cpp_FUN_004712b0 at 00471763
-;   core_ghoul.cpp_FUN_004de330 at 004df179
-;   core_stranger.cpp_FUN_0058d910 at 0058e00b
-;   core_trash.cpp_FUN_0059a370 at 0059aa12
-;   core_zombie.cpp_FUN_005bafb0 at 005bc13e
+;   core_ghoul.cpp_CGhoul_process_FUN_004de330 at 004df179
+;   core_stranger.cpp_CStranger_tryPlaceObject_FUN_0058d910 at 0058e00b
+;   core_trash.cpp_CTrash_process_FUN_0059a370 at 0059aa12
+;   core_zombie.cpp_CZombie_process_FUN_005bafb0 at 005bc13e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005f0e35

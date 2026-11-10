@@ -13,7 +13,7 @@
 ;   core_actor.cpp_CDemonActor_ctor_FUN_00408790
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
-;   core_manpuz.cpp_FUN_004e6010
+;   core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010
 ;   crt_memory.c___arrinit_FUN_005b7f5f
 ;
 ; *****************************************************************************
@@ -124,8 +124,8 @@ section .text
     MOV dword ptr [EAX + 0x4],EDX       ; 004e505d
     MOV EDX,dword ptr [EAX + 0x4]       ; 004e5060
     MOV dword ptr [EAX],EDX             ; 004e5063
-    CALL core_manpuz.cpp_FUN_004e6010   ; 004e5065
-        ;   XREF to: 004e6010 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_FUN_004e6010(CMansionPuzzleCircle * this_ptr)
+    CALL core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010 ; 004e5065
+        ;   XREF to: 004e6010 (UNCONDITIONAL_CALL)  ; void core_manpuz.cpp_CMansionPuzzleCircle_initPuzzleState_FUN_004e6010(CMansionPuzzleCircle * this_ptr)
     ADD ESP,0x4                         ; 004e506a
     MOV EAX,EBX                         ; 004e506d
     POP EBX                             ; 004e506f

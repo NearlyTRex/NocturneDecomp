@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 4,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 9
   },
   "cross_references": [
     {
       "addr": "0043a580",
       "from_addr": "0043a64d",
-      "name": "core_crossbow.cpp_FUN_0043a580",
+      "name": "core_crossbow.cpp_CCrossbow_process_FUN_0043a580",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -43,7 +41,7 @@
       {
         "call_addr": "0043a64d",
         "call_type": "direct",
-        "caller": "core_crossbow.cpp_FUN_0043a580",
+        "caller": "core_crossbow.cpp_CCrossbow_process_FUN_0043a580",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,14 +84,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x3ec",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x3ec = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

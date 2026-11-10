@@ -14,6 +14,27 @@
     "size":153408
   },
   {
+    "kind":"funcdef",
+    "name":"CBasicEnemy_vfunc86",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CBasicEnemy",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CBasicNPC",
     "size":71760
@@ -22,7 +43,33 @@
     "kind":"class",
     "name":"CBox",
     "rtti_file":"core/box.cpp",
-    "size":1
+    "size":600
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_clearDoorTarget",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CColor3i",
+    "size":12
   },
   {
     "kind":"class",
@@ -30,11 +77,230 @@
     "size":1
   },
   {
+    "kind":"funcdef",
+    "name":"CConfederateZombie_vfunc97",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CConfederateZombie",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_customRayIntersect",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_origin",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"ray_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"float",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_cylinderGroundCheck",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"radius",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      },
+      {
+        "name":"out_normal",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"float",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_drop",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"carrier",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"drop_position",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getCarrier",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CDemonActor",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_pickup",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"carrier",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDrummer",
     "parent":"CNPC",
     "rtti_file":"core/tbplayer.cpp",
     "size":148304
+  },
+  {
+    "kind":"funcdef",
+    "name":"CEnemy_getTargetPoint",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CEnemy",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -64,7 +330,7 @@
     "kind":"class",
     "name":"CLZWDictionary",
     "rtti_file":"support/codec.cpp",
-    "size":1
+    "size":28
   },
   {
     "kind":"class",
@@ -76,12 +342,102 @@
     "kind":"class",
     "name":"CP2D",
     "rtti_file":"core/p2d.cpp",
+    "size":16
+  },
+  {
+    "kind":"class",
+    "name":"CPod_vtable",
     "size":1
   },
   {
     "kind":"class",
     "name":"CRect",
-    "size":1
+    "size":16
+  },
+  {
+    "kind":"class",
+    "name":"CSchnellGeist_full_vtable",
+    "size":392,
+    "vtable_slots":[
+      {
+        "name":"_ub",
+        "offset":0
+      },
+      {
+        "name":"_uc",
+        "offset":224
+      },
+      {
+        "name":"_ue",
+        "offset":332
+      },
+      {
+        "name":"_ubasicenemy",
+        "offset":340
+      },
+      {
+        "name":"_uschnellgeist",
+        "offset":384
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSchnellGeist_processLeapAttackState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSchnellGeist",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CSchnellGeist_processMeleeAttackState",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CSchnellGeist",
+          "ptr":1
+        }
+      },
+      {
+        "name":"delta_time",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -96,10 +452,77 @@
     "size":2960
   },
   {
+    "kind":"funcdef",
+    "name":"CStrList_dtor",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CTrail",
     "rtti_file":"core/emitter.cpp",
     "size":36
+  },
+  {
+    "kind":"enum",
+    "name":"ETriggerShape",
+    "size":4,
+    "values":[
+      {
+        "name":"TRIGGER_SHAPE_BOX",
+        "value":0
+      },
+      {
+        "name":"TRIGGER_SHAPE_CYLINDER",
+        "value":1
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWaterActorState",
+    "size":4,
+    "values":[
+      {
+        "name":"WATER_ACTOR_LOWERED",
+        "value":0
+      },
+      {
+        "name":"WATER_ACTOR_RISING",
+        "value":1
+      },
+      {
+        "name":"WATER_ACTOR_RAISED",
+        "value":2
+      },
+      {
+        "name":"WATER_ACTOR_LOWERING",
+        "value":3
+      }
+    ]
   },
   {
     "kind":"struct",
@@ -135,5 +558,10 @@
     "kind":"struct",
     "name":"SNetPacket_Simple",
     "size":9
+  },
+  {
+    "kind":"struct",
+    "name":"SPlatformAttachment",
+    "size":1
   }
 ]

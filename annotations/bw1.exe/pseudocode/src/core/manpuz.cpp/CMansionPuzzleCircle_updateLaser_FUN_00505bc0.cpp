@@ -14,18 +14,16 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMans
   float fVar1;
   bool bVar2;
   int iVar3;
-  uint *puVar4;
+  int *piVar4;
   int unaff_EDI;
-  uint *puVar5;
+  int *piVar5;
   byte bVar6;
   float afStackY_107c [970];
+  int aiStack_148 [17];
   uint uStack_104;
-  uint uStack_e8;
-  uint uStack_e4;
-  uint uStack_e0;
-  uint uStack_dc;
-  uint uStack_d8;
-  uint uStack_d4;
+  int aiStack_e8 [4];
+  int iStack_d8;
+  int iStack_d4;
   uint uStack_d0;
   uint uStack_cc;
   float fStack_94;
@@ -44,32 +42,32 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_updateLaser_FUN_00505bc0(CMans
   uint auStack_34 [3];
   uint uStack_28;
   uint uStack_1c;
-  int *piStack_14;
+  SPanel *pSStack_14;
   
   bVar6 = 0;
-  piStack_14 = (int *)(&this_ptr->field_0x5f0 + panel_index * 100);
+  pSStack_14 = this_ptr->panels + panel_index;
   bVar2 = false;
-  if (*piStack_14 == 0) {
+  if (pSStack_14->exists == 0) {
     uStack_104 = 0x505e5f;
     iVar3 = core_manpuz_cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
                       (this_ptr,panel_index);
     bVar2 = true;
-    if ((*(int *)(&this_ptr->field_0x5f0 + iVar3 * 100) == 0) ||
-       (*(float *)((int)(&this_ptr->field_0x5f0 + iVar3 * 100) + 8) <= 0.0)) goto LAB_00505c02;
+    if ((this_ptr->panels[iVar3].exists == 0) || (this_ptr->panels[iVar3].anim_speed <= 0.0))
+    goto LAB_00505c02;
   }
   else {
 LAB_00505c02:
     if (bVar2) {
-      fVar1 = *(float *)(&this_ptr->field_0x1490 + panel_index * 4) + delta_time;
+      fVar1 = (float)this_ptr->laser_intensity[panel_index] + delta_time;
       goto LAB_00505c17;
     }
   }
-  fVar1 = *(float *)(&this_ptr->field_0x1490 + panel_index * 4) - delta_time;
+  fVar1 = (float)this_ptr->laser_intensity[panel_index] - delta_time;
 LAB_00505c17:
-  *(float *)(&this_ptr->field_0x1490 + panel_index * 4) = fVar1;
-  if (0.0 < *(float *)(&this_ptr->field_0x1490 + panel_index * 4)) {
-    if (1.0 < *(float *)(&this_ptr->field_0x1490 + panel_index * 4)) {
-      *(uint *)(&this_ptr->field_0x1490 + panel_index * 4) = 0x3f800000;
+  this_ptr->laser_intensity[panel_index] = (int)fVar1;
+  if (0.0 < (float)this_ptr->laser_intensity[panel_index]) {
+    if (1.0 < (float)this_ptr->laser_intensity[panel_index]) {
+      this_ptr->laser_intensity[panel_index] = 0x3f800000;
     }
     core_dirmat_cpp_FUN_0045f690();
     fStack_64 = fStack_94;
@@ -89,11 +87,9 @@ LAB_00505c17:
     afStack_90[(uint)bVar6 * -2 + 6] = afStack_90[(uint)bVar6 * -2 + 9];
     afStack_90[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
          afStack_90[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 10];
-    fStack_54 = (*(float *)&this_ptr->field_0x5d0 - *(float *)&this_ptr->field_0x5e8) *
-                _DAT_005e7541;
-    fStack_50 = -(*(float *)&this_ptr->field_0x150c * _DAT_005e753d +
-                  *(float *)&this_ptr->field_0x5ec + *(float *)&this_ptr->field_0x5d4) *
-                _DAT_005e7541;
+    fStack_54 = ((this_ptr->gem_pos).y - (this_ptr->emitter_pos).f.y) * _DAT_005e7541;
+    fStack_50 = -(this_ptr->panel_radius * _DAT_005e753d + (this_ptr->emitter_pos).f.z +
+                 (this_ptr->gem_pos).z) * _DAT_005e7541;
     core_dirmat_cpp_FUN_0045f690();
     afStack_48[2] = (float)uStack_28;
     afStack_48[(uint)bVar6 * -2 + 3] = afStack_48[(uint)bVar6 * -2 + 9];
@@ -105,26 +101,26 @@ LAB_00505c17:
     afStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 7] =
          afStack_48[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd];
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
-    core_fire_cpp_SLaserInfo_ctor_FUN_004b63e0((SLaserInfo *)&uStack_e8);
-    uStack_e0 = 2;
-    uStack_e4 = 0x3da3d70a;
-    uStack_dc = *(uint *)(&this_ptr->field_0x1400 + panel_index * 4);
-    uStack_d8 = *(uint *)(&this_ptr->field_0x1430 + panel_index * 4);
-    uStack_d4 = *(uint *)(&this_ptr->field_0x1460 + panel_index * 4);
-    uStack_e8 = *(uint *)(&this_ptr->field_0x1490 + panel_index * 4);
+    core_fire_cpp_SLaserInfo_ctor_FUN_004b63e0((SLaserInfo *)aiStack_e8);
+    aiStack_e8[2] = 2;
+    aiStack_e8[1] = 0x3da3d70a;
+    aiStack_e8[3] = this_ptr->laser_color_r[panel_index];
+    iStack_d8 = this_ptr->laser_color_g[panel_index];
+    iStack_d4 = this_ptr->laser_color_b[panel_index];
+    aiStack_e8[0] = this_ptr->laser_intensity[panel_index];
     uStack_d0 = 0;
     uStack_cc = 0;
-    puVar4 = &uStack_e8;
-    puVar5 = (uint *)&stack0xfffffeb8;
+    piVar4 = aiStack_e8;
+    piVar5 = aiStack_148;
     for (iVar3 = 0x15; iVar3 != 0; iVar3 = iVar3 + -1) {
-      *puVar5 = *puVar4;
-      puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
-      puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
+      *piVar5 = *piVar4;
+      piVar4 = piVar4 + (uint)bVar6 * -2 + 1;
+      piVar5 = piVar5 + (uint)bVar6 * -2 + 1;
     }
     core_fire_cpp_FUN_004b6420(0x01C57074,afStack_90 + 5,afStack_48 + 5);
     core_setcolid_cpp_CDemonSet_init_FUN_00559220(g_CDemonSetPtr);
     return;
   }
-  *(uint *)(&this_ptr->field_0x1490 + panel_index * 4) = 0;
+  this_ptr->laser_intensity[panel_index] = 0;
   return;
 }

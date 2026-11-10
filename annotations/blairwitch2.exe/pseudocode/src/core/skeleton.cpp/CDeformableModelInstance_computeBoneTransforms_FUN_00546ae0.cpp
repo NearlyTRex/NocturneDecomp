@@ -30,7 +30,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
   bVar4 = 0;
   local_30 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
   local_20 = 0;
-  if (0 < *(int *)&local_30->field_0x1d1f8) {
+  if (0 < local_30->bone_count) {
     local_1c = 0;
     local_2c = &this_ptr->field_0xe80;
     local_14 = (CQuaternion4f *)&this_ptr->field_0x6b0;
@@ -62,7 +62,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
         *(float *)(&this_ptr->field_0xea8 + iVar3) =
              *(float *)&pCVar1->field_0xcf0 * *(float *)(&this_ptr->field_0xea8 + iVar3);
       }
-      if (*(int *)&local_28->field_0x1d21c < 0) {
+      if (*(int *)(local_28->bone_list + 0x20) < 0) {
         *(float *)&pCVar2->field_0xe8c =
              *(float *)(&this_ptr->field_0x58 + local_1c) + *(float *)&this_ptr->field_0x6a4;
         *(float *)&pCVar2->field_0xe9c =
@@ -72,7 +72,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
       }
       else {
         core_xform_cpp_FUN_00591530
-                  (local_18 + local_1c,local_2c + *(int *)&local_28->field_0x1d21c * 0x30);
+                  (local_18 + local_1c,local_2c + *(int *)(local_28->bone_list + 0x20) * 0x30);
         local_48 = local_3c;
         *(uint *)((int)&stack0xffffffbc + (uint)bVar4 * -8) =
              *(uint *)(&stack0xffffffc8 + (uint)bVar4 * -8);
@@ -84,12 +84,12 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_computeBoneTransforms_FU
       }
       pCVar1 = (CDeformableModelInstance *)&pCVar1->field_0x4;
       pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x30;
-      local_24 = local_24 + 0x30;
-      local_14 = local_14 + 0x10;
+      local_24 = local_24 + 1;
+      local_14 = local_14 + 1;
       local_1c = local_1c + 0xc;
       local_28 = (CSkeleton *)&local_28->field_0x24;
       local_20 = local_20 + 1;
-    } while (local_20 < *(int *)&local_30->field_0x1d1f8);
+    } while (local_20 < local_30->bone_count);
   }
   *(uint *)&this_ptr->field_0x2230 = 0xffffffff;
   return;

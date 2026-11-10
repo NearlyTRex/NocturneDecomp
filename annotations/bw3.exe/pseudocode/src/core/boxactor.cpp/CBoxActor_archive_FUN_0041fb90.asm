@@ -10,8 +10,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_boxactor.cpp_FUN_004207f0 at 004207fa
-;   core_stone.cpp_FUN_00568950 at 00568955
+;   core_boxactor.cpp_CLightActor_archive_FUN_004207f0 at 004207fa
+;   core_stone.cpp_CTempleStone_archive_FUN_00568950 at 00568955
 ;
 ; Referenced Globals:
 ;   undefined4 s_GmodelName_005b7508+1
@@ -33,6 +33,7 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_archiveActor_FUN_0040b930
+;   core_actor.cpp_archiveBox_FUN_0040be30
 ;   core_actor.cpp_archiveFloat_FUN_0040b830
 ;   core_actor.cpp_archiveInteger_FUN_0040b8b0
 ;   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b9b0
@@ -40,7 +41,6 @@
 ;   core_actor.cpp_archiveString_FUN_0040b680
 ;   core_actor.cpp_archiveVector_FUN_0040b400
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280
-;   core_actor.cpp_FUN_0040be30
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5b7593                       ; 0041fcb4 | = "simBox"
     LEA EAX,[EBX + 0x394]               ; 0041fcb9
     PUSH EAX                            ; 0041fcbf
-    CALL core_actor.cpp_FUN_0040be30    ; 0041fcc0
-        ;   XREF to: 0040be30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040be30(CBox * box_ptr, char * property_name)
+    CALL core_actor.cpp_archiveBox_FUN_0040be30 ; 0041fcc0
+        ;   XREF to: 0040be30 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveBox_FUN_0040be30(CBox * box_ptr, char * property_name)
     ADD ESP,0x8                         ; 0041fcc5
     CMP dword ptr [0x005f0e38],0x5      ; 0041fcc8 | g_CBoxActorClassVersion
         ;   Label: LAB_0041fcc8

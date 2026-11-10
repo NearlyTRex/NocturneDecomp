@@ -20,8 +20,9 @@ CShadow * core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
   int iVar5;
   
   pCVar4 = (CShadow *)core_enemy_cpp_CEnemy_ctor_FUN_00488fd0((CEnemy *)this_ptr);
-  *(byte ***)&pCVar4->field_0x154 = &g_CShadowVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar4->field_0x158,"shadowbeast.dfm");
+  ((UActorVTable *)&pCVar4->field_0x154)->_ub = &g_CShadowVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            ((CDeformableModelInstance *)&pCVar4->field_0x158,"shadowbeast.dfm");
   *(uint *)&pCVar4->field_0x326c = 0x3f800000;
   *(uint *)&pCVar4->field_0x3270 = 0x40000000;
   *(uint *)&pCVar4->field_0xd0e0 = 1;
@@ -56,7 +57,7 @@ CShadow * core_shadow_cpp_CShadow_ctor_FUN_00543500(CShadow *this_ptr)
   else {
     *(uint *)&pCVar4->field_0xd0e4 = 0x3f800000;
   }
-  *(uint *)&pCVar4->field_0x2538 = 0x42200000;
+  *(float *)&pCVar4->field_0x2538 = 40.0;
   *(uint *)&pCVar4->field_0xce5c = 0x41700000;
   *(uint *)&pCVar4->field_0xce60 = 0x41a00000;
   *(uint *)&pCVar4->field_0xd0a8 = 0;

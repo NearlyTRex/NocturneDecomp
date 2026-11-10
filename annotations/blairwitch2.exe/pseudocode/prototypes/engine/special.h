@@ -69,9 +69,9 @@ void __cdecl FUN_0055d723(SProjectedVertex *output,CVector3i *input);
 // Address: 0055d9ec
 void __cdecl FUN_0055d9ec(SProjectedVertex *output,CVector3i *input);
 
-// Original: engine_special.cpp_FUN_0055dcf0
+// Original: engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0
 // Address: 0055dcf0
-void __cdecl FUN_0055dcf0(void);
+void __cdecl shutdownExternalRenderer(void);
 
 // Original: engine_special.cpp_FUN_0055e8c0
 // Address: 0055e8c0
@@ -81,9 +81,9 @@ int __cdecl FUN_0055e8c0(HWND window_handle);
 // Address: 0055f4d0
 int __cdecl kill(void);
 
-// Original: engine_special.cpp_FUN_0055f4f0
+// Original: engine_special.cpp_isExternalRendererActive_FUN_0055f4f0
 // Address: 0055f4f0
-undefined4 FUN_0055f4f0(void);
+undefined4 isExternalRendererActive(void);
 
 // Original: engine_special.cpp_FUN_0055f500
 // Address: 0055f500
@@ -153,21 +153,21 @@ undefined4 __cdecl drawPolyList2(int param_1,undefined4 *param_2,int param_3,und
 // Address: 0055fbd0
 int __cdecl drawPolyList3(SRenderVertex *vertex_buffer,STrianglePackedIndices *polygons,int polygon_count,int render_flags);
 
-// Original: engine_special.cpp_FUN_0055fc9e
+// Original: engine_special.cpp_addParticle_FUN_0055fc9e
 // Address: 0055fc9e
-undefined4 FUN_0055fc9e(undefined4 param_1,undefined4 param_2);
+undefined4 addParticle(undefined4 param_1,undefined4 param_2);
 
-// Original: engine_special.cpp_FUN_0055fcce
+// Original: engine_special.cpp_flushParticleList_FUN_0055fcce
 // Address: 0055fcce
-undefined4 FUN_0055fcce(void);
+undefined4 flushParticleList(void);
 
-// Original: engine_special.cpp_FUN_0055fcf0
+// Original: engine_special.cpp_add3dLine_FUN_0055fcf0
 // Address: 0055fcf0
-undefined4 FUN_0055fcf0(undefined4 param_1,undefined4 param_2,undefined4 param_3);
+int __cdecl add3dLine(void *start_point,void *end_point,int line_style);
 
-// Original: engine_special.cpp_FUN_0055fd20
+// Original: engine_special.cpp_flushLineList_FUN_0055fd20
 // Address: 0055fd20
-undefined4 FUN_0055fd20(void);
+int __cdecl flushLineList(void);
 
 // Original: engine_special.cpp_clear_FUN_0055fd40
 // Address: 0055fd40
@@ -197,25 +197,25 @@ int __cdecl clearZBox(int left,int right,int top,int bottom);
 // Address: 0055ff40
 void __cdecl presentToExternalRenderer(int skip_buffer_copy);
 
-// Original: engine_special.cpp_FUN_00560030
+// Original: engine_special.cpp_masterZBuffer_FUN_00560030
 // Address: 00560030
-int __cdecl FUN_00560030(int slot);
+int __cdecl masterZBuffer(int slot);
 
-// Original: engine_special.cpp_FUN_00560050
+// Original: engine_special.cpp_restoreZBuffer_FUN_00560050
 // Address: 00560050
-int __cdecl FUN_00560050(int slot,int left,int top,int right,int bottom);
+int __cdecl restoreZBuffer(int slot,int left,int top,int right,int bottom);
 
-// Original: engine_special.cpp_FUN_00560090
+// Original: engine_special.cpp_getVideoMemory_FUN_00560090
 // Address: 00560090
-int __cdecl FUN_00560090(int *total_memory,int *available_memory,int *memory_type);
+int __cdecl getVideoMemory(int *total_memory,int *available_memory,int *memory_type);
 
-// Original: engine_special.cpp_FUN_005600c0
+// Original: engine_special.cpp_selectCard_FUN_005600c0
 // Address: 005600c0
-int __cdecl FUN_005600c0(int card_index);
+int __cdecl selectCard(int card_index);
 
-// Original: engine_special.cpp_FUN_005600e0
+// Original: engine_special.cpp_buildCardList_FUN_005600e0
 // Address: 005600e0
-undefined4 FUN_005600e0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5);
+int __cdecl buildCardList(int *out_card_count,char **out_driver_names,char **out_card_names,int *out_vendor_ids ,int *out_device_ids);
 
 // Original: engine_special.cpp_FUN_00560120
 // Address: 00560120
@@ -257,9 +257,9 @@ void __cdecl CExternalRenderer::ctor(CExternalRenderer *this_ptr);
 // Address: 00560310
 int __cdecl CExternalRenderer::validate(CExternalRenderer *this_ptr,CExternalRenderer *capabilities);
 
-// Original: engine_special.cpp_FUN_0056046e
+// Original: engine_special.cpp_switchRenderer_FUN_0056046e
 // Address: 0056046e
-void FUN_0056046e(char *param_1,undefined4 param_2);
+void switchRenderer(char *param_1,undefined4 param_2);
 
 // Original: engine_special.cpp_FUN_005604be
 // Address: 005604be

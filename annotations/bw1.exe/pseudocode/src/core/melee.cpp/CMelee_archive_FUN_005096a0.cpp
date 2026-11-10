@@ -9,34 +9,34 @@
 void __cdecl core_melee_cpp_CMelee_archive_FUN_005096a0(CMelee *this_ptr)
 
 {
-  core_weapon_cpp_CWeapon_archive_FUN_005ad8b0((CWeapon *)this_ptr);
+  core_weapon_cpp_CWeapon_archive_FUN_005ad8b0(&this_ptr->base);
   if (1 < g_CMeleeClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x578,"allowedAttackTypes");
+              (&this_ptr->allowed_attack_types,"allowedAttackTypes");
   }
   if (2 < g_CMeleeClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x57c,"strengthLo");
-    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x580,"strengthHi");
+    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->strength_lo,"strengthLo");
+    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->strength_hi,"strengthHi");
     core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x2f0,"canAttachLight");
+              (&(this_ptr->base).can_attach_light,"canAttachLight");
   }
   if (3 < g_CMeleeClassVersion) {
-    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0x584,"dismemberProb");
+    core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->dismember_prob,"dismemberProb");
   }
   if (4 < g_CMeleeClassVersion) {
     core_actor_cpp_archiveInteger_FUN_0040b670
-              ((int *)&this_ptr->field_0x588,"canGoInInventory");
+              (&this_ptr->can_go_in_inventory,"canGoInInventory");
   }
   if (5 < g_CMeleeClassVersion) {
-    core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0x59c,"ammoType");
+    core_actor_cpp_archiveInteger_FUN_0040b670(&this_ptr->ammo_type,"ammoType");
   }
   if (g_CMeleeClassVersion < 7) {
     return;
   }
   core_actor_cpp_archiveString_FUN_0040b440
-            (&this_ptr->field_0x5a0,"thrustHitCharacterSound");
+            (this_ptr->thrust_hit_character_sound,"thrustHitCharacterSound");
   core_actor_cpp_archiveString_FUN_0040b440
-            (&this_ptr->field_0x604,"swingHitCharacterSound");
-  core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0x668,"hitOtherSound");
+            (this_ptr->swing_hit_character_sound,"swingHitCharacterSound");
+  core_actor_cpp_archiveString_FUN_0040b440(this_ptr->hit_other_sound,"hitOtherSound");
   return;
 }

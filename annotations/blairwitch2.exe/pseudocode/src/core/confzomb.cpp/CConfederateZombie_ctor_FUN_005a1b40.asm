@@ -14,7 +14,7 @@
 ;   undefined4 DAT_005fef90
 ;
 ; Called Functions:
-;   core_confzomb.cpp_FUN_005a1e10
+;   core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -78,8 +78,8 @@ section .text
     PUSH 0x0                            ; 005a1c13
     PUSH 0x0                            ; 005a1c15
     PUSH EBX                            ; 005a1c17
-    CALL core_confzomb.cpp_FUN_005a1e10 ; 005a1c18
-        ;   XREF to: 005a1e10 (UNCONDITIONAL_CALL)  ; undefined core_confzomb.cpp_FUN_005a1e10()
+    CALL core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10 ; 005a1c18
+        ;   XREF to: 005a1e10 (UNCONDITIONAL_CALL)  ; void core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10(CConfederateZombie * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005a1c1d
     PUSH 0x5efd75                       ; 005a1c20
     PUSH 0x5efd81                       ; 005a1c25

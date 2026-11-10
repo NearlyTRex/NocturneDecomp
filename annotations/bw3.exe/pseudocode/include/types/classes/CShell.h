@@ -2,15 +2,22 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CShell
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x60 (96 bytes)
 #pragma pack(push, 1)
 typedef struct CShell {
-    char field_0[96]; // 0x0
+    char field_0[64]; // 0x0
+    CVector3f euler_angles; // 0x40
+    CVector3f angular_velocity; // 0x4c
+    int bounce_count; // 0x58
+    struct CKeyFramedModel* model_ptr; // 0x5c
 } CShell;
 #pragma pack(pop)
 

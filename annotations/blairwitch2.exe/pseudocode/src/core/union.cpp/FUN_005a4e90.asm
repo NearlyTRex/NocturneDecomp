@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_union.cpp_FUN_005a4c50 at 005a4ccd
+;   core_union.cpp_CUnion_processStates_FUN_005a4c50 at 005a4ccd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_MeleeAttack_005f050b

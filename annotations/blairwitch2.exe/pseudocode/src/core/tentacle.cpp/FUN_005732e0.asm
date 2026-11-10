@@ -11,8 +11,8 @@
 ; undefined        Stack[-0x3c]:1  local_3c
 ;
 ; XREF[2]:
-;   core_tentacle.cpp_FUN_005726c0 at 00572874
-;   core_tentacle.cpp_FUN_00573110 at 0057319a
+;   core_tentacle.cpp_CTentacle_attractActorToward_FUN_00573110 at 0057319a
+;   core_tentacle.cpp_CTentacle_process_FUN_005726c0 at 00572874
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0264c0b0
@@ -21,7 +21,7 @@
 ;   undefined4 DAT_0264c0bc
 ;
 ; Called Functions:
-;   core_xform.cpp_FUN_00593770
+;   core_xform.cpp_lerpMatrix3x4_FUN_00593770
 ;
 ; *****************************************************************************
 
@@ -50,8 +50,8 @@ section .text
     PUSH EAX                            ; 00573326
     LEA ESI,[ESP + 0x9c]                ; 00573327
     LEA EDI,[ESP + 0x3c]                ; 0057332e
-    CALL core_xform.cpp_FUN_00593770    ; 00573332
-        ;   XREF to: 00593770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00593770()
+    CALL core_xform.cpp_lerpMatrix3x4_FUN_00593770 ; 00573332
+        ;   XREF to: 00593770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_lerpMatrix3x4_FUN_00593770()
     MOV ECX,0xc                         ; 00573337
     LEA ESI,[ESP + 0x9c]                ; 0057333c
     ADD ESP,0xc                         ; 00573343
@@ -71,8 +71,8 @@ section .text
     PUSH EAX                            ; 00573376
     LEA ESI,[ESP + 0xc]                 ; 00573377
     LEA EDI,[ESP + 0x6c]                ; 0057337b
-    CALL core_xform.cpp_FUN_00593770    ; 0057337f
-        ;   XREF to: 00593770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00593770()
+    CALL core_xform.cpp_lerpMatrix3x4_FUN_00593770 ; 0057337f
+        ;   XREF to: 00593770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_lerpMatrix3x4_FUN_00593770()
     ADD ESP,0xc                         ; 00573384
     MOV ECX,0xc                         ; 00573387
     LEA EAX,[ESP + 0x60]                ; 0057338c
@@ -84,8 +84,8 @@ section .text
     PUSH EAX                            ; 005733a0
     LEA ESI,[ESP + 0xcc]                ; 005733a1
     MOV EDI,EBX                         ; 005733a8
-    CALL core_xform.cpp_FUN_00593770    ; 005733aa
-        ;   XREF to: 00593770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00593770()
+    CALL core_xform.cpp_lerpMatrix3x4_FUN_00593770 ; 005733aa
+        ;   XREF to: 00593770 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_lerpMatrix3x4_FUN_00593770()
     MOV ECX,0xc                         ; 005733af
     LEA ESI,[ESP + 0xcc]                ; 005733b4
     ADD ESP,0xc                         ; 005733bb

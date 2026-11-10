@@ -13,7 +13,7 @@ void core_lantern_cpp_FUN_0059ced0(int param_1)
   int iVar2;
   byte bVar3;
   float afStackY_1030 [1006];
-  CMatrix3x3f aCStack_70 [40];
+  CMatrix3x3f CStack_70;
   float fStack_48;
   float afStack_44 [4];
   uint uStack_34;
@@ -37,11 +37,12 @@ void core_lantern_cpp_FUN_0059ced0(int param_1)
     *(float *)(param_1 + 0x6dc) = afStack_44[3];
     *(uint *)(param_1 + 0x6e0) = uStack_34;
   }
-  core_dirmat_cpp_FUN_00449280(aCStack_70,(CVector3f *)(param_1 + 0x6e4));
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
+            (&CStack_70,(CVector3f *)(param_1 + 0x6e4));
   afStack_30[0] = -0.05;
   afStack_30[2] = 0.8;
   afStack_30[1] = -0.8;
-  core_dirmat_cpp_FUN_00449530(aCStack_70,afStack_44 + 5);
+  core_dirmat_cpp_FUN_00449530(&CStack_70,afStack_44 + 5);
   pfVar1 = (float *)(param_1 + 0x6d8);
   afStack_30[3] = fStack_48;
   afStack_20[(uint)bVar3 * -2] = afStack_44[(uint)bVar3 * -2];
@@ -56,7 +57,7 @@ void core_lantern_cpp_FUN_0059ced0(int param_1)
     *(uint *)(iVar2 + 8) = *(uint *)(param_1 + 0x6dc);
     *(uint *)(iVar2 + 0xc) = *(uint *)(param_1 + 0x6e0);
   }
-  core_dirmat_cpp_FUN_00449280
+  core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
             ((CMatrix3x3f *)(*(int *)(param_1 + 0x704) + 0x10),(CVector3f *)(param_1 + 0x6e4));
   return;
 }

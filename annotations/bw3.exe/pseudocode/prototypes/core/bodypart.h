@@ -9,9 +9,9 @@
 // Address: 00414520
 void staticInit(void);
 
-// Original: core_bodypart.cpp_FUN_00414550
+// Original: core_bodypart.cpp_createBodyPart_FUN_00414550
 // Address: 00414550
-CBodyPart * __cdecl FUN_00414550(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type);
+CBodyPart * __cdecl createBodyPart(CVector3f *position,UOrientationVector *orientation,CVector3f *initial_velocity,CDemonActor *scale_source,int dont_use_normals,int is_transparent,EBloodType blood_type);
 
 // Original: core_bodypart.cpp_factoryFuncBodyPart_FUN_00414720
 // Address: 00414720
@@ -37,77 +37,77 @@ void FUN_00414910(int param_1,undefined4 param_2,undefined4 param_3);
 // Address: 00414a60
 void __cdecl CBodyPart::renderGeometry(CBodyPart *this_ptr,int render_flags);
 
-// Original: core_bodypart.cpp_FUN_00414bd0
+// Original: core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0
 // Address: 00414bd0
-undefined4 FUN_00414bd0(CBodyPart *param_1);
+int __cdecl CBodyPart::renderOpaque(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00414d40
+// Original: core_bodypart.cpp_CBodyPart_renderBackground_FUN_00414d40
 // Address: 00414d40
-void FUN_00414d40(CBodyPart *param_1,int param_2);
+void __cdecl CBodyPart::renderBackground(CBodyPart *this_ptr,int layer_flag);
 
-// Original: core_bodypart.cpp_FUN_00414e90
+// Original: core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00414e90
 // Address: 00414e90
-undefined4 FUN_00414e90(CBodyPart *param_1);
+int __cdecl CBodyPart::renderTransparent(CBodyPart *this_ptr);
 
 // Original: core_bodypart.cpp_CBodyPart_setup_FUN_00414f60
 // Address: 00414f60
 void __cdecl CBodyPart::setup(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00414fd0
+// Original: core_bodypart.cpp_CBodyPart_archive_FUN_00414fd0
 // Address: 00414fd0
-void FUN_00414fd0(CBodyPart *param_1);
+void __cdecl CBodyPart::archive(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00415350
+// Original: core_bodypart.cpp_CBodyPart_process_FUN_00415350
 // Address: 00415350
-void FUN_00415350(CBodyPart *param_1,float param_2);
+void __cdecl CBodyPart::process(CBodyPart *this_ptr,float delta_time);
 
-// Original: core_bodypart.cpp_FUN_00415570
+// Original: core_bodypart.cpp_CBodyPart_processFires_FUN_00415570
 // Address: 00415570
-void __cdecl FUN_00415570(CBodyPart *this_ptr,float delta_time);
+void __cdecl CBodyPart::processFires(CBodyPart *this_ptr,float delta_time);
 
-// Original: core_bodypart.cpp_FUN_004156d0
+// Original: core_bodypart.cpp_CBodyPart_getCollisionType_FUN_004156d0
 // Address: 004156d0
-undefined4 FUN_004156d0(void);
+ECollisionType __cdecl CBodyPart::getCollisionType(CBodyPart *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_bodypart.cpp_FUN_004156e0
+// Original: core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_004156e0
 // Address: 004156e0
-void FUN_004156e0(int param_1);
+CBoundingBox3D * __cdecl CBodyPart::getBoundingBox(CBodyPart *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_bodypart.cpp_CBodyPart_canPickup_FUN_00415710
 // Address: 00415710
 int __cdecl CBodyPart::canPickup(CBodyPart *this_ptr,CDemonActor *picker);
 
-// Original: core_bodypart.cpp_FUN_00415730
+// Original: core_bodypart.cpp_CBodyPart_pickup_FUN_00415730
 // Address: 00415730
-void FUN_00415730(int param_1,undefined4 param_2);
+void __cdecl CBodyPart::pickup(CBodyPart *this_ptr,CDemonActor *carrier);
 
-// Original: core_bodypart.cpp_FUN_00415740
+// Original: core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740
 // Address: 00415740
-void FUN_00415740(int param_1,CVector3f *param_2);
+void __cdecl CBodyPart::onDropped(CBodyPart *this_ptr,CVector3f *drop_position);
 
-// Original: core_bodypart.cpp_FUN_004157b0
+// Original: core_bodypart.cpp_CBodyPart_getCarrier_FUN_004157b0
 // Address: 004157b0
-undefined4 FUN_004157b0(int param_1);
+CDemonActor * __cdecl CBodyPart::getCarrier(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_004157c0
+// Original: core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0
 // Address: 004157c0
-void __cdecl FUN_004157c0(CBodyPart *this_ptr);
+void __cdecl CBodyPart::finalizeGeometry(CBodyPart *this_ptr);
 
-// Original: core_bodypart.cpp_FUN_00415e30
+// Original: core_bodypart.cpp_CBodyPart_applyRotation_FUN_00415e30
 // Address: 00415e30
-void __cdecl FUN_00415e30(CBodyPart *this_ptr,CVector3f *euler_angles);
+void __cdecl CBodyPart::applyRotation(CBodyPart *this_ptr,CVector3f *euler_angles);
 
-// Original: core_bodypart.cpp_FUN_00416330
+// Original: core_bodypart.cpp_CBodyPart_optimizeBoundingBoxRotation_FUN_00416330
 // Address: 00416330
-void __cdecl FUN_00416330(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max);
+void __cdecl CBodyPart::optimizeBoundingBoxRotation(CBodyPart *this_ptr,CVector3i *out_bbox_min,CVector3i *out_bbox_max);
 
 // Original: core_bodypart.cpp_CBodyPart_addAttachedModel_FUN_004166d0
 // Address: 004166d0
 void __cdecl CBodyPart::addAttachedModel(CBodyPart *this_ptr,char *model_name,CVector3f *position_offset,CVector3f *euler_angles);
 
-// Original: core_bodypart.cpp_FUN_00416750
+// Original: core_bodypart.cpp_CBodyPart_addFire_FUN_00416750
 // Address: 00416750
-void __cdecl FUN_00416750(CBodyPart *this_ptr,CVector3f *position);
+void __cdecl CBodyPart::addFire(CBodyPart *this_ptr,CVector3f *position);
 
 // Original: core_bodypart.cpp_CBodyPart_addTexture_FUN_00416890
 // Address: 00416890

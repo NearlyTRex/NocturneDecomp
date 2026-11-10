@@ -21,7 +21,7 @@
 ;   ... and 7 more
 ;
 ; Referenced Globals:
-;   undefined4 g_CWeaponVTable
+;   CWeapon_full_vtable g_CWeaponVTable
 ;   WatcomTypeInfo g_CWeaponTypeInfo
 ;
 ; Called Functions:

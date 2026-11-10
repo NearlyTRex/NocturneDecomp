@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[2]:
-;   wincore_wddvmem.cpp_FUN_005acff0 at 005ad0bc
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 at 005ad0bc
 ;   wincore_winrun.cpp_FUN_005b27d0 at 005b28dc
 ;
 ; Referenced Globals:
@@ -30,7 +30,7 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_ddraw.c_DirectDrawCreate
 ;   crt_string.c__stricmp_FUN_005c04e0
-;   engine_special.cpp_FUN_005821c0
+;   engine_special.cpp_setResolutionAndColorTable_FUN_005821c0
 ;   SetFocus
 ;   wincore_wddvmem.cpp_FUN_005ac300
 ;
@@ -62,8 +62,8 @@ section .text
     PUSH ECX                            ; 005ad304
     MOV EBX,dword ptr [0x0061b498]      ; 005ad305 | DAT_0061b498
     PUSH EBX                            ; 005ad30b
-    CALL engine_special.cpp_FUN_005821c0 ; 005ad30c
-        ;   XREF to: 005821c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005821c0(int width, int height, int bits_per_pixel)
+    CALL engine_special.cpp_setResolutionAndColorTable_FUN_005821c0 ; 005ad30c
+        ;   XREF to: 005821c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_setResolutionAndColorTable_FUN_005821c0(int width, int height, int bits_per_pixel)
     ADD ESP,0xc                         ; 005ad311
     TEST EAX,EAX                        ; 005ad314
     JNZ 0x005ad3bb                      ; 005ad316

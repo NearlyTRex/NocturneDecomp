@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 52,
+    "complexity_score": 27,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 44
@@ -35,14 +34,14 @@
       "name": "sound_sndmain.cpp_FUN_005727e0"
     },
     {
-      "addr": "00572ac0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572ac0"
-    },
-    {
       "addr": "00572b40",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00572b40"
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00572b40"
+    },
+    {
+      "addr": "00572ac0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0"
     },
     {
       "addr": "00572d20",
@@ -136,22 +135,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "if ((_DAT_01cc90b0 <= trigger_frame) && (trigger_frame < *(float *)&this_ptr->field_0x15c)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x490",
-      "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_005727e0((CVector3f *)&this_ptr->field_0x490);",
-      "type": "unnamed_field"
     }
   ]
 }

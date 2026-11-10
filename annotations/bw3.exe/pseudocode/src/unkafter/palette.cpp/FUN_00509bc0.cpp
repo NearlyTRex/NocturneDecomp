@@ -39,7 +39,7 @@ uint unkafter_palette_cpp_FUN_00509bc0(int *param_1,char *param_2,int param_3,in
   iVar3 = round();
   *(int *)((int)param_1 + iVar3 + 0x194) = (int)ROUND(fVar6);
   if (param_5 < 0) {
-    uVar4 = engine_font_cpp_FUN_004b12e0();
+    uVar4 = engine_font_cpp_getDefaultTextColor_FUN_004b12e0();
     iVar3 = *param_1;
   }
   else {

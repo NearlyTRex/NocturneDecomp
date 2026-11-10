@@ -14,7 +14,7 @@
 ;   TerminatedCString s_Stop_hardware_sfx_second_005e9a88
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   sound_snddx.cpp_FUN_00554ad0
 ;   sound_sndmain.cpp_FUN_005549c0
 ;
@@ -116,8 +116,8 @@ section .text
     PUSH 0x5e9a3b                       ; 00554f43 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 00554f48
     PUSH EAX                            ; 00554f4c
-    CALL crt_unknown.c_FUN_005b7790     ; 00554f4d
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00554f4d
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 00554f52
     MOV EAX,ESP                         ; 00554f55
     PUSH EAX                            ; 00554f57

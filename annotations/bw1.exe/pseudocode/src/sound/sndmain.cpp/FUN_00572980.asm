@@ -9,11 +9,11 @@
 ; XREF[7]:
 ;   core_event.cpp_FUN_004a1d00 at 004a4a70
 ;   core_game.cpp_CGame_rollCredits_FUN_004d8e50 at 004d91bb
-;   core_script.cpp_FUN_0054aa60 at 0054abc6
+;   core_script.cpp_CScript_startDialogLine_FUN_0054aa60 at 0054abc6
+;   core_sound.cpp_CSound_configure_FUN_0057d6a0 at 0057d797
+;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d101
 ;   core_sound.cpp_FUN_0057c57e at 0057c9b5
 ;   core_sound.cpp_FUN_0057cc00 at 0057ccdc
-;   core_sound.cpp_FUN_0057ce10 at 0057d101
-;   core_sound.cpp_FUN_0057d6a0 at 0057d797
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005f3dd9

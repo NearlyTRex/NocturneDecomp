@@ -13,9 +13,9 @@ void staticInit(void);
 // Address: 00416e90
 void FUN_00416e90(int param_1);
 
-// Original: core_boneguy.cpp_FUN_00416f50
+// Original: core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_00416f50
 // Address: 00416f50
-void FUN_00416f50(int param_1);
+void getWorldBoundingBoxCenter(int param_1);
 
 // Original: core_boneguy.cpp_factoryFuncBoneGuy_FUN_00417050
 // Address: 00417050
@@ -25,81 +25,81 @@ void factoryFuncBoneGuy(void);
 // Address: 00417070
 CDemonActorType * CBoneGuy::getActorType(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_0041707c
+// Original: core_boneguy.cpp_rgbToHsv_FUN_0041707c
 // Address: 0041707c
-void FUN_0041707c(float *param_1);
+void rgbToHsv(float *param_1);
 
-// Original: core_boneguy.cpp_FUN_00417240
+// Original: core_boneguy.cpp_hsvToRgb_FUN_00417240
 // Address: 00417240
-void FUN_00417240(float *param_1);
+void hsvToRgb(float *param_1);
 
 // Original: core_boneguy.cpp_CBoneGuy_ctor_FUN_00417400
 // Address: 00417400
 CBoneGuy * __cdecl CBoneGuy::ctor(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00417630
+// Original: core_boneguy.cpp_CBoneGuy_setup_FUN_00417630
 // Address: 00417630
-void FUN_00417630(CEnemy *param_1);
+void __cdecl CBoneGuy::setup(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_004179b0
+// Original: core_boneguy.cpp_CBoneGuy_process_FUN_004179b0
 // Address: 004179b0
-void FUN_004179b0(CBoneGuy *param_1,float param_2);
+void __cdecl CBoneGuy::process(CBoneGuy *this_ptr,float delta_time);
 
-// Original: core_boneguy.cpp_FUN_004186b0
+// Original: core_boneguy.cpp_CBoneGuy_getCarryObjToBodyXForm_FUN_004186b0
 // Address: 004186b0
-void FUN_004186b0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CBoneGuy::getCarryObjToBodyXForm(CBoneGuy *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_boneguy.cpp_FUN_00418930
+// Original: core_boneguy.cpp_CBoneGuy_updatePickupBehavior_FUN_00418930
 // Address: 00418930
-int __cdecl FUN_00418930(CBoneGuy *this_ptr,float delta_time);
+int __cdecl CBoneGuy::updatePickupBehavior(CBoneGuy *this_ptr,float delta_time);
 
 // Original: core_boneguy.cpp_CBoneGuy_renderOpaque_FUN_00418f60
 // Address: 00418f60
 int __cdecl CBoneGuy::renderOpaque(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00418f90
+// Original: core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00418f90
 // Address: 00418f90
-int FUN_00418f90(CCharacter *param_1);
+int __cdecl CBoneGuy::renderTransparent(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_CBoneGuy_archive_FUN_00419070
 // Address: 00419070
 void __cdecl CBoneGuy::archive(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_004192c0
+// Original: core_boneguy.cpp_CBoneGuy_reset_FUN_004192c0
 // Address: 004192c0
-undefined4 FUN_004192c0(void);
+void __cdecl CBoneGuy::reset(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_004192d0
+// Original: core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0
 // Address: 004192d0
-void FUN_004192d0(CBoneGuy *param_1,int param_2);
+void __cdecl CBoneGuy::processDamage(CBoneGuy *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_boneguy.cpp_FUN_004193c0
+// Original: core_boneguy.cpp_CBoneGuy_getTargetPoints_FUN_004193c0
 // Address: 004193c0
-undefined4 FUN_004193c0(int param_1,undefined4 *param_2);
+int __cdecl CBoneGuy::getTargetPoints(CBoneGuy *this_ptr,CVector3f *out_points_array);
 
-// Original: core_boneguy.cpp_FUN_00419550
+// Original: core_boneguy.cpp_CBoneGuy_explode_FUN_00419550
 // Address: 00419550
-void __cdecl FUN_00419550(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::explode(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00419790
+// Original: core_boneguy.cpp_CBoneGuy_beginRecombine_FUN_00419790
 // Address: 00419790
-void __cdecl FUN_00419790(CBoneGuy *this_ptr);
+void __cdecl CBoneGuy::beginRecombine(CBoneGuy *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00419860
+// Original: core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_00419860
 // Address: 00419860
-ECollisionType FUN_00419860(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CBoneGuy::getCollisionType(CBoneGuy *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_boneguy.cpp_FUN_00419880
+// Original: core_boneguy.cpp_CBoneGuy_getDeathState_FUN_00419880
 // Address: 00419880
-int FUN_00419880(int param_1);
+EDeathState __cdecl CBoneGuy::getDeathState(CBoneGuy *this_ptr);
 
 // Original: core_boneguy.cpp_FUN_004198b0
 // Address: 004198b0
 void FUN_004198b0(void);
 
-// Original: core_boneguy.cpp_FUN_004198d0
+// Original: core_boneguy.cpp_CSkeletonForest_getActorType_FUN_004198d0
 // Address: 004198d0
-undefined * FUN_004198d0(void);
+CDemonActorType * __cdecl CSkeletonForest::getActorType(CSkeletonForest *this_ptr);
 
 // Original: core_boneguy.cpp_CSkeletonForest_ctor_FUN_004198e0
 // Address: 004198e0
@@ -109,9 +109,9 @@ CSkeletonForest * CSkeletonForest::ctor(CSkeletonForest *this_ptr);
 // Address: 00419950
 void FUN_00419950(void);
 
-// Original: core_boneguy.cpp_FUN_00419970
+// Original: core_boneguy.cpp_CSkeletonIndian_getActorType_FUN_00419970
 // Address: 00419970
-undefined * FUN_00419970(void);
+CDemonActorType * __cdecl CSkeletonIndian::getActorType(CSkeletonIndian *this_ptr);
 
 // Original: core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980
 // Address: 00419980
@@ -121,9 +121,9 @@ CSkeletonIndian * CSkeletonIndian::ctor(CSkeletonIndian *this_ptr);
 // Address: 004199f0
 void FUN_004199f0(void);
 
-// Original: core_boneguy.cpp_FUN_00419a10
+// Original: core_boneguy.cpp_CSkeletonDemon_getActorType_FUN_00419a10
 // Address: 00419a10
-undefined * FUN_00419a10(void);
+CDemonActorType * __cdecl CSkeletonDemon::getActorType(CSkeletonDemon *this_ptr);
 
 // Original: core_boneguy.cpp_CSkeletonDemon_ctor_FUN_00419a20
 // Address: 00419a20
@@ -133,17 +133,17 @@ CSkeletonDemon * CSkeletonDemon::ctor(CSkeletonDemon *this_ptr);
 // Address: 00419a90
 void FUN_00419a90(void);
 
-// Original: core_boneguy.cpp_FUN_00419ab0
+// Original: core_boneguy.cpp_CBaalSkel_getActorType_FUN_00419ab0
 // Address: 00419ab0
-undefined * FUN_00419ab0(void);
+CDemonActorType * __cdecl CBaalSkel::getActorType(CBaalSkel *this_ptr);
 
-// Original: core_boneguy.cpp_FUN_00419b40
+// Original: core_boneguy.cpp_CBaalSkel_process_FUN_00419b40
 // Address: 00419b40
-void FUN_00419b40(CBoneGuy *param_1,float param_2);
+void __cdecl CBaalSkel::process(CBaalSkel *this_ptr,float delta_time);
 
-// Original: core_boneguy.cpp_FUN_0041a810
+// Original: core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810
 // Address: 0041a810
-void FUN_0041a810(CBoneGuy *param_1,int param_2);
+void __cdecl CBaalSkel::processDamage(CBaalSkel *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_boneguy.cpp_CSkeletonDemon_dtor_FUN_0041a950
 // Address: 0041a950

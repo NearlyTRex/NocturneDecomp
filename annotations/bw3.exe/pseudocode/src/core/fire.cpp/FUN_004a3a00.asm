@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_storm.cpp_FUN_00568b50 at 00568c01
+;   core_storm.cpp_CStorm_fire_FUN_00568b50 at 00568c01
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_004a3a30

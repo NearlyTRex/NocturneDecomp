@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[17]:
-;   core_basicnpc.cpp_FUN_005a4880 at 005a4893
-;   core_belling.cpp_FUN_005a9060 at 005a9073
-;   core_confedrt.cpp_FUN_005a0b20 at 005a0b55
-;   core_confzomb.cpp_FUN_005a1e10 at 005a1e45
-;   core_dog1.cpp_FUN_005abe90 at 005abee0
-;   core_ghostchi.cpp_FUN_005a94c0 at 005a94f5
-;   core_grandma.cpp_FUN_005a7c20 at 005a7c33
-;   core_hag.cpp_FUN_005aa970 at 005aa9c0
-;   core_hand.cpp_FUN_005a9e10 at 005a9e45
-;   core_robin.cpp_FUN_005a60d0 at 005a60f6
+;   core_basicnpc.cpp_CBasicNPC_processStates_FUN_005a4880 at 005a4893
+;   core_belling.cpp_CBelling_processStates_FUN_005a9060 at 005a9073
+;   core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20 at 005a0b55
+;   core_confzomb.cpp_CConfederateZombie_processStates_FUN_005a1e10 at 005a1e45
+;   core_dog1.cpp_CDog_processStates_FUN_005abe90 at 005abee0
+;   core_ghostchi.cpp_CGhostChild_processStates_FUN_005a94c0 at 005a94f5
+;   core_grandma.cpp_CGrandma_processStates_FUN_005a7c20 at 005a7c33
+;   core_hag.cpp_CHag_processStates_FUN_005aa970 at 005aa9c0
+;   core_hand.cpp_CHand_processStates_FUN_005a9e10 at 005a9e45
+;   core_robin.cpp_CRobin_processStates_FUN_005a60d0 at 005a60f6
 ;   ... and 7 more
 ;
 ; Referenced Globals:

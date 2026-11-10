@@ -23,7 +23,7 @@
 ;   ... and 12 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   core_set.cpp_CDemonSet_computeLighting_FUN_005317c0
 ;   engine_drender.cpp_CDemonRenderer_applyDirectTransform_FUN_0046b300
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
@@ -246,8 +246,8 @@ section .text
     PUSH 0x40                           ; 004c7846
     MOV dword ptr [ESP + 0x104],EAX     ; 004c7848
     MOV EBX,dword ptr [EBX + 0x40]      ; 004c784f
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c7852
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c7852
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c7857
     CMP EBX,0x1                         ; 004c785a
     JNC 0x004c7d86                      ; 004c785d

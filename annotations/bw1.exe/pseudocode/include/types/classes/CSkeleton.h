@@ -2,15 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CQuaternion4f;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SBone.h"
 
 // Structure: CSkeleton
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1ec9c (126108 bytes)
 #pragma pack(push, 1)
 typedef struct CSkeleton {
-    char field_0[126108]; // 0x0
+    char field_0[122488]; // 0x0
+    int bone_count; // 0x1de78
+    SBone bone_list[100]; // 0x1de7c
+    char field_122592[3500]; // 0x1dee0
+    int frame_count; // 0x1ec8c
+    struct CQuaternion4f* bone_angle_frames; // 0x1ec90
+    char field_126100[8]; // 0x1ec94
 } CSkeleton;
 #pragma pack(pop)
 

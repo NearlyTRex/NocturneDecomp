@@ -69,8 +69,8 @@ void core_fire_cpp_FUN_004a1760(void)
   if (0 < _DAT_01c8eea8) {
     this_ptr_00 = g_StakePool;
     do {
-      if (*(int *)&this_ptr_00->field_0x258 != 0) {
-        core_fire_cpp_FUN_00497e80(this_ptr_00);
+      if ((this_ptr_00->physics_box).is_valid != 0) {
+        core_fire_cpp_CStake_process_FUN_00497e80(this_ptr_00);
       }
       iVar15 = iVar15 + 1;
       this_ptr_00 = this_ptr_00 + 1;
@@ -85,7 +85,7 @@ void core_fire_cpp_FUN_004a1760(void)
   } while (pCVar5 != (CGlassParticle *)&DAT_01cefd10);
   this_ptr_01 = (CBulletTrail *)0x1cefd14;
   do {
-    if (*(int *)&this_ptr_01->field_0x20 != 0) {
+    if (this_ptr_01->frames_remaining != 0) {
       core_fire_cpp_CBulletTrail_process_FUN_0049ad00(this_ptr_01);
     }
     this_ptr_01 = this_ptr_01 + 1;
@@ -129,7 +129,7 @@ void core_fire_cpp_FUN_004a1760(void)
   }
   this_ptr_02 = (CExplosion *)0x1cf6090;
   do {
-    core_fire_cpp_FUN_0049c890(this_ptr_02);
+    core_fire_cpp_CExplosion_process_FUN_0049c890(this_ptr_02);
     this_ptr_02 = this_ptr_02 + 1;
   } while (this_ptr_02 != (CExplosion *)&DAT_01cf61d0);
   pCVar10 = g_TossPool;
@@ -139,7 +139,7 @@ void core_fire_cpp_FUN_004a1760(void)
   } while (pCVar10 != (CToss *)&DAT_01cfaff4);
   this_ptr_03 = (CCrater *)0x1cfaff8;
   do {
-    core_fire_cpp_FUN_0049d8b0(this_ptr_03);
+    core_fire_cpp_CCrater_process_FUN_0049d8b0(this_ptr_03);
     this_ptr_03 = this_ptr_03 + 1;
   } while (this_ptr_03 != (CCrater *)&DAT_01cfb8b8);
   this_ptr_04 = (CGunFlame *)0x1cfb8bc;
@@ -156,12 +156,12 @@ void core_fire_cpp_FUN_004a1760(void)
   } while (this_ptr_04 != (CGunFlame *)&DAT_01d00eac);
   this_ptr_05 = (CLightningBolt *)0x1d00eb0;
   do {
-    core_fire_cpp_FUN_0049f4e0(this_ptr_05);
+    core_fire_cpp_CLightningBolt_process_FUN_0049f4e0(this_ptr_05);
     this_ptr_05 = this_ptr_05 + 1;
   } while (this_ptr_05 != (CLightningBolt *)&DAT_01d01ab0);
   this_ptr_06 = (CTrail *)0x1d01ab4;
   do {
-    core_fire_cpp_FUN_004a0630(this_ptr_06);
+    core_fire_cpp_CTrail_process_FUN_004a0630(this_ptr_06);
     this_ptr_06 = this_ptr_06 + 1;
   } while (this_ptr_06 != (CTrail *)&DAT_01d028c4);
   pCVar11 = g_ShellPool;

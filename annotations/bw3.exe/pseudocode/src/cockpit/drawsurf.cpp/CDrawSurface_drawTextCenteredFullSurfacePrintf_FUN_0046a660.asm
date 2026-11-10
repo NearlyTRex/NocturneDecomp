@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   format
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0046a750 at 0046ad3c
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750 at 0046ad3c
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredFullSurface_FUN_0046a640

@@ -12,9 +12,9 @@
 ; char *           Stack[0x18]:4   button_text
 ;
 ; XREF[4]:
-;   shape_edittool.cpp_FUN_00494690 at 004949d5
-;   shape_edittool.cpp_FUN_0049b060 at 0049b662
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_0049b060 at 0049b662
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_00493d40 at 00493ee1
+;   shape_edittool.cpp_showMultiChoiceDialog_FUN_00494690 at 004949d5
 ;   shape_edittool.cpp_showTextInputDialog_FUN_00493720 at 00493897
 ;
 ; *****************************************************************************

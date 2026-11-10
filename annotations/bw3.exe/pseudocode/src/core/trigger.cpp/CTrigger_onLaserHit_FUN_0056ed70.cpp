@@ -9,10 +9,10 @@
 void __cdecl core_trigger_cpp_CTrigger_onLaserHit_FUN_0056ed70(CTrigger *this_ptr,SLaserInfo *laser_info)
 
 {
-  core_actor_cpp_FUN_004096c0(this_ptr,laser_info);
-  if ((*(int *)&this_ptr->field_0x174 == 5) &&
-     (*(int *)&this_ptr->field_0x2f4 == *(int *)(laser_info + 8))) {
-    *(uint *)&this_ptr->field_0x2f0 = 1;
+  core_actor_cpp_CDemonActor_onLaserHit_FUN_004096c0(&this_ptr->base,laser_info);
+  if ((this_ptr->trigger_cause == TRIGGER_CAUSE_LASER) &&
+     (this_ptr->laser_type == *(int *)(laser_info + 8))) {
+    this_ptr->event_flag = 1;
   }
   *(uint *)(laser_info + 0x50) = 0;
   *(uint *)(laser_info + 0x48) = 0x3f800000;

@@ -11,18 +11,18 @@
 void __cdecl core_dcube_cpp_CDemonCube_allocVoxelMemory_FUN_00453d10(CDemonCube *this_ptr)
 
 {
-  int iVar1;
+  SVoxelGrid *pSVar1;
   
-  iVar1 = FUN_005a4b20(0x40,1);
-  *(int *)this_ptr = iVar1;
-  if (iVar1 == 0) {
+  pSVar1 = (SVoxelGrid *)FUN_005a4b20(0x40,1);
+  this_ptr->voxel_buffer1 = pSVar1;
+  if (pSVar1 == (SVoxelGrid *)0x0) {
     _DAT_01d71de0 = "..\\core\\dcube.cpp";
     _DAT_01d71de4 = 0x5f3;
     core_main_c_FUN_004e4330("CDemonCube::allocMemory - Out of voxel memory");
   }
-  iVar1 = FUN_005a4b20(0x40,1);
-  *(int *)&this_ptr->field_0x4 = iVar1;
-  if (iVar1 != 0) {
+  pSVar1 = (SVoxelGrid *)FUN_005a4b20(0x40,1);
+  this_ptr->voxel_buffer2 = pSVar1;
+  if (pSVar1 != (SVoxelGrid *)0x0) {
     return;
   }
   _DAT_01d71de0 = "..\\core\\dcube.cpp";

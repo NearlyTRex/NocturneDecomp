@@ -2,15 +2,36 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CMorph.h"
 
 // Structure: CVampireBoss
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc3b9c (801692 bytes)
 #pragma pack(push, 1)
 typedef struct CVampireBoss {
-    char field_0[801692]; // 0x0
+    CEnemy base; // 0x0
+    CDeformableModelInstance model; // 0x10af8
+    char field_77228[721296]; // 0x12dac
+    int form; // 0xc2f3c
+    CMorph morph; // 0xc2f40
+    float morph_t; // 0xc3b6c
+    float action_timer; // 0xc3b70
+    float flee_timer; // 0xc3b74
+    int has_attacked; // 0xc3b78
+    uint sfx_handle; // 0xc3b7c
+    int bat_ai_state; // 0xc3b80
+    int waypoint_index; // 0xc3b84
+    struct CDemonActor* way_point_0; // 0xc3b88
+    struct CDemonActor* way_point_1; // 0xc3b8c
+    struct CDemonActor* way_point_2; // 0xc3b90
+    struct CDemonActor* way_point_3; // 0xc3b94
+    int follow_result; // 0xc3b98
 } CVampireBoss;
 #pragma pack(pop)
 

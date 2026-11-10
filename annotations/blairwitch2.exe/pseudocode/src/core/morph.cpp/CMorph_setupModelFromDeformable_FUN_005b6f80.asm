@@ -9,13 +9,13 @@
 ; CDeformableModelInstance * Stack[0xc]:4   model_ptr
 ;
 ; XREF[7]:
-;   core_biggs.cpp_FUN_00414dd0 at 00414e08
-;   core_mimic.cpp_FUN_004f04f0 at 004f0764
-;   core_moloch.cpp_FUN_00501480 at 005014eb
-;   core_moloch.cpp_FUN_00501530 at 00501be4
-;   core_passngr.cpp_FUN_005115e0 at 00511651
-;   core_succubus.cpp_FUN_0056f3a0 at 0056f609
-;   core_vampboss.cpp_FUN_00581660 at 00581750
+;   core_biggs.cpp_CBiggs_setup_FUN_00414dd0 at 00414e08
+;   core_mimic.cpp_CMimic_setup_FUN_004f04f0 at 004f0764
+;   core_moloch.cpp_CMoloch_process_FUN_00501530 at 00501be4
+;   core_moloch.cpp_CMoloch_setup_FUN_00501480 at 005014eb
+;   core_passngr.cpp_CPassenger_setup_FUN_005115e0 at 00511651
+;   core_succubus.cpp_CSuccubus_setup_FUN_0056f3a0 at 0056f609
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_00581660 at 00581750
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromDeformableModel_FUN_005b6350

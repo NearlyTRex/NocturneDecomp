@@ -11,8 +11,8 @@
 ; char *           Stack[0x14]:4   message
 ;
 ; XREF[2]:
-;   core_netgame.cpp_FUN_00504d60 at 00505210
-;   core_netgame.cpp_FUN_005064d0 at 005065f3
+;   core_netgame.cpp_CNetGame_processChatOut_FUN_005064d0 at 005065f3
+;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60 at 00505210
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c

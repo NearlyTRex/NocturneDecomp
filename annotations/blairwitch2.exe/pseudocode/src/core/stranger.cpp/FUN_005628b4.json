@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 205,
-    "complexity_score": 1132,
+    "complexity_score": 1118,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 67,
-    "suspect_count": 103,
+    "pseudocode_lines": 83,
+    "suspect_count": 100,
     "suspect_types": [
       "concat_reconstruction",
       "nonstandard_int",
@@ -18,7 +18,7 @@
       "unnamed_field",
       "unrolled_memset"
     ],
-    "total_lines": 272
+    "total_lines": 288
   },
   "cross_references": [],
   "function": {
@@ -37,7 +37,7 @@
     {
       "addr": "0042a330",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_0042a330"
+      "name": "core_charactr.cpp_CCharacter_addLayerAction_FUN_0042a330"
     },
     {
       "addr": "005b15c0",
@@ -428,32 +428,16 @@
       "line": 30,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "((CDeformableModelInstance *)&unaff_EBX->field_0x2b4,\"p?stranger.dfm\" + 2);",
+      "text": "(&unaff_EBX->model,\"p?stranger.dfm\" + 2);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x2b4",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&unaff_EBX->field_0x2b4,\"p?stranger.dfm\" + 2);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 31,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(uint *)&unaff_EBX->field_0x2d04 = 0;",
+      "text": "unaff_EBX->layer_action_index = 0;",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x2d04",
-      "severity": "mild",
-      "text": "*(uint *)&unaff_EBX->field_0x2d04 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
@@ -729,26 +713,10 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 49,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,1,\"draw_stand2holsters\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 50,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,1,2,\"draw_holsters2aimPistols\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 51,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,3,\"draw_stand2coatPocket\",0);",
+      "text": "(unaff_EBX,0,1,\"draw_stand2holsters\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -756,15 +724,7 @@
       "line": 52,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,3,4,\"draw_coatPocket2aimShotgun\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 53,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,3,5,\"draw_coatPocket2aimFlameThrower\",0);",
+      "text": "(unaff_EBX,1,2,\"draw_holsters2aimPistols\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -772,15 +732,7 @@
       "line": 54,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,1,3,\"draw_holsters2CoatPocket\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 55,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,6,\"draw_stand2TossAim\",1);",
+      "text": "(unaff_EBX,0,3,\"draw_stand2coatPocket\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -788,15 +740,7 @@
       "line": 56,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,6,0,\"draw_tossAim2Stand\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 57,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xb,4,\"draw_shotGunRecoil\",1);",
+      "text": "(unaff_EBX,3,4,\"draw_coatPocket2aimShotgun\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -804,15 +748,7 @@
       "line": 58,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,3,7,\"draw_coatPocket2aimTommy\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 59,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,7,7,\"draw_tommyRecoil\",0);",
+      "text": "(unaff_EBX,3,5,\"draw_coatPocket2aimFlameThrower\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -820,15 +756,7 @@
       "line": 60,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0,8,\"draw_stand2spearhold\",0);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 61,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xc,8,\"draw_spearStab\",1);",
+      "text": "(unaff_EBX,1,3,\"draw_holsters2CoatPocket\",0);",
       "type": "unaffected_reg"
     },
     {
@@ -836,15 +764,7 @@
       "line": 62,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,0xc,8,\"draw_spearOverheadswing\",1);",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 63,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,9,9,\"draw_holdCrate\",0);",
+      "text": "(unaff_EBX,0,6,\"draw_stand2TossAim\",1);",
       "type": "unaffected_reg"
     },
     {
@@ -852,36 +772,92 @@
       "line": 64,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,3,10,\"draw_coatPocket2GasMask\",0);",
+      "text": "(unaff_EBX,6,0,\"draw_tossAim2Stand\",1);",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 65,
+      "line": 66,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "core_charactr_cpp_FUN_0042a330(unaff_EBX,10,0,\"draw_gasMask2Stand\",0);",
+      "text": "(unaff_EBX,0xb,4,\"draw_shotGunRecoil\",1);",
       "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 67,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "((CClothList *)&unaff_EBX->field_0x2d0c,\"strcoat.cth\");",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x2d0c",
-      "severity": "mild",
-      "text": "((CClothList *)&unaff_EBX->field_0x2d0c,\"strcoat.cth\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Unaffected register variable",
       "line": 68,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,3,7,\"draw_coatPocket2aimTommy\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 70,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,7,7,\"draw_tommyRecoil\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 72,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0,8,\"draw_stand2spearhold\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 74,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0xc,8,\"draw_spearStab\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 76,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,0xc,8,\"draw_spearOverheadswing\",1);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 78,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,9,9,\"draw_holdCrate\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 80,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,3,10,\"draw_coatPocket2GasMask\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 82,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX,10,0,\"draw_gasMask2Stand\",0);",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 83,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "core_cloth_cpp_CClothList_add_FUN_005b15c0(&unaff_EBX->cloth_list,\"strcoat.cth\");",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 84,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "*(uint *)&unaff_EBX[2].field_0x4418 = 0;",
@@ -889,7 +865,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 68,
+      "line": 84,
       "match": "field_0x4418",
       "severity": "mild",
       "text": "*(uint *)&unaff_EBX[2].field_0x4418 = 0;",

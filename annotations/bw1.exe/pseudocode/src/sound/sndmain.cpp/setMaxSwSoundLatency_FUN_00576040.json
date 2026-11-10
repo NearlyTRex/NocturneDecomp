@@ -1,0 +1,189 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 40,
+    "complexity_score": 60,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 20,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 60
+  },
+  "cross_references": [
+    {
+      "addr": "005760b0",
+      "from_addr": "00576213",
+      "name": "sound_sndmain.cpp_readIni_FUN_005760b0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00576040",
+    "address_range": [
+      [
+        "00576040",
+        "005760af"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_setMaxSwSoundLatency_FUN_00576040",
+    "signature": "void __cdecl sound_sndmain_cpp_setMaxSwSoundLatency_FUN_00576040(float latency)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "00575550",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00575550"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f4468",
+      "name": "s_sound_sndmain_cpp_005f4468",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f447d",
+      "name": "s_setMaxSwSoundLatency_can_005f447d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f44b8",
+      "name": "DAT_005f44b8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f44c0",
+      "name": "DAT_005f44c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00623314",
+      "name": "DAT_00623314",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00576213",
+        "call_type": "direct",
+        "caller": "sound_sndmain.cpp_readIni_FUN_005760b0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.620689655172414,
+    "instruction_count": 29,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 3,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 3,
+      "COPY": 53,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "INT_ADD": 9,
+      "INT_AND": 15,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 8,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "INT_ZEXT": 8,
+      "LOAD": 6,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 163
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "latency",
+        "offset": 4,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 19,
+      "match": "DAT_00623314",
+      "severity": "mild",
+      "text": "DAT_00623314 = latency;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00623314",
+      "severity": "mild",
+      "text": "DAT_00623314 = 2.0;",
+      "type": "undefined_data"
+    }
+  ]
+}

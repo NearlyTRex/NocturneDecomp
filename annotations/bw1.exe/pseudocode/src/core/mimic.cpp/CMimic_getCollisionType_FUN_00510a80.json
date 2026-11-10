@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 44,
-    "complexity_score": 143,
+    "complexity_score": 139,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 23,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 24,
+    "suspect_count": 10,
     "suspect_types": [
       "unnamed_field",
-      "warning_overlapping_globals"
+      "warning_overlapping_globals",
+      "warning_type_propagation"
     ],
-    "total_lines": 67
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -112,8 +113,16 @@
   },
   "suspects": [
     {
-      "description": "Overlapping global symbols",
+      "description": "Type propagation did not converge",
       "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
       "match": "WARNING: Globals starting with",
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
@@ -121,23 +130,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
+      "line": 11,
       "match": "field_0x18",
       "severity": "mild",
-      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;",
+      "text": "*(float *)&collision_info->field_0x18 = (this_ptr->base).base.model.bounding_box.max.y;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2490",
-      "severity": "mild",
-      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
+      "line": 12,
       "match": "field_0x1c",
       "severity": "mild",
       "text": "*(uint *)&collision_info->field_0x1c = 0x3f800000;",
@@ -145,7 +146,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 13,
+      "line": 14,
       "match": "field_0x14",
       "severity": "mild",
       "text": "*(uint *)&collision_info->field_0x14 = 0xbdcccccd;",
@@ -153,15 +154,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(float *)&collision_info->field_0x18 = *(float *)&collision_info->field_0x18 + _DAT_005e8a88;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
+      "line": 16,
       "match": "field_0x18",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x18 = *(float *)&collision_info->field_0x18 + _DAT_005e8a88;",
@@ -170,6 +163,14 @@
     {
       "description": "Auto-generated struct field name",
       "line": 16,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "*(float *)&collision_info->field_0x18 = *(float *)&collision_info->field_0x18 + _DAT_005e8a88;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
       "match": "field_0x1c",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x1c = *(float *)&collision_info->field_0x1c * fVar1;",
@@ -177,7 +178,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 16,
+      "line": 17,
       "match": "field_0x1c",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x1c = *(float *)&collision_info->field_0x1c * fVar1;",
@@ -185,25 +186,17 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 19,
+      "line": 20,
       "match": "field_0x14",
       "severity": "mild",
       "text": "*(uint *)&collision_info->field_0x14 = 0x40000000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CMotionController *)&this_ptr->field_0x158);",
       "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMimic",
         "offset": 60,
         "vtable_addr": "006039e4"
       }

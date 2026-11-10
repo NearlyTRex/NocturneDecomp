@@ -6,15 +6,15 @@
 ;
 ; XREF[3]:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_process_FUN_00504400 at 0050447b
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90 at 00503e73
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_00505ec0 at 00506006
-;   core_manpuz.cpp_FUN_00503c90 at 00503e73
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060343c
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f690
 ;
 ; *****************************************************************************
@@ -47,8 +47,8 @@ section .text
     MOV dword ptr [EBX + 0x20],0x0      ; 00504f27
     PUSH ESI                            ; 00504f2e
     FSTP float ptr [EBX + 0x1c]         ; 00504f2f
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 00504f32
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 00504f32
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 00504f37
     MOV EAX,dword ptr [EBP + 0x150c]    ; 00504f3a
     MOV dword ptr [ESP + 0x2c],EAX      ; 00504f40

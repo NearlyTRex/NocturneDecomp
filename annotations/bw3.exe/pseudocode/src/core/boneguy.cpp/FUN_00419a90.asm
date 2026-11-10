@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;   unkafter_boneguy.cpp_CBaalSkel_ctor_FUN_00419ac0
 ;
 ; *****************************************************************************
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd698                         ; 00419a90
         ;   Label: core_boneguy.cpp_FUN_00419a90
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00419a95
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00419a95
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00419a9a
     TEST EAX,EAX                        ; 00419a9d
     JNZ 0x00419aa2                      ; 00419a9f

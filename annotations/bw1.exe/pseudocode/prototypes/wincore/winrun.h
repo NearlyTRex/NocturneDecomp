@@ -13,9 +13,9 @@ void __cdecl calibrateCPUSpeed(void);
 // Address: 005b2410
 void __watcallRegister endPeriod(void);
 
-// Original: wincore_winrun.cpp_FUN_005b2420
+// Original: wincore_winrun.cpp_getTime_FUN_005b2420
 // Address: 005b2420
-int FUN_005b2420(void);
+int getTime(void);
 
 // Original: wincore_winrun.cpp_clearKeypresses_FUN_005b24f0
 // Address: 005b24f0
@@ -29,9 +29,9 @@ int __cdecl getNextKeypress(void);
 // Address: 005b2580
 int __cdecl wasKeyPressed(void);
 
-// Original: wincore_winrun.cpp_FUN_005b259c
+// Original: wincore_winrun.cpp_getValue_FUN_005b259c
 // Address: 005b259c
-undefined1 FUN_005b259c(void);
+undefined1 getValue(void);
 
 // Original: wincore_winrun.cpp_enqueueInput_FUN_005b25b0
 // Address: 005b25b0
@@ -73,9 +73,9 @@ void FUN_005b2d90(void);
 // Address: 005b2dde
 void FUN_005b2dde(void);
 
-// Original: wincore_winrun.cpp_FUN_005b2e00
+// Original: wincore_winrun.cpp_winMain_FUN_005b2e00
 // Address: 005b2e00
-void FUN_005b2e00(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
+void winMain(HMODULE param_1,undefined4 param_2,undefined4 param_3,int param_4);
 
 // Original: wincore_winrun.cpp_FUN_005b3080
 // Address: 005b3080
@@ -117,9 +117,9 @@ void FUN_005b3840(HANDLE param_1);
 // Address: 005b3860
 void __cdecl sleep(double seconds);
 
-// Original: wincore_winrun.cpp_FUN_005b38bc
+// Original: wincore_winrun.cpp_getComputerAndUserName_FUN_005b38bc
 // Address: 005b38bc
-void FUN_005b38bc(char *param_1);
+void getComputerAndUserName(char *param_1);
 
 // Original: wincore_winrun.cpp_getRegistryStringValue_FUN_005b3990
 // Address: 005b3990
@@ -137,9 +137,9 @@ void FUN_005b3a90(LPCSTR param_1);
 // Address: 005b3aa0
 void __cdecl initJoystick(void);
 
-// Original: wincore_winrun.cpp_FUN_005b3b10
+// Original: wincore_winrun.cpp_doNothing2_FUN_005b3b10
 // Address: 005b3b10
-void __cdecl FUN_005b3b10(void);
+void __cdecl doNothing2(void);
 
 // Original: wincore_winrun.cpp_getJoystickState_FUN_005b3b30
 // Address: 005b3b30

@@ -21,21 +21,21 @@ CDemonActorType * CUnion::getActorType(CUnion *this_ptr);
 // Address: 005a4a80
 CUnion * CUnion::ctor(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a4c00
+// Original: core_union.cpp_CUnion_setup_FUN_005a4c00
 // Address: 005a4c00
-void FUN_005a4c00(int param_1);
+void __cdecl CUnion::setup(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a4c50
+// Original: core_union.cpp_CUnion_processStates_FUN_005a4c50
 // Address: 005a4c50
-void FUN_005a4c50(int param_1,undefined4 param_2,int param_3);
+void __cdecl CUnion::processStates(CUnion *this_ptr,float delta_time,int mode);
 
 // Original: core_union.cpp_FUN_005a4d50
 // Address: 005a4d50
 void FUN_005a4d50(int param_1);
 
-// Original: core_union.cpp_FUN_005a4e60
+// Original: core_union.cpp_CUnion_processDeathState_FUN_005a4e60
 // Address: 005a4e60
-void FUN_005a4e60(int param_1);
+void __cdecl CUnion::processDeathState(CUnion *this_ptr,float delta_time);
 
 // Original: core_union.cpp_FUN_005a4e90
 // Address: 005a4e90
@@ -49,29 +49,29 @@ void FUN_005a4fe0(CCharacter *param_1);
 // Address: 005a5130
 void FUN_005a5130(CCharacter *param_1,float param_2);
 
-// Original: core_union.cpp_FUN_005a5280
+// Original: core_union.cpp_CUnion_getDeathState_FUN_005a5280
 // Address: 005a5280
-undefined4 FUN_005a5280(int param_1);
+EDeathState __cdecl CUnion::getDeathState(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a5300
+// Original: core_union.cpp_CUnion_processMotionEvent_FUN_005a5300
 // Address: 005a5300
-void FUN_005a5300(CDemonActor *param_1,undefined4 param_2);
+void __cdecl CUnion::processMotionEvent(CUnion *this_ptr,int event_id);
 
-// Original: core_union.cpp_FUN_005a5440
+// Original: core_union.cpp_CUnion_renderOpaque_FUN_005a5440
 // Address: 005a5440
-void FUN_005a5440(undefined4 param_1);
+int __cdecl CUnion::renderOpaque(CUnion *this_ptr);
 
-// Original: core_union.cpp_FUN_005a5450
+// Original: core_union.cpp_CUnion_archive_FUN_005a5450
 // Address: 005a5450
-void FUN_005a5450(undefined4 param_1);
+void __cdecl CUnion::archive(CUnion *this_ptr);
 
 // Original: core_union.cpp_FUN_005a5460
 // Address: 005a5460
 void FUN_005a5460(CDemonActor *param_1);
 
-// Original: core_union.cpp_FUN_005a59f0
+// Original: core_union.cpp_CUnion_processDamage_FUN_005a59f0
 // Address: 005a59f0
-void FUN_005a59f0(undefined4 param_1,int param_2);
+void __cdecl CUnion::processDamage(CUnion *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_union.cpp_CUnion_dtor_FUN_005a5a40
 // Address: 005a5a40

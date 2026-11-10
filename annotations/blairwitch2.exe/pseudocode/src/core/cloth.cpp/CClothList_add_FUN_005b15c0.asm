@@ -9,7 +9,7 @@
 ;
 ; XREF[7]:
 ;   core_belling.cpp_CBelling_ctor_FUN_005a8f80 at 005a900b
-;   core_charactr.cpp_FUN_0042b440 at 0042b516
+;   core_charactr.cpp_CCharacter_setCharacterModel_FUN_0042b440 at 0042b516
 ;   core_doc.cpp_FUN_004501a2 at 0045042b
 ;   core_grandma.cpp_CGrandma_ctor_FUN_005a7b10 at 005a7b9b
 ;   core_hag.cpp_CHag_ctor_FUN_005aa600 at 005aa63c

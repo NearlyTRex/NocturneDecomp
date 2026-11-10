@@ -17,9 +17,9 @@ float FUN_005956b0(int param_1);
 // Address: 00595750
 void FUN_00595750(int param_1);
 
-// Original: core_zombie.cpp_FUN_00595810
+// Original: core_zombie.cpp_getObjectGrabPointWorld_FUN_00595810
 // Address: 00595810
-void FUN_00595810(int param_1);
+void getObjectGrabPointWorld(int param_1);
 
 // Original: core_zombie.cpp_classifyObjectShape_FUN_00595910
 // Address: 00595910
@@ -37,61 +37,61 @@ CDemonActorType * CZombie::getActorType(CZombie *this_ptr);
 // Address: 00595a90
 CZombie * CZombie::ctor(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_00595c00
+// Original: core_zombie.cpp_CZombie_setup_FUN_00595c00
 // Address: 00595c00
-void FUN_00595c00(CEnemy *param_1);
+void __cdecl CZombie::setup(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_00595f30
+// Original: core_zombie.cpp_CZombie_process_FUN_00595f30
 // Address: 00595f30
-void FUN_00595f30(CZombie *param_1,float param_2);
+void __cdecl CZombie::process(CZombie *this_ptr,float delta_time);
 
-// Original: core_zombie.cpp_FUN_005980a0
+// Original: core_zombie.cpp_CZombie_getCarryObjToBodyXForm_FUN_005980a0
 // Address: 005980a0
-void FUN_005980a0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CZombie::getCarryObjToBodyXForm(CZombie *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_zombie.cpp_FUN_005984e0
+// Original: core_zombie.cpp_CZombie_processPickup_FUN_005984e0
 // Address: 005984e0
-int __cdecl FUN_005984e0(CZombie *this_ptr,float delta_time);
+int __cdecl CZombie::processPickup(CZombie *this_ptr,float delta_time);
 
-// Original: core_zombie.cpp_FUN_00598e40
+// Original: core_zombie.cpp_CZombie_getPickupHandIndex_FUN_00598e40
 // Address: 00598e40
-int __cdecl FUN_00598e40(CZombie *this_ptr,int object_shape_type);
+int __cdecl CZombie::getPickupHandIndex(CZombie *this_ptr,int object_shape_type);
 
-// Original: core_zombie.cpp_FUN_00598ee0
+// Original: core_zombie.cpp_CZombie_canPickupWithHand_FUN_00598ee0
 // Address: 00598ee0
-int __cdecl FUN_00598ee0(CZombie *this_ptr,int object_shape_type);
+int __cdecl CZombie::canPickupWithHand(CZombie *this_ptr,int object_shape_type);
 
-// Original: core_zombie.cpp_FUN_00598f20
+// Original: core_zombie.cpp_CZombie_dropAndClearTarget_FUN_00598f20
 // Address: 00598f20
-void FUN_00598f20(int param_1);
+void __cdecl CZombie::dropAndClearTarget(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_00598f60
+// Original: core_zombie.cpp_CZombie_renderOpaque_FUN_00598f60
 // Address: 00598f60
-undefined4 FUN_00598f60(int param_1);
+int __cdecl CZombie::renderOpaque(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_00598fa0
+// Original: core_zombie.cpp_CZombie_renderTransparent_FUN_00598fa0
 // Address: 00598fa0
-undefined4 FUN_00598fa0(int param_1);
+int __cdecl CZombie::renderTransparent(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_00599160
+// Original: core_zombie.cpp_CZombie_archive_FUN_00599160
 // Address: 00599160
-void FUN_00599160(CEnemy *param_1);
+void __cdecl CZombie::archive(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_005992b0
+// Original: core_zombie.cpp_CZombie_canBeAttracted_FUN_005992b0
 // Address: 005992b0
-undefined4 FUN_005992b0(int param_1,undefined4 *param_2);
+int __cdecl CZombie::canBeAttracted(CZombie *this_ptr,CVector3f *out_attract_position);
 
-// Original: core_zombie.cpp_FUN_00599400
+// Original: core_zombie.cpp_CZombie_processDismemberment_FUN_00599400
 // Address: 00599400
-void __cdecl FUN_00599400(CZombie *this_ptr,SDamageInfo *damage_info);
+void __cdecl CZombie::processDismemberment(CZombie *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_zombie.cpp_FUN_005996d0
+// Original: core_zombie.cpp_CZombie_processDamage_FUN_005996d0
 // Address: 005996d0
-void FUN_005996d0(CZombie *param_1,SDamageInfo *param_2);
+void __cdecl CZombie::processDamage(CZombie *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_zombie.cpp_FUN_00599900
+// Original: core_zombie.cpp_CZombie_getTargetPoints_FUN_00599900
 // Address: 00599900
-int FUN_00599900(int param_1,float *param_2);
+int __cdecl CZombie::getTargetPoints(CZombie *this_ptr,CVector3f *out_points_array);
 
 // Original: core_zombie.cpp_CZombie_isGrabbable_FUN_00599c10
 // Address: 00599c10
@@ -109,9 +109,9 @@ int __cdecl CZombie::getGrabbed(CZombie *this_ptr,CDemonActor *grabber,int grab_
 // Address: 00599cd0
 int __cdecl CZombie::shouldIgnoreForTargeting(CZombie *this_ptr);
 
-// Original: core_zombie.cpp_FUN_00599d00
+// Original: core_zombie.cpp_CZombie_resetChaseState_FUN_00599d00
 // Address: 00599d00
-void __cdecl FUN_00599d00(CZombie *this_ptr);
+void __cdecl CZombie::resetChaseState(CZombie *this_ptr);
 
 // Original: core_zombie.cpp_CZombie_dtor_FUN_00599d70
 // Address: 00599d70

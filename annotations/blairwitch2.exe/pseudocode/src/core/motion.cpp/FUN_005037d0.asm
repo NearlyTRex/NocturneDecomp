@@ -8,7 +8,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0 at 005474d8
 ;
 ; Called Functions:
-;   core_motion.cpp_FUN_00502f10
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
 ;
 ; *****************************************************************************
 
@@ -30,8 +30,8 @@ section .text
     PUSH EAX                            ; 005037e8
     MOV EDX,dword ptr [EBX]             ; 005037e9
     PUSH EDX                            ; 005037eb
-    CALL core_motion.cpp_FUN_00502f10   ; 005037ec
-        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10 ; 005037ec
+        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 005037f1
     MOV dword ptr [EBX + 0x4],EAX       ; 005037f4
     TEST EAX,EAX                        ; 005037f7

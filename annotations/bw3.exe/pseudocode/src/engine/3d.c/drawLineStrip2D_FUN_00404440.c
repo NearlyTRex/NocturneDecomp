@@ -57,7 +57,7 @@ int __cdecl engine_3d_c_drawLineStrip2D_FUN_00404440(int param_1)
       puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
       puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
     }
-    engine_3d_c_FUN_00407b30();
+    engine_3d_c_clipAndDrawLine2D_FUN_00407b30();
   }
   return *(int *)(param_1 + 4) * 4 + param_1 + 8;
 }

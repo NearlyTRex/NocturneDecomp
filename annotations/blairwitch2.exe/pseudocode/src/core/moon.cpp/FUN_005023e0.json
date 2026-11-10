@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 126,
+    "complexity_score": 101,
     "cross_reference_count": 2,
     "function_call_count": 1,
     "global_count": 6,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 21,
-    "suspect_count": 8,
+    "suspect_count": 6,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 62
@@ -28,7 +27,7 @@
     {
       "addr": "004ee3f0",
       "from_addr": "004ee4a0",
-      "name": "core_menu.cpp_FUN_004ee3f0",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -84,7 +83,7 @@
     },
     {
       "addr": "01cb6b30",
-      "name": "g_CGameInstance.field560_0x230",
+      "name": "g_CGameInstance.head_of_horror_cheat",
       "type": "undefined4",
       "value": null
     }
@@ -95,7 +94,7 @@
       {
         "call_addr": "004ee4a0",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -117,7 +116,7 @@
       {
         "call_addr": "004ee6bd",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -128,7 +127,7 @@
       {
         "call_addr": "004ee893",
         "call_type": "direct",
-        "caller": "core_menu.cpp_FUN_004ee3f0",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,22 +192,6 @@
       "severity": "mild",
       "text": "if (*param_1 == 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x230",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0x230 == 0x29a) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x230",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0x230 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

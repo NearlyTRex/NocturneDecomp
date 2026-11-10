@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 40,
-    "complexity_score": 88,
+    "complexity_score": 35,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 6,
+    "pseudocode_lines": 20,
+    "suspect_count": 1,
     "suspect_types": [
-      "pointer_cast",
-      "unnamed_field"
+      "unrolled_memcpy"
     ],
-    "total_lines": 58
+    "total_lines": 60
   },
   "cross_references": [],
   "function": {
@@ -102,52 +101,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "if ((UOrientationVector *)&this_ptr->field_0x30 != user_orientation) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x30 = *(uint *)user_orientation;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 12,
-      "match": "(uint *)((int)user_orientation",
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 14,
+      "match": "field-by-field struct copy",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)((int)user_orientation + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x34 = *(uint *)((int)user_orientation + 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Complex pointer cast",
-      "line": 13,
-      "match": "(uint *)((int)user_orientation",
-      "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)((int)user_orientation + 8);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x38 = *(uint *)((int)user_orientation + 8);",
-      "type": "unnamed_field"
+      "text": "(pUVar1->vec).x = (user_orientation->vec).x;",
+      "type": "unrolled_memcpy"
     }
   ],
   "vtable_info": {

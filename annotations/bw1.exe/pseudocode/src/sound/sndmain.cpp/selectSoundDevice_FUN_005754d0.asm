@@ -8,8 +8,8 @@
 ;
 ; XREF[4]:
 ;   core_menu.cpp_FUN_0050ba70 at 0050c8f0
-;   sound_sndmain.cpp_FUN_005760b0 at 00576194
 ;   sound_sndmain.cpp_initializeSoundDevice_FUN_005755c0 at 005755d3
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576194
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00574e00 at 00574e7a
 ;
 ; Referenced Globals:
@@ -21,9 +21,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   sound_sndmain.cpp_FUN_005753b0
-;   sound_sndmain.cpp_FUN_00575540
+;   sound_sndmain.cpp_findBestSoundDevice_FUN_005753b0
 ;   sound_sndmain.cpp_getSoundDeviceCount_FUN_005752c0
+;   sound_sndmain.cpp_isSoundSystemActive_FUN_00575540
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EBX                            ; 005754d0
         ;   Label: sound_sndmain.cpp_selectSoundDevice_FUN_005754d0
     MOV EBX,dword ptr [ESP + 0x8]       ; 005754d1
-    CALL sound_sndmain.cpp_FUN_00575540 ; 005754d5
-        ;   XREF to: 00575540 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_FUN_00575540()
+    CALL sound_sndmain.cpp_isSoundSystemActive_FUN_00575540 ; 005754d5
+        ;   XREF to: 00575540 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_isSoundSystemActive_FUN_00575540()
     TEST EAX,EAX                        ; 005754da
     JNZ 0x00575500                      ; 005754dc
         ;   XREF to: 00575500 (CONDITIONAL_JUMP)  ; LAB_00575500
@@ -48,8 +48,8 @@ section .text
     CMP EBX,EAX                         ; 005754ed
     JL 0x00575525                       ; 005754ef
         ;   XREF to: 00575525 (CONDITIONAL_JUMP)  ; LAB_00575525
-    CALL sound_sndmain.cpp_FUN_005753b0 ; 005754f1
-        ;   XREF to: 005753b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005753b0()
+    CALL sound_sndmain.cpp_findBestSoundDevice_FUN_005753b0 ; 005754f1
+        ;   XREF to: 005753b0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_findBestSoundDevice_FUN_005753b0()
         ;   Label: LAB_005754f1
     MOV EBX,EAX                         ; 005754f6
     MOV dword ptr [0x006232fc],EBX      ; 005754f8 | DAT_006232fc

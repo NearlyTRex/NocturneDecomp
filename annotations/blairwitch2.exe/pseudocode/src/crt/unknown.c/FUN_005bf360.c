@@ -25,7 +25,7 @@ uint FUN_005bf360(void)
     return 0;
   }
   if (in_AL != '\a') {
-    unkafter_morph_cpp_FUN_005c3bdb((double)in_ST0);
+    FUN_005c3bdb((double)in_ST0);
   }
   return 1;
 }

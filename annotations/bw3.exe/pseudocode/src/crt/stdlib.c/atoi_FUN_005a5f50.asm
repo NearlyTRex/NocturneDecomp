@@ -8,9 +8,9 @@
 ;
 ; XREF[4]:
 ;   core_texlist.cpp_CTextureList_load_FUN_005690c0 at 00569214
-;   engine_ini.cpp_FUN_004d8950 at 004d89b4
-;   wincore_winvideo.cpp_FUN_00582eb0 at 00582f90
+;   engine_ini.cpp_getProfileInteger_FUN_004d8950 at 004d89b4
 ;   wincore_winvideo.cpp_openMovie_FUN_00582bb0 at 00582c31
+;   wincore_winvideo.cpp_playMovie_FUN_00582eb0 at 00582f90
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006074b8

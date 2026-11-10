@@ -1,0 +1,183 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 51,
+    "complexity_score": 31,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 6,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 16,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 67
+  },
+  "cross_references": [
+    {
+      "addr": "004f5760",
+      "from_addr": "004f5821",
+      "name": "core_inivar.cpp_writeIniData_FUN_004f5760",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f4c90",
+    "address_range": [
+      [
+        "004f4c90",
+        "004f4d0e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "engine_ini.cpp_CIniFile_setString_FUN_004f4c90",
+    "signature": "void __cdecl engine_ini_cpp_CIniFile_setString_FUN_004f4c90(CIniFile *this_ptr,char *key,char *value)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "004f4ad0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_writeProfileString_FUN_004f4ad0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5875",
+      "name": "s_engine_ini_cpp_005e5875",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5887",
+      "name": "s_CIniFile_setString_filen_005e5887",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e58af",
+      "name": "s_engine_ini_cpp_005e58af",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e58c1",
+      "name": "s_CIniFile_setString_secti_005e58c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004f5821",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004f5760",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.5384615384615383,
+    "instruction_count": 39,
+    "opcode_distribution": {
+      "BRANCH": 2,
+      "CALL": 3,
+      "CBRANCH": 2,
+      "COPY": 31,
+      "INT_ADD": 13,
+      "INT_AND": 12,
+      "INT_CARRY": 4,
+      "INT_EQUAL": 12,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 4,
+      "INT_SLESS": 6,
+      "INT_SUB": 15,
+      "LOAD": 10,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 138
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      },
+      {
+        "is_param": true,
+        "name": "key",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "value",
+        "offset": 12,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CIniFile",
+        "offset": 8,
+        "vtable_addr": "00602964"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

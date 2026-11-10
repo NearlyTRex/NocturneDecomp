@@ -9,9 +9,8 @@
 void __cdecl core_trap_cpp_CTrap_setup_FUN_00599d60(CTrap *this_ptr)
 
 {
-  core_actor_cpp_FUN_00408850((CDemonActor *)this_ptr);
-  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x158);
-  *(uint *)&this_ptr->field_0x2d4 = 0;
+  core_actor_cpp_CDemonActor_setup_FUN_00408850(&this_ptr->base);
+  core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_004688e0(&this_ptr->model);
+  this_ptr->carrier = (CDemonActor *)0x0;
   return;
 }

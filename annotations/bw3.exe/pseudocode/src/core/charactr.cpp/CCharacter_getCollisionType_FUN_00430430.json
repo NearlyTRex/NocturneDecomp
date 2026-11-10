@@ -2,24 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 73,
-    "complexity_score": 225,
+    "complexity_score": 181,
     "cross_reference_count": 9,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 35,
-    "suspect_count": 18,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 36,
+    "suspect_count": 14,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr"
+      "unnamed_field"
     ],
-    "total_lines": 108
+    "total_lines": 109
   },
   "cross_references": [
     {
       "addr": "00419860",
       "from_addr": "00419876",
-      "name": "core_boneguy.cpp_FUN_00419860",
+      "name": "core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_00419860",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -37,7 +36,7 @@
     {
       "addr": "0059d640",
       "from_addr": "0059d64a",
-      "name": "core_hino.cpp_FUN_0059d640",
+      "name": "core_hino.cpp_CHino_getCollisionType_FUN_0059d640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,13 +60,13 @@
     {
       "addr": "005a08f0",
       "from_addr": "005a08fa",
-      "name": "core_styldemo.cpp_FUN_005a08f0",
+      "name": "core_styldemo.cpp_CStylerDemon_getCollisionType_FUN_005a08f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058fc60",
       "from_addr": "0058fc6a",
-      "name": "unkafter_zombiepr.cpp_FUN_0058fc60",
+      "name": "core_zombprie.cpp_CZombiePriest_getCollisionType_FUN_0058fc60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -91,7 +90,7 @@
       {
         "call_addr": "00419876",
         "call_type": "direct",
-        "caller": "core_boneguy.cpp_FUN_00419860",
+        "caller": "core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_00419860",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -157,7 +156,7 @@
       {
         "call_addr": "0058fc6a",
         "call_type": "direct",
-        "caller": "unkafter_zombiepr.cpp_FUN_0058fc60",
+        "caller": "core_zombprie.cpp_CZombiePriest_getCollisionType_FUN_0058fc60",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -168,7 +167,7 @@
       {
         "call_addr": "0059d64a",
         "call_type": "direct",
-        "caller": "core_hino.cpp_FUN_0059d640",
+        "caller": "core_hino.cpp_CHino_getCollisionType_FUN_0059d640",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -179,7 +178,7 @@
       {
         "call_addr": "005a08fa",
         "call_type": "direct",
-        "caller": "core_styldemo.cpp_FUN_005a08f0",
+        "caller": "core_styldemo.cpp_CStylerDemon_getCollisionType_FUN_005a08f0",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -256,31 +255,15 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 11,
+      "line": 12,
       "match": "field_0x27a8",
       "severity": "mild",
       "text": "if (*(int *)&this_ptr->field_0x27a8 == 0) {",
       "type": "unnamed_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x10c))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
+      "line": 25,
       "match": "field_0x18",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x18 =",
@@ -288,7 +271,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0x3280",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x3280 * *(float *)&this_ptr->field_0x27b8;",
@@ -296,7 +279,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 25,
+      "line": 26,
       "match": "field_0x27b8",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x3280 * *(float *)&this_ptr->field_0x27b8;",
@@ -304,7 +287,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 26,
+      "line": 27,
       "match": "field_0x14",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x14 =",
@@ -312,7 +295,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 28,
       "match": "field_0x327c",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x327c * *(float *)&this_ptr->field_0x27b8;",
@@ -320,7 +303,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 27,
+      "line": 28,
       "match": "field_0x27b8",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x327c * *(float *)&this_ptr->field_0x27b8;",
@@ -328,7 +311,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 28,
+      "line": 29,
       "match": "field_0x18",
       "severity": "mild",
       "text": "if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {",
@@ -336,7 +319,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 28,
+      "line": 29,
       "match": "field_0x14",
       "severity": "mild",
       "text": "if (*(float *)&collision_info->field_0x18 < *(float *)&collision_info->field_0x14) {",
@@ -344,23 +327,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
+      "line": 30,
       "match": "field_0x18",
       "severity": "mild",
-      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;",
+      "text": "*(float *)&collision_info->field_0x18 = (this_ptr->model).bounding_box.max.y;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2490",
-      "severity": "mild",
-      "text": "*(uint *)&collision_info->field_0x18 = *(uint *)&this_ptr->field_0x2490;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
+      "line": 32,
       "match": "field_0x1c",
       "severity": "mild",
       "text": "*(float *)&collision_info->field_0x1c =",
@@ -368,7 +343,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 33,
       "match": "field_0x3270",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x3270 * *(float *)&this_ptr->field_0x27b8;",
@@ -376,7 +351,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
+      "line": 33,
       "match": "field_0x27b8",
       "severity": "mild",
       "text": "*(float *)&this_ptr->field_0x3270 * *(float *)&this_ptr->field_0x27b8;",
@@ -384,45 +359,37 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 36,
+      "line": 37,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "*(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;",
+      "text": "*(CDeformableModelInstance **)&collision_info->field_0x20 = &this_ptr->model;",
       "type": "unnamed_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CTheHand",
         "offset": 60,
         "vtable_addr": "005e5504"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CKedward",
         "offset": 60,
         "vtable_addr": "005e7204"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CDarkwolf",
         "offset": 60,
         "vtable_addr": "005e7a04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CSpiritEagle",
         "offset": 60,
         "vtable_addr": "005e7d04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CBird",
         "offset": 60,
         "vtable_addr": "005dbb14"
       }

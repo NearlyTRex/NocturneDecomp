@@ -1,0 +1,231 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 189,
+    "complexity_score": 72,
+    "cross_reference_count": 0,
+    "function_call_count": 15,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 57,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 246
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00576130",
+    "address_range": [
+      [
+        "00576130",
+        "00576365"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_tommygun.cpp_CTommyGun_process_FUN_00576130",
+    "signature": "void __cdecl core_tommygun_cpp_CTommyGun_process_FUN_00576130(CTommyGun *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "00589c80",
+      "is_variadic": false,
+      "name": "core_weapon.cpp_CWeapon_process_FUN_00589c80"
+    },
+    {
+      "addr": "005b84d0",
+      "is_variadic": false,
+      "name": "crt_math.c_floor_FUN_005b84d0"
+    },
+    {
+      "addr": "005b7ff0",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005b7ff0"
+    },
+    {
+      "addr": "005b7790",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
+    },
+    {
+      "addr": "0054fcd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSample_init_FUN_0054fcd0"
+    },
+    {
+      "addr": "00550f50",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00550f50"
+    },
+    {
+      "addr": "00551440",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551440"
+    },
+    {
+      "addr": "00550c30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxPlaybackPosition_FUN_00550c30"
+    },
+    {
+      "addr": "00550bf0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxSampleInfo_FUN_00550bf0"
+    },
+    {
+      "addr": "00551050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00551050"
+    },
+    {
+      "addr": "005532f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_005532f0"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "005503e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTriggerTime_FUN_005503e0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eccd0",
+      "name": "DAT_005eccd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eccd4",
+      "name": "DAT_005eccd4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1,
+    "instruction_count": 160,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 4,
+      "CALL": 18,
+      "CALLIND": 2,
+      "CBRANCH": 5,
+      "COPY": 278,
+      "FLOAT2FLOAT": 17,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 4,
+      "INT_ADD": 86,
+      "INT_AND": 56,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 42,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 11,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 21,
+      "INT_SUB": 52,
+      "INT_ZEXT": 8,
+      "LOAD": 51,
+      "POPCOUNT": 21,
+      "RETURN": 4,
+      "ROUND": 1,
+      "STORE": 68,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 816
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTommyGun *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0057613c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 20,
+        "vtable_addr": "005fce74"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

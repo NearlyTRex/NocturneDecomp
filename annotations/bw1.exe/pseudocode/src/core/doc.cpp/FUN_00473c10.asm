@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_doc_cpp_FUN_00473c10(CDemonActor *param_1,float param_2,int param_3)
+; void core_doc_cpp_FUN_00473c10(CCharacter *param_1,float param_2,int param_3)
 ;
 ; Local Variables:
 ; undefined8       Stack[-0x178]:8  local_178
@@ -78,7 +78,7 @@
 ;   undefined4 DAT_01b68818
 ;   undefined4 DAT_01b6881c
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1372328_0x14f0a8
+;   undefined4 g_CDemonSetInstance.character_count
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408ac0
@@ -120,7 +120,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 00473c51 | g_CDemonSetPtr
         ;   Label: LAB_00473c51
     MOV EBX,dword ptr [ESP + 0x158]     ; 00473c56
-    CMP EBX,dword ptr [EAX + 0x14f0a8]  ; 00473c5d | g_CDemonSetInstance.field1372328_0x14f0a8
+    CMP EBX,dword ptr [EAX + 0x14f0a8]  ; 00473c5d | g_CDemonSetInstance.character_count
     JGE 0x00473dae                      ; 00473c63
         ;   XREF to: 00473dae (CONDITIONAL_JUMP)  ; LAB_00473dae
     ADD EAX,dword ptr [ESP + 0x15c]     ; 00473c69

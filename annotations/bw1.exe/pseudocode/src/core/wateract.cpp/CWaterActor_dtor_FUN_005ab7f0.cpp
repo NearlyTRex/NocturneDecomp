@@ -19,7 +19,7 @@ CWaterActor * core_wateract_cpp_CWaterActor_dtor_FUN_005ab7f0(CWaterActor *this_
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CWaterActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)this_ptr,1);
+  pCVar1 = (CWaterActor *)core_actor_cpp_CDemonActor_dtor_FUN_00408730(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

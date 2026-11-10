@@ -1,0 +1,220 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 117,
+    "complexity_score": 110,
+    "cross_reference_count": 2,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 50,
+    "suspect_count": 5,
+    "suspect_types": [
+      "shadow_pointer_walk",
+      "unnamed_field"
+    ],
+    "total_lines": 167
+  },
+  "cross_references": [
+    {
+      "addr": "00534420",
+      "from_addr": "005345f7",
+      "name": "core_set.cpp_CDemonSet_initScene_FUN_00534420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00532b80",
+      "from_addr": "005334e4",
+      "name": "core_set.cpp_FUN_00532b80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005418d0",
+    "address_range": [
+      [
+        "005418d0",
+        "005419dd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0",
+    "signature": "int __cdecl core_setdir_cpp_CDemonSet_buildVdirBoxGroups_FUN_005418d0(CDemonSet *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "005419e0",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_CDemonSet_findVdirBoxRoot_FUN_005419e0"
+    },
+    {
+      "addr": "00541470",
+      "is_variadic": false,
+      "name": "core_setdir.cpp_testOBBIntersection_FUN_00541470"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "005334e4",
+        "call_type": "direct",
+        "caller": "core_set.cpp_FUN_00532b80",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005345f7",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_initScene_FUN_00534420",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.7,
+    "instruction_count": 90,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CBRANCH": 9,
+      "COPY": 69,
+      "INT_ADD": 44,
+      "INT_AND": 56,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 53,
+      "INT_LESS": 6,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 7,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 14,
+      "INT_SEXT": 6,
+      "INT_SLESS": 26,
+      "INT_SUB": 22,
+      "INT_XOR": 2,
+      "LOAD": 24,
+      "POPCOUNT": 26,
+      "RETURN": 1,
+      "STORE": 26,
+      "SUBPIECE": 4
+    },
+    "pcode_op_count": 423
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 44,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(uint *)&pCVar4->vdir_boxes[0].field_0x40 = 0xffffffff;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 21,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "pCVar4 = (CDemonSet *)&pCVar4->cameras[0].field_0x40;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x0",
+      "severity": "mild",
+      "text": "puVar5 = &this_ptr->vdir_boxes[0].field_0x0 + local_28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 40,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->vdir_boxes[iVar2].field_0x40 = iVar1;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 21,
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
+      "severity": "moderate",
+      "text": "pCVar4 = (CDemonSet *)&pCVar4->cameras[0].field_0x40;",
+      "type": "shadow_pointer_walk"
+    }
+  ]
+}

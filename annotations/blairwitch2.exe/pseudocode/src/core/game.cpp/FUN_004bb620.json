@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 180,
-    "complexity_score": 479,
+    "complexity_score": 474,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 114,
+    "pseudocode_lines": 109,
     "suspect_count": 34,
     "suspect_types": [
       "extra_output",
@@ -16,7 +16,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 294
+    "total_lines": 289
   },
   "cross_references": [
     {
@@ -311,7 +311,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 32,
+      "line": 27,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "iVar4 = DAT_006141b8;",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 28,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar2 = DAT_0060b280;",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "if ((*(uint *)(param_1 + 0xaf4) & 0x7fffffff) != 0) {",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 30,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "local_10 = DAT_006141b8;",
@@ -343,15 +343,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 36,
+      "line": 31,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)DAT_0060b280 + 0x10) = 0;",
+      "text": "*(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x10) = 0;",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 41,
+      "line": 36,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "iVar4 = DAT_006141bc;",
@@ -359,7 +359,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 43,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = (float10)*(float *)(param_1 + 0xaf4) * fVar5;",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 51,
+      "line": 46,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "*(int *)(extraout_ECX + 0x2c) = local_14;",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = (float10)*(float *)(param_1 + 0xaf4) * fVar5;",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 55,
+      "line": 50,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "*(int *)(extraout_ECX_00 + 0x5c) = local_14;",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 51,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar6 = (float10)*(float *)(param_1 + 0xaf4) * fVar5;",
@@ -399,7 +399,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 59,
+      "line": 54,
       "match": "extraout_ECX_01",
       "severity": "moderate",
       "text": "*(int *)(extraout_ECX_01 + 0x8c) = local_14;",
@@ -407,7 +407,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 60,
+      "line": 55,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = fVar5 * (float10)*(float *)(param_1 + 0xaf4);",
@@ -415,7 +415,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 63,
+      "line": 58,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "*(int *)(extraout_EDX + 0xbc) = local_14;",
@@ -423,7 +423,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 68,
+      "line": 63,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = (float10)*(float *)(param_1 + 0xb08) * fVar6;",
@@ -431,7 +431,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 72,
+      "line": 67,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = (float10)*(float *)(param_1 + 0xb0c) * fVar6;",
@@ -439,15 +439,15 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 76,
+      "line": 71,
       "match": "extraout_EDX_00",
       "severity": "moderate",
-      "text": "*(int *)(extraout_EDX_00 + 0x24 + iVar3) = local_14;",
+      "text": "*(int *)(pSVar1 + extraout_EDX_00 + 0x24) = local_14;",
       "type": "extra_output"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 78,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar5 = (float10)*(float *)(param_1 + 0xb10) * fVar6;",
@@ -455,7 +455,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 81,
+      "line": 76,
       "match": "extraout_EDX_01",
       "severity": "moderate",
       "text": "iVar3 = extraout_EDX_01 + 0x30;",
@@ -463,15 +463,15 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 82,
+      "line": 77,
       "match": "extraout_EDX_00",
       "severity": "moderate",
-      "text": "*(int *)(iVar1 + extraout_EDX_00 + 0x28) = local_14;",
+      "text": "*(int *)(pSVar1 + extraout_EDX_00 + 0x28) = local_14;",
       "type": "extra_output"
     },
     {
       "description": "Undefined global data reference",
-      "line": 84,
+      "line": 79,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "DAT_0060b280 = pCVar2;",
@@ -479,7 +479,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
       "text": "(pCVar2,(SMRGLTextureBasic *)(&DAT_006164ac + *(int *)(param_1 + 0xb18) * 0x18));",
@@ -487,7 +487,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 86,
+      "line": 81,
       "match": "DAT_006164ac",
       "severity": "mild",
       "text": "(pCVar2,(SMRGLTextureBasic *)(&DAT_006164ac + *(int *)(param_1 + 0xb18) * 0x18));",
@@ -495,7 +495,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 82,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "pCVar2 = DAT_0060b280;",
@@ -503,10 +503,10 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 88,
+      "line": 83,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "*(uint *)(*(int *)DAT_0060b280 + 0x18) = 0;",
+      "text": "*(uint *)(DAT_0060b280->vertex_buffer_ptr + 0x18) = 0;",
       "type": "undefined_data"
     },
     {

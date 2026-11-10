@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_vessel.cpp_CCryptVessel_ctor_FUN_00584ed0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xaac                          ; 00584ea0
         ;   Label: core_vessel.cpp_factoryFuncCryptVessel_FUN_00584ea0
-    CALL crt_unknown.c_FUN_005b8be2     ; 00584ea5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00584ea5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 00584eaa
     TEST EAX,EAX                        ; 00584ead
     JNZ 0x00584eb2                      ; 00584eaf

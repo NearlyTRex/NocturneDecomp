@@ -19,7 +19,7 @@ void core_game_cpp_FUN_004d17c0(int param_1,int param_2)
     core_set_cpp_CDemonSet_setCameraView_FUN_0054f0d0(g_CDemonSetPtr,_DAT_01cd0c64);
     return;
   }
-  _DAT_01cd0c64 = *(int *)&g_CDemonSetPtr->field_0x15aeb8;
+  _DAT_01cd0c64 = g_CDemonSetPtr->selected_camera_index;
   *(int *)(param_1 + 0x260) = param_2;
   return;
 }

@@ -13,23 +13,23 @@
 ; int              Stack[0x1c]:4   fade_rate
 ;
 ; XREF[20]:
-;   core_batcreat.cpp_FUN_004123d0 at 0041256d
-;   core_batman.cpp_FUN_00413f90 at 0041412d
-;   core_bride.cpp_FUN_00424b10 at 00424cd2
-;   core_dracbrid.cpp_FUN_0047d480 at 0047d60d
-;   core_dynamite.cpp_FUN_004926d0 at 004928b5
-;   core_emitter.cpp_FUN_0049f310 at 0049f440
-;   core_fire.cpp_FUN_004ae300 at 004ae411
-;   core_fire.cpp_FUN_004aee60 at 004aeeb0
-;   core_fire.cpp_FUN_004b1d90 at 004b1ee0
-;   core_fire.cpp_FUN_004b56a0 at 004b58a1
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 0041256d
+;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 0041412d
+;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424cd2
+;   core_dracbrid.cpp_CDraculaBride_processDamage_FUN_0047d480 at 0047d60d
+;   core_dynamite.cpp_CDynamite_process_FUN_004926d0 at 004928b5
+;   core_emitter.cpp_CEmitter_process_FUN_0049f310 at 0049f440
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_004b56a0 at 004b58a1
+;   core_fire.cpp_CFireball_onCollision_FUN_004aee60 at 004aeeb0
+;   core_fire.cpp_CFireball_process_FUN_004ae300 at 004ae411
+;   core_fire.cpp_CToss_process_FUN_004b1d90 at 004b1ee0
 ;   ... and 10 more
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c986b0
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;
 ; *****************************************************************************
 
@@ -67,8 +67,8 @@ section .text
     ADD ESP,0xc                         ; 004b5a2a
     PUSH 0xffff                         ; 004b5a2d
     PUSH 0xc000                         ; 004b5a32
-    CALL core_actor.cpp_FUN_0040cc60    ; 004b5a37
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 004b5a37
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 004b5a3c
     MOV EDX,EAX                         ; 004b5a3f
     MOV EAX,dword ptr [ESP + 0x20]      ; 004b5a41

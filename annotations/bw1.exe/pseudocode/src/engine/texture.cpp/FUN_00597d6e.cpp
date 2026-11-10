@@ -81,9 +81,12 @@ void engine_texture_cpp_FUN_00597d6e(int param_1,char *param_2)
     }
     unkaddr_0059f520_cpp_FUN_005a0c10(&CStack_64,pvStack_2c,(int)pvStack_14 * (int)pvStack_14);
     unkaddr_0059f520_cpp_FUN_005a0dc0(&CStack_64);
-    engine_dosio_cpp_FUN_00479580(param_2,(char *)0x0,(char *)0x0,acStack_364,(char *)0x0);
-    engine_dosio_cpp_FUN_004795b0(acStack_264,(char *)0x0,(char *)0x0,acStack_364,(char *)0x5f7dca);
-    engine_dosio_cpp_FUN_004795b0(acStack_164,(char *)0x0,(char *)0x0,acStack_364,(char *)0x5f7dcf);
+    engine_dosio_cpp_splitPath_FUN_00479580(param_2,(char *)0x0,(char *)0x0,acStack_364,(char *)0x0)
+    ;
+    engine_dosio_cpp_makePath_FUN_004795b0
+              (acStack_264,(char *)0x0,(char *)0x0,acStack_364,(char *)0x5f7dca);
+    engine_dosio_cpp_makePath_FUN_004795b0
+              (acStack_164,(char *)0x0,(char *)0x0,acStack_364,(char *)0x5f7dcf);
     iVar3 = support_trstream_cpp_FUN_005a0fd0(&CStack_64,0x5f7dd4,acStack_264,1);
     if (iVar3 == 0) {
       _DAT_01d1d400 = "..\\engine\\texture.cpp";

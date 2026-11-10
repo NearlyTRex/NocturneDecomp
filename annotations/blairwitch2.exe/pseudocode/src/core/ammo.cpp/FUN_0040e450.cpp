@@ -12,7 +12,8 @@ uint core_ammo_cpp_FUN_0040e450(int param_1,int param_2)
   int iVar1;
   
   if (0 < *(int *)(param_1 + 0x470)) {
-    iVar1 = core_inv_cpp_FUN_004db880((CInventory *)(param_2 + 0x2437c),&DAT_005cb23d);
+    iVar1 = core_inv_cpp_CInventory_hasItemOfClass_FUN_004db880
+                      ((CInventory *)(param_2 + 0x2437c),&DAT_005cb23d);
     if (iVar1 != 0) {
       *(int *)(param_1 + 0x470) = *(int *)(param_1 + 0x470) + -1;
       return 1;

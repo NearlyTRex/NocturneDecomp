@@ -1,14 +1,17 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 * crt_unknown_c_FUN_005c0f10(undefined4 *param_1,uint param_2)
+; char * __cdecl crt_unknown_c_FUN_005c0f10(char *buffer,SIZE_T size)
 ;
+; Parameters:
+; char *           Stack[0x4]:4   buffer
+; SIZE_T           Stack[0x8]:4   size
 ;
 ; XREF[4]:
 ;   crt_stdlib.c__fullpath_FUN_005ba120 at 005ba169
-;   crt_unknown.c_FUN_005ba2ce at 005ba2ce
 ;   crt_unknown.c_FUN_005be9ac at 005bea18
 ;   crt_unknown.c_FUN_005bfdd4 at 005bfe27
+;   crt_unknown.c__getcwd_FUN_005ba2ce at 005ba2ce
 ;
 ; Referenced Globals:
 ;   void* PTR_GetCurrentDirectoryA_005c8574 = 001c8e00

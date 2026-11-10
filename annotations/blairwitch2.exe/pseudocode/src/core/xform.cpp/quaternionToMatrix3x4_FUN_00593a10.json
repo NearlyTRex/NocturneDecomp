@@ -23,7 +23,7 @@
     {
       "addr": "0040ded0",
       "from_addr": "0040e00c",
-      "name": "core_ammo.cpp_FUN_0040ded0",
+      "name": "core_ammo.cpp_CAmmo_process_FUN_0040ded0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -36,6 +36,12 @@
       "addr": "00438c40",
       "from_addr": "00438c81",
       "name": "core_course.cpp_FUN_00438c40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a6ed0",
+      "from_addr": "005a757b",
+      "name": "core_cross.cpp_CCross_process_FUN_005a6ed0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,19 +59,19 @@
     {
       "addr": "004cdb60",
       "from_addr": "004cdcb1",
-      "name": "core_health.cpp_FUN_004cdb60",
+      "name": "core_health.cpp_CHealthItem_process_FUN_004cdb60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005adad0",
       "from_addr": "005adc15",
-      "name": "core_necklace.cpp_FUN_005adad0",
+      "name": "core_necklace.cpp_CNecklace_process_FUN_005adad0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059c680",
       "from_addr": "0059c7e3",
-      "name": "core_patrpoin.cpp_FUN_0059c680",
+      "name": "core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -83,13 +89,7 @@
     {
       "addr": "005ad530",
       "from_addr": "005ad67e",
-      "name": "core_spirmine.cpp_FUN_005ad530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a6ed0",
-      "from_addr": "005a757b",
-      "name": "unkafter_cross.cpp_FUN_005a6ed0",
+      "name": "core_spirmine.cpp_CSpiritMine_process_FUN_005ad530",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -204,7 +204,7 @@
       {
         "call_addr": "0040e00c",
         "call_type": "direct",
-        "caller": "core_ammo.cpp_FUN_0040ded0",
+        "caller": "core_ammo.cpp_CAmmo_process_FUN_0040ded0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -218,7 +218,7 @@
       {
         "call_addr": "004cdcb1",
         "call_type": "direct",
-        "caller": "core_health.cpp_FUN_004cdb60",
+        "caller": "core_health.cpp_CHealthItem_process_FUN_004cdb60",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "0059c7e3",
         "call_type": "direct",
-        "caller": "core_patrpoin.cpp_FUN_0059c680",
+        "caller": "core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -245,7 +245,7 @@
       {
         "call_addr": "005a757b",
         "call_type": "direct",
-        "caller": "unkafter_cross.cpp_FUN_005a6ed0",
+        "caller": "core_cross.cpp_CCross_process_FUN_005a6ed0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -326,7 +326,7 @@
       "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_005938c0(local_38,param_1);",
+      "text": "core_xform_cpp_FUN_005938c0(&local_38,param_1);",
       "type": "unnamed_param"
     },
     {

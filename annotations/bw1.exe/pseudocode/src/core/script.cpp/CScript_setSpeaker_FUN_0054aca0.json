@@ -1,0 +1,147 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 11,
+    "complexity_score": 9,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 9,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 20
+  },
+  "cross_references": [
+    {
+      "addr": "0042e1a0",
+      "from_addr": "0042e245",
+      "name": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0054ae10",
+      "from_addr": "0054ae1a",
+      "name": "core_script.cpp_CScript_resetDialogState_FUN_0054ae10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00544460",
+      "from_addr": "00546603",
+      "name": "core_script.cpp_CScript_step_FUN_00544460",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0054aca0",
+    "address_range": [
+      [
+        "0054aca0",
+        "0054acb9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_setSpeaker_FUN_0054aca0",
+    "signature": "void __cdecl core_script_cpp_CScript_setSpeaker_FUN_0054aca0(CScript *this_ptr,CDemonActor *actor)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 4,
+    "call_sites": [
+      {
+        "call_addr": "00546603",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00548e47",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_step_FUN_00544460",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0054ae1a",
+        "call_type": "direct",
+        "caller": "core_script.cpp_CScript_resetDialogState_FUN_0054ae10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0042e245",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_processCharacter_FUN_0042e1a0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.875,
+    "instruction_count": 8,
+    "opcode_distribution": {
+      "CBRANCH": 1,
+      "COPY": 5,
+      "INT_ADD": 7,
+      "INT_AND": 2,
+      "INT_EQUAL": 2,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SLESS": 1,
+      "INT_SUB": 1,
+      "LOAD": 5,
+      "POPCOUNT": 1,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 31
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "actor",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

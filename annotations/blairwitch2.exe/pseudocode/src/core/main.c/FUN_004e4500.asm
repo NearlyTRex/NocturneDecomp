@@ -29,8 +29,8 @@
 ;   crt_watcom.c_notifyAbnormalTermination_FUN_005bad80
 ;   engine_2d.c_cleanupGraphicsSystem_FUN_00401120
 ;   sound_sndmain.cpp_shutdownSoundSystem_FUN_0055a160
+;   wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0
 ;   wincore_winrun.cpp_endPeriod_FUN_0058e9d0
-;   wincore_winrun.cpp_FUN_0058f5d0
 ;
 ; *****************************************************************************
 
@@ -97,8 +97,8 @@ section .text
     CALL wincore_winrun.cpp_endPeriod_FUN_0058e9d0 ; 004e457e
         ;   XREF to: 0058e9d0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_endPeriod_FUN_0058e9d0()
     PUSH 0x1d035a0                      ; 004e4583
-    CALL wincore_winrun.cpp_FUN_0058f5d0 ; 004e4588
-        ;   XREF to: 0058f5d0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_FUN_0058f5d0(char * message)
+    CALL wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0 ; 004e4588
+        ;   XREF to: 0058f5d0 (UNCONDITIONAL_CALL)  ; void wincore_winrun.cpp_displayMessageBoxAndQuit_FUN_0058f5d0(char * message)
     ADD ESP,0x4                         ; 004e458d
     ADD ESP,0x4                         ; 004e4590
     POP EDI                             ; 004e4593

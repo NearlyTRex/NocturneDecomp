@@ -11,6 +11,7 @@
 CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
 
 {
+  CDemonActor *this_ptr_00;
   CMorph *pCVar1;
   int iVar2;
   CClothList *pCVar3;
@@ -23,19 +24,20 @@ CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags)
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  iVar2 = *(int *)&this_ptr->field_0x4c350;
-  *(byte **)&this_ptr->field_0x2b0 = &g_CMimicVTable;
-  if (iVar2 != 0) {
-    (**(code **)(*(int *)(iVar2 + 0x2b0) + 0xd8))(iVar2,2);
+  this_ptr_00 = this_ptr->morph_target_actor;
+  (this_ptr->base).base.base.vtable._ub = &g_CMimicVTable._ub;
+  if (this_ptr_00 != (CDemonActor *)0x0) {
+    (*((this_ptr_00->vtable)._ub)->dtor)(this_ptr_00,2);
   }
-  *(uint *)&this_ptr->field_0x4c350 = 0;
-  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80((CMorph *)&this_ptr->field_0x4b720,0);
-  iVar2 = core_necklace_cpp_FUN_005ade00(pCVar1 + -0x3ab60,0);
-  iVar2 = unkafter_armour_cpp_FUN_0040f2b0(iVar2 + -0xd1a0,0);
+  this_ptr->morph_target_actor = (CDemonActor *)0x0;
+  pCVar1 = core_morph_cpp_CMorph_dtor_FUN_005b6e80(&this_ptr->morph,0);
+  iVar2 = core_necklace_cpp_FUN_005ade00
+                    (pCVar1[-0x4e].models[1].textures[0xc].texture_name + 0x30,0);
+  iVar2 = core_armour_cpp_FUN_0040f2b0(iVar2 + -0xd1a0,0);
   iVar2 = unkaddr_0059d350_cpp_FUN_0059df70(iVar2 + -0x9c8,0);
-  pCVar3 = core_cloth_cpp_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
+  pCVar3 = core_cloth_cpp_CClothList_dtor_FUN_005b1480((CClothList *)(iVar2 + -0x34c),0);
   pCVar4 = core_skeleton_cpp_CDeformableModelInstance_dtor_FUN_00544d50
-                     ((CDeformableModelInstance *)(pCVar3 + -0x2a58),0);
+                     ((CDeformableModelInstance *)(pCVar3[-0x19].filenames[6] + 0x10),0);
   pCVar5 = (CMimic *)
            core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)&pCVar4[-1].field_0x2000,1);
   if ((flags & 2) == 0) {

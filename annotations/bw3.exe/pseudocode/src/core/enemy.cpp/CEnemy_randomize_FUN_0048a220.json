@@ -1,0 +1,170 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 69,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 19,
+    "suspect_count": 4,
+    "suspect_types": [
+      "stack_param",
+      "unnamed_field"
+    ],
+    "total_lines": 77
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0048a220",
+    "address_range": [
+      [
+        "0048a220",
+        "0048a2a7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_enemy.cpp_CEnemy_randomize_FUN_0048a220",
+    "signature": "void __cdecl core_enemy_cpp_CEnemy_randomize_FUN_0048a220(CEnemy *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0042cd70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042cd70"
+    },
+    {
+      "addr": "00489c90",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_FUN_00489c90"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.666666666666667,
+    "instruction_count": 45,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 3,
+      "CALLIND": 3,
+      "CBRANCH": 4,
+      "COPY": 63,
+      "FLOAT2FLOAT": 1,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 21,
+      "INT_AND": 24,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 19,
+      "INT_LEFT": 4,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 5,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 9,
+      "INT_SUB": 20,
+      "INT_ZEXT": 4,
+      "LOAD": 15,
+      "POPCOUNT": 9,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 255
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CEnemy *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved stack parameter",
+      "line": 6,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "uint in_stack_00000008;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0xcecc",
+      "severity": "mild",
+      "text": "if ((0 < (int)EVar1) && (*(int *)&this_ptr->field_0xcecc == 0)) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 16,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_FUN_0042cd70(this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 20,
+      "match": "in_stack_00000008",
+      "severity": "moderate",
+      "text": "core_charactr_cpp_FUN_0042cd70(this_ptr,in_stack_00000008);",
+      "type": "stack_param"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConstruct",
+        "offset": 328,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CHotDemon",
+        "offset": 328,
+        "vtable_addr": "005e1d04"
+      },
+      {
+        "class_name": "CImp",
+        "offset": 328,
+        "vtable_addr": "005e1f04"
+      },
+      {
+        "class_name": "CTheHand",
+        "offset": 328,
+        "vtable_addr": "005e5504"
+      },
+      {
+        "class_name": "CKedward",
+        "offset": 328,
+        "vtable_addr": "005e7204"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 51
+  }
+}

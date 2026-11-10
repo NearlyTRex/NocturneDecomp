@@ -1,0 +1,200 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 98,
+    "complexity_score": 55,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 10,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 30,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 128
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004257f0",
+    "address_range": [
+      [
+        "004257f0",
+        "00425908"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_bugs.cpp_CBugs_archive_FUN_004257f0",
+    "signature": "void __cdecl core_bugs_cpp_CBugs_archive_FUN_004257f0(CBugs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b670",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b770",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770"
+    },
+    {
+      "addr": "0040b440",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveString_FUN_0040b440"
+    },
+    {
+      "addr": "00468950",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950"
+    },
+    {
+      "addr": "004a0520",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_004a0520"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d5050",
+      "name": "s_count_005d504f+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d5056",
+      "name": "s_modelCount_005d5056",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5061",
+      "name": "DAT_005d5061",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d5062",
+      "name": "s_modelName_005d5062",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d506c",
+      "name": "s_allowChase_005d506c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5077",
+      "name": "s_allowSwarm_005d5077",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5082",
+      "name": "s_allowChaseEvent_005d5082",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d5092",
+      "name": "s_allowSwarmEvent_005d5092",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d50a2",
+      "name": "s_animateEvent_005d50a2",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "007c3038",
+      "name": "DAT_007c3038",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.30379746835443,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 1,
+      "CALL": 10,
+      "CBRANCH": 4,
+      "COPY": 55,
+      "INT_ADD": 31,
+      "INT_AND": 41,
+      "INT_CARRY": 14,
+      "INT_EQUAL": 40,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 20,
+      "INT_SUB": 36,
+      "INT_XOR": 1,
+      "LOAD": 8,
+      "POPCOUNT": 20,
+      "RETURN": 1,
+      "STORE": 33
+    },
+    "pcode_op_count": 340
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CBugs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 11,
+      "match": "DAT_007c3038",
+      "severity": "mild",
+      "text": "if (DAT_007c3038 == 1) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_005d5061",
+      "severity": "mild",
+      "text": "core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950(pCVar1,&DAT_005d5061);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CBugs",
+        "offset": 212,
+        "vtable_addr": "005fd244"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

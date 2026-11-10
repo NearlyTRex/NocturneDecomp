@@ -28,25 +28,25 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047c8e0(char *title,
     core_main_c_FUN_004e4330("gEdFont must be set by the application.");
   }
   _DAT_01c5bae0 = *(int *)(_DAT_01c5b0e0 + 0x41e8);
-  _DAT_01c5bae4 = engine_font_cpp_FUN_004b30f0(_DAT_01c5b0e0,0x6a);
+  _DAT_01c5bae4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01c5b0e0,0x6a);
   iVar1 = DAT_005fba1c / 0x60;
-  local_18 = shape_edittool_cpp_FUN_004864f0("Cancel");
+  local_18 = shape_edittool_cpp_calculateButtonWidth_FUN_004864f0("Cancel");
   iVar2 = shape_edittool_cpp_FUN_00486580((char *)0x0);
   iVar2 = iVar1 * 2 + iVar2;
-  iVar1 = engine_font_cpp_FUN_004b2a80(_DAT_01c5b0e0,title);
+  iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01c5b0e0,title);
   local_14 = iVar1;
-  iVar3 = engine_font_cpp_FUN_004b2a80(_DAT_01c5b0e0,message);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01c5b0e0,message);
   if (iVar1 < iVar3) {
     local_14 = iVar3;
   }
   if (local_14 < local_18) {
     local_14 = local_18;
   }
-  iVar1 = engine_font_cpp_FUN_004b2b30(_DAT_01c5b0e0,message);
+  iVar1 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01c5b0e0,message);
   shape_edittool_cpp_CEditorTools_createCenteredModal_FUN_0047f3e0
             (g_CEditorToolsPtr,_DAT_01c5bae0 * 4 + local_14,iVar1 + _DAT_01c5bae4 * 2 + iVar2,title,
              0);
-  local_1c = shape_edittool_cpp_FUN_004864f0("Cancel");
+  local_1c = shape_edittool_cpp_calculateButtonWidth_FUN_004864f0("Cancel");
   local_24 = ((_DAT_01c6b5b0 + _DAT_01c6b5a8) - local_1c) / 2 + 1;
   iVar4 = shape_edittool_cpp_FUN_00486580((char *)0x0);
   local_20 = (_DAT_01c6b5b4 - iVar4) + 1;
@@ -68,7 +68,7 @@ void __cdecl shape_edittool_cpp_drawSingleButtonPrompt_FUN_0047c8e0(char *title,
                (((_DAT_01c6b5ac + _DAT_01c6b5b4) - iVar1) - iVar2) / 2,color,0xffffffff);
     shape_edittool_cpp_FUN_00486120(&local_108,1);
     shape_edittool_cpp_FUN_00480410(g_CEditorToolsPtr,0);
-    wincore_wddvmem_cpp_FUN_0057a8a0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
   }
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   shape_edittool_cpp_FUN_0047f970(g_CEditorToolsPtr);

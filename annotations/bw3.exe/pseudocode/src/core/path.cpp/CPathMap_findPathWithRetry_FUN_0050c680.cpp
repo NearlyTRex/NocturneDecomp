@@ -13,29 +13,28 @@ int __cdecl core_path_cpp_CPathMap_findPathWithRetry_FUN_0050c680(CPathMap *this
 {
   int iVar1;
   
-  if (((*(float *)&this_ptr->field_0x138c0 != *(float *)dest_position) ||
-      (*(float *)&this_ptr->field_0x138c4 != *(float *)&dest_position->field_0x4)) ||
-     (*(float *)&this_ptr->field_0x138c8 != *(float *)&dest_position->field_0x8)) {
-    if ((CVector3f *)&this_ptr->field_0x138c0 != dest_position) {
-      *(uint *)&this_ptr->field_0x138c0 = *(uint *)dest_position;
-      *(uint *)&this_ptr->field_0x138c4 = *(uint *)&dest_position->field_0x4;
-      *(uint *)&this_ptr->field_0x138c8 = *(uint *)&dest_position->field_0x8;
+  if ((((this_ptr->cached_world_position).x != dest_position->x) ||
+      ((this_ptr->cached_world_position).y != dest_position->y)) ||
+     ((this_ptr->cached_world_position).z != dest_position->z)) {
+    if (&this_ptr->cached_world_position != dest_position) {
+      (this_ptr->cached_world_position).x = dest_position->x;
+      (this_ptr->cached_world_position).y = dest_position->y;
+      (this_ptr->cached_world_position).z = dest_position->z;
     }
     _DAT_01ec1514 = 1;
     do {
       iVar1 = core_path_cpp_CPathMap_findPathToDestination_FUN_0050baa0
-                        (this_ptr,dest_position,(CVector3f *)&this_ptr->field_0x138cc,direction_hint
-                        );
-      *(int *)&this_ptr->field_0x138bc = iVar1;
+                        (this_ptr,dest_position,&this_ptr->path_heading,direction_hint);
+      this_ptr->last_pathfinding_result = iVar1;
       if (iVar1 == 1) break;
       _DAT_01ec1514 = _DAT_01ec1514 + 1;
     } while (_DAT_01ec1514 < 4);
   }
-  if ((CVector3f *)&this_ptr->field_0x138cc != out_euler_angles) {
-    *(uint *)out_euler_angles = *(uint *)&this_ptr->field_0x138cc;
-    *(uint *)&out_euler_angles->field_0x4 = *(uint *)&this_ptr->field_0x138d0;
-    *(uint *)&out_euler_angles->field_0x8 = *(uint *)&this_ptr->field_0x138d4;
-    return *(int *)&this_ptr->field_0x138bc;
+  if (&this_ptr->path_heading != out_euler_angles) {
+    out_euler_angles->x = (this_ptr->path_heading).x;
+    out_euler_angles->y = (this_ptr->path_heading).y;
+    out_euler_angles->z = (this_ptr->path_heading).z;
+    return this_ptr->last_pathfinding_result;
   }
-  return *(int *)&this_ptr->field_0x138bc;
+  return this_ptr->last_pathfinding_result;
 }

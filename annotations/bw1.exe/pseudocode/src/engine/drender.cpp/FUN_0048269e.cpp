@@ -17,7 +17,7 @@ void engine_drender_cpp_FUN_0048269e(void)
   _DAT_01bc1240 = (uint)*unaff_EBP;
   _DAT_01bc1244 = (uint)unaff_EBP[1];
   _DAT_01bc1248 = (uint)unaff_EBP[2];
-  if (*(int *)(in_ECX + 4) == 0) {
+  if (in_ECX->shadow_pass_active == 0) {
     if (DAT_0061b4a0 == 0x20) {
       _DAT_01c4f02c = engine_special_cpp_FUN_0057de01;
     }

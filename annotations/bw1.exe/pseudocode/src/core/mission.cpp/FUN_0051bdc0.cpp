@@ -20,7 +20,7 @@ int __cdecl core_mission_cpp_FUN_0051bdc0(CDemonMission *this_ptr)
   }
   else {
     if (*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) != 0) {
-      core_mission_cpp_FUN_0051b2b0(this_ptr);
+      core_mission_cpp_CDemonMission_prepareAllActors_FUN_0051b2b0(this_ptr);
       *(uint *)(this_ptr + 0x112c) = 0xffffffff;
       this_ptr_00 = 0x01C51D80;
       *(uint *)(this_ptr + 0x1128) = 0;
@@ -32,11 +32,11 @@ int __cdecl core_mission_cpp_FUN_0051bdc0(CDemonMission *this_ptr)
                 (this_ptr,*(uint *)(*(int *)(_DAT_01d06ab4 * 4 + 0x1d06aa4) + 0x2c));
       clear_screen = 0;
       pcVar1 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Loading script");
-      core_level_cpp_FUN_004fe9c0(0x01D1BD1C,pcVar1,clear_screen);
+      core_level_cpp_CLevelLoader_update_FUN_004fe9c0(0x01D1BD1C,pcVar1,clear_screen);
       core_mission_cpp_FUN_0051abf0(this_ptr);
-      core_script_cpp_FUN_00544190(g_CScriptPtr);
-      core_script_cpp_FUN_00544310(g_CScriptPtr);
-      core_setdir_cpp_FUN_0055b200(g_CDemonSetPtr);
+      core_script_cpp_CScript_initRuntime_FUN_00544190(g_CScriptPtr);
+      core_script_cpp_CScript_executeInitSection_FUN_00544310(g_CScriptPtr);
+      core_setdir_cpp_CDemonSet_clearCameraSwitchCooldown_FUN_0055b200(g_CDemonSetPtr);
       return 1;
     }
     pcVar1 = "Can't run mission - no local hero";

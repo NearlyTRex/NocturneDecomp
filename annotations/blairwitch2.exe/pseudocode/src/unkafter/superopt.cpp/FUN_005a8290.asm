@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[11]:
-;   core_confedrt.cpp_FUN_005a14a0 at 005a14b7
-;   core_confzomb.cpp_FUN_005a2630 at 005a264a
-;   core_fire.cpp_FUN_0049c780 at 0049cb29
-;   core_ghostchi.cpp_FUN_005a9b70 at 005a9b8a
-;   core_hag.cpp_FUN_005ab790 at 005ab7a8
-;   core_partibox.cpp_FUN_005ad300 at 005ad30c
-;   core_patrpoin.cpp_FUN_0059c9a0 at 0059c9aa
-;   core_robin.cpp_FUN_005a6760 at 005a6778
-;   core_spirmine.cpp_FUN_005ad910 at 005ad92a
-;   core_unionzom.cpp_FUN_005a4710 at 005a472a
+;   core_confedrt.cpp_CConfederate_renderTransparent_FUN_005a14a0 at 005a14b7
+;   core_confzomb.cpp_CConfederateZombie_renderTransparent_FUN_005a2630 at 005a264a
+;   core_doc.cpp_CDoc_renderTransparent_FUN_00459d40 at 00459d65
+;   core_fire.cpp_CFireEffect_render_FUN_0049c780 at 0049cb29
+;   core_ghostchi.cpp_CGhostChild_renderTransparent_FUN_005a9b70 at 005a9b8a
+;   core_hag.cpp_CHag_renderTransparent_FUN_005ab790 at 005ab7a8
+;   core_partibox.cpp_CParticleBox_renderTransparent_FUN_005ad300 at 005ad30c
+;   core_patrpoin.cpp_CPatrolPoint_renderTransparent_FUN_0059c9a0 at 0059c9aa
+;   core_robin.cpp_CRobin_renderTransparent_FUN_005a6760 at 005a6778
+;   core_spirmine.cpp_CSpiritMine_renderTransparent_FUN_005ad910 at 005ad92a
 ;   ... and 1 more
 ;
 ; Referenced Globals:

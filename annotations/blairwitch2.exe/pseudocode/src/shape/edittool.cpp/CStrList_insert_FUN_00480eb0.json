@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 166,
+    "complexity_score": 98,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
-    "suspect_count": 9,
+    "pseudocode_lines": 53,
+    "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy",
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 163
+    "total_lines": 160
   },
   "cross_references": [
     {
@@ -191,56 +190,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x4 < iVar5) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "((void *)(*(int *)&this_ptr->field_0x8 + iVar2 + 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(void *)(*(int *)&this_ptr->field_0x8 + iVar2),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(void **)(*(int *)&this_ptr->field_0x8 + iVar2) = pvVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(int *)(iVar2 + *(int *)&this_ptr->field_0x8) == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pcVar6 = *(char **)(*(int *)&this_ptr->field_0x8 + insert_index * 4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 48,
+      "line": 45,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -248,7 +199,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 34,
+      "line": 31,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

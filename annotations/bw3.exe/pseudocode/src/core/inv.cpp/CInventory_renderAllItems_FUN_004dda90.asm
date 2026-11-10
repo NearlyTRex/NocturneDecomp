@@ -61,20 +61,20 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
-;   core_actor.cpp_FUN_0040c790
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
+;   core_actor.cpp_isOfClass_FUN_0040c790
 ;   core_inv.cpp_FUN_004dd310
 ;   core_inv.cpp_getItemDescription_FUN_004d9eb0
 ;   core_inv.cpp_getItemDisplayName_FUN_004d9e40
 ;   core_inv.cpp_loadAssets_FUN_004da570
 ;   crt_math.c_round_FUN_005a3120
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_3d.c_setRenderAlpha_FUN_00406bf0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
 ;   engine_alphabit.cpp_FUN_0040d8a0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;   engine_font.cpp_FUN_004b0a20
-;   engine_font.cpp_FUN_004b2a80
-;   engine_font.cpp_FUN_004b2e40
 ;   ... and 1 more
 ;
 ; *****************************************************************************
@@ -90,7 +90,7 @@ section .text
     SUB ESP,0x568                       ; 004dda96
     AND ESP,0xfffffff8                  ; 004dda9c
     MOV EAX,[0x005fe9dc]                ; 004dda9f | g_CGamePtr
-    CMP dword ptr [EAX + 0x24c],0x0     ; 004ddaa4 | g_CGameInstance.field588_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 004ddaa4 | g_CGameInstance.field540_0x24c
     JNZ 0x004de349                      ; 004ddaab
         ;   XREF to: 004de349 (CONDITIONAL_JUMP)  ; LAB_004de349
     MOV EAX,dword ptr [EBP + 0x14]      ; 004ddab1
@@ -155,8 +155,8 @@ section .text
     PUSH 0x5c6603                       ; 004ddb87 | s_GCHolycross_005c6602+1
     MOV EDX,dword ptr [EAX + 0x338]     ; 004ddb8c
     PUSH EDX                            ; 004ddb92
-    CALL core_actor.cpp_FUN_0040c790    ; 004ddb93
-        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c790 ; 004ddb93
+        ;   XREF to: 0040c790 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c790(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004ddb98
     TEST EAX,EAX                        ; 004ddb9b
     JZ 0x004de3c1                       ; 004ddb9d
@@ -194,8 +194,8 @@ section .text
     LEA EAX,[ESP + 0x20]                ; 004ddbf8
         ;   Label: LAB_004ddbf8
     PUSH EAX                            ; 004ddbfc
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ddbfd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ddbfd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ddc02
     MOV EAX,dword ptr [ESP + 0x534]     ; 004ddc05
     MOV EDX,dword ptr [ESP + 0x528]     ; 004ddc0c
@@ -218,8 +218,8 @@ section .text
     MOV dword ptr [ESP + 0x544],EAX     ; 004ddc49
     MOV EAX,dword ptr [ESP + 0x538]     ; 004ddc50
     PUSH EAX                            ; 004ddc57
-    CALL engine_font.cpp_FUN_004b30f0   ; 004ddc58
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004ddc58
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004ddc5d
     MOV dword ptr [ESP + 0x544],EAX     ; 004ddc60
     MOV EAX,[0x005fba1c]                ; 004ddc67 | DAT_005fba1c
@@ -301,22 +301,22 @@ section .text
     PUSH 0x5c662d                       ; 004ddd5f | = "%d x%3.0f%%"
     LEA EAX,[ESP + 0x224]               ; 004ddd64
     PUSH EAX                            ; 004ddd6b
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ddd6c
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ddd6c
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x14                        ; 004ddd71
     PUSH 0x58                           ; 004ddd74
     MOV EAX,dword ptr [ESP + 0x538]     ; 004ddd76
     PUSH EAX                            ; 004ddd7d
-    CALL engine_font.cpp_FUN_004b30f0   ; 004ddd7e
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004ddd7e
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     MOV dword ptr [ESP + 0x520],EAX     ; 004ddd83
     ADD ESP,0x8                         ; 004ddd8a
     LEA EAX,[ESP + 0x214]               ; 004ddd8d
     PUSH EAX                            ; 004ddd94
     MOV EDX,dword ptr [ESP + 0x538]     ; 004ddd95
     PUSH EDX                            ; 004ddd9c
-    CALL engine_font.cpp_FUN_004b2a80   ; 004ddd9d
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004ddd9d
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004ddda2
     MOV EDX,dword ptr [0x005fba1c]      ; 004ddda5 | DAT_005fba1c
     PUSH 0x0                            ; 004dddab
@@ -357,8 +357,8 @@ section .text
     PUSH 0x5c6639                       ; 004dde14 | = "%s\n\n%s"
     LEA EAX,[ESP + 0x320]               ; 004dde19
     PUSH EAX                            ; 004dde20
-    CALL crt_unknown.c_FUN_005a28c0     ; 004dde21
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004dde21
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004dde26
     MOV EAX,dword ptr [ESP + 0x534]     ; 004dde29
     MOV ECX,dword ptr [ESP + 0x530]     ; 004dde30
@@ -381,8 +381,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x538]     ; 004dde70
     PUSH EDX                            ; 004dde77
     MOV dword ptr [ESP + 0x544],EAX     ; 004dde78
-    CALL engine_font.cpp_FUN_004b30f0   ; 004dde7f
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004dde7f
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004dde84
     MOV dword ptr [ESP + 0x538],EAX     ; 004dde87
     MOV EAX,[0x005fba1c]                ; 004dde8e | DAT_005fba1c
@@ -576,7 +576,7 @@ section .text
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0 ; 004de0e7
         ;   XREF to: 0040d6f0 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0(CAlphaBitmap * this_ptr, int x, int y, int alpha)
     MOV EAX,[0x005fe9dc]                ; 004de0ec | g_CGamePtr
-    MOV EDX,dword ptr [EAX + 0xe0]      ; 004de0f1 | g_CGameInstance.field224_0xe0
+    MOV EDX,dword ptr [EAX + 0xe0]      ; 004de0f1 | g_CGameInstance.field176_0xe0
     ADD ESP,0x10                        ; 004de0f7
     TEST EDX,EDX                        ; 004de0fa
     JZ 0x004de1ce                       ; 004de0fc
@@ -598,8 +598,8 @@ section .text
     PUSH 0x5c6640                       ; 004de144 | DAT_005c6640
     LEA EAX,[ESP + 0x11c]               ; 004de149
     PUSH EAX                            ; 004de150
-    CALL crt_unknown.c_FUN_005a28c0     ; 004de151
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004de151
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004de156
     PUSH 0x0                            ; 004de159
         ;   Label: LAB_004de159
@@ -622,8 +622,8 @@ section .text
     PUSH 0x5c6645                       ; 004de192 | DAT_005c6645
     LEA EAX,[ESP + 0x11c]               ; 004de197
     PUSH EAX                            ; 004de19e
-    CALL crt_unknown.c_FUN_005a28c0     ; 004de19f
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004de19f
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004de1a4
     PUSH 0x0                            ; 004de1a7
     PUSH 0xfc                           ; 004de1a9
@@ -702,8 +702,8 @@ section .text
     PUSH ECX                            ; 004de291
     MOV EBX,EAX                         ; 004de292
     MOV dword ptr [ESP + 0x564],EAX     ; 004de294
-    CALL engine_font.cpp_FUN_004b30f0   ; 004de29b
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004de29b
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004de2a0
     MOV dword ptr [ESP + 0x54c],EAX     ; 004de2a3
     IMUL EAX,EBX                        ; 004de2aa
@@ -729,7 +729,7 @@ section .text
     JNZ 0x004de33d                      ; 004de2f2
         ;   XREF to: 004de33d (CONDITIONAL_JUMP)  ; LAB_004de33d
     MOV EAX,[0x005fe9dc]                ; 004de2f4 | g_CGamePtr
-    CMP dword ptr [EAX + 0x24c],0x0     ; 004de2f9 | g_CGameInstance.field588_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 004de2f9 | g_CGameInstance.field540_0x24c
     JNZ 0x004de33d                      ; 004de300
         ;   XREF to: 004de33d (CONDITIONAL_JUMP)  ; LAB_004de33d
     PUSH 0xffff                         ; 004de302
@@ -802,23 +802,23 @@ section .text
     LEA EAX,[ESP + 0x418]               ; 004de3dc
         ;   Label: LAB_004de3dc
     PUSH EAX                            ; 004de3e3
-    CALL crt_unknown.c_FUN_005a28c0     ; 004de3e4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004de3e4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004de3e9
     PUSH 0x58                           ; 004de3ec
         ;   Label: LAB_004de3ec
     MOV EAX,dword ptr [ESP + 0x538]     ; 004de3ee
     PUSH EAX                            ; 004de3f5
-    CALL engine_font.cpp_FUN_004b30f0   ; 004de3f6
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004de3f6
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     MOV dword ptr [ESP + 0x56c],EAX     ; 004de3fb
     ADD ESP,0x8                         ; 004de402
     LEA EAX,[ESP + 0x414]               ; 004de405
     PUSH EAX                            ; 004de40c
     MOV EDX,dword ptr [ESP + 0x538]     ; 004de40d
     PUSH EDX                            ; 004de414
-    CALL engine_font.cpp_FUN_004b2a80   ; 004de415
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004de415
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004de41a
     MOV EDX,dword ptr [0x005fba1c]      ; 004de41d | DAT_005fba1c
     PUSH 0x0                            ; 004de423
@@ -861,8 +861,8 @@ section .text
     PUSH 0x5c6617                       ; 004de491 | DAT_005c6617
     LEA EAX,[ESP + 0x41c]               ; 004de496
     PUSH EAX                            ; 004de49d
-    CALL crt_unknown.c_FUN_005a28c0     ; 004de49e
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004de49e
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004de4a3
     JMP 0x004de3ec                      ; 004de4a6
         ;   XREF to: 004de3ec (UNCONDITIONAL_JUMP)  ; LAB_004de3ec
@@ -872,8 +872,8 @@ section .text
     PUSH 0x5c661a                       ; 004de4b2 | DAT_005c661a
     LEA EAX,[ESP + 0x41c]               ; 004de4b7
     PUSH EAX                            ; 004de4be
-    CALL crt_unknown.c_FUN_005a28c0     ; 004de4bf
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004de4bf
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004de4c4
     JMP 0x004de3ec                      ; 004de4c7
         ;   XREF to: 004de3ec (UNCONDITIONAL_JUMP)  ; LAB_004de3ec
@@ -938,8 +938,8 @@ section .text
     PUSH 0x5c6643                       ; 004de562 | DAT_005c6643
     LEA EAX,[ESP + 0x118]               ; 004de567
     PUSH EAX                            ; 004de56e
-    CALL crt_unknown.c_FUN_005a28c0     ; 004de56f
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004de56f
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004de574
     JMP 0x004de159                      ; 004de577
         ;   XREF to: 004de159 (UNCONDITIONAL_JUMP)  ; LAB_004de159

@@ -1,0 +1,174 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 142,
+    "complexity_score": 73,
+    "cross_reference_count": 1,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 48,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 190
+  },
+  "cross_references": [
+    {
+      "addr": "00522350",
+      "from_addr": "00524f15",
+      "name": "core_script.cpp_FUN_00522350",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00529a10",
+    "address_range": [
+      [
+        "00529a10",
+        "00529afc"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_script.cpp_CScript_skipCommands_FUN_00529a10",
+    "signature": "int __cdecl core_script_cpp_CScript_skipCommands_FUN_00529a10(CScript *this_ptr,int direction,int count)"
+  },
+  "function_calls": [
+    {
+      "addr": "005b8da0",
+      "is_variadic": false,
+      "name": "crt_string.c__strnicmp_FUN_005b8da0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e4df0",
+      "name": "DAT_005e4df0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e4df3",
+      "name": "DAT_005e4df3",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00524f15",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      },
+      {
+        "call_addr": "00525c03",
+        "call_type": "direct",
+        "caller": "core_script.cpp_FUN_00522350",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.730769230769231,
+    "instruction_count": 104,
+    "opcode_distribution": {
+      "BOOL_AND": 2,
+      "BOOL_NEGATE": 6,
+      "BRANCH": 4,
+      "CALL": 4,
+      "CBRANCH": 15,
+      "COPY": 82,
+      "INT_ADD": 38,
+      "INT_AND": 75,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 71,
+      "INT_LESS": 9,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 10,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 34,
+      "INT_SUB": 30,
+      "INT_XOR": 2,
+      "LOAD": 26,
+      "POPCOUNT": 34,
+      "RETURN": 3,
+      "STORE": 22
+    },
+    "pcode_op_count": 492
+  },
+  "stack_frame": {
+    "frame_size": 36,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CScript *"
+      },
+      {
+        "is_param": true,
+        "name": "direction",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "count",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_005e4df0",
+      "severity": "mild",
+      "text": "(iVar2 = _strnicmp(str1,&DAT_005e4df0,2), iVar2 != 0)) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_005e4df3",
+      "severity": "mild",
+      "text": "(iVar2 = _strnicmp(str1,&DAT_005e4df3,4), iVar2 != 0)) {",
+      "type": "undefined_data"
+    }
+  ]
+}

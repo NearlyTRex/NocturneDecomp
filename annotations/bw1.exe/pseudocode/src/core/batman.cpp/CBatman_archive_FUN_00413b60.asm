@@ -17,12 +17,12 @@
 ;   int g_CBatmanClassVersion = 0x3
 ;
 ; Called Functions:
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0
 ;   core_actor.cpp_archiveInteger_FUN_0040b670
+;   core_actor.cpp_archiveMotionState_FUN_0040b870
 ;   core_actor.cpp_archiveString_FUN_0040b440
 ;   core_actor.cpp_archiveVector_FUN_0040b1c0
-;   core_actor.cpp_FUN_0040b7f0
-;   core_actor.cpp_FUN_0040b870
 ;   core_enemy.cpp_CEnemy_archive_FUN_004a0520
 ;
 ; *****************************************************************************
@@ -46,13 +46,13 @@ section .text
     PUSH 0x5d3ae7                       ; 00413b83 | = "modelName"
     LEA ESI,[EBX + 0x158]               ; 00413b88
     PUSH ESI                            ; 00413b8e
-    CALL core_actor.cpp_FUN_0040b7f0    ; 00413b8f
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 ; 00413b8f
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 00413b94
     PUSH 0x5d3af1                       ; 00413b97 | = "motion state"
     PUSH ESI                            ; 00413b9c
-    CALL core_actor.cpp_FUN_0040b870    ; 00413b9d
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b870(CMotionController * motion_controller, char * property_name)
+    CALL core_actor.cpp_archiveMotionState_FUN_0040b870 ; 00413b9d
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040b870(CMotionController * motion_controller, char * property_name)
     MOV EDX,dword ptr [0x00610990]      ; 00413ba2 | g_CBatmanClassVersion
     ADD ESP,0x8                         ; 00413ba8
     CMP EDX,0x2                         ; 00413bab

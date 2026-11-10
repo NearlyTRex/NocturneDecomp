@@ -39,7 +39,7 @@ void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_00582990(int skip_
     }
     iVar2 = DAT_0061b498 * DAT_0061b4a0 >> 0x1f;
     uVar1 = (int)((DAT_0061b498 * DAT_0061b4a0 + iVar2 * -8) - (uint)(iVar2 << 2 < 0)) >> 3;
-    wincore_wddvmem_cpp_FUN_005acb10();
+    wincore_wddvmem_cpp_openScreenDevice_FUN_005acb10();
     engine_special_cpp_FUN_00581f50();
     if (0 < DAT_0061b49c) {
       iVar4 = 0;
@@ -62,7 +62,7 @@ void __cdecl engine_special_cpp_presentToExternalRenderer_FUN_00582990(int skip_
       } while (iVar2 < DAT_0061b49c);
     }
     engine_special_cpp_unlockFrame_FUN_00581fa0(0);
-    wincore_wddvmem_cpp_FUN_005acc00();
+    wincore_wddvmem_cpp_closeScreenDevice_FUN_005acc00();
   }
   _DAT_02c834d0 = 0;
   (*_DAT_02c83390)();

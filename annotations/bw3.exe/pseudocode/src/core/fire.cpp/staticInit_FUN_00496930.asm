@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500
-;   core_fire.cpp_FUN_004a1460
+;   core_fire.cpp_CFireEffect_ctor_FUN_004a1460
 ;   crt_memory.c___arrinit_FUN_005a30d7
 ;   crt_stdlib.c__atexit_FUN_005a3e13
 ;
@@ -16,8 +16,8 @@ section .text
 
     PUSH 0x1c73654                      ; 00496930
         ;   Label: core_fire.cpp_staticInit_FUN_00496930
-    CALL core_fire.cpp_FUN_004a1460     ; 00496935
-        ;   XREF to: 004a1460 (UNCONDITIONAL_CALL)  ; CFireEffect * core_fire.cpp_FUN_004a1460(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_ctor_FUN_004a1460 ; 00496935
+        ;   XREF to: 004a1460 (UNCONDITIONAL_CALL)  ; CFireEffect * core_fire.cpp_CFireEffect_ctor_FUN_004a1460(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 0049693a
     PUSH 0x1c73698                      ; 0049693d
     CALL core_dmodel.cpp_CKeyFramedModelInstance_ctor_FUN_00462500 ; 00496942

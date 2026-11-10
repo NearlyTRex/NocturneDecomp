@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
+;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 at 0050cb2c
 ;   core_netgame.cpp_FUN_0050b420 at 0050b478
 ;   core_netgame.cpp_FUN_0050b4d0 at 0050b519
-;   core_netgame.cpp_FUN_0050c280 at 0050cb2c
 ;
 ; *****************************************************************************
 

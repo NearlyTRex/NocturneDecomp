@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x94]:4  local_94
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d2760 at 004d2795
+;   core_hero.cpp_CHero_testLineIntersection_FUN_004d2760 at 004d2795
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408100

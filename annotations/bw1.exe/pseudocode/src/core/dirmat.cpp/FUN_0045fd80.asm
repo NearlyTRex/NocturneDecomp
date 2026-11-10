@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[6]:
-;   core_dirmat.cpp_FUN_0045f3e0 at 0045f3f8
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 at 0045f3f8
 ;   core_xform.cpp_FUN_005b5620 at 005b563d
 ;   core_xform.cpp_FUN_005b5760 at 005b577d
 ;   core_xform.cpp_FUN_005b7ed0 at 005b7ef6

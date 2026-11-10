@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 153,
-    "complexity_score": 429,
+    "complexity_score": 163,
     "cross_reference_count": 5,
     "function_call_count": 9,
     "global_count": 12,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 59,
-    "suspect_count": 35,
+    "pseudocode_lines": 58,
+    "suspect_count": 9,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 212
+    "total_lines": 211
   },
   "cross_references": [
     {
@@ -25,15 +24,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00534890",
-      "from_addr": "00535184",
-      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
+      "addr": "00535a80",
+      "from_addr": "00535b82",
+      "name": "core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00535a80",
-      "from_addr": "00535b82",
-      "name": "core_set.cpp_FUN_00535a80",
+      "addr": "00534890",
+      "from_addr": "00535184",
+      "name": "core_set.cpp_CDemonSet_setCameraView_FUN_00534890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -83,6 +82,11 @@
       "name": "crt_watcom.c__memset_FUN_00495ec0"
     },
     {
+      "addr": "0046cb90",
+      "is_variadic": false,
+      "name": "engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90"
+    },
+    {
       "addr": "0046d520",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setShadowPass_FUN_0046d520"
@@ -91,11 +95,6 @@
       "addr": "0046cc40",
       "is_variadic": false,
       "name": "engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40"
-    },
-    {
-      "addr": "0046cb90",
-      "is_variadic": false,
-      "name": "engine_drender.cpp_FUN_0046cb90"
     },
     {
       "addr": "0046d090",
@@ -210,7 +209,7 @@
       {
         "call_addr": "00535b82",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535a80",
+        "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +220,7 @@
       {
         "call_addr": "00535c9f",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00535a80",
+        "caller": "core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -325,275 +324,67 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11e4 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x11e4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11e4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 21,
+      "line": 20,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,0,0,*(int *)&this_ptr->field_0x1cc0 + -1,",
+      "text": "(DAT_005f2afc,0,0,this_ptr->shadow_map_width + -1,this_ptr->shadow_map_height + -1);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "(DAT_005f2afc,0,0,*(int *)&this_ptr->field_0x1cc0 + -1,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1cc4 + -1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x11dc",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11dc = *(int *)&this_ptr->field_0x1cc0 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11dc = *(int *)&this_ptr->field_0x1cc0 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x11d4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11d4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x11e0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11e0 = *(int *)&this_ptr->field_0x1cc4 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x11e0 = *(int *)&this_ptr->field_0x1cc4 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x11d8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x11d8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 26,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "this_ptr_00 = DAT_005f2afc;",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1d0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x168 = skip_clear_buffers;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "engine_drender_cpp_FUN_0046cb90(this_ptr_00,(CVector3f *)&this_ptr->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 31,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046d090(DAT_005f2afc,*(uint *)&this_ptr->field_0x38);",
+      "text": "engine_matrix_c_FUN_0046d090(DAT_005f2afc,(this_ptr->base).base.focal_length);",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "engine_matrix_c_FUN_0046d090(DAT_005f2afc,*(uint *)&this_ptr->field_0x38);",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
       "line": 33,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(CMatrix3x3f *)&this_ptr->field_0x10);",
+      "text": "(DAT_005f2afc,&(this_ptr->base).base.rotation_matrix);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x10",
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_01c5faec",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(CMatrix3x3f *)&this_ptr->field_0x10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x2fa4",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x2fa4 * (longlong)(int)_DAT_01c6e300;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x2fa4",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x2fa4 * (longlong)(int)_DAT_01c6e30c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x2fa4",
-      "severity": "mild",
-      "text": "lVar1 = (longlong)*(int *)&this_ptr->field_0x2fa4 * (longlong)(int)_DAT_01c6e318;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "(*(int *)&this_ptr->field_0x1cc0 * *(int *)&this_ptr->field_0x1cc4 * 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1cc4) {",
-      "type": "unnamed_field"
+      "text": "pCVar3->saved_screen_buffer_rows[0] = *(void **)(&DAT_01c5faec + iVar2 * 4);",
+      "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
       "line": 48,
       "match": "DAT_01c5faec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x1cd4 = *(uint *)(&DAT_01c5faec + iVar2 * 4);",
+      "text": "*(ushort **)(&DAT_01c5faec + iVar2 * 4) =",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x1cd4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x1cd4 = *(uint *)(&DAT_01c5faec + iVar2 * 4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 49,
-      "match": "DAT_01c5faec",
-      "severity": "mild",
-      "text": "*(int *)(&DAT_01c5faec + iVar2 * 4) =",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1cc0 * iVar2 * 2 + *(int *)&this_ptr->field_0x2f94;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
-      "match": "field_0x2f94",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x1cc0 * iVar2 * 2 + *(int *)&this_ptr->field_0x2f94;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar3 = (CDemonLight *)&pCVar3->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "} while (iVar2 < *(int *)&this_ptr->field_0x1cc4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 56,
+      "line": 55,
       "match": "DAT_005f2afc",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_setShadowPass_FUN_0046d520(DAT_005f2afc,1);",
       "type": "undefined_data"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar3->owner`). Replace `pCVar3->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 52,
-      "match": "pCVar3 = (T *)&pCVar3->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 51,
+      "match": "pCVar3 = (T *)&(pCVar3->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar3 = (CDemonLight *)&pCVar3->field_0x4;",
+      "text": "pCVar3 = (CDemonLight *)&(pCVar3->base).base.position;",
       "type": "shadow_pointer_walk"
     }
   ]

@@ -8,15 +8,15 @@
 ;
 ; XREF[88]:
 ;   core_actor.cpp_FUN_00409170 at 00409567
-;   core_ammo.cpp_FUN_0040dd00 at 0040dd15
-;   core_ammobox.cpp_FUN_0040e320 at 0040e381
-;   core_ammobox.cpp_FUN_0040e3c0 at 0040e3d5
-;   core_anvil.cpp_FUN_0040e8f0 at 0040e905
-;   core_backgnd.cpp_FUN_0040f010 at 0040f025
-;   core_backgnd.cpp_FUN_0040f0e0 at 0040f0f9
-;   core_bat.cpp_FUN_00410d80 at 00410e70
-;   core_bat.cpp_FUN_00411000 at 00411020
-;   core_battery.cpp_FUN_00414600 at 00414615
+;   core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dd00 at 0040dd15
+;   core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0 at 0040e3d5
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e320 at 0040e381
+;   core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040e8f0 at 0040e905
+;   core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f010 at 0040f025
+;   core_backgnd.cpp_CBackgroundActor_getCollisionType_FUN_0040f0e0 at 0040f0f9
+;   core_bat.cpp_CBat_getBoundingBox_FUN_00411000 at 00411020
+;   core_bat.cpp_CBat_process_FUN_00410d80 at 00410e70
+;   core_battery.cpp_CBattery_getBoundingBox_FUN_00414600 at 00414615
 ;   ... and 78 more
 ;
 ; Referenced Globals:

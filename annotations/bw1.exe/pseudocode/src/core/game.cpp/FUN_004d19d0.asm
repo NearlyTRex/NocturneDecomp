@@ -6,11 +6,11 @@
 ;
 ; XREF[7]:
 ;   core_game.cpp_CGame_playerControls_FUN_004d0860 at 004d08a5
-;   core_game.cpp_FUN_004cf5e0 at 004cf98c
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf98c
 ;   core_game.cpp_FUN_004d77d0 at 004d7b6f
+;   core_script.cpp_CScript_executeInitSection_FUN_00544310 at 005443ad
+;   core_script.cpp_CScript_process_FUN_005437f0 at 00543873
 ;   core_script.cpp_CScript_step_FUN_00544460 at 0054861f
-;   core_script.cpp_FUN_005437f0 at 00543873
-;   core_script.cpp_FUN_00544310 at 005443ad
 ;   unkafter_alphabit.cpp_FUN_00415be0 at 00415c0e
 ;
 ; Referenced Globals:
@@ -25,7 +25,7 @@
 ;   undefined4 DAT_01cd01f0
 ;   undefined4 DAT_01cd01f4
 ;   undefined4 DAT_01cd0b40
-;   undefined4 g_CDemonSetInstance.field1420984_0x15aeb8
+;   undefined4 g_CDemonSetInstance.selected_camera_index
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_getMyControls_FUN_00530660
@@ -54,7 +54,7 @@ section .text
     CALL crt_memory.c_memset_FUN_005bfb70 ; 004d19f8
         ;   XREF to: 005bfb70 (UNCONDITIONAL_CALL)  ; void * crt_memory.c_memset_FUN_005bfb70(void * dest, int value, ulong count)
     MOV EAX,[0x00622c18]                ; 004d19fd | g_CDemonSetPtr
-    MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004d1a02 | g_CDemonSetInstance.field1420984_0x15aeb8
+    MOV EAX,dword ptr [EAX + 0x15aeb8]  ; 004d1a02 | g_CDemonSetInstance.selected_camera_index
     MOV [0x01cd01f4],EAX                ; 004d1a08 | DAT_01cd01f4
     MOV EAX,[0x0061d418]                ; 004d1a0d | g_CFieldNotesPtr
     MOV ECX,dword ptr [EAX + 0x40]      ; 004d1a12 | g_CFieldNotesInstance.field64_0x40

@@ -17,6 +17,12 @@
   },
   "cross_references": [
     {
+      "addr": "004fb440",
+      "from_addr": "004fb445",
+      "name": "core_mission.cpp_CDemonMission_clearMission_FUN_004fb440",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004fb590",
       "from_addr": "004fb5a2",
       "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004fb590",
@@ -26,12 +32,6 @@
       "addr": "004fcb00",
       "from_addr": "004fcbad",
       "name": "core_mission.cpp_CDemonMission_run_FUN_004fcb00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004fb440",
-      "from_addr": "004fb445",
-      "name": "core_mission.cpp_FUN_004fb440",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -45,13 +45,13 @@
     ],
     "convention": "unknown",
     "name": "core_mission.cpp_FUN_004fb450",
-    "signature": "void core_mission_cpp_FUN_004fb450(int param_1)"
+    "signature": "void core_mission_cpp_FUN_004fb450(CDemonMission *param_1)"
   },
   "function_calls": [
     {
       "addr": "004fc640",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004fc640"
+      "name": "core_mission.cpp_CDemonMission_removeAllActors_FUN_004fc640"
     }
   ],
   "globals": [],
@@ -61,7 +61,7 @@
       {
         "call_addr": "004fb445",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fb440",
+        "caller": "core_mission.cpp_CDemonMission_clearMission_FUN_004fb440",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -134,7 +134,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_mission_cpp_FUN_004fb450(int param_1)",
+      "text": "void core_mission_cpp_FUN_004fb450(CDemonMission *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -142,7 +142,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004fc640(param_1);",
+      "text": "core_mission_cpp_CDemonMission_removeAllActors_FUN_004fc640(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -158,7 +158,7 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(byte *)(param_1 + 0x1014) = 0;",
+      "text": "param_1[0x1014] = (CDemonMission)0x0;",
       "type": "unnamed_param"
     },
     {

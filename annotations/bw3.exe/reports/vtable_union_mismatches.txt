@@ -11,6 +11,99 @@ from the wrong vtable struct, producing misleading pseudocode.
 SUMMARY
 ----------------------------------------------------------------------------------------------------
 
-  Total mismatches found: 0
+  Total mismatches found: 15
 
-  No mismatches detected.
+  By union member used:
+    _uc (CCharacter_vtable): 14
+    _uh (CHero_vtable): 1
+
+  By source file:
+    core/elephant.cpp                        4
+    core/weapon.cpp                          4
+    core/gun.cpp                             3
+    core/tommygun.cpp                        2
+    core/melee.cpp                           1
+    core/mission.cpp                         1
+
+  By object type:
+    CElephantGun              4  (CElephantGun -> CWeapon -> CDemonActor)
+    CWeapon                   4  (CWeapon -> CDemonActor)
+    CGun                      3  (CGun -> CWeapon -> CDemonActor)
+    CTommyGun                 2  (CTommyGun -> CWeapon -> CDemonActor)
+    CMelee                    1  (CMelee -> CWeapon -> CDemonActor)
+    CCharacter                1  (CCharacter -> CDemonActor)
+
+====================================================================================================
+DETAILED FINDINGS
+====================================================================================================
+
+  core/elephant.cpp (4)
+    CElephantGun_fire_FUN_00486d40                      this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_fire_FUN_00486d40                      this_ptr on CElephantGun     used _uc, need _uw  getGrabbed -> getDamage
+    CElephantGun_process_FUN_00486c30                   this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CElephantGun_renderAimBeam_FUN_004876d0             this_ptr on CElephantGun     used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/weapon.cpp (4)
+    CWeapon_onDropped_FUN_0057b500                      this_ptr on CWeapon          used _uc, need _uw  kill -> setWeaponState
+    CWeapon_process_FUN_0057b160                        this_ptr on CWeapon          used _uc, need _uw  getGrabber -> updateLighting
+    CWeapon_renderAimBeam_FUN_0057bb60                  this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CWeapon_updateLighting_FUN_0057b5c0                 this_ptr on CWeapon          used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+
+  core/gun.cpp (3)
+    CGun_fire_FUN_004d0fc0                              this_ptr on CGun             used _uc, need _uw  isInvulnerable -> getMuzzlePoint
+    CGun_fire_FUN_004d0fc0                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
+    CGun_fire_FUN_004d0fc0                              this_ptr on CGun             used _uc, need _uw  getGrabbed -> getDamage
+
+  core/tommygun.cpp (2)
+    CTommyGun_fire_FUN_0056b410                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+    CTommyGun_fire_FUN_0056b410                         this_ptr on CTommyGun        used _uc, need _uw  getGrabbed -> getDamage
+
+  core/melee.cpp (1)
+    CMelee_fillAttackDamageInfo_FUN_004e72b0            this_ptr on CMelee           used _uc, need _uw  getGrabbed -> getDamage
+
+  core/mission.cpp (1)
+    CDemonMission_run_FUN_004f72a0                      existing_hero on CCharacter       used _uh, need _uc  reset -> isGrabbable
+
+====================================================================================================
+OFFSET COLLISION REFERENCE
+====================================================================================================
+
+  Offset    CCharacter (_uc)                CWeapon (_uw)                 
+  ------------------------------------------------------------------------
+  0xec      applyDamage                     onFired                       
+  0xf0      kill                            setWeaponState                
+  0xf4      isInvulnerable                  getMuzzlePoint                
+  0xf8      isGrabbable                     fire                          
+  0xfc      canBeGrabbed                    isReadyToFire                 
+  0x100     getGrabbed                      getDamage                     
+  0x104     releaseFromGrab                 renderAimBeam                 
+  0x108     getGrabber                      updateLighting                
+  0x10c     releaseVictim                   vfunc62                       
+  0x110     onVictimLost                    -                             
+  0x114     checkCylinderCollisionWorld     -                             
+  0x118     testDamageLine                  -                             
+  0x11c     processDamage                   -                             
+  0x120     getDeathState                   -                             
+  0x124     attractActorToward              -                             
+  0x128     canBeAttracted                  -                             
+  0x12c     getPartDominantBone             -                             
+  0x130     setDoorTarget                   -                             
+  0x134     clearDoorTarget                 -                             
+  0x138     hasDoorTarget                   -                             
+  0x13c     dropCarriedObject               -                             
+  0x140     getCarryObjToBodyXForm          -                             
+  0x144     setWalkTarget                   -                             
+  0x148     setWalkTargetImmediate          -                             
+  0x14c     setWalkTimeout                  -                             
+  0x150     isWalkComplete                  -                             
+
+  Offset    CEnemy (_ue)                    CHero (_uh)                   
+  ------------------------------------------------------------------------
+  0x154     getTargetPoint                  createDefaultWeapon           
+  0x158     updateVictim                    drawWeapon                    
+  0x15c     randomize                       isWeaponDrawn                 
+  0x160     -                               reset                         
+  0x164     -                               toggleGoggles                 
+  0x168     -                               canReachPickup                
+  0x16c     -                               doHeroAction                  
+  0x170     -                               canDoHeroAction               

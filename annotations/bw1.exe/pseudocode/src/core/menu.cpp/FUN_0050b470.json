@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 514,
-    "complexity_score": 800,
+    "complexity_score": 619,
     "cross_reference_count": 1,
     "function_call_count": 11,
     "global_count": 43,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 245,
-    "suspect_count": 51,
+    "pseudocode_lines": 239,
+    "suspect_count": 34,
     "suspect_types": [
-      "concat_reconstruction",
       "raw_address_constant",
       "raw_address_pointer_store",
       "unnamed_field",
@@ -20,7 +19,7 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 759
+    "total_lines": 753
   },
   "cross_references": [
     {
@@ -61,7 +60,7 @@
     {
       "addr": "0050a2b0",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_0050a2b0"
+      "name": "core_menu.cpp_calibrateGamepad_FUN_0050a2b0"
     },
     {
       "addr": "0050d640",
@@ -81,12 +80,12 @@
     {
       "addr": "00555770",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_00555770"
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_00555770"
     },
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "00531090",
@@ -96,7 +95,7 @@
     {
       "addr": "005acff0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_005acff0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0"
     }
   ],
   "globals": [
@@ -276,49 +275,49 @@
     },
     {
       "addr": "01ccf438",
-      "name": "g_CGameInstance.field168_0xa8",
+      "name": "g_CGameInstance.invert_mouse_y_axis",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf43c",
-      "name": "g_CGameInstance.field172_0xac",
+      "name": "g_CGameInstance.always_run",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf440",
-      "name": "g_CGameInstance.field176_0xb0",
+      "name": "g_CGameInstance.x_mouse_sensitivity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf444",
-      "name": "g_CGameInstance.field180_0xb4",
+      "name": "g_CGameInstance.y_mouse_sensitivity",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf448",
-      "name": "g_CGameInstance.field184_0xb8",
+      "name": "g_CGameInstance.x_center",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf460",
-      "name": "g_CGameInstance.field208_0xd0",
+      "name": "g_CGameInstance.field160_0xd0",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf468",
-      "name": "g_CGameInstance.field216_0xd8",
+      "name": "g_CGameInstance.field168_0xd8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf46c",
-      "name": "g_CGameInstance.field220_0xdc",
+      "name": "g_CGameInstance.field172_0xdc",
       "type": "undefined4",
       "value": null
     },
@@ -348,13 +347,13 @@
     },
     {
       "addr": "01fdcfec",
-      "name": "g_CDemonSetInstance.field1420932_0x15ae84",
+      "name": "g_CDemonSetInstance.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fdcffc",
-      "name": "g_CDemonSetInstance.field1420948_0x15ae94",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
       "type": "undefined4",
       "value": null
     }
@@ -489,31 +488,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x15ae94",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 42,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "switch(*(uint *)&pCVar3->field_0xd0) {",
@@ -521,7 +496,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 46,
+      "line": 45,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0xd0 = 0;",
@@ -529,15 +504,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0xac",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xac == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
+      "line": 72,
       "match": "field_0xd8",
       "severity": "mild",
       "text": "uVar2 = *(uint *)&g_CGamePtr->field_0xd8;",
@@ -545,7 +512,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 76,
+      "line": 75,
       "match": "field_0xd8",
       "severity": "mild",
       "text": "*(uint *)&g_CGamePtr->field_0xd8 = 0;",
@@ -553,7 +520,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 90,
+      "line": 86,
       "match": "field_0xdc",
       "severity": "mild",
       "text": "if (*(int *)&g_CGamePtr->field_0xdc == 0) {",
@@ -561,23 +528,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0xb0",
-      "severity": "mild",
-      "text": "(local_114,\"%5.2f\",(double)*(int *)&g_CGamePtr->field_0xb0 * _DAT_005e801a);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 143,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "(local_114,\"%5.2f\",(double)*(int *)&g_CGamePtr->field_0xb4 * _DAT_005e801a);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 165,
+      "line": 159,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "if (*(int *)&g_CGamePtr->field_0xd0 == 1) {",
@@ -585,15 +536,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 166,
-      "match": "field_0xa8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CGamePtr->field_0xa8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 177,
+      "line": 171,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "else if (*(int *)&g_CGamePtr->field_0xd0 == 2) {",
@@ -601,7 +544,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 189,
+      "line": 183,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "iVar4 = *(int *)&g_CGamePtr->field_0xd0 + -1;",
@@ -609,7 +552,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 190,
+      "line": 184,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(int *)&g_CGamePtr->field_0xd0 = iVar4;",
@@ -617,7 +560,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 192,
+      "line": 186,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0xd0 = 3;",
@@ -625,7 +568,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 196,
+      "line": 190,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "iVar4 = *(int *)&g_CGamePtr->field_0xd0 + 1;",
@@ -633,7 +576,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 197,
+      "line": 191,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(int *)&g_CGamePtr->field_0xd0 = iVar4;",
@@ -641,7 +584,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 199,
+      "line": 193,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(uint *)&pCVar3->field_0xd0 = 0;",
@@ -649,7 +592,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 202,
+      "line": 196,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "if ((*(int *)&g_CGamePtr->field_0xd0 != 3) &&",
@@ -657,23 +600,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 211,
-      "match": "field_0xac",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xac = (uint)(*(int *)&g_CGamePtr->field_0xac == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 211,
-      "match": "field_0xac",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xac = (uint)(*(int *)&g_CGamePtr->field_0xac == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 214,
+      "line": 208,
       "match": "field_0xd8",
       "severity": "mild",
       "text": "if (*(int *)&g_CGamePtr->field_0xd8 == 0) {",
@@ -681,7 +608,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 215,
+      "line": 209,
       "match": "field_0xd8",
       "severity": "mild",
       "text": "*(uint *)&g_CGamePtr->field_0xd8 = 2;",
@@ -689,7 +616,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 218,
+      "line": 212,
       "match": "field_0xd8",
       "severity": "mild",
       "text": "*(uint *)&g_CGamePtr->field_0xd8 = 0;",
@@ -697,7 +624,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 222,
+      "line": 216,
       "match": "field_0xdc",
       "severity": "mild",
       "text": "*(uint *)&g_CGamePtr->field_0xdc = (uint)(*(int *)&g_CGamePtr->field_0xdc == 0);",
@@ -705,7 +632,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 222,
+      "line": 216,
       "match": "field_0xdc",
       "severity": "mild",
       "text": "*(uint *)&g_CGamePtr->field_0xdc = (uint)(*(int *)&g_CGamePtr->field_0xdc == 0);",
@@ -713,23 +640,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 227,
-      "match": "field_0xb0",
-      "severity": "mild",
-      "text": "core_menu_cpp_adjustMouseSensitivity_FUN_0050a5e0((int *)&g_CGamePtr->field_0xb0,pcVar8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 232,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "core_menu_cpp_adjustMouseSensitivity_FUN_0050a5e0((int *)&g_CGamePtr->field_0xb4,pcVar8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 235,
+      "line": 229,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "if (*(int *)&g_CGamePtr->field_0xd0 == 1) {",
@@ -737,23 +648,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 236,
-      "match": "field_0xa8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xa8 = (uint)(*(int *)&g_CGamePtr->field_0xa8 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 236,
-      "match": "field_0xa8",
-      "severity": "mild",
-      "text": "*(uint *)&g_CGamePtr->field_0xa8 = (uint)(*(int *)&g_CGamePtr->field_0xa8 == 0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 238,
+      "line": 232,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "else if (*(int *)&g_CGamePtr->field_0xd0 == 2) {",
@@ -761,7 +656,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 242,
+      "line": 236,
       "match": "*(code **)(*0x01D1BCA0",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -769,7 +664,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 242,
+      "line": 236,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar4 = (**(code **)(*0x01D1BCA0 + 4))(0x01D1BCA0);",
@@ -777,23 +672,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 244,
+      "line": 238,
       "match": "field_0xd0",
       "severity": "mild",
-      "text": "(((*(int *)&g_CGamePtr->field_0xd0 != 2 || (*(int *)&g_CGamePtr->field_0xb8 != 0)) ||",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 244,
-      "match": "field_0xb8",
-      "severity": "mild",
-      "text": "(((*(int *)&g_CGamePtr->field_0xd0 != 2 || (*(int *)&g_CGamePtr->field_0xb8 != 0)) ||",
+      "text": "(((*(int *)&g_CGamePtr->field_0xd0 != 2 || (g_CGamePtr->x_center != 0)) ||",
       "type": "unnamed_field"
     },
     {
       "description": "Raw hex address 0x1d1f6e0 assigned to bare local `iVar6`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `iVar6` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 23,
+      "line": 22,
       "match": "0x1d1f6e0",
       "severity": "moderate",
       "text": "iVar6 = 0x1d1f6e0;",
@@ -801,7 +688,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 100,
+      "line": 96,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -809,7 +696,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 122,
+      "line": 117,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -817,7 +704,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 133,
+      "line": 128,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -825,39 +712,15 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 156,
+      "line": 150,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 78,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar11 = CONCAT44(pcVar5,0x1d1f9e0);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 82,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar11 = CONCAT44(pcVar5,0x1d1f9e0);",
-      "type": "concat_reconstruction"
-    },
-    {
-      "description": "Ghidra CONCAT44 reconstruction (stitches narrow values into a wider one) \u2014 a Watcom wide-value artifact, not real C. Reduce to the proper form (e.g. sign-extend `(longlong)(int)x`, 64-bit math, or a typed field) in a .keep.",
-      "line": 87,
-      "match": "CONCAT44",
-      "severity": "moderate",
-      "text": "uVar11 = CONCAT44(pcVar5,0x1d1f9e0);",
-      "type": "concat_reconstruction"
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 113,
+      "line": 108,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -865,7 +728,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 147,
+      "line": 141,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -873,7 +736,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 113,
+      "line": 108,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -881,7 +744,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 147,
+      "line": 141,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",

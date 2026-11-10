@@ -21,15 +21,15 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGam
   byte bVar8;
   
   bVar8 = 0;
-  if (*(int *)&this_ptr->field_0x11c < 0) {
+  if (this_ptr->local_player_index < 0) {
     _DAT_01d1d400 = "..\\core\\netgame.cpp";
     _DAT_01d1d404 = 0x9cd;
     core_main_c_FUN_005030e0("CNetGame::applySimFrameHistory - I'm not in the player list!");
   }
-  *(uint *)&this_ptr->field_0x174 = *(uint *)(sim_frame + 4);
+  this_ptr->random_seed = *(uint *)(sim_frame + 4);
   core_game_cpp_CGame_slamDT_FUN_004d7f50(g_CGamePtr,*(float *)(sim_frame + 8));
   iVar4 = 0;
-  if (0 < *(int *)&this_ptr->field_0x1c) {
+  if (0 < this_ptr->player_count) {
     iVar5 = 0;
     pSVar2 = sim_frame;
     do {
@@ -44,8 +44,8 @@ void __cdecl core_netgame_cpp_CNetGame_applySimFrameHistory_FUN_005305a0(CNetGam
       }
       iVar4 = iVar4 + 1;
       pSVar2 = pSVar2 + 0x30;
-    } while (iVar4 < *(int *)&this_ptr->field_0x1c);
+    } while (iVar4 < this_ptr->player_count);
   }
-  *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) = *(int *)sim_frame + 1;
+  *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 = *(int *)sim_frame + 1;
   return;
 }

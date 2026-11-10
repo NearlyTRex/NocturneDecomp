@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 98,
-    "complexity_score": 200,
+    "complexity_score": 55,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 15,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
     "total_lines": 138
@@ -31,7 +30,7 @@
     {
       "addr": "00581910",
       "from_addr": "00582c7c",
-      "name": "core_vampboss.cpp_FUN_00581910",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +71,7 @@
       {
         "call_addr": "00582c7c",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00581910",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,118 +179,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x3b0",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x3b0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x3ac) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x8b0",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x8b0 + iVar3 * 4) = value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x8c4",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x8c4 + iVar3 * 4) = duration;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x3ac);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x3ac < 5) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x3b0",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x3b0 + *(int *)&this_ptr->field_0x3ac * 0x100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "pcVar4 = &this_ptr->field_0x3b0 + *(int *)&this_ptr->field_0x3ac * 0x100;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x8b0",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x8b0 + *(int *)&this_ptr->field_0x3ac * 4) = value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x8b0 + *(int *)&this_ptr->field_0x3ac * 4) = value;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x8c4",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x8c4 + *(int *)&this_ptr->field_0x3ac * 4) = duration;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "*(float *)(&this_ptr->field_0x8c4 + *(int *)&this_ptr->field_0x3ac * 4) = duration;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x3ac = *(int *)&this_ptr->field_0x3ac + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x3ac",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x3ac = *(int *)&this_ptr->field_0x3ac + 1;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 27,

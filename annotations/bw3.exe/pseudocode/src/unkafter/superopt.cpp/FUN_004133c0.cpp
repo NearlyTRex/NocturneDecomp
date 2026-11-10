@@ -45,7 +45,7 @@ void unkafter_superopt_cpp_FUN_004133c0(int *param_1,int param_2)
       do {
         engine_alphabit_cpp_FUN_0040d400(pCVar4);
         iVar3 = iVar3 + 1;
-        pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;
+        pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;
       } while (iVar3 < param_1[8]);
     }
     piVar2 = param_1;
@@ -130,7 +130,7 @@ void unkafter_superopt_cpp_FUN_004133c0(int *param_1,int param_2)
     do {
       engine_alphabit_cpp_FUN_0040d400(pCVar4);
       iVar3 = iVar3 + 1;
-      pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;
+      pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;
     } while (iVar3 < param_1[8]);
   }
   (**(code **)(*param_1 + 0x28))(param_1,1,"bullet1",0x7a,0x72,1,0x9d,0x157,0);

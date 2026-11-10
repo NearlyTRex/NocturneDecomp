@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 12,
-    "complexity_score": 64,
+    "complexity_score": 54,
     "cross_reference_count": 5,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -30,13 +30,13 @@
     {
       "addr": "00500310",
       "from_addr": "005004e6",
-      "name": "core_lightgun.cpp_FUN_00500310",
+      "name": "core_lightgun.cpp_CLightGun_fire_FUN_00500310",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00501a70",
       "from_addr": "00501c46",
-      "name": "core_lightpis.cpp_FUN_00501a70",
+      "name": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -99,7 +99,7 @@
       {
         "call_addr": "005004e6",
         "call_type": "direct",
-        "caller": "core_lightgun.cpp_FUN_00500310",
+        "caller": "core_lightgun.cpp_CLightGun_fire_FUN_00500310",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -110,7 +110,7 @@
       {
         "call_addr": "00501c46",
         "call_type": "direct",
-        "caller": "core_lightpis.cpp_FUN_00501a70",
+        "caller": "core_lightpis.cpp_CLightPis_fire_FUN_00501a70",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -182,14 +182,6 @@
     ]
   },
   "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x15f698",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15f698 = 3;",
-      "type": "unnamed_field"
-    },
     {
       "description": "Auto-generated struct field name",
       "line": 6,

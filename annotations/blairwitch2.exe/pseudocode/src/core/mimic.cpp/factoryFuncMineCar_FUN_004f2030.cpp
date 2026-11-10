@@ -11,11 +11,11 @@ void core_mimic_cpp_factoryFuncMineCar_FUN_004f2030(void)
 {
   CPlatform *pCVar1;
   
-  pCVar1 = (CPlatform *)FUN_005b8be2(0x888);
+  pCVar1 = (CPlatform *)debugAllocTracked1(0x888);
   if (pCVar1 == (CPlatform *)0x0) {
     return;
   }
   pCVar1 = core_platfrm_cpp_CPlatform_ctor_FUN_005180b0(pCVar1);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CMineCarVTable;
+  (pCVar1->base).vtable._ub = &g_CMineCarVTable;
   return;
 }

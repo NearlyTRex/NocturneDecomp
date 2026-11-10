@@ -49,17 +49,17 @@ void FUN_0051354e(void);
 // Address: 00513650
 int __cdecl CPathMap::findPathWithRetry(CPathMap *this_ptr,CVector3f *dest_position,CVector3f *out_euler_angles,int direction_hint);
 
-// Original: core_path.cpp_FUN_00513720
+// Original: core_path.cpp_renderGridQuad_FUN_00513720
 // Address: 00513720
-void FUN_00513720(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
+void renderGridQuad(int param_1,int param_2,int param_3,int param_4,undefined4 param_5,int param_6,int param_7);
 
-// Original: core_path.cpp_FUN_00513950
+// Original: core_path.cpp_CPathMap_renderPathMap_FUN_00513950
 // Address: 00513950
-void FUN_00513950(int param_1,int param_2,int param_3,int param_4,int param_5);
+void __cdecl CPathMap::renderPathMap(CPathMap *this_ptr,int depth,int red,int green,int fog);
 
-// Original: core_path.cpp_FUN_00513d30
+// Original: core_path.cpp_getOrCreatePathMap_FUN_00513d30
 // Address: 00513d30
-CPathMap * __cdecl FUN_00513d30(CLocation *location);
+CPathMap * __cdecl getOrCreatePathMap(CLocation *location);
 
 // Original: core_path.cpp_getPathMap_FUN_00513ea0
 // Address: 00513ea0

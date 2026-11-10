@@ -14,7 +14,7 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[2]:
-;   core_setdir.cpp_FUN_00541410 at 00541459
+;   core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_00541410 at 00541459
 ;   core_setdir.cpp_FUN_00541a20 at 00541a3a
 ;
 ; Called Functions:

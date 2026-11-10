@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_004b16d0(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+; void core_fire_cpp_FUN_004b16d0(float *param_1,float *param_2,float param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
@@ -22,10 +22,10 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
-;   core_actor.cpp_FUN_0040cd00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
+;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-;   core_fire.cpp_FUN_004b5eb0
+;   core_fire.cpp_CFireEffect_createRock_FUN_004b5eb0
 ;   core_set.cpp_CDemonSet_initCameraShake_FUN_00555ab0
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 00555ab0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_00555ab0(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 004b171c
     PUSH 0x3f000000                     ; 004b171f
-    CALL core_actor.cpp_FUN_0040cd00    ; 004b1724
-        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cd00(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cd00 ; 004b1724
+        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cd00(float probability_threshold)
     ADD ESP,0x4                         ; 004b1729
     MOV dword ptr [EBP + 0x18],EAX      ; 004b172c
     MOV EAX,dword ptr [ESP + 0x60]      ; 004b172f
@@ -73,16 +73,16 @@ section .text
     PUSH 0x3fc90fdb                     ; 004b1738
         ;   Label: LAB_004b1738
     PUSH 0x3f490fdb                     ; 004b173d
-    CALL core_actor.cpp_FUN_0040cc00    ; 004b1742
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004b1742
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 004b1747
     FLD float ptr [ESP + 0x44]          ; 004b174b
     ADD ESP,0x8                         ; 004b174f
     PUSH 0x40c90fdb                     ; 004b1752
     PUSH 0x0                            ; 004b1757
     FSTP float ptr [ESP + 0x38]         ; 004b1759
-    CALL core_actor.cpp_FUN_0040cc00    ; 004b175d
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004b175d
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 004b1762
     FLD float ptr [ESP + 0x44]          ; 004b1766
     ADD ESP,0x8                         ; 004b176a
@@ -138,8 +138,8 @@ section .text
     MOV ECX,dword ptr [0x0061c010]      ; 004b17f2 | DAT_0061c010
     PUSH ECX                            ; 004b17f8
     INC EBX                             ; 004b17f9
-    CALL core_fire.cpp_FUN_004b5eb0     ; 004b17fa
-        ;   XREF to: 004b5eb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004b5eb0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
+    CALL core_fire.cpp_CFireEffect_createRock_FUN_004b5eb0 ; 004b17fa
+        ;   XREF to: 004b5eb0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_004b5eb0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 004b17ff
     CMP EBX,0xa                         ; 004b1802
     JL 0x004b1738                       ; 004b1805

@@ -21,7 +21,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_dcamera.cpp_FUN_0044f740 at 0044f745
+;   core_dcamera.cpp_CDemonCamera_generateFogGrid_FUN_0044f740 at 0044f745
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_resetFogSamplingOffset_FUN_00448720

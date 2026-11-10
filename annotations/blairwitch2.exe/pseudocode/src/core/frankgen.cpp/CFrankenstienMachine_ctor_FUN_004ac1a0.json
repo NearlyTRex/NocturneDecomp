@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 28,
-    "complexity_score": 148,
+    "complexity_score": 74,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 18,
-    "suspect_count": 12,
+    "pseudocode_lines": 24,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
     ],
-    "total_lines": 46
+    "total_lines": 52
   },
   "cross_references": [
     {
@@ -126,88 +126,24 @@
       "line": 15,
       "match": "pCVar2[-2].",
       "severity": "mild",
-      "text": "*(byte **)&pCVar2[-2].field_0x140 = &g_CFrankenstienMachineVTable;",
+      "text": "*(CDemonActor_vtable **)(pCVar2[-2].model_name + 200) = &g_CFrankenstienMachineVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(byte **)&pCVar2[-2].field_0x140 = &g_CFrankenstienMachineVTable;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 16,
-      "match": "pCVar2[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-2].field_0x148 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-2].field_0x148 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 17,
-      "match": "pCVar2[-2].",
-      "severity": "mild",
-      "text": "pCVar2[-2].field_0x14c = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x14c",
-      "severity": "mild",
-      "text": "pCVar2[-2].field_0x14c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 18,
-      "match": "pCVar2[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-2].field_0x16c = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[-2].field_0x16c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2[1].field_0x4 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 20,
+      "match": "pCVar2[-2].",
+      "severity": "mild",
+      "text": "pCVar2[-2].model_name[0xd4] = '\\0';",
+      "type": "negative_offset"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 26,
       "match": "pCVar2[-3].",
       "severity": "mild",
-      "text": "return (CFrankenstienMachine *)&pCVar2[-3].field_0xc;",
+      "text": "return (CFrankenstienMachine *)(pCVar2[-3].part_visibility_flags + 3);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "return (CFrankenstienMachine *)&pCVar2[-3].field_0xc;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

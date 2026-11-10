@@ -8,8 +8,8 @@
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_00415740 at 00415753
-;   core_bodypart.cpp_FUN_004157c0 at 00415d2f
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0 at 00415d2f
+;   core_bodypart.cpp_CBodyPart_onDropped_FUN_00415740 at 00415753
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b6cd6

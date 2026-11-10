@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_dynamite.cpp_FUN_0047b130 at 0047b168
+;   core_dynamite.cpp_CDynamite_fire_FUN_0047b130 at 0047b168
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c0a40

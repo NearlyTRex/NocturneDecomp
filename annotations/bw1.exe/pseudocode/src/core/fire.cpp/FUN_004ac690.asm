@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b4dd0 at 004b4fa9
+;   core_fire.cpp_CFireEffect_process_FUN_004b4dd0 at 004b4fa9
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40

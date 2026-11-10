@@ -10,7 +10,7 @@
 ; CDemonActor *    Stack[0x10]:4   victim
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040aa60
+;   core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aa60
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x1c]      ; 00509883
     PUSH ECX                            ; 00509887
     PUSH EBX                            ; 00509888
-    CALL core_actor.cpp_FUN_0040aa60    ; 00509889
-        ;   XREF to: 0040aa60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040aa60()
+    CALL core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aa60 ; 00509889
+        ;   XREF to: 0040aa60 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_fillAttackDamageInfo_FUN_0040aa60(CDemonActor * this_ptr, int attack_flags, SDamageInfo * out_damage_info, CDemonActor * victim)
     ADD ESP,0x10                        ; 0050988e
     MOV EAX,dword ptr [EBX + 0x154]     ; 00509891
     PUSH EBX                            ; 00509897

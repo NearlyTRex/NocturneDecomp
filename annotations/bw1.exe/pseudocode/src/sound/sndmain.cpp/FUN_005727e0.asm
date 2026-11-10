@@ -9,11 +9,11 @@
 ; XREF[8]:
 ;   core_dracbrid.cpp_FUN_0047d920 at 0047dd8d
 ;   core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004c59f0 at 004c5a22
-;   core_lightgun.cpp_FUN_00500d20 at 00500ed7
-;   core_lightpis.cpp_FUN_00502480 at 00502637
+;   core_lightgun.cpp_CLightGun_process_FUN_00500d20 at 00500ed7
+;   core_lightpis.cpp_CLightPis_process_FUN_00502480 at 00502637
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_00505ec0 at 00506017
 ;   core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_00506060 at 005060cd
-;   core_sound.cpp_FUN_0057bef0 at 0057c0e6
+;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057c0e6
 ;   core_vehicle.cpp_CVehicle_playTrackedSound_FUN_005a89c0 at 005a89cf
 ;
 ; Referenced Globals:

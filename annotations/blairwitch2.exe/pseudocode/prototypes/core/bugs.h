@@ -21,45 +21,45 @@ CDemonActorType * CBugs::getActorType(CBugs *this_ptr);
 // Address: 0041ef50
 CBugs * __cdecl CBugs::ctor(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041f0f0
+// Original: core_bugs.cpp_CBugs_setup_FUN_0041f0f0
 // Address: 0041f0f0
-void FUN_0041f0f0(CBugs *param_1);
+void __cdecl CBugs::setup(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041f390
+// Original: core_bugs.cpp_CBugs_process_FUN_0041f390
 // Address: 0041f390
-void FUN_0041f390(CBugs *param_1,float param_2);
+void __cdecl CBugs::process(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_0041f450
+// Original: core_bugs.cpp_CBugs_renderOpaque_FUN_0041f450
 // Address: 0041f450
-int FUN_0041f450(CDemonActor *param_1);
+int __cdecl CBugs::renderOpaque(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041f620
+// Original: core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620
 // Address: 0041f620
-void FUN_0041f620(int param_1);
+void __cdecl CBugs::renderGroundHeightGrid(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041f790
+// Original: core_bugs.cpp_CBugs_getBoundingBox_FUN_0041f790
 // Address: 0041f790
-void FUN_0041f790(int param_1);
+CBoundingBox3D * __cdecl CBugs::getBoundingBox(CBugs *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_bugs.cpp_FUN_0041f7c0
+// Original: core_bugs.cpp_CBugs_archive_FUN_0041f7c0
 // Address: 0041f7c0
-void FUN_0041f7c0(CEnemy *param_1);
+void __cdecl CBugs::archive(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041f8e0
+// Original: core_bugs.cpp_CBugs_getCollisionType_FUN_0041f8e0
 // Address: 0041f8e0
-undefined4 FUN_0041f8e0(void);
+ECollisionType __cdecl CBugs::getCollisionType(CBugs *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_bugs.cpp_FUN_0041f8f0
+// Original: core_bugs.cpp_CBugs_getDeathState_FUN_0041f8f0
 // Address: 0041f8f0
-undefined4 FUN_0041f8f0(int param_1);
+EDeathState __cdecl CBugs::getDeathState(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041f910
+// Original: core_bugs.cpp_CBugs_processDamage_FUN_0041f910
 // Address: 0041f910
-void FUN_0041f910(int param_1,int param_2);
+void __cdecl CBugs::processDamage(CBugs *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_bugs.cpp_FUN_0041f940
+// Original: core_bugs.cpp_CBugs_initializeSwarmGraph_FUN_0041f940
 // Address: 0041f940
-void __cdecl FUN_0041f940(CBugs *this_ptr,int tri_count,SInputFace *triangles);
+void __cdecl CBugs::initializeSwarmGraph(CBugs *this_ptr,int tri_count,SInputFace *triangles);
 
 // Original: core_bugs.cpp_CBugs_addSwarmGraphEdge_FUN_0041fa20
 // Address: 0041fa20
@@ -69,41 +69,41 @@ void __cdecl CBugs::addSwarmGraphEdge(CBugs *this_ptr,int vertex_index,int neigh
 // Address: 0041fad0
 void __cdecl CBugs::updateGroundHeightGrid(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_0041feb0
+// Original: core_bugs.cpp_CBugs_sampleGroundHeight_FUN_0041feb0
 // Address: 0041feb0
-undefined4 FUN_0041feb0(int param_1,float param_2,float param_3);
+float __cdecl CBugs::sampleGroundHeight(CBugs *this_ptr,float x,float z);
 
-// Original: core_bugs.cpp_FUN_00420000
+// Original: core_bugs.cpp_CBugs_updateBugsBehavior_FUN_00420000
 // Address: 00420000
-void __cdecl FUN_00420000(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs::updateBugsBehavior(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_004203a0
+// Original: core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004203a0
 // Address: 004203a0
-void __cdecl FUN_004203a0(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs::attackSwarmTarget(CBugs *this_ptr,float delta_time);
 
-// Original: core_bugs.cpp_FUN_00420830
+// Original: core_bugs.cpp_CBugs_updateBoundingBox_FUN_00420830
 // Address: 00420830
-void __cdecl FUN_00420830(CBugs *this_ptr,float delta_time);
+void __cdecl CBugs::updateBoundingBox(CBugs *this_ptr,float delta_time);
 
 // Original: core_bugs.cpp_FUN_00420840
 // Address: 00420840
-undefined4 FUN_00420840(undefined4 param_1,int *param_2,float param_3,float *param_4);
+undefined4 FUN_00420840(CBugs *param_1,int *param_2,float param_3,float *param_4);
 
 // Original: core_bugs.cpp_FUN_00420e90
 // Address: 00420e90
 void FUN_00420e90(CBugs *param_1,SBug *param_2,float param_3);
 
-// Original: core_bugs.cpp_FUN_00421800
+// Original: core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_00421800
 // Address: 00421800
-void __cdecl FUN_00421800(CBugs *this_ptr,SBug *bug_data);
+void __cdecl CBugs::findNextSwarmVertex(CBugs *this_ptr,SBug *bug_data);
 
-// Original: core_bugs.cpp_FUN_00421a00
+// Original: core_bugs.cpp_CBugs_recalculateBoundingBox_FUN_00421a00
 // Address: 00421a00
-void __cdecl FUN_00421a00(CBugs *this_ptr);
+void __cdecl CBugs::recalculateBoundingBox(CBugs *this_ptr);
 
-// Original: core_bugs.cpp_FUN_00421b10
+// Original: core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10
 // Address: 00421b10
-void __cdecl FUN_00421b10(CBugs *this_ptr,CDemonActor *target);
+void __cdecl CBugs::setSwarmTarget(CBugs *this_ptr,CDemonActor *target);
 
 // Original: core_bugs.cpp_FUN_00421dd0
 // Address: 00421dd0

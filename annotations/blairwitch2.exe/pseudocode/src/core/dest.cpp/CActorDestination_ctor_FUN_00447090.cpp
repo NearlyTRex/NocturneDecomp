@@ -15,10 +15,9 @@ CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_00447090(CA
   char *pcVar4;
   
   pcVar3 = (char *)0x5cea54;
-  pCVar2 = (CActorDestination *)
-           core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
-  pcVar4 = &pCVar2->field_0x2e4;
-  *(byte **)&pCVar2->field_0x2b0 = &g_CActorDestinationVTable;
+  pCVar2 = (CActorDestination *)core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
+  pcVar4 = pCVar2->what_event;
+  (pCVar2->base).vtable._ub = &g_CActorDestinationVTable;
   do {
     cVar1 = *pcVar3;
     *pcVar4 = cVar1;
@@ -28,9 +27,9 @@ CActorDestination * __cdecl core_dest_cpp_CActorDestination_ctor_FUN_00447090(CA
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar2->field_0x2b4 = 0;
-  pCVar2->field_0x2b8 = 0;
-  *(uint *)&pCVar2->field_0x34c = 1;
-  *(uint *)&pCVar2->field_0x348 = 1;
+  pCVar2->dest_actor = (CDemonActor *)0x0;
+  pCVar2->dest_class[0] = '\0';
+  pCVar2->needs_actor_search = 1;
+  pCVar2->persistent_event_flag = 1;
   return pCVar2;
 }

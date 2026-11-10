@@ -16,13 +16,13 @@
 ;   core_fldnotes.cpp_FUN_004ba930 at 004ba94e
 ;   core_fldnotes.cpp_FUN_004bc830 at 004bc997
 ;   core_fldnotes.cpp_FUN_004be0f0 at 004be44e
-;   core_game.cpp_FUN_004cc2b0 at 004cc3be
-;   core_game.cpp_FUN_004ccafe at 004ccb21
-;   core_game.cpp_FUN_004ccc40 at 004ccccd
+;   core_game.cpp_CGame_renderOverlay_FUN_004cc2b0 at 004cc3be
+;   core_game.cpp_CGame_showCustomizableKeys_FUN_004ccc40 at 004ccccd
+;   core_game.cpp_drawCreditsLine_FUN_004ccafe at 004ccb21
 ;   core_game.cpp_drawKeyBindingEntry_FUN_004ccb80 at 004ccbd3
 ;   core_inv.cpp_FUN_004fae10 at 004fb00f
-;   core_level.cpp_FUN_004fe9c0 at 004fef55
-;   core_menu.cpp_FUN_0050a2b0 at 0050a342
+;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0 at 004fef55
+;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0 at 0050a342
 ;   ... and 15 more
 ;
 ; Referenced Globals:

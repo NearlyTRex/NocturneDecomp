@@ -12,47 +12,48 @@ int __cdecl engine_pod_cpp_CPod_getNextSearchResult_FUN_0051b5d0(CPod *this_ptr,
   CPodSearchContext CVar1;
   CPodFile *this_ptr_00;
   int iVar2;
-  uint *puVar3;
-  CPodSearchContext *pCVar4;
+  CPodDirectoryEntry *pCVar3;
+  int iVar4;
   CPodSearchContext *pCVar5;
+  CPodSearchContext *pCVar6;
   
-  if (*(int *)(search_context + 0x314) < *(int *)this_ptr) {
+  if (*(int *)(search_context + 0x314) < this_ptr->pod_file_count) {
     do {
       if (*(int *)(search_context + 0x314) < 0) {
         *(uint *)(search_context + 0x314) = 0;
       }
-      this_ptr_00 = *(CPodFile **)(&this_ptr->field_0x4 + *(int *)(search_context + 0x314) * 4);
+      this_ptr_00 = this_ptr->pod_files[*(int *)(search_context + 0x314)];
       while( true ) {
         if (*(int *)(search_context + 0x318) < 0) {
           *(uint *)(search_context + 0x318) = 0;
         }
-        if (*(int *)&this_ptr_00->field_0x410 <= *(int *)(search_context + 0x318)) break;
-        puVar3 = (uint *)
-                 (*(int *)&this_ptr_00->field_0x414 + *(int *)(search_context + 0x318) * 0x14);
-        iVar2 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840
-                          ((char *)(search_context + 0x214),(char *)*puVar3,0);
-        if (iVar2 != 0) {
-          pCVar4 = (CPodSearchContext *)*puVar3;
-          pCVar5 = search_context;
+        iVar2 = *(int *)(search_context + 0x318);
+        if (this_ptr_00->file_count <= iVar2) break;
+        pCVar3 = this_ptr_00->directory_entries;
+        iVar4 = shape_edittool_cpp_wildcardStringMatch_FUN_00485840
+                          ((char *)(search_context + 0x214),*(char **)(pCVar3 + iVar2 * 0x14),0);
+        if (iVar4 != 0) {
+          pCVar5 = *(CPodSearchContext **)(pCVar3 + iVar2 * 0x14);
+          pCVar6 = search_context;
           goto LAB_0051b694;
         }
         *(int *)(search_context + 0x318) = *(int *)(search_context + 0x318) + 1;
       }
       *(uint *)(search_context + 0x318) = 0;
       *(int *)(search_context + 0x314) = *(int *)(search_context + 0x314) + 1;
-    } while (*(int *)(search_context + 0x314) < *(int *)this_ptr);
+    } while (*(int *)(search_context + 0x314) < this_ptr->pod_file_count);
   }
   *search_context = (CPodSearchContext)0x0;
   return 0;
   while( true ) {
-    CVar1 = pCVar4[1];
-    pCVar4 = pCVar4 + 2;
-    pCVar5[1] = CVar1;
+    CVar1 = pCVar5[1];
     pCVar5 = pCVar5 + 2;
+    pCVar6[1] = CVar1;
+    pCVar6 = pCVar6 + 2;
     if (CVar1 == (CPodSearchContext)0x0) break;
 LAB_0051b694:
-    CVar1 = *pCVar4;
-    *pCVar5 = CVar1;
+    CVar1 = *pCVar5;
+    *pCVar6 = CVar1;
     if (CVar1 == (CPodSearchContext)0x0) break;
   }
   engine_pod_cpp_CPodFile_populateFileInfo_FUN_0051aa00

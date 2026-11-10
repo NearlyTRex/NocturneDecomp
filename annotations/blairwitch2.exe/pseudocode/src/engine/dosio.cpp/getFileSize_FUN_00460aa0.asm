@@ -20,7 +20,7 @@
 ;   core_script.cpp_CScript_dbLoad_FUN_00529c10 at 00529c33
 ;   core_script.cpp_FUN_00521cf0 at 00521d17
 ;   core_script.cpp_FUN_00522350 at 00523f39
-;   engine_font.cpp_FUN_004a7d00 at 004a7d8c
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00 at 004a7d8c
 ;   ... and 13 more
 ;
 ; Called Functions:

@@ -9,9 +9,9 @@
 ;
 ; XREF[5]:
 ;   core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_00475720 at 00475e0d
-;   core_mirror.cpp_FUN_004f53b0 at 004f53d9
+;   core_mirror.cpp_CMirror_renderReflectedPrimitive_FUN_004f53b0 at 004f53d9
 ;   core_mirror.cpp_FUN_004f547e at 004f55e6
-;   core_set.cpp_FUN_0053b250 at 0053b277
+;   core_set.cpp_CDemonSet_renderSinglePrimitive_FUN_0053b250 at 0053b277
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00577290 at 005776f4
 ;
 ; Referenced Globals:

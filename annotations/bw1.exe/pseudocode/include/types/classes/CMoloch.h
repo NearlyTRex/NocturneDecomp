@@ -6,11 +6,20 @@
 #include "system/basetypes.h"
 
 // Structure: CMoloch
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x23060 (143456 bytes)
 #pragma pack(push, 1)
 typedef struct CMoloch {
-    char field_0[143456]; // 0x0
+    char field_0[140112]; // 0x0
+    int in_human_form; // 0x22350
+    int morphing; // 0x22354
+    float morph_timer; // 0x22358
+    char human_to_demon_condition[100]; // 0x2235c
+    char demon_to_human_condition[100]; // 0x223c0
+    char field_140324[3116]; // 0x22424
+    int dead1; // 0x23050
+    float aim_yaw; // 0x23054
+    int dead2; // 0x23058
+    int dead3; // 0x2305c
 } CMoloch;
 #pragma pack(pop)
 

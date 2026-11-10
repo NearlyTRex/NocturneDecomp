@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 224,
+    "complexity_score": 221,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 34,
+    "pseudocode_lines": 31,
     "suspect_count": 17,
     "suspect_types": [
       "raw_address_pointer_store",
@@ -15,7 +15,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 117
+    "total_lines": 114
   },
   "cross_references": [],
   "function": {
@@ -39,7 +39,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00554ad0",
@@ -166,7 +166,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 13,
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x264a5f4) == 0)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x264a5f4) == 0)) ||",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x264a5f4) == 0)) ||",
@@ -175,22 +191,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x264a5f4) == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 13,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "if ((((param_2 < 1) || (0x40 < param_2)) || (*(int *)(param_2 * 0x18 + 0x264a5f4) == 0)) ||",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "(*(int *)(param_2 * 0x18 + 0x264a5fc) < 1)) {",
@@ -198,7 +198,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 15,
+      "line": 14,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_1a4 = param_2;",
@@ -206,7 +206,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 * 0x18;",
@@ -214,7 +214,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 21,
       "match": "param_2",
       "severity": "mild",
       "text": "param_2 = param_2 * 0x18;",
@@ -222,7 +222,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 23,
+      "line": 22,
       "match": "*(char **)(param_2 + 0x264a604",
       "severity": "moderate",
       "text": "pcStack_1a8 = *(char **)(param_2 + 0x264a604);",
@@ -230,7 +230,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_2",
       "severity": "mild",
       "text": "pcStack_1a8 = *(char **)(param_2 + 0x264a604);",
@@ -238,7 +238,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_1a4 = *(uint *)(param_2 + 0x264a608);",
@@ -246,7 +246,7 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 26,
+      "line": 25,
       "match": "*(int **)(param_2 + 0x264a5f4",
       "severity": "moderate",
       "text": "piStack_1ac = *(int **)(param_2 + 0x264a5f4);",
@@ -254,7 +254,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "piStack_1ac = *(int **)(param_2 + 0x264a5f4);",
@@ -262,7 +262,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 27,
+      "line": 26,
       "match": "code *",
       "severity": "moderate",
       "text": "error_code = (**(code **)(*piStack_1ac + 0x4c))();",
@@ -270,7 +270,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 32,
       "match": "param_2",
       "severity": "mild",
       "text": "*(uint *)(param_2 + 0x264a604) = 0;",
@@ -280,7 +280,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDirectSoundDevice",
         "offset": 60,
         "vtable_addr": "005fbcbc"
       }

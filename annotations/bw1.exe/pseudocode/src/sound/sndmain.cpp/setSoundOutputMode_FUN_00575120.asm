@@ -11,8 +11,8 @@
 ; XREF[7]:
 ;   core_menu.cpp_FUN_0050ba70 at 0050c90f
 ;   core_sound.cpp_FUN_0057cb30 at 0057cb7f
-;   sound_sndmain.cpp_FUN_005760b0 at 00576295
 ;   sound_sndmain.cpp_enableSoundSystem_FUN_00574ee0 at 00574f32
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 00576295
 ;   sound_sndmain.cpp_setAudioBitDepth_FUN_00575260 at 00575271
 ;   sound_sndmain.cpp_setAudioChannelCount_FUN_00575280 at 00575291
 ;   sound_sndmain.cpp_setAudioSampleRate_FUN_005752a0 at 005752b1
@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_005030e0
-;   sound_sndmain.cpp_FUN_0056f470
-;   sound_sndmain.cpp_FUN_00575550
+;   sound_sndmain.cpp_allocMixBuffers_FUN_0056f470
+;   sound_sndmain.cpp_isSoundBusy_FUN_00575550
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     PUSH EDI                            ; 00575121
     PUSH EBP                            ; 00575122
     SUB ESP,0x4                         ; 00575123
-    CALL sound_sndmain.cpp_FUN_00575550 ; 00575126
-        ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00575550()
+    CALL sound_sndmain.cpp_isSoundBusy_FUN_00575550 ; 00575126
+        ;   XREF to: 00575550 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSoundBusy_FUN_00575550()
     TEST EAX,EAX                        ; 0057512b
     JNZ 0x00575160                      ; 0057512d
         ;   XREF to: 00575160 (CONDITIONAL_JUMP)  ; LAB_00575160
@@ -97,8 +97,8 @@ section .text
         ;   XREF to: 00575154 (CONDITIONAL_JUMP)  ; LAB_00575154
     PUSH 0x4                            ; 005751a7
     PUSH EAX                            ; 005751a9
-    CALL sound_sndmain.cpp_FUN_0056f470 ; 005751aa
-        ;   XREF to: 0056f470 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_0056f470(int requested_size, int num_buffers)
+    CALL sound_sndmain.cpp_allocMixBuffers_FUN_0056f470 ; 005751aa
+        ;   XREF to: 0056f470 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_allocMixBuffers_FUN_0056f470(int requested_size, int num_buffers)
     ADD ESP,0x8                         ; 005751af
     MOV EAX,0x1                         ; 005751b2
     ADD ESP,0x4                         ; 005751b7

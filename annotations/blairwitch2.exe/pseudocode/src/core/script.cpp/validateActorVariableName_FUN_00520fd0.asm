@@ -17,7 +17,7 @@
 ;   undefined4 DAT_0061ed94
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH 0x5e2c0b                       ; 0052100a | s_Actor_variable_name_must_005e2c0a+1
         ;   Label: LAB_0052100a
     PUSH 0x1e65100                      ; 0052100f
-    CALL crt_unknown.c_FUN_005b7790     ; 00521014
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00521014
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x8                         ; 00521019
     XOR EAX,EAX                         ; 0052101c
         ;   Label: LAB_0052101c
@@ -72,8 +72,8 @@ section .text
         ;   Label: LAB_00521022
     PUSH 0x5e2c33                       ; 00521023 | = "Actor variable name \"%s\" is too long"
     PUSH 0x1e65100                      ; 00521028
-    CALL crt_unknown.c_FUN_005b7790     ; 0052102d
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0052102d
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00521032
     JMP 0x0052101c                      ; 00521035
         ;   XREF to: 0052101c (UNCONDITIONAL_JUMP)  ; LAB_0052101c
@@ -97,8 +97,8 @@ section .text
         ;   Label: LAB_00521050
     PUSH 0x5e2c58                       ; 00521051 | = "Actor variable name \"%s\" is not valid"
     PUSH 0x1e65100                      ; 00521056
-    CALL crt_unknown.c_FUN_005b7790     ; 0052105b
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0052105b
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 00521060
     XOR EAX,EAX                         ; 00521063
     POP EDI                             ; 00521065

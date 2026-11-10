@@ -28,10 +28,10 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_0078a123  value=0x78A123 (7905571)  refs=5
     CDemonActor_ctor
       MOV dword ptr [EBX + 0x68],0x78a123 ; 00408743 | DAT_0078a123
+    CEnemy_releaseVictim
+      CMP EDI,0x78a123                    ; 0048a0b2 | DAT_0078a123
     FUN_0041f1e0
       CMP dword ptr [EBX + 0x68],0x78a123 ; 0041f207 | DAT_0078a123
-    FUN_0048a050
-      CMP EDI,0x78a123                    ; 0048a0b2 | DAT_0078a123
     FUN_004d2c20
       CMP dword ptr [EBX + 0x68],0x78a123 ; 004d2c37 | DAT_0078a123
     FUN_0057ba10
@@ -40,11 +40,11 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_006034c0  value=0x6034C0 (6304960)  refs=5
     FUN_00459f50
       PUSH 0x6034c0                       ; 0045a733 | DAT_006034c0
-    FUN_005084c0
+    readMessageFile
       PUSH 0x6034c0                       ; 0050859f | DAT_006034c0
 
   DAT_007e2af0  value=0x7E2AF0 (8268528)  refs=4
-    FUN_0042f510
+    CCharacter_renderTransparent
       PUSH 0x7e2af0                       ; 0042f5e7 | DAT_007e2af0
 
   DAT_007e6564  value=0x7E6564 (8283492)  refs=4
@@ -58,10 +58,10 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV EAX,0x730404                    ; 004058a1 | DAT_00730404
 
   DAT_007e2b34  value=0x7E2B34 (8268596)  refs=3
-    FUN_0042b0e0
-      PUSH 0x7e2b34                       ; 0042b103 | DAT_007e2b34
-    FUN_0042e3a0
+    CCharacter_renderAttachedModels
       PUSH 0x7e2b34                       ; 0042e489 | DAT_007e2b34
+    CCharacter_setup
+      PUSH 0x7e2b34                       ; 0042b103 | DAT_007e2b34
 
   DAT_005fc9ac  value=0x5FC9AC (6277548)  refs=3
     FUN_004980b0
@@ -91,23 +91,23 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_005ae4f8
       MOV ESI,0x6084b6                    ; 005ae4fe | DAT_006084b6
 
-  DAT_007dfd28  value=0x7DFD28 (8256808)  refs=2
-    FUN_0040e0e0
-      MOV EAX,0x7dfd28                    ; 0040e0e0 | DAT_007dfd28
+  DAT_007dfda0  value=0x7DFDA0 (8256928)  refs=2
+    CAmmoBullet_getActorType
+      MOV EAX,0x7dfda0                    ; 0040e3c0 | DAT_007dfda0
     staticInit
-      PUSH 0x7dfd28                       ; 0040ddd9 | DAT_007dfd28
+      PUSH 0x7dfda0                       ; 0040de1f | DAT_007dfda0
 
   DAT_007dfd64  value=0x7DFD64 (8256868)  refs=2
-    FUN_0040e250
+    CAmmoManaLarge_getActorType
       MOV EAX,0x7dfd64                    ; 0040e250 | DAT_007dfd64
     staticInit
       PUSH 0x7dfd64                       ; 0040ddfc | DAT_007dfd64
 
-  DAT_007dfda0  value=0x7DFDA0 (8256928)  refs=2
-    FUN_0040e3c0
-      MOV EAX,0x7dfda0                    ; 0040e3c0 | DAT_007dfda0
+  DAT_007dfd28  value=0x7DFD28 (8256808)  refs=2
+    CAmmoMana_getActorType
+      MOV EAX,0x7dfd28                    ; 0040e0e0 | DAT_007dfd28
     staticInit
-      PUSH 0x7dfda0                       ; 0040de1f | DAT_007dfda0
+      PUSH 0x7dfd28                       ; 0040ddd9 | DAT_007dfd28
 
   DAT_005f1094  value=0x5F1094 (6230164)  refs=2
     FUN_0042f280
@@ -134,15 +134,15 @@ Consider removing the Ghidra label and leaving the raw number.
       ADD EAX,0x5f1244                    ; 0042f4e0 | DAT_005f1244
 
   DAT_005f16c4  value=0x5F16C4 (6231748)  refs=2
-    FUN_00442a20
+    CConstruct_process
       PUSH 0x5f16c4                       ; 00442bd2 | DAT_005f16c4
 
   DAT_005f16dc  value=0x5F16DC (6231772)  refs=2
-    FUN_00442a20
+    CConstruct_process
       PUSH 0x5f16dc                       ; 00442e4b | DAT_005f16dc
 
   DAT_005f16f4  value=0x5F16F4 (6231796)  refs=2
-    FUN_00442a20
+    CConstruct_process
       PUSH 0x5f16f4                       ; 00442e2b | DAT_005f16f4
 
   DAT_005f1830  value=0x5F1830 (6232112)  refs=2
@@ -154,19 +154,19 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x7fa464                       ; 0044c3d4 | DAT_007fa464
 
   DAT_005f2840  value=0x5F2840 (6236224)  refs=2
-    FUN_0045dea0
+    CDemonLight_renderVolumetricLightShaft
       PUSH 0x5f2840                       ; 0045e4d0 | DAT_005f2840
     captureLightTextures
       PUSH 0x5f2840                       ; 0045de62 | DAT_005f2840
 
   DAT_005fc97c  value=0x5FC97C (6277500)  refs=2
-    FUN_00497610
+    CBulletHole_render
       PUSH 0x5fc97c                       ; 00497904 | DAT_005fc97c
     FUN_004a24a0
       PUSH 0x5fc97c                       ; 004a24b8 | DAT_005fc97c
 
   DAT_005fc994  value=0x5FC994 (6277524)  refs=2
-    FUN_00497610
+    CBulletHole_render
       PUSH 0x5fc994                       ; 004978f3 | DAT_005fc994
     FUN_004a24a0
       PUSH 0x5fc994                       ; 004a24cc | DAT_005fc994
@@ -196,10 +196,10 @@ Consider removing the Ghidra label and leaving the raw number.
       MOV EAX,0x5fd8dc                    ; 004a4253 | DAT_005fd8dc
 
   DAT_005fde88  value=0x5FDE88 (6282888)  refs=2
+    CFlame_renderTransparent
+      MOV ECX,0x5fde88                    ; 004a653c | DAT_005fde88
     FUN_004a5ad0
       MOV ESI,0x5fde88                    ; 004a5adf | DAT_005fde88
-    FUN_004a6090
-      MOV ECX,0x5fde88                    ; 004a653c | DAT_005fde88
 
   DAT_005fed34  value=0x5FED34 (6286644)  refs=2
     CGore_loadAssets
@@ -222,7 +222,7 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_00603e44  value=0x603E44 (6307396)  refs=2
     CDemonSet_renderEnvMapPrimitives
       PUSH 0x603e44                       ; 0053a461 | DAT_00603e44
-    FUN_0053a6c0
+    CDemonSet_renderEnvMapTriangles
       PUSH 0x603e44                       ; 0053a6cf | DAT_00603e44
 
   DAT_00607678  value=0x607678 (6321784)  refs=2
@@ -273,29 +273,37 @@ Consider removing the Ghidra label and leaving the raw number.
     staticInit
       PUSH 0x5f0b60                       ; 0040de10 | DAT_005f0b60
 
+  DAT_007e173c  value=0x7E173C (8263484)  refs=1
+    CBaalSkel_getActorType
+      MOV EAX,0x7e173c                    ; 00419ab0 | DAT_007e173c
+
+  DAT_007e1700  value=0x7E1700 (8263424)  refs=1
+    CSkeletonDemon_getActorType
+      MOV EAX,0x7e1700                    ; 00419a10 | DAT_007e1700
+
   DAT_007e1688  value=0x7E1688 (8263304)  refs=1
-    FUN_004198d0
+    CSkeletonForest_getActorType
       MOV EAX,0x7e1688                    ; 004198d0 | DAT_007e1688
 
   DAT_007e16c4  value=0x7E16C4 (8263364)  refs=1
-    FUN_00419970
+    CSkeletonIndian_getActorType
       MOV EAX,0x7e16c4                    ; 00419970 | DAT_007e16c4
 
-  DAT_007e1700  value=0x7E1700 (8263424)  refs=1
-    FUN_00419a10
-      MOV EAX,0x7e1700                    ; 00419a10 | DAT_007e1700
-
-  DAT_007e173c  value=0x7E173C (8263484)  refs=1
-    FUN_00419ab0
-      MOV EAX,0x7e173c                    ; 00419ab0 | DAT_007e173c
-
   DAT_005b73e9  value=0x5B73E9 (5993449)  refs=1
-    FUN_0041d480
+    CBox_loadFromFile
       PUSH 0x5b73e9                       ; 0041d4b2 | DAT_005b73e9
 
   DAT_007e1a18  value=0x7E1A18 (8264216)  refs=1
-    FUN_00420350
+    CLightActor_getActorType
       MOV EAX,0x7e1a18                    ; 00420350 | DAT_007e1a18
+
+  DAT_007e2bac  value=0x7E2BAC (8268716)  refs=1
+    CCharacter_dismemberPartInternal
+      PUSH 0x7e2bac                       ; 00430746 | DAT_007e2bac
+
+  DAT_005b83d7  value=0x5B83D7 (5997527)  refs=1
+    CCharacter_getDeathState
+      PUSH 0x5b83d7                       ; 00431055 | DAT_005b83d7
 
   DAT_007e2ad0  value=0x7E2AD0 (8268496)  refs=1
     FUN_0042d9f0
@@ -308,14 +316,6 @@ Consider removing the Ghidra label and leaving the raw number.
   DAT_005f0f74  value=0x5F0F74 (6229876)  refs=1
     FUN_0042f310
       ADD EAX,0x5f0f74                    ; 0042f4f3 | DAT_005f0f74
-
-  DAT_007e2bac  value=0x7E2BAC (8268716)  refs=1
-    FUN_00430590
-      PUSH 0x7e2bac                       ; 00430746 | DAT_007e2bac
-
-  DAT_005b83d7  value=0x5B83D7 (5997527)  refs=1
-    FUN_00431000
-      PUSH 0x5b83d7                       ; 00431055 | DAT_005b83d7
 
   DAT_007f8edc  value=0x7F8EDC (8359644)  refs=1
     FUN_00444540
@@ -334,7 +334,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5f2858                       ; 0045da27 | DAT_005f2858
 
   DAT_005f2828  value=0x5F2828 (6236200)  refs=1
-    FUN_0045f5a0
+    renderConeLightGeometry
       PUSH 0x5f2828                       ; 0045f5f8 | DAT_005f2828
 
   DAT_005bb5c4  value=0x5BB5C4 (6010308)  refs=1
@@ -342,7 +342,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5bb5c4                       ; 00460561 | DAT_005bb5c4
 
   DAT_005bda2d  value=0x5BDA2D (6019629)  refs=1
-    FUN_00487eb0
+    CEmitter_process
       PUSH 0x5bda2d                       ; 00488112 | DAT_005bda2d
 
   DAT_005bf55d  value=0x5BF55D (6026589)  refs=1
@@ -389,6 +389,10 @@ Consider removing the Ghidra label and leaving the raw number.
     CPopcorn_render
       PUSH 0x5fdbc4                       ; 004a0ee1 | DAT_005fdbc4
 
+  DAT_005fdbdc  value=0x5FDBDC (6282204)  refs=1
+    CRainDrop_render
+      PUSH 0x5fdbdc                       ; 004a124e | DAT_005fdbdc
+
   DAT_005fc9f4  value=0x5FC9F4 (6277620)  refs=1
     FUN_004980b0
       PUSH 0x5fc9f4                       ; 00498677 | DAT_005fc9f4
@@ -421,12 +425,8 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00499690
       PUSH 0x5fca9c                       ; 004999a4 | DAT_005fca9c
 
-  DAT_005fdbdc  value=0x5FDBDC (6282204)  refs=1
-    FUN_004a1040
-      PUSH 0x5fdbdc                       ; 004a124e | DAT_005fdbdc
-
   DAT_005fde70  value=0x5FDE70 (6282864)  refs=1
-    FUN_004a6090
+    CFlame_renderTransparent
       PUSH 0x5fde70                       ; 004a694a | DAT_005fde70
 
   DAT_005c601c  value=0x5C601C (6053916)  refs=1
@@ -458,11 +458,11 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x5d08bd                       ; 0053b6fc | DAT_005d08bd
 
   DAT_005d52f4  value=0x5D52F4 (6116084)  refs=1
-    FUN_0055ff40
+    CSound_process
       PUSH 0x5d52f4                       ; 00560049 | DAT_005d52f4
 
   DAT_005d7293  value=0x5D7293 (6124179)  refs=1
-    FUN_00578af0
+    CWaterActor_archive
       PUSH 0x5d7293                       ; 00578afe | DAT_005d7293
 
   DAT_006071f4  value=0x6071F4 (6320628)  refs=1
@@ -478,7 +478,7 @@ Consider removing the Ghidra label and leaving the raw number.
       PUSH 0x607224                       ; 0057ce36 | DAT_00607224
 
   DAT_00607240  value=0x607240 (6320704)  refs=1
-    FUN_0057ee80
+    CWerewolf_renderEyeGlow
       PUSH 0x607240                       ; 0057f3b1 | DAT_00607240
 
   DAT_006075dc  value=0x6075DC (6321628)  refs=1
@@ -533,21 +533,21 @@ Consider removing the Ghidra label and leaving the raw number.
     FUN_00595760
       PUSH 0x607390                       ; 00595c91 | DAT_00607390
 
-  DAT_00000065  value=0x65 (101)  refs=1
-    FUN_00581080
-      PUSH 0x65                           ; 005811ee | DAT_00000065
-
-  DAT_00007f00  value=0x7F00 (32512)  refs=1
-    FUN_00581080
-      PUSH 0x7f00                         ; 0058120e | DAT_00007f00
-
-  DAT_02d22618  value=0x2D22618  refs=1
-    FUN_00581080
-      PUSH 0x2d22618                      ; 0058118e | DAT_02d22618
-
   DAT_02d20340  value=0x2D20340  refs=1
     FUN_00581300
       PUSH 0x2d20340                      ; 00581331 | DAT_02d20340
+
+  DAT_00000065  value=0x65 (101)  refs=1
+    winMain
+      PUSH 0x65                           ; 005811ee | DAT_00000065
+
+  DAT_00007f00  value=0x7F00 (32512)  refs=1
+    winMain
+      PUSH 0x7f00                         ; 0058120e | DAT_00007f00
+
+  DAT_02d22618  value=0x2D22618  refs=1
+    winMain
+      PUSH 0x2d22618                      ; 0058118e | DAT_02d22618
 
 --------------------------------------------------------------------------------
 HIGH CONFIDENCE (24 clusters)
@@ -625,7 +625,7 @@ HIGH CONFIDENCE (24 clusters)
     Likely type: float[16]
     Reason: 16 elements at stride 4
     Referenced by: 1 functions
-     near: g_CDemonLightInstance.field4_0x4 (undefined4) at -68
+     near: g_CDemonLightInstance.base.base.position (undefined4) at -68
       0x01d1e320  DAT_01d1e320  undefined4
       0x01d1e324  DAT_01d1e324  undefined4
       0x01d1e328  DAT_01d1e328  undefined4 [float]
@@ -1201,7 +1201,7 @@ MEDIUM CONFIDENCE (121 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 5 groups of 3 consecutive ints found
     Referenced by: 217 functions
-      0x01bdd7bc  DAT_01bdd7bc  undefined4 [byte]
+      0x01bdd7bc  DAT_01bdd7bc  undefined4 [short]
       0x01bdd7c0  DAT_01bdd7c0  undefined4
       0x01bdd7c4  DAT_01bdd7c4  undefined4
       0x01bdd7c8  DAT_01bdd7c8  undefined4
@@ -1338,7 +1338,7 @@ MEDIUM CONFIDENCE (121 clusters)
     Likely type: likely contains CVector3i/f fields
     Reason: 3 groups of 3 consecutive ints found
     Referenced by: 18 functions
-     near: g_CMP3DecoderInstanceOther.field34120_0x8548 (undefined4) at +232
+     near: g_CMP3DecoderInstanceOther.synthesis_history[1][28][14] (undefined4) at +232
       0x02ce71e8  DAT_02ce71e8  undefined4 [byte]
       0x02ce71ec  DAT_02ce71ec  undefined4
       0x02ce7210  DAT_02ce7210  undefined4 [float]
@@ -1955,7 +1955,7 @@ MEDIUM CONFIDENCE (121 clusters)
     Likely type: int[7]
     Reason: 7 elements at stride 4
     Referenced by: 21 functions
-     near: g_CNetGameInstance.field380_0x17c (undefined4) at +8
+     near: g_CNetGameInstance.random_seed (undefined4) at +8
       0x01da6474  DAT_01da6474  undefined4
       0x01da6478  DAT_01da6478  undefined4
       0x01da647c  DAT_01da647c  undefined4
@@ -2512,7 +2512,7 @@ LOW CONFIDENCE (161 clusters)
     Likely type: struct (136 bytes span, 12 fields)
     Reason: mixed strides, shared by 7 functions
     Referenced by: 7 functions
-     near: PTR_unkafter_asgaya.cpp_FUN_005af4b0_0060a024 (undefined1*) at -16
+     near: PTR_crt_unknown.c_FUN_005af4b0_0060a024 (undefined1*) at -16
       0x0060a014  DAT_0060a014  undefined4 [double]
       0x0060a044  DAT_0060a044  undefined4 [double]
       0x0060a04e  DAT_0060a04e  undefined4 [double]
@@ -3673,7 +3673,7 @@ LOW CONFIDENCE (161 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=8 bytes
     Referenced by: 8 functions
-     near: g_CDemonCameraInstance.field4584_0x11e8 (undefined4) at +736
+     near: g_CDemonCameraInstance.corona_blend_factor (undefined4) at +736
       0x0203a414  DAT_0203a414  undefined4
       0x0203a418  DAT_0203a418  undefined4
       0x0203a41c  DAT_0203a41c  undefined4
@@ -3683,7 +3683,7 @@ LOW CONFIDENCE (161 clusters)
     Likely type: unknown grouping
     Reason: 3 items, span=8 bytes
     Referenced by: 6 functions
-     near: g_CDemonRaytraceInstance.field60_0x3c (undefined4) at +48
+     near: g_CDemonRaytraceInstance.adjusted_size.z (undefined4) at +48
       0x0203b3e8  DAT_0203b3e8  undefined4
       0x0203b3ec  DAT_0203b3ec  undefined4
       0x0203b3f0  DAT_0203b3f0  undefined4
@@ -3988,7 +3988,7 @@ LOW CONFIDENCE (161 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 5 functions
-     near: g_StakePool[0].field600_0x258 (undefined4) at -608
+     near: g_StakePool[0].physics_box.is_valid (undefined4) at -608
       0x01c8eea8  DAT_01c8eea8  undefined4
       0x01c8eeac  DAT_01c8eeac  undefined4
 
@@ -4005,7 +4005,7 @@ LOW CONFIDENCE (161 clusters)
     Likely type: unknown grouping
     Reason: 2 items, span=4 bytes
     Referenced by: 3 functions
-     near: g_CGameInstance.field2956_0xb8c (undefined4) at +264
+     near: g_CGameInstance.field763_0xb8c (undefined4) at +264
       0x01d21fa0  DAT_01d21fa0  undefined4 [byte]
       0x01d21fa4  DAT_01d21fa4  undefined4
 
@@ -4117,7 +4117,7 @@ ISOLATED DAT_ GLOBALS (101 - not part of any cluster)
   DAT_00605f08                    addr=00605f08    type=undefined8      refs=6 [likely short]
   DAT_02cebc20                    addr=02cebc20    type=undefined4      refs=6
   DAT_01d0e36c                    addr=01d0e36c    type=undefined4      refs=5  near: SNotesMap_ARRAY_01d0e370(-4)
-  DAT_01d19ba8                    addr=01d19ba8    type=undefined4      refs=5  near: CAlphaBitmap_01d19c9c.field12_0xc(-256)
+  DAT_01d19ba8                    addr=01d19ba8    type=undefined4      refs=5  near: CAlphaBitmap_01d19c9c.width(-256)
   DAT_02802f5c                    addr=02802f5c    type=undefined4      refs=5
   DAT_02cd28bc                    addr=02cd28bc    type=undefined4      refs=5
   DAT_00800000                    addr=00800000    type=undefined4      refs=4
@@ -4138,16 +4138,16 @@ ISOLATED DAT_ GLOBALS (101 - not part of any cluster)
   DAT_007dfce8                    addr=007dfce8    type=undefined4      refs=2  near: g_CAmmoClassInfo(-4)
   DAT_007f8fcc                    addr=007f8fcc    type=undefined4      refs=2  near: g_CCrateClassInfo.name_hash(+4)
   DAT_01b4b848                    addr=01b4b848    type=undefined4      refs=2
+  DAT_005fc964                    addr=005fc964    type=undefined4      refs=2
+  DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_01cfaff4                    addr=01cfaff4    type=undefined4      refs=2
+  DAT_01cefe7c                    addr=01cefe7c    type=undefined4      refs=2  near: g_FireballPool[0].field36_0x24(-40)
+  DAT_01cbc0ec                    addr=01cbc0ec    type=undefined4      refs=2  near: CGlassParticle_ARRAY_01cbc0f0[0].field36_0x24(-40)
+  DAT_01cf2780                    addr=01cf2780    type=undefined4      refs=2  near: g_RockPool[0].field36_0x24(-40)
   DAT_01d028c4                    addr=01d028c4    type=undefined4      refs=2  near: g_ShellPool[0].field36_0x24(-40)
   DAT_01cb4eb0                    addr=01cb4eb0    type=undefined4      refs=2  near: g_SparkPool[0].field36_0x24(-40)
   DAT_01d01ab0                    addr=01d01ab0    type=undefined4      refs=2
-  DAT_005fc964                    addr=005fc964    type=undefined4      refs=2
-  DAT_00780000                    addr=00780000    type=undefined4      refs=2
   DAT_01cba2b4                    addr=01cba2b4    type=undefined4      refs=2  near: CFirefly_ARRAY_01cba2b8[0].field36_0x24(-40)
-  DAT_01cbc0ec                    addr=01cbc0ec    type=undefined4      refs=2  near: CGlassParticle_ARRAY_01cbc0f0[0].field36_0x24(-40)
-  DAT_01cefe7c                    addr=01cefe7c    type=undefined4      refs=2  near: g_FireballPool[0].field36_0x24(-40)
-  DAT_01cf2780                    addr=01cf2780    type=undefined4      refs=2  near: g_RockPool[0].field36_0x24(-40)
   DAT_01cf3b84                    addr=01cf3b84    type=undefined4      refs=2  near: CLeaf_ARRAY_01cf3b88[0].field36_0x24(-40)
   DAT_01cf61d0                    addr=01cf61d0    type=undefined4      refs=2
   DAT_01d03b88                    addr=01d03b88    type=undefined4      refs=2  near: g_PopcornPool[0].field36_0x24(-40)

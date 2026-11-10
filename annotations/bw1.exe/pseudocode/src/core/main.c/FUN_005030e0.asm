@@ -11,12 +11,12 @@
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438c2a
 ;   cockpit_ckptutil.c_FUN_00438e40 at 00438e9e
 ;   cockpit_ckptutil.c_FUN_0043908e at 00439128
-;   cockpit_ckptutil.c_FUN_0043a040 at 0043a0f4
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a318
-;   cockpit_ckptutil.c_FUN_0043a45e at 0043a58b
 ;   cockpit_ckptutil.c_FUN_0043b090 at 0043b1d3
 ;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b355
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 004375a3
+;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a0f4
+;   cockpit_ckptutil.c_traceConnectedEdges_FUN_0043a45e at 0043a58b
 ;   ... and 555 more
 ;
 ; Referenced Globals:

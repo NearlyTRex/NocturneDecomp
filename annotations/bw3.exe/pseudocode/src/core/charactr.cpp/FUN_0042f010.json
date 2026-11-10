@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 235,
-    "complexity_score": 552,
+    "complexity_score": 473,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 102,
-    "suspect_count": 40,
+    "pseudocode_lines": 103,
+    "suspect_count": 32,
     "suspect_types": [
       "displaced_global_access",
       "extra_output",
@@ -21,7 +21,7 @@
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 337
+    "total_lines": 338
   },
   "cross_references": [
     {
@@ -58,7 +58,7 @@
     {
       "addr": "0054e3a0",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e3a0"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_renderWithOptions_FUN_0054e3a0"
     },
     {
       "addr": "005a3120",
@@ -343,28 +343,12 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&pCVar4->field_0x1de78) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 44,
       "match": "DAT_007e2cf4",
       "severity": "mild",
       "text": "*(uint *)((int)&DAT_007e2cf4 + iVar9) = 0;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "} while (iVar6 < *(int *)&pCVar4->field_0x1de78);",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -407,14 +391,6 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&pCVar4->field_0x1de78) {",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 67,
       "match": "DAT_007e2cf4",
@@ -423,44 +399,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x33cc",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar12->field_0x33cc == -1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar12 = (CDeformableModel *)&pCVar12->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "} while (iVar6 < *(int *)&pCVar4->field_0x1de78);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
       "line": 77,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((iVar9 == *(int *)&pCVar4->field_0x1de78) && (*(int *)(param_1 + 0x2538) < 0x40a00000)) {",
+      "text": "if ((iVar9 == pCVar4->bone_count) && (*(int *)(param_1 + 0x2538) < 0x40a00000)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "if ((iVar9 == *(int *)&pCVar4->field_0x1de78) && (*(int *)(param_1 + 0x2538) < 0x40a00000)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -480,18 +424,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "for (iVar6 = 0; iVar6 < *(int *)(&pCVar5->field_0x2c + iVar1 * 4); iVar6 = iVar6 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 83,
-      "match": "field_0x40",
+      "match": "field_0x0",
       "severity": "mild",
-      "text": "pbVar11 = (byte *)(*(int *)(&pCVar5->field_0x40 + iVar1 * 4) + local_1c);",
+      "text": "pbVar11 = &pCVar5->vertex_data_ptr[iVar1]->field_0x0 + local_1c;",
       "type": "unnamed_field"
     },
     {
@@ -528,10 +464,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 104,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054e3a0((CDeformableModelInstance *)(param_1 + 0x158),-1,0x163,0,1);",
+      "text": "((CDeformableModelInstance *)(param_1 + 0x158),-1,0x163,0,1);",
       "type": "unnamed_param"
     },
     {
@@ -551,11 +487,11 @@
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar12->owner`). Replace `pCVar12->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar12` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar12->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 74,
-      "match": "pCVar12 = (T *)&pCVar12->FIELD",
+      "match": "pCVar12 = (T *)pCVar12->ARRAY",
       "severity": "moderate",
-      "text": "pCVar12 = (CDeformableModel *)&pCVar12->field_0x4;",
+      "text": "pCVar12 = (CDeformableModel *)pCVar12->lod_info;",
       "type": "shadow_pointer_walk"
     },
     {

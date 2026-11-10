@@ -16,15 +16,15 @@ void __cdecl core_morph_cpp_CMorphModel_addPartFromKeyFramedModel_FUN_005b63b0(C
   SMRGLTextureModel *texture_list;
   int *texture_index_list;
   
-  texture_index_list = *(int **)&model_ptr->field_0x118;
+  texture_index_list = model_ptr->poly_texture_index_list;
   texture_list = (SMRGLTextureModel *)&model_ptr->field_0x124;
   poly_stride = 0x48;
-  poly_data = *(SMRGLHeaderPrimitive **)&model_ptr->field_0x114;
-  poly_count = *(int *)&model_ptr->field_0x110;
+  poly_data = (SMRGLHeaderPrimitive *)model_ptr->poly_vert_list;
+  poly_count = model_ptr->poly_count;
   vertex_data = core_dmodel_cpp_CKeyFramedModel_getFrameVertices_FUN_0044e6e0(model_ptr,frame_index)
   ;
   core_morph_cpp_CMorphModel_addPartFromPolygon_FUN_005b6090
-            (this_ptr,*(int *)&model_ptr->field_0x104,vertex_data,poly_count,poly_data,poly_stride,
+            (this_ptr,model_ptr->vertex_count,vertex_data,poly_count,poly_data,poly_stride,
              texture_list,texture_index_list);
   return;
 }

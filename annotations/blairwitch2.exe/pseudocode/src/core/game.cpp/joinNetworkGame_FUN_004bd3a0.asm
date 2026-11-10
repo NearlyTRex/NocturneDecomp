@@ -12,9 +12,9 @@
 ;
 ; Called Functions:
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00
+;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50
 ;   core_netgame.cpp_FUN_0050b4d0
-;   core_netgame.cpp_FUN_0050b8d0
 ;   shape_edittool.cpp_CEditorTools_showTextInputDialog_FUN_0047dae0
 ;   support_trisock.cpp_parseIPAddress_FUN_00578bf0
 ;
@@ -89,8 +89,8 @@ section .text
     PUSH EAX                            ; 004bd42f
     MOV EBX,dword ptr [0x0061b120]      ; 004bd430 | g_CNetGamePtr
     PUSH EBX                            ; 004bd436
-    CALL core_netgame.cpp_FUN_0050b8d0  ; 004bd437
-        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
+    CALL core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 ; 004bd437
+        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004bd43c
     POP EBX                             ; 004bd43f
     ADD ESP,0x68                        ; 004bd440
@@ -102,8 +102,8 @@ section .text
         ;   Label: LAB_004bd447
     MOV EDI,dword ptr [0x0061b120]      ; 004bd449 | g_CNetGamePtr
     PUSH EDI                            ; 004bd44f
-    CALL core_netgame.cpp_FUN_0050b8d0  ; 004bd450
-        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
+    CALL core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 ; 004bd450
+        ;   XREF to: 0050b8d0 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0(CNetGame * this_ptr, int perform_handshake)
     ADD ESP,0x8                         ; 004bd455
     ADD ESP,0x68                        ; 004bd458
     POP EBP                             ; 004bd45b

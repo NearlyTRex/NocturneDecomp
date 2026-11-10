@@ -8,10 +8,10 @@
 ;   crt_unknown.c_FUN_005c3c08 at 005c3e9c
 ;
 ; Referenced Globals:
-;   void* PTR_unkafter_zombie.cpp_FUN_005ca4f0_006269dc = 005ca4f0
+;   void* PTR_crt_unknown.c_FUN_005ca4f0_006269dc = 005ca4f0
 ;
 ; Called Functions:
-;   unkafter_zombie.cpp_FUN_005ca4f0
+;   crt_unknown.c_FUN_005ca4f0
 ;
 ; *****************************************************************************
 
@@ -25,7 +25,7 @@ section .text
     PUSH EBX                            ; 005c3b3a
     MOV ECX,dword ptr [ESP + 0x10]      ; 005c3b3b
     PUSH ECX                            ; 005c3b3f
-    CALL dword ptr [0x006269dc]         ; 005c3b40 | PTR_unkafter_zombie.cpp_FUN_005ca4f0_006269dc
+    CALL dword ptr [0x006269dc]         ; 005c3b40 | PTR_crt_unknown.c_FUN_005ca4f0_006269dc
     ADD ESP,0xc                         ; 005c3b46
     POP EBX                             ; 005c3b49
     RET                                 ; 005c3b4a

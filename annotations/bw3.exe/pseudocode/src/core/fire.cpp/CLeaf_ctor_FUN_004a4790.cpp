@@ -13,7 +13,7 @@ CLeaf * core_fire_cpp_CLeaf_ctor_FUN_004a4790(CLeaf *this_ptr)
 {
   CLeaf *pCVar1;
   
-  pCVar1 = (CLeaf *)core_particle_cpp_FUN_00509e10((CParticle *)this_ptr);
+  pCVar1 = (CLeaf *)core_particle_cpp_CParticle_ctor_FUN_00509e10((CParticle *)this_ptr);
   *(byte ***)&pCVar1->field_0x3c = &g_CLeafVTable;
   return pCVar1;
 }

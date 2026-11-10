@@ -53,7 +53,7 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  iVar4 = engine_font_cpp_FUN_004ab560(_DAT_01511cc4,0x58);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(_DAT_01511cc4,0x58);
   iVar3 = engine_font_cpp_FUN_004aaf00(_DAT_01511cc4,local_110);
   engine_special_cpp_clearScreen_FUN_0055b1f0();
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900(&g_CalibrationBitmap,0,0,0xffff);
@@ -62,7 +62,7 @@ void __cdecl core_menu_cpp_showCalibrationTestPattern_FUN_004ebce0(char *message
   pcVar5 = support_newmsg_cpp_getLocalizedString_FUN_0050fe80("Monitor calibration");
   iVar3 = engine_font_cpp_FUN_004aaf00(_DAT_01511cc4,pcVar5);
   engine_font_cpp_FUN_004a8df0(_DAT_01511cc4,pcVar5,0x140 - iVar3 / 2,iVar4 * 2,0xf8,0xffffffff);
-  wincore_wddvmem_cpp_FUN_00589560();
+  wincore_wddvmem_cpp_swapBuffers_FUN_00589560();
   engine_2d_c_clearInputAndWait_FUN_004032b0();
   wincore_winrun_cpp_getNextKeypress_FUN_0058ead0();
   return;

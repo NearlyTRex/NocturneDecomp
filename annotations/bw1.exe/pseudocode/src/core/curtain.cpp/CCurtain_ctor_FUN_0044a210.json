@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 96,
+    "complexity_score": 97,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 56,
+    "pseudocode_lines": 57,
     "suspect_count": 3,
     "suspect_types": [
-      "unnamed_field",
+      "derived_field_index_pun",
       "unrolled_strcpy"
     ],
-    "total_lines": 135
+    "total_lines": 136
   },
   "cross_references": [
     {
@@ -111,16 +111,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0xb0",
-      "severity": "mild",
-      "text": "iVar3 = __arrinit(&pCVar2[1].field_0xb0,1000,&g_SCurtainVertexTypeInfo);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 19,
+      "line": 20,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -128,11 +120,18 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 38,
+      "line": 39,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "'pCVar2[1].create_event + 0x38' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x38 = 0x208, which is exactly offsetof(CBarrier, effect_class_name_list[160]). Ghidra had no CBarrier type here and reached the field by index arithmetic; write it as ((CBarrier *)pCVar2)->effect_class_name_list[160] (\u00a7de-pun/\u00a712). Ambiguous: CBodyPart::textures[5], CChain::pull_wav_name[84], CCurtain::vertices also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
+      "severity": "moderate",
+      "text": "(pCVar2[1].create_event + 0x38,1000,&g_SCurtainVertexTypeInfo);",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

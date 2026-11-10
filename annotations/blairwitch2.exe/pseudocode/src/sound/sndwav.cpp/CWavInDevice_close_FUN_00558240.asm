@@ -7,7 +7,7 @@
 ; CWavInDevice *   Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   sound_sndwav.cpp_FUN_00558ace at 00558ad8
+;   sound_sndwav.cpp_getWavInDevice_FUN_00558ace at 00558ad8
 ;
 ; Referenced Globals:
 ;   void* PTR_waveInClose_005c8454 = 001c893c

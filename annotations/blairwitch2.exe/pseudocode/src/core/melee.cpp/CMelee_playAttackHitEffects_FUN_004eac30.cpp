@@ -13,17 +13,21 @@ void __cdecl core_melee_cpp_CMelee_playAttackHitEffects_FUN_004eac30(CMelee *thi
   
   iVar1 = core_actor_cpp_castToClassHash_FUN_0040c8f0(victim,g_CCharacterClassInfo.name_hash);
   if (iVar1 != 0) {
-    core_melee_cpp_FUN_004eacc0(this_ptr,0x14,*(int *)(iVar1 + 0x280c));
+    core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004eacc0(this_ptr,0x14,*(int *)(iVar1 + 0x280c))
+    ;
     if (attack_flags == 1) {
-      (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,&this_ptr->field_0x6fc);
+      (*((this_ptr->base).base.vtable._ub)->playSound)
+                ((CDemonActor *)this_ptr,this_ptr->thrust_hit_character_sound);
       return;
     }
-    (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,&this_ptr->field_0x760);
+    (*((this_ptr->base).base.vtable._ub)->playSound)
+              ((CDemonActor *)this_ptr,this_ptr->swing_hit_character_sound);
     return;
   }
   if (victim == (CDemonActor *)0x0) {
     return;
   }
-  (**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,&this_ptr->field_0x7c4);
+  (*((this_ptr->base).base.vtable._ub)->playSound)
+            ((CDemonActor *)this_ptr,this_ptr->hit_other_sound);
   return;
 }

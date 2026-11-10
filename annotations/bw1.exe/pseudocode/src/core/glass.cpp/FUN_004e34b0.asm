@@ -69,16 +69,16 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[11]:
-;   core_actor.cpp_FUN_00409f20 at 0040a501
-;   core_crossbow.cpp_FUN_00449a50 at 0044a068
-;   core_elephant.cpp_FUN_0049e1a0 at 0049e932
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a501
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 0044a068
+;   core_elephant.cpp_CElephantGun_fire_FUN_0049e1a0 at 0049e932
 ;   core_glass.cpp_CGlass_process_FUN_004e19c0 at 004e19f9
-;   core_gun.cpp_FUN_004e8630 at 004e8e21
-;   core_hiram.cpp_FUN_004ed2b0 at 004ed3a4
-;   core_rifle.cpp_FUN_00540080 at 00540741
-;   core_set.cpp_FUN_0054fc20 at 0054ffff
-;   core_shotgun.cpp_FUN_00561760 at 00561ef5
-;   core_tommygun.cpp_FUN_00598420 at 00598c56
+;   core_gun.cpp_CGun_fire_FUN_004e8630 at 004e8e21
+;   core_hiram.cpp_CHiram_process_FUN_004ed2b0 at 004ed3a4
+;   core_rifle.cpp_CRifle_fire_FUN_00540080 at 00540741
+;   core_set.cpp_CDemonSet_processActors_FUN_0054fc20 at 0054ffff
+;   core_shotgun.cpp_CShotgun_fire_FUN_00561760 at 00561ef5
+;   core_tommygun.cpp_CTommyGun_fire_FUN_00598420 at 00598c56
 ;   ... and 1 more
 ;
 ; Referenced Globals:
@@ -98,8 +98,8 @@
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_glass.cpp_FUN_004e2320
-;   core_set.cpp_FUN_0054f060
-;   core_set.cpp_FUN_00555730
+;   core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00555730
+;   core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;
@@ -393,8 +393,8 @@ section .text
         ;   Label: LAB_004e387a
     MOV ESI,dword ptr [0x00622c18]      ; 004e387b | g_CDemonSetPtr
     PUSH ESI                            ; 004e3881 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_00555730      ; 004e3882
-        ;   XREF to: 00555730 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00555730(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00555730 ; 004e3882
+        ;   XREF to: 00555730 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_markMirrorCameraDirty_FUN_00555730(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 004e3887
     JMP 0x004e34e6                      ; 004e388a
         ;   XREF to: 004e34e6 (UNCONDITIONAL_JUMP)  ; LAB_004e34e6
@@ -415,8 +415,8 @@ section .text
         ;   Label: LAB_004e38be
     MOV ECX,dword ptr [0x00622c18]      ; 004e38bf | g_CDemonSetPtr
     PUSH ECX                            ; 004e38c5 | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0054f060      ; 004e38c6
-        ;   XREF to: 0054f060 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0054f060(CDemonSet * this_ptr, CDemonActor * actor)
+    CALL core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060 ; 004e38c6
+        ;   XREF to: 0054f060 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_snapshotActorTransformState_FUN_0054f060(CDemonSet * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 004e38cb
     MOV dword ptr [EBX + 0xb3c],0x1     ; 004e38ce
     ADD ESP,0x11c                       ; 004e38d8

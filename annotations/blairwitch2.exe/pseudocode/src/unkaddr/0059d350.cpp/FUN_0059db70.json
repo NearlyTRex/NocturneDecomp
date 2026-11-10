@@ -17,6 +17,12 @@
   },
   "cross_references": [
     {
+      "addr": "005a0270",
+      "from_addr": "005a0344",
+      "name": "core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005ac2f0",
       "from_addr": "005ac4f3",
       "name": "core_dog1.cpp_FUN_005ac2f0",
@@ -25,25 +31,19 @@
     {
       "addr": "005aad70",
       "from_addr": "005aadae",
-      "name": "core_hag.cpp_FUN_005aad70",
+      "name": "core_hag.cpp_CHag_startBurn_FUN_005aad70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059fc10",
+      "from_addr": "0059fedd",
+      "name": "core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0059fae0",
       "from_addr": "0059fbb6",
       "name": "unkafter_basicene.cpp_FUN_0059fae0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059fc10",
-      "from_addr": "0059fedd",
-      "name": "unkafter_basicene.cpp_FUN_0059fc10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a0270",
-      "from_addr": "005a0344",
-      "name": "unkafter_basicene.cpp_FUN_005a0270",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -80,7 +80,7 @@
       {
         "call_addr": "0059fedd",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_0059fc10",
+        "caller": "core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "005a0344",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_005a0270",
+        "caller": "core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "005aadae",
         "call_type": "direct",
-        "caller": "core_hag.cpp_FUN_005aad70",
+        "caller": "core_hag.cpp_CHag_startBurn_FUN_005aad70",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

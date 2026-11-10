@@ -8,11 +8,11 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   WatcomTypeInfo g_CAngel_ForestTypeInfo
+;   WatcomTypeInfo g_CAngelForestTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408770
-;   core_cloth.cpp_FUN_0043f900
+;   core_cloth.cpp_CClothList_dtor_FUN_0043f900
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_0054bf80
 ;   crt_memory.c___vec_delete_FUN_005a308f
 ;   crt_unknown.c_FUN_005a30b6
@@ -38,8 +38,8 @@ section .text
     PUSH 0x0                            ; 004d659d
     SUB EAX,0x954                       ; 004d659f
     PUSH EAX                            ; 004d65a4
-    CALL core_cloth.cpp_FUN_0043f900    ; 004d65a5
-        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_0043f900(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_0043f900 ; 004d65a5
+        ;   XREF to: 0043f900 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_0043f900(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 004d65aa
     PUSH 0x0                            ; 004d65ad
     SUB EAX,0x2db0                      ; 004d65af
@@ -61,7 +61,7 @@ section .text
     MOV EAX,EBX                         ; 004d65d9
     POP EBX                             ; 004d65db
     RET                                 ; 004d65dc
-    PUSH 0x5e1e90                       ; 004d65dd | g_CAngel_ForestTypeInfo
+    PUSH 0x5e1e90                       ; 004d65dd | g_CAngelForestTypeInfo
         ;   Label: LAB_004d65dd
     PUSH EBX                            ; 004d65e2
     CALL crt_memory.c___vec_delete_FUN_005a308f ; 004d65e3

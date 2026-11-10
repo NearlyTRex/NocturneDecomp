@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_door.cpp_FUN_0045ff80 at 00460147
-;   core_lever.cpp_FUN_004e22e0 at 004e2445
+;   core_door.cpp_CDoor_archive_FUN_0045ff80 at 00460147
+;   core_lever.cpp_CLever_archive_FUN_004e22e0 at 004e2445
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Rule_list_opening_brace_005cad35

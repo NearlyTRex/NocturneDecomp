@@ -12,13 +12,13 @@
 ;   core_barrier.cpp_CBarrier_archive_FUN_0040ebd0 at 0040ebea
 ;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419070 at 004191cb
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fbf0
-;   core_boxactor.cpp_FUN_004207f0 at 0042082c
-;   core_charactr.cpp_FUN_0042b450 at 0042b7ac
-;   core_constrct.cpp_FUN_00443ca0 at 00443d64
+;   core_boxactor.cpp_CLightActor_archive_FUN_004207f0 at 0042082c
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b7ac
+;   core_constrct.cpp_CConstruct_archive_FUN_00443ca0 at 00443d64
 ;   core_curtain.cpp_CCurtain_archive_FUN_00448420 at 0044843d
-;   core_door.cpp_FUN_00464cd0 at 00464db3
+;   core_door.cpp_CDoor_archive_FUN_00464cd0 at 00464db3
 ;   core_drip.cpp_CDrip_archive_FUN_0046ebc0 at 0046ec1a
-;   core_emitter.cpp_FUN_00488bb0 at 00488bdf
+;   core_emitter.cpp_CEmitter_archive_FUN_00488bb0 at 00488bdf
 ;   ... and 11 more
 ;
 ; Referenced Globals:

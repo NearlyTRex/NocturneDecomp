@@ -6,11 +6,15 @@
 #include "system/basetypes.h"
 
 // Structure: CSpark
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x54 (84 bytes)
 #pragma pack(push, 1)
 typedef struct CSpark {
-    char field_0[84]; // 0x0
+    char field_0[64]; // 0x0
+    int intensity_current; // 0x40
+    int intensity_target; // 0x44
+    int first_update_flag; // 0x48
+    int spark_type; // 0x4c
+    int fade_rate; // 0x50
 } CSpark;
 #pragma pack(pop)
 

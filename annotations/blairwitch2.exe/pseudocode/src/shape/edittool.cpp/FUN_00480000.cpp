@@ -21,8 +21,7 @@ void shape_edittool_cpp_FUN_00480000(float *param_1,float *param_2)
   float fStack_58;
   float fStack_54;
   float fStack_50;
-  float afStack_4c [2];
-  int iStack_44;
+  byte auStack_4c [12];
   int iStack_40;
   int iStack_3c;
   float fStack_38;
@@ -34,11 +33,11 @@ void shape_edittool_cpp_FUN_00480000(float *param_1,float *param_2)
   float fStack_14;
   
   bVar4 = 0;
-  afStack_4c[0] = (float)(int)ROUND(*param_1 * _DAT_005f5cec);
-  afStack_4c[1] = (float)(int)ROUND(param_1[1] * _DAT_005f5cec);
-  iStack_44 = (int)ROUND(param_1[2] * _DAT_005f5cec);
+  auStack_4c._0_4_ = (uint)ROUND(*param_1 * _DAT_005f5cec);
+  auStack_4c._4_4_ = (uint)ROUND(param_1[1] * _DAT_005f5cec);
+  auStack_4c._8_4_ = (uint)ROUND(param_1[2] * _DAT_005f5cec);
   afStackY_1044[0x3f5] = 6.61225e-39;
-  engine_matrix_c_transformToCache_FUN_004e8e60(0,(CVector3i *)afStack_4c);
+  engine_matrix_c_transformToCache_FUN_004e8e60(0,(CVector3i *)auStack_4c);
   afStack_34[2] = *param_2 * _DAT_005d24e7;
   afStack_34[3] = param_2[1] * _DAT_005d24e7;
   fStack_24 = param_2[2] * _DAT_005d24e7;
@@ -50,19 +49,19 @@ void shape_edittool_cpp_FUN_00480000(float *param_1,float *param_2)
   fStack_1c = param_1[1] * _DAT_005d24eb;
   fStack_18 = param_1[2] * _DAT_005d24eb;
   fStack_50 = *param_1 * _DAT_005d24eb;
-  afStack_4c[(uint)bVar4 * -2] = afStack_34[(uint)bVar4 * -2 + 6];
-  afStack_4c[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
+  *(float *)(auStack_4c + (uint)bVar4 * -8) = afStack_34[(uint)bVar4 * -2 + 6];
+  *(float *)(auStack_4c + (uint)bVar4 * -8 + (uint)bVar4 * -8 + 4) =
        afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 7];
-  fStack_58 = afStack_4c[0] + unaff_EBP;
-  fStack_54 = afStack_4c[1] + unaff_EDI;
+  fStack_58 = (float)auStack_4c._0_4_ + unaff_EBP;
+  fStack_54 = (float)auStack_4c._4_4_ + unaff_EDI;
   fStack_38 = fStack_50 + fStack_14;
   afStack_34[(uint)bVar4 * -2] = *(float *)((int)&stack0xffffffa8 + (uint)bVar4 * -8);
   afStack_34[(uint)bVar4 * -2 + (uint)bVar4 * -2 + 1] =
        *(float *)((int)&stack0xffffffac + (uint)bVar4 * -8 + (uint)bVar4 * -8);
-  iStack_44 = (int)ROUND(fStack_38 * _DAT_005f5cec);
+  auStack_4c._8_4_ = (uint)ROUND(fStack_38 * _DAT_005f5cec);
   iStack_40 = (int)ROUND(afStack_34[0] * _DAT_005f5cec);
   iStack_3c = (int)ROUND(afStack_34[1] * _DAT_005f5cec);
-  engine_matrix_c_transformToCache_FUN_004e8e60(1,(CVector3i *)&iStack_44);
+  engine_matrix_c_transformToCache_FUN_004e8e60(1,(CVector3i *)(auStack_4c + 8));
   puVar2 = &DAT_00622044;
   pfVar3 = afStackY_1044 + 0x3f0;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

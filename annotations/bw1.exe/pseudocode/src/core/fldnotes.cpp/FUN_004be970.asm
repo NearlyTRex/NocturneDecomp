@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004d8060 at 004d8446
+;   core_game.cpp_CGame_process_FUN_004d8060 at 004d8446
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061d2e0
@@ -19,8 +19,8 @@
 ;   undefined4 DAT_01c43544
 ;   undefined4 DAT_01cc55cc
 ;   undefined4 DAT_01cc7b90
-;   undefined4 CAlphaBitmap_01cc7cac.field12_0xc
-;   undefined4 CAlphaBitmap_01cc7cac.field16_0x10
+;   undefined4 CAlphaBitmap_01cc7cac.width
+;   undefined4 CAlphaBitmap_01cc7cac.height
 ;   undefined4 g_STextViewInstance.field60_0x3c
 ;   undefined4 DAT_01cc7f1c
 ;   ... and 4 more
@@ -64,7 +64,7 @@ section .text
     JZ 0x004be9c0                       ; 004be9a8
         ;   XREF to: 004be9c0 (CONDITIONAL_JUMP)  ; LAB_004be9c0
     MOV EAX,[0x0061d95c]                ; 004be9aa | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 004be9af | g_CGameInstance.field580_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 004be9af | g_CGameInstance.field532_0x244
     JZ 0x004bea7e                       ; 004be9b6
         ;   XREF to: 004bea7e (CONDITIONAL_JUMP)  ; LAB_004bea7e
     POP EBP                             ; 004be9bc
@@ -226,12 +226,12 @@ section .text
     CMP ESI,EBP                         ; 004beb80
     JL 0x004beb13                       ; 004beb82
         ;   XREF to: 004beb13 (CONDITIONAL_JUMP)  ; LAB_004beb13
-    MOV EDX,dword ptr [0x01cc7cb8]      ; 004beb84 | CAlphaBitmap_01cc7cac.field12_0xc
+    MOV EDX,dword ptr [0x01cc7cb8]      ; 004beb84 | CAlphaBitmap_01cc7cac.width
     LEA EAX,[EDI + EDX*0x1]             ; 004beb8a
     CMP EBX,EAX                         ; 004beb8d
     JGE 0x004beb13                      ; 004beb8f
         ;   XREF to: 004beb13 (CONDITIONAL_JUMP)  ; LAB_004beb13
-    MOV ECX,dword ptr [0x01cc7cbc]      ; 004beb91 | CAlphaBitmap_01cc7cac.field16_0x10
+    MOV ECX,dword ptr [0x01cc7cbc]      ; 004beb91 | CAlphaBitmap_01cc7cac.height
     LEA EAX,[ECX + EBP*0x1]             ; 004beb97
     CMP ESI,EAX                         ; 004beb9a
     JGE 0x004beb13                      ; 004beb9c

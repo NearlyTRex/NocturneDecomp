@@ -8,8 +8,8 @@
 ;
 ; XREF[4]:
 ;   core_menu.cpp_FUN_004ebf10 at 004ec856
-;   engine_special.cpp_FUN_0056046e at 005604aa
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770 at 0055f79a
+;   engine_special.cpp_switchRenderer_FUN_0056046e at 005604aa
 ;   wincore_wddvmem.cpp_FUN_00588790 at 005888a5
 ;
 ; Referenced Globals:
@@ -34,10 +34,10 @@
 ;   crt_memory.c_memset_FUN_005b77c0
 ;   engine_special.cpp_CExternalRenderer_ctor_FUN_005602c0
 ;   engine_special.cpp_CExternalRenderer_validate_FUN_00560310
-;   engine_special.cpp_FUN_0055dcf0
-;   engine_special.cpp_FUN_005600c0
-;   wincore_wddvmem.cpp_FUN_00589970
+;   engine_special.cpp_selectCard_FUN_005600c0
+;   engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0
 ;   wincore_wddvmem.cpp_getProcAddress_FUN_00589980
+;   wincore_wddvmem.cpp_loadLibrary_FUN_00589970
 ;
 ; *****************************************************************************
 
@@ -71,8 +71,8 @@ section .text
         ;   XREF to: 0055e8db (UNCONDITIONAL_JUMP)  ; LAB_0055e8db
     PUSH 0x61e180                       ; 0055e8f9 | DAT_0061e180
         ;   Label: LAB_0055e8f9
-    CALL wincore_wddvmem.cpp_FUN_00589970 ; 0055e8fe
-        ;   XREF to: 00589970 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_FUN_00589970(LPCSTR lpLibFileName)
+    CALL wincore_wddvmem.cpp_loadLibrary_FUN_00589970 ; 0055e8fe
+        ;   XREF to: 00589970 (UNCONDITIONAL_CALL)  ; HMODULE wincore_wddvmem.cpp_loadLibrary_FUN_00589970(LPCSTR lpLibFileName)
     ADD ESP,0x4                         ; 0055e903
     MOV [0x0264bce0],EAX                ; 0055e906 | DAT_0264bce0
     TEST EAX,EAX                        ; 0055e90b
@@ -800,8 +800,8 @@ section .text
     JZ 0x0055f2b9                       ; 0055f269
         ;   XREF to: 0055f2b9 (CONDITIONAL_JUMP)  ; LAB_0055f2b9
     XOR EDI,EDI                         ; 0055f26b
-    CALL engine_special.cpp_FUN_0055dcf0 ; 0055f26d
-        ;   XREF to: 0055dcf0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055dcf0()
+    CALL engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0 ; 0055f26d
+        ;   XREF to: 0055dcf0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0()
     MOV dword ptr [0x0264bba0],EDI      ; 0055f272 | DAT_0264bba0
     XOR EAX,EAX                         ; 0055f278
     ADD ESP,0x3c20                      ; 0055f27a
@@ -812,8 +812,8 @@ section .text
     RET                                 ; 0055f284
     XOR EBP,EBP                         ; 0055f285
         ;   Label: LAB_0055f285
-    CALL engine_special.cpp_FUN_0055dcf0 ; 0055f287
-        ;   XREF to: 0055dcf0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055dcf0()
+    CALL engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0 ; 0055f287
+        ;   XREF to: 0055dcf0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0()
     MOV dword ptr [0x0264bba0],EBP      ; 0055f28c | DAT_0264bba0
     XOR EAX,EAX                         ; 0055f292
     ADD ESP,0x3c20                      ; 0055f294
@@ -824,8 +824,8 @@ section .text
     RET                                 ; 0055f29e
     XOR EBX,EBX                         ; 0055f29f
         ;   Label: LAB_0055f29f
-    CALL engine_special.cpp_FUN_0055dcf0 ; 0055f2a1
-        ;   XREF to: 0055dcf0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_FUN_0055dcf0()
+    CALL engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0 ; 0055f2a1
+        ;   XREF to: 0055dcf0 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0()
     MOV dword ptr [0x0264bba0],EBX      ; 0055f2a6 | DAT_0264bba0
     XOR EAX,EAX                         ; 0055f2ac
     ADD ESP,0x3c20                      ; 0055f2ae
@@ -933,8 +933,8 @@ section .text
     MOV EBX,dword ptr [0x0264bba4]      ; 0055f4ab | DAT_0264bba4
         ;   Label: LAB_0055f4ab
     PUSH EBX                            ; 0055f4b1
-    CALL engine_special.cpp_FUN_005600c0 ; 0055f4b2
-        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_FUN_005600c0(int card_index)
+    CALL engine_special.cpp_selectCard_FUN_005600c0 ; 0055f4b2
+        ;   XREF to: 005600c0 (UNCONDITIONAL_CALL)  ; int engine_special.cpp_selectCard_FUN_005600c0(int card_index)
     MOV EAX,0x1                         ; 0055f4b7
     ADD ESP,0x4                         ; 0055f4bc
     ADD ESP,0x3c20                      ; 0055f4bf

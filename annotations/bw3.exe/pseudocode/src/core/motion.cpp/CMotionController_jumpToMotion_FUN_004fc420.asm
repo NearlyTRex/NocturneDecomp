@@ -9,16 +9,16 @@
 ; float            Stack[0xc]:4   target_frame_number
 ;
 ; XREF[18]:
-;   core_boneguy.cpp_FUN_004179b0 at 00417a3b
-;   core_boneguy.cpp_FUN_00419b40 at 00419bab
-;   core_constrct.cpp_FUN_00442a20 at 00442dd9
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419bab
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417a3b
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00442dd9
+;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 0059891c
 ;   core_event.cpp_FUN_0048c2e0 at 00490ce6
 ;   core_mission.cpp_CDemonMission_createOneHero_FUN_004f7710 at 004f7810
 ;   core_motion.cpp_CMotionController_findAndStartTransition_FUN_004fbf20 at 004fbf9a
 ;   core_motion.cpp_CMotionController_jumpToMotionByName_FUN_004fc3f0 at 004fc411
 ;   core_motion.cpp_CMotionController_startTransition_FUN_004fc190 at 004fc221
-;   core_passngr.cpp_FUN_0050a610 at 0050a7bb
-;   core_pryemorp.cpp_FUN_005275c0 at 005276bb
+;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a7bb
 ;   ... and 8 more
 ;
 ; Referenced Globals:

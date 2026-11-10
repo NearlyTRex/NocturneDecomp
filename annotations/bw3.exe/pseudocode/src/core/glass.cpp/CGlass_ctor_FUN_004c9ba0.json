@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 110,
+    "complexity_score": 126,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 60,
-    "suspect_count": 4,
+    "pseudocode_lines": 61,
+    "suspect_count": 5,
     "suspect_types": [
-      "unnamed_field",
+      "derived_field_index_pun",
+      "pointer_cast",
       "unrolled_strcpy"
     ],
-    "total_lines": 153
+    "total_lines": 154
   },
   "cross_references": [
     {
@@ -116,36 +117,43 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 22,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 39,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 51,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
       "line": 13,
-      "match": "field_0xc4",
-      "severity": "mild",
-      "text": "pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004f3fc0((CMirror *)&pCVar2[1].field_0xc4);",
-      "type": "unnamed_field"
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004f3fc0((CMirror *)(pCVar2[1].create_event + 0x4c));",
+      "type": "pointer_cast"
     },
     {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 21,
-      "match": "do {",
+      "description": "'pCVar2[1].create_event + 0x4c' walks 1 x sizeof(CDemonActor) (0x158) + offsetof(create_event) (0x78) + 0x4c = 0x21c, which is exactly offsetof(CBarrier, effect_class_name_list[180]). Ghidra had no CBarrier type here and reached the field by index arithmetic; write it as ((CBarrier *)pCVar2)->effect_class_name_list[180] (\u00a7de-pun/\u00a712). Ambiguous: CChain::move_wav_name, CFlame::off_event, CGlass::mirror also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
       "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 38,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 50,
-      "match": "do {",
-      "severity": "moderate",
-      "text": "do {",
-      "type": "unrolled_strcpy"
+      "text": "pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_004f3fc0((CMirror *)(pCVar2[1].create_event + 0x4c));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

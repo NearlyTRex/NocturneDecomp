@@ -20,9 +20,10 @@ CGlass * core_glass_cpp_CGlass_dtor_FUN_004cc5f0(CGlass *this_ptr,uint flags)
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  pCVar1 = core_mirror_cpp_FUN_004f3fe0((CMirror *)&this_ptr->field_0x21c,0);
+  pCVar1 = core_mirror_cpp_FUN_004f3fe0(&this_ptr->mirror,0);
   pCVar2 = (CGlass *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408770((CDemonActor *)(pCVar1 + -0x21c),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408770
+                     ((CDemonActor *)&pCVar1[-2].reflection.corner4,1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

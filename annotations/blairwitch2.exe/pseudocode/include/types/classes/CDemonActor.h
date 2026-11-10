@@ -4,13 +4,28 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/stdint.h"
+#include "types/classes/CMatrix3x3f.h"
+#include "types/enums/EActorLifecycleState.h"
+#include "types/unions/UActorVTable.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CDemonActor
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x2b4 (692 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonActor {
-    char field_0[692]; // 0x0
+    char actor_name[32]; // 0x0
+    char field_32[16]; // 0x20
+    UOrientationVector orient; // 0x30
+    CMatrix3x3f orient_matrix; // 0x3c
+    int runtime_state; // 0x60
+    int health; // 0x64
+    uintptr_t validation_magic; // 0x68
+    int direction_hint; // 0x6c
+    EActorLifecycleState lifecycle_state; // 0x70
+    float create_prob; // 0x74
+    char field_120[568]; // 0x78
+    UActorVTable vtable; // 0x2b0
 } CDemonActor;
 #pragma pack(pop)
 

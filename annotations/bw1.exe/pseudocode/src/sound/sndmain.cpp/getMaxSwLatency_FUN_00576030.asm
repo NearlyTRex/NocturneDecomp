@@ -6,8 +6,8 @@
 ;
 ; XREF[4]:
 ;   sound_snddx.cpp_FUN_00577f90 at 00578251
-;   sound_sndmain.cpp_FUN_005760b0 at 005761dc
-;   sound_sndmain.cpp_FUN_005763b0 at 005764ac
+;   sound_sndmain.cpp_readIni_FUN_005760b0 at 005761dc
+;   sound_sndmain.cpp_writeIni_FUN_005763b0 at 005764ac
 ;   sound_sndwav.cpp_CWavOutDevice_setMode_FUN_0057a930 at 0057a975
 ;
 ; Referenced Globals:

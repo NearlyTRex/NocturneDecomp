@@ -14,7 +14,7 @@ ECollisionType core_construc_cpp_FUN_004444c0(CCharacter *param_1,SCollisionInfo
   if (*(int *)param_2 == 4) {
     return COLLISION_TYPE_MESH;
   }
-  if (*(int *)&param_1[1].field_0xa78 != 0) {
+  if (*(int *)&param_1[1].model.field_0x920 != 0) {
     return COLLISION_TYPE_NONE;
   }
   EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00430430(param_1,param_2);

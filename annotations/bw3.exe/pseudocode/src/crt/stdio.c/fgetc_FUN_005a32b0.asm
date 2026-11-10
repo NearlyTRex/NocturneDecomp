@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[29]:
-;   cockpit_ckptutil.c_FUN_00437c50 at 00437cbb
-;   core_actor.cpp_FUN_0040bab0 at 0040bacb
-;   core_actor.cpp_FUN_0040bba0 at 0040bbc3
-;   core_actor.cpp_FUN_0040be30 at 0040be4b
+;   cockpit_ckptutil.c_rotateBitmap_FUN_00437c50 at 00437cbb
+;   core_actor.cpp_archiveBox_FUN_0040be30 at 0040be4b
 ;   core_actor.cpp_archiveClothList_FUN_0040bf20 at 0040bf40
 ;   core_actor.cpp_archiveDescription_FUN_0040b350 at 0040b36b
+;   core_actor.cpp_archiveMotionState_FUN_0040bab0 at 0040bacb
+;   core_actor.cpp_archivePartStatus_FUN_0040bba0 at 0040bbc3
 ;   core_actor.cpp_archiveRules_FUN_0040c0c0 at 0040c0dc
 ;   core_actor.cpp_archiveString_FUN_0040b680 at 0040b6a0
 ;   core_course.cpp_FUN_00444970 at 004449a8

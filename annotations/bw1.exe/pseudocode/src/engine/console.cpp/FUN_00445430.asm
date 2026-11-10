@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[100]:
-;   core_actor.cpp_FUN_00409f20 at 0040a3ad
-;   core_ammobox.cpp_FUN_0040e1a0 at 0040e1c5
-;   core_baron.cpp_FUN_0040f4d0 at 0040f7c3
-;   core_batcreat.cpp_FUN_004115b0 at 00411907
-;   core_batman.cpp_FUN_00412ba0 at 00412f08
-;   core_batman.cpp_FUN_00413c40 at 00413f18
-;   core_biggs.cpp_FUN_00414b30 at 00414dc5
-;   core_bodypart.cpp_FUN_00419130 at 00419254
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c6ec
-;   core_boneguy.cpp_FUN_0041c9a0 at 0041ccd4
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a3ad
+;   core_ammobox.cpp_CAmmoBox_openBox_FUN_0040e1a0 at 0040e1c5
+;   core_baron.cpp_CBaron_process_FUN_0040f4d0 at 0040f7c3
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411907
+;   core_batman.cpp_CBatman_processDismemberment_FUN_00413c40 at 00413f18
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00412f08
+;   core_biggs.cpp_CBiggs_process_FUN_00414b30 at 00414dc5
+;   core_bird.cpp_CBird_process_FUN_00415340 at 004155fa
+;   core_bodypart.cpp_CBodyPart_renderBackground_FUN_00419130 at 00419254
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c6ec
 ;   ... and 90 more
 ;
 ; Referenced Globals:

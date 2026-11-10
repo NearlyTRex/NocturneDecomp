@@ -11,7 +11,7 @@ void core_dog1_cpp_factoryFuncDog_FUN_005aba10(void)
 {
   CDog *this_ptr;
   
-  this_ptr = (CDog *)FUN_005b8be2(0x11870);
+  this_ptr = (CDog *)debugAllocTracked1(0x11870);
   if (this_ptr == (CDog *)0x0) {
     return;
   }

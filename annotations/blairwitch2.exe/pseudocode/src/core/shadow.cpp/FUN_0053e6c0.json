@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 155,
-    "complexity_score": 438,
+    "complexity_score": 363,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 63,
-    "suspect_count": 34,
+    "suspect_count": 27,
     "suspect_types": [
       "raw_address_constant",
       "undefined_data",
       "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
@@ -31,7 +30,7 @@
     ],
     "convention": "unknown",
     "name": "core_shadow.cpp_FUN_0053e6c0",
-    "signature": "undefined4 core_shadow_cpp_FUN_0053e6c0(CDemonActor *param_1)"
+    "signature": "int core_shadow_cpp_FUN_0053e6c0(CCharacter *param_1)"
   },
   "function_calls": [
     {
@@ -52,7 +51,7 @@
     {
       "addr": "004268b0",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_004268b0"
+      "name": "core_charactr.cpp_CCharacter_renderTransparent_FUN_004268b0"
     },
     {
       "addr": "0048e340",
@@ -204,7 +203,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_shadow_cpp_FUN_0053e6c0(CDemonActor *param_1)",
+      "text": "int core_shadow_cpp_FUN_0053e6c0(CCharacter *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -212,7 +211,7 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_motion_cpp_FUN_005035c0(param_1 + 1);",
+      "text": "iVar1 = core_motion_cpp_FUN_005035c0(&param_1->model);",
       "type": "unnamed_param"
     },
     {
@@ -220,39 +219,23 @@
       "line": 22,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xe].field_0x250 = 0;",
+      "text": "param_1->was_rendered_opaque = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[0xe].field_0x250 = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[0x62].field_0x17c != 0) {",
+      "text": "if (*(int *)(param_1[1].base.actor_name + 4) != 0) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "if (*(int *)&param_1[0x62].field_0x17c != 0) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_charactr_cpp_FUN_004268b0(param_1);",
+      "text": "core_charactr_cpp_CCharacter_renderTransparent_FUN_004268b0(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -260,39 +243,15 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "return *(uint *)&param_1[0xe].field_0x250;",
+      "text": "return param_1->was_rendered_opaque;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "return *(uint *)&param_1[0xe].field_0x250;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(param_1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 36,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&param_1->field_0x2b0 + 0x24))(param_1,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x2b0 + 0x24))(param_1,0);",
+      "text": "core_actor_cpp_CDemonActor_setupRenderState_FUN_004089d0(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -300,16 +259,16 @@
       "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x2b0 + 0x24))(param_1,0);",
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,(CBoundingBox3D *)0x0);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Unnamed function parameter",
       "line": 36,
-      "match": "field_0x2b0",
+      "match": "param_1",
       "severity": "mild",
-      "text": "(**(code **)(*(int *)&param_1->field_0x2b0 + 0x24))(param_1,0);",
-      "type": "unnamed_field"
+      "text": "(*((param_1->base).vtable._ub)->getBoundingBox)(&param_1->base,(CBoundingBox3D *)0x0);",
+      "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
@@ -324,15 +283,15 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = *(int *)&param_1[0x62].field_0x290;",
+      "text": "iVar1 = *(int *)&param_1[1].base.field_0x118;",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 47,
-      "match": "field_0x290",
+      "match": "field_0x118",
       "severity": "mild",
-      "text": "iVar1 = *(int *)&param_1[0x62].field_0x290;",
+      "text": "iVar1 = *(int *)&param_1[1].base.field_0x118;",
       "type": "unnamed_field"
     },
     {
@@ -340,16 +299,8 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1[0xe].field_0x250 = 1;",
+      "text": "param_1->was_rendered_opaque = 1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "*(uint *)&param_1[0xe].field_0x250 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -372,7 +323,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)(param_1 + 1),-1,0x2e7,1,0);",
+      "text": "(&param_1->model,-1,0x2e7,1,0);",
       "type": "unnamed_param"
     },
     {
@@ -388,7 +339,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_FUN_005042e0((CMotionController *)(param_1 + 1),param_1);",
+      "text": "core_motion_cpp_FUN_005042e0((CMotionController *)&param_1->model,&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -396,7 +347,7 @@
       "line": 56,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_motion_cpp_FUN_005042e0((CMotionController *)(param_1 + 1),param_1);",
+      "text": "core_motion_cpp_FUN_005042e0((CMotionController *)&param_1->model,&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -404,7 +355,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(param_1);",
+      "text": "core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -412,15 +363,15 @@
       "line": 60,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[0x62].field_0x294 != 0) {",
+      "text": "if (*(int *)&param_1[1].base.field_0x11c != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 60,
-      "match": "field_0x294",
+      "match": "field_0x11c",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[0x62].field_0x294 != 0) {",
+      "text": "if (*(int *)&param_1[1].base.field_0x11c != 0) {",
       "type": "unnamed_field"
     },
     {
@@ -436,16 +387,8 @@
       "line": 64,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar3 = *(uint *)&param_1[0xe].field_0x250;",
+      "text": "iVar3 = param_1->was_rendered_opaque;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x250",
-      "severity": "mild",
-      "text": "uVar3 = *(uint *)&param_1[0xe].field_0x250;",
-      "type": "unnamed_field"
     },
     {
       "description": "Raw hex address 0x1c38bc0 assigned to bare local `this_ptr_00`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr_00` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",

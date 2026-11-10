@@ -9,7 +9,7 @@
 ; undefined        Stack[-0x100]:1  local_100
 ;
 ; XREF[4]:
-;   engine_3d.c_FUN_00407860 at 004078b0
+;   engine_3d.c_dispatchMRGLToRenderer_FUN_00407860 at 004078b0
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004df050 at 004df3b4
 ;   engine_keyframe.c_loadAndInterpolateKeyframes_FUN_004dee60 at 004dee7d
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004df440 at 004df4aa
@@ -23,7 +23,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -133,8 +133,8 @@ section .text
     PUSH 0x5c9096                       ; 004f8856 | = "MRGLSize: Bad type : %d"
     LEA EAX,[ESP + 0x8]                 ; 004f885b
     PUSH EAX                            ; 004f885f
-    CALL crt_unknown.c_FUN_005a28c0     ; 004f8860
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004f8860
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5c90ae                    ; 004f8865 | = "..\\engine\\model.c"
     ADD ESP,0xc                         ; 004f886a
     MOV EAX,ESP                         ; 004f886d

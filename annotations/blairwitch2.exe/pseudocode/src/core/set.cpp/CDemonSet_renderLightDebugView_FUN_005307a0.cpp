@@ -48,9 +48,9 @@ void __cdecl core_set_cpp_CDemonSet_renderLightDebugView_FUN_005307a0(CDemonSet 
     } while (iVar4 < _DAT_01fc9608);
   }
   iVar5 = _DAT_01fc8e84 + _DAT_01fc9608;
-  FUN_005b7790(local_110,"%d omni lights",_DAT_01fc9cd4);
+  _sprintf(local_110,"%d omni lights");
   engine_2d_c_drawText_FUN_00401fe0(local_110,(&DAT_0061b5bc)[iVar5],(&DAT_0061b73c)[iVar5]);
-  FUN_005b7790(local_110,"%d spot lights",_DAT_01fc8e84);
+  _sprintf(local_110,"%d spot lights");
   engine_2d_c_drawText_FUN_00401fe0(local_110,(&DAT_0061b5bc)[iVar5],(&DAT_0061b73c)[iVar5] + 0xb);
   return;
 }

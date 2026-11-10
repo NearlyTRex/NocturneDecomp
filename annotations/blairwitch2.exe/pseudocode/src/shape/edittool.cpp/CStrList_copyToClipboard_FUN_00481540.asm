@@ -9,7 +9,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   shape_edittool.cpp_FUN_00482350 at 004823e0
+;   shape_edittool.cpp_CPickList_handleInput_FUN_00482350 at 004823e0
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shape_edittool_cpp_005d27cd
@@ -21,9 +21,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b7790
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b8df8
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00481240
 ;   shape_edittool.cpp_FUN_0047fc30
 ;
@@ -104,8 +104,8 @@ section .text
     PUSH 0x5d2824                       ; 004815ce | DAT_005d2824
     PUSH EDI                            ; 004815d3
     INC ESI                             ; 004815d4
-    CALL crt_unknown.c_FUN_005b7790     ; 004815d5
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004815d5
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0xc                         ; 004815da
     MOV EDX,dword ptr [EBX]             ; 004815dd
     ADD EDI,EAX                         ; 004815df

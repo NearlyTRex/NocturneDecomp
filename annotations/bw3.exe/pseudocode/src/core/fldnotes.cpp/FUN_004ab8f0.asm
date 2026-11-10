@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)
+; undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)
 ;
 ;
 ; XREF[1]:
@@ -16,7 +16,7 @@
 ; Called Functions:
 ;   core_fldnotes.cpp_FUN_004a9c30
 ;   core_fldnotes.cpp_FUN_004aa1a0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -107,8 +107,8 @@ section .text
     PUSH 0x5c1632                       ; 004ab995 | = "No such entry '%s'"
     MOV EDI,dword ptr [ESP + 0x28]      ; 004ab99a
     PUSH EDI                            ; 004ab99e
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab99f
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab99f
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ab9a4
     XOR EAX,EAX                         ; 004ab9a7
     POP EBP                             ; 004ab9a9
@@ -122,8 +122,8 @@ section .text
     PUSH 0x5c1645                       ; 004ab9b3 | = "'%s' is not a map"
     MOV EBX,dword ptr [ESP + 0x28]      ; 004ab9b8
     PUSH EBX                            ; 004ab9bc
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab9bd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab9bd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 004ab9c2
     XOR EAX,EAX                         ; 004ab9c5
     POP EBP                             ; 004ab9c7
@@ -138,8 +138,8 @@ section .text
     PUSH 0x5c1657                       ; 004ab9d2 | = "No such annotion '%s' found on map '%s'"
     MOV EDX,dword ptr [ESP + 0x2c]      ; 004ab9d7
     PUSH EDX                            ; 004ab9db
-    CALL crt_unknown.c_FUN_005a28c0     ; 004ab9dc
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004ab9dc
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ab9e1
     XOR EAX,EAX                         ; 004ab9e4
     POP EBP                             ; 004ab9e6

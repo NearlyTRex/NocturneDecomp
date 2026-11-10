@@ -9,13 +9,13 @@
 ; float            Stack[0xc]:4   frame_number
 ;
 ; XREF[3]:
-;   core_prye.cpp_FUN_00518680 at 0051890f
+;   core_prye.cpp_CPrye_setup_FUN_00518680 at 0051890f
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_0054e850 at 0054e88e
-;   core_thehand.cpp_FUN_0056c140 at 0056c554
+;   core_thehand.cpp_CTheHand_process_FUN_0056c140 at 0056c554
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10
 ;   core_skeleton.cpp_FUN_0054c1b0
-;   core_skeleton.cpp_FUN_0054dd10
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     ADD ESP,0x10                        ; 0054c196
     MOV EBX,dword ptr [ESP + 0x8]       ; 0054c199
     PUSH EBX                            ; 0054c19d
-    CALL core_skeleton.cpp_FUN_0054dd10 ; 0054c19e
-        ;   XREF to: 0054dd10 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054dd10(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10 ; 0054c19e
+        ;   XREF to: 0054dd10 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_0054dd10(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0054c1a3
     POP EBX                             ; 0054c1a6
     RET                                 ; 0054c1a7

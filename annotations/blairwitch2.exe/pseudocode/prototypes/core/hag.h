@@ -25,58 +25,58 @@ CHag * CHag::ctor(CHag *this_ptr);
 // Address: 005aa7e0
 CHag * CHag::dtor(CHag *this_ptr,uint flags);
 
-// Original: core_hag.cpp_FUN_005aa8c0
+// Original: core_hag.cpp_CHag_setup_FUN_005aa8c0
 // Address: 005aa8c0
-void FUN_005aa8c0(int param_1);
+void __cdecl CHag::setup(CHag *this_ptr);
 
-// Original: core_hag.cpp_FUN_005aa970
+// Original: core_hag.cpp_CHag_processStates_FUN_005aa970
 // Address: 005aa970
-void FUN_005aa970(int param_1,undefined4 param_2,int param_3);
+void __cdecl CHag::processStates(CHag *this_ptr,float delta_time,int mode);
 
-// Original: core_hag.cpp_FUN_005aaa80
+// Original: core_hag.cpp_CHag_processHagAlertState_FUN_005aaa80
 // Address: 005aaa80
-void FUN_005aaa80(int param_1,undefined4 param_2);
+void __cdecl CHag::processHagAlertState(CHag *this_ptr,float delta_time);
 
-// Original: core_hag.cpp_FUN_005aab50
+// Original: core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50
 // Address: 005aab50
-void FUN_005aab50(CCharacter *param_1);
+void __cdecl CHag::processMeleeAttackState(CHag *this_ptr,float delta_time);
 
-// Original: core_hag.cpp_FUN_005aaca0
+// Original: core_hag.cpp_CHag_processHealingState_FUN_005aaca0
 // Address: 005aaca0
-void FUN_005aaca0(int param_1,float param_2);
+void __cdecl CHag::processHealingState(CHag *this_ptr,float delta_time);
 
-// Original: core_hag.cpp_FUN_005aad70
+// Original: core_hag.cpp_CHag_startBurn_FUN_005aad70
 // Address: 005aad70
-void FUN_005aad70(int param_1,undefined4 *param_2,float param_3);
+void __cdecl CHag::startBurn(CHag *this_ptr,CVector3f *direction,float strength);
 
-// Original: core_hag.cpp_FUN_005aae80
+// Original: core_hag.cpp_CHag_processBurnState_FUN_005aae80
 // Address: 005aae80
-void FUN_005aae80(int param_1,float param_2);
+void __cdecl CHag::processBurnState(CHag *this_ptr,float delta_time);
 
 // Original: core_hag.cpp_FUN_005ab260
 // Address: 005ab260
 void FUN_005ab260(int param_1,float param_2);
 
-// Original: core_hag.cpp_FUN_005ab760
+// Original: core_hag.cpp_CHag_processDeathState_FUN_005ab760
 // Address: 005ab760
-void FUN_005ab760(int param_1);
+void __cdecl CHag::processDeathState(CHag *this_ptr,float delta_time);
 
-// Original: core_hag.cpp_FUN_005ab790
+// Original: core_hag.cpp_CHag_renderTransparent_FUN_005ab790
 // Address: 005ab790
-undefined4 FUN_005ab790(int param_1);
+int __cdecl CHag::renderTransparent(CHag *this_ptr);
 
-// Original: core_hag.cpp_FUN_005ab7d0
+// Original: core_hag.cpp_CHag_processDamage_FUN_005ab7d0
 // Address: 005ab7d0
-void FUN_005ab7d0(CDemonActor *param_1,int param_2);
+void __cdecl CHag::processDamage(CHag *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_hag.cpp_FUN_005ab8d0
+// Original: core_hag.cpp_CHag_getDeathState_FUN_005ab8d0
 // Address: 005ab8d0
-undefined4 FUN_005ab8d0(int param_1);
+EDeathState __cdecl CHag::getDeathState(CHag *this_ptr);
 
-// Original: core_hag.cpp_FUN_005ab940
+// Original: core_hag.cpp_CHag_processMotionEvent_FUN_005ab940
 // Address: 005ab940
-void FUN_005ab940(CDemonActor *param_1,uint param_2);
+void __cdecl CHag::processMotionEvent(CHag *this_ptr,int event_id);
 
-// Original: core_hag.cpp_FUN_005ab9d0
+// Original: core_hag.cpp_CHag_archive_FUN_005ab9d0
 // Address: 005ab9d0
-void FUN_005ab9d0(undefined4 param_1);
+void __cdecl CHag::archive(CHag *this_ptr);

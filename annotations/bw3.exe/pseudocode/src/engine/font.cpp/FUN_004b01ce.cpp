@@ -58,7 +58,7 @@ void engine_font_cpp_FUN_004b01ce(CBitFont *param_1,CBitFont *param_2)
                 (param_1,acStack_25c,iStack_30,iStack_2c,iStack_20);
     }
     else {
-      engine_font_cpp_FUN_004b0190
+      engine_font_cpp_CBitFont_loadNewBitmap_FUN_004b0190
                 (param_1,acStack_25c,iStack_30,iStack_2c,iStack_28,iStack_24,iStack_20);
     }
     *(uint *)(param_1 + 0x3668) = uStack_1c;

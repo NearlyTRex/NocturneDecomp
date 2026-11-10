@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 45,
-    "complexity_score": 154,
+    "complexity_score": 139,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 14,
-    "suspect_count": 12,
+    "suspect_count": 11,
     "suspect_types": [
       "param_count_too_few",
       "suspect_float",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 59
@@ -64,7 +63,7 @@
     },
     {
       "addr": "01d21620",
-      "name": "g_CGameInstance.field788_0x314",
+      "name": "g_CGameInstance.delta_time_float",
       "type": "undefined4",
       "value": null
     },
@@ -163,7 +162,7 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 = *param_1 - *(float *)&g_CGamePtr->field_0x314, *param_1 = fVar1, fVar1 < 0.0)) {",
+      "text": "(fVar1 = *param_1 - g_CGamePtr->delta_time_float, *param_1 = fVar1, fVar1 < 0.0)) {",
       "type": "unnamed_param"
     },
     {
@@ -171,16 +170,8 @@
       "line": 8,
       "match": "param_1",
       "severity": "mild",
-      "text": "(fVar1 = *param_1 - *(float *)&g_CGamePtr->field_0x314, *param_1 = fVar1, fVar1 < 0.0)) {",
+      "text": "(fVar1 = *param_1 - g_CGamePtr->delta_time_float, *param_1 = fVar1, fVar1 < 0.0)) {",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "(fVar1 = *param_1 - *(float *)&g_CGamePtr->field_0x314, *param_1 = fVar1, fVar1 < 0.0)) {",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

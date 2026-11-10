@@ -14,9 +14,9 @@
 ;
 ; XREF[7]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_00534420 at 00534594
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00535a80 at 00535bae
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_00534890 at 00534f28
 ;   core_set.cpp_FUN_00533e5e at 0053417e
-;   core_set.cpp_FUN_00535a80 at 00535bae
 ;   core_set.cpp_FUN_005365c0 at 0053674c
 ;   core_set.cpp_FUN_00536990 at 00536b08
 ;   core_setdir.cpp_FUN_00540cf0 at 00540dd9
@@ -35,18 +35,18 @@
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_prepareForRender_FUN_00460f20
-;   core_dskybox.cpp_FUN_0046f480
+;   core_dskybox.cpp_renderSkyDome_FUN_0046f480
 ;   core_dtrace.cpp_CDemonRaytrace_renderFrustumCubes_FUN_00476070
 ;   core_dtrace.cpp_CDemonRaytrace_savePVS_FUN_004771c0
 ;   core_dtrace.cpp_CDemonRaytrace_setPVS_FUN_00477060
-;   core_glass.cpp_FUN_004ca940
+;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940
 ;   core_mirror.cpp_CMirror_renderMirrorQuadDepth_FUN_004f5610
 ;   core_set.cpp_CDemonSet_buildMirrorList_FUN_0053afa0
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20
-;   core_set.cpp_FUN_0053adf0
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0
 ;   core_terrain.cpp_CTerrain_render_FUN_005723d0
 ;   core_water.cpp_CWater_calculateVisibleTiles_FUN_00577290
-;   core_water.cpp_FUN_00577760
+;   core_water.cpp_CWater_render_FUN_00577760
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_0046d540
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046ce90
 ;   ... and 2 more
@@ -193,15 +193,15 @@ section .text
     JZ 0x00533d06                       ; 00533cfb
         ;   XREF to: 00533d06 (CONDITIONAL_JUMP)  ; LAB_00533d06
     PUSH EAX                            ; 00533cfd
-    CALL core_glass.cpp_FUN_004ca940    ; 00533cfe
-        ;   XREF to: 004ca940 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ca940(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940 ; 00533cfe
+        ;   XREF to: 004ca940 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00533d03
     PUSH 0x1                            ; 00533d06
         ;   Label: LAB_00533d06
     PUSH EDI                            ; 00533d08
     PUSH EBX                            ; 00533d09
-    CALL core_set.cpp_FUN_0053adf0      ; 00533d0a
-        ;   XREF to: 0053adf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0053adf0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0 ; 00533d0a
+        ;   XREF to: 0053adf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00533d0f
     PUSH 0x0                            ; 00533d12
     PUSH dword ptr [ESP + 0x28]         ; 00533d14
@@ -254,8 +254,8 @@ section .text
     PUSH EAX                            ; 00533d8b
     MOV EDI,dword ptr [0x005f4a58]      ; 00533d8c | DAT_005f4a58
     PUSH EDI                            ; 00533d92
-    CALL core_dskybox.cpp_FUN_0046f480  ; 00533d93
-        ;   XREF to: 0046f480 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_FUN_0046f480(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
+    CALL core_dskybox.cpp_renderSkyDome_FUN_0046f480 ; 00533d93
+        ;   XREF to: 0046f480 (UNCONDITIONAL_CALL)  ; void core_dskybox.cpp_renderSkyDome_FUN_0046f480(SMRGLSkyTexture * sky_texture, char * texture_name, int brightness_factor)
     ADD ESP,0xc                         ; 00533d98
     JMP 0x00533ca4                      ; 00533d9b
         ;   XREF to: 00533ca4 (UNCONDITIONAL_JUMP)  ; LAB_00533ca4
@@ -272,8 +272,8 @@ section .text
         ;   XREF to: 00533cb1 (CONDITIONAL_JUMP)  ; LAB_00533cb1
     PUSH 0x1                            ; 00533dbd
     PUSH EAX                            ; 00533dbf | g_CWaterInstance
-    CALL core_water.cpp_FUN_00577760    ; 00533dc0
-        ;   XREF to: 00577760 (UNCONDITIONAL_CALL)  ; void core_water.cpp_FUN_00577760(CWater * this_ptr, int render_mode)
+    CALL core_water.cpp_CWater_render_FUN_00577760 ; 00533dc0
+        ;   XREF to: 00577760 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_00577760(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 00533dc5
     JMP 0x00533cb1                      ; 00533dc8
         ;   XREF to: 00533cb1 (UNCONDITIONAL_JUMP)  ; LAB_00533cb1
@@ -300,15 +300,15 @@ section .text
     JZ 0x00533e19                       ; 00533e0e
         ;   XREF to: 00533e19 (CONDITIONAL_JUMP)  ; LAB_00533e19
     PUSH EAX                            ; 00533e10
-    CALL core_glass.cpp_FUN_004ca940    ; 00533e11
-        ;   XREF to: 004ca940 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_FUN_004ca940(CGlass * this_ptr)
+    CALL core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940 ; 00533e11
+        ;   XREF to: 004ca940 (UNCONDITIONAL_CALL)  ; void core_glass.cpp_CGlass_renderBrokenGlass_FUN_004ca940(CGlass * this_ptr)
     ADD ESP,0x4                         ; 00533e16
     PUSH 0x0                            ; 00533e19
         ;   Label: LAB_00533e19
     PUSH EDI                            ; 00533e1b
     PUSH EBX                            ; 00533e1c
-    CALL core_set.cpp_FUN_0053adf0      ; 00533e1d
-        ;   XREF to: 0053adf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0053adf0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0 ; 00533e1d
+        ;   XREF to: 0053adf0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 00533e22
     PUSH 0x0                            ; 00533e25
     PUSH dword ptr [ESP + 0x28]         ; 00533e27

@@ -17,7 +17,7 @@ CDynamite * __cdecl core_dynamite_cpp_CDynamite_dtor_FUN_004928d0(CDynamite *thi
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CDynamite *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)this_ptr,1);
+  pCVar1 = (CDynamite *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

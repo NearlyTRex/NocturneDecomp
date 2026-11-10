@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CPatrolPointVTable
+;   CDemonActor_vtable g_CPatrolPointVTable
 ;   WatcomTypeInfo g_CPatrolPointTypeInfo
 ;
 ; Called Functions:

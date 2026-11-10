@@ -22,7 +22,7 @@ void unkaddr_0059aa80_cpp_FUN_0059af30(int *param_1,int param_2)
       do {
         engine_alphabit_cpp_FUN_0040d540(this_ptr);
         iVar1 = iVar1 + 1;
-        this_ptr = (CAlphaBitmap *)&this_ptr[2].field_0x4;
+        this_ptr = (CAlphaBitmap *)&this_ptr[2].opa;
       } while (iVar1 < param_1[7]);
     }
     param_1[7] = 0;

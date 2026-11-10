@@ -9,6 +9,6 @@
 void FUN_005b8df8(uint param_1)
 
 {
-  FUN_005b8be2(param_1);
+  debugAllocTracked1(param_1);
   return;
 }

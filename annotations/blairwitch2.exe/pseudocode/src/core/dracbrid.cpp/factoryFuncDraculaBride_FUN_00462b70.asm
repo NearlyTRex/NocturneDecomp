@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dracbrid.cpp_CDraculaBride_ctor_FUN_00462ba0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x10c28                        ; 00462b70
         ;   Label: core_dracbrid.cpp_factoryFuncDraculaBride_FUN_00462b70
-    CALL crt_unknown.c_FUN_005b8be2     ; 00462b75
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00462b75
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 00462b7a
     TEST EAX,EAX                        ; 00462b7d
     JNZ 0x00462b82                      ; 00462b7f

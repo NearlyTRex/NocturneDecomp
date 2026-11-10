@@ -163,9 +163,9 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 10,
-      "match": "auStackY_1010",
+      "match": "aUStackY_1010",
       "severity": "moderate",
-      "text": "uint auStackY_1010 [1016];",
+      "text": "UIntegerFloat aUStackY_1010 [1016];",
       "type": "stack_alignment_array"
     },
     {
@@ -189,7 +189,7 @@
       "line": 23,
       "match": "&stack0xffffffe8",
       "severity": "moderate",
-      "text": "*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);",
+      "text": "(UIntegerFloat)*(uint *)(&stack0xffffffe8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
     },
     {

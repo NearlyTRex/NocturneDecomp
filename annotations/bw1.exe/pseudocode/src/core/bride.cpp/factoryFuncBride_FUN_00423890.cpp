@@ -11,7 +11,7 @@ void core_bride_cpp_factoryFuncBride_FUN_00423890(void)
 {
   CBride *this_ptr;
   
-  this_ptr = (CBride *)FUN_005c0f32(0xc29c);
+  this_ptr = (CBride *)debugAllocTracked1(0xc29c);
   if (this_ptr == (CBride *)0x0) {
     return;
   }

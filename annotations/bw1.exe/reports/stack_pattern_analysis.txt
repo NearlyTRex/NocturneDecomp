@@ -40,7 +40,7 @@ HIGH SEVERITY - Severe decompilation impact
     - [dynamic_alloca] at 005ca38b: SUB ESP,EAX
     - [dynamic_alloca] at 005ca3de: SUB ESP,EAX
 
-  unkafter_2d.cpp_FUN_005cea10
+  crt_unknown.c_FUN_005cea10
     Address: 005cea10
     Suspect count: 33
     Note: Function contains stack manipulation that severely impacts decompilation quality.
@@ -50,11 +50,11 @@ HIGH SEVERITY - Severe decompilation impact
 MEDIUM SEVERITY - May cause decompiler artifacts
 ====================================================================================================
 
-  engine_2d.c_FUN_00401d8e
+  engine_2d.c_wrapTextToWidth_FUN_00401d8e
     File: engine/2d.c, Suspects: 32
     - [alt_frame_pointer] at 00401e1d: MOV EDI,ESP
 
-  engine_2d.c_FUN_00402940
+  engine_2d.c_loadOrBuildColorMap_FUN_00402940
     File: engine/2d.c, Suspects: 9
     - [alt_frame_pointer] at 0040295c: MOV EDI,ESP
     - [alt_frame_pointer] at 0040297a: MOV ESI,ESP
@@ -65,13 +65,13 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 004044ab: MOV EDI,ESP
     - [alt_frame_pointer] at 004044be: MOV EDI,ESP
 
-  engine_3d.c_FUN_00407a70
-    File: engine/3d.c, Suspects: 10
+  engine_3d.c_drawLine2DFromIndices_FUN_00407a70
+    File: engine/3d.c, Suspects: 6
     - [alt_frame_pointer] at 00407a8a: MOV EDI,ESP
     - [alt_frame_pointer] at 00407ac1: MOV EDI,ESP
     - [alt_frame_pointer] at 00407ad1: MOV EDI,ESP
 
-  engine_3d.c_FUN_00407d90
+  engine_3d.c_drawLine3DFromIndices_FUN_00407d90
     File: engine/3d.c, Suspects: 23
     - [alt_frame_pointer] at 00407dc1: MOV EDI,ESP
     - [alt_frame_pointer] at 00407dd1: MOV EDI,ESP
@@ -80,36 +80,36 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/actor.cpp, Suspects: 93
     - [stack_alignment] at 004080cc: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_00408910
-    File: core/actor.cpp, Suspects: 6
+  core_actor.cpp_CDemonActor_getBoundingBox_FUN_00408910
+    File: core/actor.cpp, Suspects: 5
     - [alt_frame_pointer] at 0040893c: MOV ESI,ESP
 
   core_actor.cpp_FUN_00408bb0
     File: core/actor.cpp, Suspects: 21
     - [alt_frame_pointer] at 00408bca: MOV EDI,ESP
 
-  core_actor.cpp_FUN_00408d60
-    File: core/actor.cpp, Suspects: 12
+  core_actor.cpp_CDemonActor_testLineIntersection_FUN_00408d60
+    File: core/actor.cpp, Suspects: 7
     - [stack_alignment] at 00408d6c: AND ESP,0xfffffff8
 
   core_actor.cpp_FUN_00408ec0
-    File: core/actor.cpp, Suspects: 48
+    File: core/actor.cpp, Suspects: 44
     - [alt_frame_pointer] at 0040904a: MOV ESI,ESP
 
   core_actor.cpp_FUN_00409170
-    File: core/actor.cpp, Suspects: 67
+    File: core/actor.cpp, Suspects: 76
     - [stack_alignment] at 0040917c: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_00409940
-    File: core/actor.cpp, Suspects: 24
+  core_actor.cpp_CDemonActor_renderTargetPoints_FUN_00409940
+    File: core/actor.cpp, Suspects: 27
     - [alt_frame_pointer] at 00409982: MOV EDI,ESP
 
-  core_actor.cpp_FUN_00409d70
-    File: core/actor.cpp, Suspects: 21
+  core_actor.cpp_CDemonActor_getAllowedMeleeAttackTypes_FUN_00409d70
+    File: core/actor.cpp, Suspects: 33
     - [stack_alignment] at 00409d79: AND ESP,0xfffffff8
 
-  core_actor.cpp_FUN_00409f20
-    File: core/actor.cpp, Suspects: 120
+  core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20
+    File: core/actor.cpp, Suspects: 39
     - [stack_alignment] at 00409f2c: AND ESP,0xfffffff8
 
   core_actor.cpp_archiveLocalizedString_FUN_0040b560
@@ -120,124 +120,124 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     - [alt_frame_pointer] at 0040b5c6: MOV EDI,ESP
 
   core_actor.cpp_archiveKeyframedModelInstance_FUN_0040b770
-    File: core/actor.cpp, Suspects: 10
+    File: core/actor.cpp, Suspects: 9
     - [alt_frame_pointer] at 0040b79d: MOV ESI,ESP
     - [alt_frame_pointer] at 0040b7b5: MOV EDI,ESP
 
-  core_actor.cpp_FUN_0040b7f0
-    File: core/actor.cpp, Suspects: 3
+  core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
+    File: core/actor.cpp, Suspects: 2
     - [alt_frame_pointer] at 0040b81d: MOV ESI,ESP
     - [alt_frame_pointer] at 0040b838: MOV EDI,ESP
 
-  core_actor.cpp_FUN_0040c6a0
-    File: core/actor.cpp, Suspects: 20
+  core_actor.cpp_CDemonActor_processFootstep_FUN_0040c6a0
+    File: core/actor.cpp, Suspects: 1
     - [alt_frame_pointer] at 0040c6ab: MOV EDI,ESP
     - [alt_frame_pointer] at 0040c6b9: MOV ESI,ESP
 
-  core_actor.cpp_FUN_0040c750
-    File: core/actor.cpp, Suspects: 39
+  core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c750
+    File: core/actor.cpp, Suspects: 20
     - [alt_frame_pointer] at 0040c783: MOV EDI,ESP
 
-  core_actor.cpp_FUN_0040cc60
+  core_actor.cpp_getRandomInt_FUN_0040cc60
     File: core/actor.cpp, Suspects: 2
     - [stack_alignment] at 0040cc68: AND ESP,0xfffffff8
 
-  core_ammo.cpp_FUN_0040dd00
+  core_ammo.cpp_CAmmo_getBoundingBox_FUN_0040dd00
     File: core/ammo.cpp, Suspects: 10
     - [alt_frame_pointer] at 0040dd2f: MOV ESI,ESP
 
-  core_ammobox.cpp_FUN_0040e3c0
+  core_ammobox.cpp_CAmmoBox_getBoundingBox_FUN_0040e3c0
     File: core/ammobox.cpp, Suspects: 10
     - [alt_frame_pointer] at 0040e3ef: MOV ESI,ESP
 
-  core_anvil.cpp_FUN_0040e8f0
+  core_anvil.cpp_CAnvil_getBoundingBox_FUN_0040e8f0
     File: core/anvil.cpp, Suspects: 10
     - [alt_frame_pointer] at 0040e91f: MOV ESI,ESP
 
-  core_armour.cpp_FUN_0040eaa0
-    File: core/armour.cpp, Suspects: 55
+  core_armour.cpp_CArmour_process_FUN_0040eaa0
+    File: core/armour.cpp, Suspects: 4
     - [stack_alignment] at 0040eaa9: AND ESP,0xfffffff8
 
-  core_backgnd.cpp_FUN_0040f010
+  core_backgnd.cpp_CBackgroundActor_getBoundingBox_FUN_0040f010
     File: core/backgnd.cpp, Suspects: 10
     - [alt_frame_pointer] at 0040f03f: MOV ESI,ESP
 
-  core_baron.cpp_FUN_00410110
-    File: core/baron.cpp, Suspects: 14
+  core_baron.cpp_CBaron_advanceMotion_FUN_00410110
+    File: core/baron.cpp, Suspects: 1
     - [stack_alignment] at 00410115: AND ESP,0xfffffff8
 
-  core_baron.cpp_FUN_004101f0
-    File: core/baron.cpp, Suspects: 36
+  core_baron.cpp_CBaron_renderTransparent_FUN_004101f0
+    File: core/baron.cpp, Suspects: 20
     - [stack_alignment] at 004101f9: AND ESP,0xfffffff8
 
-  core_barrier.cpp_FUN_004108c0
-    File: core/barrier.cpp, Suspects: 13
+  core_barrier.cpp_CBarrier_getBoundingBox_FUN_004108c0
+    File: core/barrier.cpp, Suspects: 6
     - [alt_frame_pointer] at 00410901: MOV ESI,ESP
 
-  core_bat.cpp_FUN_00410d80
-    File: core/bat.cpp, Suspects: 86
+  core_bat.cpp_CBat_process_FUN_00410d80
+    File: core/bat.cpp, Suspects: 12
     - [stack_alignment] at 00410d89: AND ESP,0xfffffff8
 
-  core_bat.cpp_FUN_00411000
+  core_bat.cpp_CBat_getBoundingBox_FUN_00411000
     File: core/bat.cpp, Suspects: 10
     - [alt_frame_pointer] at 00411035: MOV EDI,ESP
     - [alt_frame_pointer] at 00411050: MOV ESI,ESP
 
   core_bat.cpp_CBat_updateCoursePosition_FUN_00411060
-    File: core/bat.cpp, Suspects: 7
+    File: core/bat.cpp, Suspects: 0
     - [stack_alignment] at 00411067: AND ESP,0xfffffff8
 
-  core_batman.cpp_FUN_00413970
-    File: core/batman.cpp, Suspects: 42
+  core_batman.cpp_CBatman_renderOpaque_FUN_00413970
+    File: core/batman.cpp, Suspects: 9
     - [stack_alignment] at 00413979: AND ESP,0xfffffff8
 
-  core_batman.cpp_FUN_004141c0
-    File: core/batman.cpp, Suspects: 54
+  core_batman.cpp_CBatman_getTargetPoints_FUN_004141c0
+    File: core/batman.cpp, Suspects: 23
     - [alt_frame_pointer] at 00414243: MOV ESI,ESP
 
-  core_battery.cpp_FUN_00414600
+  core_battery.cpp_CBattery_getBoundingBox_FUN_00414600
     File: core/battery.cpp, Suspects: 10
     - [alt_frame_pointer] at 0041462f: MOV ESI,ESP
 
-  core_beast.cpp_FUN_00414770
-    File: core/beast.cpp, Suspects: 24
+  core_beast.cpp_CBeast_process_FUN_00414770
+    File: core/beast.cpp, Suspects: 1
     - [stack_alignment] at 00414778: AND ESP,0xfffffff8
 
-  core_biggs.cpp_FUN_00414b30
-    File: core/biggs.cpp, Suspects: 152
+  core_biggs.cpp_CBiggs_process_FUN_00414b30
+    File: core/biggs.cpp, Suspects: 35
     - [stack_alignment] at 00414b39: AND ESP,0xfffffff8
 
-  unkafter_bird.cpp_FUN_00415340
-    File: unkafter/bird.cpp, Suspects: 149
+  core_bird.cpp_CBird_process_FUN_00415340
+    File: core/bird.cpp, Suspects: 73
     - [stack_alignment] at 0041534c: AND ESP,0xfffffff8
 
   unkafter_bird.cpp_FUN_00415830
-    File: unkafter/bird.cpp, Suspects: 12
+    File: unkafter/bird.cpp, Suspects: 10
     - [alt_frame_pointer] at 004158c8: MOV EDI,ESP
 
   unkafter_bmppuzzl.cpp_FUN_00416fa0
-    File: unkafter/bmppuzzl.cpp, Suspects: 50
+    File: unkafter/bmppuzzl.cpp, Suspects: 43
     - [alt_frame_pointer] at 0041707a: MOV EDI,ESP
 
   unkafter_bmppuzzl.cpp_FUN_00417230
-    File: unkafter/bmppuzzl.cpp, Suspects: 63
+    File: unkafter/bmppuzzl.cpp, Suspects: 57
     - [stack_alignment] at 0041723c: AND ESP,0xfffffff8
 
-  core_bodypart.cpp_FUN_00419740
-    File: core/bodypart.cpp, Suspects: 106
+  core_bodypart.cpp_CBodyPart_process_FUN_00419740
+    File: core/bodypart.cpp, Suspects: 6
     - [stack_alignment] at 00419749: AND ESP,0xfffffff8
 
-  core_bodypart.cpp_FUN_00419940
+  core_bodypart.cpp_CBodyPart_processFires_FUN_00419940
     File: core/bodypart.cpp, Suspects: 21
     - [stack_alignment] at 00419949: AND ESP,0xfffffff8
 
-  core_bodypart.cpp_FUN_00419ab0
-    File: core/bodypart.cpp, Suspects: 9
+  core_bodypart.cpp_CBodyPart_getBoundingBox_FUN_00419ab0
+    File: core/bodypart.cpp, Suspects: 6
     - [alt_frame_pointer] at 00419abf: MOV EDI,ESP
     - [alt_frame_pointer] at 00419ace: MOV ESI,ESP
 
-  core_bodypart.cpp_FUN_00419b90
-    File: core/bodypart.cpp, Suspects: 71
+  core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00419b90
+    File: core/bodypart.cpp, Suspects: 30
     - [stack_alignment] at 00419b9c: AND ESP,0xfffffff8
 
   core_bodypart.cpp_FUN_0041afa0
@@ -260,8 +260,8 @@ MEDIUM SEVERITY - May cause decompiler artifacts
     File: core/boneguy.cpp, Suspects: 39
     - [stack_alignment] at 0041b1e8: AND ESP,0xfffffff8
 
-  core_boneguy.cpp_FUN_0041b2a0
-    File: core/boneguy.cpp, Suspects: 14
+  core_boneguy.cpp_getWorldBoundingBoxCenter_FUN_0041b2a0
+    File: core/boneguy.cpp, Suspects: 22
     - [stack_alignment] at 0041b2a8: AND ESP,0xfffffff8
     - [alt_frame_pointer] at 0041b2d1: MOV ESI,ESP
 
@@ -273,5 +273,5 @@ CORRELATION: Stack patterns vs suspect counts
 
 Functions with stack patterns tend to have more suspects:
 
-  With stack patterns:    avg 47.7 suspects/function
-  Without stack patterns: avg 14.2 suspects/function
+  With stack patterns:    avg 32.7 suspects/function
+  Without stack patterns: avg 9.2 suspects/function

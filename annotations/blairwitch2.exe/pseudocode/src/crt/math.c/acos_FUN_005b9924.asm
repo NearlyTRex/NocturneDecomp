@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[14]:
-;   core_dirmat.cpp_FUN_00449610 at 004496c1
 ;   core_dirmat.cpp_FUN_004496e0 at 00449a2c
+;   core_dirmat.cpp_angleFromSinCos_FUN_00449610 at 004496c1
 ;   core_doc.cpp_FUN_00453d80 at 00454368
-;   core_fire.cpp_FUN_004933bc at 004933ff
 ;   core_fire.cpp_FUN_0049db20 at 0049e32a
+;   core_fire.cpp_safeAcos_FUN_004933bc at 004933ff
 ;   core_stranger.cpp_CStranger_aimLeftPistol_FUN_0056ca10 at 0056cf3a
 ;   core_stranger.cpp_FUN_00565ff0 at 005665cd
 ;   core_stranger.cpp_FUN_0056bcbe at 0056bd0d

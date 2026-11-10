@@ -8,14 +8,14 @@
 ; int              Stack[0x8]:4   enable_advanced_mode
 ;
 ; XREF[8]:
-;   core_baron.cpp_FUN_00410670 at 004107d6
-;   core_batman.cpp_FUN_00413c70 at 00413dd9
-;   core_boneguy.cpp_FUN_00419b80 at 00419be3
-;   core_dracbrid.cpp_FUN_00464ac0 at 00464c38
-;   core_inv.cpp_FUN_004dbd80 at 004dc1e8
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 004107d6
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413c70 at 00413dd9
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 at 00419be3
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_00464ac0 at 00464c38
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004dbd80 at 004dc1e8
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_005b6c90 at 005b6ca4
 ;   core_shadow.cpp_FUN_0053e6c0 at 0053e797
-;   core_vessel.cpp_FUN_00585810 at 00585925
+;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_00585810 at 00585925
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01ba5cc4

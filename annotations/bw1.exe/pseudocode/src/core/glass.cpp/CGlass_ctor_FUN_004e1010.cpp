@@ -16,10 +16,11 @@ CGlass * __cdecl core_glass_cpp_CGlass_ctor_FUN_004e1010(CGlass *this_ptr)
   char *pcVar5;
   char *pcVar6;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0((CDemonActor *)this_ptr);
-  pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_005187f0((CMirror *)&pCVar2[1].field_0x94);
-  iVar4 = __arrinit(pCVar3 + 0x1a0,0x19,&g_CVectorTypeInfo);
-  *(byte **)(iVar4 + -0x238) = &g_CGlassVTable;
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_004085c0(&this_ptr->base);
+  pCVar3 = core_mirror_cpp_CMirror_ctor_FUN_005187f0((CMirror *)(pCVar2[1].create_event + 0x1c));
+  iVar4 = __arrinit
+                    (&pCVar3[1].reflection.reflection_matrix.m[1].y,0x19,&g_CVectorTypeInfo);
+  *(CDemonActor_vtable **)(iVar4 + -0x238) = &g_CGlassVTable;
   pcVar5 = "HEADLITE.RAW";
   *(uint *)(iVar4 + -0x234) = 0x40800000;
   *(uint *)(iVar4 + -0x230) = 0x40800000;

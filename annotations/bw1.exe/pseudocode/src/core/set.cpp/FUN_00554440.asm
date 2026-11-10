@@ -17,7 +17,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_sound.cpp_FUN_0057bef0 at 0057c012
+;   core_sound.cpp_playSfxInternal_FUN_0057bef0 at 0057c012
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045f700

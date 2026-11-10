@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 699,
+    "complexity_score": 700,
     "cross_reference_count": 8,
     "function_call_count": 17,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
+    "pseudocode_lines": 160,
     "suspect_count": 47,
     "suspect_types": [
       "extra_output",
@@ -25,7 +25,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 483
+    "total_lines": 484
   },
   "cross_references": [
     {
@@ -37,7 +37,7 @@
     {
       "addr": "00499eb0",
       "from_addr": "00499f56",
-      "name": "core_fire.cpp_FUN_00499eb0",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_00499eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,9 +47,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055f020",
-      "from_addr": "0055f257",
-      "name": "core_sound.cpp_FUN_0055f020",
+      "addr": "005607d0",
+      "from_addr": "005608ea",
+      "name": "core_sound.cpp_CSound_configure_FUN_005607d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055ff40",
+      "from_addr": "0056056a",
+      "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -59,15 +65,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055ff40",
-      "from_addr": "0056056a",
-      "name": "core_sound.cpp_FUN_0055ff40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005607d0",
-      "from_addr": "005608ea",
-      "name": "core_sound.cpp_FUN_005607d0",
+      "addr": "0055f020",
+      "from_addr": "0055f257",
+      "name": "core_sound.cpp_playSfxInternal_FUN_0055f020",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,14 +101,14 @@
       "name": "crt_string.c__stricmp_FUN_005a3260"
     },
     {
-      "addr": "00465e50",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00465e50"
-    },
-    {
       "addr": "004657f0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFileSize_FUN_004657f0"
+    },
+    {
+      "addr": "00465e50",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00465e50"
     },
     {
       "addr": "00554430",
@@ -146,19 +146,9 @@
       "name": "sound_sndmain.cpp_FUN_00555bf0"
     },
     {
-      "addr": "00556e30",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556e30"
-    },
-    {
       "addr": "00556fd0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_00556fd0"
-    },
-    {
-      "addr": "005586c0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005586c0"
     },
     {
       "addr": "005586d0",
@@ -166,14 +156,24 @@
       "name": "sound_sndmain.cpp_FUN_005586d0"
     },
     {
-      "addr": "00558e90",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00558e90"
-    },
-    {
       "addr": "0055a560",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_0055a560"
+    },
+    {
+      "addr": "00556e30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
+    },
+    {
+      "addr": "005586c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_005586c0"
+    },
+    {
+      "addr": "00558e90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_lockSound_FUN_00558e90"
     }
   ],
   "globals": [
@@ -233,7 +233,7 @@
     },
     {
       "addr": "02ce7100",
-      "name": "g_CMP3DecoderInstanceOther.field34120_0x8548",
+      "name": "g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]",
       "type": "undefined4",
       "value": null
     },
@@ -281,13 +281,13 @@
     },
     {
       "addr": "02cebd78",
-      "name": "g_SfxSamples[0].field340_0x154",
+      "name": "g_SfxSamples[0].ref_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02cebd84",
-      "name": "g_SfxSamples[0].field352_0x160",
+      "name": "g_SfxSamples[0].field12_0x160",
       "type": "undefined4",
       "value": null
     },
@@ -321,7 +321,7 @@
       {
         "call_addr": "0056056a",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ff40",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -332,7 +332,7 @@
       {
         "call_addr": "0056059e",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ff40",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -343,7 +343,7 @@
       {
         "call_addr": "00560700",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ff40",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -354,7 +354,7 @@
       {
         "call_addr": "00560739",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ff40",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -365,7 +365,7 @@
       {
         "call_addr": "005608ea",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_005607d0",
+        "caller": "core_sound.cpp_CSound_configure_FUN_005607d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -376,7 +376,7 @@
       {
         "call_addr": "00560915",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_005607d0",
+        "caller": "core_sound.cpp_CSound_configure_FUN_005607d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -387,7 +387,7 @@
       {
         "call_addr": "0055f257",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055f020",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_0055f020",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -577,7 +577,7 @@
       "line": 51,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_FUN_00556e30(local_74._0_4_);",
+      "text": "iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_00556e30(local_74._0_4_);",
       "type": "unknown_field"
     },
     {
@@ -630,15 +630,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 101,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
-      "text": "engine_dosio_cpp_FUN_00465e50(local_174,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffd8c);",
+      "text": "(local_174,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffd8c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 102,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
       "text": "iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005d29cd);",
@@ -646,7 +646,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_005d29cd",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005d29cd);",
@@ -654,7 +654,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 104,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
       "text": "(iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005d29d1), iVar6 == 0))",
@@ -662,7 +662,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_005d29d1",
       "severity": "mild",
       "text": "(iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005d29d1), iVar6 == 0))",
@@ -670,7 +670,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "*(CSfxSample **)(&DAT_02ce7284 + iVar2) = pCVar8;",
@@ -678,7 +678,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 114,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "iVar6 = *(int *)(&DAT_02ce7284 + iVar2);",
@@ -686,15 +686,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 126,
+      "line": 127,
       "match": "field_0x4",
       "severity": "mild",
-      "text": "puVar5 = &pCVar4->field_0x4;",
+      "text": "puVar5 = &(pCVar4->options).field_0x4;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 127,
+      "line": 128,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(uint *)&pCVar4->field_0xd0 = 0xffffffff;",
@@ -702,7 +702,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 131,
       "match": "DAT_00604210",
       "severity": "mild",
       "text": "iVar7 = DAT_00604210 + 1;",
@@ -710,7 +710,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 132,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "iVar6 = *(int *)(&DAT_02ce7284 + iVar2);",
@@ -718,7 +718,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 133,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x2ce730c) = *(uint *)(*(int *)(&DAT_02ce7284 + iVar2) + 0x114);",
@@ -726,7 +726,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 134,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "iVar3 = *(int *)(&DAT_02ce7284 + iVar2);",
@@ -734,7 +734,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 135,
       "match": "DAT_00604210",
       "severity": "mild",
       "text": "DAT_00604210 = iVar7;",
@@ -742,7 +742,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 140,
       "match": "DAT_00604210",
       "severity": "mild",
       "text": "DAT_00604210 = 1;",
@@ -750,7 +750,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 142,
       "match": "DAT_00604210",
       "severity": "mild",
       "text": "iVar6 = DAT_00604210;",
@@ -758,7 +758,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 143,
       "match": "DAT_02ce7280",
       "severity": "mild",
       "text": "*(int *)(&DAT_02ce7280 + iVar2) = DAT_00604210;",
@@ -766,7 +766,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 143,
       "match": "DAT_00604210",
       "severity": "mild",
       "text": "*(int *)(&DAT_02ce7280 + iVar2) = DAT_00604210;",
@@ -774,7 +774,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 145,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_02ce7284 + iVar2),0x4479c000,0x4479c000);",
@@ -782,7 +782,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 148,
       "match": "in_stack_fffffd8c",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_005586d0(in_stack_fffffd8c);",
@@ -790,7 +790,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 148,
+      "line": 149,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "if (extraout_EAX < 1) {",
@@ -798,7 +798,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 154,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*_DAT_02cf3280 + 0x40))",
@@ -806,7 +806,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 155,
       "match": "DAT_02ce7284",
       "severity": "mild",
       "text": "(_DAT_02cf3280,*(uint *)(*(int *)(&DAT_02ce7284 + iVar2) + 0x158));",
@@ -814,7 +814,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 156,
       "match": "DAT_02ce727c",
       "severity": "mild",
       "text": "*(int *)(&DAT_02ce727c + iVar2) = iVar3;",
@@ -873,7 +873,7 @@
       "line": 104,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 00556355: MOVSD.REP ES:EDI,ESI  ; DAT_02ce7338 | g_CMP3DecoderInstanceOther.field34120_0x8548",
+      "text": "// 00556355: MOVSD.REP ES:EDI,ESI  ; DAT_02ce7338 | g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]",
       "type": "unrolled_memcpy"
     },
     {

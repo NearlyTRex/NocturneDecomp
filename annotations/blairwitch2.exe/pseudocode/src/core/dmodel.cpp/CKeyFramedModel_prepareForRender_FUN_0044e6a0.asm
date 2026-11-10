@@ -11,11 +11,11 @@
 ;
 ; XREF[6]:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_0044fcc0 at 0044fce9
+;   core_fire.cpp_CBulletTrail_render_FUN_00497350 at 0049763b
+;   core_fire.cpp_CShell_render_FUN_0049b6f0 at 0049b7cd
 ;   core_fire.cpp_FUN_004966a0 at 00496739
 ;   core_fire.cpp_FUN_004968d0 at 0049697f
-;   core_fire.cpp_FUN_00497350 at 0049763b
-;   core_fire.cpp_FUN_0049b6f0 at 0049b7cd
-;   core_set.cpp_FUN_0052d0e0 at 0052d1ef
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d1ef
 ;
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_0044e720

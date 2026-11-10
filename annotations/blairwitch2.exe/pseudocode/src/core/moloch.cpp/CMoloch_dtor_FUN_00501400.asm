@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CMolochVTable
+;   CHero_full_vtable g_CMolochVTable
 ;   WatcomTypeInfo g_CMolochTypeInfo
 ;
 ; Called Functions:

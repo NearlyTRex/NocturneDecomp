@@ -24,7 +24,7 @@
 ;   undefined4 DAT_01d1d404
 ;
 ; Called Functions:
-;   core_level.cpp_FUN_004fe9c0
+;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_0051a4f0
 ;   core_mission.cpp_FUN_0051c240
@@ -60,8 +60,8 @@ section .text
     PUSH EAX                            ; 0051a41f
     MOV EDI,dword ptr [0x0061f2e0]      ; 0051a420 | DAT_0061f2e0
     PUSH EDI                            ; 0051a426
-    CALL core_level.cpp_FUN_004fe9c0    ; 0051a427
-        ;   XREF to: 004fe9c0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_FUN_004fe9c0(CLevelLoader * this_ptr, char * text, int clear_screen)
+    CALL core_level.cpp_CLevelLoader_update_FUN_004fe9c0 ; 0051a427
+        ;   XREF to: 004fe9c0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 0051a42c
     MOV EBP,dword ptr [ESP + 0x18]      ; 0051a42f
     PUSH EBP                            ; 0051a433

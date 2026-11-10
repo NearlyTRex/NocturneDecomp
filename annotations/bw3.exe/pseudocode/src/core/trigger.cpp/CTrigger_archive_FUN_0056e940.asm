@@ -7,7 +7,7 @@
 ; CTrigger *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_waypoint.cpp_FUN_00579390 at 0057939c
+;   core_waypoint.cpp_CWayPoint_archive_FUN_00579390 at 0057939c
 ;
 ; Referenced Globals:
 ;   undefined4 s_triggerState_005d662a+1

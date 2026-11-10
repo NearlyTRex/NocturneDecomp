@@ -17,10 +17,10 @@
 ;   engine_clipper.c_clipPolygonToViewFrustum_FUN_00439da0 at 00439e94
 ;   engine_clipper.c_clipPolygonToViewport_FUN_0043bac0 at 0043bb8c
 ;   engine_drender.cpp_FUN_0046de6e at 0046df85
-;   engine_prim.c_FUN_00515e80 at 00515f33
-;   engine_prim.c_FUN_005163b0 at 005163fd
-;   engine_prim.c_FUN_00516de0 at 00516e93
-;   engine_prim.c_FUN_00517480 at 005174cd
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 at 005174cd
+;   engine_prim.c_renderIndexedPolygonSoftware_FUN_005163b0 at 005163fd
+;   engine_prim.c_renderPolygonSoftware_FUN_00515e80 at 00515f33
+;   engine_prim.c_renderScanlinePolygon_FUN_00516de0 at 00516e93
 ;   ... and 2 more
 ;
 ; Referenced Globals:

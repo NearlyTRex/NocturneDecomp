@@ -23,7 +23,7 @@
 ;   undefined4 DAT_005e7651
 ;   CGame* g_CGamePtr = 01cb6900
 ;   undefined4 DAT_00617dd4
-;   undefined4 g_CGameInstance.field644_0x284
+;   undefined4 g_CGameInstance.delta_time_float
 ;   undefined4 DAT_01d02f84
 ;
 ; *****************************************************************************
@@ -38,7 +38,7 @@ section .text
     AND ESP,0xfffffff8                  ; 005493d7
     MOV EBX,dword ptr [EBP + 0xc]       ; 005493da
     MOV EAX,[0x00616494]                ; 005493dd | g_CGamePtr
-    MOV EAX,dword ptr [EAX + 0x284]     ; 005493e2 | g_CGameInstance.field644_0x284
+    MOV EAX,dword ptr [EAX + 0x284]     ; 005493e2 | g_CGameInstance.delta_time_float
     PUSH 0x38                           ; 005493e8
     MOV dword ptr [ESP + 0x8],EAX       ; 005493ea
     MOV dword ptr [ESP + 0xc],EAX       ; 005493ee

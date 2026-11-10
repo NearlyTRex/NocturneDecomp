@@ -12,7 +12,7 @@ int __cdecl core_crate_cpp_CCrate_canPickup_FUN_00449150(CCrate *this_ptr,CDemon
   int iVar1;
   int iVar2;
   
-  iVar1 = core_actor_cpp_FUN_0040c550(picker,"?CHero" + 1);
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c550(picker,"?CHero" + 1);
   iVar2 = 0;
   if (iVar1 != 0) {
     iVar2 = 4;

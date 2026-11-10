@@ -16,13 +16,13 @@ void core_spirmine_cpp_FUN_005ad940(int param_1)
   float10 fVar3;
   CDemonGlobe *this_ptr;
   CVector3f *position;
-  byte auStack_1c [12];
+  CVector3f CStack_1c;
   int iStack_10;
   
-  auStack_1c._0_4_ = *(uint *)(param_1 + 0x20);
-  auStack_1c._8_4_ = *(uint *)(param_1 + 0x28);
-  auStack_1c._4_4_ = *(float *)(param_1 + 0x24) + _DAT_005f0eef;
-  position = (CVector3f *)auStack_1c;
+  CStack_1c.x = *(float *)(param_1 + 0x20);
+  CStack_1c.z = *(float *)(param_1 + 0x28);
+  CStack_1c.y = *(float *)(param_1 + 0x24) + _DAT_005f0eef;
+  position = &CStack_1c;
   fVar3 = ((float10)1 - (float10)*(float *)(param_1 + 0x7e8) / (float10)*(float *)(param_1 + 0x7dc))
           * (float10)_DAT_005f0ef3;
   this_ptr = (CDemonGlobe *)(param_1 + 0x7f4);

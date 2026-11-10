@@ -14,12 +14,13 @@ void __cdecl core_motion_cpp_CMotionController_load_FUN_00525380(CMotionControll
   int iVar1;
   
   _fscanf(file_handle,&DAT_005eaf8b);
-  this_ptr->field_0x30 = 0;
-  *(uint *)&this_ptr->field_0x4 = 0xffffffff;
-  iVar1 = _fscanf(file_handle,"%d,%f",&this_ptr->field_0x4,&this_ptr->field_0x8);
+  this_ptr->current_motion_name[0] = '\0';
+  this_ptr->current_motion_index = -1;
+  iVar1 = _fscanf(file_handle,"%d,%f",&this_ptr->current_motion_index,
+                     &this_ptr->current_frame_number);
   if ((iVar1 != 2) &&
-     (iVar1 = _fscanf(file_handle,"\"%[^\"]\" , %f",&this_ptr->field_0x30,&this_ptr->field_0x8),
-     iVar1 != 2)) {
+     (iVar1 = _fscanf(file_handle,"\"%[^\"]\" , %f",this_ptr->current_motion_name,
+                         &this_ptr->current_frame_number), iVar1 != 2)) {
     _DAT_01d1d400 = "..\\core\\motion.cpp";
     _DAT_01d1d404 = 0x57e;
     core_main_c_FUN_005030e0("CMotionController::load - error parsing file");

@@ -2,29 +2,31 @@
 // Address: 00479240
 // Address Range: [[00479240, 00479314]]
 // Convention: __cdecl
-// Signature: void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *param_1,undefined4 param_2,uint param_3,int *param_4)
+// Signature: void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *param_1,undefined4 param_2,undefined4 param_3,_FILE *param_4,undefined4 param_5,uint param_6)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *param_1,uint param_2,uint param_3,int *param_4)
+void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *param_1,uint param_2,uint param_3,_FILE *param_4,uint param_5,uint param_6)
 
 {
   int iVar1;
-  byte auStack_220 [256];
-  byte auStack_120 [256];
-  int iStack_20;
+  int unaff_EBX;
+  char acStack_214 [4];
+  uint uStack_210;
+  char acStack_114 [264];
   
-  FUN_005c1f9c(param_4);
-  FUN_005c1fd7(*(int *)(*param_4 + 4) + (int)param_4,0);
-  engine_dosio_cpp_FUN_00478e20(auStack_220,param_1,param_2);
-  if ((param_3 & 0x52) == 0) {
-    iVar1 = engine_dosio_cpp_findFile_FUN_00478e90(auStack_220);
+  _fflush(param_4);
+  ios_clear((ios *)(param_4 + *(int *)(*(int *)param_4 + 4)),0);
+  engine_dosio_cpp_FUN_00478e20(acStack_214,param_1,param_5);
+  if ((param_6 & 0x52) == 0) {
+    iVar1 = engine_dosio_cpp_findFile_FUN_00478e90(acStack_214);
     if (iVar1 != 0) {
-      FUN_005c2019(param_4,auStack_120,param_3,_DAT_00608528);
-      if (iStack_20 != 0) {
-        FUN_005c2078(param_4 + 0x11,iStack_20);
+      openFile(param_4,acStack_114,param_6,_DAT_00608528);
+      if (unaff_EBX != 0) {
+        uStack_210 = 0x479308;
+        istream_seekg(param_4 + 0x44,unaff_EBX);
         return;
       }
     }
@@ -33,7 +35,7 @@ void __cdecl engine_dosio_cpp_reopenFileStream_FUN_00479240(char *param_1,uint p
     if (param_1 != (char *)0x0) {
       _mkdir(param_1);
     }
-    FUN_005c2019(param_4,auStack_220,param_3,_DAT_00608528);
+    openFile(param_4,acStack_214,param_6,_DAT_00608528);
   }
   return;
 }

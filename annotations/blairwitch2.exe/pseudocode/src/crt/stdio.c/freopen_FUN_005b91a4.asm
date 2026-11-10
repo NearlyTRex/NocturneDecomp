@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4716
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4716
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005bce04_0061f2a8 = 005bce04

@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01bc120c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;
 ; *****************************************************************************
@@ -24,8 +24,8 @@ section .text
     PUSH EBP                            ; 00419352
     MOV EDI,dword ptr [ESP + 0x10]      ; 00419353
     PUSH EDI                            ; 00419357
-    CALL core_actor.cpp_FUN_00408850    ; 00419358
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 00419358
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     XOR EBX,EBX                         ; 0041935d
     MOV EDX,dword ptr [EDI + 0x18c]     ; 0041935f
     ADD ESP,0x4                         ; 00419365

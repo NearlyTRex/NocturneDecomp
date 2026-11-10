@@ -27,7 +27,7 @@
 ;   core_fldnotes.cpp_FUN_004bb6f0
 ;   core_fldnotes.cpp_FUN_004bbb30
 ;   core_fldnotes.cpp_FUN_004bbb90
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   unkaddr_004b9ab0.cpp_FUN_004b9c50
 ;
 ; *****************************************************************************
@@ -177,8 +177,8 @@ section .text
     PUSH EDI                            ; 004bb440
     PUSH 0x5df96d                       ; 004bb441 | = "Incomplete markup tag beginning with ..."
     PUSH 0x1cc4270                      ; 004bb446 | DAT_01cc4270
-    CALL crt_unknown.c_FUN_005bfb40     ; 004bb44b
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb44b
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb450
     ADD ESP,0xc                         ; 004bb455
     ADD ESP,0x304                       ; 004bb458
@@ -192,8 +192,8 @@ section .text
     PUSH ESI                            ; 004bb46a
     PUSH 0x5df997                       ; 004bb46b | = "Markup tag beginning with '%s' - tag ..."
     PUSH 0x1cc4270                      ; 004bb470 | DAT_01cc4270
-    CALL crt_unknown.c_FUN_005bfb40     ; 004bb475
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb475
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb47a
     ADD ESP,0xc                         ; 004bb47f
     ADD ESP,0x304                       ; 004bb482
@@ -215,8 +215,8 @@ section .text
     PUSH EBX                            ; 004bb4a4
     PUSH 0x5df9ca                       ; 004bb4a5 | = "Unexpected '>' found near '%s'"
     PUSH 0x1cc4270                      ; 004bb4aa | DAT_01cc4270
-    CALL crt_unknown.c_FUN_005bfb40     ; 004bb4af
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004bb4af
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0xffffffff                  ; 004bb4b4
     ADD ESP,0xc                         ; 004bb4b9
     ADD ESP,0x304                       ; 004bb4bc

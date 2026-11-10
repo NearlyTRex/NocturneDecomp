@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x30]:4  local_30
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004ce500 at 004ce52c
+;   core_hero.cpp_CHero_testCylinderCollision_FUN_004ce500 at 004ce52c
 ;
 ; Called Functions:
 ;   core_setcolid.cpp_SCollisionInfo_ctor_FUN_00537fa0

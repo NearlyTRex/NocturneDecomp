@@ -45,17 +45,17 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "0040cfc0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cfc0"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
     },
     {
       "addr": "00418110",
       "is_variadic": false,
-      "name": "core_boneguy.cpp_FUN_00418110"
+      "name": "core_boneguy.cpp_hsvToRgb_FUN_00418110"
     },
     {
       "addr": "00487db0",
@@ -217,15 +217,15 @@
       "line": 35,
       "match": "field_0x80",
       "severity": "mild",
-      "text": "(&pCVar4[1].field_0x80,0x14,&g_SBoneGuyBoxTypeInfo);",
+      "text": "(&pCVar4[1].base.base.field_0x80,0x14,&g_SBoneGuyBoxTypeInfo);",
       "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",
       "line": 36,
-      "match": "(byte **)((int)dest",
+      "match": "(CBoneGuy_full_vtable **)((int)dest",
       "severity": "moderate",
-      "text": "*(byte **)((int)dest + -0x108c8) = &g_CBoneGuyVTable;",
+      "text": "*(CBoneGuy_full_vtable **)((int)dest + -0x108c8) = &g_CBoneGuyVTable;",
       "type": "pointer_cast"
     },
     {
@@ -369,7 +369,7 @@
       "line": 75,
       "match": "&stack0xffffffd8",
       "severity": "moderate",
-      "text": "core_boneguy_cpp_FUN_00418110(&stack0xffffffd8);",
+      "text": "core_boneguy_cpp_hsvToRgb_FUN_00418110(&stack0xffffffd8);",
       "type": "stack_ref"
     },
     {
@@ -433,7 +433,7 @@
       "line": 36,
       "match": "(int)dest",
       "severity": "moderate",
-      "text": "*(byte **)((int)dest + -0x108c8) = &g_CBoneGuyVTable;",
+      "text": "*(CBoneGuy_full_vtable **)((int)dest + -0x108c8) = &g_CBoneGuyVTable;",
       "type": "pointer_truncation"
     },
     {

@@ -5,27 +5,55 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "types/classes/CBasicEnemy_full_vtable.h"
 #include "types/classes/CConsole.h"
+#include "types/classes/CDemonActor_vtable.h"
 #include "types/classes/CDemonFilter.h"
+#include "types/classes/CDog_full_vtable.h"
 #include "types/classes/CFilterCache.h"
 #include "types/classes/CFilterFX.h"
+#include "types/classes/CGhostChild_full_vtable.h"
+#include "types/classes/CHag_full_vtable.h"
+#include "types/classes/CHand_full_vtable.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x600000
 // =============================================================================
 
+// CBasicEnemy_full_vtable
+extern CBasicEnemy_full_vtable g_CGrandmaVTable;
+extern CBasicEnemy_full_vtable g_CSearchPartyVTable;
+extern CBasicEnemy_full_vtable g_CBellingVTable;
+
 // CConsole*
 extern CConsole* g_CConsolePtr;
+
+// CDemonActor_vtable
+extern CDemonActor_vtable g_CParticleBoxVTable;
+extern CDemonActor_vtable g_CSpiritMineVTable;
+extern CDemonActor_vtable g_CNecklaceVTable;
 
 // CDemonFilter*
 extern CDemonFilter* g_GlobalFilters;
 extern CDemonFilter* g_PlayerFilters;
+
+// CDog_full_vtable
+extern CDog_full_vtable g_CDogVTable;
 
 // CFilterCache*
 extern CFilterCache* g_CFilterCachePtr;
 
 // CFilterFX*
 extern CFilterFX* g_CFilterFXPtr;
+
+// CGhostChild_full_vtable
+extern CGhostChild_full_vtable g_CGhostChildVTable;
+
+// CHag_full_vtable
+extern CHag_full_vtable g_CHagVTable;
+
+// CHand_full_vtable
+extern CHand_full_vtable g_CHandVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_006002B0;

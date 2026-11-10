@@ -9,23 +9,23 @@
 void __cdecl core_spike_cpp_CSpike_archive_FUN_00566e70(CSpike *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
   core_actor_cpp_archiveKeyframedModelInstance_FUN_0040b9b0
-            (&this_ptr->field_0x158,">modelName" + 1);
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2d4,"spikeType");
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2d8,"spikeState");
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x2dc,"areWeActive");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x2ec,"extendDistance");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x2f0,"startEvent");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x354,"stopEvent");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x3b8,"extendEvent");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x41c,"retractEvent");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x480,"extendTime");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x484,"retractTime");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x48c,"extendSound");
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x4f0,"retractSound");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x554,"period");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x558,"damageStrength");
-  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->field_0x55c,"param");
+            (&this_ptr->model,">modelName" + 1);
+  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->spike_type,"spikeType");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->spike_state,"spikeState");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->are_we_active,"areWeActive");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->extend_distance,"extendDistance");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->start_event,"startEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->stop_event,"stopEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->extend_event,"extendEvent");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->retract_event,"retractEvent");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->extend_time,"extendTime");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->retract_time,"retractTime");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->extend_sound,"extendSound");
+  core_actor_cpp_archiveString_FUN_0040b680(this_ptr->retract_sound,"retractSound");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->period,"period");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->damage_strength,"damageStrength");
+  core_actor_cpp_archiveFloat_FUN_0040b830(&this_ptr->param,"param");
   return;
 }

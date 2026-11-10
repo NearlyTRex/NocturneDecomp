@@ -9,7 +9,7 @@
 void __cdecl core_dmodel_cpp_CKeyFramedModel_prepareForRender_FUN_00460f20(CKeyFramedModel *this_ptr,int frame_index,CKeyFramedModelInstance *instance,int render_flags)
 
 {
-  if (*(int *)&this_ptr->field_0x110 < 1) {
+  if (this_ptr->poly_count < 1) {
     return;
   }
   core_dmodel_cpp_CKeyFramedModel_rotateAndLightVertices_FUN_00460fa0(this_ptr,frame_index,instance)

@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3)
+; float * core_setcolid_cpp_FUN_0053bc80(CDemonSet *param_1,CVector3f *param_2,float param_3,undefined4 param_4,float param_5,undefined4 param_6,CBoundingBox3D *param_7)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x208]:4  local_208
@@ -24,14 +24,14 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[8]:
-;   core_actor.cpp_FUN_00408a40 at 00408a8c
-;   core_actor.cpp_FUN_0040c8e0 at 0040c950
-;   core_actor.cpp_FUN_0040c990 at 0040ca21
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a40 at 00408a8c
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c990 at 0040ca21
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c8e0 at 0040c950
 ;   core_fire.cpp_FUN_0049d590 at 0049d5e6
 ;   core_fire.cpp_FUN_0049fce0 at 0049fd16
-;   core_gore.cpp_FUN_004cdff0 at 004ce01b
+;   core_gore.cpp_CBloodPool_init_FUN_004cdff0 at 004ce01b
 ;   core_prye.cpp_FUN_00521880 at 00521daf
-;   core_trash.cpp_FUN_0056d360 at 0056dabd
+;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056dabd
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_setcolid_cpp_005d0a2e

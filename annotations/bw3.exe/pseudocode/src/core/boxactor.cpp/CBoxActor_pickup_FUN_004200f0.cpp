@@ -9,6 +9,6 @@
 void __cdecl core_boxactor_cpp_CBoxActor_pickup_FUN_004200f0(CBoxActor *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x318 = carrier;
+  this_ptr->carrier_actor = carrier;
   return;
 }

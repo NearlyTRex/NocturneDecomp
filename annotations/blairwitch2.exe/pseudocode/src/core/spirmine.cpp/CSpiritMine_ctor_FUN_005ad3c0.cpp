@@ -14,7 +14,7 @@ CSpiritMine * core_spirmine_cpp_CSpiritMine_ctor_FUN_005ad3c0(CSpiritMine *this_
   CSpiritMine *pCVar1;
   
   pCVar1 = (CSpiritMine *)core_boxactor_cpp_CBoxActor_ctor_FUN_0041bd30((CBoxActor *)this_ptr);
-  *(byte **)&pCVar1->field_0x2b0 = &g_CSpiritMineVTable;
+  ((UActorVTable *)&pCVar1->field_0x2b0)->_ub = &g_CSpiritMineVTable;
   *(uint *)&pCVar1->field_0x7dc = 0x40a00000;
   *(uint *)&pCVar1->field_0x7e0 = 0x40a00000;
   *(uint *)&pCVar1->field_0x7e4 = 0x41c80000;

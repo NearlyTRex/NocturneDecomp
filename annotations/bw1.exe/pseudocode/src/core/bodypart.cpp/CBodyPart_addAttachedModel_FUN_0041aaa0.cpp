@@ -12,19 +12,19 @@ void __cdecl core_bodypart_cpp_CBodyPart_addAttachedModel_FUN_0041aaa0(CBodyPart
   int iVar1;
   CVector3f *pCVar2;
   
-  iVar1 = *(int *)&this_ptr->field_0x28c;
+  iVar1 = this_ptr->attached_model_count;
   if (iVar1 < 3) {
-    pCVar2 = (CVector3f *)(&this_ptr->field_0x290 + iVar1 * 0x194);
-    *(int *)&this_ptr->field_0x28c = iVar1 + 1;
+    pCVar2 = (CVector3f *)(this_ptr->attached_models + iVar1);
+    this_ptr->attached_model_count = iVar1 + 1;
     if (pCVar2 != position_offset) {
-      *(uint *)pCVar2 = *(uint *)position_offset;
-      *(uint *)&pCVar2->field_0x4 = *(uint *)&position_offset->field_0x4;
-      *(uint *)&pCVar2->field_0x8 = *(uint *)&position_offset->field_0x8;
+      pCVar2->x = position_offset->x;
+      pCVar2->y = position_offset->y;
+      pCVar2->z = position_offset->z;
     }
     if (pCVar2 + 1 != euler_angles) {
-      *(uint *)(pCVar2 + 1) = *(uint *)euler_angles;
-      *(uint *)&pCVar2[1].field_0x4 = *(uint *)&euler_angles->field_0x4;
-      *(uint *)&pCVar2[1].field_0x8 = *(uint *)&euler_angles->field_0x8;
+      pCVar2[1].x = euler_angles->x;
+      pCVar2[1].y = euler_angles->y;
+      pCVar2[1].z = euler_angles->z;
     }
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
               ((CKeyFramedModelInstance *)(pCVar2 + 2),model_name);

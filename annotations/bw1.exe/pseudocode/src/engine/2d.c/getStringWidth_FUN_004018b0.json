@@ -29,27 +29,27 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00401d8e",
-      "from_addr": "00401dea",
-      "name": "engine_2d.c_FUN_00401d8e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00402540",
-      "from_addr": "0040254b",
-      "name": "engine_2d.c_FUN_00402540",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "00402600",
       "from_addr": "0040260b",
-      "name": "engine_2d.c_FUN_00402600",
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004026d0",
       "from_addr": "004026e6",
-      "name": "engine_2d.c_FUN_004026d0",
+      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00402540",
+      "from_addr": "0040254b",
+      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00401d8e",
+      "from_addr": "00401dea",
+      "name": "engine_2d.c_wrapTextToWidth_FUN_00401d8e",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -80,7 +80,7 @@
       {
         "call_addr": "004026e6",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_004026d0",
+        "caller": "engine_2d.c_drawTextCenteredColor_FUN_004026d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -91,7 +91,7 @@
       {
         "call_addr": "0040254b",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402540",
+        "caller": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -102,7 +102,7 @@
       {
         "call_addr": "0040260b",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00402600",
+        "caller": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -113,7 +113,7 @@
       {
         "call_addr": "00401dea",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401d8e",
+        "caller": "engine_2d.c_wrapTextToWidth_FUN_00401d8e",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -124,7 +124,7 @@
       {
         "call_addr": "00401e3e",
         "call_type": "direct",
-        "caller": "engine_2d.c_FUN_00401d8e",
+        "caller": "engine_2d.c_wrapTextToWidth_FUN_00401d8e",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

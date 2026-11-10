@@ -36,7 +36,7 @@ byte * FUN_005c6c7c(void)
       }
     }
     if (DAT_00626664 == '\0') {
-      pcVar2 = (char *)FUN_005c91d0(0,0);
+      pcVar2 = FUN_005c91d0((char *)0x0,0);
       pcVar5 = &DAT_00626664;
       do {
         cVar1 = *pcVar2;

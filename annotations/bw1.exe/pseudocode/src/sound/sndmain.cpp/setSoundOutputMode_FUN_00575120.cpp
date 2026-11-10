@@ -14,7 +14,7 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(int bits_per_sampl
   int iVar1;
   int iStack_10;
   
-  iVar1 = sound_sndmain_cpp_FUN_00575550();
+  iVar1 = sound_sndmain_cpp_isSoundBusy_FUN_00575550();
   if (iVar1 != 0) {
     _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
     _DAT_01d1d404 = 0x1479;
@@ -30,7 +30,7 @@ int __cdecl sound_sndmain_cpp_setSoundOutputMode_FUN_00575120(int bits_per_sampl
       return 0;
     }
     if (0 < iStack_10) {
-      sound_sndmain_cpp_FUN_0056f470(iStack_10,4);
+      sound_sndmain_cpp_allocMixBuffers_FUN_0056f470(iStack_10,4);
       return 1;
     }
   }

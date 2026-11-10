@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CNPC.h"
 
 // Structure: CHighPriestOfGardath
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x243ac (148396 bytes)
 #pragma pack(push, 1)
 typedef struct CHighPriestOfGardath {
-    char field_0[148396]; // 0x0
+    CNPC base; // 0x0
+    char field_148296[100]; // 0x24348
 } CHighPriestOfGardath;
 #pragma pack(pop)
 

@@ -21,37 +21,37 @@ CDemonActorType * CSearchParty::getActorType(CSearchParty *this_ptr);
 // Address: 005a8cf0
 CSearchParty * CSearchParty::ctor(CSearchParty *this_ptr);
 
-// Original: core_searpart.cpp_FUN_005a8da0
+// Original: core_searpart.cpp_CSearchParty_setup_FUN_005a8da0
 // Address: 005a8da0
-void FUN_005a8da0(undefined4 param_1);
+void __cdecl CSearchParty::setup(CSearchParty *this_ptr);
 
-// Original: core_searpart.cpp_FUN_005a8db0
+// Original: core_searpart.cpp_CSearchParty_processStates_FUN_005a8db0
 // Address: 005a8db0
-void FUN_005a8db0(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CSearchParty::processStates(CSearchParty *this_ptr,float delta_time,int mode);
 
 // Original: core_searpart.cpp_FUN_005a8dd0
 // Address: 005a8dd0
 void FUN_005a8dd0(int param_1);
 
-// Original: core_searpart.cpp_FUN_005a8e20
+// Original: core_searpart.cpp_CSearchParty_processDeathState_FUN_005a8e20
 // Address: 005a8e20
-void FUN_005a8e20(int param_1);
+void __cdecl CSearchParty::processDeathState(CSearchParty *this_ptr,float delta_time);
 
-// Original: core_searpart.cpp_FUN_005a8e40
+// Original: core_searpart.cpp_CSearchParty_getDeathState_FUN_005a8e40
 // Address: 005a8e40
-undefined4 FUN_005a8e40(void);
+EDeathState __cdecl CSearchParty::getDeathState(CSearchParty *this_ptr);
 
-// Original: core_searpart.cpp_FUN_005a8e50
+// Original: core_searpart.cpp_CSearchParty_processMotionEvent_FUN_005a8e50
 // Address: 005a8e50
-void FUN_005a8e50(void);
+void __cdecl CSearchParty::processMotionEvent(CSearchParty *this_ptr,int event_id);
 
-// Original: core_searpart.cpp_FUN_005a8e60
+// Original: core_searpart.cpp_CSearchParty_renderOpaque_FUN_005a8e60
 // Address: 005a8e60
-void FUN_005a8e60(undefined4 param_1);
+int __cdecl CSearchParty::renderOpaque(CSearchParty *this_ptr);
 
-// Original: core_searpart.cpp_FUN_005a8e70
+// Original: core_searpart.cpp_CSearchParty_archive_FUN_005a8e70
 // Address: 005a8e70
-void FUN_005a8e70(undefined4 param_1);
+void __cdecl CSearchParty::archive(CSearchParty *this_ptr);
 
 // Original: core_searpart.cpp_CSearchParty_dtor_FUN_005a8e80
 // Address: 005a8e80

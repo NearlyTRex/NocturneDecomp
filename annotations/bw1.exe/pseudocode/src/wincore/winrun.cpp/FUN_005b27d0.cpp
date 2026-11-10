@@ -42,7 +42,7 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_005b27d0(HWND hWnd,UINT message,WPARAM 
         }
         else if (0xe < message) {
           if (message < 0x10) {
-            wincore_wddvmem_cpp_FUN_005ad3d0();
+            wincore_wddvmem_cpp_stubFunction_FUN_005ad3d0();
           }
           else if (message == 0x1c) {
             DAT_006260ec = DAT_006260e4;
@@ -186,7 +186,7 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_005b27d0(HWND hWnd,UINT message,WPARAM 
             }
             if (hWnd == (HWND)wParam) goto LAB_005b285e;
           }
-          wincore_wddvmem_cpp_FUN_005ad3d0();
+          wincore_wddvmem_cpp_stubFunction_FUN_005ad3d0();
         }
       }
       goto LAB_005b285e;

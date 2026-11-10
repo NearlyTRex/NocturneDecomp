@@ -9,14 +9,14 @@
 void __cdecl core_fire_cpp_CLightningBolt_activate_FUN_004b3490(CLightningBolt *this_ptr,CVector3f *start_position,float start_width,float end_width )
 
 {
-  if ((CVector3f *)&this_ptr->field_0x4 != start_position) {
-    *(uint *)&this_ptr->field_0x4 = *(uint *)start_position;
-    *(uint *)&this_ptr->field_0x8 = *(uint *)&start_position->field_0x4;
-    *(uint *)&this_ptr->field_0xc = *(uint *)&start_position->field_0x8;
+  if (&this_ptr->start_position != start_position) {
+    (this_ptr->start_position).x = start_position->x;
+    (this_ptr->start_position).y = start_position->y;
+    (this_ptr->start_position).z = start_position->z;
   }
-  *(uint *)&this_ptr->field_0x14 = 0x3e800000;
-  *(uint *)this_ptr = 0;
-  *(float *)&this_ptr->field_0x10 = start_width;
-  *(float *)&this_ptr->field_0x18 = end_width;
+  this_ptr->lifetime = 0.25;
+  this_ptr->mode = 0;
+  this_ptr->start_width = start_width;
+  this_ptr->end_width = end_width;
   return;
 }

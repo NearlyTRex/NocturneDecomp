@@ -32,7 +32,7 @@ int core_fldnotes_cpp_FUN_004a1f80(uint param_1,char *param_2,uint param_3)
   *(uint *)(iVar2 + 0x18) = 0;
   uVar3 = engine_font_cpp_FUN_004aaf00(*(uint *)(iVar2 + 0x11c),(char *)(iVar2 + 0x1c));
   *(uint *)(iVar2 + 8) = uVar3;
-  iVar4 = engine_font_cpp_FUN_004ab560(*(CBitFont **)(iVar2 + 0x11c),0x6a);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560(*(CBitFont **)(iVar2 + 0x11c),0x6a);
   *(int *)(iVar2 + 0xc) = iVar4;
   return iVar2;
 }

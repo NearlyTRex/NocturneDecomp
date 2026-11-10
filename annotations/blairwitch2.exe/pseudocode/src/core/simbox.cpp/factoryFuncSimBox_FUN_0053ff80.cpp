@@ -11,7 +11,7 @@ void core_simbox_cpp_factoryFuncSimBox_FUN_0053ff80(void)
 {
   CSimBox *this_ptr;
   
-  this_ptr = (CSimBox *)FUN_005b8be2(0x728);
+  this_ptr = (CSimBox *)debugAllocTracked1(0x728);
   if (this_ptr == (CSimBox *)0x0) {
     return;
   }

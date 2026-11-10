@@ -45,13 +45,13 @@ int unkafter_superopt_cpp_FUN_004176b0(int param_1)
     *(uint *)(iVar2 + 0x58) = 0;
     iVar2 = iVar1;
   } while (iVar1 != param_1 + 0x18);
-  iVar2 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   *(int *)(param_1 + 0x44) = iVar2;
-  iVar2 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   *(int *)(param_1 + 0x48) = iVar2;
-  iVar2 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   *(int *)(param_1 + 0x4c) = iVar2;
-  iVar2 = core_actor_cpp_FUN_0040cc60(0,2);
+  iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,2);
   *(int *)(param_1 + 0x50) = iVar2;
   iVar2 = param_1;
   do {

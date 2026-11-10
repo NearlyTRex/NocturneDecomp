@@ -30,12 +30,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0051cb20",
-      "from_addr": "0051cd28",
-      "name": "engine_prim.c_FUN_0051cb20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0051da80",
       "from_addr": "0051dd99",
       "name": "engine_prim.c_FUN_0051da80",
@@ -44,7 +38,13 @@
     {
       "addr": "0051e130",
       "from_addr": "0051e2a2",
-      "name": "engine_prim.c_FUN_0051e130",
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0051cb20",
+      "from_addr": "0051cd28",
+      "name": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,7 +120,7 @@
       {
         "call_addr": "0051e2a2",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051e130",
+        "caller": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_0051e130",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -131,7 +131,7 @@
       {
         "call_addr": "0051cd28",
         "call_type": "direct",
-        "caller": "engine_prim.c_FUN_0051cb20",
+        "caller": "engine_prim.c_renderPolygonSoftware_FUN_0051cb20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

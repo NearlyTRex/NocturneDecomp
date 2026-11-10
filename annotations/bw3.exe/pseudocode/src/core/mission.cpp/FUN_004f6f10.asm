@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[17]:
-;   core_boneguy.cpp_FUN_004179b0 at 00417d2d
-;   core_boneguy.cpp_FUN_00419b40 at 00419ea0
-;   core_bugs.cpp_FUN_00421300 at 0042157f
-;   core_constrct.cpp_FUN_00442a20 at 004432c6
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419ea0
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 00417d2d
+;   core_bugs.cpp_CBugs_process_FUN_00421300 at 0042157f
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 004432c6
 ;   core_crate.cpp_FUN_004461c0 at 00446268
-;   core_flamecan.cpp_FUN_004a7160 at 004a71df
+;   core_darkwolf.cpp_CDarkwolf_process_FUN_005989e0 at 00598dea
+;   core_flamecan.cpp_CFlameCan_process_FUN_004a7160 at 004a71df
 ;   core_inv.cpp_FUN_004da880 at 004db2a1
-;   core_passngr.cpp_FUN_0050a7d0 at 0050a911
-;   core_pryemorp.cpp_FUN_00527780 at 005278ce
-;   core_spirbear.cpp_FUN_0059ae00 at 0059b29b
+;   core_passngr.cpp_CPassenger_process_FUN_0050a7d0 at 0050a911
+;   core_pryemorp.cpp_CPryeMorph_process_FUN_00527780 at 005278ce
 ;   ... and 7 more
 ;
 ; Referenced Globals:

@@ -11,20 +11,22 @@ void __cdecl shape_edittool_cpp_CInputString_insertChar_FUN_0047aa80(CInputStrin
 {
   int iVar1;
   
-  if (*(int *)(this_ptr + 0x134) < *(int *)(this_ptr + 300) + -1) {
-    if (*(int *)(this_ptr + 0x130) < *(int *)(this_ptr + 300) + -1) {
-      *(int *)(this_ptr + 0x130) = *(int *)(this_ptr + 0x130) + 1;
+  iVar1 = this_ptr->max_length + -1;
+  if (this_ptr->cursor_position < iVar1) {
+    if (this_ptr->current_length < iVar1) {
+      this_ptr->current_length = this_ptr->current_length + 1;
     }
-    iVar1 = *(int *)(this_ptr + 0x134);
+    iVar1 = this_ptr->cursor_position;
     memmove
-              (this_ptr + iVar1 + 1,this_ptr + iVar1,*(int *)(this_ptr + 0x130) - iVar1);
-    this_ptr[*(int *)(this_ptr + 0x134)] = (CInputString)character;
+              (this_ptr->string_data + iVar1 + 1,this_ptr->string_data + iVar1,
+               this_ptr->current_length - iVar1);
+    this_ptr->string_data[this_ptr->cursor_position] = character;
     if (advance_cursor != 0) {
-      *(int *)(this_ptr + 0x134) = *(int *)(this_ptr + 0x134) + 1;
-      this_ptr[*(int *)(this_ptr + 0x130)] = (CInputString)0x0;
+      this_ptr->cursor_position = this_ptr->cursor_position + 1;
+      this_ptr->string_data[this_ptr->current_length] = '\0';
       return;
     }
   }
-  this_ptr[*(int *)(this_ptr + 0x130)] = (CInputString)0x0;
+  this_ptr->string_data[this_ptr->current_length] = '\0';
   return;
 }

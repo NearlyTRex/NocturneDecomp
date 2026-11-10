@@ -38,12 +38,13 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00482a70(CSt
     } while (cVar1 != '\0');
   }
   else {
-    FUN_005a28c0(local_310,"%s\\%s",directory_path,file_pattern);
+    _sprintf(local_310,"%s\\%s");
   }
   if (g_CDemonPodPtr != (CDemonPod *)0x0) {
     engine_pod_cpp_CPod_initSearch_FUN_00514860((CPod *)g_CDemonPodPtr,local_310,local_844);
     while (local_844[0] != (CPodSearchContext)0x0) {
-      engine_dosio_cpp_FUN_00465e50((char *)local_844,(char *)0x0,(char *)0x0,local_110,&local_210);
+      engine_dosio_cpp_splitPath_FUN_00465e50
+                ((char *)local_844,(char *)0x0,(char *)0x0,local_110,&local_210);
       if (local_210 == '.') {
         uVar2 = 0xffffffff;
         pcVar3 = &local_210;
@@ -55,7 +56,8 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00482a70(CSt
         } while (cVar1 != '\0');
         memmove(&local_210,local_20f,~uVar2 - 1);
       }
-      engine_dosio_cpp_FUN_00465e80(local_414,(char *)0x0,(char *)0x0,local_110,&local_210);
+      engine_dosio_cpp_makePath_FUN_00465e80(local_414,(char *)0x0,(char *)0x0,local_110,&local_210)
+      ;
       shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820
                 (this_ptr,local_414,local_744,local_640,local_638);
       engine_pod_cpp_CPod_getNextSearchResult_FUN_005148b0((CPod *)g_CDemonPodPtr,local_844);
@@ -63,9 +65,9 @@ void __cdecl shape_edittool_cpp_CStrList_populateFromFileSearch_FUN_00482a70(CSt
   }
   engine_dosio_cpp_CFileFinder_ctor_FUN_00465b60(&local_528);
   engine_dosio_cpp_CFileFinder_openSearch_FUN_00465ba0(&local_528,local_310);
-  while (local_528._0_1_ != '\0') {
+  while (local_528.filename[0] != '\0') {
     shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820
-              (this_ptr,(char *)&local_528,(char *)0x0,local_528._260_4_,local_528._264_4_);
+              (this_ptr,local_528.filename,(char *)0x0,local_528.file_size,local_528.timestamp);
     engine_dosio_cpp_CFileFinder_findNext_FUN_00465c20(&local_528);
   }
   engine_dosio_cpp_CFileFinder_closeSearch_FUN_00465ca0(&local_528);

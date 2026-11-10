@@ -5,13 +5,13 @@
 // Function prototypes for core/particle.cpp
 // Generated from Ghidra function signatures
 
-// Original: core_particle.cpp_FUN_00510dd0
+// Original: core_particle.cpp_CParticle_ctor_FUN_00510dd0
 // Address: 00510dd0
-CParticle * __cdecl FUN_00510dd0(CParticle *this_ptr);
+CParticle * __cdecl CParticle::ctor(CParticle *this_ptr);
 
-// Original: core_particle.cpp_FUN_00510df0
+// Original: core_particle.cpp_CParticle_dtor_FUN_00510df0
 // Address: 00510df0
-CParticle * __cdecl FUN_00510df0(CParticle *this_ptr,uint flags);
+CParticle * __cdecl CParticle::dtor(CParticle *this_ptr,uint flags);
 
 // Original: core_particle.cpp_CParticle_setup_FUN_00510e00
 // Address: 00510e00
@@ -21,9 +21,9 @@ void __cdecl CParticle::setup(CParticle *this_ptr,CVector3f *position,CVector3f 
 // Address: 00510ef0
 void FUN_00510ef0(float *param_1);
 
-// Original: core_particle.cpp_FUN_00511370
+// Original: core_particle.cpp_CParticle_render_FUN_00511370
 // Address: 00511370
-void FUN_00511370(void);
+void __cdecl CParticle::render(CParticle *this_ptr);
 
 // Original: core_particle.cpp_FUN_005113a0
 // Address: 005113a0

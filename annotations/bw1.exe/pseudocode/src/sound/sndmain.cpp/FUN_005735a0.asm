@@ -7,16 +7,16 @@
 ; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[78]:
-;   core_bat.cpp_FUN_00410d80 at 00410ef4
-;   core_batcreat.cpp_FUN_004115b0 at 00411ccb
-;   core_batcreat.cpp_FUN_004123d0 at 004124f9
-;   core_batman.cpp_FUN_00412ba0 at 00413391
-;   core_batman.cpp_FUN_00413f90 at 004140b9
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c1b5
-;   core_bride.cpp_FUN_00423b70 at 00423c32
-;   core_bride.cpp_FUN_00424b10 at 00424d1f
-;   core_carved.cpp_FUN_00428ae0 at 00429c85
-;   core_carved.cpp_FUN_0042b850 at 0042b9f1
+;   core_bat.cpp_CBat_process_FUN_00410d80 at 00410ef4
+;   core_batcreat.cpp_CBatCreature_processDamage_FUN_004123d0 at 004124f9
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 00411ccb
+;   core_batman.cpp_CBatman_processDamage_FUN_00413f90 at 004140b9
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413391
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c1b5
+;   core_bride.cpp_CBride_processDamage_FUN_00424b10 at 00424d1f
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423c32
+;   core_carved.cpp_CCarved_processDamage_FUN_0042b850 at 0042b9f1
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429c85
 ;   ... and 68 more
 ;
 ; Called Functions:

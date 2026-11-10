@@ -1,20 +1,20 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 core_enemy_cpp_FUN_004893f0(int param_1,undefined4 *param_2,undefined4 param_3,int param_4)
+; undefined4 core_enemy_cpp_FUN_004893f0(int param_1,float *param_2,undefined4 param_3,int param_4)
 ;
 ;
 ; XREF[19]:
-;   core_baal.cpp_FUN_005968a0 at 00597619
-;   core_boneguy.cpp_FUN_004179b0 at 004181ab
-;   core_boneguy.cpp_FUN_00419b40 at 0041a2ff
-;   core_constrct.cpp_FUN_00442a20 at 00443734
-;   core_cow.cpp_FUN_00445130 at 00445480
-;   core_dog.cpp_FUN_004628b0 at 00462c5a
-;   core_gargoyle.cpp_FUN_004c5350 at 004c5795
-;   core_ghoul.cpp_FUN_004c6eb0 at 004c8835
-;   core_hotdemon.cpp_FUN_004d56b0 at 004d5a59
-;   core_imp.cpp_FUN_004d6a90 at 004d724e
+;   core_baal.cpp_CBaal_process_FUN_005968a0 at 00597619
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a2ff
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 004181ab
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00443734
+;   core_cow.cpp_CZombieCow_process_FUN_00445130 at 00445480
+;   core_dog.cpp_CZombieDog_process_FUN_004628b0 at 00462c5a
+;   core_gargoyle.cpp_CGargoyle_process_FUN_004c5350 at 004c5795
+;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c8835
+;   core_hotdemon.cpp_CHotDemon_process_FUN_004d56b0 at 004d5a59
+;   core_imp.cpp_CImp_process_FUN_004d6a90 at 004d724e
 ;   ... and 9 more
 ;
 ; Referenced Globals:
@@ -23,7 +23,7 @@
 ;   CGore* g_CGorePtr = 01d22e44
 ;
 ; Called Functions:
-;   core_gore.cpp_FUN_004ce9c0
+;   core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0
 ;   crt_math.c_round_FUN_005a3120
 ;
 ; *****************************************************************************
@@ -89,8 +89,8 @@ section .text
     PUSH EAX                            ; 0048946e
     MOV ESI,dword ptr [0x005fed24]      ; 0048946f | g_CGorePtr
     PUSH ESI                            ; 00489475
-    CALL core_gore.cpp_FUN_004ce9c0     ; 00489476
-        ;   XREF to: 004ce9c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004ce9c0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
+    CALL core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0 ; 00489476
+        ;   XREF to: 004ce9c0 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_spawnBloodBurst_FUN_004ce9c0(CGore * this_ptr, CVector3f * position, CVector3f * direction, int count, ...)
     MOV EAX,0x1                         ; 0048947b
     ADD ESP,0x14                        ; 00489480
     MOV ESP,EBP                         ; 00489483

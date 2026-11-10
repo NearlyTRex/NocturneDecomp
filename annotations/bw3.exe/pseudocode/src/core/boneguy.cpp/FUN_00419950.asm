@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_boneguy.cpp_CSkeletonIndian_ctor_FUN_00419980
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd698                         ; 00419950
         ;   Label: core_boneguy.cpp_FUN_00419950
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00419955
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00419955
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0041995a
     TEST EAX,EAX                        ; 0041995d
     JNZ 0x00419962                      ; 0041995f

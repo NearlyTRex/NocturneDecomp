@@ -43,7 +43,7 @@
     {
       "addr": "004e46c0",
       "from_addr": "004e46f7",
-      "name": "core_main.c_FUN_004e46c0",
+      "name": "core_main.c_initializeGameSystems_FUN_004e46c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -65,27 +65,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d8180",
+      "from_addr": "004d81a7",
+      "name": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d8530",
       "from_addr": "004d8591",
       "name": "engine_ini.cpp_CIni_writeProfileString_FUN_004d8530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004d8180",
-      "from_addr": "004d81a7",
-      "name": "engine_ini.cpp_FUN_004d8180",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004d8360",
       "from_addr": "004d8388",
       "name": "engine_ini.cpp_FUN_004d8360",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00514a30",
-      "from_addr": "00514b05",
-      "name": "engine_pcx.c_FUN_00514a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -101,15 +95,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "00519dc0",
-      "from_addr": "00519de9",
-      "name": "engine_pod.cpp_FUN_00519dc0",
+      "addr": "00514a30",
+      "from_addr": "00514b05",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_00514a30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00519f00",
       "from_addr": "00519f8d",
-      "name": "engine_pod.cpp_FUN_00519f00",
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00519dc0",
+      "from_addr": "00519de9",
+      "name": "engine_pod.cpp_FUN_00519dc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -151,7 +151,7 @@
     {
       "addr": "00591190",
       "from_addr": "005911c9",
-      "name": "wincore_winvideo.cpp_FUN_00591190",
+      "name": "wincore_winvideo.cpp_playMovie_FUN_00591190",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -225,7 +225,7 @@
       {
         "call_addr": "004e46f7",
         "call_type": "direct",
-        "caller": "core_main.c_FUN_004e46c0",
+        "caller": "core_main.c_initializeGameSystems_FUN_004e46c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -236,7 +236,7 @@
       {
         "call_addr": "004d81a7",
         "call_type": "direct",
-        "caller": "engine_ini.cpp_FUN_004d8180",
+        "caller": "engine_ini.cpp_CIni_getProfileString_FUN_004d8180",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -13,7 +13,7 @@ void sound_sndmain_cpp_FUN_00557020(uint param_1,uint param_2,uint param_3,uint 
 {
   int iVar1;
   
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   iVar1 = _DAT_02cf28b8;
   *(uint *)(&DAT_02cf2828 + _DAT_02cf28b8 * 8) = param_1;
   *(uint *)(iVar1 * 8 + 0x2cf282c) = param_2;

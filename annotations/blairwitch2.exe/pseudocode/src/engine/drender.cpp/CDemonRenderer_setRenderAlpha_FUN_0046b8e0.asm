@@ -8,16 +8,16 @@
 ; int              Stack[0x8]:4   render_alpha
 ;
 ; XREF[47]:
-;   core_baron.cpp_FUN_00410670 at 004107c5
-;   core_bodypart.cpp_FUN_00415e10 at 00415e6b
-;   core_boneguy.cpp_FUN_00419b80 at 00419c06
-;   core_boxactor.cpp_FUN_0041c690 at 0041c722
-;   core_bugs.cpp_FUN_0041f450 at 0041f59c
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 004107c5
+;   core_basicene.cpp_CBasicEnemy_renderTransparent_FUN_0059f980 at 0059f9be
+;   core_bodypart.cpp_CBodyPart_renderTransparent_FUN_00415e10 at 00415e6b
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_00419b80 at 00419c06
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 at 0041c722
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_0041f450 at 0041f59c
 ;   core_chain.cpp_FUN_005b56c0 at 005b57bc
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00426730 at 0042675d
 ;   core_charactr.cpp_FUN_00424c80 at 00424d86
-;   core_charactr.cpp_FUN_00426730 at 0042675d
 ;   core_cloth.cpp_CCloth_render_FUN_005b0fe0 at 005b1028
-;   core_fire.cpp_CBulletHole_setupRenderState_FUN_00493d50 at 00493dc4
 ;   ... and 37 more
 ;
 ; Called Functions:

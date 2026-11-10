@@ -2,23 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 10,
-    "complexity_score": 63,
+    "complexity_score": 8,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 8,
-    "suspect_count": 5,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 18
   },
   "cross_references": [
     {
       "addr": "005098d0",
       "from_addr": "00509904",
-      "name": "core_melee.cpp_FUN_005098d0",
+      "name": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_005098d0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -42,7 +40,7 @@
       {
         "call_addr": "00509904",
         "call_type": "direct",
-        "caller": "core_melee.cpp_FUN_005098d0",
+        "caller": "core_melee.cpp_CMelee_playAttackHitEffects_FUN_005098d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -100,46 +98,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x598",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x598 = 0x3f800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x58c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x58c = blood_gore_type;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x594",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x594 = *(uint *)&this_ptr->field_0x598;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x598",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x594 = *(uint *)&this_ptr->field_0x598;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x590",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x590 = blood_spurt_count;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

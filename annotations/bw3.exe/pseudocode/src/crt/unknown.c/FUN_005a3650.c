@@ -11,6 +11,6 @@ void * __cdecl FUN_005a3650(ulong size)
 {
   void *pvVar1;
   
-  pvVar1 = (void *)FUN_005a3660(size);
+  pvVar1 = InternalHeapAlloc(size);
   return pvVar1;
 }

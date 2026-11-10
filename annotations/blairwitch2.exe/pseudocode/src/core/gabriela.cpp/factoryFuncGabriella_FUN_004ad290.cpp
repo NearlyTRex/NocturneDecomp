@@ -11,7 +11,7 @@ void core_gabriela_cpp_factoryFuncGabriella_FUN_004ad290(void)
 {
   CGabriella *this_ptr;
   
-  this_ptr = (CGabriella *)FUN_005b8be2(0x601b4);
+  this_ptr = (CGabriella *)debugAllocTracked1(0x601b4);
   if (this_ptr == (CGabriella *)0x0) {
     return;
   }

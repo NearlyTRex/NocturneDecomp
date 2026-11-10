@@ -10,12 +10,12 @@
 ;   core_spirindi.cpp_factoryFuncSpiritIndian_FUN_00599f30 at 00599f43
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_cloth.cpp_CClothList_ctor_FUN_0043f8c0
 ;   core_morph.cpp_CMorph_ctor_FUN_004fa8a0
 ;   core_npc.cpp_CNPC_ctor_FUN_00508f40
 ;   core_path.cpp_CPathMap_ctor_FUN_0050acc0
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -54,8 +54,8 @@ section .text
     MOV dword ptr [EBX + 0x327c],0x3fcccccd ; 00599fc6
     PUSH 0x3f666666                     ; 00599fd0
     MOV dword ptr [EBX + 0x3280],0xc479c000 ; 00599fd5
-    CALL core_actor.cpp_FUN_0040ce40    ; 00599fdf
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 00599fdf
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 00599fe4
     FLD float ptr [ESP + 0x8]           ; 00599fe8
     ADD ESP,0x8                         ; 00599fec
@@ -64,8 +64,8 @@ section .text
     MOV ESI,0x5d9a39                    ; 00599ffa
     PUSH EAX                            ; 00599fff
     FSTP float ptr [EBX + 0x34168]      ; 0059a000
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0059a006
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0059a006
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0059a00b
     LEA EDI,[EBX + 0x33fa8]             ; 0059a00e
     MOV dword ptr [EBX + 0x33fa4],0x1   ; 0059a014

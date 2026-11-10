@@ -11,7 +11,7 @@ void core_confzomb_cpp_factoryFuncConfederateZombie_FUN_005a1b10(void)
 {
   CConfederateZombie *this_ptr;
   
-  this_ptr = (CConfederateZombie *)FUN_005b8be2(0x11858);
+  this_ptr = (CConfederateZombie *)debugAllocTracked1(0x11858);
   if (this_ptr == (CConfederateZombie *)0x0) {
     return;
   }

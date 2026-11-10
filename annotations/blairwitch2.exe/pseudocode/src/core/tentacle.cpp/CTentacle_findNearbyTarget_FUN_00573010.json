@@ -2,20 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 101,
-    "complexity_score": 328,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 48,
-    "suspect_count": 24,
+    "suspect_count": 19,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
-      "raw_address_pointer_store",
       "stack_alignment_array",
       "stack_ref",
-      "suspicious_cast",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
@@ -25,7 +23,7 @@
     {
       "addr": "005726c0",
       "from_addr": "005727a3",
-      "name": "core_tentacle.cpp_FUN_005726c0",
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005726c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,7 +44,7 @@
     {
       "addr": "0040c840",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c840"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
     }
   ],
   "globals": [
@@ -64,13 +62,13 @@
     },
     {
       "addr": "01fb5260",
-      "name": "g_CDemonSetInstance.field1372328_0x14f0a8",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fb5264",
-      "name": "g_CDemonSetInstance.field1372332_0x14f0ac",
+      "name": "g_CDemonSetInstance.characters[0]",
       "type": "undefined4",
       "value": null
     }
@@ -81,7 +79,7 @@
       {
         "call_addr": "005727a3",
         "call_type": "direct",
-        "caller": "core_tentacle.cpp_FUN_005726c0",
+        "caller": "core_tentacle.cpp_CTentacle_process_FUN_005726c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +90,7 @@
       {
         "call_addr": "00572b93",
         "call_type": "direct",
-        "caller": "core_tentacle.cpp_FUN_005726c0",
+        "caller": "core_tentacle.cpp_CTentacle_process_FUN_005726c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -280,39 +278,23 @@
       "line": 22,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "local_20 = (float *)&this_ptr->field_0x20;",
+      "text": "local_20 = (float *)&(this_ptr->base).base.base.field_0x20;",
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x14f0a8",
-      "severity": "mild",
-      "text": "if (*(int *)&g_CDemonSetPtr->field_0x14f0a8 <= local_1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
+      "description": "Complex pointer cast",
       "line": 29,
-      "match": "*(CTentacle **)(&g_CDemonSetPtr->field_0x14f0ac",
+      "match": "(CTentacle **)((int)g_CDemonSetPtr",
       "severity": "moderate",
-      "text": "actor_ptr = *(CTentacle **)(&g_CDemonSetPtr->field_0x14f0ac + local_18);",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x14f0ac",
-      "severity": "mild",
-      "text": "actor_ptr = *(CTentacle **)(&g_CDemonSetPtr->field_0x14f0ac + local_18);",
-      "type": "unnamed_field"
+      "text": "actor_ptr = *(CTentacle **)((int)g_CDemonSetPtr->characters + local_18);",
+      "type": "pointer_cast"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 33,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "local_34 = *(float *)&actor_ptr->field_0x20 - *local_20;",
+      "text": "local_34 = *(float *)&(actor_ptr->base).base.base.field_0x20 - *local_20;",
       "type": "unnamed_field"
     },
     {
@@ -320,7 +302,7 @@
       "line": 34,
       "match": "field_0x24",
       "severity": "mild",
-      "text": "local_30 = *(float *)&actor_ptr->field_0x24 - local_20[1];",
+      "text": "local_30 = *(float *)&(actor_ptr->base).base.base.field_0x24 - local_20[1];",
       "type": "unnamed_field"
     },
     {
@@ -328,7 +310,7 @@
       "line": 35,
       "match": "field_0x28",
       "severity": "mild",
-      "text": "local_2c = *(float *)&actor_ptr->field_0x28 - local_20[2];",
+      "text": "local_2c = *(float *)&(actor_ptr->base).base.base.field_0x28 - local_20[2];",
       "type": "unnamed_field"
     },
     {
@@ -362,30 +344,6 @@
       "severity": "moderate",
       "text": "*(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x10a70",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x10a70) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x10a78",
-      "severity": "mild",
-      "text": "*(CTentacle **)&this_ptr->field_0x10a78 = actor_ptr;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_0061b5b8 (at 0x0061b5b8, +16 bytes).",
-      "line": 29,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "actor_ptr = *(CTentacle **)(&g_CDemonSetPtr->field_0x14f0ac + local_18);",
-      "type": "suspicious_cast"
     },
     {
       "description": "Pointer value `&stack0xffffffc4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",

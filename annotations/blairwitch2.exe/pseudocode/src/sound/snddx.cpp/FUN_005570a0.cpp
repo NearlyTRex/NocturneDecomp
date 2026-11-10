@@ -17,17 +17,16 @@ uint sound_snddx_cpp_FUN_005570a0(int *param_1,int param_2)
   uint uVar4;
   uint uVar5;
   int iVar6;
-  char *pcVar7;
   int *piStack_b14;
   int *piStack_b10;
   char *pcStack_b0c;
   char *pcStack_b08;
-  byte auStack_9b4 [440];
-  byte auStack_7fc [392];
-  byte auStack_674 [384];
-  byte auStack_4f4 [400];
-  byte auStack_364 [392];
-  byte auStack_1dc [424];
+  char acStack_9b4 [440];
+  char acStack_7fc [392];
+  char acStack_674 [384];
+  char acStack_4f4 [400];
+  char acStack_364 [392];
+  char acStack_1dc [424];
   uint uStack_34;
   uint uStack_14;
   
@@ -79,31 +78,25 @@ uint sound_snddx_cpp_FUN_005570a0(int *param_1,int param_2)
       piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
       uVar4 = (**(code **)(*piVar2 + 0x44))(piVar2,0);
       if (uVar4 != 0) {
-        pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-        FUN_005b7790
-                  (auStack_7fc,"DirectSux: Unable to %s.  (%s)",
-                   "Set frequency hardware sfx secondary buffer",pcVar7);
-        sound_sndmain_cpp_FUN_005549c0(auStack_7fc);
+        sound_snddx_cpp_FUN_00554ad0(uVar4);
+        _sprintf(acStack_7fc,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_FUN_005549c0(acStack_7fc);
         return 0;
       }
       piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
       uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,0xffffd8f0);
       if (uVar4 != 0) {
-        pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-        FUN_005b7790
-                  (auStack_674,"DirectSux: Unable to %s.  (%s)","Set volume hardware sfx secondary buffer"
-                   ,pcVar7);
-        sound_sndmain_cpp_FUN_005549c0(auStack_674);
+        sound_snddx_cpp_FUN_00554ad0(uVar4);
+        _sprintf(acStack_674,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_FUN_005549c0(acStack_674);
         return 0;
       }
       piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
       uVar4 = (**(code **)(*piVar2 + 0x30))(piVar2,0,0,uStack_34);
       if (uVar4 != 0) {
-        pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-        FUN_005b7790
-                  (auStack_364,"DirectSux: Unable to %s.  (%s)",
-                   "Play hardware sfx secondary buffer",pcVar7);
-        sound_sndmain_cpp_FUN_005549c0(auStack_364);
+        sound_snddx_cpp_FUN_00554ad0(uVar4);
+        _sprintf(acStack_364,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_FUN_005549c0(acStack_364);
         return 0;
       }
       iVar3 = iVar1 * 0x24;
@@ -116,40 +109,32 @@ uint sound_snddx_cpp_FUN_005570a0(int *param_1,int param_2)
         uVar4 = (**(code **)(**(int **)(iVar3 + 0x264ac10) + 0x44))
                           (*(int **)(iVar3 + 0x264ac10),iVar6);
         if (uVar4 != 0) {
-          pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-          FUN_005b7790
-                    (auStack_4f4,"DirectSux: Unable to %s.  (%s)",
-                     "Set hardware sfx secondary buffer frequency",pcVar7);
-          sound_sndmain_cpp_FUN_005549c0(auStack_4f4);
+          sound_snddx_cpp_FUN_00554ad0(uVar4);
+          _sprintf(acStack_4f4,"DirectSux: Unable to %s.  (%s)");
+          sound_sndmain_cpp_FUN_005549c0(acStack_4f4);
         }
         *(int *)(iVar1 * 0x24 + 0x264ac2c) = iVar6;
       }
       piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
       uVar4 = (**(code **)(*piVar2 + 0x34))(piVar2,0);
       if (uVar4 != 0) {
-        pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-        FUN_005b7790
-                  (auStack_1dc,"DirectSux: Unable to %s.  (%s)",
-                   "Set hardware sfx secondary buffer playback position",pcVar7);
-        sound_sndmain_cpp_FUN_005549c0(auStack_1dc);
+        sound_snddx_cpp_FUN_00554ad0(uVar4);
+        _sprintf(acStack_1dc,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_FUN_005549c0(acStack_1dc);
         return 0;
       }
       piVar2 = *(int **)(iVar1 * 0x24 + 0x264ac10);
       uVar4 = (**(code **)(*piVar2 + 0x3c))(piVar2,*(uint *)(iVar1 * 0x24 + 0x264ac24));
       if (uVar4 != 0) {
-        pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-        FUN_005b7790
-                  (auStack_9b4,"DirectSux: Unable to %s.  (%s)",
-                   "Set hardware sfx secondary buffer volume",pcVar7);
-        sound_sndmain_cpp_FUN_005549c0(auStack_9b4);
+        sound_snddx_cpp_FUN_00554ad0(uVar4);
+        _sprintf(acStack_9b4,"DirectSux: Unable to %s.  (%s)");
+        sound_sndmain_cpp_FUN_005549c0(acStack_9b4);
         return 0;
       }
     }
     else if (uVar4 != 0) {
-      pcVar7 = sound_snddx_cpp_FUN_00554ad0(uVar4);
-      FUN_005b7790
-                (&piStack_b14,"DirectSux: Unable to %s.  (%s)","Play hardware sfx secondary buffer"
-                 ,pcVar7);
+      sound_snddx_cpp_FUN_00554ad0(uVar4);
+      _sprintf((char *)&piStack_b14,"DirectSux: Unable to %s.  (%s)");
       sound_sndmain_cpp_FUN_005549c0(&piStack_b14);
       return 0;
     }

@@ -27,6 +27,6 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor
               ("CDemonMission::getNextLoadedInventoryActor - requested %s, but next actor was %s!",actor_name,*(uint *)(this_ptr + 0x1458));
   }
   pCVar1 = *(CDemonActor **)(this_ptr + 0x1458);
-  *(uint *)(this_ptr + 0x1458) = *(uint *)&pCVar1->field_0x14c;
+  *(CDemonActor **)(this_ptr + 0x1458) = pCVar1->next_actor;
   return pCVar1;
 }

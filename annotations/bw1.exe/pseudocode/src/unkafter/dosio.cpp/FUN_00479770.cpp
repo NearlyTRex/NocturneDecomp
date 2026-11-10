@@ -27,7 +27,7 @@ void unkafter_dosio_cpp_FUN_00479770(char *param_1,char *param_2,char *param_3)
   char *pcVar5;
   
   bVar6 = 0;
-  engine_dosio_cpp_FUN_00479580(param_2,acStack_14,&cStack_114,acStack_214,acStack_314);
+  engine_dosio_cpp_splitPath_FUN_00479580(param_2,acStack_14,&cStack_114,acStack_214,acStack_314);
   if ((acStack_14[0] != '\0') ||
      (((cStack_114 == '\\' || (cStack_114 == '/')) && ((cStack_113 == '\\' || (cStack_113 == '/'))))
      )) {
@@ -69,6 +69,7 @@ void unkafter_dosio_cpp_FUN_00479770(char *param_1,char *param_2,char *param_3)
     pcVar4[1] = cVar1;
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
-  engine_dosio_cpp_FUN_004795b0(param_3,&stack0xfffffffc,acStack_508,acStack_208,acStack_308);
+  engine_dosio_cpp_makePath_FUN_004795b0
+            (param_3,&stack0xfffffffc,acStack_508,acStack_208,acStack_308);
   return;
 }

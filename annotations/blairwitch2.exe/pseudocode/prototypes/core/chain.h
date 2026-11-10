@@ -9,9 +9,13 @@
 // Address: 00534c70
 float __cdecl fastSqrt(float value);
 
-// Original: core_chain.cpp_FUN_005b46f0
+// Original: core_chain.cpp_staticInit_FUN_005b46c0
+// Address: 005b46c0
+void __cdecl staticInit(void);
+
+// Original: core_chain.cpp_factoryFuncChain_FUN_005b46f0
 // Address: 005b46f0
-void FUN_005b46f0(void);
+void factoryFuncChain(void);
 
 // Original: core_chain.cpp_CChain_getActorType_FUN_005b4710
 // Address: 005b4710
@@ -29,9 +33,9 @@ void FUN_005b4860(int param_1);
 // Address: 005b48e0
 void FUN_005b48e0(CDemonActor *param_1);
 
-// Original: core_chain.cpp_FUN_005b4aa0
+// Original: core_chain.cpp_CChain_constrainSegmentDistance_FUN_005b4aa0
 // Address: 005b4aa0
-void __cdecl FUN_005b4aa0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
+void __cdecl CChain::constrainSegmentDistance(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
 
 // Original: core_chain.cpp_FUN_005b4d30
 // Address: 005b4d30

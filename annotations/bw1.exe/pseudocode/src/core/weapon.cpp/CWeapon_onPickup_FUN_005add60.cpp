@@ -9,6 +9,6 @@
 void __cdecl core_weapon_cpp_CWeapon_onPickup_FUN_005add60(CWeapon *this_ptr,CDemonActor *owner)
 
 {
-  core_actor_cpp_FUN_00409d10((CDemonActor *)this_ptr,owner);
+  core_actor_cpp_CDemonActor_onPickup_FUN_00409d10(&this_ptr->base,owner);
   return;
 }

@@ -2,35 +2,33 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 114,
-    "complexity_score": 119,
+    "complexity_score": 31,
     "cross_reference_count": 13,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 34,
-    "suspect_count": 8,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 148
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 145
   },
   "cross_references": [
     {
       "addr": "0041a200",
       "from_addr": "0041a438",
-      "name": "core_bodypart.cpp_FUN_0041a200",
+      "name": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004263d0",
       "from_addr": "004264e1",
-      "name": "core_bugs.cpp_FUN_004263d0",
+      "name": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00430440",
       "from_addr": "004307a6",
-      "name": "core_charactr.cpp_FUN_00430440",
+      "name": "core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,7 +46,7 @@
     {
       "addr": "004ac3e0",
       "from_addr": "004ac54f",
-      "name": "core_fire.cpp_FUN_004ac3e0",
+      "name": "core_fire.cpp_CBulletHole_init_FUN_004ac3e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,7 +58,7 @@
     {
       "addr": "0050f7e0",
       "from_addr": "0050f979",
-      "name": "core_mimic.cpp_FUN_0050f7e0",
+      "name": "core_mimic.cpp_CMimic_updatePose_FUN_0050f7e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -72,25 +70,25 @@
     {
       "addr": "00539810",
       "from_addr": "00539a21",
-      "name": "core_platfrm.cpp_FUN_00539810",
+      "name": "core_platfrm.cpp_CPlatform_process_FUN_00539810",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005952f0",
       "from_addr": "005955f1",
-      "name": "core_tentacle.cpp_FUN_005952f0",
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005952f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00599150",
       "from_addr": "005993a7",
-      "name": "core_thehand.cpp_FUN_00599150",
+      "name": "core_thehand.cpp_CTheHand_process_FUN_00599150",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a28c0",
       "from_addr": "005a29b0",
-      "name": "core_turret.cpp_FUN_005a28c0",
+      "name": "core_turret.cpp_CTurret_getBoundingBox_FUN_005a28c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -131,7 +129,7 @@
       {
         "call_addr": "0041a438",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_0041a200",
+        "caller": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -142,7 +140,7 @@
       {
         "call_addr": "0041a455",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_0041a200",
+        "caller": "core_bodypart.cpp_CBodyPart_applyRotation_FUN_0041a200",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -164,7 +162,7 @@
       {
         "call_addr": "004264e1",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_004263d0",
+        "caller": "core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -175,7 +173,7 @@
       {
         "call_addr": "00539a21",
         "call_type": "direct",
-        "caller": "core_platfrm.cpp_FUN_00539810",
+        "caller": "core_platfrm.cpp_CPlatform_process_FUN_00539810",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -208,7 +206,7 @@
       {
         "call_addr": "004307a6",
         "call_type": "direct",
-        "caller": "core_charactr.cpp_FUN_00430440",
+        "caller": "core_charactr.cpp_CCharacter_addDamageDecal_FUN_00430440",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -219,7 +217,7 @@
       {
         "call_addr": "004ac54f",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004ac3e0",
+        "caller": "core_fire.cpp_CBulletHole_init_FUN_004ac3e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -332,70 +330,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045fd80(&local_14,&local_20,&euler_angles->field_0x8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045fd80(&local_10,&local_1c,&euler_angles->field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "-(*(float *)&position->field_0x8 * *(float *)(output_matrix + 8) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&position->field_0x4 * *(float *)(output_matrix + 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "-(*(float *)&position->field_0x8 * *(float *)(output_matrix + 0x18) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&position->field_0x4 * *(float *)(output_matrix + 0x14));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "-(*(float *)&position->field_0x8 * *(float *)(output_matrix + 0x28) +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(float *)&position->field_0x4 * *(float *)(output_matrix + 0x24));",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

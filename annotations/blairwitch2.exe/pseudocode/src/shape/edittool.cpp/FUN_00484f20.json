@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 332,
-    "complexity_score": 521,
+    "complexity_score": 522,
     "cross_reference_count": 4,
     "function_call_count": 12,
     "global_count": 8,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 131,
+    "pseudocode_lines": 132,
     "suspect_count": 36,
     "suspect_types": [
       "param_count_too_few",
@@ -17,19 +17,19 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 463
+    "total_lines": 464
   },
   "cross_references": [
+    {
+      "addr": "004831d0",
+      "from_addr": "00483412",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "0047c0f0",
       "from_addr": "0047c6db",
       "name": "shape_edittool.cpp_FUN_0047c0f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004831d0",
-      "from_addr": "00483412",
-      "name": "shape_edittool.cpp_FUN_004831d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -69,6 +69,26 @@
       "name": "engine_2d.c_drawHLine_FUN_00402f30"
     },
     {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
+      "addr": "004ab530",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharWidth_FUN_004ab530"
+    },
+    {
+      "addr": "004ab590",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharYOffset_FUN_004ab590"
+    },
+    {
+      "addr": "004aafb0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004aafb0"
+    },
+    {
       "addr": "004a8df0",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004a8df0"
@@ -77,26 +97,6 @@
       "addr": "004aaf00",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004aaf00"
-    },
-    {
-      "addr": "004aafb0",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004aafb0"
-    },
-    {
-      "addr": "004ab530",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab530"
-    },
-    {
-      "addr": "004ab560",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
-    },
-    {
-      "addr": "004ab590",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab590"
     },
     {
       "addr": "004f8e20",
@@ -188,7 +188,7 @@
       {
         "call_addr": "00483412",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -201,7 +201,7 @@
       {
         "call_addr": "00483447",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004831d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004831d0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -609,10 +609,10 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 127,
+      "line": 128,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar4 = engine_font_cpp_FUN_004ab530(_DAT_01c25590,(uint)*(byte *)(param_1 + 4));",
+      "text": "(_DAT_01c25590,(uint)*(byte *)(param_1 + 4));",
       "type": "unnamed_param"
     },
     {

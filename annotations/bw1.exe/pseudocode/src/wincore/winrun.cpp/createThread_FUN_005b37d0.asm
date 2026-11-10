@@ -8,7 +8,7 @@
 ; LPVOID           Stack[0x8]:4   thread_param
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_00575c00 at 00575c45
+;   sound_sndmain.cpp_startSoundThread_FUN_00575c00 at 00575c45
 ;   support_trisock.cpp_FUN_0059df10 at 0059df72
 ;
 ; Referenced Globals:

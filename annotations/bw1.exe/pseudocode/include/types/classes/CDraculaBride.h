@@ -4,13 +4,29 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBodyPart.h"
+#include "types/classes/CEnemy.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CDraculaBride
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc410 (50192 bytes)
 #pragma pack(push, 1)
 typedef struct CDraculaBride {
-    char field_0[50192]; // 0x0
+    CEnemy base; // 0x0
+    int part_indices[9]; // 0xc268
+    char rise_event[100]; // 0xc28c
+    int freaky_voice_number; // 0xc2f0
+    int mist_state; // 0xc2f4
+    float vanish_timer; // 0xc2f8
+    float freaky_timer; // 0xc2fc
+    float action_delay; // 0xc300
+    CVector3f new_pos; // 0xc304
+    int attack_landed; // 0xc310
+    int part_count; // 0xc314
+    struct CBodyPart* part_list[30]; // 0xc318
+    char field_50064[120]; // 0xc390
+    int exploded; // 0xc408
+    float fade_timer; // 0xc40c
 } CDraculaBride;
 #pragma pack(pop)
 

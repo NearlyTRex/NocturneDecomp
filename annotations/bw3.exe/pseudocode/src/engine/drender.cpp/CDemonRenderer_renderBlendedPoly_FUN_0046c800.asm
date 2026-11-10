@@ -12,9 +12,9 @@
 ; XREF[5]:
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_00448060 at 00448222
 ;   core_fire.cpp_CLaserBeam_render_FUN_0049b1d0 at 0049c186
-;   core_glass.cpp_FUN_004ca5a0 at 004ca73a
-;   core_glass.cpp_FUN_004ca770 at 004ca909
-;   core_water.cpp_FUN_00577760 at 00577bff
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004ca5a0 at 004ca73a
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004ca770 at 004ca909
+;   core_water.cpp_CWater_render_FUN_00577760 at 00577bff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20

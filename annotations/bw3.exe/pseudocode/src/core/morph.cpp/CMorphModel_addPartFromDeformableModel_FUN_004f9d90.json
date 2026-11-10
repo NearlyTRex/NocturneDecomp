@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 89,
+    "complexity_score": 28,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 14,
-    "suspect_count": 7,
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
     "suspect_types": [
       "unnamed_field"
     ],
-    "total_lines": 55
+    "total_lines": 54
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     {
       "addr": "004f9c40",
       "is_variadic": false,
-      "name": "core_morph.cpp_FUN_004f9c40"
+      "name": "core_morph.cpp_CMorphModel_addPartFromVertexBuffer_FUN_004f9c40"
     },
     {
       "addr": "0054ea40",
@@ -48,7 +48,7 @@
     {
       "addr": "0054e420",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054e420"
+      "name": "core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420"
     }
   ],
   "globals": [],
@@ -124,58 +124,10 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x2320",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&model_ptr->field_0x2320;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)(&pCVar2->field_0x2c + iVar1 * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 13,
-      "match": "field_0x2324",
-      "severity": "mild",
-      "text": "*(CVector3i **)&model_ptr->field_0x2324,*(int *)(&pCVar2->field_0x54 + iVar1 * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x54",
-      "severity": "mild",
-      "text": "*(CVector3i **)&model_ptr->field_0x2324,*(int *)(&pCVar2->field_0x54 + iVar1 * 4),",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "*(SInputFace **)(&pCVar2->field_0x7c + iVar1 * 4),(STextureSet *)&pCVar2->field_0xc0,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
       "match": "field_0xc0",
       "severity": "mild",
-      "text": "*(SInputFace **)(&pCVar2->field_0x7c + iVar1 * 4),(STextureSet *)&pCVar2->field_0xc0,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "*(int **)(&pCVar2->field_0x90 + iVar1 * 4));",
+      "text": "pCVar2->tri_count[iVar1],pCVar2->tri_data_ptr[iVar1],(STextureSet *)&pCVar2->field_0xc0",
       "type": "unnamed_field"
     }
   ]

@@ -12,7 +12,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_00448900 at 00448aab
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_0044ac60 at 0044af4f
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_0044c830 at 0044cedb
-;   core_set.cpp_FUN_00533f40 at 00533fdb
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_00533f40 at 00533fdb
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007bee30

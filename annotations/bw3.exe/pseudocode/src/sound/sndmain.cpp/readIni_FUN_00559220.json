@@ -1,0 +1,399 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 257,
+    "complexity_score": 202,
+    "cross_reference_count": 1,
+    "function_call_count": 24,
+    "global_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 87,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 344
+  },
+  "cross_references": [
+    {
+      "addr": "004d8e70",
+      "from_addr": "004d907b",
+      "name": "core_inivar.cpp_readIniData_FUN_004d8e70",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00559220",
+    "address_range": [
+      [
+        "00559220",
+        "0055951a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_readIni_FUN_00559220",
+    "signature": "void __cdecl sound_sndmain_cpp_readIni_FUN_00559220(CIniFile *ini_file)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "004d8c30",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8c30"
+    },
+    {
+      "addr": "004d8cd0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004d8cd0"
+    },
+    {
+      "addr": "005587e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_closeSoundDevice_FUN_005587e0"
+    },
+    {
+      "addr": "00556db0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00556db0"
+    },
+    {
+      "addr": "005586f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005586f0"
+    },
+    {
+      "addr": "00558330",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getAudioFormat_FUN_00558330"
+    },
+    {
+      "addr": "005591a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0"
+    },
+    {
+      "addr": "005588a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getRecordingDeviceCount_FUN_005588a0"
+    },
+    {
+      "addr": "00558900",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getRecordingDeviceInfo_FUN_00558900"
+    },
+    {
+      "addr": "00556d20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00556d20"
+    },
+    {
+      "addr": "00558430",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00558430"
+    },
+    {
+      "addr": "005584c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceInfo_FUN_005584c0"
+    },
+    {
+      "addr": "005586e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0"
+    },
+    {
+      "addr": "00556e30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
+    },
+    {
+      "addr": "00556750",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundMuted_FUN_00556750"
+    },
+    {
+      "addr": "00558ab0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_releaseRecordingDevice_FUN_00558ab0"
+    },
+    {
+      "addr": "005589e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_selectRecordingDevice_FUN_005589e0"
+    },
+    {
+      "addr": "00558640",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_selectSoundDevice_FUN_00558640"
+    },
+    {
+      "addr": "005591b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setMaxSwSoundLatency_FUN_005591b0"
+    },
+    {
+      "addr": "00556c90",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90"
+    },
+    {
+      "addr": "00556760",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundMuted_FUN_00556760"
+    },
+    {
+      "addr": "00558290",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSoundOutputMode_FUN_00558290"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d3dc2",
+      "name": "s_DeviceName_005d3dc1+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3dcd",
+      "name": "s_RecordingDeviceName_005d3dcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3de1",
+      "name": "s_AccelEnabled_005d3de1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3dee",
+      "name": "s_MaxSwLatency_005d3dee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3dfb",
+      "name": "DAT_005d3dfb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3e00",
+      "name": "s_Channels_005d3e00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3e09",
+      "name": "DAT_005d3e09",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3e0c",
+      "name": "DAT_005d3e0c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3e11",
+      "name": "s_SfxChannel_dEnabled_005d3e11",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3e25",
+      "name": "s_SfxChannel_dVol_005d3e25",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00604224",
+      "name": "DAT_00604224",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00604268",
+      "name": "DAT_00604268",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "0060426c",
+      "name": "DAT_0060426c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004d907b",
+        "call_type": "direct",
+        "caller": "core_inivar.cpp_readIniData_FUN_004d8e70",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.305825242718447,
+    "instruction_count": 206,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "BRANCH": 4,
+      "CALL": 32,
+      "CALLIND": 2,
+      "CBRANCH": 7,
+      "COPY": 177,
+      "FLOAT2FLOAT": 4,
+      "INT_ADD": 84,
+      "INT_AND": 87,
+      "INT_CARRY": 28,
+      "INT_EQUAL": 86,
+      "INT_LESS": 4,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 3,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 31,
+      "INT_SLESS": 42,
+      "INT_SUB": 108,
+      "INT_XOR": 4,
+      "INT_ZEXT": 2,
+      "LOAD": 21,
+      "POPCOUNT": 42,
+      "RETURN": 1,
+      "STORE": 110
+    },
+    "pcode_op_count": 887
+  },
+  "stack_frame": {
+    "frame_size": 412,
+    "local_size": 408,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_194",
+        "offset": -404,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": true,
+        "name": "ini_file",
+        "offset": 4,
+        "size": 4,
+        "type": "CIniFile *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_00604268",
+      "severity": "mild",
+      "text": "puVar3 = &DAT_00604268;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 29,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x200",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 42,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0x200",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&ini_file->field_0x200 + 4))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 58,
+      "match": "DAT_005d3dfb",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8c30(ini_file,&DAT_005d3dfb,&iStack_28);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 60,
+      "match": "DAT_005d3e09",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8c30(ini_file,&DAT_005d3e09,&iStack_20);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 63,
+      "match": "DAT_005d3e0c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004d8c30(ini_file,&DAT_005d3e0c,&iStack_30);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 66,
+      "match": "DAT_00604224",
+      "severity": "mild",
+      "text": "if (0 < DAT_00604224) {",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 78,
+      "match": "DAT_00604224",
+      "severity": "mild",
+      "text": "} while (iVar2 < DAT_00604224);",
+      "type": "undefined_data"
+    }
+  ]
+}

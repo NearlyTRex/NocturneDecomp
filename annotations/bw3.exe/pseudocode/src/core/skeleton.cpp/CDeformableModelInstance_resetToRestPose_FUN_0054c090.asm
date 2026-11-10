@@ -7,16 +7,16 @@
 ; CDeformableModelInstance * Stack[0x4]:4   this_ptr
 ;
 ; XREF[12]:
-;   core_asgaya.cpp_FUN_005a0b00 at 005a0bb3
+;   core_asgaya.cpp_CAsgaya_setup_FUN_005a0b00 at 005a0bb3
 ;   core_cloth.cpp_FUN_0043cb00 at 0043cf3f
-;   core_passngr.cpp_FUN_0050a610 at 0050a63a
-;   core_pryemorp.cpp_FUN_005275c0 at 005276cf
+;   core_darkwolf.cpp_CDarkwolf_setup_FUN_00598800 at 00598930
+;   core_passngr.cpp_CPassenger_setup_FUN_0050a610 at 0050a63a
+;   core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0 at 005276cf
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_0054a3c0 at 0054a457
 ;   core_skeleton.cpp_CDeformableModel_computePartDominantBones_FUN_0054b5b0 at 0054b67d
-;   core_spirbear.cpp_FUN_0059aba0 at 0059ad35
-;   core_spireagl.cpp_FUN_005992f0 at 00599471
-;   core_spirindi.cpp_FUN_0059a060 at 0059a1f5
-;   core_styldemo.cpp_FUN_0059e130 at 0059e345
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059ad35
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 00599471
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a1f5
 ;   ... and 2 more
 ;
 ; Called Functions:

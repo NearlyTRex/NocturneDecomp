@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_bride.cpp_FUN_0041ead0 at 0041eb67
+;   core_bride.cpp_CBride_processDamage_FUN_0041ead0 at 0041eb67
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_0041e888 = 0041e8e0
@@ -21,15 +21,15 @@
 ;   undefined4 DAT_005cc8c9
 ;   undefined4 DAT_005cc8d1
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field20_0x14
-;   undefined4 g_CGameInstance.field508_0x1fc
+;   undefined4 g_CGameInstance.field11_0x14
+;   undefined4 g_CGameInstance.field460_0x1fc
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040d060
+;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700
-;   core_bodypart.cpp_FUN_004154f0
+;   core_bodypart.cpp_createBodyPart_FUN_004154f0
 ;   core_charactr.cpp_CCharacter_dismemberPartInternal_FUN_004277e0
-;   core_charactr.cpp_FUN_0042b260
+;   core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b260
 ;   crt_stdlib.c_rand_FUN_005b849c
 ;
 ; *****************************************************************************
@@ -91,21 +91,21 @@ section .text
     FSTP float ptr [ESP]                ; 0041e915
     MOV EAX,[0x00616494]                ; 0041e918 | g_CGamePtr
         ;   Label: LAB_0041e918
-    CMP dword ptr [EAX + 0x1fc],0x0     ; 0041e91d | g_CGameInstance.field508_0x1fc
+    CMP dword ptr [EAX + 0x1fc],0x0     ; 0041e91d | g_CGameInstance.field460_0x1fc
     JZ 0x0041e92d                       ; 0041e924
         ;   XREF to: 0041e92d (CONDITIONAL_JUMP)  ; LAB_0041e92d
     MOV dword ptr [ESP],0x3f800000      ; 0041e926
     MOV EAX,[0x00616494]                ; 0041e92d | g_CGamePtr
         ;   Label: LAB_0041e92d
-    MOV EDX,dword ptr [EAX + 0x14]      ; 0041e932 | g_CGameInstance.field20_0x14
+    MOV EDX,dword ptr [EAX + 0x14]      ; 0041e932 | g_CGameInstance.field11_0x14
     TEST EDX,EDX                        ; 0041e935
     JNZ 0x0041e93c                      ; 0041e937
         ;   XREF to: 0041e93c (CONDITIONAL_JUMP)  ; LAB_0041e93c
     MOV dword ptr [ESP],EDX             ; 0041e939
     PUSH dword ptr [ESP]                ; 0041e93c
         ;   Label: LAB_0041e93c
-    CALL core_actor.cpp_FUN_0040d060    ; 0041e93f
-        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d060(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040d060 ; 0041e93f
+        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040d060(float probability_threshold)
     ADD ESP,0x4                         ; 0041e944
     TEST EAX,EAX                        ; 0041e947
     JZ 0x0041e9ff                       ; 0041e949
@@ -120,8 +120,8 @@ section .text
     PUSH EAX                            ; 0041e95d
     LEA EAX,[ESI + 0x20]                ; 0041e95e
     PUSH EAX                            ; 0041e961
-    CALL core_bodypart.cpp_FUN_004154f0 ; 0041e962
-        ;   XREF to: 004154f0 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_FUN_004154f0(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
+    CALL core_bodypart.cpp_createBodyPart_FUN_004154f0 ; 0041e962
+        ;   XREF to: 004154f0 (UNCONDITIONAL_CALL)  ; CBodyPart * core_bodypart.cpp_createBodyPart_FUN_004154f0(CVector3f * position, UOrientationVector * orientation, CVector3f * initial_velocity, CDemonActor * scale_source, ...)
     ADD ESP,0x1c                        ; 0041e967
     MOV EDI,EAX                         ; 0041e96a
     PUSH 0x0                            ; 0041e96c
@@ -163,8 +163,8 @@ section .text
     PUSH 0x5cc8ad                       ; 0041e9bf | = "limb?.wav"
         ;   Label: LAB_0041e9bf
     PUSH ESI                            ; 0041e9c4
-    CALL core_charactr.cpp_FUN_0042b260 ; 0041e9c5
-        ;   XREF to: 0042b260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_0042b260(CCharacter * this_ptr, char * sound_name)
+    CALL core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b260 ; 0041e9c5
+        ;   XREF to: 0042b260 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_playSoundWithCooldown_FUN_0042b260(CCharacter * this_ptr, char * sound_name)
     ADD ESP,0x8                         ; 0041e9ca
     MOV ECX,dword ptr [ESP + 0xc]       ; 0041e9cd
     PUSH ECX                            ; 0041e9d1

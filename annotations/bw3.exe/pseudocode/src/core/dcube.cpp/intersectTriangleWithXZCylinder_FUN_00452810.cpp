@@ -131,7 +131,7 @@ uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810(int *pa
       *(float *)(param_2 + 0x40) = local_84[3];
       *(float *)(param_2 + 0x44) = local_6c[1];
       *(float *)(param_2 + 0x48) = local_84[4];
-      iVar8 = core_dcube_cpp_FUN_00452490(param_2);
+      iVar8 = core_dcube_cpp_intersectXZCylinder_FUN_00452490(param_2);
       if (iVar8 != 0) goto LAB_00452bd4;
     }
   }
@@ -172,7 +172,7 @@ uint __cdecl core_dcube_cpp_intersectTriangleWithXZCylinder_FUN_00452810(int *pa
       *(float *)(param_2 + 0x40) = local_84[0];
       *(float *)(param_2 + 0x44) = local_60[1];
       *(float *)(param_2 + 0x48) = local_84[1];
-      iVar8 = core_dcube_cpp_FUN_00452490(param_2);
+      iVar8 = core_dcube_cpp_intersectXZCylinder_FUN_00452490(param_2);
       if (iVar8 != 0) {
 LAB_00452bd4:
         *(uint *)(param_2 + 8) = 0;

@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_shadow.cpp_CShadowForest_ctor_FUN_00545ea0
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd0e8                         ; 00545e70
         ;   Label: core_shadow.cpp_FUN_00545e70
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00545e75
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00545e75
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00545e7a
     TEST EAX,EAX                        ; 00545e7d
     JNZ 0x00545e82                      ; 00545e7f

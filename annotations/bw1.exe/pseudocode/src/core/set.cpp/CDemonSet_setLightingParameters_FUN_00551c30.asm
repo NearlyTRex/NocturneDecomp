@@ -12,14 +12,14 @@
 ; CMatrix3x3f *    Stack[0x18]:4   rotation_matrix
 ;
 ; XREF[13]:
-;   core_fire.cpp_FUN_004ace60 at 004acef8
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b5223
+;   core_fire.cpp_CShell_render_FUN_004b4090 at 004b413a
+;   core_fire.cpp_CStake_render_FUN_004ace60 at 004acef8
 ;   core_fire.cpp_FUN_004ae640 at 004ae705
 ;   core_fire.cpp_FUN_004af040 at 004af0c7
 ;   core_fire.cpp_FUN_004af270 at 004af2f6
-;   core_fire.cpp_FUN_004b4090 at 004b413a
-;   core_fire.cpp_FUN_004b5100 at 004b5223
-;   core_gore.cpp_FUN_004e5c50 at 004e5c88
-;   core_set.cpp_FUN_0054eef0 at 0054ef93
+;   core_gore.cpp_CGore_renderParticles_FUN_004e5c50 at 004e5c88
+;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0054eef0 at 0054ef93
 ;   core_set.cpp_FUN_00550da0 at 00551011
 ;   core_set.cpp_FUN_00551170 at 005513e4
 ;   ... and 3 more

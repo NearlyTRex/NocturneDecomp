@@ -8,7 +8,7 @@
 ; SNetworkAddr *   Stack[0x8]:4   out_address
 ;
 ; XREF[1]:
-;   core_netgame.cpp_FUN_00504270 at 005042e7
+;   core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270 at 005042e7
 ;
 ; Called Functions:
 ;   crt_wsock32.c_getsockname

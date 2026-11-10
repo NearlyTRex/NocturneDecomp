@@ -11,12 +11,12 @@
 ;
 ; XREF[3]:
 ;   core_charactr.cpp_FUN_0042b420 at 0042b434
-;   core_hostage.cpp_FUN_004d1660 at 004d227a
+;   core_hostage.cpp_CHostage_process_FUN_004d1660 at 004d227a
 ;   unkafter_basicene.cpp_FUN_0059ee00 at 0059eec1
 ;
 ; Referenced Globals:
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
-;   undefined4 g_CDemonSetInstance.field1396340_0x154e74
+;   undefined4 g_CDemonSetInstance.waypoint_count
 ;   undefined4 DAT_0265fb64
 ;
 ; Called Functions:
@@ -63,7 +63,7 @@ section .text
     XOR ESI,ESI                         ; 0058830c
     MOV EDX,dword ptr [0x0061b5a8]      ; 0058830e | g_CDemonSetPtr
         ;   Label: LAB_0058830e
-    CMP ESI,dword ptr [EDX + 0x154e74]  ; 00588314 | g_CDemonSetInstance.field1396340_0x154e74
+    CMP ESI,dword ptr [EDX + 0x154e74]  ; 00588314 | g_CDemonSetInstance.waypoint_count
     JGE 0x0058833b                      ; 0058831a
         ;   XREF to: 0058833b (CONDITIONAL_JUMP)  ; LAB_0058833b
     MOV EDX,dword ptr [EDX + EAX*0x1 + 0x154e78] ; 0058831c
@@ -153,7 +153,7 @@ section .text
     XOR ESI,ESI                         ; 00588413
     MOV EAX,[0x0061b5a8]                ; 00588415 | g_CDemonSetPtr
         ;   Label: LAB_00588415
-    CMP EDI,dword ptr [EAX + 0x154e74]  ; 0058841a | g_CDemonSetInstance.field1396340_0x154e74
+    CMP EDI,dword ptr [EAX + 0x154e74]  ; 0058841a | g_CDemonSetInstance.waypoint_count
     JGE 0x00588472                      ; 00588420
         ;   XREF to: 00588472 (CONDITIONAL_JUMP)  ; LAB_00588472
     MOV EBX,dword ptr [ESI + EAX*0x1 + 0x154e78] ; 00588422

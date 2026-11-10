@@ -10,8 +10,8 @@
 ;   core_fldnotes.cpp_FUN_004bbcb0 at 004bbcba
 ;   core_script.cpp_CScript_ctor_FUN_005436d0 at 005436d8
 ;   core_sound.cpp_staticInit_FUN_0057b670 at 0057b682
+;   shape_edittool.cpp_CEditorTools_showDestructiveActionConfirmDialog_FUN_00494d20 at 00494d63
 ;   shape_edittool.cpp_CPickList_ctor_FUN_0049a620 at 0049a628
-;   shape_edittool.cpp_FUN_00494d20 at 00494d63
 ;   shape_edittool.cpp_FUN_00494de0 at 00494e23
 ;   shape_edittool.cpp_FUN_00494ea0 at 00494ee3
 ;

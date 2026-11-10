@@ -25,29 +25,27 @@ int __cdecl core_dcamera_cpp_CDemonCamera_isSphereVisible_FUN_0044f4d0(CDemonCam
   
   iVar1 = (int)ROUND(_DAT_005ddfbc * radius);
   iVar2 = (int)ROUND(_DAT_005ddfbc * radius);
-  uVar10 = (int)ROUND(*(float *)position * _DAT_005ddfbc) - *(int *)&this_ptr->field_0x16c;
-  uVar6 = (int)ROUND(*(float *)&position->field_0x4 * _DAT_005ddfbc) -
-          *(int *)&this_ptr->field_0x170;
-  uVar11 = (int)ROUND(*(float *)&position->field_0x8 * _DAT_005ddfbc) -
-           *(int *)&this_ptr->field_0x174;
+  uVar10 = (int)ROUND(position->x * _DAT_005ddfbc) - (this_ptr->camera_origin).x;
+  uVar6 = (int)ROUND(position->y * _DAT_005ddfbc) - (this_ptr->camera_origin).y;
+  uVar11 = (int)ROUND(position->z * _DAT_005ddfbc) - (this_ptr->camera_origin).z;
   if (((iVar1 <= (int)((uVar10 ^ (int)uVar10 >> 0x1f) - ((int)uVar10 >> 0x1f))) ||
       (iVar1 <= (int)((uVar6 ^ (int)uVar6 >> 0x1f) - ((int)uVar6 >> 0x1f)))) ||
      (iVar1 <= (int)((uVar11 ^ (int)uVar11 >> 0x1f) - ((int)uVar11 >> 0x1f)))) {
-    lVar3 = (longlong)(int)uVar10 * (longlong)*(int *)&this_ptr->field_0x178;
-    lVar4 = (longlong)(int)uVar6 * (longlong)*(int *)&this_ptr->field_0x184;
-    lVar5 = (longlong)(int)uVar11 * (longlong)*(int *)&this_ptr->field_0x190;
+    lVar3 = (longlong)(int)uVar10 * (longlong)(this_ptr->source_matrix).m[0].x;
+    lVar4 = (longlong)(int)uVar6 * (longlong)(this_ptr->source_matrix).m[1].x;
+    lVar5 = (longlong)(int)uVar11 * (longlong)(this_ptr->source_matrix).m[2].x;
     iVar7 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
             ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-    lVar3 = (longlong)(int)uVar10 * (longlong)*(int *)&this_ptr->field_0x17c;
-    lVar4 = (longlong)(int)uVar6 * (longlong)*(int *)&this_ptr->field_0x188;
-    lVar5 = (longlong)(int)uVar11 * (longlong)*(int *)&this_ptr->field_0x194;
+    lVar3 = (longlong)(int)uVar10 * (longlong)(this_ptr->source_matrix).m[0].y;
+    lVar4 = (longlong)(int)uVar6 * (longlong)(this_ptr->source_matrix).m[1].y;
+    lVar5 = (longlong)(int)uVar11 * (longlong)(this_ptr->source_matrix).m[2].y;
     iVar8 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
             ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);
-    lVar3 = (longlong)(int)uVar10 * (longlong)*(int *)&this_ptr->field_0x180;
-    lVar4 = (longlong)(int)uVar6 * (longlong)*(int *)&this_ptr->field_0x18c;
-    lVar5 = (longlong)(int)uVar11 * (longlong)*(int *)&this_ptr->field_0x198;
+    lVar3 = (longlong)(int)uVar10 * (longlong)(this_ptr->source_matrix).m[0].z;
+    lVar4 = (longlong)(int)uVar6 * (longlong)(this_ptr->source_matrix).m[1].z;
+    lVar5 = (longlong)(int)uVar11 * (longlong)(this_ptr->source_matrix).m[2].z;
     iVar9 = ((uint)lVar3 >> 0x10 | (int)((ulonglong)lVar3 >> 0x20) << 0x10) +
             ((uint)lVar4 >> 0x10 | (int)((ulonglong)lVar4 >> 0x20) << 0x10) +
             ((uint)lVar5 >> 0x10 | (int)((ulonglong)lVar5 >> 0x20) << 0x10);

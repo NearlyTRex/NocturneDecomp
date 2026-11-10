@@ -10,16 +10,16 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr)
 
 {
   *(uint *)&this_ptr->field_0xb00 = 0x600f94;
-  *(uint *)this_ptr = 0x280;
-  *(uint *)&this_ptr->field_0x4 = 0x1e0;
-  *(uint *)&this_ptr->field_0x8 = 0x20;
+  this_ptr->game_pixx = 0x280;
+  this_ptr->game_pixy = 0x1e0;
+  this_ptr->game_bpp = 0x20;
   *(uint *)&this_ptr->field_0x240 = 0x10000;
   *(uint *)&this_ptr->field_0xc = 0;
   *(uint *)&this_ptr->field_0x10 = 1;
   *(uint *)&this_ptr->field_0x14 = 1;
   *(uint *)&this_ptr->field_0x18 = 1;
   *(uint *)&this_ptr->field_0x1c = 1;
-  *(uint *)&this_ptr->field_0x24 = 1;
+  this_ptr->quimby_flag = 1;
   *(uint *)&this_ptr->field_0x20 = 0;
   *(uint *)&this_ptr->field_0x280 = 0;
   *(uint *)&this_ptr->field_0x284 = 0;
@@ -45,8 +45,8 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr)
   *(uint *)&this_ptr->field_0x238 = 0;
   *(uint *)&this_ptr->field_0xd4 = 9;
   *(uint *)&this_ptr->field_0xdc = 0;
-  *(uint *)&this_ptr->field_0x9f0 = 0;
-  *(uint *)&this_ptr->field_0x9f4 = 0x3f800000;
+  this_ptr->debug_fudge_target = (CVector3f *)0x0;
+  this_ptr->debug_fudge_step = 1.0;
   *(uint *)&this_ptr->field_0x240 = 0x10000;
   *(uint *)&this_ptr->field_0x244 = 0;
   *(uint *)&this_ptr->field_0xe0 = 0;
@@ -54,20 +54,20 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr)
   *(uint *)&this_ptr->field_0x24c = 1;
   *(uint *)&this_ptr->field_0x250 = 0;
   *(uint *)&this_ptr->field_0x254 = 0;
-  this_ptr->field_0x8e8 = 0;
-  *(uint *)&this_ptr->field_0x9e8 = 0;
-  *(uint *)&this_ptr->field_0x9ec = 0;
+  this_ptr->bitmap_filename[0] = '\0';
+  this_ptr->bitmap_width = 0;
+  this_ptr->bitmap_height = 0;
   *(uint *)&this_ptr->field_0x258 = 0;
-  *(uint *)&this_ptr->field_0x9f8 = 0;
+  this_ptr->need_chapter_reload = 0;
   *(uint *)&this_ptr->field_0xafc = 0;
   *(uint *)&this_ptr->field_0x25c = 0;
   *(uint *)&this_ptr->field_0x260 = 0;
   *(uint *)&this_ptr->field_0x264 = 0;
   *(uint *)&this_ptr->field_0x23c = 0;
-  *(uint *)&this_ptr->field_0x268 = 0;
-  *(uint *)&this_ptr->field_0x270 = 0;
-  *(uint *)&this_ptr->field_0x26c = 0;
-  *(uint *)&this_ptr->field_0x274 = 0;
+  this_ptr->total_game_time = 0.0;
+  this_ptr->total_play_time = 0.0;
+  this_ptr->damageable_enemy_count = 0;
+  this_ptr->total_kill_count = 0;
   *(uint *)&this_ptr->field_0x27c = 0;
   *(uint *)&this_ptr->field_0x278 = 0;
   *(uint *)&this_ptr->field_0xe4 = 0;
@@ -75,6 +75,6 @@ CGame * __cdecl core_game_cpp_CGame_ctor_FUN_004cbc80(CGame *this_ptr)
   *(uint *)&this_ptr->field_0x3b8 = 0;
   *(uint *)&this_ptr->field_0x288 = 1;
   DAT_01cd05c0 = 0;
-  this_ptr->field_0x9fc = 0;
+  this_ptr->chapter_reload_filename[0] = '\0';
   return this_ptr;
 }

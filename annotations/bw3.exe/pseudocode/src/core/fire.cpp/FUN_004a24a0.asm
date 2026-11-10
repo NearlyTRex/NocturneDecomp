@@ -19,14 +19,14 @@
 ;   undefined4 DAT_01bdd7e4
 ;
 ; Called Functions:
-;   core_fire.cpp_FUN_00497a30
-;   core_fire.cpp_FUN_0049a000
 ;   core_fire.cpp_FUN_0049a170
-;   core_fire.cpp_FUN_0049a630
-;   core_fire.cpp_FUN_0049c680
-;   core_fire.cpp_FUN_0049e170
 ;   core_fire.cpp_FUN_0049f380
+;   core_fire.cpp_loadDebrisAssets_FUN_0049c680
 ;   core_fire.cpp_loadFireBallAssets_FUN_004992f0
+;   core_fire.cpp_loadGunFlashAssets_FUN_0049a630
+;   core_fire.cpp_loadLightningBoltAssets_FUN_0049e170
+;   core_fire.cpp_loadRockAssets_FUN_0049a000
+;   core_fire.cpp_loadStakeAssets_FUN_00497a30
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046e5e0
 ;
 ; *****************************************************************************
@@ -81,24 +81,24 @@ section .text
     CMP EBX,ESI                         ; 004a2526
     JNZ 0x004a2513                      ; 004a2528
         ;   XREF to: 004a2513 (CONDITIONAL_JUMP)  ; LAB_004a2513
-    CALL core_fire.cpp_FUN_00497a30     ; 004a252a
-        ;   XREF to: 00497a30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_00497a30()
+    CALL core_fire.cpp_loadStakeAssets_FUN_00497a30 ; 004a252a
+        ;   XREF to: 00497a30 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadStakeAssets_FUN_00497a30()
     CALL core_fire.cpp_loadFireBallAssets_FUN_004992f0 ; 004a252f
         ;   XREF to: 004992f0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadFireBallAssets_FUN_004992f0()
-    CALL core_fire.cpp_FUN_0049a000     ; 004a2534
-        ;   XREF to: 0049a000 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049a000()
+    CALL core_fire.cpp_loadRockAssets_FUN_0049a000 ; 004a2534
+        ;   XREF to: 0049a000 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadRockAssets_FUN_0049a000()
     CALL core_fire.cpp_FUN_0049a170     ; 004a2539
         ;   XREF to: 0049a170 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049a170()
-    CALL core_fire.cpp_FUN_0049e170     ; 004a253e
-        ;   XREF to: 0049e170 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049e170()
-    CALL core_fire.cpp_FUN_0049a630     ; 004a2543
-        ;   XREF to: 0049a630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049a630()
+    CALL core_fire.cpp_loadLightningBoltAssets_FUN_0049e170 ; 004a253e
+        ;   XREF to: 0049e170 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadLightningBoltAssets_FUN_0049e170()
+    CALL core_fire.cpp_loadGunFlashAssets_FUN_0049a630 ; 004a2543
+        ;   XREF to: 0049a630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadGunFlashAssets_FUN_0049a630()
     PUSH 0x1                            ; 004a2548
     CALL core_fire.cpp_FUN_0049f380     ; 004a254a
         ;   XREF to: 0049f380 (UNCONDITIONAL_CALL)  ; undefined core_fire.cpp_FUN_0049f380()
     ADD ESP,0x4                         ; 004a254f
-    CALL core_fire.cpp_FUN_0049c680     ; 004a2552
-        ;   XREF to: 0049c680 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049c680()
+    CALL core_fire.cpp_loadDebrisAssets_FUN_0049c680 ; 004a2552
+        ;   XREF to: 0049c680 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_loadDebrisAssets_FUN_0049c680()
     POP EBP                             ; 004a2557
     POP EDI                             ; 004a2558
     POP ESI                             ; 004a2559

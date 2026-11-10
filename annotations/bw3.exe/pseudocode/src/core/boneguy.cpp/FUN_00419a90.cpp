@@ -11,7 +11,7 @@ void core_boneguy_cpp_FUN_00419a90(void)
 {
   CBaalSkel *this_ptr;
   
-  this_ptr = (CBaalSkel *)FUN_005a3cb2(0xd698);
+  this_ptr = (CBaalSkel *)debugAllocTracked1(0xd698);
   if (this_ptr == (CBaalSkel *)0x0) {
     return;
   }

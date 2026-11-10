@@ -12,7 +12,7 @@
 ;   core_dglobe.cpp_CDemonGlobe_renderCorona_FUN_0045ea60 at 0045ec0b
 ;   core_dlight.cpp_CDemonLight_renderCoronaGeometry_FUN_00463460 at 0046374f
 ;   core_dlight.cpp_CDemonLight_renderExternalVolumetricShafts_FUN_00465060 at 0046570b
-;   core_set.cpp_FUN_005551f0 at 0055528b
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 at 0055528b
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_007c7554
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_xform.cpp_transformAndClipGeometry_FUN_005b9fc0
 ;   engine_3d.c_isVisiblePlane_FUN_00403920
-;   unkafter_zombie.cpp_FUN_005bf640
+;   engine_zraster.c_rasterizePolygonCustom_FUN_005bf640
 ;
 ; *****************************************************************************
 
@@ -87,8 +87,8 @@ section .text
     PUSH EDX                            ; 00483cc4
     PUSH EAX                            ; 00483cc5
     PUSH 0x7c7558                       ; 00483cc6 | DAT_007c7558
-    CALL unkafter_zombie.cpp_FUN_005bf640 ; 00483ccb
-        ;   XREF to: 005bf640 (UNCONDITIONAL_CALL)  ; void unkafter_zombie.cpp_FUN_005bf640(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
+    CALL engine_zraster.c_rasterizePolygonCustom_FUN_005bf640 ; 00483ccb
+        ;   XREF to: 005bf640 (UNCONDITIONAL_CALL)  ; void engine_zraster.c_rasterizePolygonCustom_FUN_005bf640(SRenderVertex * vertex_buffer, int vertex_count, CustomScanlineFunc * scanline_renderer)
     ADD ESP,0xc                         ; 00483cd0
     POP EBP                             ; 00483cd3
     POP EDI                             ; 00483cd4

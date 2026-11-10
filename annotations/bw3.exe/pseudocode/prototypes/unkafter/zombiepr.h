@@ -5,21 +5,9 @@
 // Function prototypes for unkafter/zombiepr.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_zombiepr.cpp_FUN_0058ecd0
-// Address: 0058ecd0
-void FUN_0058ecd0(int param_1,int param_2);
-
 // Original: unkafter_zombiepr.cpp_FUN_0058efb0
 // Address: 0058efb0
 undefined4 FUN_0058efb0(CCharacter *param_1,float param_2);
-
-// Original: unkafter_zombiepr.cpp_FUN_0058f4a0
-// Address: 0058f4a0
-void __cdecl FUN_0058f4a0(CMobster *this_ptr);
-
-// Original: unkafter_zombiepr.cpp_FUN_0058f510
-// Address: 0058f510
-void FUN_0058f510(int param_1);
 
 // Original: unkafter_zombiepr.cpp_FUN_0058f610
 // Address: 0058f610
@@ -27,19 +15,7 @@ undefined4 FUN_0058f610(void);
 
 // Original: unkafter_zombiepr.cpp_FUN_0058f630
 // Address: 0058f630
-void FUN_0058f630(CCharacter *param_1,int *param_2);
-
-// Original: unkafter_zombiepr.cpp_FUN_0058f990
-// Address: 0058f990
-void FUN_0058f990(int param_1,int param_2);
-
-// Original: unkafter_zombiepr.cpp_FUN_0058fb20
-// Address: 0058fb20
-int FUN_0058fb20(int param_1,undefined4 *param_2);
-
-// Original: unkafter_zombiepr.cpp_FUN_0058fc60
-// Address: 0058fc60
-void FUN_0058fc60(CCharacter *param_1,SCollisionInfo *param_2);
+void FUN_0058f630(CCharacter *param_1,float *param_2);
 
 // Original: unkafter_zombiepr.cpp_CZombiePriest_dtor_FUN_0058fc80
 // Address: 0058fc80

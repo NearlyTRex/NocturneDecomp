@@ -9,17 +9,20 @@
 int __cdecl core_manpuz_cpp_CMirrorHack_updateInteraction_FUN_004e79f0(CMirrorHack *this_ptr,UOrientationVector *user_orientation,SPlayerInput *player_control)
 
 {
+  UOrientationVector *pUVar1;
+  
   if (*(int *)(player_control + 0xc) != 0) {
     *(uint *)(player_control + 0xc) = 0;
     return 0;
   }
   if (*(int *)(player_control + 0x10) == 0) {
-    if ((UOrientationVector *)&this_ptr->field_0x30 != user_orientation) {
-      *(uint *)&this_ptr->field_0x30 = *(uint *)user_orientation;
-      *(uint *)&this_ptr->field_0x34 = *(uint *)((int)user_orientation + 4);
-      *(uint *)&this_ptr->field_0x38 = *(uint *)((int)user_orientation + 8);
+    pUVar1 = &(this_ptr->base).orient;
+    if (pUVar1 != user_orientation) {
+      (pUVar1->vec).x = (user_orientation->vec).x;
+      (this_ptr->base).orient.vec.y = (user_orientation->vec).y;
+      (this_ptr->base).orient.vec.z = (user_orientation->vec).z;
     }
-    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0((CDemonActor *)this_ptr);
+    core_actor_cpp_CDemonActor_updateOrientationMatrix_FUN_00408ae0(&this_ptr->base);
     return 1;
   }
   *(uint *)(player_control + 0x10) = 0;

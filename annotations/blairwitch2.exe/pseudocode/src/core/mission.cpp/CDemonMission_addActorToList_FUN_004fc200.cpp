@@ -12,7 +12,7 @@ void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMi
   int iVar1;
   
   if (actor != (CDemonActor *)0x0) {
-    if (*(char *)actor == '\0') {
+    if (actor->actor_name[0] == '\0') {
       core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(this_ptr,actor);
     }
     iVar1 = *(int *)(this_ptr + 0x1118);

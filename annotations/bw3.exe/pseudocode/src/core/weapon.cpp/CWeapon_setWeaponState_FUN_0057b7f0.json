@@ -2,53 +2,51 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 5,
-    "complexity_score": 20,
+    "complexity_score": 5,
     "cross_reference_count": 6,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 5,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 10
   },
   "cross_references": [
     {
       "addr": "00425300",
       "from_addr": "0042534b",
-      "name": "core_burncrss.cpp_FUN_00425300",
+      "name": "core_burncrss.cpp_CBurncross_setWeaponState_FUN_00425300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0048b640",
       "from_addr": "0048b683",
-      "name": "core_exorcism.cpp_FUN_0048b640",
+      "name": "core_exorcism.cpp_CExorcism_setWeaponState_FUN_0048b640",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004a5770",
       "from_addr": "004a57a7",
-      "name": "core_firestff.cpp_FUN_004a5770",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004e74b0",
-      "from_addr": "004e74c4",
-      "name": "core_melee.cpp_FUN_004e74b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056bf80",
-      "from_addr": "0056bf9e",
-      "name": "core_tommygun.cpp_FUN_0056bf80",
+      "name": "core_firestff.cpp_CFirestaff_setWeaponState_FUN_004a5770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e3e60",
       "from_addr": "004e3ea1",
-      "name": "unkafter_lightgun.cpp_FUN_004e3e60",
+      "name": "core_lightsta.cpp_CLightStaff_setWeaponState_FUN_004e3e60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004e74b0",
+      "from_addr": "004e74c4",
+      "name": "core_melee.cpp_CMelee_setWeaponState_FUN_004e74b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056bf80",
+      "from_addr": "0056bf9e",
+      "name": "core_tommygun.cpp_CTommyGun_setWeaponState_FUN_0056bf80",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -72,7 +70,7 @@
       {
         "call_addr": "0042534b",
         "call_type": "direct",
-        "caller": "core_burncrss.cpp_FUN_00425300",
+        "caller": "core_burncrss.cpp_CBurncross_setWeaponState_FUN_00425300",
         "estimated_params": 2,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -83,7 +81,7 @@
       {
         "call_addr": "0048b683",
         "call_type": "direct",
-        "caller": "core_exorcism.cpp_FUN_0048b640",
+        "caller": "core_exorcism.cpp_CExorcism_setWeaponState_FUN_0048b640",
         "estimated_params": 2,
         "instructions_analyzed": 10,
         "method": "push_count",
@@ -94,7 +92,7 @@
       {
         "call_addr": "004a57a7",
         "call_type": "direct",
-        "caller": "core_firestff.cpp_FUN_004a5770",
+        "caller": "core_firestff.cpp_CFirestaff_setWeaponState_FUN_004a5770",
         "estimated_params": 2,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -105,7 +103,7 @@
       {
         "call_addr": "004e3ea1",
         "call_type": "direct",
-        "caller": "unkafter_lightgun.cpp_FUN_004e3e60",
+        "caller": "core_lightsta.cpp_CLightStaff_setWeaponState_FUN_004e3e60",
         "estimated_params": 2,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -116,7 +114,7 @@
       {
         "call_addr": "004e74c4",
         "call_type": "direct",
-        "caller": "core_melee.cpp_FUN_004e74b0",
+        "caller": "core_melee.cpp_CMelee_setWeaponState_FUN_004e74b0",
         "estimated_params": 2,
         "instructions_analyzed": 5,
         "method": "push_count",
@@ -127,7 +125,7 @@
       {
         "call_addr": "0056bf9e",
         "call_type": "direct",
-        "caller": "core_tommygun.cpp_FUN_0056bf80",
+        "caller": "core_tommygun.cpp_CTommyGun_setWeaponState_FUN_0056bf80",
         "estimated_params": 2,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -177,40 +175,31 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x2d4 = weapon_state;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CWeapon",
         "offset": 220,
         "vtable_addr": "005df104"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CStorm",
         "offset": 220,
         "vtable_addr": "005e5014"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CWeapon",
         "offset": 220,
         "vtable_addr": "005e6244"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CFlintlock",
         "offset": 220,
         "vtable_addr": "005e0564"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CWeapon",
         "offset": 220,
         "vtable_addr": "005e3874"
       }

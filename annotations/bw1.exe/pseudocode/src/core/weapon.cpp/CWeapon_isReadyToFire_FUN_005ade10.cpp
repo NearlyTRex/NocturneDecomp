@@ -9,5 +9,5 @@
 int __cdecl core_weapon_cpp_CWeapon_isReadyToFire_FUN_005ade10(CWeapon *this_ptr)
 
 {
-  return (uint)((*(uint *)&this_ptr->field_0x300 & 0x7fffffff) == 0);
+  return (uint)(ABS(this_ptr->fire_cooldown_timer) == 0.0);
 }

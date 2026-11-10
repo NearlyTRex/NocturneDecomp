@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_morph.cpp_CMorph_ctor_FUN_004fa8a0
 ;   core_npc.cpp_CNPC_ctor_FUN_00508f40
-;   core_skeleton.cpp_FUN_0054eae0
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0
 ;
 ; *****************************************************************************
 
@@ -75,8 +75,8 @@ section .text
     PUSH EAX                            ; 0050a4d3
     MOV ESI,0x5cb6c4                    ; 0050a4d4
     MOV dword ptr [EBX + 0x207d0],0x0   ; 0050a4d9
-    CALL core_skeleton.cpp_FUN_0054eae0 ; 0050a4e3
-        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_0054eae0()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0 ; 0050a4e3
+        ;   XREF to: 0054eae0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_0054eae0(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0050a4e8
     LEA EDI,[EBX + 0x2074c]             ; 0050a4eb
     MOV dword ptr [EBX + 0x21404],0x3f800000 ; 0050a4f1

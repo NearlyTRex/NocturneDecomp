@@ -8,8 +8,8 @@
 ; int              Stack[0x8]:4   box_index
 ;
 ; XREF[3]:
-;   core_setdir.cpp_FUN_0055ba50 at 0055ba64
-;   core_setdir.cpp_FUN_0055bf10 at 0055bf73
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10 at 0055bf73
+;   core_setdir.cpp_CDemonSet_isPointInVdirGroup_FUN_0055ba50 at 0055ba64
 ;   core_setdir.cpp_FUN_0055c060 at 0055c0a3
 ;
 ; *****************************************************************************

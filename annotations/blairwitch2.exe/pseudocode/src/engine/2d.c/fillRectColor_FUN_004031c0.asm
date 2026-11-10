@@ -14,14 +14,14 @@
 ;
 ; XREF[17]:
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a5a35
-;   core_game.cpp_FUN_004b32c0 at 004b35f8
+;   core_game.cpp_CGame_renderOverlay_FUN_004b32c0 at 004b35f8
 ;   core_game.cpp_FUN_004bb3d0 at 004bb42e
 ;   core_game.cpp_drawHealthBar_FUN_004b3220 at 004b32aa
 ;   core_inv.cpp_FUN_004dd9b0 at 004de139
-;   core_level.cpp_FUN_004e1600 at 004e163a
+;   core_level.cpp_CLevelLoader_update_FUN_004e1600 at 004e163a
 ;   core_menu.cpp_FUN_004ebf10 at 004ecadc
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004eb7c0 at 004eb935
-;   core_script.cpp_FUN_005218a0 at 0052194c
+;   core_script.cpp_CScript_renderSubtitles_FUN_005218a0 at 0052194c
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250 at 0040326c
 ;   ... and 7 more
 ;

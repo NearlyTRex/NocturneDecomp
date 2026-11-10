@@ -171,7 +171,7 @@
       }
     ],
     "importable":true,
-    "name":"core_game.cpp_FUN_004b8fce",
+    "name":"core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -189,7 +189,7 @@
       }
     ],
     "importable":true,
-    "name":"core_gore.cpp_FUN_004c9fce",
+    "name":"core_gore.cpp_convertVecFloatToFixed_FUN_004c9fce",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -207,7 +207,7 @@
       }
     ],
     "importable":true,
-    "name":"core_menu.cpp_FUN_004eb3ce",
+    "name":"core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -333,7 +333,7 @@
       }
     ],
     "importable":true,
-    "name":"sound_sndwav.cpp_FUN_00558ace",
+    "name":"sound_sndwav.cpp_getWavInDevice_FUN_00558ace",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -397,7 +397,7 @@
       }
     ],
     "importable":true,
-    "name":"engine_special.cpp_FUN_0055fcce",
+    "name":"engine_special.cpp_flushParticleList_FUN_0055fcce",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{
@@ -520,14 +520,56 @@
         "start":"005ba2ce"
       }
     ],
+    "conv":"__cdecl",
     "importable":true,
-    "name":"crt_unknown.c_FUN_005ba2ce",
-    "ret":"undefined1",
+    "name":"crt_unknown.c__getcwd_FUN_005ba2ce",
+    "ret":"char*",
     "thtarget":"005c0f10",
     "thunk":true,
     "vars":{
+      "params":[
+        {
+          "name":"buffer",
+          "storage":{
+            "offset":4,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x4]",
+                "offset":4,
+                "size":4
+              }
+            ]
+          },
+          "type":"char*"
+        },
+        {
+          "name":"size",
+          "storage":{
+            "offset":8,
+            "size":4,
+            "stack":true,
+            "varnodes":[
+              {
+                "addr":"Stack[0x8]",
+                "offset":8,
+                "size":4
+              }
+            ]
+          },
+          "type":"SIZE_T"
+        }
+      ],
       "ret_storage":{
-        "invalid":true
+        "reg":"EAX",
+        "size":4,
+        "varnodes":[
+          {
+            "addr":"register:00000000",
+            "size":4
+          }
+        ]
       }
     }
   },
@@ -541,7 +583,7 @@
       }
     ],
     "importable":true,
-    "name":"unkafter_morph.cpp_FUN_005c47ce",
+    "name":"crt_unknown.c_FUN_005c47ce",
     "ret":"undefined1",
     "vars":{
       "ret_storage":{

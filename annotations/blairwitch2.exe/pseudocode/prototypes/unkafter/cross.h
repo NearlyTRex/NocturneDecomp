@@ -17,33 +17,13 @@ CCross * CCross::ctor(CCross *this_ptr);
 // Address: 005a6b30
 CCross * CCross::dtor(CCross *this_ptr,uint flags);
 
-// Original: unkafter_cross.cpp_FUN_005a6b90
-// Address: 005a6b90
-void FUN_005a6b90(CWeapon *param_1);
-
-// Original: unkafter_cross.cpp_FUN_005a6ba0
-// Address: 005a6ba0
-bool FUN_005a6ba0(CWeapon *param_1);
-
-// Original: unkafter_cross.cpp_FUN_005a6bc0
-// Address: 005a6bc0
-undefined4 FUN_005a6bc0(int param_1);
-
 // Original: unkafter_cross.cpp_FUN_005a6cf0
 // Address: 005a6cf0
 void FUN_005a6cf0(CDemonActor *param_1);
 
-// Original: unkafter_cross.cpp_FUN_005a6ed0
-// Address: 005a6ed0
-void FUN_005a6ed0(CDemonActor *param_1,float param_2);
-
 // Original: unkafter_cross.cpp_FUN_005a7950
 // Address: 005a7950
 void FUN_005a7950(void);
-
-// Original: unkafter_cross.cpp_FUN_005a7970
-// Address: 005a7970
-undefined4 FUN_005a7970(void);
 
 // Original: unkafter_cross.cpp_CSimpleCross_ctor_FUN_005a7980
 // Address: 005a7980

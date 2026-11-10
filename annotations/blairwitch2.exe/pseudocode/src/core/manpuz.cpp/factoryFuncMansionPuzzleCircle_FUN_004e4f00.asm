@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_manpuz.cpp_CMansionPuzzleCircle_ctor_FUN_004e4f30
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x1670                         ; 004e4f00
         ;   Label: core_manpuz.cpp_factoryFuncMansionPuzzleCircle_FUN_004e4f00
-    CALL crt_unknown.c_FUN_005b8be2     ; 004e4f05
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004e4f05
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004e4f0a
     TEST EAX,EAX                        ; 004e4f0d
     JNZ 0x004e4f12                      ; 004e4f0f

@@ -1,0 +1,177 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 36,
+    "complexity_score": 91,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 5,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 57
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00432000",
+    "address_range": [
+      [
+        "00432000",
+        "0043205e"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_charactr.cpp_CCharacter_getCarryObjToBodyXForm_FUN_00432000",
+    "signature": "CMatrix3x4f * __stack2_esi core_charactr_cpp_CCharacter_getCarryObjToBodyXForm_FUN_00432000(CCharacter *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "005833e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005833e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.382352941176471,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 15,
+      "BRANCH": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 28,
+      "INT_ADD": 17,
+      "INT_AND": 55,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 6,
+      "INT_LESS": 3,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 6,
+      "INT_OR": 15,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 17,
+      "INT_SUB": 14,
+      "INT_XOR": 3,
+      "INT_ZEXT": 2,
+      "LOAD": 7,
+      "POPCOUNT": 11,
+      "RETURN": 1,
+      "STORE": 6
+    },
+    "pcode_op_count": 251
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CCharacter *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 14,
+      "match": "field_0xe80",
+      "severity": "mild",
+      "text": "&(this_ptr->model).field_0xe80 +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 21,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 21,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 18,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 00432055, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 31,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 00432055: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConstruct",
+        "offset": 300,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CHotDemon",
+        "offset": 300,
+        "vtable_addr": "005e1d04"
+      },
+      {
+        "class_name": "CTheHand",
+        "offset": 300,
+        "vtable_addr": "005e5504"
+      },
+      {
+        "class_name": "CKedward",
+        "offset": 300,
+        "vtable_addr": "005e7204"
+      },
+      {
+        "class_name": "CDarkwolf",
+        "offset": 300,
+        "vtable_addr": "005e7a04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 42
+  }
+}

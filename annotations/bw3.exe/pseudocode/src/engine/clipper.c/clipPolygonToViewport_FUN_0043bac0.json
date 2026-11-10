@@ -2,12 +2,12 @@
   "compile_source": "c",
   "complexity": {
     "assembly_lines": 735,
-    "complexity_score": 2478,
+    "complexity_score": 2479,
     "cross_reference_count": 10,
     "function_call_count": 8,
     "global_count": 54,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 418,
+    "pseudocode_lines": 419,
     "suspect_count": 203,
     "suspect_types": [
       "pointer_cast",
@@ -17,15 +17,9 @@
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 1153
+    "total_lines": 1154
   },
   "cross_references": [
-    {
-      "addr": "004075b0",
-      "from_addr": "004076ed",
-      "name": "engine_3d.c_FUN_004075b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
     {
       "addr": "00406d90",
       "from_addr": "00406e72",
@@ -60,6 +54,12 @@
       "addr": "00403b70",
       "from_addr": "00403c41",
       "name": "engine_3d.c_renderPolygonFogColorOp6_FUN_00403b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004075b0",
+      "from_addr": "004076ed",
+      "name": "engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -120,14 +120,14 @@
       "name": "engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0"
     },
     {
-      "addr": "00516de0",
-      "is_variadic": false,
-      "name": "engine_prim.c_FUN_00516de0"
-    },
-    {
       "addr": "00517480",
       "is_variadic": false,
-      "name": "engine_prim.c_FUN_00517480"
+      "name": "engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480"
+    },
+    {
+      "addr": "00516de0",
+      "is_variadic": false,
+      "name": "engine_prim.c_renderScanlinePolygon_FUN_00516de0"
     },
     {
       "addr": "00565c40",
@@ -1772,18 +1772,18 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 416,
+      "line": 417,
       "match": "DAT_007e3e8c",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_00516de0((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
+      "text": "((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 416,
+      "line": 417,
       "match": "DAT_007e3e88",
       "severity": "mild",
-      "text": "engine_prim_c_FUN_00516de0((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
+      "text": "((SRenderVertex *)&DAT_007e3e8c,DAT_007e3e88);",
       "type": "undefined_data"
     },
     {

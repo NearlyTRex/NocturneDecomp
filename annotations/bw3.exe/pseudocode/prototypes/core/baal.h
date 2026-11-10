@@ -21,41 +21,41 @@ CDemonActorType * CBaal::getActorType(CBaal *this_ptr);
 // Address: 00596660
 CBaal * CBaal::ctor(CBaal *this_ptr);
 
-// Original: core_baal.cpp_FUN_00596730
+// Original: core_baal.cpp_CBaal_setup_FUN_00596730
 // Address: 00596730
-void FUN_00596730(CEnemy *param_1);
+void __cdecl CBaal::setup(CBaal *this_ptr);
 
-// Original: core_baal.cpp_FUN_005968a0
+// Original: core_baal.cpp_CBaal_process_FUN_005968a0
 // Address: 005968a0
-void FUN_005968a0(CEnemy *param_1,float param_2);
+void __cdecl CBaal::process(CBaal *this_ptr,float delta_time);
 
 // Original: core_baal.cpp_FUN_00597700
 // Address: 00597700
 void FUN_00597700(int param_1);
 
-// Original: core_baal.cpp_FUN_00597810
+// Original: core_baal.cpp_CBaal_getCarryObjToBodyXForm_FUN_00597810
 // Address: 00597810
-void FUN_00597810(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CBaal::getCarryObjToBodyXForm(CBaal *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_baal.cpp_FUN_00597940
+// Original: core_baal.cpp_CBaal_renderOpaque_FUN_00597940
 // Address: 00597940
-void FUN_00597940(CCharacter *param_1);
+int __cdecl CBaal::renderOpaque(CBaal *this_ptr);
 
-// Original: core_baal.cpp_FUN_00597970
+// Original: core_baal.cpp_CBaal_renderTransparent_FUN_00597970
 // Address: 00597970
-undefined4 FUN_00597970(CDemonActor *param_1);
+int __cdecl CBaal::renderTransparent(CBaal *this_ptr);
 
-// Original: core_baal.cpp_FUN_00597af0
+// Original: core_baal.cpp_CBaal_processDamage_FUN_00597af0
 // Address: 00597af0
-void FUN_00597af0(int param_1,int param_2);
+void __cdecl CBaal::processDamage(CBaal *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_baal.cpp_FUN_00597be0
 // Address: 00597be0
 void FUN_00597be0(int param_1,int param_2);
 
-// Original: core_baal.cpp_FUN_00597c70
+// Original: core_baal.cpp_CBaal_archive_FUN_00597c70
 // Address: 00597c70
-void FUN_00597c70(int param_1);
+void __cdecl CBaal::archive(CBaal *this_ptr);
 
 // Original: core_baal.cpp_CBaal_dtor_FUN_00597d00
 // Address: 00597d00

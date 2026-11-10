@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 246,
+    "complexity_score": 191,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 31,
-    "suspect_count": 20,
+    "suspect_count": 15,
     "suspect_types": [
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -46,14 +45,14 @@
       "name": "engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0"
     },
     {
+      "addr": "004ab560",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
+    },
+    {
       "addr": "004a8df0",
       "is_variadic": false,
       "name": "engine_font.cpp_FUN_004a8df0"
-    },
-    {
-      "addr": "004ab560",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
     }
   ],
   "globals": [
@@ -71,13 +70,13 @@
     },
     {
       "addr": "01caf238",
-      "name": "CAlphaBitmap_01caf22c.field12_0xc",
+      "name": "CAlphaBitmap_01caf22c.width",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01caf23c",
-      "name": "CAlphaBitmap_01caf22c.field16_0x10",
+      "name": "CAlphaBitmap_01caf22c.height",
       "type": "undefined4",
       "value": null
     }
@@ -189,7 +188,7 @@
       "line": 15,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = engine_font_cpp_FUN_004ab560((CBitFont *)param_1[0x47],0x78);",
+      "text": "iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004ab560((CBitFont *)param_1[0x47],0x78);",
       "type": "unnamed_param"
     },
     {
@@ -247,46 +246,6 @@
       "severity": "mild",
       "text": "x = *param_1;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 24,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "if ((int)CAlphaBitmap_01caf22c._12_4_ < iVar2) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 27,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "iVar2 = iVar2 - CAlphaBitmap_01caf22c._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "x = x + CAlphaBitmap_01caf22c._12_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 29,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "} while ((int)CAlphaBitmap_01caf22c._12_4_ < iVar2);",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 32,
-      "match": "._16_4_",
-      "severity": "mild",
-      "text": "(&CAlphaBitmap_01caf22c,x,iVar1,0,0,iVar2 + -1,CAlphaBitmap_01caf22c._16_4_ + -1,0xffff)",
-      "type": "unknown_field"
     }
   ],
   "vtable_info": {

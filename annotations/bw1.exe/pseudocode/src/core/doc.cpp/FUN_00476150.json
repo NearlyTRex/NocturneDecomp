@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 267,
+    "complexity_score": 218,
     "cross_reference_count": 1,
     "function_call_count": 2,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 32,
-    "suspect_count": 21,
+    "pseudocode_lines": 33,
+    "suspect_count": 16,
     "suspect_types": [
       "param_count_too_few",
-      "unnamed_field",
+      "unaffected_reg",
       "unnamed_param",
       "unresolved_funcptr",
       "unrolled_memset"
     ],
-    "total_lines": 94
+    "total_lines": 95
   },
   "cross_references": [
     {
@@ -137,8 +137,16 @@
       "type": "unnamed_param"
     },
     {
+      "description": "Unaffected register variable",
+      "line": 8,
+      "match": "unaff_EDI",
+      "severity": "moderate",
+      "text": "CDemonActor *unaff_EDI;",
+      "type": "unaffected_reg"
+    },
+    {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *(int *)(param_1 + 0x20004);",
@@ -146,7 +154,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 11,
+      "line": 12,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0xc))(iVar2,param_2);",
@@ -154,7 +162,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_2",
       "severity": "mild",
       "text": "(**(code **)(*(int *)(iVar2 + 0x154) + 0xc))(iVar2,param_2);",
@@ -162,71 +170,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 14,
+      "line": 15,
       "match": "param_1",
       "severity": "mild",
       "text": "(*(uint *)(param_1 + 0x20004),g_CDynamiteClassInfo.name_hash);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x584 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x580 = *(uint *)&this_ptr->field_0x584;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x584",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x580 = *(uint *)&this_ptr->field_0x584;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x57c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x57c = *(uint *)&this_ptr->field_0x580;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x580",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x57c = *(uint *)&this_ptr->field_0x580;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 21,
-      "match": "code *",
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EDI",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xe4))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr->field_0x154 + 0xe4))(this_ptr);",
-      "type": "unnamed_field"
+      "text": "(*(((this_ptr->base).vtable._uc)->_uc).isGrabbable)(this_ptr,unaff_EDI);",
+      "type": "unaffected_reg"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 22,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x20004) = 0;",
@@ -234,7 +194,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2c98) = 0;",
@@ -242,7 +202,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x2c9c) = 0;",
@@ -250,7 +210,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 27,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1ffbc) = uVar1;",
@@ -258,7 +218,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "if (*(int *)(param_1 + 0x1ff5c) == 3) {",
@@ -266,18 +226,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
       "text": "*(uint *)(param_1 + 0x1ff5c) = 0;",
       "type": "unnamed_param"
     },
     {
-      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0`). Replace with 3 direct stores of the constant in a .keep.",
-      "line": 18,
+      "description": "Watcom cascade constant fill (3 sibling fields chained through prior store of `0.0`). Replace with 3 direct stores of the constant in a .keep.",
+      "line": 19,
       "match": "cascade_constant_fill",
       "severity": "moderate",
-      "text": "*(uint *)&this_ptr->field_0x584 = 0;",
+      "text": "(this_ptr->model).bone_origins[0x51].z = 0.0;",
       "type": "unrolled_memset"
     },
     {

@@ -13,7 +13,7 @@
 ;   sound_mp3.cpp_FUN_0052af80 at 0052b054
 ;
 ; Called Functions:
-;   sound_mp3.cpp_FUN_00525cd0
+;   sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0
 ;
 ; *****************************************************************************
 
@@ -38,8 +38,8 @@ section .text
     PUSH EBX                            ; 00525e92
         ;   Label: LAB_00525e92
     PUSH ESI                            ; 00525e93
-    CALL sound_mp3.cpp_FUN_00525cd0     ; 00525e94
-        ;   XREF to: 00525cd0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00525cd0(CFileBitStream * this_ptr, int num_bits)
+    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0 ; 00525e94
+        ;   XREF to: 00525cd0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 00525e99
     MOV EBX,EAX                         ; 00525e9c
     MOV EAX,EBX                         ; 00525e9e
@@ -67,8 +67,8 @@ section .text
     SUB EDX,EAX                         ; 00525ec4
     PUSH EDX                            ; 00525ec6
     PUSH ESI                            ; 00525ec7
-    CALL sound_mp3.cpp_FUN_00525cd0     ; 00525ec8
-        ;   XREF to: 00525cd0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00525cd0(CFileBitStream * this_ptr, int num_bits)
+    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0 ; 00525ec8
+        ;   XREF to: 00525cd0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 00525ecd
     JMP 0x00525e92                      ; 00525ed0
         ;   XREF to: 00525e92 (UNCONDITIONAL_JUMP)  ; LAB_00525e92
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_00525ed2
     PUSH ESI                            ; 00525ed4
     SHL EBX,0x8                         ; 00525ed5
-    CALL sound_mp3.cpp_FUN_00525cd0     ; 00525ed8
-        ;   XREF to: 00525cd0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_FUN_00525cd0(CFileBitStream * this_ptr, int num_bits)
+    CALL sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0 ; 00525ed8
+        ;   XREF to: 00525cd0 (UNCONDITIONAL_CALL)  ; uint sound_mp3.cpp_CFileBitStream_readBits_FUN_00525cd0(CFileBitStream * this_ptr, int num_bits)
     ADD ESP,0x8                         ; 00525edd
     OR EBX,EAX                          ; 00525ee0
     JMP 0x00525e9e                      ; 00525ee2

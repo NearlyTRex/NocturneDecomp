@@ -8,16 +8,16 @@
 ; CDemonActor *    Stack[0x8]:4   actor
 ;
 ; XREF[48]:
-;   core_actor.cpp_FUN_00408a00 at 00408a26
-;   core_actor.cpp_FUN_00409f20 at 0040a53b
-;   core_actor.cpp_FUN_0040c6a0 at 0040c6fe
-;   core_actor.cpp_FUN_0040c750 at 0040c7cb
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c03f
-;   core_carved.cpp_FUN_00428ae0 at 00429750
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00 at 00408a26
+;   core_actor.cpp_CDemonActor_processFootstepAtOffset_FUN_0040c750 at 0040c7cb
+;   core_actor.cpp_CDemonActor_processFootstep_FUN_0040c6a0 at 0040c6fe
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a53b
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c03f
+;   core_carved.cpp_CCarved_process_FUN_00428ae0 at 00429750
 ;   core_charactr.cpp_FUN_0042d750 at 0042d8a2
 ;   core_charactr.cpp_FUN_00432f10 at 004334d7
-;   core_cow.cpp_FUN_00448570 at 004486c4
-;   core_crossbow.cpp_FUN_00449a50 at 00449c22
+;   core_cow.cpp_CZombieCow_process_FUN_00448570 at 004486c4
+;   core_crossbow.cpp_CCrossbow_fire_FUN_00449a50 at 00449c22
 ;   ... and 38 more
 ;
 ; Referenced Globals:

@@ -6,7 +6,7 @@
 ;
 ; XREF[7]:
 ;   core_cloth.cpp_CClothList_load_FUN_00441cc0 at 00441d50
-;   core_cloth.cpp_FUN_00441d70 at 00441d8e
+;   core_cloth.cpp_CClothList_reset_FUN_00441d70 at 00441d8e
 ;   core_cloth.cpp_FUN_00441e5e at 00441eb0
 ;   core_gabriela.cpp_CGabriella_dtor_FUN_004cb760 at 004cb775
 ;   core_mimic.cpp_CMimic_dtor_FUN_0050f1b0 at 0050f209

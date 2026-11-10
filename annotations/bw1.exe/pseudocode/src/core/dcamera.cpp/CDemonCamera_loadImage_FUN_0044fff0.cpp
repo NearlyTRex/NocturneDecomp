@@ -192,7 +192,7 @@ LAB_00450103:
             core_main_c_FUN_005030e0("%s too big to fit in decompress buffer",local_f4);
           }
           _fread(&DAT_007ddbb4,local_9c,1,local_14);
-          support_codec_cpp_FUN_004436f0(&g_CLZWDecompressInstance);
+          support_codec_cpp_CLZWDecompress_init_FUN_004436f0(&g_CLZWDecompressInstance);
           local_98 = _DAT_01480e28 * 0x12c00;
           iVar6 = support_codec_cpp_FUN_00442d90
                             (&g_CLZWDecompressInstance,&DAT_007ddbb4,&local_9c,0x1354e20,&local_98,1
@@ -267,13 +267,13 @@ LAB_00450103:
       } while (iVar16 != 0x400);
       _fread(&DAT_01483a50,0x280,0x1e0,p_Var5);
       _fclose(p_Var5);
-      iVar6 = *(int *)&this_ptr->field_0x148;
+      iVar6 = this_ptr->framebuffer_height;
       if (iVar6 == 0xf0) {
         local_20 = 0;
         do {
           local_94 = 0;
           pbVar7 = &DAT_01483a50 + local_20;
-          piVar26 = (int *)(*(int *)&this_ptr->field_0x158 + local_20);
+          piVar26 = (int *)((int)this_ptr->framebuffer_aligned + local_20);
           do {
             local_94 = local_94 + 1;
             *piVar26 = ((*(uint *)((uint)*pbVar7 * 4 + 0xb8149c) & 0xfcfcfc) >> 2) +
@@ -290,7 +290,7 @@ LAB_00450103:
       else if (iVar6 == 0x1e0) {
         pbVar7 = &DAT_01483a50;
         iVar6 = 0;
-        puVar15 = *(uint **)&this_ptr->field_0x158;
+        puVar15 = this_ptr->framebuffer_aligned;
         do {
           bVar1 = *pbVar7;
           pbVar7 = pbVar7 + 1;
@@ -300,25 +300,25 @@ LAB_00450103:
         } while (iVar6 < 0x4b000);
       }
       else if (iVar6 < 0x1e1) {
-        local_88 = *(uint **)&this_ptr->field_0x158;
-        uVar3 = 0x9600000 / (longlong)*(int *)&this_ptr->field_0x144;
+        local_88 = this_ptr->framebuffer_aligned;
+        uVar3 = 0x9600000 / (longlong)this_ptr->framebuffer_width;
         local_84 = (uint)((longlong)
                           ((ulonglong)(uint)((int)uVar3 >> 0x1f) << 0x20 | uVar3 & 0xffffffff) /
-                         (longlong)*(int *)&this_ptr->field_0x148);
+                         (longlong)this_ptr->framebuffer_height);
         local_7c = 0;
-        if (0 < *(int *)&this_ptr->field_0x148) {
+        if (0 < this_ptr->framebuffer_height) {
           local_28 = 0;
           do {
             local_80 = 0;
-            if (0 < *(int *)&this_ptr->field_0x144) {
+            if (0 < this_ptr->framebuffer_width) {
               local_2c = 0;
               local_64 = local_28;
               do {
-                uVar8 = local_2c / *(int *)&this_ptr->field_0x144;
-                uVar9 = local_28 / *(int *)&this_ptr->field_0x148;
-                local_6c = (int)(0x27d80 / (longlong)*(int *)&this_ptr->field_0x144) + uVar8;
+                uVar8 = local_2c / this_ptr->framebuffer_width;
+                uVar9 = local_28 / this_ptr->framebuffer_height;
+                local_6c = (int)(0x27d80 / (longlong)this_ptr->framebuffer_width) + uVar8;
                 iVar20 = ((int)uVar9 >> 8) * 0x280;
-                local_68 = (int)(0x1de20 / (longlong)*(int *)&this_ptr->field_0x148) + uVar9;
+                local_68 = (int)(0x1de20 / (longlong)this_ptr->framebuffer_height) + uVar9;
                 local_60 = (int)uVar8 >> 8;
                 uVar13 = *(uint *)((uint)(byte)(&DAT_01483a50)[local_60 + iVar20] * 4 + 0xb8149c);
                 iVar16 = 0xff - (uVar9 & 0xff);
@@ -363,36 +363,36 @@ LAB_00450103:
                 *local_88 = uVar13 | uVar8 << 8 | uVar9 << 0x10;
                 local_88 = local_88 + 1;
                 local_2c = local_2c + 0x28000;
-              } while (local_80 < *(int *)&this_ptr->field_0x144);
+              } while (local_80 < this_ptr->framebuffer_width);
             }
             local_28 = local_28 + 0x1e000;
             local_7c = local_7c + 1;
-          } while (local_7c < *(int *)&this_ptr->field_0x148);
+          } while (local_7c < this_ptr->framebuffer_height);
         }
       }
       else {
-        local_90 = *(uint **)&this_ptr->field_0x158;
+        local_90 = this_ptr->framebuffer_aligned;
         local_8c = 0;
-        if (0 < *(int *)&this_ptr->field_0x148) {
+        if (0 < this_ptr->framebuffer_height) {
           local_24 = 0;
           do {
             iVar6 = 0;
-            if (0 < *(int *)&this_ptr->field_0x144) {
+            if (0 < this_ptr->framebuffer_width) {
               iVar20 = 0;
               do {
-                iVar16 = iVar20 / *(int *)&this_ptr->field_0x144;
+                iVar16 = iVar20 / this_ptr->framebuffer_width;
                 iVar20 = iVar20 + 0x280;
                 *local_90 = *(uint *)
                              ((uint)(byte)(&DAT_01483a50)
-                                          [iVar16 + (local_24 / *(int *)&this_ptr->field_0x148) *
+                                          [iVar16 + (local_24 / this_ptr->framebuffer_height) *
                                                     0x280] * 4 + 0xb8149c);
                 local_90 = local_90 + 1;
                 iVar6 = iVar6 + 1;
-              } while (iVar6 < *(int *)&this_ptr->field_0x144);
+              } while (iVar6 < this_ptr->framebuffer_width);
             }
             local_24 = local_24 + 0x1e0;
             local_8c = local_8c + 1;
-          } while (local_8c < *(int *)&this_ptr->field_0x148);
+          } while (local_8c < this_ptr->framebuffer_height);
         }
       }
       iVar20 = 0;
@@ -440,7 +440,7 @@ LAB_00450103:
         puVar15 = (uint *)((int)puVar15 + (uint)bVar30 * -2 + 1);
         puVar27 = (uint *)((int)puVar27 + (uint)bVar30 * -2 + 1);
       }
-      engine_drender_cpp_FUN_00484fb0
+      engine_drender_cpp_CDemonRenderer_updateTexture_FUN_00484fb0
                 (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061127c,(SRGBColorPalette *)&DAT_00b81198);
       _memset(0x12d40);
       if (DAT_0061b49c == 0x180) {

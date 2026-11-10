@@ -20,8 +20,8 @@
 ;   undefined4 DAT_0061c068
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;   undefined4 g_CBasicEnemyClassInfo.name_hash
 ;
 ; Called Functions:
@@ -78,7 +78,7 @@ section .text
     MOV EAX,[0x0061b5a8]                ; 005a6d79 | g_CDemonSetPtr | g_CDemonSetInstance
         ;   Label: LAB_005a6d79
     MOV EDX,dword ptr [ESP + 0x28]      ; 005a6d7e
-    CMP EDX,dword ptr [EAX + 0x14d164]  ; 005a6d82 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDX,dword ptr [EAX + 0x14d164]  ; 005a6d82 | g_CDemonSetInstance.actor_count
     JL 0x005a6da6                       ; 005a6d88
         ;   XREF to: 005a6da6 (CONDITIONAL_JUMP)  ; LAB_005a6da6
     ADD ESP,0x30                        ; 005a6d8a
@@ -102,7 +102,7 @@ section .text
     MOV EBX,dword ptr [0x02668498]      ; 005a6daa | g_CBasicEnemyClassInfo.name_hash
     ADD EAX,ESI                         ; 005a6db0
     PUSH EBX                            ; 005a6db2
-    MOV EDI,dword ptr [EAX + 0x14d168]  ; 005a6db3 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EDI,dword ptr [EAX + 0x14d168]  ; 005a6db3 | g_CDemonSetInstance.actors[0]
     PUSH EDI                            ; 005a6db9
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 005a6dba
         ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()

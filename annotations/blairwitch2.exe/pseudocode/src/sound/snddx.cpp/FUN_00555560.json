@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 393,
-    "complexity_score": 571,
+    "complexity_score": 562,
     "cross_reference_count": 0,
     "function_call_count": 7,
     "global_count": 18,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 161,
+    "pseudocode_lines": 152,
     "suspect_count": 38,
     "suspect_types": [
       "extra_output",
@@ -17,7 +17,7 @@
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
-    "total_lines": 554
+    "total_lines": 545
   },
   "cross_references": [],
   "function": {
@@ -46,7 +46,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00554ad0",
@@ -298,7 +298,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 40,
+      "line": 39,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);",
@@ -306,7 +306,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 46,
+      "line": 45,
       "match": "param_3",
       "severity": "mild",
       "text": "uStack_46 = param_3;",
@@ -314,7 +314,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 47,
+      "line": 46,
       "match": "param_4",
       "severity": "mild",
       "text": "iStack_44 = param_4;",
@@ -322,7 +322,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 48,
+      "line": 47,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "uStack_3c = (short)((int)((param_2 + (param_2 >> 0x1f) * -8) -",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 47,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_3c = (short)((int)((param_2 + (param_2 >> 0x1f) * -8) -",
@@ -331,14 +339,6 @@
     {
       "description": "Unnamed function parameter",
       "line": 48,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "uStack_3c = (short)((int)((param_2 + (param_2 >> 0x1f) * -8) -",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "(uint)((param_2 >> 0x1f) << 2 < 0)) >> 3) * param_3;",
@@ -346,7 +346,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 49,
+      "line": 48,
       "match": "param_3",
       "severity": "mild",
       "text": "(uint)((param_2 >> 0x1f) << 2 < 0)) >> 3) * param_3;",
@@ -354,7 +354,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_4",
       "severity": "mild",
       "text": "iStack_40 = param_4 * (uint)uStack_3c;",
@@ -362,7 +362,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "uStack_3a = (ushort)param_2;",
@@ -370,7 +370,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 52,
+      "line": 51,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5c8 + 0x38))(_DAT_0264a5c8,&uStack_48);",
@@ -378,7 +378,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 54,
+      "line": 53,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5c8 + 0x14))(_DAT_0264a5c8,&uStack_48,0x12,0);",
@@ -386,7 +386,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 60,
+      "line": 59,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5d4 + 8))(_DAT_0264a5d4);",
@@ -394,7 +394,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 77,
+      "line": 76,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_5c,&uStack_20,0);",
@@ -402,7 +402,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 79,
+      "line": 78,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_30)(piStack_30,&DAT_00621070,&piStack_2c);",
@@ -410,7 +410,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 79,
+      "line": 78,
       "match": "DAT_00621070",
       "severity": "mild",
       "text": "(**(code **)*piStack_30)(piStack_30,&DAT_00621070,&piStack_2c);",
@@ -418,7 +418,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 82,
+      "line": 81,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
@@ -426,7 +426,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 87,
+      "line": 86,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);",
@@ -434,7 +434,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 86,
       "match": "DAT_0061bf50",
       "severity": "mild",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);",
@@ -442,7 +442,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 87,
+      "line": 86,
       "match": "DAT_0264a5d4",
       "severity": "mild",
       "text": "(**(code **)*piStack_2c)(piStack_2c,&DAT_0061bf50,&DAT_0264a5d4);",
@@ -450,7 +450,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 89,
+      "line": 88,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_30 + 8))(piStack_30);",
@@ -458,7 +458,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
+      "line": 92,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*piStack_2c + 8))(piStack_2c);",
@@ -466,7 +466,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 107,
+      "line": 104,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5d4 + 0x10))(_DAT_0264a5d4,&DAT_0061bf60,0,0,0,&uStack_28,4);",
@@ -474,7 +474,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 107,
+      "line": 104,
       "match": "DAT_0061bf60",
       "severity": "mild",
       "text": "(**(code **)(*_DAT_0264a5d4 + 0x10))(_DAT_0264a5d4,&DAT_0061bf60,0,0,0,&uStack_28,4);",
@@ -482,7 +482,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 110,
+      "line": 107,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "if (0 < extraout_EAX) {",
@@ -490,7 +490,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 111,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = 0;",
@@ -498,7 +498,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 130,
+      "line": 127,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc);",
@@ -506,7 +506,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 133,
+      "line": 130,
       "match": "code *",
       "severity": "moderate",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_80,&DAT_0264a5cc,0);",
@@ -514,7 +514,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 130,
       "match": "DAT_0264a5cc",
       "severity": "mild",
       "text": "uVar1 = (**(code **)(*_DAT_0264a5c4 + 0xc))(_DAT_0264a5c4,&uStack_80,&DAT_0264a5cc,0);",
@@ -522,7 +522,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 135,
+      "line": 132,
       "match": "param_5",
       "severity": "mild",
       "text": "*param_5 = _DAT_0264a5e4;",
@@ -530,7 +530,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 161,
+      "line": 152,
       "match": "code *",
       "severity": "moderate",
       "text": "(**(code **)(*_DAT_0264a5cc + 8))(_DAT_0264a5cc);",
@@ -538,7 +538,7 @@
     },
     {
       "description": "Pointer value `enable` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 109,
+      "line": 106,
       "match": "(int)enable",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_00552b30((int)enable);",
@@ -548,7 +548,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CDirectSoundDevice",
         "offset": 12,
         "vtable_addr": "005fbcbc"
       }

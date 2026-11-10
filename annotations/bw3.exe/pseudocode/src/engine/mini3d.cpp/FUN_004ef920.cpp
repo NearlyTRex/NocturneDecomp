@@ -33,7 +33,8 @@ void engine_mini3d_cpp_FUN_004ef920(uint *param_1,CVector3f *param_2,float param
       *(uint *)(iVar3 + 0x1d7978c) = param_1[1];
       *(uint *)(iVar3 + 0x1d79790) = param_1[2];
     }
-    core_dirmat_cpp_FUN_0045b550((CMatrix3x3f *)(iVar3 + 0x1d79794),param_2);
+    core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
+              ((CMatrix3x3f *)(iVar3 + 0x1d79794),param_2);
     *(float *)(iVar3 + 0x1d797bc) = param_3;
     *(float *)(iVar3 + 0x1d797c4) = param_4;
     *(uint *)(iVar3 + 0x1d797c8) = param_5;

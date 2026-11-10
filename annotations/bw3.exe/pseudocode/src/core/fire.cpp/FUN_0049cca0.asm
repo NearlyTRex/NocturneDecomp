@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_0049cca0(undefined4 *param_1)
+; void core_fire_cpp_FUN_0049cca0(float *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x34]:4  local_34
@@ -18,14 +18,14 @@
 ;   undefined4 g_CEnemyClassInfo.name_hash
 ;   undefined4 DAT_01d5ba14
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
+;   core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930
 ;   core_mission.cpp_CDemonMission_generateActorName_FUN_004f7530
-;   core_mission.cpp_FUN_004f6930
 ;
 ; *****************************************************************************
 
@@ -80,8 +80,8 @@ section .text
     MOV ECX,dword ptr [0x00600530]      ; 0049cd23 | DAT_00600530
     PUSH ECX                            ; 0049cd29
     MOV EBX,0x41a00000                  ; 0049cd2a
-    CALL core_mission.cpp_FUN_004f6930  ; 0049cd2f
-        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
+    CALL core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930 ; 0049cd2f
+        ;   XREF to: 004f6930 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_addActorToList_FUN_004f6930(CDemonMission * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 0049cd34
     XOR EDI,EDI                         ; 0049cd37
     MOV dword ptr [ESP + 0x2c],EBX      ; 0049cd39
@@ -92,7 +92,7 @@ section .text
         ;   Label: LAB_0049cd49
     MOV EAX,[0x00603b28]                ; 0049cd4d | g_CDemonSetPtr | g_CDemonSetInstance
     MOV EBX,dword ptr [ESP + 0x3c]      ; 0049cd52
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0049cd56 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 0049cd56 | g_CDemonSetInstance.actor_count
     JL 0x0049cd71                       ; 0049cd5c
         ;   XREF to: 0049cd71 (CONDITIONAL_JUMP)  ; LAB_0049cd71
     MOV EBX,dword ptr [ESP + 0x28]      ; 0049cd5e
@@ -110,7 +110,7 @@ section .text
     MOV ESI,dword ptr [0x007e2cec]      ; 0049cd75 | g_CCharacterClassInfo.name_hash
     ADD EAX,EDI                         ; 0049cd7b
     PUSH ESI                            ; 0049cd7d
-    MOV EDX,dword ptr [EAX + 0x14d168]  ; 0049cd7e | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EDX,dword ptr [EAX + 0x14d168]  ; 0049cd7e | g_CDemonSetInstance.actors[0]
     PUSH EDX                            ; 0049cd84
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0049cd85
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()

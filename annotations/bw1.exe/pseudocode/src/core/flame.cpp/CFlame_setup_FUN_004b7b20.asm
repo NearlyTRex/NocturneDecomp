@@ -7,8 +7,8 @@
 ; CFlame *         Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_bodypart.cpp_FUN_0041ab20 at 0041ab9e
-;   core_vessel.cpp_FUN_005a8c60 at 005a8d9c
+;   core_bodypart.cpp_CBodyPart_addFire_FUN_0041ab20 at 0041ab9e
+;   core_vessel.cpp_CCryptVessel_setup_FUN_005a8c60 at 005a8d9c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00612560
@@ -18,7 +18,7 @@
 ;   undefined4 DAT_01bc120c
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   crt_stdlib.c_rand_FUN_005c084c
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;
@@ -35,8 +35,8 @@ section .text
     PUSH EDX                            ; 004b7b28
     MOV EBP,0x61cdc0                    ; 004b7b29 | DAT_0061cdc0
     XOR EDI,EDI                         ; 004b7b2e
-    CALL core_actor.cpp_FUN_00408850    ; 004b7b30
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 004b7b30
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD EBP,0xc0                        ; 004b7b35
     ADD ESP,0x4                         ; 004b7b3b
     IMUL EBX,EDI,0xc0                   ; 004b7b3e

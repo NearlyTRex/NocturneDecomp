@@ -21,37 +21,37 @@ CDemonActorType * CImp::getActorType(CImp *this_ptr);
 // Address: 004d6700
 CImp * __cdecl CImp::ctor(CImp *this_ptr);
 
-// Original: core_imp.cpp_FUN_004d6770
+// Original: core_imp.cpp_CImp_setup_FUN_004d6770
 // Address: 004d6770
-void FUN_004d6770(CEnemy *param_1);
+void __cdecl CImp::setup(CImp *this_ptr);
 
-// Original: core_imp.cpp_FUN_004d6a90
+// Original: core_imp.cpp_CImp_process_FUN_004d6a90
 // Address: 004d6a90
-void FUN_004d6a90(CEnemy *param_1,float param_2);
+void __cdecl CImp::process(CImp *this_ptr,float delta_time);
 
-// Original: core_imp.cpp_FUN_004d7970
+// Original: core_imp.cpp_CImp_getCarryObjToBodyXForm_FUN_004d7970
 // Address: 004d7970
-void FUN_004d7970(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CImp::getCarryObjToBodyXForm(CImp *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_imp.cpp_CImp_attractActorToward_FUN_004d7b60
 // Address: 004d7b60
 int __cdecl CImp::attractActorToward(CImp *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
-// Original: core_imp.cpp_FUN_004d7b70
+// Original: core_imp.cpp_CImp_archive_FUN_004d7b70
 // Address: 004d7b70
-void FUN_004d7b70(int param_1);
+void __cdecl CImp::archive(CImp *this_ptr);
 
-// Original: core_imp.cpp_FUN_004d7bd0
+// Original: core_imp.cpp_CImp_processDismemberment_FUN_004d7bd0
 // Address: 004d7bd0
-void __cdecl FUN_004d7bd0(CImp *this_ptr,SDamageInfo *damage_info);
+void __cdecl CImp::processDismemberment(CImp *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_imp.cpp_FUN_004d7e70
+// Original: core_imp.cpp_CImp_processDamage_FUN_004d7e70
 // Address: 004d7e70
-void FUN_004d7e70(CImp *param_1,SDamageInfo *param_2);
+void __cdecl CImp::processDamage(CImp *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_imp.cpp_FUN_004d7fb0
+// Original: core_imp.cpp_CImp_getTargetPoints_FUN_004d7fb0
 // Address: 004d7fb0
-int FUN_004d7fb0(int param_1,undefined4 *param_2);
+int __cdecl CImp::getTargetPoints(CImp *this_ptr,CVector3f *out_points_array);
 
 // Original: core_imp.cpp_CImp_getCollisionType_FUN_004d81d0
 // Address: 004d81d0

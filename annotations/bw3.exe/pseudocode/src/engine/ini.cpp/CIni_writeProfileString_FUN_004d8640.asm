@@ -40,9 +40,9 @@
 ;   crt_stdio.c_fopen_FUN_005a43ec
 ;   crt_stdio.c_rename_FUN_005a5f20
 ;   crt_string.c__strcmp_FUN_005a3d00
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a3140
 ;   crt_unknown.c_FUN_005a54b0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_ini.cpp_FUN_004d8470
 ;
 ; *****************************************************************************
@@ -176,8 +176,8 @@ section .text
     PUSH 0x5c578a                       ; 004d8787 | = "[%s]\n"
     LEA EAX,[ESP + 0x208]               ; 004d878c
     PUSH EAX                            ; 004d8793
-    CALL crt_unknown.c_FUN_005a28c0     ; 004d8794
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004d8794
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV DL,byte ptr [EBX + 0xc]         ; 004d8799
     ADD ESP,0xc                         ; 004d879c
     TEST DL,0x10                        ; 004d879f

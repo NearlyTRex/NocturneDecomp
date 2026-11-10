@@ -6,11 +6,18 @@
 #include "system/basetypes.h"
 
 // Structure: CConsole
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xfc0 (4032 bytes)
 #pragma pack(push, 1)
 typedef struct CConsole {
-    char field_0[4032]; // 0x0
+    int file_logging_enabled; // 0x0
+    char field_4[4]; // 0x4
+    char console_buffer[4000]; // 0x8
+    int current_column; // 0xfa8
+    int current_row; // 0xfac
+    int console_width; // 0xfb0
+    int console_height; // 0xfb4
+    int screen_x; // 0xfb8
+    int screen_y; // 0xfbc
 } CConsole;
 #pragma pack(pop)
 

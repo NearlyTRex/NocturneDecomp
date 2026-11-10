@@ -21,13 +21,13 @@ CDemonActorType * CShadowsc::getActorType(CShadowsc *this_ptr);
 // Address: 005604a0
 CShadowsc * CShadowsc::ctor(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_00560510
+// Original: core_shadowsc.cpp_CShadowsc_setup_FUN_00560510
 // Address: 00560510
-void FUN_00560510(CEnemy *param_1);
+void __cdecl CShadowsc::setup(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_00560630
+// Original: core_shadowsc.cpp_CShadowsc_process_FUN_00560630
 // Address: 00560630
-void FUN_00560630(CEnemy *param_1,float param_2);
+void __cdecl CShadowsc::process(CShadowsc *this_ptr,float delta_time);
 
 // Original: core_shadowsc.cpp_FUN_00560fe0
 // Address: 00560fe0
@@ -49,25 +49,25 @@ void FUN_005610a0(int param_1);
 // Address: 005610e0
 void FUN_005610e0(int param_1);
 
-// Original: core_shadowsc.cpp_FUN_00561120
+// Original: core_shadowsc.cpp_CShadowsc_renderOpaque_FUN_00561120
 // Address: 00561120
-int FUN_00561120(CCharacter *param_1);
+int __cdecl CShadowsc::renderOpaque(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_005611a0
+// Original: core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0
 // Address: 005611a0
-undefined4 FUN_005611a0(CDemonActor *param_1);
+int __cdecl CShadowsc::renderTransparent(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_005612d0
+// Original: core_shadowsc.cpp_CShadowsc_archive_FUN_005612d0
 // Address: 005612d0
-void FUN_005612d0(CEnemy *param_1);
+void __cdecl CShadowsc::archive(CShadowsc *this_ptr);
 
-// Original: core_shadowsc.cpp_FUN_00561330
+// Original: core_shadowsc.cpp_CShadowsc_processDamage_FUN_00561330
 // Address: 00561330
-void FUN_00561330(int param_1,int param_2);
+void __cdecl CShadowsc::processDamage(CShadowsc *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_shadowsc.cpp_FUN_00561460
+// Original: core_shadowsc.cpp_CShadowsc_getTargetPoints_FUN_00561460
 // Address: 00561460
-undefined4 FUN_00561460(int param_1,undefined4 *param_2);
+int __cdecl CShadowsc::getTargetPoints(CShadowsc *this_ptr,CVector3f *out_points_array);
 
 // Original: core_shadowsc.cpp_CShadowsc_dtor_FUN_005614d0
 // Address: 005614d0

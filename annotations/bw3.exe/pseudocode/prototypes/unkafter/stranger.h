@@ -5,10 +5,6 @@
 // Function prototypes for unkafter/stranger.cpp
 // Generated from Ghidra function signatures
 
-// Original: unkafter_stranger.cpp_FUN_005270a0
-// Address: 005270a0
-void FUN_005270a0(int param_1);
-
 // Original: unkafter_stranger.cpp_FUN_00527110
 // Address: 00527110
 undefined4 FUN_00527110(int param_1);

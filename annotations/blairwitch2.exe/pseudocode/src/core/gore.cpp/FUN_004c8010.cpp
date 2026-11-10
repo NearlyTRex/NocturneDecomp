@@ -14,43 +14,27 @@ void core_gore_cpp_FUN_004c8010(uint *param_1,int param_2)
   uint uVar1;
   CVector3i *input;
   float10 fVar2;
-  int local_9c;
-  int local_98;
-  int local_94;
-  int local_90;
-  int local_8c;
-  int local_88;
+  CVector3i local_9c;
+  CVector3i local_90;
   uint local_84;
   uint local_80;
   uint local_7c;
-  int local_78;
-  int local_74;
-  int local_70;
-  int local_6c;
-  int local_68;
-  int local_64;
+  CVector3i local_78;
+  CVector3i local_6c;
   uint local_60;
   uint local_5c;
   uint local_58;
-  int local_54;
-  int local_50;
-  int local_4c;
-  int local_48;
-  int local_44;
-  int local_40;
-  int local_3c;
-  int local_38;
-  int local_34;
-  int local_30;
-  int local_2c;
-  int local_28;
+  CVector3i local_54;
+  CVector3i local_48;
+  CVector3i local_3c;
+  CVector3i local_30;
   uint *local_24;
   uint *local_20;
   uint *local_1c;
   uint *local_18;
   int local_14;
   
-  input = (CVector3i *)&local_9c;
+  input = &local_9c;
   fVar2 = (float10)(float)param_1[9] * (float10)_DAT_005d945a + (float10)_DAT_005d9462;
   round();
   local_14 = (int)ROUND(fVar2);
@@ -75,32 +59,32 @@ void core_gore_cpp_FUN_004c8010(uint *param_1,int param_2)
     local_84 = 0xbf000000;
     local_80 = 0xbf000000;
     local_7c = 0;
-    local_78 = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    local_74 = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    local_70 = (int)ROUND(_DAT_005f7ba8 * 0.0);
-    engine_special_cpp_FUN_0055d723(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&local_78);
+    local_78.x = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_78.y = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_78.z = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_78);
     local_84 = 0x3f000000;
     local_7c = 0;
     local_80 = 0xbf000000;
-    local_54 = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    local_50 = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    local_4c = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_54.x = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_54.y = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_54.z = (int)ROUND(_DAT_005f7ba8 * 0.0);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&local_54);
+              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_54);
     local_84 = 0x3f000000;
     local_7c = 0;
     local_80 = 0x3f000000;
-    local_30 = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    local_2c = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    local_28 = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_30.x = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_30.y = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_30.z = (int)ROUND(_DAT_005f7ba8 * 0.0);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&local_30);
+              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_30);
     local_84 = 0xbf000000;
     local_7c = 0;
     local_80 = 0x3f000000;
-    local_9c = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    local_98 = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    local_94 = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_9c.x = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_9c.y = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_9c.z = (int)ROUND(_DAT_005f7ba8 * 0.0);
   }
   else {
     if (param_2 != 0) {
@@ -115,38 +99,39 @@ void core_gore_cpp_FUN_004c8010(uint *param_1,int param_2)
     local_60 = 0xbf000000;
     local_5c = 0;
     local_58 = 0xbf000000;
-    local_48 = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    local_44 = (int)ROUND(_DAT_005f7ba8 * 0.0);
-    local_40 = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    engine_special_cpp_FUN_0055d723(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&local_48);
+    local_48.x = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_48.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_48.z = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    engine_special_cpp_FUN_0055d723((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&local_48);
     local_60 = 0x3f000000;
     local_58 = 0xbf000000;
     local_5c = 0;
-    local_3c = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    local_38 = (int)ROUND(_DAT_005f7ba8 * 0.0);
-    local_34 = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_3c.x = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_3c.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_3c.z = (int)ROUND(_DAT_005f7ba8 * -0.5);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&local_3c);
+              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&local_3c);
     local_60 = 0x3f000000;
     local_5c = 0;
     local_58 = 0x3f000000;
-    local_90 = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    local_8c = (int)ROUND(_DAT_005f7ba8 * 0.0);
-    local_88 = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_90.x = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    local_90.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_90.z = (int)ROUND(_DAT_005f7ba8 * 0.5);
     engine_special_cpp_FUN_0055d723
-              ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&local_90);
+              ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&local_90);
     local_60 = 0xbf000000;
     local_58 = 0x3f000000;
     local_5c = 0;
-    local_6c = (int)ROUND(_DAT_005f7ba8 * -0.5);
-    local_68 = (int)ROUND(_DAT_005f7ba8 * 0.0);
-    local_64 = (int)ROUND(_DAT_005f7ba8 * 0.5);
-    input = (CVector3i *)&local_6c;
+    local_6c.x = (int)ROUND(_DAT_005f7ba8 * -0.5);
+    local_6c.y = (int)ROUND(_DAT_005f7ba8 * 0.0);
+    local_6c.z = (int)ROUND(_DAT_005f7ba8 * 0.5);
+    input = &local_6c;
   }
-  engine_special_cpp_FUN_0055d723((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),input);
+  engine_special_cpp_FUN_0055d723
+            ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),input);
   uVar1 = param_1[5];
   local_24 = &DAT_0062203c;
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 == 0) {
 LAB_004c827a:
     DAT_00622034 = 0x2000;
@@ -166,7 +151,7 @@ LAB_004c827a:
   }
   uVar1 = param_1[5];
   local_18 = &DAT_00622068;
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 == 0) {
 LAB_004c82c2:
     DAT_00622064 = 0x2000;
@@ -186,7 +171,7 @@ LAB_004c82c2:
   }
   uVar1 = param_1[5];
   local_20 = &DAT_00622098;
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 == 0) {
 LAB_004c830d:
     DAT_00622094 = 0x2000;
@@ -206,7 +191,7 @@ LAB_004c830d:
   }
   uVar1 = param_1[5];
   local_1c = &DAT_006220c8;
-  core_actor_cpp_FUN_0040cfc0(0x40,0xc0);
+  core_actor_cpp_getRandomInt_FUN_0040cfc0(0x40,0xc0);
   if (uVar1 != 0) {
     if (uVar1 < 2) {
       DAT_006220c8 = 0x9a80;

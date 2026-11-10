@@ -21,6 +21,288 @@
     "size":1400
   },
   {
+    "kind":"funcdef",
+    "name":"CCharacter_getGrabbed",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grabber",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"grab_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CCharacter_vtable",
+    "size":104,
+    "vtable_slots":[
+      {
+        "name":"applyDamage",
+        "offset":0
+      },
+      {
+        "name":"kill",
+        "offset":4
+      },
+      {
+        "name":"isInvulnerable",
+        "offset":8
+      },
+      {
+        "name":"isGrabbable",
+        "offset":12
+      },
+      {
+        "name":"canBeGrabbed",
+        "offset":16
+      },
+      {
+        "name":"getGrabbed",
+        "offset":20
+      },
+      {
+        "name":"releaseFromGrab",
+        "offset":24
+      },
+      {
+        "name":"getGrabber",
+        "offset":28
+      },
+      {
+        "name":"releaseVictim",
+        "offset":32
+      },
+      {
+        "name":"onVictimLost",
+        "offset":36
+      },
+      {
+        "name":"checkCylinderCollisionWorld",
+        "offset":40
+      },
+      {
+        "name":"testDamageLine",
+        "offset":44
+      },
+      {
+        "name":"processDamage",
+        "offset":48
+      },
+      {
+        "name":"getDeathState",
+        "offset":52
+      },
+      {
+        "name":"attractActorToward",
+        "offset":56
+      },
+      {
+        "name":"canBeAttracted",
+        "offset":60
+      },
+      {
+        "name":"getPartDominantBone",
+        "offset":64
+      },
+      {
+        "name":"setDoorTarget",
+        "offset":68
+      },
+      {
+        "name":"clearDoorTarget",
+        "offset":72
+      },
+      {
+        "name":"hasDoorTarget",
+        "offset":76
+      },
+      {
+        "name":"dropCarriedObject",
+        "offset":80
+      },
+      {
+        "name":"getCarryObjToBodyXForm",
+        "offset":84
+      },
+      {
+        "name":"setWalkTarget",
+        "offset":88
+      },
+      {
+        "name":"setWalkTargetImmediate",
+        "offset":92
+      },
+      {
+        "name":"setWalkTimeout",
+        "offset":96
+      },
+      {
+        "name":"isWalkComplete",
+        "offset":100
+      }
+    ]
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemnfolk_vfunc83",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemnfolk",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_allowBulletHoles",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_archive",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_getCollisionType",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionInfo",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"enum",
+      "name":"ECollisionType",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_shouldIgnoreForTargeting",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_vfunc1",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
     "kind":"class",
     "name":"CDemonFilter",
     "rtti_file":"core/dfilter.cpp",
@@ -30,7 +312,28 @@
     "kind":"class",
     "name":"CDemonGlobe",
     "rtti_file":"core/dglobe.cpp",
-    "size":1
+    "size":64
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDjien_vfunc84",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDjien",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -57,6 +360,27 @@
     "parent":"CDemonActor",
     "rtti_file":"core/gasmask.cpp",
     "size":728
+  },
+  {
+    "kind":"funcdef",
+    "name":"CHero_doHeroAction",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CHero",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"class",
@@ -123,6 +447,27 @@
   },
   {
     "kind":"funcdef",
+    "name":"CWeapon_updateLighting",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
     "name":"CustomScanlineFunc",
     "params":[
       {
@@ -178,6 +523,49 @@
     ]
   },
   {
+    "kind":"enum",
+    "name":"ELeverType",
+    "size":4,
+    "values":[
+      {
+        "name":"LEVER_TYPE_GROUND",
+        "value":0
+      },
+      {
+        "name":"LEVER_TYPE_WALL",
+        "value":1
+      },
+      {
+        "name":"LEVER_TYPE_UNKNOWN",
+        "value":2
+      }
+    ]
+  },
+  {
+    "kind":"enum",
+    "name":"EWalkState",
+    "size":4,
+    "values":[
+      {
+        "name":"WALK_STATE_IDLE",
+        "value":0
+      },
+      {
+        "name":"WALK_STATE_WALKING",
+        "value":1
+      },
+      {
+        "name":"WALK_STATE_NO_PATH",
+        "value":3
+      }
+    ]
+  },
+  {
+    "kind":"struct",
+    "name":"SDisplayListSortEntry",
+    "size":1
+  },
+  {
     "kind":"struct",
     "name":"SEdge",
     "size":1
@@ -200,7 +588,8 @@
   {
     "kind":"struct",
     "name":"SMRGLTextureModel",
-    "size":1
+    "parent":"SMRGLHeaderBasic",
+    "size":72
   },
   {
     "kind":"struct",
@@ -215,6 +604,11 @@
   {
     "kind":"struct",
     "name":"SRenderVertex",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SScriptLine",
     "size":1
   },
   {

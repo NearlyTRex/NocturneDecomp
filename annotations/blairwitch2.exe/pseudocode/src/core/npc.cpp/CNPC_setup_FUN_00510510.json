@@ -1,0 +1,320 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 160,
+    "cross_reference_count": 5,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 40,
+    "suspect_count": 10,
+    "suspect_types": [
+      "undefined_data",
+      "undefined_ram",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [
+    {
+      "addr": "004d1050",
+      "from_addr": "004d1055",
+      "name": "core_hiram.cpp_CHiram_setup_FUN_004d1050",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d1400",
+      "from_addr": "004d159c",
+      "name": "core_hostage.cpp_CHostage_setup_FUN_004d1400",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005115e0",
+      "from_addr": "005115e8",
+      "name": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571b60",
+      "from_addr": "00571b67",
+      "name": "core_tbplayer.cpp_CBassPlayer_setup_FUN_00571b60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00571de0",
+      "from_addr": "00571de7",
+      "name": "core_tbplayer.cpp_CDrummer_setup_FUN_00571de0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00510510",
+    "address_range": [
+      [
+        "00510510",
+        "005105ab"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_npc.cpp_CNPC_setup_FUN_00510510",
+    "signature": "void __cdecl core_npc_cpp_CNPC_setup_FUN_00510510(CNPC *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00422930",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_00422930"
+    },
+    {
+      "addr": "00547890",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890"
+    },
+    {
+      "addr": "00540e80",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
+    },
+    {
+      "addr": "005b8130",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005b8130"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e14c5",
+      "name": "s_priest_dfm_005e14c5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e14d0",
+      "name": "s_Bip01_L_Hand_005e14d0",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e14dd",
+      "name": "s_Bip01_R_Hand_005e14dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d653fc",
+      "name": "DAT_01d653fc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d65400",
+      "name": "DAT_01d65400",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 5,
+    "call_sites": [
+      {
+        "call_addr": "004d1055",
+        "call_type": "direct",
+        "caller": "core_hiram.cpp_CHiram_setup_FUN_004d1050",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004d159c",
+        "call_type": "direct",
+        "caller": "core_hostage.cpp_CHostage_setup_FUN_004d1400",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "005115e8",
+        "call_type": "direct",
+        "caller": "core_passngr.cpp_CPassenger_setup_FUN_005115e0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00571b67",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CBassPlayer_setup_FUN_00571b60",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00571de7",
+        "call_type": "direct",
+        "caller": "core_tbplayer.cpp_CDrummer_setup_FUN_00571de0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.7083333333333335,
+    "instruction_count": 48,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "CALL": 5,
+      "CBRANCH": 2,
+      "COPY": 42,
+      "INT_ADD": 21,
+      "INT_AND": 16,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 10,
+      "POPCOUNT": 7,
+      "RETURN": 2,
+      "STORE": 22
+    },
+    "pcode_op_count": 178
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 16,
+      "match": "field_0x2260",
+      "severity": "mild",
+      "text": "(&(this_ptr->base).model.field_0x2260,\"priest.dfm\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0x2690",
+      "severity": "mild",
+      "text": "*(int *)&(this_ptr->base).field_0x2690 = _DAT_01d65400;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x2814",
+      "severity": "mild",
+      "text": "iVar5 = *(int *)&(this_ptr->base).field_0x2814;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_01d653fc",
+      "severity": "mild",
+      "text": "DAT_01d653fc = (byte)iVar1;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 33,
+      "match": "uRam01d653fe",
+      "severity": "mild",
+      "text": "uRam01d653fe = SUB42(iVar1,2);",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined RAM reference",
+      "line": 34,
+      "match": "uRam01d653fe",
+      "severity": "mild",
+      "text": "uVar3 = uRam01d653fe;",
+      "type": "undefined_ram"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 35,
+      "match": "DAT_01d653fc",
+      "severity": "mild",
+      "text": "(this_ptr->base).carry_hands[0] = (SCarryHand)DAT_01d653fc;",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0x261a",
+      "severity": "mild",
+      "text": "*(ushort *)&(this_ptr->base).field_0x261a = uVar3;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0xfc",
+      "severity": "mild",
+      "text": "*(uint *)&(this_ptr->base).base.field_0xfc = 1;",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f8a14"
+      },
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005fa754"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

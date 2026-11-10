@@ -23,10 +23,10 @@
 ;   core_fldnotes.cpp_FUN_004a24f0 at 004a260a
 ;   core_fldnotes.cpp_FUN_004a3e40 at 004a3e6b
 ;   core_fldnotes.cpp_FUN_004a5700 at 004a57be
+;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be0f7
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be5e6
-;   core_game.cpp_FUN_004b60c0 at 004b613b
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004b60c0 at 004b613b
 ;   core_game.cpp_FUN_004bdc1e at 004bdc6f
-;   core_game.cpp_FUN_004bdfb0 at 004be0f7
 ;   core_inv.cpp_FUN_004da130 at 004da163
 ;   ... and 7 more
 ;

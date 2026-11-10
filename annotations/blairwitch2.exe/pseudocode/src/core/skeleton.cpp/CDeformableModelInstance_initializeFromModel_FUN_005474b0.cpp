@@ -28,7 +28,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
   *(CDeformableModel **)&this_ptr->field_0x22b0 = model_ptr;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
   core_motion_cpp_FUN_005037d0(this_ptr,pCVar1);
-  local_18 = *(int *)&pCVar1->field_0x1d1f8;
+  local_18 = pCVar1->bone_count;
   iVar4 = *(int *)&this_ptr->field_0x22b0;
   local_2c[0] = *(float *)(iVar4 + 0x1748) * *(float *)&this_ptr->field_0x54;
   local_2c[1] = *(float *)(iVar4 + 0x174c) * *(float *)&this_ptr->field_0x54;
@@ -50,15 +50,15 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
       pCVar2 = core_skeleton_cpp_CDeformableModel_getVertexPoolPtr_FUN_00541620
                          (*(CDeformableModel **)&this_ptr->field_0x22b0,iVar4);
       if (pCVar3 != pCVar2) {
-        *(float *)pCVar3 = *(float *)pCVar2;
-        *(uint *)&pCVar3->field_0x4 = *(uint *)&pCVar2->field_0x4;
-        *(uint *)&pCVar3->field_0x8 = *(uint *)&pCVar2->field_0x8;
+        pCVar3->x = pCVar2->x;
+        pCVar3->y = pCVar2->y;
+        pCVar3->z = pCVar2->z;
       }
       *(uint *)&local_14->field_0x514 = *(uint *)&this_ptr->field_0x54;
-      if (*(int *)&pCVar1->field_0x1d21c < 0) {
-        *(float *)pCVar3 = *(float *)puVar5 * *(float *)pCVar3;
-        *(float *)&pCVar3->field_0x4 = *(float *)puVar5 * *(float *)&pCVar3->field_0x4;
-        *(float *)&pCVar3->field_0x8 = *(float *)puVar5 * *(float *)&pCVar3->field_0x8;
+      if (*(int *)(pCVar1->bone_list + 0x20) < 0) {
+        pCVar3->x = *(float *)puVar5 * pCVar3->x;
+        pCVar3->y = *(float *)puVar5 * pCVar3->y;
+        pCVar3->z = *(float *)puVar5 * pCVar3->z;
       }
       pCVar1 = (CSkeleton *)&pCVar1->field_0x24;
       pCVar3 = pCVar3 + 1;
@@ -67,7 +67,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_initializeFromModel_FUN_
     } while (iVar4 < local_18);
   }
   core_skeleton_cpp_CDeformableModelInstance_allocPointList_FUN_00544db0(this_ptr);
-  core_skeleton_cpp_FUN_00547620(this_ptr);
+  core_skeleton_cpp_CDeformableModelInstance_computeBoundingBoxFromVertices_FUN_00547620(this_ptr);
   core_skeleton_cpp_CDeformableModelInstance_updateAnimationAndTransforms_FUN_00544ee0(this_ptr);
   return;
 }

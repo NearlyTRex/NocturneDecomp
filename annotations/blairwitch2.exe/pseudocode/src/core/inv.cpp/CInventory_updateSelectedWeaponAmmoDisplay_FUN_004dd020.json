@@ -14,6 +14,12 @@
   },
   "cross_references": [
     {
+      "addr": "004dbc60",
+      "from_addr": "004dbd63",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dc4b0",
       "from_addr": "004dc713",
       "name": "core_inv.cpp_CInventory_load_FUN_004dc4b0",
@@ -23,12 +29,6 @@
       "addr": "004db9d0",
       "from_addr": "004dbb3c",
       "name": "core_inv.cpp_FUN_004db9d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dbc60",
-      "from_addr": "004dbd63",
-      "name": "core_inv.cpp_FUN_004dbc60",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -53,7 +53,7 @@
     {
       "addr": "0040e240",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040e240"
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040e240"
     }
   ],
   "globals": [],
@@ -74,7 +74,7 @@
       {
         "call_addr": "004dbd63",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dbc60",
+        "caller": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

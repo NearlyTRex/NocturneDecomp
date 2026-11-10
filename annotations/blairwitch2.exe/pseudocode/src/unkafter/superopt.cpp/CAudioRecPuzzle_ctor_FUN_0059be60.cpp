@@ -17,11 +17,11 @@ CAudioRecPuzzle * unkafter_superopt_cpp_CAudioRecPuzzle_ctor_FUN_0059be60(CAudio
   
   iVar1 = unkaddr_0059aa80_cpp_FUN_0059ab30(this_ptr);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d420((CAlphaBitmap *)(iVar1 + 4));
-  iVar1 = __arrinit
-                    (&pCVar2[3].field_0xc,0x1e,&g___1hlg6hbuttonStructTypeInfo);
+  iVar1 = __arrinit(&pCVar2[3].width,0x1e,&g___1hlg6hbuttonStructTypeInfo)
+  ;
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)(iVar1 + 0x528));
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80(pCVar3 + 1);
-  *(byte ***)&pCVar3[-5].field_0x7c = &g_CAudioRecPuzzleVTable;
-  return (CAudioRecPuzzle *)&pCVar3[-5].field_0x7c;
+  *(byte ***)(pCVar3[-5].model_name + 4) = &g_CAudioRecPuzzleVTable;
+  return (CAudioRecPuzzle *)(pCVar3[-5].model_name + 4);
 }

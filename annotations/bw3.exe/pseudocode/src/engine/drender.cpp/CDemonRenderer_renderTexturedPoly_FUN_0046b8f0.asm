@@ -12,11 +12,11 @@
 ;
 ; XREF[7]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00414a60 at 00414ba5
-;   core_dskybox.cpp_FUN_0046f480 at 0046f7ab
-;   core_flies.cpp_FUN_004addd0 at 004ae1ab
-;   core_glass.cpp_FUN_004cab40 at 004cac93
+;   core_dskybox.cpp_renderSkyDome_FUN_0046f480 at 0046f7ab
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004addd0 at 004ae1ab
+;   core_glass.cpp_CGlass_renderBackground_FUN_004cab40 at 004cac93
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_004fa6d0 at 004fa799
-;   core_wateract.cpp_FUN_005787f0 at 00578a52
+;   core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0 at 00578a52
 ;   engine_drender.cpp_CDemonRenderer_renderFacetList_FUN_0046d960 at 0046d987
 ;
 ; Referenced Globals:

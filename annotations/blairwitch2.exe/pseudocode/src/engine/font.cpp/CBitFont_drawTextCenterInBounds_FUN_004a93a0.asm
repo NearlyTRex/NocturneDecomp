@@ -13,15 +13,15 @@
 ; char *           Stack[0x1c]:4   text
 ;
 ; XREF[6]:
-;   cockpit_drawsurf.cpp_FUN_00467f70 at 00468104
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 00468104
+;   core_game.cpp_CGame_finishAct_FUN_004bdfb0 at 004be047
 ;   core_game.cpp_CGame_rollCredits_FUN_004be430 at 004be6c1
 ;   core_game.cpp_FUN_004b5190 at 004b5bcf
 ;   core_game.cpp_FUN_004bdc1e at 004bdf57
-;   core_game.cpp_FUN_004bdfb0 at 004be047
 ;   engine_font.cpp_CBitFont_drawTextCenterInBoundsFV_FUN_004a9440 at 004a949a
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004a90b0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
 ;   engine_font.cpp_FUN_004aaf00
 ;
 ; *****************************************************************************
@@ -57,8 +57,8 @@ section .text
     ADD ESP,0x8                         ; 004a93da
     PUSH EAX                            ; 004a93dd
     PUSH EDI                            ; 004a93de
-    CALL engine_font.cpp_FUN_004a90b0   ; 004a93df
-        ;   XREF to: 004a90b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004a90b0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0 ; 004a93df
+        ;   XREF to: 004a90b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004a93e4
     POP EDI                             ; 004a93e7
     POP ESI                             ; 004a93e8

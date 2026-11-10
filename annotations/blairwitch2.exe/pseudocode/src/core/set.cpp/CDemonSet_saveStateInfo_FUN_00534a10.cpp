@@ -16,14 +16,15 @@ void __cdecl core_set_cpp_CDemonSet_saveStateInfo_FUN_00534a10(CDemonSet *this_p
   FUN_005b8010(file_handle,&DAT_005e5bf0);
   FUN_005b8010(file_handle,"// Camera count, enabled list\n");
   iVar1 = 0;
-  FUN_005b8010(file_handle,&DAT_005e5c12,*(uint *)this_ptr);
+  FUN_005b8010(file_handle,&DAT_005e5c12,this_ptr->camera_count);
   pCVar2 = this_ptr;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->camera_count) {
     do {
       iVar1 = iVar1 + 1;
-      FUN_005b8010(file_handle,&DAT_005e5c16,*(uint *)&pCVar2->field_0x1a4);
-      pCVar2 = (CDemonSet *)&pCVar2->field_0x1a4;
-    } while (iVar1 < *(int *)this_ptr);
+      FUN_005b8010
+                (file_handle,&DAT_005e5c16,*(uint *)&pCVar2->cameras[0].field_0x1a0);
+      pCVar2 = (CDemonSet *)&pCVar2->cameras[0].field_0x1a0;
+    } while (iVar1 < this_ptr->camera_count);
   }
   return;
 }

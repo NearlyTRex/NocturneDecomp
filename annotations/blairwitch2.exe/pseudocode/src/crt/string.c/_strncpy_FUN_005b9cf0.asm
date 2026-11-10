@@ -11,14 +11,14 @@
 ; XREF[12]:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_00516270 at 0051627c
 ;   cockpit_pkbmpset.cpp_CPackedBitmapSet_setFilename_FUN_00517f60 at 00517f6f
-;   core_netgame.cpp_FUN_0050d9f0 at 0050daef
+;   core_netgame.cpp_CNetGame_processChatOut_FUN_0050d9f0 at 0050daef
 ;   core_patrpoin.cpp_FUN_0059c9c0 at 0059ca02
 ;   crt_unknown.c_FUN_005bfdd4 at 005c00bb
+;   crt_unknown.c_FUN_005c59e0 at 005c5a2e
 ;   engine_dosio.cpp_FUN_00460fa0 at 00460fc8
-;   engine_ini.cpp_FUN_004d8180 at 004d8347
+;   engine_ini.cpp_CIni_getProfileString_FUN_004d8180 at 004d8347
 ;   engine_pod.cpp_findFilesByExtension_FUN_0051b3c0 at 0051b52a
 ;   shape_edittool.cpp_CInputString_init_FUN_0047a9d0 at 0047aa3c
-;   sound_snddx.cpp_FUN_0055753e at 005576fb
 ;   ... and 2 more
 ;
 ; *****************************************************************************

@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 80,
-    "complexity_score": 352,
+    "complexity_score": 354,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 27,
+    "pseudocode_lines": 29,
     "suspect_count": 32,
     "suspect_types": [
       "stack_param"
     ],
-    "total_lines": 107
+    "total_lines": 109
   },
   "cross_references": [
     {
@@ -38,7 +38,7 @@
     {
       "addr": "00467f30",
       "is_variadic": false,
-      "name": "cockpit_drawsurf.cpp_FUN_00467f30"
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_plotPixel_FUN_00467f30"
     }
   ],
   "globals": [],
@@ -223,34 +223,10 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 17,
+      "line": 18,
       "match": "in_stack_0000001c",
       "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_FUN_00467f30(this_ptr,height - in_stack_0000001c,y + height);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_00000024",
-      "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_FUN_00467f30(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 18,
-      "match": "in_stack_0000002c",
-      "severity": "moderate",
-      "text": "cockpit_drawsurf_cpp_FUN_00467f30(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
-      "type": "stack_param"
-    },
-    {
-      "description": "Unresolved stack parameter",
-      "line": 20,
-      "match": "in_stack_0000001c",
-      "severity": "moderate",
-      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "text": "(this_ptr,height - in_stack_0000001c,y + height);",
       "type": "stack_param"
     },
     {
@@ -258,13 +234,21 @@
       "line": 20,
       "match": "in_stack_00000024",
       "severity": "moderate",
-      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "text": "(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
       "type": "stack_param"
     },
     {
       "description": "Unresolved stack parameter",
       "line": 20,
       "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "(this_ptr,x + width,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000001c",
       "severity": "moderate",
       "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
       "type": "stack_param"
@@ -272,6 +256,22 @@
     {
       "description": "Unresolved stack parameter",
       "line": 22,
+      "match": "in_stack_00000024",
+      "severity": "moderate",
+      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_0000002c",
+      "severity": "moderate",
+      "text": "(this_ptr,height - in_stack_0000001c,in_stack_00000024 - in_stack_0000002c);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 24,
       "match": "in_stack_00000038",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
@@ -279,7 +279,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000044",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
@@ -287,7 +287,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_0000003c",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
@@ -295,7 +295,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 22,
+      "line": 24,
       "match": "in_stack_00000040",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_0000003c + in_stack_00000040);",
@@ -303,7 +303,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 26,
       "match": "in_stack_00000044",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
@@ -311,7 +311,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 26,
       "match": "in_stack_00000050",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
@@ -319,7 +319,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 26,
       "match": "in_stack_0000003c",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
@@ -327,7 +327,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 24,
+      "line": 26,
       "match": "in_stack_00000040",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_0000003c + in_stack_00000040);",
@@ -335,7 +335,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 28,
       "match": "in_stack_00000038",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
@@ -343,7 +343,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 28,
       "match": "in_stack_00000044",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
@@ -351,7 +351,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 28,
       "match": "in_stack_00000054",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
@@ -359,7 +359,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 26,
+      "line": 28,
       "match": "in_stack_00000058",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000038 + in_stack_00000044,in_stack_00000054 - in_stack_00000058);",
@@ -367,7 +367,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 30,
       "match": "in_stack_00000044",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
@@ -375,7 +375,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 30,
       "match": "in_stack_00000050",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
@@ -383,7 +383,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 30,
       "match": "in_stack_00000054",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",
@@ -391,7 +391,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 28,
+      "line": 30,
       "match": "in_stack_00000058",
       "severity": "moderate",
       "text": "(this_ptr,in_stack_00000044 - in_stack_00000050,in_stack_00000054 - in_stack_00000058);",

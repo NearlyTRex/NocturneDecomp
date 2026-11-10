@@ -14,12 +14,13 @@ CZombieDemon * core_zombie_cpp_CZombieDemon_ctor_FUN_0058cf00(CZombieDemon *this
   CZombie *pCVar1;
   
   pCVar1 = core_zombie_cpp_CZombie_ctor_FUN_005888d0((CZombie *)this_ptr);
-  *(byte ***)&pCVar1->field_0x154 = &g_CZombie_DemonVTable;
-  core_skeleton_cpp_FUN_0054eae0(&pCVar1->field_0x158,0x5d89cb);
+  (pCVar1->base).base.base.vtable._ub = &g_CZombieDemonVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_0054eae0
+            (&(pCVar1->base).base.model,(char *)0x5d89cb);
   *(uint *)&pCVar1->field_0xd140 = 5;
-  *(uint *)&pCVar1->field_0x2538 = 0x42480000;
-  *(uint *)&pCVar1->field_0xce5c = 0x41700000;
-  *(uint *)&pCVar1->field_0xce60 = 0x41700000;
+  (pCVar1->base).base.hit_points = 50.0;
+  *(uint *)&(pCVar1->base).field_0xce5c = 0x41700000;
+  *(uint *)&(pCVar1->base).field_0xce60 = 0x41700000;
   *(uint *)&pCVar1->field_0xd0dc = 1;
   return (CZombieDemon *)pCVar1;
 }

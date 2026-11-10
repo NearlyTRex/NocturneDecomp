@@ -2,21 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 12,
+    "complexity_score": 10,
     "cross_reference_count": 11,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "clean",
-    "pseudocode_lines": 12,
+    "pseudocode_lines": 10,
     "suspect_count": 0,
     "suspect_types": [],
-    "total_lines": 59
+    "total_lines": 57
   },
   "cross_references": [
     {
       "addr": "0049b9d0",
       "from_addr": "0049ba85",
       "name": "core_fire.cpp_CPopcorn_render_FUN_0049b9d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049bd40",
+      "from_addr": "0049bdf8",
+      "name": "core_fire.cpp_CRainDrop_render_FUN_0049bd40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -56,15 +62,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0049bd40",
-      "from_addr": "0049bdf8",
-      "name": "core_fire.cpp_FUN_0049bd40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0049f850",
       "from_addr": "0049f9a1",
-      "name": "core_flame.cpp_FUN_0049f850",
+      "name": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -150,7 +150,7 @@
       {
         "call_addr": "0049f9a1",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_0049f850",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -161,7 +161,7 @@
       {
         "call_addr": "0049fa31",
         "call_type": "direct",
-        "caller": "core_flame.cpp_FUN_0049f850",
+        "caller": "core_flame.cpp_CFlame_renderTransparent_FUN_0049f850",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "0049bdf8",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049bd40",
+        "caller": "core_fire.cpp_CRainDrop_render_FUN_0049bd40",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -4,13 +4,15 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CEnemy.h"
 
 // Structure: CLarva
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x10b04 (68356 bytes)
 #pragma pack(push, 1)
 typedef struct CLarva {
-    char field_0[68356]; // 0x0
+    CEnemy base; // 0x0
+    int dead; // 0x10af8
+    uint sfx_handles[2]; // 0x10afc
 } CLarva;
 #pragma pack(pop)
 

@@ -7,16 +7,16 @@
 ; uint             Stack[0x4]:4   sfx_handle
 ;
 ; XREF[58]:
-;   core_boneguy.cpp_FUN_004179b0 at 0041869f
-;   core_boneguy.cpp_FUN_004192d0 at 004192e1
-;   core_boneguy.cpp_FUN_00419b40 at 0041a7fa
-;   core_boneguy.cpp_FUN_0041a810 at 0041a821
-;   core_bugs.cpp_FUN_00421300 at 004215a1
-;   core_burncrss.cpp_FUN_00424e30 at 004252d4
-;   core_burncrss.cpp_FUN_00425300 at 0042531e
-;   core_carved.cpp_FUN_00425da0 at 00425e8e
-;   core_carved.cpp_FUN_00428a80 at 00428b54
-;   core_chain.cpp_FUN_004298f0 at 0042a15a
+;   core_boneguy.cpp_CBaalSkel_processDamage_FUN_0041a810 at 0041a821
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 0041a7fa
+;   core_boneguy.cpp_CBoneGuy_processDamage_FUN_004192d0 at 004192e1
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 0041869f
+;   core_bugs.cpp_CBugs_process_FUN_00421300 at 004215a1
+;   core_burncrss.cpp_CBurncross_process_FUN_00424e30 at 004252d4
+;   core_burncrss.cpp_CBurncross_setWeaponState_FUN_00425300 at 0042531e
+;   core_carved.cpp_CCarved_processDamage_FUN_00428a80 at 00428b54
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00425e8e
+;   core_chain.cpp_CChain_process_FUN_004298f0 at 0042a15a
 ;   ... and 48 more
 ;
 ; Called Functions:

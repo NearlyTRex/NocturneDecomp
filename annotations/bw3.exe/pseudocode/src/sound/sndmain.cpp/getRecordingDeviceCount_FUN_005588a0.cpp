@@ -15,7 +15,7 @@ int __cdecl sound_sndmain_cpp_getRecordingDeviceCount_FUN_005588a0(void)
   if (-1 < DAT_00604254) {
     return DAT_00604254;
   }
-  sound_sndmain_cpp_FUN_00558e90();
+  sound_sndmain_cpp_lockSound_FUN_00558e90();
   sound_sndmain_cpp_FUN_00556fd0();
   DAT_00604254 = 0;
   iVar2 = 0;

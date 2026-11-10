@@ -17,13 +17,13 @@ CVehicle * __cdecl core_vehicle_cpp_CVehicle_ctor_FUN_005839f0(CVehicle *this_pt
   char *pcVar6;
   CCourse *pCVar7;
   
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   pCVar3 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)(pCVar2 + 1));
   iVar4 = __arrinit(pCVar3 + 1,4,&g_CKeyFramedModelInstanceTypeInfo);
   iVar4 = __arrinit(iVar4 + 0x668,4,&g_CTireTypeInfo);
   pCVar5 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)(iVar4 + 0x6e4));
-  *(byte **)(pCVar5 + -0xecc) = &g_CVehicleVTable;
+  *(CDemonActor_vtable **)(pCVar5 + -0xecc) = &g_CVehicleVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)(pCVar5 + -0xec8),(char *)0x5edc28);
   *(uint *)(pCVar5 + -0x6e8) = 4;

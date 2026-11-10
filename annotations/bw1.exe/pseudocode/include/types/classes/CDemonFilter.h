@@ -6,11 +6,13 @@
 #include "system/basetypes.h"
 
 // Structure: CDemonFilter
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x4c (76 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonFilter {
-    char field_0[76]; // 0x0
+    int size; // 0x0
+    int count; // 0x4
+    char name[64]; // 0x8
+    uchar* data_buffer; // 0x48
 } CDemonFilter;
 #pragma pack(pop)
 

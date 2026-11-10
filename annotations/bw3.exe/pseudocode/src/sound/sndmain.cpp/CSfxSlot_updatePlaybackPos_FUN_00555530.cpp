@@ -17,53 +17,56 @@ void __cdecl sound_sndmain_cpp_CSfxSlot_updatePlaybackPos_FUN_00555530(CSfxSlot 
   double dVar3;
   ulonglong local_28;
   
-  if (*(int *)&this_ptr->field_0x68 == 0) {
+  if (this_ptr->sample == (CSfxSample *)0x0) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0xd36;
     core_main_c_FUN_004e4330();
   }
   if ((hardware_playback_pos < 0.0) ||
-     ((double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) < hardware_playback_pos)) {
+     ((double)*(int *)&this_ptr->sample->field_0x164 < hardware_playback_pos)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0xd3c;
     core_main_c_FUN_004e4330();
   }
   local_28 = hardware_playback_pos - *(double *)&this_ptr->field_0x10c;
   if (local_28 < 0.0) {
-    local_28 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) + local_28;
+    local_28 = (double)*(int *)&this_ptr->sample->field_0x164 + local_28;
   }
   if ((local_28 < 0.0) ||
-     ((double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x164) + _DAT_005d34ba < local_28)) {
+     ((double)*(int *)&this_ptr->sample->field_0x164 + _DAT_005d34ba < local_28)) {
     _DAT_01d71de0 = "..\\sound\\sndmain.cpp";
     _DAT_01d71de4 = 0xd4a;
     core_main_c_FUN_004e4330
               ("SfxSlot::updatePlaybackPos - stepped too much: %f-%f=%f, sample=%d (%s)",hardware_playback_pos,
-               *(uint *)&this_ptr->field_0x10c,*(uint *)&this_ptr->field_0x110,
-               (uint)local_28,local_28._4_4_,
-               *(uint *)(*(int *)&this_ptr->field_0x68 + 0x164));
+               *(uint *)&this_ptr->field_0x10c,this_ptr->fade_time_remaining,
+               (uint)local_28,local_28._4_4_,*(uint *)&this_ptr->sample->field_0x164);
   }
-  if ((*(double *)&this_ptr->field_0x50 != *(double *)&this_ptr->field_0x10c) ||
-     (hardware_playback_pos < *(double *)&this_ptr->field_0x50)) {
-    *(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 + local_28;
+  if ((*(double *)&(this_ptr->options).field_0x50 != *(double *)&this_ptr->field_0x10c) ||
+     (hardware_playback_pos < *(double *)&(this_ptr->options).field_0x50)) {
+    *(double *)&(this_ptr->options).field_0x50 =
+         *(double *)&(this_ptr->options).field_0x50 + local_28;
   }
   else {
-    *(double *)&this_ptr->field_0x50 = hardware_playback_pos;
+    *(double *)&(this_ptr->options).field_0x50 = hardware_playback_pos;
   }
-  if (*(double *)&this_ptr->field_0x50 < 0.0) {
-    *(uint *)&this_ptr->field_0x50 = 0;
-    *(uint *)&this_ptr->field_0x54 = 0;
+  if (*(double *)&(this_ptr->options).field_0x50 < 0.0) {
+    *(uint *)&(this_ptr->options).field_0x50 = 0;
+    *(uint *)&(this_ptr->options).field_0x54 = 0;
   }
-  this_ptr_00 = *(CSfxSample **)&this_ptr->field_0x68;
-  if ((-1 < *(int *)&this_ptr_00->field_0x110) &&
-     ((double)*(int *)&this_ptr_00->field_0x110 <= *(double *)&this_ptr->field_0x50)) {
+  this_ptr_00 = this_ptr->sample;
+  if ((-1 < (this_ptr_00->sample_info).sample_count) &&
+     ((double)(this_ptr_00->sample_info).sample_count <= *(double *)&(this_ptr->options).field_0x50)
+     ) {
     iVar2 = sound_sndmain_cpp_FUN_00555b80(this_ptr_00);
     if (iVar2 == 0) {
-      *(double *)&this_ptr->field_0x50 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);
+      *(double *)&(this_ptr->options).field_0x50 =
+           (double)(this_ptr->sample->sample_info).sample_count;
     }
     else {
-      dVar1 = (double)*(int *)(*(int *)&this_ptr->field_0x68 + 0x110);
-      dVar3 = floor(*(double *)&this_ptr->field_0x50 / dVar1);
-      *(double *)&this_ptr->field_0x50 = *(double *)&this_ptr->field_0x50 - dVar3 * dVar1;
+      dVar1 = (double)(this_ptr->sample->sample_info).sample_count;
+      dVar3 = floor(*(double *)&(this_ptr->options).field_0x50 / dVar1);
+      *(double *)&(this_ptr->options).field_0x50 =
+           *(double *)&(this_ptr->options).field_0x50 - dVar3 * dVar1;
     }
   }
   *(double *)&this_ptr->field_0x10c = hardware_playback_pos;

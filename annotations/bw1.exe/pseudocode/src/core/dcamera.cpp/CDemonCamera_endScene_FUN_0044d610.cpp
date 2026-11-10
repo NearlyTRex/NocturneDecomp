@@ -13,27 +13,27 @@ void __cdecl core_dcamera_cpp_CDemonCamera_endScene_FUN_0044d610(CDemonCamera *t
 {
   int iVar1;
   
-  if (*(int *)&this_ptr->field_0x11e4 == 0) {
+  if (this_ptr->scene_open_flag == 0) {
     _DAT_01d1d400 = "..\\core\\dcamera.cpp";
     _DAT_01d1d404 = 0x3f2;
     core_main_c_FUN_005030e0("CDemonCamera::endScene - Scene not open!");
   }
   else {
-    *(uint *)&this_ptr->field_0x11e4 = 0;
+    this_ptr->scene_open_flag = 0;
   }
   if (_DAT_02c83370 != 0) {
     engine_special_cpp_FUN_00582000();
   }
-  if ((*(int *)&this_ptr->field_0x168 == 0) && (skip_zbuffer_copy == 0)) {
+  if ((this_ptr->skip_clear_buffer_flag == 0) && (skip_zbuffer_copy == 0)) {
     if (_DAT_01c50948 != 0) {
-      engine_special_cpp_FUN_00582a80(0);
+      engine_special_cpp_masterZBuffer_FUN_00582a80(0);
     }
     iVar1 = 0;
-    if (0 < *(int *)&this_ptr->field_0x148) {
+    if (0 < this_ptr->framebuffer_height) {
       do {
         iVar1 = iVar1 + 1;
-        _memcpy(*(int *)&this_ptr->field_0x144 << 2);
-      } while (iVar1 < *(int *)&this_ptr->field_0x148);
+        _memcpy(this_ptr->framebuffer_width << 2);
+      } while (iVar1 < this_ptr->framebuffer_height);
     }
   }
   engine_matrix_c_popViewport_FUN_00483c40();

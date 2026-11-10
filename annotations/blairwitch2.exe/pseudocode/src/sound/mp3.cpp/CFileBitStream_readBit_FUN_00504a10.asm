@@ -9,7 +9,7 @@
 ; XREF[3]:
 ;   sound_mp3.cpp_CFileBitStream_readFrameHeader_FUN_00505170 at 0050517d
 ;   sound_mp3.cpp_CMP3Decoder_decodeFrame_FUN_0050a280 at 0050a59a
-;   sound_mp3.cpp_FUN_00506360 at 005063d8
+;   sound_mp3.cpp_CMP3Decoder_readLayer3SideInfo_FUN_00506360 at 005063d8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00619230

@@ -17,7 +17,7 @@ void core_fldnotes_cpp_FUN_004bb570(int param_1)
   if (*(char *)(param_1 + 0x48) == '\0') {
     return;
   }
-  iVar1 = FUN_005c0f32(0x120);
+  iVar1 = debugAllocTracked1(0x120);
   puVar2 = (uint *)0x0;
   if (iVar1 != 0) {
     puVar2 = (uint *)

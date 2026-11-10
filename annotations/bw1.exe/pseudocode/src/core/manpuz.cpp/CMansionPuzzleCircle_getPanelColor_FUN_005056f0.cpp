@@ -12,11 +12,11 @@ void __cdecl core_manpuz_cpp_CMansionPuzzleCircle_getPanelColor_FUN_005056f0(CMa
   *out_b = 0.0;
   *out_g = *out_b;
   *out_r = *out_g;
-  if ((*(int *)(&this_ptr->field_0x5f0 + panel_index * 100) != 0) &&
-     ((*(uint *)(&this_ptr->field_0x5f8 + panel_index * 100) & 0x7fffffff) == 0)) {
-    *out_r = (float)*(int *)(&this_ptr->field_0x63c + panel_index * 100);
-    *out_g = (float)*(int *)(&this_ptr->field_0x640 + panel_index * 100);
-    *out_b = (float)*(int *)(&this_ptr->field_0x644 + panel_index * 100);
+  if ((this_ptr->panels[panel_index].exists != 0) &&
+     (ABS(this_ptr->panels[panel_index].anim_speed) == 0.0)) {
+    *out_r = (float)this_ptr->panels[panel_index].color.r;
+    *out_g = (float)this_ptr->panels[panel_index].color.g;
+    *out_b = (float)this_ptr->panels[panel_index].color.b;
     return;
   }
   return;

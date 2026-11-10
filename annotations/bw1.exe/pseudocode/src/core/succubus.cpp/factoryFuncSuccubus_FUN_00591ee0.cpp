@@ -11,7 +11,7 @@ void core_succubus_cpp_factoryFuncSuccubus_FUN_00591ee0(void)
 {
   CSuccubus *this_ptr;
   
-  this_ptr = (CSuccubus *)FUN_005c0f32(0xf404);
+  this_ptr = (CSuccubus *)debugAllocTracked1(0xf404);
   if (this_ptr == (CSuccubus *)0x0) {
     return;
   }

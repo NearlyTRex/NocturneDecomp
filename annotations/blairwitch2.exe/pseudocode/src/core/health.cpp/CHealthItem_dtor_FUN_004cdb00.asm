@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CHealthItemVTable
+;   CDemonActor_vtable g_CHealthItemVTable
 ;   WatcomTypeInfo g_CHealthItemTypeInfo
 ;
 ; Called Functions:

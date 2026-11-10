@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_doc.cpp_FUN_00476150 at 00476193
-;   core_stranger.cpp_FUN_00591b20 at 00591b63
+;   core_stranger.cpp_CStranger_processWeaponTick_FUN_00591b20 at 00591b63
 ;
 ; *****************************************************************************
 

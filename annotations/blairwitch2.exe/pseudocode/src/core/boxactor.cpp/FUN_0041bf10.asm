@@ -8,10 +8,10 @@
 ; undefined        Stack[-0x7c]:1  local_7c
 ;
 ; XREF[4]:
-;   core_boxactor.cpp_FUN_0041be70 at 0041bef3
-;   core_boxactor.cpp_FUN_0041cb40 at 0041cc9d
-;   core_boxactor.cpp_FUN_0041cd00 at 0041cd13
-;   core_boxactor.cpp_FUN_0041ce90 at 0041cf07
+;   core_boxactor.cpp_CBoxActor_onDropped_FUN_0041cd00 at 0041cd13
+;   core_boxactor.cpp_CBoxActor_resolveRayPush_FUN_0041cb40 at 0041cc9d
+;   core_boxactor.cpp_CBoxActor_setPositionAndOrientation_FUN_0041ce90 at 0041cf07
+;   core_boxactor.cpp_CBoxActor_setup_FUN_0041be70 at 0041bef3
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005cc515

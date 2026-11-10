@@ -10,7 +10,7 @@
 ; undefined        Stack[-0x28]:1  local_28
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_00409f20 at 0040a353
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a353
 ;
 ; Called Functions:
 ;   core_box.cpp_FUN_00421af0

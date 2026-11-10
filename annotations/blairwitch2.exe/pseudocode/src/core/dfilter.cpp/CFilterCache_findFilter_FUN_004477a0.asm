@@ -8,8 +8,8 @@
 ; char *           Stack[0x8]:4   filter_name
 ;
 ; XREF[2]:
-;   core_dfilter.cpp_FUN_00447c50 at 00447d7d
-;   core_dfilter.cpp_FUN_00447de0 at 00447df5
+;   core_dfilter.cpp_CFilterFX_openMovie_FUN_00447c50 at 00447d7d
+;   core_dfilter.cpp_CFilterFX_process_FUN_00447de0 at 00447df5
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005b8c30

@@ -84,11 +84,11 @@
 ;   crt_memory.c_realloc_FUN_005c10d0
 ;   crt_stdlib.c__qsort_FUN_005bfc68
 ;   crt_string.c__stricmp_FUN_005c04e0
-;   crt_unknown.c_FUN_005bfb40
 ;   crt_unknown.c_FUN_005c08d0
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_findFileNormally_FUN_00478ef0
 ;   engine_dosio.cpp_FUN_00478e20
-;   engine_dosio.cpp_FUN_00479580
+;   engine_dosio.cpp_splitPath_FUN_00479580
 ;   engine_pod.cpp_CPodFile_cleanup_FUN_0053be30
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;   support_trstream.cpp_FUN_005a0f60
@@ -146,8 +146,8 @@ section .text
     PUSH EAX                            ; 0053b2cd
     LEA EAX,[ESP + 0x218]               ; 0053b2ce
     PUSH EAX                            ; 0053b2d5
-    CALL crt_unknown.c_FUN_005bfb40     ; 0053b2d6
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0053b2d6
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x8                         ; 0053b2db
     LEA EAX,[ESP + 0x848]               ; 0053b2de
         ;   Label: LAB_0053b2de
@@ -236,8 +236,8 @@ section .text
     PUSH 0x0                            ; 0053b39f
     MOV ESI,dword ptr [ESP + 0x8e4]     ; 0053b3a1
     PUSH ESI                            ; 0053b3a8
-    CALL engine_dosio.cpp_FUN_00479580  ; 0053b3a9
-        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00479580 ; 0053b3a9
+        ;   XREF to: 00479580 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00479580(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 0053b3ae
     PUSH 0x5ed68a                       ; 0053b3b1 | DAT_005ed68a
     LEA EAX,[ESP + 0x648]               ; 0053b3b6
@@ -303,8 +303,8 @@ section .text
     PUSH EAX                            ; 0053b44e
     LEA EAX,[ESP + 0x21c]               ; 0053b44f
     PUSH EAX                            ; 0053b456
-    CALL crt_unknown.c_FUN_005bfb40     ; 0053b457
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0053b457
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 0053b45c
     JMP 0x0053b2de                      ; 0053b45f
         ;   XREF to: 0053b2de (UNCONDITIONAL_JUMP)  ; LAB_0053b2de

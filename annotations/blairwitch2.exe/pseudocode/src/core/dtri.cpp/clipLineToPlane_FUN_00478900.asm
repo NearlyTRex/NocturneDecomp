@@ -7,8 +7,8 @@
 ; undefined8       Stack[-0x28]:8  local_28
 ;
 ; XREF[3]:
-;   core_dtri.cpp_FUN_00478d70 at 00478e4a
-;   core_dtri.cpp_FUN_004791a0 at 00479282
+;   core_dtri.cpp_clipPolygonToFar_FUN_004791a0 at 00479282
+;   core_dtri.cpp_clipPolygonToRight_FUN_00478d70 at 00478e4a
 ;   core_dtri.cpp_clipTriangleToBounds_FUN_00479360 at 00479973
 ;
 ; Referenced Globals:

@@ -11,7 +11,7 @@ void core_door_cpp_factoryFuncDoor_FUN_00463a80(void)
 {
   CDoor *this_ptr;
   
-  this_ptr = (CDoor *)FUN_005a3cb2(0xa4c);
+  this_ptr = (CDoor *)debugAllocTracked1(0xa4c);
   if (this_ptr == (CDoor *)0x0) {
     return;
   }

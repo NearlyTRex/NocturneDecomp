@@ -50,6 +50,6 @@ int __cdecl wincore_wddvmem_cpp_FUN_005798f0(int width,int height)
   if (HVar1 == 0) {
     (**(code **)(*_DAT_02d0bce0 + 0x50))(_DAT_02d0bce0,_DAT_02d21b78,0x11);
   }
-  engine_special_cpp_FUN_00564be0(_DAT_02d21b78);
+  engine_special_cpp_loadExternalRenderer_FUN_00564be0(_DAT_02d21b78);
   return 1;
 }

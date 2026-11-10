@@ -9,11 +9,11 @@
 ; int              Stack[0xc]:4   target_bone_index
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00430060 at 00430123
+;   core_charactr.cpp_CCharacter_renderEthereal_FUN_00430060 at 00430123
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00569f30
-;   core_skeleton.cpp_FUN_00563630
+;   core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630
 ;
 ; *****************************************************************************
 
@@ -40,8 +40,8 @@ section .text
         ;   Label: LAB_005697d3
     PUSH EBX                            ; 005697d4
     PUSH EDI                            ; 005697d5
-    CALL core_skeleton.cpp_FUN_00563630 ; 005697d6
-        ;   XREF to: 00563630 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00563630(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
+    CALL core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630 ; 005697d6
+        ;   XREF to: 00563630 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_getHierarchyDistance_FUN_00563630(CSkeleton * this_ptr, int start_bone_index, int target_bone_index)
     ADD ESP,0xc                         ; 005697db
     TEST EAX,EAX                        ; 005697de
     JL 0x005697f2                       ; 005697e0

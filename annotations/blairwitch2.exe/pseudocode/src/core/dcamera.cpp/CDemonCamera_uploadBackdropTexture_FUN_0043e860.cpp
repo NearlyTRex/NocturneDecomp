@@ -67,7 +67,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_uploadBackdropTexture_FUN_0043e860(CD
     puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);
     puVar8 = (uint *)((int)puVar8 + (uint)bVar9 * -2 + 1);
   }
-  engine_drender_cpp_FUN_0046cab0
+  engine_drender_cpp_CDemonRenderer_updateTexture_FUN_0046cab0
             (DAT_0060b280,(SMRGLTextureBasic *)&DAT_00609ff0,(SRGBColorPalette *)&DAT_00b65c98);
   return;
 }

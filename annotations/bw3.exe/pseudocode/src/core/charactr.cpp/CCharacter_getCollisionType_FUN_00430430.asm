@@ -8,15 +8,15 @@
 ; SCollisionInfo * Stack[0x8]:4   collision_info
 ;
 ; XREF[9]:
-;   core_boneguy.cpp_FUN_00419860 at 00419876
+;   core_boneguy.cpp_CBoneGuy_getCollisionType_FUN_00419860 at 00419876
 ;   core_construc.cpp_FUN_004444c0 at 004444e1
 ;   core_gargoyle.cpp_CGargoyle_getCollisionType_FUN_004c6530 at 004c653a
-;   core_hino.cpp_FUN_0059d640 at 0059d64a
+;   core_hino.cpp_CHino_getCollisionType_FUN_0059d640 at 0059d64a
 ;   core_hotdemon.cpp_CHotDemon_getCollisionType_FUN_004d62c0 at 004d62ca
 ;   core_imp.cpp_CImp_getCollisionType_FUN_004d81d0 at 004d81da
 ;   core_sentinel.cpp_CSentinel_getCollisionType_FUN_00532500 at 0053250a
-;   core_styldemo.cpp_FUN_005a08f0 at 005a08fa
-;   unkafter_zombiepr.cpp_FUN_0058fc60 at 0058fc6a
+;   core_styldemo.cpp_CStylerDemon_getCollisionType_FUN_005a08f0 at 005a08fa
+;   core_zombprie.cpp_CZombiePriest_getCollisionType_FUN_0058fc60 at 0058fc6a
 ;
 ; *****************************************************************************
 

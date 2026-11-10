@@ -36,14 +36,14 @@ void FUN_005c9428(void)
         DAT_006269a0 = local_b4.DaylightBias * -0x3c;
       }
       DAT_00626998 = (local_b4.StandardBias + local_b4.Bias) * 0x3c;
-      iVar2 = unkafter_zombie_cpp_FUN_005cc610(&DAT_0062688c,local_b4.StandardName,0x80);
+      iVar2 = FUN_005cc610(&DAT_0062688c,local_b4.StandardName,0x80);
       if (iVar2 == -1) {
         DAT_0062688c = 0;
       }
       else {
         DAT_0062690c = 0;
       }
-      iVar2 = unkafter_zombie_cpp_FUN_005cc610(&DAT_0062690d,local_b4.DaylightName,0x80);
+      iVar2 = FUN_005cc610(&DAT_0062690d,local_b4.DaylightName,0x80);
       if (iVar2 == -1) {
         DAT_0062690d = 0;
       }

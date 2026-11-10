@@ -67,7 +67,7 @@ int FUN_005a86c4(int param_1,int *param_2)
         if ((_DAT_02d25930 != 0) && ((*(byte *)(bVar4 + 0x2d25941) & 1) != 0)) {
           local_17 = FUN_005a82a0(param_1);
         }
-        iVar5 = unkafter_asgaya_cpp_FUN_005ae560(local_1c,&local_18,2);
+        iVar5 = FUN_005ae560(local_1c,&local_18,2);
         if (iVar5 == -1) {
           return 0;
         }

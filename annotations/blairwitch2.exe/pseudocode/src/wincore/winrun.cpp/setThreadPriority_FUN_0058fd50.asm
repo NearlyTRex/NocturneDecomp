@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   priority_level
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_005531d0 at 0055322a
+;   sound_sndmain.cpp_startSoundThread_FUN_005531d0 at 0055322a
 ;
 ; Referenced Globals:
 ;   void* PTR_SetThreadPriority_005c863c = 001c91c2

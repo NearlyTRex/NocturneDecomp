@@ -9,5 +9,5 @@
 ECollisionType __cdecl core_ammobox_cpp_CAmmoBox_getCollisionType_FUN_0040e4d0(CAmmoBox *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x324 != 0);
+  return (uint)(this_ptr->has_collision != 0);
 }

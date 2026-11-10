@@ -16,8 +16,8 @@
 ;   undefined4 DAT_01cd0c54
 ;
 ; Called Functions:
-;   core_menu.cpp_FUN_0050d220
-;   crt_unknown.c_FUN_005bfb40
+;   core_menu.cpp_getKeyDisplayName_FUN_0050d220
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_font.cpp_FUN_004c1dd0
 ;
 ; *****************************************************************************
@@ -34,15 +34,15 @@ section .text
     PUSH EDX                            ; 004ccb91
     MOV ECX,dword ptr [ESP + 0x118]     ; 004ccb92
     PUSH ECX                            ; 004ccb99
-    CALL core_menu.cpp_FUN_0050d220     ; 004ccb9a
-        ;   XREF to: 0050d220 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_FUN_0050d220(EInputCodeType key_code)
+    CALL core_menu.cpp_getKeyDisplayName_FUN_0050d220 ; 004ccb9a
+        ;   XREF to: 0050d220 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_code)
     ADD ESP,0x4                         ; 004ccb9f
     PUSH EAX                            ; 004ccba2
     PUSH 0x5e13c4                       ; 004ccba3
     LEA EAX,[ESP + 0xc]                 ; 004ccba8
     PUSH EAX                            ; 004ccbac
-    CALL crt_unknown.c_FUN_005bfb40     ; 004ccbad
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 004ccbad
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 004ccbb2
     PUSH -0x1                           ; 004ccbb5
     PUSH 0x7                            ; 004ccbb7

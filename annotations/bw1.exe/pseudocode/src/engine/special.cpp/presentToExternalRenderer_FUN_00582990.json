@@ -22,7 +22,7 @@
     {
       "addr": "004cf5e0",
       "from_addr": "004d0296",
-      "name": "core_game.cpp_FUN_004cf5e0",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -34,7 +34,7 @@
     {
       "addr": "005acff0",
       "from_addr": "005ad0d7",
-      "name": "wincore_wddvmem.cpp_FUN_005acff0",
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -62,14 +62,14 @@
       "name": "engine_special.cpp_unlockFrame_FUN_00581fa0"
     },
     {
-      "addr": "005acb10",
-      "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_005acb10"
-    },
-    {
       "addr": "005acc00",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_005acc00"
+      "name": "wincore_wddvmem.cpp_closeScreenDevice_FUN_005acc00"
+    },
+    {
+      "addr": "005acb10",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_openScreenDevice_FUN_005acb10"
     }
   ],
   "globals": [
@@ -134,7 +134,7 @@
       {
         "call_addr": "004d0296",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf5e0",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004cf5e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -145,7 +145,7 @@
       {
         "call_addr": "005ad0d7",
         "call_type": "direct",
-        "caller": "wincore_wddvmem.cpp_FUN_005acff0",
+        "caller": "wincore_wddvmem.cpp_swapBuffers_FUN_005acff0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",

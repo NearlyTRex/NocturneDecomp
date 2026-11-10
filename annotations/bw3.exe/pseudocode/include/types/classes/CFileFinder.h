@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/winnt.h"
 
 // Structure: CFileFinder
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x114 (276 bytes)
 #pragma pack(push, 1)
 typedef struct CFileFinder {
-    char field_0[276]; // 0x0
+    char filename[256]; // 0x0
+    uint attributes; // 0x100
+    uint file_size; // 0x104
+    uint timestamp; // 0x108
+    int has_results; // 0x10c
+    HANDLE search_handle; // 0x110
 } CFileFinder;
 #pragma pack(pop)
 

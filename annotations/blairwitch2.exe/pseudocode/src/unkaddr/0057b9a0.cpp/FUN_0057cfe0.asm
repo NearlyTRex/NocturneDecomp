@@ -10,9 +10,9 @@
 ; XREF[10]:
 ;   cockpit_ckptutil.c_FUN_0042c520 at 0042c5a2
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_0042c780 at 0042c850
-;   engine_2d.c_FUN_00401010 at 004010ed
 ;   engine_2d.c_FUN_00401590 at 004015c8
-;   engine_2d.c_FUN_00402940 at 00402a9f
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010ed
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a9f
 ;   engine_font.cpp_FUN_004a7fe2 at 004a816e
 ;   engine_texture.cpp_CTextureCache_loadTexture_FUN_00573b80 at 00573e8f
 ;   engine_texture.cpp_FUN_0057514e at 00575274

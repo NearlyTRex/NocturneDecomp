@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 1391,
-    "complexity_score": 1552,
+    "complexity_score": 1517,
     "cross_reference_count": 1,
     "function_call_count": 41,
     "global_count": 52,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 712,
-    "suspect_count": 78,
+    "suspect_count": 75,
     "suspect_types": [
       "extra_output",
       "raw_address_constant",
@@ -16,7 +16,6 @@
       "stack_param",
       "sub84_truncation",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcat",
       "unrolled_strcpy",
@@ -50,7 +49,7 @@
     {
       "addr": "004b4430",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b4430"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b4430"
     },
     {
       "addr": "004b4440",
@@ -70,12 +69,12 @@
     {
       "addr": "0053b100",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0053b100"
+      "name": "core_set.cpp_CDemonSet_setFlatColor_FUN_0053b100"
     },
     {
       "addr": "005607d0",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_005607d0"
+      "name": "core_sound.cpp_CSound_configure_FUN_005607d0"
     },
     {
       "addr": "005a3120",
@@ -85,12 +84,17 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004831c0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_004831c0"
+    },
+    {
+      "addr": "00483450",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450"
     },
     {
       "addr": "004832b0",
@@ -103,49 +107,19 @@
       "name": "shape_edittool.cpp_CStrList_add_FUN_00482070"
     },
     {
-      "addr": "00483450",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_00483450"
-    },
-    {
       "addr": "005587e0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_closeSoundDevice_FUN_005587e0"
     },
     {
-      "addr": "00555f00",
+      "addr": "00556db0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555f00"
-    },
-    {
-      "addr": "00555fd0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00555fd0"
-    },
-    {
-      "addr": "00556050",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556050"
+      "name": "sound_sndmain.cpp_enableSfxChannel_FUN_00556db0"
     },
     {
       "addr": "00556240",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_00556240"
-    },
-    {
-      "addr": "00556750",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556750"
-    },
-    {
-      "addr": "00556db0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556db0"
-    },
-    {
-      "addr": "00556e30",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556e30"
     },
     {
       "addr": "00558370",
@@ -163,19 +137,9 @@
       "name": "sound_sndmain.cpp_FUN_005583b0"
     },
     {
-      "addr": "005584c0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005584c0"
-    },
-    {
       "addr": "005586d0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_005586d0"
-    },
-    {
-      "addr": "005586e0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005586e0"
     },
     {
       "addr": "005586f0",
@@ -198,9 +162,39 @@
       "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00558430"
     },
     {
+      "addr": "005584c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceInfo_FUN_005584c0"
+    },
+    {
       "addr": "00558730",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_initializeSoundDevice_FUN_00558730"
+    },
+    {
+      "addr": "005586e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0"
+    },
+    {
+      "addr": "00556e30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
+    },
+    {
+      "addr": "00556750",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundMuted_FUN_00556750"
+    },
+    {
+      "addr": "00556050",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_00556050"
+    },
+    {
+      "addr": "00555fd0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0"
     },
     {
       "addr": "00558250",
@@ -228,6 +222,11 @@
       "name": "sound_sndmain.cpp_setAudioSampleRate_FUN_00558410"
     },
     {
+      "addr": "00555f00",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxFlags_FUN_00555f00"
+    },
+    {
       "addr": "00556c90",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_00556c90"
@@ -250,7 +249,7 @@
     {
       "addr": "0057a8a0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
     }
   ],
   "globals": [
@@ -556,13 +555,13 @@
     },
     {
       "addr": "0203274c",
-      "name": "g_CDemonSetInstance.field1420932_0x15ae84",
+      "name": "g_CDemonSetInstance.rendering_mode",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "0203275c",
-      "name": "g_CDemonSetInstance.field1420948_0x15ae94",
+      "name": "g_CDemonSetInstance.ambient_base_quick",
       "type": "undefined4",
       "value": null
     }
@@ -885,30 +884,6 @@
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x15ae94",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x15ae84",
-      "severity": "mild",
-      "text": "*(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 120,
       "match": "DAT_005c776f",
@@ -921,7 +896,7 @@
       "line": 161,
       "match": "DAT_005c778a",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_42c,&DAT_005c778a,local_14);",
+      "text": "_sprintf(local_42c,&DAT_005c778a);",
       "type": "undefined_data"
     },
     {
@@ -937,7 +912,7 @@
       "line": 229,
       "match": "DAT_005c77bc",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_12c,&DAT_005c77bc,local_14);",
+      "text": "_sprintf(local_12c,&DAT_005c77bc);",
       "type": "undefined_data"
     },
     {
@@ -953,7 +928,7 @@
       "line": 297,
       "match": "DAT_005c77e6",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_32c,&DAT_005c77e6,local_14);",
+      "text": "_sprintf(local_32c,&DAT_005c77e6);",
       "type": "undefined_data"
     },
     {
@@ -969,7 +944,7 @@
       "line": 355,
       "match": "DAT_005c780e",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_22c,&DAT_005c780e,iVar7);",
+      "text": "_sprintf(local_22c,&DAT_005c780e);",
       "type": "undefined_data"
     },
     {
@@ -985,7 +960,7 @@
       "line": 411,
       "match": "DAT_005c7826",
       "severity": "mild",
-      "text": "FUN_005a28c0(local_22c,&DAT_005c7826,iVar7);",
+      "text": "_sprintf(local_22c,&DAT_005c7826);",
       "type": "undefined_data"
     },
     {

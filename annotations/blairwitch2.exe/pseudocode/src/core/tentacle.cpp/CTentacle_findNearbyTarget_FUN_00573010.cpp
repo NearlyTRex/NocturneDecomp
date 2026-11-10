@@ -26,20 +26,20 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle 
   int local_18;
   
   bVar2 = 0;
-  local_20 = (float *)&this_ptr->field_0x20;
+  local_20 = (float *)&(this_ptr->base).base.base.field_0x20;
   local_18 = 0;
   local_1c = 0;
   do {
-    if (*(int *)&g_CDemonSetPtr->field_0x14f0a8 <= local_1c) {
+    if (g_CDemonSetPtr->character_count <= local_1c) {
       return 0;
     }
-    actor_ptr = *(CTentacle **)(&g_CDemonSetPtr->field_0x14f0ac + local_18);
+    actor_ptr = *(CTentacle **)((int)g_CDemonSetPtr->characters + local_18);
     if (actor_ptr != this_ptr) {
-      iVar1 = core_actor_cpp_FUN_0040c840((CDemonActor *)actor_ptr,class_name);
+      iVar1 = core_actor_cpp_isOfClass_FUN_0040c840((CDemonActor *)actor_ptr,class_name);
       if (iVar1 != 0) {
-        local_34 = *(float *)&actor_ptr->field_0x20 - *local_20;
-        local_30 = *(float *)&actor_ptr->field_0x24 - local_20[1];
-        local_2c = *(float *)&actor_ptr->field_0x28 - local_20[2];
+        local_34 = *(float *)&(actor_ptr->base).base.base.field_0x20 - *local_20;
+        local_30 = *(float *)&(actor_ptr->base).base.base.field_0x24 - local_20[1];
+        local_2c = *(float *)&(actor_ptr->base).base.base.field_0x28 - local_20[2];
         local_40 = local_34;
         *(uint *)((int)&stack0xffffffc4 + (uint)bVar2 * -8) =
              *(uint *)((int)&stack0xffffffd0 + (uint)bVar2 * -8);
@@ -47,8 +47,8 @@ int __cdecl core_tentacle_cpp_CTentacle_findNearbyTarget_FUN_00573010(CTentacle 
              *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
         local_3c = local_3c * (float)_DAT_005ec53a;
         if (SQRT(local_38 * local_38 + local_40 * local_40 + local_3c * local_3c) <
-            *(float *)&this_ptr->field_0x10a70) {
-          *(CTentacle **)&this_ptr->field_0x10a78 = actor_ptr;
+            (this_ptr->base).guard_distance) {
+          (this_ptr->base).victim = (CCharacter *)actor_ptr;
           return 1;
         }
       }

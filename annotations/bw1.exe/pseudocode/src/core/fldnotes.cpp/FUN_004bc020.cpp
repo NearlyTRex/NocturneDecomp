@@ -24,7 +24,7 @@ char * core_fldnotes_cpp_FUN_004bc020(int param_1,char *param_2,uint param_3)
     _DAT_01d1d404 = 0x72b;
     core_main_c_FUN_005030e0("Too many field note entries in section %s, adding entry %s",param_1,param_2);
   }
-  iVar2 = FUN_005c0f32(0x15c);
+  iVar2 = debugAllocTracked1(0x15c);
   pcVar3 = (char *)0x0;
   if (iVar2 != 0) {
     pcVar3 = (char *)core_fldnotes_cpp_FUN_004bbcb0(iVar2);

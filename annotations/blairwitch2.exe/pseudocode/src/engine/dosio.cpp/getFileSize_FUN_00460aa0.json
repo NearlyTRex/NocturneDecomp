@@ -70,7 +70,7 @@
     {
       "addr": "004a7d00",
       "from_addr": "004a7d8c",
-      "name": "engine_font.cpp_FUN_004a7d00",
+      "name": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -106,7 +106,7 @@
     {
       "addr": "00509cd0",
       "from_addr": "00509ce2",
-      "name": "sound_mp3.cpp_FUN_00509cd0",
+      "name": "sound_mp3.cpp_CMP3Decoder_openFile_FUN_00509cd0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -119,12 +119,6 @@
       "addr": "0054c1c0",
       "from_addr": "0054c27c",
       "name": "sound_sndmain.cpp_FUN_0054c1c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0054c76e",
-      "from_addr": "0054c783",
-      "name": "sound_sndmain.cpp_FUN_0054c76e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -146,9 +140,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0054c76e",
+      "from_addr": "0054c783",
+      "name": "sound_sndmain.cpp_isStreamableFile_FUN_0054c76e",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050f9e0",
       "from_addr": "0050fa00",
-      "name": "support_newmsg.cpp_FUN_0050f9e0",
+      "name": "support_newmsg.cpp_readMessageFile_FUN_0050f9e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -194,7 +194,7 @@
       {
         "call_addr": "004a7d8c",
         "call_type": "direct",
-        "caller": "engine_font.cpp_FUN_004a7d00",
+        "caller": "engine_font.cpp_CBitFont_loadBitmap_FUN_004a7d00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,7 +227,7 @@
       {
         "call_addr": "0050fa00",
         "call_type": "direct",
-        "caller": "support_newmsg.cpp_FUN_0050f9e0",
+        "caller": "support_newmsg.cpp_readMessageFile_FUN_0050f9e0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

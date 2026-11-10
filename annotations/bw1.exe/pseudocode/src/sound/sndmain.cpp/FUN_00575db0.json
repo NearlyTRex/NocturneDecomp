@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 149,
-    "complexity_score": 362,
+    "complexity_score": 352,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 14,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 72,
-    "suspect_count": 26,
+    "suspect_count": 25,
     "suspect_types": [
       "extra_output",
       "unaffected_reg",
@@ -244,14 +244,6 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x60",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x60 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 19,
       "match": "field_0x118",
       "severity": "mild",
@@ -271,7 +263,7 @@
       "line": 21,
       "match": "field_0x4c",
       "severity": "mild",
-      "text": "if ((this_ptr->field_0x4c & 1) != 0) {",
+      "text": "if (((this_ptr->options).field_0x4c & 1) != 0) {",
       "type": "unnamed_field"
     },
     {

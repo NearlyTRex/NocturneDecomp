@@ -2,20 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 137,
-    "complexity_score": 273,
+    "complexity_score": 305,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 18,
+    "pseudocode_lines": 70,
+    "suspect_count": 21,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "stack_alignment_array",
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 210
+    "total_lines": 207
   },
   "cross_references": [],
   "function": {
@@ -42,7 +43,7 @@
     {
       "addr": "0045b550",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_0045b550"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550"
     },
     {
       "addr": "0045b800",
@@ -62,7 +63,7 @@
     {
       "addr": "00560a70",
       "is_variadic": false,
-      "name": "core_sound.cpp_FUN_00560a70"
+      "name": "core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_00560a70"
     }
   ],
   "globals": [
@@ -202,7 +203,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 23,
+      "line": 22,
       "match": "param_5",
       "severity": "mild",
       "text": "switch(param_5) {",
@@ -210,15 +211,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 40,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_0045b550(aCStack_74,param_3);",
+      "text": "core_dirmat_cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(&CStack_74,param_3);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 49,
       "match": "param_2",
       "severity": "mild",
       "text": "afStack_48[2] = *param_2 - fStack_34;",
@@ -226,7 +227,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_2",
       "severity": "mild",
       "text": "afStack_48[3] = param_2[1] - fStack_30;",
@@ -234,59 +235,83 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 52,
+      "line": 51,
       "match": "param_2",
       "severity": "mild",
       "text": "fStack_38 = param_2[2] - fStack_2c;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 53,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "auStack_1c._0_4_ = *param_2 - fStack_34;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 52,
       "match": "param_2",
       "severity": "mild",
-      "text": "auStack_1c._0_4_ = *param_2 - fStack_34;",
+      "text": "CStack_1c.x = *param_2 - fStack_34;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_3",
       "severity": "mild",
-      "text": "(g_StakePool + _DAT_01c8eeac,(CVector3f *)auStack_1c,param_3,param_4);",
+      "text": "core_fire_cpp_CStake_spawn_FUN_00497ac0(g_StakePool + _DAT_01c8eeac,&CStack_1c,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 59,
+      "line": 57,
       "match": "param_4",
       "severity": "mild",
-      "text": "(g_StakePool + _DAT_01c8eeac,(CVector3f *)auStack_1c,param_3,param_4);",
+      "text": "core_fire_cpp_CStake_spawn_FUN_00497ac0(g_StakePool + _DAT_01c8eeac,&CStack_1c,param_3,param_4);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 63,
+      "line": 61,
       "match": "param_1",
       "severity": "mild",
-      "text": "(0x02CF5680,param_1,\"a-wood?.wav\",(CVector3f *)auStack_1c,0.23);",
+      "text": "(0x02CF5680,param_1,\"a-wood?.wav\",&CStack_1c,0.23);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 65,
+      "line": 62,
       "match": "param_3",
       "severity": "mild",
-      "text": "(g_StakePool + _DAT_01c8eeac,(CVector3f *)auStack_1c,param_3);",
+      "text": "core_fire_cpp_CStake_init_FUN_00497a50(g_StakePool + _DAT_01c8eeac,&CStack_1c,param_3);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Pointer value `&CStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 53,
+      "match": "(int)&CStack_1c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar2 * -8 + 4) = afStack_48[(uint)bVar2 * -2 + 3];",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Pointer value `&CStack_1c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 54,
+      "match": "(int)&CStack_1c",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 53,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar2 * -8 + 4) = afStack_48[(uint)bVar2 * -2 + 3];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 54,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "*(float *)((int)&CStack_1c + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 10,
+    "complexity_score": 25,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "clean",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 10,
-    "suspect_count": 0,
-    "suspect_types": [],
+    "suspect_count": 1,
+    "suspect_types": [
+      "alloc_magic_size"
+    ],
     "total_lines": 25
   },
   "cross_references": [],
@@ -34,7 +36,7 @@
     {
       "addr": "005c0f32",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0f32"
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
     }
   ],
   "globals": [],
@@ -77,5 +79,14 @@
     "return_addr_offset": 0,
     "variables": []
   },
-  "suspects": []
+  "suspects": [
+    {
+      "description": "Allocation size hardcodes 0x598 == sizeof(CLightGun). Replace the magic with sizeof(CLightGun) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 7,
+      "match": "(CLightGun*) alloc stride 0x598",
+      "severity": "moderate",
+      "text": "(CLightGun *)debugAllocTracked1(0x598)",
+      "type": "alloc_magic_size"
+    }
+  ]
 }

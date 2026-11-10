@@ -14,7 +14,7 @@
 ;
 ; XREF[2]:
 ;   core_netgame.cpp_CNetGame_disconnect_FUN_005043b0 at 00504612
-;   core_netgame.cpp_FUN_00504d60 at 00505034
+;   core_netgame.cpp_CNetGame_processPacket_FUN_00504d60 at 00505034
 ;
 ; Called Functions:
 ;   core_netgame.cpp_CNetGame_sendPacket_FUN_005058d0

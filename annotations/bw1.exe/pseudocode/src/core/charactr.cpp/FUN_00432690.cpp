@@ -21,8 +21,8 @@ void core_charactr_cpp_FUN_00432690(int param_1,int param_2,float param_3,int *p
   uint local_160 [12];
   uint local_130 [12];
   uint local_100 [12];
-  CMatrix3x4f local_d0 [48];
-  CMatrix3x4f local_a0 [48];
+  CMatrix3x4f local_d0;
+  CMatrix3x4f local_a0;
   uint local_70 [12];
   int local_40 [12];
   
@@ -34,9 +34,10 @@ void core_charactr_cpp_FUN_00432690(int param_1,int param_2,float param_3,int *p
     core_main_c_FUN_005030e0("CCharacter::computePickup - invalid hand!  Character is %s, hand is %d",param_1,param_2);
   }
   core_xform_cpp_FUN_005b5620
-            (local_d0,(CVector3f *)(piVar2[2] + 0x20),(CVector3f *)(piVar2[2] + 0x30));
-  core_xform_cpp_FUN_005b5760(local_a0,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30));
-  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(local_a0,local_d0);
+            (&local_d0,(CVector3f *)(piVar2[2] + 0x20),(CVector3f *)(piVar2[2] + 0x30));
+  core_xform_cpp_FUN_005b5760(&local_a0,(CVector3f *)(param_1 + 0x20),(CVector3f *)(param_1 + 0x30))
+  ;
+  core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(&local_a0,&local_d0);
   puVar3 = local_100;
   puVar5 = local_130;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -52,7 +53,7 @@ void core_charactr_cpp_FUN_00432690(int param_1,int param_2,float param_3,int *p
     puVar3 = puVar3 + (uint)bVar7 * -2 + 1;
     puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
   }
-  core_xform_cpp_FUN_005b6380(local_160);
+  core_xform_cpp_inverse_FUN_005b6380(local_160);
   piVar4 = local_40;
   piVar6 = piVar2 + 3;
   for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {

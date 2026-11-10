@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[3]:
-;   core_confedrt.cpp_FUN_005a1350 at 005a137b
-;   core_schngeis.cpp_FUN_005a3420 at 005a345e
-;   core_twigzomb.cpp_FUN_005a2e30 at 005a2e67
+;   core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350 at 005a137b
+;   core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420 at 005a345e
+;   core_twigzomb.cpp_CTwigZombie_processMotionEvent_FUN_005a2e30 at 005a2e67
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061c068

@@ -7,10 +7,10 @@
 ; CDoor *          Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408890
+;   core_actor.cpp_CDemonActor_setup_FUN_00408890
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   crt_string.c__strcmp_FUN_005a3d00
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   XREF to: 00462580 (UNCONDITIONAL_CALL)  ; CKeyFramedModel * core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580(CKeyFramedModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00463ca2
     PUSH EBX                            ; 00463ca5
-    CALL core_actor.cpp_FUN_00408890    ; 00463ca6
-        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408890(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 00463ca6
+        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00463cab
     PUSH 0x5bbd11                       ; 00463cae
     LEA ESI,[EBX + 0x2e8]               ; 00463cb3
@@ -41,8 +41,8 @@ section .text
     PUSH EBX                            ; 00463cc6
     PUSH 0x5bbd21                       ; 00463cc7
     PUSH ESI                            ; 00463ccc
-    CALL crt_unknown.c_FUN_005a28c0     ; 00463ccd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00463ccd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00463cd2
     PUSH 0x5bbd28                       ; 00463cd5
         ;   Label: LAB_00463cd5
@@ -61,8 +61,8 @@ section .text
         ;   Label: LAB_00463cf0
     PUSH 0x5bbd39                       ; 00463cf1
     PUSH ESI                            ; 00463cf6
-    CALL crt_unknown.c_FUN_005a28c0     ; 00463cf7
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00463cf7
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00463cfc
     POP ESI                             ; 00463cff
     POP EBX                             ; 00463d00

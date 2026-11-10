@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_setutil.cpp_FUN_0055c1b0 at 0055c1c9
+;   core_setutil.cpp_C3DSCamera_load_FUN_0055c1b0 at 0055c1c9
 ;
 ; Called Functions:
 ;   core_setutil.cpp_C3DSCamera_free_FUN_0055c100

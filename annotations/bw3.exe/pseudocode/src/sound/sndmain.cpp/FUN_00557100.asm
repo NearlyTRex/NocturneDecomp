@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[3]:
+;   core_sound.cpp_CSound_configure_FUN_005607d0 at 005608b3
 ;   core_sound.cpp_FUN_0055fd30 at 0055fd65
-;   core_sound.cpp_FUN_005607d0 at 005608b3
 ;   sound_sndmain.cpp_resetSoundSystemDefaults_FUN_00557f60 at 00557fe8
 ;
 ; Referenced Globals:
@@ -15,14 +15,14 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00557100
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00557100
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
         ;   Label: sound_sndmain.cpp_FUN_00557100
     MOV EAX,[0x02cf28b8]                ; 00557105 | DAT_02cf28b8
     MOV EDX,dword ptr [ESP + 0x4]       ; 0055710a

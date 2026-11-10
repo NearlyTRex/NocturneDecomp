@@ -9,9 +9,9 @@
 // Address: 0055d6a0
 void __cdecl staticInit(void);
 
-// Original: sound_sndwav.cpp_FUN_0055d6c0
+// Original: sound_sndwav.cpp_getWavOutBufferSizeBytes_FUN_0055d6c0
 // Address: 0055d6c0
-int FUN_0055d6c0(void);
+int __cdecl getWavOutBufferSizeBytes(void);
 
 // Original: sound_sndwav.cpp_writeWavOutBuffer_FUN_0055d6f0
 // Address: 0055d6f0
@@ -37,9 +37,9 @@ int __cdecl CWavOutDevice::setMode(CWavOutDevice *this_ptr,int bits_per_sample,i
 // Address: 0055dc40
 int __cdecl CWavOutDevice::poll(CWavOutDevice *this_ptr,short *output_buffer,int num_samples);
 
-// Original: sound_sndwav.cpp_FUN_0055dcc0
+// Original: sound_sndwav.cpp_getWavInBufferSizeBytes_FUN_0055dcc0
 // Address: 0055dcc0
-int FUN_0055dcc0(void);
+int __cdecl getWavInBufferSizeBytes(void);
 
 // Original: sound_sndwav.cpp_writeWavInBuffer_FUN_0055dcf0
 // Address: 0055dcf0

@@ -21,41 +21,41 @@ CDemonActorType * CGrandma::getActorType(CGrandma *this_ptr);
 // Address: 005a7b10
 CGrandma * CGrandma::ctor(CGrandma *this_ptr);
 
-// Original: core_grandma.cpp_FUN_005a7be0
+// Original: core_grandma.cpp_CGrandma_setup_FUN_005a7be0
 // Address: 005a7be0
-void FUN_005a7be0(int param_1);
+void __cdecl CGrandma::setup(CGrandma *this_ptr);
 
-// Original: core_grandma.cpp_FUN_005a7c20
+// Original: core_grandma.cpp_CGrandma_processStates_FUN_005a7c20
 // Address: 005a7c20
-void FUN_005a7c20(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CGrandma::processStates(CGrandma *this_ptr,float delta_time,int mode);
 
 // Original: core_grandma.cpp_FUN_005a7c40
 // Address: 005a7c40
 void FUN_005a7c40(int param_1);
 
-// Original: core_grandma.cpp_FUN_005a7c90
+// Original: core_grandma.cpp_CGrandma_processDeathState_FUN_005a7c90
 // Address: 005a7c90
-void FUN_005a7c90(int param_1);
+void __cdecl CGrandma::processDeathState(CGrandma *this_ptr,float delta_time);
 
-// Original: core_grandma.cpp_FUN_005a7cb0
+// Original: core_grandma.cpp_CGrandma_getDeathState_FUN_005a7cb0
 // Address: 005a7cb0
-undefined4 FUN_005a7cb0(void);
+EDeathState __cdecl CGrandma::getDeathState(CGrandma *this_ptr);
 
-// Original: core_grandma.cpp_FUN_005a7cc0
+// Original: core_grandma.cpp_CGrandma_processMotionEvent_FUN_005a7cc0
 // Address: 005a7cc0
-void FUN_005a7cc0(void);
+void __cdecl CGrandma::processMotionEvent(CGrandma *this_ptr,int event_id);
 
-// Original: core_grandma.cpp_FUN_005a7cd0
+// Original: core_grandma.cpp_CGrandma_renderOpaque_FUN_005a7cd0
 // Address: 005a7cd0
-void FUN_005a7cd0(undefined4 param_1);
+int __cdecl CGrandma::renderOpaque(CGrandma *this_ptr);
 
-// Original: core_grandma.cpp_FUN_005a7ce0
+// Original: core_grandma.cpp_CGrandma_archive_FUN_005a7ce0
 // Address: 005a7ce0
-void FUN_005a7ce0(undefined4 param_1);
+void __cdecl CGrandma::archive(CGrandma *this_ptr);
 
-// Original: core_grandma.cpp_FUN_005a7cf0
+// Original: core_grandma.cpp_CGrandma_getCarryObjToBodyXForm_FUN_005a7cf0
 // Address: 005a7cf0
-void FUN_005a7cf0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CGrandma::getCarryObjToBodyXForm(CGrandma *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
 // Original: core_grandma.cpp_CGrandma_dtor_FUN_005a7e10
 // Address: 005a7e10

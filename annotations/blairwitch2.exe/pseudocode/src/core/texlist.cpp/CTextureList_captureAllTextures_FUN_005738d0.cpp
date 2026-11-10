@@ -13,13 +13,13 @@ void __cdecl core_texlist_cpp_CTextureList_captureAllTextures_FUN_005738d0(CText
   SMRGLTextureBasic *texture;
   
   iVar1 = 0;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->texture_count) {
     texture = (SMRGLTextureBasic *)&this_ptr->field_0x4;
     do {
       iVar1 = iVar1 + 1;
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00(DAT_0060b280,texture);
       texture = texture + 0x18;
-    } while (iVar1 < *(int *)this_ptr);
+    } while (iVar1 < this_ptr->texture_count);
   }
   return;
 }

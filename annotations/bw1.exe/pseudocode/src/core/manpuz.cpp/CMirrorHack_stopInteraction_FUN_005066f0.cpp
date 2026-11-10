@@ -9,9 +9,9 @@
 void __cdecl core_manpuz_cpp_CMirrorHack_stopInteraction_FUN_005066f0(CMirrorHack *this_ptr,CDemonActor *user)
 
 {
-  if (user != *(CDemonActor **)&this_ptr->field_0x2d4) {
+  if (user != this_ptr->interacting_actor) {
     return;
   }
-  *(uint *)&this_ptr->field_0x2d4 = 0;
+  this_ptr->interacting_actor = (CDemonActor *)0x0;
   return;
 }

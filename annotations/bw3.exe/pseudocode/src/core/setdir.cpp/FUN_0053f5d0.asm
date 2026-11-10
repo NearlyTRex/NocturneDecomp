@@ -9,10 +9,10 @@
 ;   CGame* g_CGamePtr = 01d2130c
 ;
 ; Called Functions:
+;   engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470
 ;   engine_drender.cpp_CDemonRenderer_enableFaceCapture_FUN_0046d500
 ;   engine_drender.cpp_CDemonRenderer_renderSolidColorPoly_FUN_0046b2c0
 ;   engine_drender.cpp_CDemonRenderer_setRenderingState_FUN_0046d460
-;   engine_drender.cpp_FUN_0046b470
 ;
 ; *****************************************************************************
 
@@ -46,8 +46,8 @@ section .text
     PUSH EDI                            ; 0053f61c
     MOV EAX,[0x005f2afc]                ; 0053f61d | DAT_005f2afc
     PUSH EAX                            ; 0053f622
-    CALL engine_drender.cpp_FUN_0046b470 ; 0053f623
-        ;   XREF to: 0046b470 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_FUN_0046b470(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
+    CALL engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470 ; 0053f623
+        ;   XREF to: 0046b470 (UNCONDITIONAL_CALL)  ; int engine_drender.cpp_CDemonRenderer_countVisiblePixelsPoly_FUN_0046b470(CDemonRenderer * this_ptr, SMRGLPrimitivePoly * poly)
     ADD ESP,0x8                         ; 0053f628
     MOV EDX,dword ptr [ESP + 0xa4]      ; 0053f62b
     ADD EDX,EAX                         ; 0053f632

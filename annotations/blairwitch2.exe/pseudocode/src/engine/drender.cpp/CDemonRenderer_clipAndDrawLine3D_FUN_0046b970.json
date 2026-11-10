@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 298,
-    "complexity_score": 326,
+    "complexity_score": 306,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 151,
-    "suspect_count": 16,
+    "suspect_count": 14,
     "suspect_types": [
       "undefined_data",
       "unrolled_memcpy",
@@ -20,7 +20,7 @@
     {
       "addr": "0041f620",
       "from_addr": "0041f74d",
-      "name": "core_bugs.cpp_FUN_0041f620",
+      "name": "core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -105,7 +105,7 @@
       {
         "call_addr": "0041f74d",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_0041f620",
+        "caller": "core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,7 +116,7 @@
       {
         "call_addr": "0041f764",
         "call_type": "direct",
-        "caller": "core_bugs.cpp_FUN_0041f620",
+        "caller": "core_bugs.cpp_CBugs_renderGroundHeightGrid_FUN_0041f620",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -302,22 +302,6 @@
       "severity": "mild",
       "text": "_DAT_01c35e60 = DAT_0070ca5c;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 23,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
-    },
-    {
-      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
-      "line": 30,
-      "match": "for (...; != 0; ... + -1)",
-      "severity": "moderate",
-      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
-      "type": "unrolled_memcpy"
     },
     {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",

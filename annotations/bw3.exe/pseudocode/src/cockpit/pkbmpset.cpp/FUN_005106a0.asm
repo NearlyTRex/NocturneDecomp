@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbmpset_cpp_FUN_005106a0(int *param_1,int param_2)
+; void __cdecl cockpit_pkbmpset_cpp_FUN_005106a0(CPackedBitmapSet *this_ptr,int bitmap_count)
 ;
+; Parameters:
+; CPackedBitmapSet * Stack[0x4]:4   this_ptr
+; int              Stack[0x8]:4   bitmap_count
 ;
 ; XREF[1]:
 ;   cockpit_pkbmpset.cpp_FUN_0051080e at 005108e6
@@ -14,8 +17,8 @@
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
 ;   crt_memory.c___vec_new_FUN_005a5584
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a40df
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   unkafter_pkbitmap.cpp_FUN_00510670
 ;
 ; *****************************************************************************
@@ -65,8 +68,8 @@ section .text
     LEA EAX,[ESP + 0x10]                ; 00510702
     PUSH EAX                            ; 00510706
     MOV EDI,0x6e                        ; 00510707
-    CALL crt_unknown.c_FUN_005a28c0     ; 0051070c
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0051070c
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00510711
     LEA EAX,[ESP + 0x4]                 ; 00510714
     MOV ECX,0x5cbfc8                    ; 00510718

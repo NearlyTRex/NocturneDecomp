@@ -13,7 +13,7 @@
 ; undefined        Stack[-0x18]:1  local_18
 ;
 ; XREF[1]:
-;   core_gore.cpp_FUN_004ce5b0 at 004ce5fa
+;   core_gore.cpp_CGore_renderParticles_FUN_004ce5b0 at 004ce5fa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c4629

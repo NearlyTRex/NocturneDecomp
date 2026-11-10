@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_0052d0e0 at 0052d0fb
+;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0 at 0052d0fb
 ;
 ; Called Functions:
 ;   engine_light.cpp_setDirectionalLightVector_FUN_004e2600

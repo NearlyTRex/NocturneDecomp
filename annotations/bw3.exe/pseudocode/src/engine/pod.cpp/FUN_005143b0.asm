@@ -9,8 +9,8 @@
 ;   TerminatedCString s_Too_many_PODs_already_mo_005cc851
 ;
 ; Called Functions:
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;   crt_unknown.c_FUN_005a30c4
-;   crt_unknown.c_FUN_005a3cb2
 ;   engine_pod.cpp_CPodFile_ctor_FUN_00512f00
 ;   engine_pod.cpp_CPodFile_dtor_FUN_00512f70
 ;   engine_pod.cpp_FUN_00512fb0
@@ -28,8 +28,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x14]      ; 005143b4
     MOV EDI,dword ptr [ESP + 0x1c]      ; 005143b8
     PUSH 0x42c                          ; 005143bc
-    CALL crt_unknown.c_FUN_005a3cb2     ; 005143c1
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 005143c1
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 005143c6
     TEST EAX,EAX                        ; 005143c9
     JNZ 0x00514404                      ; 005143cb

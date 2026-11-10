@@ -11,12 +11,12 @@
 ;
 ; XREF[4]:
 ;   core_event.cpp_FUN_004a1d00 at 004a5ffd
-;   core_game.cpp_FUN_004d27b0 at 004d4c11
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d4c11
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054ee7e
 ;   core_weather.cpp_CWeather_ctor_FUN_005ae170 at 005ae178
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH 0x41a00000                     ; 005aefda
         ;   Label: LAB_005aefda
     PUSH 0x41200000                     ; 005aefdf
-    CALL core_actor.cpp_FUN_0040cc00    ; 005aefe4
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005aefe4
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 005aefe9
     MOV dword ptr [EBX + 0x24],0x0      ; 005aefed
     FLD float ptr [ESP + 0x8]           ; 005aeff4
@@ -46,8 +46,8 @@ section .text
     MOV dword ptr [EBX + 0x28],0x0      ; 005af005
     PUSH 0x40000000                     ; 005af00c
     FSTP float ptr [EBX + 0x20]         ; 005af011
-    CALL core_actor.cpp_FUN_0040cc00    ; 005af014
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 005af014
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 005af019
     MOV EAX,dword ptr [ESP + 0x8]       ; 005af01d
     MOV dword ptr [EBX + 0x2c],EAX      ; 005af021

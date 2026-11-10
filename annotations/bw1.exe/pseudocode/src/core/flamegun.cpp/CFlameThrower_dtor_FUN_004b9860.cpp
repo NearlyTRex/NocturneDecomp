@@ -17,7 +17,7 @@ CFlameThrower * __cdecl core_flamegun_cpp_CFlameThrower_dtor_FUN_004b9860(CFlame
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = (CFlameThrower *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0((CWeapon *)this_ptr,1);
+  pCVar1 = (CFlameThrower *)core_weapon_cpp_CWeapon_dtor_FUN_005ad5d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

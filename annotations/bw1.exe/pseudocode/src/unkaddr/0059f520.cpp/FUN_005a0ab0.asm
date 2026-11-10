@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   engine_font.cpp_FUN_004c0cd0 at 004c0e86
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0e86
 ;
 ; Called Functions:
 ;   unkaddr_0059f520.cpp_FUN_005a0ba0

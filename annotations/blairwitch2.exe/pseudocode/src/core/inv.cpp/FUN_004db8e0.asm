@@ -6,11 +6,11 @@
 ;
 ; XREF[7]:
 ;   core_inv.cpp_CInventory_clear_FUN_004da860 at 004da883
+;   core_inv.cpp_CInventory_removeMatchingKeys_FUN_004def40 at 004def7c
 ;   core_inv.cpp_FUN_004dc8c0 at 004dca6a
-;   core_inv.cpp_FUN_004def40 at 004def7c
 ;   core_script.cpp_FUN_00522350 at 00526a40
-;   core_stranger.cpp_FUN_0056db50 at 0056dd3d
-;   core_vampboss.cpp_FUN_00583160 at 00583346
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056dd3d
+;   core_vampboss.cpp_CVampireBoss_processDamage_FUN_00583160 at 00583346
 ;   unkafter_stranger.cpp_FUN_0045bdc0 at 0045c85d
 ;
 ; Referenced Globals:

@@ -2,20 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 49,
-    "complexity_score": 180,
+    "complexity_score": 98,
     "cross_reference_count": 5,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 30,
-    "suspect_count": 13,
+    "pseudocode_lines": 33,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
-      "shadow_pointer_walk",
-      "undefined_data",
-      "unnamed_field"
+      "pointer_cast",
+      "undefined_data"
     ],
-    "total_lines": 79
+    "total_lines": 82
   },
   "cross_references": [
     {
@@ -27,19 +26,19 @@
     {
       "addr": "0040e670",
       "from_addr": "0040e6c7",
-      "name": "core_ammobox.cpp_FUN_0040e670",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b8fce",
-      "from_addr": "004b8feb",
-      "name": "core_game.cpp_FUN_004b8fce",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004b90d0",
       "from_addr": "004b9d9f",
       "name": "core_game.cpp_FUN_004b90d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b8fce",
+      "from_addr": "004b8feb",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -112,7 +111,7 @@
     {
       "addr": "005f22f4",
       "name": "g_CAmmoVTable",
-      "type": "undefined4",
+      "type": "CDemonActor_vtable",
       "value": null
     }
   ],
@@ -144,7 +143,7 @@
       {
         "call_addr": "0040e6c7",
         "call_type": "direct",
-        "caller": "core_ammobox.cpp_FUN_0040e670",
+        "caller": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e670",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -155,7 +154,7 @@
       {
         "call_addr": "004b8feb",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b8fce",
+        "caller": "core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -227,16 +226,8 @@
       "line": 14,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CAmmoVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(byte **)&this_ptr_00[-1].field_0x178 = &g_CAmmoVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
@@ -247,84 +238,28 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 25,
-      "match": "field_0x1",
-      "severity": "mild",
-      "text": "pCVar4->field_0x1 = cVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x2",
-      "severity": "mild",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x40 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x44 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x48",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x48 = 0x3e800000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 31,
-      "match": "this_ptr_00[-2].",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-2].field_0x140 = 0;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-2].field_0x140 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Negative struct offset (wrong base type)",
-      "line": 32,
-      "match": "this_ptr_00[-2].",
-      "severity": "mild",
-      "text": "return (CAmmo *)&this_ptr_00[-2].field_0x44;",
-      "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x44",
-      "severity": "mild",
-      "text": "return (CAmmo *)&this_ptr_00[-2].field_0x44;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 26,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "match": "(char *)((int)pCVar4",
       "severity": "moderate",
-      "text": "pCVar4 = (CKeyFramedModelInstance *)&pCVar4->field_0x2;",
-      "type": "shadow_pointer_walk"
+      "text": "*(char *)((int)pCVar4->part_visibility_flags + 1) = cVar1;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 26,
+      "match": "(CKeyFramedModelInstance *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CKeyFramedModelInstance *)((int)pCVar4->part_visibility_flags + 2);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Negative struct offset (wrong base type)",
+      "line": 35,
+      "match": "this_ptr_00[-2].",
+      "severity": "mild",
+      "text": "return (CAmmo *)(this_ptr_00[-2].part_visibility_flags + 0x11);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {

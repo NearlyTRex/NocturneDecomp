@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bf4b0 at 004bf896
+;   core_game.cpp_CGame_process_FUN_004bf4b0 at 004bf896
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fe370
@@ -21,8 +21,8 @@
 ;   SNotesMap[10] SNotesMap_ARRAY_01d0e370
 ;   undefined4 SNotesMap_ARRAY_01d0e370[1].field0_0x0
 ;   undefined4 DAT_01d19ba8
-;   undefined4 CAlphaBitmap_01d19cc4.field12_0xc
-;   undefined4 CAlphaBitmap_01d19cc4.field16_0x10
+;   undefined4 CAlphaBitmap_01d19cc4.width
+;   undefined4 CAlphaBitmap_01d19cc4.height
 ;   ... and 7 more
 ;
 ; Called Functions:
@@ -64,7 +64,7 @@ section .text
     JZ 0x004ac700                       ; 004ac6e8
         ;   XREF to: 004ac700 (CONDITIONAL_JUMP)  ; LAB_004ac700
     MOV EAX,[0x005fe9dc]                ; 004ac6ea | g_CGamePtr | g_CGameInstance
-    CMP dword ptr [EAX + 0x24c],0x0     ; 004ac6ef | g_CGameInstance.field588_0x24c
+    CMP dword ptr [EAX + 0x24c],0x0     ; 004ac6ef | g_CGameInstance.field540_0x24c
     JZ 0x004ac7be                       ; 004ac6f6
         ;   XREF to: 004ac7be (CONDITIONAL_JUMP)  ; LAB_004ac7be
     POP EBP                             ; 004ac6fc
@@ -226,12 +226,12 @@ section .text
     CMP ESI,EBP                         ; 004ac8c0
     JL 0x004ac853                       ; 004ac8c2
         ;   XREF to: 004ac853 (CONDITIONAL_JUMP)  ; LAB_004ac853
-    MOV EDX,dword ptr [0x01d19cd0]      ; 004ac8c4 | CAlphaBitmap_01d19cc4.field12_0xc
+    MOV EDX,dword ptr [0x01d19cd0]      ; 004ac8c4 | CAlphaBitmap_01d19cc4.width
     LEA EAX,[EDI + EDX*0x1]             ; 004ac8ca
     CMP EBX,EAX                         ; 004ac8cd
     JGE 0x004ac853                      ; 004ac8cf
         ;   XREF to: 004ac853 (CONDITIONAL_JUMP)  ; LAB_004ac853
-    MOV ECX,dword ptr [0x01d19cd4]      ; 004ac8d1 | CAlphaBitmap_01d19cc4.field16_0x10
+    MOV ECX,dword ptr [0x01d19cd4]      ; 004ac8d1 | CAlphaBitmap_01d19cc4.height
     LEA EAX,[ECX + EBP*0x1]             ; 004ac8d7
     CMP ESI,EAX                         ; 004ac8da
     JGE 0x004ac853                      ; 004ac8dc

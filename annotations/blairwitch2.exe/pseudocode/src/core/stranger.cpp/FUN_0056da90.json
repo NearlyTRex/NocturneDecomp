@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 41,
-    "complexity_score": 172,
+    "complexity_score": 137,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 12,
+    "suspect_count": 9,
     "suspect_types": [
       "param_count_too_few",
       "stack_alignment_array",
       "unaffected_reg",
-      "unknown_field",
       "unnamed_param"
     ],
     "total_lines": 68
@@ -22,13 +21,13 @@
     {
       "addr": "0056b770",
       "from_addr": "0056b84b",
-      "name": "core_stranger.cpp_FUN_0056b770",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056db50",
       "from_addr": "0056e184",
-      "name": "core_stranger.cpp_FUN_0056db50",
+      "name": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +47,7 @@
     {
       "addr": "00449280",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_00449280"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
     },
     {
       "addr": "00449530",
@@ -63,7 +62,7 @@
       {
         "call_addr": "0056e184",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056db50",
+        "caller": "core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -78,7 +77,7 @@
       {
         "call_addr": "0056b84b",
         "call_type": "direct",
-        "caller": "core_stranger.cpp_FUN_0056b770",
+        "caller": "core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,42 +204,18 @@
     {
       "description": "StackY array variable (stack alignment artifact)",
       "line": 7,
-      "match": "auStackY_1014",
+      "match": "afStackY_1014",
       "severity": "moderate",
-      "text": "uint auStackY_1014 [1006];",
+      "text": "float afStackY_1014 [1006];",
       "type": "stack_alignment_array"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 17,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_20._0_4_ = *(uint *)(param_1 + 0x2565c);",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 17,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_20._0_4_ = *(uint *)(param_1 + 0x2565c);",
+      "text": "local_20.x = *(float *)(param_1 + 0x2565c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 18,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "local_20._8_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 19,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "local_20._4_4_ = 0;",
-      "type": "unknown_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -263,7 +238,7 @@
       "line": 26,
       "match": "unaff_ESI",
       "severity": "moderate",
-      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = auStack_28[(uint)bVar1 * -2];",
+      "text": "unaff_ESI[(uint)bVar1 * -2 + 1] = afStack_28[(uint)bVar1 * -2];",
       "type": "unaffected_reg"
     },
     {

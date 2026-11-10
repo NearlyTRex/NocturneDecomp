@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004b6170 at 004b624a
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b624a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_anon_005ef5d1

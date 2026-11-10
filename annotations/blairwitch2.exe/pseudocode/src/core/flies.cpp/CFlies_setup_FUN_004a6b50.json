@@ -1,0 +1,104 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 29,
+    "complexity_score": 14,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 14,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 43
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004a6b50",
+    "address_range": [
+      [
+        "004a6b50",
+        "004a6b8c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_flies.cpp_CFlies_setup_FUN_004a6b50",
+    "signature": "void __cdecl core_flies_cpp_CFlies_setup_FUN_004a6b50(CFlies *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408a80",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setup_FUN_00408a80"
+    },
+    {
+      "addr": "004a7560",
+      "is_variadic": false,
+      "name": "core_flies.cpp_CFlies_initFly_FUN_004a7560"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.681818181818182,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "BOOL_OR": 1,
+      "CALL": 2,
+      "CBRANCH": 2,
+      "COPY": 18,
+      "INT_ADD": 10,
+      "INT_AND": 13,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 12,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 2,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 6,
+      "INT_SUB": 8,
+      "INT_XOR": 1,
+      "LOAD": 6,
+      "POPCOUNT": 6,
+      "RETURN": 1,
+      "STORE": 8
+    },
+    "pcode_op_count": 103
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CFlies *"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 8,
+        "vtable_addr": "005f7084"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

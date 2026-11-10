@@ -11,7 +11,9 @@ void __cdecl core_motion_cpp_CMotionController_setDesiredStateByName_FUN_005036b
 {
   int desired_state_index;
   
-  desired_state_index = core_motion_cpp_FUN_00502fa0(*(CMotionList **)this_ptr,state_name,1);
+  desired_state_index =
+       core_motion_cpp_CMotionList_findStateIndex_FUN_00502fa0
+                 (this_ptr->motion_list_ptr,state_name,1);
   core_motion_cpp_CMotionController_setDesiredState_FUN_00503620
             (this_ptr,desired_state_index,force_immediate);
   return;

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 52,
+    "complexity_score": 42,
     "cross_reference_count": 8,
     "function_call_count": 2,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 2,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
@@ -17,9 +17,21 @@
   },
   "cross_references": [
     {
+      "addr": "0050c280",
+      "from_addr": "0050c3e1",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050ecb0",
       "from_addr": "0050f0c6",
       "name": "core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0050e970",
+      "from_addr": "0050eb13",
+      "name": "core_netgame.cpp_CNetGame_sendGameSetting_FUN_0050e970",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -50,18 +62,6 @@
       "addr": "0050b4d0",
       "from_addr": "0050b684",
       "name": "core_netgame.cpp_FUN_0050b4d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050c280",
-      "from_addr": "0050c3e1",
-      "name": "core_netgame.cpp_FUN_0050c280",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0050e970",
-      "from_addr": "0050eb13",
-      "name": "core_netgame.cpp_FUN_0050e970",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -165,7 +165,7 @@
       {
         "call_addr": "0050c3e1",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050c280",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -176,7 +176,7 @@
       {
         "call_addr": "0050c881",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050c280",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -187,7 +187,7 @@
       {
         "call_addr": "0050ca66",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050c280",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -220,7 +220,7 @@
       {
         "call_addr": "0050eb13",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050e970",
+        "caller": "core_netgame.cpp_CNetGame_sendGameSetting_FUN_0050e970",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -305,18 +305,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 7,
+      "line": 13,
       "match": "field_0x1c",
       "severity": "mild",
-      "text": "if ((player_index < 0) || (*(int *)&this_ptr->field_0x1c <= player_index)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "(this_ptr,(SNetworkAddr *)(&this_ptr->field_0x3c + player_index * 0x80),packet);",
+      "text": "(this_ptr,(SNetworkAddr *)&this_ptr->players[player_index].field_0x1c,packet);",
       "type": "unnamed_field"
     }
   ]

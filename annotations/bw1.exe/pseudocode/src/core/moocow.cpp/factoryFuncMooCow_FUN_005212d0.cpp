@@ -11,7 +11,7 @@ void core_moocow_cpp_factoryFuncMooCow_FUN_005212d0(void)
 {
   CMooCow *this_ptr;
   
-  this_ptr = (CMooCow *)FUN_005c0f32(0xc1f4);
+  this_ptr = (CMooCow *)debugAllocTracked1(0xc1f4);
   if (this_ptr == (CMooCow *)0x0) {
     return;
   }

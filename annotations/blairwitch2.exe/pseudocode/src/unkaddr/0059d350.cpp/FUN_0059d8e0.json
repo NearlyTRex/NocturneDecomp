@@ -17,6 +17,30 @@
   },
   "cross_references": [
     {
+      "addr": "0059f6b0",
+      "from_addr": "0059f733",
+      "name": "core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059ef90",
+      "from_addr": "0059f097",
+      "name": "core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059f800",
+      "from_addr": "0059f873",
+      "name": "core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a0270",
+      "from_addr": "005a02ba",
+      "name": "core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005a1030",
       "from_addr": "005a10d5",
       "name": "core_confedrt.cpp_FUN_005a1030",
@@ -29,33 +53,33 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005a1f40",
-      "from_addr": "005a200c",
-      "name": "core_confzomb.cpp_FUN_005a1f40",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "005a2130",
       "from_addr": "005a2203",
-      "name": "core_confzomb.cpp_FUN_005a2130",
+      "name": "core_confzomb.cpp_CConfederateZombie_processMeleeAttackState_FUN_005a2130",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005abfa0",
-      "from_addr": "005ac07b",
-      "name": "core_dog1.cpp_FUN_005abfa0",
+      "addr": "005a1f40",
+      "from_addr": "005a200c",
+      "name": "core_confzomb.cpp_CConfederateZombie_processRangeAttackState_FUN_005a1f40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ac0c0",
       "from_addr": "005ac1ee",
-      "name": "core_dog1.cpp_FUN_005ac0c0",
+      "name": "core_dog1.cpp_CDog_processChaseFoodState_FUN_005ac0c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ac200",
       "from_addr": "005ac2d5",
-      "name": "core_dog1.cpp_FUN_005ac200",
+      "name": "core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005abfa0",
+      "from_addr": "005ac07b",
+      "name": "core_dog1.cpp_CDog_processMeleeAttackState_FUN_005abfa0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,79 +91,85 @@
     {
       "addr": "005a9580",
       "from_addr": "005a967b",
-      "name": "core_ghostchi.cpp_FUN_005a9580",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005aaa80",
-      "from_addr": "005aab1f",
-      "name": "core_hag.cpp_FUN_005aaa80",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005aab50",
-      "from_addr": "005aac16",
-      "name": "core_hag.cpp_FUN_005aab50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005aaca0",
-      "from_addr": "005aad44",
-      "name": "core_hag.cpp_FUN_005aaca0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005aad70",
-      "from_addr": "005aadd1",
-      "name": "core_hag.cpp_FUN_005aad70",
+      "name": "core_ghostchi.cpp_CGhostChild_processMeleeAttackState_FUN_005a9580",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ab7d0",
       "from_addr": "005ab83e",
-      "name": "core_hag.cpp_FUN_005ab7d0",
+      "name": "core_hag.cpp_CHag_processDamage_FUN_005ab7d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005a9ed0",
-      "from_addr": "005a9fc5",
-      "name": "core_hand.cpp_FUN_005a9ed0",
+      "addr": "005aaa80",
+      "from_addr": "005aab1f",
+      "name": "core_hag.cpp_CHag_processHagAlertState_FUN_005aaa80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005a9ff0",
-      "from_addr": "005aa139",
-      "name": "core_hand.cpp_FUN_005a9ff0",
+      "addr": "005aaca0",
+      "from_addr": "005aad44",
+      "name": "core_hag.cpp_CHag_processHealingState_FUN_005aaca0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aab50",
+      "from_addr": "005aac16",
+      "name": "core_hag.cpp_CHag_processMeleeAttackState_FUN_005aab50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005aad70",
+      "from_addr": "005aadd1",
+      "name": "core_hag.cpp_CHag_startBurn_FUN_005aad70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005aa1f0",
       "from_addr": "005aa220",
-      "name": "core_hand.cpp_FUN_005aa1f0",
+      "name": "core_hand.cpp_CHand_processDamage_FUN_005aa1f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9ed0",
+      "from_addr": "005a9fc5",
+      "name": "core_hand.cpp_CHand_processMeleeAttackState_FUN_005a9ed0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a9ff0",
+      "from_addr": "005aa139",
+      "name": "core_hand.cpp_CHand_processSleepingState_FUN_005a9ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a6140",
       "from_addr": "005a61d3",
-      "name": "core_robin.cpp_FUN_005a6140",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a3280",
-      "from_addr": "005a3349",
-      "name": "core_schngeis.cpp_FUN_005a3280",
+      "name": "core_robin.cpp_CRobin_processMeleeAttackState_FUN_005a6140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a33b0",
       "from_addr": "005a33ea",
-      "name": "core_schngeis.cpp_FUN_005a33b0",
+      "name": "core_schngeis.cpp_CSchnellGeist_processLeapAttackState_FUN_005a33b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005a3280",
+      "from_addr": "005a3349",
+      "name": "core_schngeis.cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a3560",
       "from_addr": "005a3af8",
       "name": "core_schngeis.cpp_FUN_005a3560",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059fc10",
+      "from_addr": "0059ff81",
+      "name": "core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -161,15 +191,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005a40f0",
-      "from_addr": "005a41ef",
-      "name": "core_unionzom.cpp_FUN_005a40f0",
+      "addr": "005a4220",
+      "from_addr": "005a42f3",
+      "name": "core_unionzom.cpp_CUnionZombie_processMeleeAttackState_FUN_005a4220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005a4220",
-      "from_addr": "005a42f3",
-      "name": "core_unionzom.cpp_FUN_005a4220",
+      "addr": "005a40f0",
+      "from_addr": "005a41ef",
+      "name": "core_unionzom.cpp_CUnionZombie_processVanishAttackState_FUN_005a40f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -200,36 +230,6 @@
       "addr": "0059ee00",
       "from_addr": "0059eeae",
       "name": "unkafter_basicene.cpp_FUN_0059ee00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059ef90",
-      "from_addr": "0059f097",
-      "name": "unkafter_basicene.cpp_FUN_0059ef90",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059f6b0",
-      "from_addr": "0059f733",
-      "name": "unkafter_basicene.cpp_FUN_0059f6b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059f800",
-      "from_addr": "0059f873",
-      "name": "unkafter_basicene.cpp_FUN_0059f800",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059fc10",
-      "from_addr": "0059ff81",
-      "name": "unkafter_basicene.cpp_FUN_0059fc10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005a0270",
-      "from_addr": "005a02ba",
-      "name": "unkafter_basicene.cpp_FUN_005a0270",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -272,7 +272,7 @@
       {
         "call_addr": "0059ff81",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_0059fc10",
+        "caller": "core_twigzomb.cpp_CTwigZombie_archive_FUN_0059fc10",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -285,7 +285,7 @@
       {
         "call_addr": "0059f873",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_0059f800",
+        "caller": "core_basicene.cpp_CBasicEnemy_processDamage_FUN_0059f800",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -318,7 +318,7 @@
       {
         "call_addr": "0059f097",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_0059ef90",
+        "caller": "core_basicene.cpp_CBasicEnemy_processChasingState_FUN_0059ef90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -342,7 +342,7 @@
       {
         "call_addr": "0059f733",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_0059f6b0",
+        "caller": "core_basicene.cpp_CBasicEnemy_checkVictim_FUN_0059f6b0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -353,7 +353,7 @@
       {
         "call_addr": "005a02ba",
         "call_type": "direct",
-        "caller": "unkafter_basicene.cpp_FUN_005a0270",
+        "caller": "core_basicene.cpp_CBasicEnemy_startBurn_FUN_005a0270",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",

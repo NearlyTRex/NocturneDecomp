@@ -13,9 +13,9 @@ int FUN_005a9410(void)
   int iVar2;
   
   iVar1 = DAT_0060796c;
-  iVar2 = unkafter_asgaya_cpp_FUN_005ae798();
+  iVar2 = FUN_005ae798();
   if ((iVar2 != -1) && (iVar1 == 0)) {
-    unkafter_asgaya_cpp_FUN_005ae830(iVar2);
+    FUN_005ae830(iVar2);
   }
   return iVar2;
 }

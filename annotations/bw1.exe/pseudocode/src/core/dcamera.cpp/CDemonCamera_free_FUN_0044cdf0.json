@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 36,
-    "complexity_score": 110,
+    "complexity_score": 15,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 15,
-    "suspect_count": 9,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 51
   },
   "cross_references": [
@@ -30,7 +28,7 @@
     {
       "addr": "00551b90",
       "from_addr": "00551c0a",
-      "name": "core_set.cpp_FUN_00551b90",
+      "name": "core_set.cpp_CDemonSet_clearLights_FUN_00551b90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -71,7 +69,7 @@
       {
         "call_addr": "00551c0a",
         "call_type": "direct",
-        "caller": "core_set.cpp_FUN_00551b90",
+        "caller": "core_set.cpp_CDemonSet_clearLights_FUN_00551b90",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -136,78 +134,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x160 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "FUN_005c09f0(*(int *)&this_ptr->field_0x160);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x160",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x160 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x158 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x164 != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "FUN_005c09f0(*(int *)&this_ptr->field_0x164);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x164",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x164 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x1d0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1d0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15c = 0;",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

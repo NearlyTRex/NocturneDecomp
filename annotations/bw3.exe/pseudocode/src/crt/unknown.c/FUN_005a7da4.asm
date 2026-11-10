@@ -14,7 +14,7 @@
 ;   undefined4 DAT_00607de0
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005ad760
+;   crt_unknown.c_FUN_005ad760
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     XOR EAX,EAX                         ; 005a7dc4
         ;   Label: LAB_005a7dc4
     MOV AX,[0x00607de0]                 ; 005a7dc6 | DAT_00607de0
-    CALL unkafter_asgaya.cpp_FUN_005ad760 ; 005a7dcc
-        ;   XREF to: 005ad760 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005ad760()
+    CALL crt_unknown.c_FUN_005ad760     ; 005a7dcc
+        ;   XREF to: 005ad760 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ad760()
     POP EBX                             ; 005a7dd1
     RET                                 ; 005a7dd2
 

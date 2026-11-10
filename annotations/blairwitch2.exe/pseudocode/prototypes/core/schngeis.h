@@ -21,45 +21,45 @@ CDemonActorType * CSchnellGeist::getActorType(CSchnellGeist *this_ptr);
 // Address: 005a2fb0
 CSchnellGeist * CSchnellGeist::ctor(CSchnellGeist *this_ptr);
 
-// Original: core_schngeis.cpp_FUN_005a3140
+// Original: core_schngeis.cpp_CSchnellGeist_setup_FUN_005a3140
 // Address: 005a3140
-void FUN_005a3140(int param_1);
+void __cdecl CSchnellGeist::setup(CSchnellGeist *this_ptr);
 
-// Original: core_schngeis.cpp_FUN_005a31c0
+// Original: core_schngeis.cpp_CSchnellGeist_processStates_FUN_005a31c0
 // Address: 005a31c0
-void FUN_005a31c0(int param_1,undefined4 param_2,int param_3);
+void __cdecl CSchnellGeist::processStates(CSchnellGeist *this_ptr,float delta_time,int mode);
 
-// Original: core_schngeis.cpp_FUN_005a3280
+// Original: core_schngeis.cpp_CSchnellGeist_processMeleeAttackState_FUN_005a3280
 // Address: 005a3280
-void FUN_005a3280(CCharacter *param_1);
+void __cdecl CSchnellGeist::processMeleeAttackState(CSchnellGeist *this_ptr,float delta_time);
 
-// Original: core_schngeis.cpp_FUN_005a33b0
+// Original: core_schngeis.cpp_CSchnellGeist_processLeapAttackState_FUN_005a33b0
 // Address: 005a33b0
-void FUN_005a33b0(int param_1);
+void __cdecl CSchnellGeist::processLeapAttackState(CSchnellGeist *this_ptr,float delta_time);
 
-// Original: core_schngeis.cpp_FUN_005a3420
+// Original: core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420
 // Address: 005a3420
-void FUN_005a3420(CDemonActor *param_1,undefined4 param_2);
+void __cdecl CSchnellGeist::processMotionEvent(CSchnellGeist *this_ptr,int event_id);
 
 // Original: core_schngeis.cpp_FUN_005a3560
 // Address: 005a3560
 void FUN_005a3560(CDemonActor *param_1,float param_2);
 
-// Original: core_schngeis.cpp_FUN_005a3b10
+// Original: core_schngeis.cpp_CSchnellGeist_processDeathState_FUN_005a3b10
 // Address: 005a3b10
-void FUN_005a3b10(int param_1);
+void __cdecl CSchnellGeist::processDeathState(CSchnellGeist *this_ptr,float delta_time);
 
-// Original: core_schngeis.cpp_FUN_005a3b30
+// Original: core_schngeis.cpp_CSchnellGeist_getDeathState_FUN_005a3b30
 // Address: 005a3b30
-undefined4 FUN_005a3b30(int param_1);
+EDeathState __cdecl CSchnellGeist::getDeathState(CSchnellGeist *this_ptr);
 
-// Original: core_schngeis.cpp_FUN_005a3ba0
+// Original: core_schngeis.cpp_CSchnellGeist_processDamage_FUN_005a3ba0
 // Address: 005a3ba0
-void FUN_005a3ba0(int param_1,int param_2);
+void __cdecl CSchnellGeist::processDamage(CSchnellGeist *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_schngeis.cpp_FUN_005a3bf0
+// Original: core_schngeis.cpp_CSchnellGeist_archive_FUN_005a3bf0
 // Address: 005a3bf0
-void FUN_005a3bf0(int param_1);
+void __cdecl CSchnellGeist::archive(CSchnellGeist *this_ptr);
 
 // Original: core_schngeis.cpp_CSchnellGeist_dtor_FUN_005a3c30
 // Address: 005a3c30

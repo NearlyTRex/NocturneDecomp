@@ -1,0 +1,160 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 65,
+    "complexity_score": 63,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 33,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040df20",
+    "address_range": [
+      [
+        "0040df20",
+        "0040dfbd"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20",
+    "signature": "int __cdecl core_ammo_cpp_CAmmo_renderOpaque_FUN_0040df20(CAmmo *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_restoreRenderState_FUN_00408830"
+    },
+    {
+      "addr": "004087f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_setupRenderState_FUN_004087f0"
+    },
+    {
+      "addr": "0041daf0",
+      "is_variadic": false,
+      "name": "core_box.cpp_FUN_0041daf0"
+    },
+    {
+      "addr": "00462540",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.982142857142857,
+    "instruction_count": 56,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 2,
+      "COPY": 78,
+      "FLOAT2FLOAT": 2,
+      "INT2FLOAT": 1,
+      "INT_ADD": 31,
+      "INT_AND": 23,
+      "INT_CARRY": 8,
+      "INT_EQUAL": 23,
+      "INT_LESS": 2,
+      "INT_MULT": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 8,
+      "INT_SLESS": 11,
+      "INT_SUB": 23,
+      "INT_ZEXT": 2,
+      "LOAD": 15,
+      "POPCOUNT": 11,
+      "RETURN": 2,
+      "ROUND": 1,
+      "STORE": 22,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 279
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x31c",
+      "severity": "mild",
+      "text": "fVar5 = (float10)*(float *)&this_ptr->field_0x31c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 19,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAmmo",
+        "offset": 16,
+        "vtable_addr": "005db214"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 16,
+        "vtable_addr": "005db134"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 16,
+        "vtable_addr": "005db3d4"
+      },
+      {
+        "class_name": "CAmmo",
+        "offset": 16,
+        "vtable_addr": "005db2f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 4
+  }
+}

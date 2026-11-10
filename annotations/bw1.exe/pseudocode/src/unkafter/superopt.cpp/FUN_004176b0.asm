@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc60
+;   core_actor.cpp_getRandomInt_FUN_0040cc60
 ;
 ; *****************************************************************************
 
@@ -57,26 +57,26 @@ section .text
         ;   XREF to: 00417738 (CONDITIONAL_JUMP)  ; LAB_00417738
     PUSH 0x2                            ; 00417746
     PUSH 0x0                            ; 00417748
-    CALL core_actor.cpp_FUN_0040cc60    ; 0041774a
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 0041774a
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0041774f
     PUSH 0x2                            ; 00417752
     PUSH 0x0                            ; 00417754
     MOV dword ptr [EBX + 0x44],EAX      ; 00417756
-    CALL core_actor.cpp_FUN_0040cc60    ; 00417759
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 00417759
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0041775e
     PUSH 0x2                            ; 00417761
     PUSH 0x0                            ; 00417763
     MOV dword ptr [EBX + 0x48],EAX      ; 00417765
-    CALL core_actor.cpp_FUN_0040cc60    ; 00417768
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 00417768
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0041776d
     PUSH 0x2                            ; 00417770
     PUSH 0x0                            ; 00417772
     MOV dword ptr [EBX + 0x4c],EAX      ; 00417774
-    CALL core_actor.cpp_FUN_0040cc60    ; 00417777
-        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cc60(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cc60 ; 00417777
+        ;   XREF to: 0040cc60 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cc60(int min_value, int max_value)
     ADD ESP,0x8                         ; 0041777c
     MOV dword ptr [EBX + 0x50],EAX      ; 0041777f
     MOV EAX,EBX                         ; 00417782

@@ -4,10 +4,10 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "system/iostream.h"
 #include "system/stdio.h"
 #include "system/watcom.h"
 #include "system/windef.h"
-#include "system/winnt.h"
 #include "types/classes/CBox.h"
 #include "types/classes/CChain.h"
 #include "types/classes/CCloth.h"
@@ -40,15 +40,15 @@ void core_cloth_cpp_FUN_005b0ce0(int param_1,int param_2,int param_3);
 int __cdecl core_cloth_cpp_CCloth_saveJoinedLight_FUN_005b0ef0(CCloth *this_ptr,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CCloth_render_FUN_005b0fe0(CCloth *this_ptr,CDeformableModelInstance *deformable_model);
 CClothList * __cdecl core_cloth_cpp_CClothList_ctor_FUN_005b1440(CClothList *this_ptr);
-CClothList * __cdecl core_cloth_cpp_FUN_005b1480(CClothList *this_ptr,uint flags);
+CClothList * __cdecl core_cloth_cpp_CClothList_dtor_FUN_005b1480(CClothList *this_ptr,uint flags);
 void __cdecl core_cloth_cpp_CClothList_load_FUN_005b14a0(CClothList *this_ptr);
-void __cdecl core_cloth_cpp_FUN_005b1550(CClothList *this_ptr);
+void __cdecl core_cloth_cpp_CClothList_reset_FUN_005b1550(CClothList *this_ptr);
 void __cdecl core_cloth_cpp_CClothList_add_FUN_005b15c0(CClothList *this_ptr,char *filename);
 void __cdecl core_cloth_cpp_CClothList_remove_FUN_005b1640(CClothList *this_ptr,int index);
 void __cdecl core_cloth_cpp_CClothList_setup_FUN_005b1740(CClothList *this_ptr,CVector3f *position,CVector3f *euler,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_process_FUN_005b1780(CClothList *this_ptr,CVector3f *position,CVector3f *euler,float delta_time,float floor_y,CDeformableModelInstance *model_ptr);
 void __cdecl core_cloth_cpp_CClothList_render_FUN_005b17d0(CClothList *this_ptr,CDeformableModelInstance *model_ptr);
-void __cdecl core_cloth_cpp_FUN_005b1890(CClothList *this_ptr,CVector3f *wind_velocity);
+void __cdecl core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(CClothList *this_ptr,CVector3f *wind_velocity);
 void __cdecl core_cloth_cpp_CCloth_grabCloth_FUN_005b18e0(CCloth *this_ptr,char *bone_name,int vertex_index);
 void __cdecl core_cloth_cpp_FUN_005b1980(CCloth *this_ptr,int vertex_index);
 void core_cloth_cpp_FUN_005b19b0(int param_1,float *param_2);
@@ -62,17 +62,17 @@ void __cdecl core_box_cpp_CBox_setupCorners_FUN_005b1c80(CBox *this_ptr,CVector3
 void __cdecl core_box_cpp_FUN_005b2050(CBox *this_ptr,CVector3f *new_position,CVector3f *new_orientation,float speed);
 void __cdecl core_box_cpp_CBox_process_FUN_005b2290(CBox *this_ptr,float delta_time);
 void __cdecl core_box_cpp_CBox_processPhysics_FUN_005b22f0(CBox *this_ptr,float delta_time);
-void __cdecl core_box_cpp_FUN_005b4300(CBox *this_ptr,_FILE *file_handle);
+void __cdecl core_box_cpp_CBox_loadFromFile_FUN_005b4300(CBox *this_ptr,_FILE *file_handle);
 void __cdecl core_box_cpp_CBox_saveToFile_FUN_005b44b0(CBox *this_ptr,_FILE *file_handle,char *indent_prefix);
 void __cdecl core_box_cpp_CBox_setupVelocities_FUN_005b4610(CBox *this_ptr,CVector3f *linear_velocity,CVector3f *angular_velocity);
 SScrape * core_box_cpp_SScrape_ctor_FUN_005b46b0(SScrape *this_ptr);
-void unkaddr_005b46c0_cpp_FUN_005b46c0(void);
-void core_chain_cpp_FUN_005b46f0(void);
+void __cdecl core_chain_cpp_staticInit_FUN_005b46c0(void);
+void core_chain_cpp_factoryFuncChain_FUN_005b46f0(void);
 CDemonActorType * core_chain_cpp_CChain_getActorType_FUN_005b4710(CChain *this_ptr);
 CChain * __cdecl core_chain_cpp_CChain_ctor_FUN_005b4720(CChain *this_ptr);
 void core_chain_cpp_FUN_005b4860(int param_1);
 void core_chain_cpp_FUN_005b48e0(CDemonActor *param_1);
-void __cdecl core_chain_cpp_FUN_005b4aa0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
+void __cdecl core_chain_cpp_CChain_constrainSegmentDistance_FUN_005b4aa0(CChain *this_ptr,SChainVertex *vertex_a,SChainVertex *vertex_b);
 void core_chain_cpp_FUN_005b4d30(CChain *param_1,float param_2);
 undefined4 core_chain_cpp_FUN_005b56c0(CDemonActor *param_1);
 void core_chain_cpp_FUN_005b5ca0(int param_1);
@@ -112,7 +112,7 @@ CMorphModel * __cdecl core_morph_cpp_FUN_005b7720(CMorphModel *this_ptr,uint fla
 void crt_cpp_c_pureVirtualStub_FUN_005b7740(void);
 void crt_unknown_c_FUN_005b7750(int *param_1,undefined1 param_2);
 void __cdecl crt_stdio_c_vsprintf_FUN_005b7768(int param_1,undefined4 param_2,undefined4 param_3);
-void crt_unknown_c_FUN_005b7790(undefined4 param_1,undefined4 param_2);
+int __cdecl crt_unknown_c_sprintf_FUN_005b7790(char *buffer,char *format);
 void * __cdecl crt_memory_c_memset_FUN_005b77c0(void *dest,int value,ulong count);
 void crt_unknown_c_FUN_005b77e0(void);
 void crt_unknown_c_FUN_005b7812(void);
@@ -143,7 +143,7 @@ double __crtmath crt_math_c_floor_FUN_005b84d0(double input_value);
 int crt_unknown_c_FUN_005b8515(int *param_1);
 undefined4 __cdecl crt_memory_c___arrfini_FUN_005b854f(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 void * __cdecl crt_unknown_c_FUN_005b8580(ulong size);
-int crt_unknown_c_FUN_005b8590(uint param_1);
+void * __cdecl crt_unknown_c_InternalHeapAlloc_FUN_005b8590(ulong size);
 void crt_unknown_c_FUN_005b86a0(undefined4 param_1);
 void crt_unknown_c_FUN_005b86b0(int *param_1);
 uint __cdecl crt_stdio_c_fread_FUN_005b87c0(char *param_1,uint param_2,int param_3,int *param_4);
@@ -152,14 +152,14 @@ undefined4 crt_unknown_c_FUN_005b8a04(undefined4 param_1,undefined4 param_2);
 int crt_unknown_c_FUN_005b8a2c(int param_1);
 void crt_unknown_c_FUN_005b8a3c(char *param_1,uint param_2);
 uint __cdecl crt_stdio_c_fclose_FUN_005b8af0(int param_1,int param_2);
-void * crt_unknown_c_FUN_005b8be2(ulong param_1);
+void * crt_unknown_c_debugAllocTracked1_FUN_005b8be2(ulong param_1);
 int __cdecl crt_string_c__strcmp_FUN_005b8c30(char *str1,char *str2);
 void * __cdecl crt_memory_c_realloc_FUN_005b8ce0(void *ptr,ulong new_size);
-undefined4 * crt_unknown_c_FUN_005b8cf8(undefined4 *param_1,int param_2);
+undefined4 * crt_unknown_c_FUN_005b8cf8(undefined4 *param_1,ulong param_2);
 void __cdecl crt_stdlib_c__atexit_FUN_005b8d8c(undefined4 param_1);
 int __cdecl crt_string_c__strnicmp_FUN_005b8da0(char *str1,char *str2,int count);
 void crt_unknown_c_FUN_005b8df8(undefined4 param_1);
-void crt_unknown_c_FUN_005b8e10(undefined4 param_1);
+int __cdecl crt_unknown_c_printf_FUN_005b8e10(char *format);
 int __cdecl crt_ctype_c_toupper_FUN_005b8e40(int c);
 uint crt_unknown_c_FUN_005b8e60(byte *param_1,byte *param_2);
 int crt_unknown_c_FUN_005b8f9c(undefined4 param_1,byte param_2,uint param_3,undefined4 param_4,undefined4 param_5,int param_6);
@@ -180,11 +180,11 @@ undefined2 crt_math_c_acos_FUN_005b9924(void);
 void crt_math_c_atan2_FUN_005b9989(void);
 int __cdecl crt_io_c_FUN_005b99c8(char *filename,WatcomStat *file_info);
 int __cdecl crt_io_c__chmod_FUN_005b99e0(char *path,int mode);
-void crt_unknown_c_FUN_005b9bbc(int *param_1);
-undefined4 crt_unknown_c_FUN_005b9bf7(int param_1,undefined4 param_2);
+void __cdecl crt_unknown_c_fflush_FUN_005b9bbc(_FILE *stream);
+uint __cdecl crt_unknown_c_ios_clear_FUN_005b9bf7(ios *this_ptr,uint state_flags);
 int __cdecl crt_watcom_c__mkdir_FUN_005b9c20(char *path);
-void crt_unknown_c_FUN_005b9c39(int *param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
-int * crt_unknown_c_FUN_005b9c98(int *param_1,undefined4 param_2);
+void __cdecl crt_unknown_c_openFile_FUN_005b9c39(void *stream_obj,char *filename,int open_mode,SIZE_T buffer_size);
+_istream * __cdecl crt_unknown_c_istream_seekg_FUN_005b9c98(void *this_ptr,int offset);
 char * __cdecl crt_string_c__strncpy_FUN_005b9cf0(char *dest,char *src,SIZE_T count);
 int crt_unknown_c_FUN_005b9d26(void);
 undefined8 crt_unknown_c_FUN_005b9d7b(void);
@@ -199,8 +199,8 @@ undefined4 crt_unknown_c_FUN_005ba242(int param_1,undefined4 param_2,char *param
 void crt_unknown_c_FUN_005ba274(undefined4 *param_1,undefined4 param_2,undefined4 param_3);
 void crt_unknown_c_FUN_005ba29a(undefined4 param_1,undefined4 param_2,undefined4 param_3);
 void __cdecl crt_memory_c___vec_new_FUN_005ba2b4(undefined4 param_1,undefined4 param_2,undefined4 param_3);
-undefined4 * crt_unknown_c_FUN_005ba2ce(undefined4 *param_1,uint param_2);
-undefined4 crt_unknown_c_FUN_005ba2e0(LPCSTR param_1);
+char * __cdecl crt_unknown_c__getcwd_FUN_005ba2ce(char *buffer,SIZE_T size);
+int __cdecl crt_unknown_c_FUN_005ba2e0(char *path);
 undefined4 crt_unknown_c_FUN_005ba300(undefined4 *param_1,undefined4 param_2);
 void __cdecl crt_time_c__localtime_FUN_005ba358(undefined4 param_1);
 int crt_unknown_c_FUN_005ba370(char *param_1,int param_2);
@@ -233,7 +233,7 @@ double __crtmath crt_math_c_ceil_FUN_005bae37(double value);
 double __cdecl crt_unknown_c__strtod_FUN_005bae68(char *str);
 void __watcallRegister entry(void);
 void crt_unknown_c_FUN_005baf0c(void);
-int crt_unknown_c_FUN_005baf20(byte *param_1,undefined4 param_2);
+int crt_unknown_c_strtok_FUN_005baf20(byte *param_1,undefined4 param_2);
 char * crt_unknown_c_FUN_005baf80(uint param_1,char *param_2,uint param_3);
 char * __cdecl crt_stdio_c_IntegerToString_FUN_005bafd8(int value,char *buffer,int base);
 void crt_unknown_c_FUN_005bb007(undefined4 param_1,undefined4 param_2);
@@ -295,7 +295,7 @@ byte * crt_unknown_c_FUN_005bd84c(byte *param_1,void *param_2);
 int crt_unknown_c_FUN_005bd894(int param_1,int *param_2,undefined4 *param_3);
 int crt_unknown_c_FUN_005bd9a8(int param_1,int *param_2);
 int crt_unknown_c_FUN_005bdcac(int param_1,int *param_2,int param_3,int param_4);
-int crt_unknown_c_FUN_005be118(int param_1);
+int crt_unknown_c_updateClassNameHash_FUN_005be118(int param_1);
 undefined4 crt_unknown_c_FUN_005be148(int param_1);
 void __cdecl crt_errno_c_setErrno_FUN_005be180(int error_code);
 void crt_unknown_c_FUN_005be190(void);

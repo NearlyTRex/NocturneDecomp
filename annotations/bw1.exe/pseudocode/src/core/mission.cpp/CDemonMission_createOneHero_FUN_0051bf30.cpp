@@ -46,16 +46,16 @@ LAB_0051bfaa:
       }
       else {
         local_14 = existing_actor;
-        (**(code **)(*(int *)&existing_actor->field_0x154 + 0x68))
-                  (existing_actor,iVar2 + 0x20,iVar2 + 0x30);
-        *(uint *)&existing_actor->field_0x2c = *(uint *)(iVar2 + 0x2c);
-        core_skeleton_cpp_FUN_00569b20((CDeformableModelInstance *)&existing_actor->field_0x158);
+        (*((existing_actor->base).vtable._ub)->setPositionAndOrientation)
+                  (&existing_actor->base,(CVector3f *)(iVar2 + 0x20),(CVector3f *)(iVar2 + 0x30));
+        (existing_actor->base).location.area_id = *(int *)(iVar2 + 0x2c);
+        core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00569b20(&existing_actor->model);
         core_motion_cpp_CMotionController_jumpToMotion_FUN_00524b10
-                  ((CMotionController *)&existing_actor->field_0x158,0,0.0);
-        (**(code **)(*(int *)&existing_actor->field_0x154 + 0x130))(existing_actor,0,0,0);
+                  (&(existing_actor->model).base,0,0.0);
+        (*(((existing_actor->base).vtable._uc)->_uc).setWalkTarget)
+                  (existing_actor,(CDemonActor *)0x0,0.0,0.0);
       }
-      core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160
-                (0x01D2C900,(CDemonActor *)local_14);
+      core_mission_cpp_CDemonMission_addActorToList_FUN_0051b160(0x01D2C900,&local_14->base);
       goto LAB_0051bfaa;
     }
     iVar1 = *(int *)(iVar1 + 0x14c);

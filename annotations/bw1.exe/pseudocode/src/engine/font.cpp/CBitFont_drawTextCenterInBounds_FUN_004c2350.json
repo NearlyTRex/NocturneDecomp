@@ -16,25 +16,25 @@
     {
       "addr": "00480480",
       "from_addr": "00480614",
-      "name": "cockpit_drawsurf.cpp_FUN_00480480",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8700",
+      "from_addr": "004d8a37",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004d8700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8a90",
+      "from_addr": "004d8de8",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d8e50",
       "from_addr": "004d9052",
       "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8700",
-      "from_addr": "004d8a37",
-      "name": "core_game.cpp_FUN_004d8700",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8a90",
-      "from_addr": "004d8de8",
-      "name": "core_game.cpp_FUN_004d8a90",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,12 +60,12 @@
     {
       "addr": "004c2060",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c2060"
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004c2060"
     },
     {
       "addr": "004c3ea0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c3ea0"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
     }
   ],
   "globals": [],
@@ -75,7 +75,7 @@
       {
         "call_addr": "004d8a37",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d8700",
+        "caller": "core_game.cpp_CGame_displayActStats_FUN_004d8700",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -86,7 +86,7 @@
       {
         "call_addr": "004d8de8",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d8a90",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -119,7 +119,7 @@
       {
         "call_addr": "00480614",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -130,7 +130,7 @@
       {
         "call_addr": "00480672",
         "call_type": "direct",
-        "caller": "cockpit_drawsurf.cpp_FUN_00480480",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480",
         "estimated_params": 7,
         "instructions_analyzed": 0,
         "method": "add_esp",

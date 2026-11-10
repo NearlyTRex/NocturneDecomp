@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   unkafter_djien.cpp_FUN_004610b0 at 0046116d
-;   unkafter_djien.cpp_FUN_00461590 at 004615a0
+;   core_djien.cpp_CDjien_customRayIntersect_FUN_004610b0 at 0046116d
+;   core_djien.cpp_CDjien_getTargetPoints_FUN_00461590 at 004615a0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d8ee0

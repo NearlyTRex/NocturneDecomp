@@ -9,6 +9,6 @@
 void __cdecl core_ammo_cpp_FUN_0040e440(CAmmo *this_ptr,int ammo_count)
 
 {
-  *(int *)&this_ptr->field_0x470 = ammo_count;
+  this_ptr->ammo_count = ammo_count;
   return;
 }

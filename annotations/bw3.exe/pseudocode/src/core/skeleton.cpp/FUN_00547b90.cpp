@@ -10,7 +10,7 @@ void core_skeleton_cpp_FUN_00547b90(int param_1,int param_2)
 
 {
   if (param_2 != 0) {
-    unkafter_box_cpp_FUN_004fb210(param_1);
+    unkafter_morph_cpp_FUN_004fb210(param_1);
   }
   *(uint *)(param_1 + 0x1de78) = 0;
   *(uint *)(param_1 + 0x1ec8c) = 0;

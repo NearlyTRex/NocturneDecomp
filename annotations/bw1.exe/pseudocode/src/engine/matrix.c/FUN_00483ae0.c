@@ -21,7 +21,7 @@ void engine_matrix_c_FUN_00483ae0(void)
   float local_18 [3];
   
   bVar2 = 0;
-  engine_matrix_c_FUN_00509050();
+  engine_matrix_c_getCameraOrigin_FUN_00509050();
   fVar1 = (float)_DAT_005db3c4;
   local_18[0] = (float)local_24 * fVar1;
   local_18[1] = (float)local_20 * fVar1;

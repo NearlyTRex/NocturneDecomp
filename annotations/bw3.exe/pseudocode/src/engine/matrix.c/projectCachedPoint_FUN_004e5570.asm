@@ -7,7 +7,7 @@
 ; int              Stack[0x4]:4   cacheIndex
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004f5130 at 004f5333
+;   core_mirror.cpp_CMirror_reflectAndClipPrimitive_FUN_004f5130 at 004f5333
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0060b014

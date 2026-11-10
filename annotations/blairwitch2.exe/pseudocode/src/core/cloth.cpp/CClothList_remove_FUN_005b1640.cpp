@@ -11,51 +11,51 @@
 void __cdecl core_cloth_cpp_CClothList_remove_FUN_005b1640(CClothList *this_ptr,int index)
 
 {
-  CClothList CVar1;
+  char cVar1;
   uint uVar2;
-  CClothList *pCVar3;
-  CClothList *pCVar4;
-  CClothList *pCVar5;
+  char *pcVar3;
+  char (*pacVar4) [40];
+  char (*pacVar5) [40];
   int iVar6;
-  CClothList *pCVar7;
-  CClothList *pCVar8;
+  char (*pacVar7) [40];
+  char (*pacVar8) [40];
   
-  if ((index < 0) || (*(int *)this_ptr <= index)) {
+  if ((index < 0) || (this_ptr->count <= index)) {
     _DAT_01d046a0 = "..\\core\\cloth.cpp";
     _DAT_01d046a4 = 0x5f1;
     core_main_c_FUN_004e4500("CClothList::remove - invalid index");
   }
-  if (*(int *)(this_ptr + index * 4 + 0x194) != 0) {
-    uVar2 = core_necklace_cpp_FUN_005ade00(*(int *)(this_ptr + index * 4 + 0x194),0);
+  if (this_ptr->cloths[index] != (CCloth *)0x0) {
+    uVar2 = core_necklace_cpp_FUN_005ade00(this_ptr->cloths[index],0);
     FUN_005b7fdc(uVar2);
   }
   iVar6 = index + 1;
-  if (iVar6 < *(int *)this_ptr) {
-    pCVar5 = this_ptr + iVar6 * 0x28 + -0x24;
-    pCVar4 = this_ptr + iVar6 * 0x28 + 4;
-    pCVar3 = this_ptr + iVar6 * 4;
+  if (iVar6 < this_ptr->count) {
+    pacVar5 = this_ptr->filenames + index;
+    pacVar4 = this_ptr->filenames + index + 1;
+    pcVar3 = this_ptr->filenames[0] + index * 4;
     do {
-      pCVar7 = pCVar4;
-      pCVar8 = pCVar5;
+      pacVar7 = pacVar4;
+      pacVar8 = pacVar5;
       do {
-        CVar1 = *pCVar7;
-        *pCVar8 = CVar1;
-        if (CVar1 == (CClothList)0x0) break;
-        CVar1 = pCVar7[1];
-        pCVar7 = pCVar7 + 2;
-        pCVar8[1] = CVar1;
-        pCVar8 = pCVar8 + 2;
-      } while (CVar1 != (CClothList)0x0);
-      *(uint *)(pCVar3 + 400) = *(uint *)(pCVar3 + 0x194);
+        cVar1 = (*pacVar7)[0];
+        (*pacVar8)[0] = cVar1;
+        if (cVar1 == '\0') break;
+        cVar1 = (*pacVar7)[1];
+        pacVar7 = (char (*) [40])(*pacVar7 + 2);
+        (*pacVar8)[1] = cVar1;
+        pacVar8 = (char (*) [40])(*pacVar8 + 2);
+      } while (cVar1 != '\0');
+      *(uint *)(pcVar3 + 400) = *(uint *)(pcVar3 + 0x194);
       iVar6 = iVar6 + 1;
-      pCVar5 = pCVar5 + 0x28;
-      pCVar4 = pCVar4 + 0x28;
-      pCVar3 = pCVar3 + 4;
-    } while (iVar6 < *(int *)this_ptr);
+      pacVar5 = pacVar5 + 1;
+      pacVar4 = pacVar4 + 1;
+      pcVar3 = pcVar3 + 4;
+    } while (iVar6 < this_ptr->count);
   }
-  iVar6 = *(int *)this_ptr;
-  *(int *)this_ptr = iVar6 + -1;
-  this_ptr[(iVar6 + -1) * 0x28 + 4] = (CClothList)0x0;
-  *(uint *)(this_ptr + *(int *)this_ptr * 4 + 0x194) = 0;
+  iVar6 = this_ptr->count;
+  this_ptr->count = iVar6 + -1;
+  this_ptr->filenames[iVar6 + -1][0] = '\0';
+  this_ptr->cloths[this_ptr->count] = (CCloth *)0x0;
   return;
 }

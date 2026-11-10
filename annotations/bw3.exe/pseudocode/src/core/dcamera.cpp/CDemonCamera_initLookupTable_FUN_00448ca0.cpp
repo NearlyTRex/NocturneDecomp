@@ -27,7 +27,7 @@ void __cdecl core_dcamera_cpp_CDemonCamera_initLookupTable_FUN_00448ca0(CDemonCa
     iVar6 = 0x1e0;
   }
   core_dcamera_cpp_CDemonCamera_init_FUN_00448d70(this_ptr,iVar6);
-  core_dcamera_cpp_FUN_0044f740(this_ptr);
+  core_dcamera_cpp_CDemonCamera_generateFogGrid_FUN_0044f740(this_ptr);
   iVar6 = 0;
   local_18 = 0x40;
   local_14 = 0;

@@ -2,18 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 216,
-    "complexity_score": 441,
+    "complexity_score": 456,
     "cross_reference_count": 0,
     "function_call_count": 12,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 71,
-    "suspect_count": 34,
+    "suspect_count": 35,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "stack_ref",
+      "unnamed_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
@@ -30,7 +31,7 @@
     ],
     "convention": "unknown",
     "name": "core_shadow.cpp_FUN_0053ea00",
-    "signature": "void core_shadow_cpp_FUN_0053ea00(int param_1,int param_2)"
+    "signature": "void core_shadow_cpp_FUN_0053ea00(CEnemy *param_1,SDamageInfo *param_2)"
   },
   "function_calls": [
     {
@@ -46,17 +47,17 @@
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "0040cfc0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cfc0"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
     },
     {
       "addr": "00488890",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_00488890"
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_00488890"
     },
     {
       "addr": "00503620",
@@ -177,7 +178,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_shadow_cpp_FUN_0053ea00(int param_1,int param_2)",
+      "text": "void core_shadow_cpp_FUN_0053ea00(CEnemy *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -185,7 +186,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_shadow_cpp_FUN_0053ea00(int param_1,int param_2)",
+      "text": "void core_shadow_cpp_FUN_0053ea00(CEnemy *param_1,SDamageInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -217,8 +218,16 @@
       "line": 19,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)(param_1 + 0x10b1c));",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)&param_1[1].base.base.field_0x24);",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 19,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "sound_sndmain_cpp_killSfx_FUN_00551050(*(uint *)&param_1[1].base.base.field_0x24);",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -273,7 +282,7 @@
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCStack_18 = (CMotionController *)(param_1 + 0x2b4);",
+      "text": "pCStack_18 = (CMotionController *)&(param_1->base).model;",
       "type": "unnamed_param"
     },
     {
@@ -281,7 +290,7 @@
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x25a8) - *(float *)(param_2 + 4);",
+      "text": "fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -289,7 +298,7 @@
       "line": 27,
       "match": "param_2",
       "severity": "mild",
-      "text": "fVar1 = *(float *)(param_1 + 0x25a8) - *(float *)(param_2 + 4);",
+      "text": "fVar1 = (param_1->base).hit_points - *(float *)(param_2 + 4);",
       "type": "unnamed_param"
     },
     {
@@ -297,7 +306,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(float *)(param_1 + 0x25a8) = fVar1;",
+      "text": "(param_1->base).hit_points = fVar1;",
       "type": "unnamed_param"
     },
     {
@@ -305,7 +314,7 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)(param_1 + 0x25a8) = 0;",
+      "text": "(param_1->base).hit_points = 0.0;",
       "type": "unnamed_param"
     },
     {
@@ -369,7 +378,7 @@
       "line": 51,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x10af8) != 2) {",
+      "text": "if (*(int *)param_1[1].base.base.actor_name != 2) {",
       "type": "unnamed_param"
     },
     {
@@ -377,7 +386,7 @@
       "line": 59,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x2b4),0x11,1);",
+      "text": "((CMotionController *)&(param_1->base).model,0x11,1);",
       "type": "unnamed_param"
     },
     {
@@ -385,7 +394,7 @@
       "line": 63,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x2b4),0x12,1);",
+      "text": "((CMotionController *)&(param_1->base).model,0x12,1);",
       "type": "unnamed_param"
     },
     {
@@ -393,7 +402,7 @@
       "line": 67,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CMotionController *)(param_1 + 0x2b4),0x13,1);",
+      "text": "((CMotionController *)&(param_1->base).model,0x13,1);",
       "type": "unnamed_param"
     },
     {
@@ -409,7 +418,7 @@
       "line": 73,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_enemy_cpp_FUN_00488890(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00488890(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -417,7 +426,7 @@
       "line": 73,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_enemy_cpp_FUN_00488890(param_1,param_2);",
+      "text": "core_enemy_cpp_CEnemy_processDamage_FUN_00488890(param_1,param_2);",
       "type": "unnamed_param"
     },
     {

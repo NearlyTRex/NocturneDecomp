@@ -17,10 +17,9 @@ CDemonCamera * __cdecl core_dcamera_cpp_CDemonCamera_dtor_FUN_00448c40(CDemonCam
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x3c = &g_CDemonCameraVTable;
+  (this_ptr->base).vtable = (CCameraView_vtable *)&g_CDemonCameraVTable;
   core_dcamera_cpp_CDemonCamera_free_FUN_00448f30(this_ptr);
-  pCVar1 = (CDemonCamera *)core_camview_cpp_CCameraView_dtor_FUN_004254d0((CCameraView *)this_ptr,1)
-  ;
+  pCVar1 = (CDemonCamera *)core_camview_cpp_CCameraView_dtor_FUN_004254d0(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

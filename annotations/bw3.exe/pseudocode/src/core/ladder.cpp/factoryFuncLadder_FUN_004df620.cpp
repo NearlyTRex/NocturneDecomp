@@ -11,7 +11,7 @@ void core_ladder_cpp_factoryFuncLadder_FUN_004df620(void)
 {
   CLadder *this_ptr;
   
-  this_ptr = (CLadder *)FUN_005a3cb2(0x300);
+  this_ptr = (CLadder *)debugAllocTracked1(0x300);
   if (this_ptr == (CLadder *)0x0) {
     return;
   }

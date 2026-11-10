@@ -26,7 +26,7 @@ void __cdecl sound_sndmain_cpp_setSfxChannelVol_FUN_00556c90(int param_1,uint pa
   if (iVar1 != 0) {
     sound_sndmain_cpp_FUN_005586d0(unaff_ESI);
     if (0 < extraout_EAX) {
-      sound_sndmain_cpp_FUN_00558e90();
+      sound_sndmain_cpp_lockSound_FUN_00558e90();
       piVar2 = (int *)0x2ce721c;
       do {
         if (((piVar2[0x19] != 0) && (piVar2[0x18] != 0)) && (param_1 == *piVar2)) {

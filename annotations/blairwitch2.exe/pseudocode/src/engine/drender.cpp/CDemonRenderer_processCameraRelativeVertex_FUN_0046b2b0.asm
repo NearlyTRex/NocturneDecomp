@@ -13,11 +13,11 @@
 ;
 ; XREF[65]:
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0 at 004089df
-;   core_anvil.cpp_FUN_0040ec10 at 0040ec35
-;   core_baron.cpp_FUN_00410670 at 00410717
-;   core_battery.cpp_FUN_00414810 at 00414825
-;   core_boxactor.cpp_FUN_0041c580 at 0041c5e0
-;   core_boxactor.cpp_FUN_0041c690 at 0041c6c8
+;   core_anvil.cpp_CAnvil_renderOpaque_FUN_0040ec10 at 0040ec35
+;   core_baron.cpp_CBaron_renderTransparent_FUN_00410670 at 00410717
+;   core_battery.cpp_CBattery_renderOpaque_FUN_00414810 at 00414825
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041c580 at 0041c5e0
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041c690 at 0041c6c8
 ;   core_crate.cpp_FUN_0043a130 at 0043a145
 ;   core_dcube.cpp_CDemonCube_rotateVertices_FUN_004468c0 at 004468d5
 ;   core_dglobe.cpp_CDemonGlobe_renderCoronaTextured_FUN_00448b00 at 00448b1a

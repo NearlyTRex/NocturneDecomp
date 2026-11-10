@@ -1,0 +1,355 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 103,
+    "complexity_score": 526,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 246,
+    "suspect_count": 24,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "stack_param",
+      "stack_ref",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 349
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0056e230",
+    "address_range": [
+      [
+        "0056e230",
+        "0056e266"
+      ],
+      [
+        "0056e2db",
+        "0056e346"
+      ],
+      [
+        "0056e817",
+        "0056e8a6"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_process_FUN_0056e230(CTrigger *this_ptr,float delta_time)"
+  },
+  "function_calls": [
+    {
+      "addr": "0048c150",
+      "is_variadic": false,
+      "name": "core_event.cpp_CEventList_executeCommands_FUN_0048c150"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0056e220",
+      "name": "switchdataD_0056e220",
+      "type": "undefined1*",
+      "value": "0056e2f0"
+    },
+    {
+      "addr": "005fba60",
+      "name": "DAT_005fba60",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.051282051282051,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 7,
+      "BOOL_OR": 2,
+      "BRANCH": 3,
+      "BRANCHIND": 2,
+      "CALL": 2,
+      "CBRANCH": 9,
+      "COPY": 69,
+      "INT_ADD": 43,
+      "INT_AND": 31,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 28,
+      "INT_LESS": 8,
+      "INT_MULT": 2,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 14,
+      "INT_SUB": 18,
+      "INT_XOR": 1,
+      "LOAD": 31,
+      "POPCOUNT": 14,
+      "RETURN": 2,
+      "STORE": 18
+    },
+    "pcode_op_count": 316
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "0056e23c",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 21,
+      "match": "afStackY_1068",
+      "severity": "moderate",
+      "text": "float afStackY_1068 [984];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 22,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "CBoundingBox3D *in_stack_ffffff10;",
+      "type": "stack_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x300",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x300 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 58,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0x36c",
+      "severity": "mild",
+      "text": "if (*(int *)&this_ptr->field_0x36c == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 79,
+      "match": "field_0x36c",
+      "severity": "mild",
+      "text": "*(CDemonActor **)&this_ptr->field_0x36c = pCVar6;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 81,
+      "match": "field_0x36c",
+      "severity": "mild",
+      "text": "iVar8 = *(int *)&this_ptr->field_0x36c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0x36c",
+      "severity": "mild",
+      "text": "uVar5 = *(uint *)&this_ptr->field_0x36c;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 92,
+      "match": "field_0x300",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x300 = uVar5;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved stack parameter",
+      "line": 99,
+      "match": "in_stack_ffffff10",
+      "severity": "moderate",
+      "text": "(*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,in_stack_ffffff10);",
+      "type": "stack_param"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 100,
+      "match": "&stack0xffffff50",
+      "severity": "moderate",
+      "text": "puVar10 = (uint *)&stack0xffffff50;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 101,
+      "match": "&stack0xffffff30",
+      "severity": "moderate",
+      "text": "puVar11 = (uint *)&stack0xffffff30;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 126,
+      "match": "&stack0xffffff68",
+      "severity": "moderate",
+      "text": "if (&stack0xffffff68 != afStack_7c + 0xe) {",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 161,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "fVar2 = *(float *)&this_ptr->field_0x370 - delta_time;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 162,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "*(float *)&this_ptr->field_0x370 = fVar2;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 164,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x370 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 179,
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar9 = *(int *)((int)g_CDemonSetPtr->actors + iVar12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 180,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar7 = (**(code **)(*(int *)(iVar9 + 0x154) + 0x5c))(iVar9);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 183,
+      "match": "field_0x300",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x300 = iVar9;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(CTrigger **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "actor_ptr = *(CTrigger **)((int)g_CDemonSetPtr->actors + iVar12);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 210,
+      "match": "field_0x300",
+      "severity": "mild",
+      "text": "*(CTrigger **)&this_ptr->field_0x300 = actor_ptr;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 245,
+      "match": "field_0x300",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x300 = 0;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 102,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar8 = 6; iVar8 != 0; iVar8 = iVar8 + -1) {",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CWayPoint",
+        "offset": 12,
+        "vtable_addr": "005e6124"
+      },
+      {
+        "class_name": "CTrigger",
+        "offset": 12,
+        "vtable_addr": "005e58d4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 2
+  }
+}

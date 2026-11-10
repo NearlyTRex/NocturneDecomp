@@ -31,12 +31,12 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_mission.cpp_FUN_004fc740
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740
 ;   crt_stdio.c_fgetc_FUN_005b8180
 ;   crt_stdio.c_fscanf_FUN_005b8100
 ;   crt_stdio.c_ungetc_FUN_005b8350
 ;   crt_string.c__stricmp_FUN_005b8130
-;   shape_edittool.cpp_FUN_0047be40
+;   shape_edittool.cpp_CEditorTools_showError_FUN_0047be40
 ;
 ; *****************************************************************************
 
@@ -151,8 +151,8 @@ section .text
     PUSH EAX                            ; 004fc136
     MOV EDX,dword ptr [ESP + 0xe4]      ; 004fc137
     PUSH EDX                            ; 004fc13e
-    CALL core_mission.cpp_FUN_004fc740  ; 004fc13f
-        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004fc740(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740 ; 004fc13f
+        ;   XREF to: 004fc740 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004fc144
     MOV ESI,EAX                         ; 004fc147
     TEST EAX,EAX                        ; 004fc149
@@ -165,8 +165,8 @@ section .text
     PUSH 0x5de5fa                       ; 004fc154 | = "WARNING.  Can't find actor '%s' in %s..."
     MOV ECX,dword ptr [0x006138e0]      ; 004fc159 | g_CEditorToolsPtr
     PUSH ECX                            ; 004fc15f
-    CALL shape_edittool.cpp_FUN_0047be40 ; 004fc160
-        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; undefined shape_edittool.cpp_FUN_0047be40()
+    CALL shape_edittool.cpp_CEditorTools_showError_FUN_0047be40 ; 004fc160
+        ;   XREF to: 0047be40 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showError_FUN_0047be40(CEditorTools * this_ptr, char * format)
     ADD ESP,0x14                        ; 004fc165
     JMP 0x004fc120                      ; 004fc168
         ;   XREF to: 004fc120 (UNCONDITIONAL_JUMP)  ; LAB_004fc120

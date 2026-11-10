@@ -21,33 +21,33 @@ CDemonActorType * CTheHand::getActorType(CTheHand *this_ptr);
 // Address: 0056c060
 CTheHand * CTheHand::ctor(CTheHand *this_ptr);
 
-// Original: core_thehand.cpp_FUN_0056c0c0
+// Original: core_thehand.cpp_CTheHand_setup_FUN_0056c0c0
 // Address: 0056c0c0
-void FUN_0056c0c0(CEnemy *param_1);
+void __cdecl CTheHand::setup(CTheHand *this_ptr);
 
-// Original: core_thehand.cpp_FUN_0056c140
+// Original: core_thehand.cpp_CTheHand_process_FUN_0056c140
 // Address: 0056c140
-void FUN_0056c140(CCharacter *param_1,float param_2);
+void __cdecl CTheHand::process(CTheHand *this_ptr,float delta_time);
 
-// Original: core_thehand.cpp_FUN_0056c880
+// Original: core_thehand.cpp_CTheHand_renderOpaque_FUN_0056c880
 // Address: 0056c880
-int FUN_0056c880(CCharacter *param_1);
+int __cdecl CTheHand::renderOpaque(CTheHand *this_ptr);
 
-// Original: core_thehand.cpp_FUN_0056c8c0
+// Original: core_thehand.cpp_CTheHand_archive_FUN_0056c8c0
 // Address: 0056c8c0
-void FUN_0056c8c0(int param_1);
+void __cdecl CTheHand::archive(CTheHand *this_ptr);
 
 // Original: core_thehand.cpp_FUN_0056c900
 // Address: 0056c900
 undefined4 FUN_0056c900(CDemonActor *param_1,char *param_2);
 
-// Original: core_thehand.cpp_FUN_0056ca00
+// Original: core_thehand.cpp_CTheHand_attractActorToward_FUN_0056ca00
 // Address: 0056ca00
-undefined4 FUN_0056ca00(int param_1,int param_2);
+int __cdecl CTheHand::attractActorToward(CTheHand *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
 
-// Original: core_thehand.cpp_FUN_0056cb90
+// Original: core_thehand.cpp_CTheHand_shouldIgnoreForTargeting_FUN_0056cb90
 // Address: 0056cb90
-int FUN_0056cb90(CDemonActor *param_1);
+int __cdecl CTheHand::shouldIgnoreForTargeting(CTheHand *this_ptr);
 
 // Original: core_thehand.cpp_FUN_0056cbd0
 // Address: 0056cbd0

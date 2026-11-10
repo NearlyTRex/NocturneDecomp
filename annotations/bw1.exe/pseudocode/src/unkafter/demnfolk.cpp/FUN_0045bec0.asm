@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_demnfolk.cpp_FUN_00459100 at 00459ea9
+;   core_demnfolk.cpp_CDemnfolk_process_FUN_00459100 at 00459ea9
 ;   core_demnfolk.cpp_FUN_0045b560 at 0045b741
 ;   unkafter_demnfolk.cpp_FUN_0045bf60 at 0045bf6b
 ;

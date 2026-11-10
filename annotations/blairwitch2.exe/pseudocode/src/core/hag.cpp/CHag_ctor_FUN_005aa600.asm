@@ -14,7 +14,7 @@
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CClothList_add_FUN_005b15c0
-;   core_hag.cpp_FUN_005aa970
+;   core_hag.cpp_CHag_processStates_FUN_005aa970
 ;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_005478b0
 ;   unkaddr_0059d350.cpp_FUN_0059d7f0
 ;   unkaddr_0059d350.cpp_FUN_0059d990
@@ -73,8 +73,8 @@ section .text
     PUSH EBX                            ; 005aa6c8
     MOV ESI,0x5f0b20                    ; 005aa6c9
     MOV dword ptr [EBX + 0x11858],0x0   ; 005aa6ce
-    CALL core_hag.cpp_FUN_005aa970      ; 005aa6d8
-        ;   XREF to: 005aa970 (UNCONDITIONAL_CALL)  ; undefined core_hag.cpp_FUN_005aa970()
+    CALL core_hag.cpp_CHag_processStates_FUN_005aa970 ; 005aa6d8
+        ;   XREF to: 005aa970 (UNCONDITIONAL_CALL)  ; void core_hag.cpp_CHag_processStates_FUN_005aa970(CHag * this_ptr, float delta_time, int mode)
     ADD ESP,0xc                         ; 005aa6dd
     LEA EDI,[EBX + 0x113d4]             ; 005aa6e0
     MOV dword ptr [EBX + 0x11418],0x1   ; 005aa6e6

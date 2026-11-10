@@ -21,9 +21,9 @@ void __cdecl updateListeners(void);
 // Address: 005593d0
 void __cdecl FUN_005593d0(CSound *this_ptr,char *out_result,char *wildcard_pattern);
 
-// Original: core_sound.cpp_FUN_005594c0
+// Original: core_sound.cpp_playSfxInternal_FUN_005594c0
 // Address: 005594c0
-uint __cdecl FUN_005594c0(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
+uint __cdecl playSfxInternal(void *user_data,char *sound_name,float x,float y,float z,CVector3f *position_tracker ,uint flags);
 
 // Original: core_sound.cpp_FUN_00559aae
 // Address: 00559aae
@@ -41,9 +41,9 @@ CSound * __cdecl CSound::ctor(CSound *this_ptr);
 // Address: 0055a100
 void __cdecl FUN_0055a100(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0055a16e
+// Original: core_sound.cpp_syncChannel3WithChannel0_FUN_0055a16e
 // Address: 0055a16e
-void FUN_0055a16e(void);
+void syncChannel3WithChannel0(void);
 
 // Original: core_sound.cpp_FUN_0055a1d0
 // Address: 0055a1d0
@@ -53,17 +53,17 @@ void __cdecl FUN_0055a1d0(CSound *this_ptr);
 // Address: 0055a360
 void __cdecl CSound::shutdown(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0055a3c0
+// Original: core_sound.cpp_CSound_process_FUN_0055a3c0
 // Address: 0055a3c0
-void __cdecl FUN_0055a3c0(CSound *this_ptr);
+void __cdecl CSound::process(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0055ac50
+// Original: core_sound.cpp_CSound_configure_FUN_0055ac50
 // Address: 0055ac50
-void __cdecl FUN_0055ac50(CSound *this_ptr);
+void __cdecl CSound::configure(CSound *this_ptr);
 
-// Original: core_sound.cpp_FUN_0055adb0
+// Original: core_sound.cpp_CSound_reset_FUN_0055adb0
 // Address: 0055adb0
-void __cdecl FUN_0055adb0(CSound *this_ptr);
+void __cdecl CSound::reset(CSound *this_ptr);
 
 // Original: core_sound.cpp_CSound_playAmbientSound_FUN_0055adc0
 // Address: 0055adc0
@@ -81,21 +81,21 @@ uint __cdecl CSound::playActorSound(CSound *this_ptr,CDemonActor *actor,char *so
 // Address: 0055ae80
 uint __cdecl CSound::playTrackedActorSound(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker);
 
-// Original: core_sound.cpp_FUN_0055aef0
+// Original: core_sound.cpp_CSound_playActorNonPositionalSoundWithDelay_FUN_0055aef0
 // Address: 0055aef0
-uint __cdecl FUN_0055aef0(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position,float delay);
+uint __cdecl CSound::playActorNonPositionalSoundWithDelay(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position,float delay);
 
 // Original: core_sound.cpp_CSound_playTrackedActorSoundWithDelay_FUN_0055af30
 // Address: 0055af30
 uint __cdecl CSound::playTrackedActorSoundWithDelay(CSound *this_ptr,CDemonActor *actor,char *sound_name,CVector3f *position_tracker,float delay);
 
-// Original: core_sound.cpp_FUN_0055af70
+// Original: core_sound.cpp_CSound_isSoundPlaying_FUN_0055af70
 // Address: 0055af70
-int __cdecl FUN_0055af70(CSound *this_ptr,uint sfx_handle);
+int __cdecl CSound::isSoundPlaying(CSound *this_ptr,uint sfx_handle);
 
-// Original: core_sound.cpp_FUN_0055af80
+// Original: core_sound.cpp_CSound_killSound_FUN_0055af80
 // Address: 0055af80
-void __cdecl FUN_0055af80(CSound *this_ptr,uint sfx_handle);
+void __cdecl CSound::killSound(CSound *this_ptr,uint sfx_handle);
 
 // Original: core_sound.cpp_CSound_getSoundDuration_FUN_0055af90
 // Address: 0055af90
@@ -113,9 +113,9 @@ void __cdecl CSound::set3DListenerOrientRight(CSound *this_ptr,float listener_or
 // Address: 0055b0b0
 void __cdecl CSound::setReverbPreset(CSound *this_ptr,int index);
 
-// Original: core_sound.cpp_FUN_0055b110
+// Original: core_sound.cpp_CSound_selectReverbPreset_FUN_0055b110
 // Address: 0055b110
-undefined4 FUN_0055b110(undefined4 param_1,char *param_2,int *param_3);
+int __cdecl CSound::selectReverbPreset(CSound *this_ptr,char *title,int *selection_inout);
 
 // Original: core_sound.cpp_CSound_setVolumeFade_FUN_0055b1b0
 // Address: 0055b1b0

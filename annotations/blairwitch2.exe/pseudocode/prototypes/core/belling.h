@@ -21,37 +21,37 @@ CDemonActorType * CBelling::getActorType(CBelling *this_ptr);
 // Address: 005a8f80
 CBelling * CBelling::ctor(CBelling *this_ptr);
 
-// Original: core_belling.cpp_FUN_005a9050
+// Original: core_belling.cpp_CBelling_setup_FUN_005a9050
 // Address: 005a9050
-void FUN_005a9050(undefined4 param_1);
+void __cdecl CBelling::setup(CBelling *this_ptr);
 
-// Original: core_belling.cpp_FUN_005a9060
+// Original: core_belling.cpp_CBelling_processStates_FUN_005a9060
 // Address: 005a9060
-void FUN_005a9060(undefined4 param_1,undefined4 param_2,int param_3);
+void __cdecl CBelling::processStates(CBelling *this_ptr,float delta_time,int mode);
 
 // Original: core_belling.cpp_FUN_005a9080
 // Address: 005a9080
 void FUN_005a9080(int param_1);
 
-// Original: core_belling.cpp_FUN_005a90d0
+// Original: core_belling.cpp_CBelling_processDeathState_FUN_005a90d0
 // Address: 005a90d0
-void FUN_005a90d0(int param_1);
+void __cdecl CBelling::processDeathState(CBelling *this_ptr,float delta_time);
 
-// Original: core_belling.cpp_FUN_005a90f0
+// Original: core_belling.cpp_CBelling_getDeathState_FUN_005a90f0
 // Address: 005a90f0
-undefined4 FUN_005a90f0(void);
+EDeathState __cdecl CBelling::getDeathState(CBelling *this_ptr);
 
-// Original: core_belling.cpp_FUN_005a9100
+// Original: core_belling.cpp_CBelling_processMotionEvent_FUN_005a9100
 // Address: 005a9100
-void FUN_005a9100(void);
+void __cdecl CBelling::processMotionEvent(CBelling *this_ptr,int event_id);
 
-// Original: core_belling.cpp_FUN_005a9110
+// Original: core_belling.cpp_CBelling_renderOpaque_FUN_005a9110
 // Address: 005a9110
-void FUN_005a9110(undefined4 param_1);
+int __cdecl CBelling::renderOpaque(CBelling *this_ptr);
 
-// Original: core_belling.cpp_FUN_005a9120
+// Original: core_belling.cpp_CBelling_archive_FUN_005a9120
 // Address: 005a9120
-void FUN_005a9120(undefined4 param_1);
+void __cdecl CBelling::archive(CBelling *this_ptr);
 
 // Original: core_belling.cpp_CBelling_dtor_FUN_005a9130
 // Address: 005a9130

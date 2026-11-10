@@ -17,9 +17,9 @@ void core_gore_cpp_FUN_004cc970(uint param_1,uint *param_2,int *param_3,int *par
   float10 fVar3;
   float10 fVar4;
   float afStackY_1018 [1011];
-  uint local_3c;
-  uint local_38;
-  uint local_34;
+  float local_3c;
+  float local_38;
+  float local_34;
   float local_30;
   float local_24;
   float local_20;
@@ -27,7 +27,7 @@ void core_gore_cpp_FUN_004cc970(uint param_1,uint *param_2,int *param_3,int *par
   float local_18;
   float local_14;
   float local_10;
-  uint local_c;
+  float local_c;
   
   bVar2 = 0;
   switch(param_1) {
@@ -49,13 +49,13 @@ void core_gore_cpp_FUN_004cc970(uint param_1,uint *param_2,int *param_3,int *par
   case 3:
     break;
   }
-  local_3c = core_actor_cpp_FUN_0040ce40(0,0x437f0000);
+  local_3c = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,255.0);
   local_c = local_3c;
-  local_38 = core_actor_cpp_FUN_0040ce40(0,0x42200000);
+  local_38 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.0,40.0);
   local_c = local_38;
-  local_34 = core_actor_cpp_FUN_0040ce40(0x42d40000,0x43800000);
+  local_34 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(106.0,256.0);
   local_c = local_34;
-  core_boneguy_cpp_FUN_00417240(&stack0xffffffc4);
+  core_boneguy_cpp_hsvToRgb_FUN_00417240(&stack0xffffffc4);
   local_24 = local_30;
   (&stack0xffffffe0)[(uint)bVar2 * 0xfffffffe] =
        (float)*(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * 0xfffffffe * 4);

@@ -11,7 +11,7 @@ void core_bird_cpp_factoryFuncBird_FUN_004151c0(void)
 {
   CBird *this_ptr;
   
-  this_ptr = (CBird *)FUN_005c0f32(0x1fac0);
+  this_ptr = (CBird *)debugAllocTracked1(0x1fac0);
   if (this_ptr == (CBird *)0x0) {
     return;
   }

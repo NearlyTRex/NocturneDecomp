@@ -21,7 +21,7 @@
 ; XREF[3]:
 ;   core_dracbrid.cpp_FUN_00465400 at 00465796
 ;   core_dracbrid.cpp_FUN_004658e0 at 00465b24
-;   core_flies.cpp_FUN_004a70b0 at 004a7174
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004a70b0 at 004a7174
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eb0d8

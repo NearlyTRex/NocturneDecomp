@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 175,
-    "complexity_score": 686,
+    "complexity_score": 656,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 101,
-    "suspect_count": 54,
+    "suspect_count": 51,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
@@ -345,48 +345,24 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_38 = (fStack_38 - fStack_50) * *(float *)&param_1->field_0x508;",
+      "text": "fStack_38 = (fStack_38 - fStack_50) * (param_1->root_offset_scale).x;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 88,
-      "match": "field_0x508",
-      "severity": "mild",
-      "text": "fStack_38 = (fStack_38 - fStack_50) * *(float *)&param_1->field_0x508;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_34 = ((fStack_34 - fStack_70) - fStack_4c) * *(float *)&param_1->field_0x50c;",
+      "text": "fStack_34 = ((fStack_34 - fStack_70) - fStack_4c) * (param_1->root_offset_scale).y;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 89,
-      "match": "field_0x50c",
-      "severity": "mild",
-      "text": "fStack_34 = ((fStack_34 - fStack_70) - fStack_4c) * *(float *)&param_1->field_0x50c;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 90,
       "match": "param_1",
       "severity": "mild",
-      "text": "fStack_30 = ((fStack_30 - fStack_6c) - fStack_48) * *(float *)&param_1->field_0x510;",
+      "text": "fStack_30 = ((fStack_30 - fStack_6c) - fStack_48) * (param_1->root_offset_scale).z;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 90,
-      "match": "field_0x510",
-      "severity": "mild",
-      "text": "fStack_30 = ((fStack_30 - fStack_6c) - fStack_48) * *(float *)&param_1->field_0x510;",
-      "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",

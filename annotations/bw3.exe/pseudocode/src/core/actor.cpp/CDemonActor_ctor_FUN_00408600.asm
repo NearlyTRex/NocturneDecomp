@@ -28,7 +28,7 @@
 ;   undefined1 DAT_005b53d3
 ;   undefined1 DAT_005b53d4
 ;   undefined1 DAT_005b53d5
-;   void* g_CDemonActorVTable = 00408890
+;   CDemonActor_vtable g_CDemonActorVTable
 ;   undefined4 DAT_0078a123
 ;
 ; Called Functions:

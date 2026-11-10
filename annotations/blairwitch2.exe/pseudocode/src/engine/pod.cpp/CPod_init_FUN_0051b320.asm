@@ -7,7 +7,7 @@
 ; CPod *           Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_main.c_FUN_004e46c0 at 004e4739
+;   core_main.c_initializeGameSystems_FUN_004e46c0 at 004e4739
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_engine_pod_cpp_005e2829

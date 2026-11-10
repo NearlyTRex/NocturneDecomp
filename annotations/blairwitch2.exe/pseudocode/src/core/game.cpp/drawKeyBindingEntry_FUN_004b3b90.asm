@@ -17,7 +17,7 @@
 ;
 ; Called Functions:
 ;   core_menu.cpp_getKeyDisplayName_FUN_004ee960
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_font.cpp_FUN_004a8df0
 ;
 ; *****************************************************************************
@@ -41,8 +41,8 @@ section .text
     PUSH 0x5d7333                       ; 004b3bb3
     LEA EAX,[ESP + 0xc]                 ; 004b3bb8
     PUSH EAX                            ; 004b3bbc
-    CALL crt_unknown.c_FUN_005b7790     ; 004b3bbd
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004b3bbd
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 004b3bc2
     PUSH -0x1                           ; 004b3bc5
     PUSH 0x7                            ; 004b3bc7

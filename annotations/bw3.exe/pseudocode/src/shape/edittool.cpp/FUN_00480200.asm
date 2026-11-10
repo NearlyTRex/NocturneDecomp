@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   shape_edittool.cpp_FUN_004843d0 at 004843f2
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 004843f2
 ;   shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0 at 0047cad2
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c49d
 ;

@@ -19,31 +19,43 @@
     {
       "addr": "004286c0",
       "from_addr": "004286d5",
-      "name": "core_carved.cpp_FUN_004286c0",
+      "name": "core_carved.cpp_CCarved_canBeAttracted_FUN_004286c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004331a0",
       "from_addr": "004331fc",
-      "name": "core_charactr.cpp_FUN_004331a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c6eb0",
-      "from_addr": "004c6f29",
-      "name": "core_ghoul.cpp_FUN_004c6eb0",
+      "name": "core_charactr.cpp_CCharacter_canLookAt_FUN_004331a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c8dd0",
       "from_addr": "004c8def",
-      "name": "core_ghoul.cpp_FUN_004c8dd0",
+      "name": "core_ghoul.cpp_CGhoul_canBeAttracted_FUN_004c8dd0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004c6eb0",
+      "from_addr": "004c6f29",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d2c20",
       "from_addr": "004d2c74",
       "name": "core_hero.cpp_FUN_004d2c20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00458530",
+      "from_addr": "00458545",
+      "name": "core_hostage.cpp_CDemnfolk_canBeAttracted_FUN_00458530",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005260b0",
+      "from_addr": "005260db",
+      "name": "core_prye.cpp_CPrye_canDoHeroAction_FUN_005260b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,19 +97,7 @@
     {
       "addr": "0058c1e0",
       "from_addr": "0058c1f5",
-      "name": "core_zombie.cpp_FUN_0058c1e0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00458530",
-      "from_addr": "00458545",
-      "name": "unkafter_demnfolk.cpp_FUN_00458530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005260b0",
-      "from_addr": "005260db",
-      "name": "unkafter_prye.cpp_FUN_005260b0",
+      "name": "core_zombie.cpp_CZombie_canBeAttracted_FUN_0058c1e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -152,7 +152,7 @@
       {
         "call_addr": "004c6f29",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c6eb0",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c6eb0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

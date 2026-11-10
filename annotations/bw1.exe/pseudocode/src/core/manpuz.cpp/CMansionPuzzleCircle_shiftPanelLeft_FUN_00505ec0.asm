@@ -19,8 +19,8 @@
 ;   core_manpuz.cpp_CMansionPuzzleCircle_getPrevPanelIndex_FUN_00506210
 ;   core_manpuz.cpp_FUN_00504ee0
 ;   sound_sndmain.cpp_FUN_005727e0
-;   sound_sndmain.cpp_FUN_00572ac0
-;   sound_sndmain.cpp_FUN_00572b40
+;   sound_sndmain.cpp_popSfxOptions_FUN_00572b40
+;   sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0
 ;   sound_sndmain.cpp_startSfx_FUN_00572d20
 ;
 ; *****************************************************************************
@@ -152,8 +152,8 @@ section .text
         ;   XREF to: 00504ee0 (UNCONDITIONAL_CALL)  ; undefined core_manpuz.cpp_FUN_00504ee0()
     ADD ESP,0x8                         ; 0050600b
     ADD ESI,0x58                        ; 0050600e
-    CALL sound_sndmain.cpp_FUN_00572ac0 ; 00506011
-        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572ac0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0 ; 00506011
+        ;   XREF to: 00572ac0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00572ac0()
     PUSH ESI                            ; 00506016
     CALL sound_sndmain.cpp_FUN_005727e0 ; 00506017
         ;   XREF to: 005727e0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_005727e0(CVector3f * position_source_ptr)
@@ -162,8 +162,8 @@ section .text
     CALL sound_sndmain.cpp_startSfx_FUN_00572d20 ; 00506024
         ;   XREF to: 00572d20 (UNCONDITIONAL_CALL)  ; uint sound_sndmain.cpp_startSfx_FUN_00572d20(char * filename)
     ADD ESP,0x4                         ; 00506029
-    CALL sound_sndmain.cpp_FUN_00572b40 ; 0050602c
-        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00572b40()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00572b40 ; 0050602c
+        ;   XREF to: 00572b40 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00572b40()
     ADD ESP,0x4                         ; 00506031
     POP EBP                             ; 00506034
     POP EDI                             ; 00506035

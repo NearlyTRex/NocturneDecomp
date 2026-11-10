@@ -9,7 +9,7 @@
 ;
 ; XREF[2]:
 ;   core_set.cpp_CDemonSet_restoreCameraAfterMirror_FUN_0053af20 at 0053af69
-;   core_set.cpp_FUN_0053adf0 at 0053aeda
+;   core_set.cpp_CDemonSet_setupMirrorRendering_FUN_0053adf0 at 0053aeda
 ;
 ; *****************************************************************************
 

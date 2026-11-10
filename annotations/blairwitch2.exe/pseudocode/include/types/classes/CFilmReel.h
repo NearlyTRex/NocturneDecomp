@@ -4,13 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
 
 // Structure: CFilmReel
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x478 (1144 bytes)
 #pragma pack(push, 1)
 typedef struct CFilmReel {
-    char field_0[1144]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    struct CDemonActor* carrier; // 0x430
+    char movie_name[32]; // 0x434
+    float pickup_radius; // 0x454
+    char dead[32]; // 0x458
 } CFilmReel;
 #pragma pack(pop)
 

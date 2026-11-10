@@ -19,7 +19,7 @@
     {
       "addr": "00579f6e",
       "from_addr": "0057a1ad",
-      "name": "sound_snddx.cpp_FUN_00579f6e",
+      "name": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f6e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,6 +47,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0059ef20",
+      "from_addr": "0059ef2e",
+      "name": "support_trisock.cpp_FUN_0059ef20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "005a1e90",
       "from_addr": "005a1ea3",
       "name": "support_trstream.cpp_FUN_005a1e90",
@@ -56,12 +62,6 @@
       "addr": "005a1ec0",
       "from_addr": "005a1f20",
       "name": "support_trstream.cpp_FUN_005a1ec0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059ef20",
-      "from_addr": "0059ef2e",
-      "name": "unkafter_trisock.cpp_FUN_0059ef20",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -98,7 +98,7 @@
       {
         "call_addr": "0059ef2e",
         "call_type": "direct",
-        "caller": "unkafter_trisock.cpp_FUN_0059ef20",
+        "caller": "support_trisock.cpp_FUN_0059ef20",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -172,7 +172,7 @@
       {
         "call_addr": "0057a1ad",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00579f6e",
+        "caller": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f6e",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -185,7 +185,7 @@
       {
         "call_addr": "0057a1ca",
         "call_type": "direct",
-        "caller": "sound_snddx.cpp_FUN_00579f6e",
+        "caller": "sound_snddx.cpp_directSoundEnumerationCallback_FUN_00579f6e",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[36]:
-;   core_tommygun.cpp_FUN_00598d50 at 00598f64
+;   core_tommygun.cpp_CTommyGun_process_FUN_00598d50 at 00598f64
 ;   sound_sndmain.cpp_FUN_0056fa10 at 0056fa90
 ;   sound_sndmain.cpp_FUN_005735a0 at 005735be
-;   sound_sndmain.cpp_FUN_00573620 at 00573644
 ;   sound_sndmain.cpp_FUN_00573760 at 005737bb
 ;   sound_sndmain.cpp_FUN_005737d0 at 00573801
 ;   sound_sndmain.cpp_FUN_005738d0 at 00573901
 ;   sound_sndmain.cpp_FUN_00573950 at 00573972
 ;   sound_sndmain.cpp_FUN_00573980 at 005739c7
-;   sound_sndmain.cpp_FUN_005739e0 at 00573a35
+;   sound_sndmain.cpp_FUN_00573e4c at 00573e60
+;   sound_sndmain.cpp_FUN_00573eae at 00573ebe
 ;   ... and 26 more
 ;
 ; Referenced Globals:

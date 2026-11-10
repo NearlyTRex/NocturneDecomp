@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_bindevil.cpp_FUN_0040f840 at 0040f86a
+;   core_bindevil.cpp_CBindEvil_fire_FUN_0040f840 at 0040f86a
 ;
 ; Called Functions:
 ;   core_fire.cpp_FUN_004a3a30

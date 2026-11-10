@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 11,
-    "complexity_score": 47,
+    "complexity_score": 27,
     "cross_reference_count": 2,
     "function_call_count": 0,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 3,
+    "suspect_count": 1,
     "suspect_types": [
       "unnamed_field"
     ],
@@ -18,13 +18,13 @@
     {
       "addr": "0040b960",
       "from_addr": "0040ba15",
-      "name": "core_actor.cpp_FUN_0040b960",
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00569f50",
       "from_addr": "00569f8f",
-      "name": "core_skeleton.cpp_FUN_00569f50",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -48,7 +48,7 @@
       {
         "call_addr": "00569f8f",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_00569f50",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -59,7 +59,7 @@
       {
         "call_addr": "0040ba15",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040b960",
+        "caller": "core_actor.cpp_archivePartStatus_FUN_0040b960",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,26 +116,10 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "puVar2 = &pCVar1->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 11,
       "match": "field_0x2230",
       "severity": "mild",
       "text": "*(uint *)&pCVar1->field_0x2230 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xf0",
-      "severity": "mild",
-      "text": "} while (puVar2 != &this_ptr->field_0xf0);",
       "type": "unnamed_field"
     }
   ]

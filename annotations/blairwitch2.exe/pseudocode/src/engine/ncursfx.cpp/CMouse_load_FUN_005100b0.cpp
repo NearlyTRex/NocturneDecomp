@@ -20,31 +20,30 @@ void __cdecl engine_ncursfx_cpp_CMouse_load_FUN_005100b0(CMouse *this_ptr)
   this_ptr_00 = this_ptr;
   do {
     iVar1 = iVar1 + 1;
-    FUN_005b7790(local_1c,"crsr%d",iVar1);
-    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0
-              ((CAlphaBitmap *)this_ptr_00,local_1c,0x36,0x37);
-    this_ptr_00 = (CMouse *)&this_ptr_00->field_0x14;
+    _sprintf(local_1c,"crsr%d");
+    engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(this_ptr_00->cursors,local_1c,0x36,0x37);
+    this_ptr_00 = (CMouse *)(this_ptr_00->cursors + 1);
   } while (iVar1 < 8);
-  pCVar2 = (CAlphaBitmap *)&this_ptr->field_0xa0;
+  pCVar2 = this_ptr->flames;
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
-    FUN_005b7790(local_3c,"flame%d",iVar1);
+    _sprintf(local_3c,"flame%d");
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar2,local_3c,0x36,0x37);
     pCVar2 = pCVar2 + 1;
   } while (iVar1 < 7);
-  pCVar2 = (CAlphaBitmap *)&this_ptr->field_0x12c;
+  pCVar2 = this_ptr->skulls;
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
-    FUN_005b7790(local_2c,"crsrskll%d",iVar1);
+    _sprintf(local_2c,"crsrskll%d");
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar2,local_2c,0x36,0x37);
     pCVar2 = pCVar2 + 1;
   } while (iVar1 < 7);
-  pCVar2 = (CAlphaBitmap *)&this_ptr->field_0x1b8;
+  pCVar2 = this_ptr->skulls + 7;
   do {
     engine_alphabit_cpp_CAlphaBitmap_load_FUN_0040d5a0(pCVar2,"crsrskll7",0x36,0x37);
     pCVar2 = pCVar2 + 1;
-  } while (pCVar2 != (CAlphaBitmap *)&this_ptr->field_0x258);
+  } while (pCVar2 != (CAlphaBitmap *)&this_ptr->anim_timer);
   return;
 }

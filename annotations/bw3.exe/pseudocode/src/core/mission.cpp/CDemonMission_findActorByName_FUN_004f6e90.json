@@ -1,0 +1,230 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 15,
+    "cross_reference_count": 8,
+    "function_call_count": 1,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 15,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 47
+  },
+  "cross_references": [
+    {
+      "addr": "0048b950",
+      "from_addr": "0048ba25",
+      "name": "core_event.cpp_resolveActorByName_FUN_0048b950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004bdfb0",
+      "from_addr": "004be60f",
+      "name": "core_game.cpp_FUN_004bdfb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7490",
+      "from_addr": "004f74f4",
+      "name": "core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004f7490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f6770",
+      "from_addr": "004f686f",
+      "name": "core_mission.cpp_CDemonMission_loadActor_FUN_004f6770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f7a20",
+      "from_addr": "004f7ac0",
+      "name": "core_mission.cpp_FUN_004f7a20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005289b0",
+      "from_addr": "00528ad9",
+      "name": "core_script.cpp_getActor_FUN_005289b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00530a10",
+      "from_addr": "00530a76",
+      "name": "core_script.cpp_readActorReference_FUN_00530a10",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00563970",
+      "from_addr": "00563a0a",
+      "name": "engine_special.cpp_FUN_00563970",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f6e90",
+    "address_range": [
+      [
+        "004f6e90",
+        "004f6ec5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90",
+    "signature": "CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission *this_ptr,char *name)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a3260",
+      "is_variadic": false,
+      "name": "crt_string.c__stricmp_FUN_005a3260"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "004be60f",
+        "call_type": "direct",
+        "caller": "core_game.cpp_FUN_004bdfb0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048ba25",
+        "call_type": "direct",
+        "caller": "core_event.cpp_resolveActorByName_FUN_0048b950",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f74f4",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_generateUniqueActorName_FUN_004f7490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f7ac0",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_FUN_004f7a20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00528ad9",
+        "call_type": "direct",
+        "caller": "core_script.cpp_getActor_FUN_005289b0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00530a76",
+        "call_type": "direct",
+        "caller": "core_script.cpp_readActorReference_FUN_00530a10",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004f686f",
+        "call_type": "direct",
+        "caller": "core_mission.cpp_CDemonMission_loadActor_FUN_004f6770",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00563a0a",
+        "call_type": "direct",
+        "caller": "engine_special.cpp_FUN_00563970",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.125,
+    "instruction_count": 24,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 25,
+      "INT_ADD": 11,
+      "INT_AND": 13,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 10,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 5,
+      "INT_SUB": 5,
+      "INT_XOR": 1,
+      "LOAD": 10,
+      "POPCOUNT": 5,
+      "RETURN": 2,
+      "STORE": 5
+    },
+    "pcode_op_count": 99
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonMission *"
+      },
+      {
+        "is_param": true,
+        "name": "name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": []
+}

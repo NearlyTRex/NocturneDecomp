@@ -1,0 +1,149 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 27,
+    "cross_reference_count": 2,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 12,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 35
+  },
+  "cross_references": [
+    {
+      "addr": "00460630",
+      "from_addr": "004606e9",
+      "name": "core_door.cpp_CDoor_getMoveType_FUN_00460630",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004cf230",
+      "from_addr": "004cf291",
+      "name": "core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00460800",
+    "address_range": [
+      [
+        "00460800",
+        "00460834"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_door.cpp_CDoor_onLocked_FUN_00460800",
+    "signature": "uint __cdecl core_door_cpp_CDoor_onLocked_FUN_00460800(CDoor *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "00550b70",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00550b70"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "01b4d330",
+      "name": "DAT_01b4d330",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "004606e9",
+        "call_type": "direct",
+        "caller": "core_door.cpp_CDoor_getMoveType_FUN_00460630",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "00460727",
+        "call_type": "direct",
+        "caller": "core_door.cpp_CDoor_getMoveType_FUN_00460630",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004cf291",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_tryOpenDoor_FUN_004cf230",
+        "estimated_params": 1,
+        "instructions_analyzed": 4,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8421052631578947,
+    "instruction_count": 19,
+    "opcode_distribution": {
+      "CALL": 1,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 16,
+      "INT_ADD": 10,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 6,
+      "LOAD": 7,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 6
+    },
+    "pcode_op_count": 73
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDoor *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

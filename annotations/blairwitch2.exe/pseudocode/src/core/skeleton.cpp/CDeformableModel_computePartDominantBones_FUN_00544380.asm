@@ -65,15 +65,15 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
+;   core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540
 ;   core_skeleton.cpp_CDeformableModel_computeBoneDominantPart_FUN_005431b0
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0
 ;   core_skeleton.cpp_CDeformableModelInstance_computeBoneTransforms_FUN_00546ae0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00544cd0
 ;   core_skeleton.cpp_CDeformableModelInstance_initializeFromModel_FUN_005474b0
 ;   core_skeleton.cpp_CDeformableModelInstance_resetToRestPose_FUN_00544e60
 ;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_005471f0
-;   core_skeleton.cpp_FUN_00541540
-;   core_skeleton.cpp_FUN_005415d0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -109,19 +109,19 @@ section .text
     RET                                 ; 005443c6
     PUSH EAX                            ; 005443c7
         ;   Label: LAB_005443c7
-    CALL core_skeleton.cpp_FUN_00541540 ; 005443c8
-        ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00541540(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540 ; 005443c8
+        ;   XREF to: 00541540 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModel_captureTextures_FUN_00541540(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 005443cd
     MOV EBX,dword ptr [EBP + 0x14]      ; 005443d0
     PUSH EBX                            ; 005443d3
-    CALL core_skeleton.cpp_FUN_005415d0 ; 005443d4
-        ;   XREF to: 005415d0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_005415d0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0 ; 005443d4
+        ;   XREF to: 005415d0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005415d0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 005443d9
     MOV EAX,dword ptr [EAX + 0x1d1f8]   ; 005443dc
     PUSH 0x22b4                         ; 005443e2
     MOV dword ptr [ESP + 0x234],EAX     ; 005443e7
-    CALL crt_unknown.c_FUN_005b8be2     ; 005443ee
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 005443ee
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 005443f3
     TEST EAX,EAX                        ; 005443f6
     JZ 0x00544403                       ; 005443f8

@@ -9,7 +9,7 @@
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0(CDemonMission *this_ptr,int set_index)
 
 {
-  int *piVar1;
+  int iVar1;
   int iVar2;
   int iVar3;
   
@@ -21,13 +21,13 @@ void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0(CDemonMission *
             (g_CDemonSetPtr,(char *)(this_ptr + set_index * 0x100 + 8));
   core_mission_cpp_CDemonMission_buildSetActorList_FUN_004fc4c0(this_ptr);
   if (*(int *)(this_ptr + 0x1450) != *(int *)this_ptr) {
-    core_mission_cpp_FUN_004fc350(this_ptr);
+    core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(this_ptr);
   }
   iVar3 = 0;
-  for (iVar2 = 0; iVar2 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar2 = iVar2 + 1) {
-    piVar1 = (int *)(&g_CDemonSetPtr->field_0x14d168 + iVar3);
+  for (iVar2 = 0; iVar2 < g_CDemonSetPtr->actor_count; iVar2 = iVar2 + 1) {
+    iVar1 = *(int *)((int)g_CDemonSetPtr->actors + iVar3);
     iVar3 = iVar3 + 4;
-    (**(code **)(*(int *)(*piVar1 + 0x2b0) + 0x58))(*piVar1);
+    (**(code **)(*(int *)(iVar1 + 0x2b0) + 0x58))(iVar1);
   }
   core_game_cpp_FUN_004bfa70(g_CGamePtr);
   return;

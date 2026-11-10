@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,int param_4,int param_5,undefined4 param_6,undefined4 param_7,int param_8)
+; void cockpit_pkbmpset_cpp_FUN_0051080e(CPackedBitmapSet *param_1,char *param_2,int param_3,char *param_4,int param_5,undefined4 param_6,int param_7,undefined4 param_8,undefined4 param_9,int param_10)
 ;
 ;
 ; Referenced Globals:
@@ -16,9 +16,9 @@
 ;   core_main.c_FUN_004e4330
 ;   crt_stdio.c_fclose_FUN_005a3a90
 ;   crt_stdio.c_fread_FUN_005a3890
-;   crt_unknown.c_FUN_005a28c0
 ;   crt_unknown.c_FUN_005a3650
 ;   crt_unknown.c_FUN_005a3770
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;   engine_dosio.cpp_FUN_004659c0
 ;   engine_dosio.cpp_getFileSize_FUN_004657f0
 ;   unkafter_pkbitmap.cpp_FUN_00510670
@@ -83,8 +83,8 @@ section .text
     LEA EAX,[ESP + 0x78]                ; 005108b4
     PUSH EAX                            ; 005108b8
     MOV ESI,0xc9                        ; 005108b9
-    CALL crt_unknown.c_FUN_005a28c0     ; 005108be
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005108be
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x18                        ; 005108c3
     LEA EAX,[ESP + 0x64]                ; 005108c6
     MOV ECX,0x5cc095                    ; 005108ca
@@ -98,7 +98,7 @@ section .text
         ;   Label: LAB_005108e4
     PUSH EBX                            ; 005108e5
     CALL cockpit_pkbmpset.cpp_FUN_005106a0 ; 005108e6
-        ;   XREF to: 005106a0 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_005106a0()
+        ;   XREF to: 005106a0 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_FUN_005106a0(CPackedBitmapSet * this_ptr, int bitmap_count)
     ADD ESP,0x8                         ; 005108eb
     MOV dword ptr [EBX + 0x20],EBP      ; 005108ee
     MOV EDI,dword ptr [ESP + 0x194]     ; 005108f1
@@ -116,8 +116,8 @@ section .text
     PUSH 0x5cc0ad                       ; 00510912
     LEA EAX,[ESP + 0xd0]                ; 00510917
     PUSH EAX                            ; 0051091e
-    CALL crt_unknown.c_FUN_005a28c0     ; 0051091f
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0051091f
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EDX,0x5cc0f7                    ; 00510924
     ADD ESP,0xc                         ; 00510929
     LEA EAX,[ESP + 0xc8]                ; 0051092c
@@ -153,8 +153,8 @@ section .text
     PUSH 0x5cc10f                       ; 00510983
     LEA EAX,[ESP + 0x134]               ; 00510988
     PUSH EAX                            ; 0051098f
-    CALL crt_unknown.c_FUN_005a28c0     ; 00510990
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00510990
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x5cc148                    ; 00510995
     ADD ESP,0xc                         ; 0051099a
     MOV [0x01d71de0],EAX                ; 0051099d | DAT_01d71de0
@@ -218,8 +218,8 @@ section .text
     PUSH 0x5cbfeb                       ; 00510a39
     LEA EAX,[ESP + 0x8]                 ; 00510a3e
     PUSH EAX                            ; 00510a42
-    CALL crt_unknown.c_FUN_005a28c0     ; 00510a43
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00510a43
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     MOV EAX,0x5cc020                    ; 00510a48
     ADD ESP,0xc                         ; 00510a4d
     MOV [0x01d71de0],EAX                ; 00510a50 | DAT_01d71de0

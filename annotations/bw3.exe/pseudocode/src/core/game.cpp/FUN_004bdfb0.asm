@@ -33,7 +33,7 @@
 ;
 ; XREF[2]:
 ;   core_game.cpp_FUN_004be8d0 at 004beb17
-;   core_menu.cpp_FUN_004ea4d0 at 004ea980
+;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea980
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c3662
@@ -62,13 +62,13 @@
 ;   core_fire.cpp_FUN_004a1480
 ;   core_fldnotes.cpp_FUN_004ab7a0
 ;   core_fldnotes.cpp_FUN_004ac900
+;   core_gore.cpp_CGore_load_FUN_004cf010
 ;   core_gore.cpp_CGore_reset_FUN_004ce560
-;   core_gore.cpp_FUN_004cf010
 ;   core_level.cpp_FUN_004dfc50
 ;   core_main.c_FUN_004e4330
+;   core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90
 ;   core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0
 ;   core_mission.cpp_CDemonMission_run_FUN_004f72a0
-;   core_mission.cpp_FUN_004f6e90
 ;   ... and 35 more
 ;
 ; *****************************************************************************
@@ -314,8 +314,8 @@ section .text
     PUSH 0x5c369b                       ; 004be25b | = "%s\\%s"
     LEA EAX,[ESP + 0x110]               ; 004be260
     PUSH EAX                            ; 004be267
-    CALL crt_unknown.c_FUN_005a28c0     ; 004be268
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004be268
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004be26d
     PUSH 0x1                            ; 004be270
     LEA EAX,[ESP + 0x108]               ; 004be272
@@ -354,8 +354,8 @@ section .text
     ADD ESP,0xc                         ; 004be2dc
     LEA EAX,[ESP + 0x4d0]               ; 004be2df
     PUSH EAX                            ; 004be2e6
-    CALL support_codec.cpp_FUN_00441350 ; 004be2e7
-        ;   XREF to: 00441350 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_FUN_00441350(CLZWDecompress * this_ptr)
+    CALL support_codec.cpp_CLZWDecompress_init_FUN_00441350 ; 004be2e7
+        ;   XREF to: 00441350 (UNCONDITIONAL_CALL)  ; void support_codec.cpp_CLZWDecompress_init_FUN_00441350(CLZWDecompress * this_ptr)
     ADD ESP,0x4                         ; 004be2ec
     LEA EAX,[ESP + 0x530]               ; 004be2ef
     PUSH EAX                            ; 004be2f6
@@ -481,8 +481,8 @@ section .text
     PUSH EAX                            ; 004be460
     MOV ESI,dword ptr [0x005fb140]      ; 004be461 | g_CEditorToolsPtr
     PUSH ESI                            ; 004be467
-    CALL shape_edittool.cpp_FUN_0047db70 ; 004be468
-        ;   XREF to: 0047db70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0047db70(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
+    CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 ; 004be468
+        ;   XREF to: 0047db70 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004be46d
     TEST EAX,EAX                        ; 004be470
     JNZ 0x004be126                      ; 004be472
@@ -623,8 +623,8 @@ section .text
     PUSH EAX                            ; 004be607
     MOV EDI,dword ptr [0x00600530]      ; 004be608 | DAT_00600530
     PUSH EDI                            ; 004be60e | DAT_01d81080
-    CALL core_mission.cpp_FUN_004f6e90  ; 004be60f
-        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_FUN_004f6e90(CDemonMission * this_ptr, char * name)
+    CALL core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90 ; 004be60f
+        ;   XREF to: 004f6e90 (UNCONDITIONAL_CALL)  ; CDemonActor * core_mission.cpp_CDemonMission_findActorByName_FUN_004f6e90(CDemonMission * this_ptr, char * name)
     ADD ESP,0x8                         ; 004be614
     PUSH EAX                            ; 004be617
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 004be618
@@ -685,8 +685,8 @@ section .text
     PUSH EBX                            ; 004be6b8
     MOV EDX,dword ptr [0x005fed24]      ; 004be6b9 | g_CGorePtr
     PUSH EDX                            ; 004be6bf
-    CALL core_gore.cpp_FUN_004cf010     ; 004be6c0
-        ;   XREF to: 004cf010 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_FUN_004cf010(CGore * this_ptr, _FILE * file_handle)
+    CALL core_gore.cpp_CGore_load_FUN_004cf010 ; 004be6c0
+        ;   XREF to: 004cf010 (UNCONDITIONAL_CALL)  ; int core_gore.cpp_CGore_load_FUN_004cf010(CGore * this_ptr, _FILE * file_handle)
     ADD ESP,0x8                         ; 004be6c5
     CMP dword ptr [ESP + 0x540],0x7     ; 004be6c8
         ;   Label: LAB_004be6c8

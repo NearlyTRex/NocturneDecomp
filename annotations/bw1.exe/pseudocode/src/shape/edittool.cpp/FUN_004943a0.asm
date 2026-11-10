@@ -8,16 +8,16 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[28]:
-;   core_doc.cpp_FUN_00474fc0 at 00475092
+;   core_doc.cpp_CDoc_doHeroAction_FUN_00474fc0 at 00475092
 ;   core_fldnotes.cpp_FUN_004bcba0 at 004bcde6
 ;   core_fldnotes.cpp_FUN_004bdd00 at 004bddb1
 ;   core_fldnotes.cpp_FUN_004bde80 at 004bdf76
 ;   core_fldnotes.cpp_FUN_004bdfa0 at 004be051
-;   core_game.cpp_FUN_004d27b0 at 004d3f86
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d3f86
 ;   core_game.cpp_FUN_004d6420 at 004d68f7
 ;   core_game.cpp_FUN_004d6990 at 004d6e8b
 ;   core_game.cpp_FUN_004d77d0 at 004d7be5
-;   core_hero.cpp_FUN_004ec640 at 004ec687
+;   core_hero.cpp_CHero_doHeroAction_FUN_004ec640 at 004ec687
 ;   ... and 18 more
 ;
 ; Referenced Globals:

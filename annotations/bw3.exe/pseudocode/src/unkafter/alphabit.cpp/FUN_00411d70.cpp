@@ -24,11 +24,11 @@ void unkafter_alphabit_cpp_FUN_00411d70(int *param_1,int param_2)
       do {
         engine_alphabit_cpp_FUN_0040d400(this_ptr);
         iVar1 = iVar1 + 1;
-        this_ptr = (CAlphaBitmap *)&this_ptr[2].field_0x4;
+        this_ptr = (CAlphaBitmap *)&this_ptr[2].opa;
       } while (iVar1 < param_1[7]);
     }
     param_1[7] = 0;
-    sound_sndmain_cpp_FUN_00556c60();
+    sound_sndmain_cpp_killAllSfx_FUN_00556c60();
     param_1[6] = 0;
     param_1[0xc] = 0;
     param_1[9] = 0;

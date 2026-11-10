@@ -29,13 +29,13 @@ void __cdecl CLadder::setup(CLadder *this_ptr);
 // Address: 004df720
 void __cdecl CLadder::process(CLadder *this_ptr,float delta_time);
 
-// Original: core_ladder.cpp_FUN_004df730
+// Original: core_ladder.cpp_CLadder_renderOpaque_FUN_004df730
 // Address: 004df730
-int FUN_004df730(CDemonActor *param_1);
+int __cdecl CLadder::renderOpaque(CLadder *this_ptr);
 
-// Original: core_ladder.cpp_FUN_004df7c0
+// Original: core_ladder.cpp_CLadder_getBoundingBox_FUN_004df7c0
 // Address: 004df7c0
-void FUN_004df7c0(int param_1);
+CBoundingBox3D * __cdecl CLadder::getBoundingBox(CLadder *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_ladder.cpp_CLadder_archive_FUN_004df880
 // Address: 004df880
@@ -45,9 +45,9 @@ void __cdecl CLadder::archive(CLadder *this_ptr);
 // Address: 004df900
 ECollisionType __cdecl CLadder::getCollisionType(CLadder *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_ladder.cpp_FUN_004df930
+// Original: core_ladder.cpp_CLadder_updatePositionFromMaster_FUN_004df930
 // Address: 004df930
-void __cdecl FUN_004df930(CLadder *this_ptr);
+void __cdecl CLadder::updatePositionFromMaster(CLadder *this_ptr);
 
 // Original: core_ladder.cpp_CLadder_cacheRelativePosition_FUN_004dfa70
 // Address: 004dfa70

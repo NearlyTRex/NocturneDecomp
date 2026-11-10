@@ -55,9 +55,9 @@ void core_dog1_cpp_FUN_005ac2f0(int param_1,float param_2)
        param_2 <= 0.0)) {
       *(uint *)(param_1 + 0x11860) = 0x3f800000;
       iVar5 = 0;
-      for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {
+      for (iVar3 = 0; iVar3 < g_CDemonSetPtr->actor_count; iVar3 = iVar3 + 1) {
         iStack_14 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                              (*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar5),
+                              (*(uint *)((int)g_CDemonSetPtr->actors + iVar5),
                                g_CBoxActorClassInfo.name_hash);
         if (iStack_14 != 0) {
           _strcmp((char *)(iStack_14 + 0x32c),"meat1.kfm");

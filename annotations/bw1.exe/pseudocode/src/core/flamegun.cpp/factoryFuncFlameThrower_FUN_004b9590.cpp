@@ -11,7 +11,7 @@ void core_flamegun_cpp_factoryFuncFlameThrower_FUN_004b9590(void)
 {
   CFlameThrower *this_ptr;
   
-  this_ptr = (CFlameThrower *)FUN_005c0f32(0x588);
+  this_ptr = (CFlameThrower *)debugAllocTracked1(0x588);
   if (this_ptr == (CFlameThrower *)0x0) {
     return;
   }

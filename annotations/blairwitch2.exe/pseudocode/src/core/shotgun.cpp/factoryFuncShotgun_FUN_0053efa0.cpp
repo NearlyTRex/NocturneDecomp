@@ -11,7 +11,7 @@ void core_shotgun_cpp_factoryFuncShotgun_FUN_0053efa0(void)
 {
   CShotgun *this_ptr;
   
-  this_ptr = (CShotgun *)FUN_005b8be2(0x6e0);
+  this_ptr = (CShotgun *)debugAllocTracked1(0x6e0);
   if (this_ptr == (CShotgun *)0x0) {
     return;
   }

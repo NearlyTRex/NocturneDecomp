@@ -7,16 +7,16 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[12]:
-;   core_ammo.cpp_FUN_0040ded0 at 0040e00c
+;   core_ammo.cpp_CAmmo_process_FUN_0040ded0 at 0040e00c
 ;   core_confedrt.cpp_FUN_005a0bd0 at 005a0dc1
 ;   core_course.cpp_FUN_00438c40 at 00438c81
+;   core_cross.cpp_CCross_process_FUN_005a6ed0 at 005a757b
 ;   core_doc.cpp_FUN_00450c60 at 004517b2
 ;   core_hag.cpp_FUN_005ab260 at 005ab638
-;   core_health.cpp_FUN_004cdb60 at 004cdcb1
-;   core_necklace.cpp_FUN_005adad0 at 005adc15
-;   core_patrpoin.cpp_FUN_0059c680 at 0059c7e3
+;   core_health.cpp_CHealthItem_process_FUN_004cdb60 at 004cdcb1
+;   core_necklace.cpp_CNecklace_process_FUN_005adad0 at 005adc15
+;   core_patrpoin.cpp_CPatrolPoint_process_FUN_0059c680 at 0059c7e3
 ;   core_robin.cpp_FUN_005a61f0 at 005a646a
-;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40 at 005470da
 ;   ... and 2 more
 ;
 ; Called Functions:

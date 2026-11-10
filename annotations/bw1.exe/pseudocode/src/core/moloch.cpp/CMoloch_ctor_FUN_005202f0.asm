@@ -10,10 +10,10 @@
 ;   core_moloch.cpp_factoryFuncMoloch_FUN_005202c0 at 005202d3
 ;
 ; Called Functions:
-;   core_hero.cpp_FUN_004ea830
+;   core_hero.cpp_CHero_ctor_FUN_004ea830
 ;   core_morph.cpp_CMorph_ctor_FUN_00522fa0
 ;   core_skeleton.cpp_CDeformableModelInstance_ctor_FUN_00567370
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
     PUSH EDI                            ; 005202f2
     MOV EBX,dword ptr [ESP + 0x10]      ; 005202f3
     PUSH EBX                            ; 005202f7
-    CALL core_hero.cpp_FUN_004ea830     ; 005202f8
-        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_FUN_004ea830(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_ctor_FUN_004ea830 ; 005202f8
+        ;   XREF to: 004ea830 (UNCONDITIONAL_CALL)  ; CHero * core_hero.cpp_CHero_ctor_FUN_004ea830(CHero * this_ptr)
     ADD ESP,0x4                         ; 005202fd
     ADD EAX,0x1ffac                     ; 00520300
     PUSH EAX                            ; 00520305
@@ -43,8 +43,8 @@ section .text
     LEA EAX,[EBX + 0x158]               ; 00520327
     PUSH EAX                            ; 0052032d
     MOV dword ptr [EBX + 0x154],0x603f04 ; 0052032e
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00520338
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00520338
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     ADD ESP,0x8                         ; 0052033d
     MOV ESI,0x5ea1d3                    ; 00520340
     LEA EDI,[EBX + 0x2235c]             ; 00520345

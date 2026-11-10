@@ -11,7 +11,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004bb100 at 004bb9e4
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb9e4
 ;   core_game.cpp_FUN_004bdfb0 at 004be41c
 ;   core_game.cpp_setupMovieRecording_FUN_004b3d70 at 004b3e35
 ;   core_main.c_FUN_004e4400 at 004e44ad

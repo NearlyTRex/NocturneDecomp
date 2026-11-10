@@ -30,7 +30,7 @@
 ;
 ; Called Functions:
 ;   core_setdir.cpp_CZThumb_render_FUN_00538a60
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;
 ; *****************************************************************************
@@ -159,8 +159,8 @@ section .text
     PUSH 0x5e609c                       ; 00539eba | DAT_005e609c
     LEA EAX,[ESP + 0xc]                 ; 00539ebf
     PUSH EAX                            ; 00539ec3
-    CALL crt_unknown.c_FUN_005b7790     ; 00539ec4
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 00539ec4
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 00539ec9
     IMUL EAX,dword ptr [ESP + 0x84],0xf0 ; 00539ecc
     MOV EAX,dword ptr [EAX + 0x2093d38] ; 00539ed7

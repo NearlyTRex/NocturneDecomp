@@ -19,7 +19,7 @@
     {
       "addr": "004159e0",
       "from_addr": "00415a00",
-      "name": "core_bodypart.cpp_FUN_004159e0",
+      "name": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -47,21 +47,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004c5840",
+      "from_addr": "004c5941",
+      "name": "core_glass.cpp_CGlass_renderBackground_FUN_004c5840",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004c52a0",
       "from_addr": "004c539f",
-      "name": "core_glass.cpp_FUN_004c52a0",
+      "name": "core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c5470",
       "from_addr": "004c556e",
-      "name": "core_glass.cpp_FUN_004c5470",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004c5840",
-      "from_addr": "004c5941",
-      "name": "core_glass.cpp_FUN_004c5840",
+      "name": "core_glass.cpp_CGlass_renderTransparent_FUN_004c5470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,7 +73,7 @@
     {
       "addr": "00587400",
       "from_addr": "00587525",
-      "name": "core_wateract.cpp_FUN_00587400",
+      "name": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -188,7 +188,7 @@
       {
         "call_addr": "00415a00",
         "call_type": "direct",
-        "caller": "core_bodypart.cpp_FUN_004159e0",
+        "caller": "core_bodypart.cpp_CBodyPart_renderGeometry_FUN_004159e0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -210,7 +210,7 @@
       {
         "call_addr": "004c539f",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004c52a0",
+        "caller": "core_glass.cpp_CGlass_renderOpaque_FUN_004c52a0",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -221,7 +221,7 @@
       {
         "call_addr": "004c556e",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004c5470",
+        "caller": "core_glass.cpp_CGlass_renderTransparent_FUN_004c5470",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -232,7 +232,7 @@
       {
         "call_addr": "004c5941",
         "call_type": "direct",
-        "caller": "core_glass.cpp_FUN_004c5840",
+        "caller": "core_glass.cpp_CGlass_renderBackground_FUN_004c5840",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -243,7 +243,7 @@
       {
         "call_addr": "00587525",
         "call_type": "direct",
-        "caller": "core_wateract.cpp_FUN_00587400",
+        "caller": "core_wateract.cpp_CWaterActor_renderTransparent_FUN_00587400",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -357,7 +357,7 @@
       "line": 19,
       "match": "DAT_0060b280",
       "severity": "mild",
-      "text": "output = *(SProjectedVertex **)DAT_0060b280;",
+      "text": "output = DAT_0060b280->vertex_buffer_ptr;",
       "type": "undefined_data"
     },
     {

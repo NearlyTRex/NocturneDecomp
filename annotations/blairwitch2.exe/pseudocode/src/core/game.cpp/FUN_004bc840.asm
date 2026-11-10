@@ -13,7 +13,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_004e45e0 at 004e466c
-;   core_menu.cpp_FUN_004ee3f0 at 004ee6a6
+;   core_menu.cpp_showMainGameMenu_FUN_004ee3f0 at 004ee6a6
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d867f
@@ -138,8 +138,8 @@ section .text
     PUSH 0x5d86df                       ; 004bc963 | = "Select mission to play"
     MOV ECX,dword ptr [0x006138e0]      ; 004bc968 | g_CEditorToolsPtr
     PUSH ECX                            ; 004bc96e
-    CALL shape_edittool.cpp_FUN_0047c970 ; 004bc96f
-        ;   XREF to: 0047c970 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0047c970(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
+    CALL shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970 ; 004bc96f
+        ;   XREF to: 0047c970 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047c970(CEditorTools * this_ptr, char * dialog_title, char * search_directory, char * file_pattern, ...)
     ADD ESP,0x18                        ; 004bc974
     TEST EAX,EAX                        ; 004bc977
     JZ 0x004bcb45                       ; 004bc979

@@ -26,15 +26,15 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
   this_ptr = _DAT_0152d244;
   if (title != (char *)0x0) {
     engine_font_cpp_FUN_004c1dd0(_DAT_0152d244,title,400,y_position,7,0);
-    iVar1 = engine_font_cpp_FUN_004c4510(this_ptr,0x58);
+    iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr,0x58);
     y_position = y_position + iVar1 * 2;
   }
   local_20 = 0;
   if (0 < menu_count) {
     local_1c = menu_text_array;
     do {
-      engine_font_cpp_FUN_004c3ea0(this_ptr,*local_1c);
-      iVar1 = engine_font_cpp_FUN_004c4510(this_ptr,0x58);
+      engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(this_ptr,*local_1c);
+      iVar1 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(this_ptr,0x58);
       local_24 = 0xf8;
       if (local_20 == *selected_index_ptr) {
         iVar2 = core_moon_cpp_CMoon_isAnimationFirstHalf_FUN_005220b0(&g_CMoonInstance);
@@ -70,13 +70,17 @@ int __cdecl core_menu_cpp_renderMenuAndGetChoice_FUN_00509e20(char **menu_text_a
   }
   engine_3d_c_setRenderAlpha_FUN_00406bd0(0xffff);
   if (_DAT_01d7f1b8 == 0) {
-    iVar1 = engine_font_cpp_FUN_004c3ea0(_DAT_0152d248,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
-    iVar2 = engine_font_cpp_FUN_004c3f50(_DAT_0152d248,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
+    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
+                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
+    iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50
+                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Blair Witch Volume I: Rustin Parr  2000 Terminal Reality Inc.  Patent Pending.";
   }
   else {
-    iVar1 = engine_font_cpp_FUN_004c3ea0(_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
-    iVar2 = engine_font_cpp_FUN_004c3f50(_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
+    iVar1 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
+                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
+    iVar2 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50
+                      (_DAT_0152d248,"Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.");
     pcVar7 = "Blair Witch Volume I: Rustin Parr (c) 2000 Terminal Reality Inc.  Patent Pending.";
   }
   engine_font_cpp_FUN_004c1dd0(_DAT_0152d248,pcVar7,0x26b - iVar1,0x1df - iVar2,0xf8,0);

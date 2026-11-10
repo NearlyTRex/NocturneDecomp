@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 35,
-    "complexity_score": 67,
+    "complexity_score": 23,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 22,
-    "suspect_count": 4,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 57
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 23,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 58
   },
   "cross_references": [],
   "function": {
@@ -31,7 +29,7 @@
     {
       "addr": "00409d20",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00409d20"
+      "name": "core_actor.cpp_CDemonActor_getInteractionInfo_FUN_00409d20"
     }
   ],
   "globals": [
@@ -104,40 +102,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x858",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x858 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x85c",
-      "severity": "mild",
-      "text": "uVar2 = *(uint *)&this_ptr->field_0x85c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "*(float *)(interaction_info + 0x18) = 0x3F9C61AA - *(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x30",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x30;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

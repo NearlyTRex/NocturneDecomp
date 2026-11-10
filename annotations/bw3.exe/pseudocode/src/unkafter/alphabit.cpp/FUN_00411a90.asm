@@ -7,7 +7,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bf4b0 at 004bf89e
+;   core_game.cpp_CGame_process_FUN_004bf4b0 at 004bf89e
 ;
 ; Referenced Globals:
 ;   CGame* g_CGamePtr = 01d2130c
@@ -16,7 +16,7 @@
 ;   undefined4 DAT_01c5fadc
 ;   undefined4 DAT_01c5fae0
 ;   undefined4 DAT_01c5fae4
-;   undefined4 g_CGameInstance.field788_0x314
+;   undefined4 g_CGameInstance.delta_time_float
 ;
 ; *****************************************************************************
 
@@ -86,7 +86,7 @@ section .text
         ;   Label: LAB_00411b14
     SUB ESP,0x4                         ; 00411b1a
     MOV ECX,dword ptr [ESI]             ; 00411b1d
-    MOV EAX,dword ptr [EDX + 0x314]     ; 00411b1f | g_CGameInstance.field788_0x314
+    MOV EAX,dword ptr [EDX + 0x314]     ; 00411b1f | g_CGameInstance.delta_time_float
     MOV dword ptr [ESP],EAX             ; 00411b25
     PUSH ESI                            ; 00411b28
     MOV dword ptr [0x007dffb4],ESI      ; 00411b29 | DAT_007dffb4

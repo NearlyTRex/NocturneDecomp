@@ -2,15 +2,19 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SMovieFrame;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: CFilterFX
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc (12 bytes)
 #pragma pack(push, 1)
 typedef struct CFilterFX {
-    char field_0[12]; // 0x0
+    int frame_count; // 0x0
+    struct SMovieFrame* movie_data; // 0x4
+    float current_frame; // 0x8
 } CFilterFX;
 #pragma pack(pop)
 

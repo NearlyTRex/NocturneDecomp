@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dimage_cpp_FUN_00448f40(int param_1)
+; void __cdecl core_dimage_cpp_FUN_00448f40(CDemonImage *this_ptr)
 ;
+; Parameters:
+; CDemonImage *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
 ;   core_dimage.cpp_FUN_0044902e at 004490a7
@@ -25,7 +27,7 @@ section .text
     MOV EBX,dword ptr [ESP + 0x8]       ; 00448f41
     PUSH EBX                            ; 00448f45
     CALL core_dimage.cpp_FUN_00448fa0   ; 00448f46
-        ;   XREF to: 00448fa0 (UNCONDITIONAL_CALL)  ; undefined core_dimage.cpp_FUN_00448fa0()
+        ;   XREF to: 00448fa0 (UNCONDITIONAL_CALL)  ; void core_dimage.cpp_FUN_00448fa0(CDemonImage * this_ptr)
     MOV EAX,dword ptr [EBX + 0x304]     ; 00448f4b
     IMUL EAX,dword ptr [EBX + 0x308]    ; 00448f51
     ADD ESP,0x4                         ; 00448f58

@@ -11,17 +11,19 @@
 #include "types/classes/CDemonActorType.h"
 #include "types/classes/CDemonMission.h"
 #include "types/classes/CEdCheck.h"
-#include "types/classes/CEnemy.h"
 #include "types/classes/CLocation.h"
+#include "types/classes/CMatrix3x4f.h"
 #include "types/classes/CMimic.h"
 #include "types/classes/CMineCar.h"
 #include "types/classes/CMini3D.h"
 #include "types/classes/CMirror.h"
 #include "types/classes/CMirrorReflection.h"
 #include "types/classes/CMobster.h"
-#include "types/classes/CPlatform.h"
 #include "types/classes/CVector3f.h"
+#include "types/enums/ECollisionType.h"
+#include "types/enums/EDeathState.h"
 #include "types/structs/SClipPlane.h"
+#include "types/structs/SCollisionInfo.h"
 #include "types/structs/SDamageInfo.h"
 #include "types/structs/SDynamicLight.h"
 #include "types/structs/SMRGLHeaderPrimitive.h"
@@ -37,25 +39,25 @@ void shape_meshlod_cpp_factoryFuncMimic_FUN_004f02e0(void);
 CDemonActorType * core_mimic_cpp_CMimic_getActorType_FUN_004f0300(CMimic *this_ptr);
 CMimic * __cdecl core_mimic_cpp_CMimic_ctor_FUN_004f0310(CMimic *this_ptr);
 CMimic * core_mimic_cpp_CMimic_dtor_FUN_004f0400(CMimic *this_ptr,uint flags);
-void core_mimic_cpp_FUN_004f04f0(CEnemy *param_1);
-void core_mimic_cpp_FUN_004f08a0(CMimic *param_1,float param_2);
-void __cdecl core_mimic_cpp_FUN_004f0a50(CMimic *this_ptr);
-void __cdecl core_mimic_cpp_FUN_004f0e10(CMimic *this_ptr,float delta_time);
-void __cdecl core_mimic_cpp_FUN_004f17a0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_setup_FUN_004f04f0(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_process_FUN_004f08a0(CMimic *this_ptr,float delta_time);
+void __cdecl core_mimic_cpp_CMimic_updatePose_FUN_004f0a50(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_processAnimation_FUN_004f0e10(CMimic *this_ptr,float delta_time);
+void __cdecl core_mimic_cpp_CMimic_setupCloth_FUN_004f17a0(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderMirrored_FUN_004f1890(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderOpaque_FUN_004f1b40(CMimic *this_ptr);
 int __cdecl core_mimic_cpp_CMimic_renderTransparent_FUN_004f1b60(CMimic *this_ptr);
-undefined4 core_mimic_cpp_FUN_004f1b70(void);
-void core_mimic_cpp_FUN_004f1b80(CDemonActor *param_1,int param_2);
-void core_mimic_cpp_FUN_004f1c20(CEnemy *param_1);
-undefined4 core_mimic_cpp_FUN_004f1cf0(int param_1,int *param_2);
+EDeathState __cdecl core_mimic_cpp_CMimic_getDeathState_FUN_004f1b70(CMimic *this_ptr);
+void __cdecl core_mimic_cpp_CMimic_renderBackground_FUN_004f1b80(CMimic *this_ptr,int layer_flag);
+void __cdecl core_mimic_cpp_CMimic_archive_FUN_004f1c20(CMimic *this_ptr);
+ECollisionType __cdecl core_mimic_cpp_CMimic_getCollisionType_FUN_004f1cf0(CMimic *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_mimic_cpp_CMimic_beginMorph_FUN_004f1d70(CMimic *this_ptr);
 void __cdecl core_mimic_cpp_CMimic_processMorph_FUN_004f1e90(CMimic *this_ptr,float delta_time);
 void core_mimic_cpp_staticInit_FUN_004f2000(void);
 void core_mimic_cpp_factoryFuncMineCar_FUN_004f2030(void);
 CDemonActorType * core_minecar_cpp_CMineCar_getActorType_FUN_004f2060(CMineCar *this_ptr);
-void core_minecar_cpp_FUN_004f2070(CPlatform *param_1,int param_2);
-void core_minecar_cpp_FUN_004f2090(CPlatform *param_1,float param_2);
+void __cdecl core_minecar_cpp_CMineCar_setup_FUN_004f2070(CMineCar *this_ptr);
+void __cdecl core_minecar_cpp_CMineCar_process_FUN_004f2090(CMineCar *this_ptr,float delta_time);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_ctor_FUN_004f2100(CMineCar *this_ptr);
 CMineCar * __cdecl core_minecar_cpp_CMineCar_dtor_FUN_004f2120(CMineCar *this_ptr,uint flags);
 void core_minecar_cpp_staticInit_FUN_004f2190(void);
@@ -196,18 +198,18 @@ float engine_mini3d_cpp_FUN_004f93d0(void);
 SDynamicLight * engine_mini3d_cpp_SDynamicLight_ctor_FUN_004f9410(SDynamicLight *this_ptr);
 SDynamicLight * engine_mini3d_cpp_SDynamicLight_dtor_FUN_004f9420(SDynamicLight *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_staticInit_FUN_004f9430(void);
-void __cdecl core_mirror_cpp_FUN_004f9460(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
+void __cdecl core_mirror_cpp_computePlaneFromTriangle_FUN_004f9460(SClipPlane *out_plane,CVector3f *vertex_a,CVector3f *vertex_b,CVector3f *vertex_c);
 void __cdecl core_mirror_cpp_computePlaneIntersection_FUN_004f9610(float *param_1,float *param_2,float *param_3,float *param_4);
 void __cdecl core_mirror_cpp_clipPolygonAgainstPlane_FUN_004f9770(float *param_1,float *param_2,uint param_3,int param_4,int *param_5);
 CMirror * __cdecl core_mirror_cpp_CMirror_ctor_FUN_004f98a0(CMirror *this_ptr);
 CMirror * __cdecl core_mirror_cpp_FUN_004f98c0(CMirror *this_ptr,uint flags);
 void __cdecl core_mirror_cpp_CMirror_setupCorners_FUN_004f98d0(CMirror *this_ptr,CVector3f *corner1,CVector3f *corner2,CVector3f *corner3,CVector3f *corner4);
 void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorCamera_FUN_004f9950(CMirrorReflection *this_ptr);
-void __cdecl core_mirror_cpp_FUN_004f9990(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
+void __cdecl core_mirror_cpp_CMirrorReflection_setupMirrorReflection_FUN_004f9990(CMirrorReflection *this_ptr,CVector3f *camera_position,CVector3f *camera_rotation,float projection_scale);
 void core_mirror_cpp_FUN_004fa9d0(int param_1,undefined4 param_2);
-uint __cdecl core_mirror_cpp_FUN_004faa10(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
-void core_mirror_cpp_FUN_004fac50(CMirror *param_1,SMRGLHeaderPrimitive *param_2);
-int __cdecl core_mirror_cpp_FUN_004fac90(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+uint __cdecl core_mirror_cpp_CMirror_reflectAndClipPrimitive_FUN_004faa10(CMirror *this_ptr,SMRGLHeaderPrimitive *primitive);
+void __cdecl core_mirror_cpp_CMirror_clipAndRenderReflectedPrimitive_FUN_004fac50(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
+int __cdecl core_mirror_cpp_CMirror_renderReflectedPrimitive_FUN_004fac90(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 void __cdecl core_mirror_cpp_CMirror_renderMirroredPrimitive_FUN_004facd0(CMirror *this_ptr,SMRGLHeaderPrimitive *prim);
 int core_mirror_cpp_FUN_004fad5e(float *param_1);
 void __cdecl core_mirror_cpp_CMirror_renderMirrorQuadDepth_FUN_004faef0(CMirror *this_ptr);
@@ -216,33 +218,33 @@ void core_mirror_cpp_FUN_004fb150(undefined4 param_1,int *param_2,int *param_3);
 SClipPlane * core_mirror_cpp_SClipPlane_ctor_FUN_004fb340(SClipPlane *this_ptr);
 void core_mission_cpp_staticInit_FUN_004fb350(void);
 void core_mission_cpp_FUN_004fb380(int param_1);
-void core_mission_cpp_FUN_004fb440(undefined4 param_1);
-void core_mission_cpp_FUN_004fb450(int param_1);
+void __cdecl core_mission_cpp_CDemonMission_clearMission_FUN_004fb440(CDemonMission *this_ptr);
+void core_mission_cpp_FUN_004fb450(CDemonMission *param_1);
 void __cdecl core_mission_cpp_CDemonMission_load_FUN_004fb490(CDemonMission *this_ptr,char *mission_filename,int load_flags);
 void core_mission_cpp_FUN_004fb530(CDemonMission *param_1,char *param_2);
 void __cdecl core_mission_cpp_CDemonMission_readMissionFile_FUN_004fb590(CDemonMission *this_ptr,_FILE *file_handle,int load_flags);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004fbc00(CDemonMission *this_ptr,char *actor_name);
 void core_mission_cpp_FUN_004fbc90(int param_1);
-void __cdecl core_mission_cpp_FUN_004fbce0(CDemonMission *this_ptr,_FILE *file_handle);
+void __cdecl core_mission_cpp_CDemonMission_writeFile_FUN_004fbce0(CDemonMission *this_ptr,_FILE *file_handle);
 CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004fc040(CDemonMission *this_ptr,_FILE *file,CDemonActor *current_actor,char *property_description );
 void __cdecl core_mission_cpp_CDemonMission_saveActor_FUN_004fc1a0(CDemonMission *this_ptr,CDemonActor *actor_ptr,_FILE *file,CDemonActor *current_actor,char *description);
 void __cdecl core_mission_cpp_CDemonMission_addActorToList_FUN_004fc200(CDemonMission *this_ptr,CDemonActor *actor);
 void core_mission_cpp_FUN_004fc270(int param_1,int param_2);
-int __cdecl core_mission_cpp_FUN_004fc320(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_FUN_004fc350(CDemonMission *this_ptr);
+int __cdecl core_mission_cpp_CDemonMission_countActors_FUN_004fc320(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_prepareAllActors_FUN_004fc350(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_buildSetActorList_FUN_004fc4c0(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_removeActor_FUN_004fc570(CDemonMission *this_ptr,CDemonActor *actor,int should_delete);
 void core_mission_cpp_FUN_004fc5a0(int *param_1,int param_2,char *param_3);
-void core_mission_cpp_FUN_004fc640(CDemonMission *param_1);
+void __cdecl core_mission_cpp_CDemonMission_removeAllActors_FUN_004fc640(CDemonMission *this_ptr);
 void __cdecl core_mission_cpp_CDemonMission_loadSet_FUN_004fc6b0(CDemonMission *this_ptr,int set_index);
-CDemonActor * __cdecl core_mission_cpp_FUN_004fc740(CDemonMission *this_ptr,char *name);
-void __cdecl core_mission_cpp_FUN_004fc780(CDemonMission *this_ptr,CLocation *teleport_target);
+CDemonActor * __cdecl core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(CDemonMission *this_ptr,char *name);
+void __cdecl core_mission_cpp_CDemonMission_setTeleportTarget_FUN_004fc780(CDemonMission *this_ptr,CLocation *teleport_target);
 void core_mission_cpp_FUN_004fc7b0(int param_1,undefined4 param_2,undefined4 param_3);
 void core_mission_cpp_FUN_004fc820(int *param_1);
-void __cdecl core_mission_cpp_FUN_004fc940(CDemonMission *this_ptr);
-void core_mission_cpp_FUN_004fca90(CDemonMission *param_1,CDemonMission *param_2);
+void __cdecl core_mission_cpp_CDemonMission_process_FUN_004fc940(CDemonMission *this_ptr);
+void __cdecl core_mission_cpp_CDemonMission_createFromSingleSet_FUN_004fca90(CDemonMission *this_ptr,char *set_name);
 void __cdecl core_mission_cpp_CDemonMission_run_FUN_004fcb00(CDemonMission *this_ptr);
-void __cdecl core_mission_cpp_FUN_004fccd0(CDemonMission *this_ptr,char *name);
+void __cdecl core_mission_cpp_CDemonMission_setMissionName_FUN_004fccd0(CDemonMission *this_ptr,char *name);
 void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004fcd00(CDemonMission *this_ptr,char *out_buf,char *base_name);
 void __cdecl core_mission_cpp_CDemonMission_generateActorName_FUN_004fcda0(CDemonMission *this_ptr,CDemonActor *actor);
 int __cdecl core_mission_cpp_FUN_004fce00(CDemonMission *this_ptr);
@@ -258,19 +260,19 @@ void __cdecl core_mmx_c_detectMMXSupport_FUN_004fd579(void);
 bool __cdecl core_mmx_c_getCPUInfo_FUN_004fd58f(uint *param_1);
 void core_mobster_cpp_staticInit_FUN_004fd5f0(void);
 void core_mobster_cpp_FUN_004fd620(int param_1);
-void core_mobster_cpp_FUN_004fd6e0(int param_1);
+void core_mobster_cpp_getObjectGrabPointWorld_FUN_004fd6e0(int param_1);
 void core_mobster_cpp_factoryFuncMobster_FUN_004fd7e0(void);
 CDemonActorType * core_mobster_cpp_CMobster_getActorType_FUN_004fd800(CMobster *this_ptr);
 CMobster * __cdecl core_mobster_cpp_CMobster_ctor_FUN_004fd810(CMobster *this_ptr);
-void core_mobster_cpp_FUN_004fd950(CEnemy *param_1);
-void __cdecl core_mobster_cpp_FUN_004fdc60(CMobster *this_ptr);
-void __cdecl core_mobster_cpp_FUN_004fdd50(CMobster *this_ptr);
-void core_mobster_cpp_FUN_004fde80(CMobster *param_1,float param_2);
+void __cdecl core_mobster_cpp_CMobster_setup_FUN_004fd950(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_positionOnVehicle_FUN_004fdc60(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_dismountVehicle_FUN_004fdd50(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_process_FUN_004fde80(CMobster *this_ptr,float delta_time);
 void __cdecl core_mobster_cpp_CMobster_aimTommyGun_FUN_004fef30(CMobster *this_ptr,float delta_time);
-void core_mobster_cpp_FUN_004ff330(int param_1,int param_2);
-int __cdecl core_mobster_cpp_FUN_004ff610(CMobster *this_ptr,float delta_time);
-void __cdecl core_mobster_cpp_FUN_004ffb00(CMobster *this_ptr);
-void core_mobster_cpp_FUN_004ffb70(CEnemy *param_1);
-undefined4 core_mobster_cpp_FUN_004ffca0(void);
+CMatrix3x4f * __stack2_esi core_mobster_cpp_CMobster_getCarryObjToBodyXForm_FUN_004ff330(CMobster *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
+int __cdecl core_mobster_cpp_CMobster_processWeaponPickup_FUN_004ff610(CMobster *this_ptr,float delta_time);
+void __cdecl core_mobster_cpp_CMobster_startFiringAttack_FUN_004ffb00(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_archive_FUN_004ffb70(CMobster *this_ptr);
+void __cdecl core_mobster_cpp_CMobster_reset_FUN_004ffca0(CMobster *this_ptr);
 void __cdecl core_mobster_cpp_CMobster_processDismemberment_FUN_004ffcc0(CMobster *this_ptr,SDamageInfo *damage_info);
 

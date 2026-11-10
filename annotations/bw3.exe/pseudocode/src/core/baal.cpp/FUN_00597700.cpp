@@ -33,12 +33,13 @@ void core_baal_cpp_FUN_00597700(int param_1)
     local_20 = local_2c;
     local_1c = fStack_28;
     local_18 = fStack_24;
-    core_vecdir_cpp_FUN_00576250(&local_2c);
+    core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_00576250(&local_2c);
     *(uint *)((int)&stack0xffffffc0 + (uint)bVar2 * -8) =
          *(uint *)(&stack0xffffffcc + (uint)bVar2 * -8);
     *(uint *)(&stack0xffffffc4 + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
          *(uint *)(&stack0xffffffd0 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-    local_14 = (float)core_actor_cpp_FUN_0040cfa0(local_40 - *(float *)(param_1 + 0x34),local_38);
+    local_14 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040cfa0
+                                (local_40 - *(float *)(param_1 + 0x34),local_38);
     if (ABS(local_14) < (float)_DAT_005d9689) {
       iVar1 = core_actor_cpp_getRandomInt_FUN_0040cea0(0,100);
       if (iVar1 < 0x19) {

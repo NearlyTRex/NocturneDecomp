@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   carrier
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;
 ; *****************************************************************************
 
@@ -26,8 +26,8 @@ section .text
         ;   Label: LAB_0040e500
     MOV ECX,dword ptr [ESP + 0xc]       ; 0040e505
     PUSH ECX                            ; 0040e509
-    CALL core_actor.cpp_FUN_0040c550    ; 0040e50a
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 0040e50a
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 0040e50f
     TEST EAX,EAX                        ; 0040e512
     JZ 0x0040e4fd                       ; 0040e514

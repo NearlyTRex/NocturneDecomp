@@ -38,7 +38,7 @@
     {
       "addr": "00422930",
       "from_addr": "00422b98",
-      "name": "core_charactr.cpp_FUN_00422930",
+      "name": "core_charactr.cpp_CCharacter_setup_FUN_00422930",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,6 +60,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004dbc60",
+      "from_addr": "004dbd00",
+      "name": "core_inv.cpp_CInventory_cycleWeaponOfSameClass_FUN_004dbc60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004dc460",
+      "from_addr": "004dc47c",
+      "name": "core_inv.cpp_CInventory_saveItems_FUN_004dc460",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dd020",
       "from_addr": "004dd07e",
       "name": "core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd020",
@@ -78,18 +90,6 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004dbc60",
-      "from_addr": "004dbd00",
-      "name": "core_inv.cpp_FUN_004dbc60",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004dc460",
-      "from_addr": "004dc47c",
-      "name": "core_inv.cpp_FUN_004dc460",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004fcda0",
       "from_addr": "004fcdae",
       "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_004fcda0",
@@ -98,7 +98,7 @@
     {
       "addr": "004fbce0",
       "from_addr": "004fbeb9",
-      "name": "core_mission.cpp_FUN_004fbce0",
+      "name": "core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -229,7 +229,7 @@
       {
         "call_addr": "004fbeb9",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004fbce0",
+        "caller": "core_mission.cpp_CDemonMission_writeFile_FUN_004fbce0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -251,7 +251,7 @@
       {
         "call_addr": "004dc47c",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004dc460",
+        "caller": "core_inv.cpp_CInventory_saveItems_FUN_004dc460",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",

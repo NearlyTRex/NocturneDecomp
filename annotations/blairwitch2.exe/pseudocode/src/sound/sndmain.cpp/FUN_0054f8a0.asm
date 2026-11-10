@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   sound_sndmain.cpp_FUN_00554510 at 0055457c
+;   sound_sndmain.cpp_pollAllSfxSlots_FUN_00554510 at 0055457c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e886c

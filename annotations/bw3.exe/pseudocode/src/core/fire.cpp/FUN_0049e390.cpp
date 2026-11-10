@@ -18,7 +18,7 @@ void __cdecl core_fire_cpp_FUN_0049e390(CGunFlame *this_ptr)
   float fVar5;
   int iVar6;
   
-  fVar2 = *(float *)&g_CGamePtr->field_0x314;
+  fVar2 = g_CGamePtr->delta_time_float;
   fVar3 = *(float *)&this_ptr->field_0xc - fVar2;
   *(float *)&this_ptr->field_0xc = fVar3;
   if (fVar3 <= 0.0) {
@@ -39,13 +39,13 @@ void __cdecl core_fire_cpp_FUN_0049e390(CGunFlame *this_ptr)
     *(float *)&this_ptr->field_0x18 = fVar5;
     *(float *)&this_ptr->field_0x14 = fVar2 * fVar3 + *(float *)&this_ptr->field_0x14;
     if (*(int *)&this_ptr->field_0x24 == 0) {
-      iVar6 = core_actor_cpp_FUN_0040cf40(fVar2 * (float)_DAT_005c0878);
+      iVar6 = core_actor_cpp_randomChance_FUN_0040cf40(fVar2 * (float)_DAT_005c0878);
       if (iVar6 != 0) {
         core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004a2560
                   (0x01C73654,(CVector3f *)this_ptr,0.5,(CVector3f *)0x0,0x4000);
       }
       if (*(int *)&this_ptr->field_0x20 != 0) {
-        iVar6 = core_actor_cpp_FUN_0040cf40(fVar2);
+        iVar6 = core_actor_cpp_randomChance_FUN_0040cf40(fVar2);
         if (iVar6 != 0) {
           core_fire_cpp_FUN_0049df60(this_ptr);
         }

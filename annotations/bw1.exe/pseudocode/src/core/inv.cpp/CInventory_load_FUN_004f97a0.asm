@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004eab00 at 004ead4d
+;   core_hero.cpp_CHero_archive_FUN_004eab00 at 004ead4d
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e66a0
@@ -40,7 +40,7 @@
 ;   core_actor.cpp_createActorByName_FUN_0040c2b0
 ;   core_inv.cpp_CInventory_clear_FUN_004f6fa0
 ;   core_inv.cpp_CInventory_initialize_FUN_004f7050
-;   core_inv.cpp_FUN_004fa4e0
+;   core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_0051ab60
 ;   crt_stdio.c_fgets_FUN_005c1180
@@ -237,8 +237,8 @@ section .text
         ;   Label: LAB_004f99eb
     MOV ESI,dword ptr [ESP + 0x1e4]     ; 004f99f0
     PUSH ESI                            ; 004f99f7
-    CALL core_inv.cpp_FUN_004fa4e0      ; 004f99f8
-        ;   XREF to: 004fa4e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004fa4e0(CInventory * this_ptr, int ammo_type)
+    CALL core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0 ; 004f99f8
+        ;   XREF to: 004fa4e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004fa4e0(CInventory * this_ptr, int ammo_type)
     ADD ESP,0x8                         ; 004f99fd
     ADD ESP,0x1cc                       ; 004f9a00
     POP EBP                             ; 004f9a06

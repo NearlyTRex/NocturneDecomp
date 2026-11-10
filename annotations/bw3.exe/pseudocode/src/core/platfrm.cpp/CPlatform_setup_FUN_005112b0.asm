@@ -7,7 +7,7 @@
 ; CPlatform *      Stack[0x4]:4   this_ptr
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408890
+;   core_actor.cpp_CDemonActor_setup_FUN_00408890
 ;   core_course.cpp_FUN_00444970
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_00462580
 ;   core_platfrm.cpp_CPlatform_attachActor_FUN_00512aa0
@@ -23,8 +23,8 @@ section .text
     PUSH EDI                            ; 005112b2
     MOV ESI,dword ptr [ESP + 0x10]      ; 005112b3
     PUSH ESI                            ; 005112b7
-    CALL core_actor.cpp_FUN_00408890    ; 005112b8
-        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408890(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 005112b8
+        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
     MOV AH,byte ptr [ESI + 0x2f0]       ; 005112bd
     ADD ESP,0x4                         ; 005112c3
     TEST AH,AH                          ; 005112c6

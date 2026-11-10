@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bf4b0 at 004bf771
+;   core_game.cpp_CGame_process_FUN_004bf4b0 at 004bf771
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c74ea0
 ;   undefined4 DAT_01c74ecc
 ;   undefined4 DAT_01c8aea0
 ;   undefined4 DAT_01c8eea8
-;   undefined4 g_StakePool[0].field600_0x258
-;   undefined4 g_StakePool[1].field600_0x258
+;   undefined4 g_StakePool[0].physics_box.is_valid
+;   undefined4 g_StakePool[1].physics_box.is_valid
 ;   undefined4 g_SparkPool[0].field36_0x24
 ;   undefined4 g_SparkPool[0].field60_0x3c
 ;   undefined4 g_SparkPool[1].field36_0x24
@@ -27,18 +27,18 @@
 ;
 ; Called Functions:
 ;   core_fire.cpp_CBulletTrail_process_FUN_0049ad00
+;   core_fire.cpp_CCrater_process_FUN_0049d8b0
+;   core_fire.cpp_CExplosion_process_FUN_0049c890
+;   core_fire.cpp_CLightningBolt_process_FUN_0049f4e0
 ;   core_fire.cpp_CMuzzleFlash_process_FUN_0049a450
+;   core_fire.cpp_CStake_process_FUN_00497e80
+;   core_fire.cpp_CTrail_process_FUN_004a0630
 ;   core_fire.cpp_FUN_00496e00
 ;   core_fire.cpp_FUN_00497540
-;   core_fire.cpp_FUN_00497e80
-;   core_fire.cpp_FUN_0049c890
 ;   core_fire.cpp_FUN_0049d090
-;   core_fire.cpp_FUN_0049d8b0
 ;   core_fire.cpp_FUN_0049e390
-;   core_fire.cpp_FUN_0049f4e0
 ;   core_fire.cpp_FUN_0049fdf0
 ;   core_fire.cpp_FUN_004a0570
-;   core_fire.cpp_FUN_004a0630
 ;   core_fire.cpp_initProcess_FUN_0049de60
 ;   core_fire.cpp_updateTextureAnimCounts_FUN_0049c620
 ;
@@ -129,14 +129,14 @@ section .text
     JLE 0x004a1838                      ; 004a180d
         ;   XREF to: 004a1838 (CONDITIONAL_JUMP)  ; LAB_004a1838
     MOV EBX,0x1c8eeb0                   ; 004a180f
-    MOV EAX,dword ptr [EBX + 0x258]     ; 004a1814 | g_StakePool[0].field600_0x258 | g_StakePool[1].field600_0x258
+    MOV EAX,dword ptr [EBX + 0x258]     ; 004a1814 | g_StakePool[0].physics_box.is_valid | g_StakePool[1].physics_box.is_valid
         ;   Label: LAB_004a1814
     TEST EAX,EAX                        ; 004a181a
     JZ 0x004a1827                       ; 004a181c
         ;   XREF to: 004a1827 (CONDITIONAL_JUMP)  ; LAB_004a1827
     PUSH EBX                            ; 004a181e
-    CALL core_fire.cpp_FUN_00497e80     ; 004a181f
-        ;   XREF to: 00497e80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_00497e80(CStake * this_ptr)
+    CALL core_fire.cpp_CStake_process_FUN_00497e80 ; 004a181f
+        ;   XREF to: 00497e80 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CStake_process_FUN_00497e80(CStake * this_ptr)
     ADD ESP,0x4                         ; 004a1824
     MOV EDI,dword ptr [0x01c8eea8]      ; 004a1827 | DAT_01c8eea8
         ;   Label: LAB_004a1827
@@ -280,8 +280,8 @@ section .text
     LEA ESI,[EBX + 0x140]               ; 004a1955
     PUSH EBX                            ; 004a195b
         ;   Label: LAB_004a195b
-    CALL core_fire.cpp_FUN_0049c890     ; 004a195c
-        ;   XREF to: 0049c890 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049c890(CExplosion * this_ptr)
+    CALL core_fire.cpp_CExplosion_process_FUN_0049c890 ; 004a195c
+        ;   XREF to: 0049c890 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CExplosion_process_FUN_0049c890(CExplosion * this_ptr)
     ADD EBX,0x20                        ; 004a1961
     ADD ESP,0x4                         ; 004a1964
     CMP EBX,ESI                         ; 004a1967
@@ -302,8 +302,8 @@ section .text
     LEA ESI,[EBX + 0x8c0]               ; 004a198e
     PUSH EBX                            ; 004a1994
         ;   Label: LAB_004a1994
-    CALL core_fire.cpp_FUN_0049d8b0     ; 004a1995
-        ;   XREF to: 0049d8b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049d8b0(CCrater * this_ptr)
+    CALL core_fire.cpp_CCrater_process_FUN_0049d8b0 ; 004a1995
+        ;   XREF to: 0049d8b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CCrater_process_FUN_0049d8b0(CCrater * this_ptr)
     ADD EBX,0x70                        ; 004a199a
     ADD ESP,0x4                         ; 004a199d
     CMP EBX,ESI                         ; 004a19a0
@@ -336,8 +336,8 @@ section .text
     LEA ESI,[EBX + 0xc00]               ; 004a19dd
     PUSH EBX                            ; 004a19e3
         ;   Label: LAB_004a19e3
-    CALL core_fire.cpp_FUN_0049f4e0     ; 004a19e4
-        ;   XREF to: 0049f4e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049f4e0(CLightningBolt * this_ptr)
+    CALL core_fire.cpp_CLightningBolt_process_FUN_0049f4e0 ; 004a19e4
+        ;   XREF to: 0049f4e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CLightningBolt_process_FUN_0049f4e0(CLightningBolt * this_ptr)
     ADD EBX,0x30                        ; 004a19e9
     ADD ESP,0x4                         ; 004a19ec
     CMP EBX,ESI                         ; 004a19ef
@@ -347,8 +347,8 @@ section .text
     LEA ESI,[EBX + 0xe10]               ; 004a19f8
     PUSH EBX                            ; 004a19fe
         ;   Label: LAB_004a19fe
-    CALL core_fire.cpp_FUN_004a0630     ; 004a19ff
-        ;   XREF to: 004a0630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004a0630(CTrail * this_ptr)
+    CALL core_fire.cpp_CTrail_process_FUN_004a0630 ; 004a19ff
+        ;   XREF to: 004a0630 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CTrail_process_FUN_004a0630(CTrail * this_ptr)
     ADD EBX,0x24                        ; 004a1a04
     ADD ESP,0x4                         ; 004a1a07
     CMP EBX,ESI                         ; 004a1a0a

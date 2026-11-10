@@ -10,6 +10,6 @@ void __cdecl core_beast_cpp_CBeast_processDamage_FUN_00414850(CBeast *this_ptr,S
 
 {
   *(uint *)(damage_info + 4) = 0;
-  core_enemy_cpp_FUN_004a0f00(this_ptr,damage_info);
+  core_enemy_cpp_CEnemy_processDamage_FUN_004a0f00(&this_ptr->base,damage_info);
   return;
 }

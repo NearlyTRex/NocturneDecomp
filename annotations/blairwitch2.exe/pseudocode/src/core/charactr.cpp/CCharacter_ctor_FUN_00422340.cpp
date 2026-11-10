@@ -54,17 +54,17 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr
   byte *puVar7;
   
   bVar8 = 0;
-  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar2 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   pCVar3 = core_skeleton_cpp_CDeformableModelInstance_ctor_FUN_00544cd0
                      ((CDeformableModelInstance *)(pCVar2 + 1));
   pCVar4 = core_cloth_cpp_CClothList_ctor_FUN_005b1440((CClothList *)&pCVar3[1].field_0x7a4);
-  iVar5 = __arrinit(pCVar4 + 0x1c8,0xf,&g_CVectorTypeInfo);
+  iVar5 = __arrinit(pCVar4[1].filenames[0] + 8,0xf,&g_CVectorTypeInfo);
   iVar5 = __arrinit(iVar5 + 0xb4,0xf,&g_CVectorTypeInfo);
   iVar5 = unkaddr_0059d350_cpp_FUN_0059ded0(iVar5 + 0xd0);
   iVar5 = __arrinit(iVar5 + 0x518,0x32,&g_SFireTypeInfo);
   iVar5 = __arrinit(iVar5 + 0x4b0,0x32,&g_CFlameTypeInfo);
   proc = (CCharacter *)(iVar5 + -0x3a20);
-  *(byte ***)(iVar5 + -0x3770) = &g_CCharacterVTable;
+  *(CCharacter_full_vtable **)(iVar5 + -0x3770) = &g_CCharacterVTable;
   *(uint *)(iVar5 + -0x14b4) = 1;
   *(uint *)(iVar5 + -0x14b8) = 0;
   *(uint *)(iVar5 + -0x1490) = 0;
@@ -105,9 +105,11 @@ CCharacter * core_charactr_cpp_CCharacter_ctor_FUN_00422340(CCharacter *this_ptr
   *(uint *)(iVar5 + -0x1240) = 0xffffffff;
   pCVar6 = proc;
   do {
-    puVar7 = &pCVar6->field_0x78;
+    puVar7 = &(pCVar6->base).field_0x78;
     *(uint *)&pCVar6->field_0x2620 = 0;
-    *(uint *)&pCVar6->field_0x2618 = 0xffffffff;
+    pCVar6->carry_hands[0] = (SCarryHand)0xff;
+    pCVar6->carry_hands[1] = (SCarryHand)0xff;
+    *(ushort *)&pCVar6->field_0x261a = 0xffff;
     *(uint *)&pCVar6->field_0x261c = 0xffffffff;
     pCVar6 = (CCharacter *)puVar7;
   } while (puVar7 != (byte *)(iVar5 + -0x3930));

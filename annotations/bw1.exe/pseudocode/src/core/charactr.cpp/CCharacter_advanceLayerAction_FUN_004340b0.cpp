@@ -14,65 +14,69 @@ int __cdecl core_charactr_cpp_CCharacter_advanceLayerAction_FUN_004340b0(CCharac
   float fVar1;
   float fVar2;
   float fVar3;
-  int *piVar4;
-  int iVar5;
+  float fVar4;
+  float fVar5;
+  SLayerAction *pSVar6;
+  int iVar7;
   float local_18;
   
-  if ((*(int *)&this_ptr->field_0x2c98 < 0) ||
-     (*(int *)&this_ptr->field_0x27c4 <= *(int *)&this_ptr->field_0x2c98)) {
+  if ((this_ptr->layer_action_index < 0) ||
+     (this_ptr->layer_action_count <= this_ptr->layer_action_index)) {
     _DAT_01d1d400 = "..\\core\\charactr.cpp";
     _DAT_01d1d404 = 0x1124;
     core_main_c_FUN_005030e0("CCharacter::advanceLayerAction - invalid layerActionIndex");
   }
-  piVar4 = (int *)(&this_ptr->field_0x27c8 + *(int *)&this_ptr->field_0x2c98 * 0x38);
-  if (*(float *)&this_ptr->field_0x2c9c < 0.0) {
-    *(uint *)&this_ptr->field_0x2c9c = 0;
+  pSVar6 = this_ptr->layer_actions + this_ptr->layer_action_index * 0x38;
+  if (this_ptr->layer_action_t < 0.0) {
+    this_ptr->layer_action_t = 0.0;
   }
-  if (1.0 < *(float *)&this_ptr->field_0x2c9c) {
-    *(uint *)&this_ptr->field_0x2c9c = 0x3f800000;
+  if (1.0 < this_ptr->layer_action_t) {
+    this_ptr->layer_action_t = 1.0;
   }
-  fVar1 = *(float *)&this_ptr->field_0x2c9c * (float)piVar4[0xd];
-  local_18 = (float)piVar4[0xd] * (1.0 - *(float *)&this_ptr->field_0x2c9c);
-  iVar5 = piVar4[10];
-  if (iVar5 != 0) goto LAB_004341d0;
-  fVar2 = *(float *)(&this_ptr->field_0xb9f4 + target_bone_index * 4 + piVar4[1] * 0x58) + local_18;
-  fVar3 = *(float *)(&this_ptr->field_0xb9f4 + target_bone_index * 4 + *piVar4 * 0x58) + fVar1;
-  if (fVar2 <= fVar3) {
-    if (fVar2 < fVar3) {
-      iVar5 = 1;
+  fVar3 = this_ptr->layer_action_t * *(float *)(pSVar6 + 0x34);
+  local_18 = *(float *)(pSVar6 + 0x34) * (1.0 - this_ptr->layer_action_t);
+  iVar7 = *(int *)(pSVar6 + 0x28);
+  if (iVar7 != 0) goto LAB_004341d0;
+  fVar1 = *(float *)((int)this_ptr->motion_transition_costs +
+                    target_bone_index * 4 + *(int *)(pSVar6 + 4) * 0x58);
+  fVar2 = *(float *)((int)this_ptr->motion_transition_costs +
+                    target_bone_index * 4 + *(int *)pSVar6 * 0x58);
+  fVar4 = fVar1 + local_18;
+  fVar5 = fVar2 + fVar3;
+  if (fVar4 <= fVar5) {
+    if (fVar4 < fVar5) {
+      iVar7 = 1;
       goto LAB_004341d0;
     }
-    if (*(float *)(&this_ptr->field_0xb9f4 + target_bone_index * 4 + piVar4[1] * 0x58) <=
-        *(float *)(&this_ptr->field_0xb9f4 + target_bone_index * 4 + *piVar4 * 0x58)) {
-      iVar5 = 1;
+    if (fVar1 <= fVar2) {
+      iVar7 = 1;
       goto LAB_004341d0;
     }
   }
-  iVar5 = -1;
+  iVar7 = -1;
 LAB_004341d0:
-  if (iVar5 < 0) {
-    local_18 = fVar1;
+  if (iVar7 < 0) {
+    local_18 = fVar3;
   }
   if (*remaining_time < local_18) {
-    fVar1 = ((float)iVar5 * *remaining_time) / (float)piVar4[0xd] +
-            *(float *)&this_ptr->field_0x2c9c;
-    *(float *)&this_ptr->field_0x2c9c = fVar1;
-    if (fVar1 < 0.0) {
-      *(uint *)&this_ptr->field_0x2c9c = 0;
+    fVar3 = ((float)iVar7 * *remaining_time) / *(float *)(pSVar6 + 0x34) + this_ptr->layer_action_t;
+    this_ptr->layer_action_t = fVar3;
+    if (fVar3 < 0.0) {
+      this_ptr->layer_action_t = 0.0;
     }
-    if (1.0 < *(float *)&this_ptr->field_0x2c9c) {
-      *(uint *)&this_ptr->field_0x2c9c = 0x3f800000;
+    if (1.0 < this_ptr->layer_action_t) {
+      this_ptr->layer_action_t = 1.0;
     }
     *remaining_time = 0.0;
     return -1;
   }
   *remaining_time = *remaining_time - local_18;
-  if (-1 < iVar5) {
-    iVar5 = piVar4[1];
-    *(uint *)&this_ptr->field_0x2c9c = 0x3f800000;
-    return iVar5;
+  if (-1 < iVar7) {
+    iVar7 = *(int *)(pSVar6 + 4);
+    this_ptr->layer_action_t = 1.0;
+    return iVar7;
   }
-  iVar5 = *piVar4;
-  *(uint *)&this_ptr->field_0x2c9c = 0;
-  return iVar5;
+  iVar7 = *(int *)pSVar6;
+  this_ptr->layer_action_t = 0.0;
+  return iVar7;
 }

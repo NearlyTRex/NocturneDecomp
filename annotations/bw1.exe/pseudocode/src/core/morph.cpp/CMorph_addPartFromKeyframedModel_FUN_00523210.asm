@@ -10,8 +10,8 @@
 ; int              Stack[0x10]:4   frame_index
 ;
 ; XREF[2]:
-;   core_succubus.cpp_FUN_00591ff0 at 0059227f
-;   core_vampboss.cpp_FUN_005a52a0 at 005a53a2
+;   core_succubus.cpp_CSuccubus_setup_FUN_00591ff0 at 0059227f
+;   core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0 at 005a53a2
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_005224f0

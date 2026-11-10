@@ -4,13 +4,18 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3i.h"
 
 // Structure: CBloodSplat
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x48 (72 bytes)
 #pragma pack(push, 1)
 typedef struct CBloodSplat {
-    char field_0[72]; // 0x0
+    int expired; // 0x0
+    char field_4[36]; // 0x4
+    float age; // 0x28
+    int texture_variant; // 0x2c
+    CVector3i position_fixed; // 0x30
+    CVector3i normal_fixed; // 0x3c
 } CBloodSplat;
 #pragma pack(pop)
 

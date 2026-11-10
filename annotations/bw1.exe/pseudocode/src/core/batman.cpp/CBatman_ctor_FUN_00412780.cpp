@@ -19,17 +19,18 @@ CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
   char *pcVar5;
   char *pcVar6;
   
-  pCVar4 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
+  pCVar4 = (CBatman *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410(&this_ptr->base);
   pcVar5 = (char *)0x5d38e4;
-  *(byte ***)&pCVar4->field_0x154 = &g_CBatmanVTable;
-  pcVar6 = &pCVar4->field_0xc26c;
-  core_skeleton_cpp_FUN_00569f50(&pCVar4->field_0x158,0x5d38d9);
+  (pCVar4->base).base.base.vtable._ub = &g_CBatmanVTable._ub;
+  pcVar6 = pCVar4->fall_event;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            (&(pCVar4->base).base.model,(char *)0x5d38d9);
   uVar2 = _DAT_005fc170;
-  *(uint *)&pCVar4->field_0x2fec = 0x3f19999a;
+  *(uint *)&(pCVar4->base).base.field_0x2fec = 0x3f19999a;
   uVar3 = _DAT_005fc174;
-  *(uint *)&pCVar4->field_0x2ff0 = 0x40000000;
-  *(uint *)&pCVar4->field_0x2ff4 = uVar2;
-  *(uint *)&pCVar4->field_0x2ff8 = uVar3;
+  *(uint *)&(pCVar4->base).base.field_0x2ff0 = 0x40000000;
+  *(uint *)&(pCVar4->base).base.field_0x2ff4 = uVar2;
+  *(uint *)&(pCVar4->base).base.field_0x2ff8 = uVar3;
   do {
     cVar1 = *pcVar5;
     *pcVar6 = cVar1;
@@ -39,11 +40,11 @@ CBatman * core_batman_cpp_CBatman_ctor_FUN_00412780(CBatman *this_ptr)
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  *(uint *)&pCVar4->field_0xc308 = 0;
-  *(uint *)&pCVar4->field_0xc30c = 0;
-  *(uint *)&pCVar4->field_0xc318 = 0;
-  *(uint *)&pCVar4->field_0xc314 = *(uint *)&pCVar4->field_0xc318;
-  *(uint *)&pCVar4->field_0xc310 = *(uint *)&pCVar4->field_0xc314;
+  pCVar4->mist_state = 0;
+  pCVar4->vanish_timer = 0.0;
+  (pCVar4->new_pos).z = 0.0;
+  (pCVar4->new_pos).y = (pCVar4->new_pos).z;
+  (pCVar4->new_pos).x = (pCVar4->new_pos).y;
   *(uint *)&pCVar4->field_0xc268 = 0;
   return pCVar4;
 }

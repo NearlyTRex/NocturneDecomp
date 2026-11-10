@@ -39,7 +39,7 @@ LAB_004a4158:
       }
     }
     iVar1 = iVar1 + 0x18;
-    texture_00 = texture_00 + 0x18;
+    texture_00 = texture_00 + 1;
     if (iVar1 == 0x90) {
       return;
     }

@@ -2,14 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 2217,
-    "complexity_score": 2112,
+    "complexity_score": 1756,
     "cross_reference_count": 10,
     "function_call_count": 20,
     "global_count": 66,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 1282,
-    "suspect_count": 79,
+    "pseudocode_lines": 1316,
+    "suspect_count": 39,
     "suspect_types": [
+      "derived_field_index_pun",
+      "pointer_cast",
       "raw_address_constant",
       "undefined_data",
       "unnamed_field",
@@ -19,31 +21,37 @@
       "unrolled_strlen",
       "warning_overlapping_globals"
     ],
-    "total_lines": 3499
+    "total_lines": 3533
   },
   "cross_references": [
     {
       "addr": "0040e210",
       "from_addr": "0040e234",
-      "name": "core_ammobox.cpp_FUN_0040e210",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d2540",
-      "from_addr": "004d25c4",
-      "name": "core_game.cpp_FUN_004d2540",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d25fe",
-      "from_addr": "004d2680",
-      "name": "core_game.cpp_FUN_004d25fe",
+      "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e210",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d27b0",
       "from_addr": "004d329b",
-      "name": "core_game.cpp_FUN_004d27b0",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004d27b0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d25fe",
+      "from_addr": "004d2680",
+      "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d2540",
+      "from_addr": "004d25c4",
+      "name": "core_game.cpp_giveHeroWeapon_FUN_004d2540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ec2c0",
+      "from_addr": "004ec2ec",
+      "name": "core_hero.cpp_CHero_addCarriedItemToInventory_FUN_004ec2c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -53,15 +61,9 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004ec2c0",
-      "from_addr": "004ec2ec",
-      "name": "core_hero.cpp_FUN_004ec2c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004ed890",
       "from_addr": "004edbf1",
-      "name": "core_hostage.cpp_FUN_004ed890",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004ed890",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -73,7 +75,7 @@
     {
       "addr": "00540d50",
       "from_addr": "00540d9a",
-      "name": "core_scat.cpp_FUN_00540d50",
+      "name": "core_scat.cpp_CScat_createDefaultWeapon_FUN_00540d50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -102,6 +104,11 @@
       "name": "core_actor.cpp_castToClassHash_FUN_0040c600"
     },
     {
+      "addr": "00408830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_getActorClassName_FUN_00408830"
+    },
+    {
       "addr": "0040c2b0",
       "is_variadic": false,
       "name": "core_actor.cpp_createActorByName_FUN_0040c2b0"
@@ -112,19 +119,14 @@
       "name": "core_actor.cpp_FUN_00408560"
     },
     {
-      "addr": "00408830",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00408830"
-    },
-    {
       "addr": "0040c550",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c550"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c550"
     },
     {
       "addr": "0040ddd0",
       "is_variadic": false,
-      "name": "core_ammo.cpp_FUN_0040ddd0"
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0"
     },
     {
       "addr": "004cc190",
@@ -134,7 +136,7 @@
     {
       "addr": "004f8dc0",
       "is_variadic": false,
-      "name": "core_inv.cpp_FUN_004f8dc0"
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004f8dc0"
     },
     {
       "addr": "004f6350",
@@ -149,7 +151,7 @@
     {
       "addr": "0050d220",
       "is_variadic": false,
-      "name": "core_menu.cpp_FUN_0050d220"
+      "name": "core_menu.cpp_getKeyDisplayName_FUN_0050d220"
     },
     {
       "addr": "0051bd60",
@@ -179,7 +181,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "00445430",
@@ -189,7 +191,7 @@
     {
       "addr": "004c3ea0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004c3ea0"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0"
     },
     {
       "addr": "00531090",
@@ -512,43 +514,43 @@
     },
     {
       "addr": "01ccf3d8",
-      "name": "g_CGameInstance.field72_0x48",
+      "name": "g_CGameInstance.field54_0x48",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf3dc",
-      "name": "g_CGameInstance.field76_0x4c",
+      "name": "g_CGameInstance.field58_0x4c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf420",
-      "name": "g_CGameInstance.field144_0x90",
+      "name": "g_CGameInstance.field126_0x90",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf424",
-      "name": "g_CGameInstance.field148_0x94",
+      "name": "g_CGameInstance.field130_0x94",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf428",
-      "name": "g_CGameInstance.field152_0x98",
+      "name": "g_CGameInstance.field134_0x98",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf42c",
-      "name": "g_CGameInstance.field156_0x9c",
+      "name": "g_CGameInstance.field138_0x9c",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01ccf5d4",
-      "name": "g_CGameInstance.field580_0x244",
+      "name": "g_CGameInstance.field532_0x244",
       "type": "undefined4",
       "value": null
     },
@@ -700,56 +702,8 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 43,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar6 = (**(code **)(*(int *)&item_actor->field_0x154 + 0x94))(item_actor);",
-      "type": "unresolved_funcptr"
-    },
-    {
       "description": "Auto-generated struct field name",
-      "line": 43,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "iVar6 = (**(code **)(*(int *)&item_actor->field_0x154 + 0x94))(item_actor);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 45,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x8c))(item_actor,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x8c))(item_actor,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 47,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x88))(item_actor,*(int *)(this_ptr + 4));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 47,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x88))(item_actor,*(int *)(this_ptr + 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
+      "line": 51,
       "match": "field_0x244",
       "severity": "mild",
       "text": "(show_tutorial_message != 0)) && (*(int *)&g_CGamePtr->field_0x244 == 0)) {",
@@ -757,503 +711,175 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 67,
+      "line": 66,
       "match": "DAT_005e61e7",
       "severity": "mild",
-      "text": "FUN_005bfb40(acStack_234,&DAT_005e61e7,*(uint *)(iVar6 + 0x314));",
+      "text": "_sprintf(acStack_234,&DAT_005e61e7);",
       "type": "undefined_data"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 125,
+      "line": 126,
       "match": "field_0x98",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 167,
+      "line": 170,
       "match": "field_0x9c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 211,
+      "line": 216,
       "match": "field_0x4c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 269,
+      "line": 276,
       "match": "field_0x98",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 311,
+      "line": 320,
       "match": "field_0x9c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 355,
+      "line": 366,
       "match": "field_0x4c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 413,
+      "line": 426,
       "match": "field_0x98",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 455,
+      "line": 470,
       "match": "field_0x9c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 499,
+      "line": 516,
       "match": "field_0x4c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 559,
+      "line": 578,
       "match": "field_0x48",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x48);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x48);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 617,
+      "line": 638,
       "match": "field_0x98",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x98);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 659,
+      "line": 682,
       "match": "field_0x9c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x9c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 703,
+      "line": 728,
       "match": "field_0x4c",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x4c);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 848,
+      "line": 875,
       "match": "field_0x90",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x90);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x90);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 890,
+      "line": 919,
       "match": "field_0x94",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x94);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x94);",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 911,
+      "line": 940,
       "match": "DAT_005e63f3",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e63f3);",
+      "text": "pCVar9 = (CInventory *)support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e63f3);",
       "type": "undefined_data"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 933,
+      "line": 962,
       "match": "code *",
       "severity": "moderate",
-      "text": "(**(code **)(*(int *)(iVar6 + 0x154) + 0xd0))(iVar6,2);",
+      "text": "(**(code **)(*(int *)(iVar7 + 0x154) + 0xd0))(iVar7,2);",
       "type": "unresolved_funcptr"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 993,
+      "line": 1024,
       "match": "field_0x90",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x90);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x90);",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 1035,
+      "line": 1068,
       "match": "field_0x94",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)core_menu_cpp_FUN_0050d220(*(EInputCodeType *)&g_CGamePtr->field_0x94);",
+      "text": "(*(EInputCodeType *)&g_CGamePtr->field_0x94);",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 1056,
+      "line": 1089,
       "match": "DAT_005e6417",
       "severity": "mild",
-      "text": "pCVar8 = (CInventory *)support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e6417);",
+      "text": "pCVar9 = (CInventory *)support_newmsg_cpp_getLocalizedString_FUN_00531090(&DAT_005e6417);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 1096,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "pcVar14 = &pCStack_24->field_0x2d4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1107,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "iVar11 == 0)) && (*(int *)(iVar13 + 0x318) == *(int *)&pCStack_24->field_0x318)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1108,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(int *)(iVar13 + 0x314) = *(int *)(iVar13 + 0x314) + *(int *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1119,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "str1 = &pCStack_24->field_0x2d4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1138,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "pcStack_28 = &pCStack_24->field_0x2d4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1150,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((iVar13 == 0) && (*(int *)&pCVar10[4].field_0xc == *(int *)&pCStack_24->field_0x318)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1150,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "if ((iVar13 == 0) && (*(int *)&pCVar10[4].field_0xc == *(int *)&pCStack_24->field_0x318)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1152,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&pCVar10[4].field_0x8 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1153,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&pCVar10[4].field_0x8 + *(int *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1153,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(int *)&pCVar10[4].field_0x8 + *(int *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1169,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)&pCVar10->field_0x154)(pCVar10);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1169,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&pCVar10->field_0x154)(pCVar10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1170,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar10[4].field_0x8 = *(uint *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1170,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar10[4].field_0x8 = *(uint *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1171,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar10[4].field_0xc = *(uint *)&pCStack_24->field_0x318;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1171,
-      "match": "field_0x318",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar10[4].field_0xc = *(uint *)&pCStack_24->field_0x318;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1172,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar10->field_0x154 + 0x88))(pCVar10,*(uint *)(this_ptr + 4));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1172,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar10->field_0x154 + 0x88))(pCVar10,*(uint *)(this_ptr + 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1184,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)&pCVar10->field_0x154)(pCVar10);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1184,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&pCVar10->field_0x154)(pCVar10);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1185,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar10[4].field_0x8 = *(uint *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1185,
-      "match": "field_0x314",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar10[4].field_0x8 = *(uint *)&pCStack_24->field_0x314;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1186,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar10->field_0x154 + 0x88))(pCVar10,*(uint *)(this_ptr + 4));",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1186,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar10->field_0x154 + 0x88))(pCVar10,*(uint *)(this_ptr + 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1202,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1202,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1217,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((iVar13 == 0) && (*(int *)&pCVar12[4].field_0xc == *(int *)&pCVar10[4].field_0xc)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1217,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "if ((iVar13 == 0) && (*(int *)&pCVar12[4].field_0xc == *(int *)&pCVar10[4].field_0xc)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1218,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&pCVar12[4].field_0x8 =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1219,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&pCVar12[4].field_0x8 + *(int *)&pCVar10[4].field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1219,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(int *)&pCVar12[4].field_0x8 + *(int *)&pCVar10[4].field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1247,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(*(code *)**(uint **)&pCVar12->field_0x154)(pCVar12);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1247,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(*(code *)**(uint **)&pCVar12->field_0x154)(pCVar12);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1248,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar12[4].field_0x8 = *(uint *)(iVar6 + 0x314);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1249,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar12[4].field_0xc = *(uint *)(iVar6 + 0x318);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1250,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar12->field_0x154 + 0x88))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1250,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar12->field_0x154 + 0x88))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1252,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&pCVar12->field_0x154 + 0x6c))(pCVar12,this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1252,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&pCVar12->field_0x154 + 0x6c))(pCVar12,this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 1281,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 1281,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&item_actor->field_0x154 + 0x6c))(item_actor,this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1174,
+      "line": 1208,
       "match": "0x1d2c900",
       "severity": "moderate",
       "text": "pCVar4 = 0x01D2C900;",
@@ -1261,7 +887,7 @@
     },
     {
       "description": "Raw hex address 0x1d2c900 assigned to bare local `pCVar4`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `pCVar4` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 1199,
+      "line": 1233,
       "match": "0x1d2c900",
       "severity": "moderate",
       "text": "pCVar4 = 0x01D2C900;",
@@ -1269,7 +895,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 57,
+      "line": 56,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1277,7 +903,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 80,
+      "line": 79,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -1285,15 +911,47 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 102,
+      "line": 101,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
     },
     {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1185,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(*(EAmmoType *)(pCVar6[4].actor_name + 0xc) == pCStack_24->ammo_type)) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1205,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(EAmmoType *)(pCVar6[4].actor_name + 0xc) = pCStack_24->ammo_type;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1252,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "(*(int *)(pCVar12[4].actor_name + 0xc) == *(int *)(pCVar6[4].actor_name + 0xc))) {",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
+      "line": 1284,
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(uint *)(pCVar12[4].actor_name + 0xc) = *(uint *)(iVar7 + 0x318);",
+      "type": "pointer_cast"
+    },
+    {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 71,
+      "line": 70,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1301,7 +959,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 92,
+      "line": 91,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",
@@ -1309,7 +967,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 71,
+      "line": 70,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
@@ -1317,11 +975,32 @@
     },
     {
       "description": "Watcom loop-unrolled strcat (strlen scan followed by `= <p> + -1` adjust and a 2-byte strcpy onto the null terminator). Replace the whole strlen + strcpy pair with strcat(dst, src) in a .keep.",
-      "line": 92,
+      "line": 91,
       "match": "strlen + <p> + -1 + strcpy",
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcat"
+    },
+    {
+      "description": "'pCVar6[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar6)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1185,
+      "severity": "moderate",
+      "text": "(*(EAmmoType *)(pCVar6[4].actor_name + 0xc) == pCStack_24->ammo_type)) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar12[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar12)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1252,
+      "severity": "moderate",
+      "text": "(*(int *)(pCVar12[4].actor_name + 0xc) == *(int *)(pCVar6[4].actor_name + 0xc))) {",
+      "type": "derived_field_index_pun"
+    },
+    {
+      "description": "'pCVar6[4].actor_name + 0xc' walks 4 x sizeof(CDemonActor) (0x158) + offsetof(actor_name) (0x0) + 0xc = 0x56c, which is exactly offsetof(CChain, cached_distance). Ghidra had no CChain type here and reached the field by index arithmetic; write it as ((CChain *)pCVar6)->cached_distance (\u00a7de-pun/\u00a712). Ambiguous: CGlass::render_vertices[15], CWeapon::ammo_type also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 1252,
+      "severity": "moderate",
+      "text": "(*(int *)(pCVar12[4].actor_name + 0xc) == *(int *)(pCVar6[4].actor_name + 0xc))) {",
+      "type": "derived_field_index_pun"
     }
   ]
 }

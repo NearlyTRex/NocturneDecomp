@@ -8,8 +8,8 @@
 ;   crt_string.c__stricmp_FUN_005a3260
 ;   sound_sndmain.cpp_FUN_00553660
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
 ;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
@@ -21,8 +21,8 @@ section .text
     PUSH EDI                            ; 00557392
     PUSH EBP                            ; 00557393
     MOV EBP,dword ptr [ESP + 0x14]      ; 00557394
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00557398
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00557398
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
     MOV EBX,0x2cebc24                   ; 0055739d
     MOV EDI,EBP                         ; 005573a2
     XOR ESI,ESI                         ; 005573a4

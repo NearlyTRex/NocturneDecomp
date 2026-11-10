@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;   unkafter_conveyor.cpp_CConstruct_ctor_FUN_00436b00
 ;
 ; *****************************************************************************
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x112e4                        ; 00436ad0
         ;   Label: core_conveyor.cpp_factoryFuncConstruct_FUN_00436ad0
-    CALL crt_unknown.c_FUN_005b8be2     ; 00436ad5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00436ad5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 00436ada
     TEST EAX,EAX                        ; 00436add
     JNZ 0x00436ae2                      ; 00436adf

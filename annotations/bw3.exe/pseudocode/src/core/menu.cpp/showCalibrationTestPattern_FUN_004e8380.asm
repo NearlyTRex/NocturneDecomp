@@ -20,12 +20,12 @@
 ; Called Functions:
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d6f0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;   engine_font.cpp_FUN_004b0a20
-;   engine_font.cpp_FUN_004b2a80
-;   engine_font.cpp_FUN_004b30f0
 ;   engine_special.cpp_clearScreen_FUN_00560d70
 ;   support_newmsg.cpp_getLocalizedString_FUN_00508960
-;   wincore_wddvmem.cpp_FUN_0057a8a0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0
 ;   wincore_winrun.cpp_getNextKeypress_FUN_00580790
 ;
 ; *****************************************************************************
@@ -86,16 +86,16 @@ section .text
     PUSH 0x58                           ; 004e83e0
     MOV EDX,dword ptr [0x01549ab4]      ; 004e83e2 | DAT_01549ab4
     PUSH EDX                            ; 004e83e8
-    CALL engine_font.cpp_FUN_004b30f0   ; 004e83e9
-        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b30f0(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0 ; 004e83e9
+        ;   XREF to: 004b30f0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 004e83ee
     MOV EDI,EAX                         ; 004e83f1
     MOV EAX,ESP                         ; 004e83f3
     PUSH EAX                            ; 004e83f5
     MOV ECX,dword ptr [0x01549ab4]      ; 004e83f6 | DAT_01549ab4
     PUSH ECX                            ; 004e83fc
-    CALL engine_font.cpp_FUN_004b2a80   ; 004e83fd
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004e83fd
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004e8402
     MOV ESI,EAX                         ; 004e8405
     CALL engine_special.cpp_clearScreen_FUN_00560d70 ; 004e8407
@@ -138,8 +138,8 @@ section .text
     MOV EBP,dword ptr [0x01549ab4]      ; 004e8471 | DAT_01549ab4
     PUSH EBP                            ; 004e8477
     MOV ESI,EAX                         ; 004e8478
-    CALL engine_font.cpp_FUN_004b2a80   ; 004e847a
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004e847a
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 004e847f
     SAR EDX,0x1f                        ; 004e8481
     SUB EAX,EDX                         ; 004e8484
@@ -158,8 +158,8 @@ section .text
     CALL engine_font.cpp_FUN_004b0a20   ; 004e84a4
         ;   XREF to: 004b0a20 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b0a20()
     ADD ESP,0x18                        ; 004e84a9
-    CALL wincore_wddvmem.cpp_FUN_0057a8a0 ; 004e84ac
-        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_0057a8a0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0 ; 004e84ac
+        ;   XREF to: 0057a8a0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 004e84b1
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_00580790 ; 004e84b6

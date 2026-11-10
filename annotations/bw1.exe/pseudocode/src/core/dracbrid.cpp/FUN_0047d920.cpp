@@ -12,15 +12,15 @@
 void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_name,float volume)
 
 {
-  int iVar1;
+  uint uVar1;
   int iVar2;
-  float fVar3;
+  int iVar3;
   uint uVar4;
   uint *puVar5;
   byte bVar6;
   float afStackY_10ac [954];
-  uint uVar7;
-  uint uVar8;
+  float fVar7;
+  float fVar8;
   char local_1ac [200];
   float local_e4 [8];
   float local_c4;
@@ -54,18 +54,18 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
   float local_10;
   
   bVar6 = 0;
-  local_10 = (float)core_actor_cpp_FUN_0040cc00(0x3f800000,0x40e00000);
-  *(float *)&this_ptr->field_0xc2fc = local_10;
-  iVar1 = sound_sndmain_cpp_FUN_00575550();
-  if (iVar1 != 0) {
+  local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(1.0,7.0);
+  this_ptr->freaky_timer = local_10;
+  iVar2 = sound_sndmain_cpp_isSoundBusy_FUN_00575550();
+  if (iVar2 != 0) {
     puVar5 = (uint *)&DAT_01bc0d54;
-    iVar1 = 0;
+    iVar2 = 0;
     do {
-      iVar2 = sound_sndmain_cpp_FUN_005735a0(*puVar5);
-      uVar7 = _DAT_01bc0d34;
-      if (iVar2 == 0) {
+      iVar3 = sound_sndmain_cpp_FUN_005735a0(*puVar5);
+      uVar1 = _DAT_01bc0d34;
+      if (iVar3 == 0) {
         puVar5[7] = 0;
-        core_skeleton_cpp_FUN_00569130(&this_ptr->field_0x158,uVar7);
+        core_skeleton_cpp_FUN_00569130(&(this_ptr->base).base.model,uVar1);
         local_7c[0] = local_94;
         afStack_a8[(uint)bVar6 * -2 + 0xc] = afStack_a8[(uint)bVar6 * -2 + 6];
         afStack_a8[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd] =
@@ -80,17 +80,17 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
           puVar5[0xc] = local_48;
           puVar5[0xd] = local_44;
         }
-        uVar8 = 0x40a00000;
-        uVar7 = 0xc0a00000;
+        fVar8 = 5.0;
+        fVar7 = -5.0;
         local_c0[2] = (float)puVar5[0xb];
         local_c0[(uint)bVar6 * -2 + 3] = (float)puVar5[(uint)bVar6 * -2 + 0xc];
         local_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
              (float)(puVar5 + (uint)bVar6 * -2 + 0xc)[(uint)bVar6 * -2 + 1];
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(uVar7,uVar8);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(fVar7,fVar8);
         local_c0[2] = local_10 + local_c0[2];
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(0xc0000000,0x40000000);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-2.0,2.0);
         local_c0[3] = local_10 + local_c0[3];
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(0xc0a00000,0x40a00000);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
         local_b0 = local_10 + local_b0;
         afStack_a8[2] = local_c0[2];
         afStack_a8[(uint)bVar6 * -2 + 3] = local_c0[(uint)bVar6 * -2 + 3];
@@ -101,17 +101,17 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
           puVar5[9] = local_9c;
           puVar5[10] = local_98;
         }
-        uVar8 = 0x40a00000;
-        uVar7 = 0xc0a00000;
+        fVar8 = 5.0;
+        fVar7 = -5.0;
         local_40 = (float)puVar5[0xb];
         local_3c[(uint)bVar6 * -2] = (float)puVar5[(uint)bVar6 * -2 + 0xc];
         local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
              (float)(puVar5 + (uint)bVar6 * -2 + 0xc)[(uint)bVar6 * -2 + 1];
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(uVar7,uVar8);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(fVar7,fVar8);
         local_40 = local_10 + local_40;
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(0xc0000000,0x40000000);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-2.0,2.0);
         local_3c[0] = local_10 + local_3c[0];
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(0xc0a00000,0x40a00000);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
         local_3c[1] = local_10 + local_3c[1];
         local_70 = local_40;
         (&local_6c)[(uint)bVar6 * -2] = local_3c[(uint)bVar6 * -2];
@@ -122,23 +122,23 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
           puVar5[0xf] = (uint)local_6c;
           puVar5[0x10] = local_68;
         }
-        uVar8 = 0x40a00000;
-        uVar7 = 0xc0a00000;
-        local_3c[2] = (float)g_CDemonCameraInstance._4_4_;
+        fVar8 = 5.0;
+        fVar7 = -5.0;
+        local_3c[2] = g_CDemonCameraInstance.base.position.f.x;
         local_3c[(uint)bVar6 * -2 + 3] =
              *(float *)((int)&g_CDemonCameraInstance + (uint)bVar6 * -8 + 8);
         local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4] =
              *(float *)((uint)bVar6 * -8 + 0x1fe37f8 + (uint)bVar6 * -8);
-        fVar3 = (float)core_actor_cpp_FUN_0040cc00(uVar7,uVar8);
-        local_10 = fVar3;
+        fVar7 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(fVar7,fVar8);
+        local_10 = fVar7;
         local_c4 = local_3c[2];
         local_c0[(uint)bVar6 * -2] = local_3c[(uint)bVar6 * -2 + 3];
         local_c0[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1] =
              local_3c[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 4];
-        local_c4 = fVar3 + local_c4;
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(0xc0000000,0x40000000);
+        local_c4 = fVar7 + local_c4;
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-2.0,2.0);
         local_c0[0] = local_10 + local_c0[0];
-        local_10 = (float)core_actor_cpp_FUN_0040cc00(0xc0a00000,0x40a00000);
+        local_10 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cc00(-5.0,5.0);
         local_c0[1] = local_10 + local_c0[1];
         local_28 = local_c4;
         (&local_24)[(uint)bVar6 * -2] = local_c0[(uint)bVar6 * -2];
@@ -170,20 +170,20 @@ void __cdecl core_dracbrid_cpp_FUN_0047d920(CDraculaBride *this_ptr,char *sound_
           puVar5[5] = local_60;
           puVar5[6] = local_5c;
         }
-        sound_sndmain_cpp_FUN_00572ac0();
+        sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
         sound_sndmain_cpp_FUN_005727e0((CVector3f *)(puVar5 + 1));
         sound_sndmain_cpp_FUN_00572880((CVector3f *)(puVar5 + 4));
         sound_sndmain_cpp_FUN_005728e0(volume);
         core_sound_cpp_FUN_0057be00(0x02C82A60,local_1ac,sound_name);
         uVar4 = sound_sndmain_cpp_startSfx_FUN_00572d20(local_1ac);
         *puVar5 = uVar4;
-        sound_sndmain_cpp_FUN_00572b40();
+        sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
         puVar5[0x14] = (uint)this_ptr;
         return;
       }
-      iVar1 = iVar1 + 1;
+      iVar2 = iVar2 + 1;
       puVar5 = puVar5 + 0x15;
-    } while (iVar1 < 6);
+    } while (iVar2 < 6);
   }
   return;
 }

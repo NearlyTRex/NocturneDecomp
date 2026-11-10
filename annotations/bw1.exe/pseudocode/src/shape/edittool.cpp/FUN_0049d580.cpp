@@ -35,9 +35,9 @@ void shape_edittool_cpp_FUN_0049d580(int param_1,int param_2)
              *(uint *)(param_1 + 0x14),*(uint *)(param_1 + 0x18));
   pcVar8 = (char *)(param_1 + 0x1c);
   _DAT_01c4f00c = uVar2;
-  iVar3 = engine_font_cpp_FUN_004c3ea0(_DAT_01c3eb50,pcVar8);
-  iVar4 = engine_font_cpp_FUN_004c3f50(_DAT_01c3eb50,pcVar8);
-  iVar5 = engine_font_cpp_FUN_004c4540(_DAT_01c3eb50,0x41);
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,pcVar8);
+  iVar4 = engine_font_cpp_CBitFont_getTextHeight_FUN_004c3f50(_DAT_01c3eb50,pcVar8);
+  iVar5 = engine_font_cpp_CBitFont_getCharYOffset_FUN_004c4540(_DAT_01c3eb50,0x41);
   iVar3 = *(int *)(param_1 + 0x18) +
           ((*(int *)(param_1 + 0x10) + *(int *)(param_1 + 8)) - iVar3) / 2;
   local_14 = *(int *)(param_1 + 0x18) +
@@ -111,7 +111,7 @@ LAB_0049d747:
     pbVar12 = pbVar12 + 2;
   } while (cVar1 != '\0');
   *pcVar8 = '\0';
-  iVar4 = engine_font_cpp_FUN_004c3ea0(_DAT_01c3eb50,(char *)local_dc);
+  iVar4 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0(_DAT_01c3eb50,(char *)local_dc);
   uVar6 = iVar4 + *(int *)(_DAT_01c3eb50 + 0x41f4);
   bVar13 = *(byte *)(param_1 + 0x1c);
   uVar7 = toupper((uint)*(byte *)(param_1 + 4));
@@ -119,7 +119,7 @@ LAB_0049d747:
     uVar6 = uVar7 ^ bVar13;
   }
   iVar3 = iVar3 + uVar6;
-  iVar4 = engine_font_cpp_FUN_004c4510(_DAT_01c3eb50,0x41);
+  iVar4 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(_DAT_01c3eb50,0x41);
   local_14 = local_14 + iVar4 + 1;
   uVar6 = _DAT_01c3f5b8;
   if (_DAT_01c3f544 != 0) {
@@ -131,7 +131,8 @@ LAB_0049d747:
     uVar6 = _DAT_01c4f020;
   }
   _DAT_01c4f020 = uVar6;
-  iVar4 = engine_font_cpp_FUN_004c44e0(_DAT_01c3eb50,(uint)*(byte *)(param_1 + 4));
+  iVar4 = engine_font_cpp_CBitFont_getCharWidth_FUN_004c44e0
+                    (_DAT_01c3eb50,(uint)*(byte *)(param_1 + 4));
   iVar4 = iVar4 + iVar3 + -1;
   if (_DAT_01c3f544 == 0) {
     engine_2d_c_drawHLine_FUN_00402f30(iVar3,local_14,iVar4);

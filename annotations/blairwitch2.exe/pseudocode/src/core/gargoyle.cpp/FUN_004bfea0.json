@@ -25,7 +25,7 @@
     {
       "addr": "004c0050",
       "from_addr": "004c04af",
-      "name": "core_gargoyle.cpp_FUN_004c0050",
+      "name": "core_gargoyle.cpp_CGargoyle_process_FUN_004c0050",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -46,12 +46,12 @@
     {
       "addr": "0040d0c0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040d0c0"
+      "name": "core_actor.cpp_normalizeAngleToPi_FUN_0040d0c0"
     },
     {
       "addr": "005838f0",
       "is_variadic": false,
-      "name": "core_vecdir.cpp_FUN_005838f0"
+      "name": "core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0"
     }
   ],
   "globals": [
@@ -74,7 +74,7 @@
       {
         "call_addr": "004c04af",
         "call_type": "direct",
-        "caller": "core_gargoyle.cpp_FUN_004c0050",
+        "caller": "core_gargoyle.cpp_CGargoyle_process_FUN_004c0050",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -85,7 +85,7 @@
       {
         "call_addr": "004c0543",
         "call_type": "direct",
-        "caller": "core_gargoyle.cpp_FUN_004c0050",
+        "caller": "core_gargoyle.cpp_CGargoyle_process_FUN_004c0050",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -96,7 +96,7 @@
       {
         "call_addr": "004c0757",
         "call_type": "direct",
-        "caller": "core_gargoyle.cpp_FUN_004c0050",
+        "caller": "core_gargoyle.cpp_CGargoyle_process_FUN_004c0050",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -403,7 +403,7 @@
       "line": 37,
       "match": "&stack0xffffffac",
       "severity": "moderate",
-      "text": "core_vecdir_cpp_FUN_005838f0(&stack0xffffffac);",
+      "text": "core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(&stack0xffffffac);",
       "type": "stack_ref"
     },
     {

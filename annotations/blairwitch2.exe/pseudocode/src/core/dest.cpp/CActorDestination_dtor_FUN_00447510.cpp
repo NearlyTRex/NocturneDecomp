@@ -17,8 +17,7 @@ CActorDestination * __cdecl core_dest_cpp_CActorDestination_dtor_FUN_00447510(CA
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  pCVar1 = (CActorDestination *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  pCVar1 = (CActorDestination *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

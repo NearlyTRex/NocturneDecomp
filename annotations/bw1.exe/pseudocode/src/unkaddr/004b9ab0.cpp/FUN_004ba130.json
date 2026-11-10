@@ -2,19 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 232,
-    "complexity_score": 225,
+    "complexity_score": 224,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 6,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 80,
-    "suspect_count": 13,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 79,
+    "suspect_count": 12,
     "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 312
+    "total_lines": 311
   },
   "cross_references": [],
   "function": {
@@ -33,7 +35,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     },
     {
       "addr": "0040d220",
@@ -53,7 +55,7 @@
     {
       "addr": "00479580",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00479580"
+      "name": "engine_dosio.cpp_splitPath_FUN_00479580"
     }
   ],
   "globals": [
@@ -152,7 +154,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_01cc7f38",
       "severity": "mild",
       "text": "DAT_01cc7f38 = 0;",
@@ -160,7 +162,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_0061d310",
       "severity": "mild",
       "text": "DAT_0061d310 = 0xffffffff;",
@@ -168,7 +170,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_0061d2e0",
       "severity": "mild",
       "text": "DAT_0061d2e0 = 1;",
@@ -179,7 +181,7 @@
       "line": 38,
       "match": "DAT_01cc4228",
       "severity": "mild",
-      "text": "engine_dosio_cpp_FUN_00479580(&DAT_01cc4228,(char *)0x0,(char *)0x0,acStack_518,(char *)0x0);",
+      "text": "(&DAT_01cc4228,(char *)0x0,(char *)0x0,acStack_518,(char *)0x0);",
       "type": "undefined_data"
     },
     {
@@ -187,15 +189,7 @@
       "line": 39,
       "match": "DAT_005df825",
       "severity": "mild",
-      "text": "FUN_005bfb40(acStack_418,&DAT_005df825,acStack_518,&DAT_01cc4208);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 39,
-      "match": "DAT_01cc4208",
-      "severity": "mild",
-      "text": "FUN_005bfb40(acStack_418,&DAT_005df825,acStack_518,&DAT_01cc4208);",
+      "text": "_sprintf(acStack_418,&DAT_005df825);",
       "type": "undefined_data"
     },
     {
@@ -203,15 +197,7 @@
       "line": 53,
       "match": "DAT_005df825",
       "severity": "mild",
-      "text": "FUN_005bfb40(acStack_218,&DAT_005df825,acStack_118,&DAT_01cc4208);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 53,
-      "match": "DAT_01cc4208",
-      "severity": "mild",
-      "text": "FUN_005bfb40(acStack_218,&DAT_005df825,acStack_118,&DAT_01cc4208);",
+      "text": "_sprintf(acStack_218,&DAT_005df825);",
       "type": "undefined_data"
     },
     {
@@ -231,20 +217,28 @@
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 60,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "iVar3 = iVar3 + *(int *)(&CAlphaBitmap_ARRAY_01cc7ba8[0].field_0x10 + iStack_14) + 10;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 82,
+      "line": 81,
       "match": "DAT_0061d2e0",
       "severity": "mild",
       "text": "DAT_0061d2e0 = 0;",
       "type": "undefined_data"
+    },
+    {
+      "description": "Pointer value `&CAlphaBitmap_ARRAY_01cc7ba8[0].height` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 59,
+      "match": "(int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height",
+      "severity": "moderate",
+      "text": "iVar3 = iVar3 + *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height + iStack_14) + 10;",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 59,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "iVar3 = iVar3 + *(int *)((int)&CAlphaBitmap_ARRAY_01cc7ba8[0].height + iStack_14) + 10;",
+      "type": "pointer_cast"
     }
   ]
 }

@@ -11,7 +11,7 @@ void core_shadow_cpp_FUN_00545f90(void)
 {
   CDemonShadow *this_ptr;
   
-  this_ptr = (CDemonShadow *)FUN_005a3cb2(0xd0e8);
+  this_ptr = (CDemonShadow *)debugAllocTracked1(0xd0e8);
   if (this_ptr == (CDemonShadow *)0x0) {
     return;
   }

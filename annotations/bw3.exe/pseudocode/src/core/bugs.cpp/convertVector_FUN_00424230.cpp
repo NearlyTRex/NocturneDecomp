@@ -11,8 +11,8 @@
 CVector3i * __cdecl core_bugs_cpp_convertVector_FUN_00424230(CVector3f *dest,CVector3i *src)
 
 {
-  *(float *)dest = (float)*(int *)src * _DAT_005dcbb8;
-  *(float *)&dest->field_0x4 = (float)*(int *)(src + 4) * _DAT_005dcbb8;
-  *(float *)&dest->field_0x8 = (float)*(int *)(src + 8) * _DAT_005dcbb8;
+  dest->x = (float)src->x * _DAT_005dcbb8;
+  dest->y = (float)src->y * _DAT_005dcbb8;
+  dest->z = (float)src->z * _DAT_005dcbb8;
   return src;
 }

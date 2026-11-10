@@ -184,8 +184,8 @@
     ],
     "conv":"unknown",
     "instructions":48,
-    "method":"FUN_004b8fce",
-    "name":"core_game.cpp_FUN_004b8fce",
+    "method":"giveHeroWeaponAmmo",
+    "name":"core_game.cpp_giveHeroWeaponAmmo_FUN_004b8fce",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -199,8 +199,8 @@
     "addr":"004c9fce",
     "conv":"unknown",
     "instructions":15,
-    "method":"FUN_004c9fce",
-    "name":"core_gore.cpp_FUN_004c9fce",
+    "method":"convertVecFloatToFixed",
+    "name":"core_gore.cpp_convertVecFloatToFixed_FUN_004c9fce",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -221,8 +221,8 @@
     ],
     "conv":"unknown",
     "instructions":62,
-    "method":"FUN_004eb3ce",
-    "name":"core_menu.cpp_FUN_004eb3ce",
+    "method":"showJoystickCalibrationScreen",
+    "name":"core_menu.cpp_showJoystickCalibrationScreen_FUN_004eb3ce",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -346,8 +346,8 @@
     ],
     "conv":"unknown",
     "instructions":25,
-    "method":"FUN_00558ace",
-    "name":"sound_sndwav.cpp_FUN_00558ace",
+    "method":"getWavInDevice",
+    "name":"sound_sndwav.cpp_getWavInDevice_FUN_00558ace",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -411,8 +411,8 @@
     "addr":"0055fcce",
     "conv":"unknown",
     "instructions":7,
-    "method":"FUN_0055fcce",
-    "name":"engine_special.cpp_FUN_0055fcce",
+    "method":"flushParticleList",
+    "name":"engine_special.cpp_flushParticleList_FUN_0055fcce",
     "receiver":false,
     "ret":{
       "kind":"builtin",
@@ -731,15 +731,34 @@
     "callers":[
       "0047cb1e"
     ],
-    "conv":"unknown",
+    "conv":"__cdecl",
     "instructions":1,
-    "method":"FUN_005ba2ce",
-    "name":"crt_unknown.c_FUN_005ba2ce",
+    "method":"_getcwd",
+    "name":"crt_unknown.c__getcwd_FUN_005ba2ce",
+    "params":[
+      {
+        "name":"buffer",
+        "type":{
+          "kind":"builtin",
+          "name":"char",
+          "ptr":1
+        }
+      },
+      {
+        "name":"size",
+        "type":{
+          "header":"basetsd",
+          "kind":"system",
+          "name":"SIZE_T",
+          "ptr":0
+        }
+      }
+    ],
     "receiver":false,
     "ret":{
       "kind":"builtin",
-      "name":"undefined",
-      "ptr":0
+      "name":"char",
+      "ptr":1
     },
     "tu":"crt/unknown.c",
     "variadic":false
@@ -752,14 +771,14 @@
     "conv":"unknown",
     "instructions":32,
     "method":"FUN_005c47ce",
-    "name":"unkafter_morph.cpp_FUN_005c47ce",
+    "name":"crt_unknown.c_FUN_005c47ce",
     "receiver":false,
     "ret":{
       "kind":"builtin",
       "name":"undefined",
       "ptr":0
     },
-    "tu":"unkafter/morph.cpp",
+    "tu":"crt/unknown.c",
     "variadic":false
   }
 ]

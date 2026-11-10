@@ -9,6 +9,6 @@
 void __cdecl core_litecone_cpp_CLightCone_setup_FUN_004e4060(CLightCone *this_ptr)
 
 {
-  core_actor_cpp_FUN_00408890((CDemonActor *)this_ptr);
+  core_actor_cpp_CDemonActor_setup_FUN_00408890(&this_ptr->base);
   return;
 }

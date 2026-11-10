@@ -22,7 +22,7 @@
 ;
 ; XREF[5]:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410 at 004a041b
-;   core_hero.cpp_FUN_004ea830 at 004ea836
+;   core_hero.cpp_CHero_ctor_FUN_004ea830 at 004ea836
 ;   core_moocow.cpp_CMooCow_ctor_FUN_00521300 at 00521306
 ;   core_npc.cpp_CNPC_ctor_FUN_00531670 at 00531679
 ;   unkafter_bird.cpp_CBird_ctor_FUN_004151f0 at 004151f9
@@ -31,7 +31,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomTypeInfo g_CFlameTypeInfo
 ;   undefined4 DAT_005fd618
-;   void* g_CCharacterVTable = 0042c510
+;   CCharacter_full_vtable g_CCharacterVTable
 ;   WatcomTypeInfo g_SFireTypeInfo
 ;
 ; Called Functions:

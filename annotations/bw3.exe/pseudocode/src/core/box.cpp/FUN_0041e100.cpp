@@ -11,21 +11,18 @@
 float __cdecl core_box_cpp_FUN_0041e100(CBoundingBox3D *this_ptr)
 
 {
-  int local_28;
-  int local_24;
-  int local_20;
+  CVector3i local_28 [2];
   
-  local_28 = (int)ROUND((*(float *)this_ptr + *(float *)&this_ptr->field_0xc) * _DAT_005b74ad *
-                        _DAT_005dc948);
-  local_24 = (int)ROUND((*(float *)&this_ptr->field_0x4 + *(float *)&this_ptr->field_0x10) *
-                        _DAT_005b74ad * _DAT_005dc948);
-  local_20 = (int)ROUND((*(float *)&this_ptr->field_0x8 + *(float *)&this_ptr->field_0x14) *
-                        _DAT_005b74ad * _DAT_005dc948);
-  engine_special_cpp_FUN_005632a3
-            ((SProjectedVertex *)(*DAT_005f2afc + 0x124f50),(CVector3i *)&local_28);
+  local_28[0].x =
+       (int)ROUND(((this_ptr->min).x + (this_ptr->max).x) * _DAT_005b74ad * _DAT_005dc948);
+  local_28[0].y =
+       (int)ROUND(((this_ptr->min).y + (this_ptr->max).y) * _DAT_005b74ad * _DAT_005dc948);
+  local_28[0].z =
+       (int)ROUND(((this_ptr->min).z + (this_ptr->max).z) * _DAT_005b74ad * _DAT_005dc948);
+  engine_special_cpp_FUN_005632a3((SProjectedVertex *)(*DAT_005f2afc + 0x124f50),local_28);
   if (0 < *(int *)(*DAT_005f2afc + 0x124f58)) {
     return ABS(((float)_DAT_01c6b59c *
-               ((*(float *)&this_ptr->field_0x10 - *(float *)&this_ptr->field_0x4) /
+               (((this_ptr->max).y - (this_ptr->min).y) /
                ((float)*(int *)(*DAT_005f2afc + 0x124f58) * (float)_DAT_005b74b1))) /
                (float)DAT_005fba44);
   }

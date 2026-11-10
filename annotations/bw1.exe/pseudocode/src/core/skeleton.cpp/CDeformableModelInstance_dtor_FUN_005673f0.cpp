@@ -18,10 +18,10 @@ CDeformableModelInstance * __cdecl core_skeleton_cpp_CDeformableModelInstance_dt
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x50 = &g_CDeformableModelInstanceVTable;
+  (this_ptr->base).vtable = (CMotionController_vtable *)&g_CDeformableModelInstanceVTable;
   core_skeleton_cpp_FUN_005674d0(this_ptr);
   pCVar1 = (CDeformableModelInstance *)
-           core_motion_cpp_CMotionController_dtor_FUN_00524200((CMotionController *)this_ptr,1);
+           core_motion_cpp_CMotionController_dtor_FUN_00524200(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

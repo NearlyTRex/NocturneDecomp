@@ -16,12 +16,12 @@ void __cdecl core_skeleton_cpp_CDeformableModel_initVertexWRecip_FUN_00541a00(CD
   
   iVar1 = 0;
   iVar2 = 0;
-  if (0 < *(int *)(&this_ptr->field_0x2c + lod_index * 4)) {
+  if (0 < this_ptr->vertex_count[lod_index]) {
     do {
       *(uint *)(*DAT_0060b280 + 0x2c + iVar1) = _DAT_01c38aec;
       iVar2 = iVar2 + 1;
       iVar1 = iVar1 + 0x30;
-    } while (iVar2 < *(int *)(&this_ptr->field_0x2c + lod_index * 4));
+    } while (iVar2 < this_ptr->vertex_count[lod_index]);
   }
   return;
 }

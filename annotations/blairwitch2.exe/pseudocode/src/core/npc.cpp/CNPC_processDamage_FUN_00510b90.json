@@ -1,0 +1,166 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 93,
+    "complexity_score": 72,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 37,
+    "suspect_count": 3,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 130
+  },
+  "cross_references": [
+    {
+      "addr": "004d30d0",
+      "from_addr": "004d3153",
+      "name": "core_hostage.cpp_CHostage_processDamage_FUN_004d30d0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00510b90",
+    "address_range": [
+      [
+        "00510b90",
+        "00510c6c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_npc.cpp_CNPC_processDamage_FUN_00510b90",
+    "signature": "void __cdecl core_npc_cpp_CNPC_processDamage_FUN_00510b90(CNPC *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "00428e00",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_dropAllCarriedObjects_FUN_00428e00"
+    },
+    {
+      "addr": "00427fb0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00427fb0"
+    },
+    {
+      "addr": "00510ab0",
+      "is_variadic": false,
+      "name": "core_npc.cpp_CNPC_setRandomMotionVariant_FUN_00510ab0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e1581",
+      "name": "DAT_005e1581",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e1585",
+      "name": "DAT_005e1585",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005e158a",
+      "name": "s_DAMAGE_005e158a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e1591",
+      "name": "DAT_005e1591",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.56,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 5,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 7,
+      "CALLIND": 2,
+      "CBRANCH": 6,
+      "COPY": 119,
+      "FLOAT2FLOAT": 4,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 30,
+      "INT_AND": 38,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 26,
+      "INT_LEFT": 8,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 13,
+      "INT_SUB": 31,
+      "INT_ZEXT": 8,
+      "LOAD": 18,
+      "POPCOUNT": 13,
+      "RETURN": 2,
+      "STORE": 31
+    },
+    "pcode_op_count": 417
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CNPC *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_005e1581",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00510ab0((CNPC *)this_ptr_00,&DAT_005e1581);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 26,
+      "match": "DAT_005e1585",
+      "severity": "mild",
+      "text": "((CNPC *)this_ptr_00,&DAT_005e1585);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_005e1591",
+      "severity": "mild",
+      "text": "core_npc_cpp_CNPC_setRandomMotionVariant_FUN_00510ab0((CNPC *)this_ptr_00,&DAT_005e1591);",
+      "type": "undefined_data"
+    }
+  ]
+}

@@ -37,7 +37,7 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[1]:
-;   core_werewolf.cpp_FUN_0058b950 at 0058bdd6
+;   core_werewolf.cpp_CWerewolf_process_FUN_0058b950 at 0058bdd6
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Chain_stretched_to_f_005ee812

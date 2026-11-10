@@ -2,15 +2,46 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CTire.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CVehicle
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x11d4 (4564 bytes)
 #pragma pack(push, 1)
 typedef struct CVehicle {
-    char field_0[4564]; // 0x0
+    CDemonActor base; // 0x0
+    CKeyFramedModelInstance model; // 0x2b4
+    CKeyFramedModelInstance extra_models[4]; // 0x430
+    CVector3f world_velocity; // 0xa20
+    CVector3f local_velocity; // 0xa2c
+    CVector3f unused_physics_vectors[5]; // 0xa38
+    float mass; // 0xa74
+    float scaled_mass; // 0xa78
+    float inertia_yz; // 0xa7c
+    float inertia_xz; // 0xa80
+    float inertia_xy; // 0xa84
+    CVector3f bound_size; // 0xa88
+    int tire_count; // 0xa94
+    CTire tires[4]; // 0xa98
+    CVector3f ground_normal; // 0x1168
+    float ground_offset; // 0x1174
+    int dead; // 0x1178
+    char field_4476[12]; // 0x117c
+    float cur_time; // 0x1188
+    float total_time; // 0x118c
+    char course_name[32]; // 0x1190
+    uint sfx_handles[3]; // 0x11b0
+    CVector3f sound_velocity; // 0x11bc
+    int is_visible; // 0x11c8
+    struct CDemonActor* last_mobster_left; // 0x11cc
+    struct CDemonActor* last_mobster_right; // 0x11d0
 } CVehicle;
 #pragma pack(pop)
 

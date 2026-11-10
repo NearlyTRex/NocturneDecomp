@@ -12,7 +12,7 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00530150 at 005301e0
+;   core_script.cpp_CScript_startDialogLine_FUN_00530150 at 005301e0
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006074b8

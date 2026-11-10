@@ -21,17 +21,17 @@ CDemonActorType * CHighPriestOfGardath::getActorType(CHighPriestOfGardath *this_
 // Address: 004d4780
 CHighPriestOfGardath * __cdecl CHighPriestOfGardath::ctor(CHighPriestOfGardath *this_ptr);
 
-// Original: core_hpriest.cpp_FUN_004d47e0
+// Original: core_hpriest.cpp_CHighPriestOfGardath_archive_FUN_004d47e0
 // Address: 004d47e0
-void FUN_004d47e0(CNPC *param_1);
+void __cdecl CHighPriestOfGardath::archive(CHighPriestOfGardath *this_ptr);
 
-// Original: core_hpriest.cpp_FUN_004d4810
+// Original: core_hpriest.cpp_CHighPriestOfGardath_process_FUN_004d4810
 // Address: 004d4810
-void FUN_004d4810(CNPC *param_1,float param_2);
+void __cdecl CHighPriestOfGardath::process(CHighPriestOfGardath *this_ptr,float delta_time);
 
-// Original: core_hpriest.cpp_FUN_004d4860
+// Original: core_hpriest.cpp_CHighPriestOfGardath_processDamage_FUN_004d4860
 // Address: 004d4860
-void FUN_004d4860(int param_1,int param_2);
+void __cdecl CHighPriestOfGardath::processDamage(CHighPriestOfGardath *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_hpriest.cpp_CHighPriestOfGardath_dtor_FUN_004d4880
 // Address: 004d4880

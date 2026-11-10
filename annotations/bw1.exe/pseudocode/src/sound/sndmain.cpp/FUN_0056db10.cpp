@@ -22,7 +22,7 @@ uint sound_sndmain_cpp_FUN_0056db10(int *param_1,int *param_2,int param_3)
   short sStack_24;
   ushort uStack_22;
   ushort uStack_20;
-  uint uStack_1c;
+  short sStack_1c;
   char cStack_18;
   char cStack_17;
   char cStack_16;
@@ -72,8 +72,8 @@ uint sound_sndmain_cpp_FUN_0056db10(int *param_1,int *param_2,int param_3)
               }
               else {
                 if (sStack_24 != 0x20) {
-                  FUN_005bfb40
-                            (&cStack_88,"Invalid \"fmt\" chunk tag: %04X",sStack_24);
+                  _sprintf(&cStack_88,"Invalid \"fmt\" chunk tag: %04X")
+                  ;
                   pcVar2 = &cStack_88;
                   goto LAB_0056db62;
                 }
@@ -81,8 +81,7 @@ uint sound_sndmain_cpp_FUN_0056db10(int *param_1,int *param_2,int param_3)
               }
               *(uint *)(param_3 + 0x104) = 0;
               if ((uStack_22 == 0) || (2 < uStack_22)) {
-                FUN_005bfb40(&cStack_88,"Invalid number of channels: %u  (must be 1 or 2)",uStack_22)
-                ;
+                _sprintf(&cStack_88,"Invalid number of channels: %u  (must be 1 or 2)");
                 pcVar2 = &cStack_88;
                 goto LAB_0056db62;
               }
@@ -97,11 +96,11 @@ uint sound_sndmain_cpp_FUN_0056db10(int *param_1,int *param_2,int param_3)
                 }
                 goto LAB_0056dcfd;
               }
-              if ((ushort)(uStack_22 * uStack_20) == (short)uStack_1c) {
+              if ((ushort)(uStack_22 * uStack_20) == sStack_1c) {
                 *(uint *)(param_3 + 0x104) = 8;
                 goto LAB_0056dcfd;
               }
-              if ((ushort)(uStack_22 * uStack_20 * 2) == (short)uStack_1c) {
+              if ((ushort)(uStack_22 * uStack_20 * 2) == sStack_1c) {
                 *(uint *)(param_3 + 0x104) = 0x10;
 LAB_0056dcfd:
                 do {
@@ -133,9 +132,7 @@ LAB_0056dcfd:
                 pcVar2 = "No \"data\" chunk found";
               }
               else {
-                FUN_005bfb40
-                          (&cStack_88,"Invalid bytes/sec value: %u (%04Xh)",uStack_1c & 0xffff,
-                           uStack_1c & 0xffff);
+                _sprintf(&cStack_88,"Invalid bytes/sec value: %u (%04Xh)");
                 pcVar2 = &cStack_88;
               }
               goto LAB_0056db62;

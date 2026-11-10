@@ -70,9 +70,9 @@ void engine_font_cpp_FUN_004c0fa0(int param_1,int param_2)
         _DAT_01d1d404 = 0x184;
         core_main_c_FUN_005030e0("CBitFont::setAcceleration - Out of memory");
       }
-      engine_dosio_cpp_FUN_00479580
+      engine_dosio_cpp_splitPath_FUN_00479580
                 ((char *)(param_1 + 4),(char *)0x0,(char *)0x0,acStack_158,(char *)0x0);
-      engine_dosio_cpp_FUN_004795b0
+      engine_dosio_cpp_makePath_FUN_004795b0
                 (acStack_258,(char *)0x0,(char *)0x0,acStack_158,(char *)0x5e08c3);
       unkclass_instream_cpp_CInStreamFile_ctor_FUN_005a08d0(&CStack_58);
       iVar5 = support_trstream_cpp_FUN_005a0fd0(&CStack_58,0x5e08c7,acStack_258,1);

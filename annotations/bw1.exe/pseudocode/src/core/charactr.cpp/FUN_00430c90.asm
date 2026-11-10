@@ -1,14 +1,14 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00430c90(CCharacter *param_1,CVector3f *param_2,float param_3)
+; void core_charactr_cpp_FUN_00430c90(CCharacter *param_1,undefined4 param_2,undefined4 param_3,CVector3f *param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x84]:1  local_84
 ; undefined        Stack[-0x6c]:1  local_6c
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004319e0 at 00431a5c
+;   core_charactr.cpp_CCharacter_processDamage_FUN_004319e0 at 00431a5c
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5a53

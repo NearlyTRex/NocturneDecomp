@@ -2,21 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 354,
-    "complexity_score": 497,
+    "complexity_score": 367,
     "cross_reference_count": 1,
     "function_call_count": 8,
     "global_count": 25,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 182,
-    "suspect_count": 29,
+    "pseudocode_lines": 167,
+    "suspect_count": 18,
     "suspect_types": [
       "sign_compare_idiom",
       "stack_alignment_array",
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 536
+    "total_lines": 521
   },
   "cross_references": [
     {
@@ -643,120 +642,56 @@
       "type": "stack_alignment_array"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 71,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if ((*(uint *)&this_ptr->field_0x4 & 0x7fffffff) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar10 = (float10)1 + (float10)local_1c / (float10)*(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Signed borrow/overflow flag-math (SBORROW/SCARRY) for a signed comparison; replace with a plain </<=/>/>= operator in a .keep.",
-      "line": 105,
+      "line": 90,
       "match": "SBORROW4",
       "severity": "moderate",
       "text": "if (SBORROW4(iVar8,local_18) != local_18 * -2 < 0) {",
       "type": "sign_compare_idiom"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 110,
-      "match": "field_0x8",
+      "description": "Undefined global data reference",
+      "line": 100,
+      "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "local_94 = (float)iVar8 * *(float *)&this_ptr->field_0x8 + _DAT_02cfd968;",
-      "type": "unnamed_field"
+      "text": "(DAT_005f2afc,&local_94);",
+      "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Undefined global data reference",
       "line": 111,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_90 = *(float *)&this_ptr->field_0x4 + _DAT_02cfd96c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 112,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_8c = (float)iVar6 * *(float *)&this_ptr->field_0x8 + _DAT_02cfd970;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 115,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,(CVector3f *)&local_94);",
+      "text": "((SProjectedVertex *)DAT_005f2afc->vertex_buffer_ptr,&local_64);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 126,
+      "line": 117,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(*(SProjectedVertex **)DAT_005f2afc,(CVector3i *)&local_64);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 127,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_94 = *(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 132,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x30),(CVector3i *)&local_a0);",
-      "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_8c = *(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Undefined global data reference",
-      "line": 138,
-      "match": "DAT_005f2afc",
-      "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x60),(CVector3i *)&local_7c);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x30),&local_a0);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 123,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "((SProjectedVertex *)(*(int *)DAT_005f2afc + 0x90),(CVector3i *)&local_88);",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x60),&local_7c);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 145,
+      "line": 129,
+      "match": "DAT_005f2afc",
+      "severity": "mild",
+      "text": "((SProjectedVertex *)(DAT_005f2afc->vertex_buffer_ptr + 0x90),&local_88);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 130,
       "match": "DAT_005f2b00",
       "severity": "mild",
       "text": "uVar3 = DAT_005f2b00;",
@@ -764,7 +699,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 131,
       "match": "DAT_0060b024",
       "severity": "mild",
       "text": "uVar5 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4;",
@@ -772,7 +707,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 131,
       "match": "DAT_0060b054",
       "severity": "mild",
       "text": "uVar5 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4;",
@@ -780,7 +715,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 131,
       "match": "DAT_0060b084",
       "severity": "mild",
       "text": "uVar5 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4;",
@@ -788,7 +723,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 146,
+      "line": 131,
       "match": "DAT_0060b0b4",
       "severity": "mild",
       "text": "uVar5 = DAT_0060b024 & DAT_0060b054 & DAT_0060b084 & DAT_0060b0b4;",
@@ -796,7 +731,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 140,
       "match": "DAT_005f2b00",
       "severity": "mild",
       "text": "DAT_005f2b00 = 0x10;",
@@ -804,15 +739,15 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 159,
+      "line": 144,
       "match": "DAT_005f2afc",
       "severity": "mild",
-      "text": "(DAT_005f2afc,local_c8);",
+      "text": "(DAT_005f2afc,&local_c8);",
       "type": "undefined_data"
     },
     {
       "description": "Undefined global data reference",
-      "line": 166,
+      "line": 151,
       "match": "DAT_02cfd980",
       "severity": "mild",
       "text": "*(int *)(&DAT_02cfd980 + _DAT_02cfd97c * 4) = iVar8;",
@@ -820,7 +755,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 167,
+      "line": 152,
       "match": "DAT_02d01980",
       "severity": "mild",
       "text": "*(int *)(&DAT_02d01980 + _DAT_02cfd97c * 4) = iVar6;",
@@ -828,35 +763,11 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 172,
+      "line": 157,
       "match": "DAT_005f2b00",
       "severity": "mild",
       "text": "DAT_005f2b00 = uVar3;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 179,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar2 = (float)_DAT_02cfd97c * *(float *)&this_ptr->field_0x8 * *(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 179,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "fVar2 = (float)_DAT_02cfd97c * *(float *)&this_ptr->field_0x8 * *(float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 180,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0xc = fVar2;",
-      "type": "unnamed_field"
     }
   ]
 }

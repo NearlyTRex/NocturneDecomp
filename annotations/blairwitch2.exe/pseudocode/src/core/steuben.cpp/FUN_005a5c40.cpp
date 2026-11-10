@@ -6,7 +6,6 @@
 
 #include "nocturne.h"
 
-/* WARNING: Type propagation algorithm not settling */
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
 void core_steuben_cpp_FUN_005a5c40(int param_1,float param_2)
@@ -23,8 +22,9 @@ void core_steuben_cpp_FUN_005a5c40(int param_1,float param_2)
   float fStack_30;
   float fStack_2c;
   float fStack_28;
-  byte auStack_24 [8];
-  float afStack_1c [4];
+  CVector3f CStack_24;
+  float fStack_18;
+  float afStack_14 [2];
   
   bVar2 = 0;
   iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(param_1 + 0x10af8,"Death");
@@ -42,15 +42,15 @@ void core_steuben_cpp_FUN_005a5c40(int param_1,float param_2)
        *(uint *)((int)&stack0xffffffd4 + (uint)bVar2 * -8);
   *(uint *)((int)&stack0xffffffcc + (uint)bVar2 * -8 + (uint)bVar2 * -8) =
        *(uint *)((int)&stack0xffffffd8 + (uint)bVar2 * -8 + (uint)bVar2 * -8);
-  wind_velocity = (CVector3f *)auStack_24;
+  wind_velocity = &CStack_24;
   this_ptr = (CClothList *)(param_1 + 0x2d0c);
-  afStack_1c[1] = fStack_3c * param_2;
-  afStack_1c[2] = fStack_38 * param_2;
-  afStack_1c[3] = fStack_34 * param_2;
-  auStack_24._0_4_ = fStack_3c * param_2;
-  *(float *)((int)auStack_24 + (uint)bVar2 * -8 + 4) = afStack_1c[(uint)bVar2 * 0xfffffffe + 2];
-  *(float *)((int)auStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
-       afStack_1c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 3];
-  core_cloth_cpp_FUN_005b1890(this_ptr,wind_velocity);
+  fStack_18 = fStack_3c * param_2;
+  afStack_14[0] = fStack_38 * param_2;
+  afStack_14[1] = fStack_34 * param_2;
+  CStack_24.x = fStack_3c * param_2;
+  *(float *)((int)&CStack_24 + (uint)bVar2 * -8 + 4) = afStack_14[(uint)bVar2 * -2];
+  *(float *)((int)&CStack_24 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =
+       afStack_14[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
+  core_cloth_cpp_CClothList_setWindVelocity_FUN_005b1890(this_ptr,wind_velocity);
   return;
 }

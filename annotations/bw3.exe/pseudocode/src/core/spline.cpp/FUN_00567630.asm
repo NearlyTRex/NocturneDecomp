@@ -9,7 +9,7 @@
 ; float            Stack[0xc]:4   tension
 ;
 ; XREF[1]:
-;   core_flies.cpp_FUN_004addd0 at 004ade94
+;   core_flies.cpp_CFlies_renderOpaque_FUN_004addd0 at 004ade94
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5bf6

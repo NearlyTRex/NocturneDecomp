@@ -2,72 +2,71 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 67,
-    "complexity_score": 361,
+    "complexity_score": 295,
     "cross_reference_count": 8,
     "function_call_count": 4,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 41,
-    "suspect_count": 28,
+    "pseudocode_lines": 40,
+    "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "pointer_cast",
       "pointer_truncation",
       "stack_alignment_array",
       "undefined_data",
-      "unknown_field",
       "unnamed_field",
       "unnamed_param"
     ],
-    "total_lines": 108
+    "total_lines": 107
   },
   "cross_references": [
     {
       "addr": "005a1350",
       "from_addr": "005a139a",
-      "name": "core_confedrt.cpp_FUN_005a1350",
+      "name": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a2520",
       "from_addr": "005a2551",
-      "name": "core_confzomb.cpp_FUN_005a2520",
+      "name": "core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ac610",
       "from_addr": "005ac648",
-      "name": "core_dog1.cpp_FUN_005ac610",
+      "name": "core_dog1.cpp_CDog_processMotionEvent_FUN_005ac610",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005ab940",
       "from_addr": "005ab971",
-      "name": "core_hag.cpp_FUN_005ab940",
+      "name": "core_hag.cpp_CHag_processMotionEvent_FUN_005ab940",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005aa380",
       "from_addr": "005aa3b2",
-      "name": "core_hand.cpp_FUN_005aa380",
+      "name": "core_hand.cpp_CHand_processMotionEvent_FUN_005aa380",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a3420",
       "from_addr": "005a3450",
-      "name": "core_schngeis.cpp_FUN_005a3420",
+      "name": "core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a5300",
       "from_addr": "005a534a",
-      "name": "core_union.cpp_FUN_005a5300",
+      "name": "core_union.cpp_CUnion_processMotionEvent_FUN_005a5300",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a4600",
       "from_addr": "005a4631",
-      "name": "core_unionzom.cpp_FUN_005a4600",
+      "name": "core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -97,7 +96,7 @@
     {
       "addr": "00488110",
       "is_variadic": false,
-      "name": "core_enemy.cpp_FUN_00488110"
+      "name": "core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110"
     },
     {
       "addr": "00591530",
@@ -119,7 +118,7 @@
       {
         "call_addr": "005a139a",
         "call_type": "direct",
-        "caller": "core_confedrt.cpp_FUN_005a1350",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -130,7 +129,7 @@
       {
         "call_addr": "005a13e6",
         "call_type": "direct",
-        "caller": "core_confedrt.cpp_FUN_005a1350",
+        "caller": "core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -143,7 +142,7 @@
       {
         "call_addr": "005a2551",
         "call_type": "direct",
-        "caller": "core_confzomb.cpp_FUN_005a2520",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -156,7 +155,7 @@
       {
         "call_addr": "005a257b",
         "call_type": "direct",
-        "caller": "core_confzomb.cpp_FUN_005a2520",
+        "caller": "core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -169,7 +168,7 @@
       {
         "call_addr": "005a3450",
         "call_type": "direct",
-        "caller": "core_schngeis.cpp_FUN_005a3420",
+        "caller": "core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -180,7 +179,7 @@
       {
         "call_addr": "005a4631",
         "call_type": "direct",
-        "caller": "core_unionzom.cpp_FUN_005a4600",
+        "caller": "core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -193,7 +192,7 @@
       {
         "call_addr": "005a465b",
         "call_type": "direct",
-        "caller": "core_unionzom.cpp_FUN_005a4600",
+        "caller": "core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -206,7 +205,7 @@
       {
         "call_addr": "005a534a",
         "call_type": "direct",
-        "caller": "core_union.cpp_FUN_005a5300",
+        "caller": "core_union.cpp_CUnion_processMotionEvent_FUN_005a5300",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -217,7 +216,7 @@
       {
         "call_addr": "005a5396",
         "call_type": "direct",
-        "caller": "core_union.cpp_FUN_005a5300",
+        "caller": "core_union.cpp_CUnion_processMotionEvent_FUN_005a5300",
         "estimated_params": 5,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -230,7 +229,7 @@
       {
         "call_addr": "005aa3b2",
         "call_type": "direct",
-        "caller": "core_hand.cpp_FUN_005aa380",
+        "caller": "core_hand.cpp_CHand_processMotionEvent_FUN_005aa380",
         "estimated_params": 5,
         "instructions_analyzed": 7,
         "method": "push_count",
@@ -388,15 +387,15 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].field_0x8d8 != 0) {",
+      "text": "if (*(int *)&param_1[1].base.model.field_0x624 != 0) {",
       "type": "unnamed_param"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 21,
-      "match": "field_0x8d8",
+      "match": "field_0x624",
       "severity": "mild",
-      "text": "if (*(int *)&param_1[1].field_0x8d8 != 0) {",
+      "text": "if (*(int *)&param_1[1].base.model.field_0x624 != 0) {",
       "type": "unnamed_field"
     },
     {
@@ -428,7 +427,7 @@
       "line": 28,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&param_1->field_0x1134 + param_3 * 0x30);",
+      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
       "type": "unnamed_param"
     },
     {
@@ -436,7 +435,7 @@
       "line": 28,
       "match": "param_3",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&param_1->field_0x1134 + param_3 * 0x30);",
+      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
       "type": "unnamed_param"
     },
     {
@@ -444,15 +443,15 @@
       "line": 28,
       "match": "DAT_0265370c",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&param_1->field_0x1134 + param_3 * 0x30);",
+      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
       "type": "undefined_data"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 28,
-      "match": "field_0x1134",
+      "match": "field_0xe80",
       "severity": "mild",
-      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&param_1->field_0x1134 + param_3 * 0x30);",
+      "text": "core_xform_cpp_FUN_00591530(&DAT_0265370c,&(param_1->base).model.field_0xe80 + param_3 * 0x30);",
       "type": "unnamed_field"
     },
     {
@@ -464,35 +463,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = local_28._0_4_;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 37,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_34._0_4_ = local_28._0_4_;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar1 = core_enemy_cpp_FUN_00488110(param_1,point,param_4,damage_info);",
+      "text": "iVar1 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(param_1,point,param_4,damage_info);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 41,
       "match": "param_4",
       "severity": "mild",
-      "text": "iVar1 = core_enemy_cpp_FUN_00488110(param_1,point,param_4,damage_info);",
+      "text": "iVar1 = core_enemy_cpp_CEnemy_testAttackRadius_FUN_00488110(param_1,point,param_4,damage_info);",
       "type": "unnamed_param"
     },
     {
@@ -500,31 +483,15 @@
       "line": 38,
       "match": "(int)&local_34",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 39,
-      "match": "(int)&local_28",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);",
+      "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4) = auStack_24[(uint)bVar2 * -2];",
       "type": "pointer_truncation"
     },
     {
       "description": "Pointer value `&local_34` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 40,
+      "line": 39,
       "match": "(int)&local_34",
       "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
-      "type": "pointer_truncation"
-    },
-    {
-      "description": "Pointer value `&local_28` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 41,
-      "match": "(int)&local_28",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_truncation"
     },
     {
@@ -532,7 +499,7 @@
       "line": 38,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4) =",
+      "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + 4) = auStack_24[(uint)bVar2 * -2];",
       "type": "pointer_cast"
     },
     {
@@ -540,23 +507,7 @@
       "line": 39,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
-      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + 4);",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 40,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
       "text": "*(uint *)((int)&local_34 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8) =",
-      "type": "pointer_cast"
-    },
-    {
-      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 41,
-      "match": "(int)&NAME used in byte-offset arithmetic",
-      "severity": "moderate",
-      "text": "*(uint *)((int)&local_28 + (uint)bVar2 * -8 + (uint)bVar2 * -8 + 8);",
       "type": "pointer_cast"
     },
     {

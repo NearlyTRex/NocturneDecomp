@@ -33,7 +33,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820(CSt
   int local_14;
   
   bVar8 = 0;
-  iVar6 = *(int *)this_ptr + -1;
+  iVar6 = this_ptr->item_count + -1;
   local_14 = 0;
   if (-1 < iVar6) {
     do {
@@ -55,7 +55,7 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820(CSt
       }
       pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00482440(this_ptr,index);
       sscanf(pcVar2,format);
-      engine_dosio_cpp_FUN_00465e80(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
+      engine_dosio_cpp_makePath_FUN_00465e80(local_600,(char *)0x0,(char *)0x0,local_904,local_b04);
       iVar4 = _stricmp(search_key,local_600);
       if (iVar4 == 0) {
         return;
@@ -78,10 +78,10 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820(CSt
     pcVar2 = pcVar2 + ((uint)bVar8 * -2 + 1) * 4;
   }
   if (file_path != (char *)0x0) {
-    engine_dosio_cpp_FUN_00465e50(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
-    engine_dosio_cpp_FUN_00465e80(local_704,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
+    engine_dosio_cpp_splitPath_FUN_00465e50(file_path,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
+    engine_dosio_cpp_makePath_FUN_00465e80(local_704,(char *)0x0,(char *)0x0,local_1fc,local_4fc);
   }
-  engine_dosio_cpp_FUN_00465e50(search_key,(char *)0x0,(char *)0x0,local_2fc,&local_3fc);
+  engine_dosio_cpp_splitPath_FUN_00465e50(search_key,(char *)0x0,(char *)0x0,local_2fc,&local_3fc);
   if (local_3fc == '.') {
     uVar5 = 0xffffffff;
     pcVar2 = &local_3fc;
@@ -93,9 +93,8 @@ void __cdecl shape_edittool_cpp_CStrList_insertSortedFileRecord_FUN_00482820(CSt
     } while (cVar1 != '\0');
     memmove(&local_3fc,local_3fb,~uVar5 - 1);
   }
-  FUN_005a28c0
-            (local_fc,"%s\t%s\t%d\t%s\t%s",local_2fc,&local_3fc,file_size,local_34,local_704);
+  _sprintf(local_fc,"%s\t%s\t%d\t%s\t%s");
   strupr(local_fc);
-  (**(code **)(*(int *)&this_ptr->field_0xc + 0xc))(this_ptr,local_14,local_fc);
+  (*((this_ptr->vtable)._us)->insert)(this_ptr,local_14,local_fc);
   return;
 }

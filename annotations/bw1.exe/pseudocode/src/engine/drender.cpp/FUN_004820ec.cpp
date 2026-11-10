@@ -12,10 +12,12 @@ void engine_drender_cpp_FUN_004820ec(CDemonRenderer *param_1,int param_2)
 
 {
   int iVar1;
+  bool bVar2;
   
-  if ((*(int *)(param_1 + 0xc) == 0) ||
+  if ((param_1->plane_culling_enabled == 0) ||
      (iVar1 = engine_3d_c_isVisiblePlane_FUN_00403920(param_2 + 8), iVar1 != 0)) {
-    if (*(int *)(param_1 + 4) == 0) {
+    bVar2 = param_1->shadow_pass_active == 0;
+    if (bVar2) {
       _DAT_01c51d18 = 6;
       _DAT_01c4f02c = core_dstrendr_cpp_renderPerspectiveTexturedScanline_FUN_0048a7d9;
     }
@@ -23,7 +25,7 @@ void engine_drender_cpp_FUN_004820ec(CDemonRenderer *param_1,int param_2)
       _DAT_01c51d18 = 0;
       _DAT_01c4f02c = core_dstrendr_cpp_renderDepthOnlyStandard_FUN_00486e26;
     }
-    _DAT_01c51d14 = (uint)(*(int *)(param_1 + 4) == 0);
+    _DAT_01c51d14 = (uint)bVar2;
     engine_drender_cpp_CDemonRenderer_clipAndFillPoly_FUN_00481aa0
               (param_1,*(int *)(param_2 + 4),(int *)(param_2 + 0x18));
   }

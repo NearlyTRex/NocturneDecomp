@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_00498d30(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)
+; void core_fire_cpp_FUN_00498d30(float *param_1,float *param_2,float param_3,float param_4)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x50]:4  local_50
@@ -21,10 +21,10 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
-;   core_actor.cpp_FUN_0040d060
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_actor.cpp_randomChance_FUN_0040d060
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_0044fd20
-;   core_fire.cpp_FUN_0049d5b0
+;   core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0
 ;   core_set.cpp_CDemonSet_initCameraShake_FUN_00534800
 ;
 ; *****************************************************************************
@@ -62,8 +62,8 @@ section .text
         ;   XREF to: 00534800 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_00534800(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 00498d7c
     PUSH 0x3f000000                     ; 00498d7f
-    CALL core_actor.cpp_FUN_0040d060    ; 00498d84
-        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040d060(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040d060 ; 00498d84
+        ;   XREF to: 0040d060 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040d060(float probability_threshold)
     ADD ESP,0x4                         ; 00498d89
     MOV dword ptr [EBP + 0x18],EAX      ; 00498d8c
     MOV EAX,dword ptr [ESP + 0x60]      ; 00498d8f
@@ -72,16 +72,16 @@ section .text
     PUSH 0x3fc90fdb                     ; 00498d98
         ;   Label: LAB_00498d98
     PUSH 0x3f490fdb                     ; 00498d9d
-    CALL core_actor.cpp_FUN_0040cf60    ; 00498da2
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00498da2
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00498da7
     FLD float ptr [ESP + 0x44]          ; 00498dab
     ADD ESP,0x8                         ; 00498daf
     PUSH 0x40c90fdb                     ; 00498db2
     PUSH 0x0                            ; 00498db7
     FSTP float ptr [ESP + 0x38]         ; 00498db9
-    CALL core_actor.cpp_FUN_0040cf60    ; 00498dbd
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00498dbd
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x44],EAX      ; 00498dc2
     FLD float ptr [ESP + 0x44]          ; 00498dc6
     ADD ESP,0x8                         ; 00498dca
@@ -137,8 +137,8 @@ section .text
     MOV ECX,dword ptr [0x00614d30]      ; 00498e52 | DAT_00614d30
     PUSH ECX                            ; 00498e58
     INC EBX                             ; 00498e59
-    CALL core_fire.cpp_FUN_0049d5b0     ; 00498e5a
-        ;   XREF to: 0049d5b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049d5b0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
+    CALL core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0 ; 00498e5a
+        ;   XREF to: 0049d5b0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 00498e5f
     CMP EBX,0xa                         ; 00498e62
     JL 0x00498d98                       ; 00498e65

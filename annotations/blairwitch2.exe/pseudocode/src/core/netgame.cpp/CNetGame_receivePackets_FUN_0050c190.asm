@@ -9,11 +9,11 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[6]:
+;   core_netgame.cpp_CNetGame_disconnect_FUN_0050b8d0 at 0050bb41
 ;   core_netgame.cpp_CNetGame_processServerFrame_FUN_0050ecb0 at 0050ed81
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50 at 0050d3f2
 ;   core_netgame.cpp_CNetGame_syncPlayers_FUN_0050bdb0 at 0050bf47
 ;   core_netgame.cpp_FUN_0050b4d0 at 0050b698
-;   core_netgame.cpp_FUN_0050b8d0 at 0050bb41
 ;   core_netgame.cpp_FUN_0050f120 at 0050f172
 ;
 ; Referenced Globals:
@@ -22,11 +22,11 @@
 ;   undefined4 DAT_01d62e48
 ;
 ; Called Functions:
-;   core_netgame.cpp_FUN_0050c280
-;   core_netgame.cpp_FUN_0050db90
+;   core_netgame.cpp_CNetGame_processPacket_FUN_0050c280
+;   core_netgame.cpp_CNetGame_removeChatOut_FUN_0050db90
 ;   support_trisock.cpp_CSocket_isSocketValid_FUN_00579090
-;   support_trisock.cpp_FUN_00579240
-;   wincore_winrun.cpp_FUN_0058e9e0
+;   support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240
+;   wincore_winrun.cpp_getTime_FUN_0058e9e0
 ;
 ; *****************************************************************************
 
@@ -37,8 +37,8 @@ section .text
     PUSH ESI                            ; 0050c191
     SUB ESP,0x8                         ; 0050c192
     MOV ESI,dword ptr [ESP + 0x14]      ; 0050c195
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0050c199
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0050c199
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV EDX,EAX                         ; 0050c19e
     MOV EBX,0x12                        ; 0050c1a0
     SAR EDX,0x1f                        ; 0050c1a5
@@ -82,8 +82,8 @@ section .text
     PUSH 0x404                          ; 0050c1f2
     PUSH 0x1d62e4c                      ; 0050c1f7
     PUSH EBX                            ; 0050c1fc
-    CALL support_trisock.cpp_FUN_00579240 ; 0050c1fd
-        ;   XREF to: 00579240 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_FUN_00579240(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
+    CALL support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240 ; 0050c1fd
+        ;   XREF to: 00579240 (UNCONDITIONAL_CALL)  ; int support_trisock.cpp_CSocket_receiveSocketData_FUN_00579240(CSocket * this_ptr, char * buffer, int length, SNetworkAddr * source_addr)
     ADD ESP,0x10                        ; 0050c202
     TEST EAX,EAX                        ; 0050c205
     JLE 0x0050c224                      ; 0050c207
@@ -94,15 +94,15 @@ section .text
     LEA EAX,[ESP + 0x4]                 ; 0050c214
     PUSH EAX                            ; 0050c218
     PUSH ESI                            ; 0050c219
-    CALL core_netgame.cpp_FUN_0050c280  ; 0050c21a
-        ;   XREF to: 0050c280 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050c280(CNetGame * this_ptr, SNetworkAddr * source_addr, UNetPacket * packet)
+    CALL core_netgame.cpp_CNetGame_processPacket_FUN_0050c280 ; 0050c21a
+        ;   XREF to: 0050c280 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_processPacket_FUN_0050c280(CNetGame * this_ptr, SNetworkAddr * source_addr, UNetPacket * packet)
     ADD ESP,0xc                         ; 0050c21f
     JMP 0x0050c1d1                      ; 0050c222
         ;   XREF to: 0050c1d1 (UNCONDITIONAL_JUMP)  ; LAB_0050c1d1
     PUSH ESI                            ; 0050c224
         ;   Label: LAB_0050c224
-    CALL core_netgame.cpp_FUN_0050db90  ; 0050c225
-        ;   XREF to: 0050db90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_FUN_0050db90(CNetGame * this_ptr)
+    CALL core_netgame.cpp_CNetGame_removeChatOut_FUN_0050db90 ; 0050c225
+        ;   XREF to: 0050db90 (UNCONDITIONAL_CALL)  ; void core_netgame.cpp_CNetGame_removeChatOut_FUN_0050db90(CNetGame * this_ptr)
     ADD ESP,0x4                         ; 0050c22a
     ADD ESP,0x8                         ; 0050c22d
     POP ESI                             ; 0050c230

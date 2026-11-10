@@ -72,7 +72,7 @@ section .text
         ;   Label: LAB_005a5437
     PUSH EBX                            ; 005a5438
     CALL crt_unknown.c_FUN_005acb10     ; 005a5439
-        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005acb10()
+        ;   XREF to: 005acb10 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_FUN_005acb10(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 005a543e
     ADD ESP,0x4                         ; 005a5441
     POP EBP                             ; 005a5444

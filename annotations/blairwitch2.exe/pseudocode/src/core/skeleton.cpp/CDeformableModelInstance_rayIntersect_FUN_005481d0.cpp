@@ -16,7 +16,7 @@ float __cdecl core_skeleton_cpp_CDeformableModelInstance_rayIntersect_FUN_005481
   byte *puVar4;
   
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810(this_ptr);
-  lod_index = *(int *)pCVar1 + -2;
+  lod_index = pCVar1->num_lods + -2;
   if (lod_index < 0) {
     lod_index = 0;
   }

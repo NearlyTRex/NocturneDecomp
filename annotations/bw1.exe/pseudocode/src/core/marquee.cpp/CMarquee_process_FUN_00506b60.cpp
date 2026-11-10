@@ -12,22 +12,20 @@ void __cdecl core_marquee_cpp_CMarquee_process_FUN_00506b60(CMarquee *this_ptr,f
   float fVar1;
   float fVar2;
   
-  fVar1 = (float)*(int *)&this_ptr->field_0x1a4;
-  if (*(int *)&this_ptr->field_0x1a0 == 1) {
-    fVar2 = (delta_time * fVar1) / *(float *)&this_ptr->field_0x178 +
-            *(float *)&this_ptr->field_0x17c;
-    *(float *)&this_ptr->field_0x17c = fVar2;
+  fVar1 = (float)(this_ptr->course).len;
+  if (this_ptr->type == MARQUEE_DISPLAY_CURSIVE) {
+    fVar2 = (delta_time * fVar1) / this_ptr->total_time + this_ptr->param;
+    this_ptr->param = fVar2;
     if (fVar1 < fVar2) {
-      *(float *)&this_ptr->field_0x17c = *(float *)&this_ptr->field_0x17c - fVar1;
+      this_ptr->param = this_ptr->param - fVar1;
       return;
     }
   }
-  else if (*(int *)&this_ptr->field_0x1a0 == 0) {
-    fVar1 = delta_time / *(float *)&this_ptr->field_0x178 + *(float *)&this_ptr->field_0x17c;
-    *(float *)&this_ptr->field_0x17c = fVar1;
-    if ((float)*(int *)&this_ptr->field_0x180 < fVar1) {
-      *(float *)&this_ptr->field_0x17c =
-           *(float *)&this_ptr->field_0x17c - (float)*(int *)&this_ptr->field_0x180;
+  else if (this_ptr->type == MARQUEE_DISPLAY_RING) {
+    fVar1 = delta_time / this_ptr->total_time + this_ptr->param;
+    this_ptr->param = fVar1;
+    if ((float)this_ptr->phase < fVar1) {
+      this_ptr->param = this_ptr->param - (float)this_ptr->phase;
       return;
     }
   }

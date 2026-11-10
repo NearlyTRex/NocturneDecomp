@@ -7,8 +7,8 @@
 ; XREF[4]:
 ;   core_charactr.cpp_FUN_0042e8c0 at 0042ea9f
 ;   core_event.cpp_FUN_0048c2e0 at 0048e051
+;   core_sound.cpp_CSound_process_FUN_0055ff40 at 00560023
 ;   core_sound.cpp_FUN_0055f6ae at 0055fa48
-;   core_sound.cpp_FUN_0055ff40 at 00560023
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00552f10

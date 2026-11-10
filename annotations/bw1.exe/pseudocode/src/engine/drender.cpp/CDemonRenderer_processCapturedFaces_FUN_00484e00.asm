@@ -7,15 +7,15 @@
 ; CDemonRenderer * Stack[0x4]:4   this_ptr
 ;
 ; XREF[9]:
-;   core_baron.cpp_FUN_004101f0 at 0041037e
-;   core_batman.cpp_FUN_00413970 at 00413b0f
-;   core_boneguy.cpp_FUN_0041d000 at 0041d0ad
-;   core_dracbrid.cpp_FUN_0047cfe0 at 0047d18e
-;   core_inv.cpp_FUN_004f90d0 at 004f94ff
+;   core_baron.cpp_CBaron_renderTransparent_FUN_004101f0 at 0041037e
+;   core_batman.cpp_CBatman_renderOpaque_FUN_00413970 at 00413b0f
+;   core_boneguy.cpp_CBoneGuy_renderTransparent_FUN_0041d000 at 0041d0ad
+;   core_dracbrid.cpp_CDraculaBride_renderOpaque_FUN_0047cfe0 at 0047d18e
+;   core_inv.cpp_CInventory_renderItemModel_FUN_004f90d0 at 004f94ff
 ;   core_morph.cpp_CMorphModel_renderFaces_FUN_00522dd0 at 00522eaf
-;   core_shadow.cpp_FUN_0055fc60 at 0055fd60
-;   core_shadowsc.cpp_FUN_005611a0 at 0056128e
-;   core_vessel.cpp_FUN_005a9440 at 005a957a
+;   core_shadow.cpp_CShadow_renderTransparent_FUN_0055fc60 at 0055fd60
+;   core_shadowsc.cpp_CShadowsc_renderTransparent_FUN_005611a0 at 0056128e
+;   core_vessel.cpp_CCryptVessel_renderOpaque_FUN_005a9440 at 005a957a
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01bc1280

@@ -15,31 +15,19 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004ac770(CBulletHole *this_ptr
   byte bVar2;
   float afStackY_1028 [998];
   CVector3f *translation;
-  int local_7c;
-  int local_78;
-  int local_74;
-  int local_70;
-  int local_6c;
-  int local_68;
+  CVector3i local_7c;
+  CVector3i local_70;
   uint local_64;
   uint local_60;
   uint local_5c;
-  int local_58;
-  int local_54;
-  int local_50;
-  int local_4c;
-  int local_48;
-  int local_44;
+  CVector3i local_58;
+  CVector3i local_4c;
   float local_40;
   float local_3c [2];
-  int local_34;
-  int local_30;
-  int local_2c;
+  CVector3i local_34;
   float local_28;
   float afStack_24 [2];
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   bVar2 = 0;
   if (*(CDemonActor **)&this_ptr->field_0x10 == (CDemonActor *)0x0) {
@@ -63,38 +51,38 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004ac770(CBulletHole *this_ptr
   DAT_00629090 = iVar1 + 0x80000;
   local_64 = 0xbe2e147b;
   local_60 = 0xbe2e147b;
-  local_4c = (int)ROUND(_DAT_005fff94 * -0.17);
-  local_48 = (int)ROUND(_DAT_005fff94 * -0.17);
-  local_44 = (int)ROUND(_DAT_005fff94 * 0.0);
+  local_4c.x = (int)ROUND(_DAT_005fff94 * -0.17);
+  local_4c.y = (int)ROUND(_DAT_005fff94 * -0.17);
+  local_4c.z = (int)ROUND(_DAT_005fff94 * 0.0);
   _DAT_00629060 = _DAT_00629030;
   _DAT_0062908c = _DAT_0062905c;
   _DAT_006290bc = DAT_0062902c;
   _DAT_006290c0 = DAT_00629090;
-  engine_special_cpp_FUN_00580173(*(SProjectedVertex **)DAT_00612560,(CVector3i *)&local_4c);
+  engine_special_cpp_FUN_00580173((SProjectedVertex *)DAT_00612560->vertex_buffer_ptr,&local_4c);
   local_64 = 0x3e2e147b;
   local_60 = 0xbe2e147b;
   local_5c = 0;
-  local_7c = (int)ROUND(_DAT_005fff94 * 0.17);
-  local_78 = (int)ROUND(_DAT_005fff94 * -0.17);
-  local_74 = (int)ROUND(_DAT_005fff94 * 0.0);
+  local_7c.x = (int)ROUND(_DAT_005fff94 * 0.17);
+  local_7c.y = (int)ROUND(_DAT_005fff94 * -0.17);
+  local_7c.z = (int)ROUND(_DAT_005fff94 * 0.0);
   engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x30),(CVector3i *)&local_7c);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x30),&local_7c);
   local_64 = 0x3e2e147b;
   local_60 = 0x3e2e147b;
   local_5c = 0;
-  local_1c = (int)ROUND(_DAT_005fff94 * 0.17);
-  local_18 = (int)ROUND(_DAT_005fff94 * 0.17);
-  local_14 = (int)ROUND(_DAT_005fff94 * 0.0);
+  local_1c.x = (int)ROUND(_DAT_005fff94 * 0.17);
+  local_1c.y = (int)ROUND(_DAT_005fff94 * 0.17);
+  local_1c.z = (int)ROUND(_DAT_005fff94 * 0.0);
   engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x60),(CVector3i *)&local_1c);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x60),&local_1c);
   local_64 = 0xbe2e147b;
   local_60 = 0x3e2e147b;
   local_5c = 0;
-  local_34 = (int)ROUND(_DAT_005fff94 * -0.17);
-  local_30 = (int)ROUND(_DAT_005fff94 * 0.17);
-  local_2c = (int)ROUND(_DAT_005fff94 * 0.0);
+  local_34.x = (int)ROUND(_DAT_005fff94 * -0.17);
+  local_34.y = (int)ROUND(_DAT_005fff94 * 0.17);
+  local_34.z = (int)ROUND(_DAT_005fff94 * 0.0);
   engine_special_cpp_FUN_00580173
-            ((SProjectedVertex *)(*(int *)DAT_00612560 + 0x90),(CVector3i *)&local_34);
+            ((SProjectedVertex *)(DAT_00612560->vertex_buffer_ptr + 0x90),&local_34);
   if (*(int *)&this_ptr->field_0x10 == 0) {
     DAT_00629038 = 0xffff;
     DAT_0062903c = 0xffff;
@@ -115,14 +103,13 @@ void __cdecl core_fire_cpp_CBulletHole_render_FUN_004ac770(CBulletHole *this_ptr
     local_3c[(uint)bVar2 * -2] = afStack_24[(uint)bVar2 * -2];
     local_3c[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1] =
          afStack_24[(uint)bVar2 * -2 + (uint)bVar2 * -2 + 1];
-    local_70 = (int)ROUND(*(float *)this_ptr * _DAT_005fff94);
-    local_6c = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005fff94);
-    local_68 = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005fff94);
-    local_58 = (int)ROUND(local_40 * _DAT_005fff98);
-    local_54 = (int)ROUND(local_3c[0] * _DAT_005fff98);
-    local_50 = (int)ROUND(local_3c[1] * _DAT_005fff98);
-    core_set_cpp_CDemonSet_computeLighting_FUN_00552a70
-              (g_CDemonSetPtr,(CVector3i *)&local_70,(CVector3i *)&local_58,0,4);
+    local_70.x = (int)ROUND(*(float *)this_ptr * _DAT_005fff94);
+    local_70.y = (int)ROUND(*(float *)&this_ptr->field_0x4 * _DAT_005fff94);
+    local_70.z = (int)ROUND(*(float *)&this_ptr->field_0x8 * _DAT_005fff94);
+    local_58.x = (int)ROUND(local_40 * _DAT_005fff98);
+    local_58.y = (int)ROUND(local_3c[0] * _DAT_005fff98);
+    local_58.z = (int)ROUND(local_3c[1] * _DAT_005fff98);
+    core_set_cpp_CDemonSet_computeLighting_FUN_00552a70(g_CDemonSetPtr,&local_70,&local_58,0,4);
   }
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
             (DAT_00612560,(SMRGLHeaderPrimitive *)0x1c57090);

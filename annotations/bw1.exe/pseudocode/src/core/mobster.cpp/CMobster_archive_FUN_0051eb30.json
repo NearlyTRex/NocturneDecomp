@@ -2,17 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 102,
-    "complexity_score": 143,
+    "complexity_score": 31,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 12,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 28,
-    "suspect_count": 11,
-    "suspect_types": [
-      "unnamed_field"
-    ],
-    "total_lines": 130
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 31,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 133
   },
   "cross_references": [],
   "function": {
@@ -39,6 +37,11 @@
       "name": "core_actor.cpp_archiveClothList_FUN_0040bce0"
     },
     {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
       "addr": "0040b5f0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
@@ -49,19 +52,14 @@
       "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
     },
     {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
       "addr": "0040b440",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveString_FUN_0040b440"
-    },
-    {
-      "addr": "0040b7f0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b7f0"
-    },
-    {
-      "addr": "0040b870",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b870"
     },
     {
       "addr": "004a0520",
@@ -194,100 +192,11 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0xc1d0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1d0,\"?speed\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"modelName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0xc1e0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1e0,\"guardDistance\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&this_ptr->field_0x158,\"motion state\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x2ca0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveClothList_FUN_0040bce0(&this_ptr->field_0x2ca0,\"clothList\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0xc284",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc284,\"postMode\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc288",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0xc288,\"ourPost\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0xc28c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b6f0(&this_ptr->field_0xc28c,\"vehicle\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc290",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc290,\"sideOfCar\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc294",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc294,\"holdPosFlag\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0xc298",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0xc298,\"holdPosCond\");",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CMobster",
         "offset": 212,
         "vtable_addr": "00603d74"
       }

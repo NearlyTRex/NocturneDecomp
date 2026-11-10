@@ -11,14 +11,14 @@
 ;   shape_edittool.cpp_FUN_00480410 at 00480420
 ;
 ; Called Functions:
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 004803d0
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 004803d0
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
         ;   Label: shape_edittool.cpp_FUN_004803d0
     AND EAX,0x30000                     ; 004803d5
     CMP EAX,0x10000                     ; 004803da

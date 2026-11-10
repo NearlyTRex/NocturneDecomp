@@ -16,21 +16,21 @@ byte * core_script_cpp_FUN_00521ff0(CScript *param_1,int *param_2,int param_3)
   uint uStack_14;
   
   _DAT_01e650f8 = 1;
-  core_script_cpp_FUN_00522080(param_1);
-  shape_edittool_cpp_FUN_00483d10(&g_ScriptPickList);
-  if (*(int *)&param_1->field_0x44 < *(int *)&param_1->field_0x2c) {
+  core_script_cpp_CScript_initRuntime_FUN_00522080(param_1);
+  shape_edittool_cpp_CPickList_clear_FUN_00483d10(&g_ScriptPickList);
+  if (param_1->next_cmd < param_1->parsed_line_count) {
     do {
-      iVar2 = *(int *)&param_1->field_0x44;
+      iVar2 = param_1->next_cmd;
       uStack_14 = 0x3e800000;
       iVar1 = core_script_cpp_FUN_00522350(param_1,&uStack_14);
       if ((iVar1 < 0) &&
-         (iVar1 = *(int *)(*(int *)&param_1->field_0x30 + iVar2 * 8) + -1, *param_2 = iVar1,
+         (iVar1 = *(int *)(param_1->parsed_lines + iVar2 * 8) + -1, *param_2 = iVar1,
          param_3 <= iVar1)) {
         return &DAT_01e65100;
       }
       iVar2 = iVar2 + 1;
-      *(int *)&param_1->field_0x44 = iVar2;
-    } while (iVar2 < *(int *)&param_1->field_0x2c);
+      param_1->next_cmd = iVar2;
+    } while (iVar2 < param_1->parsed_line_count);
   }
   _DAT_01e650f8 = 0;
   return (byte *)0x0;

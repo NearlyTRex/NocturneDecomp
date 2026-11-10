@@ -14,14 +14,14 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00558ce0
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00558ce0
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
         ;   Label: sound_sndmain.cpp_stopRecordingDevice_FUN_00558ce0
     MOV EDX,dword ptr [0x02cf3c68]      ; 00558ce5 | DAT_02cf3c68
     TEST EDX,EDX                        ; 00558ceb

@@ -11,13 +11,15 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_unreadBits_FUN_00504e80(CMP3Decoder *this
 {
   uint uVar1;
   
-  uVar1 = *(int *)&this_ptr->field_0x531c + num_bits;
-  *(uint *)&this_ptr->field_0x531c = uVar1;
-  *(int *)&this_ptr->field_0x1314 = *(int *)&this_ptr->field_0x1314 - num_bits;
+  uVar1 = (this_ptr->memory_bitstream).bits_available + num_bits;
+  (this_ptr->memory_bitstream).bits_available = uVar1;
+  (this_ptr->memory_bitstream).total_bits_read =
+       (this_ptr->memory_bitstream).total_bits_read - num_bits;
   while (7 < uVar1) {
-    *(int *)&this_ptr->field_0x531c = *(int *)&this_ptr->field_0x531c + -8;
-    uVar1 = *(uint *)&this_ptr->field_0x531c;
-    *(int *)&this_ptr->field_0x1318 = *(int *)&this_ptr->field_0x1318 + -1;
+    (this_ptr->memory_bitstream).bits_available = (this_ptr->memory_bitstream).bits_available - 8;
+    uVar1 = (this_ptr->memory_bitstream).bits_available;
+    (this_ptr->memory_bitstream).current_dword_index =
+         (this_ptr->memory_bitstream).current_dword_index - 1;
   }
   return;
 }

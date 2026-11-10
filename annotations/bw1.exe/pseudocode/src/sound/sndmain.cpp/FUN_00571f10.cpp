@@ -13,9 +13,9 @@ void sound_sndmain_cpp_FUN_00571f10(CSfxSlot *param_1)
 {
   int iVar1;
   
-  if (*(int *)&param_1->field_0x60 != 0) {
+  if (param_1->hardware_buffer_handle != 0) {
     if (_DAT_02c80650 != (int *)0x0) {
-      if (*(int *)&param_1->field_0x68 == 0) {
+      if (param_1->sample == (CSfxSample *)0x0) {
         _DAT_01d1d400 = "..\\sound\\sndmain.cpp";
         _DAT_01d1d404 = 0xcf9;
         core_main_c_FUN_005030e0("SfxSlot::pollHwHandle - no sample?");
@@ -24,11 +24,9 @@ void sound_sndmain_cpp_FUN_00571f10(CSfxSlot *param_1)
       if (iVar1 != 0) {
         return;
       }
-      iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00572680
-                        (*(CSfxSample **)&param_1->field_0x68);
+      iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00572680(param_1->sample);
       if (iVar1 != 0) {
-        sound_sndmain_cpp_FUN_005773f0
-                  ("Killing looped sfx %s, which died??\n",*(uint *)&param_1->field_0x68);
+        sound_sndmain_cpp_FUN_005773f0("Killing looped sfx %s, which died??\n",param_1->sample);
       }
     }
     sound_sndmain_cpp_CSfxSlot_kill_FUN_00571d70(param_1);

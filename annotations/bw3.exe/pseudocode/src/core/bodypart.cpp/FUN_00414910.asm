@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[6]:
+;   core_bodypart.cpp_CBodyPart_archive_FUN_00414fd0 at 00415216
 ;   core_bodypart.cpp_CBodyPart_dtor_FUN_00414880 at 0041489b
-;   core_bodypart.cpp_FUN_00414fd0 at 00415216
-;   core_bodypart.cpp_FUN_00415350 at 004153ee
-;   core_bodypart.cpp_FUN_004157c0 at 004157f0
+;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_004157c0 at 004157f0
+;   core_bodypart.cpp_CBodyPart_process_FUN_00415350 at 004153ee
 ;   core_bodypart.cpp_FUN_00416970 at 0041699c
 ;   core_skeleton.cpp_CDeformableModel_dismember_FUN_0054a6a0 at 0054a8fe
 ;

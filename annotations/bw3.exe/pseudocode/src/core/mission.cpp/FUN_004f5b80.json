@@ -17,6 +17,12 @@
   },
   "cross_references": [
     {
+      "addr": "004f5b70",
+      "from_addr": "004f5b75",
+      "name": "core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004f5cc0",
       "from_addr": "004f5cd2",
       "name": "core_mission.cpp_CDemonMission_readMissionFile_FUN_004f5cc0",
@@ -26,12 +32,6 @@
       "addr": "004f72a0",
       "from_addr": "004f7349",
       "name": "core_mission.cpp_CDemonMission_run_FUN_004f72a0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004f5b70",
-      "from_addr": "004f5b75",
-      "name": "core_mission.cpp_FUN_004f5b70",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "addr": "004f6d70",
       "is_variadic": false,
-      "name": "core_mission.cpp_FUN_004f6d70"
+      "name": "core_mission.cpp_CDemonMission_removeAllActors_FUN_004f6d70"
     }
   ],
   "globals": [],
@@ -61,7 +61,7 @@
       {
         "call_addr": "004f5b75",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_004f5b70",
+        "caller": "core_mission.cpp_CDemonMission_clearMission_FUN_004f5b70",
         "estimated_params": 1,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -142,7 +142,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_mission_cpp_FUN_004f6d70(param_1);",
+      "text": "core_mission_cpp_CDemonMission_removeAllActors_FUN_004f6d70(param_1);",
       "type": "unnamed_param"
     },
     {

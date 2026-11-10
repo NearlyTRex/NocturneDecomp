@@ -2,11 +2,11 @@
 // Address: 00412ee0
 // Address Range: [[00412ee0, 004131ac]]
 // Convention: unknown
-// Signature: void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Signature: void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,undefined4 param_2,int param_3)
 
 #include "nocturne.h"
 
-void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)
+void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,uint param_2,int param_3)
 
 {
   char cVar1;
@@ -17,7 +17,6 @@ void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,int param_2,int param_3,ui
   char *pcVar6;
   char *pcVar7;
   byte bVar8;
-  float fVar9;
   char acStack_54c [256];
   char acStack_44c [256];
   char acStack_34c [256];
@@ -30,10 +29,10 @@ void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,int param_2,int param_3,ui
   int iStack_18;
   
   bVar8 = 0;
-  FUN_005a28c0(acStack_28,&DAT_005b67ca,param_4);
-  FUN_005a28c0(acStack_4c,&DAT_005b67cd,param_5);
-  FUN_005a28c0(acStack_40,&DAT_005b67d0,param_6);
-  FUN_005a28c0(acStack_34,"AR%d_",*(uint *)((int)param_1 + 0xc04));
+  _sprintf(acStack_28,&DAT_005b67ca);
+  _sprintf(acStack_4c,&DAT_005b67cd);
+  _sprintf(acStack_40,&DAT_005b67d0);
+  _sprintf(acStack_34,"AR%d_");
   pcVar5 = acStack_34;
   pcVar6 = acStack_24c;
   do {
@@ -130,11 +129,8 @@ void unkafter_bmppuzzl_cpp_FUN_00412ee0(void *param_1,int param_2,int param_3,ui
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   iStack_18 = param_3 - *(int *)((int)param_1 + 0xc18);
-  fVar9 = ABS((float)iStack_18);
-  FUN_005a28c0
-            (acStack_34c,&DAT_005b67de,ABS((double)(param_2 - *(int *)((int)param_1 + 0xc14))),fVar9
-            );
-  FUN_005a28c0(acStack_44c,&DAT_005b67e1,(double)fVar9);
+  _sprintf(acStack_34c,&DAT_005b67de);
+  _sprintf(acStack_44c,&DAT_005b67e1);
   pcVar6 = &DAT_005b67e4;
   pcVar5 = acStack_14c;
   do {

@@ -12,7 +12,7 @@ CMouse * __cdecl engine_ncursfx_cpp_CMouse_dtor_FUN_00508b50(CMouse *this_ptr,ui
   CAlphaBitmap *pCVar1;
   CMouse *pCVar2;
   
-  pCVar1 = engine_ncursfx_cpp_FUN_00508ec0((CAlphaBitmap *)&this_ptr->field_0x12c,0);
+  pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor15_FUN_00508ec0(this_ptr->skulls,0);
   pCVar1 = engine_ncursfx_cpp_CAlphaBitmap_arrdtor7_FUN_00508ea0(pCVar1 + -7,0);
   pCVar2 = (CMouse *)core_game_cpp_CAlphaBitmap_arrdtor8_FUN_004c4d60(pCVar1 + -8,0);
   return pCVar2;

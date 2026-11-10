@@ -11,12 +11,10 @@
 void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int expire_flag)
 
 {
-  uint uVar1;
-  float *pfVar2;
+  EBloodType EVar1;
+  CVector3f *pCVar2;
   SProjectedVertex *output;
-  int local_1c;
-  int local_18;
-  int local_14;
+  CVector3i local_1c;
   
   _DAT_01cd0e84 = 4;
   _DAT_01cd0e98 = 0;
@@ -32,24 +30,23 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int
   _DAT_00629060 = 0x80000;
   _DAT_006290bc = 0x80000;
   output = (SProjectedVertex *)&DAT_00629014;
-  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0
-            (DAT_00612560,*(int *)&this_ptr->field_0x38);
+  engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,this_ptr->alpha);
   _DAT_01cd0e88 = 0;
   _DAT_01cd0e8c = 0;
   _DAT_01cd0e90 = 0;
   _DAT_01cd0e94 = 0;
   engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00
             (DAT_00612560,(SMRGLTextureBasic *)&DAT_0061ee2c);
-  pfVar2 = (float *)&this_ptr->field_0x8;
+  pCVar2 = this_ptr->corners;
   do {
-    local_1c = (int)ROUND(*pfVar2 * _DAT_006016a8);
-    local_18 = (int)ROUND(pfVar2[1] * _DAT_006016a8);
-    local_14 = (int)ROUND(pfVar2[2] * _DAT_006016a8);
-    pfVar2 = pfVar2 + 3;
-    engine_special_cpp_FUN_0058043c(output,(CVector3i *)&local_1c);
+    local_1c.x = (int)ROUND(pCVar2->x * _DAT_006016a8);
+    local_1c.y = (int)ROUND(pCVar2->y * _DAT_006016a8);
+    local_1c.z = (int)ROUND(pCVar2->z * _DAT_006016a8);
+    pCVar2 = pCVar2 + 1;
+    engine_special_cpp_FUN_0058043c(output,&local_1c);
     output = output + 0x30;
-  } while (pfVar2 != (float *)&this_ptr->field_0x38);
-  if (*(int *)&this_ptr->field_0x3c == 0) {
+  } while (pCVar2 != (CVector3f *)&this_ptr->alpha);
+  if (this_ptr->is_bloody == 0) {
     DAT_00629038 = 0x7ff;
     DAT_0062903c = 0x7ff;
     DAT_00629064 = 0x7ff;
@@ -64,63 +61,63 @@ void __cdecl core_gore_cpp_CFootstep_render_FUN_004e5860(CFootstep *this_ptr,int
     DAT_00629034 = 0x7ff;
     goto LAB_004e5a35;
   }
-  uVar1 = *(uint *)&this_ptr->field_0x4;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004e598c:
     DAT_00629034 = 0x2000;
     DAT_00629038 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_00629038 = 0x7f80;
     DAT_00629034 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004e598c;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004e598c;
     DAT_00629038 = 0;
     DAT_00629034 = 0;
   }
   DAT_0062903c = 0;
-  uVar1 = *(uint *)&this_ptr->field_0x4;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004e59be:
     DAT_00629064 = 0x2000;
     DAT_00629068 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_00629068 = 0x7f80;
     DAT_00629064 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004e59be;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004e59be;
     DAT_00629068 = 0;
     DAT_00629064 = 0;
   }
   DAT_0062906c = 0;
-  uVar1 = *(uint *)&this_ptr->field_0x4;
-  if (uVar1 == 0) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 == BLOOD_TYPE_RED) {
 LAB_004e59f0:
     DAT_00629094 = 0x2000;
     DAT_00629098 = 0;
   }
-  else if (uVar1 < 2) {
+  else if (EVar1 < BLOOD_TYPE_NONE) {
     DAT_00629098 = 0x7f80;
     DAT_00629094 = 0;
   }
   else {
-    if (uVar1 != 2) goto LAB_004e59f0;
+    if (EVar1 != BLOOD_TYPE_NONE) goto LAB_004e59f0;
     DAT_00629098 = 0;
     DAT_00629094 = 0;
   }
   DAT_0062909c = 0;
-  uVar1 = *(uint *)&this_ptr->field_0x4;
-  if (uVar1 != 0) {
-    if (uVar1 < 2) {
+  EVar1 = this_ptr->blood_type;
+  if (EVar1 != BLOOD_TYPE_RED) {
+    if (EVar1 < BLOOD_TYPE_NONE) {
       DAT_006290c8 = 0x7f80;
       DAT_006290cc = 0;
       DAT_006290c4 = 0;
       goto LAB_004e5a35;
     }
-    if (uVar1 == 2) {
+    if (EVar1 == BLOOD_TYPE_NONE) {
       DAT_006290c8 = 0;
       DAT_006290cc = 0;
       DAT_006290c4 = 0;
@@ -134,7 +131,7 @@ LAB_004e5a35:
   engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_00483050
             (DAT_00612560,(SMRGLHeaderPrimitive *)0x1cd0e80);
   if (expire_flag != 0) {
-    *(uint *)this_ptr = 1;
+    this_ptr->expired = 1;
     return;
   }
   return;

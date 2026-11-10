@@ -8,13 +8,13 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; XREF[8]:
-;   core_game.cpp_FUN_004b7f90 at 004b8b3c
+;   core_game.cpp_CGame_runGameSession_FUN_004b7f90 at 004b8b3c
 ;   core_menu.cpp_FUN_004e94f0 at 004e9d58
 ;   core_menu.cpp_FUN_004eae80 at 004ebe0c
 ;   core_mission.cpp_FUN_004f7a20 at 004f7b88
-;   core_sound.cpp_FUN_00560c90 at 00560cfd
+;   core_sound.cpp_CSound_selectReverbPreset_FUN_00560c90 at 00560cfd
 ;   engine_pod.cpp_FUN_00513d1e at 00513f56
-;   shape_edittool.cpp_FUN_0047db70 at 0047dcc2
+;   shape_edittool.cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70 at 0047dcc2
 ;   shape_edittool.cpp_FUN_0047dd1e at 0047e00e
 ;
 ; Referenced Globals:
@@ -27,8 +27,8 @@
 ;   crt_unknown.c_FUN_005a30c4
 ;   shape_edittool.cpp_CEdButton_dtor_FUN_00486050
 ;   shape_edittool.cpp_CEdScrollBar_dtor_FUN_00485550
+;   shape_edittool.cpp_CPickList_clear_FUN_00484f10
 ;   shape_edittool.cpp_CStrList_dtor_FUN_00481f40
-;   shape_edittool.cpp_FUN_00484f10
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
         ;   XREF to: 0048331b (CONDITIONAL_JUMP)  ; LAB_0048331b
     PUSH EBX                            ; 004832bc
     MOV dword ptr [EBX + 0xc],0x5df044  ; 004832bd | g_CPickListVTable
-    CALL shape_edittool.cpp_FUN_00484f10 ; 004832c4
-        ;   XREF to: 00484f10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00484f10(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00484f10 ; 004832c4
+        ;   XREF to: 00484f10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00484f10(CPickList * this_ptr)
     ADD ESP,0x4                         ; 004832c9
     PUSH 0x0                            ; 004832cc
     ADD EBX,0x2d8                       ; 004832ce

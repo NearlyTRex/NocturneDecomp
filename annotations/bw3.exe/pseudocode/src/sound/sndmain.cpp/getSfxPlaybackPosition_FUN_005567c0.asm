@@ -15,7 +15,7 @@
 ; XREF[3]:
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00495280 at 004952c3
 ;   core_game.cpp_FUN_004c4cc0 at 004c4cda
-;   core_tommygun.cpp_FUN_0056bd40 at 0056be1f
+;   core_tommygun.cpp_CTommyGun_process_FUN_0056bd40 at 0056be1f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02cf3280

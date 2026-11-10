@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[3]:
-;   core_game.cpp_FUN_004cf5e0 at 004cf87f
-;   core_mission.cpp_FUN_0051b8d0 at 0051ba2d
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0 at 004cf87f
+;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051ba2d
 ;   core_set.cpp_FUN_0054e69e at 0054e96c
 ;
 ; Referenced Globals:
@@ -40,10 +40,10 @@
 ;   core_dlight.cpp_CDemonLight_clearCircularShadowMapEdges_FUN_00463360
 ;   core_dlight.cpp_CDemonLight_endScene_FUN_00462ad0
 ;   core_dlight.cpp_resetRestoreMemoryAllocator_FUN_00462760
-;   core_level.cpp_FUN_004fe9c0
+;   core_level.cpp_CLevelLoader_update_FUN_004fe9c0
 ;   core_main.c_FUN_005030e0
 ;   core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0054e3c0
-;   core_setdir.cpp_FUN_0055bf10
+;   core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10
 ;   core_setdir.cpp_FUN_0055c060
 ;   core_setutil.cpp_C3DSLight_apply_FUN_0055d0e0
 ;   core_setutil.cpp_C3DSLight_create_FUN_0055cf80
@@ -68,8 +68,8 @@ section .text
     PUSH EAX                            ; 0054ec7a
     MOV EDX,dword ptr [0x0061f2e0]      ; 0054ec7b | DAT_0061f2e0
     PUSH EDX                            ; 0054ec81
-    CALL core_level.cpp_FUN_004fe9c0    ; 0054ec82
-        ;   XREF to: 004fe9c0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_FUN_004fe9c0(CLevelLoader * this_ptr, char * text, int clear_screen)
+    CALL core_level.cpp_CLevelLoader_update_FUN_004fe9c0 ; 0054ec82
+        ;   XREF to: 004fe9c0 (UNCONDITIONAL_CALL)  ; void core_level.cpp_CLevelLoader_update_FUN_004fe9c0(CLevelLoader * this_ptr, char * text, int clear_screen)
     ADD ESP,0xc                         ; 0054ec87
     CALL core_dlight.cpp_resetRestoreMemoryAllocator_FUN_00462760 ; 0054ec8a
         ;   XREF to: 00462760 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_resetRestoreMemoryAllocator_FUN_00462760()
@@ -212,8 +212,8 @@ section .text
     MOV dword ptr [0x01fe55d0],ECX      ; 0054ee25 | DAT_01fe55d0
     MOV dword ptr [0x01fe5764],ECX      ; 0054ee2b | DAT_01fe5764
     MOV dword ptr [EBX + 0x15aec0],ECX  ; 0054ee31
-    CALL core_setdir.cpp_FUN_0055bf10   ; 0054ee37
-        ;   XREF to: 0055bf10 (UNCONDITIONAL_CALL)  ; undefined core_setdir.cpp_FUN_0055bf10()
+    CALL core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10 ; 0054ee37
+        ;   XREF to: 0055bf10 (UNCONDITIONAL_CALL)  ; int core_setdir.cpp_CDemonSet_buildVdirBoxGroups_FUN_0055bf10(CDemonSet * this_ptr)
     MOV EAX,dword ptr [EBX]             ; 0054ee3c
     ADD ESP,0x4                         ; 0054ee3e
     TEST EAX,EAX                        ; 0054ee41

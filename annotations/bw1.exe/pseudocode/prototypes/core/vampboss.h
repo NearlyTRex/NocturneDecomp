@@ -21,69 +21,69 @@ CDemonActorType * CVampireBoss::getActorType(CVampireBoss *this_ptr);
 // Address: 005a5170
 CVampireBoss * __cdecl CVampireBoss::ctor(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a52a0
+// Original: core_vampboss.cpp_CVampireBoss_setup_FUN_005a52a0
 // Address: 005a52a0
-void FUN_005a52a0(CEnemy *param_1);
+void __cdecl CVampireBoss::setup(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a5550
+// Original: core_vampboss.cpp_CVampireBoss_process_FUN_005a5550
 // Address: 005a5550
-void FUN_005a5550(CVampireBoss *param_1,float param_2);
+void __cdecl CVampireBoss::process(CVampireBoss *this_ptr,float delta_time);
 
-// Original: core_vampboss.cpp_FUN_005a68d0
+// Original: core_vampboss.cpp_CVampireBoss_getCarryObjToBodyXForm_FUN_005a68d0
 // Address: 005a68d0
-void FUN_005a68d0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CVampireBoss::getCarryObjToBodyXForm(CVampireBoss *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_vampboss.cpp_FUN_005a6a00
+// Original: core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_005a6a00
 // Address: 005a6a00
-void __cdecl FUN_005a6a00(CVampireBoss *this_ptr,float delta_time);
+void __cdecl CVampireBoss::advanceAnimation(CVampireBoss *this_ptr,float delta_time);
 
-// Original: core_vampboss.cpp_FUN_005a6b00
+// Original: core_vampboss.cpp_CVampireBoss_renderOpaque_FUN_005a6b00
 // Address: 005a6b00
-int FUN_005a6b00(CCharacter *param_1);
+int __cdecl CVampireBoss::renderOpaque(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a6cc0
+// Original: core_vampboss.cpp_CVampireBoss_archive_FUN_005a6cc0
 // Address: 005a6cc0
-void FUN_005a6cc0(CEnemy *param_1);
+void __cdecl CVampireBoss::archive(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a6da0
+// Original: core_vampboss.cpp_CVampireBoss_processDamage_FUN_005a6da0
 // Address: 005a6da0
-void FUN_005a6da0(void *param_1,int param_2);
+void __cdecl CVampireBoss::processDamage(CVampireBoss *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_vampboss.cpp_FUN_005a7010
+// Original: core_vampboss.cpp_CVampireBoss_getDeathState_FUN_005a7010
 // Address: 005a7010
-undefined4 FUN_005a7010(void);
+EDeathState __cdecl CVampireBoss::getDeathState(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a7020
+// Original: core_vampboss.cpp_CVampireBoss_getTargetPoints_FUN_005a7020
 // Address: 005a7020
-undefined4 FUN_005a7020(int param_1,float *param_2);
+int __cdecl CVampireBoss::getTargetPoints(CVampireBoss *this_ptr,CVector3f *out_points_array);
 
-// Original: core_vampboss.cpp_FUN_005a70f0
+// Original: core_vampboss.cpp_CVampireBoss_summonBats_FUN_005a70f0
 // Address: 005a70f0
-void __cdecl FUN_005a70f0(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonBats(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a7160
+// Original: core_vampboss.cpp_CVampireBoss_summonStalagmites_FUN_005a7160
 // Address: 005a7160
-void __cdecl FUN_005a7160(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonStalagmites(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a71e0
+// Original: core_vampboss.cpp_CVampireBoss_summonFireEmitters_FUN_005a71e0
 // Address: 005a71e0
-void __cdecl FUN_005a71e0(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::summonFireEmitters(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a7250
+// Original: core_vampboss.cpp_CVampireBoss_transformToBat_FUN_005a7250
 // Address: 005a7250
-void __cdecl FUN_005a7250(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::transformToBat(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a7290
+// Original: core_vampboss.cpp_CVampireBoss_transformToHuman_FUN_005a7290
 // Address: 005a7290
-void __cdecl FUN_005a7290(CVampireBoss *this_ptr);
+void __cdecl CVampireBoss::transformToHuman(CVampireBoss *this_ptr);
 
 // Original: core_vampboss.cpp_CVampireBoss_chooseDestWayPoint_FUN_005a72e0
 // Address: 005a72e0
 void __cdecl CVampireBoss::chooseDestWayPoint(CVampireBoss *this_ptr);
 
-// Original: core_vampboss.cpp_FUN_005a73c0
+// Original: core_vampboss.cpp_CVampireBoss_getCollisionType_FUN_005a73c0
 // Address: 005a73c0
-ECollisionType FUN_005a73c0(CCharacter *param_1,SCollisionInfo *param_2);
+ECollisionType __cdecl CVampireBoss::getCollisionType(CVampireBoss *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_vampboss.cpp_CVampireBoss_dtor_FUN_005a7420
 // Address: 005a7420

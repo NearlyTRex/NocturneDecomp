@@ -23,7 +23,7 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_gabriela.cpp_FUN_004ad640 at 004add66
+;   core_gabriela.cpp_CGabriella_process_FUN_004ad640 at 004add66
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d7033

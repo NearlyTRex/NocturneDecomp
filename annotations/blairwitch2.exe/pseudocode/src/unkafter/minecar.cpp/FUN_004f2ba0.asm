@@ -7,7 +7,7 @@
 ; CEdCheck *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   shape_edittool.cpp_FUN_0047e2b0 at 0047e650
+;   shape_edittool.cpp_CEditorTools_createModalWindow_FUN_0047e2b0 at 0047e650
 ;   shape_edittool.cpp_FUN_0047e870 at 0047e919
 ;
 ; Referenced Globals:

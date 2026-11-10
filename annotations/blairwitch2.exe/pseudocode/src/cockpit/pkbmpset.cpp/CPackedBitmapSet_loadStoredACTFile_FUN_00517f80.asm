@@ -11,7 +11,7 @@
 ;   cockpit_pkbmpset.cpp_FUN_00517a60 at 00517c1f
 ;
 ; Called Functions:
-;   cockpit_pkbmpset.cpp_FUN_00517e40
+;   cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40
 ;
 ; *****************************************************************************
 
@@ -22,8 +22,8 @@ section .text
     LEA EAX,[EDX + 0x8]                 ; 00517f84
     PUSH EAX                            ; 00517f87
     PUSH EDX                            ; 00517f88
-    CALL cockpit_pkbmpset.cpp_FUN_00517e40 ; 00517f89
-        ;   XREF to: 00517e40 (UNCONDITIONAL_CALL)  ; undefined cockpit_pkbmpset.cpp_FUN_00517e40()
+    CALL cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40 ; 00517f89
+        ;   XREF to: 00517e40 (UNCONDITIONAL_CALL)  ; void cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40(CPackedBitmapSet * this_ptr, char * act_filename)
     ADD ESP,0x8                         ; 00517f8e
     RET                                 ; 00517f91
 

@@ -9,5 +9,5 @@
 ECollisionType __cdecl core_filmreel_cpp_CFilmReel_getCollisionType_FUN_004ab530(CFilmReel *this_ptr,SCollisionInfo *collision_info)
 
 {
-  return (uint)(*(int *)&this_ptr->field_0x2d4 == 0);
+  return (uint)(this_ptr->carrier == (CDemonActor *)0x0);
 }

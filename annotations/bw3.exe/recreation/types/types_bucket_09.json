@@ -11,9 +11,57 @@
   },
   {
     "kind":"class",
+    "name":"CBoneGuy_vtable",
+    "size":4,
+    "vtable_slots":[
+      {
+        "name":"reset",
+        "offset":0
+      }
+    ]
+  },
+  {
+    "kind":"class",
     "name":"CBoundingBox3D",
     "rtti_file":"core/setcolid.cpp",
     "size":24
+  },
+  {
+    "kind":"funcdef",
+    "name":"CCharacter_dropCarriedObject",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CCharacter",
+          "ptr":1
+        }
+      },
+      {
+        "name":"hand_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"drop_direction",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
   },
   {
     "kind":"funcdef",
@@ -27,6 +75,78 @@
     "variadic":false
   },
   {
+    "kind":"funcdef",
+    "name":"CDemonActor_dtor",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"flags",
+        "type":{
+          "kind":"builtin",
+          "name":"uint",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CDemonActor",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CDemonActor_testCylinderCollision",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CDemonActor",
+          "ptr":1
+        }
+      },
+      {
+        "name":"collision_info",
+        "type":{
+          "kind":"struct",
+          "name":"SCollisionReturnInfo",
+          "ptr":1
+        }
+      },
+      {
+        "name":"tolerance",
+        "type":{
+          "kind":"builtin",
+          "name":"float",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"int",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CDemonImage",
+    "rtti_file":"core/dimage.cpp",
+    "size":1
+  },
+  {
     "kind":"class",
     "name":"CDirectSoundDevice",
     "rtti_file":"sound/snddx.cpp",
@@ -35,7 +155,7 @@
   {
     "kind":"class",
     "name":"CFileBitStream",
-    "size":1
+    "size":44
   },
   {
     "kind":"class",
@@ -76,9 +196,19 @@
   },
   {
     "kind":"class",
+    "name":"CMotionController_vtable",
+    "size":1
+  },
+  {
+    "kind":"class",
     "name":"CPackedBitmap",
     "rtti_file":"cockpit/pkbitmap.cpp",
     "size":36
+  },
+  {
+    "kind":"class",
+    "name":"CPodDirectoryEntry",
+    "size":1
   },
   {
     "kind":"class",
@@ -102,6 +232,85 @@
   },
   {
     "kind":"class",
+    "name":"CSoundDevice",
+    "size":4
+  },
+  {
+    "kind":"funcdef",
+    "name":"CStrList_remove",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"start_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"end_index",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"funcdef",
+    "name":"CStrList_sort",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CStrList",
+          "ptr":1
+        }
+      },
+      {
+        "name":"sort_type",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      },
+      {
+        "name":"sort_order",
+        "type":{
+          "kind":"builtin",
+          "name":"int",
+          "ptr":0
+        }
+      }
+    ],
+    "ret":{
+      "kind":"builtin",
+      "name":"void",
+      "ptr":0
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
     "name":"CSuccubus",
     "parent":"CEnemy",
     "rtti_file":"core/succubus.cpp",
@@ -122,9 +331,100 @@
     "size":1428
   },
   {
+    "kind":"funcdef",
+    "name":"CWeapon_getMuzzlePoint",
+    "params":[
+      {
+        "name":"this_ptr",
+        "type":{
+          "kind":"class",
+          "name":"CWeapon",
+          "ptr":1
+        }
+      },
+      {
+        "name":"out_point",
+        "type":{
+          "kind":"class",
+          "name":"CVector3f",
+          "ptr":1
+        }
+      }
+    ],
+    "ret":{
+      "kind":"class",
+      "name":"CVector3f",
+      "ptr":1
+    },
+    "size":-1,
+    "variadic":false
+  },
+  {
+    "kind":"class",
+    "name":"CWeapon_vtable",
+    "size":36,
+    "vtable_slots":[
+      {
+        "name":"onFired",
+        "offset":0
+      },
+      {
+        "name":"setWeaponState",
+        "offset":4
+      },
+      {
+        "name":"getMuzzlePoint",
+        "offset":8
+      },
+      {
+        "name":"fire",
+        "offset":12
+      },
+      {
+        "name":"isReadyToFire",
+        "offset":16
+      },
+      {
+        "name":"getDamage",
+        "offset":20
+      },
+      {
+        "name":"renderAimBeam",
+        "offset":24
+      },
+      {
+        "name":"updateLighting",
+        "offset":28
+      },
+      {
+        "name":"vfunc62",
+        "offset":32
+      }
+    ]
+  },
+  {
     "kind":"class",
     "name":"CZombieCemetery",
     "size":53580
+  },
+  {
+    "kind":"enum",
+    "name":"EConnectionType",
+    "size":4,
+    "values":[
+      {
+        "name":"CONNECTION_NONE",
+        "value":0
+      },
+      {
+        "name":"CONNECTION_HOST",
+        "value":1
+      },
+      {
+        "name":"CONNECTION_CLIENT",
+        "value":2
+      }
+    ]
   },
   {
     "kind":"struct",
@@ -134,6 +434,11 @@
   {
     "kind":"struct",
     "name":"SMRGLAnimatedTexture",
+    "size":1
+  },
+  {
+    "kind":"struct",
+    "name":"SMRGLModelBounds",
     "size":1
   },
   {

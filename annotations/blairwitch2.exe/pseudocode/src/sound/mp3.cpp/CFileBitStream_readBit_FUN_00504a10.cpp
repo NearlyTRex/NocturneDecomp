@@ -12,46 +12,45 @@ uint __cdecl sound_mp3_cpp_CFileBitStream_readBit_FUN_00504a10(CFileBitStream *t
   byte bVar1;
   uint uVar2;
   int iVar3;
-  int iVar4;
+  char *pcVar4;
+  int iVar5;
   
-  *(int *)(this_ptr + 0xc) = *(int *)(this_ptr + 0xc) + 1;
-  if (*(int *)(this_ptr + 0x14) == 0) {
-    *(uint *)(this_ptr + 0x14) = 8;
-    iVar4 = *(int *)(this_ptr + 0x10) + -1;
-    *(int *)(this_ptr + 0x10) = iVar4;
-    if ((iVar4 < 4) || (iVar4 < *(int *)(this_ptr + 0x18))) {
-      if (*(int *)(this_ptr + 0x18) == 0) {
-        for (iVar4 = *(int *)(this_ptr + 0x10); -1 < iVar4; iVar4 = iVar4 + -1) {
-          *(byte *)
-           (*(int *)(this_ptr + 4) +
-           ((*(int *)(this_ptr + 8) + -1) - *(int *)(this_ptr + 0x10)) + iVar4) =
-               *(byte *)(*(int *)(this_ptr + 4) + iVar4);
+  this_ptr->total_bits_read = this_ptr->total_bits_read + 1;
+  if (this_ptr->bits_available == 0) {
+    this_ptr->bits_available = 8;
+    iVar5 = this_ptr->current_byte_index + -1;
+    this_ptr->current_byte_index = iVar5;
+    if ((iVar5 < 4) || (iVar5 < this_ptr->end_of_stream_flag)) {
+      if (this_ptr->end_of_stream_flag == 0) {
+        for (iVar5 = this_ptr->current_byte_index; -1 < iVar5; iVar5 = iVar5 + -1) {
+          this_ptr->buffer[((this_ptr->buffer_size + -1) - this_ptr->current_byte_index) + iVar5] =
+               this_ptr->buffer[iVar5];
         }
-        iVar4 = (*(int *)(this_ptr + 8) + -2) - *(int *)(this_ptr + 0x10);
-        while ((-1 < iVar4 && (*(int *)(this_ptr + 0x18) == 0))) {
+        iVar5 = (this_ptr->buffer_size + -2) - this_ptr->current_byte_index;
+        while ((-1 < iVar5 && (this_ptr->end_of_stream_flag == 0))) {
           iVar3 = 0;
-          if (0 < *(int *)(this_ptr + 0x28)) {
-            iVar3 = *(int *)(this_ptr + 4) + iVar4;
-            iVar4 = iVar4 + -1;
-            iVar3 = _fread(iVar3,1,1,*(uint *)this_ptr);
+          if (0 < this_ptr->bytes_remaining) {
+            pcVar4 = this_ptr->buffer + iVar5;
+            iVar5 = iVar5 + -1;
+            iVar3 = _fread(pcVar4,1,1,this_ptr->file_handle);
           }
           if (iVar3 == 1) {
-            *(int *)(this_ptr + 0x28) = *(int *)(this_ptr + 0x28) + -1;
+            this_ptr->bytes_remaining = this_ptr->bytes_remaining + -1;
           }
           else {
-            *(int *)(this_ptr + 0x18) = iVar4 + 1;
+            this_ptr->end_of_stream_flag = iVar5 + 1;
           }
         }
-        *(int *)(this_ptr + 0x10) = *(int *)(this_ptr + 8) + -1;
+        this_ptr->current_byte_index = this_ptr->buffer_size + -1;
       }
       else {
-        *(uint *)(this_ptr + 0x1c) = 1;
+        this_ptr->error_flag = 1;
       }
     }
   }
-  iVar4 = *(int *)(this_ptr + 0x14) + -1;
-  bVar1 = *(byte *)(*(int *)(this_ptr + 4) + *(int *)(this_ptr + 0x10));
-  uVar2 = *(uint *)(&DAT_00619230 + iVar4 * 4);
-  *(int *)(this_ptr + 0x14) = iVar4;
-  return (uVar2 & bVar1) >> ((byte)iVar4 & 0x1f);
+  iVar5 = this_ptr->bits_available + -1;
+  bVar1 = this_ptr->buffer[this_ptr->current_byte_index];
+  uVar2 = *(uint *)(&DAT_00619230 + iVar5 * 4);
+  this_ptr->bits_available = iVar5;
+  return (uVar2 & bVar1) >> ((byte)iVar5 & 0x1f);
 }

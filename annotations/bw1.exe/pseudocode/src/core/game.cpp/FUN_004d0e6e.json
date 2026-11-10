@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 209,
+    "complexity_score": 194,
     "cross_reference_count": 0,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 19,
-    "suspect_count": 18,
+    "suspect_count": 17,
     "suspect_types": [
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 66
@@ -120,7 +119,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 = (*(float *)&g_CGamePtr->field_0x294 * param_3) / param_2;",
+      "text": "param_2 = (g_CGamePtr->delta_time_float * param_3) / param_2;",
       "type": "unnamed_param"
     },
     {
@@ -128,7 +127,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "param_2 = (*(float *)&g_CGamePtr->field_0x294 * param_3) / param_2;",
+      "text": "param_2 = (g_CGamePtr->delta_time_float * param_3) / param_2;",
       "type": "unnamed_param"
     },
     {
@@ -136,16 +135,8 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "param_2 = (*(float *)&g_CGamePtr->field_0x294 * param_3) / param_2;",
+      "text": "param_2 = (g_CGamePtr->delta_time_float * param_3) / param_2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x294",
-      "severity": "mild",
-      "text": "param_2 = (*(float *)&g_CGamePtr->field_0x294 * param_3) / param_2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",

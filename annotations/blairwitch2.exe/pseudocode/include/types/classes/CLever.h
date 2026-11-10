@@ -4,13 +4,32 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/enums/ELeverOpenSides.h"
+#include "types/enums/ELeverType.h"
 
 // Structure: CLever
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x970 (2416 bytes)
 #pragma pack(push, 1)
 typedef struct CLever {
-    char field_0[2416]; // 0x0
+    CDemonActor base; // 0x0
+    char field_344[348]; // 0x158
+    CKeyFramedModelInstance model; // 0x2b4
+    int dead; // 0x430
+    ELeverType lever_type; // 0x434
+    float param; // 0x438
+    char on_event[100]; // 0x43c
+    char off_event[100]; // 0x4a0
+    char sound[100]; // 0x504
+    int momentary_flag; // 0x568
+    struct CLever* linked_lever; // 0x56c
+    int end_vertex_index; // 0x570
+    int moving; // 0x574
+    float move_to_pct; // 0x578
+    char field_1404[1004]; // 0x57c
+    ELeverOpenSides allowed_sides; // 0x968
+    int enable_collision; // 0x96c
 } CLever;
 #pragma pack(pop)
 

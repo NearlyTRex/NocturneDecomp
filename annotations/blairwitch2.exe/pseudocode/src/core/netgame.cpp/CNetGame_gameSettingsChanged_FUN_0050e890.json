@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 83,
-    "complexity_score": 135,
+    "complexity_score": 105,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 7,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 8,
+    "suspect_count": 5,
     "suspect_types": [
       "shadow_pointer_walk",
       "unnamed_field",
@@ -18,15 +18,15 @@
   },
   "cross_references": [
     {
-      "addr": "0050cf50",
-      "from_addr": "0050d267",
-      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
+      "addr": "0050c280",
+      "from_addr": "0050c36c",
+      "name": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050c280",
-      "from_addr": "0050c36c",
-      "name": "core_netgame.cpp_FUN_0050c280",
+      "addr": "0050cf50",
+      "from_addr": "0050d267",
+      "name": "core_netgame.cpp_CNetGame_runLobby_FUN_0050cf50",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -51,7 +51,7 @@
     {
       "addr": "0058e9e0",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_0058e9e0"
+      "name": "wincore_winrun.cpp_getTime_FUN_0058e9e0"
     }
   ],
   "globals": [
@@ -104,7 +104,7 @@
       {
         "call_addr": "0050c36c",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050c280",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -115,7 +115,7 @@
       {
         "call_addr": "0050c9ae",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050c280",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -126,7 +126,7 @@
       {
         "call_addr": "0050cadc",
         "call_type": "direct",
-        "caller": "core_netgame.cpp_FUN_0050c280",
+        "caller": "core_netgame.cpp_CNetGame_processPacket_FUN_0050c280",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -226,58 +226,34 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x1c) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "if (iVar3 == *(int *)&this_ptr->field_0x124) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 33,
-      "match": "field_0x54",
+      "match": "field_0x34",
       "severity": "mild",
-      "text": "*(int *)&pCVar4->field_0x54 = _DAT_01d34e44;",
+      "text": "*(int *)&pCVar4->players[0].field_0x34 = _DAT_01d34e44;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 36,
-      "match": "field_0x58",
+      "match": "field_0x38",
       "severity": "mild",
-      "text": "*(int *)&pCVar4->field_0x58 = _DAT_01d34e38 + iVar2 + -0x1e0000;",
+      "text": "*(int *)&pCVar4->players[0].field_0x38 = _DAT_01d34e38 + iVar2 + -0x1e0000;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 39,
-      "match": "field_0x80",
+      "match": "field_0x60",
       "severity": "mild",
-      "text": "pCVar4 = (CNetGame *)&pCVar4->field_0x80;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;",
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar4->owner`). Replace `pCVar4->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar4` self-updates via the address of an array-indexed sibling field whose byte offset equals the per-iteration stride (e.g. `&pCVar4->vertices[0].a`). Replace `pCVar4->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 39,
-      "match": "pCVar4 = (T *)&pCVar4->FIELD",
+      "match": "pCVar4 = (T *)&pCVar4->FIELD[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CNetGame *)&pCVar4->field_0x80;",
+      "text": "pCVar4 = (CNetGame *)&pCVar4->players[0].field_0x60;",
       "type": "shadow_pointer_walk"
     }
   ]

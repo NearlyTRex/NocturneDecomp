@@ -16,15 +16,15 @@ CLightStaff * core_lightsta_cpp_CLightStaff_ctor_FUN_004e0f70(CLightStaff *this_
   CLightStaff *pCVar2;
   
   pCVar2 = (CLightStaff *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  *(byte **)&pCVar2->field_0x154 = &g_CLightStaffVTable;
+  ((UActorVTable *)&pCVar2->field_0x154)->_ub = &g_CLightStaffVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)&pCVar2->field_0x158,(char *)0x5c69c6);
-  *(uint *)&pCVar2->field_0x2d8 = 0;
-  *(uint *)&pCVar2->field_0x2dc = 0;
-  *(uint *)&pCVar2->field_0x2e0 = 0xc;
-  *(uint *)&pCVar2->field_0x2e4 = 0;
-  *(uint *)&pCVar2->field_0x2e8 = 0x42000000;
-  *(uint *)&pCVar2->field_0x2ec = 0;
+  *(int *)&pCVar2->field_0x2d8 = 0;
+  *(EFireMode *)&pCVar2->field_0x2dc = FIRE_MODE_AUTOMATIC;
+  *(EWeaponType *)&pCVar2->field_0x2e0 = WEAPON_TYPE_BARON|WEAPON_TYPE_TOMMY_GUN;
+  *(int *)&pCVar2->field_0x2e4 = 0;
+  *(float *)&pCVar2->field_0x2e8 = 32.0;
+  *(int *)&pCVar2->field_0x2ec = 0;
   *(uint *)&pCVar2->field_0x56c = 10;
   *(uint *)&pCVar2->field_0x58c = 10;
   *(uint *)&pCVar2->field_0x574 = 1;

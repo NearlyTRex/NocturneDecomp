@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_drip.cpp_CDrip_ctor_FUN_0046ce70
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x498                          ; 0046ce40
         ;   Label: core_drip.cpp_factoryFuncDrip_FUN_0046ce40
-    CALL crt_unknown.c_FUN_005b8be2     ; 0046ce45
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0046ce45
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0046ce4a
     TEST EAX,EAX                        ; 0046ce4d
     JNZ 0x0046ce52                      ; 0046ce4f

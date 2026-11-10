@@ -5,12 +5,12 @@
 ;
 ;
 ; XREF[2]:
-;   unkafter_zombie.cpp_FUN_005ca6bf at 005ca771
-;   unkafter_zombie.cpp_FUN_005ccccc at 005ccd2d
+;   crt_unknown.c_FUN_005ca6bf at 005ca771
+;   crt_unknown.c_FUN_005ccccc at 005ccd2d
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005c4867
-;   unkafter_zombie.cpp_FUN_005ca7dc
+;   crt_unknown.c_FUN_005ca7dc
 ;
 ; *****************************************************************************
 
@@ -55,8 +55,8 @@ section .text
     MOV dword ptr [ESI + 0x28],0x0      ; 005c45c5
     XOR EDI,EDI                         ; 005c45cc
     MOV dword ptr [ESI + 0x18],0x0      ; 005c45ce
-    CALL unkafter_zombie.cpp_FUN_005ca7dc ; 005c45d5
-        ;   XREF to: 005ca7dc (UNCONDITIONAL_CALL)  ; undefined unkafter_zombie.cpp_FUN_005ca7dc()
+    CALL crt_unknown.c_FUN_005ca7dc     ; 005c45d5
+        ;   XREF to: 005ca7dc (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005ca7dc()
     ADD ESP,0x4                         ; 005c45da
     CMP EAX,0x4                         ; 005c45dd
     JA 0x005c4760                       ; 005c45e0

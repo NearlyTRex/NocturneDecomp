@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_stranger_cpp_FUN_0045d2c0(CDemonActor *param_1)
+; void unkafter_stranger_cpp_FUN_0045d2c0(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1c]:4  local_1c
@@ -23,7 +23,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c8f0
 ;   core_ammo.cpp_FUN_0040e450
-;   core_charactr.cpp_FUN_0042a5a0
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_sound.cpp_CSound_playActorSound_FUN_0055ae50
 ;
 ; *****************************************************************************
@@ -117,8 +117,8 @@ section .text
     PUSH EAX                            ; 0045d3c8
         ;   Label: LAB_0045d3c8
     PUSH EBX                            ; 0045d3c9
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 0045d3ca
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 0045d3ca
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + -0x4],EAX      ; 0045d3cf
     ADD ESP,0x8                         ; 0045d3d2
     FLD float ptr [EBP + -0x4]          ; 0045d3d5
@@ -300,8 +300,8 @@ section .text
     PUSH 0x12                           ; 0045d589
         ;   Label: LAB_0045d589
     PUSH EBX                            ; 0045d58b
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 0045d58c
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 0045d58c
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [EBP + -0x4],EAX      ; 0045d591
     ADD ESP,0x8                         ; 0045d594
     FLD float ptr [EBP + -0x4]          ; 0045d597

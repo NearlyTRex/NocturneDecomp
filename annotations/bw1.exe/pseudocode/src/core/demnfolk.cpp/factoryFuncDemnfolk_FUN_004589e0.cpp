@@ -11,7 +11,7 @@ void core_demnfolk_cpp_factoryFuncDemnfolk_FUN_004589e0(void)
 {
   CDemnfolk *this_ptr;
   
-  this_ptr = (CDemnfolk *)FUN_005c0f32(0xc370);
+  this_ptr = (CDemnfolk *)debugAllocTracked1(0xc370);
   if (this_ptr == (CDemnfolk *)0x0) {
     return;
   }

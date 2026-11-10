@@ -7,7 +7,7 @@
 ; CTerrain *       Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bf4b0 at 004bf86f
+;   core_game.cpp_CGame_process_FUN_004bf4b0 at 004bf86f
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_01c5fad0

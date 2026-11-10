@@ -45,7 +45,7 @@
 ;   undefined4 DAT_0061e8f4
 ;   CConsole g_CConsoleInstance
 ;   CGame g_CGameInstance
-;   undefined4 g_CGameInstance.field36_0x24
+;   undefined4 g_CGameInstance.quimby_flag
 ;   ... and 16 more
 ;
 ; Called Functions:
@@ -62,7 +62,7 @@
 ;   core_dcamera.cpp_CDemonCamera_restoreZBufferRectArray_FUN_0043bc30
 ;   core_dcamera.cpp_CDemonCamera_setupPerspectiveAndFog_FUN_00442d80
 ;   core_dcamera.cpp_FUN_00440500
-;   core_dlight.cpp_FUN_0044a520
+;   core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520
 ;   core_dlight.cpp_FUN_0044b020
 ;   ... and 23 more
 ;
@@ -80,7 +80,7 @@ section .text
     MOV EBX,dword ptr [EBP + 0x14]      ; 0052f2a9
     MOV ESI,dword ptr [EBP + 0x18]      ; 0052f2ac
     MOV EAX,[0x00616494]                ; 0052f2af | g_CGamePtr
-    CMP dword ptr [EAX + 0x228],0x0     ; 0052f2b4 | g_CGameInstance.field552_0x228
+    CMP dword ptr [EAX + 0x228],0x0     ; 0052f2b4 | g_CGameInstance.profile_mode
     JNZ 0x0052f94f                      ; 0052f2bb
         ;   XREF to: 0052f94f (CONDITIONAL_JUMP)  ; LAB_0052f94f
     TEST ESI,ESI                        ; 0052f2c1
@@ -95,12 +95,12 @@ section .text
     PUSH EBX                            ; 0052f2d2
     MOV dword ptr [0x01fc9608],ESI      ; 0052f2d3 | DAT_01fc9608
     MOV dword ptr [0x01fc961c],ESI      ; 0052f2d9 | DAT_01fc961c
-    CALL core_set.cpp_FUN_00530630      ; 0052f2df
-        ;   XREF to: 00530630 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00530630(CDemonSet * this_ptr, CDemonLight * light)
+    CALL core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630 ; 0052f2df
+        ;   XREF to: 00530630 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_addDynamicLight_FUN_00530630(CDemonSet * this_ptr, CDemonLight * light)
     ADD ESP,0x8                         ; 0052f2e4
     PUSH EBX                            ; 0052f2e7
-    CALL core_set.cpp_FUN_0052ef80      ; 0052f2e8
-        ;   XREF to: 0052ef80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0052ef80(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80 ; 0052f2e8
+        ;   XREF to: 0052ef80 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderStaticLights_FUN_0052ef80(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0052f2ed
     PUSH 0x1fc7838                      ; 0052f2f0
         ;   Label: LAB_0052f2f0
@@ -112,8 +112,8 @@ section .text
     JZ 0x0052f31a                       ; 0052f305
         ;   XREF to: 0052f31a (CONDITIONAL_JUMP)  ; LAB_0052f31a
     PUSH EBX                            ; 0052f307
-    CALL core_set.cpp_FUN_00534490      ; 0052f308
-        ;   XREF to: 00534490 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00534490(CDemonSet * this_ptr)
+    CALL core_set.cpp_CDemonSet_restoreCameraView_FUN_00534490 ; 0052f308
+        ;   XREF to: 00534490 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_restoreCameraView_FUN_00534490(CDemonSet * this_ptr)
     ADD ESP,0x4                         ; 0052f30d
     MOV dword ptr [EBX + 0x161668],0x0  ; 0052f310
     PUSH 0x1                            ; 0052f31a
@@ -188,8 +188,8 @@ section .text
         ;   Label: LAB_0052f3d1
     PUSH ESI                            ; 0052f3d3
     PUSH EBX                            ; 0052f3d4
-    CALL core_set.cpp_FUN_005341b0      ; 0052f3d5
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052f3d5
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052f3da
     MOV EDX,dword ptr [EDI + 0x1fc960c] ; 0052f3dd
     PUSH EDX                            ; 0052f3e3
@@ -244,8 +244,8 @@ section .text
         ;   Label: LAB_0052f461
     PUSH ESI                            ; 0052f463
     PUSH EBX                            ; 0052f464
-    CALL core_set.cpp_FUN_005341b0      ; 0052f465
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052f465
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052f46a
     PUSH 0x1                            ; 0052f46d
     MOV EAX,dword ptr [EDI + 0x1fc9620] ; 0052f46f
@@ -324,24 +324,24 @@ section .text
     ADD ESP,0x4                         ; 0052f535
     MOV EAX,[0x00616494]                ; 0052f538 | g_CGamePtr
         ;   Label: LAB_0052f538
-    CMP dword ptr [EAX + 0x228],0x0     ; 0052f53d | g_CGameInstance.field552_0x228
+    CMP dword ptr [EAX + 0x228],0x0     ; 0052f53d | g_CGameInstance.profile_mode
     JZ 0x0052f54e                       ; 0052f544
         ;   XREF to: 0052f54e (CONDITIONAL_JUMP)  ; LAB_0052f54e
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0052f546
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0052f546
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV dword ptr [EBP + -0x3c],EAX     ; 0052f54b
     PUSH 0x1fc7838                      ; 0052f54e
         ;   Label: LAB_0052f54e
     CALL core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00440760 ; 0052f553
         ;   XREF to: 00440760 (UNCONDITIONAL_CALL)  ; int core_dcamera.cpp_CDemonCamera_lockAndRenderToBuffer_FUN_00440760(CDemonCamera * this_ptr)
     MOV EAX,[0x00616494]                ; 0052f558 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x228]     ; 0052f55d | g_CGameInstance.field552_0x228
+    MOV ESI,dword ptr [EAX + 0x228]     ; 0052f55d | g_CGameInstance.profile_mode
     ADD ESP,0x4                         ; 0052f563
     TEST ESI,ESI                        ; 0052f566
     JZ 0x0052f572                       ; 0052f568
         ;   XREF to: 0052f572 (CONDITIONAL_JUMP)  ; LAB_0052f572
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0052f56a
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0052f56a
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     MOV dword ptr [EBP + -0x38],EAX     ; 0052f56f
     MOV EAX,[0x01fc8e84]                ; 0052f572 | DAT_01fc8e84
         ;   Label: LAB_0052f572
@@ -355,8 +355,8 @@ section .text
     PUSH EDX                            ; 0052f585
     ADD ESI,0x4                         ; 0052f586
     INC EDI                             ; 0052f589
-    CALL core_dlight.cpp_FUN_0044a520   ; 0052f58a
-        ;   XREF to: 0044a520 (UNCONDITIONAL_CALL)  ; undefined core_dlight.cpp_FUN_0044a520()
+    CALL core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520 ; 0052f58a
+        ;   XREF to: 0044a520 (UNCONDITIONAL_CALL)  ; void core_dlight.cpp_CDemonLight_restoreDirtyRegions_FUN_0044a520(CDemonLight * this_ptr)
     MOV ECX,dword ptr [0x01fc8e84]      ; 0052f58f | DAT_01fc8e84
     ADD ESP,0x4                         ; 0052f595
     CMP EDI,ECX                         ; 0052f598
@@ -366,8 +366,8 @@ section .text
     PUSH 0xc                            ; 0052f5a0
         ;   Label: LAB_0052f5a0
     PUSH EBX                            ; 0052f5a2
-    CALL core_set.cpp_FUN_005332f0      ; 0052f5a3
-        ;   XREF to: 005332f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005332f0(CDemonSet * this_ptr, uint dirty_flags_mask)
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0 ; 0052f5a3
+        ;   XREF to: 005332f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0052f5a8
     PUSH EBX                            ; 0052f5ab
     CALL core_set.cpp_FUN_005301d0      ; 0052f5ac
@@ -381,8 +381,8 @@ section .text
     ADD ESP,0xc                         ; 0052f5c2
     MOV ESI,dword ptr [0x006167e0]      ; 0052f5c5 | g_CGorePtr
     PUSH ESI                            ; 0052f5cb
-    CALL core_gore.cpp_FUN_004c9440     ; 0052f5cc
-        ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9440(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004c9440 ; 0052f5cc
+        ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004c9440(CGore * this_ptr)
     ADD ESP,0x4                         ; 0052f5d1
     MOV EDI,dword ptr [EBX + 0x15acc8]  ; 0052f5d4
     XOR ESI,ESI                         ; 0052f5da
@@ -393,13 +393,13 @@ section .text
         ;   Label: LAB_0052f5e0
     PUSH ESI                            ; 0052f5e2
     PUSH EBX                            ; 0052f5e3
-    CALL core_set.cpp_FUN_005341b0      ; 0052f5e4
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052f5e4
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052f5e9
     MOV EAX,[0x006167e0]                ; 0052f5ec | g_CGorePtr
     PUSH EAX                            ; 0052f5f1
-    CALL core_gore.cpp_FUN_004c9440     ; 0052f5f2
-        ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004c9440(CGore * this_ptr)
+    CALL core_gore.cpp_CGore_renderParticles_FUN_004c9440 ; 0052f5f2
+        ;   XREF to: 004c9440 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CGore_renderParticles_FUN_004c9440(CGore * this_ptr)
     ADD ESP,0x4                         ; 0052f5f7
     PUSH EBX                            ; 0052f5fa
     INC ESI                             ; 0052f5fb
@@ -418,8 +418,8 @@ section .text
         ;   XREF to: 0052f625 (CONDITIONAL_JUMP)  ; LAB_0052f625
     PUSH 0x0                            ; 0052f61a
     PUSH EAX                            ; 0052f61c | g_CWaterInstance
-    CALL core_water.cpp_FUN_005862e0    ; 0052f61d
-        ;   XREF to: 005862e0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_FUN_005862e0(CWater * this_ptr, int render_mode)
+    CALL core_water.cpp_CWater_render_FUN_005862e0 ; 0052f61d
+        ;   XREF to: 005862e0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_005862e0(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 0052f622
     PUSH EBX                            ; 0052f625
         ;   Label: LAB_0052f625
@@ -440,8 +440,8 @@ section .text
         ;   Label: LAB_0052f649
     PUSH EAX                            ; 0052f64e
     XOR ESI,ESI                         ; 0052f64f
-    CALL core_fire.cpp_FUN_0049c780     ; 0052f651
-        ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049c780(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_render_FUN_0049c780 ; 0052f651
+        ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0049c780(CFireEffect * this_ptr)
     MOV EDX,dword ptr [EBX + 0x15acc8]  ; 0052f656
     ADD ESP,0x4                         ; 0052f65c
     TEST EDX,EDX                        ; 0052f65f
@@ -451,13 +451,13 @@ section .text
         ;   Label: LAB_0052f663
     PUSH ESI                            ; 0052f665
     PUSH EBX                            ; 0052f666
-    CALL core_set.cpp_FUN_005341b0      ; 0052f667
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052f667
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052f66c
     MOV ECX,dword ptr [0x00614d30]      ; 0052f66f | DAT_00614d30
     PUSH ECX                            ; 0052f675
-    CALL core_fire.cpp_FUN_0049c780     ; 0052f676
-        ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_0049c780(CFireEffect * this_ptr)
+    CALL core_fire.cpp_CFireEffect_render_FUN_0049c780 ; 0052f676
+        ;   XREF to: 0049c780 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_render_FUN_0049c780(CFireEffect * this_ptr)
     ADD ESP,0x4                         ; 0052f67b
     PUSH EBX                            ; 0052f67e
     INC ESI                             ; 0052f67f
@@ -474,8 +474,8 @@ section .text
     MOV EAX,[0x0061e8f4]                ; 0052f6a0 | DAT_0061e8f4
         ;   Label: LAB_0052f6a0
     PUSH EAX                            ; 0052f6a5
-    CALL core_weather.cpp_FUN_0058ad40  ; 0052f6a6
-        ;   XREF to: 0058ad40 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_FUN_0058ad40(CWeather * this_ptr)
+    CALL core_weather.cpp_CWeather_renderParticles_FUN_0058ad40 ; 0052f6a6
+        ;   XREF to: 0058ad40 (UNCONDITIONAL_CALL)  ; void core_weather.cpp_CWeather_renderParticles_FUN_0058ad40(CWeather * this_ptr)
     MOV ECX,dword ptr [0x01fc9608]      ; 0052f6ab | DAT_01fc9608
     XOR EDX,EDX                         ; 0052f6b1
     ADD ESP,0x4                         ; 0052f6b3
@@ -529,8 +529,8 @@ section .text
         ;   XREF to: 0052f73c (CONDITIONAL_JUMP)  ; LAB_0052f73c
     PUSH EDI                            ; 0052f732
     PUSH EAX                            ; 0052f733 | g_CWaterInstance
-    CALL core_water.cpp_FUN_005862e0    ; 0052f734
-        ;   XREF to: 005862e0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_FUN_005862e0(CWater * this_ptr, int render_mode)
+    CALL core_water.cpp_CWater_render_FUN_005862e0 ; 0052f734
+        ;   XREF to: 005862e0 (UNCONDITIONAL_CALL)  ; void core_water.cpp_CWater_render_FUN_005862e0(CWater * this_ptr, int render_mode)
     ADD ESP,0x8                         ; 0052f739
     MOV EAX,dword ptr [EBX + 0x14d164]  ; 0052f73c
         ;   Label: LAB_0052f73c
@@ -616,14 +616,14 @@ section .text
     CALL core_dcamera.cpp_CDemonCamera_endScene_FUN_0043bf50 ; 0052f810
         ;   XREF to: 0043bf50 (UNCONDITIONAL_CALL)  ; void core_dcamera.cpp_CDemonCamera_endScene_FUN_0043bf50(CDemonCamera * this_ptr, int skip_zbuffer_copy)
     MOV EAX,[0x00616494]                ; 0052f815 | g_CGamePtr
-    MOV ESI,dword ptr [EAX + 0x228]     ; 0052f81a | g_CGameInstance.field552_0x228
+    MOV ESI,dword ptr [EAX + 0x228]     ; 0052f81a | g_CGameInstance.profile_mode
     ADD ESP,0x8                         ; 0052f820
     TEST ESI,ESI                        ; 0052f823
     JZ 0x0052f8c8                       ; 0052f825
         ;   XREF to: 0052f8c8 (CONDITIONAL_JUMP)  ; LAB_0052f8c8
     MOV EDI,dword ptr [EBP + -0x38]     ; 0052f82b
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0052f82e
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0052f82e
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
     SUB EAX,EDI                         ; 0052f833
     MOV dword ptr [EBP + -0x4],EAX      ; 0052f835
     FLD double ptr [0x005e58e2]         ; 0052f838 | DAT_005e58e2
@@ -631,7 +631,7 @@ section .text
     FMUL ST1                            ; 0052f841
     MOV EAX,[0x00616494]                ; 0052f843 | g_CGamePtr
     MOV EDX,dword ptr [EBP + -0x8]      ; 0052f848
-    FLD float ptr [EAX + 0x284]         ; 0052f84b | g_CGameInstance.field644_0x284
+    FLD float ptr [EAX + 0x284]         ; 0052f84b | g_CGameInstance.delta_time_float
     MOV EAX,EDI                         ; 0052f851
     FXCH                                ; 0052f853
     FLD double ptr [0x005e58ea]         ; 0052f855 | DAT_005e58ea
@@ -680,7 +680,7 @@ section .text
     ADD ESP,0x20                        ; 0052f8c5
     MOV EAX,[0x00616494]                ; 0052f8c8 | g_CGamePtr
         ;   Label: LAB_0052f8c8
-    CMP dword ptr [EAX + 0x204],0x0     ; 0052f8cd | g_CGameInstance.field516_0x204
+    CMP dword ptr [EAX + 0x204],0x0     ; 0052f8cd | g_CGameInstance.field468_0x204
     JZ 0x0052f8df                       ; 0052f8d4
         ;   XREF to: 0052f8df (CONDITIONAL_JUMP)  ; LAB_0052f8df
     PUSH EBX                            ; 0052f8d6
@@ -736,8 +736,8 @@ section .text
     POP ESI                             ; 0052f94c
     POP EBX                             ; 0052f94d
     RET                                 ; 0052f94e
-    CALL wincore_winrun.cpp_FUN_0058e9e0 ; 0052f94f
-        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_0058e9e0()
+    CALL wincore_winrun.cpp_getTime_FUN_0058e9e0 ; 0052f94f
+        ;   XREF to: 0058e9e0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_0058e9e0()
         ;   Label: LAB_0052f94f
     MOV dword ptr [EBP + -0x8],EAX      ; 0052f954
     JMP 0x0052f2c1                      ; 0052f957
@@ -760,7 +760,7 @@ section .text
     RET                                 ; 0052f977
     MOV EAX,[0x00616494]                ; 0052f978 | g_CGamePtr
         ;   Label: LAB_0052f978
-    CMP dword ptr [EAX + 0x24],0x0      ; 0052f97d | g_CGameInstance.field36_0x24
+    CMP dword ptr [EAX + 0x24],0x0      ; 0052f97d | g_CGameInstance.quimby_flag
     JNZ 0x0052f336                      ; 0052f981
         ;   XREF to: 0052f336 (CONDITIONAL_JUMP)  ; LAB_0052f336
     JMP 0x0052f538                      ; 0052f987
@@ -770,8 +770,8 @@ section .text
     DEC EAX                             ; 0052f98e
     PUSH EAX                            ; 0052f98f
     PUSH EBX                            ; 0052f990
-    CALL core_set.cpp_FUN_005341b0      ; 0052f991
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052f991
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052f996
     PUSH 0x1                            ; 0052f999
     PUSH EDI                            ; 0052f99b
@@ -818,8 +818,8 @@ section .text
         ;   Label: LAB_0052f9fa
     PUSH ESI                            ; 0052f9fc
     PUSH EBX                            ; 0052f9fd
-    CALL core_set.cpp_FUN_005341b0      ; 0052f9fe
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052f9fe
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052fa03
     MOV ECX,dword ptr [EBP + -0x10]     ; 0052fa06
     PUSH ECX                            ; 0052fa09
@@ -871,8 +871,8 @@ section .text
         ;   Label: LAB_0052fa72
     PUSH ESI                            ; 0052fa74
     PUSH EBX                            ; 0052fa75
-    CALL core_set.cpp_FUN_005341b0      ; 0052fa76
-        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
+    CALL core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0 ; 0052fa76
+        ;   XREF to: 005341b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setupMirrorRendering_FUN_005341b0(CDemonSet * this_ptr, int mirror_index, int enable_flag)
     ADD ESP,0xc                         ; 0052fa7b
     PUSH EDI                            ; 0052fa7e
     CALL core_dlight.cpp_FUN_0044b050   ; 0052fa7f
@@ -892,8 +892,8 @@ section .text
     LEA EAX,[EDI + 0x2437c]             ; 0052faa1
         ;   Label: LAB_0052faa1
     PUSH EAX                            ; 0052faa7
-    CALL core_inv.cpp_FUN_004dd670      ; 0052faa8
-        ;   XREF to: 004dd670 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004dd670(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670 ; 0052faa8
+        ;   XREF to: 004dd670 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_renderSelectedItems_FUN_004dd670(CInventory * this_ptr)
     ADD ESP,0x4                         ; 0052faad
     JMP 0x0052f809                      ; 0052fab0
         ;   XREF to: 0052f809 (UNCONDITIONAL_JUMP)  ; LAB_0052f809

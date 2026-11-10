@@ -2,13 +2,13 @@
 // Address: 00417230
 // Address Range: [[00417230, 00417598]]
 // Convention: unknown
-// Signature: void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,undefined4 param_4,undefined4 param_5,undefined4 param_6)
+// Signature: void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,uint param_4,uint param_5,uint param_6)
+void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3)
 
 {
   char cVar1;
@@ -33,14 +33,14 @@ void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,ui
   int iStack_14;
   
   bVar7 = 0;
-  FUN_005bfb40(acStack_34,&DAT_005d4002,param_4);
-  FUN_005bfb40(acStack_40,&DAT_005d4005,param_5);
-  FUN_005bfb40(acStack_4c,&DAT_005d4008,param_6);
+  _sprintf(acStack_34,&DAT_005d4002);
+  _sprintf(acStack_40,&DAT_005d4005);
+  _sprintf(acStack_4c,&DAT_005d4008);
   fStack_18 = ABS((float)(param_2 - *(int *)((int)param_1 + 0xc20)));
   iStack_14 = param_3 - *(int *)((int)param_1 + 0xc24);
   fStack_1c = ABS((float)iStack_14);
-  FUN_005bfb40(acStack_64c,&DAT_005d400b,(double)(fStack_18 * _DAT_005d403a));
-  FUN_005bfb40(acStack_44c,&DAT_005d400e,(double)(fStack_1c * _DAT_005d403a));
+  _sprintf(acStack_64c,&DAT_005d400b);
+  _sprintf(acStack_44c,&DAT_005d400e);
   pcVar4 = &DAT_005d4011;
   pcVar5 = acStack_24c;
   do {
@@ -105,10 +105,8 @@ void unkafter_bmppuzzl_cpp_FUN_00417230(void *param_1,int param_2,int param_3,ui
     pcVar6[1] = cVar1;
     pcVar6 = pcVar6 + 2;
   } while (cVar1 != '\0');
-  FUN_005bfb40
-            (acStack_54c,&DAT_005d4029,
-             (double)(1.0 / (fStack_18 * _DAT_005d403e + fStack_1c * _DAT_005d403e + 1.0)));
-  FUN_005bfb40(acStack_28,"AR%d_");
+  _sprintf(acStack_54c,&DAT_005d4029);
+  _sprintf(acStack_28,"AR%d_");
   pcVar5 = acStack_28;
   pcVar4 = acStack_34c;
   do {

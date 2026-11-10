@@ -44,9 +44,9 @@
 ;   crt_string.c_strupr_FUN_005a5b10
 ;   crt_time.c__localtime_FUN_005a5628
 ;   crt_time.c__strftime_FUN_005a5674
-;   crt_unknown.c_FUN_005a28c0
-;   engine_dosio.cpp_FUN_00465e50
-;   engine_dosio.cpp_FUN_00465e80
+;   crt_unknown.c_sprintf_FUN_005a28c0
+;   engine_dosio.cpp_makePath_FUN_00465e80
+;   engine_dosio.cpp_splitPath_FUN_00465e50
 ;   shape_edittool.cpp_CStrList_getStringAt_FUN_00482440
 ;
 ; *****************************************************************************
@@ -106,8 +106,8 @@ section .text
     PUSH 0x0                            ; 004828b4
     LEA EAX,[ESP + 0x514]               ; 004828b6
     PUSH EAX                            ; 004828bd
-    CALL engine_dosio.cpp_FUN_00465e80  ; 004828be
-        ;   XREF to: 00465e80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e80(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00465e80 ; 004828be
+        ;   XREF to: 00465e80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00465e80(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004828c3
     LEA EAX,[ESP + 0x504]               ; 004828c6
     PUSH EAX                            ; 004828cd
@@ -156,8 +156,8 @@ section .text
     PUSH 0x0                            ; 00482957
     PUSH 0x0                            ; 00482959
     PUSH EBX                            ; 0048295b
-    CALL engine_dosio.cpp_FUN_00465e50  ; 0048295c
-        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 0048295c
+        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00482961
     LEA EAX,[ESP + 0x608]               ; 00482964
     PUSH EAX                            ; 0048296b
@@ -167,8 +167,8 @@ section .text
     PUSH 0x0                            ; 00482976
     LEA EAX,[ESP + 0x410]               ; 00482978
     PUSH EAX                            ; 0048297f
-    CALL engine_dosio.cpp_FUN_00465e80  ; 00482980
-        ;   XREF to: 00465e80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e80(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_makePath_FUN_00465e80 ; 00482980
+        ;   XREF to: 00465e80 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_makePath_FUN_00465e80(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 00482985
     LEA EAX,[ESP + 0x708]               ; 00482988
         ;   Label: LAB_00482988
@@ -179,8 +179,8 @@ section .text
     PUSH 0x0                            ; 0048299a
     MOV EDI,dword ptr [ESP + 0xb1c]     ; 0048299c
     PUSH EDI                            ; 004829a3
-    CALL engine_dosio.cpp_FUN_00465e50  ; 004829a4
-        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00465e50 ; 004829a4
+        ;   XREF to: 00465e50 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00465e50(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004829a9
     CMP byte ptr [ESP + 0x708],0x2e     ; 004829ac
     JNZ 0x004829e0                      ; 004829b4
@@ -214,8 +214,8 @@ section .text
     PUSH 0x5bd69f                       ; 00482a08 | = "%s\t%s\t%d\t%s\t%s"
     LEA EAX,[ESP + 0xa20]               ; 00482a0d
     PUSH EAX                            ; 00482a14
-    CALL crt_unknown.c_FUN_005a28c0     ; 00482a15
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00482a15
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x1c                        ; 00482a1a
     LEA EAX,[ESP + 0xa08]               ; 00482a1d
     PUSH EAX                            ; 00482a24

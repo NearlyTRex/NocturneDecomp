@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 142,
-    "complexity_score": 268,
+    "complexity_score": 167,
     "cross_reference_count": 1,
     "function_call_count": 0,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 73,
-    "suspect_count": 17,
+    "pseudocode_lines": 72,
+    "suspect_count": 7,
     "suspect_types": [
+      "pointer_cast",
       "raw_address_constant",
       "shadow_pointer_walk",
-      "unnamed_field",
       "warning_deadcode_restart",
       "warning_overlapping_globals"
     ],
-    "total_lines": 215
+    "total_lines": 214
   },
   "cross_references": [
     {
@@ -205,108 +205,20 @@
       "type": "warning_deadcode_restart"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x154) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x1888",
-      "severity": "mild",
-      "text": "iVar2 = (*(int *)&local_14->field_0x1888 - *(int *)&local_14->field_0x14c8) + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x14c8",
-      "severity": "mild",
-      "text": "iVar2 = (*(int *)&local_14->field_0x1888 - *(int *)&local_14->field_0x14c8) + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 30,
-      "match": "field_0x1c48",
-      "severity": "mild",
-      "text": "puVar3 = (uint *)(*(int *)&light_source->field_0x1c48 + local_18 +",
-      "type": "unnamed_field"
+      "match": "(uint *)((int)light_source",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)((int)light_source->corona_visibility_buffers +",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x14c8",
-      "severity": "mild",
-      "text": "*(int *)&local_14->field_0x14c8 * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x1c4c",
-      "severity": "mild",
-      "text": "(*(int *)&light_source->field_0x1c4c + local_18 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 34,
-      "match": "field_0x14c8",
-      "severity": "mild",
-      "text": "*(int *)&local_14->field_0x14c8 * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x1c50",
-      "severity": "mild",
-      "text": "piVar4 = (int *)(*(int *)&light_source->field_0x1c50 + local_18 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x14c8",
-      "severity": "mild",
-      "text": "*(int *)&local_14->field_0x14c8 * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x14c8",
-      "severity": "mild",
-      "text": "pcVar5 = (char *)(local_20 + *(int *)&local_14->field_0x14c8);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x1c54",
-      "severity": "mild",
-      "text": "_DAT_0152a954 = *(int *)&light_source->field_0x1c54;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_14 = (CDemonLight *)&local_14->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 74,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "} while (local_1c < *(int *)&this_ptr->field_0x154);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)light_source",
+      "severity": "moderate",
+      "text": "piVar4 = (int *)((int)light_source->corona_lightmap_indices +",
+      "type": "pointer_cast"
     },
     {
       "description": "Raw hex address 0xb10718 assigned to bare local `local_20`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `local_20` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
@@ -317,11 +229,19 @@
       "type": "raw_address_constant"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_14->owner`). Replace `local_14->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 70,
-      "match": "local_14 = (T *)&local_14->FIELD",
+      "description": "Pointer cast wraps onto the next line \u2014 same byte-offset trampolining as single-line `pointer_cast`, just split by Ghidra. Replace with indexed/named field access in a .keep.",
+      "line": 32,
+      "match": "(TYPE *) ((int)NAME ...) split across lines",
       "severity": "moderate",
-      "text": "local_14 = (CDemonLight *)&local_14->field_0x4;",
+      "text": "puVar9 = (uint *)",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `local_14` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `local_14->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 69,
+      "match": "local_14 = (T *)&(local_14->FIELD).SUBFIELD",
+      "severity": "moderate",
+      "text": "local_14 = (CDemonLight *)&(local_14->base).base.position;",
       "type": "shadow_pointer_walk"
     }
   ]

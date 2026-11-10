@@ -1,0 +1,164 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 58,
+    "complexity_score": 96,
+    "cross_reference_count": 0,
+    "function_call_count": 5,
+    "global_count": 2,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 21,
+    "suspect_count": 6,
+    "suspect_types": [
+      "alloc_magic_size",
+      "unnamed_param",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 79
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004d25fe",
+    "address_range": [
+      [
+        "004d25fe",
+        "004d2689"
+      ]
+    ],
+    "convention": "unknown",
+    "name": "core_game.cpp_giveHeroWeaponAmmo_FUN_004d25fe",
+    "signature": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004d25fe(char *param_1,EAmmoType param_2)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040dbc0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040dbc0"
+    },
+    {
+      "addr": "0040ddd0",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setWeaponClass_FUN_0040ddd0"
+    },
+    {
+      "addr": "004f7690",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004f7690"
+    },
+    {
+      "addr": "0051bd60",
+      "is_variadic": false,
+      "name": "core_mission.cpp_CDemonMission_generateActorName_FUN_0051bd60"
+    },
+    {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061f650",
+      "name": "DAT_0061f650",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06ab4",
+      "name": "DAT_01d06ab4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.127659574468085,
+    "instruction_count": 47,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "CALL": 5,
+      "CALLIND": 1,
+      "CBRANCH": 3,
+      "COPY": 35,
+      "INT_ADD": 19,
+      "INT_AND": 23,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 20,
+      "INT_MULT": 1,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 10,
+      "INT_SUB": 17,
+      "LOAD": 11,
+      "POPCOUNT": 10,
+      "RETURN": 3,
+      "STORE": 19
+    },
+    "pcode_op_count": 194
+  },
+  "stack_frame": {
+    "frame_size": 4,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": []
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004d25fe(char *param_1,EAmmoType param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 4,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "void core_game_cpp_giveHeroWeaponAmmo_FUN_004d25fe(char *param_1,EAmmoType param_2)",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 17,
+      "match": "param_2",
+      "severity": "mild",
+      "text": "pCVar1->ammo_type = param_2;",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 18,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040ddd0(pCVar1,param_1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Allocation size hardcodes 0x31c == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 9,
+      "match": "(CAmmo*) alloc stride 0x31c",
+      "severity": "moderate",
+      "text": "(CAmmo *)debugAllocTracked1(0x31c)",
+      "type": "alloc_magic_size"
+    }
+  ]
+}

@@ -17,16 +17,16 @@
 ; undefined        Stack[-0x1c]:1  local_1c
 ;
 ; XREF[35]:
-;   core_batcreat.cpp_FUN_00411a10 at 00411c80
-;   core_batman.cpp_FUN_00412f40 at 004131d1
-;   core_biggs.cpp_FUN_00414e50 at 004150be
-;   core_boneguy.cpp_FUN_004186c0 at 00418a92
-;   core_bride.cpp_FUN_0041dbe0 at 0041dd88
-;   core_colonel.cpp_FUN_00436420 at 00436463
-;   core_cow.cpp_FUN_004392b0 at 00439524
+;   core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0 at 0059e85b
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411c80
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 004131d1
+;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 004150be
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418a92
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dd88
+;   core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420 at 00436463
+;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 0043732e
+;   core_cow.cpp_CZombieCow_process_FUN_004392b0 at 00439524
 ;   core_doc.cpp_FUN_00453250 at 00453c12
-;   core_dog.cpp_FUN_0045e360 at 0045e3f8
-;   core_dracbrid.cpp_FUN_00462ff0 at 0046321d
 ;   ... and 25 more
 ;
 ; Referenced Globals:
@@ -37,7 +37,7 @@
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_skeleton.cpp_FUN_00540e80
+;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   core_skeleton.cpp_FUN_005469a0
 ;
 ; *****************************************************************************
@@ -77,8 +77,8 @@ section .text
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042aa41
     PUSH EAX                            ; 0042aa44
-    CALL core_skeleton.cpp_FUN_00540e80 ; 0042aa45
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 0042aa45
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042aa4a
     TEST EAX,EAX                        ; 0042aa4d
     JL 0x0042aa2c                       ; 0042aa4f
@@ -118,8 +118,8 @@ section .text
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042aa9f
     PUSH EAX                            ; 0042aaa2
-    CALL core_skeleton.cpp_FUN_00540e80 ; 0042aaa3
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 0042aaa3
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042aaa8
     TEST EAX,EAX                        ; 0042aaab
     JL 0x0042aa2c                       ; 0042aaad
@@ -159,8 +159,8 @@ section .text
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042ab05
     PUSH EAX                            ; 0042ab08
-    CALL core_skeleton.cpp_FUN_00540e80 ; 0042ab09
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 0042ab09
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ab0e
     TEST EAX,EAX                        ; 0042ab11
     JL 0x0042aa2c                       ; 0042ab13
@@ -200,8 +200,8 @@ section .text
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0042ab6b
     PUSH EAX                            ; 0042ab6e
-    CALL core_skeleton.cpp_FUN_00540e80 ; 0042ab6f
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 0042ab6f
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0042ab74
     TEST EAX,EAX                        ; 0042ab77
     JL 0x0042aa2c                       ; 0042ab79

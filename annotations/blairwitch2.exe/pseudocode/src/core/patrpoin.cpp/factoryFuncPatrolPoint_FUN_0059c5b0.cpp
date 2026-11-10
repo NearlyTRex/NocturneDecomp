@@ -11,7 +11,7 @@ void core_patrpoin_cpp_factoryFuncPatrolPoint_FUN_0059c5b0(void)
 {
   CPatrolPoint *this_ptr;
   
-  this_ptr = (CPatrolPoint *)FUN_005b8be2(0x6bc);
+  this_ptr = (CPatrolPoint *)debugAllocTracked1(0x6bc);
   if (this_ptr == (CPatrolPoint *)0x0) {
     return;
   }

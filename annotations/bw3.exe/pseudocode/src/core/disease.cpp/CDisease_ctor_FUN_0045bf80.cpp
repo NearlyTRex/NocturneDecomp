@@ -14,15 +14,15 @@ CDisease * core_disease_cpp_CDisease_ctor_FUN_0045bf80(CDisease *this_ptr)
   CDisease *pCVar1;
   
   pCVar1 = (CDisease *)core_weapon_cpp_CWeapon_ctor_FUN_0057ad70((CWeapon *)this_ptr);
-  *(byte **)&pCVar1->field_0x154 = &g_CDiseaseVTable;
+  ((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CDiseaseVTable._ub;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             ((CKeyFramedModelInstance *)&pCVar1->field_0x158,"diseasebag.kfm");
-  *(uint *)&pCVar1->field_0x2d8 = 0;
-  *(uint *)&pCVar1->field_0x2dc = 0;
-  *(uint *)&pCVar1->field_0x2e0 = 3;
-  *(uint *)&pCVar1->field_0x2e4 = 1;
-  *(uint *)&pCVar1->field_0x2e8 = 0x42c80000;
-  *(uint *)&pCVar1->field_0x2ec = 0;
+  *(int *)&pCVar1->field_0x2d8 = 0;
+  *(EFireMode *)&pCVar1->field_0x2dc = FIRE_MODE_AUTOMATIC;
+  *(EWeaponType *)&pCVar1->field_0x2e0 = WEAPON_TYPE_DYNAMITE;
+  *(int *)&pCVar1->field_0x2e4 = 1;
+  *(float *)&pCVar1->field_0x2e8 = 100.0;
+  *(int *)&pCVar1->field_0x2ec = 0;
   *(uint *)&pCVar1->field_0x56c = 10;
   *(uint *)&pCVar1->field_0x58c = 0x14;
   *(uint *)&pCVar1->field_0x574 = 4;

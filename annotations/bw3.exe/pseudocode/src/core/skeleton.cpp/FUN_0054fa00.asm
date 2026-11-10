@@ -18,14 +18,14 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_004322a0 at 004322cb
+;   core_charactr.cpp_CCharacter_computeBoundingBox_FUN_004322a0 at 004322cb
 ;
 ; Called Functions:
 ;   core_box.cpp_CBoundingBox3D_expand_FUN_0041d840
 ;   core_box.cpp_CBoundingBox3D_reset_FUN_0041e8b0
 ;   core_box.cpp_FUN_0041d8b0
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
-;   core_skeleton.cpp_FUN_005487e0
 ;   core_xform.cpp_FUN_00583260
 ;
 ; *****************************************************************************
@@ -45,8 +45,8 @@ section .text
     ADD ESP,0x4                         ; 0054fa14
     PUSH EAX                            ; 0054fa17
     MOV EBX,EAX                         ; 0054fa18
-    CALL core_skeleton.cpp_FUN_005487e0 ; 0054fa1a
-        ;   XREF to: 005487e0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_005487e0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0 ; 0054fa1a
+        ;   XREF to: 005487e0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 0054fa1f
     MOV EAX,dword ptr [EAX + 0x1de78]   ; 0054fa22
     MOV dword ptr [ESP + 0x4c],EAX      ; 0054fa28

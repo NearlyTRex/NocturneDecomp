@@ -13,7 +13,7 @@ double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30(CS
   double dVar2;
   
   position = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_0054fdc0
-                       ((CSampleInfo *)this_ptr,position,input_type,2);
+                       (&this_ptr->sample_info,position,input_type,2);
   iVar1 = sound_sndmain_cpp_CSfxSample_getLoopMode_FUN_00550010(this_ptr);
   if (iVar1 == 0) {
     if (position < 0.0) {
@@ -28,6 +28,6 @@ double __cdecl sound_sndmain_cpp_CSfxSample_normalizePlaybackPos_FUN_0054ff30(CS
     position = position - dVar2;
   }
   dVar2 = sound_sndmain_cpp_CSampleInfo_cvtPlaybackPos_FUN_0054fdc0
-                    ((CSampleInfo *)this_ptr,position,2,input_type);
+                    (&this_ptr->sample_info,position,2,input_type);
   return dVar2;
 }

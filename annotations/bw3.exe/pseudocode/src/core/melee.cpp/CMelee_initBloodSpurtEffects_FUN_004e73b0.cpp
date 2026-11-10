@@ -9,9 +9,9 @@
 void __cdecl core_melee_cpp_CMelee_initBloodSpurtEffects_FUN_004e73b0(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type)
 
 {
-  *(uint *)&this_ptr->field_0x5b4 = 0x3f800000;
-  *(int *)&this_ptr->field_0x5a8 = blood_gore_type;
-  *(uint *)&this_ptr->field_0x5b0 = *(uint *)&this_ptr->field_0x5b4;
-  *(int *)&this_ptr->field_0x5ac = blood_spurt_count;
+  this_ptr->blood_spurt_interval = 1.0;
+  this_ptr->blood_gore_type = blood_gore_type;
+  this_ptr->blood_spurt_timer = this_ptr->blood_spurt_interval;
+  this_ptr->blood_spurt_count = blood_spurt_count;
   return;
 }

@@ -1,0 +1,16 @@
+; *****************************************************************************
+;                               FUNCTION
+; *****************************************************************************
+; void __cdecl wincore_wddvmem_cpp_stubFunction_FUN_005ad3d0(void)
+;
+;
+; XREF[1]:
+;   wincore_winrun.cpp_FUN_005b27d0 at 005b293d
+;
+; *****************************************************************************
+
+section .text
+
+    RET                                 ; 005ad3d0
+        ;   Label: wincore_wddvmem.cpp_stubFunction_FUN_005ad3d0
+

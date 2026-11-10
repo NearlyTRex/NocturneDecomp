@@ -8,9 +8,9 @@
 ; undefined        Stack[-0x138]:1  local_138
 ;
 ; XREF[3]:
+;   core_door.cpp_CDoor_process_FUN_00477ab0 at 00477b88
+;   core_door.cpp_CDoor_updateCollisionData_FUN_00478af0 at 00478b0f
 ;   core_door.cpp_FUN_004774f0 at 00477518
-;   core_door.cpp_FUN_00477ab0 at 00477b88
-;   core_door.cpp_FUN_00478af0 at 00478b0f
 ;
 ; Referenced Globals:
 ;   void* switchdataD_0047752c = 00477588
@@ -28,7 +28,7 @@
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088b0
 ;   core_actor.cpp_FUN_00408ac0
 ;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_0040cc00
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
 ;   core_dirmat.cpp_FUN_0045f690
 ;   core_event.cpp_CEventList_evaluateCondition_FUN_004a6c30
 ;   core_main.c_FUN_005030e0
@@ -368,8 +368,8 @@ section .text
     SUB ESP,0x4                         ; 004779d8
     FCHS                                ; 004779db
     FSTP float ptr [ESP]                ; 004779dd
-    CALL core_actor.cpp_FUN_0040cc00    ; 004779e0
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004779e0
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x154],EAX     ; 004779e5
     XOR EDX,EDX                         ; 004779ec
     FLD float ptr [ESP + 0x154]         ; 004779ee
@@ -381,8 +381,8 @@ section .text
     SUB ESP,0x4                         ; 00477a0c
     FCHS                                ; 00477a0f
     FSTP float ptr [ESP]                ; 00477a11
-    CALL core_actor.cpp_FUN_0040cc00    ; 00477a14
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 00477a14
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x154],EAX     ; 00477a19
     FLD float ptr [ESP + 0x154]         ; 00477a20
     ADD ESP,0x8                         ; 00477a27

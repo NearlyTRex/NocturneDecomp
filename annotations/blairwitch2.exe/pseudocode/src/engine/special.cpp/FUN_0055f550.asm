@@ -12,7 +12,7 @@
 ;   core_game.cpp_FUN_004bcbf0 at 004bcdee
 ;   engine_special.cpp_presentToExternalRenderer_FUN_0055ff40 at 0055fff2
 ;   engine_special.cpp_setResolutionAndColorTable_FUN_0055f770 at 0055f848
-;   shape_edittool.cpp_FUN_0047baf0 at 0047bbb3
+;   shape_edittool.cpp_CEditorTools_backupScreen_FUN_0047baf0 at 0047bbb3
 ;   shape_edittool.cpp_FUN_0047bbd0 at 0047bc83
 ;   unkafter_minecar.cpp_FUN_004f23e0 at 004f23e2
 ;

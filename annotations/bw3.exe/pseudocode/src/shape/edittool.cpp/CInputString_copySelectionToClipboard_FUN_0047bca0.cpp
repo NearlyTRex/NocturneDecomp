@@ -9,27 +9,27 @@
 void __cdecl shape_edittool_cpp_CInputString_copySelectionToClipboard_FUN_0047bca0(CInputString *this_ptr)
 
 {
-  CInputString *pCVar1;
-  CInputString CVar2;
+  char *pcVar1;
+  char cVar2;
   int iVar3;
   CEditorTools *this_ptr_00;
   int iVar4;
   int iVar5;
   
   this_ptr_00 = g_CEditorToolsPtr;
-  iVar3 = *(int *)(this_ptr + 0x134);
-  iVar5 = *(int *)(this_ptr + 0x138);
+  iVar3 = this_ptr->cursor_position;
+  iVar5 = this_ptr->selection_start;
   if (iVar5 != iVar3) {
     iVar4 = iVar3;
     if (iVar3 < iVar5) {
       iVar4 = iVar5;
       iVar5 = iVar3;
     }
-    pCVar1 = this_ptr + iVar4;
-    CVar2 = *pCVar1;
-    *pCVar1 = (CInputString)0x0;
-    shape_edittool_cpp_FUN_00480e30(this_ptr_00,(char *)(this_ptr + iVar5));
-    *pCVar1 = CVar2;
+    pcVar1 = this_ptr->string_data + iVar4;
+    cVar2 = *pcVar1;
+    *pcVar1 = '\0';
+    shape_edittool_cpp_FUN_00480e30(this_ptr_00,this_ptr->string_data + iVar5);
+    *pcVar1 = cVar2;
   }
   return;
 }

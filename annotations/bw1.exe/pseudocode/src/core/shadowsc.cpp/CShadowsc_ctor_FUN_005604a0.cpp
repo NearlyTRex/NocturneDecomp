@@ -17,8 +17,9 @@ CShadowsc * core_shadowsc_cpp_CShadowsc_ctor_FUN_005604a0(CShadowsc *this_ptr)
   CShadowsc *pCVar3;
   
   pCVar3 = (CShadowsc *)core_enemy_cpp_CEnemy_ctor_FUN_004a0410((CEnemy *)this_ptr);
-  *(byte ***)&pCVar3->field_0x154 = &g_CShadowscVTable;
-  core_skeleton_cpp_FUN_00569f50(&pCVar3->field_0x158,"shadowscorp.dfm");
+  ((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CShadowscVTable._ub;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_00569f50
+            ((CDeformableModelInstance *)&pCVar3->field_0x158,"shadowscorp.dfm");
   *(uint *)&pCVar3->field_0x2fec = 0x3fe00000;
   uVar1 = _DAT_00605340;
   *(uint *)&pCVar3->field_0x2ff0 = 0x40600000;

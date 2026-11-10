@@ -1,0 +1,170 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 86,
+    "complexity_score": 137,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 57,
+    "suspect_count": 6,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "unnamed_field",
+      "unrolled_memcpy"
+    ],
+    "total_lines": 143
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a1970",
+    "address_range": [
+      [
+        "005a1970",
+        "005a1a9c"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "name": "core_asgaya.cpp_CAsgaya_getCarryObjToBodyXForm_FUN_005a1970",
+    "signature": "CMatrix3x4f * __stack2_esi core_asgaya_cpp_CAsgaya_getCarryObjToBodyXForm_FUN_005a1970(CAsgaya *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "00583940",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00583940"
+    },
+    {
+      "addr": "005833e0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005833e0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.9743589743589745,
+    "instruction_count": 78,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 11,
+      "BRANCH": 1,
+      "CALL": 2,
+      "CBRANCH": 4,
+      "COPY": 75,
+      "INT_ADD": 51,
+      "INT_AND": 51,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 31,
+      "INT_LEFT": 4,
+      "INT_LESS": 5,
+      "INT_MULT": 10,
+      "INT_NOTEQUAL": 4,
+      "INT_OR": 10,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 18,
+      "INT_SUB": 26,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 17,
+      "POPCOUNT": 14,
+      "RETURN": 1,
+      "STORE": 26
+    },
+    "pcode_op_count": 388
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAsgaya *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 28,
+      "match": "field_0x25a8",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&this_ptr->field_0x25a8 + hand_index * 0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0xfd8",
+      "severity": "mild",
+      "text": "core_xform_cpp_multiplyMatrix3x4_FUN_005833e0(auStack_78,&this_ptr->field_0xfd8 + iVar1 * 0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 57,
+      "match": "(CMatrix3x4f *)((int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar3` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 57,
+      "match": "(int)pCVar3",
+      "severity": "moderate",
+      "text": "pCVar3 = (CMatrix3x4f *)((int)pCVar3 + ((uint)bVar4 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 54,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 005a1a8f, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 80,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 005a1a8f: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CAsgaya",
+        "offset": 300,
+        "vtable_addr": "005e8684"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

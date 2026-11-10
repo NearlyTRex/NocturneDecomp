@@ -1,0 +1,464 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 232,
+    "complexity_score": 251,
+    "cross_reference_count": 1,
+    "function_call_count": 7,
+    "global_count": 34,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 96,
+    "suspect_count": 13,
+    "suspect_types": [
+      "suspect_float",
+      "undefined_data",
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 328
+  },
+  "cross_references": [
+    {
+      "addr": "00517f80",
+      "from_addr": "00517f9b",
+      "name": "core_stranger.cpp_CPrye_ctor_FUN_00517f80",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00518430",
+    "address_range": [
+      [
+        "00518430",
+        "00518674"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_prye.cpp_CPrye_createDefaultWeapon_FUN_00518430",
+    "signature": "void __cdecl core_prye_cpp_CPrye_createDefaultWeapon_FUN_00518430(CPrye *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c840",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c840"
+    },
+    {
+      "addr": "0040c4f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_createActorByName_FUN_0040c4f0"
+    },
+    {
+      "addr": "004625f0",
+      "is_variadic": false,
+      "name": "core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0"
+    },
+    {
+      "addr": "004da4e0",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_initialize_FUN_004da4e0"
+    },
+    {
+      "addr": "004dbb40",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_selectWeapon_FUN_004dbb40"
+    },
+    {
+      "addr": "004da880",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004da880"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ccd33",
+      "name": "s_CFlintlock_005ccd33",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd3e",
+      "name": "s_core_prye_cpp_005ccd3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd4f",
+      "name": "s_Out_of_memory_005ccd4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd5e",
+      "name": "s_Prye_s_flintlock_005ccd5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd5f",
+      "name": "s_Prye_s_flintlock_005ccd5e+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccd60",
+      "name": "s_Prye_s_flintlock_005ccd5e+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccd61",
+      "name": "s_Prye_s_flintlock_005ccd5e+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccd6f",
+      "name": "s_CHolycross_005ccd6f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd7a",
+      "name": "s_core_prye_cpp_005ccd7a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd8b",
+      "name": "s_Out_of_memory_005ccd8b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd9a",
+      "name": "s_Prye_s_holy_cross_005ccd9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccd9b",
+      "name": "s_Prye_s_holy_cross_005ccd9a+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccd9c",
+      "name": "s_Prye_s_holy_cross_005ccd9a+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccd9d",
+      "name": "s_Prye_s_holy_cross_005ccd9a+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccdac",
+      "name": "s_CLightActor_005ccdac",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccdb8",
+      "name": "s_core_prye_cpp_005ccdb8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccdc9",
+      "name": "s_Out_of_memory_005ccdc9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccdd8",
+      "name": "s_Prye_s_lantern_005ccdd8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccdd9",
+      "name": "s_Prye_s_lantern_005ccdd8+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccdda",
+      "name": "s_Prye_s_lantern_005ccdd8+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccddb",
+      "name": "s_Prye_s_lantern_005ccdd8+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ccde7",
+      "name": "s_CBoxActor_005ccde7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005ccdf1",
+      "name": "s_core_prye_cpp_005ccdf1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cce02",
+      "name": "s_Out_of_memory_005cce02",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cce11",
+      "name": "s_journal_kfm_005cce11",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cce1d",
+      "name": "s_Prye_s_journal_005cce1d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005cce1e",
+      "name": "s_Prye_s_journal_005cce1d+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cce1f",
+      "name": "s_Prye_s_journal_005cce1d+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005cce20",
+      "name": "s_Prye_s_journal_005cce1d+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007e17b4",
+      "name": "g_CBoxActorClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007e1a50",
+      "name": "DAT_007e1a50",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02d0c150",
+      "name": "g_CWeaponClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00517f9b",
+        "call_type": "direct",
+        "caller": "core_stranger.cpp_CPrye_ctor_FUN_00517f80",
+        "estimated_params": 1,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8532608695652173,
+    "instruction_count": 184,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 6,
+      "BRANCH": 2,
+      "CALL": 19,
+      "CALLIND": 1,
+      "CBRANCH": 12,
+      "COPY": 125,
+      "INT_ADD": 54,
+      "INT_AND": 86,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 82,
+      "INT_LESS": 8,
+      "INT_SBORROW": 8,
+      "INT_SCARRY": 29,
+      "INT_SLESS": 41,
+      "INT_SUB": 72,
+      "LOAD": 20,
+      "POPCOUNT": 41,
+      "RETURN": 1,
+      "STORE": 73
+    },
+    "pcode_op_count": 709
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CPrye *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x206e8",
+      "severity": "mild",
+      "text": "core_inv_cpp_CInventory_initialize_FUN_004da4e0((CInventory *)&this_ptr->field_0x206e8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x206e8",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 35,
+      "match": "field_0x206e8",
+      "severity": "mild",
+      "text": "((CInventory *)&this_ptr->field_0x206e8,(CDemonActor *)0x0,5,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x206e8",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 56,
+      "match": "DAT_007e1a50",
+      "severity": "mild",
+      "text": "uVar2 = core_actor_cpp_createActorByName_FUN_0040c4f0(\"CLightActor\",DAT_007e1a50);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Likely misinterpreted integer as float",
+      "line": 64,
+      "match": "2.8026e-45",
+      "severity": "mild",
+      "text": "pCVar3[5].orient.vec.x = 2.8026e-45;",
+      "type": "suspect_float"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 76,
+      "match": "field_0x206e8",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 98,
+      "match": "field_0x206e8",
+      "severity": "mild",
+      "text": "core_inv_cpp_FUN_004da880((CInventory *)&this_ptr->field_0x206e8,pCVar3,1);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 24,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 46,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 66,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 89,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CPrye",
+        "offset": 320,
+        "vtable_addr": "005e3534"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

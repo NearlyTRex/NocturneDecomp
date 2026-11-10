@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 219,
+    "complexity_score": 153,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 54,
-    "suspect_count": 15,
+    "pseudocode_lines": 53,
+    "suspect_count": 9,
     "suspect_types": [
       "undefined_data",
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 175
+    "total_lines": 174
   },
   "cross_references": [],
   "function": {
@@ -33,7 +32,7 @@
     {
       "addr": "00409680",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_00409680"
+      "name": "core_actor.cpp_CDemonActor_onLaserHit_FUN_00409680"
     },
     {
       "addr": "005c03a0",
@@ -164,64 +163,16 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1e8",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x1e8 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x17c",
-      "severity": "mild",
-      "text": "1.0 - (float)*(int *)&this_ptr->field_0x17c * (float)_DAT_005e3fdc;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x180 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "fVar2 = *(float *)&this_ptr->field_0x15c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "fVar4 = *(float *)&this_ptr->field_0x158;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 33,
+      "line": 32,
       "match": "DAT_00612560",
       "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&this_ptr->field_0x374);",
+      "text": "(DAT_00612560,&this_ptr->broken_texture);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x374",
-      "severity": "mild",
-      "text": "(DAT_00612560,(SMRGLTextureBasic *)&this_ptr->field_0x374);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 34,
+      "line": 33,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "fVar6 = (float10)(fVar3 / fVar4 + fVar5) * (float10)DAT_0061b4a8;",
@@ -229,7 +180,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 35,
+      "line": 34,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "fVar7 = (float10)(1.0 - fVar1 / fVar2) * (float10)DAT_0061b4a8;",
@@ -237,7 +188,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 43,
+      "line": 42,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "if (DAT_0061b4a8 <= iStack_18) {",
@@ -245,7 +196,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 44,
+      "line": 43,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "iStack_18 = DAT_0061b4a8 + -1;",
@@ -253,7 +204,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 49,
+      "line": 48,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "if (DAT_0061b4a8 <= iStack_14) {",
@@ -261,7 +212,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 50,
+      "line": 49,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "iStack_14 = DAT_0061b4a8 + -1;",
@@ -269,7 +220,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 51,
       "match": "DAT_0061b4a8",
       "severity": "mild",
       "text": "if (*(char *)(iStack_18 + iStack_14 * DAT_0061b4a8 + _DAT_01c50930) == '\\0') {",
@@ -279,7 +230,7 @@
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CGlass",
         "offset": 180,
         "vtable_addr": "00601474"
       }

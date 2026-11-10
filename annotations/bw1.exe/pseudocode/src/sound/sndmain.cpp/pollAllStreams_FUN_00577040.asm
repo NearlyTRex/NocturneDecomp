@@ -11,8 +11,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_sound.cpp_FUN_0057ce10 at 0057d413
-;   sound_sndmain.cpp_FUN_00575fb0 at 00575fff
+;   core_sound.cpp_CSound_process_FUN_0057ce10 at 0057d413
+;   sound_sndmain.cpp_processAudio_FUN_00575fb0 at 00575fff
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f4620

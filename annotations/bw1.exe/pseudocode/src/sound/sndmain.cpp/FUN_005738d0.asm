@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5e00 at 004b5e94
+;   core_fire.cpp_CFireEffect_createFireball_FUN_004b5e00 at 004b5e94
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_0056fa10

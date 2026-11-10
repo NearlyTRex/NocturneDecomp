@@ -16,7 +16,7 @@
 ;   core_game.cpp_FUN_004dc180 at 004dc18e
 ;   core_inv.cpp_freeInventory_FUN_004f75a0 at 004f75a5
 ;   core_menu.cpp_showCalibrationTest_FUN_0050a9c0 at 0050aa60
-;   core_mission.cpp_FUN_0051b8d0 at 0051b9bd
+;   core_mission.cpp_CDemonMission_process_FUN_0051b8d0 at 0051b9bd
 ;   ... and 7 more
 ;
 ; Called Functions:

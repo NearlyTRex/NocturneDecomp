@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_melee.cpp_CMelee_ctor_FUN_004ea8b0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x828                          ; 004ea880
         ;   Label: core_melee.cpp_factoryFuncMelee_FUN_004ea880
-    CALL crt_unknown.c_FUN_005b8be2     ; 004ea885
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 004ea885
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 004ea88a
     TEST EAX,EAX                        ; 004ea88d
     JNZ 0x004ea892                      ; 004ea88f

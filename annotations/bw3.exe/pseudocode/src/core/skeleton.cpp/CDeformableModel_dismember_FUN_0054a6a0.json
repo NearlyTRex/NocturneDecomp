@@ -2,25 +2,27 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 473,
-    "complexity_score": 525,
+    "complexity_score": 351,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 190,
-    "suspect_count": 32,
+    "pseudocode_lines": 196,
+    "suspect_count": 13,
     "suspect_types": [
+      "pointer_cast",
       "pointer_stride_bytecount",
+      "pointer_truncation",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 663
+    "total_lines": 669
   },
   "cross_references": [
     {
       "addr": "0054f360",
       "from_addr": "0054f3e8",
-      "name": "core_skeleton.cpp_FUN_0054f360",
+      "name": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -126,7 +128,7 @@
       {
         "call_addr": "0054f3e8",
         "call_type": "direct",
-        "caller": "core_skeleton.cpp_FUN_0054f360",
+        "caller": "core_skeleton.cpp_CDeformableModelInstance_dismemberPart_FUN_0054f360",
         "estimated_params": 6,
         "instructions_analyzed": 12,
         "method": "push_count",
@@ -356,31 +358,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x8 + lod_index * 8) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 38,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "local_30 = *(int *)(&this_ptr->field_0x0 + iVar5 + 0x54);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x0",
-      "severity": "mild",
-      "text": "puVar3 = &this_ptr->field_0x0 + iVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 50,
+      "line": 51,
       "match": "field_0xc24",
       "severity": "mild",
       "text": "iVar7 = local_2c + *(int *)(&this_ptr->field_0xc24 + iVar5 + part_index * 0x60);",
@@ -388,74 +366,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 51,
+      "line": 52,
       "match": "field_0xc38",
       "severity": "mild",
-      "text": "iVar8 = local_30 + *(int *)(&this_ptr->field_0xc38 + iVar5 + part_index * 0x60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "if (4000 < *(int *)(&this_ptr->field_0x2c + iVar5)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "((void *)0x270f9bc,0,*(int *)(&this_ptr->field_0x2c + lod_index * 4) << 2);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 62,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&this_ptr->field_0x7c + lod_index * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)(&this_ptr->field_0x7c + lod_index * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 81,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "local_14 = *(int *)&body_part_ptr->field_0x180;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 82,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "iVar5 = *(int *)&body_part_ptr->field_0x174;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "for (iVar4 = 0; iVar4 < *(int *)(&this_ptr->field_0x2c + lod_index * 4); iVar4 = iVar4 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "*(int *)&body_part_ptr->field_0x180 + *(int *)(&this_ptr->field_0xc24 + iVar4) +",
+      "text": "iVar5 = local_30 + *(int *)(&this_ptr->field_0xc38 + iVar5 + part_index * 0x60);",
       "type": "unnamed_field"
     },
     {
@@ -463,7 +377,7 @@
       "line": 94,
       "match": "field_0xc24",
       "severity": "mild",
-      "text": "*(int *)&body_part_ptr->field_0x180 + *(int *)(&this_ptr->field_0xc24 + iVar4) +",
+      "text": "body_part_ptr->tri_count + *(int *)(&this_ptr->field_0xc24 + iVar4) +",
       "type": "unnamed_field"
     },
     {
@@ -475,131 +389,67 @@
       "type": "unnamed_field"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "if (0 < *(int *)(&this_ptr->field_0x2c + lod_index * 4)) {",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 110,
+      "match": "(int *)((int)skinned_vertices",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)((int)skinned_vertices + (uint)bVar15 * -8 + 4);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 106,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "puVar12 = (uint *)(*(int *)&body_part_ptr->field_0x178 + iVar6);",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(int *)(local_2c + (int)this_ptr",
+      "severity": "moderate",
+      "text": "*(int *)(local_2c + (int)this_ptr->index_data_ptr[lod_index]) *",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "} while (local_18 < *(int *)(&this_ptr->field_0x2c + lod_index * 4));",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 154,
+      "match": "(int *)((int)body_part_ptr",
+      "severity": "moderate",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + local_28) = iVar6;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 120,
-      "match": "field_0x174",
-      "severity": "mild",
-      "text": "if (iVar5 != *(int *)&body_part_ptr->field_0x174) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 131,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "iVar6 = *(int *)&body_part_ptr->field_0x184 + iVar5;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 132,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "puVar10 = (ushort *)(*(int *)(&this_ptr->field_0x7c + lod_index * 4) + local_20);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 146,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc8 +",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 147,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "*(int *)(local_2c + *(int *)(&this_ptr->field_0x90 + lod_index * 4)) *",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 151,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&body_part_ptr->field_0x188 + local_28) = iVar6;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 162,
-      "match": "field_0x184",
-      "severity": "mild",
-      "text": "iVar7 = *(int *)&body_part_ptr->field_0x184 + local_1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 163,
-      "match": "field_0x7c",
-      "severity": "mild",
-      "text": "puVar10 = (ushort *)(*(int *)(&this_ptr->field_0x7c + lod_index * 4) + local_24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 174,
-      "match": "field_0x90",
-      "severity": "mild",
-      "text": "piVar2 = (int *)(local_30 + *(int *)(&this_ptr->field_0x90 + lod_index * 4));",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 179,
-      "match": "field_0xc8",
-      "severity": "mild",
-      "text": "&this_ptr->field_0xc8 + *piVar2 * 0x48 + texture_set_index * 0x240);",
-      "type": "unnamed_field"
+      "match": "(int *)(local_30 + (int)this_ptr",
+      "severity": "moderate",
+      "text": "piVar12 = (int *)(local_30 + (int)this_ptr->index_data_ptr[lod_index]);",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 180,
-      "match": "field_0x188",
-      "severity": "mild",
-      "text": "*(int *)(*(int *)&body_part_ptr->field_0x188 + -4 + iVar5) = iVar7;",
-      "type": "unnamed_field"
+      "description": "Complex pointer cast",
+      "line": 185,
+      "match": "(int *)((int)body_part_ptr",
+      "severity": "moderate",
+      "text": "*(int *)((int)body_part_ptr->face_texture_indices + iVar7) = iVar3;",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 186,
-      "match": "field_0x180",
-      "severity": "mild",
-      "text": "if (local_14 != *(int *)&body_part_ptr->field_0x180) {",
-      "type": "unnamed_field"
+      "description": "Pointer value `&body_part_ptr->vertices->x` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 106,
+      "match": "(int)&body_part_ptr->vertices->x",
+      "severity": "moderate",
+      "text": "piVar13 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
+      "type": "pointer_truncation"
     },
     {
-      "description": "mem* byte count hardcodes an element stride (*(int *)(&this_ptr->field_0x2c + lod_index * 4) << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
-      "line": 57,
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 106,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "piVar13 = (int *)((int)&body_part_ptr->vertices->x + iVar6);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "mem* byte count hardcodes an element stride (this_ptr->vertex_count[lod_index] << 2) instead of count * sizeof(*dst). If the array holds pointers this corrupts it on the 64-bit build (a *4 moves half of each 8-byte pointer); for value arrays use sizeof for self-documentation.",
+      "line": 58,
       "match": "memset",
       "severity": "moderate",
-      "text": "memset",
+      "text": "memset((void *)0x270f9bc,0,this_ptr->vertex_count[lod_index] << 2);",
       "type": "pointer_stride_bytecount"
     }
   ]

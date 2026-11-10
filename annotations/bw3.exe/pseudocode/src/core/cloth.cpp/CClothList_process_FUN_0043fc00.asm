@@ -12,11 +12,11 @@
 ; CDeformableModelInstance * Stack[0x18]:4   model_ptr
 ;
 ; XREF[5]:
-;   core_charactr.cpp_FUN_0042b0e0 at 0042b2aa
-;   core_charactr.cpp_FUN_00433350 at 004333cd
-;   core_spirbear.cpp_FUN_0059aba0 at 0059ac4b
-;   core_spireagl.cpp_FUN_005992f0 at 00599387
-;   core_spirindi.cpp_FUN_0059a060 at 0059a10b
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350 at 004333cd
+;   core_charactr.cpp_CCharacter_setup_FUN_0042b0e0 at 0042b2aa
+;   core_spirbear.cpp_CSpiritBear_setup_FUN_0059aba0 at 0059ac4b
+;   core_spireagl.cpp_CSpiritEagle_setup_FUN_005992f0 at 00599387
+;   core_spirindi.cpp_CSpiritIndian_setup_FUN_0059a060 at 0059a10b
 ;
 ; Called Functions:
 ;   core_cloth.cpp_CCloth_process_FUN_0043e270

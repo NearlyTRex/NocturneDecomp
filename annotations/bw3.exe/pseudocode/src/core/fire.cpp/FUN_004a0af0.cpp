@@ -24,7 +24,7 @@ void core_fire_cpp_FUN_004a0af0(int param_1)
     return;
   }
   core_particle_cpp_FUN_00509f30(param_1);
-  fStack_8 = *(float *)&g_CGamePtr->field_0x314;
+  fStack_8 = g_CGamePtr->delta_time_float;
   fStack_20 = *(float *)(param_1 + 0x4c) * fStack_8;
   fStack_1c = *(float *)(param_1 + 0x50) * fStack_8;
   fStack_18 = *(float *)(param_1 + 0x54) * fStack_8;

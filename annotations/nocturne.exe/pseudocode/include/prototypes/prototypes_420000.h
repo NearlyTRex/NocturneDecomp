@@ -131,9 +131,9 @@ void __cdecl core_charactr_cpp_CCharacter_dismember_FUN_00427b60(CCharacter *thi
 ECollisionType __cdecl core_charactr_cpp_CCharacter_getCollisionType_FUN_00427da0(CCharacter *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_charactr_cpp_CCharacter_detachBodyPart_FUN_00427e40(CCharacter *this_ptr,int part_index,CVector3f *initial_velocity,int render_in_background);
 void __cdecl core_charactr_cpp_CCharacter_dismemberPartInternal_FUN_00427eb0(CCharacter *this_ptr,CBodyPart *body_part,int part_index,int render_in_background);
-int __cdecl core_charactr_cpp_CCharacter_isGrabbable_FUN_004280a0(CCharacter *this_ptr,CDemonActor *grabber);
+int __cdecl core_charactr_cpp_CCharacter_returnZero_FUN_004280a0(CCharacter *this_ptr,CDemonActor *grabber);
 void __cdecl core_charactr_cpp_CCharacter_releaseFromGrab_FUN_004280b0(CCharacter *this_ptr);
-void __cdecl core_charactr_cpp_CCharacter_releaseVictim_FUN_004280e0(CCharacter *this_ptr);
+void __cdecl core_charactr_cpp_CCharacter_doNothing_FUN_004280e0(CCharacter *this_ptr);
 CDemonActor * __cdecl core_charactr_cpp_CCharacter_getGrabber_FUN_004280f0(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_drop_FUN_00428100(CCharacter *this_ptr,CDemonActor *carrier,CVector3f *drop_position);
 int __cdecl core_charactr_cpp_CCharacter_attractActorToward_FUN_00428160(CCharacter *this_ptr,CDemonActor *actor,CVector3f *target_local_point);
@@ -149,7 +149,7 @@ void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428bb0(CCharacter
 int __cdecl core_charactr_cpp_CCharacter_isWalkComplete_FUN_00428bc0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_isInvulnerable_FUN_00428bf0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_processWalking_FUN_00428c00(CCharacter *this_ptr,float delta_time);
-void __cdecl core_charactr_cpp_CCharacter_setWalkTimeout_FUN_00428ee0(CCharacter *this_ptr,float timeout);
+void __cdecl core_charactr_cpp_CCharacter_setDoorTarget_FUN_00428ee0(CCharacter *this_ptr,float timeout);
 void __cdecl core_charactr_cpp_CCharacter_clearDoorTarget_FUN_00428ef0(CCharacter *this_ptr);
 int __cdecl core_charactr_cpp_CCharacter_hasDoorTarget_FUN_00428f20(CCharacter *this_ptr);
 void __cdecl core_charactr_cpp_CCharacter_pickupObjectNow_FUN_00428f40(CCharacter *this_ptr,int hand_index,CDemonActor *object,float blend_time);

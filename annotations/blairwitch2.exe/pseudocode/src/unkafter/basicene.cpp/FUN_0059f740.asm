@@ -14,14 +14,14 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[8]:
-;   core_confedrt.cpp_FUN_005a1350 at 005a139a
-;   core_confzomb.cpp_FUN_005a2520 at 005a2551
-;   core_dog1.cpp_FUN_005ac610 at 005ac648
-;   core_hag.cpp_FUN_005ab940 at 005ab971
-;   core_hand.cpp_FUN_005aa380 at 005aa3b2
-;   core_schngeis.cpp_FUN_005a3420 at 005a3450
-;   core_union.cpp_FUN_005a5300 at 005a534a
-;   core_unionzom.cpp_FUN_005a4600 at 005a4631
+;   core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350 at 005a139a
+;   core_confzomb.cpp_CConfederateZombie_processMotionEvent_FUN_005a2520 at 005a2551
+;   core_dog1.cpp_CDog_processMotionEvent_FUN_005ac610 at 005ac648
+;   core_hag.cpp_CHag_processMotionEvent_FUN_005ab940 at 005ab971
+;   core_hand.cpp_CHand_processMotionEvent_FUN_005aa380 at 005aa3b2
+;   core_schngeis.cpp_CSchnellGeist_processMotionEvent_FUN_005a3420 at 005a3450
+;   core_union.cpp_CUnion_processMotionEvent_FUN_005a5300 at 005a534a
+;   core_unionzom.cpp_CUnionZombie_processMotionEvent_FUN_005a4600 at 005a4631
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0265370c
@@ -29,7 +29,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408d70
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0
-;   core_enemy.cpp_FUN_00488110
+;   core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110
 ;   core_xform.cpp_FUN_00591530
 ;
 ; *****************************************************************************
@@ -95,8 +95,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 0059f7e0
     MOVSD ES:EDI,ESI                    ; 0059f7e1
     MOVSD ES:EDI,ESI                    ; 0059f7e2
-    CALL core_enemy.cpp_FUN_00488110    ; 0059f7e3
-        ;   XREF to: 00488110 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_FUN_00488110(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
+    CALL core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110 ; 0059f7e3
+        ;   XREF to: 00488110 (UNCONDITIONAL_CALL)  ; int core_enemy.cpp_CEnemy_testAttackRadius_FUN_00488110(CEnemy * this_ptr, CVector3f * point, float radius, SDamageInfo * damage_info)
     ADD ESP,0x10                        ; 0059f7e8
     POP ESI                             ; 0059f7eb
     POP EDI                             ; 0059f7ec

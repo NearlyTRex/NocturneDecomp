@@ -15,7 +15,7 @@ void engine_drender_cpp_FUN_0046c2ce(CDemonRenderer *param_1,int param_2)
   uint uVar2;
   int iVar3;
   
-  if ((*(int *)(param_1 + 0xc) == 0) ||
+  if ((param_1->plane_culling_enabled == 0) ||
      (iVar3 = engine_3d_c_isVisiblePlane_FUN_00403920(param_2 + 8), iVar3 != 0)) {
     uVar2 = 0xffffffff;
     iVar3 = 0;
@@ -23,12 +23,13 @@ void engine_drender_cpp_FUN_0046c2ce(CDemonRenderer *param_1,int param_2)
       iVar1 = param_2;
       do {
         iVar3 = iVar3 + 1;
-        uVar2 = uVar2 & *(uint *)(*(int *)param_1 + 0x10 + *(int *)(iVar1 + 0x18) * 0x30);
+        uVar2 = uVar2 & *(uint *)(param_1->vertex_buffer_ptr + *(int *)(iVar1 + 0x18) * 0x30 + 0x10)
+        ;
         iVar1 = iVar1 + 4;
       } while (iVar3 < *(int *)(param_2 + 4));
     }
     if (((uVar2 & 0x80000000) == 0) || ((uVar2 & 0x1f) == 0)) {
-      if (*(int *)(param_1 + 4) == 0) {
+      if (param_1->shadow_pass_active == 0) {
         if (DAT_005fba20 == 0x20) {
           _DAT_01c6b5cc = engine_special_cpp_FUN_00560f31;
         }

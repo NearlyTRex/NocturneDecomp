@@ -17,13 +17,13 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[10]:
-;   engine_3d.c_FUN_004075b0 at 004076ed
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePerspOp59_FUN_00406d90 at 00406e72
 ;   engine_3d.c_renderPolygonAlphaBlendedDepthWritePlaneMaskedOp58_FUN_00406c50 at 00406d2f
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedOp36_FUN_004054e0 at 004055b4
 ;   engine_3d.c_renderPolygonAlphaBlendedPlaneMaskedPerspOp37_FUN_00405600 at 004056d7
 ;   engine_3d.c_renderPolygonBlendedLitOp63_FUN_00406af0 at 00406bb5
 ;   engine_3d.c_renderPolygonFogColorOp6_FUN_00403b70 at 00403c41
+;   engine_3d.c_renderPolygonWithRenderFlagsUV_FUN_004075b0 at 004076ed
 ;   engine_3d.c_renderPolygonWithRenderFlags_FUN_004074b0 at 00407596
 ;   engine_drender.cpp_CDemonRenderer_clipAndFillPoly_FUN_0046b160 at 0046b1f4
 ;   engine_drender.cpp_FUN_0046de6e at 0046e02e
@@ -52,8 +52,8 @@
 ;   engine_clipper.c_interpolateVertexRightClipAdvanced_FUN_0043a8c0
 ;   engine_clipper.c_interpolateVertexTopClipAdvanced_FUN_0043ab20
 ;   engine_prim.c_calculateTriangleWindingOrder_FUN_00515ac0
-;   engine_prim.c_FUN_00516de0
-;   engine_prim.c_FUN_00517480
+;   engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480
+;   engine_prim.c_renderScanlinePolygon_FUN_00516de0
 ;   engine_special.cpp_drawPolygon2_FUN_00565c40
 ;
 ; *****************************************************************************
@@ -169,8 +169,8 @@ section .text
     PUSH EBX                            ; 0043bbac
         ;   Label: LAB_0043bbac
     PUSH EDX                            ; 0043bbad
-    CALL engine_prim.c_FUN_00517480     ; 0043bbae
-        ;   XREF to: 00517480 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_00517480(int * vertex_indices, int vertex_count)
+    CALL engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480 ; 0043bbae
+        ;   XREF to: 00517480 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderIndexedPolygonAdvanced_FUN_00517480(int * vertex_indices, int vertex_count)
     ADD ESP,0x8                         ; 0043bbb3
     JMP 0x0043bba4                      ; 0043bbb6
         ;   XREF to: 0043bba4 (UNCONDITIONAL_JUMP)  ; LAB_0043bba4
@@ -251,8 +251,8 @@ section .text
         ;   XREF to: 0043bba4 (CONDITIONAL_JUMP)  ; LAB_0043bba4
     PUSH EBX                            ; 0043bc6f
     PUSH 0x7e3e8c                       ; 0043bc70 | DAT_007e3e8c
-    CALL engine_prim.c_FUN_00516de0     ; 0043bc75
-        ;   XREF to: 00516de0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_FUN_00516de0(SRenderVertex * vertices, int vertex_count)
+    CALL engine_prim.c_renderScanlinePolygon_FUN_00516de0 ; 0043bc75
+        ;   XREF to: 00516de0 (UNCONDITIONAL_CALL)  ; void engine_prim.c_renderScanlinePolygon_FUN_00516de0(SRenderVertex * vertices, int vertex_count)
     ADD ESP,0x8                         ; 0043bc7a
     ADD ESP,0x20                        ; 0043bc7d
     POP EBP                             ; 0043bc80

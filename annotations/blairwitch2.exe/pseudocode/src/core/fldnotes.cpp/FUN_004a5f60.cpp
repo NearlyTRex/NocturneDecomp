@@ -47,7 +47,7 @@ void core_fldnotes_cpp_FUN_004a5f60(int param_1)
     DAT_01caf4a0 = 0;
     return;
   }
-  if ((*(int *)&g_CGamePtr->field_0x244 == 0) &&
+  if ((g_CGamePtr->letterbox_mode == 0) &&
      ((**(code **)(*0x01D02F84 + 4))(0x01D02F84,0x200), (DAT_01c2a384 & 1) != 0)) {
     iVar2 = unkaddr_004a1200_cpp_FUN_004a1bb0(_DAT_01c2a37c,_DAT_01c2a380);
     if (-1 < iVar2) {
@@ -56,8 +56,8 @@ void core_fldnotes_cpp_FUN_004a5f60(int param_1)
     iVar2 = unkaddr_004a1200_cpp_FUN_004a1c60(_DAT_01c2a37c,_DAT_01c2a380);
     _DAT_01caf110 = _DAT_01caf110 + iVar2;
     if ((((0x00000262 <= _DAT_01c2a37c) && (0x000001C0 <= _DAT_01c2a380)) &&
-        (_DAT_01c2a37c < 0x00000262 + CAlphaBitmap_01caf218._12_4_)) &&
-       (_DAT_01c2a380 < CAlphaBitmap_01caf218._16_4_ + 0x000001C0)) {
+        (_DAT_01c2a37c < 0x00000262 + CAlphaBitmap_01caf218.width)) &&
+       (_DAT_01c2a380 < CAlphaBitmap_01caf218.height + 0x000001C0)) {
       *(uint *)(param_1 + 0x40) = 0;
     }
     piVar1 = (int *)core_fldnotes_cpp_FUN_004a2730

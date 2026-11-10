@@ -14,7 +14,7 @@
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromBottomRight_FUN_00466740 at 00466758
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopLeft_FUN_004666b0 at 004666c8
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawCircleFromTopRight_FUN_004666e0 at 004666f8
-;   cockpit_drawsurf.cpp_FUN_00468b80 at 00468c79
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_00468b80 at 00468c79
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawRectangleCornerPoints_FUN_00466770

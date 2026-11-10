@@ -2,24 +2,24 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 100,
-    "complexity_score": 267,
+    "complexity_score": 268,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 0,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 37,
+    "pseudocode_lines": 38,
     "suspect_count": 22,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param"
     ],
-    "total_lines": 137
+    "total_lines": 138
   },
   "cross_references": [
     {
       "addr": "004b7f90",
       "from_addr": "004b844e",
-      "name": "core_game.cpp_FUN_004b7f90",
+      "name": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -49,7 +49,7 @@
     {
       "addr": "00556c10",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556c10"
+      "name": "sound_sndmain.cpp_setSfxFade_FUN_00556c10"
     }
   ],
   "globals": [],
@@ -59,7 +59,7 @@
       {
         "call_addr": "004b844e",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004b7f90",
+        "caller": "core_game.cpp_CGame_runGameSession_FUN_004b7f90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -146,7 +146,7 @@
       "line": 9,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),0.0,2.0,1);",
+      "text": "sound_sndmain_cpp_setSfxFade_FUN_00556c10(*(uint *)(param_1 + 0x2fc),0.0,2.0,1);",
       "type": "unnamed_param"
     },
     {
@@ -239,18 +239,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0)",
+      "text": "(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 28,
+      "line": 29,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0)",
+      "text": "(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);",
       "type": "unnamed_param"
     },
     {
@@ -271,18 +271,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);",
+      "text": "(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 35,
+      "line": 36,
       "match": "param_1",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_00556c10(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);",
+      "text": "(*(uint *)(param_1 + 0x2fc),*(float *)(param_1 + 0x308),2.0,0);",
       "type": "unnamed_param"
     },
     {

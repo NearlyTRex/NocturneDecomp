@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 275,
-    "complexity_score": 309,
+    "complexity_score": 296,
     "cross_reference_count": 0,
     "function_call_count": 17,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 94,
-    "suspect_count": 20,
+    "pseudocode_lines": 96,
+    "suspect_count": 19,
     "suspect_types": [
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 369
+    "total_lines": 371
   },
   "cross_references": [],
   "function": {
@@ -81,9 +80,19 @@
       "name": "shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400"
     },
     {
+      "addr": "004961b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_004961b0"
+    },
+    {
       "addr": "0049a620",
       "is_variadic": false,
       "name": "shape_edittool.cpp_CPickList_ctor_FUN_0049a620"
+    },
+    {
+      "addr": "0049a8b0",
+      "is_variadic": false,
+      "name": "shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0"
     },
     {
       "addr": "0049a710",
@@ -96,11 +105,6 @@
       "name": "shape_edittool.cpp_CStrList_add_FUN_004994d0"
     },
     {
-      "addr": "004961b0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_004961b0"
-    },
-    {
       "addr": "004962b0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_FUN_004962b0"
@@ -109,11 +113,6 @@
       "addr": "00496dd0",
       "is_variadic": false,
       "name": "shape_edittool.cpp_FUN_00496dd0"
-    },
-    {
-      "addr": "0049a8b0",
-      "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0049a8b0"
     }
   ],
   "globals": [
@@ -230,7 +229,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 28,
       "match": "param_1",
       "severity": "mild",
       "text": "if (0 < param_1[0x104]) {",
@@ -238,7 +237,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 30,
+      "line": 31,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar4 = (param_1[0x104] + -1) * 0x14;",
@@ -246,15 +245,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iVar1 = param_1[0x105];",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
+      "line": 32,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar1 = param_1[0x105];",
@@ -265,36 +256,36 @@
       "line": 38,
       "match": "param_1",
       "severity": "mild",
+      "text": "iVar1 = param_1[0x105];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 39,
+      "match": "param_1",
+      "severity": "mild",
       "text": "iVar4 = engine_pod_cpp_FUN_0053c4c0(param_1,iVar2);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 41,
+      "line": 42,
       "match": "param_1",
       "severity": "mild",
-      "text": "((CStrList *)&CStack_3e0,*(char **)(iVar5 + param_1[0x105]));",
+      "text": "(&CStack_3e0.base,*(char **)(iVar5 + param_1[0x105]));",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 45,
+      "line": 46,
       "match": "param_1",
       "severity": "mild",
       "text": "} while (iVar2 < param_1[0x104]);",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 48,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (CStack_3e0._0_4_ != 0) {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 55,
+      "line": 57,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = *param_1;",
@@ -302,7 +293,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 69,
+      "line": 71,
       "match": "param_1",
       "severity": "mild",
       "text": "core_main_c_FUN_005030e0(\"Invalid pod version for %s: %d\",param_1 + 1,iVar2);",
@@ -310,7 +301,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -318,7 +309,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 71,
+      "line": 73,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1 = param_1 + 1;",
@@ -326,7 +317,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 74,
+      "line": 76,
       "match": "param_1",
       "severity": "mild",
       "text": "iVar2 = _fopen(param_1,0x5ed7b6);",
@@ -334,7 +325,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 81,
+      "line": 83,
       "match": "param_1",
       "severity": "mild",
       "text": "iStack_1c = engine_dosio_cpp_getFileSize_FUN_00478fb0((char *)0x5ed65e,(char *)param_1);",
@@ -342,7 +333,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 83,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
       "text": "uVar3 = _fopen(param_1,0x5ed65f);",

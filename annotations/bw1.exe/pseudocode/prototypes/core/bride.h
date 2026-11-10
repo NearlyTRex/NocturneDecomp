@@ -21,33 +21,33 @@ CDemonActorType * CBride::getActorType(CBride *this_ptr);
 // Address: 004238c0
 CBride * CBride::ctor(CBride *this_ptr);
 
-// Original: core_bride.cpp_FUN_00423940
+// Original: core_bride.cpp_CBride_setup_FUN_00423940
 // Address: 00423940
-void FUN_00423940(CEnemy *param_1);
+void __cdecl CBride::setup(CBride *this_ptr);
 
-// Original: core_bride.cpp_FUN_00423b70
+// Original: core_bride.cpp_CBride_process_FUN_00423b70
 // Address: 00423b70
-void FUN_00423b70(CEnemy *param_1,float param_2);
+void __cdecl CBride::process(CBride *this_ptr,float delta_time);
 
-// Original: core_bride.cpp_FUN_00424840
+// Original: core_bride.cpp_CBride_archive_FUN_00424840
 // Address: 00424840
-void FUN_00424840(CEnemy *param_1);
+void __cdecl CBride::archive(CBride *this_ptr);
 
 // Original: core_bride.cpp_CBride_processDismemberment_FUN_004248e0
 // Address: 004248e0
 void __cdecl CBride::processDismemberment(CBride *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_bride.cpp_FUN_00424b10
+// Original: core_bride.cpp_CBride_processDamage_FUN_00424b10
 // Address: 00424b10
-void FUN_00424b10(CBride *param_1,SDamageInfo *param_2);
+void __cdecl CBride::processDamage(CBride *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_bride.cpp_FUN_00424d60
+// Original: core_bride.cpp_CBride_getTargetPoints_FUN_00424d60
 // Address: 00424d60
-undefined4 FUN_00424d60(int param_1,undefined4 *param_2);
+int __cdecl CBride::getTargetPoints(CBride *this_ptr,CVector3f *out_points_array);
 
-// Original: core_bride.cpp_FUN_00424e20
+// Original: core_bride.cpp_CBride_getTargetPoint_FUN_00424e20
 // Address: 00424e20
-void FUN_00424e20(int param_1);
+CVector3f * __cdecl CBride::getTargetPoint(CBride *this_ptr,CVector3f *out_point);
 
 // Original: core_bride.cpp_CBride_dtor_FUN_00424e90
 // Address: 00424e90

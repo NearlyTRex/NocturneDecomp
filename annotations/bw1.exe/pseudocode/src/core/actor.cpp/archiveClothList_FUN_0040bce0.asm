@@ -5,11 +5,11 @@
 ;
 ;
 ; XREF[5]:
-;   core_charactr.cpp_FUN_0042c7f0 at 0042c8fc
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042c8fc
+;   core_demnfolk.cpp_CDemnfolk_archive_FUN_0045c1e0 at 0045c2e1
 ;   core_hostage.cpp_CHostage_archive_FUN_004ef020 at 004ef0d2
 ;   core_mobster.cpp_CMobster_archive_FUN_0051eb30 at 0051eba0
-;   core_zombie.cpp_FUN_005be1e0 at 005be2e1
-;   unkafter_demnfolk.cpp_FUN_0045c1e0 at 0045c2e1
+;   core_zombie.cpp_CZombie_archive_FUN_005be1e0 at 005be2e1
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Cloth_list_opening_brace_005d2c01

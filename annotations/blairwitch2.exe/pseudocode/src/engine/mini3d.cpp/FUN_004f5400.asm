@@ -11,7 +11,7 @@
 ;   undefined4 DAT_0264bcd4
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_00449280
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280
 ;   engine_mini3d.cpp_FUN_004f3740
 ;   unkafter_minecar.cpp_FUN_004f2950
 ;
@@ -55,8 +55,8 @@ section .text
     PUSH ECX                            ; 004f5459
     LEA EAX,[EBX + 0xc]                 ; 004f545a
     PUSH EAX                            ; 004f545d
-    CALL core_dirmat.cpp_FUN_00449280   ; 004f545e
-        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280 ; 004f545e
+        ;   XREF to: 00449280 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004f5463
     FLD1                                ; 004f5466
     FDIV float ptr [ESP + 0x34]         ; 004f5468

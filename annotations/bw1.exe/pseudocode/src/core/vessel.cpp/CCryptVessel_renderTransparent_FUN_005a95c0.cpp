@@ -17,38 +17,37 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005a95c0(CCryptVe
   float10 fVar5;
   CVector3f CStack_2c;
   CVector3f CStack_20;
-  uint uStack_14;
+  int iStack_14;
   
-  if (*(int *)&this_ptr->field_0x7e8 == 0) {
+  if (this_ptr->is_visible == 0) {
     return 0;
   }
-  if (*(int *)&this_ptr->field_0x3b4 == 1) {
-    core_flame_cpp_CFlame_renderTransparent_FUN_004b8100((CFlame *)&this_ptr->field_0x3c4);
+  if (this_ptr->visual_type == CRYPT_VESSEL_FIRE) {
+    core_flame_cpp_CFlame_renderTransparent_FUN_004b8100(&this_ptr->flame);
   }
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_004837b0
-            (DAT_00612560,(CVector3f *)&this_ptr->field_0x20);
+            (DAT_00612560,&(this_ptr->base).location.position);
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
-            (DAT_00612560,(CVector3f *)&this_ptr->field_0x30,(CVector3f *)0x0);
-  CStack_20._0_4_ = 0;
-  CStack_20._8_4_ = 0;
-  CStack_20._4_4_ = *(uint *)&this_ptr->field_0x668;
-  CStack_2c._0_4_ = 0;
-  CStack_2c._4_4_ = 0x400ccccd;
-  CStack_2c._8_4_ = 0;
+            (DAT_00612560,&(this_ptr->base).orient.vec,(CVector3f *)0x0);
+  CStack_20.x = 0.0;
+  CStack_20.z = 0.0;
+  CStack_20.y = this_ptr->spin_angle;
+  CStack_2c.x = 0.0;
+  CStack_2c.y = 2.2;
+  CStack_2c.z = 0.0;
   engine_drender_cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
             (DAT_00612560,&CStack_20,&CStack_2c);
   engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,0xffff);
-  if (*(int *)&this_ptr->field_0x3b4 == 2) {
-    fVar5 = (float10)*(float *)&this_ptr->field_0x7ec;
+  if (this_ptr->visual_type == CRYPT_VESSEL_WATER) {
+    fVar5 = (float10)this_ptr->water_anim_timer;
     this_ptr_00 = (CKeyFramedModelInstance *)round();
-    uStack_14 = (uint)ROUND(fVar5);
+    iStack_14 = (int)ROUND(fVar5);
     pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(this_ptr_00);
-    FUN_005bfb40(&pCVar2->field_0x12c,"BWATER%d.RAW",uStack_14 & 0xf);
+    _sprintf(&pCVar2->field_0x12c,"BWATER%d.RAW");
     engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_00483de0(DAT_00612560,48000);
   }
   else {
-    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
-                       ((CKeyFramedModelInstance *)&this_ptr->field_0x66c);
+    pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900(&this_ptr->orb_model);
     pcVar3 = "@MENUCLD2.RAW" + 1;
     pcVar4 = &pCVar2->field_0x12c;
     do {
@@ -60,7 +59,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005a95c0(CCryptVe
       pcVar4[1] = cVar1;
       pcVar4 = pcVar4 + 2;
     } while (cVar1 != '\0');
-    if (*(int *)&this_ptr->field_0x3b4 == 0) {
+    if (this_ptr->visual_type == CRYPT_VESSEL_AIR) {
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,1);
     }
     else {
@@ -68,7 +67,7 @@ int __cdecl core_vessel_cpp_CCryptVessel_renderTransparent_FUN_005a95c0(CCryptVe
     }
   }
   core_dmodel_cpp_CKeyFramedModelInstance_prepareForRendering_FUN_004688a0
-            ((CKeyFramedModelInstance *)&this_ptr->field_0x66c,0.0,0x267);
+            (&this_ptr->orb_model,0.0,0x267);
   engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_00483dd0(DAT_00612560,0);
   engine_matrix_c_pop_FUN_004839a0();
   engine_matrix_c_pop_FUN_004839a0();

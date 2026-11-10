@@ -6,11 +6,11 @@
 #include "system/basetypes.h"
 
 // Structure: CToss
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x3e8 (1000 bytes)
 #pragma pack(push, 1)
 typedef struct CToss {
-    char field_0[1000]; // 0x0
+    int toss_type; // 0x0
+    char field_4[996]; // 0x4
 } CToss;
 #pragma pack(pop)
 

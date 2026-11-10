@@ -8,7 +8,7 @@
 ; undefined1       Stack[-0xd7]:1  local_d7
 ;
 ; XREF[1]:
-;   core_spireagl.cpp_FUN_00599d60 at 00599dbb
+;   core_spireagl.cpp_CSpiritEagle_processDamage_FUN_00599d60 at 00599dbb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_s_d_005d9a05
@@ -16,10 +16,10 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
+;   core_motion.cpp_CMotionController_getMotionList_FUN_004fc310
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_motion.cpp_FUN_004fba50
-;   core_motion.cpp_FUN_004fc310
-;   crt_unknown.c_FUN_005a28c0
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0xdc]      ; 00599c91
     PUSH EDX                            ; 00599c98
     XOR EBX,EBX                         ; 00599c99
-    CALL core_motion.cpp_FUN_004fc310   ; 00599c9b
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 00599c9b
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00599ca0
     MOV EBP,EAX                         ; 00599ca3
     XOR EDI,EDI                         ; 00599ca5
@@ -47,15 +47,15 @@ section .text
     PUSH 0x5d9a05                       ; 00599cac | = "%s_%d"
     LEA EAX,[ESP + 0xc]                 ; 00599cb1
     PUSH EAX                            ; 00599cb5
-    CALL crt_unknown.c_FUN_005a28c0     ; 00599cb6
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00599cb6
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00599cbb
     PUSH EDI                            ; 00599cbe
     LEA EAX,[ESP + 0x4]                 ; 00599cbf
     PUSH EAX                            ; 00599cc3
     PUSH EBP                            ; 00599cc4
-    CALL core_motion.cpp_FUN_004fba50   ; 00599cc5
-        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50 ; 00599cc5
+        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00599cca
     TEST EAX,EAX                        ; 00599ccd
     JL 0x00599cd4                       ; 00599ccf
@@ -77,16 +77,16 @@ section .text
     PUSH 0x5d9a0b                       ; 00599ce5 | = "%s_%d"
     LEA EAX,[ESP + 0xc]                 ; 00599cea
     PUSH EAX                            ; 00599cee
-    CALL crt_unknown.c_FUN_005a28c0     ; 00599cef
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00599cef
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00599cf4
     PUSH 0x0                            ; 00599cf7
         ;   Label: LAB_00599cf7
     LEA EAX,[ESP + 0x4]                 ; 00599cf9
     PUSH EAX                            ; 00599cfd
     PUSH EBP                            ; 00599cfe
-    CALL core_motion.cpp_FUN_004fba50   ; 00599cff
-        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50 ; 00599cff
+        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00599d04
     TEST EAX,EAX                        ; 00599d07
     JGE 0x00599d36                      ; 00599d09

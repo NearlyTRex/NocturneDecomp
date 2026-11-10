@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_dynamite.cpp_CDynamite_ctor_FUN_00479ff0
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x6e8                          ; 00479fc0
         ;   Label: core_dynamite.cpp_factoryFuncDynamite_FUN_00479fc0
-    CALL crt_unknown.c_FUN_005b8be2     ; 00479fc5
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 00479fc5
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 00479fca
     TEST EAX,EAX                        ; 00479fcd
     JNZ 0x00479fd2                      ; 00479fcf

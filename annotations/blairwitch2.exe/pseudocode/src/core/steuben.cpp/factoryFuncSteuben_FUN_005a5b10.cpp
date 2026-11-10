@@ -11,7 +11,7 @@ void core_steuben_cpp_factoryFuncSteuben_FUN_005a5b10(void)
 {
   CSteuben *this_ptr;
   
-  this_ptr = (CSteuben *)FUN_005b8be2(0x11850);
+  this_ptr = (CSteuben *)debugAllocTracked1(0x11850);
   if (this_ptr == (CSteuben *)0x0) {
     return;
   }

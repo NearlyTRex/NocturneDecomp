@@ -16,8 +16,9 @@ CMotionController * __cdecl core_motion_cpp_CMotionController_dtor_FUN_004fbb00(
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0x50 =
-       &PTR_core_motion_cpp_CMotionController_dtor_FUN_004fbb00_005e2c84;
+  this_ptr->vtable =
+       (CMotionController_vtable *)&PTR_core_motion_cpp_CMotionController_dtor_FUN_004fbb00_005e2c84
+  ;
   if ((flags & 2) == 0) {
     return this_ptr;
   }

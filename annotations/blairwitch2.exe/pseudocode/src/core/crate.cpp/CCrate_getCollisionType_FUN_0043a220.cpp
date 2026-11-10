@@ -9,7 +9,8 @@
 ECollisionType __cdecl core_crate_cpp_CCrate_getCollisionType_FUN_0043a220(CCrate *this_ptr,SCollisionInfo *collision_info)
 
 {
-  if ((*(int *)&this_ptr->field_0x70 == 1) && (*(int *)&this_ptr->field_0x430 == 0)) {
+  if (((this_ptr->base).lifecycle_state == ACTOR_CREATED) &&
+     (this_ptr->carrier == (CDemonActor *)0x0)) {
     return COLLISION_TYPE_MESH;
   }
   return COLLISION_TYPE_NONE;

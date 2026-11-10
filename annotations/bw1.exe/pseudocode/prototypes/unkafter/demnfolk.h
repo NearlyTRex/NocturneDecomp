@@ -17,65 +17,9 @@ undefined4 FUN_0045bf60(int param_1,undefined4 param_2);
 // Address: 0045bfa0
 void FUN_0045bfa0(int param_1);
 
-// Original: unkafter_demnfolk.cpp_FUN_0045bfe0
-// Address: 0045bfe0
-int FUN_0045bfe0(CCharacter *param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045c020
-// Address: 0045c020
-undefined4 FUN_0045c020(int param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045c1e0
-// Address: 0045c1e0
-void FUN_0045c1e0(CEnemy *param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045c350
-// Address: 0045c350
-undefined4 FUN_0045c350(int param_1,undefined4 *param_2);
-
 // Original: unkafter_demnfolk.cpp_FUN_0045c4a0
 // Address: 0045c4a0
-void FUN_0045c4a0(CCharacter *param_1,int *param_2);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045c7b0
-// Address: 0045c7b0
-void FUN_0045c7b0(int param_1,int param_2);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045c9f0
-// Address: 0045c9f0
-int FUN_0045c9f0(int param_1,float *param_2);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cd00
-// Address: 0045cd00
-int FUN_0045cd00(CCharacter *param_1,CDemonActor *param_2);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cd40
-// Address: 0045cd40
-bool FUN_0045cd40(undefined4 param_1,undefined4 param_2,int param_3);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cd50
-// Address: 0045cd50
-undefined4 FUN_0045cd50(int param_1,undefined4 param_2,int param_3);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cdc0
-// Address: 0045cdc0
-int FUN_0045cdc0(CDemonActor *param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cdf0
-// Address: 0045cdf0
-void FUN_0045cdf0(int param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cec0
-// Address: 0045cec0
-void FUN_0045cec0(int param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045cf70
-// Address: 0045cf70
-void FUN_0045cf70(int param_1);
-
-// Original: unkafter_demnfolk.cpp_FUN_0045d020
-// Address: 0045d020
-void FUN_0045d020(int param_1);
+void FUN_0045c4a0(CCharacter *param_1,float *param_2);
 
 // Original: unkafter_demnfolk.cpp_FUN_0045d060
 // Address: 0045d060

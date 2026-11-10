@@ -10,7 +10,7 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[1]:
-;   core_glass.cpp_FUN_004e1db0 at 004e1f51
+;   core_glass.cpp_CGlass_renderBrokenGlass_FUN_004e1db0 at 004e1f51
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

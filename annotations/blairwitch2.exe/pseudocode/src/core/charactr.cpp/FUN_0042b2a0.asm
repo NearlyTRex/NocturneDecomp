@@ -5,22 +5,22 @@
 ;
 ;
 ; XREF[36]:
-;   core_armour.cpp_FUN_0040ef00 at 0040ef79
-;   core_baron.cpp_FUN_0040f950 at 0040fa1b
-;   core_batcreat.cpp_FUN_00411a10 at 00411a98
-;   core_batman.cpp_FUN_00412f40 at 00412fc8
-;   core_biggs.cpp_FUN_00414e50 at 00414ebd
-;   core_boneguy.cpp_FUN_004186c0 at 00418af0
-;   core_bride.cpp_FUN_0041dbe0 at 0041dce1
-;   core_colonel.cpp_FUN_00435830 at 004358d6
-;   core_cow.cpp_FUN_004392b0 at 00439338
-;   core_doc.cpp_FUN_00450c60 at 004511f1
+;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040ef79
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040fa1b
+;   core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0 at 0059e837
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411a98
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00412fc8
+;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 00414ebd
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418af0
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dce1
+;   core_colonel.cpp_CColonel_process_FUN_00435830 at 004358d6
+;   core_conveyor.cpp_CConstruct_process_FUN_00436e80 at 00437357
 ;   ... and 26 more
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_ghost_005cd32a
 ;   CGame* g_CGamePtr = 01cb6900
-;   undefined4 g_CGameInstance.field580_0x244
+;   undefined4 g_CGameInstance.letterbox_mode
 ;
 ; Called Functions:
 ;   crt_string.c__strnicmp_FUN_005b8da0
@@ -35,7 +35,7 @@ section .text
     MOV EBP,ESP                         ; 0042b2a2
     MOV EBX,dword ptr [EBP + 0xc]       ; 0042b2a4
     MOV EAX,[0x00616494]                ; 0042b2a7 | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 0042b2ac | g_CGameInstance.field580_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 0042b2ac | g_CGameInstance.letterbox_mode
     JNZ 0x0042b2e1                      ; 0042b2b3
         ;   XREF to: 0042b2e1 (CONDITIONAL_JUMP)  ; LAB_0042b2e1
     FLD float ptr [EBX + 0x259c]        ; 0042b2b5

@@ -12,9 +12,8 @@ CToss * __cdecl core_fire_cpp_CToss_ctor_FUN_004b1c10(CToss *this_ptr)
   CKeyFramedModelInstance *pCVar1;
   CBox *pCVar2;
   
-  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860
-                     ((CKeyFramedModelInstance *)&this_ptr->field_0x4);
+  pCVar1 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00468860(&this_ptr->model);
   pCVar2 = core_box_cpp_CBox_ctor_FUN_0041da00((CBox *)(pCVar1 + 1));
-  *(uint *)(pCVar2 + 0x25c) = 0;
-  return (CToss *)(pCVar2 + -0x180);
+  pCVar2[1].position.y = 0.0;
+  return (CToss *)&pCVar2[-1].scrape_points[0].raytrace_intersection;
 }

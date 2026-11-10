@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 62,
-    "complexity_score": 225,
+    "complexity_score": 175,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 30,
-    "suspect_count": 18,
+    "suspect_count": 13,
     "suspect_types": [
       "unnamed_field",
       "unnamed_param",
@@ -43,7 +43,7 @@
     {
       "addr": "0052c970",
       "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_0052c970"
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_0052c970"
     },
     {
       "addr": "00494400",
@@ -147,16 +147,8 @@
       "line": 18,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x1c = 0;",
+      "text": "param_1->player_count = 0;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x1c = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
@@ -179,16 +171,8 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "name = &param_1->field_0x8;",
+      "text": "name = param_1->player_name;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "name = &param_1->field_0x8;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -203,39 +187,23 @@
       "line": 25,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x11c = iVar2;",
+      "text": "param_1->local_player_index = iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x11c = iVar2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 26,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(int *)&param_1->field_0x118 = iVar2;",
+      "text": "param_1->server_player_index = iVar2;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "*(int *)&param_1->field_0x118 = iVar2;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 27,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = core_netgame_cpp_FUN_0052c970(param_1);",
+      "text": "iVar2 = core_netgame_cpp_CNetGame_initializeNetwork_FUN_0052c970(param_1);",
       "type": "unnamed_param"
     },
     {
@@ -243,23 +211,15 @@
       "line": 31,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x4 = 1;",
+      "text": "param_1->network_mode = NET_MODE_LOBBY;",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&param_1->field_0x4 = 1;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 32,
       "match": "param_1",
       "severity": "mild",
-      "text": "*(uint *)param_1 = 1;",
+      "text": "param_1->connection_type = CONNECTION_HOST;",
       "type": "unnamed_param"
     }
   ]

@@ -26,7 +26,7 @@ uint core_patrpoin_cpp_FUN_0059c9c0(char *param_1,uint *param_2)
   
   bVar9 = 0;
   local_c = (CDemonActor *)0x0;
-  count = FUN_005baf20(param_1,"0123456789");
+  count = strtok(param_1,"0123456789");
   if ((int)count < 1) {
     return 0;
   }
@@ -115,6 +115,6 @@ LAB_0059ca8e:
       pcVar7[1] = cVar1;
       pcVar7 = pcVar7 + 2;
     } while (cVar1 != '\0');
-    local_c = core_mission_cpp_FUN_004fc740(0x01D182F0,local_34);
+    local_c = core_mission_cpp_CDemonMission_findActorByName_FUN_004fc740(0x01D182F0,local_34);
   } while( true );
 }

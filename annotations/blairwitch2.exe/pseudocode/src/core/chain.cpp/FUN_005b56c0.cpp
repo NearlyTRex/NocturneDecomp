@@ -15,49 +15,26 @@ uint core_chain_cpp_FUN_005b56c0(CDemonActor *param_1)
   int iVar2;
   uint uVar3;
   uint *puVar4;
-  float *pfVar5;
+  UActorVTable *pUVar5;
   uint *puVar6;
   float *pfVar7;
   byte bVar8;
-  SMRGLHeaderPrimitive aSStack_d4 [4];
-  uint uStack_d0;
-  uint uStack_cc;
-  uint uStack_c8;
-  uint uStack_c4;
-  uint uStack_c0;
+  SMRGLHeaderPrimitive SStack_d4;
   uint uStack_bc;
   uint uStack_b8;
   uint uStack_b4;
   uint uStack_b0;
   uint auStack_ac [6];
   uint auStack_94 [6];
-  int iStack_7c;
-  int iStack_78;
-  int iStack_74;
-  int iStack_70;
-  int iStack_6c;
-  int iStack_68;
-  int iStack_64;
-  int iStack_60;
-  int iStack_5c;
-  int iStack_58;
-  int iStack_54;
-  int iStack_50;
-  int iStack_4c;
-  int iStack_48;
-  int iStack_44;
-  int iStack_40;
-  int iStack_3c;
-  int iStack_38;
-  int iStack_34;
-  int iStack_30;
-  int iStack_2c;
-  int iStack_28;
-  int iStack_24;
-  int iStack_20;
-  int iStack_1c;
-  int iStack_18;
-  int iStack_14;
+  CVector3i CStack_7c;
+  CVector3i CStack_70;
+  CVector3i CStack_64;
+  CVector3i CStack_58;
+  CVector3i CStack_4c;
+  CVector3i CStack_40;
+  CVector3i CStack_34;
+  CVector3i CStack_28;
+  CVector3i CStack_1c;
   
   bVar8 = 0;
   iVar2 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
@@ -72,17 +49,17 @@ uint core_chain_cpp_FUN_005b56c0(CDemonActor *param_1)
       puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
     }
     uVar3 = core_box_cpp_FUN_0041a840(auStack_94);
-    *(uint *)&param_1[2].field_0xc = uVar3;
+    *(uint *)(param_1[2].actor_name + 0xc) = uVar3;
     core_actor_cpp_CDemonActor_restoreRenderState_FUN_00408a10(param_1);
-    if (*(int *)&param_1[2].field_0xc != 0) {
+    if (*(int *)(param_1[2].actor_name + 0xc) != 0) {
       engine_drender_cpp_CDemonRenderer_captureTexture_FUN_0046ca00
                 (DAT_0060b280,(SMRGLTextureBasic *)&param_1->field_0x16c);
       engine_drender_cpp_CDemonRenderer_setRenderingState_FUN_0046b880(DAT_0060b280,0);
-      uStack_d0 = 4;
-      uStack_c0 = 0;
-      uStack_c4 = 0;
-      uStack_c8 = 0;
-      uStack_cc = 0;
+      SStack_d4.base.count = 4;
+      SStack_d4.surface_normal.D.i = 0;
+      SStack_d4.surface_normal.C.i = 0;
+      SStack_d4.surface_normal.B.i = 0;
+      SStack_d4.surface_normal.A.i = 0;
       uStack_bc = 0;
       uStack_b8 = 1;
       uStack_b4 = 2;
@@ -90,104 +67,113 @@ uint core_chain_cpp_FUN_005b56c0(CDemonActor *param_1)
       engine_drender_cpp_CDemonRenderer_setRenderAlpha_FUN_0046b8e0(DAT_0060b280,0xffff);
       engine_drender_cpp_CDemonRenderer_setBlendMode_FUN_0046b8d0(DAT_0060b280,0);
       pfVar7 = (float *)&param_1->field_0x28c;
-      pfVar5 = (float *)&param_1->field_0x2b0;
+      pUVar5 = &param_1->vtable;
       for (iVar2 = 0; iVar2 < *(int *)&param_1->field_0x158 + -1; iVar2 = iVar2 + 1) {
-        iStack_4c = (int)ROUND(*pfVar7 * _DAT_00601260);
-        iStack_48 = (int)ROUND(pfVar7[1] * _DAT_00601260);
-        iStack_44 = (int)ROUND(pfVar7[2] * _DAT_00601260);
-        engine_special_cpp_FUN_0055d9ec(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&iStack_4c);
-        iStack_7c = (int)ROUND(*pfVar7 * _DAT_00601260);
-        iStack_78 = (int)ROUND(pfVar7[1] * _DAT_00601260);
-        iStack_74 = (int)ROUND(pfVar7[2] * _DAT_00601260);
+        CStack_4c.x = (int)ROUND(*pfVar7 * _DAT_00601260);
+        CStack_4c.y = (int)ROUND(pfVar7[1] * _DAT_00601260);
+        CStack_4c.z = (int)ROUND(pfVar7[2] * _DAT_00601260);
         engine_special_cpp_FUN_0055d9ec
-                  ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&iStack_7c);
-        iStack_58 = (int)ROUND(*pfVar5 * _DAT_00601260);
-        iStack_54 = (int)ROUND(pfVar5[1] * _DAT_00601260);
-        iStack_50 = (int)ROUND(pfVar5[2] * _DAT_00601260);
+                  ((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_4c);
+        CStack_7c.x = (int)ROUND(*pfVar7 * _DAT_00601260);
+        CStack_7c.y = (int)ROUND(pfVar7[1] * _DAT_00601260);
+        CStack_7c.z = (int)ROUND(pfVar7[2] * _DAT_00601260);
         engine_special_cpp_FUN_0055d9ec
-                  ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&iStack_58);
-        iStack_28 = (int)ROUND(*pfVar5 * _DAT_00601260);
-        iStack_24 = (int)ROUND(pfVar5[1] * _DAT_00601260);
-        iStack_20 = (int)ROUND(pfVar5[2] * _DAT_00601260);
+                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_7c);
+        CStack_58.x = (int)ROUND((float)*pUVar5 * _DAT_00601260);
+        CStack_58.y = (int)ROUND((float)pUVar5[1] * _DAT_00601260);
+        CStack_58.z = (int)ROUND((float)pUVar5[2] * _DAT_00601260);
         engine_special_cpp_FUN_0055d9ec
-                  ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&iStack_28);
+                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_58);
+        CStack_28.x = (int)ROUND((float)*pUVar5 * _DAT_00601260);
+        CStack_28.y = (int)ROUND((float)pUVar5[1] * _DAT_00601260);
+        CStack_28.z = (int)ROUND((float)pUVar5[2] * _DAT_00601260);
+        engine_special_cpp_FUN_0055d9ec
+                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_28);
         pCVar1 = DAT_0060b280;
-        *(int *)(*(int *)DAT_0060b280 + 4) = *(int *)(*(int *)DAT_0060b280 + 4) + -0x40;
-        *(int *)(*(int *)pCVar1 + 0x34) = *(int *)(*(int *)pCVar1 + 0x34) + 0x40;
-        *(int *)(*(int *)pCVar1 + 100) = *(int *)(*(int *)pCVar1 + 100) + 0x40;
-        *(int *)(*(int *)pCVar1 + 0x94) = *(int *)(*(int *)pCVar1 + 0x94) + -0x40;
-        *(uint *)(*(int *)pCVar1 + 0x10) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0x40) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0x70) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0xa0) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0x18) = 0x80000;
-        *(uint *)(*(int *)pCVar1 + 0x1c) = 0x80000;
-        *(uint *)(*(int *)pCVar1 + 0x48) = 0x80000;
-        *(uint *)(*(int *)pCVar1 + 0x4c) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0x78) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0x7c) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0xa8) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0xac) = 0x80000;
-        iStack_70 = (int)ROUND(*pfVar7 * _DAT_00601260);
-        iStack_6c = (int)ROUND(pfVar7[1] * _DAT_00601260);
-        iStack_68 = (int)ROUND(pfVar7[2] * _DAT_00601260);
+        *(int *)(DAT_0060b280->vertex_buffer_ptr + 4) =
+             *(int *)(DAT_0060b280->vertex_buffer_ptr + 4) + -0x40;
+        *(int *)(pCVar1->vertex_buffer_ptr + 0x34) =
+             *(int *)(pCVar1->vertex_buffer_ptr + 0x34) + 0x40;
+        *(int *)(pCVar1->vertex_buffer_ptr + 100) = *(int *)(pCVar1->vertex_buffer_ptr + 100) + 0x40
+        ;
+        *(int *)(pCVar1->vertex_buffer_ptr + 0x94) =
+             *(int *)(pCVar1->vertex_buffer_ptr + 0x94) + -0x40;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x10) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x40) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x70) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0xa0) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x18) = 0x80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x1c) = 0x80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x48) = 0x80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x4c) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x78) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x7c) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0xa8) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0xac) = 0x80000;
+        CStack_70.x = (int)ROUND(*pfVar7 * _DAT_00601260);
+        CStack_70.y = (int)ROUND(pfVar7[1] * _DAT_00601260);
+        CStack_70.z = (int)ROUND(pfVar7[2] * _DAT_00601260);
         core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-                  (g_CDemonSetPtr,(CVector3i *)&iStack_70,(CVector3i *)0x0,0,2);
-        iStack_70 = (int)ROUND(*pfVar5 * _DAT_00601260);
-        iStack_6c = (int)ROUND(pfVar5[1] * _DAT_00601260);
-        iStack_68 = (int)ROUND(pfVar5[2] * _DAT_00601260);
+                  (g_CDemonSetPtr,&CStack_70,(CVector3i *)0x0,0,2);
+        CStack_70.x = (int)ROUND((float)*pUVar5 * _DAT_00601260);
+        CStack_70.y = (int)ROUND((float)pUVar5[1] * _DAT_00601260);
+        CStack_70.z = (int)ROUND((float)pUVar5[2] * _DAT_00601260);
         core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-                  (g_CDemonSetPtr,(CVector3i *)&iStack_70,(CVector3i *)0x0,2,2);
-        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,aSStack_d4);
-        iStack_64 = (int)ROUND(*pfVar7 * _DAT_00601260);
-        iStack_60 = (int)ROUND(pfVar7[1] * _DAT_00601260);
-        iStack_5c = (int)ROUND(pfVar7[2] * _DAT_00601260);
-        engine_special_cpp_FUN_0055d9ec(*(SProjectedVertex **)DAT_0060b280,(CVector3i *)&iStack_64);
-        iStack_34 = (int)ROUND(*pfVar7 * _DAT_00601260);
-        iStack_30 = (int)ROUND(pfVar7[1] * _DAT_00601260);
-        iStack_2c = (int)ROUND(pfVar7[2] * _DAT_00601260);
+                  (g_CDemonSetPtr,&CStack_70,(CVector3i *)0x0,2,2);
+        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&SStack_d4);
+        CStack_64.x = (int)ROUND(*pfVar7 * _DAT_00601260);
+        CStack_64.y = (int)ROUND(pfVar7[1] * _DAT_00601260);
+        CStack_64.z = (int)ROUND(pfVar7[2] * _DAT_00601260);
         engine_special_cpp_FUN_0055d9ec
-                  ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x30),(CVector3i *)&iStack_34);
-        iStack_1c = (int)ROUND(*pfVar5 * _DAT_00601260);
-        iStack_18 = (int)ROUND(pfVar5[1] * _DAT_00601260);
-        iStack_14 = (int)ROUND(pfVar5[2] * _DAT_00601260);
+                  ((SProjectedVertex *)DAT_0060b280->vertex_buffer_ptr,&CStack_64);
+        CStack_34.x = (int)ROUND(*pfVar7 * _DAT_00601260);
+        CStack_34.y = (int)ROUND(pfVar7[1] * _DAT_00601260);
+        CStack_34.z = (int)ROUND(pfVar7[2] * _DAT_00601260);
         engine_special_cpp_FUN_0055d9ec
-                  ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x60),(CVector3i *)&iStack_1c);
-        iStack_40 = (int)ROUND(*pfVar5 * _DAT_00601260);
-        iStack_3c = (int)ROUND(pfVar5[1] * _DAT_00601260);
-        iStack_38 = (int)ROUND(pfVar5[2] * _DAT_00601260);
+                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x30),&CStack_34);
+        CStack_1c.x = (int)ROUND((float)*pUVar5 * _DAT_00601260);
+        CStack_1c.y = (int)ROUND((float)pUVar5[1] * _DAT_00601260);
+        CStack_1c.z = (int)ROUND((float)pUVar5[2] * _DAT_00601260);
         engine_special_cpp_FUN_0055d9ec
-                  ((SProjectedVertex *)(*(int *)DAT_0060b280 + 0x90),(CVector3i *)&iStack_40);
+                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x60),&CStack_1c);
+        CStack_40.x = (int)ROUND((float)*pUVar5 * _DAT_00601260);
+        CStack_40.y = (int)ROUND((float)pUVar5[1] * _DAT_00601260);
+        CStack_40.z = (int)ROUND((float)pUVar5[2] * _DAT_00601260);
+        engine_special_cpp_FUN_0055d9ec
+                  ((SProjectedVertex *)(DAT_0060b280->vertex_buffer_ptr + 0x90),&CStack_40);
         pCVar1 = DAT_0060b280;
-        **(int **)DAT_0060b280 = **(int **)DAT_0060b280 + -0x40;
-        *(int *)(*(int *)pCVar1 + 0x30) = *(int *)(*(int *)pCVar1 + 0x30) + 0x40;
-        *(int *)(*(int *)pCVar1 + 0x60) = *(int *)(*(int *)pCVar1 + 0x60) + 0x40;
-        *(int *)(*(int *)pCVar1 + 0x90) = *(int *)(*(int *)pCVar1 + 0x90) + -0x40;
-        *(uint *)(*(int *)pCVar1 + 0x10) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0x40) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0x70) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0xa0) = 0x80000000;
-        *(uint *)(*(int *)pCVar1 + 0x18) = 0x80000;
-        *(uint *)(*(int *)pCVar1 + 0x1c) = 0x80000;
-        *(uint *)(*(int *)pCVar1 + 0x48) = 0x80000;
-        *(uint *)(*(int *)pCVar1 + 0x4c) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0x78) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0x7c) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0xa8) = 0xf80000;
-        *(uint *)(*(int *)pCVar1 + 0xac) = 0x80000;
-        iStack_70 = (int)ROUND(*pfVar7 * _DAT_00601260);
-        iStack_6c = (int)ROUND(pfVar7[1] * _DAT_00601260);
-        iStack_68 = (int)ROUND(pfVar7[2] * _DAT_00601260);
+        *(int *)DAT_0060b280->vertex_buffer_ptr = *(int *)DAT_0060b280->vertex_buffer_ptr + -0x40;
+        *(int *)(pCVar1->vertex_buffer_ptr + 0x30) =
+             *(int *)(pCVar1->vertex_buffer_ptr + 0x30) + 0x40;
+        *(int *)(pCVar1->vertex_buffer_ptr + 0x60) =
+             *(int *)(pCVar1->vertex_buffer_ptr + 0x60) + 0x40;
+        *(int *)(pCVar1->vertex_buffer_ptr + 0x90) =
+             *(int *)(pCVar1->vertex_buffer_ptr + 0x90) + -0x40;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x10) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x40) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x70) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0xa0) = 0x80000000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x18) = 0x80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x1c) = 0x80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x48) = 0x80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x4c) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x78) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0x7c) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0xa8) = 0xf80000;
+        *(uint *)(pCVar1->vertex_buffer_ptr + 0xac) = 0x80000;
+        CStack_70.x = (int)ROUND(*pfVar7 * _DAT_00601260);
+        CStack_70.y = (int)ROUND(pfVar7[1] * _DAT_00601260);
+        CStack_70.z = (int)ROUND(pfVar7[2] * _DAT_00601260);
         core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-                  (g_CDemonSetPtr,(CVector3i *)&iStack_70,(CVector3i *)0x0,0,2);
-        iStack_70 = (int)ROUND(*pfVar5 * _DAT_00601260);
-        iStack_6c = (int)ROUND(pfVar5[1] * _DAT_00601260);
-        iStack_68 = (int)ROUND(pfVar5[2] * _DAT_00601260);
+                  (g_CDemonSetPtr,&CStack_70,(CVector3i *)0x0,0,2);
+        CStack_70.x = (int)ROUND((float)*pUVar5 * _DAT_00601260);
+        CStack_70.y = (int)ROUND((float)pUVar5[1] * _DAT_00601260);
+        CStack_70.z = (int)ROUND((float)pUVar5[2] * _DAT_00601260);
         core_set_cpp_CDemonSet_computeLighting_FUN_005317c0
-                  (g_CDemonSetPtr,(CVector3i *)&iStack_70,(CVector3i *)0x0,2,2);
+                  (g_CDemonSetPtr,&CStack_70,(CVector3i *)0x0,2,2);
         pfVar7 = pfVar7 + 9;
-        pfVar5 = pfVar5 + 9;
-        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,aSStack_d4);
+        pUVar5 = pUVar5 + 9;
+        engine_drender_cpp_CDemonRenderer_renderBlendedDirect_FUN_0046ab50(DAT_0060b280,&SStack_d4);
       }
       return 1;
     }

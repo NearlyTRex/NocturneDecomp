@@ -2,15 +2,42 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonActor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/classes/CWeapon.h"
+#include "types/enums/ETurretState.h"
+#include "types/unions/UOrientationVector.h"
 
 // Structure: CTurret
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xa18 (2584 bytes)
 #pragma pack(push, 1)
 typedef struct CTurret {
-    char field_0[2584]; // 0x0
+    CWeapon base; // 0x0
+    UOrientationVector home_orient; // 0x6d4
+    CKeyFramedModelInstance model; // 0x6e0
+    ETurretState state; // 0x85c
+    char activate_event[100]; // 0x860
+    float charge_time; // 0x8c4
+    float patrol_time; // 0x8c8
+    float power_down_time; // 0x8cc
+    float fire_delay_time; // 0x8d0
+    float rotate_deg_per_sec; // 0x8d4
+    float timer; // 0x8d8
+    struct CDemonActor* guard_zone_box_trigger; // 0x8dc
+    char allowed_victim_types[200]; // 0x8e0
+    CVector3f patrol_target; // 0x9a8
+    int can_manual_aim; // 0x9b4
+    struct CDemonActor* user; // 0x9b8
+    CVector3f barrel_tip_pos; // 0x9bc
+    float fire_sound_timer; // 0x9c8
+    char dead[64]; // 0x9cc
+    int fire_sound_frames; // 0xa0c
+    uint sfx_handles[2]; // 0xa10
 } CTurret;
 #pragma pack(pop)
 

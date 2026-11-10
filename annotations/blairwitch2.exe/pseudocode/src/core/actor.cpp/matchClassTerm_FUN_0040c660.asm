@@ -11,7 +11,7 @@
 ;   undefined4 DAT_0061ed94
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c870
+;   core_actor.cpp_checkNameHash_FUN_0040c870
 ;   core_actor.cpp_matchClassExpression_FUN_0040c780
 ;   crt_ctype.c_tolower_FUN_005b8470
 ;
@@ -149,8 +149,8 @@ section .text
         ;   XREF to: 0040c718 (CONDITIONAL_JUMP)  ; LAB_0040c718
     PUSH EAX                            ; 0040c757
     PUSH EBP                            ; 0040c758
-    CALL core_actor.cpp_FUN_0040c870    ; 0040c759
-        ;   XREF to: 0040c870 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c870(CDemonActorType * type_ptr, uint name_hash)
+    CALL core_actor.cpp_checkNameHash_FUN_0040c870 ; 0040c759
+        ;   XREF to: 0040c870 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_checkNameHash_FUN_0040c870(CDemonActorType * type_ptr, uint name_hash)
     ADD ESP,0x8                         ; 0040c75e
     MOV EDI,EAX                         ; 0040c761
     MOV EAX,EDI                         ; 0040c763

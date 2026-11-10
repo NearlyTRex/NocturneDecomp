@@ -11,7 +11,7 @@ uint __cdecl shape_edittool_cpp_FUN_004803d0(CEditorTools *this_ptr)
 {
   uint uVar1;
   
-  uVar1 = wincore_winrun_cpp_FUN_005806a0();
+  uVar1 = wincore_winrun_cpp_getTime_FUN_005806a0();
   uVar1 = uVar1 & 0x30000;
   if (uVar1 < 0x10000) {
     if (uVar1 == 0) {

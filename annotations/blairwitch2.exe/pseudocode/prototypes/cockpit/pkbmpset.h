@@ -21,9 +21,9 @@ void FUN_00517a60(CPackedBitmapSet *param_1,int param_2,int param_3);
 // Address: 00517db0
 void FUN_00517db0(void);
 
-// Original: cockpit_pkbmpset.cpp_FUN_00517e40
+// Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_loadACTAndApplyToBitmapSet_FUN_00517e40
 // Address: 00517e40
-void FUN_00517e40(undefined4 param_1,char *param_2,CPackedBitmapSet *param_3);
+void __cdecl CPackedBitmapSet::loadACTAndApplyToBitmapSet(CPackedBitmapSet *this_ptr,char *act_filename);
 
 // Original: cockpit_pkbmpset.cpp_CPackedBitmapSet_applyPaletteToAllBitmaps_FUN_00517e90
 // Address: 00517e90

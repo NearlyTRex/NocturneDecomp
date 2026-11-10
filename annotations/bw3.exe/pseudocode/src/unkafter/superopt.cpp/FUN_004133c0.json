@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 784,
-    "complexity_score": 2220,
+    "complexity_score": 2195,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 1,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 185,
-    "suspect_count": 201,
+    "suspect_count": 199,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param",
       "unresolved_funcptr"
     ],
@@ -197,14 +196,6 @@
       "severity": "mild",
       "text": "pCVar4 = (CAlphaBitmap *)(param_1 + 0x1c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -573,14 +564,6 @@
       "severity": "mild",
       "text": "pCVar4 = (CAlphaBitmap *)(param_1 + 0x1c);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -1699,7 +1682,7 @@
       "line": 41,
       "match": "pCVar4 = (T *)&pCVar4[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;",
+      "text": "pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;",
       "type": "shadow_pointer_walk"
     },
     {
@@ -1707,7 +1690,7 @@
       "line": 126,
       "match": "pCVar4 = (T *)&pCVar4[N].SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar4 = (CAlphaBitmap *)&pCVar4[2].field_0x4;",
+      "text": "pCVar4 = (CAlphaBitmap *)&pCVar4[2].opa;",
       "type": "shadow_pointer_walk"
     }
   ],

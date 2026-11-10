@@ -16,7 +16,7 @@
 ;
 ; Called Functions:
 ;   crt_memory.c___arrinit_FUN_005a30d7
-;   engine_3d.c_FUN_00407b30
+;   engine_3d.c_clipAndDrawLine2D_FUN_00407b30
 ;   engine_matrix.c_transformToCache_FUN_004e5540
 ;   engine_mini3d.cpp_FUN_004f3520
 ;
@@ -209,8 +209,8 @@ section .text
     MOV ESI,0x60b014                    ; 004815c3
     MOV EDI,ESP                         ; 004815c8
     MOVSD.REP ES:EDI,ESI                ; 004815ca
-    CALL engine_3d.c_FUN_00407b30       ; 004815cc
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 004815cc
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407b30()
     ADD ESP,0x60                        ; 004815d1
     MOV EAX,dword ptr [ESP + 0x15c]     ; 004815d4
     XOR AL,0x2                          ; 004815db
@@ -310,8 +310,8 @@ section .text
     MOV ESI,0x60b014                    ; 00481755
     MOV EDI,ESP                         ; 0048175a
     MOVSD.REP ES:EDI,ESI                ; 0048175c
-    CALL engine_3d.c_FUN_00407b30       ; 0048175e
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 0048175e
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407b30()
     ADD ESP,0x60                        ; 00481763
     MOV EAX,dword ptr [ESP + 0x15c]     ; 00481766
     XOR AL,0x4                          ; 0048176d
@@ -413,8 +413,8 @@ section .text
     MOV ESI,0x60b014                    ; 004818d5
     MOV EDI,ESP                         ; 004818da
     MOVSD.REP ES:EDI,ESI                ; 004818dc
-    CALL engine_3d.c_FUN_00407b30       ; 004818de
-        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_FUN_00407b30()
+    CALL engine_3d.c_clipAndDrawLine2D_FUN_00407b30 ; 004818de
+        ;   XREF to: 00407b30 (UNCONDITIONAL_CALL)  ; undefined engine_3d.c_clipAndDrawLine2D_FUN_00407b30()
     ADD ESP,0x60                        ; 004818e3
     MOV EBX,dword ptr [ESP + 0x15c]     ; 004818e6
     INC EBX                             ; 004818ed

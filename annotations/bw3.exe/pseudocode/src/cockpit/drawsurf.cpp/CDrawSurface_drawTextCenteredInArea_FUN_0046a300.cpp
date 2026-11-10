@@ -9,6 +9,7 @@
 void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextCenteredInArea_FUN_0046a300(CDrawSurface *this_ptr,char *text,int x,int y,int height)
 
 {
-  cockpit_drawsurf_cpp_FUN_00469b40(this_ptr,text,x,0,y,height,TEXT_ALIGN_LEFT_IN_AREA);
+  cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40
+            (this_ptr,text,x,0,y,height,TEXT_ALIGN_LEFT_IN_AREA);
   return;
 }

@@ -16,7 +16,6 @@ SNotesMap * core_fldnotes_cpp_NotesMap_dtor_FUN_004a3820(SNotesMap *this_ptr,uin
   core_fldnotes_cpp_FUN_004a3860(this_ptr);
   pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440
                      ((CAlphaBitmap *)&this_ptr->field_0x88,0);
-  pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440
-                     ((CAlphaBitmap *)&pCVar1[-2].field_0x10,0);
-  return (SNotesMap *)&pCVar1[-6].field_0x8;
+  pCVar1 = engine_alphabit_cpp_CAlphaBitmap_dtor_FUN_0040d440((CAlphaBitmap *)&pCVar1[-2].height,0);
+  return (SNotesMap *)&pCVar1[-6].act;
 }

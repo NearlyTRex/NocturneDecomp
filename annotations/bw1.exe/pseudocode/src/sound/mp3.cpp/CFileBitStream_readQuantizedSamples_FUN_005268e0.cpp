@@ -30,7 +30,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_005268e0(CFil
         do {
           uVar2 = 0;
           if (*(int *)pSVar4 != 0) {
-            uVar2 = sound_mp3_cpp_FUN_00525cd0(this_ptr,*(int *)pSVar4 + 1);
+            uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(this_ptr,*(int *)pSVar4 + 1);
           }
           *(uint *)pSVar3 = uVar2;
           pSVar3 = pSVar3 + 0x180;
@@ -47,7 +47,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_005268e0(CFil
     do {
       uVar2 = 0;
       if (*(int *)local_18 != 0) {
-        uVar2 = sound_mp3_cpp_FUN_00525cd0(this_ptr,*(int *)local_18 + 1);
+        uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(this_ptr,*(int *)local_18 + 1);
       }
       iVar5 = 0;
       if (0 < iVar1) {

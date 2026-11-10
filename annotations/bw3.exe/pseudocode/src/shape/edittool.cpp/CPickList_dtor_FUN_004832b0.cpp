@@ -19,14 +19,14 @@ CPickList * __cdecl shape_edittool_cpp_CPickList_dtor_FUN_004832b0(CPickList *th
     FUN_005a30b6(ptr);
     return this_ptr;
   }
-  *(byte ***)&this_ptr->field_0xc = &g_CPickListVTable;
-  shape_edittool_cpp_FUN_00484f10(this_ptr);
-  pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_00486050((CEdButton *)&this_ptr->field_0x2d8,0);
+  (this_ptr->base).vtable._us = (CStrList_vtable *)&g_CPickListVTable;
+  shape_edittool_cpp_CPickList_clear_FUN_00484f10(this_ptr);
+  pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_00486050(&this_ptr->cancel_button,0);
   pCVar1 = shape_edittool_cpp_CEdButton_dtor_FUN_00486050(pCVar1 + -1,0);
   pCVar2 = shape_edittool_cpp_CEdScrollBar_dtor_FUN_00485550
-                     ((CEdScrollBar *)&pCVar1[-1].field_0xac,0);
+                     ((CEdScrollBar *)(pCVar1[-1].button_text + 0x90),0);
   pCVar3 = (CPickList *)
-           shape_edittool_cpp_CStrList_dtor_FUN_00481f40((CStrList *)(pCVar2 + -0x1bc),1);
+           shape_edittool_cpp_CStrList_dtor_FUN_00481f40((CStrList *)&pCVar2[-9].bounds_top,1);
   if ((flags & 2) == 0) {
     return pCVar3;
   }

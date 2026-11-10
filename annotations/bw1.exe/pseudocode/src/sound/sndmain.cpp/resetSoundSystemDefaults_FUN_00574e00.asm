@@ -13,8 +13,8 @@
 ;   sound_sndmain.cpp_FUN_00573f20
 ;   sound_sndmain.cpp_FUN_00573fa0
 ;   sound_sndmain.cpp_FUN_00573fe0
-;   sound_sndmain.cpp_FUN_005756d0
 ;   sound_sndmain.cpp_getCurrentRecordingDevice_FUN_005759a0
+;   sound_sndmain.cpp_getCurrentSoundDevice_FUN_005756d0
 ;   sound_sndmain.cpp_selectRecordingDevice_FUN_00575870
 ;   sound_sndmain.cpp_selectSoundDevice_FUN_005754d0
 ;   sound_sndmain.cpp_setSfxChannelVol_FUN_00573b30
@@ -72,8 +72,8 @@ section .text
     CALL sound_sndmain.cpp_FUN_00573fa0 ; 00574e6c
         ;   XREF to: 00573fa0 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00573fa0()
     ADD ESP,0xc                         ; 00574e71
-    CALL sound_sndmain.cpp_FUN_005756d0 ; 00574e74
-        ;   XREF to: 005756d0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005756d0()
+    CALL sound_sndmain.cpp_getCurrentSoundDevice_FUN_005756d0 ; 00574e74
+        ;   XREF to: 005756d0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_getCurrentSoundDevice_FUN_005756d0()
     PUSH EAX                            ; 00574e79
     CALL sound_sndmain.cpp_selectSoundDevice_FUN_005754d0 ; 00574e7a
         ;   XREF to: 005754d0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_selectSoundDevice_FUN_005754d0(int device_id)

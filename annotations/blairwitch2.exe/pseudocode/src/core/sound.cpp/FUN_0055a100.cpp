@@ -12,7 +12,7 @@ void __cdecl core_sound_cpp_FUN_0055a100(CSound *this_ptr)
   int extraout_EAX;
   int unaff_retaddr;
   
-  if (g_CStrListInstance._0_4_ == 0) {
+  if (g_CStrListInstance.item_count == 0) {
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70
               (&g_CStrListInstance,"sound","*.wav");
     shape_edittool_cpp_CStrList_populateFromFilesNoDuplicates_FUN_00481a70

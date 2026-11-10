@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 14,
-    "complexity_score": 121,
+    "complexity_score": 76,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 11,
-    "suspect_count": 9,
+    "suspect_count": 5,
     "suspect_types": [
       "negative_offset",
       "param_count_too_few",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 25
@@ -114,52 +113,20 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 8,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pCVar1[-0x11].field_0x8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 9,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0xc = 0;",
+      "text": "pCVar1[-1].vtable._us = (CStrList_vtable *)0x0;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 9,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0xc = 0;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 10,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0x8 = 0xffffffff;",
+      "text": "pCVar1[-1].data_array = (char **)0xffffffff;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar1[-1].field_0x8 = 0xffffffff;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pCVar1[-0x15].field_0x8 = 0;",
-      "type": "unnamed_field"
     },
     {
       "call_site_count": 1,

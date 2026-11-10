@@ -16,7 +16,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054
   
   iVar3 = 0;
   pCVar1 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(this_ptr);
-  if (0 < *(int *)&pCVar1->field_0x1d1f8) {
+  if (0 < pCVar1->bone_count) {
     puVar4 = &this_ptr->field_0x6b0;
     pCVar2 = this_ptr;
     do {
@@ -25,7 +25,7 @@ void __cdecl core_skeleton_cpp_CDeformableModelInstance_resetToRestPose_FUN_0054
       *(uint *)&pCVar2->field_0xcf0 = *(uint *)&pCVar2->field_0x514;
       puVar4 = puVar4 + 0x10;
       pCVar2 = (CDeformableModelInstance *)&pCVar2->field_0x4;
-    } while (iVar3 < *(int *)&pCVar1->field_0x1d1f8);
+    } while (iVar3 < pCVar1->bone_count);
   }
   *(uint *)&this_ptr->field_0x6ac = 0;
   *(uint *)&this_ptr->field_0x6a8 = *(uint *)&this_ptr->field_0x6ac;

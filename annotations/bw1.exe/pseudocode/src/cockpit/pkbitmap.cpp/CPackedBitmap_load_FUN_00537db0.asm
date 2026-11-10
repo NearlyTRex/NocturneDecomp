@@ -23,8 +23,8 @@
 ;   cockpit_pkbitmap.cpp_FUN_00537550
 ;   core_main.c_FUN_005030e0
 ;   crt_memory.c_realloc_FUN_005c10d0
-;   crt_unknown.c_FUN_005bfb40
 ;   crt_unknown.c_FUN_005c1268
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;
 ; *****************************************************************************
 
@@ -141,8 +141,8 @@ section .text
     PUSH 0x5ece43                       ; 00537ef3
     LEA EAX,[ESP + 0x10]                ; 00537ef8
     PUSH EAX                            ; 00537efc
-    CALL crt_unknown.c_FUN_005bfb40     ; 00537efd
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00537efd
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EDX,0x5ece84                    ; 00537f02
     ADD ESP,0x14                        ; 00537f07
     MOV EAX,ESP                         ; 00537f0a

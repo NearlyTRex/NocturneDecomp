@@ -94,7 +94,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[1]:
-;   core_bugs.cpp_FUN_00422570 at 004226e2
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 004226e2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005b7891
@@ -103,8 +103,8 @@
 ;   undefined4 DAT_005dcbcc
 ;
 ; Called Functions:
+;   core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0
 ;   core_bugs.cpp_FUN_00422a00
-;   core_bugs.cpp_FUN_004239c0
 ;   core_dirmat.cpp_FUN_0045b9b0
 ;   core_skeleton.cpp_CDeformableModelInstance_getModelPtr_FUN_0054ea40
 ;   core_xform.cpp_FUN_00583260
@@ -696,8 +696,8 @@ section .text
         ;   XREF to: 00423842 (CONDITIONAL_JUMP)  ; LAB_00423842
     PUSH ESI                            ; 004238ca
     PUSH EDI                            ; 004238cb
-    CALL core_bugs.cpp_FUN_004239c0     ; 004238cc
-        ;   XREF to: 004239c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004239c0(CBugs * this_ptr, SBug * bug_data)
+    CALL core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0 ; 004238cc
+        ;   XREF to: 004239c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs * this_ptr, SBug * bug_data)
     ADD ESP,0x8                         ; 004238d1
     MOV dword ptr [ESI + 0x34],0x0      ; 004238d4
     MOV ESP,EBP                         ; 004238db
@@ -711,8 +711,8 @@ section .text
     PUSH ECX                            ; 004238e5
     MOV EBX,dword ptr [EBP + 0x14]      ; 004238e6
     PUSH EBX                            ; 004238e9
-    CALL core_bugs.cpp_FUN_004239c0     ; 004238ea
-        ;   XREF to: 004239c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004239c0(CBugs * this_ptr, SBug * bug_data)
+    CALL core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0 ; 004238ea
+        ;   XREF to: 004239c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs * this_ptr, SBug * bug_data)
     ADD ESP,0x8                         ; 004238ef
     MOV EAX,dword ptr [EBP + 0x18]      ; 004238f2
     MOV dword ptr [EAX + 0x34],0x0      ; 004238f5
@@ -722,8 +722,8 @@ section .text
         ;   Label: LAB_00423901
     PUSH ECX                            ; 00423904
     PUSH ESI                            ; 00423905
-    CALL core_bugs.cpp_FUN_004239c0     ; 00423906
-        ;   XREF to: 004239c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_FUN_004239c0(CBugs * this_ptr, SBug * bug_data)
+    CALL core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0 ; 00423906
+        ;   XREF to: 004239c0 (UNCONDITIONAL_CALL)  ; void core_bugs.cpp_CBugs_findNextSwarmVertex_FUN_004239c0(CBugs * this_ptr, SBug * bug_data)
     ADD ESP,0x8                         ; 0042390b
     FLD float ptr [ESP + 0x4]           ; 0042390e
     FLD1                                ; 00423912

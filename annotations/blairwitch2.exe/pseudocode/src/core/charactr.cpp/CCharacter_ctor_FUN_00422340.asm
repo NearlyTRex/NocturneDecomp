@@ -49,7 +49,7 @@
 ;   WatcomTypeInfo g_CVectorTypeInfo
 ;   WatcomTypeInfo g_CFlameTypeInfo
 ;   undefined4 DAT_005f4088
-;   void* g_CCharacterVTable = 0040ced0
+;   CCharacter_full_vtable g_CCharacterVTable
 ;   WatcomTypeInfo g_SFireTypeInfo
 ;
 ; Called Functions:

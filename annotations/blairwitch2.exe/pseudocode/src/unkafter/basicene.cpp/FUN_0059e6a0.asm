@@ -5,16 +5,16 @@
 ;
 ;
 ; XREF[10]:
-;   core_basicnpc.cpp_FUN_005a4870 at 005a4875
-;   core_confedrt.cpp_FUN_005a0a90 at 005a0a97
-;   core_confzomb.cpp_FUN_005a1d90 at 005a1d97
-;   core_dog1.cpp_FUN_005abdd0 at 005abddd
-;   core_ghostchi.cpp_FUN_005a9440 at 005a9447
-;   core_hag.cpp_FUN_005aa8c0 at 005aa8c7
-;   core_hand.cpp_FUN_005a9dd0 at 005a9dd6
-;   core_schngeis.cpp_FUN_005a3140 at 005a3147
-;   core_twigzomb.cpp_FUN_005a2820 at 005a2829
-;   core_unionzom.cpp_FUN_005a3f40 at 005a3f47
+;   core_basicnpc.cpp_CBasicNPC_setup_FUN_005a4870 at 005a4875
+;   core_confedrt.cpp_CConfederate_setup_FUN_005a0a90 at 005a0a97
+;   core_confzomb.cpp_CConfederateZombie_setup_FUN_005a1d90 at 005a1d97
+;   core_dog1.cpp_CDog_setup_FUN_005abdd0 at 005abddd
+;   core_ghostchi.cpp_CGhostChild_setup_FUN_005a9440 at 005a9447
+;   core_hag.cpp_CHag_setup_FUN_005aa8c0 at 005aa8c7
+;   core_hand.cpp_CHand_setup_FUN_005a9dd0 at 005a9dd6
+;   core_schngeis.cpp_CSchnellGeist_setup_FUN_005a3140 at 005a3147
+;   core_twigzomb.cpp_CTwigZombie_setup_FUN_005a2820 at 005a2829
+;   core_unionzom.cpp_CUnionZombie_setup_FUN_005a3f40 at 005a3f47
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Bip01_Head_005ef8aa
@@ -27,7 +27,7 @@
 ;   core_enemy.cpp_CEnemy_setup_FUN_00487eb0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00547480
-;   core_skeleton.cpp_FUN_00540e80
+;   core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80
 ;   unkaddr_0059d350.cpp_FUN_0059da70
 ;   unkafter_basicene.cpp_FUN_005a01d0
 ;
@@ -72,8 +72,8 @@ section .text
     PUSH 0x5ef8b5                       ; 0059e704 | = "Bip01 Spine1"
     MOV ESI,dword ptr [EBX + 0x113b0]   ; 0059e709
     PUSH ESI                            ; 0059e70f
-    CALL core_skeleton.cpp_FUN_00540e80 ; 0059e710
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 0059e710
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0059e715
     MOV dword ptr [EBX + 0x113fc],EAX   ; 0059e718
     CMP dword ptr [EBX + 0x11418],0x0   ; 0059e71e
@@ -110,8 +110,8 @@ section .text
         ;   Label: LAB_0059e770
     PUSH 0x5ef8aa                       ; 0059e772 | = "Bip01 Head"
     PUSH EAX                            ; 0059e777
-    CALL core_skeleton.cpp_FUN_00540e80 ; 0059e778
-        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
+    CALL core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80 ; 0059e778
+        ;   XREF to: 00540e80 (UNCONDITIONAL_CALL)  ; int core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80(CSkeleton * this_ptr, char * bone_name, int assert_if_not_found)
     ADD ESP,0xc                         ; 0059e77d
     MOV dword ptr [EBX + 0x1137c],EAX   ; 0059e780
     JMP 0x0059e6e8                      ; 0059e786

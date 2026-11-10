@@ -53,13 +53,13 @@ int __cdecl core_dtrace_cpp_FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *sta
   float local_18;
   
   bVar7 = 0;
-  fVar8 = (float10)1 / (float10)*(float *)&this_ptr->field_0x28;
-  fVar9 = ((float10)*(float *)&start_pos->field_0x4 - (float10)*(float *)&this_ptr->field_0x14) /
-          (float10)*(float *)&this_ptr->field_0x2c;
-  fVar10 = ((float10)*(float *)&start_pos->field_0x8 - (float10)*(float *)&this_ptr->field_0x18) /
-           (float10)*(float *)&this_ptr->field_0x30;
-  fVar11 = ((float10)*(float *)start_pos - (float10)*(float *)&this_ptr->field_0x10) * fVar8;
-  fVar8 = ((float10)*(float *)end_pos - (float10)*(float *)&this_ptr->field_0x10) * fVar8;
+  fVar8 = (float10)1 / (float10)(this_ptr->cell_size).x;
+  fVar9 = ((float10)start_pos->y - (float10)(this_ptr->bbox_min).y) /
+          (float10)(this_ptr->cell_size).y;
+  fVar10 = ((float10)start_pos->z - (float10)(this_ptr->bbox_min).z) /
+           (float10)(this_ptr->cell_size).z;
+  fVar11 = ((float10)start_pos->x - (float10)(this_ptr->bbox_min).x) * fVar8;
+  fVar8 = ((float10)end_pos->x - (float10)(this_ptr->bbox_min).x) * fVar8;
   local_6c = (float)fVar11;
   round();
   local_34 = (int)ROUND(fVar11);
@@ -71,30 +71,30 @@ int __cdecl core_dtrace_cpp_FUN_00473390(CDemonRaytrace *this_ptr,CVector3f *sta
   local_2c = (int)ROUND(fVar10);
   local_80 = floor((double)fVar8);
   fVar11 = (float10)local_80;
-  fVar8 = ((float10)*(float *)&end_pos->field_0x4 - (float10)*(float *)&this_ptr->field_0x14) /
-          (float10)*(float *)&this_ptr->field_0x2c;
+  fVar8 = ((float10)end_pos->y - (float10)(this_ptr->bbox_min).y) / (float10)(this_ptr->cell_size).y
+  ;
   round();
   local_64 = (int)ROUND(fVar11);
   local_80 = floor((double)fVar8);
   fVar11 = (float10)local_80;
-  fVar8 = ((float10)*(float *)&end_pos->field_0x8 - (float10)*(float *)&this_ptr->field_0x18) /
-          (float10)*(float *)&this_ptr->field_0x30;
+  fVar8 = ((float10)end_pos->z - (float10)(this_ptr->bbox_min).z) / (float10)(this_ptr->cell_size).z
+  ;
   round();
   local_60 = (int)ROUND(fVar11);
   iVar6 = 1;
   local_80 = floor((double)fVar8);
-  fVar8 = (float10)*(float *)end_pos;
-  fVar11 = (float10)*(float *)&end_pos->field_0x4;
-  fVar9 = (float10)*(float *)&end_pos->field_0x8;
+  fVar8 = (float10)end_pos->x;
+  fVar11 = (float10)end_pos->y;
+  fVar9 = (float10)end_pos->z;
   fVar10 = (float10)local_80;
   round();
   iVar4 = local_34;
   iVar3 = local_64;
   local_5c = (int)ROUND(fVar10);
-  local_98 = (float)(fVar8 - (float10)*(float *)start_pos);
-  local_94[0] = (float)(fVar11 - (float10)*(float *)&start_pos->field_0x4);
-  local_94[1] = (float)(fVar9 - (float10)*(float *)&start_pos->field_0x8);
-  local_94[2] = (float)(fVar8 - (float10)*(float *)start_pos);
+  local_98 = (float)(fVar8 - (float10)start_pos->x);
+  local_94[0] = (float)(fVar11 - (float10)start_pos->y);
+  local_94[1] = (float)(fVar9 - (float10)start_pos->z);
+  local_94[2] = local_98;
   local_94[(uint)bVar7 * -2 + 3] = local_94[(uint)bVar7 * -2];
   local_94[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 4] =
        local_94[(uint)bVar7 * -2 + (uint)bVar7 * -2 + 1];

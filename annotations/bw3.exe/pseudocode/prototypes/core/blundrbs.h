@@ -21,21 +21,21 @@ CDemonActorType * CBlunderbus::getActorType(CBlunderbus *this_ptr);
 // Address: 004103f0
 CBlunderbus * CBlunderbus::ctor(CBlunderbus *this_ptr);
 
-// Original: core_blundrbs.cpp_FUN_00410490
+// Original: core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490
 // Address: 00410490
-undefined4 FUN_00410490(CDemonActor *param_1);
+int __cdecl CBlunderbus::fire(CBlunderbus *this_ptr);
 
-// Original: core_blundrbs.cpp_FUN_00411750
+// Original: core_blundrbs.cpp_CBlunderbus_getDamage_FUN_00411750
 // Address: 00411750
-undefined4 FUN_00411750(int param_1);
+float __cdecl CBlunderbus::getDamage(CBlunderbus *this_ptr);
 
-// Original: core_blundrbs.cpp_FUN_00411790
+// Original: core_blundrbs.cpp_CBlunderbus_getMuzzlePoint_FUN_00411790
 // Address: 00411790
-void FUN_00411790(undefined4 param_1);
+CVector3f * __cdecl CBlunderbus::getMuzzlePoint(CBlunderbus *this_ptr,CVector3f *out_point);
 
-// Original: core_blundrbs.cpp_FUN_00411810
+// Original: core_blundrbs.cpp_CBlunderbus_setup_FUN_00411810
 // Address: 00411810
-void FUN_00411810(CWeapon *param_1);
+void __cdecl CBlunderbus::setup(CBlunderbus *this_ptr);
 
 // Original: core_blundrbs.cpp_CBlunderbus_dtor_FUN_00411890
 // Address: 00411890

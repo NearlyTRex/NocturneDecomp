@@ -1,11 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void sound_sndmain_cpp_FUN_005560a0(undefined1 *param_1,int param_2,int param_3,byte param_4)
+; void sound_sndmain_cpp_FUN_005560a0(char *param_1,int param_2,int param_3,byte param_4)
 ;
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
 ;
 ; *****************************************************************************
 
@@ -32,8 +32,8 @@ section .text
     PUSH EDX                            ; 005560c6
     PUSH 0x5d376b                       ; 005560c7
     PUSH EBX                            ; 005560cc
-    CALL crt_unknown.c_FUN_005a28c0     ; 005560cd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005560cd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005560d2
     ADD EBX,EAX                         ; 005560d5
     TEST byte ptr [ESP + 0x20],0x2      ; 005560d7
@@ -57,8 +57,8 @@ section .text
     PUSH EDI                            ; 005560fb
     PUSH 0x5d3779                       ; 005560fc
     PUSH EBX                            ; 00556101
-    CALL crt_unknown.c_FUN_005a28c0     ; 00556102
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00556102
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x20                        ; 00556107
     ADD EBX,EAX                         ; 0055610a
     CMP dword ptr [ESI + 0x20],0x1      ; 0055610c
@@ -69,8 +69,8 @@ section .text
     PUSH EAX                            ; 00556115
     PUSH 0x5d378a                       ; 00556116
     PUSH EBX                            ; 0055611b
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055611c
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055611c
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00556121
     ADD EBX,EAX                         ; 00556124
     CMP dword ptr [ESI + 0x20],0x2      ; 00556126
@@ -81,8 +81,8 @@ section .text
     PUSH ECX                            ; 0055612f
     PUSH 0x5d379a                       ; 00556130
     PUSH EBX                            ; 00556135
-    CALL crt_unknown.c_FUN_005a28c0     ; 00556136
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00556136
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055613b
     ADD EBX,EAX                         ; 0055613e
     TEST byte ptr [ESP + 0x20],0x4      ; 00556140
@@ -103,8 +103,8 @@ section .text
     FSTP double ptr [ESP]               ; 00556165
     PUSH 0x5d37ab                       ; 00556168
     PUSH EBX                            ; 0055616d
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055616e
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055616e
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x20                        ; 00556173
     ADD EBX,EAX                         ; 00556176
     CMP dword ptr [ESI + 0x34],0x1      ; 00556178
@@ -115,8 +115,8 @@ section .text
     PUSH EAX                            ; 00556181
     PUSH 0x5d37bc                       ; 00556182
     PUSH EBX                            ; 00556187
-    CALL crt_unknown.c_FUN_005a28c0     ; 00556188
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00556188
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0055618d
     ADD EBX,EAX                         ; 00556190
     CMP dword ptr [ESI + 0x34],0x2      ; 00556192
@@ -127,8 +127,8 @@ section .text
     PUSH ECX                            ; 0055619b
     PUSH 0x5d37cc                       ; 0055619c
     PUSH EBX                            ; 005561a1
-    CALL crt_unknown.c_FUN_005a28c0     ; 005561a2
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005561a2
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 005561a7
     ADD EBX,EAX                         ; 005561aa
     TEST byte ptr [ESP + 0x20],0x8      ; 005561ac
@@ -140,8 +140,8 @@ section .text
     FSTP double ptr [ESP]               ; 005561b9
     PUSH 0x5d37dd                       ; 005561bc
     PUSH EBX                            ; 005561c1
-    CALL crt_unknown.c_FUN_005a28c0     ; 005561c2
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005561c2
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005561c7
     ADD EBX,EAX                         ; 005561ca
     TEST byte ptr [ESP + 0x20],0x10     ; 005561cc
@@ -153,8 +153,8 @@ section .text
     FSTP double ptr [ESP]               ; 005561d9
     PUSH 0x5d37e5                       ; 005561dc
     PUSH EBX                            ; 005561e1
-    CALL crt_unknown.c_FUN_005a28c0     ; 005561e2
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005561e2
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 005561e7
     ADD EBX,EAX                         ; 005561ea
     TEST byte ptr [ESP + 0x20],0x20     ; 005561ec
@@ -170,8 +170,8 @@ section .text
         ;   Label: LAB_005561f8
     PUSH 0x5d3768                       ; 005561f9
     PUSH EDI                            ; 005561fe
-    CALL crt_unknown.c_FUN_005a28c0     ; 005561ff
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 005561ff
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00556204
     LEA EBX,[EDI + EAX*0x1]             ; 00556207
     JMP 0x005560bd                      ; 0055620a
@@ -182,8 +182,8 @@ section .text
     FSTP double ptr [ESP]               ; 00556215
     PUSH 0x5d37ee                       ; 00556218
     PUSH EBX                            ; 0055621d
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055621e
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055621e
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00556223
     POP EBP                             ; 00556226
     POP EDI                             ; 00556227

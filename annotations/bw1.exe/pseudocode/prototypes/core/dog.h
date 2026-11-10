@@ -21,25 +21,25 @@ CDemonActorType * CZombieDog::getActorType(CZombieDog *this_ptr);
 // Address: 004767b0
 CZombieDog * __cdecl CZombieDog::ctor(CZombieDog *this_ptr);
 
-// Original: core_dog.cpp_FUN_00476820
+// Original: core_dog.cpp_CZombieDog_setup_FUN_00476820
 // Address: 00476820
-void FUN_00476820(CEnemy *param_1);
+void __cdecl CZombieDog::setup(CZombieDog *this_ptr);
 
-// Original: core_dog.cpp_FUN_004768a0
+// Original: core_dog.cpp_CZombieDog_process_FUN_004768a0
 // Address: 004768a0
-void FUN_004768a0(CEnemy *param_1,float param_2);
+void __cdecl CZombieDog::process(CZombieDog *this_ptr,float delta_time);
 
-// Original: core_dog.cpp_FUN_00476ff0
+// Original: core_dog.cpp_CZombieDog_archive_FUN_00476ff0
 // Address: 00476ff0
-void FUN_00476ff0(CEnemy *param_1);
+void __cdecl CZombieDog::archive(CZombieDog *this_ptr);
 
-// Original: core_dog.cpp_FUN_00477060
+// Original: core_dog.cpp_CZombieDog_processDamage_FUN_00477060
 // Address: 00477060
-void FUN_00477060(int param_1,int param_2);
+void __cdecl CZombieDog::processDamage(CZombieDog *this_ptr,SDamageInfo *damage_info);
 
-// Original: core_dog.cpp_FUN_00477110
+// Original: core_dog.cpp_CZombieDog_getTargetPoints_FUN_00477110
 // Address: 00477110
-undefined4 FUN_00477110(int param_1,undefined4 *param_2);
+int __cdecl CZombieDog::getTargetPoints(CZombieDog *this_ptr,CVector3f *out_points_array);
 
 // Original: core_dog.cpp_CZombieDog_dtor_FUN_00477180
 // Address: 00477180

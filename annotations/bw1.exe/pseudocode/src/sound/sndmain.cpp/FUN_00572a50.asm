@@ -8,12 +8,12 @@
 ; int              Stack[0xc]:4   trigger_id
 ;
 ; XREF[6]:
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c1e7
-;   core_boxactor.cpp_FUN_00422000 at 0042226f
-;   core_drone.cpp_FUN_00485d70 at 00486427
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c1e7
+;   core_boxactor.cpp_CBoxActor_process_FUN_00422000 at 0042226f
+;   core_drone.cpp_CDrone_process_FUN_00485d70 at 00486427
 ;   core_event.cpp_CEventList_restartSfxEntries_FUN_004aa550 at 004aa596
-;   core_flame.cpp_FUN_004b7b90 at 004b7f3a
-;   core_tommygun.cpp_FUN_00598d50 at 00598f30
+;   core_flame.cpp_CFlame_process_FUN_004b7b90 at 004b7f3a
+;   core_tommygun.cpp_CTommyGun_process_FUN_00598d50 at 00598f30
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02c78cec

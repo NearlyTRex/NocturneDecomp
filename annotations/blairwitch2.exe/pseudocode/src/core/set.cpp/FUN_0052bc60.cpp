@@ -16,11 +16,12 @@ CGame * core_set_cpp_FUN_0052bc60(void)
   
   _DAT_0200a3a4 = 0;
   pCVar2 = g_CGamePtr;
-  if (*(int *)&g_CGamePtr->field_0x244 == 0) {
-    pCVar1 = *(CGame **)&((CGame *)(_DAT_01cedef4 * 4))[0x299b].field_0x284;
+  if (g_CGamePtr->letterbox_mode == 0) {
+    pCVar1 = (CGame *)((CGame *)(_DAT_01cedef4 * 4))[0x299b].delta_time_float;
     pCVar2 = (CGame *)(_DAT_01cedef4 * 4);
-    if ((pCVar1 != (CGame *)0x0) && (pCVar2 = pCVar1, *(int *)&pCVar1[0x35].field_0x850 != 0)) {
-      _DAT_0200a3a4 = *(uint *)&pCVar1[0x35].field_0x858;
+    if ((pCVar1 != (CGame *)0x0) &&
+       (pCVar2 = pCVar1, *(int *)(pCVar1[0x35].status_bar_names[4] + 0xa0) != 0)) {
+      _DAT_0200a3a4 = *(uint *)(pCVar1[0x35].status_bar_names[4] + 0xa8);
     }
   }
   return pCVar2;

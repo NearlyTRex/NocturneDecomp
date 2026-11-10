@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,float param_8)
+; float core_setcolid_cpp_FUN_0053de10(CDemonSet *param_1,undefined4 param_2,undefined4 param_3,uint param_4,uint param_5,undefined4 param_6,float param_7,undefined4 param_8)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0x1a8]:4  local_1a8
@@ -35,11 +35,11 @@
 ; XREF[8]:
 ;   core_charactr.cpp_FUN_0042c230 at 0042c4cb
 ;   core_demnfolk.cpp_FUN_00455080 at 0045625d
-;   core_ghoul.cpp_FUN_004c6eb0 at 004c7d05
-;   core_kedward.cpp_FUN_00590010 at 00590a42
+;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c7d05
+;   core_kedward.cpp_CKedward_process_FUN_00590010 at 00590a42
 ;   core_prye.cpp_FUN_00521880 at 00521d33
-;   core_trash.cpp_FUN_0056d360 at 0056da02
-;   core_zombie.cpp_FUN_00588ee0 at 0058a08e
+;   core_trash.cpp_CTrash_process_FUN_0056d360 at 0056da02
+;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 0058a08e
 ;   engine_special.cpp_FUN_00563970 at 00563b14
 ;
 ; Referenced Globals:

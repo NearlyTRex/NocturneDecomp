@@ -21,9 +21,10 @@ CConstruct * unkafter_conveyor_cpp_CConstruct_ctor_FUN_00436b00(CConstruct *this
   char *pcVar7;
   
   pCVar4 = core_enemy_cpp_CEnemy_ctor_FUN_00487db0((CEnemy *)this_ptr);
-  iVar5 = __arrinit(&pCVar4[1].field_0x120,0x18,&g_SBoneGuyBoxTypeInfo);
+  iVar5 = __arrinit
+                    (&pCVar4[1].base.base.field_0x120,0x18,&g_SBoneGuyBoxTypeInfo);
   pcVar6 = (char *)0x5cdc55;
-  *(byte ***)(iVar5 + -0x10968) = &g_CConstructVTable;
+  *(CEnemy_full_vtable **)(iVar5 + -0x10968) = &g_CConstructVTable;
   core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
             ((CDeformableModelInstance *)(iVar5 + -0x10964),"construct1.dfm");
   uVar2 = _DAT_005f46a0;

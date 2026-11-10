@@ -5,9 +5,9 @@
 ;
 ;
 ; XREF[4]:
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b781
 ;   core_charactr.cpp_CCharacter_ctor_FUN_0042ac20 at 0042ae4e
-;   core_charactr.cpp_FUN_0042b450 at 0042b781
-;   core_mirror.cpp_FUN_004f40b0 at 004f43e6
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0 at 004f43e6
 ;   core_prye.cpp_FUN_0051f490 at 00520c87
 ;
 ; *****************************************************************************

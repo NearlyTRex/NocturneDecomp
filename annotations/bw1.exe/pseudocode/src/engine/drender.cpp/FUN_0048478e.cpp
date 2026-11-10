@@ -14,7 +14,7 @@ void engine_drender_cpp_FUN_0048478e(int *param_1,ushort *param_2,int param_3,in
   ushort *puVar1;
   int iVar2;
   int iVar3;
-  CVector3i aCStack_68 [80];
+  CVector3i aCStack_68 [6];
   int iStack_18;
   int iStack_14;
   
@@ -58,23 +58,23 @@ void engine_drender_cpp_FUN_0048478e(int *param_1,ushort *param_2,int param_3,in
           do {
             if (*puVar1 == 0xffff) break;
             iVar3 = iVar3 + 1;
-            *(uint *)(aCStack_68 + iVar2) = (uint)*puVar1;
+            *(uint *)((int)&aCStack_68[0].x + iVar2) = (uint)*puVar1;
             puVar1 = puVar1 + 1;
             iVar2 = iVar2 + 4;
           } while (iVar3 < param_4);
         }
         if ((param_1[4] == 0) &&
            (((param_1[1] != 0 && ((_DAT_01c51d14 & 1) == 0)) || ((_DAT_01c51d14 & 5) == 0)))) {
-          core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(iVar3,(int *)aCStack_68);
+          core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(iVar3,&aCStack_68[0].x);
           if (2 < DAT_007c7554) {
             unkafter_zombie_cpp_FUN_005bf120((SRenderVertex *)&DAT_007c7558,DAT_007c7554);
           }
         }
         else if ((_DAT_01c51d14 & 0x200) == 0) {
-          engine_clipper_c_clipAndRasterize_FUN_0043cbf0(iVar3,(int *)aCStack_68);
+          engine_clipper_c_clipAndRasterize_FUN_0043cbf0(iVar3,&aCStack_68[0].x);
         }
         else {
-          engine_clipper_c_clipPolygonToViewport_FUN_0043de60(iVar3,(int *)aCStack_68);
+          engine_clipper_c_clipPolygonToViewport_FUN_0043de60(iVar3,&aCStack_68[0].x);
         }
         param_3 = param_3 + -1;
         param_2 = (ushort *)((int)param_2 + iStack_14);
@@ -102,7 +102,7 @@ void engine_drender_cpp_FUN_0048478e(int *param_1,ushort *param_2,int param_3,in
             do {
               if (*puVar1 == 0xffff) break;
               iVar3 = iVar3 + 1;
-              *(uint *)(aCStack_68 + iVar2) = (uint)*puVar1;
+              *(uint *)((int)&aCStack_68[0].x + iVar2) = (uint)*puVar1;
               puVar1 = puVar1 + 1;
               iVar2 = iVar2 + 4;
             } while (iVar3 < param_4);
@@ -111,7 +111,7 @@ void engine_drender_cpp_FUN_0048478e(int *param_1,ushort *param_2,int param_3,in
             core_dpart_cpp_FUN_0047ab00(aCStack_68,iVar3);
           }
           else {
-            core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(iVar3,(int *)aCStack_68);
+            core_xform_cpp_transformAndClipGeometry_FUN_005b9fc0(iVar3,&aCStack_68[0].x);
             if (2 < DAT_007c7554) {
               unkafter_zombie_cpp_FUN_005bf120((SRenderVertex *)&DAT_007c7558,DAT_007c7554);
             }

@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 230,
-    "complexity_score": 316,
+    "complexity_score": 195,
     "cross_reference_count": 3,
     "function_call_count": 7,
     "global_count": 20,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 81,
-    "suspect_count": 22,
+    "pseudocode_lines": 80,
+    "suspect_count": 10,
     "suspect_types": [
       "shadow_pointer_walk",
       "undefined_data",
       "unnamed_field"
     ],
-    "total_lines": 311
+    "total_lines": 310
   },
   "cross_references": [
     {
@@ -32,7 +32,7 @@
     {
       "addr": "005109e0",
       "from_addr": "005109f4",
-      "name": "core_npc.cpp_FUN_005109e0",
+      "name": "core_npc.cpp_CNPC_archive_FUN_005109e0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -235,7 +235,7 @@
       {
         "call_addr": "005109f4",
         "call_type": "direct",
-        "caller": "core_npc.cpp_FUN_005109e0",
+        "caller": "core_npc.cpp_CNPC_archive_FUN_005109e0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -327,28 +327,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x25a8",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x25a8,\"hitPoints\");",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 14,
       "match": "DAT_007bc038",
       "severity": "mild",
       "text": "if (DAT_007bc038 == 1) {",
       "type": "undefined_data"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2620 + local_18 * 0x78,\"carry actor\");",
-      "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
@@ -363,7 +347,7 @@
       "line": 33,
       "match": "field_0x78",
       "severity": "mild",
-      "text": "pCVar1 = (CCharacter *)&pCVar1->field_0x78;",
+      "text": "pCVar1 = (CCharacter *)&(pCVar1->base).field_0x78;",
       "type": "unnamed_field"
     },
     {
@@ -371,23 +355,7 @@
       "line": 34,
       "match": "field_0xf0",
       "severity": "mild",
-      "text": "} while (pCVar1 != (CCharacter *)&this_ptr->field_0xf0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x2620 + local_20 * 0x78) != 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x2620",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x2620 + local_20 * 0x78,\"carry actor\");",
+      "text": "} while (pCVar1 != (CCharacter *)&(this_ptr->base).field_0xf0);",
       "type": "unnamed_field"
     },
     {
@@ -400,31 +368,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x276c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveActor_FUN_0040b9e0(&this_ptr->field_0x276c,\"grabbedBy\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x2770",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x2770,\"grabbedType\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0x2d0c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveClothList_FUN_0040bfd0(&this_ptr->field_0x2d0c,\"clothList\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
+      "line": 57,
       "match": "field_0x2824",
       "severity": "mild",
       "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x2824,\"sizeScale\");",
@@ -432,47 +376,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x25ac",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x25ac = *(uint *)&this_ptr->field_0x25a8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 61,
-      "match": "field_0x25a8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x25ac = *(uint *)&this_ptr->field_0x25a8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x25b0",
-      "severity": "mild",
-      "text": "((int *)&this_ptr->field_0x25b0,\"healthBarMode\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 67,
-      "match": "field_0x25b4",
-      "severity": "mild",
-      "text": "(&this_ptr->field_0x25b4,\"descriptiveName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x25ac",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->field_0x25ac,\"maxHitPoints\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 72,
+      "line": 71,
       "match": "field_0x2814",
       "severity": "mild",
       "text": "((int *)&this_ptr->field_0x2814,\"spectralFlag\");",
@@ -480,7 +384,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 76,
+      "line": 75,
       "match": "field_0x281c",
       "severity": "mild",
       "text": "((int *)&this_ptr->field_0x281c,\"invulnerableFlag\");",
@@ -488,18 +392,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 80,
+      "line": 79,
       "match": "field_0x2810",
       "severity": "mild",
       "text": "((int *)&this_ptr->field_0x2810,\"etheralFlag\");",
       "type": "unnamed_field"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar1->owner`). Replace `pCVar1->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar1` self-updates via the address of a sibling field whose byte offset equals the array stride. Replace `pCVar1->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 33,
-      "match": "pCVar1 = (T *)&pCVar1->FIELD",
+      "match": "pCVar1 = (T *)&(pCVar1->FIELD).SUBFIELD",
       "severity": "moderate",
-      "text": "pCVar1 = (CCharacter *)&pCVar1->field_0x78;",
+      "text": "pCVar1 = (CCharacter *)&(pCVar1->base).field_0x78;",
       "type": "shadow_pointer_walk"
     }
   ],

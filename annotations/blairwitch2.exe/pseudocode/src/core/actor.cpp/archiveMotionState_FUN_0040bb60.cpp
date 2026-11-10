@@ -14,7 +14,7 @@ void __cdecl core_actor_cpp_archiveMotionState_FUN_0040bb60(CMotionController *p
   if (DAT_007bc038 != 1) {
     FUN_005b8010(DAT_007bc034,"%s{ // %s\n",&DAT_00609590,param_2);
     core_actor_cpp_adjustIndentationLevel_FUN_0040b050(1);
-    core_motion_cpp_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);
+    core_motion_cpp_CMotionController_save_FUN_00504250(param_1,DAT_007bc034,&DAT_00609590);
     core_actor_cpp_adjustIndentationLevel_FUN_0040b050(-1);
     FUN_005b8010(DAT_007bc034,&DAT_005cab9c,&DAT_00609590);
     return;

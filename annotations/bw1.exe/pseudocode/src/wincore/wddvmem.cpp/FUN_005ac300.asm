@@ -6,9 +6,9 @@
 ;
 ; XREF[7]:
 ;   core_game.cpp_CGame_setGameRes_FUN_004cf430 at 004cf45f
-;   core_game.cpp_FUN_004cf530 at 004cf55b
+;   core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530 at 004cf55b
 ;   core_main.c_FUN_005032a0 at 005033a7
-;   engine_2d.c_FUN_00401010 at 0040103d
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040103d
 ;   wincore_wddvmem.cpp_reinitializeGraphicsSystem_FUN_005aca40 at 005acb01
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_005ac830 at 005ac994
 ;   wincore_wddvmem.cpp_videoRestore_FUN_005ad2c0 at 005ad3b2
@@ -37,8 +37,8 @@
 ;   crt_unknown.c_FUN_005c08d0
 ;   crt_unknown.c_FUN_005c09f0
 ;   engine_2d.c_setupViewportAndClipping_FUN_00401810
-;   wincore_wddvmem.cpp_FUN_005acec0
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;
 ; *****************************************************************************
 
@@ -380,8 +380,8 @@ section .text
         ;   XREF to: 00401810 (UNCONDITIONAL_CALL)  ; void engine_2d.c_setupViewportAndClipping_FUN_00401810(int left, int top, int right, int bottom)
     ADD ESP,0x10                        ; 005ac6eb
     XOR EDI,EDI                         ; 005ac6ee
-    CALL wincore_wddvmem.cpp_FUN_005acec0 ; 005ac6f0
-        ;   XREF to: 005acec0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acec0()
+    CALL wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0 ; 005ac6f0
+        ;   XREF to: 005acec0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_setupColorPalette_FUN_005acec0()
     XOR EBP,EBP                         ; 005ac6f5
     PUSH 0x6c                           ; 005ac6f7
         ;   Label: LAB_005ac6f7
@@ -463,8 +463,8 @@ section .text
         ;   Label: LAB_005ac7cb
     MOV dword ptr [0x02c99314],ESI      ; 005ac7d0 | DAT_02c99314
     ADD EDI,ESI                         ; 005ac7d6
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 005ac7d8
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 005ac7d8
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     CMP EDI,0x3                         ; 005ac7dd
     JL 0x005ac6f7                       ; 005ac7e0
         ;   XREF to: 005ac6f7 (CONDITIONAL_JUMP)  ; LAB_005ac6f7

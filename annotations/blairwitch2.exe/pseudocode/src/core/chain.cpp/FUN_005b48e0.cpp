@@ -32,7 +32,7 @@ void core_chain_cpp_FUN_005b48e0(CDemonActor *param_1)
   float fStack_20;
   
   bVar7 = 0;
-  core_actor_cpp_FUN_00408a80(param_1);
+  core_actor_cpp_CDemonActor_setup_FUN_00408a80(param_1);
   if (*(int *)&param_1->field_0x164 != 0) {
     core_chain_cpp_FUN_005b4860(param_1);
     fStack_40 = fStack_58;
@@ -88,8 +88,14 @@ void core_chain_cpp_FUN_005b48e0(CDemonActor *param_1)
   *(uint *)&param_1->field_0x218 = 0;
   *(uint *)&param_1->field_0x280 = 0;
   *(uint *)&param_1->field_0x284 = 0;
-  *(uint *)&param_1[2].field_0x4 = 0xc61c3f9a;
-  *(uint *)&param_1[2].field_0xc = 0;
+  param_1[2].actor_name[4] = -0x66;
+  param_1[2].actor_name[5] = '?';
+  param_1[2].actor_name[6] = '\x1c';
+  param_1[2].actor_name[7] = -0x3a;
+  param_1[2].actor_name[0xc] = '\0';
+  param_1[2].actor_name[0xd] = '\0';
+  param_1[2].actor_name[0xe] = '\0';
+  param_1[2].actor_name[0xf] = '\0';
   *(float *)&param_1->field_0x160 = fVar1 / (float)(iVar3 + -1);
   return;
 }

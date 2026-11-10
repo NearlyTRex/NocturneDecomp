@@ -29,21 +29,21 @@ void __cdecl CLightCone::setup(CLightCone *this_ptr);
 // Address: 004e4070
 void __cdecl CLightCone::process(CLightCone *this_ptr,float delta_time);
 
-// Original: core_litecone.cpp_FUN_004e40d0
+// Original: core_litecone.cpp_CLightCone_renderTransparent_FUN_004e40d0
 // Address: 004e40d0
-int FUN_004e40d0(CDemonActor *param_1);
+int __cdecl CLightCone::renderTransparent(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_004e4170
+// Original: core_litecone.cpp_CLightCone_getBoundingBox_FUN_004e4170
 // Address: 004e4170
-void FUN_004e4170(int param_1);
+CBoundingBox3D * __cdecl CLightCone::getBoundingBox(CLightCone *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_litecone.cpp_CLightCone_archive_FUN_004e41d0
 // Address: 004e41d0
 void __cdecl CLightCone::archive(CLightCone *this_ptr);
 
-// Original: core_litecone.cpp_FUN_004e4260
+// Original: core_litecone.cpp_CLightCone_getCollisionType_FUN_004e4260
 // Address: 004e4260
-undefined4 FUN_004e4260(void);
+ECollisionType __cdecl CLightCone::getCollisionType(CLightCone *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_litecone.cpp_CLightCone_dtor_FUN_004e4270
 // Address: 004e4270

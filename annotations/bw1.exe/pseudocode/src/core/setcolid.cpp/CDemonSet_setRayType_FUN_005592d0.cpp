@@ -11,7 +11,7 @@
 void __cdecl core_setcolid_cpp_CDemonSet_setRayType_FUN_005592d0(CDemonSet *this_ptr,int ray_type)
 
 {
-  *(int *)&this_ptr->field_0x15f698 = ray_type;
+  *(int *)&this_ptr->ray_query = ray_type;
   if (ray_type != 3) {
     return;
   }

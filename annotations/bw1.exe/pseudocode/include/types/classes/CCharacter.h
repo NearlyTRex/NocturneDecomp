@@ -2,15 +2,87 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDoor;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CClothList.h"
+#include "types/classes/CDeformableModelInstance.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CDemonGlobe.h"
+#include "types/classes/CFlame.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/EFlameType.h"
+#include "types/enums/EHealthBarMode.h"
+#include "types/enums/EWalkState.h"
+#include "types/structs/SCarryHand.h"
+#include "types/structs/SFire.h"
+#include "types/structs/SLayerAction.h"
 
 // Structure: CCharacter
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0xc1d0 (49616 bytes)
 #pragma pack(push, 1)
 typedef struct CCharacter {
-    char field_0[49616]; // 0x0
+    CDemonActor base; // 0x0
+    CDeformableModelInstance model; // 0x158
+    char field_9228[240]; // 0x240c
+    int render_active; // 0x24fc
+    int is_on_ground; // 0x2500
+    float closest_distance_threshold; // 0x2504
+    float turn_angle_accumulator; // 0x2508
+    CVector3f position_delta; // 0x250c
+    CVector3f velocity; // 0x2518
+    char field_9508[20]; // 0x2524
+    float hit_points; // 0x2538
+    float max_hit_points; // 0x253c
+    EHealthBarMode health_bar_mode; // 0x2540
+    char descriptive_name[100]; // 0x2544
+    SCarryHand carry_hands[2]; // 0x25a8
+    char field_9642[338]; // 0x25aa
+    struct CDemonActor* grabbed_by; // 0x26fc
+    int grabbed_type; // 0x2700
+    struct CDemonActor* walk_to_target; // 0x2704
+    float walk_min_distance; // 0x2708
+    float walk_max_distance; // 0x270c
+    float walk_timeout; // 0x2710
+    char field_10004[40]; // 0x2714
+    EWalkState walk_state; // 0x273c
+    struct CDoor* door_target; // 0x2740
+    CVector3f look_offset; // 0x2744
+    int gesture_branch_root; // 0x2750
+    int gesture_motion_index; // 0x2754
+    float gesture_frame; // 0x2758
+    char field_10076[96]; // 0x275c
+    int was_rendered_opaque; // 0x27bc
+    int gun_flame_ignitable; // 0x27c0
+    int layer_action_count; // 0x27c4
+    SLayerAction layer_actions[20]; // 0x27c8
+    char field_10204[1212]; // 0x27dc
+    int layer_action_index; // 0x2c98
+    float layer_action_t; // 0x2c9c
+    CClothList cloth_list; // 0x2ca0
+    float smoke_emit_timer; // 0x2e5c
+    float smoke_check_timer; // 0x2e60
+    int smoke_occluded; // 0x2e64
+    CVector3f collision_test_points[15]; // 0x2e68
+    CVector3f collision_test_normals[15]; // 0x2f1c
+    float hero_proximity_timer; // 0x2fd0
+    CVector3f move_away_target; // 0x2fd4
+    float walk_stuck_timer; // 0x2fe0
+    float sound_cooldown; // 0x2fe4
+    char field_12264[312]; // 0x2fe8
+    int fire_count; // 0x3120
+    EFlameType pending_flame_type; // 0x3124
+    float flame_scale; // 0x3128
+    SFire fires[50]; // 0x312c
+    CFlame flames[50]; // 0x35dc
+    uint sfx_handle; // 0xb9e4
+    int is_fully_burned; // 0xb9e8
+    float burn_alpha; // 0xb9ec
+    float stagger_amount; // 0xb9f0
+    float motion_transition_costs[20][20]; // 0xb9f4
+    char field_49204[412]; // 0xc034
 } CCharacter;
 #pragma pack(pop)
 

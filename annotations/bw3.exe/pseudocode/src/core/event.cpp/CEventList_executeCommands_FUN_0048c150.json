@@ -18,37 +18,37 @@
     {
       "addr": "0040cab0",
       "from_addr": "0040cb61",
-      "name": "core_actor.cpp_FUN_0040cab0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00425da0",
-      "from_addr": "00426de9",
-      "name": "core_carved.cpp_FUN_00425da0",
+      "name": "core_actor.cpp_CDemonActor_handleFootstep_FUN_0040cab0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00428a80",
       "from_addr": "00428bad",
-      "name": "core_carved.cpp_FUN_00428a80",
+      "name": "core_carved.cpp_CCarved_processDamage_FUN_00428a80",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00425da0",
+      "from_addr": "00426de9",
+      "name": "core_carved.cpp_CCarved_process_FUN_00425da0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00430d60",
       "from_addr": "00430f76",
-      "name": "core_charactr.cpp_FUN_00430d60",
+      "name": "core_charactr.cpp_CCharacter_processDamage_FUN_00430d60",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00442a20",
       "from_addr": "00442c89",
-      "name": "core_constrct.cpp_FUN_00442a20",
+      "name": "core_constrct.cpp_CConstruct_process_FUN_00442a20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004591f0",
       "from_addr": "00459387",
-      "name": "core_dest.cpp_FUN_004591f0",
+      "name": "core_dest.cpp_CActorDestination_process_FUN_004591f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -60,13 +60,13 @@
     {
       "addr": "004642f0",
       "from_addr": "004643bf",
-      "name": "core_door.cpp_FUN_004642f0",
+      "name": "core_door.cpp_CDoor_process_FUN_004642f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00489b80",
       "from_addr": "00489c40",
-      "name": "core_enemy.cpp_FUN_00489b80",
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_00489b80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -78,7 +78,7 @@
     {
       "addr": "00496560",
       "from_addr": "00496600",
-      "name": "core_filmreel.cpp_FUN_00496560",
+      "name": "core_filmreel.cpp_CFilmProjector_process_FUN_00496560",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -94,6 +94,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004bb100",
+      "from_addr": "004bc5ef",
+      "name": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004ba540",
       "from_addr": "004ba9fa",
       "name": "core_game.cpp_CGame_processHotkeys_FUN_004ba540",
@@ -103,12 +109,6 @@
       "addr": "004b6f30",
       "from_addr": "004b798c",
       "name": "core_game.cpp_FUN_004b6f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004bb100",
-      "from_addr": "004bc5ef",
-      "name": "core_game.cpp_FUN_004bb100",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -130,6 +130,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00458950",
+      "from_addr": "00458a94",
+      "name": "core_hostage.cpp_CDemnfolk_processDamage_FUN_00458950",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004dcb40",
       "from_addr": "004dcd88",
       "name": "core_inv.cpp_CInventory_select_FUN_004dcb40",
@@ -138,7 +144,7 @@
     {
       "addr": "004e0250",
       "from_addr": "004e0299",
-      "name": "core_lever.cpp_FUN_004e0250",
+      "name": "core_lever.cpp_CLever_process_FUN_004e0250",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -168,19 +174,19 @@
     {
       "addr": "00546db0",
       "from_addr": "00546e71",
-      "name": "core_shotgun.cpp_FUN_00546db0",
+      "name": "core_shotgun.cpp_CShadowsc_processDamage_FUN_00546db0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056e230",
       "from_addr": "0056e338",
-      "name": "core_trigger.cpp_FUN_0056e230",
+      "name": "core_trigger.cpp_CTrigger_process_FUN_0056e230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005766b0",
       "from_addr": "0057693b",
-      "name": "core_vessel.cpp_FUN_005766b0",
+      "name": "core_vessel.cpp_CCryptVessel_process_FUN_005766b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -193,12 +199,6 @@
       "addr": "00412530",
       "from_addr": "00412556",
       "name": "unkafter_bmppuzzl.cpp_FUN_00412530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00458950",
-      "from_addr": "00458a94",
-      "name": "unkafter_demnfolk.cpp_FUN_00458950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -313,7 +313,7 @@
       {
         "call_addr": "004bc5ef",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bb100",
+        "caller": "core_game.cpp_CGame_processCheatCodes_FUN_004bb100",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -346,7 +346,7 @@
       {
         "call_addr": "00426de9",
         "call_type": "direct",
-        "caller": "core_carved.cpp_FUN_00425da0",
+        "caller": "core_carved.cpp_CCarved_process_FUN_00425da0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

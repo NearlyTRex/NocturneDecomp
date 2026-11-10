@@ -20,9 +20,9 @@ void __cdecl engine_2d_c_clearInputAndWait_FUN_004032b0(void)
     (&DAT_01c50950)[iVar2] = 0;
     iVar2 = iVar1;
   } while (iVar1 < 600);
-  iVar2 = wincore_winrun_cpp_FUN_005b2420();
+  iVar2 = wincore_winrun_cpp_getTime_FUN_005b2420();
   while( true ) {
-    iVar1 = wincore_winrun_cpp_FUN_005b2420();
+    iVar1 = wincore_winrun_cpp_getTime_FUN_005b2420();
     if (iVar2 >> 0x10 != iVar1 >> 0x10) break;
     wincore_winrun_cpp_clearKeypresses_FUN_005b24f0();
   }

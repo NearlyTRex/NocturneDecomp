@@ -1,11 +1,13 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void unkafter_npc_cpp_FUN_00531eb0(undefined4 *param_1)
+; CFont * __cdecl unkafter_npc_cpp_FUN_00531eb0(CFont *this_ptr)
 ;
+; Parameters:
+; CFont *          Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   engine_winfont.cpp_FUN_005b1ad0 at 005b1ad6
+;   engine_winfont.cpp_CWinFont_ctor_FUN_005b1ad0 at 005b1ad6
 ;
 ; Referenced Globals:
 ;   undefined1* PTR_engine_palette.cpp_FUN_00531ed0_006045b0 = 00531ed0

@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 39,
+    "complexity_score": 35,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 49
+  },
+  "cross_references": [],
+  "function": {
+    "address": "00562010",
+    "address_range": [
+      [
+        "00562010",
+        "00562083"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_stairs.cpp_CStairs_archive_FUN_00562010",
+    "signature": "void __cdecl core_stairs_cpp_CStairs_archive_FUN_00562010(CStairs *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040b8e0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b8e0"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveInteger_FUN_0040b960"
+    },
+    {
+      "addr": "0040c330",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_archive_FUN_0040c330"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb150",
+      "name": "DAT_005eb150",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eb155",
+      "name": "DAT_005eb155",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005eb159",
+      "name": "s_width_005eb159",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb15f",
+      "name": "s_count_005eb15f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb165",
+      "name": "s_groundType_005eb165",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.21875,
+    "instruction_count": 32,
+    "opcode_distribution": {
+      "CALL": 6,
+      "COPY": 19,
+      "INT_ADD": 14,
+      "INT_AND": 14,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 14,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 7,
+      "INT_SUB": 18,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 18
+    },
+    "pcode_op_count": 135
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CStairs *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 6,
+      "match": "DAT_005eb150",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->rise,&DAT_005eb150);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 7,
+      "match": "DAT_005eb155",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b8e0(&this_ptr->run,&DAT_005eb155);",
+      "type": "undefined_data"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 220,
+        "vtable_addr": "005fbf64"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

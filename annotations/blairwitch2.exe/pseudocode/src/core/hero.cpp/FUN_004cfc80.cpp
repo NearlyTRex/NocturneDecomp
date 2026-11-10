@@ -16,15 +16,15 @@ uint core_hero_cpp_FUN_004cfc80(CHero *param_1)
   {
     return 0;
   }
-  iVar1 = core_actor_cpp_FUN_0040c840
+  iVar1 = core_actor_cpp_isOfClass_FUN_0040c840
                     (*(CDemonActor **)(param_1 + *(int *)(param_1 + 0x247e4) * 4 + 0x24978),
                      "N@CHealthItem" + 2);
   if (iVar1 == 0) {
-    iVar1 = core_actor_cpp_FUN_0040c840
+    iVar1 = core_actor_cpp_isOfClass_FUN_0040c840
                       (*(CDemonActor **)(param_1 + *(int *)(param_1 + 0x247e4) * 4 + 0x24978),
                        "CAmmo");
     if (iVar1 == 0) {
-      iVar1 = core_actor_cpp_FUN_0040c840
+      iVar1 = core_actor_cpp_isOfClass_FUN_0040c840
                         (*(CDemonActor **)(param_1 + *(int *)(param_1 + 0x247e4) * 4 + 0x24978),
                          "CBoxActor");
       if (iVar1 == 0) {

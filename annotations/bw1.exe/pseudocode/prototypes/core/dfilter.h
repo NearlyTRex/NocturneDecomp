@@ -61,17 +61,17 @@ CFilterFX * __cdecl CFilterFX::ctor(CFilterFX *this_ptr);
 // Address: 0045dd70
 CFilterFX * __cdecl CFilterFX::dtor(CFilterFX *this_ptr,uint flags);
 
-// Original: core_dfilter.cpp_FUN_0045dd90
+// Original: core_dfilter.cpp_CFilterFX_free_FUN_0045dd90
 // Address: 0045dd90
-void __cdecl FUN_0045dd90(CFilterFX *this_ptr);
+void __cdecl CFilterFX::free(CFilterFX *this_ptr);
 
 // Original: core_dfilter.cpp_CFilterFX_openMovie_FUN_0045ddb0
 // Address: 0045ddb0
 void __cdecl CFilterFX::openMovie(CFilterFX *this_ptr,char *filename);
 
-// Original: core_dfilter.cpp_FUN_0045df40
+// Original: core_dfilter.cpp_CFilterFX_process_FUN_0045df40
 // Address: 0045df40
-void __cdecl FUN_0045df40(CFilterFX *this_ptr);
+void __cdecl CFilterFX::process(CFilterFX *this_ptr);
 
 // Original: core_dfilter.cpp_CDemonFilter_arrdtor4_FUN_0045dfe0
 // Address: 0045dfe0

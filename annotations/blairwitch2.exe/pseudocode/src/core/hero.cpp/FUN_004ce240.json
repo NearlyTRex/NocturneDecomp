@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 69,
-    "complexity_score": 123,
+    "complexity_score": 113,
     "cross_reference_count": 10,
     "function_call_count": 5,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 6,
+    "suspect_count": 5,
     "suspect_types": [
+      "derived_field_index_pun",
       "param_count_too_few",
       "undefined_data",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 112
@@ -89,7 +89,7 @@
     ],
     "convention": "unknown",
     "name": "core_hero.cpp_FUN_004ce240",
-    "signature": "int core_hero_cpp_FUN_004ce240(CCharacter *param_1)"
+    "signature": "CHero * core_hero_cpp_FUN_004ce240(CCharacter *param_1)"
   },
   "function_calls": [
     {
@@ -100,7 +100,7 @@
     {
       "addr": "004cec30",
       "is_variadic": false,
-      "name": "core_hero.cpp_FUN_004cec30"
+      "name": "core_hero.cpp_CHero_createDefaultWeapon_FUN_004cec30"
     },
     {
       "addr": "004da760",
@@ -293,7 +293,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "int core_hero_cpp_FUN_004ce240(CCharacter *param_1)",
+      "text": "CHero * core_hero_cpp_FUN_004ce240(CCharacter *param_1)",
       "type": "unnamed_param"
     },
     {
@@ -305,28 +305,19 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00511c90((CPathMap *)&pCVar1[1].field_0x3c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "iVar3 = core_inv_cpp_FUN_004da760(&pCVar2[1].field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
       "line": 19,
       "match": "DAT_005f8274",
       "severity": "mild",
-      "text": "*(byte **)(iVar4 + -0x24d14) = &DAT_005f8274;",
+      "text": "*(byte **)(iVar3 + -0x24d14) = &DAT_005f8274;",
       "type": "undefined_data"
+    },
+    {
+      "description": "'(CPathMap *)&pCVar1[1].base.orient_matrix' walks 1 x sizeof(CCharacter) (0x10a60) + offsetof(base.orient_matrix) (0x3c) + 0x0 = 0x10a9c, which is exactly offsetof(CEnemy, patrol_name_pattern[24]). Ghidra had no CEnemy type here and reached the field by index arithmetic; write it as ((CEnemy *)pCVar1)->patrol_name_pattern[24] (\u00a7de-pun/\u00a712).",
+      "line": 11,
+      "severity": "moderate",
+      "text": "pCVar2 = core_path_cpp_CPathMap_ctor_FUN_00511c90((CPathMap *)&pCVar1[1].base.orient_matrix);",
+      "type": "derived_field_index_pun"
     },
     {
       "call_site_count": 10,

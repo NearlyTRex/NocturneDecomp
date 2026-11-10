@@ -117,7 +117,7 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_0058ed90(HWND hWnd,UINT message,WPARAM 
             }
             if (hWnd == (HWND)wParam) goto LAB_0058ee1e;
           }
-          wincore_wddvmem_cpp_FUN_005898e0();
+          wincore_wddvmem_cpp_stubFunction_FUN_005898e0();
         }
       }
     }
@@ -131,7 +131,7 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_0058ed90(HWND hWnd,UINT message,WPARAM 
       }
       else if (0xe < message) {
         if (message < 0x10) {
-          wincore_wddvmem_cpp_FUN_005898e0();
+          wincore_wddvmem_cpp_stubFunction_FUN_005898e0();
         }
         else if (message == 0x1c) {
           DAT_0061e994 = DAT_0061e98c;
@@ -146,7 +146,7 @@ LRESULT __stdcall wincore_winrun_cpp_FUN_0058ed90(HWND hWnd,UINT message,WPARAM 
             }
             else {
               SetThreadPriority(hThread,1);
-              wincore_wddvmem_cpp_FUN_005897e0();
+              wincore_wddvmem_cpp_videoRestore_FUN_005897e0();
               if (DAT_0061e994 != 0xffffffff) {
                 engine_2d_c_clearInputAndWait_FUN_004032b0();
                 _DAT_02664634 = 1;

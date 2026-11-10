@@ -7,16 +7,16 @@
 ; SDamageInfo *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[62]:
-;   core_actor.cpp_FUN_0040a050 at 0040a42d
-;   core_anvil.cpp_FUN_0040eae0 at 0040ebc5
-;   core_baron.cpp_FUN_00410170 at 0041029b
-;   core_batcreat.cpp_FUN_00411a10 at 00411d50
-;   core_batman.cpp_FUN_00412f40 at 00413746
-;   core_bodypart.cpp_FUN_004162b0 at 0041644f
-;   core_boneguy.cpp_FUN_004186c0 at 00418dd3
-;   core_boxactor.cpp_FUN_0041c090 at 0041c537
-;   core_bride.cpp_FUN_0041dbe0 at 0041e0dd
-;   core_bugs.cpp_FUN_004203a0 at 00420449
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050 at 0040a42d
+;   core_anvil.cpp_CAnvil_process_FUN_0040eae0 at 0040ebc5
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_00410170 at 0041029b
+;   core_basicene.cpp_CBasicEnemy_processBurnState_FUN_005a0380 at 005a03ba
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411d50
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00413746
+;   core_bodypart.cpp_CBodyPart_process_FUN_004162b0 at 0041644f
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 00418dd3
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041c090 at 0041c537
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041e0dd
 ;   ... and 52 more
 ;
 ; *****************************************************************************

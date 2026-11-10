@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[19]:
-;   core_box.cpp_FUN_00420140 at 00420162
+;   core_box.cpp_CBox_loadFromFile_FUN_00420140 at 00420162
 ;   core_cloth.cpp_CCloth_load_FUN_0043e6d0 at 0043e71f
 ;   core_dcamera.cpp_loadCameraFog_FUN_00454ab0 at 00454ad1
 ;   core_event.cpp_CEventList_loadState_FUN_004aa610 at 004aa63c

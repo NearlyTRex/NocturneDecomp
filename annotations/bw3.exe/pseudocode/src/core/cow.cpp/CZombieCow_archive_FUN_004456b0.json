@@ -1,0 +1,155 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 29,
+    "cross_reference_count": 0,
+    "function_call_count": 4,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 14,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 55
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004456b0",
+    "address_range": [
+      [
+        "004456b0",
+        "0044571c"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_cow.cpp_CZombieCow_archive_FUN_004456b0",
+    "signature": "void __cdecl core_cow_cpp_CZombieCow_archive_FUN_004456b0(CZombieCow *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ba30",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040ba30"
+    },
+    {
+      "addr": "0040b830",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveFloat_FUN_0040b830"
+    },
+    {
+      "addr": "0040bab0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040bab0"
+    },
+    {
+      "addr": "00489120",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_archive_FUN_00489120"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b997e",
+      "name": "s_speed_005b997e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b9984",
+      "name": "s_modelName_005b9984",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b998e",
+      "name": "s_guardDistance_005b998e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b999c",
+      "name": "s_motion_state_005b999c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1758",
+      "name": "g_CZombieCowClassVersion",
+      "type": "int",
+      "value": "0x2"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.161290322580645,
+    "instruction_count": 31,
+    "opcode_distribution": {
+      "BRANCH": 1,
+      "CALL": 5,
+      "CBRANCH": 1,
+      "COPY": 18,
+      "INT_ADD": 12,
+      "INT_AND": 14,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 14,
+      "INT_LESS": 1,
+      "INT_NOTEQUAL": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 7,
+      "INT_SUB": 16,
+      "LOAD": 3,
+      "POPCOUNT": 7,
+      "RETURN": 1,
+      "STORE": 15
+    },
+    "pcode_op_count": 129
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CZombieCow *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 6,
+      "match": "field_0xcdcc",
+      "severity": "mild",
+      "text": "core_actor_cpp_archiveFloat_FUN_0040b830(&(this_ptr->base).field_0xcdcc,\"speed\");",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CZombieCow",
+        "offset": 212,
+        "vtable_addr": "005ddbc4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

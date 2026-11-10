@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_djien.cpp_FUN_00460230 at 00460871
+;   core_djien.cpp_CDjien_process_FUN_00460230 at 00460871
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cd00
+;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;
 ; *****************************************************************************
@@ -21,8 +21,8 @@ section .text
     MOV dword ptr [EBX + 0xc2f0],0x0    ; 00460965
     PUSH 0x3ecccccd                     ; 0046096f
     MOV dword ptr [EBX + 0xc1e8],0x0    ; 00460974
-    CALL core_actor.cpp_FUN_0040cd00    ; 0046097e
-        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cd00(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cd00 ; 0046097e
+        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cd00(float probability_threshold)
     ADD ESP,0x4                         ; 00460983
     TEST EAX,EAX                        ; 00460986
     JZ 0x004609a9                       ; 00460988

@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005f2afc
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_FUN_0045b800
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
 ;   engine_drender.cpp_CDemonRenderer_setupSceneRendering_FUN_0046cc10
-;   engine_drender.cpp_FUN_0046cb90
 ;   engine_matrix.c_FUN_0046d090
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 005680e9
     LEA EAX,[ESP + 0x4]                 ; 005680ea
     PUSH EAX                            ; 005680ee
-    CALL core_dirmat.cpp_FUN_0045b550   ; 005680ef
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 005680ef
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 005680f4
     MOV EAX,dword ptr [EBX + 0x30]      ; 005680f7
     MOV dword ptr [ESP + 0x74],EAX      ; 005680fa
@@ -90,8 +90,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 00568182
     MOVSD ES:EDI,ESI                    ; 00568183
     MOVSD ES:EDI,ESI                    ; 00568184
-    CALL engine_drender.cpp_FUN_0046cb90 ; 00568185
-        ;   XREF to: 0046cb90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046cb90(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90 ; 00568185
+        ;   XREF to: 0046cb90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 0056818a
     LEA EAX,[ESP + 0x34]                ; 0056818d
     PUSH EAX                            ; 00568191

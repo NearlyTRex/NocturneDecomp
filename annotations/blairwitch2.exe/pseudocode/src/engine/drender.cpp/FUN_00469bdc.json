@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 55,
-    "complexity_score": 130,
+    "complexity_score": 122,
     "cross_reference_count": 0,
     "function_call_count": 2,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
-    "suspect_count": 10,
+    "pseudocode_lines": 22,
+    "suspect_count": 9,
     "suspect_types": [
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 75
+    "total_lines": 77
   },
   "cross_references": [],
   "function": {
@@ -130,15 +130,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 9,
+      "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "if ((*(int *)(param_1 + 0xc) == 0) ||",
+      "text": "if ((param_1->plane_culling_enabled == 0) ||",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 10,
+      "line": 11,
       "match": "param_2",
       "severity": "mild",
       "text": "(iVar1 = engine_3d_c_isVisiblePlane_FUN_00403970(param_2 + 8), iVar1 != 0)) {",
@@ -146,23 +146,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 11,
+      "line": 12,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 4) == 0) {",
+      "text": "bVar2 = param_1->shadow_pass_active == 0;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 19,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "_DAT_01c38b54 = (uint)(*(int *)(param_1 + 4) == 0);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,*(int *)(param_2 + 4),(int *)(param_2 + 0x18));",
@@ -170,7 +162,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,*(int *)(param_2 + 4),(int *)(param_2 + 0x18));",
@@ -178,7 +170,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 21,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "(param_1,*(int *)(param_2 + 4),(int *)(param_2 + 0x18));",

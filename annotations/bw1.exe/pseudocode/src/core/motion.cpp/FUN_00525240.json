@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 132,
-    "complexity_score": 156,
+    "complexity_score": 160,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 51,
+    "pseudocode_lines": 55,
     "suspect_count": 10,
     "suspect_types": [
       "extra_output"
     ],
-    "total_lines": 183
+    "total_lines": 187
   },
   "cross_references": [
     {
@@ -201,7 +201,7 @@
   "suspects": [
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 6,
+      "line": 8,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "int *extraout_ECX;",
@@ -209,7 +209,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 7,
+      "line": 9,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "int *extraout_ECX_00;",
@@ -217,7 +217,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 9,
+      "line": 10,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "int extraout_EDX;",
@@ -225,7 +225,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 27,
+      "line": 29,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "*extraout_ECX_00 = (int)ROUND(fVar5);",
@@ -233,7 +233,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 28,
+      "line": 30,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "*out_frame2 = *extraout_ECX_00 + 1;",
@@ -241,7 +241,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 29,
+      "line": 31,
       "match": "extraout_ECX_00",
       "severity": "moderate",
       "text": "*out_blend_weight = (float)(fVar4 - (float10)*extraout_ECX_00);",
@@ -249,23 +249,23 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
+      "line": 48,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "fVar1 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
+      "text": "fVar3 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 44,
+      "line": 48,
       "match": "extraout_EDX",
       "severity": "moderate",
-      "text": "fVar1 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
+      "text": "fVar3 = (frame_number - (float)(*(int *)(extraout_EDX + 100) - *(int *)(extraout_EDX + 0x68))) /",
       "type": "extra_output"
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 45,
+      "line": 49,
       "match": "extraout_EDX",
       "severity": "moderate",
       "text": "(float)*(int *)(extraout_EDX + 0x68);",
@@ -273,7 +273,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 48,
+      "line": 52,
       "match": "extraout_ECX",
       "severity": "moderate",
       "text": "*extraout_ECX = *out_frame2;",

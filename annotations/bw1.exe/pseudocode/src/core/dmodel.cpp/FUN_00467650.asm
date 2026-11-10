@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   core_dmodel.cpp_FUN_004669f0 at 00466aaf
-;   core_dmodel.cpp_FUN_00466be0 at 00466cc4
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0 at 00466aaf
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0 at 00466cc4
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d94cc

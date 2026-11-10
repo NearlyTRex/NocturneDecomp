@@ -97,7 +97,7 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_00506cb0(CMP3D
     }
   }
   for (sVar3 = 0; sVar3 < 0x2d; sVar3 = sVar3 + 1) {
-    *(uint *)(&this_ptr->field_0x7358 + sVar3 * 4) = 0;
+    this_ptr->layer3_scalefactors[sVar3] = 0;
   }
   sVar3 = 0;
   local_16 = (uint)(ushort)local_16;
@@ -108,12 +108,12 @@ void __cdecl sound_mp3_cpp_CMP3Decoder_decodeScalefacCompress_FUN_00506cb0(CMP3D
                  ((int)local_16 >> 0x10) * 4 + sStack_1c * 0x10 + ((int)local_1a >> 0x10) * 0x30);
         sVar5 = sVar5 + 1) {
       if (local_34[(int)local_16 >> 0x10] == 0) {
-        *(uint *)(&this_ptr->field_0x7358 + sVar3 * 4) = 0;
+        this_ptr->layer3_scalefactors[sVar3] = 0;
       }
       else {
         uVar2 = sound_mp3_cpp_CMP3Decoder_readBits_FUN_00504d30
                           (this_ptr,local_34[(int)local_16 >> 0x10]);
-        *(uint *)(&this_ptr->field_0x7358 + sVar3 * 4) = uVar2;
+        this_ptr->layer3_scalefactors[sVar3] = uVar2;
       }
       sVar3 = sVar3 + 1;
     }

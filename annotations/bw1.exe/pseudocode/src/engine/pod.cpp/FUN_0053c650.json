@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 140,
-    "complexity_score": 331,
+    "complexity_score": 346,
     "cross_reference_count": 0,
     "function_call_count": 6,
     "global_count": 2,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 61,
-    "suspect_count": 25,
+    "suspect_count": 26,
     "suspect_types": [
+      "alloc_magic_size",
       "pointer_truncation",
       "unnamed_param",
       "unresolved_funcptr",
@@ -32,14 +33,14 @@
   },
   "function_calls": [
     {
+      "addr": "005c0f32",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005c0f32"
+    },
+    {
       "addr": "005c0344",
       "is_variadic": false,
       "name": "crt_unknown.c_FUN_005c0344"
-    },
-    {
-      "addr": "005c0f32",
-      "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005c0f32"
     },
     {
       "addr": "0053b1a0",
@@ -322,14 +323,22 @@
       "severity": "moderate",
       "text": "do {",
       "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Allocation size hardcodes 0x42c == sizeof(CPodFile). Replace the magic with sizeof(CPodFile) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 11,
+      "match": "(CPodFile*) alloc stride 0x42c",
+      "severity": "moderate",
+      "text": "(CPodFile *)debugAllocTracked1(0x42c)",
+      "type": "alloc_magic_size"
     }
   ],
   "vtable_info": {
     "entries": [
       {
         "class_name": "CPod",
-        "offset": 4,
-        "vtable_addr": "00604a3c"
+        "offset": 12,
+        "vtable_addr": "00604a34"
       },
       {
         "class_name": "CDemonPod",

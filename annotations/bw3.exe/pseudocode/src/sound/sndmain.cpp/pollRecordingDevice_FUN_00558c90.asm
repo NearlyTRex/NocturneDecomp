@@ -12,15 +12,15 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00558b00
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;
 ; *****************************************************************************
 
 section .text
 
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00558c90
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00558c90
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
         ;   Label: sound_sndmain.cpp_pollRecordingDevice_FUN_00558c90
     CALL sound_sndmain.cpp_isRecordingStarted_FUN_00558b00 ; 00558c95
         ;   XREF to: 00558b00 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isRecordingStarted_FUN_00558b00()

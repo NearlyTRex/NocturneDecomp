@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 65,
-    "complexity_score": 87,
+    "complexity_score": 77,
     "cross_reference_count": 0,
     "function_call_count": 8,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 4,
     "suspect_types": [
       "negative_offset",
       "unnamed_field"
@@ -37,7 +37,7 @@
     {
       "addr": "0043f900",
       "is_variadic": false,
-      "name": "core_cloth.cpp_FUN_0043f900"
+      "name": "core_cloth.cpp_CClothList_dtor_FUN_0043f900"
     },
     {
       "addr": "0050ad40",
@@ -148,16 +148,8 @@
       "line": 20,
       "match": "pCVar1[-1].",
       "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);",
+      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(pCVar1[-1].height_cache_tags[4] + 0x2f,0);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0xa36c",
-      "severity": "mild",
-      "text": "iVar2 = unkafter_armour_cpp_FUN_00410370(&pCVar1[-1].field_0xa36c,0);",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
@@ -184,7 +176,7 @@
         "vtable_addr": "005e2f44"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CNPC",
         "offset": 208,
         "vtable_addr": "005e2df4"
       }

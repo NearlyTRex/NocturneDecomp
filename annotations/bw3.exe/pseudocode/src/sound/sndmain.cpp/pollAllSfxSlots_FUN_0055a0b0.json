@@ -1,0 +1,248 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 106,
+    "complexity_score": 99,
+    "cross_reference_count": 1,
+    "function_call_count": 6,
+    "global_count": 10,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 4,
+    "suspect_types": [
+      "extra_output",
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 150
+  },
+  "cross_references": [
+    {
+      "addr": "0055b620",
+      "from_addr": "0055b645",
+      "name": "sound_snddx.cpp_FUN_0055b620",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055a0b0",
+    "address_range": [
+      [
+        "0055a0b0",
+        "0055a1a9"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_sndmain.cpp_pollAllSfxSlots_FUN_0055a0b0",
+    "signature": "void __cdecl sound_sndmain_cpp_pollAllSfxSlots_FUN_0055a0b0(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "00554430",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_CSfxSlot_compute_FUN_00554430"
+    },
+    {
+      "addr": "005526d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005526d0"
+    },
+    {
+      "addr": "00555410",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00555410"
+    },
+    {
+      "addr": "005586d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005586d0"
+    },
+    {
+      "addr": "005806a0",
+      "is_variadic": false,
+      "name": "wincore_winrun.cpp_getTime_FUN_005806a0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d3ed5",
+      "name": "s_sound_sndmain_cpp_005d3ed5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3eea",
+      "name": "s_SfxSlot_pollSfx_must_be_005d3eea",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d3f0e",
+      "name": "DAT_005d3f0e",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d3f12",
+      "name": "DAT_005d3f12",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02ce7338",
+      "name": "DAT_02ce7338",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf28bc",
+      "name": "DAT_02cf28bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf341c",
+      "name": "DAT_02cf341c",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02cf3420",
+      "name": "DAT_02cf3420",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "0055b645",
+        "call_type": "direct",
+        "caller": "sound_snddx.cpp_FUN_0055b620",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.1066666666666665,
+    "instruction_count": 75,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 5,
+      "BRANCH": 4,
+      "CALL": 6,
+      "CBRANCH": 9,
+      "COPY": 107,
+      "FLOAT2FLOAT": 5,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 4,
+      "INT2FLOAT": 2,
+      "INT_ADD": 13,
+      "INT_AND": 45,
+      "INT_CARRY": 5,
+      "INT_EQUAL": 33,
+      "INT_LEFT": 8,
+      "INT_LESS": 6,
+      "INT_NOTEQUAL": 13,
+      "INT_OR": 10,
+      "INT_SBORROW": 6,
+      "INT_SCARRY": 5,
+      "INT_SLESS": 16,
+      "INT_SUB": 20,
+      "INT_XOR": 2,
+      "INT_ZEXT": 8,
+      "LOAD": 9,
+      "POPCOUNT": 16,
+      "RETURN": 1,
+      "STORE": 19
+    },
+    "pcode_op_count": 383
+  },
+  "stack_frame": {
+    "frame_size": 28,
+    "local_size": 28,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 8,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "int extraout_EAX;",
+      "type": "extra_output"
+    },
+    {
+      "description": "Inferred extra output (wrong calling convention)",
+      "line": 27,
+      "match": "extraout_EAX",
+      "severity": "moderate",
+      "text": "if (0 < extraout_EAX) {",
+      "type": "extra_output"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 45,
+      "match": "DAT_02ceb91c",
+      "severity": "mild",
+      "text": "} while (this_ptr != (CSfxSlot *)&DAT_02ceb91c);",
+      "type": "undefined_data"
+    }
+  ]
+}

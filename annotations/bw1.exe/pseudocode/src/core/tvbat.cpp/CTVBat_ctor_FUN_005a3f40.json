@@ -2,19 +2,20 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 74,
-    "complexity_score": 260,
+    "complexity_score": 109,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 2,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 35,
-    "suspect_count": 21,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 49,
+    "suspect_count": 4,
     "suspect_types": [
+      "derived_field_index_pun",
       "negative_offset",
-      "unnamed_field",
+      "pointer_cast",
       "warning_overlapping_globals"
     ],
-    "total_lines": 109
+    "total_lines": 123
   },
   "cross_references": [
     {
@@ -40,7 +41,7 @@
     {
       "addr": "0040cc00",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cc00"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00"
     },
     {
       "addr": "00468860",
@@ -143,164 +144,27 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "((CKeyFramedModelInstance *)&pCVar1[1].field_0x4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "*(byte ***)&this_ptr_00[-0x83].field_0x15c = &g_CTVBatVTable;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
-      "line": 16,
+      "line": 15,
       "match": "this_ptr_00[-1].",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
+      "text": "this_ptr_00[-1].model_ptr = (CKeyFramedModel *)0x0;",
       "type": "negative_offset"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x178",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-1].field_0x178 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x18 = 0x40a00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x14 = 0x41700000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr_00[1].field_0x20 = fVar3 * _DAT_005f8ba0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr_00[1].field_0x1c = fVar3 * _DAT_005f8ba4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x28 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x2c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0x3c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x3c = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x130",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[-0x69].field_0x130 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xb4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0xb4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x40",
-      "severity": "mild",
-      "text": "this_ptr_00[1].field_0x40 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xa4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0xa4 = 0x41700000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0xa8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0xa8 = 0x41f00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0xb0",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0xb0 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr_00[1].field_0x24 = uVar2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer cast of byte-offset arithmetic reaching a struct member via an array-indexed element + sibling field + offset (e.g. `(CMirror *)(p[1].create_event + 0x1c)` -> `&this->mirror`). Replace with the named field/array access in a .keep.",
       "line": 38,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "return (CTVBat *)&this_ptr_00[-0x83].field_0x8;",
-      "type": "unnamed_field"
+      "match": "(T *)(IDENT[N].FIELD + 0xOFF) byte-offset member reach",
+      "severity": "moderate",
+      "text": "*(byte *)(this_ptr_00[1].part_visibility_flags + 0x10) = 0;",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "'pCVar1[1].base.base.actor_name + 4' walks 1 x sizeof(CEnemy) (0xc268) + offsetof(base.base.actor_name) (0x0) + 0x4 = 0xc26c, which is exactly offsetof(CBatCreature, part_indices). Ghidra had no CBatCreature type here and reached the field by index arithmetic; write it as ((CBatCreature *)pCVar1)->part_indices (\u00a7de-pun/\u00a712). Ambiguous: CBatman::fall_event, CBride::part_indices[1], CBugs::count also has a field there \u2014 confirm the real class from the .asm before rewriting.",
+      "line": 13,
+      "severity": "moderate",
+      "text": "((CKeyFramedModelInstance *)(pCVar1[1].base.base.actor_name + 4));",
+      "type": "derived_field_index_pun"
     }
   ],
   "vtable_info": {

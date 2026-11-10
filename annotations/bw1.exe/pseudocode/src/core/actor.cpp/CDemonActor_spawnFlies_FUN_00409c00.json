@@ -1,0 +1,159 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 27,
+    "complexity_score": 11,
+    "cross_reference_count": 1,
+    "function_call_count": 2,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 38
+  },
+  "cross_references": [
+    {
+      "addr": "00433e50",
+      "from_addr": "00433e68",
+      "name": "core_charactr.cpp_CCharacter_spawnFlies_FUN_00433e50",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00409c00",
+    "address_range": [
+      [
+        "00409c00",
+        "00409c34"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_spawnFlies_FUN_00409c00",
+    "signature": "void __cdecl core_actor_cpp_CDemonActor_spawnFlies_FUN_00409c00(CDemonActor *this_ptr,int fly_count,float spawn_radius)"
+  },
+  "function_calls": [
+    {
+      "addr": "004c0970",
+      "is_variadic": false,
+      "name": "core_flies.cpp_findFliesByFollowActor_FUN_004c0970"
+    },
+    {
+      "addr": "004e64d0",
+      "is_variadic": false,
+      "name": "core_gore.cpp_CGore_spawnFliesOnActor_FUN_004e64d0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061dca4",
+      "name": "g_CGorePtr",
+      "type": "CGore*",
+      "value": "01cd0e3c"
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00433e68",
+        "call_type": "direct",
+        "caller": "core_charactr.cpp_CCharacter_spawnFlies_FUN_00433e50",
+        "estimated_params": 3,
+        "instructions_analyzed": 5,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.8181818181818183,
+    "instruction_count": 22,
+    "opcode_distribution": {
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 18,
+      "INT_ADD": 10,
+      "INT_AND": 7,
+      "INT_CARRY": 2,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 2,
+      "INT_SLESS": 3,
+      "INT_SUB": 10,
+      "LOAD": 8,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 10
+    },
+    "pcode_op_count": 84
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "fly_count",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "spawn_radius",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CLadder",
+        "offset": 168,
+        "vtable_addr": "00602c04"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 168,
+        "vtable_addr": "00604b04"
+      },
+      {
+        "class_name": "CBattery",
+        "offset": 168,
+        "vtable_addr": "005fc314"
+      },
+      {
+        "class_name": "CFilmReel",
+        "offset": 168,
+        "vtable_addr": "005ffd14"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 168,
+        "vtable_addr": "00600714"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 70
+  }
+}

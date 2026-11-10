@@ -18,9 +18,10 @@ CTempleStone * __cdecl core_stone_cpp_CTempleStone_dtor_FUN_00584f70(CTempleSton
     FUN_005c0336(ptr);
     return this_ptr;
   }
-  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0((CBox *)&this_ptr->field_0x394,0);
+  pCVar1 = core_box_cpp_CBox_dtor_FUN_0041dab0(&(this_ptr->base).physics_box,0);
   pCVar2 = (CTempleStone *)
-           core_actor_cpp_CDemonActor_dtor_FUN_00408730((CDemonActor *)(pCVar1 + -0x394),1);
+           core_actor_cpp_CDemonActor_dtor_FUN_00408730
+                     ((CDemonActor *)(pCVar1[-2].scrape_points + 2),1);
   if ((flags & 2) == 0) {
     return pCVar2;
   }

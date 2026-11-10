@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; int cockpit_drawsurf_cpp_FUN_0046a6bc(undefined4 param_1,undefined4 param_2)
+; int cockpit_drawsurf_cpp_FUN_0046a6bc(undefined4 param_1,int param_2)
 ;
 ;
 ; Referenced Globals:
@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   engine_2d.c_getStringWidth_FUN_004018b0
-;   engine_font.cpp_FUN_004b30c0
+;   engine_font.cpp_CBitFont_getCharWidth_FUN_004b30c0
 ;
 ; *****************************************************************************
 
@@ -25,8 +25,8 @@ section .text
         ;   XREF to: 0046a6df (CONDITIONAL_JUMP)  ; LAB_0046a6df
     PUSH EAX                            ; 0046a6d1
     PUSH EDX                            ; 0046a6d2
-    CALL engine_font.cpp_FUN_004b30c0   ; 0046a6d3
-        ;   XREF to: 004b30c0 (UNCONDITIONAL_CALL)  ; undefined engine_font.cpp_FUN_004b30c0()
+    CALL engine_font.cpp_CBitFont_getCharWidth_FUN_004b30c0 ; 0046a6d3
+        ;   XREF to: 004b30c0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharWidth_FUN_004b30c0(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0046a6d8
     ADD ESP,0x4                         ; 0046a6db
     RET                                 ; 0046a6de

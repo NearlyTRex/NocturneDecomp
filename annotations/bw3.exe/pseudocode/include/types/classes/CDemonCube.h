@@ -2,15 +2,27 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDemonCubeTriangle;
+struct SVoxelGrid;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CDemonCube
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x34 (52 bytes)
 #pragma pack(push, 1)
 typedef struct CDemonCube {
-    char field_0[52]; // 0x0
+    struct SVoxelGrid* voxel_buffer1; // 0x0
+    struct SVoxelGrid* voxel_buffer2; // 0x4
+    CVector3f min_bounds; // 0x8
+    CVector3f max_bounds; // 0x14
+    int vertex_count; // 0x20
+    struct CVector3f* vertex_buffer; // 0x24
+    int triangle_count; // 0x28
+    struct CDemonCubeTriangle* triangle_buffer; // 0x2c
+    void* ground_type_memory; // 0x30
 } CDemonCube;
 #pragma pack(pop)
 

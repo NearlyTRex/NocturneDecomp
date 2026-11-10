@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_prye.cpp_FUN_00525a20 at 00525c88
+;   core_prye.cpp_CPrye_doHeroAction_FUN_00525a20 at 00525c88
 ;
 ; Referenced Globals:
 ;   undefined1* switchdataD_004d44e0 = 004d453a
@@ -30,8 +30,8 @@
 ;   core_door.cpp_CDoor_onOpened_FUN_00463d10
 ;   core_event.cpp_CEventList_executeCommands_FUN_0048c150
 ;   core_event.cpp_CRuleList_evaluateAndRun_FUN_00495db0
+;   core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250
 ;   core_hero.cpp_FUN_004d3210
-;   core_hero.cpp_FUN_004d3250
 ;   core_hero.cpp_FUN_004d3460
 ;   engine_console.cpp_FUN_00441ff0
 ;   shape_edittool.cpp_CEditorTools_showError_FUN_0047cf40
@@ -233,8 +233,8 @@ section .text
     PUSH EBX                            ; 004d46cc
         ;   Label: LAB_004d46cc
     MOV dword ptr [EBX + 0x20b94],ESI   ; 004d46cd
-    CALL core_hero.cpp_FUN_004d3250     ; 004d46d3
-        ;   XREF to: 004d3250 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_FUN_004d3250(CHero * this_ptr)
+    CALL core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250 ; 004d46d3
+        ;   XREF to: 004d3250 (UNCONDITIONAL_CALL)  ; int core_hero.cpp_CHero_tryOpenDoor_FUN_004d3250(CHero * this_ptr)
     ADD ESP,0x4                         ; 004d46d8
     PUSH EBX                            ; 004d46db
     CALL core_hero.cpp_FUN_004d3210     ; 004d46dc

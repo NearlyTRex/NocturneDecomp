@@ -39,6 +39,12 @@ typedef struct WatcomHeapInfo {
 } WatcomHeapInfo;
 #pragma pack(pop)
 
+// Structure: WatcomInheritanceLayout
+typedef struct WatcomInheritanceLayout {
+    struct WatcomTypeInfo* base_type;
+    int offset_to_base;
+} WatcomInheritanceLayout;
+
 // Structure: WatcomStat
 // Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)
@@ -52,6 +58,12 @@ typedef struct WatcomStat {
 typedef struct WatcomStaticDestructorNode {
 } WatcomStaticDestructorNode;
 #pragma pack(pop)
+
+// Structure: WatcomThunkedDestructor
+typedef struct WatcomThunkedDestructor {
+    void* destructor_func;
+    int* this_adjustment_ptr;
+} WatcomThunkedDestructor;
 
 // Structure: WatcomTypeArrayInfo
 // Stub: no RTTI in this build, size and fields not yet recovered

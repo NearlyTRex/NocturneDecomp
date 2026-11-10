@@ -10,13 +10,13 @@ void __cdecl core_weather_cpp_CWeather_createThunder_FUN_0058acf0(CWeather *this
 
 {
   CSound *this_ptr_00;
-  uint uVar1;
+  float fVar1;
   
-  uVar1 = core_actor_cpp_FUN_0040cf60(0x41200000,0x41a00000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(10.0,20.0);
   this_ptr_00 = 0x0264B290;
-  *(uint *)(this_ptr + 0x20) = uVar1;
+  this_ptr->lightning_countdown = fVar1;
   core_sound_cpp_CSound_playSound_FUN_0055ae30(this_ptr_00,this_ptr,"thndr?.wav");
-  *(uint *)(this_ptr + 0x2c) = 0;
-  *(uint *)(this_ptr + 0x34) = 0x3f800000;
+  this_ptr->sub_flash_interval = 0.0;
+  this_ptr->max_flash_interval = 1.0;
   return;
 }

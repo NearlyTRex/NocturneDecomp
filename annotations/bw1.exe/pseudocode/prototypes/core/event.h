@@ -17,17 +17,17 @@ int __cdecl setEventError(char *source_file,int source_line,char *error_message)
 // Address: 004a1210
 int __cdecl formatEventError(char *format);
 
-// Original: core_event.cpp_FUN_004a1240
+// Original: core_event.cpp_skipWhitespace_FUN_004a1240
 // Address: 004a1240
-void FUN_004a1240(char *param_1);
+char * __cdecl skipWhitespace(char *str);
 
 // Original: core_event.cpp_skipWhitespaceIndexed_FUN_004a1260
 // Address: 004a1260
 int * __cdecl skipWhitespaceIndexed(char *expression,int *parse_position);
 
-// Original: core_event.cpp_FUN_004a128e
+// Original: core_event.cpp_parseComparisonOp_FUN_004a128e
 // Address: 004a128e
-undefined4 FUN_004a128e(char *param_1);
+undefined4 parseComparisonOp(char *param_1);
 
 // Original: core_event.cpp_parseIntOrCounter_FUN_004a1330
 // Address: 004a1330
@@ -35,19 +35,19 @@ int __cdecl parseIntOrCounter(char *str);
 
 // Original: core_event.cpp_resolveActorByName_FUN_004a1370
 // Address: 004a1370
-CDemonActor * __cdecl resolveActorByName(char *param_1,undefined4 param_2,undefined4 param_3);
+CDemonActor * __cdecl resolveActorByName(char *param_1,undefined4 param_2);
 
 // Original: core_event.cpp_parseVectorLocation_FUN_004a14a0
 // Address: 004a14a0
 undefined4 __cdecl parseVectorLocation(int param_1,int *param_2,undefined4 *param_3);
 
-// Original: core_event.cpp_FUN_004a15c0
+// Original: core_event.cpp_trimWhitespace_FUN_004a15c0
 // Address: 004a15c0
-void FUN_004a15c0(char *param_1);
+void __cdecl trimWhitespace(char *str);
 
-// Original: core_event.cpp_FUN_004a1630
+// Original: core_event.cpp_extractParenArg_FUN_004a1630
 // Address: 004a1630
-char * FUN_004a1630(int *param_1,char *param_2,int param_3,int param_4);
+char * extractParenArg(int *param_1,char *param_2,int param_3,int param_4);
 
 // Original: core_event.cpp_parseDeathType_FUN_004a1750
 // Address: 004a1750
@@ -65,9 +65,9 @@ CEventList * __cdecl CEventList::ctor(CEventList *this_ptr);
 // Address: 004a19f0
 void __cdecl CEventList::reset(CEventList *this_ptr);
 
-// Original: core_event.cpp_FUN_004a1a40
+// Original: core_event.cpp_CEventList_process_FUN_004a1a40
 // Address: 004a1a40
-void __cdecl FUN_004a1a40(CEventList *this_ptr);
+void __cdecl CEventList::process(CEventList *this_ptr);
 
 // Original: core_event.cpp_CEventList_executeCommands_FUN_004a1b70
 // Address: 004a1b70

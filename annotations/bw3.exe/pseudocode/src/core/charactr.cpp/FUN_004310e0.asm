@@ -24,7 +24,7 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[2]:
-;   core_charactr.cpp_FUN_00431660 at 0043190a
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00431660 at 0043190a
 ;   core_shadow.cpp_FUN_005438d0 at 0054473c
 ;
 ; Referenced Globals:
@@ -43,9 +43,9 @@
 ;
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b40
-;   core_actor.cpp_FUN_0040cfa0
+;   core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0
 ;   core_charactr.cpp_CCharacter_walkToPoint_FUN_0042b9e0
-;   core_vecdir.cpp_FUN_00576250
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250
 ;   engine_console.cpp_FUN_00441ff0
 ;
 ; *****************************************************************************
@@ -208,8 +208,8 @@ section .text
     PUSH EAX                            ; 0043125f
     LEA ESI,[ESP + 0x1c]                ; 00431260
     LEA EDI,[ESP + 0x28]                ; 00431264
-    CALL core_vecdir.cpp_FUN_00576250   ; 00431268
-        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_00576250()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250 ; 00431268
+        ;   XREF to: 00576250 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_00576250()
     LEA ESI,[ESP + 0x1c]                ; 0043126d
     ADD ESP,0x4                         ; 00431271
     MOVSD ES:EDI,ESI                    ; 00431274
@@ -237,8 +237,8 @@ section .text
     MOV EAX,dword ptr [EBX + 0x2528]    ; 004312b7
     PUSH dword ptr [ESP + 0x5c]         ; 004312bd
     MOV dword ptr [ESP + 0x54],EAX      ; 004312c1
-    CALL core_actor.cpp_FUN_0040cfa0    ; 004312c5
-        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cfa0()
+    CALL core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0 ; 004312c5
+        ;   XREF to: 0040cfa0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_normalizeAngleToPi_FUN_0040cfa0()
     MOV dword ptr [ESP + 0x64],EAX      ; 004312ca
     FLD float ptr [ESP + 0x64]          ; 004312ce
     ADD ESP,0x4                         ; 004312d2

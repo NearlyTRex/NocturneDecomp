@@ -13,53 +13,45 @@ void core_moon_cpp_FUN_00502510(void)
 {
   CDemonSet *pCVar1;
   float10 fVar2;
-  uint local_54;
-  uint local_50;
-  uint local_4c;
-  uint local_48;
-  uint local_44;
-  uint local_40;
-  uint local_3c;
-  uint local_38;
-  uint local_34;
+  CMatrix3x3f local_54;
   CVector3f local_2c;
   CVector3f local_20;
   int local_14;
   
-  sound_sndmain_cpp_FUN_00553580();
+  sound_sndmain_cpp_processAudio_FUN_00553580();
   engine_special_cpp_clearScreen_FUN_0055b1f0();
-  local_54 = 0x3ee1f6a9;
-  local_50 = 0x3f290d17;
-  local_4c = 0xbf1b8a5d;
-  local_48 = 0xbe8f4c90;
-  local_44 = 0x3f3e9ec3;
-  local_40 = 0x3f1b2218;
-  local_3c = 0x3f5a429e;
-  local_38 = 0xbdc77681;
-  local_34 = 0x3f037100;
-  local_2c._0_4_ = 0x404a54de;
-  local_2c._4_4_ = 0x40f41b09;
-  local_2c._8_4_ = 0xc0e128b7;
-  engine_drender_cpp_FUN_0046afb0(DAT_0060b280,&local_2c);
+  local_54.m[0].x = 0.441335;
+  local_54.m[0].y = 0.660356;
+  local_54.m[0].z = -0.60758;
+  local_54.m[1].x = -0.279881;
+  local_54.m[1].y = 0.74461;
+  local_54.m[1].z = 0.605989;
+  local_54.m[2].x = 0.852579;
+  local_54.m[2].y = -0.097394;
+  local_54.m[2].z = 0.513443;
+  local_2c.x = 3.16143;
+  local_2c.y = 7.6283;
+  local_2c.z = -7.03622;
+  engine_drender_cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046afb0
+            (DAT_0060b280,&local_2c);
   engine_matrix_c_FUN_0046b4b0(DAT_0060b280,0x422c9ce4);
-  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060
-            (DAT_0060b280,(CMatrix3x3f *)&local_54);
-  local_20._0_4_ = 0;
-  local_20._4_4_ = 0;
-  local_20._8_4_ = 0;
+  engine_drender_cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046b060(DAT_0060b280,&local_54);
+  local_20.x = 0.0;
+  local_20.y = 0.0;
+  local_20.z = 0.0;
   engine_drender_cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0(DAT_0060b280,&local_20)
   ;
   pCVar1 = g_CDemonSetPtr;
-  *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;
-  *(uint *)&pCVar1->field_0x15ae88 = 0xffff6f78;
-  *(uint *)&pCVar1->field_0x15ae8c = 0xffff6f78;
-  *(uint *)&pCVar1->field_0x15ae90 = 37000;
-  core_set_cpp_FUN_005344c0(pCVar1,50000,50000,0x10000);
+  g_CDemonSetPtr->rendering_mode = 1;
+  (pCVar1->light_direction).x = -37000;
+  (pCVar1->light_direction).y = -37000;
+  (pCVar1->light_direction).z = 37000;
+  core_set_cpp_CDemonSet_setFlatColor_FUN_005344c0(pCVar1,50000,50000,0x10000);
   pCVar1 = g_CDemonSetPtr;
   DAT_0061846c = DAT_0061846c + 1;
-  *(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0x1964;
+  g_CDemonSetPtr->ambient_base_quick = 0x1964;
   DAT_00618474 = DAT_00618474 + 1;
-  *(uint *)&pCVar1->field_0x15ae84 = 0;
+  pCVar1->rendering_mode = 0;
   DAT_00618470 = DAT_00618470 + 1;
   if (0x3c < DAT_0061846c) {
     DAT_0061846c = 0;
@@ -70,7 +62,7 @@ void core_moon_cpp_FUN_00502510(void)
   if (0x4b < DAT_00618474) {
     DAT_00618474 = 0;
   }
-  engine_3d_c_FUN_00406df0(1);
+  engine_3d_c_setBlendMode_FUN_00406df0(1);
   fVar2 = (float10)_DAT_01d1cdc4;
   round();
   local_14 = (int)ROUND(fVar2);
@@ -79,6 +71,6 @@ void core_moon_cpp_FUN_00502510(void)
   }
   engine_alphabit_cpp_CAlphaBitmap_display_FUN_0040d900
             (CAlphaBitmap_ARRAY_01d1c7cc + local_14,0,0,0xffff);
-  engine_3d_c_FUN_00406df0(0);
+  engine_3d_c_setBlendMode_FUN_00406df0(0);
   return;
 }

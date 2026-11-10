@@ -11,12 +11,12 @@
 void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(char *param_1,CDemonCamera *param_2)
 
 {
-  char cVar1;
+  UVector3 *pUVar1;
   char cVar2;
-  char cVar3;
-  int iVar4;
+  int iVar3;
+  float *pfVar4;
   char *pcVar5;
-  uint *puVar6;
+  CMatrix3x3f *pCVar6;
   char *pcVar7;
   byte bVar8;
   
@@ -26,55 +26,31 @@ void __cdecl core_setutil_cpp_C3DSCamera_apply_FUN_0053ad20(char *param_1,CDemon
     _DAT_01d046a4 = 0xf7;
     core_main_c_FUN_004e4500("C3DSCamera::apply - shouldn't ever do this on panning camera '%s'!",param_1);
   }
-  pcVar7 = param_1 + 0x100;
-  if (&param_2->field_0x4 != pcVar7) {
-    cVar1 = pcVar7[1];
-    cVar2 = pcVar7[2];
-    cVar3 = pcVar7[3];
-    param_2->field_0x4 = pcVar7[0];
-    param_2->field_0x5 = cVar1;
-    param_2->field_0x6 = cVar2;
-    param_2->field_0x7 = cVar3;
-    cVar1 = param_1[0x105];
-    cVar2 = param_1[0x106];
-    cVar3 = param_1[0x107];
-    param_2->field_0x8 = param_1[0x104];
-    param_2->field_0x9 = cVar1;
-    param_2->field_0xa = cVar2;
-    param_2->field_0xb = cVar3;
-    cVar1 = param_1[0x109];
-    cVar2 = param_1[0x10a];
-    cVar3 = param_1[0x10b];
-    param_2->field_0xc = param_1[0x108];
-    param_2->field_0xd = cVar1;
-    param_2->field_0xe = cVar2;
-    param_2->field_0xf = cVar3;
+  pUVar1 = &(param_2->base).position;
+  if (pUVar1 != (UVector3 *)(param_1 + 0x100)) {
+    (pUVar1->f).x = *(float *)(param_1 + 0x100);
+    (param_2->base).position.f.y = *(float *)(param_1 + 0x104);
+    (param_2->base).position.f.z = *(float *)(param_1 + 0x108);
   }
-  pcVar7 = param_1 + 0x118;
-  puVar6 = (uint *)&param_2->field_0x10;
-  for (iVar4 = 10; iVar4 != 0; iVar4 = iVar4 + -1) {
-    *puVar6 = *(uint *)pcVar7;
-    pcVar7 = pcVar7 + (uint)bVar8 * -8 + 4;
-    puVar6 = puVar6 + (uint)bVar8 * -2 + 1;
+  pfVar4 = (float *)(param_1 + 0x118);
+  pCVar6 = &(param_2->base).rotation_matrix;
+  for (iVar3 = 10; iVar3 != 0; iVar3 = iVar3 + -1) {
+    pCVar6->m[0].x = *pfVar4;
+    pfVar4 = pfVar4 + (uint)bVar8 * -2 + 1;
+    pCVar6 = (CMatrix3x3f *)((int)pCVar6 + (uint)bVar8 * -8 + 4);
   }
-  cVar1 = param_1[0x145];
-  cVar2 = param_1[0x146];
-  cVar3 = param_1[0x147];
-  pcVar7 = &param_2->field_0x40;
-  param_2->field_0x38 = param_1[0x144];
-  param_2->field_0x39 = cVar1;
-  param_2->field_0x3a = cVar2;
-  param_2->field_0x3b = cVar3;
+  pcVar7 = param_2->camera_name;
+  (param_2->base).focal_length = *(float *)(param_1 + 0x144);
   pcVar5 = param_1;
   do {
-    cVar1 = *pcVar5;
-    *pcVar7 = cVar1;
-    if (cVar1 == '\0') break;
-    cVar1 = pcVar5[1];
+    cVar2 = *pcVar5;
+    *pcVar7 = cVar2;
+    if (cVar2 == '\0') break;
+    cVar2 = pcVar5[1];
     pcVar5 = pcVar5 + 2;
-    pcVar7[1] = cVar1;
+    pcVar7[1] = cVar2;
     pcVar7 = pcVar7 + 2;
-  } while (cVar1 != '\0');
+  } while (cVar2 != '\0');
   core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_00441e80(param_2,*(float *)(param_1 + 0x148))
   ;
   if (*(float *)(param_1 + 0x148) < *(float *)&g_CDemonSetPtr->field_0x14d150) {

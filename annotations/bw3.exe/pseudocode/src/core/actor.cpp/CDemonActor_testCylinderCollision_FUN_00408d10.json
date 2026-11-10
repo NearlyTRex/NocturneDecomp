@@ -2,25 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 73,
+    "complexity_score": 44,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 0,
-    "max_suspect_severity": "moderate",
-    "pseudocode_lines": 18,
-    "suspect_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 19,
+    "suspect_count": 2,
     "suspect_types": [
-      "unknown_field",
-      "unnamed_field",
-      "unresolved_funcptr"
+      "unknown_field"
     ],
-    "total_lines": 79
+    "total_lines": 80
   },
   "cross_references": [
     {
       "addr": "004d2720",
       "from_addr": "004d274c",
-      "name": "core_hero.cpp_FUN_004d2720",
+      "name": "core_hero.cpp_CHero_testCylinderCollision_FUN_004d2720",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -50,7 +48,7 @@
       {
         "call_addr": "004d274c",
         "call_type": "direct",
-        "caller": "core_hero.cpp_FUN_004d2720",
+        "caller": "core_hero.cpp_CHero_testCylinderCollision_FUN_004d2720",
         "estimated_params": 3,
         "instructions_analyzed": 6,
         "method": "push_count",
@@ -150,34 +148,18 @@
       "type": "unknown_field"
     },
     {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 12,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x3c))(this_ptr,local_30);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "iVar1 = (**(code **)(*(int *)&this_ptr->field_0x154 + 0x3c))(this_ptr,local_30);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unknown/mangled field access",
-      "line": 13,
+      "line": 14,
       "match": "._20_4_",
       "severity": "mild",
-      "text": "if ((((iVar1 == 2) && ((float)local_30._20_4_ - tolerance <= *(float *)(collision_info + 4))) &&",
+      "text": "((float)local_30._20_4_ - tolerance <= *(float *)(collision_info + 4))) &&",
       "type": "unknown_field"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CConstruct",
         "offset": 172,
         "vtable_addr": "005dd704"
       },
@@ -187,17 +169,17 @@
         "vtable_addr": "005de204"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CWeapon",
         "offset": 172,
         "vtable_addr": "005df104"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CGoggles",
         "offset": 172,
         "vtable_addr": "005e0d04"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CHotDemon",
         "offset": 172,
         "vtable_addr": "005e1d04"
       }

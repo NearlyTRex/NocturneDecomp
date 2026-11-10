@@ -23,7 +23,7 @@ float * core_stranger_cpp_FUN_0056bd4e(float *param_1,float *param_2)
   float fStack_30;
   
   bVar4 = 0;
-  core_vecdir_cpp_FUN_005838f0(param_1);
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005838f0(param_1);
   fStack_34 = fStack_40;
   *(uint *)((int)&stack0xffffffd0 + (uint)bVar4 * -8) =
        *(uint *)(&stack0xffffffc4 + (uint)bVar4 * -8);
@@ -42,7 +42,7 @@ float * core_stranger_cpp_FUN_0056bd4e(float *param_1,float *param_2)
       else {
         fStack_30 = fStack_30 - (float)fVar5;
       }
-      fStack_30 = (float)core_actor_cpp_FUN_0040d0c0(fStack_30);
+      fStack_30 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_30);
     }
     fVar1 = param_2[1];
     if (((_DAT_005ebc5d <= (double)fVar2) &&
@@ -55,7 +55,7 @@ float * core_stranger_cpp_FUN_0056bd4e(float *param_1,float *param_2)
       else {
         fStack_34 = fStack_34 - (float)fVar5;
       }
-      fStack_34 = (float)core_actor_cpp_FUN_0040d0c0(fStack_34);
+      fStack_34 = (float)core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(fStack_34);
     }
   }
   *unaff_ESI = fStack_34;

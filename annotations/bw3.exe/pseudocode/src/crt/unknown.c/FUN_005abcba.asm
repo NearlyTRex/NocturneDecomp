@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[1]:
-;   crt_unknown.c_FUN_005a4e29 at 005a4e4f
+;   crt_unknown.c_openFile_FUN_005a4e29 at 005a4e4f
 ;
 ; Called Functions:
-;   unkafter_asgaya.cpp_FUN_005af050
+;   crt_unknown.c_FUN_005af050
 ;
 ; *****************************************************************************
 
@@ -59,8 +59,8 @@ section .text
     PUSH EAX                            ; 005abd14
     MOV ESI,dword ptr [ESP + 0x1c]      ; 005abd15
     PUSH ESI                            ; 005abd19
-    CALL unkafter_asgaya.cpp_FUN_005af050 ; 005abd1a
-        ;   XREF to: 005af050 (UNCONDITIONAL_CALL)  ; undefined unkafter_asgaya.cpp_FUN_005af050()
+    CALL crt_unknown.c_FUN_005af050     ; 005abd1a
+        ;   XREF to: 005af050 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005af050()
     ADD ESP,0xc                         ; 005abd1f
     MOV dword ptr [EBX + 0x2c],EAX      ; 005abd22
     TEST EAX,EAX                        ; 005abd25

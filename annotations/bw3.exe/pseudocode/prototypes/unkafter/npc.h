@@ -7,4 +7,4 @@
 
 // Original: unkafter_npc.cpp_FUN_00509b90
 // Address: 00509b90
-void FUN_00509b90(undefined4 *param_1);
+CFont * __cdecl FUN_00509b90(CFont *this_ptr);

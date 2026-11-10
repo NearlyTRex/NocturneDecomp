@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_FUN_00408bf0
-;   core_actor.cpp_FUN_0040ce40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
 ;   core_charactr.cpp_FUN_0042fbd0
 ;   core_charactr.cpp_SDamageInfo_ctor_FUN_0042abb0
 ;   core_flamecan.cpp_CFlameCan_ignite_FUN_004a7110
@@ -174,8 +174,8 @@ section .text
     ADD ESP,0x4                         ; 0049e08d
     PUSH 0x41a00000                     ; 0049e090
     PUSH 0x41200000                     ; 0049e095
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049e09a
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049e09a
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x80],EAX      ; 0049e09f
     FLD float ptr [ESP + 0x80]          ; 0049e0a6
     FMUL float ptr [EBX + 0xc]          ; 0049e0ad

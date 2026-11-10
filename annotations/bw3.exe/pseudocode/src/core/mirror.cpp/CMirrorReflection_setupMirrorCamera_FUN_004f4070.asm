@@ -7,15 +7,15 @@
 ; CMirrorReflection * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_mirror.cpp_FUN_004f40b0 at 004f4c14
+;   core_mirror.cpp_CMirrorReflection_setupMirrorReflection_FUN_004f40b0 at 004f4c14
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f2afc
 ;   undefined4 DAT_01bdd7e4
 ;
 ; Called Functions:
+;   engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90
 ;   engine_drender.cpp_CDemonRenderer_setupCameraAndProjection_FUN_0046cc40
-;   engine_drender.cpp_FUN_0046cb90
 ;   engine_matrix.c_FUN_0046d090
 ;
 ; *****************************************************************************
@@ -29,8 +29,8 @@ section .text
     PUSH EAX                            ; 004f4078
     MOV EDX,dword ptr [0x005f2afc]      ; 004f4079 | DAT_005f2afc
     PUSH EDX                            ; 004f407f | DAT_01bdd7e4
-    CALL engine_drender.cpp_FUN_0046cb90 ; 004f4080
-        ;   XREF to: 0046cb90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_FUN_0046cb90(CDemonRenderer * this_ptr, CVector3f * point_ptr)
+    CALL engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90 ; 004f4080
+        ;   XREF to: 0046cb90 (UNCONDITIONAL_CALL)  ; void engine_drender.cpp_CDemonRenderer_setCameraOriginFromScaledPoint_FUN_0046cb90(CDemonRenderer * this_ptr, CVector3f * point_ptr)
     ADD ESP,0x8                         ; 004f4085
     MOV ECX,dword ptr [0x005f2afc]      ; 004f4088 | DAT_005f2afc
     PUSH dword ptr [EBX + 0x6c]         ; 004f408e

@@ -14,11 +14,11 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[2]:
-;   core_prye.cpp_FUN_005220d0 at 005221b1
+;   core_prye.cpp_CPrye_renderOpaque_FUN_005220d0 at 005221b1
 ;   unkafter_prye.cpp_FUN_00524940 at 00525280
 ;
 ; Called Functions:
-;   core_dirmat.cpp_FUN_0045b550
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550
 ;   core_dirmat.cpp_FUN_0045b800
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH EAX                            ; 00524820
     MOV dword ptr [ESP + 0x44],EDX      ; 00524821
     MOV dword ptr [ESP + 0x40],EDX      ; 00524825
-    CALL core_dirmat.cpp_FUN_0045b550   ; 00524829
-        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550 ; 00524829
+        ;   XREF to: 0045b550 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045b550(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 0052482e
     MOV EAX,dword ptr [ESI + 0x20bdc]   ; 00524831
     MOV dword ptr [ESP + 0x48],EAX      ; 00524837

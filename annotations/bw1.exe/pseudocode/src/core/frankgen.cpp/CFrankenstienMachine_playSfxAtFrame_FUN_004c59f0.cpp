@@ -11,11 +11,11 @@
 void __cdecl core_frankgen_cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004c59f0(CFrankenstienMachine *this_ptr,float trigger_frame,char *sfx_filename)
 
 {
-  if ((_DAT_01cc90b0 <= trigger_frame) && (trigger_frame < *(float *)&this_ptr->field_0x15c)) {
-    sound_sndmain_cpp_FUN_00572ac0();
-    sound_sndmain_cpp_FUN_005727e0((CVector3f *)&this_ptr->field_0x490);
+  if ((_DAT_01cc90b0 <= trigger_frame) && (trigger_frame < this_ptr->master_frame)) {
+    sound_sndmain_cpp_pushSfxOptions_FUN_00572ac0();
+    sound_sndmain_cpp_FUN_005727e0(&this_ptr->anchor_world_position);
     sound_sndmain_cpp_startSfx_FUN_00572d20(sfx_filename);
-    sound_sndmain_cpp_FUN_00572b40();
+    sound_sndmain_cpp_popSfxOptions_FUN_00572b40();
     return;
   }
   return;

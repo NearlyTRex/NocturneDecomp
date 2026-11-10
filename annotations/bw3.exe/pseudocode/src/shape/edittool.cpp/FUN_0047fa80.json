@@ -24,21 +24,21 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0047e470",
+      "from_addr": "0047e55a",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004843d0",
+      "from_addr": "004843e1",
+      "name": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0047d09e",
       "from_addr": "0047d114",
       "name": "shape_edittool.cpp_FUN_0047d09e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047d230",
-      "from_addr": "0047d855",
-      "name": "shape_edittool.cpp_FUN_0047d230",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0047e470",
-      "from_addr": "0047e55a",
-      "name": "shape_edittool.cpp_FUN_0047e470",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -48,15 +48,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004843d0",
-      "from_addr": "004843e1",
-      "name": "shape_edittool.cpp_FUN_004843d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0047c8e0",
       "from_addr": "0047cac2",
       "name": "shape_edittool.cpp_drawSingleButtonPrompt_FUN_0047c8e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0047d230",
+      "from_addr": "0047d855",
+      "name": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -110,24 +110,24 @@
       "name": "engine_3d.c_setRenderAlpha_FUN_00406bf0"
     },
     {
-      "addr": "004b0a20",
+      "addr": "004b30f0",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b0a20"
-    },
-    {
-      "addr": "004b2a80",
-      "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2a80"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004b30f0"
     },
     {
       "addr": "004b2b30",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b2b30"
+      "name": "engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30"
     },
     {
-      "addr": "004b30f0",
+      "addr": "004b2a80",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004b30f0"
+      "name": "engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80"
+    },
+    {
+      "addr": "004b0a20",
+      "is_variadic": false,
+      "name": "engine_font.cpp_FUN_004b0a20"
     },
     {
       "addr": "004e6c50",
@@ -172,7 +172,7 @@
     {
       "addr": "0047cd80",
       "is_variadic": false,
-      "name": "shape_edittool.cpp_FUN_0047cd80"
+      "name": "shape_edittool.cpp_paintWindowBackground_FUN_0047cd80"
     },
     {
       "addr": "004ed020",
@@ -338,7 +338,7 @@
       {
         "call_addr": "004843e1",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004843d0",
+        "caller": "shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -351,7 +351,7 @@
       {
         "call_addr": "0047d855",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047d230",
+        "caller": "shape_edittool.cpp_showMultiChoiceDialog_FUN_0047d230",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -364,7 +364,7 @@
       {
         "call_addr": "0047e55a",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_0047e470",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470",
         "estimated_params": 3,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -784,7 +784,7 @@
       "line": 201,
       "match": "DAT_005bd288",
       "severity": "mild",
-      "text": "iVar7 = engine_font_cpp_FUN_004b2b30(_DAT_01c5b0e0,&DAT_005bd288);",
+      "text": "iVar7 = engine_font_cpp_CBitFont_getTextHeight_FUN_004b2b30(_DAT_01c5b0e0,&DAT_005bd288);",
       "type": "undefined_data"
     },
     {

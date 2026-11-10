@@ -24,12 +24,12 @@
 ; Called Functions:
 ;   crt_dsound.c_DirectSoundCreate
 ;   crt_memory.c_memset_FUN_005a28f0
-;   crt_unknown.c_FUN_005a28c0
+;   crt_unknown.c_sprintf_FUN_005a28c0
+;   sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00
 ;   sound_snddx.cpp_enumerateDirectSoundDevice_FUN_0055d3c0
 ;   sound_snddx.cpp_FUN_0055a670
-;   sound_snddx.cpp_FUN_0055ac00
-;   sound_sndmain.cpp_FUN_005586e0
 ;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     SUB ESP,0x77c                       ; 0055d473
     MOV EBX,dword ptr [ESP + 0x78c]     ; 0055d479
     PUSH 0x2cf5468                      ; 0055d480
-    CALL sound_snddx.cpp_FUN_0055ac00   ; 0055d485
-        ;   XREF to: 0055ac00 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_FUN_0055ac00(CDirectSoundDevice * this_ptr)
+    CALL sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00 ; 0055d485
+        ;   XREF to: 0055ac00 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00(CDirectSoundDevice * this_ptr)
     ADD ESP,0x4                         ; 0055d48a
     TEST EAX,EAX                        ; 0055d48d
     JNZ 0x0055d49b                      ; 0055d48f
@@ -94,8 +94,8 @@ section .text
     PUSH 0x5d452f                       ; 0055d4f5 | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x19c]               ; 0055d4fa
     PUSH EAX                            ; 0055d501
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055d502
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055d502
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055d507
     LEA EAX,[ESP + 0x190]               ; 0055d50a
     PUSH EAX                            ; 0055d511
@@ -104,8 +104,8 @@ section .text
         ;   XREF to: 0055a560 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_0055a560()
     ADD ESP,0x4                         ; 0055d517
     PUSH 0x2cf5468                      ; 0055d51a
-    CALL sound_snddx.cpp_FUN_0055ac00   ; 0055d51f
-        ;   XREF to: 0055ac00 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_FUN_0055ac00(CDirectSoundDevice * this_ptr)
+    CALL sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00 ; 0055d51f
+        ;   XREF to: 0055ac00 (UNCONDITIONAL_CALL)  ; int sound_snddx.cpp_CDirectSoundDevice_close_FUN_0055ac00(CDirectSoundDevice * this_ptr)
     ADD ESP,0x4                         ; 0055d524
     XOR EAX,EAX                         ; 0055d527
     ADD ESP,0x77c                       ; 0055d529
@@ -146,8 +146,8 @@ section .text
     TEST EAX,EAX                        ; 0055d594
     JNZ 0x0055d60d                      ; 0055d596
         ;   XREF to: 0055d60d (CONDITIONAL_JUMP)  ; LAB_0055d60d
-    CALL sound_sndmain.cpp_FUN_005586e0 ; 0055d598
-        ;   XREF to: 005586e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_005586e0()
+    CALL sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0 ; 0055d598
+        ;   XREF to: 005586e0 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0()
         ;   Label: LAB_0055d598
     CMP EAX,0x2                         ; 0055d59d
     JL 0x0055d5ce                       ; 0055d5a0
@@ -182,8 +182,8 @@ section .text
     PUSH 0x5d452f                       ; 0055d5ec | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x4bc]               ; 0055d5f1
     PUSH EAX                            ; 0055d5f8
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055d5f9
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055d5f9
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055d5fe
     LEA EAX,[ESP + 0x4b0]               ; 0055d601
     JMP 0x0055d511                      ; 0055d608
@@ -198,8 +198,8 @@ section .text
     PUSH 0x5d452f                       ; 0055d61c | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0xc]                 ; 0055d621
     PUSH EAX                            ; 0055d625
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055d626
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055d626
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055d62b
     MOV EAX,ESP                         ; 0055d62e
     PUSH EAX                            ; 0055d630
@@ -229,8 +229,8 @@ section .text
     PUSH 0x5d452f                       ; 0055d67b | = "DirectSux: Unable to %s.  (%s)"
     LEA EAX,[ESP + 0x32c]               ; 0055d680
     PUSH EAX                            ; 0055d687
-    CALL crt_unknown.c_FUN_005a28c0     ; 0055d688
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0055d688
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0055d68d
     LEA EAX,[ESP + 0x320]               ; 0055d690
     JMP 0x0055d511                      ; 0055d697

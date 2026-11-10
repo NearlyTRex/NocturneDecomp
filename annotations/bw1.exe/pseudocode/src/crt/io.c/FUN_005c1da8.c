@@ -29,12 +29,12 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
   
   bVar1 = false;
   if ((*filename == '\0') ||
-     (iVar3 = unkafter_zombie_cpp_FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
+     (iVar3 = FUN_005cc170(filename,&DAT_005fabc8), iVar3 != 0)) {
     setErrno(1);
     iVar3 = -1;
   }
   else {
-    FUN_005c91d0(abStack_124,0x104);
+    FUN_005c91d0((char *)abStack_124,0x104);
     pcVar4 = _fullpath(&cStack_228,filename,0x104);
     if ((pcVar4 != (char *)0x0) &&
        ((((((&DAT_00626114)[(byte)(cStack_228 + 1)] & 0xc0) != 0 && (cStack_227 == ':')) &&
@@ -51,7 +51,7 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
       if (iVar3 != 0) {
         return -1;
       }
-      FUN_005c26c0(abStack_124);
+      FUN_005c26c0((char *)abStack_124);
       memset(&_Stack_368,0,0x13e);
       _Stack_368.dwFileAttributes = 0x10;
     }
@@ -75,23 +75,23 @@ int __cdecl FUN_005c1da8(char *filename,WatcomStat *file_info)
     *(DWORD *)(file_info + 0x16) = _Stack_368.nFileSizeLow;
     uVar2 = FUN_005c7f80(_Stack_368.dwFileAttributes,_Stack_368.cFileName);
     *(ushort *)(file_info + 8) = uVar2;
-    unkafter_zombie_cpp_FUN_005cc1c0(&_Stack_368.ftLastWriteTime,asStack_20,asStack_14);
-    uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(asStack_20[0],asStack_14[0]);
+    FUN_005cc1c0(&_Stack_368.ftLastWriteTime,asStack_20,asStack_14);
+    uVar6 = FUN_005cc2b0(asStack_20[0],asStack_14[0]);
     *(uint *)(file_info + 0x1e) = uVar6;
-    unkafter_zombie_cpp_FUN_005cc1c0(&_Stack_368.ftCreationTime,&uStack_18,&uStack_1c);
+    FUN_005cc1c0(&_Stack_368.ftCreationTime,&uStack_18,&uStack_1c);
     if (((short)uStack_18 == asStack_20[0]) && ((short)uStack_1c == asStack_14[0])) {
       uVar6 = *(uint *)(file_info + 0x1e);
     }
     else {
-      uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
+      uVar6 = FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
     }
     *(uint *)(file_info + 0x22) = uVar6;
-    unkafter_zombie_cpp_FUN_005cc1c0(&_Stack_368.ftLastAccessTime,&uStack_18,&uStack_1c);
+    FUN_005cc1c0(&_Stack_368.ftLastAccessTime,&uStack_18,&uStack_1c);
     if (((short)uStack_18 == asStack_20[0]) && ((short)uStack_1c == asStack_14[0])) {
       uVar6 = *(uint *)(file_info + 0x1e);
     }
     else {
-      uVar6 = unkafter_zombie_cpp_FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
+      uVar6 = FUN_005cc2b0(uStack_18 & 0xffff,uStack_1c & 0xffff);
     }
     *(uint *)(file_info + 0x1a) = uVar6;
     *(ushort *)(file_info + 0x10) = 0;

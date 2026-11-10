@@ -11,7 +11,7 @@ void core_stone_cpp_factoryFuncTempleStone_FUN_005688f0(void)
 {
   CTempleStone *this_ptr;
   
-  this_ptr = (CTempleStone *)FUN_005a3cb2(0x6ec);
+  this_ptr = (CTempleStone *)debugAllocTracked1(0x6ec);
   if (this_ptr == (CTempleStone *)0x0) {
     return;
   }

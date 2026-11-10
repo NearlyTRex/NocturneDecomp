@@ -9,13 +9,13 @@
 CDemonRaytrace * __cdecl core_dtrace_cpp_CDemonRaytrace_ctor_FUN_00473470(CDemonRaytrace *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0xc = 0;
-  *(uint *)&this_ptr->field_0x4 = 0;
-  *(uint *)&this_ptr->field_0x4c = 0;
-  *(uint *)&this_ptr->field_0x40 = 0;
-  *(uint *)&this_ptr->field_0x44 = 0;
-  *(uint *)&this_ptr->field_0x48 = 0;
-  *(uint *)this_ptr = 0;
-  *(uint *)&this_ptr->field_0x8 = 0;
+  this_ptr->triangle_flags = (uchar *)0x0;
+  this_ptr->triangle_count = 0;
+  this_ptr->cube_list = (SVoxelCubeMetadata *)0x0;
+  (this_ptr->grid_coord).x = 0;
+  (this_ptr->grid_coord).y = 0;
+  (this_ptr->grid_coord).z = 0;
+  this_ptr->rendering_mode = 0;
+  this_ptr->triangle_list = (CDemonTriangle *)0x0;
   return this_ptr;
 }

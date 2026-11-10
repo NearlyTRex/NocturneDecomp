@@ -2,31 +2,32 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 90,
-    "complexity_score": 171,
+    "complexity_score": 134,
     "cross_reference_count": 3,
     "function_call_count": 1,
     "global_count": 4,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 46,
-    "suspect_count": 11,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 7,
     "suspect_types": [
+      "pointer_cast",
       "undefined_data",
       "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 136
+    "total_lines": 134
   },
   "cross_references": [
+    {
+      "addr": "0056feb0",
+      "from_addr": "0056ffdc",
+      "name": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
     {
       "addr": "00571d70",
       "from_addr": "00571e92",
       "name": "sound_sndmain.cpp_CSfxSlot_kill_FUN_00571d70",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0056feb0",
-      "from_addr": "0056ffdc",
-      "name": "sound_sndmain.cpp_FUN_0056feb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -70,13 +71,13 @@
     },
     {
       "addr": "02c79148",
-      "name": "g_SfxSamples[0].field340_0x154",
+      "name": "g_SfxSamples[0].ref_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02c792c4",
-      "name": "g_SfxSamples[1].field288_0x120",
+      "name": "g_SfxSamples[1].sample_data",
       "type": "undefined4",
       "value": null
     }
@@ -87,7 +88,7 @@
       {
         "call_addr": "0056ffdc",
         "call_type": "direct",
-        "caller": "sound_sndmain.cpp_FUN_0056feb0",
+        "caller": "sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0056feb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -181,20 +182,20 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 14,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "if (*(int *)(&g_SfxSamples[0].field_0x120 + iVar1) != 0) {",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_SfxSamples",
+      "severity": "moderate",
+      "text": "if (*(int *)((int)g_SfxSamples[0].loop_endpoints + iVar1 + -8) != 0) {",
+      "type": "pointer_cast"
     },
     {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 15,
-      "match": "field_0x168",
-      "severity": "mild",
-      "text": "iVar3 = iVar3 + *(int *)(&g_SfxSamples[0].field_0x168 + iVar1);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_SfxSamples",
+      "severity": "moderate",
+      "text": "iVar3 = iVar3 + *(int *)((int)g_SfxSamples[0].loop_destinations + iVar1 + 0x2c);",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -206,55 +207,23 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "if ((((*(int *)&g_SfxSamples[iVar1].field_0x120 != 0) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 32,
       "match": "field_0x164",
       "severity": "mild",
-      "text": "(0 < *(int *)&g_SfxSamples[iVar1].field_0x164)) &&",
+      "text": "(0 < *(int *)&g_SfxSamples[iVar1].field_0x164)) && (g_SfxSamples[iVar1].ref_count == 0))",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 33,
-      "match": "field_0x154",
+      "match": "field_0x15c",
       "severity": "mild",
-      "text": "(*(int *)&g_SfxSamples[iVar1].field_0x154 == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x150",
-      "severity": "mild",
-      "text": "(((*(int *)&g_SfxSamples[iVar1].field_0x150 == 0 &&",
+      "text": "&& (((g_SfxSamples[iVar1].taken == 0 && (*(int *)&g_SfxSamples[iVar1].field_0x15c == 0)) &&",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 35,
-      "match": "field_0x15c",
-      "severity": "mild",
-      "text": "(*(int *)&g_SfxSamples[iVar1].field_0x15c == 0)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x1ac",
-      "severity": "mild",
-      "text": "(*(int *)&g_SfxSamples[_DAT_02c78ff0].field_0x1ac == 0)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
       "match": "field_0x168",
       "severity": "mild",
       "text": "iVar3 = iVar3 - *(int *)&g_SfxSamples[iVar1].field_0x168;",

@@ -1,8 +1,11 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dtrace_cpp_FUN_00474020(int param_1,float *param_2)
+; void __cdecl core_dtrace_cpp_FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos)
 ;
+; Parameters:
+; CDemonRaytrace * Stack[0x4]:4   this_ptr
+; CVector3f *      Stack[0x8]:4   world_pos
 ;
 ; XREF[1]:
 ;   core_dtrace.cpp_FUN_00474550 at 00474653

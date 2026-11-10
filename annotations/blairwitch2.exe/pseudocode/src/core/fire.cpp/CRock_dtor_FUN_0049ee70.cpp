@@ -11,6 +11,6 @@ CRock * __cdecl core_fire_cpp_CRock_dtor_FUN_0049ee70(CRock *this_ptr,uint flags
 {
   CRock *pCVar1;
   
-  pCVar1 = (CRock *)core_particle_cpp_FUN_00510df0((CParticle *)this_ptr,1);
+  pCVar1 = (CRock *)core_particle_cpp_CParticle_dtor_FUN_00510df0((CParticle *)this_ptr,1);
   return pCVar1;
 }

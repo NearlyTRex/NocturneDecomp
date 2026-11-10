@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   core_dcamera.cpp_CDemonCamera_saveBackdrop_FUN_00441f50 at 0044206e
 ;   core_game.cpp_FUN_004bb9b0 at 004bbcf5
-;   engine_2d.c_FUN_00402940 at 00402a54
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402a54
 ;
 ; Called Functions:
 ;   crt_stdio.c_fwrite_FUN_005b9690

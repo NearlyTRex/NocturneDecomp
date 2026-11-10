@@ -2,22 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 93,
-    "complexity_score": 242,
+    "complexity_score": 96,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 7,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 52,
-    "suspect_count": 16,
+    "pseudocode_lines": 51,
+    "suspect_count": 3,
     "suspect_types": [
-      "raw_address_pointer_store",
       "shadow_pointer_walk",
-      "unnamed_field",
-      "unresolved_funcptr",
       "unrolled_memcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 145
+    "total_lines": 144
   },
   "cross_references": [
     {
@@ -215,110 +212,6 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x15acc8 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0x14d164) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(uint *)&local_18->field_0x14d168,g_CGlassClassInfo.name_hash)",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0xc0",
-      "severity": "mild",
-      "text": "if ((this_ptr_00 != (CDemonActor *)0x0) && (*(int *)&this_ptr_00[1].field_0xc0 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 29,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)&this_ptr_00->field_0x154 + 0x1c))(this_ptr_00,0);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)&this_ptr_00->field_0x154 + 0x1c))(this_ptr_00,0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 39,
-      "match": "*(CDemonActor **)(&this_ptr->field_0x15accc",
-      "severity": "moderate",
-      "text": "*(CDemonActor **)(&this_ptr->field_0x15accc + *(int *)&this_ptr->field_0x15acc8 * 4) =",
-      "type": "raw_address_pointer_store"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x15accc",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(&this_ptr->field_0x15accc + *(int *)&this_ptr->field_0x15acc8 * 4) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "*(CDemonActor **)(&this_ptr->field_0x15accc + *(int *)&this_ptr->field_0x15acc8 * 4) =",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 41,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&this_ptr->field_0x15acc8 + 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 42,
-      "match": "field_0x15acc8",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15acc8 = iVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 51,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_18 = (CDemonSet *)&local_18->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "} while (local_14 < *(int *)&this_ptr->field_0x14d164);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
       "line": 32,
       "match": "for (...; != 0; ... + -1)",
@@ -327,11 +220,11 @@
       "type": "unrolled_memcpy"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&local_18->owner`). Replace `local_18->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 51,
-      "match": "local_18 = (T *)&local_18->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `local_18` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `local_18->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 50,
+      "match": "local_18 = (T *)local_18->ARRAY",
       "severity": "moderate",
-      "text": "local_18 = (CDemonSet *)&local_18->field_0x4;",
+      "text": "local_18 = (CDemonSet *)local_18->cameras;",
       "type": "shadow_pointer_walk"
     }
   ]

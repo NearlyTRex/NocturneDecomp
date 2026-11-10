@@ -7,12 +7,12 @@
 ; undefined        Stack[-0x38]:1  local_38
 ;
 ; XREF[2]:
-;   core_course.cpp_FUN_00444ac0 at 00444b01
-;   core_skeleton.cpp_FUN_0054e170 at 0054e30a
+;   core_course.cpp_CCourse_evaluate_FUN_00444ac0 at 00444b01
+;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_0054e170 at 0054e30a
 ;
 ; Called Functions:
 ;   core_xform.cpp_clearTranslation_FUN_005837e0
-;   core_xform.cpp_FUN_005855f0
+;   core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0
 ;
 ; *****************************************************************************
 
@@ -27,8 +27,8 @@ section .text
     PUSH EDX                            ; 0058574b
     LEA EAX,[ESP + 0x4]                 ; 0058574c
     PUSH EAX                            ; 00585750
-    CALL core_xform.cpp_FUN_005855f0    ; 00585751
-        ;   XREF to: 005855f0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_FUN_005855f0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
+    CALL core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0 ; 00585751
+        ;   XREF to: 005855f0 (UNCONDITIONAL_CALL)  ; CQuaternion4f * core_xform.cpp_quaternionToMatrix3x3_FUN_005855f0(CMatrix3x4f * matrix_out, CQuaternion4f * quat_in)
     ADD ESP,0x8                         ; 00585756
     MOV EAX,ESP                         ; 00585759
     PUSH EAX                            ; 0058575b

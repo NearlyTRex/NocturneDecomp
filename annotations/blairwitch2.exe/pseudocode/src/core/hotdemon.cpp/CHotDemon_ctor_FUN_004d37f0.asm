@@ -8,13 +8,13 @@
 ;
 ; XREF[2]:
 ;   core_hotdemon.cpp_factoryFuncHotDemon_FUN_004d37c0 at 004d37d3
-;   core_succubus.cpp_FUN_0056f6d0 at 0056f9c9
+;   core_succubus.cpp_CSuccubus_process_FUN_0056f6d0 at 0056f9c9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_hotdemon_dfm_005da4f3
 ;   undefined4 DAT_005f8860
 ;   undefined4 DAT_005f8864
-;   undefined4 g_CHotDemonVTable
+;   CEnemy_full_vtable g_CHotDemonVTable
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_ctor_FUN_00487db0

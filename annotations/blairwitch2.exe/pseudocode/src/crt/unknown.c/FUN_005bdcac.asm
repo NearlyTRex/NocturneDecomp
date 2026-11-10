@@ -24,9 +24,9 @@
 ; Called Functions:
 ;   crt_unknown.c_FUN_005bd160
 ;   crt_unknown.c_FUN_005bd16c
-;   crt_unknown.c_FUN_005be118
 ;   crt_unknown.c_FUN_005be148
-;   unkafter_morph.cpp_FUN_005c34e8
+;   crt_unknown.c_FUN_005c34e8
+;   crt_unknown.c_updateClassNameHash_FUN_005be118
 ;
 ; *****************************************************************************
 
@@ -196,8 +196,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x18]      ; 005bde46
         ;   Label: LAB_005bde46
     PUSH ECX                            ; 005bde4a
-    CALL crt_unknown.c_FUN_005be118     ; 005bde4b
-        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005be118()
+    CALL crt_unknown.c_updateClassNameHash_FUN_005be118 ; 005bde4b
+        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_updateClassNameHash_FUN_005be118()
     ADD ESP,0x4                         ; 005bde50
     CMP EAX,EDI                         ; 005bde53
     JGE 0x005bdeb5                      ; 005bde55
@@ -212,8 +212,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 005bde6c
     MOV ECX,dword ptr [EBX + 0x4]       ; 005bde6e
     MOV EBX,dword ptr [EBX]             ; 005bde71
-    CALL unkafter_morph.cpp_FUN_005c34e8 ; 005bde73
-        ;   XREF to: 005c34e8 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c34e8()
+    CALL crt_unknown.c_FUN_005c34e8     ; 005bde73
+        ;   XREF to: 005c34e8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c34e8()
     MOV dword ptr [ESI + 0x4],EDX       ; 005bde78
     MOV dword ptr [ESI],EAX             ; 005bde7b
     MOV ESI,ESP                         ; 005bde7d
@@ -259,8 +259,8 @@ section .text
     JZ 0x005bdfc8                       ; 005bdee3
         ;   XREF to: 005bdfc8 (CONDITIONAL_JUMP)  ; LAB_005bdfc8
     PUSH EAX                            ; 005bdee9
-    CALL crt_unknown.c_FUN_005be118     ; 005bdeea
-        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005be118()
+    CALL crt_unknown.c_updateClassNameHash_FUN_005be118 ; 005bdeea
+        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_updateClassNameHash_FUN_005be118()
     ADD ESP,0x4                         ; 005bdeef
     CMP EAX,EDI                         ; 005bdef2
     JGE 0x005bdfb6                      ; 005bdef4
@@ -275,8 +275,8 @@ section .text
     MOV EAX,dword ptr [EAX]             ; 005bdf0f
     MOV ECX,dword ptr [EBX + 0x4]       ; 005bdf11
     MOV EBX,dword ptr [EBX]             ; 005bdf14
-    CALL unkafter_morph.cpp_FUN_005c34e8 ; 005bdf16
-        ;   XREF to: 005c34e8 (UNCONDITIONAL_CALL)  ; undefined unkafter_morph.cpp_FUN_005c34e8()
+    CALL crt_unknown.c_FUN_005c34e8     ; 005bdf16
+        ;   XREF to: 005c34e8 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c34e8()
     MOV dword ptr [ESI + 0x4],EDX       ; 005bdf1b
     MOV dword ptr [ESI],EAX             ; 005bdf1e
     MOV ESI,ESP                         ; 005bdf20
@@ -295,8 +295,8 @@ section .text
     MOV ESI,dword ptr [ESP + 0x18]      ; 005bdf3d
         ;   Label: LAB_005bdf3d
     PUSH ESI                            ; 005bdf41
-    CALL crt_unknown.c_FUN_005be118     ; 005bdf42
-        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005be118()
+    CALL crt_unknown.c_updateClassNameHash_FUN_005be118 ; 005bdf42
+        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_updateClassNameHash_FUN_005be118()
     ADD ESP,0x4                         ; 005bdf47
     CMP EAX,EDI                         ; 005bdf4a
     JGE 0x005bdf74                      ; 005bdf4c
@@ -337,8 +337,8 @@ section .text
     JZ 0x005bdfc8                       ; 005bdf98
         ;   XREF to: 005bdfc8 (CONDITIONAL_JUMP)  ; LAB_005bdfc8
     PUSH EAX                            ; 005bdf9a
-    CALL crt_unknown.c_FUN_005be118     ; 005bdf9b
-        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005be118()
+    CALL crt_unknown.c_updateClassNameHash_FUN_005be118 ; 005bdf9b
+        ;   XREF to: 005be118 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_updateClassNameHash_FUN_005be118()
     ADD ESP,0x4                         ; 005bdfa0
     CMP EAX,EDI                         ; 005bdfa3
     JGE 0x005bdfb6                      ; 005bdfa5

@@ -7,7 +7,7 @@
 ; undefined        Stack[-0x2c]:1  local_2c
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00401010 at 0040104a
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 0040104a
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_art_005d205c

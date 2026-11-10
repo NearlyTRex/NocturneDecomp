@@ -9,7 +9,7 @@
 void core_game_cpp_FUN_004d0e6e(float *param_1,float param_2,float param_3)
 
 {
-  param_2 = (*(float *)&g_CGamePtr->field_0x294 * param_3) / param_2;
+  param_2 = (g_CGamePtr->delta_time_float * param_3) / param_2;
   if (0.0 <= *param_1) {
     *param_1 = *param_1 - param_2;
     if (*param_1 < 0.0) {

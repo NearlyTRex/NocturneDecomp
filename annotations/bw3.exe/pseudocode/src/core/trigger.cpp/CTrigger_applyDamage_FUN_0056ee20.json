@@ -1,0 +1,328 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 41,
+    "complexity_score": 42,
+    "cross_reference_count": 10,
+    "function_call_count": 1,
+    "global_count": 3,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 17,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 58
+  },
+  "cross_references": [
+    {
+      "addr": "00409f60",
+      "from_addr": "0040a51c",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00410490",
+      "from_addr": "00411187",
+      "name": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00424550",
+      "from_addr": "00424d4f",
+      "name": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00486d40",
+      "from_addr": "00487288",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0048b020",
+      "from_addr": "0048b557",
+      "name": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ae850",
+      "from_addr": "004af3b6",
+      "name": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d0fc0",
+      "from_addr": "004d17f7",
+      "name": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00527d70",
+      "from_addr": "0052845d",
+      "name": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005353e0",
+      "from_addr": "005357e3",
+      "name": "core_set.cpp_CDemonSet_processActors_FUN_005353e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056b410",
+      "from_addr": "0056bc8c",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_0056b410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0056ee20",
+    "address_range": [
+      [
+        "0056ee20",
+        "0056ee96"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_trigger.cpp_CTrigger_applyDamage_FUN_0056ee20",
+    "signature": "void __cdecl core_trigger_cpp_CTrigger_applyDamage_FUN_0056ee20(CTrigger *this_ptr,float hit_points)"
+  },
+  "function_calls": [
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00441ff0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d6762",
+      "name": "s_s_received_g_damage_hitp_005d6762",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 11,
+    "call_sites": [
+      {
+        "call_addr": "005357e3",
+        "call_type": "direct",
+        "caller": "core_set.cpp_CDemonSet_processActors_FUN_005353e0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040a51c",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0040ac25",
+        "call_type": "direct",
+        "caller": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f60",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00411187",
+        "call_type": "direct",
+        "caller": "core_blundrbs.cpp_CBlunderbus_fire_FUN_00410490",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00424d4f",
+        "call_type": "direct",
+        "caller": "core_burncrss.cpp_CBurncross_fire_FUN_00424550",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00487288",
+        "call_type": "direct",
+        "caller": "core_elephant.cpp_CElephantGun_fire_FUN_00486d40",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0048b557",
+        "call_type": "direct",
+        "caller": "core_exorcism.cpp_CExorcism_fire_FUN_0048b020",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004af3b6",
+        "call_type": "direct",
+        "caller": "core_flintlck.cpp_CFlintlock_fire_FUN_004ae850",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d17f7",
+        "call_type": "direct",
+        "caller": "core_gun.cpp_CGun_fire_FUN_004d0fc0",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0052845d",
+        "call_type": "direct",
+        "caller": "core_rifle.cpp_CRifle_fire_FUN_00527d70",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 7.852941176470588,
+    "instruction_count": 34,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 3,
+      "CALL": 1,
+      "CBRANCH": 3,
+      "COPY": 121,
+      "FLOAT2FLOAT": 8,
+      "FLOAT_EQUAL": 2,
+      "FLOAT_LESS": 2,
+      "FLOAT_NAN": 4,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 2,
+      "INT_ADD": 13,
+      "INT_AND": 18,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 8,
+      "INT_LESS": 3,
+      "INT_NOTEQUAL": 10,
+      "INT_OR": 10,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "INT_ZEXT": 8,
+      "LOAD": 9,
+      "POPCOUNT": 4,
+      "RETURN": 1,
+      "STORE": 10
+    },
+    "pcode_op_count": 267
+  },
+  "stack_frame": {
+    "frame_size": 32,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_c",
+        "offset": -12,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CTrigger *"
+      },
+      {
+        "is_param": true,
+        "name": "hit_points",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "if ((this_ptr->trigger_cause == TRIGGER_CAUSE_DAMAGE) && (*(float *)&this_ptr->field_0x370 <= 0.0)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 17,
+      "match": "field_0x370",
+      "severity": "mild",
+      "text": "*(uint *)&this_ptr->field_0x370 = 0x3f800000;",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -28,7 +28,7 @@ void __cdecl sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_005265e0(CFileBit
           *(uint *)pSVar3 = 0x3f;
         }
         else {
-          uVar2 = sound_mp3_cpp_FUN_00525cd0(this_ptr,6);
+          uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_00525cd0(this_ptr,6);
           *(uint *)pSVar3 = uVar2;
         }
         pSVar3 = pSVar3 + 0x180;

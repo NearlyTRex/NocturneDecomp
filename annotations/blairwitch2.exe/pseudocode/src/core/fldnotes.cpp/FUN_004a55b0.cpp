@@ -32,8 +32,8 @@ LAB_004a55e8:
     switch(*(uint *)(iVar1 + 0x140)) {
     case 0:
     case 1:
-      shape_edittool_cpp_FUN_0047be40(g_CEditorToolsPtr,"CFieldNotes::completeTask - entry '%s' was not a task",param_2)
-      ;
+      shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
+                (g_CEditorToolsPtr,"CFieldNotes::completeTask - entry '%s' was not a task");
       DAT_00616014 = 1;
       return;
     case 2:
@@ -53,7 +53,8 @@ switchD_004a55fa_caseD_4:
       return;
     }
   }
-  shape_edittool_cpp_FUN_0047be40(g_CEditorToolsPtr,"CFieldNotes::completeTask - entry '%s' not found",param_2);
+  shape_edittool_cpp_CEditorTools_showError_FUN_0047be40
+            (g_CEditorToolsPtr,"CFieldNotes::completeTask - entry '%s' not found");
   DAT_00616014 = 1;
   return;
 }

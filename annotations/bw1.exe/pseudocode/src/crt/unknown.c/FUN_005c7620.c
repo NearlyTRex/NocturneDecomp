@@ -25,7 +25,7 @@ uint FUN_005c7620(void)
     return 0;
   }
   if (in_AL != '\a') {
-    unkafter_zombie_cpp_FUN_005cbedb((double)in_ST0);
+    FUN_005cbedb((double)in_ST0);
   }
   return 1;
 }

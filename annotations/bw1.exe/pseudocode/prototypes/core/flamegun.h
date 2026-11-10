@@ -21,21 +21,21 @@ CDemonActorType * CFlameThrower::getActorType(CFlameThrower *this_ptr);
 // Address: 004b95c0
 CFlameThrower * __cdecl CFlameThrower::ctor(CFlameThrower *this_ptr);
 
-// Original: core_flamegun.cpp_FUN_004b9660
+// Original: core_flamegun.cpp_CFlameThrower_fire_FUN_004b9660
 // Address: 004b9660
-undefined4 FUN_004b9660(int param_1);
+int __cdecl CFlameThrower::fire(CFlameThrower *this_ptr);
 
-// Original: core_flamegun.cpp_FUN_004b9710
+// Original: core_flamegun.cpp_CFlameThrower_process_FUN_004b9710
 // Address: 004b9710
-void FUN_004b9710(CWeapon *param_1,float param_2);
+void __cdecl CFlameThrower::process(CFlameThrower *this_ptr,float delta_time);
 
-// Original: core_flamegun.cpp_FUN_004b9810
+// Original: core_flamegun.cpp_CFlameThrower_getDamage_FUN_004b9810
 // Address: 004b9810
-undefined4 FUN_004b9810(int param_1);
+float __cdecl CFlameThrower::getDamage(CFlameThrower *this_ptr);
 
-// Original: core_flamegun.cpp_FUN_004b9830
+// Original: core_flamegun.cpp_CFlameThrower_renderAimBeam_FUN_004b9830
 // Address: 004b9830
-void FUN_004b9830(void);
+void __cdecl CFlameThrower::renderAimBeam(CFlameThrower *this_ptr);
 
 // Original: core_flamegun.cpp_CFlameThrower_dtor_FUN_004b9860
 // Address: 004b9860

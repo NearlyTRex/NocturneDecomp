@@ -21,10 +21,10 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
   char *output_buffer;
   uint flags;
   char local_494 [260];
-  byte local_390 [260];
+  char local_390 [260];
   char local_28c [260];
   char local_188 [256];
-  byte local_88 [64];
+  CLZWCompress local_88;
   CInStreamFile local_48;
   COutStreamFile local_1c;
   int local_14;
@@ -57,13 +57,13 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
     file_extension = &DAT_005e2eb5;
     directory_path = &DAT_005e2eb9;
     pcVar3 = support_newmsg_cpp_getLocalizedString_FUN_00531090("Save game");
-    iVar2 = shape_edittool_cpp_FUN_004958d0
+    iVar2 = shape_edittool_cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0
                       (g_CEditorToolsPtr,pcVar3,directory_path,file_extension,output_buffer,flags);
     if (iVar2 == 0) {
       return;
     }
     splitpath(local_494,(char *)0x0,(char *)0x0,local_28c,(char *)0x0);
-    FUN_005bfb40();
+    _sprintf(local_494,"%s.noc");
   }
   else {
     do {
@@ -89,7 +89,7 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
   }
   FUN_005c03c0(file_handle,"// .NOC file version\n");
   FUN_005c03c0();
-  core_mission_cpp_FUN_0051ac40(0x01D2C900,file_handle);
+  core_mission_cpp_CDemonMission_writeFile_FUN_0051ac40(0x01D2C900,file_handle);
   FUN_005c03c0(file_handle,"// Hero count, local hero index, hero list\n");
   FUN_005c03c0(file_handle,"%d, %d\n",_DAT_01d06aa0,_DAT_01d06ab4);
   iVar2 = 0;
@@ -100,7 +100,7 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
     } while (iVar2 < _DAT_01d06aa0);
   }
   core_event_cpp_CEventList_saveState_FUN_004aa9d0(0x01C51D80,file_handle);
-  core_script_cpp_FUN_0054b710(g_CScriptPtr,file_handle);
+  core_script_cpp_CScript_saveState_FUN_0054b710(g_CScriptPtr,file_handle);
   core_fire_cpp_CFireEffect_save_FUN_004b73f0(0x01C57074,file_handle);
   FUN_005c03c0(file_handle,"Light state\n");
   core_set_cpp_CDemonSet_saveMasterLightStates_FUN_00555ce0(g_CDemonSetPtr,(int *)&DAT_01cd06c4);
@@ -114,9 +114,9 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
   }
   FUN_005c03c0(file_handle,"Game stats\n");
   FUN_005c03c0
-            (file_handle,"%f,%f,%d,%d\n",(double)*(float *)&this_ptr->field_0x270,
-             (double)*(float *)&this_ptr->field_0x268,*(uint *)&this_ptr->field_0x26c,
-             *(uint *)&this_ptr->field_0x274);
+            (file_handle,"%f,%f,%d,%d\n",(double)this_ptr->total_play_time,
+             (double)this_ptr->total_game_time,this_ptr->damageable_enemy_count,
+             this_ptr->total_kill_count);
   core_set_cpp_FUN_00555d20(g_CDemonSetPtr,file_handle);
   core_fldnotes_cpp_FUN_004bf1c0(g_CFieldNotesPtr,file_handle);
   _fclose(file_handle);
@@ -133,7 +133,7 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
       unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_48,0);
       return;
     }
-    FUN_005bfb40(local_390,"%s\\%s",&DAT_005e2fa1,local_494);
+    _sprintf(local_390,"%s\\%s");
     iVar2 = support_trstream_cpp_FUN_005a19e0();
     if (iVar2 == 0) {
       shape_edittool_cpp_FUN_004943a0(g_CEditorToolsPtr,pcVar3);
@@ -142,14 +142,14 @@ void __cdecl core_game_cpp_FUN_004d6420(CGame *this_ptr,char *save_filename)
       return;
     }
     support_trstream_cpp_FUN_005a18f0();
-    support_codec_cpp_CLZWCompress_ctor_FUN_00443490((CLZWCompress *)local_88,0x8000,8);
-    support_codec_cpp_FUN_004434e0((CLZWCompress *)local_88);
+    support_codec_cpp_CLZWCompress_ctor_FUN_00443490(&local_88,0x8000,8);
+    support_codec_cpp_CLZWCompress_init_FUN_004434e0(&local_88);
     support_codec_cpp_FUN_00443530();
-    support_codec_cpp_FUN_00443630(local_88,&local_1c);
+    support_codec_cpp_FUN_00443630(&local_88,&local_1c);
     unkaddr_0059f520_cpp_FUN_005a0dc0(&local_48);
     support_trstream_cpp_FUN_005a19b0(&local_1c);
-    support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90((CLZWDictionary *)(local_88 + 4),0);
-    support_codec_cpp_CCodec_dtor_FUN_00442bb0((CCodec *)local_88,1);
+    support_codec_cpp_CLZWDictionary_dtor_FUN_00442f90(&local_88.dictionary,0);
+    support_codec_cpp_CCodec_dtor_FUN_00442bb0(&local_88.base,1);
     support_trstream_cpp_COutStreamFile_dtor_FUN_005a1860(&local_1c,0);
     unkclass_instream_cpp_CInStreamFile_dtor_FUN_005a0a50(&local_48,0);
   }

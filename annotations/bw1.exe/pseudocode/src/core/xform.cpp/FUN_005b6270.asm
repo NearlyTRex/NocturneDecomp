@@ -11,13 +11,13 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[19]:
-;   core_charactr.cpp_FUN_0042c7f0 at 0042caee
-;   core_charactr.cpp_FUN_004328f0 at 00432a4c
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042caee
+;   core_charactr.cpp_CCharacter_updateCarriedObjects_FUN_004328f0 at 00432a4c
+;   core_doc.cpp_CDoc_renderOpaque_FUN_00471af0 at 00471e84
 ;   core_doc.cpp_FUN_0046f610 at 0046f70f
-;   core_doc.cpp_FUN_00471af0 at 00471e84
-;   core_fire.cpp_FUN_004ac3e0 at 004ac595
-;   core_gabriela.cpp_FUN_004c91b0 at 004c934f
-;   core_manpuz.cpp_FUN_00503c90 at 00503fa4
+;   core_fire.cpp_CBulletHole_init_FUN_004ac3e0 at 004ac595
+;   core_gabriela.cpp_CGabriella_updateWeaponPosition_FUN_004c91b0 at 004c934f
+;   core_manpuz.cpp_CMansionPuzzleCircle_setup_FUN_00503c90 at 00503fa4
 ;   core_mimic.cpp_CMimic_renderMirrored_FUN_00510620 at 00510801
 ;   core_platfrm.cpp_FUN_0053aef0 at 0053afca
 ;   core_scat.cpp_FUN_00542f20 at 00543044

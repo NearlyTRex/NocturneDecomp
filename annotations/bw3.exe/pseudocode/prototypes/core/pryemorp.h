@@ -25,22 +25,22 @@ CPryeMorph * CPryeMorph::ctor(CPryeMorph *this_ptr);
 // Address: 005274e0
 CPryeMorph * CPryeMorph::dtor(CPryeMorph *this_ptr,uint flags);
 
-// Original: core_pryemorp.cpp_FUN_005275c0
+// Original: core_pryemorp.cpp_CPryeMorph_setup_FUN_005275c0
 // Address: 005275c0
-void FUN_005275c0(int param_1);
+void __cdecl CPryeMorph::setup(CPryeMorph *this_ptr);
 
-// Original: core_pryemorp.cpp_FUN_00527780
+// Original: core_pryemorp.cpp_CPryeMorph_process_FUN_00527780
 // Address: 00527780
-void FUN_00527780(CCharacter *param_1,float param_2);
+void __cdecl CPryeMorph::process(CPryeMorph *this_ptr,float delta_time);
 
-// Original: core_pryemorp.cpp_FUN_00527970
+// Original: core_pryemorp.cpp_CPryeMorph_renderOpaque_FUN_00527970
 // Address: 00527970
-int FUN_00527970(CDemonActor *param_1);
+int __cdecl CPryeMorph::renderOpaque(CPryeMorph *this_ptr);
 
-// Original: core_pryemorp.cpp_FUN_00527a60
+// Original: core_pryemorp.cpp_CPryeMorph_shouldIgnoreForTargeting_FUN_00527a60
 // Address: 00527a60
-bool FUN_00527a60(int param_1);
+int __cdecl CPryeMorph::shouldIgnoreForTargeting(CPryeMorph *this_ptr);
 
-// Original: core_pryemorp.cpp_FUN_00527a90
+// Original: core_pryemorp.cpp_CPryeMorph_archive_FUN_00527a90
 // Address: 00527a90
-void FUN_00527a90(int param_1);
+void __cdecl CPryeMorph::archive(CPryeMorph *this_ptr);

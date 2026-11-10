@@ -8,7 +8,7 @@
 ; _FILE *          Stack[0x8]:4   file_handle
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_0040b870 at 0040b8a9
+;   core_actor.cpp_archiveMotionState_FUN_0040b870 at 0040b8a9
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005eaf8b

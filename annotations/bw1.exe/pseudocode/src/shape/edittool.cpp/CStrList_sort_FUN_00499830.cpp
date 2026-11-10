@@ -12,14 +12,14 @@ void __cdecl shape_edittool_cpp_CStrList_sort_FUN_00499830(CStrList *this_ptr,in
 
 {
   if (start_index < end_index) {
-    if ((start_index < 0) || (*(int *)this_ptr <= end_index)) {
+    if ((start_index < 0) || (this_ptr->item_count <= end_index)) {
       _DAT_01d1d400 = "..\\shape\\edittool.cpp";
       _DAT_01d1d404 = 0xca3;
       core_main_c_FUN_005030e0("CStrList::sort - invalid range!");
     }
     _qsort
-              (*(int *)&this_ptr->field_0x8 + start_index * 4,(end_index - start_index) + 1,4,
-               shape_edittool_cpp_FUN_00499810);
+              (this_ptr->data_array + start_index,(end_index - start_index) + 1,4,
+               shape_edittool_cpp_qsortByString_FUN_00499810);
   }
   return;
 }

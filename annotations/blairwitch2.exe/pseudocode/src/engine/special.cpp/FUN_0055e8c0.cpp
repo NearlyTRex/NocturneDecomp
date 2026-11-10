@@ -14,8 +14,8 @@ int __cdecl engine_special_cpp_FUN_0055e8c0(HWND window_handle)
   HWND pHVar1;
   FARPROC pFVar2;
   int iVar3;
-  CExternalRenderer aCStack_3c30 [7624];
-  CExternalRenderer aCStack_1e68 [7624];
+  CExternalRenderer CStack_3c30;
+  CExternalRenderer CStack_1e68;
   byte *puStack_a0;
   byte *puStack_9c;
   byte *puStack_98;
@@ -62,7 +62,7 @@ int __cdecl engine_special_cpp_FUN_0055e8c0(HWND window_handle)
   if (_DAT_0264bba0 == (HMODULE)0x0) {
     return 0;
   }
-  _DAT_0264bce0 = wincore_wddvmem_cpp_FUN_00589970(&DAT_0061e180);
+  _DAT_0264bce0 = wincore_wddvmem_cpp_loadLibrary_FUN_00589970(&DAT_0061e180);
   if (_DAT_0264bce0 == (HMODULE)0x0) {
     _DAT_0264bba0 = _DAT_0264bce0;
     return 0;
@@ -70,15 +70,15 @@ int __cdecl engine_special_cpp_FUN_0055e8c0(HWND window_handle)
   pFVar2 = wincore_wddvmem_cpp_getProcAddress_FUN_00589980
                      (_DAT_0264bce0,"APIDLLInformation");
   if (pFVar2 == (FARPROC)0x0) {
-    engine_special_cpp_FUN_0055dcf0();
+    engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0();
     _DAT_0264bba0 = (HMODULE)0x0;
     return 0;
   }
-  (*pFVar2)(_DAT_0264bce0,aCStack_3c30);
-  engine_special_cpp_CExternalRenderer_ctor_FUN_005602c0(aCStack_1e68);
-  iVar3 = engine_special_cpp_CExternalRenderer_validate_FUN_00560310(aCStack_3c30,aCStack_1e68);
+  (*pFVar2)(_DAT_0264bce0,&CStack_3c30);
+  engine_special_cpp_CExternalRenderer_ctor_FUN_005602c0(&CStack_1e68);
+  iVar3 = engine_special_cpp_CExternalRenderer_validate_FUN_00560310(&CStack_3c30,&CStack_1e68);
   if (iVar3 == 0) {
-    engine_special_cpp_FUN_0055dcf0();
+    engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0();
     _DAT_0264bba0 = (HMODULE)0x0;
     return 0;
   }
@@ -408,13 +408,13 @@ int __cdecl engine_special_cpp_FUN_0055e8c0(HWND window_handle)
     uStack_20 = 0x28;
     iVar3 = (*_DAT_0264bbb8)(pHVar1,&puStack_a0);
     if (iVar3 != 0) {
-      engine_special_cpp_FUN_005600c0(_DAT_0264bba4);
+      engine_special_cpp_selectCard_FUN_005600c0(_DAT_0264bba4);
       return 1;
     }
     _DAT_0264bba0 = (HMODULE)iVar3;
     return 0;
   }
-  engine_special_cpp_FUN_0055dcf0();
+  engine_special_cpp_shutdownExternalRenderer_FUN_0055dcf0();
   _DAT_0264bba0 = (HMODULE)0x0;
   return 0;
 }

@@ -2,15 +2,19 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CKeyFramedModel;
+
 // Dependencies
 #include "system/basetypes.h"
 
 // Structure: CKeyFramedModelInstance
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x17c (380 bytes)
 #pragma pack(push, 1)
 typedef struct CKeyFramedModelInstance {
-    char field_0[380]; // 0x0
+    int part_visibility_flags[30]; // 0x0
+    char model_name[256]; // 0x78
+    struct CKeyFramedModel* model_ptr; // 0x178
 } CKeyFramedModelInstance;
 #pragma pack(pop)
 

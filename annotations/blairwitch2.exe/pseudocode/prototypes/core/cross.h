@@ -12,3 +12,23 @@ void staticInit(void);
 // Original: core_cross.cpp_factoryFuncCross_FUN_005a69c0
 // Address: 005a69c0
 void factoryFuncCross(void);
+
+// Original: core_cross.cpp_CCross_setup_FUN_005a6b90
+// Address: 005a6b90
+void __cdecl CCross::setup(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_renderOpaque_FUN_005a6ba0
+// Address: 005a6ba0
+int __cdecl CCross::renderOpaque(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_renderTransparent_FUN_005a6bc0
+// Address: 005a6bc0
+int __cdecl CCross::renderTransparent(CCross *this_ptr);
+
+// Original: core_cross.cpp_CCross_process_FUN_005a6ed0
+// Address: 005a6ed0
+void __cdecl CCross::process(CCross *this_ptr,float delta_time);
+
+// Original: core_cross.cpp_CSimpleCross_getActorType_FUN_005a7970
+// Address: 005a7970
+CDemonActorType * __cdecl CSimpleCross::getActorType(CSimpleCross *this_ptr);

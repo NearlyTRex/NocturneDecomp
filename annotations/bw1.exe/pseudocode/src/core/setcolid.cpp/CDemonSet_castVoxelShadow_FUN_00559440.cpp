@@ -13,29 +13,27 @@ void __cdecl core_setcolid_cpp_CDemonSet_castVoxelShadow_FUN_00559440(CDemonSet 
   uint *puVar2;
   uint *puVar3;
   byte bVar4;
-  uint local_54 [3];
-  CVector3f CStack_48;
-  uint local_3c [6];
-  CVector3f CStack_24;
-  CVector3f CStack_18;
+  CBoundingBox3D *in_stack_ffffffac;
+  float afStack_40 [3];
+  uint auStack_34 [6];
+  CVector3f CStack_1c;
+  float fStack_10;
   
   bVar4 = 0;
-  (**(code **)(*(int *)&actor->field_0x154 + 0x1c))(actor);
-  puVar2 = local_3c;
-  puVar3 = local_54;
+  (*((actor->vtable)._ub)->getBoundingBox)(actor,in_stack_ffffffac);
+  puVar2 = auStack_34;
+  puVar3 = (uint *)&stack0xffffffac;
   for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
     *puVar3 = *puVar2;
     puVar2 = puVar2 + (uint)bVar4 * -2 + 1;
     puVar3 = puVar3 + (uint)bVar4 * -2 + 1;
   }
-  if (&CStack_18 != &CStack_48) {
-    CStack_18._0_4_ = CStack_48._0_4_;
-    CStack_18._4_4_ = CStack_48._4_4_;
-    CStack_18._8_4_ = CStack_48._8_4_;
+  if (&fStack_10 != afStack_40) {
+    fStack_10 = afStack_40[0];
   }
   core_dtrace_cpp_FUN_0048f2e0
-            (&g_CDemonRaytraceInstance,(CVector3f *)&actor->field_0x20,
-             (CVector3f *)&actor->field_0x30,&CStack_24,&CStack_18);
+            (&g_CDemonRaytraceInstance,&(actor->location).position,&(actor->orient).vec,&CStack_1c,
+             (CVector3f *)&fStack_10);
   core_path_cpp_resetAllPathMaps_FUN_00535280();
   return;
 }

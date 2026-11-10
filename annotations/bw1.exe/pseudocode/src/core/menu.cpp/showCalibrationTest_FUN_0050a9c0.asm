@@ -6,7 +6,7 @@
 ;
 ; XREF[2]:
 ;   core_main.c_FUN_005032a0 at 00503a24
-;   core_menu.cpp_FUN_0050aa90 at 0050b3e9
+;   core_menu.cpp_configureGraphicsOptions_FUN_0050aa90 at 0050b3e9
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_brightness_005e7b43
@@ -22,7 +22,7 @@
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d220
 ;   engine_alphabit.cpp_FUN_0040d1c0
-;   engine_font.cpp_FUN_004c4510
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
 ;   support_newmsg.cpp_getLocalizedString_FUN_00531090
 ;
 ; *****************************************************************************
@@ -40,8 +40,8 @@ section .text
     PUSH 0x58                           ; 0050a9dc
     MOV EDX,dword ptr [0x0152d248]      ; 0050a9de | DAT_0152d248
     PUSH EDX                            ; 0050a9e4
-    CALL engine_font.cpp_FUN_004c4510   ; 0050a9e5
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0050a9e5
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     ADD ESP,0x8                         ; 0050a9ea
     PUSH 0x5e7b4e                       ; 0050a9ed | = "1. Turn off all the lights in your room."
     CALL support_newmsg.cpp_getLocalizedString_FUN_00531090 ; 0050a9f2

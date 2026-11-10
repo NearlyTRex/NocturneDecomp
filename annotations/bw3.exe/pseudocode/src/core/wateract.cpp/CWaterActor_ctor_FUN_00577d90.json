@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 79,
-    "complexity_score": 95,
+    "complexity_score": 81,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
-    "suspect_count": 3,
+    "pseudocode_lines": 56,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
       "unrolled_strcpy"
     ],
-    "total_lines": 134
+    "total_lines": 135
   },
   "cross_references": [
     {
@@ -128,16 +127,8 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 12,
-      "match": "field_0x148",
-      "severity": "mild",
-      "text": "iVar3 = __arrinit(&pCVar2[1].field_0x148,1000,&g_SWaterVertexTypeInfo);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 30,
+      "line": 31,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",
@@ -145,7 +136,7 @@
     },
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 41,
+      "line": 42,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

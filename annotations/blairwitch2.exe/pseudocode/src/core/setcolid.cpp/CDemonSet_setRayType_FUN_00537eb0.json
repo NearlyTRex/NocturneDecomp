@@ -2,15 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 20,
-    "complexity_score": 42,
+    "complexity_score": 27,
     "cross_reference_count": 17,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 12,
-    "suspect_count": 2,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
     "total_lines": 32
@@ -19,7 +18,7 @@
     {
       "addr": "0040a050",
       "from_addr": "0040a83c",
-      "name": "core_actor.cpp_FUN_0040a050",
+      "name": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,31 +30,31 @@
     {
       "addr": "0043a7a0",
       "from_addr": "0043a963",
-      "name": "core_crossbow.cpp_FUN_0043a7a0",
+      "name": "core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004599a0",
       "from_addr": "00459a37",
-      "name": "core_doc.cpp_FUN_004599a0",
+      "name": "core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00485b40",
       "from_addr": "00485dfb",
-      "name": "core_elephant.cpp_FUN_00485b40",
+      "name": "core_elephant.cpp_CElephantGun_fire_FUN_00485b40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b11a0",
+      "from_addr": "004b1488",
+      "name": "core_gabriela.cpp_CGabriella_scoreTargetVisibility_FUN_004b11a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aeb00",
       "from_addr": "004af153",
       "name": "core_gabriela.cpp_FUN_004aeb00",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004b11a0",
-      "from_addr": "004b1488",
-      "name": "core_gabriela.cpp_FUN_004b11a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,7 +66,7 @@
     {
       "addr": "004cbdc0",
       "from_addr": "004cbfa9",
-      "name": "core_gun.cpp_FUN_004cbdc0",
+      "name": "core_gun.cpp_CGun_fire_FUN_004cbdc0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -79,13 +78,13 @@
     {
       "addr": "0053f170",
       "from_addr": "0053f40e",
-      "name": "core_shotgun.cpp_FUN_0053f170",
+      "name": "core_shotgun.cpp_CShotgun_fire_FUN_0053f170",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0056b770",
       "from_addr": "0056b800",
-      "name": "core_stranger.cpp_FUN_0056b770",
+      "name": "core_stranger.cpp_CStranger_renderOpaque_FUN_0056b770",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -97,13 +96,13 @@
     {
       "addr": "00575800",
       "from_addr": "00575a20",
-      "name": "core_tommygun.cpp_FUN_00575800",
+      "name": "core_tommygun.cpp_CTommyGun_fire_FUN_00575800",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0057fc20",
       "from_addr": "0057fd1f",
-      "name": "core_turret.cpp_FUN_0057fc20",
+      "name": "core_turret.cpp_CTurret_fire_FUN_0057fc20",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -247,7 +246,7 @@
       {
         "call_addr": "0040a83c",
         "call_type": "direct",
-        "caller": "core_actor.cpp_FUN_0040a050",
+        "caller": "core_actor.cpp_CDemonActor_processMeleeHit_FUN_0040a050",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -258,7 +257,7 @@
       {
         "call_addr": "0043a963",
         "call_type": "direct",
-        "caller": "core_crossbow.cpp_FUN_0043a7a0",
+        "caller": "core_crossbow.cpp_CCrossbow_fire_FUN_0043a7a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -269,7 +268,7 @@
       {
         "call_addr": "00459a37",
         "call_type": "direct",
-        "caller": "core_doc.cpp_FUN_004599a0",
+        "caller": "core_doc.cpp_CDoc_renderOpaque_FUN_004599a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -338,14 +337,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x15f694",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x15f694 = ray_type;",
-      "type": "unnamed_field"
     }
   ]
 }

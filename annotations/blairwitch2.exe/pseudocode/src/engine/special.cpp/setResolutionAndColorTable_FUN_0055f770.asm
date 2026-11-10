@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   bits_per_pixel
 ;
 ; XREF[2]:
-;   wincore_wddvmem.cpp_FUN_005897e0 at 00589812
 ;   wincore_wddvmem.cpp_resetGraphicsSystem_FUN_00588de0 at 00588e90
+;   wincore_wddvmem.cpp_videoRestore_FUN_005897e0 at 00589812
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_006141c0

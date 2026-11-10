@@ -27,7 +27,7 @@ void core_carved_cpp_FUN_0042be20(int param_1)
     iVar1 = *(int *)(param_1 + 0xc1e8);
     if (iVar1 == 0) {
       iVar2 = 1;
-      iVar1 = core_actor_cpp_FUN_0040cc60(0,3);
+      iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
       core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0
                 ((CMotionController *)(param_1 + 0x158),iVar1 + 3,iVar2);
       return;
@@ -44,19 +44,19 @@ void core_carved_cpp_FUN_0042be20(int param_1)
     local_1c = local_34;
     local_18 = local_30;
     if ((_DAT_005fd46c <= SQRT(local_24 * local_24 + local_2c * local_2c + local_28 * local_28)) ||
-       (iVar1 = core_actor_cpp_FUN_0040cc60(0,3), iVar1 != 1)) {
+       (iVar1 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3), iVar1 != 1)) {
       iVar1 = 1;
-      iVar2 = core_actor_cpp_FUN_0040cc60(0,3);
+      iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
       iVar2 = iVar2 + 7;
     }
     else {
-      iVar2 = core_actor_cpp_FUN_0040cc60(0,3);
+      iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
       iVar2 = iVar2 + 3;
     }
   }
   else {
     iVar1 = 1;
-    iVar2 = core_actor_cpp_FUN_0040cc60(0,3);
+    iVar2 = core_actor_cpp_getRandomInt_FUN_0040cc60(0,3);
     iVar2 = iVar2 + 7;
   }
   core_motion_cpp_CMotionController_setDesiredState_FUN_005247c0

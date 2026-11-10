@@ -10,10 +10,10 @@
 ;
 ; XREF[18]:
 ;   core_event.cpp_CEventList_render_FUN_004a6d80 at 004a6dd0
-;   core_game.cpp_FUN_004cb950 at 004cbc2d
 ;   core_game.cpp_FUN_004ce580 at 004ceaa6
+;   core_game.cpp_captureDebugMovieFrame_FUN_004cb950 at 004cbc2d
 ;   core_main.c_FUN_005031c0 at 005031dc
-;   core_menu.cpp_FUN_0050a2b0 at 0050a37f
+;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0 at 0050a37f
 ;   core_menu.cpp_showJoystickCalibrationScreen_FUN_0050a1f0 at 0050a28e
 ;   core_motion.cpp_FUN_005254b0 at 00525596
 ;   core_netgame.cpp_CNetGame_runLobby_FUN_0052e120 at 0052e1e1

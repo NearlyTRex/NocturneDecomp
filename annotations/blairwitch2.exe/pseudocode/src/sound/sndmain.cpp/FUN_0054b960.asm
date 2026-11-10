@@ -7,14 +7,14 @@
 ; int              Stack[0x4]:4   requested_bytes
 ;
 ; XREF[3]:
+;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840 at 0054d96c
 ;   sound_sndmain.cpp_CSfxSlot_kill_FUN_0054f700 at 0054f822
-;   sound_sndmain.cpp_FUN_0054d840 at 0054d96c
 ;   sound_sndmain.cpp_setMemoryBudget_FUN_00551930 at 00551944
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061bcc0
 ;   undefined4 DAT_02641920
-;   undefined4 g_SfxSamples[1].field288_0x120
+;   undefined4 g_SfxSamples[1].sample_data
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0
@@ -56,7 +56,7 @@ section .text
     XOR EDX,EDX                         ; 0054b9a5
     IMUL EAX,EDX,0x1ac                  ; 0054b9a7
         ;   Label: LAB_0054b9a7
-    CMP dword ptr [EAX + 0x2641a44],0x0 ; 0054b9ad | g_SfxSamples[1].field288_0x120
+    CMP dword ptr [EAX + 0x2641a44],0x0 ; 0054b9ad | g_SfxSamples[1].sample_data
     JNZ 0x0054b9cf                      ; 0054b9b4
         ;   XREF to: 0054b9cf (CONDITIONAL_JUMP)  ; LAB_0054b9cf
     INC EBX                             ; 0054b9b6

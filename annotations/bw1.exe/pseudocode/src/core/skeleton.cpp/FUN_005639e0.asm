@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_skeleton_cpp_FUN_005639e0(CDeformableModel *param_1,int param_2,undefined4 param_3,undefined4 param_4,undefined4 param_5)
+; void core_skeleton_cpp_FUN_005639e0(CDeformableModel *param_1,int param_2,int param_3,int param_4,int param_5)
 ;
 ;
 ; XREF[1]:

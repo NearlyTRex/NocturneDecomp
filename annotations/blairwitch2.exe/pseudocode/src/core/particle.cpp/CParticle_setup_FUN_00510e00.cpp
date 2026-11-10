@@ -23,22 +23,22 @@ void __cdecl core_particle_cpp_CParticle_setup_FUN_00510e00(CParticle *this_ptr,
   *(uint *)(this_ptr + 0x20) = 0;
   *(uint *)(this_ptr + 0x18) = 0;
   if ((CVector3f *)this_ptr != position) {
-    *(uint *)this_ptr = *(uint *)position;
-    *(uint *)(this_ptr + 4) = *(uint *)&position->field_0x4;
-    *(uint *)(this_ptr + 8) = *(uint *)&position->field_0x8;
+    *(float *)this_ptr = position->x;
+    *(float *)(this_ptr + 4) = position->y;
+    *(float *)(this_ptr + 8) = position->z;
   }
   if (velocity != (CVector3f *)0x0) {
     if ((CVector3f *)(this_ptr + 0xc) != velocity) {
-      *(uint *)(this_ptr + 0xc) = *(uint *)velocity;
-      *(uint *)(this_ptr + 0x10) = *(uint *)&velocity->field_0x4;
-      *(uint *)(this_ptr + 0x14) = *(uint *)&velocity->field_0x8;
+      ((CVector3f *)(this_ptr + 0xc))->x = velocity->x;
+      *(float *)(this_ptr + 0x10) = velocity->y;
+      *(float *)(this_ptr + 0x14) = velocity->z;
     }
     *(uint *)(this_ptr + 0x24) = 0x40a00000;
     *(uint *)(this_ptr + 0x38) = 0;
     return;
   }
-  fVar1 = (float)core_actor_cpp_FUN_0040cf60(0x3f490fdb,0x3fc90fdb);
-  fVar2 = (float)core_actor_cpp_FUN_0040cf60(0,0x40c90fdb);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.7853982,1.5707964);
+  fVar2 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(0.0,6.2831855);
   fVar3 = (float10)fcos((float10)fVar2);
   fVar4 = (float10)fcos((float10)fVar1);
   fVar5 = (float10)fsin((float10)fVar2);

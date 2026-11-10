@@ -11,9 +11,9 @@
 ;   TerminatedCString s_motion_state_005fa37a
 ;
 ; Called Functions:
+;   core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0
 ;   core_actor.cpp_archiveFloat_FUN_0040b5f0
-;   core_actor.cpp_FUN_0040b7f0
-;   core_actor.cpp_FUN_0040b870
+;   core_actor.cpp_archiveMotionState_FUN_0040b870
 ;   core_enemy.cpp_CEnemy_archive_FUN_004a0520
 ;
 ; *****************************************************************************
@@ -37,8 +37,8 @@ section .text
     PUSH 0x5fa362                       ; 005b9133 | = "modelName"
     LEA EBX,[ESI + 0x158]               ; 005b9138
     PUSH EBX                            ; 005b913e
-    CALL core_actor.cpp_FUN_0040b7f0    ; 005b913f
-        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
+    CALL core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0 ; 005b913f
+        ;   XREF to: 0040b7f0 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0(CDeformableModelInstance * model_ptr, char * property_name)
     ADD ESP,0x8                         ; 005b9144
     PUSH 0x5fa36c                       ; 005b9147 | = "guardDistance"
     ADD ESI,0xc1e0                      ; 005b914c
@@ -48,8 +48,8 @@ section .text
     ADD ESP,0x8                         ; 005b9158
     PUSH 0x5fa37a                       ; 005b915b | = "motion state"
     PUSH EBX                            ; 005b9160
-    CALL core_actor.cpp_FUN_0040b870    ; 005b9161
-        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_0040b870(CMotionController * motion_controller, char * property_name)
+    CALL core_actor.cpp_archiveMotionState_FUN_0040b870 ; 005b9161
+        ;   XREF to: 0040b870 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_archiveMotionState_FUN_0040b870(CMotionController * motion_controller, char * property_name)
     ADD ESP,0x8                         ; 005b9166
     POP ESI                             ; 005b9169
     POP EBX                             ; 005b916a

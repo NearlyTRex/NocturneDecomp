@@ -11,14 +11,14 @@
 ; XREF[44]:
 ;   core_actor.cpp_FUN_00408b00 at 00408b1a
 ;   core_actor.cpp_FUN_00408b80 at 00408b9c
+;   core_box.cpp_CBox_loadFromFile_FUN_0041d480 at 0041d5e2
 ;   core_box.cpp_CBox_processPhysics_FUN_0041b470 at 0041b70c
 ;   core_box.cpp_FUN_0041b1d0 at 0041b371
-;   core_box.cpp_FUN_0041d480 at 0041d5e2
-;   core_bugs.cpp_FUN_004221c0 at 004223a3
-;   core_bugs.cpp_FUN_00422570 at 00422925
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 00422925
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 004223a3
 ;   core_charactr.cpp_FUN_004300e0 at 004303d1
 ;   core_charactr.cpp_FUN_00434190 at 0043446d
-;   core_cloth.cpp_FUN_0043d9b0 at 0043e074
+;   core_cloth.cpp_CCloth_applyConstraints_FUN_0043d9b0 at 0043e074
 ;   ... and 34 more
 ;
 ; *****************************************************************************

@@ -21,7 +21,7 @@
 ;   core_setdir.cpp_FUN_00538d10 at 00538e28
 ;   core_skeleton.cpp_FUN_005487d0 at 005488a1
 ;   core_spike.cpp_CSpike_testCollisionWithCharacters_FUN_00560cb0 at 00560d99
-;   core_turret.cpp_FUN_0057ec70 at 0057ee11
+;   core_turret.cpp_CTurret_getBoundingBox_FUN_0057ec70 at 0057ee11
 ;   ... and 1 more
 ;
 ; *****************************************************************************

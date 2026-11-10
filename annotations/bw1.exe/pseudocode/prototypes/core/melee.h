@@ -29,13 +29,13 @@ void __cdecl CMelee::archive(CMelee *this_ptr);
 // Address: 005097c0
 int __cdecl CMelee::fire(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_005097f0
+// Original: core_melee.cpp_CMelee_getDamage_FUN_005097f0
 // Address: 005097f0
-undefined4 FUN_005097f0(int param_1);
+float __cdecl CMelee::getDamage(CMelee *this_ptr);
 
-// Original: core_melee.cpp_FUN_00509820
+// Original: core_melee.cpp_CMelee_renderAimBeam_FUN_00509820
 // Address: 00509820
-void FUN_00509820(void);
+void __cdecl CMelee::renderAimBeam(CMelee *this_ptr);
 
 // Original: core_melee.cpp_CMelee_canPickup_FUN_00509830
 // Address: 00509830
@@ -49,17 +49,17 @@ int __cdecl CMelee::getAllowedMeleeAttackTypes(CMelee *this_ptr);
 // Address: 00509870
 void __cdecl CMelee::fillAttackDamageInfo(CMelee *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
 
-// Original: core_melee.cpp_FUN_005098d0
+// Original: core_melee.cpp_CMelee_playAttackHitEffects_FUN_005098d0
 // Address: 005098d0
-void FUN_005098d0(CMelee *param_1,int param_2,undefined4 param_3,int param_4);
+void __cdecl CMelee::playAttackHitEffects(CMelee *this_ptr,int attack_flags,SDamageInfo *damage_info,CDemonActor *victim);
 
 // Original: core_melee.cpp_CMelee_initBloodSpurtEffects_FUN_00509970
 // Address: 00509970
 void __cdecl CMelee::initBloodSpurtEffects(CMelee *this_ptr,int blood_spurt_count,int blood_gore_type);
 
-// Original: core_melee.cpp_FUN_005099a0
+// Original: core_melee.cpp_CMelee_process_FUN_005099a0
 // Address: 005099a0
-void FUN_005099a0(CWeapon *param_1,float param_2,undefined4 param_3,float param_4);
+void __cdecl CMelee::process(CMelee *this_ptr,float delta_time);
 
 // Original: core_melee.cpp_CMelee_setWeaponState_FUN_00509a70
 // Address: 00509a70

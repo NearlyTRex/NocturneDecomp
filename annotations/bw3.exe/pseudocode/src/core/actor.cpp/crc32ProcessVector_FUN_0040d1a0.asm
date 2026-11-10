@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_actor.cpp_FUN_00409c80 at 00409c99
+;   core_actor.cpp_CDemonActor_calculateChecksum_FUN_00409c80 at 00409c99
 ;
 ; Called Functions:
 ;   core_actor.cpp_crc32ProcessBuffer_FUN_0040d140

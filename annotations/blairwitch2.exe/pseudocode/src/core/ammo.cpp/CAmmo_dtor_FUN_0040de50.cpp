@@ -19,8 +19,8 @@ CAmmo * core_ammo_cpp_CAmmo_dtor_FUN_0040de50(CAmmo *this_ptr,uint flags)
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte **)&this_ptr->field_0x2b0 = &g_CAmmoVTable;
-  pCVar1 = (CAmmo *)core_actor_cpp_CDemonActor_dtor_FUN_00408930((CDemonActor *)this_ptr,1);
+  (this_ptr->base).vtable._ub = &g_CAmmoVTable;
+  pCVar1 = (CAmmo *)core_actor_cpp_CDemonActor_dtor_FUN_00408930(&this_ptr->base,1);
   if ((flags & 2) == 0) {
     return pCVar1;
   }

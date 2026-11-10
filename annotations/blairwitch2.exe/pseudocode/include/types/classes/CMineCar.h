@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CPlatform.h"
 
 // Structure: CMineCar
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x888 (2184 bytes)
 #pragma pack(push, 1)
 typedef struct CMineCar {
-    char field_0[2184]; // 0x0
+    CPlatform base; // 0x0
+    float spark_timer; // 0x884
 } CMineCar;
 #pragma pack(pop)
 

@@ -82,7 +82,7 @@ section .text
     PUSH 0x0                            ; 005c6ce4
     PUSH 0x0                            ; 005c6ce6
     CALL crt_unknown.c_FUN_005c91d0     ; 005c6ce8
-        ;   XREF to: 005c91d0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c91d0()
+        ;   XREF to: 005c91d0 (UNCONDITIONAL_CALL)  ; char * crt_unknown.c_FUN_005c91d0(char * buffer, SIZE_T size)
     ADD ESP,0x8                         ; 005c6ced
     MOV EDI,0x626664                    ; 005c6cf0 | DAT_00626664
     MOV ESI,EAX                         ; 005c6cf5

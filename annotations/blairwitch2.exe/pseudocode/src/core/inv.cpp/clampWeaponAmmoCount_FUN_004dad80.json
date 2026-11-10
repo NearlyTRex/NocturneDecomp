@@ -1,0 +1,94 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 19,
+    "complexity_score": 10,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 10,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 29
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004dad80",
+    "address_range": [
+      [
+        "004dad80",
+        "004dadaf"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_clampWeaponAmmoCount_FUN_004dad80",
+    "signature": "void __cdecl core_inv_cpp_clampWeaponAmmoCount_FUN_004dad80(CDemonActor *actor_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "02653574",
+      "name": "g_CTommyGunClassInfo.name_hash",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.384615384615385,
+    "instruction_count": 13,
+    "opcode_distribution": {
+      "BOOL_AND": 1,
+      "BOOL_NEGATE": 1,
+      "CALL": 1,
+      "CBRANCH": 2,
+      "COPY": 8,
+      "INT_ADD": 6,
+      "INT_AND": 7,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 7,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 3,
+      "INT_SUB": 4,
+      "LOAD": 4,
+      "POPCOUNT": 3,
+      "RETURN": 2,
+      "STORE": 4
+    },
+    "pcode_op_count": 57
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "actor_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      }
+    ]
+  },
+  "suspects": []
+}

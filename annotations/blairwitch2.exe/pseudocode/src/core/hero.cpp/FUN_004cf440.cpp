@@ -17,7 +17,7 @@ uint core_hero_cpp_FUN_004cf440(int param_1)
   if (*(int *)(param_1 + 0x25610) != 0) {
     engine_console_cpp_FUN_00436710
               (g_CConsolePtr,"  toggling lever %s\n",*(int *)(param_1 + 0x25610));
-    core_lever_cpp_FUN_004e20e0(*(CLever **)(param_1 + 0x25610));
+    core_lever_cpp_CLever_activate_FUN_004e20e0(*(CLever **)(param_1 + 0x25610));
     *(uint *)(param_1 + 0x25610) = 0;
     return 1;
   }

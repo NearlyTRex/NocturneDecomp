@@ -20,11 +20,11 @@
 ;   engine_pod.cpp_crc32UpdateByte_FUN_00512d60
 ;   engine_pod.cpp_FUN_00514220
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_0047cfa0
+;   shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50
 ;   shape_edittool.cpp_CPickList_ctor_FUN_004831c0
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450
 ;   shape_edittool.cpp_CPickList_dtor_FUN_004832b0
 ;   shape_edittool.cpp_CStrList_add_FUN_00482070
-;   shape_edittool.cpp_FUN_0047ed50
-;   shape_edittool.cpp_FUN_0047ee50
 ;   ... and 2 more
 ;
 ; *****************************************************************************
@@ -165,8 +165,8 @@ section .text
         ;   Label: LAB_00513e69
     MOV ESI,dword ptr [0x005fb140]      ; 00513e6e | g_CEditorToolsPtr
     PUSH ESI                            ; 00513e74
-    CALL shape_edittool.cpp_FUN_0047ed50 ; 00513e75
-        ;   XREF to: 0047ed50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0047ed50(CEditorTools * this_ptr, char * message_text)
+    CALL shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50 ; 00513e75
+        ;   XREF to: 0047ed50 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CEditorTools_showCenteredProgressDialog_FUN_0047ed50(CEditorTools * this_ptr, char * message_text)
     ADD ESP,0x8                         ; 00513e7a
     MOV EAX,ESP                         ; 00513e7d
     PUSH EAX                            ; 00513e7f
@@ -255,8 +255,8 @@ section .text
     PUSH 0x5cc5af                       ; 00513f67
     LEA EAX,[ESP + 0xc]                 ; 00513f6c
     PUSH EAX                            ; 00513f70
-    CALL shape_edittool.cpp_FUN_00483450 ; 00513f71
-        ;   XREF to: 00483450 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_00483450(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450 ; 00513f71
+        ;   XREF to: 00483450 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_00483450(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 00513f76
     XOR ESI,ESI                         ; 00513f79
     PUSH ESI                            ; 00513f7b

@@ -21,7 +21,7 @@
 ;   CGame* g_CGamePtr = 01ccf390
 ;   undefined4 DAT_0061f2e0
 ;   CDemonSet* g_CDemonSetPtr = 01e82168
-;   undefined4 g_CGameInstance.field636_0x27c
+;   undefined4 g_CGameInstance.field576_0x27c
 ;   undefined4 DAT_01d06aa0
 ;   undefined4 DAT_01d06ab4
 ;   undefined4 DAT_01d1d400
@@ -30,9 +30,9 @@
 ;
 ; Called Functions:
 ;   core_fldnotes.cpp_FUN_004bdaa0
-;   core_game.cpp_FUN_004cf5e0
-;   core_game.cpp_FUN_004d8700
-;   core_game.cpp_FUN_004d8a90
+;   core_game.cpp_CGame_displayActStats_FUN_004d8700
+;   core_game.cpp_CGame_finishAct_FUN_004d8a90
+;   core_game.cpp_CGame_runGameSession_FUN_004cf5e0
 ;   core_level.cpp_FUN_004fe840
 ;   core_main.c_FUN_005030e0
 ;   core_mission.cpp_CDemonMission_createHeros_FUN_0051c0a0
@@ -89,8 +89,8 @@ section .text
     ADD ESP,0x4                         ; 0051bb3d
     MOV ECX,dword ptr [0x0061d95c]      ; 0051bb40 | g_CGamePtr
     PUSH ECX                            ; 0051bb46
-    CALL core_game.cpp_FUN_004cf5e0     ; 0051bb47
-        ;   XREF to: 004cf5e0 (UNCONDITIONAL_CALL)  ; int core_game.cpp_FUN_004cf5e0(CGame * this_ptr)
+    CALL core_game.cpp_CGame_runGameSession_FUN_004cf5e0 ; 0051bb47
+        ;   XREF to: 004cf5e0 (UNCONDITIONAL_CALL)  ; int core_game.cpp_CGame_runGameSession_FUN_004cf5e0(CGame * this_ptr)
     MOV ESI,dword ptr [0x01d06ab4]      ; 0051bb4c | DAT_01d06ab4
     ADD ESP,0x4                         ; 0051bb52
     MOV ESI,dword ptr [ESI*0x4 + 0x1d06aa4] ; 0051bb55
@@ -123,7 +123,7 @@ section .text
     ADD ESP,0xc                         ; 0051bb97
     MOV EAX,[0x0061d95c]                ; 0051bb9a | g_CGamePtr
         ;   Label: LAB_0051bb9a
-    CMP dword ptr [EAX + 0x27c],0x0     ; 0051bb9f | g_CGameInstance.field636_0x27c
+    CMP dword ptr [EAX + 0x27c],0x0     ; 0051bb9f | g_CGameInstance.field576_0x27c
     JNZ 0x0051bc6d                      ; 0051bba6
         ;   XREF to: 0051bc6d (CONDITIONAL_JUMP)  ; LAB_0051bc6d
     MOV ECX,dword ptr [0x0061d418]      ; 0051bbac | g_CFieldNotesPtr
@@ -193,8 +193,8 @@ section .text
     MOV EDI,dword ptr [0x0061d95c]      ; 0051bc4f | g_CGamePtr
         ;   Label: LAB_0051bc4f
     PUSH EDI                            ; 0051bc55
-    CALL core_game.cpp_FUN_004d8700     ; 0051bc56
-        ;   XREF to: 004d8700 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d8700(CGame * this_ptr)
+    CALL core_game.cpp_CGame_displayActStats_FUN_004d8700 ; 0051bc56
+        ;   XREF to: 004d8700 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_displayActStats_FUN_004d8700(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051bc5b
     PUSH -0x1                           ; 0051bc5e
     PUSH 0x1                            ; 0051bc60
@@ -205,8 +205,8 @@ section .text
         ;   XREF to: 0051bc0f (UNCONDITIONAL_JUMP)  ; LAB_0051bc0f
     PUSH EAX                            ; 0051bc6d
         ;   Label: LAB_0051bc6d
-    CALL core_game.cpp_FUN_004d8a90     ; 0051bc6e
-        ;   XREF to: 004d8a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_FUN_004d8a90(CGame * this_ptr)
+    CALL core_game.cpp_CGame_finishAct_FUN_004d8a90 ; 0051bc6e
+        ;   XREF to: 004d8a90 (UNCONDITIONAL_CALL)  ; void core_game.cpp_CGame_finishAct_FUN_004d8a90(CGame * this_ptr)
     ADD ESP,0x4                         ; 0051bc73
     MOV ECX,dword ptr [0x0061d418]      ; 0051bc76 | g_CFieldNotesPtr
     PUSH ECX                            ; 0051bc7c

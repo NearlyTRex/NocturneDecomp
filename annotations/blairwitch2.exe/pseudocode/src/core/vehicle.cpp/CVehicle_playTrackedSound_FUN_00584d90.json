@@ -1,0 +1,168 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 32,
+    "complexity_score": 28,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 13,
+    "suspect_count": 1,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 45
+  },
+  "cross_references": [
+    {
+      "addr": "00583f20",
+      "from_addr": "00584413",
+      "name": "core_vehicle.cpp_CVehicle_process_FUN_00583f20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00584d90",
+    "address_range": [
+      [
+        "00584d90",
+        "00584dd7"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_vehicle.cpp_CVehicle_playTrackedSound_FUN_00584d90",
+    "signature": "uint __cdecl core_vehicle_cpp_CVehicle_playTrackedSound_FUN_00584d90(CVehicle *this_ptr,char *sound_name)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055ae80",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_playTrackedActorSound_FUN_0055ae80"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "00550170",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedFloatPosition_FUN_00550170"
+    },
+    {
+      "addr": "00550210",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxTrackedVelocity1_FUN_00550210"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "0061c068",
+      "name": "DAT_0061c068",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00584413",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_CVehicle_process_FUN_00583f20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "0058448f",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_CVehicle_process_FUN_00583f20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "00584847",
+        "call_type": "direct",
+        "caller": "core_vehicle.cpp_CVehicle_process_FUN_00583f20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.4615384615384617,
+    "instruction_count": 26,
+    "opcode_distribution": {
+      "CALL": 5,
+      "COPY": 19,
+      "INT_ADD": 10,
+      "INT_AND": 6,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 6,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 3,
+      "INT_SUB": 13,
+      "LOAD": 5,
+      "POPCOUNT": 3,
+      "RETURN": 1,
+      "STORE": 13
+    },
+    "pcode_op_count": 90
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CVehicle *"
+      },
+      {
+        "is_param": true,
+        "name": "sound_name",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "position_source_ptr = &(this_ptr->base).field_0x20;",
+      "type": "unnamed_field"
+    }
+  ]
+}

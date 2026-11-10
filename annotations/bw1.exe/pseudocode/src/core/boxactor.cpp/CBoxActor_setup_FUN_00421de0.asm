@@ -7,10 +7,10 @@
 ; CBoxActor *      Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_boxactor.cpp_FUN_00422f60 at 00422f6f
+;   core_boxactor.cpp_CLightActor_setup_FUN_00422f60 at 00422f6f
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408850
+;   core_actor.cpp_CDemonActor_setup_FUN_00408850
 ;   core_boxactor.cpp_FUN_00421e80
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_00468900
 ;   core_dmodel.cpp_CKeyFramedModelInstance_preCache_FUN_004688e0
@@ -25,8 +25,8 @@ section .text
     SUB ESP,0x4                         ; 00421de2
     MOV EBX,dword ptr [ESP + 0x10]      ; 00421de5
     PUSH EBX                            ; 00421de9
-    CALL core_actor.cpp_FUN_00408850    ; 00421dea
-        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408850(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408850 ; 00421dea
+        ;   XREF to: 00408850 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408850(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 00421def
     LEA ESI,[EBX + 0x158]               ; 00421df2
     PUSH ESI                            ; 00421df8

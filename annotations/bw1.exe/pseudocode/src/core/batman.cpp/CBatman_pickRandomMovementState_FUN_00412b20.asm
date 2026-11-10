@@ -7,10 +7,10 @@
 ; CBatman *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_batman.cpp_FUN_00412ba0 at 004132a4
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 004132a4
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cd00
+;   core_actor.cpp_randomChance_FUN_0040cd00
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_005247c0
 ;
 ; *****************************************************************************
@@ -19,8 +19,8 @@ section .text
 
     PUSH 0x3f000000                     ; 00412b20
         ;   Label: core_batman.cpp_CBatman_pickRandomMovementState_FUN_00412b20
-    CALL core_actor.cpp_FUN_0040cd00    ; 00412b25
-        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cd00(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cd00 ; 00412b25
+        ;   XREF to: 0040cd00 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cd00(float probability_threshold)
     ADD ESP,0x4                         ; 00412b2a
     MOV EDX,dword ptr [ESP + 0x4]       ; 00412b2d
     ADD EDX,0x158                       ; 00412b31

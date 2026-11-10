@@ -8,18 +8,18 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CHandVTable
+;   CHand_full_vtable g_CHandVTable
 ;   WatcomTypeInfo g_CHandTypeInfo
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_dtor_FUN_00408930
-;   core_cloth.cpp_FUN_005b1480
+;   core_armour.cpp_FUN_0040f2b0
+;   core_cloth.cpp_CClothList_dtor_FUN_005b1480
 ;   core_skeleton.cpp_CDeformableModelInstance_dtor_FUN_00544d50
 ;   crt_memory.c___vec_delete_FUN_005b7fa7
 ;   crt_unknown.c_FUN_005b7fce
 ;   crt_unknown.c_FUN_005b7fdc
 ;   unkaddr_0059d350.cpp_FUN_0059df70
-;   unkafter_armour.cpp_FUN_0040f2b0
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     ADD EBX,0x3a20                      ; 005a9d3e
     PUSH EBX                            ; 005a9d44
     MOV dword ptr [EBX + 0xffffc890],0x6008a4 ; 005a9d45 | g_CHandVTable
-    CALL unkafter_armour.cpp_FUN_0040f2b0 ; 005a9d4f
-        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined unkafter_armour.cpp_FUN_0040f2b0()
+    CALL core_armour.cpp_FUN_0040f2b0   ; 005a9d4f
+        ;   XREF to: 0040f2b0 (UNCONDITIONAL_CALL)  ; undefined core_armour.cpp_FUN_0040f2b0()
     ADD ESP,0x8                         ; 005a9d54
     PUSH 0x0                            ; 005a9d57
     SUB EAX,0x9c8                       ; 005a9d59
@@ -47,8 +47,8 @@ section .text
     PUSH 0x0                            ; 005a9d67
     SUB EAX,0x34c                       ; 005a9d69
     PUSH EAX                            ; 005a9d6e
-    CALL core_cloth.cpp_FUN_005b1480    ; 005a9d6f
-        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_FUN_005b1480(CClothList * this_ptr, uint flags)
+    CALL core_cloth.cpp_CClothList_dtor_FUN_005b1480 ; 005a9d6f
+        ;   XREF to: 005b1480 (UNCONDITIONAL_CALL)  ; CClothList * core_cloth.cpp_CClothList_dtor_FUN_005b1480(CClothList * this_ptr, uint flags)
     ADD ESP,0x8                         ; 005a9d74
     PUSH 0x0                            ; 005a9d77
     SUB EAX,0x2a58                      ; 005a9d79

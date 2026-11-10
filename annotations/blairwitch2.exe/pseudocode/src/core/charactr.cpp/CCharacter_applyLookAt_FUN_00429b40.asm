@@ -16,7 +16,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00429e90 at 00429e9f
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00429e90 at 00429e9f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005cd0de
@@ -26,7 +26,7 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   core_skeleton.cpp_FUN_00546650
+;   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_00546650
 ;   core_xform.cpp_multiplyQuaternion_FUN_00593c60
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00593fa0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00593fe0
@@ -113,8 +113,8 @@ section .text
     PUSH ESI                            ; 00429c10
     ADD EBX,0x2b4                       ; 00429c11
     PUSH EBX                            ; 00429c17
-    CALL core_skeleton.cpp_FUN_00546650 ; 00429c18
-        ;   XREF to: 00546650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00546650(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_00546650 ; 00429c18
+        ;   XREF to: 00546650 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_00546650(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, int bone_index)
     ADD ESP,0xc                         ; 00429c1d
     POP ESI                             ; 00429c20
     POP EDI                             ; 00429c21

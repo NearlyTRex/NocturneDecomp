@@ -11,8 +11,8 @@
 ; XREF[4]:
 ;   core_actor.cpp_CDemonActor_archive_FUN_0040c280 at 0040c2a2
 ;   core_boxactor.cpp_CBoxActor_archive_FUN_0041fb90 at 0041fdfc
-;   core_boxactor.cpp_FUN_004207f0 at 00420846
-;   core_charactr.cpp_FUN_0042b450 at 0042b7be
+;   core_boxactor.cpp_CLightActor_archive_FUN_004207f0 at 00420846
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b7be
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_f_f_f_005b5a8c

@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   y
 ;
 ; XREF[4]:
-;   core_game.cpp_FUN_004ba2e0 at 004ba34b
+;   core_game.cpp_CGame_processMouseControls_FUN_004ba2e0 at 004ba34b
 ;   core_game.cpp_FUN_004ba490 at 004ba528
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e817a
 ;   shape_edittool.cpp_CEdScrollBar_handleInput_FUN_00485b00 at 00485ba7

@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   undefined4 g_CAmmoVTable
+;   CDemonActor_vtable g_CAmmoVTable
 ;   WatcomTypeInfo g_CAmmoTypeInfo
 ;
 ; Called Functions:

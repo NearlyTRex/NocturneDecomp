@@ -1,0 +1,139 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 18,
+    "complexity_score": 40,
+    "cross_reference_count": 0,
+    "function_call_count": 1,
+    "global_count": 1,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 10,
+    "suspect_count": 2,
+    "suspect_types": [
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 28
+  },
+  "cross_references": [],
+  "function": {
+    "address": "005a46e0",
+    "address_range": [
+      [
+        "005a46e0",
+        "005a4706"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_unionzom.cpp_CUnionZombie_getTargetPoints_FUN_005a46e0",
+    "signature": "int __cdecl core_unionzom_cpp_CUnionZombie_getTargetPoints_FUN_005a46e0(CUnionZombie *this_ptr,CVector3f *out_points_array)"
+  },
+  "function_calls": [
+    {
+      "addr": "00488020",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_getTargetPoints_FUN_00488020"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005f03e2",
+      "name": "DAT_005f03e2",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 6.642857142857143,
+    "instruction_count": 14,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 1,
+      "CALL": 1,
+      "CBRANCH": 1,
+      "COPY": 26,
+      "FLOAT2FLOAT": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_NAN": 2,
+      "INT_ADD": 6,
+      "INT_AND": 9,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 4,
+      "INT_LEFT": 4,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 2,
+      "INT_SUB": 3,
+      "INT_XOR": 1,
+      "INT_ZEXT": 4,
+      "LOAD": 5,
+      "POPCOUNT": 2,
+      "RETURN": 2,
+      "STORE": 3
+    },
+    "pcode_op_count": 93
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CUnionZombie *"
+      },
+      {
+        "is_param": true,
+        "name": "out_points_array",
+        "offset": 8,
+        "size": 4,
+        "type": "CVector3f *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 9,
+      "match": "field_0x113c4",
+      "severity": "mild",
+      "text": "if (*(float *)&this_ptr->field_0x113c4 < (float)_DAT_005f03e2) {",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 92,
+        "vtable_addr": "005ff554"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

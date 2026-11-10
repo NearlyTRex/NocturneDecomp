@@ -9,8 +9,8 @@
 ; int              Stack[0xc]:4   advance_cursor
 ;
 ; XREF[3]:
+;   shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_0047e470 at 0047e8cb
 ;   shape_edittool.cpp_CInputString_pasteFromClipboard_FUN_0047bcf0 at 0047bd33
-;   shape_edittool.cpp_FUN_0047e470 at 0047e8cb
 ;   shape_edittool.cpp_showTextInputDialog_FUN_0047c2c0 at 0047c6a2
 ;
 ; Called Functions:

@@ -7,9 +7,9 @@
 ; XREF[5]:
 ;   crt_file.c_makepath_FUN_005b9f4c at 005b9fda
 ;   crt_string.c_splitpath_FUN_005b9e58 at 005b9e9c
-;   unkafter_2d.cpp_FUN_005c5c00 at 005c5c19
-;   unkafter_2d.cpp_FUN_005c6690 at 005c66fd
-;   unkafter_morph.cpp_FUN_005c3e70 at 005c3e88
+;   crt_unknown.c_FUN_005c3e70 at 005c3e88
+;   crt_unknown.c_FUN_005c5c00 at 005c5c19
+;   crt_unknown.c_FUN_005c6690 at 005c66fd
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_026807f0

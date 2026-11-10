@@ -9,7 +9,7 @@
 ;
 ; XREF[3]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048f94b
-;   core_platfrm.cpp_FUN_005114f0 at 005115ef
+;   core_platfrm.cpp_CPlatform_process_FUN_005114f0 at 005115ef
 ;   core_script.cpp_CScript_step_FUN_00529a70 at 0052c58b
 ;
 ; Called Functions:

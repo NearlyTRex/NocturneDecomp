@@ -37,7 +37,8 @@ CDemonActor * __cdecl core_mission_cpp_CDemonMission_loadActor_FUN_004f6770(CDem
           unaff_ESI = (CDemonActor *)0x0;
         }
         else {
-          unaff_ESI = core_mission_cpp_FUN_004f6e90(this_ptr,local_dc);
+          unaff_ESI = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(this_ptr,local_dc)
+          ;
           if (unaff_ESI == (CDemonActor *)0x0) {
             shape_edittool_cpp_CEditorTools_showError_FUN_0047cf40
                       (g_CEditorToolsPtr,"WARNING.  Can't find actor '%s' in %s property %s.  (Please note this in a bug report...)");

@@ -1,0 +1,1135 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 670,
+    "complexity_score": 608,
+    "cross_reference_count": 1,
+    "function_call_count": 9,
+    "global_count": 97,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 93,
+    "suspect_count": 50,
+    "suspect_types": [
+      "undefined_data",
+      "unnamed_field",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 763
+  },
+  "cross_references": [
+    {
+      "addr": "005032a0",
+      "from_addr": "00503303",
+      "name": "core_main.c_FUN_005032a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f4f50",
+    "address_range": [
+      [
+        "004f4f50",
+        "004f575f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inivar.cpp_readIniData_FUN_004f4f50",
+    "signature": "void __cdecl core_inivar_cpp_readIniData_FUN_004f4f50(void)"
+  },
+  "function_calls": [
+    {
+      "addr": "004d0400",
+      "is_variadic": false,
+      "name": "core_game.cpp_FUN_004d0400"
+    },
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "005c1dc0",
+      "is_variadic": false,
+      "name": "crt_io.c__chmod_FUN_005c1dc0"
+    },
+    {
+      "addr": "004f4b30",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_dtor_FUN_004f4b30"
+    },
+    {
+      "addr": "004f4c00",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_getString_FUN_004f4c00"
+    },
+    {
+      "addr": "004f4bc0",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_CIniFile_readIniHeader_FUN_004f4bc0"
+    },
+    {
+      "addr": "004f4b00",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004f4b00"
+    },
+    {
+      "addr": "004f4d10",
+      "is_variadic": false,
+      "name": "engine_ini.cpp_FUN_004f4d10"
+    },
+    {
+      "addr": "005760b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_readIni_FUN_005760b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e5906",
+      "name": "s_core_inivar_cpp_005e5906",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5919",
+      "name": "s_Please_copy_Nocturne_to_005e5919",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5941",
+      "name": "s_gamePIXX_005e5941",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e594a",
+      "name": "s_gamePIXY_005e594a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5953",
+      "name": "s_gameBPP_005e5953",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e595b",
+      "name": "s_useDirect3D_005e595b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5967",
+      "name": "s_useAGPFlag_005e5967",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5972",
+      "name": "s_rendererDLLPath_005e5972",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5982",
+      "name": "s_gamma_005e5982",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5988",
+      "name": "s_heroNumber_005e5988",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5993",
+      "name": "s_haloMode_005e5993",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e599c",
+      "name": "s_firstTimeFlag_005e599c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59aa",
+      "name": "s_subtitleMode_005e59aa",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59b7",
+      "name": "s_bloodFlag_005e59b7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59c1",
+      "name": "s_nudityFlag_005e59c1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59cc",
+      "name": "s_foulLanguageFlag_005e59cc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59dd",
+      "name": "s_shadowFlag_005e59dd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59e8",
+      "name": "s_quimbyFlag_005e59e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e59f3",
+      "name": "s_currentBoard_005e59f3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a00",
+      "name": "s_puzzleDifficultyMode_005e5a00",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a15",
+      "name": "s_combatDifficultyMode_005e5a15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a2a",
+      "name": "s_gameControl_005e5a2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a36",
+      "name": "s_keyWalk_005e5a36",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a3e",
+      "name": "s_keyBackup_005e5a3e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a48",
+      "name": "s_keyRun_005e5a48",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a4f",
+      "name": "s_keyStrafe_005e5a4f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a59",
+      "name": "s_keyStrafeLeft_005e5a59",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a67",
+      "name": "s_keyStrafeRight_005e5a67",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a76",
+      "name": "s_keyRight_005e5a76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a7f",
+      "name": "s_keyLeft_005e5a7f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a87",
+      "name": "s_keyFire_005e5a87",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a8f",
+      "name": "s_keyUseItem_005e5a8f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5a9a",
+      "name": "s_keyLight_005e5a9a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5aa3",
+      "name": "s_keyInfrared_005e5aa3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5aaf",
+      "name": "s_keyFieldNotes_005e5aaf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5abd",
+      "name": "s_keyMap_005e5abd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ac4",
+      "name": "s_keyCompass_005e5ac4",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5acf",
+      "name": "s_keySPS_005e5acf",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ad6",
+      "name": "s_keyDraw_005e5ad6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ade",
+      "name": "s_keyJump_005e5ade",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ae6",
+      "name": "s_keyQuickTurn_005e5ae6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5af3",
+      "name": "s_keyPointUp_005e5af3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5afe",
+      "name": "s_keyPointDown_005e5afe",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b0b",
+      "name": "s_keyWeapon1_005e5b0b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b16",
+      "name": "s_keyWeapon2_005e5b16",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b21",
+      "name": "s_keyWeapon3_005e5b21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b2c",
+      "name": "s_keyWeapon4_005e5b2c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b37",
+      "name": "s_keyWeapon5_005e5b37",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b42",
+      "name": "s_keyNextWeapon_005e5b42",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b50",
+      "name": "s_keyPrevWeapon_005e5b50",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b5e",
+      "name": "s_keyNextItem_005e5b5e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b6a",
+      "name": "s_keyPrevItem_005e5b6a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b76",
+      "name": "s_keyItemDesc_005e5b76",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b82",
+      "name": "s_keyNextAmmo_005e5b82",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b8e",
+      "name": "s_invertMouseYAxis_005e5b8e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5b9f",
+      "name": "s_alwaysRun_005e5b9f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5ba9",
+      "name": "s_xMouseSensitivity_005e5ba9",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5bbb",
+      "name": "s_yMouseSensitivity_005e5bbb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5bcd",
+      "name": "s_xCenter_005e5bcd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5bd5",
+      "name": "s_yCenter_005e5bd5",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5bdd",
+      "name": "s_xStickMin_005e5bdd",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5be7",
+      "name": "s_xStickMax_005e5be7",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5bf1",
+      "name": "s_yStickMin_005e5bf1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5bfb",
+      "name": "s_yStickMax_005e5bfb",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5c05",
+      "name": "s_aimMode_005e5c05",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5c0d",
+      "name": "s_autoUseHealth_005e5c0d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5c1b",
+      "name": "s_logConsoleFlag_005e5c1b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e5c2a",
+      "name": "s_headOfHorrorCheat_005e5c2a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "00611100",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007db5f0"
+    },
+    {
+      "addr": "0061d95c",
+      "name": "g_CGamePtr",
+      "type": "CGame*",
+      "value": "01ccf390"
+    },
+    {
+      "addr": "0061f010",
+      "name": "s_system_nocturne_ini_0061f010",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f030",
+      "name": "s_Sound_0061f030",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f038",
+      "name": "s_Graphics_0061f038",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f048",
+      "name": "s_Control_0061f048",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f080",
+      "name": "s_Debug_0061f080",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061f088",
+      "name": "s_Editor_0061f088",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006257d0",
+      "name": "DAT_006257d0",
+      "type": "undefined1",
+      "value": null
+    },
+    {
+      "addr": "007db5f0",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    },
+    {
+      "addr": "01ccf390",
+      "name": "g_CGameInstance",
+      "type": "CGame",
+      "value": null
+    },
+    {
+      "addr": "01ccf394",
+      "name": "g_CGameInstance.game_pixy",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf398",
+      "name": "g_CGameInstance.game_bpp",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf39c",
+      "name": "g_CGameInstance.field3_0xc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf3a0",
+      "name": "g_CGameInstance.field7_0x10",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf3a4",
+      "name": "g_CGameInstance.field11_0x14",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf3b0",
+      "name": "g_CGameInstance.field23_0x20",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf43c",
+      "name": "g_CGameInstance.always_run",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf460",
+      "name": "g_CGameInstance.field160_0xd0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf464",
+      "name": "g_CGameInstance.field164_0xd4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf474",
+      "name": "g_CGameInstance.field180_0xe4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf478",
+      "name": "g_CGameInstance.field184_0xe8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01ccf5c0",
+      "name": "g_CGameInstance.field512_0x230",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d06d68",
+      "name": "DAT_01d06d68",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1f5d4",
+      "name": "DAT_01d1f5d4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c83370",
+      "name": "DAT_02c83370",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02c8337c",
+      "name": "DAT_02c8337c",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00503303",
+        "call_type": "direct",
+        "caller": "core_main.c_FUN_005032a0",
+        "estimated_params": 0,
+        "instructions_analyzed": 1,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 0,
+        "stack_params": 0
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 0,
+    "declared_stack_bytes": 0,
+    "estimated_params": 0,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.074829931972789,
+    "instruction_count": 588,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BRANCH": 1,
+      "CALL": 77,
+      "CBRANCH": 1,
+      "COPY": 376,
+      "INT_ADD": 215,
+      "INT_AND": 281,
+      "INT_CARRY": 137,
+      "INT_EQUAL": 280,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 137,
+      "INT_SLESS": 140,
+      "INT_SUB": 301,
+      "INT_XOR": 1,
+      "LOAD": 5,
+      "POPCOUNT": 140,
+      "RETURN": 1,
+      "STORE": 300
+    },
+    "pcode_op_count": 2396
+  },
+  "stack_frame": {
+    "frame_size": 532,
+    "local_size": 532,
+    "param_offset": 4,
+    "param_size": 0,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_210",
+        "offset": -528,
+        "size": 1,
+        "type": "undefined"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 21,
+      "match": "DAT_02c83370",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"useDirect3D\",&DAT_02c83370);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 22,
+      "match": "DAT_02c8337c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"useAGPFlag\",&DAT_02c8337c);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 24,
+      "match": "DAT_006257d0",
+      "severity": "mild",
+      "text": "(&local_210,\"rendererDLLPath\",&DAT_006257d0,0xfa);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x240",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"gamma\",&g_CGamePtr->field_0x240);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 26,
+      "match": "field_0xd4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"heroNumber\",&g_CGamePtr->field_0xd4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 27,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"haloMode\",&g_CGamePtr->field_0xc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 28,
+      "match": "DAT_01d06d68",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"firstTimeFlag\",&DAT_01d06d68);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 29,
+      "match": "field_0x10",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"subtitleMode\",&g_CGamePtr->field_0x10);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 30,
+      "match": "field_0x14",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"bloodFlag\",&g_CGamePtr->field_0x14);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 31,
+      "match": "field_0x18",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"nudityFlag\",&g_CGamePtr->field_0x18);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x1c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"foulLanguageFlag\",&g_CGamePtr->field_0x1c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"quimbyFlag\",&g_CGamePtr->field_0x20);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 36,
+      "match": "DAT_01d1f5d4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"currentBoard\",&DAT_01d1f5d4);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0xe4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"puzzleDifficultyMode\",&g_CGamePtr->field_0xe4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0xe8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"combatDifficultyMode\",&g_CGamePtr->field_0xe8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 42,
+      "match": "field_0xd0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"gameControl\",&g_CGamePtr->field_0xd0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 46,
+      "match": "field_0x30",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyRun\",&g_CGamePtr->field_0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 47,
+      "match": "field_0x34",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyStrafe\",&g_CGamePtr->field_0x34);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 48,
+      "match": "field_0x38",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyStrafeLeft\",&g_CGamePtr->field_0x38);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 49,
+      "match": "field_0x3c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyStrafeRight\",&g_CGamePtr->field_0x3c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 50,
+      "match": "field_0x40",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyRight\",&g_CGamePtr->field_0x40);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x44",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyLeft\",&g_CGamePtr->field_0x44);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 52,
+      "match": "field_0x48",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyFire\",&g_CGamePtr->field_0x48);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 53,
+      "match": "field_0x4c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyUseItem\",&g_CGamePtr->field_0x4c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 54,
+      "match": "field_0x50",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyLight\",&g_CGamePtr->field_0x50);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 55,
+      "match": "field_0x54",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyInfrared\",&g_CGamePtr->field_0x54);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0x58",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyFieldNotes\",&g_CGamePtr->field_0x58);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 57,
+      "match": "field_0x5c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyMap\",&g_CGamePtr->field_0x5c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 58,
+      "match": "field_0x60",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyCompass\",&g_CGamePtr->field_0x60);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 59,
+      "match": "field_0x64",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keySPS\",&g_CGamePtr->field_0x64);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 60,
+      "match": "field_0x68",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyDraw\",&g_CGamePtr->field_0x68);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x6c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyJump\",&g_CGamePtr->field_0x6c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 62,
+      "match": "field_0x70",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyQuickTurn\",&g_CGamePtr->field_0x70);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 63,
+      "match": "field_0x74",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyPointUp\",&g_CGamePtr->field_0x74);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x78",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyPointDown\",&g_CGamePtr->field_0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x7c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyWeapon1\",&g_CGamePtr->field_0x7c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 66,
+      "match": "field_0x80",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyWeapon2\",&g_CGamePtr->field_0x80);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 67,
+      "match": "field_0x84",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyWeapon3\",&g_CGamePtr->field_0x84);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 68,
+      "match": "field_0x88",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyWeapon4\",&g_CGamePtr->field_0x88);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 69,
+      "match": "field_0x8c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyWeapon5\",&g_CGamePtr->field_0x8c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 70,
+      "match": "field_0x90",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyNextWeapon\",&g_CGamePtr->field_0x90);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 71,
+      "match": "field_0x94",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyPrevWeapon\",&g_CGamePtr->field_0x94);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 72,
+      "match": "field_0x98",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyNextItem\",&g_CGamePtr->field_0x98);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x9c",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyPrevItem\",&g_CGamePtr->field_0x9c);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 74,
+      "match": "field_0xa0",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyItemDesc\",&g_CGamePtr->field_0xa0);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 75,
+      "match": "field_0xa4",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"keyNextAmmo\",&g_CGamePtr->field_0xa4);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 89,
+      "match": "field_0xd8",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"aimMode\",&g_CGamePtr->field_0xd8);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0xdc",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"autoUseHealth\",&g_CGamePtr->field_0xdc);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 93,
+      "match": "field_0x230",
+      "severity": "mild",
+      "text": "engine_ini_cpp_FUN_004f4d10(&local_210,\"headOfHorrorCheat\",&g_CGamePtr->field_0x230);",
+      "type": "unnamed_field"
+    }
+  ]
+}

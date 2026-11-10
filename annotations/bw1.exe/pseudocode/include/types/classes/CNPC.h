@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CCharacter.h"
 
 // Structure: CNPC
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x1fab8 (129720 bytes)
 #pragma pack(push, 1)
 typedef struct CNPC {
-    char field_0[129720]; // 0x0
+    CCharacter base; // 0x0
+    char field_49616[80104]; // 0xc1d0
 } CNPC;
 #pragma pack(pop)
 

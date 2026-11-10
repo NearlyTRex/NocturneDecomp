@@ -7,7 +7,7 @@
 ; XREF[3]:
 ;   crt_unknown.c_FUN_005a7f48 at 005a7f4d
 ;   crt_unknown.c_FUN_005abb90 at 005abbaa
-;   unkafter_asgaya.cpp_FUN_005ad9b4 at 005ad9b9
+;   crt_unknown.c_FUN_005ad9b4 at 005ad9b9
 ;
 ; Referenced Globals:
 ;   void* PTR_crt_unknown.c_FUN_005a7f44_006079d4 = 005a7f44

@@ -25,12 +25,12 @@
 ; undefined4       Stack[-0x10]:4  local_10
 ;
 ; XREF[6]:
-;   core_bride.cpp_FUN_0041ede0 at 0041ee01
+;   core_bride.cpp_CBride_getTargetPoint_FUN_0041ede0 at 0041ee01
 ;   core_gabriela.cpp_FUN_004b20d0 at 004b21db
-;   core_ghoul.cpp_FUN_004c3da0 at 004c3dc1
-;   core_mimic.cpp_FUN_004f0e10 at 004f1136
+;   core_ghoul.cpp_CGhoul_getTargetPoint_FUN_004c3da0 at 004c3dc1
+;   core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10 at 004f1136
 ;   core_skeleton.cpp_FUN_005469a0 at 00546a58
-;   core_zombie.cpp_FUN_00598fa0 at 00598fe9
+;   core_zombie.cpp_CZombie_renderTransparent_FUN_00598fa0 at 00598fe9
 ;
 ; Called Functions:
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890

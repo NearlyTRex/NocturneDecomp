@@ -19,16 +19,16 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[6]:
-;   core_bat.cpp_FUN_004114e0 at 0041157f
+;   core_bat.cpp_CBat_updateCoursePosition_FUN_004114e0 at 0041157f
 ;   core_frankgen.cpp_CFrankenstienMachine_setCourseFrame_FUN_004acf60 at 004acfde
-;   core_marquee.cpp_FUN_004e7d50 at 004e7dc4
-;   core_marquee.cpp_FUN_004e8180 at 004e8240
-;   core_platfrm.cpp_FUN_00518310 at 00518488
-;   core_vehicle.cpp_FUN_00583f20 at 00583f77
+;   core_marquee.cpp_CMarquee_computeBoundingBox_FUN_004e7d50 at 004e7dc4
+;   core_marquee.cpp_CMarquee_renderTransparent_FUN_004e8180 at 004e8240
+;   core_platfrm.cpp_CPlatform_evaluatePosition_FUN_00518310 at 00518488
+;   core_vehicle.cpp_CVehicle_process_FUN_00583f20 at 00583f77
 ;
 ; Called Functions:
 ;   core_course.cpp_FUN_00438cf0
-;   core_xform.cpp_FUN_00591de0
+;   core_xform.cpp_matrixToEulerAngles_FUN_00591de0
 ;   core_xform.cpp_quaternionToMatrix3x4_FUN_00593a10
 ;
 ; *****************************************************************************
@@ -65,8 +65,8 @@ section .text
     PUSH EAX                            ; 00438c98
     LEA ESI,[ESP + 0x74]                ; 00438c99
     LEA EDI,[ESP + 0x80]                ; 00438c9d
-    CALL core_xform.cpp_FUN_00591de0    ; 00438ca4
-        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00591de0()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00591de0 ; 00438ca4
+        ;   XREF to: 00591de0 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00591de0()
     LEA ESI,[ESP + 0x74]                ; 00438ca9
     ADD ESP,0x4                         ; 00438cad
     LEA EAX,[ESP + 0x7c]                ; 00438cb0

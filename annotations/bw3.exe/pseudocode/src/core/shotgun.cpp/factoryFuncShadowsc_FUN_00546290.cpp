@@ -11,7 +11,7 @@ void core_shotgun_cpp_factoryFuncShadowsc_FUN_00546290(void)
 {
   CShadowsc *this_ptr;
   
-  this_ptr = (CShadowsc *)FUN_005a3cb2(0xd06c);
+  this_ptr = (CShadowsc *)debugAllocTracked1(0xd06c);
   if (this_ptr == (CShadowsc *)0x0) {
     return;
   }

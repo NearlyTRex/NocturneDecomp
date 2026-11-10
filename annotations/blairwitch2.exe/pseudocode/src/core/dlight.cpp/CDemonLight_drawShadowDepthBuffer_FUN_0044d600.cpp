@@ -51,7 +51,7 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0044d600(CDem
   }
   if (DAT_006141c0 == 0x20) {
     local_30 = 0;
-    if (0 < *(int *)&this_ptr->field_0x1cc4) {
+    if (0 < this_ptr->shadow_map_height) {
       do {
         iVar6 = local_30;
         if (0xf0 < DAT_006141bc) {
@@ -60,12 +60,10 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0044d600(CDem
         iVar6 = iVar6 + screen_y;
         if ((-1 < iVar6) && (iVar6 < DAT_006141bc)) {
           puVar7 = (uint *)(*(int *)(&DAT_01c2a38c + iVar6 * 4) + screen_x * 4);
-          local_18 = (ushort *)
-                     (*(int *)&this_ptr->field_0x2f94 +
-                     local_30 * *(int *)&this_ptr->field_0x1cc0 * 2);
+          local_18 = this_ptr->shadow_depth_buffer + local_30 * this_ptr->shadow_map_width;
           local_24 = 0;
           local_20 = 0;
-          if (0 < *(int *)&this_ptr->field_0x1cc0) {
+          if (0 < this_ptr->shadow_map_width) {
             do {
               iVar6 = DAT_006141b8;
               if (*local_18 != 0) {
@@ -104,16 +102,16 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0044d600(CDem
                 puVar7 = puVar7 + 2;
               }
               local_20 = local_20 + 1;
-            } while (local_20 < *(int *)&this_ptr->field_0x1cc0);
+            } while (local_20 < this_ptr->shadow_map_width);
           }
         }
         local_30 = local_30 + 1;
-      } while (local_30 < *(int *)&this_ptr->field_0x1cc4);
+      } while (local_30 < this_ptr->shadow_map_height);
     }
   }
   else {
     local_2c = 0;
-    if (0 < *(int *)&this_ptr->field_0x1cc4) {
+    if (0 < this_ptr->shadow_map_height) {
       do {
         iVar6 = local_2c;
         if (0xf0 < DAT_006141bc) {
@@ -122,12 +120,10 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0044d600(CDem
         iVar6 = iVar6 + screen_y;
         if ((-1 < iVar6) && (iVar6 < DAT_006141bc)) {
           puVar8 = (ushort *)(*(int *)(&DAT_01c2a38c + iVar6 * 4) + screen_x * 2);
-          local_14 = (ushort *)
-                     (*(int *)&this_ptr->field_0x2f94 +
-                     local_2c * *(int *)&this_ptr->field_0x1cc0 * 2);
+          local_14 = this_ptr->shadow_depth_buffer + local_2c * this_ptr->shadow_map_width;
           local_28 = 0;
           local_1c = 0;
-          if (0 < *(int *)&this_ptr->field_0x1cc0) {
+          if (0 < this_ptr->shadow_map_width) {
             do {
               if (*local_14 != 0) {
                 iVar6 = _DAT_01b13888 * 4;
@@ -161,11 +157,11 @@ void __cdecl core_dlight_cpp_CDemonLight_drawShadowDepthBuffer_FUN_0044d600(CDem
                 puVar8 = puVar8 + 2;
               }
               local_1c = local_1c + 1;
-            } while (local_1c < *(int *)&this_ptr->field_0x1cc0);
+            } while (local_1c < this_ptr->shadow_map_width);
           }
         }
         local_2c = local_2c + 1;
-      } while (local_2c < *(int *)&this_ptr->field_0x1cc4);
+      } while (local_2c < this_ptr->shadow_map_height);
     }
   }
   return;

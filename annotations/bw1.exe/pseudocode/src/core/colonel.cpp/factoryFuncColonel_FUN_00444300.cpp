@@ -11,7 +11,7 @@ void core_colonel_cpp_factoryFuncColonel_FUN_00444300(void)
 {
   CColonel *this_ptr;
   
-  this_ptr = (CColonel *)FUN_005c0f32(0x1ffc4);
+  this_ptr = (CColonel *)debugAllocTracked1(0x1ffc4);
   if (this_ptr == (CColonel *)0x0) {
     return;
   }

@@ -8,10 +8,10 @@
 ;
 ; XREF[55]:
 ;   cockpit_ckptutil.c_FUN_00438bd0 at 00438d44
-;   cockpit_ckptutil.c_FUN_0043a040 at 0043a142
 ;   cockpit_ckptutil.c_FUN_0043a200 at 0043a22f
 ;   cockpit_ckptutil.c_FUN_0043b2e0 at 0043b397
-;   cockpit_pkbitmap.cpp_FUN_00538280 at 005383fe
+;   cockpit_ckptutil.c_rotateBitmap_FUN_0043a040 at 0043a142
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280 at 005383fe
 ;   cockpit_pkbmpset.cpp_FUN_00538b2e at 00538c23
 ;   cockpit_pkbmpset.cpp_FUN_00538db0 at 00538dee
 ;   core_dcamera.cpp_CDemonCamera_init_FUN_0044cc30 at 0044cd36
@@ -20,7 +20,7 @@
 ;   ... and 45 more
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005c08e0
+;   crt_unknown.c_InternalHeapAlloc_FUN_005c08e0
 ;
 ; *****************************************************************************
 
@@ -29,8 +29,8 @@ section .text
     MOV EDX,dword ptr [ESP + 0x4]       ; 005c08d0
         ;   Label: crt_unknown.c_FUN_005c08d0
     PUSH EDX                            ; 005c08d4
-    CALL crt_unknown.c_FUN_005c08e0     ; 005c08d5
-        ;   XREF to: 005c08e0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c08e0()
+    CALL crt_unknown.c_InternalHeapAlloc_FUN_005c08e0 ; 005c08d5
+        ;   XREF to: 005c08e0 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_InternalHeapAlloc_FUN_005c08e0(ulong size)
     ADD ESP,0x4                         ; 005c08da
     RET                                 ; 005c08dd
 

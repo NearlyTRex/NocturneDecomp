@@ -5,7 +5,7 @@
 ;
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_00408890
+;   core_actor.cpp_CDemonActor_setup_FUN_00408890
 ;
 ; *****************************************************************************
 
@@ -16,8 +16,8 @@ section .text
     PUSH EDI                            ; 00563911
     MOV ESI,dword ptr [ESP + 0xc]       ; 00563912
     PUSH ESI                            ; 00563916
-    CALL core_actor.cpp_FUN_00408890    ; 00563917
-        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_FUN_00408890(CDemonActor * this_ptr)
+    CALL core_actor.cpp_CDemonActor_setup_FUN_00408890 ; 00563917
+        ;   XREF to: 00408890 (UNCONDITIONAL_CALL)  ; void core_actor.cpp_CDemonActor_setup_FUN_00408890(CDemonActor * this_ptr)
     ADD ESP,0x4                         ; 0056391c
     LEA EDI,[ESI + 0x158]               ; 0056391f
     PUSH EDI                            ; 00563925

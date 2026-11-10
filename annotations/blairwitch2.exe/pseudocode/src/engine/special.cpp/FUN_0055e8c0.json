@@ -24,15 +24,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0056046e",
-      "from_addr": "005604aa",
-      "name": "engine_special.cpp_FUN_0056046e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "0055f770",
       "from_addr": "0055f79a",
       "name": "engine_special.cpp_setResolutionAndColorTable_FUN_0055f770",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0056046e",
+      "from_addr": "005604aa",
+      "name": "engine_special.cpp_switchRenderer_FUN_0056046e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -71,24 +71,24 @@
       "name": "engine_special.cpp_CExternalRenderer_validate_FUN_00560310"
     },
     {
-      "addr": "0055dcf0",
-      "is_variadic": false,
-      "name": "engine_special.cpp_FUN_0055dcf0"
-    },
-    {
       "addr": "005600c0",
       "is_variadic": false,
-      "name": "engine_special.cpp_FUN_005600c0"
+      "name": "engine_special.cpp_selectCard_FUN_005600c0"
     },
     {
-      "addr": "00589970",
+      "addr": "0055dcf0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589970"
+      "name": "engine_special.cpp_shutdownExternalRenderer_FUN_0055dcf0"
     },
     {
       "addr": "00589980",
       "is_variadic": false,
       "name": "wincore_wddvmem.cpp_getProcAddress_FUN_00589980"
+    },
+    {
+      "addr": "00589970",
+      "is_variadic": false,
+      "name": "wincore_wddvmem.cpp_loadLibrary_FUN_00589970"
     }
   ],
   "globals": [
@@ -1236,7 +1236,7 @@
       "line": 58,
       "match": "DAT_0061e180",
       "severity": "mild",
-      "text": "_DAT_0264bce0 = wincore_wddvmem_cpp_FUN_00589970(&DAT_0061e180);",
+      "text": "_DAT_0264bce0 = wincore_wddvmem_cpp_loadLibrary_FUN_00589970(&DAT_0061e180);",
       "type": "undefined_data"
     },
     {

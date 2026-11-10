@@ -27,8 +27,8 @@
 ;   crt_math.c_round_FUN_005a3120
 ;   GlobalAlloc
 ;   GlobalLock
-;   sound_sndmain.cpp_FUN_005591a0
 ;   sound_sndmain.cpp_FUN_0055a560
+;   sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0
 ;   waveOutOpen
 ;
 ; *****************************************************************************
@@ -64,8 +64,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x34]      ; 0055da96
     MOV dword ptr [0x02cf5500],EDX      ; 0055da9a | DAT_02cf5500
     MOV [0x02cf54f8],EAX                ; 0055daa0 | DAT_02cf54f8
-    CALL sound_sndmain.cpp_FUN_005591a0 ; 0055daa5
-        ;   XREF to: 005591a0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_FUN_005591a0()
+    CALL sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0 ; 0055daa5
+        ;   XREF to: 005591a0 (UNCONDITIONAL_CALL)  ; float sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0()
     MOV dword ptr [ESP + 0x10],EAX      ; 0055daaa
     FLD float ptr [ESP + 0x10]          ; 0055daae
     FILD dword ptr [0x02cf54f8]         ; 0055dab2 | DAT_02cf54f8

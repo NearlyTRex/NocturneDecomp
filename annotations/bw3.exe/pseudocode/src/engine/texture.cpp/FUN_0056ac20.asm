@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[3]:
-;   core_menu.cpp_FUN_004ea4d0 at 004ea572
+;   core_menu.cpp_showMainGameMenu_FUN_004ea4d0 at 004ea572
 ;   core_mission.cpp_FUN_004f76f0 at 004f76f0
 ;   engine_mini3d.cpp_FUN_004eda20 at 004eda20
 ;

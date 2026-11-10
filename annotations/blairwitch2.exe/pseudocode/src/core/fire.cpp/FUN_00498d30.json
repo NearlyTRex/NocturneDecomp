@@ -2,21 +2,21 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 118,
-    "complexity_score": 340,
+    "complexity_score": 339,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 3,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 55,
+    "pseudocode_lines": 54,
     "suspect_count": 26,
     "suspect_types": [
       "param_count_too_few",
+      "pointer_cast",
       "stack_alignment_array",
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 173
+    "total_lines": 172
   },
   "cross_references": [
     {
@@ -36,18 +36,18 @@
     ],
     "convention": "unknown",
     "name": "core_fire.cpp_FUN_00498d30",
-    "signature": "void core_fire_cpp_FUN_00498d30(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4)"
+    "signature": "void core_fire_cpp_FUN_00498d30(float *param_1,float *param_2,float param_3,float param_4)"
   },
   "function_calls": [
     {
       "addr": "0040cf60",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cf60"
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
     },
     {
       "addr": "0040d060",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040d060"
+      "name": "core_actor.cpp_randomChance_FUN_0040d060"
     },
     {
       "addr": "0044fd20",
@@ -57,7 +57,7 @@
     {
       "addr": "0049d5b0",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049d5b0"
+      "name": "core_fire.cpp_CFireEffect_createRock_FUN_0049d5b0"
     },
     {
       "addr": "00534800",
@@ -222,7 +222,7 @@
       "line": 4,
       "match": "param_1",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_00498d30(uint *param_1,uint *param_2,uint param_3,uint param_4)",
+      "text": "void core_fire_cpp_FUN_00498d30(float *param_1,float *param_2,float param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -230,7 +230,7 @@
       "line": 4,
       "match": "param_2",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_00498d30(uint *param_1,uint *param_2,uint param_3,uint param_4)",
+      "text": "void core_fire_cpp_FUN_00498d30(float *param_1,float *param_2,float param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -238,7 +238,7 @@
       "line": 4,
       "match": "param_3",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_00498d30(uint *param_1,uint *param_2,uint param_3,uint param_4)",
+      "text": "void core_fire_cpp_FUN_00498d30(float *param_1,float *param_2,float param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
@@ -246,12 +246,12 @@
       "line": 4,
       "match": "param_4",
       "severity": "mild",
-      "text": "void core_fire_cpp_FUN_00498d30(uint *param_1,uint *param_2,uint param_3,uint param_4)",
+      "text": "void core_fire_cpp_FUN_00498d30(float *param_1,float *param_2,float param_3,float param_4)",
       "type": "unnamed_param"
     },
     {
       "description": "StackY array variable (stack alignment artifact)",
-      "line": 15,
+      "line": 16,
       "match": "afStackY_102c",
       "severity": "moderate",
       "text": "float afStackY_102c [1010];",
@@ -259,7 +259,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_1",
       "severity": "mild",
       "text": "if (param_1 != param_2) {",
@@ -267,7 +267,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 24,
+      "line": 23,
       "match": "param_2",
       "severity": "mild",
       "text": "if (param_1 != param_2) {",
@@ -275,7 +275,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_1",
       "severity": "mild",
       "text": "*param_1 = *param_2;",
@@ -283,7 +283,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 25,
+      "line": 24,
       "match": "param_2",
       "severity": "mild",
       "text": "*param_1 = *param_2;",
@@ -291,7 +291,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[1] = param_2[1];",
@@ -299,7 +299,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 26,
+      "line": 25,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[1] = param_2[1];",
@@ -307,7 +307,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[2] = param_2[2];",
@@ -315,10 +315,18 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 27,
+      "line": 26,
       "match": "param_2",
       "severity": "mild",
       "text": "param_1[2] = param_2[2];",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "param_1[3] = 1.0;",
       "type": "unnamed_param"
     },
     {
@@ -326,20 +334,12 @@
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[3] = 0x3f800000;",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 31,
-      "match": "param_1",
-      "severity": "mild",
       "text": "param_1[4] = param_3;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 30,
       "match": "param_3",
       "severity": "mild",
       "text": "param_1[4] = param_3;",
@@ -347,15 +347,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 34,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "param_1[6] = iVar1;",
+      "text": "param_1[6] = fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_1",
       "severity": "mild",
       "text": "param_1[5] = param_4;",
@@ -363,50 +363,50 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 36,
+      "line": 35,
       "match": "param_4",
       "severity": "mild",
       "text": "param_1[5] = param_4;",
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 45,
-      "match": "._4_4_",
+      "description": "Unnamed function parameter",
+      "line": 47,
+      "match": "param_1",
       "severity": "mild",
-      "text": "local_50._4_4_ = (uint)(fVar6 * (float10)_DAT_005d5516);",
-      "type": "unknown_field"
+      "text": "local_44[0].x = *param_1;",
+      "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 46,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "local_50._0_4_ = (uint)(fVar3 * (float10)_DAT_005d5516 * fVar4);",
-      "type": "unknown_field"
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(float *)((int)local_44",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_44 + (uint)bVar3 * -8 + 4) = param_1[(uint)bVar3 * -2 + 1];",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_44 = (byte  [4])*param_1;",
+      "text": "*(float *)((int)local_44 + (uint)bVar3 * -8 + 4) = param_1[(uint)bVar3 * -2 + 1];",
       "type": "unnamed_param"
     },
     {
-      "description": "Unnamed function parameter",
+      "description": "Complex pointer cast",
       "line": 49,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "local_40[(uint)bVar2 * -2] = (float)param_1[(uint)bVar2 * -2 + 1];",
-      "type": "unnamed_param"
+      "match": "(float *)((int)local_44",
+      "severity": "moderate",
+      "text": "*(float *)((int)local_44 + (uint)bVar3 * -8 + (uint)bVar3 * -8 + 8) =",
+      "type": "pointer_cast"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 51,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
-      "text": "(float)(param_1 + (uint)bVar2 * -2 + 1)[(uint)bVar2 * -2 + 1];",
+      "text": "(param_1 + (uint)bVar3 * -2 + 1)[(uint)bVar3 * -2 + 1];",
       "type": "unnamed_param"
     },
     {

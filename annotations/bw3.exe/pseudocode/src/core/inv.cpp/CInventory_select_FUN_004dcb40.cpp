@@ -21,16 +21,16 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
   int local_14;
   
   bVar6 = 0;
-  iVar2 = core_actor_cpp_FUN_0040c790(actor_ptr,"CAmmo");
+  iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,"CAmmo");
   if (iVar2 == 0) {
-    iVar2 = core_actor_cpp_FUN_0040c790(actor_ptr,"CWeapon");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,"CWeapon");
     if (iVar2 != 0) {
-      core_inv_cpp_FUN_004dbb40(this_ptr,actor_ptr,5,1);
+      core_inv_cpp_CInventory_selectWeapon_FUN_004dbb40(this_ptr,actor_ptr,5,1);
       return 0;
     }
-    iVar2 = core_actor_cpp_FUN_0040c790(actor_ptr,"CHealthItem");
+    iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,"CHealthItem");
     if (iVar2 == 0) {
-      iVar2 = core_actor_cpp_FUN_0040c790(actor_ptr,"CBoxActor");
+      iVar2 = core_actor_cpp_isOfClass_FUN_0040c790(actor_ptr,"CBoxActor");
       if (iVar2 != 0) {
         iVar2 = core_actor_cpp_castToClassHash_FUN_0040c840
                           (actor_ptr,g_CBoxActorClassInfo.name_hash);
@@ -106,7 +106,7 @@ int __cdecl core_inv_cpp_CInventory_select_FUN_004dcb40(CInventory *this_ptr,CDe
       core_game_cpp_CGame_displayMessage_FUN_004b46b0(g_CGamePtr,local_114,5.0);
       iVar2 = core_health_cpp_FUN_004d20c0(local_14,*(uint *)(_DAT_01d5ba14 * 4 + 0x1d5ba04));
       if (iVar2 < 1) {
-        core_inv_cpp_FUN_004dbaa0(this_ptr,actor_ptr,1);
+        core_inv_cpp_CInventory_removeItem_FUN_004dbaa0(this_ptr,actor_ptr,1);
         return 1;
       }
     }

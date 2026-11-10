@@ -17,12 +17,12 @@
 ;
 ; Called Functions:
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_applyPalette_FUN_005380b0
+;   cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280
 ;   cockpit_pkbitmap.cpp_CPackedBitmap_setFilename_FUN_005375c0
 ;   cockpit_pkbitmap.cpp_FUN_00537550
-;   cockpit_pkbitmap.cpp_FUN_00538280
 ;   core_main.c_FUN_005030e0
 ;   crt_stdio.c_fclose_FUN_005c0d10
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_FUN_00479180
 ;
 ; *****************************************************************************
@@ -60,8 +60,8 @@ section .text
     LEA EAX,[ESP + 0xc]                 ; 005384c0
     PUSH EAX                            ; 005384c4
     MOV EDI,0x51c                       ; 005384c5
-    CALL crt_unknown.c_FUN_005bfb40     ; 005384ca
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005384ca
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0xc                         ; 005384cf
     LEA EAX,[ESP + 0x4]                 ; 005384d2
     MOV ECX,0x5ecfdd                    ; 005384d6
@@ -76,8 +76,8 @@ section .text
         ;   Label: LAB_005384f1
     PUSH ESI                            ; 005384f3
     PUSH EBX                            ; 005384f4
-    CALL cockpit_pkbitmap.cpp_FUN_00538280 ; 005384f5
-        ;   XREF to: 00538280 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_FUN_00538280(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
+    CALL cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280 ; 005384f5
+        ;   XREF to: 00538280 (UNCONDITIONAL_CALL)  ; void cockpit_pkbitmap.cpp_CPackedBitmap_readPBMFile_FUN_00538280(CPackedBitmap * this_ptr, _FILE * file_handle, int skip_data_load)
     ADD ESP,0xc                         ; 005384fa
     PUSH ESI                            ; 005384fd
     CALL crt_stdio.c_fclose_FUN_005c0d10 ; 005384fe

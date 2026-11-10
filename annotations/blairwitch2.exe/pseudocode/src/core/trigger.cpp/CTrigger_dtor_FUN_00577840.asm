@@ -12,7 +12,7 @@
 ;   core_waypoint.cpp_CWayPoint_dtor_FUN_00588480 at 0058848f
 ;
 ; Referenced Globals:
-;   undefined4 g_CTriggerVTable
+;   CDemonActor_vtable g_CTriggerVTable
 ;   WatcomTypeInfo g_CTriggerTypeInfo
 ;
 ; Called Functions:

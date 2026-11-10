@@ -13,8 +13,8 @@
 ; Called Functions:
 ;   core_fire.cpp_CFireEffect_renderDecals_FUN_004a1e90
 ;   core_gore.cpp_CGore_renderDecals_FUN_004ce630
-;   core_set.cpp_FUN_005346b0
-;   core_set.cpp_FUN_00539f30
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30
+;   core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0
 ;
 ; *****************************************************************************
 
@@ -26,14 +26,14 @@ section .text
     PUSH 0x10                           ; 0053ba42
     MOV EDX,dword ptr [ESP + 0x10]      ; 0053ba44
     PUSH EDX                            ; 0053ba48
-    CALL core_set.cpp_FUN_00539f30      ; 0053ba49
-        ;   XREF to: 00539f30 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_00539f30(CDemonSet * this_ptr, uint dirty_flags_mask)
+    CALL core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30 ; 0053ba49
+        ;   XREF to: 00539f30 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30(CDemonSet * this_ptr, uint dirty_flags_mask)
     ADD ESP,0x8                         ; 0053ba4e
     PUSH 0x1                            ; 0053ba51
     MOV ECX,dword ptr [ESP + 0x10]      ; 0053ba53
     PUSH ECX                            ; 0053ba57
-    CALL core_set.cpp_FUN_005346b0      ; 0053ba58
-        ;   XREF to: 005346b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005346b0(CDemonSet * this_ptr, int layer_flag)
+    CALL core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0 ; 0053ba58
+        ;   XREF to: 005346b0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderBackgroundActors_FUN_005346b0(CDemonSet * this_ptr, int layer_flag)
     ADD ESP,0x8                         ; 0053ba5d
     PUSH 0x0                            ; 0053ba60
     PUSH 0x1                            ; 0053ba62

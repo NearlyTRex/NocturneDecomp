@@ -2,15 +2,24 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct SMRGLTextureBasic;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CTrail
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x24 (36 bytes)
 #pragma pack(push, 1)
 typedef struct CTrail {
-    char field_0[36]; // 0x0
+    CVector3f position; // 0x0
+    float size; // 0xc
+    float lifetime; // 0x10
+    float current_alpha; // 0x14
+    float initial_lifetime; // 0x18
+    float initial_alpha; // 0x1c
+    struct SMRGLTextureBasic* texture_ptr; // 0x20
 } CTrail;
 #pragma pack(pop)
 

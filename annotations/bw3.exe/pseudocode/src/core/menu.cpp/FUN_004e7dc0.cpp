@@ -34,15 +34,14 @@ uint core_menu_cpp_FUN_004e7dc0(void)
     core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Center gamepad, press ENTER")
     ;
-    iVar3 = engine_font_cpp_FUN_004b2a80(_DAT_01549aa0,pcVar2);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549aa0,pcVar2);
     local_24 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_FUN_004b30f0(_DAT_01549aa0,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01549aa0,0x58);
     engine_font_cpp_FUN_004b0a20(_DAT_01549aa0,pcVar2,local_24,0xf0 - iVar3 / 2,7,0);
-    FUN_005a28c0(local_124,"%d,%d,%x",_DAT_01c6e250,_DAT_01c6e254,_DAT_01c6e260)
-    ;
+    _sprintf(local_124,"%d,%d,%x");
     engine_2d_c_drawText_FUN_00401fe0(local_124,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004b93e0(g_CGamePtr);
-    wincore_wddvmem_cpp_FUN_0057a8a0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);
     if (iVar3 != 0) break;
     iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);
@@ -52,31 +51,30 @@ uint core_menu_cpp_FUN_004e7dc0(void)
   }
   while( true ) {
     this_ptr = g_CDemonSetPtr;
-    *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 1;
-    core_set_cpp_FUN_0053b100(this_ptr,50000,50000,0x10000);
-    *(uint *)&g_CDemonSetPtr->field_0x15ae94 = 0xdac;
+    g_CDemonSetPtr->rendering_mode = 1;
+    core_set_cpp_CDemonSet_setFlatColor_FUN_0053b100(this_ptr,50000,50000,0x10000);
+    g_CDemonSetPtr->ambient_base_quick = 0xdac;
     core_moon_cpp_FUN_004f9670(&g_CMoonInstance);
-    *(uint *)&g_CDemonSetPtr->field_0x15ae84 = 0;
+    g_CDemonSetPtr->rendering_mode = 0;
     pcVar2 = support_newmsg_cpp_getLocalizedString_FUN_00508960("Move gamepad in all directions, press ENTER")
     ;
-    iVar3 = engine_font_cpp_FUN_004b2a80(_DAT_01549aa0,pcVar2);
+    iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004b2a80(_DAT_01549aa0,pcVar2);
     iStack_20 = 0x140 - iVar3 / 2;
-    iVar3 = engine_font_cpp_FUN_004b30f0(_DAT_01549aa0,0x58);
+    iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004b30f0(_DAT_01549aa0,0x58);
     engine_font_cpp_FUN_004b0a20(_DAT_01549aa0,pcVar2,iStack_20,0xf0 - iVar3 / 2,7,0);
-    FUN_005a28c0
-              (acStack_224,"%d,%d,%x",_DAT_01c6e250,_DAT_01c6e254,_DAT_01c6e260);
+    _sprintf(acStack_224,"%d,%d,%x");
     engine_2d_c_drawText_FUN_00401fe0(acStack_224,0,0);
     core_game_cpp_CGame_resetKeyState_FUN_004b93e0(g_CGamePtr);
-    wincore_wddvmem_cpp_FUN_0057a8a0();
+    wincore_wddvmem_cpp_swapBuffers_FUN_0057a8a0();
     iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,0x1c);
     pCVar1 = g_CGamePtr;
     if (iVar3 != 0) {
-      *(int *)&g_CGamePtr->field_0xbc = iStack_1c;
-      *(int *)&pCVar1->field_0xc4 = iVar6;
-      *(int *)&pCVar1->field_0xc8 = iVar4;
-      *(int *)&pCVar1->field_0xcc = iVar5;
-      *(int *)&pCVar1->field_0xc0 = iStack_18;
-      *(int *)&pCVar1->field_0xd0 = local_14;
+      g_CGamePtr->x_center = iStack_1c;
+      pCVar1->x_stick_min = iVar6;
+      pCVar1->x_stick_max = iVar4;
+      pCVar1->y_stick_min = iVar5;
+      pCVar1->y_center = iStack_18;
+      pCVar1->y_stick_max = local_14;
       return 1;
     }
     iVar3 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);
@@ -96,7 +94,7 @@ uint core_menu_cpp_FUN_004e7dc0(void)
   }
 LAB_004e8077:
   pCVar1 = g_CGamePtr;
-  *(uint *)&g_CGamePtr->field_0xbc = 0;
+  g_CGamePtr->x_center = 0;
   *(uint *)&pCVar1->field_0xd4 = 0;
   return 0;
 }

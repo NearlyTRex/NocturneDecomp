@@ -38,18 +38,18 @@
 ;   core_game.cpp_CGame_resetKeyState_FUN_004d0960
 ;   core_game.cpp_FUN_004d0400
 ;   core_main.c_FUN_005030e0
-;   core_menu.cpp_FUN_0050a2b0
-;   core_menu.cpp_FUN_0050d220
-;   core_menu.cpp_FUN_0050d470
-;   crt_unknown.c_FUN_005bfb40
+;   core_menu.cpp_calibrateGamepad_FUN_0050a2b0
+;   core_menu.cpp_getKeyDisplayName_FUN_0050d220
+;   core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_clearInputAndWait_FUN_004032b0
 ;   engine_keys.cpp_CKeys_toggleInputMask_FUN_004fd2b0
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
 ;   shape_edittool.cpp_CEditorTools_displayCenteredStatusMessage_FUN_00494400
 ;   shape_edittool.cpp_CPickList_ctor_FUN_0049a620
+;   shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0
 ;   shape_edittool.cpp_CPickList_dtor_FUN_0049a710
 ;   shape_edittool.cpp_CPickList_setCancelButtonText_FUN_0049a820
-;   shape_edittool.cpp_CPickList_setOkButtonText_FUN_0049a7b0
 ;   ... and 6 more
 ;
 ; *****************************************************************************
@@ -61,10 +61,10 @@ section .text
     PUSH EBP                            ; 0050d641
     SUB ESP,0xc8c                       ; 0050d642
     MOV EAX,[0x0061d95c]                ; 0050d648 | g_CGamePtr
-    CMP dword ptr [EAX + 0xd0],0x2      ; 0050d64d | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x2      ; 0050d64d | g_CGameInstance.field160_0xd0
     JNZ 0x0050d663                      ; 0050d654
         ;   XREF to: 0050d663 (CONDITIONAL_JUMP)  ; LAB_0050d663
-    CMP dword ptr [EAX + 0xb8],0x0      ; 0050d656 | g_CGameInstance.field184_0xb8
+    CMP dword ptr [EAX + 0xb8],0x0      ; 0050d656 | g_CGameInstance.x_center
     JZ 0x0050e6db                       ; 0050d65d
         ;   XREF to: 0050e6db (CONDITIONAL_JUMP)  ; LAB_0050e6db
     PUSH EDI                            ; 0050d663
@@ -75,7 +75,7 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050d66e | g_CGamePtr
         ;   Label: LAB_0050d66e
     XOR ESI,ESI                         ; 0050d673
-    MOV EDI,dword ptr [EAX + 0xd0]      ; 0050d675 | g_CGameInstance.field208_0xd0
+    MOV EDI,dword ptr [EAX + 0xd0]      ; 0050d675 | g_CGameInstance.field160_0xd0
     MOV dword ptr [0x01d21458],ESI      ; 0050d67b | DAT_01d21458
     CMP EDI,0x3                         ; 0050d681
     JZ 0x0050dc0e                       ; 0050d684
@@ -103,7 +103,7 @@ section .text
         ;   Label: LAB_0050d6cf
     IMUL EDI,EAX,0x28                   ; 0050d6d4
     ADD EDI,0x1d214e0                   ; 0050d6d7
-    MOV dword ptr [EAX*0x4 + 0x1d2145c],EBX ; 0050d6dd | DAT_01d2145c | g_CGameInstance.field72_0x48
+    MOV dword ptr [EAX*0x4 + 0x1d2145c],EBX ; 0050d6dd | DAT_01d2145c | g_CGameInstance.field54_0x48
     PUSH EDI                            ; 0050d6e4
     MOV AL,byte ptr [ESI]               ; 0050d6e5
         ;   Label: LAB_0050d6e5
@@ -146,7 +146,7 @@ section .text
         ;   Label: LAB_0050d750
     IMUL EDI,EAX,0x28                   ; 0050d755
     ADD EDI,0x1d214e0                   ; 0050d758
-    MOV dword ptr [EAX*0x4 + 0x1d2145c],EBX ; 0050d75e | DAT_01d21460 | g_CGameInstance.field40_0x28
+    MOV dword ptr [EAX*0x4 + 0x1d2145c],EBX ; 0050d75e | DAT_01d21460 | g_CGameInstance.shadow_flag
     PUSH EDI                            ; 0050d765 | DAT_01d21508
     MOV AL,byte ptr [ESI]               ; 0050d766
         ;   Label: LAB_0050d766
@@ -553,7 +553,7 @@ section .text
     INC dword ptr [0x01d21458]          ; 0050dc08 | DAT_01d21458
     MOV EAX,[0x0061d95c]                ; 0050dc0e | g_CGamePtr
         ;   Label: LAB_0050dc0e
-    CMP dword ptr [EAX + 0xac],0x0      ; 0050dc13 | g_CGameInstance.field172_0xac
+    CMP dword ptr [EAX + 0xac],0x0      ; 0050dc13 | g_CGameInstance.always_run
     JZ 0x0050e6f1                       ; 0050dc1a
         ;   XREF to: 0050e6f1 (CONDITIONAL_JUMP)  ; LAB_0050e6f1
     PUSH 0x5e83e5                       ; 0050dc20 | = "Walk"
@@ -1372,8 +1372,8 @@ section .text
     INC dword ptr [0x01d21458]          ; 0050e5ba | DAT_01d21458
     CALL engine_special.cpp_clearScreen_FUN_0057dc40 ; 0050e5c0
         ;   XREF to: 0057dc40 (UNCONDITIONAL_CALL)  ; void engine_special.cpp_clearScreen_FUN_0057dc40()
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0050e5c5
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0050e5c5
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     LEA EAX,[ESP + 0x8]                 ; 0050e5ca
     PUSH EAX                            ; 0050e5ce
     CALL shape_edittool.cpp_CPickList_ctor_FUN_0049a620 ; 0050e5cf
@@ -1398,18 +1398,18 @@ section .text
     XOR EDI,EDI                         ; 0050e603
     MOV EAX,dword ptr [EDI + 0x1d2145c] ; 0050e605 | DAT_01d2145c | DAT_01d21460
         ;   Label: LAB_0050e605
-    MOV EBP,dword ptr [EAX]             ; 0050e60b | g_CGameInstance.field72_0x48 | g_CGameInstance.field40_0x28
+    MOV EBP,dword ptr [EAX]             ; 0050e60b | g_CGameInstance.field54_0x48 | g_CGameInstance.shadow_flag
     PUSH EBP                            ; 0050e60d
-    CALL core_menu.cpp_FUN_0050d220     ; 0050e60e
-        ;   XREF to: 0050d220 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_FUN_0050d220(EInputCodeType key_code)
+    CALL core_menu.cpp_getKeyDisplayName_FUN_0050d220 ; 0050e60e
+        ;   XREF to: 0050d220 (UNCONDITIONAL_CALL)  ; char * core_menu.cpp_getKeyDisplayName_FUN_0050d220(EInputCodeType key_code)
     ADD ESP,0x4                         ; 0050e613
     PUSH EAX                            ; 0050e616
     PUSH EBX                            ; 0050e617
     PUSH 0x5e84e4                       ; 0050e618 | = "%s\t%s"
     LEA EAX,[ESP + 0xbd4]               ; 0050e61d
     PUSH EAX                            ; 0050e624
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050e625
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050e625
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x10                        ; 0050e62a
     LEA EAX,[ESP + 0xbc8]               ; 0050e62d
     PUSH EAX                            ; 0050e634
@@ -1441,8 +1441,8 @@ section .text
     PUSH 0x1                            ; 0050e676
     LEA EAX,[ESP + 0xc]                 ; 0050e678
     PUSH EAX                            ; 0050e67c
-    CALL shape_edittool.cpp_FUN_0049a8a0 ; 0050e67d
-        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_0049a8a0(CPickList * this_ptr, int result_value)
+    CALL shape_edittool.cpp_CPickList_setSelectedResult_FUN_0049a8a0 ; 0050e67d
+        ;   XREF to: 0049a8a0 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_setSelectedResult_FUN_0049a8a0(CPickList * this_ptr, int result_value)
     ADD ESP,0x8                         ; 0050e682
     PUSH 0x0                            ; 0050e685
     MOV EDX,dword ptr [ESP + 0xc94]     ; 0050e687
@@ -1454,8 +1454,8 @@ section .text
     PUSH EAX                            ; 0050e69c
     LEA EAX,[ESP + 0x14]                ; 0050e69d
     PUSH EAX                            ; 0050e6a1
-    CALL shape_edittool.cpp_FUN_0049a8b0 ; 0050e6a2
-        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
+    CALL shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0 ; 0050e6a2
+        ;   XREF to: 0049a8b0 (UNCONDITIONAL_CALL)  ; int shape_edittool.cpp_CPickList_displayChoicesAndWaitForInput_FUN_0049a8b0(CPickList * this_ptr, char * dialog_title, int initial_selected_index, uint window_flags)
     ADD ESP,0x10                        ; 0050e6a7
     TEST EAX,EAX                        ; 0050e6aa
     JL 0x0050eb90                       ; 0050e6ac
@@ -1475,8 +1475,8 @@ section .text
     ADD ESP,0x8                         ; 0050e6d3
     JMP 0x0050d66e                      ; 0050e6d6
         ;   XREF to: 0050d66e (UNCONDITIONAL_JUMP)  ; LAB_0050d66e
-    CALL core_menu.cpp_FUN_0050a2b0     ; 0050e6db
-        ;   XREF to: 0050a2b0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050a2b0()
+    CALL core_menu.cpp_calibrateGamepad_FUN_0050a2b0 ; 0050e6db
+        ;   XREF to: 0050a2b0 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_calibrateGamepad_FUN_0050a2b0()
         ;   Label: LAB_0050e6db
     TEST EAX,EAX                        ; 0050e6e0
     JNZ 0x0050d663                      ; 0050e6e2
@@ -1610,7 +1610,7 @@ section .text
         ;   XREF to: 0050e771 (UNCONDITIONAL_JUMP)  ; LAB_0050e771
     MOV EAX,[0x0061d95c]                ; 0050e803 | g_CGamePtr
         ;   Label: default
-    CMP dword ptr [EAX + 0xd0],0x2      ; 0050e808 | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x2      ; 0050e808 | g_CGameInstance.field160_0xd0
     JZ 0x0050e869                       ; 0050e80f
         ;   XREF to: 0050e869 (CONDITIONAL_JUMP)  ; LAB_0050e869
     MOV ESI,0xffffffff                  ; 0050e811
@@ -1649,8 +1649,8 @@ section .text
     TEST EAX,EAX                        ; 0050e85e
     JNZ 0x0050e8a0                      ; 0050e860
         ;   XREF to: 0050e8a0 (CONDITIONAL_JUMP)  ; LAB_0050e8a0
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0050e862
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0050e862
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     JMP 0x0050e803                      ; 0050e867
         ;   XREF to: 0050e803 (UNCONDITIONAL_JUMP)  ; default
     PUSH EAX                            ; 0050e869 | g_CGameInstance
@@ -1666,7 +1666,7 @@ section .text
     JL 0x0050e818                       ; 0050e87b
         ;   XREF to: 0050e818 (CONDITIONAL_JUMP)  ; LAB_0050e818
     MOV EAX,[0x0061d95c]                ; 0050e87d | g_CGamePtr
-    CMP dword ptr [EAX + 0xd0],0x3      ; 0050e882 | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x3      ; 0050e882 | g_CGameInstance.field160_0xd0
     JNZ 0x0050e89b                      ; 0050e889
         ;   XREF to: 0050e89b (CONDITIONAL_JUMP)  ; LAB_0050e89b
     CMP ESI,0x200                       ; 0050e88b
@@ -1748,11 +1748,11 @@ section .text
     CALL engine_keys.cpp_CKeys_toggleInputMask_FUN_004fd2b0 ; 0050e938
         ;   XREF to: 004fd2b0 (UNCONDITIONAL_CALL)  ; void engine_keys.cpp_CKeys_toggleInputMask_FUN_004fd2b0(CKeys * this_ptr, int enable_extended)
     ADD ESP,0x8                         ; 0050e93d
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0050e940
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0050e940
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_0050e940
     MOV EAX,[0x0061d95c]                ; 0050e945 | g_CGamePtr
-    CMP dword ptr [EAX + 0xd0],0x2      ; 0050e94a | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x2      ; 0050e94a | g_CGameInstance.field160_0xd0
     JZ 0x0050ea8d                       ; 0050e951
         ;   XREF to: 0050ea8d (CONDITIONAL_JUMP)  ; LAB_0050ea8d
     MOV ESI,0xffffffff                  ; 0050e957
@@ -1778,7 +1778,7 @@ section .text
     JL 0x0050e95e                       ; 0050e97d
         ;   XREF to: 0050e95e (CONDITIONAL_JUMP)  ; LAB_0050e95e
     MOV EAX,[0x0061d95c]                ; 0050e97f | g_CGamePtr
-    CMP dword ptr [EAX + 0xd0],0x3      ; 0050e984 | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x3      ; 0050e984 | g_CGameInstance.field160_0xd0
     JNZ 0x0050eaa7                      ; 0050e98b
         ;   XREF to: 0050eaa7 (CONDITIONAL_JUMP)  ; LAB_0050eaa7
     CMP ESI,0x200                       ; 0050e991
@@ -1851,7 +1851,7 @@ section .text
     ADD ESP,0x8                         ; 0050ea30
     MOV EAX,[0x0061d95c]                ; 0050ea33 | g_CGamePtr
         ;   Label: LAB_0050ea33
-    CMP dword ptr [EAX + 0xd0],0x2      ; 0050ea38 | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x2      ; 0050ea38 | g_CGameInstance.field160_0xd0
     JZ 0x0050eac6                       ; 0050ea3f
         ;   XREF to: 0050eac6 (CONDITIONAL_JUMP)  ; LAB_0050eac6
     MOV ESI,0xffffffff                  ; 0050ea45
@@ -1870,8 +1870,8 @@ section .text
     TEST ESI,ESI                        ; 0050ea5e
     JL 0x0050eb4a                       ; 0050ea60
         ;   XREF to: 0050eb4a (CONDITIONAL_JUMP)  ; LAB_0050eb4a
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 0050ea66
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 0050ea66
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
         ;   Label: LAB_0050ea66
     JMP 0x0050ea33                      ; 0050ea6b
         ;   XREF to: 0050ea33 (UNCONDITIONAL_JUMP)  ; LAB_0050ea33
@@ -1925,7 +1925,7 @@ section .text
     JL 0x0050ea4c                       ; 0050eadb
         ;   XREF to: 0050ea4c (CONDITIONAL_JUMP)  ; LAB_0050ea4c
     MOV EAX,[0x0061d95c]                ; 0050eae1 | g_CGamePtr
-    CMP dword ptr [EAX + 0xd0],0x3      ; 0050eae6 | g_CGameInstance.field208_0xd0
+    CMP dword ptr [EAX + 0xd0],0x3      ; 0050eae6 | g_CGameInstance.field160_0xd0
     JNZ 0x0050eb07                      ; 0050eaed
         ;   XREF to: 0050eb07 (CONDITIONAL_JUMP)  ; LAB_0050eb07
     CMP ESI,0x200                       ; 0050eaef
@@ -1971,11 +1971,11 @@ section .text
     MOV ESI,dword ptr [EBX + 0x1d2145c] ; 0050eb4e | DAT_01d21460
         ;   Label: LAB_0050eb4e
     MOV EDI,dword ptr [ECX + 0x1d2145c] ; 0050eb54 | DAT_01d2145c
-    MOV EDX,dword ptr [ESI]             ; 0050eb5a | g_CGameInstance.field40_0x28
+    MOV EDX,dword ptr [ESI]             ; 0050eb5a | g_CGameInstance.shadow_flag
     CMP EDX,dword ptr [EDI]             ; 0050eb5c
     JNZ 0x0050eb29                      ; 0050eb5e
         ;   XREF to: 0050eb29 (CONDITIONAL_JUMP)  ; LAB_0050eb29
-    MOV dword ptr [ESI],0x257           ; 0050eb60 | g_CGameInstance.field40_0x28
+    MOV dword ptr [ESI],0x257           ; 0050eb60 | g_CGameInstance.shadow_flag
     JMP 0x0050eb29                      ; 0050eb66
         ;   XREF to: 0050eb29 (UNCONDITIONAL_JUMP)  ; LAB_0050eb29
     MOV dword ptr [ESP + 0xc90],EAX     ; 0050eb68
@@ -1997,7 +1997,7 @@ section .text
         ;   XREF to: 0049a710 (UNCONDITIONAL_CALL)  ; CPickList * shape_edittool.cpp_CPickList_dtor_FUN_0049a710(CPickList * this_ptr, uint flags)
     MOV EAX,[0x0061d95c]                ; 0050eb9c | g_CGamePtr
     XOR EBX,EBX                         ; 0050eba1
-    MOV EDI,dword ptr [EAX + 0xd0]      ; 0050eba3 | g_CGameInstance.field208_0xd0
+    MOV EDI,dword ptr [EAX + 0xd0]      ; 0050eba3 | g_CGameInstance.field160_0xd0
     ADD ESP,0x8                         ; 0050eba9
     CMP EDI,0x3                         ; 0050ebac
     JZ 0x0050ed20                       ; 0050ebaf
@@ -2009,9 +2009,9 @@ section .text
     PUSH EAX                            ; 0050ebc2
     MOV EAX,[0x0061d95c]                ; 0050ebc3 | g_CGamePtr
     ADD EAX,0x28                        ; 0050ebc8
-    PUSH EAX                            ; 0050ebcb | g_CGameInstance.field40_0x28
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ebcc
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    PUSH EAX                            ; 0050ebcb | g_CGameInstance.shadow_flag
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ebcc
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ebd1
     PUSH 0x5e85fa                       ; 0050ebd4 | = "Back"
     MOV EBX,EAX                         ; 0050ebd9
@@ -2022,8 +2022,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ebe4 | g_CGamePtr
     ADD EAX,0x2c                        ; 0050ebe9
     PUSH EAX                            ; 0050ebec
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ebed
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ebed
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ebf2
     PUSH 0x5e85ff                       ; 0050ebf5 | = "Strafe on"
     OR EBX,EAX                          ; 0050ebfa
@@ -2034,8 +2034,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ec05 | g_CGamePtr
     ADD EAX,0x34                        ; 0050ec0a
     PUSH EAX                            ; 0050ec0d
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ec0e
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ec0e
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ec13
     PUSH 0x5e8609                       ; 0050ec16 | = "Strafe left"
     OR EBX,EAX                          ; 0050ec1b
@@ -2046,8 +2046,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ec26 | g_CGamePtr
     ADD EAX,0x38                        ; 0050ec2b
     PUSH EAX                            ; 0050ec2e
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ec2f
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ec2f
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ec34
     PUSH 0x5e8615                       ; 0050ec37 | = "Strafe right"
     OR EBX,EAX                          ; 0050ec3c
@@ -2058,8 +2058,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ec47 | g_CGamePtr
     ADD EAX,0x3c                        ; 0050ec4c
     PUSH EAX                            ; 0050ec4f
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ec50
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ec50
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ec55
     PUSH 0x5e8622                       ; 0050ec58 | = "Turn left"
     OR EBX,EAX                          ; 0050ec5d
@@ -2070,8 +2070,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ec68 | g_CGamePtr
     ADD EAX,0x44                        ; 0050ec6d
     PUSH EAX                            ; 0050ec70
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ec71
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ec71
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ec76
     OR EBX,EAX                          ; 0050ec79
     PUSH 0x5e862c                       ; 0050ec7b | = "Turn right"
@@ -2082,8 +2082,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ec89 | g_CGamePtr
     ADD EAX,0x40                        ; 0050ec8e
     PUSH EAX                            ; 0050ec91
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ec92
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ec92
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ec97
     PUSH 0x5e8637                       ; 0050ec9a | = "Fire / Action"
     OR EBX,EAX                          ; 0050ec9f
@@ -2093,9 +2093,9 @@ section .text
     PUSH EAX                            ; 0050eca9
     MOV EAX,[0x0061d95c]                ; 0050ecaa | g_CGamePtr
     ADD EAX,0x48                        ; 0050ecaf
-    PUSH EAX                            ; 0050ecb2 | g_CGameInstance.field72_0x48
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ecb3
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    PUSH EAX                            ; 0050ecb2 | g_CGameInstance.field54_0x48
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ecb3
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ecb8
     PUSH 0x5e8645                       ; 0050ecbb | = "Point up"
     OR EBX,EAX                          ; 0050ecc0
@@ -2106,8 +2106,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050eccb | g_CGamePtr
     ADD EAX,0x74                        ; 0050ecd0
     PUSH EAX                            ; 0050ecd3
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ecd4
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ecd4
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ecd9
     PUSH 0x5e864e                       ; 0050ecdc | = "Point down"
     OR EBX,EAX                          ; 0050ece1
@@ -2118,8 +2118,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ecec | g_CGamePtr
     ADD EAX,0x78                        ; 0050ecf1
     PUSH EAX                            ; 0050ecf4
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ecf5
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ecf5
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ecfa
     PUSH 0x5e8659                       ; 0050ecfd | = "Quick turn"
     OR EBX,EAX                          ; 0050ed02
@@ -2130,13 +2130,13 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ed0d | g_CGamePtr
     ADD EAX,0x70                        ; 0050ed12
     PUSH EAX                            ; 0050ed15
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ed16
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ed16
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ed1b
     OR EBX,EAX                          ; 0050ed1e
     MOV EAX,[0x0061d95c]                ; 0050ed20 | g_CGamePtr
         ;   Label: LAB_0050ed20
-    CMP dword ptr [EAX + 0xac],0x0      ; 0050ed25 | g_CGameInstance.field172_0xac
+    CMP dword ptr [EAX + 0xac],0x0      ; 0050ed25 | g_CGameInstance.always_run
     JZ 0x0050efea                       ; 0050ed2c
         ;   XREF to: 0050efea (CONDITIONAL_JUMP)  ; LAB_0050efea
     PUSH 0x5e8664                       ; 0050ed32 | = "Walk"
@@ -2148,8 +2148,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ed40 | g_CGamePtr
     ADD EAX,0x30                        ; 0050ed45
     PUSH EAX                            ; 0050ed48
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ed49
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ed49
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ed4e
     OR EBX,EAX                          ; 0050ed51
     PUSH 0x5e866d                       ; 0050ed53 | = "Use item"
@@ -2160,8 +2160,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ed61 | g_CGamePtr
     ADD EAX,0x4c                        ; 0050ed66
     PUSH EAX                            ; 0050ed69
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ed6a
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ed6a
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ed6f
     PUSH 0x5e8676                       ; 0050ed72 | = "Flashlight"
     OR EBX,EAX                          ; 0050ed77
@@ -2172,8 +2172,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ed82 | g_CGamePtr
     ADD EAX,0x50                        ; 0050ed87
     PUSH EAX                            ; 0050ed8a
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ed8b
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ed8b
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ed90
     PUSH 0x5e8681                       ; 0050ed93 | = "Night Vision"
     OR EBX,EAX                          ; 0050ed98
@@ -2184,8 +2184,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050eda3 | g_CGamePtr
     ADD EAX,0x54                        ; 0050eda8
     PUSH EAX                            ; 0050edab
-    CALL core_menu.cpp_FUN_0050d470     ; 0050edac
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050edac
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050edb1
     PUSH 0x5e868e                       ; 0050edb4 | = "Journal"
     OR EBX,EAX                          ; 0050edb9
@@ -2196,8 +2196,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050edc4 | g_CGamePtr
     ADD EAX,0x58                        ; 0050edc9
     PUSH EAX                            ; 0050edcc
-    CALL core_menu.cpp_FUN_0050d470     ; 0050edcd
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050edcd
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050edd2
     PUSH 0x5e8696                       ; 0050edd5 | = "Map"
     OR EBX,EAX                          ; 0050edda
@@ -2208,8 +2208,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ede5 | g_CGamePtr
     ADD EAX,0x5c                        ; 0050edea
     PUSH EAX                            ; 0050eded
-    CALL core_menu.cpp_FUN_0050d470     ; 0050edee
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050edee
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050edf3
     PUSH 0x5e869a                       ; 0050edf6 | = "Compass"
     OR EBX,EAX                          ; 0050edfb
@@ -2220,8 +2220,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ee06 | g_CGamePtr
     ADD EAX,0x60                        ; 0050ee0b
     PUSH EAX                            ; 0050ee0e
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ee0f
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ee0f
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ee14
     OR EBX,EAX                          ; 0050ee17
     POP ESI                             ; 0050ee19
@@ -2234,8 +2234,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ee29 | g_CGamePtr
     ADD EAX,0x64                        ; 0050ee2e
     PUSH EAX                            ; 0050ee31
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ee32
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ee32
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ee37
     PUSH 0x5e86a6                       ; 0050ee3a | = "Draw"
     OR EBX,EAX                          ; 0050ee3f
@@ -2246,8 +2246,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ee4a | g_CGamePtr
     ADD EAX,0x68                        ; 0050ee4f
     PUSH EAX                            ; 0050ee52
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ee53
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ee53
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ee58
     PUSH 0x5e86ab                       ; 0050ee5b | = "Select pistol weapons"
     OR EBX,EAX                          ; 0050ee60
@@ -2258,8 +2258,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ee6b | g_CGamePtr
     ADD EAX,0x7c                        ; 0050ee70
     PUSH EAX                            ; 0050ee73
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ee74
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ee74
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ee79
     PUSH 0x5e86c1                       ; 0050ee7c | = "Select assault weapons"
     OR EBX,EAX                          ; 0050ee81
@@ -2270,8 +2270,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ee8c | g_CGamePtr
     ADD EAX,0x80                        ; 0050ee91
     PUSH EAX                            ; 0050ee96
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ee97
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ee97
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ee9c
     PUSH 0x5e86d8                       ; 0050ee9f | = "Select energy weapons"
     OR EBX,EAX                          ; 0050eea4
@@ -2282,8 +2282,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050eeaf | g_CGamePtr
     ADD EAX,0x84                        ; 0050eeb4
     PUSH EAX                            ; 0050eeb9
-    CALL core_menu.cpp_FUN_0050d470     ; 0050eeba
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050eeba
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050eebf
     PUSH 0x5e86ee                       ; 0050eec2 | = "Select grenade weapons"
     OR EBX,EAX                          ; 0050eec7
@@ -2294,8 +2294,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050eed2 | g_CGamePtr
     ADD EAX,0x88                        ; 0050eed7
     PUSH EAX                            ; 0050eedc
-    CALL core_menu.cpp_FUN_0050d470     ; 0050eedd
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050eedd
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050eee2
     OR EBX,EAX                          ; 0050eee5
     PUSH 0x5e8705                       ; 0050eee7 | = "Select melee weapons"
@@ -2306,8 +2306,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050eef5 | g_CGamePtr
     ADD EAX,0x8c                        ; 0050eefa
     PUSH EAX                            ; 0050eeff
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ef00
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ef00
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ef05
     PUSH 0x5e871a                       ; 0050ef08 | = "Next weapon"
     OR EBX,EAX                          ; 0050ef0d
@@ -2318,8 +2318,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ef18 | g_CGamePtr
     ADD EAX,0x90                        ; 0050ef1d
     PUSH EAX                            ; 0050ef22
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ef23
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ef23
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ef28
     PUSH 0x5e8726                       ; 0050ef2b | = "Previous weapon"
     OR EBX,EAX                          ; 0050ef30
@@ -2330,8 +2330,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ef3b | g_CGamePtr
     ADD EAX,0x94                        ; 0050ef40
     PUSH EAX                            ; 0050ef45
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ef46
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ef46
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ef4b
     PUSH 0x5e8736                       ; 0050ef4e | = "Next item"
     OR EBX,EAX                          ; 0050ef53
@@ -2342,8 +2342,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ef5e | g_CGamePtr
     ADD EAX,0x98                        ; 0050ef63
     PUSH EAX                            ; 0050ef68
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ef69
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ef69
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ef6e
     PUSH 0x5e8740                       ; 0050ef71 | = "Previous item"
     OR EBX,EAX                          ; 0050ef76
@@ -2354,8 +2354,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050ef81 | g_CGamePtr
     ADD EAX,0x9c                        ; 0050ef86
     PUSH EAX                            ; 0050ef8b
-    CALL core_menu.cpp_FUN_0050d470     ; 0050ef8c
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050ef8c
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050ef91
     PUSH 0x5e874e                       ; 0050ef94 | = "Item description"
     OR EBX,EAX                          ; 0050ef99
@@ -2366,8 +2366,8 @@ section .text
     MOV EAX,[0x0061d95c]                ; 0050efa4 | g_CGamePtr
     ADD EAX,0xa0                        ; 0050efa9
     PUSH EAX                            ; 0050efae
-    CALL core_menu.cpp_FUN_0050d470     ; 0050efaf
-        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
+    CALL core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470 ; 0050efaf
+        ;   XREF to: 0050d470 (UNCONDITIONAL_CALL)  ; int core_menu.cpp_isKeyCodeValidForMode_FUN_0050d470(EInputCodeType * key_code_ptr, char * description)
     ADD ESP,0x8                         ; 0050efb4
     OR EBX,EAX                          ; 0050efb7
     JZ 0x0050e6e8                       ; 0050efb9

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 81,
-    "complexity_score": 158,
+    "complexity_score": 168,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 5,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 43,
-    "suspect_count": 10,
+    "suspect_count": 11,
     "suspect_types": [
       "shadow_pointer_walk",
       "unnamed_field",
@@ -20,7 +20,7 @@
     {
       "addr": "00581910",
       "from_addr": "00582bc9",
-      "name": "core_vampboss.cpp_FUN_00581910",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -81,7 +81,7 @@
       {
         "call_addr": "00582bc9",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00581910",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
         "estimated_params": 0,
         "instructions_analyzed": 2,
         "method": "push_count",
@@ -92,7 +92,7 @@
       {
         "call_addr": "005819c6",
         "call_type": "direct",
-        "caller": "core_vampboss.cpp_FUN_00581910",
+        "caller": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -186,26 +186,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0xc3b84",
+      "line": 31,
+      "match": "field_0x20",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0xc3b84 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xc3b88",
-      "severity": "mild",
-      "text": "if (*(int *)&pCVar10->field_0xc3b88 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xc3b88",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&pCVar10->field_0xc3b88;",
+      "text": "fVar3 = *(float *)&pCVar2->field_0x20 - *(float *)(iVar1 + 0x20);",
       "type": "unnamed_field"
     },
     {
@@ -213,7 +197,23 @@
       "line": 32,
       "match": "field_0x20",
       "severity": "mild",
-      "text": "fVar4 = *(float *)(iVar2 + 0x20) - *(float *)&this_ptr->field_0x20;",
+      "text": "fVar4 = *(float *)&pCVar2->field_0x20 - *(float *)&(this_ptr->base).base.base.field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x20",
+      "severity": "mild",
+      "text": "fVar4 = *(float *)&pCVar2->field_0x20 - *(float *)&(this_ptr->base).base.base.field_0x20;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 33,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "fVar8 = *(float *)&pCVar2->field_0x24 - *(float *)(iVar1 + 0x24);",
       "type": "unnamed_field"
     },
     {
@@ -221,7 +221,15 @@
       "line": 34,
       "match": "field_0x24",
       "severity": "mild",
-      "text": "fVar5 = *(float *)(iVar2 + 0x24) - *(float *)&this_ptr->field_0x24;",
+      "text": "fVar5 = *(float *)&pCVar2->field_0x24 - *(float *)&(this_ptr->base).base.base.field_0x24;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 34,
+      "match": "field_0x24",
+      "severity": "mild",
+      "text": "fVar5 = *(float *)&pCVar2->field_0x24 - *(float *)&(this_ptr->base).base.base.field_0x24;",
       "type": "unnamed_field"
     },
     {
@@ -229,31 +237,31 @@
       "line": 35,
       "match": "field_0x28",
       "severity": "mild",
-      "text": "fVar6 = *(float *)(iVar2 + 0x28) - *(float *)&this_ptr->field_0x28;",
+      "text": "fVar6 = *(float *)&pCVar2->field_0x28 - *(float *)&(this_ptr->base).base.base.field_0x28;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 40,
-      "match": "field_0xc3b84",
+      "line": 35,
+      "match": "field_0x28",
       "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0xc3b84 = iVar9;",
+      "text": "fVar6 = *(float *)&pCVar2->field_0x28 - *(float *)&(this_ptr->base).base.base.field_0x28;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x4",
+      "line": 36,
+      "match": "field_0x28",
       "severity": "mild",
-      "text": "pCVar10 = (CVampireBoss *)&pCVar10->field_0x4;",
+      "text": "fVar7 = *(float *)&pCVar2->field_0x28 - *(float *)(iVar1 + 0x28);",
       "type": "unnamed_field"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar10->owner`). Replace `pCVar10->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar10` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar10->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
       "line": 44,
-      "match": "pCVar10 = (T *)&pCVar10->FIELD",
+      "match": "pCVar10 = (T *)((pCVar10->FIELD).SUBFIELD...ARRAY + CONST)",
       "severity": "moderate",
-      "text": "pCVar10 = (CVampireBoss *)&pCVar10->field_0x4;",
+      "text": "pCVar10 = (CVampireBoss *)((pCVar10->base).base.base.actor_name + 4);",
       "type": "shadow_pointer_walk"
     }
   ]

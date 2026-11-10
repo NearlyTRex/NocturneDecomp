@@ -9,7 +9,7 @@
 void FUN_005a9818(uint param_1)
 
 {
-  unkafter_asgaya_cpp_FUN_005ae8c0();
+  FUN_005ae8c0();
   FUN_005a9768(param_1);
   return;
 }

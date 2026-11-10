@@ -18,7 +18,7 @@ uint core_health_cpp_FUN_004d20c0(int param_1,int param_2)
     }
     this_ptr = g_CGamePtr;
     *(int *)(param_1 + 0x2d4) = *(int *)(param_1 + 0x2d4) + -1;
-    core_game_cpp_FUN_004bd910(this_ptr);
+    core_game_cpp_CGame_resetInventoryDisplayTimer_FUN_004bd910(this_ptr);
   }
   return *(uint *)(param_1 + 0x2d4);
 }

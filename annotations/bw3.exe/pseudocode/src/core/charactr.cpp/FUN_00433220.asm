@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_charactr_cpp_FUN_00433220(CDemonActor *param_1,undefined4 *param_2)
+; void core_charactr_cpp_FUN_00433220(CDemonActor *param_1,float *param_2)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x70]:1  local_70
@@ -19,9 +19,9 @@
 ;
 ; XREF[4]:
 ;   core_charactr.cpp_FUN_0042cd30 at 0042cd5d
-;   core_prye.cpp_FUN_00518ab0 at 00518cb0
+;   core_prye.cpp_CPrye_process_FUN_00518ab0 at 00518cb0
 ;   core_prye.cpp_FUN_00518cd0 at 0051a213
-;   core_thehand.cpp_FUN_0056ca00 at 0056cb77
+;   core_thehand.cpp_CTheHand_attractActorToward_FUN_0056ca00 at 0056cb77
 ;
 ; Called Functions:
 ;   core_actor.cpp_CDemonActor_updateOrientationMatrix_FUN_004088f0

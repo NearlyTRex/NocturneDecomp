@@ -32,7 +32,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b528c
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b528c
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_fire_cpp_005df188

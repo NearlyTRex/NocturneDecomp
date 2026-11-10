@@ -21,7 +21,7 @@
     {
       "addr": "004d95c0",
       "from_addr": "004d975d",
-      "name": "core_inivar.cpp_FUN_004d95c0",
+      "name": "core_inivar.cpp_writeIniData_FUN_004d95c0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -41,7 +41,7 @@
     {
       "addr": "005a28c0",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005a28c0"
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
     },
     {
       "addr": "004d8c90",
@@ -54,34 +54,14 @@
       "name": "engine_ini.cpp_FUN_004d8d40"
     },
     {
-      "addr": "00556750",
+      "addr": "00558330",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556750"
-    },
-    {
-      "addr": "00556e30",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00556e30"
-    },
-    {
-      "addr": "005584c0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005584c0"
-    },
-    {
-      "addr": "005586e0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005586e0"
+      "name": "sound_sndmain.cpp_getAudioFormat_FUN_00558330"
     },
     {
       "addr": "005591a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005591a0"
-    },
-    {
-      "addr": "00558330",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_getAudioFormat_FUN_00558330"
+      "name": "sound_sndmain.cpp_getMaxSwLatency_FUN_005591a0"
     },
     {
       "addr": "00556d20",
@@ -92,6 +72,26 @@
       "addr": "00558430",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_getSoundDeviceCount_FUN_00558430"
+    },
+    {
+      "addr": "005584c0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSoundDeviceInfo_FUN_005584c0"
+    },
+    {
+      "addr": "005586e0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isHardwareMixingEnabled_FUN_005586e0"
+    },
+    {
+      "addr": "00556e30",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30"
+    },
+    {
+      "addr": "00556750",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundMuted_FUN_00556750"
     }
   ],
   "globals": [
@@ -180,7 +180,7 @@
       {
         "call_addr": "004d975d",
         "call_type": "direct",
-        "caller": "core_inivar.cpp_FUN_004d95c0",
+        "caller": "core_inivar.cpp_writeIniData_FUN_004d95c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -318,7 +318,7 @@
       "line": 30,
       "match": "DAT_0060423c",
       "severity": "mild",
-      "text": "sound_sndmain_cpp_FUN_005584c0(DAT_0060423c,&local_29c);",
+      "text": "sound_sndmain_cpp_getSoundDeviceInfo_FUN_005584c0(DAT_0060423c,&local_29c);",
       "type": "undefined_data"
     },
     {

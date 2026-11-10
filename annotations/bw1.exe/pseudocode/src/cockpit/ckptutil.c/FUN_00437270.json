@@ -18,33 +18,27 @@
   },
   "cross_references": [
     {
-      "addr": "0043793e",
-      "from_addr": "0043799f",
-      "name": "cockpit_ckptutil.c_FUN_0043793e",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00437b8c",
-      "from_addr": "00437bd8",
-      "name": "cockpit_ckptutil.c_FUN_00437b8c",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00437cfc",
-      "from_addr": "00437d3c",
-      "name": "cockpit_ckptutil.c_FUN_00437cfc",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004380a0",
       "from_addr": "004380c8",
       "name": "cockpit_ckptutil.c_blitDualModeSprite_FUN_004380a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "00437b8c",
+      "from_addr": "00437bd8",
+      "name": "cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b8c",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "00437f40",
       "from_addr": "00437f78",
       "name": "cockpit_ckptutil.c_blitSimpleSprite_FUN_00437f40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0043793e",
+      "from_addr": "0043799f",
+      "name": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0043793e",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -57,6 +51,12 @@
       "addr": "00437700",
       "from_addr": "00437757",
       "name": "cockpit_ckptutil.c_blitSpanBasedSprite_FUN_00437700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00437cfc",
+      "from_addr": "00437d3c",
+      "name": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437cfc",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -150,7 +150,7 @@
       {
         "call_addr": "0043799f",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_0043793e",
+        "caller": "cockpit_ckptutil.c_blitSpanBasedSpriteClipped_FUN_0043793e",
         "estimated_params": 4,
         "instructions_analyzed": 9,
         "method": "push_count",
@@ -166,7 +166,7 @@
       {
         "call_addr": "00437bd8",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_00437b8c",
+        "caller": "cockpit_ckptutil.c_blitRectangleClipped_FUN_00437b8c",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",
@@ -177,7 +177,7 @@
       {
         "call_addr": "00437d3c",
         "call_type": "direct",
-        "caller": "cockpit_ckptutil.c_FUN_00437cfc",
+        "caller": "cockpit_ckptutil.c_blitUnifiedSprite_FUN_00437cfc",
         "estimated_params": 0,
         "instructions_analyzed": 1,
         "method": "push_count",

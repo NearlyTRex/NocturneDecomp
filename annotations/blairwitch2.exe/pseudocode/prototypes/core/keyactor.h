@@ -21,29 +21,29 @@ CDemonActorType * CKeyActor::getActorType(CKeyActor *this_ptr);
 // Address: 004df140
 CKeyActor * __cdecl CKeyActor::ctor(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004df1a0
+// Original: core_keyactor.cpp_CKeyActor_setup_FUN_004df1a0
 // Address: 004df1a0
-void FUN_004df1a0(CDemonActor *param_1);
+void __cdecl CKeyActor::setup(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004df1c0
+// Original: core_keyactor.cpp_CKeyActor_process_FUN_004df1c0
 // Address: 004df1c0
-void FUN_004df1c0(int param_1,float param_2);
+void __cdecl CKeyActor::process(CKeyActor *this_ptr,float delta_time);
 
-// Original: core_keyactor.cpp_FUN_004df260
+// Original: core_keyactor.cpp_CKeyActor_renderOpaque_FUN_004df260
 // Address: 004df260
-int FUN_004df260(CDemonActor *param_1);
+int __cdecl CKeyActor::renderOpaque(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004df2e0
+// Original: core_keyactor.cpp_CKeyActor_getBoundingBox_FUN_004df2e0
 // Address: 004df2e0
-void FUN_004df2e0(int param_1);
+CBoundingBox3D * __cdecl CKeyActor::getBoundingBox(CKeyActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_keyactor.cpp_FUN_004df320
+// Original: core_keyactor.cpp_CKeyActor_archive_FUN_004df320
 // Address: 004df320
-void FUN_004df320(CDemonActor *param_1);
+void __cdecl CKeyActor::archive(CKeyActor *this_ptr);
 
-// Original: core_keyactor.cpp_FUN_004df390
+// Original: core_keyactor.cpp_CKeyActor_getCollisionType_FUN_004df390
 // Address: 004df390
-undefined4 FUN_004df390(void);
+ECollisionType __cdecl CKeyActor::getCollisionType(CKeyActor *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_keyactor.cpp_CKeyActor_canPickup_FUN_004df3a0
 // Address: 004df3a0

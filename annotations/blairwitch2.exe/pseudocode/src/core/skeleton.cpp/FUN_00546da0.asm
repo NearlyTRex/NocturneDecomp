@@ -8,10 +8,10 @@
 ;   undefined4 DAT_005e732f
 ;
 ; Called Functions:
+;   core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
-;   core_skeleton.cpp_FUN_005466c0
 ;   core_skeleton.cpp_FUN_005469a0
-;   core_vecdir.cpp_FUN_005838f0
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0
 ;   core_xform.cpp_multiplyQuaternion_FUN_00593c60
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00593fa0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00593fe0
@@ -78,8 +78,8 @@ section .text
     PUSH ESI                            ; 00546e59
     LEA ESI,[ESP + 0xa4]                ; 00546e5a
     LEA EDI,[ESP + 0x8c]                ; 00546e61
-    CALL core_vecdir.cpp_FUN_005838f0   ; 00546e68
-        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005838f0()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0 ; 00546e68
+        ;   XREF to: 005838f0 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005838f0()
     LEA ESI,[ESP + 0xa4]                ; 00546e6d
     ADD ESP,0x4                         ; 00546e74
     MOVSD ES:EDI,ESI                    ; 00546e77
@@ -143,8 +143,8 @@ section .text
     PUSH dword ptr [ESP + 0xec]         ; 00546f16
     PUSH ESI                            ; 00546f1d
     PUSH EBP                            ; 00546f1e
-    CALL core_skeleton.cpp_FUN_005466c0 ; 00546f1f
-        ;   XREF to: 005466c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_005466c0(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
+    CALL core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0 ; 00546f1f
+        ;   XREF to: 005466c0 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_blendBoneRotations_FUN_005466c0(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, float blend_weight, int bone_index, ...)
     ADD ESP,0x14                        ; 00546f24
     POP ESI                             ; 00546f27
     POP EDI                             ; 00546f28

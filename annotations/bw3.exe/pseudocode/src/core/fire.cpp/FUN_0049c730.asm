@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_fire_cpp_FUN_0049c730(undefined4 *param_1,undefined4 *param_2,undefined4 param_3,undefined4 param_4,int param_5)
+; void core_fire_cpp_FUN_0049c730(float *param_1,float *param_2,float param_3,float param_4,float param_5)
 ;
 ; Local Variables:
 ; undefined        Stack[-0x48]:1  local_48
@@ -22,10 +22,10 @@
 ;   CDemonSet g_CDemonSetInstance
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040ce40
-;   core_actor.cpp_FUN_0040cf40
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40
+;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_dmodel.cpp_CKeyFramedModelInstance_getModelPtr_FUN_004625a0
-;   core_fire.cpp_FUN_004a28e0
+;   core_fire.cpp_CFireEffect_createRock_FUN_004a28e0
 ;   core_set.cpp_CDemonSet_initCameraShake_FUN_0053b440
 ;
 ; *****************************************************************************
@@ -63,8 +63,8 @@ section .text
         ;   XREF to: 0053b440 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_initCameraShake_FUN_0053b440(CDemonSet * this_ptr, float peak, float attack, float sustain, ...)
     ADD ESP,0x14                        ; 0049c781
     PUSH 0x3f000000                     ; 0049c784
-    CALL core_actor.cpp_FUN_0040cf40    ; 0049c789
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 0049c789
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 0049c78e
     MOV dword ptr [EBP + 0x18],EAX      ; 0049c791
     MOV EAX,dword ptr [ESP + 0x58]      ; 0049c794
@@ -77,16 +77,16 @@ section .text
     PUSH 0x3fc90fdb                     ; 0049c7a5
         ;   Label: LAB_0049c7a5
     PUSH 0x3f490fdb                     ; 0049c7aa
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049c7af
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049c7af
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x4c],EAX      ; 0049c7b4
     FLD float ptr [ESP + 0x4c]          ; 0049c7b8
     ADD ESP,0x8                         ; 0049c7bc
     PUSH 0x40c90fdb                     ; 0049c7bf
     PUSH 0x0                            ; 0049c7c4
     FSTP float ptr [ESP + 0x40]         ; 0049c7c6
-    CALL core_actor.cpp_FUN_0040ce40    ; 0049c7ca
-        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040ce40()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40 ; 0049c7ca
+        ;   XREF to: 0040ce40 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40(float min_value, float max_value)
     MOV dword ptr [ESP + 0x4c],EAX      ; 0049c7cf
     FLD float ptr [ESP + 0x4c]          ; 0049c7d3
     ADD ESP,0x8                         ; 0049c7d7
@@ -142,8 +142,8 @@ section .text
     MOV ECX,dword ptr [0x005fc5a0]      ; 0049c861 | DAT_005fc5a0
     PUSH ECX                            ; 0049c867
     INC EBX                             ; 0049c868
-    CALL core_fire.cpp_FUN_004a28e0     ; 0049c869
-        ;   XREF to: 004a28e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_FUN_004a28e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
+    CALL core_fire.cpp_CFireEffect_createRock_FUN_004a28e0 ; 0049c869
+        ;   XREF to: 004a28e0 (UNCONDITIONAL_CALL)  ; void core_fire.cpp_CFireEffect_createRock_FUN_004a28e0(CFireEffect * this_ptr, CVector3f * position, CVector3f * velocity, CKeyFramedModel * model_ptr)
     ADD ESP,0x10                        ; 0049c86e
     CMP EBX,0xa                         ; 0049c871
     JL 0x0049c7a5                       ; 0049c874

@@ -8,9 +8,9 @@
 ;   undefined4 DAT_01e650f8
 ;
 ; Called Functions:
-;   core_script.cpp_FUN_00522080
+;   core_script.cpp_CScript_initRuntime_FUN_00522080
 ;   core_script.cpp_FUN_00522350
-;   shape_edittool.cpp_FUN_00483d10
+;   shape_edittool.cpp_CPickList_clear_FUN_00483d10
 ;
 ; *****************************************************************************
 
@@ -28,12 +28,12 @@ section .text
     MOV EDX,0x1                         ; 00522003
     PUSH EBX                            ; 00522008
     MOV dword ptr [0x01e650f8],EDX      ; 00522009 | DAT_01e650f8
-    CALL core_script.cpp_FUN_00522080   ; 0052200f
-        ;   XREF to: 00522080 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00522080(CScript * this_ptr)
+    CALL core_script.cpp_CScript_initRuntime_FUN_00522080 ; 0052200f
+        ;   XREF to: 00522080 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_initRuntime_FUN_00522080(CScript * this_ptr)
     ADD ESP,0x4                         ; 00522014
     PUSH 0x1e65910                      ; 00522017
-    CALL shape_edittool.cpp_FUN_00483d10 ; 0052201c
-        ;   XREF to: 00483d10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00483d10(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00483d10 ; 0052201c
+        ;   XREF to: 00483d10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00483d10(CPickList * this_ptr)
     MOV EAX,dword ptr [EBX + 0x44]      ; 00522021
     MOV ECX,dword ptr [EBX + 0x2c]      ; 00522024
     ADD ESP,0x4                         ; 00522027

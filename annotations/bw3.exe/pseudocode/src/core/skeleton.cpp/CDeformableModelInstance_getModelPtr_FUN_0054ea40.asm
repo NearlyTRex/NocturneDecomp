@@ -8,11 +8,11 @@
 ;
 ; XREF[46]:
 ;   core_actor.cpp_FUN_004091b0 at 0040966c
-;   core_boneguy.cpp_FUN_00417630 at 004177a5
-;   core_boneguy.cpp_FUN_00419550 at 004195a3
+;   core_boneguy.cpp_CBoneGuy_explode_FUN_00419550 at 004195a3
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_00417630 at 004177a5
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00423cd0 at 00423d87
 ;   core_bugs.cpp_FUN_00423050 at 0042335b
-;   core_bugs.cpp_FUN_00423cd0 at 00423d87
-;   core_carved.cpp_FUN_00425ab0 at 00425bc4
+;   core_carved.cpp_CCarved_setup_FUN_00425ab0 at 00425bc4
 ;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_0042e370 at 0042e37f
 ;   core_charactr.cpp_CCharacter_spawnFireOnBone_FUN_0042e4b0 at 0042e689
 ;   core_charactr.cpp_FUN_0042d500 at 0042d536

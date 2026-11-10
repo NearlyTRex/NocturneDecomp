@@ -53,7 +53,7 @@ uint core_fldnotes_cpp_FUN_004a9950(int param_1,int param_2)
   iVar5 = -1;
   local_14 = 0;
   do {
-    if (*(int *)(param_1 + 0x148) <= local_14) {
+    if (((CStrList *)(param_1 + 0x148))->item_count <= local_14) {
       return 1;
     }
     pcVar2 = shape_edittool_cpp_CStrList_getStringAt_FUN_00482440

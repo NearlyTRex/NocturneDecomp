@@ -47,7 +47,7 @@ uint core_fldnotes_cpp_FUN_004a32e0(int param_1,int param_2)
     this_ptr = (CStrList *)(param_1 + 0x148);
     iVar8 = 0;
 LAB_004a3356:
-    if (iVar8 < *(int *)this_ptr) {
+    if (iVar8 < this_ptr->item_count) {
       iVar7 = 0;
       pcVar3 = shape_edittool_cpp_CStrList_getStringAt_FUN_00481240(this_ptr,iVar8);
       cVar1 = *pcVar3;

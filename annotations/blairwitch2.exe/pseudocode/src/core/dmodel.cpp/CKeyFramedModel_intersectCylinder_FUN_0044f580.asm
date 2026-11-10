@@ -19,7 +19,7 @@
 ;   undefined4 DAT_01d046a4
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_0044f840
+;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840
 ;   core_dtri.cpp_cylinderTriangleTest_FUN_00477fe0
 ;   core_main.c_FUN_004e4500
 ;
@@ -56,8 +56,8 @@ section .text
     PUSH EDX                            ; 0044f5bc
         ;   Label: LAB_0044f5bc
     PUSH EDI                            ; 0044f5bd
-    CALL core_dmodel.cpp_FUN_0044f840   ; 0044f5be
-        ;   XREF to: 0044f840 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_0044f840()
+    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840 ; 0044f5be
+        ;   XREF to: 0044f840 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_0044f840(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 0044f5c3
     CMP dword ptr [EDI + 0x358],0x0     ; 0044f5c6
         ;   Label: LAB_0044f5c6

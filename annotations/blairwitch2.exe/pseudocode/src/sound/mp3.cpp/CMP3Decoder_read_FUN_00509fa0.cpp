@@ -14,7 +14,7 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0(CMP3Decoder *this_ptr,sh
   uint uVar3;
   uint uVar4;
   CMP3Decoder *pCVar5;
-  uint *puVar6;
+  short *psVar6;
   char *pcVar7;
   short *psVar8;
   byte bVar9;
@@ -24,40 +24,39 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0(CMP3Decoder *this_ptr,sh
   pcVar7 = &DAT_01d23558;
   pCVar5 = this_ptr;
   do {
-    cVar1 = *(char *)pCVar5;
+    cVar1 = pCVar5->filename[0];
     *pcVar7 = cVar1;
     if (cVar1 == '\0') break;
-    cVar1 = pCVar5->field_0x1;
-    pCVar5 = (CMP3Decoder *)&pCVar5->field_0x2;
+    cVar1 = pCVar5->filename[1];
+    pCVar5 = (CMP3Decoder *)(pCVar5->filename + 2);
     pcVar7[1] = cVar1;
     pcVar7 = pcVar7 + 2;
   } while (cVar1 != '\0');
   local_14 = 0;
   while( true ) {
-    iVar2 = *(int *)&this_ptr->field_0x108;
+    iVar2 = this_ptr->available_samples;
     if (0 < iVar2) {
       if (samples_requested < iVar2) {
         iVar2 = samples_requested;
       }
-      uVar3 = *(int *)&this_ptr->field_0x104 * iVar2;
-      puVar6 = *(uint **)&this_ptr->field_0x10c;
+      uVar3 = this_ptr->num_channels * iVar2;
+      psVar6 = this_ptr->decode_buffer_pos;
       psVar8 = output_buffer;
       for (uVar4 = (uVar3 & 0x7fffffff) >> 1; uVar4 != 0; uVar4 = uVar4 - 1) {
-        *(uint *)psVar8 = *puVar6;
-        puVar6 = puVar6 + (uint)bVar9 * -2 + 1;
+        *(uint *)psVar8 = *(uint *)psVar6;
+        psVar6 = psVar6 + (uint)bVar9 * -4 + 2;
         psVar8 = psVar8 + (uint)bVar9 * -4 + 2;
       }
       for (uVar3 = (byte)((char)uVar3 * '\x02') & 0xffffff03; uVar3 != 0; uVar3 = uVar3 - 1) {
-        *(byte *)psVar8 = *(byte *)puVar6;
-        puVar6 = (uint *)((int)puVar6 + (uint)bVar9 * -2 + 1);
+        *(char *)psVar8 = (char)*psVar6;
+        psVar6 = (short *)((int)psVar6 + (uint)bVar9 * -2 + 1);
         psVar8 = (short *)((int)psVar8 + (uint)bVar9 * -2 + 1);
       }
-      *(int *)&this_ptr->field_0x108 = *(int *)&this_ptr->field_0x108 - iVar2;
+      this_ptr->available_samples = this_ptr->available_samples - iVar2;
       local_14 = local_14 + iVar2;
       samples_requested = samples_requested - iVar2;
-      *(int *)&this_ptr->field_0x10c =
-           *(int *)&this_ptr->field_0x10c + *(int *)&this_ptr->field_0x104 * iVar2 * 2;
-      output_buffer = output_buffer + *(int *)&this_ptr->field_0x104 * iVar2;
+      this_ptr->decode_buffer_pos = this_ptr->decode_buffer_pos + this_ptr->num_channels * iVar2;
+      output_buffer = output_buffer + this_ptr->num_channels * iVar2;
     }
     for (; 0x47f < samples_requested; samples_requested = samples_requested - iVar2) {
       iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_0050a280(this_ptr,output_buffer);
@@ -65,16 +64,15 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_read_FUN_00509fa0(CMP3Decoder *this_ptr,sh
         return local_14;
       }
       local_14 = local_14 + iVar2;
-      output_buffer = output_buffer + *(int *)&this_ptr->field_0x104 * iVar2;
+      output_buffer = output_buffer + this_ptr->num_channels * iVar2;
     }
     if (samples_requested < 1) break;
-    iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_0050a280
-                      (this_ptr,(short *)&this_ptr->field_0x110);
-    *(int *)&this_ptr->field_0x108 = iVar2;
+    iVar2 = sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_0050a280(this_ptr,this_ptr->decode_buffer);
+    this_ptr->available_samples = iVar2;
     if (iVar2 < 1) {
       return local_14;
     }
-    *(byte **)&this_ptr->field_0x10c = &this_ptr->field_0x110;
+    this_ptr->decode_buffer_pos = this_ptr->decode_buffer;
   }
   return local_14;
 }

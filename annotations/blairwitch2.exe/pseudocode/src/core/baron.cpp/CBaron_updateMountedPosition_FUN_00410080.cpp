@@ -11,7 +11,7 @@
 void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410080(CBaron *this_ptr,float delta_time)
 
 {
-  int iVar1;
+  CDemonActor *pCVar1;
   int iVar2;
   byte bVar3;
   float afStackY_1038 [1015];
@@ -31,39 +31,37 @@ void __cdecl core_baron_cpp_CBaron_updateMountedPosition_FUN_00410080(CBaron *th
   int local_14;
   
   bVar3 = 0;
-  if (*(int *)&this_ptr->field_0x25718 != 0) {
+  if (this_ptr->target_actor != (CDemonActor *)0x0) {
     local_14 = *(int *)&this_ptr->field_0x2b0;
     local_38 = 0;
     local_34 = 0;
     local_30 = 0xc0000000;
     core_actor_cpp_FUN_00408cf0
-              (*(uint *)&this_ptr->field_0x25718,&stack0xffffffc8,
-               *(int *)&this_ptr->field_0x25718 + 0x30);
+              (this_ptr->target_actor,&stack0xffffffc8,&this_ptr->target_actor->orient);
     local_2c = local_44;
     (&stack0xffffffd8)[(uint)bVar3 * 0xfffffffe] =
          (float)*(uint *)(&stack0xffffffc0 + (uint)bVar3 * -8);
-    iVar1 = local_14;
+    iVar2 = local_14;
     *(uint *)((int)&stack0xffffffdc + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)(&stack0xffffffc4 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    iVar2 = *(int *)&this_ptr->field_0x25718;
+    pCVar1 = this_ptr->target_actor;
     pfVar5 = &stack0xffffffe0;
-    local_50 = *(float *)(iVar2 + 0x20) + local_2c;
-    local_4c = *(float *)(iVar2 + 0x24) + local_28;
-    local_48 = *(float *)(iVar2 + 0x28) + local_24;
+    local_50 = *(float *)&pCVar1->field_0x20 + local_2c;
+    local_4c = *(float *)&pCVar1->field_0x24 + local_28;
+    local_48 = *(float *)&pCVar1->field_0x28 + local_24;
     local_20 = local_50;
     *(uint *)((int)&stack0xffffffe4 + (uint)bVar3 * 0xfffffffe * 4) =
          *(uint *)((int)&stack0xffffffb4 + (uint)bVar3 * -8);
     pCVar4 = this_ptr;
     *(uint *)(&stack0xffffffe8 + (uint)bVar3 * -8 + (uint)bVar3 * -8) =
          *(uint *)((int)&stack0xffffffb8 + (uint)bVar3 * -8 + (uint)bVar3 * -8);
-    (**(code **)(iVar1 + 0x70))(pCVar4,pfVar5);
+    (**(code **)(iVar2 + 0x70))(pCVar4,pfVar5);
     iVar2 = core_actor_cpp_castToClassHash_FUN_0040c8f0
-                      (*(uint *)&this_ptr->field_0x25718,g_CCharacterClassInfo.name_hash);
+                      (this_ptr->target_actor,g_CCharacterClassInfo.name_hash);
     if (iVar2 != 0) {
       iVar2 = (**(code **)(*(int *)(iVar2 + 0x2b0) + 0x114))(iVar2);
       if (iVar2 == 2) {
-        core_baron_cpp_CBaron_detachFromOwner_FUN_00410040
-                  (this_ptr,*(CDemonActor **)&this_ptr->field_0x25718);
+        core_baron_cpp_CBaron_detachFromOwner_FUN_00410040(this_ptr,this_ptr->target_actor);
         return;
       }
     }

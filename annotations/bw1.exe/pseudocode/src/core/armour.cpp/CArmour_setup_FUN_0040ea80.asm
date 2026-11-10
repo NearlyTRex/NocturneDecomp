@@ -8,7 +8,7 @@
 ;
 ; Called Functions:
 ;   core_enemy.cpp_CEnemy_setup_FUN_004a0510
-;   core_skeleton.cpp_FUN_00569b20
+;   core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20
 ;
 ; *****************************************************************************
 
@@ -23,8 +23,8 @@ section .text
     MOV EAX,dword ptr [ESP + 0x4]       ; 0040ea8d
     ADD EAX,0x158                       ; 0040ea91
     PUSH EAX                            ; 0040ea96
-    CALL core_skeleton.cpp_FUN_00569b20 ; 0040ea97
-        ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_00569b20(CDeformableModelInstance * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20 ; 0040ea97
+        ;   XREF to: 00569b20 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_preCache_FUN_00569b20(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 0040ea9c
     RET                                 ; 0040ea9f
 

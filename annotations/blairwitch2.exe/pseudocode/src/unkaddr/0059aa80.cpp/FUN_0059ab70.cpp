@@ -17,6 +17,6 @@ void unkaddr_0059aa80_cpp_FUN_0059ab70(int *param_1,int *param_2)
     _DAT_026677e8 = _DAT_01c2a384;
   }
   (**(code **)(*param_1 + 0x14))(param_1,param_2);
-  core_game_cpp_FUN_004b8250(g_CGamePtr);
+  core_game_cpp_CGame_resetInputAndCenterCursor_FUN_004b8250(g_CGamePtr);
   return;
 }

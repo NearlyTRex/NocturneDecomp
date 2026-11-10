@@ -44,8 +44,8 @@
 ;   core_main.c_FUN_005030e0
 ;   crt_math.c_round_FUN_005c03a0
 ;   crt_memory.c_memset_FUN_005bfb70
-;   crt_unknown.c_FUN_005bfb40
 ;   crt_unknown.c_FUN_005c08d0
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_dosio.cpp_changeFileExtension_FUN_004796b0
 ;   engine_dosio.cpp_findFile_FUN_00478e90
 ;   engine_dosio.cpp_FUN_00478e20
@@ -260,8 +260,8 @@ section .text
     PUSH 0x5f79fb                       ; 005969da | = "CTextureCache::load - Bad texture len..."
     LEA EAX,[ESP + 0x10c]               ; 005969df
     PUSH EAX                            ; 005969e6
-    CALL crt_unknown.c_FUN_005bfb40     ; 005969e7
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 005969e7
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5f7a2c                    ; 005969ec | = "..\\engine\\texture.cpp"
     ADD ESP,0x10                        ; 005969f1
     MOV [0x01d1d400],EAX                ; 005969f4 | DAT_01d1d400
@@ -611,8 +611,8 @@ section .text
     PUSH 0x5f7ac2                       ; 00596e21 | = "CTextureCache::load - Bad texture len..."
     LEA EAX,[ESP + 0x10c]               ; 00596e26
     PUSH EAX                            ; 00596e2d
-    CALL crt_unknown.c_FUN_005bfb40     ; 00596e2e
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 00596e2e
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     MOV EAX,0x5f7af3                    ; 00596e33 | = "..\\engine\\texture.cpp"
     ADD ESP,0x10                        ; 00596e38
     MOV [0x01d1d400],EAX                ; 00596e3b | DAT_01d1d400

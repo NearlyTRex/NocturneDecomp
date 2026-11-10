@@ -32,8 +32,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
+;   core_confedrt.cpp_CConfederate_processMotionEvent_FUN_005a1350 at 005a136d
 ;   core_confedrt.cpp_FUN_005a1030 at 005a10ef
-;   core_confedrt.cpp_FUN_005a1350 at 005a136d
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_shotgun_wav_005efd2c
@@ -45,12 +45,12 @@
 ;   undefined4 DAT_0061c068
 ;   undefined4 g_CCharacterClassInfo.name_hash
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364240_0x14d110
-;   undefined4 g_CDemonSetInstance.field1364244_0x14d114
-;   undefined4 g_CDemonSetInstance.field1364248_0x14d118
-;   undefined4 g_CDemonSetInstance.field1364252_0x14d11c
-;   undefined4 g_CDemonSetInstance.field1364256_0x14d120
-;   undefined4 g_CDemonSetInstance.field1364260_0x14d124
+;   undefined4 g_CDemonSetInstance.ray_origin.x
+;   undefined4 g_CDemonSetInstance.ray_origin.y
+;   undefined4 g_CDemonSetInstance.ray_origin.z
+;   undefined4 g_CDemonSetInstance.ray_target.x
+;   undefined4 g_CDemonSetInstance.ray_target.y
+;   undefined4 g_CDemonSetInstance.ray_target.z
 ;   ... and 2 more
 ;
 ; Called Functions:
@@ -320,7 +320,7 @@ section .text
     MOV ECX,dword ptr [0x007bdc94]      ; 005a1852 | g_CCharacterClassInfo.name_hash
     MOV EAX,[0x0061b5a8]                ; 005a1858 | g_CDemonSetPtr
     PUSH ECX                            ; 005a185d
-    MOV ESI,dword ptr [EAX + 0x14d144]  ; 005a185e | g_CDemonSetInstance.field1364292_0x14d144
+    MOV ESI,dword ptr [EAX + 0x14d144]  ; 005a185e | g_CDemonSetInstance.collision_actor
     PUSH ESI                            ; 005a1864
     CALL core_actor.cpp_castToClassHash_FUN_0040c8f0 ; 005a1865
         ;   XREF to: 0040c8f0 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c8f0()
@@ -376,15 +376,15 @@ section .text
     LEA EDX,[EAX + 0x14d11c]            ; 005a18e4
     LEA EDI,[ESP + 0xec]                ; 005a18ea
     LEA ESI,[ESP + 0x5c]                ; 005a18f1
-    FLD float ptr [EDX]                 ; 005a18f5 | g_CDemonSetInstance.field1364252_0x14d11c
-    FLD float ptr [EDX + 0x4]           ; 005a18f7 | g_CDemonSetInstance.field1364256_0x14d120
-    FLD float ptr [EDX + 0x8]           ; 005a18fa | g_CDemonSetInstance.field1364260_0x14d124
+    FLD float ptr [EDX]                 ; 005a18f5 | g_CDemonSetInstance.ray_target.x
+    FLD float ptr [EDX + 0x4]           ; 005a18f7 | g_CDemonSetInstance.ray_target.y
+    FLD float ptr [EDX + 0x8]           ; 005a18fa | g_CDemonSetInstance.ray_target.z
     FXCH ST2                            ; 005a18fd
-    FSUB float ptr [EAX + 0x14d110]     ; 005a18ff | g_CDemonSetInstance.field1364240_0x14d110
+    FSUB float ptr [EAX + 0x14d110]     ; 005a18ff | g_CDemonSetInstance.ray_origin.x
     FXCH                                ; 005a1905
-    FSUB float ptr [EAX + 0x14d114]     ; 005a1907 | g_CDemonSetInstance.field1364244_0x14d114
+    FSUB float ptr [EAX + 0x14d114]     ; 005a1907 | g_CDemonSetInstance.ray_origin.y
     FXCH ST2                            ; 005a190d
-    FSUB float ptr [EAX + 0x14d118]     ; 005a190f | g_CDemonSetInstance.field1364248_0x14d118
+    FSUB float ptr [EAX + 0x14d118]     ; 005a190f | g_CDemonSetInstance.ray_origin.z
     FXCH                                ; 005a1915
     FSTP float ptr [ESP + 0x5c]         ; 005a1917
     FXCH                                ; 005a191b

@@ -1,0 +1,307 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 161,
+    "complexity_score": 141,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 13,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 46,
+    "suspect_count": 9,
+    "suspect_types": [
+      "undefined_data"
+    ],
+    "total_lines": 207
+  },
+  "cross_references": [
+    {
+      "addr": "004eab00",
+      "from_addr": "004ead66",
+      "name": "core_hero.cpp_CHero_archive_FUN_004eab00",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004f95b0",
+    "address_range": [
+      [
+        "004f95b0",
+        "004f9748"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_inv.cpp_CInventory_save_FUN_004f95b0",
+    "signature": "void __cdecl core_inv_cpp_CInventory_save_FUN_004f95b0(CInventory *this_ptr,_FILE *file_handle)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ad60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_adjustIndentationLevel_FUN_0040ad60"
+    },
+    {
+      "addr": "0040adb0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_CDemonActor_save_FUN_0040adb0"
+    },
+    {
+      "addr": "004f9750",
+      "is_variadic": false,
+      "name": "core_inv.cpp_CInventory_saveItems_FUN_004f9750"
+    },
+    {
+      "addr": "005c03c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_FUN_005c03c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005e65dc",
+      "name": "s_s_Inventory_005e65dc",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e65ee",
+      "name": "s_s_fileVersion_005e65ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6600",
+      "name": "s_s_d_005e6600",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6606",
+      "name": "s_s_itemCount_005e6606",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6616",
+      "name": "s_s_d_005e6616",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e661c",
+      "name": "s_s_currentWeapon_005e661c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6630",
+      "name": "s_s_d_005e6630",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6636",
+      "name": "s_s_battery_strength_005e6636",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e664d",
+      "name": "s_s_f_005e664d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6653",
+      "name": "s_s_actor_name_list_005e6653",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e6669",
+      "name": "s_s_actor_data_list_005e6669",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005e667f",
+      "name": "s_s_End_inventory_005e667f",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "006106c0",
+      "name": "DAT_006106c0",
+      "type": "undefined1",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ead66",
+        "call_type": "direct",
+        "caller": "core_hero.cpp_CHero_archive_FUN_004eab00",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.360902255639098,
+    "instruction_count": 133,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 1,
+      "CALL": 16,
+      "CBRANCH": 5,
+      "COPY": 111,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 42,
+      "INT_AND": 62,
+      "INT_CARRY": 19,
+      "INT_EQUAL": 60,
+      "INT_LESS": 5,
+      "INT_NOTEQUAL": 4,
+      "INT_SBORROW": 5,
+      "INT_SCARRY": 21,
+      "INT_SLESS": 30,
+      "INT_SUB": 70,
+      "INT_XOR": 2,
+      "LOAD": 21,
+      "POPCOUNT": 30,
+      "RETURN": 1,
+      "STORE": 70
+    },
+    "pcode_op_count": 580
+  },
+  "stack_frame": {
+    "frame_size": 44,
+    "local_size": 36,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 8,
+        "type": "undefined8"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CInventory *"
+      },
+      {
+        "is_param": true,
+        "name": "file_handle",
+        "offset": 8,
+        "size": 4,
+        "type": "_FILE *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Undefined global data reference",
+      "line": 12,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s// fileVersion\\n\",&DAT_006106c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 14,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "(file_handle,\"%s%d\\n\",&DAT_006106c0,*(uint *)(this_ptr + 0x334));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 15,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s// itemCount\\n\",&DAT_006106c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 17,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "(file_handle,\"%s%d\\n\",&DAT_006106c0,*(uint *)(this_ptr + 0x10));",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 30,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s// currentWeapon\\n\",&DAT_006106c0,iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 31,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s%d\\n\",&DAT_006106c0,iVar3);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 32,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s// battery strength\\n\",&DAT_006106c0);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 33,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s%f\\n\",&DAT_006106c0,(double)*(float *)this_ptr);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 47,
+      "match": "DAT_006106c0",
+      "severity": "mild",
+      "text": "FUN_005c03c0(file_handle,\"%s} // End inventory\\n\",&DAT_006106c0);",
+      "type": "undefined_data"
+    }
+  ]
+}

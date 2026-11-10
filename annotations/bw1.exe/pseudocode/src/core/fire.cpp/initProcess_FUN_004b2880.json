@@ -2,17 +2,16 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 92,
-    "complexity_score": 165,
+    "complexity_score": 120,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 12,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 40,
-    "suspect_count": 10,
+    "suspect_count": 6,
     "suspect_types": [
-      "suspicious_cast",
+      "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
@@ -22,7 +21,7 @@
     {
       "addr": "004b4dd0",
       "from_addr": "004b502d",
-      "name": "core_fire.cpp_FUN_004b4dd0",
+      "name": "core_fire.cpp_CFireEffect_process_FUN_004b4dd0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -118,13 +117,13 @@
     },
     {
       "addr": "01fcf2cc",
-      "name": "g_CDemonSetInstance.field1364324_0x14d164",
+      "name": "g_CDemonSetInstance.actor_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fd1210",
-      "name": "g_CDemonSetInstance.field1372328_0x14f0a8",
+      "name": "g_CDemonSetInstance.character_count",
       "type": "undefined4",
       "value": null
     }
@@ -176,20 +175,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x14f0a8",
-      "severity": "mild",
-      "text": "for (iVar4 = 0; iVar4 < *(int *)&g_CDemonSetPtr->field_0x14f0a8; iVar4 = iVar4 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 15,
-      "match": "field_0x14f0ac",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&g_CDemonSetPtr->field_0x14f0ac + iVar3);",
-      "type": "unnamed_field"
+      "match": "(int *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "iVar2 = *(int *)((int)g_CDemonSetPtr->characters + iVar3);",
+      "type": "pointer_cast"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
@@ -208,20 +199,12 @@
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x14d164",
-      "severity": "mild",
-      "text": "for (iVar3 = 0; iVar3 < *(int *)&g_CDemonSetPtr->field_0x14d164; iVar3 = iVar3 + 1) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Complex pointer cast",
       "line": 35,
-      "match": "field_0x14d168",
-      "severity": "mild",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar4),",
-      "type": "unnamed_field"
+      "match": "(uint *)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "(*(uint *)((int)g_CDemonSetPtr->actors + iVar4),",
+      "type": "pointer_cast"
     },
     {
       "description": "Undefined global data reference",
@@ -230,22 +213,6 @@
       "severity": "mild",
       "text": "*(int *)(&DAT_01c58838 + _DAT_01c58834 * 4) = iVar2;",
       "type": "undefined_data"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 15,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "iVar2 = *(int *)(&g_CDemonSetPtr->field_0x14f0ac + iVar3);",
-      "type": "suspicious_cast"
-    },
-    {
-      "description": "Cast-and-add on &g_CDemonSetPtr \u2014 Watcom base-shift: the real target is likely the array following this scalar in memory. Likely true target: DAT_00622c28 (at 0x00622c28, +16 bytes).",
-      "line": 35,
-      "match": "g_CDemonSetPtr",
-      "severity": "moderate",
-      "text": "(*(uint *)(&g_CDemonSetPtr->field_0x14d168 + iVar4),",
-      "type": "suspicious_cast"
     }
   ]
 }

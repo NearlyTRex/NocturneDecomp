@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   unkafter_demnfolk.cpp_FUN_00458950 at 004589f3
+;   core_hostage.cpp_CDemnfolk_processDamage_FUN_00458950 at 004589f3
 ;
 ; *****************************************************************************
 

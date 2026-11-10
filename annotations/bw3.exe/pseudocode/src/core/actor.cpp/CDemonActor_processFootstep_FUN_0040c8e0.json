@@ -1,0 +1,226 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 76,
+    "complexity_score": 37,
+    "cross_reference_count": 0,
+    "function_call_count": 3,
+    "global_count": 7,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 22,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 98
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0040c8e0",
+    "address_range": [
+      [
+        "0040c8e0",
+        "0040c98d"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_actor.cpp_CDemonActor_processFootstep_FUN_0040c8e0",
+    "signature": "uint __cdecl core_actor_cpp_CDemonActor_processFootstep_FUN_0040c8e0(CDemonActor *this_ptr,float volume)"
+  },
+  "function_calls": [
+    {
+      "addr": "0053ec10",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_ignore_FUN_0053ec10"
+    },
+    {
+      "addr": "0053ebe0",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_CDemonSet_init_FUN_0053ebe0"
+    },
+    {
+      "addr": "0053bc80",
+      "is_variadic": false,
+      "name": "core_setcolid.cpp_FUN_0053bc80"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b5e85",
+      "name": "DAT_005b5e85",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "00603b28",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01ed78c8"
+    },
+    {
+      "addr": "01ed78c8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "020249fc",
+      "name": "g_CDemonSetInstance.ground_type",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02038f50",
+      "name": "g_CDemonCameraInstance.base.position",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02038f54",
+      "name": "g_CDemonCameraInstance.base.position+4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "02038f58",
+      "name": "g_CDemonCameraInstance.base.position+8",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.557142857142857,
+    "instruction_count": 70,
+    "opcode_distribution": {
+      "BOOL_OR": 2,
+      "CALL": 3,
+      "CALLIND": 1,
+      "CBRANCH": 1,
+      "COPY": 129,
+      "FLOAT2FLOAT": 7,
+      "FLOAT_ADD": 2,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 3,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 40,
+      "INT_AND": 21,
+      "INT_CARRY": 6,
+      "INT_EQUAL": 16,
+      "INT_LEFT": 4,
+      "INT_LESS": 1,
+      "INT_MULT": 12,
+      "INT_NOTEQUAL": 5,
+      "INT_OR": 5,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 6,
+      "INT_SLESS": 8,
+      "INT_SUB": 31,
+      "INT_XOR": 1,
+      "INT_ZEXT": 16,
+      "LOAD": 27,
+      "POPCOUNT": 8,
+      "RETURN": 2,
+      "STORE": 24
+    },
+    "pcode_op_count": 389
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "volume",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 2,
+    "pattern_types": [
+      "alt_frame_pointer"
+    ],
+    "patterns": [
+      {
+        "address": "0040c8eb",
+        "description": "Alternative frame pointer (EDI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV EDI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      },
+      {
+        "address": "0040c8f9",
+        "description": "Alternative frame pointer (ESI = ESP)",
+        "impact": "Using non-standard register as frame pointer. Ghidra may not track stack accesses through this register correctly.",
+        "instruction": "MOV ESI,ESP",
+        "pattern_id": "alt_frame_pointer"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CConstruct",
+        "offset": 32,
+        "vtable_addr": "005dd704"
+      },
+      {
+        "class_name": "CActorDestination",
+        "offset": 32,
+        "vtable_addr": "005de204"
+      },
+      {
+        "class_name": "CWeapon",
+        "offset": 32,
+        "vtable_addr": "005df104"
+      },
+      {
+        "class_name": "CGoggles",
+        "offset": 32,
+        "vtable_addr": "005e0d04"
+      },
+      {
+        "class_name": "CHotDemon",
+        "offset": 32,
+        "vtable_addr": "005e1d04"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 135
+  }
+}

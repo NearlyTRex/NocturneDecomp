@@ -23,10 +23,10 @@
 ; XREF[6]:
 ;   core_dmodel.cpp_FUN_00467c00 at 00467e2a
 ;   core_dtri.cpp_FUN_00490a40 at 00490c63
-;   core_manpuz.cpp_FUN_00504580 at 00504633
+;   core_manpuz.cpp_CMansionPuzzleCircle_customRayIntersect_FUN_00504580 at 00504633
 ;   core_skeleton.cpp_FUN_005660c0 at 00566238
-;   core_stairs.cpp_FUN_00584b00 at 00584b4b
-;   core_wateract.cpp_FUN_005ab530 at 005ab623
+;   core_stairs.cpp_CStairs_customRayIntersect_FUN_00584b00 at 00584b4b
+;   core_wateract.cpp_CWaterActor_customRayIntersect_FUN_005ab530 at 005ab623
 ;
 ; *****************************************************************************
 

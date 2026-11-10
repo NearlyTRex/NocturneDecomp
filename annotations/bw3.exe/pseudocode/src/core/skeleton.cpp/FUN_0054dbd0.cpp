@@ -11,7 +11,7 @@
 void core_skeleton_cpp_FUN_0054dbd0(CDeformableModelInstance *param_1,int param_2)
 
 {
-  float *pfVar1;
+  CVector3f *pCVar1;
   CSkeleton *pCVar2;
   int iVar3;
   uint *unaff_ESI;
@@ -33,15 +33,15 @@ void core_skeleton_cpp_FUN_0054dbd0(CDeformableModelInstance *param_1,int param_
   }
   else {
     pCVar2 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(param_1);
-    pfVar1 = (float *)(&param_1->field_0x58 + param_2 * 0xc);
-    if (*(int *)(&pCVar2->field_0x1de9c + param_2 * 0x24) < 0) {
-      local_30 = *pfVar1 + *(float *)&param_1->field_0x6a4;
-      local_2c = pfVar1[1] + *(float *)&param_1->field_0x6a8;
+    pCVar1 = param_1->bone_origins + param_2;
+    if (*(int *)(pCVar2->bone_list + param_2 * 0x24 + 0x20) < 0) {
+      local_30 = pCVar1->x + *(float *)&param_1->field_0x6a4;
+      local_2c = pCVar1->y + *(float *)&param_1->field_0x6a8;
       puVar4 = &local_30;
-      local_28 = pfVar1[2] + *(float *)&param_1->field_0x6ac;
+      local_28 = pCVar1->z + *(float *)&param_1->field_0x6ac;
     }
     else {
-      core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(&pCVar2->field_0x1de9c + param_2 * 0x24));
+      core_skeleton_cpp_FUN_0054d9c0(param_1,*(int *)(pCVar2->bone_list + param_2 * 0x24 + 0x20));
       puVar4 = (uint *)&stack0xffffff70;
       puVar5 = local_60;
       for (iVar3 = 0xc; iVar3 != 0; iVar3 = iVar3 + -1) {
@@ -49,7 +49,7 @@ void core_skeleton_cpp_FUN_0054dbd0(CDeformableModelInstance *param_1,int param_
         puVar4 = puVar4 + (uint)bVar6 * -2 + 1;
         puVar5 = puVar5 + (uint)bVar6 * -2 + 1;
       }
-      core_xform_cpp_FUN_00583260(pfVar1,local_60);
+      core_xform_cpp_FUN_00583260(pCVar1,local_60);
       puVar4 = local_24;
     }
   }

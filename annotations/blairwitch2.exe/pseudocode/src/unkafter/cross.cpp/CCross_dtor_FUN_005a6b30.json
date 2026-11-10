@@ -52,9 +52,9 @@
   "globals": [
     {
       "addr": "005ffe84",
-      "name": "PTR_LAB_005ffe84",
-      "type": "void*",
-      "value": "005a6cb0"
+      "name": "g_CCrossVTable",
+      "type": "CWeapon_full_vtable",
+      "value": null
     },
     {
       "addr": "006000a0",
@@ -123,7 +123,7 @@
       "line": 15,
       "match": "field_0x2b0",
       "severity": "mild",
-      "text": "*(byte ***)&this_ptr->field_0x2b0 = &PTR_LAB_005ffe84;",
+      "text": "*(CWeapon_full_vtable **)&this_ptr->field_0x2b0 = &g_CCrossVTable;",
       "type": "unnamed_field"
     }
   ],
@@ -131,8 +131,8 @@
     "entries": [
       {
         "class_name": "Unknown",
-        "offset": 208,
-        "vtable_addr": "005ffe8c"
+        "offset": 216,
+        "vtable_addr": "005ffe84"
       },
       {
         "class_name": "CCross",

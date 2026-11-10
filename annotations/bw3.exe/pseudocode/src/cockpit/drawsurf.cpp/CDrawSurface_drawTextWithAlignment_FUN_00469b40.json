@@ -1,0 +1,467 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 307,
+    "complexity_score": 117,
+    "cross_reference_count": 8,
+    "function_call_count": 15,
+    "global_count": 9,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 102,
+    "suspect_count": 1,
+    "suspect_types": [
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 409
+  },
+  "cross_references": [
+    {
+      "addr": "0046a150",
+      "from_addr": "0046a16c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_0046a150",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046a3e0",
+      "from_addr": "0046a404",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0046a3e0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046a300",
+      "from_addr": "0046a320",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_0046a300",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046a220",
+      "from_addr": "0046a240",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0046a220",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469fb0",
+      "from_addr": "00469fcc",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00469fb0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0046a080",
+      "from_addr": "0046a09c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0046a080",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469ee0",
+      "from_addr": "00469efc",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_00469ee0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00469e10",
+      "from_addr": "00469e2c",
+      "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_00469e10",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "00469b40",
+    "address_range": [
+      [
+        "00469b40",
+        "00469e05"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40",
+    "signature": "void __cdecl cockpit_drawsurf_cpp_CDrawSurface_drawTextWithAlignment_FUN_00469b40(CDrawSurface *this_ptr,char *text,int x,int width,int y,int height,ETextAlignment alignment_mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "00402600",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextCenteredAtColor_FUN_00402600"
+    },
+    {
+      "addr": "004026d0",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextCenteredColor_FUN_004026d0"
+    },
+    {
+      "addr": "00402440",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextColor_FUN_00402440"
+    },
+    {
+      "addr": "00402540",
+      "is_variadic": false,
+      "name": "engine_2d.c_drawTextRightAlignedColor_FUN_00402540"
+    },
+    {
+      "addr": "00402800",
+      "is_variadic": false,
+      "name": "engine_2d.c_FUN_00402800"
+    },
+    {
+      "addr": "00402810",
+      "is_variadic": false,
+      "name": "engine_2d.c_FUN_00402810"
+    },
+    {
+      "addr": "00402830",
+      "is_variadic": false,
+      "name": "engine_2d.c_FUN_00402830"
+    },
+    {
+      "addr": "00402840",
+      "is_variadic": false,
+      "name": "engine_2d.c_FUN_00402840"
+    },
+    {
+      "addr": "00402850",
+      "is_variadic": false,
+      "name": "engine_2d.c_FUN_00402850"
+    },
+    {
+      "addr": "004b0ea0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenter_FUN_004b0ea0"
+    },
+    {
+      "addr": "004b0fa0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextCenterInBounds_FUN_004b0fa0"
+    },
+    {
+      "addr": "004b0da0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextRight_FUN_004b0da0"
+    },
+    {
+      "addr": "004b0cb0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_CBitFont_drawTextWrapper_FUN_004b0cb0"
+    },
+    {
+      "addr": "004b12e0",
+      "is_variadic": false,
+      "name": "engine_font.cpp_getDefaultTextColor_FUN_004b12e0"
+    },
+    {
+      "addr": "004b1300",
+      "is_variadic": false,
+      "name": "engine_font.cpp_setDefaultTextColor_FUN_004b1300"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "00469af4",
+      "name": "switchdataD_00469af4",
+      "type": "void*",
+      "value": "00469bfd"
+    },
+    {
+      "addr": "00469b14",
+      "name": "switchdataD_00469b14",
+      "type": "void*",
+      "value": "00469d56"
+    },
+    {
+      "addr": "01bdd7bc",
+      "name": "DAT_01bdd7bc",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7c0",
+      "name": "DAT_01bdd7c0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01bdd7c4",
+      "name": "DAT_01bdd7c4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5a8",
+      "name": "DAT_01c6b5a8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5ac",
+      "name": "DAT_01c6b5ac",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b0",
+      "name": "DAT_01c6b5b0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01c6b5b4",
+      "name": "DAT_01c6b5b4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 8,
+    "call_sites": [
+      {
+        "call_addr": "00469e2c",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_00469e10",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0046a404",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInAreaWithWidth_FUN_0046a3e0",
+        "estimated_params": 7,
+        "instructions_analyzed": 17,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00469efc",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVariant_FUN_00469ee0",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "00469fcc",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCentered_FUN_00469fb0",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0046a09c",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedVCentered_FUN_0046a080",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0046a16c",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredBoth_FUN_0046a150",
+        "estimated_params": 7,
+        "instructions_analyzed": 13,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0046a240",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInBounds_FUN_0046a220",
+        "estimated_params": 7,
+        "instructions_analyzed": 15,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      },
+      {
+        "call_addr": "0046a320",
+        "call_type": "direct",
+        "caller": "cockpit_drawsurf.cpp_CDrawSurface_drawTextCenteredInArea_FUN_0046a300",
+        "estimated_params": 7,
+        "instructions_analyzed": 15,
+        "method": "push_count",
+        "reg_params": [],
+        "stack_bytes": 28,
+        "stack_params": 7
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 7,
+    "declared_stack_bytes": 28,
+    "estimated_params": 7,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.590909090909091,
+    "instruction_count": 242,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 37,
+      "BOOL_OR": 2,
+      "BRANCH": 14,
+      "BRANCHIND": 2,
+      "CALL": 21,
+      "CBRANCH": 3,
+      "COPY": 175,
+      "INT_ADD": 70,
+      "INT_AND": 178,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 101,
+      "INT_LEFT": 2,
+      "INT_LESS": 15,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 26,
+      "INT_OR": 29,
+      "INT_SBORROW": 15,
+      "INT_SCARRY": 18,
+      "INT_SLESS": 49,
+      "INT_SRIGHT": 18,
+      "INT_SUB": 121,
+      "INT_XOR": 1,
+      "LOAD": 39,
+      "POPCOUNT": 47,
+      "RETURN": 1,
+      "STORE": 108
+    },
+    "pcode_op_count": 1111
+  },
+  "stack_frame": {
+    "frame_size": 80,
+    "local_size": 52,
+    "param_offset": 4,
+    "param_size": 28,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_2c",
+        "offset": -44,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_28",
+        "offset": -40,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_20",
+        "offset": -32,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_1c",
+        "offset": -28,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDrawSurface *"
+      },
+      {
+        "is_param": true,
+        "name": "text",
+        "offset": 8,
+        "size": 4,
+        "type": "char *"
+      },
+      {
+        "is_param": true,
+        "name": "x",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "width",
+        "offset": 16,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "y",
+        "offset": 20,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "height",
+        "offset": 24,
+        "size": 4,
+        "type": "int"
+      },
+      {
+        "is_param": true,
+        "name": "alignment_mode",
+        "offset": 28,
+        "size": 4,
+        "type": "ETextAlignment"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+// Name: core_glass.cpp_CGlass_renderBackground_FUN_004e1fb0
+// Address: 004e1fb0
+// Address Range: [[004e1fb0, 004e2168]]
+// Convention: __cdecl
+// Signature: void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e1fb0(CGlass *this_ptr,int layer_flag)
+
+#include "nocturne.h"
+
+/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
+
+void __cdecl core_glass_cpp_CGlass_renderBackground_FUN_004e1fb0(CGlass *this_ptr,int layer_flag)
+
+{
+  CDemonRenderer *this_ptr_00;
+  int iVar1;
+  CVector3f *pCVar2;
+  CVector3i *pCVar3;
+  CGlass *pCVar4;
+  uint *puVar5;
+  SMRGLPrimitivePoly *poly;
+  uint *puVar6;
+  byte bVar7;
+  SMRGLTextureBasic *texture;
+  uint auStack_3c [6];
+  uint auStack_24 [6];
+  
+  bVar7 = 0;
+  if (this_ptr->background_flag == 0) {
+    if (((layer_flag != 0) && (this_ptr->shattered != 0)) && (this_ptr->mirror_flag != 0)) {
+      core_glass_cpp_CGlass_renderBrokenGlass_FUN_004e1db0(this_ptr);
+      return;
+    }
+  }
+  else if ((layer_flag != 0) || (this_ptr->pending_background_render != 0)) {
+    this_ptr->pending_background_render = 0;
+    core_actor_cpp_CDemonActor_setupRenderState_FUN_004087b0(&this_ptr->base);
+    (*((this_ptr->base).vtable._ub)->getBoundingBox)(&this_ptr->base,(CBoundingBox3D *)0x0);
+    puVar5 = auStack_24;
+    puVar6 = auStack_3c;
+    for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {
+      *puVar6 = *puVar5;
+      puVar5 = puVar5 + (uint)bVar7 * -2 + 1;
+      puVar6 = puVar6 + (uint)bVar7 * -2 + 1;
+    }
+    core_box_cpp_FUN_004207b0(auStack_3c);
+    if (this_ptr->shattered == 0) {
+      texture = &this_ptr->glass_texture;
+    }
+    else {
+      texture = &this_ptr->broken_texture;
+    }
+    engine_drender_cpp_CDemonRenderer_captureTexture_FUN_00484f00(DAT_00612560,texture);
+    pCVar2 = this_ptr->broken_vertices;
+    iVar1 = 0;
+    pCVar3 = this_ptr->render_vertices;
+    if (0 < this_ptr->broken_vertex_count) {
+      do {
+        pCVar3->x = (int)ROUND(pCVar2->x * _DAT_00601450);
+        pCVar3->y = (int)ROUND(pCVar2->y * _DAT_00601450);
+        pCVar3->z = (int)ROUND(pCVar2->z * _DAT_00601450);
+        iVar1 = iVar1 + 1;
+        pCVar2 = pCVar2 + 1;
+        pCVar3 = pCVar3 + 1;
+      } while (iVar1 < this_ptr->broken_vertex_count);
+    }
+    iVar1 = 0;
+    core_set_cpp_CDemonSet_rotateVerticies_FUN_00553140
+              (g_CDemonSetPtr,this_ptr->broken_vertex_count,this_ptr->render_vertices);
+    if (0 < this_ptr->broken_polygon_count) {
+      poly = (SMRGLPrimitivePoly *)this_ptr->broken_quads;
+      pCVar4 = this_ptr;
+      do {
+        pCVar4->broken_quads[0].base.surface_normal.A.i = 0;
+        this_ptr_00 = DAT_00612560;
+        pCVar4->broken_quads[0].base.surface_normal.B.i = 0;
+        iVar1 = iVar1 + 1;
+        pCVar4->broken_quads[0].base.surface_normal.C.i = 0;
+        pCVar4->broken_quads[0].base.surface_normal.D.i = 0;
+        pCVar4 = (CGlass *)((pCVar4->base).orient_matrix.m + 1);
+        engine_drender_cpp_CDemonRenderer_renderTexturedPoly_FUN_00482210(this_ptr_00,poly,0xc1);
+        poly = poly + 0x48;
+      } while (iVar1 < this_ptr->broken_polygon_count);
+    }
+    core_actor_cpp_CDemonActor_restoreRenderState_FUN_004087f0(&this_ptr->base);
+  }
+  return;
+}

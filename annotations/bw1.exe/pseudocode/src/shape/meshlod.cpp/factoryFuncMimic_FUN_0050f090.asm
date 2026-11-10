@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_mimic.cpp_CMimic_ctor_FUN_0050f0c0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x47ac4                        ; 0050f090
         ;   Label: shape_meshlod.cpp_factoryFuncMimic_FUN_0050f090
-    CALL crt_unknown.c_FUN_005c0f32     ; 0050f095
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 0050f095
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 0050f09a
     TEST EAX,EAX                        ; 0050f09d
     JNZ 0x0050f0a2                      ; 0050f09f

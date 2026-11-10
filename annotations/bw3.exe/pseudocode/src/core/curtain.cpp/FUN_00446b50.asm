@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_curtain.cpp_FUN_004464c0 at 00446ac2
+;   core_curtain.cpp_CCurtain_setup_FUN_004464c0 at 00446ac2
 ;
 ; Called Functions:
 ;   core_dirmat.cpp_FUN_0045b800

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 224,
-    "complexity_score": 261,
+    "complexity_score": 171,
     "cross_reference_count": 1,
     "function_call_count": 6,
     "global_count": 11,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
-    "suspect_count": 15,
+    "suspect_count": 6,
     "suspect_types": [
       "pointer_stride_bytecount",
       "undefined_data",
@@ -282,66 +282,18 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (((*(int *)this_ptr == 2) && (*(int *)&this_ptr->field_0x4 == 3)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "(-1 < *(int *)&this_ptr->field_0x118)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 15,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x11c < 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x118",
-      "severity": "mild",
-      "text": "core_netgame_cpp_CNetGame_updatePing_FUN_0052ea10(this_ptr,*(int *)&this_ptr->field_0x118,10.0);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 28,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) ==",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "if (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) ==",
+      "text": "if (*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 ==",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 35,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 35,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c);",
+      "text": "iVar2 = *(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48;",
       "type": "unnamed_field"
     },
     {
@@ -354,34 +306,10 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 52,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x170 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 58,
-      "match": "field_0x68",
+      "match": "field_0x48",
       "severity": "mild",
-      "text": "while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 58,
-      "match": "field_0x11c",
-      "severity": "mild",
-      "text": "while (*(int *)(&this_ptr->field_0x68 + *(int *)&this_ptr->field_0x11c * 0x7c) !=",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x170",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x170 = 1;",
+      "text": "while (*(int *)&this_ptr->players[this_ptr->local_player_index].field_0x48 !=",
       "type": "unnamed_field"
     },
     {

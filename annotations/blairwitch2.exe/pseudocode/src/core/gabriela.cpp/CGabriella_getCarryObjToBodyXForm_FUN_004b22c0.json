@@ -1,0 +1,540 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 336,
+    "complexity_score": 643,
+    "cross_reference_count": 0,
+    "function_call_count": 9,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 208,
+    "suspect_count": 38,
+    "suspect_types": [
+      "pointer_cast",
+      "pointer_truncation",
+      "self_copy_guard",
+      "stack_alignment_array",
+      "stack_ref",
+      "undefined_data",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 544
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004b22c0",
+    "address_range": [
+      [
+        "004b22c0",
+        "004b27e5"
+      ]
+    ],
+    "convention": "__stack2_esi",
+    "is_ebp_frame": true,
+    "name": "core_gabriela.cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0",
+    "signature": "CMatrix3x4f * __stack2_esi core_gabriela_cpp_CGabriella_getCarryObjToBodyXForm_FUN_004b22c0(CGabriella *this_ptr,int hand_index,CMatrix3x4f *out_matrix)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040c8f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_castToClassHash_FUN_0040c8f0"
+    },
+    {
+      "addr": "004e4500",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "005932c0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_buildRotationY_FUN_005932c0"
+    },
+    {
+      "addr": "00591530",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00591530"
+    },
+    {
+      "addr": "00591c10",
+      "is_variadic": false,
+      "name": "core_xform.cpp_FUN_00591c10"
+    },
+    {
+      "addr": "00591de0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00591de0"
+    },
+    {
+      "addr": "005916b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_multiplyMatrix3x4_FUN_005916b0"
+    },
+    {
+      "addr": "005918a0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_setIdentityMatrix3x4_FUN_005918a0"
+    },
+    {
+      "addr": "005915b0",
+      "is_variadic": false,
+      "name": "core_xform.cpp_transformVector3x4InPlace_FUN_005915b0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005d71c3",
+      "name": "s_core_gabriela_cpp_005d71c3",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d71d8",
+      "name": "s_Don_t_know_how_to_carry_005d71d8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005d71fb",
+      "name": "DAT_005d71fb",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d7203",
+      "name": "DAT_005d7203",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005d720b",
+      "name": "DAT_005d720b",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "007bcc84",
+      "name": "DAT_007bcc84",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a0",
+      "name": "DAT_01d046a0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d046a4",
+      "name": "DAT_01d046a4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 3,
+    "declared_stack_bytes": 8,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.594501718213058,
+    "instruction_count": 291,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 28,
+      "BRANCH": 12,
+      "CALL": 10,
+      "CALLIND": 1,
+      "CBRANCH": 16,
+      "COPY": 578,
+      "FLOAT2FLOAT": 39,
+      "FLOAT_ADD": 7,
+      "FLOAT_MULT": 5,
+      "FLOAT_SUB": 3,
+      "INT_ADD": 191,
+      "INT_AND": 128,
+      "INT_CARRY": 15,
+      "INT_EQUAL": 88,
+      "INT_LEFT": 8,
+      "INT_LESS": 13,
+      "INT_MULT": 40,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 20,
+      "INT_SBORROW": 13,
+      "INT_SCARRY": 15,
+      "INT_SLESS": 48,
+      "INT_SUB": 91,
+      "INT_XOR": 8,
+      "INT_ZEXT": 38,
+      "LOAD": 69,
+      "POPCOUNT": 40,
+      "RETURN": 1,
+      "STORE": 95
+    },
+    "pcode_op_count": 1628
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      },
+      {
+        "is_param": true,
+        "name": "hand_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "stack_patterns": {
+    "note": "Function contains stack manipulation that may cause decompiler artifacts.",
+    "pattern_count": 1,
+    "pattern_types": [
+      "stack_alignment"
+    ],
+    "patterns": [
+      {
+        "address": "004b22cb",
+        "description": "Stack alignment (AND ESP, 0xfffffff8)",
+        "impact": "Causes ESP-relative offsets to become runtime-dependent. All stack variables accessed via ESP after this point will appear as separate \"in_stack_XXXX\" parameters.",
+        "instruction": "AND ESP,0xfffffff8",
+        "pattern_id": "stack_alignment"
+      }
+    ],
+    "severity": "medium"
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 14,
+      "match": "afStackY_10a4",
+      "severity": "moderate",
+      "text": "float afStackY_10a4 [940];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 64,
+      "match": "field_0x2620",
+      "severity": "mild",
+      "text": "iVar1 = *(int *)(&this_ptr->field_0x2620 + hand_index * 0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x2618",
+      "severity": "mild",
+      "text": "iStack_14 = *(int *)(&this_ptr->field_0x2618 + hand_index * 0x78);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 72,
+      "match": "DAT_007bcc84",
+      "severity": "mild",
+      "text": "iStack_10 = core_actor_cpp_castToClassHash_FUN_0040c8f0(iVar1,DAT_007bcc84);",
+      "type": "undefined_data"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 74,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)(iVar1 + 0x2b0) + 0x24))(iVar1);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 86,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + 0xc) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 87,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + 0xf) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 88,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0xd) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 89,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x10) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 94,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + 0x12) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 95,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + 9) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 96,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x13) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 97,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 10) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 121,
+      "match": "&stack0xfffffe48",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xfffffe48;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Direct stack address reference",
+      "line": 133,
+      "match": "&stack0xfffffe18",
+      "severity": "moderate",
+      "text": "puVar3 = (uint *)&stack0xfffffe18;",
+      "type": "stack_ref"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 139,
+      "match": "field_0x1134",
+      "severity": "mild",
+      "text": "(auStack_188,&this_ptr->field_0x1134 + iStack_14 * 0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 149,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + 6) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 150,
+      "match": "(uint *)((int)auStack_b8",
+      "severity": "moderate",
+      "text": "*(uint *)((int)auStack_b8 + (uint)bVar6 * 0xfffffff8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 151,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 7) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 152,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + -8) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 186,
+      "match": "field_0x1134",
+      "severity": "mild",
+      "text": "(afStack_28 + 2,&this_ptr->field_0x1134 + iStack_14 * 0x30);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 190,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + (uint)bVar6 * 0xfffffff8) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 191,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + 0x15) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 192,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 1) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 193,
+      "match": "(uint *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(uint *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 0x16) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 198,
+      "match": "(float *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_94 + ((uint)bVar6 * -2 + 3) * 4) = afStack_28[(uint)bVar6 * -2];",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 199,
+      "match": "(float *)((int)afStack_94",
+      "severity": "moderate",
+      "text": "*(float *)((int)afStack_94 + ((uint)bVar6 * -2 + (uint)bVar6 * -2 + 4) * 4) =",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 209,
+      "match": "(CMatrix3x4f *)((int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Pointer value `pCVar4` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
+      "line": 209,
+      "match": "(int)pCVar4",
+      "severity": "moderate",
+      "text": "pCVar4 = (CMatrix3x4f *)((int)pCVar4 + ((uint)bVar6 * -2 + 1) * 4);",
+      "type": "pointer_truncation"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 77,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 6; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 124,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 142,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom loop-unrolled memcpy (countdown for-loop with the `(uint)bool * -N + M` direction idiom \u2014 Watcom's REP MOVSD lowering fingerprint). Replace the whole loop with memcpy(dst, src, count * stride) or a struct assignment in a .keep.",
+      "line": 206,
+      "match": "for (...; != 0; ... + -1)",
+      "severity": "moderate",
+      "text": "for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&fStack_b0 != &fStack_50)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 98,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&fStack_b0 != &fStack_50) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom dead self-copy guard: `if (&uStack_c8 != &uStack_80)` wraps an unconditional struct copy. Both addresses are stack locals \u2014 always different \u2014 so the guard never skips. Drop the if-wrapper in a .keep.",
+      "line": 153,
+      "match": "if (&NAME_A != &NAME_B) { NAME_A = NAME_B; ... }",
+      "severity": "moderate",
+      "text": "if (&uStack_c8 != &uStack_80) {",
+      "type": "self_copy_guard"
+    },
+    {
+      "description": "Watcom inline memcpy (REP MOVSD at 004b24c1, 4-byte stride). Ghidra reconstructs this as a countdown for-loop with element-by-element copies; replace the loop with memcpy(dst, src, count * 4) or a struct assignment in a .keep.",
+      "line": 127,
+      "match": "MOVSD.REP",
+      "severity": "moderate",
+      "text": "// 004b24c1: MOVSD.REP ES:EDI,ESI",
+      "type": "unrolled_memcpy"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 308,
+        "vtable_addr": "005f7384"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

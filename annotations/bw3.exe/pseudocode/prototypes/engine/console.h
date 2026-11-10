@@ -29,10 +29,10 @@ void __cdecl CConsole::writeChar(CConsole *this_ptr,char character);
 // Address: 00442190
 void __cdecl CConsole::reset(CConsole *this_ptr);
 
-// Original: engine_console.cpp_FUN_004421d0
+// Original: engine_console.cpp_CConsole_scrollUp_FUN_004421d0
 // Address: 004421d0
-void __cdecl FUN_004421d0(CConsole *this_ptr);
+void __cdecl CConsole::scrollUp(CConsole *this_ptr);
 
-// Original: engine_console.cpp_FUN_00442250
+// Original: engine_console.cpp_CConsole_render_FUN_00442250
 // Address: 00442250
-void __cdecl FUN_00442250(CConsole *this_ptr);
+void __cdecl CConsole::render(CConsole *this_ptr);

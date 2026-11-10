@@ -12,7 +12,7 @@
 ; Called Functions:
 ;   core_dmodel.cpp_CKeyFramedModelInstance_setModelName_FUN_00468950
 ;   core_enemy.cpp_CEnemy_ctor_FUN_004a0410
-;   core_skeleton.cpp_FUN_00569f50
+;   core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50
 ;   crt_memory.c___arrinit_FUN_005c0357
 ;   crt_memory.c_memset_FUN_005bfb70
 ;
@@ -76,8 +76,8 @@ section .text
     PUSH 0x5d501c                       ; 0042503d
     LEA EAX,[EBX + 0x158]               ; 00425042
     PUSH EAX                            ; 00425048
-    CALL core_skeleton.cpp_FUN_00569f50 ; 00425049
-        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; undefined core_skeleton.cpp_FUN_00569f50()
+    CALL core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50 ; 00425049
+        ;   XREF to: 00569f50 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_init_FUN_00569f50(CDeformableModelInstance * this_ptr, char * model_name)
     MOV dword ptr [EBX + 0x12ea4],0x0   ; 0042504e
     MOV ESI,0x5d5025                    ; 00425058
     MOV dword ptr [EBX + 0x12ea8],0x0   ; 0042505d

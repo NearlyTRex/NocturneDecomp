@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
-;   sound_sndmain.cpp_FUN_00553680 at 00553714
 ;   sound_sndmain.cpp_findBestRecordingDevice_FUN_00552dc0 at 00552de3
+;   sound_sndmain.cpp_readIni_FUN_00553680 at 00553714
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_sound_sndmain_cpp_005e90cf

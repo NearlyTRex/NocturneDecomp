@@ -27,10 +27,10 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   if (p_Var3 != (_FILE *)0x0) {
     _fclose(p_Var3);
   }
-  *(uint *)&param_1->field_0x274 = 0;
-  *(uint *)&param_1->field_0x27c = 0;
-  *(uint *)&param_1->field_0x270 = 0;
-  *(uint *)&param_1->field_0x278 = 0;
+  param_1->damageable_enemy_count = 0;
+  param_1->total_kill_count = 0;
+  param_1->total_game_time = 0.0;
+  param_1->total_play_time = 0.0;
   *(uint *)&param_1->field_0x294 = 0xbf800000;
   core_game_cpp_FUN_004c4d10(param_1);
   uVar2 = _DAT_01c5b0e0;
@@ -46,7 +46,7 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   support_newmsg_cpp_getLocalizedString_FUN_00508960("The Rustin Parr Investigation");
   local_14 = 0xffffffff;
   if (param_2 == 1 || iVar4 != 0) {
-    iVar4 = shape_edittool_cpp_FUN_0047db70
+    iVar4 = shape_edittool_cpp_CEditorTools_showFileSelectionDialog_FUN_0047db70
                       (g_CEditorToolsPtr,"Select mission to play","world",
                        "*.msn",local_11c,0);
     if (iVar4 == 0) goto LAB_004beb21;
@@ -91,9 +91,9 @@ void core_game_cpp_FUN_004be8d0(CGame *param_1,int param_2)
   if (iVar4 != 0) {
     core_mission_cpp_FUN_004f7590(0x01D81080);
     core_mission_cpp_CDemonMission_run_FUN_004f72a0(0x01D81080);
-    if (*(int *)&param_1->field_0xa78 != 0) {
-      *(uint *)&param_1->field_0xa78 = 0;
-      core_game_cpp_FUN_004bdfb0(param_1,&param_1->field_0xa7c,1);
+    if (param_1->need_chapter_reload != 0) {
+      param_1->need_chapter_reload = 0;
+      core_game_cpp_FUN_004bdfb0(param_1,param_1->chapter_reload_filename,1);
     }
   }
 LAB_004beb21:

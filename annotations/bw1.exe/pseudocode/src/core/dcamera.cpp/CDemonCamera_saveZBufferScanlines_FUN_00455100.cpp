@@ -12,11 +12,11 @@ void __cdecl core_dcamera_cpp_CDemonCamera_saveZBufferScanlines_FUN_00455100(CDe
   int iVar1;
   
   iVar1 = 0;
-  if (0 < *(int *)&this_ptr->field_0x148) {
+  if (0 < this_ptr->framebuffer_height) {
     do {
       iVar1 = iVar1 + 1;
-      _memcpy(*(int *)&this_ptr->field_0x144 << 2);
-    } while (iVar1 < *(int *)&this_ptr->field_0x148);
+      _memcpy(this_ptr->framebuffer_width << 2);
+    } while (iVar1 < this_ptr->framebuffer_height);
   }
   return;
 }

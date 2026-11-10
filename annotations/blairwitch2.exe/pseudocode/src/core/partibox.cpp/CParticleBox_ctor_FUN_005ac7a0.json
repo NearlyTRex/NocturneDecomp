@@ -110,7 +110,7 @@
       "line": 10,
       "match": "field_0x2b0",
       "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x2b0 = &g_CParticleBoxVTable;",
+      "text": "((UActorVTable *)&pCVar1->field_0x2b0)->_ub = &g_CParticleBoxVTable;",
       "type": "unnamed_field"
     },
     {
@@ -134,7 +134,7 @@
       "line": 14,
       "match": "field_0x754",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x754 = 0;",
+      "text": "*(int *)&pCVar1->field_0x754 = 0;",
       "type": "unnamed_field"
     }
   ],

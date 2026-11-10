@@ -12,8 +12,8 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[2]:
-;   core_bugs.cpp_FUN_004221c0 at 0042252f
-;   core_bugs.cpp_FUN_00422570 at 004227ef
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_00422570 at 004227ef
+;   core_bugs.cpp_CBugs_updateBugsBehavior_FUN_004221c0 at 0042252f
 ;
 ; *****************************************************************************
 

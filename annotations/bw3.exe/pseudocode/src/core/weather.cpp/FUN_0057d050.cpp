@@ -9,7 +9,7 @@
 void core_weather_cpp_FUN_0057d050(int *param_1,int param_2)
 
 {
-  int iVar1;
+  float fVar1;
   
   if ((*param_1 == 5) && ((param_1[10] & 0x7fffffffU) != 0)) {
     core_dcamera_cpp_CDemonCamera_setEffectIntensity_FUN_0044f680
@@ -38,22 +38,22 @@ void core_weather_cpp_FUN_0057d050(int *param_1,int param_2)
     param_1[0xe] = 200;
   }
   if (param_2 == 5) {
-    iVar1 = core_actor_cpp_FUN_0040ce40(0x3f000000,0x3f400000);
+    fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.5,0.75);
     param_1[9] = 0;
     param_1[0xd] = 0x40000000;
     param_1[10] = 0;
-    param_1[8] = iVar1;
-    iVar1 = core_actor_cpp_FUN_0040ce40(0x3f000000,param_1[0xd]);
+    param_1[8] = (int)fVar1;
+    fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(0.5,(float)param_1[0xd]);
     param_1[0x19] = 0;
-    param_1[0xb] = iVar1;
+    param_1[0xb] = (int)fVar1;
     return;
   }
-  iVar1 = core_actor_cpp_FUN_0040ce40(0x41200000,0x41a00000);
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(10.0,20.0);
   param_1[9] = 0;
   param_1[0xd] = 0x41200000;
   param_1[10] = 0;
-  param_1[8] = iVar1;
-  iVar1 = core_actor_cpp_FUN_0040ce40(0x40000000,param_1[0xd]);
-  param_1[0xb] = iVar1;
+  param_1[8] = (int)fVar1;
+  fVar1 = core_actor_cpp_getRandomFloatFromRange_FUN_0040ce40(2.0,(float)param_1[0xd]);
+  param_1[0xb] = (int)fVar1;
   return;
 }

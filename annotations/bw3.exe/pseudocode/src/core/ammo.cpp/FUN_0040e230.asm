@@ -9,7 +9,7 @@
 ;
 ; Called Functions:
 ;   core_ammo.cpp_CAmmoManaLarge_ctor_FUN_0040e260
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -17,8 +17,8 @@ section .text
 
     PUSH 0x320                          ; 0040e230
         ;   Label: core_ammo.cpp_FUN_0040e230
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0040e235
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 0040e235
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0040e23a
     TEST EAX,EAX                        ; 0040e23d
     JNZ 0x0040e242                      ; 0040e23f

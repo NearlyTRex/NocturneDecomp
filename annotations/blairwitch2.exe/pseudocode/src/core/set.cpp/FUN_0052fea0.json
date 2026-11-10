@@ -2,29 +2,26 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 311,
-    "complexity_score": 748,
+    "complexity_score": 481,
     "cross_reference_count": 1,
     "function_call_count": 19,
     "global_count": 26,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 123,
-    "suspect_count": 56,
+    "pseudocode_lines": 121,
+    "suspect_count": 31,
     "suspect_types": [
       "pointer_cast",
       "pointer_truncation",
       "shadow_pointer_walk",
       "stack_alignment_array",
       "stack_ref",
-      "tautological_addr_guard",
       "undefined_data",
-      "unknown_field",
       "unnamed_field",
       "unnamed_param",
-      "unresolved_funcptr",
       "warning_overlapping_globals",
       "warning_type_propagation"
     ],
-    "total_lines": 434
+    "total_lines": 432
   },
   "cross_references": [
     {
@@ -56,7 +53,7 @@
     {
       "addr": "00449280",
       "is_variadic": false,
-      "name": "core_dirmat.cpp_FUN_00449280"
+      "name": "core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_00449280"
     },
     {
       "addr": "0044a020",
@@ -81,7 +78,7 @@
     {
       "addr": "0049c780",
       "is_variadic": false,
-      "name": "core_fire.cpp_FUN_0049c780"
+      "name": "core_fire.cpp_CFireEffect_render_FUN_0049c780"
     },
     {
       "addr": "0049eb50",
@@ -91,7 +88,12 @@
     {
       "addr": "004c9440",
       "is_variadic": false,
-      "name": "core_gore.cpp_FUN_004c9440"
+      "name": "core_gore.cpp_CGore_renderParticles_FUN_004c9440"
+    },
+    {
+      "addr": "005332f0",
+      "is_variadic": false,
+      "name": "core_set.cpp_CDemonSet_buildDisplayList_FUN_005332f0"
     },
     {
       "addr": "005311e0",
@@ -99,24 +101,19 @@
       "name": "core_set.cpp_CDemonSet_calculateSpatialLighting_FUN_005311e0"
     },
     {
-      "addr": "00530980",
+      "addr": "0052dc10",
       "is_variadic": false,
-      "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980"
+      "name": "core_set.cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10"
     },
     {
       "addr": "0052d0e0",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0052d0e0"
+      "name": "core_set.cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0"
     },
     {
-      "addr": "0052dc10",
+      "addr": "00530980",
       "is_variadic": false,
-      "name": "core_set.cpp_FUN_0052dc10"
-    },
-    {
-      "addr": "005332f0",
-      "is_variadic": false,
-      "name": "core_set.cpp_FUN_005332f0"
+      "name": "core_set.cpp_CDemonSet_setLightingParameters_FUN_00530980"
     },
     {
       "addr": "00547890",
@@ -126,7 +123,7 @@
     {
       "addr": "00540e80",
       "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_00540e80"
+      "name": "core_skeleton.cpp_CSkeleton_findBone_FUN_00540e80"
     },
     {
       "addr": "00591530",
@@ -136,7 +133,7 @@
     {
       "addr": "00591de0",
       "is_variadic": false,
-      "name": "core_xform.cpp_FUN_00591de0"
+      "name": "core_xform.cpp_matrixToEulerAngles_FUN_00591de0"
     },
     {
       "addr": "0046b920",
@@ -219,79 +216,79 @@
     },
     {
       "addr": "01cb3954",
-      "name": "g_CDemonLightInstance.field4_0x4",
+      "name": "g_CDemonLightInstance.base.base.position",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb3958",
-      "name": "g_CDemonLightInstance.field8_0x8",
+      "name": "g_CDemonLightInstance.base.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb395c",
-      "name": "g_CDemonLightInstance.field12_0xc",
+      "name": "g_CDemonLightInstance.base.base.position+8",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb3960",
-      "name": "g_CDemonLightInstance.field16_0x10",
+      "name": "g_CDemonLightInstance.base.base.rotation_matrix.m[0].x",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb3988",
-      "name": "g_CDemonLightInstance.field56_0x38",
+      "name": "g_CDemonLightInstance.base.base.focal_length",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb3a90",
-      "name": "g_CDemonLightInstance.field320_0x140",
+      "name": "g_CDemonLightInstance.base.max_distance",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb560c",
-      "name": "g_CDemonLightInstance.field7356_0x1cbc",
+      "name": "g_CDemonLightInstance.volumetric_enabled",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb5610",
-      "name": "g_CDemonLightInstance.field7360_0x1cc0",
+      "name": "g_CDemonLightInstance.shadow_map_width",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01cb5614",
-      "name": "g_CDemonLightInstance.field7364_0x1cc4",
+      "name": "g_CDemonLightInstance.shadow_map_height",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01e65ce8",
-      "name": "g_CScriptInstance.field24_0x18",
+      "name": "g_CScriptInstance.field6_0x18",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc783c",
-      "name": "g_CDemonCameraInstance.field4_0x4",
+      "name": "g_CDemonCameraInstance.base.position",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc7840",
-      "name": "g_CDemonCameraInstance.field8_0x8",
+      "name": "g_CDemonCameraInstance.base.position+4",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "01fc7844",
-      "name": "g_CDemonCameraInstance.field12_0xc",
+      "name": "g_CDemonCameraInstance.base.position+8",
       "type": "undefined4",
       "value": null
     },
@@ -526,7 +523,7 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 35,
+      "line": 31,
       "match": "field_0x18",
       "severity": "mild",
       "text": "iVar4 = *(int *)&g_CScriptPtr->field_0x18;",
@@ -534,7 +531,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 46,
+      "line": 42,
       "match": "&stack0xffffff7c",
       "severity": "moderate",
       "text": "puVar7 = &stack0xffffff7c;",
@@ -542,7 +539,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 48,
+      "line": 44,
       "match": "&stack0xffffff80",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff80 + (uint)bVar6 * 0xfffffffe * 4) =",
@@ -550,7 +547,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 50,
+      "line": 46,
       "match": "&stack0xffffff84",
       "severity": "moderate",
       "text": "*(float *)(&stack0xffffff84 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =",
@@ -558,127 +555,31 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 62,
+      "line": 58,
       "match": "&stack0xffffff8c",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar6 * -8) = local_50[(uint)bVar6 * -2 + 3];",
       "type": "stack_ref"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 65,
-      "match": "._7356_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._7356_4_ = 0;",
-      "type": "unknown_field"
-    },
-    {
       "description": "Direct stack address reference",
-      "line": 68,
+      "line": 64,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_CDemonLightInstance.field_0x58) {",
+      "text": "if (&stack0x00000000 != g_CDemonLightInstance.base.camera_name + 0x18) {",
       "type": "stack_ref"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "if (&stack0x00000000 != &g_CDemonLightInstance.field_0x58) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 69,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._4_4_ = local_54;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 70,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._8_4_ = local_50[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 71,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "g_CDemonLightInstance._12_4_ = local_50[1];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 73,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "core_dirmat_cpp_FUN_00449280((CMatrix3x3f *)&local_14->field_0x10,(CVector3f *)local_60);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Direct stack address reference",
       "line": 74,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "*(uint *)&local_14->field_0x140 = 0x42280000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 75,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "*(uint *)&local_14->field_0x38 = 0x41d00000;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Direct stack address reference",
-      "line": 77,
       "match": "&stack0x00000000",
       "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_CDemonCameraInstance.field_0x58) {",
+      "text": "if (&stack0x00000000 != g_CDemonCameraInstance.camera_name + 0x18) {",
       "type": "stack_ref"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 77,
-      "match": "field_0x58",
-      "severity": "mild",
-      "text": "if (&stack0x00000000 != &g_CDemonCameraInstance.field_0x58) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 78,
-      "match": "._4_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance._4_4_ = local_54;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 79,
-      "match": "._8_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance._8_4_ = local_50[0];",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 80,
-      "match": "._12_4_",
-      "severity": "mild",
-      "text": "g_CDemonCameraInstance._12_4_ = local_50[1];",
-      "type": "unknown_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 83,
+      "line": 80,
       "match": "DAT_0061b5b8",
       "severity": "mild",
       "text": "DAT_0061b5b8 = 0;",
@@ -686,23 +587,15 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 84,
+      "line": 81,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_0052d0e0(param_1,*(float *)&local_14->field_0x140,0);",
+      "text": "core_set_cpp_CDemonSet_renderSceneGeometry_FUN_0052d0e0(param_1,(local_14->base).max_distance,0)",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 84,
-      "match": "field_0x140",
-      "severity": "mild",
-      "text": "core_set_cpp_FUN_0052d0e0(param_1,*(float *)&local_14->field_0x140,0);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 85,
+      "line": 83,
       "match": "DAT_0061b5b8",
       "severity": "mild",
       "text": "DAT_0061b5b8 = 1;",
@@ -710,18 +603,26 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 86,
+      "line": 84,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_005332f0(param_1,0xffffffff);",
+      "text": "core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(param_1,0xffffffff);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 87,
+      "line": 85,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_0052dc10(param_1,1);",
+      "text": "core_set_cpp_CDemonSet_renderBackgroundActors_FUN_0052dc10(param_1,1);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 86,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "core_set_cpp_CDemonSet_buildDisplayList_FUN_005332f0(param_1,1);",
       "type": "unnamed_param"
     },
     {
@@ -729,92 +630,36 @@
       "line": 88,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_set_cpp_FUN_005332f0(param_1,1);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 90,
-      "match": "param_1",
-      "severity": "mild",
       "text": "pCVar5 = param_1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 91,
+      "line": 89,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15f6f8) {",
+      "text": "if (0 < param_1->sorted_render_actor_count) {",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x15f6f8",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&param_1->field_0x15f6f8) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 93,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "(**(code **)(*(int *)(*(int *)&pCVar5->field_0x15f6fc + 0x2b0) + 0x18))",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 93,
-      "match": "field_0x15f6fc",
-      "severity": "mild",
-      "text": "(**(code **)(*(int *)(*(int *)&pCVar5->field_0x15f6fc + 0x2b0) + 0x18))",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 94,
-      "match": "field_0x15f6fc",
-      "severity": "mild",
-      "text": "(*(int *)&pCVar5->field_0x15f6fc);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 95,
+      "line": 93,
       "match": "DAT_0060b280",
       "severity": "mild",
       "text": "engine_drender_cpp_CDemonRenderer_enableFaceCapture_FUN_0046b920(DAT_0060b280,1);",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 97,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "pCVar5 = (CDemonSet *)&pCVar5->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 98,
+      "line": 96,
       "match": "param_1",
       "severity": "mild",
-      "text": "} while (iVar4 < *(int *)&param_1->field_0x15f6f8);",
+      "text": "} while (iVar4 < param_1->sorted_render_actor_count);",
       "type": "unnamed_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 98,
-      "match": "field_0x15f6f8",
-      "severity": "mild",
-      "text": "} while (iVar4 < *(int *)&param_1->field_0x15f6f8);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 107,
+      "line": 105,
       "match": "param_1",
       "severity": "mild",
       "text": "(param_1,(CVector3f *)0x0,(UOrientationVector *)0x0,(CVector3f *)0x0,(CVector3f *)0x0,",
@@ -822,55 +667,23 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 110,
+      "line": 108,
       "match": "param_1",
       "severity": "mild",
-      "text": "(param_1,(CVector3i *)&local_3c,(CVector3i *)0x0);",
+      "text": "(param_1,&local_3c,(CVector3i *)0x0);",
       "type": "unnamed_param"
     },
     {
       "description": "Undefined global data reference",
-      "line": 112,
+      "line": 110,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "if (DAT_006141bc < 0xf1) {",
       "type": "undefined_data"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar1 = -*(int *)&local_14->field_0x1cc0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 114,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "iVar2 = -*(int *)&local_14->field_0x1cc4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x1cc0",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&local_14->field_0x1cc0 * -2;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 118,
-      "match": "field_0x1cc4",
-      "severity": "mild",
-      "text": "iVar2 = *(int *)&local_14->field_0x1cc4 * -2;",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 119,
       "match": "DAT_006141b8",
       "severity": "mild",
       "text": "(local_14,(DAT_006141b8 + iVar1) / 2,(DAT_006141bc + iVar2) / 2,",
@@ -878,7 +691,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 121,
+      "line": 119,
       "match": "DAT_006141bc",
       "severity": "mild",
       "text": "(local_14,(DAT_006141b8 + iVar1) / 2,(DAT_006141bc + iVar2) / 2,",
@@ -886,7 +699,7 @@
     },
     {
       "description": "Pointer value `&stack0xffffff80` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 48,
+      "line": 44,
       "match": "(int)&stack0xffffff80",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff80 + (uint)bVar6 * 0xfffffffe * 4) =",
@@ -894,31 +707,15 @@
     },
     {
       "description": "Pointer value `&stack0xffffff8c` truncated by cast to `int` (sub-pointer width) \u2014 correct on the 32-bit matching build, a hard `cast from pointer to smaller type` error at 64-bit. If the value is used as an integer (delta, address print, hash), rewrite the cast as `uintptr_t`/`intptr_t` in a .keep.",
-      "line": 62,
+      "line": 58,
       "match": "(int)&stack0xffffff8c",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar6 * -8) = local_50[(uint)bVar6 * -2 + 3];",
       "type": "pointer_truncation"
     },
     {
-      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonLightInstance.field_0x58` is always TRUE (the address of `g_CDemonLightInstance.field_0x58` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
-      "line": 68,
-      "match": "if ((T *)0x0 != &g_CDemonLightInstance.field_0x58)",
-      "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_CDemonLightInstance.field_0x58) {",
-      "type": "tautological_addr_guard"
-    },
-    {
-      "description": "Tautological address-of guard: `if (... != ...)` comparing a null literal against `&g_CDemonCameraInstance.field_0x58` is always TRUE (the address of `g_CDemonCameraInstance.field_0x58` is never null), so the guard never skips its body. Drop the if-wrapper in a .keep, leaving the body unconditional.",
-      "line": 77,
-      "match": "if ((T *)0x0 != &g_CDemonCameraInstance.field_0x58)",
-      "severity": "moderate",
-      "text": "if (&stack0x00000000 != &g_CDemonCameraInstance.field_0x58) {",
-      "type": "tautological_addr_guard"
-    },
-    {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 48,
+      "line": 44,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff80 + (uint)bVar6 * 0xfffffffe * 4) =",
@@ -926,18 +723,18 @@
     },
     {
       "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
-      "line": 62,
+      "line": 58,
       "match": "(int)&NAME used in byte-offset arithmetic",
       "severity": "moderate",
       "text": "*(float *)((int)&stack0xffffff8c + (uint)bVar6 * -8) = local_50[(uint)bVar6 * -2 + 3];",
       "type": "pointer_cast"
     },
     {
-      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via the address of ONE sibling scalar field whose byte offset equals the array element stride (e.g. `(T *)&pCVar5->owner`). Replace `pCVar5->some_array[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
-      "line": 97,
-      "match": "pCVar5 = (T *)&pCVar5->FIELD",
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar5` self-updates via array-decay of a sibling array field whose byte offset equals the element stride. Replace `pCVar5->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 95,
+      "match": "pCVar5 = (T *)pCVar5->ARRAY",
       "severity": "moderate",
-      "text": "pCVar5 = (CDemonSet *)&pCVar5->field_0x4;",
+      "text": "pCVar5 = (CDemonSet *)pCVar5->cameras;",
       "type": "shadow_pointer_walk"
     }
   ]

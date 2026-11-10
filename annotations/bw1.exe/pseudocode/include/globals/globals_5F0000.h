@@ -5,10 +5,84 @@
 // Type dependencies
 #include "system/basetypes.h"
 #include "system/watcom.h"
+#include "types/classes/CBoneGuy_full_vtable.h"
+#include "types/classes/CCharacter_full_vtable.h"
+#include "types/classes/CConstruct_full_vtable.h"
+#include "types/classes/CDemnfolk_full_vtable.h"
+#include "types/classes/CDemonActor_vtable.h"
+#include "types/classes/CDjien_full_vtable.h"
+#include "types/classes/CEnemy_full_vtable.h"
+#include "types/classes/CHero_full_vtable.h"
+#include "types/classes/CWeapon_full_vtable.h"
 
 // =============================================================================
 // GLOBAL VARIABLES - Range 0x5F0000
 // =============================================================================
+
+// CBoneGuy_full_vtable
+extern CBoneGuy_full_vtable g_CBoneGuyVTable;
+
+// CCharacter_full_vtable
+extern CCharacter_full_vtable g_CBirdVTable;
+extern CCharacter_full_vtable g_CCharacterVTable;
+
+// CConstruct_full_vtable
+extern CConstruct_full_vtable g_CConstructVTable;
+
+// CDemnfolk_full_vtable
+extern CDemnfolk_full_vtable g_CDemnfolkVTable;
+
+// CDemonActor_vtable
+extern CDemonActor_vtable g_CDemonActorVTable;
+extern CDemonActor_vtable g_CAmmoVTable;
+extern CDemonActor_vtable g_CAmmoBoxVTable;
+extern CDemonActor_vtable g_CAnvilVTable;
+extern CDemonActor_vtable g_CBackgroundActorVTable;
+extern CDemonActor_vtable g_CBarrierVTable;
+extern CDemonActor_vtable g_CBatVTable;
+extern CDemonActor_vtable g_CBatteryVTable;
+extern CDemonActor_vtable g_CBodyPartVTable;
+extern CDemonActor_vtable g_CBoxActorVTable;
+extern CDemonActor_vtable g_CLightActorVTable;
+extern CDemonActor_vtable g_CChainVTable;
+extern CDemonActor_vtable g_CConveyorVTable;
+extern CDemonActor_vtable g_CCrateVTable;
+extern CDemonActor_vtable g_CCurtainVTable;
+extern CDemonActor_vtable g_CActorDestinationVTable;
+extern CDemonActor_vtable g_CDoorVTable;
+extern CDemonActor_vtable g_CDripVTable;
+extern CDemonActor_vtable g_CEmitterVTable;
+extern CDemonActor_vtable g_CFilmReelVTable;
+extern CDemonActor_vtable g_CFilmProjectorVTable;
+
+// CDjien_full_vtable
+extern CDjien_full_vtable g_CDjienVTable;
+
+// CEnemy_full_vtable
+extern CEnemy_full_vtable g_CArmourVTable;
+extern CEnemy_full_vtable g_CBatCreatureVTable;
+extern CEnemy_full_vtable g_CBatmanVTable;
+extern CEnemy_full_vtable g_CBeastVTable;
+extern CEnemy_full_vtable g_CBiggsVTable;
+extern CEnemy_full_vtable g_CBrideVTable;
+extern CEnemy_full_vtable g_CBugsVTable;
+extern CEnemy_full_vtable g_CCarvedVTable;
+extern CEnemy_full_vtable g_CZombieCowVTable;
+extern CEnemy_full_vtable g_CZombieDogVTable;
+extern CEnemy_full_vtable g_CDraculaBrideVTable;
+extern CEnemy_full_vtable g_CDroneVTable;
+extern CEnemy_full_vtable g_CEnemyVTable;
+
+// CHero_full_vtable
+extern CHero_full_vtable g_CBaronVTable;
+extern CHero_full_vtable g_CColonelVTable;
+extern CHero_full_vtable g_CDocVTable;
+
+// CWeapon_full_vtable
+extern CWeapon_full_vtable g_CBaronWeaponVTable;
+extern CWeapon_full_vtable g_CCrossbowVTable;
+extern CWeapon_full_vtable g_CDynamiteVTable;
+extern CWeapon_full_vtable g_CElephantGunVTable;
 
 // WatcomDestructorCall
 extern WatcomDestructorCall DAT_005FC8F0;
@@ -136,41 +210,14 @@ extern WatcomTypeInfo g_CFilmProjectorTypeInfo;
 extern undefined1 DAT_005fb2c4;
 
 // undefined1*
-extern undefined1* g_CArmourVTable;
-extern undefined1* g_CBaronVTable;
-extern undefined1* g_CBatCreatureVTable;
-extern undefined1* g_CBatmanVTable;
-extern undefined1* g_CBeastVTable;
-extern undefined1* g_CBiggsVTable;
-extern undefined1* g_CBirdVTable;
 extern undefined1* g_CAudioRecPuzzleVTable;
 extern undefined1* g_CChemPuzzleVTable;
-extern undefined1* g_CBoneGuyVTable;
-extern undefined1* g_CBrideVTable;
-extern undefined1* g_CBugsVTable;
-extern undefined1* g_CCarvedVTable;
 extern undefined1* g_CAsciiArmorVTable;
 extern undefined1* g_CAsciiUnarmorVTable;
 extern undefined1* g_CInStreamPipeVTable;
-extern undefined1* g_CColonelVTable;
-extern undefined1* g_CConstructVTable;
-extern undefined1* g_CZombieCowVTable;
 extern undefined1* g_CDemonCameraVTable;
-extern undefined1* g_CDemnfolkVTable;
-extern undefined1* g_CDjienVTable;
-extern undefined1* g_CDocVTable;
-extern undefined1* g_CZombieDogVTable;
-extern undefined1* g_CDraculaBrideVTable;
-extern undefined1* g_CDroneVTable;
 extern undefined1* g_CStrListVTable;
 extern undefined1* g_CPickListVTable;
 extern undefined1* g_CRainDropVTable;
 extern undefined1* g_CPopcornVTable;
-
-// void*
-extern void* g_CDemonActorVTable;
-extern void* g_CAmmoVTable;
-extern void* g_CBodyPartVTable;
-extern void* g_CCharacterVTable;
-extern void* g_CEnemyVTable;
 

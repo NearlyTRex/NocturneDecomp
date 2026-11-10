@@ -2,115 +2,134 @@
 // Address: 004247f0
 // Address Range: [[004247f0, 00424b4f]]
 // Convention: unknown
-// Signature: void core_charactr_cpp_FUN_004247f0(int param_1)
+// Signature: void core_charactr_cpp_FUN_004247f0(CDemonActor *param_1)
 
 #include "nocturne.h"
 
 /* WARNING: Globals starting with '_' overlap smaller symbols at the same address */
 
-void core_charactr_cpp_FUN_004247f0(int param_1)
+void core_charactr_cpp_FUN_004247f0(CDemonActor *param_1)
 
 {
-  int *piVar1;
-  float fVar2;
+  float fVar1;
+  CDemonActor *pCVar2;
   int iVar3;
   CDeformableModel *this_ptr;
-  uint uVar4;
-  uint uVar5;
+  CDemonActor *pCVar4;
+  float fVar5;
+  uint uVar6;
   
   iVar3 = engine_drender_cpp_CDemonRenderer_isShadowPass_FUN_0046b960(DAT_0060b280);
-  if ((iVar3 != 0) || (*(int *)(param_1 + 0x109d8) == -1)) {
+  if ((iVar3 != 0) || (*(int *)&param_1[0x62].field_0xf0 == -1)) {
     return;
   }
   this_ptr = core_skeleton_cpp_CDeformableModelInstance_getModelPtr_FUN_00547810
-                       ((CDeformableModelInstance *)(param_1 + 0x2b4));
-  if (*(int *)(param_1 + 0x109d8) == -2) {
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,&DAT_005ccca6,0);
-    *(int *)(param_1 + 0x109d8) = iVar3;
+                       ((CDeformableModelInstance *)(param_1 + 1));
+  if (*(int *)&param_1[0x62].field_0xf0 == -2) {
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005ccca6,0)
+    ;
+    *(int *)&param_1[0x62].field_0xf0 = iVar3;
     if (iVar3 == -1) {
       return;
     }
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,&DAT_005cccab,0);
-    *(int *)(param_1 + 0x109fc) = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccab,0)
+    ;
+    *(int *)&param_1[0x62].field_0x114 = iVar3;
     if (iVar3 == -1) {
-      *(uint *)(param_1 + 0x109d8) = 0xffffffff;
+      *(uint *)&param_1[0x62].field_0xf0 = 0xffffffff;
       return;
     }
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,&DAT_005cccae,1);
-    *(int *)(param_1 + 0x10a00) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,&DAT_005cccb1,1);
-    *(int *)(param_1 + 0x10a04) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,&DAT_005cccb4,1);
-    *(int *)(param_1 + 0x10a08) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e1_left",0);
-    *(int *)(param_1 + 0x109dc) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e2_left",0);
-    *(int *)(param_1 + 0x109e0) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e3_left",0);
-    *(int *)(param_1 + 0x109e4) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e4_left",0);
-    *(int *)(param_1 + 0x109e8) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e1_right",0);
-    *(int *)(param_1 + 0x109ec) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e2_right",0);
-    *(int *)(param_1 + 0x109f0) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e3_right",0);
-    *(int *)(param_1 + 0x109f4) = iVar3;
-    iVar3 = core_skeleton_cpp_FUN_00543100(this_ptr,"e4_right",0);
-    *(int *)(param_1 + 0x109f8) = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccae,1)
+    ;
+    *(int *)&param_1[0x62].field_0x118 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccb1,1)
+    ;
+    *(int *)&param_1[0x62].field_0x11c = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100(this_ptr,&DAT_005cccb4,1)
+    ;
+    *(int *)&param_1[0x62].field_0x120 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e1_left",0);
+    *(int *)&param_1[0x62].field_0xf4 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e2_left",0);
+    *(int *)&param_1[0x62].field_0xf8 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e3_left",0);
+    *(int *)&param_1[0x62].field_0xfc = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e4_left",0);
+    *(int *)&param_1[0x62].field_0x100 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e1_right",0);
+    *(int *)&param_1[0x62].field_0x104 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e2_right",0);
+    *(int *)&param_1[0x62].field_0x108 = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e3_right",0);
+    *(int *)&param_1[0x62].field_0x10c = iVar3;
+    iVar3 = core_skeleton_cpp_CDeformableModel_findPartByName_FUN_00543100
+                      (this_ptr,"e4_right",0);
+    *(int *)&param_1[0x62].field_0x110 = iVar3;
   }
-  iVar3 = param_1;
+  pCVar4 = param_1;
   do {
-    if (*(int *)(iVar3 + 0x109dc) != -1) {
-      *(uint *)(param_1 + 0x23f4 + *(int *)(iVar3 + 0x109dc) * 4) = 0;
+    if (*(int *)&pCVar4[0x62].field_0xf4 != -1) {
+      *(uint *)
+       ((int)(&param_1[0xd].orient_matrix + 4) + *(int *)&pCVar4[0x62].field_0xf4 * 4 + 4) = 0;
     }
-    if (*(int *)(iVar3 + 0x109ec) != -1) {
-      *(uint *)(param_1 + 0x23f4 + *(int *)(iVar3 + 0x109ec) * 4) = 0;
+    if (*(int *)&pCVar4[0x62].field_0x104 != -1) {
+      *(uint *)
+       ((int)(&param_1[0xd].orient_matrix + 4) + *(int *)&pCVar4[0x62].field_0x104 * 4 + 4) = 0;
     }
-    piVar1 = (int *)(iVar3 + 0x109fc);
-    iVar3 = iVar3 + 4;
-    *(uint *)(param_1 + 0x23f4 + *piVar1 * 4) = 0;
-  } while (iVar3 != param_1 + 0x10);
-  fVar2 = (float)_DAT_01c2a370 * _DAT_005cccfe;
-  *(float *)(param_1 + 0x109d0) = *(float *)(param_1 + 0x109d0) - fVar2;
-  if (*(int *)(param_1 + 0x109cc) == 1) {
-    if (*(float *)(param_1 + 0x109d0) <= 0.0) {
-      uVar4 = core_actor_cpp_FUN_0040cf60(0x40a00000,0x41000000);
-      *(uint *)(param_1 + 0x109c0) = 0;
-      *(uint *)(param_1 + 0x109c4) = 0;
-      *(uint *)(param_1 + 0x109cc) = 0;
-      *(uint *)(param_1 + 0x109d0) = uVar4;
+    pCVar2 = pCVar4 + 0x62;
+    pCVar4 = (CDemonActor *)(pCVar4->actor_name + 4);
+    *(uint *)((int)(&param_1[0xd].orient_matrix + 4) + *(int *)&pCVar2->field_0x114 * 4 + 4) =
+         0;
+  } while (pCVar4 != (CDemonActor *)(param_1->actor_name + 0x10));
+  fVar1 = (float)_DAT_01c2a370 * _DAT_005cccfe;
+  *(float *)&param_1[0x62].field_0xe8 = *(float *)&param_1[0x62].field_0xe8 - fVar1;
+  if (*(int *)&param_1[0x62].field_0xe4 == 1) {
+    if (*(float *)&param_1[0x62].field_0xe8 <= 0.0) {
+      fVar5 = core_actor_cpp_getRandomFloatFromRange_FUN_0040cf60(5.0,8.0);
+      *(uint *)&param_1[0x62].field_0xd8 = 0;
+      *(uint *)&param_1[0x62].field_0xdc = 0;
+      *(uint *)&param_1[0x62].field_0xe4 = 0;
+      *(float *)&param_1[0x62].field_0xe8 = fVar5;
     }
   }
-  else if (*(float *)(param_1 + 0x109d0) <= 0.0) {
-    *(uint *)(param_1 + 0x109c4) = 3;
-    *(uint *)(param_1 + 0x109cc) = 1;
-    *(uint *)(param_1 + 0x109d0) = 0x3d4ccccd;
-    *(uint *)(param_1 + 0x109c0) = 3;
+  else if (*(float *)&param_1[0x62].field_0xe8 <= 0.0) {
+    *(uint *)&param_1[0x62].field_0xdc = 3;
+    *(uint *)&param_1[0x62].field_0xe4 = 1;
+    *(uint *)&param_1[0x62].field_0xe8 = 0x3d4ccccd;
+    *(uint *)&param_1[0x62].field_0xd8 = 3;
   }
-  *(float *)(param_1 + 0x109d4) = *(float *)(param_1 + 0x109d4) - fVar2;
-  if (*(float *)(param_1 + 0x109d4) <= 0.0) {
-    iVar3 = *(int *)&g_CScriptPtr->field_0x4;
-    if (param_1 == iVar3) {
-      *(uint *)(iVar3 + 0x109d4) = 0x3e19999a;
-      uVar5 = rand();
-      *(uint *)(iVar3 + 0x109c8) = uVar5 & 3;
+  *(float *)&param_1[0x62].field_0xec = *(float *)&param_1[0x62].field_0xec - fVar1;
+  if (*(float *)&param_1[0x62].field_0xec <= 0.0) {
+    pCVar4 = g_CScriptPtr->who_is_speaking;
+    if (param_1 == pCVar4) {
+      *(uint *)&pCVar4[0x62].field_0xec = 0x3e19999a;
+      uVar6 = rand();
+      *(uint *)&pCVar4[0x62].field_0xe0 = uVar6 & 3;
     }
     else {
-      *(uint *)(param_1 + 0x109c8) = 0;
-      *(uint *)(param_1 + 0x109d4) = 0;
+      *(uint *)&param_1[0x62].field_0xe0 = 0;
+      *(uint *)&param_1[0x62].field_0xec = 0;
     }
   }
-  iVar3 = *(int *)(*(int *)(param_1 + 0x109c0) * 4 + param_1 + 0x109dc);
-  if (iVar3 != -1) {
-    core_charactr_cpp_FUN_004246e0(this_ptr,*(uint *)(param_1 + 0x109d8),iVar3);
+  if (*(int *)(&param_1[0x62].field_0xf4 + *(int *)&param_1[0x62].field_0xd8 * 4) != -1) {
+    core_charactr_cpp_FUN_004246e0
+              (this_ptr,*(uint *)&param_1[0x62].field_0xf0,
+               *(int *)(&param_1[0x62].field_0xf4 + *(int *)&param_1[0x62].field_0xd8 * 4));
   }
-  iVar3 = *(int *)(*(int *)(param_1 + 0x109c4) * 4 + param_1 + 0x109ec);
-  if (iVar3 != -1) {
-    core_charactr_cpp_FUN_004246e0(this_ptr,*(uint *)(param_1 + 0x109d8),iVar3);
+  if (*(int *)(&param_1[0x62].field_0x104 + *(int *)&param_1[0x62].field_0xdc * 4) != -1) {
+    core_charactr_cpp_FUN_004246e0
+              (this_ptr,*(uint *)&param_1[0x62].field_0xf0,
+               *(int *)(&param_1[0x62].field_0x104 + *(int *)&param_1[0x62].field_0xdc * 4));
   }
   core_charactr_cpp_FUN_004246e0
-            (this_ptr,*(uint *)(param_1 + 0x109d8),
-             *(uint *)(param_1 + 0x109fc + *(int *)(param_1 + 0x109c8) * 4));
+            (this_ptr,*(uint *)&param_1[0x62].field_0xf0,
+             *(uint *)(&param_1[0x62].field_0x114 + *(int *)&param_1[0x62].field_0xe0 * 4));
   return;
 }

@@ -21,29 +21,29 @@ CDemonActorType * CSpike::getActorType(CSpike *this_ptr);
 // Address: 00582f90
 CSpike * __cdecl CSpike::ctor(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005830d0
+// Original: core_spike.cpp_CSpike_setup_FUN_005830d0
 // Address: 005830d0
-void FUN_005830d0(CDemonActor *param_1);
+void __cdecl CSpike::setup(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005831b0
+// Original: core_spike.cpp_CSpike_process_FUN_005831b0
 // Address: 005831b0
-void FUN_005831b0(CSpike *param_1,float param_2);
+void __cdecl CSpike::process(CSpike *this_ptr,float delta_time);
 
-// Original: core_spike.cpp_FUN_005834e0
+// Original: core_spike.cpp_CSpike_renderOpaque_FUN_005834e0
 // Address: 005834e0
-int FUN_005834e0(CDemonActor *param_1);
+int __cdecl CSpike::renderOpaque(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_00583560
+// Original: core_spike.cpp_CSpike_getBoundingBox_FUN_00583560
 // Address: 00583560
-void FUN_00583560(int param_1);
+CBoundingBox3D * __cdecl CSpike::getBoundingBox(CSpike *this_ptr,CBoundingBox3D *out_box);
 
 // Original: core_spike.cpp_CSpike_archive_FUN_005835a0
 // Address: 005835a0
 void __cdecl CSpike::archive(CSpike *this_ptr);
 
-// Original: core_spike.cpp_FUN_005836f0
+// Original: core_spike.cpp_CSpike_getCollisionType_FUN_005836f0
 // Address: 005836f0
-undefined4 FUN_005836f0(void);
+ECollisionType __cdecl CSpike::getCollisionType(CSpike *this_ptr,SCollisionInfo *collision_info);
 
 // Original: core_spike.cpp_FUN_00583700
 // Address: 00583700

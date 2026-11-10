@@ -19,7 +19,7 @@ CPatrolPoint * core_patrpoin_cpp_CPatrolPoint_dtor_FUN_0059c610(CPatrolPoint *th
     FUN_005b7fce(ptr);
     return this_ptr;
   }
-  *(byte **)&this_ptr->field_0x2b0 = &g_CPatrolPointVTable;
+  *(CDemonActor_vtable **)&this_ptr->field_0x2b0 = &g_CPatrolPointVTable;
   pCVar1 = (CPatrolPoint *)core_trigger_cpp_CTrigger_dtor_FUN_00577840((CTrigger *)this_ptr,1);
   if ((flags & 2) == 0) {
     return pCVar1;

@@ -14,9 +14,9 @@
 ;
 ; Called Functions:
 ;   sound_sndmain.cpp_FUN_00556fd0
-;   sound_sndmain.cpp_FUN_00558e90
 ;   sound_sndmain.cpp_isRecordingStarted_FUN_00558b00
 ;   sound_sndmain.cpp_isRecordingSystemActive_FUN_00558af0
+;   sound_sndmain.cpp_lockSound_FUN_00558e90
 ;   sound_sndmain.cpp_setRecordingFormat_FUN_00558b20
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     POP ESI                             ; 00558c2c
     POP EBX                             ; 00558c2d
     RET                                 ; 00558c2e
-    CALL sound_sndmain.cpp_FUN_00558e90 ; 00558c2f
-        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00558e90()
+    CALL sound_sndmain.cpp_lockSound_FUN_00558e90 ; 00558c2f
+        ;   XREF to: 00558e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_00558e90()
         ;   Label: LAB_00558c2f
     MOV EDX,dword ptr [0x02cf3c70]      ; 00558c34 | DAT_02cf3c70
     PUSH EDX                            ; 00558c3a

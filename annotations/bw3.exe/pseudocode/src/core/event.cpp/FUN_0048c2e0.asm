@@ -318,8 +318,8 @@
 ;   core_event.cpp_CEventList_setTimerEvent_FUN_00494a70
 ;   core_event.cpp_CEventList_updateSfxEntries_FUN_00495280
 ;   core_event.cpp_CEventList_validateCondition_FUN_00491b00
+;   core_event.cpp_extractParenArg_FUN_0048bc10
 ;   core_event.cpp_formatEventError_FUN_0048b7f0
-;   core_event.cpp_FUN_0048bc10
 ;   core_event.cpp_FUN_004946f0
 ;   ... and 58 more
 ;
@@ -752,8 +752,8 @@ section .text
     PUSH EAX                            ; 0048c6a6
     LEA EAX,[EBP + -0x62]               ; 0048c6a7
     PUSH EAX                            ; 0048c6aa
-    CALL core_event.cpp_FUN_0048bc10    ; 0048c6ab
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048c6ab
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048c6b0
     TEST EAX,EAX                        ; 0048c6b3
     JNZ 0x0048c717                      ; 0048c6b5
@@ -1315,8 +1315,8 @@ section .text
     PUSH EAX                            ; 0048cbb6
     LEA EAX,[EBP + -0x62]               ; 0048cbb7
     PUSH EAX                            ; 0048cbba
-    CALL core_event.cpp_FUN_0048bc10    ; 0048cbbb
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048cbbb
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048cbc0
     TEST EAX,EAX                        ; 0048cbc3
     JNZ 0x0048c717                      ; 0048cbc5
@@ -2138,8 +2138,8 @@ section .text
     PUSH EAX                            ; 0048d397
     LEA EAX,[EBP + -0x62]               ; 0048d398
     PUSH EAX                            ; 0048d39b
-    CALL core_event.cpp_FUN_0048bc10    ; 0048d39c
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048d39c
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048d3a1
     TEST EAX,EAX                        ; 0048d3a4
     JNZ 0x0048c717                      ; 0048d3a6
@@ -2328,8 +2328,8 @@ section .text
     PUSH 0x5be448                       ; 0048d570 | = "Error parsing displayBitmap time argu..."
         ;   Label: LAB_0048d570
     PUSH 0x1c734b0                      ; 0048d575 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048d57a
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048d57a
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d57f
     XOR EAX,EAX                         ; 0048d582
     LEA ESP,[EBP + 0xfa]                ; 0048d584
@@ -2383,8 +2383,8 @@ section .text
     PUSH 0x5be472                       ; 0048d5f3 | = "Can't find matching ) in displayBitma..."
         ;   Label: LAB_0048d5f3
     PUSH 0x1c734b0                      ; 0048d5f8 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048d5fd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048d5fd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d602
     XOR EAX,EAX                         ; 0048d605
     LEA ESP,[EBP + 0xfa]                ; 0048d607
@@ -2505,8 +2505,8 @@ section .text
     PUSH 0x5be50b                       ; 0048d717 | = "Error parsing displayFieldNotes comma..."
         ;   Label: LAB_0048d717
     PUSH 0x1c734b0                      ; 0048d71c | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048d721
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048d721
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048d726
     XOR EAX,EAX                         ; 0048d729
     LEA ESP,[EBP + 0xfa]                ; 0048d72b
@@ -3338,8 +3338,8 @@ section .text
     PUSH 0x5be756                       ; 0048dee2 | = "Error parsing fadeAmbientSound parms"
         ;   Label: LAB_0048dee2
     PUSH 0x1c734b0                      ; 0048dee7 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048deec
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048deec
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048def1
     XOR EAX,EAX                         ; 0048def4
     LEA ESP,[EBP + 0xfa]                ; 0048def6
@@ -3444,8 +3444,8 @@ section .text
     PUSH 0x5be796                       ; 0048dfe2 | = "Error parsing fadeSfx parms"
         ;   Label: LAB_0048dfe2
     PUSH 0x1c734b0                      ; 0048dfe7 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048dfec
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048dfec
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048dff1
     XOR EAX,EAX                         ; 0048dff4
     LEA ESP,[EBP + 0xfa]                ; 0048dff6
@@ -3485,8 +3485,8 @@ section .text
     PUSH dword ptr [EBP + 0x2]          ; 0048e039
     PUSH dword ptr [EBP + -0x2]         ; 0048e03c
     PUSH ECX                            ; 0048e03f
-    CALL sound_sndmain.cpp_FUN_00556c10 ; 0048e040
-        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
+    CALL sound_sndmain.cpp_setSfxFade_FUN_00556c10 ; 0048e040
+        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxFade_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
     ADD ESP,0x10                        ; 0048e045
     JMP 0x0048c7d2                      ; 0048e048
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -3534,8 +3534,8 @@ section .text
     PUSH EAX                            ; 0048e0ad
     LEA EAX,[EBP + -0x62]               ; 0048e0ae
     PUSH EAX                            ; 0048e0b1
-    CALL core_event.cpp_FUN_0048bc10    ; 0048e0b2
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048e0b2
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048e0b7
     TEST EAX,EAX                        ; 0048e0ba
     JNZ 0x0048c717                      ; 0048e0bc
@@ -3589,8 +3589,8 @@ section .text
     PUSH EAX                            ; 0048e134
     LEA EAX,[EBP + -0x62]               ; 0048e135
     PUSH EAX                            ; 0048e138
-    CALL core_event.cpp_FUN_0048bc10    ; 0048e139
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048e139
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048e13e
     TEST EAX,EAX                        ; 0048e141
     JNZ 0x0048c717                      ; 0048e143
@@ -3644,8 +3644,8 @@ section .text
     PUSH EAX                            ; 0048e1be
     LEA EAX,[EBP + -0x62]               ; 0048e1bf
     PUSH EAX                            ; 0048e1c2
-    CALL core_event.cpp_FUN_0048bc10    ; 0048e1c3
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048e1c3
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048e1c8
     TEST EAX,EAX                        ; 0048e1cb
     JNZ 0x0048c717                      ; 0048e1cd
@@ -3699,8 +3699,8 @@ section .text
     PUSH EAX                            ; 0048e249
     LEA EAX,[EBP + -0x62]               ; 0048e24a
     PUSH EAX                            ; 0048e24d
-    CALL core_event.cpp_FUN_0048bc10    ; 0048e24e
-        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_FUN_0048bc10()
+    CALL core_event.cpp_extractParenArg_FUN_0048bc10 ; 0048e24e
+        ;   XREF to: 0048bc10 (UNCONDITIONAL_CALL)  ; undefined core_event.cpp_extractParenArg_FUN_0048bc10()
     ADD ESP,0x10                        ; 0048e253
     TEST EAX,EAX                        ; 0048e256
     JNZ 0x0048c717                      ; 0048e258
@@ -4037,8 +4037,8 @@ section .text
     PUSH 0x5be868                       ; 0048e56e | = "Error parsing incCounter arguments"
         ;   Label: LAB_0048e56e
     PUSH 0x1c734b0                      ; 0048e573 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048e578
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048e578
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048e57d
     XOR EAX,EAX                         ; 0048e580
     LEA ESP,[EBP + 0xfa]                ; 0048e582
@@ -4168,8 +4168,8 @@ section .text
     PUSH 0x5be8a3                       ; 0048e6a6 | = "Error parsing decCounter arguments"
         ;   Label: LAB_0048e6a6
     PUSH 0x1c734b0                      ; 0048e6ab | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048e6b0
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048e6b0
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048e6b5
     XOR EAX,EAX                         ; 0048e6b8
     LEA ESP,[EBP + 0xfa]                ; 0048e6ba
@@ -4547,12 +4547,12 @@ section .text
     XOR ESI,ESI                         ; 0048ea53
     MOV EAX,[0x00603b28]                ; 0048ea55 | g_CDemonSetPtr
         ;   Label: LAB_0048ea55
-    CMP EDI,dword ptr [EAX + 0x14d164]  ; 0048ea5a | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EDI,dword ptr [EAX + 0x14d164]  ; 0048ea5a | g_CDemonSetInstance.actor_count
     JGE 0x0048c7d2                      ; 0048ea60
         ;   XREF to: 0048c7d2 (CONDITIONAL_JUMP)  ; caseD_6
     MOV ECX,dword ptr [0x01c5bc48]      ; 0048ea66 | g_CEnemyClassInfo.name_hash
     PUSH ECX                            ; 0048ea6c
-    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 0048ea6d | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EBX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 0048ea6d | g_CDemonSetInstance.actors[0]
     PUSH EBX                            ; 0048ea74
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0048ea75
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
@@ -4569,8 +4569,8 @@ section .text
     PUSH 0x5be99c                       ; 0048ea89 | = "Error parsing lightning command"
         ;   Label: LAB_0048ea89
     PUSH 0x1c734b0                      ; 0048ea8e | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048ea93
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048ea93
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048ea98
     XOR EAX,EAX                         ; 0048ea9b
     LEA ESP,[EBP + 0xfa]                ; 0048ea9d
@@ -4660,8 +4660,8 @@ section .text
     PUSH 0x5be9ce                       ; 0048eb97 | = "Error parsing lightning command"
         ;   Label: LAB_0048eb97
     PUSH 0x1c734b0                      ; 0048eb9c | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048eba1
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048eba1
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048eba6
     XOR EAX,EAX                         ; 0048eba9
     LEA ESP,[EBP + 0xfa]                ; 0048ebab
@@ -4890,8 +4890,8 @@ section .text
     PUSH 0x5bea8e                       ; 0048edd0 | = "Error parsing killSfx parms"
         ;   Label: LAB_0048edd0
     PUSH 0x1c734b0                      ; 0048edd5 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048edda
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048edda
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048eddf
     XOR EAX,EAX                         ; 0048ede2
     LEA ESP,[EBP + 0xfa]                ; 0048ede4
@@ -4953,8 +4953,8 @@ section .text
     PUSH 0x5beab0                       ; 0048ee4f | = "Error parsing killSfx parms"
         ;   Label: LAB_0048ee4f
     PUSH 0x1c734b0                      ; 0048ee54 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048ee59
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048ee59
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048ee5e
     XOR EAX,EAX                         ; 0048ee61
     LEA ESP,[EBP + 0xfa]                ; 0048ee63
@@ -4992,8 +4992,8 @@ section .text
     PUSH dword ptr [EBP + 0x42]         ; 0048eeaa
     PUSH 0x0                            ; 0048eead
     PUSH ECX                            ; 0048eeaf
-    CALL sound_sndmain.cpp_FUN_00556c10 ; 0048eeb0
-        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
+    CALL sound_sndmain.cpp_setSfxFade_FUN_00556c10 ; 0048eeb0
+        ;   XREF to: 00556c10 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_setSfxFade_FUN_00556c10(uint sfx_handle, float target_volume, float fade_duration, int stop_after_fade)
     ADD ESP,0x10                        ; 0048eeb5
     MOV ESI,dword ptr [EBP + 0x10e]     ; 0048eeb8
     PUSH ESI                            ; 0048eebe
@@ -5005,8 +5005,8 @@ section .text
     PUSH 0x5beacc                       ; 0048eecc | = "Can't find matching ) in killSfx command"
         ;   Label: LAB_0048eecc
     PUSH 0x1c734b0                      ; 0048eed1 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048eed6
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048eed6
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048eedb
     XOR EAX,EAX                         ; 0048eede
     LEA ESP,[EBP + 0xfa]                ; 0048eee0
@@ -5089,8 +5089,8 @@ section .text
     PUSH 0x5beb05                       ; 0048efa1 | = "Error parsing lightning command"
         ;   Label: LAB_0048efa1
     PUSH 0x1c734b0                      ; 0048efa6 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048efab
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048efab
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048efb0
     XOR EAX,EAX                         ; 0048efb3
     LEA ESP,[EBP + 0xfa]                ; 0048efb5
@@ -5191,8 +5191,8 @@ section .text
     PUSH 0x5beb37                       ; 0048f09a | = "Error parsing playSfx parms"
         ;   Label: LAB_0048f09a
     PUSH 0x1c734b0                      ; 0048f09f | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f0a4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f0a4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048f0a9
     XOR EAX,EAX                         ; 0048f0ac
     LEA ESP,[EBP + 0xfa]                ; 0048f0ae
@@ -5295,8 +5295,8 @@ section .text
     PUSH 0x5beb5c                       ; 0048f18b | = "Error parsing playSfx parms"
         ;   Label: LAB_0048f18b
     PUSH 0x1c734b0                      ; 0048f190 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f195
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f195
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048f19a
     XOR EAX,EAX                         ; 0048f19d
     LEA ESP,[EBP + 0xfa]                ; 0048f19f
@@ -5329,8 +5329,8 @@ section .text
     PUSH EAX                            ; 0048f1d3
     PUSH 0x5beb78                       ; 0048f1d4 | = "handle name %s is too long, max %d chars"
     PUSH 0x1c734b0                      ; 0048f1d9 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f1de
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f1de
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048f1e3
     XOR EAX,EAX                         ; 0048f1e6
     LEA ESP,[EBP + 0xfa]                ; 0048f1e8
@@ -5360,14 +5360,14 @@ section .text
     JNZ 0x0048f2b2                      ; 0048f225
         ;   XREF to: 0048f2b2 (CONDITIONAL_JUMP)  ; LAB_0048f2b2
     PUSH 0x1                            ; 0048f22b
-    CALL sound_sndmain.cpp_FUN_00556e30 ; 0048f22d
-        ;   XREF to: 00556e30 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_00556e30(int channel_index)
+    CALL sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30 ; 0048f22d
+        ;   XREF to: 00556e30 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_isSfxChannelEnabled_FUN_00556e30(int channel_index)
     ADD ESP,0x4                         ; 0048f232
     TEST EAX,EAX                        ; 0048f235
     JZ 0x0048c7d2                       ; 0048f237
         ;   XREF to: 0048c7d2 (CONDITIONAL_JUMP)  ; caseD_6
-    CALL sound_sndmain.cpp_FUN_00555fd0 ; 0048f23d
-        ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00555fd0()
+    CALL sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0 ; 0048f23d
+        ;   XREF to: 00555fd0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_pushSfxOptions_FUN_00555fd0()
     PUSH 0x1                            ; 0048f242
     CALL sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90 ; 0048f244
         ;   XREF to: 00555e90 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_setNextSfxChannel_FUN_00555e90(int channel_index)
@@ -5382,8 +5382,8 @@ section .text
         ;   XREF to: 005609b0 (UNCONDITIONAL_CALL)  ; uint core_sound.cpp_CSound_playSound_FUN_005609b0(CSound * this_ptr, void * user_data, char * sound_name)
     ADD ESP,0xc                         ; 0048f266
     MOV EBX,EAX                         ; 0048f269
-    CALL sound_sndmain.cpp_FUN_00556050 ; 0048f26b
-        ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_FUN_00556050()
+    CALL sound_sndmain.cpp_popSfxOptions_FUN_00556050 ; 0048f26b
+        ;   XREF to: 00556050 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_popSfxOptions_FUN_00556050()
     CMP byte ptr [EBP + 0xfffff426],0x0 ; 0048f270
     JZ 0x0048c7d2                       ; 0048f277
         ;   XREF to: 0048c7d2 (CONDITIONAL_JUMP)  ; caseD_6
@@ -5399,8 +5399,8 @@ section .text
     PUSH 0x5beba1                       ; 0048f293 | = "Can't find matching ) in playSfx command"
         ;   Label: LAB_0048f293
     PUSH 0x1c734b0                      ; 0048f298 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f29d
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f29d
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048f2a2
     XOR EAX,EAX                         ; 0048f2a5
     LEA ESP,[EBP + 0xfa]                ; 0048f2a7
@@ -5643,7 +5643,7 @@ section .text
     ADD ESP,0x4                         ; 0048f4e8
     MOV EAX,[0x00603b28]                ; 0048f4eb | g_CDemonSetPtr
         ;   Label: LAB_0048f4eb
-    CMP ESI,dword ptr [EAX + 0x14d164]  ; 0048f4f0 | g_CDemonSetInstance.field1364324_0x14d164
+    CMP ESI,dword ptr [EAX + 0x14d164]  ; 0048f4f0 | g_CDemonSetInstance.actor_count
     JL 0x0048f51a                       ; 0048f4f6
         ;   XREF to: 0048f51a (CONDITIONAL_JUMP)  ; LAB_0048f51a
     INC EDI                             ; 0048f4f8
@@ -5652,8 +5652,8 @@ section .text
     PUSH 0x5bec15                       ; 0048f4fb | = "Error parsing resetGore command"
         ;   Label: LAB_0048f4fb
     PUSH 0x1c734b0                      ; 0048f500 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f505
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f505
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048f50a
     XOR EAX,EAX                         ; 0048f50d
     LEA ESP,[EBP + 0xfa]                ; 0048f50f
@@ -5665,7 +5665,7 @@ section .text
     MOV EDX,dword ptr [0x007e161c]      ; 0048f51a | g_CBodyPartClassInfo.name_hash
         ;   Label: LAB_0048f51a
     PUSH EDX                            ; 0048f520
-    MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 0048f521 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV ECX,dword ptr [EBX + EAX*0x1 + 0x14d168] ; 0048f521 | g_CDemonSetInstance.actors[0]
     PUSH ECX                            ; 0048f528
     CALL core_actor.cpp_castToClassHash_FUN_0040c840 ; 0048f529
         ;   XREF to: 0040c840 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_castToClassHash_FUN_0040c840()
@@ -5787,8 +5787,8 @@ section .text
     PUSH 0x5bec5a                       ; 0048f643 | = "Error parsing setActorBool parms"
         ;   Label: LAB_0048f643
     PUSH 0x1c734b0                      ; 0048f648 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f64d
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f64d
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048f652
     XOR EAX,EAX                         ; 0048f655
     LEA ESP,[EBP + 0xfa]                ; 0048f657
@@ -5984,8 +5984,8 @@ section .text
     PUSH EAX                            ; 0048f7f0
     PUSH 0x5bec7b                       ; 0048f7f1 | = "%s is not a valid boolean actor varia..."
     PUSH 0x1c734b0                      ; 0048f7f6 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f7fb
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f7fb
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048f800
     XOR EAX,EAX                         ; 0048f803
     LEA ESP,[EBP + 0xfa]                ; 0048f805
@@ -6103,8 +6103,8 @@ section .text
     PUSH 0x5becc8                       ; 0048f916 | = "Error parsing setCameraAmbient parms"
         ;   Label: LAB_0048f916
     PUSH 0x1c734b0                      ; 0048f91b | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f920
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f920
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048f925
     XOR EAX,EAX                         ; 0048f928
     LEA ESP,[EBP + 0xfa]                ; 0048f92a
@@ -6152,8 +6152,8 @@ section .text
     PUSH ECX                            ; 0048f985
     MOV ECX,dword ptr [0x00603b28]      ; 0048f986 | g_CDemonSetPtr
     PUSH ECX                            ; 0048f98c | g_CDemonSetInstance
-    CALL core_set.cpp_FUN_0053b280      ; 0048f98d
-        ;   XREF to: 0053b280 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_0053b280(CDemonSet * this_ptr, int index, float value)
+    CALL core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280 ; 0048f98d
+        ;   XREF to: 0053b280 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_setCameraAmbientValue_FUN_0053b280(CDemonSet * this_ptr, int index, float value)
     ADD ESP,0xc                         ; 0048f992
     JMP 0x0048c7d2                      ; 0048f995
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -6162,8 +6162,8 @@ section .text
     PUSH EAX                            ; 0048f9a0
     PUSH 0x5beced                       ; 0048f9a1 | = "Camera \"%s\" does not exist."
     PUSH 0x1c734b0                      ; 0048f9a6 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f9ab
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f9ab
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048f9b0
     XOR EAX,EAX                         ; 0048f9b3
     LEA ESP,[EBP + 0xfa]                ; 0048f9b5
@@ -6178,8 +6178,8 @@ section .text
     FSTP double ptr [ESP]               ; 0048f9c6
     PUSH 0x5bed09                       ; 0048f9c9 | = "Ambient value %g is out of range (1....."
     PUSH 0x1c734b0                      ; 0048f9ce | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048f9d3
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048f9d3
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048f9d8
     XOR EAX,EAX                         ; 0048f9db
     LEA ESP,[EBP + 0xfa]                ; 0048f9dd
@@ -6278,8 +6278,8 @@ section .text
     PUSH 0x5bed49                       ; 0048fabd | = "Error parsing setCounter arguments"
         ;   Label: LAB_0048fabd
     PUSH 0x1c734b0                      ; 0048fac2 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fac7
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fac7
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048facc
     XOR EAX,EAX                         ; 0048facf
     LEA ESP,[EBP + 0xfa]                ; 0048fad1
@@ -6358,8 +6358,8 @@ section .text
     PUSH 0x5bed72                       ; 0048fb6f | = "Error parsing setCounter value argument"
         ;   Label: LAB_0048fb6f
     PUSH 0x1c734b0                      ; 0048fb74 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fb79
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fb79
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048fb7e
     XOR EAX,EAX                         ; 0048fb81
     LEA ESP,[EBP + 0xfa]                ; 0048fb83
@@ -6375,8 +6375,8 @@ section .text
     PUSH 0x5bed9a                       ; 0048fb96 | = "Error parsing setCounter arguments"
         ;   Label: LAB_0048fb96
     PUSH 0x1c734b0                      ; 0048fb9b | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fba0
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fba0
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048fba5
     XOR EAX,EAX                         ; 0048fba8
     LEA ESP,[EBP + 0xfa]                ; 0048fbaa
@@ -6477,8 +6477,8 @@ section .text
     PUSH 0x5beddb                       ; 0048fc91 | = "Error parsing setDoorState command parms"
         ;   Label: LAB_0048fc91
     PUSH 0x1c734b0                      ; 0048fc96 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fc9b
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fc9b
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048fca0
     XOR EAX,EAX                         ; 0048fca3
     LEA ESP,[EBP + 0xfa]                ; 0048fca5
@@ -6625,8 +6625,8 @@ section .text
     PUSH EAX                            ; 0048fde3
     PUSH 0x5bee20                       ; 0048fde4 | = "Invalid door state '%s'"
     PUSH 0x1c734b0                      ; 0048fde9 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fdee
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fdee
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 0048fdf3
     XOR EAX,EAX                         ; 0048fdf6
     LEA ESP,[EBP + 0xfa]                ; 0048fdf8
@@ -6713,8 +6713,8 @@ section .text
     PUSH 0x5bee53                       ; 0048fec2 | = "Error parsing setGroupAmbient parms"
         ;   Label: LAB_0048fec2
     PUSH 0x1c734b0                      ; 0048fec7 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fecc
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fecc
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0048fed1
     XOR EAX,EAX                         ; 0048fed4
     LEA ESP,[EBP + 0xfa]                ; 0048fed6
@@ -6729,8 +6729,8 @@ section .text
     FSTP double ptr [ESP]               ; 0048fee7
     PUSH 0x5bee77                       ; 0048feea | = "Ambient value %g is out of range (1....."
     PUSH 0x1c734b0                      ; 0048feef | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0048fef4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0048fef4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0048fef9
     XOR EAX,EAX                         ; 0048fefc
     LEA ESP,[EBP + 0xfa]                ; 0048fefe
@@ -6973,8 +6973,8 @@ section .text
     PUSH 0x5befac                       ; 0049018e | = "Error parsing setLeverState command p..."
         ;   Label: LAB_0049018e
     PUSH 0x1c734b0                      ; 00490193 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490198
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490198
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0049019d
     XOR EAX,EAX                         ; 004901a0
     LEA ESP,[EBP + 0xfa]                ; 004901a2
@@ -7203,8 +7203,8 @@ section .text
     PUSH 0x5beff5                       ; 004903ac | = "Error parsing setModelState command p..."
         ;   Label: LAB_004903ac
     PUSH 0x1c734b0                      ; 004903b1 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 004903b6
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004903b6
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004903bb
     XOR EAX,EAX                         ; 004903be
     LEA ESP,[EBP + 0xfa]                ; 004903c0
@@ -7292,12 +7292,12 @@ section .text
     PUSH EAX                            ; 00490474
     LEA ESI,[EBX + 0x158]               ; 00490475
     PUSH ESI                            ; 0049047b
-    CALL core_motion.cpp_FUN_004fc310   ; 0049047c
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 0049047c
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00490481
     PUSH EAX                            ; 00490484
-    CALL core_motion.cpp_FUN_004fba50   ; 00490485
-        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50 ; 00490485
+        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 0049048a
     TEST EAX,EAX                        ; 0049048d
     JL 0x004904ac                       ; 0049048f
@@ -7320,8 +7320,8 @@ section .text
     PUSH EAX                            ; 004904b9
     PUSH 0x5bf01f                       ; 004904ba | = "Model %s does not have state %s"
     PUSH 0x1c734b0                      ; 004904bf | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 004904c4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004904c4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 004904c9
     XOR EAX,EAX                         ; 004904cc
     LEA ESP,[EBP + 0xfa]                ; 004904ce
@@ -7435,8 +7435,8 @@ section .text
     PUSH 0x5bf062                       ; 004905ea | = "Error parsing setSunlight command parms"
         ;   Label: LAB_004905ea
     PUSH 0x1c734b0                      ; 004905ef | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 004905f4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004905f4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004905f9
     XOR EAX,EAX                         ; 004905fc
     LEA ESP,[EBP + 0xfa]                ; 004905fe
@@ -7546,8 +7546,8 @@ section .text
     PUSH 0x5bf0a1                       ; 00490700 | = "Error parsing setTimer command parms"
         ;   Label: LAB_00490700
     PUSH 0x1c734b0                      ; 00490705 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 0049070a
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 0049070a
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 0049070f
     XOR EAX,EAX                         ; 00490712
     LEA ESP,[EBP + 0xfa]                ; 00490714
@@ -7601,8 +7601,8 @@ section .text
     PUSH EAX                            ; 0049077e
     PUSH 0x5bf0c6                       ; 0049077f | = "Timer name \"%s\" is too long, (max %..."
     PUSH 0x1c734b0                      ; 00490784 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490789
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490789
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 0049078e
     XOR EAX,EAX                         ; 00490791
     LEA ESP,[EBP + 0xfa]                ; 00490793
@@ -7614,8 +7614,8 @@ section .text
     PUSH 0x5bf0f2                       ; 0049079e | = "Invalid timer duration"
         ;   Label: LAB_0049079e
     PUSH 0x1c734b0                      ; 004907a3 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 004907a8
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 004907a8
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 004907ad
     XOR EAX,EAX                         ; 004907b0
     LEA ESP,[EBP + 0xfa]                ; 004907b2
@@ -7674,14 +7674,14 @@ section .text
     MOV ECX,dword ptr [0x005fe9dc]      ; 0049083d | g_CGamePtr
     MOV EAX,dword ptr [EBP + 0xb6]      ; 00490843
     MOV dword ptr [EBP + -0x62],EBX     ; 00490849
-    MOV dword ptr [ECX + 0x294],EAX     ; 0049084c | g_CGameInstance.field660_0x294
+    MOV dword ptr [ECX + 0x294],EAX     ; 0049084c | g_CGameInstance.field600_0x294
     JMP 0x0048c7d2                      ; 00490852
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
     PUSH 0x5bf11c                       ; 00490857 | = "Error parsing setEndTimer command parms"
         ;   Label: LAB_00490857
     PUSH 0x1c734b0                      ; 0049085c | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490861
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490861
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00490866
     XOR EAX,EAX                         ; 00490869
     LEA ESP,[EBP + 0xfa]                ; 0049086b
@@ -7782,8 +7782,8 @@ section .text
     PUSH 0x5bf159                       ; 00490959 | = "Error parsing setWeather command parms"
         ;   Label: LAB_00490959
     PUSH 0x1c734b0                      ; 0049095e | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490963
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490963
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00490968
     XOR EAX,EAX                         ; 0049096b
     LEA ESP,[EBP + 0xfa]                ; 0049096d
@@ -7853,8 +7853,8 @@ section .text
     PUSH EAX                            ; 004909fb
     PUSH 0x5bf18f                       ; 004909fc | = "Invalid weather type: %s"
     PUSH 0x1c734b0                      ; 00490a01 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490a06
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490a06
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0xc                         ; 00490a0b
     XOR EAX,EAX                         ; 00490a0e
     LEA ESP,[EBP + 0xfa]                ; 00490a10
@@ -7935,8 +7935,8 @@ section .text
     PUSH 0x5bf1c9                       ; 00490aea | = "Error parsing shakeScreen command parms"
         ;   Label: LAB_00490aea
     PUSH 0x1c734b0                      ; 00490aef | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490af4
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490af4
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00490af9
     XOR EAX,EAX                         ; 00490afc
     LEA ESP,[EBP + 0xfa]                ; 00490afe
@@ -8039,8 +8039,8 @@ section .text
     PUSH 0x5bf214                       ; 00490bf3 | = "Error parsing slamModelToMotion comma..."
         ;   Label: LAB_00490bf3
     PUSH 0x1c734b0                      ; 00490bf8 | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490bfd
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490bfd
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x8                         ; 00490c02
     XOR EAX,EAX                         ; 00490c05
     LEA ESP,[EBP + 0xfa]                ; 00490c07
@@ -8128,12 +8128,12 @@ section .text
     PUSH EAX                            ; 00490cbb
     LEA ESI,[EBX + 0x158]               ; 00490cbc
     PUSH ESI                            ; 00490cc2
-    CALL core_motion.cpp_FUN_004fc310   ; 00490cc3
-        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_FUN_004fc310(CMotionController * this_ptr)
+    CALL core_motion.cpp_CMotionController_getMotionList_FUN_004fc310 ; 00490cc3
+        ;   XREF to: 004fc310 (UNCONDITIONAL_CALL)  ; CMotionList * core_motion.cpp_CMotionController_getMotionList_FUN_004fc310(CMotionController * this_ptr)
     ADD ESP,0x4                         ; 00490cc8
     PUSH EAX                            ; 00490ccb
-    CALL core_motion.cpp_FUN_004fb9c0   ; 00490ccc
-        ;   XREF to: 004fb9c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fb9c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0 ; 00490ccc
+        ;   XREF to: 004fb9c0 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00490cd1
     TEST EAX,EAX                        ; 00490cd4
     JL 0x00490d0b                       ; 00490cd6
@@ -8167,8 +8167,8 @@ section .text
     PUSH EAX                            ; 00490d18
     PUSH 0x5bf242                       ; 00490d19 | = "Model %s does not have motion %s"
     PUSH 0x1c734b0                      ; 00490d1e | DAT_01c734b0
-    CALL crt_unknown.c_FUN_005a28c0     ; 00490d23
-        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a28c0()
+    CALL crt_unknown.c_sprintf_FUN_005a28c0 ; 00490d23
+        ;   XREF to: 005a28c0 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005a28c0(char * buffer, char * format)
     ADD ESP,0x10                        ; 00490d28
     XOR EAX,EAX                         ; 00490d2b
     LEA ESP,[EBP + 0xfa]                ; 00490d2d
@@ -8284,8 +8284,8 @@ section .text
     PUSH ESI                            ; 00490e4b
     MOV EDX,dword ptr [0x00603b28]      ; 00490e4c | g_CDemonSetPtr
     PUSH EDX                            ; 00490e52 | g_CDemonSetInstance
-    CALL core_setdir.cpp_FUN_00540ba0   ; 00490e53
-        ;   XREF to: 00540ba0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_FUN_00540ba0(CDemonSet * this_ptr, int camera_index, float hold_time)
+    CALL core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00540ba0 ; 00490e53
+        ;   XREF to: 00540ba0 (UNCONDITIONAL_CALL)  ; void core_setdir.cpp_CDemonSet_setPendingCamera_FUN_00540ba0(CDemonSet * this_ptr, int camera_index, float hold_time)
     ADD ESP,0xc                         ; 00490e58
     JMP 0x0048c7d2                      ; 00490e5b
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
@@ -8898,12 +8898,12 @@ section .text
     PUSH EBX                            ; 00491477
     CALL dword ptr [ECX + 0x68]         ; 00491478
     MOV EAX,[0x006039e0]                ; 0049147b | g_CScriptPtr
-    MOV ESI,dword ptr [EAX + 0xc]       ; 00491480 | g_CScriptInstance.field12_0xc
+    MOV ESI,dword ptr [EAX + 0xc]       ; 00491480 | g_CScriptInstance.focus_actor
     ADD ESP,0xc                         ; 00491483
     CMP EBX,ESI                         ; 00491486
     JNZ 0x0048c7d2                      ; 00491488
         ;   XREF to: 0048c7d2 (CONDITIONAL_JUMP)  ; caseD_6
-    MOV dword ptr [EAX + 0x10],0x1      ; 0049148e | g_CScriptInstance.field16_0x10
+    MOV dword ptr [EAX + 0x10],0x1      ; 0049148e | g_CScriptInstance.focus_actor_changed
     JMP 0x0048c7d2                      ; 00491495
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
     CMP dword ptr [EBP + -0x66],0x0     ; 0049149a
@@ -9237,10 +9237,10 @@ section .text
     ADD ESP,0x8                         ; 00491814
     MOV EAX,[0x006039e0]                ; 00491817 | g_CScriptPtr
         ;   Label: LAB_00491817
-    CMP EBX,dword ptr [EAX + 0xc]       ; 0049181c | g_CScriptInstance.field12_0xc
+    CMP EBX,dword ptr [EAX + 0xc]       ; 0049181c | g_CScriptInstance.focus_actor
     JNZ 0x0048c7d2                      ; 0049181f
         ;   XREF to: 0048c7d2 (CONDITIONAL_JUMP)  ; caseD_6
-    MOV dword ptr [EAX + 0x10],0x1      ; 00491825 | g_CScriptInstance.field16_0x10
+    MOV dword ptr [EAX + 0x10],0x1      ; 00491825 | g_CScriptInstance.focus_actor_changed
     JMP 0x0048c7d2                      ; 0049182c
         ;   XREF to: 0048c7d2 (UNCONDITIONAL_JUMP)  ; caseD_6
     CMP dword ptr [EBP + -0x66],0x0     ; 00491831

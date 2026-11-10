@@ -7,7 +7,7 @@
 ; CStairs *        Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_stairs.cpp_FUN_005849b0 at 005849c2
+;   core_stairs.cpp_CStairs_setup_FUN_005849b0 at 005849c2
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005f6374

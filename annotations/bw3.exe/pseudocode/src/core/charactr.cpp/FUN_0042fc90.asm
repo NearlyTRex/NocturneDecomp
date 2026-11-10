@@ -24,10 +24,10 @@
 ; undefined        Stack[-0x10]:1  local_10
 ;
 ; XREF[4]:
-;   core_carved.cpp_FUN_00425da0 at 00426c1a
+;   core_carved.cpp_CCarved_process_FUN_00425da0 at 00426c1a
 ;   core_demnfolk.cpp_FUN_00455080 at 00455e3e
-;   core_ghoul.cpp_FUN_004c6eb0 at 004c8c47
-;   core_zombie.cpp_FUN_00588ee0 at 00589c74
+;   core_ghoul.cpp_CGhoul_process_FUN_004c6eb0 at 004c8c47
+;   core_zombie.cpp_CZombie_process_FUN_00588ee0 at 00589c74
 ;
 ; Referenced Globals:
 ;   CGore* g_CGorePtr = 01d22e44
@@ -35,7 +35,7 @@
 ; Called Functions:
 ;   core_actor.cpp_FUN_00408b00
 ;   core_actor.cpp_FUN_00408b80
-;   core_actor.cpp_FUN_0040cf40
+;   core_actor.cpp_randomChance_FUN_0040cf40
 ;   core_gore.cpp_CGore_spawnBloodParticles_FUN_004ce8a0
 ;   core_xform.cpp_FUN_00583260
 ;
@@ -88,8 +88,8 @@ section .text
     RET                                 ; 0042fcf6
     PUSH 0x3dcccccd                     ; 0042fcf7
         ;   Label: LAB_0042fcf7
-    CALL core_actor.cpp_FUN_0040cf40    ; 0042fcfc
-        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cf40(float probability_threshold)
+    CALL core_actor.cpp_randomChance_FUN_0040cf40 ; 0042fcfc
+        ;   XREF to: 0040cf40 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_randomChance_FUN_0040cf40(float probability_threshold)
     ADD ESP,0x4                         ; 0042fd01
     TEST EAX,EAX                        ; 0042fd04
     JZ 0x0042fcd5                       ; 0042fd06

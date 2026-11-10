@@ -1,0 +1,349 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 345,
+    "complexity_score": 303,
+    "cross_reference_count": 0,
+    "function_call_count": 15,
+    "global_count": 7,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 138,
+    "suspect_count": 13,
+    "suspect_types": [
+      "pointer_cast",
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "unresolved_funcptr",
+      "unrolled_memcpy",
+      "warning_overlapping_globals",
+      "warning_type_propagation"
+    ],
+    "total_lines": 483
+  },
+  "cross_references": [],
+  "function": {
+    "address": "004c9400",
+    "address_range": [
+      [
+        "004c9400",
+        "004c97c1"
+      ]
+    ],
+    "convention": "__cdecl",
+    "is_ebp_frame": true,
+    "name": "core_ghoul.cpp_CGhoul_processDamage_FUN_004c9400",
+    "signature": "void __cdecl core_ghoul_cpp_CGhoul_processDamage_FUN_004c9400(CGhoul *this_ptr,SDamageInfo *damage_info)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040ce40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040ce40"
+    },
+    {
+      "addr": "0040cea0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cea0"
+    },
+    {
+      "addr": "0040cf40",
+      "is_variadic": false,
+      "name": "core_actor.cpp_randomChance_FUN_0040cf40"
+    },
+    {
+      "addr": "0042ff70",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_FUN_0042ff70"
+    },
+    {
+      "addr": "00489b80",
+      "is_variadic": false,
+      "name": "core_enemy.cpp_CEnemy_processDamage_FUN_00489b80"
+    },
+    {
+      "addr": "004c9140",
+      "is_variadic": false,
+      "name": "core_ghoul.cpp_CGhoul_processDismemberment_FUN_004c9140"
+    },
+    {
+      "addr": "004fc070",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getCurrentMotion_FUN_004fc070"
+    },
+    {
+      "addr": "004fc310",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
+    },
+    {
+      "addr": "004fc0d0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0"
+    },
+    {
+      "addr": "004fb9c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionList_findMotionIndex_FUN_004fb9c0"
+    },
+    {
+      "addr": "005a3120",
+      "is_variadic": false,
+      "name": "crt_math.c_round_FUN_005a3120"
+    },
+    {
+      "addr": "005a28c0",
+      "is_variadic": false,
+      "name": "crt_unknown.c_sprintf_FUN_005a28c0"
+    },
+    {
+      "addr": "00441ff0",
+      "is_variadic": false,
+      "name": "engine_console.cpp_FUN_00441ff0"
+    },
+    {
+      "addr": "00556700",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00556700"
+    },
+    {
+      "addr": "00556be0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_killSfx_FUN_00556be0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005c43c5",
+      "name": "s_go_berzerk_005c43c4+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005c43d1",
+      "name": "s_ghoul_die_wav_1_6_005c43d1",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c43e8",
+      "name": "s_guul_flinch_d_005c43e8",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c43f6",
+      "name": "s_ghoul_mad_wav_005c43f6",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005c440d",
+      "name": "DAT_005c440d",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005f1690",
+      "name": "g_CConsolePtr",
+      "type": "CConsole*",
+      "value": "007f7ea4"
+    },
+    {
+      "addr": "007f7ea4",
+      "name": "g_CConsoleInstance",
+      "type": "CConsole",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.569811320754717,
+    "instruction_count": 265,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 14,
+      "BOOL_OR": 3,
+      "BRANCH": 6,
+      "CALL": 23,
+      "CALLIND": 5,
+      "CBRANCH": 26,
+      "COPY": 268,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 1,
+      "FLOAT_LESS": 1,
+      "FLOAT_MULT": 1,
+      "FLOAT_NAN": 2,
+      "FLOAT_SUB": 1,
+      "INT2FLOAT": 1,
+      "INT_ADD": 113,
+      "INT_AND": 141,
+      "INT_CARRY": 29,
+      "INT_EQUAL": 120,
+      "INT_LEFT": 4,
+      "INT_LESS": 11,
+      "INT_MULT": 2,
+      "INT_NOTEQUAL": 8,
+      "INT_OR": 5,
+      "INT_SBORROW": 12,
+      "INT_SCARRY": 30,
+      "INT_SLESS": 60,
+      "INT_SUB": 90,
+      "INT_XOR": 2,
+      "INT_ZEXT": 4,
+      "LOAD": 59,
+      "POPCOUNT": 60,
+      "RETURN": 3,
+      "ROUND": 1,
+      "STORE": 98,
+      "TRUNC": 1
+    },
+    "pcode_op_count": 1211
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGhoul *"
+      },
+      {
+        "is_param": true,
+        "name": "damage_info",
+        "offset": 8,
+        "size": 4,
+        "type": "SDamageInfo *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Type propagation did not converge",
+      "line": 2,
+      "match": "WARNING: Type propagation algorithm not settling",
+      "severity": "moderate",
+      "text": "/* WARNING: Type propagation algorithm not settling */",
+      "type": "warning_type_propagation"
+    },
+    {
+      "description": "Overlapping global symbols",
+      "line": 3,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 51,
+      "match": "field_0x2140",
+      "severity": "mild",
+      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + iVar7 * 4) == 0) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 56,
+      "match": "field_0xce54",
+      "severity": "mild",
+      "text": "iVar7 = *(int *)&(this_ptr->base).field_0xce54;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 65,
+      "match": "field_0x2140",
+      "severity": "mild",
+      "text": "if (*(int *)(&(this_ptr->base).base.model.field_0x2140 + this_ptr->part_indices[10] * 4) == 0)",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 73,
+      "match": "field_0x3284",
+      "severity": "mild",
+      "text": "if (*(int *)&(this_ptr->base).base.field_0x3284 < 1) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 82,
+      "match": "field_0x3284",
+      "severity": "mild",
+      "text": "if (0 < *(int *)&(this_ptr->base).base.field_0x3284) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 84,
+      "match": "field_0x3288",
+      "severity": "mild",
+      "text": "if (*(int *)&(pCVar3->base).base.field_0x3288 == this_ptr->part_indices[9]) {",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 90,
+      "match": "field_0x3284",
+      "severity": "mild",
+      "text": "} while (iVar5 < *(int *)&(this_ptr->base).base.field_0x3284);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 106,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(iVar7 + 0xa8))(this_ptr);",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Watcom field-by-field struct copy (3 consecutive `dst.field = src.field;` lines). Replace with `dst = src;` or `memcpy(&dst, &src, sizeof(...));` in a .keep \u2014 but only once the run (together with any sibling runs for the same dst/src pair) covers every byte of the struct. Collapsing a run that leaves a gap WIDENS the copy and changes behaviour; see `partial_struct_copy` (\u00a731) for that case.",
+      "line": 32,
+      "match": "field-by-field struct copy",
+      "severity": "moderate",
+      "text": "(this_ptr->prev_position).x = (pCVar1->position).x;",
+      "type": "unrolled_memcpy"
+    },
+    {
+      "description": "(int)&NAME used in arithmetic \u2014 Watcom byte-offset trampolining that should be expressed as struct field or array index access. Replace in a .keep.",
+      "line": 89,
+      "match": "(int)&NAME used in byte-offset arithmetic",
+      "severity": "moderate",
+      "text": "pCVar3 = (CGhoul *)((int)&(pCVar3->base).base.base.orient + 8);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar3` self-updates by taking the address of a sibling subfield, numerically casting to `int`, then adding a small constant \u2014 the sum equals one element-size step of the array being walked. Replace `pCVar3->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 89,
+      "match": "pCVar3 = (T *)((int)&(pCVar3->FIELD).SUBFIELD + CONST)",
+      "severity": "moderate",
+      "text": "pCVar3 = (CGhoul *)((int)&(pCVar3->base).base.base.orient + 8);",
+      "type": "shadow_pointer_walk"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "CGhoul",
+        "offset": 264,
+        "vtable_addr": "005e0a54"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

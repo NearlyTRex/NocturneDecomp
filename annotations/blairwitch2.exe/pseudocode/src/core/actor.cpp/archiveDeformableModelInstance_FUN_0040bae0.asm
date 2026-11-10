@@ -8,16 +8,16 @@
 ; undefined1       Stack[-0xcf]:1  local_cf
 ;
 ; XREF[30]:
-;   core_armour.cpp_FUN_0040f040 at 0040f06f
-;   core_batcreat.cpp_FUN_004124a0 at 004124cf
-;   core_batman.cpp_FUN_00413e60 at 00413e8f
-;   core_beast.cpp_FUN_00414b10 at 00414b3f
-;   core_biggs.cpp_FUN_00415250 at 0041527f
-;   core_boneguy.cpp_FUN_00419c50 at 00419c8a
-;   core_bride.cpp_FUN_0041e800 at 0041e825
-;   core_cow.cpp_FUN_00439830 at 0043985e
-;   core_dog.cpp_FUN_0045eab0 at 0045eade
-;   core_dracbrid.cpp_FUN_00464cc0 at 00464cef
+;   core_armour.cpp_CArmour_archive_FUN_0040f040 at 0040f06f
+;   core_batcreat.cpp_CBatCreature_archive_FUN_004124a0 at 004124cf
+;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413e8f
+;   core_beast.cpp_CBeast_archive_FUN_00414b10 at 00414b3f
+;   core_biggs.cpp_CBiggs_archive_FUN_00415250 at 0041527f
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419c8a
+;   core_bride.cpp_CBride_archive_FUN_0041e800 at 0041e825
+;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437bb9
+;   core_cow.cpp_CZombieCow_archive_FUN_00439830 at 0043985e
+;   core_dog.cpp_CZombieDog_archive_FUN_0045eab0 at 0045eade
 ;   ... and 20 more
 ;
 ; Referenced Globals:

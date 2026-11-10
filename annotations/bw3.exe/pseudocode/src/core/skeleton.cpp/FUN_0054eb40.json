@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 161,
-    "complexity_score": 316,
+    "complexity_score": 301,
     "cross_reference_count": 0,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 91,
-    "suspect_count": 21,
+    "suspect_count": 20,
     "suspect_types": [
       "raw_address_constant",
-      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 252
@@ -33,7 +32,7 @@
     {
       "addr": "004fc310",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_004fc310"
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_004fc310"
     },
     {
       "addr": "0054eac0",
@@ -41,14 +40,14 @@
       "name": "core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0"
     },
     {
+      "addr": "0054fcc0",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_computeBoneModelMatrices_FUN_0054fcc0"
+    },
+    {
       "addr": "0054edb0",
       "is_variadic": false,
       "name": "core_skeleton.cpp_FUN_0054edb0"
-    },
-    {
-      "addr": "0054fcc0",
-      "is_variadic": false,
-      "name": "core_skeleton.cpp_FUN_0054fcc0"
     }
   ],
   "globals": [],
@@ -187,7 +186,7 @@
       "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "pCVar2 = core_motion_cpp_FUN_004fc310((CMotionController *)param_1);",
+      "text": "pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_004fc310(&param_1->base);",
       "type": "unnamed_param"
     },
     {
@@ -205,14 +204,6 @@
       "severity": "mild",
       "text": "pCVar3 = core_skeleton_cpp_CDeformableModelInstance_getSkeletonPtr_FUN_0054eac0(param_1);",
       "type": "unnamed_param"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x1de78",
-      "severity": "mild",
-      "text": "iVar1 = *(int *)&pCVar3->field_0x1de78;",
-      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
@@ -243,7 +234,7 @@
       "line": 39,
       "match": "param_1",
       "severity": "mild",
-      "text": "core_skeleton_cpp_FUN_0054fcc0(auStack_1b04,param_1);",
+      "text": "core_skeleton_cpp_computeBoneModelMatrices_FUN_0054fcc0(auStack_1b04,param_1);",
       "type": "unnamed_param"
     },
     {

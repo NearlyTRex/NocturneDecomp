@@ -7,7 +7,7 @@
 ; CFilmProjector * Stack[0x4]:4   this_ptr
 ;
 ; XREF[1]:
-;   core_filmreel.cpp_FUN_00496430 at 00496443
+;   core_filmreel.cpp_factoryFuncFilmProjector_FUN_00496430 at 00496443
 ;
 ; Called Functions:
 ;   core_dest.cpp_CActorDestination_ctor_FUN_00459140

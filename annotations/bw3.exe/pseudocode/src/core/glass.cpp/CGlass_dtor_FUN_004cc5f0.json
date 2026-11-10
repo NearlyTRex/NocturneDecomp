@@ -2,17 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 47,
-    "complexity_score": 35,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 20,
+    "pseudocode_lines": 21,
     "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field"
+      "negative_offset"
     ],
-    "total_lines": 67
+    "total_lines": 68
   },
   "cross_references": [],
   "function": {
@@ -118,12 +118,12 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x21c",
+      "description": "Negative struct offset (wrong base type)",
+      "line": 19,
+      "match": "pCVar1[-2].",
       "severity": "mild",
-      "text": "pCVar1 = core_mirror_cpp_FUN_004f3fe0((CMirror *)&this_ptr->field_0x21c,0);",
-      "type": "unnamed_field"
+      "text": "((CDemonActor *)&pCVar1[-2].reflection.corner4,1);",
+      "type": "negative_offset"
     }
   ],
   "vtable_info": {
@@ -134,7 +134,7 @@
         "vtable_addr": "005e0cc4"
       },
       {
-        "class_name": "Unknown",
+        "class_name": "CGlass",
         "offset": 208,
         "vtable_addr": "005e0be4"
       }

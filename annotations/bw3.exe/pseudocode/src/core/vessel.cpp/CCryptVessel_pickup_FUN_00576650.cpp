@@ -9,6 +9,6 @@
 void __cdecl core_vessel_cpp_CCryptVessel_pickup_FUN_00576650(CCryptVessel *this_ptr,CDemonActor *carrier)
 
 {
-  *(CDemonActor **)&this_ptr->field_0x2d4 = carrier;
+  this_ptr->carrier = carrier;
   return;
 }

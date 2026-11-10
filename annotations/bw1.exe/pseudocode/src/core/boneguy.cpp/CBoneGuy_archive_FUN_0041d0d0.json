@@ -2,17 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 194,
-    "complexity_score": 251,
+    "complexity_score": 169,
     "cross_reference_count": 0,
     "function_call_count": 10,
     "global_count": 18,
-    "max_suspect_severity": "mild",
-    "pseudocode_lines": 56,
-    "suspect_count": 19,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 59,
+    "suspect_count": 10,
     "suspect_types": [
+      "shadow_pointer_walk",
       "unnamed_field"
     ],
-    "total_lines": 250
+    "total_lines": 253
   },
   "cross_references": [],
   "function": {
@@ -34,6 +35,11 @@
       "name": "core_actor.cpp_archiveActor_FUN_0040b6f0"
     },
     {
+      "addr": "0040b7f0",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveDeformableModelInstance_FUN_0040b7f0"
+    },
+    {
       "addr": "0040b5f0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveFloat_FUN_0040b5f0"
@@ -42,6 +48,16 @@
       "addr": "0040b670",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveInteger_FUN_0040b670"
+    },
+    {
+      "addr": "0040b870",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archiveMotionState_FUN_0040b870"
+    },
+    {
+      "addr": "0040b960",
+      "is_variadic": false,
+      "name": "core_actor.cpp_archivePartStatus_FUN_0040b960"
     },
     {
       "addr": "0040b3a0",
@@ -57,21 +73,6 @@
       "addr": "0040b1c0",
       "is_variadic": false,
       "name": "core_actor.cpp_archiveVector_FUN_0040b1c0"
-    },
-    {
-      "addr": "0040b7f0",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b7f0"
-    },
-    {
-      "addr": "0040b870",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b870"
-    },
-    {
-      "addr": "0040b960",
-      "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040b960"
     },
     {
       "addr": "004a0520",
@@ -247,161 +248,89 @@
   "suspects": [
     {
       "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0xc1d0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1d0,\"@speed\" + 1);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 16,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"modelName\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0xc1e0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc1e0,\"guardDistance\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "core_actor_cpp_FUN_0040b870((CMotionController *)&this_ptr->field_0x158,\"motion state\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0xc27c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveString_FUN_0040b440(&this_ptr->field_0xc27c,\"deathEvent\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0xc2e0",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc2e0,\"recombineTime\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0xc888",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc888,\"blownUp\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 25,
-      "match": "field_0xc88c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc88c,\"param\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0xc2e4",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveInteger_FUN_0040b670((int *)&this_ptr->field_0xc2e4,\"boxCount\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x158",
-      "severity": "mild",
-      "text": "((CDeformableModelInstance *)&this_ptr->field_0x158,\"partStatus\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 30,
-      "match": "field_0xc2e4",
-      "severity": "mild",
-      "text": "if (0 < *(int *)&this_ptr->field_0xc2e4) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0xc2e8",
-      "severity": "mild",
-      "text": "puVar7 = &this_ptr->field_0xc2e8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 32,
-      "match": "field_0xc32c",
-      "severity": "mild",
-      "text": "puVar2 = &this_ptr->field_0xc32c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0xc320",
-      "severity": "mild",
-      "text": "puVar5 = &this_ptr->field_0xc320;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
       "line": 34,
-      "match": "field_0xc300",
+      "match": "field_0x44",
       "severity": "mild",
-      "text": "puVar6 = &this_ptr->field_0xc300;",
+      "text": "puVar2 = &this_ptr->boxes[0].field_0x44;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 35,
-      "match": "field_0xc310",
+      "match": "field_0x38",
       "severity": "mild",
-      "text": "puVar1 = &this_ptr->field_0xc310;",
+      "text": "puVar5 = &this_ptr->boxes[0].field_0x38;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 36,
-      "match": "field_0xc2f4",
+      "match": "field_0x18",
       "severity": "mild",
-      "text": "puVar4 = &this_ptr->field_0xc2f4;",
+      "text": "puVar6 = &this_ptr->boxes[0].field_0x18;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
+      "line": 37,
+      "match": "field_0x28",
+      "severity": "mild",
+      "text": "puVar1 = &this_ptr->boxes[0].field_0x28;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 38,
+      "match": "field_0xc",
+      "severity": "mild",
+      "text": "puVar4 = &this_ptr->boxes[0].field_0xc;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar4` was initialized to the address of an array element's subfield (`puVar4 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar4)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar4->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 47,
+      "match": "puVar4 = puVar4 + N",
+      "severity": "moderate",
+      "text": "puVar4 = puVar4 + 0x48;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar6` was initialized to the address of an array element's subfield (`puVar6 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar6)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar6->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 48,
+      "match": "puVar6 = puVar6 + N",
+      "severity": "moderate",
+      "text": "puVar6 = puVar6 + 0x48;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar5` was initialized to the address of an array element's subfield (`puVar5 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar5)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar5->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 50,
+      "match": "puVar5 = puVar5 + N",
+      "severity": "moderate",
+      "text": "puVar5 = puVar5 + 0x48;",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `puVar2` was initialized to the address of an array element's subfield (`puVar2 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar2)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar2->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
       "line": 51,
-      "match": "field_0xc2e4",
-      "severity": "mild",
-      "text": "} while (iVar3 < *(int *)&this_ptr->field_0xc2e4);",
-      "type": "unnamed_field"
+      "match": "puVar2 = puVar2 + N",
+      "severity": "moderate",
+      "text": "puVar2 = puVar2 + 0x48;",
+      "type": "shadow_pointer_walk"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 55,
-      "match": "field_0xc25c",
-      "severity": "mild",
-      "text": "core_actor_cpp_archiveFloat_FUN_0040b5f0(&this_ptr->field_0xc25c,\"victimHeight\");",
-      "type": "unnamed_field"
+      "description": "Watcom shadow-pointer walk \u2014 `puVar1` was initialized to the address of an array element's subfield (`puVar1 = &BASE->ARR[K].SUBFIELD;`) and is advanced here by `+ N` whole pointees, where `N * sizeof(*puVar1)` equals the array's element stride. The pointer is a smaller-typed walker striding a larger struct array. Replace the `puVar1->subfield` reads with direct indexing on the original array (`BASE->ARR[i].SUBFIELD`); drop the shadow init and advance.",
+      "line": 52,
+      "match": "puVar1 = puVar1 + N",
+      "severity": "moderate",
+      "text": "puVar1 = puVar1 + 0x48;",
+      "type": "shadow_pointer_walk"
     }
   ],
   "vtable_info": {
     "entries": [
       {
-        "class_name": "Unknown",
+        "class_name": "CBoneGuy",
         "offset": 212,
         "vtable_addr": "005fcc44"
       }

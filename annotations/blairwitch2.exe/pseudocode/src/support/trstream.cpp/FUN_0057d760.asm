@@ -5,8 +5,8 @@
 ;
 ;
 ; XREF[2]:
+;   support_codec.cpp_CCodec_processBuffer_FUN_00434070 at 004340ba
 ;   support_codec.cpp_FUN_00433ff0 at 00434030
-;   support_codec.cpp_FUN_00434070 at 004340ba
 ;
 ; *****************************************************************************
 

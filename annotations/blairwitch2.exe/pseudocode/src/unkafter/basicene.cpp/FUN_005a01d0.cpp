@@ -13,8 +13,10 @@ void unkafter_basicene_cpp_FUN_005a01d0(int param_1,uint *param_2)
   CMotionList *this_ptr;
   int iVar2;
   
-  this_ptr = core_motion_cpp_FUN_00503860((CMotionController *)(param_1 + 0x2b4));
-  iVar2 = core_motion_cpp_FUN_00502f10(this_ptr,(char *)(param_2 + 1),1);
+  this_ptr = core_motion_cpp_CMotionController_getMotionList_FUN_00503860
+                       ((CMotionController *)(param_1 + 0x2b4));
+  iVar2 = core_motion_cpp_CMotionList_findMotionIndex_FUN_00502f10(this_ptr,(char *)(param_2 + 1),1)
+  ;
   param_2[9] = iVar2;
   param_2[10] = *(uint *)(this_ptr + iVar2 * 0x118 + 0x1c8c);
   fVar1 = *(float *)(this_ptr + param_2[9] * 0x118 + 0x1c48);

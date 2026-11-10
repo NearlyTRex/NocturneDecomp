@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 61,
-    "complexity_score": 106,
+    "complexity_score": 36,
     "cross_reference_count": 0,
     "function_call_count": 5,
     "global_count": 4,
-    "max_suspect_severity": "moderate",
+    "max_suspect_severity": "mild",
     "pseudocode_lines": 21,
-    "suspect_count": 7,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
-      "unresolved_funcptr",
       "warning_overlapping_globals"
     ],
     "total_lines": 82
@@ -43,7 +41,7 @@
     {
       "addr": "00410640",
       "is_variadic": false,
-      "name": "core_baron.cpp_FUN_00410640"
+      "name": "core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640"
     },
     {
       "addr": "005030e0",
@@ -147,54 +145,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 10,
-      "match": "code *",
-      "severity": "moderate",
-      "text": "target = (CDemonActor *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0x94))(this_ptr);",
-      "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 10,
-      "match": "field_0x154",
-      "severity": "mild",
-      "text": "target = (CDemonActor *)(**(code **)(*(int *)&this_ptr->field_0x154 + 0x94))(this_ptr);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x2d4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x2d4 == 2) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "core_baron_cpp_CBaron_attachToOwner_FUN_0040fa70(*(CBaron **)&this_ptr->field_0x578,target);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "else if (*(CBaron **)&this_ptr->field_0x578 != (CBaron *)0x0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 21,
-      "match": "field_0x578",
-      "severity": "mild",
-      "text": "core_baron_cpp_CBaron_detachFromOwner_FUN_0040fbc0(*(CBaron **)&this_ptr->field_0x578,target);",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

@@ -9,6 +9,6 @@
 void __cdecl core_flame_cpp_CFlame_hide_FUN_004a0200(CFlame *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x3ec = 0;
+  this_ptr->is_visible = 0;
   return;
 }

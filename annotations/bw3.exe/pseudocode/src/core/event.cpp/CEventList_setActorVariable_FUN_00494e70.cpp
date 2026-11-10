@@ -19,10 +19,10 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00494e70(CEventList 
   CEventList *dest;
   CEventList *pCVar6;
   
-  if ((actor != (CDemonActor *)0x0) && (*(char *)actor == '\0')) {
+  if ((actor != (CDemonActor *)0x0) && (actor->actor_name[0] == '\0')) {
     _DAT_01d71de0 = "..\\core\\event.cpp";
     _DAT_01d71de4 = 0xf34;
-    pcVar4 = core_actor_cpp_FUN_00408870(actor);
+    pcVar4 = core_actor_cpp_CDemonActor_getActorClassName_FUN_00408870(actor);
     core_main_c_FUN_004e4330("Tried to assign actor var %s an actor of type %s with no name",var_name,pcVar4);
   }
   iVar5 = core_event_cpp_CEventList_findActorVariable_FUN_004950c0(this_ptr,var_name);
@@ -45,11 +45,11 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00494e70(CEventList 
       } while (CVar1 != (CEventList)0x0);
       pCVar6 = this_ptr + *(int *)(this_ptr + 0x34e8) * 0x1e + 0x37da;
       do {
-        CVar1 = *(CEventList *)actor;
+        CVar1 = (CEventList)actor->actor_name[0];
         *pCVar6 = CVar1;
         if (CVar1 == (CEventList)0x0) break;
-        CVar1 = (CEventList)actor->field_0x1;
-        actor = (CDemonActor *)&actor->field_0x2;
+        CVar1 = *(CEventList *)(actor->actor_name + 1);
+        actor = (CDemonActor *)(actor->actor_name + 2);
         pCVar6[1] = CVar1;
         pCVar6 = pCVar6 + 2;
       } while (CVar1 != (CEventList)0x0);
@@ -80,13 +80,13 @@ void __cdecl core_event_cpp_CEventList_setActorVariable_FUN_00494e70(CEventList 
       pCVar6 = pCVar6 + 2;
     } while (CVar1 != (CEventList)0x0);
     do {
-      CVar1 = *(CEventList *)actor;
+      CVar1 = (CEventList)actor->actor_name[0];
       *dest = CVar1;
       if (CVar1 == (CEventList)0x0) {
         return;
       }
-      CVar1 = (CEventList)actor->field_0x1;
-      actor = (CDemonActor *)&actor->field_0x2;
+      CVar1 = *(CEventList *)(actor->actor_name + 1);
+      actor = (CDemonActor *)(actor->actor_name + 2);
       dest[1] = CVar1;
       dest = dest + 2;
     } while (CVar1 != (CEventList)0x0);

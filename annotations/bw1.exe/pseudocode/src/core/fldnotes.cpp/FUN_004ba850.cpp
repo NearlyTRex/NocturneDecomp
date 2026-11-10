@@ -29,9 +29,10 @@ int core_fldnotes_cpp_FUN_004ba850(uint param_1,char *param_2,uint param_3)
     pcVar4 = pcVar4 + 2;
   } while (cVar1 != '\0');
   *(uint *)(iVar2 + 0x18) = 0;
-  iVar3 = engine_font_cpp_FUN_004c3ea0(*(CBitFont **)(iVar2 + 0x11c),(char *)(iVar2 + 0x1c));
+  iVar3 = engine_font_cpp_CBitFont_getTextWidth_FUN_004c3ea0
+                    (*(CBitFont **)(iVar2 + 0x11c),(char *)(iVar2 + 0x1c));
   *(int *)(iVar2 + 8) = iVar3;
-  iVar3 = engine_font_cpp_FUN_004c4510(*(CBitFont **)(iVar2 + 0x11c),0x6a);
+  iVar3 = engine_font_cpp_CBitFont_getCharHeight_FUN_004c4510(*(CBitFont **)(iVar2 + 0x11c),0x6a);
   *(int *)(iVar2 + 0xc) = iVar3;
   return iVar2;
 }

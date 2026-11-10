@@ -1,0 +1,229 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 98,
+    "complexity_score": 119,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 8,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 44,
+    "suspect_count": 5,
+    "suspect_types": [
+      "alloc_magic_size",
+      "shadow_pointer_walk",
+      "unnamed_field",
+      "unrolled_strcpy",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 142
+  },
+  "cross_references": [
+    {
+      "addr": "00520d20",
+      "from_addr": "00520d5c",
+      "name": "core_prye.cpp_FUN_00520d20",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0040e720",
+    "address_range": [
+      [
+        "0040e720",
+        "0040e80f"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_ammobox.cpp_CAmmoBox_addToInventory_FUN_0040e720",
+    "signature": "void __cdecl core_ammobox_cpp_CAmmoBox_addToInventory_FUN_0040e720(CAmmoBox *this_ptr,CInventory *inventory)"
+  },
+  "function_calls": [
+    {
+      "addr": "0040de60",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_ctor_FUN_0040de60"
+    },
+    {
+      "addr": "0040e070",
+      "is_variadic": false,
+      "name": "core_ammo.cpp_CAmmo_setAmmoCount_FUN_0040e070"
+    },
+    {
+      "addr": "004da880",
+      "is_variadic": false,
+      "name": "core_inv.cpp_FUN_004da880"
+    },
+    {
+      "addr": "004e4330",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_004e4330"
+    },
+    {
+      "addr": "005a3cb2",
+      "is_variadic": false,
+      "name": "crt_unknown.c_debugAllocTracked1_FUN_005a3cb2"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005b615c",
+      "name": "s_core_ammobox_cpp_005b615c",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b6170",
+      "name": "s_Out_of_memory_005b6170",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b617e",
+      "name": "s_Some_ammo_005b617e",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005b617f",
+      "name": "s_ome_ammo_005b617e+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6180",
+      "name": "s_me_ammo_005b617e+2",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005b6181",
+      "name": "s_e_ammo_005b617e+3",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de0",
+      "name": "DAT_01d71de0",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d71de4",
+      "name": "DAT_01d71de4",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "00520d5c",
+        "call_type": "direct",
+        "caller": "core_prye.cpp_FUN_00520d20",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.012658227848101,
+    "instruction_count": 79,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 4,
+      "CALL": 6,
+      "CALLIND": 1,
+      "CBRANCH": 6,
+      "COPY": 65,
+      "INT_ADD": 35,
+      "INT_AND": 33,
+      "INT_CARRY": 9,
+      "INT_EQUAL": 30,
+      "INT_LESS": 3,
+      "INT_SBORROW": 3,
+      "INT_SCARRY": 9,
+      "INT_SLESS": 15,
+      "INT_SUB": 27,
+      "LOAD": 23,
+      "POPCOUNT": 15,
+      "RETURN": 3,
+      "STORE": 30
+    },
+    "pcode_op_count": 317
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CAmmoBox *"
+      },
+      {
+        "is_param": true,
+        "name": "inventory",
+        "offset": 8,
+        "size": 4,
+        "type": "CInventory *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 32,
+      "match": "field_0x318",
+      "severity": "mild",
+      "text": "*(EAmmoBoxType *)&this_ptr_00->field_0x318 = this_ptr->ammo_type;",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
+      "line": 36,
+      "match": "do {",
+      "severity": "moderate",
+      "text": "do {",
+      "type": "unrolled_strcpy"
+    },
+    {
+      "description": "Watcom shadow-pointer walk \u2014 `pCVar2` self-updates via pointer arithmetic on an inner array field reached through a chained field path; the array decays to a pointer and `+ CONST` adds `CONST * sizeof(element)` bytes, matching the outer array stride. Replace `pCVar2->some_field[0]` reads with direct indexing on the original pointer; drop the shadow init and self-update.",
+      "line": 43,
+      "match": "pCVar2 = (T *)((pCVar2->FIELD).SUBFIELD...ARRAY + CONST)",
+      "severity": "moderate",
+      "text": "pCVar2 = (CAmmo *)((pCVar2->base).actor_name + 2);",
+      "type": "shadow_pointer_walk"
+    },
+    {
+      "description": "Allocation size hardcodes 0x320 == sizeof(CAmmo). Replace the magic with sizeof(CAmmo) so it stays correct if the struct layout (or a contained pointer) changes size at 64-bit (\u00a717/\u00a718).",
+      "line": 21,
+      "match": "(CAmmo*) alloc stride 0x320",
+      "severity": "moderate",
+      "text": "(CAmmo *)debugAllocTracked1(800)",
+      "type": "alloc_magic_size"
+    }
+  ]
+}

@@ -36,7 +36,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_skeleton.cpp_FUN_0054e420 at 0054e449
+;   core_skeleton.cpp_CDeformableModelInstance_skinVerticesForLOD_FUN_0054e420 at 0054e449
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005e4758

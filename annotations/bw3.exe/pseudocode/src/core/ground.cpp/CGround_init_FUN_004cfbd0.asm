@@ -21,8 +21,8 @@
 ;   core_ground.cpp_CGround_free_FUN_004cfc70
 ;   core_main.c_FUN_004e4330
 ;   core_texlist.cpp_CTextureList_ctor_FUN_005690a0
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;   crt_unknown.c_FUN_005a3650
-;   crt_unknown.c_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -48,8 +48,8 @@ section .text
         ;   XREF to: 004cfc1a (CONDITIONAL_JUMP)  ; LAB_004cfc1a
     PUSH 0x6d64                         ; 004cfbf7
         ;   Label: LAB_004cfbf7
-    CALL crt_unknown.c_FUN_005a3cb2     ; 004cfbfc
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 004cfbfc
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 004cfc01
     TEST EAX,EAX                        ; 004cfc04
     JZ 0x004cfc11                       ; 004cfc06

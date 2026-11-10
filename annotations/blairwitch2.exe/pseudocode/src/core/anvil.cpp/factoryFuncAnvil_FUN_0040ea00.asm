@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_anvil.cpp_CAnvil_ctor_FUN_0040ea30
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x4a0                          ; 0040ea00
         ;   Label: core_anvil.cpp_factoryFuncAnvil_FUN_0040ea00
-    CALL crt_unknown.c_FUN_005b8be2     ; 0040ea05
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0040ea05
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0040ea0a
     TEST EAX,EAX                        ; 0040ea0d
     JNZ 0x0040ea12                      ; 0040ea0f

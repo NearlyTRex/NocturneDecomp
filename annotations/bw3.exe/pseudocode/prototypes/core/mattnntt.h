@@ -21,37 +21,37 @@ CDemonActorType * CMattanntote::getActorType(CMattanntote *this_ptr);
 // Address: 00591ba0
 CMattanntote * CMattanntote::ctor(CMattanntote *this_ptr);
 
-// Original: core_mattnntt.cpp_FUN_00591d10
+// Original: core_mattnntt.cpp_CMattanntote_setup_FUN_00591d10
 // Address: 00591d10
-void FUN_00591d10(CEnemy *param_1);
+void __cdecl CMattanntote::setup(CMattanntote *this_ptr);
 
-// Original: core_mattnntt.cpp_FUN_00591f30
+// Original: core_mattnntt.cpp_CMattanntote_process_FUN_00591f30
 // Address: 00591f30
-void FUN_00591f30(CEnemy *param_1,float param_2);
+void __cdecl CMattanntote::process(CMattanntote *this_ptr,float delta_time);
 
-// Original: core_mattnntt.cpp_FUN_00593700
+// Original: core_mattnntt.cpp_CMattanntote_renderOpaque_FUN_00593700
 // Address: 00593700
-void FUN_00593700(CCharacter *param_1);
+int __cdecl CMattanntote::renderOpaque(CMattanntote *this_ptr);
 
-// Original: core_mattnntt.cpp_FUN_00593710
+// Original: core_mattnntt.cpp_CMattanntote_renderTransparent_FUN_00593710
 // Address: 00593710
-undefined4 FUN_00593710(CCharacter *param_1);
+int __cdecl CMattanntote::renderTransparent(CMattanntote *this_ptr);
 
-// Original: core_mattnntt.cpp_FUN_005939b0
+// Original: core_mattnntt.cpp_CMattanntote_processDamage_FUN_005939b0
 // Address: 005939b0
-void FUN_005939b0(int param_1,int param_2);
+void __cdecl CMattanntote::processDamage(CMattanntote *this_ptr,SDamageInfo *damage_info);
 
 // Original: core_mattnntt.cpp_FUN_00593a90
 // Address: 00593a90
 void FUN_00593a90(int param_1);
 
-// Original: core_mattnntt.cpp_FUN_00593ae0
+// Original: core_mattnntt.cpp_CMattanntote_getCarryObjToBodyXForm_FUN_00593ae0
 // Address: 00593ae0
-void FUN_00593ae0(int param_1,int param_2);
+CMatrix3x4f * __stack2_esi CMattanntote::getCarryObjToBodyXForm(CMattanntote *this_ptr,int hand_index,CMatrix3x4f *out_matrix);
 
-// Original: core_mattnntt.cpp_FUN_00593c10
+// Original: core_mattnntt.cpp_CMattanntote_archive_FUN_00593c10
 // Address: 00593c10
-void FUN_00593c10(int param_1);
+void __cdecl CMattanntote::archive(CMattanntote *this_ptr);
 
 // Original: core_mattnntt.cpp_CMattanntote_dtor_FUN_00593ca0
 // Address: 00593ca0

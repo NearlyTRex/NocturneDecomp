@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 116,
-    "complexity_score": 215,
+    "complexity_score": 175,
     "cross_reference_count": 1,
     "function_call_count": 3,
     "global_count": 4,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 35,
-    "suspect_count": 16,
+    "suspect_count": 12,
     "suspect_types": [
       "param_count_too_few",
       "unnamed_param",
@@ -35,7 +35,7 @@
     ],
     "convention": "unknown",
     "name": "core_fldnotes.cpp_FUN_004bdbf0",
-    "signature": "undefined4 core_fldnotes_cpp_FUN_004bdbf0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4)"
+    "signature": "undefined4 core_fldnotes_cpp_FUN_004bdbf0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4)"
   },
   "function_calls": [
     {
@@ -51,7 +51,7 @@
     {
       "addr": "005bfb40",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005bfb40"
+      "name": "crt_unknown.c_sprintf_FUN_005bfb40"
     }
   ],
   "globals": [
@@ -165,7 +165,7 @@
       "line": 5,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -173,7 +173,7 @@
       "line": 5,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -181,7 +181,7 @@
       "line": 5,
       "match": "param_3",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -189,7 +189,7 @@
       "line": 5,
       "match": "param_4",
       "severity": "mild",
-      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,uint param_4)",
+      "text": "uint core_fldnotes_cpp_FUN_004bdbf0(uint param_1,uint param_2,uint param_3,char *param_4)",
       "type": "unnamed_param"
     },
     {
@@ -205,15 +205,7 @@
       "line": 25,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"No such entry '%s'\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 25,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"No such entry '%s'\",param_2);",
+      "text": "_sprintf(param_4,\"No such entry '%s'\");",
       "type": "unnamed_param"
     },
     {
@@ -221,15 +213,7 @@
       "line": 29,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"'%s' is not a map\",param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 29,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"'%s' is not a map\",param_2);",
+      "text": "_sprintf(param_4,\"'%s' is not a map\");",
       "type": "unnamed_param"
     },
     {
@@ -245,23 +229,7 @@
       "line": 37,
       "match": "param_4",
       "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"No such annotion '%s' found on map '%s'\",param_3,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_3",
-      "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"No such annotion '%s' found on map '%s'\",param_3,param_2);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 37,
-      "match": "param_2",
-      "severity": "mild",
-      "text": "FUN_005bfb40(param_4,\"No such annotion '%s' found on map '%s'\",param_3,param_2);",
+      "text": "_sprintf(param_4,\"No such annotion '%s' found on map '%s'\");",
       "type": "unnamed_param"
     },
     {

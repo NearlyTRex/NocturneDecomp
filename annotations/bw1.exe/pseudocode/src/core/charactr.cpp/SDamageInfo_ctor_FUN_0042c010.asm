@@ -7,16 +7,16 @@
 ; SDamageInfo *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[60]:
-;   core_actor.cpp_FUN_00409f20 at 0040a1d9
-;   core_anvil.cpp_FUN_0040e680 at 0040e765
-;   core_baron.cpp_FUN_0040fcf0 at 0040fe1b
-;   core_batcreat.cpp_FUN_004115b0 at 004119ae
-;   core_batman.cpp_FUN_00412ba0 at 00413440
-;   core_bodypart.cpp_FUN_00419740 at 004198df
-;   core_boneguy.cpp_FUN_0041bb40 at 0041c253
-;   core_boxactor.cpp_FUN_00422000 at 004224a7
-;   core_bride.cpp_FUN_00423b70 at 00423ef3
-;   core_bugs.cpp_FUN_004263d0 at 00426479
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a1d9
+;   core_anvil.cpp_CAnvil_process_FUN_0040e680 at 0040e765
+;   core_baron.cpp_CBaron_performLightningAttack_FUN_0040fcf0 at 0040fe1b
+;   core_batcreat.cpp_CBatCreature_process_FUN_004115b0 at 004119ae
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 00413440
+;   core_bodypart.cpp_CBodyPart_process_FUN_00419740 at 004198df
+;   core_boneguy.cpp_CBoneGuy_process_FUN_0041bb40 at 0041c253
+;   core_boxactor.cpp_CBoxActor_process_FUN_00422000 at 004224a7
+;   core_bride.cpp_CBride_process_FUN_00423b70 at 00423ef3
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 00426479
 ;   ... and 50 more
 ;
 ; *****************************************************************************

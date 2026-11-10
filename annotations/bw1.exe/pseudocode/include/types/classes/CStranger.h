@@ -2,15 +2,59 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CLadder;
+struct CWeapon;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CKeyFramedModelInstance.h"
+#include "types/classes/CVector3f.h"
+#include "types/structs/SArmAimData.h"
 
 // Structure: CStranger
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x20244 (131652 bytes)
 #pragma pack(push, 1)
 typedef struct CStranger {
-    char field_0[131652]; // 0x0
+    char field_0[130988]; // 0x0
+    int guns_drawn; // 0x1ffac
+    float guns_drawn_blend; // 0x1ffb0
+    float frame_cleared; // 0x1ffb4
+    float aim_pitch; // 0x1ffb8
+    float aim_speed_factor; // 0x1ffbc
+    SArmAimData right_arm_aim; // 0x1ffc0
+    char field_131009[31]; // 0x1ffc1
+    SArmAimData left_arm_aim; // 0x1ffe0
+    char field_131041[31]; // 0x1ffe1
+    struct CLadder* ladder_to_descend; // 0x20000
+    struct CWeapon* weapon; // 0x20004
+    char field_131080[12]; // 0x20008
+    float action_timer; // 0x20014
+    float interact_blend; // 0x20018
+    uint goggle_sfx_handles[2]; // 0x2001c
+    float turn_angle; // 0x20024
+    float turn_blend_weight; // 0x20028
+    float turn_blend_timer; // 0x2002c
+    float turn_elapsed; // 0x20030
+    char dead[24]; // 0x20034
+    CVector3f pending_velocity; // 0x2004c
+    int turn_motion_index; // 0x20058
+    int pickup_facing_reversed; // 0x2005c
+    float arm_recoil_blend; // 0x20060
+    float airborne_timer; // 0x20064
+    float jump_speed; // 0x20068
+    CVector3f carry_object_world_center; // 0x2006c
+    CBoundingBox3D carry_object_bbox; // 0x20078
+    CVector3f ref_r_hand_bone_pos; // 0x20090
+    CVector3f ref_r_upperarm_bone_pos; // 0x2009c
+    float grab_timer; // 0x200a8
+    CKeyFramedModelInstance model; // 0x200ac
+    CVector3f ladder_offset; // 0x20228
+    float ladder_facing_angle; // 0x20234
+    float ladder_blend_time; // 0x20238
+    uint sfx_handle; // 0x2023c
+    float fall_velocity_snapshot; // 0x20240
 } CStranger;
 #pragma pack(pop)
 

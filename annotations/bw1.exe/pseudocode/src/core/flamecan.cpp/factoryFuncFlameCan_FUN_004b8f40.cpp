@@ -11,7 +11,7 @@ void core_flamecan_cpp_factoryFuncFlameCan_FUN_004b8f40(void)
 {
   CFlameCan *this_ptr;
   
-  this_ptr = (CFlameCan *)FUN_005c0f32(0x5e8);
+  this_ptr = (CFlameCan *)debugAllocTracked1(0x5e8);
   if (this_ptr == (CFlameCan *)0x0) {
     return;
   }

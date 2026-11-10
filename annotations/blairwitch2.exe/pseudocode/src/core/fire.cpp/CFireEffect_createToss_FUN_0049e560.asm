@@ -12,7 +12,7 @@
 ; uint             Stack[0x18]:4   sfx_handle
 ;
 ; XREF[1]:
-;   core_dynamite.cpp_FUN_0047a0a0 at 0047a0d8
+;   core_dynamite.cpp_CDynamite_fire_FUN_0047a0a0 at 0047a0d8
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005d5822

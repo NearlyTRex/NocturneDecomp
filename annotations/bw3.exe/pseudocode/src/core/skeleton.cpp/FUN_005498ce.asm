@@ -9,7 +9,7 @@
 ;   undefined4 DAT_005f2afc
 ;
 ; Called Functions:
-;   core_skeleton.cpp_FUN_005487e0
+;   core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0
 ;   core_xform.cpp_FUN_00584450
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_special.cpp_FUN_005632a3
@@ -27,8 +27,8 @@ section .text
     SUB ESP,0x30                        ; 005498d4
     MOV EDX,dword ptr [ESP + 0x44]      ; 005498d7
     PUSH EDX                            ; 005498db
-    CALL core_skeleton.cpp_FUN_005487e0 ; 005498dc
-        ;   XREF to: 005487e0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_FUN_005487e0(CDeformableModel * this_ptr)
+    CALL core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0 ; 005498dc
+        ;   XREF to: 005487e0 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModel_getSkeletonPtr_FUN_005487e0(CDeformableModel * this_ptr)
     ADD ESP,0x4                         ; 005498e1
     MOV EBX,dword ptr [EAX + 0x1de78]   ; 005498e4
     XOR ECX,ECX                         ; 005498ea

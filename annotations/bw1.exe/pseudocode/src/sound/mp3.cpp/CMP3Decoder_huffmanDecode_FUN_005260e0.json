@@ -1,0 +1,227 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 255,
+    "complexity_score": 116,
+    "cross_reference_count": 1,
+    "function_call_count": 3,
+    "global_count": 5,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 86,
+    "suspect_count": 2,
+    "suspect_types": [
+      "undefined_data",
+      "warning_overlapping_globals"
+    ],
+    "total_lines": 341
+  },
+  "cross_references": [
+    {
+      "addr": "00528410",
+      "from_addr": "00528594",
+      "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005260e0",
+    "address_range": [
+      [
+        "005260e0",
+        "00526337"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "sound_mp3.cpp_CMP3Decoder_huffmanDecode_FUN_005260e0",
+    "signature": "int __cdecl sound_mp3_cpp_CMP3Decoder_huffmanDecode_FUN_005260e0(CMP3Decoder *this_ptr,SHuffmanTable *huffman_table,int *x_out,int *y_out,int *v_out,int *w_out)"
+  },
+  "function_calls": [
+    {
+      "addr": "005030e0",
+      "is_variadic": false,
+      "name": "core_main.c_FUN_005030e0"
+    },
+    {
+      "addr": "00525fe0",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readBit_FUN_00525fe0"
+    },
+    {
+      "addr": "00525f00",
+      "is_variadic": false,
+      "name": "sound_mp3.cpp_CMP3Decoder_readBits_FUN_00525f00"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005eb21a",
+      "name": "s_sound_mp3_cpp_005eb21a",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005eb22b",
+      "name": "s_Illegal_Huffman_code_in_005eb22b",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "01d1d400",
+      "name": "DAT_01d1d400",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d1d404",
+      "name": "DAT_01d1d404",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "01d40dec",
+      "name": "DAT_01d40dec",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "00528594",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      },
+      {
+        "call_addr": "0052897c",
+        "call_type": "direct",
+        "caller": "sound_mp3.cpp_CMP3Decoder_huffmanDecodeLayer3Samples_FUN_00528410",
+        "estimated_params": 6,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 24,
+        "stack_params": 6
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 6,
+    "declared_stack_bytes": 24,
+    "estimated_params": 6,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.432160804020101,
+    "instruction_count": 199,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 26,
+      "BRANCH": 3,
+      "CALL": 9,
+      "CBRANCH": 26,
+      "COPY": 159,
+      "INT_2COMP": 5,
+      "INT_ADD": 73,
+      "INT_AND": 182,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 139,
+      "INT_LESS": 22,
+      "INT_MULT": 3,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 12,
+      "INT_RIGHT": 1,
+      "INT_SBORROW": 29,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 67,
+      "INT_SRIGHT": 7,
+      "INT_SUB": 52,
+      "INT_XOR": 3,
+      "LOAD": 101,
+      "POPCOUNT": 67,
+      "RETURN": 3,
+      "STORE": 42
+    },
+    "pcode_op_count": 1081
+  },
+  "stack_frame": {
+    "frame_size": 48,
+    "local_size": 24,
+    "param_offset": 4,
+    "param_size": 24,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CMP3Decoder *"
+      },
+      {
+        "is_param": true,
+        "name": "huffman_table",
+        "offset": 8,
+        "size": 4,
+        "type": "SHuffmanTable *"
+      },
+      {
+        "is_param": true,
+        "name": "x_out",
+        "offset": 12,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "y_out",
+        "offset": 16,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "v_out",
+        "offset": 20,
+        "size": 4,
+        "type": "int *"
+      },
+      {
+        "is_param": true,
+        "name": "w_out",
+        "offset": 24,
+        "size": 4,
+        "type": "int *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Overlapping global symbols",
+      "line": 2,
+      "match": "WARNING: Globals starting with",
+      "severity": "mild",
+      "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
+      "type": "warning_overlapping_globals"
+    },
+    {
+      "description": "Undefined global data reference",
+      "line": 48,
+      "match": "DAT_01d404c8",
+      "severity": "mild",
+      "text": "core_main_c_FUN_005030e0(\"Illegal Huffman code in data.  File: %s\",&DAT_01d404c8);",
+      "type": "undefined_data"
+    }
+  ]
+}

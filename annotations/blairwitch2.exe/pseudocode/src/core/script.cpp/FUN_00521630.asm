@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[3]:
-;   core_mission.cpp_FUN_004fca90 at 004fcad5
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90 at 004fcad5
 ;   core_script.cpp_CScript_dtor_FUN_00521600 at 00521606
 ;   core_script.cpp_FUN_00521cf0 at 00521d02
 ;
 ; Called Functions:
-;   core_script.cpp_FUN_00521680
+;   core_script.cpp_CScript_freeParsedLines_FUN_00521680
 ;   crt_unknown.c_FUN_005b86a0
+;   shape_edittool.cpp_CPickList_clear_FUN_00483d10
 ;   shape_edittool.cpp_CStrList_clear_FUN_00480e10
-;   shape_edittool.cpp_FUN_00483d10
 ;
 ; *****************************************************************************
 
@@ -28,8 +28,8 @@ section .text
         ;   XREF to: 00480e10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CStrList_clear_FUN_00480e10(CStrList * this_ptr)
     ADD ESP,0x4                         ; 0052163e
     PUSH EBX                            ; 00521641
-    CALL core_script.cpp_FUN_00521680   ; 00521642
-        ;   XREF to: 00521680 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00521680(CScript * this_ptr)
+    CALL core_script.cpp_CScript_freeParsedLines_FUN_00521680 ; 00521642
+        ;   XREF to: 00521680 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_freeParsedLines_FUN_00521680(CScript * this_ptr)
     MOV EDX,dword ptr [EBX + 0x24]      ; 00521647
     ADD ESP,0x4                         ; 0052164a
     TEST EDX,EDX                        ; 0052164d
@@ -38,8 +38,8 @@ section .text
     PUSH 0x1e65910                      ; 00521651
         ;   Label: LAB_00521651
     MOV dword ptr [EBX + 0x20],0x0      ; 00521656
-    CALL shape_edittool.cpp_FUN_00483d10 ; 0052165d
-        ;   XREF to: 00483d10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_FUN_00483d10(CPickList * this_ptr)
+    CALL shape_edittool.cpp_CPickList_clear_FUN_00483d10 ; 0052165d
+        ;   XREF to: 00483d10 (UNCONDITIONAL_CALL)  ; void shape_edittool.cpp_CPickList_clear_FUN_00483d10(CPickList * this_ptr)
     ADD ESP,0x4                         ; 00521662
     POP EBX                             ; 00521665
     RET                                 ; 00521666

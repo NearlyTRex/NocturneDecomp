@@ -22,7 +22,7 @@
     {
       "addr": "004958d0",
       "from_addr": "00495b1c",
-      "name": "shape_edittool.cpp_FUN_004958d0",
+      "name": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -98,7 +98,7 @@
     {
       "addr": "005b2420",
       "is_variadic": false,
-      "name": "wincore_winrun.cpp_FUN_005b2420"
+      "name": "wincore_winrun.cpp_getTime_FUN_005b2420"
     }
   ],
   "globals": [
@@ -193,7 +193,7 @@
       {
         "call_addr": "00495b1c",
         "call_type": "direct",
-        "caller": "shape_edittool.cpp_FUN_004958d0",
+        "caller": "shape_edittool.cpp_CEditorTools_showFilenameInputDialog_FUN_004958d0",
         "estimated_params": 6,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -356,7 +356,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x138) != *(int *)(param_1 + 0x134)) {",
+      "text": "if (param_1->selection_start != param_1->cursor_position) {",
       "type": "unnamed_param"
     },
     {
@@ -364,7 +364,7 @@
       "line": 20,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x138) != *(int *)(param_1 + 0x134)) {",
+      "text": "if (param_1->selection_start != param_1->cursor_position) {",
       "type": "unnamed_param"
     },
     {
@@ -372,7 +372,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x138));",
+      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->selection_start);",
       "type": "unnamed_param"
     },
     {
@@ -380,7 +380,7 @@
       "line": 21,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x138));",
+      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->selection_start);",
       "type": "unnamed_param"
     },
     {
@@ -396,7 +396,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x134));",
+      "text": "iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->cursor_position);",
       "type": "unnamed_param"
     },
     {
@@ -404,7 +404,7 @@
       "line": 23,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x134));",
+      "text": "iVar3 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->cursor_position);",
       "type": "unnamed_param"
     },
     {
@@ -468,7 +468,7 @@
       "line": 47,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x13c) != 0) {",
+      "text": "if (param_1->mask_mode != 0) {",
       "type": "unnamed_param"
     },
     {
@@ -476,7 +476,7 @@
       "line": 48,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (0x3ff < *(uint *)(param_1 + 0x130)) {",
+      "text": "if (0x3ff < (uint)param_1->current_length) {",
       "type": "unnamed_param"
     },
     {
@@ -484,7 +484,7 @@
       "line": 53,
       "match": "param_1",
       "severity": "mild",
-      "text": "memset(local_420,0x2a,*(ulong *)(param_1 + 0x130));",
+      "text": "memset(local_420,0x2a,param_1->current_length);",
       "type": "unnamed_param"
     },
     {
@@ -492,7 +492,7 @@
       "line": 54,
       "match": "param_1",
       "severity": "mild",
-      "text": "local_420[*(int *)(param_1 + 0x130)] = (CInputString)0x0;",
+      "text": "local_420[0].string_data[param_1->current_length] = '\\0';",
       "type": "unnamed_param"
     },
     {
@@ -540,7 +540,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x134));",
+      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->cursor_position);",
       "type": "unnamed_param"
     },
     {
@@ -548,7 +548,7 @@
       "line": 70,
       "match": "param_1",
       "severity": "mild",
-      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,*(int *)(param_1 + 0x134));",
+      "text": "iVar2 = shape_edittool_cpp_CInputString_calcX_FUN_004933e0(param_1,param_1->cursor_position);",
       "type": "unnamed_param"
     },
     {

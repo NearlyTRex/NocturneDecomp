@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 121,
-    "complexity_score": 141,
+    "complexity_score": 55,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 4,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 41,
-    "suspect_count": 9,
+    "pseudocode_lines": 40,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 162
+    "total_lines": 161
   },
   "cross_references": [
     {
@@ -185,70 +184,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x20 != 0) && (*(int *)&this_ptr->field_0x14 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 7,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x20 != 0) && (*(int *)&this_ptr->field_0x14 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 23,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(((0 < height && (src_left < *(int *)&this_ptr->field_0x18)) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 24,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(src_top < *(int *)&this_ptr->field_0x1c)))) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 33,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x18 <= width) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "width = *(int *)&this_ptr->field_0x18 + -1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x1c <= height) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "height = *(int *)&this_ptr->field_0x1c + -1;",
-      "type": "unnamed_field"
     }
   ]
 }

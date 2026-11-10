@@ -44,8 +44,8 @@
 ;   core_actor.cpp_getRandomInt_FUN_0040cea0
 ;   core_xform.cpp_FUN_00583800
 ;   core_xform.cpp_FUN_00583940
-;   core_xform.cpp_FUN_00583b10
 ;   core_xform.cpp_FUN_00584450
+;   core_xform.cpp_matrixToEulerAngles_FUN_00583b10
 ;   core_xform.cpp_multiplyMatrix3x4_FUN_005833e0
 ;   crt_math.c_atan2_FUN_005a5cc1
 ;
@@ -217,8 +217,8 @@ section .text
     PUSH EAX                            ; 00497490
     LEA ESI,[ESP + 0x130]               ; 00497491
     LEA EDI,[ESP + 0xdc]                ; 00497498
-    CALL core_xform.cpp_FUN_00583b10    ; 0049749f
-        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00583b10()
+    CALL core_xform.cpp_matrixToEulerAngles_FUN_00583b10 ; 0049749f
+        ;   XREF to: 00583b10 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_matrixToEulerAngles_FUN_00583b10()
     LEA ESI,[ESP + 0x130]               ; 004974a4
     LEA EAX,[ESP + 0xdc]                ; 004974ab
     ADD ESP,0x4                         ; 004974b2

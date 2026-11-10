@@ -2,23 +2,23 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 108,
-    "complexity_score": 55,
+    "complexity_score": 56,
     "cross_reference_count": 1,
     "function_call_count": 5,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 40,
+    "pseudocode_lines": 41,
     "suspect_count": 1,
     "suspect_types": [
       "unrolled_strcpy"
     ],
-    "total_lines": 148
+    "total_lines": 149
   },
   "cross_references": [
     {
       "addr": "00510b90",
       "from_addr": "00510beb",
-      "name": "core_npc.cpp_FUN_00510b90",
+      "name": "core_npc.cpp_CNPC_processDamage_FUN_00510b90",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -38,7 +38,12 @@
     {
       "addr": "0040cfc0",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040cfc0"
+      "name": "core_actor.cpp_getRandomInt_FUN_0040cfc0"
+    },
+    {
+      "addr": "00503860",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_getMotionList_FUN_00503860"
     },
     {
       "addr": "00503620",
@@ -48,17 +53,12 @@
     {
       "addr": "00502fa0",
       "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00502fa0"
-    },
-    {
-      "addr": "00503860",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503860"
+      "name": "core_motion.cpp_CMotionList_findStateIndex_FUN_00502fa0"
     },
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -81,7 +81,7 @@
       {
         "call_addr": "00510beb",
         "call_type": "direct",
-        "caller": "core_npc.cpp_FUN_00510b90",
+        "caller": "core_npc.cpp_CNPC_processDamage_FUN_00510b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -92,7 +92,7 @@
       {
         "call_addr": "00510bfd",
         "call_type": "direct",
-        "caller": "core_npc.cpp_FUN_00510b90",
+        "caller": "core_npc.cpp_CNPC_processDamage_FUN_00510b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -103,7 +103,7 @@
       {
         "call_addr": "00510c47",
         "call_type": "direct",
-        "caller": "core_npc.cpp_FUN_00510b90",
+        "caller": "core_npc.cpp_CNPC_processDamage_FUN_00510b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -114,7 +114,7 @@
       {
         "call_addr": "00510c57",
         "call_type": "direct",
-        "caller": "core_npc.cpp_FUN_00510b90",
+        "caller": "core_npc.cpp_CNPC_processDamage_FUN_00510b90",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,7 +213,7 @@
   "suspects": [
     {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 22,
+      "line": 23,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

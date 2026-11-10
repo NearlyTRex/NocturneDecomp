@@ -16,7 +16,7 @@
 ; undefined        Stack[-0x14]:1  local_14
 ;
 ; XREF[1]:
-;   core_charactr.cpp_FUN_00433350 at 0043335f
+;   core_charactr.cpp_CCharacter_applyGestureLookAt_FUN_00433350 at 0043335f
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_charactr_cpp_005b86e2
@@ -26,11 +26,11 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4330
-;   core_skeleton.cpp_FUN_0054d880
-;   core_xform.cpp_FUN_00585b20
+;   core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0054d880
 ;   core_xform.cpp_multiplyQuaternion_FUN_00585990
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00585cd0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00585d10
+;   core_xform.cpp_slerpQuaternion_FUN_00585b20
 ;
 ; *****************************************************************************
 
@@ -101,8 +101,8 @@ section .text
     PUSH ESI                            ; 004330ad
     LEA ESI,[ESP + 0x88]                ; 004330ae
     LEA EDI,[ESP + 0x58]                ; 004330b5
-    CALL core_xform.cpp_FUN_00585b20    ; 004330b9
-        ;   XREF to: 00585b20 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_FUN_00585b20()
+    CALL core_xform.cpp_slerpQuaternion_FUN_00585b20 ; 004330b9
+        ;   XREF to: 00585b20 (UNCONDITIONAL_CALL)  ; undefined core_xform.cpp_slerpQuaternion_FUN_00585b20()
     LEA ESI,[ESP + 0x88]                ; 004330be
     ADD ESP,0xc                         ; 004330c5
     MOVSD ES:EDI,ESI                    ; 004330c8
@@ -113,8 +113,8 @@ section .text
     PUSH ESI                            ; 004330d0
     ADD EBX,0x158                       ; 004330d1
     PUSH EBX                            ; 004330d7
-    CALL core_skeleton.cpp_FUN_0054d880 ; 004330d8
-        ;   XREF to: 0054d880 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_FUN_0054d880(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, int bone_index)
+    CALL core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0054d880 ; 004330d8
+        ;   XREF to: 0054d880 (UNCONDITIONAL_CALL)  ; void core_skeleton.cpp_CDeformableModelInstance_copyBoneRotations_FUN_0054d880(CDeformableModelInstance * this_ptr, CQuaternion4f * source_quaternions, int bone_index)
     ADD ESP,0xc                         ; 004330dd
     POP ESI                             ; 004330e0
     POP EDI                             ; 004330e1

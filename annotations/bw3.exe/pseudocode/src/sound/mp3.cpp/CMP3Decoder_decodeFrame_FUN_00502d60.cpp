@@ -11,7 +11,6 @@
 int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this_ptr,short *pcm_output)
 
 {
-  CFileBitStream *this_ptr_00;
   int iVar1;
   uint uVar2;
   int iVar3;
@@ -19,13 +18,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
   float *pfVar5;
   SMpegSubbandScalefactors *pSVar6;
   short *psVar7;
-  byte *this_ptr_01;
-  SMpegFrameHeader **ppSVar8;
-  int iVar9;
-  uint *puVar10;
-  byte bVar11;
-  float10 fVar12;
-  uint uVar13;
+  CFileBitStream *pCVar8;
+  SMpegFrameHeader **ppSVar9;
+  int iVar10;
+  uint *puVar11;
+  byte bVar12;
+  float10 fVar13;
+  uint uVar14;
   uint local_60b0;
   uint local_60ac;
   byte local_60a8 [4608];
@@ -90,23 +89,22 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
   int local_18;
   float *local_14;
   
-  bVar11 = 0;
+  bVar12 = 0;
   local_c0[0] = (SMpegFrameHeader *)&local_f0;
-  this_ptr_01 = &this_ptr->field_0x5320;
+  pCVar8 = &this_ptr->file_bitstream;
   local_b4 = 0xffffffff;
   local_b8 = 0;
   local_94 = 0;
-  if (*(int *)&this_ptr->field_0x533c != 0) {
+  if ((this_ptr->file_bitstream).error_flag != 0) {
     return 0;
   }
-  iVar1 = sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004fd780
-                    ((CFileBitStream *)this_ptr_01,0xfff,0xc);
+  iVar1 = sound_mp3_cpp_CFileBitStream_syncToPattern_FUN_004fd780(pCVar8,0xfff,0xc);
   if (iVar1 == 0) {
     return 0;
   }
-  local_24 = *(int *)&this_ptr->field_0x532c;
-  sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004fdc50((CFileBitStream *)this_ptr_01,local_c0);
-  sound_mp3_cpp_FUN_004fd150((SMpegFrame *)local_c0);
+  local_24 = (this_ptr->file_bitstream).total_bits_read;
+  sound_mp3_cpp_CFileBitStream_readFrameHeader_FUN_004fdc50(pCVar8,local_c0);
+  sound_mp3_cpp_calculateMpegFrame_FUN_004fd150((SMpegFrame *)local_c0);
   local_98 = local_b0;
   local_90 = (*(int *)local_c0[0] != 0) + 1;
   if (local_ec < 2) {
@@ -114,11 +112,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
       local_60ac = 0x20;
       local_60b0 = 0x180;
       sound_mp3_cpp_CFileBitStream_readAllocationTable_FUN_004fde40
-                ((CFileBitStream *)this_ptr_01,(uint *)local_270,(SMpegFrame *)local_c0);
+                (pCVar8,(uint *)local_270,(SMpegFrame *)local_c0);
       sound_mp3_cpp_CFileBitStream_readScalefactors_FUN_004fdef0
-                ((CFileBitStream *)this_ptr_01,local_270,local_ca8,(SMpegFrame *)local_c0);
+                (pCVar8,local_270,local_ca8,(SMpegFrame *)local_c0);
       local_28 = 0;
-      local_8c = (CFileBitStream *)this_ptr_01;
+      local_8c = pCVar8;
       do {
         sound_mp3_cpp_CFileBitStream_readQuantizedSamples_FUN_004fe1f0
                   (local_8c,local_fa8,local_270,(SMpegFrame *)local_c0);
@@ -162,11 +160,11 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
     local_60b0 = 0x480;
     local_60ac = 8;
     sound_mp3_cpp_CFileBitStream_readAllocationValues_FUN_004fdd10
-              ((CFileBitStream *)this_ptr_01,local_270,(SMpegFrame *)local_c0);
+              (pCVar8,local_270,(SMpegFrame *)local_c0);
     sound_mp3_cpp_CFileBitStream_readScaleFactorsSCFSI_FUN_004fdf80
-              ((CFileBitStream *)this_ptr_01,local_370,local_270,local_ca8,(SMpegFrame *)local_c0);
+              (pCVar8,local_370,local_270,local_ca8,(SMpegFrame *)local_c0);
     local_9c = 0;
-    local_80 = (CFileBitStream *)this_ptr_01;
+    local_80 = pCVar8;
     do {
       sound_mp3_cpp_CFileBitStream_readQuantizedSamplesGrouped_FUN_004fe2f0
                 (local_80,local_fa8,local_270,(SMpegFrame *)local_c0);
@@ -198,13 +196,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
           do {
             iVar3 = 0;
             if (0 < local_98) {
-              iVar9 = iVar1 + local_2c;
+              iVar10 = iVar1 + local_2c;
               psVar7 = pcm_output;
               do {
                 pcm_output = psVar7 + 1;
                 iVar3 = iVar3 + 1;
-                *psVar7 = *(short *)((int)local_3ca8 + iVar9);
-                iVar9 = iVar9 + 0x480;
+                *psVar7 = *(short *)((int)local_3ca8 + iVar10);
+                iVar10 = iVar10 + 0x480;
                 psVar7 = pcm_output;
               } while (iVar3 < local_98);
             }
@@ -224,44 +222,44 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
     else {
       local_60b0 = 0x480;
     }
-    local_74 = (CFileBitStream *)&this_ptr->field_0x5320;
-    sound_mp3_cpp_FUN_004fee40
+    local_74 = &this_ptr->file_bitstream;
+    sound_mp3_cpp_CMP3Decoder_readLayer3SideInfo_FUN_004fee40
               (this_ptr,local_74,(SMpegLayer3SideInfo *)local_4b8,(SMpegFrame *)local_c0);
-    ppSVar8 = local_c0;
-    puVar10 = (uint *)&stack0xffff9f34;
+    ppSVar9 = local_c0;
+    puVar11 = (uint *)&stack0xffff9f34;
     for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar10 = *ppSVar8;
-      ppSVar8 = ppSVar8 + (uint)bVar11 * -2 + 1;
-      puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+      *puVar11 = *ppSVar9;
+      ppSVar9 = ppSVar9 + (uint)bVar12 * -2 + 1;
+      puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
     }
     iVar1 = sound_mp3_cpp_calculateMainDataSize_FUN_00502190();
-    this_ptr_00 = local_74;
+    pCVar8 = local_74;
     for (; 0 < iVar1; iVar1 = iVar1 + -1) {
-      uVar13 = 8;
-      uVar2 = sound_mp3_cpp_FUN_004fd5e0(this_ptr_00,8);
-      sound_mp3_cpp_FUN_004fd900(this_ptr,uVar2,uVar13);
+      uVar14 = 8;
+      uVar2 = sound_mp3_cpp_CFileBitStream_readBits_FUN_004fd5e0(pCVar8,8);
+      sound_mp3_cpp_CMP3Decoder_putByte_FUN_004fd900(this_ptr,uVar2,uVar14);
     }
     uVar2 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004fd800(this_ptr);
-    uVar13 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004fd800(this_ptr);
+    uVar14 = sound_mp3_cpp_CMP3Decoder_getTotalBitsRead_FUN_004fd800(this_ptr);
     uVar2 = uVar2 >> 3;
-    if (uVar13 % 8 != 0) {
+    if (uVar14 % 8 != 0) {
       uVar2 = uVar2 + 1;
-      sound_mp3_cpp_CMP3Decoder_readBits_FUN_004fd810(this_ptr,8 - uVar13 % 8);
+      sound_mp3_cpp_CMP3Decoder_readBits_FUN_004fd810(this_ptr,8 - uVar14 % 8);
     }
-    local_78 = (*(int *)&this_ptr->field_0x534c - uVar2) - local_4b8[0];
+    local_78 = (this_ptr->main_data_offset - uVar2) - local_4b8[0];
     if (0x1000 < uVar2) {
-      *(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + -0x1000;
+      this_ptr->main_data_offset = this_ptr->main_data_offset + -0x1000;
       sound_mp3_cpp_CMP3Decoder_rewindBytes_FUN_004fd9c0(this_ptr,0x1000);
     }
-    ppSVar8 = local_c0;
-    puVar10 = (uint *)&stack0xffff9f34;
+    ppSVar9 = local_c0;
+    puVar11 = (uint *)&stack0xffff9f34;
     for (iVar1 = 7; iVar1 != 0; iVar1 = iVar1 + -1) {
-      *puVar10 = *ppSVar8;
-      ppSVar8 = ppSVar8 + (uint)bVar11 * -2 + 1;
-      puVar10 = puVar10 + (uint)bVar11 * -2 + 1;
+      *puVar11 = *ppSVar9;
+      ppSVar9 = ppSVar9 + (uint)bVar12 * -2 + 1;
+      puVar11 = puVar11 + (uint)bVar12 * -2 + 1;
     }
     iVar1 = sound_mp3_cpp_calculateMainDataSize_FUN_00502190();
-    *(int *)&this_ptr->field_0x534c = *(int *)&this_ptr->field_0x534c + iVar1;
+    this_ptr->main_data_offset = this_ptr->main_data_offset + iVar1;
     if (local_78 < 0) {
       _DAT_01d71de0 = "..\\sound\\mp3.cpp";
       _DAT_01d71de4 = 0x1029;
@@ -340,12 +338,12 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
             do {
               psVar7 = local_50;
               iVar3 = 0;
-              iVar9 = iVar1;
+              iVar10 = iVar1;
               do {
                 iVar4 = iVar3 + 4;
-                puVar10 = (uint *)((int)local_21a8 + iVar9);
-                iVar9 = iVar9 + 0x48;
-                *(uint *)((int)local_170 + iVar3) = *puVar10;
+                puVar11 = (uint *)((int)local_21a8 + iVar10);
+                iVar10 = iVar10 + 0x48;
+                *(uint *)((int)local_170 + iVar3) = *puVar11;
                 iVar3 = iVar4;
               } while (iVar4 != 0x80);
               sound_mp3_cpp_CMP3Decoder_synthesisFilterbank_FUN_004feb90
@@ -366,13 +364,13 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
           do {
             iVar3 = 0;
             if (0 < local_98) {
-              iVar9 = iVar1 + local_18;
+              iVar10 = iVar1 + local_18;
               psVar7 = pcm_output;
               do {
                 pcm_output = psVar7 + 1;
                 iVar3 = iVar3 + 1;
-                *psVar7 = *(short *)((int)local_3ca8 + iVar9);
-                iVar9 = iVar9 + 0x480;
+                *psVar7 = *(short *)((int)local_3ca8 + iVar10);
+                iVar10 = iVar10 + 0x480;
                 psVar7 = pcm_output;
               } while (iVar3 < local_98);
             }
@@ -389,22 +387,22 @@ int __cdecl sound_mp3_cpp_CMP3Decoder_decodeFrame_FUN_00502d60(CMP3Decoder *this
   if (0 < local_e4) {
     uStack_a0 = 0;
     local_a4 = local_60ac;
-    fVar12 = (((float10)local_60b0 /
+    fVar13 = (((float10)local_60b0 /
               (float10)*(double *)(&DAT_006011b8 + local_f0 * 0x20 + local_e0 * 8)) *
              (float10)*(int *)(&DAT_006011f8 +
                               local_e4 * 4 + (local_ec - 1) * 0x3c + local_f0 * 0xb4)) /
              (float10)local_60ac;
     round();
-    local_68 = (int)ROUND(fVar12);
+    local_68 = (int)ROUND(fVar13);
     if (local_dc != 0) {
       local_68 = local_68 + 1;
     }
-    local_68 = local_68 * local_60ac - ((*(int *)&this_ptr->field_0x532c - local_24) + 0xc);
+    local_68 = local_68 * local_60ac -
+               (((this_ptr->file_bitstream).total_bits_read - local_24) + 0xc);
     iVar1 = 0;
     if (0 < local_68) {
       do {
-        sound_mp3_cpp_CFileBitStream_readBit_FUN_004fd4f0((CFileBitStream *)&this_ptr->field_0x5320)
-        ;
+        sound_mp3_cpp_CFileBitStream_readBit_FUN_004fd4f0(&this_ptr->file_bitstream);
         iVar1 = iVar1 + 1;
       } while (iVar1 < local_68);
     }

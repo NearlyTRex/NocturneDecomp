@@ -41,14 +41,14 @@
 ;   core_fldnotes.cpp_FUN_004a2890
 ;   core_fldnotes.cpp_FUN_004a3240
 ;   core_fldnotes.cpp_FUN_004a3740
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_fillRectColor_FUN_004031c0
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
 ;   engine_alphabit.cpp_CAlphaBitmap_load_FUN_0040d5a0
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0
 ;   engine_alphabit.cpp_FUN_0040d540
 ;   engine_alphabit.cpp_FUN_0040dd20
-;   engine_dosio.cpp_FUN_00461070
+;   engine_dosio.cpp_splitPath_FUN_00461070
 ;   engine_font.cpp_FUN_004a8df0
 ;   support_newmsg.cpp_getLocalizedString_FUN_0050fe80
 ;   ... and 3 more
@@ -185,7 +185,7 @@ section .text
     CALL core_fldnotes.cpp_FUN_004a3240 ; 004a5878
         ;   XREF to: 004a3240 (UNCONDITIONAL_CALL)  ; undefined core_fldnotes.cpp_FUN_004a3240()
     MOV EAX,[0x00616494]                ; 004a587d | g_CGamePtr | g_CGameInstance
-    MOV ESI,dword ptr [EAX + 0x244]     ; 004a5882 | g_CGameInstance.field580_0x244
+    MOV ESI,dword ptr [EAX + 0x244]     ; 004a5882 | g_CGameInstance.letterbox_mode
     ADD ESP,0x8                         ; 004a5888
     TEST ESI,ESI                        ; 004a588b
     JNZ 0x004a5f2d                      ; 004a588d
@@ -493,8 +493,8 @@ section .text
     PUSH 0x1cab7a8                      ; 004a5c25 | DAT_01cab7a8
     MOV dword ptr [0x01caf568],ECX      ; 004a5c2a | DAT_01caf568
     MOV byte ptr [0x01caf4a0],DL        ; 004a5c30 | DAT_01caf4a0
-    CALL engine_dosio.cpp_FUN_00461070  ; 004a5c36
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 004a5c36
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a5c3b
     PUSH 0x1cab788                      ; 004a5c3e | DAT_01cab788
     LEA EAX,[ESP + 0x104]               ; 004a5c43
@@ -502,8 +502,8 @@ section .text
     PUSH 0x5d59e3                       ; 004a5c4b | DAT_005d59e3
     LEA EAX,[ESP + 0x20c]               ; 004a5c50
     PUSH EAX                            ; 004a5c57
-    CALL crt_unknown.c_FUN_005b7790     ; 004a5c58
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a5c58
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 004a5c5d
     PUSH 0x1e0                          ; 004a5c60
     PUSH 0x280                          ; 004a5c65
@@ -533,8 +533,8 @@ section .text
     MOV dword ptr [ESP + 0x508],EAX     ; 004a5cbc
     LEA EAX,[ESP + 0x308]               ; 004a5cc3
     PUSH EAX                            ; 004a5cca
-    CALL crt_unknown.c_FUN_005b7790     ; 004a5ccb
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a5ccb
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     IMUL EAX,EBX,0x14                   ; 004a5cd0
     ADD ESP,0xc                         ; 004a5cd3
     PUSH 0x0                            ; 004a5cd6
@@ -545,8 +545,8 @@ section .text
     PUSH 0x0                            ; 004a5ce9
     LEA EAX,[ESP + 0x310]               ; 004a5ceb
     PUSH EAX                            ; 004a5cf2
-    CALL engine_dosio.cpp_FUN_00461070  ; 004a5cf3
-        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
+    CALL engine_dosio.cpp_splitPath_FUN_00461070 ; 004a5cf3
+        ;   XREF to: 00461070 (UNCONDITIONAL_CALL)  ; void engine_dosio.cpp_splitPath_FUN_00461070(char * full_path, char * drive, char * directory, char * filename, ...)
     ADD ESP,0x14                        ; 004a5cf8
     PUSH 0x1cab788                      ; 004a5cfb | DAT_01cab788
     LEA EAX,[ESP + 0x404]               ; 004a5d00
@@ -554,8 +554,8 @@ section .text
     PUSH 0x5d59e3                       ; 004a5d08 | DAT_005d59e3
     LEA EAX,[ESP + 0xc]                 ; 004a5d0d
     PUSH EAX                            ; 004a5d11
-    CALL crt_unknown.c_FUN_005b7790     ; 004a5d12
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 004a5d12
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     ADD ESP,0x10                        ; 004a5d17
     PUSH 0x36                           ; 004a5d1a
     PUSH 0x5a                           ; 004a5d1c
@@ -656,12 +656,12 @@ section .text
         ;   Label: LAB_004a5e51
     JMP 0x004a5802                      ; 004a5e56
         ;   XREF to: 004a5802 (UNCONDITIONAL_JUMP)  ; LAB_004a5802
-    MOV EAX,dword ptr [EBP + 0x1caf138] ; 004a5e5b | CAlphaBitmap_ARRAY_01caf128[1].field16_0x10
+    MOV EAX,dword ptr [EBP + 0x1caf138] ; 004a5e5b | CAlphaBitmap_ARRAY_01caf128[1].height
         ;   Label: LAB_004a5e5b
     PUSH 0xffff                         ; 004a5e61
     DEC EAX                             ; 004a5e66
     PUSH EAX                            ; 004a5e67
-    MOV EAX,dword ptr [EBP + 0x1caf134] ; 004a5e68 | CAlphaBitmap_ARRAY_01caf128[1].field12_0xc
+    MOV EAX,dword ptr [EBP + 0x1caf134] ; 004a5e68 | CAlphaBitmap_ARRAY_01caf128[1].width
     DEC EAX                             ; 004a5e6e
     PUSH EAX                            ; 004a5e6f
     MOV ECX,dword ptr [EBX + 0x148]     ; 004a5e70 | SNotesSection_ARRAY_01cab9f4[1].field328_0x148
@@ -683,12 +683,12 @@ section .text
     CMP EBX,EBP                         ; 004a5ea0
     JL 0x004a5a05                       ; 004a5ea2
         ;   XREF to: 004a5a05 (CONDITIONAL_JUMP)  ; LAB_004a5a05
-    MOV EDX,dword ptr [0x01caf224]      ; 004a5ea8 | CAlphaBitmap_01caf218.field12_0xc
+    MOV EDX,dword ptr [0x01caf224]      ; 004a5ea8 | CAlphaBitmap_01caf218.width
     LEA EAX,[EDI + EDX*0x1]             ; 004a5eae
     CMP ESI,EAX                         ; 004a5eb1
     JGE 0x004a5a05                      ; 004a5eb3
         ;   XREF to: 004a5a05 (CONDITIONAL_JUMP)  ; LAB_004a5a05
-    MOV ECX,dword ptr [0x01caf228]      ; 004a5eb9 | CAlphaBitmap_01caf218.field16_0x10
+    MOV ECX,dword ptr [0x01caf228]      ; 004a5eb9 | CAlphaBitmap_01caf218.height
     LEA EAX,[ECX + EBP*0x1]             ; 004a5ebf
     CMP EBX,EAX                         ; 004a5ec2
     JGE 0x004a5a05                      ; 004a5ec4

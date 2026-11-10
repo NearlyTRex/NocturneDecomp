@@ -8,7 +8,7 @@
 ; uint             Stack[0x8]:4   flags
 ;
 ; Referenced Globals:
-;   void* g_CHeroPlaceholderVTable = 00408890
+;   CDemonActor_vtable g_CHeroPlaceholderVTable
 ;   WatcomTypeInfo g_CHeroPlaceholderTypeInfo
 ;
 ; Called Functions:

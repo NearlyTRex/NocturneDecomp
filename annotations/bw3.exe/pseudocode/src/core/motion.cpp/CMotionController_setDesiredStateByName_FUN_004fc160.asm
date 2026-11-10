@@ -9,19 +9,19 @@
 ; int              Stack[0xc]:4   force_immediate
 ;
 ; XREF[9]:
-;   core_asgaya.cpp_FUN_005a0be0 at 005a0ea7
-;   core_charactr.cpp_FUN_00431470 at 004314cd
+;   core_asgaya.cpp_CAsgaya_process_FUN_005a0be0 at 005a0ea7
+;   core_bird.cpp_CBird_process_FUN_0040fb40 at 0040fc9d
+;   core_charactr.cpp_CCharacter_setWalkTarget_FUN_00431470 at 004314cd
 ;   core_hero.cpp_FUN_004d2af0 at 004d2bc6
 ;   core_hero.cpp_FUN_004d2c20 at 004d2c95
-;   core_npc.cpp_FUN_00509120 at 005092a8
-;   core_spirbear.cpp_FUN_0059ae00 at 0059af63
-;   core_spireagl.cpp_FUN_00599540 at 0059968b
-;   core_spirindi.cpp_FUN_0059a2b0 at 0059a413
-;   unkafter_bird.cpp_FUN_0040fb40 at 0040fc9d
+;   core_npc.cpp_CNPC_process_FUN_00509120 at 005092a8
+;   core_spirbear.cpp_CSpiritBear_process_FUN_0059ae00 at 0059af63
+;   core_spireagl.cpp_CSpiritEagle_process_FUN_00599540 at 0059968b
+;   core_spirindi.cpp_CSpiritIndian_process_FUN_0059a2b0 at 0059a413
 ;
 ; Called Functions:
 ;   core_motion.cpp_CMotionController_setDesiredState_FUN_004fc0d0
-;   core_motion.cpp_FUN_004fba50
+;   core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50
 ;
 ; *****************************************************************************
 
@@ -36,8 +36,8 @@ section .text
     PUSH EDX                            ; 004fc16c
     MOV ECX,dword ptr [EAX]             ; 004fc16d
     PUSH ECX                            ; 004fc16f
-    CALL core_motion.cpp_FUN_004fba50   ; 004fc170
-        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50 ; 004fc170
+        ;   XREF to: 004fba50 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findStateIndex_FUN_004fba50(CMotionList * this_ptr, char * state_name, int error_on_not_found)
     ADD ESP,0xc                         ; 004fc175
     MOV EBX,dword ptr [ESP + 0x14]      ; 004fc178
     PUSH EBX                            ; 004fc17c

@@ -20,7 +20,7 @@ uint support_trisock_cpp_FUN_00570350(int *param_1,code *param_2,uint param_3)
       if (iVar2 == 0) {
         return 0xffffffff;
       }
-      iVar2 = support_trisock_cpp_FUN_0056fb10
+      iVar2 = support_trisock_cpp_CSocket_receiveSocketData_FUN_0056fb10
                         ((CSocket *)param_1[1],(char *)(param_1 + 2),0x800,(SNetworkAddr *)0x0);
       if ((iVar2 == -2) && (uVar1 = 0xfffffffe, *param_1 != 0)) break;
       if (iVar2 < 0) {

@@ -11,7 +11,7 @@ void core_belling_cpp_factoryFuncBelling_FUN_005a8f50(void)
 {
   CBelling *this_ptr;
   
-  this_ptr = (CBelling *)FUN_005b8be2(0x11850);
+  this_ptr = (CBelling *)debugAllocTracked1(0x11850);
   if (this_ptr == (CBelling *)0x0) {
     return;
   }

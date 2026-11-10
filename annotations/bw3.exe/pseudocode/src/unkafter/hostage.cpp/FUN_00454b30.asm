@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_demnfolk.cpp_CDemnfolk_ctor_FUN_00454b60
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xd14c                         ; 00454b30
         ;   Label: unkafter_hostage.cpp_FUN_00454b30
-    CALL crt_unknown.c_FUN_005a3cb2     ; 00454b35
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 00454b35
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 00454b3a
     TEST EAX,EAX                        ; 00454b3d
     JNZ 0x00454b42                      ; 00454b3f

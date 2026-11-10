@@ -25,7 +25,7 @@ int __cdecl engine_ini_cpp_FUN_004d8290(CIni *this_ptr,char *section,char *key,c
   local_14 = 0;
   iVar2 = _fopen(filename,&DAT_005c56a8);
   if (iVar2 != 0) {
-    FUN_005a28c0(local_114,"[%s]\n",section);
+    _sprintf(local_114,"[%s]\n");
     do {
       if (((*(byte *)(iVar2 + 0xc) & 0x10) != 0) ||
          (iVar3 = _fgets(local_214,0xff,iVar2), iVar3 == 0)) {

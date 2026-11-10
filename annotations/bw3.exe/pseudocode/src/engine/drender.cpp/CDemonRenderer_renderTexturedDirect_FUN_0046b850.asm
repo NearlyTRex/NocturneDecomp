@@ -9,10 +9,10 @@
 ; int              Stack[0xc]:4   render_flags
 ;
 ; XREF[8]:
-;   core_box.cpp_FUN_0041e9b0 at 0041ec37
+;   core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0 at 0041ec37
 ;   core_charactr.cpp_FUN_0042d9f0 at 0042dc18
 ;   core_fire.cpp_FUN_0049c8e0 at 0049cc57
-;   core_flame.cpp_FUN_004a6090 at 004a69b5
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004a6090 at 004a69b5
 ;   core_ground.cpp_CGround_renderTerrainPrimitive_FUN_004d05f0 at 004d0601
 ;   core_inv.cpp_drawItemIconBackground_FUN_004dd5b0 at 004dd722
 ;   core_inv.cpp_drawWeaponIconBackground_FUN_004dd3f0 at 004dd562

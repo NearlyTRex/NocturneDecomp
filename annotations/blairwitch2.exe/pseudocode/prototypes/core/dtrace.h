@@ -95,11 +95,11 @@ void FUN_0047401c(int param_1,float *param_2);
 
 // Original: core_dtrace.cpp_FUN_00474020
 // Address: 00474020
-void FUN_00474020(int param_1,float *param_2);
+void __cdecl FUN_00474020(CDemonRaytrace *this_ptr,CVector3f *world_pos);
 
 // Original: core_dtrace.cpp_FUN_00474550
 // Address: 00474550
-void FUN_00474550(int param_1,int *param_2,int param_3,int param_4,int param_5);
+void FUN_00474550(CDemonRaytrace *param_1,int *param_2,int param_3,int param_4,int param_5);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_renderCubeForPVS_FUN_004746b0
 // Address: 004746b0
@@ -153,9 +153,9 @@ void FUN_00476d20(int param_1);
 // Address: 00476d40
 void FUN_00476d40(int param_1);
 
-// Original: core_dtrace.cpp_FUN_00476df0
+// Original: core_dtrace.cpp_CDemonRaytrace_markShadowVoxels_FUN_00476df0
 // Address: 00476df0
-void __cdecl FUN_00476df0(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
+void __cdecl CDemonRaytrace::markShadowVoxels(CDemonRaytrace *this_ptr,CVector3f *offset,CVector3f *rotation,CVector3f *extent,CVector3f *light_position);
 
 // Original: core_dtrace.cpp_CDemonRaytrace_commitShadowBuffer_FUN_004770c0
 // Address: 004770c0

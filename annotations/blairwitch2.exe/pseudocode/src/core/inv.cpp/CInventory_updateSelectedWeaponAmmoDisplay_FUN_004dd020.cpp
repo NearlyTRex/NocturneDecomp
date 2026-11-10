@@ -21,6 +21,6 @@ void __cdecl core_inv_cpp_CInventory_updateSelectedWeaponAmmoDisplay_FUN_004dd02
   weapon_class_name =
        (char *)core_actor_cpp_FUN_00408a50
                          (*(uint *)(this_ptr + *(int *)(this_ptr + 0x468) * 4 + 0x610));
-  core_ammo_cpp_FUN_0040e240(*(CAmmo **)(this_ptr + 0x464),weapon_class_name);
+  core_ammo_cpp_CAmmo_setWeaponClass_FUN_0040e240(*(CAmmo **)(this_ptr + 0x464),weapon_class_name);
   return;
 }

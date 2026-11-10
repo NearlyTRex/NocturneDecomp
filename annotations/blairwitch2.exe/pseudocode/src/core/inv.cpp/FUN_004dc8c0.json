@@ -32,7 +32,7 @@
     {
       "addr": "004df010",
       "from_addr": "004df0aa",
-      "name": "core_inv.cpp_FUN_004df010",
+      "name": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -58,7 +58,7 @@
     {
       "addr": "0040c840",
       "is_variadic": false,
-      "name": "core_actor.cpp_FUN_0040c840"
+      "name": "core_actor.cpp_isOfClass_FUN_0040c840"
     },
     {
       "addr": "0040e450",
@@ -78,7 +78,7 @@
     {
       "addr": "004cdf90",
       "is_variadic": false,
-      "name": "core_health.cpp_FUN_004cdf90"
+      "name": "core_health.cpp_CHealthItem_useItem_FUN_004cdf90"
     },
     {
       "addr": "004db8e0",
@@ -295,7 +295,7 @@
       {
         "call_addr": "004df0aa",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004df010",
+        "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
         "estimated_params": 2,
         "instructions_analyzed": 4,
         "method": "push_count",
@@ -306,7 +306,7 @@
       {
         "call_addr": "004df0b7",
         "call_type": "direct",
-        "caller": "core_inv.cpp_FUN_004df010",
+        "caller": "core_inv.cpp_CInventory_autoUseHealthItem_FUN_004df010",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -439,7 +439,7 @@
       "line": 21,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CAmmo\");",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CAmmo\");",
       "type": "unnamed_param"
     },
     {
@@ -447,7 +447,7 @@
       "line": 23,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CWeapon\");",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CWeapon\");",
       "type": "unnamed_param"
     },
     {
@@ -471,7 +471,7 @@
       "line": 28,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CHealthItem\");",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CHealthItem\");",
       "type": "unnamed_param"
     },
     {
@@ -479,7 +479,7 @@
       "line": 30,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CGasMask\");",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CGasMask\");",
       "type": "unnamed_param"
     },
     {
@@ -503,7 +503,7 @@
       "line": 37,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar2 = core_actor_cpp_FUN_0040c840(param_2,\"CBoxActor\");",
+      "text": "iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(param_2,\"CBoxActor\");",
       "type": "unnamed_param"
     },
     {
@@ -540,10 +540,10 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 110,
+      "line": 111,
       "match": "*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4",
       "severity": "moderate",
-      "text": "iVar2 = core_health_cpp_FUN_004cdf90(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4))",
+      "text": "(local_18,*(CCharacter **)(_DAT_01cedef4 * 4 + 0x1cedee4));",
       "type": "raw_address_pointer_store"
     },
     {
@@ -583,7 +583,7 @@
       "line": 131,
       "match": "DAT_005db95d",
       "severity": "mild",
-      "text": "(iVar2 = core_actor_cpp_FUN_0040c840(actor_ptr,&DAT_005db95d), iVar2 == 0)) {",
+      "text": "(iVar2 = core_actor_cpp_isOfClass_FUN_0040c840(actor_ptr,&DAT_005db95d), iVar2 == 0)) {",
       "type": "undefined_data"
     },
     {

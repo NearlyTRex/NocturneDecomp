@@ -1,8 +1,10 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void core_dimage_cpp_FUN_0045b270(int param_1)
+; void __cdecl core_dimage_cpp_FUN_0045b270(CDemonImage *this_ptr)
 ;
+; Parameters:
+; CDemonImage *    Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
 ;   core_dimage.cpp_FUN_0045b210 at 0045b216

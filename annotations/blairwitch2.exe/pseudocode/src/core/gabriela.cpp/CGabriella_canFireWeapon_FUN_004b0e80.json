@@ -1,0 +1,153 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 42,
+    "complexity_score": 74,
+    "cross_reference_count": 1,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 14,
+    "suspect_count": 5,
+    "suspect_types": [
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 56
+  },
+  "cross_references": [
+    {
+      "addr": "004ad640",
+      "from_addr": "004ade8b",
+      "name": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004b0e80",
+    "address_range": [
+      [
+        "004b0e80",
+        "004b0ee3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_gabriela.cpp_CGabriella_canFireWeapon_FUN_004b0e80",
+    "signature": "int __cdecl core_gabriela_cpp_CGabriella_canFireWeapon_FUN_004b0e80(CGabriella *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "004ade8b",
+        "call_type": "direct",
+        "caller": "core_gabriela.cpp_CGabriella_process_FUN_004ad640",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 8.545454545454545,
+    "instruction_count": 33,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 3,
+      "BOOL_OR": 5,
+      "CALLIND": 1,
+      "CBRANCH": 5,
+      "COPY": 121,
+      "FLOAT2FLOAT": 3,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT2FLOAT": 3,
+      "INT_ADD": 13,
+      "INT_AND": 25,
+      "INT_CARRY": 1,
+      "INT_EQUAL": 8,
+      "INT_LEFT": 12,
+      "INT_MULT": 1,
+      "INT_NOTEQUAL": 15,
+      "INT_OR": 15,
+      "INT_SCARRY": 1,
+      "INT_SLESS": 4,
+      "INT_SUB": 2,
+      "INT_XOR": 1,
+      "INT_ZEXT": 12,
+      "LOAD": 11,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 2
+    },
+    "pcode_op_count": 282
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CGabriella *"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 10,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(iVar1 = (**(code **)(*(int *)(*(int *)(&this_ptr->field_0x2498c +",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 10,
+      "match": "field_0x2498c",
+      "severity": "mild",
+      "text": "(iVar1 = (**(code **)(*(int *)(*(int *)(&this_ptr->field_0x2498c +",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 11,
+      "match": "field_0x247e4",
+      "severity": "mild",
+      "text": "*(int *)&this_ptr->field_0x247e4 * 4) + 0x2b0) + 0xf0))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x2498c",
+      "severity": "mild",
+      "text": "(*(int *)(&this_ptr->field_0x2498c + *(int *)&this_ptr->field_0x247e4 * 4))",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 12,
+      "match": "field_0x247e4",
+      "severity": "mild",
+      "text": "(*(int *)(&this_ptr->field_0x2498c + *(int *)&this_ptr->field_0x247e4 * 4))",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 170,
-    "complexity_score": 215,
+    "complexity_score": 171,
     "cross_reference_count": 0,
     "function_call_count": 13,
     "global_count": 3,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 60,
-    "suspect_count": 14,
+    "pseudocode_lines": 61,
+    "suspect_count": 10,
     "suspect_types": [
-      "unknown_field",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 230
+    "total_lines": 231
   },
   "cross_references": [],
   "function": {
@@ -81,14 +80,14 @@
       "name": "engine_pod.cpp_CPodFile_dtor_FUN_00519ec0"
     },
     {
+      "addr": "00519f00",
+      "is_variadic": false,
+      "name": "engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00"
+    },
+    {
       "addr": "00519cb0",
       "is_variadic": false,
       "name": "engine_pod.cpp_crc32UpdateByte_FUN_00519cb0"
-    },
-    {
-      "addr": "00519f00",
-      "is_variadic": false,
-      "name": "engine_pod.cpp_FUN_00519f00"
     },
     {
       "addr": "0047be90",
@@ -199,7 +198,7 @@
       "line": 20,
       "match": "param_2",
       "severity": "mild",
-      "text": "iVar1 = engine_pod_cpp_FUN_00519f00(&CStack_44c,param_2);",
+      "text": "iVar1 = engine_pod_cpp_CPodFile_mountFromFile_FUN_00519f00(&CStack_44c,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -211,48 +210,16 @@
       "type": "unnamed_param"
     },
     {
-      "description": "Unknown/mangled field access",
-      "line": 28,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (CStack_44c._0_4_ == 1) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 31,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "else if (CStack_44c._0_4_ == 200) {",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 35,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "if (CStack_44c._0_4_ == 100) goto LAB_0051b862;",
-      "type": "unknown_field"
-    },
-    {
-      "description": "Unknown/mangled field access",
-      "line": 38,
-      "match": "._0_4_",
-      "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"Invalid pod version for %s: %d\",param_2,CStack_44c._0_4_);",
-      "type": "unknown_field"
-    },
-    {
       "description": "Unnamed function parameter",
-      "line": 38,
+      "line": 39,
       "match": "param_2",
       "severity": "mild",
-      "text": "core_main_c_FUN_004e4500(\"Invalid pod version for %s: %d\",param_2,CStack_44c._0_4_);",
+      "text": "(\"Invalid pod version for %s: %d\",param_2,CStack_44c.pod_format_version);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 40,
+      "line": 41,
       "match": "param_2",
       "severity": "mild",
       "text": "iStack_1c = engine_dosio_cpp_getFileSize_FUN_00460aa0((char *)0x5e2403,param_2);",
@@ -260,7 +227,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 42,
+      "line": 43,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar2 = _fopen(param_2,0x5e2404);",
@@ -268,7 +235,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 57,
+      "line": 58,
       "match": "param_2",
       "severity": "mild",
       "text": "uVar2 = _fopen(param_2,0x5e28e1);",

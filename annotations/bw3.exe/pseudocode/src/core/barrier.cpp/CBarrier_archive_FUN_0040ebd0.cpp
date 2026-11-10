@@ -9,13 +9,13 @@
 void __cdecl core_barrier_cpp_CBarrier_archive_FUN_0040ebd0(CBarrier *this_ptr)
 
 {
-  core_actor_cpp_CDemonActor_archive_FUN_0040c280((CDemonActor *)this_ptr);
-  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->field_0x158,&DAT_005b61f7);
+  core_actor_cpp_CDemonActor_archive_FUN_0040c280(&this_ptr->base);
+  core_actor_cpp_archiveVector_FUN_0040b400(&this_ptr->size,&DAT_005b61f7);
   if (g_CBarrierClassVersion < 2) {
     return;
   }
-  core_actor_cpp_archiveString_FUN_0040b680(&this_ptr->field_0x168,"effectClassNameList");
-  core_actor_cpp_archiveInteger_FUN_0040b8b0((int *)&this_ptr->field_0x164,"addToPathGrid")
-  ;
+  core_actor_cpp_archiveString_FUN_0040b680
+            (this_ptr->effect_class_name_list,"effectClassNameList");
+  core_actor_cpp_archiveInteger_FUN_0040b8b0(&this_ptr->add_to_path_grid,"addToPathGrid");
   return;
 }

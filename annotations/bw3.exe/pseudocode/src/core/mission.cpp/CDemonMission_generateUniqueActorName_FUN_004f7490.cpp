@@ -36,9 +36,8 @@ void __cdecl core_mission_cpp_CDemonMission_generateUniqueActorName_FUN_004f7490
     }
   }
   do {
-    iVar5 = iVar5 + 1;
-    FUN_005a28c0(out_buf,&DAT_005c8c3d,base_name,iVar5);
-    pCVar3 = core_mission_cpp_FUN_004f6e90(this_ptr,out_buf);
+    _sprintf(out_buf,&DAT_005c8c3d);
+    pCVar3 = core_mission_cpp_CDemonMission_findActorByName_FUN_004f6e90(this_ptr,out_buf);
   } while (pCVar3 != (CDemonActor *)0x0);
   return;
 }

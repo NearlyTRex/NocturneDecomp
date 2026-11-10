@@ -11,7 +11,7 @@
 ;   undefined4 DAT_01bc120c
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042f240
+;   core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
     MOV ECX,dword ptr [ESP + 0x4]       ; 0041cfe4
         ;   Label: LAB_0041cfe4
     PUSH ECX                            ; 0041cfe8
-    CALL core_charactr.cpp_FUN_0042f240 ; 0041cfe9
-        ;   XREF to: 0042f240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_FUN_0042f240(CCharacter * this_ptr)
+    CALL core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240 ; 0041cfe9
+        ;   XREF to: 0042f240 (UNCONDITIONAL_CALL)  ; int core_charactr.cpp_CCharacter_renderOpaque_FUN_0042f240(CCharacter * this_ptr)
     ADD ESP,0x4                         ; 0041cfee
     RET                                 ; 0041cff1
 

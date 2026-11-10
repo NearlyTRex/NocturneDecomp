@@ -24,10 +24,10 @@ void engine_font_cpp_FUN_004a8850(CBitFont *param_1)
     *(uint *)(param_1 + 0x1dcc) = 0;
   }
   if (*(int *)(param_1 + 0x1dd4) == 0) {
-    engine_font_cpp_FUN_004a7bb0(param_1);
+    engine_font_cpp_CBitFont_reset_FUN_004a7bb0(param_1);
     return;
   }
   FUN_005b86a0(*(int *)(param_1 + 0x1dd4));
-  engine_font_cpp_FUN_004a7bb0(param_1);
+  engine_font_cpp_CBitFont_reset_FUN_004a7bb0(param_1);
   return;
 }

@@ -29,8 +29,8 @@
 ;
 ; Called Functions:
 ;   crt_string.c__strcmp_FUN_005a3d00
-;   engine_font.cpp_FUN_004b2a80
-;   engine_font.cpp_FUN_004b2b30
+;   engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80
 ;
 ; *****************************************************************************
 
@@ -96,8 +96,8 @@ section .text
     PUSH EBP                            ; 004a7af7
     MOV EDX,dword ptr [0x01549aa4]      ; 004a7af8 | DAT_01549aa4
     PUSH EDX                            ; 004a7afe
-    CALL engine_font.cpp_FUN_004b2a80   ; 004a7aff
-        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2a80(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80 ; 004a7aff
+        ;   XREF to: 004b2a80 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004b2a80(CBitFont * this_ptr, char * text)
     ADD ESP,0x8                         ; 004a7b04
     PUSH EBP                            ; 004a7b07
     MOV ECX,dword ptr [0x01549aa4]      ; 004a7b08 | DAT_01549aa4
@@ -105,8 +105,8 @@ section .text
     PUSH ECX                            ; 004a7b10
     MOV dword ptr [ESP + 0x8],EAX       ; 004a7b11
     LEA ESI,[EBX + 0x8]                 ; 004a7b15
-    CALL engine_font.cpp_FUN_004b2b30   ; 004a7b18
-        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
+    CALL engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30 ; 004a7b18
+        ;   XREF to: 004b2b30 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextHeight_FUN_004b2b30(CBitFont * this_ptr, char * text_string)
     MOV EDX,dword ptr [0x01c5fadc]      ; 004a7b1d | DAT_01c5fadc
     MOV EBX,dword ptr [0x01c5fae0]      ; 004a7b23 | DAT_01c5fae0
     ADD ESP,0x8                         ; 004a7b29

@@ -19,14 +19,15 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005180b0(CPlatform *this
   uint auStackY_17ec [509];
   uint auStackY_ff8 [1014];
   uint uStack_10;
-  byte *puVar5;
+  CPlatform *pCVar5;
   
   bVar8 = 0;
-  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408790((CDemonActor *)this_ptr);
+  pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408790(&this_ptr->base);
   pCVar2 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_0044fc80
                      ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50((CCourse *)&pCVar2[1].field_0x3c);
-  *(byte **)(pCVar3 + -0x1bc) = &g_CPlatformVTable;
+  pCVar3 = core_course_cpp_CCourse_ctor_FUN_00438a50
+                     ((CCourse *)(pCVar2[1].part_visibility_flags + 0xf));
+  *(CDemonActor_vtable **)(pCVar3 + -0x1bc) = &g_CPlatformVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70
             ((CKeyFramedModelInstance *)(pCVar3 + -0x1b8),"question.kfm");
   pCVar3[0x44] = (CCourse)0x0;
@@ -80,10 +81,13 @@ CPlatform * __cdecl core_platfrm_cpp_CPlatform_ctor_FUN_005180b0(CPlatform *this
   *(uint *)(pCVar3 + -0x2c) = 0;
   pCVar4 = (CPlatform *)(pCVar3 + -0x46c);
   do {
-    puVar5 = &pCVar4->field_0x34;
-    *(uint *)&pCVar4->field_0x678 = 0;
-    pCVar4 = (CPlatform *)puVar5;
-  } while ((CCourse *)puVar5 != pCVar3 + -0x264);
+    pCVar5 = (CPlatform *)((int)&(pCVar4->base).orient + 4);
+    pCVar4->attach_actors[0] = (SPlatformAttachment)0x0;
+    pCVar4->attach_actors[1] = (SPlatformAttachment)0x0;
+    pCVar4->attach_actors[2] = (SPlatformAttachment)0x0;
+    pCVar4->attach_actors[3] = (SPlatformAttachment)0x0;
+    pCVar4 = pCVar5;
+  } while (pCVar5 != (CPlatform *)(pCVar3 + -0x264));
   *(uint *)(pCVar3 + 0x204) = 0;
   *(uint *)(pCVar3 + 0x208) = 1;
   *(uint *)(pCVar3 + 0x200) = 0;

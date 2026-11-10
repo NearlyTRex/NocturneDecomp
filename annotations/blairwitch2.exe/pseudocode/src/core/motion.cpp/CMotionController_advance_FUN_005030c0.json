@@ -2,78 +2,89 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 351,
-    "complexity_score": 560,
+    "complexity_score": 160,
     "cross_reference_count": 44,
     "function_call_count": 11,
     "global_count": 14,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 150,
-    "suspect_count": 40,
+    "pseudocode_lines": 145,
+    "suspect_count": 1,
     "suspect_types": [
-      "unnamed_field",
       "warning_overlapping_globals"
     ],
-    "total_lines": 501
+    "total_lines": 496
   },
   "cross_references": [
     {
       "addr": "0040ef00",
       "from_addr": "0040eff2",
-      "name": "core_armour.cpp_FUN_0040ef00",
+      "name": "core_armour.cpp_CArmour_process_FUN_0040ef00",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00410590",
       "from_addr": "004105a6",
-      "name": "core_baron.cpp_FUN_00410590",
+      "name": "core_baron.cpp_CBaron_advanceMotion_FUN_00410590",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0059e7d0",
+      "from_addr": "0059e84a",
+      "name": "core_basicene.cpp_CBasicEnemy_advanceMotion_FUN_0059e7d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00411a10",
       "from_addr": "00411c76",
-      "name": "core_batcreat.cpp_FUN_00411a10",
+      "name": "core_batcreat.cpp_CBatCreature_process_FUN_00411a10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00412f40",
       "from_addr": "004131c7",
-      "name": "core_batman.cpp_FUN_00412f40",
+      "name": "core_batman.cpp_CBatman_process_FUN_00412f40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00414a80",
       "from_addr": "00414ad8",
-      "name": "core_beast.cpp_FUN_00414a80",
+      "name": "core_beast.cpp_CBeast_process_FUN_00414a80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00414e50",
       "from_addr": "004150b4",
-      "name": "core_biggs.cpp_FUN_00414e50",
+      "name": "core_biggs.cpp_CBiggs_process_FUN_00414e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004186c0",
       "from_addr": "00418a83",
-      "name": "core_boneguy.cpp_FUN_004186c0",
+      "name": "core_boneguy.cpp_CBoneGuy_process_FUN_004186c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0041dbe0",
       "from_addr": "0041dd79",
-      "name": "core_bride.cpp_FUN_0041dbe0",
+      "name": "core_bride.cpp_CBride_process_FUN_0041dbe0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00436420",
       "from_addr": "00436436",
-      "name": "core_colonel.cpp_FUN_00436420",
+      "name": "core_colonel.cpp_CColonel_processMotionEvents_FUN_00436420",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00436e80",
+      "from_addr": "00437324",
+      "name": "core_conveyor.cpp_CConstruct_process_FUN_00436e80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004392b0",
       "from_addr": "0043951a",
-      "name": "core_cow.cpp_FUN_004392b0",
+      "name": "core_cow.cpp_CZombieCow_process_FUN_004392b0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -85,19 +96,19 @@
     {
       "addr": "0045e360",
       "from_addr": "0045e3ee",
-      "name": "core_dog.cpp_FUN_0045e360",
+      "name": "core_dog.cpp_CZombieDog_process_FUN_0045e360",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00462ff0",
       "from_addr": "00463101",
-      "name": "core_dracbrid.cpp_FUN_00462ff0",
+      "name": "core_dracbrid.cpp_CDraculaBride_process_FUN_00462ff0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0046d870",
       "from_addr": "0046db4d",
-      "name": "core_drone.cpp_FUN_0046d870",
+      "name": "core_drone.cpp_CDrone_process_FUN_0046d870",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -109,55 +120,61 @@
     {
       "addr": "004c0050",
       "from_addr": "004c00bc",
-      "name": "core_gargoyle.cpp_FUN_004c0050",
+      "name": "core_gargoyle.cpp_CGargoyle_process_FUN_004c0050",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004c1bb0",
       "from_addr": "004c2632",
-      "name": "core_ghoul.cpp_FUN_004c1bb0",
+      "name": "core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004cd660",
       "from_addr": "004cd677",
-      "name": "core_haystack.cpp_FUN_004cd660",
+      "name": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1070",
       "from_addr": "004d10e5",
-      "name": "core_hiram.cpp_FUN_004d1070",
+      "name": "core_hiram.cpp_CHiram_process_FUN_004d1070",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d1660",
       "from_addr": "004d1719",
-      "name": "core_hostage.cpp_FUN_004d1660",
+      "name": "core_hostage.cpp_CHostage_process_FUN_004d1660",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d3a70",
       "from_addr": "004d3cb5",
-      "name": "core_hotdemon.cpp_FUN_004d3a70",
+      "name": "core_hotdemon.cpp_CHotDemon_process_FUN_004d3a70",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d6140",
       "from_addr": "004d6157",
-      "name": "core_icepick.cpp_FUN_004d6140",
+      "name": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004d6980",
       "from_addr": "004d6a04",
-      "name": "core_imp.cpp_FUN_004d6980",
+      "name": "core_imp.cpp_CImp_process_FUN_004d6980",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e0670",
       "from_addr": "004e0b55",
-      "name": "core_larva.cpp_FUN_004e0670",
+      "name": "core_larva.cpp_CLarva_process_FUN_004e0670",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004f0e10",
+      "from_addr": "004f0f7f",
+      "name": "core_mimic.cpp_CMimic_processAnimation_FUN_004f0e10",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -167,21 +184,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "004f0e10",
-      "from_addr": "004f0f7f",
-      "name": "core_mimic.cpp_FUN_004f0e10",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004fde80",
       "from_addr": "004fe02e",
-      "name": "core_mobster.cpp_FUN_004fde80",
+      "name": "core_mobster.cpp_CMobster_process_FUN_004fde80",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00501530",
       "from_addr": "005015ae",
-      "name": "core_moloch.cpp_FUN_00501530",
+      "name": "core_moloch.cpp_CMoloch_process_FUN_00501530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -193,19 +204,19 @@
     {
       "addr": "005117a0",
       "from_addr": "0051183d",
-      "name": "core_passngr.cpp_FUN_005117a0",
+      "name": "core_passngr.cpp_CPassenger_process_FUN_005117a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0051f9c0",
       "from_addr": "0051f9da",
-      "name": "core_scat.cpp_FUN_0051f9c0",
+      "name": "core_scat.cpp_CScat_advanceMotionWithGrabDamage_FUN_0051f9c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0052a9a0",
       "from_addr": "0052adea",
-      "name": "core_sentinel.cpp_FUN_0052a9a0",
+      "name": "core_sentinel.cpp_CSentinel_process_FUN_0052a9a0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -217,7 +228,7 @@
     {
       "addr": "00549ba0",
       "from_addr": "00549c9b",
-      "name": "core_smiley.cpp_FUN_00549ba0",
+      "name": "core_smiley.cpp_CSmiley_process_FUN_00549ba0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -229,55 +240,43 @@
     {
       "addr": "0056f6d0",
       "from_addr": "0056f773",
-      "name": "core_succubus.cpp_FUN_0056f6d0",
+      "name": "core_succubus.cpp_CSuccubus_process_FUN_0056f6d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00571460",
       "from_addr": "00571477",
-      "name": "core_svetlana.cpp_FUN_00571460",
+      "name": "core_svetlana.cpp_CSvetlana_advanceMotion_FUN_00571460",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005726c0",
       "from_addr": "00572b6c",
-      "name": "core_tentacle.cpp_FUN_005726c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00581910",
-      "from_addr": "0058213d",
-      "name": "core_vampboss.cpp_FUN_00581910",
+      "name": "core_tentacle.cpp_CTentacle_process_FUN_005726c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00582dc0",
       "from_addr": "00582de7",
-      "name": "core_vampboss.cpp_FUN_00582dc0",
+      "name": "core_vampboss.cpp_CVampireBoss_advanceAnimation_FUN_00582dc0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "00581910",
+      "from_addr": "0058213d",
+      "name": "core_vampboss.cpp_CVampireBoss_process_FUN_00581910",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "0058b950",
       "from_addr": "0058b9cd",
-      "name": "core_werewolf.cpp_FUN_0058b950",
+      "name": "core_werewolf.cpp_CWerewolf_process_FUN_0058b950",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00595f30",
       "from_addr": "00595ff8",
-      "name": "core_zombie.cpp_FUN_00595f30",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0059e7d0",
-      "from_addr": "0059e84a",
-      "name": "unkafter_basicene.cpp_FUN_0059e7d0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "00436e80",
-      "from_addr": "00437324",
-      "name": "unkafter_conveyor.cpp_FUN_00436e80",
+      "name": "core_zombie.cpp_CZombie_process_FUN_00595f30",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -304,6 +303,11 @@
       "addr": "004e4500",
       "is_variadic": false,
       "name": "core_main.c_FUN_004e4500"
+    },
+    {
+      "addr": "00503bd0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_CMotionController_advanceFrameAndCheckSignals_FUN_00503bd0"
     },
     {
       "addr": "005039e0",
@@ -336,11 +340,6 @@
       "name": "core_motion.cpp_FUN_00503a10"
     },
     {
-      "addr": "00503bd0",
-      "is_variadic": false,
-      "name": "core_motion.cpp_FUN_00503bd0"
-    },
-    {
       "addr": "00503d80",
       "is_variadic": false,
       "name": "core_motion.cpp_FUN_00503d80"
@@ -348,7 +347,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     }
   ],
   "globals": [
@@ -465,7 +464,7 @@
       {
         "call_addr": "004c2632",
         "call_type": "direct",
-        "caller": "core_ghoul.cpp_FUN_004c1bb0",
+        "caller": "core_ghoul.cpp_CGhoul_process_FUN_004c1bb0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -476,7 +475,7 @@
       {
         "call_addr": "004cd677",
         "call_type": "direct",
-        "caller": "core_haystack.cpp_FUN_004cd660",
+        "caller": "core_haystack.cpp_CHaystack_advanceMotion_FUN_004cd660",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -487,7 +486,7 @@
       {
         "call_addr": "004d1719",
         "call_type": "direct",
-        "caller": "core_hostage.cpp_FUN_004d1660",
+        "caller": "core_hostage.cpp_CHostage_process_FUN_004d1660",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -498,7 +497,7 @@
       {
         "call_addr": "004d6157",
         "call_type": "direct",
-        "caller": "core_icepick.cpp_FUN_004d6140",
+        "caller": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -509,7 +508,7 @@
       {
         "call_addr": "0052adea",
         "call_type": "direct",
-        "caller": "core_sentinel.cpp_FUN_0052a9a0",
+        "caller": "core_sentinel.cpp_CSentinel_process_FUN_0052a9a0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -531,7 +530,7 @@
       {
         "call_addr": "0040eff2",
         "call_type": "direct",
-        "caller": "core_armour.cpp_FUN_0040ef00",
+        "caller": "core_armour.cpp_CArmour_process_FUN_0040ef00",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -542,7 +541,7 @@
       {
         "call_addr": "004105a6",
         "call_type": "direct",
-        "caller": "core_baron.cpp_FUN_00410590",
+        "caller": "core_baron.cpp_CBaron_advanceMotion_FUN_00410590",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -766,318 +765,6 @@
       "severity": "mild",
       "text": "/* WARNING: Globals starting with '_' overlap smaller symbols at the same address */",
       "type": "warning_overlapping_globals"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 26,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "local_2c = (float *)&this_ptr->field_0x1c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "local_24 = (int *)&this_ptr->field_0x18;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 28,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "local_20 = (float *)&this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 29,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "local_28 = (int *)&this_ptr->field_0x4;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 37,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "if (*(float *)&this_ptr->field_0x14 < 0.0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)&this_ptr->field_0x4,*(float *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 39,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)&this_ptr->field_0x4,*(float *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = local_3c;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 45,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = local_38;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 48,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)(iVar3 + 0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 64,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x20 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 65,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_ac = (float)_DAT_005dfc30 - *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 68,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "local_ac = *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "local_ac = local_ac / *(float *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 80,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "switch(*(uint *)&this_ptr->field_0xc) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 85,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 91,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 96,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x4,*(uint *)&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 99,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "(this_ptr,*(uint *)&this_ptr->field_0x18,*(uint *)&this_ptr->field_0x1c,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 107,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "(\"CMotionController::advance: Tweening active but invalid tweenType: %d\",*(uint *)&this_ptr->field_0xc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 113,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "(this_ptr,local_28,local_20,local_b0,*(float *)&this_ptr->field_0x14);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 117,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "(this_ptr,local_24,local_2c,local_b0,1.0 - *(float *)&this_ptr->field_0x14",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 121,
-      "match": "field_0x20",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x20 == 0) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 122,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "fVar1 = local_b0 * *(float *)&this_ptr->field_0x10 + *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 122,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar1 = local_b0 * *(float *)&this_ptr->field_0x10 + *(float *)&this_ptr->field_0x14;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 123,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x14 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 126,
-      "match": "field_0x24",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x24 != 0)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 128,
-      "match": "field_0x28",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x28 = *(uint *)(iVar3 + 0x24);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 132,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x14 - local_b0 * *(float *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 132,
-      "match": "field_0x10",
-      "severity": "mild",
-      "text": "fVar1 = *(float *)&this_ptr->field_0x14 - local_b0 * *(float *)&this_ptr->field_0x10;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 133,
-      "match": "field_0x14",
-      "severity": "mild",
-      "text": "*(float *)&this_ptr->field_0x14 = fVar1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 140,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "if ((*(int *)&this_ptr->field_0x2c != 0) &&",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 141,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)&this_ptr->field_0x2c + 8) == *(int *)&this_ptr->field_0x4)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 141,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "(*(int *)(*(int *)&this_ptr->field_0x2c + 8) == *(int *)&this_ptr->field_0x4)) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 142,
-      "match": "field_0x2c",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x2c = 0;",
-      "type": "unnamed_field"
     }
   ]
 }

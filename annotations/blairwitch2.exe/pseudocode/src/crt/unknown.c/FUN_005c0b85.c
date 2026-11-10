@@ -17,6 +17,6 @@ void FUN_005c0b85(int param_1,uint param_2)
   if (param_2 == 0) {
     return;
   }
-  unkafter_morph_cpp_FUN_005c40d2(auStack_8,param_2);
+  FUN_005c40d2(auStack_8,param_2);
   return;
 }

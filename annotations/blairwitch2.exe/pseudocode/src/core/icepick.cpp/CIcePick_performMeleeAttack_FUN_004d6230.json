@@ -1,0 +1,308 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 109,
+    "complexity_score": 155,
+    "cross_reference_count": 1,
+    "function_call_count": 4,
+    "global_count": 4,
+    "max_suspect_severity": "moderate",
+    "pseudocode_lines": 65,
+    "suspect_count": 7,
+    "suspect_types": [
+      "pointer_cast",
+      "stack_alignment_array",
+      "unnamed_field",
+      "unresolved_funcptr"
+    ],
+    "total_lines": 174
+  },
+  "cross_references": [
+    {
+      "addr": "004d6140",
+      "from_addr": "004d61ab",
+      "name": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "004d6230",
+    "address_range": [
+      [
+        "004d6230",
+        "004d634a"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_icepick.cpp_CIcePick_performMeleeAttack_FUN_004d6230",
+    "signature": "void __cdecl core_icepick_cpp_CIcePick_performMeleeAttack_FUN_004d6230(CIcePick *this_ptr,int bone_index)"
+  },
+  "function_calls": [
+    {
+      "addr": "00408d70",
+      "is_variadic": false,
+      "name": "core_actor.cpp_FUN_00408d70"
+    },
+    {
+      "addr": "0040cf60",
+      "is_variadic": false,
+      "name": "core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60"
+    },
+    {
+      "addr": "004222d0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_SDamageInfo_ctor_FUN_004222d0"
+    },
+    {
+      "addr": "00546a90",
+      "is_variadic": false,
+      "name": "core_skeleton.cpp_FUN_00546a90"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005da8ee",
+      "name": "s_icepick_punch_wav_005da8ee",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "0061b5a8",
+      "name": "g_CDemonSetPtr",
+      "type": "CDemonSet*",
+      "value": "01e661b8"
+    },
+    {
+      "addr": "01e661b8",
+      "name": "g_CDemonSetInstance",
+      "type": "CDemonSet",
+      "value": null
+    },
+    {
+      "addr": "01fb5260",
+      "name": "g_CDemonSetInstance.character_count",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 2,
+    "call_sites": [
+      {
+        "call_addr": "004d61ab",
+        "call_type": "direct",
+        "caller": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      },
+      {
+        "call_addr": "004d61bd",
+        "call_type": "direct",
+        "caller": "core_icepick.cpp_CIcePick_processMotionEvents_FUN_004d6140",
+        "estimated_params": 2,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 8,
+        "stack_params": 2
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 2,
+    "declared_stack_bytes": 8,
+    "estimated_params": 2,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.053763440860215,
+    "instruction_count": 93,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BRANCH": 2,
+      "CALL": 4,
+      "CALLIND": 2,
+      "CBRANCH": 4,
+      "COPY": 108,
+      "FLOAT2FLOAT": 2,
+      "INT_ADD": 62,
+      "INT_AND": 41,
+      "INT_CARRY": 10,
+      "INT_EQUAL": 41,
+      "INT_LESS": 4,
+      "INT_MULT": 13,
+      "INT_SBORROW": 4,
+      "INT_SCARRY": 12,
+      "INT_SLESS": 20,
+      "INT_SUB": 39,
+      "INT_XOR": 3,
+      "INT_ZEXT": 12,
+      "LOAD": 26,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 37
+    },
+    "pcode_op_count": 470
+  },
+  "stack_frame": {
+    "frame_size": 144,
+    "local_size": 136,
+    "param_offset": 4,
+    "param_size": 8,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_84",
+        "offset": -132,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_80",
+        "offset": -128,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_58",
+        "offset": -88,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_50",
+        "offset": -80,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_4c",
+        "offset": -76,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_48",
+        "offset": -72,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_3c",
+        "offset": -60,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_30",
+        "offset": -48,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_24",
+        "offset": -36,
+        "size": 1,
+        "type": "undefined"
+      },
+      {
+        "is_param": false,
+        "name": "local_18",
+        "offset": -24,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": false,
+        "name": "local_14",
+        "offset": -20,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CIcePick *"
+      },
+      {
+        "is_param": true,
+        "name": "bone_index",
+        "offset": 8,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "StackY array variable (stack alignment artifact)",
+      "line": 10,
+      "match": "auStackY_1030",
+      "severity": "moderate",
+      "text": "uint auStackY_1030 [999];",
+      "type": "stack_alignment_array"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 25,
+      "match": "field_0x2b4",
+      "severity": "mild",
+      "text": "core_skeleton_cpp_FUN_00546a90(&this_ptr->field_0x2b4,bone_index);",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 45,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,\"icepick-punch?.wav\");",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 45,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "(**(code **)(*(int *)&this_ptr->field_0x2b0 + 0x34))(this_ptr,\"icepick-punch?.wav\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Complex pointer cast",
+      "line": 48,
+      "match": "(CIcePick **)((int)g_CDemonSetPtr",
+      "severity": "moderate",
+      "text": "pCVar1 = *(CIcePick **)((int)g_CDemonSetPtr->characters + iVar3);",
+      "type": "pointer_cast"
+    },
+    {
+      "description": "Unresolved function pointer (vtable lookup failed)",
+      "line": 61,
+      "match": "code *",
+      "severity": "moderate",
+      "text": "iVar2 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x108))",
+      "type": "unresolved_funcptr"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 61,
+      "match": "field_0x2b0",
+      "severity": "mild",
+      "text": "iVar2 = (**(code **)(*(int *)&pCVar1->field_0x2b0 + 0x108))",
+      "type": "unnamed_field"
+    }
+  ]
+}

@@ -12,8 +12,8 @@
 ;
 ; Called Functions:
 ;   crt_unknown.c_FUN_005b8580
-;   crt_unknown.c_FUN_005b8590
 ;   crt_unknown.c_FUN_005c1c20
+;   crt_unknown.c_InternalHeapAlloc_FUN_005b8590
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
         ;   XREF to: 005c1ce1 (CONDITIONAL_JUMP)  ; LAB_005c1ce1
     PUSH 0x1d                           ; 005c1c7b
         ;   Label: LAB_005c1c7b
-    CALL crt_unknown.c_FUN_005b8590     ; 005c1c7d
-        ;   XREF to: 005b8590 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8590()
+    CALL crt_unknown.c_InternalHeapAlloc_FUN_005b8590 ; 005c1c7d
+        ;   XREF to: 005b8590 (UNCONDITIONAL_CALL)  ; void * crt_unknown.c_InternalHeapAlloc_FUN_005b8590(ulong size)
     ADD ESP,0x4                         ; 005c1c82
     TEST EAX,EAX                        ; 005c1c85
     JNZ 0x005c1caa                      ; 005c1c87

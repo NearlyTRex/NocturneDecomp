@@ -15,12 +15,12 @@ CHealthItem * __cdecl core_health_cpp_CHealthItem_ctor_FUN_004d1d80(CHealthItem 
   pCVar1 = core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr);
   this_ptr_00 = core_dmodel_cpp_CKeyFramedModelInstance_ctor_FUN_00462500
                           ((CKeyFramedModelInstance *)(pCVar1 + 1));
-  *(byte **)&this_ptr_00[-1].field_0x178 = &g_CHealthItemVTable;
+  this_ptr_00[-1].model_ptr = (CKeyFramedModel *)&g_CHealthItemVTable;
   core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_004625f0
             (this_ptr_00,"health_lg.kfm");
-  *(uint *)(this_ptr_00 + 1) = 1;
-  *(uint *)&this_ptr_00[1].field_0x4 = 0x42480000;
-  *(uint *)&this_ptr_00[1].field_0xc = 0;
-  *(uint *)&this_ptr_00[1].field_0x8 = 0;
-  return (CHealthItem *)&this_ptr_00[-1].field_0x24;
+  this_ptr_00[1].part_visibility_flags[0] = 1;
+  this_ptr_00[1].part_visibility_flags[1] = 0x42480000;
+  this_ptr_00[1].part_visibility_flags[3] = 0;
+  this_ptr_00[1].part_visibility_flags[2] = 0;
+  return (CHealthItem *)(this_ptr_00[-1].part_visibility_flags + 9);
 }

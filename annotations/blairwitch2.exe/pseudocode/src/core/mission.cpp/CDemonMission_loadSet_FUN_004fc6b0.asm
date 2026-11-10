@@ -8,9 +8,9 @@
 ; int              Stack[0x8]:4   set_index
 ;
 ; XREF[4]:
+;   core_mission.cpp_CDemonMission_createFromSingleSet_FUN_004fca90 at 004fcaef
+;   core_mission.cpp_CDemonMission_process_FUN_004fc940 at 004fca3d
 ;   core_mission.cpp_CDemonMission_run_FUN_004fcb00 at 004fcb5b
-;   core_mission.cpp_FUN_004fc940 at 004fca3d
-;   core_mission.cpp_FUN_004fca90 at 004fcaef
 ;   core_mission.cpp_FUN_004fce00 at 004fcea2
 ;
 ; Referenced Globals:
@@ -18,13 +18,13 @@
 ;   CDemonSet* g_CDemonSetPtr = 01e661b8
 ;   CGame g_CGameInstance
 ;   CDemonSet g_CDemonSetInstance
-;   undefined4 g_CDemonSetInstance.field1364324_0x14d164
-;   undefined4 g_CDemonSetInstance.field1364328_0x14d168
+;   undefined4 g_CDemonSetInstance.actor_count
+;   undefined4 g_CDemonSetInstance.actors[0]
 ;
 ; Called Functions:
 ;   core_game.cpp_FUN_004bfa70
 ;   core_mission.cpp_CDemonMission_buildSetActorList_FUN_004fc4c0
-;   core_mission.cpp_FUN_004fc350
+;   core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350
 ;   core_set.cpp_CDemonSet_load_FUN_0052c0e0
 ;
 ; *****************************************************************************
@@ -69,10 +69,10 @@ section .text
     XOR EBX,EBX                         ; 004fc6f5
     MOV EAX,[0x0061b5a8]                ; 004fc6f7 | g_CDemonSetPtr
         ;   Label: LAB_004fc6f7
-    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004fc6fc | g_CDemonSetInstance.field1364324_0x14d164
+    CMP EBX,dword ptr [EAX + 0x14d164]  ; 004fc6fc | g_CDemonSetInstance.actor_count
     JGE 0x004fc729                      ; 004fc702
         ;   XREF to: 004fc729 (CONDITIONAL_JUMP)  ; LAB_004fc729
-    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004fc704 | g_CDemonSetInstance.field1364328_0x14d168
+    MOV EAX,dword ptr [ESI + EAX*0x1 + 0x14d168] ; 004fc704 | g_CDemonSetInstance.actors[0]
     PUSH EAX                            ; 004fc70b
     MOV EDX,dword ptr [EAX + 0x2b0]     ; 004fc70c
     ADD ESI,0x4                         ; 004fc712
@@ -83,8 +83,8 @@ section .text
         ;   XREF to: 004fc6f7 (UNCONDITIONAL_JUMP)  ; LAB_004fc6f7
     PUSH EBX                            ; 004fc71e
         ;   Label: LAB_004fc71e
-    CALL core_mission.cpp_FUN_004fc350  ; 004fc71f
-        ;   XREF to: 004fc350 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_FUN_004fc350(CDemonMission * this_ptr)
+    CALL core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350 ; 004fc71f
+        ;   XREF to: 004fc350 (UNCONDITIONAL_CALL)  ; void core_mission.cpp_CDemonMission_prepareAllActors_FUN_004fc350(CDemonMission * this_ptr)
     ADD ESP,0x4                         ; 004fc724
     JMP 0x004fc6f3                      ; 004fc727
         ;   XREF to: 004fc6f3 (UNCONDITIONAL_JUMP)  ; LAB_004fc6f3

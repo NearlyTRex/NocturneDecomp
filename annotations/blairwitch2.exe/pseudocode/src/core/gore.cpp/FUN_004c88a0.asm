@@ -46,7 +46,7 @@
 ;   ... and 2 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cfc0
+;   core_actor.cpp_getRandomInt_FUN_0040cfc0
 ;   crt_math.c_round_FUN_005b7ff0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_0046ca00
 ;   engine_drender.cpp_CDemonRenderer_processCameraRelativeVertex_FUN_0046b2b0
@@ -212,8 +212,8 @@ section .text
     PUSH 0x40                           ; 004c8a90
     MOV dword ptr [ESP + 0x44],EDI      ; 004c8a92 | DAT_00622038
     MOV EDI,0x62203c                    ; 004c8a96 | DAT_0062203c
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8a9b
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8a9b
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c8aa0
     CMP EBX,0x1                         ; 004c8aa3
     JNC 0x004c8c00                      ; 004c8aa6
@@ -231,8 +231,8 @@ section .text
     PUSH 0x40                           ; 004c8ad7
     MOV EBX,dword ptr [ESI + 0x10]      ; 004c8ad9
     MOV dword ptr [ESP + 0x4c],EAX      ; 004c8adc | DAT_0062206c
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8ae0
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8ae0
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c8ae5
     CMP EBX,0x1                         ; 004c8ae8
     JNC 0x004c8c4a                      ; 004c8aeb
@@ -250,8 +250,8 @@ section .text
     PUSH 0x40                           ; 004c8b1c
     MOV EBX,dword ptr [ESI + 0x10]      ; 004c8b1e
     MOV dword ptr [ESP + 0x48],EDX      ; 004c8b21 | DAT_00622098
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8b25
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8b25
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c8b2a
     CMP EBX,0x1                         ; 004c8b2d
     JNC 0x004c8c94                      ; 004c8b30
@@ -268,8 +268,8 @@ section .text
     PUSH 0x40                           ; 004c8b5c
     MOV EBX,dword ptr [ESI + 0x10]      ; 004c8b5e
     MOV ESI,0x6220c4                    ; 004c8b61 | DAT_006220c4
-    CALL core_actor.cpp_FUN_0040cfc0    ; 004c8b66
-        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040cfc0(int min_value, int max_value)
+    CALL core_actor.cpp_getRandomInt_FUN_0040cfc0 ; 004c8b66
+        ;   XREF to: 0040cfc0 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_getRandomInt_FUN_0040cfc0(int min_value, int max_value)
     ADD ESP,0x8                         ; 004c8b6b
     CMP EBX,0x1                         ; 004c8b6e
     JC 0x004c8ca0                       ; 004c8b71

@@ -7,15 +7,15 @@
 ; Referenced Globals:
 ;   undefined4 DAT_01511cd0
 ;   undefined4 DAT_01c35e60
-;   undefined4 CAlphaBitmap_01caf22c.field12_0xc
-;   undefined4 CAlphaBitmap_01caf22c.field16_0x10
+;   undefined4 CAlphaBitmap_01caf22c.width
+;   undefined4 CAlphaBitmap_01caf22c.height
 ;
 ; Called Functions:
 ;   engine_2d.c_drawHLine_FUN_00402f30
 ;   engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900
 ;   engine_alphabit.cpp_CAlphaBitmap_render_FUN_0040dab0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560
 ;   engine_font.cpp_FUN_004a8df0
-;   engine_font.cpp_FUN_004ab560
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
         ;   Label: LAB_004a2092
     MOV EBP,dword ptr [ESI + 0x11c]     ; 004a2094
     PUSH EBP                            ; 004a209a
-    CALL engine_font.cpp_FUN_004ab560   ; 004a209b
-        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004ab560(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560 ; 004a209b
+        ;   XREF to: 004ab560 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560(CBitFont * this_ptr, int char_code)
     MOV EDI,dword ptr [ESI + 0x4]       ; 004a20a0
     MOV EDX,dword ptr [0x01511cd0]      ; 004a20a3 | DAT_01511cd0
     ADD EDI,EAX                         ; 004a20a9
@@ -63,7 +63,7 @@ section .text
     CMP EAX,EDX                         ; 004a20b4
     JNZ 0x004a2116                      ; 004a20b6
         ;   XREF to: 004a2116 (CONDITIONAL_JUMP)  ; LAB_004a2116
-    MOV EDX,dword ptr [0x01caf238]      ; 004a20b8 | CAlphaBitmap_01caf22c.field12_0xc
+    MOV EDX,dword ptr [0x01caf238]      ; 004a20b8 | CAlphaBitmap_01caf22c.width
     MOV EBX,dword ptr [ESI + 0x8]       ; 004a20be
     MOV ESI,dword ptr [ESI]             ; 004a20c1
     CMP EBX,EDX                         ; 004a20c3
@@ -76,7 +76,7 @@ section .text
     PUSH 0x1caf22c                      ; 004a20ce
     CALL engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900 ; 004a20d3
         ;   XREF to: 0040d900 (UNCONDITIONAL_CALL)  ; void engine_alphabit.cpp_CAlphaBitmap_display_FUN_0040d900(CAlphaBitmap * this_ptr, int x, int y, int alpha)
-    MOV ECX,dword ptr [0x01caf238]      ; 004a20d8 | CAlphaBitmap_01caf22c.field12_0xc
+    MOV ECX,dword ptr [0x01caf238]      ; 004a20d8 | CAlphaBitmap_01caf22c.width
     ADD ESP,0x10                        ; 004a20de
     SUB EBX,ECX                         ; 004a20e1
     ADD ESI,ECX                         ; 004a20e3
@@ -85,7 +85,7 @@ section .text
         ;   XREF to: 004a20c7 (CONDITIONAL_JUMP)  ; LAB_004a20c7
     LEA EAX,[EAX]                       ; 004a20e9
     NOP                                 ; 004a20ef
-    MOV EAX,[0x01caf23c]                ; 004a20f0 | CAlphaBitmap_01caf22c.field16_0x10
+    MOV EAX,[0x01caf23c]                ; 004a20f0 | CAlphaBitmap_01caf22c.height
         ;   Label: LAB_004a20f0
     PUSH 0xffff                         ; 004a20f5
     DEC EAX                             ; 004a20fa

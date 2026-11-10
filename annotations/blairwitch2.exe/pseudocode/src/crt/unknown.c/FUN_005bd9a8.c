@@ -143,7 +143,7 @@ LAB_005bdbdd:
     *pcVar9 = '\0';
     iVar5 = CONCAT22(local_1c._2_2_,(ushort)local_1c);
     if ((*(byte *)(param_1 + 0x10) & 0x10) == 0) {
-      (*(code *)PTR_unkafter_morph_cpp_FUN_005c21f0_0061f660)(&local_80,&local_30);
+      (*(code *)PTR_crt_unknown_c_FUN_005c21f0_0061f660)(&local_80,&local_30);
       iVar5 = CONCAT22(local_1c._2_2_,(ushort)local_1c);
     }
     else if (local_80 == '-') {
@@ -174,7 +174,7 @@ LAB_005bdbdd:
         return iVar10;
       }
       local_1c = iVar5;
-      iVar5 = unkafter_morph_cpp_FUN_005c349c();
+      iVar5 = FUN_005c349c();
     }
     *piVar8 = iVar5;
   }

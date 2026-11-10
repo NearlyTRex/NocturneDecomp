@@ -8,15 +8,15 @@
 ;
 ; XREF[50]:
 ;   core_actor.cpp_FUN_004093a0 at 004097dc
-;   core_batcreat.cpp_FUN_004116f0 at 00411880
-;   core_batman.cpp_FUN_00412be0 at 00412d70
+;   core_batcreat.cpp_CBatCreature_setup_FUN_004116f0 at 00411880
+;   core_batman.cpp_CBatman_setup_FUN_00412be0 at 00412d70
 ;   core_boneguy.cpp_CBoneGuy_explode_FUN_0041a0c0 at 0041a0f2
-;   core_boneguy.cpp_FUN_004184c0 at 00418632
-;   core_bride.cpp_FUN_0041d9c0 at 0041dacc
+;   core_boneguy.cpp_CBoneGuy_setup_FUN_004184c0 at 00418632
+;   core_bride.cpp_CBride_setup_FUN_0041d9c0 at 0041dacc
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00421b10 at 00421bcb
 ;   core_bugs.cpp_FUN_00420e90 at 0042119b
-;   core_bugs.cpp_FUN_00421b10 at 00421bcb
 ;   core_charactr.cpp_CCharacter_dismember_FUN_00427360 at 004273a4
-;   core_charactr.cpp_FUN_004247f0 at 00424826
+;   core_charactr.cpp_CCharacter_getPartDominantBone_FUN_00425a70 at 00425a7f
 ;   ... and 40 more
 ;
 ; Referenced Globals:

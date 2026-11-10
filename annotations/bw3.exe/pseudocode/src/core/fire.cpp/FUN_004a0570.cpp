@@ -12,7 +12,7 @@ void core_fire_cpp_FUN_004a0570(float *param_1)
   float fVar1;
   
   if ((0.0 < *param_1) &&
-     (fVar1 = *param_1 - *(float *)&g_CGamePtr->field_0x314, *param_1 = fVar1, fVar1 < 0.0)) {
+     (fVar1 = *param_1 - g_CGamePtr->delta_time_float, *param_1 = fVar1, fVar1 < 0.0)) {
     *param_1 = 0.0;
     if (param_1[1] != 7.00649e-45) {
       core_weather_cpp_FUN_0057d050(0x02D0C1A0,param_1[1]);

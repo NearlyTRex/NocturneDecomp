@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   unkafter_basicene.cpp_FUN_0059fa20 at 0059fa60
+;   core_basicene.cpp_CBasicEnemy_renderOpaque_FUN_0059fa20 at 0059fa60
 ;
 ; Referenced Globals:
 ;   undefined4 s_s_s_s_0_2f_005ef9ce+1
@@ -27,7 +27,7 @@
 ;   core_actor.cpp_CDemonActor_setupRenderState_FUN_004089d0
 ;   core_motion.cpp_FUN_005035c0
 ;   core_xform.cpp_FUN_00592720
-;   crt_unknown.c_FUN_005b7790
+;   crt_unknown.c_sprintf_FUN_005b7790
 ;   engine_2d.c_drawText_FUN_00401fe0
 ;   engine_special.cpp_FUN_0055d723
 ;   unkaddr_0059d350.cpp_FUN_0059db70
@@ -125,8 +125,8 @@ section .text
     PUSH ESI                            ; 0059fbc2
     PUSH 0x5ef9cf                       ; 0059fbc3 | s_s_s_s_0_2f_005ef9ce+1
     PUSH 0x2668360                      ; 0059fbc8
-    CALL crt_unknown.c_FUN_005b7790     ; 0059fbcd
-        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b7790()
+    CALL crt_unknown.c_sprintf_FUN_005b7790 ; 0059fbcd
+        ;   XREF to: 005b7790 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005b7790(char * buffer, char * format)
     MOV EAX,dword ptr [EBX + 0x14]      ; 0059fbd2
     ADD ESP,0x1c                        ; 0059fbd5
     SAR EAX,0x10                        ; 0059fbd8

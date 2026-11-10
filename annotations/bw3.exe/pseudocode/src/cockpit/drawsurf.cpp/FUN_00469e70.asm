@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0046a750 at 0046abd0
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750 at 0046abd0
 ;
 ; Called Functions:
 ;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAligned_FUN_00469e10

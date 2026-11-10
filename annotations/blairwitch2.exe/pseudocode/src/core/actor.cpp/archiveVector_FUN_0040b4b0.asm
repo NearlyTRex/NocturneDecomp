@@ -9,16 +9,16 @@
 ; undefined8       Stack[-0x10]:8  local_10
 ;
 ; XREF[25]:
-;   core_barrier.cpp_FUN_00410dc0 at 00410dda
-;   core_batman.cpp_FUN_00413e60 at 00413f10
-;   core_boneguy.cpp_FUN_00419c50 at 00419dab
-;   core_boxactor.cpp_FUN_0041c7f0 at 0041c850
-;   core_boxactor.cpp_FUN_0041d270 at 0041d2ac
+;   core_barrier.cpp_CBarrier_archive_FUN_00410dc0 at 00410dda
+;   core_batman.cpp_CBatman_archive_FUN_00413e60 at 00413f10
+;   core_boneguy.cpp_CBoneGuy_archive_FUN_00419c50 at 00419dab
+;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041c850
+;   core_boxactor.cpp_CLightActor_archive_FUN_0041d270 at 0041d2ac
+;   core_conveyor.cpp_CConstruct_archive_FUN_00437b80 at 00437c44
 ;   core_conveyor.cpp_CConveyor_archive_FUN_00438780 at 0043879a
-;   core_door.cpp_FUN_0045ff80 at 00460063
-;   core_dracbrid.cpp_FUN_00464cc0 at 00464efa
-;   core_drip.cpp_FUN_0046cfe0 at 0046d03a
-;   core_emitter.cpp_FUN_00487990 at 004879bf
+;   core_door.cpp_CDoor_archive_FUN_0045ff80 at 00460063
+;   core_dracbrid.cpp_CDraculaBride_archive_FUN_00464cc0 at 00464efa
+;   core_drip.cpp_CDrip_archive_FUN_0046cfe0 at 0046d03a
 ;   ... and 15 more
 ;
 ; Referenced Globals:

@@ -18,7 +18,7 @@
 ;   core_bodypart.cpp_CBodyPart_finalizeGeometry_FUN_00416700 at 00416b62
 ;   core_dmodel.cpp_CKeyFramedModel_calcNormals_FUN_0044ecb0 at 0044ed25
 ;   core_dpart.cpp_CDemonPart_calculateFaceNormals_FUN_00461690 at 00461707
-;   core_set.cpp_FUN_00533a80 at 00533e86
+;   core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00533a80 at 00533e86
 ;   engine_keyframe.c_interpolateCubicKeyframes_FUN_004df960 at 004dfcbb
 ;   engine_keyframe.c_recomputeKeyFrameNormals_FUN_004dfd50 at 004dfdb1
 ;

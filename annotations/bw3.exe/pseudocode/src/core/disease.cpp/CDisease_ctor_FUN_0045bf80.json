@@ -111,7 +111,7 @@
       "line": 10,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte **)&pCVar1->field_0x154 = &g_CDiseaseVTable;",
+      "text": "((UActorVTable *)&pCVar1->field_0x154)->_ub = &g_CDiseaseVTable._ub;",
       "type": "unnamed_field"
     },
     {
@@ -127,7 +127,7 @@
       "line": 13,
       "match": "field_0x2d8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2d8 = 0;",
+      "text": "*(int *)&pCVar1->field_0x2d8 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -135,7 +135,7 @@
       "line": 14,
       "match": "field_0x2dc",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2dc = 0;",
+      "text": "*(EFireMode *)&pCVar1->field_0x2dc = FIRE_MODE_AUTOMATIC;",
       "type": "unnamed_field"
     },
     {
@@ -143,7 +143,7 @@
       "line": 15,
       "match": "field_0x2e0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2e0 = 3;",
+      "text": "*(EWeaponType *)&pCVar1->field_0x2e0 = WEAPON_TYPE_DYNAMITE;",
       "type": "unnamed_field"
     },
     {
@@ -151,7 +151,7 @@
       "line": 16,
       "match": "field_0x2e4",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2e4 = 1;",
+      "text": "*(int *)&pCVar1->field_0x2e4 = 1;",
       "type": "unnamed_field"
     },
     {
@@ -159,7 +159,7 @@
       "line": 17,
       "match": "field_0x2e8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2e8 = 0x42c80000;",
+      "text": "*(float *)&pCVar1->field_0x2e8 = 100.0;",
       "type": "unnamed_field"
     },
     {
@@ -167,7 +167,7 @@
       "line": 18,
       "match": "field_0x2ec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar1->field_0x2ec = 0;",
+      "text": "*(int *)&pCVar1->field_0x2ec = 0;",
       "type": "unnamed_field"
     },
     {

@@ -2,14 +2,14 @@
 // Address: 004763c0
 // Address Range: [[004763c0, 00476424]]
 // Convention: unknown
-// Signature: void core_doc_cpp_FUN_004763c0(int param_1)
+// Signature: void core_doc_cpp_FUN_004763c0(CHero *param_1)
 
 #include "nocturne.h"
 
-void core_doc_cpp_FUN_004763c0(int param_1)
+void core_doc_cpp_FUN_004763c0(CHero *param_1)
 
 {
-  core_hero_cpp_FUN_004ec570(param_1);
+  core_hero_cpp_CHero_reset_FUN_004ec570(param_1);
   *(uint *)(param_1 + 0x20000) = 0;
   *(uint *)(param_1 + 0x20004) = 0;
   *(uint *)(param_1 + 0x1ff5c) = 0;

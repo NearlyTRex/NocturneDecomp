@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 6,
-    "complexity_score": 32,
+    "complexity_score": 7,
     "cross_reference_count": 19,
     "function_call_count": 0,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 7,
-    "suspect_count": 2,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 13
   },
   "cross_references": [
@@ -34,6 +32,18 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "004d8700",
+      "from_addr": "004d8712",
+      "name": "core_game.cpp_CGame_displayActStats_FUN_004d8700",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004d8a90",
+      "from_addr": "004d8adc",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "004d8e50",
       "from_addr": "004d8e8c",
       "name": "core_game.cpp_CGame_rollCredits_FUN_004d8e50",
@@ -42,19 +52,7 @@
     {
       "addr": "004cf530",
       "from_addr": "004cf579",
-      "name": "core_game.cpp_FUN_004cf530",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8700",
-      "from_addr": "004d8712",
-      "name": "core_game.cpp_FUN_004d8700",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004d8a90",
-      "from_addr": "004d8adc",
-      "name": "core_game.cpp_FUN_004d8a90",
+      "name": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -84,7 +82,7 @@
     {
       "addr": "0051b8d0",
       "from_addr": "0051b9b2",
-      "name": "core_mission.cpp_FUN_0051b8d0",
+      "name": "core_mission.cpp_CDemonMission_process_FUN_0051b8d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -194,7 +192,7 @@
       {
         "call_addr": "004cf579",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004cf530",
+        "caller": "core_game.cpp_CGame_setScreenResolutionAndDisplayFangs_FUN_004cf530",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -205,7 +203,7 @@
       {
         "call_addr": "004d8712",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d8700",
+        "caller": "core_game.cpp_CGame_displayActStats_FUN_004d8700",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -216,7 +214,7 @@
       {
         "call_addr": "004d8adc",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004d8a90",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004d8a90",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -238,7 +236,7 @@
       {
         "call_addr": "0051b9b2",
         "call_type": "direct",
-        "caller": "core_mission.cpp_FUN_0051b8d0",
+        "caller": "core_mission.cpp_CDemonMission_process_FUN_0051b8d0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -292,24 +290,7 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 0;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 6,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x8 = 0;",
-      "type": "unnamed_field"
-    }
-  ],
+  "suspects": [],
   "vtable_info": {
     "entries": [
       {

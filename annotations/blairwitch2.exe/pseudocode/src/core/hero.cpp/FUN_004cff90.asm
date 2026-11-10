@@ -7,8 +7,8 @@
 ; XREF[5]:
 ;   core_doc.cpp_FUN_00453250 at 00453625
 ;   core_gabriela.cpp_FUN_004af410 at 004af58e
+;   core_stranger.cpp_CStranger_updateWeaponLayerActions_FUN_0056db50 at 0056dd0e
 ;   core_stranger.cpp_FUN_005656f0 at 005659df
-;   core_stranger.cpp_FUN_0056db50 at 0056dd0e
 ;   unkafter_stranger.cpp_FUN_0045bdc0 at 0045c018
 ;
 ; Referenced Globals:

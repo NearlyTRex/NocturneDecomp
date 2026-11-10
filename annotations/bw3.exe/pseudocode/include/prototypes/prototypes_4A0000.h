@@ -7,6 +7,7 @@
 #include "system/stdio.h"
 #include "types/classes/CAlphaBitmap.h"
 #include "types/classes/CBitFont.h"
+#include "types/classes/CBoundingBox3D.h"
 #include "types/classes/CBulletHole.h"
 #include "types/classes/CBulletTrail.h"
 #include "types/classes/CCrater.h"
@@ -32,7 +33,6 @@
 #include "types/classes/CLightningBolt.h"
 #include "types/classes/CMatrix3x3f.h"
 #include "types/classes/CMuzzleFlash.h"
-#include "types/classes/CParticle.h"
 #include "types/classes/CPopcorn.h"
 #include "types/classes/CRainDrop.h"
 #include "types/classes/CRing.h"
@@ -45,7 +45,9 @@
 #include "types/classes/CTrail.h"
 #include "types/classes/CVector3f.h"
 #include "types/classes/CVector3i.h"
-#include "types/classes/CWeapon.h"
+#include "types/enums/ECollisionType.h"
+#include "types/structs/SCollisionInfo.h"
+#include "types/structs/SDamageInfo.h"
 #include "types/structs/SFly.h"
 #include "types/structs/SLaserInfo.h"
 #include "types/structs/SMRGLTextureBasic.h"
@@ -70,21 +72,21 @@ void core_fire_cpp_FUN_004a0480(CDemonActor *param_1);
 void core_fire_cpp_FUN_004a0570(float *param_1);
 void __cdecl core_fire_cpp_CTrail_reset_FUN_004a05d0(CTrail *this_ptr);
 void __cdecl core_fire_cpp_CTrail_activate_FUN_004a05e0(CTrail *this_ptr,CVector3f *position,float size,float alpha,float lifetime,SMRGLTextureBasic *texture_ptr);
-void __cdecl core_fire_cpp_FUN_004a0630(CTrail *this_ptr);
-void __cdecl core_fire_cpp_FUN_004a0680(CTrail *this_ptr);
-void core_fire_cpp_FUN_004a0960(CParticle *param_1,CVector3f *param_2,CParticle *param_3,CVector3f *param_4,undefined4 param_5);
-void core_fire_cpp_FUN_004a09f0(CVector3f *param_1);
+void __cdecl core_fire_cpp_CTrail_process_FUN_004a0630(CTrail *this_ptr);
+void __cdecl core_fire_cpp_CTrail_render_FUN_004a0680(CTrail *this_ptr);
+void __cdecl core_fire_cpp_CShell_setup_FUN_004a0960(CShell *this_ptr,CVector3f *position,CVector3f *euler_angles,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void __cdecl core_fire_cpp_CShell_render_FUN_004a09f0(CShell *this_ptr);
 void core_fire_cpp_FUN_004a0af0(int param_1);
-undefined4 core_fire_cpp_FUN_004a0b90(CVector3f *param_1);
+int __cdecl core_fire_cpp_CShell_onCollision_FUN_004a0b90(CShell *this_ptr,CVector3f *collision_normal);
 undefined4 core_fire_cpp_FUN_004a0cc0(void);
 void __cdecl core_fire_cpp_CPopcorn_render_FUN_004a0cd0(CPopcorn *this_ptr);
-void core_fire_cpp_FUN_004a1040(CVector3f *param_1);
-undefined * core_fire_cpp_FUN_004a13ee(void);
-CBulletHole * __cdecl core_fire_cpp_FUN_004a1420(void);
-CFireEffect * __cdecl core_fire_cpp_FUN_004a1460(CFireEffect *this_ptr);
+void __cdecl core_fire_cpp_CRainDrop_render_FUN_004a1040(CRainDrop *this_ptr);
+undefined * core_fire_cpp_allocateSmokeParticle_FUN_004a13ee(void);
+CBulletHole * __cdecl core_fire_cpp_allocateBulletHole_FUN_004a1420(void);
+CFireEffect * __cdecl core_fire_cpp_CFireEffect_ctor_FUN_004a1460(CFireEffect *this_ptr);
 void core_fire_cpp_FUN_004a1480(void);
 void core_fire_cpp_FUN_004a1760(void);
-void __cdecl core_fire_cpp_FUN_004a1ad0(CFireEffect *this_ptr);
+void __cdecl core_fire_cpp_CFireEffect_render_FUN_004a1ad0(CFireEffect *this_ptr);
 void __cdecl core_fire_cpp_CFireEffect_renderDecals_FUN_004a1e90(CFireEffect *this_ptr,int render_mode,int render_completeness);
 void __cdecl core_fire_cpp_CFireEffect_createDefaultSmoke_FUN_004a2010(CFireEffect *this_ptr,CVector3f *position);
 void core_fire_cpp_FUN_004a2090(CFireEffect *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,int param_5,int param_6);
@@ -93,15 +95,15 @@ void __cdecl core_fire_cpp_CFireEffect_createMuzzleFlash_FUN_004a2450(CFireEffec
 void core_fire_cpp_FUN_004a24a0(void);
 void __cdecl core_fire_cpp_CFireEffect_createSmokeParticle_FUN_004a2560(CFireEffect *this_ptr,CVector3f *position,float drag_factor,CVector3f *wind_influence,int alpha_value);
 void core_fire_cpp_FUN_004a25f0(CDemonActor *param_1,float *param_2,CVector3f *param_3,CVector3f *param_4,undefined4 param_5);
-void __cdecl core_fire_cpp_FUN_004a2780(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
+void __cdecl core_fire_cpp_CFireEffect_createGlassParticle_FUN_004a2780(CFireEffect *this_ptr,STriangleVertices *triangle_vertices,CVector3i *uv_u_per_vertex,CVector3i *uv_v_per_vertex,SMRGLTextureBasic *texture,int lifetime);
 void core_fire_cpp_FUN_004a27de(undefined4 param_1,CVector3f *param_2,CVector3f *param_3,CKeyFramedModel *param_4,float param_5);
-void __cdecl core_fire_cpp_FUN_004a2830(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
-void __cdecl core_fire_cpp_FUN_004a28e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
+void __cdecl core_fire_cpp_CFireEffect_createFireball_FUN_004a2830(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,int lighting_active,uint sfx_handle);
+void __cdecl core_fire_cpp_CFireEffect_createRock_FUN_004a28e0(CFireEffect *this_ptr,CVector3f *position,CVector3f *velocity,CKeyFramedModel *model_ptr);
 void core_fire_cpp_FUN_004a2930(undefined4 param_1,undefined4 param_2,undefined4 param_3,CKeyFramedModel *param_4,undefined4 param_5);
 void core_fire_cpp_FUN_004a29d0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4,int param_5,undefined4 param_6,undefined4 param_7,undefined4 param_8,undefined4 param_9);
 void __cdecl core_fire_cpp_CFireEffect_createLaserSegment_FUN_004a2aa0(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,float reticle_intensity,CVector3f *reflection_normal,int red,int green,int blue,float halo_spread);
 void __cdecl core_fire_cpp_CFireEffect_createLaserCone_FUN_004a2b10(CFireEffect *this_ptr,CVector3f *origin,CVector3f *hit_position,float beam_width,int red,int green,int blue,float cone_angle);
-void __cdecl core_fire_cpp_FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
+void __cdecl core_fire_cpp_CFireEffect_createLaserPath_FUN_004a2b70(CFireEffect *this_ptr,CVector3f *start_position,CVector3f *velocity,float beam_width ,float reticle_intensity,CVector3f *reflection_normal,float total_time,int red,int green,int blue);
 SLaserInfo * __cdecl core_fire_cpp_SLaserInfo_ctor_FUN_004a2de0(SLaserInfo *this_ptr);
 void core_fire_cpp_FUN_004a2e20(CFireEffect *param_1,float *param_2,float *param_3,float param_4,float param_5,int param_6,int param_7,int param_8,int param_9,int param_10,int param_11,undefined4 param_12,undefined4 param_13,undefined4 param_14,undefined4 param_15,undefined4 param_16,undefined4 param_17,undefined4 param_18,undefined4 param_19,undefined4 param_20,float param_21,float param_22,float param_23,float param_24,int param_25);
 void core_fire_cpp_FUN_004a36e0(CDemonActor *param_1,CVector3f *param_2,undefined4 param_3,undefined4 param_4,float param_5,int param_6);
@@ -190,49 +192,49 @@ void core_firestff_cpp_staticInit_FUN_004a4a70(void);
 void core_firestff_cpp_factoryFuncFirestaff_FUN_004a4aa0(void);
 CDemonActorType * core_firestff_cpp_CFirestaff_getActorType_FUN_004a4ac0(CFirestaff *this_ptr);
 CFirestaff * core_firestff_cpp_CFirestaff_ctor_FUN_004a4ad0(CFirestaff *this_ptr);
-void core_firestff_cpp_FUN_004a4cd0(undefined4 param_1,undefined4 param_2,int param_3,undefined4 param_4);
-undefined4 core_firestff_cpp_FUN_004a4d00(CDemonActor *param_1);
-void core_firestff_cpp_FUN_004a4dc0(CWeapon *param_1,float param_2,undefined4 param_3,undefined4 param_4);
-void core_firestff_cpp_FUN_004a5770(CWeapon *param_1,int param_2);
-int core_firestff_cpp_FUN_004a57c0(CWeapon *param_1);
-void core_firestff_cpp_FUN_004a5870(CWeapon *param_1);
+void __cdecl core_firestff_cpp_CFirestaff_fillAttackDamageInfo_FUN_004a4cd0(CFirestaff *this_ptr,int attack_flags,SDamageInfo *out_damage_info,CDemonActor *victim);
+int __cdecl core_firestff_cpp_CFirestaff_fire_FUN_004a4d00(CFirestaff *this_ptr);
+void __cdecl core_firestff_cpp_CFirestaff_process_FUN_004a4dc0(CFirestaff *this_ptr,float delta_time);
+void __cdecl core_firestff_cpp_CFirestaff_setWeaponState_FUN_004a5770(CFirestaff *this_ptr,int weapon_state);
+int __cdecl core_firestff_cpp_CFirestaff_renderOpaque_FUN_004a57c0(CFirestaff *this_ptr);
+void __cdecl core_firestff_cpp_CFirestaff_setup_FUN_004a5870(CFirestaff *this_ptr);
 CFirestaff * core_firestff_cpp_CFirestaff_dtor_FUN_004a58c0(CFirestaff *this_ptr,uint flags);
 void core_firestff_cpp_FUN_004a5930(undefined4 param_1);
 void core_flame_cpp_staticInit_FUN_004a5950(void);
 void core_flame_cpp_factoryFuncFlame_FUN_004a5980(void);
 CDemonActorType * core_flame_cpp_CFlame_getActorType_FUN_004a59a0(CFlame *this_ptr);
 CFlame * __cdecl core_flame_cpp_CFlame_ctor_FUN_004a59b0(CFlame *this_ptr);
-void core_flame_cpp_FUN_004a5aa0(CDemonActor *param_1);
+void __cdecl core_flame_cpp_CFlame_setup_FUN_004a5aa0(CFlame *this_ptr);
 void core_flame_cpp_FUN_004a5ad0(int param_1);
-void __cdecl core_flame_cpp_FUN_004a5b10(CFlame *this_ptr,float delta_time);
-int __cdecl core_flame_cpp_FUN_004a6090(CFlame *this_ptr);
-void core_flame_cpp_FUN_004a6a50(CDemonActor *param_1,int param_2);
-void core_flame_cpp_FUN_004a6c20(int param_1);
+void __cdecl core_flame_cpp_CFlame_process_FUN_004a5b10(CFlame *this_ptr,float delta_time);
+int __cdecl core_flame_cpp_CFlame_renderTransparent_FUN_004a6090(CFlame *this_ptr);
+void __cdecl core_flame_cpp_CFlame_renderBackground_FUN_004a6a50(CFlame *this_ptr,int layer_flag);
+CBoundingBox3D * __cdecl core_flame_cpp_CFlame_getBoundingBox_FUN_004a6c20(CFlame *this_ptr,CBoundingBox3D *out_box);
 void __cdecl core_flame_cpp_CFlame_archive_FUN_004a6ca0(CFlame *this_ptr);
-undefined4 core_flame_cpp_FUN_004a6dc0(void);
+ECollisionType __cdecl core_flame_cpp_CFlame_getCollisionType_FUN_004a6dc0(CFlame *this_ptr,SCollisionInfo *collision_info);
 void __cdecl core_flame_cpp_FUN_004a6dd0(CFlame *this_ptr);
 void core_flamecan_cpp_staticInit_FUN_004a6ea0(void);
 void core_flamecan_cpp_factoryFuncFlameCan_FUN_004a6ed0(void);
 CDemonActorType * core_flamecan_cpp_CFlameCan_getActorType_FUN_004a6ef0(CFlameCan *this_ptr);
 CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_ctor_FUN_004a6f00(CFlameCan *this_ptr);
-void core_flamecan_cpp_FUN_004a6fa0(CDemonActor *param_1);
+void __cdecl core_flamecan_cpp_CFlameCan_setup_FUN_004a6fa0(CFlameCan *this_ptr);
 void __cdecl core_flamecan_cpp_CFlameCan_ignite_FUN_004a7110(CFlameCan *this_ptr);
-void core_flamecan_cpp_FUN_004a7160(CFlameCan *param_1,float param_2);
-int core_flamecan_cpp_FUN_004a7230(int param_1);
+void __cdecl core_flamecan_cpp_CFlameCan_process_FUN_004a7160(CFlameCan *this_ptr,float delta_time);
+int __cdecl core_flamecan_cpp_CFlameCan_renderOpaque_FUN_004a7230(CFlameCan *this_ptr);
 int __cdecl core_flamecan_cpp_CFlameCan_renderTransparent_FUN_004a72d0(CFlameCan *this_ptr);
-undefined4 core_flamecan_cpp_FUN_004a7300(int param_1,float *param_2);
+int __cdecl core_flamecan_cpp_CFlameCan_getTargetPoints_FUN_004a7300(CFlameCan *this_ptr,CVector3f *out_points_array);
 void __cdecl core_flamecan_cpp_CFlameCan_archive_FUN_004a73d0(CFlameCan *this_ptr);
-undefined4 core_flamecan_cpp_FUN_004a7430(void);
-void core_flamecan_cpp_FUN_004a7440(int param_1);
+ECollisionType __cdecl core_flamecan_cpp_CFlameCan_getCollisionType_FUN_004a7430(CFlameCan *this_ptr,SCollisionInfo *collision_info);
+CBoundingBox3D * __cdecl core_flamecan_cpp_CFlameCan_getBoundingBox_FUN_004a7440(CFlameCan *this_ptr,CBoundingBox3D *out_box);
 CFlameCan * __cdecl core_flamecan_cpp_CFlameCan_dtor_FUN_004a7480(CFlameCan *this_ptr,uint flags);
 void core_flashlit_cpp_staticInit_FUN_004a74f0(void);
 void core_flashlit_cpp_factoryFuncFlashlight_FUN_004a7520(void);
 CDemonActorType * core_flashlit_cpp_CFlashlight_getActorType_FUN_004a7540(CFlashlight *this_ptr);
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_ctor_FUN_004a7550(CFlashlight *this_ptr);
-undefined4 core_flashlit_cpp_FUN_004a75d0(void);
-void core_flashlit_cpp_FUN_004a75e0(void);
-undefined4 core_flashlit_cpp_FUN_004a75f0(void);
-void core_flashlit_cpp_FUN_004a7600(int param_1);
+int __cdecl core_flashlit_cpp_CFlashlight_fire_FUN_004a75d0(CFlashlight *this_ptr);
+void __cdecl core_flashlit_cpp_CFlashlight_renderAimBeam_FUN_004a75e0(CFlashlight *this_ptr);
+float __cdecl core_flashlit_cpp_CFlashlight_getDamage_FUN_004a75f0(CFlashlight *this_ptr);
+CVector3f * __cdecl core_flashlit_cpp_CFlashlight_getMuzzlePoint_FUN_004a7600(CFlashlight *this_ptr,CVector3f *out_point);
 CFlashlight * __cdecl core_flashlit_cpp_CFlashlight_dtor_FUN_004a76a0(CFlashlight *this_ptr,uint flags);
 void unkaddr_004a76f0_cpp_FUN_004a76f0(void);
 void unkaddr_004a76f0_cpp_FUN_004a7890(char *param_1);
@@ -256,7 +258,7 @@ int core_fldnotes_cpp_FUN_004a8490(undefined4 param_1,char *param_2,undefined4 p
 SPageResourceText * core_fldnotes_cpp_PageResource_Text_dtor_FUN_004a8510(SPageResourceText *this_ptr,uint flags);
 void core_fldnotes_cpp_FUN_004a8570(int *param_1);
 SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_ctor_FUN_004a8650(SPageResourceBitmap *this_ptr);
-undefined1 * core_fldnotes_cpp_FUN_004a8680(undefined4 param_1,char *param_2,int param_3,int param_4);
+int * core_fldnotes_cpp_FUN_004a8680(undefined4 param_1,char *param_2,int param_3,int param_4);
 SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_dtor_FUN_004a8710(SPageResourceBitmap *this_ptr,uint flags);
 void core_fldnotes_cpp_FUN_004a8780(int *param_1);
 SPageResourceBitmap * core_fldnotes_cpp_FUN_004a87a0(SPageResourceBitmap *param_1,char *param_2);
@@ -289,7 +291,7 @@ void core_fldnotes_cpp_FUN_004a97d0(int param_1,char *param_2);
 void core_fldnotes_cpp_FUN_004a9830(int param_1);
 void core_fldnotes_cpp_FUN_004a98b0(int param_1,int param_2);
 void core_fldnotes_cpp_FUN_004a98f0(int param_1);
-undefined1 * core_fldnotes_cpp_FUN_004a9930(int param_1);
+char *** core_fldnotes_cpp_FUN_004a9930(int param_1);
 undefined4 core_fldnotes_cpp_FUN_004a9950(int param_1,int param_2);
 SNotesSection * core_fldnotes_cpp_NotesSection_ctor_FUN_004a9b70(SNotesSection *this_ptr);
 SNotesSection * core_fldnotes_cpp_NotesSection_dtor_FUN_004a9ba0(SNotesSection *this_ptr,uint flags);
@@ -315,7 +317,7 @@ CFieldNotes * core_fldnotes_cpp_CFieldNotes_ctor_FUN_004aa7d0(CFieldNotes *this_
 CFieldNotes * core_fldnotes_cpp_CFieldNotes_dtor_FUN_004aa7e0(CFieldNotes *this_ptr,uint flags);
 undefined4 core_fldnotes_cpp_FUN_004aa810(char *param_1,char *param_2,char *param_3);
 void core_fldnotes_cpp_FUN_004ab7a0(undefined1 *param_1);
-undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,undefined4 param_4);
+undefined4 core_fldnotes_cpp_FUN_004ab8f0(undefined4 param_1,undefined4 param_2,undefined4 param_3,char *param_4);
 void core_fldnotes_cpp_FUN_004aba10(undefined4 param_1,undefined4 param_2);
 undefined4 core_fldnotes_cpp_FUN_004abb30(undefined4 param_1,undefined4 param_2);
 void core_fldnotes_cpp_FUN_004abb90(undefined4 param_1,undefined4 param_2);
@@ -343,30 +345,30 @@ CDemonActorType * core_flies_cpp_CFlies_getActorType_FUN_004ad7a0(CFlies *this_p
 CFlies * __cdecl core_flies_cpp_CFlies_ctor_FUN_004ad7b0(CFlies *this_ptr);
 void __cdecl core_flies_cpp_CFlies_setup_FUN_004ad870(CFlies *this_ptr);
 void __cdecl core_flies_cpp_CFlies_archive_FUN_004ad8b0(CFlies *this_ptr);
-void core_flies_cpp_FUN_004ad950(CFlies *param_1,float param_2);
+void __cdecl core_flies_cpp_CFlies_process_FUN_004ad950(CFlies *this_ptr,float delta_time);
 void __cdecl core_flies_cpp_drawFlyPixel_FUN_004add00(int screen_x,int screen_y,int z_depth);
 void __cdecl core_flies_cpp_drawFlyPixelClipped_FUN_004add90(int screen_x,int screen_y,int z_depth);
-int core_flies_cpp_FUN_004addd0(CDemonActor *param_1);
-void core_flies_cpp_FUN_004ae200(int param_1);
-undefined4 core_flies_cpp_FUN_004ae270(void);
-void __cdecl core_flies_cpp_FUN_004ae280(CFlies *this_ptr,int fly_index);
+int __cdecl core_flies_cpp_CFlies_renderOpaque_FUN_004addd0(CFlies *this_ptr);
+CBoundingBox3D * __cdecl core_flies_cpp_CFlies_getBoundingBox_FUN_004ae200(CFlies *this_ptr,CBoundingBox3D *out_box);
+ECollisionType __cdecl core_flies_cpp_CFlies_getCollisionType_FUN_004ae270(CFlies *this_ptr,SCollisionInfo *collision_info);
+void __cdecl core_flies_cpp_CFlies_initFly_FUN_004ae280(CFlies *this_ptr,int fly_index);
 float * core_flies_cpp_FUN_004ae380(int param_1,float *param_2);
-CFlies * __cdecl core_flies_cpp_FUN_004ae6c0(CDemonActor *actor);
+CFlies * __cdecl core_flies_cpp_findFliesByFollowActor_FUN_004ae6c0(CDemonActor *actor);
 CFlies * core_flies_cpp_CFlies_dtor_FUN_004ae710(CFlies *this_ptr,uint flags);
 SFly * __cdecl core_flies_cpp_SFly_ctor_FUN_004ae760(SFly *this_ptr);
 void core_flintlck_cpp_staticInit_FUN_004ae780(void);
 void core_flintlck_cpp_factoryFuncFlintlock_FUN_004ae7b0(void);
 CDemonActorType * core_flintlck_cpp_CFlintlock_getActorType_FUN_004ae7d0(CFlintlock *this_ptr);
 CFlintlock * core_flintlck_cpp_CFlintlock_ctor_FUN_004ae7e0(CFlintlock *this_ptr);
-undefined4 core_flintlck_cpp_FUN_004ae850(CDemonActor *param_1);
-undefined4 core_flintlck_cpp_FUN_004af580(void);
-void core_flintlck_cpp_FUN_004af5b0(CWeapon *param_1);
+int __cdecl core_flintlck_cpp_CFlintlock_fire_FUN_004ae850(CFlintlock *this_ptr);
+float __cdecl core_flintlck_cpp_CFlintlock_getDamage_FUN_004af580(CFlintlock *this_ptr);
+void __cdecl core_flintlck_cpp_CFlintlock_setup_FUN_004af5b0(CFlintlock *this_ptr);
 CFlintlock * core_flintlck_cpp_CFlintlock_dtor_FUN_004af630(CFlintlock *this_ptr,uint flags);
 int __cdecl engine_font_cpp_clipCharacter_FUN_004af6d0(int *bitmap_offset,int *left_x,int *top_y,int *right_x,int *bottom_y,int bitmap_width );
-CBitFont * __cdecl engine_font_cpp_FUN_004af790(CBitFont *this_ptr);
-CBitFont * __cdecl engine_font_cpp_FUN_004af7b0(CBitFont *this_ptr,uint flags);
-void __cdecl engine_font_cpp_FUN_004af7d0(CBitFont *this_ptr);
+CBitFont * __cdecl engine_font_cpp_CBitFont_ctor_FUN_004af790(CBitFont *this_ptr);
+CBitFont * __cdecl engine_font_cpp_CBitFont_dtor_FUN_004af7b0(CBitFont *this_ptr,uint flags);
+void __cdecl engine_font_cpp_CBitFont_reset_FUN_004af7d0(CBitFont *this_ptr);
 void __cdecl engine_font_cpp_CBitFont_openFontFile_FUN_004af8f0(CBitFont *this_ptr,char *filename,int width,int height,int load_flags);
-void __cdecl engine_font_cpp_FUN_004af920(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
+void __cdecl engine_font_cpp_CBitFont_loadBitmap_FUN_004af920(CBitFont *this_ptr,char *filename,int width,int height,int first_char);
 void engine_font_cpp_FUN_004afbf0(int param_1,int param_2);
 

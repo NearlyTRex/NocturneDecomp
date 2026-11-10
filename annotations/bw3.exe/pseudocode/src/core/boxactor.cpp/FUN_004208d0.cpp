@@ -195,7 +195,7 @@ void core_boxactor_cpp_FUN_004208d0(int param_1)
         this_ptr_00 = CDemonFilter_ARRAY_007e17b8;
         iVar3 = 0;
         do {
-          FUN_005a28c0(acStack_160,"lantern%d.raw",iVar3);
+          _sprintf(acStack_160,"lantern%d.raw");
           iVar3 = iVar3 + 1;
           core_dfilter_cpp_CDemonFilter_load_FUN_00459980(this_ptr_00,acStack_160);
           this_ptr_00 = this_ptr_00 + 1;

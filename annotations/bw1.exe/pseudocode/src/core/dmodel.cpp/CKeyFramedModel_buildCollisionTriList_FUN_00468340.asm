@@ -7,8 +7,8 @@
 ; CKeyFramedModel * Stack[0x4]:4   this_ptr
 ;
 ; XREF[2]:
-;   core_dmodel.cpp_FUN_004669f0 at 00466bca
-;   core_dmodel.cpp_FUN_00466be0 at 00467142
+;   core_dmodel.cpp_CKeyFramedModel_readBinaryModel_FUN_004669f0 at 00466bca
+;   core_dmodel.cpp_CKeyFramedModel_readTextModel_FUN_00466be0 at 00467142
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_core_dmodel_cpp_005d975d
@@ -18,7 +18,7 @@
 ;   undefined4 DAT_02c8af28
 ;
 ; Called Functions:
-;   core_dmodel.cpp_FUN_00468420
+;   core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420
 ;   core_main.c_FUN_005030e0
 ;   crt_unknown.c_FUN_005c0336
 ;   crt_unknown.c_FUN_005c1268
@@ -91,8 +91,8 @@ section .text
     PUSH 0x2c8af28                      ; 0046840c | DAT_02c8af28
         ;   Label: LAB_0046840c
     PUSH EBX                            ; 00468411
-    CALL core_dmodel.cpp_FUN_00468420   ; 00468412
-        ;   XREF to: 00468420 (UNCONDITIONAL_CALL)  ; undefined core_dmodel.cpp_FUN_00468420()
+    CALL core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420 ; 00468412
+        ;   XREF to: 00468420 (UNCONDITIONAL_CALL)  ; void core_dmodel.cpp_CKeyFramedModel_populateCollisionList_FUN_00468420(CKeyFramedModel * this_ptr, CVector3f * transform_vector)
     ADD ESP,0x8                         ; 00468417
     POP EBP                             ; 0046841a
         ;   Label: LAB_0046841a

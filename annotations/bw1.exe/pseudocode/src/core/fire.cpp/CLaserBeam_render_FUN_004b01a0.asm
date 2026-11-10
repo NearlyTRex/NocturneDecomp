@@ -209,7 +209,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_fire.cpp_FUN_004b5100 at 004b52ce
+;   core_fire.cpp_CFireEffect_render_FUN_004b5100 at 004b52ce
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005df2cc
@@ -230,11 +230,11 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cc00
-;   core_dirmat.cpp_FUN_0045f3e0
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00
+;   core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0
 ;   core_dirmat.cpp_FUN_0045f700
 ;   core_fire.cpp_computeScreenSpaceSize_FUN_004b00b0
-;   core_vecdir.cpp_FUN_005a7520
+;   core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520
 ;   crt_math.c_round_FUN_005c03a0
 ;   engine_drender.cpp_CDemonRenderer_applyScaledTransform_FUN_00483850
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
@@ -288,8 +288,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b020d
     PUSH EAX                            ; 004b020e
     LEA ESI,[ESP + 0x26c]               ; 004b020f
-    CALL core_vecdir.cpp_FUN_005a7520   ; 004b0216
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004b0216
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     ADD ESP,0x4                         ; 004b021b
     FLD float ptr [ESP + 0x218]         ; 004b021e
     FMUL ST0                            ; 004b0225
@@ -310,8 +310,8 @@ section .text
     MOVSD ES:EDI,ESI                    ; 004b025e
     PUSH EAX                            ; 004b025f
     FSTP float ptr [ESP + 0x30]         ; 004b0260
-    CALL core_dirmat.cpp_FUN_0045f3e0   ; 004b0264
-        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
+    CALL core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0 ; 004b0264
+        ;   XREF to: 0045f3e0 (UNCONDITIONAL_CALL)  ; void core_dirmat.cpp_CMatrix3x3f_buildRotationMatrix_FUN_0045f3e0(CMatrix3x3f * this_ptr, CVector3f * euler_angles)
     ADD ESP,0x8                         ; 004b0269
     MOV EAX,dword ptr [EBP + 0x14]      ; 004b026c
     LEA ESI,[ESP + 0x280]               ; 004b026f
@@ -475,7 +475,7 @@ section .text
     JNC 0x004b0a03                      ; 004b049f
         ;   XREF to: 004b0a03 (CONDITIONAL_JUMP)  ; LAB_004b0a03
     MOV EAX,[0x0061d95c]                ; 004b04a5 | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 004b04aa | g_CGameInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 004b04aa | g_CGameInstance.field3_0xc
     JZ 0x004b0a03                       ; 004b04ae
         ;   XREF to: 004b0a03 (CONDITIONAL_JUMP)  ; LAB_004b0a03
     FLD double ptr [ESP]                ; 004b04b4
@@ -1360,8 +1360,8 @@ section .text
     PUSH EAX                            ; 004b1237
     LEA ESI,[ESP + 0x224]               ; 004b1238
     LEA EDI,[ESP + 0x290]               ; 004b123f
-    CALL core_vecdir.cpp_FUN_005a7520   ; 004b1246
-        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_FUN_005a7520()
+    CALL core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520 ; 004b1246
+        ;   XREF to: 005a7520 (UNCONDITIONAL_CALL)  ; undefined core_vecdir.cpp_convertDirectionVectorToEulerAngles_FUN_005a7520()
     LEA ESI,[ESP + 0x224]               ; 004b124b
     LEA EDX,[ESP + 0x290]               ; 004b1252
     ADD ESP,0x4                         ; 004b1259
@@ -1573,8 +1573,8 @@ section .text
     ADD ESP,0x8                         ; 004b155d
     PUSH 0x471fff00                     ; 004b1560
     PUSH 0x47000000                     ; 004b1565
-    CALL core_actor.cpp_FUN_0040cc00    ; 004b156a
-        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cc00()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00 ; 004b156a
+        ;   XREF to: 0040cc00 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cc00(float min_value, float max_value)
     MOV dword ptr [ESP + 0x3a4],EAX     ; 004b156f
     FLD float ptr [ESP + 0x3a4]         ; 004b1576
     ADD ESP,0x8                         ; 004b157d

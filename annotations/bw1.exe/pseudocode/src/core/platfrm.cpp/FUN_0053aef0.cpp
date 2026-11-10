@@ -15,7 +15,7 @@ void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr)
   uint *puVar4;
   byte bVar5;
   uint auStackY_1034 [979];
-  CMatrix3x4f local_dc [48];
+  CMatrix3x4f local_dc;
   uint local_ac [12];
   uint local_7c [12];
   uint local_4c;
@@ -24,16 +24,16 @@ void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr)
   uint local_28 [3];
   int local_1c;
   int local_18;
-  byte *local_14;
+  SPlatformAttachment *local_14;
   
   bVar5 = 0;
   core_xform_cpp_FUN_005b5760
-            (local_dc,(CVector3f *)&this_ptr->field_0x20,(CVector3f *)&this_ptr->field_0x30);
-  local_14 = &this_ptr->field_0x51c;
+            (&local_dc,&(this_ptr->base).location.position,&(this_ptr->base).orient.vec);
+  local_14 = this_ptr->attach_actors;
   iVar2 = 0;
   do {
-    if (*(int *)&this_ptr->field_0x51c != 0) {
-      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(local_14 + iVar2 * 0x34 + 4,local_dc);
+    if (*(int *)this_ptr->attach_actors != 0) {
+      core_xform_cpp_multiplyMatrix3x4_FUN_005b5200(local_14 + iVar2 * 0x34 + 4,&local_dc);
       puVar3 = local_ac;
       puVar4 = local_7c;
       for (iVar1 = 0xc; iVar1 != 0; iVar1 = iVar1 + -1) {
@@ -41,9 +41,9 @@ void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr)
         puVar3 = puVar3 + (uint)bVar5 * -2 + 1;
         puVar4 = puVar4 + (uint)bVar5 * -2 + 1;
       }
-      local_1c = *(int *)&this_ptr->field_0x51c;
+      local_1c = *(int *)this_ptr->attach_actors;
       local_18 = *(int *)(local_1c + 0x154);
-      core_xform_cpp_FUN_005b5930(local_7c);
+      core_xform_cpp_matrixToEulerAngles_FUN_005b5930(local_7c);
       local_34[0] = auStack_48[2];
       auStack_48[(uint)bVar5 * -2 + 6] = auStack_48[(uint)bVar5 * -2 + 3];
       auStack_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 7] =
@@ -56,7 +56,7 @@ void __cdecl core_platfrm_cpp_FUN_0053aef0(CPlatform *this_ptr)
       (**(code **)(local_18 + 0x68))(local_1c,auStack_48 + 8);
     }
     iVar2 = iVar2 + 1;
-    this_ptr = (CPlatform *)&this_ptr->field_0x34;
+    this_ptr = (CPlatform *)((int)&(this_ptr->base).orient + 4);
   } while (iVar2 < 10);
   return;
 }

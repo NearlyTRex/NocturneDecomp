@@ -2,19 +2,19 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 107,
-    "complexity_score": 236,
+    "complexity_score": 230,
     "cross_reference_count": 0,
     "function_call_count": 3,
     "global_count": 5,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 61,
+    "pseudocode_lines": 55,
     "suspect_count": 16,
     "suspect_types": [
       "raw_address_constant",
       "unnamed_param",
       "warning_overlapping_globals"
     ],
-    "total_lines": 168
+    "total_lines": 162
   },
   "cross_references": [],
   "function": {
@@ -141,26 +141,58 @@
     },
     {
       "description": "Unnamed function parameter",
+      "line": 24,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_30.x = (int)ROUND(*param_1 * _DAT_005f5b50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 25,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_30.y = (int)ROUND(param_1[1] * _DAT_005f5b50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 26,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_30.z = (int)ROUND(param_1[2] * _DAT_005f5b50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 28,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_18.x = (int)ROUND(param_1[3] * _DAT_005f5b50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
+      "line": 29,
+      "match": "param_1",
+      "severity": "mild",
+      "text": "CStack_18.y = (int)ROUND(param_1[4] * _DAT_005f5b50);",
+      "type": "unnamed_param"
+    },
+    {
+      "description": "Unnamed function parameter",
       "line": 30,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_30 = (int)ROUND(*param_1 * _DAT_005f5b50);",
+      "text": "CStack_18.z = (int)ROUND(param_1[5] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 31,
+      "line": 33,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_2c = (int)ROUND(param_1[1] * _DAT_005f5b50);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 32,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_28 = (int)ROUND(param_1[2] * _DAT_005f5b50);",
+      "text": "CStack_24.x = (int)ROUND(param_1[6] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
@@ -168,7 +200,7 @@
       "line": 34,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_18 = (int)ROUND(param_1[3] * _DAT_005f5b50);",
+      "text": "CStack_24.y = (int)ROUND(param_1[7] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
@@ -176,31 +208,7 @@
       "line": 35,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_14 = (int)ROUND(param_1[4] * _DAT_005f5b50);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 36,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_10 = (int)ROUND(param_1[5] * _DAT_005f5b50);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 39,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_24 = (int)ROUND(param_1[6] * _DAT_005f5b50);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 40,
-      "match": "param_1",
-      "severity": "mild",
-      "text": "iStack_20 = (int)ROUND(param_1[7] * _DAT_005f5b50);",
+      "text": "CStack_24.z = (int)ROUND(param_1[8] * _DAT_005f5b50);",
       "type": "unnamed_param"
     },
     {
@@ -208,20 +216,12 @@
       "line": 41,
       "match": "param_1",
       "severity": "mild",
-      "text": "iStack_1c = (int)ROUND(param_1[8] * _DAT_005f5b50);",
-      "type": "unnamed_param"
-    },
-    {
-      "description": "Unnamed function parameter",
-      "line": 47,
-      "match": "param_1",
-      "severity": "mild",
       "text": "fVar2 = (float10)param_1[9] * fVar1;",
       "type": "unnamed_param"
     },
     {
       "description": "Unnamed function parameter",
-      "line": 50,
+      "line": 44,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float10)param_1[10] * fVar1;",
@@ -229,7 +229,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 53,
+      "line": 47,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar1 = fVar1 * (float10)param_1[0xb];",
@@ -237,7 +237,7 @@
     },
     {
       "description": "Unnamed function parameter",
-      "line": 56,
+      "line": 50,
       "match": "param_1",
       "severity": "mild",
       "text": "fVar2 = (float10)param_1[0xc] * (float10)_DAT_005d1e2b * (float10)_DAT_005d1e33;",
@@ -245,7 +245,7 @@
     },
     {
       "description": "Raw hex address 0x1ba5c50 assigned to bare local `this_ptr`. The decompiler dropped a symbolic reference \u2014 either a data-symbol pointer (recover the symbol from the .asm and replace `this_ptr` with symbolic global/array indexing, \u00a711) or a dead code-address store from return-address tracking (delete it, \u00a714). Magic addresses do not survive the relink.",
-      "line": 60,
+      "line": 54,
       "match": "0x1ba5c50",
       "severity": "moderate",
       "text": "this_ptr = 0x01BA5C50;",

@@ -8,7 +8,7 @@
 ; CDemonActor *    Stack[0x8]:4   picker
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040c550
+;   core_actor.cpp_isOfClass_FUN_0040c550
 ;
 ; *****************************************************************************
 
@@ -18,8 +18,8 @@ section .text
         ;   Label: core_battery.cpp_CBattery_canPickup_FUN_004144a0
     MOV EDX,dword ptr [ESP + 0xc]       ; 004144a5
     PUSH EDX                            ; 004144a9
-    CALL core_actor.cpp_FUN_0040c550    ; 004144aa
-        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
+    CALL core_actor.cpp_isOfClass_FUN_0040c550 ; 004144aa
+        ;   XREF to: 0040c550 (UNCONDITIONAL_CALL)  ; int core_actor.cpp_isOfClass_FUN_0040c550(CDemonActor * actor_ptr, char * class_name)
     ADD ESP,0x8                         ; 004144af
     TEST EAX,EAX                        ; 004144b2
     JZ 0x004144bb                       ; 004144b4

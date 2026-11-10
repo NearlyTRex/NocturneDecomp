@@ -8,16 +8,16 @@
 ; char *           Stack[0x8]:4   condition_expression
 ;
 ; XREF[55]:
-;   core_bodypart.cpp_FUN_00415350 at 004154dc
-;   core_boneguy.cpp_FUN_004179b0 at 004179f3
-;   core_boneguy.cpp_FUN_00419b40 at 00419b63
-;   core_boxactor.cpp_FUN_0041f360 at 0041f82b
-;   core_bugs.cpp_FUN_00421300 at 0042144f
+;   core_bird.cpp_CBird_renderOpaque_FUN_0040fe90 at 0040fef5
+;   core_bird.cpp_CBird_renderTransparent_FUN_0040ff30 at 0040ff4e
+;   core_bodypart.cpp_CBodyPart_process_FUN_00415350 at 004154dc
+;   core_boneguy.cpp_CBaalSkel_process_FUN_00419b40 at 00419b63
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004179b0 at 004179f3
+;   core_boxactor.cpp_CBoxActor_process_FUN_0041f360 at 0041f82b
+;   core_bugs.cpp_CBugs_process_FUN_00421300 at 0042144f
 ;   core_carved.cpp_CCarved_ctor_FUN_00425960 at 00425a63
 ;   core_charactr.cpp_FUN_00432330 at 004324dc
-;   core_constrct.cpp_FUN_004425f0 at 00442602
-;   core_constrct.cpp_FUN_00442a20 at 00443bc7
-;   core_curtain.cpp_FUN_00447830 at 00447880
+;   core_constrct.cpp_CConstruct_process_FUN_00442a20 at 00443bc7
 ;   ... and 45 more
 ;
 ; Referenced Globals:

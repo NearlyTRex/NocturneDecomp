@@ -133,7 +133,7 @@
       "line": 13,
       "match": "field_0x154",
       "severity": "mild",
-      "text": "*(byte **)&pCVar3->field_0x154 = &g_CLightGunVTable;",
+      "text": "((UActorVTable *)&pCVar3->field_0x154)->_ub = &g_CLightGunVTable._ub;",
       "type": "unnamed_field"
     },
     {
@@ -165,7 +165,7 @@
       "line": 18,
       "match": "field_0x2d8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2d8 = 0;",
+      "text": "*(int *)&pCVar3->field_0x2d8 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -173,7 +173,7 @@
       "line": 19,
       "match": "field_0x2dc",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2dc = 0;",
+      "text": "*(EFireMode *)&pCVar3->field_0x2dc = FIRE_MODE_AUTOMATIC;",
       "type": "unnamed_field"
     },
     {
@@ -181,7 +181,7 @@
       "line": 20,
       "match": "field_0x2e0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2e0 = 10;",
+      "text": "*(EWeaponType *)&pCVar3->field_0x2e0 = WEAPON_TYPE_BARON|WEAPON_TYPE_LIGHT_GUN;",
       "type": "unnamed_field"
     },
     {
@@ -189,7 +189,7 @@
       "line": 21,
       "match": "field_0x2e4",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2e4 = 0;",
+      "text": "*(int *)&pCVar3->field_0x2e4 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -197,7 +197,7 @@
       "line": 22,
       "match": "field_0x2e8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2e8 = 0x42000000;",
+      "text": "*(float *)&pCVar3->field_0x2e8 = 32.0;",
       "type": "unnamed_field"
     },
     {
@@ -205,7 +205,7 @@
       "line": 23,
       "match": "field_0x2ec",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2ec = 0;",
+      "text": "*(int *)&pCVar3->field_0x2ec = 0;",
       "type": "unnamed_field"
     },
     {
@@ -221,7 +221,7 @@
       "line": 26,
       "match": "field_0x2f0",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x2f0 = 1;",
+      "text": "*(int *)&pCVar3->field_0x2f0 = 1;",
       "type": "unnamed_field"
     },
     {
@@ -245,7 +245,7 @@
       "line": 30,
       "match": "field_0x564",
       "severity": "mild",
-      "text": "*(uint *)&pCVar3->field_0x564 = uVar1;",
+      "text": "*(float *)&pCVar3->field_0x564 = fVar1;",
       "type": "unnamed_field"
     },
     {

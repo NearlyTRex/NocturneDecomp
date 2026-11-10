@@ -10,14 +10,14 @@
 ; XREF[17]:
 ;   core_fldnotes.cpp_FUN_004bbd10 at 004bbe2d
 ;   core_mission.cpp_FUN_0051c240 at 0051c2d6
-;   core_script.cpp_FUN_00543c00 at 00543d57
-;   core_script.cpp_FUN_00543fd0 at 0054400f
+;   core_script.cpp_CScript_buildParsedLines_FUN_00543fd0 at 0054400f
+;   core_script.cpp_CScript_renderEditor_FUN_00543c00 at 00543d57
 ;   core_sound.cpp_FUN_0057be00 at 0057be3c
 ;   core_sound.cpp_filterSoundFilesByPattern_FUN_0057b6e0 at 0057b708
+;   shape_edittool.cpp_CPickList_calculateLayoutAndCreateComponents_FUN_0049b060 at 0049b0f3
+;   shape_edittool.cpp_CPickList_handleInput_FUN_0049a9b0 at 0049ab38
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_0049b830 at 0049bc60
 ;   shape_edittool.cpp_CStrList_copyFrom_FUN_00499420 at 00499455
-;   shape_edittool.cpp_CStrList_copyToClipboard_FUN_00499ba0 at 00499bb7
-;   shape_edittool.cpp_CStrList_findByFirstField_FUN_004999a0 at 004999d8
-;   shape_edittool.cpp_CStrList_findString_FUN_00499960 at 00499976
 ;   ... and 7 more
 ;
 ; *****************************************************************************

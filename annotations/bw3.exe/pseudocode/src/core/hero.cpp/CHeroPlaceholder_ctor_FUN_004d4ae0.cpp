@@ -17,10 +17,9 @@ CHeroPlaceholder * core_hero_cpp_CHeroPlaceholder_ctor_FUN_004d4ae0(CHeroPlaceho
   char *pcVar4;
   
   pcVar3 = &DAT_005c50eb;
-  pCVar2 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_ctor_FUN_00408600((CDemonActor *)this_ptr)
-  ;
-  *(byte ***)&pCVar2->field_0x154 = &g_CHeroPlaceholderVTable;
-  *(uint *)&pCVar2->field_0xfc = 1;
+  pCVar2 = (CHeroPlaceholder *)core_actor_cpp_CDemonActor_ctor_FUN_00408600(&this_ptr->base);
+  (pCVar2->base).vtable._ub = &g_CHeroPlaceholderVTable;
+  (pCVar2->base).is_transparent = 1;
   pcVar4 = &pCVar2->field_0x15c;
   *(uint *)&pCVar2->field_0x158 = 0;
   do {

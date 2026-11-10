@@ -27,7 +27,7 @@
 ;   crt_env.c_getenv_FUN_005a5ec0
 ;   crt_unknown.c_FUN_005a54b0
 ;   support_trisock.cpp_FUN_00571ea0
-;   wincore_winrun.cpp_FUN_005806a0
+;   wincore_winrun.cpp_getTime_FUN_005806a0
 ;
 ; *****************************************************************************
 
@@ -42,8 +42,8 @@ section .text
     MOV EDX,0x1                         ; 00503e2c
     ADD ESP,0x4                         ; 00503e31
     MOV dword ptr [0x01da6478],EDX      ; 00503e34 | DAT_01da6478
-    CALL wincore_winrun.cpp_FUN_005806a0 ; 00503e3a
-        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_FUN_005806a0()
+    CALL wincore_winrun.cpp_getTime_FUN_005806a0 ; 00503e3a
+        ;   XREF to: 005806a0 (UNCONDITIONAL_CALL)  ; undefined wincore_winrun.cpp_getTime_FUN_005806a0()
     MOV EDX,EAX                         ; 00503e3f
     MOV ESI,0x12                        ; 00503e41
     SAR EDX,0x1f                        ; 00503e46

@@ -1,0 +1,123 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 23,
+    "complexity_score": 11,
+    "cross_reference_count": 0,
+    "function_call_count": 2,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 11,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 34
+  },
+  "cross_references": [],
+  "function": {
+    "address": "0058d020",
+    "address_range": [
+      [
+        "0058d020",
+        "0058d055"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_werewolf.cpp_CWerewolf_setWalkTarget_FUN_0058d020",
+    "signature": "void __cdecl core_werewolf_cpp_CWerewolf_setWalkTarget_FUN_0058d020(CWerewolf *this_ptr,CDemonActor *target,float speed,float distance)"
+  },
+  "function_calls": [
+    {
+      "addr": "004285f0",
+      "is_variadic": false,
+      "name": "core_charactr.cpp_CCharacter_setWalkTarget_FUN_004285f0"
+    },
+    {
+      "addr": "005035c0",
+      "is_variadic": false,
+      "name": "core_motion.cpp_FUN_005035c0"
+    }
+  ],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 0,
+    "call_sites": [],
+    "confidence": "unknown",
+    "declared_params": 4,
+    "declared_stack_bytes": 16,
+    "estimated_params": 4,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.555555555555555,
+    "instruction_count": 18,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "CALL": 2,
+      "CBRANCH": 1,
+      "COPY": 10,
+      "INT_ADD": 11,
+      "INT_AND": 8,
+      "INT_CARRY": 3,
+      "INT_EQUAL": 8,
+      "INT_LESS": 1,
+      "INT_SBORROW": 1,
+      "INT_SCARRY": 3,
+      "INT_SLESS": 4,
+      "INT_SUB": 8,
+      "LOAD": 8,
+      "POPCOUNT": 4,
+      "RETURN": 2,
+      "STORE": 7
+    },
+    "pcode_op_count": 82
+  },
+  "stack_frame": {
+    "frame_size": 20,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 16,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CWerewolf *"
+      },
+      {
+        "is_param": true,
+        "name": "target",
+        "offset": 8,
+        "size": 4,
+        "type": "CDemonActor *"
+      },
+      {
+        "is_param": true,
+        "name": "speed",
+        "offset": 12,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "distance",
+        "offset": 16,
+        "size": 4,
+        "type": "float"
+      }
+    ]
+  },
+  "suspects": [],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 312,
+        "vtable_addr": "005fe0f4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

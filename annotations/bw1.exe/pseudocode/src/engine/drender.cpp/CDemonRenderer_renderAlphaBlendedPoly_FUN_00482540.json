@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 127,
-    "complexity_score": 122,
+    "complexity_score": 124,
     "cross_reference_count": 3,
     "function_call_count": 2,
     "global_count": 6,
     "max_suspect_severity": "mild",
-    "pseudocode_lines": 62,
+    "pseudocode_lines": 64,
     "suspect_count": 5,
     "suspect_types": [
       "undefined_data",
       "warning_overlapping_globals"
     ],
-    "total_lines": 189
+    "total_lines": 191
   },
   "cross_references": [
     {
@@ -25,13 +25,13 @@
     {
       "addr": "00554d30",
       "from_addr": "005550c0",
-      "name": "core_set.cpp_FUN_00554d30",
+      "name": "core_set.cpp_CDemonSet_renderEnvMapTriangles_FUN_00554d30",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "005a9f10",
       "from_addr": "005aa4fc",
-      "name": "core_water.cpp_FUN_005a9f10",
+      "name": "core_water.cpp_CWater_render_FUN_005a9f10",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -169,7 +169,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 27,
+      "line": 29,
       "match": "DAT_01bc1240",
       "severity": "mild",
       "text": "*(int *)(&DAT_01bc1240 + iVar2) = iVar1;",
@@ -177,7 +177,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 40,
+      "line": 42,
       "match": "DAT_01bc1240",
       "severity": "mild",
       "text": "*(uint *)(&DAT_01bc1240 + iVar2) = *(uint *)(pSVar3 + 0x18);",
@@ -185,7 +185,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 48,
+      "line": 50,
       "match": "DAT_0061b4a0",
       "severity": "mild",
       "text": "if (DAT_0061b4a0 == 0x20) {",
@@ -193,7 +193,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 63,
+      "line": 65,
       "match": "DAT_01bc1240",
       "severity": "mild",
       "text": "(this_ptr,*(int *)(poly + 4),(int *)&DAT_01bc1240);",

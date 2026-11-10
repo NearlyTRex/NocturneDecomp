@@ -11,16 +11,16 @@
 ; undefined4       Stack[-0x4]:4  local_4
 ;
 ; XREF[43]:
-;   core_ammo.cpp_FUN_0040df20 at 0040dfa4
-;   core_ammobox.cpp_FUN_0040e810 at 0040e893
-;   core_bat.cpp_FUN_0040f200 at 0040f269
-;   core_battery.cpp_FUN_0040f590 at 0040f61a
-;   core_bodypart.cpp_FUN_00414bd0 at 00414cb7
-;   core_boxactor.cpp_FUN_0041f8e0 at 0041f9a1
-;   core_boxactor.cpp_FUN_0041f9f0 at 0041fae0
-;   core_bugs.cpp_FUN_004215f0 at 0042175d
-;   core_charactr.cpp_FUN_0042e3a0 at 0042e48e
-;   core_crate.cpp_FUN_00445fa0 at 0044602c
+;   core_ammo.cpp_CAmmo_renderOpaque_FUN_0040df20 at 0040dfa4
+;   core_ammobox.cpp_CAmmoBox_renderOpaque_FUN_0040e810 at 0040e893
+;   core_bat.cpp_CBat_renderOpaque_FUN_0040f200 at 0040f269
+;   core_battery.cpp_CBattery_renderOpaque_FUN_0040f590 at 0040f61a
+;   core_bodypart.cpp_CBodyPart_renderOpaque_FUN_00414bd0 at 00414cb7
+;   core_boxactor.cpp_CBoxActor_renderOpaque_FUN_0041f8e0 at 0041f9a1
+;   core_boxactor.cpp_CBoxActor_renderTransparent_FUN_0041f9f0 at 0041fae0
+;   core_bugs.cpp_CBugs_renderOpaque_FUN_004215f0 at 0042175d
+;   core_charactr.cpp_CCharacter_renderAttachedModels_FUN_0042e3a0 at 0042e48e
+;   core_crate.cpp_CCrate_renderOpaque_FUN_00445fa0 at 0044602c
 ;   ... and 33 more
 ;
 ; Called Functions:

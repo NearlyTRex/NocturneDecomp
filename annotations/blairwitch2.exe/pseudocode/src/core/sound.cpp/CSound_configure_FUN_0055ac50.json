@@ -1,0 +1,334 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 134,
+    "complexity_score": 38,
+    "cross_reference_count": 3,
+    "function_call_count": 15,
+    "global_count": 5,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 38,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 172
+  },
+  "cross_references": [
+    {
+      "addr": "004ed260",
+      "from_addr": "004edb4a",
+      "name": "core_menu.cpp_FUN_004ed260",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee1a0",
+      "from_addr": "004ee34d",
+      "name": "core_menu.cpp_FUN_004ee1a0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004ee3f0",
+      "from_addr": "004ee732",
+      "name": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0055ac50",
+    "address_range": [
+      [
+        "0055ac50",
+        "0055ada5"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+    "signature": "void __cdecl core_sound_cpp_CSound_configure_FUN_0055ac50(CSound *this_ptr)"
+  },
+  "function_calls": [
+    {
+      "addr": "0055adb0",
+      "is_variadic": false,
+      "name": "core_sound.cpp_CSound_reset_FUN_0055adb0"
+    },
+    {
+      "addr": "005524b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005524b0"
+    },
+    {
+      "addr": "005506b0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005506b0"
+    },
+    {
+      "addr": "00551490",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551490"
+    },
+    {
+      "addr": "005514f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005514f0"
+    },
+    {
+      "addr": "00551570",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_00551570"
+    },
+    {
+      "addr": "005527f0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_FUN_005527f0"
+    },
+    {
+      "addr": "00551190",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_getSfxChannelVol_FUN_00551190"
+    },
+    {
+      "addr": "00550bc0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundMuted_FUN_00550bc0"
+    },
+    {
+      "addr": "005504d0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
+    },
+    {
+      "addr": "00552cc0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_set3DListenerOrientRight_FUN_00552cc0"
+    },
+    {
+      "addr": "00550310",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxChannel_FUN_00550310"
+    },
+    {
+      "addr": "005503a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setNextSfxFlagBits_FUN_005503a0"
+    },
+    {
+      "addr": "00551100",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_setSfxChannelVol_FUN_00551100"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005ea904",
+      "name": "s_XBLAIRMENU_wav_005ea903+1",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005ea913",
+      "name": "s_XBLAIRMENU_wav_005ea913",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005fbdb4",
+      "name": "DAT_005fbdb4",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fbdb8",
+      "name": "DAT_005fbdb8",
+      "type": "undefined4",
+      "value": null
+    },
+    {
+      "addr": "005fbdbc",
+      "name": "DAT_005fbdbc",
+      "type": "undefined4",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 10,
+    "call_sites": [
+      {
+        "call_addr": "004ee732",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee780",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee7bf",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee34d",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ee1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee6cc",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_showMainGameMenu_FUN_004ee3f0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee3a8",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ee1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004edb4a",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004edef7",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004edf72",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "004ee12f",
+        "call_type": "direct",
+        "caller": "core_menu.cpp_FUN_004ed260",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 5.35,
+    "instruction_count": 100,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 2,
+      "BOOL_OR": 7,
+      "BRANCH": 1,
+      "CALL": 21,
+      "CBRANCH": 5,
+      "COPY": 101,
+      "FLOAT2FLOAT": 6,
+      "FLOAT_EQUAL": 3,
+      "FLOAT_LESS": 3,
+      "FLOAT_NAN": 6,
+      "INT_ADD": 26,
+      "INT_AND": 56,
+      "INT_CARRY": 17,
+      "INT_EQUAL": 40,
+      "INT_LEFT": 12,
+      "INT_LESS": 2,
+      "INT_NOTEQUAL": 16,
+      "INT_OR": 15,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 17,
+      "INT_SLESS": 20,
+      "INT_SUB": 58,
+      "INT_ZEXT": 12,
+      "LOAD": 6,
+      "POPCOUNT": 20,
+      "RETURN": 2,
+      "STORE": 59
+    },
+    "pcode_op_count": 535
+  },
+  "stack_frame": {
+    "frame_size": 12,
+    "local_size": 8,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": false,
+        "name": "local_4",
+        "offset": -4,
+        "size": 4,
+        "type": "undefined4"
+      },
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CSound *"
+      }
+    ]
+  },
+  "suspects": []
+}

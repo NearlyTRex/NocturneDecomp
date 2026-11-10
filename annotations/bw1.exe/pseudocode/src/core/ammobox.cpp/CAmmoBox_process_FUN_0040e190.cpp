@@ -1,0 +1,13 @@
+// Name: core_ammobox.cpp_CAmmoBox_process_FUN_0040e190
+// Address: 0040e190
+// Address Range: [[0040e190, 0040e190]]
+// Convention: __cdecl
+// Signature: void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_0040e190(CAmmoBox *this_ptr,float delta_time)
+
+#include "nocturne.h"
+
+void __cdecl core_ammobox_cpp_CAmmoBox_process_FUN_0040e190(CAmmoBox *this_ptr,float delta_time)
+
+{
+  return;
+}

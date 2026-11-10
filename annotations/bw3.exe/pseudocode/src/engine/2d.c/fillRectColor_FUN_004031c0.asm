@@ -14,15 +14,15 @@
 ;
 ; XREF[16]:
 ;   core_fldnotes.cpp_FUN_004abe00 at 004ac178
+;   core_game.cpp_CGame_renderIrisFade_FUN_004bd7d0 at 004bd8b8
+;   core_game.cpp_CGame_renderOverlay_FUN_004b47d0 at 004b4c88
 ;   core_game.cpp_CGame_rollCredits_FUN_004c02a0 at 004c0568
-;   core_game.cpp_FUN_004b47d0 at 004b4c88
-;   core_game.cpp_FUN_004bd7d0 at 004bd8b8
 ;   core_game.cpp_drawHealthBar_FUN_004b4730 at 004b47ba
 ;   core_level.cpp_FUN_004e0000 at 004e007a
 ;   core_menu.cpp_adjustMouseSensitivity_FUN_004e80f0 at 004e8265
-;   core_script.cpp_FUN_00528fc0 at 0052906c
+;   core_script.cpp_CScript_renderSubtitles_FUN_00528fc0 at 0052906c
 ;   engine_2d.c_fillRectWithBorder_FUN_00403250 at 0040326c
-;   shape_edittool.cpp_FUN_0047b8e0 at 0047b969
+;   shape_edittool.cpp_CPickList_renderDialog_FUN_004843d0 at 00484919
 ;   ... and 6 more
 ;
 ; Referenced Globals:

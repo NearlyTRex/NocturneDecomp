@@ -19,15 +19,15 @@
   },
   "cross_references": [
     {
-      "addr": "004b3e50",
-      "from_addr": "004b40be",
-      "name": "core_game.cpp_FUN_004b3e50",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
       "addr": "004b6f30",
       "from_addr": "004b7d29",
       "name": "core_game.cpp_FUN_004b6f30",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004b3e50",
+      "from_addr": "004b40be",
+      "name": "core_game.cpp_captureDebugMovieFrame_FUN_004b3e50",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -43,9 +43,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0050da60",
-      "from_addr": "0050dbc6",
-      "name": "engine_pcx.c_FUN_0050da60",
+      "addr": "005b07f0",
+      "from_addr": "005b0832",
+      "name": "crt_unknown.c_FUN_005b07f0",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "005b0ee0",
+      "from_addr": "005b0f3e",
+      "name": "crt_unknown.c_FUN_005b0ee0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -61,6 +67,12 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
+      "addr": "0050da60",
+      "from_addr": "0050dbc6",
+      "name": "engine_pcx.c_saveScreenshotGeneral_FUN_0050da60",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
       "addr": "0050d620",
       "from_addr": "0050d656",
       "name": "engine_pcx.c_writePCXScanline_FUN_0050d620",
@@ -70,18 +82,6 @@
       "addr": "005748b0",
       "from_addr": "005748cb",
       "name": "support_trstream.cpp_FUN_005748b0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005b07f0",
-      "from_addr": "005b0832",
-      "name": "unkafter_2d.cpp_FUN_005b07f0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "005b0ee0",
-      "from_addr": "005b0f3e",
-      "name": "unkafter_2d.cpp_FUN_005b0ee0",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -172,7 +172,7 @@
       {
         "call_addr": "0050dbc6",
         "call_type": "direct",
-        "caller": "engine_pcx.c_FUN_0050da60",
+        "caller": "engine_pcx.c_saveScreenshotGeneral_FUN_0050da60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -183,7 +183,7 @@
       {
         "call_addr": "0050dbe4",
         "call_type": "direct",
-        "caller": "engine_pcx.c_FUN_0050da60",
+        "caller": "engine_pcx.c_saveScreenshotGeneral_FUN_0050da60",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",

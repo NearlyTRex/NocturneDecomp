@@ -5,15 +5,15 @@
 ;
 ;
 ; XREF[135]:
-;   core_actor.cpp_FUN_00408a00 at 00408a72
-;   core_actor.cpp_FUN_00409f20 at 0040a17d
+;   core_actor.cpp_CDemonActor_cylinderGroundCheck_FUN_00408a00 at 00408a72
+;   core_actor.cpp_CDemonActor_processMeleeHit_FUN_00409f20 at 0040a17d
+;   core_baron.cpp_CBaronWeapon_findOrCreateBaron_FUN_00410640 at 0041067f
 ;   core_baron.cpp_CBaron_attachToOwner_FUN_0040fa70 at 0040faa1
 ;   core_baron.cpp_CBaron_updateMountedPosition_FUN_0040fc00 at 0040fca5
-;   core_baron.cpp_FUN_00410640 at 0041067f
-;   core_batman.cpp_FUN_00412ba0 at 0041365a
-;   core_bugs.cpp_FUN_004263d0 at 00426466
-;   core_bugs.cpp_FUN_00427b40 at 00427b6b
-;   core_charactr.cpp_FUN_00432240 at 00432502
+;   core_batman.cpp_CBatman_process_FUN_00412ba0 at 0041365a
+;   core_bugs.cpp_CBugs_attackSwarmTarget_FUN_004263d0 at 00426466
+;   core_bugs.cpp_CBugs_setSwarmTarget_FUN_00427b40 at 00427b6b
+;   core_charactr.cpp_CCharacter_processWalking_FUN_00432240 at 00432502
 ;   core_charactr.cpp_FUN_00432f10 at 004331ea
 ;   ... and 125 more
 ;

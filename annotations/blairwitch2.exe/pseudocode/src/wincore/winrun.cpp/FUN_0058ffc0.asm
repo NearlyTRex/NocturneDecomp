@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[6]:
-;   sound_snddx.cpp_FUN_0055753e at 0055777d
+;   sound_snddx.cpp_directSoundEnumerationCallback_FUN_0055753e at 0055777d
 ;   sound_sndmain.cpp_FUN_0054c1c0 at 0054c598
 ;   sound_sndmain.cpp_FUN_005549c0 at 005549ff
 ;   support_trisock.cpp_FUN_0057a47c at 0057a610

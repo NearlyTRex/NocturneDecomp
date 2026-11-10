@@ -12,6 +12,6 @@ ECollisionType __cdecl core_beast_cpp_CBeast_getCollisionType_FUN_004148e0(CBeas
   if (*(int *)collision_info != 1) {
     return COLLISION_TYPE_NONE;
   }
-  *(byte **)&collision_info->field_0x20 = &this_ptr->field_0x158;
+  *(CDeformableModelInstance **)&collision_info->field_0x20 = &(this_ptr->base).base.model;
   return COLLISION_TYPE_MESH;
 }

@@ -14,7 +14,7 @@
 ; undefined4       Stack[-0x14]:4  local_14
 ;
 ; XREF[1]:
-;   core_hero.cpp_FUN_004d27b0 at 004d29fa
+;   core_hero.cpp_CHero_archive_FUN_004d27b0 at 004d29fa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005c6497
@@ -38,8 +38,8 @@
 ;   core_actor.cpp_castToClassHash_FUN_0040c840
 ;   core_actor.cpp_CDemonActor_load_FUN_0040b110
 ;   core_actor.cpp_createActorByName_FUN_0040c4f0
-;   core_inv.cpp_FUN_004da440
-;   core_inv.cpp_FUN_004da4e0
+;   core_inv.cpp_CInventory_clear_FUN_004da440
+;   core_inv.cpp_CInventory_initialize_FUN_004da4e0
 ;   core_inv.cpp_FUN_004dd2d0
 ;   core_main.c_FUN_004e4330
 ;   core_mission.cpp_CDemonMission_getNextLoadedInventoryActor_FUN_004f6330
@@ -58,13 +58,13 @@ section .text
     SUB ESP,0x1cc                       ; 004dc754
     MOV EDX,dword ptr [ESP + 0x1e0]     ; 004dc75a
     PUSH EDX                            ; 004dc761
-    CALL core_inv.cpp_FUN_004da440      ; 004dc762
-        ;   XREF to: 004da440 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004da440(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_clear_FUN_004da440 ; 004dc762
+        ;   XREF to: 004da440 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_clear_FUN_004da440(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004dc767
     MOV ECX,dword ptr [ESP + 0x1e0]     ; 004dc76a
     PUSH ECX                            ; 004dc771
-    CALL core_inv.cpp_FUN_004da4e0      ; 004dc772
-        ;   XREF to: 004da4e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_FUN_004da4e0(CInventory * this_ptr)
+    CALL core_inv.cpp_CInventory_initialize_FUN_004da4e0 ; 004dc772
+        ;   XREF to: 004da4e0 (UNCONDITIONAL_CALL)  ; void core_inv.cpp_CInventory_initialize_FUN_004da4e0(CInventory * this_ptr)
     ADD ESP,0x4                         ; 004dc777
     MOV EBX,dword ptr [ESP + 0x1e4]     ; 004dc77a
     PUSH EBX                            ; 004dc781

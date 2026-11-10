@@ -1,0 +1,212 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 88,
+    "complexity_score": 72,
+    "cross_reference_count": 1,
+    "function_call_count": 5,
+    "global_count": 4,
+    "max_suspect_severity": "mild",
+    "pseudocode_lines": 27,
+    "suspect_count": 4,
+    "suspect_types": [
+      "unnamed_field"
+    ],
+    "total_lines": 115
+  },
+  "cross_references": [
+    {
+      "addr": "005a0840",
+      "from_addr": "005a0922",
+      "name": "core_confedrt.cpp_CConfederate_ctor_FUN_005a0840",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "005a0b20",
+    "address_range": [
+      [
+        "005a0b20",
+        "005a0bc3"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_confedrt.cpp_CConfederate_processStates_FUN_005a0b20",
+    "signature": "void __cdecl core_confedrt_cpp_CConfederate_processStates_FUN_005a0b20(CConfederate *this_ptr,float delta_time,int mode)"
+  },
+  "function_calls": [
+    {
+      "addr": "005a1030",
+      "is_variadic": false,
+      "name": "core_confedrt.cpp_FUN_005a1030"
+    },
+    {
+      "addr": "005a1180",
+      "is_variadic": false,
+      "name": "core_confedrt.cpp_FUN_005a1180"
+    },
+    {
+      "addr": "0059d650",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059d650"
+    },
+    {
+      "addr": "0059daa0",
+      "is_variadic": false,
+      "name": "unkaddr_0059d350.cpp_FUN_0059daa0"
+    },
+    {
+      "addr": "0059e8c0",
+      "is_variadic": false,
+      "name": "unkafter_basicene.cpp_FUN_0059e8c0"
+    }
+  ],
+  "globals": [
+    {
+      "addr": "005efc15",
+      "name": "s_RangeAttack_005efc15",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005efc21",
+      "name": "s_RangeAttack_005efc21",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005efc2d",
+      "name": "s_MeleeAttack_005efc2d",
+      "type": "TerminatedCString",
+      "value": null
+    },
+    {
+      "addr": "005efc39",
+      "name": "s_MeleeAttack_005efc39",
+      "type": "TerminatedCString",
+      "value": null
+    }
+  ],
+  "param_estimates": {
+    "call_site_count": 1,
+    "call_sites": [
+      {
+        "call_addr": "005a0922",
+        "call_type": "direct",
+        "caller": "core_confedrt.cpp_CConfederate_ctor_FUN_005a0840",
+        "estimated_params": 3,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 12,
+        "stack_params": 3
+      }
+    ],
+    "confidence": "medium",
+    "declared_params": 3,
+    "declared_stack_bytes": 12,
+    "estimated_params": 3,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 4.317460317460317,
+    "instruction_count": 63,
+    "opcode_distribution": {
+      "BOOL_NEGATE": 1,
+      "BOOL_OR": 2,
+      "BRANCH": 2,
+      "CALL": 7,
+      "CBRANCH": 7,
+      "COPY": 49,
+      "INT_ADD": 26,
+      "INT_AND": 33,
+      "INT_CARRY": 7,
+      "INT_EQUAL": 28,
+      "INT_LESS": 2,
+      "INT_SBORROW": 2,
+      "INT_SCARRY": 7,
+      "INT_SLESS": 14,
+      "INT_SUB": 26,
+      "LOAD": 17,
+      "POPCOUNT": 14,
+      "RETURN": 4,
+      "STORE": 24
+    },
+    "pcode_op_count": 272
+  },
+  "stack_frame": {
+    "frame_size": 16,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 12,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CConfederate *"
+      },
+      {
+        "is_param": true,
+        "name": "delta_time",
+        "offset": 8,
+        "size": 4,
+        "type": "float"
+      },
+      {
+        "is_param": true,
+        "name": "mode",
+        "offset": 12,
+        "size": 4,
+        "type": "int"
+      }
+    ]
+  },
+  "suspects": [
+    {
+      "description": "Auto-generated struct field name",
+      "line": 8,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "unkaddr_0059d350_cpp_FUN_0059d650(&this_ptr->field_0x10af8,\"RangeAttack\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 13,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "(iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,\"RangeAttack\"),",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 20,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "unkaddr_0059d350_cpp_FUN_0059d650(&this_ptr->field_0x10af8,\"MeleeAttack\");",
+      "type": "unnamed_field"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 24,
+      "match": "field_0x10af8",
+      "severity": "mild",
+      "text": "(iVar1 = unkaddr_0059d350_cpp_FUN_0059daa0(&this_ptr->field_0x10af8,\"MeleeAttack\"),",
+      "type": "unnamed_field"
+    }
+  ],
+  "vtable_info": {
+    "entries": [
+      {
+        "class_name": "Unknown",
+        "offset": 352,
+        "vtable_addr": "005fedc4"
+      }
+    ],
+    "in_vtable": true,
+    "vtable_count": 1
+  }
+}

@@ -11,8 +11,8 @@
 ;
 ; XREF[5]:
 ;   core_set.cpp_CDemonSet_initScene_FUN_0054ec60 at 0054ede3
+;   core_set.cpp_CDemonSet_renderStaticLights_FUN_00550260 at 00550461
 ;   core_set.cpp_CDemonSet_setCameraView_FUN_0054f0d0 at 0054f9f3
-;   core_set.cpp_FUN_00550260 at 00550461
 ;   core_set.cpp_FUN_00550da0 at 00550fd3
 ;   core_set.cpp_FUN_00551170 at 005513a4
 ;

@@ -8,7 +8,7 @@
 ; char *           Stack[0x8]:4   output_buffer
 ;
 ; XREF[1]:
-;   core_script.cpp_FUN_00543fd0 at 00544018
+;   core_script.cpp_CScript_buildParsedLines_FUN_00543fd0 at 00544018
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005edf8a

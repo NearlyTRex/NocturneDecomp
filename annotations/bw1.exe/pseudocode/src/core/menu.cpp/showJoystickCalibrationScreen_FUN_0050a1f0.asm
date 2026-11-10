@@ -14,11 +14,11 @@
 ;   undefined4 DAT_01c51cc0
 ;
 ; Called Functions:
-;   crt_unknown.c_FUN_005bfb40
+;   crt_unknown.c_sprintf_FUN_005bfb40
 ;   engine_2d.c_drawText_FUN_00401fe0
+;   engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510
+;   engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0
 ;   engine_font.cpp_FUN_004c1dd0
-;   engine_font.cpp_FUN_004c3ea0
-;   engine_font.cpp_FUN_004c4510
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
     PUSH EDX                            ; 0050a201
     MOV ECX,dword ptr [0x0152d23c]      ; 0050a202 | DAT_0152d23c
     PUSH ECX                            ; 0050a208
-    CALL engine_font.cpp_FUN_004c3ea0   ; 0050a209
-        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c3ea0(CBitFont * this_ptr, char * text)
+    CALL engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0 ; 0050a209
+        ;   XREF to: 004c3ea0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getTextWidth_FUN_004c3ea0(CBitFont * this_ptr, char * text)
     MOV EDX,EAX                         ; 0050a20e
     SAR EDX,0x1f                        ; 0050a210
     SUB EAX,EDX                         ; 0050a213
@@ -46,8 +46,8 @@ section .text
     MOV EBX,0x140                       ; 0050a222
     PUSH ESI                            ; 0050a227
     SUB EBX,EAX                         ; 0050a228
-    CALL engine_font.cpp_FUN_004c4510   ; 0050a22a
-        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004c4510(CBitFont * this_ptr, int char_code)
+    CALL engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510 ; 0050a22a
+        ;   XREF to: 004c4510 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_getCharHeight_FUN_004c4510(CBitFont * this_ptr, int char_code)
     MOV EDX,EAX                         ; 0050a22f
     SAR EDX,0x1f                        ; 0050a231
     SUB EAX,EDX                         ; 0050a234
@@ -75,8 +75,8 @@ section .text
     PUSH 0x5e7aae                       ; 0050a273
     LEA EAX,[ESP + 0x10]                ; 0050a278
     PUSH EAX                            ; 0050a27c
-    CALL crt_unknown.c_FUN_005bfb40     ; 0050a27d
-        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005bfb40()
+    CALL crt_unknown.c_sprintf_FUN_005bfb40 ; 0050a27d
+        ;   XREF to: 005bfb40 (UNCONDITIONAL_CALL)  ; int crt_unknown.c_sprintf_FUN_005bfb40(char * buffer, char * format)
     ADD ESP,0x14                        ; 0050a282
     PUSH 0x0                            ; 0050a285
     PUSH 0x0                            ; 0050a287

@@ -12,14 +12,14 @@
 ;
 ; XREF[11]:
 ;   core_bodypart.cpp_CBodyPart_renderGeometry_FUN_00414a60 at 00414a80
-;   core_box.cpp_FUN_0041e9b0 at 0041ea3a
+;   core_box.cpp_CBoundingBox3D_render_FUN_0041e9b0 at 0041ea3a
 ;   core_cloth.cpp_CCloth_render_FUN_0043f460 at 0043f484
 ;   core_curtain.cpp_CCurtain_renderMesh_FUN_00448060 at 0044816f
 ;   core_dmodel.cpp_CKeyFramedModel_rotateAndLightVertices_FUN_00460fa0 at 00460fd5
 ;   core_dpart.cpp_FUN_0046682e at 0046688f
-;   core_glass.cpp_FUN_004ca5a0 at 004ca69f
-;   core_glass.cpp_FUN_004ca770 at 004ca86e
-;   core_glass.cpp_FUN_004cab40 at 004cac41
+;   core_glass.cpp_CGlass_renderBackground_FUN_004cab40 at 004cac41
+;   core_glass.cpp_CGlass_renderOpaque_FUN_004ca5a0 at 004ca69f
+;   core_glass.cpp_CGlass_renderTransparent_FUN_004ca770 at 004ca86e
 ;   core_skeleton.cpp_CDeformableModel_rotateVertices_FUN_00548ba0 at 00548bbf
 ;   ... and 1 more
 ;

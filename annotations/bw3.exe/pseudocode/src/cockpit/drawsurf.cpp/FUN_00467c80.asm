@@ -1,11 +1,15 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; void cockpit_drawsurf_cpp_FUN_00467c80(uint param_1,uint param_2,uint param_3)
+; void __cdecl cockpit_drawsurf_cpp_FUN_00467c80(int red,int green,int blue)
 ;
+; Parameters:
+; int              Stack[0x4]:4   red
+; int              Stack[0x8]:4   green
+; int              Stack[0xc]:4   blue
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_0046a750 at 0046a7fa
+;   cockpit_drawsurf.cpp_testDrawingSurface_FUN_0046a750 at 0046a7fa
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_005fba20

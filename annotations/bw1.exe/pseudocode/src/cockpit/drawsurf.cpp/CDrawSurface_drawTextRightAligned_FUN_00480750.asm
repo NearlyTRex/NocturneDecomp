@@ -10,12 +10,12 @@
 ; int              Stack[0x10]:4   y
 ;
 ; XREF[3]:
-;   cockpit_drawsurf.cpp_FUN_00480780 at 00480796
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextRightAlignedWrapper_FUN_00480780 at 00480796
 ;   cockpit_drawsurf.cpp_FUN_004807b0 at 0048080a
-;   core_script.cpp_FUN_00543c00 at 00543d43
+;   core_script.cpp_CScript_renderEditor_FUN_00543c00 at 00543d43
 ;
 ; Called Functions:
-;   cockpit_drawsurf.cpp_FUN_00480480
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480
 ;
 ; *****************************************************************************
 
@@ -35,8 +35,8 @@ section .text
     PUSH EBX                            ; 00480766
     MOV ESI,dword ptr [ESP + 0x24]      ; 00480767
     PUSH ESI                            ; 0048076b
-    CALL cockpit_drawsurf.cpp_FUN_00480480 ; 0048076c
-        ;   XREF to: 00480480 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_FUN_00480480(CDrawSurface * this_ptr, char * text, int x, int width, ...)
+    CALL cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480 ; 0048076c
+        ;   XREF to: 00480480 (UNCONDITIONAL_CALL)  ; void cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00480480(CDrawSurface * this_ptr, char * text, int x, int width, ...)
     ADD ESP,0x1c                        ; 00480771
     POP ESI                             ; 00480774
     POP EBX                             ; 00480775

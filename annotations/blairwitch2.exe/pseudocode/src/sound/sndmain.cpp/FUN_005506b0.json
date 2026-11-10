@@ -2,12 +2,12 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 324,
-    "complexity_score": 699,
+    "complexity_score": 700,
     "cross_reference_count": 16,
     "function_call_count": 17,
     "global_count": 21,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 159,
+    "pseudocode_lines": 160,
     "suspect_count": 47,
     "suspect_types": [
       "extra_output",
@@ -25,7 +25,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 483
+    "total_lines": 484
   },
   "cross_references": [
     {
@@ -49,13 +49,13 @@
     {
       "addr": "004964c0",
       "from_addr": "00496566",
-      "name": "core_fire.cpp_FUN_004964c0",
+      "name": "core_fire.cpp_CFireball_onCollision_FUN_004964c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004aca40",
       "from_addr": "004aca7f",
-      "name": "core_frankgen.cpp_FUN_004aca40",
+      "name": "core_frankgen.cpp_CFrankenstienMachine_playSfxAtFrame_FUN_004aca40",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -67,19 +67,19 @@
     {
       "addr": "004e38d0",
       "from_addr": "004e3aac",
-      "name": "core_lightgun.cpp_FUN_004e38d0",
+      "name": "core_lightgun.cpp_CLightGun_process_FUN_004e38d0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e7220",
       "from_addr": "004e7384",
-      "name": "core_manpuz.cpp_FUN_004e7220",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelLeft_FUN_004e7220",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "004e73c0",
       "from_addr": "004e743a",
-      "name": "core_manpuz.cpp_FUN_004e73c0",
+      "name": "core_manpuz.cpp_CMansionPuzzleCircle_shiftPanelRight_FUN_004e73c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -95,9 +95,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "005594c0",
-      "from_addr": "005596f7",
-      "name": "core_sound.cpp_FUN_005594c0",
+      "addr": "0055ac50",
+      "from_addr": "0055ad6a",
+      "name": "core_sound.cpp_CSound_configure_FUN_0055ac50",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055a3c0",
+      "from_addr": "0055a942",
+      "name": "core_sound.cpp_CSound_process_FUN_0055a3c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -107,21 +113,15 @@
       "type": "UNCONDITIONAL_CALL"
     },
     {
-      "addr": "0055a3c0",
-      "from_addr": "0055a942",
-      "name": "core_sound.cpp_FUN_0055a3c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0055ac50",
-      "from_addr": "0055ad6a",
-      "name": "core_sound.cpp_FUN_0055ac50",
+      "addr": "005594c0",
+      "from_addr": "005596f7",
+      "name": "core_sound.cpp_playSfxInternal_FUN_005594c0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
       "addr": "00563060",
       "from_addr": "0056564f",
-      "name": "core_stranger.cpp_FUN_00563060",
+      "name": "core_stranger.cpp_CStranger_processFrame_FUN_00563060",
       "type": "UNCONDITIONAL_CALL"
     }
   ],
@@ -149,14 +149,14 @@
       "name": "crt_string.c__stricmp_FUN_005b8130"
     },
     {
-      "addr": "00461070",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00461070"
-    },
-    {
       "addr": "00460aa0",
       "is_variadic": false,
       "name": "engine_dosio.cpp_getFileSize_FUN_00460aa0"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00461070"
     },
     {
       "addr": "0054e8c0",
@@ -194,19 +194,9 @@
       "name": "sound_sndmain.cpp_FUN_00550070"
     },
     {
-      "addr": "005512a0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005512a0"
-    },
-    {
       "addr": "00551440",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_00551440"
-    },
-    {
-      "addr": "00552b20",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00552b20"
     },
     {
       "addr": "00552b30",
@@ -217,6 +207,16 @@
       "addr": "005549c0",
       "is_variadic": false,
       "name": "sound_sndmain.cpp_FUN_005549c0"
+    },
+    {
+      "addr": "005512a0",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
+    },
+    {
+      "addr": "00552b20",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_isSoundBusy_FUN_00552b20"
     },
     {
       "addr": "005532f0",
@@ -281,7 +281,7 @@
     },
     {
       "addr": "0263ce00",
-      "name": "g_CMP3DecoderInstanceOther.field34120_0x8548",
+      "name": "g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]",
       "type": "undefined4",
       "value": null
     },
@@ -329,13 +329,13 @@
     },
     {
       "addr": "02641a78",
-      "name": "g_SfxSamples[0].field340_0x154",
+      "name": "g_SfxSamples[0].ref_count",
       "type": "undefined4",
       "value": null
     },
     {
       "addr": "02641a84",
-      "name": "g_SfxSamples[0].field352_0x160",
+      "name": "g_SfxSamples[0].field12_0x160",
       "type": "undefined4",
       "value": null
     },
@@ -380,7 +380,7 @@
       {
         "call_addr": "0055a942",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -391,7 +391,7 @@
       {
         "call_addr": "0055a976",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -402,7 +402,7 @@
       {
         "call_addr": "0055aa2b",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -413,7 +413,7 @@
       {
         "call_addr": "0055aa64",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055a3c0",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055a3c0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -424,7 +424,7 @@
       {
         "call_addr": "0055ad6a",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ac50",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0055ac50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -435,7 +435,7 @@
       {
         "call_addr": "0055ad95",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_0055ac50",
+        "caller": "core_sound.cpp_CSound_configure_FUN_0055ac50",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -446,7 +446,7 @@
       {
         "call_addr": "005596f7",
         "call_type": "direct",
-        "caller": "core_sound.cpp_FUN_005594c0",
+        "caller": "core_sound.cpp_playSfxInternal_FUN_005594c0",
         "estimated_params": 2,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -623,7 +623,7 @@
       "line": 51,
       "match": "._0_4_",
       "severity": "mild",
-      "text": "iVar2 = sound_sndmain_cpp_FUN_005512a0(local_74._0_4_);",
+      "text": "iVar2 = sound_sndmain_cpp_isSfxChannelEnabled_FUN_005512a0(local_74._0_4_);",
       "type": "unknown_field"
     },
     {
@@ -676,15 +676,15 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 100,
+      "line": 101,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
-      "text": "engine_dosio_cpp_FUN_00461070(local_174,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffd8c);",
+      "text": "(local_174,(char *)0x0,(char *)0x0,(char *)0x0,&stack0xfffffd8c);",
       "type": "stack_ref"
     },
     {
       "description": "Direct stack address reference",
-      "line": 101,
+      "line": 102,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
       "text": "iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005e7ee9);",
@@ -692,7 +692,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 101,
+      "line": 102,
       "match": "DAT_005e7ee9",
       "severity": "mild",
       "text": "iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005e7ee9);",
@@ -700,7 +700,7 @@
     },
     {
       "description": "Direct stack address reference",
-      "line": 103,
+      "line": 104,
       "match": "&stack0xfffffd8c",
       "severity": "moderate",
       "text": "(iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005e7eed), iVar6 == 0))",
@@ -708,7 +708,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 103,
+      "line": 104,
       "match": "DAT_005e7eed",
       "severity": "mild",
       "text": "(iVar6 = _stricmp(&stack0xfffffd8c,&DAT_005e7eed), iVar6 == 0))",
@@ -716,7 +716,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 111,
+      "line": 112,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "*(CSfxSample **)(&DAT_0263cf84 + iVar2) = pCVar8;",
@@ -724,7 +724,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 113,
+      "line": 114,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "iVar6 = *(int *)(&DAT_0263cf84 + iVar2);",
@@ -732,15 +732,15 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 126,
+      "line": 127,
       "match": "field_0x4",
       "severity": "mild",
-      "text": "puVar5 = &pCVar4->field_0x4;",
+      "text": "puVar5 = &(pCVar4->options).field_0x4;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 127,
+      "line": 128,
       "match": "field_0xd0",
       "severity": "mild",
       "text": "*(uint *)&pCVar4->field_0xd0 = 0xffffffff;",
@@ -748,7 +748,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 130,
+      "line": 131,
       "match": "DAT_0061bc80",
       "severity": "mild",
       "text": "iVar7 = DAT_0061bc80 + 1;",
@@ -756,7 +756,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 131,
+      "line": 132,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "iVar6 = *(int *)(&DAT_0263cf84 + iVar2);",
@@ -764,7 +764,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 132,
+      "line": 133,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "*(uint *)(iVar2 + 0x263d00c) = *(uint *)(*(int *)(&DAT_0263cf84 + iVar2) + 0x114);",
@@ -772,7 +772,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 133,
+      "line": 134,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "iVar3 = *(int *)(&DAT_0263cf84 + iVar2);",
@@ -780,7 +780,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 134,
+      "line": 135,
       "match": "DAT_0061bc80",
       "severity": "mild",
       "text": "DAT_0061bc80 = iVar7;",
@@ -788,7 +788,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 139,
+      "line": 140,
       "match": "DAT_0061bc80",
       "severity": "mild",
       "text": "DAT_0061bc80 = 1;",
@@ -796,7 +796,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 141,
+      "line": 142,
       "match": "DAT_0061bc80",
       "severity": "mild",
       "text": "iVar6 = DAT_0061bc80;",
@@ -804,7 +804,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 143,
       "match": "DAT_0263cf80",
       "severity": "mild",
       "text": "*(int *)(&DAT_0263cf80 + iVar2) = DAT_0061bc80;",
@@ -812,7 +812,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 142,
+      "line": 143,
       "match": "DAT_0061bc80",
       "severity": "mild",
       "text": "*(int *)(&DAT_0263cf80 + iVar2) = DAT_0061bc80;",
@@ -820,7 +820,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 144,
+      "line": 145,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "(*(uint *)(&DAT_0263cf84 + iVar2),0x4479c000,0x4479c000);",
@@ -828,7 +828,7 @@
     },
     {
       "description": "Unresolved stack parameter",
-      "line": 147,
+      "line": 148,
       "match": "in_stack_fffffd8c",
       "severity": "moderate",
       "text": "sound_sndmain_cpp_FUN_00552b30(in_stack_fffffd8c);",
@@ -836,7 +836,7 @@
     },
     {
       "description": "Inferred extra output (wrong calling convention)",
-      "line": 148,
+      "line": 149,
       "match": "extraout_EAX",
       "severity": "moderate",
       "text": "if (extraout_EAX < 1) {",
@@ -844,7 +844,7 @@
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 153,
+      "line": 154,
       "match": "code *",
       "severity": "moderate",
       "text": "iVar3 = (**(code **)(*_DAT_02648e80 + 0x40))",
@@ -852,7 +852,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 154,
+      "line": 155,
       "match": "DAT_0263cf84",
       "severity": "mild",
       "text": "(_DAT_02648e80,*(uint *)(*(int *)(&DAT_0263cf84 + iVar2) + 0x158));",
@@ -860,7 +860,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 155,
+      "line": 156,
       "match": "DAT_0263cf7c",
       "severity": "mild",
       "text": "*(int *)(&DAT_0263cf7c + iVar2) = iVar3;",
@@ -919,7 +919,7 @@
       "line": 104,
       "match": "MOVSD.REP",
       "severity": "moderate",
-      "text": "// 005507c5: MOVSD.REP ES:EDI,ESI  ; DAT_0263d038 | g_CMP3DecoderInstanceOther.field34120_0x8548",
+      "text": "// 005507c5: MOVSD.REP ES:EDI,ESI  ; DAT_0263d038 | g_CMP3DecoderInstanceOther.synthesis_history[1][28][14]",
       "type": "unrolled_memcpy"
     },
     {

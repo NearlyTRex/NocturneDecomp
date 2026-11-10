@@ -15,7 +15,7 @@ int __cdecl shape_edittool_cpp_CStrList_findString_FUN_00482500(CStrList *this_p
   char *str2;
   
   index = 0;
-  if (0 < *(int *)this_ptr) {
+  if (0 < this_ptr->item_count) {
     do {
       str2 = search_string;
       str1 = shape_edittool_cpp_CStrList_getStringAt_FUN_00482440(this_ptr,index);
@@ -24,7 +24,7 @@ int __cdecl shape_edittool_cpp_CStrList_findString_FUN_00482500(CStrList *this_p
         return index;
       }
       index = index + 1;
-    } while (index < *(int *)this_ptr);
+    } while (index < this_ptr->item_count);
   }
   return -1;
 }

@@ -10,16 +10,16 @@
 ; undefined4       Stack[-0x18]:4  local_18
 ;
 ; XREF[42]:
-;   core_armour.cpp_FUN_0040ef00 at 0040ef13
-;   core_baron.cpp_FUN_0040f950 at 0040f9fa
-;   core_batcreat.cpp_FUN_00411a10 at 00411a2c
-;   core_batman.cpp_FUN_00412f40 at 00412f5c
-;   core_beast.cpp_FUN_00414a80 at 00414a92
-;   core_biggs.cpp_FUN_00414e50 at 00414e63
-;   core_boneguy.cpp_FUN_004186c0 at 0041873a
-;   core_bride.cpp_FUN_0041dbe0 at 0041dbfc
-;   core_bugs.cpp_FUN_0041f390 at 0041f39b
-;   core_colonel.cpp_FUN_00435830 at 00435849
+;   core_armour.cpp_CArmour_process_FUN_0040ef00 at 0040ef13
+;   core_baron.cpp_CBaron_process_FUN_0040f950 at 0040f9fa
+;   core_basicene.cpp_CBasicEnemy_process_FUN_0059f420 at 0059f42b
+;   core_batcreat.cpp_CBatCreature_process_FUN_00411a10 at 00411a2c
+;   core_batman.cpp_CBatman_process_FUN_00412f40 at 00412f5c
+;   core_beast.cpp_CBeast_process_FUN_00414a80 at 00414a92
+;   core_biggs.cpp_CBiggs_process_FUN_00414e50 at 00414e63
+;   core_boneguy.cpp_CBoneGuy_process_FUN_004186c0 at 0041873a
+;   core_bride.cpp_CBride_process_FUN_0041dbe0 at 0041dbfc
+;   core_bugs.cpp_CBugs_process_FUN_0041f390 at 0041f39b
 ;   ... and 32 more
 ;
 ; Referenced Globals:
@@ -31,12 +31,12 @@
 ;   CScript g_CScriptInstance
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_00425fb0
+;   core_charactr.cpp_CCharacter_advanceGesture_FUN_00429320
+;   core_charactr.cpp_CCharacter_processFire_FUN_00425fb0
 ;   core_charactr.cpp_FUN_00428bd0
-;   core_charactr.cpp_FUN_00429320
 ;   core_game.cpp_CGame_setStatusDisplay_FUN_004bb8d0
 ;   core_hero.cpp_isAnyHeroWithinCylinder_FUN_004ce180
-;   core_script.cpp_FUN_00529990
+;   core_script.cpp_CScript_setSpeaker_FUN_00529990
 ;   sound_sndmain.cpp_killSfx_FUN_00551050
 ;
 ; *****************************************************************************
@@ -62,13 +62,13 @@ section .text
     PUSH dword ptr [ESP + 0x18]         ; 004244dd
         ;   Label: LAB_004244dd
     PUSH ESI                            ; 004244e1
-    CALL core_charactr.cpp_FUN_00425fb0 ; 004244e2
-        ;   XREF to: 00425fb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00425fb0(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_processFire_FUN_00425fb0 ; 004244e2
+        ;   XREF to: 00425fb0 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_processFire_FUN_00425fb0(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004244e7
     PUSH dword ptr [ESP + 0x18]         ; 004244ea
     PUSH ESI                            ; 004244ee
-    CALL core_charactr.cpp_FUN_00429320 ; 004244ef
-        ;   XREF to: 00429320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_FUN_00429320(CCharacter * this_ptr, float delta_time)
+    CALL core_charactr.cpp_CCharacter_advanceGesture_FUN_00429320 ; 004244ef
+        ;   XREF to: 00429320 (UNCONDITIONAL_CALL)  ; void core_charactr.cpp_CCharacter_advanceGesture_FUN_00429320(CCharacter * this_ptr, float delta_time)
     ADD ESP,0x8                         ; 004244f4
     FLD float ptr [ESI + 0x1022c]       ; 004244f7
     FSUB float ptr [ESP + 0x18]         ; 004244fd
@@ -101,8 +101,8 @@ section .text
     MOV EDX,dword ptr [0x0061b460]      ; 00424543 | g_CScriptPtr
     PUSH EDX                            ; 00424549 | g_CScriptInstance
     MOV dword ptr [ESI + 0x2820],0x0    ; 0042454a
-    CALL core_script.cpp_FUN_00529990   ; 00424554
-        ;   XREF to: 00529990 (UNCONDITIONAL_CALL)  ; void core_script.cpp_FUN_00529990(CScript * this_ptr, CDemonActor * actor)
+    CALL core_script.cpp_CScript_setSpeaker_FUN_00529990 ; 00424554
+        ;   XREF to: 00529990 (UNCONDITIONAL_CALL)  ; void core_script.cpp_CScript_setSpeaker_FUN_00529990(CScript * this_ptr, CDemonActor * actor)
     ADD ESP,0x8                         ; 00424559
     CMP dword ptr [ESI + 0x25b0],0x2    ; 0042455c
         ;   Label: LAB_0042455c

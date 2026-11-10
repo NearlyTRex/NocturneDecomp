@@ -9,10 +9,10 @@
 ;   cockpit_ckptutil.c_loadACTPaletteFile_FUN_00437490 at 004375b3
 ;   core_game.cpp_FUN_004d6420 at 004d67d6
 ;   core_game.cpp_FUN_004d6990 at 004d6ce9
-;   engine_2d.c_FUN_00401010 at 004010fa
 ;   engine_2d.c_FUN_00401590 at 004015d5
-;   engine_2d.c_FUN_00402940 at 00402ab3
-;   engine_font.cpp_FUN_004c0cd0 at 004c0eee
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 004010fa
+;   engine_2d.c_loadOrBuildColorMap_FUN_00402940 at 00402ab3
+;   engine_font.cpp_CBitFont_loadBitmap_FUN_004c0cd0 at 004c0eee
 ;   engine_font.cpp_FUN_004c0fa0 at 004c1164
 ;   engine_font.cpp_FUN_004c157e at 004c1785
 ;   ... and 7 more

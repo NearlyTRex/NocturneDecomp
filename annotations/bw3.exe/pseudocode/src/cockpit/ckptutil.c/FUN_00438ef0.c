@@ -12,13 +12,13 @@ void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int s
 
 {
   int iVar1;
-  byte local_8c [80];
+  char local_8c [80];
   CInStreamFile local_3c;
   
   if (buffer == (void *)0x0) {
     buffer = FUN_005a3650(size);
     if (buffer == (void *)0x0) {
-      FUN_005a28c0(local_8c,"Unable to allocate %u bytes for bitmap file (%s).",size,filename);
+      _sprintf(local_8c,"Unable to allocate %u bytes for bitmap file (%s).");
       _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
       _DAT_01d71de4 = 0x98b;
       core_main_c_FUN_004e4330(local_8c);
@@ -27,14 +27,14 @@ void * __cdecl cockpit_ckptutil_c_FUN_00438ef0(char *filename,void *buffer,int s
   unkafter_turret_cpp_CInStreamFile_ctor_FUN_005738c0(&local_3c);
   iVar1 = support_trstream_cpp_FUN_00573fc0(&local_3c,&DAT_005b8ed8,filename,1);
   if (iVar1 == 0) {
-    FUN_005a28c0(local_8c,"Unable to open bitmap file (%s).",filename);
+    _sprintf(local_8c,"Unable to open bitmap file (%s).");
     _DAT_01d71de4 = 0x994;
     _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
     core_main_c_FUN_004e4330(local_8c);
   }
   iVar1 = unkafter_turret_cpp_FUN_00573c00(&local_3c,buffer,size);
   if (iVar1 != size) {
-    FUN_005a28c0(local_8c,"Unable to read bitmap file (%s).",filename);
+    _sprintf(local_8c,"Unable to read bitmap file (%s).");
     unkafter_turret_cpp_FUN_00573db0(&local_3c);
     _DAT_01d71de0 = "..\\cockpit\\ckptutil.c";
     _DAT_01d71de4 = 0x99c;

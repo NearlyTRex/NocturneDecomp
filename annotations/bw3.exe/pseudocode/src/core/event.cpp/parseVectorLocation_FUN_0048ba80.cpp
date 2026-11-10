@@ -21,7 +21,7 @@ uint __cdecl core_event_cpp_parseVectorLocation_FUN_0048ba80(int param_1,int *pa
   }
   sscanf((char *)(param_1 + *param_2)," %[^ ,(){}]%n");
   if (local_14 < 0) {
-    FUN_005a28c0(&DAT_01c734b0,"Error parsing vector location");
+    _sprintf(&DAT_01c734b0,"Error parsing vector location");
     return 0xffffffff;
   }
   iVar1 = core_event_cpp_resolveActorByName_FUN_0048b950

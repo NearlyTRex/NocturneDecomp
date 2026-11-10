@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 375,
-    "complexity_score": 361,
+    "complexity_score": 346,
     "cross_reference_count": 2,
     "function_call_count": 29,
     "global_count": 19,
     "max_suspect_severity": "moderate",
     "pseudocode_lines": 171,
-    "suspect_count": 15,
+    "suspect_count": 14,
     "suspect_types": [
       "extra_output",
       "pointer_cast",
       "undefined_data",
-      "unnamed_field",
       "unresolved_funcptr",
       "unrolled_strcpy",
       "unrolled_strlen",
@@ -25,7 +24,7 @@
     {
       "addr": "004bdfb0",
       "from_addr": "004be07a",
-      "name": "core_game.cpp_FUN_004bdfb0",
+      "name": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -52,12 +51,12 @@
     {
       "addr": "004b3000",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b3000"
+      "name": "core_game.cpp_CGame_saveClockTime_FUN_004b3000"
     },
     {
       "addr": "004b3010",
       "is_variadic": false,
-      "name": "core_game.cpp_FUN_004b3010"
+      "name": "core_game.cpp_CGame_updateDT_FUN_004b3010"
     },
     {
       "addr": "004e4500",
@@ -137,7 +136,7 @@
     {
       "addr": "004ab560",
       "is_variadic": false,
-      "name": "engine_font.cpp_FUN_004ab560"
+      "name": "engine_font.cpp_CBitFont_getCharHeight_FUN_004ab560"
     },
     {
       "addr": "0055b1f0",
@@ -145,14 +144,9 @@
       "name": "engine_special.cpp_clearScreen_FUN_0055b1f0"
     },
     {
-      "addr": "00550450",
+      "addr": "005524b0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_00550450"
-    },
-    {
-      "addr": "005504d0",
-      "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005504d0"
+      "name": "sound_sndmain.cpp_enableSoundSystem_FUN_005524b0"
     },
     {
       "addr": "005506b0",
@@ -167,12 +161,17 @@
     {
       "addr": "005512a0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005512a0"
+      "name": "sound_sndmain.cpp_isSfxChannelEnabled_FUN_005512a0"
     },
     {
-      "addr": "005524b0",
+      "addr": "005504d0",
       "is_variadic": false,
-      "name": "sound_sndmain.cpp_FUN_005524b0"
+      "name": "sound_sndmain.cpp_popSfxOptions_FUN_005504d0"
+    },
+    {
+      "addr": "00550450",
+      "is_variadic": false,
+      "name": "sound_sndmain.cpp_pushSfxOptions_FUN_00550450"
     },
     {
       "addr": "005526b0",
@@ -192,7 +191,7 @@
     {
       "addr": "00589560",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_00589560"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_00589560"
     }
   ],
   "globals": [
@@ -317,7 +316,7 @@
       {
         "call_addr": "004be07a",
         "call_type": "direct",
-        "caller": "core_game.cpp_FUN_004bdfb0",
+        "caller": "core_game.cpp_CGame_finishAct_FUN_004bdfb0",
         "estimated_params": 1,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -615,14 +614,6 @@
       "severity": "moderate",
       "text": "iVar6 = (**(code **)*0x01D02F84)(0x01D02F84,1);",
       "type": "unresolved_funcptr"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 149,
-      "match": "field_0x284",
-      "severity": "mild",
-      "text": "local_28 = local_28 - *(float *)&this_ptr->field_0x284 * _DAT_005d8ab3;",
-      "type": "unnamed_field"
     },
     {
       "description": "Complex pointer cast",

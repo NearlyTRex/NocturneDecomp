@@ -13,6 +13,14 @@
 // pointer to WSADATA
 typedef struct WSADATA* LPWSADATA;
 
+// Structure: SOCKADDR
+typedef struct SOCKADDR {
+    short sin_family;
+    ushort sin_port;
+    int sin_addr;
+    char zero[8];
+} SOCKADDR;
+
 // Structure: SOCKADDR_IN
 // Stub: no RTTI in this build, size and fields not yet recovered
 #pragma pack(push, 1)

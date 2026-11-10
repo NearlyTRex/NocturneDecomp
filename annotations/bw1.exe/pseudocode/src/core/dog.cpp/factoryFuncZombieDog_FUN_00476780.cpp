@@ -11,7 +11,7 @@ void core_dog_cpp_factoryFuncZombieDog_FUN_00476780(void)
 {
   CZombieDog *this_ptr;
   
-  this_ptr = (CZombieDog *)FUN_005c0f32(0xc274);
+  this_ptr = (CZombieDog *)debugAllocTracked1(0xc274);
   if (this_ptr == (CZombieDog *)0x0) {
     return;
   }

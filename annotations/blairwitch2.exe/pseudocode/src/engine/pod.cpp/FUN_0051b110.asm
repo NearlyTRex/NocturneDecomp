@@ -16,9 +16,9 @@
 ;
 ; Called Functions:
 ;   core_main.c_FUN_004e4500
-;   crt_unknown.c_FUN_005b8be2
+;   crt_unknown.c_debugAllocTracked1_FUN_005b8be2
 ;   engine_pod.cpp_CPodFile_ctor_FUN_00519e50
-;   engine_pod.cpp_FUN_00519f00
+;   engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00
 ;
 ; *****************************************************************************
 
@@ -34,8 +34,8 @@ section .text
         ;   XREF to: 0051b185 (CONDITIONAL_JUMP)  ; LAB_0051b185
     PUSH 0x42c                          ; 0051b11c
         ;   Label: LAB_0051b11c
-    CALL crt_unknown.c_FUN_005b8be2     ; 0051b121
-        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005b8be2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005b8be2 ; 0051b121
+        ;   XREF to: 005b8be2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005b8be2()
     ADD ESP,0x4                         ; 0051b126
     TEST EAX,EAX                        ; 0051b129
     JZ 0x0051b136                       ; 0051b12b
@@ -65,8 +65,8 @@ section .text
     PUSH EDX                            ; 0051b16d
     MOV ECX,dword ptr [EBX + EAX*0x4 + 0x4] ; 0051b16e
     PUSH ECX                            ; 0051b172
-    CALL engine_pod.cpp_FUN_00519f00    ; 0051b173
-        ;   XREF to: 00519f00 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_FUN_00519f00(CPodFile * this_ptr, char * pod_filename)
+    CALL engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00 ; 0051b173
+        ;   XREF to: 00519f00 (UNCONDITIONAL_CALL)  ; int engine_pod.cpp_CPodFile_mountFromFile_FUN_00519f00(CPodFile * this_ptr, char * pod_filename)
     ADD ESP,0x8                         ; 0051b178
     TEST EAX,EAX                        ; 0051b17b
     JZ 0x0051b1ad                       ; 0051b17d

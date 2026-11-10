@@ -4,13 +4,14 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoxActor.h"
 
 // Structure: CTempleStone
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x6ec (1772 bytes)
 #pragma pack(push, 1)
 typedef struct CTempleStone {
-    char field_0[1772]; // 0x0
+    CBoxActor base; // 0x0
+    char field_1768[4]; // 0x6e8
 } CTempleStone;
 #pragma pack(pop)
 

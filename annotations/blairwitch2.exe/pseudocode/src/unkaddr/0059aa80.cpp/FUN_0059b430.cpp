@@ -30,16 +30,15 @@ void unkaddr_0059aa80_cpp_FUN_0059b430(int *param_1)
   }
   if (param_1[0xc] == 0) {
     param_1[0x12] =
-         (int)((float)(param_1[0x10] + 1) *
-               *(float *)&g_CGamePtr->field_0x284 * (float)_DAT_005ef584 + (float)param_1[0x12]);
+         (int)((float)(param_1[0x10] + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005ef584 +
+              (float)param_1[0x12]);
   }
   if (param_1[0xc] == 2) {
     param_1[0x12] =
          (int)((float)param_1[0x12] -
-              (float)(param_1[0x10] + 1) * *(float *)&g_CGamePtr->field_0x284 * (float)_DAT_005ef584
-              );
+              (float)(param_1[0x10] + 1) * g_CGamePtr->delta_time_float * (float)_DAT_005ef584);
   }
-  iVar2 = core_actor_cpp_FUN_0040d0c0(param_1[0x12]);
+  iVar2 = core_actor_cpp_normalizeAngleToPi_FUN_0040d0c0(param_1[0x12]);
   param_1[0x12] = iVar2;
   (**(code **)(*param_1 + 0x3c))(param_1,1,8,param_1[0x12],0);
   (**(code **)(*param_1 + 0x3c))(param_1,4,4,param_1[0x12],1);

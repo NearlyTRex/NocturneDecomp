@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_carved.cpp_CCarved_ctor_FUN_004286d0
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0xc2f4                         ; 004286a0
         ;   Label: core_carved.cpp_factoryFuncCarved_FUN_004286a0
-    CALL crt_unknown.c_FUN_005c0f32     ; 004286a5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 004286a5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 004286aa
     TEST EAX,EAX                        ; 004286ad
     JNZ 0x004286b2                      ; 004286af

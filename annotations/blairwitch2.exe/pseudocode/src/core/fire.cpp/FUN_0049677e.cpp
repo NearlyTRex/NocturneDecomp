@@ -17,7 +17,7 @@ void core_fire_cpp_FUN_0049677e(void)
   iVar1 = 0;
   do {
     iVar1 = iVar1 + 1;
-    FUN_005b7790(acStack_6c,0x5d542a,iVar1);
+    _sprintf(acStack_6c,(char *)0x5d542a);
     core_dmodel_cpp_CKeyFramedModelInstance_setModelName_FUN_0044fd70(this_ptr,acStack_6c);
     core_dmodel_cpp_CKeyFramedModelInstance_preCache_FUN_0044fd00(this_ptr);
     this_ptr = this_ptr + 1;

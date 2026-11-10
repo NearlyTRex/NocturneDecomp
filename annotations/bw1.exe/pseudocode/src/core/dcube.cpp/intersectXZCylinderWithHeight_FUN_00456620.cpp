@@ -16,7 +16,7 @@ uint __cdecl core_dcube_cpp_intersectXZCylinderWithHeight_FUN_00456620(SIntersec
   *(uint *)(param_1 + 0x40) = param_2[2];
   *(uint *)(param_1 + 0x44) = *param_3;
   *(uint *)(param_1 + 0x48) = param_3[2];
-  iVar2 = core_dcube_cpp_FUN_00456340(param_1);
+  iVar2 = core_dcube_cpp_intersectXZCylinder_FUN_00456340(param_1);
   if (((iVar2 != 0) &&
       (fVar1 = ((float)param_3[1] - (float)param_2[1]) * *(float *)(param_1 + 0x50) +
                (float)param_2[1], *(float *)(param_1 + 0x28) < fVar1)) &&

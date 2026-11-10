@@ -19,13 +19,13 @@ globals so the sentinel never matches. See `docs/decompiler-artifacts.md` §16.
   - Before: `while (pCVar21 != (CRainDrop *)&g_CFlameClassInfo)`
   - After:  `while (pCVar21 != g_RainDropPool + sizeof(g_RainDropPool) / sizeof(g_RainDropPool[0]))`
 
-### `core_fire.cpp_FUN_004b4dd0`
+### `core_fire.cpp_CFireEffect_process_FUN_004b4dd0`
 
 - Pool `g_RainDropPool` sentinel `g_CFlameClassInfo` (count 256)
   - Before: `while (pCVar11 != (CRainDrop *)&g_CFlameClassInfo)`
   - After:  `while (pCVar11 != g_RainDropPool + sizeof(g_RainDropPool) / sizeof(g_RainDropPool[0]))`
 
-### `core_fire.cpp_FUN_004b5100`
+### `core_fire.cpp_CFireEffect_render_FUN_004b5100`
 
 - Pool `g_RainDropPool` sentinel `g_CFlameClassInfo` (count 256)
   - Before: `while (pCVar10 != (CRainDrop *)&g_CFlameClassInfo)`

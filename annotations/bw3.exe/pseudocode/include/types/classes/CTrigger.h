@@ -4,13 +4,35 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
+#include "types/classes/CVector3f.h"
+#include "types/enums/ETriggerCause.h"
+#include "types/enums/ETriggerEventType.h"
+#include "types/enums/ETriggerShape.h"
 
 // Structure: CTrigger
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x374 (884 bytes)
 #pragma pack(push, 1)
 typedef struct CTrigger {
-    char field_0[884]; // 0x0
+    CDemonActor base; // 0x0
+    float test_radius; // 0x158
+    ETriggerEventType event_type; // 0x15c
+    CVector3f trigger_size; // 0x160
+    int trigger_state; // 0x16c
+    ETriggerShape trigger_shape; // 0x170
+    ETriggerCause trigger_cause; // 0x174
+    char actor_name[80]; // 0x178
+    char actor_type[80]; // 0x1c8
+    int pressure_plate; // 0x218
+    float light_min; // 0x21c
+    float light_max; // 0x220
+    char on_event[100]; // 0x224
+    char off_event[100]; // 0x288
+    int prev_triggered; // 0x2ec
+    int event_flag; // 0x2f0
+    int laser_type; // 0x2f4
+    float hit_points; // 0x2f8
+    char field_764[120]; // 0x2fc
 } CTrigger;
 #pragma pack(pop)
 

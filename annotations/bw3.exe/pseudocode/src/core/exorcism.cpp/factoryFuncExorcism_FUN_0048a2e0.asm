@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_exorcism.cpp_CExorcism_ctor_FUN_0048a310
-;   crt_unknown.c_FUN_005a3cb2
+;   crt_unknown.c_debugAllocTracked1_FUN_005a3cb2
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x62c                          ; 0048a2e0
         ;   Label: core_exorcism.cpp_factoryFuncExorcism_FUN_0048a2e0
-    CALL crt_unknown.c_FUN_005a3cb2     ; 0048a2e5
-        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005a3cb2()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005a3cb2 ; 0048a2e5
+        ;   XREF to: 005a3cb2 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005a3cb2()
     ADD ESP,0x4                         ; 0048a2ea
     TEST EAX,EAX                        ; 0048a2ed
     JNZ 0x0048a2f2                      ; 0048a2ef

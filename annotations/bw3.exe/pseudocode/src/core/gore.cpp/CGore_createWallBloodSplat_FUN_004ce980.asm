@@ -13,8 +13,8 @@
 ;   core_gore.cpp_FUN_004cd3f0 at 004cd41a
 ;
 ; Called Functions:
+;   core_gore.cpp_CBloodSplat_initWallSplat_FUN_004cd510
 ;   core_gore.cpp_CGore_allocateBloodSplat_FUN_004ce900
-;   core_gore.cpp_FUN_004cd510
 ;
 ; *****************************************************************************
 
@@ -41,8 +41,8 @@ section .text
     MOV EDI,dword ptr [ESP + 0x1c]      ; 004ce9a2
     PUSH EDI                            ; 004ce9a6
     PUSH EAX                            ; 004ce9a7
-    CALL core_gore.cpp_FUN_004cd510     ; 004ce9a8
-        ;   XREF to: 004cd510 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_FUN_004cd510(CBloodSplat * this_ptr, CVector3f * position, CVector3f * normal, EBloodType blood_type)
+    CALL core_gore.cpp_CBloodSplat_initWallSplat_FUN_004cd510 ; 004ce9a8
+        ;   XREF to: 004cd510 (UNCONDITIONAL_CALL)  ; void core_gore.cpp_CBloodSplat_initWallSplat_FUN_004cd510(CBloodSplat * this_ptr, CVector3f * position, CVector3f * normal, EBloodType blood_type)
     ADD ESP,0x10                        ; 004ce9ad
     POP EBX                             ; 004ce9b0
     POP ESI                             ; 004ce9b1

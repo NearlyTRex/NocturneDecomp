@@ -10,7 +10,7 @@
 ; int              Stack[0x10]:4   frame_index
 ;
 ; XREF[1]:
-;   core_biggs.cpp_FUN_00414ab0 at 00414aff
+;   core_biggs.cpp_CBiggs_setup_FUN_00414ab0 at 00414aff
 ;
 ; Called Functions:
 ;   core_morph.cpp_CMorphModel_addPartFromKeyFramedModel_FUN_005224f0

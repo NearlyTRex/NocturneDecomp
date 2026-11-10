@@ -11,7 +11,7 @@ uint __cdecl shape_edittool_cpp_CEditorTools_getTimeCycledColorByte_FUN_0047f1c0
 {
   uint uVar1;
   
-  uVar1 = wincore_winrun_cpp_FUN_0058e9e0();
+  uVar1 = wincore_winrun_cpp_getTime_FUN_0058e9e0();
   uVar1 = uVar1 & 0x30000;
   if (uVar1 < 0x10000) {
     if (uVar1 == 0) {

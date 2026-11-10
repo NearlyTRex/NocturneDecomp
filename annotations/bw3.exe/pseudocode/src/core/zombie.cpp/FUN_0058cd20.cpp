@@ -11,7 +11,7 @@ void core_zombie_cpp_FUN_0058cd20(void)
 {
   CZombieForest *this_ptr;
   
-  this_ptr = (CZombieForest *)FUN_005a3cb2(0xd14c);
+  this_ptr = (CZombieForest *)debugAllocTracked1(0xd14c);
   if (this_ptr == (CZombieForest *)0x0) {
     return;
   }

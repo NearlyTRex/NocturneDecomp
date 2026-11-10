@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_shadowsc.cpp_FUN_00561330 at 005613eb
+;   core_shadowsc.cpp_CShadowsc_processDamage_FUN_00561330 at 005613eb
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_scorp_die1_wav_4_005f1913

@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 282,
-    "complexity_score": 369,
+    "complexity_score": 262,
     "cross_reference_count": 1,
     "function_call_count": 9,
     "global_count": 10,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 119,
-    "suspect_count": 22,
+    "pseudocode_lines": 122,
+    "suspect_count": 11,
     "suspect_types": [
       "raw_address_pointer_store",
       "undefined_data",
@@ -17,7 +17,7 @@
       "unrolled_strcpy",
       "warning_overlapping_globals"
     ],
-    "total_lines": 401
+    "total_lines": 404
   },
   "cross_references": [
     {
@@ -42,9 +42,19 @@
   },
   "function_calls": [
     {
+      "addr": "00505950",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_addPlayer_FUN_00505950"
+    },
+    {
       "addr": "005043b0",
       "is_variadic": false,
       "name": "core_netgame.cpp_CNetGame_disconnect_FUN_005043b0"
+    },
+    {
+      "addr": "00504270",
+      "is_variadic": false,
+      "name": "core_netgame.cpp_CNetGame_initializeNetwork_FUN_00504270"
     },
     {
       "addr": "00504c70",
@@ -55,16 +65,6 @@
       "addr": "00505870",
       "is_variadic": false,
       "name": "core_netgame.cpp_CNetGame_send_FUN_00505870"
-    },
-    {
-      "addr": "00504270",
-      "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_00504270"
-    },
-    {
-      "addr": "00505950",
-      "is_variadic": false,
-      "name": "core_netgame.cpp_FUN_00505950"
     },
     {
       "addr": "0047cfa0",
@@ -84,7 +84,7 @@
     {
       "addr": "0057a8a0",
       "is_variadic": false,
-      "name": "wincore_wddvmem.cpp_FUN_0057a8a0"
+      "name": "wincore_wddvmem.cpp_swapBuffers_FUN_0057a8a0"
     }
   ],
   "globals": [
@@ -260,63 +260,23 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 31,
-      "match": "field_0x1c",
+      "line": 32,
+      "match": "field_0xdc",
       "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x1c = 0;",
+      "text": "iVar3 = *(int *)&pCVar2->field_0xdc;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
       "line": 33,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "(auStack_28,_DAT_02cfd89c,0x1ddf,&this_ptr->field_0x8,",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
       "match": "field_0xd8",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xd8,*(uint *)&pCVar2->field_0xdc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 34,
-      "match": "field_0xdc",
-      "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0xd8,*(uint *)&pCVar2->field_0xdc);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 36,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x124 = uVar3;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 44,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x4 = 1;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 46,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "*(uint *)&this_ptr->field_0x120 = uVar3;",
+      "text": "iVar4 = *(int *)&pCVar2->field_0xd8;",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 51,
+      "line": 54,
       "match": "DAT_0060728c",
       "severity": "mild",
       "text": "auStack_28[3] = DAT_0060728c;",
@@ -324,7 +284,7 @@
     },
     {
       "description": "Undefined global data reference",
-      "line": 52,
+      "line": 55,
       "match": "DAT_0060728c",
       "severity": "mild",
       "text": "DAT_0060728c = 0;",
@@ -332,63 +292,23 @@
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 53,
-      "match": "field_0x120",
+      "line": 72,
+      "match": "field_0x14",
       "severity": "mild",
-      "text": "if (-1 < *(int *)&this_ptr->field_0x120) {",
+      "text": "uStack_37 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x14;",
       "type": "unnamed_field"
     },
     {
       "description": "Auto-generated struct field name",
-      "line": 54,
-      "match": "field_0x8",
+      "line": 73,
+      "match": "field_0x18",
       "severity": "mild",
-      "text": "pcStack_18 = &this_ptr->field_0x8;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x34",
-      "severity": "mild",
-      "text": "uStack_37 = *(uint *)(&this_ptr->field_0x34 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 69,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "uStack_37 = *(uint *)(&this_ptr->field_0x34 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x38",
-      "severity": "mild",
-      "text": "uStack_33 = *(uint *)(&this_ptr->field_0x38 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 70,
-      "match": "field_0x124",
-      "severity": "mild",
-      "text": "uStack_33 = *(uint *)(&this_ptr->field_0x38 + *(int *)&this_ptr->field_0x124 * 0x80);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 83,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "(this_ptr,*(int *)&this_ptr->field_0x120,(SNetPacketHeader *)&uStack_58);",
+      "text": "uStack_33 = *(uint *)&this_ptr->players[this_ptr->local_player_index].field_0x18;",
       "type": "unnamed_field"
     },
     {
       "description": "Undefined global data reference",
-      "line": 89,
+      "line": 92,
       "match": "DAT_0060728c",
       "severity": "mild",
       "text": "DAT_0060728c = auStack_28[3];",
@@ -396,31 +316,23 @@
     },
     {
       "description": "Pointer-array store through a raw address constant (lost symbolic global; \u00a711/\u00a715) \u2014 use the symbolic global indexed by element",
-      "line": 113,
+      "line": 116,
       "match": "*(code **)(*0x01D70A78",
       "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "text": "iVar4 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
       "type": "raw_address_pointer_store"
     },
     {
       "description": "Unresolved function pointer (vtable lookup failed)",
-      "line": 113,
+      "line": 116,
       "match": "code *",
       "severity": "moderate",
-      "text": "iVar5 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
+      "text": "iVar4 = (**(code **)(*0x01D70A78 + 4))(0x01D70A78,1);",
       "type": "unresolved_funcptr"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 119,
-      "match": "field_0x120",
-      "severity": "mild",
-      "text": "} while (-1 < *(int *)&this_ptr->field_0x120);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
-      "line": 73,
+      "line": 76,
       "match": "do {",
       "severity": "moderate",
       "text": "do {",

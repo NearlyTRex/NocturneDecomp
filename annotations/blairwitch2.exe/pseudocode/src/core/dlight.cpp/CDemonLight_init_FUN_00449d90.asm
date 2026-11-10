@@ -9,8 +9,8 @@
 ; undefined4       Stack[-0xc]:4  local_c
 ;
 ; XREF[4]:
-;   core_boxactor.cpp_FUN_0041cff0 at 0041d00e
-;   core_game.cpp_FUN_004b6170 at 004b63d2
+;   core_boxactor.cpp_CLightActor_setup_FUN_0041cff0 at 0041d00e
+;   core_game.cpp_CGame_runGameSession_FUN_004b6170 at 004b63d2
 ;   core_lantern.cpp_CLantern_ctor_FUN_0059cbd0 at 0059cca7
 ;   core_setutil.cpp_C3DSLight_create_FUN_0053b6b0 at 0053b6fe
 ;

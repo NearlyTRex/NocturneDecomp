@@ -2,19 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 212,
-    "complexity_score": 125,
+    "complexity_score": 112,
     "cross_reference_count": 1,
     "function_call_count": 15,
     "global_count": 2,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 80,
-    "suspect_count": 3,
+    "pseudocode_lines": 82,
+    "suspect_count": 2,
     "suspect_types": [
-      "unknown_field",
       "unrolled_strcpy",
       "unrolled_strlen"
     ],
-    "total_lines": 292
+    "total_lines": 294
   },
   "cross_references": [
     {
@@ -50,7 +49,7 @@
     {
       "addr": "005b7790",
       "is_variadic": false,
-      "name": "crt_unknown.c_FUN_005b7790"
+      "name": "crt_unknown.c_sprintf_FUN_005b7790"
     },
     {
       "addr": "00460f50",
@@ -78,14 +77,14 @@
       "name": "engine_dosio.cpp_CFileFinder_openSearch_FUN_00460e50"
     },
     {
-      "addr": "00461070",
-      "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_00461070"
-    },
-    {
       "addr": "004610a0",
       "is_variadic": false,
-      "name": "engine_dosio.cpp_FUN_004610a0"
+      "name": "engine_dosio.cpp_makePath_FUN_004610a0"
+    },
+    {
+      "addr": "00461070",
+      "is_variadic": false,
+      "name": "engine_dosio.cpp_splitPath_FUN_00461070"
     },
     {
       "addr": "0051b5d0",
@@ -278,14 +277,6 @@
   },
   "suspects": [
     {
-      "description": "Unknown/mangled field access",
-      "line": 64,
-      "match": "._0_1_",
-      "severity": "mild",
-      "text": "if (local_528._0_1_ == '\\0') {",
-      "type": "unknown_field"
-    },
-    {
       "description": "Watcom loop-unrolled strcpy (2-byte-at-a-time do-while with mid-body null check). Replace the whole loop with strcpy() in a .keep.",
       "line": 24,
       "match": "do {",
@@ -295,7 +286,7 @@
     },
     {
       "description": "Watcom loop-unrolled strlen (REP SCASB with ECX=-1 init and direction-bool step). Replace the whole loop with strlen(src) in a .keep; the length downstream appears as `~uVar - 1` (strlen) or `~uVar` (strlen + 1).",
-      "line": 44,
+      "line": 45,
       "match": "do { if (v==0) break; v=v-1; ... }",
       "severity": "moderate",
       "text": "do {",

@@ -78,7 +78,7 @@ section .text
     SUB ESP,0x84                        ; 00440e94
     MOV EBX,dword ptr [ESP + 0xa0]      ; 00440e9a
     MOV EAX,[0x00616494]                ; 00440ea1 | g_CGamePtr
-    CMP dword ptr [EAX + 0xc],0x0       ; 00440ea6 | g_CGameInstance.field12_0xc
+    CMP dword ptr [EAX + 0xc],0x0       ; 00440ea6 | g_CGameInstance.field3_0xc
     JNZ 0x00440ec5                      ; 00440eaa
         ;   XREF to: 00440ec5 (CONDITIONAL_JUMP)  ; LAB_00440ec5
     TEST EBX,EBX                        ; 00440eac

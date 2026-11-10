@@ -12,7 +12,7 @@
 ; int              Stack[0x18]:4   height
 ;
 ; XREF[1]:
-;   cockpit_ckptutil.c_FUN_0043852c at 0043854e
+;   cockpit_ckptutil.c_blitFullScreen_FUN_0043852c at 0043854e
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_0061b4a0

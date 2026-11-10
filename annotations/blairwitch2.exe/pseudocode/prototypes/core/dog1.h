@@ -25,46 +25,46 @@ CDog * CDog::ctor(CDog *this_ptr);
 // Address: 005abd30
 CDog * CDog::dtor(CDog *this_ptr,uint flags);
 
-// Original: core_dog1.cpp_FUN_005abdd0
+// Original: core_dog1.cpp_CDog_setup_FUN_005abdd0
 // Address: 005abdd0
-void FUN_005abdd0(int param_1);
+void __cdecl CDog::setup(CDog *this_ptr);
 
-// Original: core_dog1.cpp_FUN_005abe90
+// Original: core_dog1.cpp_CDog_processStates_FUN_005abe90
 // Address: 005abe90
-void FUN_005abe90(int param_1,undefined4 param_2,int param_3);
+void __cdecl CDog::processStates(CDog *this_ptr,float delta_time,int mode);
 
-// Original: core_dog1.cpp_FUN_005abfa0
+// Original: core_dog1.cpp_CDog_processMeleeAttackState_FUN_005abfa0
 // Address: 005abfa0
-void FUN_005abfa0(CCharacter *param_1);
+void __cdecl CDog::processMeleeAttackState(CDog *this_ptr,float delta_time);
 
-// Original: core_dog1.cpp_FUN_005ac0c0
+// Original: core_dog1.cpp_CDog_processChaseFoodState_FUN_005ac0c0
 // Address: 005ac0c0
-void FUN_005ac0c0(CCharacter *param_1,float param_2);
+void __cdecl CDog::processChaseFoodState(CDog *this_ptr,float delta_time);
 
-// Original: core_dog1.cpp_FUN_005ac200
+// Original: core_dog1.cpp_CDog_processLeapAttackState_FUN_005ac200
 // Address: 005ac200
-void FUN_005ac200(CCharacter *param_1);
+void __cdecl CDog::processLeapAttackState(CDog *this_ptr,float delta_time);
 
 // Original: core_dog1.cpp_FUN_005ac2f0
 // Address: 005ac2f0
 void FUN_005ac2f0(int param_1,float param_2);
 
-// Original: core_dog1.cpp_FUN_005ac520
+// Original: core_dog1.cpp_CDog_processDeathState_FUN_005ac520
 // Address: 005ac520
-void FUN_005ac520(int param_1);
+void __cdecl CDog::processDeathState(CDog *this_ptr,float delta_time);
 
-// Original: core_dog1.cpp_FUN_005ac5a0
+// Original: core_dog1.cpp_CDog_getDeathState_FUN_005ac5a0
 // Address: 005ac5a0
-undefined4 FUN_005ac5a0(int param_1);
+EDeathState __cdecl CDog::getDeathState(CDog *this_ptr);
 
-// Original: core_dog1.cpp_FUN_005ac610
+// Original: core_dog1.cpp_CDog_processMotionEvent_FUN_005ac610
 // Address: 005ac610
-void FUN_005ac610(CDemonActor *param_1,uint param_2);
+void __cdecl CDog::processMotionEvent(CDog *this_ptr,int event_id);
 
-// Original: core_dog1.cpp_FUN_005ac6d0
+// Original: core_dog1.cpp_CDog_archive_FUN_005ac6d0
 // Address: 005ac6d0
-void FUN_005ac6d0(int param_1);
+void __cdecl CDog::archive(CDog *this_ptr);
 
-// Original: core_dog1.cpp_FUN_005ac720
+// Original: core_dog1.cpp_CDog_renderTransparent_FUN_005ac720
 // Address: 005ac720
-bool FUN_005ac720(undefined4 param_1);
+int __cdecl CDog::renderTransparent(CDog *this_ptr);

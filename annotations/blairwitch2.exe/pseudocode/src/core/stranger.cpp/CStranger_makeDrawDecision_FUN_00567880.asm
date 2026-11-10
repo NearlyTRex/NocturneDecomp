@@ -55,10 +55,10 @@
 ;   ... and 6 more
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
-;   core_charactr.cpp_FUN_0042a5a0
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_main.c_FUN_004e4500
-;   core_motion.cpp_FUN_00502f10
+;   core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10
 ;   core_motion.cpp_FUN_005035c0
 ;   core_motion.cpp_FUN_005038a0
 ;   core_motion.cpp_FUN_00503e60
@@ -66,7 +66,7 @@
 ;   core_skeleton.cpp_CDeformableModelInstance_applyRotationToHierarchy_FUN_00546f40
 ;   core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890
 ;   core_skeleton.cpp_FUN_00545a60
-;   core_stranger.cpp_FUN_00567fd0
+;   core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0
 ;   core_xform.cpp_quaternionFromAngleX_FUN_00593fa0
 ;   core_xform.cpp_quaternionFromAngleY_FUN_00593fe0
 ;   core_xform.cpp_slerpQuaternion_FUN_00593df0
@@ -247,8 +247,8 @@ section .text
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00567aae
     PUSH EAX                            ; 00567ab1
-    CALL core_motion.cpp_FUN_00502f10   ; 00567ab2
-        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10 ; 00567ab2
+        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00567ab7
     PUSH dword ptr [EBX + 0x2d08]       ; 00567aba
     PUSH EAX                            ; 00567ac0
@@ -282,15 +282,15 @@ section .text
         ;   XREF to: 00547890 (UNCONDITIONAL_CALL)  ; CSkeleton * core_skeleton.cpp_CDeformableModelInstance_getSkeletonPtr_FUN_00547890(CDeformableModelInstance * this_ptr)
     ADD ESP,0x4                         ; 00567b1c
     PUSH EAX                            ; 00567b1f
-    CALL core_motion.cpp_FUN_00502f10   ; 00567b20
-        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
+    CALL core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10 ; 00567b20
+        ;   XREF to: 00502f10 (UNCONDITIONAL_CALL)  ; int core_motion.cpp_CMotionList_findMotionIndex_FUN_00502f10(CMotionList * this_ptr, char * motion_name, int error_on_not_found)
     ADD ESP,0xc                         ; 00567b25
     PUSH 0x3f800000                     ; 00567b28
     MOV EDI,EAX                         ; 00567b2d
     PUSH 0x0                            ; 00567b2f
     MOV dword ptr [ESP + 0xf0],EAX      ; 00567b31
-    CALL core_actor.cpp_FUN_0040cf60    ; 00567b38
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 00567b38
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0xf8],EAX      ; 00567b3d
     FLD float ptr [ESP + 0xf8]          ; 00567b44
     ADD ESP,0x8                         ; 00567b4b
@@ -413,8 +413,8 @@ section .text
     PUSH 0x3                            ; 00567cda
         ;   Label: LAB_00567cda
     PUSH EBX                            ; 00567cdc
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 00567cdd
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 00567cdd
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 00567ce2
     FLD float ptr [ESP + 0xf8]          ; 00567ce9
     FLD1                                ; 00567cf0
@@ -454,13 +454,13 @@ section .text
     PUSH 0x0                            ; 00567d58
         ;   Label: LAB_00567d58
     PUSH EBX                            ; 00567d5a
-    CALL core_stranger.cpp_FUN_00567fd0 ; 00567d5b
-        ;   XREF to: 00567fd0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00567fd0(CStranger * this_ptr, int arm_side)
+    CALL core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0 ; 00567d5b
+        ;   XREF to: 00567fd0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0(CStranger * this_ptr, int arm_side)
     ADD ESP,0x8                         ; 00567d60
     PUSH 0x1                            ; 00567d63
     PUSH EBX                            ; 00567d65
-    CALL core_stranger.cpp_FUN_00567fd0 ; 00567d66
-        ;   XREF to: 00567fd0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_FUN_00567fd0(CStranger * this_ptr, int arm_side)
+    CALL core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0 ; 00567d66
+        ;   XREF to: 00567fd0 (UNCONDITIONAL_CALL)  ; void core_stranger.cpp_CStranger_applyArmAimRotation_FUN_00567fd0(CStranger * this_ptr, int arm_side)
     MOV EAX,[0x0264be68]                ; 00567d6b | DAT_0264be68
     MOV ESI,dword ptr [0x0264be48]      ; 00567d70 | DAT_0264be48
     SHL EAX,0x4                         ; 00567d76
@@ -490,8 +490,8 @@ section .text
     PUSH 0x3                            ; 00567dc3
         ;   Label: LAB_00567dc3
     PUSH EBX                            ; 00567dc5
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 00567dc6
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 00567dc6
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0xf8],EAX      ; 00567dcb
     FLD float ptr [ESP + 0xf8]          ; 00567dd2
     FLD1                                ; 00567dd9

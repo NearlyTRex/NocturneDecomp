@@ -6,7 +6,7 @@
 ;
 ; XREF[4]:
 ;   core_cloth.cpp_CClothList_load_FUN_0043f920 at 0043f9b0
-;   core_cloth.cpp_FUN_0043f9d0 at 0043f9ee
+;   core_cloth.cpp_CClothList_reset_FUN_0043f9d0 at 0043f9ee
 ;   core_cloth.cpp_FUN_0043fabe at 0043fb10
 ;   core_styler.cpp_CStyler_dtor_FUN_0059df60 at 0059df85
 ;

@@ -10,9 +10,9 @@
 ; undefined8       Stack[-0x8]:8  local_8
 ;
 ; XREF[6]:
-;   sound_sndmain.cpp_FUN_00553180 at 005531be
-;   sound_sndmain.cpp_FUN_005531d0 at 0055324d
+;   sound_sndmain.cpp_audioThreadProc_FUN_00553180 at 005531be
 ;   sound_sndmain.cpp_killSoundThread_FUN_00553270 at 00553299
+;   sound_sndmain.cpp_startSoundThread_FUN_005531d0 at 0055324d
 ;   support_trisock.cpp_FUN_0057a47c at 0057a5d1
 ;   support_trisock.cpp_FUN_0057a7c0 at 0057a7f8
 ;   support_trisock.cpp_FUN_0057a8b0 at 0057a8d2

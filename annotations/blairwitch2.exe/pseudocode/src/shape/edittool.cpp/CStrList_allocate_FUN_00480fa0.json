@@ -2,15 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 70,
-    "complexity_score": 87,
+    "complexity_score": 57,
     "cross_reference_count": 2,
     "function_call_count": 2,
     "global_count": 8,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "moderate",
     "pseudocode_lines": 27,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "unnamed_field",
+      "alloc_magic_size",
       "warning_overlapping_globals"
     ],
     "total_lines": 97
@@ -196,36 +196,12 @@
       "type": "warning_overlapping_globals"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 19,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x4 < new_capacity) {",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 20,
-      "match": "field_0x4",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x4 = new_capacity;",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
+      "description": "Pointer-array allocation strides by 4 (== 32-bit sizeof(char *)). Replace the magic 4 with sizeof(char *): a raw 4 under-allocates and corrupts memory once pointers are 8 bytes at 64-bit (\u00a727).",
       "line": 21,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "pvVar1 = realloc(*(void **)&this_ptr->field_0x8,new_capacity * 4);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 22,
-      "match": "field_0x8",
-      "severity": "mild",
-      "text": "*(void **)&this_ptr->field_0x8 = pvVar1;",
-      "type": "unnamed_field"
+      "match": "(char**) alloc stride 4",
+      "severity": "moderate",
+      "text": "(char **)realloc(this_ptr->data_array,new_capacity * 4)",
+      "type": "alloc_magic_size"
     }
   ]
 }

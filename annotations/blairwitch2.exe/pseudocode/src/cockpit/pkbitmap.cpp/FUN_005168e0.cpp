@@ -16,7 +16,7 @@ void __cdecl cockpit_pkbitmap_cpp_FUN_005168e0(CPackedBitmap *this_ptr,char *fil
   cockpit_pkbitmap_cpp_FUN_00516200(this_ptr);
   cockpit_pkbitmap_cpp_CPackedBitmap_setFilename_FUN_00516270(this_ptr,filename);
   bitmap_data = cockpit_ckptutil_c_FUN_0042c520
-                          ((char *)this_ptr,(void *)0x0,apply_palette_flag * width);
+                          (this_ptr->filename,(void *)0x0,apply_palette_flag * width);
   cockpit_pkbitmap_cpp_CPackedBitmap_load_FUN_00516a60
             (this_ptr,bitmap_data,width,apply_palette_flag,in_stack_0000001c,width);
   FUN_005b86a0();

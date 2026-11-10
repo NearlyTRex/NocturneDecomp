@@ -35,19 +35,22 @@ void __cdecl core_skeleton_cpp_CDeformableModel_allocMemory_FUN_005638c0(CDeform
     _DAT_01d1d404 = 0x286;
     core_main_c_FUN_005030e0("Too many LODs in CDeformableModel::allocMemory.  Max is %d, requested %d.",5,num_lods);
   }
-  *(int *)&this_ptr->field_0xbc = num_textures;
-  *(int *)&this_ptr->field_0xc00 = num_parts;
-  *(int *)this_ptr = num_lods;
+  this_ptr->num_textures = num_textures;
+  this_ptr->num_parts = num_parts;
+  this_ptr->num_lods = num_lods;
   iVar2 = 0;
-  *(int *)&this_ptr->field_0xb8 = num_texture_sets;
+  this_ptr->num_texture_sets = num_texture_sets;
   pCVar1 = this_ptr;
   if (0 < num_lods) {
     do {
-      *(uint *)&pCVar1->field_0x4 = 1;
-      *(uint *)&pCVar1->field_0x8 = 0;
+      pCVar1->lod_info[0] = (SLod)0x1;
+      pCVar1->lod_info[1] = (SLod)0x0;
+      pCVar1->lod_info[2] = (SLod)0x0;
+      pCVar1->lod_info[3] = (SLod)0x0;
+      *(uint *)(pCVar1->lod_info + 4) = 0;
       iVar2 = iVar2 + 1;
-      pCVar1 = (CDeformableModel *)&pCVar1->field_0x8;
-    } while (iVar2 < *(int *)this_ptr);
+      pCVar1 = (CDeformableModel *)(pCVar1->lod_info + 4);
+    } while (iVar2 < this_ptr->num_lods);
   }
   return;
 }

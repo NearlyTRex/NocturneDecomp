@@ -16,6 +16,6 @@ SPageResourceBitmap * core_fldnotes_cpp_PageResource_Bitmap_ctor_FUN_004baa10(SP
   
   iVar1 = unkaddr_004b9ab0_cpp_FUN_004ba730(this_ptr);
   pCVar2 = engine_alphabit_cpp_CAlphaBitmap_ctor_FUN_0040d0a0((CAlphaBitmap *)(iVar1 + 0x18));
-  *(byte ***)&pCVar2[-1].field_0x10 = &g_PageResource_BitmapVTable;
-  return (SPageResourceBitmap *)&pCVar2[-2].field_0x10;
+  pCVar2[-1].height = (int)&g_PageResource_BitmapVTable;
+  return (SPageResourceBitmap *)&pCVar2[-2].height;
 }

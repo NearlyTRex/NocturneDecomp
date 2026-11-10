@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_game.cpp_FUN_004bd570 at 004bd980
+;   core_game.cpp_CGame_process_FUN_004bd570 at 004bd980
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_00616010
@@ -19,8 +19,8 @@
 ;   undefined4 DAT_01c2a384
 ;   undefined4 DAT_01cacb4c
 ;   undefined4 DAT_01caf110
-;   undefined4 CAlphaBitmap_01caf218.field12_0xc
-;   undefined4 CAlphaBitmap_01caf218.field16_0x10
+;   undefined4 CAlphaBitmap_01caf218.width
+;   undefined4 CAlphaBitmap_01caf218.height
 ;   undefined4 g_STextViewInstance.field60_0x3c
 ;   undefined4 DAT_01caf488
 ;   ... and 4 more
@@ -64,7 +64,7 @@ section .text
     JZ 0x004a5fb0                       ; 004a5f98
         ;   XREF to: 004a5fb0 (CONDITIONAL_JUMP)  ; LAB_004a5fb0
     MOV EAX,[0x00616494]                ; 004a5f9a | g_CGamePtr
-    CMP dword ptr [EAX + 0x244],0x0     ; 004a5f9f | g_CGameInstance.field580_0x244
+    CMP dword ptr [EAX + 0x244],0x0     ; 004a5f9f | g_CGameInstance.letterbox_mode
     JZ 0x004a606e                       ; 004a5fa6
         ;   XREF to: 004a606e (CONDITIONAL_JUMP)  ; LAB_004a606e
     POP EBP                             ; 004a5fac
@@ -226,12 +226,12 @@ section .text
     CMP ESI,EBP                         ; 004a6170
     JL 0x004a6103                       ; 004a6172
         ;   XREF to: 004a6103 (CONDITIONAL_JUMP)  ; LAB_004a6103
-    MOV EDX,dword ptr [0x01caf224]      ; 004a6174 | CAlphaBitmap_01caf218.field12_0xc
+    MOV EDX,dword ptr [0x01caf224]      ; 004a6174 | CAlphaBitmap_01caf218.width
     LEA EAX,[EDI + EDX*0x1]             ; 004a617a
     CMP EBX,EAX                         ; 004a617d
     JGE 0x004a6103                      ; 004a617f
         ;   XREF to: 004a6103 (CONDITIONAL_JUMP)  ; LAB_004a6103
-    MOV ECX,dword ptr [0x01caf228]      ; 004a6181 | CAlphaBitmap_01caf218.field16_0x10
+    MOV ECX,dword ptr [0x01caf228]      ; 004a6181 | CAlphaBitmap_01caf218.height
     LEA EAX,[ECX + EBP*0x1]             ; 004a6187
     CMP ESI,EAX                         ; 004a618a
     JGE 0x004a6103                      ; 004a618c

@@ -5,10 +5,10 @@
 ;
 ;
 ; XREF[5]:
-;   core_game.cpp_FUN_004d27b0 at 004d545e
+;   core_game.cpp_CGame_processCheatCodes_FUN_004d27b0 at 004d545e
 ;   core_game.cpp_FUN_004d7250 at 004d7315
-;   core_inivar.cpp_FUN_004f4f50 at 004f4f80
-;   core_inivar.cpp_FUN_004f5760 at 004f5776
+;   core_inivar.cpp_readIniData_FUN_004f4f50 at 004f4f80
+;   core_inivar.cpp_writeIniData_FUN_004f5760 at 004f5776
 ;   core_script.cpp_CScript_step_FUN_00544460 at 00547591
 ;
 ; Referenced Globals:

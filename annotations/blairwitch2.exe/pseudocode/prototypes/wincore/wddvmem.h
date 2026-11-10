@@ -49,45 +49,45 @@ void __cdecl resetGraphicsSystem(void);
 // Address: 00588ff0
 void __cdecl reinitializeGraphicsSystem(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005890c0
+// Original: wincore_wddvmem.cpp_openScreenDevice_FUN_005890c0
 // Address: 005890c0
-void __cdecl FUN_005890c0(void);
+void __cdecl openScreenDevice(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00589170
+// Original: wincore_wddvmem.cpp_closeScreenDevice_FUN_00589170
 // Address: 00589170
-void __cdecl FUN_00589170(void);
+void __cdecl closeScreenDevice(void);
 
 // Original: wincore_wddvmem.cpp_analyzePixelFormat_FUN_00589270
 // Address: 00589270
 void __cdecl analyzePixelFormat(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00589430
+// Original: wincore_wddvmem.cpp_setupColorPalette_FUN_00589430
 // Address: 00589430
-void __cdecl FUN_00589430(void);
+void __cdecl setupColorPalette(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00589560
+// Original: wincore_wddvmem.cpp_swapBuffers_FUN_00589560
 // Address: 00589560
-void __cdecl FUN_00589560(void);
+void __cdecl swapBuffers(void);
 
 // Original: wincore_wddvmem.cpp_restoreVideoAndMinimizeWindow_FUN_005897b0
 // Address: 005897b0
 void __cdecl restoreVideoAndMinimizeWindow(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005897e0
+// Original: wincore_wddvmem.cpp_videoRestore_FUN_005897e0
 // Address: 005897e0
-void __cdecl FUN_005897e0(void);
+void __cdecl videoRestore(void);
 
-// Original: wincore_wddvmem.cpp_FUN_005898e0
+// Original: wincore_wddvmem.cpp_stubFunction_FUN_005898e0
 // Address: 005898e0
-void __cdecl FUN_005898e0(void);
+void __cdecl stubFunction(void);
 
-// Original: wincore_wddvmem.cpp_FUN_00589960
+// Original: wincore_wddvmem.cpp_freeLibrary_FUN_00589960
 // Address: 00589960
-void FUN_00589960(HMODULE param_1);
+BOOL __cdecl freeLibrary(HMODULE hLibModule);
 
-// Original: wincore_wddvmem.cpp_FUN_00589970
+// Original: wincore_wddvmem.cpp_loadLibrary_FUN_00589970
 // Address: 00589970
-HMODULE __cdecl FUN_00589970(LPCSTR lpLibFileName);
+HMODULE __cdecl loadLibrary(LPCSTR lpLibFileName);
 
 // Original: wincore_wddvmem.cpp_getProcAddress_FUN_00589980
 // Address: 00589980

@@ -4,13 +4,19 @@
 
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CDemonActor.h"
 
 // Structure: CActorDestination
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x350 (848 bytes)
 #pragma pack(push, 1)
 typedef struct CActorDestination {
-    char field_0[848]; // 0x0
+    CDemonActor base; // 0x0
+    struct CDemonActor* dest_actor; // 0x2b4
+    char dest_class[40]; // 0x2b8
+    int triggered; // 0x2e0
+    char what_event[100]; // 0x2e4
+    int persistent_event_flag; // 0x348
+    int needs_actor_search; // 0x34c
 } CActorDestination;
 #pragma pack(pop)
 

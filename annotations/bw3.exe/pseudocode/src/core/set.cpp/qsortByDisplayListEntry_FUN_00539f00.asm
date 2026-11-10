@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_set.cpp_FUN_00539f30 at 0053a02b
+;   core_set.cpp_CDemonSet_buildDisplayList_FUN_00539f30 at 0053a02b
 ;
 ; *****************************************************************************
 

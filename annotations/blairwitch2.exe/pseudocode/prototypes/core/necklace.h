@@ -21,9 +21,9 @@ CDemonActorType * CNecklace::getActorType(CNecklace *this_ptr);
 // Address: 005adab0
 CNecklace * CNecklace::ctor(CNecklace *this_ptr);
 
-// Original: core_necklace.cpp_FUN_005adad0
+// Original: core_necklace.cpp_CNecklace_process_FUN_005adad0
 // Address: 005adad0
-void FUN_005adad0(CBoxActor *param_1,float param_2);
+void __cdecl CNecklace::process(CNecklace *this_ptr,float delta_time);
 
 // Original: core_necklace.cpp_CNecklace_dtor_FUN_005add30
 // Address: 005add30

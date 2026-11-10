@@ -15,6 +15,6 @@ void __cdecl core_gore_cpp_CGore_createWallBloodSplat_FUN_004ce980(CGore *this_p
     return;
   }
   this_ptr_00 = core_gore_cpp_CGore_allocateBloodSplat_FUN_004ce900(this_ptr);
-  core_gore_cpp_FUN_004cd510(this_ptr_00,position,normal,blood_type);
+  core_gore_cpp_CBloodSplat_initWallSplat_FUN_004cd510(this_ptr_00,position,normal,blood_type);
   return;
 }

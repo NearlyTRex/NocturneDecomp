@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_bat.cpp_CBat_ctor_FUN_00410b50
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x388                          ; 00410b20
         ;   Label: core_bat.cpp_factoryFuncBat_FUN_00410b20
-    CALL crt_unknown.c_FUN_005c0f32     ; 00410b25
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 00410b25
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 00410b2a
     TEST EAX,EAX                        ; 00410b2d
     JNZ 0x00410b32                      ; 00410b2f

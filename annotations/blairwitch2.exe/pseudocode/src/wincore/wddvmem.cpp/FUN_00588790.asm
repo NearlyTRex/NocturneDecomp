@@ -8,7 +8,7 @@
 ; int              Stack[0x8]:4   height
 ;
 ; XREF[1]:
-;   engine_2d.c_FUN_00401010 at 00401029
+;   engine_2d.c_initGraphicsSystem_FUN_00401010 at 00401029
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_wincore_wddvmem_cpp_005ee121

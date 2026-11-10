@@ -6,7 +6,7 @@
 ;
 ; Called Functions:
 ;   core_lightpis.cpp_CLightPis_ctor_FUN_00501610
-;   crt_unknown.c_FUN_005c0f32
+;   crt_unknown.c_debugAllocTracked1_FUN_005c0f32
 ;
 ; *****************************************************************************
 
@@ -14,8 +14,8 @@ section .text
 
     PUSH 0x598                          ; 005015e0
         ;   Label: core_lightpis.cpp_factoryFuncLightPis_FUN_005015e0
-    CALL crt_unknown.c_FUN_005c0f32     ; 005015e5
-        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_FUN_005c0f32()
+    CALL crt_unknown.c_debugAllocTracked1_FUN_005c0f32 ; 005015e5
+        ;   XREF to: 005c0f32 (UNCONDITIONAL_CALL)  ; undefined crt_unknown.c_debugAllocTracked1_FUN_005c0f32()
     ADD ESP,0x4                         ; 005015ea
     TEST EAX,EAX                        ; 005015ed
     JNZ 0x005015f2                      ; 005015ef

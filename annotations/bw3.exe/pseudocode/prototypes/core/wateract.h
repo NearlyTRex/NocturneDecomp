@@ -21,41 +21,41 @@ CDemonActorType * CWaterActor::getActorType(CWaterActor *this_ptr);
 // Address: 00577d90
 CWaterActor * __cdecl CWaterActor::ctor(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00577ee0
+// Original: core_wateract.cpp_CWaterActor_setup_FUN_00577ee0
 // Address: 00577ee0
-void FUN_00577ee0(CDemonActor *param_1);
+void __cdecl CWaterActor::setup(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_FUN_00578490
 // Address: 00578490
 void FUN_00578490(int param_1);
 
-// Original: core_wateract.cpp_FUN_00578670
+// Original: core_wateract.cpp_CWaterActor_process_FUN_00578670
 // Address: 00578670
-void FUN_00578670(int param_1,float param_2);
+void __cdecl CWaterActor::process(CWaterActor *this_ptr,float delta_time);
 
-// Original: core_wateract.cpp_FUN_005787f0
+// Original: core_wateract.cpp_CWaterActor_renderTransparent_FUN_005787f0
 // Address: 005787f0
-int FUN_005787f0(CDemonActor *param_1);
+int __cdecl CWaterActor::renderTransparent(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578a70
+// Original: core_wateract.cpp_CWaterActor_getBoundingBox_FUN_00578a70
 // Address: 00578a70
-void FUN_00578a70(int param_1);
+CBoundingBox3D * __cdecl CWaterActor::getBoundingBox(CWaterActor *this_ptr,CBoundingBox3D *out_box);
 
-// Original: core_wateract.cpp_FUN_00578af0
+// Original: core_wateract.cpp_CWaterActor_archive_FUN_00578af0
 // Address: 00578af0
-void FUN_00578af0(CDemonActor *param_1);
+void __cdecl CWaterActor::archive(CWaterActor *this_ptr);
 
 // Original: core_wateract.cpp_CWaterActor_getCollisionType_FUN_00578d00
 // Address: 00578d00
 ECollisionType __cdecl CWaterActor::getCollisionType(CWaterActor *this_ptr,SCollisionInfo *collision_info);
 
-// Original: core_wateract.cpp_FUN_00578d20
+// Original: core_wateract.cpp_CWaterActor_getGroundType_FUN_00578d20
 // Address: 00578d20
-undefined4 FUN_00578d20(void);
+EGroundType __cdecl CWaterActor::getGroundType(CWaterActor *this_ptr);
 
-// Original: core_wateract.cpp_FUN_00578d30
+// Original: core_wateract.cpp_CWaterActor_customRayIntersect_FUN_00578d30
 // Address: 00578d30
-float FUN_00578d30(int param_1,undefined4 param_2,undefined4 param_3,float *param_4);
+float __cdecl CWaterActor::customRayIntersect(CWaterActor *this_ptr,CVector3f *ray_origin,CVector3f *ray_direction,CVector3f *out_normal);
 
 // Original: core_wateract.cpp_CWaterActor_onLaserHit_FUN_00578fc0
 // Address: 00578fc0
@@ -65,9 +65,9 @@ void __cdecl CWaterActor::onLaserHit(CWaterActor *this_ptr,SLaserInfo *laser_inf
 // Address: 00578ff0
 void FUN_00578ff0(void);
 
-// Original: core_wateract.cpp_FUN_00579010
+// Original: core_wateract.cpp_CLava_getActorType_FUN_00579010
 // Address: 00579010
-undefined4 FUN_00579010(void);
+CDemonActorType * __cdecl CLava::getActorType(CLava *this_ptr);
 
 // Original: core_wateract.cpp_CLava_ctor_FUN_00579020
 // Address: 00579020

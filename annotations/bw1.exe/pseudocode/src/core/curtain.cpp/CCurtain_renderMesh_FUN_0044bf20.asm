@@ -21,8 +21,8 @@
 ;   core_box.cpp_FUN_004207b0
 ;   core_box.cpp_FUN_00421670
 ;   core_set.cpp_CDemonSet_lightVerticies_FUN_00553440
+;   core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0
 ;   core_set.cpp_CDemonSet_rotateVerticies_FUN_00553140
-;   core_set.cpp_FUN_005551f0
 ;   engine_drender.cpp_CDemonRenderer_captureTexture_FUN_00484f00
 ;   engine_drender.cpp_CDemonRenderer_isShadowPass_FUN_00483e60
 ;   engine_drender.cpp_CDemonRenderer_renderBlendedPoly_FUN_00483120
@@ -229,8 +229,8 @@ section .text
     PUSH EBX                            ; 0044c14d
     MOV EBX,dword ptr [0x00622c18]      ; 0044c14e | g_CDemonSetPtr
     PUSH EBX                            ; 0044c154
-    CALL core_set.cpp_FUN_005551f0      ; 0044c155
-        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 ; 0044c155
+        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0044c15a
     TEST EDI,EDI                        ; 0044c15d
         ;   Label: LAB_0044c15d
@@ -285,8 +285,8 @@ section .text
     PUSH EBX                            ; 0044c1e8
     MOV EBX,dword ptr [0x00622c18]      ; 0044c1e9 | g_CDemonSetPtr
     PUSH EBX                            ; 0044c1ef
-    CALL core_set.cpp_FUN_005551f0      ; 0044c1f0
-        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
+    CALL core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0 ; 0044c1f0
+        ;   XREF to: 005551f0 (UNCONDITIONAL_CALL)  ; void core_set.cpp_CDemonSet_renderPrimitiveBatch_FUN_005551f0(CDemonSet * this_ptr, SMRGLPrimitiveQuad * primitive_array, int primitive_count, int render_flags)
     ADD ESP,0x10                        ; 0044c1f5
     PUSH 0x0                            ; 0044c1f8
         ;   Label: LAB_0044c1f8

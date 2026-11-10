@@ -2,14 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 15,
-    "complexity_score": 64,
+    "complexity_score": 79,
     "cross_reference_count": 0,
     "function_call_count": 1,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 9,
-    "suspect_count": 5,
+    "suspect_count": 6,
     "suspect_types": [
+      "unnamed_field",
       "unnamed_param"
     ],
     "total_lines": 24
@@ -25,13 +26,13 @@
     ],
     "convention": "unknown",
     "name": "core_construc.cpp_FUN_00438370",
-    "signature": "undefined4 core_construc_cpp_FUN_00438370(int param_1,undefined4 param_2)"
+    "signature": "ECollisionType core_construc_cpp_FUN_00438370(CCharacter *param_1,SCollisionInfo *param_2)"
   },
   "function_calls": [
     {
       "addr": "00427680",
       "is_variadic": false,
-      "name": "core_charactr.cpp_FUN_00427680"
+      "name": "core_charactr.cpp_CCharacter_getCollisionType_FUN_00427680"
     }
   ],
   "globals": [],
@@ -82,7 +83,7 @@
       "line": 2,
       "match": "param_1",
       "severity": "mild",
-      "text": "uint core_construc_cpp_FUN_00438370(int param_1,uint param_2)",
+      "text": "ECollisionType core_construc_cpp_FUN_00438370(CCharacter *param_1,SCollisionInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -90,7 +91,7 @@
       "line": 2,
       "match": "param_2",
       "severity": "mild",
-      "text": "uint core_construc_cpp_FUN_00438370(int param_1,uint param_2)",
+      "text": "ECollisionType core_construc_cpp_FUN_00438370(CCharacter *param_1,SCollisionInfo *param_2)",
       "type": "unnamed_param"
     },
     {
@@ -98,15 +99,23 @@
       "line": 7,
       "match": "param_1",
       "severity": "mild",
-      "text": "if (*(int *)(param_1 + 0x112d8) != 0) {",
+      "text": "if (*(int *)&param_1[1].model.field_0x5c4 != 0) {",
       "type": "unnamed_param"
+    },
+    {
+      "description": "Auto-generated struct field name",
+      "line": 7,
+      "match": "field_0x5c4",
+      "severity": "mild",
+      "text": "if (*(int *)&param_1[1].model.field_0x5c4 != 0) {",
+      "type": "unnamed_field"
     },
     {
       "description": "Unnamed function parameter",
       "line": 10,
       "match": "param_1",
       "severity": "mild",
-      "text": "uVar1 = core_charactr_cpp_FUN_00427680(param_1,param_2);",
+      "text": "EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680(param_1,param_2);",
       "type": "unnamed_param"
     },
     {
@@ -114,7 +123,7 @@
       "line": 10,
       "match": "param_2",
       "severity": "mild",
-      "text": "uVar1 = core_charactr_cpp_FUN_00427680(param_1,param_2);",
+      "text": "EVar1 = core_charactr_cpp_CCharacter_getCollisionType_FUN_00427680(param_1,param_2);",
       "type": "unnamed_param"
     }
   ],

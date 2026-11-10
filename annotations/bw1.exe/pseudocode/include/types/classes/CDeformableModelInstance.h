@@ -2,15 +2,33 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CDeformableModel;
+struct CVector3i;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/classes/CBoundingBox3D.h"
+#include "types/classes/CMotionController.h"
+#include "types/classes/CVector3f.h"
 
 // Structure: CDeformableModelInstance
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x23a4 (9124 bytes)
 #pragma pack(push, 1)
 typedef struct CDeformableModelInstance {
-    char field_0[9124]; // 0x0
+    CMotionController base; // 0x0
+    float scale_factor; // 0x54
+    CVector3f bone_origins[100]; // 0x58
+    CVector3f root_offset_scale; // 0x508
+    float rest_bone_scales[100]; // 0x514
+    char field_1700[7292]; // 0x6a4
+    int cached_skinned_lod_index; // 0x2320
+    struct CVector3i* skinned_vertices_buffer; // 0x2324
+    CBoundingBox3D bounding_box; // 0x2328
+    int bone_update_mode; // 0x2340, 0=simple_flat,1=hierarchical_accum,2=hierarchical_restpose
+    CVector3f accumulated_root_motion; // 0x2344
+    char model_name[80]; // 0x2350
+    struct CDeformableModel* model_ptr; // 0x23a0
 } CDeformableModelInstance;
 #pragma pack(pop)
 

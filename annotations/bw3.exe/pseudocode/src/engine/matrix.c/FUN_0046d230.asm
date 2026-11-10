@@ -5,13 +5,13 @@
 ;
 ;
 ; XREF[8]:
+;   core_fire.cpp_CFireball_setupRenderState_FUN_004995a0 at 00499601
 ;   core_fire.cpp_CPopcorn_render_FUN_004a0cd0 at 004a0d5c
-;   core_fire.cpp_FUN_00496c60 at 00496cc1
-;   core_fire.cpp_FUN_00497f70 at 0049800b
+;   core_fire.cpp_CRainDrop_render_FUN_004a1040 at 004a10cf
+;   core_fire.cpp_CSmokeParticle_setupRenderState_FUN_00496c60 at 00496cc1
+;   core_fire.cpp_CSpark_setupRenderState_FUN_00497f70 at 0049800b
 ;   core_fire.cpp_FUN_00498a10 at 00498aab
-;   core_fire.cpp_FUN_004995a0 at 00499601
-;   core_fire.cpp_FUN_004a1040 at 004a10cf
-;   core_flame.cpp_FUN_004a6090 at 004a61a8
+;   core_flame.cpp_CFlame_renderTransparent_FUN_004a6090 at 004a61a8
 ;   core_gore.cpp_CBloodParticle_setupRenderState_FUN_004ccaf0 at 004ccb51
 ;
 ; Called Functions:

@@ -11,7 +11,7 @@
 ; undefined1       Stack[-0x133]:1  local_133
 ;
 ; XREF[5]:
-;   core_charactr.cpp_FUN_0042c7f0 at 0042c94e
+;   core_charactr.cpp_CCharacter_archive_FUN_0042c7f0 at 0042c94e
 ;   core_health.cpp_CHealthItem_archive_FUN_004ea480 at 004ea4f0
 ;   core_hostage.cpp_CHostage_archive_FUN_004ef020 at 004ef1ba
 ;   core_keyactor.cpp_CKeyActor_archive_FUN_004fc6f0 at 004fc74c

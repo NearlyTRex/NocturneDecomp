@@ -1,18 +1,18 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 sound_sndmain_cpp_FUN_005516ce(undefined4 *param_1)
+; undefined4 sound_sndmain_cpp_FUN_005516ce(char *param_1)
 ;
 ;
 ; Referenced Globals:
 ;   undefined4 DAT_02641920
 ;
 ; Called Functions:
+;   sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840
 ;   sound_sndmain.cpp_CSfxSample_freeMemory_FUN_0054d9b0
-;   sound_sndmain.cpp_FUN_0054d840
+;   sound_sndmain.cpp_freeSampleByName_FUN_00551950
 ;   sound_sndmain.cpp_FUN_0054fd90
 ;   sound_sndmain.cpp_FUN_00551440
-;   sound_sndmain.cpp_FUN_00551950
 ;   sound_sndmain.cpp_lockSound_FUN_005532f0
 ;
 ; *****************************************************************************
@@ -31,8 +31,8 @@ section .text
         ;   XREF to: 005532f0 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_lockSound_FUN_005532f0()
     PUSH 0x1                            ; 005516e3
     PUSH ESI                            ; 005516e5
-    CALL sound_sndmain.cpp_FUN_00551950 ; 005516e6
-        ;   XREF to: 00551950 (UNCONDITIONAL_CALL)  ; undefined sound_sndmain.cpp_FUN_00551950()
+    CALL sound_sndmain.cpp_freeSampleByName_FUN_00551950 ; 005516e6
+        ;   XREF to: 00551950 (UNCONDITIONAL_CALL)  ; void sound_sndmain.cpp_freeSampleByName_FUN_00551950(char * sample_name, int kill_active_slots)
     ADD ESP,0x8                         ; 005516eb
     XOR ECX,ECX                         ; 005516ee
     XOR EBP,EBP                         ; 005516f0
@@ -101,8 +101,8 @@ section .text
     ADD ESP,0x8                         ; 005517b3
     PUSH EBP                            ; 005517b6
     MOV dword ptr [EBP + 0x168],EAX     ; 005517b7
-    CALL sound_sndmain.cpp_FUN_0054d840 ; 005517bd
-        ;   XREF to: 0054d840 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_FUN_0054d840(CSfxSample * this_ptr)
+    CALL sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840 ; 005517bd
+        ;   XREF to: 0054d840 (UNCONDITIONAL_CALL)  ; int sound_sndmain.cpp_CSfxSample_allocateHwSample_FUN_0054d840(CSfxSample * this_ptr)
     ADD ESP,0x4                         ; 005517c2
     TEST EAX,EAX                        ; 005517c5
     JZ 0x005517de                       ; 005517c7

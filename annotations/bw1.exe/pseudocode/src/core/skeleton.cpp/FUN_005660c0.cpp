@@ -17,9 +17,7 @@ float core_skeleton_cpp_FUN_005660c0(int param_1,int param_2,uint param_3,uint p
   int iVar4;
   byte bVar5;
   float afStackY_1034 [997];
-  byte local_84 [40];
-  float local_5c;
-  float local_58;
+  CDemonTriangle local_84;
   float local_4c;
   float local_48 [4];
   uint local_38;
@@ -71,20 +69,20 @@ float core_skeleton_cpp_FUN_005660c0(int param_1,int param_2,uint param_3,uint p
         do {
           puVar1 = (ushort *)(*(int *)(local_2c + 0x7c) + local_1c);
           core_dtri_cpp_CDemonTriangle_buildCollision_FUN_0048fed0
-                    ((CDemonTriangle *)local_84,(CVector3f *)(&DAT_026a0b9c + (uint)*puVar1 * 0xc),
+                    (&local_84,(CVector3f *)(&DAT_026a0b9c + (uint)*puVar1 * 0xc),
                      (CVector3f *)(&DAT_026a0b9c + (uint)puVar1[1] * 0xc),
                      (CVector3f *)(&DAT_026a0b9c + (uint)puVar1[2] * 0xc));
           local_18 = (float)core_dtri_cpp_rayTriangleIntersection_FUN_0048ff40();
           if (((local_18 < local_20) && (0.0 <= local_18)) && (local_18 <= 1.0)) {
-            local_4c = -(float)local_84._36_4_;
-            local_48[0] = -local_5c;
-            local_48[1] = -local_58;
+            local_4c = -local_84.normal.x;
+            local_48[0] = -local_84.normal.y;
+            local_48[1] = -local_84.normal.z;
             local_20 = local_18;
-            local_48[2] = -(float)local_84._36_4_;
+            local_48[2] = -local_84.normal.x;
             local_48[(uint)bVar5 * -2 + 3] = local_48[(uint)bVar5 * -2];
             local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 4] =
                  local_48[(uint)bVar5 * -2 + (uint)bVar5 * -2 + 1];
-            if (&stack0x00000000 != &g_DeformableModelPool[0].field_0x2c) {
+            if ((int *)&stack0x00000000 != g_DeformableModelPool[0].vertex_count) {
               _DAT_026b82a8 = local_48[2];
               _DAT_026b82ac = local_48[3];
               _DAT_026b82b0 = local_38;

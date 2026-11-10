@@ -9,9 +9,9 @@
 // Address: 004e0b10
 void __cdecl setAmbientLightLevel(int light_level);
 
-// Original: engine_light.cpp_FUN_004e0b3e
+// Original: engine_light.cpp_getAmbientLightLevel_FUN_004e0b3e
 // Address: 004e0b3e
-undefined4 FUN_004e0b3e(void);
+undefined4 getAmbientLightLevel(void);
 
 // Original: engine_light.cpp_setDirectionalLightVector_FUN_004e0b50
 // Address: 004e0b50

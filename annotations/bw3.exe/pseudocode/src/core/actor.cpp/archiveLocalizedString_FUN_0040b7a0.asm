@@ -11,10 +11,10 @@
 ; undefined1       Stack[-0x133]:1  local_133
 ;
 ; XREF[4]:
-;   core_charactr.cpp_FUN_0042b450 at 0042b5ae
-;   core_health.cpp_FUN_004d1fe0 at 004d2059
+;   core_charactr.cpp_CCharacter_archive_FUN_0042b450 at 0042b5ae
+;   core_health.cpp_CHealthItem_archive_FUN_004d1fe0 at 004d2059
 ;   core_keyactor.cpp_CKeyActor_archive_FUN_004dea10 at 004dea6c
-;   core_weapon.cpp_FUN_0057b2a0 at 0057b333
+;   core_weapon.cpp_CWeapon_archive_FUN_0057b2a0 at 0057b333
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_LOCALIZE_005b5ae1

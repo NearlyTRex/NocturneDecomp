@@ -11,7 +11,7 @@ void core_cow_cpp_factoryFuncZombieCow_FUN_00448370(void)
 {
   CZombieCow *this_ptr;
   
-  this_ptr = (CZombieCow *)FUN_005c0f32(0xc29c);
+  this_ptr = (CZombieCow *)debugAllocTracked1(0xc29c);
   if (this_ptr == (CZombieCow *)0x0) {
     return;
   }

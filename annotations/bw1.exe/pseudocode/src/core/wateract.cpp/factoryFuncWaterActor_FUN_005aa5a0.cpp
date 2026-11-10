@@ -11,7 +11,7 @@ void core_wateract_cpp_factoryFuncWaterActor_FUN_005aa5a0(void)
 {
   CWaterActor *this_ptr;
   
-  this_ptr = (CWaterActor *)FUN_005c0f32(0x2b238);
+  this_ptr = (CWaterActor *)debugAllocTracked1(0x2b238);
   if (this_ptr == (CWaterActor *)0x0) {
     return;
   }

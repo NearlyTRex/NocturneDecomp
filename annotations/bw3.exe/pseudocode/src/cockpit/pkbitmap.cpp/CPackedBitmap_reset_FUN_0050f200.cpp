@@ -9,9 +9,9 @@
 void __cdecl cockpit_pkbitmap_cpp_CPackedBitmap_reset_FUN_0050f200(CPackedBitmap *this_ptr)
 
 {
-  *(uint *)&this_ptr->field_0x18 = 0;
-  *(uint *)&this_ptr->field_0x1c = 0;
-  *(uint *)&this_ptr->field_0x20 = 0;
-  *(uint *)&this_ptr->field_0x14 = 0;
+  this_ptr->width = 0;
+  this_ptr->height = 0;
+  this_ptr->row_offsets = (int *)0x0;
+  this_ptr->packed_data = (ushort *)0x0;
   return;
 }

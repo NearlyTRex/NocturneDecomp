@@ -2,13 +2,13 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 46,
-    "complexity_score": 175,
+    "complexity_score": 165,
     "cross_reference_count": 7,
     "function_call_count": 5,
     "global_count": 1,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 25,
-    "suspect_count": 14,
+    "suspect_count": 13,
     "suspect_types": [
       "unnamed_field",
       "warning_overlapping_globals"
@@ -75,7 +75,7 @@
     {
       "addr": "005a4880",
       "is_variadic": false,
-      "name": "core_basicnpc.cpp_FUN_005a4880"
+      "name": "core_basicnpc.cpp_CBasicNPC_processStates_FUN_005a4880"
     },
     {
       "addr": "005478b0",
@@ -256,7 +256,7 @@
       "line": 12,
       "match": "field_0x2b0",
       "severity": "mild",
-      "text": "*(byte **)&pCVar2->field_0x2b0 = &g_CBasicNPCVTable;",
+      "text": "*(CBasicEnemy_full_vtable **)&this_ptr_00->field_0x2b0 = &g_CBasicNPCVTable;",
       "type": "unnamed_field"
     },
     {
@@ -264,7 +264,7 @@
       "line": 14,
       "match": "field_0x2b4",
       "severity": "mild",
-      "text": "((CDeformableModelInstance *)&pCVar2->field_0x2b4,(char *)0x5f03f4);",
+      "text": "((CDeformableModelInstance *)&this_ptr_00->field_0x2b4,(char *)0x5f03f4);",
       "type": "unnamed_field"
     },
     {
@@ -272,7 +272,7 @@
       "line": 15,
       "match": "field_0x3434",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x3434 = 0x3f800000;",
+      "text": "*(uint *)&this_ptr_00->field_0x3434 = 0x3f800000;",
       "type": "unnamed_field"
     },
     {
@@ -280,7 +280,7 @@
       "line": 16,
       "match": "field_0x1134c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x1134c = 0x3f800000;",
+      "text": "*(uint *)&this_ptr_00->field_0x1134c = 0x3f800000;",
       "type": "unnamed_field"
     },
     {
@@ -288,7 +288,7 @@
       "line": 17,
       "match": "field_0x11380",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x11380 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11380 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -296,7 +296,7 @@
       "line": 18,
       "match": "field_0x11384",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x11384 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11384 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -304,7 +304,7 @@
       "line": 19,
       "match": "field_0x11388",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x11388 = 1;",
+      "text": "*(uint *)&this_ptr_00->field_0x11388 = 1;",
       "type": "unnamed_field"
     },
     {
@@ -312,7 +312,7 @@
       "line": 20,
       "match": "field_0x1138c",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x1138c = 1;",
+      "text": "*(uint *)&this_ptr_00->field_0x1138c = 1;",
       "type": "unnamed_field"
     },
     {
@@ -320,7 +320,7 @@
       "line": 22,
       "match": "field_0x11394",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x11394 = 0;",
+      "text": "*(uint *)&this_ptr_00->field_0x11394 = 0;",
       "type": "unnamed_field"
     },
     {
@@ -328,7 +328,7 @@
       "line": 23,
       "match": "field_0x11344",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x11344 = 2;",
+      "text": "*(uint *)&this_ptr_00->field_0x11344 = 2;",
       "type": "unnamed_field"
     },
     {
@@ -336,7 +336,7 @@
       "line": 24,
       "match": "field_0x11370",
       "severity": "mild",
-      "text": "*(uint *)&pCVar2->field_0x11370 = uVar1;",
+      "text": "*(uint *)&this_ptr_00->field_0x11370 = uVar1;",
       "type": "unnamed_field"
     },
     {
@@ -344,15 +344,7 @@
       "line": 26,
       "match": "field_0x10af8",
       "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059d990(&pCVar2->field_0x10af8,\"Animation\");",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 27,
-      "match": "field_0x10af8",
-      "severity": "mild",
-      "text": "unkaddr_0059d350_cpp_FUN_0059dc80(&pCVar2->field_0x10af8);",
+      "text": "unkaddr_0059d350_cpp_FUN_0059d990(&this_ptr_00->field_0x10af8);",
       "type": "unnamed_field"
     }
   ],

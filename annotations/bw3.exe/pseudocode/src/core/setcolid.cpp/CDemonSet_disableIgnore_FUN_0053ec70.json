@@ -1,0 +1,121 @@
+{
+  "compile_source": "cpp",
+  "complexity": {
+    "assembly_lines": 4,
+    "complexity_score": 5,
+    "cross_reference_count": 3,
+    "function_call_count": 0,
+    "global_count": 0,
+    "max_suspect_severity": "clean",
+    "pseudocode_lines": 5,
+    "suspect_count": 0,
+    "suspect_types": [],
+    "total_lines": 9
+  },
+  "cross_references": [
+    {
+      "addr": "0055ff40",
+      "from_addr": "00560620",
+      "name": "core_sound.cpp_CSound_process_FUN_0055ff40",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0055f6ae",
+      "from_addr": "0055f712",
+      "name": "core_sound.cpp_FUN_0055f6ae",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0057d1a0",
+      "from_addr": "0057d300",
+      "name": "core_weather.cpp_FUN_0057d1a0",
+      "type": "UNCONDITIONAL_CALL"
+    }
+  ],
+  "function": {
+    "address": "0053ec70",
+    "address_range": [
+      [
+        "0053ec70",
+        "0053ec7e"
+      ]
+    ],
+    "convention": "__cdecl",
+    "name": "core_setcolid.cpp_CDemonSet_disableIgnore_FUN_0053ec70",
+    "signature": "void __cdecl core_setcolid_cpp_CDemonSet_disableIgnore_FUN_0053ec70(CDemonSet *this_ptr)"
+  },
+  "function_calls": [],
+  "globals": [],
+  "param_estimates": {
+    "call_site_count": 3,
+    "call_sites": [
+      {
+        "call_addr": "00560620",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_CSound_process_FUN_0055ff40",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0057d300",
+        "call_type": "direct",
+        "caller": "core_weather.cpp_FUN_0057d1a0",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      },
+      {
+        "call_addr": "0055f712",
+        "call_type": "direct",
+        "caller": "core_sound.cpp_FUN_0055f6ae",
+        "estimated_params": 1,
+        "instructions_analyzed": 0,
+        "method": "add_esp",
+        "reg_params": [],
+        "stack_bytes": 4,
+        "stack_params": 1
+      }
+    ],
+    "confidence": "high",
+    "declared_params": 1,
+    "declared_stack_bytes": 4,
+    "estimated_params": 1,
+    "matches_declared": true
+  },
+  "pcode_summary": {
+    "avg_pcode_per_instr": 3.0,
+    "instruction_count": 3,
+    "opcode_distribution": {
+      "COPY": 2,
+      "INT_ADD": 3,
+      "LOAD": 2,
+      "RETURN": 1,
+      "STORE": 1
+    },
+    "pcode_op_count": 9
+  },
+  "stack_frame": {
+    "frame_size": 8,
+    "local_size": 4,
+    "param_offset": 4,
+    "param_size": 4,
+    "return_addr_offset": 0,
+    "variables": [
+      {
+        "is_param": true,
+        "name": "this_ptr",
+        "offset": 4,
+        "size": 4,
+        "type": "CDemonSet *"
+      }
+    ]
+  },
+  "suspects": []
+}

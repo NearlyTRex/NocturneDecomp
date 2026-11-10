@@ -13,11 +13,11 @@
 ; undefined4       Stack[-0x8]:4  local_8
 ;
 ; XREF[2]:
+;   core_fire.cpp_CFireEffect_createBulletImpact_FUN_0049cd50 at 0049ce9f
 ;   core_fire.cpp_CFireEffect_createSmokeParticle_FUN_0049d230 at 0049d27c
-;   core_fire.cpp_FUN_0049cd50 at 0049ce9f
 ;
 ; Called Functions:
-;   core_actor.cpp_FUN_0040cf60
+;   core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60
 ;
 ; *****************************************************************************
 
@@ -53,8 +53,8 @@ section .text
     MOV dword ptr [EBX + 0x18],0x0      ; 0049354b
     PUSH 0x3f733333                     ; 00493552
     MOV dword ptr [EBX + 0x14],EAX      ; 00493557
-    CALL core_actor.cpp_FUN_0040cf60    ; 0049355a
-        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; undefined core_actor.cpp_FUN_0040cf60()
+    CALL core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60 ; 0049355a
+        ;   XREF to: 0040cf60 (UNCONDITIONAL_CALL)  ; float core_actor.cpp_getRandomFloatFromRange_FUN_0040cf60(float min_value, float max_value)
     MOV dword ptr [ESP + 0x8],EAX       ; 0049355f
     FLD float ptr [ESP + 0x8]           ; 00493563
     ADD ESP,0x8                         ; 00493567

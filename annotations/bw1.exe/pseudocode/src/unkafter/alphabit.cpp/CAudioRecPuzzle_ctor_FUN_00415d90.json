@@ -2,16 +2,15 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 31,
-    "complexity_score": 75,
+    "complexity_score": 40,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "mild",
     "pseudocode_lines": 15,
-    "suspect_count": 5,
+    "suspect_count": 2,
     "suspect_types": [
-      "negative_offset",
-      "unnamed_field"
+      "negative_offset"
     ],
     "total_lines": 46
   },
@@ -119,44 +118,20 @@
   },
   "suspects": [
     {
-      "description": "Auto-generated struct field name",
-      "line": 13,
-      "match": "field_0xc",
-      "severity": "mild",
-      "text": "iVar1 = __arrinit(&pCVar2[4].field_0xc,0x32,&g_buttonStructTypeInfo);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Negative struct offset (wrong base type)",
       "line": 17,
       "match": "pCVar3[-8].",
       "severity": "mild",
-      "text": "*(byte ***)&pCVar3[-8].field_0x16c = &g_CAudioRecPuzzleVTable;",
+      "text": "*(byte ***)(pCVar3[-8].model_name + 0xf4) = &g_CAudioRecPuzzleVTable;",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 17,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "*(byte ***)&pCVar3[-8].field_0x16c = &g_CAudioRecPuzzleVTable;",
-      "type": "unnamed_field"
     },
     {
       "description": "Negative struct offset (wrong base type)",
       "line": 18,
       "match": "pCVar3[-8].",
       "severity": "mild",
-      "text": "return (CAudioRecPuzzle *)&pCVar3[-8].field_0x16c;",
+      "text": "return (CAudioRecPuzzle *)(pCVar3[-8].model_name + 0xf4);",
       "type": "negative_offset"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 18,
-      "match": "field_0x16c",
-      "severity": "mild",
-      "text": "return (CAudioRecPuzzle *)&pCVar3[-8].field_0x16c;",
-      "type": "unnamed_field"
     }
   ],
   "vtable_info": {

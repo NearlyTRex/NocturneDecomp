@@ -2,18 +2,17 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 42,
-    "complexity_score": 79,
+    "complexity_score": 43,
     "cross_reference_count": 1,
     "function_call_count": 4,
     "global_count": 0,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 19,
-    "suspect_count": 5,
+    "pseudocode_lines": 18,
+    "suspect_count": 2,
     "suspect_types": [
-      "stack_param",
-      "unnamed_field"
+      "stack_param"
     ],
-    "total_lines": 61
+    "total_lines": 60
   },
   "cross_references": [
     {
@@ -140,32 +139,8 @@
       "type": "stack_param"
     },
     {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x18 * *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 11,
-      "match": "field_0x1c",
-      "severity": "mild",
-      "text": "*(int *)&this_ptr->field_0x18 * *(int *)&this_ptr->field_0x1c);",
-      "type": "unnamed_field"
-    },
-    {
-      "description": "Auto-generated struct field name",
-      "line": 14,
-      "match": "field_0x18",
-      "severity": "mild",
-      "text": "(this_ptr,raw_bitmap_data,*(int *)&this_ptr->field_0x18);",
-      "type": "unnamed_field"
-    },
-    {
       "description": "Unresolved stack parameter",
-      "line": 16,
+      "line": 15,
       "match": "in_stack_00000014",
       "severity": "moderate",
       "text": "if (in_stack_00000014 != 0) {",

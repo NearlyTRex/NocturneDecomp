@@ -7,4 +7,4 @@
 
 // Original: core_lightgun.cpp_FUN_004e1070
 // Address: 004e1070
-undefined4 FUN_004e1070(CDemonActor *param_1);
+undefined4 FUN_004e1070(CCharacter *param_1);

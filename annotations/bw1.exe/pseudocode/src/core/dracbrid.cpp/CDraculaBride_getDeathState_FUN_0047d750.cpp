@@ -11,11 +11,11 @@ EDeathState __cdecl core_dracbrid_cpp_CDraculaBride_getDeathState_FUN_0047d750(C
 {
   SMotion *pSVar1;
   
-  if (*(int *)&this_ptr->field_0x70 == 2) {
+  if ((this_ptr->base).base.base.lifecycle_state == ACTOR_DESTROYED) {
     return DEATH_STATE_DEAD;
   }
   pSVar1 = core_motion_cpp_CMotionController_getCurrentMotion_FUN_00524770
-                     ((CMotionController *)&this_ptr->field_0x158);
+                     (&(this_ptr->base).base.model.base);
   switch(*(uint *)(pSVar1 + 0x24)) {
   case 7:
   case 10:

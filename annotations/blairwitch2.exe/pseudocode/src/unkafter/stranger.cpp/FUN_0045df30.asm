@@ -1,7 +1,7 @@
 ; *****************************************************************************
 ;                               FUNCTION
 ; *****************************************************************************
-; undefined4 unkafter_stranger_cpp_FUN_0045df30(int param_1)
+; undefined4 unkafter_stranger_cpp_FUN_0045df30(CCharacter *param_1)
 ;
 ; Local Variables:
 ; undefined4       Stack[-0xc]:4  local_c
@@ -10,7 +10,7 @@
 ;   core_doc.cpp_FUN_00450c60 at 004514f1
 ;
 ; Called Functions:
-;   core_charactr.cpp_FUN_0042a5a0
+;   core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0
 ;   core_motion.cpp_FUN_005035c0
 ;
 ; *****************************************************************************
@@ -54,8 +54,8 @@ section .text
     PUSH 0x0                            ; 0045df86
         ;   Label: LAB_0045df86
     PUSH ESI                            ; 0045df88
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 0045df89
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 0045df89
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 0045df8e
     FLD float ptr [ESP + 0x8]           ; 0045df92
     FLD1                                ; 0045df96
@@ -67,8 +67,8 @@ section .text
         ;   XREF to: 0045dfc3 (CONDITIONAL_JUMP)  ; LAB_0045dfc3
     PUSH 0x2                            ; 0045dfa2
     PUSH ESI                            ; 0045dfa4
-    CALL core_charactr.cpp_FUN_0042a5a0 ; 0045dfa5
-        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; undefined core_charactr.cpp_FUN_0042a5a0()
+    CALL core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0 ; 0045dfa5
+        ;   XREF to: 0042a5a0 (UNCONDITIONAL_CALL)  ; float core_charactr.cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(CCharacter * this_ptr, int state_index)
     MOV dword ptr [ESP + 0x8],EAX       ; 0045dfaa
     FLD float ptr [ESP + 0x8]           ; 0045dfae
     FLD1                                ; 0045dfb2

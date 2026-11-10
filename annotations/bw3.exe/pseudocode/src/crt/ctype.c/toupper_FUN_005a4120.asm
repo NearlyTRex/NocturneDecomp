@@ -9,14 +9,14 @@
 ; XREF[16]:
 ;   core_event.cpp_FUN_0048c2e0 at 0048c4fc
 ;   core_fldnotes.cpp_FUN_004aa810 at 004aab71
-;   core_game.cpp_FUN_004bb100 at 004bb233
+;   core_game.cpp_CGame_processCheatCodes_FUN_004bb100 at 004bb233
 ;   core_game.cpp_checkCheatCode_FUN_004baf50 at 004baf88
 ;   core_main.c_FUN_004e4400 at 004e4457
 ;   core_texlist.cpp_CTextureList_load_FUN_005690c0 at 00569288
 ;   crt_unknown.c_FUN_005a70dc at 005a70ec
+;   crt_unknown.c_FUN_005b1610 at 005b1631
 ;   engine_dosio.cpp_FUN_004659c0 at 004659fa
 ;   engine_keys.cpp_CKeys_getUppercasedInputKey_FUN_004df590 at 004df59b
-;   engine_model.c_loadModelFile_FUN_004f7f20 at 004f80cb
 ;   ... and 6 more
 ;
 ; *****************************************************************************

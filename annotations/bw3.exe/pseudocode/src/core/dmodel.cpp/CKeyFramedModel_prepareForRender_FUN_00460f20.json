@@ -2,16 +2,14 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 34,
-    "complexity_score": 25,
+    "complexity_score": 10,
     "cross_reference_count": 6,
     "function_call_count": 2,
     "global_count": 0,
-    "max_suspect_severity": "mild",
+    "max_suspect_severity": "clean",
     "pseudocode_lines": 10,
-    "suspect_count": 1,
-    "suspect_types": [
-      "unnamed_field"
-    ],
+    "suspect_count": 0,
+    "suspect_types": [],
     "total_lines": 44
   },
   "cross_references": [
@@ -19,6 +17,18 @@
       "addr": "00462540",
       "from_addr": "00462569",
       "name": "core_dmodel.cpp_CKeyFramedModelInstance_prepareForRendering_FUN_00462540",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "0049ad20",
+      "from_addr": "0049b00b",
+      "name": "core_fire.cpp_CBulletTrail_render_FUN_0049ad20",
+      "type": "UNCONDITIONAL_CALL"
+    },
+    {
+      "addr": "004a09f0",
+      "from_addr": "004a0acd",
+      "name": "core_fire.cpp_CShell_render_FUN_004a09f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -31,18 +41,6 @@
       "addr": "0049a2c0",
       "from_addr": "0049a36f",
       "name": "core_fire.cpp_FUN_0049a2c0",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "0049ad20",
-      "from_addr": "0049b00b",
-      "name": "core_fire.cpp_FUN_0049ad20",
-      "type": "UNCONDITIONAL_CALL"
-    },
-    {
-      "addr": "004a09f0",
-      "from_addr": "004a0acd",
-      "name": "core_fire.cpp_FUN_004a09f0",
       "type": "UNCONDITIONAL_CALL"
     },
     {
@@ -105,7 +103,7 @@
       {
         "call_addr": "0049b00b",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_0049ad20",
+        "caller": "core_fire.cpp_CBulletTrail_render_FUN_0049ad20",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -116,7 +114,7 @@
       {
         "call_addr": "004a0acd",
         "call_type": "direct",
-        "caller": "core_fire.cpp_FUN_004a09f0",
+        "caller": "core_fire.cpp_CShell_render_FUN_004a09f0",
         "estimated_params": 4,
         "instructions_analyzed": 0,
         "method": "add_esp",
@@ -213,14 +211,5 @@
       }
     ]
   },
-  "suspects": [
-    {
-      "description": "Auto-generated struct field name",
-      "line": 5,
-      "match": "field_0x110",
-      "severity": "mild",
-      "text": "if (*(int *)&this_ptr->field_0x110 < 1) {",
-      "type": "unnamed_field"
-    }
-  ]
+  "suspects": []
 }

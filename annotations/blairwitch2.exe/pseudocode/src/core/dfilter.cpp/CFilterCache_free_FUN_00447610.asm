@@ -8,7 +8,7 @@
 ;
 ; XREF[2]:
 ;   core_dfilter.cpp_CFilterCache_dtor_FUN_004475f0 at 004475f6
-;   core_set.cpp_FUN_0052d980 at 0052d9b8
+;   core_set.cpp_CDemonSet_initScene_FUN_0052d980 at 0052d9b8
 ;
 ; Called Functions:
 ;   core_dfilter.cpp_CDemonFilter_dtor_FUN_00447840

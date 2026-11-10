@@ -14,7 +14,8 @@ void core_doc_cpp_FUN_004501a2(void)
   char *in_EAX;
   CCharacter *unaff_EBX;
   char *pcVar3;
-  char *pcVar4;
+  char (*pacVar4) [40];
+  char *pcVar5;
   uint in_stack_00000140;
   uint in_stack_00000144;
   uint in_stack_00000148;
@@ -43,11 +44,9 @@ void core_doc_cpp_FUN_004501a2(void)
   *(uint *)&unaff_EBX[2].field_0x4198 = *(uint *)&unaff_EBX[2].field_0x4194;
   *(uint *)&unaff_EBX[2].field_0x41c0 = *(uint *)&unaff_EBX[2].field_0x41bc;
   *(uint *)&unaff_EBX[2].field_0x41b8 = *(uint *)&unaff_EBX[2].field_0x41b4;
-  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0
-            ((CDeformableModelInstance *)&unaff_EBX->field_0x2b4,(char *)0x5cfb87);
-  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480
-            ((CDeformableModelInstance *)&unaff_EBX->field_0x2b4);
-  *(uint *)&unaff_EBX->field_0x2d04 = 0;
+  core_skeleton_cpp_CDeformableModelInstance_init_FUN_005478b0(&unaff_EBX->model,(char *)0x5cfb87);
+  core_skeleton_cpp_CDeformableModelInstance_preCache_FUN_00547480(&unaff_EBX->model);
+  unaff_EBX->layer_action_index = 0;
   *(uint *)&unaff_EBX[2].field_0x41d8 = 0;
   *(uint *)&unaff_EBX[2].field_0x41f8 = 0;
   *(uint *)&unaff_EBX[2].field_0x41fc = 0;
@@ -61,51 +60,66 @@ void core_doc_cpp_FUN_004501a2(void)
   *(uint *)&unaff_EBX[2].field_0x41e4 = 0;
   *(uint *)&unaff_EBX[2].field_0x4230 = 0;
   *(uint *)&unaff_EBX[2].field_0x4238 = 0;
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0,1,"draw_L_standholster",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,1,2,"draw_L_holsterAim",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0,5,"draw_R_standScabbard",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,5,6,"draw_R_scabbardMelee",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,"draw_R_meleeAttack1",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,"draw_R_meleeAttack2",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,"draw_R_meleeAttack4",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,"draw_LR_meleeAttack3",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0xd,6,"draw_R_crossAttack1",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,7,7,"draw_holdCrate",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0,3,"draw_stand2coatPocket",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,1,3,"draw_holsters2CoatPocket",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0,4,"draw_stand2TossAim",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,4,0,"draw_tossAim2Stand",1);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,1,0x10,"draw_holsters2aimFlashlight",0);
-  core_charactr_cpp_FUN_0042a330(unaff_EBX,0x12,2,"draw_L_reload",1);
-  core_cloth_cpp_CClothList_add_FUN_005b15c0
-            ((CClothList *)&unaff_EBX->field_0x2d0c,"LAZ86CLOTH.cth");
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0,1,"draw_L_standholster",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,1,2,"draw_L_holsterAim",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0,5,"draw_R_standScabbard",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,5,6,"draw_R_scabbardMelee",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0xd,6,"draw_R_meleeAttack1",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0xd,6,"draw_R_meleeAttack2",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0xd,6,"draw_R_meleeAttack4",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0xd,6,"draw_LR_meleeAttack3",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0xd,6,"draw_R_crossAttack1",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,7,7,"draw_holdCrate",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0,3,"draw_stand2coatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,1,3,"draw_holsters2CoatPocket",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0,4,"draw_stand2TossAim",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,4,0,"draw_tossAim2Stand",1);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,1,0x10,"draw_holsters2aimFlashlight",0);
+  core_charactr_cpp_CCharacter_addLayerAction_FUN_0042a330
+            (unaff_EBX,0x12,2,"draw_L_reload",1);
+  core_cloth_cpp_CClothList_add_FUN_005b15c0(&unaff_EBX->cloth_list,"LAZ86CLOTH.cth");
   *(uint *)&unaff_EBX[2].field_0x42e8 = 0;
   *(uint *)&unaff_EBX[2].field_0x4298 = 0;
   *(uint *)&unaff_EBX[2].field_0x42cc = 0;
   *(uint *)&unaff_EBX[2].field_0x44f0 = 0;
-  pcVar3 = &unaff_EBX->field_0x2514;
-  pcVar4 = &unaff_EBX[2].field_0x42f0;
+  pcVar3 = &(unaff_EBX->model).field_0x2260;
+  pcVar5 = &unaff_EBX[2].field_0x42f0;
   do {
     cVar2 = *pcVar3;
-    *pcVar4 = cVar2;
+    *pcVar5 = cVar2;
     if (cVar2 == '\0') break;
     cVar2 = pcVar3[1];
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
+    pcVar5[1] = cVar2;
+    pcVar5 = pcVar5 + 2;
   } while (cVar2 != '\0');
-  pcVar3 = &unaff_EBX->field_0x2d10;
-  pcVar4 = &unaff_EBX[2].field_0x43f0;
+  pacVar4 = (unaff_EBX->cloth_list).filenames;
+  pcVar3 = &unaff_EBX[2].field_0x43f0;
   do {
-    cVar2 = *pcVar3;
-    *pcVar4 = cVar2;
+    cVar2 = (*pacVar4)[0];
+    *pcVar3 = cVar2;
     if (cVar2 == '\0') break;
-    cVar2 = pcVar3[1];
+    cVar2 = (*pacVar4)[1];
+    pacVar4 = (char (*) [40])(*pacVar4 + 2);
+    pcVar3[1] = cVar2;
     pcVar3 = pcVar3 + 2;
-    pcVar4[1] = cVar2;
-    pcVar4 = pcVar4 + 2;
   } while (cVar2 != '\0');
-  *(uint *)&unaff_EBX->field_0xfc = 1;
+  *(uint *)&(unaff_EBX->base).field_0xfc = 1;
   *(uint *)&unaff_EBX->field_0x10a28 = 0;
   if ((uint *)&unaff_EBX->field_0x10a0c != &stack0x00000140) {
     *(uint *)&unaff_EBX->field_0x10a0c = 0xbde76c8b;

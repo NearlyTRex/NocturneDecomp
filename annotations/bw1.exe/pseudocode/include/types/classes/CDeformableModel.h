@@ -2,15 +2,39 @@
 // fix the type in Ghidra or the generator, or the next export overwrites the change.
 #pragma once
 
+// Forward declarations
+struct CSkeleton;
+
 // Dependencies
 #include "system/basetypes.h"
+#include "types/structs/SInputFace.h"
+#include "types/structs/SLod.h"
+#include "types/structs/SVert.h"
 
 // Structure: CDeformableModel
-// Stub: size from Watcom RTTI, fields not yet recovered
 // Ghidra size: 0x3600 (13824 bytes)
 #pragma pack(push, 1)
 typedef struct CDeformableModel {
-    char field_0[13824]; // 0x0
+    int num_lods; // 0x0
+    SLod lod_info[5]; // 0x4
+    char field_9[35]; // 0x9
+    int vertex_count[5]; // 0x2c
+    struct SVert* vertex_data_ptr[5]; // 0x40
+    int tri_count[5]; // 0x54
+    int cap_tri_count[5]; // 0x68
+    struct SInputFace* tri_data_ptr[5]; // 0x7c
+    int* index_data_ptr[5]; // 0x90
+    int* cap_index_ptr[5]; // 0xa4
+    int num_texture_sets; // 0xb8
+    int num_textures; // 0xbc
+    char field_192[2880]; // 0xc0
+    int num_parts; // 0xc00
+    char field_3076[9784]; // 0xc04
+    int bone_to_part_map[100]; // 0x323c
+    int farthest_child_bone[100]; // 0x33cc
+    char model_name[80]; // 0x355c
+    struct CSkeleton* skeleton_ptr; // 0x35ac
+    char model_filename[80]; // 0x35b0
 } CDeformableModel;
 #pragma pack(pop)
 

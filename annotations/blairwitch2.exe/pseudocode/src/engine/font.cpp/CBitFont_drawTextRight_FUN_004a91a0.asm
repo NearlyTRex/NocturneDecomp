@@ -12,10 +12,10 @@
 ; char *           Stack[0x18]:4   text
 ;
 ; XREF[1]:
-;   cockpit_drawsurf.cpp_FUN_00467f70 at 00468089
+;   cockpit_drawsurf.cpp_CDrawSurface_drawTextWithAlignment_FUN_00467f70 at 00468089
 ;
 ; Called Functions:
-;   engine_font.cpp_FUN_004a90b0
+;   engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0
 ;   engine_font.cpp_FUN_004aaf00
 ;
 ; *****************************************************************************
@@ -44,8 +44,8 @@ section .text
     LEA EAX,[EDX + 0x1]                 ; 004a91ca
     PUSH EAX                            ; 004a91cd
     PUSH ESI                            ; 004a91ce
-    CALL engine_font.cpp_FUN_004a90b0   ; 004a91cf
-        ;   XREF to: 004a90b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_FUN_004a90b0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
+    CALL engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0 ; 004a91cf
+        ;   XREF to: 004a90b0 (UNCONDITIONAL_CALL)  ; int engine_font.cpp_CBitFont_drawTextWrapper_FUN_004a90b0(CBitFont * this_ptr, int x, int y, int color_mode, ...)
     ADD ESP,0x18                        ; 004a91d4
     POP ESI                             ; 004a91d7
     POP EBX                             ; 004a91d8

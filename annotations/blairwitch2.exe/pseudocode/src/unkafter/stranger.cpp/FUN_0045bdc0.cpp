@@ -20,19 +20,18 @@ void unkafter_stranger_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2)
   int iVar5;
   byte bVar6;
   CVector3f *apCStackY_1060 [1013];
-  uint local_78;
   uint local_6c;
-  uint local_68;
-  uint local_64;
-  uint local_60;
+  uint local_68 [2];
+  CVector3f local_60;
   uint local_54;
+  CVector3f *apCStack_50 [4];
   CVector3f *local_40;
   int local_3c;
   int local_38;
   int local_34;
   CMotionController *local_30;
   int local_2c;
-  int local_28;
+  float local_28;
   CInventory *local_24;
   int local_20;
   int local_1c;
@@ -40,9 +39,9 @@ void unkafter_stranger_cpp_FUN_0045bdc0(CCharacter *param_1,float param_2)
   float local_14;
   
   bVar6 = 0;
-  if ((*(int *)&param_1->field_0x2d04 == 9) && (*(int *)&param_1->field_0x2698 == 0)) {
-    *(uint *)&param_1->field_0x2d08 = 0;
-    *(uint *)&param_1->field_0x2d04 = 0;
+  if ((param_1->layer_action_index == 9) && (*(int *)&param_1->field_0x2698 == 0)) {
+    param_1->layer_action_t = 0.0;
+    param_1->layer_action_index = 0;
   }
   local_3c = -1;
   local_1c = 0;
@@ -73,9 +72,9 @@ LAB_0045c19d:
     *(uint *)&param_1[2].field_0x4180 = 0;
   }
 LAB_0045be11:
-  local_24 = (CInventory *)&param_1[2].field_0x2ebc;
-  local_30 = (CMotionController *)&param_1->field_0x2b4;
-  local_40 = (CVector3f *)&param_1->field_0x20;
+  local_24 = (CInventory *)(param_1[2].cloth_list.cloths + 7);
+  local_30 = (CMotionController *)&param_1->model;
+  local_40 = (CVector3f *)&(param_1->base).field_0x20;
   local_34 = 0;
   do {
     if (param_2 <= 0.0) {
@@ -101,7 +100,7 @@ LAB_0045be77:
       }
       else if (iVar5 == 3) {
         local_18 = 4;
-        local_14 = (float)core_charactr_cpp_FUN_0042a5a0(param_1,4);
+        local_14 = core_charactr_cpp_CCharacter_getLayerActionBlendWeight_FUN_0042a5a0(param_1,4);
         iVar5 = local_18;
         if ((float)_DAT_005d0657 < local_14) {
           fVar1 = param_2 * (float)_DAT_005d064f + *(float *)&param_1[2].field_0x4190;
@@ -109,24 +108,24 @@ LAB_0045be77:
           if (0x428C0000 < fVar1) {
             *(float *)&param_1[2].field_0x4190 = 0x428C0000;
           }
-          if (*(int *)&param_1[1].field_0x14 != 0) {
+          if (*(int *)(param_1[1].base.actor_name + 0x14) != 0) {
             return;
           }
           iVar5 = 0;
         }
       }
       else {
-        pCVar3 = core_inv_cpp_FUN_004dccb0(local_24);
+        pCVar3 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(local_24);
         if ((pCVar3 == (CLightGun *)0x0) || (*(int *)&param_1[2].field_0x4128 != 0)) {
-          pCVar3 = core_inv_cpp_FUN_004dccb0(local_24);
+          pCVar3 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(local_24);
           if ((pCVar3 == (CLightGun *)0x0) || (*(int *)&param_1[2].field_0x4128 != 1)) {
-            pCVar3 = core_inv_cpp_FUN_004dccb0(local_24);
+            pCVar3 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(local_24);
             if ((pCVar3 == (CLightGun *)0x0) && (*(int *)&param_1[2].field_0x4128 == 2)) {
               local_18 = 8;
               iVar5 = local_18;
             }
             else {
-              pCVar3 = core_inv_cpp_FUN_004dccb0(local_24);
+              pCVar3 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(local_24);
               if ((pCVar3 == (CLightGun *)0x0) && (*(int *)&param_1[2].field_0x4128 == 1)) {
                 local_18 = 3;
                 iVar5 = local_18;
@@ -308,40 +307,40 @@ switchD_0045c465_caseD_3:
       iVar5 = local_18;
     }
     local_18 = iVar5;
-    local_28 = *(int *)&param_1->field_0x2d08;
+    local_28 = param_1->layer_action_t;
     local_20 = core_charactr_cpp_CCharacter_advanceLayerAction_FUN_0042a0c0
                          (param_1,&param_2,local_18);
-    iVar5 = *(int *)(&param_1->field_0x2860 + *(int *)&param_1->field_0x2d04 * 0x38) * 0x118;
-    pCVar2 = core_motion_cpp_FUN_00503860(local_30);
-    switch(*(uint *)&param_1->field_0x2d04) {
+    iVar5 = *(int *)(param_1->layer_actions + param_1->layer_action_index * 0x38 + 0x2c) * 0x118;
+    pCVar2 = core_motion_cpp_CMotionController_getMotionList_FUN_00503860(local_30);
+    switch(param_1->layer_action_index) {
     case 4:
     case 5:
     case 6:
-      if (((local_28 < 0x3e99999a) && (0x3e999999 < *(int *)&param_1->field_0x2d08)) &&
+      if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&
          (iVar5 = *(int *)&param_1[2].field_0x41d8, iVar5 != 0)) {
         (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);
       }
-      if (((local_28 < 0x3ecccccd) && (0x3ecccccc < *(int *)&param_1->field_0x2d08)) &&
+      if ((((int)local_28 < 0x3ecccccd) && (0x3ecccccc < (int)param_1->layer_action_t)) &&
          (iVar5 = *(int *)&param_1[2].field_0x41d8, iVar5 != 0)) {
         (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);
       }
-      if (((local_28 < 0x3f000000) && (0x3effffff < *(int *)&param_1->field_0x2d08)) &&
+      if ((((int)local_28 < 0x3f000000) && (0x3effffff < (int)param_1->layer_action_t)) &&
          (iVar5 = *(int *)&param_1[2].field_0x41d8, iVar5 != 0)) {
         (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);
       }
       break;
     case 7:
-      if (((local_28 < 0x3f333333) && (0x3f333332 < *(int *)&param_1->field_0x2d08)) &&
+      if ((((int)local_28 < 0x3f333333) && (0x3f333332 < (int)param_1->layer_action_t)) &&
          (iVar5 = *(int *)&param_1[2].field_0x41d8, iVar5 != 0)) {
         (**(code **)(*(int *)(iVar5 + 0x2b0) + 0x80))(iVar5,2);
       }
-      if ((local_28 < 0x3e99999a) && (0x3e999999 < *(int *)&param_1->field_0x2d08)) {
+      if (((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) {
         core_sound_cpp_CSound_playActorSound_FUN_0055ae50
-                  (0x0264B290,(CDemonActor *)param_1,"axeswing0?.wav",local_40);
+                  (0x0264B290,&param_1->base,"axeswing0?.wav",local_40);
       }
       break;
     case 8:
-      if (((local_28 < 0x3e99999a) && (0x3e999999 < *(int *)&param_1->field_0x2d08)) &&
+      if ((((int)local_28 < 0x3e99999a) && (0x3e999999 < (int)param_1->layer_action_t)) &&
          (iVar5 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                             (*(uint *)&param_1[2].field_0x41d8,g_CCrossClassInfo.name_hash),
          iVar5 != 0)) {
@@ -353,50 +352,49 @@ switchD_0045c465_caseD_3:
                  core_actor_cpp_castToClassHash_FUN_0040c8f0
                            (*(uint *)&param_1[2].field_0x41d8,g_CDynamiteClassInfo.name_hash);
       if (((this_ptr != (CDynamite *)0x0) &&
-          (iVar4 = core_dynamite_cpp_FUN_0047a1a0(this_ptr), iVar4 == 0)) &&
+          (iVar4 = core_dynamite_cpp_CDynamite_isFuseLit_FUN_0047a1a0(this_ptr), iVar4 == 0)) &&
          (local_14 = (float)(0xb / (longlong)*(int *)(pCVar2 + iVar5 + 0x1c8c)),
-         (float)(int)local_14 <= *(float *)&param_1->field_0x2d08)) {
-        core_dynamite_cpp_FUN_0047a150(this_ptr);
+         (float)(int)local_14 <= param_1->layer_action_t)) {
+        core_dynamite_cpp_CDynamite_lightFuse_FUN_0047a150(this_ptr);
       }
       break;
     case 0xd:
       if ((*(int *)&param_1[2].field_0x41e4 == 3) &&
          (local_14 = (float)(0xb / (longlong)*(int *)(pCVar2 + iVar5 + 0x1c8c)),
-         (float)(int)local_14 <= *(float *)&param_1->field_0x2d08)) {
+         (float)(int)local_14 <= param_1->layer_action_t)) {
         unkafter_stranger_cpp_FUN_0045bba0(param_1);
-        local_60 = local_78;
-        *(uint *)((int)&stack0xffffffa4 + (uint)bVar6 * 0xfffffffe * 4) =
-             *(uint *)(&stack0xffffff8c + (uint)bVar6 * -8);
-        *(uint *)(&stack0xffffffa8 + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-             *(uint *)(&stack0xffffff90 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
+        *(uint *)((int)&local_60 + (uint)bVar6 * -8 + 4) =
+             *(uint *)(&stack0xffffff8c + (uint)bVar6 * 0xfffffff8);
+        *(uint *)((int)&local_60 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 8) =
+             *(uint *)((int)apCStack_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 0xffffffe0);
         local_38 = core_actor_cpp_castToClassHash_FUN_0040c8f0
                              (*(uint *)&param_1[2].field_0x41d8,g_CDynamiteClassInfo.name_hash
                              );
         local_2c = local_38;
         if (local_38 != 0) {
-          core_actor_cpp_FUN_00408cf0(param_1,&stack0xffffffa0);
+          core_actor_cpp_FUN_00408cf0(param_1,&local_60);
           local_6c = local_54;
-          *(uint *)((int)&stack0xffffff98 + (uint)bVar6 * -8) =
-               *(uint *)(&stack0xffffffb0 + (uint)bVar6 * -8);
-          *(uint *)((int)&stack0xffffff9c + (uint)bVar6 * -8 + (uint)bVar6 * -8) =
-               *(uint *)(&stack0xffffffb4 + (uint)bVar6 * -8 + (uint)bVar6 * -8);
-          if ((uint *)(local_2c + 0x6d8) != &stack0xffffff94) {
+          *(CVector3f **)((int)apCStack_50 + (uint)bVar6 * -8 + 0xffffffe8) =
+               apCStack_50[(uint)bVar6 * -2];
+          *(CVector3f **)((int)apCStack_50 + (uint)bVar6 * -8 + (uint)bVar6 * -8 + 0xffffffec) =
+               apCStack_50[(uint)bVar6 * -2 + (uint)bVar6 * -2 + 1];
+          if ((uint *)(local_2c + 0x6d8) != &local_6c) {
             *(uint *)(local_2c + 0x6d8) = local_6c;
-            *(uint *)(local_2c + 0x6dc) = local_68;
-            *(uint *)(local_2c + 0x6e0) = local_64;
+            *(uint *)(local_2c + 0x6dc) = local_68[0];
+            *(uint *)(local_2c + 0x6e0) = local_68[1];
           }
           (**(code **)(*(int *)(local_38 + 0x2b0) + 0xec))(local_38);
           *(uint *)&param_1[2].field_0x41d8 = 0;
         }
         if (*(int *)&param_1->field_0x2698 != 0) {
-          (**(code **)(*(int *)&param_1->field_0x2b0 + 0x130))(param_1,1,&stack0xffffffa0);
+          (*(((param_1->base).vtable._uc)->_uc).dropCarriedObject)(param_1,1,&local_60);
         }
         *(uint *)&param_1[2].field_0x41e4 = 0;
         *(uint *)&param_1[2].field_0x4190 = 0x41200000;
       }
-      if (1.0 <= *(float *)&param_1->field_0x2d08) {
-        *(uint *)&param_1->field_0x2d04 = 0;
-        *(uint *)&param_1->field_0x2d08 = 0;
+      if (1.0 <= param_1->layer_action_t) {
+        param_1->layer_action_index = 0;
+        param_1->layer_action_t = 0.0;
       }
     }
     if (-1 < local_20) {
@@ -482,8 +480,8 @@ LAB_0045bfdc:
             core_charactr_cpp_FUN_00428b10(param_1,1,*(uint *)&param_1[2].field_0x415c,0,0);
             *(uint *)&param_1[2].field_0x41d8 = 0;
             *(uint *)&param_1[2].field_0x4180 = 0;
-            *(uint *)&param_1->field_0x2d04 = 2;
-            *(uint *)&param_1->field_0x2d08 = 0;
+            param_1->layer_action_index = 2;
+            param_1->layer_action_t = 0.0;
           }
         }
         core_motion_cpp_CMotionController_setDesiredState_FUN_00503620(local_30,0x14,1);
@@ -491,7 +489,7 @@ LAB_0045bfdc:
         *(uint *)&param_1[2].field_0x415c = 0;
       }
       if (local_20 == 8) {
-        pCVar3 = core_inv_cpp_FUN_004dccb0(local_24);
+        pCVar3 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(local_24);
         if (pCVar3 == (CLightGun *)0x0) {
 LAB_0045c087:
           *(uint *)&param_1[2].field_0x4128 = 1;
@@ -501,29 +499,26 @@ LAB_0045c087:
         }
       }
       else if ((local_20 == 3) && (*(int *)&param_1[2].field_0x4128 < 2)) {
-        pCVar3 = core_inv_cpp_FUN_004dccb0(local_24);
+        pCVar3 = core_inv_cpp_CInventory_getActiveLightGun_FUN_004dccb0(local_24);
         if (pCVar3 != (CLightGun *)0x0) goto LAB_0045c087;
         *(uint *)&param_1[2].field_0x4128 = 0;
       }
       if ((*(int *)&param_1[2].field_0x41e4 == 7) && (local_20 == 6)) {
         *(uint *)&param_1[2].field_0x41e4 = 0;
       }
-      if ((((3 < *(int *)&param_1->field_0x2d04) && (*(int *)&param_1->field_0x2d04 < 9)) &&
-          (*(int *)&param_1[2].field_0x41e4 == 0)) && (*(int *)&param_1->field_0x2d08 == 0x3f800000)
-         ) {
-        *(uint *)&param_1->field_0x2d04 = 3;
-        *(uint *)&param_1->field_0x2d08 = 0x3f800000;
+      if ((((3 < param_1->layer_action_index) && (param_1->layer_action_index < 9)) &&
+          (*(int *)&param_1[2].field_0x41e4 == 0)) && (param_1->layer_action_t == 1.0)) {
+        param_1->layer_action_index = 3;
+        param_1->layer_action_t = 1.0;
       }
-      if (((*(int *)&param_1->field_0x2d04 == 0) &&
-          ((*(uint *)&param_1->field_0x2d08 & 0x7fffffff) == 0)) &&
+      if (((param_1->layer_action_index == 0) && (ABS(param_1->layer_action_t) == 0.0)) &&
          (*(int *)&param_1[2].field_0x4180 == 0)) {
-        *(uint *)&param_1->field_0x2d04 = 2;
-        *(uint *)&param_1->field_0x2d08 = 0;
+        param_1->layer_action_index = 2;
+        param_1->layer_action_t = 0.0;
       }
-      if ((*(int *)&param_1->field_0x2d04 == 0xf) && (*(int *)&param_1->field_0x2d08 == 0x3f800000))
-      {
-        *(uint *)&param_1->field_0x2d04 = 1;
-        *(uint *)&param_1->field_0x2d08 = 0x3f800000;
+      if ((param_1->layer_action_index == 0xf) && (param_1->layer_action_t == 1.0)) {
+        param_1->layer_action_index = 1;
+        param_1->layer_action_t = 1.0;
       }
       core_charactr_cpp_CCharacter_chooseNextLayerAction_FUN_0042a620(param_1,local_18);
     }

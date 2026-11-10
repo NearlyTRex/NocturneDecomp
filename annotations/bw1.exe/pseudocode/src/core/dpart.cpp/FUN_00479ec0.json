@@ -2,18 +2,18 @@
   "compile_source": "cpp",
   "complexity": {
     "assembly_lines": 32,
-    "complexity_score": 175,
+    "complexity_score": 185,
     "cross_reference_count": 1,
     "function_call_count": 1,
     "global_count": 1,
     "max_suspect_severity": "moderate",
-    "pseudocode_lines": 15,
+    "pseudocode_lines": 25,
     "suspect_count": 15,
     "suspect_types": [
       "unaffected_reg",
       "warning_overlapping_globals"
     ],
-    "total_lines": 47
+    "total_lines": 57
   },
   "cross_references": [
     {
@@ -101,7 +101,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 8,
+      "line": 13,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "CDemonPart *unaff_EBX;",
@@ -109,7 +109,7 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 10,
+      "line": 15,
       "match": "unaff_EBX",
       "severity": "moderate",
       "text": "core_dpart_cpp_CDemonPart_calculateFaceNormals_FUN_00479ba0(unaff_EBX);",
@@ -117,98 +117,98 @@
     },
     {
       "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x36c) = (float)*(int *)(unaff_EBX + 0x354) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 12,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x36c) = (float)*(int *)(unaff_EBX + 0x354) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x370) = (float)*(int *)(unaff_EBX + 0x358) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 13,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x370) = (float)*(int *)(unaff_EBX + 0x358) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x374) = (float)*(int *)(unaff_EBX + 0x35c) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 14,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x374) = (float)*(int *)(unaff_EBX + 0x35c) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x378) = (float)*(int *)(unaff_EBX + 0x360) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 15,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x378) = (float)*(int *)(unaff_EBX + 0x360) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x37c) = (float)*(int *)(unaff_EBX + 0x364) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
-      "line": 16,
-      "match": "unaff_EBX",
-      "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x37c) = (float)*(int *)(unaff_EBX + 0x364) * fVar1;",
-      "type": "unaffected_reg"
-    },
-    {
-      "description": "Unaffected register variable",
       "line": 17,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x380) = (float)*(int *)(unaff_EBX + 0x368) * fVar1;",
+      "text": "iVar1 = (unaff_EBX->bbox3).y;",
       "type": "unaffected_reg"
     },
     {
       "description": "Unaffected register variable",
-      "line": 17,
+      "line": 18,
       "match": "unaff_EBX",
       "severity": "moderate",
-      "text": "*(float *)(unaff_EBX + 0x380) = (float)*(int *)(unaff_EBX + 0x368) * fVar1;",
+      "text": "iVar2 = (unaff_EBX->bbox3).z;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 19,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "iVar3 = (unaff_EBX->bbox4).x;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 20,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "iVar4 = (unaff_EBX->bbox4).y;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 21,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "iVar5 = (unaff_EBX->bbox4).z;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox1_float).x = (float)(unaff_EBX->bbox3).x * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 22,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox1_float).x = (float)(unaff_EBX->bbox3).x * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 23,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox1_float).y = (float)iVar1 * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 24,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox1_float).z = (float)iVar2 * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 25,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox2_float).x = (float)iVar3 * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 26,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox2_float).y = (float)iVar4 * fVar6;",
+      "type": "unaffected_reg"
+    },
+    {
+      "description": "Unaffected register variable",
+      "line": 27,
+      "match": "unaff_EBX",
+      "severity": "moderate",
+      "text": "(unaff_EBX->bbox2_float).z = (float)iVar5 * fVar6;",
       "type": "unaffected_reg"
     }
   ]

@@ -5,7 +5,7 @@
 ;
 ;
 ; XREF[1]:
-;   core_menu.cpp_FUN_0050cc90 at 0050d01e
+;   core_menu.cpp_showMainGameMenu_FUN_0050cc90 at 0050d01e
 ;
 ; Referenced Globals:
 ;   TerminatedCString s_Nocturne_R_Debug_editor_005e7085
@@ -23,7 +23,7 @@
 ;   engine_special.cpp_clearScreen_FUN_0057dc40
 ;   shape_edittool.cpp_CEditorTools_displayMemoryDiagnostics_FUN_00498e40
 ;   shape_edittool.cpp_CEditorTools_showMessage_FUN_004942e0
-;   wincore_wddvmem.cpp_FUN_005acff0
+;   wincore_wddvmem.cpp_swapBuffers_FUN_005acff0
 ;   wincore_winrun.cpp_getNextKeypress_FUN_005b2510
 ;
 ; *****************************************************************************
@@ -59,8 +59,8 @@ section .text
     CALL engine_2d.c_drawText_FUN_00401fe0 ; 005031ff
         ;   XREF to: 00401fe0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_drawText_FUN_00401fe0(char * text, int x, int y)
     ADD ESP,0xc                         ; 00503204
-    CALL wincore_wddvmem.cpp_FUN_005acff0 ; 00503207
-        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_FUN_005acff0()
+    CALL wincore_wddvmem.cpp_swapBuffers_FUN_005acff0 ; 00503207
+        ;   XREF to: 005acff0 (UNCONDITIONAL_CALL)  ; void wincore_wddvmem.cpp_swapBuffers_FUN_005acff0()
     CALL engine_2d.c_clearInputAndWait_FUN_004032b0 ; 0050320c
         ;   XREF to: 004032b0 (UNCONDITIONAL_CALL)  ; void engine_2d.c_clearInputAndWait_FUN_004032b0()
     CALL wincore_winrun.cpp_getNextKeypress_FUN_005b2510 ; 00503211

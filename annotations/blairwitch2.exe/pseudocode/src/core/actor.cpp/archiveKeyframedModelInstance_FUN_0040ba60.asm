@@ -8,16 +8,16 @@
 ; undefined1       Stack[-0xcf]:1  local_cf
 ;
 ; XREF[30]:
-;   core_ammo.cpp_FUN_0040e1b0 at 0040e1ca
-;   core_ammobox.cpp_FUN_0040e860 at 0040e87a
-;   core_anvil.cpp_FUN_0040ecc0 at 0040ecda
-;   core_backgnd.cpp_FUN_0040f4d0 at 0040f4ea
-;   core_bat.cpp_FUN_00411110 at 0041118e
-;   core_battery.cpp_FUN_004148b0 at 004148ca
-;   core_boxactor.cpp_FUN_0041c7f0 at 0041c814
-;   core_bugs.cpp_FUN_0041f7c0 at 0041f849
-;   core_crate.cpp_FUN_0043a1d0 at 0043a1ea
-;   core_door.cpp_FUN_0045ff80 at 0045ff9b
+;   core_ammo.cpp_CAmmo_archive_FUN_0040e1b0 at 0040e1ca
+;   core_ammobox.cpp_CAmmoBox_archive_FUN_0040e860 at 0040e87a
+;   core_anvil.cpp_CAnvil_archive_FUN_0040ecc0 at 0040ecda
+;   core_backgnd.cpp_CBackgroundActor_archive_FUN_0040f4d0 at 0040f4ea
+;   core_bat.cpp_CBat_archive_FUN_00411110 at 0041118e
+;   core_battery.cpp_CBattery_archive_FUN_004148b0 at 004148ca
+;   core_boxactor.cpp_CBoxActor_archive_FUN_0041c7f0 at 0041c814
+;   core_bugs.cpp_CBugs_archive_FUN_0041f7c0 at 0041f849
+;   core_crate.cpp_CCrate_archive_FUN_0043a1d0 at 0043a1ea
+;   core_door.cpp_CDoor_archive_FUN_0045ff80 at 0045ff9b
 ;   ... and 20 more
 ;
 ; Referenced Globals:

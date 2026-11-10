@@ -11,7 +11,7 @@ void core_litecone_cpp_factoryFuncLightCone_FUN_004e4160(void)
 {
   CLightCone *this_ptr;
   
-  this_ptr = (CLightCone *)FUN_005b8be2(0x388);
+  this_ptr = (CLightCone *)debugAllocTracked1(0x388);
   if (this_ptr == (CLightCone *)0x0) {
     return;
   }

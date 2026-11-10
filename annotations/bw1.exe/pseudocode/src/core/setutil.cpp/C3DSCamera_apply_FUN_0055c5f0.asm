@@ -19,7 +19,7 @@
 ;   CConsole g_CConsoleInstance
 ;   undefined4 DAT_01d1d400
 ;   undefined4 DAT_01d1d404
-;   undefined4 g_CDemonSetInstance.field1364304_0x14d150
+;   undefined4 g_CDemonSetInstance.min_ambient_value
 ;
 ; Called Functions:
 ;   core_dcamera.cpp_CDemonCamera_setEffectIntensity_FUN_00453540
@@ -84,7 +84,7 @@ section .text
     MOV EAX,[0x00622c18]                ; 0055c66a | g_CDemonSetPtr
     FLD float ptr [EBX + 0x148]         ; 0055c66f
     ADD ESP,0x8                         ; 0055c675
-    FCOMP float ptr [EAX + 0x14d150]    ; 0055c678 | g_CDemonSetInstance.field1364304_0x14d150
+    FCOMP float ptr [EAX + 0x14d150]    ; 0055c678 | g_CDemonSetInstance.min_ambient_value
     FNSTSW AX                           ; 0055c67e
     SAHF                                ; 0055c680
     JNC 0x0055c697                      ; 0055c681
