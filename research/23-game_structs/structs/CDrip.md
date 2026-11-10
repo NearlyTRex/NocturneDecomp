@@ -1,0 +1,41 @@
+# CDrip
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 828 | fields | 828 |
+| nocturne | 820 | fields | 820 |
+| bw1 | 828 | fields | 828 |
+| blairwitch2 | 1176 | fields | 1176 |
+| bw3 | 828 | fields | 828 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `model` | `CKeyFramedModelInstance` | 0x158 | 0x150 | 0x158 | 0x2b4 | 0x158 |
+| `type` | `EDripType` | 0x2d4 | 0x2cc | 0x2d4 | 0x430 | 0x2d4 |
+| `auto_drop` | `int` | 0x2d8 | 0x2d0 | 0x2d8 | 0x434 | 0x2d8 |
+| `drip_timer` | `float` | 0x2dc | 0x2d4 | 0x2dc | 0x438 | 0x2dc |
+| `min_auto_drip_time` | `float` | 0x2e0 | 0x2d8 | 0x2e0 | 0x43c | 0x2e0 |
+| `max_auto_drip_time` | `float` | 0x2e4 | 0x2dc | 0x2e4 | 0x440 | 0x2e4 |
+| `drip_radius` | `float` | 0x2e8 | 0x2e0 | 0x2e8 | 0x444 | 0x2e8 |
+| `is_ground_cached` | `int` | 0x2ec | 0x2e4 | 0x2ec | 0x448 | 0x2ec |
+| `ground_y` | `float` | 0x2f0 | 0x2e8 | 0x2f0 | 0x44c | 0x2f0 |
+| `dead` | `int` | 0x2f4 | 0x2ec | 0x2f4 | 0x450 | 0x2f4 |
+| `home_pos` | `CVector3f` | 0x2f8 | 0x2f0 | 0x2f8 | 0x454 | 0x2f8 |
+| `vel` | `CVector3f` | 0x304 | 0x2fc | 0x304 | 0x460 | 0x304 |
+| `damage` | `float` | 0x310 | 0x308 | 0x310 | 0x46c | 0x310 |
+| `hit_sound` | `char[32]` | 0x314 | 0x30c | 0x314 | 0x470 | 0x314 |
+| `no_rock_flag` | `int` | 0x334 | 0x32c | 0x334 | 0x490 | 0x334 |
+| `is_visible` | `int` | 0x338 | 0x330 | 0x338 | 0x494 | 0x338 |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **blairwitch2**: 0x158+0x15c

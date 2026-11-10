@@ -1,0 +1,31 @@
+# SLaserInfo
+
+Category `/Nocturne/Struct/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 84 | fields | 84 |
+| nocturne | 84 | fields | 84 |
+| bw1 | unsized | placeholder | — |
+| blairwitch2 | unsized | placeholder | — |
+| bw3 | unsized | placeholder | — |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `intensity` | `float` | 0x0 | 0x0 |  |  |  |
+| `beam_width` | `float` | 0x4 | 0x4 |  |  |  |
+| `laser_type` | `int` | 0x8 | 0x8 |  |  |  |
+| `color` | `CColor3i` | 0xc | 0xc |  |  |  |
+| `is_hero_weapon` | `int` | 0x18 | 0x18 |  |  |  |
+| `is_damaging` | `int` | 0x1c | 0x1c |  |  |  |
+| `local_origin` | `CVector3f` | 0x20 | 0x20 |  |  |  |
+| `local_hit_position` | `CVector3f` | 0x2c | 0x2c |  |  |  |
+| `local_normal` | `CVector3f` | 0x38 | 0x38 |  |  |  |
+| `incidence_angle` | `float` | 0x44 | 0x44 |  |  |  |
+| `reflectivity` | `float` | 0x48 | 0x48 |  |  |  |
+| `stored_angle` | `float` | 0x4c | 0x4c |  |  |  |
+| `transparency` | `float` | 0x50 | 0x50 |  |  |  |

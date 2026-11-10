@@ -21,6 +21,11 @@ def write_json(path, doc):
     return str(path)
 
 
+# A `this_ptr` parameter of type `kind`, as an exported function record lists it
+def this_param(kind):
+    return {"name": "this_ptr", "type": kind}
+
+
 # One exported function record, `size` bytes long
 def function(addr, name, size = 0x10, **extra):
     return {"addr": f"{addr:08x}", "name": name,

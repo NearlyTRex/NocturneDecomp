@@ -86,8 +86,11 @@ def fixture_builds(monkeypatch, tmp_path):
 
 def test_main_writes_the_tree_methods_and_classes(builds, capsys):
     out_dir = builds["tmp"] / "out"
+    names = write_json(builds["tmp"] / "names.json", {"slots": [
+        {"program": "dst.exe", "class": "CBox", "slot": 4, "name": "kick", "ret": "int",
+         "params": [{"name": "force", "type": "float"}], "basis": "Plays \"kick_<name>.wav\"."}]})
     ahr.main(["--reference", "ref.exe", "--contract", f"dst.exe={builds['contract']}",
-              "--sigs", f"dst.exe={builds['sigs']}", "--out-dir", str(out_dir)])
+              "--sigs", f"dst.exe={builds['sigs']}", "--out-dir", str(out_dir), "--slot-names", names])
     assert f"wrote 4 files to {out_dir}: 5 classes, 4 reference methods, 2 new slots" in capsys.readouterr().out
 
     tree = (out_dir / "hierarchy.md").read_text()
@@ -101,8 +104,10 @@ def test_main_writes_the_tree_methods_and_classes(builds, capsys):
     assert "| `process` | `void process(float delta_time)` | 1 | 2H | dst u1 |" in methods
     assert "| `edit` | `? edit()` | 2 | — | — |" in methods
     assert "| `open` | `int open(? ?)` | 3 | 3M | dst u1 |" in methods
-    assert "| dst | 1 | `00411f00` | core_actor.cpp | CDemonActor |" in methods
-    assert "| dst | 4 | `00411050` | core_box.cpp | CBox |" in methods
+    assert "| dst | 1 | — | `00411f00` | core_actor.cpp | CDemonActor |" in methods
+    assert "| dst | 4 | `kick` | `00411050` | core_box.cpp | CBox |" in methods
+    # The names file is rendered whole, as the baseline for later names.
+    assert "| dst | CBox | 4 | `int kick(float force)` | Plays \"kick_&lt;name&gt;.wav\". |" in methods
 
     classes = (out_dir / "classes.md").read_text()
     assert "## CBox\n\n- **ref**: parent CDemonActor, 4 slots; overrides open, setup\n" in classes

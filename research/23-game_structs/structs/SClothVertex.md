@@ -1,0 +1,35 @@
+# SClothVertex
+
+Category `/Nocturne/Struct/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 284 | fields | 284 |
+| nocturne | 284 | fields | 284 |
+| bw1 | 284 | placeholder | 284 |
+| blairwitch2 | 284 | placeholder | 284 |
+| bw3 | 284 | placeholder | 284 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `position` | `CVector3f` | 0x0 | 0x0 |  |  |  |
+| `force` | `CVector3f` | 0xc | 0xc |  |  |  |
+| `velocity` | `CVector3f` | 0x18 | 0x18 |  |  |  |
+| `secondary_velocity` | `CVector3f` | 0x24 | 0x24 |  |  |  |
+| `connected_count` | `int` | 0x30 | 0x30 |  |  |  |
+| `connected_indices` | `int[16]` | 0x34 | 0x34 |  |  |  |
+| `locked` | `int` | 0x74 | 0x74 |  |  |  |
+| `rest_lengths` | `float[16]` | 0x78 | 0x78 |  |  |  |
+| `body_collision` | `int` | 0xb8 | 0xb8 |  |  |  |
+| `floor_collision` | `int` | 0xbc | 0xbc |  |  |  |
+| `offset_pos` | `CVector3f` | 0xc0 | 0xc0 |  |  |  |
+| `prev_position` | `CVector3f` | 0xcc | 0xcc |  |  |  |
+| `collide_bone_index` | `int` | 0xd8 | 0xd8 |  |  |  |
+| `bone_influence_count` | `int` | 0xdc | 0xdc |  |  |  |
+| `bone_index` | `int[3]` | 0xe0 | 0xe0 |  |  |  |
+| `bone_positions` | `CVector3f[3]` | 0xec | 0xec |  |  |  |
+| `bone_weights` | `float[3]` | 0x110 | 0x110 |  |  |  |

@@ -1,0 +1,54 @@
+# CDemonActor
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 344 | fields | 344 |
+| nocturne | 336 | fields | 336 |
+| bw1 | 344 | fields | 344 |
+| blairwitch2 | 692 | fields | 692 |
+| bw3 | 344 | fields | 344 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `actor_name` | `char[32]` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `location` | `CLocation` | 0x20 | 0x20 | 0x20 |  | 0x20 |
+| `orient` | `UOrientationVector` | 0x30 | 0x30 | 0x30 | 0x30 | 0x30 |
+| `orient_matrix` | `CMatrix3x3f` | 0x3c | 0x3c | 0x3c | 0x3c | 0x3c |
+| `runtime_state` | `int` | 0x60 | 0x60 | 0x60 | 0x60 | 0x60 |
+| `health` | `int` | 0x64 | 0x64 | 0x64 | 0x64 | 0x64 |
+| `validation_magic` | `uintptr_t` | 0x68 | 0x68 | 0x68 | 0x68 | 0x68 |
+| `direction_hint` | `int` | 0x6c | 0x6c | 0x6c | 0x6c | 0x6c |
+| `lifecycle_state` | `EActorLifecycleState` | 0x70 | 0x70 | 0x70 | 0x70 | 0x70 |
+| `create_prob` | `float` | 0x74 | 0x74 | 0x74 | 0x74 | 0x74 |
+| `create_event` | `char[100]` | 0x78 | 0x78 | 0x78 |  | 0x78 |
+| `standing_platform` | `CPlatform*` | 0xdc | 0xdc | 0xdc |  | 0xdc |
+| `platform_position_delta` | `CVector3f` | 0xe0 | 0xe0 | 0xe0 |  | 0xe0 |
+| `platform_orientation_delta` | `CVector3f` | 0xec | 0xec | 0xec |  | 0xec |
+| `is_renderable` | `int` | 0xf8 | 0xf8 | 0xf8 |  | 0xf8 |
+| `is_transparent` | `int` | 0xfc | 0xfc | 0xfc |  | 0xfc |
+| `collision_disabled` | `int` | 0x100 | 0x100 | 0x100 |  | 0x100 |
+| `process_disabled` | `int` | 0x104 | 0x104 | 0x104 |  | 0x104 |
+| `scale` | `CVector3i` | 0x108 | 0x108 | 0x108 |  | 0x108 |
+| `blood_effect_timer` | `int` | 0x114 | 0x114 | 0x114 |  | 0x114 |
+| `blood_effect_color` | `uint` | 0x118 | 0x118 | 0x118 |  | 0x118 |
+| `footstep_sound_code` | `char[4]` | 0x11c | 0x11c | 0x11c |  | 0x11c |
+| `dead1` | `int` | 0x120 | 0x120 | 0x120 |  | 0x120 |
+| `dead2` | `int` | 0x124 | 0x124 | 0x124 |  | 0x124 |
+| `previous_transform_state` | `CDemonActorTransformState` | 0x128 | 0x128 | 0x128 |  | 0x128 |
+| `render_needs_update` | `int` | 0x144 |  | 0x144 |  | 0x144 |
+| `is_editor_hidden` | `int` | 0x148 |  | 0x148 |  | 0x148 |
+| `next_actor` | `CDemonActor*` | 0x14c | 0x144 | 0x14c |  | 0x14c |
+| `prev_actor` | `CDemonActor*` | 0x150 | 0x148 | 0x150 |  | 0x150 |
+| `vtable` | `UActorVTable` | 0x154 | 0x14c | 0x154 | 0x2b0 | 0x154 |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **blairwitch2**: 0x20+0x10, 0x78+0x238

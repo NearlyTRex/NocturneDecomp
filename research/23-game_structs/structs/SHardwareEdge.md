@@ -1,0 +1,29 @@
+# SHardwareEdge
+
+Category `/Nocturne/Struct/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 56 | fields | — |
+| nocturne | 56 | fields | — |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne |
+|---|---|---:|---:|
+| `y_min` | `int` | 0x0 | 0x0 |
+| `y_max` | `int` | 0x4 | 0x4 |
+| `x_current` | `int` | 0x8 | 0x8 |
+| `x_gradient` | `int` | 0xc | 0xc |
+| `red_current` | `int` | 0x10 | 0x10 |
+| `red_gradient` | `int` | 0x14 | 0x14 |
+| `u_current` | `int` | 0x18 | 0x18 |
+| `u_gradient` | `int` | 0x1c | 0x1c |
+| `v_current` | `int` | 0x20 | 0x20 |
+| `v_gradient` | `int` | 0x24 | 0x24 |
+| `depth_current` | `int` | 0x28 | 0x28 |
+| `depth_gradient` | `int` | 0x2c | 0x2c |
+| `alpha_current` | `int` | 0x30 | 0x30 |
+| `alpha_gradient` | `int` | 0x34 | 0x34 |

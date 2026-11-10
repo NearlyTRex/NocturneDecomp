@@ -1,0 +1,39 @@
+# SMotion
+
+Category `/Nocturne/Struct/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 1356 | fields | — |
+| nocturne | 1356 | fields | — |
+| bw1 | unsized | placeholder | — |
+| bw3 | unsized | placeholder | — |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | bw3 |
+|---|---|---:|---:|---:|---:|
+| `motion_name` | `char[32]` | 0x0 | 0x0 |  |  |
+| `fps` | `float` | 0x20 | 0x20 |  |  |
+| `state_index` | `int` | 0x24 | 0x24 |  |  |
+| `exit_forward_from_frame` | `int` | 0x28 | 0x28 |  |  |
+| `unused1` | `int` | 0x2c | 0x2c |  |  |
+| `exit_forward_cmd` | `int` | 0x30 | 0x30 |  |  |
+| `exit_forward_to_motion` | `int` | 0x34 | 0x34 |  |  |
+| `exit_forward_to_frame` | `float` | 0x38 | 0x38 |  |  |
+| `exit_forward_tween_time` | `float` | 0x3c | 0x3c |  |  |
+| `exit_forward_set_new_state` | `int` | 0x40 | 0x40 |  |  |
+| `unused2` | `char[12]` | 0x44 | 0x44 |  |  |
+| `exit_backward_to_motion` | `int` | 0x50 | 0x50 |  |  |
+| `exit_backward_to_frame` | `float` | 0x54 | 0x54 |  |  |
+| `unused3` | `char[8]` | 0x58 | 0x58 |  |  |
+| `frame_start` | `int` | 0x60 | 0x60 |  |  |
+| `frame_count` | `int` | 0x64 | 0x64 |  |  |
+| `transition_count` | `int` | 0x68 | 0x68 |  |  |
+| `transitions` | `SMotionTransition[45]` | 0x6c | 0x6c |  |  |
+| `signal_count` | `int` | 0x4a4 | 0x4a4 |  |  |
+| `signals` | `SMotionSignal[15]` | 0x4a8 | 0x4a8 |  |  |
+| `marker_count` | `int` | 0x520 | 0x520 |  |  |
+| `markers` | `int[10]` | 0x524 | 0x524 |  |  |

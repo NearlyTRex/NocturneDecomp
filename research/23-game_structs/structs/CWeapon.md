@@ -1,0 +1,45 @@
+# CWeapon
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 1400 | fields | 1400 |
+| nocturne | 1392 | fields | 1392 |
+| bw1 | 1400 | fields | 1400 |
+| blairwitch2 | 1748 | fields | 1748 |
+| bw3 | 1428 | fields | 1428 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `model` | `CKeyFramedModelInstance` | 0x158 | 0x150 | 0x158 | 0x2b4 | 0x158 |
+| `weapon_state` | `EWeaponState` | 0x2d4 | 0x2cc | 0x2d4 | 0x430 | 0x2d4 |
+| `is_spread_weapon` | `int` | 0x2d8 | 0x2d0 | 0x2d8 | 0x434 | 0x2d8 |
+| `fire_mode` | `EFireMode` | 0x2dc | 0x2d4 | 0x2dc | 0x438 | 0x2dc |
+| `weapon_type` | `EWeaponType` | 0x2e0 | 0x2d8 | 0x2e0 | 0x43c | 0x2e0 |
+| `can_penetrate` | `int` | 0x2e4 | 0x2dc | 0x2e4 | 0x440 | 0x2e4 |
+| `bolt_velocity` | `float` | 0x2e8 | 0x2e0 | 0x2e8 | 0x444 | 0x2e8 |
+| `fire_cooldown` | `int` | 0x2ec | 0x2e4 | 0x2ec | 0x448 | 0x2ec |
+| `can_attach_light` | `int` | 0x2f0 | 0x2e8 | 0x2f0 | 0x44c | 0x2f0 |
+| `muzzle_flash_color` | `CColor3i` | 0x2f4 | 0x2ec | 0x2f4 | 0x450 | 0x2f4 |
+| `fire_cooldown_timer` | `float` | 0x300 | 0x2f8 | 0x300 | 0x45c | 0x300 |
+| `carried_by_actor` | `CDemonActor*` | 0x304 | 0x2fc | 0x304 | 0x460 | 0x304 |
+| `physics_box` | `CBox` | 0x308 | 0x300 | 0x308 | 0x464 | 0x308 |
+| `ground_height` | `float` | 0x560 | 0x558 | 0x560 | 0x6bc |  |
+| `weight` | `float` | 0x564 | 0x55c | 0x564 | 0x6c0 |  |
+| `ammo_count` | `int` | 0x568 | 0x560 | 0x568 | 0x6c4 |  |
+| `ammo_type` | `EAmmoType` | 0x56c | 0x564 | 0x56c | 0x6c8 |  |
+| `sim_timer` | `float` | 0x570 | 0x568 | 0x570 | 0x6cc | 0x580 |
+| `is_rendered` | `int` | 0x574 | 0x56c | 0x574 | 0x6d0 | 0x584 |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **blairwitch2**: 0x158+0x15c
+- **bw3**: 0x560+0x20, 0x588+0xc

@@ -1,0 +1,42 @@
+# CCurtain
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 416568 | fields | 416568 |
+| nocturne | 416560 | fields | 416560 |
+| bw1 | 416568 | fields | 416568 |
+| bw3 | 416568 | fields | 416568 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | bw3 |
+|---|---|---:|---:|---:|---:|
+| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 |
+| `curtain_size` | `CVector3f` | 0x158 | 0x150 | 0x158 | 0x158 |
+| `curtain_texture` | `SMRGLTextureBasic` | 0x164 | 0x15c | 0x164 | 0x164 |
+| `opacity` | `int` | 0x17c | 0x174 | 0x17c | 0x17c |
+| `cinched_top` | `int` | 0x180 | 0x178 | 0x180 | 0x180 |
+| `cinched_left` | `int` | 0x184 | 0x17c | 0x184 | 0x184 |
+| `cinched_right` | `int` | 0x188 | 0x180 | 0x188 | 0x188 |
+| `cinched_bottom` | `int` | 0x18c | 0x184 | 0x18c | 0x18c |
+| `falling` | `int` | 0x190 | 0x188 | 0x190 | 0x190 |
+| `let_go_event` | `char[100]` | 0x194 | 0x18c | 0x194 | 0x194 |
+| `simulate_me` | `int` | 0x1f8 | 0x1f0 | 0x1f8 | 0x1f8 |
+| `patch_size` | `float` | 0x1fc | 0x1f4 | 0x1fc | 0x1fc |
+| `block_virtual_director_flag` | `int` | 0x200 | 0x1f8 | 0x200 | 0x200 |
+| `vertex_count` | `int` | 0x204 | 0x1fc | 0x204 | 0x204 |
+| `vertices` | `SCurtainVertex[1000]` | 0x208 | 0x200 | 0x208 | 0x208 |
+| `mesh` | `SCurtainMeshData` | 0x1c728 | 0x1c720 | 0x1c728 | 0x1c728 |
+| `weight` | `float` | 0x65b14 | 0x65b0c | 0x65b14 | 0x65b14 |
+| `dampen` | `float` | 0x65b18 | 0x65b10 | 0x65b18 | 0x65b18 |
+| `spring` | `float` | 0x65b1c | 0x65b14 | 0x65b1c | 0x65b1c |
+| `friction` | `float` | 0x65b20 | 0x65b18 | 0x65b20 | 0x65b20 |
+| `gravity` | `float` | 0x65b24 | 0x65b1c | 0x65b24 | 0x65b24 |
+| `floor_height` | `float` | 0x65b28 | 0x65b20 | 0x65b28 | 0x65b28 |
+| `hit_floor` | `int` | 0x65b2c | 0x65b24 | 0x65b2c | 0x65b2c |
+| `is_visible` | `int` | 0x65b30 | 0x65b28 | 0x65b30 | 0x65b30 |
+| `needs_update` | `int` | 0x65b34 | 0x65b2c | 0x65b34 | 0x65b34 |

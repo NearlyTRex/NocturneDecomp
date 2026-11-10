@@ -1,0 +1,43 @@
+# CSpike
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 1376 | fields | 1376 |
+| nocturne | 1368 | fields | 1368 |
+| bw1 | 1376 | fields | 1376 |
+| blairwitch2 | 1724 | fields | 1724 |
+| bw3 | 1376 | fields | 1376 |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
+|---|---|---:|---:|---:|---:|---:|
+| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `model` | `CKeyFramedModelInstance` | 0x158 | 0x150 | 0x158 | 0x2b4 | 0x158 |
+| `spike_type` | `ESpikeType` | 0x2d4 | 0x2cc | 0x2d4 | 0x430 | 0x2d4 |
+| `spike_state` | `ESpikeState` | 0x2d8 | 0x2d0 | 0x2d8 | 0x434 | 0x2d8 |
+| `are_we_active` | `int` | 0x2dc | 0x2d4 | 0x2dc | 0x438 | 0x2dc |
+| `base_position` | `CVector3f` | 0x2e0 | 0x2d8 | 0x2e0 | 0x43c | 0x2e0 |
+| `extend_distance` | `float` | 0x2ec | 0x2e4 | 0x2ec | 0x448 | 0x2ec |
+| `start_event` | `char[100]` | 0x2f0 | 0x2e8 | 0x2f0 | 0x44c | 0x2f0 |
+| `stop_event` | `char[100]` | 0x354 | 0x34c | 0x354 | 0x4b0 | 0x354 |
+| `extend_event` | `char[100]` | 0x3b8 | 0x3b0 | 0x3b8 | 0x514 | 0x3b8 |
+| `retract_event` | `char[100]` | 0x41c | 0x414 | 0x41c | 0x578 | 0x41c |
+| `extend_time` | `float` | 0x480 | 0x478 | 0x480 | 0x5dc | 0x480 |
+| `retract_time` | `float` | 0x484 | 0x47c | 0x484 | 0x5e0 | 0x484 |
+| `wait_timer` | `float` | 0x488 | 0x480 | 0x488 | 0x5e4 | 0x488 |
+| `extend_sound` | `char[100]` | 0x48c | 0x484 | 0x48c | 0x5e8 | 0x48c |
+| `retract_sound` | `char[100]` | 0x4f0 | 0x4e8 | 0x4f0 | 0x64c | 0x4f0 |
+| `period` | `float` | 0x554 | 0x54c | 0x554 | 0x6b0 | 0x554 |
+| `damage_strength` | `float` | 0x558 | 0x550 | 0x558 | 0x6b4 | 0x558 |
+| `param` | `float` | 0x55c | 0x554 | 0x55c | 0x6b8 | 0x55c |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **blairwitch2**: 0x158+0x15c

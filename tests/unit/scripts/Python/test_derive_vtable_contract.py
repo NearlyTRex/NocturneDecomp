@@ -14,6 +14,7 @@ from sibling_images import function, install_programs, write_bucket, write_json
 import actor_class_tree
 import derive_vtable_contract as dvc
 import map_vtable_slots
+import sibling_match as sm
 
 # The sibling's tables, by slot. CDemonActor's slot 2 is an editor method the
 # target dropped, and the target's CDemonActor and CCrate fill slot 1 with one
@@ -22,22 +23,23 @@ SOURCE = {
     "CDemonActor": ["setup", "process", "edit", "render", "dtor"],
     "CBox": ["CBox_setup", "CBox_process", "edit", "render", "CBox_dtor", "CBox_open"],
     "CCrate": ["CCrate_setup", "process", "edit", "render", "dtor"],
-    "CGhost": ["CGhost_setup"],
+    "CGhostForest": ["CGhostForest_setup"],
 }
 TARGET = {
     "CDemonActor": ["setup", "stub", "render", "dtor"],
     "CBox": ["CBox_setup", "CBox_process", "render", "CBox_dtor", "CBox_open"],
     "CCrate": ["CCrate_setup", "stub", "render", "dtor"],
-    "CGhost": ["CGhost_setup"],
+    "CGhostForest": ["CGhostForest_setup"],
 }
-TABLES = {"CDemonActor": 0x500000, "CBox": 0x500100, "CCrate": 0x500200, "CGhost": 0x500300}
+# Labelled by type name; CGhost_Forest registers underscored, as bw3's classes do.
+TABLES = {"CDemonActor": 0x500000, "CBox": 0x500100, "CCrate": 0x500200, "CGhostForest": 0x500300}
 # CBox_open has no pair: it fills the one-slot gap left after CBox_dtor.
 UNPAIRED = {"stub", "CBox_open"}
 REGISTRATIONS = """
   core_actor_cpp_registerActorClass_FUN_0040c160(&g_CDemonActorClassInfo,"CDemonActor",f,&v,1,0);
   core_actor_cpp_registerActorClass_FUN_0040c160(&g_CBoxClassInfo,"CBox",f,&v,1,&g_CDemonActorClassInfo);
   core_actor_cpp_registerActorClass_FUN_0040c160(&g_CCrateClassInfo,"CCrate",f,&v,1,&g_CDemonActorClassInfo);
-  core_actor_cpp_registerActorClass_FUN_0040c160(&g_CGhostClassInfo,"CGhost",f,&v,1,&g_CBoxClassInfo);
+  core_actor_cpp_registerActorClass_FUN_0040c160(&g_CGhostForestClassInfo,"CGhost_Forest",f,&v,1,&g_CBoxClassInfo);
 """
 
 
@@ -99,6 +101,28 @@ def test_a_method_is_read_off_its_qualified_name():
     assert dvc.method_of(img, "b") == (None, "open")
     assert dvc.method_of(img, "c") == (None, None)
     assert dvc.method_of(img, "missing") == (None, None)
+
+
+def test_slot_names_come_from_the_struct_applied_to_the_table(programs):
+    annotations = programs["tmp"] / "annotations"
+    (annotations / "src.exe" / "data_types").mkdir()
+    write_json(annotations / "src.exe" / "data_types" / "data_types.json", {"structs": [
+        {"name": "CDemonActor_vtable", "fields": [{"name": "setup", "offset": 0}, {"name": "think", "offset": 4},
+                                                  {"offset": 8}]},
+        # A part embedded by name is flattened; one that embeds itself is not followed.
+        {"name": "CDemonActor_full_vtable", "fields": [
+            {"name": "_ub", "type": "CDemonActor_vtable", "offset": 0},
+            {"name": "again", "type": "CDemonActor_full_vtable", "offset": 12}]}]})
+    write_bucket(annotations, "src.exe", "applied_structs", [
+        {"addr": "00500000", "name": "CDemonActor_full_vtable"}, {"addr": "00500100", "name": "CNoSuch_vtable"},
+        "junk"])
+    names = dvc.struct_slot_names("src.exe")
+    assert names == {"00500000": {0: "setup", 1: "think", 3: "again"}}
+    img = sm.Image("src.exe")
+    funcs = dvc.slots_of(img.vtables[0])
+    # The struct's name for the slot wins over the function's; with none, the function's.
+    assert dvc.slot_method(img, funcs, 1, names["00500000"]) == ("CDemonActor", "think")
+    assert dvc.slot_method(img, funcs, 2, {}) == ("CDemonActor", "edit")
 
 
 def test_parents_skip_classes_without_a_table_and_ancestors_come_first():
@@ -204,26 +228,27 @@ def test_main_derives_every_tabled_class_from_the_targets_own_tree(programs, cap
     # structure rule places process in both stub-filled tables.
     assert "  (2 slot(s) resolved by hierarchy structure)" in out
     assert "placed by the classes sharing them" not in out
-    # CGhost's one-slot table cannot extend CBox's five: it was built against
-    # an older CBox, and is reported rather than allowed to vote.
-    assert ("  STALE LAYOUT CGhost: 1 slots under CBox's 5 -- built against an older "
+    # CGhost_Forest's one-slot table cannot extend CBox's five: it was built
+    # against an older CBox, and is reported rather than allowed to vote.
+    assert ("  STALE LAYOUT CGhost_Forest: 1 slots under CBox's 5 -- built against an older "
             "CBox declaration") in out
     assert "=== methods of src.exe with no slot in dst.exe ===" in out
     assert "  CDemonActor: CDemonActor::edit" in out
 
     contract = json.loads(js.read_text())
-    assert sorted(contract) == ["CBox", "CCrate", "CDemonActor", "CGhost"]
+    # Found through its type-named label, under the name it registers.
+    assert sorted(contract) == ["CBox", "CCrate", "CDemonActor", "CGhost_Forest"]
     assert contract["CDemonActor"]["slots"][1]["method"] == "process"
     assert contract["CBox"]["slots"][4]["method"] == "open"
-    assert contract["CGhost"]["editor_only"] == []
-    assert contract["CGhost"]["stale_layout"] and not contract["CBox"]["stale_layout"]
+    assert contract["CGhost_Forest"]["editor_only"] == []
+    assert contract["CGhost_Forest"]["stale_layout"] and not contract["CBox"]["stale_layout"]
     assert contract["CCrate"]["target_vtable"] == "00500200"
     text = md.read_text()
     assert "### `CDemonActor` — slots 0..3" in text
     assert "| 1 | `process` | `CBox` | 1 |" in text
     assert "### `CBox` — slots 4..4 (on top of `CDemonActor`)" in text
     assert "### `CCrate` — adds no slots of its own" in text
-    assert "### `CGhost` — adds no slots of its own" in text
+    assert "### `CGhost_Forest` — adds no slots of its own" in text
     assert "(5 distinct slots across 4 classes)" in out
 
 
@@ -233,7 +258,7 @@ def test_main_takes_classes_and_parents_by_hand(programs, capsys):
               "--parents", "CBox=CDemonActor,CCrate=CDemonActor,stray"])
     out = capsys.readouterr().out
     assert "no vtable for: CNope" in out
-    # Without CGhost, process is dropped by two of three classes and counts as
+    # Without CGhost_Forest, process is dropped by two of three classes and counts as
     # common too, so structure has no candidate and CBox's override places it.
     assert "  (2 slot(s) placed by the classes sharing them)" in out
     assert "resolved by hierarchy structure" not in out

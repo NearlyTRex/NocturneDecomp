@@ -30,8 +30,9 @@ import os
 from collections import Counter
 
 import actor_class_tree as act
+import name_vtable_slot_functions as nvs
 import sibling_match as sm
-from derive_vtable_contract import method_of, slots_of, tables_by_class
+from derive_vtable_contract import slot_method, slots_of, struct_slot_names, tables_by_class
 from map_vtable_slots import load_labels
 
 
@@ -58,13 +59,20 @@ def signature(img, addr, method):
     return f"{rec.get('ret', '?')} {method}({args})"
 
 
-def reference_rows(img, tables):
-    """The reference build's own tables as contract rows, slot = sibling slot."""
+def reference_rows(img, tables, names=None):
+    """The reference build's own tables as contract rows, slot = sibling slot.
+
+    `names` is struct_slot_names(reference): a slot's method is its struct
+    field's name where a struct is applied, since a folded stub's own name
+    is right for only one of its slots.
+    """
+    names = names or {}
     out = {}
     for cls, table in tables.items():
         rows = []
-        for i, f in enumerate(slots_of(table)):
-            declarer, method = method_of(img, f)
+        funcs = slots_of(table)
+        for i, f in enumerate(funcs):
+            declarer, method = slot_method(img, funcs, i, names.get((table.get("addr") or "").lower(), {}))
             rows.append({"slot": i, "sibling_slot": i, "status": "REFERENCE",
                          "declarer": declarer, "method": method, "target_func": f})
         out[cls] = {"slots": rows}
@@ -102,7 +110,7 @@ def verdicts(sigs):
             for p in (sigs or {}).get("pairs", [])}
 
 
-def build(reference, programs, trees, contracts, sigs, units=None):
+def build(reference, programs, trees, contracts, sigs, units=None, slot_names=None):
     """-> {"methods": [...], "new_slots": {prog: {(slot, func): ...}}, "classes": {...}}.
 
     `units` is {prog: {function: translation unit}}, which attributes a new
@@ -167,6 +175,12 @@ def build(reference, programs, trees, contracts, sigs, units=None):
                 info["overrides"][prog] = [
                     r["method"] or f"<new slot {r['slot']}>"
                     for r in overrides(tree, contract, cls)]
+    # `slot_names` is {program: load_slot_names()}; a new slot takes the name
+    # its first table's class inherits for it, if one is recorded.
+    for prog, found in new_slots.items():
+        for n in found.values():
+            entry = nvs.named_slot((slot_names or {}).get(prog, {}), trees[prog], n["classes"][0], n["slot"])
+            n["name"] = entry["name"] if entry else None
     return {"methods": methods, "new_slots": new_slots, "classes": classes}
 
 
@@ -215,7 +229,8 @@ def _verdict_text(by_func):
     return " ".join(f"{k[0]}{counts[k]}" for k in order if counts.get(k))
 
 
-def render_methods(reference, programs, built, ref_img):
+def render_methods(reference, programs, built, ref_img, names=None):
+    """`names` is the added-slot names file's entries."""
     lines = ["# Virtual methods by slot", "",
              f"Methods and signatures are {reference}'s. Each build's column is the slot "
              "index there (`—`: the build has no such slot). Evidence: `M` anchored or "
@@ -243,14 +258,25 @@ def render_methods(reference, programs, built, ref_img):
                      + " | ".join(cells) + f" | {params or '—'} |")
     if built["new_slots"]:
         lines += ["", "## Slots with no reference method", "",
-                  "Slots a build added to a class's table. Unnamed by design: nothing in "
-                  f"{reference} says what they are.", "",
-                  "| build | slot | function | unit | tables showing it first |",
-                  "|---|---:|---|---|---|"]
+                  f"Slots a build added to a class's table; nothing in {reference} names them. "
+                  "A name shown is from `added_slot_names.json` below.", "",
+                  "| build | slot | name | function | unit | tables showing it first |",
+                  "|---|---:|---|---|---|---|"]
         for p in programs:
             for n in built["new_slots"].get(p, {}).values():
-                lines.append(f"| {_short(p)} | {n['slot']} | `{n['func']}` | "
-                             f"{n['unit'] or '?'} | {', '.join(n['classes'])} |")
+                lines.append(f"| {_short(p)} | {n['slot']} | {('`%s`' % n['name']) if n.get('name') else '—'} | "
+                             f"`{n['func']}` | {n['unit'] or '?'} | {', '.join(n['classes'])} |")
+    if names:
+        lines += ["", "## Named added slots", "",
+                  "From `added_slot_names.json`, the baseline for naming further added slots: "
+                  "each entry and the fact that settles it.", "",
+                  "| build | class | slot | method | basis |", "|---|---|---:|---|---|"]
+        for e in sorted(names, key=lambda e: (programs.index(e["program"]), e["class"], e["slot"])):
+            args = ", ".join(f"{p['type']} {p['name']}" for p in e.get("params", []))
+            # `<name>` in a basis is text, not an HTML tag for the renderer to drop.
+            basis = e["basis"].replace("<", "&lt;").replace(">", "&gt;")
+            lines.append(f"| {_short(e['program'])} | {e['class']} | {e['slot']} | "
+                         f"`{e.get('ret', 'void')} {e['name']}({args})` | {basis} |")
     return "\n".join(lines) + "\n"
 
 
@@ -284,23 +310,28 @@ def main(argv=None):
     ap.add_argument("--sigs", action="append", metavar="PROG=JSON",
                     help="a build's verify_sibling_signatures --out")
     ap.add_argument("--out-dir", required=True)
+    ap.add_argument("--slot-names",
+                    help="names for added slots (default: research/22-actor_class_hierarchy/added_slot_names.json)")
     args = ap.parse_args(argv)
+    names_path = args.slot_names or nvs.default_slot_names()
 
     contract_paths, sig_paths = _pairs(args.contract), _pairs(args.sigs)
     programs = [args.reference] + list(contract_paths)
     ref_img = sm.Image(args.reference)
     contracts = {args.reference: reference_rows(
-        ref_img, tables_by_class(ref_img, load_labels(args.reference)))}
+        ref_img, tables_by_class(ref_img, load_labels(args.reference)), struct_slot_names(args.reference))}
     contracts.update({p: _load(path) for p, path in contract_paths.items()})
     sigs = {p: _load(path) for p, path in sig_paths.items()}
     trees = {p: act.load(p)[0] for p in programs}
     units = {p: {a: sm.tu_of(f.get("name", "")) for a, f in sm.Image(p).by_addr.items()}
              for p in contract_paths}
 
-    built = build(args.reference, programs, trees, contracts, sigs, units)
+    built = build(args.reference, programs, trees, contracts, sigs, units,
+                  {p: nvs.load_slot_names(names_path, p) for p in programs})
+    entries = [e for p in programs for e in nvs.load_slot_names(names_path, p).values()]
     os.makedirs(args.out_dir, exist_ok=True)
     outputs = {"hierarchy.md": render_hierarchy(programs, built["classes"]),
-               "virtual_methods.md": render_methods(args.reference, programs, built, ref_img),
+               "virtual_methods.md": render_methods(args.reference, programs, built, ref_img, entries),
                "classes.md": render_classes(programs, built["classes"]),
                "hierarchy.json": json.dumps(
                    {"programs": programs,

@@ -840,6 +840,16 @@ class DataTypeManager:
     def getAllDataTypes(self):
         return iter(self.types)
 
+    def getDataTypeCount(self, _include_pointers_and_arrays):
+        return len(self.types)
+
+    # True when the type was here to remove, as Ghidra's answers
+    def remove(self, data_type, _monitor):
+        if data_type not in self.types:
+            return False
+        self.types.remove(data_type)
+        return True
+
     # Ghidra fills the list it is handed, whatever category the types are in
     def findDataTypes(self, name, found):
         for data_type in self.types:

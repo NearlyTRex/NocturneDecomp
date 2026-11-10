@@ -197,6 +197,14 @@ def test_analysis_plans_methods_globals_and_gaps(report):
     assert len(report["gaps"]) == 2
 
 
+def test_a_vtable_label_is_spelled_as_its_type(programs, monkeypatch):
+    # ctor_vtables keys by the RTTI class, which bw3 underscores.
+    monkeypatch.setattr(ac, "ctor_vtables", lambda *_args, **_kwargs: {"CAmmo_Mana": f"{VT_FAR:08x}"})
+    names = {g["name"]: g["addr"] for g in ac.analyse("act.exe", "actsib.exe")["globals"]}
+    assert names["g_CAmmoManaVTable"] == f"{VT_FAR:08x}"
+    assert not any("_Mana" in name for name in names)
+
+
 def test_without_a_sibling_nothing_is_borrowed(programs):
     report = ac.analyse("act.exe", "")
     assert report["shared"] is None

@@ -184,6 +184,13 @@ class DataType(JavaObject):
     def setCategoryPath(self, path):
         self.category = path.getPath()
 
+    # Every Ghidra data type carries a description, empty until one is set
+    def getDescription(self):
+        return getattr(self, "description", "")
+
+    def setDescription(self, description):
+        self.description = description
+
     # Ghidra compares layouts; here, the same kind of type of the same size
     def isEquivalent(self, other):
         return type(self) is type(other) and self.length == other.length
@@ -303,11 +310,16 @@ class CompositeLayout(DataType):
         return type(self) is type(other) and self.getLength() == other.getLength() and self.layout() == other.layout()
 
 
-class Structure(DefinedDataType):
+# Ghidra's interface for both structs and unions
+class Composite(DefinedDataType):
     pass
 
 
-class Union(DefinedDataType):
+class Structure(Composite):
+    pass
+
+
+class Union(Composite):
     pass
 
 
@@ -334,9 +346,10 @@ DefaultDataType.dataType = DefaultDataType("undefined", 1)
 
 
 class PointerDataType(Pointer):
+    # Also Ghidra's PointerDataType(type, data type manager): a default-sized pointer
     def __init__(self, data_type = None, length = 4):
         name = f"{data_type.getName()} *" if data_type is not None else "pointer"
-        super().__init__(name, length)
+        super().__init__(name, length if isinstance(length, int) else 4)
         self.data_type = data_type
 
     def getDataType(self):
@@ -344,10 +357,15 @@ class PointerDataType(Pointer):
 
 
 class ArrayDataType(Array):
-    def __init__(self, data_type, count, element_length = None):
+    # Also Ghidra's (type, count, element length, data type manager)
+    def __init__(self, data_type, count, element_length = None, _data_type_manager = None):
         super().__init__(f"{data_type.getName()}[{count}]", count * (element_length or data_type.getLength()))
         self.data_type = data_type
         self.count = count
+        self.element_length = element_length or data_type.getLength()
+
+    def getElementLength(self):
+        return self.element_length
 
     def getDataType(self):
         return self.data_type
@@ -484,6 +502,16 @@ class StructureDataType(CompositeLayout, Structure):
         self.components.append(DataTypeComponent(data_type, field_name, offset, comment))
         self.length = offset + length
 
+    # At the offset, growing the struct to reach it; a type of fixed size keeps
+    # its own length whatever length is asked for, as Ghidra's does
+    def insertAtOffset(self, offset, data_type, length, field_name, comment):
+        component = DataTypeComponent(data_type, field_name, offset, comment)
+        self.components = sorted(self.components + [component], key = lambda c: c.getOffset())
+        self.length = max(self.length, offset + (data_type.getLength() or length))
+
+    def growStructure(self, amount):
+        self.length += amount
+
 
 class Enum(DefinedDataType):
     pass
@@ -604,6 +632,17 @@ class FunctionDefinitionDataType(FunctionDefinition):
     def setVarArgs(self, varargs):
         self.varargs = varargs
 
+    # Ghidra's says it "doesn't allow the description to be changed"; a function
+    # definition carries a comment instead
+    def setDescription(self, description):
+        raise UnsupportedOperationException(f"{type(self).__name__} doesn't allow the description to be changed")
+
+    def getComment(self):
+        return getattr(self, "comment", None)
+
+    def setComment(self, comment):
+        self.comment = comment
+
 
 # Records each override where Ghidra's would write it: on the function, at the call
 class HighFunctionDBUtil(JavaObject):
@@ -671,6 +710,10 @@ class MemoryAccessException(JavaException):
 
 
 class InvalidInputException(JavaException):
+    pass
+
+
+class UnsupportedOperationException(JavaException):
     pass
 
 
@@ -900,6 +943,7 @@ MODELLED = {
     "ghidra.program.model.data": {
         "DataType": DataType, "CategoryPath": CategoryPath, "BuiltInDataType": BuiltInDataType,
         "Pointer": Pointer, "Array": Array, "TypeDef": TypeDef, "Structure": Structure, "Union": Union,
+        "Composite": Composite,
         "FunctionDefinition": FunctionDefinition, "Undefined": Undefined, "DefaultDataType": DefaultDataType,
         "PointerDataType": PointerDataType, "ArrayDataType": ArrayDataType, "TypedefDataType": TypedefDataType,
         "DataTypeComponent": DataTypeComponent, "StructureDataType": StructureDataType,

@@ -217,7 +217,9 @@ def analyse(program, sibling="nocedit.exe"):
     if root and sibling_root:
         globals_.append({"addr": root, "name": sibling_root, "type": ACTOR_TYPE})
     for cls, a in sorted(vtables.items()):
-        globals_.append({"addr": a, "name": "g_%sVTable" % cls, "type": None})
+        # Keyed by the RTTI class, which may be underscored (bw3's CAmmo_Mana);
+        # the label is spelled as the type, like every other name for the class.
+        globals_.append({"addr": a, "name": "g_%sVTable" % wti.type_name(cls), "type": None})
 
     return {
         "program": program,

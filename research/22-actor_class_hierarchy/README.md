@@ -9,8 +9,13 @@ The `CDemonActor` tree and its virtual-method contract in nocedit.exe, nocturne.
 | `virtual_methods.md` | Every virtual slot: method, nocedit signature, slot index per build, how it was placed, parameter verdicts; then the slots a build added |
 | `classes.md` | Per class and build: parent, table length, the slots it overrides |
 | `hierarchy.json` | `hierarchy.md` and `classes.md` data, machine-readable |
+| `added_slot_names.json` | Names and prototypes for slots the BW builds added, each with the fact that settles it |
 
-All four are generated. Don't edit them by hand; regenerate them (see below).
+The first four are generated; regenerate them rather than edit (see below).
+`added_slot_names.json` is maintained by hand, and it is the baseline for naming more added
+slots. Only names whose basis settles them go in; every other added slot stays `vfuncN`. The
+struct and naming tools read it (`build_vtable_structs.py`, `name_vtable_slot_functions.py`), and
+`virtual_methods.md` renders it.
 
 ## How each claim is established
 
@@ -56,6 +61,19 @@ All four are generated. Don't edit them by hand; regenerate them (see below).
   stale. A `process` call at `+0x14` on a `CChain` reaches a different method. The contract
   marks it `stale_layout` and keeps it out of the hierarchy vote.
 
+- **The added slots have names where their code settles them.** That's 11 in bw1, 31 in bw2 and 9
+  in bw3, listed in `added_slot_names.json`. Highlights:
+  - CDemonActor `markResourcesInUse` in bw1/bw3.
+  - CHero's `toggleGoggles`, `canReachPickup`, `doHeroAction` and `canDoHeroAction`.
+  - bw2's CBasicEnemy state machine (`processStates`, the per-state handlers, `startBurn`).
+- **bw3's CHero slots 80–83 are nocedit's CHero methods** (`createDefaultWeapon`, `drawWeapon`,
+  `isWeaponDrawn`, `reset`). The contract could not show it, because CPrye, bw3's only tabled class
+  under CHero, does not exist in nocedit.
+- **An empty virtual can point at another function's last `RET`.** CPod's slot 1 is its
+  destructor's own `RET` in every BW build, as are CCross's slots 0–1 in bw2. The vtable scan now
+  counts a slot aimed at a `RET` in code, and those tables start at the address their constructor
+  stores; before, they started one or two slots late.
+
 ## DON'T RE-CHASE
 
 - A function filling several slots of one table is a folded stub, such as the shared
@@ -64,6 +82,10 @@ All four are generated. Don't edit them by hand; regenerate them (see below).
   (`sibling_match.lcs_anchors`).
 - `CDemonActor`'s own table can't tell `process` from the new BW slots: slots 1–5 are all
   stubs. Its descendants' overrides place them.
+- A slot's method is its vtable struct field's name, never the function's. A folded stub carries
+  one name for all its slots. nocedit's CCharacter fills `isGrabbable`, `canBeGrabbed`,
+  `getGrabbed` and `canBeAttracted` with one `return 0`, which is now named
+  `CCharacter_returnZero`. The overrides in that family are named correctly.
 - A registration whose name prints as `(char *)0x…` or as `"…" + n` is still a registration.
   bw2's `CHero` is the first form; dropping it turned its 15 children into roots.
 

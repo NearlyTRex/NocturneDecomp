@@ -25,3 +25,15 @@ class FakePyghidra:
     def program_context(self, project, path):
         self.opened.append(path)
         yield self.program
+
+
+# For a script that opens two programs of the project at once: hands each out by its path
+class FakePyghidraPrograms(FakePyghidra):
+    def __init__(self, programs):
+        super().__init__(None)
+        self.programs = programs
+
+    @contextlib.contextmanager
+    def program_context(self, project, path):
+        self.opened.append(path)
+        yield self.programs[path.lstrip("/")]

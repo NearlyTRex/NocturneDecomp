@@ -1,0 +1,19 @@
+# CColor3f
+
+Category `/Nocturne/Class/Game`.
+
+| build | size | state | RTTI size |
+|---|---:|---|---:|
+| nocedit | 12 | fields | — |
+| nocturne | 12 | fields | — |
+| bw1 | 12 | fields | — |
+
+## Fields
+
+Offsets in hex; blank where the build's layout does not have the field.
+
+| field | type | nocedit | nocturne | bw1 |
+|---|---|---:|---:|---:|
+| `r` | `float` | 0x0 | 0x0 | 0x0 |
+| `g` | `float` | 0x4 | 0x4 | 0x4 |
+| `b` | `float` | 0x8 | 0x8 | 0x8 |
