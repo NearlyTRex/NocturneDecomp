@@ -19,10 +19,10 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `base` | `CTrigger` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `num_adjacent_waypoints` | `int` | 0x370 | 0x368 | 0x374 | 0x4d0 | 0x374 |
 | `adjacency` | `SWayPointAdjacency[60]` | 0x374 | 0x36c | 0x378 | 0x4d4 | 0x378 |
-| `pathfind_cost` | `float` | 0x554 | 0x54c | 0x558 |  | 0x558 |
+| `pathfind_cost` | `float` | 0x554 | 0x54c | 0x558 | 0x6b4 | 0x558 |
 
 ## Undefined bytes
 
 Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
 
-- **blairwitch2**: 0x370+0x160, 0x510+0x1ac
+- **blairwitch2**: 0x6b8+0x4

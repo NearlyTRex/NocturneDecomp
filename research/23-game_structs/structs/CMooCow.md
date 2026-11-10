@@ -14,10 +14,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | bw1 | bw3 |
 |---|---|---:|---:|
 | `base` | `CCharacter` | 0x0 | 0x0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc1d0+0x24
-- **bw3**: 0xcdcc+0x24
+| `bone_spine` | `int` | 0xc1d0 | 0xcdcc |
+| `bone_head` | `int` | 0xc1d4 | 0xcdd0 |
+| `sfx_handle` | `uint` | 0xc1d8 | 0xcdd4 |
+| `part_indices` | `int[6]` | 0xc1dc | 0xcdd8 |

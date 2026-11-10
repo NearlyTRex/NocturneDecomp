@@ -16,7 +16,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `base` | `CFont` | 0x0 | 0x0 |  |  |  |
+| `base` | `CFont` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `device_context_handle` | `HDC` | 0x4 | 0x4 | 0x6a48 | 0x6a48 | 0x6a48 |
 | `dib_handle` | `HBITMAP` | 0x8 | 0x8 | 0x6a4c | 0x6a4c | 0x6a4c |
 | `font_handle` | `HFONT` | 0xc | 0xc | 0x6a50 | 0x6a50 | 0x6a50 |
@@ -32,11 +32,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `cached_background_color` | `int` | 0x130 | 0x130 | 0x6b74 | 0x6b74 | 0x6b74 |
 | `y_offset1` | `int` | 0x134 | 0x134 | 0x6b78 | 0x6b78 | 0x6b78 |
 | `y_offset2` | `int` | 0x138 | 0x138 | 0x6b7c | 0x6b7c | 0x6b7c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x0+0x6a48
-- **blairwitch2**: 0x0+0x6a48
-- **bw3**: 0x0+0x6a48

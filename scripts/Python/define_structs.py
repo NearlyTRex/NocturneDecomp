@@ -25,6 +25,14 @@ watcom_type_info.py makes them from RTTI; --replace also replaces a laid-out
 one. A new struct goes under /Nocturne/Struct/Game (S-prefixed) or
 /Nocturne/Class/Game.
 
+A program's `delete` list names types the build does not have: placeholders
+carried over from a sibling for a class with no RTTI, vtable, method or
+string-table use. Each is removed only while it is still a placeholder and
+nothing in the program uses it -- no field, function, signature, typedef or
+applied data -- so a stale entry changes nothing:
+
+    "delete": [{"name": "CTentacle", "basis": "only a class-name string"}]
+
 Usage:
     define_structs.py spec.json --program bw1.exe                  # check
     define_structs.py spec.json --program bw1.exe --apply --project /abs/projects
@@ -109,6 +117,69 @@ def apply(program, structs, replace=False):
     return report
 
 
+def base_of(dt):
+    """What a pointer, array or typedef chain finally names."""
+    while dt is not None and hasattr(dt, "getDataType"):
+        dt = dt.getDataType()
+    return dt
+
+
+def users(program, names):
+    """{name: [what uses it]} for each of `names` the program's types, functions
+    or applied data reach through pointers, arrays and typedefs."""
+    found = {n: [] for n in names}
+
+    def note(dt, where):
+        dt = base_of(dt)
+        if dt is not None and dt.getName() in found:
+            found[dt.getName()].append(where)
+
+    for dt in program.getDataTypeManager().getAllDataTypes():
+        if dt.getName() in found:
+            continue
+        if hasattr(dt, "getDefinedComponents"):
+            for c in dt.getDefinedComponents():
+                note(c.getDataType(), f"{dt.getName()}.{c.getFieldName()}")
+        elif hasattr(dt, "getArguments"):
+            note(dt.getReturnType(), f"{dt.getName()} returns it")
+            for a in dt.getArguments():
+                note(a.getDataType(), f"{dt.getName()} takes it")
+        elif hasattr(dt, "getBaseDataType"):
+            # a typedef; the pointers and arrays the manager also holds are not users
+            note(dt, f"typedef {dt.getName()}")
+    for f in program.getFunctionManager().getFunctions(True):
+        note(f.getReturnType(), f"{f.getName()} returns it")
+        for v in list(f.getParameters()) + list(f.getLocalVariables()):
+            note(v.getDataType(), f"{f.getName()}.{v.getName()}")
+    for d in program.getListing().getDefinedData(True):
+        note(d.getDataType(), f"data at {d.getAddress()}")
+    return found
+
+
+def delete(program, entries):
+    """Remove each unused placeholder; -> [(name, outcome)]."""
+    from ghidra.util.task import ConsoleTaskMonitor
+    dtm = program.getDataTypeManager()
+    used = users(program, [e["name"] for e in entries])
+    report = []
+    tx = program.startTransaction("Delete absent types")
+    try:
+        for e in entries:
+            dt = find_type(dtm, e["name"])
+            if dt is None:
+                report.append((e["name"], "absent already"))
+            elif list(dt.getDefinedComponents()):
+                report.append((e["name"], "laid out; left"))
+            elif used[e["name"]]:
+                report.append((e["name"], "in use; left: " + ", ".join(used[e["name"]][:3])))
+            else:
+                dtm.remove(dt, ConsoleTaskMonitor())
+                report.append((e["name"], "deleted"))
+    finally:
+        program.endTransaction(tx, True)
+    return report
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__,
                                  formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -121,9 +192,11 @@ def main(argv=None):
     args = ap.parse_args(argv)
 
     with open(args.spec, encoding="utf-8") as fh:
-        structs = json.load(fh).get(args.program, {}).get("structs", [])
+        entry = json.load(fh).get(args.program, {})
+    structs, absent = entry.get("structs", []), entry.get("delete", [])
     bad = [p for s in structs for p in problems(s)]
-    print(f"{args.program}: {len(structs)} structs in the spec, {len(bad)} problems")
+    print(f"{args.program}: {len(structs)} structs and {len(absent)} deletions in the spec, "
+          f"{len(bad)} problems")
     for p in bad:
         print("  " + p)
     if bad:
@@ -140,7 +213,7 @@ def main(argv=None):
     project = pyghidra.open_project(os.path.abspath(args.project), args.project_name)
     try:
         with pyghidra.program_context(project, "/" + args.program) as program:
-            report = apply(program, structs, args.replace)
+            report = apply(program, structs, args.replace) + delete(program, absent)
             for name, outcome in report:
                 print(f"  {name:32s} {outcome}")
             from ghidra.util.task import ConsoleTaskMonitor
@@ -148,7 +221,7 @@ def main(argv=None):
             print("Saved.")
     finally:
         project.close()
-    return 0 if all(o.startswith(("added", "replaced")) for _, o in report) else 1
+    return 0 if all(o.startswith(("added", "replaced", "deleted", "absent")) for _, o in report) else 1
 
 
 if __name__ == "__main__":

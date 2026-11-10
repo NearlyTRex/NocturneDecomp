@@ -68,6 +68,16 @@ Sizes come four ways, each scored against RTTI where a record exists, with none 
   reordering keeps the total (`CDemonCamera` in retail; `CDemonActor` in bw1 and bw3, below). A
   struct with no size of its own is also refused when a struct embedding it shows a different
   shift before and after it: it grew at its end, which its own offsets cannot show.
+- **Identical users** (`identical_type_users.py`). The drift misses a struct reached through an
+  array index, at offset 0, or only in functions whose length changed elsewhere. A paired function
+  whose instructions match operand for operand, bar displacements and immediates, is read whole
+  instead: each of nocedit's register-based typed accesses sits at the same index in the build's
+  copy, and its displacement agrees or contradicts. A placeholder no access contradicts is
+  unchanged with 3 agreeing accesses, or 2 paired functions declaring it whose bodies match to the
+  last displacement and constant. Accesses through a global's address are left out. The planner
+  takes these names as `--unchanged-users`, with its size checks still applied. A placeholder in a
+  non-game category (the Watcom CRT's `_tm`, `Heap`, `ThreadData`) is offered like a game struct;
+  a system header the build already has whole is not.
 - **Resized.** A field keeps its place only where the measured shift settles it: inside an observed
   segment, or between two segments that moved alike, it moves with them. Between segments that
   differ, the insertion could be on either side, so the field is not placed. After the last
@@ -83,8 +93,11 @@ Sizes come four ways, each scored against RTTI where a record exists, with none 
 - **Rebuilt.** A struct whose array lengths or field set changed, beyond what shifts can describe,
   is defined whole from `bw_rebuilt_structs.json` (as BW's own types are from `bw_own_structs.json`).
 
-Laying out a member type also fixes the fields that hold it: Ghidra grows each into the undefined
-bytes after it.
+Laying out a member type does not fix the fields that hold it: Ghidra keeps each at the length it
+had, and the growth shows as undefined bytes after it (`CHero.base` stayed 48,676 bytes when
+`CCharacter` became 49,616). `refit_embedded_members.py` refits such a field to its type's length
+where the bytes it grows over hold no other field, and with `--bases-from nocedit.exe` puts back a
+`base` the build lost: a class nocedit derives from B, with nothing in its first len(B) bytes.
 
 Fields not placed are left as undefined bytes, listed on each struct's page. They are either members
 the build added or ones whose new offset is not yet known.
@@ -191,6 +204,60 @@ the build added or ones whose new offset is not yet known.
   parameters get the prototype the decompiler infers when its first parameter is the first stack
   argument, where Watcom passes `this`, or `this` alone when the body reads nothing and a slot of
   the class's labelled vtable holds it (`fix_this_ptr.py`).
+- **The receiver check covers structs too.** `<tu>_<S...>_<method>` asserts `this_ptr` of the
+  struct as much as a class name does; the export gate and `check_this_ptr.py` take both prefixes.
+  nocedit's 22 `S*_arrdtorN` named their receiver `objs` and `SMemHead`'s 4 methods `header`; all
+  are `this_ptr` now, with the two `SMemHead` keeps following.
+- **bw3 has no CMobster, CStranger, CSuccubus or CTentacle** (`bw_absent_classes.json`): no RTTI
+  record, vtable, factory or method. What remains is strings: `CTentacle` as the `isOfClass`
+  argument in the `isGrabbable` of CCarved, CDemnfolk and CZombie, `CStranger` in the hero-name
+  table, and the mobster wav names. The two functions typed for them belong to other classes:
+  `0058f4a0` is `CZombiePriest_startFiringAttack` (only zombie-priest code calls it; its timer at
+  `+0xd110` is the last field of the 0xd114-byte class) and `00524170` is
+  `CPrye_updateArmRecoilBlend` (nocedit `CStranger`'s body; reaches `+0x20c80` of the 0x20d04-byte
+  CPrye). The four placeholders are deleted. The other 40 Nocturne classes bw3's `type_info.json`
+  lists without a record (CBaron, CMoloch, ...) are not types in bw3 at all: the exporter adds them
+  from its own Nocturne class tables.
+- **Unchanged in every BW build, by identical code:** the Watcom CRT's `_FILE`, `_tm`, `Heap`,
+  `HeapBlock`, `HeapState`, `ThreadData`, `WatcomStat`, `WatcomTypeArrayInfo`, `dst_rule`,
+  `FileEmbeddedData`, `MathErrorContext`, `SignalHandlerEntry`, `va_list_t`,
+  `WatcomStaticDestructorNode`, `EXCEPTION_REGISTRATION_RECORD`; `CKeys` (49 agreeing accesses,
+  305 in rewritten functions), `CSocket`, `CTerrain`, `CWavOutDevice`, `CDirectSoundDevice`,
+  `CFireEffect`, `CGore`, `IUnknown`, `SOCKADDR_IN`, `SGroundCell`, `CLZWDictionaryNode`,
+  `COrientation`, `SCoronaLightEntry` (its 78,724-byte stride, 0x13384, is in each build's
+  `renderGlobeCoronas`), `SLineStrip`, `SMRGLSkyTexture`, `SStereoBuffers`, `SStereoGains`,
+  `SVoxelGrid`, `SMpegSubbandAllocation`, `SMpegSubbandScalefactors` and its union; bw2's
+  `CEdCheck`. The vtable structs of `CKeys` (3 slots), `CCameraView` (5), `CMotionController` (3),
+  `CParticle` (4), `CPod` (6) and `IUnknown` have nocedit's slot counts in every build.
+- **Read from the code, every build** (`known_layout_changes.json`, `bw_rebuilt_structs.json`,
+  `bw_own_structs.json`; each entry's basis names its functions and offsets):
+  - `CCharacter` adds three turn rates after `turn_speed`, `is_spectral`/`spectral_sound_handle`/
+    `is_invulnerable`, a face-animation block at its end, and `layer_actions` / the transition-cost
+    table grow to 22 (bw1/bw2) or 33 (bw3) entries. bw2 adds `gravity_enabled` and a follow
+    formation (`SFollowFormation`, 980 bytes); bw3 adds bind and burn fields.
+  - `CHero` takes nocedit `CStranger`'s `action_pending` (bw1, bw3) and a `hero_action` block;
+    bw2 holds `CInventory[3]`; bw3 adds mana, bullets and light radius. `CInventory` adds
+    `show_compass` and `show_sps` (the `compass`/`sps` commands).
+  - A texture array of 300 `SMRGLTextureModel` became 4: `CKeyFramedModel` and `CCloth` shrink
+    21,312 bytes from there. `STextureSet` is 8 of them (576 bytes); `CDeformableModel` holds
+    `SPart[60]` in bw1/bw3; `SMotion` is 288 bytes (280 in bw2) and `CMotionList` holds 400 of them,
+    with `motion_count` at `+0x1c24` (the contradicted `0x964` accesses).
+  - `CFont` is a 27,208-byte text queue, not an empty interface; `CWinFont`'s own fields sit past
+    it. `CBitFont` adds its file name, an accelerated-text block and per-character UVs.
+    `CTextureCache` is 1,024 96-byte `STextureCacheEntry`s.
+  - `CParticle`'s gravity is a `CVector3f` `acceleration`, so every particle's fields move 8 bytes.
+    `SPlayerInput` grew in each build (bw1 quick turn, bw2 drop, bw3 action key), and with it
+    `SSimFrame` and the input and frame packets. `SNetPacketHeader` is nocedit's 5 bytes.
+  - `CGame` ends in a vtable in every BW build (`+0xb00` / `+0xb1c` / `+0xb8c`) and adds key
+    bindings and difficulty settings; the ini reader showed the copied names one dword high.
+    `CScript` drops the editor cross-references and adds `monster_vision_actor`.
+  - BW's own enemies are largely nocedit classes renamed: bw1/bw3 `CCarved` and `CDemnfolk` are
+    `CZombie`, `CConstruct` is `CBoneGuy`, `CShadow` ends in `CWerewolf`'s fields; the bird and
+    spirit classes embed a `CPathMap`, `CStyler` a `CCloth`. bw2's 12 enemies share the 71,760-byte
+    `CBasicEnemy`, whose `setup` and `archive` are `0059e6a0` and `0059fc10` (the latter had been
+    named `CTwigZombie_archive`).
+- **Changed, by contradicting accesses:** `CMotionList`, `CFont` and `SPlayerInput` (and with it
+  `SSimFrame`) address fields at other displacements in code otherwise the same as nocedit's.
 - **Unchanged in every BW build, by allocation size:** CVector3f, CVector3i, CQuaternion4f, CRect,
   SRenderVertex, SBone, SLayerAction, the MRGL model records and 25 more.
 - **The network code is in every build, unused.** `core_netgame.cpp` (`CNetGame`) and
@@ -210,14 +277,25 @@ the build added or ones whose new offset is not yet known.
 
 ## Not yet placed
 
-Structs no matched code addresses stay placeholders. The drift sees an access only where nocedit
-and the build's function have the same number of instructions, and only as a numbered
-displacement: a struct reached only through a global (`CKeys`), only at offset 0, or only in
-functions BW changed (`SFreaky`) has no sightings, and editor-only types (`CActorProperty`) have no
-BW code at all. bw3's CStranger, CMobster, CSuccubus and CTentacle are not yet read. BW's own classes keep the bytes past their
-base undefined until read from the code. A field whose type is still a placeholder in the build
-has the placeholder's length: `ios`, and the network code's `SNetPacketHeader`, `SPlayerInput` and
-`SSimFrame`.
+Of 445 / 465 / 446 game structs in bw1 / bw2 / bw3, 423 / 439 / 417 are complete, 16 / 19 / 24
+have undefined spans and 6 / 7 / 5 are placeholders. Every span left is one no BW code reads or
+writes, or one only a constructor sets:
+
+- **Placeholders with no BW code:** `CActorProperty`, `SScriptXRef`, `SPlayer` (editor and
+  unused network types), `COptimize`, bw2's `CComplexPolygon` and `SExpandedEdge`, bw1's
+  `CLeakChecker` (a name record only; `memdbg.cpp` is not in any BW build). The BW functions named
+  `COptimize_getMaxPolygonSides`, `CComplexPolygon_getExpandedEdges` and
+  `CComplexPolygon_getMaterialId` (bw1 `004175a0`–`004175e0`, bw2 `0059bdf0`–`0059be30`,
+  `005a8130`) are trivial getters of BW classes, name-matched to nocedit's by body.
+- **Spans:** `CCharacter`'s 40-byte block after `walk_timeout` and one dword after
+  `sound_cooldown` (only the ctor writes them); `CMoon` `+4` (nocedit's `rotation_phase`, a global
+  in BW); `STextView` `0x148`–`0x248`; `SVoxelCubeMetadata` `0x8`–`0x54` but for `+0xc`;
+  `SSoftwareEdge` `0x48`–`0x50`; `CLightGun` 8 bytes before `beam_length` (the ctor stores 1);
+  bw2 `CChain` `0`–`0x154`, its base (below); and short tails of BW's own enemies. Each is listed
+  with the functions checked on the struct's page.
+- **bw2's `CChain` is compiled against nocedit's 344-byte `CDemonActor`:** its ctor stores its
+  vtable at `+0x154` and its own fields at nocedit's offsets, under a 692-byte `CDemonActor` and
+  RTTI 1,400. No base fits, so it is written whole without one.
 
 ## Regenerating
 
@@ -233,10 +311,16 @@ python3 scripts/Python/derive_struct_drift.py annotations/bw1.exe/reports/siblin
     --include-unshifted --typed-accesses typed.json --out bw1_drift.json
 python3 scripts/Python/derive_struct_drift.py annotations/bw1.exe/reports/sibling_mapping_from_nocedit.json \
     --include-unshifted --typed-accesses typed.json --align --out bw1_drift_aligned.json
+python3 scripts/Python/identical_type_users.py --typed typed.json --program bw1.exe \
+    --out bw1_unchanged.txt --report bw1_unchanged.json
 python3 scripts/Python/plan_struct_transfer.py --program bw1.exe --drift bw1_drift.json \
     --drift-aligned bw1_drift_aligned.json --known research/23-game_structs/known_layout_changes.json \
-    --alloc-sizes alloc_bw1.json \
+    --alloc-sizes alloc_bw1.json --unchanged-users bw1_unchanged.txt \
     --out bw1_copy.txt --out-shifts bw1_shifts.json
+python3 scripts/Python/import_sibling_types.py /abs/projects NocturneEdit bw1.exe --no-globals \
+    --replace-stubs --types-file bw1_copy.txt --apply
+python3 scripts/Python/refit_embedded_members.py --program bw1.exe --project /abs/projects \
+    --bases-from nocedit.exe --apply
 ```
 
 Laying out a struct can let its containers and derived classes be planned, so plan again after
@@ -247,6 +331,7 @@ The structs read whole from the code, and the receivers of class methods:
 ```sh
 python3 scripts/Python/define_structs.py research/23-game_structs/bw_own_structs.json --program bw1.exe
 python3 scripts/Python/define_structs.py research/23-game_structs/bw_rebuilt_structs.json --program bw1.exe
+python3 scripts/Python/define_structs.py research/23-game_structs/bw_absent_classes.json --program bw3.exe
 python3 scripts/Python/fix_this_ptr.py /abs/projects NocturneEdit bw1.exe blairwitch2.exe bw3.exe
 ```
 

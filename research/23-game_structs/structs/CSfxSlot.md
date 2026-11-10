@@ -16,7 +16,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `options` | `CSfxOptions` | 0x0 | 0x0 |  |  |  |
+| `options` | `CSfxOptions` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `hardware_buffer_handle` | `int` | 0x70 | 0x6c | 0x60 | 0x60 | 0x60 |
 | `playback_state` | `int` | 0x74 | 0x70 | 0x64 | 0x64 | 0x64 |
 | `sample` | `CSfxSample*` | 0x78 | 0x74 | 0x68 | 0x68 | 0x68 |
@@ -33,12 +33,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `stop_after_fade` | `float` | 0x114 | 0x110 | 0x104 | 0x104 | 0x104 |
 | `is_active` | `int` | 0x118 | 0x114 | 0x108 | 0x108 | 0x108 |
 | `prev_hardware_playback_pos` | `double` | 0x11c | 0x118 | 0x10c | 0x10c | 0x10c |
-| `loop_marker_index` | `int` | 0x124 |  |  |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x0+0x60, 0x114+0x8
-- **blairwitch2**: 0x0+0x60, 0x114+0x8
-- **bw3**: 0x0+0x60, 0x114+0x8
+| `loop_marker_index` | `int` | 0x124 |  | 0x114 | 0x114 | 0x114 |
+| `changed_flags` | `uint` |  |  | 0x118 | 0x118 | 0x118 |

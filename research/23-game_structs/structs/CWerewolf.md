@@ -30,11 +30,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `phase` | `int` | 0xbef8 | 0xbd60 | 0xc2a4 | 0x10b34 | 0xd090 |
 | `phase_timer` | `float` | 0xbefc | 0xbd64 | 0xc2a8 | 0x10b38 | 0xd094 |
 | `eye_glow_phase` | `float` | 0xbf00 | 0xbd68 | 0xc2ac | 0x10b3c | 0xd098 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xbebc+0x3ac
-- **blairwitch2**: 0xbebc+0x4c3c
-- **bw3**: 0xbebc+0x1198

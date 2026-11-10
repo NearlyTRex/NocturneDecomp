@@ -17,11 +17,11 @@ Offsets in hex; blank where the build's layout does not have the field.
 |---|---|---:|---:|---:|---:|
 | `base` | `CEnemy` | 0x0 | 0x0 | 0x0 | 0x0 |
 | `model` | `CDeformableModelInstance` | 0xbebc | 0xbd24 | 0xc268 | 0x10af8 |
-| `wing_cloth` | `CCloth` | 0xe170 | 0xdfd8 |  |  |
-| `cape_cloth` | `CCloth` | 0x4dfe0 | 0x48b08 |  |  |
-| `skirt_cloth` | `CCloth` | 0x8de50 | 0x83638 |  |  |
+| `wing_cloth` | `CCloth` | 0xe170 | 0xdfd8 | 0xe60c | 0x12dac |
+| `cape_cloth` | `CCloth` | 0x4dfe0 | 0x48b08 | 0x4913c | 0x4d8dc |
+| `skirt_cloth` | `CCloth` | 0x8de50 | 0x83638 | 0x83c6c | 0x8840c |
 | `form` | `int` | 0xcdcc0 | 0xbe168 | 0xbe79c | 0xc2f3c |
-| `morph` | `CMorph` | 0xcdcc4 | 0xbe16c |  | 0xc2f40 |
+| `morph` | `CMorph` | 0xcdcc4 | 0xbe16c | 0xbe7a0 | 0xc2f40 |
 | `morph_t` | `float` | 0xce8f0 | 0xbed98 | 0xbf3cc | 0xc3b6c |
 | `action_timer` | `float` | 0xce8f4 | 0xbed9c | 0xbf3d0 | 0xc3b70 |
 | `flee_timer` | `float` | 0xce8f8 | 0xbeda0 | 0xbf3d4 | 0xc3b74 |
@@ -34,10 +34,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `way_point_2` | `CDemonActor*` | 0xce914 | 0xbedbc | 0xbf3f0 | 0xc3b90 |
 | `way_point_3` | `CDemonActor*` | 0xce918 | 0xbedc0 | 0xbf3f4 | 0xc3b94 |
 | `follow_result` | `int` | 0xce91c | 0xbedc4 | 0xbf3f8 | 0xc3b98 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xe51c+0xb0280, 0xbe7a0+0xc2c
-- **blairwitch2**: 0x12dac+0xb0190

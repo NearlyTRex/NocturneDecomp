@@ -24,11 +24,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `console_height` | `int` | 0xfb0 | 0xfb0 | 0xfb4 | 0xfb4 | 0xfb4 |
 | `screen_x` | `int` | 0xfb4 | 0xfb4 | 0xfb8 | 0xfb8 | 0xfb8 |
 | `screen_y` | `int` | 0xfb8 | 0xfb8 | 0xfbc | 0xfbc | 0xfbc |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x4+0x4
-- **blairwitch2**: 0x4+0x4
-- **bw3**: 0x4+0x4
+| `field_0x4` | `int` |  |  | 0x4 | 0x4 | 0x4 |

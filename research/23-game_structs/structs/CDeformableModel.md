@@ -27,14 +27,14 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `cap_index_ptr` | `int*[5]` | 0xa4 | 0xa4 | 0xa4 | 0xa4 | 0xa4 |
 | `num_texture_sets` | `int` | 0xb8 | 0xb8 | 0xb8 | 0xb8 | 0xb8 |
 | `num_textures` | `int` | 0xbc | 0xbc | 0xbc | 0xbc | 0xbc |
-| `texture_sets` | `STextureSet[5]` | 0xc0 | 0xc0 |  |  |  |
+| `texture_sets` | `STextureSet[5]` | 0xc0 | 0xc0 | 0xc0 | 0xc0 | 0xc0 |
 | `num_parts` | `int` | 0x7140 | 0xc00 | 0xc00 | 0xc00 | 0xc00 |
-| `parts` | `SPart[30]` | 0x7144 | 0xc04 |  |  |  |
-| `model_scale` | `CVector3f` | 0x7c84 | 0x1744 |  | 0x1744 |  |
-| `bone_origins` | `CVector3f[100]` | 0x7c90 |  |  | 0x1750 |  |
-| `bias_used` | `CVector3f` | 0x8140 |  |  | 0x1c00 |  |
-| `bone_bounds` | `CBoundingBox3D[100]` | 0x814c |  |  | 0x1c0c |  |
-| `bone_flags` | `int[100]` | 0x8aac | 0x256c |  | 0x256c |  |
+| `parts` | `SPart[30]` | 0x7144 | 0xc04 | 0xc04 | 0xc04 | 0xc04 |
+| `model_scale` | `CVector3f` | 0x7c84 | 0x1744 | 0x2284 | 0x1744 | 0x2284 |
+| `bone_origins` | `CVector3f[100]` | 0x7c90 |  | 0x2290 | 0x1750 | 0x2290 |
+| `bias_used` | `CVector3f` | 0x8140 |  | 0x2740 | 0x1c00 | 0x2740 |
+| `bone_bounds` | `CBoundingBox3D[100]` | 0x814c |  | 0x274c | 0x1c0c | 0x274c |
+| `bone_flags` | `int[100]` | 0x8aac | 0x256c | 0x30ac | 0x256c | 0x30ac |
 | `bone_to_part_map` | `int[100]` | 0x8c3c | 0x26fc | 0x323c | 0x26fc | 0x323c |
 | `farthest_child_bone` | `int[100]` | 0x8dcc | 0x288c | 0x33cc | 0x288c | 0x33cc |
 | `model_name` | `char[80]` | 0x8f5c | 0x2a1c | 0x355c | 0x2a1c | 0x355c |
@@ -43,11 +43,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `vertex_pool` | `CVector3f[100]` |  | 0x1750 |  |  |  |
 | `bbox_pool` | `CBoundingBox3D[100]` |  | 0x1c00 |  |  |  |
 | `dead` | `char[12]` |  | 0x2560 |  |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc0+0xb40, 0xc04+0x2638
-- **blairwitch2**: 0xc0+0xb40, 0xc04+0xb40
-- **bw3**: 0xc0+0xb40, 0xc04+0x2638

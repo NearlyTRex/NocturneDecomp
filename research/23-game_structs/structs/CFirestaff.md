@@ -13,9 +13,6 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | bw3 |
 |---|---|---:|
 | `base` | `CWeapon` | 0x0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw3**: 0x594+0x2034
+| `globes` | `CDemonGlobe[2]` | 0x594 |
+| `flames` | `CFlame[12]` | 0x614 |
+| `sfx_handle` | `uint` | 0x25c4 |

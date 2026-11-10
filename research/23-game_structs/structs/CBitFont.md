@@ -17,15 +17,15 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `bitmap_count` | `int` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-| `bitmap_files` | `char[4][80]` | 0x4 | 0x4 |  |  |  |
-| `bitmap_data` | `void*[4]` | 0x144 | 0x144 |  |  |  |
-| `bitmap_widths` | `int[4]` | 0x154 | 0x154 |  |  |  |
+| `bitmap_files` | `char[4][80]` | 0x4 | 0x4 | 0x4 | 0x4 | 0x4 |
+| `bitmap_data` | `void*[4]` | 0x144 | 0x144 | 0x194 | 0x194 | 0x194 |
+| `bitmap_widths` | `int[4]` | 0x154 | 0x154 | 0x1a4 | 0x1a4 | 0x1a4 |
 | `palette_data` | `char[3072]` | 0x164 | 0x164 | 0x1b4 | 0x1b4 | 0x1b4 |
 | `palettes_display` | `uint[4][256]` | 0xd64 | 0xd64 | 0xdb4 | 0xdb4 | 0xdb4 |
-| `is_initialized` | `int` | 0x1d64 | 0x1d64 |  |  |  |
-| `char_positions` | `uchar*[256]` | 0x1d68 | 0x1d68 |  |  |  |
-| `char_bitmap_index` | `int[256]` | 0x2168 | 0x2168 |  |  |  |
-| `char_widths` | `int[256]` | 0x2568 | 0x2568 |  |  |  |
+| `is_initialized` | `int` | 0x1d64 | 0x1d64 | 0x1de4 | 0x1de4 | 0x1de4 |
+| `char_positions` | `uchar*[256]` | 0x1d68 | 0x1d68 | 0x1de8 | 0x1de8 | 0x1de8 |
+| `char_bitmap_index` | `int[256]` | 0x2168 | 0x2168 | 0x21e8 | 0x21e8 | 0x21e8 |
+| `char_widths` | `int[256]` | 0x2568 | 0x2568 | 0x35e8 | 0x35e8 | 0x35e8 |
 | `char_heights` | `int[256]` | 0x2968 | 0x2968 | 0x39e8 | 0x39e8 | 0x39e8 |
 | `char_y_offsets` | `int[256]` | 0x2d68 | 0x2d68 | 0x3de8 | 0x3de8 | 0x3de8 |
 | `max_char_width` | `int` | 0x3168 | 0x3168 | 0x41e8 | 0x41e8 | 0x41e8 |
@@ -40,11 +40,14 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `use_3d_rendering` | `int` | 0x318c | 0x318c | 0x420c | 0x420c | 0x420c |
 | `win_font_enabled` | `int` | 0x3190 | 0x3190 | 0x4210 | 0x4210 | 0x4210 |
 | `win_font_helper` | `CWinFont*` | 0x3194 | 0x3194 | 0x4214 | 0x4214 | 0x4214 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x4+0x1b0, 0x1db4+0x1c34, 0x4218+0x8
-- **blairwitch2**: 0x4+0x1b0, 0x1db4+0x1c34, 0x4218+0x8
-- **bw3**: 0x4+0x1b0, 0x1db4+0x1c34, 0x4218+0x8
+| `font_filename` | `char[80]` |  |  | 0x144 | 0x144 | 0x144 |
+| `accel_texture` | `SMRGLTextureBasic` |  |  | 0x1db4 | 0x1db4 | 0x1db4 |
+| `accel_vertex_alloc` | `void*` |  |  | 0x1dcc | 0x1dcc | 0x1dcc |
+| `accel_vertices` | `void*` |  |  | 0x1dd0 | 0x1dd0 | 0x1dd0 |
+| `accel_indices` | `void*` |  |  | 0x1dd4 | 0x1dd4 | 0x1dd4 |
+| `accel_vertex_count` | `int` |  |  | 0x1dd8 | 0x1dd8 | 0x1dd8 |
+| `accel_index_count` | `int` |  |  | 0x1ddc | 0x1ddc | 0x1ddc |
+| `accel_color` | `uint` |  |  | 0x1de0 | 0x1de0 | 0x1de0 |
+| `char_uv_rects` | `float[256][4]` |  |  | 0x25e8 | 0x25e8 | 0x25e8 |
+| `accel_scale` | `float` |  |  | 0x4218 | 0x4218 | 0x4218 |
+| `accel_inv_scale` | `float` |  |  | 0x421c | 0x421c | 0x421c |

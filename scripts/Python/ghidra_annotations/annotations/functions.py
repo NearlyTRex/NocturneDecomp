@@ -94,10 +94,11 @@ def find_name_address_mismatches(functions):
     return mismatches
 
 
-# <tu>_<Class>_<method>_FUN_<addr>. The class is the first C-prefixed component
-# after the translation unit, which is exactly what the schema promises.
+# <tu>_<Class>_<method>_FUN_<addr>. The class is the first C- or S-prefixed
+# component after the translation unit (classes C, structs S), which is exactly
+# what the schema promises.
 CLASS_METHOD_RE = re.compile(
-    r"^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>C[A-Z][A-Za-z0-9]*)_"
+    r"^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>[CS][A-Z][A-Za-z0-9]*)_"
     r"(?P<method>.+)_FUN_[0-9a-fA-F]+$")
 
 RECEIVER_NAME = "this_ptr"

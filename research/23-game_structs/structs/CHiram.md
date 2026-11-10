@@ -16,11 +16,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 |
 |---|---|---:|---:|---:|---:|
 | `base` | `CNPC` | 0x0 | 0x0 | 0x0 | 0x0 |
-| `kill_event` | `char[100]` | 0x1f708 | 0x1f570 |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x1fab8+0x64
-- **blairwitch2**: 0x24348+0x64
+| `kill_event` | `char[100]` | 0x1f708 | 0x1f570 | 0x1fab8 | 0x24348 |

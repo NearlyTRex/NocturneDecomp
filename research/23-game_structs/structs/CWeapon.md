@@ -30,16 +30,16 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `fire_cooldown_timer` | `float` | 0x300 | 0x2f8 | 0x300 | 0x45c | 0x300 |
 | `carried_by_actor` | `CDemonActor*` | 0x304 | 0x2fc | 0x304 | 0x460 | 0x304 |
 | `physics_box` | `CBox` | 0x308 | 0x300 | 0x308 | 0x464 | 0x308 |
-| `ground_height` | `float` | 0x560 | 0x558 | 0x560 | 0x6bc |  |
-| `weight` | `float` | 0x564 | 0x55c | 0x564 | 0x6c0 |  |
-| `ammo_count` | `int` | 0x568 | 0x560 | 0x568 | 0x6c4 |  |
-| `ammo_type` | `EAmmoType` | 0x56c | 0x564 | 0x56c | 0x6c8 |  |
+| `ground_height` | `float` | 0x560 | 0x558 | 0x560 | 0x6bc | 0x560 |
+| `weight` | `float` | 0x564 | 0x55c | 0x564 | 0x6c0 | 0x564 |
+| `ammo_count` | `int` | 0x568 | 0x560 | 0x568 | 0x6c4 | 0x568 |
+| `ammo_type` | `EAmmoType` | 0x56c | 0x564 | 0x56c | 0x6c8 | 0x56c |
 | `sim_timer` | `float` | 0x570 | 0x568 | 0x570 | 0x6cc | 0x580 |
 | `is_rendered` | `int` | 0x574 | 0x56c | 0x574 | 0x6d0 | 0x584 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x158+0x15c
-- **bw3**: 0x560+0x20, 0x588+0xc
+| `infinite_ammo` | `int` |  |  |  |  | 0x570 |
+| `weapon_class` | `int` |  |  |  |  | 0x574 |
+| `number_of_hands_needed` | `int` |  |  |  |  | 0x578 |
+| `draw_crosshair` | `int` |  |  |  |  | 0x57c |
+| `render_alpha` | `int` |  |  |  |  | 0x588 |
+| `ammo_per_shot` | `int` |  |  |  |  | 0x58c |
+| `uses_hero_ammo` | `int` |  |  |  |  | 0x590 |

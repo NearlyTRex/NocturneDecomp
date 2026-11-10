@@ -29,6 +29,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `previous_speed_setting` | `int` | 0x48 |  | 0x48 |
 | `power_on` | `int` | 0x4c | 0x44 | 0x4c |
 | `dial_sfx` | `uint` | 0x50 |  |  |
+| `unknown_0x54` | `int` | 0x54 |  |  |
 | `switch_sfx` | `uint` | 0x58 |  |  |
 | `reel_angle` | `float` | 0x5c | 0x48 | 0x50 |
 | `buttons` | `SButtonStruct[50]` | 0x60 | 0x4c | 0x54 |
@@ -40,9 +41,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `clip_sfx` | `uint[3]` | 0xc14 |  | 0xc08 |
 | `solution` | `int[5]` | 0xc20 |  | 0xc14 |
 | `solved` | `int` | 0xc34 |  | 0xc28 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x54+0x4

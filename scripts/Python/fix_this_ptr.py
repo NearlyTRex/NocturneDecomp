@@ -294,6 +294,29 @@ NO_PARAM_FIXES = [
          ret="void", conv="__cdecl", params=[("this_ptr", "CGameHook *")],
          note="CGame_runGameSession calls it with g_CGameHookPtr; prints the "
               "Coffin Rock banner and 'GameHook enabled.' to the console."),
+    # bw3 has no CMobster or CStranger: the sibling transfer named these after
+    # nocedit's bodies, but their callers and offsets are another class's.
+    dict(program="bw3.exe", addr="0058f4a0",
+         expect="core_mobster.cpp_CMobster_startFiringAttack_FUN_0058f4a0",
+         name="core_zombprie.cpp_CZombiePriest_startFiringAttack_FUN_0058f4a0",
+         ret="void", conv="__cdecl", params=[("this_ptr", "CZombiePriest *")],
+         note="called only from core_zombiepriest.cpp_FUN_0058d960; its timer "
+              "at +0xd110 is the last field of the 0xd114-byte CZombiePriest."),
+    dict(program="blairwitch2.exe", addr="0059fc10",
+         expect="core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10",
+         name="core_basicene.cpp_CBasicEnemy_archive_FUN_0059fc10",
+         ret="void", conv="__cdecl", params=[("this_ptr", "CBasicEnemy *")],
+         note="the archive slot of g_CBasicEnemyVTable (005fec04), whose setup slot is "
+              "0059e6a0 and process slot 0059f420; CTwigZombie's table is 005ff184."),
+    dict(program="bw3.exe", addr="00524170",
+         expect="unkafter_prye.cpp_FUN_00524170",
+         name="core_prye.cpp_CPrye_updateArmRecoilBlend_FUN_00524170",
+         ret="void", conv="__cdecl",
+         params=[("this_ptr", "CPrye *"), ("delta_time", "float"),
+                 ("is_weapon_active", "int")],
+         note="nocedit CStranger_updateArmRecoilBlend's body; called only from "
+              "core_prye.cpp_FUN_00518cd0, and reaches +0x20c80 of the "
+              "0x20d04-byte CPrye."),
     # Blocked on a type that does not exist in nocturne yet. Left in the table
     # so it is reported every run rather than quietly forgotten.
     dict(program="nocturne.exe", addr="004f8570",
@@ -758,7 +781,7 @@ def main():
         print("%s: %d exemption(s)\n" % (os.path.basename(args.skip_file), len(skip)))
 
     if args.apply and not args.no_snapshot and not snapshot(args):
-        print("Snapshot failed - refusing to mutate.")
+        print("Snapshot failed - refusing to mutate.", flush=True)
         os._exit(1)
 
     import pyghidra
@@ -776,6 +799,8 @@ def main():
         import traceback
         traceback.print_exc()
         code = 1
+    # os._exit skips the buffer flush, which loses the report when stdout is a file
+    sys.stdout.flush()
     os._exit(code)
 
 

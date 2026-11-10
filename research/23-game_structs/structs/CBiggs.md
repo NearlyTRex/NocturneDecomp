@@ -19,11 +19,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `model` | `CKeyFramedModelInstance` | 0xbebc | 0xbd24 | 0xc268 | 0x10af8 |
 | `morphing` | `int` | 0xc038 | 0xbea0 | 0xc3e4 | 0x10c74 |
 | `morph_timer` | `float` | 0xc03c | 0xbea4 | 0xc3e8 | 0x10c78 |
-| `morph` | `CMorph` | 0xc040 | 0xbea8 |  | 0x10c7c |
+| `morph` | `CMorph` | 0xc040 | 0xbea8 | 0xc3ec | 0x10c7c |
 | `morph_event` | `char[100]` | 0xcc6c | 0xcad4 | 0xd018 | 0x118a8 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc3ec+0xc2c

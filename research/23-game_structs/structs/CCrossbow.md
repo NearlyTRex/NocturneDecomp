@@ -17,10 +17,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 |---|---|---:|---:|---:|---:|
 | `base` | `CWeapon` | 0x0 | 0x0 | 0x0 | 0x0 |
 | `flame_active` | `int` | 0x578 | 0x570 | 0x578 | 0x6d4 |
-| `bolt_flame` | `CFlame` | 0x57c | 0x574 | 0x57c |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x6d8+0x400
+| `bolt_flame` | `CFlame` | 0x57c | 0x574 | 0x57c | 0x6d8 |

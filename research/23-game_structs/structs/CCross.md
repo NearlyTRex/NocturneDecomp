@@ -13,9 +13,11 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | blairwitch2 |
 |---|---|---:|
 | `base` | `CMelee` | 0x0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x828+0x20
+| `charge` | `float` | 0x828 |
+| `charge_time` | `float` | 0x82c |
+| `glow_intensity` | `float` | 0x830 |
+| `pulse_timer` | `float` | 0x834 |
+| `blast_strength` | `float` | 0x838 |
+| `unused_83c` | `int` | 0x83c |
+| `blast_pending` | `float` | 0x840 |
+| `corona_queued` | `int` | 0x844 |

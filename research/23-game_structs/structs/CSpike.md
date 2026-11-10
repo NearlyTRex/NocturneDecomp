@@ -35,9 +35,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `period` | `float` | 0x554 | 0x54c | 0x554 | 0x6b0 | 0x554 |
 | `damage_strength` | `float` | 0x558 | 0x550 | 0x558 | 0x6b4 | 0x558 |
 | `param` | `float` | 0x55c | 0x554 | 0x55c | 0x6b8 | 0x55c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x158+0x15c

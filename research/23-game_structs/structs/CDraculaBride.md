@@ -29,9 +29,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `part_list` | `CBodyPart*[30]` | 0xbf6c | 0xbdd4 | 0xc318 | 0x10ba8 |
 | `exploded` | `int` | 0xbfe4 | 0xbe4c | 0xc408 | 0x10c20 |
 | `fade_timer` | `float` | 0xbfe8 | 0xbe50 | 0xc40c | 0x10c24 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc390+0x78

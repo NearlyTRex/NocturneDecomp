@@ -22,13 +22,6 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `name_of_wolf` | `char[32]` | 0x1f78c | 0x1f5f4 | 0x1fb3c | 0x243cc | 0x2074c |
 | `transform_wav` | `char[100]` | 0x1f7ac | 0x1f614 | 0x1fb5c | 0x243ec | 0x2076c |
 | `werewolf_actor` | `CWerewolf*` | 0x1f810 | 0x1f678 | 0x1fbc0 | 0x24450 | 0x207d0 |
-| `morph` | `CMorph` | 0x1f814 | 0x1f67c |  | 0x24454 |  |
+| `morph` | `CMorph` | 0x1f814 | 0x1f67c | 0x1fbc4 | 0x24454 | 0x207d4 |
 | `morph_time` | `float` | 0x20440 | 0x202a8 | 0x207f0 | 0x25080 | 0x21400 |
 | `wolf_size` | `float` | 0x20444 | 0x202ac | 0x207f4 | 0x25084 | 0x21404 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x1fbc4+0xc2c
-- **bw3**: 0x207d4+0xc2c

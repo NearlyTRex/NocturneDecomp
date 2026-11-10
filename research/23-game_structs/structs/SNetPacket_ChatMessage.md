@@ -19,11 +19,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `header` | `SNetPacketHeader` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `message_id` | `int` | 0x5 | 0x5 | 0x5 | 0x5 | 0x5 |
 | `message` | `char[256]` | 0x9 | 0x9 | 0x9 | 0x9 | 0x9 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x1+0x4
-- **blairwitch2**: 0x1+0x4
-- **bw3**: 0x1+0x4

@@ -17,13 +17,9 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-| `model` | `CKeyFramedModelInstance` | 0x158 | 0x150 | 0x158 | 0x2b4 |  |
-| `use_count` | `int` | 0x2d4 | 0x2cc | 0x2d4 | 0x430 |  |
-| `hp_restored` | `float` | 0x2d8 | 0x2d0 | 0x2d8 | 0x434 |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x438+0x4
-- **bw3**: 0x158+0x18c
+| `model` | `CKeyFramedModelInstance` | 0x158 | 0x150 | 0x158 | 0x2b4 | 0x158 |
+| `use_count` | `int` | 0x2d4 | 0x2cc | 0x2d4 | 0x430 | 0x2d4 |
+| `hp_restored` | `float` | 0x2d8 | 0x2d0 | 0x2d8 | 0x434 | 0x2d8 |
+| `check_timer` | `float` |  |  |  | 0x438 |  |
+| `anim_frame` | `float` |  |  |  |  | 0x2dc |
+| `automatic_use` | `int` |  |  |  |  | 0x2e0 |

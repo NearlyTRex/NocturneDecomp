@@ -16,16 +16,8 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `base` | `CParticle` | 0x0 | 0x0 |  |  |  |
+| `base` | `CParticle` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `euler_angles` | `CVector3f` | 0x38 | 0x38 | 0x40 | 0x40 | 0x40 |
 | `angular_velocity` | `CVector3f` | 0x44 | 0x44 | 0x4c | 0x4c | 0x4c |
 | `bounce_count` | `int` | 0x50 | 0x50 | 0x58 | 0x58 | 0x58 |
 | `model_ptr` | `CKeyFramedModel*` | 0x54 | 0x54 | 0x5c | 0x5c | 0x5c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x0+0x40
-- **blairwitch2**: 0x0+0x40
-- **bw3**: 0x0+0x40

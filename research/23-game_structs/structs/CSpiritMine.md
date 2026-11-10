@@ -13,9 +13,13 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | blairwitch2 |
 |---|---|---:|
 | `base` | `CBoxActor` | 0x0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x7d4+0x64
+| `trigger_radius` | `float` | 0x7d4 |
+| `unused_7d8` | `float` | 0x7d8 |
+| `sleep_time` | `float` | 0x7dc |
+| `effect_time` | `float` | 0x7e0 |
+| `effect_damage` | `float` | 0x7e4 |
+| `sleep_timer` | `float` | 0x7e8 |
+| `emit_timer` | `float` | 0x7ec |
+| `effect_timer` | `float` | 0x7f0 |
+| `globe` | `CDemonGlobe` | 0x7f4 |
+| `unused_834` | `int` | 0x834 |

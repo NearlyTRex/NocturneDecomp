@@ -35,9 +35,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `do_visibility_check` | `int` | 0x298 | 0x290 | 0x298 | 0x3f4 | 0x298 |
 | `enemy_burn_index` | `int` | 0x29c | 0x294 | 0x29c | 0x3f8 | 0x29c |
 | `render_corona` | `int` | 0x2a0 | 0x298 | 0x2a0 | 0x3fc | 0x2a0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x158+0x15c

@@ -33,9 +33,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `hit_sound` | `char[32]` | 0x314 | 0x30c | 0x314 | 0x470 | 0x314 |
 | `no_rock_flag` | `int` | 0x334 | 0x32c | 0x334 | 0x490 | 0x334 |
 | `is_visible` | `int` | 0x338 | 0x330 | 0x338 | 0x494 | 0x338 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x158+0x15c

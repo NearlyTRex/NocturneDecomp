@@ -17,12 +17,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CBoxActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-| `dest_actor` | `CDemonActor*` | 0x66c | 0x664 |  |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x678+0x4
-- **blairwitch2**: 0x7d4+0x4
-- **bw3**: 0x6e8+0x4
+| `dest_actor` | `CDemonActor*` | 0x66c | 0x664 | 0x678 | 0x7d4 | 0x6e8 |

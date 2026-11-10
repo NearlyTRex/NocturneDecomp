@@ -8,7 +8,8 @@ import pytest
 
 # Local imports
 from fake_pyghidra import FakePyghidra
-from ghidra_fake import BuiltInDataType, PointerDataType, StructureDataType
+from ghidra_fake import (ArrayDataType, BuiltInDataType, FunctionDefinitionDataType, ParameterImpl,
+                         PointerDataType, StructureDataType, TypedefDataType, Variable)
 from ghidra_program import Program
 from repo_paths import SCRIPTS_DIR
 from sibling_images import write_json
@@ -96,7 +97,7 @@ def fixture_spec(tmp_path):
 
 def test_main_checks_then_applies(spec, tmp_path, monkeypatch, capsys):
     assert ds.main([spec, "--program", "bw.exe"]) == 0
-    assert "bw.exe: 2 structs in the spec, 0 problems" in capsys.readouterr().out
+    assert "bw.exe: 2 structs and 0 deletions in the spec, 0 problems" in capsys.readouterr().out
     assert ds.main([spec, "--program", "bw.exe", "--apply"]) == 2
     module = FakePyghidra(target())
     monkeypatch.setitem(sys.modules, "pyghidra", module)
@@ -122,6 +123,49 @@ def test_runs_as_a_script(monkeypatch):
     with pytest.raises(SystemExit) as exit_info:
         runpy.run_path(os.path.join(SCRIPTS_DIR, "define_structs.py"), run_name = "__main__")
     assert exit_info.value.code == 0
+
+
+def absent_build():
+    """Placeholders each reached one way, two reached by nothing, one laid out."""
+    program = target()
+    dtm = program.getDataTypeManager()
+    stubs = {n: StructureDataType(n, length = 1, category = "/Nocturne/Class/Game")
+             for n in ("CField", "CTyped", "CDef", "CRet", "CParam", "CLocal", "CData", "CGone", "COther")}
+    dtm.add(*stubs.values(),
+            StructureDataType("CHolder", [(ArrayDataType(PointerDataType(stubs["CField"]), 2, 4), "slots")]),
+            TypedefDataType("CTypedName", stubs["CTyped"]), PointerDataType(stubs["CGone"]),
+            FunctionDefinitionDataType("callback", INT, [(PointerDataType(stubs["CDef"]), "who")]))
+    functions = program.getFunctionManager()
+    functions.add("f_ret", 0x401000).return_type = PointerDataType(stubs["CRet"])
+    functions.add("f_param", 0x401010).parameters = [ParameterImpl("p", PointerDataType(stubs["CParam"]), program)]
+    with_local = functions.add("f_local", 0x401020)
+    with_local.return_type = INT
+    with_local.local_variables = [Variable("l", stubs["CLocal"])]
+    program.getListing().add_data(0x500000, stubs["CData"])
+    return program, stubs
+
+
+def test_only_an_unused_placeholder_is_deleted():
+    program, stubs = absent_build()
+    names = list(stubs) + ["CKept", "CNone"]
+    report = dict(ds.delete(program, [{"name": n, "basis": "-"} for n in names]))
+    assert report == {
+        "CField": "in use; left: CHolder.slots", "CTyped": "in use; left: typedef CTypedName",
+        "CDef": "in use; left: callback takes it", "CRet": "in use; left: f_ret returns it",
+        "CParam": "in use; left: f_param.p", "CLocal": "in use; left: f_local.l",
+        "CData": "in use; left: data at 00500000", "CGone": "deleted", "COther": "deleted",
+        "CKept": "laid out; left", "CNone": "absent already"}
+    assert ds.find_type(program.getDataTypeManager(), "CGone") is None
+
+
+def test_main_deletes_what_the_spec_lists(tmp_path, monkeypatch, capsys):
+    program, _ = absent_build()
+    monkeypatch.setitem(sys.modules, "pyghidra", FakePyghidra(program))
+    spec = write_json(tmp_path / "gone.json", {"bw.exe": {"delete": [{"name": "CGone", "basis": "-"}]}})
+    assert ds.main([spec, "--program", "bw.exe", "--apply", "--project", str(tmp_path)]) == 0
+    assert "0 structs and 1 deletions" in capsys.readouterr().out
+    used = write_json(tmp_path / "used.json", {"bw.exe": {"delete": [{"name": "CData", "basis": "-"}]}})
+    assert ds.main([used, "--program", "bw.exe", "--apply", "--project", str(tmp_path)]) == 1
 
 
 def test_pointer_fields_resolve_through_the_build():

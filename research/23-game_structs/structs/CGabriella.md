@@ -15,7 +15,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 |
 |---|---|---:|---:|---:|---:|
-| `base` | `CHero` | 0x0 | 0x0 |  |  |
+| `base` | `CHero` | 0x0 | 0x0 | 0x0 | 0x0 |
 | `weapon_state_flags` | `int` | 0x1fbd4 | 0x1fa3c | 0x1ffac | 0x25640 |
 | `holster_blend` | `float` | 0x1fbd8 | 0x1fa40 | 0x1ffb0 | 0x25644 |
 | `draw_blend` | `float` | 0x1fbdc | 0x1fa44 | 0x1ffb4 | 0x25648 |
@@ -32,12 +32,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `aim_yaw` | `float` | 0x1fc08 | 0x1fa70 | 0x1ffe0 | 0x25674 |
 | `fire_cooldown_timer` | `float` | 0x1fc0c | 0x1fa74 | 0x1ffe4 | 0x25678 |
 | `aim_weight` | `float` | 0x1fc10 | 0x1fa78 | 0x1ffe8 | 0x2567c |
-| `coat_cloth` | `CCloth` | 0x1fc14 | 0x1fa7c |  |  |
-| `dynamite_charge_power` | `float` | 0x5fa84 | 0x5a5ac |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x0+0x1ffac, 0x1ffec+0x3ab34
-- **blairwitch2**: 0x0+0x25640, 0x25680+0x3ab34
+| `coat_cloth` | `CCloth` | 0x1fc14 | 0x1fa7c | 0x1ffec | 0x25680 |
+| `dynamite_charge_power` | `float` | 0x5fa84 | 0x5a5ac | 0x5ab1c | 0x601b0 |

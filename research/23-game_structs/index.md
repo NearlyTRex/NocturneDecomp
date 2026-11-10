@@ -75,7 +75,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CClothList](structs/CClothList.md) | 444 | 444 | 444 | 444 | 444 |
 | [CCmdParm](structs/CCmdParm.md) | 808 | — | — | — | — |
 | [CCmdParse](structs/CCmdParse.md) | 8488 | — | — | — | — |
-| [CCodec](structs/CCodec.md) | 4 ✓ | 4 ✓ | 4 (placeholder) | 4 (placeholder) | 4 (placeholder) |
+| [CCodec](structs/CCodec.md) | 4 ✓ | 4 ✓ | 4 ✓ | 4 ✓ | 4 ✓ |
 | [CColonel](structs/CColonel.md) | 130028 ✓ | 129620 ✓ | 131012 ✓ | 153176 ✓ | — |
 | [CColor3f](structs/CColor3f.md) | 12 | 12 | 12 | 12 | 12 |
 | [CColor3i](structs/CColor3i.md) | 12 | 12 | 12 | 12 | 12 |
@@ -90,7 +90,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CConstructRed](structs/CConstructRed.md) | — | — | — | — | 55392 |
 | [CConveyor](structs/CConveyor.md) | 2144 ✓ | 2132 ✓ | 2140 ✓ | 2488 ✓ | — |
 | [CCourse](structs/CCourse.md) | 12 ✓ | 12 ✓ | 12 | 12 | 12 |
-| [CCourseFrame](structs/CCourseFrame.md) | 28 | 28 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CCourseFrame](structs/CCourseFrame.md) | 28 | 28 | 28 | 28 | 28 |
 | [CCramTex](structs/CCramTex.md) | 76 | 76 | — | — | — |
 | [CCrate](structs/CCrate.md) | 764 ✓ | 756 ✓ | 764 ✓ | 1112 ✓ | 764 ✓ |
 | [CCrater](structs/CCrater.md) | 112 ✓ | 112 ✓ | 112 ✓ | 112 ✓ | 112 ✓ |
@@ -123,7 +123,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CDemonSet](structs/CDemonSet.md) | 1447532 ✓ | 1446532 ✓ | 1447556 ✓ | 1447552 ✓ | 1447556 ✓ |
 | [CDemonShadow](structs/CDemonShadow.md) | — | — | — | — | 53480 ✓ |
 | [CDemonTriangle](structs/CDemonTriangle.md) | 56 ✓ | 56 ✓ | 56 ✓ | 56 ✓ | 56 ✓ |
-| [CDirectSoundDevice](structs/CDirectSoundDevice.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CDirectSoundDevice](structs/CDirectSoundDevice.md) | 4 | 4 | 4 | 4 | 4 |
 | [CDisease](structs/CDisease.md) | — | — | — | — | 1444 ✓ |
 | [CDjien](structs/CDjien.md) | — | — | 51660 ✓ | — | — |
 | [CDoc](structs/CDoc.md) | — | — | 131300 ✓ | 156040 ✓ | — |
@@ -137,7 +137,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CDrummer](structs/CDrummer.md) | 128784 ✓ | 128376 ✓ | 129728 ✓ | 148304 ✓ | — |
 | [CDynamite](structs/CDynamite.md) | 1420 ✓ | 1412 ✓ | 1420 ✓ | 1768 ✓ | 1448 ✓ |
 | [CEdButton](structs/CEdButton.md) | 228 ✓ | 228 | 228 ✓ | 228 ✓ | 228 ✓ |
-| [CEdCheck](structs/CEdCheck.md) | 236 ✓ | 236 | 236 | unsized (placeholder) | 236 |
+| [CEdCheck](structs/CEdCheck.md) | 236 ✓ | 236 | 236 | 236 | 236 |
 | [CEdScrollBar](structs/CEdScrollBar.md) | 52 ✓ | 52 | 52 | 52 | 52 |
 | [CEditorTools](structs/CEditorTools.md) | 1 ✓ | 1 ✓ | 1 ✓ | 1 ✓ | 1 ✓ |
 | [CElephantGun](structs/CElephantGun.md) | 1412 ✓ | 1404 ✓ | 1412 ✓ | 1760 ✓ | 1440 ✓ |
@@ -156,9 +156,9 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CFileManager](structs/CFileManager.md) | 1280020 | — | — | — | — |
 | [CFilmProjector](structs/CFilmProjector.md) | 996 ✓ | 988 ✓ | 996 ✓ | 1344 ✓ | 996 ✓ |
 | [CFilmReel](structs/CFilmReel.md) | 796 ✓ | 788 ✓ | 796 ✓ | 1144 ✓ | 796 ✓ |
-| [CFilterCache](structs/CFilterCache.md) | 2820 ✓ | 2820 ✓ | 2820 (placeholder) | 2820 (placeholder) | 2820 (placeholder) |
+| [CFilterCache](structs/CFilterCache.md) | 2820 ✓ | 2820 ✓ | 2820 ✓ | 2820 ✓ | 2820 ✓ |
 | [CFilterFX](structs/CFilterFX.md) | 12 ✓ | 12 ✓ | 12 ✓ | 12 ✓ | 12 ✓ |
-| [CFireEffect](structs/CFireEffect.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CFireEffect](structs/CFireEffect.md) | 4 | 4 | 4 | 4 | 4 |
 | [CFireball](structs/CFireball.md) | 156 ✓ | 156 ✓ | 164 ✓ | 164 ✓ | 164 ✓ |
 | [CFirefly](structs/CFirefly.md) | — | — | 92 ✓ | 92 ✓ | 92 ✓ |
 | [CFirestaff](structs/CFirestaff.md) | — | — | — | — | 9672 ✓ |
@@ -168,7 +168,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CFlashlight](structs/CFlashlight.md) | 1400 ✓ | 1392 ✓ | 1400 ✓ | 1748 ✓ | 1428 ✓ |
 | [CFlies](structs/CFlies.md) | 10784 ✓ | 10776 ✓ | 10784 ✓ | 11132 ✓ | 10784 ✓ |
 | [CFlintlock](structs/CFlintlock.md) | — | — | — | — | 1428 ✓ |
-| [CFont](structs/CFont.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CFont](structs/CFont.md) | 4 | 4 | 27208 | 27208 | 27208 |
 | [CFootstep](structs/CFootstep.md) | 64 ✓ | 64 ✓ | 64 ✓ | 64 ✓ | 68 ✓ |
 | [CForceFeedback](structs/CForceFeedback.md) | — | 4 | — | — | — |
 | [CFrankenstienMachine](structs/CFrankenstienMachine.md) | 1180 ✓ | 1172 ✓ | 1180 ✓ | 1528 ✓ | — |
@@ -182,7 +182,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CGlass](structs/CGlass.md) | 2880 ✓ | 2872 ✓ | 2880 ✓ | 3228 ✓ | 2928 ✓ |
 | [CGlassParticle](structs/CGlassParticle.md) | 156 ✓ | 156 ✓ | 164 ✓ | 164 ✓ | 212 ✓ |
 | [CGoggles](structs/CGoggles.md) | — | — | 728 ✓ | 1076 ✓ | 728 ✓ |
-| [CGore](structs/CGore.md) | 1 ✓ | 1 ✓ | 1 (placeholder) | 1 (placeholder) | 1 (placeholder) |
+| [CGore](structs/CGore.md) | 1 ✓ | 1 ✓ | 1 ✓ | 1 ✓ | 1 ✓ |
 | [CGrandma](structs/CGrandma.md) | — | — | — | 71764 ✓ | — |
 | [CGrave](structs/CGrave.md) | 944 ✓ | 936 ✓ | 944 ✓ | 1292 ✓ | 944 ✓ |
 | [CGround](structs/CGround.md) | 92 ✓ | 92 ✓ | 92 ✓ | 92 ✓ | 92 ✓ |
@@ -208,7 +208,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CInStreamFile](structs/CInStreamFile.md) | — | — | 44 ✓ | 40 ✓ | 44 ✓ |
 | [CInStreamMemory](structs/CInStreamMemory.md) | — | — | 20 ✓ | 20 ✓ | 20 ✓ |
 | [CInStreamPipe](structs/CInStreamPipe.md) | — | — | 36 ✓ | 36 ✓ | 36 ✓ |
-| [CIni](structs/CIni.md) | 4 | 4 | 4 (placeholder) | 4 (placeholder) | 4 (placeholder) |
+| [CIni](structs/CIni.md) | 4 | 4 | 4 | 4 | 4 |
 | [CIniFile](structs/CIniFile.md) | 512 | 512 | 516 ✓ | 516 ✓ | 516 ✓ |
 | [CInputString](structs/CInputString.md) | 320 | 320 | 320 | 320 | 320 |
 | [CInventory](structs/CInventory.md) | 1120 | 1120 | 1132 | 1572 | 1136 |
@@ -217,11 +217,11 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CKeyFramedModel](structs/CKeyFramedModel.md) | 22232 ✓ | 920 ✓ | 920 ✓ | 920 ✓ | 920 ✓ |
 | [CKeyFramedModelInstance](structs/CKeyFramedModelInstance.md) | 380 ✓ | 380 ✓ | 380 ✓ | 380 ✓ | 380 ✓ |
 | [CKeyFramedModelPart](structs/CKeyFramedModelPart.md) | 8 | 8 | 8 | 8 | 8 |
-| [CKeys](structs/CKeys.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CKeys](structs/CKeys.md) | 4 | 4 | 4 | 4 | 4 |
 | [CLZWCompress](structs/CLZWCompress.md) | 56 ✓ | 56 ✓ | 64 ✓ | 64 ✓ | 64 ✓ |
 | [CLZWDecompress](structs/CLZWDecompress.md) | 48 ✓ | 48 ✓ | 52 ✓ | 52 ✓ | 52 ✓ |
 | [CLZWDictionary](structs/CLZWDictionary.md) | 28 | 28 | 28 | 28 | 28 |
-| [CLZWDictionaryNode](structs/CLZWDictionaryNode.md) | 16 | 16 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CLZWDictionaryNode](structs/CLZWDictionaryNode.md) | 16 | 16 | 16 | 16 | 16 |
 | [CLadder](structs/CLadder.md) | 768 ✓ | 760 ✓ | 768 ✓ | 1116 ✓ | 768 ✓ |
 | [CLantern](structs/CLantern.md) | — | — | — | 1800 ✓ | — |
 | [CLarva](structs/CLarva.md) | 48840 ✓ | 48432 ✓ | 49780 ✓ | 68356 ✓ | — |
@@ -260,24 +260,24 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CMirror](structs/CMirror.md) | 288 | 288 | 288 | 288 | 288 |
 | [CMirrorHack](structs/CMirrorHack.md) | 728 ✓ | 720 ✓ | 728 ✓ | 1076 ✓ | — |
 | [CMirrorReflection](structs/CMirrorReflection.md) | 148 | 148 | 148 | 148 | 148 |
-| [CMobster](structs/CMobster.md) | 49044 ✓ | 48636 ✓ | 49984 ✓ | 68560 ✓ | unsized (placeholder) |
+| [CMobster](structs/CMobster.md) | 49044 ✓ | 48636 ✓ | 49984 ✓ | 68560 ✓ | — |
 | [CMoloch](structs/CMoloch.md) | 142232 ✓ | 141824 ✓ | 143456 ✓ | 165380 ✓ | — |
 | [CMooCow](structs/CMooCow.md) | — | — | 49652 ✓ | — | 52720 ✓ |
 | [CMoon](structs/CMoon.md) | 22240 ✓ | 928 ✓ | 2768 ✓ | 2768 ✓ | 2792 ✓ |
 | [CMorph](structs/CMorph.md) | 3116 | 3116 | 3116 | 3116 | 3116 |
 | [CMorphModel](structs/CMorphModel.md) | 1544 ✓ | 1544 ✓ | 1544 ✓ | 1544 ✓ | 1544 ✓ |
 | [CMotionController](structs/CMotionController.md) | 84 | 84 ✓ | 84 ✓ | 84 ✓ | 84 ✓ |
-| [CMotionList](structs/CMotionList.md) | 165128 | 165128 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CMotionList](structs/CMotionList.md) | 165128 | 165128 | 122408 | 119208 | 122408 |
 | [CMouse](structs/CMouse.md) | 608 ✓ | 608 ✓ | 608 ✓ | 608 ✓ | 608 ✓ |
 | [CMultiCram](structs/CMultiCram.md) | 4004 | 4004 | — | — | — |
 | [CMuzzleEffect](structs/CMuzzleEffect.md) | — | — | — | 92 ✓ | — |
-| [CMuzzleFlash](structs/CMuzzleFlash.md) | 92 ✓ | 92 ✓ | 92 (placeholder) | 92 (placeholder) | 92 (placeholder) |
+| [CMuzzleFlash](structs/CMuzzleFlash.md) | 92 ✓ | 92 ✓ | 92 ✓ | 92 ✓ | 92 ✓ |
 | [CNPC](structs/CNPC.md) | 128776 ✓ | 128368 ✓ | 129720 ✓ | 148296 ✓ | 132808 ✓ |
 | [CNecklace](structs/CNecklace.md) | — | — | — | 2004 ✓ | — |
 | [CNetGame](structs/CNetGame.md) | 372 ✓ | 372 ✓ | 380 ✓ | 388 ✓ | 388 ✓ |
 | [CObj](structs/CObj.md) | 28 ✓ | 28 | — | — | — |
 | [COptimize](structs/COptimize.md) | 68 ✓ | — | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [COrientation](structs/COrientation.md) | 12 | 12 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [COrientation](structs/COrientation.md) | 12 | 12 | 12 | 12 | 12 |
 | [COutStreamDebug](structs/COutStreamDebug.md) | — | — | 4 ✓ | 4 ✓ | 4 ✓ |
 | [COutStreamFile](structs/COutStreamFile.md) | — | — | 8 ✓ | 8 ✓ | 8 ✓ |
 | [COutStreamMemory](structs/COutStreamMemory.md) | — | — | 24 ✓ | 24 ✓ | 24 ✓ |
@@ -298,7 +298,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CPod](structs/CPod.md) | 408 ✓ | 408 ✓ | 408 ✓ | 408 ✓ | 408 ✓ |
 | [CPodAuditRecord](structs/CPodAuditRecord.md) | 312 | 312 | — | — | — |
 | [CPodDependencyRecord](structs/CPodDependencyRecord.md) | 264 | — | — | — | — |
-| [CPodDirectoryEntry](structs/CPodDirectoryEntry.md) | 20 | 20 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CPodDirectoryEntry](structs/CPodDirectoryEntry.md) | 20 | 20 | 20 | 20 | 20 |
 | [CPodFile](structs/CPodFile.md) | 1068 ✓ | 540 ✓ | 1068 ✓ | 1068 ✓ | 1068 ✓ |
 | [CPodSearchContext](structs/CPodSearchContext.md) | 796 | 796 | 796 | 796 | 796 |
 | [CPoly](structs/CPoly.md) | 104 ✓ | 104 | — | — | — |
@@ -341,7 +341,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CSlew](structs/CSlew.md) | 28 ✓ | 28 ✓ | — | — | — |
 | [CSmiley](structs/CSmiley.md) | 48896 ✓ | 48488 ✓ | 49836 ✓ | 68412 ✓ | — |
 | [CSmokeParticle](structs/CSmokeParticle.md) | 44 ✓ | 44 ✓ | 44 ✓ | 44 ✓ | 44 ✓ |
-| [CSocket](structs/CSocket.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CSocket](structs/CSocket.md) | 4 | 4 | 4 | 4 | 4 |
 | [CSound](structs/CSound.md) | 4 | 4 | 4 | 4 | 4 |
 | [CSoundDevice](structs/CSoundDevice.md) | 4 | 4 | 4 | 4 | 4 |
 | [CSpark](structs/CSpark.md) | 76 ✓ | 76 ✓ | 84 ✓ | 84 ✓ | 84 ✓ |
@@ -359,22 +359,22 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CSteuben](structs/CSteuben.md) | — | — | — | 71760 ✓ | — |
 | [CStorm](structs/CStorm.md) | — | — | — | — | 1428 ✓ |
 | [CStrList](structs/CStrList.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
-| [CStranger](structs/CStranger.md) | 130672 ✓ | 130264 ✓ | 131652 ✓ | 153820 ✓ | unsized (placeholder) |
+| [CStranger](structs/CStranger.md) | 130672 ✓ | 130264 ✓ | 131652 ✓ | 153820 ✓ | — |
 | [CStyler](structs/CStyler.md) | — | — | — | — | 296904 ✓ |
 | [CStylerDemon](structs/CStylerDemon.md) | — | — | — | — | 56600 ✓ |
-| [CSuccubus](structs/CSuccubus.md) | 61288 ✓ | 60880 ✓ | 62468 ✓ | 80804 ✓ | unsized (placeholder) |
+| [CSuccubus](structs/CSuccubus.md) | 61288 ✓ | 60880 ✓ | 62468 ✓ | 80804 ✓ | — |
 | [CSvetlana](structs/CSvetlana.md) | 653528 ✓ | 610496 ✓ | 611888 ✓ | 634052 ✓ | — |
 | [CTVBat](structs/CTVBat.md) | 49396 ✓ | 48988 ✓ | 50336 ✓ | 68912 ✓ | 53900 ✓ |
 | [CTawiscara](structs/CTawiscara.md) | — | — | — | — | 53404 ✓ |
 | [CTeleport](structs/CTeleport.md) | 360 ✓ | 352 ✓ | 360 ✓ | 708 ✓ | 360 ✓ |
-| [CTeleportDest](structs/CTeleportDest.md) | 344 ✓ | 336 ✓ | 344 (placeholder) | 692 ✓ | 344 (placeholder) |
+| [CTeleportDest](structs/CTeleportDest.md) | 344 ✓ | 336 ✓ | 344 ✓ | 692 ✓ | 344 ✓ |
 | [CTempleStone](structs/CTempleStone.md) | 1648 ✓ | 1640 ✓ | 1660 ✓ | 2008 ✓ | 1772 ✓ |
-| [CTentacle](structs/CTentacle.md) | 48940 ✓ | 48532 ✓ | 49880 ✓ | 68456 ✓ | unsized (placeholder) |
-| [CTerrain](structs/CTerrain.md) | 8 | 8 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CTentacle](structs/CTentacle.md) | 48940 ✓ | 48532 ✓ | 49880 ✓ | 68456 ✓ | — |
+| [CTerrain](structs/CTerrain.md) | 8 | 8 | 8 | 8 | 8 |
 | [CTextureCache](structs/CTextureCache.md) | 81932 | 81932 | 98316 | 98316 | 98316 |
 | [CTextureList](structs/CTextureList.md) | 108012 ✓ | 28004 ✓ | 28004 ✓ | 28004 ✓ | 28004 ✓ |
 | [CTheHand](structs/CTheHand.md) | — | — | 49888 ✓ | — | 53452 ✓ |
-| [CTire](structs/CTire.md) | 436 ✓ | 436 ✓ | 436 ✓ | 436 (placeholder) | — |
+| [CTire](structs/CTire.md) | 436 ✓ | 436 ✓ | 436 ✓ | 436 ✓ | — |
 | [CTommyGun](structs/CTommyGun.md) | 1412 ✓ | 1404 ✓ | 1412 ✓ | 1760 ✓ | 1440 ✓ |
 | [CToss](structs/CToss.md) | 996 ✓ | 996 ✓ | 996 ✓ | 996 ✓ | 1000 ✓ |
 | [CTrail](structs/CTrail.md) | 36 ✓ | 36 ✓ | 36 ✓ | 36 ✓ | 36 ✓ |
@@ -390,7 +390,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CVector2d](structs/CVector2d.md) | 16 | 16 | 16 | 16 | 16 |
 | [CVector2f](structs/CVector2f.md) | 8 | 8 | — | — | — |
 | [CVector2i](structs/CVector2i.md) | 8 | 8 | 8 | 8 | 8 |
-| [CVector3d](structs/CVector3d.md) | 24 | 24 | — | — | — |
+| [CVector3d](structs/CVector3d.md) | 24 | 24 | 24 | 24 | 24 |
 | [CVector3f](structs/CVector3f.md) | 12 | 12 | 12 | 12 | 12 |
 | [CVector3i](structs/CVector3i.md) | 12 | 12 | 12 | 12 | 12 |
 | [CVector4d](structs/CVector4d.md) | 32 | — | — | — | — |
@@ -401,7 +401,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [CWater](structs/CWater.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
 | [CWaterActor](structs/CWaterActor.md) | 176696 ✓ | 176688 ✓ | 176696 ✓ | 177044 ✓ | 176700 ✓ |
 | [CWavInDevice](structs/CWavInDevice.md) | 4 | — | 4 | 4 | 4 |
-| [CWavOutDevice](structs/CWavOutDevice.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [CWavOutDevice](structs/CWavOutDevice.md) | 4 | 4 | 4 | 4 | 4 |
 | [CWayPoint](structs/CWayPoint.md) | 1368 ✓ | 1360 ✓ | 1372 ✓ | 1724 ✓ | 1372 ✓ |
 | [CWeapon](structs/CWeapon.md) | 1400 ✓ | 1392 ✓ | 1400 ✓ | 1748 ✓ | 1428 ✓ |
 | [CWeather](structs/CWeather.md) | 56 ✓ | 56 ✓ | 56 | 56 | 56 |
@@ -427,7 +427,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SActorRayHit](structs/SActorRayHit.md) | 28 | 28 | — | — | — |
 | [SActorVarBlock](structs/SActorVarBlock.md) | 1504 | 1504 | 1504 | 1504 | 1504 |
 | [SAlphaEntry](structs/SAlphaEntry.md) | 8 | 8 | — | — | — |
-| [SArmAimData](structs/SArmAimData.md) | 32 | 32 | 32 | 32 | — |
+| [SArmAimData](structs/SArmAimData.md) | 32 | 32 | 32 | 32 | 32 |
 | [SAudioFormatDescriptor](structs/SAudioFormatDescriptor.md) | 16 | 16 | — | — | — |
 | [SBat](structs/SBat.md) | 24 ✓ | 24 ✓ | — | — | — |
 | [SBitBuffer](structs/SBitBuffer.md) | 8 | 8 | 8 | 8 | 8 |
@@ -444,7 +444,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SCameraViewportState](structs/SCameraViewportState.md) | 144 | 144 | 144 | 144 | 144 |
 | [SCarryHand](structs/SCarryHand.md) | 68 | 68 | 120 | 120 | 120 |
 | [SChainVertex](structs/SChainVertex.md) | 36 ✓ | 36 ✓ | 36 ✓ | 36 ✓ | 36 ✓ |
-| [SChatHistory](structs/SChatHistory.md) | 288 ✓ | 288 ✓ | 288 (placeholder) | 288 (placeholder) | 288 (placeholder) |
+| [SChatHistory](structs/SChatHistory.md) | 288 ✓ | 288 ✓ | 288 ✓ | 288 ✓ | 288 ✓ |
 | [SChatOutMessage](structs/SChatOutMessage.md) | 276 | 276 | — | — | — |
 | [SClipPlane](structs/SClipPlane.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
 | [SClothBone](structs/SClothBone.md) | 172 ✓ | 172 ✓ | 172 ✓ | 172 ✓ | 172 ✓ |
@@ -458,7 +458,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SConditionVariable](structs/SConditionVariable.md) | 8 | 8 | — | — | — |
 | [SCorona](structs/SCorona.md) | 78724 | 78724 | — | — | — |
 | [SCoronaLightCache](structs/SCoronaLightCache.md) | 629796 | 629796 | — | — | — |
-| [SCoronaLightEntry](structs/SCoronaLightEntry.md) | 78724 | 78724 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SCoronaLightEntry](structs/SCoronaLightEntry.md) | 78724 | 78724 | 78724 | 78724 | 78724 |
 | [SCounterBlock](structs/SCounterBlock.md) | 364 | 364 | 364 | 364 | 364 |
 | [SCram](structs/SCram.md) | 116 | 116 | — | — | — |
 | [SCramRectangle](structs/SCramRectangle.md) | 40 | 40 | — | — | — |
@@ -466,7 +466,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SCurtainVertex](structs/SCurtainVertex.md) | 116 ✓ | 116 ✓ | 116 ✓ | — | 116 ✓ |
 | [SDamageDecal](structs/SDamageDecal.md) | 56 | 56 | 56 | 56 | 56 |
 | [SDamageInfo](structs/SDamageInfo.md) | 60 ✓ | 60 ✓ | 60 | 60 | 60 |
-| [SDialogEntry](structs/SDialogEntry.md) | 550 | 550 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SDialogEntry](structs/SDialogEntry.md) | 550 | 550 | 550 | 550 | 550 |
 | [SDirectSoundDeviceInfo](structs/SDirectSoundDeviceInfo.md) | 284 | 284 | — | — | — |
 | [SDisplayListSortEntry](structs/SDisplayListSortEntry.md) | 8 | 8 | 8 | 8 | 8 |
 | [SDjienBox](structs/SDjienBox.md) | — | — | 72 ✓ | — | — |
@@ -488,27 +488,28 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SFogGrid](structs/SFogGrid.md) | 4128 | 4128 | 4128 | 4128 | 4128 |
 | [SFogGridPlane](structs/SFogGridPlane.md) | 256 | 256 | 256 | 256 | 256 |
 | [SFogImagePlane](structs/SFogImagePlane.md) | 76800 | 76800 | — | — | — |
+| [SFollowFormation](structs/SFollowFormation.md) | — | — | — | 980 | — |
 | [SFollowSlotStruct](structs/SFollowSlotStruct.md) | — | — | — | 60 ✓ | — |
 | [SFontGlyph](structs/SFontGlyph.md) | 145 | 145 | — | — | — |
 | [SFoundFileInfo](structs/SFoundFileInfo.md) | 532 | 532 | 532 | 532 | 532 |
-| [SFreaky](structs/SFreaky.md) | 84 ✓ | 84 ✓ | 84 (placeholder) | 84 (placeholder) | — |
+| [SFreaky](structs/SFreaky.md) | 84 ✓ | 84 ✓ | 84 ✓ | 84 ✓ | — |
 | [SGameSettingsPlayer](structs/SGameSettingsPlayer.md) | 40 | 40 | 40 | 40 | 40 |
 | [SGem](structs/SGem.md) | 184 ✓ | 184 ✓ | 184 ✓ | 184 ✓ | — |
-| [SGroundCell](structs/SGroundCell.md) | 4 | 4 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SHardwareEdge](structs/SHardwareEdge.md) | 56 | 56 | — | — | — |
+| [SGroundCell](structs/SGroundCell.md) | 4 | 4 | 4 | 4 | 4 |
+| [SHardwareEdge](structs/SHardwareEdge.md) | 56 | 56 | 56 | 56 | 56 |
 | [SHuffmanTable](structs/SHuffmanTable.md) | 2088 | 2088 | 2088 | 2088 | 2088 |
 | [SHuffmanTableSource](structs/SHuffmanTableSource.md) | 24 | 24 | — | — | — |
 | [SInputFace](structs/SInputFace.md) | 18 | 18 | 18 | 18 | 18 |
 | [SInteractionInfo](structs/SInteractionInfo.md) | 32 | 32 | 32 | 32 | 32 |
 | [SIntersectXZCylinder](structs/SIntersectXZCylinder.md) | 92 ✓ | 92 ✓ | 92 | 92 | 92 |
-| [SInventoryItemInfo](structs/SInventoryItemInfo.md) | 768 | 768 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SInventoryItemInfo](structs/SInventoryItemInfo.md) | 768 | 768 | 768 | 768 | 768 |
 | [SIpAddr](structs/SIpAddr.md) | — | — | 4 | 4 | 4 |
 | [SLaserInfo](structs/SLaserInfo.md) | 84 ✓ | 84 ✓ | 84 | 84 | 84 |
 | [SLayerAction](structs/SLayerAction.md) | 56 | 56 | 56 | 56 | 56 |
 | [SLightGlowParams](structs/SLightGlowParams.md) | 24 | 24 | — | — | — |
 | [SLightGlowSprite](structs/SLightGlowSprite.md) | 48 | 48 | — | — | — |
 | [SLightGlowTable](structs/SLightGlowTable.md) | 480 | 480 | — | — | — |
-| [SLineStrip](structs/SLineStrip.md) | 8 | 8 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SLineStrip](structs/SLineStrip.md) | 8 | 8 | 8 | 8 | 8 |
 | [SLineStrip2Index](structs/SLineStrip2Index.md) | 16 | 16 | — | — | — |
 | [SLineStrip3Index](structs/SLineStrip3Index.md) | 20 | 20 | — | — | — |
 | [SLod](structs/SLod.md) | 8 | 8 | 8 | 8 | 8 |
@@ -524,7 +525,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SMRGLKeyframeModel](structs/SMRGLKeyframeModel.md) | 344 | 344 | 344 | 344 | 344 |
 | [SMRGLKeyframeModelOnDisk](structs/SMRGLKeyframeModelOnDisk.md) | 344 | 344 | — | — | — |
 | [SMRGLLightPrimitive](structs/SMRGLLightPrimitive.md) | 36 | 36 | — | — | — |
-| [SMRGLModelBounds](structs/SMRGLModelBounds.md) | 52 | 52 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SMRGLModelBounds](structs/SMRGLModelBounds.md) | 52 | 52 | 52 | 52 | 52 |
 | [SMRGLPoint](structs/SMRGLPoint.md) | 16 | 16 | 16 | 16 | 16 |
 | [SMRGLPointerArray](structs/SMRGLPointerArray.md) | 16 | 16 | — | — | — |
 | [SMRGLPrimitiveBigPoly](structs/SMRGLPrimitiveBigPoly.md) | 216 | 216 | — | — | — |
@@ -535,7 +536,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SMRGLPrimitiveQuadIndex](structs/SMRGLPrimitiveQuadIndex.md) | 40 | 40 | — | — | — |
 | [SMRGLPrimitiveTriangle](structs/SMRGLPrimitiveTriangle.md) | 60 | 60 | 60 | 60 | 60 |
 | [SMRGLPrimitiveTriangleIndex](structs/SMRGLPrimitiveTriangleIndex.md) | 36 | 36 | 36 | 36 | 36 |
-| [SMRGLSkyTexture](structs/SMRGLSkyTexture.md) | 24 | 24 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SMRGLSkyTexture](structs/SMRGLSkyTexture.md) | 24 | 24 | 24 | 24 | 24 |
 | [SMRGLTextureBasic](structs/SMRGLTextureBasic.md) | 24 | 24 | 24 | 24 | 24 |
 | [SMRGLTextureList](structs/SMRGLTextureList.md) | 60 | 60 | — | — | — |
 | [SMRGLTextureListEntry](structs/SMRGLTextureListEntry.md) | 32 | 32 | — | — | — |
@@ -547,35 +548,35 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SModelPartName](structs/SModelPartName.md) | 20 | 20 | — | — | — |
 | [SMorphControlPoint](structs/SMorphControlPoint.md) | 32 ✓ | 32 | — | — | — |
 | [SMorphPart](structs/SMorphPart.md) | 16 | 16 | 16 | 16 | 16 |
-| [SMorphPoint](structs/SMorphPoint.md) | 16 | 16 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMotion](structs/SMotion.md) | 1356 | 1356 | 1356 | — | 1356 |
-| [SMotionSignal](structs/SMotionSignal.md) | 8 | 8 | 8 | — | 8 |
+| [SMorphPoint](structs/SMorphPoint.md) | 16 | 16 | 16 | 16 | 16 |
+| [SMotion](structs/SMotion.md) | 1356 | 1356 | 288 | 280 | 288 |
+| [SMotionSignal](structs/SMotionSignal.md) | 8 | 8 | 8 | 8 | 8 |
 | [SMotionTransition](structs/SMotionTransition.md) | 24 | 24 | 24 | 24 | 24 |
-| [SMovieFrame](structs/SMovieFrame.md) | 8192 | 8192 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegAllocationEntry](structs/SMpegAllocationEntry.md) | 16 | 16 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SMovieFrame](structs/SMovieFrame.md) | 8192 | 8192 | 8192 | 8192 | 8192 |
+| [SMpegAllocationEntry](structs/SMpegAllocationEntry.md) | 16 | 16 | 16 | 16 | 16 |
 | [SMpegFrame](structs/SMpegFrame.md) | 28 | 28 | 28 | 28 | 28 |
 | [SMpegFrameDecodeContext](structs/SMpegFrameDecodeContext.md) | 48 | 48 | — | — | — |
 | [SMpegFrameHeader](structs/SMpegFrameHeader.md) | 48 | 48 | 48 | 48 | 48 |
 | [SMpegLayer3BandIndex](structs/SMpegLayer3BandIndex.md) | 148 | 148 | — | — | — |
 | [SMpegLayer3GranuleInfo](structs/SMpegLayer3GranuleInfo.md) | 72 | 72 | 72 | 72 | 72 |
-| [SMpegLayer3ScalefactorGranule](structs/SMpegLayer3ScalefactorGranule.md) | 248 | 248 | — | — | — |
+| [SMpegLayer3ScalefactorGranule](structs/SMpegLayer3ScalefactorGranule.md) | 248 | 248 | 248 | 248 | 248 |
 | [SMpegLayer3SideInfo](structs/SMpegLayer3SideInfo.md) | 328 | 328 | 328 | 328 | 328 |
 | [SMpegLayer3SideInfoChannel](structs/SMpegLayer3SideInfoChannel.md) | 160 | 160 | 160 | 160 | 160 |
-| [SMpegScalefactorBandData](structs/SMpegScalefactorBandData.md) | 496 | 496 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegStereoSubbandSamples](structs/SMpegStereoSubbandSamples.md) | 4608 | 4608 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegSubbandAllocation](structs/SMpegSubbandAllocation.md) | 128 | 128 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegSubbandQuantizedSamples](structs/SMpegSubbandQuantizedSamples.md) | 2304 | 2304 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegSubbandSCFSI](structs/SMpegSubbandSCFSI.md) | 128 | 128 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegSubbandSamples](structs/SMpegSubbandSamples.md) | 2304 | 2304 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SMpegSubbandScalefactors](structs/SMpegSubbandScalefactors.md) | 384 | 384 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SNetPacketHeader](structs/SNetPacketHeader.md) | 5 | 5 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SMpegScalefactorBandData](structs/SMpegScalefactorBandData.md) | 496 | 496 | 496 | 496 | 496 |
+| [SMpegStereoSubbandSamples](structs/SMpegStereoSubbandSamples.md) | 4608 | 4608 | 4608 | 4608 | 4608 |
+| [SMpegSubbandAllocation](structs/SMpegSubbandAllocation.md) | 128 | 128 | 128 | 128 | 128 |
+| [SMpegSubbandQuantizedSamples](structs/SMpegSubbandQuantizedSamples.md) | 2304 | 2304 | 2304 | 2304 | 2304 |
+| [SMpegSubbandSCFSI](structs/SMpegSubbandSCFSI.md) | 128 | 128 | 128 | 128 | 128 |
+| [SMpegSubbandSamples](structs/SMpegSubbandSamples.md) | 2304 | 2304 | 2304 | 2304 | 2304 |
+| [SMpegSubbandScalefactors](structs/SMpegSubbandScalefactors.md) | 384 | 384 | 384 | 384 | 384 |
+| [SNetPacketHeader](structs/SNetPacketHeader.md) | 5 | 5 | 5 | 5 | 5 |
 | [SNetPacket_ChatMessage](structs/SNetPacket_ChatMessage.md) | 265 | 265 | 265 | 265 | 265 |
 | [SNetPacket_GameSettings](structs/SNetPacket_GameSettings.md) | 177 | 177 | 177 | 177 | 177 |
 | [SNetPacket_PlayerAnnounce](structs/SNetPacket_PlayerAnnounce.md) | 41 | 41 | 41 | 41 | 41 |
-| [SNetPacket_PlayerInput](structs/SNetPacket_PlayerInput.md) | 53 | 53 | 53 | 53 | 53 |
+| [SNetPacket_PlayerInput](structs/SNetPacket_PlayerInput.md) | 53 | 53 | 57 | 61 | 61 |
 | [SNetPacket_PlayerState](structs/SNetPacket_PlayerState.md) | 41 | 41 | 41 | 41 | 41 |
 | [SNetPacket_ServerAccept](structs/SNetPacket_ServerAccept.md) | 113 | 113 | 113 | 113 | 113 |
-| [SNetPacket_SimFrame](structs/SNetPacket_SimFrame.md) | 105 | 105 | 105 | 105 | 105 |
+| [SNetPacket_SimFrame](structs/SNetPacket_SimFrame.md) | 105 | 105 | 113 | 121 | 121 |
 | [SNetPacket_Simple](structs/SNetPacket_Simple.md) | 9 | 9 | 9 | 9 | 9 |
 | [SNetPlayer](structs/SNetPlayer.md) | 120 ✓ | 120 ✓ | 124 ✓ | 128 ✓ | 128 ✓ |
 | [SNetworkAddr](structs/SNetworkAddr.md) | 8 | 8 | 8 | 8 | 8 |
@@ -593,12 +594,12 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SPageResourceTwanaEntry](structs/SPageResourceTwanaEntry.md) | — | — | 280 | 276 | 280 |
 | [SPaletteEntry](structs/SPaletteEntry.md) | 16 | 16 | — | — | — |
 | [SPanel](structs/SPanel.md) | 100 ✓ | 100 ✓ | 100 ✓ | 100 ✓ | — |
-| [SPart](structs/SPart.md) | 96 | 96 | unsized (placeholder) | 96 | unsized (placeholder) |
-| [SPartInstanceData](structs/SPartInstanceData.md) | 240 | 240 | unsized (placeholder) | 240 | unsized (placeholder) |
+| [SPart](structs/SPart.md) | 96 | 96 | 96 | 96 | 96 |
+| [SPartInstanceData](structs/SPartInstanceData.md) | 240 | 240 | 480 | 240 | 480 |
 | [SPlatformAttachment](structs/SPlatformAttachment.md) | 52 | 52 | 52 | 52 | 52 |
 | [SPlayer](structs/SPlayer.md) | 40 | 40 | 40 (placeholder) | 40 (placeholder) | 40 (placeholder) |
-| [SPlayerActionState](structs/SPlayerActionState.md) | 32 | 32 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SPlayerInput](structs/SPlayerInput.md) | 44 | 44 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SPlayerActionState](structs/SPlayerActionState.md) | 32 | 32 | 36 | 36 | 40 |
+| [SPlayerInput](structs/SPlayerInput.md) | 44 | 44 | 48 | 52 | 52 |
 | [SPod1DirEntry](structs/SPod1DirEntry.md) | 40 | 40 | — | — | — |
 | [SPod1Header](structs/SPod1Header.md) | 84 | 84 | — | — | — |
 | [SPod2Header](structs/SPod2Header.md) | 96 | 96 | — | — | — |
@@ -617,7 +618,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SRGBColor](structs/SRGBColor.md) | 3 | 3 | 3 | 3 | 3 |
 | [SRGBColorPalette](structs/SRGBColorPalette.md) | 768 | 768 | 768 | 768 | 768 |
 | [SRayQueryState](structs/SRayQueryState.md) | 20 | 20 | 20 | 20 | 20 |
-| [SRaytraceState](structs/SRaytraceState.md) | 160 ✓ | 160 ✓ | 160 (placeholder) | 160 (placeholder) | 160 (placeholder) |
+| [SRaytraceState](structs/SRaytraceState.md) | 160 ✓ | 160 ✓ | 160 ✓ | 160 ✓ | 160 ✓ |
 | [SRecordingDeviceInfo](structs/SRecordingDeviceInfo.md) | 264 | 264 | 264 | 264 | 264 |
 | [SReflector](structs/SReflector.md) | 96 ✓ | 96 ✓ | 96 ✓ | 96 ✓ | — |
 | [SRenderBufferEntry](structs/SRenderBufferEntry.md) | 280 | 280 | — | — | — |
@@ -628,12 +629,12 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SScanlineSpans](structs/SScanlineSpans.md) | 132 | 132 | — | — | — |
 | [SScrape](structs/SScrape.md) | 52 ✓ | 52 ✓ | 52 ✓ | 52 ✓ | 52 ✓ |
 | [SScreenCoord](structs/SScreenCoord.md) | 8 | 8 | — | — | — |
-| [SScriptLine](structs/SScriptLine.md) | 8 | 8 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SScriptLine](structs/SScriptLine.md) | 8 | 8 | 8 | 8 | 8 |
 | [SScriptXRef](structs/SScriptXRef.md) | 276 | 276 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
 | [SSfxBlock](structs/SSfxBlock.md) | 5764 | 5764 | 5764 | 5764 | 5764 |
 | [SSfxEntry](structs/SSfxEntry.md) | 288 | 288 | 288 | 288 | 288 |
 | [SShapeEditorPolygon](structs/SShapeEditorPolygon.md) | 388 | 388 | — | — | — |
-| [SSimFrame](structs/SSimFrame.md) | 100 | 100 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SSimFrame](structs/SSimFrame.md) | 100 | 100 | 108 | 116 | 116 |
 | [SSkeleditBiasEntry](structs/SSkeleditBiasEntry.md) | 16 | 16 | — | — | — |
 | [SSocket](structs/SSocket.md) | — | — | 4 | 4 | 4 |
 | [SSoftwareEdge](structs/SSoftwareEdge.md) | 72 | 72 | 80 | 80 | 80 |
@@ -641,14 +642,17 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SSoundModeEntry](structs/SSoundModeEntry.md) | 16 | 16 | — | — | — |
 | [SSpatialGrid](structs/SSpatialGrid.md) | 16388 | 16388 | — | — | — |
 | [SSpatialTreeNode](structs/SSpatialTreeNode.md) | 32 | 32 | — | — | — |
-| [SStereoBuffers](structs/SStereoBuffers.md) | 8 | 8 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SStereoGains](structs/SStereoGains.md) | 8 | 8 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SStateMachine](structs/SStateMachine.md) | — | — | — | 2124 | — |
+| [SStateRef](structs/SStateRef.md) | — | — | — | 32 | — |
+| [SStereoBuffers](structs/SStereoBuffers.md) | 8 | 8 | 8 | 8 | 8 |
+| [SStereoGains](structs/SStereoGains.md) | 8 | 8 | 8 | 8 | 8 |
 | [SSurfacePlane](structs/SSurfacePlane.md) | 32 | 32 | 32 | 32 | 32 |
 | [SSwarmVertex](structs/SSwarmVertex.md) | 40 | 40 | 40 | 40 | 40 |
 | [STextPage](structs/STextPage.md) | — | — | 324 | 324 | 324 |
 | [STextView](structs/STextView.md) | — | — | 584 | 584 | 584 |
 | [STextureAtlasEntry](structs/STextureAtlasEntry.md) | 592 | 592 | — | — | — |
-| [STextureSet](structs/STextureSet.md) | 5760 | 576 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [STextureCacheEntry](structs/STextureCacheEntry.md) | — | — | 96 | 96 | 96 |
+| [STextureSet](structs/STextureSet.md) | 5760 | 576 | 576 | 576 | 576 |
 | [STimerBlock](structs/STimerBlock.md) | 364 | 364 | 364 | 364 | 364 |
 | [STimestampRecord](structs/STimestampRecord.md) | 328 | 328 | — | — | — |
 | [STrainNoise](structs/STrainNoise.md) | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ | 16 ✓ |
@@ -656,7 +660,7 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [STriangleBoundsEntry](structs/STriangleBoundsEntry.md) | 28 | 28 | — | — | — |
 | [STrianglePackedIndices](structs/STrianglePackedIndices.md) | 6 | 6 | 6 | 6 | 6 |
 | [STriangleRef](structs/STriangleRef.md) | 28 ✓ | 28 | 28 | 28 | 28 |
-| [STriangleVertices](structs/STriangleVertices.md) | 36 | 36 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [STriangleVertices](structs/STriangleVertices.md) | 36 | 36 | 36 | 36 | 36 |
 | [SVDBox](structs/SVDBox.md) | 68 ✓ | 68 ✓ | 68 ✓ | 68 ✓ | 68 ✓ |
 | [SVPHHeader](structs/SVPHHeader.md) | 54 | 54 | — | — | — |
 | [SVPHVertexLink](structs/SVPHVertexLink.md) | 32 | 32 | — | — | — |
@@ -664,11 +668,11 @@ Every game struct in any build: its size there, `(placeholder)` where the build 
 | [SVert](structs/SVert.md) | 52 ✓ | 52 ✓ | 52 ✓ | 52 ✓ | 52 ✓ |
 | [SVertexData](structs/SVertexData.md) | 20 | 20 | — | — | — |
 | [SVertexPair](structs/SVertexPair.md) | 8 | 8 | — | — | — |
-| [SVoxelCubeMetadata](structs/SVoxelCubeMetadata.md) | 88 | 88 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
-| [SVoxelGrid](structs/SVoxelGrid.md) | 64 | 64 | unsized (placeholder) | unsized (placeholder) | unsized (placeholder) |
+| [SVoxelCubeMetadata](structs/SVoxelCubeMetadata.md) | 88 | 88 | 88 | 88 | 88 |
+| [SVoxelGrid](structs/SVoxelGrid.md) | 64 | 64 | 64 | 64 | 64 |
 | [SWaterVertex](structs/SWaterVertex.md) | 32 ✓ | 32 ✓ | 32 ✓ | 32 ✓ | 32 ✓ |
 | [SWavChunkHeader](structs/SWavChunkHeader.md) | 8 | 8 | — | — | — |
 | [SWavFmtChunk](structs/SWavFmtChunk.md) | 12 | 12 | — | — | — |
-| [SWayPointAdjacency](structs/SWayPointAdjacency.md) | 8 | 8 | 8 | unsized (placeholder) | 8 |
+| [SWayPointAdjacency](structs/SWayPointAdjacency.md) | 8 | 8 | 8 | 8 | 8 |
 | [SWindow](structs/SWindow.md) | 488 | 488 | — | — | — |
 | [SWindowRect](structs/SWindowRect.md) | 16 | 16 | — | — | — |

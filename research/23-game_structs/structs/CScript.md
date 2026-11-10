@@ -39,11 +39,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `saved_cmd_index` | `int` | 0x458 | 0x450 | 0x454 | 0x454 | 0x454 |
 | `call_stack_count` | `int` | 0x45c | 0x454 | 0x458 | 0x458 | 0x458 |
 | `call_stack` | `int[8]` | 0x460 | 0x458 | 0x45c | 0x45c | 0x45c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x18+0x4
-- **blairwitch2**: 0x18+0x4
-- **bw3**: 0x18+0x4
+| `monster_vision_actor` | `CCharacter*` |  |  | 0x18 | 0x18 | 0x18 |

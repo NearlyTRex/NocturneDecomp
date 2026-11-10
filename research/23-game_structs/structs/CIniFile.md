@@ -18,11 +18,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 |---|---|---:|---:|---:|---:|---:|
 | `filename` | `char[256]` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `section` | `char[256]` | 0x100 | 0x100 | 0x100 | 0x100 | 0x100 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x200+0x4
-- **blairwitch2**: 0x200+0x4
-- **bw3**: 0x200+0x4
+| `vtable` | `void*` |  |  | 0x200 | 0x200 | 0x200 |

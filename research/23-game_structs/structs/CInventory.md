@@ -33,18 +33,20 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `render_mode_flag` | `int` | 0x44c | 0x44c | 0x454 | 0x454 | 0x454 |
 | `preserve_items` | `int` | 0x450 | 0x450 | 0x458 | 0x460 | 0x458 |
 | `light_gun_ptr` | `CLightGun*` | 0x454 | 0x454 | 0x45c | 0x458 |  |
-| `ammo_ptr` | `CAmmo*` | 0x458 | 0x458 | 0x464 | 0x464 |  |
-| `cached_ammo_count` | `int` | 0x45c | 0x45c | 0x468 | 0x45c |  |
-| `show_compass` | `int` |  |  |  | 0x8 |  |
+| `ammo_ptr` | `CAmmo*` | 0x458 | 0x458 | 0x464 | 0x464 | 0x464 |
+| `cached_ammo_count` | `int` | 0x45c | 0x45c | 0x468 | 0x45c | 0x468 |
+| `show_compass` | `int` |  |  | 0x8 | 0x8 | 0x8 |
+| `show_sps` | `int` |  |  | 0xc | 0xc | 0xc |
+| `goggles_ptr` | `CGoggles*` |  |  | 0x460 |  |  |
 | `current_group` | `int` |  |  |  | 0x468 |  |
 | `item_groups` | `int[100]` |  |  |  | 0x46c |  |
 | `selected_items` | `CDemonActor*[5]` |  |  |  | 0x5fc |  |
 | `selected_weapons` | `CWeapon*[5]` |  |  |  | 0x610 |  |
+| `cached_mana_count` | `int` |  |  |  |  | 0x46c |
 
 ## Undefined bytes
 
 Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
 
-- **bw1**: 0x8+0x8, 0x460+0x4
-- **blairwitch2**: 0xc+0x4, 0x338+0x8
-- **bw3**: 0x8+0x8, 0x45c+0x14
+- **blairwitch2**: 0x338+0x8
+- **bw3**: 0x45c+0x8

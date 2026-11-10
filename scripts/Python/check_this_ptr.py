@@ -47,10 +47,10 @@ DEFAULT_PROGRAMS = ("nocedit.exe", "nocturne.exe")
 SKIP_PATH = os.path.join(os.path.dirname(os.path.abspath(__file__)),
                          "check_this_ptr_skip.txt")
 
-# <tu>_<Class>_<method>_FUN_<addr>. The class is the first `C`-prefixed
+# <tu>_<Class>_<method>_FUN_<addr>. The class is the first `C`- or `S`-prefixed
 # component after the translation unit, which is what the schema promises.
 METHOD_RE = re.compile(
-    r'^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>C[A-Z][A-Za-z0-9]*)_'
+    r'^(?P<tu>[A-Za-z0-9_]+\.c(?:pp)?)_(?P<cls>[CS][A-Z][A-Za-z0-9]*)_'
     r'(?P<method>.+)_FUN_[0-9a-fA-F]+$')
 
 RECEIVER = "this_ptr"
@@ -88,8 +88,6 @@ def check(program, skip):
 
     for path in sorted(glob.glob(os.path.join(
             sm.ANNOTATIONS, program, "functions", "functions_bucket_*.json"))):
-        if os.path.basename(path).endswith("_buckets.json"):
-            continue
         with open(path) as fh:
             doc = json.load(fh)
         for e in doc if isinstance(doc, list) else []:

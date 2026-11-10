@@ -26,7 +26,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `poly_texture_index_list` | `int*` | 0x118 | 0x118 | 0x118 | 0x118 | 0x118 |
 | `env_map_opac_list` | `uchar*` | 0x11c | 0x11c | 0x11c | 0x11c | 0x11c |
 | `texture_count` | `int` | 0x120 | 0x120 | 0x120 | 0x120 | 0x120 |
-| `texture_list` | `SMRGLTextureModel[300]` | 0x124 | 0x124 |  |  |  |
+| `texture_list` | `SMRGLTextureModel[300]` | 0x124 | 0x124 | 0x124 | 0x124 | 0x124 |
 | `part_count` | `int` | 0x5584 | 0x244 | 0x244 | 0x244 | 0x244 |
 | `part_list` | `CKeyFramedModelPart[30]` | 0x5588 | 0x248 | 0x248 | 0x248 | 0x248 |
 | `bounds` | `CBoundingBox3D` | 0x5678 | 0x338 | 0x338 | 0x338 | 0x338 |
@@ -38,11 +38,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `transform_vector` | `CVector3f` | 0x56a4 | 0x364 | 0x364 | 0x364 | 0x364 |
 | `rotation_matrix_workspace` | `CMatrix3x3f` | 0x56b0 | 0x370 | 0x370 | 0x370 | 0x370 |
 | `dead` | `int` | 0x56d4 | 0x394 | 0x394 | 0x394 | 0x394 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x124+0x120
-- **blairwitch2**: 0x124+0x120
-- **bw3**: 0x124+0x120

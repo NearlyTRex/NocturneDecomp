@@ -17,8 +17,8 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CStrList` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-| `tab_column_widths` | `int[10]` | 0x10 | 0x7c |  |  |  |
-| `tab_column_count` | `int` | 0x38 | 0xa4 |  |  |  |
+| `tab_column_widths` | `int[10]` | 0x10 | 0x7c | 0x10 | 0x10 | 0x10 |
+| `tab_column_count` | `int` | 0x38 | 0xa4 | 0x50 | 0x50 | 0x50 |
 | `selected_index` | `int` | 0x3c |  | 0x54 | 0x54 | 0x54 |
 | `state_flag` | `int` | 0x40 | 0x78 | 0x58 | 0x58 | 0x58 |
 | `ok_button_text` | `char[100]` | 0x44 |  | 0x5c | 0x5c | 0x5c |
@@ -44,11 +44,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `selection_state` | `int` | 0x3a4 |  | 0x3bc | 0x3bc | 0x3bc |
 | `forced_column_count` | `int` |  | 0x10 |  |  |  |
 | `hotkeys` | `char[100]` |  | 0x14 |  |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x10+0x44
-- **blairwitch2**: 0x10+0x44
-- **bw3**: 0x10+0x44

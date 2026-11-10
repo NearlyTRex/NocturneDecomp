@@ -15,7 +15,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 |
 |---|---|---:|---:|---:|---:|
-| `base` | `CHero` | 0x0 | 0x0 |  |  |
+| `base` | `CHero` | 0x0 | 0x0 | 0x0 | 0x0 |
 | `guns_drawn` | `int` | 0x1fbd4 | 0x1fa3c | 0x1ffac | 0x25640 |
 | `head_euler_angles` | `CVector3f` | 0x1fbd8 | 0x1fa40 | 0x1ffb0 | 0x25644 |
 | `head_blend_weight` | `float` | 0x1fbe4 | 0x1fa4c | 0x1ffbc | 0x25650 |
@@ -25,10 +25,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `dead` | `int` | 0x1fbf4 | 0x1fa5c | 0x1ffcc | 0x25660 |
 | `aim_target` | `CDemonActor*` | 0x1fbf8 | 0x1fa60 | 0x1ffd0 | 0x25664 |
 | `aim_converged` | `int` | 0x1fbfc | 0x1fa64 | 0x1ffd4 | 0x25668 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x0+0x1ffac
-- **blairwitch2**: 0x0+0x25640

@@ -17,8 +17,8 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CEnemy` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-| `sfx_handle` | `uint` | 0xbebc | 0xbd24 | 0xc268 | 0x10af8 |  |
-| `burp_timer` | `int` | 0xbec0 | 0xbd28 | 0xc26c | 0x10afc |  |
+| `sfx_handle` | `uint` | 0xbebc | 0xbd24 | 0xc268 | 0x10af8 | 0xd054 |
+| `burp_timer` | `int` | 0xbec0 | 0xbd28 | 0xc26c | 0x10afc | 0xd058 |
 | `spasm_timer` | `int` | 0xbec4 | 0xbd2c | 0xc270 | 0x10b00 | 0xd05c |
 | `arise_timer` | `int` | 0xbec8 | 0xbd30 | 0xc274 | 0x10b04 | 0xd060 |
 | `pending_eat_state` | `int` | 0xbecc | 0xbd34 | 0xc278 | 0x10b08 | 0xd064 |
@@ -34,9 +34,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `is_berserk` | `int` | 0xbf24 | 0xbd8c | 0xc2d0 | 0x10b60 | 0xd0bc |
 | `stuck_timer` | `float` | 0xbf28 | 0xbd90 | 0xc2d4 | 0x10b64 | 0xd0c0 |
 | `prev_position` | `CVector3f` | 0xbf2c | 0xbd94 | 0xc2d8 | 0x10b68 | 0xd0c4 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw3**: 0xd054+0x8

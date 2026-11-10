@@ -38,6 +38,8 @@ REF = [
     struct("CGone", 8, [("missing", "CNotInRef", 0)]),
     struct("CDemonActor_vtable", 236, []),
     struct("SSystem", 4, [], "/Nocturne/Struct/System/winnt.h"),
+    struct("SHeader", 4, [("a", "int", 0)], "/Nocturne/Struct/System/winnt.h"),
+    struct("SCrt", 8, [("a", "int", 0)], "/Nocturne/Struct/System/watcom.h"),
 ]
 DST = [
     struct("CVector3f", 1, desc = "Stub: no RTTI"),
@@ -52,6 +54,9 @@ DST = [
     struct("CDone", 8, [("kept", "int", 0)]),
     struct("CGone", 8),
     struct("CDemonActor_vtable", 236),
+    # A system header the build has whole is not offered; a CRT placeholder is
+    struct("SHeader", 4, [("b", "int", 0)], "/Nocturne/Struct/System/winnt.h"),
+    struct("SCrt", 1, cat = "/Nocturne/Struct/System/watcom.h"),
 ]
 DRIFT = {
     "CDemonActor": {"segments": [segment(0, 30), segment(4100, 1)]},
@@ -92,6 +97,7 @@ def test_layouts_come_in_dependency_order_and_refusals_say_why():
         "CGrown": "size 400 in the sibling, 404 here",
         "CShifted": "code shows it shifted",
         "CQuiet": "no code observes it",
+        "SCrt": "no code observes it",
         "CHolder": "embeds CShifted (code shows it shifted)",
     }
 
@@ -352,7 +358,7 @@ def test_main_reports_and_writes_the_list(annotations, capsys):
     out = annotations / "types.txt"
     assert pst.main(["--program", "bw.exe", "--drift", drift, "--out", str(out)]) == 0
     text = capsys.readouterr().out
-    assert "bw.exe: 7 layouts to copy from nocedit.exe, 4 refused" in text
+    assert "bw.exe: 7 layouts to copy from nocedit.exe, 5 refused" in text
     assert "     1  embeds CShifted: CHolder" in text
     assert out.read_text().splitlines()[:2] == ["CVector3f", "CLocation"]
     assert pst.main(["--program", "bw.exe", "--drift", drift]) == 0
@@ -375,6 +381,13 @@ def test_main_reports_and_writes_the_list(annotations, capsys):
                      "--known", known, "--out-shifts", str(shifts)]) == 0
     assert "CQuiet" in out.read_text().splitlines()
     assert "CDone" in json.loads(shifts.read_text())
+
+    # Identical code settles the CRT placeholder no drift observes
+    same = annotations / "unchanged.txt"
+    same.write_text("SCrt\n\n")
+    assert pst.main(["--program", "bw.exe", "--drift", drift, "--unchanged-users", str(same),
+                     "--out", str(out)]) == 0
+    assert "SCrt" in out.read_text().splitlines()
 
 
 def test_main_sizes_a_member_its_containers_agree_on(monkeypatch, tmp_path, capsys):

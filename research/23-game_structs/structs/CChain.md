@@ -16,7 +16,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 |  | 0x0 |
 | `vertex_count` | `int` | 0x158 | 0x150 | 0x158 | 0x158 | 0x158 |
 | `chain_length` | `float` | 0x15c | 0x154 | 0x15c | 0x15c | 0x15c |
 | `segment_length` | `float` | 0x160 | 0x158 | 0x160 | 0x160 | 0x160 |
@@ -39,3 +39,10 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `cached_distance` | `float` | 0x56c | 0x564 | 0x56c | 0x56c | 0x56c |
 | `inv_delta_time` | `float` | 0x570 | 0x568 | 0x570 | 0x570 | 0x570 |
 | `is_visible` | `int` | 0x574 | 0x56c | 0x574 | 0x574 | 0x574 |
+| `vtable` | `CDemonActor_vtable*` |  |  |  | 0x154 |  |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **blairwitch2**: 0x0+0x154

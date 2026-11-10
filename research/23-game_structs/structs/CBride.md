@@ -17,11 +17,6 @@ Offsets in hex; blank where the build's layout does not have the field.
 |---|---|---:|---:|---:|---:|
 | `base` | `CEnemy` | 0x0 | 0x0 | 0x0 | 0x0 |
 | `part_indices` | `int[9]` | 0xbebc | 0xbd24 | 0xc268 | 0x10af8 |
-| `action_timer` | `float` | 0xbee0 | 0xbd48 |  | 0x10b1c |
-| `sfx_handles` | `uint[2]` | 0xbee4 | 0xbd4c |  | 0x10b20 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc28c+0x10
+| `action_timer` | `float` | 0xbee0 | 0xbd48 | 0xc290 | 0x10b1c |
+| `sfx_handles` | `uint[2]` | 0xbee4 | 0xbd4c | 0xc294 | 0x10b20 |
+| `dismember_death_timer` | `float` |  |  | 0xc28c |  |

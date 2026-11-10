@@ -37,15 +37,12 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `ground_type` | `EGroundType` | 0x5f0 | 0x5e8 | 0x5f0 | 0x74c | 0x5f0 |
 | `plot_in_shadow_flag` | `int` | 0x5f4 | 0x5ec | 0x5f4 | 0x750 | 0x5f4 |
 | `collision_flag` | `int` | 0x5f8 | 0x5f0 | 0x5f8 | 0x754 | 0x5f8 |
-| `dont_use_normals` | `int` | 0x5fc | 0x5f4 | 0x5fc | 0x758 |  |
-| `use_event` | `char[100]` | 0x600 | 0x5f8 | 0x600 | 0x75c |  |
-| `allowed_melee_attack_types` | `int` | 0x664 | 0x65c | 0x664 | 0x7c0 |  |
-| `block_virtual_director_flag` | `int` | 0x668 | 0x660 | 0x668 | 0x7c4 |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x66c+0xc
-- **blairwitch2**: 0x7c8+0xc
-- **bw3**: 0x5fc+0xec
+| `dont_use_normals` | `int` | 0x5fc | 0x5f4 | 0x5fc | 0x758 | 0x5fc |
+| `use_event` | `char[100]` | 0x600 | 0x5f8 | 0x600 | 0x75c | 0x600 |
+| `allowed_melee_attack_types` | `int` | 0x664 | 0x65c | 0x664 | 0x7c0 | 0x6c8 |
+| `block_virtual_director_flag` | `int` | 0x668 | 0x660 | 0x668 | 0x7c4 | 0x6cc |
+| `cam_orientation` | `COrientation` |  |  | 0x66c | 0x7c8 | 0x6d0 |
+| `fade_event` | `char[100]` |  |  |  |  | 0x664 |
+| `fade_timer` | `float` |  |  |  |  | 0x6dc |
+| `fade_time` | `float` |  |  |  |  | 0x6e0 |
+| `fade_alpha` | `int` |  |  |  |  | 0x6e4 |

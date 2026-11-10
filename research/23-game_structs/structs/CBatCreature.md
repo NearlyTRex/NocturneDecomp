@@ -19,9 +19,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `part_indices` | `int[14]` | 0xbebc | 0xbd24 | 0xc26c | 0x10af8 |
 | `sfx_handles` | `uint[3]` | 0xbef4 | 0xbd5c | 0xc2a4 | 0x10b30 |
 | `alert_played` | `int` | 0xbf00 | 0xbd68 | 0xc2b0 | 0x10b3c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc268+0x4
+| `dismember_death_timer` | `float` |  |  | 0xc268 |  |

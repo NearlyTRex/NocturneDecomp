@@ -22,11 +22,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `mission_name` | `char[80]` | 0xd | 0xd | 0xd | 0xd | 0xd |
 | `player_count` | `int` | 0x5d | 0x5d | 0x5d | 0x5d | 0x5d |
 | `players` | `SGameSettingsPlayer[2]` | 0x61 | 0x61 | 0x61 | 0x61 | 0x61 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x1+0x4
-- **blairwitch2**: 0x1+0x4
-- **bw3**: 0x1+0x4

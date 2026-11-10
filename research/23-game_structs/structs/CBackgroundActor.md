@@ -19,10 +19,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `model` | `CKeyFramedModelInstance` | 0x158 | 0x150 | 0x15c | 0x2b8 |
 | `collide_with_me` | `int` | 0x2d4 | 0x2cc | 0x2d8 | 0x434 |
 | `ground_type` | `EGroundType` | 0x2d8 | 0x2d0 | 0x2dc | 0x438 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x158+0x4
-- **blairwitch2**: 0x2b4+0x4
+| `cast_shadows_flag` | `int` |  |  | 0x158 | 0x2b4 |

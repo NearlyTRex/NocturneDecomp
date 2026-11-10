@@ -22,11 +22,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `ready_flag` | `int` | 0x1d | 0x1d | 0x1d | 0x1d | 0x1d |
 | `hero_number` | `EHeroType` | 0x21 | 0x21 | 0x21 | 0x21 | 0x21 |
 | `aim_mode` | `int` | 0x25 | 0x25 | 0x25 | 0x25 | 0x25 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x1+0x4
-- **blairwitch2**: 0x1+0x4
-- **bw3**: 0x1+0x4

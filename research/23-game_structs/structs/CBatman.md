@@ -22,9 +22,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `vanish_timer` | `float` | 0xbf5c | 0xbdc4 | 0xc30c | 0x10b98 |
 | `new_pos` | `CVector3f` | 0xbf60 | 0xbdc8 | 0xc310 | 0x10b9c |
 | `sfx_handles` | `uint[3]` | 0xbf6c | 0xbdd4 | 0xc31c | 0x10ba8 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc268+0x4
+| `dismember_death_timer` | `float` |  |  | 0xc268 |  |

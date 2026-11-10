@@ -904,6 +904,25 @@ Ghidra source location: `~/Repositories/Ghidra/`
 - **Every class method in the BW programs takes `this_ptr` of its class** (`fix_this_ptr.py`, now
   covering S-prefixed structs and deriving the 153 missing receivers from the decompiler's
   prototypes).
+- **The export's receiver gate checks `S`-prefixed struct methods too** (`check_this_ptr.py` as
+  well). nocedit's 22 struct `arrdtor`s and 4 `SMemHead` methods now name their receiver
+  `this_ptr`; the two `SMemHead` keeps follow.
+- **bw3's CMobster, CStranger, CSuccubus and CTentacle placeholders are deleted**
+  (`23-game_structs/bw_absent_classes.json`): bw3 has no record, vtable, factory or method for
+  them. Its two functions typed for them are `CZombiePriest_startFiringAttack` and
+  `CPrye_updateArmRecoilBlend`.
+- **More BW placeholders laid out from identical code** (`identical_type_users.py`): the Watcom
+  CRT types, `CKeys`, `CSocket`, `CTerrain`, the sound devices, `SGroundCell`, two MP3 tables and
+  five vtable structs, about 40 per build. Placeholders are down from about 70 to 37 per build.
+- **Embedded members and bases refitted** (`refit_embedded_members.py`): 9 / 23 / 7 fields kept a
+  grown type's old length (`CHero.base`, the `CParticle` bases, bw2's 692-byte `CDemonActor`
+  bases), and 15 / 14 / 6 classes had lost their base (the hero subclasses, the particles,
+  `CTeleportDest`).
+- **The remaining BW gaps are read from the code** (`23-game_structs/`): 163 hand-read layout
+  changes, 123 shared structs and 176 BW-only ones written whole. 423 / 439 / 417 game structs in
+  bw1 / bw2 / bw3 are complete; what is left is bytes no BW code addresses, and placeholders for
+  editor types BW does not have. Every layout with RTTI is its recorded size (238 / 254 / 223),
+  and 13,149 / 13,199 / 10,250 typed accesses agree with the layouts.
 
 ### 2026-09-17
 - **Text that lives in a box now takes the box's own stretch, truncated, and is clipped to it**

@@ -23,9 +23,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `light_orient` | `UOrientationVector` | 0x3628 | 0x3620 | 0x3634 | 0x3794 | 0x36a4 |
 | `flicker_timer` | `float` | 0x3634 | 0x362c | 0x3640 | 0x37a0 | 0x36b0 |
 | `globe` | `CDemonGlobe` | 0x3638 | 0x3630 | 0x3644 | 0x37a4 | 0x36b4 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x66c+0x168, 0x3784+0x4

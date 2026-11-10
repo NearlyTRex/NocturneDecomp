@@ -32,7 +32,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `ground_normal` | `CVector3f` | 0x100c | 0x1004 | 0x100c | 0x1168 |
 | `ground_offset` | `float` | 0x1018 | 0x1010 | 0x1018 | 0x1174 |
 | `dead` | `int` | 0x101c | 0x1014 | 0x101c | 0x1178 |
-| `course` | `CCourse` | 0x1020 | 0x1018 | 0x1020 |  |
+| `course` | `CCourse` | 0x1020 | 0x1018 | 0x1020 | 0x117c |
 | `cur_time` | `float` | 0x102c | 0x1024 | 0x102c | 0x1188 |
 | `total_time` | `float` | 0x1030 | 0x1028 | 0x1030 | 0x118c |
 | `course_name` | `char[32]` | 0x1034 | 0x102c | 0x1034 | 0x1190 |
@@ -41,9 +41,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `is_visible` | `int` | 0x106c | 0x1064 | 0x106c | 0x11c8 |
 | `last_mobster_left` | `CDemonActor*` | 0x1070 | 0x1068 | 0x1070 | 0x11cc |
 | `last_mobster_right` | `CDemonActor*` | 0x1074 | 0x106c | 0x1074 | 0x11d0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x117c+0xc

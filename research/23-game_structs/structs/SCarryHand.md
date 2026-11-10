@@ -19,14 +19,8 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `bone_index` | `int` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `secondary_bone_index` | `int` | 0x4 | 0x4 | 0x4 | 0x4 | 0x4 |
 | `carry_actor` | `CDemonActor*` | 0x8 | 0x8 | 0x8 | 0x8 | 0x8 |
-| `initial_carry_transform` | `CMatrix3x4f` | 0xc | 0xc |  |  |  |
-| `blend_speed` | `float` | 0x3c | 0x3c |  |  |  |
-| `blend_factor` | `float` | 0x40 | 0x40 |  |  |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0xc+0x6c
-- **blairwitch2**: 0xc+0x6c
-- **bw3**: 0xc+0x6c
+| `initial_carry_transform` | `CMatrix3x4f` | 0xc | 0xc | 0xc | 0xc | 0xc |
+| `blend_speed` | `float` | 0x3c | 0x3c | 0x3c | 0x3c | 0x3c |
+| `blend_factor` | `float` | 0x40 | 0x40 | 0x40 | 0x40 | 0x40 |
+| `has_carry_offset` | `int` |  |  | 0x44 | 0x44 | 0x44 |
+| `carry_offset` | `CMatrix3x4f` |  |  | 0x48 | 0x48 | 0x48 |

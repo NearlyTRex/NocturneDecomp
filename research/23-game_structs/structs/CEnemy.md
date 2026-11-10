@@ -17,7 +17,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CCharacter` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-| `speed` | `float` | 0xbe24 | 0xbc8c | 0xc1d0 | 0x10a60 |  |
+| `speed` | `float` | 0xbe24 | 0xbc8c | 0xc1d0 | 0x10a60 | 0xcdcc |
 | `pool_me` | `int` | 0xbe28 | 0xbc90 | 0xc1d4 | 0x10a64 | 0xcdd0 |
 | `randomize_me` | `int` | 0xbe2c | 0xbc94 | 0xc1d8 | 0x10a68 | 0xcdd4 |
 | `is_in_combat` | `int` | 0xbe30 | 0xbc98 | 0xc1dc | 0x10a6c | 0xcdd8 |
@@ -27,13 +27,13 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `victim_search_timer` | `float` | 0xbe40 | 0xbca8 | 0xc1ec | 0x10a7c | 0xcde8 |
 | `victim_search_radius` | `float` | 0xbe44 | 0xbcac | 0xc1f0 | 0x10a80 | 0xcdec |
 | `patrol_name_pattern` | `char[100]` | 0xbe48 | 0xbcb0 | 0xc1f4 | 0x10a84 | 0xcdf0 |
-| `special_form_flag` | `int` | 0xbeac | 0xbd14 | 0xc258 | 0x10ae8 |  |
-| `victim_height` | `float` | 0xbeb0 | 0xbd18 | 0xc25c | 0x10aec |  |
-| `script_victim` | `CCharacter*` | 0xbeb4 | 0xbd1c | 0xc260 | 0x10af0 |  |
-| `allow_pathfind_to_new_targets` | `int` | 0xbeb8 | 0xbd20 | 0xc264 | 0x10af4 |  |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw3**: 0xcdcc+0x4, 0xce54+0x200
+| `special_form_flag` | `int` | 0xbeac | 0xbd14 | 0xc258 | 0x10ae8 | 0xce54 |
+| `victim_height` | `float` | 0xbeb0 | 0xbd18 | 0xc25c | 0x10aec | 0xce58 |
+| `script_victim` | `CCharacter*` | 0xbeb4 | 0xbd1c | 0xc260 | 0x10af0 | 0xd04c |
+| `allow_pathfind_to_new_targets` | `int` | 0xbeb8 | 0xbd20 | 0xc264 | 0x10af4 | 0xd050 |
+| `attack_damage` | `float` |  |  |  |  | 0xce5c |
+| `pain_threshold` | `float` |  |  |  |  | 0xce60 |
+| `spawn_amount` | `int` |  |  |  |  | 0xce64 |
+| `spawn_item_class` | `char[100]` |  |  |  |  | 0xce68 |
+| `spawned_item_already` | `int` |  |  |  |  | 0xcecc |
+| `spawn_model` | `CKeyFramedModelInstance` |  |  |  |  | 0xced0 |

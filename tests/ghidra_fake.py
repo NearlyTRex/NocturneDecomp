@@ -428,12 +428,14 @@ class DataTypeUtilities(JavaObject):
 
 
 class DataTypeComponent(JavaObject):
-    def __init__(self, data_type, field_name = None, offset = 0, comment = None):
+    # `length` models a field left at its type's old length after the type grew
+    def __init__(self, data_type, field_name = None, offset = 0, comment = None, length = None):
         super().__init__(data_type, field_name)
         self.data_type = data_type
         self.field_name = field_name
         self.offset = offset
         self.comment = comment
+        self.length = length
 
     def getDataType(self):
         return self.data_type
@@ -445,7 +447,7 @@ class DataTypeComponent(JavaObject):
         return self.offset
 
     def getLength(self):
-        return self.data_type.getLength()
+        return self.length if self.length is not None else self.data_type.getLength()
 
     def getComment(self):
         return self.comment

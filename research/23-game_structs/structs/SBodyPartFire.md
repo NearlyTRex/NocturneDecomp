@@ -18,9 +18,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 |---|---|---:|---:|---:|---:|---:|
 | `local_position` | `CVector3f` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `flame` | `CFlame` | 0xc | 0xc | 0xc | 0xc | 0xc |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x2b0+0x15c

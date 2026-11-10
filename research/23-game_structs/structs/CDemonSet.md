@@ -29,7 +29,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `collision_actor` | `CDemonActor*` | 0x14d144 | 0x14cd5c | 0x14d144 | 0x14d144 | 0x14d144 |
 | `collision_part_index` | `int` | 0x14d148 | 0x14cd60 | 0x14d148 | 0x14d148 | 0x14d148 |
 | `collision_bone_index` | `int` | 0x14d14c | 0x14cd64 | 0x14d14c | 0x14d14c | 0x14d14c |
-| `min_ambient_value` | `float` | 0x14d150 | 0x14cd68 | 0x14d150 |  | 0x14d150 |
+| `min_ambient_value` | `float` | 0x14d150 | 0x14cd68 | 0x14d150 | 0x14d150 | 0x14d150 |
 | `actor_count` | `int` | 0x14d154 | 0x14cd6c | 0x14d164 | 0x14d164 | 0x14d164 |
 | `actors` | `CDemonActor*[2000]` | 0x14d158 | 0x14cd70 | 0x14d168 | 0x14d168 | 0x14d168 |
 | `character_count` | `int` | 0x14f098 | 0x14ecb0 | 0x14f0a8 | 0x14f0a8 | 0x14f0a8 |
@@ -44,8 +44,8 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `collidable_actors` | `CDemonActor*[2000]` | 0x156dac | 0x1569c4 | 0x156dbc | 0x156dbc | 0x156dbc |
 | `renderable_actor_count` | `int` | 0x158cec | 0x158904 | 0x158cfc | 0x158cfc | 0x158cfc |
 | `renderable_actors` | `CDemonActor*[2000]` | 0x158cf0 | 0x158908 | 0x158d00 | 0x158d00 | 0x158d00 |
-| `scene_fog` | `SFog` | 0x15ac30 | 0x15a848 |  |  |  |
-| `active_fog` | `SFog` | 0x15ac54 | 0x15a86c |  |  |  |
+| `scene_fog` | `SFog` | 0x15ac30 | 0x15a848 | 0x15ac40 | 0x15ac40 | 0x15ac40 |
+| `active_fog` | `SFog` | 0x15ac54 | 0x15a86c | 0x15ac64 | 0x15ac64 | 0x15ac64 |
 | `per_pixel_lighting_enabled` | `int` | 0x15ac78 | 0x15a890 | 0x15ac88 | 0x15ac88 | 0x15ac88 |
 | `default_master_reverb` | `int` | 0x15ac7c | 0x15a894 | 0x15ac8c | 0x15ac8c | 0x15ac8c |
 | `lighting_quality_mode` | `int` | 0x15ac80 | 0x15a898 | 0x15ac90 | 0x15ac90 | 0x15ac90 |
@@ -56,8 +56,8 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `use_enviro_model` | `int` | 0x15ac94 | 0x15a8ac | 0x15aca4 | 0x15aca4 | 0x15aca4 |
 | `enviro_model_name` | `char[16]` | 0x15ac98 | 0x15a8b0 | 0x15aca8 | 0x15aca8 | 0x15aca8 |
 | `player_on_train` | `int` | 0x15aca8 | 0x15a8c0 | 0x15acb8 | 0x15acb8 | 0x15acb8 |
-| `set_file_version` | `int` | 0x15acac | 0x15a8c4 |  |  |  |
-| `actor_list_capacity` | `int` | 0x15acb0 | 0x15a8c8 |  |  |  |
+| `set_file_version` | `int` | 0x15acac | 0x15a8c4 | 0x15acc0 | 0x15acc0 | 0x15acc0 |
+| `actor_list_capacity` | `int` | 0x15acb0 | 0x15a8c8 | 0x15acc4 | 0x15acc4 | 0x15acc4 |
 | `mirror_glass_actor_count` | `int` | 0x15acb4 | 0x15a8cc | 0x15acc8 | 0x15acc8 | 0x15acc8 |
 | `mirror_glass_actors` | `CGlass*[100]` | 0x15acb8 | 0x15a8d0 | 0x15accc | 0x15accc | 0x15accc |
 | `last_switch_area_invalid` | `int` | 0x15ae48 | 0x15aa60 | 0x15ae5c | 0x15ae5c | 0x15ae5c |
@@ -103,11 +103,13 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `mirror_lighting_cached` | `int` | 0x161658 | 0x161270 | 0x161670 | 0x16166c | 0x161670 |
 | `mirror_cached_color` | `CColor3i` | 0x16165c | 0x161274 | 0x161674 | 0x161670 | 0x161674 |
 | `weather_type` | `EWeatherType` | 0x161668 | 0x161280 | 0x161680 | 0x16167c | 0x161680 |
+| `directional_light_dir` | `CVector3f` |  |  | 0x14d154 | 0x14d154 | 0x14d154 |
+| `directional_light_intensity` | `float` |  |  | 0x14d160 | 0x14d160 | 0x14d160 |
+| `altitude_reference_y` | `float` |  |  | 0x15acbc | 0x15acbc | 0x15acbc |
 
 ## Undefined bytes
 
 Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
 
-- **bw1**: 0x14d154+0x10, 0x15ac40+0x48, 0x15acbc+0xc, 0x15aec4+0x4
-- **blairwitch2**: 0x14d150+0x14, 0x15ac40+0x48, 0x15acbc+0xc
-- **bw3**: 0x14d154+0x10, 0x15ac40+0x48, 0x15acbc+0xc, 0x15aec4+0x4
+- **bw1**: 0x15aec4+0x4
+- **bw3**: 0x15aec4+0x4

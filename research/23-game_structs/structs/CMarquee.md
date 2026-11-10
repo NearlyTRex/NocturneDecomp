@@ -23,11 +23,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `bounding_box` | `CBoundingBox3D` | 0x184 | 0x17c | 0x184 | 0x2e0 |
 | `is_visible` | `int` | 0x19c | 0x194 | 0x19c | 0x2f8 |
 | `type` | `EMarqueeDisplayType` | 0x1a0 | 0x198 | 0x1a0 | 0x2fc |
-| `course` | `CCourse` | 0x1a4 | 0x19c | 0x1a4 |  |
+| `course` | `CCourse` | 0x1a4 | 0x19c | 0x1a4 | 0x300 |
 | `dead` | `char[12]` | 0x1b0 | 0x1a8 | 0x1b0 | 0x30c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x158+0x15c, 0x300+0xc

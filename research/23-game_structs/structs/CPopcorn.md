@@ -17,11 +17,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CParticle` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x38+0x8
-- **blairwitch2**: 0x38+0x8
-- **bw3**: 0x38+0x8

@@ -15,7 +15,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 |
 |---|---|---:|---:|---:|---:|
-| `base` | `CHero` | 0x0 | 0x0 |  |  |
+| `base` | `CHero` | 0x0 | 0x0 | 0x0 | 0x0 |
 | `summon_event` | `char[100]` | 0x1fbd4 | 0x1fa3c | 0x1ffac | 0x25640 |
 | `go_away_event` | `char[100]` | 0x1fc38 | 0x1faa0 | 0x20010 | 0x256a4 |
 | `head_rotation` | `CVector3f` | 0x1fc9c | 0x1fb04 | 0x20074 | 0x25708 |
@@ -26,10 +26,3 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `right_hand_pos` | `CVector3f` | 0x1fcc0 | 0x1fb28 | 0x20098 | 0x2572c |
 | `summoned` | `int` | 0x1fccc | 0x1fb34 | 0x200a4 | 0x25738 |
 | `shell_visible` | `int` | 0x1fcd0 | 0x1fb38 | 0x200a8 | 0x2573c |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **bw1**: 0x0+0x1ffac
-- **blairwitch2**: 0x0+0x25640

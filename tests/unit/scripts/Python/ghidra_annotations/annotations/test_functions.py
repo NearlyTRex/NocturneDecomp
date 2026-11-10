@@ -53,8 +53,11 @@ def test_a_class_method_must_take_this_ptr_of_its_class():
     defects = fn.find_this_ptr_defects([
         method("CGame_ok", ("this_ptr", "CGame *")), method("CGame_none"),
         method("CGame_wrong", ("this_ptr", "CMenu *")), method("CGamme_typo", ("this_ptr", "CGame *")),
-        method("CGame_named", ("self", "CGame *")), {"name": "free_function_FUN_00401000"}], {"CGame", "CMenu"})
-    assert len(defects) == 4
+        method("CGame_named", ("self", "CGame *")), {"name": "free_function_FUN_00401000"},
+        method("SMemHead_ok", ("this_ptr", "SMemHead *")), method("SMemHead_add", ("header", "SMemHead *"))],
+        {"CGame", "CMenu", "SMemHead"})
+    assert len(defects) == 5
+    assert "typed SMemHead * but named `header`" in defects[4]
     assert "CGame_none_FUN_00401000 declares no parameters" in defects[0]
     assert "claims class CGame but parameter 0 is `CMenu * this_ptr`" in defects[1]
     assert defects[1].endswith("`") and "NAME is wrong" in defects[2]

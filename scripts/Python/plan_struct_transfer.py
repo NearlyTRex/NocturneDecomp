@@ -249,8 +249,11 @@ def plan(ref, dst, drift, min_support=MIN_SUPPORT, measured=None, aligned=None, 
         order.append(name)
         return True
 
+    # The game's own structs, and any other the build has only as a placeholder
+    # (the Watcom CRT's _tm or Heap): system headers it already has stay as they are
     for name in sorted(ref):
-        if "/Game" in ref[name].get("cat", "") and name in dst and not name.endswith("vtable"):
+        offered = "/Game" in ref[name].get("cat", "") or unsized(name)
+        if offered and name in dst and not name.endswith("vtable"):
             take(name, True, frozenset())
     return order, refused
 
@@ -347,6 +350,9 @@ def main(argv=None):
                          "does not observe, as unchanged only")
     ap.add_argument("--alloc-sizes",
                     help="find_allocation_sizes.py --out for the build: sizes its `new`s spell")
+    ap.add_argument("--unchanged-users",
+                    help="identical_type_users.py --out for the build: structs whose typed accesses "
+                         "agree in identical code, settled as unchanged where the drift has none")
     ap.add_argument("--min-support", type=int, default=MIN_SUPPORT)
     ap.add_argument("--out", help="write the names, one per line, in copy order")
     ap.add_argument("--out-shifts",
@@ -379,8 +385,11 @@ def main(argv=None):
     if args.drift_aligned:
         with open(args.drift_aligned, encoding="utf-8") as fh:
             aligned = json.load(fh)["drift"]
-    order, refused = plan(ref, dst, drift, args.min_support, measured, aligned,
-                          unchanged_in_arrays(ref, dst, drift, args.min_support))
+    unchanged = set(unchanged_in_arrays(ref, dst, drift, args.min_support))
+    if args.unchanged_users:
+        with open(args.unchanged_users, encoding="utf-8") as fh:
+            unchanged |= {line.strip() for line in fh if line.strip()}
+    order, refused = plan(ref, dst, drift, args.min_support, measured, aligned, unchanged)
     print(f"{args.program}: {len(order)} layouts to copy from {args.from_program}, "
           f"{len(refused)} refused")
     reasons = {}

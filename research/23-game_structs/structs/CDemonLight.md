@@ -46,9 +46,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `lightmap_visibility_bits` | `uchar*` | 0x2fa0 | 0x2fa0 | 0x2fa0 | 0x2fa0 | 0x2fa0 |
 | `transform_scale_factor` | `int` | 0x2fa4 | 0x2fa4 | 0x2fa4 | 0x2fa4 | 0x2fa4 |
 | `volumetric_intensity` | `float` | 0x2fa8 | 0x2fa8 | 0x2fa8 | 0x2fa8 | 0x2fa8 |
-
-## Undefined bytes
-
-Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
-
-- **blairwitch2**: 0x2fac+0x4
+| `bloom_intensity` | `float` |  |  |  | 0x2fac |  |
