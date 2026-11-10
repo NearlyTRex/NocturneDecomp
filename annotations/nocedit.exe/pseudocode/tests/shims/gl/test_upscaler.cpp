@@ -55,8 +55,8 @@ NOCTURNE_TEST(sharpness_steps_by_quarters_and_is_saved) {
 
 // Each filter by its name; a mode that does not exist reads as Standard.
 NOCTURNE_TEST(each_upscaler_has_a_name) {
-    const char *const names[NOCTURNE_UPSCALER_COUNT] = {
-        "Standard", "Nearest", "Smooth", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
+    const char *const names[NOCTURNE_UPSCALER_COUNT] = {"Standard", "Nearest", "Smooth", "FSR",
+                                                        "Lanczos",  "GSR",     "NIS",    "xBR"};
     for (int mode = 0; mode < NOCTURNE_UPSCALER_COUNT; mode++)
         CHECK_EQ_AT(std::string(nocturne_upscaler_name(mode)), std::string(names[mode]),
                     names[mode]);

@@ -51,6 +51,9 @@ public:
     void setWinFont(CFont &font);
     // Draws from the sheets from now on; the OS font setWinFont gave, if any, for handing back.
     [[nodiscard]] CFont *releaseWinFont();
+    // The OS font made `scale` times as large as setWinFont's, which the scaled calls draw and
+    // measure with at that scale while setWinFont's is in use; null for none.
+    void setScaledWinFont(CFont *font, float scale);
     // The display colours for the current depth, from each sheet's palette.
     void remapPalette();
 
@@ -173,6 +176,10 @@ private:
     [[nodiscard]] std::uint16_t blendPixel16(std::uint32_t source, std::uint32_t screen,
                                              std::uint32_t alpha);
     [[nodiscard]] float getUsableScale(float scale) const;
+    // The OS font setScaledWinFont gave, while setWinFont's is in use and the scale is its.
+    [[nodiscard]] CFont *getScaledWinFont(float scale) const;
+    // The widest line an OS font draws.
+    [[nodiscard]] static int getWinFontTextWidth(CFont &font, std::string_view text);
     float drawCharacterScaled(std::size_t char_code, float x, float y, int color_mode,
                               int color_value, float scale);
     [[nodiscard]] SCoverage measureCoverage(const SGlyphSource &glyph,
@@ -208,6 +215,8 @@ private:
     bool is_initialized_ = false;
     int load_flags_ = 0;
     CFont *win_font_helper_ = nullptr;
+    CFont *scaled_win_font_ = nullptr;
+    float scaled_win_scale_ = 1.0F;
 };
 
 } // namespace nocturne::engine

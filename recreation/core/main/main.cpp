@@ -90,8 +90,7 @@ void showLoadingScreen(const SGameSystemOwners &owners) {
     const SFrontEndLayout layout = getScreenLayout(owners);
     font.drawTextScaled(
         text, layout.getX(kWidth / 2) - (font.getTextWidthScaled(text, layout.scale) / 2),
-        layout.getY(kHeight / 2) -
-            (font.getCharHeightScaled(kLoadingHeightChar, layout.scale) / 2),
+        layout.getY(kHeight / 2) - (font.getCharHeightScaled(kLoadingHeightChar, layout.scale) / 2),
         kLoadingTextColor, engine::CBitFont::kNoShadow, layout.scale);
     owners.screen.swapBuffers();
 }
@@ -180,6 +179,7 @@ void initializeGameSystems(const SGameSystemOwners &owners) {
                             "drivers.");
     }
     owners.ini_owners.fonts.initFonts();
+    owners.ini_owners.fonts.setOsFontScale(getScreenLayout(owners).scale);
     showFirstRunCalibration(owners);
     owners.attract_movies.setOpeningPlayed(owners.play_movie("video", "opening.avi"));
     showLoadingScreen(owners);

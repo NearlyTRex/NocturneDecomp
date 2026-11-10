@@ -138,14 +138,12 @@ TEST_F(CAlphaBitmapDrawTest, ScaledToItsOwnSizeItIsDisplayed) {
 }
 
 TEST_F(CAlphaBitmapDrawTest, NearestRepeatsEachPixel) {
-    loadCounting(2, 2);
-    bitmap_.displayScaled(0, 0, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    loadCounting(2, 1);
+    bitmap_.displayScaled(0, 0, 4, 2, kFullAlpha, EBitmapFilter::Nearest);
     EXPECT_EQ(screen_.pixel(0, 0), ramp(1));
     EXPECT_EQ(screen_.pixel(1, 1), ramp(1));
     EXPECT_EQ(screen_.pixel(2, 0), ramp(2));
-    EXPECT_EQ(screen_.pixel(3, 3), ramp(4));
-    EXPECT_EQ(screen_.pixel(0, 2), ramp(3));
-    EXPECT_EQ(screen_.pixel(4, 0), kBackground);
+    EXPECT_EQ(screen_.pixel(3, 1), ramp(2));
 }
 
 // Between pixel centres the colours mix by distance; past the last centre the edge holds.

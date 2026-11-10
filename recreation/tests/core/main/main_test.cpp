@@ -219,7 +219,8 @@ protected:
                  .keys = keys_,
                  .raw_input = raw_input_,
                  .gamepad = gamepad_.input,
-                 .content = content_}};
+                 .content = content_,
+                 .display = display_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,

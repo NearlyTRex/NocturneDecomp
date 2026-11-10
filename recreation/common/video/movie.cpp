@@ -17,10 +17,18 @@ constexpr float kHighest = std::numeric_limits<std::int16_t>::max();
 std::optional<SViewport> placeMovie(SExtent movie, SExtent screen) {
     constexpr int kDoubleAboveWidth = 400;
     constexpr int kDoubleAboveHeight = 300;
-    const int scale =
+    constexpr float kLayoutWidth = 640.0F;
+    constexpr float kLayoutHeight = 480.0F;
+    const int doubling =
         screen.width > kDoubleAboveWidth || screen.height > kDoubleAboveHeight ? 2 : 1;
-    const int width = movie.width * scale;
-    const int height = movie.height * scale;
+    // Past 640x480 the doubled movie grows as the front end's layout does, filling the height or
+    // the width, whichever comes first.
+    const float fit = std::max(1.0F, std::min(static_cast<float>(screen.width) / kLayoutWidth,
+                                              static_cast<float>(screen.height) / kLayoutHeight));
+    const auto width =
+        static_cast<int>(std::lround(static_cast<float>(movie.width * doubling) * fit));
+    const auto height =
+        static_cast<int>(std::lround(static_cast<float>(movie.height * doubling) * fit));
     if (width <= 0 || height <= 0 || width > screen.width || height > screen.height) {
         return std::nullopt;
     }

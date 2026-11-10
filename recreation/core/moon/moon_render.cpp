@@ -87,11 +87,11 @@ void CMoon::render() {
     if (frame < 0 || std::cmp_greater_equal(frame, kAnimationFrameCount)) {
         frame = 0;
     }
-    displayInLayout(animation_textures_[static_cast<std::size_t>(frame)],
-                    getFrontEndLayout(owners_.screen.getWindowWidth(),
-                                      owners_.screen.getWindowHeight()),
-                    {.x = 0, .y = 0, .width = kAnimationWidth, .height = kAnimationHeight},
-                    kAnimationAlpha, owners_.display.getUpscaler());
+    displayInLayout(
+        animation_textures_[static_cast<std::size_t>(frame)],
+        getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight()),
+        {.x = 0, .y = 0, .width = kAnimationWidth, .height = kAnimationHeight}, kAnimationAlpha,
+        owners_.display.getUpscaler());
     owners_.three_d.setBlendMode(0);
     set.setLightDirection(light_direction);
     set.setAmbientBaseQuick(ambient);

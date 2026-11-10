@@ -143,10 +143,17 @@ private:
     [[nodiscard]] SHeldKeys readHeldKeys() const;
     // The defaults back, with an error, if any code doesn't suit the control type.
     void validateBindings();
-    // 32 pixels wide on x_center, rising from y_top to twice height_half above it.
-    void renderAudioSpectrumBar(int x_center, int y_top, int height_half);
-    // The flame frame a bar at x_center shows now.
-    [[nodiscard]] int getAudioSpectrumFrame(int x_center) const;
+    // Twice half_width wide on x_center, rising from y_top to twice height_half above it, in
+    // flame frame `frame`.
+    struct SAudioSpectrumBar {
+        int x_center = 0;
+        int half_width = 0;
+        int height_half = 0;
+        int frame = 0;
+    };
+    void renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top);
+    // The flame frame a bar at layout column `column` shows now.
+    [[nodiscard]] int getAudioSpectrumFrame(int column) const;
     // PLAY's Continue, Start and Load.
     void showPlayMenu();
     void startChapterSelect();

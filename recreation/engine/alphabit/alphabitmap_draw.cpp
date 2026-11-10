@@ -173,14 +173,14 @@ void CAlphaBitmap::displayScaled(int x, int y, int width, int height, int alpha,
         void *pixels = rows[static_cast<std::size_t>(row)];
         const bool nearest = filter == EBitmapFilter::Nearest;
         if (bits_per_pixel == 32) {
-            auto dest = getPixels<std::uint32_t>(pixels, left, count);
+            const auto dest = getPixels<std::uint32_t>(pixels, left, count);
             if (nearest) {
                 special_.renderAlphaRow32(dest, indices, opacity, alpha);
             } else {
                 special_.renderColorRow32(dest, colors, opacity, alpha);
             }
         } else if (bits_per_pixel == 16) {
-            auto dest = getPixels<std::uint16_t>(pixels, left, count);
+            const auto dest = getPixels<std::uint16_t>(pixels, left, count);
             if (nearest) {
                 special_.renderAlphaRow16(dest, indices, opacity, alpha);
             } else {

@@ -215,10 +215,13 @@ bool CSdlMoviePlayer::openVideo() {
     placement_ = *placement;
     const double rate = av_q2d(stream->avg_frame_rate);
     frame_duration_ = 1.0 / (rate > 0.0 ? rate : kDefaultFrameRate);
-    // The placement is a whole multiple of the movie, so point sampling keeps pixels even.
+    // At a whole multiple of the movie point sampling keeps pixels even; between, it would make
+    // them uneven, so the frame is blended.
+    const bool whole =
+        placement_.width % movie_size_.width == 0 && placement_.height % movie_size_.height == 0;
     scaler_.reset(sws_getContext(movie_size_.width, movie_size_.height, video_codec_->pix_fmt,
-                                 placement_.width, placement_.height, target, SWS_POINT, nullptr,
-                                 nullptr, nullptr));
+                                 placement_.width, placement_.height, target,
+                                 whole ? SWS_POINT : SWS_BILINEAR, nullptr, nullptr, nullptr));
     return scaler_ != nullptr;
 }
 

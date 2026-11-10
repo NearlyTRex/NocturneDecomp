@@ -95,9 +95,8 @@ void CSpecial::renderColorRow16(std::span<std::uint16_t> dest_pixels,
     const std::uint32_t global_level = getGlobalLevel(global_alpha);
     const std::size_t count = std::min({dest_pixels.size(), src_colors.size(), src_alpha.size()});
     for (std::size_t i = 0; i < count; ++i) {
-        if (const std::optional<std::uint32_t> pixel =
-                getColorPixel(src_colors[i], src_alpha[i] * global_level,
-                              expandPixel16(dest_pixels[i], masks))) {
+        if (const std::optional<std::uint32_t> pixel = getColorPixel(
+                src_colors[i], src_alpha[i] * global_level, expandPixel16(dest_pixels[i], masks))) {
             dest_pixels[i] = packPixel16(*pixel, masks);
         }
     }

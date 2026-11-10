@@ -37,9 +37,8 @@ void CGlUpscaler::draw(GLuint texture, EQuadRows rows, common::SExtent frame,
                        const common::SViewport &viewport, EUpscaler upscaler,
                        int sharpness_percent) {
     const bool enlarges = viewport.width > frame.width || viewport.height > frame.height;
-    const CGlProgram *program = getUpscaleFragmentSource(upscaler) != nullptr && enlarges
-                                    ? getProgram(upscaler)
-                                    : nullptr;
+    const CGlProgram *program =
+        getUpscaleFragmentSource(upscaler) != nullptr && enlarges ? getProgram(upscaler) : nullptr;
     if (program == nullptr) {
         setSampling(texture, getPlainFilter(upscaler, common::isWholeMultiple(viewport, frame)));
         quad_.draw(texture, rows);

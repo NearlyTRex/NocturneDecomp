@@ -202,8 +202,8 @@ void CMenu::drawFooter() {
         layout.getY(kImageHeight - 1 -
                     font.getTextHeight(copyright.empty() ? owners_.build_version : copyright));
     const int right = std::max(kImageWidth, owners_.screen.getWindowWidth()) - 1;
-    font.drawTextScaled(copyright, right - font.getTextWidthScaled(copyright, layout.scale),
-                        bottom, kTextColor, kFooterShadow, layout.scale);
+    font.drawTextScaled(copyright, right - font.getTextWidthScaled(copyright, layout.scale), bottom,
+                        kTextColor, kFooterShadow, layout.scale);
     owners_.three_d.setRenderAlpha(kTrademarkAlpha);
     if (const std::optional<engine::SLayoutPoint> &trademark = getMenuLayout().trademark) {
         font.drawTextScaled(kTrademark, layout.getX(trademark->x), layout.getY(trademark->y),

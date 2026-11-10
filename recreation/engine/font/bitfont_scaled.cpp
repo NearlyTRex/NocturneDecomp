@@ -49,17 +49,40 @@ std::uint32_t mixPixel32(std::uint32_t color, std::uint32_t dest, float amount) 
 
 } // namespace
 
-// A depth without a blended glyph writer has no scaled form.
+// A depth without a blended glyph writer has no scaled form, nor an OS font without one made at
+// that scale.
 float CBitFont::getUsableScale(float scale) const {
     const int bits = screen_.getBitsPerPixel();
-    if (scale <= 0.0F || win_font_helper_ != nullptr || (bits != 16 && bits != 32)) {
+    if (scale <= 0.0F || (bits != 16 && bits != 32)) {
+        return 1.0F;
+    }
+    if (win_font_helper_ != nullptr && getScaledWinFont(scale) == nullptr) {
         return 1.0F;
     }
     return scale;
 }
 
+void CBitFont::setScaledWinFont(CFont *font, float scale) {
+    scaled_win_font_ = font;
+    scaled_win_scale_ = scale;
+}
+
+CFont *CBitFont::getScaledWinFont(float scale) const {
+    if (win_font_helper_ == nullptr || scaled_win_font_ == nullptr ||
+        std::fabs(scale - scaled_win_scale_) >= kWholeTolerance) {
+        return nullptr;
+    }
+    return scaled_win_font_;
+}
+
 int CBitFont::drawTextScaled(std::string_view text, int x, int y, int color_mode, int color_value,
                              float scale) {
+    if (CFont *scaled = getScaledWinFont(scale)) {
+        CFont *const normal = std::exchange(win_font_helper_, scaled);
+        const int drawn = drawText(text, x, y, color_mode, color_value);
+        win_font_helper_ = normal;
+        return drawn;
+    }
     scale = getUsableScale(scale);
     if (const int whole = getWholeScale(scale); whole != 0) {
         return drawText(text, x, y, color_mode, color_value, whole);
@@ -83,6 +106,9 @@ int CBitFont::drawTextScaled(std::string_view text, int x, int y, int color_mode
 }
 
 int CBitFont::getTextWidthScaled(std::string_view text, float scale) const {
+    if (CFont *scaled = getScaledWinFont(scale)) {
+        return getWinFontTextWidth(*scaled, text);
+    }
     return static_cast<int>(
         std::lround(static_cast<float>(getTextWidth(text)) * getUsableScale(scale)));
 }

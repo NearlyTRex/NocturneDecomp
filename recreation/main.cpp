@@ -224,7 +224,8 @@ private:
                        .keys = keys_,
                        .raw_input = winrun_,
                        .gamepad = gamepad_,
-                       .content = pod_.getGameContent()}};
+                       .content = pod_.getGameContent(),
+                       .display = display_}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,

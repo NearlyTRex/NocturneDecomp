@@ -1,5 +1,6 @@
 #include "core/menu/screenmodepage.h"
 
+#include "core/dfont/dfont.h"
 #include "core/frontend.h"
 #include "core/game/game.h"
 #include "core/menu/menu.h"
@@ -40,7 +41,8 @@ EMenuOutcome CScreenModePage::endFrame() {
     return CMenuPage::endFrame();
 }
 
-// A mode the screen refuses leaves the one it has.
+// A mode the screen refuses leaves the one it has. The front end draws in software, as at
+// startup, so the hardware renderer only follows the new size when it is already in use.
 void CScreenModePage::applyFrontEndMode() {
     const CGame &game = owners_.game;
     engine::IScreenDevice &screen = owners_.screen;
@@ -50,7 +52,11 @@ void CScreenModePage::applyFrontEndMode() {
         return;
     }
     if (screen.setScreenResolution(mode.width, mode.height, screen.getBitsPerPixel())) {
-        owners_.two_d.resetGraphicsSystem();
+        if (owners_.special.getUseExternalRenderer()) {
+            owners_.two_d.resetGraphicsSystem();
+        }
+        owners_.fonts.setOsFontScale(
+            getFrontEndLayout(screen.getWindowWidth(), screen.getWindowHeight()).scale);
     }
 }
 

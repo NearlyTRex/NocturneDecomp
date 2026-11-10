@@ -43,8 +43,7 @@ struct SFrontEndLayout {
 // How the layout's art is enlarged, as the Upscaler setting enlarges the frame: Nearest and xBR,
 // a pixel-art filter, keep the art's pixels; Standard keeps them at a whole multiple; the rest
 // blend.
-[[nodiscard]] engine::EBitmapFilter getFrontEndArtFilter(platform::EUpscaler upscaler,
-                                                         float scale);
+[[nodiscard]] engine::EBitmapFilter getFrontEndArtFilter(platform::EUpscaler upscaler, float scale);
 
 // A bitmap at x, y and width by height in the layout, drawn where and as large as the screen
 // shows it, enlarged as the upscaler says.

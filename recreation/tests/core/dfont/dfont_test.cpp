@@ -205,6 +205,33 @@ TEST_F(CDFontTest, TheBitmapChoiceOverridesTheMessageFile) {
     EXPECT_FALSE(fonts_.getUseOSFonts());
 }
 
+TEST_F(CDFontTest, AnOsFontScaleMakesEachOsFontAgainAtThatSize) {
+    fonts_.setOsFontChoice(EOsFontChoice::System);
+    fonts_.initFonts();
+    for (const int height : {28, 36, 24, 20}) {
+        EXPECT_CALL(os_fonts_, createOsFont(::testing::_, height))
+            .WillOnce([](std::string_view, int) {
+                auto font = std::make_unique<NiceMock<platform::MockOsFont>>();
+                ON_CALL(*font, measureText)
+                    .WillByDefault(Return(common::SExtent{.width = 60, .height = 18}));
+                return font;
+            });
+    }
+    fonts_.setOsFontScale(2.0F);
+    EXPECT_EQ(fonts_.getThemeFont()->getTextWidthScaled("ab", 2.0F), 60);
+    EXPECT_EQ(fonts_.getSmallEditorFont()->getTextWidthScaled("ab", 2.0F), 60);
+}
+
+TEST_F(CDFontTest, NoOsFontScaleIsMadeAtOneOrForBitmapText) {
+    fonts_.setOsFontChoice(EOsFontChoice::System);
+    fonts_.initFonts();
+    EXPECT_CALL(os_fonts_, createOsFont).Times(0);
+    fonts_.setOsFontScale(1.0F);
+    fonts_.setOsFontChoice(EOsFontChoice::Bitmap);
+    fonts_.initFonts();
+    fonts_.setOsFontScale(2.0F);
+}
+
 TEST_F(CDFontTest, TheSystemChoiceUsesOsFontsWithoutAMessageFile) {
     fonts_.setOsFontChoice(EOsFontChoice::System);
     EXPECT_CALL(os_fonts_, createOsFont).Times(4);

@@ -116,8 +116,7 @@ void release(std::vector<T> &storage) {
 // to the target is anti-aliased too, before the frame's 2D; it is not reframed.
 void reframe_scene() {
     const bool scene = g_dev.scene_composited;
-    const bool geometry =
-        g_dev.geometry_drawn && !g_dev.frame_has_2d && !g_dev.frame_antialiased;
+    const bool geometry = g_dev.geometry_drawn && !g_dev.frame_has_2d && !g_dev.frame_antialiased;
     g_dev.scene_composited = false;
     g_dev.geometry_drawn = false;
     if (scene || geometry) {

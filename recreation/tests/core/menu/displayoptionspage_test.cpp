@@ -467,6 +467,24 @@ TEST_F(CDisplayOptionsPageTest, ANewResolutionIsTheFrontEndsModeAtOnce) {
     EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
 }
 
+// The front end draws in software, so acceleration alone leaves the renderer off; one already
+// in use is reset to the new size.
+TEST_F(CDisplayOptionsPageTest, OnlyARendererInUseFollowsTheNewMode) {
+    loadRenderer();
+    CDisplayOptionsPage page(menu_, menu_owners_);
+    static_cast<void>(texts(page));
+    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_CALL(screen_, setScreenResolution(800, 600, _)).WillOnce(Return(true));
+    EXPECT_CALL(screen_, resetGraphicsSystem).Times(0);
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+    ::testing::Mock::VerifyAndClearExpectations(&screen_);
+    special_.setUseExternalRenderer(true);
+    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_CALL(screen_, setScreenResolution(_, _, _)).WillOnce(Return(true));
+    EXPECT_CALL(screen_, resetGraphicsSystem);
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+}
+
 // The mode it is already in, or one the screen refuses, changes nothing.
 TEST_F(CDisplayOptionsPageTest, TheModeItHasOrOneRefusedChangesNothing) {
     CDisplayOptionsPage page(menu_, menu_owners_);
