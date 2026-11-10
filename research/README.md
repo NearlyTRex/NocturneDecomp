@@ -865,6 +865,45 @@ Ghidra source location: `~/Repositories/Ghidra/`
 - **New `23-game_structs/`**: every game struct's fields and offsets across the five builds. BW
   layouts are copied from nocedit where matched code agrees, and placed by measured shift where
   the class was resized; every BW layout with RTTI matches its recorded size.
+- **BW struct evidence now comes from typed accesses** (`23-game_structs/`). Each sighting is
+  credited to the struct nocedit's decompiler types the access with, instead of to the method's
+  class, so value types and loader-filled records are observed too. Allocations and array strides
+  give sizes of structs with no RTTI, right for every class that has a record. Fully laid-out
+  shared structs went from 166 / 143 / 122 to 219 / 205 / 176 in bw1 / bw2 / bw3.
+- **Two applied layouts were wrong and are re-laid out:** `CDemonActor` in bw1 and bw3 keeps
+  nocedit's size but adds `footstep_particle_count` at `0x11c` and drops `is_editor_hidden`,
+  and `CSfxSlot` is 284 bytes with everything after its 96-byte `CSfxOptions` 0x10 lower.
+  `CTrigger` (bw1, bw3) adds 4 bytes after `0x2f8`.
+- **Struct sizes without RTTI** now also come from array strides and from containers that agree:
+  `SCarryHand` is 120 bytes in every BW build (nocedit 68), `CParticle` 64 (nocedit 56), `CHero`
+  130,988 in bw1 and 153,152 in bw2. Fully laid-out shared structs: 250 / 236 / 203 in
+  bw1 / bw2 / bw3; placeholders 68 / 70 / 74.
+- **`known_layout_changes.json`** (`23-game_structs/`) holds layout changes read from the code, as
+  the baseline the planner applies.
+- **Nocturne's network code is in all three BW games too,** dummied out as in Nocturne.
+- **Struct sizes from the builds' own `new`s** (`find_allocation_sizes.py`): no wrong size
+  against nocedit's 121 known layouts or BW RTTI. New: CBitFont 16,928, CTextureCache 98,316,
+  CCloth 240,432 in every BW build. The BW `operator new` takes the size alone.
+- **The BW games' own field-notes types are laid out** from their code (`23-game_structs/
+  bw_own_structs.json`): `SPageResource` and its five subclasses, `STextView`, `STextPage`,
+  `SNotesSection`, `SNotesEntry` and `SNotesMap`, every size matching RTTI or its `new`. Their
+  functions and vtables are named after them.
+- **Every BW-only actor class has its base**, from its registration or its ctor's base call; bw2's
+  enemies share a BW base, `CBasicEnemy` (71,760 bytes). CInventory (bw1 1,132, bw3 1,136) and
+  CHero in bw3 (134,092) are sized from their ctors.
+- **CDemonMission and CMoon are laid out in every BW build** (`23-game_structs/
+  bw_rebuilt_structs.json`). CDemonMission holds 16 sets and a lookup table of 6,000 actors
+  (3,000 in bw2), sized to the next global after its static instance; CMoon is the title screen's
+  three models (bw3 adds its menu animation). bw2's CHero holds three CInventorys of 1,572, each
+  splitting its items into 5 groups with their own selections.
+- **bw3's `CBulletHole`, `CFootstep` and `CGunFlame`, and bw2's `SBodyPartFire`, are laid out**
+  from hand-read shifts; `CGunFlame` is re-ordered, and its flames burn what is near them in bw3.
+- **BW's own helper classes are laid out** (`bw_own_structs.json`): the stream classes, ciphers,
+  leaf and firefly particles, `CFieldNotes`, the puzzles and the rest, 63 layouts at their RTTI
+  sizes, with 331 of their functions named.
+- **Every class method in the BW programs takes `this_ptr` of its class** (`fix_this_ptr.py`, now
+  covering S-prefixed structs and deriving the 153 missing receivers from the decompiler's
+  prototypes).
 
 ### 2026-09-17
 - **Text that lives in a box now takes the box's own stretch, truncated, and is clipped to it**

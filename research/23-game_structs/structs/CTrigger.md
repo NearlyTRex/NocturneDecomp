@@ -34,16 +34,16 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `event_flag` | `int` | 0x2f0 | 0x2e8 | 0x2f0 | 0x44c | 0x2f0 |
 | `laser_type` | `int` | 0x2f4 | 0x2ec | 0x2f4 | 0x450 | 0x2f4 |
 | `hit_points` | `float` | 0x2f8 | 0x2f0 | 0x2f8 | 0x454 | 0x2f8 |
-| `triggering_actor` | `CDemonActor*` | 0x2fc | 0x2f4 |  |  |  |
-| `auto_aim_at_me` | `int` | 0x300 | 0x2f8 |  |  |  |
-| `damage_actor_wildcard_name` | `char[100]` | 0x304 | 0x2fc |  |  |  |
-| `cached_actor` | `CDemonActor*` | 0x368 | 0x360 |  | 0x4c8 |  |
-| `damage_cooldown` | `float` | 0x36c | 0x364 |  | 0x4cc |  |
+| `triggering_actor` | `CDemonActor*` | 0x2fc | 0x2f4 | 0x300 |  | 0x300 |
+| `auto_aim_at_me` | `int` | 0x300 | 0x2f8 | 0x304 |  | 0x304 |
+| `damage_actor_wildcard_name` | `char[100]` | 0x304 | 0x2fc | 0x308 |  | 0x308 |
+| `cached_actor` | `CDemonActor*` | 0x368 | 0x360 | 0x36c | 0x4c8 | 0x36c |
+| `damage_cooldown` | `float` | 0x36c | 0x364 | 0x370 | 0x4cc | 0x370 |
 
 ## Undefined bytes
 
 Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
 
-- **bw1**: 0x2fc+0x78
+- **bw1**: 0x2fc+0x4
 - **blairwitch2**: 0x158+0x178, 0x458+0x70
-- **bw3**: 0x2fc+0x78
+- **bw3**: 0x2fc+0x4

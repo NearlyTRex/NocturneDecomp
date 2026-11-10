@@ -141,7 +141,7 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 
 ## bw1
 
-78 struct(s) changed size.
+96 struct(s) changed size.
 
 | struct | size change | fields moved | not placed |
 |---|---:|---:|---:|
@@ -151,15 +151,21 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CSvetlana](structs/CSvetlana.md) | -41640 | 6 | 3 of 9 |
 | [CWinFont](structs/CWinFont.md) | +27204 | 15 | 1 of 16 |
 | [CDeformableModel](structs/CDeformableModel.md) | -23040 | 6 | 7 of 24 |
+| [CCloth](structs/CCloth.md) | -21312 | 10 | 13 of 24 |
 | [CKeyFramedModel](structs/CKeyFramedModel.md) | -21312 | 11 | 1 of 22 |
 | [CMimic](structs/CMimic.md) | -20372 | 7 | 2 of 10 |
 | [CGabriella](structs/CGabriella.md) | -20328 | 16 | 3 of 19 |
+| [CMoon](structs/CMoon.md) | -19472 | 0 | 2 of 3 |
+| [CDemonMission](structs/CDemonMission.md) | +19024 | 15 | 11 of 27 |
+| [CTextureCache](structs/CTextureCache.md) | +16384 | 2 | 5 of 8 |
+| [CBitFont](structs/CBitFont.md) | +4232 | 16 | 7 of 24 |
 | [CMoloch](structs/CMoloch.md) | +1224 | 9 | 3 of 12 |
 | [CSuccubus](structs/CSuccubus.md) | +1180 | 6 | 1 of 8 |
 | [CDraculaBride](structs/CDraculaBride.md) | +1060 | 13 | 0 of 14 |
 | [CBaron](structs/CBaron.md) | +984 | 10 | 1 of 11 |
 | [CColonel](structs/CColonel.md) | +984 | 4 | 1 of 5 |
 | [CHaystack](structs/CHaystack.md) | +984 | 4 | 1 of 5 |
+| [CHero](structs/CHero.md) | +984 | 12 | 5 of 18 |
 | [CIcePick](structs/CIcePick.md) | +984 | 9 | 1 of 10 |
 | [CScat](structs/CScat.md) | +984 | 9 | 1 of 10 |
 | [CStranger](structs/CStranger.md) | +980 | 34 | 5 of 39 |
@@ -198,20 +204,31 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CDeformableModelInstance](structs/CDeformableModelInstance.md) | +240 | 7 | 2 of 14 |
 | [CDoor](structs/CDoor.md) | +108 | 0 | 0 of 29 |
 | [CGame](structs/CGame.md) | +56 | 40 | 69 of 112 |
+| [SCarryHand](structs/SCarryHand.md) | +52 | 0 | 3 of 6 |
 | [CSfxSample](structs/CSfxSample.md) | +48 | 2 | 7 of 17 |
+| [CEmitter](structs/CEmitter.md) | +44 | 0 | 22 of 23 |
 | [CHeroPlaceholder](structs/CHeroPlaceholder.md) | +32 | 0 | 1 of 2 |
 | [CDemonSet](structs/CDemonSet.md) | +24 | 69 | 4 of 87 |
 | [CPickList](structs/CPickList.md) | +24 | 23 | 2 of 26 |
+| [CSfxOptions](structs/CSfxOptions.md) | -16 | 3 | 11 of 15 |
 | [CBoxActor](structs/CBoxActor.md) | +12 | 0 | 0 of 25 |
+| [CInventory](structs/CInventory.md) | +12 | 17 | 0 of 19 |
 | [CLightActor](structs/CLightActor.md) | +12 | 6 | 0 of 7 |
-| [CSfxSlot](structs/CSfxSlot.md) | -12 | 4 | 12 of 18 |
+| [CSfxSlot](structs/CSfxSlot.md) | -12 | 16 | 2 of 18 |
 | [CTempleStone](structs/CTempleStone.md) | +12 | 0 | 1 of 2 |
 | [CBloodParticle](structs/CBloodParticle.md) | +8 | 2 | 1 of 3 |
+| [CFireball](structs/CFireball.md) | +8 | 10 | 1 of 11 |
 | [CGlassParticle](structs/CGlassParticle.md) | +8 | 5 | 2 of 7 |
 | [CLZWCompress](structs/CLZWCompress.md) | +8 | 0 | 3 of 8 |
+| [CLightGun](structs/CLightGun.md) | +8 | 0 | 6 of 7 |
 | [CNetGame](structs/CNetGame.md) | +8 | 5 | 1 of 11 |
+| [CParticle](structs/CParticle.md) | +8 | 2 | 5 of 8 |
+| [CPopcorn](structs/CPopcorn.md) | +8 | 0 | 0 of 1 |
+| [CRainDrop](structs/CRainDrop.md) | +8 | 0 | 0 of 1 |
+| [CRock](structs/CRock.md) | +8 | 0 | 2 of 3 |
 | [CShell](structs/CShell.md) | +8 | 4 | 1 of 5 |
 | [CSpark](structs/CSpark.md) | +8 | 5 | 1 of 6 |
+| [SSoftwareEdge](structs/SSoftwareEdge.md) | +8 | 0 | 1 of 5 |
 | [CBackgroundActor](structs/CBackgroundActor.md) | +4 | 3 | 0 of 4 |
 | [CBodyPart](structs/CBodyPart.md) | +4 | 4 | 1 of 27 |
 | [CConsole](structs/CConsole.md) | +4 | 7 | 0 of 8 |
@@ -221,12 +238,13 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CMineCar](structs/CMineCar.md) | -4 | 1 | 0 of 2 |
 | [CPlatform](structs/CPlatform.md) | -4 | 0 | 2 of 33 |
 | [CScript](structs/CScript.md) | -4 | 15 | 2 of 23 |
-| [CTrigger](structs/CTrigger.md) | +4 | 0 | 5 of 23 |
+| [CTrigger](structs/CTrigger.md) | +4 | 5 | 0 of 23 |
 | [CWayPoint](structs/CWayPoint.md) | +4 | 3 | 0 of 4 |
+| [SNetPlayer](structs/SNetPlayer.md) | +4 | 0 | 14 of 15 |
 
 ## blairwitch2
 
-129 struct(s) changed size.
+148 struct(s) changed size.
 
 | struct | size change | fields moved | not placed |
 |---|---:|---:|---:|
@@ -238,10 +256,12 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CBaron](structs/CBaron.md) | +23148 | 10 | 1 of 11 |
 | [CColonel](structs/CColonel.md) | +23148 | 4 | 1 of 5 |
 | [CHaystack](structs/CHaystack.md) | +23148 | 4 | 1 of 5 |
+| [CHero](structs/CHero.md) | +23148 | 9 | 8 of 18 |
 | [CIcePick](structs/CIcePick.md) | +23148 | 9 | 1 of 10 |
 | [CMoloch](structs/CMoloch.md) | +23148 | 11 | 1 of 12 |
 | [CScat](structs/CScat.md) | +23148 | 9 | 1 of 10 |
 | [CStranger](structs/CStranger.md) | +23148 | 38 | 1 of 39 |
+| [CCloth](structs/CCloth.md) | -21312 | 10 | 13 of 24 |
 | [CKeyFramedModel](structs/CKeyFramedModel.md) | -21312 | 11 | 1 of 22 |
 | [CBassPlayer](structs/CBassPlayer.md) | +19520 | 1 | 0 of 2 |
 | [CDrummer](structs/CDrummer.md) | +19520 | 1 | 0 of 2 |
@@ -278,6 +298,10 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CZombieCow](structs/CZombieCow.md) | +19516 | 4 | 0 of 5 |
 | [CZombieDog](structs/CZombieDog.md) | +19516 | 2 | 0 of 3 |
 | [CSvetlana](structs/CSvetlana.md) | -19476 | 6 | 3 of 9 |
+| [CMoon](structs/CMoon.md) | -19472 | 0 | 2 of 3 |
+| [CTextureCache](structs/CTextureCache.md) | +16384 | 2 | 5 of 8 |
+| [CDemonMission](structs/CDemonMission.md) | +7020 | 15 | 11 of 27 |
+| [CBitFont](structs/CBitFont.md) | +4232 | 16 | 7 of 24 |
 | [CGabriella](structs/CGabriella.md) | +1836 | 16 | 3 of 19 |
 | [CMimic](structs/CMimic.md) | -1796 | 8 | 1 of 10 |
 | [CBodyPart](structs/CBodyPart.md) | +1044 | 25 | 1 of 27 |
@@ -285,6 +309,8 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CCryptVessel](structs/CCryptVessel.md) | +696 | 19 | 0 of 20 |
 | [CFlameCan](structs/CFlameCan.md) | +696 | 6 | 0 of 7 |
 | [CDoor](structs/CDoor.md) | +456 | 27 | 1 of 29 |
+| [CInventory](structs/CInventory.md) | +452 | 14 | 2 of 19 |
+| [CEmitter](structs/CEmitter.md) | +392 | 0 | 22 of 23 |
 | [CHeroPlaceholder](structs/CHeroPlaceholder.md) | +380 | 0 | 1 of 2 |
 | [CLightActor](structs/CLightActor.md) | +364 | 6 | 0 of 7 |
 | [CBoxActor](structs/CBoxActor.md) | +360 | 24 | 0 of 25 |
@@ -317,6 +343,7 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CGasMask](structs/CGasMask.md) | +348 | 2 | 0 of 3 |
 | [CGlass](structs/CGlass.md) | +348 | 17 | 3 of 21 |
 | [CGrave](structs/CGrave.md) | +348 | 8 | 0 of 9 |
+| [CGun](structs/CGun.md) | +348 | 0 | 0 of 1 |
 | [CKeyActor](structs/CKeyActor.md) | +348 | 4 | 0 of 5 |
 | [CLadder](structs/CLadder.md) | +348 | 6 | 0 of 7 |
 | [CLever](structs/CLever.md) | +348 | 14 | 1 of 16 |
@@ -340,20 +367,30 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CVehicle](structs/CVehicle.md) | +348 | 24 | 1 of 26 |
 | [CWaterActor](structs/CWaterActor.md) | +348 | 23 | 1 of 25 |
 | [CWeapon](structs/CWeapon.md) | +348 | 19 | 0 of 20 |
+| [SBodyPartFire](structs/SBodyPartFire.md) | +348 | 0 | 0 of 2 |
 | [CConveyor](structs/CConveyor.md) | +344 | 6 | 0 of 7 |
 | [CMineCar](structs/CMineCar.md) | +344 | 1 | 0 of 2 |
 | [CPlatform](structs/CPlatform.md) | +344 | 29 | 3 of 33 |
 | [CGame](structs/CGame.md) | +84 | 52 | 57 of 112 |
+| [SCarryHand](structs/SCarryHand.md) | +52 | 0 | 3 of 6 |
 | [CSfxSample](structs/CSfxSample.md) | +44 | 2 | 7 of 17 |
 | [CPickList](structs/CPickList.md) | +24 | 23 | 2 of 26 |
 | [CDemonSet](structs/CDemonSet.md) | +20 | 69 | 5 of 87 |
 | [CNetGame](structs/CNetGame.md) | +16 | 5 | 1 of 11 |
-| [CSfxSlot](structs/CSfxSlot.md) | -12 | 4 | 12 of 18 |
+| [CSfxOptions](structs/CSfxOptions.md) | -16 | 3 | 11 of 15 |
+| [CSfxSlot](structs/CSfxSlot.md) | -12 | 16 | 2 of 18 |
 | [CBloodParticle](structs/CBloodParticle.md) | +8 | 2 | 1 of 3 |
+| [CFireball](structs/CFireball.md) | +8 | 10 | 1 of 11 |
 | [CGlassParticle](structs/CGlassParticle.md) | +8 | 4 | 3 of 7 |
 | [CLZWCompress](structs/CLZWCompress.md) | +8 | 0 | 3 of 8 |
+| [CParticle](structs/CParticle.md) | +8 | 2 | 5 of 8 |
+| [CPopcorn](structs/CPopcorn.md) | +8 | 0 | 0 of 1 |
+| [CRainDrop](structs/CRainDrop.md) | +8 | 0 | 0 of 1 |
+| [CRock](structs/CRock.md) | +8 | 0 | 2 of 3 |
 | [CShell](structs/CShell.md) | +8 | 4 | 1 of 5 |
 | [CSpark](structs/CSpark.md) | +8 | 5 | 1 of 6 |
+| [SNetPlayer](structs/SNetPlayer.md) | +8 | 0 | 6 of 15 |
+| [SSoftwareEdge](structs/SSoftwareEdge.md) | +8 | 0 | 1 of 5 |
 | [CConsole](structs/CConsole.md) | +4 | 7 | 0 of 8 |
 | [CDemonLight](structs/CDemonLight.md) | +4 | 0 | 0 of 30 |
 | [CIniFile](structs/CIniFile.md) | +4 | 0 | 0 of 2 |
@@ -362,7 +399,7 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 
 ## bw3
 
-62 struct(s) changed size.
+83 struct(s) changed size.
 
 | struct | size change | fields moved | not placed |
 |---|---:|---:|---:|
@@ -370,7 +407,11 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CSkeleton](structs/CSkeleton.md) | -43920 | 4 | 5 of 9 |
 | [CWinFont](structs/CWinFont.md) | +27204 | 15 | 1 of 16 |
 | [CDeformableModel](structs/CDeformableModel.md) | -23040 | 6 | 7 of 24 |
+| [CCloth](structs/CCloth.md) | -21312 | 10 | 13 of 24 |
 | [CKeyFramedModel](structs/CKeyFramedModel.md) | -21312 | 11 | 1 of 22 |
+| [CMoon](structs/CMoon.md) | -19448 | 0 | 2 of 3 |
+| [CDemonMission](structs/CDemonMission.md) | +19024 | 15 | 11 of 27 |
+| [CTextureCache](structs/CTextureCache.md) | +16384 | 2 | 5 of 8 |
 | [CBugs](structs/CBugs.md) | +9388 | 17 | 6 of 24 |
 | [CBoneGuy](structs/CBoneGuy.md) | +4532 | 0 | 11 of 12 |
 | [CZombie](structs/CZombie.md) | +4512 | 0 | 19 of 20 |
@@ -384,6 +425,8 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CTVBat](structs/CTVBat.md) | +4504 | 20 | 0 of 21 |
 | [CWerewolf](structs/CWerewolf.md) | +4504 | 13 | 0 of 14 |
 | [CZombieCow](structs/CZombieCow.md) | +4504 | 4 | 0 of 5 |
+| [CBitFont](structs/CBitFont.md) | +4232 | 16 | 7 of 24 |
+| [CHero](structs/CHero.md) | +4088 | 12 | 5 of 18 |
 | [CNPC](structs/CNPC.md) | +4032 | 0 | 3 of 4 |
 | [CPassenger](structs/CPassenger.md) | +4032 | 7 | 1 of 9 |
 | [CCharacter](structs/CCharacter.md) | +4008 | 49 | 26 of 77 |
@@ -394,11 +437,13 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CTempleStone](structs/CTempleStone.md) | +124 | 0 | 1 of 2 |
 | [CDoor](structs/CDoor.md) | +108 | 0 | 0 of 29 |
 | [CGlassParticle](structs/CGlassParticle.md) | +56 | 5 | 2 of 7 |
+| [SCarryHand](structs/SCarryHand.md) | +52 | 0 | 3 of 6 |
 | [CGlass](structs/CGlass.md) | +48 | 18 | 0 of 21 |
 | [CSfxSample](structs/CSfxSample.md) | +48 | 2 | 7 of 17 |
+| [CEmitter](structs/CEmitter.md) | +44 | 0 | 22 of 23 |
 | [CHeroPlaceholder](structs/CHeroPlaceholder.md) | +32 | 0 | 1 of 2 |
 | [CDynamite](structs/CDynamite.md) | +28 | 3 | 0 of 4 |
-| [CElephantGun](structs/CElephantGun.md) | +28 | 0 | 3 of 4 |
+| [CElephantGun](structs/CElephantGun.md) | +28 | 3 | 0 of 4 |
 | [CFlashlight](structs/CFlashlight.md) | +28 | 0 | 0 of 1 |
 | [CGun](structs/CGun.md) | +28 | 0 | 0 of 1 |
 | [CMelee](structs/CMelee.md) | +28 | 13 | 0 of 14 |
@@ -407,24 +452,37 @@ Against nocedit.exe, per build: the structs laid out in both whose size differs,
 | [CWeapon](structs/CWeapon.md) | +28 | 2 | 4 of 20 |
 | [CDemonSet](structs/CDemonSet.md) | +24 | 69 | 4 of 87 |
 | [CPickList](structs/CPickList.md) | +24 | 23 | 2 of 26 |
+| [CInventory](structs/CInventory.md) | +16 | 14 | 3 of 19 |
 | [CNetGame](structs/CNetGame.md) | +16 | 5 | 1 of 11 |
-| [CSfxSlot](structs/CSfxSlot.md) | -12 | 4 | 12 of 18 |
+| [CSfxOptions](structs/CSfxOptions.md) | -16 | 3 | 11 of 15 |
+| [CSfxSlot](structs/CSfxSlot.md) | -12 | 16 | 2 of 18 |
 | [CBloodParticle](structs/CBloodParticle.md) | +8 | 2 | 1 of 3 |
+| [CFireball](structs/CFireball.md) | +8 | 10 | 1 of 11 |
+| [CGunFlame](structs/CGunFlame.md) | +8 | 2 | 0 of 5 |
+| [CHealthItem](structs/CHealthItem.md) | +8 | 0 | 3 of 4 |
 | [CLZWCompress](structs/CLZWCompress.md) | +8 | 0 | 3 of 8 |
+| [CParticle](structs/CParticle.md) | +8 | 2 | 5 of 8 |
+| [CPopcorn](structs/CPopcorn.md) | +8 | 0 | 0 of 1 |
+| [CRainDrop](structs/CRainDrop.md) | +8 | 0 | 0 of 1 |
+| [CRock](structs/CRock.md) | +8 | 0 | 2 of 3 |
 | [CShell](structs/CShell.md) | +8 | 4 | 1 of 5 |
 | [CSpark](structs/CSpark.md) | +8 | 5 | 1 of 6 |
+| [SNetPlayer](structs/SNetPlayer.md) | +8 | 0 | 6 of 15 |
+| [SSoftwareEdge](structs/SSoftwareEdge.md) | +8 | 0 | 1 of 5 |
 | [CAmmo](structs/CAmmo.md) | +4 | 0 | 1 of 5 |
 | [CBloodPool](structs/CBloodPool.md) | +4 | 2 | 3 of 6 |
 | [CBloodSplat](structs/CBloodSplat.md) | +4 | 4 | 4 of 9 |
 | [CBodyPart](structs/CBodyPart.md) | +4 | 4 | 1 of 27 |
+| [CBulletHole](structs/CBulletHole.md) | +4 | 0 | 0 of 7 |
 | [CConsole](structs/CConsole.md) | +4 | 7 | 0 of 8 |
 | [CExplosion](structs/CExplosion.md) | +4 | 0 | 3 of 5 |
+| [CFootstep](structs/CFootstep.md) | +4 | 3 | 0 of 5 |
 | [CIniFile](structs/CIniFile.md) | +4 | 0 | 0 of 2 |
 | [CLZWDecompress](structs/CLZWDecompress.md) | +4 | 0 | 5 of 6 |
 | [CLightningBolt](structs/CLightningBolt.md) | +4 | 0 | 3 of 7 |
 | [CPlatform](structs/CPlatform.md) | -4 | 0 | 2 of 33 |
 | [CScript](structs/CScript.md) | -4 | 15 | 2 of 23 |
 | [CToss](structs/CToss.md) | +4 | 0 | 5 of 6 |
-| [CTrigger](structs/CTrigger.md) | +4 | 0 | 5 of 23 |
+| [CTrigger](structs/CTrigger.md) | +4 | 5 | 0 of 23 |
 | [CWaterActor](structs/CWaterActor.md) | +4 | 10 | 1 of 25 |
 | [CWayPoint](structs/CWayPoint.md) | +4 | 3 | 0 of 4 |

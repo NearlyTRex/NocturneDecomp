@@ -6,9 +6,9 @@ Category `/Nocturne/Struct/Game`.
 |---|---:|---|---:|
 | nocedit | 48 | fields | — |
 | nocturne | 48 | fields | — |
-| bw1 | unsized | placeholder | — |
-| blairwitch2 | unsized | placeholder | — |
-| bw3 | unsized | placeholder | — |
+| bw1 | 48 | fields | — |
+| blairwitch2 | 48 | fields | — |
+| bw3 | 48 | fields | — |
 
 ## Fields
 
@@ -16,15 +16,15 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `mpeg_version` | `int` | 0x0 | 0x0 |  |  |  |
-| `layer` | `int` | 0x4 | 0x4 |  |  |  |
-| `protection` | `int` | 0x8 | 0x8 |  |  |  |
-| `bitrate_index` | `int` | 0xc | 0xc |  |  |  |
-| `sampling_rate_index` | `int` | 0x10 | 0x10 |  |  |  |
-| `padding` | `int` | 0x14 | 0x14 |  |  |  |
-| `private_bit` | `int` | 0x18 | 0x18 |  |  |  |
-| `channel_mode` | `int` | 0x1c | 0x1c |  |  |  |
-| `mode_extension` | `int` | 0x20 | 0x20 |  |  |  |
-| `copyright` | `int` | 0x24 | 0x24 |  |  |  |
-| `original` | `int` | 0x28 | 0x28 |  |  |  |
-| `emphasis` | `int` | 0x2c | 0x2c |  |  |  |
+| `mpeg_version` | `int` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `layer` | `int` | 0x4 | 0x4 | 0x4 | 0x4 | 0x4 |
+| `protection` | `int` | 0x8 | 0x8 | 0x8 | 0x8 | 0x8 |
+| `bitrate_index` | `int` | 0xc | 0xc | 0xc | 0xc | 0xc |
+| `sampling_rate_index` | `int` | 0x10 | 0x10 | 0x10 | 0x10 | 0x10 |
+| `padding` | `int` | 0x14 | 0x14 | 0x14 | 0x14 | 0x14 |
+| `private_bit` | `int` | 0x18 | 0x18 | 0x18 | 0x18 | 0x18 |
+| `channel_mode` | `int` | 0x1c | 0x1c | 0x1c | 0x1c | 0x1c |
+| `mode_extension` | `int` | 0x20 | 0x20 | 0x20 | 0x20 | 0x20 |
+| `copyright` | `int` | 0x24 | 0x24 | 0x24 | 0x24 | 0x24 |
+| `original` | `int` | 0x28 | 0x28 | 0x28 | 0x28 | 0x28 |
+| `emphasis` | `int` | 0x2c | 0x2c | 0x2c | 0x2c | 0x2c |

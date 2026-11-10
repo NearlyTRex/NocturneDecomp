@@ -25,6 +25,4 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
 
-- **bw1**: 0x370+0x4, 0x3b4+0x1a4
 - **blairwitch2**: 0x370+0x160, 0x510+0x1ac
-- **bw3**: 0x370+0x4, 0x3b4+0x1a4

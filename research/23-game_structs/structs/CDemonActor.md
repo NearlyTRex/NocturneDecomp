@@ -37,15 +37,16 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `scale` | `CVector3i` | 0x108 | 0x108 | 0x108 |  | 0x108 |
 | `blood_effect_timer` | `int` | 0x114 | 0x114 | 0x114 |  | 0x114 |
 | `blood_effect_color` | `uint` | 0x118 | 0x118 | 0x118 |  | 0x118 |
-| `footstep_sound_code` | `char[4]` | 0x11c | 0x11c | 0x11c |  | 0x11c |
-| `dead1` | `int` | 0x120 | 0x120 | 0x120 |  | 0x120 |
-| `dead2` | `int` | 0x124 | 0x124 | 0x124 |  | 0x124 |
-| `previous_transform_state` | `CDemonActorTransformState` | 0x128 | 0x128 | 0x128 |  | 0x128 |
-| `render_needs_update` | `int` | 0x144 |  | 0x144 |  | 0x144 |
-| `is_editor_hidden` | `int` | 0x148 |  | 0x148 |  | 0x148 |
+| `footstep_sound_code` | `char[4]` | 0x11c | 0x11c | 0x120 |  | 0x120 |
+| `dead1` | `int` | 0x120 | 0x120 | 0x124 |  | 0x124 |
+| `dead2` | `int` | 0x124 | 0x124 | 0x128 |  | 0x128 |
+| `previous_transform_state` | `CDemonActorTransformState` | 0x128 | 0x128 | 0x12c |  | 0x12c |
+| `render_needs_update` | `int` | 0x144 |  | 0x148 |  | 0x148 |
+| `is_editor_hidden` | `int` | 0x148 |  |  |  |  |
 | `next_actor` | `CDemonActor*` | 0x14c | 0x144 | 0x14c |  | 0x14c |
 | `prev_actor` | `CDemonActor*` | 0x150 | 0x148 | 0x150 |  | 0x150 |
 | `vtable` | `UActorVTable` | 0x154 | 0x14c | 0x154 | 0x2b0 | 0x154 |
+| `footstep_particle_count` | `int` |  |  | 0x11c |  | 0x11c |
 
 ## Undefined bytes
 

@@ -1,0 +1,5216 @@
+{
+  "blairwitch2.exe": {
+    "structs": [
+      {
+        "name": "SPageResource",
+        "size": 24,
+        "base": null,
+        "basis": "ctor zeroes +0..+0x10 and stores base vtable at +0x14; derived classes start at +0x18",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "set to view cursor_x when placed (STextView_placeResource/handleTag); draw x in every draw slot; hit test in STextPage_findResourceAt"
+          },
+          {
+            "offset": "0x4",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "set to view cursor_y when placed; draw y; hit test"
+          },
+          {
+            "offset": "0x8",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "Text: getTextWidth; Bitmap: bitmap width; hit test x + width"
+          },
+          {
+            "offset": "0xc",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "Text: getCharHeight; Bitmap: bitmap height; hit test y + height"
+          },
+          {
+            "offset": "0x10",
+            "name": "link",
+            "type": "char *",
+            "len": 4,
+            "basis": "heap string: setLink mallocs+copies, base dtor frees; default onMouse returns link != 0"
+          },
+          {
+            "offset": "0x14",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "base/derived vtable pointer; slots dtor, draw (slot1), onMouse (slot2)"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceText",
+        "size": 288,
+        "base": "SPageResource",
+        "basis": "new(0x120) in STextView_flushWord; ctor stores Text vtable",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "underlined",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; flushWord copies view underline (+0x34, set by <ul>/</ul>); draw adds an underline when set"
+          },
+          {
+            "offset": "0x1c",
+            "name": "text",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "ctor copies string arg; draw passes it to the font"
+          },
+          {
+            "offset": "0x11c",
+            "name": "font",
+            "type": "CBitFont *",
+            "len": 4,
+            "basis": "ctor arg; getTextWidth/getCharHeight/draw use it"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceBitmap",
+        "size": 44,
+        "base": "SPageResource",
+        "basis": "new(0x2c) for <image> in STextView_handleTag",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "bitmap",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor/load/display/dtor on +0x18"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceTwanaCharacter",
+        "size": 76,
+        "base": "SPageResourceBitmap",
+        "basis": "new(0x4c) for <twanachar>; ctor calls the Bitmap ctor first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResourceBitmap",
+            "len": 44,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x2c",
+            "name": "character",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor copies name arg; sprintf l_%s image; onMouse passes it to TwanaEntry_addCharacter"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceTwanaEntry",
+        "size": 276,
+        "base": "SPageResource",
+        "basis": "new(0x114) for <twanaentry>; ctor sets width 0x69, height 0x2f and the singleton global",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "selected_character_0",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x38",
+            "name": "selected_character_1",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x58",
+            "name": "selected_character_2",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x78",
+            "name": "shown_character_0",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0x98",
+            "name": "shown_character_1",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0xb8",
+            "name": "shown_character_2",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0xd8",
+            "name": "slot_bitmaps",
+            "type": "CAlphaBitmap[3]",
+            "len": 60,
+            "basis": "ctor __arrinit(+0xd8, 3, CAlphaBitmap); draw loads sm_%s into and displays each"
+          }
+        ]
+      },
+      {
+        "name": "STextPage",
+        "size": 324,
+        "base": null,
+        "basis": "page array stride 0x144 in STextView (realloc (n+1)*0x144); 4 + 80*4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "resource_count",
+            "type": "int",
+            "len": 4,
+            "basis": "STextPage_init zeroes; addResource asserts < 80 and increments"
+          },
+          {
+            "offset": "0x4",
+            "name": "resources",
+            "type": "SPageResource *[80]",
+            "len": 320,
+            "basis": "addResource stores at [count]; draw/clear/findResourceAt iterate"
+          }
+        ]
+      },
+      {
+        "name": "STextView",
+        "size": 584,
+        "base": null,
+        "basis": "Watcom RTTI size 584 (static g_STextViewInstance); highest accessed offset is the +0x48 word buffer",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "rect_left",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 1 (0x60); reset copies to margin_left"
+          },
+          {
+            "offset": "0x4",
+            "name": "rect_top",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 2 (0x40); reset copies to margin_top"
+          },
+          {
+            "offset": "0x8",
+            "name": "rect_right",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 3 (0x1eb); reset copies to margin_right"
+          },
+          {
+            "offset": "0xc",
+            "name": "rect_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 4 (0x1b8); reset copies to margin_bottom"
+          },
+          {
+            "offset": "0x10",
+            "name": "page_index",
+            "type": "int",
+            "len": 4,
+            "basis": "reset zeroes; newPage increments; indexes the page array; copied to entry/section page fields"
+          },
+          {
+            "offset": "0x14",
+            "name": "cursor_x",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/newLine set it to margin_left; advanced by resource width / word width"
+          },
+          {
+            "offset": "0x18",
+            "name": "cursor_y",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/newPage set it to margin_top; newLine adds line height"
+          },
+          {
+            "offset": "0x1c",
+            "name": "margin_left",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_left in reset; newLine target"
+          },
+          {
+            "offset": "0x20",
+            "name": "margin_top",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_top in reset; newPage target"
+          },
+          {
+            "offset": "0x24",
+            "name": "margin_right",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_right; fit tests in ensureSpace/wordFits"
+          },
+          {
+            "offset": "0x28",
+            "name": "margin_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_bottom; page-full tests in ensureSpace/newLine"
+          },
+          {
+            "offset": "0x2c",
+            "name": "font",
+            "type": "CBitFont *",
+            "len": 4,
+            "basis": "reset sets the default font; passed to Text ctor and getTextWidth/getCharHeight"
+          },
+          {
+            "offset": "0x30",
+            "name": "unknown_0x30",
+            "type": "int",
+            "len": 4,
+            "basis": "only zeroed in reset"
+          },
+          {
+            "offset": "0x34",
+            "name": "underline",
+            "type": "int",
+            "len": 4,
+            "basis": "handleTag: ul -> 1, /ul -> 0; flushWord copies it to Text.underlined"
+          },
+          {
+            "offset": "0x38",
+            "name": "page_count",
+            "type": "int",
+            "len": 4,
+            "basis": "ensurePage grows it; drawPage bounds; UI compares page < page_count - 2"
+          },
+          {
+            "offset": "0x3c",
+            "name": "pages",
+            "type": "STextPage *",
+            "len": 4,
+            "basis": "realloc'd array, stride 0x144; freed in reset"
+          },
+          {
+            "offset": "0x40",
+            "name": "word_x",
+            "type": "int",
+            "len": 4,
+            "basis": "appendWord records cursor_x when the buffer is empty; flushWord sets Text.x"
+          },
+          {
+            "offset": "0x44",
+            "name": "word_y",
+            "type": "int",
+            "len": 4,
+            "basis": "appendWord records cursor_y; flushWord sets Text.y"
+          },
+          {
+            "offset": "0x48",
+            "name": "word",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "pending word text: appendWord strcat's, flushWord passes it to Text ctor (char[256]), wordFits keeps it < 250; 0x148..0x248 never accessed"
+          }
+        ]
+      },
+      {
+        "name": "SNotesEntry",
+        "size": 348,
+        "base": null,
+        "basis": "new(0x15c) in SNotesSection_addEntry; ctor 004bbcb0-equivalent",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "addEntry copies the name after asserting strlen <= 0x3f; findEntry stricmp's it"
+          },
+          {
+            "offset": "0x40",
+            "name": "title",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "\\title in an entry copies here; layout emits <ul>title</ul> when non-empty"
+          },
+          {
+            "offset": "0x140",
+            "name": "kind",
+            "type": "int",
+            "len": 4,
+            "basis": "addEntry arg (0 entry, 2 task, 5 map); layout: 3 -> box image, 4 -> check image; map code tests == 6"
+          },
+          {
+            "offset": "0x144",
+            "name": "page",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; layout stores view page_index"
+          },
+          {
+            "offset": "0x148",
+            "name": "lines",
+            "type": "CStrList",
+            "len": 16,
+            "basis": "CStrList ctor/dtor; parser CStrList_add's body lines; layout CStrList_getStringAt"
+          },
+          {
+            "offset": "0x158",
+            "name": "map_index",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor -1; \\map stores the map number; layout paginates SNotesMap[map_index] when >= 0"
+          }
+        ]
+      },
+      {
+        "name": "SNotesSection",
+        "size": 740,
+        "base": null,
+        "basis": "static array of 6, stride 0x2e4; RTTI size 740; 0x154 + 100*4 = 0x2e4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "\\section copies the name; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x40",
+            "name": "title",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "\\title outside an entry copies here; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x140",
+            "name": "first_page",
+            "type": "int",
+            "len": 4,
+            "basis": "layout stores view page_index; tab click jumps to it; page-in-section tests"
+          },
+          {
+            "offset": "0x144",
+            "name": "page_count",
+            "type": "int",
+            "len": 4,
+            "basis": "layout: view page_index - first_page; page-in-section tests"
+          },
+          {
+            "offset": "0x148",
+            "name": "tab_x",
+            "type": "int",
+            "len": 4,
+            "basis": "set to 0x215 when tab bitmaps load; tab hit test/draw x"
+          },
+          {
+            "offset": "0x14c",
+            "name": "tab_y",
+            "type": "int",
+            "len": 4,
+            "basis": "accumulated tab bitmap heights; tab hit test/draw y"
+          },
+          {
+            "offset": "0x150",
+            "name": "entry_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addEntry asserts <= 99 and increments; clear zeroes"
+          },
+          {
+            "offset": "0x154",
+            "name": "entries",
+            "type": "SNotesEntry *[100]",
+            "len": 400,
+            "basis": "addEntry stores the new entry; findEntry/layout/clear iterate"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMapSet",
+        "size": 136,
+        "base": null,
+        "basis": "array at SNotesMap+0xa0, stride 0x88 (\\set parse, worldToMap, load)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "level_name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf %s target; worldToMap stricmp's it with the current level name"
+          },
+          {
+            "offset": "0x64",
+            "name": "map_left",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap lerps map x from +0x64 to +0x6c"
+          },
+          {
+            "offset": "0x68",
+            "name": "map_top",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap lerps map y from +0x68 to +0x70"
+          },
+          {
+            "offset": "0x6c",
+            "name": "map_right",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap"
+          },
+          {
+            "offset": "0x70",
+            "name": "map_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap"
+          },
+          {
+            "offset": "0x74",
+            "name": "world_x0",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap (pos.x - x0) / (x1 - x0)"
+          },
+          {
+            "offset": "0x78",
+            "name": "world_z0",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap (pos.z - z0) / (z1 - z0)"
+          },
+          {
+            "offset": "0x7c",
+            "name": "world_x1",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap"
+          },
+          {
+            "offset": "0x80",
+            "name": "world_z1",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap"
+          },
+          {
+            "offset": "0x84",
+            "name": "reveal_scale",
+            "type": "float",
+            "len": 4,
+            "basis": "load computes sqrt(map/world area ratio); revealAtHero derives the reveal radius from it"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMapAnnotation",
+        "size": 212,
+        "base": null,
+        "basis": "array at SNotesMap+0x2c4, stride 0xd4 (\\annotation parse, showAnnotation, draw)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf target, whitespace-trimmed; showAnnotation stricmp's it"
+          },
+          {
+            "offset": "0x64",
+            "name": "text",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf target, trimmed; draw prints it with the font"
+          },
+          {
+            "offset": "0xc8",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; draw x offset"
+          },
+          {
+            "offset": "0xcc",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; draw y offset"
+          },
+          {
+            "offset": "0xd0",
+            "name": "visible",
+            "type": "int",
+            "len": 4,
+            "basis": "parse zeroes; showAnnotation sets 1; draw skips when 0"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMap",
+        "size": 2416,
+        "base": null,
+        "basis": "static array of 4, stride 0x970; RTTI size",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "entry",
+            "type": "SNotesEntry *",
+            "len": 4,
+            "basis": "\\map stores the new entry; map code reads entry->kind"
+          },
+          {
+            "offset": "0x4",
+            "name": "image_name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "\\image splitPath target; load passes it to CAlphaBitmap_load; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x68",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "\\image sscanf %d; load size; SPageResourceMap width"
+          },
+          {
+            "offset": "0x6c",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "\\image sscanf %d; load size; SPageResourceMap height"
+          },
+          {
+            "offset": "0x70",
+            "name": "image",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor/load/display/free on +0x70"
+          },
+          {
+            "offset": "0x84",
+            "name": "saved_alpha",
+            "type": "void *",
+            "len": 4,
+            "basis": "load reallocs width*height and copies the image's alpha; applyReveal multiplies by it; reset frees"
+          },
+          {
+            "offset": "0x88",
+            "name": "reveal_mask",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor; load creates it at width/2 x height/2; revealPixel writes its alpha bytes"
+          },
+          {
+            "offset": "0x9c",
+            "name": "set_count",
+            "type": "int",
+            "len": 4,
+            "basis": "\\set increments (limit 4); loops in load/worldToMap"
+          },
+          {
+            "offset": "0xa0",
+            "name": "sets",
+            "type": "SNotesMapSet[4]",
+            "len": 544,
+            "basis": "\\set sscanf targets at +0xa0 + i*0x88"
+          },
+          {
+            "offset": "0x2c0",
+            "name": "annotation_count",
+            "type": "int",
+            "len": 4,
+            "basis": "\\annotation increments (limit 8); ctor zeroes"
+          },
+          {
+            "offset": "0x2c4",
+            "name": "annotations",
+            "type": "SNotesMapAnnotation[8]",
+            "len": 1696,
+            "basis": "\\annotation sscanf targets at +0x2c4 + i*0xd4"
+          },
+          {
+            "offset": "0x964",
+            "name": "last_reveal_x",
+            "type": "int",
+            "len": 4,
+            "basis": "reset -1; revealCircle skips when unchanged, then stores"
+          },
+          {
+            "offset": "0x968",
+            "name": "last_reveal_y",
+            "type": "int",
+            "len": 4,
+            "basis": "reset -1; revealCircle"
+          },
+          {
+            "offset": "0x96c",
+            "name": "reveal_dirty",
+            "type": "int",
+            "len": 4,
+            "basis": "reset 1; revealPixel sets 1; draw calls applyReveal when set; applyReveal clears"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceMap",
+        "size": 28,
+        "base": "SPageResource",
+        "basis": "new(0x1c) in SNotesMap_paginate",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "map",
+            "type": "SNotesMap *",
+            "len": 4,
+            "basis": "ctor stores arg and copies its width/height (+0x68/+0x6c); draw calls SNotesMap_draw(map, x, y)"
+          }
+        ]
+      },
+      {
+        "name": "CAsciiArmor",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "RTTI size 12; ctor 00434b70 calls CCodec ctor 00433e80 first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00433e80 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "bit_buffer",
+            "type": "SBitBuffer",
+            "len": 8,
+            "basis": "reset slot 00434b90 calls resetBitBuffer(this+4); encode slot 00434bb0 drains it 6 bits at a time via writeBitsToStream(this+4) into the armor alphabet; flush slot 00434c00 reads the remaining bits from this+4"
+          }
+        ]
+      },
+      {
+        "name": "CAsciiUnarmor",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "size 12 (given; same as CAsciiArmor); ctor 00434c70 calls CCodec ctor 00433e80 first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00433e80 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "bit_buffer",
+            "type": "SBitBuffer",
+            "len": 8,
+            "basis": "shares the reset slot 00434b90 (resetBitBuffer(this+4)) with CAsciiArmor; decode slot 00434c90 pushes each decoded 6-bit value into this+4 (bit-writer call with (this+4, 6, value, out))"
+          }
+        ]
+      },
+      {
+        "name": "CCheesyCipher",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "RTTI size 12; ctor 00434ce0(this, mode, key) calls CCodec ctor first, stores the cipher vtable, then setMode/setKey",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00433e80 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "mode",
+            "type": "int",
+            "len": 4,
+            "basis": "setMode 00434d20 stores the ctor's mode arg; transformByte branches on 0 (table lookup + key) / 1 (inverse table - key) / else 'Invalid mode.'"
+          },
+          {
+            "offset": "0x8",
+            "name": "key_state",
+            "type": "uint",
+            "len": 4,
+            "basis": "setKey 00434d30 stores key & 0xffffff then steps it twice; advanceKey 00434e50 does key = key*0x2ff0bd+1 & 0xffffff; transformByte adds/subtracts its low byte"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamFile",
+        "size": 40,
+        "base": null,
+        "basis": "RTTI size 40; ctor 0057cd50 calls the in-stream base ctor then zeroes +4..+0x24; bla's open takes no text/binary flag and nothing touches +0x28, hence 40 bytes",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "file_handle",
+            "type": "HANDLE",
+            "len": 4,
+            "basis": "open 0057d320 stores CreateFileA(path, GENERIC_READ); close 0057d180 CloseHandle()s and zeroes it; every read slot returns -2 when it is 0"
+          },
+          {
+            "offset": "0x8",
+            "name": "file_size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores GetFileSize(); openInDirectory 0057d390 stores the found entry's size; read/seek/isEof bound position against it"
+          },
+          {
+            "offset": "0xc",
+            "name": "file_offset",
+            "type": "int",
+            "len": 4,
+            "basis": "openInDirectory 0057d390 stores the entry's start offset; fillBuffer adds it to the page position before SetFilePointer"
+          },
+          {
+            "offset": "0x10",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar 0057cf20 reads the byte at it and increments; seek 0057d0c0 sets it (SEEK_SET/CUR/END against file_size); tell returns it"
+          },
+          {
+            "offset": "0x14",
+            "name": "buffer_alloc",
+            "type": "void *",
+            "len": 4,
+            "basis": "allocBuffer mallocs buffer_capacity+0x1f bytes into it; freeBuffer frees it"
+          },
+          {
+            "offset": "0x18",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "allocBuffer stores buffer_alloc rounded up to 32 bytes; byte reads index it with position - buffer_start; ReadFile target"
+          },
+          {
+            "offset": "0x1c",
+            "name": "buffer_start",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the 4 KiB page start; a read refills when position is outside [buffer_start, buffer_start+buffer_length)"
+          },
+          {
+            "offset": "0x20",
+            "name": "buffer_capacity",
+            "type": "int",
+            "len": 4,
+            "basis": "allocBuffer sets 0x1000; fillBuffer clamps the read length to it"
+          },
+          {
+            "offset": "0x24",
+            "name": "buffer_length",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the ReadFile byte count (0 on failure)"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamMemory",
+        "size": 20,
+        "base": null,
+        "basis": "RTTI size 20; ctor 0057d4f0 calls the in-stream base ctor then zeroes +4..+0x10",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "data",
+            "type": "char *",
+            "len": 4,
+            "basis": "open 0057d800 / openOwned 0057d830 store the buffer arg; getChar 0057d600 reads data[position]; close 0057d7b0 frees it when owns_data"
+          },
+          {
+            "offset": "0x8",
+            "name": "size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores the length arg; reads, seek and isEof bound position against it"
+          },
+          {
+            "offset": "0xc",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar increments it; seek 0057d710 sets it; tell returns it"
+          },
+          {
+            "offset": "0x10",
+            "name": "owns_data",
+            "type": "int",
+            "len": 4,
+            "basis": "open sets 0, openOwned sets 1; close frees data only when non-zero"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamPipe",
+        "size": 36,
+        "base": null,
+        "basis": "RTTI size 36; ctor 00434e70 calls the in-stream base ctor then zeroes +4..+0x20",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (0057b9c0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "codec",
+            "type": "CCodec *",
+            "len": 4,
+            "basis": "open 00435270 stores arg 1 and calls its reset slot; fillBuffer 00435300 calls its process(source, out) and flush(out) slots; close 004351e0 deletes it when owns_streams"
+          },
+          {
+            "offset": "0x8",
+            "name": "source",
+            "type": "void *",
+            "len": 4,
+            "basis": "open stores arg 2 (an in-stream; no stream base type in the DB); passed to codec process; isOpen forwards to its isOpen slot; deleted by close when owns_streams"
+          },
+          {
+            "offset": "0xc",
+            "name": "owns_streams",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores arg 3; close calls the codec and source dtors with flag 2 only when set"
+          },
+          {
+            "offset": "0x10",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "open mallocs buffer_size bytes ('CInStreamPipe::open - out of memory'); getChar 00434fa0 reads buffer[position]; close frees it"
+          },
+          {
+            "offset": "0x14",
+            "name": "buffer_size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores arg 4 and allocates that many bytes; fillBuffer gives it to the COutStreamMemory the codec writes into"
+          },
+          {
+            "offset": "0x18",
+            "name": "buffer_length",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the decoded byte count; getChar refills when position >= buffer_length"
+          },
+          {
+            "offset": "0x1c",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar/read advance it, ungetChar decrements it, fillBuffer resets it to 0"
+          },
+          {
+            "offset": "0x20",
+            "name": "codec_finished",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer sets 1 once the codec flush returns 1 and then returns EOF; isEof 004351b0 returns it once the buffer is drained"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamDebug",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI size 4; ctor 0057e1c0 calls the out-stream base ctor and stores its vtable; seek/tell (0057e330) only report 'invalid operation'",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamFile",
+        "size": 8,
+        "base": null,
+        "basis": "RTTI size 8; ctor 0057db80 calls the out-stream base ctor then zeroes +4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "file",
+            "type": "_FILE *",
+            "len": 4,
+            "basis": "open 0057dd90 stores fopen(path, mode); putChar 0057dc70 fputc()s to it, write fwrite()s, seek/tell fseek/ftell; close 0057dd60 fclose()s and zeroes it; attach stores a caller FILE"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamMemory",
+        "size": 24,
+        "base": null,
+        "basis": "RTTI size 24; ctor 0057de40 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (0057d860) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "open 0057e110 stores the buffer arg; putChar 0057df70 writes buffer[position] and realloc()s it by 0x4000 when growable; close 0057e0d0 frees it when growable"
+          },
+          {
+            "offset": "0x8",
+            "name": "capacity",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores the size arg; putChar/write grow it with realloc"
+          },
+          {
+            "offset": "0xc",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "putChar/write advance it; seek sets it; tell returns it (codec callers subtract it from the remaining length)"
+          },
+          {
+            "offset": "0x10",
+            "name": "length",
+            "type": "int",
+            "len": 4,
+            "basis": "high-water mark: putChar/write raise it to position"
+          },
+          {
+            "offset": "0x14",
+            "name": "growable",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor sets 1, open (caller buffer) sets 0; write 0057dfe0 grows the buffer only when set; close frees only when set"
+          }
+        ]
+      },
+      {
+        "name": "CLeaf",
+        "size": 84,
+        "base": "CParticle",
+        "basis": "RTTI size 84; ctor 0049ee20 calls CParticle_ctor then stores the leaf vtable at +0x3c; derived fields start at 0x40; static pool of 64 (arrinit 0x40)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CParticle",
+            "len": 64,
+            "basis": "CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)"
+          },
+          {
+            "offset": "0x40",
+            "name": "drag",
+            "type": "float",
+            "len": 4,
+            "basis": "init 00496750 stores arg 5; process 004967d0 shrinks the velocity by speed*drag*dt each frame"
+          },
+          {
+            "offset": "0x44",
+            "name": "rotation",
+            "type": "CVector3i",
+            "len": 12,
+            "basis": "process adds speed-scaled 16.16 steps to +0x44/+0x48; render 004968d0 passes this+0x44 as the CVector3i rotation to applyDirectTransform"
+          },
+          {
+            "offset": "0x50",
+            "name": "model",
+            "type": "CKeyFramedModel *",
+            "len": 4,
+            "basis": "init stores arg 4 (createLeaf 0049d600 picks one of the four leaf%d.kfm models when null); render reads its bounds and calls CKeyFramedModel_prepareForRender on it"
+          }
+        ]
+      },
+      {
+        "name": "CFirefly",
+        "size": 92,
+        "base": "CParticle",
+        "basis": "RTTI size 92; ctor 0049eeb0 calls CParticle_ctor then stores the firefly vtable at +0x3c; static pool of 64",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CParticle",
+            "len": 64,
+            "basis": "CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)"
+          },
+          {
+            "offset": "0x40",
+            "name": "intensity",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly 0049d6a0 stores arg5 * random(0xc000..0xffff) >> 16; process 00494ec0 subtracts fade and kills the particle below 0; render 00495150 uses it as the 16.16 vertex alpha"
+          },
+          {
+            "offset": "0x44",
+            "name": "fade_rate",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 4; process multiplies it by the scaled dt"
+          },
+          {
+            "offset": "0x48",
+            "name": "jitter",
+            "type": "float",
+            "len": 4,
+            "basis": "createFirefly stores arg 8; process adds random(0, jitter*k) - jitter to each velocity axis"
+          },
+          {
+            "offset": "0x4c",
+            "name": "first_update_flag",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly zeroes it; process skips the fade on the first frame and sets it to 1"
+          },
+          {
+            "offset": "0x50",
+            "name": "size",
+            "type": "float",
+            "len": 4,
+            "basis": "createFirefly stores arg 9; render builds the quad corners at +-size"
+          },
+          {
+            "offset": "0x54",
+            "name": "texture_index",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 6; render switches 0..3 to pick the texture"
+          },
+          {
+            "offset": "0x58",
+            "name": "time_scale",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 7; process multiplies the 16.16 frame dt by it and slams CGame dt to the result while moving"
+          }
+        ]
+      },
+      {
+        "name": "CMuzzleEffect",
+        "size": 92,
+        "base": null,
+        "basis": "RTTI size 92; ctor 0049efa0 is empty (no base, no vtable); static pool of 20 at 0x1c86730 (arrinit 0x14, stride 0x5c in CFireEffect process/render); same layout as nocedit's CMuzzleFlash, which bla also keeps as a separate class",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "frames_remaining",
+            "type": "int",
+            "len": 4,
+            "basis": "init 0059d360 sets 2; process 0059d420 decrements and clamps at 0; render 0059d440 draws only when it is 2; CFireEffect hasActive test 0049eb50 checks it == 1"
+          },
+          {
+            "offset": "0x4",
+            "name": "position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "init copies the position arg; render passes this+4 to processCameraRelativeVertex"
+          },
+          {
+            "offset": "0x10",
+            "name": "rotation",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "init stores the euler angles of the rotation-matrix arg; render passes this+0x10 to applyScaledTransform"
+          },
+          {
+            "offset": "0x1c",
+            "name": "light",
+            "type": "CDemonGlobe",
+            "len": 64,
+            "basis": "init calls CDemonGlobe_setPosition/precomputeAttenuation(8.0) on this+0x1c and CDemonSet_addCoronaGlobe"
+          }
+        ]
+      },
+      {
+        "name": "CFieldNotes",
+        "size": 68,
+        "base": null,
+        "basis": "RTTI size 68; ctor 004a4170 zeroes byte +0; single global g_CFieldNotesInstance via g_CFieldNotesPtr; same code as bw1 (normalized pseudocode compared)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "file_name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "loadFile 004a41b0 strcpy()s the notes file name into this and passes it to getFileSize/open('world', this); clear 004a50b0 and the ctor set byte 0 = 0; CScript tests *(char *)g_CFieldNotesPtr == 0; next field bounds it at 64"
+          },
+          {
+            "offset": "0x40",
+            "name": "is_displayed",
+            "type": "int",
+            "len": 4,
+            "basis": "the field-notes hotkey (CGame_runGameSession 004b6170 / CGame_playerControls 004b7050) toggles it; clear and dtor 004a4180 zero it; game/inventory input code suppresses controls while it is set"
+          }
+        ]
+      },
+      {
+        "name": "SDynamicLight",
+        "size": 76,
+        "base": null,
+        "basis": "RTTI size 76; empty ctor; static array of 50 (arrinit 0x32 in the minecar.cpp staticInit); filled by the mini3d add-light function 004f5400 at base + n*0x4c",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "004f5400 copies the position arg"
+          },
+          {
+            "offset": "0xc",
+            "name": "orientation",
+            "type": "CMatrix3x3f",
+            "len": 36,
+            "basis": "004f5400 calls CMatrix3x3f_buildRotationMatrix(+0xc, euler arg) and scales the first two columns by cone_scale; the third column goes to the renderer as the light direction"
+          },
+          {
+            "offset": "0x34",
+            "name": "range",
+            "type": "float",
+            "len": 4,
+            "basis": "004f5400 stores arg 3; the cull pass divides by it"
+          },
+          {
+            "offset": "0x38",
+            "name": "inverse_range",
+            "type": "float",
+            "len": 4,
+            "basis": "004f5400 stores 1/range"
+          },
+          {
+            "offset": "0x3c",
+            "name": "cone_scale",
+            "type": "float",
+            "len": 4,
+            "basis": "004f5400 stores arg 4; the renderer gets atan(1/cone_scale) as the cone angle; the cull pass divides projected x/y by it"
+          }
+        ]
+      },
+      {
+        "name": "SIpAddr",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI 'IpAddr' size 4; copy ctor 0050f9c0 copies the single dword",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "ip_address",
+            "type": "uint",
+            "len": 4,
+            "basis": "copy ctor copies it whole; trisock IP helpers (copyIPAddress, extractIPOctets) treat the same dword as the four address octets"
+          }
+        ]
+      },
+      {
+        "name": "SSocket",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI 'Socket' size 4; its copy ctor 00578fd0 ('Should never be called!') sits beside the CSocket methods (ctor 00579000); same layout as nocedit's CSocket",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "handle",
+            "type": "_SOCKET",
+            "len": 4,
+            "basis": "ctor 00579000 stores -1; createSocket stores socket(); closeSocket closesocket()s and resets -1; isSocketValid tests != -1"
+          }
+        ]
+      },
+      {
+        "name": "CMini3D",
+        "size": 1,
+        "base": null,
+        "basis": "RTTI size 1: empty class; ctor 004f21d0 writes only absolute statics, the dtor does nothing, and the one object is the global g_CMini3DInstance constructed in the minecar.cpp staticInit (no new site)",
+        "fields": []
+      },
+      {
+        "name": "SButtonStruct",
+        "size": 44,
+        "base": null,
+        "basis": "size 44; RTTI 'buttonStruct' (nested in the puzzle classes); ctor 0059bf30 only constructs a CAlphaBitmap at +0 (no vtable, so +0 is modelled as a member); puzzles arrinit arrays of it with stride 0x2c",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "bitmap",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "addButton (0059b3c0) calls CAlphaBitmap_load on element+0; render (0059b430) displays it; ctor/dtor construct/destroy it"
+          },
+          {
+            "offset": "0x14",
+            "name": "enabled",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 6; the puzzle process tests buttons[selected].enabled == 1 (chem) or 1/2/3 as the button kind (audioRec: power / transport+knobs / speed selector)"
+          },
+          {
+            "offset": "0x18",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 7; render draws at it; hitTestButtons (0059bad0) tests x..x+width"
+          },
+          {
+            "offset": "0x1c",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 8; render y; hit test y..y+height"
+          },
+          {
+            "offset": "0x20",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores the bitmap width arg (arg 4)"
+          },
+          {
+            "offset": "0x24",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores the bitmap height arg (arg 5)"
+          },
+          {
+            "offset": "0x28",
+            "name": "visible",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 9; render and hit testing only consider buttons with visible == 1; process rewrites it to show the current knob/switch frames"
+          }
+        ]
+      },
+      {
+        "name": "CAudioRecPuzzle",
+        "size": 2188,
+        "base": null,
+        "basis": "RTTI size 2188; ctor 0059be60: puzzle base ctor 0059ab30, CAlphaBitmap at +4, arrinit 30 buttonStructs at 0x4c, two CKeyFramedModelInstance at 0x574/0x6f0, vtable at +0; bla's radio has no clip playback/solution block and 30 buttons",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "puzzle vtable pointer: the shared puzzle base ctor (0059ab30) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+          },
+          {
+            "offset": "0x4",
+            "name": "background",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "load 0059af30 loads 'radioback' 640x480 into this+4; render 0059b430 displays it first"
+          },
+          {
+            "offset": "0x18",
+            "name": "cursor_index",
+            "type": "int",
+            "len": 4,
+            "basis": "render displays pointer bitmap [cursor_index] at the cursor; hover/knob code sets 0..3"
+          },
+          {
+            "offset": "0x1c",
+            "name": "button_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton 0059b3c0 increments it; load resets 0"
+          },
+          {
+            "offset": "0x20",
+            "name": "selected_button",
+            "type": "int",
+            "len": 4,
+            "basis": "hitTestButtons 0059bad0 stores the hit index; process and the switch/knob slots compare it"
+          },
+          {
+            "offset": "0x24",
+            "name": "mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse 0059bb40 stores the new button state"
+          },
+          {
+            "offset": "0x28",
+            "name": "previous_mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse moves the old mouse_button here"
+          },
+          {
+            "offset": "0x2c",
+            "name": "click_handled",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse zeroes it; process sets 1 after handling one click"
+          },
+          {
+            "offset": "0x30",
+            "name": "transport_state",
+            "type": "int",
+            "len": 4,
+            "basis": "reset 0059ae40 sets 1; moveTransportSwitch 0059b970 steps it 0..2; render spins the reel forward at 0 and back at 2; getter slot returns +0x30"
+          },
+          {
+            "offset": "0x34",
+            "name": "knob_positions",
+            "type": "int[3]",
+            "len": 12,
+            "basis": "reset sets 2; turnKnob 0059ba10 steps entry i in 0..4; getter slots return +0x34/+0x38/+0x3c"
+          },
+          {
+            "offset": "0x40",
+            "name": "speed_setting",
+            "type": "int",
+            "len": 4,
+            "basis": "reset sets 3; process sets it from the 5 speed buttons; render scales the reel speed by speed_setting+1"
+          },
+          {
+            "offset": "0x44",
+            "name": "power_on",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1; the power button toggles it; process exits the puzzle when 0"
+          },
+          {
+            "offset": "0x48",
+            "name": "reel_angle",
+            "type": "float",
+            "len": 4,
+            "basis": "reset zeroes it; render advances it by dt and normalizeAngleToPi and passes it to renderReel 0059bb60"
+          },
+          {
+            "offset": "0x4c",
+            "name": "buttons",
+            "type": "SButtonStruct[30]",
+            "len": 1320,
+            "basis": "ctor 0059be60 arrinit 30 buttonStructs at +0x4c; addButton writes this+0x4c+i*0x2c"
+          },
+          {
+            "offset": "0x574",
+            "name": "reel_model",
+            "type": "CKeyFramedModelInstance",
+            "len": 380,
+            "basis": "ctor constructs it; reset sets 'audioreel.kfm'; load preCaches it; renderReel draws it"
+          },
+          {
+            "offset": "0x6f0",
+            "name": "reel_shadow_model",
+            "type": "CKeyFramedModelInstance",
+            "len": 380,
+            "basis": "ctor constructs it; reset sets 'audioreelshadow.kfm'; renderReel draws it when the shadow arg is 0"
+          },
+          {
+            "offset": "0x86c",
+            "name": "cursor_offset_x",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset stores 3,0x14,2,0x12; render subtracts [cursor_index] from the cursor x"
+          },
+          {
+            "offset": "0x87c",
+            "name": "cursor_offset_y",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset stores 2,6,6,6; render subtracts [cursor_index] from the cursor y"
+          }
+        ]
+      },
+      {
+        "name": "SFollowSlotStruct",
+        "size": 60,
+        "base": null,
+        "basis": "RTTI size 60; empty ctor 0059e370; the follow-slot container ctor 0059ded0 (embedded in CCharacter) arrinits 16 at container+4 and zeroes +0,+4,+0x20..+0x38 of each; stride 0xf dwords in the update/compaction code",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "follower",
+            "type": "CCharacter *",
+            "len": 4,
+            "basis": "update 0059dd00 reads its position (+0x20) and radius (+0x3434); process 0059e110 drops the slot when follower+0x342c is no longer the leader"
+          },
+          {
+            "offset": "0x4",
+            "name": "follow_distance",
+            "type": "float",
+            "len": 4,
+            "basis": "update scales the unit leader->follower direction by it"
+          },
+          {
+            "offset": "0x8",
+            "name": "offset",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "update stores direction*follow_distance; compaction copies it as 3 dwords"
+          },
+          {
+            "offset": "0x14",
+            "name": "target_position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "update stores leader position + offset; compaction copies it"
+          },
+          {
+            "offset": "0x20",
+            "name": "heading",
+            "type": "float",
+            "len": 4,
+            "basis": "update stores the yaw of convertDirectionVectorToEulerAngles(direction)"
+          },
+          {
+            "offset": "0x24",
+            "name": "spread_angle",
+            "type": "float",
+            "len": 4,
+            "basis": "update stores asin(follower_radius/|offset|)*k"
+          },
+          {
+            "offset": "0x28",
+            "name": "follower_radius",
+            "type": "float",
+            "len": 4,
+            "basis": "update copies follower+0x3434"
+          },
+          {
+            "offset": "0x38",
+            "name": "next",
+            "type": "SFollowSlotStruct *",
+            "len": 4,
+            "basis": "process links slot i to slot i+1 (container+0x40+i*0x3c)"
+          }
+        ]
+      },
+      {
+        "name": "CGameHook",
+        "size": 16,
+        "base": null,
+        "basis": "RTTI size 16; ctor 0059c290 zeroes +0..+0xc; single global g_CGameHookInstance via g_CGameHookPtr",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "debug_state_display",
+            "type": "int",
+            "len": 4,
+            "basis": "showDebugMenu 0059c3d0 lists 'DebugStateDisplay' with *this and toggles it; CBasicEnemy_renderOpaque draws state text when set"
+          },
+          {
+            "offset": "0x4",
+            "name": "debug_barrier_display",
+            "type": "int",
+            "len": 4,
+            "basis": "showDebugMenu entry 'DebugBarrierDisplay' toggles +4"
+          },
+          {
+            "offset": "0x8",
+            "name": "debug_waypoint_display",
+            "type": "int",
+            "len": 4,
+            "basis": "showDebugMenu entry 'DebugWayPointDisplay' toggles +8; CWayPoint_renderOpaque draws waypoints when set"
+          },
+          {
+            "offset": "0xc",
+            "name": "debug_follow_slot_display",
+            "type": "int",
+            "len": 4,
+            "basis": "showDebugMenu entry 'DebugFollowSlotDisplay' toggles +0xc; CCharacter_renderOpaque draws follow slots when set"
+          }
+        ]
+      },
+      {
+        "name": "CExamplePuzzle",
+        "size": 20,
+        "base": null,
+        "basis": "RTTI size 20; ctor 0059bf50 calls the puzzle base ctor 0059ab30 then stores the CExamplePuzzle vtable at +0",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "puzzle vtable pointer: the shared puzzle base ctor (0059ab30) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+          },
+          {
+            "offset": "0x4",
+            "name": "rect_left",
+            "type": "int",
+            "len": 4,
+            "basis": "load 0059ad20 stores random(10, screen_w-20); render 0059ada0 passes it to drawRect; onMouse 0059adf0 tests x >= it"
+          },
+          {
+            "offset": "0x8",
+            "name": "rect_top",
+            "type": "int",
+            "len": 4,
+            "basis": "load stores random(10, screen_h-20); drawRect arg 2; onMouse tests y >= it"
+          },
+          {
+            "offset": "0xc",
+            "name": "rect_right",
+            "type": "int",
+            "len": 4,
+            "basis": "load stores random(left+5, screen_w-10); drawRect arg 3; onMouse tests x <= it"
+          },
+          {
+            "offset": "0x10",
+            "name": "rect_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "load stores random(top+5, screen_h-10); drawRect arg 4; onMouse tests y <= it and fires 'Hooray'"
+          }
+        ]
+      },
+      {
+        "name": "CSimpleParticleSystem",
+        "size": 68,
+        "base": null,
+        "basis": "RTTI size 68; ctor 005a7ef0 initialises +0xc..+0x3c and stores the vtable at +0x40 (vptr after the fields, no base); global g_CSimpleParticleSystemInstance built by ctorCapacity 005a7f50(this, 0x2000)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "attach 005a8050 copies owner+0x20; emit 005a8300 refreshes it from the owner (or a global position) and copies it into each new particle"
+          },
+          {
+            "offset": "0xc",
+            "name": "fade_current",
+            "type": "float",
+            "len": 4,
+            "basis": "ctor sets 1.0; resetFade 005a8160 copies fade_start; updateFade 005a8250 lerps fade_start->fade_end by fade_timer/fade_duration and returns it"
+          },
+          {
+            "offset": "0x10",
+            "name": "active",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor 0; ctorCapacity/start 005a80d0 set 1; stop 005a8100 clears it; process 005a8180 and render 005a8290 run only when set"
+          },
+          {
+            "offset": "0x14",
+            "name": "owner",
+            "type": "CDemonActor *",
+            "len": 4,
+            "basis": "attach stores it (only when unset) and reads its +0x20 position; release 005a8220 clears it; start/stop require it"
+          },
+          {
+            "offset": "0x18",
+            "name": "max_particles",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor sets 0x40, ctorCapacity stores arg 2; setMaxParticles 005a8030 changes it before allocation; particles = malloc(max_particles*0x60)"
+          },
+          {
+            "offset": "0x1c",
+            "name": "next_particle",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor 0; emit fills particles[next_particle] and wraps it at max_particles"
+          },
+          {
+            "offset": "0x24",
+            "name": "fade_start",
+            "type": "float",
+            "len": 4,
+            "basis": "ctor 1.0; setFade 005a8140 arg 1"
+          },
+          {
+            "offset": "0x28",
+            "name": "fade_end",
+            "type": "float",
+            "len": 4,
+            "basis": "ctor 1.0; setFade arg 2"
+          },
+          {
+            "offset": "0x2c",
+            "name": "fade_duration",
+            "type": "float",
+            "len": 4,
+            "basis": "ctor 1.0; setFade arg 3; resetFade copies it to fade_timer"
+          },
+          {
+            "offset": "0x30",
+            "name": "fade_timer",
+            "type": "float",
+            "len": 4,
+            "basis": "process counts it down by dt and calls stop when it reaches 0 with stop_after_fade set"
+          },
+          {
+            "offset": "0x34",
+            "name": "stop_after_fade",
+            "type": "int",
+            "len": 4,
+            "basis": "stop(1) sets it and restarts the fade; stop(0) clears it"
+          },
+          {
+            "offset": "0x38",
+            "name": "standalone",
+            "type": "int",
+            "len": 4,
+            "basis": "ctorCapacity sets 1, ctor 0; process/render also run with no owner when set; emit keeps the owner-less position; dtor frees particles only when set"
+          },
+          {
+            "offset": "0x3c",
+            "name": "particles",
+            "type": "void *",
+            "len": 4,
+            "basis": "malloc(max_particles*0x60) in ctorCapacity/attach, each slot initialised by FUN_005a84c0; process/render walk it with stride 0x60; dtor/release free it"
+          },
+          {
+            "offset": "0x40",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "ctor, ctorCapacity and dtor store the vtable 0x6002e4 here"
+          }
+        ]
+      }
+    ]
+  },
+  "bw1.exe": {
+    "structs": [
+      {
+        "name": "SPageResource",
+        "size": 24,
+        "base": null,
+        "basis": "ctor zeroes +0..+0x10 and stores base vtable at +0x14; derived classes start at +0x18",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "set to view cursor_x when placed (STextView_placeResource/handleTag); draw x in every draw slot; hit test in STextPage_findResourceAt"
+          },
+          {
+            "offset": "0x4",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "set to view cursor_y when placed; draw y; hit test"
+          },
+          {
+            "offset": "0x8",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "Text: getTextWidth; Bitmap: bitmap width; hit test x + width"
+          },
+          {
+            "offset": "0xc",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "Text: getCharHeight; Bitmap: bitmap height; hit test y + height"
+          },
+          {
+            "offset": "0x10",
+            "name": "link",
+            "type": "char *",
+            "len": 4,
+            "basis": "heap string: setLink mallocs+copies, base dtor frees; default onMouse returns link != 0"
+          },
+          {
+            "offset": "0x14",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "base/derived vtable pointer; slots dtor, draw (slot1), onMouse (slot2)"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceText",
+        "size": 288,
+        "base": "SPageResource",
+        "basis": "new(0x120) in STextView_flushWord; ctor stores Text vtable",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "underlined",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; flushWord copies view underline (+0x34, set by <ul>/</ul>); draw adds an underline when set"
+          },
+          {
+            "offset": "0x1c",
+            "name": "text",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "ctor copies string arg; draw passes it to the font"
+          },
+          {
+            "offset": "0x11c",
+            "name": "font",
+            "type": "CBitFont *",
+            "len": 4,
+            "basis": "ctor arg; getTextWidth/getCharHeight/draw use it"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceBitmap",
+        "size": 44,
+        "base": "SPageResource",
+        "basis": "new(0x2c) for <image> in STextView_handleTag",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "bitmap",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor/load/display/dtor on +0x18"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceTwanaCharacter",
+        "size": 76,
+        "base": "SPageResourceBitmap",
+        "basis": "new(0x4c) for <twanachar>; ctor calls the Bitmap ctor first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResourceBitmap",
+            "len": 44,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x2c",
+            "name": "character",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor copies name arg; sprintf l_%s image; onMouse passes it to TwanaEntry_addCharacter"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceTwanaEntry",
+        "size": 280,
+        "base": "SPageResource",
+        "basis": "new(0x118) for <twanaentry>; ctor sets width 0x69, height 0x2f and the singleton global",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "selected_character_0",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x38",
+            "name": "selected_character_1",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x58",
+            "name": "selected_character_2",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x78",
+            "name": "slot_x",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; draw stores each slot's screen x (0x17c + 0x23*i) here"
+          },
+          {
+            "offset": "0x7c",
+            "name": "shown_character_0",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0x9c",
+            "name": "shown_character_1",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0xbc",
+            "name": "shown_character_2",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0xdc",
+            "name": "slot_bitmaps",
+            "type": "CAlphaBitmap[3]",
+            "len": 60,
+            "basis": "ctor __arrinit(+0xdc, 3, CAlphaBitmap); draw loads sm_%s into and displays each"
+          }
+        ]
+      },
+      {
+        "name": "STextPage",
+        "size": 324,
+        "base": null,
+        "basis": "page array stride 0x144 in STextView (realloc (n+1)*0x144); 4 + 80*4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "resource_count",
+            "type": "int",
+            "len": 4,
+            "basis": "STextPage_init zeroes; addResource asserts < 80 and increments"
+          },
+          {
+            "offset": "0x4",
+            "name": "resources",
+            "type": "SPageResource *[80]",
+            "len": 320,
+            "basis": "addResource stores at [count]; draw/clear/findResourceAt iterate"
+          }
+        ]
+      },
+      {
+        "name": "STextView",
+        "size": 584,
+        "base": null,
+        "basis": "Watcom RTTI size 584 (static g_STextViewInstance); highest accessed offset is the +0x48 word buffer",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "rect_left",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 1 (0x60); reset copies to margin_left"
+          },
+          {
+            "offset": "0x4",
+            "name": "rect_top",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 2 (0x40); reset copies to margin_top"
+          },
+          {
+            "offset": "0x8",
+            "name": "rect_right",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 3 (0x1eb); reset copies to margin_right"
+          },
+          {
+            "offset": "0xc",
+            "name": "rect_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 4 (0x1b8); reset copies to margin_bottom"
+          },
+          {
+            "offset": "0x10",
+            "name": "page_index",
+            "type": "int",
+            "len": 4,
+            "basis": "reset zeroes; newPage increments; indexes the page array; copied to entry/section page fields"
+          },
+          {
+            "offset": "0x14",
+            "name": "cursor_x",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/newLine set it to margin_left; advanced by resource width / word width"
+          },
+          {
+            "offset": "0x18",
+            "name": "cursor_y",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/newPage set it to margin_top; newLine adds line height"
+          },
+          {
+            "offset": "0x1c",
+            "name": "margin_left",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_left in reset; newLine target"
+          },
+          {
+            "offset": "0x20",
+            "name": "margin_top",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_top in reset; newPage target"
+          },
+          {
+            "offset": "0x24",
+            "name": "margin_right",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_right; fit tests in ensureSpace/wordFits"
+          },
+          {
+            "offset": "0x28",
+            "name": "margin_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_bottom; page-full tests in ensureSpace/newLine"
+          },
+          {
+            "offset": "0x2c",
+            "name": "font",
+            "type": "CBitFont *",
+            "len": 4,
+            "basis": "reset sets the default font; passed to Text ctor and getTextWidth/getCharHeight"
+          },
+          {
+            "offset": "0x30",
+            "name": "unknown_0x30",
+            "type": "int",
+            "len": 4,
+            "basis": "only zeroed in reset"
+          },
+          {
+            "offset": "0x34",
+            "name": "underline",
+            "type": "int",
+            "len": 4,
+            "basis": "handleTag: ul -> 1, /ul -> 0; flushWord copies it to Text.underlined"
+          },
+          {
+            "offset": "0x38",
+            "name": "page_count",
+            "type": "int",
+            "len": 4,
+            "basis": "ensurePage grows it; drawPage bounds; UI compares page < page_count - 2"
+          },
+          {
+            "offset": "0x3c",
+            "name": "pages",
+            "type": "STextPage *",
+            "len": 4,
+            "basis": "realloc'd array, stride 0x144; freed in reset"
+          },
+          {
+            "offset": "0x40",
+            "name": "word_x",
+            "type": "int",
+            "len": 4,
+            "basis": "appendWord records cursor_x when the buffer is empty; flushWord sets Text.x"
+          },
+          {
+            "offset": "0x44",
+            "name": "word_y",
+            "type": "int",
+            "len": 4,
+            "basis": "appendWord records cursor_y; flushWord sets Text.y"
+          },
+          {
+            "offset": "0x48",
+            "name": "word",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "pending word text: appendWord strcat's, flushWord passes it to Text ctor (char[256]), wordFits keeps it < 250; 0x148..0x248 never accessed"
+          }
+        ]
+      },
+      {
+        "name": "SNotesEntry",
+        "size": 348,
+        "base": null,
+        "basis": "new(0x15c) in SNotesSection_addEntry; ctor 004bbcb0-equivalent",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "addEntry copies the name after asserting strlen <= 0x3f; findEntry stricmp's it"
+          },
+          {
+            "offset": "0x40",
+            "name": "title",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "\\title in an entry copies here; layout emits <ul>title</ul> when non-empty"
+          },
+          {
+            "offset": "0x140",
+            "name": "kind",
+            "type": "int",
+            "len": 4,
+            "basis": "addEntry arg (0 entry, 2 task, 5 map); layout: 3 -> box image, 4 -> check image; map code tests == 6"
+          },
+          {
+            "offset": "0x144",
+            "name": "page",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; layout stores view page_index"
+          },
+          {
+            "offset": "0x148",
+            "name": "lines",
+            "type": "CStrList",
+            "len": 16,
+            "basis": "CStrList ctor/dtor; parser CStrList_add's body lines; layout CStrList_getStringAt"
+          },
+          {
+            "offset": "0x158",
+            "name": "map_index",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor -1; \\map stores the map number; layout paginates SNotesMap[map_index] when >= 0"
+          }
+        ]
+      },
+      {
+        "name": "SNotesSection",
+        "size": 740,
+        "base": null,
+        "basis": "static array of 6, stride 0x2e4; RTTI size 740; 0x154 + 100*4 = 0x2e4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "\\section copies the name; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x40",
+            "name": "title",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "\\title outside an entry copies here; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x140",
+            "name": "first_page",
+            "type": "int",
+            "len": 4,
+            "basis": "layout stores view page_index; tab click jumps to it; page-in-section tests"
+          },
+          {
+            "offset": "0x144",
+            "name": "page_count",
+            "type": "int",
+            "len": 4,
+            "basis": "layout: view page_index - first_page; page-in-section tests"
+          },
+          {
+            "offset": "0x148",
+            "name": "tab_x",
+            "type": "int",
+            "len": 4,
+            "basis": "set to 0x215 when tab bitmaps load; tab hit test/draw x"
+          },
+          {
+            "offset": "0x14c",
+            "name": "tab_y",
+            "type": "int",
+            "len": 4,
+            "basis": "accumulated tab bitmap heights; tab hit test/draw y"
+          },
+          {
+            "offset": "0x150",
+            "name": "entry_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addEntry asserts <= 99 and increments; clear zeroes"
+          },
+          {
+            "offset": "0x154",
+            "name": "entries",
+            "type": "SNotesEntry *[100]",
+            "len": 400,
+            "basis": "addEntry stores the new entry; findEntry/layout/clear iterate"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMapSet",
+        "size": 136,
+        "base": null,
+        "basis": "array at SNotesMap+0xa0, stride 0x88 (\\set parse, worldToMap, load)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "level_name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf %s target; worldToMap stricmp's it with the current level name"
+          },
+          {
+            "offset": "0x64",
+            "name": "map_left",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap lerps map x from +0x64 to +0x6c"
+          },
+          {
+            "offset": "0x68",
+            "name": "map_top",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap lerps map y from +0x68 to +0x70"
+          },
+          {
+            "offset": "0x6c",
+            "name": "map_right",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap"
+          },
+          {
+            "offset": "0x70",
+            "name": "map_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap"
+          },
+          {
+            "offset": "0x74",
+            "name": "world_x0",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap (pos.x - x0) / (x1 - x0)"
+          },
+          {
+            "offset": "0x78",
+            "name": "world_z0",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap (pos.z - z0) / (z1 - z0)"
+          },
+          {
+            "offset": "0x7c",
+            "name": "world_x1",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap"
+          },
+          {
+            "offset": "0x80",
+            "name": "world_z1",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap"
+          },
+          {
+            "offset": "0x84",
+            "name": "reveal_scale",
+            "type": "float",
+            "len": 4,
+            "basis": "load computes sqrt(map/world area ratio); revealAtHero derives the reveal radius from it"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMapAnnotation",
+        "size": 212,
+        "base": null,
+        "basis": "array at SNotesMap+0x2c4, stride 0xd4 (\\annotation parse, showAnnotation, draw)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf target, whitespace-trimmed; showAnnotation stricmp's it"
+          },
+          {
+            "offset": "0x64",
+            "name": "text",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf target, trimmed; draw prints it with the font"
+          },
+          {
+            "offset": "0xc8",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; draw x offset"
+          },
+          {
+            "offset": "0xcc",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; draw y offset"
+          },
+          {
+            "offset": "0xd0",
+            "name": "visible",
+            "type": "int",
+            "len": 4,
+            "basis": "parse zeroes; showAnnotation sets 1; draw skips when 0"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMap",
+        "size": 2416,
+        "base": null,
+        "basis": "static array of 4, stride 0x970; RTTI size",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "entry",
+            "type": "SNotesEntry *",
+            "len": 4,
+            "basis": "\\map stores the new entry; map code reads entry->kind"
+          },
+          {
+            "offset": "0x4",
+            "name": "image_name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "\\image splitPath target; load passes it to CAlphaBitmap_load; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x68",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "\\image sscanf %d; load size; SPageResourceMap width"
+          },
+          {
+            "offset": "0x6c",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "\\image sscanf %d; load size; SPageResourceMap height"
+          },
+          {
+            "offset": "0x70",
+            "name": "image",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor/load/display/free on +0x70"
+          },
+          {
+            "offset": "0x84",
+            "name": "saved_alpha",
+            "type": "void *",
+            "len": 4,
+            "basis": "load reallocs width*height and copies the image's alpha; applyReveal multiplies by it; reset frees"
+          },
+          {
+            "offset": "0x88",
+            "name": "reveal_mask",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor; load creates it at width/2 x height/2; revealPixel writes its alpha bytes"
+          },
+          {
+            "offset": "0x9c",
+            "name": "set_count",
+            "type": "int",
+            "len": 4,
+            "basis": "\\set increments (limit 4); loops in load/worldToMap"
+          },
+          {
+            "offset": "0xa0",
+            "name": "sets",
+            "type": "SNotesMapSet[4]",
+            "len": 544,
+            "basis": "\\set sscanf targets at +0xa0 + i*0x88"
+          },
+          {
+            "offset": "0x2c0",
+            "name": "annotation_count",
+            "type": "int",
+            "len": 4,
+            "basis": "\\annotation increments (limit 8); ctor zeroes"
+          },
+          {
+            "offset": "0x2c4",
+            "name": "annotations",
+            "type": "SNotesMapAnnotation[8]",
+            "len": 1696,
+            "basis": "\\annotation sscanf targets at +0x2c4 + i*0xd4"
+          },
+          {
+            "offset": "0x964",
+            "name": "last_reveal_x",
+            "type": "int",
+            "len": 4,
+            "basis": "reset -1; revealCircle skips when unchanged, then stores"
+          },
+          {
+            "offset": "0x968",
+            "name": "last_reveal_y",
+            "type": "int",
+            "len": 4,
+            "basis": "reset -1; revealCircle"
+          },
+          {
+            "offset": "0x96c",
+            "name": "reveal_dirty",
+            "type": "int",
+            "len": 4,
+            "basis": "reset 1; revealPixel sets 1; draw calls applyReveal when set; applyReveal clears"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceMap",
+        "size": 28,
+        "base": "SPageResource",
+        "basis": "new(0x1c) in SNotesMap_paginate",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "map",
+            "type": "SNotesMap *",
+            "len": 4,
+            "basis": "ctor stores arg and copies its width/height (+0x68/+0x6c); draw calls SNotesMap_draw(map, x, y)"
+          }
+        ]
+      },
+      {
+        "name": "CAsciiArmor",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "RTTI size 12; ctor 00443890 calls CCodec ctor 00442ba0 first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00442ba0 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "bit_buffer",
+            "type": "SBitBuffer",
+            "len": 8,
+            "basis": "reset slot 004438b0 calls resetBitBuffer(this+4); encode slot 004438d0 drains it 6 bits at a time via writeBitsToStream(this+4) into the armor alphabet; flush slot 00443920 reads the remaining bits from this+4"
+          }
+        ]
+      },
+      {
+        "name": "CAsciiUnarmor",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "size 12 (given; same as CAsciiArmor); ctor 00443990 calls CCodec ctor 00442ba0 first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00442ba0 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "bit_buffer",
+            "type": "SBitBuffer",
+            "len": 8,
+            "basis": "shares the reset slot 004438b0 (resetBitBuffer(this+4)) with CAsciiArmor; decode slot 004439b0 pushes each decoded 6-bit value into this+4 (bit-writer call with (this+4, 6, value, out))"
+          }
+        ]
+      },
+      {
+        "name": "CCheesyCipher",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "RTTI size 12; ctor 00443a00(this, mode, key) calls CCodec ctor first, stores the cipher vtable, then setMode/setKey",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00442ba0 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "mode",
+            "type": "int",
+            "len": 4,
+            "basis": "setMode 00443a40 stores the ctor's mode arg; transformByte branches on 0 (table lookup + key) / 1 (inverse table - key) / else 'Invalid mode.'"
+          },
+          {
+            "offset": "0x8",
+            "name": "key_state",
+            "type": "uint",
+            "len": 4,
+            "basis": "setKey 00443a50 stores key & 0xffffff then steps it twice; advanceKey 00443b70 does key = key*0x2ff0bd+1 & 0xffffff; transformByte adds/subtracts its low byte"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamFile",
+        "size": 44,
+        "base": null,
+        "basis": "RTTI size 44; ctor 005a08d0 calls the in-stream base ctor then zeroes +4..+0x24",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "file_handle",
+            "type": "HANDLE",
+            "len": 4,
+            "basis": "open 005a0f60 stores CreateFileA(path, GENERIC_READ); close 005a0dc0 CloseHandle()s and zeroes it; every read slot returns -2 when it is 0"
+          },
+          {
+            "offset": "0x8",
+            "name": "file_size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores GetFileSize(); openInDirectory 005a0fd0 stores the found entry's size; read/seek/isEof bound position against it"
+          },
+          {
+            "offset": "0xc",
+            "name": "file_offset",
+            "type": "int",
+            "len": 4,
+            "basis": "openInDirectory 005a0fd0 stores the entry's start offset; fillBuffer adds it to the page position before SetFilePointer"
+          },
+          {
+            "offset": "0x10",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar 005a0ab0 reads the byte at it and increments; seek 005a0d00 sets it (SEEK_SET/CUR/END against file_size); tell returns it"
+          },
+          {
+            "offset": "0x14",
+            "name": "buffer_alloc",
+            "type": "void *",
+            "len": 4,
+            "basis": "allocBuffer mallocs buffer_capacity+0x1f bytes into it; freeBuffer frees it"
+          },
+          {
+            "offset": "0x18",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "allocBuffer stores buffer_alloc rounded up to 32 bytes; byte reads index it with position - buffer_start; ReadFile target"
+          },
+          {
+            "offset": "0x1c",
+            "name": "buffer_start",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the 4 KiB page start; a read refills when position is outside [buffer_start, buffer_start+buffer_length)"
+          },
+          {
+            "offset": "0x20",
+            "name": "buffer_capacity",
+            "type": "int",
+            "len": 4,
+            "basis": "allocBuffer sets 0x1000; fillBuffer clamps the read length to it"
+          },
+          {
+            "offset": "0x24",
+            "name": "buffer_length",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the ReadFile byte count (0 on failure)"
+          },
+          {
+            "offset": "0x28",
+            "name": "binary_mode",
+            "type": "int",
+            "len": 4,
+            "basis": "open/openInDirectory store their last arg; getChar/ungetChar/peekChar fold CR LF into LF only when it is 0"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamMemory",
+        "size": 20,
+        "base": null,
+        "basis": "RTTI size 20; ctor 005a1130 calls the in-stream base ctor then zeroes +4..+0x10",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "data",
+            "type": "char *",
+            "len": 4,
+            "basis": "open 005a1450 / openOwned 005a1480 store the buffer arg; getChar 005a1240 reads data[position]; close 005a1400 frees it when owns_data"
+          },
+          {
+            "offset": "0x8",
+            "name": "size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores the length arg; reads, seek and isEof bound position against it"
+          },
+          {
+            "offset": "0xc",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar increments it; seek 005a1360 sets it; tell returns it"
+          },
+          {
+            "offset": "0x10",
+            "name": "owns_data",
+            "type": "int",
+            "len": 4,
+            "basis": "open sets 0, openOwned sets 1; close frees data only when non-zero"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamPipe",
+        "size": 36,
+        "base": null,
+        "basis": "RTTI size 36; ctor 00443b90 calls the in-stream base ctor then zeroes +4..+0x20",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (0059f540) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "codec",
+            "type": "CCodec *",
+            "len": 4,
+            "basis": "open 00443f90 stores arg 1 and calls its reset slot; fillBuffer 00444020 calls its process(source, out) and flush(out) slots; close 00443f00 deletes it when owns_streams"
+          },
+          {
+            "offset": "0x8",
+            "name": "source",
+            "type": "void *",
+            "len": 4,
+            "basis": "open stores arg 2 (an in-stream; no stream base type in the DB); passed to codec process; isOpen forwards to its isOpen slot; deleted by close when owns_streams"
+          },
+          {
+            "offset": "0xc",
+            "name": "owns_streams",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores arg 3; close calls the codec and source dtors with flag 2 only when set"
+          },
+          {
+            "offset": "0x10",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "open mallocs buffer_size bytes ('CInStreamPipe::open - out of memory'); getChar 00443cc0 reads buffer[position]; close frees it"
+          },
+          {
+            "offset": "0x14",
+            "name": "buffer_size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores arg 4 and allocates that many bytes; fillBuffer gives it to the COutStreamMemory the codec writes into"
+          },
+          {
+            "offset": "0x18",
+            "name": "buffer_length",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the decoded byte count; getChar refills when position >= buffer_length"
+          },
+          {
+            "offset": "0x1c",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar/read advance it, ungetChar decrements it, fillBuffer resets it to 0"
+          },
+          {
+            "offset": "0x20",
+            "name": "codec_finished",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer sets 1 once the codec flush returns 1 and then returns EOF; isEof 00443ed0 returns it once the buffer is drained"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamDebug",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI size 4; ctor 005a1e10 calls the out-stream base ctor and stores its vtable; seek/tell (005a1f80) only report 'invalid operation'",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamFile",
+        "size": 8,
+        "base": null,
+        "basis": "RTTI size 8; ctor 005a17d0 calls the out-stream base ctor then zeroes +4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "file",
+            "type": "_FILE *",
+            "len": 4,
+            "basis": "open 005a19e0 stores fopen(path, mode); putChar 005a18c0 fputc()s to it, write fwrite()s, seek/tell fseek/ftell; close 005a19b0 fclose()s and zeroes it; attach stores a caller FILE"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamMemory",
+        "size": 24,
+        "base": null,
+        "basis": "RTTI size 24; ctor 005a1a90 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (005a14b0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "open 005a1d60 stores the buffer arg; putChar 005a1bc0 writes buffer[position] and realloc()s it by 0x4000 when growable; close 005a1d20 frees it when growable"
+          },
+          {
+            "offset": "0x8",
+            "name": "capacity",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores the size arg; putChar/write grow it with realloc"
+          },
+          {
+            "offset": "0xc",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "putChar/write advance it; seek sets it; tell returns it (codec callers subtract it from the remaining length)"
+          },
+          {
+            "offset": "0x10",
+            "name": "length",
+            "type": "int",
+            "len": 4,
+            "basis": "high-water mark: putChar/write raise it to position; detachBuffer 005a1da0 returns it with the buffer"
+          },
+          {
+            "offset": "0x14",
+            "name": "growable",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor sets 1, open (caller buffer) sets 0; write 005a1c30 grows the buffer only when set; close frees only when set"
+          }
+        ]
+      },
+      {
+        "name": "CLeaf",
+        "size": 84,
+        "base": "CParticle",
+        "basis": "RTTI size 84; ctor 004b76f0 calls CParticle_ctor then stores the leaf vtable at +0x3c; derived fields start at 0x40; static pool of 64 (arrinit 0x40)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CParticle",
+            "len": 64,
+            "basis": "CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)"
+          },
+          {
+            "offset": "0x40",
+            "name": "drag",
+            "type": "float",
+            "len": 4,
+            "basis": "init 004af0f0 stores arg 5; process 004af170 shrinks the velocity by speed*drag*dt each frame"
+          },
+          {
+            "offset": "0x44",
+            "name": "rotation",
+            "type": "CVector3i",
+            "len": 12,
+            "basis": "process adds speed-scaled 16.16 steps to +0x44/+0x48; render 004af270 passes this+0x44 as the CVector3i rotation to applyDirectTransform"
+          },
+          {
+            "offset": "0x50",
+            "name": "model",
+            "type": "CKeyFramedModel *",
+            "len": 4,
+            "basis": "init stores arg 4 (createLeaf 004b5f00 picks one of the four leaf%d.kfm models when null); render reads its bounds and calls CKeyFramedModel_prepareForRender on it"
+          }
+        ]
+      },
+      {
+        "name": "CFirefly",
+        "size": 92,
+        "base": "CParticle",
+        "basis": "RTTI size 92; ctor 004b7780 calls CParticle_ctor then stores the firefly vtable at +0x3c; static pool of 64",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CParticle",
+            "len": 64,
+            "basis": "CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)"
+          },
+          {
+            "offset": "0x40",
+            "name": "intensity",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly 004b5fa0 stores arg5 * random(0xc000..0xffff) >> 16; process 004ad860 subtracts fade and kills the particle below 0; render 004adaf0 uses it as the 16.16 vertex alpha"
+          },
+          {
+            "offset": "0x44",
+            "name": "fade_rate",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 4; process multiplies it by the scaled dt"
+          },
+          {
+            "offset": "0x48",
+            "name": "jitter",
+            "type": "float",
+            "len": 4,
+            "basis": "createFirefly stores arg 8; process adds random(0, jitter*k) - jitter to each velocity axis"
+          },
+          {
+            "offset": "0x4c",
+            "name": "first_update_flag",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly zeroes it; process skips the fade on the first frame and sets it to 1"
+          },
+          {
+            "offset": "0x50",
+            "name": "size",
+            "type": "float",
+            "len": 4,
+            "basis": "createFirefly stores arg 9; render builds the quad corners at +-size"
+          },
+          {
+            "offset": "0x54",
+            "name": "texture_index",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 6; render switches 0..3 to pick the texture"
+          },
+          {
+            "offset": "0x58",
+            "name": "time_scale",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 7; process multiplies the 16.16 frame dt by it and slams CGame dt to the result while moving"
+          }
+        ]
+      },
+      {
+        "name": "CFieldNotes",
+        "size": 68,
+        "base": null,
+        "basis": "RTTI size 68; ctor 004bcb60 zeroes byte +0; single global g_CFieldNotesInstance via g_CFieldNotesPtr",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "file_name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "loadFile 004bcba0 strcpy()s the notes file name into this and passes it to getFileSize/open('world', this); clear 004bdaa0 and the ctor set byte 0 = 0; CScript tests *(char *)g_CFieldNotesPtr == 0; next field bounds it at 64"
+          },
+          {
+            "offset": "0x40",
+            "name": "is_displayed",
+            "type": "int",
+            "len": 4,
+            "basis": "the field-notes hotkey (CGame_processHotkeys 004d1a80) toggles it; clear and dtor 004bcb70 zero it; game/inventory input code suppresses controls while it is set"
+          }
+        ]
+      },
+      {
+        "name": "SDynamicLight",
+        "size": 76,
+        "base": null,
+        "basis": "RTTI size 76; empty ctor; static array of 50 (arrinit 0x32 in the minecar.cpp staticInit); filled by the mini3d add-light function 00514150 at base + n*0x4c",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "00514150 copies the position arg"
+          },
+          {
+            "offset": "0xc",
+            "name": "orientation",
+            "type": "CMatrix3x3f",
+            "len": 36,
+            "basis": "00514150 calls CMatrix3x3f_buildRotationMatrix(+0xc, euler arg) and scales the first two columns by cone_scale; the third column goes to the renderer as the light direction"
+          },
+          {
+            "offset": "0x34",
+            "name": "range",
+            "type": "float",
+            "len": 4,
+            "basis": "00514150 stores arg 3; the cull pass divides by it"
+          },
+          {
+            "offset": "0x38",
+            "name": "inverse_range",
+            "type": "float",
+            "len": 4,
+            "basis": "00514150 stores 1/range"
+          },
+          {
+            "offset": "0x3c",
+            "name": "cone_scale",
+            "type": "float",
+            "len": 4,
+            "basis": "00514150 stores arg 4; the renderer gets atan(1/cone_scale) as the cone angle; the cull pass divides projected x/y by it"
+          }
+        ]
+      },
+      {
+        "name": "SIpAddr",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI 'IpAddr' size 4; copy ctor 00530bd0 copies the single dword",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "ip_address",
+            "type": "uint",
+            "len": 4,
+            "basis": "copy ctor copies it whole; trisock IP helpers (copyIPAddress, extractIPOctets) treat the same dword as the four address octets"
+          }
+        ]
+      },
+      {
+        "name": "SSocket",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI 'Socket' size 4; its copy ctor 0059c8b0 ('Should never be called!') sits beside the CSocket methods (ctor 0059c8e0); same layout as nocedit's CSocket",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "handle",
+            "type": "_SOCKET",
+            "len": 4,
+            "basis": "ctor 0059c8e0 stores -1; createSocket stores socket(); closeSocket closesocket()s and resets -1; isSocketValid tests != -1"
+          }
+        ]
+      },
+      {
+        "name": "CMini3D",
+        "size": 1,
+        "base": null,
+        "basis": "RTTI size 1: empty class; ctor 00510f60 writes only absolute statics, the dtor does nothing, and the one object is the global g_CMini3DInstance constructed in the minecar.cpp staticInit (no new site)",
+        "fields": []
+      },
+      {
+        "name": "SButtonStruct",
+        "size": 44,
+        "base": null,
+        "basis": "size 44; RTTI 'buttonStruct' (nested in the puzzle classes); ctor 00418870 only constructs a CAlphaBitmap at +0 (no vtable, so +0 is modelled as a member); puzzles arrinit arrays of it with stride 0x2c",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "bitmap",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "addButton (004180c0) calls CAlphaBitmap_load on element+0; render (00418140) displays it; ctor/dtor construct/destroy it"
+          },
+          {
+            "offset": "0x14",
+            "name": "enabled",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 6; the puzzle process tests buttons[selected].enabled == 1 (chem) or 1/2/3 as the button kind (audioRec: power / transport+knobs / speed selector)"
+          },
+          {
+            "offset": "0x18",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 7; render draws at it; hitTestButtons (00418790) tests x..x+width"
+          },
+          {
+            "offset": "0x1c",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 8; render y; hit test y..y+height"
+          },
+          {
+            "offset": "0x20",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores the bitmap width arg (arg 4)"
+          },
+          {
+            "offset": "0x24",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores the bitmap height arg (arg 5)"
+          },
+          {
+            "offset": "0x28",
+            "name": "visible",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 9; render and hit testing only consider buttons with visible == 1; process rewrites it to show the current knob/switch frames"
+          }
+        ]
+      },
+      {
+        "name": "CChemPuzzle",
+        "size": 2372,
+        "base": null,
+        "basis": "RTTI size 2372; ctor 004175f0: puzzle base ctor 00415ba0, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "puzzle vtable pointer: the shared puzzle base ctor (00415ba0) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+          },
+          {
+            "offset": "0x4",
+            "name": "background",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "load 004177b0 loads 'chembackground' 640x480 into this+4; render 00418140 displays it first"
+          },
+          {
+            "offset": "0x18",
+            "name": "dropper_level",
+            "type": "int",
+            "len": 4,
+            "basis": "render displays dropper bitmap [dropper_level] at the cursor; process copies selection_count into it"
+          },
+          {
+            "offset": "0x1c",
+            "name": "selection_count",
+            "type": "int",
+            "len": 4,
+            "basis": "process 00418220 appends to selected_chemicals while it is < 3 and clears it after mixing"
+          },
+          {
+            "offset": "0x20",
+            "name": "button_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton 004180c0 increments it; render/hit-test loop over button_count+1 entries"
+          },
+          {
+            "offset": "0x24",
+            "name": "selected_button",
+            "type": "int",
+            "len": 4,
+            "basis": "hitTestButtons 00418790 stores the hit index; process compares it with 0x25..0x2c (chemicals, exit 0x2b, reset 0x2c)"
+          },
+          {
+            "offset": "0x28",
+            "name": "mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse 00418810 stores the new button state"
+          },
+          {
+            "offset": "0x2c",
+            "name": "previous_mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse moves the old mouse_button here; process clears the selection on release"
+          },
+          {
+            "offset": "0x30",
+            "name": "click_handled",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse zeroes it; process sets 1 after handling one click"
+          },
+          {
+            "offset": "0x34",
+            "name": "hovering",
+            "type": "int",
+            "len": 4,
+            "basis": "process sets 1 when any visible button is under the cursor (isButtonHovered 00418720); render then draws the highlight dropper"
+          },
+          {
+            "offset": "0x38",
+            "name": "selected_chemicals",
+            "type": "int[3]",
+            "len": 12,
+            "basis": "reset 004176b0/load set -1; process appends the chosen chemical index (button - 0x25)"
+          },
+          {
+            "offset": "0x44",
+            "name": "coin_design",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset/load store random(0,2) per coin; process shows button coin_design[i]*3 + base + coin_reaction[i]"
+          },
+          {
+            "offset": "0x54",
+            "name": "score",
+            "type": "int",
+            "len": 4,
+            "basis": "process adds/subtracts per applied chemical; solved when 3 chemicals were used and score == 3"
+          },
+          {
+            "offset": "0x58",
+            "name": "chemical_applied",
+            "type": "int[6]",
+            "len": 24,
+            "basis": "process sets entry n to 1 the first time chemical n is mixed and adjusts score once"
+          },
+          {
+            "offset": "0x70",
+            "name": "buttons",
+            "type": "SButtonStruct[50]",
+            "len": 2200,
+            "basis": "ctor arrinit 0x32 buttonStructs at +0x70; addButton writes this+0x70+i*0x2c"
+          },
+          {
+            "offset": "0x908",
+            "name": "cursor_offset_x",
+            "type": "int[5]",
+            "len": 20,
+            "basis": "load sets 0x1e; render subtracts [dropper_level] (and [4] for the highlight) from the cursor x"
+          },
+          {
+            "offset": "0x91c",
+            "name": "cursor_offset_y",
+            "type": "int[5]",
+            "len": 20,
+            "basis": "load sets 0x1d; render subtracts it from the cursor y"
+          },
+          {
+            "offset": "0x930",
+            "name": "result",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/load set -1; process sets 2 (failed mix) or 1 (solved, fires 'SolvedChemistryPuzzle'); exit with 2 fires 'FailedChemistryPuzzle'"
+          },
+          {
+            "offset": "0x934",
+            "name": "coin_reaction",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "load zeroes it; process sets 1/2 per coin from the mixed chemicals; selects the plain/cor/wet coin frame"
+          }
+        ]
+      },
+      {
+        "name": "CAudioRecPuzzle",
+        "size": 3128,
+        "base": null,
+        "basis": "RTTI size 3128; ctor 00415d90: puzzle base ctor 00415ba0, CAlphaBitmap at +4, arrinit 50 buttonStructs at 0x60, two CKeyFramedModelInstance at 0x8f8/0xa74, vtable at +0",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "puzzle vtable pointer: the shared puzzle base ctor (00415ba0) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+          },
+          {
+            "offset": "0x4",
+            "name": "background",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "load 00415fc0 loads 'radioback' 640x480 into this+4; render 00416620 displays it first"
+          },
+          {
+            "offset": "0x18",
+            "name": "cursor_index",
+            "type": "int",
+            "len": 4,
+            "basis": "render displays pointer bitmap [cursor_index] at the cursor; hover/knob code sets 0..3"
+          },
+          {
+            "offset": "0x1c",
+            "name": "button_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton 00416570 increments it; load resets 0"
+          },
+          {
+            "offset": "0x20",
+            "name": "selected_button",
+            "type": "int",
+            "len": 4,
+            "basis": "hitTestButtons 00416f10 stores the hit index; process and the switch/knob slots compare it"
+          },
+          {
+            "offset": "0x24",
+            "name": "mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse 00416f80 stores the new button state"
+          },
+          {
+            "offset": "0x28",
+            "name": "previous_mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse moves the old mouse_button here"
+          },
+          {
+            "offset": "0x2c",
+            "name": "click_handled",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse zeroes it; process sets 1 after handling one click"
+          },
+          {
+            "offset": "0x30",
+            "name": "playback_started",
+            "type": "int",
+            "len": 4,
+            "basis": "process sets 1 after calling playClip (00417230) and 0 when the clip sound ends"
+          },
+          {
+            "offset": "0x34",
+            "name": "transport_state",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1; moveTransportSwitch 00416d60 steps it 0..2; 100 marks a pending switch sound; render spins the reel forward at 0 and back at 2; getter slot returns +0x34"
+          },
+          {
+            "offset": "0x38",
+            "name": "knob_positions",
+            "type": "int[3]",
+            "len": 12,
+            "basis": "reset 00415e70 sets 2; turnKnob 00416e20 steps entry i in 0..4; getter slots return +0x38/+0x3c/+0x40"
+          },
+          {
+            "offset": "0x44",
+            "name": "speed_setting",
+            "type": "int",
+            "len": 4,
+            "basis": "reset sets 3; process sets it from the 5 speed buttons; render scales the reel speed by speed_setting+1"
+          },
+          {
+            "offset": "0x48",
+            "name": "previous_speed_setting",
+            "type": "int",
+            "len": 4,
+            "basis": "process copies speed_setting here before changing it and compares the two"
+          },
+          {
+            "offset": "0x4c",
+            "name": "power_on",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1; the power button toggles it; process exits the puzzle when 0"
+          },
+          {
+            "offset": "0x50",
+            "name": "dial_sfx",
+            "type": "uint",
+            "len": 4,
+            "basis": "turnKnob stores startSfx('REC-DIAL?.WAV')"
+          },
+          {
+            "offset": "0x58",
+            "name": "switch_sfx",
+            "type": "uint",
+            "len": 4,
+            "basis": "moveTransportSwitch and process store startSfx('REC-FOWARD-SWITCH.WAV')"
+          },
+          {
+            "offset": "0x5c",
+            "name": "reel_angle",
+            "type": "float",
+            "len": 4,
+            "basis": "reset zeroes it; render advances it by dt (FLD/FSTP float) and normalizeAngleToPi and passes it to renderReel 00416fa0"
+          },
+          {
+            "offset": "0x60",
+            "name": "buttons",
+            "type": "SButtonStruct[50]",
+            "len": 2200,
+            "basis": "ctor 00415d90 arrinit 50 buttonStructs at +0x60; addButton writes this+0x60+i*0x2c"
+          },
+          {
+            "offset": "0x8f8",
+            "name": "reel_model",
+            "type": "CKeyFramedModelInstance",
+            "len": 380,
+            "basis": "ctor constructs it; reset sets 'audioreel.kfm'; load preCaches it; renderReel draws it"
+          },
+          {
+            "offset": "0xa74",
+            "name": "reel_shadow_model",
+            "type": "CKeyFramedModelInstance",
+            "len": 380,
+            "basis": "ctor constructs it; reset sets 'audioreelshadow.kfm'; renderReel draws it when the shadow arg is 0"
+          },
+          {
+            "offset": "0xbf0",
+            "name": "cursor_offset_x",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset stores 3,0x14,2,0x12; render subtracts [cursor_index] from the cursor x"
+          },
+          {
+            "offset": "0xc00",
+            "name": "cursor_offset_y",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset stores 2,6,6,6; render subtracts [cursor_index] from the cursor y"
+          },
+          {
+            "offset": "0xc10",
+            "name": "recording_id",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1 or 2 by the AudioPuzzleTelOsMah/AudioPuzzleMary flags; playClip formats 'AR%d_' with it"
+          },
+          {
+            "offset": "0xc14",
+            "name": "clip_sfx",
+            "type": "uint[3]",
+            "len": 12,
+            "basis": "playClip stores three CSound_playSound handles; process polls the first and kills all three when stopped"
+          },
+          {
+            "offset": "0xc20",
+            "name": "solution",
+            "type": "int[5]",
+            "len": 20,
+            "basis": "reset sets 2s; load stores the flag-specific answer; process compares knob 0..2, speed and transport against it"
+          },
+          {
+            "offset": "0xc34",
+            "name": "solved",
+            "type": "int",
+            "len": 4,
+            "basis": "load zeroes it; process sets 1 and fires 'AudioPuzzleSuccess'; next process exits the puzzle"
+          }
+        ]
+      },
+      {
+        "name": "SDjienBox",
+        "size": 72,
+        "base": null,
+        "basis": "RTTI size 72; empty ctor 00462440; CDjien ctor arrinits 24 of them at CDjien+0xc2fc (ends at +0xc9bc, the next field); the death explosion FUN_00460cb0 fills one per body part with stride 0x48",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "FUN_00460cb0 copies the new body part's location.position (part+0x20) to box+0"
+          },
+          {
+            "offset": "0xc",
+            "name": "orientation",
+            "type": "UOrientationVector",
+            "len": 12,
+            "basis": "FUN_00460cb0 copies the part's orient (part+0x30) to box+0xc"
+          },
+          {
+            "offset": "0x28",
+            "name": "rotation",
+            "type": "CQuaternion4f",
+            "len": 16,
+            "basis": "FUN_00460cb0 stores the 16-byte result of core_xform FUN_005b7ed0 (orient -> quaternion) at CDjien+0xc324+i*0x48"
+          },
+          {
+            "offset": "0x44",
+            "name": "body_part",
+            "type": "CBodyPart *",
+            "len": 4,
+            "basis": "FUN_00460cb0 stores the createBodyPart result at CDjien+0xc340+i*0x48"
+          }
+        ]
+      }
+    ]
+  },
+  "bw3.exe": {
+    "structs": [
+      {
+        "name": "SPageResource",
+        "size": 24,
+        "base": null,
+        "basis": "ctor zeroes +0..+0x10 and stores base vtable at +0x14; derived classes start at +0x18",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "set to view cursor_x when placed (STextView_placeResource/handleTag); draw x in every draw slot; hit test in STextPage_findResourceAt"
+          },
+          {
+            "offset": "0x4",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "set to view cursor_y when placed; draw y; hit test"
+          },
+          {
+            "offset": "0x8",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "Text: getTextWidth; Bitmap: bitmap width; hit test x + width"
+          },
+          {
+            "offset": "0xc",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "Text: getCharHeight; Bitmap: bitmap height; hit test y + height"
+          },
+          {
+            "offset": "0x10",
+            "name": "link",
+            "type": "char *",
+            "len": 4,
+            "basis": "heap string: setLink mallocs+copies, base dtor frees; default onMouse returns link != 0"
+          },
+          {
+            "offset": "0x14",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "base/derived vtable pointer; slots dtor, draw (slot1), onMouse (slot2)"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceText",
+        "size": 288,
+        "base": "SPageResource",
+        "basis": "new(0x120) in STextView_flushWord; ctor stores Text vtable",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "underlined",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; flushWord copies view underline (+0x34, set by <ul>/</ul>); draw adds an underline when set"
+          },
+          {
+            "offset": "0x1c",
+            "name": "text",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "ctor copies string arg; draw passes it to the font"
+          },
+          {
+            "offset": "0x11c",
+            "name": "font",
+            "type": "CBitFont *",
+            "len": 4,
+            "basis": "ctor arg; getTextWidth/getCharHeight/draw use it"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceBitmap",
+        "size": 44,
+        "base": "SPageResource",
+        "basis": "new(0x2c) for <image> in STextView_handleTag",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "bitmap",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor/load/display/dtor on +0x18"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceTwanaCharacter",
+        "size": 76,
+        "base": "SPageResourceBitmap",
+        "basis": "new(0x4c) for <twanachar>; ctor calls the Bitmap ctor first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResourceBitmap",
+            "len": 44,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x2c",
+            "name": "character",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor copies name arg; sprintf l_%s image; onMouse passes it to TwanaEntry_addCharacter"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceTwanaEntry",
+        "size": 280,
+        "base": "SPageResource",
+        "basis": "new(0x118) for <twanaentry>; ctor sets width 0x69, height 0x2f and the singleton global",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "selected_character_0",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x38",
+            "name": "selected_character_1",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x58",
+            "name": "selected_character_2",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets +0x18..+0x78; addCharacter fills the first empty 32-byte slot"
+          },
+          {
+            "offset": "0x78",
+            "name": "slot_x",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; draw stores each slot's screen x (0x17c + 0x23*i) here"
+          },
+          {
+            "offset": "0x7c",
+            "name": "shown_character_0",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0x9c",
+            "name": "shown_character_1",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0xbc",
+            "name": "shown_character_2",
+            "type": "char[32]",
+            "len": 32,
+            "basis": "ctor memsets; draw stricmp's selected vs shown, reloads the slot bitmap and copies selected into shown"
+          },
+          {
+            "offset": "0xdc",
+            "name": "slot_bitmaps",
+            "type": "CAlphaBitmap[3]",
+            "len": 60,
+            "basis": "ctor __arrinit(+0xdc, 3, CAlphaBitmap); draw loads sm_%s into and displays each"
+          }
+        ]
+      },
+      {
+        "name": "STextPage",
+        "size": 324,
+        "base": null,
+        "basis": "page array stride 0x144 in STextView (realloc (n+1)*0x144); 4 + 80*4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "resource_count",
+            "type": "int",
+            "len": 4,
+            "basis": "STextPage_init zeroes; addResource asserts < 80 and increments"
+          },
+          {
+            "offset": "0x4",
+            "name": "resources",
+            "type": "SPageResource *[80]",
+            "len": 320,
+            "basis": "addResource stores at [count]; draw/clear/findResourceAt iterate"
+          }
+        ]
+      },
+      {
+        "name": "STextView",
+        "size": 584,
+        "base": null,
+        "basis": "Watcom RTTI size 584 (static g_STextViewInstance); highest accessed offset is the +0x48 word buffer",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "rect_left",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 1 (0x60); reset copies to margin_left"
+          },
+          {
+            "offset": "0x4",
+            "name": "rect_top",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 2 (0x40); reset copies to margin_top"
+          },
+          {
+            "offset": "0x8",
+            "name": "rect_right",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 3 (0x1eb); reset copies to margin_right"
+          },
+          {
+            "offset": "0xc",
+            "name": "rect_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "setRect arg 4 (0x1b8); reset copies to margin_bottom"
+          },
+          {
+            "offset": "0x10",
+            "name": "page_index",
+            "type": "int",
+            "len": 4,
+            "basis": "reset zeroes; newPage increments; indexes the page array; copied to entry/section page fields"
+          },
+          {
+            "offset": "0x14",
+            "name": "cursor_x",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/newLine set it to margin_left; advanced by resource width / word width"
+          },
+          {
+            "offset": "0x18",
+            "name": "cursor_y",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/newPage set it to margin_top; newLine adds line height"
+          },
+          {
+            "offset": "0x1c",
+            "name": "margin_left",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_left in reset; newLine target"
+          },
+          {
+            "offset": "0x20",
+            "name": "margin_top",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_top in reset; newPage target"
+          },
+          {
+            "offset": "0x24",
+            "name": "margin_right",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_right; fit tests in ensureSpace/wordFits"
+          },
+          {
+            "offset": "0x28",
+            "name": "margin_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "copied from rect_bottom; page-full tests in ensureSpace/newLine"
+          },
+          {
+            "offset": "0x2c",
+            "name": "font",
+            "type": "CBitFont *",
+            "len": 4,
+            "basis": "reset sets the default font; passed to Text ctor and getTextWidth/getCharHeight"
+          },
+          {
+            "offset": "0x30",
+            "name": "unknown_0x30",
+            "type": "int",
+            "len": 4,
+            "basis": "only zeroed in reset"
+          },
+          {
+            "offset": "0x34",
+            "name": "underline",
+            "type": "int",
+            "len": 4,
+            "basis": "handleTag: ul -> 1, /ul -> 0; flushWord copies it to Text.underlined"
+          },
+          {
+            "offset": "0x38",
+            "name": "page_count",
+            "type": "int",
+            "len": 4,
+            "basis": "ensurePage grows it; drawPage bounds; UI compares page < page_count - 2"
+          },
+          {
+            "offset": "0x3c",
+            "name": "pages",
+            "type": "STextPage *",
+            "len": 4,
+            "basis": "realloc'd array, stride 0x144; freed in reset"
+          },
+          {
+            "offset": "0x40",
+            "name": "word_x",
+            "type": "int",
+            "len": 4,
+            "basis": "appendWord records cursor_x when the buffer is empty; flushWord sets Text.x"
+          },
+          {
+            "offset": "0x44",
+            "name": "word_y",
+            "type": "int",
+            "len": 4,
+            "basis": "appendWord records cursor_y; flushWord sets Text.y"
+          },
+          {
+            "offset": "0x48",
+            "name": "word",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "pending word text: appendWord strcat's, flushWord passes it to Text ctor (char[256]), wordFits keeps it < 250; 0x148..0x248 never accessed"
+          }
+        ]
+      },
+      {
+        "name": "SNotesEntry",
+        "size": 348,
+        "base": null,
+        "basis": "new(0x15c) in SNotesSection_addEntry; ctor 004bbcb0-equivalent",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "addEntry copies the name after asserting strlen <= 0x3f; findEntry stricmp's it"
+          },
+          {
+            "offset": "0x40",
+            "name": "title",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "\\title in an entry copies here; layout emits <ul>title</ul> when non-empty"
+          },
+          {
+            "offset": "0x140",
+            "name": "kind",
+            "type": "int",
+            "len": 4,
+            "basis": "addEntry arg (0 entry, 2 task, 5 map); layout: 3 -> box image, 4 -> check image; map code tests == 6"
+          },
+          {
+            "offset": "0x144",
+            "name": "page",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor zeroes; layout stores view page_index"
+          },
+          {
+            "offset": "0x148",
+            "name": "lines",
+            "type": "CStrList",
+            "len": 16,
+            "basis": "CStrList ctor/dtor; parser CStrList_add's body lines; layout CStrList_getStringAt"
+          },
+          {
+            "offset": "0x158",
+            "name": "map_index",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor -1; \\map stores the map number; layout paginates SNotesMap[map_index] when >= 0"
+          }
+        ]
+      },
+      {
+        "name": "SNotesSection",
+        "size": 740,
+        "base": null,
+        "basis": "static array of 6, stride 0x2e4; RTTI size 740; 0x154 + 100*4 = 0x2e4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "\\section copies the name; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x40",
+            "name": "title",
+            "type": "char[256]",
+            "len": 256,
+            "basis": "\\title outside an entry copies here; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x140",
+            "name": "first_page",
+            "type": "int",
+            "len": 4,
+            "basis": "layout stores view page_index; tab click jumps to it; page-in-section tests"
+          },
+          {
+            "offset": "0x144",
+            "name": "page_count",
+            "type": "int",
+            "len": 4,
+            "basis": "layout: view page_index - first_page; page-in-section tests"
+          },
+          {
+            "offset": "0x148",
+            "name": "tab_x",
+            "type": "int",
+            "len": 4,
+            "basis": "set to 0x215 when tab bitmaps load; tab hit test/draw x"
+          },
+          {
+            "offset": "0x14c",
+            "name": "tab_y",
+            "type": "int",
+            "len": 4,
+            "basis": "accumulated tab bitmap heights; tab hit test/draw y"
+          },
+          {
+            "offset": "0x150",
+            "name": "entry_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addEntry asserts <= 99 and increments; clear zeroes"
+          },
+          {
+            "offset": "0x154",
+            "name": "entries",
+            "type": "SNotesEntry *[100]",
+            "len": 400,
+            "basis": "addEntry stores the new entry; findEntry/layout/clear iterate"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMapSet",
+        "size": 136,
+        "base": null,
+        "basis": "array at SNotesMap+0xa0, stride 0x88 (\\set parse, worldToMap, load)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "level_name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf %s target; worldToMap stricmp's it with the current level name"
+          },
+          {
+            "offset": "0x64",
+            "name": "map_left",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap lerps map x from +0x64 to +0x6c"
+          },
+          {
+            "offset": "0x68",
+            "name": "map_top",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap lerps map y from +0x68 to +0x70"
+          },
+          {
+            "offset": "0x6c",
+            "name": "map_right",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap"
+          },
+          {
+            "offset": "0x70",
+            "name": "map_bottom",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; worldToMap"
+          },
+          {
+            "offset": "0x74",
+            "name": "world_x0",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap (pos.x - x0) / (x1 - x0)"
+          },
+          {
+            "offset": "0x78",
+            "name": "world_z0",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap (pos.z - z0) / (z1 - z0)"
+          },
+          {
+            "offset": "0x7c",
+            "name": "world_x1",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap"
+          },
+          {
+            "offset": "0x80",
+            "name": "world_z1",
+            "type": "float",
+            "len": 4,
+            "basis": "sscanf %f; worldToMap"
+          },
+          {
+            "offset": "0x84",
+            "name": "reveal_scale",
+            "type": "float",
+            "len": 4,
+            "basis": "load computes sqrt(map/world area ratio); revealAtHero derives the reveal radius from it"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMapAnnotation",
+        "size": 212,
+        "base": null,
+        "basis": "array at SNotesMap+0x5f4, stride 0xd4 (\\annotation parse, showAnnotation, draw)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf target, whitespace-trimmed; showAnnotation stricmp's it"
+          },
+          {
+            "offset": "0x64",
+            "name": "text",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "sscanf target, trimmed; draw prints it with the font"
+          },
+          {
+            "offset": "0xc8",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; draw x offset"
+          },
+          {
+            "offset": "0xcc",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "sscanf %d; draw y offset"
+          },
+          {
+            "offset": "0xd0",
+            "name": "visible",
+            "type": "int",
+            "len": 4,
+            "basis": "parse zeroes; showAnnotation sets 1; draw skips when 0"
+          }
+        ]
+      },
+      {
+        "name": "SNotesMap",
+        "size": 4716,
+        "base": null,
+        "basis": "static array of 4, stride 0x126c; RTTI size",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "entry",
+            "type": "SNotesEntry *",
+            "len": 4,
+            "basis": "\\map stores the new entry; map code reads entry->kind"
+          },
+          {
+            "offset": "0x4",
+            "name": "image_name",
+            "type": "char[100]",
+            "len": 100,
+            "basis": "\\image splitPath target; load passes it to CAlphaBitmap_load; ctor zeroes byte 0"
+          },
+          {
+            "offset": "0x68",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "\\image sscanf %d; load size; SPageResourceMap width"
+          },
+          {
+            "offset": "0x6c",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "\\image sscanf %d; load size; SPageResourceMap height"
+          },
+          {
+            "offset": "0x70",
+            "name": "image",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor/load/display/free on +0x70"
+          },
+          {
+            "offset": "0x84",
+            "name": "saved_alpha",
+            "type": "void *",
+            "len": 4,
+            "basis": "load reallocs width*height and copies the image's alpha; applyReveal multiplies by it; reset frees"
+          },
+          {
+            "offset": "0x88",
+            "name": "reveal_mask",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "CAlphaBitmap ctor; load creates it at width/2 x height/2; revealPixel writes its alpha bytes"
+          },
+          {
+            "offset": "0x9c",
+            "name": "set_count",
+            "type": "int",
+            "len": 4,
+            "basis": "\\set increments (limit 10); loops in load/worldToMap"
+          },
+          {
+            "offset": "0xa0",
+            "name": "sets",
+            "type": "SNotesMapSet[10]",
+            "len": 1360,
+            "basis": "\\set sscanf targets at +0xa0 + i*0x88"
+          },
+          {
+            "offset": "0x5f0",
+            "name": "annotation_count",
+            "type": "int",
+            "len": 4,
+            "basis": "\\annotation increments (limit 15); ctor zeroes"
+          },
+          {
+            "offset": "0x5f4",
+            "name": "annotations",
+            "type": "SNotesMapAnnotation[15]",
+            "len": 3180,
+            "basis": "\\annotation sscanf targets at +0x5f4 + i*0xd4"
+          },
+          {
+            "offset": "0x1260",
+            "name": "last_reveal_x",
+            "type": "int",
+            "len": 4,
+            "basis": "reset -1; revealCircle skips when unchanged, then stores"
+          },
+          {
+            "offset": "0x1264",
+            "name": "last_reveal_y",
+            "type": "int",
+            "len": 4,
+            "basis": "reset -1; revealCircle"
+          },
+          {
+            "offset": "0x1268",
+            "name": "reveal_dirty",
+            "type": "int",
+            "len": 4,
+            "basis": "reset 1; revealPixel sets 1; draw calls applyReveal when set; applyReveal clears"
+          }
+        ]
+      },
+      {
+        "name": "SPageResourceMap",
+        "size": 28,
+        "base": "SPageResource",
+        "basis": "new(0x1c) in SNotesMap_paginate",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "SPageResource",
+            "len": 24,
+            "basis": "derived"
+          },
+          {
+            "offset": "0x18",
+            "name": "map",
+            "type": "SNotesMap *",
+            "len": 4,
+            "basis": "ctor stores arg and copies its width/height (+0x68/+0x6c); draw calls SNotesMap_draw(map, x, y)"
+          }
+        ]
+      },
+      {
+        "name": "CAsciiArmor",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "RTTI size 12; ctor 004414f0 calls CCodec ctor 00440800 first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00440800 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "bit_buffer",
+            "type": "SBitBuffer",
+            "len": 8,
+            "basis": "reset slot 00441510 calls resetBitBuffer(this+4); encode slot 00441530 drains it 6 bits at a time via writeBitsToStream(this+4) into the armor alphabet; flush slot 00441580 reads the remaining bits from this+4"
+          }
+        ]
+      },
+      {
+        "name": "CAsciiUnarmor",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "size 12 (given; same as CAsciiArmor); ctor 004415f0 calls CCodec ctor 00440800 first",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00440800 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "bit_buffer",
+            "type": "SBitBuffer",
+            "len": 8,
+            "basis": "shares the reset slot 00441510 (resetBitBuffer(this+4)) with CAsciiArmor; decode slot 00441610 pushes each decoded 6-bit value into this+4 (bit-writer call with (this+4, 6, value, out))"
+          }
+        ]
+      },
+      {
+        "name": "CCheesyCipher",
+        "size": 12,
+        "base": "CCodec",
+        "basis": "RTTI size 12; ctor 00441660(this, mode, key) calls CCodec ctor first, stores the cipher vtable, then setMode/setKey",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CCodec",
+            "len": 4,
+            "basis": "ctor calls CCodec ctor 00440800 then stores its own vtable at +0"
+          },
+          {
+            "offset": "0x4",
+            "name": "mode",
+            "type": "int",
+            "len": 4,
+            "basis": "setMode 004416a0 stores the ctor's mode arg; transformByte branches on 0 (table lookup + key) / 1 (inverse table - key) / else 'Invalid mode.'"
+          },
+          {
+            "offset": "0x8",
+            "name": "key_state",
+            "type": "uint",
+            "len": 4,
+            "basis": "setKey 004416b0 stores key & 0xffffff then steps it twice; advanceKey 004417d0 does key = key*0x2ff0bd+1 & 0xffffff; transformByte adds/subtracts its low byte"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamFile",
+        "size": 44,
+        "base": null,
+        "basis": "RTTI size 44; ctor 005738c0 calls the in-stream base ctor then zeroes +4..+0x24; same code as bw1 (normalized pseudocode compared)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "file_handle",
+            "type": "HANDLE",
+            "len": 4,
+            "basis": "open 00573f50 stores CreateFileA(path, GENERIC_READ); close 00573db0 CloseHandle()s and zeroes it; every read slot returns -2 when it is 0"
+          },
+          {
+            "offset": "0x8",
+            "name": "file_size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores GetFileSize(); openInDirectory 00573fc0 stores the found entry's size; read/seek/isEof bound position against it"
+          },
+          {
+            "offset": "0xc",
+            "name": "file_offset",
+            "type": "int",
+            "len": 4,
+            "basis": "openInDirectory 00573fc0 stores the entry's start offset; fillBuffer adds it to the page position before SetFilePointer"
+          },
+          {
+            "offset": "0x10",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar 00573aa0 reads the byte at it and increments; seek 00573cf0 sets it (SEEK_SET/CUR/END against file_size); tell returns it"
+          },
+          {
+            "offset": "0x14",
+            "name": "buffer_alloc",
+            "type": "void *",
+            "len": 4,
+            "basis": "allocBuffer mallocs buffer_capacity+0x1f bytes into it; freeBuffer frees it"
+          },
+          {
+            "offset": "0x18",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "allocBuffer stores buffer_alloc rounded up to 32 bytes; byte reads index it with position - buffer_start; ReadFile target"
+          },
+          {
+            "offset": "0x1c",
+            "name": "buffer_start",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the 4 KiB page start; a read refills when position is outside [buffer_start, buffer_start+buffer_length)"
+          },
+          {
+            "offset": "0x20",
+            "name": "buffer_capacity",
+            "type": "int",
+            "len": 4,
+            "basis": "allocBuffer sets 0x1000; fillBuffer clamps the read length to it"
+          },
+          {
+            "offset": "0x24",
+            "name": "buffer_length",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the ReadFile byte count (0 on failure)"
+          },
+          {
+            "offset": "0x28",
+            "name": "binary_mode",
+            "type": "int",
+            "len": 4,
+            "basis": "open/openInDirectory store their last arg; getChar/ungetChar/peekChar fold CR LF into LF only when it is 0"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamMemory",
+        "size": 20,
+        "base": null,
+        "basis": "RTTI size 20; ctor 00574120 calls the in-stream base ctor then zeroes +4..+0x10",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "data",
+            "type": "char *",
+            "len": 4,
+            "basis": "open 00574440 / openOwned 00574470 store the buffer arg; getChar 00574230 reads data[position]; close 005743f0 frees it when owns_data"
+          },
+          {
+            "offset": "0x8",
+            "name": "size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores the length arg; reads, seek and isEof bound position against it"
+          },
+          {
+            "offset": "0xc",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar increments it; seek 00574350 sets it; tell returns it"
+          },
+          {
+            "offset": "0x10",
+            "name": "owns_data",
+            "type": "int",
+            "len": 4,
+            "basis": "open sets 0, openOwned sets 1; close frees data only when non-zero"
+          }
+        ]
+      },
+      {
+        "name": "CInStreamPipe",
+        "size": 36,
+        "base": null,
+        "basis": "RTTI size 36; ctor 004417f0 calls the in-stream base ctor then zeroes +4..+0x20",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract base ctor (00572530) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "codec",
+            "type": "CCodec *",
+            "len": 4,
+            "basis": "open 00441bf0 stores arg 1 and calls its reset slot; fillBuffer 00441c80 calls its process(source, out) and flush(out) slots; close 00441b60 deletes it when owns_streams"
+          },
+          {
+            "offset": "0x8",
+            "name": "source",
+            "type": "void *",
+            "len": 4,
+            "basis": "open stores arg 2 (an in-stream; no stream base type in the DB); passed to codec process; isOpen forwards to its isOpen slot; deleted by close when owns_streams"
+          },
+          {
+            "offset": "0xc",
+            "name": "owns_streams",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores arg 3; close calls the codec and source dtors with flag 2 only when set"
+          },
+          {
+            "offset": "0x10",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "open mallocs buffer_size bytes ('CInStreamPipe::open - out of memory'); getChar 00441920 reads buffer[position]; close frees it"
+          },
+          {
+            "offset": "0x14",
+            "name": "buffer_size",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores arg 4 and allocates that many bytes; fillBuffer gives it to the COutStreamMemory the codec writes into"
+          },
+          {
+            "offset": "0x18",
+            "name": "buffer_length",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer stores the decoded byte count; getChar refills when position >= buffer_length"
+          },
+          {
+            "offset": "0x1c",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "getChar/read advance it, ungetChar decrements it, fillBuffer resets it to 0"
+          },
+          {
+            "offset": "0x20",
+            "name": "codec_finished",
+            "type": "int",
+            "len": 4,
+            "basis": "fillBuffer sets 1 once the codec flush returns 1 and then returns EOF; isEof 00441b30 returns it once the buffer is drained"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamDebug",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI size 4; ctor 00574e00 calls the out-stream base ctor and stores its vtable; seek/tell (00574f70) only report 'invalid operation'",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (005744a0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamFile",
+        "size": 8,
+        "base": null,
+        "basis": "RTTI size 8; ctor 005747c0 calls the out-stream base ctor then zeroes +4",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (005744a0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "file",
+            "type": "_FILE *",
+            "len": 4,
+            "basis": "open 005749d0 stores fopen(path, mode); putChar 005748b0 fputc()s to it, write fwrite()s, seek/tell fseek/ftell; close 005749a0 fclose()s and zeroes it; attach stores a caller FILE"
+          }
+        ]
+      },
+      {
+        "name": "COutStreamMemory",
+        "size": 24,
+        "base": null,
+        "basis": "RTTI size 24; ctor 00574a80 calls the out-stream base ctor, zeroes +4..+0x10 and sets +0x14 = 1",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "stream vtable pointer; the abstract output-stream base ctor (005744a0) stores the base vtable at +0 and the derived ctor overwrites it; the base has no fields and no type in the DB"
+          },
+          {
+            "offset": "0x4",
+            "name": "buffer",
+            "type": "char *",
+            "len": 4,
+            "basis": "open 00574d50 stores the buffer arg; putChar 00574bb0 writes buffer[position] and realloc()s it by 0x4000 when growable; close 00574d10 frees it when growable"
+          },
+          {
+            "offset": "0x8",
+            "name": "capacity",
+            "type": "int",
+            "len": 4,
+            "basis": "open stores the size arg; putChar/write grow it with realloc"
+          },
+          {
+            "offset": "0xc",
+            "name": "position",
+            "type": "int",
+            "len": 4,
+            "basis": "putChar/write advance it; seek sets it; tell returns it (codec callers subtract it from the remaining length)"
+          },
+          {
+            "offset": "0x10",
+            "name": "length",
+            "type": "int",
+            "len": 4,
+            "basis": "high-water mark: putChar/write raise it to position"
+          },
+          {
+            "offset": "0x14",
+            "name": "growable",
+            "type": "int",
+            "len": 4,
+            "basis": "ctor sets 1, open (caller buffer) sets 0; write 00574c20 grows the buffer only when set; close frees only when set"
+          }
+        ]
+      },
+      {
+        "name": "CLeaf",
+        "size": 84,
+        "base": "CParticle",
+        "basis": "RTTI size 84; ctor 004a4790 calls CParticle_ctor then stores the leaf vtable at +0x3c; derived fields start at 0x40; static pool of 64 (arrinit 0x40)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CParticle",
+            "len": 64,
+            "basis": "CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)"
+          },
+          {
+            "offset": "0x40",
+            "name": "drag",
+            "type": "float",
+            "len": 4,
+            "basis": "init 0049a140 stores arg 5; process 0049a1c0 shrinks the velocity by speed*drag*dt each frame"
+          },
+          {
+            "offset": "0x44",
+            "name": "rotation",
+            "type": "CVector3i",
+            "len": 12,
+            "basis": "process adds speed-scaled 16.16 steps to +0x44/+0x48; render 0049a2c0 passes this+0x44 as the CVector3i rotation to applyDirectTransform"
+          },
+          {
+            "offset": "0x50",
+            "name": "model",
+            "type": "CKeyFramedModel *",
+            "len": 4,
+            "basis": "init stores arg 4 (createLeaf 004a2930 picks one of the four leaf%d.kfm models when null); render reads its bounds and calls CKeyFramedModel_prepareForRender on it"
+          }
+        ]
+      },
+      {
+        "name": "CFirefly",
+        "size": 92,
+        "base": "CParticle",
+        "basis": "RTTI size 92; ctor 004a4820 calls CParticle_ctor then stores the firefly vtable at +0x3c; static pool of 64",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "base",
+            "type": "CParticle",
+            "len": 64,
+            "basis": "CParticle ctor runs first; derived vtable stored at +0x3c (CParticle's vptr slot)"
+          },
+          {
+            "offset": "0x40",
+            "name": "intensity",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly 004a29d0 stores arg5 * random(0xc000..0xffff) >> 16; process 004988b0 subtracts fade and kills the particle below 0; render 00498b40 uses it as the 16.16 vertex alpha"
+          },
+          {
+            "offset": "0x44",
+            "name": "fade_rate",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 4; process multiplies it by the scaled dt"
+          },
+          {
+            "offset": "0x48",
+            "name": "jitter",
+            "type": "float",
+            "len": 4,
+            "basis": "createFirefly stores arg 8; process adds random(0, jitter*k) - jitter to each velocity axis"
+          },
+          {
+            "offset": "0x4c",
+            "name": "first_update_flag",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly zeroes it; process skips the fade on the first frame and sets it to 1"
+          },
+          {
+            "offset": "0x50",
+            "name": "size",
+            "type": "float",
+            "len": 4,
+            "basis": "createFirefly stores arg 9; render builds the quad corners at +-size"
+          },
+          {
+            "offset": "0x54",
+            "name": "texture_index",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 6; render switches 0..3 to pick the texture"
+          },
+          {
+            "offset": "0x58",
+            "name": "time_scale",
+            "type": "int",
+            "len": 4,
+            "basis": "createFirefly stores arg 7; process multiplies the 16.16 frame dt by it and slams CGame dt to the result while moving"
+          }
+        ]
+      },
+      {
+        "name": "CRing",
+        "size": 484,
+        "base": null,
+        "basis": "RTTI size 484; ctor 004a4600 only arrinits two 16-entry CVector arrays at +0x30 and +0xf0 (no base, no vtable); static pool of 10 at 0x1d0bb94 (stride 0x1e4 in createRing 004a3f70 / CFireEffect loops)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "ring_type",
+            "type": "int",
+            "len": 4,
+            "basis": "activate 0049fce0 stores arg 3; process 0049fdf0 branches on 0 (damage + sparks) / 1 (pushes non-hero characters)"
+          },
+          {
+            "offset": "0x4",
+            "name": "center",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "activate copies the position arg and lifts .y to ground+1"
+          },
+          {
+            "offset": "0x14",
+            "name": "lifetime",
+            "type": "float",
+            "len": 4,
+            "basis": "activate sets 2.0; process subtracts dt and stops at 0; the pool reset zeroes it through the folded CLightningBolt_reset 0049f410 (+0x14 = 0)"
+          },
+          {
+            "offset": "0x2c",
+            "name": "owner",
+            "type": "CCharacter *",
+            "len": 4,
+            "basis": "activate stores arg 4; process skips the actor equal to it"
+          },
+          {
+            "offset": "0x30",
+            "name": "points",
+            "type": "CVector3f[16]",
+            "len": 192,
+            "basis": "ctor arrinit CVector x16 at +0x30; activate sets each to center; process moves each by its direction*speed*dt and spawns trail segments between neighbours"
+          },
+          {
+            "offset": "0xf0",
+            "name": "directions",
+            "type": "CVector3f[16]",
+            "len": 192,
+            "basis": "ctor arrinit CVector x16 at +0xf0; activate stores (cos i*k, 0, sin i*k)"
+          },
+          {
+            "offset": "0x1b0",
+            "name": "segment_timer",
+            "type": "float",
+            "len": 4,
+            "basis": "activate sets 0.05; process counts it down and re-arms it after spawning trail segments"
+          },
+          {
+            "offset": "0x1b4",
+            "name": "radius",
+            "type": "float",
+            "len": 4,
+            "basis": "activate zeroes it; process grows it by speed*dt and hits characters whose distance is within radius+1"
+          },
+          {
+            "offset": "0x1b8",
+            "name": "hit_actors",
+            "type": "CCharacter *[10]",
+            "len": 40,
+            "basis": "process records each character it hit (up to 10) and skips ones already listed"
+          },
+          {
+            "offset": "0x1e0",
+            "name": "hit_count",
+            "type": "int",
+            "len": 4,
+            "basis": "activate zeroes it; process bounds the hit list by it and increments"
+          }
+        ]
+      },
+      {
+        "name": "CFieldNotes",
+        "size": 68,
+        "base": null,
+        "basis": "RTTI size 68; ctor 004aa7d0 zeroes byte +0; single global g_CFieldNotesInstance via g_CFieldNotesPtr; same code as bw1 (normalized pseudocode compared)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "file_name",
+            "type": "char[64]",
+            "len": 64,
+            "basis": "loadFile 004aa810 strcpy()s the notes file name into this and passes it to getFileSize/open('world', this); clear 004ab7a0 and the ctor set byte 0 = 0; CScript tests *(char *)g_CFieldNotesPtr == 0; next field bounds it at 64"
+          },
+          {
+            "offset": "0x40",
+            "name": "is_displayed",
+            "type": "int",
+            "len": 4,
+            "basis": "the field-notes hotkey (CGame_processHotkeys 004ba540) toggles it; clear and dtor 004aa7e0 zero it; game/inventory input code suppresses controls while it is set"
+          }
+        ]
+      },
+      {
+        "name": "SDynamicLight",
+        "size": 76,
+        "base": null,
+        "basis": "RTTI size 76; empty ctor; static array of 50 (arrinit 0x32 in the minecar.cpp staticInit); filled by the mini3d add-light function 004ef920 at base + n*0x4c",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "position",
+            "type": "CVector3f",
+            "len": 12,
+            "basis": "004ef920 copies the position arg"
+          },
+          {
+            "offset": "0xc",
+            "name": "orientation",
+            "type": "CMatrix3x3f",
+            "len": 36,
+            "basis": "004ef920 calls CMatrix3x3f_buildRotationMatrix(+0xc, euler arg) and scales the first two columns by cone_scale; the third column goes to the renderer as the light direction"
+          },
+          {
+            "offset": "0x34",
+            "name": "range",
+            "type": "float",
+            "len": 4,
+            "basis": "004ef920 stores arg 3; the cull pass divides by it"
+          },
+          {
+            "offset": "0x38",
+            "name": "inverse_range",
+            "type": "float",
+            "len": 4,
+            "basis": "004ef920 stores 1/range"
+          },
+          {
+            "offset": "0x3c",
+            "name": "cone_scale",
+            "type": "float",
+            "len": 4,
+            "basis": "004ef920 stores arg 4; the renderer gets atan(1/cone_scale) as the cone angle; the cull pass divides projected x/y by it"
+          }
+        ]
+      },
+      {
+        "name": "SIpAddr",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI 'IpAddr' size 4; copy ctor 005084a0 copies the single dword",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "ip_address",
+            "type": "uint",
+            "len": 4,
+            "basis": "copy ctor copies it whole; trisock IP helpers (copyIPAddress, extractIPOctets) treat the same dword as the four address octets"
+          }
+        ]
+      },
+      {
+        "name": "SSocket",
+        "size": 4,
+        "base": null,
+        "basis": "RTTI 'Socket' size 4; its copy ctor 0056f8a0 ('Should never be called!') sits beside the CSocket methods (ctor 0056f8d0); same layout as nocedit's CSocket",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "handle",
+            "type": "_SOCKET",
+            "len": 4,
+            "basis": "ctor 0056f8d0 stores -1; createSocket stores socket(); closeSocket closesocket()s and resets -1; isSocketValid tests != -1"
+          }
+        ]
+      },
+      {
+        "name": "CMini3D",
+        "size": 1,
+        "base": null,
+        "basis": "RTTI size 1: empty class; ctor 004ec730 writes only absolute statics, the dtor does nothing, and the one object is the global g_CMini3DInstance constructed in the minecar.cpp staticInit (no new site)",
+        "fields": []
+      },
+      {
+        "name": "SButtonStruct",
+        "size": 44,
+        "base": null,
+        "basis": "size 44; RTTI 'buttonStruct' (nested in the puzzle classes); ctor 00414480 only constructs a CAlphaBitmap at +0 (no vtable, so +0 is modelled as a member); puzzles arrinit arrays of it with stride 0x2c",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "bitmap",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "addButton (00413cd0) calls CAlphaBitmap_load on element+0; render (00413d50) displays it; ctor/dtor construct/destroy it"
+          },
+          {
+            "offset": "0x14",
+            "name": "enabled",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 6; the puzzle process tests buttons[selected].enabled == 1 (chem) or 1/2/3 as the button kind (audioRec: power / transport+knobs / speed selector)"
+          },
+          {
+            "offset": "0x18",
+            "name": "x",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 7; render draws at it; hitTestButtons (004143a0) tests x..x+width"
+          },
+          {
+            "offset": "0x1c",
+            "name": "y",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 8; render y; hit test y..y+height"
+          },
+          {
+            "offset": "0x20",
+            "name": "width",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores the bitmap width arg (arg 4)"
+          },
+          {
+            "offset": "0x24",
+            "name": "height",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores the bitmap height arg (arg 5)"
+          },
+          {
+            "offset": "0x28",
+            "name": "visible",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton stores arg 9; render and hit testing only consider buttons with visible == 1; process rewrites it to show the current knob/switch frames"
+          }
+        ]
+      },
+      {
+        "name": "CChemPuzzle",
+        "size": 2372,
+        "base": null,
+        "basis": "RTTI size 2372; ctor 00413200: puzzle base ctor 00411960, CAlphaBitmap ctor at +4, arrinit 50 buttonStructs at +0x70, then the CChemPuzzle vtable at +0; every method uses the same offsets as bw1 (process logic differs)",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "puzzle vtable pointer: the shared puzzle base ctor (00411960) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+          },
+          {
+            "offset": "0x4",
+            "name": "background",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "load 004133c0 loads 'chembackground' 640x480 into this+4; render 00413d50 displays it first"
+          },
+          {
+            "offset": "0x18",
+            "name": "dropper_level",
+            "type": "int",
+            "len": 4,
+            "basis": "render displays dropper bitmap [dropper_level] at the cursor; process copies selection_count into it"
+          },
+          {
+            "offset": "0x1c",
+            "name": "selection_count",
+            "type": "int",
+            "len": 4,
+            "basis": "process 00413e30 appends to selected_chemicals while it is < 3 and clears it after mixing"
+          },
+          {
+            "offset": "0x20",
+            "name": "button_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton 00413cd0 increments it; render/hit-test loop over button_count+1 entries"
+          },
+          {
+            "offset": "0x24",
+            "name": "selected_button",
+            "type": "int",
+            "len": 4,
+            "basis": "hitTestButtons 004143a0 stores the hit index; process compares it with 0x25..0x2c (chemicals, exit 0x2b, reset 0x2c)"
+          },
+          {
+            "offset": "0x28",
+            "name": "mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse 00414420 stores the new button state"
+          },
+          {
+            "offset": "0x2c",
+            "name": "previous_mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse moves the old mouse_button here; process clears the selection on release"
+          },
+          {
+            "offset": "0x30",
+            "name": "click_handled",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse zeroes it; process sets 1 after handling one click"
+          },
+          {
+            "offset": "0x34",
+            "name": "hovering",
+            "type": "int",
+            "len": 4,
+            "basis": "process sets 1 when any visible button is under the cursor (isButtonHovered 00414330); render then draws the highlight dropper"
+          },
+          {
+            "offset": "0x38",
+            "name": "selected_chemicals",
+            "type": "int[3]",
+            "len": 12,
+            "basis": "reset 004132c0/load set -1; process appends the chosen chemical index (button - 0x25)"
+          },
+          {
+            "offset": "0x44",
+            "name": "coin_design",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset/load store random(0,2) per coin; process shows button coin_design[i]*3 + base + coin_reaction[i]"
+          },
+          {
+            "offset": "0x54",
+            "name": "score",
+            "type": "int",
+            "len": 4,
+            "basis": "process adds/subtracts per applied chemical; solved when 3 chemicals were used and score == 3"
+          },
+          {
+            "offset": "0x58",
+            "name": "chemical_applied",
+            "type": "int[6]",
+            "len": 24,
+            "basis": "process sets entry n to 1 the first time chemical n is mixed and adjusts score once"
+          },
+          {
+            "offset": "0x70",
+            "name": "buttons",
+            "type": "SButtonStruct[50]",
+            "len": 2200,
+            "basis": "ctor arrinit 0x32 buttonStructs at +0x70; addButton writes this+0x70+i*0x2c"
+          },
+          {
+            "offset": "0x908",
+            "name": "cursor_offset_x",
+            "type": "int[5]",
+            "len": 20,
+            "basis": "load sets 0x1e; render subtracts [dropper_level] (and [4] for the highlight) from the cursor x"
+          },
+          {
+            "offset": "0x91c",
+            "name": "cursor_offset_y",
+            "type": "int[5]",
+            "len": 20,
+            "basis": "load sets 0x1d; render subtracts it from the cursor y"
+          },
+          {
+            "offset": "0x930",
+            "name": "result",
+            "type": "int",
+            "len": 4,
+            "basis": "reset/load set -1; process sets 2 (failed mix) or 1 (solved, fires 'SolvedChemistryPuzzle'); exit with 2 fires 'FailedChemistryPuzzle'"
+          },
+          {
+            "offset": "0x934",
+            "name": "coin_reaction",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "load zeroes it; process sets 1/2 per coin from the mixed chemicals; selects the plain/cor/wet coin frame"
+          }
+        ]
+      },
+      {
+        "name": "CAudioRecPuzzle",
+        "size": 3116,
+        "base": null,
+        "basis": "RTTI size 3116; ctor 00411b50: puzzle base ctor 00411960, CAlphaBitmap at +4, arrinit 50 buttonStructs at 0x54, two CKeyFramedModelInstance at 0x8ec/0xa68, vtable at +0; bw3 drops bw1's dial_sfx/0x54/switch_sfx block, so everything from reel_angle on sits 12 bytes lower",
+        "fields": [
+          {
+            "offset": "0x0",
+            "name": "vtable",
+            "type": "void *",
+            "len": 4,
+            "basis": "puzzle vtable pointer: the shared puzzle base ctor (00411960) stores the base vtable at +0 and registers the object in the global puzzle list; the base has no fields, no RTTI and no type in the DB, so it is modelled as this field"
+          },
+          {
+            "offset": "0x4",
+            "name": "background",
+            "type": "CAlphaBitmap",
+            "len": 20,
+            "basis": "load 00411d70 loads 'radioback' 640x480 into this+4; render 004123c0 displays it first"
+          },
+          {
+            "offset": "0x18",
+            "name": "cursor_index",
+            "type": "int",
+            "len": 4,
+            "basis": "render displays pointer bitmap [cursor_index] at the cursor; hover/knob code sets 0..3"
+          },
+          {
+            "offset": "0x1c",
+            "name": "button_count",
+            "type": "int",
+            "len": 4,
+            "basis": "addButton 00412320 increments it; load resets 0"
+          },
+          {
+            "offset": "0x20",
+            "name": "selected_button",
+            "type": "int",
+            "len": 4,
+            "basis": "hitTestButtons 00412bc0 stores the hit index; process and the switch/knob slots compare it"
+          },
+          {
+            "offset": "0x24",
+            "name": "mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse 00412c30 stores the new button state"
+          },
+          {
+            "offset": "0x28",
+            "name": "previous_mouse_button",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse moves the old mouse_button here"
+          },
+          {
+            "offset": "0x2c",
+            "name": "click_handled",
+            "type": "int",
+            "len": 4,
+            "basis": "onMouse zeroes it; process sets 1 after handling one click"
+          },
+          {
+            "offset": "0x30",
+            "name": "playback_started",
+            "type": "int",
+            "len": 4,
+            "basis": "process sets 1 after calling playClip (00412ee0) and 0 when the clip sound ends"
+          },
+          {
+            "offset": "0x34",
+            "name": "transport_state",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1; moveTransportSwitch 00412a60 steps it 0..2; render spins the reel forward at 0 and back at 2; getter slot returns +0x34"
+          },
+          {
+            "offset": "0x38",
+            "name": "knob_positions",
+            "type": "int[3]",
+            "len": 12,
+            "basis": "reset 00411c30 sets 2; turnKnob 00412b00 steps entry i in 0..4; getter slots return +0x38/+0x3c/+0x40"
+          },
+          {
+            "offset": "0x44",
+            "name": "speed_setting",
+            "type": "int",
+            "len": 4,
+            "basis": "reset sets 3; process sets it from the 5 speed buttons; render scales the reel speed by speed_setting+1"
+          },
+          {
+            "offset": "0x48",
+            "name": "previous_speed_setting",
+            "type": "int",
+            "len": 4,
+            "basis": "process copies speed_setting here before changing it and compares the two"
+          },
+          {
+            "offset": "0x4c",
+            "name": "power_on",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1; the power button toggles it; process exits the puzzle when 0"
+          },
+          {
+            "offset": "0x50",
+            "name": "reel_angle",
+            "type": "float",
+            "len": 4,
+            "basis": "reset zeroes it; render advances it by dt and normalizeAngleToPi and passes it to renderReel 00412c50"
+          },
+          {
+            "offset": "0x54",
+            "name": "buttons",
+            "type": "SButtonStruct[50]",
+            "len": 2200,
+            "basis": "ctor 00411b50 arrinit 50 buttonStructs at +0x54; addButton writes this+0x54+i*0x2c"
+          },
+          {
+            "offset": "0x8ec",
+            "name": "reel_model",
+            "type": "CKeyFramedModelInstance",
+            "len": 380,
+            "basis": "ctor constructs it; reset sets 'audioreel.kfm'; load preCaches it; renderReel draws it"
+          },
+          {
+            "offset": "0xa68",
+            "name": "reel_shadow_model",
+            "type": "CKeyFramedModelInstance",
+            "len": 380,
+            "basis": "ctor constructs it; reset sets 'audioreelshadow.kfm'; renderReel draws it when the shadow arg is 0"
+          },
+          {
+            "offset": "0xbe4",
+            "name": "cursor_offset_x",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset stores 3,0x14,2,0x12; render subtracts [cursor_index] from the cursor x"
+          },
+          {
+            "offset": "0xbf4",
+            "name": "cursor_offset_y",
+            "type": "int[4]",
+            "len": 16,
+            "basis": "reset stores 2,6,6,6; render subtracts [cursor_index] from the cursor y"
+          },
+          {
+            "offset": "0xc04",
+            "name": "recording_id",
+            "type": "int",
+            "len": 4,
+            "basis": "load sets 1 or 2 by the AudioPuzzleTelOsMah/AudioPuzzleMary flags; playClip formats 'AR%d_' with it"
+          },
+          {
+            "offset": "0xc08",
+            "name": "clip_sfx",
+            "type": "uint[3]",
+            "len": 12,
+            "basis": "playClip stores three CSound_playSound handles; process polls the first and kills all three when stopped"
+          },
+          {
+            "offset": "0xc14",
+            "name": "solution",
+            "type": "int[5]",
+            "len": 20,
+            "basis": "reset sets 2s; load stores the flag-specific answer; process compares knob 0..2, speed and transport against it"
+          },
+          {
+            "offset": "0xc28",
+            "name": "solved",
+            "type": "int",
+            "len": 4,
+            "basis": "load zeroes it; process sets 1 and fires 'AudioPuzzleSuccess'; next process exits the puzzle"
+          }
+        ]
+      }
+    ]
+  }
+}

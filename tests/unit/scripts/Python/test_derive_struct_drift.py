@@ -125,6 +125,131 @@ def test_one_class_is_detailed_segment_by_segment(mapping, tmp_path, capsys):
     assert "CNone: no drift observed (0 comparable methods)" in capsys.readouterr().out
 
 
+def test_ebp_is_a_field_base_where_the_caller_says_so():
+    assert dsd._displacements("eax, dword ptr [ebp + 0x10]", ("esp",)) == [0x10]
+    assert dsd._displacements("eax, dword ptr [esp + 0x10]", ("esp",)) == []
+
+
+# Typed mode, one instruction each: a moved field; one off ebp; one past CFoo's 0x20 bytes; one whose
+# recorded offset is not its displacement; an unmoved field; a virtual call; a changed base register;
+# then an allocation (push 0xc, an unlike load in between, the call) and an array stride (imul 0xc).
+TYPED_SOURCE = (b"\x8b\x41\x08" b"\x8b\x45\x10" b"\x8b\x41\x40" b"\x8b\x41\x04" b"\x8b\x41\x18" b"\xff\x51\x08"
+                b"\x8b\x41\x1c" b"\x6a\x0c" b"\x8b\x41\x04" b"\xe8\x00\x00\x00\x00" b"\x6b\xc0\x0c" b"\xc3")
+TYPED_TARGET = (b"\x8b\x41\x0c" b"\x8b\x45\x14" b"\x8b\x41\x48" b"\x8b\x41\x04" b"\x8b\x41\x18" b"\xff\x51\x0c"
+                b"\x8b\x42\x1c" b"\x6a\x10" b"\x8b\x42\x04" b"\xe8\x00\x00\x00\x00" b"\x6b\xc0\x10" b"\xc3")
+SHORT_SOURCE, SHORT_TARGET = b"\x8b\x41\x08\xc3", b"\x90\x8b\x41\x0c\xc3"
+
+
+def hexes(*offsets):
+    return [f"{at(0x100 + o):08x}" for o in offsets]
+
+
+@pytest.fixture(name = "typed")
+def fixture_typed(monkeypatch, tmp_path):
+    install_programs(monkeypatch, tmp_path, {
+        "a.exe": program({0x100: ("core_a.cpp_load_FUN_00401100", TYPED_SOURCE),
+                          0x140: ("core_a.cpp_short_FUN_00401140", SHORT_SOURCE)}),
+        "b.exe": program({0x180: ("FUN_00401180", TYPED_TARGET), 0x1c0: ("FUN_004011c0", SHORT_TARGET)})})
+    pairs = [{"a": f"{at(a):08x}", "b": f"{at(b):08x}", "name": n} for a, b, n in (
+        (0x100, 0x180, "core_a.cpp_load_FUN_00401100"), (0x140, 0x1c0, "core_a.cpp_short_FUN_00401140"),
+        (0x100, 0x1f0, "core_a.cpp_gone_FUN_00401100"))]
+    accesses = dict(zip(hexes(0, 3, 6, 9, 12, 15, 18, 0x40), (
+        [["CFoo", 8]], [["CFoo", 0x10]], [["CFoo", 0x40]], [["CFoo", 8]], [["CFoo", 0x18]], [["CFoo", 8]],
+        [["CFoo", 0x1c]], [["CFoo", 8]])))
+    uses = dict(zip(hexes(0, 26, 31), ([["SBar", 99, "stride"]], [["SBar", 12, "alloc"]], [["SBar", 12, "stride"]])))
+    path = write_json(tmp_path / "typed.json", {"accesses": accesses, "sizes": {"CFoo": 0x20}, "size_uses": uses})
+    return {"mapping": {"from": "a.exe", "to": "b.exe", "pairs": pairs}, "path": path}
+
+
+def test_typed_accesses_load_by_address(typed):
+    accesses, sizes, uses = dsd.load_typed(typed["path"])
+    assert accesses[at(0x100)] == [("CFoo", 8)] and sizes == {"CFoo": 0x20}
+    assert uses[at(0x100 + 26)] == [("SBar", 12, "alloc")]
+
+
+def test_unequal_streams_pair_only_when_asked():
+    a = [(1, "mov", "eax, dword ptr [ecx + 8]"), (2, "ret", "")]
+    b = [(5, "nop", ""), (6, "mov", "eax, dword ptr [ecx + 0xc]"), (7, "ret", "")]
+    assert dsd.aligned(a, b[1:]) == list(zip(a, b[1:]))
+    assert dsd.aligned(a, b) == []
+    assert dsd.aligned(a, b, align = True) == list(zip(a, b[1:]))
+
+
+def test_a_typed_sighting_is_credited_to_its_struct_at_its_recorded_offset(typed):
+    a, b = sibling_match.Image("a.exe"), sibling_match.Image("b.exe")
+    accesses, sizes, _ = dsd.load_typed(typed["path"])
+    obs, vobs, pairs_seen, compared = dsd.observe_typed(a, b, typed["mapping"]["pairs"], accesses, sizes)
+    assert obs == {"CFoo": Counter({(8, 12): 1, (0x10, 0x14): 1})} and vobs == {}
+    assert pairs_seen == compared == Counter({"CFoo": 1})
+    obs, _, pairs_seen, _ = dsd.observe_typed(a, b, typed["mapping"]["pairs"], accesses, sizes,
+                                              include_unshifted = True, align = True)
+    assert obs["CFoo"] == Counter({(8, 12): 2, (0x10, 0x14): 1, (0x18, 0x18): 1})
+    assert pairs_seen == Counter({"CFoo": 2})
+
+
+def test_allocations_and_strides_read_the_siblings_size(typed):
+    a, b = sibling_match.Image("a.exe"), sibling_match.Image("b.exe")
+    _, _, uses = dsd.load_typed(typed["path"])
+    assert dsd.observe_sizes(a, b, typed["mapping"]["pairs"], uses) == {"SBar": Counter({16: 2})}
+    assert dsd._paired_numbers("eax, eax, 0xc", "eax, eax, 0x10", 12) == [16]
+
+
+def test_the_typed_report_carries_the_measured_sizes(typed, tmp_path, capsys):
+    out = tmp_path / "drift.json"
+    assert run(tmp_path, typed["mapping"], "--typed-accesses", typed["path"], "--align", "--out", str(out)) == 0
+    doc = json.loads(out.read_text())
+    assert doc["sizes"] == {"SBar": {"16": 2}} and doc["drift"]["CFoo"]["observations"] == 3
+    assert "wrote" in capsys.readouterr().out
+
+
+def test_the_typed_report_adds_the_element_sizes_nesting_finds(typed, tmp_path, monkeypatch):
+    monkeypatch.setattr(dsd, "nest", lambda obs, members: (obs, {"SBar": Counter({16: 1}),
+                                                                  "SHand": Counter({120: 7})}))
+    out = tmp_path / "drift.json"
+    run(tmp_path, typed["mapping"], "--typed-accesses", typed["path"], "--out", str(out))
+    assert json.loads(out.read_text())["sizes"] == {"SBar": {"16": 3}, "SHand": {"120": 7}}
+
+
+def test_by_value_members_are_read_from_the_layouts(monkeypatch, tmp_path):
+    folder = tmp_path / "ref.exe" / "data_types"
+    folder.mkdir(parents = True)
+    write_json(folder / "data_types.json", {"structs": [
+        {"name": "SHand", "len": 8, "fields": []},
+        {"name": "CChar", "len": 40, "fields": [
+            {"name": "base", "type": "CBase", "offset": 0, "len": 4},
+            {"name": "hands", "type": "SHand[2]", "offset": 8, "len": 16},
+            {"name": "held", "type": "SHand *", "offset": 24, "len": 4},
+            {"name": "stub", "type": "SStub", "offset": 28, "len": 4}]},
+        {"name": "CBase", "len": 4, "fields": []}, {"name": "SStub", "len": 1, "fields": []},
+        {"name": "CNone", "len": 4, "fields": [{"name": "x", "type": "int", "offset": 0, "len": 4}]}]})
+    monkeypatch.setattr(sibling_match, "ANNOTATIONS", str(tmp_path))
+    assert dsd.by_value_members("ref.exe") == {"CChar": [(0, "CBase", 1, 4), (8, "SHand", 2, 8)]}
+    assert dsd.by_value_members("none.exe") == {}
+
+
+def test_a_containers_sightings_pass_down_to_its_members():
+    members = {"CChar": [(0, "CBase", 1, 8), (16, "SHand", 2, 8)], "CBase": [(4, "SPoint", 1, 4)]}
+    obs = {"CChar": Counter({
+        (4, 4): 3,                 # base.point, unmoved: two rounds down to SPoint
+        (16, 24): 3, (20, 28): 3,  # hands[0] moved 8 with the class
+        (24, 36): 2,               # hands[1].+0: element 1 starts 12 after element 0 -> SHand is 12
+        (40, 52): 3})}             # past the members: stays the class's own
+    total, sizes = dsd.nest(obs, members)
+    assert total["CBase"] == Counter({(4, 4): 3}) and total["SPoint"] == Counter({(0, 0): 3})
+    assert total["SHand"] == Counter({(0, 0): 3, (4, 4): 3})
+    assert sizes == {"SHand": Counter({12: 2})}
+    # One round reaches only the first level down
+    total, _ = dsd.nest(obs, members, rounds = 1)
+    assert "CBase" in total and "SPoint" not in total
+    # A member whose container's shift there is unknown learns nothing
+    total, sizes = dsd.nest({"CChar": Counter({(20, 28): 1})}, members)
+    assert "SHand" not in total and sizes == {}
+    # Nor does an element past the first while the member's own shift is unknown, or does not divide
+    total, sizes = dsd.nest({"CChar": Counter({(16, 24): 3, (24, 36): 1, (36, 47): 1})},
+                            {"CChar": [(16, "SHand", 3, 8)]})
+    assert sizes == {"SHand": Counter({12: 1})}
+
+
 def test_runs_as_a_script(monkeypatch):
     monkeypatch.setattr(sys, "argv", ["derive_struct_drift.py", "--help"])
     with pytest.raises(SystemExit) as exit_info:

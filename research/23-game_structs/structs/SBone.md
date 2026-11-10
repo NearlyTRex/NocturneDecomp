@@ -6,9 +6,9 @@ Category `/Nocturne/Struct/Game`.
 |---|---:|---|---:|
 | nocedit | 36 | fields | — |
 | nocturne | 36 | fields | — |
-| bw1 | unsized | placeholder | — |
-| blairwitch2 | unsized | placeholder | — |
-| bw3 | unsized | placeholder | — |
+| bw1 | 36 | fields | — |
+| blairwitch2 | 36 | fields | — |
+| bw3 | 36 | fields | — |
 
 ## Fields
 
@@ -16,5 +16,5 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `bone_name` | `char[32]` | 0x0 | 0x0 |  |  |  |
-| `parent_index` | `int` | 0x20 | 0x20 |  |  |  |
+| `bone_name` | `char[32]` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `parent_index` | `int` | 0x20 | 0x20 | 0x20 | 0x20 | 0x20 |

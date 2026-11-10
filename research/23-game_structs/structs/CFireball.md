@@ -6,9 +6,9 @@ Category `/Nocturne/Class/Game`.
 |---|---:|---|---:|
 | nocedit | 156 | fields | 156 |
 | nocturne | 156 | fields | 156 |
-| bw1 | 164 | placeholder | 164 |
-| blairwitch2 | 164 | placeholder | 164 |
-| bw3 | 164 | placeholder | 164 |
+| bw1 | 164 | fields | 164 |
+| blairwitch2 | 164 | fields | 164 |
+| bw3 | 164 | fields | 164 |
 
 ## Fields
 
@@ -17,13 +17,21 @@ Offsets in hex; blank where the build's layout does not have the field.
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
 | `base` | `CParticle` | 0x0 | 0x0 |  |  |  |
-| `timer` | `int` | 0x38 | 0x38 |  |  |  |
-| `fade_rate` | `int` | 0x3c | 0x3c |  |  |  |
-| `first_update_flag` | `int` | 0x40 | 0x40 |  |  |  |
-| `lighting_active` | `int` | 0x44 | 0x44 |  |  |  |
-| `spawn_timer` | `int` | 0x48 | 0x48 |  |  |  |
-| `rotation_angle1` | `int` | 0x4c | 0x4c |  |  |  |
-| `rotation_angle2` | `int` | 0x50 | 0x50 |  |  |  |
-| `dead` | `int` | 0x54 | 0x54 |  |  |  |
-| `sfx_handle` | `uint` | 0x58 | 0x58 |  |  |  |
-| `light_globe` | `CDemonGlobe` | 0x5c | 0x5c |  |  |  |
+| `timer` | `int` | 0x38 | 0x38 | 0x40 | 0x40 | 0x40 |
+| `fade_rate` | `int` | 0x3c | 0x3c | 0x44 | 0x44 | 0x44 |
+| `first_update_flag` | `int` | 0x40 | 0x40 | 0x48 | 0x48 | 0x48 |
+| `lighting_active` | `int` | 0x44 | 0x44 | 0x4c | 0x4c | 0x4c |
+| `spawn_timer` | `int` | 0x48 | 0x48 | 0x50 | 0x50 | 0x50 |
+| `rotation_angle1` | `int` | 0x4c | 0x4c | 0x54 | 0x54 | 0x54 |
+| `rotation_angle2` | `int` | 0x50 | 0x50 | 0x58 | 0x58 | 0x58 |
+| `dead` | `int` | 0x54 | 0x54 | 0x5c | 0x5c | 0x5c |
+| `sfx_handle` | `uint` | 0x58 | 0x58 | 0x60 | 0x60 | 0x60 |
+| `light_globe` | `CDemonGlobe` | 0x5c | 0x5c | 0x64 | 0x64 | 0x64 |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **bw1**: 0x0+0x40
+- **blairwitch2**: 0x0+0x40
+- **bw3**: 0x0+0x40

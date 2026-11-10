@@ -6,9 +6,9 @@ Category `/Nocturne/Struct/Game`.
 |---|---:|---|---:|
 | nocedit | 72 | fields | — |
 | nocturne | 72 | fields | — |
-| bw1 | unsized | placeholder | — |
-| blairwitch2 | unsized | placeholder | — |
-| bw3 | unsized | placeholder | — |
+| bw1 | 72 | fields | — |
+| blairwitch2 | 72 | fields | — |
+| bw3 | 72 | fields | — |
 
 ## Fields
 
@@ -16,17 +16,17 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `part_2_3_length` | `int` | 0x0 | 0x0 |  |  |  |
-| `big_value_pair_count` | `int` | 0x4 | 0x4 |  |  |  |
-| `global_gain` | `int` | 0x8 | 0x8 |  |  |  |
-| `scalefac_compress` | `int` | 0xc | 0xc |  |  |  |
-| `window_switching_flag` | `int` | 0x10 | 0x10 |  |  |  |
-| `block_type` | `int` | 0x14 | 0x14 |  |  |  |
-| `mixed_block_flag` | `int` | 0x18 | 0x18 |  |  |  |
-| `table_select` | `int[3]` | 0x1c | 0x1c |  |  |  |
-| `subblock_gain` | `int[3]` | 0x28 | 0x28 |  |  |  |
-| `region0_count` | `int` | 0x34 | 0x34 |  |  |  |
-| `region1_count` | `int` | 0x38 | 0x38 |  |  |  |
-| `preflag` | `int` | 0x3c | 0x3c |  |  |  |
-| `scalefac_scale` | `int` | 0x40 | 0x40 |  |  |  |
-| `count_1_table_select` | `int` | 0x44 | 0x44 |  |  |  |
+| `part_2_3_length` | `int` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `big_value_pair_count` | `int` | 0x4 | 0x4 | 0x4 | 0x4 | 0x4 |
+| `global_gain` | `int` | 0x8 | 0x8 | 0x8 | 0x8 | 0x8 |
+| `scalefac_compress` | `int` | 0xc | 0xc | 0xc | 0xc | 0xc |
+| `window_switching_flag` | `int` | 0x10 | 0x10 | 0x10 | 0x10 | 0x10 |
+| `block_type` | `int` | 0x14 | 0x14 | 0x14 | 0x14 | 0x14 |
+| `mixed_block_flag` | `int` | 0x18 | 0x18 | 0x18 | 0x18 | 0x18 |
+| `table_select` | `int[3]` | 0x1c | 0x1c | 0x1c | 0x1c | 0x1c |
+| `subblock_gain` | `int[3]` | 0x28 | 0x28 | 0x28 | 0x28 | 0x28 |
+| `region0_count` | `int` | 0x34 | 0x34 | 0x34 | 0x34 | 0x34 |
+| `region1_count` | `int` | 0x38 | 0x38 | 0x38 | 0x38 | 0x38 |
+| `preflag` | `int` | 0x3c | 0x3c | 0x3c | 0x3c | 0x3c |
+| `scalefac_scale` | `int` | 0x40 | 0x40 | 0x40 | 0x40 | 0x40 |
+| `count_1_table_select` | `int` | 0x44 | 0x44 | 0x44 | 0x44 | 0x44 |

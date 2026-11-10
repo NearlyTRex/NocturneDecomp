@@ -6,9 +6,9 @@ Category `/Nocturne/Class/Game`.
 |---|---:|---|---:|
 | nocedit | 1172 | fields | 1172 |
 | nocturne | 1164 | fields | 1164 |
-| bw1 | 1216 | placeholder | 1216 |
-| blairwitch2 | 1564 | placeholder | 1564 |
-| bw3 | 1216 | placeholder | 1216 |
+| bw1 | 1216 | fields | 1216 |
+| blairwitch2 | 1564 | fields | 1564 |
+| bw3 | 1216 | fields | 1216 |
 
 ## Fields
 
@@ -16,7 +16,7 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `base` | `CDemonActor` | 0x0 | 0x0 |  |  |  |
+| `base` | `CDemonActor` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
 | `emitter_type` | `EEmitterType` | 0x158 | 0x150 |  |  |  |
 | `emitter_size` | `CVector3f` | 0x15c | 0x154 |  |  |  |
 | `emitter_state` | `int` | 0x168 | 0x160 |  |  |  |
@@ -39,3 +39,11 @@ Offsets in hex; blank where the build's layout does not have the field.
 | `globe` | `CDemonGlobe` | 0x44c | 0x444 |  |  |  |
 | `was_on_screen` | `int` | 0x48c | 0x484 |  |  |  |
 | `prev_emitter_state` | `int` | 0x490 | 0x488 |  |  |  |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **bw1**: 0x158+0x368
+- **blairwitch2**: 0x158+0x4c4
+- **bw3**: 0x158+0x368

@@ -6,9 +6,9 @@ Category `/Nocturne/Struct/Game`.
 |---|---:|---|---:|
 | nocedit | 120 | fields | 120 |
 | nocturne | 120 | fields | 120 |
-| bw1 | 124 | placeholder | 124 |
-| blairwitch2 | 128 | placeholder | 128 |
-| bw3 | 128 | placeholder | 128 |
+| bw1 | 124 | fields | 124 |
+| blairwitch2 | 128 | fields | 128 |
+| bw3 | 128 | fields | 128 |
 
 ## Fields
 
@@ -16,18 +16,26 @@ Offsets in hex; blank where the build's layout does not have the field.
 
 | field | type | nocedit | nocturne | bw1 | blairwitch2 | bw3 |
 |---|---|---:|---:|---:|---:|---:|
-| `name` | `char[20]` | 0x0 | 0x0 |  |  |  |
-| `hero_number` | `EHeroType` | 0x14 | 0x14 |  |  |  |
-| `aim_mode` | `int` | 0x18 | 0x18 |  |  |  |
+| `name` | `char[20]` | 0x0 | 0x0 | 0x0 | 0x0 | 0x0 |
+| `hero_number` | `EHeroType` | 0x14 | 0x14 |  | 0x14 | 0x14 |
+| `aim_mode` | `int` | 0x18 | 0x18 |  | 0x18 | 0x18 |
 | `addr` | `SNetworkAddr` | 0x1c | 0x1c |  |  |  |
-| `last_arrival_time` | `uint` | 0x24 | 0x24 |  |  |  |
-| `ping_quality` | `float` | 0x28 | 0x28 |  |  |  |
-| `last_ping_sent` | `uint` | 0x2c | 0x2c |  |  |  |
-| `last_ping_response` | `uint` | 0x30 | 0x30 |  |  |  |
-| `player_id` | `int` | 0x34 | 0x34 |  |  |  |
-| `last_update_time` | `uint` | 0x38 | 0x38 |  |  |  |
+| `last_arrival_time` | `uint` | 0x24 | 0x24 |  | 0x24 | 0x24 |
+| `ping_quality` | `float` | 0x28 | 0x28 |  | 0x28 | 0x28 |
+| `last_ping_sent` | `uint` | 0x2c | 0x2c |  | 0x2c | 0x2c |
+| `last_ping_response` | `uint` | 0x30 | 0x30 |  | 0x30 | 0x30 |
+| `player_id` | `int` | 0x34 | 0x34 |  | 0x34 | 0x34 |
+| `last_update_time` | `uint` | 0x38 | 0x38 |  | 0x38 | 0x38 |
 | `local_sync_stage` | `int` | 0x3c | 0x3c |  |  |  |
 | `state_change_time` | `uint` | 0x40 | 0x40 |  |  |  |
 | `ready_flag` | `int` | 0x44 | 0x44 |  |  |  |
 | `sim_frame_index` | `int` | 0x48 | 0x48 |  |  |  |
 | `player_input` | `SPlayerInput` | 0x4c | 0x4c |  |  |  |
+
+## Undefined bytes
+
+Ranges a build's layout leaves undefined: members it added, or ones not yet placed.
+
+- **bw1**: 0x14+0x68
+- **blairwitch2**: 0x1c+0x8, 0x3c+0x44
+- **bw3**: 0x1c+0x8, 0x3c+0x44

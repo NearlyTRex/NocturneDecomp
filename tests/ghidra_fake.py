@@ -244,6 +244,13 @@ class TypeDef(DefinedDataType):
     def getDefaultSettings(self):
         return Settings()
 
+    # What the typedef chain finally names
+    def getBaseDataType(self):
+        data_type = self.getDataType()
+        while isinstance(data_type, TypeDef):
+            data_type = data_type.getDataType()
+        return data_type
+
 
 # How a struct or union is laid out: packing, an explicit #pragma pack value, an
 # explicit minimum alignment, machine alignment. Its alignment follows Ghidra's
@@ -504,10 +511,15 @@ class StructureDataType(CompositeLayout, Structure):
 
     # At the offset, growing the struct to reach it; a type of fixed size keeps
     # its own length whatever length is asked for, as Ghidra's does
+    # As Ghidra's: every field at or after the offset moves down by the new one's length
     def insertAtOffset(self, offset, data_type, length, field_name, comment):
+        width = data_type.getLength() or length
+        for existing in self.components:
+            if existing.getOffset() >= offset:
+                existing.offset += width
         component = DataTypeComponent(data_type, field_name, offset, comment)
         self.components = sorted(self.components + [component], key = lambda c: c.getOffset())
-        self.length = max(self.length, offset + (data_type.getLength() or length))
+        self.length = self.length + width if offset < self.length else offset + width
 
     def growStructure(self, amount):
         self.length += amount
@@ -840,6 +852,9 @@ class Variable(JavaObject):
 
     def getName(self):
         return self.name
+
+    def setName(self, name, _source):
+        self.name = name
 
     def getDataType(self):
         return self.data_type

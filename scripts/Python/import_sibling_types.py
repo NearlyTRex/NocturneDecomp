@@ -118,6 +118,24 @@ def find_type(dtm, name):
     return matches.get(0) if not matches.isEmpty() else None
 
 
+# The first dimension is the count, as Ghidra writes them: char[16][256] is 16 char[256]
+_ARRAY = re.compile(r"^(.*?)\[(\d+)\]((?:\[\d+\])*)$")
+
+
+def spec_type(dtm, text, cache=None):
+    """A type as a hand-written spec names it (`CBitFont *`, `CInventory[3]`, `char[16][256]`)
+    -> the target's data type, arrays of any element included; None if it lacks one."""
+    cache = {} if cache is None else cache
+    m = _ARRAY.match(text.strip())
+    if m:
+        from ghidra.program.model.data import ArrayDataType
+        element = spec_type(dtm, m.group(1) + m.group(3), cache)
+        if element is None:
+            return None
+        return ArrayDataType(element, int(m.group(2)), element.getLength(), dtm)
+    return asa.resolve_type(dtm, text, cache)
+
+
 def in_target(dt, dtm):
     """`dt` rebuilt from the target's own types, or None if one is missing.
 
@@ -139,16 +157,30 @@ def in_target(dt, dtm):
     return find_type(dtm, dt.getName())
 
 
+def embeds_stub(dt):
+    """Whether `dt` holds a placeholder struct by value, directly or as array elements.
+    Such a field would take the placeholder's length, not the member's."""
+    from ghidra.program.model.data import Array, Structure
+    while isinstance(dt, Array):
+        dt = dt.getDataType()
+    return isinstance(dt, Structure) and is_stub(dt)
+
+
 def layout_in_target(sdt, dtm, placement=None):
     """The source struct `sdt` as a new struct of the target's types, or None.
 
     `placement` (plan_struct_transfer.py --out-shifts) is for a class whose
     size changed: only the fields it places come across, each at its target
     offset, and the struct is the target's size. The rest stay undefined bytes.
+    Its "added" fields, ones the target build introduced, are inserted as well.
+    A field holding a struct the target has only as a placeholder is not
+    placed: copied verbatim the struct is refused (None), placed by shift the
+    field stays undefined bytes.
     """
     from ghidra.program.model.data import StructureDataType
     out = StructureDataType(sdt.getCategoryPath(), sdt.getName(), 0, dtm)
     size = placement["size"] if placement else sdt.getLength()
+    fields = []
     for c in sdt.getComponents():
         at = c.getOffset()
         if placement is not None:
@@ -156,9 +188,19 @@ def layout_in_target(sdt, dtm, placement=None):
             if at is None:
                 continue
         dt = in_target(c.getDataType(), dtm)
+        if dt is None or (embeds_stub(dt) and placement is None):
+            return None
+        if embeds_stub(dt):
+            continue
+        fields.append((at, dt, c.getLength(), c.getFieldName(), c.getComment()))
+    for a in (placement or {}).get("added", []):
+        dt = spec_type(dtm, a["type"])
         if dt is None:
             return None
-        out.insertAtOffset(at, dt, c.getLength(), c.getFieldName(), c.getComment())
+        fields.append((a["offset"], dt, a["len"], a["name"], "Added in this build"))
+    # In offset order: an insertion moves every field already after it
+    for at, dt, length, name, comment in sorted(fields, key=lambda f: f[0]):
+        out.insertAtOffset(at, dt, length, name, comment)
     fields = list(out.getDefinedComponents())
     if not fields:
         # Nothing placed: a struct of the size and nothing else. Grown from
@@ -270,13 +312,16 @@ def load_rtti(program_name):
             if "typeinfo_size" in e and "name" in e}
 
 
-def triage(needed, src_dtm, dst_dtm, kinds, named, replace_stubs):
-    """-> (have [(name, source type)], already, wrong kind, absent, names to replace)."""
+def triage(needed, src_dtm, dst_dtm, kinds, named, replace_stubs, relayout=False):
+    """-> (have [(name, source type)], already, wrong kind, absent, names to replace).
+
+    With `relayout`, a named struct is replaced even if it is laid out already.
+    """
     replace, have, already, wrong_kind, absent = set(), [], [], [], []
     for name in needed:
         existing = find_type(dst_dtm, name)
         if existing is not None:
-            if not (replace_stubs and name in named and is_stub(existing)):
+            if not (replace_stubs and name in named and (relayout or is_stub(existing))):
                 already.append(name)
                 continue
             replace.add(name)
@@ -402,6 +447,9 @@ def main(argv=None):
     ap.add_argument("--shifts",
                     help="with --replace-stubs: placements for classes whose size changed "
                          "(plan_struct_transfer.py --out-shifts)")
+    ap.add_argument("--relayout", action="store_true",
+                    help="with --replace-stubs: also replace named structs that are laid out "
+                         "already, whose applied layout the code contradicts")
     ap.add_argument("--apply", action="store_true")
     args = ap.parse_args(argv)
     args.placements = {}
@@ -438,7 +486,7 @@ def run(args, needed, named, rtti, src, dst):
         needed = needed + extra
         print("%d more from global data in %s (%d total)" % (len(extra), args.from_program, len(needed)))
     have, already, wrong_kind, absent, replace = triage(
-        needed, src_dtm, dst_dtm, set(args.kind), set(named), args.replace_stubs)
+        needed, src_dtm, dst_dtm, set(args.kind), set(named), args.replace_stubs, args.relayout)
 
     # "nothing to import" is ambiguous between "already done" and "discovery
     # found nothing", and those need opposite responses: report the skips.

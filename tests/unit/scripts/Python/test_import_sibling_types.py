@@ -95,17 +95,47 @@ def test_a_source_type_is_rebuilt_from_the_targets_own():
 
 def test_a_layout_rebuilt_in_the_target_keeps_the_sources_size_and_offsets():
     src, dtm = source().getDataTypeManager(), target().getDataTypeManager()
-    rebuilt = ist.layout_in_target(ist.find_type(src, "CActor"), dtm)
-    # CLocation is still a 1-byte stub in the target, so the struct is grown to the source's size.
+    # CLocation is still a 1-byte stub in the target: copied verbatim, the field would shrink to it.
+    assert ist.layout_in_target(ist.find_type(src, "CActor"), dtm) is None
+    laid = program(ist.find_type(src, "CLocation"), vector(), INT, FLOAT).getDataTypeManager()
+    rebuilt = ist.layout_in_target(ist.find_type(src, "CActor"), laid)
     assert [(c.getOffset(), c.getFieldName()) for c in rebuilt.getComponents()] == [
         (0, "location"), (16, "target"), (20, "flags"), (28, "raw")]
     assert (rebuilt.getLength(), rebuilt.getDescription()) == (32, "an actor")
     assert ist.layout_in_target(ist.find_type(src, "CGrown"), dtm) is None
     # A resized class: only placed fields, at their new offsets, at the target's size.
-    shifted = ist.layout_in_target(ist.find_type(src, "CActor"), dtm,
+    shifted = ist.layout_in_target(ist.find_type(src, "CActor"), laid,
                                    {"size": 40, "place": {"0": 0, "16": 24}})
     assert [(c.getOffset(), c.getFieldName()) for c in shifted.getComponents()] == [(0, "location"), (24, "target")]
     assert shifted.getLength() == 40
+
+
+def test_a_field_the_build_added_goes_in_by_offset_among_the_placed_ones():
+    src, dtm = source().getDataTypeManager(), target().getDataTypeManager()
+    actor = ist.find_type(src, "CActor")
+    placement = {"size": 40, "place": {"16": 20, "20": 24},
+                 "added": [{"offset": 16, "name": "count", "type": "int", "len": 4}]}
+    rebuilt = ist.layout_in_target(actor, dtm, placement)
+    # Inserted after the placed fields it would have pushed them down by 4
+    assert [(c.getOffset(), c.getFieldName()) for c in rebuilt.getComponents()] == [
+        (16, "count"), (20, "target"), (24, "flags")]
+    assert rebuilt.getComponents()[0].getComment() == "Added in this build" and rebuilt.getLength() == 40
+    # An added array: three of the type
+    placement["added"] = [{"offset": 28, "name": "slots", "type": "int[3]", "len": 12}]
+    slots = ist.layout_in_target(actor, dtm, placement).getComponents()[-1]
+    assert (slots.getOffset(), slots.getLength(), slots.getDataType().getNumElements()) == (28, 12, 3)
+    assert ist.spec_type(dtm, "TNone[2]") is None
+    placement["added"][0]["type"] = "TNone"
+    assert ist.layout_in_target(actor, dtm, placement) is None
+
+
+def test_a_placed_field_holding_a_placeholder_struct_stays_undefined():
+    src, dtm = source().getDataTypeManager(), target().getDataTypeManager()
+    shifted = ist.layout_in_target(ist.find_type(src, "CActor"), dtm,
+                                   {"size": 40, "place": {"0": 0, "16": 24}})
+    assert [(c.getOffset(), c.getFieldName()) for c in shifted.getComponents()] == [(24, "target")]
+    assert ist.embeds_stub(ArrayDataType(ist.find_type(dtm, "CLocation"), 2))
+    assert not ist.embeds_stub(PointerDataType(ist.find_type(dtm, "CLocation")))
     # Placing nothing gives a stub of the whole size, not one a byte short.
     empty = ist.layout_in_target(ist.find_type(src, "CActor"), dtm, {"size": 64, "place": {}})
     assert (empty.getLength(), empty.getComponents(), empty.getDescription()) == (64, [], ist.RTTI_STUB_DESCRIPTION)
@@ -168,6 +198,14 @@ def test_each_wanted_name_is_triaged():
         ["CActor", "CKept", "CNew", "EMode", "CNone", "CVector3f"], src, dst, {"struct"}, {"CActor"}, True)
     assert [n for n, _ in have] == ["CActor", "CNew"] and replace == {"CActor"}
     assert (already, wrong, absent) == (["CKept", "CVector3f"], ["EMode"], ["CNone"])
+
+
+def test_a_laid_out_struct_is_replaced_only_for_a_relayout():
+    src, dst = source().getDataTypeManager(), target().getDataTypeManager()
+    src.add(StructureDataType("CKept", [(INT, "kept"), (INT, "more")], category = "/G"))
+    assert "CKept" in ist.triage(["CKept"], src, dst, set(), {"CKept"}, True)[1]
+    have, _, _, _, replace = ist.triage(["CKept"], src, dst, set(), {"CKept"}, True, relayout = True)
+    assert [n for n, _ in have] == ["CKept"] and replace == {"CKept"}
 
 
 def test_importing_stubs_replaces_and_adds_in_one_transaction(capsys):
