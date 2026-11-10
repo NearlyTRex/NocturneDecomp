@@ -790,9 +790,9 @@ constexpr const char *kXbr =
     "    o_color = vec4(res, 1.0);\n"
     "}\n";
 
-// By EUpscaler; Standard has none.
-constexpr std::array<const char *, kUpscalerCount> kSources{nullptr, kFsr, kLanczos,
-                                                            kGsr,    kNis, kXbr};
+// By EUpscaler; Standard, Nearest and Smooth have none.
+constexpr std::array<const char *, kUpscalerCount> kSources{nullptr,  nullptr, nullptr, kFsr,
+                                                            kLanczos, kGsr,    kNis,    kXbr};
 
 } // namespace
 

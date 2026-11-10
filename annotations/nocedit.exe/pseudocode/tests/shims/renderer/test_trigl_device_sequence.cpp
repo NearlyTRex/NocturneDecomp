@@ -429,6 +429,52 @@ NOCTURNE_TEST(a_scene_is_antialiased_before_it_is_reframed) {
     CHECK_EQ(nocturne_trigl_gl_state_epoch(), epoch);
 }
 
+// Geometry drawn straight to the target, as a screen below the hold buffer's
+// size draws its 3D, is anti-aliased at the lock before the frame's 2D, and not
+// reframed. After the 2D it is not, until the next frame. An overlay's geometry
+// before the 2D is too, the menu's moon among it; one after a scene already
+// anti-aliased that frame is not, so the scene is not blurred twice.
+NOCTURNE_TEST(geometry_before_the_2d_is_antialiased_too) {
+    start();
+    Opened device(64, 48, 16);
+    presenter.antialias = 1;
+    presenter.widescreen = 1;
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 1);
+    CHECK_EQ(presenter.reframes, 0);
+
+    nocturne_trigl_device_unlock_frame();
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 1);
+    nocturne_trigl_device_unlock_frame();
+
+    nocturne_trigl_device_present();
+    CHECK_EQ(nocturne_trigl_device_begin_overlay(1.0f, 1.0f, 0.0f, 0.0f), 1);
+    queue_triangle();
+    nocturne_trigl_device_end_overlay();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 2);
+    nocturne_trigl_device_unlock_frame();
+
+    // A scene, then an overlay's geometry over it, then the lock: once.
+    nocturne_trigl_device_present();
+    nocturne_trigl_device_begin_scene();
+    queue_triangle();
+    CHECK_EQ(nocturne_trigl_device_begin_overlay(1.0f, 1.0f, 0.0f, 0.0f), 1);
+    CHECK_EQ(presenter.antialiased, 3);
+    queue_triangle();
+    nocturne_trigl_device_end_overlay();
+    CHECK_EQ(nocturne_trigl_device_lock_frame(), 1);
+    CHECK_EQ(presenter.antialiased, 3);
+    nocturne_trigl_device_unlock_frame();
+    presenter.antialias = 0;
+    presenter.widescreen = 0;
+}
+
 // A scene the setting leaves as drawn is read back as drawn.
 NOCTURNE_TEST(a_scene_not_reframed_is_read_back_as_drawn) {
     gl_recorder::State &s = start();

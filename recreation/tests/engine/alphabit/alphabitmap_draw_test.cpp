@@ -129,5 +129,73 @@ TEST_F(CAlphaBitmapDraw8Test, EightBitsSetsThePaletteButDrawsNothing) {
     EXPECT_EQ(screen_.getHardwarePalette32()[1], ramp(1));
 }
 
+TEST_F(CAlphaBitmapDrawTest, ScaledToItsOwnSizeItIsDisplayed) {
+    loadCounting(2, 2);
+    bitmap_.displayScaled(1, 0, 2, 2, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_EQ(screen_.pixel(1, 0), ramp(1));
+    EXPECT_EQ(screen_.pixel(2, 1), ramp(4));
+    EXPECT_EQ(screen_.pixel(3, 1), kBackground);
+}
+
+TEST_F(CAlphaBitmapDrawTest, NearestRepeatsEachPixel) {
+    loadCounting(2, 2);
+    bitmap_.displayScaled(0, 0, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    EXPECT_EQ(screen_.pixel(0, 0), ramp(1));
+    EXPECT_EQ(screen_.pixel(1, 1), ramp(1));
+    EXPECT_EQ(screen_.pixel(2, 0), ramp(2));
+    EXPECT_EQ(screen_.pixel(3, 3), ramp(4));
+    EXPECT_EQ(screen_.pixel(0, 2), ramp(3));
+    EXPECT_EQ(screen_.pixel(4, 0), kBackground);
+}
+
+// Between pixel centres the colours mix by distance; past the last centre the edge holds.
+TEST_F(CAlphaBitmapDrawTest, SmoothMixesNeighbours) {
+    loadCounting(2, 1);
+    bitmap_.displayScaled(0, 0, 4, 1, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_EQ(screen_.pixel(0, 0), ramp(1));
+    // A quarter of the way: 1.25, 2.5 and 3.75 of ramp(1)'s 1, 2 and 3.
+    EXPECT_EQ(screen_.pixel(1, 0), (1U << 16U) | (3U << 8U) | 4U);
+    EXPECT_EQ(screen_.pixel(3, 0), ramp(2));
+}
+
+// A clear pixel lends no colour, only less opacity: the edge doesn't darken toward black.
+TEST_F(CAlphaBitmapDrawTest, SmoothFadesIntoClearPixelsWithoutDarkening) {
+    givenImage("pic", std::string{'\x01', '\x00'});
+    bitmap_.load("pic", 2, 1);
+    bitmap_.displayScaled(0, 0, 4, 1, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_EQ(screen_.pixel(0, 0), ramp(1));
+    EXPECT_NE(screen_.pixel(1, 0), ramp(1));
+    EXPECT_NE(screen_.pixel(1, 0), kBackground);
+    EXPECT_EQ(screen_.pixel(3, 0), kBackground);
+}
+
+TEST_F(CAlphaBitmapDrawTest, AScaledImageIsClippedAndNothingDrawsNothing) {
+    loadCounting(2, 2);
+    bitmap_.displayScaled(-2, -2, 4, 4, kFullAlpha, EBitmapFilter::Nearest);
+    EXPECT_EQ(screen_.pixel(0, 0), ramp(4));
+    EXPECT_EQ(screen_.pixel(2, 0), kBackground);
+    screen_.fill(kBackground);
+    bitmap_.displayScaled(0, 0, 0, 4, kFullAlpha, EBitmapFilter::Nearest);
+    bitmap_.displayScaled(-4, 0, 4, 4, kFullAlpha, EBitmapFilter::Smooth);
+    bitmap_.displayScaled(0, -4, 4, 4, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_EQ(screen_.pixel(0, 0), kBackground);
+}
+
+TEST_F(CAlphaBitmapDraw16Test, SixteenBitsDrawsScaledPixelsEitherWay) {
+    givenImage("pic", std::string(1, '\x40'));
+    bitmap_.load("pic", 1, 1);
+    bitmap_.displayScaled(0, 0, 2, 2, kFullAlpha, EBitmapFilter::Nearest);
+    EXPECT_EQ(screen_.pixel(1, 1), CMemoryScreen::pack16(0x40, 0x80, 0xc0));
+    screen_.fill(kBackground);
+    bitmap_.displayScaled(0, 0, 2, 2, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_EQ(screen_.pixel(1, 1), CMemoryScreen::pack16(0x40, 0x80, 0xc0));
+}
+
+TEST_F(CAlphaBitmapDraw8Test, EightBitsDrawsNothingScaled) {
+    loadCounting(1, 1);
+    bitmap_.displayScaled(0, 0, 2, 2, kFullAlpha, EBitmapFilter::Smooth);
+    EXPECT_EQ(screen_.pixel(0, 0), kBackground & 0xffU);
+}
+
 } // namespace
 } // namespace nocturne::engine

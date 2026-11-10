@@ -8,6 +8,7 @@
 #include "engine/package/gamecontent.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/display.h"
 
 #include <cstddef>
 #include <format>
@@ -37,17 +38,18 @@ CLevelLoader::CLevelLoader(const SLevelLoaderOwners &owners)
 // only read with a window.
 // nocedit 0x00503dc0
 void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_variant) {
-    // The 640x480 layout, centred on a wider screen.
-    const int left = getFrontEndLeft(owners_.screen.getWindowWidth());
+    // The 640x480 layout, as the screen shows it.
+    const SFrontEndLayout layout =
+        getFrontEndLayout(owners_.screen.getWindowWidth(), owners_.screen.getWindowHeight());
     enabled_ = true;
     current_frame_ = 0;
     total_frames_ = total_frames;
     use_custom_viewport_ = use_custom_viewport;
     if (use_custom_viewport) {
-        viewport_x_ = left + kCornerX;
-        viewport_y_ = 0;
-        viewport_width_ = kCornerSize;
-        viewport_height_ = kCornerSize;
+        viewport_x_ = layout.getX(kCornerX);
+        viewport_y_ = layout.getY(0);
+        viewport_width_ = layout.getLength(kCornerSize);
+        viewport_height_ = layout.getLength(kCornerSize);
     } else {
         owners_.special.clearScreen();
     }
@@ -64,15 +66,17 @@ void CLevelLoader::show(int total_frames, bool use_custom_viewport, int image_va
     const engine::SLoadingPicture &picture = pictures[static_cast<std::size_t>(image_variant)];
     engine::CAlphaBitmap bitmap(owners_.dosio, owners_.screen, owners_.special);
     bitmap.load(picture.id, kPictureWidth, kPictureHeight);
-    bitmap.display(left, 0, kOpaque);
+    displayInLayout(bitmap, layout,
+                    {.x = 0, .y = 0, .width = kPictureWidth, .height = kPictureHeight}, kOpaque,
+                    owners_.display.getUpscaler());
     if (!picture.moon) {
         return;
     }
     use_custom_viewport_ = true;
-    viewport_x_ = left + picture.moon->x;
-    viewport_y_ = picture.moon->y;
-    viewport_width_ = kPictureWindowSize;
-    viewport_height_ = kPictureWindowSize;
+    viewport_x_ = layout.getX(picture.moon->x);
+    viewport_y_ = layout.getY(picture.moon->y);
+    viewport_width_ = layout.getLength(kPictureWindowSize);
+    viewport_height_ = layout.getLength(kPictureWindowSize);
     color_ = {.r = picture.moon->tint[0], .g = picture.moon->tint[1], .b = picture.moon->tint[2]};
 }
 

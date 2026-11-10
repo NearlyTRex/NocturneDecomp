@@ -457,6 +457,29 @@ TEST_F(CDisplayOptionsPageTest, ADisplayThatFitsNoneOfTheListLeavesItUnfiltered)
     EXPECT_EQ(resolution(), "2880x2160");
 }
 
+// The front end runs where the missions will, so a new resolution is its new mode at once.
+TEST_F(CDisplayOptionsPageTest, ANewResolutionIsTheFrontEndsModeAtOnce) {
+    loadRenderer();
+    CDisplayOptionsPage page(menu_, menu_owners_);
+    static_cast<void>(texts(page));
+    EXPECT_EQ(page.choose(kResolution, EMenuStep::On), EMenuOutcome::Stay);
+    EXPECT_CALL(screen_, setScreenResolution(800, 600, _)).WillOnce(Return(true));
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+}
+
+// The mode it is already in, or one the screen refuses, changes nothing.
+TEST_F(CDisplayOptionsPageTest, TheModeItHasOrOneRefusedChangesNothing) {
+    CDisplayOptionsPage page(menu_, menu_owners_);
+    static_cast<void>(texts(page));
+    EXPECT_CALL(screen_, setScreenResolution(_, _, _)).Times(0);
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+    ::testing::Mock::VerifyAndClearExpectations(&screen_);
+    loadRenderer();
+    setResolution(1024, 768);
+    EXPECT_CALL(screen_, setScreenResolution(1024, 768, _)).WillOnce(Return(false));
+    EXPECT_EQ(page.endFrame(), EMenuOutcome::Stay);
+}
+
 TEST_F(CDisplayOptionsPageTest, CancelLeaves) {
     CDisplayOptionsPage page(menu_, menu_owners_);
     static_cast<void>(texts(page));

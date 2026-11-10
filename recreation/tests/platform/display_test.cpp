@@ -65,12 +65,14 @@ TEST(EAntialias, KeepsThePersistedValues) {
 
 TEST(EUpscaler, KeepsThePersistedValues) {
     static_assert(static_cast<int>(EUpscaler::Standard) == 0);
-    static_assert(static_cast<int>(EUpscaler::Fsr) == 1);
-    static_assert(static_cast<int>(EUpscaler::Lanczos) == 2);
-    static_assert(static_cast<int>(EUpscaler::Gsr) == 3);
-    static_assert(static_cast<int>(EUpscaler::Nis) == 4);
-    static_assert(static_cast<int>(EUpscaler::Xbr) == 5);
-    static_assert(kUpscalerCount == 6);
+    static_assert(static_cast<int>(EUpscaler::Nearest) == 1);
+    static_assert(static_cast<int>(EUpscaler::Smooth) == 2);
+    static_assert(static_cast<int>(EUpscaler::Fsr) == 3);
+    static_assert(static_cast<int>(EUpscaler::Lanczos) == 4);
+    static_assert(static_cast<int>(EUpscaler::Gsr) == 5);
+    static_assert(static_cast<int>(EUpscaler::Nis) == 6);
+    static_assert(static_cast<int>(EUpscaler::Xbr) == 7);
+    static_assert(kUpscalerCount == 8);
 }
 
 TEST(EUpscaler, FsrGsrAndNisSharpen) {

@@ -7,6 +7,7 @@
 #include "core/fwd.h"
 #include "engine/alphabit/alphabitmap.h"
 #include "engine/fwd.h"
+#include "platform/fwd.h"
 
 #include <array>
 #include <cstddef>
@@ -27,6 +28,8 @@ struct SMoonOwners {
     CGame &game;
     CActor &actor;
     common::CWatcomRandom &crt_random;
+    // Its Upscaler, which the title's animation is enlarged as.
+    const platform::IDisplay &display;
 };
 
 // The menu's backdrop: the moon turning into place, bats flying their courses across it once it
@@ -59,12 +62,15 @@ private:
 
     static constexpr std::size_t kBatCount = 30;
     static constexpr std::size_t kAnimationFrameCount = 30;
+    // The title's animation, at the top of the layout.
+    static constexpr int kAnimationWidth = 640;
+    static constexpr int kAnimationHeight = 278;
 
     void load();
     void scatterBat(SBat &bat);
     void advanceBat(SBat &bat, const common::CExtendedFloat &step);
-    // How much wider than 640 the 3D is projected, once the pass that stretches it is begun;
-    // nothing when the scene keeps the screen's own viewport.
+    // How much wider than 4:3 the 3D is projected, once the pass that stretches the layout's
+    // 640x480 viewport over the screen is begun; nothing when the screen is that viewport.
     [[nodiscard]] std::optional<float> beginWideScene();
     void endWideScene();
     void renderMoon(float projection_scale);

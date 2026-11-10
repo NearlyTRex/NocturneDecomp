@@ -13,6 +13,18 @@ namespace {
 constexpr GLint kTextureUnit = 0;
 constexpr float kPercent = 100.0F;
 
+// Without a program: Nearest and Smooth whatever the scale, Standard and a filter that can't
+// be had nearest at a whole multiple only.
+GLint getPlainFilter(EUpscaler upscaler, bool whole_multiple) {
+    if (upscaler == EUpscaler::Nearest) {
+        return GL_NEAREST;
+    }
+    if (upscaler == EUpscaler::Smooth) {
+        return GL_LINEAR;
+    }
+    return whole_multiple ? GL_NEAREST : GL_LINEAR;
+}
+
 } // namespace
 
 CGlUpscaler::CGlUpscaler(const SGlApi &gl, const CGlQuad &quad, ILog &log)
@@ -25,10 +37,11 @@ void CGlUpscaler::draw(GLuint texture, EQuadRows rows, common::SExtent frame,
                        const common::SViewport &viewport, EUpscaler upscaler,
                        int sharpness_percent) {
     const bool enlarges = viewport.width > frame.width || viewport.height > frame.height;
-    const CGlProgram *program =
-        upscaler != EUpscaler::Standard && enlarges ? getProgram(upscaler) : nullptr;
+    const CGlProgram *program = getUpscaleFragmentSource(upscaler) != nullptr && enlarges
+                                    ? getProgram(upscaler)
+                                    : nullptr;
     if (program == nullptr) {
-        setSampling(texture, common::isWholeMultiple(viewport, frame) ? GL_NEAREST : GL_LINEAR);
+        setSampling(texture, getPlainFilter(upscaler, common::isWholeMultiple(viewport, frame)));
         quad_.draw(texture, rows);
         return;
     }

@@ -80,6 +80,16 @@ struct Device {
     // every draw of the scene has landed and none of the 2D has.
     bool scene_composited = false;
 
+    // Whether geometry has been drawn straight to the target since the last
+    // lock, whether the engine's 2D has gone over the frame yet, and whether
+    // the frame has been anti-aliased. A screen rendered below the hold
+    // buffer's size draws its 3D that way, as does the menu's moon in its
+    // overlay; it is anti-aliased like a camera's scene, but only while no 2D
+    // is under it to blur, and a frame only once.
+    bool geometry_drawn = false;
+    bool frame_has_2d = false;
+    bool frame_antialiased = false;
+
     // An overlay pass, and where it places its space.
     bool overlay = false;
     float overlay_scale_x = 1.0f;
@@ -102,12 +112,19 @@ void release(std::vector<T> &storage) {
 
 // The scene composited since the last lock, anti-aliased and reframed for a
 // wider screen as the settings ask; once only. Anti-aliasing comes first, at
-// the scene's own pixels, before a reframe scales them.
+// the scene's own pixels, before a reframe scales them. Geometry drawn straight
+// to the target is anti-aliased too, before the frame's 2D; it is not reframed.
 void reframe_scene() {
     const bool scene = g_dev.scene_composited;
+    const bool geometry =
+        g_dev.geometry_drawn && !g_dev.frame_has_2d && !g_dev.frame_antialiased;
     g_dev.scene_composited = false;
-    if (scene && nocturne_gl_scene_antialias())
-        nocturne_trigl_gl_invalidate_state();
+    g_dev.geometry_drawn = false;
+    if (scene || geometry) {
+        g_dev.frame_antialiased = true;
+        if (nocturne_gl_scene_antialias())
+            nocturne_trigl_gl_invalidate_state();
+    }
     NocturneReframe reframe;
     if (scene && nocturne_widescreen_reframe(g_dev.width, g_dev.height, &reframe)) {
         nocturne_gl_scene_reframe(reframe.src_x, reframe.src_y, reframe.src_w, reframe.src_h,
@@ -166,6 +183,9 @@ void nocturne_trigl_device_close(void) {
     g_dev.frame_locked = false;
     g_dev.target_ahead = false;
     g_dev.scene_composited = false;
+    g_dev.geometry_drawn = false;
+    g_dev.frame_has_2d = false;
+    g_dev.frame_antialiased = false;
     g_dev.overlay = false;
     g_dev.open = false;
     g_dev.width = g_dev.height = g_dev.bpp = 0;
@@ -267,6 +287,7 @@ void nocturne_trigl_device_flush(void) {
     nocturne_trigl_gl_draw_batch(&g_dev.batch);
     nocturne_trigl_batch_reset(&g_dev.batch);
     g_dev.target_ahead = true;
+    g_dev.geometry_drawn = true;
 }
 
 int nocturne_trigl_device_lock_frame(void) {
@@ -280,6 +301,7 @@ int nocturne_trigl_device_lock_frame(void) {
     // newer of the pair and reading the target back would overwrite it.
     if (!g_dev.target_ahead) {
         g_dev.scene_composited = false;
+        g_dev.geometry_drawn = false;
         g_dev.frame_locked = true;
         return 1;
     }
@@ -311,6 +333,7 @@ int nocturne_trigl_device_unlock_frame(void) {
     nocturne_gl_scene_upload(g_dev.image.data(), g_dev.width, g_dev.height, g_dev.pitch, g_dev.bpp);
     nocturne_trigl_gl_invalidate_state();
     g_dev.target_ahead = false;
+    g_dev.frame_has_2d = true;
     return 1;
 }
 
@@ -440,6 +463,9 @@ void nocturne_trigl_device_present(void) {
         nocturne_trigl_device_end_scene();
     nocturne_trigl_device_flush();
     nocturne_gl_present_scene();
+    g_dev.frame_has_2d = false;
+    g_dev.geometry_drawn = false;
+    g_dev.frame_antialiased = false;
     // Presenting draws a quad of its own with depth testing, blending and
     // culling turned off, and does not put them back. The cache has to be told,
     // or it compares the next draw against a state the pipeline no longer holds

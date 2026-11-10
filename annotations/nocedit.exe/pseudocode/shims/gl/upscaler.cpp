@@ -56,8 +56,8 @@ extern "C" int nocturne_upscaler_cycle(int step) {
 }
 
 extern "C" const char *nocturne_upscaler_name(int mode) {
-    static const char *const kNames[NOCTURNE_UPSCALER_COUNT] = {"Standard", "FSR", "Lanczos",
-                                                                "GSR",      "NIS", "xBR"};
+    static const char *const kNames[NOCTURNE_UPSCALER_COUNT] = {
+        "Standard", "Nearest", "Smooth", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
     return kNames[clamp_mode(mode)];
 }
 

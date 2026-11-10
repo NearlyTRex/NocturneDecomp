@@ -559,19 +559,24 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
     gl.Disable(GL_DEPTH_TEST);
     gl.Disable(GL_BLEND);
     gl.Disable(GL_CULL_FACE);
-    // Nearest keeps whole-multiple scaling crisp; at a fractional scale it makes
-    // pixel sizes visibly uneven (some source pixels land on 1 screen pixel,
-    // their neighbours on 2), so blend instead.
-    const GLint standard_filter =
-        viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
+    // Standard: nearest keeps whole-multiple scaling crisp; at a fractional
+    // scale it makes pixel sizes visibly uneven (some source pixels land on 1
+    // screen pixel, their neighbours on 2), so blend instead. Nearest and Smooth
+    // take one or the other at any scale.
+    const int upscaler = nocturne_upscaler_get();
+    GLint standard_filter = viewport_is_integer_scale(vp_w, logical_w) ? GL_NEAREST : GL_LINEAR;
+    if (upscaler == NOCTURNE_UPSCALER_NEAREST)
+        standard_filter = GL_NEAREST;
+    if (upscaler == NOCTURNE_UPSCALER_SMOOTH)
+        standard_filter = GL_LINEAR;
 
     // An upscaler only enlarges: the texture is `fallback_w` x `fallback_h`, and
     // a picture shown at that size or smaller takes the standard filter. Each
     // reads the texture filtered as it asks; one that cannot be had puts the
     // standard filter back.
     int drawn = 0;
-    const int upscaler = nocturne_upscaler_get();
-    if (upscaler != NOCTURNE_UPSCALER_STANDARD && (vp_w > fallback_w || vp_h > fallback_h)) {
+    if (nocturne_upscale_fragment_source(upscaler) != nullptr &&
+        (vp_w > fallback_w || vp_h > fallback_h)) {
         set_sampling(texture, nocturne_upscale_wants_nearest(upscaler) ? GL_NEAREST : GL_LINEAR);
         drawn = nocturne_gl_blit_quad_upscaled(
             upscaler, texture, flipped ? 1 : 0, fallback_w, fallback_h,

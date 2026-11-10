@@ -5,11 +5,13 @@
 namespace nocturne::platform {
 
 // How a frame is enlarged onto the window: Standard is the presenter's own scaling, nearest at a
-// whole multiple and bilinear otherwise; the rest are one draw through a filter's program. Only
-// the enlarging changes, not the letterbox. The values are frozen: the game saves them as
-// [Graphics] upscaler.
+// whole multiple and bilinear otherwise, and Nearest and Smooth are its one or the other at any
+// scale; the rest are one draw through a filter's program. Only the enlarging changes, not the
+// letterbox. The values are frozen: the game saves them as [Graphics] upscaler.
 enum class EUpscaler : std::uint8_t {
     Standard,
+    Nearest,
+    Smooth,
     Fsr,
     Lanczos,
     Gsr,
@@ -17,7 +19,7 @@ enum class EUpscaler : std::uint8_t {
     Xbr,
 };
 
-inline constexpr int kUpscalerCount = 6;
+inline constexpr int kUpscalerCount = 8;
 
 // The sharpness the filters that sharpen take, in percent.
 inline constexpr int kUpscalerSharpnessStep = 25;

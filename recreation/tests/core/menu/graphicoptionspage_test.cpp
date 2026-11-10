@@ -263,12 +263,16 @@ TEST_F(CGraphicOptionsPageTest, TheDepthTogglesBetween16And32) {
 
 TEST_F(CGraphicOptionsPageTest, TheUpscalerStepsEitherWayAndWraps) {
     CGraphicOptionsPage page(menu_, menu_owners_);
-    EXPECT_CALL(display_, setUpscaler(EUpscaler::Fsr));
+    EXPECT_CALL(display_, setUpscaler(EUpscaler::Nearest));
     EXPECT_EQ(page.choose(kUpscaler, EMenuStep::On), EMenuOutcome::Stay);
     EXPECT_CALL(display_, setUpscaler(EUpscaler::Xbr));
     EXPECT_EQ(page.choose(kUpscaler, EMenuStep::Back), EMenuOutcome::Stay);
     ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Xbr));
     EXPECT_EQ(text(page, kUpscaler), "Upscaler : xBR");
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Nearest));
+    EXPECT_EQ(text(page, kUpscaler), "Upscaler : Nearest");
+    ON_CALL(display_, getUpscaler()).WillByDefault(Return(EUpscaler::Smooth));
+    EXPECT_EQ(text(page, kUpscaler), "Upscaler : Smooth");
 }
 
 // The sharpness line is the upscaler's next, for a filter that sharpens.

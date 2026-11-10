@@ -16,6 +16,7 @@
 #include "tests/mocks/core/setparts.h"
 #include "tests/mocks/engine/demonrendererfixture.h"
 #include "tests/mocks/engine/mockgameclock.h"
+#include "tests/mocks/platform/mockdisplay.h"
 
 #include <gmock/gmock.h>
 #include <gtest/gtest.h>
@@ -114,6 +115,7 @@ protected:
     CSetParts set_parts_{dosio_};
     CDemonSet set_{set_parts_.owners(demon_renderer_, three_d_, matrix_, special_, two_d_, screen_,
                                      raw_input_)};
+    ::testing::NiceMock<platform::MockDisplay> display_;
     CMoon moon_{SMoonOwners{.dosio = dosio_,
                             .screen = screen_,
                             .special = special_,
@@ -122,7 +124,8 @@ protected:
                             .set = set_,
                             .game = game_,
                             .actor = actor_,
-                            .crt_random = crt_random_}};
+                            .crt_random = crt_random_,
+                            .display = display_}};
 };
 
 } // namespace nocturne::core

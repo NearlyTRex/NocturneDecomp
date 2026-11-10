@@ -99,7 +99,8 @@ protected:
                                 .fonts = fonts_,
                                 .crt_random = crt_random_,
                                 .console = console_,
-                                .content = engine::getShippedGameContent()}};
+                                .content = engine::getShippedGameContent(),
+                                .display = display_}};
     shape::SPickListOwners pick_list_owners_{.controls = controls_,
                                              .keys = keys_,
                                              .menu_input = menu_input_,

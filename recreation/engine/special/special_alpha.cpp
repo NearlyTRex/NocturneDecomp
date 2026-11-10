@@ -75,10 +75,42 @@ void CSpecial::renderAlphaRow16(std::span<std::uint16_t> dest_pixels,
     }
 }
 
+void CSpecial::renderColorRow32(std::span<std::uint32_t> dest_pixels,
+                                std::span<const std::uint32_t> src_colors,
+                                std::span<const std::uint8_t> src_alpha, int global_alpha) {
+    const std::uint32_t global_level = getGlobalLevel(global_alpha);
+    const std::size_t count = std::min({dest_pixels.size(), src_colors.size(), src_alpha.size()});
+    for (std::size_t i = 0; i < count; ++i) {
+        if (const std::optional<std::uint32_t> pixel =
+                getColorPixel(src_colors[i], src_alpha[i] * global_level, dest_pixels[i])) {
+            dest_pixels[i] = *pixel;
+        }
+    }
+}
+
+void CSpecial::renderColorRow16(std::span<std::uint16_t> dest_pixels,
+                                std::span<const std::uint32_t> src_colors,
+                                std::span<const std::uint8_t> src_alpha, int global_alpha) {
+    const SColorMasks &masks = screen_.getColorMasks();
+    const std::uint32_t global_level = getGlobalLevel(global_alpha);
+    const std::size_t count = std::min({dest_pixels.size(), src_colors.size(), src_alpha.size()});
+    for (std::size_t i = 0; i < count; ++i) {
+        if (const std::optional<std::uint32_t> pixel =
+                getColorPixel(src_colors[i], src_alpha[i] * global_level,
+                              expandPixel16(dest_pixels[i], masks))) {
+            dest_pixels[i] = packPixel16(*pixel, masks);
+        }
+    }
+}
+
 // The 8-8-8 pixel an index leaves over dest, or nothing when it is too faint to draw.
 std::optional<std::uint32_t> CSpecial::getAlphaPixel(std::uint8_t index, std::uint32_t coverage,
                                                      std::uint32_t dest) const {
-    const std::uint32_t source = screen_.getHardwarePalette32()[index];
+    return getColorPixel(screen_.getHardwarePalette32()[index], coverage, dest);
+}
+
+std::optional<std::uint32_t> CSpecial::getColorPixel(std::uint32_t source, std::uint32_t coverage,
+                                                     std::uint32_t dest) const {
     if (three_d_.getBlendMode() == C3d::kAdditiveBlend) {
         return addPixel(source, dest, coverage >> 8U);
     }

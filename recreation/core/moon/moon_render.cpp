@@ -9,6 +9,7 @@
 #include "engine/drender/demonrenderer.h"
 #include "engine/screendevice.h"
 #include "engine/special/special.h"
+#include "platform/display.h"
 #include "platform/renderer.h"
 
 #include <algorithm>
@@ -18,6 +19,7 @@
 #include <optional>
 #include <span>
 #include <utility>
+#include <vector>
 
 namespace nocturne::core {
 namespace {
@@ -85,26 +87,33 @@ void CMoon::render() {
     if (frame < 0 || std::cmp_greater_equal(frame, kAnimationFrameCount)) {
         frame = 0;
     }
-    animation_textures_[static_cast<std::size_t>(frame)].display(
-        getFrontEndLeft(owners_.screen.getWindowWidth()), 0, kAnimationAlpha);
+    displayInLayout(animation_textures_[static_cast<std::size_t>(frame)],
+                    getFrontEndLayout(owners_.screen.getWindowWidth(),
+                                      owners_.screen.getWindowHeight()),
+                    {.x = 0, .y = 0, .width = kAnimationWidth, .height = kAnimationHeight},
+                    kAnimationAlpha, owners_.display.getUpscaler());
     owners_.three_d.setBlendMode(0);
     set.setLightDirection(light_direction);
     set.setAmbientBaseQuick(ambient);
     set.setFlatColor(flat_color.r, flat_color.g, flat_color.b);
 }
 
-// The renderer stretches a 640x480 viewport across a wider front end, so the view widens by as
-// much and the sky keeps its proportions; the rotation matrix already corrects the vertical.
-// Software draws at the screen's width already.
+// The renderer stretches a 640x480 viewport over the whole screen, drawing at the screen's own
+// pixels, so the view widens by how much wider than 4:3 the screen is and the sky keeps its
+// proportions; the rotation matrix already corrects the vertical. Software runs at 640x480.
 std::optional<float> CMoon::beginWideScene() {
     const int width = owners_.screen.getWindowWidth();
-    if (width <= kFrontEndLayoutWidth || !owners_.special.getUseExternalRenderer()) {
+    const int height = owners_.screen.getWindowHeight();
+    if ((width == kFrontEndLayoutWidth && height == kFrontEndHeight) || height <= 0 ||
+        !owners_.special.getUseExternalRenderer()) {
         return std::nullopt;
     }
-    const float widen = static_cast<float>(width) / static_cast<float>(kFrontEndLayoutWidth);
+    const float scale_x = static_cast<float>(width) / static_cast<float>(kFrontEndLayoutWidth);
+    const float scale_y = static_cast<float>(height) / static_cast<float>(kFrontEndHeight);
+    const float widen = scale_x / scale_y;
     owners_.renderer.pushViewport(0, 0, kFrontEndLayoutWidth, kFrontEndHeight);
     if (!owners_.special.beginOverlay(
-            {.scale_x = widen, .scale_y = 1.0F, .offset_x = 0.0F, .offset_y = 0.0F})) {
+            {.scale_x = scale_x, .scale_y = scale_y, .offset_x = 0.0F, .offset_y = 0.0F})) {
         owners_.renderer.popViewport();
         return std::nullopt;
     }
@@ -171,8 +180,8 @@ void CMoon::renderBat(const SBat &bat) {
 }
 
 // Two layers of the cloud texture added over the frame, the nearer at twice the scale of the
-// farther. The original drew them over 640x480 whatever the mode; they cover the front end's
-// whole width and what of 480 rows the screen has, and only at 32 bits.
+// farther. The original drew them over 640x480 whatever the mode; they cover the whole screen,
+// sampled at the layout's scale so they look as they did at 480 lines, and only at 32 bits.
 void CMoon::renderClouds() {
     cloud_texture_.initPalette();
     engine::IScreenDevice &screen = owners_.screen;
@@ -185,16 +194,22 @@ void CMoon::renderClouds() {
     const std::int32_t scroll_x = cloud_scroll_x_ >> 16;
     const std::int32_t scroll_y = cloud_scroll_y_ >> 16;
     const auto width = static_cast<std::uint32_t>(screen.getWindowWidth());
-    const auto height =
-        static_cast<std::uint32_t>(std::min(kFrontEndHeight, screen.getWindowHeight()));
+    const auto height = static_cast<std::uint32_t>(screen.getWindowHeight());
+    const float scale = getFrontEndLayout(screen.getWindowWidth(), screen.getWindowHeight()).scale;
+    // Each screen column's layout column, worked out once for every row.
+    std::vector<std::uint32_t> layout_x(width);
+    for (std::uint32_t x = 0; x < width; ++x) {
+        layout_x[x] = static_cast<std::uint32_t>(static_cast<float>(x) / scale);
+    }
     for (std::uint32_t y = 0; y < height; ++y) {
         const std::span<std::uint32_t> row(static_cast<std::uint32_t *>(rows[y]), width);
+        const auto layout_y = static_cast<std::uint32_t>(static_cast<float>(y) / scale);
         for (std::uint32_t x = 0; x < width; ++x) {
             // A texel's top six bits pick one of the palette's first 64 colours.
             const std::uint32_t near =
-                palette[cloudTexel(texels, x, y, 1, scroll_x, scroll_y) >> 2U];
+                palette[cloudTexel(texels, layout_x[x], layout_y, 1, scroll_x, scroll_y) >> 2U];
             const std::uint32_t far =
-                palette[cloudTexel(texels, x, y, 2, scroll_x, scroll_y) >> 2U];
+                palette[cloudTexel(texels, layout_x[x], layout_y, 2, scroll_x, scroll_y) >> 2U];
             row[x] = addSaturating(addSaturating(row[x], near), far);
         }
     }
