@@ -10,6 +10,7 @@
 
 #include "core/file_search.h"
 #include "nocturne_test.h"
+#include "watcom/path.h"
 
 #include <filesystem>
 #include <fstream>
@@ -190,6 +191,26 @@ NOCTURNE_TEST(results_are_ordered) {
 
     const std::vector<std::string> again = nocturne_find_files("SAVE/*.noc");
     CHECK(found == again);
+}
+
+// The game's own directory lists the PODs in its subfolders by bare name, as
+// if they were beside it; one it has itself is listed once, and a subfolder's
+// listing is its own.
+NOCTURNE_TEST(the_games_directory_lists_its_subfolders_pods_as_its_own) {
+    Tree tree;
+    std::error_code ec;
+    fs::create_directories(tree.root / "games" / "nocturne", ec);
+    Tree::write(tree.root / "games" / "nocturne" / "ACT3.POD");
+    Tree::write(tree.root / "games" / "nocturne" / "act1.pod");
+    Tree::write(tree.root / "games" / "nocturne" / "nocturne.toml");
+    watcom_set_path_roots({}); // found once per set of roots; these are new
+    const std::vector<std::string> found = nocturne_find_files("*.pod");
+    CHECK_EQ((int)found.size(), 3);
+    CHECK(contains(found, "ACT1.POD"));
+    CHECK(contains(found, "act2.pod"));
+    CHECK(contains(found, "ACT3.POD"));
+    CHECK_EQ((int)nocturne_find_files("*.toml").size(), 0);
+    CHECK_EQ((int)nocturne_find_files("games\\nocturne\\*.pod").size(), 2);
 }
 
 NOCTURNE_TEST_MAIN()

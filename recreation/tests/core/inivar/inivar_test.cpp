@@ -13,6 +13,7 @@
 #include "engine/special/special.h"
 #include "engine/texture/currenttexture.h"
 #include "platform/display.h"
+#include "platform/displaymodes.h"
 #include "platform/upscaler.h"
 #include "shape/edittool/editortools.h"
 #include "support/newmsg/newmsg.h"
@@ -180,6 +181,61 @@ TEST_F(CInivarTest, TheWindowModeIsAppliedAfterTheSizeUnlessItIsOutOfRange) {
     ON_CALL(display_, getWindowMode()).WillByDefault(Return(platform::EWindowMode::Fullscreen));
     text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=3\r\n";
     read();
+}
+
+// Before the mode, so full screen starts on the chosen display at the chosen mode.
+TEST_F(CInivarTest, TheDisplaySettingsAreAppliedBeforeTheWindowMode) {
+    text_ = "[Graphics]\r\ngamePIXX=800\r\ngamePIXY=600\r\nwindowMode=1\r\ndisplayIndex=1\r\n"
+            "fullscreenSize=1\r\nrefreshRate=144\r\nvsync=0\r\n";
+    const ::testing::InSequence in_order;
+    EXPECT_CALL(display_, setDisplayIndex(1));
+    EXPECT_CALL(display_, setFullscreenSize(platform::EFullscreenSize::Desktop));
+    EXPECT_CALL(display_, setRefreshRate(144));
+    EXPECT_CALL(display_, setVsync(false));
+    EXPECT_CALL(display_, setWindowSize(800, 600));
+    EXPECT_CALL(display_, setWindowMode(platform::EWindowMode::Fullscreen));
+    read();
+}
+
+TEST_F(CInivarTest, MissingDisplaySettingsKeepTheirs) {
+    ON_CALL(display_, getDisplayIndex()).WillByDefault(Return(2));
+    ON_CALL(display_, getFullscreenSize())
+        .WillByDefault(Return(platform::EFullscreenSize::Desktop));
+    ON_CALL(display_, getRefreshRate()).WillByDefault(Return(60));
+    ON_CALL(display_, getVsync()).WillByDefault(Return(true));
+    EXPECT_CALL(display_, setDisplayIndex(2));
+    EXPECT_CALL(display_, setFullscreenSize(platform::EFullscreenSize::Desktop));
+    EXPECT_CALL(display_, setRefreshRate(60));
+    EXPECT_CALL(display_, setVsync(true));
+    read();
+}
+
+// As an INI edited by hand can leave them; any display index past the list is the primary's.
+TEST_F(CInivarTest, DisplaySettingsOutOfRangeKeepTheirs) {
+    ON_CALL(display_, getDisplayIndex()).WillByDefault(Return(1));
+    ON_CALL(display_, getRefreshRate()).WillByDefault(Return(120));
+    text_ = "[Graphics]\r\ndisplayIndex=-1\r\nfullscreenSize=2\r\nrefreshRate=-60\r\nvsync=7\r\n";
+    EXPECT_CALL(display_, setDisplayIndex(1));
+    EXPECT_CALL(display_, setFullscreenSize(platform::EFullscreenSize::Game));
+    EXPECT_CALL(display_, setRefreshRate(120));
+    EXPECT_CALL(display_, setVsync(true));
+    read();
+}
+
+TEST_F(CInivarTest, TheDisplaySettingsAreWritten) {
+    ON_CALL(display_, getDisplayIndex()).WillByDefault(Return(1));
+    ON_CALL(display_, getFullscreenSize())
+        .WillByDefault(Return(platform::EFullscreenSize::Desktop));
+    ON_CALL(display_, getRefreshRate()).WillByDefault(Return(144));
+    ON_CALL(display_, getVsync()).WillByDefault(Return(true));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("displayIndex=1\r\n"));
+    EXPECT_THAT(text_, HasSubstr("fullscreenSize=1\r\n"));
+    EXPECT_THAT(text_, HasSubstr("refreshRate=144\r\n"));
+    EXPECT_THAT(text_, HasSubstr("vsync=1\r\n"));
+    ON_CALL(display_, getVsync()).WillByDefault(Return(false));
+    writeIniData(ini_, owners_);
+    EXPECT_THAT(text_, HasSubstr("vsync=0\r\n"));
 }
 
 TEST_F(CInivarTest, TheUpscalerIsReadUnlessItIsOutOfRange) {

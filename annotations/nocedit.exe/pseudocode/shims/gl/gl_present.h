@@ -123,6 +123,11 @@ int nocturne_gl_read_front(unsigned char **out_rgb, int *out_width, int *out_hei
 // Passes the input through unchanged when GL is not active.
 void nocturne_gl_window_to_logical(int window_x, int window_y, int *out_x, int *out_y);
 
+// The reverse, for warping the cursor to a point the game names: the window
+// point at the middle of that game pixel, which nocturne_gl_window_to_logical
+// maps back onto it. Passes the input through unchanged when GL is not active.
+void nocturne_gl_logical_to_window(int logical_x, int logical_y, int *out_x, int *out_y);
+
 // Drop the context and what was drawn with it; nocturne_gl_init brings it up
 // again.
 void nocturne_gl_shutdown(void);

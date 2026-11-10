@@ -52,6 +52,8 @@ struct Stand {
     int upscaler = NOCTURNE_UPSCALER_STANDARD;
     int antialias = NOCTURNE_ANTIALIAS_OFF;
     const char *gl_version = "";
+    int window_mode = 0; // nocturne_window_mode_get
+    int vsync = 1;       // nocturne_vsync_get
 
     // What the renderer does when it is loaded: g_UseDirect3D after.
     int renderer_loads = 1;

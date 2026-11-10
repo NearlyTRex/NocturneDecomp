@@ -329,18 +329,44 @@ static const uint32_t kKeyReleased = 0x80000000u;
 // WM_MOUSEMOVE, at the point in the game's own coordinates, after the
 // WM_SETCURSOR Windows sends ahead of it: the hit test (HTCLIENT) low, the
 // message that moved it high. The game answers it with SetCursor(NULL).
-static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent &motion) {
+static void queueMouseMoveAt(MSG msg, int mx, int my) {
     msg.message = 0x0020; // WM_SETCURSOR
     msg.wParam = (WPARAM)msg.hwnd;
     msg.lParam = (0x0200 << 16) | 1;
     s_msgQueue.push(msg);
     msg.wParam = 0;
 
-    int mx = 0, my = 0;
-    nocturne_gl_window_to_logical(motion.x, motion.y, &mx, &my);
     msg.message = 0x0200; // WM_MOUSEMOVE
     msg.lParam = (my << 16) | (mx & 0xFFFF);
     s_msgQueue.push(msg);
+}
+
+// Mouse-look reads the cursor's distance from the middle and puts it back
+// there with SetCursorPos every frame, so the game keeps running unfocused
+// would warp the pointer back into the window as fast as it is moved out.
+// Unfocused, then, the cursor is never warped and motion over the window is
+// not the game's; SetCursorPos still reports the point it asked for, so the
+// distance mouse-look reads is nothing and the camera holds still.
+static bool s_windowFocused = true;
+
+// The window point SetCursorPos last warped to, until its motion event comes
+// back. That echo is the warp, not the player: SetCursorPos has already told
+// the game exactly where the cursor is, and the window point mapped back can
+// land a game pixel off it, which mouse-look would read as a turn every frame.
+static bool s_warpPending = false;
+static int s_warpX = 0;
+static int s_warpY = 0;
+
+static void queueMouseMove(MSG msg, const SDL_MouseMotionEvent &motion) {
+    if (!s_windowFocused)
+        return;
+    if (s_warpPending && motion.x == s_warpX && motion.y == s_warpY) {
+        s_warpPending = false;
+        return;
+    }
+    int mx = 0, my = 0;
+    nocturne_gl_window_to_logical(motion.x, motion.y, &mx, &my);
+    queueMouseMoveAt(msg, mx, my);
 }
 
 // The shipped proc has no case for the wheel — DirectInput of the era did not
@@ -463,11 +489,14 @@ static void translateSdlEvent(const SDL_Event &ev) {
 
     case SDL_WINDOWEVENT:
         if (ev.window.event == SDL_WINDOWEVENT_FOCUS_GAINED) {
+            s_windowFocused = true;
             nocturne_focus_trace_arm();
             msg.message = 0x001C; // WM_ACTIVATEAPP
             msg.wParam = 1;
             s_msgQueue.push(msg);
         } else if (ev.window.event == SDL_WINDOWEVENT_FOCUS_LOST) {
+            s_windowFocused = false;
+            s_warpPending = false;
             msg.message = 0x001C; // WM_ACTIVATEAPP
             msg.wParam = 0;
             s_msgQueue.push(msg);
@@ -721,9 +750,20 @@ static HCURSOR shim_SetCursor(HCURSOR hCursor) {
     return previous;
 }
 
+// The game names the point in its own coordinates, and SDL warps in the
+// window's; like Win32's, the move is reported back as a WM_MOUSEMOVE.
 static BOOL shim_SetCursorPos(int X, int Y) {
-    if (g_sdlWindow)
-        SDL_WarpMouseInWindow(g_sdlWindow, X, Y);
+    if (g_sdlWindow == nullptr)
+        return 1;
+    MSG msg;
+    memset(&msg, 0, sizeof(msg));
+    msg.hwnd = (HWND)(intptr_t)g_sdlWindow;
+    queueMouseMoveAt(msg, X, Y);
+    if (!s_windowFocused)
+        return 1;
+    nocturne_gl_logical_to_window(X, Y, &s_warpX, &s_warpY);
+    s_warpPending = true;
+    SDL_WarpMouseInWindow(g_sdlWindow, s_warpX, s_warpY);
     return 1;
 }
 

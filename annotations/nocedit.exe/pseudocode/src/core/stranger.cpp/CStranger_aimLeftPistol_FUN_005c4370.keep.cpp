@@ -10,123 +10,110 @@
 void __cdecl core_stranger_cpp_CStranger_aimLeftPistol_FUN_005c4370(CStranger *this_ptr)
 
 {
-  float fVar1;
   int bone_index;
-  double dVar2;
-  float fStack_bc;
-  CVector3f CStack_b4;
-  CVector3f CStack_a8;
-  CVector3f local_9c;
-  CVector3f CStack_90;
-  CVector3f CStack_84;
-  CVector3f CStack_78;
-  CVector3f CStack_6c;
-  CVector3f CStack_60;
-  CVector3f CStack_54;
-  float fStack_48;
-  float fStack_44;
-  float fStack_40;
-  CVector3f CStack_3c;
-  float fStack_2c;
-  float fStack_24;
-  float fStack_20;
-  float fStack_1c;
-  float fStack_18;
-  float fStack_14;
-  
+  double ratio;
+  float hit_fraction;
+  float distance;
+  float correction;
+  float pitch;
+  float yaw;
+  float yaw_min;
+  float yaw_max;
+  CVector3f muzzle_local;
+  CVector3f muzzle_world;
+  CVector3f barrel_offset;
+  CVector3f barrel_end;
+  CVector3f hit_point;
+  CVector3f hit_local;
+  CVector3f shoulder;
+  CVector3f to_target;
+  CVector3f angles;
+  CVector3f forward;
+
   if (this_ptr->weapon == (CWeapon *)0x0) {
     g_CurrentFilename = "..\\core\\stranger.cpp";
     g_CurrentLineNumber = 4288;
     core_main_c_displayErrorAndQuit_FUN_00506f10("CStranger::aimLeftPistol - no weapon?");
   }
-  (*(((this_ptr->weapon->base).vtable._uw)->_uw).getMuzzlePoint)(this_ptr->weapon,&local_9c);
+  (*(((this_ptr->weapon->base).vtable._uw)->_uw).getMuzzlePoint)(this_ptr->weapon,&muzzle_local);
   bone_index = g_StrangerIndices[3];
-  fStack_24 = -1.3089969;
-  fStack_2c = 0.5235988;
+  yaw_min = -1.3089969f;
+  yaw_max = 0.5235988f;
   core_actor_cpp_CDemonActor_localToWorldPoint_FUN_00408ec0
-            (&this_ptr->weapon->base,&CStack_a8,&local_9c);
-  CStack_3c.x = 0.0;
-  CStack_3c.y = 0.0;
-  CStack_3c.z = 1000.0;
+            (&this_ptr->weapon->base,&muzzle_world,&muzzle_local);
+  forward.x = 0.0;
+  forward.y = 0.0;
+  forward.z = 1000.0;
   core_actor_cpp_CDemonActor_transformVector_FUN_00408e80
-            (&this_ptr->weapon->base,&CStack_84,&CStack_3c);
-  CStack_90.x = CStack_a8.x + CStack_84.x;
-  CStack_90.y = CStack_a8.y + CStack_84.y;
-  CStack_90.z = CStack_a8.z + CStack_84.z;
+            (&this_ptr->weapon->base,&barrel_offset,&forward);
+  barrel_end.x = muzzle_world.x + barrel_offset.x;
+  barrel_end.y = muzzle_world.y + barrel_offset.y;
+  barrel_end.z = muzzle_world.z + barrel_offset.z;
   core_setcolid_cpp_CDemonSet_setRayTypeLaser_FUN_00574270(g_CDemonSetPtr,1,0xff,0,0);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,&this_ptr->weapon->base);
   core_setcolid_cpp_CDemonSet_ignore_FUN_005741b0(g_CDemonSetPtr,(CDemonActor *)this_ptr);
-  fStack_bc = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530(g_CDemonSetPtr,&CStack_a8,&CStack_90)
-  ;
-  fStack_14 = fStack_bc;
+  hit_fraction = core_setcolid_cpp_CDemonSet_raycast_FUN_00572530
+                           (g_CDemonSetPtr,&muzzle_world,&barrel_end);
   core_setcolid_cpp_CDemonSet_init_FUN_00574180(g_CDemonSetPtr);
-  if ((fStack_bc < 0.0) || (1.0 < fStack_bc)) {
-    fStack_bc = 1.0;
+  if ((hit_fraction < 0.0) || (1.0 < hit_fraction)) {
+    hit_fraction = 1.0;
   }
-  fStack_48 = CStack_84.x * fStack_bc;
-  fStack_44 = CStack_84.y * fStack_bc;
-  fStack_40 = CStack_84.z * fStack_bc;
-  CStack_b4.x = CStack_a8.x + fStack_48;
-  CStack_b4.y = CStack_a8.y + fStack_44;
-  CStack_b4.z = CStack_a8.z + fStack_40;
-  CStack_90 = CStack_b4;
+  hit_point.x = muzzle_world.x + barrel_offset.x * hit_fraction;
+  hit_point.y = muzzle_world.y + barrel_offset.y * hit_fraction;
+  hit_point.z = muzzle_world.z + barrel_offset.z * hit_fraction;
   core_skeleton_cpp_CDeformableModelInstance_getBoneModelPosition_FUN_0059fa20
-            (&(this_ptr->base).base.model,&CStack_6c,bone_index);
+            (&(this_ptr->base).base.model,&shoulder,bone_index);
   core_actor_cpp_CDemonActor_worldToLocalPoint_FUN_00408f10
-            ((CDemonActor *)this_ptr,&CStack_60,&CStack_90);
-  CStack_78.x = CStack_60.x - CStack_6c.x;
-  CStack_78.y = CStack_60.y - CStack_6c.y;
-  CStack_78.z = CStack_60.z - CStack_6c.z;
-  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&CStack_54,&CStack_78);
-  fVar1 = SQRT(CStack_78.z * CStack_78.z + CStack_78.x * CStack_78.x + CStack_78.y * CStack_78.y);
-  if ((float)0.01 < fVar1) {
-    fStack_20 = -local_9c.x;
-    if ((((float)0.01 <= fVar1) &&
-        (dVar2 = (double)(SQRT(fVar1 * fVar1 - fStack_20 * fStack_20) / fVar1), dVar2 < 1.0)) &&
-       (0.0 <= dVar2)) {
-      dVar2 = acos(dVar2);
-      fStack_2c = (float)dVar2;
-      if (0.0 <= fStack_24) {
-        CStack_54.x = CStack_54.x + fStack_2c;
+            ((CDemonActor *)this_ptr,&hit_local,&hit_point);
+  to_target.x = hit_local.x - shoulder.x;
+  to_target.y = hit_local.y - shoulder.y;
+  to_target.z = hit_local.z - shoulder.z;
+  core_vecdir_cpp_convertDirectionVectorToEulerAngles_FUN_005e7830(&angles,&to_target);
+  distance = (float)SQRT(to_target.y * to_target.y + to_target.x * to_target.x +
+                         to_target.z * to_target.z);
+  if ((double)distance > 0.01) {
+    // The muzzle sits off the arm's axis; turn by the angle that offset
+    // subtends at the target's distance. Sideways offset corrects yaw...
+    correction = -muzzle_local.x;
+    ratio = SQRT(distance * distance - correction * correction) / (double)distance;
+    if ((ratio < 1.0) && (0.0 <= ratio)) {
+      if (0.0 <= correction) {
+        angles.y = angles.y + (float)acos(ratio);
       }
       else {
-        CStack_54.x = CStack_54.x - fStack_2c;
+        angles.y = angles.y - (float)acos(ratio);
       }
-      CStack_54.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(CStack_54.x);
-      fStack_18 = CStack_54.x;
+      angles.y = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(angles.y);
     }
-    if ((((float)0.01 <= fStack_bc) &&
-        (dVar2 = (double)(SQRT(fStack_bc * fStack_bc - local_9c.x * local_9c.x) / fStack_bc),
-        dVar2 < 1.0)) && (0.0 <= dVar2)) {
-      dVar2 = acos(dVar2);
-      CStack_3c.y = (float)dVar2;
-      if (0.0 <= CStack_a8.z) {
-        CStack_60.y = CStack_60.y + CStack_3c.y;
+    // ...and vertical offset corrects pitch.
+    ratio = SQRT(distance * distance - muzzle_local.y * muzzle_local.y) / (double)distance;
+    if ((ratio < 1.0) && (0.0 <= ratio)) {
+      if (0.0 <= muzzle_local.y) {
+        angles.x = angles.x + (float)acos(ratio);
       }
       else {
-        CStack_60.y = CStack_60.y - CStack_3c.y;
+        angles.x = angles.x - (float)acos(ratio);
       }
-      core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(CStack_60.y);
+      angles.x = core_actor_cpp_normalizeAngleToPi_FUN_0040cd70(angles.x);
     }
   }
-  fStack_1c = CStack_54.x;
-  fStack_20 = CStack_60.z;
-  if (CStack_60.z < -1.047198f) {
-    fStack_20 = -1.047198f;
+  pitch = angles.x;
+  if (pitch < -1.047198f) {
+    pitch = -1.047198f;
   }
-  if (1.22173f < fStack_20) {
-    fStack_20 = 1.22173f;
+  if (1.22173f < pitch) {
+    pitch = 1.22173f;
   }
-  if (CStack_54.x < -1.3089969f) {
-    fStack_1c = -1.3089969f;
+  yaw = angles.y;
+  if (yaw < yaw_min) {
+    yaw = yaw_min;
   }
-  if (0.5235988f < fStack_1c) {
-    fStack_1c = 0.5235988f;
+  if (yaw_max < yaw) {
+    yaw = yaw_max;
   }
   (this_ptr->left_arm_aim).kickback_factor = 1.0;
-  (this_ptr->left_arm_aim).target_yaw = fStack_1c;
-  (this_ptr->left_arm_aim).target_pitch = fStack_20;
-  (this_ptr->left_arm_aim).aim_yaw = fStack_1c;
-  (this_ptr->left_arm_aim).aim_pitch = fStack_20;
-  return;
+  (this_ptr->left_arm_aim).target_yaw = yaw;
+  (this_ptr->left_arm_aim).target_pitch = pitch;
+  (this_ptr->left_arm_aim).aim_yaw = yaw;
+  (this_ptr->left_arm_aim).aim_pitch = pitch;
 }

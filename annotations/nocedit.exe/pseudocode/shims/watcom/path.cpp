@@ -8,6 +8,7 @@
 
 #include "core/ascii_case.h"
 
+#include <algorithm>
 #include <filesystem>
 #include <mutex>
 #include <string>
@@ -157,11 +158,108 @@ std::string for_writing(const std::string &relative) {
     return target;
 }
 
+// The directory nested PODs are looked for under: the data directory, or the
+// working directory without one.
+std::string data_directory() {
+    const WatcomPathRoots &r = roots();
+    if (!r.data.empty())
+        return r.data;
+    std::error_code ignored;
+    return std::filesystem::current_path(ignored).string();
+}
+
+bool is_pod_name(const std::string &name) {
+    return name.size() > 4 && nocturne_ascii_iequals(name.c_str() + name.size() - 4, ".pod");
+}
+
+void collect_nested_pods(const std::filesystem::path &top, std::vector<WatcomNestedPod> *pods) {
+    std::error_code ignored;
+    std::filesystem::recursive_directory_iterator it(top, ignored), end;
+    if (ignored)
+        return;
+    std::vector<std::string> own;
+    for (; it != end; it.increment(ignored)) {
+        const std::string name = it->path().filename().string();
+        const bool is_dir = it->is_directory(ignored);
+        if (it.depth() == 0 && !is_dir) {
+            own.push_back(name);
+            continue;
+        }
+        if (is_dir) {
+            if (name[0] == '.' || it->is_symlink(ignored) || it.depth() >= kWatcomNestedPodDepth)
+                it.disable_recursion_pending();
+            continue;
+        }
+        if (!is_pod_name(name))
+            continue;
+        std::string relative = it->path().lexically_relative(top).generic_string();
+        pods->push_back({name, relative});
+    }
+    std::sort(pods->begin(), pods->end(), [](const WatcomNestedPod &a, const WatcomNestedPod &b) {
+        return a.relative < b.relative;
+    });
+    // The first of each name, and none the data directory has itself.
+    std::vector<WatcomNestedPod> kept;
+    for (const WatcomNestedPod &pod : *pods) {
+        bool shadowed = false;
+        for (const std::string &name : own)
+            shadowed = shadowed || nocturne_ascii_iequals(name.c_str(), pod.name.c_str());
+        for (const WatcomNestedPod &other : kept)
+            shadowed = shadowed || nocturne_ascii_iequals(other.name.c_str(), pod.name.c_str());
+        if (!shadowed)
+            kept.push_back(pod);
+    }
+    *pods = kept;
+}
+
+struct NestedPodIndex {
+    std::mutex lock;
+    bool built = false;
+    unsigned generation = 0;
+    std::string top;
+    std::vector<WatcomNestedPod> pods;
+};
+
+NestedPodIndex &nested_pod_index() {
+    static NestedPodIndex index;
+    return index;
+}
+
+std::vector<WatcomNestedPod> nested_pods() {
+    NestedPodIndex &index = nested_pod_index();
+    std::lock_guard<std::mutex> guard(index.lock);
+    const std::string top = data_directory();
+    if (!index.built || index.generation != watcom_path_roots_generation() || index.top != top) {
+        index.pods.clear();
+        collect_nested_pods(std::filesystem::path(top), &index.pods);
+        index.built = true;
+        index.generation = watcom_path_roots_generation();
+        index.top = top;
+    }
+    return index.pods;
+}
+
+// A bare .pod name the data directory does not have, from a subfolder that does.
+std::string nested_pod(const std::string &relative, const std::string &resolved) {
+    if (relative.find('/') != std::string::npos || !is_pod_name(relative) || exists(resolved))
+        return resolved;
+    for (const WatcomNestedPod &pod : nested_pods()) {
+        if (nocturne_ascii_iequals(pod.name.c_str(), relative.c_str())) {
+            const WatcomPathRoots &r = roots();
+            return r.data.empty() ? pod.relative : r.data + "/" + pod.relative;
+        }
+    }
+    return resolved;
+}
+
 std::string resolve(const char *path, WatcomPathUse use) {
     const std::string relative = slashed(path);
     const WatcomPathRoots &r = roots();
-    if (is_absolute(relative) || (r.data.empty() && r.user.empty())) {
+    if (is_absolute(relative))
         return resolve_case_insensitive(relative);
+    if (r.data.empty() && r.user.empty()) {
+        const std::string resolved = resolve_case_insensitive(relative);
+        return use == WatcomPathUse::Read ? nested_pod(relative, resolved) : resolved;
     }
     if (!r.user.empty()) {
         if (use == WatcomPathUse::Write)
@@ -170,7 +268,9 @@ std::string resolve(const char *path, WatcomPathUse use) {
         if (exists(own))
             return own;
     }
-    return r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative);
+    const std::string shipped =
+        r.data.empty() ? resolve_case_insensitive(relative) : under(r.data, relative);
+    return use == WatcomPathUse::Read ? nested_pod(relative, shipped) : shipped;
 }
 
 // What each read found, for asking again without the walk: the game opens the
@@ -218,6 +318,16 @@ std::string watcom_resolve_fs_path(const char *path, WatcomPathUse use) {
         cache.found.emplace(key, resolved);
     }
     return resolved;
+}
+
+std::vector<WatcomNestedPod> watcom_nested_pods() {
+    return nested_pods();
+}
+
+std::vector<WatcomNestedPod> watcom_nested_pods_in(const std::string &top) {
+    std::vector<WatcomNestedPod> pods;
+    collect_nested_pods(std::filesystem::path(top), &pods);
+    return pods;
 }
 
 std::vector<std::string> watcom_resolve_fs_dirs(const char *directory) {

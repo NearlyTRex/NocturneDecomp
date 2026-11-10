@@ -10,6 +10,7 @@
 #include "game/options_menu.h"
 
 #include "core/menu_page.h"
+#include "gl/display_settings.h"
 #include "nocturne.h"
 
 #include <cstring>
@@ -131,11 +132,123 @@ void step_halo(int step) {
 
 // --- Graphic Options ------------------------------------------------------------
 
+// The card rules and the software ceiling decide the mode on either page: the
+// Display page picks it, and the Graphic page's acceleration and card bound it.
+// A mode either changes is applied to the window at once.
+class ModePage : public Page {
+public:
+    void build(Lines &) override {
+        apply_card_rules();
+        width_ = g_CGamePtr->game_pixx;
+        height_ = g_CGamePtr->game_pixy;
+    }
+
+    // Where the shipped screen held a mode the renderer cannot reach.
+    void before_swap() override {
+        if (!hires_allowed() && g_CGamePtr->game_pixy > kSoftwareMaxHeight) {
+            g_CGamePtr->game_pixy = kSoftwareMaxHeight;
+            g_CGamePtr->game_pixx = 640;
+        }
+    }
+
+    Outcome end_frame() override {
+        if (g_CGamePtr->game_pixx != width_ || g_CGamePtr->game_pixy != height_)
+            nocturne_window_set_size(g_CGamePtr->game_pixx, g_CGamePtr->game_pixy);
+        return Page::end_frame();
+    }
+
+protected:
+    int width_ = 0;
+    int height_ = 0;
+};
+
+// --- Display Options ------------------------------------------------------------
+
+enum DisplayLine {
+    DISPLAY_MONITOR,
+    DISPLAY_RESOLUTION,
+    DISPLAY_WINDOW,
+    DISPLAY_FULLSCREEN_SIZE,
+    DISPLAY_REFRESH_RATE,
+    DISPLAY_VSYNC,
+    DISPLAY_WIDESCREEN,
+    DISPLAY_CALIBRATION
+};
+
+class DisplayOptions : public ModePage {
+public:
+    const char *title() override {
+        return localized("Display Options");
+    }
+
+    void build(Lines &lines) override {
+        ModePage::build(lines);
+        // Not where the system owns the display.
+        const bool own_window = g_nocturne_fixed_display == 0;
+        if (own_window)
+            lines.add(DISPLAY_MONITOR, "Display : %s",
+                      nocturne_display_label(nocturne_display_index()));
+        lines.add_localized(DISPLAY_RESOLUTION, nocturne_resolution_label(width_, height_));
+        if (own_window) {
+            const int mode = nocturne_window_mode_get();
+            lines.add(DISPLAY_WINDOW, "Window : %s", nocturne_window_mode_name(mode));
+            // What Fullscreen asks the display for; nothing else changes its mode.
+            if (mode == NOCTURNE_WINDOW_MODE_FULLSCREEN) {
+                lines.add(DISPLAY_FULLSCREEN_SIZE, "Fullscreen size : %s",
+                          nocturne_fullscreen_size_name(nocturne_fullscreen_size_get()));
+                lines.add(DISPLAY_REFRESH_RATE, "Refresh rate : %s",
+                          nocturne_refresh_rate_label(nocturne_refresh_rate_get()));
+            }
+        }
+        lines.add(DISPLAY_VSYNC, "Vertical sync : %s", nocturne_vsync_get() != 0 ? "On" : "Off");
+        lines.add(DISPLAY_WIDESCREEN, "Widescreen : %s",
+                  nocturne_widescreen_name(nocturne_widescreen_get()));
+        lines.add_localized(DISPLAY_CALIBRATION, "Monitor calibration");
+    }
+
+    Outcome choose(int id, int step) override {
+        CGame *game = g_CGamePtr;
+        switch (id) {
+        case DISPLAY_RESOLUTION:
+            nocturne_resolution_step_where(
+                game->game_pixx, game->game_pixy, step, hires_allowed() ? 0 : kSoftwareMaxHeight,
+                nocturne_display_offers, &game->game_pixx, &game->game_pixy);
+            break;
+        case DISPLAY_WINDOW:
+            nocturne_window_mode_cycle(step);
+            break;
+        case DISPLAY_MONITOR:
+            nocturne_display_index_cycle(step);
+            nocturne_window_mode_reapply();
+            break;
+        case DISPLAY_FULLSCREEN_SIZE:
+            nocturne_fullscreen_size_cycle(step);
+            nocturne_window_mode_reapply();
+            break;
+        case DISPLAY_REFRESH_RATE: {
+            int w = 0, h = 0;
+            nocturne_window_fullscreen_size(&w, &h);
+            nocturne_refresh_rate_cycle(step, w, h);
+            nocturne_window_mode_reapply();
+            break;
+        }
+        case DISPLAY_VSYNC:
+            nocturne_vsync_cycle(step);
+            break;
+        case DISPLAY_WIDESCREEN:
+            nocturne_widescreen_cycle(step);
+            break;
+        default: // DISPLAY_CALIBRATION
+            core_menu_cpp_showCalibrationTest_FUN_00510ba0();
+            break;
+        }
+        return STAY;
+    }
+};
+
+// --- Graphic Options ------------------------------------------------------------
+
 enum GraphicLine {
-    GRAPHIC_RESOLUTION,
-    GRAPHIC_WINDOW,
-    GRAPHIC_WIDESCREEN,
-    GRAPHIC_HALO,
     GRAPHIC_ACCELERATION,
     GRAPHIC_API,
     GRAPHIC_CARD,
@@ -143,28 +256,17 @@ enum GraphicLine {
     GRAPHIC_UPSCALER,
     GRAPHIC_SHARPNESS,
     GRAPHIC_ANTIALIAS,
-    GRAPHIC_CALIBRATION
+    GRAPHIC_HALO
 };
 
-class GraphicOptions : public Page {
+class GraphicOptions : public ModePage {
 public:
     const char *title() override {
         return localized("Graphic Options");
     }
 
     void build(Lines &lines) override {
-        apply_card_rules();
-        width_ = g_CGamePtr->game_pixx;
-        height_ = g_CGamePtr->game_pixy;
-
-        lines.add_localized(GRAPHIC_RESOLUTION, nocturne_resolution_label(width_, height_));
-        // Not where the system owns the display.
-        if (g_nocturne_fixed_display == 0)
-            lines.add(GRAPHIC_WINDOW, "Window : %s",
-                      nocturne_window_mode_name(nocturne_window_mode_get()));
-        lines.add(GRAPHIC_WIDESCREEN, "Widescreen : %s",
-                  nocturne_widescreen_name(nocturne_widescreen_get()));
-        lines.add_localized(GRAPHIC_HALO, halo_label(g_CGamePtr->halo_mode));
+        ModePage::build(lines);
         lines.add_localized(GRAPHIC_ACCELERATION,
                             g_UseDirect3D != 0 ? "Acceleration : On" : "Acceleration : Off");
         if (renderer_is("trigl.dll") && nocturne_gl_version_short()[0] != '\0')
@@ -185,34 +287,12 @@ public:
         if (g_UseDirect3D != 0)
             lines.add(GRAPHIC_ANTIALIAS, "Anti-aliasing : %s",
                       nocturne_antialias_name(nocturne_antialias_get()));
-        lines.add_localized(GRAPHIC_CALIBRATION, "Monitor calibration");
-    }
-
-    // Where the shipped screen held a mode the renderer cannot reach.
-    void before_swap() override {
-        if (!hires_allowed() && g_CGamePtr->game_pixy > kSoftwareMaxHeight) {
-            g_CGamePtr->game_pixy = kSoftwareMaxHeight;
-            g_CGamePtr->game_pixx = 640;
-        }
+        lines.add_localized(GRAPHIC_HALO, halo_label(g_CGamePtr->halo_mode));
     }
 
     Outcome choose(int id, int step) override {
         CGame *game = g_CGamePtr;
         switch (id) {
-        case GRAPHIC_RESOLUTION:
-            nocturne_resolution_step(game->game_pixx, game->game_pixy, step,
-                                     hires_allowed() ? 0 : kSoftwareMaxHeight, &game->game_pixx,
-                                     &game->game_pixy);
-            break;
-        case GRAPHIC_WINDOW:
-            nocturne_window_mode_cycle(step);
-            break;
-        case GRAPHIC_WIDESCREEN:
-            nocturne_widescreen_cycle(step);
-            break;
-        case GRAPHIC_HALO:
-            step_halo(step);
-            break;
         case GRAPHIC_ACCELERATION:
             if (g_UseDirect3D == 0) {
                 nocturne_builtin_dll_snap(g_RendererDllPath);
@@ -250,23 +330,12 @@ public:
         case GRAPHIC_ANTIALIAS:
             nocturne_antialias_cycle(step);
             break;
-        default: // GRAPHIC_CALIBRATION
-            core_menu_cpp_showCalibrationTest_FUN_00510ba0();
+        default: // GRAPHIC_HALO
+            step_halo(step);
             break;
         }
         return STAY;
     }
-
-    // A size changed by a line, or held above, applies straight away.
-    Outcome end_frame() override {
-        if (g_CGamePtr->game_pixx != width_ || g_CGamePtr->game_pixy != height_)
-            nocturne_window_set_size(g_CGamePtr->game_pixx, g_CGamePtr->game_pixy);
-        return Page::end_frame();
-    }
-
-private:
-    int width_ = 0;
-    int height_ = 0;
 };
 
 // --- Gameplay Options ------------------------------------------------------------------
@@ -385,6 +454,7 @@ void control_options() {
 enum OptionsLine {
     OPTIONS_GAMEPLAY,
     OPTIONS_GRAPHIC,
+    OPTIONS_DISPLAY,
     OPTIONS_SOUND,
     OPTIONS_CONTROL,
     OPTIONS_CHEATS,
@@ -406,6 +476,7 @@ public:
         g_CGamePtr->hero_number = HERO_TYPE_STRANGER;
         lines.add_localized(OPTIONS_GAMEPLAY, "Gameplay options");
         lines.add_localized(OPTIONS_GRAPHIC, "Graphic options");
+        lines.add_localized(OPTIONS_DISPLAY, "Display options");
         lines.add_localized(OPTIONS_SOUND, "Sound options");
         lines.add_localized(OPTIONS_CONTROL, "Control options");
         lines.add_localized(OPTIONS_CHEATS, "Cheats");
@@ -421,6 +492,9 @@ public:
         switch (id) {
         case OPTIONS_GRAPHIC:
             nocturne_graphics_options_menu();
+            break;
+        case OPTIONS_DISPLAY:
+            nocturne_display_options_menu();
             break;
         case OPTIONS_GAMEPLAY:
             gameplay_menu();
@@ -472,13 +546,28 @@ extern "C" void nocturne_options_menu(int initialize_systems) {
     core_inivar_cpp_writeIniData_FUN_004fc510();
 }
 
-extern "C" void nocturne_graphics_options_menu(void) {
+namespace {
+
+// Either page reads the cards afresh, as the shipped screen did, since the
+// card rules decide the mode on both.
+void run_mode_page(ModePage &page) {
     core_game_cpp_CGame_saveClockTime_FUN_004d7d80(g_CGamePtr);
     list_cards();
     if (g_GraphicsCardCount <= g_CurrentGraphicsBoard)
         g_CurrentGraphicsBoard = 0;
-    GraphicOptions page;
     nocturne_menu::run(page);
+}
+
+} // namespace
+
+extern "C" void nocturne_graphics_options_menu(void) {
+    GraphicOptions page;
+    run_mode_page(page);
+}
+
+extern "C" void nocturne_display_options_menu(void) {
+    DisplayOptions page;
+    run_mode_page(page);
 }
 
 #endif // !NOCTURNE_AUTHENTIC_MENU

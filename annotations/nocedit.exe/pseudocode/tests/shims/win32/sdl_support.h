@@ -20,7 +20,8 @@ struct Stand {
     int present_bpp = 0;
     int present_first_byte = -1; // of the pixels
 
-    // The window side: what nocturne_gl_window_to_logical scales by, and how
+    // The window side: what nocturne_gl_window_to_logical divides by and
+    // nocturne_gl_logical_to_window multiplies by, and how
     // often the icon was set, the focus trace armed and the gamepad sampled.
     int logical_scale = 1;
     int icons = 0;

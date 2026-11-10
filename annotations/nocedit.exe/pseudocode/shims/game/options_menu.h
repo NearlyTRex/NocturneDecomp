@@ -7,10 +7,11 @@
 // Gated by NOCTURNE_AUTHENTIC_MENU, which carries the reasoning. Pages
 // run by core/menu_page: Options, and under it Gameplay (the assists,
 // subtitles, the two fonts and the rating, gathered from the shipped Graphics
-// and Control Options screens so each page fits below the logo) and Graphic
-// Options (the display). Sound and Control Options
-// are pages of their own (game/sound_options, game/control_options), reached
-// from here.
+// and Control Options screens so each page fits below the logo), Graphic
+// Options (the renderer and its effects) and Display Options (the resolution,
+// the window and the display it is on), the shipped Graphics screen split in
+// two so each fits. Sound and Control Options are pages of their own
+// (game/sound_options, game/control_options), reached from here.
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,6 +24,9 @@ void nocturne_options_menu(int initialize_systems);
 
 // configureGraphicsOptions: the Graphic Options page.
 void nocturne_graphics_options_menu(void);
+
+// The Display Options page.
+void nocturne_display_options_menu(void);
 
 #ifdef __cplusplus
 }

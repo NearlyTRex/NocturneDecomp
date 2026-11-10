@@ -4,6 +4,8 @@
 
 #include "front_support.h"
 
+#include "gl/display_settings.h"
+
 #include <cctype>
 #include <cstdarg>
 #include <cstdio>
@@ -446,11 +448,81 @@ const char *nocturne_window_mode_name(int mode) {
 }
 
 int nocturne_window_mode_get(void) {
-    return 0;
+    return stand.window_mode;
 }
 
 int nocturne_window_mode_cycle(int step) {
     front_support::log("windowCycle " + std::to_string(step));
+    return 0;
+}
+
+void nocturne_window_mode_reapply(void) {
+    front_support::log("reapply");
+}
+
+void nocturne_window_fullscreen_size(int *width, int *height) {
+    *width = 1920;
+    *height = 1080;
+}
+
+// Only handed on, to the step below.
+int nocturne_display_offers(int, int) {
+    return 1;
+}
+
+void nocturne_resolution_step_where(int current_width, int current_height, int step, int max_height,
+                                    int (*accept)(int, int), int *out_width, int *out_height) {
+    front_support::log(std::string("resolutionStep") + (accept != nullptr ? " filtered" : ""));
+    nocturne_resolution_step(current_width, current_height, step, max_height, out_width,
+                             out_height);
+}
+
+int nocturne_display_index(void) {
+    return 0;
+}
+
+int nocturne_display_index_cycle(int step) {
+    front_support::log("displayCycle " + std::to_string(step));
+    return 0;
+}
+
+const char *nocturne_display_label(int index) {
+    return index == 0 ? "1 (Screen)" : "?";
+}
+
+int nocturne_fullscreen_size_get(void) {
+    return 0;
+}
+
+int nocturne_fullscreen_size_cycle(int step) {
+    front_support::log("sizeCycle " + std::to_string(step));
+    return 0;
+}
+
+const char *nocturne_fullscreen_size_name(int size) {
+    return size == 0 ? "Game" : "Desktop";
+}
+
+int nocturne_refresh_rate_get(void) {
+    return 0;
+}
+
+int nocturne_refresh_rate_cycle(int step, int width, int height) {
+    front_support::log("refreshCycle " + std::to_string(step) + " " + std::to_string(width) + "x" +
+                       std::to_string(height));
+    return 0;
+}
+
+const char *nocturne_refresh_rate_label(int hz) {
+    return hz == 0 ? "Auto" : "?";
+}
+
+int nocturne_vsync_get(void) {
+    return stand.vsync;
+}
+
+int nocturne_vsync_cycle(int step) {
+    front_support::log("vsyncCycle " + std::to_string(step));
     return 0;
 }
 

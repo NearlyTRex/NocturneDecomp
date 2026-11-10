@@ -63,6 +63,13 @@ extern "C" {
 void nocturne_resolution_step(int current_width, int current_height, int step, int max_height,
                               int *out_width, int *out_height);
 
+// The same, offering only the modes `accept` answers 1 for as well, such as
+// nocturne_display_offers (display_settings.h). Where it accepts none of the
+// table it is not asked.
+void nocturne_resolution_step_where(int current_width, int current_height, int step, int max_height,
+                                    int (*accept)(int width, int height), int *out_width,
+                                    int *out_height);
+
 // Whether a mode is wider than 4:3.
 int nocturne_resolution_is_wide(int width, int height);
 

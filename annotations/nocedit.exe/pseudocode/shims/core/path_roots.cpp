@@ -205,7 +205,7 @@ int nocturne_check_game_data(void) {
     std::string dir = watcom_path_roots().data;
     if (dir.empty())
         dir = game_directory();
-    if (has_game_data(dir))
+    if (has_game_data(dir) || !watcom_nested_pods_in(dir).empty())
         return 1;
 
     std::string message =

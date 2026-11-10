@@ -33,14 +33,22 @@ const Mode kModes[] = {
 
 const int kModeCount = (int)(sizeof(kModes) / sizeof(kModes[0]));
 
-bool allowed(int index, int max_height) {
-    return max_height <= 0 || kModes[index].height <= max_height;
+// The ceiling, and what the display will show.
+struct Limit {
+    int max_height;
+    int (*accept)(int width, int height);
+};
+
+bool allowed(int index, const Limit &limit) {
+    if (limit.max_height > 0 && kModes[index].height > limit.max_height)
+        return false;
+    return limit.accept == nullptr || limit.accept(kModes[index].width, kModes[index].height) != 0;
 }
 
-// Index of an exact width/height match the ceiling allows, or -1.
-int index_of(int width, int height, int max_height) {
+// Index of an exact width/height match the limit allows, or -1.
+int index_of(int width, int height, const Limit &limit) {
     for (int i = 0; i < kModeCount; ++i) {
-        if (kModes[i].width == width && kModes[i].height == height && allowed(i, max_height)) {
+        if (kModes[i].width == width && kModes[i].height == height && allowed(i, limit)) {
             return i;
         }
     }
@@ -48,13 +56,13 @@ int index_of(int width, int height, int max_height) {
 }
 
 // The allowed mode nearest by height, then by width; the first of two as near.
-// The smallest mode when the ceiling allows none.
-int nearest(int width, int height, int max_height) {
+// The smallest mode when the limit allows none.
+int nearest(int width, int height, const Limit &limit) {
     int best = 0;
     int best_dh = -1;
     int best_dw = -1;
     for (int i = 0; i < kModeCount; ++i) {
-        if (!allowed(i, max_height)) {
+        if (!allowed(i, limit)) {
             continue;
         }
         const int dh = std::abs(kModes[i].height - height);
@@ -68,17 +76,37 @@ int nearest(int width, int height, int max_height) {
     return best;
 }
 
+bool any_allowed(const Limit &limit) {
+    for (int i = 0; i < kModeCount; ++i) {
+        if (allowed(i, limit))
+            return true;
+    }
+    return false;
+}
+
 } // namespace
 
 void nocturne_resolution_step(int current_width, int current_height, int step, int max_height,
                               int *out_width, int *out_height) {
-    int index = index_of(current_width, current_height, max_height);
+    nocturne_resolution_step_where(current_width, current_height, step, max_height, nullptr,
+                                   out_width, out_height);
+}
+
+void nocturne_resolution_step_where(int current_width, int current_height, int step, int max_height,
+                                    int (*accept)(int width, int height), int *out_width,
+                                    int *out_height) {
+    Limit limit = {max_height, accept};
+    // A display that accepts none of the table is not asked: the ceiling alone
+    // is a choice, where none would leave only the smallest mode.
+    if (!any_allowed(limit))
+        limit.accept = nullptr;
+    int index = index_of(current_width, current_height, limit);
     if (index < 0) {
         // Not one of ours — an old INI, the 400x300 the shipped chain could land
         // on but never leave cleanly, or one above the ceiling. Snap to the
         // nearest rather than stepping, so one keypress does something sensible
         // instead of dropping to the smallest mode.
-        index = nearest(current_width, current_height, max_height);
+        index = nearest(current_width, current_height, limit);
     } else {
         // The next allowed mode, wrapping at both ends the way the shipped chain
         // wrapped from its smallest mode back to the largest the card would
@@ -86,7 +114,7 @@ void nocturne_resolution_step(int current_width, int current_height, int step, i
         const int direction = step < 0 ? -1 : 1;
         do {
             index = (index + direction + kModeCount) % kModeCount;
-        } while (!allowed(index, max_height));
+        } while (!allowed(index, limit));
     }
 
     *out_width = kModes[index].width;

@@ -16,6 +16,7 @@
 #if NOCTURNE_GL_PRESENT
 
 #include "gl/antialias.h"
+#include "gl/display_settings.h"
 #include "gl/gl_api.h"
 #include "gl/gl_blit.h"
 #include "gl/gl_pixels.h"
@@ -45,6 +46,7 @@ struct GLPresentState {
     int logical_width = 0;
     int logical_height = 0;
     bool active = false;
+    int vsync = -1; // the [Graphics] vsync the swap interval was last set for
 
     // Scene target. A DirectDraw back buffer and its Z buffer are persistent
     // memory that the renderer DLL clears only when it chooses; GL's default
@@ -65,6 +67,19 @@ struct GLPresentState {
 };
 
 GLPresentState g_gl;
+
+// Adaptive vsync where available, plain vsync otherwise, or none, as
+// [Graphics] vsync says; asked each swap, so the Options line takes at once.
+void apply_vsync() {
+    const int vsync = nocturne_vsync_get();
+    if (vsync == g_gl.vsync)
+        return;
+    g_gl.vsync = vsync;
+    if (vsync == 0)
+        SDL_GL_SetSwapInterval(0);
+    else if (SDL_GL_SetSwapInterval(-1) != 0)
+        SDL_GL_SetSwapInterval(1);
+}
 
 // Leading "major.minor" of GL_VERSION, cached at context creation. Empty until
 // then, and read by nocturne_gl_version_short() for the 3D API menu line.
@@ -233,11 +248,8 @@ extern "C" int nocturne_gl_init(SDL_Window *window) {
         return 0;
     }
 
-    // Adaptive vsync where available, plain vsync otherwise. Matches the
-    // SDL_RENDERER_PRESENTVSYNC the SDL_Renderer path requested.
-    if (SDL_GL_SetSwapInterval(-1) != 0) {
-        SDL_GL_SetSwapInterval(1);
-    }
+    g_gl.vsync = -1;
+    apply_vsync();
 
     g_gl.window = window;
     g_gl.active = true;
@@ -578,6 +590,7 @@ void present_to_window(GLuint texture, int fallback_w, int fallback_h, bool flip
         DLOG_RL("render", 1, 600, "gl_present: present quad unavailable — frame not drawn");
     }
 
+    apply_vsync();
     const Uint64 swap_start = SDL_GetPerformanceCounter();
     SDL_GL_SwapWindow(g_gl.window);
     s_swap_ticks += SDL_GetPerformanceCounter() - swap_start;
@@ -771,6 +784,32 @@ extern "C" void nocturne_gl_window_to_logical(int window_x, int window_y, int *o
     *out_y = (int)ly;
 }
 
+extern "C" void nocturne_gl_logical_to_window(int logical_x, int logical_y, int *out_x,
+                                              int *out_y) {
+    *out_x = logical_x;
+    *out_y = logical_y;
+    if (!g_gl.active)
+        return;
+
+    int win_w = 0, win_h = 0, drawable_w = 0, drawable_h = 0;
+    SDL_GetWindowSize(g_gl.window, &win_w, &win_h);
+    SDL_GL_GetDrawableSize(g_gl.window, &drawable_w, &drawable_h);
+    if (win_w <= 0 || win_h <= 0 || drawable_w <= 0 || drawable_h <= 0)
+        return;
+
+    const int logical_w = (g_gl.logical_width > 0) ? g_gl.logical_width : drawable_w;
+    const int logical_h = (g_gl.logical_height > 0) ? g_gl.logical_height : drawable_h;
+
+    int vp_x = 0, vp_y = 0, vp_w = 0, vp_h = 0;
+    compute_viewport(drawable_w, drawable_h, logical_w, logical_h, &vp_x, &vp_y, &vp_w, &vp_h);
+
+    // The middle of the game's pixel, so the window point maps back onto it.
+    const double px = (double)vp_x + ((double)logical_x + 0.5) * (double)vp_w / (double)logical_w;
+    const double py = (double)vp_y + ((double)logical_y + 0.5) * (double)vp_h / (double)logical_h;
+    *out_x = (int)(px * (double)win_w / (double)drawable_w);
+    *out_y = (int)(py * (double)win_h / (double)drawable_h);
+}
+
 // The scene target goes with everything else: its names are the old context's,
 // and one left behind would be bound again as if it were the new one's. GL
 // ignores the name 0, so what was never made needs no check.
@@ -837,6 +876,10 @@ extern "C" void nocturne_gl_present_framebuffer(const void *p, int w, int h, int
 extern "C" void nocturne_gl_window_to_logical(int wx, int wy, int *ox, int *oy) {
     *ox = wx;
     *oy = wy;
+}
+extern "C" void nocturne_gl_logical_to_window(int lx, int ly, int *ox, int *oy) {
+    *ox = lx;
+    *oy = ly;
 }
 extern "C" int nocturne_gl_read_front(unsigned char **rgb, int *w, int *h) {
     (void)rgb;
