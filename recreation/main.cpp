@@ -224,7 +224,8 @@ private:
                        .keys = keys_,
                        .raw_input = winrun_,
                        .gamepad = gamepad_,
-                       .content = pod_.getGameContent()}};
+                       .content = pod_.getGameContent(),
+                       .display = display_}};
     engine::CIni ini_{file_system_};
     core::SIniDataOwners ini_owners_{.game = game_,
                                      .sound_main = sound_main_,
@@ -384,7 +385,8 @@ private:
                                       .fonts = fonts_,
                                       .crt_random = crt_random_,
                                       .console = console_,
-                                      .content = pod_.getGameContent()}};
+                                      .content = pod_.getGameContent(),
+                                      .display = display_}};
     core::CDemonMission mission_{{.dosio = dosio_,
                                   .messages = messages_,
                                   .game = game_,

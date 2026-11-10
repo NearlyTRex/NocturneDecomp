@@ -231,5 +231,22 @@ TEST_F(CBitFontScaledTest, AnOsFontDrawsAndMeasuresUnscaled) {
     EXPECT_EQ(rig.font.getTextWidthScaled("ab", kUpscale), 10);
 }
 
+TEST_F(CBitFontScaledTest, AnOsFontMadeAtTheScaleDrawsAndMeasuresTheScaledText) {
+    SRig rig(*this, 32);
+    open(rig);
+    NiceMock<MockFont> os_font;
+    NiceMock<MockFont> scaled_font;
+    rig.font.setWinFont(os_font);
+    rig.font.setScaledWinFont(&scaled_font, kUpscale);
+    EXPECT_CALL(os_font, drawText).Times(0);
+    EXPECT_CALL(scaled_font, drawText(std::string_view("ab"), 1, 2, 3, 4)).WillOnce(Return(14));
+    EXPECT_EQ(rig.font.drawTextScaled("ab", 1, 2, 3, 4, kUpscale), 14);
+    EXPECT_CALL(scaled_font, getStringWidth(std::string_view("ab"))).WillOnce(Return(20));
+    EXPECT_EQ(rig.font.getTextWidthScaled("ab", kUpscale), 20);
+    // Another scale is drawn by the unscaled font, at its own size.
+    EXPECT_CALL(os_font, getStringWidth(std::string_view("ab"))).WillOnce(Return(10));
+    EXPECT_EQ(rig.font.getTextWidthScaled("ab", kUpscale * 2), 10);
+}
+
 } // namespace
 } // namespace nocturne::engine

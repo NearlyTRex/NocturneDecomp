@@ -20,7 +20,7 @@ NOCTURNE_TEST(the_saved_choice_is_the_choice) {
     std::filesystem::remove_all(dir, ec);
     std::filesystem::create_directories(dir, ec);
     std::filesystem::current_path(dir, ec);
-    ini_support::save("Graphics", "upscaler", "1");
+    ini_support::save("Graphics", "upscaler", "3");
     ini_support::values["Graphics/fsrSharpness"] = "60";
     CHECK_EQ(nocturne_upscaler_get(), NOCTURNE_UPSCALER_FSR);
     CHECK_EQ(nocturne_upscaler_sharpness_get(), 60);

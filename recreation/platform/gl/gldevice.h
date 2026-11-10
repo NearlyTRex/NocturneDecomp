@@ -90,7 +90,9 @@ public:
 
 private:
     void finishScene();
-    // The scene stretched since the last lock, once.
+    // The scene stretched since the last lock, once; and geometry drawn straight to the target
+    // before the frame's 2D, as a screen below the hold buffer's size draws its 3D, smoothed
+    // but not reframed, and a frame only once.
     void filterScene();
     // After the device itself drew with GL: neither the pipeline nor the texture binding is
     // what the caches say.
@@ -125,6 +127,11 @@ private:
     bool target_ahead_ = false;
     // The hold buffer was stretched over the target since the last lock.
     bool scene_stretched_ = false;
+    // Geometry has landed since the last lock; the engine's 2D has gone over this frame; this
+    // frame has been smoothed.
+    bool geometry_drawn_ = false;
+    bool frame_has_2d_ = false;
+    bool frame_filtered_ = false;
     std::optional<SOverlayPlacement> overlay_;
     int reflection_depth_ = 0;
 };

@@ -32,6 +32,8 @@ protected:
     [[nodiscard]] const SMenuOwners &getOwners() const;
 
 private:
+    void applyFrontEndMode();
+
     const SMenuOwners &owners_;
     int width_ = 0;
     int height_ = 0;

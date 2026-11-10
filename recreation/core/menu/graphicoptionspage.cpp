@@ -42,7 +42,7 @@ constexpr int kHighBitDepth = 32;
 
 // By EUpscaler.
 constexpr std::array<std::string_view, platform::kUpscalerCount> kUpscalerNames{
-    "Standard", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
+    "Standard", "Nearest", "Smooth", "FSR", "Lanczos", "GSR", "NIS", "xBR"};
 // By EAntialias.
 constexpr std::array<std::string_view, platform::kAntialiasCount> kAntialiasNames{"Off", "FXAA"};
 constexpr int kSharpnessSteps =

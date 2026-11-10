@@ -132,6 +132,32 @@ TEST_F(CAudioSpectrumTest, EachChannelHasABarEveryFourColumnsAcrossItsHalf) {
     EXPECT_EQ(sortedCentres(), expected);
 }
 
+// At twice the layout the bars are twice as far apart and as wide, as many as at 640x480, and
+// each in the frame its 640x480 column picks.
+TEST_F(CAudioSpectrumTest, AtTwiceTheLayoutTheBarsAreTwiceAsWideAndApart) {
+    ON_CALL(screen_, getWindowWidth()).WillByDefault(::testing::Return(1280));
+    ON_CALL(screen_, getWindowHeight()).WillByDefault(::testing::Return(960));
+    two_d_.setupViewportAndClipping(0, 0, 1279, 959);
+    playMusic();
+    menu_.drawAudioSpectrum();
+    std::vector<int> expected;
+    for (const int left : {64, 704}) {
+        for (int x = left; x < left + 512; x += 8) {
+            expected.push_back(x);
+        }
+    }
+    std::vector<int> centres;
+    for (const SBar &bar : bars_) {
+        const int left = bar.corners[0].projected_vertex.screen_x >> 16;
+        const int right = bar.corners[1].projected_vertex.screen_x >> 16;
+        EXPECT_EQ(right - left, 64);
+        EXPECT_EQ(bar.frame, ((left + 32) / 2) % 8);
+        centres.push_back(left + 32);
+    }
+    std::ranges::sort(centres);
+    EXPECT_EQ(centres, expected);
+}
+
 TEST_F(CAudioSpectrumTest, MonoHasOneRunOfBarsAcrossTheWidth) {
     sound_main_.resetSoundDevice();
     sound_main_.setAudioChannelCount(1);

@@ -37,6 +37,8 @@ struct SGameOwners {
     engine::CGamepadInput &gamepad;
     // The packages' content: the credits, and the stories to choose from.
     const engine::SGameContent &content;
+    // Its Upscaler, which the credits' image is enlarged as.
+    const platform::IDisplay &display;
 };
 
 // What a session plays with besides the game's own: the console it reports to, the scene camera,

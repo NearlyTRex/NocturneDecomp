@@ -219,7 +219,8 @@ protected:
                  .keys = keys_,
                  .raw_input = raw_input_,
                  .gamepad = gamepad_.input,
-                 .content = content_}};
+                 .content = content_,
+                 .display = display_}};
     engine::CIni ini_{file_system_};
     SIniDataOwners ini_owners_{.game = game_,
                                .sound_main = sound_,
@@ -310,7 +311,8 @@ protected:
                                 .fonts = fonts_,
                                 .crt_random = crt_random_,
                                 .console = console_,
-                                .content = content_}};
+                                .content = content_,
+                                .display = display_}};
     CDemonMission mission_{{.dosio = dosio_,
                             .messages = messages_,
                             .game = game_,
@@ -364,18 +366,18 @@ using CInitializeGameSystemsTest = CInitializeGameSystemsFixture<kWidth>;
 constexpr int kWideWidth = 848;
 using CWideInitializeGameSystemsTest = CInitializeGameSystemsFixture<kWideWidth>;
 
-// 800x600 is 4:3, which is the layout's own width at 480 lines.
-TEST_F(CInitializeGameSystemsTest, TheFrontEndStartsAt640x480) {
+// The ini's 800x600, accelerated: the front end runs where the missions will.
+TEST_F(CInitializeGameSystemsTest, TheFrontEndStartsAtThePickedResolution) {
     start();
-    EXPECT_EQ(screen_.requested_width, kWidth);
-    EXPECT_EQ(screen_.requested_height, kHeight);
+    EXPECT_EQ(screen_.requested_width, 800);
+    EXPECT_EQ(screen_.requested_height, 600);
 }
 
-TEST_F(CInitializeGameSystemsTest, AWidePickStartsTheFrontEndAtItsAspect) {
+TEST_F(CInitializeGameSystemsTest, AWidePickStartsTheFrontEndAtIt) {
     ini_text_ = "[Graphics]\r\ngamePIXX=1920\r\ngamePIXY=1080\r\nuseDirect3D=1\r\n";
     start();
-    EXPECT_EQ(screen_.requested_width, kWideWidth);
-    EXPECT_EQ(screen_.requested_height, kHeight);
+    EXPECT_EQ(screen_.requested_width, 1920);
+    EXPECT_EQ(screen_.requested_height, 1080);
 }
 
 // Only the hardware renderer widens the menu's moon.
@@ -475,10 +477,11 @@ TEST_F(CInitializeGameSystemsTest, TheLoadingScreenSaysLoadingInTheMiddle) {
     const engine::CBitFont &font = *fonts_.getThemeFont();
     const int width = font.getTextWidth("Chargement...");
     const int height = font.getCharHeight('X');
-    EXPECT_EQ(left, (kWidth - width) / 2);
+    // Half its size each way back from the layout's middle.
+    EXPECT_EQ(left, (kWidth / 2) - (width / 2));
     EXPECT_EQ(right, left + width - 1);
-    EXPECT_GE(top, (kHeight - height) / 2);
-    EXPECT_LT(bottom, ((kHeight - height) / 2) + height);
+    EXPECT_GE(top, (kHeight / 2) - (height / 2));
+    EXPECT_LT(bottom, (kHeight / 2) - (height / 2) + height);
 }
 
 TEST_F(CInitializeGameSystemsTest, WithNoArchiveLeftNothingIsUnpacked) {
@@ -492,7 +495,7 @@ TEST_F(CInitializeGameSystemsTest, ArchivesLeftAreUnpackedWithTheFangsUp) {
     std::optional<std::uint32_t> shown;
     pod_.on_unpack = [this, &shown] {
         shown = screen_.pixel(kWidth - 1, kHeight - 1);
-        EXPECT_EQ(screen_.requested_width, kWidth);
+        EXPECT_EQ(screen_.requested_width, 800);
         content_.translations["en"] = {{"Loading...", "Unpacked..."}};
     };
     start();
@@ -566,6 +569,15 @@ TEST_F(CInitializeGameSystemsTest, LoadsTheMouseAndStartsTheNetwork) {
     mouse_.getCursor(0).display(0, 0, 0xffff);
     EXPECT_EQ(screen_.pixel(0, 0), 0x323232U);
     EXPECT_EQ(net_game_.getCurrentGameTime(), 1U);
+}
+
+// As setGameRes falls back.
+TEST_F(CInitializeGameSystemsTest, APickedModeTheScreenRefusesFallsBackTo640x480) {
+    ini_text_ = "[Graphics]\r\ngamePIXX=1920\r\ngamePIXY=1080\r\nuseDirect3D=1\r\n";
+    screen_.largest_width = kWidth;
+    start();
+    EXPECT_EQ(screen_.requested_width, kWidth);
+    EXPECT_EQ(screen_.requested_height, kHeight);
 }
 
 TEST_F(CInitializeGameSystemsTest, AScreenThatRefusesTheModeIsFatal) {

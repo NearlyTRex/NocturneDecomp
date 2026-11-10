@@ -24,6 +24,7 @@
 #include "tests/mocks/engine/shippedgamecontent.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
+#include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
 #include "tests/mocks/sound/sndmainfixture.h"
@@ -178,6 +179,7 @@ protected:
     support::CNewMsg messages_{dosio_};
     CDFont fonts_{dosio_, screen_, two_d_, three_d_, colors_, os_fonts_, messages_, editor_tools_};
     engine::SGameContent content_ = engine::getShippedGameContent();
+    NiceMock<platform::MockDisplay> display_;
     CGame game_{{.clock = game_clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -190,7 +192,8 @@ protected:
                  .keys = keys_,
                  .raw_input = raw_input_,
                  .gamepad = gamepad_.input,
-                 .content = content_}};
+                 .content = content_,
+                 .display = display_}};
     int now_ = 0;
     int step_ = kQuarterSecond;
     int ticks_ = 0;
@@ -284,7 +287,7 @@ TEST_F(CCreditsTest, BlackStripsCoverTheColumnsTopAndBottom) {
 }
 
 // The image keeps to the left; the column and its strips run on over the black to the right.
-TEST_F(CWideCreditsTest, TheColumnRunsOnToTheScreensRightEdge) {
+TEST_F(CWideCreditsTest, TheImageKeepsToTheLeftAndTheColumnRunsOnToTheRightEdge) {
     givenCredits("end\n");
     cancelAfterFrames(1);
     game_.rollCredits();
@@ -309,7 +312,7 @@ TEST_F(CWideCreditsTest, ALineIsCentredOnTheWiderColumn) {
         }
     }
     const int width = fonts_.getThemeFont()->getTextWidth("XX");
-    const int text_left = (kColumnLeft + kWideWidth - width) / 2;
+    const int text_left = ((kColumnLeft + kWideWidth - 1) / 2) - (width / 2);
     EXPECT_GE(first, text_left);
     EXPECT_LT(first, text_left + width);
 }

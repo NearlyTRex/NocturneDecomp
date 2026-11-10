@@ -109,14 +109,20 @@ void CMenu::showOptionsScreen(int initialize_systems) {
         owners_.sound.configure();
         moon_.init();
     }
+    in_mission_ = initialize_systems != 0;
     owners_.game.saveClockTime();
     COptionsPage page(*this, owners_);
     runPage(page);
+    in_mission_ = false;
     if (initialize_systems != 0) {
         moon_.free();
         owners_.sound.reset();
     }
     writeIniData(owners_.ini, owners_.ini_owners);
+}
+
+bool CMenu::getInMission() const {
+    return in_mission_;
 }
 
 void CMenu::showGameplayOptions() {

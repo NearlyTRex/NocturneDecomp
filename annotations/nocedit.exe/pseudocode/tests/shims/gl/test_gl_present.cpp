@@ -704,6 +704,8 @@ NOCTURNE_TEST(under_fsr_an_enlarged_frame_is_drawn_through_fsr) {
     std::filesystem::current_path(dir, ec);
 
     gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_NEAREST);
+    CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_SMOOTH);
     CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_FSR);
     nocturne_gl_set_logical_size(640, 480);
     stand.drawable_width = 1280;
@@ -742,6 +744,8 @@ NOCTURNE_TEST(under_fsr_an_enlarged_frame_is_drawn_through_fsr) {
 // standard path would blend.
 NOCTURNE_TEST(xbr_reads_its_frame_unfiltered) {
     gl_recorder::State &s = up();
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_SMOOTH);
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_NEAREST);
     CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_STANDARD);
     CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_XBR);
     nocturne_gl_set_logical_size(640, 480);
@@ -764,7 +768,29 @@ NOCTURNE_TEST(without_its_upscaler_a_frame_takes_the_standard_path) {
     CHECK_EQ(stand.swaps, 1);
     CHECK_EQ(s.count("DrawArrays"), 1);
     CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
+}
+
+// Nearest is nearest even at a fractional scale, and Smooth bilinear even at a
+// whole multiple; neither has a program.
+NOCTURNE_TEST(nearest_and_smooth_are_one_filter_at_any_scale) {
+    gl_recorder::State &s = up();
     CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_STANDARD);
+    CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_NEAREST);
+    nocturne_gl_set_logical_size(640, 480);
+    stand.drawable_width = 1000;
+    stand.drawable_height = 750;
+    present(640, 480);
+    CHECK_EQ(s.count("Uniform2f"), 0);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_NEAREST);
+
+    CHECK_EQ(nocturne_upscaler_cycle(1), NOCTURNE_UPSCALER_SMOOTH);
+    stand.drawable_width = 1280;
+    stand.drawable_height = 960;
+    present(640, 480);
+    CHECK_EQ(s.count("Uniform2f"), 0);
+    CHECK_EQ(last_min_filter(s), (unsigned)GL_LINEAR);
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_NEAREST);
+    CHECK_EQ(nocturne_upscaler_cycle(-1), NOCTURNE_UPSCALER_STANDARD);
 }
 
 // -----------------------------------------------------------------------------

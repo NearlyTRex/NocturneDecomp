@@ -239,14 +239,18 @@ TEST_F(CInivarTest, TheDisplaySettingsAreWritten) {
 }
 
 TEST_F(CInivarTest, TheUpscalerIsReadUnlessItIsOutOfRange) {
-    text_ = "[Graphics]\r\nupscaler=5\r\nupscalerSharpness=75\r\n";
+    text_ = "[Graphics]\r\nupscaler=7\r\nupscalerSharpness=75\r\n";
     EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Xbr));
     EXPECT_CALL(display_, setUpscalerSharpness(75));
     read();
     ::testing::Mock::VerifyAndClearExpectations(&display_);
     ON_CALL(display_, getUpscaler()).WillByDefault(Return(platform::EUpscaler::Nis));
-    text_ = "[Graphics]\r\nupscaler=6\r\n";
+    text_ = "[Graphics]\r\nupscaler=8\r\n";
     EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Nis));
+    read();
+    ::testing::Mock::VerifyAndClearExpectations(&display_);
+    text_ = "[Graphics]\r\nupscaler=2\r\n";
+    EXPECT_CALL(display_, setUpscaler(platform::EUpscaler::Smooth));
     read();
 }
 
@@ -269,7 +273,7 @@ TEST_F(CInivarTest, TheUpscalerIsWritten) {
     ON_CALL(display_, getUpscaler()).WillByDefault(Return(platform::EUpscaler::Gsr));
     ON_CALL(display_, getUpscalerSharpness()).WillByDefault(Return(25));
     writeIniData(ini_, owners_);
-    EXPECT_THAT(text_, HasSubstr("upscaler=3\r\n"));
+    EXPECT_THAT(text_, HasSubstr("upscaler=5\r\n"));
     EXPECT_THAT(text_, HasSubstr("upscalerSharpness=25\r\n"));
 }
 

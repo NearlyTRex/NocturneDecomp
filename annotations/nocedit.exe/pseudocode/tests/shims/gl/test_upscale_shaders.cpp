@@ -18,11 +18,14 @@
 #include <string>
 #include <system_error>
 
-NOCTURNE_TEST(every_filter_but_standard_has_a_program) {
+// Standard, Nearest and Smooth are the presenter's own sampling.
+NOCTURNE_TEST(every_filter_but_the_presenters_own_has_a_program) {
     CHECK(nocturne_upscale_fragment_source(NOCTURNE_UPSCALER_STANDARD) == nullptr);
+    CHECK(nocturne_upscale_fragment_source(NOCTURNE_UPSCALER_NEAREST) == nullptr);
+    CHECK(nocturne_upscale_fragment_source(NOCTURNE_UPSCALER_SMOOTH) == nullptr);
     CHECK(nocturne_upscale_fragment_source(NOCTURNE_UPSCALER_COUNT) == nullptr);
     CHECK(nocturne_upscale_fragment_source(-1) == nullptr);
-    for (int mode = NOCTURNE_UPSCALER_FSR; mode < NOCTURNE_UPSCALER_COUNT; mode++) {
+    for (int mode = NOCTURNE_UPSCALER_FSR; mode <= NOCTURNE_UPSCALER_XBR; mode++) {
         const char *source = nocturne_upscale_fragment_source(mode);
         CHECK_AT(source != nullptr, std::to_string(mode));
         const std::string text = source != nullptr ? source : "";

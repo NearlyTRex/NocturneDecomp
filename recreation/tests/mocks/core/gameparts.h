@@ -27,6 +27,7 @@
 #include "tests/mocks/platform/mockaudiodevice.h"
 #include "tests/mocks/platform/mockclipboard.h"
 #include "tests/mocks/platform/mockclock.h"
+#include "tests/mocks/platform/mockdisplay.h"
 #include "tests/mocks/platform/mockfilesystem.h"
 #include "tests/mocks/platform/mockosfontfactory.h"
 #include "tests/mocks/platform/mockrenderer.h"
@@ -154,6 +155,7 @@ private:
                                 [] { return std::tm{}; }};
     // The shipped game's, for a test to change before the game reads it.
     engine::SGameContent content_ = engine::getShippedGameContent();
+    ::testing::NiceMock<platform::MockDisplay> game_display_;
     CGame game_{{.clock = clock_,
                  .dosio = dosio_,
                  .screen = screen_,
@@ -166,7 +168,8 @@ private:
                  .keys = keys_,
                  .raw_input = raw_input_,
                  .gamepad = gamepad_.input,
-                 .content = content_}};
+                 .content = content_,
+                 .display = game_display_}};
 };
 
 } // namespace nocturne::core

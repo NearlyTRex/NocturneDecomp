@@ -20,16 +20,20 @@
 extern "C" {
 #endif
 
-// Each filter but Standard is a fragment program in gl/upscale_shaders.cpp. The
-// values are what [Graphics] upscaler stores, so a new one goes on the end.
+// Each filter but Standard, Nearest and Smooth is a fragment program in
+// gl/upscale_shaders.cpp; those three are the presenter's own sampling: Nearest
+// always nearest, Smooth always bilinear. The values are what [Graphics]
+// upscaler stores, in the order the Options line steps through them.
 enum {
     NOCTURNE_UPSCALER_STANDARD = 0,
-    NOCTURNE_UPSCALER_FSR = 1,
-    NOCTURNE_UPSCALER_LANCZOS = 2,
-    NOCTURNE_UPSCALER_GSR = 3,
-    NOCTURNE_UPSCALER_NIS = 4,
-    NOCTURNE_UPSCALER_XBR = 5,
-    NOCTURNE_UPSCALER_COUNT = 6
+    NOCTURNE_UPSCALER_NEAREST = 1,
+    NOCTURNE_UPSCALER_SMOOTH = 2,
+    NOCTURNE_UPSCALER_FSR = 3,
+    NOCTURNE_UPSCALER_LANCZOS = 4,
+    NOCTURNE_UPSCALER_GSR = 5,
+    NOCTURNE_UPSCALER_NIS = 6,
+    NOCTURNE_UPSCALER_XBR = 7,
+    NOCTURNE_UPSCALER_COUNT = 8
 };
 
 // The sharpness steps the Options line offers, in percent.

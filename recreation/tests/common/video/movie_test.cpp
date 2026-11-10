@@ -16,8 +16,16 @@ constexpr SExtent kMovie{.width = 320, .height = 240};
 TEST(Movie, DoublesAndCentresOnTheGameScreen) {
     EXPECT_EQ(placeMovie(kMovie, {.width = 640, .height = 480}),
               (SViewport{.x = 0, .y = 0, .width = 640, .height = 480}));
+    EXPECT_EQ(placeMovie(kMovie, {.width = 640, .height = 600}),
+              (SViewport{.x = 0, .y = 60, .width = 640, .height = 480}));
+}
+
+// As the front end's layout grows: 1080 lines are 2.25 of 480, centred across 1920.
+TEST(Movie, PastTheLayoutItGrowsAsTheLayoutDoes) {
+    EXPECT_EQ(placeMovie(kMovie, {.width = 1920, .height = 1080}),
+              (SViewport{.x = 240, .y = 0, .width = 1440, .height = 1080}));
     EXPECT_EQ(placeMovie(kMovie, {.width = 800, .height = 600}),
-              (SViewport{.x = 80, .y = 60, .width = 640, .height = 480}));
+              (SViewport{.x = 0, .y = 0, .width = 800, .height = 600}));
 }
 
 // Just past either threshold the movie doubles, and doubled it no longer fits.

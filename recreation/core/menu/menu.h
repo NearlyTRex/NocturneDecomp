@@ -1,6 +1,7 @@
 #pragma once
 
 #include "common/fwd.h"
+#include "core/frontend.h"
 #include "core/fwd.h"
 #include "core/game/keychord.h"
 #include "core/moon/moon.h"
@@ -109,6 +110,8 @@ public:
     [[nodiscard]] bool getMenuInputHappened() const;
     // Whether the last choice was left rather than right on an item with a colon.
     [[nodiscard]] bool getMenuLeftRightPressed() const;
+    // Whether Options is up over a mission's pause, where the mission owns the screen's mode.
+    [[nodiscard]] bool getInMission() const;
 
 private:
     class CMainMenuPage;
@@ -140,10 +143,17 @@ private:
     [[nodiscard]] SHeldKeys readHeldKeys() const;
     // The defaults back, with an error, if any code doesn't suit the control type.
     void validateBindings();
-    // 32 pixels wide on x_center, rising from y_top to twice height_half above it.
-    void renderAudioSpectrumBar(int x_center, int y_top, int height_half);
-    // The flame frame a bar at x_center shows now.
-    [[nodiscard]] int getAudioSpectrumFrame(int x_center) const;
+    // Twice half_width wide on x_center, rising from y_top to twice height_half above it, in
+    // flame frame `frame`.
+    struct SAudioSpectrumBar {
+        int x_center = 0;
+        int half_width = 0;
+        int height_half = 0;
+        int frame = 0;
+    };
+    void renderAudioSpectrumBar(const SAudioSpectrumBar &bar, int y_top);
+    // The flame frame a bar at layout column `column` shows now.
+    [[nodiscard]] int getAudioSpectrumFrame(int column) const;
     // PLAY's Continue, Start and Load.
     void showPlayMenu();
     void startChapterSelect();
@@ -154,13 +164,13 @@ private:
     // nothing for Cancel.
     [[nodiscard]] std::optional<int> showSubmenu(std::span<const std::string_view> items);
     void drawMenuBackdrop();
-    // `top`, raised where `rows` lines of the theme font would run off the window, and never
-    // above it.
+    // `top`, raised where `rows` lines of the theme font would run off the layout's 480 rows,
+    // and never above them.
     [[nodiscard]] int fitMenuTop(int top, int rows) const;
     void showCalibrationTestPattern(engine::CAlphaBitmap &bitmap, std::string_view message_text);
     // The selected item: five faint copies jittered about it, then the item over them.
-    // Where the 640-wide layout starts, centred on a wider front end.
-    [[nodiscard]] int getLayoutLeft() const;
+    // The 640x480 layout as this screen shows it.
+    [[nodiscard]] SFrontEndLayout getScreenLayout() const;
     // The packages' layout; without one, fatal.
     [[nodiscard]] const engine::SMenuLayout &getMenuLayout() const;
     void drawGlowingItem(engine::CBitFont &font, std::string_view item, int left, int y);
@@ -173,6 +183,7 @@ private:
     CMoon moon_;
     bool menu_input_happened_ = false;
     bool menu_left_right_pressed_ = false;
+    bool in_mission_ = false;
     // Which flame frame the bars show, in 16.16; it runs through eight a third of a second.
     int audio_visualization_counter_ = 0;
     std::array<platform::SMRGLTextureBasic, 8> audio_spectrum_textures_{{

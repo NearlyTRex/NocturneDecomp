@@ -10,6 +10,13 @@
 
 namespace nocturne::engine {
 
+// How a scaled image fills its pixels: Nearest from the one under each, Smooth from the four
+// around it, weighted by distance and opacity.
+enum class EBitmapFilter : std::uint8_t {
+    Nearest,
+    Smooth,
+};
+
 // An indexed image with its own palette and an opacity per pixel, drawn over the screen.
 class CAlphaBitmap {
 public:
@@ -22,6 +29,8 @@ public:
     void load(std::string_view filename, int width, int height);
     // alpha is a 16-bit level scaling every pixel's opacity.
     void display(int x, int y, int alpha);
+    // Stretched to width by height with its corner at x, y; at the image's own size, display.
+    void displayScaled(int x, int y, int width, int height, int alpha, EBitmapFilter filter);
     void render(int dest_x, int dest_y, int left_x, int top_y, int right_x, int bottom_y,
                 int global_alpha);
     void scale(int scaleFactorX, int scaleFactorY);

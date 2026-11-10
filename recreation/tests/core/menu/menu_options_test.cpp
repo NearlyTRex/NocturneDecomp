@@ -138,6 +138,24 @@ TEST_F(COptionsScreenTest, DisplayOpensItsPage) {
     EXPECT_EQ(frames_, 7);
 }
 
+// From the main menu a new resolution is the front end's mode at once; over a mission's pause
+// the mission keeps its own until the next one loads.
+TEST_F(COptionsScreenTest, ANewResolutionChangesTheModeOnlyOutsideAMission) {
+    special_.setUseDirect3D(true);
+    EXPECT_CALL(screen_, setScreenResolution(800, 600, ::testing::_)).WillOnce(Return(true));
+    pressEachFrame({kDown, kDown, kReturn, kDown, kReturn, kEscape, kEscape});
+    menu_.showOptionsScreen(0);
+    ::testing::Mock::VerifyAndClearExpectations(&screen_);
+
+    game_.game_pixx = 640;
+    game_.game_pixy = 480;
+    frames_ = 0;
+    EXPECT_CALL(screen_, setScreenResolution(::testing::_, ::testing::_, ::testing::_)).Times(0);
+    pressEachFrame({kDown, kDown, kReturn, kDown, kReturn, kEscape, kEscape});
+    menu_.showOptionsScreen(1);
+    EXPECT_EQ(game_.game_pixx, 800);
+}
+
 TEST_F(COptionsScreenTest, TheCheatsQuitUntilTheyArePorted) {
     on_frame_ = [&](int frame) { press(frame <= 5 ? kDown : kReturn); };
     EXPECT_THAT([this] { menu_.showOptionsScreen(0); },

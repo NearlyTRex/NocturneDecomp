@@ -10,7 +10,8 @@
 namespace nocturne::common {
 
 // Where positionMovieWindow puts a movie: doubled on a screen wider than 400 or taller than
-// 300, then centred. Empty when the result would not fit on the screen.
+// 300, and past 640x480 grown as the front end's layout is, then centred. Empty when the
+// result would not fit on the screen.
 [[nodiscard]] std::optional<SViewport> placeMovie(SExtent movie, SExtent screen);
 
 // The wall clock a movie plays to, in seconds. Audio is not the master: frames that fall behind

@@ -86,6 +86,19 @@ TEST_F(CGlUpscalerTest, XbrReadsItsTexelsUnfiltered) {
     EXPECT_EQ(gl_.getCalls("TexParameteri"), sampling(GL_NEAREST));
 }
 
+TEST_F(CGlUpscalerTest, NearestIsNearestEvenBetween) {
+    draw(kStretched, EUpscaler::Nearest);
+    EXPECT_EQ(gl_.getCalls("TexParameteri"), sampling(GL_NEAREST));
+    EXPECT_EQ(gl_.count("CreateProgram"), 0U);
+    EXPECT_THAT(programsUsed(), ElementsAre(glCall("UseProgram", kQuadProgram)));
+}
+
+TEST_F(CGlUpscalerTest, SmoothIsBilinearEvenAtAWholeMultiple) {
+    draw(kDoubled, EUpscaler::Smooth);
+    EXPECT_EQ(gl_.getCalls("TexParameteri"), sampling(GL_LINEAR));
+    EXPECT_EQ(gl_.count("CreateProgram"), 0U);
+}
+
 TEST_F(CGlUpscalerTest, EachProgramIsBuiltOnce) {
     draw(kDoubled, EUpscaler::Lanczos);
     draw(kDoubled, EUpscaler::Lanczos);
@@ -107,7 +120,7 @@ TEST_F(CGlUpscalerTest, AFrameEnlargedOneWayIsEnlarged) {
 
 TEST_F(CGlUpscalerTest, AFilterThatWontBuildIsLoggedOnceAndStandardDrawsInstead) {
     gl_.link_fails = true;
-    EXPECT_CALL(log_, write(ELogSubsystem::Render, HasSubstr("upscaler 1 could not build")));
+    EXPECT_CALL(log_, write(ELogSubsystem::Render, HasSubstr("upscaler 3 could not build")));
     draw(kDoubled, EUpscaler::Fsr);
     draw(kDoubled, EUpscaler::Fsr);
     EXPECT_EQ(gl_.count("CreateProgram"), 1U);
@@ -115,8 +128,10 @@ TEST_F(CGlUpscalerTest, AFilterThatWontBuildIsLoggedOnceAndStandardDrawsInstead)
     EXPECT_EQ(programsUsed().back(), glCall("UseProgram", kQuadProgram));
 }
 
-TEST(GetUpscaleFragmentSource, EveryFilterButStandardHasAProgram) {
+TEST(GetUpscaleFragmentSource, EveryFilterButThePresentersOwnHasAProgram) {
     EXPECT_EQ(getUpscaleFragmentSource(EUpscaler::Standard), nullptr);
+    EXPECT_EQ(getUpscaleFragmentSource(EUpscaler::Nearest), nullptr);
+    EXPECT_EQ(getUpscaleFragmentSource(EUpscaler::Smooth), nullptr);
     for (const EUpscaler upscaler :
          {EUpscaler::Fsr, EUpscaler::Lanczos, EUpscaler::Gsr, EUpscaler::Nis, EUpscaler::Xbr}) {
         const std::string_view source = getUpscaleFragmentSource(upscaler);
